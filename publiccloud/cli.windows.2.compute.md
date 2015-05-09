@@ -19,7 +19,7 @@ This page provides you some examples of how to use the various commands (sometim
 * [Password Management](#PasswordManagement)
 * [Floating IP Management](#IPManagement)
 
-For complete details on the commands--syntax, descriptions, and so forth--take a look at the [CLI Reference](/cli/windows/reference) page.
+For complete details on the commands--syntax, descriptions, and so forth--take a look at the [CLI Reference](/cli/windows/reference/) page.
 
 ##Navigation## {#Navigation}
 
@@ -162,7 +162,7 @@ To create a new security group rule and assign it to an existing security group:
 
 **Note for Windows Images**: A security group requires port 3389 to connect to a Windows instance via the remote desktop protocol (RDP). Windows CLI automatically creates security group `rdp_group` with port 3389 open when it detects a Windows image type during creation, and automatically applies the `rdp_group` security group to that Windows instance. Security Group `rdp_group` is always added as a security group to Windows instances even when you specify other security groups as arguments with the `New-Server` cmdlet.
 
-For a full description of the options available with the **Add-Rule** command, please see the [Add-Rule](/cli/windows/reference#Add-Rule) section of the [Windows CLI Reference](/cli/windows/reference) page.
+For a full description of the options available with the **Add-Rule** command, please see the [Add-Rule](/cli/windows/reference#Add-Rule) section of the [Windows CLI Reference](/cli/windows/reference/) page.
 
 To delete an existing security group rule:
 
@@ -318,4 +318,4 @@ To de-allocate (release) a previously-allocated IP address out of your IP pool
 
 Where `-ip` represents the ID of the allocated IP address.
 
-For a complete list of all the available Compute commands, please see the [CLI reference page](/cli/windows/reference) and [Getting Help](/cli/windows/help).
+For a complete list of all the available Compute commands, please see the [CLI reference page](/cli/windows/reference/) and [Getting Help](/cli/windows/help/).
