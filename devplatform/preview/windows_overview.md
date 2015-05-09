@@ -21,7 +21,7 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Windows Overview
 
-*Windows is either a registered trademark or trademark of Microsoft Corporation in the United States and/or other countries.*
+*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*
 
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Developer Preview</span>
 
@@ -125,6 +125,8 @@ For more information on licensing Windows Server, see <a href="https://www.micro
 
 * <a href="/helion/devplatform/preview/deployingnet">Deploying your first .NET application</a> 
 * <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a>
+* <a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> 
+* <a href="/helion/devplatform/preview/buildpack/">Deploying Windows Applications with the IIS Buildpack</a>
 
 
 

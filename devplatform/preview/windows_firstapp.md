@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Deploying your first .NET Application"
-permalink: /helion/devplatform/preview/deployingnet
+permalink: /helion/devplatform/preview/deployingnet/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
@@ -21,7 +21,7 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Deploying your first .NET Application 
 
-*Windows is either a registered trademark or trademark of Microsoft Corporation in the United States and/or other countries.*
+*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*
 
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Deveoper Preview</span>
 
@@ -59,6 +59,9 @@ This tutorial requires the following software components:
 				MultipleActiveResultSets=true;" 
 			providerName="System.Data.SqlClient" >
 5. Save <code>web.config</code>.
+6. Build the project locally to verify that it builds correctly, and all NuGet packages successfully install. Once the project builds successfully, go to the next step.
+
+	<img src="media/windows_build.png">
 6. Right click the project and select **Publish to Cloud Foundry**.
 	
 	<img src="media/windows_deploy_contextmenu.png">
@@ -74,6 +77,8 @@ This tutorial requires the following software components:
 	* **Memory**: The amount of memory the application will use (e.g. 512 MB).
 	* **Instances**: The number of separate installations of the application (e.g. 1).
 	* **Services**: Enter the services to bind to the application, in the form <code>Name, service type, quota</code>, with separate services separated by semicolons. Example: <code>ContosoUniversity-db,mssql2014,default</code>
+	
+		**Note:** If you are adding a SQL server service, ensure that the name matches the value set in the config file. Example: <code>ContosoUniversity-db,mssql2014,free</code>  
 	* **Build Locally**: Check to build the application locally before deployment, rather than building on the server.
 	* **Configuration**: Set the build configuration (e.g. Debug).
 	* **Platform**: Set the target CPU platform (e.g. Any CPU).
@@ -136,4 +141,5 @@ One advantage of using the command line is that you can use Mac or Linux as well
 ---
 <div align="center"><a href="/helion/devplatform/preview/">Windows Overview</a> </div>
 
-<div align="center"> Deploying your first .NET Application | <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a></div>
+<div align="center"> Deploying your first .NET Application | <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a> </div>
+<div align="center"><a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/preview/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
