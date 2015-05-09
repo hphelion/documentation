@@ -38,7 +38,7 @@ Troubleshooting issues related to HP StoreVirtual VSA environments.
 
 
 * [Failure to retrieve netmask from vsa-bridge](#fails-retrieve-netmask)
-* [Installation script detects more than 7 available drive](install-script-detect)
+* [Installation script detects more than 7 available drive](#install-script-detect)
 * [Failure of script due to less than two drives](#failure-script)
 *  [Cannot enable AO as only one disk is available](#cannot-enable-ao)
 * [Unable to update the default input json file ](#unable-update-json)
