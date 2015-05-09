@@ -25,7 +25,7 @@ authors: Patrick F
 
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Deveoper Preview</span>
 
-This tutorial demonstrates how to deploy an application to a Windows Server instance running in an HP Helion OpenStack (HOS) environment using the toolset provided. For the purposes of this tutorial, you'll deploy the Microsoft's Contoso University sample application.
+This tutorial demonstrates how to deploy an application to a Windows Server instance running in an HP Helion OpenStack environment using the toolset provided. For the purposes of this tutorial, you'll deploy the Microsoft's Contoso University sample application.
 
 ## System requirements
 

@@ -25,7 +25,7 @@ authors: Patrick F
 
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Developer Preview</span>
 
-Helion Development Platform (HDP) version 1.2 includes a full end-to-end solution for creating and deploying .NET Framework applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of HDP. HTTP-based .NET applications that follow the <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry application model</a> are a great fit for this feature support.
+Helion Development Platform  version 1.2 includes a full end-to-end solution for creating and deploying .NET Framework applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of Helion Development Platform. HTTP-based .NET applications that follow the <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry application model</a> are a great fit for this feature support.
 
 This document contains the following sections:
 
@@ -48,7 +48,7 @@ Helion Development Platform version 1.2 adds tools for creating instances of Win
 * Support for creating Windows instances that include Microsoft SQL Server Express. 
 * Integrated buildpack support for building applications with dependencies and services.
 
-Windows and .NET support is enabled by adding this functionality to an existing HDP 1.2 installation.
+Windows and .NET support is enabled by adding this functionality to an existing Helion Development Platform 1.2 installation.
 
 For the 1.2 release, we support creating the following types of instances:
 
@@ -56,13 +56,13 @@ For the 1.2 release, we support creating the following types of instances:
 * Windows Server 2012 r2 with SQL Server 2012 Express
 * Windows Server 2012 r2 with SQL Server 2014 Express
 
-HDP treats deployment of .NET applications in the same way as Linux applications (such as Java or PHP appplications). .NET applications require a <a href="/helion/devplatform/1.1/als/user/deploy/buildpack/">buildpack</a> to specify the dependencies and <a href="/helion/devplatform/1.1/als/user/services/user-provided/">services</a> that can be bound to the application. .NET applications are deployed into a sandbox environment similar to Warden in Cloud Foundry. 
+Helion Development Platform treats deployment of .NET applications in the same way as Linux applications (such as Java or PHP appplications). .NET applications require a <a href="/helion/devplatform/1.1/als/user/deploy/buildpack/">buildpack</a> to specify the dependencies and <a href="/helion/devplatform/1.1/als/user/services/user-provided/">services</a> that can be bound to the application. .NET applications are deployed into a sandbox environment similar to Warden in Cloud Foundry. 
 
 ## Supported .NET Application Types {#apps}
 
-HDP supports HTTP-based applications, including ASP.NET and WCF. Design considerations for Windows DEA applications are the same as for <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">CloudFoundry</a> applications. 
+Helion Development Platform supports HTTP-based applications, including ASP.NET and WCF. Design considerations for Windows DEA applications are the same as for <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">CloudFoundry</a> applications. 
 
-HDP provides an integrated IIS buildpack which supports the following technologies:
+Helion Development Platform provides an integrated IIS buildpack which supports the following technologies:
 
 * IIS 8
 * .NET 2.0-4.5.2
@@ -74,11 +74,11 @@ HDP provides an integrated IIS buildpack which supports the following technologi
 
 ## SQL Server Support {#sql}
 
-HDP 1.2 supports SQL Server Express 2012 and SQL Server Express 2014. SQL Server support is enabled by creating a SQL Server service using the SQL Server broker. Each application that binds to the SQL Server service will create a new database and service credentials. The service credentials get created and can be accessed either from the <code>web.config</code> file, or programatically through the <code>VCAP_SERVICES</code> environment variable.
+Helion Development Platform 1.2 supports SQL Server Express 2012 and SQL Server Express 2014. SQL Server support is enabled by creating a SQL Server service using the SQL Server broker. Each application that binds to the SQL Server service will create a new database and service credentials. The service credentials get created and can be accessed either from the <code>web.config</code> file, or programatically through the <code>VCAP_SERVICES</code> environment variable.
 
 ## Windows Tools {#tools}
 
-In order to run .NET framework applications, HDP requires that Windows DEA nodes be deployed. The tools used to create and deploy Windows DEA nodes, and to deploy .NET Framework applications, include the following:
+In order to run .NET framework applications, Helion Development Platform requires that Windows DEA nodes be deployed. The tools used to create and deploy Windows DEA nodes, and to deploy .NET Framework applications, include the following:
 
 ### Management tool set:
 
@@ -94,7 +94,7 @@ For more information about downloading and using these tools, see <a href="/heli
 
 ## Process {#process}
 
-At a high level, running .NET applications in HDP involves the following process:
+At a high level, running .NET applications in Helion Development Platform involves the following process:
 
 1. Download the <a href="https://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Helion client tool</a>.
 2. Install the Cloud Foundry Explorer and Cloud Foundry MSBuild tasks in Visual Studio.
@@ -104,7 +104,7 @@ At a high level, running .NET applications in HDP involves the following process
 
 ## Software Requirements {#softwarerequirements}
 
-Windows support in HDP has software requirements including the following:
+Windows support in Helion Development Platform has software requirements including the following:
 
 * An HP Helion Public Cloud account.
 * Any edition of Visual Studio 2013, including the Community (free) edition.
@@ -112,11 +112,11 @@ Windows support in HDP has software requirements including the following:
 
 ## Windows Instance Licensing {#licensing}
 
-You will need to provide your own Windows licensing for use with Windows instances in HDP; Microsoft's licensing requires customers to create their own images using their own licensed software. During image creation, temporary instances of Windows Server are created, so a volume license is required. 
+You will need to provide your own Windows licensing for use with Windows instances in Helion Development Platform; Microsoft's licensing requires customers to create their own images using their own licensed software. During image creation, temporary instances of Windows Server are created, so a volume license is required. 
 
 Windows Server licensing for Windows DEAs and Windows SQL Server instances consists of two components:
 
-* Licensing agreements. These are paid contracts with Microsoft, which include the legal right to run a software package and support agreements. Since HOS is a <a href="http://www.windowsservercatalog.com/svvp.aspx">certified SSVP provider</a>, customers can use Microsoft support with their own licensing agreements. 
+* Licensing agreements. These are paid contracts with Microsoft, which include the legal right to run a software package and support agreements. Since Helion OpenStack is a <a href="http://www.windowsservercatalog.com/svvp.aspx">certified SSVP provider</a>, customers can use Microsoft support with their own licensing agreements. 
 * Activation. Your Windows instances can be activated by using your KVM server, or by connecting to the Windows instance directly using Remote Desktop, and providing product keys manually.
 
 For more information on licensing Windows Server, see <a href="https://www.microsoft.com/en-us/licensing/product-licensing/windows-server-2012-r2.aspx">Windows Server 2012 Volume Licensing</a>, or contact your Microsoft licensing representative.
