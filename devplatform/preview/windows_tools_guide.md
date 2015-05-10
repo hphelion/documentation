@@ -53,6 +53,8 @@ Follow these steps to install the Cloud Foundry Explorer:
 2. Search for the **Cloud Foundry Explorer** extension.
 3. Install the extension from the search results.
 
+The Cloud Foundry Explorer page on Visual Studio Gallery can be found <a href="https://visualstudiogallery.msdn.microsoft.com/4cad4d95-099c-449e-9d90-7d4da5c4a0c0?SRC=Home">here</a>.
+
 #### The Cloud Foundry Explorer Window
 
 The explorer can be opened in Visual Studio under View -&gt;Other Windows -&gt;Cloud Foundry Explorer. The explorer window shows endpoints that you have successfully connected to:
@@ -131,6 +133,8 @@ The MSBuild tasks can be installed using NuGet:
 * Search for **Cloud Foundry MSBuild Tasks**
 * Click **Install**
  
+The MSBuild Tasks NuGet package can be found <a href="http://www.nuget.org/packages/cf-msbuild-tasks/">here</a>.
+
 For more information on MSBuild, see <a href="https://msdn.microsoft.com/en-us/library/dd393574.aspx">MSBuild on MSDN</a>.
 
 ### Cloud Foundry .NET SDK {#sdk}
@@ -143,7 +147,7 @@ The Cloud Foundry .NET SDK can be installed using NuGet:
 * Search for **Cloud Foundry .NET SDK**
 * Click **Install**
 
-
+The CloudFoundry NuGet package can be found <a href="http://www.nuget.org/packages/cf-dotnet-sdk/">here</a>.
 
 ## Setup Tools
 
