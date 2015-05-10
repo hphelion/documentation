@@ -1,4 +1,5 @@
-hpasscli
+ HDP
+ HOS
 CloudStack
 cloudstack
 [bB]are [mM]etal
