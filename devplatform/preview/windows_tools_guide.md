@@ -23,7 +23,7 @@ authors: Patrick F
 
 <span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 
-<span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Deveoper Preview</span>
+<span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Developer Preview</span>
 
 Helion Development Platform 1.2 adds tooling support for deploying Windows images and .NET Framework HTTP-based applications. This document describes how to install and use these tools.
 
@@ -37,7 +37,6 @@ This document contains the following sections:
 * [Cloud Foundry .NET SDK](#sdk)
 
 ### Setup tools:
-* [ALS Cluster Management (cf-mgmt)](#ALS)
 * [Helion client (helion)](#helion)
  
 ## .NET tools
@@ -49,15 +48,15 @@ This Visual Studio 2013 extension is used to deploy and manage .NET applications
 
 Follow these steps to install the Cloud Foundry Explorer:
 
-1. Open the **Tools-&gt;Extensions and Updates** panel in Visual Studio 2013.
-2. Search for the **Cloud Foundry Explorer** extension in the **Online** section.
+1. Select **Tools-&gt;Extensions and Updates** in Visual Studio 2013.
+2. In the **Extensions and Updates** panel, search for the **Cloud Foundry Explorer** extension in the **Online** section.
 3. Install the extension from the search results.
 
 The Cloud Foundry Explorer page on Visual Studio Gallery can be found <a href="https://visualstudiogallery.msdn.microsoft.com/4cad4d95-099c-449e-9d90-7d4da5c4a0c0?SRC=Home">here</a>.
 
 #### The Cloud Foundry Explorer Window
 
-The explorer can be opened in Visual Studio under View -&gt;Other Windows -&gt;Cloud Foundry Explorer. The explorer window shows endpoints that you have successfully connected to:
+The explorer can be opened in Visual Studio under **View -&gt;Other Windows -&gt;Cloud Foundry Explorer**. The explorer window shows endpoints that you have successfully connected to:
 
 <img src="media/windows_cf_explorer.PNG" />
 

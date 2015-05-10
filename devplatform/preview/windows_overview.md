@@ -104,8 +104,8 @@ At a high level, running .NET applications in Helion Development Platform involv
 
 Windows support in Helion Development Platform has software requirements including the following:
 
-* An HP Helion Public Cloud account.
-* If applications are to be deployed and managed from the development environmet, any edition of Visual Studio 2013, including the Community (free) edition, is needed.
+* An HP Helion Public Cloud account. To try HP Helion Public Cloud, see <a href="http://www.hpcloud.com/cloud-credit">HP Cloud Signup</a>.
+* If applications are to be deployed and managed from the development environment, any edition of Visual Studio 2013, including the Community (free) edition, is needed.
 * The <a href="/helion/devplatform/preview/tools_guide/#cloudfoundryexplorer">Cloud Foundry  Visual Studio extension</a>. This extension can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
 
 ## Next Steps {#nextsteps}

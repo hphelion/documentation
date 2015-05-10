@@ -23,7 +23,7 @@ authors: Patrick F
 
 <span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 
-<span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Deveoper Preview</span>
+<span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Developer Preview</span>
 
 This tutorial demonstrates how to deploy an application to a Windows Server instance running in an HP Helion OpenStack environment using the toolset provided. For the purposes of this tutorial, you'll deploy Microsoft's Contoso University sample application.
 
@@ -66,7 +66,7 @@ This tutorial requires the following software components:
 	
 	<img src="media/windows_deploy_contextmenu.png">
  
-7. In the **Cloud Foundry Publish Profile**, enter the following values and click **Publish**:
+7. In the **Cloud Foundry Publish Profile** dialog, enter the following values and click **Publish**:
 	* **Organization and Space:** Select from one of the provided options.
 	* **Name:** The default value is the name of the application.
 	* **Stack:** Leave as <code>win2012r2</code>
@@ -76,19 +76,19 @@ This tutorial requires the following software components:
 	* **Services**: Enter the services to bind to the application, in the form <code>Name, service type, quota</code>, with separate services separated by semicolons. Example: <code>ContosoUniversity-db,mssql2014,default</code>
 	
 		 **Note:** If you are adding a SQL server service, ensure that the name matches the value set in the config file. Example: <code>ContosoUniversity-db,mssql2014,free</code>  
-	* **Build Locally**: Check to build the application locally before deployment, rather than building on the server.
+	* **Build Locally**: Check to test the build by building the application locally before deployment.
 	* **Configuration**: Set the build configuration (e.g. Debug). This is only available if the application is built on the server.
 	* **Platform**: Set the target CPU platform (e.g. Any CPU). This is only available if the application is built on the server.
 
 	<img src="media/windows_deploy_cf.png" /> 
 
-7. In the **Login Wizard** dialog, enter the URL for the ALS cluster, and a user and password with sufficient privileges. Check the **Skip SSL Validation** checkbox if your Helion OpenStack installation uses self-signed certificates:
+7. In the **Login Wizard** dialog, enter the URL for the ALS cluster, and a user and password with sufficient privileges. Check the **Skip SSL Validation** checkbox if your Helion OpenStack installation uses self-signed certificates (as it does in HP Helion Public Cloud):
 	<img src="media/windows_publish_credentials.png" />
  
 17. Open or refresh Cloud Foundry Explorer. You can open Cloud Foundry Explorer under **View-&gt;Other Windows-&gt;Cloud Foundry Explorer**.
  
 	<img src="media/windows_refresh.png" />
-18. Right click the "Contoso" application and select **Browse**:
+18. Right click the "Contoso" application and select **View in Browser**:
  
 	<img src="media/windows_viewbrowser.png" />
 
@@ -96,7 +96,7 @@ That's it! You are ready to use your application.
 
 ## Deploy the sample application from the command line
 
-If you are deploying your application from the command line, you do not need Visual Studio to deploy your application. You can deploy it using the command line using the Helion client tool. For more information about using the Helion client tool with Windows applications, see <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a>.
+If you are deploying your application from the command line, you do not need Visual Studio to deploy your application. You can deploy it using the Helion client tool. For more information about using the Helion client tool with Windows applications, see <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a>.
 
 
 One advantage of using the command line is that you can use Mac or Linux as well as Windows to deploy your application. Typically, a push is run with the tool in the solution directory, the client tool uploads the application, and the application is built on the server.
@@ -132,6 +132,8 @@ One advantage of using the command line is that you can use Mac or Linux as well
 
 2. Use the <a href="/helion/devplatform/preview/tools_guide/#cloudfoundryexplorer">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
 	
+		helion target <cluster URL>
+		helion login
 		helion push --stack win2012r2 -n
 
 3. When the push completes, the command line will show the application URL (e.g. ContosoUniversity.xx.xx.xx.xx.xip.io).

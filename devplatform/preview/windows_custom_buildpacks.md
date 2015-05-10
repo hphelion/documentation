@@ -29,7 +29,7 @@ A **Buildpack** is a collection of scripts that specify what frameworks and runt
 
 When you build and deploy a Windows application, the following steps take place:
 
-1. You will be prompted for connection data (Endpoint, login, and password), and whether to ignore SSL errors. You should check "Ignore SSL errors" in the dialog if your deployment environment uses self-signed SSL certificates.
+1. You will be prompted for connection data (Endpoint, login, and password), and whether to ignore SSL errors. You should check "Ignore SSL errors" in the dialog if your deployment environment uses self-signed SSL certificates (such as HP Helion Public Cloud).
 
 	<img src="media/windows_publish_credentials.png" />
 2. Application settings are collected from <code>manifest.yml</code>.
