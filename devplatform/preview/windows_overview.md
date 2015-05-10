@@ -40,8 +40,8 @@ This document contains the following sections:
 Helion Development Platform version 1.2 adds tools for creating instances of Windows Server 2012 R2 to a Helion OpenStack environment, and Visual Studio components for deploying .NET HTTP-based applications to those server instances. Benefits of Windows/.NET support include:
 
 * Organizations can run their .NET server applications in the same Helion OpenStack environment as their Linux applications.
-* A consistent tooling experience for deploying Windows and Linux applications: The same <a href=/helion/devplatform/1.1/als/client/download">application deployment and cluster management tools</a> can be used for both Windows and Linux deployments.
-* Additional developer tools, including an SDK for programmatic access to services, and a <a href="/helion/devplatform/preview/deployingnet">Visual Studio extension</a> for deploying and managing applications.
+* A consistent tooling experience for deploying Windows and Linux applications: The same <a href="/helion/devplatform/preview/tools_guide#helion">application deployment and cluster management tools</a> can be used for both Windows and Linux deployments.
+* Additional developer tools, including an SDK for programmatic access to services, and a <a href="/helion/devplatform/preview/tools_guide#cloudfoundryexplorer">Visual Studio extension</a> for deploying and managing applications.
 * Feature-rich application sandboxing, including memory and CPU management, and application isolation. This allows applications to coexist within a single ALS cluster, saving the overhead of running a separate operating system for each application.
 * Support for creating Windows instances that include Microsoft SQL Server Express. 
 * Integrated buildpack support for building applications with dependencies and services.
@@ -54,7 +54,7 @@ For the 1.2 release, we support creating the following types of instances:
 * Windows Server 2012 R2 with SQL Server 2012 Express
 * Windows Server 2012 R2 with SQL Server 2014 Express
 
-Helion Development Platform treats deployment of .NET applications in the same way as Linux applications (such as Java or PHP appplications). .NET applications require a <a href="/helion/devplatform/1.1/als/user/deploy/buildpack/">buildpack</a> to specify the dependencies and <a href="/helion/devplatform/1.1/als/user/services/user-provided/">services</a> that can be bound to the application. .NET applications are deployed into a sandbox environment similar to Warden in Cloud Foundry. 
+Helion Development Platform treats deployment of .NET applications in the same way as Linux applications (such as Java or PHP appplications). .NET applications require a <a href="/helion/devplatform/preview/buildpack/">buildpack</a> to specify the dependencies and <a href="/helion/devplatform/preview/adding_services/">services</a> that can be bound to the application. .NET applications are deployed into a sandbox environment similar to Warden in Cloud Foundry. 
 
 ## Supported .NET Application Types {#apps}
 
@@ -94,7 +94,7 @@ For more information about downloading and using these tools, see <a href="/heli
 
 At a high level, running .NET applications in Helion Development Platform involves the following process:
 
-1. Download the <a href="/helion/devplatform/1.1/als/client/download">Helion client tool</a>.
+1. Download the <a href="/helion/devplatform/preview/tools_guide/#helion">Helion client tool</a>.
 2. Install the Cloud Foundry Explorer and Cloud Foundry MSBuild tasks in Visual Studio.
 3. Optionally, install the Cloud Foundry .NET SDK (for programmatic access to services.)
 4. Build your application.
@@ -106,7 +106,7 @@ Windows support in Helion Development Platform has software requirements includi
 
 * An HP Helion Public Cloud account.
 * Any edition of Visual Studio 2013, including the Community (free) edition.
-* The <a href="/helion/devplatform/preview/deployingnet">Cloud Foundry Explorer Visual Studio extension</a>. This extension can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
+* The <a href="/helion/devplatform/preview/tools_guide/#cloudfoundryexplorer">Cloud Foundry Explorer Visual Studio extension</a>. This extension can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
 
 ## Windows Instance Licensing {#licensing}
 

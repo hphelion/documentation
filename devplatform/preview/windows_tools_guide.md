@@ -163,7 +163,13 @@ To deploy a .NET application to a Windows instance, use the following syntax fro
 
 For more information on the Helion client, see <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/user/reference/client-ref">Application Lifecycle Service Client Command Reference</a>
 
-The Helion client tool can be downloaded from the following location: <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/download/">Download</a>
+The Helion client tool can be downloaded from the following locations: 
+
+<ul>
+<li><a href="http://clients.als.hpcloud.com/helion-1.2.0-win32-ix86.zip">Windows&#174;</a></li>
+<li><a href="http://clients.als.hpcloud.com/helion-1.2.0-linux-glibc2.3-x86_64.zip">Linux x64</a></li>
+<li><a href="http://clients.als.hpcloud.com/helion-1.2.0-macosx10.5-i386-x86_64.zip">Mac OS X&#174;</a></li>
+</ul>
 
 ---
 <div align="center"><a href="/helion/devplatform/preview/">Windows Overview</a> </div>
