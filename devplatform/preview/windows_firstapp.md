@@ -21,6 +21,8 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Deploying your first .NET Application 
 
+*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*
+
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Deveoper Preview</span>
 
 This tutorial demonstrates how to deploy an application to a Windows Server instance running in an HP Helion OpenStack environment using the toolset provided. For the purposes of this tutorial, you'll deploy the Microsoft's Contoso University sample application.
@@ -44,7 +46,7 @@ This tutorial requires the following software components:
 				"Data Source=(LocalDb)\v11.0;
 				Initial Catalog=ContosoUniversity2;
 				Integrated Security=SSPI;" 
-			providerName="System.Data.SqlClient" >
+			providerName="System.Data.SqlClient" />
 	to:
 
 		<add name="SchoolContext" 
@@ -55,7 +57,7 @@ This tutorial requires the following software components:
 				User Id={ContosoUniversity-db#username};
 				Password={ContosoUniversity-db#password};
 				MultipleActiveResultSets=true;" 
-			providerName="System.Data.SqlClient" >
+			providerName="System.Data.SqlClient" />
 5. Save <code>web.config</code>.
 6. Build the project locally to verify that it builds correctly, and all NuGet packages successfully install. Once the project builds successfully, go to the next step.
 
@@ -107,7 +109,7 @@ One advantage of using the command line is that you can use Mac or Linux as well
 				"Data Source=(LocalDb)\v11.0;
 				Initial Catalog=ContosoUniversity2;
 				Integrated Security=SSPI;" 
-			providerName="System.Data.SqlClient" >
+			providerName="System.Data.SqlClient" />
 	to:
 
 		<add name="SchoolContext" 
@@ -118,7 +120,7 @@ One advantage of using the command line is that you can use Mac or Linux as well
 				User Id={ContosoUniversity-db#username};
 				Password={ContosoUniversity-db#password};
 				MultipleActiveResultSets=true;" 
-			providerName="System.Data.SqlClient" >
+			providerName="System.Data.SqlClient" />
 1. Create a new file called <code>manifest.yml</code> in the same directory as <code>web.config</code>. This is the application manifest file, which the deployment tool will use to determine what to do with the application. Give the file the following contents:
 		
 		applications:
@@ -141,5 +143,3 @@ One advantage of using the command line is that you can use Mac or Linux as well
 
 <div align="center"> Deploying your first .NET Application | <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a> </div>
 <div align="center"><a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/preview/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
-
-<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
