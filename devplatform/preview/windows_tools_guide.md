@@ -159,6 +159,8 @@ This tool is used to deploy applications from the command line. The same tool is
 
 To deploy a .NET application to a Windows instance, use the following syntax from the same folder as your <code>manifest.yml</code> file:
 
+		helion target <cluster URL>
+		helion login
 		helion push --stack win2012r2 
 
 For more information on the Helion client, see <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/user/reference/client-ref">Application Lifecycle Service Client Command Reference</a>
