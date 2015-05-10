@@ -21,7 +21,7 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Windows and .NET Tools Guide 
 
-*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*
+<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Deveoper Preview</span>
 
@@ -43,13 +43,13 @@ This document contains the following sections:
 ## .NET tools
 ### Cloud Foundry Explorer {#cloudfoundryexplorer}
 
-This Visual Studio 2013 plugin is used to deploy and manage .NET applications. The plugin can be used in any edition of VS 2013, including the Community (free) edition.
+This Visual Studio 2013 extension is used to deploy and manage .NET applications. The extension can be used in any edition of VS 2013, including the Community (free) edition.
 
 #### Installation
 
 Follow these steps to install the Cloud Foundry Explorer:
 
-1. Open the *Extensions and Updates* panel in Visual Studio 2013.
+1. Open the **Tools-&gt;Extensions and Updates** panel in Visual Studio 2013.
 2. Search for the **Cloud Foundry Explorer** extension in the **Online** section.
 3. Install the extension from the search results.
 
@@ -139,7 +139,7 @@ For more information on MSBuild, see <a href="https://msdn.microsoft.com/en-us/l
 
 ### Cloud Foundry .NET SDK {#sdk}
 
-The SDK is used for programmatic access to controlling Windows images and .NET applications. Using the SDK, developers can create build and deployment automation.
+The SDK is used for programmatic access to controlling Windows images and .NET applications. Using the SDK, developers can create build and deployment automation and tools that interact with the ALS APIs.
 
 The Cloud Foundry .NET SDK can be installed using NuGet:
 
@@ -177,7 +177,7 @@ The Helion client tool can be downloaded from the following locations:
 <div align="center"> <a href="/helion/devplatform/preview/deployingnet/">Deploying your first .NET Application</a> | Windows and .NET Tools Guide </div>
 <div align="center"><a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/preview/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
 
-<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
+
 
 
 

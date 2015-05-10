@@ -21,6 +21,8 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Windows Overview
 
+<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
+
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Developer Preview</span>
 
 Helion Development Platform  version 1.2 includes a full end-to-end solution for creating and deploying .NET Framework applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of Helion Development Platform. HTTP-based .NET applications that follow the <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry application model</a> are a great fit for this feature support.
@@ -94,30 +96,17 @@ For more information about downloading and using these tools, see <a href="/heli
 
 At a high level, running .NET applications in Helion Development Platform involves the following process:
 
-1. Download the <a href="/helion/devplatform/preview/tools_guide/#helion">Helion client tool</a>.
-2. Install the Cloud Foundry Explorer and Cloud Foundry MSBuild tasks in Visual Studio.
-3. Optionally, install the Cloud Foundry .NET SDK (for programmatic access to services.)
-4. Build your application.
-5. Deploy your application using either Visual Studio or the Helion client.
+1. Install the Cloud Foundry Explorer in Visual Studio for deploying and managing applications. Alternately, the Cloud Foundry MSBuild tasks or Helion Client can be used for deployment instead.
+2. Build your application.
+3. Deploy your application using either Visual Studio, the MSBuild tasks, or the Helion client.
 
 ## Software Requirements {#softwarerequirements}
 
 Windows support in Helion Development Platform has software requirements including the following:
 
 * An HP Helion Public Cloud account.
-* Any edition of Visual Studio 2013, including the Community (free) edition.
-* The <a href="/helion/devplatform/preview/tools_guide/#cloudfoundryexplorer">Cloud Foundry Explorer Visual Studio extension</a>. This extension can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
-
-## Windows Instance Licensing {#licensing}
-
-You will need to provide your own Windows licensing for use with Windows instances in Helion Development Platform; Microsoft's licensing requires customers to create their own images using their own licensed software. During image creation, temporary instances of Windows Server are created, so a volume license is required. 
-
-Windows Server licensing for Windows DEAs and Windows SQL Server instances consists of two components:
-
-* Licensing agreements. These are paid contracts with Microsoft, which include the legal right to run a software package and support agreements. Since Helion OpenStack is a <a href="http://www.windowsservercatalog.com/svvp.aspx">certified SSVP provider</a>, customers can use Microsoft support with their own licensing agreements. 
-* Activation. Your Windows instances can be activated by using your KVM server, or by connecting to the Windows instance directly using Remote Desktop, and providing product keys manually.
-
-For more information on licensing Windows Server, see <a href="https://www.microsoft.com/en-us/licensing/product-licensing/windows-server-2012-r2.aspx">Windows Server 2012 Volume Licensing</a>, or contact your Microsoft licensing representative.
+* If applications are to be deployed and managed from the development environmet, any edition of Visual Studio 2013, including the Community (free) edition, is needed.
+* The <a href="/helion/devplatform/preview/tools_guide/#cloudfoundryexplorer">Cloud Foundry  Visual Studio extension</a>. This extension can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
 
 ## Next Steps {#nextsteps}
 
@@ -126,7 +115,7 @@ For more information on licensing Windows Server, see <a href="https://www.micro
 * <a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> 
 * <a href="/helion/devplatform/preview/buildpack/">Deploying Windows Applications with the IIS Buildpack</a>
 
-<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
+
 
 
 
