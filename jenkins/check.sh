@@ -25,6 +25,7 @@ do
 if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  -H \?\? )" ]];
 					then
 						echo $i
+						echo "1" > checktmp
 					fi
 done
  
