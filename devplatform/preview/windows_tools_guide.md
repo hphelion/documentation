@@ -167,6 +167,8 @@ The Helion client tool can be downloaded from the following location: <a href="h
 <div align="center"> <a href="/helion/devplatform/preview/deployingnet/">Deploying your first .NET Application</a> | Windows and .NET Tools Guide </div>
 <div align="center"><a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/preview/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
 
+<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
+
 
 
 

@@ -21,8 +21,6 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Windows Overview
 
-*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*
-
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Developer Preview</span>
 
 Helion Development Platform  version 1.2 includes a full end-to-end solution for creating and deploying .NET Framework applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of Helion Development Platform. HTTP-based .NET applications that follow the <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry application model</a> are a great fit for this feature support.
@@ -127,6 +125,8 @@ For more information on licensing Windows Server, see <a href="https://www.micro
 * <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a>
 * <a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> 
 * <a href="/helion/devplatform/preview/buildpack/">Deploying Windows Applications with the IIS Buildpack</a>
+
+<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 
 
 

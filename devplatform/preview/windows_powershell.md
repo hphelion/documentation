@@ -21,4 +21,4 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Deploying Windows Applications with PowerShell
 
-*Windows and PowerShell are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*
+<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>

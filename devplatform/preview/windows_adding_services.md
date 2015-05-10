@@ -21,8 +21,6 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Adding Services to Windows Applications 
 
-*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*
-
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Developer Preview</span>
 
 Windows applications can be bound to services running in your deployment environment such as Redis or MySQL. To do so, you need to have a NuGet package that can communicate with those services. 
@@ -115,4 +113,5 @@ The following tutorial demonstrates how to add a Redis collection to your .NET a
 <div align="center"> <a href="/helion/devplatform/preview/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a> </div>
 <div align="center">Adding Services to a Windows Application | <a href="/helion/devplatform/preview/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
 
+<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 
