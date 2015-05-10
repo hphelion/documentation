@@ -29,7 +29,7 @@ if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*--
 					fi
 done
  
-  
+cat checktmp  
 #Set Internal Field Separator to % (to preserve white space at the beginning and end of badstrings)
 IFS='%'
 
