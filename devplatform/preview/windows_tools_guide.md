@@ -50,7 +50,7 @@ This Visual Studio 2013 plugin is used to deploy and manage .NET applications. T
 Follow these steps to install the Cloud Foundry Explorer:
 
 1. Open the *Extensions and Updates* panel in Visual Studio 2013.
-2. Search for the **Cloud Foundry Explorer** extension.
+2. Search for the **Cloud Foundry Explorer** extension in the **Online** section.
 3. Install the extension from the search results.
 
 #### The Cloud Foundry Explorer Window
@@ -128,7 +128,7 @@ These MSBuild processes allow you to build and deploy .NET applications to Cloud
 The MSBuild tasks can be installed using NuGet:
 
 * Right-click the project in **Solution Explorer** and select **Manage NuGet Packages**.
-* Search for **Cloud Foundry MSBuild Tasks**
+* Search for **Cloud Foundry MSBuild Tasks** in the **Online** section
 * Click **Install**
  
 For more information on MSBuild, see <a href="https://msdn.microsoft.com/en-us/library/dd393574.aspx">MSBuild on MSDN</a>.
