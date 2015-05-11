@@ -136,6 +136,59 @@ For out-of-band reset and power-on/power-off capabilities, HP360 or HP380 server
 
 For the controller, a USB interface is required for backup and restore operations, and for software installation if a DVD is not available.
 
+## Network Requirements {#net}
+
+The networking environment of the Titanium Server incorporates up to five types of network: 
+
+* the internal management network
+* the OAM network
+* one or more provider networks
+* an optional infrastructure network
+* an optional board management network. 
+
+Operational requirements for each network are described in the following sections.
+
+### Internal Management Network
+The internal management network must be implemented as a single, dedicated, Layer 2 broadcast domain for the exclusive use of each Titanium Server cluster. Sharing of this network by more than one Titanium Server cluster is not a supported configuration.
+
+During the Titanium Server software installation process, several network services such as BOOTP, DHCP, and PXE, are expected to run over the internal management network. These services are used to bring up the different hosts to an operational state. Therefore, it is mandatory that this network be operational and available in advance, to ensure a successful installation.
+
+On each host, the internal management network can be implemented using a 1Gb or 10 Gb Ethernet port. In either
+case, requirements for this port are:
+
+* must be capable of PXE-booting
+* can be used by the motherboard as a primary boot device
+
+### Infrastructure Network
+
+This is an optional network. 
+
+As with the internal management network, the infrastructure network must be implemented as a single, dedicated, Layer 2 broadcast domain for the exclusive use of each Titanium Server cluster.
+
+Sharing of this network by more than one Titanium Server cluster is not a supported configuration.
+
+The infrastructure network can be implemented as a 1Gb or 10 Gb Ethernet network. In its absence, all infrastructure traffic is carried over the internal management network.
+
+### OAM Network
+
+You should ensure that the following services are available on the OAM Network:
+
+* DNS Service - Needed to facilitate the name resolution of servers reachable on the OAM Network.
+
+	The Titanium Server can operate without a configured DNS service. However, a DNS service should be in place to ensure that links to external references in the current and future versions of the web administration interface work as expected.
+
+* NTP Service - The Network Time Protocol (NTP) can be optionally used by the Titanium Server controller nodes to synchronize their local clocks with a reliable external time reference. However, it is strongly suggested that this service be available, among other things, to ensure that system-wide log reports present a unified view of the day-to-day
+operations.
+
+The Titanium Server compute nodes always use the controller nodes as the de-facto time server for the entire Titanium Server cluster.
+
+### Provider Network
+
+There are no specific requirements for network services to be available on the provider network. However, you must ensure that all network services required by the guests running in the compute nodes are available. For configuration purposes, the compute nodes themselves are entirely served by the services provided by the controller nodes over the internal management network.
+
+### Board Management Network
+
+The board management network is implemented on the internal L2 switch using a dedicated VLAN. Refer to Reference Logical Architecture on page 12 for further information on the internal L2 switch, and to The Board Management Network on page 38 for network planning details.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
