@@ -21,9 +21,11 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Adding Services to Windows Applications 
 
+<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
+
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Developer Preview</span>
 
-Windows applications can be bound to services running in your deployment environment such as Redis or MySQL. To do so, you need to have a NuGet package that can communicate with those services. 
+Windows applications can be bound to services running in your deployment environment, such as Redis or MySQL. To do so, you need to have a NuGet package that can communicate with those services. 
 
 The following tutorial demonstrates how to add a Redis collection to your .NET application.
 
@@ -35,7 +37,7 @@ The following tutorial demonstrates how to add a Redis collection to your .NET a
 
 	<img src="media/windows_services.png" />
 2. Deploy your application.
-3. Once the application gets successfully created, your VCAP_Services file will have a node such as the following:
+3. Once the application gets successfully created, your VCAP_SERVICES file will have a node such as the following:
 
 		"redis-2.8": [
 	    {
@@ -58,10 +60,10 @@ The following tutorial demonstrates how to add a Redis collection to your .NET a
 	      }
 	    }
 4. Add dependencies.
-	1. Add a JSON package. In this case, you'll install **JSON.NET**. Open the **Manage NuGet Packages** dialog and search for **JSON.NET**. Click **Install**. 
+	1. Add a JSON package. In this case, you'll install **JSON.NET**. Open the **Manage NuGet Packages** dialog (under **Tools-&gt;NuGet Package Manager-&gt;Manage NuGet Packages for Solution...**), select the **Online** node, and search for **JSON.NET**. Click **Install**. 
 	
 		<img src="media/windows_nuget_json.png" />
-	2. Add a Redis client. In this case, you'll install **StackExchange.Redis**.Open the **Manage NuGet Packages** dialog and search for **StackExchange.Redis**. Click **Install**.
+	2. Add a Redis client. In this case, you'll install **StackExchange.Redis**. Open the **Manage NuGet Packages** dialog, , select the **Online** node, and search for **StackExchange.Redis**. Click **Install**.
 	
 		<img src="media/windows_nuget_redis.png" />
 5. To verify that the services are working, create a new MVC5 View (CSHTML) page with the following contents:
@@ -113,5 +115,4 @@ The following tutorial demonstrates how to add a Redis collection to your .NET a
 <div align="center"> <a href="/helion/devplatform/preview/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a> </div>
 <div align="center">Adding Services to a Windows Application | <a href="/helion/devplatform/preview/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
 
-<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 

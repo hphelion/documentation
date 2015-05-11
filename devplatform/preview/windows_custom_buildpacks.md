@@ -21,13 +21,15 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Deploying Windows Applications with the IIS Buildpack
 
+<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
+
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Developer Preview</span>
 
 A **Buildpack** is a collection of scripts that specify what frameworks and runtimes are to be deployed with an application. 
 
 When you build and deploy a Windows application, the following steps take place:
 
-1. You will be prompted for connection data (Endpoint, login, and password), and whether to ignore SSL errors. You should check "Ignore SSL errors" in the dialog if your deployment environment uses self-signed SSL certificates.
+1. You will be prompted for connection data (Endpoint, login, and password), and whether to ignore SSL errors. You should check "Ignore SSL errors" in the dialog if your deployment environment uses self-signed SSL certificates (such as HP Helion Public Cloud).
 
 	<img src="media/windows_publish_credentials.png" />
 2. Application settings are collected from <code>manifest.yml</code>.
@@ -56,4 +58,3 @@ For more information, please refer to the <a href="https://github.com/hpcloud/cf
 <div align="center"> <a href="/helion/devplatform/preview/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a> </div>
 <div align="center"><a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> | Deploying Windows Applications with the IIS Buildpack</div>
 
-<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
