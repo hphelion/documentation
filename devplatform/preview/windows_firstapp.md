@@ -130,7 +130,7 @@ One advantage of using the command line is that you can use Mac or Linux as well
     		${name}-db:
       		type: mssql-2014
 
-2. Use the <a href="/helion/devplatform/preview/tools_guide/#cloudfoundryexplorer">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
+2. Use the <a href="/helion/devplatform/preview/tools_guide/#helion">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
 	
 		helion target <cluster URL>
 		helion login
