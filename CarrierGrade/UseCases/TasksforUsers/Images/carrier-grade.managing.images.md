@@ -31,7 +31,7 @@ You can use the dashboards to create and configure private virtual machine image
 
 How you interact with these images depends upon your user type, either an administrative user (admin) or a non-administrative user (user). 
 
-To work with images [launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+To work with images [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 * For non-admin users, click **Project** > **Compute** > **Images**. The volumes in the current project are listed.
 * For admin users, click **Admin** > **Images**. The volumes in the current domain are listed.

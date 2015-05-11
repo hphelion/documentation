@@ -27,7 +27,7 @@ You can view the status of a volume in the Volumes tab of the dashboard. The vol
 
 ### Attach a volume to an instance ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Project** dashboard, then the **System** panel, then the **Volumes** link.
 
@@ -45,7 +45,7 @@ The dashboard shows the volume is In-Use and lists the instance to which the vol
 
 ### Detach a volume from a VM instance ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Project** dashboard, then the **System** panel, then the **Volumes** link.
 

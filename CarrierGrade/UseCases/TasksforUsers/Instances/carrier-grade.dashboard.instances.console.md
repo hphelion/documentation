@@ -25,7 +25,7 @@ You can use the Helion dashboard to launch a console session to an instance.
 
 To launch a console:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Project** dashboard, then the **System** panel, then the **Instances** link.
 

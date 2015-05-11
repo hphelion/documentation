@@ -24,7 +24,7 @@ PageRefresh();
 You can use flavor extra specs or image properties to pin a guest NUMA node to a host NUMA node.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux region only.
+**Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
 By default, when instances are launched or migrated, the virtual NUMA nodes defined for the VMs are mapped to available host NUMA nodes. You can optionally designate a specific host NUMA node for a virtual NUMA node, using either a flavor extra specification (which takes the general form hw:specification), or an image property (which takes the general form hw_specification). This enables you to co-locate VM processes with AVS vSwitch processes for high-performance networking.

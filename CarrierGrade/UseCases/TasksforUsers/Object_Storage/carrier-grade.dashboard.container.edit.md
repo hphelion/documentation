@@ -25,7 +25,7 @@ An object is the basic storage entity that represents a file you store in the Op
 
 ### Edit an object in a container ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Project** dashboard, then the **System** panel, then the **Object Store** link.
 
@@ -43,7 +43,7 @@ An object is the basic storage entity that represents a file you store in the Op
 
 ### Delete an object from a container ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Project** dashboard, then the **System** panel, then the **Object Store** link.
 

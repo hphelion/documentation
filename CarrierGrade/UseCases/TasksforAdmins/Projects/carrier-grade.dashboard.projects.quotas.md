@@ -31,7 +31,7 @@ Default values are set on the [Default screen](/helion/commercial/carrier/dashbo
 
 ### Modify a quotas ### {#quotamod}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Identity** panel, then the **Projects** link.
 

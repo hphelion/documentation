@@ -24,7 +24,7 @@ PageRefresh();
 You can assign the Linux scheduler and priority for non-boot virtual CPUs using an extra specification.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux region only.
+**Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
 This extra specification applies to non-boot virtual CPUs, and is available only for flavors that define more than one virtual CPU. For the boot CPU, the Linux scheduler and priority are fixed to non-real-time, with a nice priority of 0.

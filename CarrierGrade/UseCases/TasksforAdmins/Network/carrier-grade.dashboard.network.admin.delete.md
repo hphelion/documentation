@@ -27,7 +27,7 @@ Instances must be disassociated from any network you want to delete.
 
 ### Create a provider network ### {#createnet}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Admin** dashboard, then the **System** panel, then the **Networks** link.
 

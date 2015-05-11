@@ -38,7 +38,7 @@ You can change the DNS servers defined for the Titanium Server at any time after
 
 You change these addresses using the web administration interface or the CLI.
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 	* Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.
 

@@ -25,7 +25,7 @@ You can request a specific page size for a VM by using a flavor with the require
 VM, or by defining an image with the required metadata property.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux region only.
+**Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
 Before you can request huge pages for a VM, you must define the available page sizes on the hosts in the cluster. 

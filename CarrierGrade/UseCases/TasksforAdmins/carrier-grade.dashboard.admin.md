@@ -64,7 +64,7 @@ For more information, see [Managing Host Aggregates](/helion/commercial/carrier/
 
 You can use the dashboards to manage instances created by other users. You can lock, pause, suspend a particular instance and you can also migrate an instance to a different host system.
 
-For more information, see [Managing Instances](/helion/commercial/carrier/dashboard/instances/).
+For more information, see [Managing Instances](/helion/commercial/carrier/dashboard/managing/instances/users/).
 
 ### Managing volumes
 
@@ -106,13 +106,13 @@ For more information, see [Enabling and Disabling a Router](/helion/commercial/c
 ### Managing resources
 
 <hr>
-**Note:** This feature applies to the Wind River Linux region only.
+**Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
 ### Managing inventory
 
 <hr>
-**Note:** This feature applies to the Wind River Linux region only.
+**Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
 ### Managing server groups
@@ -122,19 +122,19 @@ Server Groups is a mechanism to group virtual machines to which a common set of 
 As an admin, you can [create server groups](/helion/commercial/carrier/dashboard/managing/groups/create/).
 
 <hr>
-**Note:** This feature applies to the Wind River Linux region only.
+**Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
 ### Managing fault management
 
 <hr>
-**Note:** This feature applies to the Wind River Linux region only.
+**Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
 ### Managing system configuration
 
 <hr>
-**Note:** This feature applies to the Wind River Linux region only.
+**Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
 ### Managing project quotas ###

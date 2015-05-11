@@ -40,16 +40,29 @@ For information on the administrative tasks you can perform in the HP Helion Ope
 
 You can install 
 
-### Live Migration of Virtual Machines
+## Migrating Virtual Machines
 
 Live migration occurs when a virtual machine is transferred to execute on a different compute node with minimal disruption of the guest applications. This can happen automatically, or upon request by the system administrator.
 
-For more information, see [Live Migration of Virtual Machines](/helion/commercial/carrier/dashboard/managing/).
+For more information, see [Cold Migrate an Instance](/helion/commercial/carrier/dashboard/managing/instances/migrate/cold/) and [Live Migration of Virtual Machines](/helion/commercial/carrier/dashboard/managing/instances/migrate/live/).
+
+## Scaling Virtual Machine Resources
+
+You can scale the resources of individual instances up or down. Currently, the CPU resources for an instance are scalable.
+
+For more information, see [Scaling Virtual Machine Resources](/helion/commercial/carrier/dashboard/managing/instances/scaling/).
+
+## Virtual Machines and Carrier-Grade Availability
+
+The Wind River Linux servers in HP Helion OpenStack Carrier Grade provide a health monitoring mechanism that can be used to implement and support the deployment of guest applications in Carrier-Grade High Availability (HA) mode.
+
+<hr>
+**Note:** This feature applies to the Wind River Linux servers only.
+<hr>
+
+For more information, see [Virtual Machines and Carrier-Grade Availability](/helion/openstack/carrier/admin/carrier-grade-avail/).
 
 <!-- Hide for alpha
-- [Release Notes](/helion/openstack/carrier/release-notes/) 
-- [FAQs](/helion/openstack/carrier/faq/)  
-- [Technical overview](/helion/openstack/carrier/technical-overview/)
 - [Troubleshooting](/helion/openstack/carrier/services/troubleshooting/)
 
 ## Administering the HP Helion OpenStack Carrier Grade using Helion Lifecycle Management
