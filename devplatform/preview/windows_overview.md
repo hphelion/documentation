@@ -17,9 +17,9 @@ role9: Service Developer
 authors: Patrick F
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
-# HP Helion 1.2 Development Platform: Windows Overview
+# HP Helion 1.2 Development Platform Preview: Windows Overview
 
 <span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 
@@ -42,7 +42,7 @@ This document contains the following sections:
 Helion Development Platform version 1.2 adds tools for creating instances of Windows Server 2012 R2 to a Helion OpenStack environment, and Visual Studio components for deploying .NET HTTP-based applications to those server instances. Benefits of Windows/.NET support include:
 
 * Organizations can run their .NET server applications in the same Helion OpenStack environment as their Linux applications.
-* A consistent tooling experience for deploying Windows and Linux applications: The same <a href="/helion/devplatform/preview/tools_guide#helion">application deployment and cluster management tools</a> can be used for both Windows and Linux deployments.
+* A consistent tooling experience for deploying Windows and Linux applications: The same <a href="/helion/devplatform/preview/tools_guide#helion">application deployment tools</a> can be used for both Windows and Linux deployments.
 * Additional developer tools, including an SDK for programmatic access to services, and a <a href="/helion/devplatform/preview/tools_guide#cloudfoundryexplorer">Visual Studio extension</a> for deploying and managing applications.
 * Feature-rich application sandboxing, including memory and CPU management, and application isolation. This allows applications to coexist within a single ALS cluster, saving the overhead of running a separate operating system for each application.
 * Support for creating Windows instances that include Microsoft SQL Server Express. 

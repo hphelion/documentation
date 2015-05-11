@@ -17,9 +17,9 @@ role9: Service Developer
 authors: Patrick F
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
-# HP Helion 1.2 Development Platform: Windows and .NET Tools Guide 
+# HP Helion 1.2 Development Platform Preview: Windows and .NET Tools Guide 
 
 <span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 

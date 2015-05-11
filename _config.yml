@@ -355,7 +355,7 @@ navigation:
   - text: Services Overview
     url: /helion/openstack/1.1/services/overview/
   - text: Support Matrix
-    url: /helion/openstack/1.1/support-matrix-beta/ 		
+    url: /helion/openstack/1.1/support-matrix/ 		
   - text: Installation & Configuration Overview
     url: /helion/openstack/1.1/install-beta-overview/	
   - text: Installation Prerequisites
