@@ -31,7 +31,7 @@ You can obtain a ZIP containing source code for components where HP has an oblig
 
 
 
-<p style="font-size: small;"> <a href="/helion/"> &#171; Return to HP Helion  home </a> </p>
+<p style="font-size: small;"> <a href="/"> &#171; Return to HP Helion  home </a> </p>
 
 
 
