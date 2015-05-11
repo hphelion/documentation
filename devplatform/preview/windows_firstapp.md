@@ -17,9 +17,9 @@ role9: Service Developer
 authors: Patrick F
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
-# HP Helion 1.2 Development Platform: Deploying your first .NET Application 
+# HP Helion 1.2 Development Platform Preview: Deploying your first .NET Application 
 
 <span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 
