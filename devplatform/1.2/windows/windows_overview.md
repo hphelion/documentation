@@ -57,9 +57,9 @@ The Helion Development Platform treats deployment of .NET applications in the sa
 
 ## Supported .NET Application Types {#apps}
 
-HDP supports HTTP-based applications, including ASP.NET and WCF. Design considerations for Windows DEA applications are the same as for <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry</a> applications. 
+The Helion Development Platform supports HTTP-based applications, including ASP.NET and WCF. Design considerations for Windows DEA applications are the same as for <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry</a> applications. 
 
-HDP provides an integrated IIS buildpack which supports the following technologies:
+The Helion Development Platform also provides an integrated IIS buildpack which supports the following technologies:
 
 * IIS 8
 * .NET 2.0-4.5.2
@@ -71,15 +71,15 @@ HDP provides an integrated IIS buildpack which supports the following technologi
 
 ## SQL Server Support {#sql}
 
-HDP 1.2 supports SQL Server Express 2012 and SQL Server Express 2014. SQL Server support is enabled by creating a SQL Server service using the SQL Server broker. Each application that binds to the SQL Server service will create a new database and service credentials. The service credentials get created and can be accessed either from the <code>web.config</code> file, or programatically through the <code>VCAP_SERVICES</code> environment variable.
+The Helion Development Platform 1.2 supports SQL Server Express 2012 and SQL Server Express 2014. SQL Server support is enabled by creating a SQL Server service using the SQL Server broker. Each application that binds to the SQL Server service will create a new database and service credentials. The service credentials get created and can be accessed either from the <code>web.config</code> file, or programatically through the <code>VCAP_SERVICES</code> environment variable.
 
 ## Windows Tools {#tools}
 
-In order to run .NET framework applications, HDP requires that Windows DEA nodes be deployed. The tools used to create and deploy Windows DEA nodes, and to deploy .NET Framework applications, include the following:
+In order to run .NET framework applications, Windows DEA nodes must be deployed. The tools used to create and deploy Windows DEA nodes, and to deploy .NET Framework applications, include the following:
 
 ### Windows image tool set: 
 
-* Glazier (*create-glazier*): This tool creates a Windows image for deploment to Helion OpenStack. Due to licensing constraints, Windows images must be created by the licensed user.
+* Glazier (*create-glazier*): This tool creates a Windows image for development to Helion OpenStack. Due to licensing constraints, Windows images must be created by the licensed user.
 
 ### Management tool set:
 
@@ -96,12 +96,12 @@ For more information about downloading and using these tools, see <a href="/heli
 
 ## Process {#process}
 
-At a high level, running .NET applications in HDP involves two processes:
+At a high level, running .NET applications involves two processes:
 
-* [Enabling Windows in HDP (Installation)](#enablingwindows)
+* [Enabling Windows (Installation)](#enablingwindows)
 * [Application development and deployment](#development)
 
-### Enabling Windows in HDP (Installation) {#enablingwindows}
+### Enabling Windows (Installation) {#enablingwindows}
 
 1. Obtain a Windows 2012 R2 server license and ISO image.
 2. Download the <a href="https://drive.google.com/a/hp.com/folderviewid=0By3HV5Aek7gYfjg3TUVGT1RxeGhhZTBvN2JBR3Y4UWZZWXkycEprUGhSc0J3a19XcHJaTXM&usp=sharing">Glazier</a> tool.
@@ -119,24 +119,25 @@ At a high level, running .NET applications in HDP involves two processes:
 
 ## Software Requirements {#softwarerequirements}
 
-Windows support in HDP has software requirements including the following:
+Windows support has software requirements including the following:
 
-* A deployment of HOS 1.1.1. HDP 1.2 is not supported on HOS 1.0 or HOS 1.1.
-* A licensed, retail, English language Windows 2012 R2 ISO image. Evaluation versions and non-English versions are not supported. This image can be obtained through a MSDN subscription for development and test purposes, but images for use in a production environment must be obtained through the OEM channel. See [Windows Instance Licensing](#licensing) for details.
+* A deployment of Helion OpenStack 1.1.1. Helion Development Platform 1.2 is not supported on Helion OpenStack 1.0 or 1.1.
+* A licensed, retail, English-language Windows 2012 R2 ISO image. Evaluation versions and non-English versions are not supported. This image can be obtained through a MSDN subscription for development and test purposes, but images for use in a production environment must be obtained through the OEM channel. See [Windows Instance Licensing](#licensing) for details.
 * Virtual Box version 4.3.26 or later: <a href="https://www.virtualbox.org/wiki/Downloads">Download</a>
 * Virtio drivers version 0.1-81: <a href="http://alt.fedoraproject.org/pub/alt/virtio-win/stable/virtio-win-0.1-81.iso">Download</a>
 * The Glazier tool: <a href="https://drive.google.com/a/hp.com/folderviewid=0By3HV5Aek7gYfjg3TUVGT1RxeGhhZTBvN2JBR3Y4UWZZWXkycEprUGhSc0J3a19XcHJaTXM&usp=sharing">Download</a>
 * Any edition of Visual Studio 2013, including the Community (free) edition.
 * The <a href="/helion/devplatform/1.2/windows/deployingnet">Cloud Foundry Explorer Visual Studio extension</a>. This extension can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
-* HDP supports .NET applications created with .NET versions 2.0 through 4.5.2.
+* 
+*  supports .NET applications created with .NET versions 2.0 through 4.5.2.
 
 ## Windows Instance Licensing {#licensing}
 
-You will need to provide your own Windows licensing for use with Windows instances in HDP; Microsoft's licensing requires customers to create their own images using their own licensed software. During image creation, temporary instances of Windows Server are created, so a volume license is required. 
+You will need to provide your own Windows licensing for use with Windows instances; Microsoft's licensing requires customers to create their own images using their own licensed software. During image creation, temporary instances of Windows Server are created, so a volume license is required. 
 
 Windows Server licensing for Windows DEAs and Windows SQL Server instances consists of two components:
 
-* Licensing agreements. These are paid contracts with Microsoft, which include the legal right to run a software package and support agreements. Since HOS is a <a href="http://www.windowsservercatalog.com/svvp.aspx">certified SSVP provider</a>, customers can use Microsoft support with their own licensing agreements. 
+* Licensing agreements. These are paid contracts with Microsoft, which include the legal right to run a software package and support agreements. Since Helion OpenStack is a <a href="http://www.windowsservercatalog.com/svvp.aspx">certified SSVP provider</a>, customers can use Microsoft support with their own licensing agreements. 
 * Activation. Your Windows instances can be activated by using your KVM server, or by connecting to the Windows instance directly using Remote Desktop, and providing product keys manually.
 
 For more information on licensing Windows Server, see <a href="https://www.microsoft.com/en-us/licensing/product-licensing/windows-server-2012-r2.aspx">Windows Server 2012 Volume Licensing</a>, or contact your Microsoft licensing representative.

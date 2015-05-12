@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion 1.2 Development Platform: Controlling HDP with Windows PowerShell"
+title: "HP Helion 1.2 Development Platform: Controlling the Helion Development Platform with Windows PowerShell"
 permalink: /helion/devplatform/1.2/windows/powershell
 product: devplatform
 product-version1: HP Helion Development Platform
