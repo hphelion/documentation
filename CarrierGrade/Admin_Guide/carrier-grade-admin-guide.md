@@ -28,7 +28,7 @@ PageRefresh();
 
 Use the following links for information on administrative tasks you can perform for the HP Helion OpenStack Carrier Grade:
 
-## Administering the HP Helion OpenStack Carrier Grade
+## Managing Your Cloud
 
 For information on the day-to-day administrative tasks you can perform in the HP Helion OpenStack Carrier Grade, see [Administering the HP Helion OpenStack Region](/helion/commercial/carrier/dashboard/managing/admin/).
 
