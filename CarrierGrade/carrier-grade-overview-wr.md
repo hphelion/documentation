@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade Wind River Integration Overview"
 permalink: /helion/openstack/carrier/wr/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack

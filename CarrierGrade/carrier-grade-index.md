@@ -42,6 +42,7 @@ Use the following links and tools to review some high-level overview information
 * [HP Lifecycle Management Overview](/helion/openstack/carrier/hlm/overview/)
 * [HP Helion OpenStack Overview](/helion/openstack/carrier/helion/overview/)
 * [HP Distributed Cloud Networking (DCN) Overview](/helion/openstack/carrier/dcn/overview/)
+* [Wind River Integration Overview](/helion/openstack/carrier/wr/overview/)
 
 ## Getting started with HP Helion OpenStack Carrier Grade {#getstart}
 
