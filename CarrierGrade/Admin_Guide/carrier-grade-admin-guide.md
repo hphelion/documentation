@@ -30,7 +30,7 @@ Use the following links for information on administrative tasks you can perform 
 
 ## Managing Your HP Helion OpenStack Carrier Grade Cloud
 
-For information on the day-to-day administrative tasks you can perform in the HP Helion OpenStack Carrier Grade, see [Managing Your Cloud](/helion/commercial/carrier/dashboard/managing/admin/).
+For information on the day-to-day administrative tasks you can perform in the HP Helion OpenStack Carrier Grade, see [Managing Your Cloud](/helion/commercial/carrier/dashboard/managing/).
 
 
 ## Configure Block Storage by either deploying VSA or using HP 3Par Array
