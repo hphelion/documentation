@@ -32,8 +32,8 @@ Wind River Linux includes the critical run-time components and lifecycle develop
 
 * TL 9000 design methodology to guarantee six nines reliability
 * Full 10 G line rate accelerated virtual switching running unmodified guest applications
-* 10 µs deterministic interrupt latency to support virtualization in the most stringent customer-provided equipment (CPE) and access sections of the network
-* Accelerated live VM migration, including the “share nothing” model—40% faster than enterprise software
+* 10 microsecond deterministic interrupt latency to support virtualization in the most stringent customer-provided equipment (CPE) and access sections of the network
+* Accelerated live VM migration, including the share nothing model, which is faster than enterprise software
 * 500 km geographical redundancy over a standard IP network; more over dedicated fiber
 * Detection of failed controllers, hosts, or VMs 60x faster than enterprise Linux; automatic recovery, with no single point of failure
 * Fully integrated telecom-grade security, including complete AAA access control
