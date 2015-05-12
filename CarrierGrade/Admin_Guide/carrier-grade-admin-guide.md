@@ -30,11 +30,8 @@ Use the following links for information on administrative tasks you can perform 
 
 ## Administering the HP Helion OpenStack Carrier Grade
 
-For information on the day-to-day administrative tasks you can perform in the HP Helion OpenStack Carrier Grade, see [Administering the HP Helion OpenStack Region](/helion/commercial/carrier/dashboard/managing/admin/
+For information on the day-to-day administrative tasks you can perform in the HP Helion OpenStack Carrier Grade, see [Administering the HP Helion OpenStack Region](/helion/commercial/carrier/dashboard/managing/admin/).
 
-<!-- Hiding for alpha
-(/helion/openstack/carrier/admin/helion/).
--->
 
 ## Configure Block Storage by either deploying VSA or using HP 3Par Array
 	
@@ -86,13 +83,13 @@ For more information, see [Virtual Machines and Carrier-Grade Availability](/hel
 
 You can create and manage collections of resources, or services (also known as stacks), using the Orchestration (Heat) service. 
 
-With Heat, you can define a service configuration in a template file, and then apply the template to create or modify the service resources and connections.
+With Orchestration, you can define a service configuration in a template file, and then apply the template to create or modify the service resources and connections.
 
 The Orchestration layer includes life-cycle management features to simplify the addition, modification, and deletion of services.
 
 The Wind River Linux servers include extensions for enhanced scope and reliability.
 
-For more information, see 
+For more information, see [ Using Stacks, Templates, and Parameters](/helion/openstack/carrier/admin/stacks/).
 
 
 <!-- Hide for alpha

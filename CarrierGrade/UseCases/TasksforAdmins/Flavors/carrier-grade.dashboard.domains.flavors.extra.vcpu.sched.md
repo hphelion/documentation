@@ -32,9 +32,9 @@ This extra specification applies to non-boot virtual CPUs, and is available only
 For each additional virtual CPU, the available options are:
 
 * Default Policy - Assigns a non-real-time scheduling policy with nice priority of 0.
-* Real-Time FIFO - Assigns a real-time, first-in-first-out policy with nice priority of 1‒99, specified in the associated VCPU Priority
+* Real-Time FIFO - Assigns a real-time, first-in-first-out policy with nice priority of 1-99, specified in the associated VCPU Priority
 field.
-* Real-Time Round Robin - Assigns a real-time, round-robin policy with nice priority of 1‒99, specified in the associated **VCPU Priority** field.
+* Real-Time Round Robin - Assigns a real-time, round-robin policy with nice priority of 1-99, specified in the associated **VCPU Priority** field.
 
 To add this extra spec to a flavor using the Horizon dashboard, use the VCPU Model selection in the [Create Flavor Extra Spec drop-down menu](/helion/commercial/carrier/dashboard/managing/flavors/extra/).
 
