@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Installation Prerequisites"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Installation Prerequisites"
 permalink: /helion/openstack/carrier/install/prereqs/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -26,7 +26,7 @@ PageRefresh();
 
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Installation Prerequisites
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Installation Prerequisites
 
 Before you begin the installation process, take a few minutes to read this page for information about: 
 

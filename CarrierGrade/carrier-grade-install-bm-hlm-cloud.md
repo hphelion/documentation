@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Deploying the Cloud"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Deploying the Cloud"
 permalink: /helion/openstack/carrier/install/pm/hlm-cloud/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -24,7 +24,7 @@ PageRefresh();
 
 <p style="font-size: small;"><a href="/helion/openstack/carrier/install/pb/hlm-vm/">&#9664; Configuring the installation environment</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a>  </p> 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Deploying the HLM and DCN Clouds 
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Deploying the HLM and DCN Clouds 
 
 At this point, the networking settings and PXE clients are up and running. 
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Deploying HP StoreVirtual VSA Storage Sytems"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Deploying HP StoreVirtual VSA Storage Sytems"
 permalink: /helion/openstack/carrier/install/vsa/deploy/
 product: carrier-grade
 product-version1: HP Helion OpenStack Carrier Grade
@@ -27,7 +27,7 @@ PageRefresh();
 </p> 
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Deploying HP StoreVirtual VSA Storage Sytems
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Deploying HP StoreVirtual VSA Storage Sytems
 
 Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage systems are deployed:
 

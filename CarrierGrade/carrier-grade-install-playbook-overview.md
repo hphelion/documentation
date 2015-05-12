@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Installation Overview
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Installation Overview
 
 This document describes the installation process for HP Helion OpenStack Carrier Grade in a baremetal environment. 
 ## About the installation 

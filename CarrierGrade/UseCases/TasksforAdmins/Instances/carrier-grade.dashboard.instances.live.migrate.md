@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Live Migration of Virtual Machines"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Live Migration of Virtual Machines"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/live/migrate/
 product: carrier-grade
 
@@ -19,16 +19,16 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Live Migration of Virtual Machines
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Live Migration of Virtual Machines
 
 
 Live migration occurs when a virtual machine is transferred to execute on a different compute node with minimal
 disruption of the guest applications. This can happen automatically, or upon request by the system administrator.
 While executing a live migration operation, the Titanium Server manages the virtual machine's state in such a way
 that it appears unmodified on the migrated instance. This includes:
-• system memory, both kernel and user space
-• access to all non-local storage resources, including LVM/iSCSI and Cinder
-• all the virtual machine networking options (unmodified/virtio, AVP kernel driver, AVP DPDK Poll Mode Driver),
+* system memory, both kernel and user space
+* access to all non-local storage resources, including LVM/iSCSI and Cinder
+* all the virtual machine networking options (unmodified/virtio, AVP kernel driver, AVP DPDK Poll Mode Driver),
 and AVS
 Automatic migration of virtual machines occurs whenever the administrator initiates a locking operation on a compute
 node. In this case, the Titanium Server first live-migrates all virtual machine instances off of the compute node before

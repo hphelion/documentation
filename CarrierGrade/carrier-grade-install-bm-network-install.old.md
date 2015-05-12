@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Provisioning the Network"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Provisioning the Network"
 permalink: /helion/openstack/carrier/install/bm/network-install/old/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -24,7 +24,7 @@ PageRefresh();
 
 <p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/hlm-vm/">&#9664; Create the HLM Virtual Machine</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a> |  <a href="/helion/openstack/carrier/install/bm/environment/"> Configuring the installation environment &#9654;</a> </p> 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Provisioning the Network
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Provisioning the Network
  
 The HP Helion OpenStack Carrier Grade installation files include a script that automatically creates the networks and blank VMs required for the installation, called `python createvm.py vm.json`. 
 

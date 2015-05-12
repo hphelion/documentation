@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the VSD Node"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Create the VSD Node"
 permalink: /helion/openstack/carrier/install/vsd-node/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -25,7 +25,7 @@ PageRefresh();
 <p style="font-size: small;"><a href="/helion/openstack/1.1/technical-overview/">&#9664; Technical Overview</a> | <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/kvm/">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/1.1/install/esx/"> Installing on an ESX hypervisor&#9654;</a> </p> 
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the VSD Node
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Create the VSD Node
 
 [HP Virtualized Services Directory (HP VSD)](http://www8.hp.com/us/en/products/networking-switches/product-detail.html?oid=7268885) (HP VSD) is a component of HP Distributed Cloud Networking.
 

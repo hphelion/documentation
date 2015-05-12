@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Working With StoreVirtual Backends"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Working With StoreVirtual Backends"
 permalink: /helion/openstack/carrier/undercloud/oc/config/storevirtual/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -32,7 +32,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/carrier/undercloud/storage/storevirtual/">&#9664; Working with HP StoreVirtual VSA </a> </p>
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Working With StoreVirtual Backends
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Working With StoreVirtual Backends
 
 Once you register the StoreVirtual clusters as per your requirements, you can use the overcloud option in the Horizon undercloud dashboard for the following tasks:
 

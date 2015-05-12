@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Helion Lifecycle Management (HLM) Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Helion Lifecycle Management (HLM) Overview"
 permalink: /helion/openstack/carrier/hlm/overview/
 product: carrier-grade
 
@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"><a href="/helion/openstack/carrier/overview/"> &#9664; HP Helion OpenStack Carrier Grade Overview | <a href="/helion/openstack/carrier/home/">&#9650; Documentation Home</a> | <a href="/helion/openstack/carrier/helion/overview/"> HP Helion OpenStack Overview &#9654;</a></p>
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Helion Lifecycle Management (HLM) Overview
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Helion Lifecycle Management (HLM) Overview
 
 <!-- From https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/HLM+Command+Line+Interface -->
 

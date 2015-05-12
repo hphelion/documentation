@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): EON Service Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): EON Service Overview"
 permalink: /helion/openstack/carrier/services/eon/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -26,7 +26,7 @@ PageRefresh();
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/compute/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/imaging/overview/"> NEXT &#9654</a> </p> -->
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): EON Service Overview #
+# HP Helion OpenStack&#174; Carrier Grade (Beta): EON Service Overview #
 
 ESX integration in HP Helion OpenStack enables administrators to connect their cloud to an existing VMware vCenter installation. The VMware vCenter driver connects to ESXi clusters in a vCenter through Compute proxy nodes. The Nova scheduler sees the ESXi clusters as compute nodes and uses that information for scheduling a new instance. 
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Configuring the installation environment"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Configuring the installation environment"
 permalink: /helion/openstack/carrier/install/bm/environment/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -24,7 +24,7 @@ PageRefresh();
 
 <p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/hlm-vm/">&#9664; Create the HLM Virtual Machine</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/install/bm/hlm-cloud/"> Deploying the HLM Cloud &#9654;</a> </p> 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Configuring the installation environment
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Configuring the installation environment
 
 With the networking configured and the required blank VMs up and running, there are a few tasks required to prepare the environment for installation, including extracting installation files and configuring Cobbler.
 

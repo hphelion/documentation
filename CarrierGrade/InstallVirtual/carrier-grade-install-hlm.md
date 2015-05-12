@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Installing an HLM Node on a KVM Server
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Installing an HLM Node on a KVM Server
 
 <!-- From https://wiki.hpcloud.net/display/HCG/HLM+Node+install+on+a+KVM+Server+for+VM+Node+provisioning -->
 

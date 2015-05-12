@@ -21,11 +21,11 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/carrier/support-matrix/">&#9664; Support Matrix for HP Helion OpenStack</a> | <a href="/helion/openstack/carrier/support-matrix/">&#9650; HP Helion OpenStack Carrier Grade (Alpha): Support Matrix</a>  </p>
+<p style="font-size: small;"> <a href="/helion/openstack/carrier/support-matrix/">&#9664; Support Matrix for HP Helion OpenStack</a> | <a href="/helion/openstack/carrier/support-matrix/">&#9650; HP Helion OpenStack Carrier Grade (Beta): Support Matrix</a>  </p>
 
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha):Support Matrix for HP Distributed Cloud Networking (DCN)
+# HP Helion OpenStack&#174; Carrier Grade (Beta):Support Matrix for HP Distributed Cloud Networking (DCN)
 
 * [Infrastructure Requirements and Recommendations](#require)
 * [Hardware and Software Rerquirements](#hardware)

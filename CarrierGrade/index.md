@@ -30,7 +30,7 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 
 <tr valign="top">
 <td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/helion/openstack/carrier/home/">
-HP Helion OpenStack&#174; Carrier Grade (Alpha)</td>
+HP Helion OpenStack&#174; Carrier Grade (Beta)</td>
 <td>
 HP Helion OpenStack Carrier Grade integrates Wind River technologies with HP Helion OpenStack to enable carrier grade network functions virtualization (NFV) capabilities.</td>
 </tr>

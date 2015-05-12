@@ -21,10 +21,10 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/carrier/support-matrix/">&#9650; HP Helion OpenStack Carrier Grade (Alpha): Support Matrix</a>  </p>
+<p style="font-size: small;"> <a href="/helion/openstack/carrier/support-matrix/">&#9650; HP Helion OpenStack Carrier Grade (Beta): Support Matrix</a>  </p>
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha):Support Matrix for the Wind River&#174; Linux Region
+# HP Helion OpenStack&#174; Carrier Grade (Beta):Support Matrix for the Wind River&#174; Linux Region
 <!-- Taken from Titanium Server Software Installation Guide, 15.x -->
 
 To ensure the performance and stability of the systems running Wind River Linux in the HP Helion OpenStack Carrier Grade environment, it is very important to meet the requirements and conform to the following recommendations.
@@ -149,6 +149,7 @@ The networking environment of the Titanium Server incorporates up to five types 
 Operational requirements for each network are described in the following sections.
 
 ### Internal Management Network
+	
 The internal management network must be implemented as a single, dedicated, Layer 2 broadcast domain for the exclusive use of each Titanium Server cluster. Sharing of this network by more than one Titanium Server cluster is not a supported configuration.
 
 During the Titanium Server software installation process, several network services such as BOOTP, DHCP, and PXE, are expected to run over the internal management network. These services are used to bring up the different hosts to an operational state. Therefore, it is mandatory that this network be operational and available in advance, to ensure a successful installation.

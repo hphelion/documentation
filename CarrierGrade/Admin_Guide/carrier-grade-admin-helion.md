@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Administrators Guide"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Administrators Guide"
 permalink: /helion/openstack/carrier/admin/helion/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -24,7 +24,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Administering the HP Helion OpenStack Region
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Administering the HP Helion OpenStack Region
 
 Use the following links for information on administrative tasks you can perform in the HP Helion OpenStack region:
 

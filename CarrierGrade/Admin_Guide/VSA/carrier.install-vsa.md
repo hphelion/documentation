@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Installing HP StoreVirtual VSA"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Installing HP StoreVirtual VSA"
 permalink: 		
 product: carrier-grade
 product-version1: HP Helion OpenStack Carrier Grade
@@ -26,7 +26,7 @@ PageRefresh();
 
 <!-- From Installing HPStoreVirtual.docx at https://wiki.hpcloud.net/pages/viewpage.action?pageId=49097241 -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Installing HP StoreVirtual VSA
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Installing HP StoreVirtual VSA
 
 This page provides detailed instructions on installing HP StoreVirtual VSA Centralized Management Console (CMC) and deploying HP StoreVirtual VSA Storage Nodes in your HP Helion OpenStack Carrier Grade cloud.
 

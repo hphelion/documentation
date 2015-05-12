@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Using Stacks, Templates, and Parameters"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Using Stacks, Templates, and Parameters"
 permalink: /helion/openstack/carrier/admin/stacks/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -24,7 +24,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Using Stacks, Templates, and Parameters
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Using Stacks, Templates, and Parameters
 
 A collection of resources created and managed using the Orchestration (Heat) service is called a service (also known as a stack).
 

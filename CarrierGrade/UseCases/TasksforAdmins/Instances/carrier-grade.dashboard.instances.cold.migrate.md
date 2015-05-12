@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Cold Migrate an Instance"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Cold Migrate an Instance"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/migrate/cold/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Cold Migrate an Instance
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Cold Migrate an Instance
 
 Users can migrate or live migrate an instance as needed.
 

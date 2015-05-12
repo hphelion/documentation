@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Specifying the VCPU Model for a VM"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Specifying the VCPU Model for a VM"
 permalink: /helion/commercial/carrier/dashboard/managing/flavors/extra/vcpu/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Specifying the VCPU Model for a VM
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Specifying the VCPU Model for a VM
 
 You can select a particular VCPU model for a VM in order to leverage advanced CPU features such as SSE4.2, AES, or AVX on the compute nodes.
 

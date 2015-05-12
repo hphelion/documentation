@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Modifying Images"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Modifying Images"
 permalink: /helion/commercial/carrier/dashboard/managing/images/modify/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Modifying Images
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Modifying Images
 
 You can modify images, as needed, to change the name and description of the image, or protect and un-protect the image.
 

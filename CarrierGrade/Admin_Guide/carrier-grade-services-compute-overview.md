@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Compute Service Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Compute Service Overview"
 permalink: /helion/openstack/carrier/services/compute/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -28,7 +28,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/tripleo/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/identity/overview/"> NEXT &#9654</a> </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Compute Service Overview #
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Compute Service Overview #
 
 The HP Helion OpenStack Compute Service leverages the OpenStack Nova compute service to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.
 

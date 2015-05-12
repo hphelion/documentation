@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Pinning a Guest NUMA Node to a Host NUMA Node"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Pinning a Guest NUMA Node to a Host NUMA Node"
 permalink: /helion/commercial/carrier/dashboard/managing/flavors/extra/numa/pin/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Pinning a Guest NUMA Node to a Host NUMA Node
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Pinning a Guest NUMA Node to a Host NUMA Node
 
 You can use flavor extra specs or image properties to pin a guest NUMA node to a host NUMA node.
 

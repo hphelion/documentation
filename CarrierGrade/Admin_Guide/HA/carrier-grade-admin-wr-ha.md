@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Virtual Machines and Carrier-Grade Availability"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Virtual Machines and Carrier-Grade Availability"
 permalink: /helion/openstack/carrier/admin/carrier-grade-avail/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -24,7 +24,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Virtual Machines and Carrier-Grade Availability
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Virtual Machines and Carrier-Grade Availability
 
 The Wind River Linux servers in HP Helion OpenStack Carrier Grade provide a health monitoring mechanism that can be used to implement and support the deployment of guest applications in Carrier-Grade High Availability (HA) mode.
 

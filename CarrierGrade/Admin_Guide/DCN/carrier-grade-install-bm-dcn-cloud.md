@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Deploying the Cloud"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Deploying the Cloud"
 permalink: /helion/openstack/carrier/install/bm/dcn-cloud/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -24,7 +24,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/environment/">&#9664; Configuring the installation Environment</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a>  </p> 
 -->
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Deploying the DCN Cloud 
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Deploying the DCN Cloud 
 
 After the [HLM and Helion clouds are installed and running](/helion/openstack/carrier/install/bm/hlm-cloud/), you can install the HP Distributed Cloud Networking (DCN).
 
@@ -89,7 +89,7 @@ To deploy the DCN cloud:
 	You can run this command from anywhere.
 
 
-When this command completes, the HP Helion OpenStack Carrier Grade (Alpha) installation is complete.
+When this command completes, the HP Helion OpenStack Carrier Grade (Beta) installation is complete.
 
 Basic cloud operations can be performed by logging into the Horizon interface using `CAN` IP address specified in `/etc/hosts` file on any cloud node.
 

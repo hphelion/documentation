@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Create a Virtual Router During Installation"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Create a Virtual Router During Installation"
 permalink: /helion/openstack/carrier/install/virt-router/
 product: carrier-grade
 
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Create a Virtual Router During Installation 
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Create a Virtual Router During Installation 
 
 You can configure a virtual router for your cloud using an installer file in the installation kit.
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the HLM Virtual Machine"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Create the HLM Virtual Machine"
 permalink: /helion/openstack/carrier/install/pb/hlm-vm/
 product: carrier-grade
 
@@ -22,7 +22,7 @@ PageRefresh();
 
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha):  Create the HLM Virtual Machine
+# HP Helion OpenStack&#174; Carrier Grade (Beta):  Create the HLM Virtual Machine
 
 Helion Lifecycle Management (HLM) consists of the ongoing operations/maintenance as well as the initial deployment of the HP Helion OpenStack Carrier Grade system.
 

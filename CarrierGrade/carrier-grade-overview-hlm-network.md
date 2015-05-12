@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Helion Lifecycle Management (HLM) Network Topology"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Helion Lifecycle Management (HLM) Network Topology"
 permalink: /helion/openstack/carrier/hlm/network/
 product: carrier-grade
 
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Helion Lifecycle Management (HLM) Network Topology
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Helion Lifecycle Management (HLM) Network Topology
 
 <!-- From https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/Kenobi+Networking -->
 

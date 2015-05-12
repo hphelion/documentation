@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Tracking masked IP addresses when using network address translation (NAT)"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Tracking masked IP addresses when using network address translation (NAT)"
 permalink: /helion/openstack/carrier/maskedIP/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -28,7 +28,7 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Tracking masked IP addresses when using network address translation (NAT)
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Tracking masked IP addresses when using network address translation (NAT)
 
 Network Address Translation (NAT) is used to mask an originating IP address. As a result, you may receive notification of abuse that appears to originate from an IP address which is part of your own IP address range. 
 

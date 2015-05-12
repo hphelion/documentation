@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Monitoring the Drive Audit"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Monitoring the Drive Audit"
 permalink: /helion/openstack/carrier/services/object/swift/monitor-swift-drive-audit/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -25,7 +25,7 @@ PageRefresh();
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/carrier/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Monitoring the Drive Audit
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Monitoring the Drive Audit
 
  Drive audit runs `swift-drive-audit` <which finds>to find an errors in `kern.log`. It reports the list of drives which have errors. The devices which are used for Swift are verified for an error and then reported.  The devices are not automatically unmounted. <!-- so as to allow for the disk to self-heal?(we can use "recover"), if possible.-->
 

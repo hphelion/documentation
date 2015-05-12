@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Enrolling the New Baremetal Server"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Enrolling the New Baremetal Server"
 permalink: /helion/openstack/carrier/install/vsa/enroll/
 product: carrier-grade
 product-version1: HP Helion OpenStack Carrier Grade
@@ -27,7 +27,7 @@ PageRefresh();
 </p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Enrolling the New Baremetal Server 
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Enrolling the New Baremetal Server 
 
 This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend. It covers the following topics:
 

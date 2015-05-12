@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Administrators Guide"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Administrators Guide"
 permalink: /helion/openstack/carrier/admin/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -24,21 +24,41 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Administrators Guide 
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Administrators Guide 
 
 Use the following links for information on administrative tasks you can perform for the HP Helion OpenStack Carrier Grade:
 
-## Administering the HP Helion OpenStack Region
+## Administering the HP Helion OpenStack Carrier Grade
 
-For information on the administrative tasks you can perform in the HP Helion OpenStack region, see [Administering the HP Helion OpenStack Region](/helion/commercial/carrier/dashboard/managing/admin/)
+For information on the day-to-day administrative tasks you can perform in the HP Helion OpenStack Carrier Grade, see [Administering the HP Helion OpenStack Region](/helion/commercial/carrier/dashboard/managing/admin/
 
 <!-- Hiding for alpha
 (/helion/openstack/carrier/admin/helion/).
 -->
 
-## Adding Cinder Storage
+## Configure Block Storage by either deploying VSA or using HP 3Par Array
+	
+Use one of the following methods to add block storage to your HP Helion OpenStack cloud:
 
-You can install 
+* Configure HP StoreVirtual VSA
+
+	HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware.
+
+	For instructions, see the Configuring HP StoreVirtual VSA for Block Storage document.
+
+* Configure an HP 3Par storage array
+
+	An optional HP 3Par storage array that can be used to provide high performance Cinder block storage 
+
+	For instructions, see the HP Helion OpenStack®: HP StoreServ (3PAR) Support document.
+
+## Configure a Swift Scale-Out cluster
+
+An optional Swift Scale-Out cluster instance of between two and twelve servers that is used for production cloud Object storage use (Scale-Out Swift extends the Starter Swift Cluster enabling greater capacity while maintaining any initial data present in Starter Swift).
+
+HP Helion OpenStack Carrier Grade includes integral, built-in support for Scale-out Object Storage (Swift) to the cloud. The HP Helion OpenStack® cloud deployment includes automatic creation of a Swift cluster and starter nodes. It also enables SSL automatically to secure the data transmission.
+
+For more information, see [Object Storage (Swift) Service Overview](/helion/openstack/carrier/services/object/overview/scale-out-swift/).
 
 ## Migrating Virtual Machines
 

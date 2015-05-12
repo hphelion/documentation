@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Making an Image Public"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Making an Image Public"
 permalink: /helion/commercial/carrier/dashboard/managing/images/public/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a> </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Making an Image Public
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Making an Image Public
 
 When you [create an image](/helion/commercial/carrier/dashboard/managing/images/create/) or an [image snapshot](/helion/commercial/carrier/dashboard/managing/images/protect/), as an admin, you can determine if the snapshot is available only in the current project or to all projects in the domain.
 

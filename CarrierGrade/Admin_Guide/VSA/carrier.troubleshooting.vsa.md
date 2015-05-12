@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Troubleshooting VSA"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Troubleshooting VSA"
 permalink: /helion/openstack/carrier/services/troubleshooting/vsa/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -30,7 +30,7 @@ PageRefresh();
 <!--<p style="font-size: small;"> <a href="/helion/openstack/carrier/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/reporting/overview/"> NEXT &#9654</a> </p> -->
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Troubleshooting VSA
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Troubleshooting VSA
 
 HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of Linux&#174; provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.
 
@@ -312,7 +312,7 @@ Proceed with the update.
 
 **System Behavior/Message**
 
-As of Helion OpenStack Carrier Grade (Alpha):,  when you install Helion OpenStack, if you do not specify the public interface for VSA (with the `VSA_PUBLIC_INTERFACE` parameter), then updates will not take this parameter into account.
+As of Helion OpenStack Carrier Grade (Beta):,  when you install Helion OpenStack, if you do not specify the public interface for VSA (with the `VSA_PUBLIC_INTERFACE` parameter), then updates will not take this parameter into account.
 
 
 **Resolution**

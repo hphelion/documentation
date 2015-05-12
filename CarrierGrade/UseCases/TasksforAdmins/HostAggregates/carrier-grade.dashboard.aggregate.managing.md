@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Managing Host Aggregates"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Host Aggregates"
 permalink: /helion/commercial/carrier/dashboard/managing/aggregates/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Managing Host Aggregates
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Host Aggregates
 
 A host aggregate is a method to subdivide availability zones into *hypervisor pools*, which is a collection of hypervisors grouped together into a collection of common hosts.
 

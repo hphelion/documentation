@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): DNSaaS Configuration (Optional)"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): DNSaaS Configuration (Optional)"
 permalink: /helion/openstack/carrier/services/neutron/post/installation/configure-dnsaas/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -26,7 +26,7 @@ PageRefresh();
 </script>
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/install/ovsvapp/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/related-links/">NEXT &#9654;</a> </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): DNSaaS Configuration (Optional)
+# HP Helion OpenStack&#174; Carrier Grade (Beta): DNSaaS Configuration (Optional)
 
 Configuring Domain Name System as a service (DNSaaS) is optional.
 

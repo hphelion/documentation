@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"><a href="/helion/openstack/carrier/install/pb/overview/">&#9664; Installation Overview</a> | <a href="/helion/openstack/carrier/install/pb/network/prepare/"> Preparing the Network for Installation &#9654;</a> </p> 
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Installation Prerequisites
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Installation Prerequisites
 
 This document describes the prerequisite steps and one time setup on your KVM host required to install HP Helion OpenStack Carrier Grade in a baremetal environment.
 

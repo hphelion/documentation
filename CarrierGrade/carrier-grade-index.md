@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Documentation Home"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Documentation Home"
 permalink: /helion/openstack/carrier/home/
 product: carrier-grade
 
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Documentation Home
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Documentation Home
 
 <!-- From HP/WR OpenStack Summit press release  http://www.windriver.com/news/press/pr.html?ID=13261-->
 

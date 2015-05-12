@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Live Migration of Virtual Machines"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Live Migration of Virtual Machines"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/live/migrate/about/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Live Migration of Virtual Machines
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Live Migration of Virtual Machines
 
 Live migration occurs when a virtual machine is transferred to execute on a different compute node with minimal
 disruption of the guest applications. This can happen automatically, or upon request by the system administrator.

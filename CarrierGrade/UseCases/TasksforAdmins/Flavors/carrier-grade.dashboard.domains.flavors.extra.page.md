@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Specifying a Page Size for a VM"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Specifying a Page Size for a VM"
 permalink: /helion/commercial/carrier/dashboard/managing/flavors/extra/page/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Specifying a Page Size for a VM
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Specifying a Page Size for a VM
 
 You can request a specific page size for a VM by using a flavor with the required extra spec when you launch the
 VM, or by defining an image with the required metadata property.
