@@ -133,7 +133,7 @@ The Titanium Server introduces minor changes to the OpenStack VM naming conventi
 			image : 'cirros'
 			flavor: 'm1.tiny'
 
-	heat stack-create –f <file> EPC
+	heat stack-create -f <file> EPC
 	nova list
 
 	+--------------------------------------+-----------------+--------+-...

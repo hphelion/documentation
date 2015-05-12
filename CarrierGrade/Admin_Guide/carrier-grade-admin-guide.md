@@ -47,13 +47,13 @@ Use one of the following methods to add block storage to your HP Helion OpenStac
 
 	An optional HP 3Par storage array that can be used to provide high performance Cinder block storage 
 
-	For instructions, see the HP Helion OpenStack®: HP StoreServ (3PAR) Support document.
+	For instructions, see the HP StoreServ (3PAR) Support document.
 
 ## Configure a Swift Scale-Out cluster
 
 An optional Swift Scale-Out cluster instance of between two and twelve servers that is used for production cloud Object storage use (Scale-Out Swift extends the Starter Swift Cluster enabling greater capacity while maintaining any initial data present in Starter Swift).
 
-HP Helion OpenStack Carrier Grade includes integral, built-in support for Scale-out Object Storage (Swift) to the cloud. The HP Helion OpenStack® cloud deployment includes automatic creation of a Swift cluster and starter nodes. It also enables SSL automatically to secure the data transmission.
+HP Helion OpenStack Carrier Grade includes integral, built-in support for Scale-out Object Storage (Swift) to the cloud. The HP Helion OpenStack Carrier Grade cloud deployment includes automatic creation of a Swift cluster and starter nodes. It also enables SSL automatically to secure the data transmission.
 
 For more information, see [Object Storage (Swift) Service Overview](/helion/openstack/carrier/services/object/overview/scale-out-swift/).
 
