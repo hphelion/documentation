@@ -61,7 +61,15 @@ For more information, see [Object Storage (Swift) Service Overview](/helion/open
 
 Live migration occurs when a virtual machine is transferred to execute on a different compute node with minimal disruption of the guest applications. This can happen automatically, or upon request by the system administrator.
 
-For more information, see [Cold Migrate an Instance](/helion/commercial/carrier/dashboard/managing/instances/migrate/cold/) and [Live Migration of Virtual Machines](/helion/commercial/carrier/dashboard/managing/instances/migrate/live/).
+There are two migration methods:
+
+* Cold migration. During a cold migration, the instance is shut down for a period of time to be moved to another hypervisor. For specific steps, see [Cold Migrate an Instance](/helion/commercial/carrier/dashboard/managing/instances/migrate/cold/).
+
+* Live migration. During a live migration, the instance is kept running during the migration, requiring almost no downtime. For specific steps, see [Live Migration of Virtual Machines](/helion/commercial/carrier/dashboard/managing/instances/migrate/live/).
+
+	For more information on live migration, see [Live Migration of Virtual Machines](/helion/commercial/carrier/dashboard/managing/instances/live/migrate/).
+
+
 
 ## Scaling Virtual Machine Resources
 

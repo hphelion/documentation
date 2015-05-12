@@ -59,9 +59,9 @@ To migrate an instance:
 
 6. Click **Live Migrate Instance**.
 
-## Migrate an instance on a Wind River server
+## Migrate an instance on a Wind River Linux server
 
-Instances on Wind River servers can be migrated to a specific instance.
+Instances on Wind River Linux servers can be migrated to a specific instance.
 
 To migrate an instance:
 

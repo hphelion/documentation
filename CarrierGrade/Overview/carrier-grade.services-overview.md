@@ -54,16 +54,19 @@ The HP Helion OpenStack installation process creates a **service** **user** acco
 
 The service user accounts include, but are not limited to, the following:
 
-- Swift
 - Nova
 - Neutron
-- Sherpa
 - Glance
 - Cinder
 - Heat
 - Keystone
 - Ceilometer
+
+<!-- Hiding for alpha
+- Swift
+- Sherpa
 - Ceph
+-->
 
 ### OpenStack Services {#OpenStack}
 
@@ -76,14 +79,13 @@ For information on enabling and maintaining each of these OpenStack services, se
 See [Overview of the Compute service](/helion/openstack/carrier/services/compute/overview/).
 <!-- Hiding for Alpha
 **Identity Management (Keystone)**. The Identity Management service enables you to create and administer users and security groups, and control access to your cloud environment. 
-
 See [Overview of the Identity Management service](/helion/openstack/carrier/services/identity/overview/).
 -->
 <!-- Hiding for Alpha
 **Image Operations (Glance)**. The Image Operations service enables you to create and maintain server images, which you can use to launch virtual machines across the cloud. Also known as **Glance**.
 
 See [Overview of the Image service](/helion/openstack/carrier/services/imaging/overview/).
--->
+
 **Networking Operations (Neutron)**. The Networking service enables you to create and manage virtual networks. 
 See [Overview of the Networking service](/helion/openstack/carrier/services/networking/overview/).
 
@@ -91,22 +93,23 @@ See [Overview of the Networking service](/helion/openstack/carrier/services/netw
 **Object Operations (Swift)**. The Object Operations service enables you to store and retrieve data. Object Storage is a distributed storage system for static data such as virtual machine images, photo storage, email storage, backups and archives. 
 
 See [Overview of the Object Operations service](/helion/openstack/carrier/services/object/overview/).
+-->
 
 **Orchestration (Heat)**. The Orchestration service provides a template-based orchestration for describing a cloud application. A Heat template is a [YAML](http://www.yaml.org/) file that describes the infrastructure for a cloud application. Templates contain vendor-independent specifications for launching a particular service or application.  
 
 See [Overview of the Orchestration service](/helion/openstack/carrier/services/orchestration/overview/).
--->
+
 
 **Volume Operations (Cinder)**. The Volume Operations service enables you to attach storage volumes to the virtual instances in your cloud environment. The service provides persistent block level storage devices for use with your Compute instances. 
 
 See [Overview of the Volume Operations Service](/helion/openstack/carrier/services/volume/overview/).
 
-<!-- Hiding for Alpha
+
 **Metering (Ceilometer)**. The Metering service enables a single infrastructure to collect measurements throughout your cloud environment. 
 
 See [Overview of the Metering Service](/helion/openstack/carrier/services/reporting/overview/).
 
-
+<!-- Hiding for Alpha
 **Ceph**. Ceph is an Open Source, scalable, software defined storage running on HP Servers which provides block and object storage with unified management. 
 
 See [Overview of the Ceph Service]( /helion/openstack/carrier/services/ceph/)
