@@ -62,6 +62,19 @@ The Wind River Linux servers in HP Helion OpenStack Carrier Grade provide a heal
 
 For more information, see [Virtual Machines and Carrier-Grade Availability](/helion/openstack/carrier/admin/carrier-grade-avail/).
 
+## Managing Stacks
+
+You can create and manage collections of resources, or services (also known as stacks), using the Orchestration (Heat) service. 
+
+With Heat, you can define a service configuration in a template file, and then apply the template to create or modify the service resources and connections.
+
+The Orchestration layer includes life-cycle management features to simplify the addition, modification, and deletion of services.
+
+The Wind River Linux servers include extensions for enhanced scope and reliability.
+
+For more information, see 
+
+
 <!-- Hide for alpha
 - [Troubleshooting](/helion/openstack/carrier/services/troubleshooting/)
 

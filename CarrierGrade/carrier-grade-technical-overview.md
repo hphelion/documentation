@@ -46,9 +46,8 @@ The following diagram depicts a simplified deployment scenario using KVM.
 <!-- This image is for alpha release only. Replace for beta -->
 
 
-<a href="javascript:window.open('/content/documentation/media/CGH-architecture-alpha-2.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><img src="media/CGH-architecture-alpha-2.png" width="750" /></a>
-Click to view larger image; click **Back** to return.
-
+<a href="javascript:window.open('/content/documentation/media/CGH-architecture-beta.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><img src="media/CGH-architecture-beta.png" width="750" /></a>
+<br>Click to view larger image; click **Back** to return.
 
 ## Network architecture {#networkarch}
 
