@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Your Cloud"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Operator Guide to  Managing Your Cloud"
 permalink: /helion/commercial/carrier/dashboard/managing/
 product: carrier-grade
 
