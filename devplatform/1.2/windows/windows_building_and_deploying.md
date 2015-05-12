@@ -33,7 +33,7 @@ The following requirements pertain to the system where the Windows image will be
 * Virtualization support enabled
 * 16 GB RAM recommended.
 * 100 GB available disk space
-* Connectivity to the Internet and the HOS environment where the Windows image will be deployed
+* Connectivity to the Internet and the Helion OpenStack environment where the Windows image will be deployed
 
 ### Software Prerequisites
 
@@ -50,8 +50,8 @@ The following requirements pertain to the system where the Windows image will be
 ### Setup Information Needed
 
 * A Windows product key for Windows Server 2012R2. A volume license is strongly recommended, as temporary instances will be created that need product keys.
-* The RC file for the target HOS environment. This can be downloaded from the Horizon interface, under **Project-&gt;Compute-&gt;Access & Security-&gt;API Access-&gt;Download OpenStack RC File**.
-* The certificate for the target HOS environment. This can be found on the seed node, under /usr/local/share/ca-certificates/ephemeralca-cacert.crt.
+* The RC file for the target Helion OpenStack environment. This can be downloaded from the Horizon interface, under **Project-&gt;Compute-&gt;Access & Security-&gt;API Access-&gt;Download OpenStack RC File**.
+* The certificate for the target Helion OpenStack environment. This can be found on the seed node, under /usr/local/share/ca-certificates/ephemeralca-cacert.crt.
 
 ## Creating and uploading images
 
