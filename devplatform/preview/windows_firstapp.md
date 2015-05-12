@@ -111,11 +111,11 @@ One advantage of using the command line is that you can use Mac or Linux as well
 
   ```
   applications:
-    - name: ContosoUniversity
-      mem: 512M
-      services:
-        ${name}-db:
-          type: mssql2014
+    name: ContosoUniversity
+    mem: 512M
+    services:
+      ${name}-db:
+        type: mssql2014
   ```
 
 2. Use the <a href="/helion/devplatform/preview/tools_guide/#helion">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
