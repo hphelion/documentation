@@ -1,0 +1,16 @@
+﻿
+#box {
+position: absolute;
+top: 390px;
+left: 890px;
+z-index: 8;
+width: 650px;
+
+padding: 0px;
+margin-right: 10px;
+background-color: white;
+//background-image: url(''); 
+background-repeat: no-repeat;
+box-shadow: 10px 10px 5px  #888888;
+visibility: hidden;
+}
