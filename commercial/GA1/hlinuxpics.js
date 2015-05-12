@@ -11,8 +11,8 @@ box.addEventListener("click", hide);
 
 function show(){
 
-box.style.top="190px";
-box.style.left="290px";
+//box.style.top="190px";
+//box.style.left="290px";
 box.style.visibility="visible";
 box.style.height="600px";
 
