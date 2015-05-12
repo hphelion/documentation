@@ -20,47 +20,22 @@ PageRefresh();
 
 <p style="font-size: small;"><a href="/helion/openstack/carrier/overview/"> &#9664; HP Helion OpenStack Carrier Grade Overview | <a href="/helion/openstack/carrier/home/">&#9650; Documentation Home</a> | <a href="/helion/openstack/carrier/helion/overview/"> HP Helion OpenStack Overview &#9654;</a></p>
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Helion Lifecycle Management (HLM) Overview
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Helion Lifecycle Management (HLM) Overview 
 
-<!-- From https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/HLM+Command+Line+Interface -->
+<!-- From http://wiki.hpcloud.net/display/core/Helion+Lifecycle+Management+Root -->
 
-The hlm tool is driven, in part, by the metadata available to the configuration processor. The valid set of control planes, services, components, and nodes are part of this metadata. Also, every component and service will have a list of supported commands with names of the top-level playbooks associated with that action. Services are differentiated from components in the services*.json by creating a service as a logical component. Components of the service identify a logical component as their service.
+Helion Lifecycle Management (HLM) is an application that is used to deploy HP Helion OpenStack Carrier Grade and can be used for ongoing operations and maintenance of the system.
 
-When a command does not specify a target, the command applies to the entire cloud. Commands applying to the entire cloud, or to a control plane, will require the tool to invoke the playbooks for that command for all of the services configured for the specified target.
+* **Physical Node Preparation.** You can use HLM to configure nodes prior to installation of a base operating system, including node discovery/inventory, BIOS configuration, (specifically setting PXE boot on primary interface), GRUB settings, RAID setup for local disks, iLO/IPMI set up and firmware upgrades. 
 
-When a command is specified for which no metadata is available for the specified target (or entire cloud when no target is specified), the tool will list the set of commands that are available for the target. This is an error condition for the tool, but the listed actions will help the user correct the command.
+* **OS Install.** You can use HLM take a PXE bootable node and installs a base operating system.
 
-When a target is specified for a command that does not take a target, the help for that command is printed. If a target is specified for a command taking a target where the specified target does not exist, the list of control planes and list of services accepting that command are printed. The display command can be used to list the nodes and components.
+* **Cloud Configuration.** You can provide detailed information about the cloud topology, such as the structure of control plane, assignment of services to nodes, and service configuration. You can also specify environment-specific configurations.
 
-Depending upon implementation choices, some commands may not be driven from metadata. For instance, the commands 'define', 'generate', 'display', and 'provision' are candidates could be supported as part of the tool code.
+* **OS Configuration.** HLM can automatically execute operating system configuration values, such as NIC assignments, NTP settings, DNS settings, NIC bonding, sysctl settings, VLAN creation etc. HLM uses the Ansible data model output and HLM server playbooks to automatically apply the per-node configurations.
 
-Services:
+* **Helion Operation & Maintenance.** HLM is responsible for the deploy, upgrade and maintenance lifecycle of the HP Helion OpenStack Carrier Grade system.
 
-<!-- From https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/Kenobi+Service+Components -->
-
-* Foundation IP-Cluster - HAProxy, keepaliveD, Corosync,
-* Pacemaker
-* Foundation AMQP - RabbitMQ (Mirrored Queues)
-* Foundation Config - Ansible Processor
-* Nova
-* Icinga
-* Ceilometer
-* Cinder
-* Glance
-* Heat
-* Horizon
-* Keystone
-* Nova
-* Sherpa
-* Swift
-* Logging	Logstash
-* Logging	ElasticSearch
-* Logging	Kibana
-* Monasca monitoring-as-a-service solution that integrates with OpenStacK
-* Foundation Kafka 
-* Foundation Zookeeper
-* Foundation Storm
-* Foundation InfluxDB
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

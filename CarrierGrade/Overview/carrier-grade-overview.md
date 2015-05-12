@@ -25,6 +25,7 @@ PageRefresh();
 <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
 
 HP Helion OpenStack Carrier Grade integrates Wind River Linux with HP Helion OpenStack to enable carrier grade network functions virtualization (NFV) capabilities. 
+
 HP Helion OpenStack Carrier Grade is based on [HP Helion Openstack 1.1](/helion/openstack/1.1/) but with significantly enhanced and optimized functionality, availability, scale and  performance to meet the needs of NFV cloud deployments.
 
 HP Helion OpenStack Carrier Grade uses multi-core HP Proliant rack-mounted servers with storage and networking along with the [Wind River Titanium Server](http://www.windriver.com/products/titanium-server/), [HP Distributed Cloud Networking](http://www8.hp.com/us/en/products/networking-switches/product-detail.html?oid=7268885), Kernel-based Virtual Machine (KVM), and virtual switch software for reliable and accelerated data plane.
@@ -46,38 +47,31 @@ HP Helion OpenStack Carrier Grade is sold, and supported as a separate software 
 * High performance data plane 
 * Integration with Opensource SDN controllers and service chaining
 
-## Role of SDN in NFV
+## Major Components in HP Helion OpenStack Carrier Grade
 
-<!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
+Hp Helion OpenStack Carrier Grade incorporates a number of proven technologies into a single environment. 
 
-<img src="media/CGH-NVF-Env.png" />
+### Helion Lifecycle Management (HLM)
 
-	vCPE scenario example
-		VNF A = vRouter (vPE)
-		VNF B = vFirewall
-		NF C = vWanOpt
+Helion Lifecycle Management (HLM) is an application that is used to deploy HP Helion OpenStack Carrier Grade and can be used for ongoing operations and maintenance of the system.
+
+For more information, see [Helion Lifecycle Management (HLM) Overview](/helion/openstack/carrier/hlm/overview/).
+
+### HP Helion OpenStack 
+
+HP Helion OpenStack is a commercial-grade distribution of OpenStack, the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid cloud.
+
+For more information, see [HP Helion OpenStack Overview](/helion/openstack/carrier/helion/overview/).
+
+**Note:** The servers that comprise the HP Helion OpenStack cloud are referred to as hLinux servers in the HP Helion OpenStack Carrier Grade documentation.
+
+### Wind River Linux
+
+Wind River&#174; Linux is a Network Functions Virtualization (NFV) software platform, providing ultra-reliability and exceptional performance efficiencies for telecommunications networks.
+
+For more information, see 
 
 
-	vEPC scenario example
-		VNF A = vPGW/vSGW (vEPC)
-		VNF B = URL Enrichment Engine
-		VNF C = Video Optimizer
-
-<img src="media/CGH-VNF-zoom.png" />
-
-* A Single composite VNF can consist of multiple sub-component VNFs with their own specialized functionality (e.g. control plane, service plane, data plane)
-* Each sub-component VNF can have multiple VMs utilized in a load-balanced fashion for scaling capacity 
-
-	Example -
-		VNFc A = VMs - A1, A2, A3, A4
-		VNFc B = VMs - B1, B2, B3, B4
-		VNFc C = VMs - C1, C2, C3, C4
-
-* Some VNFs will want to pin user sessions to the same VM while some other VNFs will not care
-* Each VM may have multiple vNICs and on multiple networks (intra-VNF, storage, external, management etc.)
-* Some vNICs of a VNF could be using SR-IOV while others are connected to the vSwitch 
-
-<img src="media/CGH-NVF-Global.png" />
 
 HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the [HP Helion OpenStack Services Overview page](/helion/openstack/carrier/services/overview/) for a complete list of services. 
 
