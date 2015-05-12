@@ -430,7 +430,7 @@ navigation:
     url: /helion/openstack/carrier/install/bm/overview/	
   - text: Administrator Guide
     url: /helion/openstack/carrier/admin/
-  - text: User Guide
+  - text: Operator Guide
     url: /helion/commercial/carrier/dashboard/managing/
   - text: Open Source and Third-Party Software License Agreements
     url: /helion/openstack/carrier/3rd-party-license-agreements/
