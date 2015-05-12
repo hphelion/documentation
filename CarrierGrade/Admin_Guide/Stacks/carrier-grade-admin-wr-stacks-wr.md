@@ -185,7 +185,7 @@ The Titanium Server introduces minor changes to the OpenStack VM naming conventi
 	+--------------------------------------+----------------------------
 	+--------+-...
 
-## Support for Server Groups ## {#support}
+## Support for Server Groups ## {#support} 
 
 You can create Server Groups and add VM Instances to them.
 The syntax for adding a Server Group Resource is as follows:
