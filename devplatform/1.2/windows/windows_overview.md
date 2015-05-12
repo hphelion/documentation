@@ -21,7 +21,7 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Windows Overview
 
-Helion Development Platform (HDP) version 1.2 includes a full end-to-end solution for creating and deploying .NET Framework applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of HDP. HTTP-based .NET applications that follow the <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry application model</a> are a great fit for this feature support.
+Helion Development Platform version 1.2 includes a full end-to-end solution for creating and deploying .NET Framework applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of the Helion Development Platform. HTTP-based .NET applications that follow the <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry application model</a> are a great fit for this feature support.
 
 This document contains the following sections:
 
@@ -45,7 +45,7 @@ Helion Development Platform version 1.2 adds tools for creating instances of Win
 * Support for creating Windows instances that include Microsoft SQL Server Express. 
 * Integrated buildpack support for building applications with dependencies and services.
 
-Windows and .NET support is enabled by adding this functionality to an existing HDP 1.2 installation.
+Windows and .NET support is enabled by adding this functionality to an existing installation.
 
 For the 1.2 release, we support creating the following types of instances:
 
@@ -53,7 +53,7 @@ For the 1.2 release, we support creating the following types of instances:
 * Windows Server 2012 R2 with SQL Server 2012 Express
 * Windows Server 2012 R2 with SQL Server 2014 Express
 
-HDP treats deployment of .NET applications in the same way as Linux applications (such as Java or PHP appplications). .NET applications require a <a href="/helion/devplatform/1.2/als/user/deploy/buildpack/">buildpack</a> to specify the dependencies and <a href="/helion/devplatform/1.2/als/user/services/user-provided/">services</a> that can be bound to the application. .NET applications are deployed into a sandbox environment similar to Warden in Cloud Foundry. 
+The Helion Development Platform treats deployment of .NET applications in the same way as Linux applications (such as Java or PHP appplications). .NET applications require a <a href="/helion/devplatform/1.2/als/user/deploy/buildpack/">buildpack</a> to specify the dependencies and <a href="/helion/devplatform/1.2/als/user/services/user-provided/">services</a> that can be bound to the application. .NET applications are deployed into a sandbox environment similar to Warden in Cloud Foundry. 
 
 ## Supported .NET Application Types {#apps}
 

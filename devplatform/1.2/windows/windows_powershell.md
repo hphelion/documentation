@@ -19,6 +19,6 @@ authors: Patrick F
 ---
 <!--UNDER REVISION-->
 
-# HP Helion 1.2 Development Platform: Controlling HDP with Windows PowerShell 
+# HP Helion 1.2 Development Platform: Controlling the Development Platform with Windows PowerShell 
 
 <span style="color:red">To be determined</span>
