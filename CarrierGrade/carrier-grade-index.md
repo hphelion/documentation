@@ -45,11 +45,11 @@ Use the following link to review some high-level overview information about HP H
 Use the following links and tools to begin working with HP Helion OpenStack Carrier Grade:
 
 
-* [Administrators Guide](/helion/openstack/carrier/admin/). 
+* [Administrators Guide](/helion/openstack/carrier/admin/) 
 
 	These topics introduce specific administrative tasks that might not be day-to-day operations, which will help you maintain the overall operations of your cloud.
 
-* [Managing Your Cloud](/helion/commercial/carrier/dashboard/managing/). 
+* [Managing Your Cloud](/helion/commercial/carrier/dashboard/managing/)
 
 	These topics are functional descriptions of the Horizon dashboards. These topics are designed to guide you through the day-to-day administrative and functional tasks you can perform in the HP Helion OpenStack Carrier Grade cloud.
 
