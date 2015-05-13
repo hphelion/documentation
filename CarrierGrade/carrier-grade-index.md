@@ -36,13 +36,9 @@ Use the following links to begin installing HP OpenStack Carrier Grade:
 
 ## Learning about HP Helion OpenStack Carrier Grade {#getstart}
 
-Use the following links and tools to review some high-level overview information about HP Helion OpenStack Carrier Grade: 
+Use the following link to review some high-level overview information about HP Helion OpenStack Carrier Grade: 
 
 * [HP Helion OpenStack Carrier Grade Overview](/helion/openstack/carrier/overview/)
-* [HP Lifecycle Management Overview](/helion/openstack/carrier/hlm/overview/)
-* [HP Helion OpenStack Overview](/helion/openstack/carrier/helion/overview/)
-* [HP Distributed Cloud Networking (DCN) Overview](/helion/openstack/carrier/dcn/overview/)
-* [Wind River Integration Overview](/helion/openstack/carrier/wr/overview/)
 
 ## Getting started with HP Helion OpenStack Carrier Grade {#getstart}
 
