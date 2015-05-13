@@ -13,8 +13,6 @@ permalink: /
 
 HP Helion provides public, private, and managed cloud solutions to get you moving on your cloud journey. Whichever HP Helion product you are using, we have all the documentation resources and references for you. 
 
-TEMP LINK TO CARRIER GRADE: [HP Helion OpenStack Carrier Grade Documentation](/helion/openstack/carrier/home/)
-
 
 <div style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table width="560px" border="0" cellpadding="2" cellspacing="2" style="background-color: #ffffff;">
 
