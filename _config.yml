@@ -382,9 +382,9 @@ navigation:
     url: /helion/openstack/1.1/siteindex/
   commercial.ga: 
   - text: HP Helion Documentation
-    url: /helion/openstack/carrier/
-  - text: HP Helion Documentation
     url: /
+  - text: HP Helion OpenStack Carrier Grade Documentation
+    url: /helion/openstack/carrier/home/
   - text: HP Helion OpenStack 1.1 Documentation Home
     url: /helion/openstack/1.1/
   - text: Site Index
