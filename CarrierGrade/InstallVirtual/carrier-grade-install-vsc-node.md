@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the HP VSC Node"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Create the HP VSC Node"
 permalink: /helion/openstack/carrier/install/vsc-node/
 product: carrier-grade
 
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the HP VSC Node
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Create the HP VSC Node
 
 The [HP Virtualized Services Controller](http://www8.hp.com/us/en/products/networking-switches/product-detail.html?oid=7268885) (HP VSC) is a component of HP Distributed Cloud Networking. HP VSC functions as the robust network control plane for DCs, maintaining a full view of pertenant network and service topologies.
 

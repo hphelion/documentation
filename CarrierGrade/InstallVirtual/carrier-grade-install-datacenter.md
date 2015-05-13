@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the DNS/NTP Data Center Network Management VM"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Create the DNS/NTP Data Center Network Management VM"
 permalink: /helion/openstack/carrier/install/datacenter/
 product: carrier-grade
 
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Create a Virtual Data center for DNS/NTP Network Management
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Create a Virtual Data center for DNS/NTP Network Management
 
 You can configure a virtual data center for DNS and NTP for your cloud using an installer file in the installation kit.
 

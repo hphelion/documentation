@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Verifying StoreVirtual Installation Status"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Verifying StoreVirtual Installation Status"
 permalink: /helion/openstack/carrier/install/vsa/verify/
 product: carrier-grade
 product-version1: HP Helion OpenStack Carrier Grade
@@ -27,7 +27,7 @@ PageRefresh();
 </p> 
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Verifying StoreVirtual Installation Status
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Verifying StoreVirtual Installation Status
 
 To verify that the StoreVirtual storage system is deployed successfully, perform the following checks:
 

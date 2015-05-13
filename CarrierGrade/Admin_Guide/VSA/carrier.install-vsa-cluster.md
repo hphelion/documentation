@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating a StoreVirtual Cluster and Adding it to a New Management Group"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Creating a StoreVirtual Cluster and Adding it to a New Management Group"
 permalink: /helion/openstack/carrier/install/vsa/cluster/
 product: carrier-grade
 product-version1: HP Helion OpenStack Carrier Grade

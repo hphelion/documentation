@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Cinder Block Storage Using HP StoreVirtual VSA"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Cinder Block Storage Using HP StoreVirtual VSA"
 permalink: /helion/openstack/carrier/install/vsa/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -34,7 +34,7 @@ PageRefresh();
 
 <a href="/helion/openstack/carrier/install/vsa/">Deploy and Configure HP StoreVirtual VSA &#9654;</a></p> 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Cinder Block Storage Using HP StoreVirtual VSA 
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Cinder Block Storage Using HP StoreVirtual VSA 
 
 HP Helion OpenStack bundles and facilitates deployment of HP StoreVirtual VSA which can be configured as backend for OpenStack Cinder Block Storage.
 

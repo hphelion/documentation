@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Pausing and Un-pausing Instances"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Pausing and Un-pausing Instances"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/pause/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Pausing and Un-pausing Instances
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Pausing and Un-pausing Instances
 
 When a user *pauses* an instance, the instance  remains running, but, in a frozen state. The contents of the instance are stored in memory (RAM). Memory and vCPUs are not released.
 

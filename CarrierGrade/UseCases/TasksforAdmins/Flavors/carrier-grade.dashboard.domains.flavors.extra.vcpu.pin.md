@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Pinning a vCPU to a Shared Physical CPU"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Pinning a vCPU to a Shared Physical CPU"
 permalink: /helion/commercial/carrier/dashboard/managing/flavors/extra/vcpu/pin/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Pinning a vCPU to a Shared Physical CPU
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Pinning a vCPU to a Shared Physical CPU
 
 You can pin a vCPU to a shared physical CPU by using a flavor with the required extra specification.
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Administering the HP Helion OpenStack Region"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Administering the HP Helion OpenStack Region"
 permalink: /helion/commercial/carrier/dashboard/managing/admin/
 product: carrier-grade
 
@@ -19,9 +19,9 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Administering the HP Helion OpenStack Region
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Administering HP Helion OpenStack Carrier Grade
 
-The Admin dashboard in the HP Helion OpenStack Region enables you to work within the current cloud domain. You can access tools to work with the Compute, Network, Object Operations, and Orchestration services.
+The Admin panel in the HP Helion OpenStack Carrier Grade Horizon dashboards enable you to work within the current cloud domain. You can access tools to work with the Compute, Network, Object Operations, and Orchestration services.
 
 <img src="media/HorizonUI_Admin_beta" alt="" width="500" />
 

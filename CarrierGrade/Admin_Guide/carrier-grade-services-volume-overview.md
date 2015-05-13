@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Block Storage Volume Operations (Cinder) Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Block Storage Volume Operations (Cinder) Overview"
 permalink: /helion/openstack/carrier/services/volume/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -30,7 +30,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/reporting/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/horizon/overview/"> NEXT &#9654</a> </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Block Storage Volume Operations (Cinder) Overview #
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Block Storage Volume Operations (Cinder) Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Adding HP StoreVirtual VSA System to an Existing Management Group"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Adding HP StoreVirtual VSA System to an Existing Management Group"
 permalink: /helion/openstack/carrier/install/vsa/add-mgmt/
 product: carrier-grade
 product-version1: HP Helion OpenStack Carrier Grade

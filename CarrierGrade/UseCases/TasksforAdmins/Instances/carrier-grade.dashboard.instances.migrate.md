@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Resizing Instances"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Resizing Instances"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/migrate/live/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Live Migrate an Instance
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Live Migrate an Instance
 
 Users can live migrate an instance as needed.
 
@@ -59,9 +59,9 @@ To migrate an instance:
 
 6. Click **Live Migrate Instance**.
 
-## Migrate an instance on a Wind River server
+## Migrate an instance on a Wind River Linux server
 
-Instances on Wind River servers can be migrated to a specific instance.
+Instances on Wind River Linux servers can be migrated to a specific instance.
 
 To migrate an instance:
 

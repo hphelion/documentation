@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Monitor the Network Access (Ping)"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Monitor the Network Access (Ping)"
 permalink: /helion/openstack/carrier/services/object/swift/monitor-network-access-ping/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -25,7 +25,7 @@ PageRefresh();
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/carrier/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Monitor the Network Access (Ping)
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Monitor the Network Access (Ping)
  
 Cloud admins can use the ***Icinga*** service running in the undercloud to monitor the network access of all the Swift nodes. The host that are part of ring can be determined using swift-ring-builder and only those nodes are verified for connectivity.	
 

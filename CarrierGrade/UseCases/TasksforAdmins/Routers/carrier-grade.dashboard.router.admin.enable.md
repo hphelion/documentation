@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Enabling and Disabling a Router"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Enabling and Disabling a Router"
 permalink: /helion/commercial/carrier/dashboard/managing/router/admin/enable/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Enabling and Disabling a Router
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Enabling and Disabling a Router
 
 You can enable or disable routers, as needed.
 

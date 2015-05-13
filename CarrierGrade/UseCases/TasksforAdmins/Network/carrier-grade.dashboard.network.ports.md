@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Adding or Removing Ports"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Adding or Removing Ports"
 permalink: /helion/commercial/carrier/dashboard/managing/network/ports/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Adding or Removing Ports
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Adding or Removing Ports
 
 A port is a connection point for attaching a single device, such as the NIC of a virtual server, to a virtual network. You can configure rich network topologies by creating and configuring networks and subnets, and then instructing other OpenStack services like Compute to attach virtual devices to ports on these networks.	
 

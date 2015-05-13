@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Configuring NTP"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Configuring NTP"
 permalink: /helion/openstack/carrier/install/ntp/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -24,7 +24,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/1.1/install/prereqs/#ntp">&#9664; Prerequisites | <a href="/helion/openstack/1.1/install/overview/"> &#9650; Installation Overview</a> </p> 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Configuring NTP
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Configuring NTP
 
 This page provides detailed information on [configuring HP Helion OpenStack nodes](#client) for Network Time Protocol (NTP) and [instlling an NTP server on the seed cloud host](#server). 
 

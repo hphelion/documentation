@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha):  Configuring vCPU Scheduling and Priority"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta):  Configuring vCPU Scheduling and Priority"
 permalink: /helion/commercial/carrier/dashboard/managing/flavors/extra/vcpu/sched/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Configuring vCPU Scheduling and Priority
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Configuring vCPU Scheduling and Priority
 
 You can assign the Linux scheduler and priority for non-boot virtual CPUs using an extra specification.
 
@@ -32,9 +32,9 @@ This extra specification applies to non-boot virtual CPUs, and is available only
 For each additional virtual CPU, the available options are:
 
 * Default Policy - Assigns a non-real-time scheduling policy with nice priority of 0.
-* Real-Time FIFO - Assigns a real-time, first-in-first-out policy with nice priority of 1‒99, specified in the associated VCPU Priority
+* Real-Time FIFO - Assigns a real-time, first-in-first-out policy with nice priority of 1-99, specified in the associated VCPU Priority
 field.
-* Real-Time Round Robin - Assigns a real-time, round-robin policy with nice priority of 1‒99, specified in the associated **VCPU Priority** field.
+* Real-Time Round Robin - Assigns a real-time, round-robin policy with nice priority of 1-99, specified in the associated **VCPU Priority** field.
 
 To add this extra spec to a flavor using the Horizon dashboard, use the VCPU Model selection in the [Create Flavor Extra Spec drop-down menu](/helion/commercial/carrier/dashboard/managing/flavors/extra/).
 

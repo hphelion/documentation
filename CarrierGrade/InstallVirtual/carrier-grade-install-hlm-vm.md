@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the HLM Virtual Machine"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Create the HLM Virtual Machine"
 permalink: /helion/openstack/carrier/install/hlm-vm/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -25,7 +25,7 @@ PageRefresh();
 <p style="font-size: small;"><a href="/helion/openstack/1.1/technical-overview/">&#9664; Technical Overview</a> | <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/kvm/">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/1.1/install/esx/"> Installing on an ESX hypervisor&#9654;</a> </p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the HLM Virtual Machine
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Create the HLM Virtual Machine
 
 Helion Lifecycle Management (HLM) consists of the ongoing operations /maintenance as well as the initial deployment of the Helion system as shown above.
 

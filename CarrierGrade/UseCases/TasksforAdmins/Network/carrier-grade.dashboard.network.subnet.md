@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Adding and Removing Subnets"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Adding and Removing Subnets"
 permalink: /helion/commercial/carrier/dashboard/managing/network/subnet/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Adding and Removing Subnets
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Adding and Removing Subnets
 
 When a [network is created](/helion/commercial/carrier/dashboard/managing/network/create/), a subnet (short for *subnetwork*) can be assigned upon creation. However, you might need to add a subnet to a network at a later time.
 

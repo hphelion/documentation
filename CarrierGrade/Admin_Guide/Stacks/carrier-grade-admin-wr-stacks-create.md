@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating a Stack"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Creating a Stack"
 permalink: /helion/openstack/carrier/admin/stacks/create
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -24,7 +24,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating a Stack
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Creating a Stack
 
 You can create a stack (or service) using the web administration interface, or you can use the command-line interface.
 

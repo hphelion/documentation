@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Install HP Helion OpenStack"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Install HP Helion OpenStack"
 permalink: /helion/openstack/carrier/install/helion/
 product: carrier-grade
 
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Install Helion OpenStack
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Install Helion OpenStack
 
 To install of HP Helion OpenStack: 
 

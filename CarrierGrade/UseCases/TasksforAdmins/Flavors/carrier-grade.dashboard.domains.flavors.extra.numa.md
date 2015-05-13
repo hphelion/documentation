@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Configuring the NUMA Node Allocations for a VM"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Configuring the NUMA Node Allocations for a VM"
 permalink: /helion/commercial/carrier/dashboard/managing/flavors/extra/numa/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Configuring the NUMA Node Allocations for a VM
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Configuring the NUMA Node Allocations for a VM
 
 You can use flavor extra specs or image properties to allocate virtual memory and vCPU resources to virtual NUMA nodes.
 

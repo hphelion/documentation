@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Installing HP StoreVirtual VSA"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Installing HP StoreVirtual VSA"
 permalink: /helion/openstack/carrier/install/vsa/old/	
 product: carrier-grade
 product-version1: HP Helion OpenStack Carrier Grade
@@ -25,7 +25,7 @@ PageRefresh();
 <p style="font-size: small;"><a href="/helion/openstack/1.1/install/vsa/overview/">&#9664; Installing HP StoreVirtual VSA Overview </a> | <a href="/helion/openstack/carrier/install/vsa/deploy/">Deploying HP StoreVirtual VSA Storage Sytems &#9654;</a></p>
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Installing HP StoreVirtual VSA
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Installing HP StoreVirtual VSA
 
 This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend. It covers the following topics:
 

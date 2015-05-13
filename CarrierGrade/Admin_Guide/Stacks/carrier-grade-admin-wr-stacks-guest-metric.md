@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Reporting a Guest Metric"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Reporting a Guest Metric"
 permalink: /helion/openstack/carrier/admin/stacks/guest/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -24,7 +24,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Reporting a Guest Metric
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Reporting a Guest Metric
 
 You can use the Orchestration (Heat) service to collect and report performance metrics from individual guest instances.
 

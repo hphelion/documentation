@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Enabling and Disabling Networks"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Enabling and Disabling Networks"
 permalink: /helion/commercial/carrier/dashboard/managing/network/enable/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Enabling and Disabling Tenant Networks
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Enabling and Disabling Tenant Networks
 
 A network is a pluggable, scalable and API-driven system for managing networks and IP addresses. You can [enable](#enablenet) or [disable](#disablenet) networks, as needed.
 

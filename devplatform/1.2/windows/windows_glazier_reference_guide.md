@@ -102,7 +102,7 @@ Available options:
     - OpenStack flavor used for building the OpenStack image. Example: standard.medium
 
 --insecure
-	- (optional) create a Windows image for an HDP installation that doesn't have an HTTPS certificate
+	- (optional) create a Windows image for a Development Platform installation that doesn't have an HTTPS certificate
 
 --windows-update-proxy
 	- (optional) proxy used for Windows Updates on image
@@ -126,7 +126,7 @@ Available options:
 
 ## Creating a Glazier Profile {#profile}
 
-A profile can be used to configure Glazier. By default we provide the profiles you need to create the images you need to enable HDP to work with Windows. However, you can create a custom profile. Use the following template:
+A profile can be used to configure Glazier. By default we provide the profiles you need to create the images you need to enable working with Windows. However, you can create a custom profile. Use the following template:
 
 <span style="color:red">Vlad, need profile template.</span>
 

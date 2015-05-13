@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Manage Your Cloud"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Operator Guide to  Managing Your Cloud"
 permalink: /helion/commercial/carrier/dashboard/managing/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a> </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Manage Your Cloud
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Operator Guide to  Managing Your Cloud
 
 The HP Helion OpenStack dashboards are browser-based interfaces that enable you to manage your entire cloud environment. 
 
@@ -27,7 +27,7 @@ The dashboards are based on OpenStack Horizon and provide enhanced features.
 
 Refer to these documentation resources:
 
-* [Administering the HP Helion OpenStack Region](/helion/commercial/carrier/dashboard/managing/admin/) - Describes the Operational Dashboard user interface dialogs and options.
+* [Administering HP Helion OpenStack Carrier Grade](/helion/commercial/carrier/dashboard/managing/admin/) - Describes the Operational Dashboard user interface dialogs and options.
 
 * [Using HP Helion OpenStack for Users](/helion/commercial/carrier/dashboard/managing/nonadmin/) - Describes the Operational Dashboard user interface dialogs and options.
 

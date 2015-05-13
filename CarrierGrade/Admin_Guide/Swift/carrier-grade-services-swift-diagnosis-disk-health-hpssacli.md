@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Monitoring Disk Drives in Object Storage Using hpssacli Utility"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Monitoring Disk Drives in Object Storage Using hpssacli Utility"
 permalink: /helion/openstack/carrier/services/swift/diagnosis-disk-health/hpssacli/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -29,7 +29,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href=" /helion/openstack/carrier/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/overview/"> NEXT &#9654</a> </p>-->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Monitoring Disk Drives in Object Storage Using hpssacli Utility
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Monitoring Disk Drives in Object Storage Using hpssacli Utility
 
 HP Helion Object Storage (Swift) provides native monitoring of Swift services and hardware resources like disk drives.To monitor the health status of the disk drives of the Swift cluster, monitoring scripts are introduced for HP hardware. The monitoring solution depends on hpssacli application to fetch various details of hardware to determine its health and publish to Icinga. hpssacli utility does not get installed implicitly as part of Swift node deployment. 
 

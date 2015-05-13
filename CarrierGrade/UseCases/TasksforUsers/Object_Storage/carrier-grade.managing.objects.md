@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Managing Object Storage"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Object Storage"
 permalink: /helion/commercial/carrier/dashboard/managing/objects/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Managing Object Storage
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Object Storage
 
 With object store, objects and files are written to multiple disk drives spread throughout servers in the data center, with the Helion software responsible for ensuring data replication and integrity across the cluster.
 

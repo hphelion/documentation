@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Monitor Disk Drive(s)"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Monitor Disk Drive(s)"
 permalink: /helion/openstack/carrier/services/object/swift/disk-drive/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -25,7 +25,7 @@ PageRefresh();
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/carrier/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Monitor Disk Drive(s) 
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Monitor Disk Drive(s) 
 
 The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the health of the disk drive(s) of all the swift node(s).
 

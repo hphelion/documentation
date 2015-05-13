@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Scaling Virtual Machine Resources"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Scaling Virtual Machine Resources"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/scaling/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Scaling Virtual Machine Resources
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Scaling Virtual Machine Resources
 
 You can scale the resources of individual instances up or down.
 

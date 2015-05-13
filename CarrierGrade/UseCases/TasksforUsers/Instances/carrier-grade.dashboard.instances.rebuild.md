@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Rebuilding Instances"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Rebuilding Instances"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/rebuild/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Rebuilding Instances
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Rebuilding Instances
 
 The rebuild operation removes all data on the server and replaces it with the specified image. 
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Managing Security Groups"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Security Groups"
 permalink: /helion/commercial/carrier/dashboard/managing/security/groups/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Managing Security Groups
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Security Groups
 
 You can [create your own security groups](#creategroups) or you can [edit the rules in an existing group](#editgroups) to suit your needs. 
 

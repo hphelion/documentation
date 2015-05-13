@@ -4,10 +4,10 @@ title: "HP Helion Eucalyptus: Open Source and Third-Party Software License Agree
 permalink: /eucalyptus/3rd-party-license-agreements/
 product: eucalyptus
 product-version1: HP Helion Eucalyptus
-authors: Greg L
+authors: Greg L, Jayme P
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script> 
 
