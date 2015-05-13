@@ -984,5 +984,7 @@ navigation:
   eucalyptus:
   - text: Master Services Agreement
     url: /eucalyptus/masterservice
+  - text: Open Source and Third-Party Software License Agreements
+    url: /eucalyptus/3rd-party-license-agreements/
 
 
