@@ -5,8 +5,7 @@ title: "Identity Services Admin API"
 description: "HP Cloud Identity Services Admin API documentation."
 keywords: "Keystone, Identity Services"
 product: identity
-publish: false
-
+published: false
 ---
 <!--PUBLISHED-->
 # Identity Services Admin API
