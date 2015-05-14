@@ -123,6 +123,5 @@ OpenStack®
  ommited 
 <<<<<<< HEAD
 (##
-{{#
 â€™
 ÎáÎáÎí
