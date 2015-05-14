@@ -21,6 +21,8 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Building and Deploying Windows and SQL Server Express Images
 
+<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
+
 This document demonstrates how to create and deploy a Windows image in an HP Helion OpenStack environment to be used in Helion Development Plaftorm. Image creation is needed to enable Windows support. This process can take several hours (approximately 7 hours, depending on hardware and network) and in most cases can be left unattended once the scripts begin execution.
 
 ## Prerequsites
