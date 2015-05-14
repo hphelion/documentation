@@ -37,7 +37,7 @@ The Glazier tool can be found here: <a href="https://drive.google.com/a/hp.com/f
 
 ## Prerequisites {#prerequisites}
 
-Glazier can run in either Ubuntu or OSX.
+Glazier can run in either Linux (Ubuntu recommended) or OSX.
 
 * <a href="http://download.virtualbox.org/virtualbox/4.3.26/VirtualBox-4.3.26-98988-OSX.dmg">Virtual box 4.3.26</a>
 * A retail, English Windows 2012R2 image. Images for a development or test environment can be downloaded from MSDN; for a production environment, you must obtain an image through your OEM channel.
