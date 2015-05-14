@@ -56,7 +56,7 @@ For the 1.2 release, we support creating the following types of instances:
 * Windows Server 2012 R2 with SQL Server 2012 Express
 * Windows Server 2012 R2 with SQL Server 2014 Express
 
-Helion Development Platform treats deployment of .NET applications in the same way as Linux applications (such as Java or PHP appplications). .NET applications require a <a href="/helion/devplatform/preview/buildpack/">buildpack</a> to specify the dependencies and <a href="/helion/devplatform/preview/adding_services/">services</a> that can be bound to the application. .NET applications are deployed into a sandbox environment similar to Warden in Cloud Foundry. 
+Helion Development Platform treats deployment of .NET applications in the same way as Linux applications (such as Java or PHP appplications). .NET applications require a <a href="/helion/devplatform/1.2/windows/buildpack/">buildpack</a> to specify the dependencies and <a href="/helion/devplatform/preview/adding_services/">services</a> that can be bound to the application. .NET applications are deployed into a sandbox environment similar to Warden in Cloud Foundry. 
 
 ## Supported .NET Application Types {#apps}
 
