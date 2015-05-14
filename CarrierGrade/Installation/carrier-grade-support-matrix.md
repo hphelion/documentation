@@ -37,12 +37,11 @@ To ensure the performance and stability of the HP Lifecycle Management environme
 
 To ensure the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the recommendations listed in [Support Matrix for HP Helion OpenStack](/helion/openstack/carrier/support-matrix/helion/).
 
-<!-- Hide for alpha
 ## Support Matrix for HP Distributed Cloud Networking (DCN) host
 
 For key requirements needed HP Distributed Cloud Networking (DCN), see [Support Matrix for HP Distributed Cloud Networking](/helion/openstack/carrier/support-matrix/dcn/).
 
-
+<!--
 ## Support Matrix for the Wind River&#174; Linux region
 
 To ensure the performance and stability of the systems running Wind River Linux region of the HP Helion OpenStack Carrier Grade environment, it is very important to meet the requirements and conform to the recommendations listed in [Support Matrix for the Wind River Region](/helion/openstack/carrier/support-matrix/wr/).
