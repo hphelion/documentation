@@ -21,6 +21,8 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Glazier Reference Guide
 
+<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
+
 Glazier is a collection of scripts used for building Windows images for deployment to a Helion OpenStack environment. The image that the tool creates can be configured either by using command-line switches, or by using a Glazier profile.
 
 * [Downloading the Glazier Tool](#downloading)
@@ -132,3 +134,7 @@ A profile can be used to configure Glazier. By default we provide the profiles y
 
 After creating the profile, use the <code>--profile</code> command-line switch (above).
 
+<div align="center"><a href="/helion/devplatform/1.2/windows/">Windows Overview</a> </div>
+<div align="center"> <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a> </div>
+<div align="center"> <a href="/helion/devplatform/1.2/windows/building_windows/">Building and deploying Windows images</a> | Glazier Reference Guide</div>
+<div align="center"><a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/1.2/windows/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>

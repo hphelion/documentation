@@ -144,8 +144,6 @@ For more information on licensing Windows Server, see <a href="https://www.micro
 * <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a>
 * <a href="/helion/devplatform/1.2/windows/custom_buildpacks">Creating Custom Buildpacks for Windows  Applications</a>
 * <a href="/helion/devplatform/1.2/windows/connecting_services/">Connecting Services to a Windows  Application</a>
-* <a href="/helion/devplatform/1.2/windows/deploying">Deploying Windows Applications to Specific Servers</a>
-* <a href="/helion/devplatform/1.2/windows/powershell">Controlling Windows with PowerShell</a>
 * <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a>
 
 
