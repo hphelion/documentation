@@ -23,12 +23,10 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/carrier/support-matrix/">&#9664; Support Matrix for HP Helion OpenStack</a> | <a href="/helion/openstack/carrier/support-matrix/">&#9650; HP Helion OpenStack Carrier Grade (Beta): Support Matrix</a>  </p>
 
-
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta):Support Matrix for HP Distributed Cloud Networking (DCN)
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Support Matrix for HP Distributed Cloud Networking (DCN)
 
 * [Infrastructure Requirements and Recommendations](#require)
-* [Hardware and Software Rerquirements](#hardware)
+* [Hardware and Software Requirements](#hardware)
 
 For more information on HP Distributed Cloud Networking (DCN), see the [HP Distributed Cloud Networking 3.0.R2 
 Release Notes](http://h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/psi/manualsResults/?sp4ts.oid=7268885&spf_p.tpst=psiContentResults&spf_p.prp_psiContentResults=wsrp-navigationalState%3Daction%253Dmanualslist%257Ccontentid%253DGeneral-Reference%257Clang%253Den&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken).
@@ -37,12 +35,7 @@ Release Notes](http://h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/p
 <!-- Taken from HP Distributed Cloud Networking 3.0.R2
 Installation Guide -->
 
-In order to make use of the HP DCN, the data center environment must meet some key requirements as described in the following sections.
-
-### Data Center IP Network
-HP VSP can be used in any data center with an IP network. HP VSC actively participates in the IP routing infrastructure. HP VSCs can run OSPF or IS-IS for the IGP in addition to BGP, but integration with the IGP is not mandatory.
-
-BGP is used to form a federation of HP VSCs and synchronize the HP VSP network information. In addition, BGP is also used to exchange routing information with the data center provider edge router.
+In order to make use of the HP DCN, the HP Helion OpenStack Carrier Grade environment must meet some key requirements as described in the following sections.
 
 ### NTP Infrastructure
 
@@ -77,8 +70,7 @@ guidance on larger scale deployments.
 <tr>
 <td>Platform</td><td>Physical machine or virtual machine</td></tr>
 <tr>
-<td>Hypervisor</td><td>* KVM
-<br>* VMware vSphere 5.1, 5.5</td></tr>
+<td>Hypervisor</td><td>KVM</td></tr>
 <tr>
 <td>Installed Platform</td><td>* Linux distribution: CentOS 6.5 (64-bit)
 <br>* RHEL Server 6.5</td></tr>
@@ -107,8 +99,7 @@ NTP</td><td>The server must run NTP to ensure the event notifications passed bet
 <tr>
 <td>Platform</td><td>HP VSC must run on a dedicated hardware server as the only virtual machine process.</td></tr>
 <tr>
-<td>Hypervisor and Installed Platform</td><td>* KVM on RHEL 6.5, CentOS 6.5
-<br>* VMware vSphere ESXi 5.1, 5.5</td></tr>
+<td>Hypervisor and Installed Platform</td><td>* KVM on RHEL 6.5, CentOS 6.5</td></tr>
 <tr>
 <td>CPU</td><td>HP VSC currently requires a processor from one of the following:
 <br>Any AMD Opteron or Intel E5/E7 series Xeon processor or better with:

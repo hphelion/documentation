@@ -17,29 +17,23 @@ authors: Sameer V, Pranoy R, Michael B
 
 <p style="font-size: small;"> <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/support-matrix/">Support Matrix &#9654;</a></p>
 
-# HP Helion OpenStack&#174; Carrier Grade: Technical Overview
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Technical Overview
 
-This page introduces you to HP Helion OpenStack, an enterprise-grade distribution of the OpenStack cloud operating system.
-
-HP Helion OpenStack allows you to easily deploy OpenStack Cloud Services in a secure, highly available configuration, and subsequently deploy, manage and operate your cloud infrastructure in production. 
-
-It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. HP OpenStack is enabled to manage KVM and VMWare ESX hypervisors.
+This page introduces you to HP Helion OpenStack Carrier Grade, a carrier-grade distribution of OpenStack, the leading open source cloud computing platform.
 
 * [HP Helion OpenStack services](#Helion-services)
 * [Deployment architecture](#deploy-arch)
 * [Network architecture](#networkarch)
 * [Hardware requirement](#hardware-req)
 
+## HP Helion OpenStack Carrier Grade services- functional overview {#Helion-services}
 
-
-## HP Helion OpenStack Services- Functional Overview {#Helion-services}
-
-The following table outlines the functionality of HP Helion OpenStack services based on the type of users - Users and Administrators. For a complete description of these services, see the [Services Overview](/helion/openstack/1.1/services/overview/) page.
+The following table outlines the functionality of HP Helion OpenStack  Carrier Grade services based on the type of users - Users and Administrators. For a complete description of these services, see the [Services Overview](//helion/openstack/carrier/services/overview/) page.
 
 
 ## Deployment architecture {#deploy-arch}  
 
-You can deploy HP Helion OpenStack in two different environments depending on the hypervisor: KVM or ESX. 
+You can deploy HP Helion OpenStack Carrier Grade on a [KVM hypervisor](http://www.linux-kvm.org/page/Main_Page). 
 
 The following diagram depicts a simplified deployment scenario using KVM.
 
