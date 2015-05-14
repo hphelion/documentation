@@ -65,10 +65,10 @@ to:
 </li>
 <li>Save <code>web.config</code>.</li>
 <li>Build the project locally to verify that it builds correctly, and all NuGet packages successfully install. Once the project builds successfully, go to the next step.
-
+<br/>
 	<img src="media/windows_build.png"></li>
 <li>Right click the project and select <strong>Publish to Cloud Foundry</strong>.
-	
+<br/>	
 	<img src="media/windows_deploy_contextmenu.png">
 </li> 
 <li> In the <strong>Cloud Foundry Publish Profile</strong> dialog, enter the following values and click <strong>Publish</strong>:
