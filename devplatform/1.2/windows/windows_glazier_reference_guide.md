@@ -135,7 +135,7 @@ A profile can be used to configure Glazier. By default we provide the profiles y
 
 The directory structure of the profile should match the following:
 
-<img src="/media/windows_glazier_fileformat.png">
+<img src="media/windows_glazier_fileformat.png">
 
 ### Sample features.csv file
 
