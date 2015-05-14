@@ -177,8 +177,8 @@ When a Windows DEA or SQL Server image is added to an ALS server, these instance
 1. <span style="color:red">Do we need anything special?</span>
 
 <div align="center"><a href="/helion/devplatform/1.2/windows/">Windows Overview</a> </div>
-<div align="center"> <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a> </div>
-<div align="center"> Building and deploying Windows images | <a href="/helion/devplatform/1.2/windows/glazier">Glazier Reference Guide</a></div>
+<div align="center"> <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/1.2/windows/tools_guide/">Windows and .NET Tools Guide</a> </div>
+<div align="center"> Building and deploying Windows images | <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a></div>
 <div align="center"><a href="/helion/devplatform/1.2/windows/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/1.2/windows/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
 
 
