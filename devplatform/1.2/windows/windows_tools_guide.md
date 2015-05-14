@@ -189,9 +189,10 @@ The Helion client tool can be downloaded from the following locations:
 </ul>
 
 ---
-<div align="center"><a href="/helion/devplatform/preview/">Windows Overview</a> </div>
-<div align="center"> <a href="/helion/devplatform/preview/deployingnet/">Deploying your first .NET Application</a> | Windows and .NET Tools Guide </div>
-<div align="center"><a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/preview/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
+<div align="center"><a href="/helion/devplatform/1.2/windows/">Windows Overview</a> </div>
+<div align="center"> <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET Application</a> | Windows and .NET Tools Guide </div>
+<div align="center"> <a href="/helion/devplatform/1.2/windows/building_windows/">Building and deploying Windows images</a> | <a href="/helion/devplatform/1.2/windows/glazier">Glazier Reference Guide</a></div>
+<div align="center"><a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/1.2/windows/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
 
 
 
