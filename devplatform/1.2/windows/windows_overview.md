@@ -79,6 +79,10 @@ The Helion Development Platform 1.2 supports SQL Server Express 2012 and SQL Ser
 
 In order to run .NET framework applications, Helion Development Platform requires that Windows DEA nodes be deployed. The tools used to create and deploy Windows DEA nodes, and to deploy .NET Framework applications, include the following:
 
+### Imaging tool
+
+* Glazier: This tool creates Windows images for deployment to Helion OpenStack. This tool is not needed for using Windows images in HP Helion Public Cloud.
+
 ### Management tool set:
 
 * ALS Cluster management (*cf-mgmt*): This tool adds Windows DEAs and SQL Server services to your cluster.
