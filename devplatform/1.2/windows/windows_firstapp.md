@@ -39,15 +39,28 @@ This tutorial requires the following software components:
 3. In Visual Studio, open <code>web.config</code>.
 4. Change the following configuration line (this will pull the connection string parameters from environment variables, rather than using hardcoded values):
 
-  ```
-  <add name="SchoolContext" connectionString= "Data Source=(LocalDb)\v11.0; Initial Catalog=ContosoUniversity2; Integrated Security=SSPI;" providerName="System.Data.SqlClient" />
-  ```
-
+	<pre>
+	  &lt;add name="SchoolContext"
+	    connectionString= 
+	      "Data Source=(LocalDb)\v11.0; 
+	      Initial Catalog=ContosoUniversity2; 
+	      Integrated Security=SSPI;" 
+	    providerName="System.Data.SqlClient" 
+	  /&gt;
+	</pre>
+	
 	to:
-
-  ```
-  <add name="SchoolContext" connectionString="Server={ContosoUniversity-db#hostname},{ContosoUniversity-db#port};Database={ContosoUniversity-db#name};User Id={ContosoUniversity-db#username};Password={ContosoUniversity-db#password};MultipleActiveResultSets=true;" providerName="System.Data.SqlClient" />
-  ```
+	
+	<pre>
+	  &lt;add name="SchoolContext" 
+	    connectionString=
+	      "Server={ContosoUniversity-db#hostname},{ContosoUniversity-db#port};
+	      Database={ContosoUniversity-db#name};
+	      User Id={ContosoUniversity-db#username};
+	      Password={ContosoUniversity-db#password};
+	      MultipleActiveResultSets=true;" 
+	    providerName="System.Data.SqlClient" /&gt;
+	</pre>
 
 5. Save <code>web.config</code>.
 6. Build the project locally to verify that it builds correctly, and all NuGet packages successfully install. Once the project builds successfully, go to the next step.
@@ -95,26 +108,37 @@ One advantage of using the command line is that you can use Mac or Linux as well
 1. Open <code>Web.config</code> with a text editor
 2. Change the following configuration line (this will pull the connection string parameters from environment variables, rather than using hardcoded values):
 
-  ```
-  <add name="SchoolContext" connectionString="Data Source=(LocalDb)\v11.0;Initial Catalog=ContosoUniversity2;Integrated Security=SSPI;"providerName="System.Data.SqlClient" />
-  ```
+	<pre>
+	  &lt;add name="SchoolContext" 
+	    connectionString="Data Source=(LocalDb)\v11.0;
+	    Initial Catalog=ContosoUniversity2;
+	    Integrated Security=SSPI;"
+	  providerName="System.Data.SqlClient" /&gt;
+	</pre>
 
 	to:
-
-  ```
-  <add name="SchoolContext" connectionString="Server={ContosoUniversity-db#hostname},{ContosoUniversity-db#port};Database={ContosoUniversity-db#name};User Id={ContosoUniversity-db#username};Password={ContosoUniversity-db#password};MultipleActiveResultSets=true;" providerName="System.Data.SqlClient" />
-  ```
+	
+	<pre>
+	  &lt;add name="SchoolContext" 
+	    connectionString=
+	      "Server={ContosoUniversity-db#hostname},{ContosoUniversity-db#port};
+	      Database={ContosoUniversity-db#name};
+	      User Id={ContosoUniversity-db#username};
+	      Password={ContosoUniversity-db#password};
+	      MultipleActiveResultSets=true;" 
+	    providerName="System.Data.SqlClient" /&gt;
+	</pre>
 
 1. Create a new file called <code>manifest.yml</code> in the same directory as your solution file, with the following contents. This is the application manifest file, which the deployment tool will use to determine what to do with the application.
 		
-  ```
-		applications:
-    name: ContosoUniversity
- 			mem: 512M
-  			services:
-    		${name}-db:
-        type: mssql2014
-  ```
+	<pre>
+	applications:
+	    name: ContosoUniversity
+	    mem: 512M
+	    services:
+	    ${name}-db:
+	    type: mssql2014
+	</pre>
 
 2. Use the <a href="/helion/devplatform/1.2/windows/tools_guide/#helion">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
 	
