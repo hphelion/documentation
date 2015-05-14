@@ -143,7 +143,7 @@ For more information on licensing Windows Server, see <a href="https://www.micro
 
 ## Next Steps {#nextsteps}
 
-* <a href="/helion/devplatform/1.2/windows/building_windows/">Building and Deploying Windows and SQL Server Express Images</a>
+* <a href="/helion/devplatform/1.2/windows/building_windows/">Building and Deploying Windows DEA and SQL Server Express Images</a>
 * <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET application</a> 
 * <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a>
 * <a href="/helion/devplatform/1.2/windows/buildpack/">Creating Custom Buildpacks for Windows  Applications</a>

@@ -129,5 +129,5 @@ One advantage of using the command line is that you can use Mac or Linux as well
 ---
 <div align="center"><a href="/helion/devplatform/1.2/windows/">Windows Overview</a> </div>
 <div align="center"> Deploying your first .NET Application | <a href="/helion/devplatform/1.2/windows/tools_guide/">Windows and .NET Tools Guide</a> </div>
-<div align="center"> <a href="/helion/devplatform/1.2/windows/building_windows/">Building and deploying Windows images</a> | <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a></div>
+<div align="center"> <a href="/helion/devplatform/1.2/windows/building_windows/">Building and Deploying Windows DEA and SQL Server Express Images</a> | <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a></div>
 <div align="center"><a href="/helion/devplatform/1.2/windows/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/1.2/windows/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>

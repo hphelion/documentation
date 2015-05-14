@@ -25,6 +25,8 @@ authors: Patrick F
 
 Glazier is a collection of scripts used for building Windows images for deployment to a Helion OpenStack environment. The image that the tool creates can be configured either by using command-line switches, or by using a Glazier profile.
 
+For an example on how to use Glazier to create a Windows image, see <a href="/helion/devplatform/1.2/windows/enabling_windows">Enabling Windows</a>.
+
 * [Downloading the Glazier Tool](#downloading)
 * [Prerequisites](#prerequisites)
 * [Usage](#usage)
@@ -40,7 +42,7 @@ The Glazier tool can be found here: <a href="https://drive.google.com/a/hp.com/f
 Glazier can run in either Linux (Ubuntu recommended) or OSX.
 
 * <a href="http://download.virtualbox.org/virtualbox/4.3.26/VirtualBox-4.3.26-98988-OSX.dmg">Virtual box 4.3.26</a>
-* A retail, English Windows 2012R2 image. Images for a development or test environment can be downloaded from MSDN; for a production environment, you must obtain an image through your OEM channel.
+* A retail or volume licensed, English Windows 2012R2 image. Images for a development or test environment can be downloaded from MSDN; for a production environment, you must obtain an image through your OEM channel.
 * <a href="http://alt.fedoraproject.org/pub/alt/virtio-win/stable/virtio-win-0.1-81.iso">Windows VirtIO Image 0.1-81</a>
 
 ## Usage {#usage}
@@ -56,10 +58,6 @@ To use the script, you need to have the following OpenStack environment variable
 
 It is recommended to set these environment variables using the OpenStack RC file from the target environment. This can be obtained in Horizon, under Project-&gt;Compute-&gt;Access & Security-&gt;API Access-&gt;**Download OpenStack RC File**.
 
-
-
-For an example on how to use Glazier to create a Windows image, see <a href="/helion/devplatform/1.2/windows/enabling_windows">Enabling Windows</a>.
-
 ## Command-line arguments {#commandline}
 
 Syntax: <code>create-glazier</code>
@@ -71,23 +69,26 @@ Available options:
     - specifies the location of the Windows iso image
 
 --sql-server-iso /path/to/sqlserver_iso_kit 
-    - specifies the location of the SQL Server iso image
+    - specifies the location of the SQL Server iso image (Currently unused)
 
 --virtio-iso /path/to/virtio_iso_kit        
     - specifies the path to the Virtio iso image
 
 --profile PATH                              
     - (optional) path to a glazier profile. Can be used multiple times. If not supplied, 
-    - a subdirectory named "profile" will be searched by default, and all profiles found will be used. <span style="color:red">Is this accurate?</span>
+    - a subdirectory named "profile" will be searched by default, and all profiles found will be used. 
 
 --vm-path PATH                              
     - (optional) path to a directory where VBox files will be saved. The default is ~/.glazier
 
 --with-sql-server {none|2012|2014}      
-    - if this is set, you also have to set --sql-server-iso
+    - if this is set, you also have to set --sql-server-iso (Currently unused)
 
 --product-key KEY               
-    - Windows product key; leave empty if you're using a VL Windows iso with a KMS server
+    - (optional) Windows product key; leave empty if you're using a VL Windows iso with a KMS server
+
+--use-volume-license
+    - (optional) Specifies that you are using a Windows volume license. If this is specified, there's no need to specify --product-key (means you are using Windows VL)
 
 --os-network-id
     - OpenStack network id used for building the OpenStack image. Can be found 
@@ -104,10 +105,10 @@ Available options:
     - OpenStack flavor used for building the OpenStack image. Example: standard.medium
 
 --insecure
-	- (optional) create a Windows image for a Development Platform installation that doesn't have an HTTPS certificate
+    - (optional) create a Windows image for a Development Platform installation that doesn't have an HTTPS certificate
 
 --windows-update-proxy
-	- (optional) proxy used for Windows Updates on image
+    - (optional) proxy used for Windows Updates on image
   
 --dry-run                   
     - (optional) run but don't make any changes
@@ -138,5 +139,5 @@ After creating the profile, use the <code>--profile</code> command-line switch (
 
 <div align="center"><a href="/helion/devplatform/1.2/windows/">Windows Overview</a> </div>
 <div align="center"> <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/1.2/windows/tools_guide/">Windows and .NET Tools Guide</a> </div>
-<div align="center"> <a href="/helion/devplatform/1.2/windows/building_windows/">Building and deploying Windows images</a> | Glazier Reference Guide</div>
+<div align="center"> <a href="/helion/devplatform/1.2/windows/building_windows/">Building and Deploying Windows DEA and SQL Server Express Images</a> | Glazier Reference Guide</div>
 <div align="center"><a href="/helion/devplatform/1.2/windows/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/1.2/windows/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
