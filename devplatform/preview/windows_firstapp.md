@@ -17,7 +17,7 @@ role9: Service Developer
 authors: Patrick F
 
 ---
-<!--PUBLISH-->
+<!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform Preview: Deploying your first .NET Application 
 
