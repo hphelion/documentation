@@ -24,7 +24,7 @@ This page introduces you to HP Helion OpenStack Carrier Grade, a carrier-grade d
 * [HP Helion OpenStack services](#Helion-services)
 * [Deployment architecture](#deploy-arch)
 * [Network architecture](#networkarch)
-* [Hardware requirement](#hardware-req)
+* [Hardware requirement](#next)
 
 ## HP Helion OpenStack Carrier Grade services- functional overview {#Helion-services}
 
@@ -100,7 +100,7 @@ The following information describes the network configuration for the [physical 
 </tr>
 </table>
 
-## Hardware requirement {#hardware-req}
+## Next step {#next}
 
 For more information of Hardware configurations see the [Support Matrix](/helion/openstack/carrier/support-matrix/).
 
