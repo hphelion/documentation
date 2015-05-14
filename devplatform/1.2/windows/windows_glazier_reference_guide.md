@@ -129,9 +129,68 @@ Available options:
 
 ## Creating a Glazier Profile {#profile}
 
-A profile can be used to configure Glazier. By default we provide the profiles you need to create the images you need to enable working with Windows. However, you can create a custom profile. Use the following template:
+A profile can be used to configure Glazier. By default we provide the profiles you need to create the images you need to enable working with Windows. However, you can create a custom profile. Create the profile in the following format:
 
-<span style="color:red">Vlad, need profile template.</span>
+### Glazier profile directory structure
+
+The directory structure of the profile should match the following:
+
+
+		.
+		├── features.csv
+		├── resources.csv
+		└── specialize
+			├── specialize.ps1
+			└── tools.csv
+
+### Sample features.csv file
+
+The <code>features.csv</code> file should have the following format:
+
+	csv
+	Feature,Core,Standard,Desired
+	NetFx4ServerFeatures,Enabled,Enabled,Enabled
+	NetFx4,Enabled,Enabled,Enabled
+	NetFx4Extended-ASPNET45,Disabled,Disabled,Enabled
+	MicrosoftWindowsPowerShellRoot,Enabled,Enabled,Enabled
+	MicrosoftWindowsPowerShell,Enabled,Enabled,Enabled
+	ServerCore-FullServer,Removed,Enabled,Removed
+	IIS-LegacySnapIn,Removed,Disabled,Removed
+	IIS-ManagementScriptingTools,Disabled,Disabled,Removed
+	IIS-ManagementService,Disabled,Disabled,Removed
+	IIS-IIS6ManagementCompatibility,Disabled,Disabled,Removed
+	IIS-Metabase,Disabled,Disabled,Removed
+	IIS-WMICompatibility,Disabled,Disabled,Removed
+	IIS-LegacyScripts,Disabled,Disabled,Removed
+	IIS-FTPServer,Disabled,Disabled,Removed
+
+### Sample resources.csv file
+
+The <code>resources.csv</code> file should have the following format:
+
+	csv
+	destination,url
+	\installers\product.zip,http://download.domain.com/product.zip
+
+### Sample tools.csv file
+
+The <code>tools.csv</code> file should have the following format:
+
+	csv
+	destination,url
+	tool.zip,http://download.domain.com/tool.zip
+
+### Sample PowerShell script
+
+The <code>specialize.ps1</code> file is a PowerShell script that will run as one of the last steps on the `temp instance`.
+
+Sample <code>specialize.ps1</code>:
+
+	powershell
+	# Open firewall port 80
+	New-NetFirewallRule -DisplayName 'Allow HTTP' -Direction Inbound -LocalPort 80 -Protocol TCP -Action Allow
+
+
 
 After creating the profile, use the <code>--profile</code> command-line switch (above).
 
