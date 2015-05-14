@@ -1,5 +1,5 @@
  HDP
- HOS
+ HOS 
 CloudStack
 cloudstack
 [bB]are [mM]etal
@@ -123,6 +123,5 @@ OpenStack®
  ommited 
 <<<<<<< HEAD
 (##
-{{#
 â€™
 ÎáÎáÎí
