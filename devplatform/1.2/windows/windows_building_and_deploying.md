@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
-title: "HP Helion 1.2 Development Platform: Building and Deploying Windows and SQL Server Express Images"
-permalink: /helion/devplatform/1.2/windows/building_windows
+title: "HP Helion 1.2 Development Platform: Building and Deploying Windows DEA and SQL Server Express Images"
+permalink: /helion/devplatform/1.2/windows/building_windows/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
@@ -19,7 +19,7 @@ authors: Patrick F
 ---
 <!--UNDER REVISION-->
 
-# HP Helion 1.2 Development Platform: Building and Deploying Windows and SQL Server Express Images
+# HP Helion 1.2 Development Platform: Building and Deploying Windows DEA and SQL Server Express Images
 
 <span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 
@@ -40,9 +40,13 @@ The following requirements pertain to the system where the Windows image will be
 ### Software Prerequisites
 
 * A Windows Server 2012R2 ISO image (Volume-licensed images can be obtained through MSDN for development or test; volume-licensed production images must be obtained through the OEM channel).
-	* The ISO must be a retail (non-evaluation) image
+	* The ISO must be a retail or volume licensed (non-evaluation) image
 	* The ISO must be an English-language version.
-	* The name of the ISO file must be <code>en\_windows\_server\_2012\_r2\_with\_update\_x64\_dvd\_6052708.iso</code> <span style="color:red">Vlad, did we remove the name check?</span>
+	* The tool verifies that the name of the ISO image contains the following:
+		*  <code>en</code>
+		*  <code>2012</code>
+		*  <code>x64</code>
+		*  File extension <code>.iso</code>
 * Virtual Box version 4.3.26 or later: <a href="https://www.virtualbox.org/wiki/Downloads">Download</a>
 * Virtio drivers version 0.1-81: <a href="http://alt.fedoraproject.org/pub/alt/virtio-win/stable/virtio-win-0.1-81.iso">Download</a>
 * Download and extract the Glazier tool: <a href="https://drive.google.com/a/hp.com/folderviewid=0By3HV5Aek7gYfjg3TUVGT1RxeGhhZTBvN2JBR3Y4UWZZWXkycEprUGhSc0J3a19XcHJaTXM&usp=sharing">Download</a><span style="color:red"> this link is incorrect, need production link.</span> For more information about Glazier, see the <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a>.
@@ -51,9 +55,9 @@ The following requirements pertain to the system where the Windows image will be
 
 ### Setup Information Needed
 
-* A Windows product key for Windows Server 2012R2. A volume license is strongly recommended, as temporary instances will be created that need product keys.
+* A Windows product key for Windows Server 2012R2. A multiple activation key is strongly recommended, as temporary instances will be created that need product keys.
 * The RC file for the target Helion OpenStack environment. This can be downloaded from the Horizon interface, under **Project-&gt;Compute-&gt;Access & Security-&gt;API Access-&gt;Download OpenStack RC File**.
-* The certificate for the target Helion OpenStack environment. This can be found on the seed node, under /usr/local/share/ca-certificates/ephemeralca-cacert.crt.
+* The certificate for the target Helion OpenStack environment. This can be found on the seed node, under /usr/local/share/ca-certificates/ephemeralca-cacert.crt. The path to the certificate must be set in the OS_CACERT environment variable.
 
 ## Creating and uploading images
 
@@ -75,17 +79,14 @@ This VM is used to create the images for the guest OS.
 		--os-flavor &lt;os flavor name: e.g. m1.small&gt; \
 	</pre>
 3. When the tool finishes, you will see a command prompt open in a Virtual Box instance. 
-	
-<span style="color:red">Need screenshot(s?) Should there be several screenshots here showing various steps of the Windows install process, plus the command prompt?</span>
+
 
 ### Step 2: Create and Initialize the OS Windows DEA Image
 
 1. In the Glazier VM command prompt that opens after the end of the previous step, run the following command:
 
 		New-Image -name "windows2012r2-windea" -GlazierProfilePath "windea"
-2. Once the image gets created, run the following command to initialize it:
-3. 
-		Initialize-Image -Qcow2ImagePath "c:\workspace\windows2012r2-windea -ImageName "windea_snapshot"
+2. Once the image gets created, the image will be initialized automatically.
 
 ### Step 3: Create and Initialize the OS SQL Server Express 2012 Image (Optional)
 
@@ -93,9 +94,7 @@ This VM is used to create the images for the guest OS.
 	
 		New-Image -name "windows 2012r2-sql2012" -GlazierProfilePath "mssql2012"
 
-2. Once the image gets created, run the following command to initialize it:
-
-		Initialize-Image -Qcow2ImagePath "c:\workspace\windows2012r2-sql2012" -ImageName "msssql2012_snapshot"
+2. Once the image gets created, the image will be initialized automatically.
 
 ### Step 4: Create and Initialize the OS SQL Server Express 2014 Image (Optional)
 
@@ -103,9 +102,7 @@ This VM is used to create the images for the guest OS.
 	
 		New-Image -name "windows 2012r2-sql2014" -GlazierProfilePath "mssql2014"
 
-2. Once the image gets created, run the following command to initialize it:
-
-		Initialize-Image -Qcow2ImagePath "c:\workspace\windows2012r2-sql2014" -ImageName "msssql2014_snapshot"
+2. Once the image gets created, the image will be initialized automatically.
 
 ## Enabling Windows and SQL Server in your ALS cluster
 ### Add Windows DEA
@@ -115,8 +112,8 @@ This VM is used to create the images for the guest OS.
 		version: 1.2
 		constructor-image-name: {?}
 		seed-node-image-name: {Windows DEA Image Name}
-		cluster-title: Win2012R2
-		cluster-prefix: Win2012R2
+		cluster-title: MyCluster
+		cluster-prefix: MyCluster
 		az: {az name}
 		constructor-flavor: standard.medium
 		flavor: standard.medium
@@ -125,6 +122,7 @@ This VM is used to create the images for the guest OS.
 		max-cluster-wait-duration: 30m
 		network-name: {network name}
 
+    The <code>cluster-title</code> and <code>cluster-prefix</code> need to match the cluster you are deploying the image to.
 2. Run this command
 
 		cf-mgmt add-role dea --load <file name>.yml
@@ -136,8 +134,8 @@ This VM is used to create the images for the guest OS.
 		version: 1.2
 		constructor-image-name: {?}
 		seed-node-image-name: {SQL Image Image Name}
-		cluster-title: mssql2012
-		cluster-prefix: mssql2012
+		cluster-title: MyCluster
+		cluster-prefix: MyCluster
 		az: {az name}
 		constructor-flavor: standard.medium
 		flavor: standard.medium
@@ -145,6 +143,8 @@ This VM is used to create the images for the guest OS.
 		stack: mssql2012
 		max-cluster-wait-duration: 30m
 		network-name: {network name}
+
+    The <code>cluster-title</code> and <code>cluster-prefix</code> need to match the cluster you are deploying the image to.
 
 2. Run this command for SQL Server 2012
 
@@ -157,8 +157,8 @@ This VM is used to create the images for the guest OS.
 		version: 1.2
 		constructor-image-name: {?}
 		seed-node-image-name: {SQL Image Image Name}
-		cluster-title: mssql2014
-		cluster-prefix: mssql2014
+		cluster-title: MyCluster
+		cluster-prefix: MyCluster
 		az: {az name}
 		constructor-flavor: standard.medium
 		flavor: standard.medium
@@ -167,19 +167,19 @@ This VM is used to create the images for the guest OS.
 		max-cluster-wait-duration: 30m
 		network-name: {network name}
 
+    The <code>cluster-title</code> and <code>cluster-prefix</code> need to match the cluster you are deploying the image to
+
 2. Run this command for SQL Server 2014
 
 		cf-mgmt add-service mssql2014 --load <file name>.yml
 ## Activating Windows Images
 
-When a Windows DEA or SQL Server image is added to an ALS server, these instances need to be activated to be compliant with <a href="https://www.microsoft.com/licensing/">Microsoft licensing</a>. You can activate by either connecting to them with Remote Desktop and activating Windows normally, or by using KVM. To activate an image with KVM, do the following:
-
-1. <span style="color:red">Do we need anything special?</span>
+When a Windows DEA or SQL Server image node added to an ALS server, these instances need to be activated to be compliant with <a href="https://www.microsoft.com/licensing/">Microsoft licensing</a>. You can activate by either connecting to them with Remote Desktop and activating Windows manually, or by using KVM. 
 
 <div align="center"><a href="/helion/devplatform/1.2/windows/">Windows Overview</a> </div>
-<div align="center"> <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a> </div>
-<div align="center"> Building and deploying Windows images | <a href="/helion/devplatform/1.2/windows/glazier">Glazier Reference Guide</a></div>
-<div align="center"><a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/1.2/windows/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
+<div align="center"> <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/1.2/windows/tools_guide/">Windows and .NET Tools Guide</a> </div>
+<div align="center"> Building and Deploying Windows DEA and SQL Server Express Images | <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a></div>
+<div align="center"><a href="/helion/devplatform/1.2/windows/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/1.2/windows/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
 
 
 

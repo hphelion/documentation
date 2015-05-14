@@ -79,6 +79,10 @@ The Helion Development Platform 1.2 supports SQL Server Express 2012 and SQL Ser
 
 In order to run .NET framework applications, Helion Development Platform requires that Windows DEA nodes be deployed. The tools used to create and deploy Windows DEA nodes, and to deploy .NET Framework applications, include the following:
 
+### Imaging tool
+
+* Glazier: This tool creates Windows images for deployment to Helion OpenStack. This tool is not needed for using Windows images in HP Helion Public Cloud.
+
 ### Management tool set:
 
 * ALS Cluster management (*cf-mgmt*): This tool adds Windows DEAs and SQL Server services to your cluster.
@@ -139,12 +143,12 @@ For more information on licensing Windows Server, see <a href="https://www.micro
 
 ## Next Steps {#nextsteps}
 
-* <a href="/helion/devplatform/1.2/windows/building_windows">Building and Deploying Windows and SQL Server Express Images</a>
-* <a href="/helion/devplatform/1.2/windows/deployingnet">Deploying your first .NET application</a> 
+* <a href="/helion/devplatform/1.2/windows/building_windows/">Building and Deploying Windows DEA and SQL Server Express Images</a>
+* <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET application</a> 
 * <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a>
-* <a href="/helion/devplatform/1.2/windows/custom_buildpacks">Creating Custom Buildpacks for Windows  Applications</a>
-* <a href="/helion/devplatform/1.2/windows/connecting_services/">Connecting Services to a Windows  Application</a>
-* <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a>
+* <a href="/helion/devplatform/1.2/windows/buildpack/">Creating Custom Buildpacks for Windows Applications</a>
+* <a href="/helion/devplatform/1.2/windows/adding_services/">Connecting Services to a Windows Application</a>
+* <a href="/helion/devplatform/1.2/windows/tools_guide/">Windows and .NET Tools Guide</a>
 
 
 
