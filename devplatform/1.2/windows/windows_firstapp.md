@@ -134,25 +134,25 @@ to:
 </li>
 <li> Create a new file called <code>manifest.yml</code> in the same directory as your solution file, with the following contents. This is the application manifest file, which the deployment tool will use to determine what to do with the application.
 		
-	<pre>
-	applications:
-	    name: ContosoUniversity
-	    mem: 512M
-	    services:
-	    ${name}-db:
-	    type: mssql2014
-	</pre>
+<pre>
+applications:
+    name: ContosoUniversity
+    mem: 512M
+    services:
+    ${name}-db:
+    type: mssql2014
+</pre>
 </li>
 <li> Use the <a href="http://docs.hpcloud.com/helion/devplatform/1.2/windows/tools_guide/#helion">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
-	
-		helion target <cluster URL>
-		helion login
-		helion push --stack win2012r2 -n
+<pre>helion target <cluster URL>
+helion login
+helion push --stack win2012r2 -n
+</pre>
 
 <li> When the push completes, the command line will show the application URL (e.g. ContosoUniversity.xx.xx.xx.xx.xip.io).
 </li>
 <li> Browse to the application URL to verify the deployment. </li>
-
+</ol>
 ---
 <div align="center"><a href="/helion/devplatform/1.2/windows/">Windows Overview</a> </div>
 <div align="center"> Deploying your first .NET Application | <a href="/helion/devplatform/1.2/windows/tools_guide/">Windows and .NET Tools Guide</a> </div>

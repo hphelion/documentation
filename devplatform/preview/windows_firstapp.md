@@ -17,7 +17,7 @@ role9: Service Developer
 authors: Patrick F
 
 ---
-<!--PUBLISHED-->
+<!--PUBLISH-->
 
 # HP Helion 1.2 Development Platform Preview: Deploying your first .NET Application 
 
@@ -111,40 +111,51 @@ If you are deploying your application from the command line, you do not need Vis
 
 One advantage of using the command line is that you can use Mac or Linux as well as Windows to deploy your application. Typically, a push is run with the tool in the solution directory, the client tool uploads the application, and the application is built on the server.
 
-1. Open <code>Web.config</code> with a text editor
-2. Change the following configuration line (this will pull the connection string parameters from environment variables, rather than using hardcoded values):
+<ol>
+<li> Open <code>Web.config</code> with a text editor</li>
+<li> Change the following configuration line (this will pull the connection string parameters from environment variables, rather than using hardcoded values):
 
-  ```
-  <add name="SchoolContext" connectionString="Data Source=(LocalDb)\v11.0;Initial Catalog=ContosoUniversity2;Integrated Security=SSPI;"providerName="System.Data.SqlClient" />
-  ```
+<pre>
+  &lt;add name="SchoolContext" 
+    connectionString="Data Source=(LocalDb)\v11.0;
+    Initial Catalog=ContosoUniversity2;
+    Integrated Security=SSPI;"
+  providerName="System.Data.SqlClient" /&gt;
+</pre>
 
-  to:
-
-  ```
-  <add name="SchoolContext" connectionString="Server={ContosoUniversity-db#hostname},{ContosoUniversity-db#port};Database={ContosoUniversity-db#name};User Id={ContosoUniversity-db#username};Password={ContosoUniversity-db#password};MultipleActiveResultSets=true;" providerName="System.Data.SqlClient" />
-  ```
-
-1. Create a new file called <code>manifest.yml</code> in the same directory as your solution file, with the following contents. This is the application manifest file, which the deployment tool will use to determine what to do with the application.
-
-  ```
-  applications:
+to:
+	
+<pre>
+  &lt;add name="SchoolContext" 
+    connectionString=
+      "Server={ContosoUniversity-db#hostname},{ContosoUniversity-db#port};
+      Database={ContosoUniversity-db#name};
+      User Id={ContosoUniversity-db#username};
+      Password={ContosoUniversity-db#password};
+      MultipleActiveResultSets=true;" 
+    providerName="System.Data.SqlClient" /&gt;
+</pre>
+</li>
+<li> Create a new file called <code>manifest.yml</code> in the same directory as your solution file, with the following contents. This is the application manifest file, which the deployment tool will use to determine what to do with the application.
+		
+<pre>
+applications:
     name: ContosoUniversity
     mem: 512M
     services:
-      ${name}-db:
-        type: mssql2014
-  ```
-
-2. Use the <a href="/helion/devplatform/preview/tools_guide/#helion">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
-	
-		helion target <cluster URL>
-		helion login
-		helion push --stack win2012r2 -n
-
-3. When the push completes, the command line will show the application URL (e.g. ContosoUniversity.xx.xx.xx.xx.xip.io).
-
-5. Browse to the application URL to verify the deployment. 
-
+    ${name}-db:
+    type: mssql2014
+</pre>
+</li>
+<li> Use the <a href="http://docs.hpcloud.com/helion/devplatform/1.2/windows/tools_guide/#helion">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
+<pre>helion target <cluster URL>
+helion login
+helion push --stack win2012r2 -n
+</pre>
+<li> When the push completes, the command line will show the application URL (e.g. ContosoUniversity.xx.xx.xx.xx.xip.io).
+</li>
+<li> Browse to the application URL to verify the deployment. </li>
+</ol>
 ---
 <div align="center"><a href="/helion/devplatform/preview/">Windows Overview</a> </div>
 
