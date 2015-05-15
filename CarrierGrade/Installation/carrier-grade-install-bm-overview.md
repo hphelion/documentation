@@ -21,13 +21,12 @@ PageRefresh();
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Installation Overview
 
 This document describes the installation process for HP Helion OpenStack Carrier Grade in a baremetal environment. 
+
 ## About the installation 
 
-The HP Helion OpenStack Carrier Grade Alpha installation will create a base HP Helion OpenStack cloud that uses the [HP Networking (Neutron) service](/helion/openstack/carrier/services/networking/overview/) using Open vSwitch (OVS). 
+The HP Helion OpenStack Carrier Grade Alpha installation installs HP Helion Lifecycle Management, creates a base HP Helion OpenStack cloud, and configures network virtualization through HP Distributed Cloud Networking. Using a separate installation, you integrate Wind River Linux servers into the HP Helion OpenStack Carrier Grade environment.
 
-The HP Helion OpenStack cloud will consist of three controller systems and two [compute](/helion/openstack/carrier/services/compute/overview/) nodes. The installation also creates a KVM node virtual machine from which you can deploy [Volume Operation (Cinder) block storage](/helion/openstack/carrier/services/volume/overview/). See the Technical Overview and Support Matrix for more information.
-
-After installation, you can interact with the HP Helion OpenStack cloud using the [Horizon graphical interface](/helion/openstack/carrier/services/horizon/overview/) or using the APIs of the respective [services](/helion/openstack/carrier/services/overview/). 
+After installation, you can interact with the HP Helion OpenStack cloud using the [Horizon graphical interface](/helion/openstack/carrier/services/horizon/overview/) or using the CLIs of the respective [services](/helion/openstack/carrier/services/overview/). 
 
 ## Installation process
 
@@ -39,13 +38,13 @@ Use the following process to install HP Helion OpenStack Carrier Grade in a bare
 
 3. [Installation Prerequisites](/helion/openstack/carrier/install/prereqs/)
 
-4. [Prepare the Network for Installation](/helion/openstack/carrier/install/bm/network/prepare/)
+4. [Prepare the Base KVM to have appropriate network setup done](/helion/openstack/carrier/install/bm/network/prepare/). This step initializes the network interfaces for all cloud nodes.
 
-5. [Create the HLM Virtual Machine](/helion/openstack/carrier/install/bm/hlm-vm/)
+5. [Create the HLM Virtual Machine](/helion/openstack/carrier/install/bm/hlm-vm/). This step will also create the VSD VM.
 
-6. [Configure the installation environment](/helion/openstack/carrier/install/bm/environment/)
+6. [Initialize network interfaces for all cloud nodes]
 
-7. [Deploying the HLM Cloud](/helion/openstack/carrier/install/bm/hlm-cloud/)
+7. [Deploy the HLM Cloud](/helion/openstack/carrier/install/bm/hlm-cloud/)
 
 ## First Step ##
 
