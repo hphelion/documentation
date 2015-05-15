@@ -61,7 +61,7 @@ Next you might want to attach your volume to an existing server.  Taking the vol
 
     PS HPCS:\\> Attach-Volume 99 31415 "/dev/vdp" 
 
-This attaches your server ID `99` to the volume with the ID of `31415` with an assigned device name of `/dev/vpd`.  (To get the server and volume ID values, use the [**ls**](/cli/windows/reference#ls) command.)
+This attaches your server ID `99` to the volume with the ID of `31415` with an assigned device name of `/dev/vpd`.  (To get the server and volume ID values, use the [**ls**](/publiccloud/cli/windows/reference/#ls) command.)
 
 See the following knowledge base article to learn how to leverage your attached storage: [Mounting Additional Space](https://community.hpcloud.com/article/mounting-additional-space)
 
@@ -91,4 +91,4 @@ And of course you can also delete snapshots using the following command:
 
 This removes the snapshot with the ID of 1111.
 
-For more details on the block storage commands, see the [Block Storage](/cli/windows/reference#BlockStorage) section of the [Windows CLI Reference](/cli/windows/reference) page and [Getting Help](/cli/windows/help).
+For more details on the block storage commands, see the [Block Storage](/cli/windows/reference#BlockStorage) section of the [Windows CLI Reference](/cli/windows/reference) page and [Getting Help]( /publiccloud/cli/windows/help/).
