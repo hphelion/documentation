@@ -416,8 +416,6 @@ navigation:
   - text: Open Source and Third-Party Software License Agreements
     url: /helion/openstack/1.1/3rd-party-license-agreements/	
   carrier-grade: 
-  - text: HP Helion Documentation
-    url: /helion/openstack/carrier/
   - text: HP Helion OpenStack Carrier Grade Documentation Home
     url: /helion/openstack/carrier/home/
   - text: Support Matrix
