@@ -35,54 +35,70 @@ This tutorial requires the following software components:
 
 ## Deploy the sample application from Visual Studio
 
-2. Open <code>&lt;sample directory&gt;/C$/ContosoUniversity.sln</code> in Visual Studio. 
-3. In Visual Studio, open <code>web.config</code>.
-4. Change the following configuration line (this will pull the connection string parameters from environment variables, rather than using hardcoded values):
+<ol>
+<li>Open <code>&lt;sample directory&gt;/C$/ContosoUniversity.sln</code> in Visual Studio.</li> 
+<li>In Visual Studio, open <code>web.config</code>.</li>
+<li>Change the following configuration line (this will pull the connection string parameters from environment variables, rather than using hardcoded values):
 
-  ```
-  <add name="SchoolContext" connectionString= "Data Source=(LocalDb)\v11.0; Initial Catalog=ContosoUniversity2; Integrated Security=SSPI;" providerName="System.Data.SqlClient" />
-  ```
-
-	to:
-
-  ```
-  <add name="SchoolContext" connectionString="Server={ContosoUniversity-db#hostname},{ContosoUniversity-db#port};Database={ContosoUniversity-db#name};User Id={ContosoUniversity-db#username};Password={ContosoUniversity-db#password};MultipleActiveResultSets=true;" providerName="System.Data.SqlClient" />
-  ```
-
-5. Save <code>web.config</code>.
-6. Build the project locally to verify that it builds correctly, and all NuGet packages successfully install. Once the project builds successfully, go to the next step.
-
-	<img src="media/windows_build.png">
-6. Right click the project and select **Publish to Cloud Foundry**.
+<pre>
+  &lt;add name="SchoolContext"
+    connectionString= 
+      "Data Source=(LocalDb)\v11.0; 
+      Initial Catalog=ContosoUniversity2; 
+      Integrated Security=SSPI;" 
+    providerName="System.Data.SqlClient" 
+  /&gt;
+</pre>
 	
+to:
+	
+<pre>
+  &lt;add name="SchoolContext" 
+    connectionString=
+      "Server={ContosoUniversity-db#hostname},{ContosoUniversity-db#port};
+      Database={ContosoUniversity-db#name};
+      User Id={ContosoUniversity-db#username};
+      Password={ContosoUniversity-db#password};
+      MultipleActiveResultSets=true;" 
+    providerName="System.Data.SqlClient" /&gt;
+</pre>
+</li>
+<li>Save <code>web.config</code>.</li>
+<li>Build the project locally to verify that it builds correctly, and all NuGet packages successfully install. Once the project builds successfully, go to the next step.
+<br/>
+	<img src="media/windows_build.png"></li>
+<li>Right click the project and select <strong>Publish to Cloud Foundry</strong>.
+<br/>	
 	<img src="media/windows_deploy_contextmenu.png">
- 
-7. In the **Cloud Foundry Publish Profile** dialog, enter the following values and click **Publish**:
-	* **Organization and Space:** Select from one of the provided options.
-	* **Name:** The default value is the name of the application.
-	* **Stack:** Leave as <code>win2012r2</code>
-	* **Routes**: Typically the same as the **Name** entry.
-	* **Memory**: The amount of memory the application will use (e.g. 512 MB).
-	* **Instances**: The number of separate installations of the application.
-	* **Services**: Enter the services to bind to the application, in the form <code>Name, service type, quota</code>, with separate services separated by semicolons. Example: <code>ContosoUniversity-db,mssql2014,default</code>
-	
-		 **Note:** If you are adding a SQL server service, ensure that the name matches the value set in the config file. Example: <code>ContosoUniversity-db,mssql2014,free</code>  
-	* **Build Locally**: Check to test the build by building the application locally before deployment.
-	* **Configuration**: Set the build configuration (e.g. Debug). This is only available if the application is built on the server.
-	* **Platform**: Set the target CPU platform (e.g. Any CPU). This is only available if the application is built on the server.
-
-	<img src="media/windows_deploy_cf.png" /> 
-
-7. In the **Login Wizard** dialog, enter the URL for the ALS cluster, and a user and password with sufficient privileges. Check the **Skip SSL Validation** checkbox if your Helion OpenStack installation uses self-signed certificates (as it does in HP Helion Public Cloud):
-	<img src="media/windows_publish_credentials.png" />
- 
-17. Open or refresh Cloud Foundry Explorer. You can open Cloud Foundry Explorer under **View-&gt;Other Windows-&gt;Cloud Foundry Explorer**.
+</li> 
+<li> In the <strong>Cloud Foundry Publish Profile</strong> dialog, enter the following values and click <strong>Publish</strong>:
+<ul>
+<li><strong>Organization and Space:</strong> Select from one of the provided options.</li>
+<li><strong>Name:</strong> The default value is the name of the application.</li>
+<li><strong>Stack:</strong> Leave as <code>win2012r2</code></li>
+<li><strong>Routes</strong>: Typically the same as the **Name** entry.</li>
+<li><strong>Memory</strong>: The amount of memory the application will use (e.g. 512 MB).</li>
+<li><strong>Instances</strong>: The number of separate installations of the application.</li>
+<li><strong>Services</strong>: Enter the services to bind to the application, in the form <code>Name, service type, quota</code>, with separate services separated by semicolons. Example: <code>ContosoUniversity-db,mssql2014,default</code>
+<br />
+	 <strong>Note:</strong> If you are adding a SQL server service, ensure that the name matches the value set in the config file. Example: <code>ContosoUniversity-db,mssql2014,free</code>  </li>
+<li> <strong>Build Locally</strong>: Check to test the build by building the application locally before deployment.</li>
+<li> <strong>Configuration</strong>: Set the build configuration (e.g. Debug). This is only available if the application is built on the server.</li>
+<li> <strong>Platform</strong>: Set the target CPU platform (e.g. Any CPU). This is only available if the application is built on the server.</li>
+</ul>
+<img src="media/windows_deploy_cf.png" /> 
+</li>
+<li>In the <strong>Login Wizard</strong> dialog, enter the URL for the ALS cluster, and a user and password with sufficient privileges. Check the <strong>Skip SSL Validation</strong> checkbox if your Helion OpenStack installation uses self-signed certificates (as it does in HP Helion Public Cloud):
+<img src="media/windows_publish_credentials.png" />
+ </li>
+<li>Open or refresh Cloud Foundry Explorer. You can open Cloud Foundry Explorer under <strong>View-&gt;Other Windows-&gt;Cloud Foundry Explorer</strong>.
  
 	<img src="media/windows_refresh.png" />
-18. Right click the "Contoso" application and select **View in Browser**:
+</li>
+<li>Right click the "Contoso" application and select <strong>View in Browser</strong>:
  
 	<img src="media/windows_viewbrowser.png" />
-
+</li></ol>
 That's it! You are ready to use your application.
 
 ## Deploy the sample application from the command line
@@ -91,41 +107,52 @@ If you are deploying your application from the command line, you do not need Vis
 
 
 One advantage of using the command line is that you can use Mac or Linux as well as Windows to deploy your application. Typically, a push is run with the tool in the solution directory, the client tool uploads the application, and the application is built on the server.
+<ol>
+<li> Open <code>Web.config</code> with a text editor</li>
+<li> Change the following configuration line (this will pull the connection string parameters from environment variables, rather than using hardcoded values):
 
-1. Open <code>Web.config</code> with a text editor
-2. Change the following configuration line (this will pull the connection string parameters from environment variables, rather than using hardcoded values):
+<pre>
+  &lt;add name="SchoolContext" 
+    connectionString="Data Source=(LocalDb)\v11.0;
+    Initial Catalog=ContosoUniversity2;
+    Integrated Security=SSPI;"
+  providerName="System.Data.SqlClient" /&gt;
+</pre>
 
-  ```
-  <add name="SchoolContext" connectionString="Data Source=(LocalDb)\v11.0;Initial Catalog=ContosoUniversity2;Integrated Security=SSPI;"providerName="System.Data.SqlClient" />
-  ```
-
-	to:
-
-  ```
-  <add name="SchoolContext" connectionString="Server={ContosoUniversity-db#hostname},{ContosoUniversity-db#port};Database={ContosoUniversity-db#name};User Id={ContosoUniversity-db#username};Password={ContosoUniversity-db#password};MultipleActiveResultSets=true;" providerName="System.Data.SqlClient" />
-  ```
-
-1. Create a new file called <code>manifest.yml</code> in the same directory as your solution file, with the following contents. This is the application manifest file, which the deployment tool will use to determine what to do with the application.
-		
-  ```
-		applications:
-    name: ContosoUniversity
- 			mem: 512M
-  			services:
-    		${name}-db:
-        type: mssql2014
-  ```
-
-2. Use the <a href="/helion/devplatform/1.2/windows/tools_guide/#helion">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
+to:
 	
-		helion target <cluster URL>
-		helion login
-		helion push --stack win2012r2 -n
+<pre>
+  &lt;add name="SchoolContext" 
+    connectionString=
+      "Server={ContosoUniversity-db#hostname},{ContosoUniversity-db#port};
+      Database={ContosoUniversity-db#name};
+      User Id={ContosoUniversity-db#username};
+      Password={ContosoUniversity-db#password};
+      MultipleActiveResultSets=true;" 
+    providerName="System.Data.SqlClient" /&gt;
+</pre>
+</li>
+<li> Create a new file called <code>manifest.yml</code> in the same directory as your solution file, with the following contents. This is the application manifest file, which the deployment tool will use to determine what to do with the application.
+		
+<pre>
+applications:
+    name: ContosoUniversity
+    mem: 512M
+    services:
+    ${name}-db:
+    type: mssql2014
+</pre>
+</li>
+<li> Use the <a href="http://docs.hpcloud.com/helion/devplatform/1.2/windows/tools_guide/#helion">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
+<pre>helion target <cluster URL>
+helion login
+helion push --stack win2012r2 -n
+</pre>
 
-3. When the push completes, the command line will show the application URL (e.g. ContosoUniversity.xx.xx.xx.xx.xip.io).
-
-5. Browse to the application URL to verify the deployment. 
-
+<li> When the push completes, the command line will show the application URL (e.g. ContosoUniversity.xx.xx.xx.xx.xip.io).
+</li>
+<li> Browse to the application URL to verify the deployment. </li>
+</ol>
 ---
 <div align="center"><a href="/helion/devplatform/1.2/windows/">Windows Overview</a> </div>
 <div align="center"> Deploying your first .NET Application | <a href="/helion/devplatform/1.2/windows/tools_guide/">Windows and .NET Tools Guide</a> </div>
