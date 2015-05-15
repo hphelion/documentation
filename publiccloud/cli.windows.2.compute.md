@@ -19,7 +19,7 @@ This page provides you some examples of how to use the various commands (sometim
 * [Password Management](#PasswordManagement)
 * [Floating IP Management](#IPManagement)
 
-For complete details on the commands--syntax, descriptions, and so forth--take a look at the [CLI Reference](/cli/windows/reference/) page.
+For complete details on the commands--syntax, descriptions, and so forth--take a look at the [CLI Reference]( /publiccloud/cli/windows/reference/) page.
 
 ##Navigation## {#Navigation}
 
@@ -233,7 +233,7 @@ To perform a quick-connect to an existing server instance:
 
     PS HPCS:\\>  Connect-Server 2111
 
-This connects you to the server with the ID `2111`.  You can also connect to a server by [navigating](http://docs.hpcloud.com/cli/windows/2/reference#Connect-Server) to a server directory and entering the `Connect-Server` command with no arguments:
+This connects you to the server with the ID `2111`.  You can also connect to a server by [navigating](/publiccloud/cli/windows/reference/) to a server directory and entering the `Connect-Server` command with no arguments:
 
     PS HPCS:\\>  cd Servers
     PS HPCS:\Servers> cd 2111
@@ -318,4 +318,4 @@ To de-allocate (release) a previously-allocated IP address out of your IP pool
 
 Where `-ip` represents the ID of the allocated IP address.
 
-For a complete list of all the available Compute commands, please see the [CLI reference page](/cli/windows/reference/) and [Getting Help](/cli/windows/help/).
+For a complete list of all the available Compute commands, please see the [CLI reference page](/publiccloud/cli/windows/reference/) and [Getting Help]( /publiccloud/cli/windows/help/).

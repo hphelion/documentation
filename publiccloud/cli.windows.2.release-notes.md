@@ -57,7 +57,7 @@ This release was made available on 10/29/2012 and contains the following new fea
 
 * Support for temporary URLs via new attributes for the cmdlet `[get-uri](/publiccloud/cli/windows/reference#ObjectStorage)`.
 * Support for wild cards for Object-Storage with the commands, `[ls, del, copy](/publiccloud/cli/windows/reference#ObjectStorage)`.
-* Support for [Windows images](/cli/windows/compute#CreateanImageofaServer)
+* Support for [Windows images]( /publiccloud/cli/windows/compute/#CreateanImageofaServer)
 * Added cmdlet `[connect-server](/publiccloud/cli/windows/reference#Compute)` to quick-connect to Windows Instances
 * Added cmdlet `[get-limits](/publiccloud/cli/windows/reference#Compute)` to show Compute quota information
 * Added cmdlet `[ping-server](/publiccloud/cli/windows/reference#Compute)` to ping a server.
