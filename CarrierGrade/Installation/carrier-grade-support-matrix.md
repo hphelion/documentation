@@ -26,16 +26,16 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Support Matrix
  
-To ensure the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the recommendations.
+To ensure the performance and stability of the HP Helion OpenStack Carrier Grade environment, it is very important to meet the requirements and conform to the recommendations.
 
 ## Support Matrix for the KVM Host
 
 To ensure the performance and stability of the HP Lifecycle Management environment, it is very important to meet the requirements and conform to the recommendations listed in [Support Matrix for the KVM Host](/helion/openstack/carrier/support-matrix/hlm/).
 
 
-## Support Matrix for HP Helion OpenStack region
+## Support Matrix for HP Helion OpenStack servers
 
-To ensure the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the recommendations listed in [Support Matrix for HP Helion OpenStack](/helion/openstack/carrier/support-matrix/helion/).
+To ensure the performance and stability of the hLinux servers running HP Helion OpenStack, it is important to meet the requirements and conform to the recommendations listed in [Support Matrix for HP Helion OpenStack](/helion/openstack/carrier/support-matrix/helion/).
 
 ## Support Matrix for HP Distributed Cloud Networking (DCN) host
 
