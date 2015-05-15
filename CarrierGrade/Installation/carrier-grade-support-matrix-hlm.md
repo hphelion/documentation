@@ -23,13 +23,13 @@ PageRefresh();
 
 <p style="font-size: small;"><a href="/helion/openstack/carrier/support-matrix/">&#9650; HP Helion OpenStack Carrier Grade (Beta): Support Matrix</a> |  <a href="/helion/openstack/carrier/support-matrix/helion/"> Support Matrix for HP Helion OpenStack &#9654;</a> </p>
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta):Support Matrix for the KVM Host
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Support Matrix for the KVM Host (HLM)
 
-To ensure the performance and stability of the Wind River region of the HP Lifecycle Management environment, it is very important to meet the requirements and conform to the following recommendations.
+To ensure the performance and stability of the HP Lifecycle Management, it is very important to meet the requirements and conform to the following recommendations.
 
 ## Software Requirements
 
-The KVM Host is a computer running buntu Server 14.04.2 LTS. The following packages are also required:
+The KVM Host is a computer running Ubuntu Server 14.04.2 LTS. The following packages are also required:
 
 * ntp 
 * firefox 

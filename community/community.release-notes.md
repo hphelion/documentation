@@ -155,7 +155,7 @@ For additional information on HP Helion OpenStack Community, OpenStack Cloud Sof
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
-* [Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/)
+* [Open Source and Third-Party Software License Agreements](/helion/community/3rd-party-license-agreements/)
 * [End User License Agreement](/helion/community/eula/)
 
 ----
