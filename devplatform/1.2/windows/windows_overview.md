@@ -21,6 +21,8 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Windows Overview
 
+<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
+
 Helion Development Platform version 1.2 includes a full end-to-end solution for creating and deploying .NET Framework applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of the Helion Development Platform. HTTP-based .NET applications that follow the <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry application model</a> are a great fit for this feature support.
 
 This document contains the following sections:
@@ -39,13 +41,13 @@ This document contains the following sections:
 Helion Development Platform version 1.2 adds tools for creating instances of Windows Server 2012 R2 to a Helion OpenStack environment, and Visual Studio components for deploying .NET HTTP-based applications to those server instances. Benefits of Windows/.NET support include:
 
 * Organizations can run their .NET server applications in the same Helion OpenStack environment as their Linux applications.
-* A consistent tooling experience for deploying Windows and Linux applications: The same <a href="/helion/devplatform/1.2/als/client/download">application deployment and cluster management tools</a> can be used for both Windows and Linux deployments.
-* Additional developer tools, including an SDK for programmatic access to services, and a <a href="/helion/devplatform/1.2/windows/visualstudio">Visual Studio extension</a> for deploying and managing applications.
+* A consistent tooling experience for deploying Windows and Linux applications: The same <a href="/helion/devplatform/1.2/windows/tools_guide#helion">application deployment tools</a> can be used for both Windows and Linux deployments.
+* Additional developer tools, including an SDK for programmatic access to services, and a <a href="/helion/devplatform/1.2/windows/tools_guide#cloudfoundryexplorer">Visual Studio extension</a> for deploying and managing applications.
 * Feature-rich application sandboxing, including memory and CPU management, and application isolation. This allows applications to coexist within a single ALS cluster, saving the overhead of running a separate operating system for each application.
 * Support for creating Windows instances that include Microsoft SQL Server Express. 
 * Integrated buildpack support for building applications with dependencies and services.
 
-Windows and .NET support is enabled by adding this functionality to an existing installation.
+Windows and .NET support is enabled by adding this functionality to an existing Helion Development Platform 1.2 installation.
 
 For the 1.2 release, we support creating the following types of instances:
 
@@ -53,13 +55,13 @@ For the 1.2 release, we support creating the following types of instances:
 * Windows Server 2012 R2 with SQL Server 2012 Express
 * Windows Server 2012 R2 with SQL Server 2014 Express
 
-The Helion Development Platform treats deployment of .NET applications in the same way as Linux applications (such as Java or PHP appplications). .NET applications require a <a href="/helion/devplatform/1.2/als/user/deploy/buildpack/">buildpack</a> to specify the dependencies and <a href="/helion/devplatform/1.2/als/user/services/user-provided/">services</a> that can be bound to the application. .NET applications are deployed into a sandbox environment similar to Warden in Cloud Foundry. 
+Helion Development Platform treats deployment of .NET applications in the same way as Linux applications (such as Java or PHP appplications). .NET applications require a <a href="/helion/devplatform/1.2/windows/buildpack/">buildpack</a> to specify the dependencies and <a href="/helion/devplatform/1.2/windows/adding_services/">services</a> that can be bound to the application. .NET applications are deployed into a sandbox environment similar to Warden in Cloud Foundry. 
 
 ## Supported .NET Application Types {#apps}
 
-The Helion Development Platform supports HTTP-based applications, including ASP.NET and WCF. Design considerations for Windows DEA applications are the same as for <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry</a> applications. 
+Helion Development Platform supports HTTP-based applications, including ASP.NET and WCF. Design considerations for Windows DEA applications are the same as for <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry</a> applications. 
 
-The Helion Development Platform also provides an integrated IIS buildpack which supports the following technologies:
+Helion Development Platform also provides an integrated IIS buildpack which supports the following technologies:
 
 * IIS 8
 * .NET 2.0-4.5.2
@@ -75,11 +77,11 @@ The Helion Development Platform 1.2 supports SQL Server Express 2012 and SQL Ser
 
 ## Windows Tools {#tools}
 
-In order to run .NET framework applications, Windows DEA nodes must be deployed. The tools used to create and deploy Windows DEA nodes, and to deploy .NET Framework applications, include the following:
+In order to run .NET framework applications, Helion Development Platform requires that Windows DEA nodes be deployed. The tools used to create and deploy Windows DEA nodes, and to deploy .NET Framework applications, include the following:
 
-### Windows image tool set: 
+### Imaging tool
 
-* Glazier (*create-glazier*): This tool creates a Windows image for development to Helion OpenStack. Due to licensing constraints, Windows images must be created by the licensed user.
+* Glazier: This tool creates Windows images for deployment to Helion OpenStack. This tool is not needed for using Windows images in HP Helion Public Cloud.
 
 ### Management tool set:
 
@@ -96,10 +98,7 @@ For more information about downloading and using these tools, see <a href="/heli
 
 ## Process {#process}
 
-At a high level, running .NET applications involves two processes:
-
-* [Enabling Windows (Installation)](#enablingwindows)
-* [Application development and deployment](#development)
+At a high level, running .NET applications in Helion Development Platform involves the following process:
 
 ### Enabling Windows (Installation) {#enablingwindows}
 
@@ -121,12 +120,12 @@ At a high level, running .NET applications involves two processes:
 
 Windows support has software requirements including the following:
 
-* A deployment of Helion OpenStack 1.1.1. Helion Development Platform 1.2 is not supported on Helion OpenStack 1.0 or 1.1.
+* A deployment of Helion OpenStack 1.1.1 or an HP Helion Public Cloud account. To try HP Helion Public Cloud, see <a href="http://www.hpcloud.com/cloud-credit">HP Cloud Signup</a>. Helion Development Platform 1.2 is not supported on Helion OpenStack 1.0 or 1.1.
 * A licensed, retail, English-language Windows 2012 R2 ISO image. Evaluation versions and non-English versions are not supported. This image can be obtained through a MSDN subscription for development and test purposes, but images for use in a production environment must be obtained through the OEM channel. See [Windows Instance Licensing](#licensing) for details.
 * Virtual Box version 4.3.26 or later: <a href="https://www.virtualbox.org/wiki/Downloads">Download</a>
 * Virtio drivers version 0.1-81: <a href="http://alt.fedoraproject.org/pub/alt/virtio-win/stable/virtio-win-0.1-81.iso">Download</a>
 * The Glazier tool: <a href="https://drive.google.com/a/hp.com/folderviewid=0By3HV5Aek7gYfjg3TUVGT1RxeGhhZTBvN2JBR3Y4UWZZWXkycEprUGhSc0J3a19XcHJaTXM&usp=sharing">Download</a>
-* Any edition of Visual Studio 2013, including the Community (free) edition.
+* If applications are to be deployed and managed from the development environment, any edition of Visual Studio 2013, including the Community (free) edition.
 * The <a href="/helion/devplatform/1.2/windows/deployingnet">Cloud Foundry Explorer Visual Studio extension</a>. This extension can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
 * 
 *  supports .NET applications created with .NET versions 2.0 through 4.5.2.
@@ -144,14 +143,12 @@ For more information on licensing Windows Server, see <a href="https://www.micro
 
 ## Next Steps {#nextsteps}
 
-* <a href="/helion/devplatform/1.2/windows/building_windows">Building and Deploying Windows and SQL Server Express Images</a>
-* <a href="/helion/devplatform/1.2/windows/deployingnet">Deploying your first .NET application</a> 
+* <a href="/helion/devplatform/1.2/windows/building_windows/">Building and Deploying Windows DEA and SQL Server Express Images</a>
+* <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET application</a> 
 * <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a>
-* <a href="/helion/devplatform/1.2/windows/custom_buildpacks">Creating Custom Buildpacks for Windows  Applications</a>
-* <a href="/helion/devplatform/1.2/windows/connecting_services/">Connecting Services to a Windows  Application</a>
-* <a href="/helion/devplatform/1.2/windows/deploying">Deploying Windows Applications to Specific Servers</a>
-* <a href="/helion/devplatform/1.2/windows/powershell">Controlling Windows with PowerShell</a>
-* <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a>
+* <a href="/helion/devplatform/1.2/windows/buildpack/">Creating Custom Buildpacks for Windows Applications</a>
+* <a href="/helion/devplatform/1.2/windows/adding_services/">Connecting Services to a Windows Application</a>
+* <a href="/helion/devplatform/1.2/windows/tools_guide/">Windows and .NET Tools Guide</a>
 
 
 
