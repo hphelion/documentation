@@ -30,48 +30,47 @@ Before installing HP Helion OpenStack Carrier Grade, you are responsible for pre
 
 		cd /root/infra-ansible-playbooks/roles/HLM-CFG/
 
-2. Update `/root/infra-ansib1le-playbooks/group_vars/all` file to specify the location of your `libvirt` images folder. 
-
-		imagelocation=<libvirt_images_folder_location>
-
-3. Edit the `\ansible-playbooks\roles\HLM-PRE-REQ\defaults\main.yml` file to specify the KVM host primary interface IP under, in case of Static IP on KVM Host
-
-4. Check hosts file under /root/infra-ansible-playbooks, make sure your hlm_kvm_host ip is correct
-
-		[hlm_kvm_host]
-
-		192.168.122.1
-
-5. Create `br-ctl` bridge and virtual network by running:
+2. Create `br-pxe` bridge and virtual network by running:
 
 		ansible-playbook -i hosts hlm-kvm-pre-req.yml
 
-	This will drop an extra file under `/etc/network/`.  
+	This will create an extra file under `/etc/network/`.  
 
-6. Use the iLO console interface to perform one of the following:
+3. Execute the following commands in the iLO console
 
-	* If your KVM host has a DHCP IP, edit the `dhcpipinterface` file as needed, and save the file as `interfaces`.
-	
-	* If your KVM host has a STATIC IP, edit the `staticipinterface` file as needed, and save the file as `interfaces`.
+		virsh net-destroy br-bls & virsh net-destroy br-dcm & virsh net-destroy br-clm & virsh net-destroy br-pxe
 
-7. Use the `ifconfig -a` command to output OVS bridge details. If the bridge is not present, execute the following commands to restart the bridge:
+		virsh net-undefine br-bls & virsh net-undefine br-dcm & virsh net-undefine br-clm & virsh net-undefine br-pxe
 
-		ifdown br-ctl
-		ifdown << yourinterface >>
-		ifup br-ctl
-		ifup << yourinterface >>
+		ovs-vsctl del-br br-bls &ovs-vsctl del-br br-dcm & ovs-vsctl del-br br-clm & ovs-vsctl del-br br-pxe
 
-8. Run the following command to make sure `br-ctl` has the IP address that was earlier set to the primary interface.
+	These commands create backup of your original interfaces file under `/etc/network/` and changes the interfaces to match the four networks that required on the HLM KVM.
+
+4. Verify the interfaces file has four networks: `br-bls`, `br-pxe`, `br-clm`, `br-dcm`.
+
+5. Execute  the following command to make sure the `br-pxe` interface was assiged an IP address:
+
+		ifconfig br-pxe
+
+	Execute the following command if the `br-pxe` interface does not have in IP address:
+
+		Ifdown br-pxe
+		Ifdown << yourinterface >>
+		Ifup br-pxe
+		Ifup << yourinterface >>
+
+
+6. Run the following command to make sure the `br-pxel` interface has the IP address that was earlier set to the primary interface:
+
+		ifconfig | more
+
+7. Reboot the setup.
+
+8. Run the following command to make sure `br-pxe` has the IP address that was earlier set to the primary interface and primary interface does not have an IP address.
 
 		`ifconfig | more`
 
-9. Reboot the setup.
-
-10. Run the following command to make sure `br-ctl` has the IP address that was earlier set to the primary interface and primary interface does not have an IP address.
-
-		`ifconfig | more`
-
-11. Use the following command to view the results of the routing configuration:
+9. Use the following command to view the results of the routing configuration:
 
 		route -n
  

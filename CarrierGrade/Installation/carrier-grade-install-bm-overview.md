@@ -36,7 +36,7 @@ Use the following process to install HP Helion OpenStack Carrier Grade in a bare
 
 2. Review the [Support Matrix](/helion/openstack/carrier/support-matrix/) to make sure your environment meets the minimum requirements.
 
-3. [Installation Prerequisites](/helion/openstack/carrier/install/prereqs/)
+3. [Installation Prerequisites](/helion/openstack/carrier/install/pb/prereqs/)
 
 4. [Prepare the Base KVM to have appropriate network setup done](/helion/openstack/carrier/install/bm/network/prepare/). This step initializes the network interfaces for all cloud nodes.
 
