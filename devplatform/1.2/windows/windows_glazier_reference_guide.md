@@ -35,7 +35,7 @@ For an example on how to use Glazier to create a Windows image, see <a href="/he
 
 ## Downloading the Glazier tool {#downloading}
 
-The Glazier tool can be found here: <a href="https://drive.google.com/a/hp.com/folderviewid=0By3HV5Aek7gYfjg3TUVGT1RxeGhhZTBvN2JBR3Y4UWZZWXkycEprUGhSc0J3a19XcHJaTXM&usp=sharing">Download</a>
+The Glazier tool can be found here: <a href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</a>
 
 ## Prerequisites {#prerequisites}
 

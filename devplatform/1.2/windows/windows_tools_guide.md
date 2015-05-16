@@ -194,7 +194,7 @@ The Helion client tool can be downloaded from the following locations:
 
 Glazier is the tool used to create Windows images for deployment to Helion OpenStack (HOS) Application Lifecycle Service (ALS) clusters. 
 
-Glazier can be downloaded from the following location: <a href="">Download</a> <span style="color:red">(Need final link)
+Glazier can be downloaded from the following location: <a href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</a> 
 
 For information on Glazier, see <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a>.
 
