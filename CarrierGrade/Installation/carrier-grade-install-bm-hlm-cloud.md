@@ -150,6 +150,36 @@ To configure the HLM cloud:
 When this command completes, the HP DCN installation is complete.
 
 
+
+9. Use the following command to verify that the HLM VM has been created:
+
+		virsh list
+
+	The output should appear similar to the following image:
+
+	<img src="/media/CGH-install-pb-hlm-node.png" />
+
+10. Use the following command to launch a console session to the HLM VM: 
+
+	virsh console hlm 
+
+	Use the following credentials:
+
+	* Username: `root`
+	* Password: `cghelion`
+
+	If the console does not launch, wait for a few minutes to allow the VM to fully boot up.
+
+5. Use the console to obtain the IP address for the eth0 interface: 
+
+		ifconfig eth0
+
+7. Use the following command to exit the console:
+
+		ctrl ]
+
+
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ---
