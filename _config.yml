@@ -357,19 +357,19 @@ navigation:
   - text: Support Matrix
     url: /helion/openstack/1.1/support-matrix/ 		
   - text: Installation & Configuration Overview
-    url: /helion/openstack/1.1/install-beta-overview/	
+    url: /helion/openstack/1.1/install-overview/	
   - text: Installation Prerequisites
     url: /helion/openstack/1.1/install/prereqs/
   - text: Installation for KVM Hypervisor
     url: /helion/openstack/1.1/install/kvm/
   - text: Installation for HP StoreVirtual VSA Support
-    url: /helion/openstack/1.1/install-beta/vsa/		
+    url: /helion/openstack/1.1/install/vsa/		
   - text: Installation for ESX Hypervisor
     url: /helion/openstack/1.1/install/esx/
   - text: OVSvApp Deployment for HP VCN on ESX hosts 
     url: /helion/openstack/1.1/install/ovsvapp/
   - text: Installation for DNSaaS Support 
-    url: /helion/openstack/1.1/install-beta/dnsaas/		
+    url:  /helion/openstack/1.1/install/dnsaas/		
   - text: Related Documentation
     url: /helion/openstack/1.1/related-links/	
   - text: Glossary
