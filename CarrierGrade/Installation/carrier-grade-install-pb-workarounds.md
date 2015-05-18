@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Installation Troubleshooting"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): HLM Post-Installation Tasks"
 permalink: /helion/openstack/carrier/install/pb/workarounds/
 product: carrier-grade
 
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/carrier/install/pb/network/prepare/">&#9664; Preparing the Network for Installation</a> | <a href="/helion/openstack/carrier/install/pb/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/install/pm/hlm-cloud/"> Deploying the HLM and DCN Clouds &#9654;</a> </p> 
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/pb/hlm-vm/">&#9664; Create the HLM Virtual Machine</a> | <a href="/helion/openstack/carrier/install/pb/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/install/pm/hlm-cloud/"> Deploying the HLM and DCN Clouds &#9654;</a> </p> 
 
 
 
