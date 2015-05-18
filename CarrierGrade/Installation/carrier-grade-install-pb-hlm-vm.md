@@ -125,7 +125,7 @@ Helion Lifecycle Management (HLM) consists of the ongoing operations/maintenance
 
 ## Next Step
 
-[Create the HLM Virtual Machine](/helion/openstack/carrier/install/pb/hlm-vm/)
+[HLM Post-Installation Tasks](/helion/openstack/carrier/install/pb/workarounds/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

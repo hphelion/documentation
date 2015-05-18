@@ -36,19 +36,10 @@ Before installing HP Helion OpenStack Carrier Grade, you are responsible for pre
 
 	This will create an extra file under `/etc/network/`.  
 
-3. Execute the following commands in the iLO console
 
-		virsh net-destroy br-bls & virsh net-destroy br-dcm & virsh net-destroy br-clm & virsh net-destroy br-pxe
+3. Verify the interfaces file has four networks: `br-bls`, `br-pxe`, `br-clm`, `br-dcm`.
 
-		virsh net-undefine br-bls & virsh net-undefine br-dcm & virsh net-undefine br-clm & virsh net-undefine br-pxe
-
-		ovs-vsctl del-br br-bls &ovs-vsctl del-br br-dcm & ovs-vsctl del-br br-clm & ovs-vsctl del-br br-pxe
-
-	These commands create backup of your original interfaces file under `/etc/network/` and changes the interfaces to match the four networks that required on the HLM KVM.
-
-4. Verify the interfaces file has four networks: `br-bls`, `br-pxe`, `br-clm`, `br-dcm`.
-
-5. Execute  the following command to make sure the `br-pxe` interface was assiged an IP address:
+4. Execute  the following command to make sure the `br-pxe` interface was assiged an IP address:
 
 		ifconfig br-pxe
 
@@ -60,17 +51,17 @@ Before installing HP Helion OpenStack Carrier Grade, you are responsible for pre
 		Ifup << yourinterface >>
 
 
-6. Run the following command to make sure the `br-pxel` interface has the IP address that was earlier set to the primary interface:
+5. Run the following command to make sure the `br-pxel` interface has the IP address that was earlier set to the primary interface:
 
 		ifconfig | more
 
-7. Reboot the setup.
+6. Reboot the setup.
 
-8. Run the following command to make sure `br-pxe` has the IP address that was earlier set to the primary interface and primary interface does not have an IP address.
+7. Run the following command to make sure `br-pxe` has the IP address that was earlier set to the primary interface and primary interface does not have an IP address.
 
 		`ifconfig | more`
 
-9. Use the following command to view the results of the routing configuration:
+8. Use the following command to view the results of the routing configuration:
 
 		route -n
  

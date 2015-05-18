@@ -50,33 +50,6 @@ Copy the `hnewcloud.sh` script to HLM node under `/opt/bin/hnewcloud.sh` before 
 
 		python ilopxebootonce.py node-provision.json
 
-### FND-FIN role fails for DCN cloud
-
-#### Resolution
-
-Comment following services in `~/<cloud-name>/clouds/<cloud-name>/001/stage/ansible /roles/FND-FIN/tasks/main.yml` before you run `hdeploy`
-
-	neutron-l3-agent
-	neutron-dhcp-agent
-	neutron-metadata-agent
-	neutron-plugin-openvswitch-agent
-
-## No logging for the hdeloy - ansible-playbook
-
-#### Resolution
-
-Copy the `ansible.cfg` to the `~/<cloud-name>/clouds/<cloud-name>/001/stage/ansible/` directory before executing `hdeploy`.
-
-### LDP-CCN and LDP-CPN roles are skipped
-
-When LDAP integration is enabled (`ldap_enabled=1` in the `definition.json` file), the LDP-CCN and LDP-CPN roles are skipped.
-
-#### Resolution
-
-Remove the double quotes in the `definition.json` file for the `ldap_enabled` variable. 
-
-	"ldap_enabled": 1     
-
 ### Venom bug in qemu packages.
 
 #### Resolution
