@@ -25,7 +25,7 @@ authors: Patrick F
 
 Glazier is a collection of scripts used for building Windows images for deployment to a Helion OpenStack environment. The image that the tool creates can be configured either by using command-line switches, or by using a Glazier profile.
 
-For an example on how to use Glazier to create a Windows image, see <a href="/helion/devplatform/1.2/windows/enabling_windows">Enabling Windows</a>.
+For an example on how to use Glazier to create a Windows image, see <a href="/helion/devplatform/1.2/windows/enabling_windows/">Enabling Windows</a>.
 
 * [Downloading the Glazier Tool](#downloading)
 * [Prerequisites](#prerequisites)
