@@ -6,7 +6,6 @@ product: carrier-grade
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
 role1: All
-
 authors: Paul F
 
 ---
