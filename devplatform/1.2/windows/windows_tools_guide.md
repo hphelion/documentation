@@ -188,6 +188,18 @@ The Helion client tool can be downloaded from the following locations:
 <li><a href="http://clients.als.hpcloud.com/helion-1.2.0-macosx10.5-i386-x86_64.zip">Mac OS X&#174;</a></li>
 </ul>
 
+## Windows Image Tool
+
+### Glazier {#glazier}
+
+Glazier is the tool used to create Windows images for deployment to Helion OpenStack (HOS) Application Lifecycle Service (ALS) clusters. 
+
+Glazier can be downloaded from the following location: <a href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</a> 
+
+For information on Glazier, see <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a>.
+
+
+
 ---
 <div align="center"><a href="/helion/devplatform/1.2/windows/">Windows Overview</a> </div>
 <div align="center"> <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET Application</a> | Windows and .NET Tools Guide </div>

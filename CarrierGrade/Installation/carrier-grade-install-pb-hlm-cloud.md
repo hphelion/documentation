@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Deploying the HLM and DCN Clouds "
-permalink: /helion/openstack/carrier/install/pm/hlm-cloud/
+permalink: /helion/openstack/carrier/install/pb/hlm-cloud/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
