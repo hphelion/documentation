@@ -25,7 +25,7 @@ authors: Patrick F
 
 Glazier is a collection of scripts used for building Windows images for deployment to a Helion OpenStack environment. The image that the tool creates can be configured either by using command-line switches, or by using a Glazier profile.
 
-For an example on how to use Glazier to create a Windows image, see <a href="/helion/devplatform/1.2/windows/enabling_windows/">Enabling Windows</a>.
+For an example on how to use Glazier to create a Windows image, see <a href="/helion/devplatform/1.2/windows/building_windows/">Building and Deploying Windows DEA and SQL Server Express Images</a>.
 
 * [Downloading the Glazier Tool](#downloading)
 * [Prerequisites](#prerequisites)
@@ -76,7 +76,7 @@ Available options:
 
 --profile PATH                              
     - (optional) path to a glazier profile. Can be used multiple times. If not supplied, 
-    - a subdirectory named "profile" will be searched by default, and all profiles found will be used. 
+    - a subdirectory named profile will be searched by default, and all profiles found will be used. 
 
 --vm-path PATH                              
     - (optional) path to a directory where VBox files will be saved. The default is ~/.glazier
@@ -88,7 +88,7 @@ Available options:
     - (optional) Windows product key; leave empty if you're using a VL Windows iso with a KMS server
 
 --use-volume-license
-    - (optional) Specifies that you are using a Windows volume license. If this is specified, there's no need to specify --product-key (means you are using Windows VL)
+    - (optional) Specifies that you are using a Windows volume license. If this is specified, there is no need to specify --product-key (means you are using Windows VL)
 
 --os-network-id
     - OpenStack network id used for building the OpenStack image. Can be found 
@@ -111,7 +111,7 @@ Available options:
     - (optional) proxy used for Windows Updates on image
   
 --dry-run                   
-    - (optional) run but don't make any changes
+    - (optional) run but do not make any changes
 
 --verbosity verbosity_level         
     - verbosity level is an interger between 1-3, with 1 being the least verbose and 3 being the most verbose. 
@@ -123,6 +123,12 @@ Available options:
 --version
 	- (optional) show the Glazier version
 
+--glazier-vm-http-proxy
+	- (optional) Sets the http proxy in the created virtual machine
+
+--glazier-vm-https-proxy
+	- (optional) Sets the https proxy in the created virtual machine
+	- 
 --help                      
     - shows this message
 </pre>

@@ -73,7 +73,7 @@ Helion Development Platform also provides an integrated IIS buildpack which supp
 
 ## SQL Server Support {#sql}
 
-The Helion Development Platform 1.2 supports SQL Server Express 2012 and SQL Server Express 2014. SQL Server support is enabled by creating a SQL Server service using the SQL Server broker. Each application that binds to the SQL Server service will create a new database and service credentials. The service credentials get created and can be accessed either from the <code>web.config</code> file, or programatically through the <code>VCAP_SERVICES</code> environment variable.
+The Helion Development Platform 1.2 supports SQL Server Express 2012 and SQL Server Express 2014. SQL Server support is enabled by creating a SQL Server service using the SQL Server broker. Each application that binds to the SQL Server service will create a new database and service credentials. The service credentials get created and can be accessed either from the <code>web.config</code> file, or programmatically through the <code>VCAP_SERVICES</code> environment variable.
 
 ## Windows Tools {#tools}
 
@@ -103,7 +103,7 @@ At a high level, running .NET applications in Helion Development Platform involv
 ### Enabling Windows (Installation) {#enablingwindows}
 
 1. Obtain a Windows 2012 R2 server license and ISO image.
-2. Download the <a href="https://drive.google.com/a/hp.com/folderviewid=0By3HV5Aek7gYfjg3TUVGT1RxeGhhZTBvN2JBR3Y4UWZZWXkycEprUGhSc0J3a19XcHJaTXM&usp=sharing">Glazier</a> tool.
+2. Download the <a href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Glazier</a> tool.
 3. Use the Glazier tool to create and upload your Windows images.
 4. Add Windows DEAs to your cluster
 5. Add SQL Server services to your cluster.
