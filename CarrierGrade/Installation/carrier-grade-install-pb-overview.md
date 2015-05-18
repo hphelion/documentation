@@ -42,11 +42,11 @@ Use the following process to install HP Helion OpenStack Carrier Grade in a bare
 
 5. [HLM Post-Installation Tasks](/helion/openstack/carrier/install/pb/workarounds/).
 
-5. [Deploying the HLM and DCN Clouds](/helion/openstack/carrier/install/pb/hlm-cloud/). 
+6. [Deploy the HLM Cloud](/helion/openstack/carrier/install/pb/hlm-cloud/) 
 	<!--
 	6. [Initialize network interfaces for all cloud nodes]
 -->
-7. [Deploy the HLM Cloud](/helion/openstack/carrier/install/pb/hlm-cloud/)
+
 
 ## First Step ##
 
