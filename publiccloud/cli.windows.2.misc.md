@@ -10,8 +10,7 @@ product: win-2-cli
 
 ##Changing Response Formats
 
-Each command that you issue through the Provider or through a cmdlet will write out the response returned from the server in an easy to understand, human readable format. For a command line tool, this is the behavior one would expect. The CLI can also reformat each response
-depending on your need. This is accomplished through the Set-Format cmdlet. With this cmdlet you can specify the response to be one of three formats
+Each command that you issue through the Provider or through a cmdlet will write out the response returned from the server in an easy to understand, human readable format. For a command line tool, this is the behavior one would expect. The CLI can also reformat each response depending on your need. This is accomplished through the Set-Format cmdlet. With this cmdlet you can specify the response to be one of three formats
 
 + Data (the default)
 + XML
@@ -21,8 +20,7 @@ This cmdlet will take effect for the duration of the Session only.
 
 **Example: XML Based Responses**
 
-This example shows how we can quickly produce an XML file of what we find in the test folder. In addition, output received from cmdlets adhere to the format as well. Note
-the response of the "ls" command.
+This example shows how we can quickly produce an XML file of what we find in the test folder. In addition, output received from cmdlets adhere to the format as well. Note the response of the "ls" command.
 
 <img src="media/SetFormatXML.png" width="580" height="573" alt="" />
 
@@ -32,12 +30,7 @@ A quick JSON example.
 
 ##Changing Configuration Files
 
-This system persist its settings in the CLI.config file located 
-in the users application directory. This file is important as it's used for storing
-Credentials, connection information such as addresses and timeout values, and various other settings.
-Each time the shell loads, this file is opened and it's settings are used throughout the session. There may be times when
-you wish to temporarily change these settings to accommodate impersonation, environment change (Pro, QA etc) or other testing scenarios.
-This can be done in one of two ways
+This system persist its settings in the CLI.config file located in the users application directory. This file is important as it's used for storing Credentials, connection information such as addresses and timeout values, and various other settings. Each time the shell loads, this file is opened and it's settings are used throughout the session. There may be times when you wish to temporarily change these settings to accommodate impersonation, environment change (Pro, QA etc) or other testing scenarios. This can be done in one of two ways
 
 + Per item 
 + Per Configuration
@@ -58,9 +51,7 @@ When you set to a new config file and the new file contains different credential
 
 ## Viewing Your Service Catalog
 
-If you want to take a look at your service catalog--for example, if you have modified some of your configuration credentials, and have authenticated them--you can use the <b><font face="courier">get-config -v</font></b> command, as shown below: 
-
-<img src="media/viewing%20config%20file.jpg" width="580" height="547" alt="" />
+If you want to take a look at your service catalog--for example, if you have modified some of your configuration credentials, and have authenticated them--you can use the <b><font face="courier">get-config -v</font></b> command.
 
 This command provides you with all the service catalog information for your most-currently authenticated credential set.
 
@@ -71,8 +62,7 @@ the object into your browser, a fully qualified URI can be obtained with the Get
 
 <img src="media/get-location_0.png" width="580" height="376" alt="" />
 
-Note : When you issue this command the URI is also pasted to the Windows clipboard for your convenience. If you want to disable this behavior simply set the CLI.config
-option entitled PasteGetURIResultsToClipboard to false.
+Note : When you issue this command the URI is also pasted to the Windows clipboard for your convenience. If you want to disable this behavior simply set the CLI.config option entitled PasteGetURIResultsToClipboard to false.
 
 ##Getting Version Information
 
