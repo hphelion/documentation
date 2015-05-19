@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Verify the Installation"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Verifying the HLM and DCN Installation"
 permalink: /helion/openstack/carrier/install/pb/verify/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -24,9 +24,9 @@ PageRefresh();
 
 <p style="font-size: small;"><a href="/helion/openstack/carrier/install/pb/workarounds/">&#9664; HLM Post-Installation Tasks</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a>  </p> 
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Verify the Installation
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Verifying the HLM and DCN Installation
 
-Perform the following tasks to make sure the installation has been successful to this point.
+Perform the following tasks to make sure the installation of the HLM VM, HLM Cloud and DCN Cloud has been successful.
 
 
 ## SSH to the VSC node
