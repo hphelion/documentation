@@ -17,7 +17,7 @@ role9: Service Developer
 authors: Patrick F
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 # HP Helion 1.2 Development Platform: Building and Deploying Windows DEA and SQL Server Express Images
 
