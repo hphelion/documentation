@@ -128,7 +128,7 @@ navigation:
   - text: HP Helion OpenStack Community 
     url: /helion/community/
   - text: HP Helion Development Platform 
-    url: /helion/devplatform/1.1/
+    url: /helion/devplatform/1.2/
   - text: HP Helion Eucalyptus
     url: /eucalyptus/
   - text: HP Helion Public Cloud
