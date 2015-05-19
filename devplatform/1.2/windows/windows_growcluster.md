@@ -22,6 +22,7 @@ publish: true
 # HP Helion 1.2 Development Platform: Adding DEA Nodes and SQL Services to a Cluster
 
 <span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
+
 Follow these instructions to use the [Horizon console](https://horizon.hpcloud.com/) to grow your clusters by adding more DEA nodes or additional SQL services (2012 or 2014).
 
 1. After [creating a cluster](/helion/devplatform/1.2/deploy/), go to the **Clusters** page and click on the **Actions** down arrow to display the options.<br /><img src="media/growcluster1.png"/>
