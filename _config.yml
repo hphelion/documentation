@@ -499,8 +499,8 @@ navigation:
     url: /helion/devplatform/1.2/
   - text: Development Platform Installation & Configuration
     url: /helion/devplatform/1.2/install/
-  - text: Development Platform Community Edition Installation & Configuration
-    url: /helion/devplatform/install/community/
+  - text: Windows and .NET 
+    url: /helion/devplatform/1.2/windows/
   - text: Application Developer Resources
     url: /helion/devplatform/1.2/appdev/
   - text: IT Ops Resources
