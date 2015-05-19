@@ -12,7 +12,7 @@ product:
 The HP Helion Public Cloud CDN enables objects in HP Helion Public Cloud Object Storage to be available over a [Content Delivery Network (CDN)](https://en.wikipedia.org/wiki/Content_delivery_network "Wikipedia: Content delivery network"). CDNs allow objects to be fetched from locations close to users enabling users to download the objects more quickly. This article provides an introduction into how the CDN works with object storage and some basic ways you can use it.
 
 ## Making Objects Available To The CDN
-Containers within object storage are private by default, meaning that only those with API, [CLI](https://docs.hpcloud.com/publiccloud/cli), or 
+Containers within object storage are private by default, meaning that only those with API, [CLI](/publiccloud/cli), or 
 [HP Helion Public Cloud Console](https://horizon.hpcloud.com/) access to the containers can read or write to the objects within them. A container can be toggled to be public, allowing all objects within the container to be openly available. When this happens, the container and each object within the container gets a URL that can be shared.
 
 A second and similar option available is to CDN enable a container. By enabling this the container and the objects within a container will have two public URLs pointing to a CDN to obtain the objects. The URLs are to the object via a CDN in [SSL](https://en.wikipedia.org/wiki/HTTPS "Wikipedia: HTTP Secure") and non-SSL forms.
@@ -47,4 +47,4 @@ There is currently limited support for custom domains and you can only use them 
 To setup a custom domain for a non-SSL path can happen through the use of [CDNAME](https://en.wikipedia.org/wiki/CNAME_record "Wikipedia: CNAME record") DNS records. By creating a CNAME record mapping a custom domain to the domain generated for the container users will be routed to the objects.
 
 ## More Information
-For more information on HP Helion Public Cloud CDN see the [documentation](https://docs.hpcloud.com/publiccloud/cdn) or [language libraries](https://docs.hpcloud.com/library).
+For more information on HP Helion Public Cloud CDN see the [documentation](/publiccloud/cdn) or [language libraries](/publiccloud/bindings/).
