@@ -97,21 +97,21 @@ Use the following steps to patch and rerun the role:
 
 	In the highlighted section
 	NOV-CMP is the role name
-	MYCLOUD-CCP-CPN-N0002-NETCLM - is the cloud name
-	MYCLOUD-CCP-CPN-N0002-NETCLM - indicates controller
-	MYCLOUD-CCP-CPN-N0002-NETCLM- indicates compute
-	MYCLOUD-CCP-CPN-N0002-NETCLM – indicates compute node 2
-	MYCLOUD-CCP-CPN-N0002-NETCLM – indicates CLM network
+	MYCLOUD-CCP-CPN-N0002-NETCLM is the cloud name
+	MYCLOUD-CCP-CPN-N0002-NETCLM indicates controller
+	MYCLOUD-CCP-CPN-N0002-NETCLM indicates compute
+	MYCLOUD-CCP-CPN-N0002-NETCLM indicates compute node 2
+	MYCLOUD-CCP-CPN-N0002-NETCLM indicates CLM network
 
-	Additional tiers could be –
+	Additional tiers could be:
 
-	MYCLOUD-CCP-T1-NETCLM – In DCN deployment this is DCN tier where the VSC is hosts. In OVS deployment this is Controller tier
+	MYCLOUD-CCP-T1-NETCLM In DCN deployment this is DCN tier where the VSC is hosts. In OVS deployment this is Controller tier
 	
-	MYCLOUD-CCP-T2-NETCLM – In DCN deployment this is Controller tier. In OVS deployment this is tier does not exist
+	MYCLOUD-CCP-T2-NETCLM In DCN deployment this is Controller tier. In OVS deployment this is tier does not exist
 	
-	MYCLOUD-CCP-T3-NETCLM - In DCN deployment this is VRS-G tier. In OVS deployment this is tier does not exist
+	MYCLOUD-CCP-T3-NETCLM In DCN deployment this is VRS-G tier. In OVS deployment this is tier does not exist
 
-	MYCLOUD-CCP-CPN-NETCLM – In both DCN and OVS deployment this is a compute tier aka resource pool
+	MYCLOUD-CCP-CPN-NETCLM In both DCN and OVS deployment this is a compute tier aka resource pool
 
 	Current execution sequence is:
 		MYCLOUD-CCP-CPN-N000X-NETCLM
