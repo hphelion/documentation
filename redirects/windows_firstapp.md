@@ -3,7 +3,7 @@ permalink: /helion/devplatform/preview/deployingnet/
 redirect: /helion/devplatform/1.2/windows/deployingnet/
 layout: redirect
 ---
-<!--PUBLSIHED-->
+<!--PUBLISHED-->
 
 
 <!--
