@@ -24,7 +24,7 @@ publish: true
 <span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 Follow these instructions to use the Horizon console to grow your clusters by adding more DEA nodes or additional SQL services (2012 or 2014).
 
-1. After [creating a cluster](/helion/devplatform/1.2/windows/building_windows/#enabling), go to the **Clusters** page and click on the **Actions** down arrow to display the options.<br /><img src="media/growcluster1.png"/>
+1. After [creating a cluster](/helion/devplatform/1.2/deploy/), go to the **Clusters** page and click on the **Actions** down arrow to display the options.<br /><img src="media/growcluster1.png"/>
  
 1. Click on **Grow DEAs**, fill out the details, and then click Grow. This will create the specified number of DEAs of the selected type and attach them to the cluster.<br /><img src="media/growcluster2.png"/>
  
