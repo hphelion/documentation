@@ -44,7 +44,7 @@ Use the following process to install HP Helion OpenStack Carrier Grade in a bare
 
 6. [Deploy the HLM Cloud](/helion/openstack/carrier/install/pb/hlm-cloud/) 
 
-7. [Install the Wind River Linux servers](http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf)
+7. [Install HP Helion OpenStack Carrier Grade](http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf)
 
 
 ## First Step ##
