@@ -49,7 +49,7 @@ The following requirements pertain to the system where the Windows image will be
 		*  File extension <code>.iso</code>
 * Virtual Box version 4.3.26 or later: <a href="https://www.virtualbox.org/wiki/Downloads">Download</a>
 * Virtio drivers version 0.1-81: <a href="http://alt.fedoraproject.org/pub/alt/virtio-win/stable/virtio-win-0.1-81.iso">Download</a>
-* Download and extract the Glazier tool: <a href="https://drive.google.com/a/hp.com/folderviewid=0By3HV5Aek7gYfjg3TUVGT1RxeGhhZTBvN2JBR3Y4UWZZWXkycEprUGhSc0J3a19XcHJaTXM&usp=sharing">Download</a><span style="color:red"> this link is incorrect, need production link.</span> For more information about Glazier, see the <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a>.
+* Download and extract the Glazier tool: <a href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</a>. For more information about Glazier, see the <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a>.
 
 
 
@@ -57,7 +57,15 @@ The following requirements pertain to the system where the Windows image will be
 
 * A Windows product key for Windows Server 2012R2. A multiple activation key is strongly recommended, as temporary instances will be created that need product keys.
 * The RC file for the target Helion OpenStack environment. This can be downloaded from the Horizon interface, under **Project-&gt;Compute-&gt;Access & Security-&gt;API Access-&gt;Download OpenStack RC File**.
-* The certificate for the target Helion OpenStack environment. This can be found on the seed node, under /usr/local/share/ca-certificates/ephemeralca-cacert.crt. The path to the certificate must be set in the OS_CACERT environment variable.
+* The certificate for the target Helion OpenStack environment. To retrieve this certificate, do the following:
+ 	1. Find the IP address for <code>controller0</code>:
+ 		
+			OVERCLOUD_CONTROLLER=$(ssh root@192.0.2.1 -C ' export TE_DATAFILE=~/tripleo/ce_env.json; source ~/tripleo/tripleo-incubator/undercloudrc; nova list |grep controller0 |cut -d= -f2 |cut -d" " -f1')
+
+	2. Copy the CA Certificate locally:
+ 			
+			scp -o StrictHostKeyChecking=no $OVERCLOUD_CONTROLLER:/usr/local/share/ca-certificates/ephemeralca-cacert.crt /root/ephemeralca-cacert.crt. 
+The path to the certificate must be set in the OS_CACERT environment variable.
 
 ## Creating and uploading images
 

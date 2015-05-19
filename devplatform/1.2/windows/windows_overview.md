@@ -73,7 +73,7 @@ Helion Development Platform also provides an integrated IIS buildpack which supp
 
 ## SQL Server Support {#sql}
 
-The Helion Development Platform 1.2 supports SQL Server Express 2012 and SQL Server Express 2014. SQL Server support is enabled by creating a SQL Server service using the SQL Server broker. Each application that binds to the SQL Server service will create a new database and service credentials. The service credentials get created and can be accessed either from the <code>web.config</code> file, or programatically through the <code>VCAP_SERVICES</code> environment variable.
+The Helion Development Platform 1.2 supports SQL Server Express 2012 and SQL Server Express 2014. SQL Server support is enabled by creating a SQL Server service using the SQL Server broker. Each application that binds to the SQL Server service will create a new database and service credentials. The service credentials get created and can be accessed either from the <code>web.config</code> file, or programmatically through the <code>VCAP_SERVICES</code> environment variable.
 
 ## Windows Tools {#tools}
 
@@ -103,7 +103,7 @@ At a high level, running .NET applications in Helion Development Platform involv
 ### Enabling Windows (Installation) {#enablingwindows}
 
 1. Obtain a Windows 2012 R2 server license and ISO image.
-2. Download the <a href="https://drive.google.com/a/hp.com/folderviewid=0By3HV5Aek7gYfjg3TUVGT1RxeGhhZTBvN2JBR3Y4UWZZWXkycEprUGhSc0J3a19XcHJaTXM&usp=sharing">Glazier</a> tool.
+2. Download the <a href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Glazier</a> tool.
 3. Use the Glazier tool to create and upload your Windows images.
 4. Add Windows DEAs to your cluster
 5. Add SQL Server services to your cluster.
@@ -123,8 +123,8 @@ Windows support has software requirements including the following:
 * A deployment of Helion OpenStack 1.1.1 or an HP Helion Public Cloud account. To try HP Helion Public Cloud, see <a href="http://www.hpcloud.com/cloud-credit">HP Cloud Signup</a>. Helion Development Platform 1.2 is not supported on Helion OpenStack 1.0 or 1.1.
 * A licensed, retail, English-language Windows 2012 R2 ISO image. Evaluation versions and non-English versions are not supported. This image can be obtained through a MSDN subscription for development and test purposes, but images for use in a production environment must be obtained through the OEM channel. See [Windows Instance Licensing](#licensing) for details.
 * Virtual Box version 4.3.26 or later: <a href="https://www.virtualbox.org/wiki/Downloads">Download</a>
-* Virtio drivers version 0.1-81: <a href="http://alt.fedoraproject.org/pub/alt/virtio-win/stable/virtio-win-0.1-81.iso">Download</a>
-* The Glazier tool: <a href="https://drive.google.com/a/hp.com/folderviewid=0By3HV5Aek7gYfjg3TUVGT1RxeGhhZTBvN2JBR3Y4UWZZWXkycEprUGhSc0J3a19XcHJaTXM&usp=sharing">Download</a>
+* Virtio drivers version 0.1-81: <a href="https://fedorapeople.org/groups/virt/virtio-win/deprecated-isos/stable/virtio-win-0.1-81.iso">Download</a>
+* The Glazier tool: <a href=""http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</a>
 * If applications are to be deployed and managed from the development environment, any edition of Visual Studio 2013, including the Community (free) edition.
 * The <a href="/helion/devplatform/1.2/windows/deployingnet">Cloud Foundry Explorer Visual Studio extension</a>. This extension can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
 * 
