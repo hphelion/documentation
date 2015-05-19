@@ -36,27 +36,6 @@ The `hnewcloud` command should copy the HP Helion OpenStack directory to the `~/
 
 Copy the `hnewcloud.sh` script to HLM node under `/opt/bin/hnewcloud.sh` before `hnewcloud` script is run.
 
-### Enable one time PXE boot on cloud nodes to set the correct boot order
-
-#### Resolution
-
-1. Execute the following command on HLM node to install  the required package for the script: 
-
-		pip install python-hpilo.
-
-2. Copy the `ilopxebootonce.py` to HLM node under `~/<cloud-name>`. 
-
-3. On the`~/<cloud-name>` folder, execute the following script before running the `hprovision` on the HLM node: 
-
-		python ilopxebootonce.py node-provision.json
-
-### Venom bug in qemu packages.
-
-#### Resolution
-
-1. Copy the `venom-patch.tar.gz` file from the build location to the HLM node 
-
-2. Extract the file and follow instructions in `Readme.txt` file inside the TAR file
 
 ### LDP-CCN role gets stuck when you run hdeploy
 

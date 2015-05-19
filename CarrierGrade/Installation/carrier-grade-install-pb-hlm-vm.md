@@ -336,8 +336,7 @@ After the script is run, the `Current One-Time Boot Option` is set to `Network D
 
 	You can run this command from any directory. 
 
-	After this command completes, all cloud nodes and CLM network interfaces should be set correctly. 
-
+After this command completes, all cloud nodes and CLM network interfaces should be set correctly. 
 
 
 ## Next Step

@@ -37,7 +37,7 @@ You can deploy HP Helion OpenStack Carrier Grade on a [KVM hypervisor](http://ww
 
 The following diagram depicts a simplified deployment scenario using KVM.
 
-<!-- This image is for alpha release only. Replace for beta -->
+<!-- This image is for beta release only. Replace for beta -->
 
 
 <a href="javascript:window.open('/content/documentation/media/CGH-architecture-beta.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><img src="media/CGH-architecture-beta.png" width="750" /></a>

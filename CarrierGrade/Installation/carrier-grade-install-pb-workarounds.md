@@ -47,6 +47,22 @@ Remove the double quotes in the `definition.json` file for the `ldap_enabled` va
 
 	"ldap_enabled": 1     
 
+## 
+
+If you have LDAP enabled in `definition.json`, you need to comment and add this command in the `ldap.yml` file.
+
+1. On the HLM VM, edit the `clouds/dcnjunobuild33bed2new/001/stage/ansible/roles/LDP-CCN/tasks/ldap.yml` file.
+
+2. Comment out the following line in the file: 
+
+		# command: apt-get install python-ldap
+
+3. Add the following line:
+
+		apt: name=python-ldap install_recommends=no state=latest force=yes
+
+4. Save and close the file.
+
 ## Next Step
 
 [Deploying the HLM and DCN Clouds](/helion/openstack/carrier/install/pm/hlm-cloud/)
