@@ -95,7 +95,7 @@ Helion Lifecycle Management (HLM) consists of the ongoing operations/maintenance
 		"count": 1, //number of computes in the resource pool.
 
 
-6. For bare-metal environment or virtual env with fancy networking - you will have to edit the logical network and environment config json files to represent your desired configuration.
+6. For baremetal environment or virtual env with fancy networking - you will have to edit the logical network and environment config json files to represent your desired configuration.
 
 7. Modify the `environment.json` file to configure the VLANs and network addresses that need to be configured for respective cloud nodes. 
 
