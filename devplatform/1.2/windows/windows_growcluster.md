@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
-title: "HP Helion 1.2 Development Platform: Adding DEA Nodes and Services to a Cluster"
-permalink: /helion/devplatform1.2/growcluster
+title: "HP Helion 1.2 Development Platform: Growing and Renaming Clusters Using Horizon"
+permalink: /helion/devplatform/1.2/growcluster
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
@@ -19,18 +19,28 @@ publish: true
 
 ---
 <!--UNDER REVISION-->
-# HP Helion 1.2 Development Platform: Adding DEA Nodes and SQL Services to a Cluster
+# HP Helion 1.2 Development Platform: Growing and Renaming Clusters Using Horizon
 
 <span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 
-Follow these instructions to use the [Horizon console](https://horizon.hpcloud.com/) to grow your clusters by adding more DEA nodes or additional SQL services (2012 or 2014).
+Follow these instructions to use the [Horizon console](https://horizon.hpcloud.com/) to grow your clusters by adding more DEA nodes or services. These instructions are intended for installations of the Helion Development Platform running on Helion OpenStack version 1.1.1 or later.
 
-1. After [creating a cluster](/helion/devplatform/1.2/deploy/), go to the **Clusters** page and click on the **Actions** down arrow to display the options.<br /><img src="media/growcluster1.png"/>
+Note that Windows DEA nodes and SQL Server services will not appear in the Horizon interface until you upload the appropriate images into Glance.
+
+After [creating a cluster](/helion/devplatform/1.2/deploy/), go to the **Clusters** page. [**Project** tab > expand **Application Lifecycle Service** > **Clusters**]
+Click on the **Actions** down arrow to display the options and select the desired option.<br /><img src="media/growcluster1.png"/><br />
+
  
-1. Click on **Grow DEAs**, fill out the details, and then click **Grow**. This will create the specified number of DEAs of the selected type and attach them to the cluster.<br /><img src="media/growcluster2.png"/>
+##To add DEAs
+
+Click on **Grow DEAs**, fill out the details, and then click **Grow**. This will create the specified number of DEAs of the selected type and attach them to the cluster.<br /><img src="media/growcluster2.png"/>
  
-1. To add more services, check the check box to select the services and then click **Grow Services**. This will create the selected service nodes and attach them to the cluster.<br /><img src="media/growcluster3.png"/>
-1. To rename a cluster, click **Rename Cluster**, enter the new name, and then click **Rename**. Note that this renames the cluster title, but does not affect the cluster prefix. <br /><img src="media/growcluster4.png"/>
+##To add more services
+Check the check box to select the services and then click **Grow Services**. This will create the selected service nodes and attach them to the cluster.<br /><img src="media/growcluster3.png"/>
+
+##To rename a cluster
+Click **Rename Cluster**, enter the new name, and then click **Rename**. Note that this renames the cluster title, but does not affect the cluster prefix. <br /><img src="media/growcluster4.png"/>
+
 
 ---
 <div align="center"><a href="/helion/devplatform/1.2/windows/">Windows Overview</a> </div>
