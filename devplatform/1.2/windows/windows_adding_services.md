@@ -25,9 +25,9 @@ authors: Patrick F
 
 Windows applications can be bound to services running in your deployment environment, such as Redis or MySQL. To do so, you need to have a NuGet package that can communicate with those services. 
 
-The following tutorial demonstrates how to add a Redis collection to your .NET application.
+The following tutorial demonstrates how to add a Redis service to your .NET application.
 
-**Note:** The NuGet packages used in this tutorial are for sample purposes only, and are not supported by HP Helion. Verify that packages are working for your application before deploying them to a production environment.
+**Note:** The NuGet packages used in this tutorial are for sample purposes only. Verify that packages are working for your application before deploying them to a production environment.
 
 ## Adding a service to a .NET application
 

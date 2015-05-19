@@ -18,7 +18,7 @@ authors: Patrick F
 publish: true
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 # HP Helion 1.2 Development Platform: Growing and Renaming Clusters Using Horizon
 
 <span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
