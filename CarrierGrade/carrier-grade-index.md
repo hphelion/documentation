@@ -48,7 +48,7 @@ Use the following links and tools to begin working with HP Helion OpenStack Carr
 
 * [Administration Guide](http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Administration_Guide.pdf) 
 
-	The Administration Guide is addressed to HP Helion OpenStack Carrier Grade administrators responsible for the following areas:
+	The Administration Guide is addressed to HP Helion OpenStack Carrier Grade administrators responsible for the following areas: 
 
 	* Creating and maintaining resources used by end users (tenants), such as virtual machines, storage pools, network objects, and access credentials.
 
