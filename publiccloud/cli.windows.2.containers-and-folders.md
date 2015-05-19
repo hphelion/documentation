@@ -8,7 +8,7 @@ product: win-2-cli
 <!--PUBLISHED-->
 # HP Helion Public Cloud CLI Software for Windows PowerShell: Object Storage Examples
 
-One of the key features of the HP Helion Public Cloud CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the [HP Helion Public Cloud Object Storage Overview](/object-storage) for overview information on Object Storage.)
+One of the key features of the HP Helion Public Cloud CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the [HP Helion Public Cloud Object Storage Overview](/publiccloud/object-storage) for overview information on Object Storage.)
 
 **Note:** When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
      
@@ -101,7 +101,7 @@ One caveat when creating new Storage Containers is that you must be attached to 
 
     CD HPSO-Init: 
 
-At this point you can issue the `[New-Container](/cli/windows/reference#New-Container)` command and a subsequent issuance of Get-PSDrive lists what you just created (The default drive will not show up the next time you load the shell as it exists only temporarily to bootstrap the Storage Container creation process). Now it's time to take the file system for a spin but before we do that, let's go over a few basic concepts.
+At this point you can issue the `[New-Container](/publiccloud/cli/windows/reference#New-Container)` command and a subsequent issuance of Get-PSDrive lists what you just created (The default drive will not show up the next time you load the shell as it exists only temporarily to bootstrap the Storage Container creation process). Now it's time to take the file system for a spin but before we do that, let's go over a few basic concepts.
 
 ##Storage Paths## {#StoragePaths}
    
@@ -611,8 +611,7 @@ In addition, you can also see how one would view meta-data on an existing object
 
 ##Changing Response Formats## {#ChangingResponseFormats}
 
-Each command that you issue through the Provider or through a cmdlet will write out the response returned from the server in an easy to understand, human readable format. For a command line tool, this is the behavior one would expect. The CLI can also reformat each response
-depending on your need. This is accomplished through the Set-Format cmdlet. With this cmdlet you can specify the response to be one of three formats
+Each command that you issue through the Provider or through a cmdlet will write out the response returned from the server in an easy to understand, human readable format. For a command line tool, this is the behavior one would expect. The CLI can also reformat each response depending on your need. This is accomplished through the Set-Format cmdlet. With this cmdlet you can specify the response to be one of three formats
 
 + Data (the default)
 + XML
@@ -622,8 +621,7 @@ This cmdlet will take effect for the duration of the Session only.
 
 **Example: XML Based Responses**
 
-This example shows how we can quickly produce an XML file of what we find in the test folder. In addition, output received from cmdlets adhere to the format as well. Note
-the response of the "ls" command.
+This example shows how we can quickly produce an XML file of what we find in the test folder. In addition, output received from cmdlets adhere to the format as well. Note the response of the "ls" command.
 
     ------------------------------------------------------------------------------------------------------
     Welcome to the HP-Cloud Object Storage Powershell Environment.
@@ -925,7 +923,7 @@ This command provides you with all the service catalog information for your most
 
 ##Finding an Object's Location## {#FindinganObjectsLocation}
 
-The contents of the Object store are URI addressable given that you have the proper permissions to view the resource. If you would like a quick way to load the object into your browser, a fully qualified URI can be obtained with the [Get-Uri cmdlet](/cli/windows/reference#Get-Uri).
+The contents of the Object store are URI addressable given that you have the proper permissions to view the resource. If you would like a quick way to load the object into your browser, a fully qualified URI can be obtained with the [Get-Uri cmdlet](/publiccloud/cli/windows/reference#get-uri).
 
     ------------------------------------------------------------------------------------------------------
     Welcome to the HP-Cloud Object Storage Powershell Environment.
@@ -966,7 +964,7 @@ Note : When you issue this command the URI is also pasted to the Windows clipboa
 
 ##Adding and Removing Drives## {#AddingandRemovingDrives}
 
-There are times when you want to add or remove a drive from your list of available drives when it owned by another user.  To perform these actions, you can use the [new-container](/cli/windows/reference#New-Container) and [remove-container](/cli/windows/reference#Remove-Container) cmdlets.
+There are times when you want to add or remove a drive from your list of available drives when it owned by another user.  To perform these actions, you can use the [new-container](/publiccloud/cli/windows/reference#New-Container) and [remove-container](/publiccloud/cli/windows/reference#Remove-Container) cmdlets.
 
 To add a Container that someone else owns to your list of available drives:
 
@@ -975,7 +973,6 @@ To add a Container that someone else owns to your list of available drives:
 This adds the container `rgtest2` to your list of available drives.  To remove the container from your list:
 
     remove-container rgtest2
-
 
 ##Getting Version Information## {#GettingVersionInformation}
 
@@ -1001,7 +998,7 @@ It may be useful at times to know what version of the product you are using. Jus
 
 ##Using Another User's Credentials## {#UsingAnotherUsersCredentials}
 
-If you want to use the credentials of a particular user for a session ("imitating" that user), you can use the command **` set-credentials**`.  The **` set-credentials**` command allows you to define the access key, secret key, and tenant key for a session:
+If you want to use the credentials of a particular user for a session ("imitating" that user), you can use the command **` set-credentials**`.  The **`set-credentials**` command allows you to define the access key, secret key, and tenant key for a session:
 
         set-credentials -ak Access-Key -sk Secret-Key -t Tenant-ID
 
@@ -1146,4 +1143,4 @@ The `-sk` option is your API secret key, and the `-ak` option is your access key
 
 For additional information on this command, see [Migrating your files with the Windows CLI](http://h30499.www3.hp.com/t5/Grounded-in-the-Cloud/Migrating-your-files-with-the-Windows-CLI/ba-p/6470822#.U20mfFf7Ex5) blog post.  
 
-For a full description of the options available with the **Migrate-Drive** command, please see the [Migrate-Drive](/cli/windows/reference#Migrate-Drive) section of the [Windows CLI Reference](/cli/windows/reference) page.
+For a full description of the options available with the **Migrate-Drive** command, please see the [Migrate-Drive](/publiccloud/cli/windows/reference#Migrate-Drive) section of the [Windows CLI Reference](/publiccloud/cli/windows/reference) page.
