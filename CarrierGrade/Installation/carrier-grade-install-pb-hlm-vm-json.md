@@ -24,6 +24,25 @@ PageRefresh();
 
 The [process for installing the HLM VM](/helion/openstack/carrier/install/pb/hlm-vm/) requires a JSON file that will be used when deploying VM.
 
+The `node-provision.json` file contains the following fields:
+
+<table>
+<tr><th>Field</th><th>Baremetal</th></tr>
+<tr><td>name</td><td>Name of the system you want to add in cobbler</td></tr>
+<tr><td>Pxe-mac-address</td><td>MAC address of the interface you want to pxe boot onto. This is not same as iLO MAC address,</td></tr>
+<tr><td>Pxe-interface</td><td>nterface name on which pxe boot should occur. For example: `eth0`</td></tr>
+<tr><td>pm_type</td><td>ipmilan
+<tr><td>pm_ip</td><td>Power management IP:ilo ip</td></tr>
+<tr><td>pm_user</td><td>Power management user: ilo username</td></tr>
+<tr><td>pm_pass</td><td>Power management password: ilo password</td></tr>
+<tr><td>node_group</td><td>For now, this should have the same value as `node-type` in the `nodes.json` file. For example: `CCN-001-001`.</td></tr>
+<tr><td>failure_zone, vendor, model, os_partition_size, data_partition_size</td><td>These fields have same significance as they have in the `nodes.json` used during cloud deployment</td></tr>
+</table>
+
+## Sample node-provision.json file
+
+The following represents a sample `node-provision.json` file. Use values appropriate for your environment.
+
 [
     {
         "name": "ccn1",

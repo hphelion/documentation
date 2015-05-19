@@ -45,7 +45,7 @@ The following is the list of scripts for which logging is implemented:
 * hcfgproc
 * hnetinit
 
-## Prepare the system for deployment
+## Prepare the system for deployment {#prepare}
 
 Use the following steps to prepare the KVM host to deploy the VMs.
 
@@ -264,40 +264,20 @@ After you edit the `node-provision.json` file, you must enable one-time PXE boot
 
 		pip install python-hpilo
 
-	is a python library and command-line tool
+	`python-hpilo` is a python library and command-line tool for iLO.
 
-root@cg-hlm:~/dcnjunob33testbed2# pip install python-hpilo
-Downloading/unpacking python-hpilo
-  http://localhost/hlm/repo/pypi/simple/python-hpilo/ uses an insecure transport scheme (http). Consider using https if localhost has it available
-  Downloading python-hpilo-2.13.1.tar.gz (81kB): 81kB downloaded
-  Running setup.py (path:/tmp/pip_build_root/python-hpilo/setup.py) egg_info for package python-hpilo
 
-Installing collected packages: python-hpilo
-  Running setup.py install for python-hpilo
-    changing mode of build/scripts-2.7/hpilo_cli from 644 to 755
+2. Copy the `ilopxebootonce.py` from the `Patches/build-33 folder` you [downloaded earlier](#prepare) to directory where you have `node-provision.json`.
 
-    changing mode of /usr/local/bin/hpilo_cli to 755
-Successfully installed python-hpilo
-Cleaning up...
+3. Execute the following script
 
-Step 2: copy ilopxebootonce.py to clouds dir where you have node-proviion.json from Patch folder that you already downloaded to KVM host.
+		python ilopxebootonce.py node-provision.json
 
-Step 3: Run the script “python ilopxebootonce.py node-provision.json”
-root@cg-hlm:~/dcnjunob33testbed2# python ilopxebootonce.py node-provision.json
-iLO 10.1.69.16 has been set to one time pxe boot.
-iLO 10.1.69.18 has been set to one time pxe boot.
-iLO 10.1.69.19 has been set to one time pxe boot.
-iLO 10.1.69.20 has been set to one time pxe boot.
-iLO 10.1.69.21 has been set to one time pxe boot.
-iLO 10.1.69.22 has been set to one time pxe boot.
-iLO 10.1.69.23 has been set to one time pxe boot.
-
-After the script is run, the “Current One-Time Boot Option” is set to “Network Device 1” on all the servers listed in node-provision.json file.
-
+After the script is run, the `Current One-Time Boot Option` is set to `Network Device 1` on all the servers listed in `node-provision.json` file.
 
 ## Create new cloud template and bring the cloud nodes up
 
-4. Use the following script to start the provisioning of the HLM VM:
+1. Use the following script to start the provisioning of the HLM VM:
 
 	hprovision <cloudname>
 
@@ -306,20 +286,22 @@ After the script is run, the “Current One-Time Boot Option” is set to “Net
 
 	This script will PXE boot the nodes specified in `node-provision.json` file. The script alsos track the PXE boot completion process and will create the `nodes.json` file in the <cloudname> directory. 
 
-	The `nodes.json` file will contain all the required information for the cloud deployment, including the PXE IP addresses and MAC addresses of the nodes to be used. You use this file for cloud deployment.
-
-5. Update the cloud template JSON files used in the previous step.
+2. Update the `node-provision.json` files used in the previous step.
 
 	a. Change to the <cloudname> directory:
 
 		cd ~/<cloudname>
 
-	b. Verify that the each PXE-booted nodes has an IP address that matches the IP address specified in the `nodes.json` file.
+	b. Verify that the each PXE-booted nodes has an IP address that matches the IP address specified in the `node-provision.json` file.
 
-	c. Modify the `environment.json` file to add the details of CLM network. 
+3. Modify the `environment.json` file to configure the VLANs and network addresses that need to be configured for respective cloud nodes. 
 
 		"cidr": 
 		"start-address": 
+
+	* The three controller nodes should have CLM, CAN, EXT, BLS on eth0 and TUL on eth1. 
+	
+	* The two compute nodes should have CLM, EXT, BLS on eth0 and TUL on eth1.  
 
 	**Example:**
 
@@ -328,26 +310,19 @@ After the script is run, the “Current One-Time Boot Option” is set to “Net
 
 	**NOTE:** The Helion Configuration Processor assigns the first address of the CLM address range to itself for serving python and debian repositories. Make sure that you set the first IP address of the CLM range for the eth2 (CLM) address of the HLM node.
 
-	d. Modify the `ccp-3-1-1-dcn-as.json` file to set the number of overcloud controllers to 2:
+4. Modify the `definition.json` file: 
 
-		"member-count": 2, //number of controllers on the plane
+		a. Set the number of compute systems to 2.
 
-	e. Modify the `definition.json` file to set the number of compute systems to 1.
+			"count": 2, //number of computes in the resource pool.
 
-		"count": 1, //number of computes in the resource pool.
+		b. Update `ansible-vars` section with all the information based on your setup.
 
-
-6. For baremetal environment or virtual env with fancy networking - you will have to edit the logical network and environment config json files to represent your desired configuration.
-
-7. Modify the `environment.json` file to configure the VLANs and network addresses that need to be configured for respective cloud nodes. 
-
-	* The three controller nodes should have CLM, CAN, EXT, BLS on eth0 and TUL on eth1. 
-	
-	* The two compute nodes should have CLM, EXT, BLS on eth0 and TUL on eth1.  
+		c. Make sure you have two NTP entries at the end of this `definition.json` file as seen in the snapshot. If you have only one NTP server in your environment, specify the same NTP server twice.
 
 8. Once you have correctly edited all the json "Cloud Model" files, run the Helion Configuration Processor on these
 
-		cd <cloudname> 
+		cd /usr/local/bin
 
 		hcfgproc -d definition.json
 
