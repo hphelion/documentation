@@ -39,15 +39,21 @@ Use the following links to begin installing HP OpenStack Carrier Grade:
 Use the following link to review some high-level overview information about HP Helion OpenStack Carrier Grade: 
 
 * [HP Helion OpenStack Carrier Grade Overview](/helion/openstack/carrier/overview/)
+* [HP Helion OpenStack Carrier Grade Release Notes](http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Release_Notes.pdf)
 
 ## Getting started with HP Helion OpenStack Carrier Grade {#getstart}
 
 Use the following links and tools to begin working with HP Helion OpenStack Carrier Grade:
 
 
-* [Administrators Guide](/helion/openstack/carrier/admin/) 
+* [Administration Guide](http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Administration_Guide.pdf) 
 
-	These topics introduce specific administrative tasks that might not be day-to-day operations, which will help you maintain the overall operations of your cloud.
+	The Administration Guide is addressed to HP Helion OpenStack Carrier Grade administrators responsible for the following areas:
+
+	* Creating and maintaining resources used by end users (tenants), such as virtual machines, storage pools, network objects, and access credentials.
+
+	* Operating and maintaining components of the HP Helion OpenStack Carrier Grade product, such as clusters,
+nodes, system software, licensing files, and backup and restore facilities
 
 * [Managing Your Cloud](/helion/commercial/carrier/dashboard/managing/)
 
