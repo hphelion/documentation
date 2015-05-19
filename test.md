@@ -348,10 +348,10 @@ The v1.1.1 release includes new Orchestration (Heat) templates and new passthrou
 
 
 1. Create the new from-heat.conf file on the seed using the following command:
-
+<pre>
 		root@hLinux:~# cat > from-heat.conf 
-		&#0123;&#0123;#stunnel&#0125;&#0125;
-		&#0123;&#0123;#connect_host&#0125;&#0125;
+		{{#stunnel}}
+		{{connect_host}}
 		pid = /var/run/stunnel4/from-heat.pid
 		cert = {{stunnel.cert_location}}
 		key = {{stunnel.key_location}}
@@ -385,7 +385,7 @@ The v1.1.1 release includes new Orchestration (Heat) templates and new passthrou
 		{{/connect_host}}
 		{{/stunnel}}
 	
-
+	</pre>
 1. Copy the new stunnel image element to `/usr/libexec/os-apply-config/templates/etc/stunnel/from-heat.conf` on each of the overcloud controllers. Log on to the seed and source the undercloud credentials and copy the file to each of the overcloud controllers by entering:
 		
 		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
