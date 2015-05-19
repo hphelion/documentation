@@ -71,12 +71,21 @@ The KVM host must have Ubuntu Server 14.04.2 LTS installed before performing the
 
 ### Obtain a public key {#pub-key}
 
-On the KVM host, the user `root` must have a public key, for example:
+On the KVM host, the user `root` must have a public key. 
+
+1. Launch a terminal and log in to your KVM host as root:
+
+	sudo su -
+
+2. Use the following command to create the key. Accept the default values.
 
 	/root/.ssh/id_rsa
-	/root/.ssh/id_rsa.pub
 
-If user `root` does not have a public key, you can create one using the `ssh-keygen -t rsa -N ""` command.
+3.  install the public key into the authorized keys on the KVM host:
+
+		ssh-copy-id <IP_address>
+
+	Enter the IP address of the default network gateway on the KVM.
 
 ### Configure proxy information {#proxy}
 
@@ -109,10 +118,13 @@ Before starting the installation, you must first install  Ubuntu.
 
 1. Run the following all in one command to install packages:
 
-	sudo su -l -c "apt-get install -y ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager xorg gnome-core gnome-system-tools gnome-app-install vlan sudo ansible"
+		sudo su -l -c "apt-get install -y ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager xorg gnome-core gnome-system-tools gnome-app-install vlan sudo ansible"
 
-2. Reboot the server
+2. Add the 802.1q module to the kernel on boot. The 802.1q standard supports VLAN tagging on an ethernet network. 
 
+		sudo su -c 'echo "8021q" >> /etc/modules'
+
+3. Reboot the server
 
 4. Log out and re-login to the KVM host to activate the proxy configuration.
 
@@ -136,6 +148,25 @@ Configure XRDP for the remote desktop connection to access the server remotely a
 
 	sudo /etc/init.d/xrdp restart
 
+If the XDRP display does not work as expected, (you see a gray screen), update the `startwm.sh` file:
+
+	vi /etc/xrdp/startwm.sh
+
+	#!/bin/sh
+
+	if [ -r /etc/default/locale ]; then
+	. /etc/default/locale
+	export LANG LANGUAGE
+	fi
+
+	#. /etc/X11/Xsession
+	. /usr/bin/startxfce4
+
+Make sure you add a space after "." then restart XDRP:
+
+	sudo /etc/init.d/xrdp restart
+
+
 ### Install and configure NTP {#ntp}
 
 NTP is a networking protocol for clock synchronization between computer systems. 
@@ -145,7 +176,6 @@ The HP Helion OpenStack cloud nodes must be configured as NTP clients and point 
 You can install NTP on the KVM host and configure it as an NTP server. Or, you can use a pre-existing NTP server that is reachable from the management network.  You will also need to configure the undercloud and overcloud systems as NTP clients pointing to the NTP server you have chosen to use during the installation process.
 
 For information on installing NTP on the KVM host, see [Installing an NTP Server](/helion/openstack/carrier/install/ntp/).
-
 
 
 ### Download and unpack the installation packages {#getinstall}
@@ -165,93 +195,22 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 	The password to decrypt the files is `cghelion`.
 
-### Update the Ansible group variables
-
-Update Ansible variable file for your environment. 
-
-1. Change to the Ansible group variables directory.
-
-		cd /root/infra-ansible-playbooks/group_vars/
-
-2. Edit the `all` file.
-
-	a. Specify variables for HLM KVM network setup for BM Cloud 
-
-	If your HLM KVM has static IP set this variable to 1 and 0 if you have DHCP IP:
-
-		kvm_has_staticip: 0
-
-	b. Specify your HLM KVM's primary interface name:
-
-		cust_interfacename_kvmhost: em1
-
-	c. Specify the static assigned IP for the HLM KVM:
-
-		cust_staticip_kvmhost: 10.1.72.145
-		cust_netmask_kvmhost: 255.255.255.0
-
-	d. If you have a gateway for your KVM, uncomment the following line and change the IP to the correct gateway IP
-
-		cust_gateway_kvmhost: 10.1.72.1
-
-		vlan tag ids for various networks on base KVM
-		clm_vlan_id: 1690
-		bls_vlan_id: 1692
-		dcm_vlan_id: 1550
-
-	e. Leave the following setting as `0`:
-
-		ovs_cloud_only:  0
-
-	f. Optionally, change the user ID and password:
-
-		hlm_login_id:       root
-		hlm_password:       cghelion
-
-	g. Configure the following variables are for CLM network IP details for HLM
-
-		hlm_clmstaticip:    10.20.20.100
-		hlm_clmnetmask:     255.255.255.0
-		hlm_clmgateway:     10.20.20.1
-
-	h. Specify the following variables starting with cobbler_ are inputs that are usually given to initcobbler.sh. Set accordingly.
-		cobbler_pxestartip: 192.168.100.100
-		cobbler_pxeendip:   192.168.100.200
-		cobbler_pxestaticip: 192.168.100.2
-		cobbler_pxenetmask: 255.255.255.0
-
-	i. Set the location of your images that will be used by libvirt
-
-		imagelocation:  /home/images
-
-	j. Set the location of your infra-ansible-playbooks
-
-		ansible_dir: ~/infra-ansible-playbooks
-
-	k. Specify the following variables for VSD configuration
-
-		dns_domain_name: helion.cg
-		dns_address: 10.200.50.10
-		vsd_address: 10.200.50.7
-		vsd_gateway: 10.200.50.1
-		vsd_netmask: 255.255.255.0
-		vsd_name: vsd
-		vsdimagename: VSD-3.0.0_HP_r3.0_16
-		upstream_ntp_servers:
-		   - 10.1.64.20
-			- ""
-	l. Save and close the file
-
 ### Configure SSH {#ssh}
 
 On the KVM host, the OpenSSH server must be running and the firewall configuration should allow access to the SSH ports.
 
-1. Enable root login:
+1. Enable root login in the `/etc/ssh/sshd_config`: 
 
-		/etc/ssh/sshd_config set following: 
 		PermitRootLogin yes
 
-2. Disable strict host key checking:
+2. In the `sshd_config` file, set the following variables:
+
+		# Authentication:
+		LoginGraceTime 120
+		#PermitRootLogin without-password
+		StrictModes no
+
+3. Disable strict host key checking:
 
 	a. Navigate to the `config` file:
 
@@ -261,9 +220,11 @@ On the KVM host, the OpenSSH server must be running and the firewall configurati
 
 		StrictHostKeyChecking no
 
-3. Restart SSH service
+4. Restart SSH service
 
-4. Configure the public key and passwordless SSH access. 
+		service ssh restart
+
+5. Configure the public key and passwordless SSH access. 
 
 	a. Enter the following command:
 
