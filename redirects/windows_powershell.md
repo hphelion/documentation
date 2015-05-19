@@ -1,6 +1,6 @@
 ---
 permalink: /helion/devplatform/preview/powershell/
-redirect: /helion/devplatform/powershell/
+redirect: /helion/devplatform/1.2/windows/powershell/
 layout: redirect
 ---
 <!--PUBLISHED-->

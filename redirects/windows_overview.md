@@ -1,6 +1,6 @@
 ---
 permalink: /helion/devplatform/preview/
-redirect: /helion/devplatform/
+redirect: /helion/devplatform/1.2/windows/
 layout: redirect
 ---
 <!--PUBLISHED-->

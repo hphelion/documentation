@@ -1,6 +1,6 @@
 ---
 permalink: /helion/devplatform/preview/buildpack/
-redirect: /helion/devplatform/buildpack/
+redirect: /helion/devplatform/1.2/windows/buildpack/
 layout: redirect
 ---
 <!--PUBLISHED-->

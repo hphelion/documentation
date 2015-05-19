@@ -1,6 +1,6 @@
 ---
 permalink: /helion/devplatform/1.1/ALS-developer-trial-quick-start/ 
-redirect: /helion/devplatform/preview/ALS-developer-trial-quick-start/
+redirect: /helion/devplatform/ALS-developer-trial-quick-start/
 layout: redirect
 ---
 <!--PUBLISHED-->

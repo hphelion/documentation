@@ -1,6 +1,6 @@
 ---
 permalink: /helion/devplatform/preview/adding_services/
-redirect: /helion/devplatform/adding_services/
+redirect: /helion/devplatform/1.2/windows/adding_services/
 layout: redirect
 ---
 <!--PUBLISHED-->

@@ -1,6 +1,6 @@
 ---
 permalink: /helion/devplatform/preview/tools_guide/
-redirect: /helion/devplatform/tools_guide/
+redirect: /helion/devplatform/1.2/windows/tools_guide/
 layout: redirect
 ---
 <!--PUBLISHED-->
