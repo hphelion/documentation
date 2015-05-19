@@ -154,7 +154,6 @@ navigation:
     url: /publiccloud/cli/
   - text: Site Overview 
     url: /publiccloud/site-overview/
-
   mc:
   - text: HP Helion Documentation
     url: /
@@ -263,7 +262,6 @@ navigation:
     url: /publiccloud/cli/windows/help/
   - text: Release Notes
     url: /publiccloud/cli/windows/release-notes/
-
   nova-cli:
   - text: HP Helion Documentation
     url: /
@@ -385,6 +383,8 @@ navigation:
     url: /
   - text: HP Helion OpenStack 1.1 Documentation Home
     url: /helion/openstack/1.1/
+  - text: HP Helion OpenStack Update to 1.1.1
+    url: /helion/openstack/1.1.1/update
   - text: Site Index
     url: /helion/openstack/1.1/siteindex/
   - text: Release Notes

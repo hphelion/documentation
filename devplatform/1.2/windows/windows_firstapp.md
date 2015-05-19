@@ -2,7 +2,7 @@
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Deploying your first .NET Application"
 permalink: /helion/devplatform/1.2/windows/deployingnet/
-product: devplatform
+product: devplatform2.0
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
 role1: Systems Administrator 
