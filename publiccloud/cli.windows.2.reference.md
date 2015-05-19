@@ -1237,7 +1237,7 @@ EXAMPLE 1
 
 Removes the storage object `test.xml` from the current directory.
 
-#Get-Uri ## {#Get-Uri}
+##Get-Uri ## {#get-uri}
 Lists the fully qualified URI of the resource that you supply.  The optional parameters allow you to define a timespan for the URI.  When you issue this command, the URI is also pasted to the Windows clipboard for your convenience. If you want to disable this behavior, set the `CLI.config` option `PasteGetURIResultsToClipboard` to `false`.
 
 ### Syntax###
