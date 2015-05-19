@@ -23,7 +23,7 @@ authors: Patrick F
 
 <span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 
-This document demonstrates how to create and deploy a Windows image in an HP Helion OpenStack environment to be used in Helion Development Plaftorm. Image creation is needed to enable Windows support. This process can take several hours (approximately 7 hours, depending on hardware and network) and in most cases can be left unattended once the scripts begin execution.
+This document demonstrates how to create and deploy a Windows image in an HP Helion OpenStack environment to be used in Helion Development Platform. Image creation is needed to enable Windows support. This process can take several hours (approximately 7 hours, depending on hardware and network) and in most cases can be left unattended once the scripts begin execution.
 
 ## Prerequsites
 
@@ -67,7 +67,7 @@ The following requirements pertain to the system where the Windows image will be
 			scp -o StrictHostKeyChecking=no $OVERCLOUD_CONTROLLER:/usr/local/share/ca-certificates/ephemeralca-cacert.crt /root/ephemeralca-cacert.crt. 
 The path to the certificate must be set in the OS_CACERT environment variable.
 
-## Creating and uploading images
+## Creating and uploading images 
 
 ### Step 1: Create a Glazier Virtual Machine
 
@@ -113,6 +113,7 @@ This VM is used to create the images for the guest OS.
 2. Once the image gets created, the image will be initialized automatically.
 
 ## Enabling Windows and SQL Server in your ALS cluster {#enabling}
+Note that you can do this [through the Horizon console](/helion/devplatform/1.2/growcluster) instead of the command line if you prefer.
 ### Add Windows DEA
 
 1. Create a yml file to add (e.g. <code>manifest.yml</code>)
@@ -183,6 +184,8 @@ This VM is used to create the images for the guest OS.
 ## Activating Windows Images
 
 When a Windows DEA or SQL Server image node added to an ALS server, these instances need to be activated to be compliant with <a href="https://www.microsoft.com/licensing/">Microsoft licensing</a>. You can activate by either connecting to them with Remote Desktop and activating Windows manually, or by using KVM. 
+
+-----------------
 
 <div align="center"><a href="/helion/devplatform/1.2/windows/">Windows Overview</a> </div>
 <div align="center"> <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/1.2/windows/tools_guide/">Windows and .NET Tools Guide</a> </div>
