@@ -112,7 +112,7 @@ This VM is used to create the images for the guest OS.
 
 2. Once the image gets created, the image will be initialized automatically.
 
-## Enabling Windows and SQL Server in your ALS cluster
+## Enabling Windows and SQL Server in your ALS cluster {#enabling}
 ### Add Windows DEA
 
 1. Create a yml file to add (e.g. <code>manifest.yml</code>)
