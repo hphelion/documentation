@@ -221,7 +221,9 @@ You must create a user and add it to CMS Group.
 
 2. Add the user to the `CMS Group`. 
 
-## Create new cloud template and bring the cloud nodes up
+## Configure a JSON file for installation 
+
+The HLM VM deployment requires a JSON file. Use the following steps to install and edit the file.
 
 1. On the KVM host, change to the home directory.
 
@@ -253,6 +255,47 @@ You must create a user and add it to CMS Group.
 	</table>
 
 	To see a sample `node-provision.json` file, see [Create the HLM Virtual Machine](/helion/openstack/carrier/install/pb/hlm-vm/json-sample/).
+
+## Create new cloud template and bring the cloud nodes up
+
+After you edit the `node-provision.json` file, you must enable one-time PXE boot on cloud nodes to set the correct boot order. Execute the following on the HLM VM
+
+1. Use the following command to install the `python-hpilo` module on HLM VM:
+
+		pip install python-hpilo
+
+	is a python library and command-line tool
+
+root@cg-hlm:~/dcnjunob33testbed2# pip install python-hpilo
+Downloading/unpacking python-hpilo
+  http://localhost/hlm/repo/pypi/simple/python-hpilo/ uses an insecure transport scheme (http). Consider using https if localhost has it available
+  Downloading python-hpilo-2.13.1.tar.gz (81kB): 81kB downloaded
+  Running setup.py (path:/tmp/pip_build_root/python-hpilo/setup.py) egg_info for package python-hpilo
+
+Installing collected packages: python-hpilo
+  Running setup.py install for python-hpilo
+    changing mode of build/scripts-2.7/hpilo_cli from 644 to 755
+
+    changing mode of /usr/local/bin/hpilo_cli to 755
+Successfully installed python-hpilo
+Cleaning up...
+
+Step 2: copy ilopxebootonce.py to clouds dir where you have node-proviion.json from Patch folder that you already downloaded to KVM host.
+
+Step 3: Run the script “python ilopxebootonce.py node-provision.json”
+root@cg-hlm:~/dcnjunob33testbed2# python ilopxebootonce.py node-provision.json
+iLO 10.1.69.16 has been set to one time pxe boot.
+iLO 10.1.69.18 has been set to one time pxe boot.
+iLO 10.1.69.19 has been set to one time pxe boot.
+iLO 10.1.69.20 has been set to one time pxe boot.
+iLO 10.1.69.21 has been set to one time pxe boot.
+iLO 10.1.69.22 has been set to one time pxe boot.
+iLO 10.1.69.23 has been set to one time pxe boot.
+
+After the script is run, the “Current One-Time Boot Option” is set to “Network Device 1” on all the servers listed in node-provision.json file.
+
+
+## Create new cloud template and bring the cloud nodes up
 
 4. Use the following script to start the provisioning of the HLM VM:
 
