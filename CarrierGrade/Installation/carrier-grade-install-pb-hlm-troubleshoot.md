@@ -132,25 +132,25 @@ Use the following steps to patch and rerun the role:
 
 3. Comment the following lines in the build file which executes controller roles in c`ommit.yml`.
 
-	#Cloud: orion (orion)
-	#Install the cloud
-	#include: build-CCP-T1.yml
-	#include: build-CCP-T2.yml
-	#include: build-CCP-T3.yml
-	#include: build-CCP-CPN.yml
+		#Cloud: orion (orion)
+		#Install the cloud
+		#include: build-CCP-T1.yml
+		#include: build-CCP-T2.yml
+		#include: build-CCP-T3.yml
+		#include: build-CCP-CPN.yml
 
 4. Comment the following lines in the `build-CCP-CPN.yml` file.
 
-	# Install resource nodes "CPN" of control plane "CCP"
-		hosts: ORION-CCP-CPN
-		sudo: yes	
-		roles:
-	#- Common
-	#- NTP-SVR
-		NOV-CMP
-		DCN-VRS
-		DUM-BLS	
-		LDP-CPN
+		# Install resource nodes "CPN" of control plane "CCP"
+			hosts: ORION-CCP-CPN
+			sudo: yes	
+			roles:
+		#- Common
+		#- NTP-SVR
+			NOV-CMP
+			DCN-VRS
+			DUM-BLS	
+			LDP-CPN
 
 	At this point you have successfully commented all the roles in all the tiers that got exercised before NOV-CMP
     
