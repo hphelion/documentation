@@ -165,7 +165,7 @@ To add a SQL Server role to a Windows instance, use the following syntax:
 
 For more information on the ALS cluster management tool, see <a href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference">HP Helion ALS Cluster Management Tool Reference</a>.
 
-The ALS cluster management tool can be downloaded from the following location: <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Download</a>
+The ALS cluster management tool can be downloaded from the following location: <a href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/download">Download</a>
 
 ### Helion Client {#helion}
 
