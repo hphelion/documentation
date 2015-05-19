@@ -109,7 +109,7 @@ of the disk to the LVM partition, with the Ubuntu OS calculating how much goes t
 
 <!-- Changed link to main install page; need new link -->
 For details, see the Ubuntu configuration documentation:
-<a href="https://help.ubuntu.com/12.04/installation-guide/i386/preseed-contents.html" title="Ubuntu topic opens in new tab or window" target="ubuntu"> Contents of the Preconfiguration File </a> <br />
+<a href="https://help.ubuntu.com/12.04/installation-guide/en.i386/apbs04.html" title="Ubuntu topic opens in new tab or window" target="ubuntu"> Contents of the Preconfiguration File </a> <br />
 
 <a href="https://help.ubuntu.com/community/DiskSpace" title="Ubuntu topic opens in new tab or window" target="ubuntu2"> Ubuntu Disk Space - community discussion </a>
 
