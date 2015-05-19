@@ -9,14 +9,11 @@ product: win-2-cli
 # HP Helion Public Cloud CLI Software for Windows PowerShell: Folder Operations
 
 
-When you consider the sheer quantity of data that could be potentially moved into the cloud you soon realize that operations on individual files are impractical at best. To remedy this we have the ability to copy entire sets of objects from your local machine to
-the store, within the store, and to your local machine in one operation. Each of these commands can be tailored to affect a specific folders contents, or any descendant folders beneath the target path. To address a folder, remember to include a trailing \ on the 
-end of each path to indicate that you are working with a folder and not an individual file.
+When you consider the sheer quantity of data that could be potentially moved into the cloud you soon realize that operations on individual files are impractical at best. To remedy this we have the ability to copy entire sets of objects from your local machine to the store, within the store, and to your local machine in one operation. Each of these commands can be tailored to affect a specific folders contents, or any descendant folders beneath the target path. To address a folder, remember to include a trailing \ on the end of each path to indicate that you are working with a folder and not an individual file.
 
 **Example: Local-to-Server Copy**
 
-In this example, we're making a copy of the local folder named Test to the current location on the server which is the root directory. The lack of target path will force the system to assume the current location is the target (this is also true of individual files).
-Notice that when the operation completes that a new Folder named Test has been created off of root, in other words folder operations are inclusive of the container that you're pointing to.
+In this example, we're making a copy of the local folder named Test to the current location on the server which is the root directory. The lack of target path will force the system to assume the current location is the target (this is also true of individual files). Notice that when the operation completes that a new Folder named Test has been created off of root, in other words folder operations are inclusive of the container that you're pointing to.
 
 <img src="media/CopyL2SNonRecursive.png" width="580" height="573" alt="" />
 
@@ -48,5 +45,5 @@ Finally, when we're done with a folder we can simply remove it. Note that when y
 
 Recommended Links
 
-+ [Index](/cli/windows)
-+ [Working with Metadata](/cli/windows/metadata)
++ [Index](/publiccloud/cli/windows)
++ [Working with Metadata](/publiccloud/cli/windows/metadata/)
