@@ -24,7 +24,7 @@ This document describes the installation process for HP Helion OpenStack Carrier
 
 ## About the installation 
 
-The HP Helion OpenStack Carrier Grade Alpha installation installs HP Helion Lifecycle Management, creates a base HP Helion OpenStack cloud, and configures network virtualization through HP Distributed Cloud Networking. Using a separate installation, you integrate Wind River Linux servers into the HP Helion OpenStack Carrier Grade environment.
+The HP Helion OpenStack Carrier Grade installation installs HP Helion Lifecycle Management, creates a base HP Helion OpenStack cloud, and configures network virtualization through HP Distributed Cloud Networking. Using a separate installation, you integrate Wind River Linux servers into the HP Helion OpenStack Carrier Grade environment.
 
 After installation, you can interact with the HP Helion OpenStack cloud using the [Horizon graphical interface](/helion/openstack/carrier/services/horizon/overview/) or using the CLIs of the respective [services](/helion/openstack/carrier/services/overview/). 
 

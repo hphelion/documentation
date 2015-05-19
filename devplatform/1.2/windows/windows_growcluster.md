@@ -2,7 +2,7 @@
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Growing and Renaming Clusters Using Horizon"
 permalink: /helion/devplatform/1.2/growcluster
-product: devplatform
+product: devplatform2.0
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
 role1: Systems Administrator 
@@ -23,11 +23,12 @@ publish: true
 
 <span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 
-Follow these instructions to use the [Horizon console](https://horizon.hpcloud.com/) to grow your clusters by adding more DEA nodes or services.
+Follow these instructions to use the [Horizon console](https://horizon.hpcloud.com/) to grow your clusters by adding more DEA nodes or services. These instructions are intended for installations of the Helion Development Platform running on Helion OpenStack version 1.1.1 or later.
 
 Note that Windows DEA nodes and SQL Server services will not appear in the Horizon interface until you upload the appropriate images into Glance.
 
-After [creating a cluster](/helion/devplatform/1.2/deploy/), go to the **Clusters** page. Click on the **Actions** down arrow to display the options and select the desired option.<br /><img src="media/growcluster1.png"/><br />
+After [creating a cluster](/helion/devplatform/1.2/deploy/), go to the **Clusters** page. [**Project** tab > expand **Application Lifecycle Service** > **Clusters**]
+Click on the **Actions** down arrow to display the options and select the desired option.<br /><img src="media/growcluster1.png"/><br />
 
  
 ##To add DEAs
