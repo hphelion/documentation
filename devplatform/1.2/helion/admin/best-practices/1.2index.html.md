@@ -20,7 +20,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Best Practices {#index-0}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/admin/best-practices/)
+
 
 - [Passwordless SSH Authentication](#passwordless)
 - [Applying Updates](#applying-updates)

@@ -19,7 +19,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Using the cloud-init Package {#cloud-init}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/admin/cluster/cloud-init/)
+
 
 [cloud-init](https://help.ubuntu.com/community/CloudInit) (the Ubuntu package for handling early initialization of cloud instances) can be used to provide additional flexibility when configuring Application Lifecycle Service cluster nodes, and can simplify joining a cluster and assigning roles.
 

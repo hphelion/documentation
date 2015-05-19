@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Application Lifecycle Service Client Command Reference {#helion-client-command-reference}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/reference/client-ref/)
+
  
 Many of the informational commands take a **--json** option if you wish to generate machine-parseable output. In some cases the json output reveals additional details.
 

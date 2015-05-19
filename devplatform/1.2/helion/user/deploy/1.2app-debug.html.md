@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Remote Debugging {#remote-debugging}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/deploy/app-debug/)
+
 
 Different languages have different tools and protocols for remote
 debugging, but most require a connection between the running application

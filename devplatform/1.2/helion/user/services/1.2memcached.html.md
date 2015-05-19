@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Memcached Service {#memcached-service}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/services/memcached/)
+
 
 Memcached is an in-memory key-value store used for caching by many web
 applications and frameworks. It is available in Application Lifecycle Service as a service

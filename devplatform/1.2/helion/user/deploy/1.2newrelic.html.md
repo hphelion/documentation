@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: New Relic Monitoring {#new-relic-monitoring}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/deploy/newrelic/)
+
 
    [New Relic for Ruby](#new-relic-for-ruby)
         -   [The Ruby Gem](#the-ruby-gem)

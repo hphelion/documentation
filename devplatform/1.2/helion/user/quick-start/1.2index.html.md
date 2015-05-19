@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Prerequisites {#index-0}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/quick-start/)
+
 
 This guide covers the basics of using the Application Lifecycle Service (ALS).
 

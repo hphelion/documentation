@@ -17,7 +17,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Log Drain Examples {#log-drain-examples}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/admin/best-practices/logging-examples/)
+
 
 Detailed instructions on how to use drains with third party log analysis
 software or services.

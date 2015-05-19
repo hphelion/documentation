@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Sample Applications {#index-0}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/admin/console/app-store/)
+
 
 The Sample Applications are a collection of ready-to-run applications which can be
 deployed with a couple of clicks. This interface uses the same API as the CLI client to pull the source code from a Git repository rather than push an archive from the user's local

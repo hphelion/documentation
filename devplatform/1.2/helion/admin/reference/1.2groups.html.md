@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Managing Groups, Users and Limits (DEPRECATED)[](#managing-groups-users-limits-deprecated "Permalink to this headline")
-[See the Helion 1.0 Development Platform version of this page](/als/v1/admin/reference/groups/)
+
 
 
 ##* Warning *

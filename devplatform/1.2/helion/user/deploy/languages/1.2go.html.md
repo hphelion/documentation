@@ -14,7 +14,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Go {#go}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/deploy/languages/go/)
+
 
 Go applications ([golang](http://golang.org/)) are supported through a
 BuildPack framework and can be pushed using the Application Lifecycle Service.

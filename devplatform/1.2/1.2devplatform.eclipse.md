@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 # HP Helion 1.2 Development Platform: Eclipse Deployment Plugin
 
-[See the Helion 1.0 Development Platform version of this page](/helion/devplatform/eclipse/)
+
 
 If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to HP Helion Development Platform.
 

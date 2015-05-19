@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Application Lifecycle Service User Guide {#helion-user-guide}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/)
+
 
 Application Lifecycle Service is a polyglot Platform-as-a-Service (PaaS). You can easily
 deploy applications written in a wide range of languages and web

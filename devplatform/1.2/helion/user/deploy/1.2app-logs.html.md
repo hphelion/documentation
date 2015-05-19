@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Application Logs {#application-logs}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/deploy/app-logs/)
+
 
 Logs for applications running on Application Lifecycle Service are aggregated into streams so that data from multiple instances can be viewed together and filtered. Application log streams can be accessed via:
 

@@ -17,7 +17,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Server Configuration {#server-configuration}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/admin/server/)
+
 
 This page covers the initial setup and configuration of the Application Lifecycle Service
 Server in a virtual machine under control of a hypervisor running on a

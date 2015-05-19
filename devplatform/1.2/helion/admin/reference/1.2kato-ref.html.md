@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Kato Command Reference {#kato-command-reference}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/admin/reference/kato-ref/)
+
 
 Kato is the Application Lifecycle Service command line administration utility.
 
