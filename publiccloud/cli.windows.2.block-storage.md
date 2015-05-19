@@ -53,7 +53,7 @@ The first thing you want to do is create a new block storage volume.  To do this
 
     PS HPCS:\\> New-Volume "MyNewVolume" "MyNewVolume Description" 10
 
-This creates a new volume with the name `MyNewVolume`, a description of  `MyNewVolume Description` and a volume size of 10 gigabytes.  You can also assign metadata to a volume when you create it:
+This creates a new volume with the name `MyNewVolume`, a description of `MyNewVolume Description` and a volume size of 10 gigabytes.  You can also assign metadata to a volume when you create it:
 
     PS HPCS:\\> New-Volume "MyNewVolume" "MyNewVolume Description" 10 "some|metadata"
 
@@ -63,7 +63,7 @@ Next you might want to attach your volume to an existing server.  Taking the vol
 
 This attaches your server ID `99` to the volume with the ID of `31415` with an assigned device name of `/dev/vpd`.  (To get the server and volume ID values, use the [**ls**](/publiccloud/cli/windows/reference/#ls) command.)
 
-See the following knowledge base article to learn how to leverage your attached storage: [Mounting Additional Space](https://community.hpcloud.com/article/mounting-additional-space)
+See the following knowledge base article to learn how to leverage your attached storage: [Mounting Additional Space](https://community.hpcloud.com/article/preparing-your-block-storage-volume-use)
 
 Of course, you may also need to detach a volume from a server, in which case you use the following command
 
@@ -91,4 +91,4 @@ And of course you can also delete snapshots using the following command:
 
 This removes the snapshot with the ID of 1111.
 
-For more details on the block storage commands, see the [Block Storage](/cli/windows/reference#BlockStorage) section of the [Windows CLI Reference](/cli/windows/reference) page and [Getting Help]( /publiccloud/cli/windows/help/).
+For more details on the block storage commands, see the [Block Storage](/publiccloud/cli/windows/reference/#BlockStorage) section of the [Windows CLI Reference](/publiccloud/cli/windows/reference) page and [Getting Help](/publiccloud/cli/windows/help/).
