@@ -1493,7 +1493,7 @@ EXAMPLE
 Removes a CDN entry from container "TestContainer".
 -->
 
-#Block Storage CLI Commands# {#BlockStorage}
+#Block Storage CLI Commands# {#blockstorage}
 
 ##Attach-Volume## {#Attach-Volume}
 Associates a volume with an existing server.
