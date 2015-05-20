@@ -260,7 +260,7 @@ Perform the following steps to enable networks that will be associated with HLM 
 
 10. Execute the following command to view the routing table. Make sure all of the networks are configured as expected.
 
-		Route –n
+		Route -n
  
 10. Execute the following command to 
 

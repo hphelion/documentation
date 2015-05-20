@@ -21,7 +21,7 @@ The two environments work together to allow users to set up and manage a self-se
 
 The following diagram illustrates a conceptual depiction of the administrative and execution environment.
 
-<img src="/media/CloudGraphics/cloud-os-diagram.png" alt="" />
+<img src="media/cloud-os-diagram.png" alt="" />
 <!-- Image from CloudCoreProductPlan.pdf http://wiki.hpcloud.net/display/core/Cloud+OS+Core+Product+Management -->
 
 ## Execution Environment ## {#execution}

@@ -58,7 +58,7 @@ Use the following steps to prepare the KVM host to deploy the VMs.
 
 	c. Decrypt and untar the PGP file using password `cghelion` when prompted. 
 
-		gpg -d cg-hos-dcn.tar.gz.gpg | tar -xzvf –
+		gpg -d cg-hos-dcn.tar.gz.gpg | tar -xzvf
 
 
 	d. Copy the `infra-ansible-playbooks` file to `/root`. 
