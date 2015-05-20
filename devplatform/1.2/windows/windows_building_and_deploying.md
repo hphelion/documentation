@@ -68,7 +68,7 @@ The following requirements pertain to the system where the Windows image will be
 The path to the certificate must be set in the OS_CACERT environment variable.
 
 ## Creating and uploading images 
-
+<p><b>Note:</b> A Windows DEA and a SQL Server <b>cannot</b> both exist on the same virtual machine. You will need to create a virtual machine for each one.</p>
 ### Step 1: Create a Glazier Virtual Machine
 
 This VM is used to create the images for the guest OS.
