@@ -19,8 +19,7 @@ authors: Patrick F
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.2 Development Platform Preview: Deploying Windows Applications with the IIS Buildpack
-
+# HP Helion 1.2 Development Platform: Deploying Windows Applications with the IIS Buildpack
 <span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
 
 A **Buildpack** is a collection of scripts that specify what frameworks and runtimes are to be deployed with an application. 
