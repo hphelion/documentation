@@ -798,7 +798,7 @@ navigation:
   - text: Support Matrix
     url: /helion/openstack/support-matrix-beta/ 		
   - text: Installation & Configuration Overview
-    url: /helion/openstack/install-beta-overview/	
+    url: /helion/openstack/install/overview/
   - text: Installation Prerequisites
     url: /helion/openstack/install-beta/prereqs/
   - text: Installation for KVM Hypervisor
