@@ -266,7 +266,7 @@ Use the following steps to restore the undercloud:
 
 		 78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,1900
 
-	For more information on the `baremetal.csv` file, see the [Installation Prerequisites](http://docs.hpcloud.com/helion/openstack/carrier/install/prereqs#csv).
+	For more information on the `baremetal.csv` file, see the [Installation Prerequisites](http://docs.hpcloud.com/helion/openstack/carrier/install/prereqs#csv.
 
 6. Execute the following script:
 
