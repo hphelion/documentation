@@ -1,6 +1,6 @@
 ---
-permalink: /http://docs.hpcloud.com/helion/
-redirect: /http://docs.hpcloud.com/
+permalink: /helion/
+redirect: //
 layout: redirect
 
 ---
