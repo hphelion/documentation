@@ -48,7 +48,7 @@ The following requirements pertain to the system where the Windows image will be
 		*  <code>x64</code>
 		*  File extension <code>.iso</code>
 * Virtual Box version 4.3.26 or later: <a href="https://www.virtualbox.org/wiki/Downloads">Download</a>
-* Virtio drivers version 0.1-81: <a href="http://alt.fedoraproject.org/pub/alt/virtio-win/stable/virtio-win-0.1-81.iso">Download</a>
+* The latest stable Virtio driver: <a href="https://fedorapeople.org/groups/virt/virtio-win/deprecated-isos/stable/virtio-win-0.1-81.iso">Download</a>
 * Download and extract the Glazier tool: <a href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</a>. For more information about Glazier, see the <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a>.
 
 
