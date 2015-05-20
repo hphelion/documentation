@@ -34,7 +34,7 @@ Use the following links for information on administrative tasks you can perform 
 After HP Helion OpenStack Carrier Grade is installed and operational, you can perform any of the following configurations, as needed.
 
 - [Integrating LDAP](/helion/openstack/carrier/services/identity/integrate-ldap/)
-- [Installing and Configuring DNSaaS](/helion/openstack/carrier/install/dnsaas/)
+- Installing and Configuring DNSaaS](/helion/openstack/carrier/install/dnsaas/)
 - [Backing Up and Restoring HP Helion OpenStack](/helion/openstack/carrier/backup.restore/)
 - [Tracking masked IP addresses when using network address translation](/helion/openstack/carrier/maskedIP/)
 - [Configuring your network securely](/helion/openstack/carrier/install/security/)
