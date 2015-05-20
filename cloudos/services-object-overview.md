@@ -34,15 +34,15 @@ Key terms include:
 
 ###Using the API to access Imaging### {#API}
  
-You can use a low-level, raw REST API access to HP Cloud OS Imaging service. See the [HP Cloud OS Object Storage Service API page](/api/v13/object-storage/).
+You can use a low-level, raw REST API access to HP Cloud OS Imaging service. See the [HP Cloud OS Object Storage Service API page](/publiccloud/api/object-storage/).
 
 ###Using the CLI### {#cli}
 
-You can use any of several command-line interface software to access HP Cloud OS Object Storage service. See [HP Cloud OS CLI](/cli/).
+You can use any of several command-line interface software to access HP Cloud OS Object Storage service. See [HP Cloud OS CLI](/publiccloud/cli/).
 
 ###Using language bindings### {#bindings}
 
-You can use any of several language bindings to access HP Cloud OS Object Storage service. See [HP Cloud binding support](/bindings/).
+You can use any of several language bindings to access HP Cloud OS Object Storage service. See [HP Cloud binding support](/publiccloud/bindings/).
 
 
 ## For more information ##
