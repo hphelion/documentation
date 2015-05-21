@@ -33,7 +33,7 @@ PageRefresh();
 
 Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack web interface or **dashboards**.
 
-The dashboards provide a web-based user interface to HP Helion OpenStack services including [Compute](/helion/openstack/carrier/services/compute/overview/), [Volume Operations](/helion/openstack/carrier/services/volume/overview/), Networking, and [Identity](/helion/openstack/carrier/services/identity/overview/). 
+The dashboards provide a web-based user interface to HP Helion OpenStack services including [Compute](/helion/openstack/carrier/services/compute/overview/), [Volume Operations](/helion/openstack/carrier/services/volume/overview/), Networking, and Identity. 
 
 Horizon ships with several dashboards, including a **Project** dashboard, an **Admin** dashboard, and a **System** dashboard. These dashboards provide administrators and users with a graphical interface to access, provision and automate cloud-based resources.
 

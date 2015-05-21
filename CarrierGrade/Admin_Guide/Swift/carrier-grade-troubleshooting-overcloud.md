@@ -30,9 +30,9 @@ PageRefresh();
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/reporting/overview/"> NEXT &#9654</a> </p> -->
 
 
-# HP Helion OpenStack&#174; 1.1: Troubleshooting Overcloud Node Removal
+# HP Helion OpenStack&#174; 1.1: Troubleshooting Scale-Out Node Removal
 
-### After removing nodes from the Overcloud, Icinga issues alerts.
+### After removing nodes, Icinga issues alerts.
 
 **System Behavior/Message**
 
@@ -45,25 +45,24 @@ Follow this manual procedure for deleting nodes from check&#95;mk and icinga con
   To remove one or more 
   previously discovered nodes from the check_mk and icinga configurations: 
 
-1. Run
+1. Run the following command"
 		
 		check_mk --flush <node IP> 
 
 	where <node IP> is the IP address of the node to be deleted. 
 
-2. Run
+2. Run the following command to remove the node's host file:
 
 		rm /etc/check_mk/conf.d/<node IP>.mk
 
-	to remove the node's host file 
+3. Repeat steps 1 and 2 for each node you wish to remove:
 
-3. Repeat steps 1 and 2 for each node you wish to remove. 
-4. Run
+4. Run the following command to re-generate the Icinga config and reload Icinga:
 
 		check_mk -O
 
 
-	to re-generate the Icinga config and reload Icinga.
+	
 
 <br /><br />
 <hr />
