@@ -245,6 +245,6 @@ On the KVM host, the OpenSSH server must be running and the firewall configurati
 
 ## Next Step
 
-[Prepare the Network for Installation](/helion/openstack/carrier/install/pb/network/prepare/)
+[Preparing the Network for Installation](/helion/openstack/carrier/install/pb/network/prepare/)
 
 ----

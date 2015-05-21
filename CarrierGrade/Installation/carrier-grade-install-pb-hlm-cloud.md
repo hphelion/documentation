@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/carrier/install/pb/workarounds/">&#9664; HLM Post-Installation Tasks</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a>  </p> 
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/pb/workarounds/">&#9664; HLM Post-Installation Tasks</a> | <a href="/helion/openstack/carrier/install/pb/overview/">&#9650; Installation Overview</a>  </p> 
 
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Deploying the HLM and DCN Clouds 
 
