@@ -91,24 +91,9 @@ Review the following topics related to Object Storage (Swift) deployment:
 
 - [Services Overview](/helion/openstack/carrier/services/overview/)
 - [Compute Services Overview](/helion/openstack/carrier/services/compute/overview/)
-- [DNS Service Overview](/helion/openstack/carrier/services/dns/overview/)
-- [DVR Service Overview](/helion/openstack/carrier/services/dvr/overview/)
-- [EON Service Overview](/helion/openstack/carrier/services/eon/overview/)
 - [Horizon Service Overview](/helion/openstack/carrier/services/horizon/overview/)
-- [Identity Operations Service Overview](/helion/openstack/carrier/services/identity/overview/)
-- [Image Operations Service Overview](/helion/openstack/carrier/services/imaging/overview/)
-- [Ironic Service Overview](/helion/openstack/carrier/services/ironic/overview/)
-- [Networking Operations Service Overview](/helion/openstack/carrier/services/networking/overview/)
-- [Object Operations Service Overview](/helion/openstack/carrier/services/object/overview/)
 - [Orchestration Service Overview](/helion/openstack/carrier/services/orchestration/overview/)
 - [Metering Service Overview](/helion/openstack/carrier/services/reporting/overview/)
-- [Ceph Service Overview]( /helion/openstack/carrier/services/ceph/)
-- [Sherpa Service Overview](/helion/openstack/carrier/services/sherpa/overview/)
-- [Sirius Service Overview](/helion/openstack/carrier/services/sirius/overview/)
-	- [Sirius CLI Workflow](/helion/openstack/carrier/sirius/cli/workflow/)
-	- [Configuring Your Storage Using Sirius](/helion/openstack/carrier/sirius-cli/)
-- [Tripleo Service Overview](/helion/openstack/carrier/services/tripleo/overview/)
-- [Volume Operations Service Overview](/helion/openstack/carrier/services/volume/overview/)
 
 
 
