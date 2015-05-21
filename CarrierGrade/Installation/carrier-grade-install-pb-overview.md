@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Installation Overivew"
-permalink: /helion/openstack/carrier/install/bm/overview/
+permalink: /helion/openstack/carrier/install/pb/overview/
 product: carrier-grade
 
 ---

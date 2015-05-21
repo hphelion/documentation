@@ -30,7 +30,7 @@ HP Helion OpenStack Carrier Grade enables carrier grade network functions virtua
 
 Use the following links to begin installing HP OpenStack Carrier Grade:
 
-* [Installing HP Helion OpenStack Carrier Grade](/helion/openstack/carrier/install/bm/overview/). 
+* [Installing HP Helion OpenStack Carrier Grade](/helion/openstack/carrier/install/pb/overview/). 
 
 	Start with this document for complete instructions on how to install your HP Helion OpenStack cloud, including system requirements, prerequisites.
 

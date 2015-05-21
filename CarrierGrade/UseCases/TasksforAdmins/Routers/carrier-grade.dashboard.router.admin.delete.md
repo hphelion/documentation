@@ -25,7 +25,7 @@ A network connects to the router through an interface.
 
 You must remove all router interfaces before deleting the router, by removing all internal interfaces.
 
-	<br /><img src="media/NetworkConnections.png"  alt="" />
+	<br /><img src="/media/NetworkConnections.png"  alt="" />
 
 
 ### Delete a router ###

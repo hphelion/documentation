@@ -32,9 +32,9 @@ To work with instances [Launch the HP Helion OpenStack Horizon Dashboard](/helio
 
 The **Instances** panel looks similar to the following. Click the image to view in a new window: 
 
-<img src="media/CGH-Helion-Instance" width="500">
+<img src="media/CGH-Helion-Instance.png" width="500">
 
-<a href="javascript:window.open('/content/documentation/media/CGH-Helion-Instance','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Click here to view a larger image in a new window.</a>
+<a href="javascript:window.open('/content/documentation/media/CGH-Helion-Instance.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Click here to view a larger image in a new window.</a>
 
 For details on an instance, click the image name. 
 
