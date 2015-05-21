@@ -383,7 +383,7 @@ navigation:
     url: /
   - text: HP Helion OpenStack 1.1 Documentation Home
     url: /helion/openstack/1.1/
-  - text: Update to HP Helion Openstack 1.1.1
+  - text: Update to HP Helion OpenStack 1.1.1
     url: /helion/openstack/1.1.1/update
   - text: Site Index
     url: /helion/openstack/1.1/siteindex/
