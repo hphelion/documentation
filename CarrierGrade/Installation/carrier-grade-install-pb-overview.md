@@ -38,7 +38,7 @@ Use the following process to install HP Helion OpenStack Carrier Grade in a bare
 
 3. [Installation Prerequisites](/helion/openstack/carrier/install/pb/prereqs/)
 
-4. [Preparing the Network for Installation](carrier-grade-install-pb-network-prepare.md)
+4. [Preparing the Network for Installation](/helion/openstack/carrier/install/pb/network/prepare/)
 
 5. [Creating the HLM Virtual Machine](/helion/openstack/carrier/install/pb/hlm-vm/)
 
