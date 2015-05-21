@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/carrier/install/pb/workarounds/">&#9664; HLM Post-Installation Tasks</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a>  </p> 
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/pb/hlm-cloud/">&#9664; Deploying the HLM and DCN Clouds</a> | <a href="/helion/openstack/carrier/install/pb/overview/">&#9650; Installation Overview</a> | <a hrf="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf">Install HP Helion OpenStack Carrier Grade (PDF) &#9654;</a> </p> 
 
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Verifying the HLM and DCN Installation
 
@@ -244,6 +244,10 @@ If VRS-G node is not listed here, use the following steps:
 	* Launch an instance. 
 
 	For information on using the Horizon dashboard, see [Operator Guide to Managing Your Cloud](/helion/commercial/carrier/dashboard/managing/).
+
+## Next Step
+
+[Install HP Helion OpenStack Carrier Grade](http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf) (Opens in PDF)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
