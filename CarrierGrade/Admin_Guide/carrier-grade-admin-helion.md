@@ -37,7 +37,7 @@ After HP Helion OpenStack Carrier Grade is installed and operational, you can pe
 - [Integrating LDAP](/helion/openstack/carrier/services/identity/integrate-ldap/)
 - [Tracking masked IP addresses when using network address translation](/helion/openstack/carrier/maskedIP/)
 - [Configuring your network securely](/helion/openstack/carrier/install/security/)
-- [Removing and Replacing a Failed Overcloud Controller]( /helion/openstack/carrier/removing/failedovercloud/)
+- [Removing and Replacing a Failed Overcloud Controller](/helion/openstack/carrier/removing/failedovercloud/)
 - [High Availability (HA)](/helion/openstack/carrier/high-availability/)
 - Installing and Configuring DNSaaS](/helion/openstack/carrier/install/dnsaas/)
 - [Backing Up and Restoring HP Helion OpenStack](/helion/openstack/carrier/backup.restore/)
