@@ -29,7 +29,7 @@ PageRefresh();
 
  Drive audit runs `swift-drive-audit` <which finds>to find an errors in `kern.log`. It reports the list of drives which have errors. The devices which are used for Swift are verified for an error and then reported.  The devices are not automatically unmounted. <!-- so as to allow for the disk to self-heal?(we can use "recover"), if possible.-->
 
-If the disk errors occur the operator must perform the maintenance on the disk by [removing the disk](http://docs.hpcloud.c,om/helion/openstack/carrier/services/swift/deployment/remove-existing-disk/) from the Swift cluster or [replacing the disk](http://docs.hpcloud.com/helion/openstack/carrier/services/swift/deployment/add-disk-scale-out/) with a new one. 
+If the disk errors occur the operator must perform the maintenance on the disk by [removing the disk](/helion/openstack/carrier/services/swift/deployment/remove-existing-disk/) from the Swift cluster or [replacing the disk](/helion/openstack/carrier/services/swift/deployment/add-disk-scale-out/) with a new one. 
 
 Note: Run **Icinga** check once in every 30 minutes for drive audit to complete one run on  a large system.
 

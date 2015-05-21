@@ -33,8 +33,9 @@ After you have completed and verified the HP Helion OpenStack installation, perf
 
 The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.
 
+<!--
 See [Deploy vCenter ESX compute proxy](/helion/openstack/1.1/install/esx/proxy/).
-
+-->
 
 ## Install DNS as a service (DNSaaS) **(Optional)**
 
@@ -46,8 +47,9 @@ DNSaaS is our managed DNS service, based on the OpenStack Designate project, is 
 
 You can create and deploy a Microsoft Windows Server that is Microsoft SVVP (Server Virtualization Validation Program) compliant on HP Helion OpenStack as a Nova compute VM. 
 
+<!--
 See [How to build a Microsoft Windows Server guest image for HP Helion OpenStack](/helion/openstack/1.1/create-deploy/certified-microsoft-windows/guest-image/).
-
+-->
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
