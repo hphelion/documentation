@@ -138,10 +138,11 @@ A network-accessible address, usually described by a URL, where a service may be
 
 
 ## Next Steps ## {#next}
-
+<!--
 ### Integrate the Identity Service (Keystone) with LDAP/AD
 
 You can optionally [integrate the Identity service with with an existing LDAP directory](/helion/openstack/carrier/services/identity/integrate-ldap/) for authentication and authorization services.
+-->
 
 ### Working with the Identity Service
 
