@@ -58,7 +58,7 @@ During the HP Helion OpenStack installation, you will copy the files to a specif
 
 The LDAP server connection settings are contained in the `overcloud_keystone_ldap.json` file, which is a well-formed JSON file.
 
-Create a file using well-formed, syntax-error free json. See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/carrier/install/connections-json/) for an example `overcloud_keystone_ldap.json` file.
+Create a file using well-formed, syntax-error free json. See Sample LDAP Server Connection Settings JSON File(/helion/openstack/carrier/install/connections-json/) for an example `overcloud_keystone_ldap.json` file.
 
 Section names, supported options and possible values are described in [OpenStack Identity Service documentation](/helion/openstack/carrier/services/identity/overview/). The following table lists several important values:
 
@@ -162,7 +162,7 @@ Section names, supported options and possible values are described in [OpenStack
 
 ## Keystone CA storage and signing key/certificate files {#keystone}
 
-LDAP server might require all connections to be secured though the [TLS protocol](/helion/openstack/carrier/tls/). Additionally, Keystone may be instructed to validate LDAP server certificate against local CA certificate storage. 
+LDAP server might require all connections to be secured though the TLS protocol. Additionally, Keystone may be instructed to validate LDAP server certificate against local CA certificate storage. 
 
 To activate this feature:
 
@@ -187,8 +187,6 @@ To activate this feature:
 Follow the steps described in the installation instructions to deploy the overcloud nodes.
 
 [HP Helion OpenStack&#174;: Installation and Configuration for KVM Hypervisor](/helion/openstack/carrier/install/kvm/#startseed)
-
-[HP Helion OpenStack&#174;: Installation and Configuration for ESX Hypervisor](/helion/openstack/carrier/install/esx/#startseed)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>

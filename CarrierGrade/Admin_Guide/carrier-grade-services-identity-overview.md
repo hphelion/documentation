@@ -145,7 +145,7 @@ You can optionally [integrate the Identity service with with an existing LDAP di
 
 ### Working with the Identity Service
 
-To [perform tasks using the Identity service](/helion/openstack/carrier/services/identity/using/), you can use the [API](http://api.openstack.org/api-ref-identity-v3.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
+To perform tasks using the Identity service, you can use the [API](http://api.openstack.org/api-ref-identity-v3.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -23,7 +23,7 @@ PageRefresh();
 
 The Admin panel in the HP Helion OpenStack Carrier Grade Horizon dashboards enable you to work within the current cloud domain. You can access tools to work with the Compute, Network, Object Operations, and Orchestration services.
 
-<img src="media/HorizonUI_Admin_beta" alt="" width="500" />
+<img src="media/Horizon_Admin.png" alt="" width="500" />
 
 As an administrator (admin), you can perform all of the [user tasks](/helion/commercial/carrier/dashboard/managing/nonadmin/) in addition to the admin tasks.
 
@@ -186,5 +186,5 @@ You can view information for OpenStack services.
 
 See [Viewing Services Information](/helion/commercial/carrier/dashboard/managing/system-info/)
 
-
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 ----

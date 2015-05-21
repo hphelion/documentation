@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Create the HLM Virtual Machine"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Creating the HLM Virtual Machine"
 permalink: /helion/openstack/carrier/install/pb/hlm-vm/
 product: carrier-grade
 
@@ -22,7 +22,7 @@ PageRefresh();
 
 
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Create the HLM Virtual Machine
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Creating the HLM Virtual Machine
 
 Helion Lifecycle Management (HLM) consists of the ongoing operations/maintenance as well as the initial deployment of the HP Helion OpenStack Carrier Grade system.
 
@@ -58,7 +58,7 @@ Use the following steps to prepare the KVM host to deploy the VMs.
 
 	c. Decrypt and untar the PGP file using password `cghelion` when prompted. 
 
-		gpg -d cg-hos-dcn.tar.gz.gpg | tar -xzvf –
+		gpg -d cg-hos-dcn.tar.gz.gpg | tar -xzvf
 
 
 	d. Copy the `infra-ansible-playbooks` file to `/root`. 
@@ -336,8 +336,7 @@ After the script is run, the `Current One-Time Boot Option` is set to `Network D
 
 	You can run this command from any directory. 
 
-	After this command completes, all cloud nodes and CLM network interfaces should be set correctly. 
-
+After this command completes, all cloud nodes and CLM network interfaces should be set correctly. 
 
 
 ## Next Step

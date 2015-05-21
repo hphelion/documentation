@@ -24,9 +24,9 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-
+<!--
 <a href="/helion/openstack/carrier/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a>
-
+-->
 # HP Helion OpenStack&#174; Carrier Grade (Beta): About Scale-out Object Storage (Swift) 
 
 HP Helion OpenStack Object Storage includes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).
