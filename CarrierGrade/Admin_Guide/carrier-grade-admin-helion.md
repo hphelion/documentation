@@ -38,7 +38,7 @@ After HP Helion OpenStack Carrier Grade is installed and operational, you can pe
 - [Backing Up and Restoring HP Helion OpenStack](/helion/openstack/carrier/backup.restore/)
 - [Tracking masked IP addresses when using network address translation](/helion/openstack/carrier/maskedIP/)
 - [Configuring your network securely](/helion/openstack/carrier/install/security/)
-- [Removing and Replacing a Failed Overcloud Controller]( /helion/openstack/carrier/removing/failedovercloud/)
+- [Removing and Replacing a Failed Overcloud Controller](/helion/openstack/carrier/removing/failedovercloud/)
 - [High Availability (HA)](/helion/openstack/carrier/high-availability/)
 
 
