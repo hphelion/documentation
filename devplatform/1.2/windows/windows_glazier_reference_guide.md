@@ -43,7 +43,7 @@ Glazier can run in either Linux (Ubuntu recommended) or OSX.
 
 * <a href="http://download.virtualbox.org/virtualbox/4.3.26/VirtualBox-4.3.26-98988-OSX.dmg">Virtual box 4.3.26</a>
 * A retail or volume licensed, English Windows 2012R2 image. Images for a development or test environment can be downloaded from MSDN; for a production environment, you must obtain an image through your OEM channel.
-* <a href="http://alt.fedoraproject.org/pub/alt/virtio-win/stable/virtio-win-0.1-81.iso">Windows VirtIO Image 0.1-81</a>
+* <a href="https://fedorapeople.org/groups/virt/virtio-win/deprecated-isos/stable/virtio-win-0.1-81.iso">Windows VirtIO Image 0.1-81</a>
 
 ## Usage {#usage}
 
