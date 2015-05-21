@@ -40,7 +40,4 @@ To log into the Helion dashboard:
 
 5. If you are a non-admin user, select a project from the list at the top of the screen.
 
-<img src="media/HorizonProjectMenu.png" alt="" />
-
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
