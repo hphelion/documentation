@@ -43,7 +43,7 @@ The documentation for HP Helion OpenStack includes the following:
 
 Review the following topics before you start the installation:
 
-- [Overview](/helion/openstack/carrier/install/overview/) 
+- [Overview](/helion/openstack/carrier/install/pb/overview/) 
 - [Support matrix](/helion/openstack/carrier/support-matrix/)
 - [Technical Overview](/helion/openstack/carrier/technical-overview/)
 
