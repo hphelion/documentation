@@ -37,7 +37,7 @@ This tutorial requires the following software components:
 
 <ol>
 <li>Open <code>&lt;sample directory&gt;/C$/ContosoUniversity.sln</code> in Visual Studio.</li> 
-<li>Right-click the project and select <strong>Manage NuGet Packages...</strong>. Select <strong>nuget.org</strong> in the <strong>Online</strong> panel, and enter <strong>Cloud Foundry Explorer</strong> in the <strong>Search Online</strong> field. Install the Cloud Foundry Explorer.<br /><img src="media/windows_select_msbuild.png">
+<li>Install the <strong>Cloud Foundry MSBuild Tasks</strong> following the directions here: <a href="/helion/devplatform/1.2/windows/tools_guide#msbuild" target="blank">Windows and .NET Tools Guide: Cloud Foundry Explorer</a>
 <li>In Visual Studio, open <code>web.config</code>.</li>
 <li>Change the following configuration line (this will pull the connection string parameters from environment variables, rather than using hardcoded values):
 
