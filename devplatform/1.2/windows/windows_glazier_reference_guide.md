@@ -85,7 +85,7 @@ Available options:
     - if this is set, you also have to set --sql-server-iso (Currently unused)
 
 --product-key KEY               
-    - (optional) Windows product key; leave empty if you're using a VL Windows iso with a KMS server
+    - (optional) Windows product key; leave empty if you are using a VL Windows iso with a KMS server
 
 --use-volume-license
     - (optional) Specifies that you are using a Windows volume license. If this is specified, there is no need to specify --product-key (means you are using Windows VL)
@@ -105,7 +105,7 @@ Available options:
     - OpenStack flavor used for building the OpenStack image. Example: standard.medium
 
 --insecure
-    - (optional) create a Windows image for a Development Platform installation that doesn't have an HTTPS certificate
+    - (optional) create a Windows image for a Development Platform installation that does not have an HTTPS certificate
 
 --windows-update-proxy
     - (optional) proxy used for Windows Updates on image
