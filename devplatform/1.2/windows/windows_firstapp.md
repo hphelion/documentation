@@ -30,7 +30,7 @@ This tutorial demonstrates how to deploy an application to a Windows Server inst
 This tutorial requires the following software components:
 
 * Visual Studio 2013. Any edition is supported, including the Community (Free) edition.
-* Cloud Foundry Extensions and Cloud Foundry MSBuild tasks. See <a href="/helion/devplatform/1.2/windows/tools_guide#cloudfoundryexplorer">Windows and .NET Tools Guide: Cloud Foundry Explorer</a> and <a href="/helion/devplatform/1.2/windows/tools_guide#msbuild">Windows and .NET Tools Guide: MSBuild Tasks</a>for more details. 
+* Cloud Foundry Extensions and Cloud Foundry MSBuild tasks. See <a href="/helion/devplatform/1.2/windows/tools_guide#cloudfoundryexplorer">Windows and .NET Tools Guide: Cloud Foundry Explorer</a> and <a href="/helion/devplatform/1.2/windows/tools_guide#msbuild">Windows and .NET Tools Guide: MSBuild Tasks</a> for more details. 
 * Download and extract the <a href="https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8">Contoso University Sample Application</a>.
 
 ## Deploy the sample application from Visual Studio
