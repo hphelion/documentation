@@ -37,7 +37,7 @@ This tutorial requires the following software components:
 
 <ol>
 <li>Open <code>&lt;sample directory&gt;/C$/ContosoUniversity.sln</code> in Visual Studio.</li> 
-<li>Install the <strong>Cloud Foundry MSBuild Tasks</strong> following the directions here: <a href="/helion/devplatform/1.2/windows/tools_guide#msbuild" target="blank">Windows and .NET Tools Guide: Cloud Foundry Explorer</a>
+<li>Install the <strong>Cloud Foundry MSBuild Tasks</strong> following these directions here: <a href="/helion/devplatform/1.2/windows/tools_guide#msbuild" target="blank">Windows and .NET Tools Guide: Cloud Foundry Explorer</a>
 <li>In Visual Studio, open <code>web.config</code>.</li>
 <li>Change the following configuration line (this will pull the connection string parameters from environment variables, rather than using hardcoded values):
 
