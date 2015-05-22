@@ -43,9 +43,10 @@ PageRefresh();
 
 4. On the **Log In** page, enter your user name and password and then click **Sign In**.
 
+<img src="media/HelionLogin.png" alt="" />
+
 5. If you are a non-admin user, you will only be able to select a project from the list at the top of the screen.
 
-<img src="media/HorizonProjectMenu.png" alt="" />
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
