@@ -274,7 +274,7 @@ div.MCDialogWrapper.pulse-login button.close-dialog
 	top: 8px;
 	right: 8px;
 	background: none;
-	background-image: url('../../Skin/Images/CloseDialog.png');
+	/* this image doesn't exist in the files background-image: url('../../Skin/Images/CloseDialog.png'); */
 	height: 16px;
 	width: 16px;
 	margin: 0;
