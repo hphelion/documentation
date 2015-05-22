@@ -129,9 +129,13 @@ These MSBuild processes allow you to build and deploy .NET applications to Cloud
 
 The MSBuild tasks can be installed using NuGet:
 
-* Right-click the project in **Solution Explorer** and select **Manage NuGet Packages**.
-* Search for **Cloud Foundry MSBuild Tasks** in the **Online** section
-* Click **Install**
+1. Right-click the project in **Solution Explorer** and select **Manage NuGet Packages**.
+	
+	<img src="media/windows_manage_packages.png">
+2. Search for **Cloud Foundry MSBuild Tasks** in the **Online** section
+3. Click **Install**
+
+	<img src="media/windows_select_msbuild.png">
  
 The MSBuild Tasks NuGet package can be found <a href="http://www.nuget.org/packages/cf-msbuild-tasks/">here</a>.
 
