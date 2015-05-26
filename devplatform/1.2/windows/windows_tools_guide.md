@@ -47,7 +47,7 @@ This Visual Studio 2013 extension is used to deploy and manage .NET applications
 
 #### Installation
 
-Follow these steps to install the Cloud Foundry Explorer:
+Follow these steps to install the Cloud Foundry Extensions:
 
 1. Select **Tools-&gt;Extensions and Updates** in Visual Studio 2013.
 2. In the **Extensions and Updates** panel, search for **Cloud Foundry Extentions** in the **Online** section.
