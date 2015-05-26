@@ -72,6 +72,9 @@ to:
 <br/>	
 	<img src="media/windows_deploy_contextmenu.png">
 </li> 
+<li>In the <strong>Login Wizard</strong> dialog, enter the URL for the ALS cluster, and a user and password with sufficient privileges. Check the <strong>Skip SSL Validation</strong> checkbox if your Helion OpenStack installation uses self-signed certificates (as it does in HP Helion Public Cloud):<br />
+<img src="media/windows_publish_credentials.png" />
+ </li>
 <li> In the <strong>Cloud Foundry Publish Profile</strong> dialog, enter the following values and click <strong>Publish</strong>:
 <ul>
 <li><strong>Organization and Space:</strong> Select from one of the provided options.</li>
@@ -89,9 +92,7 @@ to:
 </ul>
 <img src="media/windows_deploy_cf.png" /> 
 </li>
-<li>In the <strong>Login Wizard</strong> dialog, enter the URL for the ALS cluster, and a user and password with sufficient privileges. Check the <strong>Skip SSL Validation</strong> checkbox if your Helion OpenStack installation uses self-signed certificates (as it does in HP Helion Public Cloud):
-<img src="media/windows_publish_credentials.png" />
- </li>
+
 <li>Open or refresh Cloud Foundry Explorer. You can open Cloud Foundry Explorer under <strong>View-&gt;Other Windows-&gt;Cloud Foundry Explorer</strong>.
  
 	<img src="media/windows_refresh.png" />
