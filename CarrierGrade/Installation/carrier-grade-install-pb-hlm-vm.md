@@ -104,13 +104,13 @@ The steps provided below will get you to use ansible playbook and bring up HLM a
 
 	The above command will do the following :
 
-	a. Copy both installation files (tar balls) to your HLM, decrypt, and extract the files.
-	b. Execute the `updatepackages` command.
-	c. Execute the `prepareenv` command.
-	d. Execute the `Init cobbler` command.
-	e. Execute the `Importiso` command.
+		a. Copy both installation files (tar balls) to your HLM, decrypt, and extract the files.
+		b. Execute the `updatepackages` command.
+		c. Execute the `prepareenv` command.
+		d. Execute the `Init cobbler` command.
+		e. Execute the `Importiso` command.
 
-	You will see similar mesg when the playbook is run successful.
+	You will see similar message when the playbook is run successful.
 
 	<img src="media/CGH-Install-Ansible.png">
 
@@ -216,7 +216,7 @@ You must create a user and add it to CMS Group.
 1. From VSD Dashboard, click the **Open VSP Configuration** tab on the top right corner of the dashboard.  
 
 2. Click the **CSP Users** tab and click **+**. 
-2. 
+
 3. Create a user named `OSadmin` with the password `OSadmin`. 
 
 2. Add the user to the `CMS Group`. 
