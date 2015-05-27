@@ -8,7 +8,7 @@ product: win-2-cli
 <!--PUBLISHED-->
 # HP Helion Public Cloud CLI Software for Windows PowerShell Non-Service Specific Commands
 
-The HP Helion Public Cloud CLI software for Windows PowerShell commands (also sometimes called "cmdlets") allow you to access and control the HP Helion Public Cloud services from your Windows command line.  <!-- There are commands that are specific to each type of service you are accessing--[compute](/publiccloud/cli/windows/compute),<!-- [object storage](/cli/windows/containers-and-folders),--> <!-- [CDN](/publiccloud/cli/windows/reference#CDN), and so on--as well as other commands that are not reliant on a particular service, or work across multiple different service types. -->
+The HP Helion Public Cloud CLI software for Windows PowerShell commands (also sometimes called "cmdlets") allow you to access and control the HP Helion Public Cloud services from your Windows command line.  <!-- There are commands that are specific to each type of service you are accessing-??-[compute](/publiccloud/cli/windows/compute),[object storage](/cli/windows/containers-and-folders),--> <!-- [CDN](/publiccloud/cli/windows/reference#CDN), and so on-??-as well as other commands that are not reliant on a particular service, or work across multiple different service types. -->
 
 For a complete list of the commands available to you, please take a look at the full CLI Reference](/cli/windows/reference) page; the commands listed on that page are organized based on service.  In addition, for examples of how to use commands on a per-service basis, just surf to the appropriate examples page, listed in the right-hand navigation bar at the top of this page.
 
