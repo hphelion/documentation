@@ -86,7 +86,7 @@ See [Overview of the Image service](/helion/openstack/carrier/services/imaging/o
 
 **Networking Operations (Neutron)**. The Networking service enables you to create and manage virtual networks. 
 See [Overview of the Networking service](/helion/openstack/carrier/services/networking/overview/).
-
+-->
 <!-- Hiding for Alpha
 **Object Operations (Swift)**. The Object Operations service enables you to store and retrieve data. Object Storage is a distributed storage system for static data such as virtual machine images, photo storage, email storage, backups and archives. 
 
