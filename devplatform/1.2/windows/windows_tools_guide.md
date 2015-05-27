@@ -17,7 +17,7 @@ role9: Service Developer
 authors: Patrick F
 
 ---
-<!--PUBLISHED-->
+<!--PUBLISH-->
 
 # HP Helion 1.2 Development Platform: Windows and .NET Tools Guide 
 
@@ -28,7 +28,7 @@ Helion Development Platform 1.2 adds tooling support for deploying Windows image
 This document contains the following sections:
 
 ###.NET tools:
-* [Cloud Foundry Explorer](#cloudfoundryexplorer)
+* [Cloud Foundry Extensions](#cloudfoundryextensions)
 * [Cloud Foundry MSBuild Tasks](#msbuild)
 * [Cloud Foundry .NET SDK](#sdk)
 
@@ -41,19 +41,19 @@ This document contains the following sections:
  
 
 ## .NET tools
-### Cloud Foundry Explorer {#cloudfoundryexplorer}
+### Cloud Foundry Extensions {#cloudfoundryextensions}
 
 This Visual Studio 2013 extension is used to deploy and manage .NET applications. The extension can be used in any edition of VS 2013, including the Community (free) edition.
 
 #### Installation
 
-Follow these steps to install the Cloud Foundry Explorer:
+Follow these steps to install the Cloud Foundry Extensions:
 
 1. Select **Tools-&gt;Extensions and Updates** in Visual Studio 2013.
-2. In the **Extensions and Updates** panel, search for the **Cloud Foundry Explorer** extension in the **Online** section.
+2. In the **Extensions and Updates** panel, search for **Cloud Foundry Extentions** in the **Online** section.
 3. Install the extension from the search results.
 
-The Cloud Foundry Explorer page on Visual Studio Gallery can be found <a href="https://visualstudiogallery.msdn.microsoft.com/4cad4d95-099c-449e-9d90-7d4da5c4a0c0?SRC=Home">here</a>.
+The Cloud Foundry Extensions page on Visual Studio Gallery can be found <a href="https://visualstudiogallery.msdn.microsoft.com/4cad4d95-099c-449e-9d90-7d4da5c4a0c0?SRC=Home">here</a>.
 
 #### The Cloud Foundry Explorer Window
 
