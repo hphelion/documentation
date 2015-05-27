@@ -43,7 +43,7 @@ Glazier can run in either Linux (Ubuntu recommended) or OSX.
 
 * <a href="http://download.virtualbox.org/virtualbox/4.3.26/VirtualBox-4.3.26-98988-OSX.dmg">Virtual box 4.3.26</a>
 * A retail or volume licensed, English Windows 2012R2 image. Images for a development or test environment can be downloaded from MSDN; for a production environment, you must obtain an image through your OEM channel.
-* <a href="http://alt.fedoraproject.org/pub/alt/virtio-win/stable/virtio-win-0.1-81.iso">Windows VirtIO Image 0.1-81</a>
+* <a href="https://fedorapeople.org/groups/virt/virtio-win/deprecated-isos/stable/virtio-win-0.1-81.iso">Windows VirtIO Image 0.1-81</a>
 
 ## Usage {#usage}
 
@@ -85,7 +85,7 @@ Available options:
     - if this is set, you also have to set --sql-server-iso (Currently unused)
 
 --product-key KEY               
-    - (optional) Windows product key; leave empty if you're using a VL Windows iso with a KMS server
+    - (optional) Windows product key; leave empty if you are using a VL Windows iso with a KMS server
 
 --use-volume-license
     - (optional) Specifies that you are using a Windows volume license. If this is specified, there is no need to specify --product-key (means you are using Windows VL)
@@ -105,7 +105,7 @@ Available options:
     - OpenStack flavor used for building the OpenStack image. Example: standard.medium
 
 --insecure
-    - (optional) create a Windows image for a Development Platform installation that doesn't have an HTTPS certificate
+    - (optional) create a Windows image for a Development Platform installation that does not have an HTTPS certificate
 
 --windows-update-proxy
     - (optional) proxy used for Windows Updates on image

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Installation Overivew"
-permalink: /helion/openstack/carrier/install/bm/overview/
+permalink: /helion/openstack/carrier/install/pb/overview/
 product: carrier-grade
 
 ---
@@ -38,13 +38,13 @@ Use the following process to install HP Helion OpenStack Carrier Grade in a bare
 
 3. [Installation Prerequisites](/helion/openstack/carrier/install/pb/prereqs/)
 
-4. [Preparing the Network for Installation](carrier-grade-install-pb-network-prepare.md)
+4. [Preparing the Network for Installation](/helion/openstack/carrier/install/pb/network/prepare/)
 
 5. [Creating the HLM Virtual Machine](/helion/openstack/carrier/install/pb/hlm-vm/)
 
 6. [HLM Post-Installation Tasks](/helion/openstack/carrier/install/pb/workarounds/)
 
-7. [Deploying the HLM and DCN Clouds](/helion/openstack/carrier/install/pm/hlm-cloud/)
+7. [Deploying the HLM and DCN Clouds](/helion/openstack/carrier/install/pb/hlm-cloud/)
 
 8. [Verifying the HLM and DCN Installation](/helion/openstack/carrier/install/pb/verify/)
 

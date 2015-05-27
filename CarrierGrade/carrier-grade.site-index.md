@@ -35,7 +35,7 @@ The documentation for HP Helion OpenStack includes the following:
 * [HP Helion OpenStack Overview](/helion/openstack/carrier/helion/overview/)
 * [HP Distributed Cloud Networking (DCN) Overview](/helion/openstack/carrier/dcn/overview/)
 * [HP WindRiver Integration Overview](/helion/openstack/carrier/wr/overview/)
-* [Installing HP Helion Carrier Grade](/helion/openstack/carrier/install/overview/)
+* [Installing HP Helion Carrier Grade](/helion/openstack/carrier/install/pb/overview/)
 * [Manage Your HP Helion OpenStack Carrier Grade Cloud](/helion/commercial/carrier/dashboard/managing/)
 
 
@@ -43,7 +43,7 @@ The documentation for HP Helion OpenStack includes the following:
 
 Review the following topics before you start the installation:
 
-- [Overview](/helion/openstack/carrier/install/overview/) 
+- [Overview](/helion/openstack/carrier/install/pb/overview/) 
 - [Support matrix](/helion/openstack/carrier/support-matrix/)
 - [Technical Overview](/helion/openstack/carrier/technical-overview/)
 

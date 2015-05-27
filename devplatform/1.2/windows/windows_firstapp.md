@@ -30,13 +30,14 @@ This tutorial demonstrates how to deploy an application to a Windows Server inst
 This tutorial requires the following software components:
 
 * Visual Studio 2013. Any edition is supported, including the Community (Free) edition.
-* Cloud Foundry Extensions and Cloud Foundry MSBuild tasks. See <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a> for more details. 
+* Cloud Foundry Extensions and Cloud Foundry MSBuild tasks. See <a href="/helion/devplatform/1.2/windows/tools_guide#cloudfoundryexplorer">Windows and .NET Tools Guide: Cloud Foundry Explorer</a> and <a href="/helion/devplatform/1.2/windows/tools_guide#msbuild">Windows and .NET Tools Guide: MSBuild Tasks</a> for more details. 
 * Download and extract the <a href="https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8">Contoso University Sample Application</a>.
 
 ## Deploy the sample application from Visual Studio
 
 <ol>
 <li>Open <code>&lt;sample directory&gt;/C$/ContosoUniversity.sln</code> in Visual Studio.</li> 
+<li>Install the <strong>Cloud Foundry MSBuild Tasks</strong> following these directions here: <a href="/helion/devplatform/1.2/windows/tools_guide#msbuild" target="blank">Windows and .NET Tools Guide: Cloud Foundry Explorer</a>
 <li>In Visual Studio, open <code>web.config</code>.</li>
 <li>Change the following configuration line (this will pull the connection string parameters from environment variables, rather than using hardcoded values):
 
@@ -71,6 +72,9 @@ to:
 <br/>	
 	<img src="media/windows_deploy_contextmenu.png">
 </li> 
+<li>In the <strong>Login Wizard</strong> dialog, enter the URL for the ALS cluster, and a user and password with sufficient privileges. Check the <strong>Skip SSL Validation</strong> checkbox if your Helion OpenStack installation uses self-signed certificates (as it does in HP Helion Public Cloud):<br />
+<img src="media/windows_publish_credentials.png" />
+ </li>
 <li> In the <strong>Cloud Foundry Publish Profile</strong> dialog, enter the following values and click <strong>Publish</strong>:
 <ul>
 <li><strong>Organization and Space:</strong> Select from one of the provided options.</li>
@@ -88,9 +92,7 @@ to:
 </ul>
 <img src="media/windows_deploy_cf.png" /> 
 </li>
-<li>In the <strong>Login Wizard</strong> dialog, enter the URL for the ALS cluster, and a user and password with sufficient privileges. Check the <strong>Skip SSL Validation</strong> checkbox if your Helion OpenStack installation uses self-signed certificates (as it does in HP Helion Public Cloud):
-<img src="media/windows_publish_credentials.png" />
- </li>
+
 <li>Open or refresh Cloud Foundry Explorer. You can open Cloud Foundry Explorer under <strong>View-&gt;Other Windows-&gt;Cloud Foundry Explorer</strong>.
  
 	<img src="media/windows_refresh.png" />

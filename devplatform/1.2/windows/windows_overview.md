@@ -124,11 +124,10 @@ Windows support has software requirements including the following:
 * A licensed, retail, English-language Windows 2012 R2 ISO image. Evaluation versions and non-English versions are not supported. This image can be obtained through a MSDN subscription for development and test purposes, but images for use in a production environment must be obtained through the OEM channel. See [Windows Instance Licensing](#licensing) for details.
 * Virtual Box version 4.3.26 or later: <a href="https://www.virtualbox.org/wiki/Downloads">Download</a>
 * Virtio drivers version 0.1-81: <a href="https://fedorapeople.org/groups/virt/virtio-win/deprecated-isos/stable/virtio-win-0.1-81.iso">Download</a>
-* The Glazier tool: <a href=""http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</a>
+* The Glazier tool: <a href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</a>
 * If applications are to be deployed and managed from the development environment, any edition of Visual Studio 2013, including the Community (free) edition.
 * The <a href="/helion/devplatform/1.2/windows/deployingnet">Cloud Foundry Explorer Visual Studio extension</a>. This extension can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
-* 
-*  supports .NET applications created with .NET versions 2.0 through 4.5.2.
+*  Helion OpenStack supports .NET applications created with .NET versions 2.0 through 4.5.2.
 
 ## Windows Instance Licensing {#licensing}
 

@@ -105,7 +105,7 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/carrier/se
 
 The Swift Proxies are now successfully enabled with HA Proxy. 
 
-**Note**: You now must add account and container rings to the Swift Proxies. For these instructions, go to [Adding disk account containers](helion/openstack/carrier/services/swift/deployment/add-disk-account-container/).
+**Note**: You now must add account and container rings to the Swift Proxies. For these instructions, go to [Adding disk account containers](/helion/openstack/carrier/services/swift/deployment/add-disk-account-container/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

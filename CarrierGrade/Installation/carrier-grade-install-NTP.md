@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Configuring NTP"
+title: "HP Helion OpenStack&#174; Carrier Grade: Configuring NTP"
 permalink: /helion/openstack/carrier/install/ntp/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -24,13 +24,13 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/1.1/install/prereqs/#ntp">&#9664; Prerequisites | <a href="/helion/openstack/1.1/install/overview/"> &#9650; Installation Overview</a> </p> 
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Configuring NTP
+# HP Helion OpenStack&#174; Carrier Grade: Configuring NTP
 
-This page provides detailed information on [configuring HP Helion OpenStack nodes](#client) for Network Time Protocol (NTP) and [instlling an NTP server on the seed cloud host](#server). 
+This page provides detailed information on [configuring HP Helion OpenStack Carrier Grade nodes](#client) for Network Time Protocol (NTP) and [instlling an NTP server on the seed cloud host](#server). 
 
 NTP is a networking protocol for clock synchronization between computer systems. The undercloud and overcloud systems are configured as NTP clients during the installation process.
 
-HP Helion OpenStack requires that all nodes point to the same NTP server. You can use an external NTP server or configure the seed cloud host as a server. 
+HP Helion OpenStack Carrier Grade requires that all nodes point to the same NTP server. You can use an external NTP server or configure the seed cloud host as a server. 
 
 **Notes:** 
 
@@ -41,7 +41,7 @@ HP Helion OpenStack requires that all nodes point to the same NTP server. You ca
 
 To configure an NTP server, follow these steps: 
 
-1. Log in to the seed cloud host.
+1. Log in to the KVM host.
 
 		sudo su -
 
@@ -144,6 +144,13 @@ If your NTP stratum is numerically less than 10, set up your host as the time so
 
 Using `fudge` to configure the local clock as stratum 10 makes NTP use the local clock when no timeservers are available. The system will only use the local clock if your system cannot access the NTP server.
 
+<!--
+## Troubleshooting ##
+
+### Trouble synching ###
+
+If your client (including your NTP server) has trouble syncing time, see [Troubleshooting NTP](/helion/openstack/1.1/services/troubleshooting/ntp/#synch).
+-->
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 

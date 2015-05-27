@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/carrier/support-matrix/">&#9664; Support Matrix</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a>  | <a href="/helion/openstack/carrier/install/pb/network/prepare/"> Preparing the Network for Installation &#9654;</a> </p> 
+<p style="font-size: small;"><a href="/helion/openstack/carrier/support-matrix/">&#9664; Support Matrix</a> | <a href="/helion/openstack/carrier/install/pb/overview/">&#9650; Installation Overview</a>  | <a href="/helion/openstack/carrier/install/pb/network/prepare/"> Preparing the Network for Installation &#9654;</a> </p> 
 
 
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Installation Prerequisites
@@ -245,6 +245,6 @@ On the KVM host, the OpenSSH server must be running and the firewall configurati
 
 ## Next Step
 
-[Prepare the Network for Installation](/helion/openstack/carrier/install/pb/network/prepare/)
+[Preparing the Network for Installation](/helion/openstack/carrier/install/pb/network/prepare/)
 
 ----

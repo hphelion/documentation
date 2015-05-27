@@ -36,7 +36,9 @@ PageRefresh();
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Working with HP StoreVirtual VSA 
 
 
-The StoreVirtual option allows you to configure HP StoreVirtual VSA cluster as storage.You can configure your StoreVirtual by either using the Horizon undercloud dashboard(*Recommended*) or [Sirius client](/helion/openstack/carrier/sirius/cli/workflow/). 
+The StoreVirtual option allows you to configure HP StoreVirtual VSA cluster as storage.You can configure your StoreVirtual by either using the Horizon undercloud dashboard(*Recommended*). 
+<!--
+or [Sirius client](/helion/openstack/carrier/sirius/cli/workflow/). -->
 
 This page describes the different tasks that you can perform using the StoreVirtual option in the Horizon undercloud dashboard.
 

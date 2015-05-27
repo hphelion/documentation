@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/carrier/install/pb/hlm-vm/">&#9664; Create the HLM Virtual Machine</a> | <a href="/helion/openstack/carrier/install/pb/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/install/pm/hlm-cloud/"> Deploying the HLM and DCN Clouds &#9654;</a> </p> 
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/pb/hlm-vm/">&#9664; Create the HLM Virtual Machine</a> | <a href="/helion/openstack/carrier/install/pb/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/install/pb/hlm-cloud/"> Deploying the HLM and DCN Clouds &#9654;</a> </p> 
 
 
 
@@ -65,7 +65,7 @@ If you have LDAP enabled in `definition.json`, you need to comment and add this 
 
 ## Next Step
 
-[Deploying the HLM and DCN Clouds](/helion/openstack/carrier/install/pm/hlm-cloud/)
+[Deploying the HLM and DCN Clouds](/helion/openstack/carrier/install/pb/hlm-cloud/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

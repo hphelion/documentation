@@ -1,0 +1,96 @@
+---
+layout: default
+title: "HP Helion OpenStack&#174; 1.1: Orchestration Service (Heat) Overview"
+permalink: /helion/openstack/carrier/services/orchestration/overview/
+product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: Systems Administrator 
+role2: Cloud Architect 
+role3: Storage Administrator 
+role4: Network Administrator 
+role5: Service Developer 
+role6: Cloud Administrator 
+role7: Application Developer 
+role8: Network Engineer 
+authors: Paul F
+
+---
+<!--UNDER REVISION-->
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/reporting/overview/"> NEXT &#9654</a> </p> -->
+
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Orchestration Service (Heat) Overview#
+[See the Helion OpenStack 1.0 version of this page](/helion/openstack/services/orchestration/overview/)
+
+<!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
+
+The HP Helion OpenStack Orchestration service leverages OpenStack Heat to provide template-based orchestration for describing a cloud application. It executes OpenStack API calls to generate running cloud applications.  
+
+## Working with the Orchestration Service
+
+To [perform tasks using the Orchestration service](#howto), you can use the dashboard, API or CLI.
+
+### Using the dashboards<a name="UI"></a>
+
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/carrier/dashboard/how-works/) to work with the Compute service.
+
+###Using the API<a name="API"></a>
+ 
+You can use a low-level, raw REST API access to the Orchestration service. See the [OpenStack Orchestration API v1 Reference](http://developer.openstack.org/api-ref-orchestration-v1.html).
+
+###Using the CLI<a name="cli"></a>
+
+You can use any of several command-line interface software to access the Orchestration service. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/heatclient_commands.html).
+
+For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
+
+### Maintaining Heat templates ###
+Because you can modify Heat templates, any updates to `openstack/tripleo-heat-templates` by design do not automatically overwrite existing templates. If you are using a modified heat template, then update the new templates provided with the installer to reflect your modifications in your previous deployment. 
+
+If you have not made any changes to the original Heat template, then you can safely execute `./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-undercloud` and `./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud` to update the Heat templates.
+
+
+<!-- 
+## How To's with the HP Helion Orchestration Service ## {#howto}
+
+Taken from http://docs.openstack.org/user-guide/content/heatclient_commands.html 
+
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/heatclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-orchestration-v1.html).
+
+### Working with stacks ###
+
+The Orchestration service allows users to work with stacks, which are a mechanism of using built-in stack definitions for specific resource types. This option allows you to perform the following functions:
+
+- **Create and delete stacks** &#151; Create or delete stacks.
+- **Resume a stack** &#151; Resume the operation of stacks.
+- **Suspend A stack** &#151; Suspend the operation of stacks.
+- **List a user's stacks** &#151; View a list of stacks for a specific user.
+- **Describe a stack** &#151; View information on stacks.
+- **List events for a stack** &#151; List system events for stacks.
+- **Update a stack** &#151; Configure stacks.
+- **Get the template for the specified stack** &#151; View the template used to create a stack.
+- **Validate a template with parameters** &#151; Validate a stack template.
+- **Show list of resources belonging to a stack** &#151; List infrastructure resources associated with a stack.
+- **List resource metadata** &#151; Show a list of meta data associated with infrastructure resources.
+- **Describe the resource** &#151; Show details of an infrastructure resource.
+-->
+
+## For more information ##
+
+For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
+
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+----
+
