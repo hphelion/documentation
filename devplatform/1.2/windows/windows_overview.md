@@ -17,7 +17,7 @@ role9: Service Developer
 authors: Patrick F
 
 ---
-<!--PUBLISHED-->
+<!--PUBLISH-->
 
 # HP Helion 1.2 Development Platform: Windows Overview
 

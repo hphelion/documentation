@@ -56,7 +56,7 @@ The following information describes the network configuration for the [physical 
 
 <tr style="background-color: white; color: black;">
 <td> CLM / OBS</td>
-<td> Cloud Management and Object Store Network (shared with WR)</td>
+<td> Cloud Management and Object Store Network -- Untagged (Private)</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -66,12 +66,12 @@ The following information describes the network configuration for the [physical 
 
 <tr style="background-color: white; color: black;">
 <td> CAN </td>
-<td> Consumer Access Network (shared with WR)</td>
+<td> Consumer Access Network (shared with WR - OAM)</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> EXT </td>
-<td> External network (routable between WR and Helion (B2B) region through respective TUL) AND can be on a separate interface (intf*) </td>
+<td> External network (FIP network for DCN region); can be on a separate interface (`intf*`)</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -81,24 +81,99 @@ The following information describes the network configuration for the [physical 
 
 <tr style="background-color: white; color: black;">
 <td> BLS </td>
-<td>Block Storage Network (shared with WR) </td>
+<td>Block Storage Network; can be on a separate interface (`intf*`) </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> DCM </td>
-<td>Data Center Management network </td>
+<td>Data Center Management network (accessible to WR region) and route across multi-DC </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
 <td> TUL (Swift) </td>
-<td> Tenant Underlay Network  </td>
+<td> Tenant Underlay Network(s); routed across multi-DC for VxLAN 12 extension  </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> WR-TUL (Swift) </td>
+<td> WR-TUL/SR-IOV (Swift) </td>
 <td> Tenant Underlay Network from WR region </td>
 </tr>
+
+<tr style="background-color: white; color: black;">
+<td> WR-PXE </td>
+<td> Boot/Cloud Management network for WR Cloud/Region -- Untagged</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> WR-EXT </td>
+<td> External network (FIP network for WR region) </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> WR-BLS </td>
+<td> WR Cloud BLock Storage Network; can be on a separate interface (intf*) </td>
+</tr>
 </table>
+
+
+
+## Interfaces
+
+The following are the interfaces being used, based on the technical architecture diagram. You can use more than two interfaces and specific networks to physical networks.
+
+* Intf0 is mapped to Port1/Bonded Pair
+* Intf1 is mapped to Port2/Bonded Pair
+* Intf*n* are Multiple Provider Networks or SR-IOV interfaces.
+
+## Routing ACLs
+
+Configure the following routing access lists.
+
+<table style="text-align: left; vertical-align: top; width:700px;">
+
+<tr style="background-color: #C8C8C8;">
+<th> From </th>
+<th> To </th>
+<th> Reason </th>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> CLM </td>
+<td> DCM </td>
+<td> Access NTP, DNS, LDAP, StoreVirtual APIs, and so forth </td>
+</tr>
+<tr>
+<td> CLM </td>
+<td> CTL </td>
+<td> Access iLO network for managing the lifecycle of the node </td>
+</tr>
+<tr>
+<td> CLM </td>
+<td> EXT </td>
+<td> Access external networks, for example to download patches </td>
+</tr>
+<tr>
+<td> CLM </td>
+<td> CAN </td>
+<td> Accessing OpenStack APIs </td>
+</tr>
+<tr>
+<td> DCM </td>
+<td> CLM </td>
+<td> VSC IP to HLM CLM VM IP (only during deployment) </td>
+</tr>
+<tr>
+<td> TUL1 </td>
+<td> TUL2 </td>
+<td> Inter DC communication (VPN tunnel, BGP, MPLS) </td>
+</tr>
+<tr>
+<td> DCM1 </td>
+<td> DCM2 </td>
+<td> Inter DC communication (VPN tunnel, BGP, MPLS) </td>
+</table>
+
+CLM, PXE, OBS, BLS, WR-PXE, WR-INFRA, WR-TUL will use RFC 1918 non-routable IPs to prevent access to the CLM network from DCM, CLT, or EXT. 
 
 ## Next step {#next}
 
