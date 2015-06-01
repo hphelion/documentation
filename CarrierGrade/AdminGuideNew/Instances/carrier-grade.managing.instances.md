@@ -17,7 +17,7 @@ PageRefresh();
 
 </script>
 
-| <a href="/helion/openstack/carrier/admin/">&#9650;  Administrators Guide</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
+| <a href="/helion/openstack/carrier/admin/">&#9650;  Administrators Guide</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 
 
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Instances
