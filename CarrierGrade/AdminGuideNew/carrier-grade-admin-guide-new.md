@@ -139,6 +139,18 @@ The following tasks involve the Identity Operations (Keystone) service to create
 * [Change a user password](/helion/commercial/carrier/dashboard/managing/users/password/)
 * [Specify a primary project for a user](/helion/commercial/carrier/dashboard/managing/projects/primary/)
 
+**Managing Hardware Resources**
+
+The HP Helion OpenStack Carrier Grade reports status information about the hosts in the cluster, and provides a set of tools to operate on them to execute commands, configure parameters, and monitor status.
+
+<hr>
+**Note:** This feature applies to the Wind River Linux servers only.
+<hr>
+
+* [Cluster Overview](/helion/openstack/carrier/admin/host/management/clusters/)
+* [Resource Usage](/helion/openstack/carrier/admin/host/management/resources/)
+
+
 **System Configuration Management**
 
 You can make changes to the HP Helion OpenStack Carrier Grade initial configuration at any time after installation.
@@ -149,6 +161,13 @@ You can make changes to the HP Helion OpenStack Carrier Grade initial configurat
 	* [Changing the DNS Server Configuration](/helion/openstack/carrier/admin/system/config/dns/)
 	* [Changing the NTP Server Configuration
 	* [Changing Storage Space Allotments on the Controller
+
+**Managing LDAP**
+
+* [Managing LDAP User Accounts](/helion/openstack/carrier/admin/ldap/manage/)
+
+
+----
 
 **Scaling Virtual Machine Resources**
 
@@ -166,7 +185,7 @@ The Wind River Linux servers in HP Helion OpenStack Carrier Grade provide a heal
 
 * [Virtual Machines and Carrier-Grade Availability](/helion/openstack/carrier/admin/carrier-grade-avail/).
 
-## System Backups
+**System Backups**
 
 The HP Helion OpenStack Carrier Grade provides tools to back up system
 data and Cinder volumes so that they can be stored in external storage
@@ -177,9 +196,12 @@ resources and used to restore a full cluster.
 <hr>
 
 * [Performing a System Data Backup](/helion/openstack/carrier/admin/backup/)
-* [Cinder Volume Backups
+* [Cinder Volume Backups](/helion/openstack/carrier/admin/backup/cinder/)
 * [Restore Procedure](/helion/openstack/carrier/admin/backup/restore/)
 
+**Managing User Accounts**
+
+* [About Linux User Accounts](/helion/openstack/carrier/admin/linux/users/)
 
 <!-- Hide for alpha
 - [Troubleshooting](/helion/openstack/carrier/services/troubleshooting/) -->
