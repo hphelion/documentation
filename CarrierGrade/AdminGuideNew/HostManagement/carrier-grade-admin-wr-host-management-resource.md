@@ -102,7 +102,7 @@ The **Stats** tab contains the following fields:
 
 	On the CLI, use the following command to list the metadata associated with a metric identified with its resource ID:
 
-		ceilometer resource-show –r <resource_id>
+		ceilometer resource-show -r <resource_id>
 
 * **Filter** - Use this field to limit the report to show metric samples whose metadata attribute equals the specified value. The
 filter field is applied only when a specific metadata attribute is selected.
