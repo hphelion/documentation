@@ -139,6 +139,18 @@ The following tasks involve the Identity Operations (Keystone) service to create
 * [Change a user password](/helion/commercial/carrier/dashboard/managing/users/password/)
 * [Specify a primary project for a user](/helion/commercial/carrier/dashboard/managing/projects/primary/)
 
+**Managing Hardware Resources**
+
+The HP Helion OpenStack Carrier Grade reports status information about the hosts in the cluster, and provides a set of tools to operate on them to execute commands, configure parameters, and monitor status.
+
+<hr>
+**Note:** This feature applies to the Wind River Linux servers only.
+<hr>
+
+* [Cluster Overview](/helion/openstack/carrier/admin/host/management/clusters/)
+* [Resource Usage](/helion/openstack/carrier/admin/host/management/resources/)
+
+
 **System Configuration Management**
 
 You can make changes to the HP Helion OpenStack Carrier Grade initial configuration at any time after installation.

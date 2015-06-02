@@ -25,6 +25,7 @@ PageRefresh();
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Performing a Cinder Volume Backup
+<!-- From the Titanium Server Admin Guide -->
 
 Cinder volume backups are executed selectively, one volume at a time. They can include virtual disk images and any other Cinder volumes available in the system.
 

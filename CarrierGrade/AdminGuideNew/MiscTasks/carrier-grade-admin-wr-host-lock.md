@@ -60,3 +60,9 @@ To lock the host, for example when you need to make a change to the system:
 3. In the **Hosts** list, for the system to lock, select Unlock Host from the **More** menu.
 
 	Wait for the host to be reported as Locked
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+----
