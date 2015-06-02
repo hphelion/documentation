@@ -99,6 +99,15 @@ The following tasks involve the Networking Operations (Nova) service to create a
 * [About Swift Scale-out Object Storage](/helion/openstack/carrier/services/object/overview/scale-out-swift/)
 * [Deploying Additional Scale-out Object Storage (Swift) Nodes](/helion/openstack/carrier/services/swift/deployment-scale-out/)
 
+* Configure HP StoreVirtual VSA
+
+	For instructions, see the Configuring HP StoreVirtual VSA for Block Storage document.
+
+* Configure an HP 3Par storage array
+
+	For instructions, see the HP StoreServ (3PAR) Support document.
+
+
 **Managing Orchestration**
 
 The following tasks involve the Orchestration service (Heat) service to create and maintain virtual networks.
@@ -134,12 +143,47 @@ The following tasks involve the Identity Operations (Keystone) service to create
 
 You can make changes to the HP Helion OpenStack Carrier Grade initial configuration at any time after installation.
 
-[System Configuration Management](/helion/openstack/carrier/admin/system/config/)
+* [System Configuration Management](/helion/openstack/carrier/admin/system/config/)
 
-* [Changing the External Network IP Configuration](/helion/openstack/carrier/admin/system/config/ext/)
-* [Changing the DNS Server Configuration
-* [Changing the NTP Server Configuration
-* [Changing Storage Space Allotments on the Controller
+	* [Changing the External Network IP Configuration](/helion/openstack/carrier/admin/system/config/ext/)
+	* [Changing the DNS Server Configuration](/helion/openstack/carrier/admin/system/config/dns/)
+	* [Changing the NTP Server Configuration
+	* [Changing Storage Space Allotments on the Controller
+
+**Scaling Virtual Machine Resources**
+
+You can scale the resources of individual instances up or down. Currently, the CPU resources for an instance are scalable.
+
+* [Scaling Virtual Machine Resources](/helion/commercial/carrier/dashboard/managing/instances/scaling/)
+
+**Virtual Machines and Carrier-Grade Availability**
+
+The Wind River Linux servers in HP Helion OpenStack Carrier Grade provide a health monitoring mechanism that can be used to implement and support the deployment of guest applications in Carrier-Grade High Availability (HA) mode.
+
+<hr>
+**Note:** This feature applies to the Wind River Linux servers only.
+<hr>
+
+* [Virtual Machines and Carrier-Grade Availability](/helion/openstack/carrier/admin/carrier-grade-avail/).
+
+## System Backups
+
+The HP Helion OpenStack Carrier Grade provides tools to back up system
+data and Cinder volumes so that they can be stored in external storage
+resources and used to restore a full cluster.
+
+<hr>
+**Note:** This feature applies to the Wind River Linux servers only.
+<hr>
+
+* Performing a System Data Backup 
+* Cinder Volume Backups 
+* Restore Procedure 
+
+
+<!-- Hide for alpha
+- [Troubleshooting](/helion/openstack/carrier/services/troubleshooting/) -->
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

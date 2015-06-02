@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Customizing Guest Images with User Data"
-permalink: /helion/openstack/carrier/admin/stacks/user-data
+permalink: /helion/openstack/carrier/admin/stacks/user-data/
 product: carrier-grade
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
