@@ -114,8 +114,8 @@ The following tasks involve the Orchestration service (Heat) service to create a
 
 * [Creating a Stack](/helion/openstack/carrier/dashboard/managing/stacks/create/)
 * [Using Stacks, Templates, and Parameters](/helion/openstack/carrier/admin/stacks/)
-	* [Creating a Stack](/helion/openstack/carrier/admin/stacks/create)
-	* [Customizing Guest Images with User Data](/helion/openstack/carrier/admin/stacks/user-data)
+	* [Creating a Stack](/helion/openstack/carrier/admin/stacks/create/)
+	* [Customizing Guest Images with User Data](/helion/openstack/carrier/admin/stacks/user-data/)
 	* [Resource Scaling (Autoscaling)](/helion/openstack/carrier/admin/stacks/autoscale/)
 	* [Reporting a Guest Metric](/helion/openstack/carrier/admin/stacks/guest/)
 
