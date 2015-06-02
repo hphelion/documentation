@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Creating a Stack"
-permalink: /helion/openstack/carrier/admin/stacks/creating/
+permalink: /helion/openstack/carrier/admin/stacks/create/
 product: carrier-grade
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
