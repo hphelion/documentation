@@ -150,6 +150,13 @@ You can make changes to the HP Helion OpenStack Carrier Grade initial configurat
 	* [Changing the NTP Server Configuration
 	* [Changing Storage Space Allotments on the Controller
 
+**Managing LDAP**
+
+* [Managing LDAP User Accounts](/helion/openstack/carrier/admin/ldap/manage/)
+
+
+----
+
 **Scaling Virtual Machine Resources**
 
 You can scale the resources of individual instances up or down. Currently, the CPU resources for an instance are scalable.
@@ -166,7 +173,7 @@ The Wind River Linux servers in HP Helion OpenStack Carrier Grade provide a heal
 
 * [Virtual Machines and Carrier-Grade Availability](/helion/openstack/carrier/admin/carrier-grade-avail/).
 
-## System Backups
+**System Backups**
 
 The HP Helion OpenStack Carrier Grade provides tools to back up system
 data and Cinder volumes so that they can be stored in external storage
@@ -177,9 +184,12 @@ resources and used to restore a full cluster.
 <hr>
 
 * [Performing a System Data Backup](/helion/openstack/carrier/admin/backup/)
-* [Cinder Volume Backups
+* [Cinder Volume Backups](/helion/openstack/carrier/admin/backup/cinder/)
 * [Restore Procedure](/helion/openstack/carrier/admin/backup/restore/)
 
+**Managing User Accounts**
+
+* [About Linux User Accounts](/helion/openstack/carrier/admin/linux/users/)
 
 <!-- Hide for alpha
 - [Troubleshooting](/helion/openstack/carrier/services/troubleshooting/) -->

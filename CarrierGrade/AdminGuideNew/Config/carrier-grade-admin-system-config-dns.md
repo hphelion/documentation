@@ -42,11 +42,16 @@ You change these addresses using the web administration interface or the CLI.
 
 	* Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.
 
-The System Configuration pane is available from the System Panel section of the Admin menu.
+	The **System Configuration** pane is available from the System Panel section of the Admin menu.
+
 2. Select the DNS tab.
-The DNS page appears, showing the currently defined DNS servers and their IP addresses.
+
+	The **DNS page** appears, showing the currently defined DNS servers and their IP addresses.
+
 3. Click Edit DNS.
-The Edit DNS dialog box appears.
+
+	The **Edit DNS** dialog box appears.
+
 4. Replace the DNS Server IP addresses with different ones as required.
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
