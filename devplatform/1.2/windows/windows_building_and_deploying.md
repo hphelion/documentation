@@ -82,7 +82,7 @@ This VM is used to create the images for the guest OS.
 		--virtio-iso &lt;path to VirtIO iso&gt; \
 		--product-key &lt;Windows Product Key&gt; \
 		--os-network-id &lt;os network ID; found in Horizon on the Network Detail page under Project -&gt; Network -&gt; Networks -&gt; (select network name) &gt; \
-		--os-key-name &lt;os region name; e.g. RegionOne&gt; 
+		--os-key-name &lt;os key pair name&gt; 
 		--os-security-group &lt;os security group; e.g Default&gt; \
 		--os-flavor &lt;os flavor name: e.g. m1.small&gt; \
 	</pre>
