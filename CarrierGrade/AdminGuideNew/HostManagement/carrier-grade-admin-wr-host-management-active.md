@@ -105,12 +105,12 @@ Wait for the procedure to be completed.
 2. Power down the host and make any required hardware changes.
 This may involve replacing or adding disks, or replacing the host completely.
 3. Place the new or modified host node into service.
-• For disk replacement, no additional configuration changes are needed. To begin using the new disk, power up
+* For disk replacement, no additional configuration changes are needed. To begin using the new disk, power up
 the host and unlock it.
-• For disk addition, you must create a new storage volume (OSD) before you can use the new disk. For more
+* For disk addition, you must create a new storage volume (OSD) before you can use the new disk. For more
 information, see the HP Helion OpenStack Carrier Grade Software Installation Guide: Creating Storage
 Volumes.
-• For host replacement, you must delete the existing host using More > Delete Host. Then you must initialize
+* For host replacement, you must delete the existing host using More > Delete Host. Then you must initialize
 the new host with a personality as a storage node, configure its interfaces, and create storage volumes. For
 more information on initializing and configuring a storage node, see the HP Helion OpenStack Carrier Grade
 Software Installation Guide: Initializing and Configuring Storage Nodes.
@@ -120,10 +120,10 @@ Managing Compute Nodes
 The compute nodes in HP Helion OpenStack Carrier Grade form a resource pool for hosting guest instances. You can
 manage this pool by managing the hosts.
 You can change the resource pool in several ways:
-• You can add or remove hosts to increase or decrease the size of the pool.
-• You can replace a host with another that has different resources (for example, memory, or number of CPU cores).
-• You can adjust the resources on an existing host.
-• You can replace a failed compute node host with an equivalent.
+* You can add or remove hosts to increase or decrease the size of the pool.
+* You can replace a host with another that has different resources (for example, memory, or number of CPU cores).
+* You can adjust the resources on an existing host.
+* You can replace a failed compute node host with an equivalent.
 Caution:
 When replacing or adjusting a host, ensure that the overall resource pool still meets the requirements for your
 system.
