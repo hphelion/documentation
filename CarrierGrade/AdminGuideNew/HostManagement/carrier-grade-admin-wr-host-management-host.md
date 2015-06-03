@@ -36,14 +36,7 @@ PageRefresh();
 The **Hosts** tab on the **System Inventory** page provides an overview of the current state of all hosts in the HP Helion OpenStack Carrier Grade cluster. From this tab, you can obtain detailed information about the hosts, and execute maintenance operations.
 
 * [Viewing information on Hosts](#view)
-* [Locking and Unlocking a Host](#unlock)
-* [Power Off and On a Host](#poweroff)
-* [Reboot a Host](#reboot)
-* [Reset a Host](#reset)
-* [Reinstall a Host](#reinstall)
-* [Delete Host](#delete)
-* [Swact a Host](#swact)
-* [The life cycle of a host](#life)
+* [Unlocking a Host](#unlock)
 
 ## Viewing information on Hosts {#view}
 
@@ -205,28 +198,44 @@ You can swact a host from the controller's command line, as follows:
 	Where <hostname> is the name of the system.
 
 
-## The life cycle of a host {#life}
-
-The life cycle of a host is the set of state transitions the host goes through as its current state changes. The host states in the HP Helion OpenStack Carrier Grade are based on the ITU X.731 State Management Function Specification for Open Systems.
-
-The current state of a host is determined by the allowed combinations of the administrative, operational, and availability states at any given time. 
-
+The Life Cycle of a host
+The life cycle of a host is the set of state transitions the host goes through as its current state changes. The host states
+in the HP Helion OpenStack Carrier Grade are based on the ITU X.731 State Management Function Specification for
+Open Systems.
+The current state of a host is determined by the allowed combinations of the administrative, operational, and
+availability states at any given time. The following figure illustrates the life cycle of a host.
+HP Helion OpenStack Carrier Grade (Beta) Administration Guide | Managing Hardware Resources | 93
+Figure 4: The Life Cycle of a Host
+In this figure:
+• the administrative states, locked and unlocked, are presented in two columns
+• the operational states, disabled and enabled, are presented in two rows
+• the availability states are presented as elements inside the administrative/operational matrix
+The description that follows uses the availability states only, since for each state the corresponding administrative and
+operational states can be read directly from the figure.
 The life cycle of a new host starts when it is discovered by the active controller on the internal management network.
-
-A new host is initially reported as `Offline`. As an exception, the first controller, controller-0, is automatically set to available during initial commissioning. 
-
-The following are the available transitions:
-
-* **Offline to Online** - This transition takes place once the administrator configures the host name and personality of the host. During the transition, the HP Helion OpenStack Carrier Grade software is installed and the host reboots. The transition concludes when the controller establishes maintenance and inventory connectivity with the new host.
-* **Online to InTest** - This transition takes place when the administrator requests to move the host from the locked to the unlocked administrative states. The host reboots first. After it finishes booting, it establishes maintenance communication and enters the transient InTest state. While in this state, the configuration is applied, and a set of hardware and software tests are executed to ensure the integrity of the host.
-* **InTest to Available, Degraded, or Failed** - The transition is initiated automatically after the activities in the transient state inTest are complete. Depending on the outcome, the host goes into one the three states.
-* Failed to InTest - This is a value-added maintenance transition that the HA framework executes automatically to recover failed hosts.
-* **Available to/from Degraded, Available to Failed, and Degraded to Failed** - These are transitions that may occur at any time due to changes on the operational state and faults on unlocked hosts.
-* **Available, Degraded, or Failed, to Offline** - These are maintenance transitions that take place automatically to reflect the operational state of a host. On a compute node in Available or Degraded state, the transition triggers the live migration of the active
+A new host is initially reported as Offline. As an exception, the first controller, controller-0, is automatically set to
+available during initial commissioning. The following are the available transitions. Numbers are attached to them for
+easier reference:
+(1) Offline to Online
+This transition takes place once the administrator configures the host name and personality of the host. During
+the transition, the HP Helion OpenStack Carrier Grade software is installed and the host reboots. The transition
+concludes when the controller establishes maintenance and inventory connectivity with the new host.
+(2) Online to InTest
+This transition takes place when the administrator requests to move the host from the locked to the unlocked
+administrative states. The host reboots first. After it finishes booting, it establishes maintenance communication
+and enters the transient InTest state. While in this state, the configuration is applied, and a set of hardware and
+software tests are executed to ensure the integrity of the host.
+(3) InTest to Available, Degraded, or Failed
+The transition is initiated automatically after the activities in the transient state inTest are complete. Depending
+on the outcome, the host goes into one the three states.
+(4) Failed to InTest
+This is a value-added maintenance transition that the HA framework executes automatically to recover failed
+hosts.
+(5) Available to/from Degraded, Available to Failed, and Degraded to Failed
+These are transitions that may occur at any time due to changes on the operational state and faults on unlocked
+hosts.
+(6) Available, Degraded, or Failed, to Offline
+These are maintenance transitions that take place automatically to reflect the operational state of a host.
+HP Helion OpenStack Carrier Grade (Beta) Administration Guide | Managing Hardware Resources | 94
+On a compute node in Available or Degraded state, the transition triggers the live migration of the active
 instances to another available compute node.
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----
