@@ -150,6 +150,10 @@ The HP Helion OpenStack Carrier Grade reports status information about the hosts
 * [Cluster Overview](/helion/openstack/carrier/admin/host/management/clusters/)
 * [Resource Usage](/helion/openstack/carrier/admin/host/management/resources/)
 * [Managing Hardware Inventory](/helion/openstack/carrier/admin/host/management/inventory/)
+	* [Working with Cluster Systems](/helion/openstack/carrier/admin/host/management/inventory/clusters/)
+	* [Working with Hosts](/helion/openstack/carrier/admin/host/management/inventory/host/)
+	* [The Life Cycle of a Host System](/helion/openstack/carrier/admin/host/management/lifecycle/)
+	* [Working with Hardware Profiles](/helion/openstack/carrier/admin/host/management/inventory/hardware/)
 * [Managing Hosts on an Active System](/helion/openstack/carrier/admin/host/management/active/)
 
 

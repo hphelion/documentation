@@ -39,52 +39,10 @@ To make changes to a host, you must lock it. Locking a host automatically and se
 
 After making the required configuration changes, you can unlock the host and begin using it.
 
-Managing Controller Nodes
+* [Working with Controller Nodes](/helion/openstack/carrier/admin/host/management/active/nodes/)
 Managing Storage Nodes
 Managing Compute Nodes
 
-
-Managing Controller Nodes
-You can replace controller nodes or disks while the system is running.
-The HP Helion OpenStack Carrier Grade system uses exactly two controllers; you cannot add or remove a controller.
-However, you can replace the primary or secondary disks, and you can replace faulty controller nodes.
-Note:
-If you are replacing disks in order to increase the controller storage capacity, follow the instructions for
-Changing Storage Space Allotments on the Controller on page 69.
-1. Lock the standby controller.
-Open the Hosts list by clicking Inventory on the System Panel section of the Admin menu, and then selecting
-the Hosts tab.
-Click More > Lock Host for the controller.
-Wait for the procedure to be completed.
-2. Power down the standby controller and make any required hardware changes.
-This may involve replacing disks, or replacing the host completely.
-3. Place the new or modified controller into service.
-a) Power up the controller.
-Wait until the controller is reported as Locked, Enabled, and Available.
-b) If required, reinstall the HP Helion OpenStack Carrier Grade software on the controller.
-If you are making disk changes to increase storage capacity, you must re-install the HP Helion OpenStack
-Carrier Grade software. For more information, see Changing Storage Space Allotments on the Controller on
-page 69.
-To reinstall the software on a host , click More > Reinstall.
-Note:
-If the host does not boot from the management network, ensure that the host BIOS is configured for
-PXE boot.
-Wait for the host to be reported as Locked, Disabled, and Online.
-c) Perform a swact.
-Click More > Swact Host for the active controller.
-The standby controller becomes the active controller, and the original active controller is placed into standby.
-4. Lock the original active controller (now in standby).
-Open the Hosts list by clicking Inventory on the System Panel section of the Admin menu, and then selecting
-the Hosts tab.
-Click More > Lock Host for the controller.
-Wait for the procedure to be completed.
-5. Power down the controller and make the same hardware changes.
-
-Caution:
-The configurations for controller-0 and controller-1, including disk types and sizes, must be identical.
-6. Power up the new or modified controller.
-7. If required, reinstall the HP Helion OpenStack Carrier Grade software on the controller.
-The updated controllers are now in service. The controller that was formerly active is now the standby controller.
 
 
 Managing Storage Nodes
@@ -163,4 +121,8 @@ Do not unlock the host until it is fully rebooted.
 5. Unlock the host.
 The host is rebooted a second time.
 When the host is reported as Unlocked, Enabled, and Available, it is ready for use with the adjusted resources.
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+ 
 ----

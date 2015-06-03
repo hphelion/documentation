@@ -40,8 +40,8 @@ To access the System Inventory page on the web management interface, click the I
 
 * [Working with Cluster Systems](/helion/openstack/carrier/admin/host/management/inventory/clusters/)
 * [Working with Hosts](/helion/openstack/carrier/admin/host/management/inventory/host/)
+* [The Life Cycle of a Host System](/helion/openstack/carrier/admin/host/management/lifecycle/)
 * [Working with Hardware Profiles](/helion/openstack/carrier/admin/host/management/inventory/hardware/)
-
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
