@@ -39,39 +39,13 @@ To make changes to a host, you must lock it. Locking a host automatically and se
 
 After making the required configuration changes, you can unlock the host and begin using it.
 
-* [Working with Controller Nodes](/helion/openstack/carrier/admin/host/management/active/nodes/)
-Managing Storage Nodes
-Managing Compute Nodes
+* [Replacing Active Controller Nodes](/helion/openstack/carrier/admin/host/management/active/controller/)
+* [Replacing Active Storage Nodes](/helion/openstack/carrier/admin/host/management/active/storage/)
+* [Managing Active Compute Nodes](/helion/openstack/carrier/admin/host/management/active/compute/)
+	* [Removing Compute Nodes](/helion/openstack/carrier/admin/host/management/active/compute/#removing)
+	* [Adjusting Resources on a Compute Node](/helion/openstack/carrier/admin/host/management/active/compute/#adjust)
 
 
-
-Managing Storage Nodes
-On systems that use a Ceph backend for Cinder storage, you can add or replace storage disks or swap a storage node
-while the system is running, even if the storage resources are in active use.
-A HP Helion OpenStack Carrier Grade system with a Ceph storage backend uses exactly two storage nodes; you
-cannot add or remove storage nodes. However, you can add disks to a storage node to increase capacity, and you can
-replace a faulty host.
-Note:
-The storage node pair in a HP Helion OpenStack Carrier Grade system provides redundancy for High
-Availability. A balanced storage capacity is recommended, in which each host has sufficient independent
-resources to meet the operational requirements of the system.
-1. Lock the host to be modified or replaced.
-Open the Hosts list by clicking Inventory on the System Panel section of the Admin menu, and then selecting
-the Hosts tab.
-Click More > Lock Host for the host.
-Wait for the procedure to be completed.
-2. Power down the host and make any required hardware changes.
-This may involve replacing or adding disks, or replacing the host completely.
-3. Place the new or modified host node into service.
-* For disk replacement, no additional configuration changes are needed. To begin using the new disk, power up
-the host and unlock it.
-* For disk addition, you must create a new storage volume (OSD) before you can use the new disk. For more
-information, see the HP Helion OpenStack Carrier Grade Software Installation Guide: Creating Storage
-Volumes.
-* For host replacement, you must delete the existing host using More > Delete Host. Then you must initialize
-the new host with a personality as a storage node, configure its interfaces, and create storage volumes. For
-more information on initializing and configuring a storage node, see the HP Helion OpenStack Carrier Grade
-Software Installation Guide: Initializing and Configuring Storage Nodes.
 
 
 Managing Compute Nodes
