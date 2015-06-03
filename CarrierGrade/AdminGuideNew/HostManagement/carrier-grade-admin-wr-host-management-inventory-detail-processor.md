@@ -33,22 +33,24 @@ PageRefresh();
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Working with Host CPUs
 <!-- From the Titanium Server Admin Guide -->
 
-The Processor tab on the Inventory Detail page presents processor details for a host.
+The **Processor** tab on the **Inventory Detail** page presents processor details for a host.
 
 <hr>
 **Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
+You access the **Inventory Detail** page by clicking the host name on the **Hosts** tab of the **Systems Inventory** page. The inventory detail for a host consists of multiple tabs, each addressing a different aspect of the host.
+
 This page details:
 
-* Viewing details of host CPUs](view)
-* Creating CPU profiles](#create)
-* Editing CPU assignments](#edit)
-* Viewing NUMA node resources on a host](#numa)
-* Designating shared physical CPUs on a compute host](shared)
+* [Viewing details of host CPUs](#view)
+* [Creating CPU profiles](#create)
+* [Editing CPU assignments](#edit)
+* [Designating shared physical CPUs on a compute host](#shared)
+* [Viewing NUMA node resources on a host](#numa)
 
 
-## Viewing details of a host CPUs {view}
+## Viewing details of a host CPUs {#view}
 
 To view the host CPUs:
 
@@ -119,7 +121,7 @@ All other cores are automatically available for allocation to virtual machine th
 
 	Clicking this button displays the **Edit CPU Assignments** window, where the current CPU assignment can be changed.
 
-## Designating Shared Physical CPUs on a Compute Host {shared}
+## Designating Shared Physical CPUs on a Compute Host {#shared}
 
 You can designate one shared physical CPU per physical processor on a compute host to run low-load or non-realtime tasks for multiple VMs, freeing other cores on the host for dedicated high-load tasks.
 You can use the web administration interface or the CLI to set up shared physical CPUs.

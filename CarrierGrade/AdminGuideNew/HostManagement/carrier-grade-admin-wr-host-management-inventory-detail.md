@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Host Inventory"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Host Systems"
 permalink: /helion/openstack/carrier/admin/host/management/inventory/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -30,7 +30,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/object/overview/"> NEXT &#9654</a> </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Host Inventory
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Host Systems
 <!-- From the Titanium Server Admin Guide -->
 
 From the **Inventory Detail** page you can see detailed information about a host, and use it to define hardware profiles that can be used across the cluster.
@@ -44,11 +44,10 @@ You access the **Inventory Detail** page by clicking the host name on the **Host
 They include:
 
 * [Working with Host CPUs](/helion/openstack/carrier/admin/host/management/inventory/processor/)
-* processor
-* memory
-* storage
-* ports
-* interfaces
+* [Working with Host Memory](/helion/openstack/carrier/admin/host/management/inventory/)
+* [Working with Host Storage](/helion/openstack/carrier/admin/host/management/inventory/storage/)
+* [Viewing Host Port Details](/helion/openstack/carrier/admin/host/management/inventory/ports/)
+* [Working with Host Interfaces](/helion/openstack/carrier/admin/host/management/inventory/interfaces/)
 
 ## Overview
 

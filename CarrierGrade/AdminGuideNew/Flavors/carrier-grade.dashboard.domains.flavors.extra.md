@@ -51,10 +51,9 @@ To add a new extra specification:
 
 	* Custom Extra Spec. Available for internal use only.
 	* VCPU Model. The CPU model to use with the virtual machine. For more information, see [Specifying the VCPU Model for a VM](/helion/commercial/carrier/dashboard/managing/flavors/extra/vcpu/).
-	* CPU Policy. The policy for assigning dedicated physical or logical CPU resources to the VM. 
+	* CPU Policy. The policy for assigning dedicated physical or logical CPU resources to the VM. For more information, see [Specifying Dedicated CPUs for a VM](/helion/commercial/carrier/dashboard/managing/flavors/extra/dedicated/cpu/).
 	* NUMA node. The NUMA node to use when launching a virtual machine. For more information, see [Configuring the NUMA Node Allocations for a VM](/helion/commercial/carrier/dashboard/managing/flavors/extra/numa/).
 	* Shared VCPU ID. The ID of a virtual CPU scheduled to run on a shared physical CPU in the compute host. For more information, see [Pinning a vCPU to a Shared Physical CPU](/helion/commercial/carrier/dashboard/managing/flavors/extra/vcpu/pin/).
-
 		**Note:** To use this extra specification, you must also set the CPU Policy extra specification for the flavor to Dedicated.
 	* Memory Page Size. Sets the page size for VM memory. For more information, see [Specifying a Page Size for a VM](/helion/commercial/carrier/dashboard/managing/flavors/extra/page/).
 	* Guest Heartbeat. Enables the Heartbeat API for use by guests on the VM. For more information, see [Enabling the Heartbeat API for a VM](/helion/commercial/carrier/dashboard/managing/flavors/extra/api/).

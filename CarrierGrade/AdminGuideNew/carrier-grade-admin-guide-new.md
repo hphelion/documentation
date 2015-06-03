@@ -38,7 +38,7 @@ This guide covers how administrators can manage the day-to-day operation of HP H
 
 The following tasks involve the Compute Operations (Nova) service to create and maintain virtual machine instances.
 
-* [Working with Instances](/helion/commercial/carrier/dashboard/managing/instances/)
+* [Working with Instances](/helion/commercial/carrier/dashboard/managing/instances/overview/)
 	* [Create a new instance](/helion/commercial/carrier/dashboard/managing/instances/create/)
 	* [Terminate an instance](/helion/commercial/carrier/dashboard/managing/instances/terminate/)
 	* [Reboot an instance](/helion/commercial/carrier/dashboard/managing/instances/reboot/)
@@ -49,18 +49,19 @@ The following tasks involve the Compute Operations (Nova) service to create and 
 	* [Create an instance snapshot](/helion/commercial/carrier/dashboard/managing/images/public/)
 	* [Associate, or assign, a floating IP address to an instance](/helion/commercial/carrier/dashboard/managing/instances/ipaddresses/) 
 	* [Launch a console session to an instance](/helion/commercial/carrier/dashboard/managing/instances/console/)
-	* [Migrate or Live Migrate and instance](/helion/commercial/carrier/dashboard/managing/instances/migrate/)
+	* [Migrate or Live Migrate and instance](/helion/commercial/carrier/dashboard/managing/instances/migrate/live/)
+	* [Cold Migrate an Instance](/helion/commercial/carrier/dashboard/managing/instances/migrate/cold/)
 * [Working with Volumes](/helion/commercial/carrier/dashboard/managing/volumes/)
 	* [Create, edit and delete a volume](/helion/commercial/carrier/dashboard/managing/volume/create/)
 	* [Create a snapshot from a volume](/helion/commercial/carrier/dashboard/managing/volume/snapshot/create/)
 	* [Extend the size of a volume](/helion/commercial/carrier/dashboard/managing/volume/extend/)
 	* [Attach a volume to a VM instance and detach a volume from VM instance](/helion/commercial/carrier/dashboard/managing/volume/attach/)
 * [Working with Flavors](/helion/commercial/carrier/dashboard/managing/flavors/)
-	* [Create a flavor](#createflavor)
-	* [Edit a flavor](#editflavor)
-	* [Edit flavor metadata](#editmeta)
-	* [Configure extra specifications](#extra)
-	* [Delete a flavor](#deleteflavor)
+	* [Create a flavor](/helion/commercial/carrier/dashboard/managing/flavors/#createflavor)
+	* [Edit a flavor](/helion/commercial/carrier/dashboard/managing/flavors/#editflavor)
+	* [Edit flavor metadata](/helion/commercial/carrier/dashboard/managing/flavors/#editmeta)
+	* [Configure extra specifications](/helion/commercial/carrier/dashboard/managing/flavors/#extra)
+	* [Delete a flavor](/helion/commercial/carrier/dashboard/managing/flavors/#deleteflavor)
 * [Working with Images](/helion/commercial/carrier/dashboard/managing/images/)
 	* [Create an image](/helion/commercial/carrier/dashboard/managing/images/create/)
 	* [Modify an image](/helion/commercial/carrier/dashboard/managing/images/modify/)
@@ -160,8 +161,24 @@ The HP Helion OpenStack Carrier Grade reports status information about the hosts
 * [Managing Active Compute Nodes](/helion/openstack/carrier/admin/host/management/active/compute/)
 	* [Removing Compute Nodes](/helion/openstack/carrier/admin/host/management/active/compute/#removing)
 	* [Adjusting Resources on a Compute Node](/helion/openstack/carrier/admin/host/management/active/compute/#adjust)
-* [Managing Host Inventory](/helion/openstack/carrier/admin/host/management/inventory/)
+* [Managing Host Systems](/helion/openstack/carrier/admin/host/management/inventory/)
 	* [Working with Host CPUs](/helion/openstack/carrier/admin/host/management/inventory/processor/)
+	* [Working with Host Memory](/helion/openstack/carrier/admin/host/management/inventory/)
+	* [Working with Host Storage](/helion/openstack/carrier/admin/host/management/inventory/storage/)
+	* [Viewing Host Port Details](/helion/openstack/carrier/admin/host/management/inventory/ports/)
+	* [Working with Host Interfaces](/helion/openstack/carrier/admin/host/management/inventory/interfaces/)
+* [Controller Nodes and High Availability](/helion/openstack/carrier/admin/host/management/controller/ha/)
+* [Working with Host Aggregates](/helion/openstack/carrier/admin/host/management/hostaggregate/)
+
+**Initializing and Configuring Nodes**
+
+To perform tasks that involve replacing host systems, you might need to initialize certain nodes. Initialization installs an operating system on the host's disk drive, and automatically boots the host from the drive.
+
+<hr>
+**Note:** This feature applies to the Wind River Linux servers only.
+<hr>
+
+You will perform these tasks during the installation. If you need to initialize a node while performing another task, the instructions will contain a link to one of these pages.
 
 * [Initializing and Configuring Compute Nodes](/helion/openstack/carrier/admin/host/initialize/compute/)
 * [Initializing and Configuring Storage Nodes](/helion/openstack/carrier/admin/host/initialize/storage/)
@@ -170,6 +187,10 @@ The HP Helion OpenStack Carrier Grade reports status information about the hosts
 **System Configuration Management**
 
 You can make changes to the HP Helion OpenStack Carrier Grade initial configuration at any time after installation.
+
+<hr>
+**Note:** This feature applies to the Wind River Linux servers only.
+<hr>
 
 * [System Configuration Management](/helion/openstack/carrier/admin/system/config/)
 
@@ -181,9 +202,6 @@ You can make changes to the HP Helion OpenStack Carrier Grade initial configurat
 **Managing LDAP**
 
 * [Managing LDAP User Accounts](/helion/openstack/carrier/admin/ldap/manage/)
-
-
-----
 
 **Scaling Virtual Machine Resources**
 

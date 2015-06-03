@@ -32,7 +32,7 @@ To work with instances [Launch the HP Helion OpenStack Horizon Dashboard](/helio
 
 * [Managing instances](#user)
 * [Managing instances as an admin](#admin)
-*
+
 
 The **Instances** panel looks similar to the following. Click the image to view in a new window: 
 
@@ -63,6 +63,8 @@ As an admin user or non-admin user, you can use the **Compute** panel on the **P
 As an admin user, you can work on all of the instance(s) in your domain, regardless of which project the instance is associated with.
 
 * [Migrate or Live Migrate and instance](/helion/commercial/carrier/dashboard/managing/instances/migrate/)
+* [Cold Migrate an Instance](/helion/commercial/carrier/dashboard/managing/instances/migrate/cold/)
+
 
 <p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 

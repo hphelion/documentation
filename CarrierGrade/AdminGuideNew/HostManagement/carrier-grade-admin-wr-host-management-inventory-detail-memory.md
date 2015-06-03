@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Working with Host CPUs"
-permalink: /helion/openstack/carrier/admin/host/management/inventory/processor/
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Working with Host Memory"
+permalink: /helion/openstack/carrier/admin/host/management/inventory/memory/
 product: carrier-grade
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -30,74 +30,49 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/object/overview/"> NEXT &#9654</a> </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Working with Host CPUs
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Working with Host Memory
 <!-- From the Titanium Server Admin Guide -->
 
-The Processor tab on the Inventory Detail page presents processor details for a host.
+The **Memory** tab on the **Inventory Detail** page presents memory details for a host.
 
 <hr>
 **Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
-This page details:
 
-* Viewing details of host CPUs](view)
-* Creating CPU profiles](#create)
-* Editing CPU assignments](#edit)
-* Viewing NUMA node resources on a host](#numa)
-* Designating shared physical CPUs on a compute host](shared)
+The information is presented in three columns, as follows:
+
+You access the **Inventory Detail** page by clicking the host name on the **Hosts** tab of the **Systems Inventory** page. The inventory detail for a host consists of multiple tabs, each addressing a different aspect of the host. 
 
 
-## Viewing details of a host CPUs {view}
+* **Memory** - Overall memory on the host. For a controller node it displays the total and available memory figures.
 
-To view the host CPUs:
+	For a compute node, as in the example above, it displays the amount reserved for the platform (system software), and the total and available figures for use by virtual machines.
 
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
+* **vSwitch Huge Pages** - This column is relevant on compute nodes only. The size of the huge pages, and the total and available huge page figures.
 
-2. Click the **Admin** dashboard, then the **System** panel, then the **System Inventory** link.
+* **VM Huge Pages** - This column is relevant on compute nodes only.
+The size of the huge pages, and the total and available huge page figures.
+	
+## Huge Page Provisioning {#huge}
 
-3. Click the **Hosts** tab.
+You can adjust the number and size of pages to allocate on a host for use as VM memory. For individual VMs, you can specify the page size to use.
 
-4. In the Host Name column, click the name of the locked host to open the **Inventory Detail** page for that host.
+In each NUMA node on a host, a fixed amount of memory is reserved for use by VMs. By default, this memory is managed using 2 MiB huge pages. You can change this for individual NUMA nodes to use a combination of 2 MiB and 1 GiB huge pages. Using larger pages can reduce page management overhead and improve system performancefor systems with large amounts of virtual memory and many running processes.
 
-5. Select the Processor tab.
+To calculate how many pages of each size you can successfully request, you can use the system host-memorylist and system host-memory-show commands to find out approximately how much memory is available
+for VMs. Additional memory not included in these totals may also be available.
 
-The Processor tab includes the following items:
+If the huge page request cannot be allocated from the available memory, an informative message is displayed. If the available memory is greater than the amount required by the huge page request, the unallocated memory is not used for VMs, and is not available for other uses.
+After setting the memory allocations for a compute node, you can save them as a memory profile, and then apply the profile to other compute nodes. For more information, see [Creating and Using Memory Profiles]{#profiles}.
 
-* processor model 
-* number of processors
-* number of cores per processor
-* Hyper-Threading status (enabled or disabled)
-* CPU assignments 
+To specify the page size to use for a VM, see Specifying a Page Size for a VM on page 126.
 
-## Creating CPU profiles {#create}
+You can edit the huge page attributes for a NUMA node from the web admin interface using the Memory tab on the Inventory pane.
 
-To create a CPU profile:
+Before requesting huge pages on a host, ensure that the host has enough available memory.
 
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Admin** dashboard, then the **System** panel, then the **System Inventory** link.
-
-3. Click the **Hosts** tab.
-
-4. In the Host Name column, click the name of the locked host to open the **Inventory Detail** page for that host.
-
-5. Click the **Processor** tab.
-
-6. Click the **Create CPU Profile** button.
-
-	Clicking this button displays the **Create CPU Profile** window, where the current CPU assignment can be given a name.
-
-
-## Editing CPU Assignments {#edit}
-
-Currently, the number of platform cores is limited to one for each host. This is indicated by the read-only platform fields that allocate one core from processor 0.
-
-AVS cores can be configured for each processor independently. This means that the single logical vSwitch running on a compute node can make use of cores in multiple processors, or NUMA nodes. Optimal data path performance is achieved however, when all AVS cores, the physical ports, and the virtual machines that use them, are all running on the same processor. However, having AVS cores on all processors ensures that all virtual machines, regardless of the core they run on, are efficiently serviced. The example allocates two cores from processor 0 to the AVS threads.
-
-One physical core per processor can be configured as a shared CPU, which can be used by multiple VMs for low-load tasks. To use the shared physical CPU, each VM must be configured with a shared vCPU ID. For more information, see Pinning a vCPU to a Shared Physical CPU.
-
-All other cores are automatically available for allocation to virtual machine threads.
+To provision huge memory:
 
 1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
@@ -105,26 +80,63 @@ All other cores are automatically available for allocation to virtual machine th
 
 3. Click the **Hosts** tab.
 
-4. [Lock the host](/helion/openstack/carrier/admin/host/management/inventory/lock/) to make changes. Click **More** then select **Lock Host**.
+4. In the **Host Name** column, click the name of the locked host to open the **Inventory Detail** page for that host.
 
-	Wait for the host to be reported as Locked.
+5. Click the **Memory** tab, then click **Update Hugepage Memory**.
 
-5. In the Host Name column, click the name of the locked host to open the **Inventory Detail** page for that host.
+6. Use the **Update Hugepage Memory** screen to set the desired huge pages for each NUMA node.
 
-6. Click the **Processor** tab.
+	For each available NUMA node, two fields are supplied:
 
-7. Click the **Edit CPU Assignments** button.
+		# of VM 2M Hugepages Node n
 
-	This button is available only when the host is in the locked state.
+	The number of 2MiB pages to reserve for VM use on the NUMA Node. If no 2MiB pages are required, type 0.
 
-	Clicking this button displays the **Edit CPU Assignments** window, where the current CPU assignment can be changed.
+		# of VM 1G Hugepages Node n
 
-## Designating Shared Physical CPUs on a Compute Host {shared}
+	The number of 1GiB pages to reserve for VM use on the NUMA Node. If no 1GiB pages are required, type 0.
 
-You can designate one shared physical CPU per physical processor on a compute host to run low-load or non-realtime tasks for multiple VMs, freeing other cores on the host for dedicated high-load tasks.
-You can use the web administration interface or the CLI to set up shared physical CPUs.
+7. Click Save.
 
-To designate shared CPUs:
+	If there are insufficient resources to support the requested number of huge pages, a message appears. Review your calculations and submit a revised request.
+
+6. [Unlock the host](/helion/openstack/carrier/admin/host/management/inventory/lock/) and wait for it to be reported as `Available`.
+
+You can edit the huge page attributes for a NUMA node from the CLI.
+
+1. Lock the affected host.
+
+		system host-lock hostname
+
+2. Use the following command to set the huge page attributes.
+
+		system host-hugepage-update <hostname> processor -2M <2Mpages> -1G <1Gpages>
+
+	where
+
+	* `hostname` - the hostname or id of the compute node processor is the NUMA node of the compute node (0 or 1)
+	* `2Mpages` - if the optional -2M argument is included, the number of 2MiB huge pages to make available (if none, use 0).
+	* `1Gpages` - if the optional -1G argument is included number of 1GiB huge pages to make available (if none, use 0).
+
+	For example, to allocate four 2 MiB huge pages for use by VMs on NUMA node 1 of compute node compute-0 :
+
+		system host-hugepage-update compute-0 1 -2M 4
+
+3. Unlock the host.
+
+		system host-unlock hostname
+
+4. Wait for the host to be reported as available.
+
+		system host-list hostname
+
+## Creating and Using Memory Profiles {#memory}
+
+You can optionally save the huge pages configuration for a host as a profile, and apply the profile to other hosts.
+
+For more information about huge page configurations, see [Huge Page Provisioning]{#huge}.
+
+To create memory profiles:
 
 1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
@@ -132,59 +144,51 @@ To designate shared CPUs:
 
 3. Click the **Hosts** tab.
 
-4. [Lock the host](/helion/openstack/carrier/admin/host/management/inventory/lock/) to make changes. Click **More** then select **Lock Host**.
+4. In the **Host Name** column, click the name of the locked host to open the **Inventory Detail** page for that host.
 
-	Wait for the host to be reported as Locked.
+5. Click the **Memory** tab, then click **Create Memory Profile**.
 
-5. In the **Host Name** column, click the name of the locked host to open the **Inventory Detail** page for that host.
+6. In the **Create Memory Profile** screen, enter a name for the memory profile.
 
-6. Click the **Processor** tab.
+7. Click **Create Memory Profile** to save the profile and close the dialog box.
 
-7. Click **Edit CPU Assignments**.
+You can use the following CLI command to create a memory profile:
 
-	This control is available only if the host is locked.
+		system memprofile-add <memoryprofile> <hostid>
 
-8. In the **Edit CPU Assignments** screen, use the **Shared Function** section to enable shared physical CPUs.
+	where 
 
-	You can designate one core on each physical processor for use as a shared physical CPU. The actual core is assigned from the pool of available cores for the processor.
+	* `memoryprofile` is the name or UUID of the memory profile
+	* `hostid` is the name or UUID of the host from which to create the profile.
 
-	For example, to use a core on processor 0 as a shared physical CPU, set the # of Shared Physical Cores on Processor 0 to 1. Valid values are 1 (to assign a core as a shared physical CPU) or 0 (if a shared physical CPU is not required on the processor.)
+You can apply this profile to other hosts by editing the host settings in the web administration interface. For information about editing a host, see  [Working with Hosts](/helion/openstack/carrier/admin/host/management/inventory/host/). 
 
-To configure a VM to use a shared physical CPU, see Pinning a vCPU to a Shared Physical CPU.
+You can also use the following CLI command to apply a memory profile to a host:
 
-To add or remove a shared physical CPU from the CLI, use a command of the following form:
+	system host-apply-memprofile <memoryprofile> <hostid>
 
-	system host-cpu-modify -f shared -p<processor> use_shared <hostname>
+	where 
 
-	where: 
-	* `processor` is the number of the physical processor (0 or 1)
-	* `use_shared` specifies whether to use a shared physical CPU (0 for no, 1 for yes)
-	* `hostname` is the name of the compute host
+	* memoryprofile is the name or UUID of the memory profile
+	* hostid is the name or UUID of the host.
 
-For example, to set up a shared physical CPU on processor 0 of compute-0:
+To manage memory profiles, you can use the Memory Profiles tab on the System Inventory page, or you can use the following CLI commands:
 
-~(keystone_admin)$ system host-cpu-modify -f shared -p0 1 compute-0
+* To list memory profiles:
 
+		$ system memprofile-list
 
+* To show details for a memory profile:
 
+		system memprofile-show <memoryprofile>
 
-## Viewing NUMA Node Resources on a Host {#numa}
+	where memoryprofile is the name or UUID of the memory profile.
 
-You can use the CLI to display the NUMA node resources for a host.
+* To delete a memory profile:
 
-Host NUMA nodes can be pinned, or assigned for use by VMs. 
+		system memprofile-delete <memoryprofile>
 
-For example, a VM can be configured to use NUMA node 0, so that when the VM is launched or migrated, the virtual machine scheduler locates a host node with an available NUMA node 0, and dedicates that NUMA node for use by the VM. For more about pinning NUMA nodes, see Pinning a Guest NUMA Node to a Host NUMA Node.
-
-The resources of the pinned NUMA node, including the number of available CPUS and the available memory, must be sufficient to meet the requirements of the VM, which can be specified independently. For more about specifying NUMA node requirements for a VM, see Configuring the NUMA Node Allocations for a VM. 
-
-To ensure that a given host NUMA node can support the VM requirements, you can review the CPU and memory complements for host NUMA nodes.
-
-To view the CPU complement for a NUMA Node (that is, for a socketed physical processor), use the vm-topology command. 
-
-
-
-
+	where memoryprofile is the name or UUID of the memory profile.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
