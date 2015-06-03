@@ -207,9 +207,9 @@ availability states at any given time. The following figure illustrates the life
 HP Helion OpenStack Carrier Grade (Beta) Administration Guide | Managing Hardware Resources | 93
 Figure 4: The Life Cycle of a Host
 In this figure:
-• the administrative states, locked and unlocked, are presented in two columns
-• the operational states, disabled and enabled, are presented in two rows
-• the availability states are presented as elements inside the administrative/operational matrix
+* the administrative states, locked and unlocked, are presented in two columns
+* the operational states, disabled and enabled, are presented in two rows
+* the availability states are presented as elements inside the administrative/operational matrix
 The description that follows uses the availability states only, since for each state the corresponding administrative and
 operational states can be read directly from the figure.
 The life cycle of a new host starts when it is discovered by the active controller on the internal management network.
