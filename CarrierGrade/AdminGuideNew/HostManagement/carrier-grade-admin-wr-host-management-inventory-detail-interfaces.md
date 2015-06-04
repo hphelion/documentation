@@ -133,7 +133,7 @@ To create a host interface:
 
 	* **Interface Name** - Enter the name to be assigned to the new logical interface.
 	* **Interface Type** - Select the type of network interface: Ethernet or aggregated Ethernet (LAG).
-	* **Ports** - Select the physical ports for the the new logical interface. Physical ports already allocated to other interfaces are not listed.
+	* **Ports** - Select the physical ports for the new logical interface. Physical ports already allocated to other interfaces are not listed.
 	* **Network Type** - Select the type of network to attach the new logical interface to (`data` or `infra`, for compute node data interfaces and infrastructure network connections respectively). Note that connections to the OAM and internal management networks are auto-provisioned during the software installation process.
 	* **Provider Network(s)** - Select one or more provider networks for the new logical interface, for networks of type data. Provider networks already allocated to other data interfaces are not listed, since no provider network can be associated with more than a single data interface.
 	* **MTU** - Enter the MTU size in bytes for the interface. For compute nodes, values between 1500 and 9000 are supported. For controller and storage nodes, the MTU size cannot exceed 1500.
