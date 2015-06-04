@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Creating Externally Available Networks"
-permalink: /helion/commercial/carrier/dashboard/managing/network/external/create/
+permalink: /helion/commercial/carrier/dashboard/managing/network/provider/create/
 product: carrier-grade
 
 ---
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Creating Provider Networks
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Creating and Deleting Provider Networks
 
 Provider networks are created by the OpenStack administrator and map directly to an existing physical network in the data center. Useful network types in this category are flat (untagged) and VLAN (802.1Q tagged). It is possible to allow provider networks to be shared among tenants as part of the network creation process.
 
@@ -67,6 +67,17 @@ An admin user can [create](#createnet) and [delete](#deletenet) provider network
 
 10. Click **Create Network**.  
 
+### Delete a provider network ### {#deletenet}
+
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
+
+2. Click the **Admin** dashboard, then the **System** panel, then the **Networks** link.
+
+	The network(s) for the selected project appear. 
+
+3. For the network you want to delete, click the arrow icon in the **Actions** menu and select **Delete Network**.
+
+	To delete multiple networks, click the check box next to name of each network to delete. Click **Delete Networks**.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
