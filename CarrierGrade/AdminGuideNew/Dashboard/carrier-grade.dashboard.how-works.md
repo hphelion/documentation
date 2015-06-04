@@ -35,24 +35,21 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade (Beta): How to use the Helion Dashboards
 
-The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Commercial overcloud. The overcloud is the end-user OpenStack cloud. 
+The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Carrier Grade. 
 
-The interface, based on OpenStack Horizon, is grouped into dashboards, including [Project](#DashProject), [Admin](#DashAdmin) and [Settings](#DashSettings). Tabs on the left side of the interface expand and contract to show available commands grouped into **panels**. 
-
-<!-- Need new
-<img src="media/HorizonCommunity.png" alt="" width="600" />
--->
+The interface, based on OpenStack Horizon, is grouped into dashboards, including [Project](#DashProject), [Admin](#DashAdmin) and [Identity](#DashSettings). Tabs on the left side of the interface expand and contract to show available commands grouped into **panels**. 
 
 Across the top are menus to switch between projects and menus where you can access user settings.
 
-<!--
-How you interact with your network environment depends upon your user type, either an [administrative user (admin)](/helion/openstack/carrier/dashboard/admin/) or a [non-administrative user (user)](/helion/openstack/carrier/dashboard/users/).
--->
+<img src="media/CGH-Helion-Window-RC.png" alt="" width="600" />
+
+How you interact with your network environment depends upon your user type, either an administrative user or a non-administrative user (user). In general, a non-admin user can make changes to projects to which that user is associated. Admin users can make changes throughout the domain.
+
 To access the dashboard, [enter the dashboard URL in a supported browser and log in](/helion/openstack/carrier/dashboard/login/). 
 
 At the bottom of this page, you can see some of the services you can manage right from the dashboard.
 
-## Project dashboard<a name="DashProject"></a>
+## Project dashboard {#DashProject}
 
 Use the **Project** dashboard to implement and build out your cloud. This dashboard contains tools to create virtual server instances, create and configure your network, configure access tools (such as key pairs and security groups) and cloud resource templates (stacks).
 
@@ -93,7 +90,7 @@ allocations.
 Stacks</td><td>Details for existing services (stacks), and controls for creating new services (launching stacks). Service details include topologies, resource allocations, and event histories.
 </table>
 
-## Admin dashboard<a name="DashAdmin"></a>
+## Admin dashboard {#DashAdmin}
 
 Use the **Admin** dashboard to view, allocate, and manage all resources within the cloud.
 
@@ -144,8 +141,15 @@ The Admin dashboard allows you to manage instances, define flavors, create and c
 <tr>
 <td>System Info</td><td>Status information for services and network agent processes, availability zones, and host aggregates.
 </td></tr>
-<tr><td colspan="2">Identity Panel
-</td></tr>
+</table>
+
+# Identity dashboard<a name="DashSettings"></a>
+
+Use the **Settings** dashboard to change your display language and settings, your time zone, and your password.
+
+<table>
+<tr><th>Menu item</th><th>Description</th></tr>
+<tr>
 <tr>
 <td>Projects</td><td>Controls for managing tenants.
 </td></tr>
