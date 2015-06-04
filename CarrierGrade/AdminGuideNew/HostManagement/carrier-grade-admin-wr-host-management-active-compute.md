@@ -47,7 +47,7 @@ You can change the resource pool in several ways:
 
 **Caution:** When replacing or adjusting a host, ensure that the overall resource pool still meets the requirements for your system.
 
-Complete instructions for adding a compute node are provided in [Initializing and Configuring Compute Nodes](/helion/openstack/carrier/admin/host/management/initialize/compute/).
+Complete instructions for adding a compute node are provided in [Initializing and Configuring Compute Nodes](/helion/openstack/carrier/admin/host/initialize/compute/).
 
 In this topic:
 

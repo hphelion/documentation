@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Enabling and Disabling Networks"
-permalink: /helion/commercial/carrier/dashboard/managing/network/enable/
+permalink: /helion/commercial/carrier/dashboard/managing/network/enable/tenant/
 product: carrier-grade
 
 ---

@@ -39,7 +39,7 @@ The **Network** panel contains commands to view a visual representation of your 
 
 * [View your network](/helion/commercial/carrier/dashboard/managing/network/viewing/)
 * [Create or delete a tenant network](/helion/commercial/carrier/dashboard/managing/network/create/)
-* [Enable or disable a tenant network](/helion/commercial/carrier/dashboard/managing/network/enable/)
+* [Enable or disable a tenant network](/helion/commercial/carrier/dashboard/managing/network/enable/tenant/)
 
 ## Managing your network as an admin ##
 

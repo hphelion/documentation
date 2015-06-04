@@ -71,7 +71,7 @@ To replace a storage node on an active system:
 	* For disk addition, you must create a new storage volume (OSD) before you can use the new disk. For more information, see the HP Helion OpenStack Carrier Grade Software Installation Guide: Creating Storage Volumes.
 	* For host replacement, you must [delete the existing host](/helion/openstack/carrier/admin/host/management/inventory/host/#delete) using **More** then **Delete Host**. Then you must initialize the new host with a personality as a storage node, configure its interfaces, and create storage volumes. 
 
-For more information on initializing and configuring a storage node, see [Initializing and Configuring Storage Nodes](/helion/openstack/carrier/admin/host/management/initialize/storage/).
+For more information on initializing and configuring a storage node, see [Initializing and Configuring Storage Nodes](/helion/openstack/carrier/admin/host/initialize/storage/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

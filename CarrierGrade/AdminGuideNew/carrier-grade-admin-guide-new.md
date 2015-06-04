@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Administrators Guide"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Administering HP Helion OpenStack Carrier Grade"
 permalink: /helion/openstack/carrier/admin/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -24,7 +24,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Administrators Guide 
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Administering HP Helion OpenStack Carrier Grade 
 
 This guide covers how administrators can manage the day-to-day operation of HP Helion OpenStack Carrier Grade.
 
