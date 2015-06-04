@@ -50,7 +50,7 @@ In addition to all of the user tasks, you can also make a network a shared netwo
 Access the networking commands using the **System** panel on the **Admin** dashboard. 
 
 * [Creating provider networks](/helion/commercial/carrier/dashboard/managing/network/external/create/)
-* * [Enable or disable a provider network](/helion/commercial/carrier/dashboard/managing/network/enable/provider/)
+* [Enable or disable a provider network](/helion/commercial/carrier/dashboard/managing/network/external/create/)
 * [Delete a provider network](/helion/commercial/carrier/dashboard/managing/network/external/delete/provider/)
 * [Create, Modify, or Delete a port on a Network](/helion/commercial/carrier/dashboard/managing/network/ports/)
 
