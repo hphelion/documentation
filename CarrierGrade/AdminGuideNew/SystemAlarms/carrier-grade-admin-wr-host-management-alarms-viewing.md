@@ -165,7 +165,7 @@ line interface on the active controller to:
 
 1. Define at least one SNMP community string. See [Adding an SNMP Community String](/helion/openstack/carrier/admin/alarms/community/strings/).
 2. Configure at least one SNMP trap destination so that alarms can be
-reported as they happen. See [Configuring SNMP Trap Destinations](/helion/openstack/carrier/admin/alarms/snmp/trap/).
+reported as they happen. See [Configuring SNMP Trap Destinations](/helion/openstack/carrier/admin/alarms/snmp/traps/).
 
 
 
