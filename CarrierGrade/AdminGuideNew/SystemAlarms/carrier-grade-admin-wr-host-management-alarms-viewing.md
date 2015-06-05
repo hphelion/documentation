@@ -46,7 +46,7 @@ This topic contains the following:
 * [About SNMP Support](#about)
 * [SNMPv2-MIB (RFC 3418)](#snmpv2)
 * [Enterprise MIBs](#enterprise)
-* [Viewing alarms](viewing)
+* [Viewing alarms](#viewing)
 * [Enabling SNMP Support](#enabling)
 
 ## About SNMP Support {#about}
@@ -129,7 +129,7 @@ textual conventions, an active alarm table, a historical alarm table, and traps.
 		* ServiceAffecting
 		* SuppressionAllowed
 
-## Viewing alarms {viewing}
+## Viewing alarms {#viewing}
 
 On the web interface, click the Fault Management menu on the
 Admin tab, and then select the Active Alarms tab.
