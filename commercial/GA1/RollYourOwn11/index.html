@@ -1691,9 +1691,10 @@ by clicking the button. You must save or print from this location in the page. V
                                         </li>
                                         <li value="6">Make sure the information in the baremetal.csv configuration file file is correct and upload the file to /root.
 								</li>
-                                        <li value="7">If you will be integrating LDAP into your environment, copy the configuration files, as described below to the seed cloud host.
-                                       <p> Before starting the integration, make sure your environment meets the following prerequisites:</p>
-                                        	<ul> <li>LDAP server is up and running and is network accessible from the overcloud.</li>
+                                      <li value="7">  <span style="color: red;">If you will be integrating LDAP into your environment, copy the configuration files, as described below to the seed cloud host.
+                                       <p> Before starting the integration, make sure your environment meets the following prerequisites:</p>Note, all LDAP steps, up to and including the step to Copy the overcloud_keystone_ldap.json, and the entire section on Creating overcloud_keystone_ldap.json are optional.
+</span>
+                                        	<ul> <li>LDAP server is up and running and is network accessible from the overcloud.</li> 
 																																	
 
 											<li>You have generated configuration files. The LDAP integration process uses two configuration files: <b>LDAP server connection settings</b> overcloud_keystone_ldap.json and <b>Keystone CA storage and signing key/certificate file (Optional)
@@ -3080,7 +3081,9 @@ Note also:
 
 
 
-                                        <li style="list-style-type:none;"><b>If you will be integrating LDAP into your environment</b>, copy the configuration files, as described below to the seed cloud host.
+                                        <li style="list-style-type:none;"><span style="color: red;">If you will be integrating LDAP into your environment, copy the configuration files, as described below to the seed cloud host.
+                                       <p> Before starting the integration, make sure your environment meets the following prerequisites:</p>Note, all LDAP steps, up to and including step 5. Copy the overcloud_keystone_ldap.json, and the entire section on Creating overcloud_keystone_ldap.json are optional.
+</span>
                                        <p> Before starting the integration, make sure your environment meets the following prerequisites:</p>
                                         	<ul> <li>LDAP server is up and running and is network accessible from the overcloud.</li>
 																																	
@@ -3599,7 +3602,7 @@ Note also:
 chmod 0600 $/root/tripleo/overcloud-env.json</p>
 
 
- <p>7. To build the cloud, start by logging in to the seed VM. Run the following command from /root using the IP address of seed VM as defined in the kvm_custom_ips.json environment variables file. The IP address should be listed in the output, such as to login ssh root@192.0.2.1.:</p>
+ <p>7. To build the cloud, start by logging in to the seed VM. Run the following command from /root using the IP address of seed VM as defined in the kvm_custom_ips.json environment variables file. The IP address should be listed in the output, such as 192.0.2.1.: (Note your IP address may differ.)</p>
                             <p class="codebox"><span style="font-size: 10pt;">ssh root@&lt;seed_VM_IP_address&gt;</span>
                             </p>
                             <p> It might take a few moments for the seed VM to become reachable.</p>
