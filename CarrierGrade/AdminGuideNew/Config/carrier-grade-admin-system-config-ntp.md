@@ -36,11 +36,13 @@ PageRefresh();
 
 You can change the NTP server addresses defined for HP Helion OpenStack Carrier Grade at any time after installation.
 
-During installation, the HP Helion OpenStack Carrier Grade is configured with up to three NTP server IP addresses. You change these addresses using the web administration interface or the CLI.
+During installation, the HP Helion OpenStack Carrier Grade is configured with up to three NTP server IP addresses. You change these addresses using the [Horizon dashboard](#horizon) or [the CLI](#cli).
 
 Before changing NTP server addresses, review the Fault Management page and ensure that any existing system alarms are cleared.
 
 **Note:** For the HP Helion OpenStack Carrier Grade system to use FQDN servers instead of IPv4 servers, at least one valid DNS server must be specified.
+
+## Changing the IP using the Horizon dashboard {#horizon}
 
 1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
@@ -72,9 +74,9 @@ Before changing NTP server addresses, review the Fault Management page and ensur
 
 7. Perform a swact on the active controller.
 
-	Click **More > Swact Host** for the active controller.
+	Click **More** > **Swact Host** for the active controller.
 
-8. Lock the original controller (now in standby mode).
+8. [Lock the original controller](/helion/openstack/carrier/admin/host/management/inventory/lock/), which is in standby mode.
 
 	Wait for the lock operation to be completed.
 
@@ -84,6 +86,26 @@ Before changing NTP server addresses, review the Fault Management page and ensur
 
 10. Make sure that the 250.001 Configuration out-of-date alarms are cleared for both controllers.
 
+
+## Changing the IP using the CLI {#cli}
+
+To view the existing NTP server configuration, use the following command.
+
+	system ntp-show
+
+To change the NTP server IP addresses, use the following command syntax. The `ntpservers` option takes a comma-delimited list of NTP server names.
+
+	system ntp-modify \
+	ntpservers=server_1[,server_2][,server_3] action=apply
+
+For example:
+
+	system ntp-modify \
+	ntpservers=0.north-america.pool.ntp.org,\
+	0.north-america.pool.ntp.org,0.north-america.pool.ntp.org \
+	action=apply
+
+After changing the NTP server configuration, you must lock and unlock both controllers. This process requires a [swact on the controllers](/helion/openstack/carrier/admin/host/management/inventory/host/#swact).
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

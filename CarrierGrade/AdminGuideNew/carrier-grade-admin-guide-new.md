@@ -193,10 +193,12 @@ You can make changes to the HP Helion OpenStack Carrier Grade initial configurat
 
 * [System Configuration Management](/helion/openstack/carrier/admin/system/config/)
 
-	* [Changing the External Network IP Configuration](/helion/openstack/carrier/admin/system/config/ext/)
+	* [Host Status and Alarms During System Configuration Changes](/helion/openstack/carrier/admin/system/config/alarms/)
+	* [Changing the External Network (OAM) IP Configuration](/helion/openstack/carrier/admin/system/config/ext/)
 	* [Changing the DNS Server Configuration](/helion/openstack/carrier/admin/system/config/dns/)
-	* [Changing the NTP Server Configuration
-	* [Changing Storage Space Allotments on the Controller
+	* [Changing the NTP Server Configuration](/helion/openstack/carrier/admin/system/config/ntp/)
+	* [Changing Storage Space Allotments on the Controller](/helion/openstack/carrier/admin/system/config/allotment/)
+	* [Adding an Infrastructure Network Using the CLI](/helion/openstack/carrier/admin/system/config/cli/)
 
 **Managing LDAP**
 

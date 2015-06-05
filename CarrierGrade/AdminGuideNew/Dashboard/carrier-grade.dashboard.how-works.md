@@ -37,7 +37,7 @@ PageRefresh();
 
 The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Carrier Grade. 
 
-The interface, based on OpenStack Horizon, is grouped into dashboards, including [Project](#DashProject), [Admin](#DashAdmin) and [Identity](#DashSettings). Tabs on the left side of the interface expand and contract to show available commands grouped into **panels**. 
+The interface, based on OpenStack Horizon, is grouped into dashboards, including [Project](#DashProject), [Admin](#DashAdmin) and [Identity](#DashIdent). Tabs on the left side of the interface expand and contract to show available commands grouped into **panels**. 
 
 Across the top are menus to switch between projects and menus where you can access user settings.
 
@@ -63,7 +63,7 @@ Use the **Project** dashboard to implement and build out your cloud. This dashbo
 Instances</td><td>Controls for managing instances associated with the tenant, including controls for creating snapshots.
 </td></tr>
 <tr>
-<td>Server Groups</td><td>Controls for managing server groups associated with the tenant. 
+<td>Server Groups</td><td>Controls for managing server groups associated with the tenant. *Wind River Linux servers only*
 </td></tr>
 <tr>
 <td>Volumes</td><td>Controls for managing virtual disk volumes associated with the tenant's instances.
@@ -84,6 +84,10 @@ allocations.
 <tr>
 <td>Routers</td><td>Controls for managing virtual routers. Tenant members can create and delete virtual routers, view router details and delete interfaces, and clear gateways.
 </tr></td>
+<tr><td colspan="2">Object Store</td>
+</td></tr>
+<tr><td>
+Containers</td><td>Controls for mamaging storage containers. A container is a storage compartment for your data and provides a way for you to organize your data. 
 <tr><td colspan="2">Orchestration Panel</td>
 </td></tr>
 <tr><td>
@@ -103,10 +107,13 @@ The Admin dashboard allows you to manage instances, define flavors, create and c
 <tr><td>Overview</td><td>Performance charts for system health monitoring, including hosts status, provider-network port utilization, and compute node processing, memory, and disk usage.
 </td></tr>
 <tr>
-<td>Resource</td><td>Usage Tools for performing Ceilometer database queries using real-time or collected data, to support detailed performance analysis.
+<td>Resource Usage</td><td> Tools for performing Ceilometer database queries using real-time or collected data, to support detailed performance analysis. *Wind River Linux servers only*
 </td></tr>
 <tr>
-<td>Inventory</td><td>Controls for managing systems, hosts, and standardized CPU, port, or storage profiles that can be applied to hosts.
+<td>Inventory</td><td>Controls for managing systems, hosts, and standardized CPU, port, or storage profiles that can be applied to hosts. *Wind River Linux servers only*
+</td></tr>
+<tr>
+<td>Host Aggregates</td><td>Charts for monitoring hypervisor resource usage on compute nodes. *hLinux servers only*
 </td></tr>
 <tr>
 <td>Hypervisors</td><td>Charts for monitoring hypervisor resource usage on compute nodes.
@@ -115,7 +122,7 @@ The Admin dashboard allows you to manage instances, define flavors, create and c
 <td>Instances</td><td>Controls for managing virtual-machine instances. 
 </td></tr>
 <tr>
-<td>Server Groups</td><td>Controls for managing server groups across all tenants. Server groups are collections of instances sharing common attributes.
+<td>Server Groups</td><td>Controls for managing server groups across all tenants. Server groups are collections of instances sharing common attributes. *Wind River Linux servers only*
 </td></tr>
 <tr>
 <td>Volumes</td><td>Controls for managing virtual disk volumes available for use with instances. The virtual volumes are implemented using storage volumes defined for the storage nodes in the system.
@@ -136,16 +143,19 @@ The Admin dashboard allows you to manage instances, define flavors, create and c
 <td>Defaults</td><td>Controls for viewing and setting the default quota values for new tenants.
 </td></tr>
 <tr>
-<td>System Configuration</td><td>System configuration updates.
+<td>Fault Management</td><td>System alarms. *Wind River Linux servers only*
+</td></tr>
+<tr>
+<td>System Configuration</td><td>System configuration updates. *Wind River Linux servers only*
 </td></tr>
 <tr>
 <td>System Info</td><td>Status information for services and network agent processes, availability zones, and host aggregates.
 </td></tr>
 </table>
 
-# Identity dashboard<a name="DashSettings"></a>
+# Identity dashboard<a name="DashIdent"></a>
 
-Use the **Settings** dashboard to change your display language and settings, your time zone, and your password.
+Use the **Admin** panel to create and delete users, change user passwords, assign users to projects, and other tasks.
 
 <table>
 <tr><th>Menu item</th><th>Description</th></tr>

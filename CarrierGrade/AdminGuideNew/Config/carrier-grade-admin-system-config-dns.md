@@ -36,7 +36,9 @@ PageRefresh();
 
 You can change the DNS servers defined for the Titanium Server at any time after installation.
 
-You change these addresses using the web administration interface or the CLI.
+You change these addresses using the [Horizon dashboard](#horizon) or [the CLI](#cli).
+
+## Change the IP address using the Horizon Dashboard {#horizon}
 
 1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
@@ -54,6 +56,19 @@ You change these addresses using the web administration interface or the CLI.
 
 4. Replace the DNS Server IP addresses with different ones as required.
 
+## Change the IP address using the CLI {#cli}
+
+To view the existing DNS server configuration, use the following command.
+
+	system dns-show
+
+To change the DNS server IP addresses, use the following command syntax. The nameservers option takes a comma-delimited list of DNS server IP addresses.
+
+	system dns-modify \
+	nameservers=IP_address_1[,IP_address_2][,IP_address_3] action=apply
+
+
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 ----
