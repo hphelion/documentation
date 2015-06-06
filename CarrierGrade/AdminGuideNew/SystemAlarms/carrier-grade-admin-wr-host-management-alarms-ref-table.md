@@ -28,7 +28,7 @@ PageRefresh();
 
 </script>
 
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/object/overview/"> NEXT &#9654</a> </p> -->
+<!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/object/overview/"> NEXT &#9654</a>  -->
 
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Using System Alarms CLI Commands
 <!-- From the Titanium Server Admin Guide -->
@@ -48,96 +48,386 @@ The following commands are used to interact with the alarms subsystem:
 
 Before using the commands you must log in to the active controller as the Keystone admin user. For more information, see [Linux User Accounts](/helion/openstack/carrier/admin/linux/users/).
 
-## Listing system alarms {#list}
+This topic contains the following alarm tables:
 
-The `system alarm-list` command lists currently active alarms, as illustrated below 
+* [Resource Alarms](#resource)
+* [Maintenance Alarms](#maint)
+* [Storage Alarms](#storage)
+* [Data Networking Alarms](#data)
+* [Controller HA Alarms](#controller)
+* [Backup and Restore Alarms](#backup)
+* [System Configuration](#config)
+* [Software Management Alarms](#mgmt)
+* [Virtual Machine Instance Alarms](#virtual)
 
-Specific subsets of alarms, or a particular alarm, can be listed using one of the following --query command filters:
+### Resource Alarms {#resource}
 
-* `uuid=<uuid>` - Query alarm by UUID, for example:
+<table>
+<th>Alarm ID</th><th>Reason Text</th>Entity Instance ID</th><th>Severity</th><th>Proposed Repair Action</th></tr>
+<tr>
+<td>100.101</td><td>Platform CPU threshold exceeded; threshold x%, actual y%</td><td>host=&lt;hostname&gt;</td><td>C, M, m</td>
+<td>Monitor, and if condition persists, contact next level of support.</td></tr>
+<tr>
+<td>100.102</td><td>AVS CPU threshold exceeded; threshold x%, actual y%</td>
+<td>host=&lt;hostname&gt;</td><td>C, M, m</td><td>Monitor, and if condition persists, contact next level of support.</td></tr>
+<tr><td>100.103</td><td>Memory threshold exceeded; threshold x%, actual y%</td><td>host=&lt;hostname&gt;</td><td>C, M, m</td><td>Monitor, and if condition persists, contact next level ofsupport; may require additional memory on host.</td></tr>
+<tr><td>100.104</td><td>File System threshold exceeded; threshold x%, actual y%</td><td>host=&lt;hostname&gt;.filesystem=&lt;mount-dir&gt; or filesystem=&lt;mount-dir&gt; or host=&lt;hostname&gt;.volumegroup=&lt;volumegroup-name&gt;</td><td>C, M, m</td><td>(for filesystem) Monitor, and if condition persists, contact next level of support.
+<br>(for volumegroup) Monitor, and if condition persists, consider adding additional physical volumes to the volume group</td></tr>
+</tbody></table>
 
-		system alarm-list --query uuid=4ab5698a-19cb...
 
-* `alarm_id=<alarm id>` - Query alarms by alarm ID, for example:
+### Maintenance Alarms {#maint}
 
-		system alarm-list --query alarm_id=100.104
+<table>
+<tr><th>Alarm ID</th><th>Reason Text</th><th>Entity Instance ID</th><th>Severity</th><th>Proposed Repair Action</th></tr>
+<tr><td>100.105</td><td>No access to remote VM volumes.</td><td>host=&lt;hostname&gt;</td><td>M</td><td>Check management and infrastructure networks. Check controller and storage nodes.</td></tr>
+<tr><td>100.106</td><td>OAM Port failed</td><td>host=&lt;hostname&gt;.port=&lt;port-name&gt;</td><td>M</td><td>Check cabling, far-end port configuration, and status on adjacent equipment.</td></tr>
+<tr><td>100.107</td><td>OAM Interface failed or OAM Interface degraded</td><td>host=&lt;hostname&gt;.interface=&lt;if-name&gt;</td><td>C, M</td><td>Check cabling, far-end port configuration, and status on adjacent equipment.</td></tr>
+<tr>
+<td>100.108</td><td>MGMT Port failed</td><td>host=&lt;hostname&gt;.port=&lt;port-name&gt;</td><td>M</td><td>Check cabling, far-end port configuration, and status on adjacent equipment.</td></tr>
+<tr>
+<td>100.109</td><td>MGMT Interface failed or MGMT Interface degraded</td><td>host=&lt;hostname&gt;.interface=&lt;if-name&gt;</td><td>C, M</td><td>Check cabling, far-end port configuration, and status on adjacent equipment.</td></tr>
+<tr>
+<td>100.110</td><td>INFRA Port failed</td><td>host=&lt;hostname&gt;.port=&lt;port-name&gt;</td><td>M</td><td>Check cabling, far-end port configuration, and status on adjacent equipment.</td></tr>
+<tr><td>100.111</td><td>INFRA Interface failed or INFRA Interface degraded</td><td>host=&lt;hostname&gt;.interface=&lt;if-name&gt;</td><td>C, M</td><td>Check cabling, far-end port configuration, and status on adjacent equipment.</td></tr>
+<tr>
+<td>200.001</td><td>Host was administratively locked to take it out-of-service</td><td>host=&lt;hostname&gt;</td><td>W</td><td>Administratively unlock host to bring it back in-service.</td></tr>
+<tr>
+<td>200.004</td><td>Host experienced a service-affecting failure.</td><td>host=&lt;hostname&gt;</td><td>C</td><td>If problem consistently occurs after host is reset, contact next level of support, or lock and replace failing host.</td></tr>
+<tr><td>200.005</td><td>Host is experiencing a persistent critical communication failure. Resetting Host.</td><td>host=&lt;hostname&gt;</td><td>C</td><td>If problem consistently occurs after host is reset, contact next level of support, or lock and replace failing host.</td></tr>
+<tr>
+<td>200.006</td><td>One or more critical processes on host have failed and can not be recovered. Resetting host</td><td>host=&lt;hostname&gt;</td><td>C, M</td><td>If problem consistently occurs after host is reset, contact next level of support or lock and replace failing host.</td></tr>
+<tr>
+<td>200.008</td><td><em class="ph i">ntpd</em> process has failed on host</td><td>host=&lt;hostname&gt;</td><td>m</td><td><em class="ph i">ntpd</em> is a process that can not be auto recovered. The host must be re-enabled (locked and then unlocked) to clear this alarm. If the alarm persists then contact next level of support to investigate and recover.</td></tr>
+<tr>
+<td>200.009</td><td>Degrade: Host is experiencing an intermittent infrastructure network communication failure that has exceeded its lower alarming threshold.
+<br>Failure: Host is experiencing a persistent critical infrastructure Network communication failure. Resetting Host.</td><td>host=&lt;hostname&gt;</td><td>C, M</td><td>If problem consistently occurs after host is reset, contact next level of support, or lock and replace failing host.</td></tr>
+<tr>
+<td>200.010</td><td>Access to board management module has failed</td><td>host=&lt;hostname&gt;</td><td>W</td><td>Check host's board management configuration and connectivity.</td></tr>
+</table>
 
-* `alarm_type=<type>` - Query alarms by type, for example:
+### Storage Alarms {#storage}
 
-		system alarm-list --query \
-		alarm_type=operational-violation
+<table>
+<tr><th>Alarm ID</th><th>Reason Text</th><th>Entity Instance ID</th><th>Severity</th><th>Proposed Repair Action</th></tr>
+<tr>
+<td>800.001</td><td>Storage alarm condition: &lt;failure reason</td><td>cluster=&lt;dist-fs-uuid&gt;</td><td>C, M</td><td>If problem persists, contact next level of support.
+</table>
 
-* `entity_type_id=<type id>` - Query alarms by entity type ID, for example:
+### Data Networking Alarms {#data}
 
-		system alarm-list --query \
-		entity_type_id=system.host
+<table>
+<tr>
+<th>Alarm ID</th><th>Reason Text</th><th>Entity Instance ID</th><th>Severity</th><th>Proposed Repair Action</th></tr>
+<tr>
+<td>300.001</td><td>Data port failed</td><td>host=&lt;hostname&gt;.port=&lt;port-uuid&gt;</td><td>M</td><td>Check cabling, far-end port configuration, and status on adjacent equipment.</td></tr>
+<tr>
+<td>300.002</td><td>Data interface failed or Data interface degraded</td><td>host=&lt;hostname&gt;.interface=&lt;if-uuid&gt;</td><td>C, M</td><td>Check cabling, far-end port configuration, and status on adjacent equipment.</td></tr>
+<tr>
+<td>300.003</td><td>Networking agent not responding</td><td>host=&lt;hostname&gt;.agent=&lt;agent-uuid&gt;</td><td>M</td><td>If condition persists, attempt to clear issue by administratively locking and unlocking the host.</td></tr>
+<tr>
+<td>300.004</td><td>No enabled compute node with connectivity to provider network</td><td>host=&lt;hostname&gt;.providernet=&lt;pnet-uuid&gt;</td><td>M</td><td>Enable compute nodes with required provider network connectivity.</td></tr>
+</table>
 
-* `entity_instance_id=<instance-id>` - Query alarms by entity instance id, for example:
+### Controller HA Alarms {#controller}
 
-		system alarm-list --query \
-		entity_instance_id=host=compute-0
+<table>
+<tr><th>Alarm ID</th><th>Reason Text</th><th>Entity Instance ID</th><th>Severity</th><th>Proposed Repair Action</th></tr>
+<tr>
+<td>400.001</td><td>Service group failure; &lt;list of affected services&gt; or Service group degraded; &lt;list of affected services&gt; or Service group warning; &lt;list of affected services&gt;</td><td>service_domain=&lt;domain_name&gt;.service_group=&lt;group_name&gt;.host=&lt;hostname&gt;</td><td>C, M, m</td><td>Contact next level of support.</td></tr>
+<tr>
+<td>400.002</td><td>Service group loss of redundancy; expected &lt;num&gt; standby member&lt;s&gt; but only &lt;num&gt; standby member&lt;s&gt; available or Service group loss of redundancy; expected &lt;num&gt; standby member&lt;s&gt; but only &lt;num&gt; standby member&lt;s&gt; available or Service group loss of redundancy; expected &lt;num&gt; active member&lt;s&gt; but no active members available or Service group loss of redundancy; expected &lt;num&gt; active member&lt;s&gt; but only &lt;num&gt; active member&lt;s&gt; available</td><td>service_domain=&lt;domain_name&gt;.service_group=&lt;group_name&gt;</td><td>M</td><td>Bring a controller node back into service, otherwise contact next level of support.</td></tr>
+<tr>
+<td>400.003</td><td>License key has expired or is invalid; a valid license key is required for operation or Evaluation license key will expire on &lt;date&gt;; there are only 7 or less days remaining in this evaluation or Evaluation license key will expire on &lt;date&gt;; there are &lt;num_days&gt; days remaining in this evaluation</td><td>host=&lt;hostname&gt;</td><td>C, M, m</td><td>Contact next level of support to obtain a new license key.</td></tr>
+<tr>
+<td>400.004</td><td>Service group software modification detected; &lt;list of affected files&gt;</td><td>host=&lt;&lt;hostname&gt;&gt;</td><td>M</td><td>Contact next level of support.</td></tr>
+<tr>
+<td>400.005</td><td>Communication failure detected with peer over interface &lt;linux-ifname&gt; or Communication failure detected with peer over interface &lt;linux-ifname&gt; within the last 30 seconds</td><td>host=&lt;hostname&gt;.network=&lt;mgmt | oam | infra&gt; </td><td>M</td><td>Check cabling, far-end port configuration, and status on adjacent equipment.</td></tr>
+</table>
 
-* `severity=<severity>` - Query alarms by severity type, for example:
+### Backup and Restore Alarms {#backup}
 
-		system alarm-list --query severity=warning
+<table>
+<tr><th>Alarm ID</th><th>Reason Text</th><th>Entity Instance ID</th><th>Severity</th><th>Proposed Repair Action</th></tr>
+<tr>
+<td>210.001</td><td>System Backup in progress</td><td>host=controller</td><td>m</td><td>No action required.</td></tr>
+</table>
 
-	The valid severity types are critical, major, minor, and warning.
+### System Configuration {#config}
 
-Query command filters can be combined into a single expression separated by semicolons, as illustrated in the following example:
+<table>
+<tr><th>Alarm ID</th><th>Reason Text</th><th>Entity Instance ID</th><th>Severity</th><th>Proposed Repair Action</th></tr>
+<tr><td>250.001</td><td>Configuration is out of date</td><td>host=&lt;hostname&gt;</td><td>M</td><td>Administratively lock and unlock &lt;hostname&gt; to update config.</td></tr>
+</table>
 
-	system alarm-list -q
-	'alarm_id=400.002;entity_instance_id=service_domain=controller.service_group=directoryservices'
+### Software Management Alarms {#mgmt}
 
-## Viewing details of an alarm
+<table>
+<th>Alarm ID</th><th>Reason Text</th><th>Entity Instance ID</th><th>Severity</th><th>Proposed Repair Action</th></tr>
+<tr><td>900.001</td><td>Patching operation in progress</td><td>host=controller</td><td>m</td><td>Complete reboots of affected hosts.</td></tr>
+<tr>
+<td>900.002</td><td>Obsolete patch in system</td><td>host=controller</td><td>W</td><td>Remove and delete obsolete patches.</td></tr>
+<tr>
+<td>900.003</td><td>Patch host install failure</td><td>host=&lt;<var class="keyword varname">hostname</var>&gt;</td><td>M</td><td>Undo patching operation.</td>
+</tr>
+</table>
 
-The `system alarm-show` command system alarm-show presents additional information about a currently active alarm.
+### Virtual Machine Instance Alarms {#virtual}
+            
+            <table summary="" id="psa1413927942547__simpletable_qbs_njg_vp" class="simpletable wide" border="1" cellpadding="4" cellspacing="0"><tbody><tr class="sthead">
+                    <th id="d54607e1823" class="stentry" valign="bottom" width="9.677419354838712%" align="left">
+                        <p class="p">Alarm ID</p>
 
-	system alarm-show 4ab5698a-19cb-4c17-bd63-302173fef62c
+                    </th>
 
-The pair of attributes (alarm_id, entity_instance_id) uniquely identifies an active alarm:
+                    <th id="d54607e1829" class="stentry" valign="bottom" width="24.19354838709678%" align="left">
+                        <p class="p">Reason Text</p>
 
-* `alarm_id` - An ID identifying the particular alarm condition. Note that there are some alarm conditions, such as administratively locked , that can be raised by more than one entity-instance-id.
+                    </th>
 
-* `entity_instance_id` - Type and instance information of the object raising the alarm. A period-separated list of (key, value) pairs, representing the containment structure of the overall entity instance.  This structure is used for processing hierarchical clearing of alarms.
+                    <th id="d54607e1835" class="stentry" valign="bottom" width="24.19354838709678%" align="left">
+                        <p class="p">Entity Instance ID</p>
 
-* `system alarm-delete` - The command system alarm-delete is used to manually delete an alarm that remains active for no apparent reason, which may happen in rare conditions. Alarms usually clear automatically when the trigger condition is corrected. Use this command as illustrated below:
+                    </th>
 
-		system alarm-delete 4ab5698a-19cb-4c17-bd63-302173fef62c
+                    <th id="d54607e1841" class="stentry" valign="bottom" width="9.677419354838712%" align="left">
+                        <p class="p">Severity</p>
 
-	Manually deleting an alarm should not be done unless it is absolutely clear that there is no reason for the alarm to be active.
+                    </th>
 
-* `system alarm-history-list` - The command system alarm-history-list is used to query the historical alarm table. It operates on an alarm ring buffer of up to 2000 entries used by the alarms subsystem to sequentially store active alarm change events.
+                    <th id="d54607e1847" class="stentry" valign="bottom" width="32.25806451612904%" align="left">
+                        <p class="p">Proposed Repair Action</p>
 
-	In its simplest form, without any parameters, the command returns a list of the 20 most recent change events in reverse chronological order, the most recent event first. Use the -l option to specify the size of the list. 
+                    </th>
 
-	The following command lists the 30 more recent change events:
+                </tr>
+<tr class="strow">
+                    <td headers="d54607e1823" class="stentry" valign="top">
+                        <p class="p">700.001</p>
 
-		system alarm-history-list -l 30
+                    </td>
 
-	The console output is automatically paginated when the list size is greater than 20. Press the **Enter** key to go the next page, or press `q` to quit.
+                    <td headers="d54607e1829" class="stentry" valign="top">
+                        <p class="p">Instance has encountered a non-recoverable error</p>
 
-	Specific alarms, or alarm subsets, in the ring buffer can be listed using the --query command filters accepted by the `system alarms-list` command. For example, use the following command to query alarm events in the ring buffer by type ID:
+                    </td>
 
-		system alarm-history-list --query alarm_id=100.104
+                    <td headers="d54607e1835" class="stentry" valign="top">
+                        <p class="p">instance=&lt;<var class="keyword varname">instance_uuid</var>&gt;</p>
 
-Two additional command filters are available to restrict the command output to change events in a particular time slot, as follows:
+                    </td>
 
-* `start=<time_stamp>` - Query change events that occurred at or after a particular time, for example: 
+                    <td headers="d54607e1841" class="stentry" valign="top">
+                        <p class="p">C</p>
 
-		system alarm-history-list --query \
-		start=2014-11-26T18:58:53
+                    </td>
 
-* `end=<time_stamp>` - Query change events that occurred at or before a particular time, for example:
+                    <td headers="d54607e1847" class="stentry" valign="top">
+                        <p class="p">The system will automatically attempt to re-start the
+                            instance at regular intervals. No repair action required.</p>
 
-		system alarm-history-list --query \
-		end=2014-11-26T18:59:53
+                    </td>
 
-**Note:** Time stamps must be entered in a suitable ISO 8601 date and time format. Some examples are: 2014, 2014-11-26, 2014-11-28T16:39, and 2014-11-28T16:42:35.647157.
+                </tr>
+<tr class="strow">
+                    <td headers="d54607e1823" class="stentry" valign="top">
+                        <p class="p">700.002</p>
 
-Query command filters can be combined into a single expression separated by semicolons, as illustrated in the following example:
+                    </td>
 
-	system alarm-history-list -l 10 \
-	-q 'start=2014-11-26T18:58:53;end=2014-11-26T18:59:53'
+                    <td headers="d54607e1829" class="stentry" valign="top">
+                        <p class="p">Instance is stopped or shutoff</p>
+
+                    </td>
+
+                    <td headers="d54607e1835" class="stentry" valign="top">
+                        <p class="p">instance=&lt;<var class="keyword varname">instance_uuid</var>&gt;</p>
+
+                    </td>
+
+                    <td headers="d54607e1841" class="stentry" valign="top">
+                        <p class="p">C</p>
+
+                    </td>
+
+                    <td headers="d54607e1847" class="stentry" valign="top">
+                        <p class="p">Restart the instance (<span class="keyword cmdname">nova start
+                                    &lt;instance&gt;</span>)</p>
+
+                    </td>
+
+                </tr>
+<tr class="strow">
+                    <td headers="d54607e1823" class="stentry" valign="top">
+                        <p class="p">700.003</p>
+
+                    </td>
+
+                    <td headers="d54607e1829" class="stentry" valign="top">
+                        <p class="p">Instance is rebooting</p>
+
+                    </td>
+
+                    <td headers="d54607e1835" class="stentry" valign="top">
+                        <p class="p">instance=&lt;<var class="keyword varname">instance_uuid</var>&gt;</p>
+
+                    </td>
+
+                    <td headers="d54607e1841" class="stentry" valign="top">
+                        <p class="p">C</p>
+
+                    </td>
+
+                    <td headers="d54607e1847" class="stentry" valign="top">
+                        <p class="p">Wait for reboot completion. If problem persists contact next level of support.</p>
+
+                    </td>
+
+                </tr>
+<tr class="strow">
+                    <td headers="d54607e1823" class="stentry" valign="top">
+                        <p class="p">700.004</p>
+
+                    </td>
+
+                    <td headers="d54607e1829" class="stentry" valign="top">
+                        <p class="p">Instance is paused</p>
+
+                    </td>
+
+                    <td headers="d54607e1835" class="stentry" valign="top">
+                        <p class="p">instance=&lt;<var class="keyword varname">instance_uuid</var>&gt;</p>
+
+                    </td>
+
+                    <td headers="d54607e1841" class="stentry" valign="top">
+                        <p class="p">C</p>
+
+                    </td>
+
+                    <td headers="d54607e1847" class="stentry" valign="top">
+                        <p class="p">Unpause the instance (<span class="keyword cmdname">nova unpause
+                                &lt;instance&gt;</span>)</p>
+
+                    </td>
+
+                </tr>
+<tr class="strow">
+                    <td headers="d54607e1823" class="stentry" valign="top">
+                        <p class="p">700.005</p>
+
+                    </td>
+
+                    <td headers="d54607e1829" class="stentry" valign="top">
+                        <p class="p">Instance is suspended</p>
+
+                    </td>
+
+                    <td headers="d54607e1835" class="stentry" valign="top">
+                        <p class="p">instance=&lt;<var class="keyword varname">instance_uuid</var>&gt;</p>
+
+                    </td>
+
+                    <td headers="d54607e1841" class="stentry" valign="top">
+                        <p class="p">C</p>
+
+                    </td>
+
+                    <td headers="d54607e1847" class="stentry" valign="top">
+                        <p class="p">Resume the instance (<span class="keyword cmdname">nova
+                                resume &lt;instance&gt;</span>)</p>
+
+                    </td>
+
+                </tr>
+<tr class="strow">
+                    <td headers="d54607e1823" class="stentry" valign="top">
+                        <p class="p">700.006</p>
+
+                    </td>
+
+                    <td headers="d54607e1829" class="stentry" valign="top">
+                        <p class="p">Instance is evacuating or rebuilding</p>
+
+                    </td>
+
+                    <td headers="d54607e1835" class="stentry" valign="top">
+                        <p class="p">instance=&lt;<var class="keyword varname">instance_uuid</var>&gt;</p>
+
+                    </td>
+
+                    <td headers="d54607e1841" class="stentry" valign="top">
+                        <p class="p">C</p>
+
+                    </td>
+
+                    <td headers="d54607e1847" class="stentry" valign="top">
+                        <p class="p">Wait for evacuate completion. Check health of compute
+                            nodes and network. If problem persists contact next level of
+                            support.</p>
+
+                    </td>
+
+                </tr>
+<tr class="strow">
+                    <td headers="d54607e1823" class="stentry" valign="top">
+                        <p class="p">700.007</p>
+
+                    </td>
+
+                    <td headers="d54607e1829" class="stentry" valign="top">
+                        <p class="p">Instance is live migrating</p>
+
+                    </td>
+
+                    <td headers="d54607e1835" class="stentry" valign="top">
+                        <p class="p">instance=&lt;<var class="keyword varname">instance_uuid</var>&gt;</p>
+
+                    </td>
+
+                    <td headers="d54607e1841" class="stentry" valign="top">
+                        <p class="p">W</p>
+
+                    </td>
+
+                    <td headers="d54607e1847" class="stentry" valign="top">
+                        <p class="p">Wait for live migration completion. If problem persists contact next level of support.</p>
+
+                    </td>
+
+                </tr>
+<tr class="strow">
+                    <td headers="d54607e1823" class="stentry" valign="top">
+                        <p class="p">700.008</p>
+
+                    </td>
+
+                    <td headers="d54607e1829" class="stentry" valign="top">
+                        <p class="p">Instance is cold migrating or resizing</p>
+
+                    </td>
+
+                    <td headers="d54607e1835" class="stentry" valign="top">
+                        <p class="p">instance=&lt;<var class="keyword varname">instance_uuid</var>&gt;</p>
+
+                    </td>
+
+                    <td headers="d54607e1841" class="stentry" valign="top">
+                        <p class="p">C</p>
+
+                    </td>
+
+                    <td headers="d54607e1847" class="stentry" valign="top">
+                        <p class="p">Wait for cold migration or resize completion. If
+                                (<span class="keyword cmdname">nova show &lt;instance&gt;</span>) reports a STATUS of
+                            VERIFY_RESIZE, then a resize confirmation is required (<span class="keyword cmdname">nova
+                                resize-confirm &lt;instance&gt;</span>). If problem persists
+                            contact next level of support.</p>
+
+                    </td>
+
+                </tr>
+</tbody></table>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
