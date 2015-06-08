@@ -47,6 +47,7 @@ For more information, see the following topics:
 * [Adding an SNMP Community String](/helion/openstack/carrier/admin/alarms/community/strings/)
 * [Configuring SNMP Trap Destinations](/helion/openstack/carrier/admin/alarms/snmp/traps/)
 * [Using System Alarms CLI Commands](/helion/openstack/carrier/admin/alarms/cli/commands/)
+* [Alarm Reference Table](/helion/openstack/carrier/admin/alarms/ref/table/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
