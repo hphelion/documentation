@@ -137,12 +137,13 @@ to:
 <li> Create a new file called <code>manifest.yml</code> in the same directory as your solution file, with the following contents. This is the application manifest file, which the deployment tool will use to determine what to do with the application.
 		
 <pre>
+---
 applications:
-    name: ContosoUniversity
-    mem: 512M
-    services:
+  -name: ContosoUniversity
+  mem: 512M
+  services:
     ${name}-db:
-    type: mssql2014
+      type: mssql2014
 </pre>
 </li>
 <li> Use the <a href="http://docs.hpcloud.com/helion/devplatform/1.2/windows/tools_guide/#helion">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
