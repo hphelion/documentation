@@ -53,7 +53,7 @@ On a compute node, the state transition only succeeds if all currently running i
 
 1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Clicking **Inventory** on the **System Panel** section of the **Admin** menu, and then selecting the **Hosts** tab. 
+2. Click **Inventory** on the **System Panel** section of the **Admin** menu, and then selecting the **Hosts** tab. 
 
 3. In the **Hosts** list, for the system to lock, select Lock Host from the **More** menu.
 

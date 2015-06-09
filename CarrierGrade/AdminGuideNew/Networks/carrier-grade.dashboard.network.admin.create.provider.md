@@ -45,6 +45,7 @@ An admin user can [create](#createnet) and [delete](#deletenet) provider network
 4. On the **Network** tab enter a name for the network.
 
 5. Select which project the network is to be available in. 
+
 6. Select the provider network type:
 
 	* Local. No additional configuration required.
