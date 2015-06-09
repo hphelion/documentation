@@ -46,7 +46,7 @@ This topic contains the following:
 * [About SNMP Support](#about)
 * [SNMPv2-MIB (RFC 3418)](#snmpv2)
 * [Enterprise MIBs](#enterprise)
-* [Viewing alarms](viewing)
+* [Viewing alarms](#viewing)
 * [Enabling SNMP Support](#enabling)
 
 ## About SNMP Support {#about}
@@ -129,7 +129,7 @@ textual conventions, an active alarm table, a historical alarm table, and traps.
 		* ServiceAffecting
 		* SuppressionAllowed
 
-## Viewing alarms {viewing}
+## Viewing alarms {#viewing}
 
 On the web interface, click the Fault Management menu on the
 Admin tab, and then select the Active Alarms tab.
@@ -165,7 +165,7 @@ line interface on the active controller to:
 
 1. Define at least one SNMP community string. See [Adding an SNMP Community String](/helion/openstack/carrier/admin/alarms/community/strings/).
 2. Configure at least one SNMP trap destination so that alarms can be
-reported as they happen. See [Configuring SNMP Trap Destinations](/helion/openstack/carrier/admin/alarms/snmp/trap/).
+reported as they happen. See [Configuring SNMP Trap Destinations](/helion/openstack/carrier/admin/alarms/snmp/traps/).
 
 
 

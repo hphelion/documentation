@@ -50,7 +50,7 @@ HP Helion OpenStack also supports HP StoreServ 3PAR as a Cinder backend.
 
 To perform tasks using the Volume Operations service, you can use the dashboard, API or CLI.
 
-* [Working with HP StoreVirtual VSA](/helion/openstack/carrier/install/vsa/)
+* [Working with HP StoreVirtual VSA](/helion/openstack/carrier/install/vsa/overview/)
 <!--
 * [Working with HP 3PAR StoreServ](/helion/openstack/carrier/install/3par/)
 -->
