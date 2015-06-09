@@ -36,7 +36,7 @@ This tutorial requires the following software components:
 ## Deploy the sample application from Visual Studio
 
 <ol>
-<li>Open <code>&lt;sample directory&gt;/C$/ContosoUniversity.sln</code> in Visual Studio.</li> 
+<li>Open <code>&lt;sample directory&gt;/C#/ContosoUniversity.sln</code> in Visual Studio.</li> 
 <li>Install the <strong>Cloud Foundry MSBuild Tasks</strong> following these directions here: <a href="/helion/devplatform/1.2/windows/tools_guide#msbuild" target="blank">Windows and .NET Tools Guide: Cloud Foundry Explorer</a>
 <li>In Visual Studio, open <code>web.config</code>.</li>
 <li>Change the following configuration line (this will pull the connection string parameters from environment variables, rather than using hardcoded values):
@@ -146,7 +146,7 @@ applications:
 </pre>
 </li>
 <li> Use the <a href="http://docs.hpcloud.com/helion/devplatform/1.2/windows/tools_guide/#helion">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
-<pre>helion target &lt;cluster URL>
+<pre>helion target <cluster URL>
 helion login
 helion push --stack win2012r2 -n
 </pre>
