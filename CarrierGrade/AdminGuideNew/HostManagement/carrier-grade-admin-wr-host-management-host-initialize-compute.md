@@ -78,7 +78,7 @@ To install and configure a compute node:
 5. Optional: Select the display device to use during initialization.
 The personality (Controller, Compute, or Storage) is confirmed in the menu. If you do not change the selection, the default is applied automatically after a few seconds.
 
-	* Serial <personality> Node Install (default) - Use the serial port to display messages. You can monitor the port using the terminal server.
+	* Serial &lt;personality> Node Install (default) - Use the serial port to display messages. You can monitor the port using the terminal server.
 	* Graphics <personality> Node Install - Use the console port in graphics mode to display messages. This selection works with most console displays.
 	* Graphics Text <personality> Node Install - Use the console port in text mode to display messages. This is a safe option for nodes that do not support graphics mode.
 
