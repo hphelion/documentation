@@ -43,7 +43,7 @@ You should prepare a set of selected values and features ready to use which are 
 This section contains the following information:
 
 * [Working with Ethernet Interfaces](/helion/openstack/carrier/config/plan/ethernet/)
-* [Network Planning
+* [Planning the Network](/helion/openstack/carrier/config/plan/network/)
 * [Storage Planning
 * [Using VXLANs
 
