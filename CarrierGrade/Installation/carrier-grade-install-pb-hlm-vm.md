@@ -279,7 +279,7 @@ After the script is run, the `Current One-Time Boot Option` is set to `Network D
 
 1. Use the following script to start the provisioning of the HLM VM:
 
-	hprovision <cloudname>
+	hprovision `<cloudname>`
 
 	Where:
 	* cloudname is the name of the cloud to create
@@ -288,7 +288,7 @@ After the script is run, the `Current One-Time Boot Option` is set to `Network D
 
 2. Update the `node-provision.json` files used in the previous step.
 
-	a. Change to the <cloudname> directory:
+	a. Change to the `<cloudname>` directory:
 
 		cd ~/<cloudname>
 
