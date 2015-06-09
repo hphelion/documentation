@@ -288,9 +288,9 @@ After the script is run, the `Current One-Time Boot Option` is set to `Network D
 
 2. Update the `node-provision.json` files used in the previous step.
 
-	a. Change to the <cloudname> directory:
+	a. Change to the `<cloudname>` directory:
 
-		`cd ~/<cloudname>`
+		cd ~/<cloudname>
 
 	b. Verify that the each PXE-booted nodes has an IP address that matches the IP address specified in the `node-provision.json` file.
 
