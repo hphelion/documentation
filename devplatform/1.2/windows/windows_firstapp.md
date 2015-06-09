@@ -146,7 +146,7 @@ applications:
 </pre>
 </li>
 <li> Use the <a href="http://docs.hpcloud.com/helion/devplatform/1.2/windows/tools_guide/#helion">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
-<pre> helion target &lt;cluster URL>
+<pre>helion target &lt;cluster URL>
 helion login
 helion push --stack win2012r2 -n
 </pre>
