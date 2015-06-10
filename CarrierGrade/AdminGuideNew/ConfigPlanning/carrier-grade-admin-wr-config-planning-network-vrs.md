@@ -75,8 +75,7 @@ Before you can create interfaces to tenant networks, you must [create the tenant
 For more information about tenant networks and subnets, see [Planning the Tenant Management Networks](/helion/openstack/carrier/configuration/plan/network/tenant/) and [Managed and Unmanaged Subnets](/helion/openstack/carrier/configuration/plan/network/subnets/).
 
 
-
-## Virtual Router Administration {#admin}
+## Administering Virtual Routers {#admin}
 
 Users with administrative privileges can review and edit router information for all tenants.
 

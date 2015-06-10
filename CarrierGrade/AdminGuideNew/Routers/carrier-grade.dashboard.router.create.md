@@ -45,7 +45,7 @@ When you create a new router, the router does not have any internal interface an
 	
 	For more information about types of routers, see [Planning for Virtual Routers](/helion/openstack/carrier/config/plan/network/).
 
-	Note: The **Router Type** field is shown only for the admin user. For other tenants, a centralized router is added.The admin user can change this setting on behalf of another tenant after the router has been added (see [Virtual Router Administration](/helion/openstack/carrier/configuration/plan/network/#admin).
+	Note: The **Router Type** field is shown only for the admin user. For other tenants, a centralized router is added.The admin user can change this setting on behalf of another tenant after the router has been added. For more information, see [Administering Virtual Routers](/helion/openstack/carrier/configuration/plan/network/vrs/#admin).
 
 5. Click **Create Router**.  
 
