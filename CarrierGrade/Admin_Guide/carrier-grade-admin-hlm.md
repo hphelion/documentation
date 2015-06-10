@@ -32,66 +32,66 @@ Using HLM, you can install and upgrade HP Helion OpenStack Carrier Grade and can
 
 ## Provisioning
 
-* Provision <Type> Node
-* Deprovision <Type> Node
-* Prepare SAN Storage to boot <Type> Node
-* Prepare additional SAN Storage for <Type> Node
-* Prepare additional local storage for <Type> Node
-* Prepare Bonded NIC for <Type> Node
-* Provision virtual <Type> Node on physical <Type> Node
-* Deprovision virtual <Type> Node on physical <Type> Node
-* Determine NIC port enumeration map for <Type> Node
-* Determine Storage map for <Type> Node
+* Provision &lt;Type> Node
+* Deprovision &lt;Type> Node
+* Prepare SAN Storage to boot &lt;Type> Node
+* Prepare additional SAN Storage for &lt;Type> Node
+* Prepare additional local storage for &lt;Type> Node
+* Prepare Bonded NIC for &lt;Type> Node
+* Provision virtual &lt;Type> Node on physical &lt;Type> Node
+* Deprovision virtual &lt;Type> Node on physical &lt;Type> Node
+* Determine NIC port enumeration map for &lt;Type> Node
+* Determine Storage map for &lt;Type> Node
 
 
 ## Deployment
 
-* Build <Type> Control Plane - Service Tier <ID>
-* Destroy <Type> Control Plane - Service Tier <ID>
-* Build <Type> Resource Cluster
-* Destroy <Type> Resource Cluster
-* Add Member to <Type> Control Plane - Service Tier <ID>
-* Remove Member from <Type> Control Plane - Service Tier <ID>
-* Add <Type> Resource Single Node to <Type> Control Plane
-* Remove <Type> Resource Single Node from <Type> Control Plane
-* Add <Type> Resource Cluster to <Type> Control Plane
-* Remove <Type> Resource Cluster from <Type> Control Plane
+* Build &lt;Type> Control Plane - Service Tier &lt;ID>
+* Destroy &lt;Type> Control Plane - Service Tier &lt;ID>
+* Build &lt;Type> Resource Cluster
+* Destroy &lt;Type> Resource Cluster
+* Add Member to &lt;Type> Control Plane - Service Tier &lt;ID>
+* Remove Member from &lt;Type> Control Plane - Service Tier &lt;ID>
+* Add &lt;Type> Resource Single Node to &lt;Type> Control Plane
+* Remove &lt;Type> Resource Single Node from &lt;Type> Control Plane
+* Add &lt;Type> Resource Cluster to &lt;Type> Control Plane
+* Remove &lt;Type> Resource Cluster from &lt;Type> Control Plane
 
 ## Maintenance
 
-* Modify <Type> Control Plane Options
-* Offline Member <ID> of <Type> Control Plane - Service Tier <ID>
-* Online Member <ID> of <Type> Control Plane - Service Tier <ID>
-* Offline <Type> Resource Single <ID>
-* Online <Type> Resource Single <ID>
-* Offline <Type> Resource Cluster <ID>
-* Online <Type> Resource Cluster <ID>
-* Audit <Type> Resource Node compliance
+* Modify &lt;Type> Control Plane Options
+* Offline Member &lt;ID> of &lt;Type> Control Plane - Service Tier &lt;ID>
+* Online Member &lt;ID> of &lt;Type> Control Plane - Service Tier &lt;ID>
+* Offline &lt;Type> Resource Single &lt;ID>
+* Online &lt;Type> Resource Single &lt;ID>
+* Offline &lt;Type> Resource Cluster &lt;ID>
+* Online &lt;Type> Resource Cluster &lt;ID>
+* Audit &lt;Type> Resource Node compliance
 
 ## Recovery
 
-* Backup data from <Type> Control Plane
-* Restore data to a <Type> Control Plane
-* Rebuild <Type> Control Plane - Service Tier <ID>
-* Rebuild <Type> Resource Cluster
-* Rebuild <Type> Cloud Instance <ID>
+* Backup data from &lt;Type> Control Plane
+* Restore data to a &lt;Type> Control Plane
+* Rebuild &lt;Type> Control Plane - Service Tier &lt;ID>
+* Rebuild &lt;Type> Resource Cluster
+* Rebuild &lt;Type> Cloud Instance &lt;ID>
 
 ## Migration
 
-* Offline Migration of <Type> Control Plane:  <Type> Service Cluster from Service Tier <ID> to Service Tier <ID>
-* Rolling Migration of <Type> Control Plane:  <Type> Service Cluster from Service Tier <ID> to Service Tier <ID>
-* Offline Migration of <Type> Control Plane:  <Type> Service Single from Service Tier <ID> to Service Tier <ID>
+* Offline Migration of &lt;Type> Control Plane:  &lt;Type> Service Cluster from Service Tier &lt;ID> to Service Tier &lt;ID>
+* Rolling Migration of &lt;Type> Control Plane:  &lt;Type> Service Cluster from Service Tier &lt;ID> to Service Tier &lt;ID>
+* Offline Migration of &lt;Type> Control Plane:  &lt;Type> Service Single from Service Tier &lt;ID> to Service Tier &lt;ID>
 
 ## Update/Upgrade
-* Rolling Hot-fix to <Type> Control Plane
-* Rolling Hot-fix to <Type> Resource Single
-* Rolling Hot-fix to <Type> Resource Cluster
-* Rolling Update to <Type> Control Plane
-* Rolling Update to <Type> Resource Single
-* Rolling Update to <Type> Resource Cluster
-* Rolling Upgrade to <Type> Control Plane
-* Rolling Upgrade to <Type> Resource Single
-* Rolling Upgrade to <Type> Resource Cluster
+* Rolling Hot-fix to &lt;Type> Control Plane
+* Rolling Hot-fix to &lt;Type> Resource Single
+* Rolling Hot-fix to &lt;Type> Resource Cluster
+* Rolling Update to &lt;Type> Control Plane
+* Rolling Update to &lt;Type> Resource Single
+* Rolling Update to &lt;Type> Resource Cluster
+* Rolling Upgrade to &lt;Type> Control Plane
+* Rolling Upgrade to &lt;Type> Resource Single
+* Rolling Upgrade to &lt;Type> Resource Cluster
 
 
 <!-- Taken from https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/HLM+Command+Line+Interface
