@@ -1002,7 +1002,7 @@ None
 
 The following HTTP headers must be specified.
 
-* *X-Auth-User* - containing the <tenantId:username> for a scoped token for Swift
+* *X-Auth-User* - containing the &lt;tenantId:username> for a scoped token for Swift
 * *X-Auth-Key* - containing the password for the given user
 
 **Success Response**
