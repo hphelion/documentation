@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Specifying the VCPU Model for a VM"
-permalink: /helion/commercial/carrier/dashboard/managing/flavors/vcpu/
+permalink: /helion/commercial/carrier/dashboard/managing/flavors/extra/vcpu/
 product: carrier-grade
 
 ---
