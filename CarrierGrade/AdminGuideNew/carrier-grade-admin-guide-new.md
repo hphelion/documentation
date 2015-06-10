@@ -79,7 +79,7 @@ The following tasks involve the Networking Operations (Nova) service to create a
 * [Viewing the Topology](/helion/commercial/carrier/dashboard/managing/network/viewing/)
 * [Working with Networks](/helion/commercial/carrier/dashboard/managing/networks/)
 	* [Create or delete a tenant network](/helion/commercial/carrier/dashboard/managing/network/create/)
-	* [Enable or disable a tenant network](/helion/commercial/carrier/dashboard/managing/network/enable/)
+	* [Enable or disable a tenant network](/helion/commercial/carrier/dashboard/managing/network/enable/tenant/)
 	* [Creating and Deleting provider networks](/helion/commercial/carrier/dashboard/managing/network/provider/create/)
 	* [Enable or disable a provider network](/helion/commercial/carrier/dashboard/managing/network/external/create/)
 	* [Create, Modify, or Delete a port on a Network](/helion/commercial/carrier/dashboard/managing/network/ports/)

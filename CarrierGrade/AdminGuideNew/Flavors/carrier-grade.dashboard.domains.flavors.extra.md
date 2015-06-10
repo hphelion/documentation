@@ -90,7 +90,16 @@ To edit a flavor:
 
 A message is displayed on successful edit.
 
+You can also specify the extra spec from the CLI using the following command:
+
+	nova flavor-key flavor_name set hw:cpu_model=cpu_model
+
+	where cpu_model is one of Nehalem, Westmere, SandyBridge, or Haswell. If the hw:cpu_model parameter is not supplied with the nova flavor-key command, then the default QEMU model is used.
+
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
 
 
 ### Managing Metadata {#editmeta}

@@ -62,7 +62,7 @@ As an admin user or non-admin user, you can use the **Compute** panel on the **P
 
 As an admin user, you can work on all of the instance(s) in your domain, regardless of which project the instance is associated with.
 
-* [Migrate or Live Migrate and instance](/helion/commercial/carrier/dashboard/managing/instances/migrate/)
+* [Migrate or Live Migrate and instance](/helion/commercial/carrier/dashboard/managing/instances/migrate/live/)
 * [Cold Migrate an Instance](/helion/commercial/carrier/dashboard/managing/instances/migrate/cold/)
 
 

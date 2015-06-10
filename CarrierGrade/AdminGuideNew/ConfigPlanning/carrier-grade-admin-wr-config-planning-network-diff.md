@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Planning for Security Groups"
-permalink: /helion/openstack/carrier/configuration/plan/network/guest/sec-groups/
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Planning for DiffServ-Based Priority Queuing and Scheduling"
+permalink: /helion/openstack/carrier/configuration/plan/network/guest/diff/
 product: carrier-grade
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1

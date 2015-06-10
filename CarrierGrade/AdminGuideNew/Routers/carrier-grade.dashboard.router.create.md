@@ -43,7 +43,7 @@ When you create a new router, the router does not have any internal interface an
 	* **Centralized** - Add a centralized virtual router.
 	* **Distributed** - Add a distributed virtual router (DVR).
 	
-	For more information about types of routers, see [Planning for Virtual Routers](/helion/openstack/carrier/configuration/plan/network/).
+	For more information about types of routers, see [Planning for Virtual Routers](/helion/openstack/carrier/config/plan/network/).
 
 	Note: The **Router Type** field is shown only for the admin user. For other tenants, a centralized router is added.The admin user can change this setting on behalf of another tenant after the router has been added (see [Virtual Router Administration](/helion/openstack/carrier/configuration/plan/network/#admin).
 

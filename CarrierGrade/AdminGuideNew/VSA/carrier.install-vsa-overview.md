@@ -24,7 +24,7 @@ PageRefresh();
 
 
 <p style="font-size: small;">
-<a href="/helion/openstack/carrier/install/vsa/">Installing HP StoreVirtual VSA &#9654;</a>
+<a href="/helion/openstack/carrier/install/vsa/cluster/">Installing HP StoreVirtual VSA &#9654;</a>
 </p> 
 
 
@@ -98,7 +98,7 @@ The following diagram gives an overview of the steps involved in deploying, conf
 
 ## Next Step {#next-steps}
 
-[Installing HP StoreVirtual VSA](/helion/openstack/carrier/install/vsa/)
+[Installing HP StoreVirtual VSA](/helion/openstack/carrier/install/vsa/cluster/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

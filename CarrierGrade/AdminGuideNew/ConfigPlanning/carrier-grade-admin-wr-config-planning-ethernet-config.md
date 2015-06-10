@@ -90,7 +90,7 @@ connecting their virtual Ethernet interfaces, see the HP Helion OpenStack Carrie
 
 You can also connect a VM directly to a physical interface using PCI passthrough or or SR-IOV. 
 
-See [PCI Passthrough Ethernet Interfaces](/helion/openstack/carrier/configuration/plan/pci/passthrough/) and [SR-IOV Ethernet Interfaces](/helion/openstack/carrier/configuration/plan/sr-iov/).
+See [PCI Passthrough Ethernet Interfaces](/helion/openstack/carrier/configuration/plan/pci/passthru/) and [SR-IOV Ethernet Interfaces](/helion/openstack/carrier/configuration/plan/sr-iov/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

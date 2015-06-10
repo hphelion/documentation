@@ -32,7 +32,7 @@ PageRefresh();
 
 </script>
 
-<a href="/helion/openstack/carrier/install/vsa/">Deploy and Configure HP StoreVirtual VSA &#9654;</a></p> 
+<a href="/helion/openstack/carrier/install/vsa/cluster/">Deploy and Configure HP StoreVirtual VSA &#9654;</a></p> 
 
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Cinder Block Storage Using HP StoreVirtual VSA 
 
@@ -171,7 +171,7 @@ The sizing of the StoreVirtual VSA Management Groups, Clusters and Instances is 
 
 ## Next Step {#next-steps}
 
-- [Deploy and Configure HP StoreVirtual VSA](/helion/openstack/carrier/install/vsa/)
+- [Deploy and Configure HP StoreVirtual VSA](/helion/openstack/carrier/install/vsa/cluster/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
