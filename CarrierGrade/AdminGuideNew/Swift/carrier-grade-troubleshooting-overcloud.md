@@ -49,7 +49,7 @@ Follow this manual procedure for deleting nodes from check&#95;mk and icinga con
 		
 		check_mk --flush <node IP> 
 
-	where <node IP> is the IP address of the node to be deleted. 
+	where &lt;node IP> is the IP address of the node to be deleted. 
 
 2. Run the following command to remove the node's host file:
 

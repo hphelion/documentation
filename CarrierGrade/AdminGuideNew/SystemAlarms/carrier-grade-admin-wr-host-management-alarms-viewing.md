@@ -77,19 +77,19 @@ The following system attributes are used in support of the SNMP implementation. 
 
 		system modify contact=<contact>
 
-	where <site-contact> is a descriptive string containing the contact information of those who should be be notified of an alarm, for example: admin <admin@email>
+	where &lt;site-contact> is a descriptive string containing the contact information of those who should be be notified of an alarm, for example: admin <admin@email>
 
 * **location** - A read-write system attribute used to populate the sysLocation attribute of the SNMP System group. The location value can be set with the following command:
 
 		system modify location=<location>
 
-	where <location> is a descriptive string containing for the name of the device being monitored.
+	where &lt;location> is a descriptive string containing for the name of the device being monitored.
 
 * **name** - A read-write system attribute used to populate the sysName attribute of the SNMP System group. The name value can be set with the following command:
 
 		system modify name=<name>
 
-	where <name> is the fully-qualified domain name (FQDN) of the device being monitored.
+	where &lt;name> is the fully-qualified domain name (FQDN) of the device being monitored.
 
 * **software_version** - A read-only system attribute set automatically by the system. Its value is used to populate the sysDescr attribute of the SNMP System group.
 

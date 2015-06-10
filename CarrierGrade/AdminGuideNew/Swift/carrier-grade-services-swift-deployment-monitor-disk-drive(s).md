@@ -89,7 +89,7 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
     <td>The hpssacli utility is not installed. To install see <a href="/helion/openstack/carrier/services/swift/diagnosis-disk-health/hpssacli/"> hpssacli utility for HP servers.</a> </td></tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>
-	<td>&lt;Failed Drive&gt; drive(s)  may be missing or in a failed state. <br />                         Found error in drive(s): <drive slot and location> </td>
+	<td>&lt;Failed Drive&gt; drive(s)  may be missing or in a failed state. <br />                         Found error in drive(s): &lt;drive slot and location> </td>
     <td>Verify a failure of drives and missing drives.</td>
 </table>
 
