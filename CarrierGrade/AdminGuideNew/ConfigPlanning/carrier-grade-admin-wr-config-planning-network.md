@@ -48,6 +48,15 @@ This section contains the following topics:
 * [Planning the OAM Management Network](/helion/openstack/carrier/configuration/plan/network/oam/)
 * [Planning the Provider Management Networks](/helion/openstack/carrier/configuration/plan/network/provider/)
 * [Planning the Tenant Management Networks](/helion/openstack/carrier/configuration/plan/network/tenant/)
+* [Planning for Virtual Routers](/helion/openstack/carrier/configuration/plan/network/vrs/)
+* [Planning for Subnets](/helion/openstack/carrier/configuration/plan/network/subnets/)
+* [Planning for Guest VLANs](/helion/openstack/carrier/configuration/plan/network/guest/vlan/)
+* [Planning for L2 Access Switches](/helion/openstack/carrier/configuration/plan/network/guest/l2/)
+* [Planning for DiffServ-Based Priority Queuing and Scheduling](/helion/openstack/carrier/configuration/plan/network/guest/diff/)
+* [Planning for Quality of Service](/helion/openstack/carrier/configuration/plan/network/guest/qos/)
+
+
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Adding and Removing Subnets"
-permalink: /helion/commercial/carrier/dashboard/managing/network/subnet/
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Creating QOS Policies"
+permalink: /helion/commercial/carrier/dashboard/managing/network/qos/
 product: carrier-grade
 
 ---
@@ -19,17 +19,23 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Adding and Removing Subnets
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Creating QOS Policies
 
-When a [network is created](/helion/commercial/carrier/dashboard/managing/network/create/), a subnet (short for *subnetwork*) can be assigned upon creation. However, you might need to add a subnet to a network at a later time.
+Quality of Service (QoS) policies specify relative packet processing priorities applied by the AVS switch on each compute node to incoming tenant network's traffic during overload conditions.
 
-A subnet is a logically visible subdivision of a network. A subnet enables you to group instances logically, while maintaining a single network address to connect to the Internet.
+<hr>
+**Note:** This feature applies to the Wind River Linux servers only.
+<hr>
 
-An admin user can create and delete subnets as needed. 
+The QoS polices play no role under normal traffic loads, when no input traffic queues in the AVS are close to their
+overflow limits.
 
-	**Note:** Before you delete a subnet, you must first [delete all ports](/helion/commercial/carrier/dashboard/managing/network/ports/) associated with the subnet.
+QoS policies are created by the cluster administrator, and selected by the tenant users to apply on a per-tenant network basis. 
 
-### Add a subnet
+An admin user can create and delete QOS policies as needed. 
+
+
+### Create a QOS policy
 
 1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
@@ -37,17 +43,21 @@ An admin user can create and delete subnets as needed.
 
 	The network(s) in the domain appear. 
 
-3. Click the name of the network you want to work with.
+3. On the **QOS Policies** tab, click the **Create QoS Policy** button:
 
-4. On the **Network Detail** page click **Create Subnet**.
+	a. Enter a name for the policy. 
 
-5. On the **Subnet** tab of the **Create Network** screen:
+	b. Enter a text description for the policy.
 
-	a. Enter the subnet name.
+	c. Enter a sceduler weight.
 
-	b. Enter a network address range for the subnet in CIDR (Classless Inter-Domain Routing) format in the **Network Address** field, for example: 192.168.0.0/24.
+	This is the relative weight the AVS traffic scheduler uses on overload conditions, as compared with the scheduler weight of all other QoS policies. See [About scheduler weight](#weight) below.
 
-	c. Select IPv4 or IPv6, as appropriate, in the IP Version field.
+	d. Select a project. 
+
+	The new QoS policy is available to only the selected project. If no pronect is selected, it is available to all projects in the cluster.
+
+	Project users can select available QoS policies when the tenant networks are created from the [Create Network](/helion/commercial/carrier/dashboard/managing/network/create/) window and the Edit Network window.
 
 	d. Enter a gateway IP address from the subnet or leave the **Gateway IP** field blank to use the default value for the gateway IP address; for example, 192.168.0.1 for 192.168.0.0/24.
 
@@ -67,23 +77,18 @@ An admin user can create and delete subnets as needed.
 
 8. Click **Create**.  
 
-### Delete a subnet ### {#deleteport}
+## About scheduler weight {#weight}
 
-Before you delete a subnet, you must first [delete all ports](/helion/commercial/carrier/dashboard/managing/network/ports/) associated with the subnet.
+Scheduler weight is the relative weight the AVS traffic scheduler uses on overload conditions, as compared with the scheduler weight of all other QoS policies.
 
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
+The scheduler weight is a positive integer number associated with each QoS policy. On overload, the AVS schedules traffic processing for each tenant network according to its assigned QoS policy. By default, with no specific QoS policies defined, traffic from all tenant networks is processed in round-robin mode, one tenant network after another. Effectively, the default behavior is similar to assigning a scheduler weight of 1 to all tenant networks.
 
-2. Click the **Networks** link on the **Admin** dashboard **System** panel.
+When a specific QoS policy with a scheduler weight greater than 1 is applied to a tenant network, its traffic is scheduled with a relative higher frequency. For example, if the scheduler weight for tenant network A is 10, and the one for tenant network B is 100, then on overload, tenant network B will see its queued traffic processed 10 times as often as tenant network A.
 
-3. The network(s) for the selected project appear. 
+The handling of the scheduler weight is implemented as a per-packet token bucket for each tenant network. This means that each unit in the scheduler weight counts as one packet to be processed in sequence. In the previous example, the AVS processes 10 consecutive packets from tenant network A, followed by 100 packets from tenant network B. This implementation ensures a fair-share behavior that prevents any tenant network from running into total bandwidth starvation, even if its scheduler weight is relatively low.
 
-4. Click the name of the network you want to work with.
+The range of values for the scheduler weight is arbitrary. You must however ensure that the values assigned to the different policies make sense for the intended applications.
 
-5. On the **Network Detail** page, for the subnet you want to delete, click **More &gt; Delete Subnet**.
-
-6. In the confirmation screen, click **Delete Subnet**.  
-
-	A message appears indicating if the subnet was deleted successfully.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

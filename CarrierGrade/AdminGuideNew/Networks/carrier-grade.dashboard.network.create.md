@@ -84,6 +84,26 @@ A non-admin user or admin user can <a href="#createnet">create</a> and <a href="
 
 5. <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
+### Create a network using the CLI {#cli}
+
+You can use CLI commands to add router interfaces. First, become the appropriate admin user:
+
+	source etc/nova/openrc
+
+Then use the neutron router-interface-add command to add interfaces. 
+
+For example:
+
+	neutron router-interface-add router_id subnet-id
+
+	where `router_id` is the name or UUID of the router, and `subnet_id` is the name or UUID of the subnet to which you want to attach an interface. By default, the interface is assigned the gateway address on the subnet.
+
+To add an interface to an external network:
+
+	neutron router-gateway-set router_id externalnet-id
+
+	where `router_id` is the name or UUID of the router, and `externalnet_id` is the name or UUID of a tenant network configured to provide external connections.
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 

@@ -53,6 +53,7 @@ Access the networking commands using the **System** panel on the **Admin** dashb
 * [Enable or disable a provider network](/helion/commercial/carrier/dashboard/managing/network/external/create/)
 * [Delete a provider network](/helion/commercial/carrier/dashboard/managing/network/external/delete/provider/)
 * [Create, Modify, or Delete a port on a Network](/helion/commercial/carrier/dashboard/managing/network/ports/)
+*  [Creating QOS Policies](/helion/commercial/carrier/dashboard/managing/network/qos/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

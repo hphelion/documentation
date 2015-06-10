@@ -49,6 +49,13 @@ You must remove all router interfaces before deleting the router, by removing al
 
 5. In the confirmation window, click **Delete Router**.
 
+
+You can use the CLI to delete a router:
+
+To delete a router:
+
+	neutron router-delete router_id
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 

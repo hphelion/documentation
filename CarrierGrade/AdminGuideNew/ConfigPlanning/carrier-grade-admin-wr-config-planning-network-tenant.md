@@ -33,33 +33,42 @@ PageRefresh();
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Planning the Tenant Networks
 <!-- From the Titanium Server Admin Guide -->
 
-Provider networks are the payload-carrying networks used implicitly by end users when they move traffic over their
-tenant networks.
+Tenant networks are logical networking entities visible to tenant users, and around which working network topologies are built.
 
 <hr>
 **Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
-You must consider the following guidelines:
+Tenant networks need support from the physical layers to work as intended. This means that the access L2 switches, providers' networks, and data interface definitions on the compute nodes, must all be properly configured. In particular, when using provider networks of the VLAN or VXLAN type, getting the proper configuration in place requires additional planning.
 
-* From the point of view of the tenants, all networking happens over the tenant networks created by them, or by the admin user on their behalf. Tenants are not necessarily aware of the available provider networks. In fact, they cannot create tenant networks over provider networks not already accessible to them. For this reason, the system administrator must ensure that proper communication mechanisms are in place for tenants to request access to
-specific provider networks when required.
+For provider networks of the VLAN type, consider the following guidelines:
 
-	For example, a tenant may be interested in creating a new tenant network with access to a specific network access device in the data center, such as an access point for a wireless transport. In this case, the system administrator must create a new tenant network on behalf of the tenant, using a VLAN ID in the provider network's segmentation range that provides connectivity to the said network access point.
+* All ports on the access L2 switches must be statically configured to support all the VLANs defined on the provider networks they provide access to. The dynamic nature of the cloud might force the set of VLANs in use by a particular L2 switch to change at any moment.
 
-* Consider how different offerings of bandwidth, throughput commitments, and class-of-service, can be used by your users. Having different provider network offerings available to your tenants enables end users to diversify their own portfolio of services. This in turn gives the HP Helion OpenStack Carrier Grade administration an opportunity to put different revenue models in place.
+* The set of VLANs used by each compute node is not fixed; it changes over time. The current VLAN set in use is determined by the configuration details of the tenant networks, and the scheduling on the compute nodes of the virtual machines that use them. This information is provided to the Neutron's AVS plugin, which then uses it to configure the AVS as required.
 
-* For the IPv4 address plan, consider the following:
+	When a tenant creates a new network, the Neutron segmentation allocation strategy is to look first for an available segmentation identifier owned by the tenant. If none is available, the search continues over the available shared segmentation identifiers. The allocation process returns an error if no segmentation identifiers are available.
 
-	* Tenant networks attached to a public network, such as the Internet, have to have external addresses assigned to them. Therefore you must plan for valid definitions of their IPv4 subnets and default gateways.
+	The VLAN ID assigned to a tenant network is fixed for as long as the tenant network is defined in the system. If for some reason the VLAN ID has to change, the tenant network must be deleted and recreated again.
 
-	* As with the OAM network, you must ensure that suitable firewall services are in place on any tenant network with a public address.
+* Configuring a tenant network to have access to external networks (not just providing local networking) requires the following elements:
 
-* Segmentation ranges defined on a provider network may be owned by the administrator, a specific tenant, or may be shared by all tenants. With this ownership model:
+	* A physical router, and the provider network's access L2 switch, must be part of the same Layer-2 network. Because this Layer 2 network uses a unique VLAN ID, this means also that the router's port used in the connection must be statically configured to support the corresponding VLAN ID.
+	* The router must be configured to be part of the same IP subnet that the tenant network is intending to use.
+	* When configuring the IP subnet, the tenant must use the router's port IP address as its external gateway.
+	* The tenant network must have the external flag set. Only the admin user can set this flag when the tenant network is created.
 
-	* A base deployment scenario has each compute node using a single data interface defined over a single provider network. In this scenario, all required tenant networks can be instantiated making use of the available VLANs or VNIs in each corresponding segmentation range. You may need more than one provider network when the underlying physical networks demand different MTU sizes, or when boundaries between provider networks are dictated by policy or other non-technical considerations.
+For provider networks of the VXLAN type, consider the following guidelines:
 
-	* Segmentation ranges can be reserved and assigned on-demand without having to lock and unlock the compute nodes. This facilitates day-to-day operations which can be performed without any disruption to the running environment.
+* Layer 3 routers used to interconnect compute nodes must be multicast-enabled, as required by the VXLAN protocol.
+
+* To minimize flooding of multicast packets, IGMP and MLD snooping is recommended on all Layer 2 switches. The AVS switch supports IGMP V1, V2 and V3, and MLD V1 and V2.
+
+* To support IGMP and MDL snooping, Layer 3 routers must be configured for IGMP and MDL querying.
+
+* To accommodate VXLAN encapsulation, the MTU values for Layer 2 switches and compute node data interfaces must allow for additional headers. For more information, see [Configuring Ethernet MTU](/helion/openstack/carrier/configuration/plan/ethernet/mtu/).
+
+* To participate in a VXLAN network, the data interfaces on the compute nodes must be configured with IP addresses, and with route table entries for the destination subnets or the local gateway. For more information, see Configuring Endpoint IP Addresses and Adding and Maintaining Routes for a VXLAN Network.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
