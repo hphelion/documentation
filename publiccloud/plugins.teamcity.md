@@ -47,7 +47,7 @@ In addition, note the following:
 To install the plugin:
 
 1. Shutdown the TeamCity server.
-2. Copy the zip archive with the plugin into the <TeamCity Data Directory>/plugins directory.
+2. Copy the zip archive with the plugin into the &lt;TeamCity Data Directory>/plugins directory.
 3. Start the TeamCity server: the plugin files will be unpacked and processed automatically. The plugin will be available in the Plugins List in the Administration area.
 
 ## Difference between HP and Amazon versions ##
@@ -75,13 +75,13 @@ To create a Cloud Image, install the TeamCity build agent, Java SDK and other De
 
 1. Run an instance from an image of your choice
 2. Add a floating IP to that instance
-3. Copy the following directories to the build agent folder on your instance:
-    <TEAMCITY-HOME>/buildAgent/bin
-    <TEAMCITY-HOME>/buildAgent/conf
-    <TEAMCITY-HOME>/buildAgent/launcher
-    <TEAMCITY-HOME>/buildAgent/lib
-    <TEAMCITY-HOME>/buildAgent/plugins
-    <TEAMCITY-HOME>/buildAgent/tools
+3. Copy the following directories to the build agent folder on your instance: <br />
+    &lt;TEAMCITY-HOME>/buildAgent/bin <br />
+    &lt;TEAMCITY-HOME>/buildAgent/conf <br />
+    &lt;TEAMCITY-HOME>/buildAgent/launcher <br />
+    &lt;TEAMCITY-HOME>/buildAgent/lib <br />
+    &lt;TEAMCITY-HOME>/buildAgent/plugins <br />
+    &lt;TEAMCITY-HOME>/buildAgent/tools <br />
 4. Install the following software:
     Java SDK
 5. Add "127.0.0.1 my-instance" to /etc/hosts

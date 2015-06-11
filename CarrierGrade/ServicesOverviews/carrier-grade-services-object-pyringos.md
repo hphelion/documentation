@@ -130,7 +130,7 @@ Re-balances a given ring after adding disk to the ring.
 
 * Copies ring to the available nodes.
 
-	 # ringos copy-ring -s <RING> -n <NODE> 
+		# ringos copy-ring -s <RING> -n <NODE> 
 
 For example:
 

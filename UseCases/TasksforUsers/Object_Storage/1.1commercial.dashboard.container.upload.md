@@ -35,7 +35,7 @@ An object is the basic storage entity that represents a file you store in the Op
 
 5. Click **Upload Object**.
 
-6. The **Upload Object To Container: <name>** dialog box is displayed. <name> is the name of the container to which you are uploading the object.
+6. The **Upload Object To Container: &lt;name>** dialog box is displayed. &lt;name> is the name of the container to which you are uploading the object.
 7. Enter a name for the object.
 
 8. Browse to and select the file that you want to upload.

@@ -76,7 +76,7 @@ A Cinder volume in the available state is the ideal candidate for a backup opera
 
 		cinder export <UUID>
 
-	Where <UUID> is the idenitifcation number of the volume to back up.
+	Where &lt;UUID> is the idenitifcation number of the volume to back up.
 
 	Exporting the volume takes some time, longer times for larger volumes. While it is taking place, the status of the volume is set to exporting, which you can verify by issuing the command cinder show UUID, or cinder list again. This new state is automatically reported on the Web administration interface.
 
@@ -114,7 +114,7 @@ A Cinder volume in the in-use state is associated with a running instance, eithe
 
 		cinder snapshot-create --force True --display-name <name> <UUID>
 
-	Where <name> is the name to assign to the snapshot and <UUID> is the identifier of the volume to snapshot. 
+	Where &lt;name> is the name to assign to the snapshot and &lt;UUID> is the identifier of the volume to snapshot. 
 
 	You must wait until it becomes available before proceeding.
 
@@ -126,7 +126,7 @@ A Cinder volume in the in-use state is associated with a running instance, eithe
 
 		cinder snapshot-export <name>
 
-	Where <name> is the snapshot to export.
+	Where &lt;name> is the snapshot to export.
 
 	When the export operation completes, the backup file is ready.
 
@@ -140,7 +140,7 @@ A Cinder volume in the in-use state is associated with a running instance, eithe
 
 		cinder snapshot-delete <name>
 
-	Where <name> is the snapshot to delete
+	Where &lt;name> is the snapshot to delete
 
 	
 7. Delete the backup file.

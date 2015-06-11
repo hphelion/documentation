@@ -80,7 +80,7 @@ If RabbitMQ is not running, start RabbitMQ using the `start rabbitmqserver` comm
 
 * Verify that the `rabbitmqctl cluster_status` displays all 3 nodes in `running_nodes` and disc. If it does not display one or more nodes in running nodes then restart RabbitMQ and run the following command on the missing nodes:
 
-	rabbitmqctl join_cluster <clusternode>
+		rabbitmqctl join_cluster <clusternode>
 
 * If rabbitmqctl cluster_status displays expected output but there is an issue with one or more node(s) for joining RabbitMQ cluster, do the following:
 
