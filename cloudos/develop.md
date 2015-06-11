@@ -3,7 +3,7 @@ layout: default
 title: "Cloud OS Development with REST APIs"
 permalink: /cloudos/develop/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

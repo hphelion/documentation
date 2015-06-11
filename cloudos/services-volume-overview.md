@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud OS Volume Service Overview "
 permalink: /cloudos/services/volume/overview/
 product: compute
-
+published: false
 ---
 <!--PUBLISHED-->
 # HP Cloud OS Volume Service Overview #

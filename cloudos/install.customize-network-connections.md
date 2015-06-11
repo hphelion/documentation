@@ -3,7 +3,7 @@ layout: default
 title: "Customize Network Connections (Optional)"
 permalink: /cloudos/install/customize-network-connections/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

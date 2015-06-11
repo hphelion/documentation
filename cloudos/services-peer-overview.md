@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud OS Peer Service Overview "
 permalink: /cloudos/services/peer/overview/
 product: compute
-
+published: false
 ---
 <!--PUBLISHED-->
 # HP Cloud OS Peer Service Overview #

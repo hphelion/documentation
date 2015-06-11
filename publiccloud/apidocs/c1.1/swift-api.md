@@ -840,7 +840,7 @@ While both types of manifest objects have similar behavior, there are difference
 |:---------  |:------------------      |:-------------------|
 |End-to-end integrity|Mostly assured. The list of segments includes the MD5 checksum (ETag) of each segment. You cannot upload the manifest object if the ETag in the list differs from the segment object already uploaded. If a segment is somehow lost, an attempt to download the manifest object will result in an error. However, on download, the ETag response header does not contain the MD5 checksum of the object. This makes it harder to check the integrity of the download operation.|Not guaranteed. The eventual consistency model means that although you have uploaded a segment object, it may not appear in the container listing until later. If you download the manifest before it appears in the container, it will not form part of the content returned in response to a GET request.|
 |Upload order|The segment objects must be uploaded before the manifest object.|You can upload manifest and segment objects in any order. You are recommended to upload the manifest object after the segments in case a premature download of the manifest occurs. However, this is not enforced.|
-|Removal or addition of segment objects|You cannot add or remove segment objects from the manifest. However, you can create a completely new manifest object of the same name with a different manifest list.|You can upload new segment objects or remove existing segments --- the names must simply match the <prefix> supplied in X-Object-Manifest.|
+|Removal or addition of segment objects|You cannot add or remove segment objects from the manifest. However, you can create a completely new manifest object of the same name with a different manifest list.|You can upload new segment objects or remove existing segments --- the names must simply match the &lt;prefix> supplied in X-Object-Manifest.|
 |Segment object size and number|Segment objects must be at least 1MB in size (by default). The final segment object can be any size. At most 1000 segments are supported (by default).|Segment objects can be of any size.|
 |Segment object container name|The manifest list includes the container name of each object, i.e., segment objects may be in different containers.|All segment objects must be in the same container.|
 |Manifest Object Metadata|The object has X-Static-Large-Object set to true. You do not set this metadata directly. Instead the system sets it when you PUT a static manifest object.|The X-Object-Manifest value is the {container}/{prefix} indicating where the segment objects are located. You supply this request header in the PUT operation|
@@ -1680,7 +1680,7 @@ As you can see, the date and time is expressed in GMT or UTC time. The first exa
 
 When specified, this identifies the user making the request. In addition, if this token is being used by a user with Admin privilege level, the token must be scoped to the project associated with the account. If no token is specified, the request will fail unless you have been granted access to the resource by some other mechanism such as ACLs. See [Using Authentication Tokens](#using_tokens) for more information about tokens.
 
-#### 4.2.6 X-Container-Meta-{name} #### {#x_container_meta_request}
+#### 4.2.6 X-Container-Meta-{name} {#x_container_meta_request}
 
 This allows you to set custom metadata on a container using a header name with a prefix of X-Container-Meta-. After this prefix, you can pick any name meaningful to you. For example, X-Container-Meta-Reviewed could be used indicate that the contents of a container had been reviewed.
 
@@ -1690,7 +1690,7 @@ Any valid UTF-8 http header value is allowed for metadata, however we recommend 
 
 Sets the access control list (ACL) that grants read access to a container and its objects.
 
-#### 4.2.8 X-Container-Write #### {#x_container_write_request}
+#### 4.2.8 X-Container-Write {#x_container_write_request}
 
 Sets the access control list (ACL) that grants write access to a container and its objects.
 
@@ -1702,11 +1702,11 @@ For objects smaller than 5GB and [manifest objects](#large_objects), this is the
 
 See [End to end integrity](#end_to_end_integrity) for more information.
 
-#### 4.2.10 X-Account-Meta-{name} #### {#x_account_meta_request}
+#### 4.2.10 X-Account-Meta-{name} {#x_account_meta_request}
 
 This allows you to set custom metadata on an account using a header name with a prefix of X-Account-Meta-. After this prefix, you can pick any name meaningful to you.
 
-#### 4.2.11 X-Remove-Account-Meta-{name} #### {#x_remove_account_meta_request}
+#### 4.2.11 X-Remove-Account-Meta-{name} {#x_remove_account_meta_request}
 
 This allows you to remove custom metadata on an account using a headers name with a prefix of X-Account-Meta-. After this prefix, you specify the metadata item you wish to remove.
 

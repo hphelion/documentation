@@ -3,7 +3,7 @@ layout: default
 title: "Introduction to Cloud Types"
 permalink: /cloudos/prepare/cloudtypes/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

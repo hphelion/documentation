@@ -3,7 +3,7 @@ layout: default
 title: "Getting Started with HP Cloud OS Focus Service "
 permalink: /cloudos/services/focus/getting-started/
 product: compute
-
+published: false
 ---
 <!--PUBLISHED-->
 # Getting Started with HP Cloud OS Focus Service #

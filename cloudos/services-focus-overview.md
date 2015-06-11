@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud OS Focus Service Overview "
 permalink: /cloudos/services/focus/overview/
 product: compute
-
+published: false
 ---
 <!--PUBLISHED-->
 # HP Cloud OS Focus Service Overview #

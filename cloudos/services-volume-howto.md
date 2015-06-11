@@ -3,7 +3,7 @@ layout: default
 title: "How To's with the HP Cloud OS Volume Service "
 permalink: /cloudos/services/volume/howto/
 product: compute
-
+published: false
 ---
 <!--PUBLISHED-->
 # How To's with the HP Cloud OS Volume Service #

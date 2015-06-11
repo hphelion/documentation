@@ -3,7 +3,7 @@ layout: default
 title: "Connect on the HP Cloud Community Forum"
 permalink: /cloudos/forum/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

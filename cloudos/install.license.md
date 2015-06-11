@@ -3,7 +3,7 @@ layout: default
 title: "Check the HP Cloud OS License"
 permalink: /cloudos/install/license/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

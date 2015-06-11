@@ -803,7 +803,7 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com
 | **Server Action** | [Start Server](#startServer) | POST | /v2/{project_id}/servers/{server_id}/action | Y/Y |
 |  | [Stop Server](#stopServer) | POST | /v2/{project_id}/servers/{server_id}/action | Y/Y |
 
-### 4.2 Common Request Headers ### {#Section4_3}
+### 4.2 Common Request Headers ### {#Section4_2}
 
 *Http standard request headers*
 
@@ -2186,7 +2186,7 @@ If an error occurs, the response body contains a description of the error.
 ##### 4.4.1.12 Update Metadata ##### {#ServerMetadata_updateMetadata}
 ##### POST /v2/{project_id}/servers/{server_id}/metadata #####
 
-Updates resource metadata. Updates will replace existing metadata items with the same key. Items not explicitly mentioned in the request will not be modified. An overLimit (<errorcode>413</errorcode>) fault may be thrown if the operation causes the maximum number of metadata items to be exceeded.
+Updates resource metadata. Updates will replace existing metadata items with the same key. Items not explicitly mentioned in the request will not be modified. An overLimit (413) fault may be thrown if the operation causes the maximum number of metadata items to be exceeded.
 
 **Request Data**
 
@@ -2261,7 +2261,7 @@ XML
 
 The metadata items set on the resource are those specified on the requests. Existing metadata items are replaced with the ones provided in the request. Metadata items, set previously, but not specified in the request are removed.
 
-An overLimit (<errorcode>413</errorcode>) fault may be thrown if the maximum number of metadata items is exceeded.
+An overLimit (413) fault may be thrown if the maximum number of metadata items is exceeded.
 
 **Request Data**
 
@@ -2400,7 +2400,7 @@ XML
 
 Sets a metadata item by its key. 
 
-An overLimit (<errorcode>413</errorcode>) fault may be thrown if the operation causes the maximum number of metadata items to be exceeded.
+An overLimit (413) fault may be thrown if the operation causes the maximum number of metadata items to be exceeded.
 
 **Request Data**
 
@@ -3437,7 +3437,7 @@ If an error occurs, the response body contains a description of the error.
 ##### 4.4.1.27 Update Metadata ##### {#ImageMetadata_updateMetadata}
 ##### POST /v2/{project_id}/images/{image_id}/metadata #####
 
-Updates resource metadata. Updates will replace existing metadata items with the same key. Items not explicitly mentioned in the request will not be modified. An overLimit (<errorcode>413</errorcode>) fault may be thrown if the operation causes the maximum number of metadata items to be exceeded.
+Updates resource metadata. Updates will replace existing metadata items with the same key. Items not explicitly mentioned in the request will not be modified. An overLimit (413) fault may be thrown if the operation causes the maximum number of metadata items to be exceeded.
 
 **NOTE:** You can only update the metadata on images that you are the owner of. If you are not the owner of an image then a 403 Forbidden error will be thrown.
 
@@ -3569,7 +3569,7 @@ If an error occurs, the response body contains a description of the error.
 ##### 4.4.1.28 Create or Replace Metadata ##### {#ImageMetadata_setMetadata}
 ##### PUT /v2/{project_id}/images/{image_id}/metadata #####
 
-The metadata items set on the resource are those specified on the requests. Existing metadata items are replaced with the ones provided in the request. Metadata items, set previously, but not specified in the request are removed. An overLimit (<errorcode>413</errorcode>) fault may be thrown if the maximum number of metadata items is exceeded.
+The metadata items set on the resource are those specified on the requests. Existing metadata items are replaced with the ones provided in the request. Metadata items, set previously, but not specified in the request are removed. An overLimit (413) fault may be thrown if the maximum number of metadata items is exceeded.
 
 **NOTE:** You can only update the metadata on images that you are the owner of. If you are not the owner of an image then a 403 Forbidden error will be thrown
 
@@ -3765,7 +3765,7 @@ If an error occurs, the response body contains a description of the error.
 ##### 4.4.1.30 Create or Update Metadata Item ##### {#ImageMetadataItem_setMetadataItem}
 ##### PUT /v2/{project_id}/images/{id}/metadata/{key} #####
 
-Sets a metadata item by its key. An overLimit (<errorcode>413</errorcode>) fault may be thrown if the operation causes the maximum number of metadata items to be exceeded.
+Sets a metadata item by its key. An overLimit (413) fault may be thrown if the operation causes the maximum number of metadata items to be exceeded.
 
 **NOTE:** You can only update the metadata on images that you are the owner of. If you are not the owner of an image then a 403 Forbidden error will be thrown.
 

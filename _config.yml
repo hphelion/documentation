@@ -137,8 +137,6 @@ navigation:
     url: /automation/
   - text: HP CloudSystem
     url: /cloudsystem/
-  - text: HP Cloud OS (Deprecated)
-    url: /cloudos/
   public-cloud:
   - text: HP Helion Documentation
     url: /
@@ -578,8 +576,6 @@ navigation:
     url: /automation/
   - text: HP CloudSystem
     url: /cloudsystem/
-  - text: HP Cloud OS (Deprecated)
-    url: /cloudos/
   public-cloud1.0:
   - text: HP Helion Documentation
     url: /
@@ -745,8 +741,6 @@ navigation:
   cloudos1.0:
   - text: HP Helion Documentation
     url: /
-  - text: HP Cloud OS Home  (Deprecated)
-    url: /cloudos/
   - text: Prepare
     url: /cloudos/prepare/  	
   - text: Install
@@ -975,8 +969,6 @@ navigation:
     url: /automation/
   - text: HP CloudSystem
     url: /cloudsystem/
-  - text: HP Cloud OS (Deprecated)
-    url: /cloudos/
   eucalyptus:
   - text: Master Services Agreement
     url: /eucalyptus/masterservice

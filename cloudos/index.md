@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud OS Documentation"
 permalink: /cloudos/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

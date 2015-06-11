@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud OS Value-Add Services"
 permalink: /cloudos/api/services/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

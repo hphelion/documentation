@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud OS Video Tutorials"
 permalink: /cloudos/prepare/videos/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

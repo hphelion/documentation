@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud OS Eve Service Overview "
 permalink: /cloudos/services/eve/overview/
 product: compute
-
+published: false
 ---
 <!--PUBLISHED-->
 # HP Cloud OS Eve Service Overview #

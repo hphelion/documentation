@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud OS Release Notes"
 permalink: /cloudos/prepare/releasenotes/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 
