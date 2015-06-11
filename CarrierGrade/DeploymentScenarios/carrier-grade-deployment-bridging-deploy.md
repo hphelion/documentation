@@ -50,8 +50,7 @@ Before deploying this scenario, disable Spanning Tree Protocol (STP) on the swit
 
 	Since no instances are currently running, an empty list is displayed
 
-4. Configure the virtual machine details by clicking **Launch Instance** to display the Launch Instance window. Fill in the information in the Details tab, as illustrated
-below:
+4. Configure the virtual machine details by clicking **Launch Instance** to display the Launch Instance window. Fill in the information in the Details tab, as illustrated below:
 
 	<img src="media/CGH-deploy-bridge-launch.png">
 
