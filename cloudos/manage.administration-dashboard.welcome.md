@@ -3,7 +3,7 @@ layout: default
 title: "Welcome to the HP Cloud OS Administration Dashboard"
 permalink: /cloudos/manage/administration-dashboard/welcome/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

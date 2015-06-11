@@ -3,7 +3,7 @@ layout: default
 title: "Deploy Swift"
 permalink: /cloudos/install/deploy-swift/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

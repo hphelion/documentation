@@ -3,7 +3,7 @@ layout: default
 title: "Launch the Administration Dashboard"
 permalink: /cloudos/install/launch-admin-dashboard/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

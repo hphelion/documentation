@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud OS Glossary"
 permalink: /cloudos/prepare/glossary/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

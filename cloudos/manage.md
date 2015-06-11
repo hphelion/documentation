@@ -3,7 +3,7 @@ layout: default
 title: "Manage your Cloud"
 permalink: /cloudos/manage/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

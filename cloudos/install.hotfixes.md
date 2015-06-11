@@ -3,7 +3,7 @@ layout: default
 title: "Install Hot Fixes"
 permalink: /cloudos/install/hot-fixes/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

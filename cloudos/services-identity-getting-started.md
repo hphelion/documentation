@@ -3,7 +3,7 @@ layout: default
 title: "Getting Started with HP Cloud OS Identity Service "
 permalink: /cloudos/services/identity/getting-started/
 product: compute
-
+published: false
 ---
 <!--PUBLISHED-->
 # Getting Started with HP Cloud OS Identity Service #

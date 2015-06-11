@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud OS Technical Overview"
 permalink: /cloudos/prepare/overview/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

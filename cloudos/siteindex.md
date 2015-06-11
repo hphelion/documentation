@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud OS Site Index"
 permalink: /cloudos/siteindex/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

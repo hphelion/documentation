@@ -3,7 +3,7 @@ layout: default
 title: "How To's with the Network Service HP Cloud OS Compute Service "
 permalink: /cloudos/services/compute/howto/
 product: compute
-
+published: false
 ---
 <!--PUBLISHED-->
 # How To's with the Network Service HP Cloud OS Compute Service #

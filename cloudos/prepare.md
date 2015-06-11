@@ -3,7 +3,7 @@ layout: default
 title: "Prepare: Get Started with HP Cloud OS"
 permalink: /cloudos/prepare/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 
