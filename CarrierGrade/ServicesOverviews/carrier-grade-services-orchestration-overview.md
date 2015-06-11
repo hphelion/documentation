@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; 1.1: Orchestration Service (Heat) Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Orchestration Service (Heat) Overview"
 permalink: /helion/openstack/carrier/services/orchestration/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack

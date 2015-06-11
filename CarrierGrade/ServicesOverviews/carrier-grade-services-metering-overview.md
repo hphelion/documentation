@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; 1.1: Metering Service (Ceilometer) Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Metering Service (Ceilometer) Overview"
 permalink: /helion/openstack/carrier/services/reporting/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -29,7 +29,7 @@ PageRefresh();
 </script>
 
 
-# HP Helion OpenStack&#174; 1.1: Metering Service (Ceilometer) Overview
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Metering Service (Ceilometer) Overview
 [See the Helion OpenStack 1.0 version of this page](/helion/openstack/services/reporting/overview/)
 
 **Note**: The deployment of the Helion OpenStack v1.1 Metering service is considered experimental and targeted at developers investigating integration of external software applications with the Ceilometer API for showback, chargeback, and billing applications only. Only a limited set of metrics are available in the Helion OpenStack v1.1 release. Developers interested in monitoring use cases should refer to the [OpenStack Monasca service](https://wiki.openstack.org/wiki/Monasca) which is targeted to be deployed in a future Helion OpenStack release.

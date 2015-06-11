@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; 1.1: Troubleshooting Node Removal"
+title: "HP Helion OpenStack&#174; 1.1: Troubleshooting Scale-Out Node Removal"
 permalink: /helion/openstack/carrier/services/troubleshooting/overcloud/
 product: carrier-grade
 product-version1: HP Helion OpenStack

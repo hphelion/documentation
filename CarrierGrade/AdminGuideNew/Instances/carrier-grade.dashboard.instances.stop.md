@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Pausing and Un-pausing Instances"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Stopping and Restarting Instances"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/stop/
 product: carrier-grade
 

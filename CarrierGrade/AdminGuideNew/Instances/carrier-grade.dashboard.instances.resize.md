@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Resizing Instances"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Resize an Instance"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/resize/
 product: carrier-grade
 

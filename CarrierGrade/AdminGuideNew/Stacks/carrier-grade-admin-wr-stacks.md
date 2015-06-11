@@ -40,7 +40,9 @@ See the following topics on using stacks:
 * [Customizing Guest Images with User Data](/helion/openstack/carrier/admin/stacks/user-data)
 * [Resource Scaling (Autoscaling)](/helion/openstack/carrier/admin/stacks/autoscale/)
 * [Reporting a Guest Metric](/helion/openstack/carrier/admin/stacks/guest/)
-* 
+* [Sample Templates for HP Helion OpenStack Carrier Grade](/helion/openstack/carrier/admin/stacks/guest/)
+* [Supported Heat Resource Types](/helion/openstack/carrier/admin/stacks/resource-types/)
+
 
 Using the CLI, you can obtain information on existing stacks in several ways:
 
@@ -116,7 +118,7 @@ The syntax for specifying parameters is as follows:
 
 ## Wind River Linux Extensions to Heat
 
-Several extensions to Heat are included with Wind River Linux. For more information, see [Wind River Linux Extensions to Heat](/helion/openstack/carrier/admin/stacks/wr/).
+Several extensions to Heat are included with Wind River Linux. For more information, see [Extensions to Heat](/helion/openstack/carrier/admin/stacks/wr/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

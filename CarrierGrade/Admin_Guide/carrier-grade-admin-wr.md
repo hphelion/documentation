@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Administrators Guide"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Administering the WindRiver Region"
 permalink: /helion/openstack/carrier/admin/wr/
 product: carrier-grade
 product-version1: HP Helion OpenStack

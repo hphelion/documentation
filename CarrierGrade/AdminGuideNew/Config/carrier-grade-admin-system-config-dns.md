@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Changing the External Network IP Configuration"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Changing the DNS Server Configuration"
 permalink: /helion/openstack/carrier/admin/system/config/dns/
 product: carrier-grade
 product-version1: HP Helion OpenStack

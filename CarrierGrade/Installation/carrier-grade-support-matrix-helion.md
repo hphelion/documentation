@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; 1.1: Support Matrix"
+title: "HP Helion OpenStack&#174; Carrier Grade: Support Matrix"
 permalink: /helion/openstack/carrier/support-matrix/helion/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1

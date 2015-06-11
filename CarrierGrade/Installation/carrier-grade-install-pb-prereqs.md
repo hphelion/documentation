@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Installation Overivew"
+title: "HP Helion OpenStack&#174; Installation Prerequisites"
 permalink: /helion/openstack/carrier/install/pb/prereqs/
 product: carrier-grade
 

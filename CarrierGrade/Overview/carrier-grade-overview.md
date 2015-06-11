@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Overview"
 permalink: /helion/openstack/carrier/overview/
 product: carrier-grade
 
@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"><a href="/helion/openstack/carrier/home/">&#9650; Documentation Home</a> | <a href="/helion/openstack/carrier/hlm/overview/"> Helion Lifecycle Management (HLM) Overview &#9654;</a></p>
 
-# HP Helion OpenStack&#174; Carrier Grade: Overview
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Overview
 
 <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
 
