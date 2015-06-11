@@ -3,7 +3,7 @@ layout: default
 title: "Customize Server Types (Optional)"
 permalink: /cloudos/install/customize-server-types/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

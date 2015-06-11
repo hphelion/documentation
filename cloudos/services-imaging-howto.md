@@ -3,7 +3,7 @@ layout: default
 title: "How To's with the HP Cloud OS Imaging Service "
 permalink: /cloudos/services/imaging/howto/
 product: compute
-
+published: false
 ---
 <!--PUBLISHED-->
 # How To's with the HP Cloud OS Imaging Service #

@@ -3,7 +3,7 @@ layout: default
 title: "Operational Dashboard: Settings Tab"
 permalink: /cloudos/manage/operational-dashboard/settings-tab/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

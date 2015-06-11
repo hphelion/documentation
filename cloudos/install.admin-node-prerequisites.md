@@ -3,7 +3,7 @@ layout: default
 title: "Set Admin Node Prerequisites (Required)"
 permalink: /cloudos/install/admin-node-prerequisites/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

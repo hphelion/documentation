@@ -4,6 +4,7 @@ title: "Create a Cloud 	"
 permalink: /cloudos/install/create-cloud/
 product: cloudos
 
+published: false
 ---
 <!--PUBLISHED-->
 

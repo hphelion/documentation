@@ -3,7 +3,7 @@ layout: default
 title: "Getting Started with HP Cloud OS Volume Service "
 permalink: /cloudos/services/volume/getting-started/
 product: compute
-
+published: false
 ---
 <!--PUBLISHED-->
 # Getting Started with HP Cloud OS Volume Service #

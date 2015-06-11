@@ -3,7 +3,7 @@ layout: default
 title: "Setup Swift Storage Network (Optional)"
 permalink: /cloudos/install/setup-swift/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

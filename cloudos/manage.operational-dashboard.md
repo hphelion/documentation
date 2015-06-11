@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud OS Operational Dashboard Help"
 permalink: /cloudos/manage/operational-dashboard/
 product: cloudos
-
+published: false
 ---
 <!--PUBLISHED-->
 

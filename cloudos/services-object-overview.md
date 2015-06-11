@@ -3,7 +3,7 @@ layout: default
 title: "HP Cloud OS Object Storage Service Overview "
 permalink: /cloudos/services/object/overview/
 product: compute
-
+published: false
 ---
 <!--PUBLISHED-->
 # HP Cloud OS Object Storage Service Overview #
