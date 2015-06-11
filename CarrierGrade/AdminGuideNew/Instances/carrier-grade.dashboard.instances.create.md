@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Creating Instances"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Creating a New Compute Instance"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/create/
 product: carrier-grade
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Create the HLM Virtual Machine"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Sample JSON File for the HLM Virtual Machine Installation"
 permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/
 product: carrier-grade
 

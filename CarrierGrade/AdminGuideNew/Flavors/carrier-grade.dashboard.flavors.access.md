@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Managing access to a flavor"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Access to a Flavor"
 permalink: /helion/commercial/carrier/dashboard/managing/flavors/access/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Managing access to a flavor #
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Access to a Flavor #
 
 Compute flavors are machine configurations that describe the amount of memory, number of CPUs, and storage capacity of instances. 
 

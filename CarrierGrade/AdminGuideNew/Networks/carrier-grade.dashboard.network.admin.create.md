@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Creating Externally Available Networks"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Creating Provider Networks"
 permalink: /helion/commercial/carrier/dashboard/managing/network/external/create/
 product: carrier-grade
 

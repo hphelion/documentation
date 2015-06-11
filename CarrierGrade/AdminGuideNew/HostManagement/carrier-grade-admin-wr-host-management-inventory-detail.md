@@ -67,7 +67,7 @@ The following items are included in the summary:
 
 * host name, personality, and the internal UUID and host ID reference numbers
 * MAC and IP addresses on the internal management network
-* serial ID, if known. Use the command system host-modify <hostname> serialid=xxx to update it.
+* serial ID, if known. Use the command system host-modify &lt;hostname> serialid=xxx to update it.
 * location, as entered by the operator using the Edit Host window. For more information, see [Host Inventory](/helion/openstack/carrier/admin/host/management/inventory/host/)
 * time stamps of when the host was created and last updated
 * the host's state

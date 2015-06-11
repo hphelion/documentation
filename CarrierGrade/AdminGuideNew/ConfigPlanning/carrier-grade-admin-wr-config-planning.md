@@ -44,8 +44,8 @@ This section contains the following information:
 
 * [Working with Ethernet Interfaces](/helion/openstack/carrier/config/plan/ethernet/)
 * [Planning the Network](/helion/openstack/carrier/config/plan/network/)
-* [Storage Planning
-* [Using VXLANs
+* [Planning the Storage](/helion/openstack/carrier/config/plan/storage/)
+* [Planning the VXLANs](/helion/openstack/carrier/config/plan/vxlan/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

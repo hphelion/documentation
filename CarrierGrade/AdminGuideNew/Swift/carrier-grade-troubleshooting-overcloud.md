@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; 1.1: Troubleshooting Node Removal"
+title: "HP Helion OpenStack&#174; 1.1: Troubleshooting Scale-Out Node Removal"
 permalink: /helion/openstack/carrier/services/troubleshooting/overcloud/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -49,7 +49,7 @@ Follow this manual procedure for deleting nodes from check&#95;mk and icinga con
 		
 		check_mk --flush <node IP> 
 
-	where <node IP> is the IP address of the node to be deleted. 
+	where &lt;node IP> is the IP address of the node to be deleted. 
 
 2. Run the following command to remove the node's host file:
 
@@ -61,11 +61,6 @@ Follow this manual procedure for deleting nodes from check&#95;mk and icinga con
 
 		check_mk -O
 
-
-	
-
-<br /><br />
-<hr />
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 

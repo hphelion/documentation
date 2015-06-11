@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta):  Enabling the Heartbeat API for a VM"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Enabling the Heartbeat API for a VM"
 permalink: /helion/commercial/carrier/dashboard/managing/flavors/extra/api/
 product: carrier-grade
 

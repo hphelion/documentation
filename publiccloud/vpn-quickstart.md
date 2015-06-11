@@ -285,7 +285,7 @@ strongSwan is a complete IPsec implementation for the Linux 2.6 and 3.x kernels.
 2. `prompt> sudo apt-get install -y strongswan`
 3. Install all dependencies including the kernel modules
 
-You can find additional information on installing strongSwan on the strongSwan wiki:  [strongSwan Installation Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/InstallationDocumentation "strongSwan wiki")
+You can find additional information on installing strongSwan on the strongSwan wiki:  [strongSwan Installation Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/InstallationDocumentation)
 
 ### Enable IP forwarding on the gateway instance ### {#ipfrwrd}
 
@@ -312,7 +312,7 @@ strongSwan always considers itself as "LEFT" and the other side of the network (
 
 Below is an example strongSwan *ipsec.conf* file.  Note that the information that is added to this file for detailing the left and right cases must be entered as created into both this file and the *ipsec.secrets* file.
 
-For more details on setting up the *ipsec.conf* file, see the [strongSwan ipsec.conf](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf) wiki page.
+For more details on setting up the *ipsec.conf* file, see the [strongSwan](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf) wiki page.
 
 **Note:** the location of the *ipsec.conf* file is */etc/ipsec.conf*
 
@@ -467,7 +467,7 @@ back to the [top](#top)
 - [strongSwan User Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation")
 - [strongSwan ipsec.conf reference](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf)
 - [strongSwan ipsec.secrets reference](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecSecrets)
-- [strongSwan ipsec.conf: conn <name> reference](http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection)
+- [strongSwan ipsec.conf: conn &lt;name> reference](http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection)
 - [strongSwan net2net-psk/ reference](http://www.strongswan.org/uml/testresults/ikev2/net2net-psk/)
 
 back to the [top](#top)

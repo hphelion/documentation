@@ -42,7 +42,7 @@ Troubleshooting issues related to HP StoreVirtual VSA environments.
 * [Failure of script due to less than two drives](#failure-script)
 *  [Cannot enable AO as only one disk is available](#cannot-enable-ao)
 * [Unable to update the default input json file ](#unable-update-json)
-* [Virtual bridge creation failed for interface <NIC>](#fail-virtual-bridge)
+* [Virtual bridge creation failed for interface &lt;NIC>](#fail-virtual-bridge)
 * [Creation of storage pool failed](#storage-pool-fail)
 * [Failed during post VSA deployment](#post-vsa-fail)
 *  [vsa&#95;network cannot be destroyed](#vsa-network)

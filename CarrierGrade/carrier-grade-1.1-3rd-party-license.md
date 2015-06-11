@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; 1.1: Open Source and Third-Party Software License Agreements"
+title: "HP Helion OpenStack&#174; Carrier Grade: Open Source and Third-Party Software License Agreements"
 permalink: /helion/openstack/carrier/3rd-party-license-agreements/
 product: carrier-grade
 product-version1: HP Helion OpenStack

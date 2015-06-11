@@ -258,7 +258,7 @@ See [Metrics Operations Details](#ServiceDetailsMetrics).
 ### 2.4 HP Helion Metrics JSON Format Schema ## {#MetricFormat}
 
 + namespace : string (64 char max)
-+ dimensions : (optional) map<string (50 char max), string (300 char max)>
++ dimensions : (optional) map &lt;string (50 char max), string (300 char max)>
 + timestamp : (optional) long (unix time)
 + value : (scalar only) double 
 + time_values : (vector only) [[long, double]]

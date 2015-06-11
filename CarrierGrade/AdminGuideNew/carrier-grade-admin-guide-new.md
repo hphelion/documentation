@@ -118,6 +118,9 @@ The following tasks involve the Orchestration service (Heat) service to create a
 	* [Customizing Guest Images with User Data](/helion/openstack/carrier/admin/stacks/user-data/)
 	* [Resource Scaling (Autoscaling)](/helion/openstack/carrier/admin/stacks/autoscale/)
 	* [Reporting a Guest Metric](/helion/openstack/carrier/admin/stacks/guest/)
+	* [Sample Templates for HP Helion OpenStack Carrier Grade](/helion/openstack/carrier/admin/stacks/guest/)
+	* [Supported Heat Resource Types](/helion/openstack/carrier/admin/stacks/resource-types/)
+
 
 **Managing System Defaults**
 
@@ -182,6 +185,21 @@ You will perform these tasks during the installation. If you need to initialize 
 * [Initializing and Configuring Compute Nodes](/helion/openstack/carrier/admin/host/initialize/compute/)
 * [Initializing and Configuring Storage Nodes](/helion/openstack/carrier/admin/host/initialize/storage/)
 * [Initializing and Configuring Controller-1](/helion/openstack/carrier/admin/host/initialize/controller1/)
+
+**Configuration Planning**
+
+System configuration options are available when installing the HP Helion OpenStack Carrier Grade software. You should prepare a set of selected values and features ready to use which are applicable to a specific deployment scenario.
+
+[Configuration Planning](/helion/openstack/carrier/configuration/plan/)
+
+* [Working with Ethernet Interfaces](/helion/openstack/carrier/config/plan/ethernet/)
+* [Planning the Network](/helion/openstack/carrier/config/plan/network/)
+* [Planning the Storage](/helion/openstack/carrier/config/plan/storage/)
+* [Planning the VXLANs](/helion/openstack/carrier/config/plan/vxlan/)
+	* [Setting Up a VXLAN Provider Network using Horizon](/helion/openstack/carrier/config/plan/vxlans/setting/) or 
+	* [Setting Up a VXLAN Provider Network using the CLI](/helion/openstack/carrier/config/plan/vxlans/setting-cli/)
+	* [Configuring VXLAN Endpoint IP Addresses](/helion/openstack/carrier/config/plan/vxlans/endpoints/)
+	* [Adding and Maintaining Routes for a VXLAN Network](/helion/openstack/carrier/config/plan/vxlans/routes/)
 
 **System Configuration Management**
 

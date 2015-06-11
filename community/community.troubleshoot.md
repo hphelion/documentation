@@ -74,7 +74,7 @@ If you encounter any issues when installing HP Helion OpenStack Community, refer
 		B00/D00/F00
 
 	To reset a system that experiences this error,
-	1. Connect to the iLO using a web browser (https://<iLO IP address>)
+	1. Connect to the iLO using a web browser (https://&lt;iLO IP address>)
 	2. Navigate to Information / Diagnostics
 	3. Reset iLO
 	4. Log back into the iLO after 30 seconds
@@ -97,7 +97,7 @@ If you encounter any issues when installing HP Helion OpenStack Community, refer
   You should disable propagation and set the BIOS time to the correct
   date and time on all systems.
 
-	1. Connect to the iLO using a web browser (https://<iLO IP address>)
+	1. Connect to the iLO using a web browser (https://&lt;iLO IP address>)
 	2. Navigate to Network/Shared Network Port or the Network/Dedicated Network Port (Primary Time Server, Secondary Time Server, Time Zone, and Time Propagation settings are shared between all iLO Network Ports).
 	3. Navigate to SNTP
 	4. UNSET 'Propagate NTP Time to Host'
@@ -165,7 +165,7 @@ If you encounter any issues when installing HP Helion OpenStack Community, refer
 
 		curl -XDELETE "localhost:9200/logstash-<DATE>"
 
-	Where <DATE> is in the format "YYYY.MM.DD" EG "2014.09.09".
+	Where &lt;DATE> is in the format "YYYY.MM.DD" EG "2014.09.09".
 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

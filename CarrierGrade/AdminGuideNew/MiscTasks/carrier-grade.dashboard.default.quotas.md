@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Managing project quotas"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Project Quotas"
 permalink: /helion/commercial/carrier/dashboard/managing/quotas/
 product: carrier-grade
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Managing project quotas
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Project Quotas
 
 You can change the default values that appear for quotas when [creating a new project](/helion/commercial/carrier/dashboard/managing/projects/creating/).
 

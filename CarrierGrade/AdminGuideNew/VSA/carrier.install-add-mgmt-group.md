@@ -28,7 +28,7 @@ PageRefresh();
 
 
 
-# Adding HP StoreVirtual VSA System to an Existing Management Group
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Adding HP StoreVirtual VSA System to an Existing Management Group
 
 To add a StoreVirtual system to any existing Management Group, do the following:
 

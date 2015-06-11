@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade Wind River Linux Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Wind River Linux Overview"
 permalink: /helion/openstack/carrier/wr/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -21,7 +21,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade Wind River Linux Overview
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Wind River Linux Overview
 
 <!-- Taken from http://www.windriver.com/products/titanium-server/ -->
 

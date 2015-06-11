@@ -52,9 +52,9 @@ To perform a system backup:
 
 2. Use the following command to execute the system backup.
 
-	sudo config_controller --backup <name>
+		sudo config_controller --backup <name>
 
-	Where <name> is an arbitrary identifier to use for the backup
+	Where &lt;name> is an arbitrary identifier to use for the backup
 
 	Upon successful execution of the command, the following two files are available on the controller's file system:
 	
