@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Reference Deployment Scenarios"
-permalink: /helion/openstack/carrier/deploy/
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Bridging Scenario Overview"
+permalink: /helion/openstack/carrier/deploy/bridging/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -24,30 +24,30 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Reference Deployment Scenarios
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Bridging Scenario Overview
 
-You can use the deployment scenarios to familiarize yourself with the Wind River Linux server and evaluate its performance.
+The Bridging Scenario implements a Layer 2 test path using either Linux or DPDK-accelerated virtual bridges.
 
 <hr>
 **Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
-Two deployment scenarios are described: a Bridging Scenario that uses two virtual L2 switches, and a Routing Scenario that uses two virtual L3 switches. In each scenario, two VM instances are launched, and a test path is established between them for performance evaluations.
+The Bridging Scenario topology is illustrated in the following figure. The test path is shown as a red dotted line.
 
-Both scenarios use AVP network drivers for the test path. For each VM, an additional connection is established, using Linux virtio drivers, to a management network used for provisioning.
-With each scenario in place, you can attach testing equipment to the private tenant networks in order to evaluate throughput, latency, and other statistics of interest. Traffic generators can be used to send packets along the test path to exercise the different virtual applications and networks. For more information, see Running Traffic Through the Test Paths on page 60.
+<img src="media/CGH-deploy-bridge-overview.jpg">
 
-The scenarios demonstrate several aspects of the Wind River Linux server, including:
+Two end users, user1 and user2, each launch an instance of the example guest image inside a virtual machine, deployed within the domain of corresponding tenants, tenant1 and tenant2. Inside each instance, a user application creates a bridge dynamically configured to operate in one of two modes:
 
-* a multi-tenant environment
-* vlan-tagged tenant networks
-* use of huge pages for high-performance networking
-* use of unmodified virtio network drivers
-* use of accelerated AVP Kernel network drivers
-* use of accelerated AVP Poll Mode network drivers for DPDK
-* use of virtual routers to connect tenant networks
-* metadata server access for distributing configuration data
+* Layer 2 bridging in the Linux kernel
+* Layer 2 bridging using an Intel DPDK-accelerated virtual switch
 
+The selected mode of operation is passed to the instance using OpenStack user data.
+
+To demonstrate the performance optimizations offered by the AVP and AVS features of the Wind River Linux server, the network interfaces in the test path use AVP network drivers in combination with the Linux or DPDK-accelerated bridging. You can also use standard Linux virtio network drivers in combination with standard Linux-kernel Layer 2 bridging, but this will yield poorer performance.
+
+**Note:** To highlight DPDK and AVP performance without additional Layer 3 routing or application overhead, the Bridging Scenario uses a VM to bridge two tenant networks. This configuration can cause Spanning Tree Protocol (STP) failures in Layer 2 switches connected to the networks. Disabling STP on the switches, or on the bridged tenant network VLANs, is recommended.
+
+See [Deploying the Bridging Scenario](/helion/openstack/carrier/deploy/bridging/deploy/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
