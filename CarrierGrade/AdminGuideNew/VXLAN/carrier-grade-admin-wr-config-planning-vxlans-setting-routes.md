@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Adding and Maintaining Routes for a VXLAN Network
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Adding and Maintaining Routes for a VXLAN Network"
 permalink: /helion/openstack/carrier/config/plan/vxlans/routes/
 product: carrier-grade
 product-version1: HP Helion OpenStack
