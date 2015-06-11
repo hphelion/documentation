@@ -33,7 +33,7 @@ You can evaluate selected features of Heat using sample templates included with 
 <hr>
 The templates are distributed on DVD and are available online as part of the HP Helion OpenStack Carrier Grade release.
 
-## HOT Templates—Simple
+## HOT Templates: Simple
 
 The templates in the hot/simple directory use the OpenStack HOT Template File Format. Each template in this directory provides a simple example for an OpenStack Resource type, indicated by the filename.
 
@@ -69,7 +69,7 @@ OS::Nova::Server can refer.
 
 * **OS_Neutron_Router.yaml** - Creates an IP router for tenant networks. The router's IP interfaces to tenant network subnets are established as shown in OS_Neutron_RouterInterface.yaml.
 
-* **OS_Neutron_RouterGateway.yaml** - Creates a router gateway interface for the specified router on the specified external network. The IP address for the interface is allocated from the external network’s subnet, and a default IP route is created using the gateway_ip of the subnet.
+* **OS_Neutron_RouterGateway.yaml** - Creates a router gateway interface for the specified router on the specified external network. The IP address for the interface is allocated from the external network subnet, and a default IP route is created using the gateway_ip of the subnet.
 
 * **OS_Neutron_RouterInterface.yaml**  - Creates an IP interface on an existing router for an existing IP subnet.
 
@@ -88,7 +88,7 @@ referenced in OS::Nova::Server.
 
 * **OS_SysInv_HostInterface.yaml** - Creates a Layer 2 interface on a compute node, specifying the compute node, the interface type (eth or lag), the port or ports, the network type (mgmt, oam, infra, or data), and for a data network, the provider networks.
 
-## HOT Templates—Scenarios
+## HOT Templates: Scenarios
 
 The templates in the hot/scenarios directory use the OpenStack HOT Template File Format. Each template in this directory provides an example scenario involving several Resource types.
 
@@ -105,7 +105,7 @@ simplified VM instance naming, as described in [Extensions to Heat](/helion/open
 
 * **Provisioning.yaml** - Provisions a variety of resources, including provider networks, segmentation ranges, tenant networks, key pairs, Glance images, and flavors, some of which are implemented as a nested stack (by referencing another Heat template).
 
-* **SimpleServer.yaml** - Creates a single VM instance. This template illustrates several custom extensions, incuding support for multiple network attachments, the use of ‘name’ or subnet_name’ to refer to the network, and the ability to specify the vifmodel per network attachment (or NIC).
+* **SimpleServer.yaml** - Creates a single VM instance. This template illustrates several custom extensions, incuding support for multiple network attachments, the use of `name` or `subnet_name` to refer to the network, and the ability to specify the vifmodel per network attachment (or NIC).
 
 * **DemoAutoScaling.yaml** - Creates a single Load Balancer VM, and an AutoScalingGroup of server VMs that scales based on link utilization. This demonstrates a typical in/out autoscaling use case. The template also illustrates the use of the RAW UserDataType to pass user data that does not require cf_init for parsing.
 
