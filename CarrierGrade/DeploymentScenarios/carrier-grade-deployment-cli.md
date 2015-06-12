@@ -124,7 +124,7 @@ This exercise creates the tenants tenant1 and tenant2, and sets up their resourc
 
 	The two additional tenants are available now, with quotas established.
 
-## Creating Users Using the CLI {{userscli}
+## Creating Users Using the CLI {#userscli}
 
 You can use the CLI to add users.
 
