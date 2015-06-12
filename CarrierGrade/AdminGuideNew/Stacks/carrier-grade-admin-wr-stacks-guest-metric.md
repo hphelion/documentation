@@ -29,7 +29,7 @@ PageRefresh();
 You can use the Orchestration (Heat) service to collect and report performance metrics from individual guest instances.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 To enable the guest to push information to Ceilometer heat-cfntools must be installed on the guest.

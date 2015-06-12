@@ -35,7 +35,7 @@ PageRefresh();
 A hardware profile is a named object that captures a particular host configuration. The profile can be applied to any other host with a similar hardware configuration.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 

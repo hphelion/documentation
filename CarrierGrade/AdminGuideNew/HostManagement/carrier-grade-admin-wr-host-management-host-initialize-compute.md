@@ -36,7 +36,7 @@ PageRefresh();
 You can assign a new host as a compute node to support virtual machines.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 

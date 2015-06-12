@@ -36,7 +36,7 @@ PageRefresh();
 You can configure a compute host to provide local storage for use by VMs.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 Local storage can be used to provide improved disk access performance for VMs instantiated on the host.

@@ -29,7 +29,7 @@ PageRefresh();
 You can use the Orchestration (Heat) service to reassign stack resources automatically to meet changing conditions.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 You can define and monitor performance thresholds for metrics such as memory usage or CPU activity, and then add or remove resources when the thresholds are crossed. This allows you to make efficient use of the hardware in the cluster, by allocating resources only when they are needed, and assigning them where they are most required.

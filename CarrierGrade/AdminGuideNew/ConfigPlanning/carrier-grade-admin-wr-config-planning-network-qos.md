@@ -36,7 +36,7 @@ PageRefresh();
 Quality of Service (QoS) policies specify relative packet processing priorities applied by the AVS switch on each compute node to incoming tenant network's traffic during overload conditions.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 The QoS polices play no role under normal traffic loads, when no input traffic queues in the AVS are close to their

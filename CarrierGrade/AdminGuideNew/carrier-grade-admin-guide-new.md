@@ -147,7 +147,7 @@ The following tasks involve the Identity Operations (Keystone) service to create
 The HP Helion OpenStack Carrier Grade reports status information about the hosts in the cluster, and provides a set of tools to operate on them to execute commands, configure parameters, and monitor status.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 * [Cluster Overview](/helion/openstack/carrier/admin/host/management/clusters/)
@@ -177,7 +177,7 @@ The HP Helion OpenStack Carrier Grade reports status information about the hosts
 To perform tasks that involve replacing host systems, you might need to initialize certain nodes. Initialization installs an operating system on the host's disk drive, and automatically boots the host from the drive.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 You will perform these tasks during the installation. If you need to initialize a node while performing another task, the instructions will contain a link to one of these pages.
@@ -206,7 +206,7 @@ System configuration options are available when installing the HP Helion OpenSta
 You can make changes to the HP Helion OpenStack Carrier Grade initial configuration at any time after installation.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 * [System Configuration Management](/helion/openstack/carrier/admin/system/config/)
@@ -244,7 +244,7 @@ You can scale the resources of individual instances up or down. Currently, the C
 The Wind River Linux servers in HP Helion OpenStack Carrier Grade provide a health monitoring mechanism that can be used to implement and support the deployment of guest applications in Carrier-Grade High Availability (HA) mode.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 * [Virtual Machines and Carrier-Grade Availability](/helion/openstack/carrier/admin/carrier-grade-avail/).
@@ -256,7 +256,7 @@ data and Cinder volumes so that they can be stored in external storage
 resources and used to restore a full cluster.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 * [Performing a System Data Backup](/helion/openstack/carrier/admin/backup/)

@@ -29,7 +29,7 @@ PageRefresh();
 You can create a stack (or service) using the web administration interface, or you can use the command-line interface.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 

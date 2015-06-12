@@ -29,7 +29,7 @@ PageRefresh();
 The HP Helion OpenStack Carrier Grade implementation of Heat has been tested with most commonly-used resource types.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 The following resource types have been tested for use with HP Helion OpenStack Carrier Grade.

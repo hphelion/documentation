@@ -36,7 +36,7 @@ PageRefresh();
 A passthrough Ethernet interface is a physical PCI Ethernet NIC on a compute node to which a virtual machine is granted direct access. This minimizes packet processing delays but at the same time demands special operational considerations.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 For all purposes, a PCI passthrough interface behaves as if it were physically attached to the virtual machine.

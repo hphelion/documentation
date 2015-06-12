@@ -36,7 +36,7 @@ PageRefresh();
 Ethernet interfaces, both physical and virtual, play a key role in the overall performance of the virtualized network.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 It is important to understand the available interface types, their configuration options, and their impact on network design.

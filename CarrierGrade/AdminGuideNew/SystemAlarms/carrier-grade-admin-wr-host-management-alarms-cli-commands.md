@@ -36,7 +36,7 @@ PageRefresh();
 You can use the CLI to find information about currently active and previously triggered system alarms.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 The following commands are used to interact with the alarms subsystem: 

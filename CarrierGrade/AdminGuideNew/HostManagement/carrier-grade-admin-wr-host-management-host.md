@@ -36,7 +36,7 @@ PageRefresh();
 The **Hosts** tab on the **System Inventory** page provides an overview of the current state of all hosts in the HP Helion OpenStack Carrier Grade cluster. 
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 From this tab, you can obtain detailed information about the hosts, and execute maintenance operations.

@@ -36,7 +36,7 @@ PageRefresh();
 HP Helion OpenStack Carrier Grade can generate system alarms when operational conditions change on any of the hosts in the cluster.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 The supported interfaces to the alarms subsystem are the command line interface (see System Alarms CLI Commands on page 145), the web interface (click the Fault Management menu on the Admin tab), SNMP, and the system REST API.

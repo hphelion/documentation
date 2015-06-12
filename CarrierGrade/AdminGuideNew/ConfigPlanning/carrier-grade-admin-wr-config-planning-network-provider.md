@@ -37,7 +37,7 @@ Provider networks are the payload-carrying networks used implicitly by end users
 tenant networks.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 You must consider the following guidelines:

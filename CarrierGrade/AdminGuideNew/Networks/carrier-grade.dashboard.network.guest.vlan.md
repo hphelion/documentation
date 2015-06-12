@@ -24,7 +24,7 @@ PageRefresh();
 Tenant users can define a guest VLAN when they add a new IP subnet to a tenant network they are creating, or to an existing one.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 From the Horizon dashboard, you add the VLAN ID of the guest VLAN to the **Subnet Detail** tab of the **Create Subnet** window.

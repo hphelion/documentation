@@ -24,7 +24,7 @@ PageRefresh();
 Compute flavors are machine configurations that describe the amount of memory, number of CPUs, and storage capacity of instances. 
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 You can edit an existing flavor to include additional attributes using extra specifications.

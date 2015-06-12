@@ -36,7 +36,7 @@ PageRefresh();
 You can assign a new host as a storage node to provide object storage. Storage nodes are required only if the system is configured to use Ceph storage. 
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 

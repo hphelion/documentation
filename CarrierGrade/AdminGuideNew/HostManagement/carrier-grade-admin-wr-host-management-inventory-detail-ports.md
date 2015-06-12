@@ -36,7 +36,7 @@ PageRefresh();
 The tab Ports on the Inventory Detail page presents information about the physical ports on a host, as illustrated below.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 Currently none of the port attributes is configurable; they are all read directly from the hardware. 

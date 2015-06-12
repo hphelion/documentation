@@ -24,7 +24,7 @@ PageRefresh();
 You can select a particular VCPU model for a VM in order to leverage advanced CPU features such as SSE4.2, AES,or AVX on the compute nodes.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 When a virtual machine is launched, a Nova scheduler filter restricts the target compute nodes to those with available cores of the requested model, or better. If no such compute node is available, the error No valid host was found is reported.

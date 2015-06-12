@@ -36,7 +36,7 @@ PageRefresh();
 The internal management network is a private network, only visible internally by the hosts in the cluster.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 

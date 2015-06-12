@@ -29,7 +29,7 @@ PageRefresh();
 A collection of resources created and managed using the Orchestration (Heat) service is called a service (also known as a stack).
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 Service resources can be flavors, images, instances, tenant networks, volumes, security groups, users, floating IP addresses, or any other entities defined and configured in templates. Most types of resources offered by BHP Helion OpenStack Carrier Grade can be defined in templates and included in services.

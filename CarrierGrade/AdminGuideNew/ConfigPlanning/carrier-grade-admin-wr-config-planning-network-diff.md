@@ -36,7 +36,7 @@ PageRefresh();
 Security groups are tenant-specific sets of IP filter rules that are applied to the networking stack of a virtual machine.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 The HP Helion OpenStack Carrier Grade does not enforce a default security group when launching a new virtual

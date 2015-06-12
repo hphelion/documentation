@@ -36,7 +36,7 @@ PageRefresh();
 The Maximum Transmission Unit (MTU) of an Ethernet frame is a configurable attribute in the HP Helion OpenStack Carrier Grade. Changing its default size must be done in coordination with other network elements on the Ethernet link.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 In HP Helion OpenStack Carrier Grade, the Maximum Transmission Unit (MTU) refers to the largest possible payload on the Ethernet frame on a particular network link. The payload is enclosed by the Ethernet header (14 bytes) and the CRC (4 bytes), resulting in an Ethernet frame that is 18 bytes longer than the MTU size.

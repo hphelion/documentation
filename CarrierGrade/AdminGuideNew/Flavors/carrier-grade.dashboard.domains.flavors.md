@@ -107,7 +107,7 @@ You can add and remove metadata for flavors, see [Managing Metadata](/helion/com
 Extra specifications are key-value pairs you can add to an existing flavor to be included when the flavor is used with a new virtual machine. 
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 You can edit an existing flavor to include additional attributes using extra specifications. See [Configuring Flavor Extra Specifications](/helion/commercial/carrier/dashboard/managing/flavors/extra/).

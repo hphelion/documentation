@@ -37,7 +37,7 @@ Storage resources on the controller and storage nodes are used to maintain inter
 
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 During HP Helion OpenStack Carrier Grade software installation, the controller configuration script gives you the options to allocate space on the controller for the internal database, and for general storage volumes (images and disk space for the virtual machines).

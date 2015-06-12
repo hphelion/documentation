@@ -36,7 +36,7 @@ PageRefresh();
 From the **Inventory Detail** page you can see detailed information about a host, and use it to define hardware profiles that can be used across the cluster.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 You access the **Inventory Detail** page by clicking the host name on the **Hosts** tab of the **Systems Inventory** page. The inventory detail for a host consists of multiple tabs, each addressing a different aspect of the host. 

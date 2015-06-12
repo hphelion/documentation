@@ -36,7 +36,7 @@ PageRefresh();
 Host aggregates are collections of hosts that share common attributes for the purposes of VM scheduling.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 To view host aggregates, open the Host Aggregates page from the Admin menu.

@@ -37,7 +37,7 @@ Services in the controller nodes run constantly in active/standby mode to provid
 controller failure.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 This topic covers the following:

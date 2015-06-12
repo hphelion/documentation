@@ -25,7 +25,7 @@ You can specify the use of local storage or Cinder-based storage by using a flav
 specification.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 Before you can use local storage for a VM, you must configure at least one compute node to provide local storage.

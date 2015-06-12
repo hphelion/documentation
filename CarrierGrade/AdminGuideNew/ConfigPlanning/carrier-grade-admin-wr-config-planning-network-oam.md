@@ -36,7 +36,7 @@ PageRefresh();
 The OAM (operations, administration, and management) network enables the web administration interface, the command-line management clients, SNMP interface, and the REST APIs to manage the HP Helion OpenStack Carrier Grade cluster.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 You must consider the following guidelines:

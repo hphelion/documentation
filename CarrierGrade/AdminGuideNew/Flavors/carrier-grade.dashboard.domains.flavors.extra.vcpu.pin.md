@@ -24,7 +24,7 @@ PageRefresh();
 You can pin a vCPU to a shared physical CPU by using a flavor with the required extra specification.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 

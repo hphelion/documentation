@@ -36,7 +36,7 @@ PageRefresh();
 You can configure a data interface on a compute node with an endpoint address using CLI commands.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 For VXLAN connectivity between VMs, the compute nodes that host the VMs must be configured with endpoint IP addresses.

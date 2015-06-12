@@ -36,7 +36,7 @@ PageRefresh();
 You can use the CLI or the web administration interface to set up a VXLAN provider network and add segmentation ranges.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 VXLAN provider networks are an alternative to VLAN provider networks when VM L2 connectivity is required across separate Layer 2 network segments separated by one or more Layer 3 routers.

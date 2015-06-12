@@ -36,7 +36,7 @@ PageRefresh();
 The HP Helion OpenStack Carrier Grade cluster is represented internally by a unique object referred to as the system.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).

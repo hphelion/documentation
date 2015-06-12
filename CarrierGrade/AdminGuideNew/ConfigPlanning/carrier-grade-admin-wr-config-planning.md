@@ -35,7 +35,7 @@ PageRefresh();
 
 System configuration options are available when installing the HP Helion OpenStack Carrier Grade software. You should prepare a set of selected values and features ready to use which are applicable to a specific deployment scenario.
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 You should prepare a set of selected values and features ready to use which are applicable to a specific deployment scenario.

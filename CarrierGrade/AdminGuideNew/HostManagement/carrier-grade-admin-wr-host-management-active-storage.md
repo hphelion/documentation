@@ -36,7 +36,7 @@ PageRefresh();
 On systems that use a Ceph backend for Cinder storage, you can add or replace storage disks or swap a storage node while the system is running, even if the storage resources are in active use.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 A HP Helion OpenStack Carrier Grade system with a Ceph storage backend uses exactly two storage nodes; you cannot add or remove storage nodes. However, you can add disks to a storage node to increase capacity, and you can replace a faulty host.

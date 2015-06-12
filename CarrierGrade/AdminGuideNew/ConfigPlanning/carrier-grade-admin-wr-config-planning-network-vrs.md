@@ -36,7 +36,7 @@ PageRefresh();
 Virtual routers provide internal and external network connectivity for tenants.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 The user associated with a tenant can add a designated number of virtual routers (Neutron routers) to the tenant. The maximum number is specified in the [quotas for the tenant](/helion/commercial/carrier/dashboard/managing/quotas/).

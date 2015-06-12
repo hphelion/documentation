@@ -36,7 +36,7 @@ PageRefresh();
 The board management network is a private, optional network, only visible internally by the hosts in the cluster.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 The board management network provides for out-of-band reset, power-up, and power-down operations on HP hosts.

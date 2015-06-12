@@ -38,7 +38,7 @@ The HP Helion OpenStack Carrier Grade system uses exactly two controllers; you c
 However, you can replace the primary or secondary disks, and you can replace faulty controller nodes.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 **Note:** If you are replacing disks in order to increase the controller storage capacity, follow the instructions for Changing Storage Space Allotments on the Controller.

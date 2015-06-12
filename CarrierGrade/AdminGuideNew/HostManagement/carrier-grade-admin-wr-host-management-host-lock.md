@@ -35,7 +35,7 @@ PageRefresh();
 You can lock and unlock a system, for example when you need to make a change to the system.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 * [Lock a system](#lock)

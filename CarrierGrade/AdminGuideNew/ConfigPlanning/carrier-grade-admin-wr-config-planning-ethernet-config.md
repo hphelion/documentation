@@ -36,7 +36,7 @@ PageRefresh();
 You can review and modify the configuration for physical or virtual Ethernet interfaces using the web administration interface or the CLI.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 ## Physical Ethernet Interfaces {#physical}

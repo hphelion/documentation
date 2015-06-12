@@ -36,7 +36,7 @@ PageRefresh();
 The infrastructure network is a private network visible only to the hosts in the cluster. It is optional unless storage nodes are part of the cluster.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 Ihe infrastructure network shares the design considerations applicable to the internal management network. It can be implemented using either a 1 Gb or 10 Gb Ethernet interface. Unlike the management network, it can be VLAN-tagged, enabling it to share an interface with the management or OAM network.

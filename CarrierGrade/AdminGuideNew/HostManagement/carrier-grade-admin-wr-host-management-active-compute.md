@@ -36,7 +36,7 @@ PageRefresh();
 The compute nodes in HP Helion OpenStack Carrier Grade form a resource pool for hosting guest instances. You can manage this pool by managing the hosts.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 You can change the resource pool in several ways:

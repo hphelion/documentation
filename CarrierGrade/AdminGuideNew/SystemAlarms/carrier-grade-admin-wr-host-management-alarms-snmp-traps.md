@@ -36,7 +36,7 @@ PageRefresh();
 SNMP trap destinations are hosts configured in the HP Helion OpenStack Carrier Grade to receive unsolicited SNMP notifications.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 Destination hosts are specified by IP address, or by host name if it can be properly resolved by the HP Helion OpenStack Carrier Grade. 

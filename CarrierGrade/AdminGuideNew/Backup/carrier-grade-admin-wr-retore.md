@@ -31,7 +31,7 @@ You can restore a HP Helion OpenStack Carrier Grade cluster from available syste
 Restoring a HP Helion OpenStack Carrier Grade cluster from a set of backup files is done by restoring one host at a time, starting with the controllers, then the storage nodes, and finally the compute nodes.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 Before you start the restore procedure you must ensure the following conditions are in place:

@@ -36,7 +36,7 @@ PageRefresh();
 L2 access switches connect the HP Helion OpenStack Carrier Grade hosts to the different networks. Proper configuration of the access ports is necessary to ensure proper traffic flow.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 One or more L2 switches can be used to connect the HP Helion OpenStack Carrier Grade hosts to the different networks. When sharing a single L2 switch you must ensure proper isolation of the network traffic. 

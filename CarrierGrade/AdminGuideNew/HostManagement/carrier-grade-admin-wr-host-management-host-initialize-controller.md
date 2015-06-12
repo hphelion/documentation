@@ -36,7 +36,7 @@ PageRefresh();
 You must assign a host as a second controller to provide redundancy for controller-0.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 

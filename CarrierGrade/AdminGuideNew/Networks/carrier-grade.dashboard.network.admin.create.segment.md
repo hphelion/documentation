@@ -25,7 +25,7 @@ The admin user must create segmentation ranges on existing provider networks of 
 
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 This task assumes that provider networks have already been created to unlock the compute nodes and make the system operational. For more information, see [Creating and Deleting Provider Networks](/helion/commercial/carrier/dashboard/managing/network/provider/create/).

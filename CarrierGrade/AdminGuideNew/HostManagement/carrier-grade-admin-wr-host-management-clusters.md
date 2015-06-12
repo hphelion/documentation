@@ -36,7 +36,7 @@ PageRefresh();
 The Overview page appears when you log into the HP Helion OpenStack Carrier Grade web management interface as the administrator. It presents a dashboard providing a quick health-check overview of the cluster.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 The Overview page is an enhanced version of its OpenStack counterpart. It includes the following features:

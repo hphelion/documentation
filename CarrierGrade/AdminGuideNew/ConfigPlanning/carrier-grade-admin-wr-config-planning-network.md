@@ -36,7 +36,7 @@ PageRefresh();
 When planning the deployment of the HP Helion OpenStack Carrier Grade, it is important to understand the available networking options and how to take advantage of them for the benefit of the end users. The sections that follow provide useful networking guidelines.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 

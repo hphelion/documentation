@@ -29,7 +29,7 @@ PageRefresh();
 Several extensions to Heat are included with  Wind River Linux.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 The  Wind River Linux Extensions are compatible with both HOT format and CFN format:

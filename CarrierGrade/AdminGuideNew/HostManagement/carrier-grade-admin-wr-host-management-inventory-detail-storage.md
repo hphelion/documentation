@@ -36,7 +36,7 @@ PageRefresh();
 The **Storage** tab on the **Inventory Detail** page presents storage details for a host.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 This page contains the following:

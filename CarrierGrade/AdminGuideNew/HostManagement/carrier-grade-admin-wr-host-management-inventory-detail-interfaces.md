@@ -36,7 +36,7 @@ PageRefresh();
 The **Interfaces** tab on the **Inventory Detail** page presents details about the logical L2 network interfaces on a node, as illustrated below for an unlocked controller node.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 On a properly configured compute node, the Interfaces tab presents additional logical interfaces, for a locked node.

@@ -86,7 +86,7 @@ where min is the minimum number of CPUs.
 For flavors on Wind River Linux servers, you can set the minimum number of vCPUs.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 You can specify the minimum number of vCPUs by adding an [Extra Spec for the flavor](/helion/commercial/carrier/dashboard/managing/flavors/extra/).

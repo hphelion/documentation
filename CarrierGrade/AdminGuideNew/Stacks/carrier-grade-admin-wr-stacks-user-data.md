@@ -29,7 +29,7 @@ PageRefresh();
 You can provide bootstrap configuration for an instance at launch by including user data in the template. 
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 You can include user data by defining a UserData property for an instance. This sends configuration instructions to the instance at launch. For an example of user data, see the `CPUScale.yaml` template included with the Titanium

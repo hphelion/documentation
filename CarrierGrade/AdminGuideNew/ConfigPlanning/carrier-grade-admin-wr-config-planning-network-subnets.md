@@ -36,7 +36,7 @@ PageRefresh();
 Use the System Managed Subnet and Enable DHCP subnet attributes to determine how IP addresses are allocated and offered on an IP subnet.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 With the proper configuration in place, DHCP services can be provided by the built-in Neutron DHCP server, by a standalone server available from an external network infrastructure, or by both.

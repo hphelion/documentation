@@ -132,7 +132,7 @@ The updated Network Topology page for user2 appears as shown:
 
 <img src="media/CGH-deploy-bridge-user2.png">
 
-Once the virtual machines for both tenant users are running, you can run test traffic through the test path. For more information, see [Running Traffic Through the Test Paths](/helion/openstack/carrier/deploy/running/).
+Once the virtual machines for both tenant users are running, you can run test traffic through the test path. For more information, see [Running Traffic Through the Test Paths](/helion/openstack/carrier/deploy/running-traffic/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

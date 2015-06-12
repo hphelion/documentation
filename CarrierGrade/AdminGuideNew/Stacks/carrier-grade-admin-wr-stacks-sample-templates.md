@@ -29,7 +29,7 @@ PageRefresh();
 You can evaluate selected features of Heat using sample templates included with HP Helion OpenStack Carrier Grade. The samples also demonstrate some HP Helion OpenStack Carrier Grade extensions.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 The templates are distributed on DVD and are available online as part of the HP Helion OpenStack Carrier Grade release.
 
