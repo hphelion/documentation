@@ -803,7 +803,7 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com
 | **Server Action** | [Start Server](#startServer) | POST | /v2/{project_id}/servers/{server_id}/action | Y/Y |
 |  | [Stop Server](#stopServer) | POST | /v2/{project_id}/servers/{server_id}/action | Y/Y |
 
-### 4.2 Common Request Headers ### {#Section4_3}
+### 4.2 Common Request Headers ### {#Section4_2}
 
 *Http standard request headers*
 

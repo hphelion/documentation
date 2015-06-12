@@ -195,7 +195,7 @@ System configuration options are available when installing the HP Helion OpenSta
 * [Working with Ethernet Interfaces](/helion/openstack/carrier/config/plan/ethernet/)
 * [Planning the Network](/helion/openstack/carrier/config/plan/network/)
 * [Planning the Storage](/helion/openstack/carrier/config/plan/storage/)
-* [Planning the VXLANs](/helion/openstack/carrier/config/plan/vxlan/)
+* [Planning the VXLANs](/helion/openstack/carrier/config/plan/vxlans/)
 	* [Setting Up a VXLAN Provider Network using Horizon](/helion/openstack/carrier/config/plan/vxlans/setting/) or 
 	* [Setting Up a VXLAN Provider Network using the CLI](/helion/openstack/carrier/config/plan/vxlans/setting-cli/)
 	* [Configuring VXLAN Endpoint IP Addresses](/helion/openstack/carrier/config/plan/vxlans/endpoints/)

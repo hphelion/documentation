@@ -1680,7 +1680,7 @@ As you can see, the date and time is expressed in GMT or UTC time. The first exa
 
 When specified, this identifies the user making the request. In addition, if this token is being used by a user with Admin privilege level, the token must be scoped to the project associated with the account. If no token is specified, the request will fail unless you have been granted access to the resource by some other mechanism such as ACLs. See [Using Authentication Tokens](#using_tokens) for more information about tokens.
 
-#### 4.2.6 X-Container-Meta-{name} #### {#x_container_meta_request}
+#### 4.2.6 X-Container-Meta-{name} {#x_container_meta_request}
 
 This allows you to set custom metadata on a container using a header name with a prefix of X-Container-Meta-. After this prefix, you can pick any name meaningful to you. For example, X-Container-Meta-Reviewed could be used indicate that the contents of a container had been reviewed.
 
@@ -1690,7 +1690,7 @@ Any valid UTF-8 http header value is allowed for metadata, however we recommend 
 
 Sets the access control list (ACL) that grants read access to a container and its objects.
 
-#### 4.2.8 X-Container-Write #### {#x_container_write_request}
+#### 4.2.8 X-Container-Write {#x_container_write_request}
 
 Sets the access control list (ACL) that grants write access to a container and its objects.
 
@@ -1702,11 +1702,11 @@ For objects smaller than 5GB and [manifest objects](#large_objects), this is the
 
 See [End to end integrity](#end_to_end_integrity) for more information.
 
-#### 4.2.10 X-Account-Meta-{name} #### {#x_account_meta_request}
+#### 4.2.10 X-Account-Meta-{name} {#x_account_meta_request}
 
 This allows you to set custom metadata on an account using a header name with a prefix of X-Account-Meta-. After this prefix, you can pick any name meaningful to you.
 
-#### 4.2.11 X-Remove-Account-Meta-{name} #### {#x_remove_account_meta_request}
+#### 4.2.11 X-Remove-Account-Meta-{name} {#x_remove_account_meta_request}
 
 This allows you to remove custom metadata on an account using a headers name with a prefix of X-Account-Meta-. After this prefix, you specify the metadata item you wish to remove.
 

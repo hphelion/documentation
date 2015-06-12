@@ -34,7 +34,7 @@ The Bridging Scenario implements a Layer 2 test path using either Linux or DPDK-
 
 The Bridging Scenario topology is illustrated in the following figure. The test path is shown as a red dotted line.
 
-<img src="media/CGH-deploy-bridge-overview.jpg">
+<img src="media/CGH-deploy-bridge-overview.png">
 
 Two end users, user1 and user2, each launch an instance of the example guest image inside a virtual machine, deployed within the domain of corresponding tenants, tenant1 and tenant2. Inside each instance, a user application creates a bridge dynamically configured to operate in one of two modes:
 

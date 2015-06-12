@@ -22,27 +22,23 @@ Below you can find a full reference of supported HP Helion Public Cloud CLI soft
      PS: HPCS:\> cd "my container:"
      PS: HPCS:\> new-container -name "my new container"
 
-<!--DOUG: Modify the fonts in the syntax sections-??-perhaps create a Jira case for them?-->
-<!--DOUG: Create a CDN examples page?-->
-<!--DOUG: include a section on environment variables, such as ENABLE-CREDENTIAL-TRACKING? Full list from Travis.-->
-
-#Non-service-specific# {#Nonservicespecific}
+# Non-service-specific {#Nonservicespecific}
 
 Following is the complete list of HP Helion Public Cloud Windows CLI commands that are not applicable to a specific service (compute, object storage, etc.).   To issue these commands, you need to navigate to a container or the HP Helion Public Cloud Services (HPCS) provider, issuing the following command:
 
     cd HPCS:
 
-##Get-Catalog## {#getcatalog}
+## Get-Catalog {#getcatalog}
 
 Displays the current user's service catalog that was retrieved at login time.  This catalog stores each service the user has authorization to use.
 
-###Syntax###
+### Syntax
  get-catalog {-v} 
 
 **v**
 : Verbose mode; displays detailed information about each service that's available
 
-###Examples###
+### Examples
 EXAMPLE
 
     PS yourcontainer:\> get-catalog
@@ -55,14 +51,14 @@ EXAMPLE
 
 Lists the available services with extended information about each available service.
 
-##Get-Config## {#getconfig}
+## Get-Config {#getconfig}
 
 Lists the config file entries for the current session.
 
-### Syntax###
+### Syntax
  get-config 
 
-###Examples###
+### Examples
 EXAMPLE
 
     PS HPCS:\> get-config
@@ -94,13 +90,13 @@ EXAMPLE
 
 Displays the settings for the session.  The above example shows all currently-configurable environment variables.
 
-##Get-Metadata## {#getmetadata}
+## Get-Metadata {#getmetadata}
 Lists the Metadata entries assigned to the supplied resource.  
 
-###Syntax
+### Syntax
  `get-metadata  [*SourcePath*  | -sp *SourcePath* | -s *server-ID* | -cn "*container-name*"]`
 
-###Description
+### Description
 You can list metadata assigned to Servers, Storage Objects, and Containers.  Many resources can have zero to many custom meta-data entries assigned to them. *Get-Metadata* generates a list of key value pairs attached to the resource; you may use these for whatever purpose you like. (For details on how to add meta-data elements, see the [Set-Metadata](#setmetadata) cmdlet.)
 
 ### Options
@@ -115,7 +111,7 @@ You can list metadata assigned to Servers, Storage Objects, and Containers.  Man
 : Container name.
 
 
-###Examples###
+### Examples
 EXAMPLE 1
 
     PS yourcontainer:\> get-metadata test.txt
@@ -134,11 +130,10 @@ EXAMPLE 3
 
 Lists all metadata entries for the container "Marketing".
 
-
-##get-notes## {#getnotes}
+## get-notes {#getnotes}
 Displays the release notes for the current version. You can filter the release notes to a specific version or show all previous release notes.
 
-###Syntax###
+### Syntax
  Get-Notes {-all *switch*} {-v *switch*}
 
 **all**
@@ -147,45 +142,45 @@ Displays the release notes for the current version. You can filter the release n
 **v**
 : Prints the release notes for the specific WinCLI version in the for of xx.xx.xx.xx. 
 
-###Examples###
+### Examples
 EXAMPLE
 
     get-notes
 
 Lists the current release notes.
 
-##Get-Version## {#getversion}
+## Get-Version {#getversion}
 Displays the current version number.
 
-###Syntax###
+### Syntax
  Get-Version
 
-###Examples###
+### Examples
 EXAMPLE
 
     get-version
 
 Displays the product's current version.
 
-##Get-Zone## {#getzone}
+## Get-Zone {#getzone}
 Lists the currently-used availability zone.
 
-###Syntax###
+### Syntax
 Get-Zone
 
-###Examples###
+### Examples
 
     get-zone
 
 Displays which availability zone is currently being used.
 
-##Get-Zones## {#getzones}
+## Get-Zones {#getzones}
 Lists all currently-availability zones.
 
-###Syntax###
+### Syntax
 get-zones
 
-###Examples###
+### Examples
 
     PS HPCS:\\> get-zones
      
@@ -203,13 +198,13 @@ get-zones
 
 Displays all the availability zones with their color information.
 
-##Set-Config## {#setconfig}
+## Set-Config {#setconfig}
 Changes specific settings on a per session basis. All settings may be changed simultaneously by supplying the path to a different config file.
 
-### Syntax###
+### Syntax
  set-config -k *Key -v *Value
 
-###Examples###
+### Examples
 EXAMPLE 1
 
     PS yourContainer:\> set-config -k "HttpTimeOut" -v "100"
@@ -228,26 +223,26 @@ EXAMPLE 3
 
 Resets the current session settings to those defined within the default config file (CLI.config)
 
-##Set-Credentials## {#setcredentials}
+## Set-Credentials {#setcredentials}
 Sets the credentials (access key, secret key, and so on) for your session.
 <!--   Set-Credentials [-AccessKey] <String> [-SecretKey] <String> [-TenantId] <String>   -->
 
-###Syntax###
+### Syntax
  set-credentials -AccessKey *access-key* -SecretKey *secret-key* -TenantId *tenant-id*
 
 **Note**: If you execute `set-credentials` with no arguments or options, you are prompted for the input values.
 
-###Examples###
+### Examples
 EXAMPLE
 
     set-credentials -AccessKey 12345678901234:12345678901234 -SecretKey abcd1EFGH2ijklmnop3QRSTUV4wxyz5678 -TenantId 31415926535898
 
 Sets the session credentials for the access key to `12345678901234:12345678901234`, secret key to `abcd1EFGH2ijklmnop3QRSTUV4wxyz5678`, and tenant ID to `31415926535898`.
 
-##Set-Metadata## {#setmetadata}
+## Set-Metadata {#setmetadata}
 Allows you to add meta-data elements to an existing resource. Storage objects can have zero to many custom meta-data entries assigned to them.  This is essentially a list of key value pairs attached to the object that you may use for whatever you would like. Delimit the name value pairs (NVPs) with the pipe symbol | and enclose them in quotes. You can delimit multiple NVPs with commas.
 
-### Syntax###
+### Syntax
  set-metadata  [*SourcePath* | -sp *SourcePath* | -s *server-ID* ] -md ["*name*" {"*name2*" . . .}]
 
 **sp**
@@ -259,7 +254,7 @@ Allows you to add meta-data elements to an existing resource. Storage objects ca
 **md**
 : Pipe-delimited set of key value pairs separated by commas.
 
-###Examples###
+### Examples
 EXAMPLE 1
 
     PS yourcontainer:\> set-metadata test.txt -md "Author|Tom", "Editor|Sam"
@@ -273,27 +268,27 @@ EXAMPLE 2
 Applies the KVPs "Author|Tom" and "Editor|Sam" to the server with the ID=1345.
 
 
-##Set-Zone## {#setzone}
+## Set-Zone {#setzone}
 Sets the availability zone; all subsequently-issued commands will apply to the assigned availability zone.
 
-### Syntax###
+### Syntax
 set-zone "*zone-ID*"
 
-###Examples###
+### Examples
 EXAMPLE
 
     set-zone "1"
 
 Sets the availability zone to "az-2-region-a.geo-1".
 
-#Compute CLI Commands# {#Compute}
+# Compute CLI Commands {#Compute}
 
 Following is the complete list of HP Helion Public Cloud Windows Compute CLI commands.
 
-##Add-Rule## {#Add-Rule}
+## Add-Rule {#Add-Rule}
 Creates a new security group rule and assigns it to an existing security group.
 
-### Syntax###
+### Syntax
 add-rule [ -fp "*FromPort*" -tp "*ToPort*" | -ipr "*low*/*high*" ] -ipp "*Protocol*" -gid "*GroupID*"
 
 **fp**
@@ -311,67 +306,67 @@ add-rule [ -fp "*FromPort*" -tp "*ToPort*" | -ipr "*low*/*high*" ] -ipp "*Protoc
 **gid**
 : The security group ID used to apply this rule. If your current location is within one of these groups the ID is implied and therefore optional.
 
-###Examples###
+### Examples
 EXAMPLE
 
     add-rule -fp "80" -tp "84" -ipp "tcp" -ipr "15.185.118.75" -gid "2133"
 
 Creates a new security group rule affecting the TCP protocol from port 80 to 84, and assigns it to SecurityGroup 2133.
 
-##Allocate-IP## {#Allocate}
+## Allocate-IP {#Allocate}
 Requests a new Floating IP and adds to your IP pool.
 
-### Syntax###
+### Syntax
 allocate-ip
 
-###Examples###
+### Examples
 EXAMPLE
 
     allocate-ip
 
-##Assign-IP## {#Assign-IP}
+## Assign-IP {#Assign-IP}
 Assigns an allocated IP address to an existing server.
 
-###Syntax###
+### Syntax
 assign-ip "*address*" *server-ID*
 
-###Examples###
+### Examples
 EXAMPLE
 
     assign-ip "192.168.110.45" -s 4ee64397-1253-473c-a81d-bc23dceeef31
 
 Assigns the IP address 192.168.45 to the server with the ID -s 4ee64397-1253-473c-a81d-bc23dceeef31.
 
-##Connect-Server## {#Connect-Server}
+## Connect-Server {#Connect-Server}
 Creates quick connection to the designated server instance. 
 
 **Note:** Currently available for Windows instances only.
 
-###Syntax###
+### Syntax
 connect-server *instance-ID*
 
-###Examples###
+### Examples
 EXAMPLE
 
     connect-server 123456
 
 Performs a connection to the server with the ID `123456`.
 
-##Get-Limits## {#Get-Limits}
+## Get-Limits {#Get-Limits}
 Shows your quota amounts for Compute assets
 
-### Syntax###
+### Syntax
 get-limits
 
-###Examples###
+### Examples
 EXAMPLE
 
     get-limits
 
-##Get-Password## {#Get-Password}
+## Get-Password {#Get-Password}
 Displays the password for a server instance.
 
-###Syntax###
+### Syntax
 get-password *instance-ID*
 
 If you do not enter the keypair name, `Get-Password` prompts you for it.  In order to invoke `get-password`, both of the following must be true:
@@ -381,22 +376,22 @@ If you do not enter the keypair name, `Get-Password` prompts you for it.  In ord
 
 **Note:** This cmdlet is currently available for Windows instances only. This password is not updated if you re-sync the administrator password with the `reset-password` command; it displays the original generated password as long as the eventlog is available.
 
-###Examples###
+### Examples
 EXAMPLE
 
     PS HPCS:\> get-password 123456
 
 Displays the password for the server instance `123456`.
 
-##Ls## {#ls}
+## Ls {#ls}
 Lists the currently-available servers, flavors, images, networking, and security group and their associated information.  The information listed is dependent on the directory in which you execute the command.  For example, if you are in the directory "\Servers", the server information is listed.
 
 **Note**: The HP Helion Public Cloud environment CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
 
-### Syntax###
+### Syntax
 ls 
 
-###Examples###
+### Examples
 EXAMPLE 1
 
     PS HPCS:\Servers> ls
@@ -409,15 +404,15 @@ EXAMPLE 2
 
 Lists the currently-available flavors and their associated details.
 
-##New-FloatingIP## {#New-FloatingIP}
+## New-FloatingIP {#New-FloatingIP}
 Creates a new Floating IP.
 
-### Syntax###
+### Syntax
 new-floatingip 
  
 new-floatingip -pid *portID* -nid *NetworkID*
 
-###Options###
+### Options ###
 
 **pid** 
 : Floating IP port identifier value.
@@ -425,7 +420,7 @@ new-floatingip -pid *portID* -nid *NetworkID*
 **nid** 
 : Floating IP network identifier value.
 
-###Examples###
+### Examples#
 EXAMPLE
 
     new-FloatingIP -pid 12857174-99cf-40e9-999e-fb0fa2e84898 -nid bd1c30f7-71f1-455e-b91e-8d03da7f5224 
@@ -439,7 +434,7 @@ Creates a new server image based on an existing server.
 ###Syntax
 new-image "_existing-server-name_" "_new-server-name_"
 
-###Examples###
+### Examples#
 EXAMPLE
 
     new-image myserver testserver
@@ -453,7 +448,7 @@ Creates a new keypair. The keypair is stored by default in `C:\Users\*username*\
 ### Syntax###
 new-keypair *Name*
 
-###Examples###
+### Examples#
 EXAMPLE
 
     new-keypair "TestKey"
@@ -478,7 +473,7 @@ new-network -n *Name* - asu *AdminStateUp*
 
 : AdminStateUp. Determines if AdminStateUp flag is true or false.
 
-###Examples###
+### Examples#
 
 EXAMPLE
 
@@ -512,7 +507,7 @@ new-port -n *Name* - asu *AdminStateUp* -nid *NetworkID* -did *PortsDeviceID*
 : Identifies Port Device.
 
 
-###Examples###
+### Examples#
 
 EXAMPLE
 
@@ -542,7 +537,7 @@ new-router -n *Name* -asu *AdminStatep* - egw *ExternalGatewayNeworkID*
 
 : Identifies External Gateway Network.
 
-###Examples###
+### Examples#
 
 EXAMPLE
 
@@ -573,7 +568,7 @@ new-routerinterface -rid *RouterID* -sid *SubnetID* -pid *portID*
 
 : Identifies Port.
 
-###Examples###
+### Examples#
 
     # new-routerinterface -rid bd1c30f7-71f1-455e-b91e-8d03da7f5224 -pid c9e32588-5b69-4100-a1a6-fa49094ec0a8 -sid 7yuu9886-5b69-4100-a1a6-fa49094ec0a8
 
@@ -586,7 +581,7 @@ Creates a new security group.
 ### Syntax###
 new-securitygroup -n "*name*" "*description*"
 
-###Examples###
+### Examples#
 EXAMPLE
 
     new-securitygroup -n "TestGroup" -d "SomeDescription"
@@ -623,7 +618,7 @@ new-server -n "*name*" -i "*image-ref-ID*" -f "*flavor-ref-ID*"
 **k**
 : Keypair for this server.
 
-###Examples###
+### Examples#
 EXAMPLE 1
 
     new-server -n "TestServer" -i "2111" -f "100" -md "Namevalue1 | value1", "NameValue2 | value2", "NameValue3 | value3" -sg "securitygroupname","securitygroupname2" -k "KeyName"
@@ -669,7 +664,7 @@ new-subnet -nid *NetworkID* -ipv *IPVersion* -c *CIDRValue* -a *AllocationPools*
 : Lists Allocation Pools, separating them by commas.
 
 
-###Examples###
+### Examples#
 
 EXAMPLE
 
@@ -685,7 +680,7 @@ Sends echo request packets to the named server.
 ###Syntax###
 ping-server *instance_ID*
 
-###Examples###
+### Examples#
 EXAMPLE
 
     PS HPCS:\Servers> ping-server 123456
@@ -715,7 +710,7 @@ Allows you to perform either a soft or hard reboot of a server. With a soft rebo
 ### Syntax###
 reboot-server "*server-ID*" [ "SOFT" | "HARD" ]
 
-###Examples###
+### Examples#
 EXAMPLE
 
     reboot-server "4516" "SOFT"
@@ -735,10 +730,10 @@ EXAMPLE
 
 Refreshes the cache for your current shell.
 
-##Remove-FloatingIP## {#Remove-FloatingIP}
+## Remove-FloatingIP {#Remove-FloatingIP}
 Removes an existing Floating IP address.
 
-### Syntax###
+### Syntax
 remove-floatingip 
 
 remove-floatingip -id -all
@@ -752,7 +747,7 @@ remove-floatingip -id -all
 
 : Removes all Floating IP addresses.
 
-###Examples###
+### Examples#
 EXAMPLE
 
     # remove-floatingIP 4ee64397-1253-473c-a81d-bc23dceeef31 
@@ -766,7 +761,7 @@ Removes a previously created keypair.
 ### Syntax###
 remove-keypair *Name*
 
-###Examples###
+### Examples#
 EXAMPLE
 
     remove-keypair "TestKey"
@@ -791,7 +786,7 @@ remove-network -id -all
 : Removes all Floating IP addresses.
 
 
-###Examples###
+### Examples#
 
 EXAMPLE
 
@@ -817,7 +812,7 @@ remove-port -id -all
 
 : Removes all ports.
 
-###Examples###
+### Examples#
 
 EXAMPLE
 
@@ -843,7 +838,7 @@ remove-router -id -all
 
 : Removes all routers.
 
-###Examples###
+### Examples#
 
 EXAMPLE
 
@@ -869,7 +864,7 @@ remove-routerinterface -id -all
 
 : Removes all Router/Subnet relationships.
 
-###Examples###
+### Examples#
 
 EXAMPLE
 
@@ -882,7 +877,7 @@ Removes an existing security group rule.
 ### Syntax###
 remove-rule "*rule-ID*"
 
-###Examples###
+### Examples#
 EXAMPLE
 
     remove-rule -id "3244"
@@ -895,7 +890,7 @@ Deletes an existing security group.
 ### Syntax###
 remove-securitygroup -id "*group-ID*"
 
-###Examples###
+### Examples#
 EXAMPLE
 
     remove-securitygroup -id "3244"
@@ -911,7 +906,7 @@ remove-server [ "*server-ID*" | -all ]  "*server-ID*"
 **-all**
 : Deletes all servers
 
-###Examples###
+### Examples#
 EXAMPLE
 
     remove-server "4516"
@@ -936,7 +931,7 @@ remove-subnet -id -all
 
 : Removes all Subnets.
 
-###Examples###
+### Examples#
 EXAMPLE
 
     # remove-Subnet 12857174-99cf-40e9-999e-fb0fa2e84898 </dev:code>-
@@ -944,26 +939,26 @@ Removes the Subnet with the id of 12857174-99cf-40e9-999e-fb0fa2e84898
 
 
 
-##Reset-Password## {#reset-password}
+## Reset-Password {#reset-password}
 Re-syncs your Windows administrator password for the given server, after manual modification, in order to use the `connect-server` cmdlet.
 
 ### Syntax###
 reset-password -id "*serverID*" -p "*password*"
 
-###Examples###
+### Examples#
 EXAMPLE
 
     reset-password -id "3245" -p "testpassword08"
 
 Re-syncs the Windows session administrator password with that of the server with the ID of "3245" to "testpassword08".
 
-##Set-ZoneColor## {#Set-ZoneColor}
+## Set-ZoneColor {#Set-ZoneColor}
 Sets the availability zone; all subsequently-issued commands are applied to the assigned availability zone.
 
 ### Syntax###
 set-zonecolor *zone_ID* *color*
 
-###Examples###
+### Examples#
 EXAMPLE
 
     PS HPCS:\\> set-zonecolor 1 Cyan
@@ -974,7 +969,7 @@ EXAMPLE
 
 Sets the color identifier for zone 1 to cyan.  The color names must be capitalized (as in the example).
 
-##Unassign-IP## {#Unassign-IP}
+## Unassign-IP {#Unassign-IP}
 Unassigns an IP address for an existing Server.
 
 ###Syntax###
@@ -990,7 +985,7 @@ unassign-ip *address* -sid  *server-ID*
 
 : The Server ID that is disassociated from the IP address.
 
-###Examples###
+### Examples#
 EXAMPLE
 
     # unassign-IP "192.168.110.45" -s 4ee64397-1253-473c-a81d-bc23dceeef31
@@ -998,7 +993,7 @@ EXAMPLE
 Removes the supplied IP address from server 4ee64397-1253-473c-a81d-bc23dceeef31 
 
 
-##Update-FloatingIP ## {#Update-FloatingIP }
+## Update-FloatingIP {#Update-FloatingIP}
 Updates an existing Floating IP.
 
 ###Syntax###
@@ -1006,7 +1001,7 @@ update-floatingip
 
 update-floatingip -id *ID* -pid *portID* 
 
-###Options###
+### Options
 **id**
 
 : Identifies Floating IP.
@@ -1015,7 +1010,7 @@ update-floatingip -id *ID* -pid *portID*
 
 : Identifies Port.
 
-###Examples###
+### Examples
 EXAMPLE
 
     # update-FLoatingIP -id 12857174-99cf-40e9-999e-fb0fa2e84898 -pid c9e32588-5b69-4100-a1a6-fa49094ec0a8 
@@ -1023,7 +1018,7 @@ EXAMPLE
 Updates the Floating IP (12857174-99cf-40e9-999e-fb0fa2e84898) to the new Port (c9e32588-5b69-4100-a1a6-fa49094ec0a8) 
 
 
-##Update-Network## {#Update-Network}
+## Update-Network {#Update-Network}
 Updates an existing Network.
 
 ###Syntax###
@@ -1041,7 +1036,7 @@ update-network -id *networkIP Identity* -n *Name*
 
 : Network Name.
 
-###Examples###
+### Examples
 EXAMPLE
 
     # update-Network -id 12857174-99cf-40e9-999e-fb0fa2e84898 -n "NewNameTest" 
@@ -1049,7 +1044,7 @@ EXAMPLE
 Changes the Network(12857174-99cf-40e9-999e-fb0fa2e84898) name to NewNameTest. 
 
 
-##Update-Port## {#Update-Network}
+## Update-Port {#Update-Port}
 Updates an existing port.
 
 ### Syntax###
@@ -1067,7 +1062,7 @@ update-port -id -did
 
 : Device ID.
 
-###Examples###
+### Examples#
 EXAMPLE
 
     # update-Port -id 12857174-99cf-40e9-999e-fb0fa2e84898 -did "sdf\test" 
@@ -1091,7 +1086,7 @@ update-router- id *RouterIdentifier* -nid *NetworkID*
 
 : Identifies the Network.
 
-###Examples###
+### Examples#
 EXAMPLE
 
     # update-Router -id 12857174-99cf-40e9-999e-fb0fa2e84898 -nid c9e32588-5b69-4100-a1a6-fa49094ec0a8 
@@ -1105,7 +1100,7 @@ Allows you to change the server name property.
 ### Syntax###
 update-server -id "*server-ID*" -n "*name*"
 
-###Examples###
+### Examples#
 EXAMPLE
 
     update-server -id "2133" -n "NewName"
@@ -1134,7 +1129,7 @@ update-subnet -id *SubnetIdentifier* -egw *ExternalGatewayNetworkIPAddress* - n 
 
 : New Subnet name.
 
-###Examples###
+### Examples#
 EXAMPLE
 
 <!-- Example section -->
@@ -1151,7 +1146,7 @@ Allows you to traverse through a directory structure (along both ascendant and d
 ### Syntax###
  cd *target
 
-###Examples###
+### Examples#
 EXAMPLE 1
 
     PS yourContainer:\> cd foo\bar
@@ -1176,7 +1171,7 @@ Allows you to move files in the following ways:
 ### Syntax###
  copy *[source] target  [-recurse]
 
-###Examples###
+### Examples#
 EXAMPLE 1
 
     PS yourContainer:\> copy c:\test\
@@ -1230,14 +1225,14 @@ del -t "*object*"
 **-t**
 : Path to the storage object to be removed
 
-###Examples###
+### Examples#
 EXAMPLE 1
 
     PS yourContainer:\># del test.xml
 
 Removes the storage object `test.xml` from the current directory.
 
-##Get-Uri ## {#get-uri}
+## Get-Uri {#get-uri}
 Lists the fully qualified URI of the resource that you supply.  The optional parameters allow you to define a timespan for the URI.  When you issue this command, the URI is also pasted to the Windows clipboard for your convenience. If you want to disable this behavior, set the `CLI.config` option `PasteGetURIResultsToClipboard` to `false`.
 
 ### Syntax###
@@ -1252,7 +1247,7 @@ Lists the fully qualified URI of the resource that you supply.  The optional par
 **sv**
 : Number of seconds the URI is valid
 
-###Examples###
+### Examples#
 EXAMPLE 1
 
     PS yourContainer:\> get-uri anothertest.txt.
@@ -1271,7 +1266,7 @@ EXAMPLE 2
 
 Displays the URI for the file `anothertest.txt`, where the URI is valid for 27 days.
 
-##Ls## {#Ls}
+## Ls {#LsOS}
 Allows you to list available resources within the current Container.
 
 **Note**: **ls** supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
@@ -1279,7 +1274,7 @@ Allows you to list available resources within the current Container.
 ### Syntax###
  ls {*target*}
 
-###Examples###
+### Examples#
 EXAMPLE 1
 
     PS yourContainer:\> ls
@@ -1298,7 +1293,7 @@ Maps a container owned by a different user to your list of available drives.
 ###Syntax###
  map-drive <drive_URL>
  
-###Examples###
+### Examples#
 EXAMPLE 1
 
     map-drive https://objects.werr.net:443/v1/9153476658759/rgtest2
@@ -1311,7 +1306,7 @@ Allows you organize your resources within Object Storage in a hierarchical fashi
 ### Syntax###
  md *target*
 
-###Examples###
+### Examples#
 EXAMPLE 1
 
     PS yourContainer:\> md foo
@@ -1343,7 +1338,7 @@ Migrates existing stores of data from external sources like S3, Dropbox and Skyd
 : Comma-deliniated bucket names to be copied to the HP Helion Public Cloud system.
 
 
-###Examples###
+### Examples#
 EXAMPLE 1
 
     migrate-drive -p "S3" -sk "aa78676dhhh100" -ak "jhjhgu64332" -b "testb1", "testb2"
@@ -1356,7 +1351,7 @@ Creates a new storage container.
 ### Syntax###
  new-container -name  *Name*
 
-###Examples###
+### Examples#
 EXAMPLE
 
     PS yourcontainer:\> New-container -name marketing
@@ -1370,7 +1365,7 @@ After confirmation, deletes a container entirely. If any files exist within the 
  remove-container  *Name* 
 
 
-###Examples###
+### Examples#
 EXAMPLE
 
     PS yourcontainer:\> remove-container marketing
@@ -1383,35 +1378,14 @@ Removes an existing mapped drive.
 ###Syntax###
  remove-drive <drive_URL>
 
-###Examples###
+### Examples#
 EXAMPLE 1
 
     remove-drive rgtest
     
 Removes the container `rgtest` from your list of available drives. -->
 
-##Remove-FloatingIP## {#Remove-FloatingIP}
-Removes an existing Floating IP address.
-
-### Syntax###
-remove-floatingip 
-remove-floatingip -id -all
-
-###Options###
-**id**
-: Identifies the Floating IP address
-
-**all**
-: Removes all Floating IP addresses.
-
-###Examples###
-EXAMPLE
-
-    # remove-floatingIP 4ee64397-1253-473c-a81d-bc23dceeef31 
-
-Deletes the Floating IP with id of 4ee64397-1253-473c-a81d-bc23dceeef31.
-
-##Remove-Item## {#Remove-Item}
+## Remove-Item {#Remove-Item}
 Removes an object from your object storage container.
 
 ###Syntax
@@ -1443,7 +1417,7 @@ Sets the scope of a Private Container to Public.
 ### Syntax###
  set-scope  *Name* PUBLIC
 
-###Examples###
+### Examples#
 EXAMPLE
 
     marketing:\> set-scope yourcontainer -s PUBLIC
@@ -1459,7 +1433,7 @@ Lists all CDN-enabled containers and their associated CDN entries.
 ### Syntax###
 get-cdn
 
-###Examples###
+### Examples#
 EXAMPLE
 
     get-cdn
@@ -1472,7 +1446,7 @@ Creates a new CDN entry for the specified container.
 ###Syntax###
 new-cdn -n "*container-name*"
 
-###Examples###
+### Examples#
 EXAMPLE
 
     new-cdn -n "TestContainer"
@@ -1485,7 +1459,7 @@ Removes a CDN entry from the specified container.
 ### Syntax###
 remove-cdn -n "*container-name*"
 
-###Examples###
+### Examples#
 EXAMPLE
 
     remove-cdn -n "TestContainer"
@@ -1501,7 +1475,7 @@ Associates a volume with an existing server.
 ###Syntax###
   attach-volume *server_id* *volume_id* "*device_name*"
 
-###Examples###
+### Examples#
 EXAMPLE
 
     # attach-volume 21 2345 "/dev/vdp"
@@ -1514,7 +1488,7 @@ Disassociates a volume from an existing server.
 ###Syntax###
   detach-volume *server_id* *volume_id*
 
-###Examples###
+### Examples#
 EXAMPLE
 
     # detach-volume 21 2345
@@ -1527,7 +1501,7 @@ Creates a new snapshot of your block storage volumes.
 ###Syntax###
   new-snapshot "*snapshot_name*" ["*snapshot_description*"] *volume_id*
 
-###Examples###
+### Examples#
 EXAMPLE
 
     # new-snapshot "TestSnapshot" "This is a simple Snapshot test" 2344
@@ -1540,7 +1514,7 @@ Creates a new block storage volume.
 ###Syntax###
   new-volume "*volume_name*" ["*volume_description*"] *volume_size* ["*metadata*"]
 
-###Examples###
+### Examples#
 EXAMPLE 1
 
     # new-volume "TestVolume" "This is a simple Volume test" 20
@@ -1559,7 +1533,7 @@ Deletes an existing block storage snapshot.
 ###Syntax###
   remove-snapshot *snapshot_id*
 
-###Examples###
+### Examples#
 EXAMPLE
 
      # remove-snapshot 2457
@@ -1572,7 +1546,7 @@ Deletes an existing block storage volume.
 ###Syntax###
   remove-volume *volume_ID*
 
-###Examples###
+### Examples#
 EXAMPLE
 
     # remove-volume 2457

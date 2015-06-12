@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Configuring VXLAN Endpoint IP Addresses
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Configuring VXLAN Endpoint IP Addresses"
 permalink: /helion/openstack/carrier/config/plan/vxlans/endpoints/
 product: carrier-grade
 product-version1: HP Helion OpenStack

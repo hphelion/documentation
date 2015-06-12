@@ -113,7 +113,7 @@ This VM is used to create the images for the guest OS.
 2. Once the image gets created, the image will be initialized automatically.
 
 ## Enabling Windows and SQL Server in your ALS cluster {#enabling}
-Note that you can do this [through the Horizon console](/helion/devplatform/1.2/growcluster) instead of the command line if you prefer.
+Note that you can do this [through the Horizon console](/helion/devplatform/1.2/growcluster/) instead of the command line if you prefer.
 ### Add Windows DEA
 
 1. Create a yml file to add (e.g. <code>manifest.yml</code>)
