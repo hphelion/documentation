@@ -40,33 +40,35 @@ An admin user can [create](#createnet) and [delete](#deletenet) provider network
 
 	The network(s) for the selected project appear. 
 
-3. Click **Create Network**.
+3. Select the **Provider Networks** tab.
 
-4. On the **Network** tab enter a name for the network.
+4. Click **Create Network**.
 
-5. Select which project the network is to be available in. 
+5. On the **Network** tab enter a name for the network.
 
-6. Select the provider network type:
+6. Select which project the network is to be available in. 
 
-	* Local. No additional configuration required.
-	* Flat. Specify the name of the physical network that this network should map to.
-	* VLAN. Specify the name of the physical network that this network should map to and specify the VLAN segment number to assign.
-	* GRE. Specify the VLAN segment number to assign.
-	* VXLAN. Specify the VLAN segment number to assign.
+7. Select the provider network type:
 
-7. From the **Admin State** list, select **UP** to launch the network in the enabled state or **DOWN** to disable the new network.
+	* **Local**. No additional configuration required.
+	* **Flat**. Specify the name of the physical network that this network should map to.
+	* **VLAN**. Specify the name of the physical network that this network should map to and specify the VLAN segment number to assign.
+	* **GRE**. Specify the VLAN segment number to assign.
+	* **VXLAN**. Specify the VLAN segment number to assign.
 
-8. Determine if the network can be accessed in all projects:
+8. From the **Admin State** list, select **UP** to launch the network in the enabled state or **DOWN** to disable the new network.
+
+9. Determine if the network can be accessed in all projects:
 
 	* Select **Shared** to make the network available in all projects. 
 	* Leave the **Shared** option clear to limit the network to the selected project. 
 
-9. Determine if the network is to be available externally or only internally: 
+10. Determine if the network is to be available externally or only internally: 
 
 	* Select **External Network** to make the network an externally accessible.
 	* Leave the **External Network** option clear to make the network internal, only accessible from the external network through a network router. 
 
-10. Click **Create Network**.  
+11. Click **Create Network**.  
 
 ### Delete a provider network ### {#deletenet}
 
@@ -76,7 +78,9 @@ An admin user can [create](#createnet) and [delete](#deletenet) provider network
 
 	The network(s) for the selected project appear. 
 
-3. For the network you want to delete, click the arrow icon in the **Actions** menu and select **Delete Network**.
+3. Select the **Provider Networks** tab.
+
+4. For the network you want to delete, click the arrow icon in the **Actions** menu and select **Delete Network**.
 
 	To delete multiple networks, click the check box next to name of each network to delete. Click **Delete Networks**.
 

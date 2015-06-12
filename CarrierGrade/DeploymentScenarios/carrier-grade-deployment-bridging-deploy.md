@@ -48,7 +48,7 @@ Before deploying this scenario, disable Spanning Tree Protocol (STP) on the swit
 
 3. Select **Instances** in the **Manage Compute** section of the **Project** tab to open the **Instances** page.
 
-	Since no instances are currently running, an empty list is displayed
+	Since no instances are currently running, an empty list is displayed.
 
 4. Configure the virtual machine details by clicking **Launch Instance** to display the Launch Instance window. Fill in the information in the Details tab, as illustrated below:
 
@@ -72,7 +72,9 @@ Before deploying this scenario, disable Spanning Tree Protocol (STP) on the swit
 
 	b. Connect the required tenant networks.
 
-	Click the blue + buttons on the Available Networks list to move the tenant networks to the Selected Networks list.
+	Click the blue + buttons on the Available Networks list to move the tenant networks to the Selected Networks list, as shown:
+
+	<img src="media/CGH-deploy-bridge-launch-after.png">
 
 	**Note:** The order in which the networks are moved determines the order in which the virtual ethernet interfaces `eth0`, `eth1`, `eth2`, and so on are assigned. In the scenarios, the example guest image is configured to bridge or route between `eth1` and `eth2`. The networks to be attached to the bridge or router must be moved in the proper order for compatibility with this configuration.
 
@@ -81,6 +83,8 @@ Before deploying this scenario, disable Spanning Tree Protocol (STP) on the swit
 	For each interface, you can specify the driver type from a drop-down menu. In this example, eth0 (NIC-1) is configured as a virtio interface, suitable for low-level management traffic. The eth1 (NIC-2) and eth2 (NIC-3) interfaces are configured as accelerated AVP ports for highthroughput traffic. You can select any other combination, as required by your application.
 
 	Once the three network interfaces have been selected, the Networking tab appears as follows:
+
+	<img src="media/CGH-deploy-bridge-launch-nic.png">
 
 	**Note:** The interface type and allocated NIC order cannot be changed after the instance is launched. To use different port assignments, you must shut down and delete the instance, and then launch a new instance.
 
@@ -94,17 +98,17 @@ Before deploying this scenario, disable Spanning Tree Protocol (STP) on the swit
 
 	* To implement a Linux bridge on the guest image, add the following user data for both tenant1 and tenant2:
 
-		#wrs-config
-		FUNCTIONS="bridge"
-		BRIDGE_PORTS="eth1,eth2.5"
+			#wrs-config
+			FUNCTIONS="bridge"
+			BRIDGE_PORTS="eth1,eth2.5"
 
 	These key-value pairs implement a Linux-kernel bridge attached to interfaces `eth1` and `eth2.5`, where the notation eth2.5 indicates traffic on eth2 tagged with VLAN ID 5.
 
 	* To implement a DPDK-accelerated bridge on the guest image, add the following user data for both tenant1 and tenant2.
 
-		#wrs-config
-		FUNCTIONS="hugepages,vswitch"
-		BRIDGE_PORTS="eth0,eth1.5"
+			#wrs-config
+			FUNCTIONS="hugepages,vswitch"
+			BRIDGE_PORTS="eth0,eth1.5"
 
 	These key-value pairs implement a DPDK-accelerated bridge attached to two network interfaces, identified as `eth0` and `eth1.5`. The notation `eth1.5` indicates traffic on `eth1` tagged with `VLAN ID 5`. For this type of VNF, the interfaces are identified with respect to the bridge rather than the Linux kernel. They map to the Linux kernel interfaces as follows:
 
@@ -129,7 +133,7 @@ The updated Network Topology page for user2 appears as shown:
 
 <img src="media/CGH-deploy-bridge-user2.png">
 
-**Note:** To complete the deployment scenarios, this task must be repeated as user2, substituting appropriate names. Once the virtual machines for both tenant users are running, you can run test traffic through the test path. For more information, see [Running Traffic Through the Test Paths](/helion/openstack/carrier/deploy/running/).
+**Note:** To complete the deployment scenarios, this task must be repeated as user2, substituting appropriate names. Once the virtual machines for both tenant users are running, you can run test traffic through the test path. For more information, see [Running Traffic Through the Test Paths](/helion/openstack/carrier/deploy/running-traffic/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
