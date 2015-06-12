@@ -40,7 +40,7 @@ Two deployment scenarios are described:
 In each scenario, two VM instances are launched, and a test path is established between them for performance evaluations.
 
 
-**Overview**
+**Chapter 1: Overview**
 
 [Reference Deployment Scenarios Overview](/helion/openstack/carrier/deploy/)
 
@@ -54,7 +54,7 @@ In each scenario, two VM instances are launched, and a test path is established 
 
 [VM Network Interface Options](/helion/openstack/carrier/deploy/interface/)
 
-**Setting Up the Scenario Environments**
+**Chapter 2: Setting Up the Scenario Environments**
 
 [Setting Up the Scenario Environment](/helion/openstack/carrier/deploy/setting/)
 
@@ -62,7 +62,7 @@ In each scenario, two VM instances are launched, and a test path is established 
 * [Administrative Tasks](/helion/openstack/carrier/deploy/setting/admin/)
 * [User Tasks](/helion/openstack/carrier/deploy/setting/user/)
 
-**Deploying the Scenarios** 
+**Chapter 3: Deploying the Scenarios** 
 
 [Deploying the Bridging Scenario](/helion/openstack/carrier/deploy/bridging/deploy/)
 
@@ -70,7 +70,7 @@ In each scenario, two VM instances are launched, and a test path is established 
 
 [Running Traffic Through the Test Paths](/helion/openstack/carrier/deploy/running-traffic/)
 
-**Deployment Scenarios using the CLI**
+**Chapter 4: Deployment Scenarios using the CLI**
 
 * [Deployment Scenarios using the CLI](/helion/openstack/carrier/deploy/cli/)
 
