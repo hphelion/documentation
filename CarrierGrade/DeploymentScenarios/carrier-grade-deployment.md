@@ -44,7 +44,9 @@ In each scenario, two VM instances are launched, and a test path is established 
 
 [Reference Deployment Scenarios Overview](/helion/openstack/carrier/deploy/)
 
-**Requirements**
+* [Bridging Scenario Overview](/helion/openstack/carrier/deploy/bridging/overview/)
+
+* [Routing Scenario Overview](/helion/openstack/carrier/deploy/routing/overview/)
 
 [Requirements for the Deployment Scenarios](/helion/openstack/carrier/deploy/requirements/)
 
@@ -60,19 +62,13 @@ In each scenario, two VM instances are launched, and a test path is established 
 * [Administrative Tasks](/helion/openstack/carrier/deploy/setting/admin/)
 * [User Tasks](/helion/openstack/carrier/deploy/setting/user/)
 
+**Deploying the Scenarios** 
+
+[Deploying the Bridging Scenario](/helion/openstack/carrier/deploy/bridging/deploy/)
+
+[Deploying the Routing Scenario](/helion/openstack/carrier/deploy/routing/deploy/)
+
 [Running Traffic Through the Test Paths](/helion/openstack/carrier/deploy/running-traffic/)
-
-**Bridging Scenario**
-
-[Bridging Scenario Overview](/helion/openstack/carrier/deploy/bridging/overview/)
-
-* [Deploying the Bridging Scenario](/helion/openstack/carrier/deploy/bridging/deploy/)
-
-**Routing Scenario**
-
-[Routing Scenario Overview](/helion/openstack/carrier/deploy/routing/overview/)
-
-* [Deploying the Routing Scenario](/helion/openstack/carrier/deploy/routing/deploy/)
 
 **Deployment Scenarios using the CLI**
 
