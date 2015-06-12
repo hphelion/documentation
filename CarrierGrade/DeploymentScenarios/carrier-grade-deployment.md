@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Reference Deployment Scenarios"
+title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Reference Deployment Scenarios Guide"
 permalink: /helion/openstack/carrier/deploy/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -24,7 +24,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Reference Deployment Scenarios
+# HP Helion OpenStack&#174; Carrier Grade (Beta): Reference Deployment Scenarios Guide
 
 You can use the deployment scenarios to familiarize yourself with HP Helion OpenStack Carrier Grade and evaluate its performance.
 
@@ -32,52 +32,62 @@ You can use the deployment scenarios to familiarize yourself with HP Helion Open
 **Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
-Two deployment scenarios are described: a Bridging Scenario that uses two virtual L2 switches, and a Routing Scenario that uses two virtual L3 switches. In each scenario, two VM instances are launched, and a test path is established between them for performance evaluations.
+Two deployment scenarios are described: 
 
-Both scenarios use AVP network drivers for the test path. For each VM, an additional connection is established, using Linux virtio drivers, to a management network used for provisioning.
-With each scenario in place, you can attach testing equipment to the private tenant networks in order to evaluate throughput, latency, and other statistics of interest. Traffic generators can be used to send packets along the test path to exercise the different virtual applications and networks. For more information, see Running Traffic Through the Test Paths on page 60.
+* **Bridging Scenario** -This scenario uses two virtual L2 switches
+* **Routing Scenario** - This scenario uses two virtual L3 switches. 
+ 
+In each scenario, two VM instances are launched, and a test path is established between them for performance evaluations.
 
-The scenarios demonstrate several aspects of HP Helion OpenStack Carrier Grade, including:
 
-* a multi-tenant environment
-* vlan-tagged tenant networks
-* use of huge pages for high-performance networking
-* use of unmodified virtio network drivers
-* use of accelerated AVP Kernel network drivers
-* use of accelerated AVP Poll Mode network drivers for DPDK
-* use of virtual routers to connect tenant networks
-* metadata server access for distributing configuration data
+**Overview**
 
-This document contains the following sections:
+[Reference Deployment Scenarios Overview](/helion/openstack/carrier/deploy/)
 
 **Requirements**
 
-* [Requirements for the Deployment Scenarios](/helion/openstack/carrier/deploy/requirements/)
-* [Networks Used in the Deployment Scenarios](/helion/openstack/carrier/deploy/networks/)
-* [VM Network Interface Options](/helion/openstack/carrier/deploy/interface/)
+[Requirements for the Deployment Scenarios](/helion/openstack/carrier/deploy/requirements/)
+
+[Networks Used in the Deployment Scenarios](/helion/openstack/carrier/deploy/networks/)
+
+[VM Network Interface Options](/helion/openstack/carrier/deploy/interface/)
 
 **Setting Up the Scenario Environments**
 
-* [Setting Up the Scenario Environment](/helion/openstack/carrier/deploy/setting/)
-	* [Components of the Scenario Environment](/helion/openstack/carrier/deploy/setting/components/)
-	* [Administrative Tasks](/helion/openstack/carrier/deploy/setting/admin/)
-	* [User Tasks](/helion/openstack/carrier/deploy/setting/user/)
+[Setting Up the Scenario Environment](/helion/openstack/carrier/deploy/setting/)
 
-* [Running Traffic Through the Test Paths](/helion/openstack/carrier/deploy/running-traffic/)
+* [Components of the Scenario Environment](/helion/openstack/carrier/deploy/setting/components/)
+* [Administrative Tasks](/helion/openstack/carrier/deploy/setting/admin/)
+* [User Tasks](/helion/openstack/carrier/deploy/setting/user/)
+
+[Running Traffic Through the Test Paths](/helion/openstack/carrier/deploy/running-traffic/)
 
 **Bridging Scenario**
 
-* [Bridging Scenario Overview](/helion/openstack/carrier/deploy/bridging/overview/)
+[Bridging Scenario Overview](/helion/openstack/carrier/deploy/bridging/overview/)
+
 * [Deploying the Bridging Scenario](/helion/openstack/carrier/deploy/bridging/deploy/)
 
 **Routing Scenario**
 
-* [Routing Scenario Overview](/helion/openstack/carrier/deploy/routing/overview/)
+[Routing Scenario Overview](/helion/openstack/carrier/deploy/routing/overview/)
+
 * [Deploying the Routing Scenario](/helion/openstack/carrier/deploy/routing/deploy/)
 
 **Deployment Scenarios using the CLI**
 
 * [Deployment Scenarios using the CLI](/helion/openstack/carrier/deploy/cli/)
+
+	* [Creating Tenants and Updating Quotas](/helion/openstack/carrier/deploy/cli/tenants/)
+	* [Creating Users](/helion/openstack/carrier/deploy/cli/users/)
+	* [Establishing Provider Networks](/helion/openstack/carrier/deploy/cli/provider/)
+	* [Creating Segmentation Ranges](/helion/openstack/carrier/deploy/cli/segment/)
+	* [Setting Up Tenant Networks](/helion/openstack/carrier/deploy/cli/tenant/)
+	* [Setting Up the Example Guest Image](/helion/openstack/carrier/deploy/cli/guest/)
+	* [Setting Up User Data](/helion/openstack/carrier/deploy/cli/data/)
+	* [Setting Up Flavors](/helion/openstack/carrier/deploy/cli/flavors/)
+	* [Creating Login Environment Files](/helion/openstack/carrier/deploy/cli/environ/)
+	* [Launching Instances Using the CLI](/helion/openstack/carrier/deploy/cli/launch/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
