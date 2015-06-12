@@ -29,7 +29,7 @@ PageRefresh();
 The Bridging Scenario implements a Layer 2 test path using either Linux or DPDK-accelerated virtual bridges.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 The Bridging Scenario topology is illustrated in the following figure. The test path is shown as a red dotted line.
@@ -43,7 +43,7 @@ Two end users, user1 and user2, each launch an instance of the example guest ima
 
 The selected mode of operation is passed to the instance using OpenStack user data.
 
-To demonstrate the performance optimizations offered by the AVP and AVS features of the Wind River Linux server, the network interfaces in the test path use AVP network drivers in combination with the Linux or DPDK-accelerated bridging. You can also use standard Linux virtio network drivers in combination with standard Linux-kernel Layer 2 bridging, but this will yield poorer performance.
+To demonstrate the performance optimizations offered by the AVP and AVS features of HP Helion OpenStack Carrier Grade, the network interfaces in the test path use AVP network drivers in combination with the Linux or DPDK-accelerated bridging. You can also use standard Linux virtio network drivers in combination with standard Linux-kernel Layer 2 bridging, but this will yield poorer performance.
 
 **Note:** To highlight DPDK and AVP performance without additional Layer 3 routing or application overhead, the Bridging Scenario uses a VM to bridge two tenant networks. This configuration can cause Spanning Tree Protocol (STP) failures in Layer 2 switches connected to the networks. Disabling STP on the switches, or on the bridged tenant network VLANs, is recommended.
 

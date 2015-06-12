@@ -29,7 +29,7 @@ PageRefresh();
 You can use the CLI to set up tenant networks and their associated IP subnets.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 This exercise sets up the tenant networks `external-net`, `internal-net`, `tenant1-mgmt-net`, and `tenant2-mgmt-net`. IP subnets are created for the first two networks only. IP subnets for the tenant networks are created by the users `user1` and `user2` in a separate task.

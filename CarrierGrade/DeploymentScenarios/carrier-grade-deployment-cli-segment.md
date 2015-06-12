@@ -29,7 +29,7 @@ PageRefresh();
 You can use the CLI to add segmentation ranges to provider networks.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 This task assumes that provider networks have already been created in order to unlock the compute nodes and make the system operational. 

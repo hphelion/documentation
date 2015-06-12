@@ -29,7 +29,7 @@ PageRefresh();
 Certain resources in the Deployment Scenarios must be configured by the admin user.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 To configure these resources, you must be logged in as admin. Only the admin user can create tenants and end users, set up provider networks, add tenant networks to specific provider networks and segmentation ranges, and define flavors.
@@ -340,7 +340,7 @@ Note: The flavor `example-guest.tiny` is not used in the scenarios. All the inst
 
 You can import guest images for use with the HP Helion OpenStack Carrier Grade server.
 
-This example assumes that a guest disk image named `example-guest.img` is available on the file system of the active controller. The guest image is available as part of the HP Helion OpenStack Carrier Grade server product.
+This example assumes that a guest disk image named `example-guest.img` is available on the file system of the active controller. The guest image is available as part of HP Helion OpenStack Carrier Grade.
 
 The image must be uploaded to the Image Operations (Glance) service, the OpenStack image deployment service, so that it can be used to launch new virtual machines.
 

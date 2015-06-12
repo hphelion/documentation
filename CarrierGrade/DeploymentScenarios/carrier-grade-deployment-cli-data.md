@@ -29,7 +29,7 @@ PageRefresh();
 Using the CLI, you can save user data as a file for reference when launching an instance.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 When launching an instance, you can provide user data containing configuration details. If you use the CLI, you can save the user data to a text file, and then supply the file name as a parameter.

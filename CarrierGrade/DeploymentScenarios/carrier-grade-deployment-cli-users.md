@@ -29,7 +29,7 @@ PageRefresh();
 You can use the CLI to add users.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 This exercise creates the users `user1` and `user2`, and associates each one with a tenant.

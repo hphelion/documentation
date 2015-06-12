@@ -29,10 +29,10 @@ PageRefresh();
 As an alternative to the web administration interface, you can work through the scenarios using the command-line interface.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
-Users who are comfortable with text-based commands and Linux-based operating systems can use a command-line interface (CLI) to install and manage all aspects of the Wind River Linux server, including setting up the scenario environment and deploying scenarios. In addition to providing a compact and efficient environment, the CLI offers some capabilities not afforded by the web administration interface, such as the ability to save customization scripts (user data) for re-use.
+Users who are comfortable with text-based commands and Linux-based operating systems can use a command-line interface (CLI) to install and manage all aspects of HP Helion OpenStack Carrier Grade, including setting up the scenario environment and deploying scenarios. In addition to providing a compact and efficient environment, the CLI offers some capabilities not afforded by the web administration interface, such as the ability to save customization scripts (user data) for re-use.
 
 For general information about the scenarios, see [Reference Deployment Scenarios](/helion/openstack/carrier/deploy/). For more information on command-line systems, see [Before you begin](#before) below.
 

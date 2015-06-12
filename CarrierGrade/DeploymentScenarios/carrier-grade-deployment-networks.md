@@ -29,14 +29,14 @@ PageRefresh();
 Each virtual machine is attached to three networks.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 * **Private tenant network** (`tenant1-net` or `tenant2-net`) - These networks are created by the end users for private use. They can be used to connect the virtual machines to testing equipment.
 
 * **Internal network** (`internal`) This network is created by the system administrator and shared by the tenants. It provides network connectivity between the two private tenant networks.
 
-	The private tenant networks and the internal network illustrate the use of high-performance tenant networking on the Wind River Linux server platform. Each virtual machine provides a Layer 2 or Layer 3 switched path to link the tenant's private network and the internal network.
+	The private tenant networks and the internal network illustrate the use of high-performance tenant networking on the HP Helion OpenStack Carrier Grade platform. Each virtual machine provides a Layer 2 or Layer 3 switched path to link the tenant's private network and the internal network.
 
 * **Management network** (`tenant1-mgmt-net` and `tenant2-mgmt-net`) -  These networks are created by the system administrator on behalf of the end users. Each management network connects using a virtual router to a shared external network owned by the system administrator. The shared external network provides access to other networks, including the open Internet, as needed.
 

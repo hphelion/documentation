@@ -29,7 +29,7 @@ PageRefresh();
 You can exercise the HP Helion OpenStack Carrier Grade components by running test traffic through the test path for the [Bridging Scenario Overview](/helion/openstack/carrier/deploy/bridging/overview/) or [Routing Scenario Overview](/helion/openstack/carrier/deploy/routing/overview/).
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 ## Bridging Scenario Connections

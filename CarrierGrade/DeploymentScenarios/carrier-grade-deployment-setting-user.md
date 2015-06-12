@@ -29,7 +29,7 @@ PageRefresh();
 Some of the resources in the Deployment Scenarios must be configured by end users user1 and user2.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 

@@ -29,7 +29,7 @@ PageRefresh();
 You can use the CLI to define virtual hardware resource profiles, or flavors, for use when launching virtual machines.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 Available flavors and their IDs can be listed using the following command:

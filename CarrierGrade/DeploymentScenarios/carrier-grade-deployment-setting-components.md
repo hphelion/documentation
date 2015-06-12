@@ -29,16 +29,16 @@ PageRefresh();
 The components that make up the scenario environment can be divided into actors and resources. Actors execute system commands to operate on resources. Resources are passive objects on which system operations take place.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 ## Actors {#actors}
 
-* **System Administrator** - Has access to the administration components of the Wind River Linux server to manage users and resources.
+* **System Administrator** - Has access to the administration components of HP Helion OpenStack Carrier Grade to manage users and resources.
 
-	The scenario environment has only one system administrator, identified as the admin user. This user is defined as part of the Wind River Linux server installation.
+	The scenario environment has only one system administrator, identified as the admin user. This user is defined as part of the HP Helion OpenStack Carrier Grade installation.
 
-* **End Users** - Have access to the user components of the Wind River Linux server to manage a set of system resources under the quotas and constraints set up by the system administrator.
+* **End Users** - Have access to the user components of HP Helion OpenStack Carrier Grade to manage a set of system resources under the quotas and constraints set up by the system administrator.
 
 	The scenario environment has two end users identified as user1 and user2. They are created by the admin user (see Creating Users on page 16).
 
@@ -52,7 +52,7 @@ The scenario environment has three tenants, identified as admin, tenant1, and te
 
 * **Provider Network** - A logical transport mechanism for the tenant networks. Provider networks are realized over physical transport resources.
 
-	For the deployment scenarios, an operational Wind River Linux server system is assumed, implying that provider networks have already been established. Until at least one provider network has been defined and associated with `compute-node` data interfaces, it is not possible to unlock the compute nodes or make the system operational.
+	For the deployment scenarios, an operational HP Helion OpenStack Carrier Grade system is assumed, implying that provider networks have already been established. Until at least one provider network has been defined and associated with `compute-node` data interfaces, it is not possible to unlock the compute nodes or make the system operational.
 
 	Provider networks are created by the admin user.
 
@@ -150,7 +150,7 @@ IP subnet. They are configured as follows:
 
 * **Virtual Router** - Created by the end users, the virtual routers provide the VMs with connections to the external network, and to OpenStack services running on the compute node, such as the metadata service used to provide instances with access to user data when they are launched. Two routers are created, tenant1-router and tenant2-router, each within its corresponding tenant container (see Adding a Virtual Router).
 
-* **Glance Guest Image** - The example guest image provided with the Wind River Linux server must be imported into the OpenStack
+* **Glance Guest Image** - The example guest image provided with HP Helion OpenStack Carrier Grade must be imported into the OpenStack
 Glance service for use. Images can be imported by the admin user(see Setting Up the Example Guest Image) or by end users.
 
 * **User Data** - For the example guest image, user data is used to specify the function to be implemented (Linux kernel bridge, DPDK-accelerated bridge, or router) and the virtual ports or IP subnets to be connected by the switches. For details, see [Deploying the Bridging Scenario](/helion/openstack/carrier/deploy/bridging/deploy/) and [Deploying the Routing Scenario](/helion/openstack/carrier/deploy/routing/deploy/)

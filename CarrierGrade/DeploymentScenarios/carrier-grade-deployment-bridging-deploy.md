@@ -29,7 +29,7 @@ PageRefresh();
 The bridging scenarios use two virtual machines, each configured to bridge traffic between two network interfaces.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 To complete the configuration of the deployment scenarios, you must perform the tasks in this section while logged in as user1, and then perform the same tasks while logged in as user2, substituting appropriate strings for instance names, keypairs, tenant networks, or other resources.

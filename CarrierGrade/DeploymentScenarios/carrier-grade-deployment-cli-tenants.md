@@ -29,7 +29,7 @@ PageRefresh();
 You can use the CLI to create and configure tenants.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 This exercise creates the tenants tenant1 and tenant2, and sets up their resource quotas.

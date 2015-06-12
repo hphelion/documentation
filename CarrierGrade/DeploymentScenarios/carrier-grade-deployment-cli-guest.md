@@ -26,13 +26,13 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Setting Up the Example Guest Image Using the CLI
 
-You can use the CLI to import guest images for use with the HP Helion OpenStack Carrier Grade. 
+You can use the CLI to import guest images for use with HP Helion OpenStack Carrier Grade. 
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
-An example guest disk image is distributed with the Wind River Linux server software. It must be transferred to the active controller using a tool such as scp. This exercise assumes that the image is available as `/usr/share/images/example-guest.img`.
+An example guest disk image is distributed with HP Helion OpenStack Carrier Grade. It must be transferred to the active controller using a tool such as scp. This exercise assumes that the image is available as `/usr/share/images/example-guest.img`.
 
 Once it is available in the controller, the image must be uploaded to the Image Operations service (Glance), the OpenStack image deployment service.
 

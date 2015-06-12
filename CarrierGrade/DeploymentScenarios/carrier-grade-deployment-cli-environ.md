@@ -29,7 +29,7 @@ PageRefresh();
 Using the CLI, you can create scripts to define user login environments.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 This exercise creates the scripts `/etc/nova/openrc.user1` and `/etc/nova/openrc.user2`. The new scripts are created by copying the original admin login environment script `/etc/nova/openrc`, and replacing the admin user identifier and its current password with new values.

@@ -29,7 +29,7 @@ PageRefresh();
 The Deployment Scenarios are built on a prepared HP Helion OpenStack Carrier Grade server cluster.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 The following resources are required for deployment:

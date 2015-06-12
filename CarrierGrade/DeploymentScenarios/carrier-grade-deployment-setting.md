@@ -26,10 +26,10 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade (Beta): Setting Up the Scenario Environment
 
-The deployment scenarios require a Wind River Linux server environment established by the admin user, and set up by end users user1 and user2.
+The deployment scenarios require an HP Helion OpenStack Carrier Grade environment established by the admin user, and set up by end users user1 and user2.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 The admin user must define user accounts, shared and external tenant networks, and VM flavors for the end users. The end users user1 and user2 can set up the remaining required resources, including keypairs, private tenant networks, virtual routers, Cinder volumes, Glance images, and virtual machine instances.

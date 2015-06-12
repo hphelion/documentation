@@ -29,7 +29,7 @@ PageRefresh();
 The Routing Scenario implements a Layer 3 test path using two virtual routers.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 The Routing Scenario topology is illustrated in the following figure. The test path is shown as a red dotted line.

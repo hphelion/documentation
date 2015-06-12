@@ -29,7 +29,7 @@ PageRefresh();
 You can use the CLI to add the provider networks required to support tenant networks.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 Provider networks are required before compute nodes can be unlocked. For this reason, they are often set up as part of system installation.

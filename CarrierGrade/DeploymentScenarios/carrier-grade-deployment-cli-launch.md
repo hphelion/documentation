@@ -29,7 +29,7 @@ PageRefresh();
 You can use the CLI to launch virtual machine instances.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 To launch an instance, the end user must set up some required resources. In this task, `user1` sets up the resources and

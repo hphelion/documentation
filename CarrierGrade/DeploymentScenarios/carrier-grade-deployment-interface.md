@@ -26,18 +26,18 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade (Beta): VM Network Interface Options
 
-The Wind River Linux server supports both virtio and performance-optimized AVP network interface drivers.
+HP Helion OpenStack Carrier Grade supports both virtio and performance-optimized AVP network interface drivers.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux servers only.
+**Note:** This feature applies only to servers in the VNF Region.
 <hr>
 
 * **virtio** -  The standard interface type for I/O virtualization in Linux. This type can be used with the Linux bridge application or the router application described in these scenarios.
 
-* **Accelerated Virtual Port (AVP)** - A high-performance virtual network interface available exclusively on the Wind River Linux server. This type can be used with the Linux bridge application, the DPDK-accelerated bridge application, or the router application
+* **Accelerated Virtual Port (AVP)** - A high-performance virtual network interface available exclusively on the HP Helion OpenStack Carrier Grade server. This type can be used with the Linux bridge application, the DPDK-accelerated bridge application, or the router application
 described in these scenarios.
 
-The deployment scenarios demonstrate the use of AVP interfaces with three types of virtualized network functions (VNFs): a Linux bridge, a DPDK-accelerated bridge, and a router. This illustrates the flexibility provided by the HP Helion OpenStack Carrier Grade to adapt to different deployment scenarios.
+The deployment scenarios demonstrate the use of AVP interfaces with three types of virtualized network functions (VNFs): a Linux bridge, a DPDK-accelerated bridge, and a router. This illustrates the flexibility provided by HP Helion OpenStack Carrier Grade to adapt to different deployment scenarios.
 
 The port assignments for the interfaces are based on the order in which the interfaces are arranged in the web administration interface, or defined in the command-line interface, when the instance is launched. The type of virtual network interface for each port is selected from a list in the web administration interface, or encoded in a `vif-model` attribute on the command line.
 
