@@ -5,20 +5,18 @@
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
- 
-               
-                    <othermeta name="product" content="carrier-grade"/>
-                            <othermeta name="product-version1" content="HP Helion OpenStack"/>
-                                <othermeta name="product-version2" content="HP Helion OpenStack 1.1"/>
-                                    <othermeta name="role1" content="Systems Administrator "/>
-                                        <othermeta name="role2" content="Cloud Architect "/>
-                                            <othermeta name="role3" content="Storage Administrator "/>
-                                                <othermeta name="role4" content="Network Administrator "/>
-                                                    <othermeta name="role5" content="Service Developer "/>
-                                                        <othermeta name="role6" content="Cloud Administrator "/>
-                                                            <othermeta name="role7" content="Application Developer "/>
-                                                                <othermeta name="role8" content="Network Engineer "/>
-                                                                    <othermeta name="authors" content="Paul F"/>
+             <othermeta name="product" content="carrier-grade"/>
+            <othermeta name="product-version1" content="HP Helion OpenStack"/>
+            <othermeta name="product-version2" content="HP Helion OpenStack 1.1"/>
+            <othermeta name="role1" content="Systems Administrator "/>
+            <othermeta name="role2" content="Cloud Architect "/>
+            <othermeta name="role3" content="Storage Administrator "/>
+            <othermeta name="role4" content="Network Administrator "/>
+            <othermeta name="role5" content="Service Developer "/>
+            <othermeta name="role6" content="Cloud Administrator "/>
+            <othermeta name="role7" content="Application Developer "/>
+            <othermeta name="role8" content="Network Engineer "/>
+            <othermeta name="authors" content="Paul F"/>
 
         </metadata>
     </prolog>

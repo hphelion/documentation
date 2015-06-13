@@ -1,16 +1,26 @@
----
-layout: default
-title: "HP Helion Eucalyptus&#174;: Master Services Agreement"
-permalink: /eucalyptus/masterservice/
-product: eucalyptus
-role1: All
-authors: Jayme P
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4214">
+    <title>HP Helion Eucalyptus&#174;: Master Services Agreement</title>
+    <prolog>
+        <metadata>
+ 
+                <othermeta name="layout" content="default"/>
+                <othermeta name="product-version" content="eucalyptus"/>
+ 
+                <othermeta name="role1" content="All"/>
+ 
+                <othermeta name="role" content="Jayme P"/>
+       
+   
 
----
+            <!--permalink: /eucalyptus/masterservice/ --> 
 <!--PUBLISHED-->
-
-# HP Helion Eucalyptus: Master Services Agreement
-
-The Master Services Agreement is available as a PDF download.
-
-- <a href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP%20Eucalyptus%20Master%20Services%20Agreement%20(MSA)%20for%20Products%20and%20Services_30%20April_2015.pdf">Download the PDF document.</a>
+        </metadata>
+    </prolog>
+    <body>
+        <p>The Master Services Agreement is available as a PDF download.</p> - <xref
+            href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP%20Eucalyptus%20Master%20Services%20Agreement%20(MSA)%20for%20Products%20and%20Services_30%20April_2015.pdf"
+            format="pdf">Download the PDF document.</xref>
+    </body>
+</topic>
