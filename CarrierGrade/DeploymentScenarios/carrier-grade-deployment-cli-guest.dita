@@ -1,75 +1,76 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Setting Up the Example Guest Image Using the CLI"
-permalink: /helion/openstack/carrier/deploy/cli/guest/
-product: carrier-grade
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: All
-
-authors: Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1956">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Setting Up the Example Guest Image Using the CLI</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="All"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-guest.md-->
+ <!--permalink: /helion/openstack/carrier/deploy/cli/guest/--></p>
+<p>You can use the CLI to import guest images for use with HP Helion OpenStack(R) Carrier Grade.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>An example guest disk image is distributed with HP Helion OpenStack(R) Carrier Grade. It must be transferred to the active controller using a tool such as scp. This exercise assumes that the image is available as <codeph>/usr/share/images/example-guest.img</codeph>.</p>
+<p>Once it is available in the controller, the image must be uploaded to the Image Operations service (Glance), the OpenStack(R) image deployment service.</p>
+<p>Once it is available in Image Operations service, the image must be used to create a bootable Cinder volume. The volume can be used
+to launch an instance.</p>
+<ol>
+<li>
+<p>List the images available on the system.</p>
 
-<script>
+<p>glance image-list</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<p>Since no images have been defined yet, an empty list is displayed.</p>
+</li>
+<li>
+<p>Upload the guest image to the Image Operations service.</p>
 
-PageRefresh();
+<p>glance image-create --name example-guest \
+--is-public true --container-format bare --disk-format qcow2 \
+--file /usr/share/images/example-guest.img</p>
 
-</script>
+<p>The image <codeph>example-guest</codeph> is listed as active, as illustrated below:</p>
 
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
+<codeblock>
+<codeph>glance image-list
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Create a bootable volume using the image.</p>
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Setting Up the Example Guest Image Using the CLI
+<p>a. Set up the UUID variable for the image.</p>
 
-You can use the CLI to import guest images for use with HP Helion OpenStack Carrier Grade. 
+<codeblock>
+<codeph>export image_UUID=`glance image-list | grep exampleguest \
+| awk '{print $2}'`
+</codeph>
+</codeblock>
 
-<hr>
-**Note:** This feature applies only to servers in the VNF Region.
-<hr>
+<p>b. Create the volume.</p>
 
-An example guest disk image is distributed with HP Helion OpenStack Carrier Grade. It must be transferred to the active controller using a tool such as scp. This exercise assumes that the image is available as `/usr/share/images/example-guest.img`.
+<p>cinder create --image-id ${image_UUID} \
+--display-name=vol-example-guest 1</p>
 
-Once it is available in the controller, the image must be uploaded to the Image Operations service (Glance), the OpenStack image deployment service.
-
-Once it is available in Image Operations service, the image must be used to create a bootable Cinder volume. The volume can be used
-to launch an instance.
-
-1. List the images available on the system.
-
-	glance image-list
-
-	Since no images have been defined yet, an empty list is displayed.
-
-2. Upload the guest image to the Image Operations service.
-
-	glance image-create --name example-guest \
-	--is-public true --container-format bare --disk-format qcow2 \
-	--file /usr/share/images/example-guest.img
-
-	The image `example-guest` is listed as active, as illustrated below:
-
-		glance image-list
-
-3. Create a bootable volume using the image.
-
-	a. Set up the UUID variable for the image.
-
-		export image_UUID=`glance image-list | grep exampleguest \
-		| awk '{print $2}'`
-
-	b. Create the volume.
-
-	cinder create --image-id ${image_UUID} \
-	--display-name=vol-example-guest 1
-
-	The new volume is created.
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
- 
-----
+<p>The new volume is created.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1956/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

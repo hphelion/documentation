@@ -1,135 +1,161 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Compute Flavors"
-permalink: /helion/commercial/carrier/dashboard/managing/flavors/
-product: carrier-grade
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4091">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Managing Compute Flavors</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/flavors/--></p>
+<p>Compute flavors are machine configurations that describe the amount of memory, number of CPUs, and storage capacity of instances. The moment you register a chassis, a flavor is created by default. You can use the default flavor or create a flavor of your choice.</p>
+<p>An admin user can create, edit, and delete instances as needed.</p>
+<ul>
+<li>
+<xref type="section" href="#topic4091/createflavor">Create a flavor</xref>
+</li>
+<li>
+<xref type="section" href="#topic4091/editflavor">Edit a flavor</xref>
+</li>
+<li>
+<xref type="section" href="#topic4091/editmeta">Edit flavor metadata</xref>
+</li>
+<li>
+<xref type="section" href="#topic4091/extra">Configure extra specifications</xref>
+</li>
+<li>
+<xref type="section" href="#topic4091/deleteflavor">Delete a flavor</xref>
+</li>
+</ul>
+<section id="createflavor"> <title>Create a flavor</title>
+<p>To create a flavor:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 
-<script>
+<ul>
+<li>Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.</li>
+</ul>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Flavors</b> link.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<p>The flavors in the domain are listed.</p>
+</li>
+<li>
+<p>Click <b>Create Flavor</b>.</p>
+</li>
+<li>
+<p>In the <b>Create Flavor</b> screen, click the <b>Flavor Info</b> tab (should be active).</p>
+</li>
+<li>
+<p>Enter the name that you want to assign to the flavor.</p>
 
-PageRefresh();
+<ul>
+<li>In the <b>ID</b> field, enter a unique string that identifies this flavor.</li>
+<li>In the <b>VCPUs</b> field, enter the required number of virtual CPUs to be included in the flavor.</li>
+<li>In the <b>RAM MB</b> field, enter the virtual machine memory in megabytes to be included in the flavor.</li>
+<li>In the <b>Root Disk GB</b> field, enter the size for the virtual root disk size in gigabytes.</li>
+<li>From the <b>Ephemeral disk GB</b> field, enter the size of a secondary ephemeral data disk in gigabytes. This is an empty, unformatted disk and exists only for the life of the instance.</li>
+<li>From the <b>Swap Disk MB</b> field, enter the amount of swap space allocation for the flavor.</li>
+</ul>
+</li>
+<li>
+<p>Click the <b>Flavor Access</b> tab.</p>
+</li>
+<li>
+<p>Add the flavor to a project by clicking the <b>+</b> icon next to each project in the <b>All Projects</b> column.</p>
 
-</script>
+<p>By default, no project is specified as having access the flavor. If none is specified, all projects can access the flavor.</p>
+</li>
+<li>
+<p>Click <b>Create Flavor</b> to create a new the flavor.</p>
+</li>
+</ol>
+<p>A message is displayed on successful creation.</p>
+<p>
+  <xref type="section" href="#topic4091/top"> Return to Top </xref>
+</p>
+</section>
+<section id="editflavor"> <title>Edit a flavor</title>
+<p>To edit a flavor:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
+<ul>
+<li>Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.</li>
+</ul>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Flavors</b> link.</p>
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Compute Flavors
+<p>The flavors in the domain are listed.</p>
+</li>
+<li>
+<p>For the flavor you want to modify, click <b>Edit Flavor</b>.</p>
+</li>
+<li>
+<p>In the <b>Edit Flavor</b> screen, click the <b>Flavor Info</b> tab (should be active).</p>
+</li>
+<li>
+<p>Use the <b>Flavor Info</b> and <b>Flavor Access</b> tabs to modify the flavor as needed. See <xref type="section" href="#topic4091/createflavor">Create a flavor</xref> for a description of each field.</p>
+</li>
+<li>
+<p>When done editing, click <b>Save</b>.</p>
+</li>
+</ol>
+<p>A message is displayed on successful edit.</p>
+<p>
+  <xref type="section" href="#topic4091/top"> Return to Top </xref>
+</p>
+</section>
+<section id="editmeta"> <title>Managing Metadata</title>
+<p>Compute uses a metadata service for virtual machine instances to retrieve instance-specific data.</p>
+<p>You can add and remove metadata for flavors, see <xref href="../../../CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade.dashboard.metadata.dita" >Managing Metadata</xref>.</p>
+<p>
+  <xref type="section" href="#topic4091/top"> Return to Top </xref>
+</p>
+</section>
+<section id="extra"> <title>Creating extra specifications</title>
+<p>Extra specifications are key-value pairs you can add to an existing flavor to be included when the flavor is used with a new virtual machine.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>You can edit an existing flavor to include additional attributes using extra specifications. See <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Configuring Flavor Extra Specifications</xref>.</p>
+</section>
+<section id="deleteflavor"> <title>Delete a flavor</title>
+<p>Instances that use the flavor are not affected when a flavor is deleted.</p>
+<p>To delete a flavor:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Flavors</b> link.</p>
 
-Compute flavors are machine configurations that describe the amount of memory, number of CPUs, and storage capacity of instances. The moment you register a chassis, a flavor is created by default. You can use the default flavor or create a flavor of your choice.
-
-An admin user can create, edit, and delete instances as needed. 
-
-* [Create a flavor](#createflavor)
-* [Edit a flavor](#editflavor)
-* [Edit flavor metadata](#editmeta)
-* [Configure extra specifications](#extra)
-* [Delete a flavor](#deleteflavor)
-
-### Create a flavor ### {#createflavor}
-
-To create a flavor:
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-	* Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.
-
-2. Click the **Admin** dashboard, then the **System** panel, then the **Flavors** link.
-
-	The flavors in the domain are listed. 
-
-3. Click **Create Flavor**. 
-
-4. In the **Create Flavor** screen, click the **Flavor Info** tab (should be active).
-
-5. Enter the name that you want to assign to the flavor.
-	* In the **ID** field, enter a unique string that identifies this flavor.
-	* In the **VCPUs** field, enter the required number of virtual CPUs to be included in the flavor.
-	* In the **RAM MB** field, enter the virtual machine memory in megabytes to be included in the flavor.
-	* In the **Root Disk GB** field, enter the size for the virtual root disk size in gigabytes.
-	* From the **Ephemeral disk GB** field, enter the size of a secondary ephemeral data disk in gigabytes. This is an empty, unformatted disk and exists only for the life of the instance.
-	* From the **Swap Disk MB** field, enter the amount of swap space allocation for the flavor.
-
-6. Click the **Flavor Access** tab.
-
-7. Add the flavor to a project by clicking the **+** icon next to each project in the **All Projects** column.
-
-	By default, no project is specified as having access the flavor. If none is specified, all projects can access the flavor.
-
-8. Click **Create Flavor** to create a new the flavor.
-
-A message is displayed on successful creation.
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-### Edit a flavor ### {#editflavor}
-
-To edit a flavor:
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-	* Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.
-
-2. Click the **Admin** dashboard, then the **System** panel, then the **Flavors** link.
-
-	The flavors in the domain are listed. 
-
-3. For the flavor you want to modify, click **Edit Flavor**. 
-
-4. In the **Edit Flavor** screen, click the **Flavor Info** tab (should be active).
-
-5. Use the **Flavor Info** and **Flavor Access** tabs to modify the flavor as needed. See <a href="#createflavor">Create a flavor</a> for a description of each field.
-
-6. When done editing, click **Save**.
-
-A message is displayed on successful edit.
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-### Managing Metadata {#editmeta}
-
-Compute uses a metadata service for virtual machine instances to retrieve instance-specific data. 
-
-You can add and remove metadata for flavors, see [Managing Metadata](/helion/commercial/carrier/dashboard/managing/metadata/).
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-### Creating extra specifications {#extra}
-
-Extra specifications are key-value pairs you can add to an existing flavor to be included when the flavor is used with a new virtual machine. 
-
-<hr>
-**Note:** This feature applies only to servers in the VNF Region.
-<hr>
-
-You can edit an existing flavor to include additional attributes using extra specifications. See [Configuring Flavor Extra Specifications](/helion/commercial/carrier/dashboard/managing/flavors/extra/).
-
-### Delete a flavor ### {#deleteflavor}
-
-Instances that use the flavor are not affected when a flavor is deleted.
-
-To delete a flavor:
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Admin** dashboard, then the **System** panel, then the **Flavors** link.
-
-	The flavors in the domain are listed. 
-
-3. For the flavor you want to modify, click the arrow icon in the **Actions** menu and select **Delete Flavor**. 
-
-4. In the confirmation screen, click **Delete Flavor**.
-<p>A message is displayed on successful delete.</p> 
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----
+<p>The flavors in the domain are listed.</p>
+</li>
+<li>
+<p>For the flavor you want to modify, click the arrow icon in the <b>Actions</b> menu and select <b>Delete Flavor</b>.</p>
+</li>
+<li>
+<p>In the confirmation screen, click <b>Delete Flavor</b>.</p>
+</li>
+</ol>
+<p>A message is displayed on successful delete.</p>
+<p>
+  <xref type="section" href="#topic4091/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

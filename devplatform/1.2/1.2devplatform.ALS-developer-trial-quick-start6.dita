@@ -1,71 +1,94 @@
----
-layout: trial-quick-start-devplatform-10
-title: "HP Helion 1.2 Development Platform: Quick Start Developer Trial Step 6"
-permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/6/
-product: devplatform2.0
-product-version1: HP Helion Development Platform
-role1: Application Developer
-role2: Security Engineer
-role3: ISV Developer 
-role4: Service Developer
-authors: Jayme P
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1657">
+<title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
+<titlealts>
+<searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial Step 6</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-<script>
-function PageRefresh {
-onLoad="window.refresh"
-}
-PageRefresh();
-</script>
-
-# HP Helion 1.2 Development Platform: Quick Start Developer Trial {#top}
-
-We have provided several sample applications in multiple programming languages. Exploring and deploying these simple apps will help you understand how the push process works and how applications can be connected to the other HP Helion OpenStack&#174; services. 
-
-
-<table style="background-color: #FFF; vertical-align:top;">
-<tr style="padding: 0;">
-<td style="vertical-align:top;">
+ <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start6.md-->
+ <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/6/--></p>
+<p>We have provided several sample applications in multiple programming languages. Exploring and deploying these simple apps will help you understand how the push process works and how applications can be connected to the other HP Helion OpenStack(R) services.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
 <p>
-1. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/">Register for your Helion Public Cloud Account</a>
-</p><p>
-2. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/2">Download Tools</a>
-</p><p>
-3. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3">Create the Sandbox Environment</a></p>
 <p>
-4. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/4">Create a Cluster</a></p>
-<p>
-5. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/5">Add Windows DEA and SQL Server (Optional Step)</a>
+1. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/" scope="external" format="html" >Register for your Helion Public Cloud Account</xref>
 </p>
-  <table border="0" style="background-color: #FFF;">
-   <tr>
-   <td style="background-color: #F0FFFF;">
+<p>
+2. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/2" scope="external" format="html" >Download Tools</xref>
+</p>
+<p>
+3. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3" scope="external" format="html" >Create the Sandbox Environment</xref>
+</p>
+<p>
+4. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/4" scope="external" format="html" >Create a Cluster</xref>
+</p>
+<p>
+5. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/5" scope="external" format="html" >Add Windows DEA and SQL Server (Optional Step)</xref>
+</p>
+  <table rowsep="0" colsep="0">
+<tgroup cols="1">
+<colspec colname="col1"/>
+<tbody>
+<row>
+<entry>
     6. <b>Explore Sample Applications</b> 
-   </td>
-   </tr>
-   </table>
+   </entry>
+   </row>
+</tbody>
+</tgroup>
+</table>
 </p>
-</td>
+</entry>
 
-<td style="background-color: #F0FFFF; vertical-align: top;"><b>Explore Sample Applications</b>
+<entry>
+<b>Explore Sample Applications</b>
 <p>Congratulations! You are now ready to begin deploying apps to your new micro-cloud environment.</p>
 
-</p>We have provided some sample applications in multiple programming languages for you to examine and deploy. These very simple applications provide insight on how to push applications and connect those applications to HP Helion OpenStack services.
-</p><p><form action="http://docs.hpcloud.com/helion/devplatform/1.2/appdev/" target="_blank" method="get">
-    <input type="submit" value="Continue to the Sample Application Library" 
-         name="Submit" id="frm1_submit" />
-</form></p>
-<p>If you are interested in exploring the new functionality, you can jump right into deploying Windows&#174; applications.</p><p><form action="http://docs.hpcloud.com/helion/devplatform/1.2/windows/deployingnet" target="_blank" method="get">
-    <input type="submit" value="Deploy Your First Windows&#174; Application" 
-         name="Submit" id="frm1_submit" />
-</form></p><hr>
-<ul style="padding-left: 1em;">
-<li>If you have <b>encountered problems</b> with this installation, refer to the <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting">Troubleshooting tips</a>.</li><br />
-<li>If you are ready to <b>take down</b> your sandbox environment, refer to the <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/termination">termination instructions</a>.</li><br />
-<li>If you are <b>done with the Quick-Start guide</b>, return to the <a href="http://docs.hpcloud.com/helion/devplatform/1.2">Helion Development Platform Documentation</a>.</li>
+We have provided some sample applications in multiple programming languages for you to examine and deploy. These very simple applications provide insight on how to push applications and connect those applications to HP Helion OpenStack(R) services.
+<p/>
+<required-cleanup remap="form">
+<ph>
+    </ph>
+</required-cleanup>
+<p>If you are interested in exploring the new functionality, you can jump right into deploying WindowsÂ(R) applications.</p>
+<p/>
+<required-cleanup remap="form">
+<ph>
+    </ph>
+</required-cleanup>
+<!-- ===================== horizontal rule ===================== -->
+<ul>
+<li>If you have <b>encountered problems</b> with this installation, refer to the <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting" scope="external" format="html" >Troubleshooting tips</xref>.</li>
+<!--A BR tag was used here in the original source.-->
+<li>If you are ready to <b>take down</b> your sandbox environment, refer to the <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/termination" scope="external" format="html" >termination instructions</xref>.</li>
+<!--A BR tag was used here in the original source.-->
+<li>If you are <b>done with the Quick-Start guide</b>, return to the <xref href="http://docs.hpcloud.com/helion/devplatform/1.2" scope="external" format="html" >Helion Development Platform Documentation</xref>.</li>
 </ul>
-</td>
-</tr>
+</entry>
+</row>
+</tbody>
+</tgroup>
 </table>
+</body>
+</topic>

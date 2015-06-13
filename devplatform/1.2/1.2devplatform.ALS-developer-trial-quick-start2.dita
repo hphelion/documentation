@@ -1,86 +1,123 @@
----
-layout: trial-quick-start-devplatform-10
-title: "HP Helion 1.2 Development Platform: Quick Start Developer Trial Step 2"
-permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/2/
-product: devplatform2.0
-product-version1: HP Helion Development Platform
-role1: Application Developer
-role2: Security Engineer
-role3: ISV Developer 
-role4: Service Developer
-authors: Jayme P
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1743">
+<title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
+<titlealts>
+<searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial Step 2</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-<script>
-function PageRefresh {
-onLoad="window.refresh"
-}
-PageRefresh();
-</script>
-
-# HP Helion 1.2 Development Platform: Quick Start Developer Trial {#top}
-During this step, you will download and install the configuration tool, named <i>cf-mgmt</i>. This tool provides a quick way to pass configuration parameters to the Helion Development Platform. <br />The download links and instructions will open in a separate page so you don't lose your place.
-<br /> 
-
-
-<table style="background-color: #FFF; vertical-align:top;">
-<tr style="padding: 0;">
-<td style="vertical-align:top;">
-1. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/">Register for your Helion Public Cloud Account</a> </p><p>
-  <table border="0" style="background-color: #FFF;">
-   <tr>
-   <td style="background-color: #F0FFFF;">
+ <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start2.md-->
+ <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/2/--></p>
+<p>During this step, you will download and install the configuration tool, named <varname>cf-mgmt</varname>. This tool provides a quick way to pass configuration parameters to the Helion Development Platform. <!--A BR tag was used here in the original source.-->The download links and instructions will open in a separate page so you don't lose your place.
+</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<p>
+1. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/" scope="external" format="html" >Register for your Helion Public Cloud Account</xref> <p>
+  </p>
+<table rowsep="0" colsep="0">
+<tgroup cols="1">
+<colspec colname="col1"/>
+<tbody>
+<row>
+<entry>
     2. <b>Download Tools</b>
-   </td>
-   </tr>
-   </table>
-</p><p>
-3. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3">Create the Sandbox Environment</a>
-</p><p>
-4. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/4">Create a Cluster</a>
-</p><p>
-5. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/5">Add Windows DEA and SQL Server (Optional Step)</a>
+   </entry>
+   </row>
+</tbody>
+</tgroup>
+</table>
+<p>
+3. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3" scope="external" format="html" >Create the Sandbox Environment</xref>
 </p>
 <p>
-6. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/6">Explore Sample Applications</a>
+4. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/4" scope="external" format="html" >Create a Cluster</xref>
 </p>
+<p>
+5. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/5" scope="external" format="html" >Add Windows DEA and SQL Server (Optional Step)</xref>
 </p>
-</td>
+<p>
+6. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/6" scope="external" format="html" >Explore Sample Applications</xref>
+</p>
 
-<td style="background-color: #F0FFFF; vertical-align: top;"><b>Download the Configuration Tool</b>
+</p>
+</entry>
+
+<entry>
+<b>Download the Configuration Tool</b>
 
 <p>
-Use the ALS management tool (<i>cf-mgmt.exe</i>) to construct, manage, update, or delete ALS clusters.</p><p>Click the download link that is appropriate for your operating system.</p>
+Use the ALS management tool (<varname>cf-mgmt.exe</varname>) to construct, manage, update, or delete ALS clusters.</p>
+<p>Click the download link that is appropriate for your operating system.</p>
 <p>
+</p>
 <ul>
-<li><a href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-windows-x86_64.zip">Windows&#174;</a></li>
-<li><a href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-linux-x86_64.zip">Linux x64</a></li>
-<li><a href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-osx-x86_64.zip">Mac OS X&#174;</a></li></ul>
+<li>
+<xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-windows-x86_64.zip" scope="external" format="html" >WindowsÂ(R)</xref>
+</li>
+<li>
+<xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-linux-x86_64.zip" scope="external" format="html" >Linux x64</xref>
+</li>
+<li>
+<xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-osx-x86_64.zip" scope="external" format="html" >Mac OS XÂ(R)</xref>
+</li>
+</ul>
+<p>
+Note: After installation, you may run the <varname>cf-mgmt update</varname> command at any time to check for and install the most recent version.
 </p>
 <p>
-Note: After installation, you may run the <i>cf-mgmt update</i> command at any time to check for and install the most recent version.
+<b>Download the ALS Client</b>
 </p>
-<p><b>Download the ALS Client</b>
 <p>
-Use the ALS client to push application code up to the server, start and stop applications, link Helion OpenStack&#174; services to applications, and perform other application management operations. </p><p>Download this tool if you intend to push applications to your quick-start trial environment.
+Use the ALS client to push application code up to the server, start and stop applications, link Helion OpenStack(R) services to applications, and perform other application management operations. </p>
+<p>Download this tool if you intend to push applications to your quick-start trial environment.
 </p>
 <p>
 Click the download link that is appropriate for your operating system. 
 </p>
 <ul>
-<li><a href="http://clients.als.hpcloud.com/helion-1.2.0-win32-ix86.zip">Windows&#174;</a></li>
-<li><a href="http://clients.als.hpcloud.com/helion-1.2.0-linux-glibc2.3-x86_64.zip">Linux x64</a></li>
-<li><a href="http://clients.als.hpcloud.com/helion-1.2.0-macosx10.5-i386-x86_64.zip">Mac OS X&#174;</a></li>
-</ul> <p>
-The <a href="http://docs.hpcloud.com/helion/devplatform/1.2/als/user/reference/client-ref" target="_blank">Command Reference</a> has full descriptions of all ALS Client commands and options. 
+<li>
+<xref href="http://clients.als.hpcloud.com/helion-1.2.0-win32-ix86.zip" scope="external" format="html" >WindowsÂ(R)</xref>
+</li>
+<li>
+<xref href="http://clients.als.hpcloud.com/helion-1.2.0-linux-glibc2.3-x86_64.zip" scope="external" format="html" >Linux x64</xref>
+</li>
+<li>
+<xref href="http://clients.als.hpcloud.com/helion-1.2.0-macosx10.5-i386-x86_64.zip" scope="external" format="html" >Mac OS XÂ(R)</xref>
+</li>
+</ul>
+<p>
+The <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/als/user/reference/client-ref" scope="external" format="html" >Command Reference</xref> has full descriptions of all ALS Client commands and options. 
 </p>
-</p>
-<p><form action="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3" method="get">
-    <input type="submit" value="Continue to the Next Step" 
-         name="Submit" id="frm1_submit" />
-</form></p>
-</td>
-</tr>
+
+<p/>
+<required-cleanup remap="form">
+<ph>
+    </ph>
+</required-cleanup>
+</entry>
+</row>
+</tbody>
+</tgroup>
 </table>
+</body>
+</topic>

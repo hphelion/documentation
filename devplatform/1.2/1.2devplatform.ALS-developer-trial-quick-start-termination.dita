@@ -1,68 +1,86 @@
----
-layout: trial-quick-start-devplatform-10
-title: "HP Helion 1.2 Development Platform: Quick Start Developer Trial Termination"
-permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/termination/
-product: devplatform2.0
-product-version1: HP Helion Development Platform
-role1: Application Developer
-role2: Security Engineer
-role3: ISV Developer 
-role4: Service Developer
-authors: Jayme P
-
----
-<!--PUBLISHED-->
-
-<script>
-function PageRefresh {
-onLoad="window.refresh"
-}
-PageRefresh();
-</script>
-
-# HP Helion 1.2 Development Platform: Quick Start Developer Trial {#top}
-
-When you are done exploring your Developer Quick Start Trial, you can take the environment down just as easily.
-
-<table style="background-color: #FFF; vertical-align:top;">
-<tr style="padding: 0;">
-<td style="vertical-align:top;">
-
-<table border="0" style="background-color: #FFF;">
-<tr>
-<td style="background-color: #F0FFFF;">
-<b>Termination</b>
-</td>
-</tr>
-</table>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1244">
+<title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
+<titlealts>
+<searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial Termination</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+</metadata>
+</prolog>
+<body>
 <p>
-<a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting">Troubleshooting</a></p>
-</td>
+<!--PUBLISHED-->
+ <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start-termination.md-->
+ <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/termination/--></p>
+<p>When you are done exploring your Developer Quick Start Trial, you can take the environment down just as easily.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
+<p>
 
-</td>
+<table rowsep="0" colsep="0">
+<tgroup cols="1">
+<colspec colname="col1"/>
+<tbody>
+<row>
+<entry>
+<b>Termination</b>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+<xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting" scope="external" format="html" >Troubleshooting</xref>
+</p>
+</p>
+</entry>
 
-<td style="background-color: #F0FFFF; vertical-align: top;"><b>Termination</b>
+
+
+<entry>
+<b>Termination</b>
 <p> To ensure that all resources are properly released, use the Horizon console.</p>
 
 <b>Terminate the Instance</b>
-<ol style="padding-left: 1em;">
-<li>Log into the <a href="https://horizon.hpcloud.com/" target="_blank">Horizon console</a>. </li>
+<ol>
+<li>Log into the <xref href="https://horizon.hpcloud.com/" scope="external" format="html" >Horizon console</xref>. </li>
 <li>In the <b>Project</b> panel, select <b>Compute</b> and then select <b>Instances</b>.</li>
-<li>Click the checkbox next to the instance named <i>cluster1-core</i>.
-<li>If you added a Windows&#174; DEA node or a SQL Server service, you will have additional instances to delete. The names will all start with <i>cluster1-</i>. Check the checkboxes next to those instances.
+<li>Click the checkbox next to the instance named <varname>cluster1-core</varname>.
+</li>
+<li>If you added a WindowsÂ(R) DEA node or a SQL Server service, you will have additional instances to delete. The names will all start with <varname>cluster1-</varname>. Check the checkboxes next to those instances.
+</li>
 <li>Click <b>Terminate Instances</b>.
+</li>
 </ol>
-
 <b>Terminate the Security Groups</b>
-<ol style="padding-left: 1em;">
-<li>Log into the <a href="https://horizon.hpcloud.com/" target="_blank">Horizon console</a>. </li>
-<li>In the <b>Project</b> panel, select <b>Compute</b> and then select <b>Access & Security</b>.</li>
-<li>Click the checkbox next to the groups named <i>cluster1-SSH</i>, <i>cluster1-Router</i>, and <i>cluster1-Internal</i>.
+<ol>
+<li>Log into the <xref href="https://horizon.hpcloud.com/" scope="external" format="html" >Horizon console</xref>. </li>
+<li>In the <b>Project</b> panel, select <b>Compute</b> and then select <b>Access &amp; Security</b>.</li>
+<li>Click the checkbox next to the groups named <varname>cluster1-SSH</varname>, <varname>cluster1-Router</varname>, and <varname>cluster1-Internal</varname>.
+</li>
 <li>Click <b>Delete Security Groups</b>.
+</li>
 </ol>
-
-<p><input type="button" value="Back" onclick="history.back(-1)" /></p>
-</td>
-</tr>
+<p/>
+</entry>
+</row>
+</tbody>
+</tgroup>
 </table>
+</body>
+</topic>

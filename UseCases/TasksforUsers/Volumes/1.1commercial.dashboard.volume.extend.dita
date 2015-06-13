@@ -1,40 +1,41 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Extending the Size of a Volume"
-permalink: /helion/commercial/1.1/dashboard/managing/volume/extend/
-product: commercial.ga
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic797">
+<title>HP Helion OpenStack(R) 1.1: Extending the Size of a Volume</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; 1.1: Extending the Size of a Volume
-
-You can extend the size of a volume, as needed.
-
-### Extend a volume ###
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2. Click the **Compute** tab on the dashboard **Project** panel.
-
-3. In the **Compute** panel, click **Volumes**.
-
-4. From the **More** list on the volume you want to extend, select **Extend Volume**.
-
-5. In the **Extend Volume** dialog box, select the size from the drop-down and click **Extend Volume** to confirm.
-
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
-
-----
+ <!--./UseCases/TasksforUsers/Volumes/1.1commercial.dashboard.volume.extend.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/volume/extend/--></p>
+<p>You can extend the size of a volume, as needed.</p>
+<section id="extend-a-volume"> <title>Extend a volume</title>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Compute</b> tab on the dashboard <b>Project</b> panel.</p>
+</li>
+<li>
+<p>In the <b>Compute</b> panel, click <b>Volumes</b>.</p>
+</li>
+<li>
+<p>From the <b>More</b> list on the volume you want to extend, select <b>Extend Volume</b>.</p>
+</li>
+<li>
+<p>In the <b>Extend Volume</b> dialog box, select the size from the drop-down and click <b>Extend Volume</b> to confirm.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic797/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

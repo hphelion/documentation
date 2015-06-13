@@ -1,36 +1,26 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Server Groups"
-permalink: /helion/commercial/carrier/dashboard/managing/groups/
-product: carrier-grade
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic623">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Managing Server Groups</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Managing Server Groups
-
-Server Groups is a mechanism to group virtual machines to which a common set of scheduling attributes is applied.
-
-As an admin, you can [create server groups](/helion/commercial/carrier/dashboard/managing/groups/create/).
-
-<hr>
-**Note:** This feature applies only to servers in the VNF Region.
-<hr>
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----
+ <!--./CarrierGrade/AdminGuideNew/ServerGroups/1.1commercial.managing.groups.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/groups/--></p>
+<p>Server Groups is a mechanism to group virtual machines to which a common set of scheduling attributes is applied.</p>
+<p>As an admin, you can <xref href="../../../CarrierGrade/AdminGuideNew/ServerGroups/1.1commercial.managing.groups.create.dita" >create server groups</xref>.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+  <xref type="section" href="#topic623/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

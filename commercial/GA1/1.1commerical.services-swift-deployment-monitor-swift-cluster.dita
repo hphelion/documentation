@@ -1,53 +1,70 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Monitor Object Storage (Swift) Cluster"
-permalink: /helion/openstack/1.1/services/object/swift/Monitor-cluster/
-product: commercial.ga
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.0
-product-version3: HP Helion OpenStack 1.0.1
-product-version4: HP Helion OpenStack 1.1
-role1: Storage Administrator
-role2: Storage Architect
-authors: Binamra S
-
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic848">
+<title>HP Helion OpenStack(R) 1.1: Monitor Object Storage (Swift) Cluster</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Binamra S"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/object/swift/shrink-cluster/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/object/overview/">&#9650; UP</a> | <a href=" /helion/openstack/1.1/services/object/swift/Monitor-disk/"> NEXT &#9654</a> </p>
-
-
-# HP Helion OpenStack&#174; 1.1: Monitor Object Storage (Swift) Cluster
-[See the Helion OpenStack 1.0 version of this page](/helion/openstack/services/object/swift/Monitor-cluster/)
-
-HP Helion OpenStack&#174; allows you to monitor Object Storage (Swift) cluster in any of the followings ways:
-
-
-* [Monitor Disk Usage]( /helion/openstack/1.1/services/object/swift/Monitor-disk/)
-* [Replication Status using Icinga](/helion/openstack/1.1/services/object/swift/replica-status/)
-* [Service Health Check](/helion/openstack/1.1/services/object/swift/health-check/)
-* [Check Health Services](/helion/openstack/1.1/services/object/swift/health-swift-services/)
-* [Object Storage (Swift) Proxy Health Check]( /helion/openstack/1.1/services/object/swift/monitor-swift-proxy-health-checks/)
-* [Network Interface Card](/helion/openstack/1.1/services/object/swift/monitor-speed-of-NIC/)
-* [Mount Points](/helion/openstack/1.1/services/object/swift/mount-points/)
-* [Disk Drives](/helion/openstack/1.1/services/object/swift/disk-drive/)
-* [Network Access (Ping)](/helion/openstack/1.1/services/object/swift/monitor-network-access-ping/)
-* [Drive Audit]( /helion/openstack/1.1/services/object/swift/monitor-swift-drive-audit/)
-* [File Ownership](/helion/openstack/1.1/services/object/swift/file-ownership/)
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
+ <!--./commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-cluster.md-->
+ <!--permalink: /helion/openstack/1.1/services/object/swift/Monitor-cluster/--></p>
+<p>
+  <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+</p>
+<p>HP Helion OpenStack(R) allows you to monitor Object Storage (Swift) cluster in any of the followings ways:</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-disk.dita" >Monitor Disk Usage</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-replica-swift-status.dita" >Replication Status using Icinga</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-check.dita" >Service Health Check</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-swift-services.dita" >Check Health Services</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-proxy-health-checks.dita" >Object Storage (Swift) Proxy Health Check</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-interface.dita" >Network Interface Card</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-mount-points.dita" >Mount Points</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-disk-drive(s).dita" >Disk Drives</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-access-ping.dita" >Network Access (Ping)</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-drive-audit.dita" >Drive Audit</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-file-ownership.dita" >File Ownership</xref>
+</li>
+</ul>
+<p>
+  <xref type="section" href="#topic848/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

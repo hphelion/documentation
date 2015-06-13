@@ -1,105 +1,109 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Scaling Virtual Machine Resources"
-permalink: /helion/commercial/carrier/dashboard/managing/instances/scaling/
-product: carrier-grade
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3522">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Scaling Virtual Machine Resources</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.scaling.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/instances/scaling/--></p>
+<p>You can scale the resources of individual instances up or down.</p>
+<p>Currently, the CPU resources for an instance are scalable.
+For an instance to be scalable, the following requirements must be satisfied:</p>
+<ul>
+<li>The image used to launch the instance must support scaling. </li>
+<li>The flavor used to launch the instance must be configured with maximum and minimum scaling limits (the scaling
+range) for the resource.</li>
+</ul>
+<p>When scaling a VM, use the credentials of the user that launched the VM. This ensures that quotas are correctly managed.</p>
+<p>Depending on the resource being scaled, the scaling behavior applied by Titanium Server may be adjustable. For example, you can control which CPUs are released when the CPU resources for an instance are scaled down.</p>
+<section id="cpu-scaling"> <title>CPU Scaling</title>
+<p>When an instance is first started, all available vCPUs are brought online. If the instance is restarted, the number of online vCPUs is set to match the number when the instance was stopped.</p>
+<p>When CPU resources are scaled up, a vCPU is brought online from the pool of available vCPUs for the instance, subject to the maximum allowed by the flavor. The lowest-numbered offline vCPU is selected.</p>
+<p>When CPU resources are scaled down, a vCPU is taken offline, subject to the minimum allowed by the flavor. By default, the highest-numbered online vCPU is selected.</p>
+</section>
+<section id="setting-the-cpu-scaling-range"> <title>Setting the CPU scaling range</title>
+<p>You can define the maximum and minimum CPU resources available to an instance by using a flavor.</p>
+<ul>
+<li>To set the maximum number of VCPUs for an instance, define a flavor with the required number of vCPUs.</li>
+<li>To set the minimum number of vCPUs, edit the flavor to include an Extra Spec. The minimum cannot be less than one.</li>
+</ul>
+<p>You can use the web administration interface or the CLI to edit the flavor.</p>
+</section>
+<section id="setting-the-scaling-range-using-the-cli"> <title>Setting the scaling range using the CLI</title>
+<p>The Compute (Nova) service CLI parameter for setting the minimum number of CPUs is as follows:</p>
+<codeblock>
+  <codeph>    hw:wrs:min_vcpus=min
+</codeph>
+</codeblock>
+<p>where min is the minimum number of CPUs.</p>
+<p>
+  <b>Example:</b>
+</p>
+<codeblock>
+  <codeph>    nova flavor-key flavor_name set
+    hw:wrs:min_vcpus=integer_value
+</codeph>
+</codeblock>
+</section>
+<section id="set-the-maximum-scaling-range-using-horizon"> <title>Set the maximum scaling range using Horizon</title>
+<ol>
+<li>
+<p>Launch the Horizon Dashboard.</p>
 
-<script>
+<p>Specify the URL for the appropriate server environment, either the hLinux servers or Wind River Linux servers:</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Scaling Virtual Machine Resources
-
-You can scale the resources of individual instances up or down.
-
-Currently, the CPU resources for an instance are scalable.
-For an instance to be scalable, the following requirements must be satisfied:
-
-* The image used to launch the instance must support scaling. 
-* The flavor used to launch the instance must be configured with maximum and minimum scaling limits (the scaling
-range) for the resource.
-
-When scaling a VM, use the credentials of the user that launched the VM. This ensures that quotas are correctly managed.
-
-Depending on the resource being scaled, the scaling behavior applied by Titanium Server may be adjustable. For example, you can control which CPUs are released when the CPU resources for an instance are scaled down.
-
-## CPU Scaling
-
-When an instance is first started, all available vCPUs are brought online. If the instance is restarted, the number of online vCPUs is set to match the number when the instance was stopped. 
-
-When CPU resources are scaled up, a vCPU is brought online from the pool of available vCPUs for the instance, subject to the maximum allowed by the flavor. The lowest-numbered offline vCPU is selected.
-
-When CPU resources are scaled down, a vCPU is taken offline, subject to the minimum allowed by the flavor. By default, the highest-numbered online vCPU is selected.
-
-## Setting the CPU scaling range
-
-You can define the maximum and minimum CPU resources available to an instance by using a flavor.
-
-* To set the maximum number of VCPUs for an instance, define a flavor with the required number of vCPUs.
-* To set the minimum number of vCPUs, edit the flavor to include an Extra Spec. The minimum cannot be less than one.
-
-You can use the web administration interface or the CLI to edit the flavor. 
-
-### Setting the scaling range using the CLI
-
-The Compute (Nova) service CLI parameter for setting the minimum number of CPUs is as follows:
-
-		hw:wrs:min_vcpus=min
-
-where min is the minimum number of CPUs.
-
-**Example:**
-
-		nova flavor-key flavor_name set
-		hw:wrs:min_vcpus=integer_value
-
-## Set the maximum scaling range using Horizon 
-
-1. Launch the Horizon Dashboard.
-
-	Specify the URL for the appropriate server environment, either the hLinux servers or Wind River Linux servers:
-
-		hLinux: <IP_address>/horizon/auth/login/
-		Wind River Linux: <IP_address>/auth/login/
-
-2. Click the **Admin** dashboard, then the **System** panel, then the **Flavors** link.
-
-3. In the **Flavors** screen, [create or edit a flavor](/helion/commercial/carrier/dashboard/managing/flavors/).
-
-4. Specify the maximum number of vCPUs for the instance. In the **vCPU** field, enter the maximum number of vCPUs.
-
-5. Click **Save** or **Create Flavor**.
-
-## Set the maximum scaling range using Horizon
-
-For flavors on Wind River Linux servers, you can set the minimum number of vCPUs.
-
-<hr>
-**Note:** This feature applies only to servers in the VNF Region.
-<hr>
-
-You can specify the minimum number of vCPUs by adding an [Extra Spec for the flavor](/helion/commercial/carrier/dashboard/managing/flavors/extra/).
-
-1. In the **Flavors** list, click the **Flavor Name** for the flavor you want to edit.
-
-2. On the **Extra Specs** tab, click **Create**.
-
-3. In the **Create Flavor Extra Spec** dialog, select **Minimum Number of CPUs** from the **Extra Spec** drop-down
-menu.
-
-4. In the **Value** field, enter the minimum allowed number of vCPUs for the flavor.
-
-5. Click **Create**.
-
-----
+<codeblock>
+<codeph>hLinux: &lt;IP_address&gt;/horizon/auth/login/
+Wind River Linux: &lt;IP_address&gt;/auth/login/
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Flavors</b> link.</p>
+</li>
+<li>
+<p>In the <b>Flavors</b> screen, <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.dita" >create or edit a flavor</xref>.</p>
+</li>
+<li>
+<p>Specify the maximum number of vCPUs for the instance. In the <b>vCPU</b> field, enter the maximum number of vCPUs.</p>
+</li>
+<li>
+<p>Click <b>Save</b> or <b>Create Flavor</b>.</p>
+</li>
+</ol>
+</section>
+<section id="set-the-maximum-scaling-range-using-horizon"> <title>Set the maximum scaling range using Horizon</title>
+<p>For flavors on Wind River Linux servers, you can set the minimum number of vCPUs.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>You can specify the minimum number of vCPUs by adding an <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Extra Spec for the flavor</xref>.</p>
+<ol>
+<li>
+<p>In the <b>Flavors</b> list, click the <b>Flavor Name</b> for the flavor you want to edit.</p>
+</li>
+<li>
+<p>On the <b>Extra Specs</b> tab, click <b>Create</b>.</p>
+</li>
+<li>
+<p>In the <b>Create Flavor Extra Spec</b> dialog, select <b>Minimum Number of CPUs</b> from the <b>Extra Spec</b> drop-down
+menu.</p>
+</li>
+<li>
+<p>In the <b>Value</b> field, enter the minimum allowed number of vCPUs for the flavor.</p>
+</li>
+<li>
+<p>Click <b>Create</b>.</p>
+</li>
+</ol>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

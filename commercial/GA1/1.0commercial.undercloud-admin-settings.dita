@@ -1,69 +1,78 @@
----
-layout: 1.0default
-title: "HP Helion OpenStack&#174; 1.0: Undercloud Horizon Dashboard: Settings Tab"
-permalink: /helion/openstack/undercloud/admin/settings/
-product: commercial.ga1.0
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1968">
+<title>HP Helion OpenStack(R) 1.0: Undercloud Horizon Dashboard: Settings Tab</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-
-
-<script> 
-
-function PageRefresh { 
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
- 
-
-# HP Helion OpenStack&#174; 1.0: Undercloud Horizon Dashboard: Settings Tab
-[See the Helion OpenStack 1.1 version of this page](/helion/openstack/1.1/undercloud/admin/settings/)
-
-The options on the Settings tab allow changes to the following:
-
-* [User Settings](#user-settings)
-* [Change Password](#change-password) 
-
-To view the **Settings** tab, click the **Admin** icon in the top panel of the Horizon undercloud dashboard and select **Settings**. The tab appears in the left panel on the dashboard.
-
-## User settings<a name="user-settings"></a>
-
-This option allows you to change the user settings. To change the settings, do the following:
-
-1. From the top panel, click **Admin** and then select **Settings**.<br /> The Settings Tab is displayed in the left panel with two options **User Settings** and **Change Password**.<br />The default is User Settings.
-
-2. In the User Settings page, from the **Language** drop-down list, select the desired language.<br /> The default is English. <br />
-
-3. From the **Timezone** drop-down list, select the time zone. <br /> The default is UTC (Universal Coordinated Time). <br />
-
-4. From **Items per Page** drop-down list, select the number of lines that you want to display per page.<br /> The default is 20 lines per page.<br />
-
-5. Click **Save** to save the changes. 
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-## Change Password<a name="change-password"></a>
-
-This option allows you to the change the password. Do the following:
-
-1. From the top panel, click **Admin** and then select **Settings**.<br /> The Settings Tab is displayed in the left panel with two options **User Settings** and **Change Password**.
-
-2. Click **Change Password** to display the Change Password page.
-
-3. In the **Current Password** box, enter your current password.
-
-4. In the **New Password** box, enter the new password.
-
-5. In the **Confirm Password** box, re-enter your new password to confirm.
-
-6. Click **Change** to save the changes.  
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
+ <!--./commercial/GA1/1.0commercial.undercloud-admin-settings.md-->
+ <!--permalink: /helion/openstack/undercloud/admin/settings/--></p>
+<p>
+  <xref href="../../commercial/GA1/1.1commercial.undercloud-admin-settings.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+</p>
+<p>The options on the Settings tab allow changes to the following:</p>
+<ul>
+<li>
+<xref type="section" href="#topic1968/user-settings">User Settings</xref>
+</li>
+<li>
+<xref type="section" href="#topic1968/change-password">Change Password</xref> </li>
+</ul>
+<p>To view the <b>Settings</b> tab, click the <b>Admin</b> icon in the top panel of the Horizon undercloud dashboard and select <b>Settings</b>. The tab appears in the left panel on the dashboard.</p>
+<section id="user-settings"> <title>User settings<!--Removed anchor point user-settings--><!-- id="user-settings" --></title>
+<p>This option allows you to change the user settings. To change the settings, do the following:</p>
+<ol>
+<li>
+<p>From the top panel, click <b>Admin</b> and then select <b>Settings</b>.<!--A BR tag was used here in the original source.--> The Settings Tab is displayed in the left panel with two options <b>User Settings</b> and <b>Change Password</b>.<!--A BR tag was used here in the original source.-->The default is User Settings.</p>
+</li>
+<li>
+<p>In the User Settings page, from the <b>Language</b> drop-down list, select the desired language.<!--A BR tag was used here in the original source.--> The default is English. </p>
+</li>
+<li>
+<p>From the <b>Timezone</b> drop-down list, select the time zone. <!--A BR tag was used here in the original source.--> The default is UTC (Universal Coordinated Time). </p>
+</li>
+<li>
+<p>From <b>Items per Page</b> drop-down list, select the number of lines that you want to display per page.<!--A BR tag was used here in the original source.--> The default is 20 lines per page.</p>
+</li>
+<li>
+<p>Click <b>Save</b> to save the changes.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1968/top"> Return to Top </xref>
+</p>
+</section>
+<section id="change-password"> <title>Change Password<!--Removed anchor point change-password--><!-- id="change-password" --></title>
+<p>This option allows you to the change the password. Do the following:</p>
+<ol>
+<li>
+<p>From the top panel, click <b>Admin</b> and then select <b>Settings</b>.<!--A BR tag was used here in the original source.--> The Settings Tab is displayed in the left panel with two options <b>User Settings</b> and <b>Change Password</b>.</p>
+</li>
+<li>
+<p>Click <b>Change Password</b> to display the Change Password page.</p>
+</li>
+<li>
+<p>In the <b>Current Password</b> box, enter your current password.</p>
+</li>
+<li>
+<p>In the <b>New Password</b> box, enter the new password.</p>
+</li>
+<li>
+<p>In the <b>Confirm Password</b> box, re-enter your new password to confirm.</p>
+</li>
+<li>
+<p>Click <b>Change</b> to save the changes.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1968/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

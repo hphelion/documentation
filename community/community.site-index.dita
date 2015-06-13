@@ -1,63 +1,102 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Community Site Index"
-permalink: /helion/community/siteindex/
-product: community
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1477">
+<title>HP Helion OpenStack(R) Community Site Index</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
+ <!--./community/community.site-index.md-->
+ <!--permalink: /helion/community/siteindex/--></p>
+<section id="hp-helion-openstack-community-documentation-home"> <title>
+  HP Helion OpenStack(R) Community Documentation Home
+</title>
+</section>
+<section id="getting-started-with-hp-helion-openstack-community"> <title>Getting started with HP Helion OpenStack(R) Community</title>
+<ul>
+<li>
+<xref href="../community/community.release-notes.dita" >Release notes</xref> </li>
+<li>
+<xref href="../community/community.faq.dita" >FAQ</xref>  </li>
+<li>
+<xref href="../community/community.related-topics.dita" >Related topics</xref>
+</li>
+</ul>
+</section>
+<section id="install-configure-your-hp-helion-openstack-community-cloud"> <title>Install &amp; configure your HP Helion OpenStack(R) Community cloud</title>
+<ul>
+<li>
+<xref href="../community/community.install-overview.dita" >Installation overview</xref>
+</li>
+<li>
+<xref href="../community/community.hwsw-requirements.dita" >Hardware and software requirements</xref>
+</li>
+<li>
+<xref href="../community/community.network-requirements.dita" >Network Architecture and Configuration -- Baremetal Installations Only</xref>
+</li>
+<li>
+<xref href="../community/community.name-resolution.dita" >Enable name resolution from tenant VMs in the overcloud</xref>
+</li>
+<li>
+<xref href="../community/community.install.baremetal.dita" >Baremetal Installation and Configuration</xref>
+</li>
+<li>
+<xref href="../community/community.install.virtual.dita" >Virtual Installation and Configuration</xref>
+</li>
+</ul>
+</section>
+<section id="horizon-dashboard"> <title>Horizon Dashboard</title>
+<ul>
+<li>
+<xref href="../community/community.dashboard.how-works.dita" >How to use the Helion Dashboards</xref>
+</li>
+<li>
+<xref href="../community/community.dashboard.launch.dita" >Logging into the Helion Dashboards</xref>
+</li>
+</ul>
+</section>
+<section id="openstack-reference"> <title>OpenStack(R) reference</title>
+<ul>
+<li>
+<xref href="http://docs.openstack.org/" scope="external" format="html" >OpenStack(R) documentation home page</xref>
+</li>
+<li>
+<xref href="http://docs.openstack.org/glossary/content/glossary.html" scope="external" format="html" >OpenStack(R) Glossary</xref>
+</li>
+<li>
+<xref href="http://docs.openstack.org/user-guide/content/index.html" scope="external" format="html" >OpenStack(R) End User Guide</xref>
+</li>
+<li>
+<xref href="http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html" scope="external" format="html" >OpenStack(R) Cloud Administrator Guide</xref>
+</li>
+<li>
+<xref href="http://docs.openstack.org/trunk/openstack-network/admin/content/index.html" scope="external" format="html" >OpenStack(R) Networking Administration Guide</xref>
+</li>
+<li>
+<xref href="http://docs.openstack.org/trunk/openstack-ops/content/index.html" scope="external" format="html" >OpenStack(R) Operations Guide</xref>
+</li>
+</ul>
+</section>
+<section id="license-agreements"> <title>License Agreements</title>
+<ul>
+<li>
+<xref href="../community/community.3rd-party-license-agreements.dita" >Open Source and Third-Party Software License Agreements</xref>
+</li>
+<li>
+<p>
+<xref href="../community/community.eula.dita" >End User License Agreement</xref>
+</p>
 
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/">&#9664; PREV</a> | <a href="/helion/">&#9650; UP</a> | NEXT &#9654; </p> -->
-
-# HP Helion OpenStack&#174; Community Site Index
-
-#### [HP Helion OpenStack Community Documentation Home](/helion/community/)
-
-#### Getting started with HP Helion OpenStack Community
-
-* [Release notes](/helion/community/release-notes/) 
-* [FAQ](/helion/community/faq/)  
-* [Related topics](/helion/community/related-links/)
-
-#### Install &amp; configure your HP Helion OpenStack Community cloud
-
-* [Installation overview](/helion/community/install-overview/)
-* [Hardware and software requirements](/helion/community/hwsw-requirements/)
-* [Network Architecture and Configuration -- Baremetal Installations Only](/helion/community/network-requirements/)
-* [Enable name resolution from tenant VMs in the overcloud](/helion/community/name-resolution/)
-* [Baremetal Installation and Configuration](/helion/community/install/)
-* [Virtual Installation and Configuration](/helion/community/install-virtual/)
-
-### Horizon Dashboard
-
-* [How to use the Helion Dashboards](/helion/community/dashboard/how-works/)
-* [Logging into the Helion Dashboards](/helion/community/dashboard/login/)
-
-#### OpenStack reference
- 
-* [OpenStack documentation home page](http://docs.openstack.org/)
-* [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
-* [OpenStack End User Guide](http://docs.openstack.org/user-guide/content/index.html)
-* [OpenStack Cloud Administrator Guide](http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html)
-* [OpenStack Networking Administration Guide](http://docs.openstack.org/trunk/openstack-network/admin/content/index.html)
-* [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
- 
-#### License Agreements
-
-* [Open Source and Third-Party Software License Agreements](/helion/community/3rd-party-license-agreements/)
-* [End User License Agreement](/helion/community/eula/)
-
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
- 
+<p>
+<xref type="section" href="#topic1477/top"> Return to Top </xref>
+</p>
+</li>
+</ul>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

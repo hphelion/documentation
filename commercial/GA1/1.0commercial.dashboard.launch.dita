@@ -1,42 +1,50 @@
----
-layout: 1.0default
-title: "HP Helion OpenStack&#174; 1.0: Logging into the Helion Dashboards"
-permalink: /helion/openstack/dashboard/login/
-product: commercial.ga1.0
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1206">
+<title>HP Helion OpenStack(R) 1.0: Logging into the Helion Dashboards</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
+ <!--./commercial/GA1/1.0commercial.dashboard.launch.md-->
+ <!--permalink: /helion/openstack/dashboard/login/--></p>
+<p>
+  <xref href="../../commercial/GA1/1.1commercial.dashboard.launch.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+</p>
+<ol>
+<li>
+<p>Ask the cloud operator for the host name or public IP address where the dashboard is located, your user name, and your password.</p>
+</li>
+<li>
+<p>Open a web browser that has both JavaScript and cookies enabled.</p>
+</li>
+<li>
+<p>In the address bar, enter the host name or IP address for the dashboard.</p>
 
+<p>
+<b>Note:</b> If a certificate warning appears when you try to access the URL for the first time, a self-signed certificate is in use. These certificates are not considered trustworthy by default. Verify the certificate or add an exception in the browser to bypass the warning.</p>
+</li>
+<li>
+<p>On the <b>Log In</b> page, enter your user name and password and then click <b>Sign In</b>.</p>
 
+<p>
+<image href="../../media/HelionLogin.png">
+<alt/>
+</image>
+</p>
+</li>
+<li>
+<p>If you are a non-admin user, you will only be able to select a project from the list at the top of the screen.</p>
 
-<script> 
-
-function PageRefresh { 
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/managing/volumes/">&#9664; PREV</a> | <a href="/helion/openstack/dashboard/users/">&#9650; UP</a> | <a href="/helion/openstack/managing/routers/">NEXT &#9654;</a> </p> -->
-
-# HP Helion OpenStack&#174; 1.0: Logging into the Helion Dashboards
-[See the Helion OpenStack 1.1 version of this page](/helion/openstack/1.1/dashboard/login/)
-
-1. Ask the cloud operator for the host name or public IP address where the dashboard is located, your user name, and your password.
-
-2. Open a web browser that has both JavaScript and cookies enabled.
-
-3. In the address bar, enter the host name or IP address for the dashboard.
-
-	**Note:** If a certificate warning appears when you try to access the URL for the first time, a self-signed certificate is in use. These certificates are not considered trustworthy by default. Verify the certificate or add an exception in the browser to bypass the warning.
-
-4. On the **Log In** page, enter your user name and password and then click **Sign In**.
-
-	<img src="media/HelionLogin.png" alt="" />
-
-5. If you are a non-admin user, you will only be able to select a project from the list at the top of the screen.
-
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
+<p>
+<xref type="section" href="#topic1206/top"> Return to Top </xref>
+</p>
+</li>
+</ol>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

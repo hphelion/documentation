@@ -1,93 +1,132 @@
----
-layout: default-devplatform
-title: "HP Helion 1.2 Development Platform: PHP Hello World Sample"
-permalink: /helion/devplatform/1.2/workbook/helloworld/php/
-product: devplatform2.0
-product-version1: HP Helion Development Platform
-product-version2: HP Helion Development Platform 1.2
-role1: Application Developer
-role2: Security Engineer
-role3: ISV Developer 
-role4: Service Developer
-authors: Jayme P
-SME1: Sam C
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3770">
+<title>HP Helion 1.2 Development Platform: PHP Hello World Sample</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-# HP Helion 1.2 Development Platform: PHP Hello World Sample
-
-
-This very simple PHP web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.
-
-##Prerequisites
-- An installation of the [HP Helion Development Platform](/helion/devplatform/1.2/install/).
-- Access to an Application Lifecycle Service (ALS) [Cluster](/helion/devplatform/1.2/als/admin/cluster/)
-- Access to the [Helion command-line client (CLI)](/helion/devplatform/1.2/als/user/client/).
-- Access to the web-based [ALS Management Console](/helion/devplatform/1.2/als/user/console/).
-- Register for access to the [HP Helion Development Platform](https://helion.hpwsportal.com/catalog.html#/Home/Show) (HDN).
-
+ <!--./devplatform/1.2/workbook/helloworld/1.2helloworld.php.md-->
+ <!--permalink: /helion/devplatform/1.2/workbook/helloworld/php/--></p>
+<p>This very simple PHP web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.</p>
+<section id="prerequisites"> <title>Prerequisites</title>
+<ul>
+<li>An installation of the <xref href="../../../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref>.</li>
+<li>Access to an Application Lifecycle Service (ALS) <xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita" >Cluster</xref>
+</li>
+<li>Access to the <xref href="../../../../devplatform/1.2/helion/user/client/1.2index.dita" >Helion command-line client (CLI)</xref>.</li>
+<li>Access to the web-based <xref href="../../../../devplatform/1.2/helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
+<li>Register for access to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HP Helion Development Platform</xref> (HDN).</li>
+</ul>
 <!--
 ## One-button Deployment to HP Helion
 You can deploy this app automatically with the button below or with the manual 
 instructions further down. But before you push the button, ensure that you have taken care of the [prerequisites](#prereq).
 
-<a href="https://deploynow.hpcloud.com/?repoUrl=https://github.com/HelionDevPlatform/helion-hello-world-php"><img src="media/deploynow.png"/></a>
+<a href="https://deploynow.hpcloud.com/?repoUrl=https://github.com/HelionDevPlatform/helion-hello-world-php"><img src="/media/deploynow.png"/></a>
 -->
-## Deployment Instructions
+</section>
+<section id="deployment-instructions"> <title>Deployment Instructions</title>
+</section>
+<section id="download-the-application-files"> <title>Download the Application Files</title>
+<p>
+  <xref href="https://github.com/HelionDevPlatform/helion-hello-world-php" scope="external" format="html" >Click here to access the code repository.</xref>
+</p>
+<p>
+<i>Manifest.yml</i> is a configuration file used to specify settings. For PHP, only the <b>name</b> and <b>buildpack</b> fields are required. The <b>buildpack</b> field is a URL for the buildpack that supports the necessary language and/or framework.</p>
+<p>This app uses the <xref href="https://github.com/cloudfoundry/php-buildpack" scope="external" format="html" >Cloud Foundry PHP buildpack</xref>. For more technical details about buildpacks and the <i>composer.json</i> file, please see the README included in the <xref href="https://github.com/HelionDevPlatform/helion-rabbitmq-php/" scope="external" format="html" >download package</xref>.</p>
+</section>
+<section id="deploy-the-application"> <title>Deploy the Application</title>
+<p>
+<b>Note</b>: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be <xref href="../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#staging-cache-app-http-proxy" >made aware of the proxy</xref>. The sample applications require access to the Internet in order to download dependent packages.</p>
+<p>The Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally <xref href="../../../../devplatform/1.2/1.2devplatform.eclipse.dita" >use the plugin</xref> to deploy.</p>
+<ol>
+<li>Open the <xref href="../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >Helion command-line interface (CLI)</xref>
+</li>
+<li>
+<p>Ensure that you are targeting your desired environment.  <!--A BR tag was used here in the original source.--> If you are not, execute</p>
 
-### Download the Application Files
-[Click here to access the code repository.](https://github.com/HelionDevPlatform/helion-hello-world-php)
+<codeblock>
+<codeph>helion target https://api.xx.xx.xx.xx.xip.io    
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Ensure that you are logged in to your desired environment.  <!--A BR tag was used here in the original source.-->If you are not, execute</p>
 
-*Manifest.yml* is a configuration file used to specify settings. For PHP, only the **name** and **buildpack** fields are required. The **buildpack** field is a URL for the buildpack that supports the necessary language and/or framework.
+<codeblock>
+<codeph>helion login
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>If you are not already there, <codeph>cd</codeph> to the root directory of the sample.</p>
+</li>
+<li>
+<p>Deploy the application by using the command:</p>
 
-This app uses the [Cloud Foundry PHP buildpack](https://github.com/cloudfoundry/php-buildpack). For more technical details about buildpacks and the *composer.json* file, please see the README included in the [download package](https://github.com/HelionDevPlatform/helion-rabbitmq-php/).
+<codeblock>
+<codeph>helion push 
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Accept any default values that you may be prompted for. <!--A BR tag was used here in the original source.--><b>Note</b>: By default, ALS Clusters are configured with two domains (private and public).  In some situations, the Helion CLI may prompt you to select a target domain.  If prompted, select the public domain from the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</p>
+</li>
+</ol>
+</section>
+<section id="view-and-run-the-application"> <title>View and Run the Application</title>
+<ol>
+<li>Open the ALS <b>Management Console</b>. <!--A BR tag was used here in the original source.--> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.</li>
+<li>Click <b>Applications</b>.</li>
+<li>If the file push was successful, you should see <b>hello-world-php</b> in the list of available applications. Note that the name, along with other variable values, was supplied through the <i>manifest.yml</i> file.</li>
+<li>Click <b>View App</b> to see your app in action.
 
-##Deploy the Application
-**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/1.2/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
-
-The Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally [use the plugin](/helion/devplatform/1.2/eclipse/) to deploy.
-
-1.	Open the [Helion command-line interface (CLI)](/helion/devplatform/1.2/als/user/reference/client-ref/)
-3.	Ensure that you are targeting your desired environment.  <br /> If you are not, execute
-	
-		helion target https://api.xx.xx.xx.xx.xip.io	
-
-
-1. Ensure that you are logged in to your desired environment.  <br />If you are not, execute
-	
-		helion login
-	
-4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Deploy the application by using the command:
-	
-		helion push 
-
-
-1. Accept any default values that you may be prompted for. <br />**Note**: By default, ALS Clusters are configured with two domains (private and public).  In some situations, the Helion CLI may prompt you to select a target domain.  If prompted, select the public domain from the given list (i.e. *&lt;app-name>.xxx.xxx.xxx.xxx.xip.io*)
-
-### View and Run the Application
-1.	Open the ALS **Management Console**. <br /> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
-2.	Click **Applications**.
-3.	If the file push was successful, you should see **hello-world-php** in the list of available applications. Note that the name, along with other variable values, was supplied through the *manifest.yml* file.
-5.	Click **View App** to see your app in action.
-	- This application displays a text message: **Hello World!**
-
-##Key Code Snippets
-This simple PHP script prints "Hello World".
-	
-	<?php
-	echo "\n Hello World \n";
-	?>
-
-The *manifest.yml* file is the configuration information used by ALS to set up the environment. The **buildpack** element here informs ALS on the correct buildpack to use for PHP, which ensures the correct tools and runtimes are installed in the application environment.
-
-	---
-	applications:
-	- name: hello-world-php  
-	  buildpack: https://github.com/cloudfoundry/php-buildpack.git
-
-##Key Learnings
-1. ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the *manifest.yml* file.
-2. You interact with and deploy your app using the [ALS command line client](/helion/devplatform/1.2/als/user/reference/client-ref/) or the web-based [ALS Management Console](/helion/devplatform/1.2/als/user/console/).
-
-[Exit Samples](/helion/devplatform/1.2/appdev/) | [Previous Sample](/helion/devplatform/1.2/workbook/messaging/php/) | [Next Sample](/helion/devplatform/1.2/workbook/database/php/)
+<ul>
+<li>This application displays a text message: <b>Hello World!</b>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="key-code-snippets"> <title>Key Code Snippets</title>
+<p>This simple PHP script prints "Hello World".</p>
+<codeblock>
+  <codeph>&lt;?php
+echo "\n Hello World \n";
+?&gt;
+</codeph>
+</codeblock>
+<p>The <i>manifest.yml</i> file is the configuration information used by ALS to set up the environment. The <b>buildpack</b> element here informs ALS on the correct buildpack to use for PHP, which ensures the correct tools and runtimes are installed in the application environment.</p>
+<codeblock>
+  <codeph>---
+applications:
+- name: hello-world-php  
+  buildpack: https://github.com/cloudfoundry/php-buildpack.git
+</codeph>
+</codeblock>
+</section>
+<section id="key-learnings"> <title>Key Learnings</title>
+<ol>
+<li>ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the <i>manifest.yml</i> file.</li>
+<li>You interact with and deploy your app using the <xref href="../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="./devplatform/1.2/helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
+</ol>
+<p>
+<xref href="../../../../devplatform/1.2/1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="./devplatform/1.2/workbook/messaging/1.2messaging.php.dita" >Previous Sample</xref> | <xref href="./devplatform/1.2/workbook/database/1.2database.php.dita" >Next Sample</xref>
+</p>
+</section>
+</body>
+</topic>

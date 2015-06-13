@@ -1,160 +1,187 @@
----
-layout: default
-title: "Ring Power and Number of Partitions"
-permalink: /helion/openstack/carrier/services/swift/deployment/ring-power/
-product: carrier-grade
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.0
-product-version3: HP Helion OpenStack 1.0.1
-product-version4: HP Helion OpenStack 1.1
-role1: Storage Administrator
-role2: Storage Architect
-authors: Keshava HP, Binamra S
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1745">
+<title>Ring Power and Number of Partitions</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Keshava HP, Binamra S"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href=" /helion/openstack/carrier/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/carrier/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/swift/deployment/add-disk-storage-node/"> NEXT &#9654</a> </p> -->
-
-# Ring Power and Number of Partitions
-
-[See the Helion OpenStack 1.0 version of this page](/helion/openstack/services/swift/deployment/ring-power/)
-
-The following table displays the  number of zones, the maximum and minimum number of drives, and the ring power defined for that particular configuration. With the defined disk drives number of zones and the ring power, 100 ring partition are defined on each disk drive. This is the smallest allowed number of partition. The Minimum Number of Drives column displays the number of drives that are required for the system to operate correctly. If you have fewer than the minimum number of drives specified, there will be too many partitions on the disk drive and Swift will fail to complete the audit and other processes.
-
-
-
+ <!--./CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-part-power.md-->
+ <!--permalink: /helion/openstack/carrier/services/swift/deployment/ring-power/--></p>
+<p>
+  <xref href="../../../commercial/GA1/1.0commerical.services-swift-deployment-part-power.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+</p>
+<p>The following table displays the  number of zones, the maximum and minimum number of drives, and the ring power defined for that particular configuration. With the defined disk drives number of zones and the ring power, 100 ring partition are defined on each disk drive. This is the smallest allowed number of partition. The Minimum Number of Drives column displays the number of drives that are required for the system to operate correctly. If you have fewer than the minimum number of drives specified, there will be too many partitions on the disk drive and Swift will fail to complete the audit and other processes.</p>
 <!--
 To use, given number of zones and the maximum number of disk drives anticipated for the system, pick a ring power from the table. With these many disk drives, number of zones and ring power, there will be 100 ring partitions on each disk drives. This is the smallest allowed number of partitions. If your system has fewer drives (i.e, starts small), look at the <min-mum-drives> column. For a given number of zones and ring power, this is the smallest number of disk drives you system must have to operate correctly. If you have fewer <min-mum-drives>, there will be too many partitions on the disk drive, and Swift will fail to complete audit and other processes.-->
-
-
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;">
-	<th>Number of Zones</th>
-	<th><center>Minimum Number of Drives</center></th>
-    <th><center>Maximum Number of Drives</center></th>
-	<th><center>Ring Power</center></th>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>3</td>
-	<td>13</td>
-    <td>3,932 </td>
-	<td>17 </td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>3</td>
-	<td>26</td>
-    <td>7,864</td>
-	<td>18 </td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>3</td>
-	<td>52</td>
-    <td>15,728 </td>
-	<td>19 </td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>3</td>
-	<td>104</td>
-    <td>31,457</td>
-	<td>20</td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>3</td>
-	<td>209</td>
-    <td>62,914 </td>
-	<td>21 </td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>3</td>
-	<td>419</td>
-    <td>125,829</td>
-	<td>22</td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>3</td>
-	<td>838</td>
-    <td>251,658</td>
-	<td>23</td>
-</tr><tr style="background-color: white; color: black;">
-	<td>3</td>
-	<td>1677</td>
-    <td>503,316</td>
-	<td>24 </td>
-</tr><tr style="background-color: white; color: black;">
-	<td>3</td>
-	<td>3355</td>
-    <td>1,006,632</td>
-	<td>25</td>
-</tr><tr style="background-color: white; color: black;">
-	<td>3</td>
-	<td>6710</td>
-    <td>2,013,265</td>
-	<td>26</td>
-</tr><tr style="background-color: white; color: black;">
-	<td>4</td>
-	<td>17</td>
-    <td> 5,242</td>
-	<td>17 </td>
-</tr><tr style="background-color: white; color: black;">
-	<td>4</td>
-	<td>34</td>
-    <td>10,485 </td>
-	<td>18 </td>
-</tr><tr style="background-color: white; color: black;">
-	<td>4</td>
-	<td>69</td>
-    <td>20,971</td>
-	<td>19 </td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>4</td>
-	<td>139</td>
-    <td>41,943</td>
-	<td>20 </td>
-</tr><tr style="background-color: white; color: black;">
-	<td>4</td>
-	<td>279</td>
-    <td>83,886</td>
-	<td>21 </td>
-</tr><tr style="background-color: white; color: black;">
-	<td>4</td>
-	<td>559</td>
-    <td>16,7772</td>
-	<td>22 </td>
-</tr><tr style="background-color: white; color: black;">
-	<td>4</td>
-	<td>1118</td>
-    <td> 335,544</td>
-	<td>23 </td>
-</tr><tr style="background-color: white; color: black;">
-	<td>4</td>
-	<td>2236</td>
-    <td> 671,088</td>
-	<td>24 </td>
-</tr><tr style="background-color: white; color: black;">
-	<td>4</td>
-	<td>4473</td>
-    <td>1,342,177</td>
-	<td>25 </td>
-</tr><tr style="background-color: white; color: black;">
-	<td>4</td>
-	<td>8947</td>
-    <td>2,684,354 </td>
-	<td>26</td>
-</tr>
+<table>
+<tgroup cols="4">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<colspec colname="col4"/>
+<thead>
+<row>
+<entry>Number of Zones</entry>
+    <entry>
+<required-cleanup remap="center">
+<ph>Minimum Number of Drives</ph>
+</required-cleanup>
+</entry>
+    <entry>
+<required-cleanup remap="center">
+<ph>Maximum Number of Drives</ph>
+</required-cleanup>
+</entry>
+    <entry>
+<required-cleanup remap="center">
+<ph>Ring Power</ph>
+</required-cleanup>
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>3</entry>
+    <entry>13</entry>
+    <entry>3,932 </entry>
+    <entry>17 </entry>
+</row>
+<row>
+<entry>3</entry>
+    <entry>26</entry>
+    <entry>7,864</entry>
+    <entry>18 </entry>
+</row>
+<row>
+<entry>3</entry>
+    <entry>52</entry>
+    <entry>15,728 </entry>
+    <entry>19 </entry>
+</row>
+<row>
+<entry>3</entry>
+    <entry>104</entry>
+    <entry>31,457</entry>
+    <entry>20</entry>
+</row>
+<row>
+<entry>3</entry>
+    <entry>209</entry>
+    <entry>62,914 </entry>
+    <entry>21 </entry>
+</row>
+<row>
+<entry>3</entry>
+    <entry>419</entry>
+    <entry>125,829</entry>
+    <entry>22</entry>
+</row>
+<row>
+<entry>3</entry>
+    <entry>838</entry>
+    <entry>251,658</entry>
+    <entry>23</entry>
+</row>
+<row>
+<entry>3</entry>
+    <entry>1677</entry>
+    <entry>503,316</entry>
+    <entry>24 </entry>
+</row>
+<row>
+<entry>3</entry>
+    <entry>3355</entry>
+    <entry>1,006,632</entry>
+    <entry>25</entry>
+</row>
+<row>
+<entry>3</entry>
+    <entry>6710</entry>
+    <entry>2,013,265</entry>
+    <entry>26</entry>
+</row>
+<row>
+<entry>4</entry>
+    <entry>17</entry>
+    <entry> 5,242</entry>
+    <entry>17 </entry>
+</row>
+<row>
+<entry>4</entry>
+    <entry>34</entry>
+    <entry>10,485 </entry>
+    <entry>18 </entry>
+</row>
+<row>
+<entry>4</entry>
+    <entry>69</entry>
+    <entry>20,971</entry>
+    <entry>19 </entry>
+</row>
+<row>
+<entry>4</entry>
+    <entry>139</entry>
+    <entry>41,943</entry>
+    <entry>20 </entry>
+</row>
+<row>
+<entry>4</entry>
+    <entry>279</entry>
+    <entry>83,886</entry>
+    <entry>21 </entry>
+</row>
+<row>
+<entry>4</entry>
+    <entry>559</entry>
+    <entry>16,7772</entry>
+    <entry>22 </entry>
+</row>
+<row>
+<entry>4</entry>
+    <entry>1118</entry>
+    <entry> 335,544</entry>
+    <entry>23 </entry>
+</row>
+<row>
+<entry>4</entry>
+    <entry>2236</entry>
+    <entry> 671,088</entry>
+    <entry>24 </entry>
+</row>
+<row>
+<entry>4</entry>
+    <entry>4473</entry>
+    <entry>1,342,177</entry>
+    <entry>25 </entry>
+</row>
+<row>
+<entry>4</entry>
+    <entry>8947</entry>
+    <entry>2,684,354 </entry>
+    <entry>26</entry>
+</row>
+</tbody>
+</tgroup>
 </table>
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
+<p>
+  <xref type="section" href="#topic1745/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

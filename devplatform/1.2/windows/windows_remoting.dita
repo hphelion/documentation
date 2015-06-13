@@ -1,42 +1,55 @@
----
-layout: default-devplatform
-title: "HP Helion 1.2 Development Platform: Deploying your first .NET Application"
-permalink: /helion/devplatform/1.2/windows/remoting/
-product: devplatform2.0
-product-version1: HP Helion Development Platform
-product-version2: HP Helion Development Platform 1.2
-role1: Systems Administrator 
-role2: System Engineer
-role3: Cloud Administrator
-role4: Network Administrator
-role5: Application Developer
-Role6: Security Engineer
-role7: Application Developer 
-role8: ISV Developer
-role9: Service Developer
-authors: Patrick F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1035">
+<title>HP Helion 1.2 Development Platform: Providing Remote Desktop Access to Windows DEA and Windows SQL Server Instances</title>
+<titlealts>
+<searchtitle>HP Helion 1.2 Development Platform: Deploying your first .NET Application</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Patrick F"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-# HP Helion 1.2 Development Platform: Providing Remote Desktop Access to Windows DEA and Windows SQL Server Instances 
-
-<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
-
-This tutorial demonstrates how to set up Remote Desktop access to new Windows instances running in HP Helion OpenStack. Since the instances are running full versions of Windows, you must connect to them using Remote Desktop rather than SSH.
-
-The steps needed to do this are as follows:
-
-* [Create an RDP security group](#create_security)
-* [Add the RDP security group to the instance](#add_security)
-* [Retrieve the Windows instance password (Public Cloud)](#get_pw_cloud)</a>
-* [Retrieve the Windows instance password (Helion OpenStack)](#get_pw_hos)
-
-##Create the RDP Security Group {#create_security}
-
-
-
-
-
-
-
+ <!--./devplatform/1.2/windows/windows_remoting.md-->
+ <!--permalink: /helion/devplatform/1.2/windows/remoting/--></p>
+<p>
+  <!--Original: <span @class=>--><ph>
+    <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
+  </ph>
+</p>
+<p>This tutorial demonstrates how to set up Remote Desktop access to new Windows instances running in HP Helion OpenStack(R) Since the instances are running full versions of Windows, you must connect to them using Remote Desktop rather than SSH.</p>
+<p>The steps needed to do this are as follows:</p>
+<ul>
+<li>
+<xref type="section" href="#topic1035/create_security">Create an RDP security group</xref>
+</li>
+<li>
+<xref type="section" href="#topic1035/add_security">Add the RDP security group to the instance</xref>
+</li>
+<li>
+<xref type="section" href="#topic1035/get_pw_cloud">Retrieve the Windows instance password (Public Cloud)</xref>
+</li>
+<li>
+<xref type="section" href="#topic1035/get_pw_hos">Retrieve the Windows instance password (Helion OpenStack(R)</xref>
+</li>
+</ul>
+<section id="create_security"> <title>Create the RDP Security Group</title>
+</section>
+</body>
+</topic>

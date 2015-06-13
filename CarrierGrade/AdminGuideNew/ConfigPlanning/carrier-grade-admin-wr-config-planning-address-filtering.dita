@@ -1,71 +1,70 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Filtering MAC Addresses on Virtual Interfaces"
-permalink: /helion/openstack/carrier/configuration/plan/filtering/virtual/
-product: carrier-grade
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: Systems Administrator 
-role2: Cloud Architect 
-role3: Storage Administrator 
-role4: Network Administrator 
-role5: Service Developer 
-role6: Cloud Administrator 
-role7: Application Developer 
-role8: Network Engineer 
-authors: Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2163">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Filtering MAC Addresses on Virtual Interfaces</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/object/overview/"> NEXT &#9654</a> </p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Filtering MAC Addresses on Virtual Interfaces
+ <!--./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-address-filtering.md-->
+ <!--permalink: /helion/openstack/carrier/configuration/plan/filtering/virtual/--></p>
 <!-- From the Titanium Server Admin Guide -->
-
-The AVS on compute nodes can be configured to filter out packets based on source MAC address.
-
-<hr>
-**Note:** This feature applies only to servers in the VNF Region.
-<hr>
-
-MAC addresses for virtual network interfaces on virtual machines are dynamically allocated by the system. For most scenarios, the assigned MAC addresses are expected to be used on all outgoing packets from the virtual machine instances. However, there are scenarios where the source MAC address is not expected to match the original assignment, such as when a L2 switch is implemented internally on the virtual machine.
-
-By default, the AVS on compute nodes accepts any source MAC address on the attached virtual network interfaces.
-
-However, it can be configured to filter out all incoming packets with non-system-generated source MAC address, if required. When evaluating the use of the filtering capability, you must consider the following:
-
-* Source MAC address filtering can be enabled and disabled by the administrator user only, not by tenants.
-* Filtering is enabled on a per-tenant basis only. Higher granularity, such as per-instance filtering, is not supported.
-* When enabled, source MAC address filtering applies to all new virtual interfaces created by the Neutron service.
-
-Address filtering is not active on virtual interfaces created before filtering is enabled.
-
-Use the following command to enable source MAC address filtering:
-
-	neutron setting-update --tenant-id=<TENANTID> \
-	--mac-filtering={True|False}
-
-Filtering can be enabled or disabled from the Horizon interface. As the administrator:
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Clicking **Projects** on the **Identity** menu. 
-
-3. Select **Source MAC Filtering**.
-
-4. Click **Save**. 
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
- 
-----
+<p>The AVS on compute nodes can be configured to filter out packets based on source MAC address.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>MAC addresses for virtual network interfaces on virtual machines are dynamically allocated by the system. For most scenarios, the assigned MAC addresses are expected to be used on all outgoing packets from the virtual machine instances. However, there are scenarios where the source MAC address is not expected to match the original assignment, such as when a L2 switch is implemented internally on the virtual machine.</p>
+<p>By default, the AVS on compute nodes accepts any source MAC address on the attached virtual network interfaces.</p>
+<p>However, it can be configured to filter out all incoming packets with non-system-generated source MAC address, if required. When evaluating the use of the filtering capability, you must consider the following:</p>
+<ul>
+<li>Source MAC address filtering can be enabled and disabled by the administrator user only, not by tenants.</li>
+<li>Filtering is enabled on a per-tenant basis only. Higher granularity, such as per-instance filtering, is not supported.</li>
+<li>When enabled, source MAC address filtering applies to all new virtual interfaces created by the Neutron service.</li>
+</ul>
+<p>Address filtering is not active on virtual interfaces created before filtering is enabled.</p>
+<p>Use the following command to enable source MAC address filtering:</p>
+<codeblock>
+  <codeph>neutron setting-update --tenant-id=&lt;TENANTID&gt; \
+--mac-filtering={True|False}
+</codeph>
+</codeblock>
+<p>Filtering can be enabled or disabled from the Horizon interface. As the administrator:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Clicking <b>Projects</b> on the <b>Identity</b> menu.</p>
+</li>
+<li>
+<p>Select <b>Source MAC Filtering</b>.</p>
+</li>
+<li>
+<p>Click <b>Save</b>.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic2163/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

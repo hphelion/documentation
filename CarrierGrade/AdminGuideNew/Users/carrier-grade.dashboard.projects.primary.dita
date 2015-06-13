@@ -1,45 +1,43 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Specifying a Primary Project for a User"
-permalink: /helion/commercial/carrier/dashboard/managing/projects/primary/
-product: carrier-grade
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1164">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Specifying a Primary Project for a User</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Specifying a Primary Project for a User
-
-When you create a user account, you must assign the account to a *primary* project. The primary project is simply the first project the user is associated with and must exist prior to creating the user.
-
-Optionally, you can assign the account to additional projects. Before you can delete a user account, you must remove the user account from its primary project.
-
-As an admin, you can specify a *primary* project for each user. 
-
-### Specify a primary project ###
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Identity** dashboard, then the **Users** link.
-
-3. For the user you want to modify, click the **Edit** button.
-
-4. In the **Update User** screen, select a project from the **Primary Project** list.
-
-5. Click **Update User**.
-
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
-
-
-----
+ <!--./CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.projects.primary.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/projects/primary/--></p>
+<p>When you create a user account, you must assign the account to a <i>primary</i> project. The primary project is simply the first project the user is associated with and must exist prior to creating the user.</p>
+<p>Optionally, you can assign the account to additional projects. Before you can delete a user account, you must remove the user account from its primary project.</p>
+<p>As an admin, you can specify a <i>primary</i> project for each user.</p>
+<section id="specify-a-primary-project"> <title>Specify a primary project</title>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Identity</b> dashboard, then the <b>Users</b> link.</p>
+</li>
+<li>
+<p>For the user you want to modify, click the <b>Edit</b> button.</p>
+</li>
+<li>
+<p>In the <b>Update User</b> screen, select a project from the <b>Primary Project</b> list.</p>
+</li>
+<li>
+<p>Click <b>Update User</b>.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1164/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

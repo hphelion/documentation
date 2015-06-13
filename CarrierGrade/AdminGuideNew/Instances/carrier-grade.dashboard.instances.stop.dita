@@ -1,56 +1,57 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Stopping and Restarting Instances"
-permalink: /helion/commercial/carrier/dashboard/managing/instances/stop/
-product: carrier-grade
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1299">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Stopping and Restarting Instances</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.stop.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/instances/stop/--></p>
+<p>Users can stop and restart instances as needed.</p>
+<section id="stop-an-instance"> <title>Stop an instance</title>
+<p>To stop an instance:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Instances</b> link.</p>
+</li>
+<li>
+<p>In the <b>Instances</b> screen, for the instance you want to modify, click the arrow icon in the <b>Actions</b> menu and select <b>Shut Off Instance</b>.</p>
 
-<script>
+<p>The status of the instance reports <i>Shutoff</i>.</p>
+</li>
+</ol>
+<p>
+<b>Note:</b> Many of the commands on the <b>More</b> menu are not available for a stopped instance.</p>
+</section>
+<section id="restart-an-instance"> <title>Restart an instance</title>
+<p>To restart an instance:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Instances</b> link.</p>
+</li>
+<li>
+<p>In the <b>Instances</b> screen, for the instance you want to modify, click the arrow icon in the <b>Actions</b> menu and select <b>Start Instance</b>.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Stopping and Restarting Instances
-
-Users can stop and restart instances as needed.
-
-
-### Stop an instance ###
-
-To stop an instance:
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Project** dashboard, then the **System** panel, then the **Instances** link.
-
-3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select **Shut Off Instance**.
-
-	The status of the instance reports *Shutoff*.
-
-**Note:** Many of the commands on the **More** menu are not available for a stopped instance.
-
-### Restart an instance ###
-
-To restart an instance:
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Project** dashboard, then the **System** panel, then the **Instances** link.
-
-3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select **Start Instance**.
-
-	The status of the instance reports *Active*.
-
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
-
-
-----
+<p>The status of the instance reports <i>Active</i>.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1299/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

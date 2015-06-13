@@ -1,63 +1,78 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Planning the Network"
-permalink: /helion/openstack/carrier/config/plan/network/
-product: carrier-grade
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: Systems Administrator 
-role2: Cloud Architect 
-role3: Storage Administrator 
-role4: Network Administrator 
-role5: Service Developer 
-role6: Cloud Administrator 
-role7: Application Developer 
-role8: Network Engineer 
-authors: Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1221">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Planning the Network</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/object/overview/"> NEXT &#9654</a> </p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Planning the Network
+ <!--./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network.md-->
+ <!--permalink: /helion/openstack/carrier/config/plan/network/--></p>
 <!-- From the Titanium Server Admin Guide -->
-
-When planning the deployment of the HP Helion OpenStack Carrier Grade, it is important to understand the available networking options and how to take advantage of them for the benefit of the end users. The sections that follow provide useful networking guidelines.
-
-<hr>
-**Note:** This feature applies only to servers in the VNF Region.
-<hr>
-
-
-This section contains the following topics:
-
-* [Planning the Management Network](/helion/openstack/carrier/configuration/plan/network/mgmt/)
-* [Planning the Infrastructure Network](/helion/openstack/carrier/configuration/plan/network/infra/)
-* [Planning the Board Management Network](/helion/openstack/carrier/configuration/plan/network/board/)
-* [Planning the OAM Management Network](/helion/openstack/carrier/configuration/plan/network/oam/)
-* [Planning the Provider Management Networks](/helion/openstack/carrier/configuration/plan/network/provider/)
-* [Planning the Tenant Management Networks](/helion/openstack/carrier/configuration/plan/network/tenant/)
-* [Planning for Virtual Routers](/helion/openstack/carrier/configuration/plan/network/vrs/)
-* [Planning for Subnets](/helion/openstack/carrier/configuration/plan/network/subnets/)
-* [Planning for Guest VLANs](/helion/openstack/carrier/configuration/plan/network/guest/vlan/)
-* [Planning for L2 Access Switches](/helion/openstack/carrier/configuration/plan/network/guest/l2/)
-* [Planning for DiffServ-Based Priority Queuing and Scheduling](/helion/openstack/carrier/configuration/plan/network/guest/diff/)
-* [Planning for Quality of Service](/helion/openstack/carrier/configuration/plan/network/guest/qos/)
-
-
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
- 
-----
+<p>When planning the deployment of the HP Helion OpenStack(R) Carrier Grade, it is important to understand the available networking options and how to take advantage of them for the benefit of the end users. The sections that follow provide useful networking guidelines.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>This section contains the following topics:</p>
+<ul>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-management.dita" >Planning the Management Network</xref>
+</li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-infrastructure.dita" >Planning the Infrastructure Network</xref>
+</li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-board-mgmt.dita" >Planning the Board Management Network</xref>
+</li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-oam.dita" >Planning the OAM Management Network</xref>
+</li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-provider.dita" >Planning the Provider Management Networks</xref>
+</li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-tenant.dita" >Planning the Tenant Management Networks</xref>
+</li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-vrs.dita" >Planning for Virtual Routers</xref>
+</li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-subnets.dita" >Planning for Subnets</xref>
+</li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-guest-vlan.dita" >Planning for Guest VLANs</xref>
+</li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-l2.dita" >Planning for L2 Access Switches</xref>
+</li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-diff.dita" >Planning for DiffServ-Based Priority Queuing and Scheduling</xref>
+</li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-qos.dita" >Planning for Quality of Service</xref>
+</li>
+</ul>
+<p>
+  <xref type="section" href="#topic1221/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

@@ -1,27 +1,35 @@
----
-layout: public-cloud
-title: "HP Helion Public Cloud Object Storage Overview"
-permalink: /publiccloud/object-storage/
-product: public-cloud 
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1284">
+<title>HP Helion Public Cloud Object Storage Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-# HP Helion Public Cloud Object Storage Overview
-
+ <!--./publiccloud/object-storage.md-->
+ <!--permalink: /publiccloud/object-storage/--></p>
 <!-- <iframe src="https://player.vimeo.com/video/32118778?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
-
-Leveraging [OpenStack Storage](http://openstack.org/projects/storage/), HP Helion Public Cloud object storage provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  Key terms include:
-
-* **Object** - The basic storage entity, most typically a file
-* **Container** - A compartment for storing **Objects**
-
-The best way to learn more is to start using it yourself over at the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.
-
-## API
-Do you need low level, raw REST API access to HP Helion Public Cloud object storage?  Trot on over to the [Object Storage API page](/publiccloud/api/object-storage) for details.
-
-## Bindings
-Got a favorite programming language?  Don't like to deal with the guts of a REST API?  Take a look at our [Bindings section](/publiccloud/bindings) to see what your options are for writing code against HP Helion Public Cloud Object Storage.
-
-## CLI
-If you need a scriptable interface, look at our [CLI documentation](/publiccloud/cli).
+<p>Leveraging <xref href="http://openstack.org/projects/storage/" scope="external" format="html" >OpenStack(R) Storage</xref>, HP Helion Public Cloud object storage provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  Key terms include:</p>
+<ul>
+<li>
+<b>Object</b> - The basic storage entity, most typically a file</li>
+<li>
+<b>Container</b> - A compartment for storing <b>Objects</b>
+</li>
+</ul>
+<p>The best way to learn more is to start using it yourself over at the <xref href="https://horizon.hpcloud.com/" scope="external" format="html" >HP Helion Public Cloud Console</xref>.  If you have any questions, try our <xref href="https://community.hpcloud.com" scope="external" format="html" >Forums</xref> where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.</p>
+<section id="api"> <title>API</title>
+<p>Do you need low level, raw REST API access to HP Helion Public Cloud object storage?  Trot on over to the <xref href="/publiccloud/api/object-storage" >Object Storage API page</xref> for details.</p>
+</section>
+<section id="bindings"> <title>Bindings</title>
+<p>Got a favorite programming language?  Don't like to deal with the guts of a REST API?  Take a look at our <xref href="/publiccloud/bindings" >Bindings section</xref> to see what your options are for writing code against HP Helion Public Cloud Object Storage.</p>
+</section>
+<section id="cli"> <title>CLI</title>
+<p>If you need a scriptable interface, look at our <xref href="/publiccloud/cli" >CLI documentation</xref>.</p>
+</section>
+</body>
+</topic>

@@ -1,80 +1,78 @@
----
-layout: 1.0default
-title: "HP Helion OpenStack&#174; 1.0: HP StoreServ (3PAR) Support"
-permalink: /helion/openstack/install/3par/
-product: commercial1.0
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3166">
+<title>HP Helion OpenStack(R) 1.0: HP StoreServ (3PAR) Support</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-
-<script>
-
-function PageRefresh {
+ <!--./commercial/GA1/1.0commercial.install-3par.md-->
+ <!--permalink: /helion/openstack/install/3par/--></p>
+<p>&lt;</p>
+<p>script&gt;</p>
+<p>function PageRefresh {
 onLoad="window.refresh"
-}
-
-PageRefresh();
-
-# HP Helion OpenStack&#174; 1.0: HP StoreServ (3PAR) Support
-[See the Helion OpenStack 1.1 version of this page](/helion/openstack/1.1/install/3par/)
-
-[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array that supports Fibre Channel (FC) as well as iSCSI protocol. [HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. HP 3PAR StoreServ is also referred to as 3PAR.
-
-HP Helion OpenStack provides a utility service called Sirius which can be used to configure 3PAR StoreServ arrays to realize block storage within the cloud. 
-
-**Note:** 3PAR support applies only to HP Helion OpenStack with KVM hypervisor support.
-
+}</p>
+<p>PageRefresh();</p>
+<p>
+  <xref href="../../commercial/GA1/1.1commercial.install-3par.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+</p>
+<p>
+<xref href="http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html" scope="external" format="html" >HP 3PAR StoreServ</xref> is a storage array that supports Fibre Channel (FC) as well as iSCSI protocol. <xref href="http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html" scope="external" format="html" >HP 3PAR StoreServ</xref> is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. HP 3PAR StoreServ is also referred to as 3PAR.</p>
+<p>HP Helion OpenStack(R) provides a utility service called Sirius which can be used to configure 3PAR StoreServ arrays to realize block storage within the cloud.</p>
+<p>
+<b>Note:</b> 3PAR support applies only to HP Helion OpenStack(R) with KVM hypervisor support.</p>
 <!---The Cinder integration drivers run as Python libraries in the Cinder service to facilitate communication between Cinder and StoreServ arrays.-->
-
 <!---Devices can be connected to Cinder using Fibre Channel (FC) or using the iSCSI protocol.-->
-
-##High-level overview of HP 3PAR StoreServ Integration
-
-The following diagram gives an overview of the steps involved in integrating HP 3PAR StoreServ with your cloud. 
-
-<a href="javascript:window.open('/content/documentation/media/storeserv-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP StoreServ Integration diagram (opens in a new window)</a>
-
-### Prerequisites
-
-The following prerequisites need to be performed before configuring 3PAR StoreServ to use in the cloud.
-
-
-1 - **Install 3PAR device**
-
-   Install and configure the 3PAR StoreServ device and create Common Provisioning Groups (CPGs) which you are planning to use for the cloud as Cinder backend. The StoreServ device should be accessible from the management network of the cloud. If you are using Fibre Channel, ensure SAN connectivity between the compute host(s), the overcloud controller where the Volume Operations service is running, and the HP 3PAR StoreServ array.
-
-To enable multipathing edit the contents of the `/etc/multipath.conf` file to blacklist the local boot disk. An example to blacklist the local boot disk `/dev/sda` is shown below:
-
-		cat /etc/multipath.conf
-		blacklist
-		{ devnode "%sda^" }
-
-Restart the multipath daemon `service multipath-tools restart`.	The "multipath -ll" command  lists the devices and path.
-
-2 - **Install IMC**
-
-  * Download and install the HP 3PAR Inform Management Console(IMC) if it is not installed as part of the HP 3PAR installation. Refer to the URL provided in the undercloud Horizon Dashboard of HP Helion OpenStack. <!---Download the HP 3PAR Inform Management Console(IMC) from the URL provided in the undercloud Horizon Dashboard.-->
-
-  * Create CPGs in StoreServ using IMC. Refer to the online user guide  for managing the StoreServ using IMC.
-
-The subsequent sections provide the detailed instructions on  the integration workflow.
-
-## Working with HP StoreServ
-
-HP 3PAR StoreServ can be configured for the cloud using the Horizon dashboard or using HP Sirius CLI
-
-### Using the dashboards
-
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/undercloud/manage/resources/overview/) to configure HP StoreServ.(Recommended)
-
-###Using the CLI###
-
-You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See [Configuring Storage Using Sirius](/helion/openstack/sirius/cli/workflow/)
-
-For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
+<section id="high-level-overview-of-hp-3par-storeserv-integration"> <title>High-level overview of HP 3PAR StoreServ Integration</title>
+<p>The following diagram gives an overview of the steps involved in integrating HP 3PAR StoreServ with your cloud.</p>
+<p>
+  <xref format="html" href="javascript:window.open('/media/storeserv-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreServ Integration diagram (opens in a new window)</xref>
+</p>
+</section>
+<section id="prerequisites"> <title>Prerequisites</title>
+<p>The following prerequisites need to be performed before configuring 3PAR StoreServ to use in the cloud.</p>
+<p>1 - <b>Install 3PAR device</b>
+</p>
+<p>Install and configure the 3PAR StoreServ device and create Common Provisioning Groups (CPGs) which you are planning to use for the cloud as Cinder backend. The StoreServ device should be accessible from the management network of the cloud. If you are using Fibre Channel, ensure SAN connectivity between the compute host(s), the overcloud controller where the Volume Operations service is running, and the HP 3PAR StoreServ array.</p>
+<p>To enable multipathing edit the contents of the <codeph>/etc/multipath.conf</codeph> file to blacklist the local boot disk. An example to blacklist the local boot disk <codeph>/dev/sda</codeph> is shown below:</p>
+<codeblock>
+  <codeph>    cat /etc/multipath.conf
+    blacklist
+    { devnode "%sda^" }
+</codeph>
+</codeblock>
+<p>Restart the multipath daemon <codeph>service multipath-tools restart</codeph>. The "multipath -ll" command  lists the devices and path.</p>
+<p>2 - <b>Install IMC</b>
+</p>
+<ul>
+<li>
+<p>Download and install the HP 3PAR Inform Management Console(IMC) if it is not installed as part of the HP 3PAR installation. Refer to the URL provided in the undercloud Horizon Dashboard of HP Helion OpenStack(R) <!---Download the HP 3PAR Inform Management Console(IMC) from the URL provided in the undercloud Horizon Dashboard.--></p>
+</li>
+<li>
+<p>Create CPGs in StoreServ using IMC. Refer to the online user guide  for managing the StoreServ using IMC.</p>
+</li>
+</ul>
+<p>The subsequent sections provide the detailed instructions on  the integration workflow.</p>
+</section>
+<section id="working-with-hp-storeserv"> <title>Working with HP StoreServ</title>
+<p>HP 3PAR StoreServ can be configured for the cloud using the Horizon dashboard or using HP Sirius CLI</p>
+</section>
+<section id="using-the-dashboards"> <title>Using the dashboards</title>
+<p>You can use the <xref href="../../commercial/GA1/1.0commercial.undercloud-resources-overview.dita" >HP Helion OpenStack(R) Dashboard</xref> to configure HP StoreServ.(Recommended)</p>
+</section>
+<section id="using-the-cli"> <title>Using the CLI</title>
+<p>You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See <xref href="../../commercial/GA1/1.0commercial.sirius-cli-workflow.dita" >Configuring Storage Using Sirius</xref>
+</p>
+<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack(R) command-line clients</xref>.</p>
+<p>
+  <xref type="section" href="#topic3166/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

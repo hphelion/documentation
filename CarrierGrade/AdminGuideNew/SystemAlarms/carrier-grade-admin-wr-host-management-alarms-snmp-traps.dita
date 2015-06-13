@@ -1,74 +1,83 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Configuring SNMP Trap Destinations"
-permalink: /helion/openstack/carrier/admin/alarms/snmp/traps/
-product: carrier-grade
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: Systems Administrator 
-role2: Cloud Architect 
-role3: Storage Administrator 
-role4: Network Administrator 
-role5: Service Developer 
-role6: Cloud Administrator 
-role7: Application Developer 
-role8: Network Engineer 
-authors: Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1796">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Configuring SNMP Trap Destinations</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/object/overview/"> NEXT &#9654</a> </p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Configuring SNMP Trap Destinations
+ <!--./CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-snmp-traps.md-->
+ <!--permalink: /helion/openstack/carrier/admin/alarms/snmp/traps/--></p>
 <!-- From the Titanium Server Admin Guide -->
+<p>SNMP trap destinations are hosts configured in the HP Helion OpenStack(R) Carrier Grade to receive unsolicited SNMP notifications.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>Destination hosts are specified by IP address, or by host name if it can be properly resolved by the HP Helion OpenStack(R) Carrier Grade.</p>
+<p>Notifications are sent to the hosts using a designated community string so that they can be validated.</p>
+<ol>
+<li>
+<p>Configure IP address 10.10.10.1 to receive SNMP notifications using the community string commstr1.</p>
 
-SNMP trap destinations are hosts configured in the HP Helion OpenStack Carrier Grade to receive unsolicited SNMP notifications.
+<p>system snmp-trapdest-add -c commstr1 --ip_address 10.10.10.1</p>
 
-<hr>
-**Note:** This feature applies only to servers in the VNF Region.
-<hr>
+<p>The following are attributes associated with the new community string:</p>
 
-Destination hosts are specified by IP address, or by host name if it can be properly resolved by the HP Helion OpenStack Carrier Grade. 
+<ul>
+<li>uuid -The UUID associated with the trap destination object.</li>
+<li>ip_address - The trap destination IP address.</li>
+<li>community - The community string value to be associated with the notifications.</li>
+<li>type - snmpv2c_trap, the only supported message type for SNMP traps.</li>
+<li>port -  The destination UDP port that SNMP notifications are sent to.</li>
+<li>transport - The transport protocol used to send notifications.</li>
+</ul>
+</li>
+<li>
+<p>List defined trap destinations.</p>
 
-Notifications are sent to the hosts using a designated community string so that they can be validated.
+<codeblock>
+<codeph>system snmp-trapdest-list
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Query access details of a specific trap destination.</p>
 
-1. Configure IP address 10.10.10.1 to receive SNMP notifications using the community string commstr1.
+<codeblock>
+<codeph>system snmp-trapdest-show 10.10.10.1
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Disable the sending of SNMP notifications to a specific IP address.</p>
 
-	system snmp-trapdest-add -c commstr1 --ip_address 10.10.10.1
-
-	The following are attributes associated with the new community string:
-
-	* uuid -The UUID associated with the trap destination object.
-	* ip_address - The trap destination IP address.
-	* community - The community string value to be associated with the notifications.
-	* type - snmpv2c_trap, the only supported message type for SNMP traps.
-	* port -  The destination UDP port that SNMP notifications are sent to.
-	* transport - The transport protocol used to send notifications.
-
-2. List defined trap destinations.
-
-		system snmp-trapdest-list
-
-3. Query access details of a specific trap destination.
-
-		system snmp-trapdest-show 10.10.10.1
-
-4. Disable the sending of SNMP notifications to a specific IP address.
-
-		$ system snmp-trapdest-delete 10.10.10.1
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
- 
-----
+<codeblock>
+<codeph>$ system snmp-trapdest-delete 10.10.10.1
+</codeph>
+</codeblock>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1796/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

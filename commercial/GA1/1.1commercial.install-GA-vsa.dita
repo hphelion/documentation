@@ -1,66 +1,82 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Installation: Deploy and Configure HP StoreVirtual VSA"
-permalink: /helion/openstack/1.1/install/vsa/
-product: commercial.ga
-product-version1: HP Helion OpenStack 1.1
-role1: Storage Administrator
-role2: Storage Architect
-authors: Michael B, Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic14809">
+<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Installation: Deploy and Configure HP StoreVirtual VSA</title>
+<titlealts>
+<searchtitle>HP Helion OpenStack(R) 1.1: Installation: Deploy and Configure HP StoreVirtual VSA</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Michael B, Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
+ <!--./commercial/GA1/1.1commercial.install-GA-vsa.md-->
+ <!--permalink: /helion/openstack/1.1/install/vsa/--></p>
+<p/>
+<p>
+  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
+<p>This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend. It covers the following topics:</p>
+<ul>
+<li>
+<xref type="section" href="#topic14809/high-level-view">Deployment and Configuration Procedure Overview</xref>
+</li>
+<li>
+<xref type="section" href="#topic14809/install-hp-storevirtual-cmc">Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux</xref>
 
+<ul>
+<li>
+<xref type="section" href="#topic14809/prerequisites">Prerequisites</xref>
+</li>
+<li>
+<xref type="section" href="#topic14809/installation">Installation</xref>
+</li>
+</ul>
+</li>
+<li>
+<xref type="section" href="#topic14809/deploy-vsa">Deploying HP StoreVirtual VSA storage sytems</xref>
 
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/vsa/overview/">&#9664; Cinder Block Storage Using HP StoreVirtual VSA </a> | <a href="/helion/openstack/1.1/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a> | <a href="/helion/openstack/1.1/undercloud/oc/config/storevirtual/">Working With StoreVirtual Backends &#9654;</a>
-</p> 
-
-
-# HP Helion OpenStack&#174; 1.1 and 1.1.1: Installation: Deploy and Configure HP StoreVirtual VSA  
-
-**This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.**
-
- (If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in [HP Helion OpenStack 1.1.1 Update Guide](/helion/openstack/1.1.1/update/).)
-
-This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend. It covers the following topics:
-
-* [Deployment and Configuration Procedure Overview](#high-level-view)
-* [Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux](#install-hp-storevirtual-cmc)
-   * [Prerequisites](#prerequisites)
-   * [Installation](#installation)
-* [Deploying HP StoreVirtual VSA storage sytems](#deploy-vsa)
-   * [Prerequisites](#prerequisites-vsa)
-   * [Enrolling the new Baremetal server](#enroll-new-baremetal-server)
-* [Verifying the StoreVirtual installation status](#verify-install)
-* [Creating  and adding a StoreVirtual Cluster to a new Management Group](#create-cluster) 
-* [Adding a StoreVirtual node to an existing Management Group](#adding-a-node)
-* [Next Steps](#next-steps)
-
-##Deployment and Configuration Procedure Overview {#high-level-view}
-
-The following diagram gives an overview of the steps involved in deploying, configuring and integrating StoreVirtual nodes into your cloud. The subsequent sections provide the detailed instructions on integration workflow.
-
-
-<a href="javascript:window.open('/content/documentation/media/storevirtual-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP StoreVirtual VSA Deployment and Configuration Procedure (opens in a new window)</a>
-
-
+<ul>
+<li>
+<xref type="section" href="#topic14809/prerequisites-vsa">Prerequisites</xref>
+</li>
+<li>
+<xref type="section" href="#topic14809/enroll-new-baremetal-server">Enrolling the new Baremetal server</xref>
+</li>
+</ul>
+</li>
+<li>
+<xref type="section" href="#topic14809/verify-install">Verifying the StoreVirtual installation status</xref>
+</li>
+<li>
+<xref type="section" href="#topic14809/create-cluster">Creating  and adding a StoreVirtual Cluster to a new Management Group</xref> </li>
+<li>
+<xref type="section" href="#topic14809/adding-a-node">Adding a StoreVirtual node to an existing Management Group</xref>
+</li>
+<li>
+<xref type="section" href="#topic14809/next-steps">Next Steps</xref>
+</li>
+</ul>
+<section id="high-level-view"> <title>Deployment and Configuration Procedure Overview</title>
+<p>The following diagram gives an overview of the steps involved in deploying, configuring and integrating StoreVirtual nodes into your cloud. The subsequent sections provide the detailed instructions on integration workflow.</p>
+<p>
+  <xref format="html" href="javascript:window.open('/media/storevirtual-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreVirtual VSA Deployment and Configuration Procedure (opens in a new window)</xref>
+</p>
 <!--1 - **Install CMC**
      
-   [Install CMC](#install-hp-storevirtual-cmc) on the seed node where the seed cloud is running. The CMC binary comes with the HP Helion OpenStack installer and is present in the **Tripleo** directory. 
+   [Install CMC](#install-hp-storevirtual-cmc) on the seed node where the seed cloud is running. The CMC binary comes with the HP Helion OpenStack(R) installer and is present in the **Tripleo** directory. 
 
 2 - **Add VSA Baremetal nodes to ironic database**
-	
+    
    * Identify the hardware for StoreVirtual deployment and enroll the Baremetal to the ironic database.
 
    * Log in to the undercloud and source the environment variables(source stackrc).
@@ -74,7 +90,7 @@ The following diagram gives an overview of the steps involved in deploying, conf
    * After the [enrollment of the new Baremetal server](#deployment-vsa) in the undercloud, log in to the seed cloud.
 
    * Update the *overcloud.json* file for StoreVirtual deployment and apply the configuration.
-	
+    
    * Execute the update cloud script.
 
 3b - **Discover StoreVirtual in CMC**
@@ -100,7 +116,7 @@ The following diagram gives an overview of the steps involved in deploying, conf
 4d- **Get Cinder configuration for VSA backend**
 
    * Launch the Horizon Dashboard to [register and create backend for StoreVirtual](/helion/openstack/1.1/undercloud/oc/config/storevirtual/) system.
-	
+    
    * After creating the backend, generate the Cinder backend advisory for StoreVirtual.
 
 5a - **Update `overcloud-config.json` file with cinder configuration**
@@ -112,339 +128,465 @@ The following diagram gives an overview of the steps involved in deploying, conf
    * The cinder.conf in the overcloud should be updated after updating the overcloud-config.json file in the seed cloud.
 
    * Execute [update cloud script](/helion/openstack/1.1/undercloud/oc/config/storevirtual/) from seed cloud. -->
+</section>
+<section id="install-hp-storevirtual-cmc"> <title>Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux</title>
+<p>In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP Helion OpenStack(R) management network.</p>
+</section>
+<section id="prerequisites"> <title>Prerequisites</title>
+<ul>
+<li>
+<p>You must be running the X Windows System to install the CMC.</p>
+</li>
+<li>
+<p>We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack(R) management network.</p>
+</li>
+</ul>
+<p>
+<b>Note</b>: These changes are required for 64-bit operating system only.</p>
+<ul>
+<li>
+<p>Execute the following commands:</p>
 
+<codeblock>
+<codeph># apt-get update
+# dpkg --add-architecture i386
+# apt-get install openjdk-7-jdk:i386
+</codeph>
+</codeblock>
+</li>
+</ul>
+</section>
+<section id="installation"> <title>Installation</title>
+<ol>
+<li>
+<p>Verify if the CMC installer file inside <codeph>tripleo</codeph> directory (packaged with the HP Helion OpenStack(R) installer) has executable permission. If not, execute the following command:</p>
 
-##Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux {#install-hp-storevirtual-cmc}
+<codeblock>
+<codeph># chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Launch the installer:</p>
 
-In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP Helion OpenStack management network.
+<codeblock>
+<codeph># ./CMC_11.5.01.0079.0_Installer_Linux.bin
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Follow the steps in the console-based installation wizard to complete the installation.</p>
+</li>
+<li>
+<p>To start the CMC, if you have direct GUI access:<!--A BR tag was used here in the original source.-->
+From the directory in which the files are installed, click the <b>HP Store Virtual Centralized Management Console</b> to launch CMC.</p>
 
+<p>
+<b>Note</b>: To launch the CMC from command line (CLI), navigate to the location where it is installed and enter:</p>
 
-### Prerequisites {#prerequisites}
+<codeblock>
+<codeph># ./"HP Store Virtual Centralized Management Console".
+</codeph>
+</codeblock>
 
-* You must be running the X Windows System to install the CMC.
+<p>Alternatively, if you use a remote server, you can connect to the head node using XRDP and configure the storage using CMC through an RDP session:</p>
 
-* We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack management network.
+<p>To do this, on the head node enter:</p>
 
+<codeblock>
+<codeph>apt-get install xrdp
 
-**Note**: These changes are required for 64-bit operating system only.
+service xrdp start
+</codeph>
+</codeblock>
 
-* Execute the following commands:
+<p>From a Windows laptop (for example), use RDP (mstsc.exe), enter the IP address of the head node, and click <b>Connect</b>.</p>
 
-		# apt-get update
-		# dpkg --add-architecture i386
-		# apt-get install openjdk-7-jdk:i386
+<p>At the login prompt enter you credentials and click <b>OK</b>. When the remote desktop connection screen opens, click on the RDP terminal session and enter:</p>
 
-### Installation {#installation}
+<codeblock>
+<codeph>cd /opt/HP/StoreVirtual/UI
 
-1. Verify if the CMC installer file inside `tripleo` directory (packaged with the HP Helion OpenStack&#174; installer) has executable permission. If not, execute the following command:
+java -jar UI.jar
+</codeph>
+</codeblock>
 
-		# chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
+<p>to start the CMC GUI.</p>
 
-2. Launch the installer:
+<p>
+<b>Note:</b> In the event that you cannot see what you are typing in the RDP terminal session, enter:</p>
 
-		# ./CMC_11.5.01.0079.0_Installer_Linux.bin
+<codeblock>
+<codeph>xterm -fg black -bg white &amp;
+</codeph>
+</codeblock>
 
-3. Follow the steps in the console-based installation wizard to complete the installation.
+<p>A second RDP terminal session will open in the RDP session and you can then proceed as above - that is:</p>
 
-4. To start the CMC, if you have direct GUI access:<br />
- From the directory in which the files are installed, click the **HP Store Virtual Centralized Management Console** to launch CMC.  
+<codeblock>
+<codeph>cd /opt/HP/StoreVirtual/UI
 
-	**Note**: To launch the CMC from command line (CLI), navigate to the location where it is installed and enter: 
-			
-     	# ./"HP Store Virtual Centralized Management Console".
+java -jar UI.jar
+</codeph>
+</codeblock>
 
-	Alternatively, if you use a remote server, you can connect to the head node using XRDP and configure the storage using CMC through an RDP session:
-
-	To do this, on the head node enter:
-		
-		apt-get install xrdp
-		
-		service xrdp start
-		
-	From a Windows laptop (for example), use RDP (mstsc.exe), enter the IP address of the head node, and click **Connect**.
-		
-	At the login prompt enter you credentials and click **OK**. When the remote desktop connection screen opens, click on the RDP terminal session and enter:
-		
-		cd /opt/HP/StoreVirtual/UI
-		
-		java -jar UI.jar
-		
-	to start the CMC GUI.
-
-	**Note:** In the event that you cannot see what you are typing in the RDP terminal session, enter:
-
-		xterm -fg black -bg white &
-
-	A second RDP terminal session will open in the RDP session and you can then proceed as above - that is:
-
-		cd /opt/HP/StoreVirtual/UI
-		
-		java -jar UI.jar
-
-	to start the CMC GUI.
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-##Deploying HP StoreVirtual VSA {#deploy-vsa}
-
-
-###Prerequisites {#prerequisites-vsa}
-
-Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage systems are deployed:
-
+<p>to start the CMC GUI.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic14809/top"> Return to Top </xref>
+</p>
+</section>
+<section id="deploy-vsa"> <title>Deploying HP StoreVirtual VSA</title>
+</section>
+<section id="prerequisites-vsa"> <title>Prerequisites</title>
+<p>Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage systems are deployed:</p>
 <!-- removed as per the feedback from Shanta
 * Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that `#ironic node-list` in the undercloud server does not have any free nodes.This is required to register a new node which matches the disk requirements for StoreVirtual and is picked by the installer for StoreVirtual deployment.
 -->
+<ul>
+<li>
+<p>Ensure that VSA host nodes boot from the local disk. If it boots from the remote disk then ensure that a single path is only enabled.</p>
+</li>
+<li>
+<p>Ensure that you have created a minimum of two(2) RAID groups. You can create a maximum of eight(8) groups. The first RAID group where the OS image is deployed is not considered for StoreVirtual storage.</p>
+</li>
+<li>
+<p>Each physical disk should be RAID protected and should not be RAID 0. You can use RAID 5 and above. <!--For more details, refer - [**Storevirtual documentation LINK**]--></p>
+</li>
+<li>
+<p>For deploying StoreVirtual systems without Adaptive Optimization (AO) the setup must have a minimum two(2) disks(/dev/sda, /dev/sdb).</p>
+</li>
+<li>
+<p>For deploying StoreVirtual systems with Adaptive Optimization (AO) the setup must have at least three(3) disks(/dev/sda, /dev/sdb, /dev/sdc). The disk /dev/sdb should be a Solid State Drive(SSD).</p>
+</li>
+<li>
+<p>Ensure that you create the RAID group for SSD drives immediately after creating the RAID group for boot volume. For example: If three RAID groups are to be created. The following is recommended :</p>
 
-* Ensure that VSA host nodes boot from the local disk. If it boots from the remote disk then ensure that a single path is only enabled.
- 
-* Ensure that you have created a minimum of two(2) RAID groups. You can create a maximum of eight(8) groups. The first RAID group where the OS image is deployed is not considered for StoreVirtual storage.
+<p>
+<b>Step 1</b>: Create the first RAID group for HDD drives and mark this as boot volume(/dev/sda)</p>
 
-* Each physical disk should be RAID protected and should not be RAID 0. You can use RAID 5 and above. <!--For more details, refer - [**Storevirtual documentation LINK**]-->
+<p>
+<b>Step 2</b>: Create the second RAID group for SSD drives which should be used as Tier 0 for AO (/dev/sdb)</p>
 
-* For deploying StoreVirtual systems without Adaptive Optimization (AO) the setup must have a minimum two(2) disks(/dev/sda, /dev/sdb).
-
-* For deploying StoreVirtual systems with Adaptive Optimization (AO) the setup must have at least three(3) disks(/dev/sda, /dev/sdb, /dev/sdc). The disk /dev/sdb should be a Solid State Drive(SSD).
-
-
-* Ensure that you create the RAID group for SSD drives immediately after creating the RAID group for boot volume. For example: If three RAID groups are to be created. The following is recommended :
-
-      **Step 1**: Create the first RAID group for HDD drives and mark this as boot volume(/dev/sda)
-        
-	   **Step 2**: Create the second RAID group for SSD drives which should be used as Tier 0 for AO (/dev/sdb)
-         
-	   **Step 3**: Create the third RAID group for HDD drives which will be used as Tier 1(/dev/sdc)
-
-* Seed Cloud is installed and is running.
- 
-The license for the StoreVirtual VSA license is bundled with HP Helion OpenStack&#174; and has a maximum limit of 50 TB per node. Hence the total amount of the configured storage on an individual StoreVirtual node should not exceed 50 TB. To extend the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16 nodes, which means configured storage on a VSA cluster can be as much as 800 TB.
-
+<p>
+<b>Step 3</b>: Create the third RAID group for HDD drives which will be used as Tier 1(/dev/sdc)</p>
+</li>
+<li>
+<p>Seed Cloud is installed and is running.</p>
+</li>
+</ul>
+<p>The license for the StoreVirtual VSA license is bundled with HP Helion OpenStack(R) and has a maximum limit of 50 TB per node. Hence the total amount of the configured storage on an individual StoreVirtual node should not exceed 50 TB. To extend the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16 nodes, which means configured storage on a VSA cluster can be as much as 800 TB.</p>
+<p>
 <!--
-**Note**: Use of StoreVirtual VSA is included with your Helion OpenStack license.  When installing StoreVirtual VSA under the Helion OpenStack license, the CMC may display a message that some features are not licensed. This message displays in error and can be ignored if you have licensed the physical server with a Helion OpenStack license. 
+**Note**: Use of StoreVirtual VSA is included with your Helion OpenStack(R) license.  When installing StoreVirtual VSA under the Helion OpenStack(R) license, the CMC may display a message that some features are not licensed. This message displays in error and can be ignored if you have licensed the physical server with a Helion OpenStack(R) license. 
 -->
-<!--<img src="media/storevirtual-cluster-network-diagram1.png"/>-->
+<!--<img src="/media/storevirtual-cluster-network-diagram1.png"/>--></p>
+</section>
+<section id="enroll-new-baremetal-server"> <title>Enrolling the New Baremetal Server</title>
+<p>The following steps to deploy HP StoreVirtual VSA are optional if you have not already added VSA in your initial installation:</p>
+<p>
+<b>Note:</b> Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that <codeph>ironic node-list</codeph> in the undercloud server does not have any free nodes suitable for StoreVirtual installation. If a suitable node is available, skip the Baremetal registration steps and go to <b>step 5</b> below.</p>
+<p>You must add a server to the cloud inventory to handle the increased number of nodes.</p>
+<p>Perform the following steps to add a physical server:</p>
+<ol>
+<li>
+<p>Log in to the seed VM:</p>
 
+<codeblock>
+<codeph>ssh root@&lt;Seed IP Address&gt;
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Make the respective Baremetal entry in <codeph>/root/baremetal.csv</codeph>.</p>
+</li>
+<li>
+<p>Add the node to <codeph>baremetal.csv</codeph> at the end.</p>
 
-#### Enrolling the New Baremetal Server {#enroll-new-baremetal-server}
+<codeblock>
+<codeph>&lt;mac_address&gt;,&lt;user&gt;,&lt;password&gt;,&lt;ip_address&gt;,&lt;no_of_cpus&gt;,&lt;memory_MB&gt;,&lt;diskspace_GiB&gt;,&lt;role&gt;,&lt;power_managemenment&gt;
+</codeph>
+</codeblock>
 
-The following steps to deploy HP StoreVirtual VSA are optional if you have not already added VSA in your initial installation:
+<p>The following sample displays the output of the above command:</p>
 
+<codeblock>
+<codeph>E8:39:35:2B:FA:30,administrator,password,10.1.192.46,12,73728,70,OvercloudVSAAOStorage,IPMI
+9C:B6:54:AD:55:A8,administrator,gone2far,10.1.192.50,12,73728,70,OvercloudVSAStorage,IPMI
+</codeph>
+</codeblock>
 
-**Note:** Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that `ironic node-list` in the undercloud server does not have any free nodes suitable for StoreVirtual installation. If a suitable node is available, skip the Baremetal registration steps and go to **step 5** below.
+<p>Ensure that a new node is added at the end of the file.</p>
+</li>
+<li>
+<p>Edit the scale counts in JSON environment variables file (for example: <codeph>kvm-custom-ips.json</codeph>) that was used during the initial installation to define the appropriate scale number:</p>
 
+<codeblock>
+<codeph>"vsa_scale": "&lt;no of StoreVirtual systems&gt;"
+"vsa_ao_scale": "&lt;no of StoreVirtual systems with AO enabled&gt;"
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Source the environment variables file created during initial installation.</p>
 
-You must add a server to the cloud inventory to handle the increased number of nodes. 
+<codeblock>
+<codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/&lt;environment variables file name&gt;
+</codeph>
+</codeblock>
 
-Perform the following steps to add a physical server:
+<p>For example:</p>
 
-1. Log in to the seed VM:
+<codeblock>
+<codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Run the installer script:</p>
 
-		ssh root@<Seed IP Address>
+<codeblock>
+<codeph>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2&gt;&amp;1 | tee update.log
+</codeph>
+</codeblock>
 
-2. Make the respective Baremetal entry in `/root/baremetal.csv`.   
-	
-3. Add the node to `baremetal.csv` at the end.
-
-		<mac_address>,<user>,<password>,<ip_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiB>,<role>,<power_managemenment>
-
-	The following sample displays the output of the above command:
-
-		E8:39:35:2B:FA:30,administrator,password,10.1.192.46,12,73728,70,OvercloudVSAAOStorage,IPMI
-		9C:B6:54:AD:55:A8,administrator,gone2far,10.1.192.50,12,73728,70,OvercloudVSAStorage,IPMI
-
-
-
-  	Ensure that a new node is added at the end of the file. 
-
-3. Edit the scale counts in JSON environment variables file (for example: `kvm-custom-ips.json`) that was used during the initial installation to define the appropriate scale number:
-
-		"vsa_scale": "<no of StoreVirtual systems>"
-		"vsa_ao_scale": "<no of StoreVirtual systems with AO enabled>"
-
-
-
-4. Source the environment variables file created during initial installation.
-
-		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>
-
-	For example:
-
-		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
-
-
-5. Run the installer script:
-
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
-
-
-   This will register a new Ironic node and create a new Nova instance and a new Heat stack.
-
+<p>This will register a new Ironic node and create a new Nova instance and a new Heat stack.</p>
+</li>
+</ol>
+<p>
 <!--**Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out Object storage nodes.-->
- <!--	**Note**: While deploying a scale-out **proxy** node ensure that the value of `vsa_scale` is unchanged. While deploying a scale-out **object** node ensure that the value of `vsa_ao_scale` is unchanged.-->
-**NOTE**: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/VM  other than the storage systems in the SAN.
-
- 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-### Setting the public interface parameter ###
-As of Helion 1.1, you have to specify the public interface parameter when you are planning to configure VSA in:
-
-- FLAT mode (no VLAN)
-- FCP mode
-- VLAN provider mode
-
-To specify the public interface, edit the VSA_PUBLIC_INTERFACE variable in the `~/tripleo/overcloud-env.json` file. 
- 
-
-##Verifying StoreVirtual installation status {#verify-install}
-
-To verify that the StoreVirtual storage system is deployed successfully, perform the following checks:
-
-1. Log in to the undercloud from seed.
-
-		# ssh heat-admin@<undercloud IP address>
-
- 		 
-2. Source stackrc file and list the deployed StoreVirtual nodes.
-
-		# source stackrc 
-		# heat stack-list
-		# nova list|grep vsa
-
-3. Log in to the StoreVirtual system from the seed using the IP address retrieved 
-from the above steps.
-
-		# ssh heat-admin@<StoreVirtual system IP Address>
-
-4. Check the log files.
-
-		# tail-f /installer.log
-
-	The message "*Started VM vsa-hostname*" indicates the successful installation of StoreVirtual on the machine.The IP Address of the StoreVirtual storage system can be retrieved from this log file.
-
-5. To display the status of all the StoreVirtual VMs.
-
-		# virsh list --all 
-
-	To get more details on the installer logs, check the `/var/log/storevirtual-installer.log` file.
-
-6. On successful installation of StoreVirtual VM on Baremetal, go to the Centralized Management Console (CMC) and discover the storage systems. 
-
-
-
-## Creating a StoreVirtual Cluster and adding it to a new Management Group {#create-cluster}
-
-**Prerequisites**
-
-* CMC is already installed.
-* HP StoreVirtual VSA (one or more) is deployed in the same management network where CMC is installed.
-
-
-To create a cluster, do the following:
-
-1. Open CMC.
-
-    By default, the CMC is configured to discover the StoreVirtual nodes in the subnet in which it is installed. You can manually add the nodes also.
-
-	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">CMC Main Page (opens in a new window)</a>
-
-2. In the CMC UI, click **Find** and then click **Find Systems** from the left panel.<br /> Find Systems dialogue box is displayed.<br />
-
-	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Find Systems option (opens in a new window)</a>
-
-3. You can choose **Add** or **Find** option to search the system. <br />Find option  starts searching for the nodes in the same subnet as that of CMC. Add option displays an **Enter IP** pop-up box to enter the IP of the StoreVirtual system.
-
-	**Note:**To get the details of the HP StoreVirtual VSA IP, log in to StoreVirtual system and check `/mnt/state/vsa/vsa_network_config.json` file and select the second option, which is listed under "vsa network".
-
-
-	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Add option (opens in a new window)</a>
-
-	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc4.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Find option (opens in a new window)</a>
-
-
-4. Click **OK** to proceed, or click **Cancel** to cancel the process.<br />The node is discovered and the details are displayed in a tabular format in the Find Systems dialogue box.
-
-5. (Optional) Click **Add** in the Find Systems dialogue box to add more nodes. 
-
-6. (Optional) Click **Edit** in the Find Systems dialogue box to modify the details of the selected node.
-
-7. (Optional) Click **Remove** in the Find Systems box to delete a node.
-
-8. Click **Close** to return to the Home page.<br /> The discovered nodes are displayed under **Available Systems** option in the left panel.
-
-	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc5.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Discovered Nodes Under Available Systems (opens in a new window)</a>
-
-9.  To add the node to a management group, right-click the node to display a menu and select **Add to a New Management Group**.<br /> Management Groups, Clusters, And Volumes wizard is displayed.
-
-	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc6.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Create Management Page (opens in a new window)</a>
-
-10.  In the **Management Group Name** box, enter a name for the management group and click **Next** to display the Add Administrative User page.
-
-11.  Enter the required information for the Administrative user and click **Next** to display the Management Group Time page.
-
-12.  Synchronize the time manually or using an NTP server and click **Next** to display the Domain Name Server Configuration page.
-
-13. Define  DNS details and click **Next** to display the Email Notification Setup page and define SMTP details.
-
-    **Note**: It is optional to enter the details in the above step.
-
-14. Click **Next** to display a Wizard in the Create a Cluster page. 
-
-15. Select the cluster type as *Standard Cluster* from the displayed options and click **Next**.
-
-16. In the **Cluster Name** box, enter the name of the cluster and click **Next**.
-
-17. In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the cluster in the respective boxes and click **OK**.<br /> The details are displayed in a tabular format in the page.
-
-
-	**Note**: Ensure that the Virtual IP (VIP) is unique and is in the same subnet as the HP StoreVirtual VSA system. 
-
-
-18. Click **Next** to go to the next page.
-
-17. (Optional) Click the checkbox displayed against **Skip Volume Creation**.
-
-18. Click **Next**.<br />The Management Group and Cluster is created and displays in the Home page of CMC.
-
-	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc7.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">CMC Main Page with the Cluster (opens in a new window)</a>
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-## Adding HP StoreVirtual VSA System to an existing Management Group {#adding-a-node}
-
-To add a StoreVirtual system to any existing Management Group, do the following:
-
-1. Open CMC.
-
-	By default, the CMC is configured to discover the HP StoreVirtual VSA systems in the subnet on which it is installed. You can manually add the nodes also.
-
-2. In the CMC page, click **Find Systems** from the left panel.<br /> Find Systems dialogue box is displayed with an Enter IP pop-up box.
-
-3. You can choose **Add** or **Find** option to search the system. <br />Find option  starts searching for the nodes in the subnet. Add option displays an **Enter IP** pop-up box to enter the IP of the StoreVirtual node.<br />
-
-4. Click **OK** to proceed or click **Cancel** to cancel the process.<br />The node is discovered and the details are displayed in a tabular format in the Find Systems dialogue box.
-
-5. (Optional) Click **Add** in the Find Systems dialogue box to add more nodes. 
-
-6. (Optional) Click **Edit** in the Find Systems dialogue box to modify the details of the selected node.
-
-7. (Optional) Click **Remove** in the Find Systems box to delete a node.
-
-8. Click **Close** to return to the Home page.<br /> The discovered nodes are displayed under **Available Systems** option in the left panel.
-
-9.  Right-click the node to display a menu and select **Add to an Existing Management Group**.
-
-10. Enter the name of the management group.
-
-11. Click **Add** to add the node to the group that you specified.<br /> The node is added to the management group.
-
-## Next Step {#next-steps}
-
-[Working with HP StoreVirtual VSA](/helion/openstack/1.1/undercloud/storage/storevirtual/) REQUIRED
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
-
+ <!--   **Note**: While deploying a scale-out **proxy** node ensure that the value of `vsa_scale` is unchanged. While deploying a scale-out **object** node ensure that the value of `vsa_ao_scale` is unchanged.-->
+<b>NOTE</b>: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/VM  other than the storage systems in the SAN.</p>
+<p>
+  <xref type="section" href="#topic14809/top"> Return to Top </xref>
+</p>
+</section>
+<section id="setting-the-public-interface-parameter"> <title>Setting the public interface parameter</title>
+<p>As of Helion 1.1, you have to specify the public interface parameter when you are planning to configure VSA in:</p>
+<ul>
+<li>FLAT mode (no VLAN)</li>
+<li>FCP mode</li>
+<li>VLAN provider mode</li>
+</ul>
+<p>To specify the public interface, edit the VSA_PUBLIC_INTERFACE variable in the <codeph>~/tripleo/overcloud-env.json</codeph> file.</p>
+</section>
+<section id="verify-install"> <title>Verifying StoreVirtual installation status</title>
+<p>To verify that the StoreVirtual storage system is deployed successfully, perform the following checks:</p>
+<ol>
+<li>
+<p>Log in to the undercloud from seed.</p>
+
+<codeblock>
+<codeph># ssh heat-admin@&lt;undercloud IP address&gt;
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Source stackrc file and list the deployed StoreVirtual nodes.</p>
+
+<codeblock>
+<codeph># source stackrc 
+# heat stack-list
+# nova list|grep vsa
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Log in to the StoreVirtual system from the seed using the IP address retrieved 
+from the above steps.</p>
+
+<codeblock>
+<codeph># ssh heat-admin@&lt;StoreVirtual system IP Address&gt;
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Check the log files.</p>
+
+<codeblock>
+<codeph># tail-f /installer.log
+</codeph>
+</codeblock>
+
+<p>The message "<i>Started VM vsa-hostname</i>" indicates the successful installation of StoreVirtual on the machine.The IP Address of the StoreVirtual storage system can be retrieved from this log file.</p>
+</li>
+<li>
+<p>To display the status of all the StoreVirtual VMs.</p>
+
+<codeblock>
+<codeph># virsh list --all 
+</codeph>
+</codeblock>
+
+<p>To get more details on the installer logs, check the <codeph>/var/log/storevirtual-installer.log</codeph> file.</p>
+</li>
+<li>
+<p>On successful installation of StoreVirtual VM on Baremetal, go to the Centralized Management Console (CMC) and discover the storage systems.</p>
+</li>
+</ol>
+</section>
+<section id="create-cluster"> <title>Creating a StoreVirtual Cluster and adding it to a new Management Group</title>
+<p>
+  <b>Prerequisites</b>
+</p>
+<ul>
+<li>CMC is already installed.</li>
+<li>HP StoreVirtual VSA (one or more) is deployed in the same management network where CMC is installed.</li>
+</ul>
+<p>To create a cluster, do the following:</p>
+<ol>
+<li>
+<p>Open CMC.</p>
+
+<p>By default, the CMC is configured to discover the StoreVirtual nodes in the subnet in which it is installed. You can manually add the nodes also.</p>
+
+<p>
+<xref format="html" href="javascript:window.open('/media/storevirtual-cmc1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >CMC Main Page (opens in a new window)</xref>
+</p>
+</li>
+<li>
+<p>In the CMC UI, click <b>Find</b> and then click <b>Find Systems</b> from the left panel.<!--A BR tag was used here in the original source.--> Find Systems dialogue box is displayed.</p>
+
+<p>
+<xref format="html" href="javascript:window.open('/media/storevirtual-cmc2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Find Systems option (opens in a new window)</xref>
+</p>
+</li>
+<li>
+<p>You can choose <b>Add</b> or <b>Find</b> option to search the system. <!--A BR tag was used here in the original source.-->Find option  starts searching for the nodes in the same subnet as that of CMC. Add option displays an <b>Enter IP</b> pop-up box to enter the IP of the StoreVirtual system.</p>
+
+<p>
+<b>Note:</b>To get the details of the HP StoreVirtual VSA IP, log in to StoreVirtual system and check <codeph>/mnt/state/vsa/vsa_network_config.json</codeph> file and select the second option, which is listed under "vsa network".</p>
+
+<p>
+<xref format="html" href="javascript:window.open('/media/storevirtual-cmc3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Add option (opens in a new window)</xref>
+</p>
+
+<p>
+<xref format="html" href="javascript:window.open('/media/storevirtual-cmc4.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Find option (opens in a new window)</xref>
+</p>
+</li>
+<li>
+<p>Click <b>OK</b> to proceed, or click <b>Cancel</b> to cancel the process.<!--A BR tag was used here in the original source.-->The node is discovered and the details are displayed in a tabular format in the Find Systems dialogue box.</p>
+</li>
+<li>
+<p>(Optional) Click <b>Add</b> in the Find Systems dialogue box to add more nodes.</p>
+</li>
+<li>
+<p>(Optional) Click <b>Edit</b> in the Find Systems dialogue box to modify the details of the selected node.</p>
+</li>
+<li>
+<p>(Optional) Click <b>Remove</b> in the Find Systems box to delete a node.</p>
+</li>
+<li>
+<p>Click <b>Close</b> to return to the Home page.<!--A BR tag was used here in the original source.--> The discovered nodes are displayed under <b>Available Systems</b> option in the left panel.</p>
+
+<p>
+<xref format="html" href="javascript:window.open('/media/storevirtual-cmc5.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Discovered Nodes Under Available Systems (opens in a new window)</xref>
+</p>
+</li>
+<li>
+<p>To add the node to a management group, right-click the node to display a menu and select <b>Add to a New Management Group</b>.<!--A BR tag was used here in the original source.--> Management Groups, Clusters, And Volumes wizard is displayed.</p>
+
+<p>
+<xref format="html" href="javascript:window.open('/media/storevirtual-cmc6.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Create Management Page (opens in a new window)</xref>
+</p>
+</li>
+<li>
+<p>In the <b>Management Group Name</b> box, enter a name for the management group and click <b>Next</b> to display the Add Administrative User page.</p>
+</li>
+<li>
+<p>Enter the required information for the Administrative user and click <b>Next</b> to display the Management Group Time page.</p>
+</li>
+<li>
+<p>Synchronize the time manually or using an NTP server and click <b>Next</b> to display the Domain Name Server Configuration page.</p>
+</li>
+<li>
+<p>Define  DNS details and click <b>Next</b> to display the Email Notification Setup page and define SMTP details.</p>
+
+<p>
+<b>Note</b>: It is optional to enter the details in the above step.</p>
+</li>
+<li>
+<p>Click <b>Next</b> to display a Wizard in the Create a Cluster page.</p>
+</li>
+<li>
+<p>Select the cluster type as <i>Standard Cluster</i> from the displayed options and click <b>Next</b>.</p>
+</li>
+<li>
+<p>In the <b>Cluster Name</b> box, enter the name of the cluster and click <b>Next</b>.</p>
+</li>
+<li>
+<p>In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the cluster in the respective boxes and click <b>OK</b>.<!--A BR tag was used here in the original source.--> The details are displayed in a tabular format in the page.</p>
+
+<p>
+<b>Note</b>: Ensure that the Virtual IP (VIP) is unique and is in the same subnet as the HP StoreVirtual VSA system.</p>
+</li>
+<li>
+<p>Click <b>Next</b> to go to the next page.</p>
+</li>
+<li>
+<p>(Optional) Click the checkbox displayed against <b>Skip Volume Creation</b>.</p>
+</li>
+<li>
+<p>Click <b>Next</b>.<!--A BR tag was used here in the original source.-->The Management Group and Cluster is created and displays in the Home page of CMC.</p>
+
+<p>
+<xref format="html" href="javascript:window.open('/media/storevirtual-cmc7.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >CMC Main Page with the Cluster (opens in a new window)</xref>
+</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic14809/top"> Return to Top </xref>
+</p>
+</section>
+<section id="adding-a-node"> <title>Adding HP StoreVirtual VSA System to an existing Management Group</title>
+<p>To add a StoreVirtual system to any existing Management Group, do the following:</p>
+<ol>
+<li>
+<p>Open CMC.</p>
+
+<p>By default, the CMC is configured to discover the HP StoreVirtual VSA systems in the subnet on which it is installed. You can manually add the nodes also.</p>
+</li>
+<li>
+<p>In the CMC page, click <b>Find Systems</b> from the left panel.<!--A BR tag was used here in the original source.--> Find Systems dialogue box is displayed with an Enter IP pop-up box.</p>
+</li>
+<li>
+<p>You can choose <b>Add</b> or <b>Find</b> option to search the system. <!--A BR tag was used here in the original source.-->Find option  starts searching for the nodes in the subnet. Add option displays an <b>Enter IP</b> pop-up box to enter the IP of the StoreVirtual node.</p>
+</li>
+<li>
+<p>Click <b>OK</b> to proceed or click <b>Cancel</b> to cancel the process.<!--A BR tag was used here in the original source.-->The node is discovered and the details are displayed in a tabular format in the Find Systems dialogue box.</p>
+</li>
+<li>
+<p>(Optional) Click <b>Add</b> in the Find Systems dialogue box to add more nodes.</p>
+</li>
+<li>
+<p>(Optional) Click <b>Edit</b> in the Find Systems dialogue box to modify the details of the selected node.</p>
+</li>
+<li>
+<p>(Optional) Click <b>Remove</b> in the Find Systems box to delete a node.</p>
+</li>
+<li>
+<p>Click <b>Close</b> to return to the Home page.<!--A BR tag was used here in the original source.--> The discovered nodes are displayed under <b>Available Systems</b> option in the left panel.</p>
+</li>
+<li>
+<p>Right-click the node to display a menu and select <b>Add to an Existing Management Group</b>.</p>
+</li>
+<li>
+<p>Enter the name of the management group.</p>
+</li>
+<li>
+<p>Click <b>Add</b> to add the node to the group that you specified.<!--A BR tag was used here in the original source.--> The node is added to the management group.</p>
+</li>
+</ol>
+</section>
+<section id="next-steps"> <title>Next Step</title>
+<p>
+<xref href="../../commercial/GA1/1.1commercial.undercloud-storage-storevirtual.dita" >Working with HP StoreVirtual VSA</xref> REQUIRED</p>
+<p>
+  <xref type="section" href="#topic14809/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

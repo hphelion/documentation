@@ -1,32 +1,26 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Configuring Your Network Securely"
-permalink: /helion/openstack/1.1/landing/security/
-product: commercial.test
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: All
-
-authors: Micael B
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic509">
+<title>HP Helion OpenStack(R) 1.1: Configuring Your Network Securely</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="All"/>
+<othermeta name="role" content="Micael B"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-<script>
-[
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
-
-# HP Helion OpenStack&#174; 1.1: Configuring Your Network Securely
-
-[Configuring Your Network Securely](/helion/openstack/1.1/services/neutron/post/installation/configure-network-securely/)
-<br />Learn about how to configure your HP Helion OpenStack network securely.
-<hr />
-
+ <!--./commercial/GA1/Landing/1.1commercial.landing.security.md-->
+ <!--permalink: /helion/openstack/1.1/landing/security/--></p>
+<p>
+<xref href="../../../commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita" >Configuring Your Network Securely</xref>
+<!--A BR tag was used here in the original source.-->Learn about how to configure your HP Helion OpenStack(R) network securely.</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

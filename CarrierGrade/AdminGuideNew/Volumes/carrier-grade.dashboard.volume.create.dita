@@ -1,73 +1,100 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Creating, Editing, and Deleting Volumes"
-permalink: /helion/commercial/carrier/dashboard/managing/volume/create/
-product: carrier-grade
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2059">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Creating, Editing, and Deleting Volumes</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Volumes/carrier-grade.dashboard.volume.create.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/volume/create/--></p>
+<p>Volumes are block devices that can be attached to instances.</p>
+<section id="create-a-volume"> <title>Create a volume</title>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Volumes</b> link.</p>
+</li>
+<li>
+<p>Click <b>Create Volume</b>.</p>
+</li>
+<li>
+<p>In the <b>Create Volume</b> dialog box, enter the relevant information for the volume:</p>
 
-<script>
+<ul>
+<li>
+<b>Volume Name:</b> Enter a name for the volume  </li>
+<li>
+<b>Description:</b> Provide a brief description (optional).  </li>
+<li>
+<b>Volume Source:</b> Select one of the following options: 
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<ul>
+<li>No source, empty volume - creates an empty volume and does not contain a file system or a partition table  </li>
+<li>Image - a new field for Use image as a source displays. You can select the image from the list.  </li>
+</ul>
+</li>
+<li>
+<b>Size:</b> Enter the size of the volume in gigabytes   </li>
+<li>
+<b>Availability Zone:</b> Select the availability zone. By default, this value is set to 'any availability zone'.  </li>
+</ul>
+</li>
+<li>
+<p>Click <b>Create Volume</b> to confirm.</p>
+</li>
+</ol>
+</section>
+<section id="edit-a-volume"> <title>Edit a volume</title>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Volumes</b> link.</p>
+</li>
+<li>
+<p>Under the <b>Actions</b> column, click <b>Edit Volume</b>, next to the volume you want to edit.    .</p>
+</li>
+<li>
+<p>In the <b>Edit Volume</b> dialog box, modify the name and description.</p>
+</li>
+<li>
+<p>Click <b>Edit Volume</b> to confirm.</p>
 
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Creating, Editing, and Deleting Volumes
-
-Volumes are block devices that can be attached to instances.
-
-### Create a volume ###
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Project** dashboard, then the **System** panel, then the **Volumes** link.
-
-4. Click **Create Volume**.
-
-5. In the **Create Volume** dialog box, enter the relevant information for the volume: 
-
-	* **Volume Name:** Enter a name for the volume  
-	* **Description:** Provide a brief description (optional).  
-	* **Volume Source:** Select one of the following options: 
-		* No source, empty volume - creates an empty volume and does not contain a file system or a partition table  
-		* Image - a new field for Use image as a source displays. You can select the image from the list.  
-	* **Size:** Enter the size of the volume in gigabytes  	
-	* **Availability Zone:** Select the availability zone. By default, this value is set to 'any availability zone'.  
-
-6. Click **Create Volume** to confirm.  
-
-### Edit a volume ###
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Project** dashboard, then the **System** panel, then the **Volumes** link.
-
-4. Under the **Actions** column, click **Edit Volume**, next to the volume you want to edit.  	.
-
-5. In the **Edit Volume** dialog box, modify the name and description.
-
-6. Click **Edit Volume** to confirm. 
-
-	**Note:** You can [extend a volume](/helion/commercial/carrier/dashboard/managing/volume/extend/) by using the **Extend Volume** option available in the **More** drop-down list and entering the new value for volume size.
-
-### Delete a volume ###
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Project** dashboard, then the **System** panel, then the **Volumes** link.
-
-4. Select the volume(s) that you want to delete.
-
-5. Click **Delete Volume** to confirm.
-
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
-
-
-----
+<p>
+<b>Note:</b> You can <xref href="../../../CarrierGrade/AdminGuideNew/Volumes/carrier-grade.dashboard.volume.extend.dita" >extend a volume</xref> by using the <b>Extend Volume</b> option available in the <b>More</b> drop-down list and entering the new value for volume size.</p>
+</li>
+</ol>
+</section>
+<section id="delete-a-volume"> <title>Delete a volume</title>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Volumes</b> link.</p>
+</li>
+<li>
+<p>Select the volume(s) that you want to delete.</p>
+</li>
+<li>
+<p>Click <b>Delete Volume</b> to confirm.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic2059/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

@@ -1,98 +1,121 @@
----
-layout: 1.0default
-title: "HP Helion OpenStack&#174; 1.0: Installation Overview"
-permalink: /helion/openstack/install/overview/
-product: commercial.ga1.0
-product-version1: HP Helion OpenStack 1.1
-role1: Storage Administrator
-role2: Storage Architect
-authors: Michael B, 
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4315">
+<title>HP Helion OpenStack(R) 1.0: Installation Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Michael B,"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
+ <!--./commercial/GA1/1.0commercial.install-GA-overview.md-->
+ <!--permalink: /helion/openstack/install/overview/--></p>
+<p>
+  <xref href="../../commercial/GA1/1.1commercial.install-GA-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+</p>
+<p>The HP Helion OpenStack(R) installation follows the standard <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" >TripleO deployment model</xref>, creating a seed, an undercloud and an overcloud.</p>
+<ul>
+<li>
+<p>
+<b>Seed</b>: The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack(R) components that are used to deploy the undercloud. The seed deploys the undercloud by using Ironic baremetal driver to deploy a specific undercloud machine image.</p>
+</li>
+<li>
+<p>
+<b>Undercloud</b>: In a typical HP Helion OpenStack(R) deployment, the undercloud is a baremetal server. The undercloud is a complete OpenStack(R) installation, which is then used to deploy the overcloud.</p>
+</li>
+<li>
+<p>
+<b>Overcloud</b>: The overcloud is the end-user OpenStack(R) cloud. In a typical HP Helion OpenStack(R) deployment, the overcloud comprises several baremetal servers.</p>
+</li>
+</ul>
+<p>For more details on the seed, an undercloud and an overcloud, see the <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita#install-configure" >Installation Planning section</xref> in the Technical Overview.</p>
+<section id="the-installation-process"> <title>The Installation Process</title>
+<p>HP Helion OpenStack(R) is designed to deliver an open source OpenStack(R) solution at the modest scale. A baremetal multi-node deployment consists of a minimum of 8 baremetal servers, to which you can add up to 100 Compute nodes:</p>
+<ul>
+<li>1 seed cloud host (installer system)</li>
+<li>1 undercloud server</li>
+<li>3 overcloud controllers</li>
+<li>2 overcloud Swift nodes</li>
+<li>At least 1 overcloud Compute node </li>
+</ul>
+<p>After the installation, you can add additional block storage nodes (not required if 3Par is being used for block storage) and <xref href="../../commercial/GA1/1.0commercial.install-GA-security.dita" >configure your network securely</xref>.</p>
+<p>The high-level process for installing HP Helion OpenStack(R) involves the following:</p>
+<ol>
+<li>
+<p>Review the information in the <xref href="../../commercial/GA1/1.0commercial.install-GA-supportmatrix.dita" >Support Matrix</xref> and <xref href="./commercial/GA1/1.0commercial.technical-overview.ga.dita" >Technical Overview</xref> for details about hardware and software requirements.</p>
+</li>
+<li>
+<p>Verify that the necessary <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >Prerequisites</xref> have been performed.</p>
+</li>
+<li>
+<p>Install with either KVM or ESX hypervisor support:</p>
 
+<ul>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-kvm.dita" >Install with KVM hypervisor support</xref> and then <xref href="./commercial/GA1/1.0commercial.install-GA-vsa.dita" >configure HP StoreVirtual VSA for Block Storage</xref> or <xref href="./commercial/GA1/1.0commercial.install-3par.dita" >configure HP 3PAR StoreServ Storage</xref>.</p>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-esx.dita" >Install with ESX hypervisor support</xref> and then <xref href="./commercial/GA1/1.0commercial.install-GA-ESX-Proxy.dita" >deploy the compute proxy on the ESX hosts</xref> and <xref href="./commercial/GA1/1.0commercial.install-GA-ovsvapp.dita" >deploy OVSvApp for HP Virtual Cloud Networking</xref>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Optionally, <xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" >install and configure DNSaaS support</xref>.</p>
+</li>
+</ol>
+<p>There are a few things you should be aware of before you begin your HP Helion OpenStack(R) baremetal installation.</p>
+<ul>
+<li>
+<p>Loading images is slow, so be patient.</p>
+</li>
+<li>
+<p>The seed VM must remain booted while the undercloud and overcloud are up.</p>
+</li>
+<li>
+<p>The <codeph>stackrc</codeph> and <codeph>tripleo_*_passwords</codeph> files contain credentials for the undercloud and the overcloud; you should ensure that they are securely stored separately from the seed.</p>
 
-<script>
+<p>
+<codeph>/root/stackrc</codeph>
+</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/support-matrix/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install/prereqs/">NEXT &#9654;</a> </p> -->
-
-# HP Helion OpenStack&#174; 1.0: Installation Overview 
-[See the Helion OpenStack 1.1 version of this page](/helion/openstack/1.1/install/overview/)
-
-The HP Helion OpenStack installation follows the standard [TripleO deployment model](https://wiki.openstack.org/wiki/TripleO), creating a seed, an undercloud and an overcloud.
-
-* **Seed**: The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using Ironic baremetal driver to deploy a specific undercloud machine image.
-
-* **Undercloud**: In a typical HP Helion OpenStack deployment, the undercloud is a baremetal server. The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud.
-
-* **Overcloud**: The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack deployment, the overcloud comprises several baremetal servers.
-
-For more details on the seed, an undercloud and an overcloud, see the [Installation Planning section](/helion/openstack/technical-overview/#install-configure) in the Technical Overview.
-
-## The Installation Process
-
-HP Helion OpenStack is designed to deliver an open source OpenStack solution at the modest scale. A baremetal multi-node deployment consists of a minimum of 8 baremetal servers, to which you can add up to 100 Compute nodes:
-
-* 1 seed cloud host (installer system)
-* 1 undercloud server
-* 3 overcloud controllers
-* 2 overcloud Swift nodes
-* At least 1 overcloud Compute node 
-
-After the installation, you can add additional block storage nodes (not required if 3Par is being used for block storage) and [configure your network securely](/helion/openstack/install/security/).
-
-The high-level process for installing HP Helion OpenStack involves the following:
-
-1. Review the information in the [Support Matrix](/helion/openstack/support-matrix/) and [Technical Overview](/helion/openstack/technical-overview/) for details about hardware and software requirements.
-
-2. Verify that the necessary [Prerequisites](/helion/openstack/install/prereqs/) have been performed.
-
-3. Install with either KVM or ESX hypervisor support:
-	
-	- [Install with KVM hypervisor support](/helion/openstack/install/kvm/) and then [configure HP StoreVirtual VSA for Block Storage](/helion/openstack/install/vsa/) or [configure HP 3PAR StoreServ Storage](/helion/openstack/install/3par/). 
-
-	- [Install with ESX hypervisor support](/helion/openstack/install/esx/) and then [deploy the compute proxy on the ESX hosts](/helion/openstack/install/esx/proxy/) and [deploy OVSvApp for HP Virtual Cloud Networking](/helion/openstack/install/ovsvapp/).
-
-4. Optionally, [install and configure DNSaaS support](/helion/openstack/install/dnsaas/).
-
-There are a few things you should be aware of before you begin your HP Helion OpenStack baremetal installation.
-
-* Loading images is slow, so be patient.
-
-* The seed VM must remain booted while the undercloud and overcloud are up.
-
-* The `stackrc` and `tripleo_*_passwords` files contain credentials for the undercloud and the overcloud; you should ensure that they are securely stored separately from the seed.
- 
-    `/root/stackrc`
-
-    `/root/tripleo/tripleo_*_passwords`
-
-* The installation will create two initial Object Storage nodes. If you need additional Object Storage nodes, you must create them manually after installation. 
-
-* All the Helion servers use UTC as a time zone.
-
-**Important:** When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation tracks only the MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 
-
-## Next Step ##
-
-Review the information in [Installation Prerequisites](/helion/openstack/install/prereqs/).
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-## For more information {#moreinfo}
-
-Before you start, if you want more information on HP Helion OpenStack, see the following:
-
-* [FAQ](/helion/openstack/faq/) 
-* [Release notes](/helion/openstack/release-notes/101/) 
-
-
-
-----
+<p>
+<codeph>/root/tripleo/tripleo_*_passwords</codeph>
+</p>
+</li>
+<li>
+<p>The installation will create two initial Object Storage nodes. If you need additional Object Storage nodes, you must create them manually after installation.</p>
+</li>
+<li>
+<p>All the Helion servers use UTC as a time zone.</p>
+</li>
+</ul>
+<p>
+<b>Important:</b> When installing HP Helion OpenStack(R) it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack(R) is installed on physical servers, the TripleO automation tracks only the MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server.</p>
+</section>
+<section id="next-step"> <title>Next Step</title>
+<p>Review the information in <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >Installation Prerequisites</xref>.</p>
+<p>
+  <xref type="section" href="#topic4315/top"> Return to Top </xref>
+</p>
+</section>
+<section id="moreinfo"> <title>For more information</title>
+<p>Before you start, if you want more information on HP Helion OpenStack(R) see the following:</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.faq.dita" >FAQ</xref> </li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.release-notes.dita" >Release notes</xref> </li>
+</ul>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

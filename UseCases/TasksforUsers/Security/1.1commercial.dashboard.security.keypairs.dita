@@ -1,97 +1,119 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Managing Security Groups"
-permalink: /helion/commercial/1.1/dashboard/managing/security/keypairs/
-product: commercial.ga
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2459">
+<title>HP Helion OpenStack(R) 1.1: Managing Security Groups</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/Security/1.1commercial.dashboard.security.keypairs.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/security/keypairs/--></p>
+<p>Use this option to manage and view key pairs.</p>
+<p>Keypairs are SSH security keys that are used to launch secure, provisioned cloud instances, images or topologies. The keypair is injected into the launched instance. Each project user needs to create a keypair(s) for use. An admin cannot create it on behalf of the user.</p>
+<p>The following tasks can be performed by a user:</p>
+<ul>
+<li>
+<xref type="section" href="#topic2459/createKeypairs">Create Keypairs</xref>
+</li>
+<li>
+<xref type="section" href="#topic2459/deleteKeypairs">Delete Keypairs</xref>
+</li>
+<li>
+<xref type="section" href="#topic2459/importKeypairs">Import Keypairs</xref>
+</li>
+</ul>
+<section id="createKeypairs"> <title>Create Keypairs</title>
+<p>To create a keypair, do the following:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Access &amp; Security</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
 
-<script>
+<p>The Access &amp; Security page is displayed with four tabs, <b>Security Groups</b>, <b>Key Pairs</b>, <b>Floating IPs</b>, and <b>API Access</b>. By default, <b>Security Groups</b> is the active tab.</p>
+</li>
+<li>
+<p>Click the <b>Key Pairs</b> tab to activate it.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<p>The list of Keypairs is displayed in a table.</p>
+</li>
+<li>
+<p>Click <b>Create Key Pair</b>.</p>
+</li>
+<li>
+<p>In the <b>Create Key Pair Name</b> box, enter the name of the key pair.</p>
+</li>
+<li>
+<p>Click <b>Create Key Pair</b>.</p>
 
-PageRefresh();
+<p>The private key of the key pair is downloaded to your local system, either automatically or a dialog box prompts you to download the keypair.</p>
+</li>
+<li>
+<p>Click Save to place the private key on your local system.</p>
+</li>
+</ol>
+</section>
+<section id="deleteKeypair"> <title>Delete Keypairs</title>
+<p>To delete a keypair, do the following:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Access &amp; Security</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
+</li>
+<li>
+<p>Click the <b>Key Pairs</b> tab to activate it.</p>
+</li>
+<li>
+<p>For the key pair you want to delete, click <b>Create Key Pair</b>.</p>
+</li>
+<li>
+<p>In the confirmation screen that appears, click <b>Delete Key Pair</b>.</p>
 
-</script>
+<p>A message displays if the key pair is deleted.</p>
+</li>
+</ol>
+</section>
+<section id="import-keypairs-import-keypairs"> <title>Import Keypairs {#Import Keypairs}</title>
+<p>To import a keypair, do the following:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Access &amp; Security</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
+</li>
+<li>
+<p>Click the <b>Key Pairs</b> tab to activate it.</p>
+</li>
+<li>
+<p>Click <b>Import Keypair</b> to display the Import Keypair dialog box.</p>
+</li>
+<li>
+<p>In the <b>Keypair Name</b> box, enter the name of the keypair.</p>
+</li>
+<li>
+<p>In the <b>Public Key</b> box, enter the public key.</p>
+</li>
+<li>
+<p>Click <b>Import Keypair</b>.</p>
 
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; 1.1: Managing Security Groups
-
-Use this option to manage and view key pairs.
-
-Keypairs are SSH security keys that are used to launch secure, provisioned cloud instances, images or topologies. The keypair is injected into the launched instance. Each project user needs to create a keypair(s) for use. An admin cannot create it on behalf of the user.
-
-The following tasks can be performed by a user:
-
-* [Create Keypairs](#createKeypairs)
-* [Delete Keypairs](#deleteKeypairs)
-* [Import Keypairs](#importKeypairs)
-
-### Create Keypairs ### {#createKeypairs}
-
-To create a keypair, do the following:
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2. Click the **Access &amp; Security** link on the **Project** dashboard **Compute** panel.
-
-	The Access &amp; Security page is displayed with four tabs, **Security Groups**, **Key Pairs**, **Floating IPs**, and **API Access**. By default, **Security Groups** is the active tab. 
-
-3. Click the **Key Pairs** tab to activate it.
-
-	The list of Keypairs is displayed in a table.
-
-4. Click **Create Key Pair**.
-
-5. In the **Create Key Pair Name** box, enter the name of the key pair.
-
-6. Click **Create Key Pair**.
-
-	The private key of the key pair is downloaded to your local system, either automatically or a dialog box prompts you to download the keypair.
-
-7. Click Save to place the private key on your local system.
-
-### Delete Keypairs ### {#deleteKeypair}
-
-To delete a keypair, do the following:
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2. Click the **Access &amp; Security** link on the **Project** dashboard **Compute** panel.
-
-3. Click the **Key Pairs** tab to activate it.
-
-4. For the key pair you want to delete, click **Create Key Pair**.
-
-5. In the confirmation screen that appears, click **Delete Key Pair**.
-
-	A message displays if the key pair is deleted.
-
-### Import Keypairs {#Import Keypairs}
-
-To import a keypair, do the following:
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2. Click the **Access &amp; Security** link on the **Project** dashboard **Compute** panel.
-
-3. Click the **Key Pairs** tab to activate it.
-
-4. Click **Import Keypair** to display the Import Keypair dialog box.
-
-5. In the **Keypair Name** box, enter the name of the keypair.
-
-6. In the **Public Key** box, enter the public key.
-
-7. Click **Import Keypair**.
-
-	A message appears if the import is successful.
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----
+<p>A message appears if the import is successful.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic2459/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

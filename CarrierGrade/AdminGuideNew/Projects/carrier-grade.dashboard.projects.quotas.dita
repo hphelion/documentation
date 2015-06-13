@@ -1,60 +1,61 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Managing project quotas"
-permalink: /helion/commercial/carrier/dashboard/managing/projects/quotas/
-product: carrier-grade
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1726">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Managing project quotas</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Projects/carrier-grade.dashboard.projects.quotas.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/projects/quotas/--></p>
+<p>Quotas are operational limits enforced on each project.</p>
+<p>To prevent system capacities from being exhausted without notification, you can set up quotas.</p>
+<p>For example, the number of gigabytes allowed per project can be controlled to make sure that a single project does not consume all of the disk space.</p>
+<p>Default values are set on the <xref href="../../../CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade.dashboard.default.quotas.dita" >Default screen</xref>.</p>
+<section id="quotamod"> <title>Modify a quotas</title>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Identity</b> panel, then the <b>Projects</b> link.</p>
+</li>
+<li>
+<p>For the project you want to modify, click the arrow icon in the <b>Actions</b> menu and select <b>Modify Quotas</b>.</p>
+</li>
+<li>
+<p>In the <b>Edit Project</b> screen, click the <b>Quota</b> tab (should be active).</p>
+</li>
+<li>
+<p>Edit any of the following fields:</p>
 
-<script>
+<ul>
+<li>Metadata Items. Metadata items allowed for each instance.</li>
+<li>VCPUs. Instance cores allowed for each project.</li>
+<li>Instances. Instances allowed for each project.</li>
+<li>Injected Files. Injected files allowed for each project.</li>
+<li>Injected File Content Bytes. Content bytes allowed for each injected file.</li>
+<li>Volumes. Volumes allowed for each project.</li>
+<li>Volume Snapshots. Volume snapshots allowed for each project.</li>
+<li>Total Size of Volumes and Snapshots- Enter the maximum total size for all volumes and snapshots allowed for the project.</li>
+<li>RAM (MB). RAM megabytes allowed for each instance.</li>
+</ul>
+</li>
+<li>
+<p>Click <b>Save</b>.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Managing project quotas
-
-Quotas are operational limits enforced on each project. 
-
-To prevent system capacities from being exhausted without notification, you can set up quotas. 
-
-For example, the number of gigabytes allowed per project can be controlled to make sure that a single project does not consume all of the disk space. 
-
-Default values are set on the [Default screen](/helion/commercial/carrier/dashboard/managing/quotas/).
-
-### Modify a quotas ### {#quotamod}
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Identity** panel, then the **Projects** link.
-
-3. For the project you want to modify, click the arrow icon in the **Actions** menu and select **Modify Quotas**. 
-4. In the **Edit Project** screen, click the **Quota** tab (should be active).
-
-5. Edit any of the following fields:
-
-	* Metadata Items. Metadata items allowed for each instance.
-	* VCPUs. Instance cores allowed for each project.
-	* Instances. Instances allowed for each project.
-	* Injected Files. Injected files allowed for each project.
-	* Injected File Content Bytes. Content bytes allowed for each injected file.
-	* Volumes. Volumes allowed for each project.
-	* Volume Snapshots. Volume snapshots allowed for each project.
-	* Total Size of Volumes and Snapshots- Enter the maximum total size for all volumes and snapshots allowed for the project.
-	* RAM (MB). RAM megabytes allowed for each instance.
-
-6. Click **Save**.
-
-	A message is displayed on successful modification.
-
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
-
-
-----
+<p>A message is displayed on successful modification.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1726/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

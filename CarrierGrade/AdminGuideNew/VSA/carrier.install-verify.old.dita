@@ -1,71 +1,80 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Verifying StoreVirtual Installation Status"
-permalink: /helion/openstack/carrier/install/vsa/verify/
-product: carrier-grade
-product-version1: HP Helion OpenStack Carrier Grade
-role1: Storage Administrator
-role2: Storage Architect
-authors: Michael B, Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1520">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Verifying StoreVirtual Installation Status</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) Carrier Grade"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Michael B, Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R) Carrier Grade"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/VSA/carrier.install-verify.old.md-->
+ <!--permalink: /helion/openstack/carrier/install/vsa/verify/--></p>
+<p/>
+<p>To verify that the StoreVirtual storage system is deployed successfully, perform the following checks:</p>
+<ol>
+<li>
+<p>Log in to the undercloud from seed.</p>
 
+<codeblock>
+<codeph># ssh heat-admin@&lt;undercloud IP address&gt;
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Source stackrc file and list the deployed StoreVirtual nodes.</p>
 
-<script>
+<codeblock>
+<codeph># source stackrc 
+# heat stack-list
+# nova list|grep vsa
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Log in to the StoreVirtual system from the seed using the IP address retrieved 
+from the above steps.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<codeblock>
+<codeph># ssh heat-admin@&lt;StoreVirtual system IP Address&gt;
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Check the log files.</p>
 
-PageRefresh();
+<codeblock>
+<codeph># tail-f /installer.log
+</codeph>
+</codeblock>
 
-</script>
+<p>The message "<i>Started VM vsa-hostname</i>" indicates the successful installation of StoreVirtual on the machine.The IP Address of the StoreVirtual storage system can be retrieved from this log file.</p>
+</li>
+<li>
+<p>To display the status of all the StoreVirtual VMs.</p>
 
+<codeblock>
+<codeph># virsh list --all 
+</codeph>
+</codeblock>
 
-<p style="font-size: small;"> <a href="/helion/openstack/carrier/install/vsa/deploy/">&#9664; Deploying HP StoreVirtual VSA </a>| <a href="/helion/openstack/carrier/install/vsa/cluster/">Creating a StoreVirtual Cluster and adding it to a new Management Group &#9654;</a>
-</p> 
-
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Verifying StoreVirtual Installation Status
-
-To verify that the StoreVirtual storage system is deployed successfully, perform the following checks:
-
-1. Log in to the undercloud from seed.
-
-
-
-
-		# ssh heat-admin@<undercloud IP address>
-
- 		 
-2. Source stackrc file and list the deployed StoreVirtual nodes.
-
-		# source stackrc 
-		# heat stack-list
-		# nova list|grep vsa
-
-3. Log in to the StoreVirtual system from the seed using the IP address retrieved 
-from the above steps.
-
-		# ssh heat-admin@<StoreVirtual system IP Address>
-
-4. Check the log files.
-
-		# tail-f /installer.log
-
-	The message "*Started VM vsa-hostname*" indicates the successful installation of StoreVirtual on the machine.The IP Address of the StoreVirtual storage system can be retrieved from this log file.
-
-5. To display the status of all the StoreVirtual VMs.
-
-		# virsh list --all 
-
-	To get more details on the installer logs, check the `/var/log/storevirtual-installer.log` file.
-
-6. On successful installation of StoreVirtual VM on Baremetal, go to the Centralized Management Console (CMC) and discover the storage systems. 
-
-## Next Step
-
-[Creating a StoreVirtual Cluster and Adding it to a New Management Group](/helion/openstack/carrier/install/vsa/cluster/)
-
-
+<p>To get more details on the installer logs, check the <codeph>/var/log/storevirtual-installer.log</codeph> file.</p>
+</li>
+<li>
+<p>On successful installation of StoreVirtual VM on Baremetal, go to the Centralized Management Console (CMC) and discover the storage systems.</p>
+</li>
+</ol>
+<section id="next-step"> <title>Next Step</title>
+<p>
+  <xref href="../../../CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa-add-new-mgmt-group.dita" >Creating a StoreVirtual Cluster and Adding it to a New Management Group</xref>
+</p>
+</section>
+</body>
+</topic>

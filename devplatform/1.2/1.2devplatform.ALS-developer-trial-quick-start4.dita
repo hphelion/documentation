@@ -1,98 +1,130 @@
----
-layout: trial-quick-start-devplatform-10
-title: "HP Helion 1.2 Development Platform: Quick Start Developer Trial Step 4"
-permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/4/
-product: devplatform2.0
-product-version1: HP Helion Development Platform
-role1: Application Developer
-role2: Security Engineer
-role3: ISV Developer 
-role4: Service Developer
-authors: Jayme P
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3239">
+<title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
+<titlealts>
+<searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial Step 4</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-<script>
-function PageRefresh {
-onLoad="window.refresh"
-}
-PageRefresh();
-</script>
-
-# HP Helion 1.2 Development Platform: Quick Start Developer Trial {#top}
-
-An ALS cluster provides the support infrastructure necessary to deploy and manage applications. <br />During this step, you will send a set of commands and variables to the <i>cf-mgmt</i> tool. The tool will use those parameters to create the cluster, set up the admin login credentials, and return a URL for the cluster's management console. 
-
-<table style="background-color: #FFF; vertical-align:top;">
-<tr style="padding: 0;">
-<td style="vertical-align:top;">
+ <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start4.md-->
+ <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/4/--></p>
+<p>An ALS cluster provides the support infrastructure necessary to deploy and manage applications. <!--A BR tag was used here in the original source.-->During this step, you will send a set of commands and variables to the <varname>cf-mgmt</varname> tool. The tool will use those parameters to create the cluster, set up the admin login credentials, and return a URL for the cluster's management console.</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<tbody>
+<row>
+<entry>
 <p>
-1. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/">Register for your Helion Public Cloud Account</a>
-</p><p>
-2. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/2">Download  Tools</i></a>
-</p><p>
-3. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3">Create the Sandbox Environment</a>
-  <table border="0" style="background-color: #FFF;">
-   <tr>
-   <td style="background-color: #F0FFFF;">
-    4.&nbsp;<b>Create&nbsp;A Cluster</b>
-   </td>
-   </tr>
-   </table>
 <p>
-5. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/5">Add Windows DEA and SQL Server (Optional Step)</a>
+1. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/" scope="external" format="html" >Register for your Helion Public Cloud Account</xref>
 </p>
 <p>
-6. <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/6">Explore Sample Applications</a>
+2. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/2" scope="external" format="html" >Download  Tools</xref>
 </p>
-</td>
-<td style="background-color: #F0FFFF; vertical-align: top;"><b>Create a Cluster</b>
-<p>For convenience, copy the command sets and paste them into a text editor. You can edit them there and then paste that information into the <a href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference" target="_blank"><i>cf-mgmt</i></a> tool as necessary.
-<ol style="padding-left: 1em;">
-<li>Open a terminal window and change directory to the location where you installed the <a href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference" target="_blank"><i>cf-mgmt</i></a> command-line tool.
-</li><br />
-<li>Run the following set of commands using the <a href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference" target="_blank"><i>cf-mgmt</i></a> tool to create the cluster. In the unlikely event that the cluster creation fails, refer to the <a href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting">Troubleshooting</a> section for further instructions.<p><b>Note:</b> It may take about 15 minutes to deploy each cluster image in this and the following step.</p>
-<ul>
-<li>For Windows&#174;:<br />
-Open the RC file you downloaded earlier in a text editor,<br /> as you will need to enter values from that file.
-<pre style="font-color: black;">
-cf-mgmt.exe ^
-	--os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
-	--os-username &lt;OS_USERNAME from openstackrc&gt; ^
-	--os-password &lt;OpenStack password&gt; ^
-	--os-tenant-id &lt;OS_TENANT_ID from openstackrc&gt; ^
-	--os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^
-	--os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
-create-cluster ^
-	--keypair-name &lt;name of keypair created earlier&gt; ^
-	--admin-email &lt;your login for the quick-start&gt; ^
-	--admin-password &lt;your password for the quick-start&gt; ^
-	--load http://clients.als.hpcloud.com/1.2/config/trial.yml
-</pre>
+<p>
+3. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3" scope="external" format="html" >Create the Sandbox Environment</xref>
+  </p>
+<table rowsep="0" colsep="0">
+<tgroup cols="1">
+<colspec colname="col1"/>
+<tbody>
+<row>
+<entry>
+    4. <b>Create A Cluster</b>
+   </entry>
+   </row>
+</tbody>
+</tgroup>
+</table>
+<p>
+5. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/5" scope="external" format="html" >Add Windows DEA and SQL Server (Optional Step)</xref>
+</p>
+<p>
+6. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/6" scope="external" format="html" >Explore Sample Applications</xref>
+</p>
+</p>
+</entry>
+<entry>
+<b>Create a Cluster</b>
+<p>For convenience, copy the command sets and paste them into a text editor. You can edit them there and then paste that information into the <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference" scope="external" format="html" >
+<varname>cf-mgmt</varname>
+</xref> tool as necessary.
+</p>
+<ol>
+<li>Open a terminal window and change directory to the location where you installed the <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference" scope="external" format="html" >
+<varname>cf-mgmt</varname>
+</xref> command-line tool.
 </li>
-<li>For Mac/Unix:<br />
-You do not need to open the RC file; the <i>source</i> command will retrieve the necessary values from that file automatically.
-<pre>
+<!--A BR tag was used here in the original source.-->
+<li>Run the following set of commands using the <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference" scope="external" format="html" >
+<varname>cf-mgmt</varname>
+</xref> tool to create the cluster. In the unlikely event that the cluster creation fails, refer to the <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting" scope="external" format="html" >Troubleshooting</xref> section for further instructions.<p>
+<b>Note:</b> It may take about 15 minutes to deploy each cluster image in this and the following step.</p>
+<ul>
+<li>For Windows�(R):<!--A BR tag was used here in the original source.-->
+Open the RC file you downloaded earlier in a text editor,<!--A BR tag was used here in the original source.--> as you will need to enter values from that file.
+<codeblock>
+cf-mgmt.exe ^
+    --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
+    --os-username &lt;OS_USERNAME from openstackrc&gt; ^
+    --os-password &lt;OpenStack(R) password&gt; ^
+    --os-tenant-id &lt;OS_TENANT_ID from openstackrc&gt; ^
+    --os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^
+    --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
+create-cluster ^
+    --keypair-name &lt;name of keypair created earlier&gt; ^
+    --admin-email &lt;your login for the quick-start&gt; ^
+    --admin-password &lt;your password for the quick-start&gt; ^
+    --load http://clients.als.hpcloud.com/1.2/config/trial.yml
+</codeblock>
+</li>
+<li>For Mac/Unix:<!--A BR tag was used here in the original source.-->
+You do not need to open the RC file; the <varname>source</varname> command will retrieve the necessary values from that file automatically.
+<codeblock>
 source &lt;path to openstackrc file&gt;
 cf-mgmt create-cluster \
    --keypair-name &lt;name of keypair created earlier&gt; \
    --admin-email &lt;your login for the quick-start&gt; \
    --admin-password &lt;your password for the quick-start&gt; \
    --load http://clients.als.hpcloud.com/1.2/config/trial.yml
-</pre></li>
+</codeblock>
 </li>
 </ul>
-<li>After the <i>cf-mgmt</i> tool creates the cluster, it displays the ALS Console URL. This URL will have the form <i>http://api.&lt;ipaddress&gt;.xip.io</i>  For example: <i>htttp://api.255.255.255.255.xip.io</i> </li><br /> 
-<li>Enter the Console URL in your web browser to navigate to the Management Console.<br /<b>Note</b>: You may be "warned" that the Console has a self-signed certificate or that the site is "not trusted". These "warnings" can be safely ignored. </li><br />
+</li>
+
+<li>After the <varname>cf-mgmt</varname> tool creates the cluster, it displays the ALS Console URL. This URL will have the form <varname>http://api.&lt;ipaddress&gt;.xip.io</varname>  For example: <varname>htttp://api.255.255.255.255.xip.io</varname> </li>
+<!--A BR tag was used here in the original source.-->
+<li>Enter the Console URL in your web browser to navigate to the Management Console.<!--A BR tag was used here in the original source.-->Note: You may be "warned" that the Console has a self-signed certificate or that the site is "not trusted". These "warnings" can be safely ignored. </li>
+<!--A BR tag was used here in the original source.-->
 <li>Log in to the Console using the email and password you specified when you created the cluster.</li>
 </ol>
 <p>Congratulations! You are now ready to begin deploying apps to your new micro-cloud environment.</p>
 
-<p><form action="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/5" method="get">
-    <input type="submit" value="Continue to the Next Step" 
-         name="Submit" id="frm1_submit" />
-</form></p>
-</td>
-</tr>
+<p/>
+<required-cleanup remap="form">
+<ph>
+    </ph>
+</required-cleanup>
+</entry>
+</row>
+</tbody>
+</tgroup>
 </table>
+</body>
+</topic>

@@ -1,91 +1,138 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Reference Deployment Scenarios Guide"
-permalink: /helion/openstack/carrier/deploy/
-product: carrier-grade
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: All
-
-authors: Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1856">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Reference Deployment Scenarios Guide</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="All"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/DeploymentScenarios/carrier-grade-deployment.md-->
+ <!--permalink: /helion/openstack/carrier/deploy/--></p>
+<p>You can use the deployment scenarios to familiarize yourself with HP Helion OpenStack(R) Carrier Grade and evaluate its performance.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>Two deployment scenarios are described:</p>
+<ul>
+<li>
+<b>Bridging Scenario</b> -This scenario uses two virtual L2 switches</li>
+<li>
+<b>Routing Scenario</b> - This scenario uses two virtual L3 switches. </li>
+</ul>
+<p>In each scenario, two VM instances are launched, and a test path is established between them for performance evaluations.</p>
+<p>
+  <b>Chapter 1: Overview</b>
+</p>
+<p>
+  <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-overview.dita" >Reference Deployment Scenarios Overview</xref>
+</p>
+<ul>
+<li>
+<p>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-overview.dita" >Bridging Scenario Overview</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-routing-overview.dita" >Routing Scenario Overview</xref>
+</p>
+</li>
+</ul>
+<p>
+  <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-requirements.dita" >Requirements for the Deployment Scenarios</xref>
+</p>
+<p>
+  <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-networks.dita" >Networks Used in the Deployment Scenarios</xref>
+</p>
+<p>
+  <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-interface.dita" >VM Network Interface Options</xref>
+</p>
+<p>
+  <b>Chapter 2: Setting Up the Scenario Environments</b>
+</p>
+<p>
+  <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting.dita" >Setting Up the Scenario Environment</xref>
+</p>
+<ul>
+<li>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-components.dita" >Components of the Scenario Environment</xref>
+</li>
+<li>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-admin.dita" >Administrative Tasks</xref>
+</li>
+<li>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-user.dita" >User Tasks</xref>
+</li>
+</ul>
+<p>
+  <b>Chapter 3: Deploying the Scenarios</b>
+</p>
+<p>
+  <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-deploy.dita" >Deploying the Bridging Scenario</xref>
+</p>
+<p>
+  <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-routing-deploy.dita" >Deploying the Routing Scenario</xref>
+</p>
+<p>
+  <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-running-traffic.dita" >Running Traffic Through the Test Paths</xref>
+</p>
+<p>
+  <b>Chapter 4: Deployment Scenarios using the CLI</b>
+</p>
+<ul>
+<li>
+<p>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli.dita" >Deployment Scenarios using the CLI</xref>
+</p>
 
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Reference Deployment Scenarios Guide
-
-You can use the deployment scenarios to familiarize yourself with HP Helion OpenStack Carrier Grade and evaluate its performance.
-
-<hr>
-**Note:** This feature applies only to servers in the VNF Region.
-<hr>
-
-Two deployment scenarios are described: 
-
-* **Bridging Scenario** -This scenario uses two virtual L2 switches
-* **Routing Scenario** - This scenario uses two virtual L3 switches. 
- 
-In each scenario, two VM instances are launched, and a test path is established between them for performance evaluations.
-
-
-**Chapter 1: Overview**
-
-[Reference Deployment Scenarios Overview](/helion/openstack/carrier/deploy/)
-
-* [Bridging Scenario Overview](/helion/openstack/carrier/deploy/bridging/overview/)
-
-* [Routing Scenario Overview](/helion/openstack/carrier/deploy/routing/overview/)
-
-[Requirements for the Deployment Scenarios](/helion/openstack/carrier/deploy/requirements/)
-
-[Networks Used in the Deployment Scenarios](/helion/openstack/carrier/deploy/networks/)
-
-[VM Network Interface Options](/helion/openstack/carrier/deploy/interface/)
-
-**Chapter 2: Setting Up the Scenario Environments**
-
-[Setting Up the Scenario Environment](/helion/openstack/carrier/deploy/setting/)
-
-* [Components of the Scenario Environment](/helion/openstack/carrier/deploy/setting/components/)
-* [Administrative Tasks](/helion/openstack/carrier/deploy/setting/admin/)
-* [User Tasks](/helion/openstack/carrier/deploy/setting/user/)
-
-**Chapter 3: Deploying the Scenarios** 
-
-[Deploying the Bridging Scenario](/helion/openstack/carrier/deploy/bridging/deploy/)
-
-[Deploying the Routing Scenario](/helion/openstack/carrier/deploy/routing/deploy/)
-
-[Running Traffic Through the Test Paths](/helion/openstack/carrier/deploy/running-traffic/)
-
-**Chapter 4: Deployment Scenarios using the CLI**
-
-* [Deployment Scenarios using the CLI](/helion/openstack/carrier/deploy/cli/)
-
-	* [Creating Tenants and Updating Quotas](/helion/openstack/carrier/deploy/cli/tenants/)
-	* [Creating Users](/helion/openstack/carrier/deploy/cli/users/)
-	* [Establishing Provider Networks](/helion/openstack/carrier/deploy/cli/provider/)
-	* [Creating Segmentation Ranges](/helion/openstack/carrier/deploy/cli/segment/)
-	* [Setting Up Tenant Networks](/helion/openstack/carrier/deploy/cli/tenant/)
-	* [Setting Up the Example Guest Image](/helion/openstack/carrier/deploy/cli/guest/)
-	* [Setting Up User Data](/helion/openstack/carrier/deploy/cli/data/)
-	* [Setting Up Flavors](/helion/openstack/carrier/deploy/cli/flavors/)
-	* [Creating Login Environment Files](/helion/openstack/carrier/deploy/cli/environ/)
-	* [Launching Instances Using the CLI](/helion/openstack/carrier/deploy/cli/launch/)
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
- 
-----
+<ul>
+<li>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-tenants.dita" >Creating Tenants and Updating Quotas</xref>
+</li>
+<li>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-users.dita" >Creating Users</xref>
+</li>
+<li>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-provider.dita" >Establishing Provider Networks</xref>
+</li>
+<li>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-segment.dita" >Creating Segmentation Ranges</xref>
+</li>
+<li>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-tenant.dita" >Setting Up Tenant Networks</xref>
+</li>
+<li>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-guest.dita" >Setting Up the Example Guest Image</xref>
+</li>
+<li>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-data.dita" >Setting Up User Data</xref>
+</li>
+<li>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-flavor.dita" >Setting Up Flavors</xref>
+</li>
+<li>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-environ.dita" >Creating Login Environment Files</xref>
+</li>
+<li>
+<xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-launch.dita" >Launching Instances Using the CLI</xref>
+</li>
+</ul>
+</li>
+</ul>
+<p>
+  <xref type="section" href="#topic1856/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

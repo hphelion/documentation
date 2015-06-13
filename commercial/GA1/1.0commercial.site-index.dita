@@ -1,219 +1,435 @@
----
-layout: 1.0default
-title: "HP Helion OpenStack&#174; 1.0: Site Index"
-permalink: /helion/openstack/siteindex/
-product: commercial.ga1.0
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5163">
+<title>HP Helion OpenStack(R) 1.0: Site Index</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
+ <!--./commercial/GA1/1.0commercial.site-index.md-->
+ <!--permalink: /helion/openstack/siteindex/--></p>
+<p>
+  <xref href="../../commercial/GA1/1.1.1commercial.site-index.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+</p>
+<p>The documentation for HP Helion OpenStack(R) includes the following:</p>
+<ul>
+<li>
+<xref type="section" href="#topic5163/release">Release Notes</xref>
+</li>
+<li>
+<xref type="section" href="#topic5163/getstart">Getting started with HP Helion OpenStack(R)</xref>
+</li>
+<li>
+<xref type="section" href="#topic5163/related">Related documentation</xref>
+</li>
+<li>
+<xref type="section" href="#topic5163/install">Installing HP Helion OpenStack(R)</xref>
+</li>
+<li>
+<xref type="section" href="#topic5163/update">Updating HP Helion OpenStack(R)</xref>
+</li>
+<li>
+<xref type="section" href="#topic5163/underdash">Undercloud Horizon Dashboard</xref>
+</li>
+<li>
+<xref type="section" href="#topic5163/dash">Horizon Dashboard</xref>
+</li>
+<li>
+<xref type="section" href="#topic5163/services">HP Helion OpenStack(R) Services</xref>
+</li>
+<li>
+<xref type="section" href="#topic5163/swift">Swift Deployment</xref>
+</li>
+<li>
+<xref type="section" href="#topic5163/license">License files</xref>
+</li>
+<li>
+<xref type="section" href="#topic5163/related">Related documentation</xref>
+</li>
+</ul>
+<section id="release"> <title>Release Notes</title>
+<p>
+  <xref href="../../commercial/GA1/1.0commercial.release-notes.dita" >Release Notes</xref>
+</p>
+</section>
+<section id="getstart"> <title>Getting started with HP Helion OpenStack(R)</title>
+<p>The following topics as needed contain information about HP Helion OpenStack(R)</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.faq.dita" >FAQs</xref>  </li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita" >Technical overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.troubleshooting.dita" >Troubleshooting</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.glossary.dita" >Glossary</xref>
+</li>
+</ul>
+</section>
+<section id="install"> <title>Installing HP Helion OpenStack(R)</title>
+<p>Review the following topics before you start the installation:</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-overview.dita" >Overview</xref> </li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-supportmatrix.dita" >Support matrix</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita" >Technical Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >Prerequisites</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-JSON.dita" >Editing the JSON Environment Variables File for Installation</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-NTP.dita" >Installing an NTP Server</xref>
+</li>
+</ul>
+</section>
+<section id="installing-with-kvm-hypervisor-support"> <title>Installing with KVM Hypervisor Support</title>
+<p>Review the following topics related to installing on KVM:</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-kvm.dita" >Installation and Configuration for KVM Hypervisor</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-vsa.dita" >Configuring HP StoreVirtual VSA for Block Storage</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-3par.dita" >HP StoreServ (3PAR) Support</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-LDAP.dita" >Integrating LDAP</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-add-nodes.dita" >Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</xref>
+</li>
+</ul>
+</section>
+<section id="installing-with-esx-hypervisor-support"> <title>Installing with ESX Hypervisor Support</title>
+<p>Review the following topics related to installing on ESX:</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-esx.dita" >Installation and Configuration for ESX Hypervisor</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-ESX-Proxy.dita" >Deploy vCenter ESX compute proxy</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-ovsvapp.dita" >Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts</xref>
+</li>
+</ul>
+</section>
+<section id="post-installation-steps"> <title>Post-Installation Steps</title>
+<p>Review the following topics related to optional and required post-installation steps:</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-LDAP.dita" >Integrating LDAP</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" >DNSaaS Installation and Configuration</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-security.dita" >Configuring Your Network Securely</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.backup-restore-GA.dita" >Back Up and Restore</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.high-availability.dita" >High Availability (HA)</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.networking-maskedIP.dita" >Tracking masked IP addresses when using network address translation</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-security.dita" >Configuring your network securely</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-remove-replace-failed-overcloud-nodes.dita" >Removing and Replacing a Failed Overcloud Controller</xref>
+</li>
+</ul>
+</section>
+<section id="update"> <title>Updating HP Helion OpenStack(R)</title>
+<p>Review the following topics before you start an update:</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.update-101-overview.dita" >Update Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.update-101-obtaining.dita" >Obtaining the Patch Update</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita" >Update Prerequisites</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.update-101-monitor.dita" >Monitoring the Update</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.update-101-seed.dita" >Updating the Seed Cloud Host</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.update-101-undercloud.dita" >Updating the Undercloud</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.update-101-overcloud.dita" >Updating the Overcloud</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.update-101-devplat.stopstart.dita" >Starting and Stopping the Development-Platform Services for the Upgrade</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.update-101-devplat.dita" >Development Platform Commercial 1.01 Update</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.update-101-troubleshooting.dita" >Update Troubleshooting</xref>
+</li>
+</ul>
+</section>
+<section id="underdash"> <title>Undercloud Horizon Dashboard</title>
+<p>Review the following topics related to the undercloud Horizon dashboard:</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-horizon-overview.dita" >Undercloud Horizon Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-admin-settings.dita" >Undercloud Horizon Dashboard: Settings Tab</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config.dita" >Manage Overcloud Configuration</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-resource-esx.dita" >Compute Service</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-resources-overview.dita" >Manage Resources</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-admin-updates-and-extensions.dita" >Updates and Extensions</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-resource-esx-manage-vm.dita" >Working with Virtual Environment(s)</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-resources-storage.dita" >Working with Storage</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-storage-storevirtual.dita" >Working with HP StoreVirtual VSA</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-esx.dita" >Working with ESX Clusters</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-storeserv.dita" >Working with StoreServ Backends</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-storage-storeserv.dita" >Working with HP 3PAR StoreServ</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-storevirtual.dita" >Working With StoreVirtual Backends</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-eon-cli.dita" >Command Line Interface- EON</xref>
+</li>
+</ul>
+</section>
+<section id="dash"> <title>Horizon Dashboard</title>
+<p>Review the following topics related to the Horizon dashboard:</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >How to use the Helion Dashboards</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.dashboard.launch.dita" >Logging into the Helion Dashboards</xref>
+</li>
+</ul>
+</section>
+<section id="services"> <title>HP Helion OpenStack(R) Services</title>
+<p>Review the following topics related to the HP Horizon OpenStack(R) services:</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-overview.dita" >Services Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-compute-overview.dita" >Compute Services Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-dns-overview.dita" >DNS Service Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-dvr-overview.dita" >DVR Service Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-eon-overview.dita" >EON Service Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-horizon-overview.dita" >Horizon Service Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-identity-overview.dita" >Identity Operations Service Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-imaging-overview.dita" >Image Operations Service Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-ironic-overview.dita" >Ironic Service Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-networking-overview.dita" >Networking Operations Service Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-object-overview.dita" >Object Operations Service Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-orchestration-overview.dita" >Orchestration Service Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-sherpa-overview.dita" >Sherpa Service Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-sirius-overview.dita" >Sirius Service Overview</xref>
 
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | NEXT &#9654; </p> -->
-
-# HP Helion OpenStack&#174; 1.0: Site Index
-[See the Helion OpenStack 1.1 version of this page](/helion/openstack/1.1/siteindex/)
-
-The documentation for HP Helion OpenStack includes the following:
-
-* [Release Notes](#release)
-* [Getting started with HP Helion OpenStack](#getstart)
-* [Related documentation](#related)
-* [Installing HP Helion OpenStack](#install)
-* [Updating HP Helion OpenStack](#update)
-* [Undercloud Horizon Dashboard](#underdash)
-* [Horizon Dashboard](#dash)
-* [HP Helion OpenStack Services](#services)
-* [Swift Deployment](#swift)
-* [License files](#license)
-* [Related documentation](#related)
-
-## Release Notes {#release}
-
-[Release Notes](/helion/openstack/release-notes/101/) 
-
-## Getting started with HP Helion OpenStack {#getstart}
-
-The following topics as needed contain information about HP Helion OpenStack:
-
-- [FAQs](/helion/openstack/faq/)  
-- [Technical overview](/helion/openstack/technical-overview/)
-- [Troubleshooting](/helion/openstack/services/troubleshooting/)
-- [Glossary](/helion/openstack/glossary/)
-
-
-## Installing HP Helion OpenStack {#install}
-
-Review the following topics before you start the installation:
-
-- [Overview](/helion/openstack/install/overview/) 
-- [Support matrix](/helion/openstack/support-matrix/)
-- [Technical Overview](/helion/openstack/technical-overview/)
-- [Prerequisites](/helion/openstack/install/prereqs/)
-- [Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/)
-- [Installing an NTP Server](/helion/openstack/install/ntp/)
-
-
-### Installing with KVM Hypervisor Support
-
-Review the following topics related to installing on KVM:
-
-- [Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/)
-- [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/install/vsa/)
-- [HP StoreServ (3PAR) Support](/helion/openstack/install/3par/)
-- [Integrating LDAP](/helion/openstack/install/ldap/)
-- [Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors](/helion/openstack/install/add/nodes/)
-
-### Installing with ESX Hypervisor Support
-
-Review the following topics related to installing on ESX:
-
-- [Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/)
-- [Deploy vCenter ESX compute proxy](/helion/openstack/install/esx/proxy/)
-- [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/)
-
-
-### Post-Installation Steps
-
-Review the following topics related to optional and required post-installation steps:
-
-- [Integrating LDAP](/helion/openstack/install/ldap/)
-- [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/)
-- [Configuring Your Network Securely](/helion/openstack/install/security/)
-- [Back Up and Restore](/helion/openstack/backup.restore/)
-- [High Availability (HA)](/helion/openstack/high-availability/)
-- [Tracking masked IP addresses when using network address translation](/helion/openstack/maskedIP/)
-- [Configuring your network securely](/helion/openstack/install/security/)
-- [Removing and Replacing a Failed Overcloud Controller]( /helion/openstack/removing/failedovercloud/)
-
-## Updating HP Helion OpenStack ## {#update}
-
-Review the following topics before you start an update:
-
-* [Update Overview](/helion/openstack/update/overview/101/)
-* [Obtaining the Patch Update](/helion/openstack/update/download/101/)
-* [Update Prerequisites](/helion/openstack/update/prereqs/101/)
-* [Monitoring the Update](/helion/openstack/update/monitor/101/)
-* [Updating the Seed Cloud Host](/helion/openstack/update/seed/101/)
-* [Updating the Undercloud](/helion/openstack/update/undercloud/101/)
-* [Updating the Overcloud](/helion/openstack/update/overcloud/101/)
-* [Starting and Stopping the Development-Platform Services for the Upgrade](/helion/openstack/update/devplatstop/101/)
-* [Development Platform Commercial 1.01 Update](/helion/openstack/update/devplat/101/)
-* [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/)
-
-
-## Undercloud Horizon Dashboard {#underdash}
-
-Review the following topics related to the undercloud Horizon dashboard:
-
-- [Undercloud Horizon Overview](/helion/openstack/undercloud/horizon/overview/)
-- [Undercloud Horizon Dashboard: Settings Tab](/helion/openstack/undercloud/admin/settings/)
-- [Manage Overcloud Configuration](/helion/openstack/undercloud/oc/config/)
-- [Compute Service](/helion/openstack/undercloud/resource/esx/compute/)
-- [Manage Resources](/helion/openstack/undercloud/manage/resources/overview/)
-- [Updates and Extensions](/helion/openstack/undercloud/admin/updates-and-extension/)
-- [Working with Virtual Environment(s)](/helion/openstack/undercloud/resource/esx/)
-- [Working with Storage](/helion/openstack/undercloud/manage/resources/storage/)
-- [Working with HP StoreVirtual VSA](/helion/openstack/undercloud/storage/storevirtual/)
-- [Working with ESX Clusters](/helion/openstack/undercloud/oc/config/esx/)
-- [Working with StoreServ Backends](/helion/openstack/undercloud/oc/config/storeserv/)
-- [Working with HP 3PAR StoreServ](/helion/openstack/undercloud/storage/storeserv/)
-- [Working With StoreVirtual Backends](/helion/openstack/undercloud/oc/config/storevirtual/)
-- [Command Line Interface- EON](/helion/openstack/undercloud/eon/cli/)
-
-## Horizon Dashboard {#dash}
-
-Review the following topics related to the Horizon dashboard:
-
-- [How to use the Helion Dashboards](/helion/openstack/dashboard/how-works/)
-- [Logging into the Helion Dashboards](/helion/openstack/dashboard/login/)
-
-
-## HP Helion OpenStack Services ## {#services}
-
-Review the following topics related to the HP Horizon OpenStack services:
-
-
-- [Services Overview](/helion/openstack/services/overview/)
-- [Compute Services Overview](/helion/openstack/services/compute/overview/)
-- [DNS Service Overview](/helion/openstack/services/dns/overview/)
-- [DVR Service Overview](/helion/openstack/services/dvr/overview/)
-- [EON Service Overview](/helion/openstack/services/eon/overview/)
-- [Horizon Service Overview](/helion/openstack/services/horizon/overview/)
-- [Identity Operations Service Overview](/helion/openstack/services/identity/overview/)
-- [Image Operations Service Overview](/helion/openstack/services/imaging/overview/)
-- [Ironic Service Overview](/helion/openstack/services/ironic/overview/)
-- [Networking Operations Service Overview](/helion/openstack/services/networking/overview/)
-- [Object Operations Service Overview](/helion/openstack/services/object/overview/)
-- [Orchestration Service Overview](/helion/openstack/services/orchestration/overview/)
-- [Sherpa Service Overview](/helion/openstack/services/sherpa/overview/)
-- [Sirius Service Overview](/helion/openstack/services/sirius/overview/)
-	- [Sirius CLI Workflow](/helion/openstack/sirius/cli/workflow/)
-	- [Configuring Your Storage Using Sirius](/helion/openstack/sirius-cli/)
-- [Tripleo Service Overview](/helion/openstack/services/tripleo/overview/)
-- [Volume Operations Service Overview](/helion/openstack/services/volume/overview/)
-
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.sirius-cli-workflow.dita" >Sirius CLI Workflow</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.sirius-cli.dita" >Configuring Your Storage Using Sirius</xref>
+</li>
+</ul>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-tripleo-overview.dita" >Tripleo Service Overview</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-volume-overview.dita" >Volume Operations Service Overview</xref>
+</li>
+</ul>
 <!-- Not in 1.01
 - [Eve Service Overview](/helion/openstack/services/eve/overview/)
 - [Focus Service Overview](/helion/openstack/services/focus/overview/)
 - [Reporting Service Overview](/helion/openstack/services/reporting/overview/) -->
+</section>
+<section id="swift"> <title>Swift Deployment</title>
+<p>Review the following topics related to Swift deployment:</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-object-overview.dita" >Swift overview</xref>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.0commerical.services-scale-out-swift.dita" >Scaling up or Expanding the Swift Deployment overview</xref>
+</p>
 
+<ul>
+<li>Scale up or expand 
 
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment.dita" >Deploy New Swift Object Storage</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-provision-swift-node.dita" >Add New Storage Servers</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-expand-swift-cluster.dita" >Extend a Swift Cluster</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-add-disk-storage-node.dita" >Add a New Scale-out Object Node</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-add-proxy-node.dita" >Add a New Scale-out Proxy Node</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita" >Add a Disk to a Scale-out Object Ring</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-add-disk-account-container.dita" >Add a Disk to an Account and Container Ring</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-add-disk-starter-object-ring.dita" >Add a Disk to the Starter Object Ring</xref>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Shrink or scale down</p>
 
-## Swift Deployment ## {#swift}
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-shrink-swift-cluster.dita" >Shrink Swift Cluster</xref> 
 
-Review the following topics related to Swift deployment:
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita" >Remove a disk from an Object Node</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-proxy-node.dita" >Remove a Proxy Node</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita" >Removing a scale-out Object Storage Node</xref>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Monitor</p>
 
-- [Swift overview](/helion/openstack/services/object/overview/)
-- [Scaling up or Expanding the Swift Deployment overview](/helion/openstack/services/object/overview/scale-out-swift/)
-
-	- Scale up or expand 
-		- [Deploy New Swift Object Storage](/helion/openstack/services/swift/deployment-scale-out/)
-		- [Add New Storage Servers](/helion/openstack/services/swift/provision-nodes/)
-		- [Extend a Swift Cluster](/helion/openstack/services/object/swift/expand-cluster/)
-		- [Add a New Scale-out Object Node](/helion/openstack/services/swift/deployment/add-disk-object-node/)
-		- [Add a New Scale-out Proxy Node](/helion/openstack/services/swift/deployment/add-proxy-node/)
-		- [Add a Disk to a Scale-out Object Ring](/helion/openstack/services/swift/deployment/add-disk-scale-out/)
-		- [Add a Disk to an Account and Container Ring](/helion/openstack/services/swift/deployment/add-disk-account-container/)
-		- [Add a Disk to the Starter Object Ring](/helion/openstack/services/swift/deployment/add-disk-starter/)
-
-- Shrink or scale down
-
-	- [Shrink Swift Cluster](/helion/openstack/services/object/swift/shrink-cluster/) 
-		- [Remove a disk from an Object Node](/helion/openstack/services/swift/deployment/remove-existing-disk/)
-		- [Remove a Proxy Node](/helion/openstack/services/swift/deployment/remove-proxy-node/)
-		- [Removing a scale-out Object Storage Node](/helion/openstack/services/swift/deployment/remove-scale-out-object-node/)
-	
-- Monitor
-	- [Monitor Swift Cluster](/helion/openstack/services/object/swift/Monitor-cluster/)
-	- [Disk usage](/helion/openstack/services/object/swift/Monitor-disk/)
-	- [Replication status](/helion/openstack/services/object/swift/replica-status/)
-	- [Service health](/helion/openstack/services/object/swift/health-check/)
-	- [Diagnosis of disk health using hpssacli utility for HP servers](/helion/openstack/services/swift/diagnosis-disk-health/hpssacli/)
-
-- [Ringo Tool Overview](/helion/openstack/GA1/services/object/pyringos/)
-
-## License files {#license}
-
-Review the following license files, as needed:
-
-- [Open Source and Third-Party Software License Agreements](/helion/openstack/3rd-party-license-agreements/)
-- [Preview Agreement](/helion/openstack/eula/)
- 
-## Related documentation {#related}
-
-This topic provides you links to OpenStack documentation that you might find helpful when working with HP Helion OpenStack.\:
-
-* [Related documentation](/helion/openstack/related-links/)
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
- 
-----
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.dita" >Monitor Swift Cluster</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-disk.dita" >Disk usage</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-monitor-replica-swift-status.dita" >Replication status</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-monitor-health-check.dita" >Service health</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita" >Diagnosis of disk health using hpssacli utility for HP servers</xref>
+</li>
+</ul>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.0commerical.services-object-pyringos.dita" >Ringo Tool Overview</xref>
+</p>
+</li>
+</ul>
+</section>
+<section id="license"> <title>License files</title>
+<p>Review the following license files, as needed:</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.03rd-party-license-agreements.dita" >Open Source and Third-Party Software License Agreements</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.eula.dita" >Preview Agreement</xref>
+</li>
+</ul>
+</section>
+<section id="related"> <title>Related documentation</title>
+<p>This topic provides you links to OpenStack(R) documentation that you might find helpful when working with HP Helion OpenStack(R)</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commercial.related-topics.dita" >Related documentation</xref>
+</li>
+</ul>
+<p>
+  <xref type="section" href="#topic5163/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

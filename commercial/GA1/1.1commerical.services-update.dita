@@ -1,40 +1,31 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Update"
-permalink: /helion/openstack/1.1/update/overview/11/
-product: commercial.ga
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: Systems Administrator 
-role2: Cloud Architect 
-role3: Storage Administrator 
-role4: Network Administrator 
-role5: Service Developer 
-role6: Cloud Administrator 
-role7: Application Developer 
-role8: Network Engineer 
-authors: Michael B
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic590">
+<title>HP Helion OpenStack(R) 1.1: Update</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Michael B"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/services/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a>"> NEXT &#9654</a> </p> -->
-
-# HP Helion OpenStack&#174; 1.1: Update#
-
-The HP OpenStack Helion update utility supports updating Helion 1.0 to Helion 1.01. You cannot update from Helion 1.0 or 1.01 to 1.1 at this time. For help with updating from your current release to a newer release, contact Customer Support. 
-
-
-
-----
-
+ <!--./commercial/GA1/1.1commerical.services-update.md-->
+ <!--permalink: /helion/openstack/1.1/update/overview/11/--></p>
+<p>The HP OpenStack(R) Helion update utility supports updating Helion 1.0 to Helion 1.01. You cannot update from Helion 1.0 or 1.01 to 1.1 at this time. For help with updating from your current release to a newer release, contact Customer Support.</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

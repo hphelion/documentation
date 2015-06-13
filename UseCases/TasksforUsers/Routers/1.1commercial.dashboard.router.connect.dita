@@ -1,53 +1,56 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Connecting a Network to a Router"
-permalink: /helion/commercial/1.1/dashboard/managing/router/connect/
-product: commercial.ga
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1321">
+<title>HP Helion OpenStack(R) 1.1: Connecting a Network to a Router</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/Routers/1.1commercial.dashboard.router.connect.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/router/connect/--></p>
+<p>A network connects to the router through an interface. You must create an interface between the network and router to remotely connect to the network and any instances on that network through the router.</p>
+<p>When you create a new router, the router is not associated to any subnet. You can optionally connect the router to an internal network.</p>
+<section id="connect-a-network-to-the-router"> <title>Connect a network to the router</title>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Routers</b> link on the <b>Project</b> dashboard <b>Network</b> panel.</p>
 
-<script>
+<p>The routers for the selected project appear.</p>
+</li>
+<li>
+<p>Click the name of the router you want to connect to the network.</p>
+</li>
+<li>
+<p>On the <b>Router Details</b> tab, click <b>Add interface</b>.</p>
+</li>
+<li>
+<p>On the <b>Add Interface</b> screen:</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<ul>
+<li>Select a subnet associated with the network you 
+want to connect with from the <b>Select</b> list.</li>
+<li>Optionally, specify an IP address for the interface that is in the IP range.</li>
+</ul>
+</li>
+<li>
+<p>Click <b>Add Interface</b>
+</p>
 
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; 1.1: Connecting a Network to a Router
-
-A network connects to the router through an interface. You must create an interface between the network and router to remotely connect to the network and any instances on that network through the router.
-
-When you create a new router, the router is not associated to any subnet. You can optionally connect the router to an internal network. 
-
-### Connect a network to the router ###
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2. Click the **Routers** link on the **Project** dashboard **Network** panel.
-
-	The routers for the selected project appear. 
-
-3. Click the name of the router you want to connect to the network.
-
-4. On the **Router Details** tab, click **Add interface**.
-
-5. On the **Add Interface** screen:
-
-	* Select a subnet associated with the network you 
-want to connect with from the **Select** list.
-	* Optionally, specify an IP address for the interface that is in the IP range.
-
-6. Click **Add Interface** 
-
-	The network is connected to the router.
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----
+<p>The network is connected to the router.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1321/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

@@ -1,38 +1,62 @@
----
-layout: default-devplatform
-title: "HP Helion 1.2 Development Platform: Resources for IT Ops "
-permalink: /helion/devplatform/1.2/sysadmin/
-product: devplatform2.0
-product-version1: HP Helion Development Platform
-product-version2: HP Helion Development Platform 1.2
-role1: Systems Administrator 
-role2: System Engineer
-role3: Cloud Administrator
-role4: Network Administrator
-role5: Application Developer
-Role6: Security Engineer
-role7: ISV Developer
-role8: Service Developer
-authors: Jayme P
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic853">
+<title>HP Helion 1.2 Development Platform: Resources for IT Ops</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-# HP Helion 1.2 Development Platform: Resources for IT Ops {#sysadmin}
-
-
-##Installation
-
-* [HP Helion OpenStack&#174; Installation](/helion/openstack/)
-* [Development Platform Installation and Configuration](/helion/devplatform/1.2/install/)
-* [Application Lifecycle Service (ALS) Information](/helion/devplatform/1.2/als/)
-* [Application Lifecycle Service Client Installation](/helion/devplatform/1.2/als/user/client/)
-* [Installing the Marketplace](/helion/devplatform/1.2/marketplace/)
-
-##Administration
-Access control is role-based, with each role granting permissions in either an organization or an application space. To create users and manage user roles, use the ALS  [Command Line Interface (CLI)](/helion/devplatform/1.2/als/user/reference/client-ref/). For more information, see [Organizations](/helion/devplatform/1.2/als/user/reference/client-ref/#organizations).
-
-- [Application Lifecycle Service (ALS) Administrators Guide](/helion/devplatform/1.2/als/admin/)
-- [Management Console](/helion/devplatform/1.2/als/user/console/)
-- [Logs, Streams, and Drains](/helion/devplatform/1.2/als/user/deploy/app-logs/)
-
-----
+ <!--./devplatform/1.2/1.2devplatform.sysadmin.md-->
+ <!--permalink: /helion/devplatform/1.2/sysadmin/--></p>
+<section id="installation"> <title>Installation</title>
+<ul>
+<li>
+<xref href="/helion/openstack/" >HP Helion OpenStack(R) Installation</xref>
+</li>
+<li>
+<xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >Development Platform Installation and Configuration</xref>
+</li>
+<li>
+<xref href="../../devplatform/1.2/helion/1.2index.dita" >Application Lifecycle Service (ALS) Information</xref>
+</li>
+<li>
+<xref href="../../devplatform/1.2/helion/user/client/1.2index.dita" >Application Lifecycle Service Client Installation</xref>
+</li>
+<li>
+<xref href="../../devplatform/1.2/1.2devplatform.marketplace.install.dita" >Installing the Marketplace</xref>
+</li>
+</ul>
+</section>
+<section id="administration"> <title>Administration</title>
+<p>Access control is role-based, with each role granting permissions in either an organization or an application space. To create users and manage user roles, use the ALS  <xref href="../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >Command Line Interface (CLI)</xref>. For more information, see <xref href="./devplatform/1.2/helion/user/reference/1.2client-ref.dita#organizations" >Organizations</xref>.</p>
+<ul>
+<li>
+<xref href="../../devplatform/1.2/helion/admin/1.2index.dita" >Application Lifecycle Service (ALS) Administrators Guide</xref>
+</li>
+<li>
+<xref href="../../devplatform/1.2/helion/user/console/1.2index.dita" >Management Console</xref>
+</li>
+<li>
+<xref href="../../devplatform/1.2/helion/user/deploy/1.2app-logs.dita" >Logs, Streams, and Drains</xref>
+</li>
+</ul>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

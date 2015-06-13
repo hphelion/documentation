@@ -1,55 +1,56 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Disabling and Enabling Users"
-permalink: /helion/commercial/1.1/dashboard/managing/users/enable/
-product: commercial.ga
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1170">
+<title>HP Helion OpenStack(R) 1.1: Disabling and Enabling Users</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./UseCases/TasksforAdmins/Users/1.1commercial.dashboard.users.enable.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/users/enable/--></p>
+<p>Users can be disabled in the domain. After you disable a user, the user account remains in the domain, but cannot be used to log in.</p>
+<p>As an admin, you can <xref type="section" href="#topic1170/disableuser">disable</xref> and <xref type="section" href="#topic1170/enableuser">enable</xref> users, as needed.</p>
+<section id="disableuser"> <title>Disable a user</title>
+<p>To disable a user:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the Users link on the Admin dashboard Identity panel.</p>
+</li>
+<li>
+<p>In the Users screen, for the user you want to disable, click More &gt; Disable User.</p>
 
-<script>
+<p>The user is disabled and cannot be used to log in.</p>
+</li>
+</ol>
+</section>
+<section id="enableuser"> <title>Enable a user</title>
+<p>To enable a user:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the Users link on the Admin dashboard Identity panel.</p>
+</li>
+<li>
+<p>In the Users screen, for the user you want to enable, click More &gt; Enable User.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; 1.1: Disabling and Enabling Users
-
-Users can be disabled in the domain. After you disable a user, the user account remains in the domain, but cannot be used to log in. 
-
-As an admin, you can [disable](#disableuser) and [enable](#enableuser) users, as needed.
-
-### Disable a user ### {#disableuser}
-
-To disable a user:
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2. Click the Users link on the Admin dashboard Identity panel.
-
-3. In the Users screen, for the user you want to disable, click More &gt; Disable User.
-
-	The user is disabled and cannot be used to log in.
-
-### Enable a user ### {#enableuser}
-
-To enable a user:
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2. Click the Users link on the Admin dashboard Identity panel.
-
-3. In the Users screen, for the user you want to enable, click More &gt; Enable User.
-
-	The user is enabled and can be used to log in.
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----
+<p>The user is enabled and can be used to log in.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1170/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

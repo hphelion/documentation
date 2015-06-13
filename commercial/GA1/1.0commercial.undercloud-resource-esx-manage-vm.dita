@@ -1,273 +1,380 @@
----
-layout: 1.0default
-title: "HP Helion OpenStack&#174; 1.0: Working with Virtual Environment(s)"
-permalink: /helion/openstack/undercloud/resource/esx/
-product: commercial.ga1.0
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10334">
+<title>HP Helion OpenStack(R) 1.0: Working with Virtual Environment(s)</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>-->
-
-
-
-# HP Helion OpenStack&#174; 1.0: Working with Virtual Environment(s)
-[See the Helion OpenStack 1.1 version of this page](/helion/openstack/1.1/undercloud/resource/esx/)
-
-
-The Virtual Environment (ESX) option allows you to configure, manage and control multiple virtual instances. You can configure your ESX hypervisor by either using the Horizon dashboard in the undercloud or [EON]( /helion/openstack/undercloud/eon/cli/) client. This page describes the different tasks that you can perform using the ESX option in the undercloud.
+ <!--./commercial/GA1/1.0commercial.undercloud-resource-esx-manage-vm.md-->
+ <!--permalink: /helion/openstack/undercloud/resource/esx/--></p>
+<p>
+  <xref href="../../commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+</p>
+<p>The Virtual Environment (ESX) option allows you to configure, manage and control multiple virtual instances. You can configure your ESX hypervisor by either using the Horizon dashboard in the undercloud or <xref href="../../commercial/GA1/1.0commercial.undercloud-eon-cli.dita" >EON</xref> client. This page describes the different tasks that you can perform using the ESX option in the undercloud.
 <!--
-Virtual Environment is a system which implements, manages, and controls multiple virtual instances. HP Helion OpenStack&#174; supports two types of clouds:KVM and VMWare ESX. 
+Virtual Environment is a system which implements, manages, and controls multiple virtual instances. HP Helion OpenStack(R) supports two types of clouds:KVM and VMWare ESX. 
 
-When using the ESX hypervisor, the only supported hypervisor is VMware Vsphere. With the ESX integration, you can provision and manage an overcloud ESX cluster. -->
+When using the ESX hypervisor, the only supported hypervisor is VMware Vsphere. With the ESX integration, you can provision and manage an overcloud ESX cluster. --></p>
+<section id="manage-virtual-environment"> <title>Manage virtual environment</title>
+<p>The virtual environment allows you to register and unregister vCenter and import clusters in the ESX vCenter environments. It also allows you to secure your vCenter by providing the SSL certificate while registering your vCenter.</p>
+<ul>
+<li>
+<xref type="section" href="#topic10334/register-vcenter">Register a vCenter</xref>
+</li>
+<li>
+<xref type="section" href="#topic10334/view-registered-vCenter">View Registered ESX vCenters</xref>
+</li>
+<li>
+<xref type="section" href="#topic10334/edit-vCenter">Edit a vCenter</xref>
+</li>
+<li>
+<xref type="section" href="#topic10334/unregister-vCenter">Unregistering vCenters</xref>
 
-###Manage virtual environment
+<ul>
+<li>
+<xref type="section" href="#topic10334/unregister-a-vCenter">Unregister a Single vCenter</xref>
+</li>
+<li>
+<xref type="section" href="#topic10334/unregister-multiple-vCenter">Unregister Multiple vCenters</xref>
+</li>
+</ul>
+</li>
+<li>
+<xref type="section" href="#topic10334/import-cluster">Import a Cluster</xref>
+</li>
+<li>
+<xref type="section" href="#topic10334/view-cluster">View Cluster Details</xref>
+</li>
+<li>
+<p>
+<xref type="section" href="#topic10334/unimport-cluster">Unimporting Clusters</xref>
+</p>
 
-The virtual environment allows you to register and unregister vCenter and import clusters in the ESX vCenter environments. It also allows you to secure your vCenter by providing the SSL certificate while registering your vCenter.
+<ul>
+<li>
+<xref type="section" href="#topic10334/unimport-a-cluster">Unimport a Single Cluster</xref> </li>
+<li>
+<xref type="section" href="#topic10334/unimport-multiple-clusters">Unimport Multiple Clusters</xref>
+</li>
+</ul>
+</li>
+<li>
+<p>
+<xref type="section" href="#topic10334/next-steps">Next Steps</xref>
+</p>
+</li>
+</ul>
+</section>
+<section id="register-vcenter"> <title>Register vCenter<!--Removed anchor point register-vcenter--><!-- id="register-vcenter" --></title>
+<p>You can register vCenter using the Horizon dashboard in the undercloud.</p>
+<p>vCenter provides centralized management of virtual host and virtual machines from a single console. You can register only three vCenters in the compute service, although a single administrator can manage multiple workloads.</p>
+<p>To register vCenter, perform the following steps:</p>
+<ol>
+<li>
+<p>In the Horizon undercloud dashboard, click the <b>Resource</b> Tab.<!--A BR tag was used here in the original source.-->
+The tab displays with options in the left panel.</p>
+</li>
+<li>
+<p>Click <b>Compute</b> and then select <b>ESX</b> to open Manage Virtual Environments page.</p>
+</li>
+<li>
+<p>Click <b>Register vCenter</b> displayed at the top right corner of the page. Register vCenter dialog box is displayed with two different tabs: <b>vCenter Details</b> and <b>Proxy Details</b>. By default, vCenter Details is the active tab.</p>
+</li>
+<li>
+<p>In the vCenter Details tab, do the following</p>
+</li>
+</ol>
+<ul>
+<li>In the <b>vCenter Server Name</b> box, enter the name for the vCenter Server.</li>
+<li>In the <b>vCenter Server Address</b> box, enter the IP address of the vCenter Server.</li>
+<li>In the <b>vCenter Administrator</b> box, enter the vCenter administrator username. This is the vCenter credentails of the administrator.</li>
+<li>In the <b>vCenter Server Password</b> box, enter the password.</li>
+<li>In the <b>vCenter Server Port</b> box, enter the vCenter Server Port.</li>
+<li>
+<p>(Optional) In the <b>vCenter SSL CA-certificate</b> box, do not enter any value as we are not supporting it in this release.
+</p>
 
+<ol>
+<li>In the Proxy Details Tab, do the following:</li>
+</ol>
+</li>
+<li>
+<p>In the <b>vCenter Management Clusters</b> box, enter the name for the vCenter Management Cluster.</p>
+</li>
+<li>In the <b>Clusters Datacenter</b> box, enter the name of the vCenter Server.</li>
+<li>In the <b>Cluster's shared Datastore</b> box, enter the name of the shared datastore.</li>
+<li>In the <b>vCenter Port Group</b> box, enter the management port group.</li>
+<li>In the <b>Compute Proxy Hostname</b> box, enter the name of the host name of the compute proxy.</li>
+<li>DHCP is provided with two options: True and False.
 
-*  [Register a vCenter](#register-vcenter)
-* [View Registered ESX vCenters](#view-registered-vCenter)
-* [Edit a vCenter](#edit-vCenter)
-* [Unregistering vCenters](#unregister-vCenter)
-	* [Unregister a Single vCenter](#unregister-a-vCenter)
-	* [Unregister Multiple vCenters](#unregister-multiple-vCenter)
-* [Import a Cluster](#import-cluster)
-* [View Cluster Details](#view-cluster)
-* [Unimporting Clusters](#unimport-cluster)
- 	* [Unimport a Single Cluster](#unimport-a-cluster) 
-	* [Unimport Multiple Clusters](#unimport-multiple-clusters)
+<ul>
+<li>If you want the automatically configuration the compute proxy details of the vCenter, in the <b>DHCP enabled</b> drop-down list, select <b>True</b>. </li>
+<li>If you want to manually enter the compute proxy details of vCenter, in the <b>DHCP enabled</b> drop-down list, select <b>False</b> and enter the values for the following fields.
+    * In the <b>Compute Proxy IP</b> box, enter the compute proxy IP of the vCenter.
+    * In the <b>Compute Proxy Netmask</b> box, enter the compute proxy netmask.
+    * In the <b>Compute Proxy Gateway</b> box, enter the compute proxy gateway.</li>
+</ul>
+</li>
+<li>Click <b>Register</b>. A message is displayed on successful registration of vCenter. <!--A BR tag was used here in the original source.--> After successful registration the registered vCenter is displayed in the ESX vCenter table in Manage Virtual Environments page.</li>
+</ul>
+</section>
+<section id="view-registered-esx-vcenters"> <title>View Registered ESX vCenters<!--Removed anchor point view-registered-vCenter--><!-- id="view-registered-vCenter" --></title>
+<p>To view the list of registered ESX vCenter, do the following:</p>
+<ol>
+<li>
+<p>In the Horizon undercloud dashboard, click the <b>Resource</b> Tab.<!--A BR tag was used here in the original source.-->
+The tab displays with options in the left panel.</p>
+</li>
+<li>
+<p>Click the <b>Resource</b> Tab in the left panel.<!--A BR tag was used here in the original source.--> The tab displays an option in the left panel.</p>
+</li>
+<li>
+<p>Click <b>Compute</b> and then select <b>ESX</b> to open Manage Virtual Environments page. <!--A BR tag was used here in the original source.-->
+The following information is displayed:</p>
 
-* [Next Steps](#next-steps)
+<ul>
+<li>
+<b>Name</b>: name of the vCenter.</li>
+<li>
+<b>IP Address</b>: IP Address of the registered vCenter.
+<!--   * **Switch Definition Status**: (???).--></li>
+<li>
+<b>Actions</b>: tasks you can perform on the ESX vCenter. </li>
+</ul>
+</li>
+</ol>
+<p>All the registered vCenter will be listed in the Manage Virtual Environment page.</p>
+</section>
+<section id="edit-vcenter"> <title>Edit vCenter<!--Removed anchor point edit-vCenter--><!-- id="edit-vCenter" --></title>
+<p>When there is any change in the vCenter details you can use the edit option to capture the modification made in the vCenter details in the HP Helion Horizon undercloud  dashboard.</p>
+<p>To edit the vCenter, do the following:</p>
+<ol>
+<li>
+<p>In the Horizon undercloud dashboard, click the <b>Resource</b> Tab in the left panel.<!--A BR tag was used here in the original source.--> The tab displays an option in the left panel.</p>
+</li>
+<li>
+<p>Click <b>Compute</b> and then select <b>ESX</b> to open Manage Virtual Environments page.</p>
+</li>
+<li>
+<p>Click <b>Edit</b> against the name of the ESX vCenter to modify the vCenter details. Edit vCenter dialog box is displayed.</p>
+</li>
+<li>
+<p>Make the required the changes.</p>
+</li>
+<li>
+<p>Click <b>Done</b> to save the changes.</p>
+</li>
+</ol>
+</section>
+<section id="unregistering-vcenters"> <title>Unregistering vCenters<!--Removed anchor point unregister-vCenter--><!-- id="unregister-vCenter" --></title>
+<p>With a help of single command you can unregister a single or multiple vCenter(s).</p>
+<ul>
+<li>
+<p>
+<xref type="section" href="#topic10334/unregister-a-vCenter">Unregister a Single vCenter</xref>
+</p>
+</li>
+<li>
+<p>
+<xref type="section" href="#topic10334/unregister-multiple-vCenter">Unregister Multiple vCenters</xref>
+</p>
+</li>
+</ul>
+<p>
+  <b>Unregister a vCenter</b>
+  <!--Removed anchor point unregister-a-vCenter--><!-- id="unregister-a-vCenter" -->
+</p>
+<p>To unregister a single vCenter, do the following:</p>
+<ol>
+<li>
+<p>In the Horizon undercloud dashboard,  click the <b>Resource</b> Tab in the left panel.<!--A BR tag was used here in the original source.--> The tab displays an option in the left panel.</p>
+</li>
+<li>
+<p>Click <b>Compute</b> and then select <b>ESX</b> to open Manage Virtual Environments page.</p>
+</li>
+<li>
+<p>Click <b>More</b> drop-down list against the vCenter and select unregister vCenter. <b>Confirm Unregister vCenter</b> dialog box is displayed.</p>
+</li>
+<li>
+<p>Click <b>Unregister vCenter</b> to unregister the selected vCenter, else click <b>Cancel</b>.</p>
+</li>
+</ol>
+<p>
+  <b>Unregister Multiple vCenters</b>
+  <!--Removed anchor point unregister-multiple-vCenter--><!-- id="unregister-multiple-vCenter" -->
+</p>
+<p>To unregister multiple vCenters with a single command, do the following:</p>
+<ol>
+<li>
+<p>Click the <b>Resource</b> Tab in the left panel.<!--A BR tag was used here in the original source.--> The tab displays an option in the left panel.</p>
+</li>
+<li>
+<p>Click <b>Compute</b> and then select <b>ESX</b> to open Manage Virtual Environments page.</p>
+</li>
+<li>
+<p>Select <b>Name</b> check box against the name of the vCenter. Unregister vCenter is enabled.</p>
+</li>
+<li>
+<p>Click <b>Unregister vCenter</b> on the top right corner of the page. Confirm Unregister vCenter dialog box is displayed.</p>
+</li>
+<li>
+<p>Click <b>Unregister vCenter</b> to unregister a vCenter, else click <b>Cancel</b>.</p>
+</li>
+</ol>
+</section>
+<section id="import-cluster"> <title>Import Cluster<!--Removed anchor point import-cluster--><!-- id="import-cluster" --></title>
+<p>You can import a cluster from Manage Virtual Environments page or vCenter Details. The Manage Virtual Environments page displays the information related to the registered vCenter. The vCenter Details page displays details: the name of the cluster, the data center, CPU usage, memory usage, disk usage, and action.</p>
+<p>To import a cluster from Manage Virtual Environments page, do the following:</p>
+<ol>
+<li>
+<p>In the Horizon undercloud dashboard, click the <b>Resource</b> Tab in the left panel.<!--A BR tag was used here in the original source.--> The tab displays an option in the left panel.</p>
+</li>
+<li>
+<p>Click <b>Compute</b> and then select <b>ESX</b> to open Manage Virtual Environments page.</p>
+</li>
+<li>
+<p>Click <b>More</b> drop-down list against the vCenter and select <b>Import Clusters</b>. Import Cluster dialog box is displayed.<!--A BR tag was used here in the original source.--> In the Import Cluster dialog box, do the following:
+</p>
 
-
-
-##Register vCenter<a name="register-vcenter"></a>
-
-You can register vCenter using the Horizon dashboard in the undercloud.
-
-vCenter provides centralized management of virtual host and virtual machines from a single console. You can register only three vCenters in the compute service, although a single administrator can manage multiple workloads.
-
-To register vCenter, perform the following steps:
-
-1. In the Horizon undercloud dashboard, click the **Resource** Tab.<br />
-The tab displays with options in the left panel.
-
-2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page.
-
-3.  Click **Register vCenter** displayed at the top right corner of the page. Register vCenter dialog box is displayed with two different tabs: **vCenter Details** and **Proxy Details**. By default, vCenter Details is the active tab.
-
-4.  In the vCenter Details tab, do the following
-  
-  * In the **vCenter Server Name** box, enter the name for the vCenter Server.
-  * In the **vCenter Server Address** box, enter the IP address of the vCenter Server.
-  * In the **vCenter Administrator** box, enter the vCenter administrator username. This is the vCenter credentails of the administrator.
-  * In the **vCenter Server Password** box, enter the password.
-  * In the **vCenter Server Port** box, enter the vCenter Server Port.
-  * (Optional) In the **vCenter SSL CA-certificate** box, do not enter any value as we are not supporting it in this release.
-<br />
-5. In the Proxy Details Tab, do the following:
-
-  * In the **vCenter Management Clusters** box, enter the name for the vCenter Management Cluster.
-  * In the **Clusters Datacenter** box, enter the name of the vCenter Server.
-  * In the **Cluster's shared Datastore** box, enter the name of the shared datastore.
-  * In the **vCenter Port Group** box, enter the management port group.
-  * In the **Compute Proxy Hostname** box, enter the name of the host name of the compute proxy.
-  * DHCP is provided with two options: True and False.
- 	 * If you want the automatically configuration the compute proxy details of the vCenter, in the **DHCP enabled** drop-down list, select **True**. 
- 	 * If you want to manually enter the compute proxy details of vCenter, in the **DHCP enabled** drop-down list, select **False** and enter the values for the following fields.
-  			* In the **Compute Proxy IP** box, enter the compute proxy IP of the vCenter.
-  			* In the **Compute Proxy Netmask** box, enter the compute proxy netmask.
-  			* In the **Compute Proxy Gateway** box, enter the compute proxy gateway.
-  * Click **Register**. A message is displayed on successful registration of vCenter. <br /> After successful registration the registered vCenter is displayed in the ESX vCenter table in Manage Virtual Environments page.
-  
-
-##View Registered ESX vCenters<a name="view-registered-vCenter"></a>
-
-
-To view the list of registered ESX vCenter, do the following:
-
-1. In the Horizon undercloud dashboard, click the **Resource** Tab.<br />
-The tab displays with options in the left panel.
-
-2. Click the **Resource** Tab in the left panel.<br /> The tab displays an option in the left panel.
-
-3. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. <br />
-  The following information is displayed:
-   * **Name**: name of the vCenter.
-   * **IP Address**: IP Address of the registered vCenter.
-<!--   * **Switch Definition Status**: (???).-->
-   * **Actions**: tasks you can perform on the ESX vCenter. 
-
-All the registered vCenter will be listed in the Manage Virtual Environment page.
-
-
-##Edit vCenter<a name="edit-vCenter"></a>
-
-When there is any change in the vCenter details you can use the edit option to capture the modification made in the vCenter details in the HP Helion Horizon undercloud  dashboard.
-
-To edit the vCenter, do the following:
-
-1. In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br /> The tab displays an option in the left panel.
-
-2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page.
-
-3. Click **Edit** against the name of the ESX vCenter to modify the vCenter details. Edit vCenter dialog box is displayed.
-
-4. Make the required the changes. 
-
-5. Click **Done** to save the changes.
-
-
-
-## Unregistering vCenters<a name="unregister-vCenter"></a>
-
-With a help of single command you can unregister a single or multiple vCenter(s).
-
-* [Unregister a Single vCenter](#unregister-a-vCenter)
-
-* [Unregister Multiple vCenters](#unregister-multiple-vCenter)
-
-**Unregister a vCenter**<a name="unregister-a-vCenter"></a>
-
-To unregister a single vCenter, do the following:
-
-1. In the Horizon undercloud dashboard,  click the **Resource** Tab in the left panel.<br /> The tab displays an option in the left panel.
-
-2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
-
-3.	Click **More** drop-down list against the vCenter and select unregister vCenter. **Confirm Unregister vCenter** dialog box is displayed.
-
-4.	Click **Unregister vCenter** to unregister the selected vCenter, else click **Cancel**.
-
-
-
-**Unregister Multiple vCenters**<a name="unregister-multiple-vCenter"></a> 
-
-To unregister multiple vCenters with a single command, do the following:
-
-1. Click the **Resource** Tab in the left panel.<br /> The tab displays an option in the left panel.
-
-2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
- 
-3. Select **Name** check box against the name of the vCenter. Unregister vCenter is enabled.
-4. Click **Unregister vCenter** on the top right corner of the page. Confirm Unregister vCenter dialog box is displayed.
-
-4.	Click **Unregister vCenter** to unregister a vCenter, else click **Cancel**.
-
-
-
-
-##Import Cluster<a name="import-cluster"></a>
-
-You can import a cluster from Manage Virtual Environments page or vCenter Details. The Manage Virtual Environments page displays the information related to the registered vCenter. The vCenter Details page displays details: the name of the cluster, the data center, CPU usage, memory usage, disk usage, and action.
-
-
-To import a cluster from Manage Virtual Environments page, do the following:
-
-1. In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br /> The tab displays an option in the left panel.
-
-2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
-
-3.	Click **More** drop-down list against the vCenter and select **Import Clusters**. Import Cluster dialog box is displayed.<br /> In the Import Cluster dialog box, do the following:
-<br />
-  * In the **vCenter Name Server**, the name of selected vCenter appears.
-  * Click **Data Center** drop-down list and select the data center.
-  * Click **Cluster** drop-down list and select the cluster.
- 
-5. Click **Done**. A message is displayed when the cluster is imported successful.
-
+<ul>
+<li>In the <b>vCenter Name Server</b>, the name of selected vCenter appears.</li>
+<li>Click <b>Data Center</b> drop-down list and select the data center.</li>
+<li>Click <b>Cluster</b> drop-down list and select the cluster.</li>
+</ul>
+</li>
+<li>
+<p>Click <b>Done</b>. A message is displayed when the cluster is imported successful.</p>
+</li>
+</ol>
 <p>
 OR</p>
+<p>To import a cluster from the vCenter Details page, do the following:</p>
+<ol>
+<li>
+<p>In the Horizon undercloud dashboard, click the <b>Resource</b> Tab in the left panel.<!--A BR tag was used here in the original source.--> The tab displays an option in the left panel.</p>
+</li>
+<li>
+<p>Click <b>Compute</b> and then select <b>ESX</b> to open Manage Virtual Environments page.</p>
+</li>
+<li>
+<p>Select <b>Name</b> check box of the vCenter. <!--A BR tag was used here in the original source.--> vCenter Details (name of selected vCenter) page is displayed.</p>
+</li>
+<li>
+<p>Click <b>Import Clusters</b> displayed on the top right corner of the page.<!--A BR tag was used here in the original source.-->An Import dialog box is displayed.<!--A BR tag was used here in the original source.--> In the Import Cluster dialog box, do the following:
+</p>
 
-To import a cluster from the vCenter Details page, do the following:
+<ul>
+<li>In the <b>vCenter Name Server</b>, the name of selected vCenter appears.</li>
+<li>Click <b>Data Center</b> drop-down list and select the data center.</li>
+<li>Click <b>Cluster</b> drop-down list and select the cluster.</li>
+</ul>
+</li>
+<li>
+<p>Click <b>Done</b>. A message is displayed when the cluster is imported successful.</p>
+</li>
+</ol>
+</section>
+<section id="view-cluster-details"> <title>View Cluster Details<!--Removed anchor point view-cluster--><!-- id="view-cluster" --></title>
+<p>To view the details of the registered ESX vCenter, do the following:</p>
+<ol>
+<li>
+<p>In the Horizon undercloud dashboard, click the <b>Resource</b> Tab in the left panel.<!--A BR tag was used here in the original source.--> The tab displays an option in the left panel.</p>
+</li>
+<li>
+<p>Click <b>Compute</b> and then select <b>ESX</b> to open Manage Virtual Environments page.</p>
+</li>
+<li>
+<p>Select <b>Name</b> check box of the vCenter.  vCenter Details (name of selected vCenter) page is displayed. <!--A BR tag was used here in the original source.--> The page displays the following information:</p>
 
-1.  In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br /> The tab displays an option in the left panel.
-
-2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
- 
-3. Select **Name** check box of the vCenter. <br /> vCenter Details (name of selected vCenter) page is displayed.
-
-4. Click **Import Clusters** displayed on the top right corner of the page.<br />An Import dialog box is displayed.<br /> In the Import Cluster dialog box, do the following:
-<br />
-  * In the **vCenter Name Server**, the name of selected vCenter appears.
-  * Click **Data Center** drop-down list and select the data center.
-  * Click **Cluster** drop-down list and select the cluster.
- 
-5. Click **Done**. A message is displayed when the cluster is imported successful.
-
-
-##View Cluster Details<a name="view-cluster"></a>
- To view the details of the registered ESX vCenter, do the following:
-
-1.  In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br /> The tab displays an option in the left panel.
-
-2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
- 
-3. Select **Name** check box of the vCenter.  vCenter Details (name of selected vCenter) page is displayed. <br /> The page displays the following information:
-  * **Name**: name of the cluster
-  * **Datacenter**: datacenter of the cluster
-  * **CPU Usage**: the usage of the CPU by a cumulative cluster of a particular vCenter.
-  * **Memory Usage**: the usage of the memory by a cumulative cluster of a particular vCenter.
-  * **Disk Usage**: usage of the disk by a cumulative cluster of a particular vCenter.
-  * **Action**: task you can perform, that is, unimport the cluster. 
-
-##Unimporting Clusters<a name="unimport-cluster"></a>
-
-You can unimport multiple clusters or a single cluster with a single command. 
-
-* [Unimport a single cluster](#unimport-a-cluster)
-
-* [Unimport multiple clusters](#unimport-multiple-clusters)
-
-
-**Unimport a single cluster**<a name="unimport-a-cluster"></a>
-
-To unimport one cluster, do the following:
-
-1. In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br /> The tab displays an option in the left panel.
-
-2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
- 
-3. Select **Name** check box against the name of the vCenter. <br /> vCenter Details (name of selected vCenter) page is displayed.
-
-4. Select the **Name** check box against the name of the clusters to unimport cluster. 
-
-5. Click **Unimport Clusters** against the name of the cluster in the Action cloumn.
-
-
-**Unimport multiple clusters**<a name="unimport-multiple-clusters"></a>
-
- To unimport multiple clusters with a single command, do the following:
-
-1.  In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br /> The tab displays an option in the left panel.
-
-2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
- 
-3. Select **Name** check box of the vCenter. <br /> vCenter Details (name of selected vCenter) page is displayed.
-
-4. Select the **Name** check box against the name of the clusters to unimport cluster. You can select multiple clusters. Unimport Clusters get enabled on the top right corner of the page. 
-
-5. Click **Unimport Clusters** on the top right corner of the page to unimport the selected clusters.
-
-##Next Steps {#next-steps}
-
-[Working with EXS Clusters]( /helion/openstack/undercloud/oc/config/esx/)
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----
-
-
+<ul>
+<li>
+<b>Name</b>: name of the cluster</li>
+<li>
+<b>Datacenter</b>: datacenter of the cluster</li>
+<li>
+<b>CPU Usage</b>: the usage of the CPU by a cumulative cluster of a particular vCenter.</li>
+<li>
+<b>Memory Usage</b>: the usage of the memory by a cumulative cluster of a particular vCenter.</li>
+<li>
+<b>Disk Usage</b>: usage of the disk by a cumulative cluster of a particular vCenter.</li>
+<li>
+<b>Action</b>: task you can perform, that is, unimport the cluster. </li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="unimporting-clusters"> <title>Unimporting Clusters<!--Removed anchor point unimport-cluster--><!-- id="unimport-cluster" --></title>
+<p>You can unimport multiple clusters or a single cluster with a single command.</p>
+<ul>
+<li>
+<p>
+<xref type="section" href="#topic10334/unimport-a-cluster">Unimport a single cluster</xref>
+</p>
+</li>
+<li>
+<p>
+<xref type="section" href="#topic10334/unimport-multiple-clusters">Unimport multiple clusters</xref>
+</p>
+</li>
+</ul>
+<p>
+  <b>Unimport a single cluster</b>
+  <!--Removed anchor point unimport-a-cluster--><!-- id="unimport-a-cluster" -->
+</p>
+<p>To unimport one cluster, do the following:</p>
+<ol>
+<li>
+<p>In the Horizon undercloud dashboard, click the <b>Resource</b> Tab in the left panel.<!--A BR tag was used here in the original source.--> The tab displays an option in the left panel.</p>
+</li>
+<li>
+<p>Click <b>Compute</b> and then select <b>ESX</b> to open Manage Virtual Environments page.</p>
+</li>
+<li>
+<p>Select <b>Name</b> check box against the name of the vCenter. <!--A BR tag was used here in the original source.--> vCenter Details (name of selected vCenter) page is displayed.</p>
+</li>
+<li>
+<p>Select the <b>Name</b> check box against the name of the clusters to unimport cluster.</p>
+</li>
+<li>
+<p>Click <b>Unimport Clusters</b> against the name of the cluster in the Action cloumn.</p>
+</li>
+</ol>
+<p>
+  <b>Unimport multiple clusters</b>
+  <!--Removed anchor point unimport-multiple-clusters--><!-- id="unimport-multiple-clusters" -->
+</p>
+<p>To unimport multiple clusters with a single command, do the following:</p>
+<ol>
+<li>
+<p>In the Horizon undercloud dashboard, click the <b>Resource</b> Tab in the left panel.<!--A BR tag was used here in the original source.--> The tab displays an option in the left panel.</p>
+</li>
+<li>
+<p>Click <b>Compute</b> and then select <b>ESX</b> to open Manage Virtual Environments page.</p>
+</li>
+<li>
+<p>Select <b>Name</b> check box of the vCenter. <!--A BR tag was used here in the original source.--> vCenter Details (name of selected vCenter) page is displayed.</p>
+</li>
+<li>
+<p>Select the <b>Name</b> check box against the name of the clusters to unimport cluster. You can select multiple clusters. Unimport Clusters get enabled on the top right corner of the page.</p>
+</li>
+<li>
+<p>Click <b>Unimport Clusters</b> on the top right corner of the page to unimport the selected clusters.</p>
+</li>
+</ol>
+</section>
+<section id="next-steps"> <title>Next Steps</title>
+<p>
+  <xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-esx.dita" >Working with EXS Clusters</xref>
+</p>
+<p>
+  <xref type="section" href="#topic10334/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

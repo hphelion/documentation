@@ -1,34 +1,27 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Administering HP Distributed Cloud Networking (DCN)"
-permalink: /helion/openstack/carrier/admin/dcn/
-product: carrier-grade
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: All
-
-authors: Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic574">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Administering HP Distributed Cloud Networking (DCN)</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="All"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Administering HP Distributed Cloud Networking (DCN)
-
-Using DCN, you can install and upgrade HP Helion OpenStack Carrier Grade and do...
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
- 
-----
+ <!--./CarrierGrade/Admin_Guide/carrier-grade-admin-dcn.md-->
+ <!--permalink: /helion/openstack/carrier/admin/dcn/--></p>
+<p>Using DCN, you can install and upgrade HP Helion OpenStack(R) Carrier Grade and do...</p>
+<p>
+  <xref type="section" href="#topic574/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

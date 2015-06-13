@@ -1,115 +1,97 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Monitor the Network Access (Ping)"
-permalink: /helion/openstack/1.1/services/object/swift/monitor-network-access-ping/
-product: commercial.ga
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: Storage Administrator
-role2: Storage Architect
-authors: Karthik P, Binamra S
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1670">
+<title>HP Helion OpenStack(R) 1.1: Monitor the Network Access (Ping)</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Karthik P, Binamra S"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
+ <!--./commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-access-ping.md-->
+ <!--permalink: /helion/openstack/1.1/services/object/swift/monitor-network-access-ping/--></p>
+<p>Cloud admins can use the <b>
+<i>Icinga</i>
+</b> service running in the undercloud to monitor the network access of all the Swift nodes. The host that are part of ring can be determined using swift-ring-builder and only those nodes are verified for connectivity.</p>
+<section id="prerequisites"> <title>Prerequisites</title>
+<ul>
+<li>HP Helion OpenStack(R) cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
+</li>
+<li>The Icinga service is active and running in the undercloud.</li>
+</ul>
+</section>
+<section id="monitoring-the-network-access-of-the-host"> <title>Monitoring the Network Access of the Host</title>
+<p>Perform the following steps to monitor the network access of the host:</p>
+<ol>
+<li>
+<p>In the undercloud Horizon dashboard, log in to the <b>Icinga Dashboard</b> (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:</p>
 
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/object/swift/disk-drive/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/object/swift/Monitor-cluster/">&#9650; UP</a> | <a href=" /helion/openstack/1.1/services/object/swift/monitor-swift-drive-audit/"> NEXT &#9654</a> </p>
-
-
-# HP Helion OpenStack&#174; 1.1: Monitor the Network Access (Ping)
- 
-Cloud admins can use the ***Icinga*** service running in the undercloud to monitor the network access of all the Swift nodes. The host that are part of ring can be determined using swift-ring-builder and only those nodes are verified for connectivity.	
-
-##Prerequisites
-
-* HP Helion OpenStack&#174; cloud is successfully deployed.<br />*(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)*
-* The Icinga service is active and running in the undercloud.
-
-##Monitoring the Network Access of the Host
-
-Perform the following steps to monitor the network access of the host:
-
-1. In the undercloud Horizon dashboard, log in to the **Icinga Dashboard** (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:
-		
-	* Username: *icingaadmin*
-	* Password: *icingaadmin*  
-
-2. Click **Status** on the left panel and then click <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Host Detail</i> </b><!--(opens in a new window)--></a>.
-
-
-3. In the **Host** column,  <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>click the icon<!-- </b> (opens in a new window)--></b></a> next to the host IP when the tooltip displays as "View Service Details For This Host". <br /> 
-The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the</b>  <a href="javascript:window.open('/content/documentation/media/swift_icinga-swift-ping-host.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">the status of  host for network connectivity.<!--(opens in a new window)--></a>
+<ul>
+<li>Username: <i>icingaadmin</i>
+</li>
+<li>Password: <i>icingaadmin</i>  </li>
+</ul>
+</li>
+<li>
+<p>Click <b>Status</b> on the left panel and then click <xref format="html" href="javascript:window.open('/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
+<b>
+<varname>Host Detail</varname> </b>
+<!--(opens in a new window)-->
+</xref>.</p>
+</li>
+<li>
+<p>In the <b>Host</b> column,  <xref format="html" href="javascript:window.open('/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
+<b>click the icon<!-- </b> (opens in a new window)--></b>
+</xref> next to the host IP when the tooltip displays as "View Service Details For This Host". <!--A BR tag was used here in the original source.--> 
+The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the  <xref format="html" href="javascript:window.open('/media/swift_icinga-swift-ping-host.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >the status of  host for network connectivity.<!--(opens in a new window)--></xref>
 <!--
-4. Click the Swift node IP address to open the <a href="javascript:window.open('/content/documentation/media/swift_icinga-swift-ping-host.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host &lt;Swift node IP address </b></a> to view the health status of the selected Swift node.-->
-
-##Status Messages
-
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;">
-	<th>Status</th>
-	<th><center>Message</center></th>
-   </tr>
-<tr style="background-color: white; color: black;">
-	<td>OK</td>
-	<td>All nodes are reachable. Tested OK.
-</td>
+4. Click the Swift node IP address to open the <a href="javascript:window.open('/media/swift_icinga-swift-ping-host.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host &lt;Swift node IP address </b></a> to view the health status of the selected Swift node.--></p>
+</li>
+</ol>
+</section>
+<section id="status-messages"> <title>Status Messages</title>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<thead>
+<row>
+<entry>Status</entry>
+    <entry>
+<required-cleanup remap="center">
+<ph>Message</ph>
+</required-cleanup>
+</entry>
+   </row>
+</thead>
+<tbody>
+<row>
+<entry>OK</entry>
+    <entry>All nodes are reachable. Tested OK.
+</entry>
     
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>FAIL </td>
-	<td>Unreachable nodes - &lt;node_IP&gt;
-</td>
-    </tr>
+</row>
+<row>
+<entry>FAIL </entry>
+    <entry>Unreachable nodes - &lt;node_IP&gt;
+</entry>
+    </row>
+</tbody>
+</tgroup>
 </table>
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+<p>
+  <xref type="section" href="#topic1670/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

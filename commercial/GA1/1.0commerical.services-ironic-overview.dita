@@ -1,45 +1,39 @@
----
-layout: 1.0default
-title: "HP Helion OpenStack&#174; 1.0: Ironic Service Overview"
-permalink: /helion/openstack/services/ironic/overview/
-product: commercial.ga1.0
-product-version1: HP Helion OpenStack 1.1
-product-version2: HP Helion OpenStack
-product-version3: HP Helion OpenStack 1.0
-product-version4: HP Helion OpenStack 1.01
-
-role1: Cloud Architect
-
-authors: Michael B, 
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1235">
+<title>HP Helion OpenStack(R) 1.0: Ironic Service Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.01"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Michael B,"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.01"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/services/dns/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/compute/overview/"> NEXT &#9654</a> </p> -->
-
-# HP Helion OpenStack&#174; 1.0: Ironic Service Overview#
-[See the Helion OpenStack 1.1 version of this page](/helion/openstack/1.1/services/ironic/overview/)
-
-HP Helion OpenStack leverages the OpenStack Ironic service during the installation for provisioning of the controller and KVM compute host in a baremetal deployment.
-
-Ironic is an OpenStack service to provision baremetal, not virtual, machines by leveraging common technologies such as PXE boot and IPMI to cover a wide range of hardware. Supporting pluggable drivers allows vendor-specific functionality to be added.
-
-## For more information ##
-
-For information on Ironic, see OpenStack [Ironic's developer documentation](http://docs.openstack.org/developer/ironic/).
-
-For more information on the HP Helion OpenStack deployment model, see [HP Helion OpenStack Technical Overview](/helion/openstack/technical-overview/).
-
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
+ <!--./commercial/GA1/1.0commerical.services-ironic-overview.md-->
+ <!--permalink: /helion/openstack/services/ironic/overview/--></p>
+<p>
+  <xref href="../../commercial/GA1/1.1commerical.services-ironic-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+</p>
+<p>HP Helion OpenStack(R) leverages the OpenStack(R) Ironic service during the installation for provisioning of the controller and KVM compute host in a baremetal deployment.</p>
+<p>Ironic is an OpenStack(R) service to provision baremetal, not virtual, machines by leveraging common technologies such as PXE boot and IPMI to cover a wide range of hardware. Supporting pluggable drivers allows vendor-specific functionality to be added.</p>
+<section id="for-more-information"> <title>For more information</title>
+<p>For information on Ironic, see OpenStack(R) <xref href="http://docs.openstack.org/developer/ironic/" scope="external" format="html" >Ironic's developer documentation</xref>.</p>
+<p>For more information on the HP Helion OpenStack(R) deployment model, see <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita" >HP Helion OpenStack(R) Technical Overview</xref>.</p>
+<p>
+  <xref type="section" href="#topic1235/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

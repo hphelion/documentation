@@ -1,116 +1,160 @@
----
-layout: default-devplatform
-title: "HP Helion 1.2 Development Platform: Adding Services to Windows Applications"
-permalink: /helion/devplatform/1.2/windows/adding_services/
-product: devplatform2.0
-product-version1: HP Helion Development Platform
-product-version2: HP Helion Development Platform 1.2
-role1: Systems Administrator 
-role2: System Engineer
-role3: Cloud Administrator
-role4: Network Administrator
-role5: Application Developer
-Role6: Security Engineer
-role7: Application Developer 
-role8: ISV Developer
-role9: Service Developer
-authors: Patrick F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3869">
+<title>HP Helion 1.2 Development Platform: Adding Services to Windows Applications</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Patrick F"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
+ <!--./devplatform/1.2/windows/windows_adding_services.md-->
+ <!--permalink: /helion/devplatform/1.2/windows/adding_services/--></p>
+<p>
+  <!--Original: <span @class=>--><ph>
+    <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
+  </ph>
+</p>
+<p>Windows applications can be bound to services running in your deployment environment, such as Redis or MySQL. To do so, you need to have a NuGet package that can communicate with those services.</p>
+<p>The following tutorial demonstrates how to add a Redis service to your .NET application.</p>
+<p>
+<b>Note:</b> The NuGet packages used in this tutorial are for sample purposes only. Verify that packages are working for your application before deploying them to a production environment.</p>
+<section id="adding-a-service-to-a-net-application"> <title>Adding a service to a .NET application</title>
+<ol>
+<li>
+<p>When deploying your application using <xref href="../../../devplatform/1.2/windows/windows_tools_guide.dita#cloudfoundryexplorer" >Cloud Foundry Explorer</xref>, in the deployment information window, enter the service information in the <b>Service</b> field in the format <codeph>Service Name, Service Type, Service Plan</codeph>:</p>
 
-# HP Helion 1.2 Development Platform: Adding Services to Windows Applications 
+<p>
+<image href="../../../media/windows_services.png"/>
+</p>
+</li>
+<li>Deploy your application.</li>
+<li>
+<p>Once the application gets successfully created, your VCAP_SERVICES file will have a node such as the following:</p>
 
-<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
+<codeblock>
+<codeph>"redis-2.8": [
+{
+  "name": "redistest",
+  "label": "redis-2.8",
+  "plan": "free",
+  "tags": [
 
-Windows applications can be bound to services running in your deployment environment, such as Redis or MySQL. To do so, you need to have a NuGet package that can communicate with those services. 
+  ],
+  "options": {
 
-The following tutorial demonstrates how to add a Redis service to your .NET application.
+  },
+  "credentials": {
+    "hostname": "0.0.0.0",
+    "host": ".0.0.0",
+    "port": 5001,
+    "password": "f4774d0b-2f8d-45da-ba3e-545f0cb9b35a",
+    "name": "01b32e35-248a-43d7-b90d-ab3f2611e644",
+    "uri": "redis:\/\/01b32e35-248a-43d7-b90d-ab3f2611e644:f4774d0b-2f8d-45da-ba3e-545f0cb9b35a@192.168.1.50:5001\/"
+  }
+}
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Add dependencies.</p>
 
-**Note:** The NuGet packages used in this tutorial are for sample purposes only. Verify that packages are working for your application before deploying them to a production environment.
+<ol>
+<li>
+<p>Add a JSON package. In this case, you'll install <b>JSON.NET</b>. Open the <b>Manage NuGet Packages</b> dialog (under <b>Tools-&gt;NuGet Package Manager-&gt;Manage NuGet Packages for Solution...</b>), select the <b>Online</b> node, and search for <b>JSON.NET</b>. Click <b>Install</b>.</p>
 
-## Adding a service to a .NET application
+<p>
+<image href="../../../media/windows_nuget_json.png"/>
+</p>
+</li>
+<li>
+<p>Add a Redis client. In this case, you'll install <b>StackExchange.Redis</b>. Open the <b>Manage NuGet Packages</b> dialog, , select the <b>Online</b> node, and search for <b>StackExchange.Redis</b>. Click <b>Install</b>.</p>
 
-1. When deploying your application using <a href="/helion/devplatform/1.2/windows/tools_guide/#cloudfoundryexplorer">Cloud Foundry Explorer</a>, in the deployment information window, enter the service information in the **Service** field in the format <code>Service Name, Service Type, Service Plan</code>:
+<p>
+<image href="../../../media/windows_nuget_redis.png"/>
+</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To verify that the services are working, create a new MVC5 View (CSHTML) page with the following contents:</p>
 
-	<img src="media/windows_services.png" />
-2. Deploy your application.
-3. Once the application gets successfully created, your VCAP_SERVICES file will have a node such as the following:
+<codeblock>
+<codeph>&lt;p&gt;
+Text from Redis:
+@{
+   try
+    {                    
+        string vcap = Environment.GetEnvironmentVariable("VCAP_SERVICES");
 
-		"redis-2.8": [
-	    {
-	      "name": "redistest",
-	      "label": "redis-2.8",
-	      "plan": "free",
-	      "tags": [
-	        
-	      ],
-	      "options": {
-	        
-	      },
-	      "credentials": {
-	        "hostname": "0.0.0.0",
-	        "host": ".0.0.0",
-	        "port": 5001,
-	        "password": "f4774d0b-2f8d-45da-ba3e-545f0cb9b35a",
-	        "name": "01b32e35-248a-43d7-b90d-ab3f2611e644",
-	        "uri": "redis:\/\/01b32e35-248a-43d7-b90d-ab3f2611e644:f4774d0b-2f8d-45da-ba3e-545f0cb9b35a@192.168.1.50:5001\/"
-	      }
-	    }
-4. Add dependencies.
-	1. Add a JSON package. In this case, you'll install **JSON.NET**. Open the **Manage NuGet Packages** dialog (under **Tools-&gt;NuGet Package Manager-&gt;Manage NuGet Packages for Solution...**), select the **Online** node, and search for **JSON.NET**. Click **Install**. 
-	
-		<img src="media/windows_nuget_json.png" />
-	2. Add a Redis client. In this case, you'll install **StackExchange.Redis**. Open the **Manage NuGet Packages** dialog, , select the **Online** node, and search for **StackExchange.Redis**. Click **Install**.
-	
-		<img src="media/windows_nuget_redis.png" />
-5. To verify that the services are working, create a new MVC5 View (CSHTML) page with the following contents:
+        JObject services = Newtonsoft.Json.Linq.JObject.Parse(vcap);
+        string host = services["redis-2.8"].First["credentials"]["host"].ToString();
+        string port = services["redis-2.8"].First["credentials"]["port"].ToString();
+        string password = services["redis-2.8"].First["credentials"]["password"].ToString();
+        string conn = String.Format("{0}:{1},password={2}", host, port, password);
 
-		<p>
-		Text from Redis:
-		@{
-		   try
-		    {                    
-		        string vcap = Environment.GetEnvironmentVariable("VCAP_SERVICES");
-		
-		        JObject services = Newtonsoft.Json.Linq.JObject.Parse(vcap);
-		        string host = services["redis-2.8"].First["credentials"]["host"].ToString();
-		        string port = services["redis-2.8"].First["credentials"]["port"].ToString();
-		        string password = services["redis-2.8"].First["credentials"]["password"].ToString();
-		        string conn = String.Format("{0}:{1},password={2}", host, port, password);
-		
-		        ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(conn);
-		        IDatabase db = redis.GetDatabase();                
-		        string input = "This is an example on how to use redis in .NET";
-		        db.StringSet("mykey", input);
-		
-		        string output = db.StringGet("mykey");
-		        @output;
-		
-		    }
-		    catch (Exception e)
-		    {
-		        @e.ToString();
-		    }
-		
-		}
-		</p>
-		
-	In the above code sample, the application does the following:
-		
-	1. Reads the Redis connection information from the VCAP_SERVICES environment variable
-	2. Creates a connection to the Redis service
-	3. Sends a string to the Redis service
-	4. Reads a string back from the Redis service
-	5. Displays the returned string
-6. Deploy and open the application. You will see the following result:
+        ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(conn);
+        IDatabase db = redis.GetDatabase();                
+        string input = "This is an example on how to use redis in .NET";
+        db.StringSet("mykey", input);
 
-	<img src="media/windows_redis_result.png" />
+        string output = db.StringGet("mykey");
+        @output;
 
----
-<div align="center"><a href="/helion/devplatform/1.2/windows/">Windows Overview</a> </div>
-<div align="center"> <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/1.2/windows/tools_guide/">Windows and .NET Tools Guide</a> </div>
-<div align="center"> <a href="/helion/devplatform/1.2/windows/building_windows/">Building and Deploying Windows DEA and SQL Server Express Images</a> | <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a></div>
-<div align="center">Adding Services to a Windows Application | <a href="/helion/devplatform/1.2/windows/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
+    }
+    catch (Exception e)
+    {
+        @e.ToString();
+    }
 
+}
+&lt;/p&gt;
+</codeph>
+</codeblock>
 
+<p>In the above code sample, the application does the following:</p>
+
+<ol>
+<li>Reads the Redis connection information from the VCAP_SERVICES environment variable</li>
+<li>Creates a connection to the Redis service</li>
+<li>Sends a string to the Redis service</li>
+<li>Reads a string back from the Redis service</li>
+<li>Displays the returned string</li>
+</ol>
+</li>
+<li>
+<p>Deploy and open the application. You will see the following result:</p>
+
+<p>
+<image href="../../../media/windows_redis_result.png"/>
+</p>
+</li>
+</ol>
+<!-- ===================== horizontal rule ===================== -->
+<xref href="../../../devplatform/1.2/windows/windows_overview.dita" >Windows Overview</xref>
+<xref href="../../../devplatform/1.2/windows/windows_firstapp.dita" >Deploying your first .NET Application</xref>
+<p> | </p>
+<xref href="../../../devplatform/1.2/windows/windows_tools_guide.dita" >Windows and .NET Tools Guide</xref>
+<xref href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita" >Building and Deploying Windows DEA and SQL Server Express Images</xref>
+<p> | </p>
+<xref href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita" >Glazier Reference Guide</xref>
+<p>Adding Services to a Windows Application | </p>
+<xref href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita" >Deploying Windows Applications with the IIS Buildpack</xref>
+</section>
+</body>
+</topic>

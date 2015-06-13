@@ -1,167 +1,221 @@
----
-layout: default-devplatform
-title: "HP Helion 1.1 Development Platform: Installation Troubleshooting"
-permalink: /helion/devplatform/1.1/install/troubleshooting/
-product: devplatform
-product-version1: HP Helion Development Platform
-product-version2: HP Helion Development Platform 1.1
-role1: Systems Administrator 
-role2: System Engineer
-role3: Cloud Administrator
-role4: Network Administrator
-role5: Application Developer
-Role6: Security Engineer
-role7: Application Developer 
-role8: ISV Developer
-role9: Service Developer
-authors: Jayme P
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6542">
+<title>HP Helion 1.1 Development Platform: Installation Troubleshooting</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
+ <!--./devplatform/1.1devplatform.troubleshooting.md-->
+ <!--permalink: /helion/devplatform/1.1/install/troubleshooting/--></p>
+<ul>
+<li>
+<xref type="section" href="#topic6542/installation">Installation</xref>
+</li>
+<li>
+<xref type="section" href="#topic6542/download">Download</xref>
+</li>
+<li>
+<xref type="section" href="#topic6542/horizon">Horizon</xref>
+</li>
+<li>
+<xref type="section" href="#topic6542/dbaas">DBaaS</xref> (database)</li>
+<li>
+<xref type="section" href="#topic6542/ALS">ALS</xref> (Application Lifecycle Service)</li>
+<li>
+<xref type="section" href="#topic6542/marketplace">Marketplace</xref>
+</li>
+<li>
+<xref type="section" href="#topic6542/instance-create">Creating Instances</xref>
+</li>
+</ul>
+<section id="installation"> <title>Installation</title>
+</section>
+<section id="command-line-installer-fails-to-install"> <title>Command line installer fails to install</title>
+<p>Resolution: <b>Set</b> https_proxy and <b>unset</b> http_proxy values.</p>
+</section>
+<section id="command-line-installer-fails-to-install-with-authentication-error"> <title>Command line installer fails to install with Authentication Error</title>
+<p>Even after fixing some errors and retrying, the command line installation fails.</p>
+<p>Resolution:</p>
+<ol>
+<li>Locate and open the <i>dev-platform-installer</i> folder. This folder is created by the installation process.
 
+<ul>
+<li>Delete the <i>.env</i> folder.</li>
+<li>Delete the <i>dev-platform-installer.conf</i> file.</li>
+</ul>
+</li>
+<li>
+<xref href="../devplatform/1.1devplatform_commercial_install.dita#commandline" >Run the install command</xref> again with all command line options.</li>
+</ol>
+</section>
+<section id="download"> <title>Download</title>
+</section>
+<section id="service-is-stuck-in-download"> <title>Service is stuck in download</title>
+<p>The <i>tmp</i> directory has run out of space. Mount the <i>tmp</i> directory to a larger partition and try again. If it fails again, reset the download.</p>
+<ol>
+<li>Log in to Horizon as an Admin user.</li>
+<li>In the <b>Admin</b> tenant, click <b>Project</b> and then <b>Object Store</b>.</li>
+<li>Open the <b>sherpa-cache</b> folder and delete the <b>wscatalog.&lt;id&gt;</b> folder which contains the cached download.</li>
+<li>Download the service again.</li>
+</ol>
+</section>
+<section id="download-terminates-and-remains-stuck-in-staging-status"> <title>Download terminates and remains stuck in "Staging" status</title>
+<p>Only applies to Development Platform services. After the image download terminates for some reason, the download is reattempted. The status of the service in the Configure Services view remains stuck at "Staging" and does not progress to "Available".</p>
+<p>Resolution: Completely delete the service before reattempting download.</p>
+<ol>
+<li>Log in to Horizon as an Admin user.</li>
+<li>Delete the images for that service.</li>
+<li>In the Admin tenant, click <b>Project</b> and then <b>Object Store</b>.</li>
+<li>Go to Containers and delete the heat-templates for the service.</li>
+<li>Go to Containers &gt; Sherpa-cache and delete the wscatalog folder for that service.</li>
+</ol>
+<p>If the status on the Configure Services view does not change to "Available", Sherpa is looking at the file cache. To clear this, remove the cache and restart Apache.</p>
+<ol>
+<li>Log in to the controller management node.</li>
+<li>Delete the directory <i>/var/cache/sherpa/ws.xxxx</i>
+</li>
+<li>Delete the contents of the <i>/var/lib/Sherpa/data</i> folder.</li>
+<li>
+<p>Apache must be restarted before this change will take effect. <!--A BR tag was used here in the original source.-->Run:</p>
 
-# HP Helion 1.1 Development Platform: Installation Troubleshooting
+<codeblock>
+<codeph>service apache2 restart 
+</codeph>
+</codeblock>
+</li>
+</ol>
+</section>
+<section id="horizon"> <title>Horizon</title>
+</section>
+<section id="installed-development-platform-services-do-not-appear-in-horizon"> <title>Installed Development Platform services do not appear in Horizon</title>
+<p>Even though the service was installed successfully, the service does not appear in the appropriate tab.</p>
+<p>Resolution: After installing any Helion Development Platform service, log out of Horizon and then back in to refresh the UI.</p>
+</section>
+<section id="deleted-service-still-appears-in-horizon"> <title>Deleted service still appears in Horizon</title>
+<p>Even though the Development Platform stack has been deleted, the service still shows up in Horizon.</p>
+<p>Resolution: Delete the service manually from the Keystone endpoint list. <!--A BR tag was used here in the original source.--> Start the command line client and enter:</p>
+<codeblock>
+  <codeph>keystone endpoint-delete $&lt;id&gt;
+</codeph>
+</codeblock>
+</section>
+<section id="dbaas"> <title>DBaaS</title>
+</section>
+<section id="dbaas-configuration-fails"> <title>DbaaS configuration fails</title>
+<p>Resolution: Make sure that you can create a volume and attach it to instances. HP Helion OpenStack(R) supports VSA and 3PAR, but not LVM. Make sure your installation is configured to use either VSA or 3PAR.</p>
+</section>
+<section id="dbaas-instance-fails-to-start"> <title>DbaaS instance fails to start</title>
+<p>Resolution: Check if you can create and start a Nova instance with the same flavor and verify you can attach a volume to that Nova instance. Verify that the Nova flavors have not been updated to invalid values. Verify that the flavor's ID is correct, as flavor updates cause the flavor IDs to change.</p>
+</section>
+<section id="marketplace"> <title>Marketplace</title>
+</section>
+<section id="vertica-installation-fails-after-successful-marketplace-installation"> <title>Vertica installation fails after successful Marketplace installation</title>
+<p>Resolution: Immediately after installing Marketplace, log out of Horizon and then back in before beginning the Vertica installation.</p>
+</section>
+<section id="ALS"> <title>ALS</title>
+<p>
+  <b>ALS cluster creation fails after successful installation of ALS and DBaaS.</b>
+</p>
+<p>Resolution: Make sure DBaaS is functional and responsive by creating a new DBaaS instance. If DBaaS is installed in the environment, ALS expects DBaaS to respond to API requests.</p>
+<p>
+<!--Removed anchor point katopatch-->
+<!-- id="katopatch" --> <b>Running <i>kato patch install</i> fails to install patches on non-core nodes in ALS 1.1 clusters.</b>
+</p>
+<p>
+<b>Note</b>: This issue only applies to ALS clusters created using an installer image older than version 1.1.0.19.</p>
+<p>
+<b>Resolution</b>: Update the cluster with the <i>cf-fix-kato-patch</i> command line tool.</p>
+<ol>
+<li>
+<p>Set the standard OpenStack(R) environment variables. <!--A BR tag was used here in the original source.-->The OpenStack(R) <i>ca-certificate</i> is found in the Helion OpenStack(R) Seed VM at:  <i>/usr/local/share/ca-certificates/ephemeralca-cacert.crt</i>
+</p>
 
-- [Installation](#installation)
-- [Download](#download)
-- [Horizon](#horizon)
-- [DBaaS](#dbaas) (database)
-- [ALS](#ALS) (Application Lifecycle Service)
-- [Marketplace](#marketplace)
-- [Creating Instances](#instance-create)
+<codeblock>
+<codeph>OS_USERNAME
+OS_PASSWORD
+OS_REGION_NAME
+OS_AUTH_URL
+OS_TENANT_ID
+OS_CACERT
+</codeph>
+</codeblock>
 
-## Installation {#installation}
+<ul>
+<li>Linux / Mac: Download and source the openrc.sh file using the Horizon management console.</li>
+<li>Windows: Set the environment variables manually or specify the values as command line flags ( --os-username, --os-password, --os-region-name, --os-auth-url, --os-tenant-id, --os-cacert)</li>
+</ul>
+</li>
+<li>
+<p>Download the appropriate <i>cf-fix-kato-patch</i> tool for your operating system.</p>
 
-###Command line installer fails to install
- Resolution: **Set** https\_proxy and **unset** http\_proxy values.
+<ul>
+<li>
+<xref href="http://g7743e0143085e2793a5aef95989b09ea.cdn.hpcloudsvc.com/cf-fix-kato-patch/darwin/cf-fix-kato-patch" scope="external" format="html" >MacOS</xref>
+</li>
+<li>
+<xref href="http://g7743e0143085e2793a5aef95989b09ea.cdn.hpcloudsvc.com/cf-fix-kato-patch/linux/cf-fix-kato-patch" scope="external" format="html" >Linux</xref>
+</li>
+<li>
+<xref href="http://g7743e0143085e2793a5aef95989b09ea.cdn.hpcloudsvc.com/cf-fix-kato-patch/windows/cf-fix-kato-patch.exe" scope="external" format="html" >Windows</xref>
+</li>
+</ul>
+</li>
+<li>
+<p>Run the <i>cf-fix-kato-patch</i> tool from a machine that can SSH into your cluster nodes.</p>
 
-###Command line installer fails to install with Authentication Error 
-Even after fixing some errors and retrying, the command line installation fails.
+<ul>
+<li>
+<p>Linux / Mac:</p>
 
-Resolution: 
+<codeblock>
+<codeph>./cf-fix-kato-patch &lt;key file&gt; &lt;cluster prefix&gt;
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Windows:</p>
 
-1. Locate and open the *dev-platform-installer* folder. This folder is created by the installation process.
-	- Delete the *.env* folder.
-	- Delete the *dev-platform-installer.conf* file.
-3. [Run the install command](/helion/devplatform/1.1/install/#commandline) again with all command line options.
-
-## Download {#download}
-
-### Service is stuck in download
-
-The *tmp* directory has run out of space. Mount the *tmp* directory to a larger partition and try again. If it fails again, reset the download.
-
-1. Log in to Horizon as an Admin user.
-2. In the **Admin** tenant, click **Project** and then **Object Store**.
-3. Open the **sherpa-cache** folder and delete the **wscatalog.<id\>** folder which contains the cached download.
-4. Download the service again.
-
-### Download terminates and remains stuck in "Staging" status
-
-Only applies to Development Platform services. After the image download terminates for some reason, the download is reattempted. The status of the service in the Configure Services view remains stuck at "Staging" and does not progress to "Available".
-
- Resolution: Completely delete the service before reattempting download.
-
-1. Log in to Horizon as an Admin user.
-2. Delete the images for that service.
-3. In the Admin tenant, click **Project** and then **Object Store**.
-4. Go to Containers and delete the heat-templates for the service.
-3. Go to Containers > Sherpa-cache and delete the wscatalog folder for that service.
-
-If the status on the Configure Services view does not change to "Available", Sherpa is looking at the file cache. To clear this, remove the cache and restart Apache.
-
-1. Log in to the controller management node.
-2. Delete the directory */var/cache/sherpa/ws.xxxx*
-1. Delete the contents of the */var/lib/Sherpa/data* folder.
-2. Apache must be restarted before this change will take effect. <br />Run:
-		
-		service apache2 restart 
-
-
-## Horizon {#horizon}
-###Installed Development Platform services do not appear in Horizon
-
-Even though the service was installed successfully, the service does not appear in the appropriate tab.
- 
-Resolution: After installing any Helion Development Platform service, log out of Horizon and then back in to refresh the UI.
-
-###Deleted service still appears in Horizon
-
-Even though the Development Platform stack has been deleted, the service still shows up in Horizon.
-
-Resolution: Delete the service manually from the Keystone endpoint list. <br /> Start the command line client and enter:
-
-	keystone endpoint-delete $<id>
-
-##DBaaS {#dbaas}
-
-###DbaaS configuration fails
- 
-Resolution: Make sure that you can create a volume and attach it to instances. HP Helion OpenStack supports VSA and 3PAR, but not LVM. Make sure your installation is configured to use either VSA or 3PAR.
-
-###DbaaS instance fails to start
-Resolution: Check if you can create and start a Nova instance with the same flavor and verify you can attach a volume to that Nova instance. Verify that the Nova flavors have not been updated to invalid values. Verify that the flavor's ID is correct, as flavor updates cause the flavor IDs to change.
-
-## Marketplace {#marketplace}
-
-###Vertica installation fails after successful Marketplace installation
-
-Resolution: Immediately after installing Marketplace, log out of Horizon and then back in before beginning the Vertica installation. 
-
-##ALS {#ALS}
-
-**ALS cluster creation fails after successful installation of ALS and DBaaS.**
- 
-Resolution: Make sure DBaaS is functional and responsive by creating a new DBaaS instance. If DBaaS is installed in the environment, ALS expects DBaaS to respond to API requests.
-
-<a name="katopatch"></a> **Running *kato patch install* fails to install patches on non-core nodes in ALS 1.1 clusters.**
-
-**Note**: This issue only applies to ALS clusters created using an installer image older than version 1.1.0.19. 
-
-**Resolution**: Update the cluster with the *cf-fix-kato-patch* command line tool.
- 
-1. Set the standard OpenStack environment variables. <br />The OpenStack *ca-certificate* is found in the Helion OpenStack Seed VM at:  */usr/local/share/ca-certificates/ephemeralca-cacert.crt*
-
-		OS_USERNAME
-		OS_PASSWORD
-		OS_REGION_NAME
-		OS_AUTH_URL
-		OS_TENANT_ID
-		OS_CACERT
-
-
-	- Linux / Mac: Download and source the openrc.sh file using the Horizon management console.
-	- Windows: Set the environment variables manually or specify the values as command line flags ( --os-username, --os-password, --os-region-name, --os-auth-url, --os-tenant-id, --os-cacert)
-
-2.	Download the appropriate *cf-fix-kato-patch* tool for your operating system.
-	- [MacOS](http://g7743e0143085e2793a5aef95989b09ea.cdn.hpcloudsvc.com/cf-fix-kato-patch/darwin/cf-fix-kato-patch)
-	- [Linux](http://g7743e0143085e2793a5aef95989b09ea.cdn.hpcloudsvc.com/cf-fix-kato-patch/linux/cf-fix-kato-patch)
-	- [Windows](http://g7743e0143085e2793a5aef95989b09ea.cdn.hpcloudsvc.com/cf-fix-kato-patch/windows/cf-fix-kato-patch.exe)
-3.	Run the *cf-fix-kato-patch* tool from a machine that can SSH into your cluster nodes.
-	-	Linux / Mac:
-		
-			./cf-fix-kato-patch <key file> <cluster prefix>
-	- Windows:
-		
-			cf-fix-kato-patch.exe <key file> <cluster prefix>
- 
-The `<key file>` is the path to the private key file corresponding to the keypair you used when creating the cluster. 
-
-The `<cluster prefix>` is the prefix at the beginning of all of the nodes in the cluster. For example, if your prefix was *cluster1*, the core node of your cluster should be named *cluster1-core*.
- 
-If any errors occur while the *cf-fix-kato-patch* tool is running, the tool will halt execution. Simply run the tool again; applying the tool multiple times will have no negative effects.
-
-**ALS Constructor fails with "No valid host was found" Error**
-
-Resolution: Attempt to spin up a Nova instance with **Flavor** set to **Tiny**. Verify that the Nova flavors were NOT updated to invalid values. Verify the Flavor IDs, as updates cause flavor IDs to change.
-
-##Creating Instances {#instance-create}
-
-###DbaaS instances, ALS clusters, Marketplace, and Messaging clusters all fail to start.
-
-Resolution: Nova and Neutron quotas have been exceeded. Increase quotas to support your desired configuration.
-
-###Issue: "No valid host was found" Error Received During Installation of the Development Platform and DNaaS
-
-Resolution: This Nova error could have multiple causes. Do not assume that  it is out of compute resources. Check the *nova-scheduler* logs on the overcloud controllers to find the actual reason why Nova failed to schedule the instance; correct the issue; and then attempt the DNSaaS deployment again.
-
+<codeblock>
+<codeph>cf-fix-kato-patch.exe &lt;key file&gt; &lt;cluster prefix&gt;
+</codeph>
+</codeblock>
+</li>
+</ul>
+</li>
+</ol>
+<p>The <codeph>&lt;key file&gt;</codeph> is the path to the private key file corresponding to the keypair you used when creating the cluster.</p>
+<p>The <codeph>&lt;cluster prefix&gt;</codeph> is the prefix at the beginning of all of the nodes in the cluster. For example, if your prefix was <i>cluster1</i>, the core node of your cluster should be named <i>cluster1-core</i>.</p>
+<p>If any errors occur while the <i>cf-fix-kato-patch</i> tool is running, the tool will halt execution. Simply run the tool again; applying the tool multiple times will have no negative effects.</p>
+<p>
+  <b>ALS Constructor fails with "No valid host was found" Error</b>
+</p>
+<p>Resolution: Attempt to spin up a Nova instance with <b>Flavor</b> set to <b>Tiny</b>. Verify that the Nova flavors were NOT updated to invalid values. Verify the Flavor IDs, as updates cause flavor IDs to change.</p>
+</section>
+<section id="instance-create"> <title>Creating Instances</title>
+</section>
+<section id="dbaas-instances-als-clusters-marketplace-and-messaging-clusters-all-fail-to-start"> <title>DbaaS instances, ALS clusters, Marketplace, and Messaging clusters all fail to start.</title>
+<p>Resolution: Nova and Neutron quotas have been exceeded. Increase quotas to support your desired configuration.</p>
+</section>
+<section id="issue-no-valid-host-was-found-error-received-during-installation-of-the-development-platform-and-dnaas"> <title>Issue: "No valid host was found" Error Received During Installation of the Development Platform and DNaaS</title>
+<p>Resolution: This Nova error could have multiple causes. Do not assume that  it is out of compute resources. Check the <i>nova-scheduler</i> logs on the overcloud controllers to find the actual reason why Nova failed to schedule the instance; correct the issue; and then attempt the DNSaaS deployment again.</p>
+</section>
+</body>
+</topic>

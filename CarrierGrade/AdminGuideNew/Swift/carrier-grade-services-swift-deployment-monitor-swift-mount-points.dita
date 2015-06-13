@@ -1,98 +1,111 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Monitoring the Mount Points using Icinga"
-permalink: /helion/openstack/carrier/services/object/swift/mount-points/
-product: carrier-grade
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.0
-product-version3: HP Helion OpenStack 1.0.1
-product-version4: HP Helion OpenStack 1.1
-role1: Storage Administrator
-role2: Storage Architect
-authors: Karthik P, Binamra S
-
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1933">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Monitoring the Mount Points using Icinga</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Karthik P, Binamra S"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-mount-points.md-->
+ <!--permalink: /helion/openstack/carrier/services/object/swift/mount-points/--></p>
+<p>The <b>
+<i>Icinga</i>
+</b> service, which runs in the undercloud, helps cloud admins monitor the  mount point of all the swift nodes.</p>
+<section id="prerequisites"> <title>Prerequisites</title>
+<ul>
+<li>HP Helion OpenStack(R) cloud is successfully deployed. <!--A BR tag was used here in the original source.--> (<i>Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment</i>)</li>
+<li>The Icinga service is active and running in the undercloud</li>
+</ul>
+</section>
+<section id="monitoring-mount-points-of-object-storage-swift"> <title>Monitoring Mount Points of Object Storage (Swift)</title>
+<p>Ensure the correctness of mount points using Icinga.</p>
+<p>Perform the following steps to monitor the mount points of Object Storage (Swift) disk:</p>
+<ol>
+<li>
+<p>In the undercloud Horizon dashboard, log in to the <b>Icinga Dashboard</b> (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:</p>
 
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/carrier/services/swift/deployment/"> NEXT &#9654</a> </p>-->
-
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Monitoring the Mount Points using Icinga
-
-The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the  mount point of all the swift nodes.
-
-
-##Prerequisites
-
-* HP Helion OpenStack&#174; cloud is successfully deployed. <br /> (*Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment*)
-* The Icinga service is active and running in the undercloud
-
-
-##Monitoring Mount Points of Object Storage (Swift) 
-
-Ensure the correctness of mount points using Icinga.
-
-Perform the following steps to monitor the mount points of Object Storage (Swift) disk:
-
-1. In the undercloud Horizon dashboard, log in to the **Icinga Dashboard** (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:
-		
-    * Username: *icingaadmin*
-	* Password: *icingaadmin* 
-
-2. Click **Status** on the left panel and then click 
-<a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Host Detail</i></b><!--(opens in a new window)--></a>.
-
-3. In the **Host** column, <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>click the icon</b><!-- (opens in a new window)--> </a> next to the host IP when the tooltip displays as "View Service Details For This Host". <br />
-The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the <a href="javascript:window.open('/content/documentation/media/swift_icinga-mount-points.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>mount points</b><!-- (opens in a new window)--></a>   of the selected Swift node.
-
-
-##Status Messages
-
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;">
-	<th>Status</th>
-	<th><center>Message</center></th>
-    <th><center>Cause/Resolution</center></th>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>OK </td>
-	<td>No device found in database.</td>
-    <td></td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>FAIL </td>
-	<td>These mount point are not mounted with the correct labels. <br />These points do not have <b>swift:swift</b> permissions.<br /> These mount points are not mounted with read and write permissions. <br />These mount points are not <b> xfs </b>.
-</td>
-    <td>Check all the mounted drives for permission and file systems correct labels.
-</td>
-</tr><!--
-<tr style="background-color: white; color: black;">
-	<td>FAIL </td>
-	<td>Not mounted</td>
-    <td> The named device is not mounted. The device may have failed to mount or was unmounted due to an error. To resolve, stop all Swift processes, mount all devices and restart Swift.</td>
-</tr>--><!--
-<tr style="background-color: white; color: black;">
-	<td>UNKNOWN</td>
-	<td>No devices to report</td>
-    <td></td></tr>-->
+<ul>
+<li>Username: <i>icingaadmin</i>
+</li>
+<li>Password: <i>icingaadmin</i> </li>
+</ul>
+</li>
+<li>
+<p>Click <b>Status</b> on the left panel and then click 
+<xref format="html" href="javascript:window.open('/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
+<b>
+<varname>Host Detail</varname>
+</b>
+<!--(opens in a new window)-->
+</xref>.</p>
+</li>
+<li>
+<p>In the <b>Host</b> column, <xref format="html" href="javascript:window.open('/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
+<b>click the icon</b>
+<!-- (opens in a new window)--> </xref> next to the host IP when the tooltip displays as "View Service Details For This Host". <!--A BR tag was used here in the original source.-->
+The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the <xref format="html" href="javascript:window.open('/media/swift_icinga-mount-points.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
+<b>mount points</b>
+<!-- (opens in a new window)-->
+</xref>   of the selected Swift node.</p>
+</li>
+</ol>
+</section>
+<section id="status-messages"> <title>Status Messages</title>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry>Status</entry>
+    <entry>
+<required-cleanup remap="center">
+<ph>Message</ph>
+</required-cleanup>
+</entry>
+    <entry>
+<required-cleanup remap="center">
+<ph>Cause/Resolution</ph>
+</required-cleanup>
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>OK </entry>
+    <entry>No device found in database.</entry>
+    <entry/>
+</row>
+<row>
+<entry>FAIL </entry>
+    <entry>These mount point are not mounted with the correct labels. <!--A BR tag was used here in the original source.-->These points do not have <b>swift:swift</b> permissions.<!--A BR tag was used here in the original source.--> These mount points are not mounted with read and write permissions. <!--A BR tag was used here in the original source.-->These mount points are not <b> xfs </b>.
+</entry>
+    <entry>Check all the mounted drives for permission and file systems correct labels.
+</entry>
+</row>
+</tbody>
+</tgroup>
 </table>
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
-
- 
-
-
-
+<p>
+  <xref type="section" href="#topic1933/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

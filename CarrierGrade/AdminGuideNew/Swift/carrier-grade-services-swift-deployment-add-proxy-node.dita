@@ -1,115 +1,165 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Add New Scale-out Proxy Node"
-permalink: /helion/openstack/carrier/services/swift/deployment/add-proxy-node/
-product: carrier-grade
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.0
-product-version3: HP Helion OpenStack 1.0.1
-product-version4: HP Helion OpenStack 1.1
-role1: Storage Administrator
-role2: Storage Architect
-authors: Keshava HP, Binamra S, Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2529">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Add New Scale-out Proxy Node</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Keshava HP, Binamra S, Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
+<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-proxy-node.md-->
+ <!--permalink: /helion/openstack/carrier/services/swift/deployment/add-proxy-node/--></p>
+<p>This topic shows how to add a proxy node to the store account and container ring.</p>
+<ol>
+<li>
+<xref type="section" href="#topic2529/prer">Prerequisite</xref>
+</li>
+<li>
+<xref type="section" href="#topic2529/deploying-new-node">Deploying new node(s)</xref>
+</li>
+</ol>
+<section id="prer"> <title>Prerequisite</title>
+<ul>
+<li>HP Helion OpenStack(R) cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Sotrage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
+</li>
+<li>Scale-out object-ring:1 is deployed.</li>
+</ul>
+</section>
+<section id="deploying-new-node"> <title>Deploying new node(s)</title>
+<p>Perform the steps mentioned in  <xref href="../../../CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-provision-swift-node.dita" >Provision Node(s)</xref> to deploy a new node.</p>
+</section>
+<section id="update-load-balancer-with-new-proxy-nodes"> <title>Update load balancer with new Proxy nodes</title>
+<ol>
+<li>
+<p>Log in to the undercloud from seed.</p>
 
-<script>
+<codeblock>
+<codeph># ssh heat-admin@&lt;undercloud IP address&gt; 
+# sudo -i
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Change the directory to ring builder.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<codeblock>
+<codeph># cd /root/ring-building 
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Copy account, container, object, and generated <codeph>object-1.ring.gz</codeph> files to proxy nodes and press <b>yes</b> when asked to authenticate the node.</p>
 
-PageRefresh();
+<codeblock>
+<codeph># ringos copy-ring -s /root/ring-building/\*.ring.gz -n &lt;proxy node IP address&gt; 
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Copy <codeph>object-1.builder</codeph> files to proxy nodes.</p>
 
-</script>
+<codeblock>
+<codeph># ringos copy-ring -s /root/ring-building/\object-1.builder -n &lt;proxy node IP address&gt;
+</codeph>
+</codeblock>
 
-<!-- <p style="font-size: small;"> <a href=" /helion/openstack/carrier/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/carrier/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/swift/deployment/add-disk-storage-node/"> NEXT &#9654</a> </p> -->
+<p>
+<b>Note</b>: The <codeph>.buldier</codeph> and <codeph>.ring.gz</codeph> files <b>must</b> be present in the Swift nodes.</p>
+</li>
+<li>
+<p>After creation of the Proxy node, list the Proxy IP addresses.</p>
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Add New Scale-out Proxy Node
+<codeblock>
+<codeph># ringos list-swift-nodes -t proxy
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>List all the controller nodes</p>
 
-This topic shows how to add a proxy node to the store account and container ring.
+<codeblock>
+<codeph># nova list
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Edit <codeph>swift-proxy.cfg</codeph> on each of the controller nodes.</p>
 
-1. [Prerequisite](#prer)
-2. [Deploying new node(s)](#deploying-new-node)
+<codeblock>
+<codeph>/etc/haproxy/manual/swift-proxy.cfg
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Add the following content in the <codeph>swift-proxy.cfg</codeph> file.</p>
 
+<codeblock>
+<codeph>  listen scale_swift_proxy
+  bind &lt;Virtual IP (running on the controller nodes)&gt;:8080
+  server &lt;proxy node hostname&gt; &lt;proxy nodes IP address&gt;:8080 check inter 2000 rise 2 fall 5 
+</codeph>
+</codeblock>
 
-##Prerequisite {#prer}
+<p>
+<b>Note</b>:</p>
 
-* HP Helion OpenStack&#174; cloud is successfully deployed.<br /> *(Starter Object Sotrage (Swift) nodes are functional by default as they are part of cloud deployment)*
-* Scale-out object-ring:1 is deployed.
+<ul>
+<li>The number of "server" lines equals the number of Swift Proxies you have set up.</li>
+<li>
+<p>For virtual IP:</p>
 
+<ul>
+<li>
+<p>Login to the controller node</p>
 
-##Deploying new node(s) {#deploying-new-node}
+<codeblock>
+<codeph># ssh heat-admin@&lt;Controller Node IP address&gt;
+# sudo -i
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Run the following command to view the virtual IP of the controller nodes</p>
 
-Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/carrier/services/swift/provision-nodes/) to deploy a new node.
+<codeblock>
+<codeph>vi /etc/keepalived/keepalived.conf
+</codeph>
+</codeblock>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Restart the HA Proxy service on all these nodes.</p>
 
-
-##Update load balancer with new Proxy nodes
- 
-1. Log in to the undercloud from seed.
- 
-		# ssh heat-admin@<undercloud IP address> 
-		# sudo -i
-
-2. Change the directory to ring builder.
-
-		# cd /root/ring-building 
-
-3. Copy account, container, object, and generated `object-1.ring.gz` files to proxy nodes and press **yes** when asked to authenticate the node. 
-
-		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <proxy node IP address> 
-
-4. Copy `object-1.builder` files to proxy nodes. 
- 
-		# ringos copy-ring -s /root/ring-building/\object-1.builder -n <proxy node IP address>
-
-	**Note**: The `.buldier` and `.ring.gz` files **must** be present in the Swift nodes.
-
-5. After creation of the Proxy node, list the Proxy IP addresses.
-
-		# ringos list-swift-nodes -t proxy
-
-6. List all the controller nodes
-
- 		# nova list
-
-7. Edit `swift-proxy.cfg` on each of the controller nodes. 
-
-	 	/etc/haproxy/manual/swift-proxy.cfg
-
-8. Add the following content in the `swift-proxy.cfg` file.
-
-		  listen scale_swift_proxy
-		  bind <Virtual IP (running on the controller nodes)>:8080
-		  server <proxy node hostname> <proxy nodes IP address>:8080 check inter 2000 rise 2 fall 5 
-
-	**Note**:
-			
-	* The number of "server" lines equals the number of Swift Proxies you have set up.
-	* For virtual IP: 
-
-		* Login to the controller node
-	
-		  		# ssh heat-admin@<Controller Node IP address>
-				# sudo -i
-
-		*  Run the following command to view the virtual IP of the controller nodes
-
-				vi /etc/keepalived/keepalived.conf
-
-
-9. Restart the HA Proxy service on all these nodes.
-
-		# service haproxy restart
-
-The Swift Proxies are now successfully enabled with HA Proxy. 
-
-**Note**: You now must add account and container rings to the Swift Proxies. For these instructions, go to [Adding disk account containers](/helion/openstack/carrier/services/swift/deployment/add-disk-account-container/).
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-
-----
+<codeblock>
+<codeph># service haproxy restart
+</codeph>
+</codeblock>
+</li>
+</ol>
+<p>The Swift Proxies are now successfully enabled with HA Proxy.</p>
+<p>
+<b>Note</b>: You now must add account and container rings to the Swift Proxies. For these instructions, go to <xref href="../../../CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-account-container.dita" >Adding disk account containers</xref>.</p>
+<p>
+  <xref type="section" href="#topic2529/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

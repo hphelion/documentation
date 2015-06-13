@@ -1,102 +1,123 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Managing Compute Flavors"
-permalink: /helion/commercial/1.1/dashboard/managing/flavors/
-product: commercial.ga
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3041">
+<title>HP Helion OpenStack(R) 1.1: Managing Compute Flavors</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./UseCases/TasksforAdmins/Domains/1.1commercial.dashboard.domains.flavors.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/flavors/--></p>
+<p>Compute flavors are machine configurations that describe the amount of memory, number of CPUs, and storage capacity of instances. The moment you register a chassis, a flavor is created by default. You can use the default flavor or create a flavor of your choice.</p>
+<p>An admin user can create, edit, and delete instances as needed.</p>
+<ul>
+<li>
+<xref type="section" href="#topic3041/createflavor">Create a flavor</xref>
+</li>
+<li>
+<xref type="section" href="#topic3041/editflavor&quot;">Edit a flavor</xref>
+</li>
+<li>
+<xref type="section" href="#topic3041/deleteflavor">Delete a flavor</xref>
+</li>
+</ul>
+<section id="createflavor"> <title>Create a flavor</title>
+<p>To create a flavor:</p>
+<ol>
+<li>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</li>
+</ol>
+<p>2 Click the <b>Flavors</b> link on the <b>Admin</b> dashboard <b>System</b> panel.
+    The flavors in the domain are listed.</p>
+<ol>
+<li>
+<p>Click <b>Create Flavor</b>.</p>
+</li>
+<li>
+<p>In the <b>Create Flavor</b> screen, click the <b>Flavor Info</b> tab (should be active).</p>
+</li>
+<li>
+<p>Enter the name that you want to assign to the flavor.</p>
 
-<script>
+<ul>
+<li>In the <b>ID</b> field, enter a unique string that identifies this flavor.</li>
+<li>In the <b>VCPUs</b> field, enter the required number of virtual CPUs to be included in the flavor.</li>
+<li>In the <b>RAM MB</b> field, enter the virtual machine memory in megabytes to be included in the flavor.</li>
+<li>In the <b>Root Disk GB</b> field, enter the size for the virtual root disk size in gigabytes.</li>
+<li>From the <b>Ephemeral disk GB</b> field, enter the size of a secondary ephemeral data disk in gigabytes. This is an empty, unformatted disk and exists only for the life of the instance.</li>
+<li>From the <b>Swap Disk MB</b> field, enter the amount of swap space allocation for the flavor.</li>
+</ul>
+</li>
+<li>
+<p>Click the <b>Flavor Access</b> tab.</p>
+</li>
+<li>
+<p>Add the flavor to a project by clicking the <b>+</b> icon next to each project in the <b>All Projects</b> column.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<p>By default, no project is specified as having access the flavor. If none is specified, all projects can access the flavor.</p>
+</li>
+<li>
+<p>Click <b>Create Flavor</b> to create a new the flavor.<!--A BR tag was used here in the original source.-->
+A message is displayed on successful creation.</p>
+</li>
+</ol>
+</section>
+<section id="editflavor"> <title>Edit a flavor</title>
+<p>To edit a flavor:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Flavors</b> link on the <b>Admin</b> dashboard <b>System</b> panel.</p>
 
-PageRefresh();
+<p>The flavors in the domain are listed.</p>
+</li>
+<li>
+<p>For the flavor you want to modify, click <b>Edit Flavor</b>.</p>
+</li>
+<li>
+<p>In the <b>Edit Flavor</b> screen, click the <b>Flavor Info</b> tab (should be active).</p>
+</li>
+<li>
+<p>Use the <b>Flavor Info</b> and <b>Flavor Access</b> tabs to modify the flavor as needed. See <xref type="section" href="#topic3041/createflavor">Create a flavor</xref> for a description of each field.</p>
+</li>
+<li>
+<p>When done editing, click <b>Save</b>.</p>
+</li>
+</ol>
+<p>A message is displayed on successful edit.</p>
+</section>
+<section id="deleteflavor"> <title>Delete a flavor</title>
+<p>Instances that use the flavor are not affected when a flavor is deleted.</p>
+<p>To delete a flavor:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Flavors</b> link on the <b>Admin</b> dashboard <b>System</b> panel.</p>
 
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; 1.1: Managing Compute Flavors
-
-Compute flavors are machine configurations that describe the amount of memory, number of CPUs, and storage capacity of instances. The moment you register a chassis, a flavor is created by default. You can use the default flavor or create a flavor of your choice.
-
-An admin user can create, edit, and delete instances as needed. 
-
-* [Create a flavor](#createflavor)
-* [Edit a flavor](#editflavor")
-* [Delete a flavor](#deleteflavor)
-
-### Create a flavor ### {#createflavor}
-
-To create a flavor:
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2 Click the **Flavors** link on the **Admin** dashboard **System** panel.
-	The flavors in the domain are listed. 
-
-3. Click **Create Flavor**. 
-
-4. In the **Create Flavor** screen, click the **Flavor Info** tab (should be active).
-
-5. Enter the name that you want to assign to the flavor.
-	* In the **ID** field, enter a unique string that identifies this flavor.
-	* In the **VCPUs** field, enter the required number of virtual CPUs to be included in the flavor.
-	* In the **RAM MB** field, enter the virtual machine memory in megabytes to be included in the flavor.
-	* In the **Root Disk GB** field, enter the size for the virtual root disk size in gigabytes.
-	* From the **Ephemeral disk GB** field, enter the size of a secondary ephemeral data disk in gigabytes. This is an empty, unformatted disk and exists only for the life of the instance.
-	* From the **Swap Disk MB** field, enter the amount of swap space allocation for the flavor.
-
-6. Click the **Flavor Access** tab.
-
-7. Add the flavor to a project by clicking the **+** icon next to each project in the **All Projects** column.
-
-	By default, no project is specified as having access the flavor. If none is specified, all projects can access the flavor.
-
-8. Click **Create Flavor** to create a new the flavor.<br />
-A message is displayed on successful creation.
-
-### Edit a flavor ### {#editflavor}
-
-To edit a flavor:
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2. Click the **Flavors** link on the **Admin** dashboard **System** panel.
-
-	The flavors in the domain are listed. 
-
-3. For the flavor you want to modify, click **Edit Flavor**. 
-
-4. In the **Edit Flavor** screen, click the **Flavor Info** tab (should be active).
-
-5. Use the **Flavor Info** and **Flavor Access** tabs to modify the flavor as needed. See <a href="#createflavor">Create a flavor</a> for a description of each field.
-
-6. When done editing, click **Save**.
-
-A message is displayed on successful edit.
-
-### Delete a flavor ### {#deleteflavor}
-
-Instances that use the flavor are not affected when a flavor is deleted.
-
-To delete a flavor:
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2. Click the **Flavors** link on the **Admin** dashboard **System** panel.
-
-	The flavors in the domain are listed. 
-
-3. For the flavor you want to modify, click **More &gt; Delete Flavor**. 
-
-4. In the confirmation screen, click **Delete Flavor**.
-<p>A message is displayed on successful delete.</p> 
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----
+<p>The flavors in the domain are listed.</p>
+</li>
+<li>
+<p>For the flavor you want to modify, click <b>More &gt; Delete Flavor</b>.</p>
+</li>
+<li>
+<p>In the confirmation screen, click <b>Delete Flavor</b>.</p>
+</li>
+</ol>
+<p>A message is displayed on successful delete.</p>
+<p>
+  <xref type="section" href="#topic3041/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

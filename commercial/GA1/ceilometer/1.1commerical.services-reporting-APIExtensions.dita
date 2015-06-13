@@ -1,58 +1,99 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Metering Service (Ceilometer): API Extensions"
-permalink: /helion/openstack/1.1/services/reporting/APIextensions/
-product: commercial.ga
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-Role1: Systems Administrator 
-Role2: Data Center Architect 
-Role3: Cloud Administrator 
-Role4: Net Ops Engineer 
-Role5: NOC Engineer 
-Role6: Network Administrator
-Writer: Jayme P
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2539">
+<title>HP Helion OpenStack(R) 1.1: Metering Service (Ceilometer): API Extensions</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-
-# HP Helion OpenStack&#174; 1.1: Metering Service (Ceilometer): API Extensions
-APIs can be extended to provide additional functionality.
-
-HP has created and added a Health-Check API for the Ceilometer Reporting API. This Health-Check provides more response options when assessing the availability and healthiness of the Ceilometer service.
- 
-
-##Health Check API
-
-Currently the HA Proxy (Load Balancer) can validate that there is IP/HTTP connectivity with the service. If connected, it is safe to assume that it is alive; however, this assumption is not a guarantee that the service is actually functional. It could be alive but completely unable to retrieve data or perform write operations. This API extension further assesses the health of the service beyond the basic connectivity check.
-
-**Operations**
-
-The usual **HEAD** request only checks for basic IP/HTTP connectivity. The **GET** request performs a full round-trip connectivity check all the way to the database and back.
+ <!--./commercial/GA1/ceilometer/1.1commerical.services-reporting-APIExtensions.md-->
+ <!--permalink: /helion/openstack/1.1/services/reporting/APIextensions/--></p>
+<p>APIs can be extended to provide additional functionality.</p>
+<p>HP has created and added a Health-Check API for the Ceilometer Reporting API. This Health-Check provides more response options when assessing the availability and healthiness of the Ceilometer service.</p>
+<section id="health-check-api"> <title>Health Check API</title>
+<p>Currently the HA Proxy (Load Balancer) can validate that there is IP/HTTP connectivity with the service. If connected, it is safe to assume that it is alive; however, this assumption is not a guarantee that the service is actually functional. It could be alive but completely unable to retrieve data or perform write operations. This API extension further assesses the health of the service beyond the basic connectivity check.</p>
+<p>
+  <b>Operations</b>
+</p>
+<p>The usual <b>HEAD</b> request only checks for basic IP/HTTP connectivity. The <b>GET</b> request performs a full round-trip connectivity check all the way to the database and back.</p>
 <table>
-<tr><td width="120"></td><td>Successful Response</td><td>Error Response</td><td>Take Action</td></tr>
-<tr><td>HEAD /v2/health</td><td>204 No Content</td><td>404 Not Found, 500 Internal Server Error</td><td>Verify that the Ceilometer Reporting API are up and running.</td></tr>
-<tr><td>GET /v2/health</td><td>200 OK</td><td>404 Not Found, 500 Internal Server Error, 503 Service Unavailable</td><td>Verify that the Ceilometer Reporting API are up and running and there is connectivity with the back-end.</td></tr>
+<tgroup cols="4">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<colspec colname="col4"/>
+<tbody>
+<row>
+    <entry/>
+    <entry>Successful Response</entry>
+    <entry>Error Response</entry>
+    <entry>Take Action</entry>
+  </row>
+<row>
+    <entry>HEAD /v2/health</entry>
+    <entry>204 No Content</entry>
+    <entry>404 Not Found, 500 Internal Server Error</entry>
+    <entry>Verify that the Ceilometer Reporting API are up and running.</entry>
+  </row>
+<row>
+    <entry>GET /v2/health</entry>
+    <entry>200 OK</entry>
+    <entry>404 Not Found, 500 Internal Server Error, 503 Service Unavailable</entry>
+    <entry>Verify that the Ceilometer Reporting API are up and running and there is connectivity with the back-end.</entry>
+  </row>
+</tbody>
+</tgroup>
 </table>
-
-**Errors**
-
+<p>
+  <b>Errors</b>
+</p>
 <table>
-<tr><td width="120"></td><td>Error Response</td><td>Explanation</td></tr>
-<tr><td>HEAD /v2/health</td><td>404 Not Found</td><td>The API cannot be reached; not even the basic system is up and running.</td></tr>
-<tr><td>HEAD /v2/health</td><td>500 Internal Server Error </td><td>The API has been reached but it failed to perform its operation. The service is highly compromised. </td></tr>
-<tr><td>GET /v2/health</td><td>404 Not Found</td><td>The API cannot be reached; not even the basic system is up and running</td></tr>
-<tr><td>GET /v2/health</td><td>500 Internal Server Error</td><td>The API has been reached but it failed to perform its operation. The service is highly compromised. </td></tr>
-<tr><td>GET /v2/health</td><td>503 Service Unavailable</td><td>The API has been reached but the back-end connectivity is unavailable or compromised. The service cannot successfully perform its operations. </td></tr>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<tbody>
+<row>
+    <entry/>
+    <entry>Error Response</entry>
+    <entry>Explanation</entry>
+  </row>
+<row>
+    <entry>HEAD /v2/health</entry>
+    <entry>404 Not Found</entry>
+    <entry>The API cannot be reached; not even the basic system is up and running.</entry>
+  </row>
+<row>
+    <entry>HEAD /v2/health</entry>
+    <entry>500 Internal Server Error </entry>
+    <entry>The API has been reached but it failed to perform its operation. The service is highly compromised. </entry>
+  </row>
+<row>
+    <entry>GET /v2/health</entry>
+    <entry>404 Not Found</entry>
+    <entry>The API cannot be reached; not even the basic system is up and running</entry>
+  </row>
+<row>
+    <entry>GET /v2/health</entry>
+    <entry>500 Internal Server Error</entry>
+    <entry>The API has been reached but it failed to perform its operation. The service is highly compromised. </entry>
+  </row>
+<row>
+    <entry>GET /v2/health</entry>
+    <entry>503 Service Unavailable</entry>
+    <entry>The API has been reached but the back-end connectivity is unavailable or compromised. The service cannot successfully perform its operations. </entry>
+  </row>
+</tbody>
+</tgroup>
 </table>
+</section>
+</body>
+</topic>

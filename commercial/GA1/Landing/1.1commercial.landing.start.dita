@@ -1,39 +1,34 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Getting Started"
-permalink: /helion/openstack/1.1/landing/start/
-product: commercial.test
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: All
-
-authors: Micael B
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic774">
+<title>HP Helion OpenStack(R) 1.1: Getting Started</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="All"/>
+<othermeta name="role" content="Micael B"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
-
-# HP Helion OpenStack&#174; 1.1: Getting Started
-
-[Frequently Asked Questions](/helion/openstack/1.1/faq/)
-<br />Commonly asked queries that you might have while working with HP Helion OpenStack
-<hr />
-
-[Technical overview](/helion/openstack/1.1/technical-overview/)
-<br />Learn about HP Helion OpenStack, an enterprise-grade distribution of the OpenStack cloud operating system.
-<hr />
-
-[Support matrix](/helion/openstack/1.1/support-matrix/)
-<br />Learn about the hardware and software that is supported for HP Helion OpenStack.
-<hr />
+ <!--./commercial/GA1/Landing/1.1commercial.landing.start.md-->
+ <!--permalink: /helion/openstack/1.1/landing/start/--></p>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.faq.dita" >Frequently Asked Questions</xref>
+<!--A BR tag was used here in the original source.-->Commonly asked queries that you might have while working with HP Helion OpenStack(R)</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.technical-overview.ga.dita" >Technical overview</xref>
+<!--A BR tag was used here in the original source.-->Learn about HP Helion OpenStack(R) an enterprise-grade distribution of the OpenStack(R) cloud operating system.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support matrix</xref>
+<!--A BR tag was used here in the original source.-->Learn about the hardware and software that is supported for HP Helion OpenStack(R)</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

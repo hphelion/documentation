@@ -1,70 +1,87 @@
----
-layout: default-devplatform
-title: "HP Helion 1.2 Development Platform: Glazier Reference Guide"
-permalink: /helion/devplatform/1.2/windows/glazier/
-product: devplatform2.0
-product-version1: HP Helion Development Platform
-product-version2: HP Helion Development Platform 1.2
-role1: Systems Administrator 
-role2: System Engineer
-role3: Cloud Administrator
-role4: Network Administrator
-role5: Application Developer
-Role6: Security Engineer
-role7: Application Developer 
-role8: ISV Developer
-role9: Service Developer
-authors: Patrick F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6720">
+<title>HP Helion 1.2 Development Platform: Glazier Reference Guide</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Patrick F"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-# HP Helion 1.2 Development Platform: Glazier Reference Guide
-
-<span style="font-size:70%">*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*</span>
-
-Glazier is a collection of scripts used for building Windows images for deployment to a Helion OpenStack environment. The image that the tool creates can be configured either by using command-line switches, or by using a Glazier profile.
-
-For an example on how to use Glazier to create a Windows image, see <a href="/helion/devplatform/1.2/windows/building_windows/">Building and Deploying Windows DEA and SQL Server Express Images</a>.
-
-* [Downloading the Glazier Tool](#downloading)
-* [Prerequisites](#prerequisites)
-* [Usage](#usage)
-* [Command-Line Arguments](#commandline)
-* [Glazier Profiles](#profile)
-
-## Downloading the Glazier tool {#downloading}
-
-The Glazier tool can be found here: <a href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</a>
-
-## Prerequisites {#prerequisites}
-
-Glazier can run in either Linux (Ubuntu recommended) or OSX.
-
-* <a href="http://download.virtualbox.org/virtualbox/4.3.26/VirtualBox-4.3.26-98988-OSX.dmg">Virtual box 4.3.26</a>
-* A retail or volume licensed, English Windows 2012R2 image. Images for a development or test environment can be downloaded from MSDN; for a production environment, you must obtain an image through your OEM channel.
-* <a href="https://fedorapeople.org/groups/virt/virtio-win/deprecated-isos/stable/virtio-win-0.1-81.iso">Windows VirtIO Image 0.1-81</a>
-
-## Usage {#usage}
-
-To use the script, you need to have the following OpenStack environment variables set:
-
-* OS\_TENANT\_NAME
-* OS\_USERNAME
-* OS\_PASSWORD
-* OS\_REGION\_NAME
-* OS\_TENANT\_ID
-* OS\_AUTH\_URL
-
-It is recommended to set these environment variables using the OpenStack RC file from the target environment. This can be obtained in Horizon, under Project-&gt;Compute-&gt;Access & Security-&gt;API Access-&gt;**Download OpenStack RC File**.
-
-## Command-line arguments {#commandline}
-
-Syntax: <code>create-glazier</code>
-
-Available options:
-
-<pre>
+ <!--./devplatform/1.2/windows/windows_glazier_reference_guide.md-->
+ <!--permalink: /helion/devplatform/1.2/windows/glazier/--></p>
+<p>
+  <!--Original: <span @class=>--><ph>
+    <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
+  </ph>
+</p>
+<p>Glazier is a collection of scripts used for building Windows images for deployment to a Helion OpenStack(R) environment. The image that the tool creates can be configured either by using command-line switches, or by using a Glazier profile.</p>
+<p>For an example on how to use Glazier to create a Windows image, see <xref href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita" >Building and Deploying Windows DEA and SQL Server Express Images</xref>.</p>
+<ul>
+<li>
+<xref type="section" href="#topic6720/downloading">Downloading the Glazier Tool</xref>
+</li>
+<li>
+<xref type="section" href="#topic6720/prerequisites">Prerequisites</xref>
+</li>
+<li>
+<xref type="section" href="#topic6720/usage">Usage</xref>
+</li>
+<li>
+<xref type="section" href="#topic6720/commandline">Command-Line Arguments</xref>
+</li>
+<li>
+<xref type="section" href="#topic6720/profile">Glazier Profiles</xref>
+</li>
+</ul>
+<section id="downloading"> <title>Downloading the Glazier tool</title>
+<p>The Glazier tool can be found here: <xref href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip" scope="external" format="html" >Download</xref>
+</p>
+</section>
+<section id="prerequisites"> <title>Prerequisites</title>
+<p>Glazier can run in either Linux (Ubuntu recommended) or OSX.</p>
+<ul>
+<li>
+<xref href="http://download.virtualbox.org/virtualbox/4.3.26/VirtualBox-4.3.26-98988-OSX.dmg" scope="external" format="html" >Virtual box 4.3.26</xref>
+</li>
+<li>A retail or volume licensed, English Windows 2012R2 image. Images for a development or test environment can be downloaded from MSDN; for a production environment, you must obtain an image through your OEM channel.</li>
+<li>
+<xref href="https://fedorapeople.org/groups/virt/virtio-win/deprecated-isos/stable/virtio-win-0.1-81.iso" scope="external" format="html" >Windows VirtIO Image 0.1-81</xref>
+</li>
+</ul>
+</section>
+<section id="usage"> <title>Usage</title>
+<p>To use the script, you need to have the following OpenStack(R) environment variables set:</p>
+<ul>
+<li>OS_TENANT_NAME</li>
+<li>OS_USERNAME</li>
+<li>OS_PASSWORD</li>
+<li>OS_REGION_NAME</li>
+<li>OS_TENANT_ID</li>
+<li>OS_AUTH_URL</li>
+</ul>
+<p>It is recommended to set these environment variables using the OpenStack(R) RC file from the target environment. This can be obtained in Horizon, under Project-&gt;Compute-&gt;Access &amp; Security-&gt;API Access-&gt;<b>Download OpenStack(R) RC File</b>.</p>
+</section>
+<section id="commandline"> <title>Command-line arguments</title>
+<p>Syntax: <codeph>create-glazier</codeph>
+</p>
+<p>Available options:</p>
+<codeblock>
 --windows-iso /path/to/windows_iso_kit      
     - specifies the location of the Windows iso image
 
@@ -91,18 +108,18 @@ Available options:
     - (optional) Specifies that you are using a Windows volume license. If this is specified, there is no need to specify --product-key (means you are using Windows VL)
 
 --os-network-id
-    - OpenStack network id used for building the OpenStack image. Can be found 
+    - OpenStack(R) network id used for building the OpenStack(R) image. Can be found 
     - in Horizon interface under Project-&gt;Network-&gt;Networks-&gt;(network name)-&gt;ID
 
 --os-key-name
-    - OpenStack name of the key used for building the OpenStack image. Can be found
-    - in Horizon interface under Project-&gt;Compute-&gt;Access & Security-&gt;Key Pairs
+    - OpenStack(R) name of the key used for building the OpenStack(R) image. Can be found
+    - in Horizon interface under Project-&gt;Compute-&gt;Access &amp; Security-&gt;Key Pairs
 
 --os-security-group
-    - OpenStack security group used for building the OpenStack image
+    - OpenStack(R) security group used for building the OpenStack(R) image
  
 --os-flavor
-    - OpenStack flavor used for building the OpenStack image. Example: standard.medium
+    - OpenStack(R) flavor used for building the OpenStack(R) image. Example: standard.medium
 
 --insecure
     - (optional) create a Windows image for a Development Platform installation that does not have an HTTPS certificate
@@ -121,82 +138,87 @@ Available options:
     - Should the script display colors or not. The default is yes.
 
 --version
-	- (optional) show the Glazier version
+    - (optional) show the Glazier version
 
 --glazier-vm-http-proxy
-	- (optional) Sets the http proxy in the created virtual machine
+    - (optional) Sets the http proxy in the created virtual machine
 
 --glazier-vm-https-proxy
-	- (optional) Sets the https proxy in the created virtual machine
-	- 
+    - (optional) Sets the https proxy in the created virtual machine
+    - 
 --help                      
     - shows this message
-</pre>
-
-## Creating a Glazier Profile {#profile}
-
-A profile can be used to configure Glazier. By default we provide the profiles you need to create the images you need to enable working with Windows. However, you can create a custom profile. Create the profile in the following format:
-
-### Glazier profile directory structure
-
-The directory structure of the profile should match the following:
-
-<img src="media/windows_glazier_fileformat.png">
-
-### Sample features.csv file
-
-The <code>features.csv</code> file should have the following format:
-
-	csv
-	Feature,Core,Standard,Desired
-	NetFx4ServerFeatures,Enabled,Enabled,Enabled
-	NetFx4,Enabled,Enabled,Enabled
-	NetFx4Extended-ASPNET45,Disabled,Disabled,Enabled
-	MicrosoftWindowsPowerShellRoot,Enabled,Enabled,Enabled
-	MicrosoftWindowsPowerShell,Enabled,Enabled,Enabled
-	ServerCore-FullServer,Removed,Enabled,Removed
-	IIS-LegacySnapIn,Removed,Disabled,Removed
-	IIS-ManagementScriptingTools,Disabled,Disabled,Removed
-	IIS-ManagementService,Disabled,Disabled,Removed
-	IIS-IIS6ManagementCompatibility,Disabled,Disabled,Removed
-	IIS-Metabase,Disabled,Disabled,Removed
-	IIS-WMICompatibility,Disabled,Disabled,Removed
-	IIS-LegacyScripts,Disabled,Disabled,Removed
-	IIS-FTPServer,Disabled,Disabled,Removed
-
-### Sample resources.csv file
-
-The <code>resources.csv</code> file should have the following format:
-
-	csv
-	destination,url
-	\installers\product.zip,http://download.domain.com/product.zip
-
-### Sample tools.csv file
-
-The <code>tools.csv</code> file should have the following format:
-
-	csv
-	destination,url
-	tool.zip,http://download.domain.com/tool.zip
-
-### Sample PowerShell script
-
-The <code>specialize.ps1</code> file is a PowerShell script that will run as one of the last steps on the `temp instance`.
-
-Sample <code>specialize.ps1</code>:
-
-	powershell
-	# Open firewall port 80
-	New-NetFirewallRule -DisplayName 'Allow HTTP' -Direction Inbound -LocalPort 80 -Protocol TCP -Action Allow
-
-
-
-After creating the profile, use the <code>--profile</code> command-line switch (above).
-
----
-
-<div align="center"><a href="/helion/devplatform/1.2/windows/">Windows Overview</a> </div>
-<div align="center"> <a href="/helion/devplatform/1.2/windows/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/1.2/windows/tools_guide/">Windows and .NET Tools Guide</a> </div>
-<div align="center"> <a href="/helion/devplatform/1.2/windows/building_windows/">Building and Deploying Windows DEA and SQL Server Express Images</a> | Glazier Reference Guide</div>
-<div align="center"><a href="/helion/devplatform/1.2/windows/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/1.2/windows/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
+</codeblock>
+</section>
+<section id="profile"> <title>Creating a Glazier Profile</title>
+<p>A profile can be used to configure Glazier. By default we provide the profiles you need to create the images you need to enable working with Windows. However, you can create a custom profile. Create the profile in the following format:</p>
+</section>
+<section id="glazier-profile-directory-structure"> <title>Glazier profile directory structure</title>
+<p>The directory structure of the profile should match the following:</p>
+<p>
+  <image href="../../../media/windows_glazier_fileformat.png"/>
+</p>
+</section>
+<section id="sample-featurescsv-file"> <title>Sample features.csv file</title>
+<p>The <codeph>features.csv</codeph> file should have the following format:</p>
+<codeblock>
+  <codeph>csv
+Feature,Core,Standard,Desired
+NetFx4ServerFeatures,Enabled,Enabled,Enabled
+NetFx4,Enabled,Enabled,Enabled
+NetFx4Extended-ASPNET45,Disabled,Disabled,Enabled
+MicrosoftWindowsPowerShellRoot,Enabled,Enabled,Enabled
+MicrosoftWindowsPowerShell,Enabled,Enabled,Enabled
+ServerCore-FullServer,Removed,Enabled,Removed
+IIS-LegacySnapIn,Removed,Disabled,Removed
+IIS-ManagementScriptingTools,Disabled,Disabled,Removed
+IIS-ManagementService,Disabled,Disabled,Removed
+IIS-IIS6ManagementCompatibility,Disabled,Disabled,Removed
+IIS-Metabase,Disabled,Disabled,Removed
+IIS-WMICompatibility,Disabled,Disabled,Removed
+IIS-LegacyScripts,Disabled,Disabled,Removed
+IIS-FTPServer,Disabled,Disabled,Removed
+</codeph>
+</codeblock>
+</section>
+<section id="sample-resourcescsv-file"> <title>Sample resources.csv file</title>
+<p>The <codeph>resources.csv</codeph> file should have the following format:</p>
+<codeblock>
+  <codeph>csv
+destination,url
+\installers\product.zip,http://download.domain.com/product.zip
+</codeph>
+</codeblock>
+</section>
+<section id="sample-toolscsv-file"> <title>Sample tools.csv file</title>
+<p>The <codeph>tools.csv</codeph> file should have the following format:</p>
+<codeblock>
+  <codeph>csv
+destination,url
+tool.zip,http://download.domain.com/tool.zip
+</codeph>
+</codeblock>
+</section>
+<section id="sample-powershell-script"> <title>Sample PowerShell script</title>
+<p>The <codeph>specialize.ps1</codeph> file is a PowerShell script that will run as one of the last steps on the <codeph>temp instance</codeph>.</p>
+<p>Sample <codeph>specialize.ps1</codeph>:</p>
+<codeblock>
+  <codeph>powershell
+# Open firewall port 80
+New-NetFirewallRule -DisplayName 'Allow HTTP' -Direction Inbound -LocalPort 80 -Protocol TCP -Action Allow
+</codeph>
+</codeblock>
+<p>After creating the profile, use the <codeph>--profile</codeph> command-line switch (above).</p>
+<!-- ===================== horizontal rule ===================== -->
+<xref href="../../../devplatform/1.2/windows/windows_overview.dita" >Windows Overview</xref>
+<xref href="../../../devplatform/1.2/windows/windows_firstapp.dita" >Deploying your first .NET Application</xref>
+<p> | </p>
+<xref href="../../../devplatform/1.2/windows/windows_tools_guide.dita" >Windows and .NET Tools Guide</xref>
+<xref href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita" >Building and Deploying Windows DEA and SQL Server Express Images</xref>
+<p> | Glazier Reference Guide</p>
+<xref href="../../../devplatform/1.2/windows/windows_adding_services.dita" >Adding Services to a Windows Application</xref>
+<p> | </p>
+<xref href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita" >Deploying Windows Applications with the IIS Buildpack</xref>
+</section>
+</body>
+</topic>

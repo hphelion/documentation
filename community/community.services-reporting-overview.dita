@@ -1,70 +1,56 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Telemetry and Reporting Service Overview"
-permalink: /helion/community/services/reporting/overview/
-product: community
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2950">
+<title>HP Helion OpenStack(R) Telemetry and Reporting Service Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-
-# HP Helion OpenStack&#174; Telemetry and Reporting Service Overview#
-
-The HP Helion OpenStack Telemetry and Reporting service leverages the OpenStack Ceilometer service to monitor the physical devices in your environment, including physical servers and network devices such as switches and firewalls. 
-
-The Telemetry and Reporting service allows you to collect measurements using only one agent; it collects usage data from every component throughout your environment and stores the data in a single location. 
-
-The Telemetry and Reporting service contains three type of monitors:
-
-- **Cumulative** -- A cumulative meter measures date over time (for example, instance hours).
-- **Gauge** -- A gauge measures discrete items.(for example, floating IPs or image uploads) and fluctuating values (such as disk input or output).
-- **Delta** -- A delta measures change over time, for example, monitoring bandwidth.
-
-Each meter is populated from one or more *samples*, which are gathered from the messaging queue or polled by agents. Samples are represented by counter objects. Each counter has the following fields:
-
-- the name of the meter
-- the type of meter (cumulative, gauge, or delta)
-- the amount of data measured
-- the unit of measure
-- the resource 
-- being measured
-- the project ID and user the resource belongs to
-
-Alarms can be configured to trigger notifications if a specific threshold value has been reached. 
-
-## Working with the Telemetry and Reporting Service ##
-
-To [perform tasks using the Telemetry and Reporting service](#howto), you can use the dashboard, API or CLI.
-
-### Using the dashboards {#UI}
-
-You can use the [HP Helion OpenStack Dashboard](/helion/community/dashboard/how-works/) to work with the Telemetry and Reporting service.
-
-### Using the API<a name="API"></a>
- 
-You can use a low-level, raw REST API access to HP Telemetry and Reporting. See the [OpenStack Telemetry API v2.0 Reference](http://developer.openstack.org/api-ref-telemetry-v2.html).
-
-###Using the CLI<a name="cli"></a>
-
-You can use any of several command-line interface software to access HP Telemetry and Reporting. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html).
-
-For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
-
+ <!--./community/community.services-reporting-overview.md-->
+ <!--permalink: /helion/community/services/reporting/overview/--></p>
+<p>The HP Helion OpenStack(R) Telemetry and Reporting service leverages the OpenStack(R) Ceilometer service to monitor the physical devices in your environment, including physical servers and network devices such as switches and firewalls.</p>
+<p>The Telemetry and Reporting service allows you to collect measurements using only one agent; it collects usage data from every component throughout your environment and stores the data in a single location.</p>
+<p>The Telemetry and Reporting service contains three type of monitors:</p>
+<ul>
+<li>
+<b>Cumulative</b> -- A cumulative meter measures date over time (for example, instance hours).</li>
+<li>
+<b>Gauge</b> -- A gauge measures discrete items.(for example, floating IPs or image uploads) and fluctuating values (such as disk input or output).</li>
+<li>
+<b>Delta</b> -- A delta measures change over time, for example, monitoring bandwidth.</li>
+</ul>
+<p>Each meter is populated from one or more <i>samples</i>, which are gathered from the messaging queue or polled by agents. Samples are represented by counter objects. Each counter has the following fields:</p>
+<ul>
+<li>the name of the meter</li>
+<li>the type of meter (cumulative, gauge, or delta)</li>
+<li>the amount of data measured</li>
+<li>the unit of measure</li>
+<li>the resource </li>
+<li>being measured</li>
+<li>the project ID and user the resource belongs to</li>
+</ul>
+<p>Alarms can be configured to trigger notifications if a specific threshold value has been reached.</p>
+<section id="working-with-the-telemetry-and-reporting-service"> <title>Working with the Telemetry and Reporting Service</title>
+<p>To <xref type="section" href="#topic2950/howto">perform tasks using the Telemetry and Reporting service</xref>, you can use the dashboard, API or CLI.</p>
+</section>
+<section id="UI"> <title>Using the dashboards</title>
+<p>You can use the <xref href="../community/community.dashboard.how-works.dita" >HP Helion OpenStack(R) Dashboard</xref> to work with the Telemetry and Reporting service.</p>
+</section>
+<section id="using-the-api"> <title>Using the API<!--Removed anchor point API--><!-- id="API" --></title>
+<p>You can use a low-level, raw REST API access to HP Telemetry and Reporting. See the <xref href="http://developer.openstack.org/api-ref-telemetry-v2.html" scope="external" format="html" >OpenStack(R) Telemetry API v2.0 Reference</xref>.</p>
+</section>
+<section id="using-the-cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
+<p>You can use any of several command-line interface software to access HP Telemetry and Reporting. See the <xref href="http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html" scope="external" format="html" >OpenStack(R) Command Line Interface Reference</xref>.</p>
+<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack(R) command-line clients</xref>.</p>
 <!--
 
 ## How To's with the HP Helion Telemetry and Reporting Service<a name="howto"></a>
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/ga/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-telemetry-v2.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack(R) Dashboard](/helion/openstack/1.1/ga/dashboard/how-works/), the OpenStack(R) [CLI](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html) or OpenStack(R) [API](http://developer.openstack.org/api-ref-telemetry-v2.html).
 
 ### Working with the Telemetry and Reporting service collection actions ###
 
@@ -101,9 +87,12 @@ The Telemetry and Reporting contains threshold alarms that you can configure to 
 - **Viewing the state of an alarm** - Get details on the state of a specific alarm.
 - **Viewing the history of a specific alarm** - Obtain a historical list of a specific alarm usage.
  -->
-
-## For more information ##
-
-For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
-
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+</section>
+<section id="for-more-information"> <title>For more information</title>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an OpenStack(R) Cloud is put together. However, the HP Helion OpenStack(R) takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
+<p>
+  <xref type="section" href="#topic2950/top"> Return to Top </xref>
+</p>
+</section>
+</body>
+</topic>

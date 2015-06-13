@@ -1,67 +1,124 @@
----
-layout: default-devplatform
-title: "HP Helion 1.2 Development Platform: Installing the Horizon UI for ALS, DBaaS, and Marketplace"
-permalink: /helion/devplatform/1.2/horizonuiinstallation/
-product: devplatform2.0
-product-version1: HP Helion Development Platform
-product-version2: HP Helion Development Platform 1.2
-role1: Systems Administrator 
-role2: System Engineer
-role3: Cloud Administrator
-role4: Network Administrator
-role5: Application Developer
-Role6: Security Engineer
-role7: Application Developer 
-role8: ISV Developer
-role9: Service Developer
-authors: Patrick F
-SME1: Chris Johnson
-SME2: Dominic Vieira
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4029">
+<title>HP Helion 1.2 Development Platform: Installing the Horizon UI for ALS, DBaaS, and Marketplace</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Patrick F"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-
-
-# HP Helion 1.2 Development Platform: Installing the Horizon UI for ALS, DBaaS, and Marketplace
-
-This document shows how to install the Horizon UI for the [Application Lifetime Service (ALS)](/helion/devplatform/1.2/als/), [Database as a Service (DBaaS)](/helion/devplatform/1.2/databaseservice/), and [Marketplace](/helion/devplatform/1.2/marketplace/) Services.
-
-**Note:** You will need to download and install the Horizon UI separately for each service you wish to upgrade.
- 
-## Step 1: Retrieve the ALS, DBaaS, and Marketplace Service Updates from CODN
-
-Use the **Helion Development Platform UI** to check CODN for a new Service Update for ALS, DBaaS, or Marketplace.
-
-If there are new Service Updates for ALS, DBaaS, or Marketplace, retrieve them from CODN. This will retrieve the ALS, DBaaS, and Marketplace packages from CODN and push them into a container in Swift within your local cloud.
-
-## Step 2: Install the ALS, DBaaS, and Marketplace Service Updates
-
-### Preparation
-
-You will need the following pieces of information in order to run the service updates.
-
-<table width="100%">
-  <tr><th><p>Identifier</p></th><th><p>Description</p></th></tr>
-  <tr><td><p>BASE_NODE_IP</p></td><td><p>The IP address of the base node for your Helion installation.</p></td></tr>
-  <tr><td><p>SEED_NODE_IP</p></td><td><p>The IP address of the seed node for your Helion installation.</p></td></tr>
-  <tr><td><p>USERNAME</p></td><td><p>The username of a cloud admin that has rights to perform a service update for the selected service (ALS, DBaaS, or Marketplace).</p></td></tr>
-  <tr><td><p>PASSWORD</p></td><td><p>The password of a cloud admin that has rights to perform a service update for the selected service (ALS, DBaaS, or Marketplace).</p></td></tr>
-  <tr><td><p>HEAT_ADMIN_KEY</p></td><td><p>The private key file for the <strong>heat-admin</strong> user. <br />
-Usually available within the root user account on the seed node here: ~/.ssh/id_rsa</p></td></tr>
-  <tr><td><p>CONTAINER_NAME</p></td><td><p>The Swift container that contains the service update. <br />
-Defaults to <strong>als-horizon-ui</strong> for ALS. <br />
-Defaults to <strong>dbaas-horizon-ui</strong> for DBaaS. <br />
-Defaults to <strong>murano-dashboard-horizon-ui</strong> for Marketplace.</p></td></tr>
-  <tr><td><p>SERVICE_UPDATE_FILENAME</p></td><td><p>The filename of the ALS, DBaaS, or Marketplace service update. <br />
-This can typically can be found inside the above container in Swift.</p></td></tr>
+ <!--./devplatform/1.2/1.2devplatform.horizonui.install.md-->
+ <!--permalink: /helion/devplatform/1.2/horizonuiinstallation/--></p>
+<p>This document shows how to install the Horizon UI for the <xref href="../../devplatform/1.2/helion/1.2index.dita" >Application Lifetime Service (ALS)</xref>, <xref href="./devplatform/1.2/1.2devplatform.database-instance.dita" >Database as a Service (DBaaS)</xref>, and <xref href="./devplatform/1.2/1.2devplatform.marketplace.install.dita" >Marketplace</xref> Services.</p>
+<p>
+<b>Note:</b> You will need to download and install the Horizon UI separately for each service you wish to upgrade.</p>
+<section id="step-1-retrieve-the-als-dbaas-and-marketplace-service-updates-from-codn"> <title>Step 1: Retrieve the ALS, DBaaS, and Marketplace Service Updates from CODN</title>
+<p>Use the <b>Helion Development Platform UI</b> to check CODN for a new Service Update for ALS, DBaaS, or Marketplace.</p>
+<p>If there are new Service Updates for ALS, DBaaS, or Marketplace, retrieve them from CODN. This will retrieve the ALS, DBaaS, and Marketplace packages from CODN and push them into a container in Swift within your local cloud.</p>
+</section>
+<section id="step-2-install-the-als-dbaas-and-marketplace-service-updates"> <title>Step 2: Install the ALS, DBaaS, and Marketplace Service Updates</title>
+</section>
+<section id="preparation"> <title>Preparation</title>
+<p>You will need the following pieces of information in order to run the service updates.</p>
+<table pgwide="1">
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<thead>
+<row>
+    <entry>
+      Identifier
+    </entry>
+    <entry>
+      Description
+    </entry>
+  </row>
+</thead>
+<tbody>
+<row>
+    <entry>
+      BASE_NODE_IP
+    </entry>
+    <entry>
+      The IP address of the base node for your Helion installation.
+    </entry>
+  </row>
+<row>
+    <entry>
+      SEED_NODE_IP
+    </entry>
+    <entry>
+      The IP address of the seed node for your Helion installation.
+    </entry>
+  </row>
+<row>
+    <entry>
+      USERNAME
+    </entry>
+    <entry>
+      The username of a cloud admin that has rights to perform a service update for the selected service (ALS, DBaaS, or Marketplace).
+    </entry>
+  </row>
+<row>
+    <entry>
+      PASSWORD
+    </entry>
+    <entry>
+      The password of a cloud admin that has rights to perform a service update for the selected service (ALS, DBaaS, or Marketplace).
+    </entry>
+  </row>
+<row>
+    <entry>
+      HEAT_ADMIN_KEY
+    </entry>
+    <entry>
+      The private key file for the <b>heat-admin</b> user. <!--A BR tag was used here in the original source.-->
+Usually available within the root user account on the seed node here: ~/.ssh/id_rsa
+    </entry>
+  </row>
+<row>
+    <entry>
+      CONTAINER_NAME
+    </entry>
+    <entry>
+      The Swift container that contains the service update. <!--A BR tag was used here in the original source.-->
+Defaults to <b>als-horizon-ui</b> for ALS. <!--A BR tag was used here in the original source.-->
+Defaults to <b>dbaas-horizon-ui</b> for DBaaS. <!--A BR tag was used here in the original source.-->
+Defaults to <b>murano-dashboard-horizon-ui</b> for Marketplace.
+    </entry>
+  </row>
+<row>
+    <entry>
+      SERVICE_UPDATE_FILENAME
+    </entry>
+    <entry>
+      The filename of the ALS, DBaaS, or Marketplace service update. <!--A BR tag was used here in the original source.-->
+This can typically can be found inside the above container in Swift.
+    </entry>
+  </row>
+</tbody>
+</tgroup>
 </table>
-
-### Let's get to it!
-
-a) SSH to the seed node of your cloud:
-
-<pre>
+</section>
+<section id="lets-get-to-it"> <title>Let's get to it!</title>
+<p>a) SSH to the seed node of your cloud:</p>
+<codeblock>
 # SSH to the base node 
 ssh USERNAME@BASE_NODE_IP
 
@@ -70,22 +127,18 @@ sudo su (will prompt for password)
 
 # SSH to the seed node 
 ssh SEED_NODE_IP
-</pre>
-
-b) Ensure your environment has the proper credentials to perform the download from Swift:
-
-<pre>
+</codeblock>
+<p>b) Ensure your environment has the proper credentials to perform the download from Swift:</p>
+<codeblock>
 
 # For ALS: Source the overcloud credentials to reach Swift 
 export TE_DATAFILE="/root/tripleo/ce_env.json"
 source /root/tripleo/tripleo-incubator/overcloudrc
 # For DBaaS and Marketplace: overcloud credentials needed here 
 source admin_over_creds
-</pre>
-
-c) Use the Swift client to download the Service Update:
-
-<pre>
+</codeblock>
+<p>c) Use the Swift client to download the Service Update:</p>
+<codeblock>
 # List the contents of the Swift container for the desired service update
 # ALS
 swift list als-horizon-ui
@@ -101,17 +154,13 @@ swift list murano-dashboard-horizon-ui
 
 # Download the installation file 
 swift download CONTAINER_NAME SERVICE_UPDATE_FILENAME 
-</pre>
-
-d) Once the file is downloaded, unzip/tar the file:
-
-<pre>
+</codeblock>
+<p>d) Once the file is downloaded, unzip/tar the file:</p>
+<codeblock>
 tar -zxvf SERVICE_UPDATE_FILENAME.tar.gz
-</pre>
-
-e) Go to the newly created folder and execute the install script, passing in the location of the private key of the <strong>heat-admin</strong> account:
-
-<pre>
+</codeblock>
+<p>e) Go to the newly created folder and execute the install script, passing in the location of the private key of the <b>heat-admin</b> account:</p>
+<codeblock>
 # For ALS: Source undercloud creds from the same location as the overcloudrc
 source /root/tripleo/tripleo-incubator/undercloudrc
 
@@ -121,11 +170,11 @@ source admin_under_creds
 # Fire up the install!
 cd SERVICE_UPDATE_FILENAME 
 ./install.sh HEAT_ADMIN_KEY 
-</pre>
-
-## Step 3: Configure each service
-
-Return to the **Helion Development Platform UI** and click on "Configure" to configure each service.
- ----
-
-
+</codeblock>
+</section>
+<section id="step-3-configure-each-service"> <title>Step 3: Configure each service</title>
+<p>Return to the <b>Helion Development Platform UI</b> and click on "Configure" to configure each service.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

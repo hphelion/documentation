@@ -1,62 +1,69 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Adding and removing users to a project"
-permalink: /helion/commercial/1.1/dashboard/managing/projects/users/
-product: commercial.ga
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1645">
+<title>HP Helion OpenStack(R) 1.1: Adding and removing users to a project</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.users.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/projects/users/--></p>
+<p>As an admin, you can <xref type="section" href="#topic1645/useradd">add</xref> and <xref type="section" href="#topic1645/userdel">remove</xref> user access to each project.</p>
+<section id="useradd"> <title>Add a user to a project</title>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Projects</b> link on the <b>Admin</b> dashboard <b>Identity</b> panel.</p>
+</li>
+<li>
+<p>For the project you want to modify, click the <b>Modify Users</b> button.</p>
 
-<script>
+<p>On the Project Members tab of the Edit Project screen that displays, the users in the <b>Project Members</b> column can access and work with the current project.</p>
+</li>
+<li>
+<p>Add a user to the project by clicking the <b>+</b> icon next to that user name in the <b>All Users</b> column.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<p>The user name is added to the <b>Project Members</b> column and can now access the project.</p>
+</li>
+<li>
+<p>Click <b>Save</b>.</p>
+</li>
+</ol>
+</section>
+<section id="userdel"> <title>Remove a user from a project</title>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Projects</b> link on the <b>Admin</b> dashboard <b>Identity</b> panel.</p>
+</li>
+<li>
+<p>For the project you want to modify, click the <b>Modify Users</b> button.</p>
 
-PageRefresh();
+<p>On the Project Members tab of the Edit Project screen that displays, the users in the <b>Project Members</b> column can access and work with the current project.</p>
+</li>
+<li>
+<p>To remove a user to the project, click the <b>-</b> icon next to that user name in the <b>Project Members</b> column.</p>
 
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; 1.1: Adding and removing users to a project
-
-As an admin, you can [add](#useradd) and [remove](#userdel) user access to each project. 
-
-### Add a user to a project ### {#useradd}
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2. Click the **Projects** link on the **Admin** dashboard **Identity** panel.
-
-3. For the project you want to modify, click the **Modify Users** button.
-
-	On the Project Members tab of the Edit Project screen that displays, the users in the **Project Members** column can access and work with the current project. 
-
-4. Add a user to the project by clicking the **+** icon next to that user name in the **All Users** column.
-
-	The user name is added to the **Project Members** column and can now access the project.
-
-5. Click **Save**.
-
-
-### Remove a user from a project ### {#userdel}
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2. Click the **Projects** link on the **Admin** dashboard **Identity** panel.
-
-3. For the project you want to modify, click the **Modify Users** button.
-
-	On the Project Members tab of the Edit Project screen that displays, the users in the **Project Members** column can access and work with the current project. 
-
-4. To remove a user to the project, click the **-** icon next to that user name in the **Project Members** column.
-
-	<p>The user name is moved to the **All Users** column and can no longer access the project.</p>
-
-5. Click **Save**. 
-
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
-
-
-----
+<p>The user name is moved to the **All Users** column and can no longer access the project.</p>
+</li>
+<li>
+<p>Click <b>Save</b>.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1645/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

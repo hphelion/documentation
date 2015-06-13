@@ -1,81 +1,81 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Performing a System Data Backup"
-permalink: /helion/openstack/carrier/admin/backup/
-product: carrier-grade
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: All
-
-authors: Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2358">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Performing a System Data Backup</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="All"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Performing a System Data Backup
-
-A system data backup captures core system information needed to restore a fully operational HP Helion OpenStack Carrier Grade cluster.
-
-<hr>
-**Note:** This feature applies only to servers in the VNF Region.
-<hr>
-
-System data backups include:
+ <!--./CarrierGrade/AdminGuideNew/Backup/carrier-grade-admin-wr-backup.md-->
+ <!--permalink: /helion/openstack/carrier/admin/backup/--></p>
+<p>A system data backup captures core system information needed to restore a fully operational HP Helion OpenStack(R) Carrier Grade cluster.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>System data backups include:
 * platform configuration details
 * system databases
 * patching and package repositories
-* home directory for the wrsroot user and all LDAP user accounts. 
+* home directory for the wrsroot user and all LDAP user accounts.</p>
+<p>System data backups do not include:</p>
+<ul>
+<li>Modifications manually made to the file systems, such as configuration changes on the /etc directory. After a restore operation has been completed, these modification have to be reapplied.</li>
+<li>Home directories and passwords of local user accounts. They must be backed up manually by the system administrator.</li>
+<li>The /root directory. Use the wrsroot account instead when root access is needed.</li>
+</ul>
+<p>To perform a system backup:</p>
+<ol>
+<li>
+<p>Log in as user wrsroot to the active controller.</p>
 
-System data backups do not include:
+<p>You can log in directly on the console or remotely using ssh.</p>
+</li>
+<li>
+<p>Use the following command to execute the system backup.</p>
 
-* Modifications manually made to the file systems, such as configuration changes on the /etc directory. After a restore operation has been completed, these modification have to be reapplied.
-* Home directories and passwords of local user accounts. They must be backed up manually by the system administrator.
-* The /root directory. Use the wrsroot account instead when root access is needed.
+<codeblock>
+<codeph>sudo config_controller --backup &lt;name&gt;
+</codeph>
+</codeblock>
 
-To perform a system backup:
+<p>Where &lt;name&gt; is an arbitrary identifier to use for the backup</p>
 
-1. Log in as user wrsroot to the active controller.
+<p>Upon successful execution of the command, the following two files are available on the controller's file system:</p>
 
-	You can log in directly on the console or remotely using ssh.
+<ul>
+<li>/opt/backups/backup_20140918_system.tgz</li>
+<li>/opt/backups/backup_20140918_images.tgz</li>
+</ul>
+<p>Together, these two files represent the entire system data.</p>
+</li>
+<li>
+<p>Transfer the backup files to an external storage resource.</p>
 
-2. Use the following command to execute the system backup.
+<p>You can use a command such as scp to transfer the backup files to a server reachable over the OAM network.</p>
 
-		sudo config_controller --backup <name>
+<p>You can also copy them to a locally attached storage device, such as an external USB drive.</p>
 
-	Where &lt;name> is an arbitrary identifier to use for the backup
-
-	Upon successful execution of the command, the following two files are available on the controller's file system:
-	
-	* /opt/backups/backup_20140918_system.tgz
-	* /opt/backups/backup_20140918_images.tgz
-
-	Together, these two files represent the entire system data.
-
-3. Transfer the backup files to an external storage resource.
-
-	You can use a command such as scp to transfer the backup files to a server reachable over the OAM network.
-
-	You can also copy them to a locally attached storage device, such as an external USB drive.
-
-	4. Optional: Delete the backup files.
-
-	You may want to free up disk space on the controller to accommodate upcoming Cinder volume backups.
-
-The system data backup is now complete. The backup files must be kept in a secured location, probably holding multiple copies of them for redundancy purposes.
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----
+<ol>
+<li>Optional: Delete the backup files.</li>
+</ol>
+<p>You may want to free up disk space on the controller to accommodate upcoming Cinder volume backups.</p>
+</li>
+</ol>
+<p>The system data backup is now complete. The backup files must be kept in a secured location, probably holding multiple copies of them for redundancy purposes.</p>
+<p>
+  <xref type="section" href="#topic2358/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

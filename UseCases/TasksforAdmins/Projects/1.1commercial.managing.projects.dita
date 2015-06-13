@@ -1,42 +1,41 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Managing Projects"
-permalink: /helion/commercial/1.1/dashboard/managing/projects/
-product: commercial.ga
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic994">
+<title>HP Helion OpenStack(R) 1.1: Managing Projects</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; 1.1: Managing Projects #
-
-You can manage access to projects by assigning users and setting primary projects. You can also control resources by managing operational quotas.
-
-### Creating projects
-
-As an admin, you can use create projects and allow specific users to access each project:
-
-* [Create and delete projects](/helion/commercial/1.1/dashboard/managing/projects/creating/)
-* [View details on a project](/helion/commercial/1.1/dashboard/managing/projects/viewing/)
-* [Add and remove users to a project](/helion/commercial/1.1/dashboard/managing/projects/users/)
-
-### Managing quotas 
-
-Quotas are operational limits that you can configure to prevent system capacities from being exhausted without notification. 
-
-Use the **Identity** panel on the **Admin** dashboard to set maximum limits for metadata, instances, CPUs, memory, and other settings for each project.
-
-* [Modify the quota of a project](/helion/commercial/1.1/dashboard/managing/projects/quotas/)
-
-----
+ <!--./UseCases/TasksforAdmins/Projects/1.1commercial.managing.projects.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/projects/--></p>
+<p>You can manage access to projects by assigning users and setting primary projects. You can also control resources by managing operational quotas.</p>
+<section id="creating-projects"> <title>Creating projects</title>
+<p>As an admin, you can use create projects and allow specific users to access each project:</p>
+<ul>
+<li>
+<xref href="../../../UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.create.dita" >Create and delete projects</xref>
+</li>
+<li>
+<xref href="../../../UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.view.dita" >View details on a project</xref>
+</li>
+<li>
+<xref href="../../../UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.users.dita" >Add and remove users to a project</xref>
+</li>
+</ul>
+</section>
+<section id="managing-quotas"> <title>Managing quotas</title>
+<p>Quotas are operational limits that you can configure to prevent system capacities from being exhausted without notification.</p>
+<p>Use the <b>Identity</b> panel on the <b>Admin</b> dashboard to set maximum limits for metadata, instances, CPUs, memory, and other settings for each project.</p>
+<ul>
+<li>
+<xref href="../../../UseCases/TasksforAdmins/Projects/1.1commercial.dashboard.projects.quotas.dita" >Modify the quota of a project</xref>
+</li>
+</ul>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

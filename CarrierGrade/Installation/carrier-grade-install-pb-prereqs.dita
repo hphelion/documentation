@@ -1,250 +1,319 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Installation Prerequisites"
-permalink: /helion/openstack/carrier/install/pb/prereqs/
-product: carrier-grade
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7148">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Installation Prerequisites</title>
+<titlealts>
+<searchtitle>HP Helion OpenStack(R) Installation Prerequisites</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<p style="font-size: small;"><a href="/helion/openstack/carrier/support-matrix/">&#9664; Support Matrix</a> | <a href="/helion/openstack/carrier/install/pb/overview/">&#9650; Installation Overview</a>  | <a href="/helion/openstack/carrier/install/pb/network/prepare/"> Preparing the Network for Installation &#9654;</a> </p> 
-
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Installation Prerequisites
-
-This document describes the prerequisite steps and one time setup on your KVM host required to install HP Helion OpenStack Carrier Grade in a baremetal environment.
-
-## Hardware and software requirements {#hardware}
-
-Before you start, if you have not done so already, make sure your environment meets the hardware and software requirements. See the [HP Helion OpenStack Support Matrix](/helion/openstack/1.1/support-matrix/).
-
-## Preparing the baremetal systems {#prepbare}
-
-Perform the following tasks on each baremetal system before starting the install:
-
-- Configure the boot order with Network/PXE boot as the first option:
-	- For example, to set the boot order for a HP SL390, from the iLO prompt enter `set system1/bootconfig1/bootsource5 bootorder=1`.
-	- To unset, enter `set system1/bootconfig1/bootsource5 bootorder=5`.
-
-- Configure the BIOS: 
-	- to the correct date and time
-	- KVM host configured in UTC (Coordinated Universal Time)
-	- with only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
-	- to stay powered off in the event of being shutdown rather than automatically restarting
-
-- Update to the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so forth.
-
-
-## Preparing the KVM host {#kvm}
-
-The following tasks need to be performed on the KVM host, the system where the you will launch the HP Helion OpenStack Carrier Grade installation. 
-
-- Install Ubuntu Server 14.04.2 LTS
-- Configure SSH
-- Obtain a public key
-- Install Debian/Ubuntu packages
-- Configure the xrdp display
-- Install and configure NTP
-- Configure proxy information 
-- Set DNS servers name-resolution
-- Disabling SR-IOV
-	<!--
-	- Download the installation packages
-	- Create the JSON environment variables file
-	- Create the baremetal.csv file
-	- Integrating LDAP (Lightweight Directory Access Protocol) -->
-
-### Install Ubuntu Server 14.04.2 LTS  {#ubuntu}
-
-The KVM host must have Ubuntu Server 14.04.2 LTS installed before performing the HP Helion OpenStack Carrier Grade installation.
-
-### Obtain a public key {#pub-key}
-
-On the KVM host, the user `root` must have a public key. 
-
-1. Launch a terminal and log in to your KVM host as root:
-
-	sudo su -
-
-2. Use the following command to create the key. Accept the default values.
-
-	/root/.ssh/id_rsa
-
-3.  install the public key into the authorized keys on the KVM host:
-
-		ssh-copy-id <IP_address>
-
-	Enter the IP address of the default network gateway on the KVM.
-
-### Configure proxy information {#proxy}
-
-Before you begin your installation on the KVM host, if necessary configure the proxy information for your environment using the following steps:
-
-1. Launch a terminal and log in to your KVM host as root:
-
-		sudo su -
-
-2. Edit the `/etc/environment` file to add the following lines, using values specific to your environment:
-
-		PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-		export http_proxy=http://<web_proxy_IP>/
-		export https_proxy=http://<web_proxy_IP>/
-		export no_proxy=localhost,127.0.0.1,<your 10.x IP address>,<provider_network>
-	
-	Where:
-
-		web_proxy_IP is your web proxy IP address.
-		provider_network is your ESX management network
-
-3. Source the `environments` file:
-
-		source /etc/environment
-
-
-### Install Ubuntu packages {#packages}
-
-Before starting the installation, you must first install  Ubuntu. 
-
-1. Run the following all in one command to install packages:
-
-		sudo su -l -c "apt-get install -y ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager xorg gnome-core gnome-system-tools gnome-app-install vlan sudo ansible"
-
-2. Add the 802.1q module to the kernel on boot. The 802.1q standard supports VLAN tagging on an ethernet network. 
-
-		sudo su -c 'echo "8021q" >> /etc/modules'
-
-3. Reboot the server
-
-4. Log out and re-login to the KVM host to activate the proxy configuration.
-
-### Configure the XRDP remote desktop display
-
-Configure XRDP for the remote desktop connection to access the server remotely as follows.
-
-1. Edit the `sesman.ini` file:
-
-	vi /etc/xrdp/sesman.ini
-
-	a. Update the `MaxSessions=1` to `MaxSessions=50`.
-
-	b. Configure the system to use XRDP:
-
-		echo "xfce4-session" > ~/.xinitrc
-
-	c. Save and close the file.
-
-2. Restart the xrdp service:
-
-	sudo /etc/init.d/xrdp restart
-
-If the XDRP display does not work as expected, (you see a gray screen), update the `startwm.sh` file:
-
-	vi /etc/xrdp/startwm.sh
-
-	#!/bin/sh
-
-	if [ -r /etc/default/locale ]; then
-	. /etc/default/locale
-	export LANG LANGUAGE
-	fi
-
-	#. /etc/X11/Xsession
-	. /usr/bin/startxfce4
-
-Make sure you add a space after "." then restart XDRP:
-
-	sudo /etc/init.d/xrdp restart
-
-
-### Install and configure NTP {#ntp}
-
-NTP is a networking protocol for clock synchronization between computer systems. 
-
-The HP Helion OpenStack cloud nodes must be configured as NTP clients and point to the same NTP server.
-
-You can install NTP on the KVM host and configure it as an NTP server. Or, you can use a pre-existing NTP server that is reachable from the management network.  You will also need to configure the undercloud and overcloud systems as NTP clients pointing to the NTP server you have chosen to use during the installation process.
-
-For information on installing NTP on the KVM host, see [Installing an NTP Server](/helion/openstack/carrier/install/ntp/).
-
-
-### Download and unpack the installation packages {#getinstall}
-
-Before you begin, you must download the required HP Helion OpenStack installation package(s):
-
-1. Download and extract the `cg-hlm.qcow2` and `VSD qcow2` files to the images folder. 
-
-2. Download and extract the `cg-infra-playbooks.tar.gz.gpg` file to the `/root` directory.  
-
-		cd /root
-		tar xjf /tmp/cg-infra-playbooks.tar.gz.gpg
-
-	This will create the `/root/cg` directory and extract the contents into the directory.
-
-2. Copy the `cg-hos.tar.gz.gpg` and `cg-hos-dcn.tar.gz.gpg` to the `/root/cg/` directory.
-
-	The password to decrypt the files is `cghelion`.
-
-### Configure SSH {#ssh}
-
-On the KVM host, the OpenSSH server must be running and the firewall configuration should allow access to the SSH ports.
-
-1. Enable root login in the `/etc/ssh/sshd_config`: 
-
-		PermitRootLogin yes
-
-2. In the `sshd_config` file, set the following variables:
-
-		# Authentication:
-		LoginGraceTime 120
-		#PermitRootLogin without-password
-		StrictModes no
-
-3. Disable strict host key checking:
-
-	a. Navigate to the `config` file:
-
-		cd ~/.ssh/config
-
-	b. Set the `StrictHostKeyChecking` variable to No:
-
-		StrictHostKeyChecking no
-
-4. Restart SSH service
-
-		service ssh restart
-
-5. Configure the public key and passwordless SSH access. 
-
-	a. Enter the following command:
-
-		ssh-keygen -t rsa 
-
-	b. Press Enter to use default path (/root/.ssh/id_rsa)
-
-	c. Press enter for passphrase
-
-	d. Press enter again to confirm the empty passphrase
-
-	The output of the public key will display, similar to the following:
-
-		ssh-copy-id 192.168.122.1 
-
-	If you get a permission denied error, make sure you are logged in as root. 
-
-
-## Next Step
-
-[Preparing the Network for Installation](/helion/openstack/carrier/install/pb/network/prepare/)
-
-----
+ <!--./CarrierGrade/Installation/carrier-grade-install-pb-prereqs.md-->
+ <!--permalink: /helion/openstack/carrier/install/pb/prereqs/--></p>
+<p>This document describes the prerequisite steps and one time setup on your KVM host required to install HP Helion OpenStack(R) Carrier Grade in a baremetal environment.</p>
+<section id="hardware"> <title>Hardware and software requirements</title>
+<p>Before you start, if you have not done so already, make sure your environment meets the hardware and software requirements. See the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >HP Helion OpenStack(R) Support Matrix</xref>.</p>
+</section>
+<section id="prepbare"> <title>Preparing the baremetal systems</title>
+<p>Perform the following tasks on each baremetal system before starting the install:</p>
+<ul>
+<li>
+<p>Configure the boot order with Network/PXE boot as the first option:</p>
+
+<ul>
+<li>For example, to set the boot order for a HP SL390, from the iLO prompt enter <codeph>set system1/bootconfig1/bootsource5 bootorder=1</codeph>.</li>
+<li>To unset, enter <codeph>set system1/bootconfig1/bootsource5 bootorder=5</codeph>.</li>
+</ul>
+</li>
+<li>
+<p>Configure the BIOS:</p>
+
+<ul>
+<li>to the correct date and time</li>
+<li>KVM host configured in UTC (Coordinated Universal Time)</li>
+<li>with only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled</li>
+<li>to stay powered off in the event of being shutdown rather than automatically restarting</li>
+</ul>
+</li>
+<li>
+<p>Update to the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so forth.</p>
+</li>
+</ul>
+</section>
+<section id="kvm"> <title>Preparing the KVM host</title>
+<p>The following tasks need to be performed on the KVM host, the system where the you will launch the HP Helion OpenStack(R) Carrier Grade installation.</p>
+<ul>
+<li>Install Ubuntu Server 14.04.2 LTS</li>
+<li>Configure SSH</li>
+<li>Obtain a public key</li>
+<li>Install Debian/Ubuntu packages</li>
+<li>Configure the xrdp display</li>
+<li>Install and configure NTP</li>
+<li>Configure proxy information </li>
+<li>Set DNS servers name-resolution</li>
+<li>Disabling SR-IOV
+<!--
+    - Download the installation packages
+    - Create the JSON environment variables file
+    - Create the baremetal.csv file
+    - Integrating LDAP (Lightweight Directory Access Protocol) --></li>
+</ul>
+</section>
+<section id="ubuntu"> <title>Install Ubuntu Server 14.04.2 LTS</title>
+<p>The KVM host must have Ubuntu Server 14.04.2 LTS installed before performing the HP Helion OpenStack(R) Carrier Grade installation.</p>
+</section>
+<section id="pub-key"> <title>Obtain a public key</title>
+<p>On the KVM host, the user <codeph>root</codeph> must have a public key.</p>
+<ol>
+<li>
+<p>Launch a terminal and log in to your KVM host as root:</p>
+
+<p>sudo su -</p>
+</li>
+<li>
+<p>Use the following command to create the key. Accept the default values.</p>
+
+<p>/root/.ssh/id_rsa</p>
+</li>
+<li>
+<p>install the public key into the authorized keys on the KVM host:</p>
+
+<codeblock>
+<codeph>ssh-copy-id &lt;IP_address&gt;
+</codeph>
+</codeblock>
+
+<p>Enter the IP address of the default network gateway on the KVM.</p>
+</li>
+</ol>
+</section>
+<section id="proxy"> <title>Configure proxy information</title>
+<p>Before you begin your installation on the KVM host, if necessary configure the proxy information for your environment using the following steps:</p>
+<ol>
+<li>
+<p>Launch a terminal and log in to your KVM host as root:</p>
+
+<codeblock>
+<codeph>sudo su -
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Edit the <codeph>/etc/environment</codeph> file to add the following lines, using values specific to your environment:</p>
+
+<codeblock>
+<codeph>PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export http_proxy=http://&lt;web_proxy_IP&gt;/
+export https_proxy=http://&lt;web_proxy_IP&gt;/
+export no_proxy=localhost,127.0.0.1,&lt;your 10.x IP address&gt;,&lt;provider_network&gt;
+</codeph>
+</codeblock>
+
+<p>Where:</p>
+
+<codeblock>
+<codeph>web_proxy_IP is your web proxy IP address.
+provider_network is your ESX management network
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Source the <codeph>environments</codeph> file:</p>
+
+<codeblock>
+<codeph>source /etc/environment
+</codeph>
+</codeblock>
+</li>
+</ol>
+</section>
+<section id="packages"> <title>Install Ubuntu packages</title>
+<p>Before starting the installation, you must first install  Ubuntu.</p>
+<ol>
+<li>
+<p>Run the following all in one command to install packages:</p>
+
+<codeblock>
+<codeph>sudo su -l -c "apt-get install -y ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager xorg gnome-core gnome-system-tools gnome-app-install vlan sudo ansible"
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Add the 802.1q module to the kernel on boot. The 802.1q standard supports VLAN tagging on an ethernet network.</p>
+
+<codeblock>
+<codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Reboot the server</p>
+</li>
+<li>
+<p>Log out and re-login to the KVM host to activate the proxy configuration.</p>
+</li>
+</ol>
+</section>
+<section id="configure-the-xrdp-remote-desktop-display"> <title>Configure the XRDP remote desktop display</title>
+<p>Configure XRDP for the remote desktop connection to access the server remotely as follows.</p>
+<ol>
+<li>
+<p>Edit the <codeph>sesman.ini</codeph> file:</p>
+
+<p>vi /etc/xrdp/sesman.ini</p>
+
+<p>a. Update the <codeph>MaxSessions=1</codeph> to <codeph>MaxSessions=50</codeph>.</p>
+
+<p>b. Configure the system to use XRDP:</p>
+
+<codeblock>
+<codeph>echo "xfce4-session" &gt; ~/.xinitrc
+</codeph>
+</codeblock>
+
+<p>c. Save and close the file.</p>
+</li>
+<li>
+<p>Restart the xrdp service:</p>
+
+<p>sudo /etc/init.d/xrdp restart</p>
+</li>
+</ol>
+<p>If the XDRP display does not work as expected, (you see a gray screen), update the <codeph>startwm.sh</codeph> file:</p>
+<codeblock>
+  <codeph>vi /etc/xrdp/startwm.sh
+
+#!/bin/sh
+
+if [ -r /etc/default/locale ]; then
+. /etc/default/locale
+export LANG LANGUAGE
+fi
+
+#. /etc/X11/Xsession
+. /usr/bin/startxfce4
+</codeph>
+</codeblock>
+<p>Make sure you add a space after "." then restart XDRP:</p>
+<codeblock>
+  <codeph>sudo /etc/init.d/xrdp restart
+</codeph>
+</codeblock>
+</section>
+<section id="ntp"> <title>Install and configure NTP</title>
+<p>NTP is a networking protocol for clock synchronization between computer systems.</p>
+<p>The HP Helion OpenStack(R) cloud nodes must be configured as NTP clients and point to the same NTP server.</p>
+<p>You can install NTP on the KVM host and configure it as an NTP server. Or, you can use a pre-existing NTP server that is reachable from the management network.  You will also need to configure the undercloud and overcloud systems as NTP clients pointing to the NTP server you have chosen to use during the installation process.</p>
+<p>For information on installing NTP on the KVM host, see <xref href="../../CarrierGrade/Installation/carrier-grade-install-NTP.dita" >Installing an NTP Server</xref>.</p>
+</section>
+<section id="getinstall"> <title>Download and unpack the installation packages</title>
+<p>Before you begin, you must download the required HP Helion OpenStack(R) installation package(s):</p>
+<ol>
+<li>
+<p>Download and extract the <codeph>cg-hlm.qcow2</codeph> and <codeph>VSD qcow2</codeph> files to the images folder.</p>
+</li>
+<li>
+<p>Download and extract the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file to the <codeph>/root</codeph> directory.</p>
+
+<codeblock>
+<codeph>cd /root
+tar xjf /tmp/cg-infra-playbooks.tar.gz.gpg
+</codeph>
+</codeblock>
+
+<p>This will create the <codeph>/root/cg</codeph> directory and extract the contents into the directory.</p>
+</li>
+<li>
+<p>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> and <codeph>cg-hos-dcn.tar.gz.gpg</codeph> to the <codeph>/root/cg/</codeph> directory.</p>
+
+<p>The password to decrypt the files is <codeph>cghelion</codeph>.</p>
+</li>
+</ol>
+</section>
+<section id="ssh"> <title>Configure SSH</title>
+<p>On the KVM host, the OpenSSH server must be running and the firewall configuration should allow access to the SSH ports.</p>
+<ol>
+<li>
+<p>Enable root login in the <codeph>/etc/ssh/sshd_config</codeph>:</p>
+
+<codeblock>
+<codeph>PermitRootLogin yes
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>In the <codeph>sshd_config</codeph> file, set the following variables:</p>
+
+<codeblock>
+<codeph># Authentication:
+LoginGraceTime 120
+#PermitRootLogin without-password
+StrictModes no
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Disable strict host key checking:</p>
+
+<p>a. Navigate to the <codeph>config</codeph> file:</p>
+
+<codeblock>
+<codeph>cd ~/.ssh/config
+</codeph>
+</codeblock>
+
+<p>b. Set the <codeph>StrictHostKeyChecking</codeph> variable to No:</p>
+
+<codeblock>
+<codeph>StrictHostKeyChecking no
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Restart SSH service</p>
+
+<codeblock>
+<codeph>service ssh restart
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Configure the public key and passwordless SSH access.</p>
+
+<p>a. Enter the following command:</p>
+
+<codeblock>
+<codeph>ssh-keygen -t rsa 
+</codeph>
+</codeblock>
+
+<p>b. Press Enter to use default path (/root/.ssh/id_rsa)</p>
+
+<p>c. Press enter for passphrase</p>
+
+<p>d. Press enter again to confirm the empty passphrase</p>
+
+<p>The output of the public key will display, similar to the following:</p>
+
+<codeblock>
+<codeph>ssh-copy-id 192.168.122.1 
+</codeph>
+</codeblock>
+
+<p>If you get a permission denied error, make sure you are logged in as root.</p>
+</li>
+</ol>
+</section>
+<section id="next-step"> <title>Next Step</title>
+<p>
+  <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita" >Preparing the Network for Installation</xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

@@ -1,62 +1,72 @@
----
-layout: default-devplatform
-title: "HP Helion 1.2 Development Platform: Release Notes for HP Helion Development Platform 1.2"
-permalink: /helion/devplatform/1.2/release-notes/
-product: devplatform2.0
-product-version1: HP Helion Development Platform
-product-version3: HP Helion Development Platform 1.1
-role1: Systems Administrator 
-role2: System Engineer
-role3: Cloud Administrator
-role4: Network Administrator
-role5: Application Developer
-Role6: Security Engineer
-role7: Application Developer 
-role8: ISV Developer
-role9: Service Developer
-authors: Jayme P
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2502">
+<title>HP Helion 1.2 Development Platform: Release Notes for HP Helion Development Platform 1.2</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="System Engineer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version3" content="HP Helion Development Platform 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-# HP Helion 1.2 Development Platform: Release Notes for HP Helion Development Platform 1.2
-
-The following release notes are for the HP Helion Development Platform 1.2 released in May 2015. We hope you enjoy the release!
-
-* [Development Platform Release Notes](#DPnotes)
-* [Known Issues](#known)
-
-## Release Notes {#DPnotes}
-
-The following features have been changed in the HP Helion Development Platform:
-
-**Develop, deploy, and manage cloud-native .NET applications**
-
-HP is the only vendor to offer this functionality in today's Cloud Foundry technology v2, which is a key part of HP Helion Development Platform. We offer Windows support by providing the ability to host Windows applications on a Windows DEA (Droplet Execution Agent) with a "bring your own Windows license" model.
-
-**Microsoft SQL Server integration available as an application service**
-
-Developers can bind their applications to a Microsoft SQL Server database via the service model and enable self-service dispensing of database resources - eliminating the need for administrative or operator intervention.
-
-**Complete set of .NET development tools and SDKs**
-
-The addition of the Visual Studio Cloud Foundry Explorer and MS Build tasks enable the .NET enterprise developer to deploy and manage their application directly from the favorite development IDE, command line environment or build agent.
-
-**Horizon panel updates for IT operations**
-Administrators can now run even more operations from the HP Helion OpenStack Horizon management console, including renaming clusters, adding DEA nodes, adding roles, proxy support and DNS suffixes.
-
-## Known Issues {#known}
-
-**When creating a new database, *cf-mgmt* *create cluster* or *add-service* command fails.**
-
-This issue applies to HP Helion Public Cloud only. When using *cf-mgmt create cluster* or *add-service* commands to create a new database, the operation fails. There is no workaround at this time.
-
-**Windows&#174; DEA and SQL Server services are not available through the ALS Management Console**
-
-Although it appears that you can complete these tasks using the ALS Management Console, you must use the [*cf-mgmt* tool](/helion/devplatform/1.2/als/client/reference/) or the Horizon console to add Windows&#174; DEA Nodes and SQL Server services.
-
-**Windows Nodes do not support Linux services**
-
-Linux services -- for example, redis or mysql -- can not be added to Windows&#174; nodes.
-
-----
+ <!--./devplatform/1.2/1.2devplatform.release-notes.md-->
+ <!--permalink: /helion/devplatform/1.2/release-notes/--></p>
+<p>The following release notes are for the HP Helion Development Platform 1.2 released in May 2015. We hope you enjoy the release!</p>
+<ul>
+<li>
+<xref type="section" href="#topic2502/DPnotes">Development Platform Release Notes</xref>
+</li>
+<li>
+<xref type="section" href="#topic2502/known">Known Issues</xref>
+</li>
+</ul>
+<section id="DPnotes"> <title>Release Notes</title>
+<p>The following features have been changed in the HP Helion Development Platform:</p>
+<p>
+  <b>Develop, deploy, and manage cloud-native .NET applications</b>
+</p>
+<p>HP is the only vendor to offer this functionality in today's Cloud Foundry technology v2, which is a key part of HP Helion Development Platform. We offer Windows support by providing the ability to host Windows applications on a Windows DEA (Droplet Execution Agent) with a "bring your own Windows license" model.</p>
+<p>
+  <b>Microsoft SQL Server integration available as an application service</b>
+</p>
+<p>Developers can bind their applications to a Microsoft SQL Server database via the service model and enable self-service dispensing of database resources - eliminating the need for administrative or operator intervention.</p>
+<p>
+  <b>Complete set of .NET development tools and SDKs</b>
+</p>
+<p>The addition of the Visual Studio Cloud Foundry Explorer and MS Build tasks enable the .NET enterprise developer to deploy and manage their application directly from the favorite development IDE, command line environment or build agent.</p>
+<p>
+<b>Horizon panel updates for IT operations</b>
+Administrators can now run even more operations from the HP Helion OpenStack(R) Horizon management console, including renaming clusters, adding DEA nodes, adding roles, proxy support and DNS suffixes.</p>
+</section>
+<section id="known"> <title>Known Issues</title>
+<p>
+  <b>When creating a new database, <i>cf-mgmt</i> <i>create cluster</i> or <i>add-service</i> command fails.</b>
+</p>
+<p>This issue applies to HP Helion Public Cloud only. When using <i>cf-mgmt create cluster</i> or <i>add-service</i> commands to create a new database, the operation fails. There is no workaround at this time.</p>
+<p>
+  <b>WindowsÂ(R) DEA and SQL Server services are not available through the ALS Management Console</b>
+</p>
+<p>Although it appears that you can complete these tasks using the ALS Management Console, you must use the <xref href="../../devplatform/1.2/helion/CLI/1.2ALS_Client_Reference.dita" >
+<i>cf-mgmt</i> tool</xref> or the Horizon console to add WindowsÂ(R) DEA Nodes and SQL Server services.</p>
+<p>
+  <b>Windows Nodes do not support Linux services</b>
+</p>
+<p>Linux services -- for example, redis or mysql -- can not be added to WindowsÂ(R) nodes.</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

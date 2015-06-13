@@ -1,45 +1,39 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Identity Management"
-permalink: /helion/openstack/1.1/services/landing/identity/
-product: commercial.test
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: All
-
-authors: Micael B
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1123">
+<title>HP Helion OpenStack(R) 1.1: Identity Management</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="All"/>
+<othermeta name="role" content="Micael B"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-<script>
-[
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
-
-# HP Helion OpenStack&#174; 1.1: Identity Management
-
-Based on Openstack Keystone, the HP Helion Openstack Identify services provides one-stop authentication using the Keystone V2 or V3 API.
-
-[Identity Service Overview](/helion/openstack/1.1/services/identity/overview/)
-<br />Learn about the Identity (Keystone) service to create and configure users, specify user roles and credentials, and issue security tokens.
-<hr />
-
-[Using the Identity Service](/helion/openstack/1.1/services/identity/using/)
-<br />Learn about how to use the Identity service.
-<hr />
-
-[Integrate the Identity Service (Keystone) with LDAP/AD](/helion/openstack/1.1/services/identity/integrate-ldap/)
-<br />Learn about how to configure the HP Helion OpenStack Identity service to integrate your organization's existing to use Lightweight Directory Access Protocol (LDAP) service.
-<hr />
-
-[Configuring Horizon for Keystone v3](/helion/openstack/1.1/services/identity/configure/)
-<br />Horizon does not support Keystone v3 or domains by default. However, you can manually configure Horizon to use u3.
-<hr />
+ <!--./commercial/GA1/Landing/1.1commercial.landing.identity.md-->
+ <!--permalink: /helion/openstack/1.1/services/landing/identity/--></p>
+<p>Based on Openstack Keystone, the HP Helion Openstack Identify services provides one-stop authentication using the Keystone V2 or V3 API.</p>
+<p>
+<xref href="../../../commercial/GA1/1.1commerical.services-identity-overview.dita" >Identity Service Overview</xref>
+<!--A BR tag was used here in the original source.-->Learn about the Identity (Keystone) service to create and configure users, specify user roles and credentials, and issue security tokens.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<xref href="../../../commercial/GA1/1.1commerical.services-identity-using.dita" >Using the Identity Service</xref>
+<!--A BR tag was used here in the original source.-->Learn about how to use the Identity service.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<xref href="../../../commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" >Integrate the Identity Service (Keystone) with LDAP/AD</xref>
+<!--A BR tag was used here in the original source.-->Learn about how to configure the HP Helion OpenStack(R) Identity service to integrate your organization's existing to use Lightweight Directory Access Protocol (LDAP) service.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<xref href="../../../commercial/GA1/1.1commerical.services-identity-configure-v3.dita" >Configuring Horizon for Keystone v3</xref>
+<!--A BR tag was used here in the original source.-->Horizon does not support Keystone v3 or domains by default. However, you can manually configure Horizon to use u3.</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

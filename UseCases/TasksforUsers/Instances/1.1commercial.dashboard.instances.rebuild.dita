@@ -1,50 +1,50 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Rebuilding Instances"
-permalink: /helion/commercial/1.1/dashboard/managing/instances/rebuild/
-product: commercial.ga
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1314">
+<title>HP Helion OpenStack(R) 1.1: Rebuilding Instances</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./UseCases/TasksforUsers/Instances/1.1commercial.dashboard.instances.rebuild.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/instances/rebuild/--></p>
+<p>The rebuild operation removes all data on the server and replaces it with the specified image.</p>
+<p>A rebuild operation always removes data injected into the file system through server personality. You can reinsert data into the file system during the rebuild.</p>
+<section id="rebuilding-an-instance"> <title>Rebuilding an instance</title>
+<p>To rebuild an instance:</p>
+<ol>
+<li>
+<p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
+</li>
+<li>
+<p>In the <b>Instances</b> screen, for the instance you want to rebuild, click <b>Menu &gt; Rebuild Instance</b>.</p>
+</li>
+<li>
+<p>In the <b>Rebuild Instances</b> screen:</p>
 
-<script>
+<ul>
+<li>Select the image to use to rebuild the instance. You can select the same image or rebuild using a different image.</li>
+<li>Specify whether the instance will automatically partition, based on the image, or you will manually partition the instance.</li>
+</ul>
+</li>
+<li>
+<p>In the confirmation screen, click <b>Rebuild Instance</b>.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; 1.1: Rebuilding Instances
-
-The rebuild operation removes all data on the server and replaces it with the specified image. 
-
-A rebuild operation always removes data injected into the file system through server personality. You can reinsert data into the file system during the rebuild. 
-
-### Rebuilding an instance ###
-
-To rebuild an instance:
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
-
-3. In the **Instances** screen, for the instance you want to rebuild, click **Menu &gt; Rebuild Instance**.
-
-4. In the **Rebuild Instances** screen:
-
-	* Select the image to use to rebuild the instance. You can select the same image or rebuild using a different image.
-	* Specify whether the instance will automatically partition, based on the image, or you will manually partition the instance.
-
-5. In the confirmation screen, click **Rebuild Instance**.
-
-	The progress of the reboot is displayed in the **Task** column on the **Instances** screen.
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----
+<p>The progress of the reboot is displayed in the <b>Task</b> column on the <b>Instances</b> screen.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1314/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

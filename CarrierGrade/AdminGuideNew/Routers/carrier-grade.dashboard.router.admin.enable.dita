@@ -1,59 +1,65 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Enabling and Disabling a Router"
-permalink: /helion/commercial/carrier/dashboard/managing/router/admin/enable/
-product: carrier-grade
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1202">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Enabling and Disabling a Router</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Routers/carrier-grade.dashboard.router.admin.enable.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/router/admin/enable/--></p>
+<p>You can enable or disable routers, as needed.</p>
+<section id="enable-a-router"> <title>Enable a router</title>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Routers</b> link.</p>
 
-<script>
+<p>The routers for the selected project appear.</p>
+</li>
+<li>
+<p>For the router you want to delete, click <b>Edit Router</b> in the <b>Actions</b> menu.</p>
+</li>
+<li>
+<p>From the <b>Admin State</b> list, select <b>UP</b> to enable the router.</p>
+</li>
+<li>
+<p>Click <b>Save Changes</b>.</p>
+</li>
+</ol>
+</section>
+<section id="disable-a-router"> <title>Disable a router</title>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Routers</b> link.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Enabling and Disabling a Router
-
-You can enable or disable routers, as needed.
-
-### Enable a router ###
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Admin** dashboard, then the **System** panel, then the **Routers** link.
-
-	The routers for the selected project appear. 
-
-3. For the router you want to delete, click **Edit Router** in the **Actions** menu.
-
-3. From the **Admin State** list, select **UP** to enable the router.
-
-4. Click **Save Changes**.  
-
-### Disable a router ###
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Admin** dashboard, then the **System** panel, then the **Routers** link.
-
-	The routers for the selected project appear. 
-
-3. For the router you want to delete, click **Edit Router** in the **Actions** menu.
-
-3. From the **Admin State** list, select **DOWM** to disable the router.
-
-4. Click **Save Changes**.  
-
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----
+<p>The routers for the selected project appear.</p>
+</li>
+<li>
+<p>For the router you want to delete, click <b>Edit Router</b> in the <b>Actions</b> menu.</p>
+</li>
+<li>
+<p>From the <b>Admin State</b> list, select <b>DOWM</b> to disable the router.</p>
+</li>
+<li>
+<p>Click <b>Save Changes</b>.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1202/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

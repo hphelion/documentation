@@ -1,67 +1,89 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Ceph Related Topics"
-permalink: /helion/openstack/1.1/ceph-related-topics/
-product: commercial
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: Storage Engineer
-role2: Storage Architect 
-role3: Storage Administrator 
-role4: Storage Engineer
-role5: Service Developer 
-role6: Cloud Administrator 
-role7: Application Developer 
-authors: Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1412">
+<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Ceph Related Topics</title>
+<titlealts>
+<searchtitle>HP Helion OpenStack(R) 1.1: Ceph Related Topics</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Storage Engineer"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Engineer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-
-<script>
-
-----------
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<p style="font-size: small;"> <a href=" /helion/openstack/1.1/ceph-glossary/">&#9664; PREV</a> | <a href=" /helion/openstack/1.1/services/ceph/">&#9650; UP</a> | <a href="//helion/openstack/siteindex/">NEXT &#9654;</a> </p>
-
-
-#HP Helion OpenStack&#174; 1.1 and 1.1.1: Ceph Related Topics
-
-This topic provides you links to related documentation that you might find helpful when working with HP Helion OpenStack 1.1 and 1.1.1, Ceph Firefly 80.7 Storage Solution. 
-
-
-1. With increased density, efficiency, serviceability, and flexibility, the HP ProLiant SL4540 Gen8 Server, DL360/380 Gen8, BL460/660 Gen8 servers will be the perfect solution for scale-out storage needs. For more information, refer to [hp.com/servers/sl4540](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6464822#!tab=features)
-
-2. HP Integrated Lights-Out simplifies server setup, promotes remote administration, engages health monitoring, and maintains power and thermal control. For more information refer to  [http://hp.com/go/ilo](http://hp.com/go/ilo)
-
-3. [HP Server Ceph on SL4540 Technical White Paper](http://h20195.www2.hp.com/V2/GetDocument.aspx?docname=4AA5-2799ENW&cc=us&lc=en)
-
-4. [Ceph documentation](http://ceph.com/docs/master/)
-
-5. [Introduction to OpenStack Block Storage using Cinder and Nova](http://docs.openstack.org/)
-
-6. [HP ProLiant DL360p Generation 8 (Gen8) QuickSpec Sheet](http://www8.hp.com/h20195/v2/GetDocument.aspx?docname=c04123167)
-
-7. [HP ProLiant DL380p Generation8 (Gen8) QuickSpec Sheet](http://www8.hp.com/h20195/v2/GetDocument.aspx?docname=c04123238)
-
-8. [HP Proliant 3XSL4540 Gen8 1G Mezz HBA Server](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6464822#!tab=specs)
-
-9. [HP 5900 Switch Series](http://h17007.www1.hp.com/us/en/networking/products/switches/HP_5900_Switch_Series/index.aspx#.VAeNxGXn9Co)
-10. [Duplicity](http://duplicity.nongnu.org/)
-
-
-----
-## Next Steps
-
-[Ceph Glossary](/helion/openstack/1.1/ceph-glossary/)
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+ <!--./commercial/GA1/ceph/1.1commenrcial.ceph-related-topics.md-->
+ <!--permalink: /helion/openstack/1.1/ceph-related-topics/--></p>
+<p>This topic provides you links to related documentation that you might find helpful when working with HP Helion OpenStack(R) 1.1 and 1.1.1, Ceph Firefly 80.7 Storage Solution.</p>
+<ol>
+<li>
+<p>With increased density, efficiency, serviceability, and flexibility, the HP ProLiant SL4540 Gen8 Server, DL360/380 Gen8, BL460/660 Gen8 servers will be the perfect solution for scale-out storage needs. For more information, refer to <xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6464822#!tab=features" scope="external" format="html" >hp.com/servers/sl4540</xref>
+</p>
+</li>
+<li>
+<p>HP Integrated Lights-Out simplifies server setup, promotes remote administration, engages health monitoring, and maintains power and thermal control. For more information refer to  <xref href="http://hp.com/go/ilo" scope="external" format="html" >http://hp.com/go/ilo</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="http://h20195.www2.hp.com/V2/GetDocument.aspx?docname=4AA5-2799ENW&amp;cc=us&amp;lc=en" scope="external" format="html" >HP Server Ceph on SL4540 Technical White Paper</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="http://ceph.com/docs/master/" scope="external" format="html" >Ceph documentation</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="http://docs.openstack.org/" scope="external" format="html" >Introduction to OpenStack(R) Block Storage using Cinder and Nova</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="http://www8.hp.com/h20195/v2/GetDocument.aspx?docname=c04123167" scope="external" format="html" >HP ProLiant DL360p Generation 8 (Gen8) QuickSpec Sheet</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="http://www8.hp.com/h20195/v2/GetDocument.aspx?docname=c04123238" scope="external" format="html" >HP ProLiant DL380p Generation8 (Gen8) QuickSpec Sheet</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6464822#!tab=specs" scope="external" format="html" >HP Proliant 3XSL4540 Gen8 1G Mezz HBA Server</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="http://h17007.www1.hp.com/us/en/networking/products/switches/HP_5900_Switch_Series/index.aspx#.VAeNxGXn9Co" scope="external" format="html" >HP 5900 Switch Series</xref>
+</p>
+</li>
+<li>
+<xref href="http://duplicity.nongnu.org/" scope="external" format="html" >Duplicity</xref>
+</li>
+</ol>
+<!-- ===================== horizontal rule ===================== -->
+<section id="next-steps"> <title>Next Steps</title>
+<p>
+  <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-glossary.dita" >Ceph Glossary</xref>
+</p>
+<p>
+  <xref type="section" href="#topic1412/top"> Return to Top </xref>
+</p>
+</section>
+</body>
+</topic>

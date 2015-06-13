@@ -1,55 +1,65 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Creating and Deleting Containers"
-permalink: /helion/commercial/carrier/dashboard/managing/container/create/
-product: carrier-grade
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1829">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Creating and Deleting Containers</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Object_Storage/carrier-grade.dashboard.container.create.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/container/create/--></p>
+<p>A container is a storage compartment for your data and provides a way for you to organize your data. You can think of a container as a folder in WindowsÂ(R) or a directory in UNIXÂ(R). The primary difference between a container and these other file system concepts is that containers cannot be nested. You can, however, create an unlimited number of containers within your account. Data must be stored in a container so you must have at least one container defined in your account prior to uploading data.</p>
+<section id="create-a-container"> <title>Create a container</title>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Object Store</b> link.</p>
+</li>
+<li>
+<p>In the <b>Object Store</b> panel, click <b>Containers</b>.</p>
+</li>
+<li>
+<p>In the <b>Create Container</b> dialog box, enter a name for the container, set the access level and then click <b>Create Container</b>.</p>
 
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Creating and Deleting Containers
-
-A container is a storage compartment for your data and provides a way for you to organize your data. You can think of a container as a folder in Windows&#174; or a directory in UNIX&#174;. The primary difference between a container and these other file system concepts is that containers cannot be nested. You can, however, create an unlimited number of containers within your account. Data must be stored in a container so you must have at least one container defined in your account prior to uploading data.
-
-### Create a container ###
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Project** dashboard, then the **System** panel, then the **Object Store** link.
-
-3. In the **Object Store** panel, click **Containers**.
-
-4. In the **Create Container** dialog box, enter a name for the container, set the access level and then click **Create Container**.
-
-	**Note:** A Public Container will allow anyone with the Public URL to gain access to your objects in the container.
-
-### Delete a container ###
-
-1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Project** dashboard, then the **System** panel, then the **Object Store** link.
-
-3. In the **Object Store** pan, click **Containers**.
-
-4. From the **More** drop-down list next to a container, select **Delete container**
-
-5. The **Delete Container** dialog box will appear. 
-
-6. Click **Delete Container** to confirm. The container and all objects stored within it will be permanently deleted.  
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----
+<p>
+<b>Note:</b> A Public Container will allow anyone with the Public URL to gain access to your objects in the container.</p>
+</li>
+</ol>
+</section>
+<section id="delete-a-container"> <title>Delete a container</title>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Object Store</b> link.</p>
+</li>
+<li>
+<p>In the <b>Object Store</b> pan, click <b>Containers</b>.</p>
+</li>
+<li>
+<p>From the <b>More</b> drop-down list next to a container, select <b>Delete container</b>
+</p>
+</li>
+<li>
+<p>The <b>Delete Container</b> dialog box will appear.</p>
+</li>
+<li>
+<p>Click <b>Delete Container</b> to confirm. The container and all objects stored within it will be permanently deleted.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1829/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

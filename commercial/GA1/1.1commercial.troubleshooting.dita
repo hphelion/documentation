@@ -1,92 +1,124 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Troubleshooting"
-permalink: /helion/openstack/1.1/services/troubleshooting/
-product: commercial.ga
-
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: Systems Administrator 
-role2: Cloud Architect 
-role3: Storage Administrator 
-role4: Network Administrator 
-role5: Service Developer 
-role6: Cloud Administrator 
-role7: Application Developer 
-role8: Network Engineer 
-authors: Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2105">
+<title>HP Helion OpenStack(R) 1.1: Troubleshooting</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/reporting/overview/"> NEXT &#9654</a> </p> -->
-
-
-# HP Helion OpenStack&#174; 1.1: Troubleshooting 
-[See the Helion OpenStack 1.0 version of this page](/helion/openstack/services/troubleshooting/)
-
-HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of Linux&#174; provided by HP (hLinux). This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions organized into the following topics:
-
-
-* [Installation Troubleshooting](/helion/openstack/1.1/services/troubleshooting/install/)
-
-* [ESX and OVSvAPP Troubleshooting](/helion/openstack/1.1/services/troubleshooting/esx/)
-
-* [VSA Troubleshooting](/helion/openstack/1.1/services/troubleshooting/vsa/)
-
-* [Scale-Out Swift Troubleshooting](/helion/openstack/1.1/services/troubleshooting/swift/)
-
-* [DNSaaS issues](/helion/openstack/1.1/services/troubleshooting/dns/)
-
-* [Reporting Service Troubleshooting](/helion/openstack/1.1/services/reporting/troubleshooting/)
-
-* [Logging issues](/helion/openstack/1.1/services/troubleshooting/logging/)
-
-* [Troubleshooting Controller Nodes](/helion/openstack/1.1/services/troubleshooting/controllers)
-
-* [Troubleshooting OVSvApp](/helion/openstack/1.1/services/troubleshooting/ovsvapp/)
-
-* [Troubleshooting Ephemeral Partitions](/helion/openstack/1.1/services/troubleshooting/ephemeral_partitions/)
-
-* [Troubleshooting Overcloud Node Removal](/helion/openstack/1.1/services/troubleshooting/overcloud/)
-
-* [Troubleshooting NTP](/helion/openstack/1.1/services/troubleshooting/ntp/)
-
-* [Troubleshooting the Compute Service](/helion/openstack/1.1/services/troubleshooting/compute/)
-
-### Contacting Customer Service {#sos}
-
-If you need further assistance, contact [HP Customer Support](http://www.hpcloud.com/about/contact). 
-
-#### Gathering information ####
-
-Before contacting HP Customer Support, run the `run-sosreport` command on the affected system. You do not need to be logged in as *root* to run this command.
-
-The command gathers specific information into a file that will help diagnose your issue. The file is located in the `/tmp` directory under a name in the format `sosreport-<system hostname>-<timestamp>.tar.xz`. For example: `/tmp/sosreport-hLinux-20150218083619.tar.xz`. 
-
-Customer Support will help determine the best way to relay the information in the file to them.
-
-
-#### Determining the Helion OpenStack version ####
-
-Run the following command on any Helion OpenStack node (seed, undercloud, overcloud control plane), to determine the installed version:
-
-	cat /etc/HP_Helion_version
-
-A sample of output is:
-
-	HP Helion OpenStack 1.1.1 Build 100
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
-
-----
+ <!--./commercial/GA1/1.1commercial.troubleshooting.md-->
+ <!--permalink: /helion/openstack/1.1/services/troubleshooting/--></p>
+<p>
+  <xref href="../../commercial/GA1/1.0commercial.troubleshooting.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+</p>
+<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of LinuxÂ(R) provided by HP (hLinux). This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions organized into the following topics:</p>
+<ul>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.1commercial.troubleshooting.install.dita" >Installation Troubleshooting</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.1commercial.troubleshooting.esx.dita" >ESX and OVSvAPP Troubleshooting</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.1commercial.troubleshooting.vsa.dita" >VSA Troubleshooting</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.1commercial.troubleshooting.swift.dita" >Scale-Out Swift Troubleshooting</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.1commercial.troubleshooting.dns.dita" >DNSaaS issues</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/ceilometer/1.1commercial.services-reporting-troubleshoot.dita" >Reporting Service Troubleshooting</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.1commercial.troubleshooting.logging.dita" >Logging issues</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="/helion/openstack/1.1/services/troubleshooting/controllers" >Troubleshooting Controller Nodes</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.1commercial.troubleshooting.ovsvapp.dita" >Troubleshooting OVSvApp</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.dita" >Troubleshooting Ephemeral Partitions</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.1commercial.troubleshooting.overcloud.dita" >Troubleshooting Overcloud Node Removal</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.1commercial.troubleshooting.ntp.dita" >Troubleshooting NTP</xref>
+</p>
+</li>
+<li>
+<p>
+<xref href="../../commercial/GA1/1.1commerical.troubleshooting.compute.dita" >Troubleshooting the Compute Service</xref>
+</p>
+</li>
+</ul>
+<section id="sos"> <title>Contacting Customer Service</title>
+<p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref>.</p>
+</section>
+<section id="gathering-information"> <title>Gathering information</title>
+<p>Before contacting HP Customer Support, run the <codeph>run-sosreport</codeph> command on the affected system. You do not need to be logged in as <i>root</i> to run this command.</p>
+<p>The command gathers specific information into a file that will help diagnose your issue. The file is located in the <codeph>/tmp</codeph> directory under a name in the format <codeph>sosreport-&lt;system hostname&gt;-&lt;timestamp&gt;.tar.xz</codeph>. For example: <codeph>/tmp/sosreport-hLinux-20150218083619.tar.xz</codeph>.</p>
+<p>Customer Support will help determine the best way to relay the information in the file to them.</p>
+</section>
+<section id="determining-the-helion-openstack-version"> <title>Determining the Helion OpenStack(R) version</title>
+<p>Run the following command on any Helion OpenStack(R) node (seed, undercloud, overcloud control plane), to determine the installed version:</p>
+<codeblock>
+  <codeph>cat /etc/HP_Helion_version
+</codeph>
+</codeblock>
+<p>A sample of output is:</p>
+<codeblock>
+  <codeph>HP Helion OpenStack(R) 1.1.1 Build 100
+</codeph>
+</codeblock>
+<p>
+  <xref type="section" href="#topic2105/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

@@ -1,14 +1,20 @@
----
-layout: public-cloud
-title: "HP Helion Public Cloud Relational Database (RDB) Overview"
-permalink: /publiccloud/rdb/
-product: rdb
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic509">
+<title>HP Helion Public Cloud Relational Database (RDB) Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-# HP Helion Public Cloud Relational Database (RDB) Overview
-
-The HP Helion Public Cloud Relational Database (RDB) provides you with a simplified method for creation and management of MySQL database instances.  
-
-## API
-Do you need low level, raw REST API access to HP Helion Public Cloud RDB?  Take a look at the [RDB API page](/publiccloud/api/dbaas/).
+ <!--./publiccloud/rdb.md-->
+ <!--permalink: /publiccloud/rdb/--></p>
+<p>The HP Helion Public Cloud Relational Database (RDB) provides you with a simplified method for creation and management of MySQL database instances.</p>
+<section id="api"> <title>API</title>
+<p>Do you need low level, raw REST API access to HP Helion Public Cloud RDB?  Take a look at the <xref href="../publiccloud/apidocs/c1.1/dbaas-api.dita" >RDB API page</xref>.</p>
+</section>
+</body>
+</topic>

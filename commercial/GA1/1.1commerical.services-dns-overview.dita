@@ -1,113 +1,102 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: DNS as a Service (DNSaaS) Overview"
-permalink: /helion/openstack/1.1/services/dns/overview/
-product: commercial.ga
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: Systems Administrator 
-role2: Cloud Architect 
-role3: Storage Administrator 
-role4: Network Administrator 
-role5: Service Developer 
-role6: Cloud Administrator 
-role7: Application Developer 
-role8: Network Engineer 
-authors: Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3261">
+<title>HP Helion OpenStack(R) 1.1: DNS as a Service (DNSaaS) Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
+ <!--./commercial/GA1/1.1commerical.services-dns-overview.md-->
+ <!--permalink: /helion/openstack/1.1/services/dns/overview/--></p>
+<p>
+  <xref href="../../commercial/GA1/1.0commerical.services-dns-overview.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+</p>
+<p>Based on the OpenStack(R) Designate project, the HP Helion OpenStack(R) DNS-as-a-service feature (DNSaaS) provides a Domain Name System (DNS) service for use by HP Helion OpenStack(R) users.</p>
+<p>DNSaaS includes a set of RESTful APIs for the display, creation, modification and deletion of DNS records.</p>
+<p>DNSaaS for the OpenStack(R) platform includes:</p>
+<ul>
+<li>REST APIs for domain/record management</li>
+<li>Multi-tenancy</li>
+<li>Integration with Keystone for authentication</li>
+<li>A framework in place to integrate with Nova and Quantum notifications (for auto-generated records)</li>
+<li>Support for PowerDNS in the current version</li>
+</ul>
+<p>For example, if a user wants to access <i>mytestdomain.com</i> in a web browser, DNS provides the mechanism the browser uses to locate the server's IP address (for example, <codeph>1.2.3.4</codeph>).</p>
+<p>
+<b>Note:</b> Installing HP Helion OpenStack(R) DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion OpenStack(R) and verified that it is  correctly configured and operational.</p>
+<p>Learn how to <xref href="../../commercial/GA1/1.1commercial.install-GA-DNSaaS.dita" >install DNS as a service</xref>.</p>
+<section id="key-terms"> <title>Key Terms</title>
+<p>Key terms include:</p>
+<ul>
+<li>
+<p>
+<b>DNS</b> - A service that provides look up of the actual Internet address (IP address) of domains.</p>
+</li>
+<li>
+<p>
+<b>Domain Name</b> - An identification string that defines a realm of administrative autonomy, authority, or control on the Internet.</p>
+</li>
+<li>
+<p>
+<b>DNS Server</b> - A server that stores the DNS records for a domain name, such as address (A or AAAA) records, name server (NS) records, and mail exchanger (MX) records.</p>
 
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/services/horizon/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/tripleo/overview/"> NEXT &#9654</a> </p> -->
-
-# HP Helion OpenStack&#174; 1.1: DNS as a Service (DNSaaS) Overview#
-[See the Helion OpenStack 1.0 version of this page](/helion/openstack/services/dns/overview/)
-
-Based on the OpenStack Designate project, the HP Helion OpenStack DNS-as-a-service feature (DNSaaS) provides a Domain Name System (DNS) service for use by HP Helion OpenStack users.
-
-DNSaaS includes a set of RESTful APIs for the display, creation, modification and deletion of DNS records.
-
-DNSaaS for the OpenStack platform includes:
-
-- REST APIs for domain/record management
-- Multi-tenancy
-- Integration with Keystone for authentication
-- A framework in place to integrate with Nova and Quantum notifications (for auto-generated records)
-- Support for PowerDNS in the current version
-
-For example, if a user wants to access *mytestdomain.com* in a web browser, DNS provides the mechanism the browser uses to locate the server's IP address (for example, `1.2.3.4`).
-
-**Note:** Installing HP Helion OpenStack DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion OpenStack and verified that it is  correctly configured and operational.
-
-Learn how to [install DNS as a service](/helion/openstack/1.1/install/dnsaas/).
-
-##Key Terms
-
-Key terms include:
-
-- **DNS** - A service that provides look up of the actual Internet address (IP address) of domains. 
-
-- **Domain Name** - An identification string that defines a realm of administrative autonomy, authority, or control on the Internet.
-
-- **DNS Server** - A server that stores the DNS records for a domain name, such as address (A or AAAA) records, name server (NS) records, and mail exchanger (MX) records.
-
-	A user of DNSaaS needs to set the nameservers for their domains, as described in the [API document](http://docs.hpcloud.com/api/dns).
-
-## Working with DNSaaS
-
-To [perform tasks using DNSaaS](#howto), you can use the API or CLI.
-
-###Using the API to access DNSaaS<a name="API"></a>
- 
-You can use a low-level, raw REST API access to DNSaaS. See the [HP Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/).
-
-###Using the CLI<a name="cli"></a>
-
-You can use the *python-designateclient* command line tool to access DNSaaS. See [Install the client from PyPI](http://python-designateclient.readthedocs.org/en/latest/shell.html).
-
-For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
-
-
-
-## How To's with the HP Helion DNSaaS<a name="howto"></a>
-
-The HP DNSaaS provides a way to display, create, modify, and delete DNS records. 
-
-The following lists of tasks can be performed by a user or administrator through the [API](http://docs.hpcloud.com/api/dns), or [CLI](http://python-designateclient.readthedocs.org/en/latest/shell.html).
-
-
-### Domain Operations ###
-
-You can perform the following operations for the DNS domain:
-
-- Creating and deleting domains
-- Listing domains
-- Modifying domains
-
-
-### Record Operations ###
-
-You can perform the following operations for DNS records:
-
-- Creating and deleting records
-- Listing records
-- Modifying records
-
-## For more information ##
-
-For more information on the OpenStack Designate project, see the [OpenStack Designate wiki](https://wiki.openstack.org/wiki/Designate).
-
-
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
+<p>A user of DNSaaS needs to set the nameservers for their domains, as described in the <xref href="http://docs.hpcloud.com/api/dns" scope="external" format="html" >API document</xref>.</p>
+</li>
+</ul>
+</section>
+<section id="working-with-dnsaas"> <title>Working with DNSaaS</title>
+<p>To <xref type="section" href="#topic3261/howto">perform tasks using DNSaaS</xref>, you can use the API or CLI.</p>
+</section>
+<section id="using-the-api-to-access-dnsaas"> <title>Using the API to access DNSaaS<!--Removed anchor point API--><!-- id="API" --></title>
+<p>You can use a low-level, raw REST API access to DNSaaS. See the <xref href="https://docs.hpcloud.com/api/dns/" scope="external" format="html" >HP Helion Public Cloud DNS API Specifications</xref>.</p>
+</section>
+<section id="using-the-cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
+<p>You can use the <i>python-designateclient</i> command line tool to access DNSaaS. See <xref href="http://python-designateclient.readthedocs.org/en/latest/shell.html" scope="external" format="html" >Install the client from PyPI</xref>.</p>
+<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack(R) command-line clients</xref>.</p>
+</section>
+<section id="how-tos-with-the-hp-helion-dnsaas"> <title>How To's with the HP Helion DNSaaS<!--Removed anchor point howto--><!-- id="howto" --></title>
+<p>The HP DNSaaS provides a way to display, create, modify, and delete DNS records.</p>
+<p>The following lists of tasks can be performed by a user or administrator through the <xref href="http://docs.hpcloud.com/api/dns" scope="external" format="html" >API</xref>, or <xref href="http://python-designateclient.readthedocs.org/en/latest/shell.html" scope="external" format="html" >CLI</xref>.</p>
+</section>
+<section id="domain-operations"> <title>Domain Operations</title>
+<p>You can perform the following operations for the DNS domain:</p>
+<ul>
+<li>Creating and deleting domains</li>
+<li>Listing domains</li>
+<li>Modifying domains</li>
+</ul>
+</section>
+<section id="record-operations"> <title>Record Operations</title>
+<p>You can perform the following operations for DNS records:</p>
+<ul>
+<li>Creating and deleting records</li>
+<li>Listing records</li>
+<li>Modifying records</li>
+</ul>
+</section>
+<section id="for-more-information"> <title>For more information</title>
+<p>For more information on the OpenStack(R) Designate project, see the <xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >OpenStack(R) Designate wiki</xref>.</p>
+<p>
+  <xref type="section" href="#topic3261/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

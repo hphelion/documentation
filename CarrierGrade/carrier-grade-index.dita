@@ -1,68 +1,75 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Documentation Home"
-permalink: /helion/openstack/carrier/home/
-product: carrier-grade
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2685">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Documentation Home</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/carrier-grade-index.md-->
+ <!--permalink: /helion/openstack/carrier/home/--></p>
+<!-- From HP/WR OpenStack(R) Summit press release  http://www.windriver.com/news/press/pr.html?ID=13261-->
+<p>HP Helion OpenStack(R) Carrier Grade is a carrier-grade distribution of OpenStack(R) the leading open source cloud computing platform.</p>
+<p>HP Helion OpenStack(R) Carrier Grade enables carrier grade network functions virtualization (NFV) capabilities to provide communications service providers (CSPs) with an open source based cloud platform that meets their demanding reliability requirements and accelerate their transition to NFV deployments.</p>
+<section id="installing-hp-openstack-carrier-grade"> <title>Installing HP OpenStack(R) Carrier Grade</title>
+<p>Use the following links to begin installing HP OpenStack(R) Carrier Grade:</p>
+<ul>
+<li>
+<p>
+<xref href="../CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita" >Installing HP Helion OpenStack(R) Carrier Grade</xref>.</p>
 
+<p>Start with this document for complete instructions on how to install your HP Helion OpenStack(R) cloud, including system requirements, prerequisites.</p>
+</li>
+</ul>
+</section>
+<section id="getstart"> <title>Learning about HP Helion OpenStack(R) Carrier Grade</title>
+<p>Use the following link to review some high-level overview information about HP Helion OpenStack(R) Carrier Grade:</p>
+<ul>
+<li>
+<xref href="../CarrierGrade/Overview/carrier-grade-overview.dita" >HP Helion OpenStack(R) Carrier Grade Overview</xref>
+</li>
+<li>
+<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack(R)" scope="external" format="html" >HP Helion OpenStack(R) Carrier Grade Release Notes</xref>
+</li>
+</ul>
+</section>
+<section id="getstart"> <title>Getting started with HP Helion OpenStack(R) Carrier Grade</title>
+<p>Use the following links and tools to begin working with HP Helion OpenStack(R) Carrier Grade:</p>
+<ul>
+<li>
+<p>
+<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack(R)" scope="external" format="html" >Administration Guide</xref>
+</p>
 
-<script>
+<p>The Administration Guide is addressed to HP Helion OpenStack(R) Carrier Grade administrators responsible for the following areas:</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<ul>
+<li>
+<p>Creating and maintaining resources used by end users (tenants), such as virtual machines, storage pools, network objects, and access credentials.</p>
+</li>
+<li>
+<p>Operating and maintaining components of the HP Helion OpenStack(R) Carrier Grade product, such as clusters,
+nodes, system software, licensing files, and backup and restore facilities</p>
+</li>
+</ul>
+</li>
+<li>
+<p>
+<xref href="../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita" >Managing Your Cloud</xref>
+</p>
 
-PageRefresh();
-
-</script>
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Documentation Home
-
-<!-- From HP/WR OpenStack Summit press release  http://www.windriver.com/news/press/pr.html?ID=13261-->
-
-HP Helion OpenStack Carrier Grade is a carrier-grade distribution of OpenStack, the leading open source cloud computing platform. 
-
-HP Helion OpenStack Carrier Grade enables carrier grade network functions virtualization (NFV) capabilities to provide communications service providers (CSPs) with an open source based cloud platform that meets their demanding reliability requirements and accelerate their transition to NFV deployments. 
-
-## Installing HP OpenStack Carrier Grade
-
-Use the following links to begin installing HP OpenStack Carrier Grade:
-
-* [Installing HP Helion OpenStack Carrier Grade](/helion/openstack/carrier/install/pb/overview/). 
-
-	Start with this document for complete instructions on how to install your HP Helion OpenStack cloud, including system requirements, prerequisites.
-
-## Learning about HP Helion OpenStack Carrier Grade {#getstart}
-
-Use the following link to review some high-level overview information about HP Helion OpenStack Carrier Grade: 
-
-* [HP Helion OpenStack Carrier Grade Overview](/helion/openstack/carrier/overview/)
-* [HP Helion OpenStack Carrier Grade Release Notes](http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Release_Notes.pdf)
-
-## Getting started with HP Helion OpenStack Carrier Grade {#getstart}
-
-Use the following links and tools to begin working with HP Helion OpenStack Carrier Grade:
-
-
-* [Administration Guide](http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Administration_Guide.pdf) 
-
-	The Administration Guide is addressed to HP Helion OpenStack Carrier Grade administrators responsible for the following areas: 
-
-	* Creating and maintaining resources used by end users (tenants), such as virtual machines, storage pools, network objects, and access credentials.
-
-	* Operating and maintaining components of the HP Helion OpenStack Carrier Grade product, such as clusters,
-nodes, system software, licensing files, and backup and restore facilities
-
-* [Managing Your Cloud](/helion/commercial/carrier/dashboard/managing/)
-
-	These topics are functional descriptions of the Horizon dashboards. These topics are designed to guide you through the day-to-day administrative and functional tasks you can perform in the HP Helion OpenStack Carrier Grade cloud.
-
-<!-- Hide for alpha * [HP Helion OpenStack Carrier Grade WindRiver Integration Overview](/helion/openstack/carrier/wr/overview/) -->
-
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
+<p>These topics are functional descriptions of the Horizon dashboards. These topics are designed to guide you through the day-to-day administrative and functional tasks you can perform in the HP Helion OpenStack(R) Carrier Grade cloud.</p>
+</li>
+</ul>
+<!-- Hide for alpha * [HP Helion OpenStack(R) Carrier Grade WindRiver Integration Overview](/helion/openstack/carrier/wr/overview/) -->
+<p>
+  <xref type="section" href="#topic2685/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

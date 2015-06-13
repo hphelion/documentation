@@ -1,158 +1,194 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Configuring NTP"
-permalink: /helion/openstack/carrier/install/ntp/
-product: carrier-grade
-product-version1: HP Helion OpenStack 1.1
-role1: Storage Administrator
-role2: Storage Architect
-authors: Michael B, 
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4740">
+<title>HP Helion OpenStack(R) Carrier Grade: Configuring NTP</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Michael B,"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-install-NTP.md-->
+ <!--permalink: /helion/openstack/carrier/install/ntp/--></p>
+<p>This page provides detailed information on <xref type="section" href="#topic4740/client">configuring HP Helion OpenStack(R) Carrier Grade nodes</xref> for Network Time Protocol (NTP) and <xref type="section" href="#topic4740/server">instlling an NTP server on the seed cloud host</xref>.</p>
+<p>NTP is a networking protocol for clock synchronization between computer systems. The undercloud and overcloud systems are configured as NTP clients during the installation process.</p>
+<p>HP Helion OpenStack(R) Carrier Grade requires that all nodes point to the same NTP server. You can use an external NTP server or configure the seed cloud host as a server.</p>
+<p>
+  <b>Notes:</b>
+</p>
+<ul>
+<li>NTP clients should use only stratum 2 and higher servers (meaning stratum 1 or stratum 0).</li>
+<li>All the Helion servers use UTC as a time zone.</li>
+</ul>
+<section id="server"> <title>Install an NTP server on the seed</title>
+<p>To configure an NTP server, follow these steps:</p>
+<ol>
+<li>
+<p>Log in to the KVM host.</p>
 
+<codeblock>
+<codeph>sudo su -
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Install the NTP package using the following command:</p>
 
-<script>
+<codeblock>
+<codeph>sudo apt-get install ntp
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Add NTP servers to <codeph>/etc/ntp.conf</codeph>. The following example use servers from the NTP Pool Project:</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<codeblock>
+<codeph>server ntp.ubuntu.com
+server 127.127.1.0
+</codeph>
+</codeblock>
 
-PageRefresh();
+<p>
+<b>Note:</b> The NTP stratum must be numerically lower than 10 (meaning stratum 9, stratum 8, etc.) in order to use as a source. If one is not available, you may be able to <xref type="section" href="#topic4740/fudge">fudge one</xref>.</p>
+</li>
+<li>
+<p>Configure system time zone using the <codeph>tzselect</codeph> command.</p>
 
-</script>
+<p>a. Change to the /usr/bin/` directory.</p>
 
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/prereqs/#ntp">&#9664; Prerequisites | <a href="/helion/openstack/1.1/install/overview/"> &#9650; Installation Overview</a> </p> 
+<p>b. Execute the <codeph>tzselect</codeph> command. The available time zones are listed.</p>
 
-# HP Helion OpenStack&#174; Carrier Grade: Configuring NTP
+<p>c. Select from the listed time zones by entering a number at the promnpt.</p>
 
-This page provides detailed information on [configuring HP Helion OpenStack Carrier Grade nodes](#client) for Network Time Protocol (NTP) and [instlling an NTP server on the seed cloud host](#server). 
+<p>The output should be placed in <codeph>/etc/profile</codeph> and executed on the command line.</p>
 
-NTP is a networking protocol for clock synchronization between computer systems. The undercloud and overcloud systems are configured as NTP clients during the installation process.
+<codeblock>
+<codeph>source /etc/profile
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Verify that your server is broadcasting using the <codeph>ntpq -p</codeph> command. You should see a message similar to the following:</p>
 
-HP Helion OpenStack Carrier Grade requires that all nodes point to the same NTP server. You can use an external NTP server or configure the seed cloud host as a server. 
+<codeblock>
+<codeph>ntpq -p
+remote  refid   st  t   when    poll    reach   delay   offset  jitter
+==============================================================================
+*ops-ae1ops-ntp0    209.51.161.238  2   u   242 1024    377 0.509   0.043   0.206
+LOCAL(0)    .LOCL.  10  l   76h 64  0   0.000   0.000   0.000
+</codeph>
+</codeblock>
 
-**Notes:** 
+<p>You can now point clients to your NTP server</p>
+</li>
+</ol>
+</section>
+<section id="client"> <title>Configure all other nodes as NTP clients</title>
+<ol>
+<li>
+<p>SSH to the node you want to configure.</p>
+</li>
+<li>
+<p>Add your NTP server IP to the clients <codeph>/etc/ntp.conf</codeph> file.</p>
+</li>
+<li>
+<p>Configure system time zone using the <codeph>tzselect</codeph> command.</p>
 
-* NTP clients should use only stratum 2 and higher servers (meaning stratum 1 or stratum 0).
-* All the Helion servers use UTC as a time zone.
+<p>a. Change to the /usr/bin/` directory.</p>
 
-## Install an NTP server on the seed  {#server}
+<p>b. Execute the <codeph>tzselect</codeph> command. The available time zones are listed.</p>
 
-To configure an NTP server, follow these steps: 
+<p>c. Select from the listed time zones by entering a number at the promnpt.</p>
 
-1. Log in to the KVM host.
+<p>The output should be placed in <codeph>/etc/profile</codeph> and executed on the command line.</p>
 
-		sudo su -
+<codeblock>
+<codeph>source /etc/profile
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Restart the NTP service.</p>
 
-2. Install the NTP package using the following command:
+<codeblock>
+<codeph>service ntp restart
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Verify that you have a connection to the NTP server.</p>
 
-		sudo apt-get install ntp
+<codeblock>
+<codeph>ntpq -pd
 
-3. Add NTP servers to `/etc/ntp.conf`. The following example use servers from the NTP Pool Project:
+1 packets reassembled into response
+remote  refid   st  t   when    poll    reach   delay   offset  jitter
+==============================================================================
+2 packets reassembled into response
++ntp0 209.51.161.238    2   u   82  1024    377 0.286   0.117   0.349
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Verify that your server shows client connections.</p>
 
-		server ntp.ubuntu.com
-		server 127.127.1.0
+<codeblock>
+<codeph>ntpdc -c monlist
 
-	**Note:** The NTP stratum must be numerically lower than 10 (meaning stratum 9, stratum 8, etc.) in order to use as a source. If one is not available, you may be able to [fudge one](#fudge).
+ntpdc -c monlist
+remote address  port    local address   count   m   ver rstr    avgint  lstint
+===============================================================================
+ntp0001.use 123 10.22.170.17    2365    4   4   1d0 1000    384
+</codeph>
+</codeblock>
+</li>
+</ol>
+</section>
+<section id="fudge"> <title>Fudging a stratum lower than 10</title>
+<p>NTP uses a hierarchical, semi-layered system of time sources. Each level of this hierarchy is termed a <i>stratum</i> and is assigned a number starting with zero at the top. The number represents the distance from the reference clock and is used to prevent cyclical dependencies in the hierarchy.</p>
+<p>The numerically lower the stratum value, the higher priority that clock has.</p>
+<p>HP Helion OpenStack(R) uses stratum 10. Using a numerically high stratum ensures that this is only used if all external clocks fail. This will mitigate skew until external clocks return to service.</p>
+<p>If your NTP stratum is numerically less than 10, set up your host as the time source by fudging a stratum 10.</p>
+<ol>
+<li>
+<p>Configure host as a time source.</p>
+</li>
+<li>
+<p>Add the following to /etc/ntp.conf to force a stratum 10.</p>
 
-4. Configure system time zone using the `tzselect` command.
+<codeblock>
+<codeph>server 127.127.1.0
+fudge 127.127.1.0 stratum 10
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Restart the NTP service</p>
 
-	a. Change to the /usr/bin/` directory.
-
-	b. Execute the `tzselect` command. The available time zones are listed.
-
-	c. Select from the listed time zones by entering a number at the promnpt.
-
-	The output should be placed in `/etc/profile` and executed on the command line.
-
-		source /etc/profile
-
-5. Verify that your server is broadcasting using the `ntpq -p` command. You should see a message similar to the following: 
-
-		ntpq -p
-		remote 	refid 	st	t	when	poll	reach	delay	offset	jitter
-		==============================================================================
-		*ops-ae1ops-ntp0	209.51.161.238	2	u	242	1024	377	0.509	0.043	0.206
-		LOCAL(0)	.LOCL.	10	l	76h	64	0	0.000	0.000	0.000
-
-	You can now point clients to your NTP server
-
-## Configure all other nodes as NTP clients {#client}
-
-1. SSH to the node you want to configure.
-
-2. Add your NTP server IP to the clients `/etc/ntp.conf` file.
-
-3. Configure system time zone using the `tzselect` command.
-
-	a. Change to the /usr/bin/` directory.
-
-	b. Execute the `tzselect` command. The available time zones are listed.
-
-	c. Select from the listed time zones by entering a number at the promnpt.
-
-	The output should be placed in `/etc/profile` and executed on the command line.
-
-		source /etc/profile
-
-4. Restart the NTP service.
-
-		service ntp restart
-
-5. Verify that you have a connection to the NTP server.
-
-		ntpq -pd
-
-		1 packets reassembled into response
-		remote	refid	st	t	when	poll	reach	delay	offset	jitter
-		==============================================================================
-		2 packets reassembled into response
-		+ntp0 209.51.161.238	2	u	82	1024	377	0.286	0.117	0.349
-
-6. Verify that your server shows client connections.
-
-		ntpdc -c monlist
-
-		ntpdc -c monlist
-		remote address	port	local address	count	m	ver	rstr	avgint	lstint
-		===============================================================================
-		ntp0001.use	123 10.22.170.17	2365	4	4	1d0	1000	384
-
-
-
-### Fudging a stratum lower than 10 {#fudge}
-
-NTP uses a hierarchical, semi-layered system of time sources. Each level of this hierarchy is termed a *stratum* and is assigned a number starting with zero at the top. The number represents the distance from the reference clock and is used to prevent cyclical dependencies in the hierarchy. 
-
-The numerically lower the stratum value, the higher priority that clock has. 
-
-HP Helion OpenStack uses stratum 10. Using a numerically high stratum ensures that this is only used if all external clocks fail. This will mitigate skew until external clocks return to service.
-
-If your NTP stratum is numerically less than 10, set up your host as the time source by fudging a stratum 10.
-
-1. Configure host as a time source.
-
-2. Add the following to /etc/ntp.conf to force a stratum 10.
-
-		server 127.127.1.0
-		fudge 127.127.1.0 stratum 10
-
-3. Restart the NTP service
-
-		service ntp restart
-
-Using `fudge` to configure the local clock as stratum 10 makes NTP use the local clock when no timeservers are available. The system will only use the local clock if your system cannot access the NTP server.
-
+<codeblock>
+<codeph>service ntp restart
+</codeph>
+</codeblock>
+</li>
+</ol>
+<p>Using <codeph>fudge</codeph> to configure the local clock as stratum 10 makes NTP use the local clock when no timeservers are available. The system will only use the local clock if your system cannot access the NTP server.</p>
 <!--
 ## Troubleshooting ##
 
 ### Trouble synching ###
 
-If your client (including your NTP server) has trouble syncing time, see [Troubleshooting NTP](/helion/openstack/1.1/services/troubleshooting/ntp/#synch).
+If your client (including your NTP server) has trouble syncing time, see [Troubleshooting NTP](/helion/openstack/1.1/services/troubleshooting/ntp#synch).
 -->
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
-
-
-
+<p>
+  <xref type="section" href="#topic4740/top"> Return to Top </xref>
+</p>
+</section>
+</body>
+</topic>

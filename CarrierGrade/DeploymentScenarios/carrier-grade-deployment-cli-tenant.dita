@@ -1,108 +1,141 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Beta): Setting Up Tenant Networks Using the CLI"
-permalink: /helion/openstack/carrier/deploy/cli/tenant/
-product: carrier-grade
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: All
-
-authors: Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3069">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Setting Up Tenant Networks Using the CLI</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="All"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
+ <!--./CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-tenant.md-->
+ <!--permalink: /helion/openstack/carrier/deploy/cli/tenant/--></p>
+<p>You can use the CLI to set up tenant networks and their associated IP subnets.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>This exercise sets up the tenant networks <codeph>external-net</codeph>, <codeph>internal-net</codeph>, <codeph>tenant1-mgmt-net</codeph>, and <codeph>tenant2-mgmt-net</codeph>. IP subnets are created for the first two networks only. IP subnets for the tenant networks are created by the users <codeph>user1</codeph> and <codeph>user2</codeph> in a separate task.</p>
+<ol>
+<li>
+<p>Create and configure the tenant network <codeph>external-net</codeph>.</p>
 
-<script>
+<p>a. Create the tenant network.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<codeblock>
+<codeph>neutron net-create --tenant-id ${admin_tenant_UUID} \
+--provider:physical_network=provider-net-a \
+--provider:segmentation_id=10 --router:external external-net
+</codeph>
+</codeblock>
 
-PageRefresh();
+<p>b. Define the IP subnet.</p>
 
-</script>
+<codeblock>
+<codeph>neutron subnet-create --tenant-id ${admin_tenant_UUID} \
+--name external-subnet --gateway 192.168.2.1 --disable-dhcp external-net 192.168.2.0/24
+</codeph>
+</codeblock>
 
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
+<p>c. Set up the UUID variable for the new tenant network.</p>
 
-# HP Helion OpenStack&#174; Carrier Grade (Beta): Setting Up Tenant Networks Using the CLI
+<codeblock>
+<codeph>export external_net_UUID=`neutron net-list \
+| grep external-net | awk '{print $2}'`
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Create and configure the tenant network <codeph>internal-net</codeph>.</p>
 
-You can use the CLI to set up tenant networks and their associated IP subnets.
+<p>a. Create the tenant network.</p>
 
-<hr>
-**Note:** This feature applies only to servers in the VNF Region.
-<hr>
+<codeblock>
+<codeph>neutron net-create --tenant-id ${admin_tenant_UUID} \
+--provider:physical_network=provider-net-b \
+--shared internal-net
+</codeph>
+</codeblock>
 
-This exercise sets up the tenant networks `external-net`, `internal-net`, `tenant1-mgmt-net`, and `tenant2-mgmt-net`. IP subnets are created for the first two networks only. IP subnets for the tenant networks are created by the users `user1` and `user2` in a separate task.
+<p>b. Define the IP subnet.</p>
 
-1. Create and configure the tenant network `external-net`.
+<codeblock>
+<codeph>neutron subnet-create --tenant-id ${admin_tenant_UUID} \
+--name internal-subnet \
+--no-gateway --vlan-id 5 internal-net 10.1.1.0/24
+</codeph>
+</codeblock>
 
-	a. Create the tenant network.
+<p>
+<b>Note:</b> The <codeph>--vlan-id 5</codeph> option indicates that packets sent to this subnet by any virtual machine must be tagged with VLAN ID 5.</p>
 
-		neutron net-create --tenant-id ${admin_tenant_UUID} \
-		--provider:physical_network=provider-net-a \
-		--provider:segmentation_id=10 --router:external external-net
+<p>c. Set up the UUID variable for the new tenant network.</p>
 
-	b. Define the IP subnet.
+<codeblock>
+<codeph>export internal_net_UUID=`neutron net-list \
+| grep internal-net | awk '{print $2}'`
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Create the tenant network <codeph>tenant1-mgmt-net</codeph>.</p>
 
-		neutron subnet-create --tenant-id ${admin_tenant_UUID} \
-		--name external-subnet --gateway 192.168.2.1 --disable-dhcp external-net 192.168.2.0/24
+<p>a. Create the tenant network.</p>
 
-	c. Set up the UUID variable for the new tenant network.
+<codeblock>
+<codeph>neutron net-create --tenant-id ${tenant1_UUID} \
+--provider:physical_network=provider-net-a tenant1-mgmt-net
+</codeph>
+</codeblock>
 
-		export external_net_UUID=`neutron net-list \
-		| grep external-net | awk '{print $2}'`
+<p>b. Set up the UUID variable for the new tenant network.</p>
 
-2. Create and configure the tenant network `internal-net`.
+<codeblock>
+<codeph>export tenant1_mgmt_net_UUID=`neutron net-list \
+| grep tenant1-mgmt-net | awk '{print $2}'`
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Create the tenant network <codeph>tenant2-mgmt-net</codeph>.</p>
 
-	a. Create the tenant network.
+<p>a. Create the tenant network.</p>
 
-		neutron net-create --tenant-id ${admin_tenant_UUID} \
-		--provider:physical_network=provider-net-b \
-		--shared internal-net
+<codeblock>
+<codeph>neutron net-create --tenant-id ${tenant2_UUID} \
+--provider:physical_network=provider-net-a tenant2-mgmt-net
+</codeph>
+</codeblock>
 
-	b. Define the IP subnet.
+<p>b. Set up the UUID variable for the new tenant network.</p>
 
-		neutron subnet-create --tenant-id ${admin_tenant_UUID} \
-		--name internal-subnet \
-		--no-gateway --vlan-id 5 internal-net 10.1.1.0/24
+<codeblock>
+<codeph>export tenant2_mgmt_net_UUID=`neutron net-list \
+| grep tenant2-mgmt-net | awk '{print $2}'`
+</codeph>
+</codeblock>
 
-	**Note:** The `--vlan-id 5` option indicates that packets sent to this subnet by any virtual machine must be tagged with VLAN ID 5.
+<p>The external and internal tenant networks are set up and ready to be used. The tenant management networks are available, but their IP subnets have yet to be created.</p>
 
-	c. Set up the UUID variable for the new tenant network.
+<p>The tenant networks are assigned segmentation IDs automatically. You can list the assigned IDs for a provider network as follows:</p>
 
-		export internal_net_UUID=`neutron net-list \
-		| grep internal-net | awk '{print $2}'`
-
-3. Create the tenant network `tenant1-mgmt-net`.
-
-	a. Create the tenant network.
-
-		neutron net-create --tenant-id ${tenant1_UUID} \
-		--provider:physical_network=provider-net-a tenant1-mgmt-net
-
-	b. Set up the UUID variable for the new tenant network.
-
-		export tenant1_mgmt_net_UUID=`neutron net-list \
-		| grep tenant1-mgmt-net | awk '{print $2}'`
-
-4. Create the tenant network `tenant2-mgmt-net`.
-
-	a. Create the tenant network.
-
-		neutron net-create --tenant-id ${tenant2_UUID} \
-		--provider:physical_network=provider-net-a tenant2-mgmt-net
-
-	b. Set up the UUID variable for the new tenant network.
-
-		export tenant2_mgmt_net_UUID=`neutron net-list \
-		| grep tenant2-mgmt-net | awk '{print $2}'`
-
-	The external and internal tenant networks are set up and ready to be used. The tenant management networks are available, but their IP subnets have yet to be created.
-
-	The tenant networks are assigned segmentation IDs automatically. You can list the assigned IDs for a provider network as follows:
-
-		neutron net-list-on-providernet provider-net-a
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
- 
-----
+<codeblock>
+<codeph>neutron net-list-on-providernet provider-net-a
+</codeph>
+</codeblock>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic3069/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

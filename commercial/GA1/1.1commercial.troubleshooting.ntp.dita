@@ -1,60 +1,73 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Troubleshooting NTP"
-permalink: /helion/openstack/1.1/services/troubleshooting/ntp/
-product: commercial.ga
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: Systems Administrator 
-role2: Cloud Architect 
-role3: Storage Administrator 
-role4: Network Administrator 
-role5: Service Developer 
-role6: Cloud Administrator 
-role7: Application Developer 
-role8: Network Engineer 
-authors: Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic997">
+<title>HP Helion OpenStack(R) 1.1: Troubleshooting NTP</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
+ <!--./commercial/GA1/1.1commercial.troubleshooting.ntp.md-->
+ <!--permalink: /helion/openstack/1.1/services/troubleshooting/ntp/--></p>
+<section id="synch"> <title>Trouble synching</title>
+<p>If your client (including your NTP server) has trouble syncing time, you can try the following.</p>
+<ol>
+<li>
+<p>Sync system time with system clock.</p>
 
-<script>
+<codeblock>
+<codeph>hwclock [--utc | --localtime] -s --hctosys (update system time based on hardware clock)
+hwclock [--utc | --localtime] -w --systohc (update hardware clock based on system time)
+hwclock [--utc | --localtime] --systz (update system time based on timezone)
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Verify hardware clock time.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<codeblock>
+<codeph>hwclock -r
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Verify system time.</p>
 
-PageRefresh();
+<codeblock>
+<codeph>date
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>If the times are still not synchronizing, check if the NTP ports are blocked.</p>
 
-</script>
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/reporting/overview/"> NEXT &#9654</a> </p> -->
+<codeblock>
+<codeph>sudo apt-get install nmap
 
-# HP Helion OpenStack&#174; 1.1: Troubleshooting NTP
-
-### Trouble synching {#synch}
-
-If your client (including your NTP server) has trouble syncing time, you can try the following.
-
-1. Sync system time with system clock.
-
-		hwclock [--utc | --localtime] -s --hctosys (update system time based on hardware clock)
-		hwclock [--utc | --localtime] -w --systohc (update hardware clock based on system time)
-		hwclock [--utc | --localtime] --systz (update system time based on timezone)
-
-2. Verify hardware clock time.
-
-		hwclock -r
-
-3. Verify system time.
-
-		date
-
-4. If the times are still not synchronizing, check if the NTP ports are blocked.
-
-		sudo apt-get install nmap
-
-		sudo nmap -p123 -sU -P0 <localhost | known ntp host>
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
-
-
+sudo nmap -p123 -sU -P0 &lt;localhost | known ntp host&gt;
+</codeph>
+</codeblock>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic997/top"> Return to Top </xref>
+</p>
+</section>
+</body>
+</topic>

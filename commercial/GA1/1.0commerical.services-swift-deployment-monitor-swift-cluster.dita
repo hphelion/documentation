@@ -1,38 +1,35 @@
----
-layout: 1.0default
-title: "HP Helion OpenStack&#174; 1.0: Monitor Swift Cluster"
-permalink: /helion/openstack/services/object/swift/Monitor-cluster/
-product: commercial.ga1.0
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic636">
+<title>HP Helion OpenStack(R) 1.0: Monitor Swift Cluster</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
-
-
-# HP Helion OpenStack&#174; 1.0: Monitor Swift Cluster
-[See the Helion OpenStack 1.1 version of this page](/helion/openstack/1.1/services/object/swift/Monitor-cluster/)
-
-HP Helion OpenStack&#174; allows you to monitor Swift cluster in any of the followings ways:
-
-
-* [Monitor Disk Usage]( /helion/openstack/services/object/swift/Monitor-disk/)
-* [Replication Status using Icinga](/helion/openstack/services/object/swift/replica-status/)
-* [Service Health Check](/helion/openstack/services/object/swift/health-check/)
-
-
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
+ <!--./commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.md-->
+ <!--permalink: /helion/openstack/services/object/swift/Monitor-cluster/--></p>
+<p>
+  <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-cluster.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+</p>
+<p>HP Helion OpenStack(R) allows you to monitor Swift cluster in any of the followings ways:</p>
+<ul>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-disk.dita" >Monitor Disk Usage</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-monitor-replica-swift-status.dita" >Replication Status using Icinga</xref>
+</li>
+<li>
+<xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-monitor-health-check.dita" >Service Health Check</xref>
+</li>
+</ul>
+<p>
+  <xref type="section" href="#topic636/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

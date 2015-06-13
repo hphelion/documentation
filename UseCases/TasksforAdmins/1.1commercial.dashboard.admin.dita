@@ -1,87 +1,63 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Using as an Admin User"
-permalink: /helion/commercial/1.1/dashboard/managing/admin/
-product: commercial.ga
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2010">
+<title>HP Helion OpenStack(R) 1.1: Using as an Admin User</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; 1.1: Using as an Admin User
-
-The Admin dashboard enables you to work within the current cloud domain. You can access tools to work with the Compute, Network, Object Operations, and Orchestration services.
-
-As an administrator (admin), you can perform all of the [user tasks](/helion/commercial/1.1/dashboard/managing/nonadmin/) in addition to the admin tasks.
-
-### Managing Domains ###
-
-A domain is a high-level container for projects, users, and groups that defines administrative boundaries for management of those entities. A domain can represent an individual, company, or operator owned space. 
-
-You can manage:
-
-* flavors
-* images
-* quotas
-* host aggregates
-* services
-
-For more information, see [Managing Domains](/helion/commercial/1.1/dashboard/managing/domains/).
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-### Managing projects ###
-
-You can create new projects and manage existing projects, such as controlling access to projects by assigning roles to users and groups.
-
-For more information, see [Managing Projects](/helion/commercial/1.1/dashboard/managing/projects/).
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-### Managing networks ###
-
-A network is a pluggable, scalable system for managing networks and IP addresses.
-
-You can use the dashboards to create, delete, and configure your HP Helion OpenStack subnet(s) and ports.
-
-For more information, see [Managing Networks](/helion/commercial/1.1/dashboard/managing/networks/).
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-### Managing users ###
-
-You can use the dashboard to create new users, assign users to projects, and change a user password as needed.
-
-For more information, see [Managing Users](/helion/commercial/1.1/dashboard/managing/users/).
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-### Managing images ###
-
-You can use the dashboards to determine if an image snapshot is available only in the current project or to all projects in the domain. 
-
-For more information, see [Making an Image Public](/helion/commercial/1.1/dashboard/managing/images/public/).
-
-### Managing security ###
-
-You can use the dashboards to change the password for a user, as needed. 
-
-For more information, see [Changing a User Password](/helion/commercial/1.1/dashboard/managing/users/password/change/).
-
+ <!--./UseCases/TasksforAdmins/1.1commercial.dashboard.admin.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/admin/--></p>
+<p>The Admin dashboard enables you to work within the current cloud domain. You can access tools to work with the Compute, Network, Object Operations, and Orchestration services.</p>
+<p>As an administrator (admin), you can perform all of the <xref href="../../UseCases/TasksforUsers/1.1commercial.dashboard.users.dita" >user tasks</xref> in addition to the admin tasks.</p>
+<section id="managing-domains"> <title>Managing Domains</title>
+<p>A domain is a high-level container for projects, users, and groups that defines administrative boundaries for management of those entities. A domain can represent an individual, company, or operator owned space.</p>
+<p>You can manage:</p>
+<ul>
+<li>flavors</li>
+<li>images</li>
+<li>quotas</li>
+<li>host aggregates</li>
+<li>services</li>
+</ul>
+<p>For more information, see <xref href="../../UseCases/TasksforAdmins/Domains/1.1commercial.managing.domains.dita" >Managing Domains</xref>.</p>
+<p>
+  <xref type="section" href="#topic2010/top"> Return to Top </xref>
+</p>
+</section>
+<section id="managing-projects"> <title>Managing projects</title>
+<p>You can create new projects and manage existing projects, such as controlling access to projects by assigning roles to users and groups.</p>
+<p>For more information, see <xref href="../../UseCases/TasksforAdmins/Projects/1.1commercial.managing.projects.dita" >Managing Projects</xref>.</p>
+<p>
+  <xref type="section" href="#topic2010/top"> Return to Top </xref>
+</p>
+</section>
+<section id="managing-networks"> <title>Managing networks</title>
+<p>A network is a pluggable, scalable system for managing networks and IP addresses.</p>
+<p>You can use the dashboards to create, delete, and configure your HP Helion OpenStack(R) subnet(s) and ports.</p>
+<p>For more information, see <xref href="../../UseCases/TasksforUsers/Networks/1.1commercial.managing.network.dita" >Managing Networks</xref>.</p>
+<p>
+  <xref type="section" href="#topic2010/top"> Return to Top </xref>
+</p>
+</section>
+<section id="managing-users"> <title>Managing users</title>
+<p>You can use the dashboard to create new users, assign users to projects, and change a user password as needed.</p>
+<p>For more information, see <xref href="../../UseCases/TasksforAdmins/Users/1.1commercial.managing.users.dita" >Managing Users</xref>.</p>
+<p>
+  <xref type="section" href="#topic2010/top"> Return to Top </xref>
+</p>
+</section>
+<section id="managing-images"> <title>Managing images</title>
+<p>You can use the dashboards to determine if an image snapshot is available only in the current project or to all projects in the domain.</p>
+<p>For more information, see <xref href="../../UseCases/TasksforAdmins/Images/1.1commercial.dashboard.snapshot.public.dita" >Making an Image Public</xref>.</p>
+</section>
+<section id="managing-security"> <title>Managing security</title>
+<p>You can use the dashboards to change the password for a user, as needed.</p>
+<p>For more information, see <xref href="../../UseCases/TasksforAdmins/Security/1.1commercial.dashboard.users.password.dita" >Changing a User Password</xref>.</p>
 <!-- Not  in UI yet
 ### Managing roles ###
 
@@ -89,7 +65,7 @@ You can use the dashboard to define user roles that can be used to control acces
 
 For more information, see [Managing Roles](/helion/commercial/1.1/dashboard/managing/roles/).
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top </a>
 
 
 ### Managing instances ###
@@ -99,6 +75,7 @@ with minimal downtime (live migrate).
 
 For more information, see [Managing Instances](/helion/commercial/1.1/dashboard/instances/).
 -->
-
-
-----
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

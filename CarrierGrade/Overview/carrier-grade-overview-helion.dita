@@ -1,40 +1,31 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: HP Helion OpenStack Overview"
-permalink: /helion/openstack/carrier/helion/overview/
-product: carrier-grade
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: All
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1495">
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): HP Helion OpenStack(R) Overview</title>
+<titlealts>
+<searchtitle>HP Helion OpenStack(R) Carrier Grade: HP Helion OpenStack(R) Overview</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="All"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<p style="font-size: small;"><a href="/helion/openstack/carrier/hlm/overview/"> &#9664; Helion Lifecycle Management (HLM) Overview | <a href="/helion/openstack/carrier/home/">&#9650; Documentation Home</a> | <a href="/helion/openstack/carrier/dcn/overview/"> Distributed Cloud Networking (DCN) Overview &#9654;</a></p>
-
-
-
-# HP Helion OpenStack&#174; Carrier Grade (Beta): HP Helion OpenStack Overview
-
-HP Helion OpenStack is a commercial-grade distribution of OpenStack, the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid cloud in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.
-
-
-HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the [HP Helion OpenStack Services Overview page](/helion/openstack/carrier/services/overview/) for a complete list of services. 
-
-If you're unfamiliar with what's inside the box, have a look at the components inside HP Helion OpenStack on the [Under the Hood](http://docs.hpcloud.com/content/documentation/commercial/GA1/ServicesFlow/index.html) page.
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
+ <!--./CarrierGrade/Overview/carrier-grade-overview-helion.md-->
+ <!--permalink: /helion/openstack/carrier/helion/overview/--></p>
+<p>HP Helion OpenStack(R) is a commercial-grade distribution of OpenStack(R) the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid cloud in a resilient, maintainable platform. HP Helion OpenStack(R) enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
+<p>HP Helion OpenStack(R) offers many services based on the different OpenStack(R) projects to provide the functionality you need. Visit the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >HP Helion OpenStack(R) Services Overview page</xref> for a complete list of services.</p>
+<p>If you're unfamiliar with what's inside the box, have a look at the components inside HP Helion OpenStack(R) on the <xref href="http://docs.hpcloud.com/content/documentation/commercial/GA1/ServicesFlow/index.html" scope="external" format="html" >Under the Hood</xref> page.</p>
+<p>
+  <xref type="section" href="#topic1495/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

@@ -1,44 +1,45 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Viewing Image Details"
-permalink: /helion/commercial/1.1/dashboard/managing/images/details/
-product: commercial.ga
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic788">
+<title>HP Helion OpenStack(R) 1.1: Viewing Image Details</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--UNDER REVISION-->
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-<!-- <p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a></p> -->
-
-# HP Helion OpenStack&#174; 1.1: Viewing Image Details
-
-To view image details:
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
-
-2. Click the **Images** link on the **Project** dashboard **Compute** panel.
-
-3. Click the name of the image.
+ <!--./UseCases/TasksforUsers/Images/1.1commercial.dashboard.images.details.md-->
+ <!--permalink: /helion/commercial/1.1/dashboard/managing/images/details/--></p>
+<p>To view image details:
+1. <xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+<ol>
+<li>
+<p>Click the <b>Images</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
+</li>
+<li>
+<p>Click the name of the image.</p>
+</li>
+</ol>
 <p>**Note:** When your cursor is on the image name, the name is underlined.</p>
+<ol>
+<li>
+<p>The Image Details screen shows detailed information about the image, including:</p>
 
-4. The Image Details screen shows detailed information about the image, including:
-
-	* name and ID
-	* status
-	* creation and modification date(s)
-	* size
-	* formats
-	* size
-
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
-
-
-----
+<ul>
+<li>name and ID</li>
+<li>status</li>
+<li>creation and modification date(s)</li>
+<li>size</li>
+<li>formats</li>
+<li>size</li>
+</ul>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic788/top"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

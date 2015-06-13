@@ -1,150 +1,183 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Ceph Nova Storage"
-permalink: /helion/openstack/1.1/ceph-helion-openstack-nova-ceph-storage/
-product: commercial
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: Storage Engineer
-role2: Storage Architect 
-role3: Storage Administrator 
-role4: Storage Engineer
-role5: Service Developer 
-role6: Cloud Administrator 
-role7: Application Developer 
-authors: Paul F
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2174">
+<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Ceph Nova Storage</title>
+<titlealts>
+<searchtitle>HP Helion OpenStack(R) 1.1: Ceph Nova Storage</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="role" content="Storage Engineer"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Engineer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
+ <!--./commercial/GA1/ceph/1.1commercial-ceph-helion-openstack-nova-ceph-Storage.md-->
+ <!--permalink: /helion/openstack/1.1/ceph-helion-openstack-nova-ceph-storage/--></p>
+<p>The following steps are automatically performed when you download and execute <codeph>Ceph_client</codeph> script from the controller and compute nodes as per the readme file in the tar file.</p>
+<ol>
+<li>
+<p>Verify Ceph health.</p>
 
+<codeblock>
+<codeph>ceph health
+</codeph>
+</codeblock>
 
-<script>
+<p>Output:</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<codeblock>
+<codeph>HEALTH_OK
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Create a new pool for the Cinder volume.</p>
 
-PageRefresh();
+<codeblock>
+<codeph>ceph osd pool create &lt;cinder pool name&gt; &lt;pg-num&gt;
+</codeph>
+</codeblock>
 
-</script>
+<p>For example:</p>
 
-<p style="font-size: small;"> <a href=" /helion/openstack/1.1/ceph-hp-helion-openstack-cinder-storage/">&#9664; PREV</a> | <a href=" /helion/openstack/1.1/services/ceph/">&#9650; UP</a> | <a href=" /helion/openstack/1.1/ceph-rados-gateway/">NEXT &#9654;</a> </p>
+<codeblock>
+<codeph>ceph osd pool create helion-ceph-nova 100
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Verify that a new pool was created.</p>
 
+<codeblock>
+<codeph>rados lspools
+</codeph>
+</codeblock>
 
-# HP Helion OpenStack&#174; 1.1 and 1.1.1: Ceph Nova Storage
-The following steps are automatically performed when you download and execute `Ceph_client` script from the controller and compute nodes as per the readme file in the tar file.
+<p>Output:</p>
 
-1. Verify Ceph health.
+<codeblock>
+<codeph>rbd ls helion-ceph-nova
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Create symbolic or softlinks to the relevant files on the overcloud controller nodes.</p>
 
-		ceph health
-	
-	Output:	
-	
-		HEALTH_OK
+<codeblock>
+<codeph>ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
+ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
+ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/nova/lib/python2.7/site-packages
+ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/nova/lib/python2.7/site-packages
+</codeph>
+</codeblock>
+</li>
+</ol>
+<section id="configure-nova"> <title>Configure Nova</title>
+<p>Configure Nova to boot all Virtual Machines directly to Ceph. Edit <codeph>nova.conf</codeph> on each overcloud controller and compute node.</p>
+<p>Perform the following steps:</p>
+<ol>
+<li>
+<p>Edit <codeph>/etc/nova/nova.conf</codeph> and add the following options in the respective sections:</p>
 
+<codeblock>
+<codeph># For Ceph integration
+[DEFAULT]
+libvirt_inject_password=false
+libvirt_inject_key=false
+libvirt_inject_partition=-2
 
-2.  Create a new pool for the Cinder volume.
+The last libvirt section in the conf file
+[libvirt]
 
-		ceph osd pool create <cinder pool name> <pg-num>
+#Ceph Related Changes
+images_type=rbd
+images_rbd_pool=helion-ceph-nova
+images_rbd_ceph_conf=/etc/ceph/ceph.conf
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Restart the Nova services:</p>
 
-	For example:
-		
-		ceph osd pool create helion-ceph-nova 100
+<ul>
+<li>
+<p>From the compute node</p>
 
-4.  Verify that a new pool was created.
+<codeblock>
+<codeph>service nova-compute restart
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>From all controller nodes:</p>
 
-		rados lspools
-		
-	Output:
-		
-		rbd ls helion-ceph-nova
+<codeblock>
+<codeph>service nova-api restart
+service nova-scheduler restart
+service nova-conductor restart
+</codeph>
+</codeblock>
+</li>
+</ul>
+</li>
+<li>
+<p>From the overcloud controller node0, execute the following command:</p>
 
-4. Create symbolic or softlinks to the relevant files on the overcloud controller nodes.
-
-		ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
-		ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
-		ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/nova/lib/python2.7/site-packages
-		ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/nova/lib/python2.7/site-packages
-
-
-
-###Configure Nova
-
-Configure Nova to boot all Virtual Machines directly to Ceph. Edit `nova.conf` on each overcloud controller and compute node.
-
-Perform the following steps:
-
-1. Edit `/etc/nova/nova.conf` and add the following options in the respective sections:
-
-
-		# For Ceph integration
-		[DEFAULT]
-		libvirt_inject_password=false
-		libvirt_inject_key=false
-		libvirt_inject_partition=-2
-
-		The last libvirt section in the conf file
-		[libvirt]
-	
-		#Ceph Related Changes
-		images_type=rbd
-		images_rbd_pool=helion-ceph-nova
-		images_rbd_ceph_conf=/etc/ceph/ceph.conf
-
-2. Restart the Nova services:
-
-	* From the compute node
-
-			service nova-compute restart
-
-	* From all controller nodes:
-
-			service nova-api restart
-			service nova-scheduler restart
-			service nova-conductor restart
-
-	
-3. From the overcloud controller node0, execute the following command:
-
-		source /root/stackrc
-
+<codeblock>
+<codeph>source /root/stackrc
+</codeph>
+</codeblock>
+</li>
+</ol>
 <!--
 [[end of nova flow]]
 
 2. List the existing VM
 
-		nova list 
+        nova list 
 3. List the existing Glance image
 
-		glance index 
+        glance index 
 4. Display the Nova list
 
-		rados lspools
+        rados lspools
 
 5. List Ceph resource
 
-		ceph df
+        ceph df
 
 6. Execute the following command
 
-		ceph -w
+        ceph -w
 
 7. Create an instance with RBD backend.
    
-		nova boot -?-?flavor <flavor name or id>  -?-?image <image name or id>  -?-?key-name <key name>  <instance name>  -?-?nic net-id=<id>
+        nova boot -?-?flavor <flavor name or id>  -?-?image <image name or id>  -?-?key-name <key name>  <instance name>  -?-?nic net-id=<id>
 
 8. List all the Nova instances
 
-		nova list
+        nova list
 
 9. Execute the following command
 
-		ceph -w
+        ceph -w
 
 You can also view the instance from Horizon overcloud dashboard.
 -->
-
-
 <!--###Attaching the Cinder volume to the Nova instance
 
 There are two ways to attach a Cinder volume to a Nova instance.
@@ -155,9 +188,8 @@ There are two ways to attach a Cinder volume to a Nova instance.
 
 **Attaching a Cinder volume from Horizon overcloud dashboard**
 
-To attach a Cinder volume to Nova instance [OpenStack User Guide](http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html)
+To attach a Cinder volume to Nova instance [OpenStack(R) User Guide](http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html)
 -->
-
 <!--
 1. In the Horizon Dashboard, click the **Project** Tab.  
 2. Click **Compute** and then **Volume** to open the Volume page.
@@ -173,45 +205,44 @@ To attach a Cinder volume to Nova instance [OpenStack User Guide](http://docs.op
 2. Click **Compute** and then select **Instance** to open Volume page. You can view the all the instances and the console log from the Horizon UI.
 
 -->
-
 <!-- **Attaching a Cinder volume using the Command Line Interface (CLI)**
 
 To attach a Cinder volume to a Nova instance:
 
 1. SSH into the seed VM.
 
-		ssh <seed IP address>
+        ssh <seed IP address>
 
 
 2. Log in to the  overcloud.
 
-		ssh heat-admin@<overcloud IP address> 
+        ssh heat-admin@<overcloud IP address> 
 
 3. From overcloud controller node0, enter:
 
-		source /root/stackrc 
+        source /root/stackrc 
 
 4. List the existing VMs:
 
-		nova list
+        nova list
 
 5. List the Glance image:
 
-		glance index
+        glance index
 
 
 6. Execute the following command to attach volume to a nova instance
 
- 		nova volume-attach <server> <volume> [<device>]
+        nova volume-attach <server> <volume> [<device>]
 
 8. List Nova:
 
-		rados lapools
+        rados lapools
 
 7. List the Ceph resource:
 
-		ceoh df
-		ceph -w
+        ceoh df
+        ceph -w
 
 9. To create an instance with the RADOS block device (RDB) back end, enter:
 
@@ -219,13 +250,13 @@ To attach a Cinder volume to a Nova instance:
 
 
 10. To list all Nova instances, enter:
-		
-		nova list
+        
+        nova list
 
 
 11. To verify status, enter:
 
-		ceph -w
+        ceph -w
 
 
 12. From the KVM host, log into the instance:
@@ -233,102 +264,100 @@ To attach a Cinder volume to a Nova instance:
 **commands required?**
 
 
-	The output displays the instances where the Cinder volume is attached.
+    The output displays the instances where the Cinder volume is attached.
 
 -->
-
 <!-- #####Verifying the Cinder volume attachment to a Nova instance
 
 The Cinder volume is now attached to a Nova instance. Verify the attachment by performing the following steps: 
 
 1. To view all the volumes, enter:
 
-		# cinder list
+        # cinder list
 
 
 2. To view the Nova instance, enter:
 
-		nova list 
+        nova list 
 
 3. To view the details of the attached volume, enter:
 
-		# cinder show  <volume ID>
+        # cinder show  <volume ID>
 
-	For example:
+    For example:
 
-		cinder show 580d3e95-970f-4a9c-92ea-284799dcbc82
+        cinder show 580d3e95-970f-4a9c-92ea-284799dcbc82
 
-	Output:
+    Output:
 
-		
-		| Property 							   | Value                           															   									 |
-		
+        
+        | Property                             | Value                                                                                                                           |
+        
 
-		| attachments 						   | [{u'device': u'/dev/vde', u'server_id': u'd6c98de0-b65e-4e43-bd5e-04c81ad26cd1', u'id': u'580d3e95-970f-4a9c-92ea-284799dcbc82', 											 u'host_name': None, u'volume_id': u'580d3e95-970f-4a9c-92ea-284799dcbc82'}] 	                  								 |
-		| availability_zone 				   | nova 																														     |
-		| bootable 							   | false																															 |
-		| created_at 						   | 2014-08-13T03:38:27.000000   																									 |
-		| display_description 				   | None  																														     |
-		| display_name				           | volume2_RBD  																													 |
-		| encrypetd 				           | False   																														 |
-		|  id 								   | 580d3e95-970f-4a9c-92ea-284799dcbc82 				  																			 |
-		| metadata 							   | {u'readonly': u'False', u'attached_mode': u'rw'}				           														 |
-		| os-vol-host-attr:host 			   | overcloud-controller1-thg43e77ptei																								 |
-		| os-vol-mig-status-attr:migstat       | None																															 |
-		| os-vol-mig-status-attr:name_id       | None					   																										 | 
-		| os-vol-tenant-attr:tenant_id         | 98ae295c1958428a890cf6441d70db08					   																			 | 
-		| size 							       | 2																																 |	
-		| snapshot_id 					       | None																															 |
-		| source_volid 					       | None																										     				 |
-		| status 							   | in-use		   			   																										 | 
-		| volume_type 						   | None				   																											 | 	
-		
+        | attachments                          | [{u'device': u'/dev/vde', u'server_id': u'd6c98de0-b65e-4e43-bd5e-04c81ad26cd1', u'id': u'580d3e95-970f-4a9c-92ea-284799dcbc82',                                            u'host_name': None, u'volume_id': u'580d3e95-970f-4a9c-92ea-284799dcbc82'}]                                                     |
+        | availability_zone                    | nova                                                                                                                            |
+        | bootable                             | false                                                                                                                           |
+        | created_at                           | 2014-08-13T03:38:27.000000                                                                                                      |
+        | display_description                  | None                                                                                                                            |
+        | display_name                         | volume2_RBD                                                                                                                     |
+        | encrypetd                            | False                                                                                                                           |
+        |  id                                  | 580d3e95-970f-4a9c-92ea-284799dcbc82                                                                                            |
+        | metadata                             | {u'readonly': u'False', u'attached_mode': u'rw'}                                                                                |
+        | os-vol-host-attr:host                | overcloud-controller1-thg43e77ptei                                                                                              |
+        | os-vol-mig-status-attr:migstat       | None                                                                                                                            |
+        | os-vol-mig-status-attr:name_id       | None                                                                                                                            | 
+        | os-vol-tenant-attr:tenant_id         | 98ae295c1958428a890cf6441d70db08                                                                                                | 
+        | size                                 | 2                                                                                                                               |  
+        | snapshot_id                          | None                                                                                                                            |
+        | source_volid                         | None                                                                                                                            |
+        | status                               | in-use                                                                                                                          | 
+        | volume_type                          | None                                                                                                                            |  
+        
 
 
 
 5. To view the details of the Nova instance, enter:
 
-		nova show < nova instance ID> 
+        nova show < nova instance ID> 
 
-	For example:
+    For example:
  
-		# nova show d6c98de0-b65e-4e43-bd5e-04c81ad26cd1
+        # nova show d6c98de0-b65e-4e43-bd5e-04c81ad26cd1
 
-	Output:
+    Output:
 
 
-		
-		| Property 							   | Value                           															   									 
-		
-		| OS-EXT-AZ:availability_zone 		   | nova 	                  								 						|												 
-		| OS-EXT-SRV-ATTR:host 			 	   | overcloud-novacompute0-k3kakatgtgb2 											|												 
-		| OS-EXT-SRV-ATTR:hypervisor_hostname  | overcloud-novacompute0-k3kakatgtgb2.novalocal  								|												 
-		| OS-EXT-SRV-ATTR:instance_name 	   | instance-00000087  															|										         
-		| OS-EXT-STS:power_state 		       | 1 																				|												 	
-		| OS-EXT-STS:task_state 		       | - 																			    |										 		 
-		| OS-EXT-STS:vm_state 			       | active 																		|											 	 
-		| accessIPv4 						   | 			  																	|		 									
-		| accessIPv6 						   | 			           														    |
-		| config_drive 					   	   | 																				|
-		| created  						       | 2014-08-12T23:43:50Z 															|
-		| default-net network 				   | 10.0.0.43, 192.168.100.108 													|
-		| flavor 							   | m1.tiny (1) 																	|
-		| hostId 							   | cf6bb4eb58517b0e06246628e3d0559267a2594c06ea44100e2fae1e 						|
-		| id 								   | d6c98de0-b65e-4e43-bd5e-04c81ad26cd1 											|
-		| image 							   | debian-wheezy-server-amd64-disk (39565ba5-bfe7-4ee7-be2b-abab70eeb989) 		|
-		| key_name 							   | default 																		|
-		| metadata 							   | {} 																			|
-		| name 								   | vm1 																			|
-		| progress 							   | 0 																				|
-		| security_groups 					   | default 																		|
-		| status 							   | ACTIVE 																		|
-		| tenant_id 					       | 98ae295c1958428a890cf6441d70db08 												|
-		| updated 					           | 2014-08-12T23:44:23Z 															|
-		| user_id 							   | 835261faa1454b56bfab6cd07edfd433   											| 	
-		
+        
+        | Property                             | Value                                                                                                                           
+        
+        | OS-EXT-AZ:availability_zone          | nova                                                                           |                                                
+        | OS-EXT-SRV-ATTR:host                 | overcloud-novacompute0-k3kakatgtgb2                                            |                                                
+        | OS-EXT-SRV-ATTR:hypervisor_hostname  | overcloud-novacompute0-k3kakatgtgb2.novalocal                                  |                                                
+        | OS-EXT-SRV-ATTR:instance_name        | instance-00000087                                                              |                                                
+        | OS-EXT-STS:power_state               | 1                                                                              |                                                   
+        | OS-EXT-STS:task_state                | -                                                                              |                                                
+        | OS-EXT-STS:vm_state                  | active                                                                         |                                                
+        | accessIPv4                           |                                                                                |                                           
+        | accessIPv6                           |                                                                                |
+        | config_drive                         |                                                                                |
+        | created                              | 2014-08-12T23:43:50Z                                                           |
+        | default-net network                  | 10.0.0.43, 192.168.100.108                                                     |
+        | flavor                               | m1.tiny (1)                                                                    |
+        | hostId                               | cf6bb4eb58517b0e06246628e3d0559267a2594c06ea44100e2fae1e                       |
+        | id                                   | d6c98de0-b65e-4e43-bd5e-04c81ad26cd1                                           |
+        | image                                | debian-wheezy-server-amd64-disk (39565ba5-bfe7-4ee7-be2b-abab70eeb989)         |
+        | key_name                             | default                                                                        |
+        | metadata                             | {}                                                                             |
+        | name                                 | vm1                                                                            |
+        | progress                             | 0                                                                              |
+        | security_groups                      | default                                                                        |
+        | status                               | ACTIVE                                                                         |
+        | tenant_id                            | 98ae295c1958428a890cf6441d70db08                                               |
+        | updated                              | 2014-08-12T23:44:23Z                                                           |
+        | user_id                              | 835261faa1454b56bfab6cd07edfd433                                               |   
+        
 
 -->
-
 <!-- #####Verify Cinder to check the usage of RBD backend 
 
 
@@ -336,7 +365,7 @@ The following procedure verifies the usage of RBD backend from cinder. It is ver
 
 1. Debian version of instance
 
-		uname -a
+        uname -a
 
 
 To list a device file after attaching a volume to an instance - vdc is the block device from RBD
@@ -359,9 +388,14 @@ vdc volume size after copying cirros img 1
 **<screen shot>**
 
 -->
-
-## Next Steps
-
-[Ceph RADOS Gateway](/helion/openstack/1.1/ceph-rados-gateway/)
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+</section>
+<section id="next-steps"> <title>Next Steps</title>
+<p>
+  <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-rados-gateway.dita" >Ceph RADOS Gateway</xref>
+</p>
+<p>
+  <xref type="section" href="#topic2174/top"> Return to Top </xref>
+</p>
+</section>
+</body>
+</topic>
