@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Eucalyptus&#174;: Master Services Agreement"
-permalink: /eucalyptus/masterservice
+permalink: /eucalyptus/masterservice/
 product: eucalyptus
 role1: All
 authors: Jayme P
