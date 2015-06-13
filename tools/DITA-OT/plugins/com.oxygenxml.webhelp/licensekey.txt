@@ -1,0 +1,11 @@
+------START-LICENSE-KEY------
+Registration_Name=Hewlett-Packard Co
+Company=Hewlett-Packard Co
+Category=Professional
+Component=XML-Editor, XSLT-Debugger, Saxon-SA
+Version=16
+Number_of_Licenses=13
+Date=03-05-2015
+Maintenance=365
+SGN=MC0CFFtsCOaBk/APwoJevKZvDBYVLsnKAhUAkzEFopgRGNLHqbeqEmIBWY2SATU\=
+-------END-LICENSE-KEY-------
