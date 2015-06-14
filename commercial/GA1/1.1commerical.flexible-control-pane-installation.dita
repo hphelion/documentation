@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13781">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13765">
 <title>HP Helion OpenStack(R) 1.1: Flexible Control Plane Installation</title>
 <prolog>
 <metadata>
@@ -22,7 +22,7 @@
 </prolog>
 <body>
 <p>
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
  <!--./commercial/GA1/1.1commerical.flexible-control-pane-installation.md-->
  <!--permalink: /helion/openstack/1.1/flexiblecontrol/install/--></p>
 <p>
@@ -35,16 +35,16 @@
 <p>This page contains:</p>
 <ul>
 <li>
-<xref type="section" href="#topic13781/instruct">Step-by-step Installation Instructions</xref>
+<xref type="section" href="#topic13765/instruct">Step-by-step Installation Instructions</xref>
 </li>
 <li>
-<xref type="section" href="#topic13781/postinstall">Post-Installation Steps</xref>
+<xref type="section" href="#topic13765/postinstall">Post-Installation Steps</xref>
 </li>
 <li>
-<xref type="section" href="#topic13781/addnodes">Adding the Overcloud Nodes</xref>
+<xref type="section" href="#topic13765/addnodes">Adding the Overcloud Nodes</xref>
 </li>
 <li>
-<xref type="section" href="#topic13781/knownissues">Known Issues and Resolutions</xref>
+<xref type="section" href="#topic13765/knownissues">Known Issues and Resolutions</xref>
 </li>
 </ul>
 <section id="before-you-begin"> <title>Before You Begin</title>
@@ -90,8 +90,8 @@ $ export BRIDGE_INTERFACE=eth5
 <p>b. Create a virtual power key on the seed's host. As root, run this command on the seed's host:</p>
 
 <codeblock>
-<codeph>export HP_VM_MODE=hybrid
-$ bash /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --local-setup --vm-plan vm-plan
+<codeph>$ export HP_VM_MODE=hybrid
+$ bash /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --local-setup
 </codeph>
 </codeblock>
 

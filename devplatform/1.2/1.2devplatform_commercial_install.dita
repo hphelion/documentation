@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic24073">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic24686">
 <title>HP Helion 1.2 Development Platform: Installation and Configuration</title>
 <titlealts>
 <searchtitle>HP Helion 1.2 Development Platform: Commercial Installation and Configuration</searchtitle>
@@ -25,32 +25,32 @@
 </prolog>
 <body>
 <p>
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
  <!--./devplatform/1.2/1.2devplatform_commercial_install.md-->
  <!--permalink: /helion/devplatform/1.2/install/--></p>
 <p>HP Helion Development Platform version 1.2 currently contains the Application Lifecycle Service, Database, Marketplace, and Messaging services.</p>
 <p>The following topics explain how to install and configure a new deployment of the HP Helion Development Platform version 1.2. There is also <xref href="../../devplatform/1.2/1.2devplatform.troubleshooting.dita" >Troubleshooting</xref> documentation to handle issues that may occur.</p>
 <ul>
 <li>
-<xref type="section" href="#topic24073/prerequisites">Prerequisites</xref>
+<xref type="section" href="#topic24686/prerequisites">Prerequisites</xref>
 </li>
 <li>
-<xref type="section" href="#topic24073/installing-the-hp-helion-development-platform">Downloading, Installing, and Updating the HP Helion Development Platform</xref>
+<xref type="section" href="#topic24686/installing-the-hp-helion-development-platform">Downloading, Installing, and Updating the HP Helion Development Platform</xref>
 </li>
 <li>
-<xref type="section" href="#topic24073/installing-services">Installing Services</xref>
+<xref type="section" href="#topic24686/installing-services">Installing Services</xref>
 </li>
 <li>
-<xref type="section" href="#topic24073/install-als">Install the Application Lifecycle Service</xref>
+<xref type="section" href="#topic24686/install-als">Install the Application Lifecycle Service</xref>
 </li>
 <li>
-<xref type="section" href="#topic24073/install-messaging">Install the Messaging Service</xref>
+<xref type="section" href="#topic24686/install-messaging">Install the Messaging Service</xref>
 </li>
 <li>
-<xref type="section" href="#topic24073/install-database">Install the Database Service</xref>
+<xref type="section" href="#topic24686/install-database">Install the Database Service</xref>
 </li>
 <li>
-<xref type="section" href="#topic24073/install-marketplace">Install the Marketplace Service</xref>
+<xref type="section" href="#topic24686/install-marketplace">Install the Marketplace Service</xref>
 </li>
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
@@ -172,18 +172,16 @@ sudo -E pip install python-novaclient
 <p>Validate Keystone access on port 5000 using <i>curl</i>. Since Keystone access uses secure HTTP, you'll need to either use the certificate, or run <i>curl</i> with the <codeph>--insecure</codeph> switch to ignore SSL:</p>
 
 <codeblock>
-<codeph># Use one or the other of the following two lines to verify connectivity:
+<codeph>curl --insecure https://{ip address or host name of identity service aka keystone}:5000 # Ignore SSL
 curl --cacert ephemeral-cacert.crt  https://{ip address or host name of identity service aka keystone}:5000 # Use own CACert
-curl --insecure https://{ip address or host name of identity service aka keystone}:5000 # Ignore SSL
 </codeph>
 </codeblock>
 
 <p>Example:</p>
 
 <codeblock>
-<codeph># Use one or the other of the following two lines to verify connectivity:
+<codeph>curl --insecure https://10.0.0.10:5000 # Ignore SSL
 curl --cacert ephemeral-cacert.crt https://10.0.0.10:5000 # Use own CACert
-curl --insecure https://10.0.0.10:5000 # Ignore SSL
 </codeph>
 </codeblock>
 </li>
@@ -262,7 +260,7 @@ Minimum required Helion OpenStack(R) build number for this install is 85.
 <section id="install-als"> <title>Application Lifecycle Service (ALS)</title>
 <p>The following section demonstrates how to perform the initial installation and configuration of ALS.</p>
 </section>
-<section id="step-1-retrieve-the-als-service-update-from-hdn"> <title>Step 1: Retrieve the ALS Service Update from HDN</title>
+<section id="step-1-retrieve-the-als-service-update-from-codn"> <title>Step 1: Retrieve the ALS Service Update from CODN</title>
 </section>
 <section id="preparation"> <title>Preparation</title>
 <p>Be sure that the <i>Admin</i> project is checked from the Project selector before you check for service updates. The Project selector is located at the top of the page to the right of the OpenStack(R) logo. This process will fail if a tenant/project other than "Admin" is selected.</p>
@@ -271,8 +269,29 @@ Minimum required Helion OpenStack(R) build number for this install is 85.
 </p>
 </section>
 <section id="retrieve-the-update"> <title>Retrieve the Update</title>
-<p>Use the <b>Helion Development Platform UI</b> to check HDN for a new Service Update for ALS.</p>
-<p>If there is a new Service Update for ALS, retrieve it from HDN. This will retrieve the ALS package from HDN and push it to a container in Swift within your local cloud.</p>
+<p>Use the <b>Helion Development Platform UI</b> to check CODN for a new Service Update for ALS.</p>
+<p>If there is a new Service Update for ALS, retrieve it from CODN. This will retrieve the ALS package from CODN and push it to a container in Swift within your local cloud.</p>
+</section>
+<section id="step-2-configure-the-service"> <title>Step 2: Configure the Service</title>
+<p>Return to the <b>Helion Development Platform UI</b> and click <i>Configure Services</i> to configure the service.</p>
+<p>
+  <image href="../../media/devplat_configure_services.png"/>
+</p>
+</section>
+<section id="updating-als"> <title>Updating ALS</title>
+<p>The following section demonstrates how to update an existing installation of ALS.</p>
+</section>
+<section id="step-1-retrieve-the-als-service-update-from-codn"> <title>Step 1: Retrieve the ALS service update from CODN</title>
+</section>
+<section id="preparation"> <title>Preparation</title>
+<p>Be sure that the <i>Admin</i> project is checked from the Project selector before you check for service updates. The Project selector is located at the top of the page to the right of the OpenStack(R) logo. This process will fail if a tenant/project other than "Admin" is selected.</p>
+<p>
+  <image href="../../media/DevPlatInstallAdminCheck.png"/>
+</p>
+</section>
+<section id="retrieve-the-update"> <title>Retrieve the Update</title>
+<p>Use the <b>Helion Development Platform UI</b> to check CODN for a new Service Update for ALS.</p>
+<p>If there is a new Service Update for ALS, retrieve it from CODN.</p>
 </section>
 <section id="step-2-configure-the-service"> <title>Step 2: Configure the Service</title>
 <p>Return to the <b>Helion Development Platform UI</b> and click <i>Configure Services</i> to configure the service.</p>
@@ -676,7 +695,7 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 <p>The Ports quota cannot be set from the Horizon interface. 
 Increase the Ports quota to at least 100 using the following command in the <xref href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" scope="external" format="html" >Networking command line client</xref>:</p>
 <codeblock>
-  <codeph>neutron quota-update --port 100 --tenant-id &lt;tenant id&gt;"
+  <codeph>neutron quota-update --ports 100 --tenant-id &lt;tenant id&gt;"
 </codeph>
 </codeblock>
 </section>

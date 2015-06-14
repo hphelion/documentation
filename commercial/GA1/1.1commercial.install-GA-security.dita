@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20806">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Configuring Your Network Securely</title>
-<titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Configuring Your Network Securely</searchtitle>
-</titlealts>
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20483">
+<title>HP Helion OpenStack(R) 1.1: Configuring Your Network Securely</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,40 +15,39 @@
 </prolog>
 <body>
 <p>
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.install-GA-security.md-->
  <!--permalink: /helion/openstack/1.1/install/security/--></p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+  <xref href="../../commercial/GA1/1.0commercial.install-GA-security.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
 <p>This document provides guidance on configuring your HP Helion OpenStack(R) network securely</p>
 <p>HP Helion OpenStack(R) has many built-in security controls, but the customer must take responsibility for configuring the network devices that integrate Helion services into an existing data center environment.  This includes defining firewall rules at the edge of the HP Helion OpenStack(R) deployment (to protect against external abuse) as well as defining router rules within the HP Helion OpenStack(R) deployment (to protect against insider abuse or administrative errors).</p>
 <ul>
 <li>
-<xref type="section" href="#topic20806/network">Network Topology</xref>
+<xref type="section" href="#topic20483/network">Network Topology</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/perimeter">Securing the Perimeter</xref>
+<xref type="section" href="#topic20483/perimeter">Securing the Perimeter</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/back-end">Securing the Object Operations (Swift) back-end network connections</xref>
+<xref type="section" href="#topic20483/back-end">Securing the Object Operations (Swift) back-end network connections</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/blockstorage">Securing Block Storage network connections</xref>
+<xref type="section" href="#topic20483/blockstorage">Securing Block Storage network connections</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/additional">Additional Block Storage Resources</xref>
+<xref type="section" href="#topic20483/additional">Additional Block Storage Resources</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/esx">Securing ESX network connections in Helion</xref>
+<xref type="section" href="#topic20483/esx">Securing ESX network connections in Helion</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/service">Service network</xref>
+<xref type="section" href="#topic20483/service">Service network</xref>
 </li>
 </ul>
 <section id="network"> <title>Network Topology</title>
-<p>HP Helion OpenStack(R) is deployed on three physical networks: IPMI, Fibre Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in <xref type="section" href="#topic20806/fig1">Figure 1</xref>.</p>
+<p>HP Helion OpenStack(R) is deployed on three physical networks: IPMI, Fibre Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in <xref type="section" href="#topic20483/fig1">Figure 1</xref>.</p>
 </section>
 <section id="fig1"> <title>Figure 1: Typical HP Helion OpenStack(R) network topology</title>
 <p>
@@ -60,38 +56,38 @@
 <p>
   <xref format="html" href="javascript:window.open('/media/Helion_Security1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
 </p>
-<p>In <xref type="section" href="#topic20806/fig1">Figure 1</xref>, the Border Router and the Aggregation Router are customer devices that perform routing at the perimeter of the environment. The Load Balancer is a recommended customer device to provide TLS termination. The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack(R) includes IPtable rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.</p>
+<p>In <xref type="section" href="#topic20483/fig1">Figure 1</xref>, the Border Router and the Aggregation Router are customer devices that perform routing at the perimeter of the environment. The Load Balancer is a recommended customer device to provide TLS termination. The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack(R) includes IPtable rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.</p>
 </section>
 <section id="perimeter"> <title>Securing the Perimeter</title>
-<p>The perimeter is indicated by the <i>Border Router</i> icon in <xref type="section" href="#topic20806/fig1">Figure 1</xref>.</p>
+<p>The perimeter is indicated by the <i>Border Router</i> icon in <xref type="section" href="#topic20483/fig1">Figure 1</xref>.</p>
 <p>When securing the perimeter, consider the following:</p>
 <ul>
 <li>
-<xref type="section" href="#topic20806/vlan">VLAN configuration recommendations</xref>
+<xref type="section" href="#topic20483/vlan">VLAN configuration recommendations</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/ipaddressing">IP addressing recommendations</xref>
+<xref type="section" href="#topic20483/ipaddressing">IP addressing recommendations</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/vlanrouting">VLAN routing interface recommendations</xref>
+<xref type="section" href="#topic20483/vlanrouting">VLAN routing interface recommendations</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/accesscontrol">Access control recommendations</xref>
+<xref type="section" href="#topic20483/accesscontrol">Access control recommendations</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/serverconnect">Server connectivity recommendations</xref>
+<xref type="section" href="#topic20483/serverconnect">Server connectivity recommendations</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/publicend">Public endpoint recommendations</xref>
+<xref type="section" href="#topic20483/publicend">Public endpoint recommendations</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/loadbalance">Configuring the load balancer</xref>
+<xref type="section" href="#topic20483/loadbalance">Configuring the load balancer</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/ssloffload">About SSL Offloading on Load Balancer</xref>
+<xref type="section" href="#topic20483/ssloffload">About SSL Offloading on Load Balancer</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/ipmapping">IP mapping concerns</xref>
+<xref type="section" href="#topic20483/ipmapping">IP mapping concerns</xref>
 </li>
 </ul>
 </section>
@@ -145,7 +141,7 @@
 </section>
 <section id="serverconnect"> <title>Server connectivity recommendations</title>
 <p>When configuring server connectivity, consider the following:</p>
-<p>As shown in figure <xref type="section" href="#topic20806/fig1">Typical HP Helion OpenStack(R) network topology</xref>, all of the Cloud Controller servers are members of all three VLANs. However, these servers have IP addresses configured only for the management VLAN.</p>
+<p>As shown in figure <xref type="section" href="#topic20483/fig1">Typical HP Helion OpenStack(R) network topology</xref>, all of the Cloud Controller servers are members of all three VLANs. However, these servers have IP addresses configured only for the management VLAN.</p>
 </section>
 <section id="publicend"> <title>Public endpoint recommendations</title>
 <p>We recommend a load balancer be placed in front of the OpenStack(R) APIs that can fill these functions:</p>
@@ -313,7 +309,7 @@ https://&lt;internalVIP&gt;:5000/v2.0</entry>
 </table>
 </section>
 <section id="back-end"> <title>Securing the Object Operations (Swift) back-end network connections</title>
-<p>Object Operations (Swift) service requests travel from the external network to an HA proxy on an overcloud controller, which then forwards the request to a Object Operations node over the Management network. By default, this traffic travels over a flat network, as shown in <xref type="section" href="#topic20806/fig3">Figure 3</xref>:</p>
+<p>Object Operations (Swift) service requests travel from the external network to an HA proxy on an overcloud controller, which then forwards the request to a Object Operations node over the Management network. By default, this traffic travels over a flat network, as shown in <xref type="section" href="#topic20483/fig3">Figure 3</xref>:</p>
 </section>
 <section id="fig3"> <title>Figure 3: Object Operations in a flat deployment</title>
 <p>
@@ -470,7 +466,7 @@ https://&lt;internalVIP&gt;:5000/v2.0</entry>
 </tbody>
 </tgroup>
 </table>
-<p>Applying access control lists (ACLs) for flows in the table above produces the logical deployment, displayed in <xref type="section" href="#topic20806/fig4">Figure 4</xref>:</p>
+<p>Applying access control lists (ACLs) for flows in the table above produces the logical deployment, displayed in <xref type="section" href="#topic20483/fig4">Figure 4</xref>:</p>
 </section>
 <section id="fig4"> <title>Figure 4: Object Operations in a logical deployment</title>
 <p>
@@ -482,10 +478,10 @@ https://&lt;internalVIP&gt;:5000/v2.0</entry>
 <p>HP Helion OpenStack(R) supports StoreVirtual or 3Par StoreServ storage arrays which are described separately.</p>
 <ul>
 <li>
-<xref type="section" href="#topic20806/storevirt">Securing StoreVirtual VSA network connections</xref>
+<xref type="section" href="#topic20483/storevirt">Securing StoreVirtual VSA network connections</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/storeserv">Securing 3Par StoreServ network connections</xref>
+<xref type="section" href="#topic20483/storeserv">Securing 3Par StoreServ network connections</xref>
 </li>
 </ul>
 </section>
@@ -498,7 +494,7 @@ https://&lt;internalVIP&gt;:5000/v2.0</entry>
 </ul>
 <p>VSA supports only one virtual network interface. As a result, the above three types of traffic must flow on the same network. For Helion, this is the management VLAN. P4000 hardware arrays support multiple network interfaces. For P4000, iSCSI and management traffic must flow through the management VLAN. However, inter-cluster traffic can be configured for a separate VLAN to provide an additional level of network data isolation.</p>
 <p>For StoreVirtual network design best practices, see <xref href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&amp;doctype=white%20paper&amp;doclang=EN_US&amp;searchquery=keywords=(AND)%20storevirtual%20&amp;cc=us&amp;lc=en,en-us" scope="external" format="html" >StoreVirtual 4000 Storage Network design considerations and best practices</xref> in PDF. <!-- note that this hyperlink is deliberately in html due to the nested parentheses which screws up the native MDP formatting and thus breaks the link --></p>
-<p>The following diagram depicts a StoreVirtual network deployed as a flat network, as shown in <xref type="section" href="#topic20806/fig5">Figure 5</xref>:</p>
+<p>The following diagram depicts a StoreVirtual network deployed as a flat network, as shown in <xref type="section" href="#topic20483/fig5">Figure 5</xref>:</p>
 </section>
 <section id="fig5"> <title>Figure 5: StoreVirtual in a flat deployment</title>
 <p>
@@ -562,23 +558,23 @@ https://&lt;internalVIP&gt;:5000/v2.0</entry>
 </tbody>
 </tgroup>
 </table>
-<p>Jump to <xref type="section" href="#topic20806/ref2">Reference 2: HP4000 SAN - SANiQ TCP and UDP Port Usage</xref>.</p>
+<p>Jump to <xref type="section" href="#topic20483/ref2">Reference 2: HP4000 SAN - SANiQ TCP and UDP Port Usage</xref>.</p>
 <p>
-<xref type="section" href="#topic20806/fig6">Figure 6</xref> depicts a logical deployment after applying ACLs for flows in table:</p>
+<xref type="section" href="#topic20483/fig6">Figure 6</xref> depicts a logical deployment after applying ACLs for flows in table:</p>
 </section>
 <section id="fig6"> <title>Figure 6: StoreVirtual in a logical deployment</title>
 <p>
   <image href="../../media/Helion_Security6.png"/>
 </p>
 <p>Note that there are additional traffic flows necessary for StoreVirtual operation in addition to the interaction with Helion nodes described above. This includes CMC management console access, StoreVirtual inter-cluster communication and access to network services such as NTP.</p>
-<p>StoreVirtual port usage is described in <xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03983799-2.pdf#page=263" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> in PDF.</p>
+<p>StoreVirtual port usage is described in <xref href="http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> in PDF.</p>
 <p>
-  <xref type="section" href="#topic20806/top"> Return to Top </xref>
+  <xref type="section" href="#topic20483/top"> Return to Top </xref>
 </p>
 </section>
 <section id="storeserv"> <title>Securing 3Par StoreServ network connections</title>
 <p>HP Helion Openstack supports iSCSI or Fibre Channel connectivity with 3PAR StoreServ. If using Fibre Channel, then the Compute nodes and the overcloud controller hosting Block Storage (Cinder) will require Fibre Channel connectivity with the 3PAR array. For iSCSI, connectivity will be through the management VLAN. The StoreServ REST API and SSH command line interfaces must be accessible from the management VLAN as well.</p>
-<p>The following diagram depicts a StoreServ network deployed as a flat network, as shown in <xref type="section" href="#topic20806/fig7">Figure 7</xref>:</p>
+<p>The following diagram depicts a StoreServ network deployed as a flat network, as shown in <xref type="section" href="#topic20483/fig7">Figure 7</xref>:</p>
 </section>
 <section id="fig7"> <title>Figure 7: 3Par StoreServ in a flat deployment</title>
 <p>
@@ -659,10 +655,10 @@ See Reference 6 below </entry>
 </tbody>
 </tgroup>
 </table>
-<p>Jump to <xref type="section" href="#topic20806/ref6">Reference 6: HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65</xref>.</p>
+<p>Jump to <xref type="section" href="#topic20483/ref6">Reference 6: HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65</xref>.</p>
 <p>When deploying StoreServ with Fibre Channel, interfaces 1 and 2 run over Fibre Channel network instead of iSCSI.</p>
 <p>
-<xref type="section" href="#topic20806/fig8">Figure 8</xref> depicts a logical deployment after applying ACLs for flows in table:</p>
+<xref type="section" href="#topic20483/fig8">Figure 8</xref> depicts a logical deployment after applying ACLs for flows in table:</p>
 </section>
 <section id="fig8"> <title>Figure 8: 3Par StoreServ in a logical deployment</title>
 <p>
@@ -671,7 +667,7 @@ See Reference 6 below </entry>
 <p>Note that there are additional traffic flows necessary for StoreServ operation in addition to the interaction with the Helion nodes described in this section. This includes SSMC console access and Service Processor communication.</p>
 <p>StoreServ port usage is described on page 65 of the <xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf" scope="external" format="pdf">HP 3PAR StoreServ 10000 Storage Physical Planning Manual</xref> in PDF.</p>
 <p>
-  <xref type="section" href="#topic20806/top"> Return to Top </xref>
+  <xref type="section" href="#topic20483/top"> Return to Top </xref>
 </p>
 </section>
 <section id="additional"> <title>Additional Block Storage Resources</title>
@@ -682,7 +678,7 @@ See Reference 6 below </entry>
 <li>
 <!--Removed anchor point ref2-->
 <!-- id="ref2" -->
-<xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03983799-2.pdf#page=263" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> (PDF)</li>
+<xref href="http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> (PDF)</li>
 <li>
 <xref href="http://hp.com/go/storevirtual" scope="external" format="html" >StoreVirtual information</xref>
 </li>
@@ -704,7 +700,7 @@ See Reference 6 below </entry>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic20806/top"> Return to Top </xref>
+  <xref type="section" href="#topic20483/top"> Return to Top </xref>
 </p>
 </section>
 <section id="esx"> <title>Securing ESX network connections in Helion</title>
@@ -716,7 +712,7 @@ See Reference 6 below </entry>
 <li>The EON service to communicate with the vCenter server</li>
 </ul>
 <p>
-<xref type="section" href="#topic20806/fig9">Figure 9</xref> depicts the following Logical deployment of the ESX Integration in HP Helion OpenStack(R)</p>
+<xref type="section" href="#topic20483/fig9">Figure 9</xref> depicts the following Logical deployment of the ESX Integration in HP Helion OpenStack(R)</p>
 </section>
 <section id="fig9"> <title>Figure 9: ESX Integration in a logical deployment</title>
 <p>
@@ -765,7 +761,7 @@ See Reference 6 below </entry>
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic20806/top"> Return to Top </xref>
+  <xref type="section" href="#topic20483/top"> Return to Top </xref>
 </p>
 </section>
 <section id="service"> <title>Service network</title>
@@ -794,7 +790,7 @@ See Reference 6 below </entry>
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic20806/top"> Return to Top </xref>
+  <xref type="section" href="#topic20483/top"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

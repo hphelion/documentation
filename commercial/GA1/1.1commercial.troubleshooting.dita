@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2105">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2058">
 <title>HP Helion OpenStack(R) 1.1: Troubleshooting</title>
 <prolog>
 <metadata>
@@ -22,7 +22,7 @@
 </prolog>
 <body>
 <p>
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/--></p>
 <p>
@@ -90,24 +90,19 @@
 <xref href="../../commercial/GA1/1.1commercial.troubleshooting.ntp.dita" >Troubleshooting NTP</xref>
 </p>
 </li>
-<li>
-<p>
-<xref href="../../commercial/GA1/1.1commerical.troubleshooting.compute.dita" >Troubleshooting the Compute Service</xref>
-</p>
-</li>
 </ul>
 <section id="sos"> <title>Contacting Customer Service</title>
 <p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref>.</p>
 </section>
 <section id="gathering-information"> <title>Gathering information</title>
-<p>Before contacting HP Customer Support, run the <codeph>run-sosreport</codeph> command on the affected system. You do not need to be logged in as <i>root</i> to run this command.</p>
+<p>Before contacting HP Customer Support, run the <codeph>run-sosreport</codeph> command on the affected system. You do not need to be root to run this command.</p>
 <p>The command gathers specific information into a file that will help diagnose your issue. The file is located in the <codeph>/tmp</codeph> directory under a name in the format <codeph>sosreport-&lt;system hostname&gt;-&lt;timestamp&gt;.tar.xz</codeph>. For example: <codeph>/tmp/sosreport-hLinux-20150218083619.tar.xz</codeph>.</p>
 <p>Customer Support will help determine the best way to relay the information in the file to them.</p>
 </section>
 <section id="determining-the-helion-openstack-version"> <title>Determining the Helion OpenStack(R) version</title>
 <p>Run the following command on any Helion OpenStack(R) node (seed, undercloud, overcloud control plane), to determine the installed version:</p>
 <codeblock>
-  <codeph>cat /etc/HP_Helion_version
+  <codeph># cat /etc/HP_Helion_version
 </codeph>
 </codeblock>
 <p>A sample of output is:</p>
@@ -116,7 +111,7 @@
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic2105/top"> Return to Top </xref>
+  <xref type="section" href="#topic2058/top"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
