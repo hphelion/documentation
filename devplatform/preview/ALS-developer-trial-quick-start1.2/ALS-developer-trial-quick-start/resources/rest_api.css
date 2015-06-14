@@ -1,0 +1,37 @@
+/* Styling for REST API stuff only */
+
+.rest_cmd {
+  /*display: inline;*/
+  padding: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  color: white !important;
+  text-shadow: none;
+}
+.rest_cmd.cmd_get {
+  background-color: #79ce09;
+}
+
+.rest_cmd.cmd_post {
+  background-color: #e14402;
+}
+
+.rest_cmd.cmd_put {
+  background-color: #e14402;
+}
+
+.rest_cmd.cmd_copy {
+  background-color: #e14402;
+}
+
+.rest_cmd.cmd_patch {
+  background-color: #e14402;
+}
+
+.rest_cmd.cmd_head {
+  background-color: #10ceca;
+}
+
+.rest_cmd.cmd_delete {
+  background-color: #808080;
+}
