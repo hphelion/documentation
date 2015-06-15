@@ -263,13 +263,12 @@ change the password.</li>
 </ul>
 </section>
 <section id="applications"> <title>Applications</title>
-<p>The Applications section displays a list of all apps on the server.
-Click anywhere on the line for an app to view its details. Admins have
-the same permissions in the <xref href="../../../../devplatform/helion/user/console/1.0index.dita#user-console-app" >
-<i>Application
-View</i>
-</xref> as a Developer of
-the space it was deployed to.</p>
+<p>The Applications section displays a list of all apps on the server. Click anywhere on the line
+        for an app to view its details. Admins have the same permissions in the <xref
+          href="../../../../devplatform/helion/user/console/1.0index.dita#user-console-app">
+          <i>Application View</i>
+        </xref> as a Developer of the space it was deployed to. It also lists the <b>Reserved</b>
+        URIs; these cannot be used for end user applications.</p>
 </section>
 <section id="cloud-events"> <title>Cloud Events</title>
 <p>The Cloud Events section displays a list of events (including errors and
@@ -358,13 +357,6 @@ must be accessible from the controller node.</li>
 <b>Allowed Repos</b>: Debian package repositories allowed in
 application containers. End users can install additional packages
 (e.g. with <codeph>apt-get</codeph> or <codeph>aptitude</codeph>) only from these repositories.</li>
-</ul>
-</section>
-<section id="applications"> <title>Applications</title>
-<ul>
-<li>
-<b>Reserved URIs</b>: URIs which cannot be used for end user
-applications.</li>
 </ul>
 </section>
 <section id="dea"> <title>DEA</title>
