@@ -1027,60 +1027,121 @@
  <!--permalink: /helion/openstack/update/troubleshooting/101/--> <topicref href="commercial/GA1/1.0commercial.update-101-troubleshooting.dita"/> 
  <!--permalink: /helion/openstack/update/undercloud/101/--> <topicref href="commercial/GA1/1.0commercial.update-101-undercloud.dita"/> 
  <!--permalink: /helion/openstack/vlan/provider/network/--> <topicref href="commercial/GA1/1.0commercial.vlan-providernetwork.dita"/> 
- <!--permalink: /helion/solutions/--> <topicref href="helion.rack.solution.dita"/> 
- <!--permalink: /publiccloud/api/--> <topicref href="publiccloud/api.dita"/> 
- <!--permalink: /publiccloud/api/CDN/--> <topicref href="content/api/c1.1/cdn-api.dita"/> 
- <!--permalink: /publiccloud/api/block-storage/--> <topicref href="content/api/c1.1/cinder-api.dita"/> 
- <!--permalink: /publiccloud/api/compute/--> <topicref href="content/api/c1.1/nova-api.dita"/> 
- <!--permalink: /publiccloud/api/copyright/--> <topicref href="publiccloud/api.copyright.v13.dita"/> 
- <!--permalink: /publiccloud/api/dbaas/--> <topicref href="content/api/c1.1/dbaas-api.dita"/> 
- <!--permalink: /publiccloud/api/dns/--> <topicref href="content/api/c1.1/dns-api.dita"/> 
- <!--permalink: /publiccloud/api/identity/--> <topicref href="content/api/c1.1/keystone-api.dita"/> 
- <!--permalink: /publiccloud/api/image/--> <topicref href="content/api/c1.1/glance-api.dita"/> 
- <!--permalink: /publiccloud/api/lbaas/--> <topicref href="content/api/c1.1/lbaas-api.dita"/> 
- <!--permalink: /publiccloud/api/monitoring/--> <topicref href="content/api/c1.1/maas-api.dita"/> 
- <!--permalink: /publiccloud/api/networking/--> <topicref href="content/api/c1.1/neutron-api.dita"/> 
- <!--permalink: /publiccloud/api/object-storage/--> <topicref href="content/api/c1.1/swift-api.dita"/> 
- <!--permalink: /publiccloud/api/v2identity/--> <topicref href="content/api/c1.1/keystonev2-api.dita"/> 
- <!--permalink: /publiccloud/bindings/--> <topicref href="publiccloud/bindings.dita"/> 
- <!--permalink: /publiccloud/block-storage/--> <topicref href="publiccloud/block-storage.dita"/> 
- <!--permalink: /publiccloud/cdn/--> <topicref href="publiccloud/cdn.dita"/> 
- <!--permalink: /publiccloud/cli/--> <topicref href="publiccloud/cli.dita"/> 
- <!--permalink: /publiccloud/cli/openstack/--> <topicref href="publiccloud/cli.openstack.dita"/> 
- <!--permalink: /publiccloud/cli/windows/--> <topicref href="publiccloud/cli.windows.2.dita"/> 
- <!--permalink: /publiccloud/cli/windows/block-storage/--> <topicref href="publiccloud/cli.windows.2.block-storage.dita"/> 
- <!--permalink: /publiccloud/cli/windows/commands/--> <topicref href="publiccloud/cli.windows.2.commands.dita"/> 
- <!--permalink: /publiccloud/cli/windows/compute/--> <topicref href="publiccloud/cli.windows.2.compute.dita"/> 
- <!--permalink: /publiccloud/cli/windows/containers-and-folders/--> <topicref href="publiccloud/cli.windows.2.containers-and-folders.dita"/> 
- <!--permalink: /publiccloud/cli/windows/folder-operations/--> <topicref href="publiccloud/cli.windows.2.folder-operations.dita"/> 
- <!--permalink: /publiccloud/cli/windows/help/--> <topicref href="publiccloud/cli.windows.2.help.dita"/> 
- <!--permalink: /publiccloud/cli/windows/installation/--> <topicref href="publiccloud/cli.windows.2.installation.dita"/> 
- <!--permalink: /publiccloud/cli/windows/metadata/--> <topicref href="publiccloud/cli.windows.2.metadata.dita"/> 
- <!--permalink: /publiccloud/cli/windows/misc/--> <topicref href="publiccloud/cli.windows.2.misc.dita"/> 
- <!--permalink: /publiccloud/cli/windows/reference/--> <topicref href="publiccloud/cli.windows.2.reference.dita"/> 
- <!--permalink: /publiccloud/cli/windows/release-notes/--> <topicref href="publiccloud/cli.windows.2.release-notes.dita"/> 
- <!--permalink: /publiccloud/compute/--> <topicref href="publiccloud/compute.dita"/> 
- <!--permalink: /publiccloud/compute/teamcity/--> <topicref href="publiccloud/plugins.teamcity.dita"/> 
- <!--permalink: /publiccloud/compute/vpn-multisite/--> <topicref href="publiccloud/vpn-multisite.dita"/> 
- <!--permalink: /publiccloud/compute/vpn-quickstart/--> <topicref href="publiccloud/vpn-quickstart.dita"/> 
- <!--permalink: /publiccloud/dbaas/--> <topicref href="publiccloud/dbaas.dita"/> 
- <!--permalink: /publiccloud/dbaas/tutorial/introduction/--> <topicref href="publiccloud/dbaas.tutorial.introduction.dita"/> 
- <!--permalink: /publiccloud/dns/--> <topicref href="publiccloud/dns.dita"/> 
- <!--permalink: /publiccloud/downloads/--> <topicref href="publiccloud/downloads.dita"/> 
- <!--permalink: /publiccloud/glossary/--> <topicref href="publiccloud/glossary.dita"/> 
- <!--permalink: /publiccloud/hpcloudconsole/--> <topicref href="publiccloud/hpcloudconsole.dita"/> 
- <!--permalink: /publiccloud/identity/--> <topicref href="publiccloud/identity.dita"/> 
- <!--permalink: /publiccloud/lbaas/--> <topicref href="publiccloud/lbaas.dita"/> 
- <!--permalink: /publiccloud/maas/--> <topicref href="publiccloud/maas.dita"/> 
- <!--permalink: /publiccloud/object-storage/--> <topicref href="publiccloud/object-storage.dita"/> 
- <!--permalink: /publiccloud/object-storage/tutorial/introduction/--> <topicref href="publiccloud/object-storage.tutorial.introduction.dita"/> 
- <!--permalink: /publiccloud/overview/--> <topicref href="publiccloud/publiccloud-overview.dita"/> 
- <!--permalink: /publiccloud/rdb/--> <topicref href="publiccloud/rdb.dita"/> 
- <!--permalink: /publiccloud/release-notes/--> <topicref href="publiccloud/release-notes.dita"/> 
- <!--permalink: /publiccloud/services/--> <topicref href="publiccloud/services.dita"/> 
- <!--permalink: /publiccloud/site-overview/--> <topicref href="publiccloud/site-overview.dita"/> 
- <!--permalink: /publiccloud/sitemap/--> <topicref href="publiccloud/sitemap.dita"/> 
- <!--permalink: /publiccloud/upload-publish-partner-images135/--> <topicref href="publiccloud/upload-publish-partner-images135.dita"/> 
- <!--permalink: /publiccloud/whats_new_with_HP_Cloud_Console/--> <topicref href="publiccloud/hz.whatsnewjan.2014.dita"/> 
+ <!--permalink: /helion/solutions/--> <topicref href="helion.rack.solution.dita"/>
+ <topicref href="publiccloud/publiccloud-overview.dita">
+  <topicref href="publiccloud/services.dita">
+   <topicref href="publiccloud/release-notes.dita"/>
+   <topicref href="publiccloud/sitemap.dita"/>
+  </topicref>
+  <topicref href="publiccloud/site-overview.dita">
+   <topicref href="publiccloud/hz.whatsnewjan.2014.dita"/>
+   <topicref href="publiccloud/hpcloudconsole.dita"/>
+  </topicref>
+  <topicref href="publiccloud/identity.dita"/>
+  <topicref href="publiccloud/compute.dita">
+   <topicref href="publiccloud/upload-publish-partner-images135.dita"/>
+   <topicref href="publiccloud/vpn-multisite.dita"/>
+   <topicref href="publiccloud/vpn-quickstart.dita"/>
+   <topicref href="publiccloud/plugins.teamcity.dita"/>
+  </topicref>
+  <topicref href="publiccloud/block-storage.dita"/>
+  <topicref href="publiccloud/dbaas.dita"/>
+  <topicref href="publiccloud/dns.dita"/>
+  <topicref href="publiccloud/lbaas.dita"/>
+  <topicref href="publiccloud/object-storage.dita"/>
+  <topicref href="publiccloud/cdn.dita">
+   <topicref href="publiccloud/object-storage.tutorial.introduction.dita"/>
+  </topicref>
+  <topicref href="publiccloud/rdb.dita">
+   <topicref href="publiccloud/dbaas.tutorial.introduction.dita"/>
+  </topicref>
+  <topicref href="publiccloud/maas.dita"/>
+  <topicref href="publiccloud/glossary.dita"/>
+ </topicref> 
+ <!--permalink: /publiccloud/api/--> <topicref href="publiccloud/api.dita">
+  <topicref href="content/api/c1.1/keystonev2-api.dita"/>
+  <topicref href="content/api/c1.1/keystone-api.dita"/>
+  <topicref href="content/api/c1.1/nova-api.dita"/>
+  <topicref href="content/api/c1.1/neutron-api.dita"/>
+  <topicref href="content/api/c1.1/glance-api.dita"/>
+  <topicref href="content/api/c1.1/cinder-api.dita"/>
+  <topicref href="content/api/c1.1/dbaas-api.dita"/>
+  <topicref href="content/api/c1.1/dns-api.dita"/>
+  <topicref href="content/api/c1.1/lbaas-api.dita"/>
+  <topicref href="content/api/c1.1/maas-api.dita"/>
+  <topicref href="content/api/c1.1/swift-api.dita"/>
+  <topicref href="content/api/c1.1/cdn-api.dita"/>
+  <topicref href="publiccloud/api.copyright.v13.dita"/>
+ </topicref> 
+ <!--permalink: /publiccloud/api/CDN/--> 
+ <!--permalink: /publiccloud/api/block-storage/--> 
+ <!--permalink: /publiccloud/api/compute/--> 
+ <!--permalink: /publiccloud/api/copyright/--> 
+ <!--permalink: /publiccloud/api/dbaas/--> 
+ <!--permalink: /publiccloud/api/dns/--> 
+ <!--permalink: /publiccloud/api/identity/--> 
+ <!--permalink: /publiccloud/api/image/--> 
+ <!--permalink: /publiccloud/api/lbaas/--> 
+ <!--permalink: /publiccloud/api/monitoring/--> 
+ <!--permalink: /publiccloud/api/networking/--> 
+ <!--permalink: /publiccloud/api/object-storage/--> 
+ <!--permalink: /publiccloud/api/v2identity/--> 
+ <!--permalink: /publiccloud/bindings/--> 
+ <!--permalink: /publiccloud/block-storage/--> 
+ <!--permalink: /publiccloud/cdn/--> 
+ <!--permalink: /publiccloud/cli/--> <topicref href="publiccloud/cli.dita">
+  <topicref href="publiccloud/downloads.dita"/>
+  <topicref href="publiccloud/bindings.dita"/>
+  <topicref href="publiccloud/cli.openstack.dita"/>
+  <topicref href="publiccloud/cli.windows.2.dita">
+   <topicref href="publiccloud/cli.windows.2.commands.dita"/>
+   <topicref href="publiccloud/cli.windows.2.compute.dita"/>
+   <topicref href="publiccloud/cli.windows.2.containers-and-folders.dita"/>
+   <topicref href="publiccloud/cli.windows.2.folder-operations.dita"/>
+   <topicref href="publiccloud/cli.windows.2.help.dita"/>
+   <topicref href="publiccloud/cli.windows.2.installation.dita"/>
+   <topicref href="publiccloud/cli.windows.2.metadata.dita"/>
+   <topicref href="publiccloud/cli.windows.2.misc.dita"/>
+   <topicref href="publiccloud/cli.windows.2.reference.dita"/>
+   <topicref href="publiccloud/cli.windows.2.block-storage.dita"/>
+   <topicref href="publiccloud/cli.windows.2.release-notes.dita"/>
+  </topicref>
+ </topicref> 
+ <!--permalink: /publiccloud/cli/openstack/--> 
+ <!--permalink: /publiccloud/cli/windows/--> 
+ <!--permalink: /publiccloud/cli/windows/block-storage/--> 
+ <!--permalink: /publiccloud/cli/windows/commands/--> 
+ <!--permalink: /publiccloud/cli/windows/compute/--> 
+ <!--permalink: /publiccloud/cli/windows/containers-and-folders/--> 
+ <!--permalink: /publiccloud/cli/windows/folder-operations/--> 
+ <!--permalink: /publiccloud/cli/windows/help/--> 
+ <!--permalink: /publiccloud/cli/windows/installation/--> 
+ <!--permalink: /publiccloud/cli/windows/metadata/--> 
+ <!--permalink: /publiccloud/cli/windows/misc/--> 
+ <!--permalink: /publiccloud/cli/windows/reference/--> 
+ <!--permalink: /publiccloud/cli/windows/release-notes/--> 
+ <!--permalink: /publiccloud/compute/--> 
+ <!--permalink: /publiccloud/compute/teamcity/--> 
+ <!--permalink: /publiccloud/compute/vpn-multisite/--> 
+ <!--permalink: /publiccloud/compute/vpn-quickstart/--> 
+ <!--permalink: /publiccloud/dbaas/--> 
+ <!--permalink: /publiccloud/dbaas/tutorial/introduction/--> 
+ <!--permalink: /publiccloud/dns/--> 
+ <!--permalink: /publiccloud/downloads/--> 
+ <!--permalink: /publiccloud/glossary/--> 
+ <!--permalink: /publiccloud/hpcloudconsole/--> 
+ <!--permalink: /publiccloud/identity/--> 
+ <!--permalink: /publiccloud/lbaas/--> 
+ <!--permalink: /publiccloud/maas/--> 
+ <!--permalink: /publiccloud/object-storage/--> 
+ <!--permalink: /publiccloud/object-storage/tutorial/introduction/--> 
+ <!--permalink: /publiccloud/overview/--> 
+ <!--permalink: /publiccloud/rdb/--> 
+ <!--permalink: /publiccloud/release-notes/--> 
+ <!--permalink: /publiccloud/services/--> 
+ <!--permalink: /publiccloud/site-overview/--> 
+ <!--permalink: /publiccloud/sitemap/--> 
+ <!--permalink: /publiccloud/upload-publish-partner-images135/--> 
+ <!--permalink: /publiccloud/whats_new_with_HP_Cloud_Console/--> 
  <topicref href="index.dita" locktitle="yes" navtitle="Commercial Installation and Configuration -- HP Helion 1.1 Development Platform "/>
 </map>
