@@ -378,7 +378,7 @@ Backup procedure completed.
 <p>The following sections describe how and when to back up and restore the overcloud.</p>
 <p>You can <xref type="section" href="#topic19267/sherpaback">back up</xref> and <xref type="section" href="#topic19267/sherparest">restore</xref> an overcloud server or <xref type="section" href="#topic19267/databack">back up</xref> and <xref type="section" href="#topic19267/datarest">restore</xref> the overcloud database.</p>
 </section>
-<section id="sherpaback"> <title>Backing up an overcloud server</title>
+<section id="sherpaback1"> <title>Backing up an overcloud server</title>
 <p>You should create a backup of the overcloud servers when any Update and Extension is download to the system.</p>
 <p>Use the following steps to back up the overcloud:</p>
 <ol>
@@ -550,7 +550,7 @@ Backup procedure completed
 </codeph>
 </codeblock>
 </section>
-<section id="sherparest"> <title>Restoring the overcloud database</title>
+<section id="sherparest2"> <title>Restoring the overcloud database</title>
 <p>You should restore the overcloud database when there is any problem with the node, for example:</p>
 <ul>
 <li>If the overcloud server fails (from a hardware or software issues)</li>
