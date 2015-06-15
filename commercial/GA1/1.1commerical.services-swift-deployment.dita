@@ -103,14 +103,16 @@
 <entry>
 <b>Part Power</b>
 </entry>
-    <entry>Defines the storage cluster capacity. Set the <varname>partition power</varname> value based on the total amount of storage you expect your entire ring to use.</entry>
-    <entry>  The parameter is an exponent: 2^X. Assuming that the average available drive capacity is 1-3 TB. For the partition power values, refer to <xref href=" /helion/openstack/1.1/services/swift/deployment/ring-power/" >Ring Power and Number of Partitions</xref>.
-</entry>
+    <entry>Defines the storage cluster capacity. Set the <i>partition power</i>  value based on the
+                total amount of storage you expect your entire ring to use.</entry>
+    <entry> The parameter is an exponent: 2^X. Assuming that the average available drive capacity is
+                1-3 TB. For the partition power values, refer to <xref
+                  href="1.1commerical.services-swift-deployment-part-power.dita#topic1674"/>
+              </entry>
 </row>
 <row>
-<entry>
-<b>Min part hour</b>
-</entry>
+<entry><b>Min part hour</b>
+              </entry>
     <entry>This should be set to however long a full replication/update cycle takes. No partition is moved twice during the specified amount of time.</entry>
     <entry> The recommended value is 24 hours. Note that this restriction is ignored in the case of device failure when there is no option other than reassignment.</entry>
 </row>
@@ -173,35 +175,19 @@
 <i>ringos</i>
 </b> utility you can add the <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.dita" >provisioned nodes</xref> to the Swift cluster.</p>
 <ol>
-<li>
-<p>Enable SSH from the undercloud to the overcloud node by copying the SSH keys from the seed to the undercloud.</p>
-</li>
-<li>
-<p>Log in to the seed.</p>
-
-<codeblock>
-<codeph># ssh root@&lt;seed IP address&gt;
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Copy the SSH key from the seed cloud to undercloud.</p>
-
-<codeblock>
-<codeph># scp ~/.ssh/id_rsa heat-admin@&lt;\undercloud IP address&gt;:/home/heat-admin
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Log in to the undercloud.</p>
-
-<codeblock>
-<codeph># ssh heat-admin@&lt;undercloud IP address&gt;
+<li> Enable SSH from the undercloud to the overcloud node by copying the SSH keys from the seed to
+          the undercloud.</li>
+<li> Log in to the
+          seed.<codeblock><codeph># ssh root@&lt;seed IP address&gt;
+</codeph></codeblock></li>
+<li> Copy the SSH key from the seed cloud to
+          undercloud.<codeblock><codeph># scp ~/.ssh/id_rsa heat-admin@&lt;\undercloud IP address&gt;:/home/heat-admin
+</codeph></codeblock></li>
+<li> Log in to the
+          undercloud.<codeblock><codeph># ssh heat-admin@&lt;undercloud IP address&gt;
 # sudo -i
 # mv ~heat-admin/id_rsa ~/.ssh/ 
-</codeph>
-</codeblock>
-</li>
+</codeph></codeblock></li>
 </ol>
 </section>
 <section id="deploying-scale-out-Swift-object-nodes"> <title>Deploy the Scale-out Object Nodes</title>
@@ -211,38 +197,22 @@
 Before starting the deployment of scale-out object nodes you must configure the `kvm-default.json` file. If `kvm-default.json` has already been created during installation, edit the file instead.-->
 Perform the following steps to deploy scale-out Object nodes:</p>
 <ol>
-<li>
-<p>Log in to the seed.</p>
-
-<codeblock>
-<codeph>ssh root@&lt;seed IP address&gt;
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Update the <codeph>so_swift_storage_scale</codeph> parameter in the environment variables file, used during the initial installation, according to your storage needs.</p>
-
-<!--    
-2. Update the `so_swift_storage_scale` parameter in  `/root/configs/kvm-custom-ips.json ` file according to your storage needs.-->
-
-<p>Refer <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.dita" >Provisioning Swift node(s)</xref> for   details of adding physical server for scale-out Swift in <codeph>baremetal.csv</codeph> file.</p>
-</li>
-<li>
-<p>Enter the following command to source the environment variables file  for the new values.</p>
-
-<codeblock>
-<codeph># source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/&lt;environment variables file name&gt;
-</codeph>
-</codeblock>
-
-<p>For example:</p>
-
-<codeblock>
-<codeph>    # source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-custom-ips.json
-</codeph>
-</codeblock>
-
-<!--
+<li> Log in to the
+          seed.<codeblock><codeph>ssh root@&lt;seed IP address&gt;
+</codeph></codeblock></li>
+<li> Update the <codeph>so_swift_storage_scale</codeph> parameter in the environment variables file,
+          used during the initial installation, according to your storage
+            needs.<!--    
+2. Update the `so_swift_storage_scale` parameter in  `/root/configs/kvm-custom-ips.json ` file according to your storage needs.--><p>Refer
+              <xref
+              href="../../commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.dita"
+              >Provisioning Swift node(s)</xref> for details of adding physical server for scale-out
+            Swift in <codeph>baremetal.csv</codeph> file.</p></li>
+<li> Enter the following command to source the environment variables file for the new
+            values.<codeblock><codeph># source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/&lt;environment variables file name&gt;
+</codeph></codeblock><p>For
+            example:</p><codeblock><codeph> # source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-custom-ips.json
+</codeph></codeblock><!--
 3. Enter the following command to source the `kvm-default.json`  for the new values.
 
         # source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
@@ -255,47 +225,26 @@ Perform the following steps to deploy scale-out Object nodes:</p>
         source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 
 --></li>
-<li>
-<p>Run the installer script to update the cloud.</p>
-
-<codeblock>
-<codeph># bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |&amp; tee update_cloud.log
-</codeph>
-</codeblock>
-</li>
+<li>Run the installer script to update the
+          cloud.<codeblock><codeph># bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |&amp; tee update_cloud.log
+</codeph></codeblock></li>
 </ol>
 </section>
 <section id="verifying-deployed-Swift-nodes"> <title>Verify the Deployed Nodes</title>
 <p>Perform the following steps to verify the deployment of Swift nodes:</p>
 <ol>
-<li>
-<p>Log in to the undercloud from the seed.</p>
-
-<codeblock>
-<codeph># ssh heat-admin@&lt;undercloud IP address&gt; 
+<li> Log in to the undercloud from the
+          seed.<codeblock><codeph># ssh heat-admin@&lt;undercloud IP address&gt; 
 # sudo -i
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Source <codeph>stackrc</codeph> using the following command:</p>
-
-<codeblock>
-<codeph> # source stackrc 
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>List the available scale-out Swift nodes.</p>
-
-<codeblock>
-<codeph># ringos list-swift-nodes -t object
-</codeph>
-</codeblock>
-
-<p>The following sample displays scale-out Swift nodes:</p>
-
-<codeblock>
+</codeph></codeblock></li>
+<li> Source <codeph>stackrc</codeph> using the following
+          command:<codeblock><codeph> # source stackrc 
+</codeph></codeblock></li>
+<li>List the available scale-out Swift
+            nodes.<codeblock><codeph># ringos list-swift-nodes -t object
+</codeph></codeblock><p>The
+            following sample displays scale-out Swift
+          nodes:</p><codeblock>
 <codeph>+--------------+
 | object-nodes |
 +--------------+
@@ -303,59 +252,40 @@ Perform the following steps to deploy scale-out Object nodes:</p>
 | 192.0.2.30   |
 +--------------+
 </codeph>
-</codeblock>
-</li>
-<li>
-<p>List the disks available on each node.</p>
-
-<codeblock>
-<codeph># ringos list-disks -n &lt;object nodes IP address&gt; 
-</codeph>
-</codeblock>
-
-<p>The following sample displays the disk available on the node <b>192.0.2.29</b>.</p>
-
-<codeblock>
-<codeph>+----------+------------+
+</codeblock></li>
+<li>List the disks available on each
+            node.<codeblock><codeph># ringos list-disks -n &lt;object nodes IP address&gt; 
+</codeph></codeblock><p>The
+            following sample displays the disk available on the node
+          <b>192.0.2.29</b>.</p><codeblock><codeph>+----------+------------+
 | disk     | size       |
 +----------+------------+
 | /dev/sda | 1073741824 |
 |          |            |
 | /dev/sdb | 1073741824 |
 +----------+------------+
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Repeat the verification process for all of the object node(s).</p>
-</li>
+</codeph></codeblock></li>
+<li>Repeat the verification process for all of the object node(s).</li>
 </ol>
 </section>
 <section id="preparing-disks-on-swift-nodes"> <title>Prepare the Disks on the Deployed Nodes</title>
 <p>Once Swift nodes are deployed, the next step is to format and mount the required disks so they can be added to the Swift cluster.</p>
 <p>To format a given disk:</p>
-<codeblock>
-  <codeph># ringos format-disks -n &lt;object node IP address&gt; -d all
-</codeph>
-</codeblock>
+<codeblock><codeph># ringos format-disks -n &lt;object node IP address&gt; -d all
+</codeph></codeblock>
 <p>The following sample displays the output of formatted disk of <b>192.0.2.29</b>.</p>
-<codeblock>
-  <codeph>+----------+-----------+---------+---------------------------------+-------------+------------+
+<codeblock><codeph>+----------+-----------+---------+---------------------------------+-------------+------------+
 | disk     | formatted | mounted | mount_point                     | label       | size       |
 +----------+-----------+---------+---------------------------------+-------------+------------+
 | /dev/sda | y         | y       | /mnt/state/srv/node/a1410063335 | a1410063335 | 1073741824 |
 | /dev/sdb | y         | y       | /mnt/state/srv/node/b1410063336 | b1410063336 | 1073741824 |               
 +----------+-----------+---------+---------------------------------+-------------+------------+
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>If the disks are already mounted and you want to format the disk then execute the following command:</p>
-<codeblock>
-  <codeph># ringos format-disks -n &lt;object node IP address&gt; -d /dev/sdb -f
-</codeph>
-</codeblock>
+<codeblock><codeph># ringos format-disks -n &lt;object node IP address&gt; -d /dev/sdb -f
+</codeph></codeblock>
 <p>The following sample displays the output of forceful formatted disk.</p>
-<codeblock>
-  <codeph>+----------+-----------+---------+-------------+-------+------+
+<codeblock><codeph>+----------+-----------+---------+-------------+-------+------+
 | disk     | formatted | mounted | mount_point | label | size |
 +----------+-----------+---------+-------------+-------+------+
 | /dev/sdb | -         | -       | -           | -     | -    |

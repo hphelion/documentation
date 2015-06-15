@@ -32,8 +32,7 @@ The HP Helion OpenStack(R) cloud deployment includes automatic creation of a Swi
 <p>Based on OpenStack(R) Swift, the HP Helion OpenStack(R) object storage service provides a highly available, resilient, and scalable storage pool for unstructured data.</p>
 <section id="architecture-overview"> <title>Architecture Overview</title>
 <p>At its core, Object Storage (Swift) is built from a set of software services and data constructs hosted on a cluster of servers.</p>
-<!--
-A Swift cluster is software defined storage (SDS) architecture layered on top of industry standard servers using standard storage drives. -->
+<!--A Swift cluster is software defined storage (SDS) architecture layered on top of industry standard servers using standard storage drives. -->
 <p>A Object Storage (Swift) cluster is Software Defined Storage (SDS) architecture, layered on top of industry standard servers, using native storage devices which are typically disk drives.</p>
 <p>
 <b>Note</b>: It is not recommended to run Swift on top of other systems (hardware or software) that hide the failure domains or native storage devices like using RAID group on top of drives.</p>

@@ -23,10 +23,6 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.0commerical.services-swift-deployment-part-power.md-->
  <!--permalink: /helion/openstack/services/swift/deployment/ring-power/--></p>
-<!--
-
-
--->
 <p>The following table displays the  number of zones, the maximum and minimum number of drives, and the ring power defined for that particular configuration. With the defined disk drives number of zones and the ring power, 100 ring partition are defined on each disk drive. This is the smallest allowed number of partition. The Minimum Number of Drives column displays the number of drives that are required for the system to operate correctly. If you have fewer than the minimum number of drives specified, there will be too many partitions on the disk drive and Swift will fail to complete the audit and other processes.</p>
 <!--
 To use, given number of zones and the maximum number of disk drives anticipated for the system, pick a ring power from the table. With these many disk drives, number of zones and ring power, there will be 100 ring partitions on each disk drives. This is the smallest allowed number of partitions. If your system has fewer drives (i.e, starts small), look at the <min-mum-drives> column. For a given number of zones and ring power, this is the smallest number of disk drives you system must have to operate correctly. If you have fewer <min-mum-drives>, there will be too many partitions on the disk drive, and Swift will fail to complete audit and other processes.-->
