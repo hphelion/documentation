@@ -244,7 +244,7 @@ Perform the following steps to deploy scale-out Object nodes:</p>
             nodes.<codeblock><codeph># ringos list-swift-nodes -t object
 </codeph></codeblock><p>The
             following sample displays scale-out Swift
-          nodes:</p><codeblock><codeph>+--------------+
+          nodes:</p><codeblock><codeph>+-------------+
 | object-nodes |
 +--------------+
 | 192.0.2.29   |
@@ -255,7 +255,7 @@ Perform the following steps to deploy scale-out Object nodes:</p>
             node.<codeblock><codeph># ringos list-disks -n &lt;object nodes IP address&gt; 
 </codeph></codeblock><p>The
             following sample displays the disk available on the node
-          <b>192.0.2.29</b>.</p><codeblock><codeph>+----------+------------+
+          <b>192.0.2.29</b>.</p><codeblock><codeph>+----------+-----------+
 | disk     | size       |
 +----------+------------+
 | /dev/sda | 1073741824 |
