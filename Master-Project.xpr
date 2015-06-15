@@ -4,7 +4,7 @@
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options/>
     </meta>
-    <projectTree name="Master-Project.xpr">
+    <projectTree name="master-project.xpr">
         <folder path="automation/"/>
         <folder path="CarrierGrade/"/>
         <folder path="CloudGraphics/"/>
