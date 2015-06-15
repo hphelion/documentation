@@ -1,7 +1,26 @@
-/helion/openstack/1.1/fcp/backup.restore/
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: DNSaaS Configuration (Optional)"
-permalink: /helion/openstack/1.1/services/neutron/post/installation/configure-dnsaas/
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic19956">
+	<title>HP Helion OpenStack(R) 1.1: DNSaaS Configuration (Optional)</title>
+	<prolog>
+		<metadata>
+			<othermeta name="layout" content="default"/>
+			<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+			<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
+			<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
+			<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+			<othermeta name="role" content="Network Administrator"/>
+			<othermeta name="role" content="Network Architect"/>
+			<othermeta name="role" content="Vikas Deolaliker, Paul Kevin"/>
+			<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+			<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
+			<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
+			<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+		</metadata>
+	</prolog>
+	<body>
+
+<!-- permalink: /helion/openstack/1.1/services/neutron/post/installation/configure-dnsaas/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -9,23 +28,11 @@ product-version3: HP Helion OpenStack 1.0.1
 product-version4: HP Helion OpenStack 1.1
 role1: Network Administrator
 role2: Network Architect
-authors: Vikas Deolaliker, Paul Farley
+authors: Vikas Deolaliker, Paul Farley -->
 
 
-<!--PUBLISHED-->
-
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/install/ovsvapp/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/related-links/">NEXT &#9654;</a> </p> -->
-
+<!-- fix formating and validation errors from here to end -->
 # HP Helion OpenStack&#174; 1.1: DNSaaS Configuration (Optional)
 
 Configuring Domain Name System as a service (DNSaaS) is optional.
@@ -416,7 +423,8 @@ For more information, see:
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+	</body>
+</topic>
 
-----
 
 

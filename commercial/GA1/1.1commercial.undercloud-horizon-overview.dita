@@ -1,33 +1,30 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Undercloud Horizon Overview"
-permalink: /helion/openstack/1.1/undercloud/horizon/overview/
-product: commercial.ga
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.1
-role1: Systems Administrator 
-role2: Cloud Architect 
-role3: Storage Administrator 
-role4: Network Administrator 
-role5: Service Developer 
-role6: Cloud Administrator 
-role7: Application Developer 
-role8: Network Engineer 
-authors: Paul F
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic19956">
+    <title>HP Helion OpenStack(R) 1.1: Undercloud Horizon Overview</title>
+    <prolog>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+            <othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
+            <othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
+            <othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Systems Administrator"/>
+            <othermeta name="role" content="Paul Kevin"/>
+            <othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+            <othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
+            <othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
+            <othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+        </metadata>
+    </prolog>
+    <body>
 
----
+
 <!--PUBLISH-->
 
 
-<script>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/prereqs/">NEXT &#9654;</a> </p> -->
 
 # HP Helion OpenStack&#174; 1.1: Undercloud Horizon Overview
@@ -50,4 +47,5 @@ The name of the user (who is logged in) is shown on the top bar along with a dro
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-----
+        </body>
+</topic>
