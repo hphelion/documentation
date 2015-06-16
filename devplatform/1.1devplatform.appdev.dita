@@ -134,9 +134,9 @@ Create a database and execute a query against it.</p>
 <li>
 <xref href="http://12factor.net/" scope="external" format="html" >The 12-Factor App</xref>
 </li>
-<li>
-<xref href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html" scope="external" format="html" >Tips from Cloud Foundry™</xref>
-</li>
+  <li>
+          <xref href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html"
+            format="html" scope="external">Tips</xref> from <tm tmtype="tm">Cloud Foundry</tm></li>
 </ul>
 <!-- ===================== horizontal rule ===================== -->
 </section>
