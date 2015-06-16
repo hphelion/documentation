@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3709">
-<title>HP Helion OpenStack(R) Community Installation Overview</title>
+  <title><tm tmtype="reg">HP Helion OpenStack</tm>Community Installation Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,10 +15,10 @@
 <p>HP Helion OpenStack(R) Community is installed using <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" >TripleO</xref> which uses three linked installation phases to deploy a complete OpenStack(R) cloud.</p>
 <ul>
 <li>
-<p>Seed  - The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack(R) components that are used to deploy the undercloud. The seed deploys the undercloud by using the HP Ironic service to deploy a specific undercloud machine image.</p>
+  <p>Seed  - The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained <tm tmtype="reg">OpenStack</tm> components that are used to deploy the undercloud. The seed deploys the undercloud by using the HP Ironic service to deploy a specific undercloud machine image.</p>
 </li>
 <li>
-<p>Undercloud - The undercloud is a complete OpenStack(R) installation, which is then used to deploy the overcloud. In HP Helion OpenStack(R) Community, the undercloud can be a separate baremetal server or a virtual machine on the Seed host.</p>
+  <p>Undercloud - The undercloud is a complete OpenStack(R) installation, which is then used to deploy the overcloud. In <tm tmtype="reg">HP Helion OpenStack</tm>Community, the undercloud can be a separate baremetal server or a virtual machine on the Seed host.</p>
 </li>
 <li>
 <p>Overcloud<!--Removed anchor point overcloud--><!-- id="overcloud" --> - The overcloud is the end-user OpenStack(R) cloud. In HP Helion OpenStack(R) Community, the undercloud can be separate baremetal servers or virtual machines on the Seed host.</p>
