@@ -27,8 +27,8 @@
 You can also <xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP%20Helion%20Development%20Platform%20Quick%20Start%20Instructions%201.2%20preview.pdf" scope="external" format="pdf">download the entire instruction set</xref> in a printable format.</p>
 <table>
 <tgroup cols="2">
-                <colspec colname="col1" colwidth="297.75pt"/>
-                <colspec colname="col2" colwidth="732.75pt"/>
+                <colspec colname="col1" colwidth="400" colsep="1"/>
+                <colspec colname="col2" colwidth="1*"/>
                 <thead>
                     <row rowsep="0">
                         <entry/>

@@ -26,13 +26,16 @@
 </p>
 <table>
 <tgroup cols="2">
-        <colspec colname="col1" colwidth="300pt"/>
-        <colspec colname="col2" colwidth="724.5pt"/>
+        <colspec colname="col1" colwidth="400" colsep="1"/>
+        <colspec colname="col2"/>
         <tbody>
           <row>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
             <entry><p>1. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/"
-                  scope="external" format="html">Register for your Helion Public Cloud
+                  href="ALS-developer-trial-quick-start">Register for your Helion Public Cloud
                   Account</xref>
               </p><image href="../../media/star.gif" id="image_lqs_gjp_js" scale="50"/>2.
                 <b>Download Tools</b>

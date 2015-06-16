@@ -29,10 +29,13 @@
             management console.</p>
 <table>
 <tgroup cols="2">
-                <colspec colname="col1" colwidth="300pt"/>
-                <colspec colname="col2" colwidth="731.25pt"/>
-                <colspec colnum="3" colname="c3" colwidth="18pt"/>
-                <tbody>
+                <colspec colname="col1" colwidth="400" colsep="1"/>
+                <colspec colname="col2"/>
+                 <tbody>
+                    <row>
+                        <entry/>
+                        <entry/>
+                    </row>
                     <row>
                         <entry><p>1. <xref
                                     href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/"

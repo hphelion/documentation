@@ -25,35 +25,40 @@
 <p>We have provided several sample applications in multiple programming languages. Exploring and deploying these simple apps will help you understand how the push process works and how applications can be connected to the other HP Helion OpenStack(R) services.</p>
 <table>
 <tgroup cols="2">
-                <colspec colname="col1" colwidth="303pt"/>
-                <colspec colname="col2" colwidth="727.5pt"/>
+                <colspec colname="col1" colwidth="400" colsep="1"/>
+                <colspec colname="col2"/>
                 <tbody>
                     <row>
+                        <entry/>
+                        <entry/>
+                    </row>
+                    <row>
                         <entry>
-                            <p> 1. <xref
+                            <p>1. <xref
                                     href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/"
                                     scope="external" format="html">Register for your Helion Public
                                     Cloud Account</xref>
                             </p>
-                            <p> 2. <xref
+                            <p>2. <xref
                                     href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/2"
                                     scope="external" format="html">Download Tools</xref>
                             </p>
-                            <p> 3. <xref
+                            <p>3. <xref
                                     href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3"
                                     scope="external" format="html">Create the Sandbox
                                     Environment</xref>
                             </p>
-                            <p> 4. <xref
+                            <p>4. <xref
                                     href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/4"
                                     scope="external" format="html">Create a Cluster</xref>
                             </p>
-                            <p> 5. <xref
+                            <p>5. <xref
                                     href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/5"
                                     scope="external" format="html">Add Windows DEA and SQL Server
                                     (Optional Step)</xref>
                             </p>
-                            <p>6. <b>Explore Sample Applications</b></p>
+                            <p><image href="../../media/star.gif" id="image_bmg_ms5_js" scale="50"
+                                />6. <b>Explore Sample Applications</b></p>
                         </entry>
                         <entry>
                             <b>Explore Sample Applications</b>
