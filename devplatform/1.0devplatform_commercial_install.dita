@@ -148,10 +148,10 @@
 <section id="install-als"> <title>Install the Application Lifecycle Service (ALS)</title>
 <p>This section provides details on installing the Application Lifecycle service from the Development Platform.</p>
 </section>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="als-prerequisites"> <title>Prerequisites</title>
 <p>For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. This process is documented in Step 7 of <xref href="http://docs.hpcloud.com/helion/community/install#startseed" scope="external" format="html" >"Starting the seed and building your cloud"</xref> in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the <xref href="../devplatform/helion/admin/server/1.1configuration.dita#http-proxy" >Administration Guide</xref>.</p>
 </section>
-<section id="connect-to-the-download-service"> <title>Connect to the Download Service</title>
+<section id="als-connect-to-the-download-service"> <title>Connect to the Download Service</title>
 <ol>
 <li>
 <p>Open Horizon and log in as the "Admin" user. Then click on the <b>Admin</b> panel in Horizon and select <b>Development Platform</b>. Finally, click on <b>Configure Services</b>.</p>
@@ -177,7 +177,7 @@
 <section id="install-database"> <title>Install the Database Service</title>
 <p>This section provides details on installing the Database Service from the Development Platform.</p>
 </section>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="db-prerequisites"> <title>Prerequisites</title>
 </section>
 <section id="availability-zones"> <title>Availability Zones</title>
 <p>To configure the <b>Database Service</b> in a highly available manner, it is necessary to create separate availability zones for the compute hosts in the service. The following steps show how to create three availability zones and assign a compute host to the zone.</p>
@@ -316,7 +316,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 </table>
 <p>In addition to the quota mentioned above, for every database instance that is created by a user, the necessary resources to create that instance will be deducted from the admin tenant quota. The users database service quota will also be affected.</p>
 </section>
-<section id="connect-to-the-download-service"> <title>Connect to the Download Service</title>
+<section id="db-connect-to-the-download-service"> <title>Connect to the Download Service</title>
 <ol>
 <li>
 <p>Open Horizon and login as the "admin" user. Then click on the admin panel in Horizon and select the <b>Development Platform</b> panel under Admin. Then click on the <b>Configure Services</b> sub-panel.</p>
@@ -426,7 +426,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <section id="install-marketplace"> <title>Install the Marketplace Service</title>
 <p>This section provides details on installing the Marketplace service from the Development Platform.</p>
 </section>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="marketplace-quota"> <title>Prerequisites</title>
 <p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack(R) overcloud and the admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <table>
 <tgroup cols="2">
@@ -467,7 +467,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 </tgroup>
 </table>
 </section>
-<section id="connect-to-the-download-service"> <title>Connect to the Download Service</title>
+<section id="marketplace-connect-to-the-download-service"> <title>Connect to the Download Service</title>
 <ol>
 <li>
 <p>Open Horizon and log in as the "admin" user. Then click on the admin panel in Horizon and select the <b>Development Platform</b> Panel under Admin. Then click on the <b>Configure Services</b> sub-panel.</p>

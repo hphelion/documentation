@@ -27,7 +27,7 @@
 <p>
   <xref href="/helion/devplatform/1.1" >See the Helion 1.1 Development Platform version of this page</xref>
 </p>
-  <p>Welcome! The HP Helion Development Platform is a Platform-as-a-Service (PaaS) that helps developers build great cloud-native applications across private and public clouds.  Based on <xref href="http://cloudfoundry.org/index.html" scope="external" format="html" ><tm tmtype="tm">Cloud Foundry</tm></xref> and fully integrated with <xref href="/helion/openstack" >HP Helion OpenStack(R)</xref>(R), the HP Helion Development Platform is open and interoperable, ensuring that developers can focus on building the right app for any environment.</p>
+  <p>Welcome! The HP Helion Development Platform is a Platform-as-a-Service (PaaS) that helps developers build great cloud-native applications across private and public clouds.  Based on <xref href="http://cloudfoundry.org/index.html" scope="external" format="html" ><tm tmtype="tm">Cloud Foundry</tm></xref> and fully integrated with <xref href="/helion/openstack" >HP Helion <tm tmtype="reg">OpenStack</tm></xref>, the HP Helion Development Platform is open and interoperable, ensuring that developers can focus on building the right app for any environment.</p>
 <p>This documentation will help you get up to speed on the  Helion Development Platform as a Developer or Administrator.</p>
 <section id="platform-overview"> <title>Platform Overview</title>
 <p>The <xref href="../../devplatform/1.2/helion/1.2index.dita" >Application Lifecycle Service (ALS)</xref> is a Cloud Foundry-based, managed runtime environment for applications.</p>
