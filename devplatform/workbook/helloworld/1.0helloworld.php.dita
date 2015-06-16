@@ -40,7 +40,7 @@
 </p>
 </section>
 <section id="about-the-application-files"> <title>About the Application Files</title>
-<p>To create a CloudFoundry™ app in PHP, the only mandatory files are the <i>index.php</i> and <i>manifest.yml</i> files.</p>
+  <p>To create a <tm tmtype="tm">Cloud Foundry</tm> app in PHP, the only mandatory files are the <i>index.php</i> and <i>manifest.yml</i> files.</p>
 <p>
 <i>Manifest.yml</i> is a configuration file used to specify settings that would otherwise be specified by a command-line tool. For PHP, only the <b>name</b> and <b>buildpack</b> fields are required. The <b>buildpack</b> field is a URL for the buildpack that supports the necessary language and/or framework.</p>
 <p>The <i>composer.json</i> file is completely optional; however, certain buildpacks may issue a warning if the file is not present.</p>
