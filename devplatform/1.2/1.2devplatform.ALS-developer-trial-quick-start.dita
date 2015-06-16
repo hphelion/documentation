@@ -87,14 +87,11 @@ You can also <xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc
                     </row>
                     <row>
                         <entry/>
-                        <entry align="right"><xref
-                                href="1.2devplatform.ALS-developer-trial-quick-start2.dita"
-                                scope="external"><image href="../../media/NextButton.png"
+                        <entry align="right"><xref href="1.2devplatform.ALS-developer-trial-quick-start2.dita"><image href="../../media/NextButton.png"
                                     id="image_gqc_sgp_js" align="right"/></xref></entry>
                     </row>
                 </tbody>
             </tgroup>
 </table>
-
 </body>
 </topic>
