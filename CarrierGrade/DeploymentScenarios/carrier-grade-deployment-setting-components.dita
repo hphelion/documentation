@@ -277,7 +277,7 @@ Glance service for use. Images can be imported by the admin user(see Setting Up 
 </li>
 <li>
 <p>
-<b>User Data</b> - For the example guest image, user data is used to specify the function to be implemented (Linux kernel bridge, DPDK-accelerated bridge, or router) and the virtual ports or IP subnets to be connected by the switches. For details, see <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-deploy.dita" >Deploying the Bridging Scenario</xref> and <xref href="./CarrierGrade/DeploymentScenarios/carrier-grade-deployment-routing-deploy.dita" >Deploying the Routing Scenario</xref>
+<b>User Data</b> - For the example guest image, user data is used to specify the function to be implemented (Linux kernel bridge, DPDK-accelerated bridge, or router) and the virtual ports or IP subnets to be connected by the switches. For details, see <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-deploy.dita" >Deploying the Bridging Scenario</xref> and <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-routing-deploy.dita" >Deploying the Routing Scenario</xref>
 </p>
 </li>
 <li>

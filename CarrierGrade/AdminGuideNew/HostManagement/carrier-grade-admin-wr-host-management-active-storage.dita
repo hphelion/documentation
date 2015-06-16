@@ -66,7 +66,7 @@ resources to meet the operational requirements of the system.</p>
 <li>
 <p>Place the new or modified controller into service.</p>
 
-<p>To begin using the new disk, <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host.dita#power" >power up the host</xref> and <xref href="./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >unlock</xref> the host.</p>
+<p>To begin using the new disk, <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host.dita#power" >power up the host</xref> and <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >unlock</xref> the host.</p>
 
 <ul>
 <li>For disk replacement, no additional configuration changes are needed. </li>

@@ -18,7 +18,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/DeploymentScenarios/carrier-grade-deployment-running-traffic.md-->
  <!--permalink: /helion/openstack/carrier/deploy/running-traffic/--></p>
-<p>You can exercise the HP Helion OpenStack(R) Carrier Grade components by running test traffic through the test path for the <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-overview.dita" >Bridging Scenario Overview</xref> or <xref href="./CarrierGrade/DeploymentScenarios/carrier-grade-deployment-routing-overview.dita" >Routing Scenario Overview</xref>.</p>
+<p>You can exercise the HP Helion OpenStack(R) Carrier Grade components by running test traffic through the test path for the <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-overview.dita" >Bridging Scenario Overview</xref> or <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-routing-overview.dita" >Routing Scenario Overview</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>

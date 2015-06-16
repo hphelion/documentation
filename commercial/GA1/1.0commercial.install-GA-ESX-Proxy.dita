@@ -210,7 +210,7 @@ gateway = enter the compute proxy gateway
 </codeblock>
 </li>
 <li>
-<p>Use the <xref href="../../commercial/GA1/1.0commerical.services-eon-overview.dita" >HP EON servcie CLI</xref> to deploy the ESX compute proxy. For details refer to the <xref href="./commercial/GA1/1.0commercial.undercloud-eon-cli.dita" >EON CLI</xref> reference.</p>
+<p>Use the <xref href="../../commercial/GA1/1.0commerical.services-eon-overview.dita" >HP EON servcie CLI</xref> to deploy the ESX compute proxy. For details refer to the <xref href="../../commercial/GA1/1.0commercial.undercloud-eon-cli.dita" >EON CLI</xref> reference.</p>
 
 <codeblock>
 <codeph>source /root/stackrc

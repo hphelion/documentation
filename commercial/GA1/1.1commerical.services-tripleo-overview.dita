@@ -28,7 +28,7 @@
 <p>
   <xref href="../../commercial/GA1/1.0commerical.services-tripleo-overview.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
 </p>
-<p>TripleO (OpenStack(R)-On-OpenStack(R) is a service that handles installing, upgrading and operating OpenStack(R) clouds using OpenStack(R) cloud facilities as the foundation. TripleO builds on the <xref href="../../commercial/GA1/1.1commerical.services-compute-overview.dita" >Compute</xref>, <xref href="./commercial/GA1/1.1commerical.services-networking-overview.dita" >Networking</xref> and <xref href="./commercial/GA1/1.1commerical.services-orchestration-overview.dita" >Orchestration</xref> services to automate fleet management for as few as two machines or a full data center.</p>
+<p>TripleO (OpenStack(R)-On-OpenStack(R) is a service that handles installing, upgrading and operating OpenStack(R) clouds using OpenStack(R) cloud facilities as the foundation. TripleO builds on the <xref href="../../commercial/GA1/1.1commerical.services-compute-overview.dita" >Compute</xref>, <xref href="../../commercial/GA1/1.1commerical.services-networking-overview.dita" >Networking</xref> and <xref href="../../commercial/GA1/1.1commerical.services-orchestration-overview.dita" >Orchestration</xref> services to automate fleet management for as few as two machines or a full data center.</p>
 <p>The <xref href="../../commercial/GA1/1.1commercial.install-GA-overview.dita" >HP Helion OpenStack(R) installation</xref> follows the standard TripleO deployment model, creating a seed, an undercloud and an overcloud.</p>
 <section id="key-terms"> <title>Key Terms</title>
 <p>Key terms include:</p>

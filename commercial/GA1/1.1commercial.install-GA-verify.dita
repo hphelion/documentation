@@ -20,7 +20,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.install-GA-verify.md-->
  <!--permalink: /helion/openstack/1.1/install/verify/--></p>
-<p> <xref href="../../commercial/GA1/1.1commercial.install-GA-kvm.dita" >▲ Installation and Configuration for KVM Hypervisor</xref> or  <xref href="./commercial/GA1/1.1commercial.install-GA-esx.dita" >▲ Installation and Configuration for ESX Hypervisor</xref>
+<p> <xref href="../../commercial/GA1/1.1commercial.install-GA-kvm.dita" >▲ Installation and Configuration for KVM Hypervisor</xref> or  <xref href="../../commercial/GA1/1.1commercial.install-GA-esx.dita" >▲ Installation and Configuration for ESX Hypervisor</xref>
 </p>
 <p>
   <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>

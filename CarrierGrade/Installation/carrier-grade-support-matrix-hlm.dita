@@ -21,7 +21,7 @@
  <!--./CarrierGrade/Installation/carrier-grade-support-matrix-hlm.md-->
  <!--permalink: /helion/openstack/carrier/support-matrix/hlm/--></p>
 <p>
-<xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >▲ HP Helion OpenStack(R) Carrier Grade (Beta): Support Matrix</xref> |  <xref href="./CarrierGrade/Installation/carrier-grade-support-matrix-helion.dita" > Support Matrix for HP Helion OpenStack(R) ▶</xref> </p>
+<xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >▲ HP Helion OpenStack(R) Carrier Grade (Beta): Support Matrix</xref> |  <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-helion.dita" > Support Matrix for HP Helion OpenStack(R) ▶</xref> </p>
 <p>To ensure the performance and stability of the HP Lifecycle Management, it is very important to meet the requirements and conform to the following recommendations.</p>
 <section id="software-requirements"> <title>Software Requirements</title>
 <p>The KVM Host is a computer running Ubuntu Server 14.04.2 LTS. The following packages are also required:</p>

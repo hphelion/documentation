@@ -49,7 +49,7 @@
 <p>The high-level process for installing HP Helion OpenStack(R) involves the following:</p>
 <ol>
 <li>
-<p>Review the information in the <xref href="../../commercial/GA1/1.0commercial.install-GA-supportmatrix.dita" >Support Matrix</xref> and <xref href="./commercial/GA1/1.0commercial.technical-overview.ga.dita" >Technical Overview</xref> for details about hardware and software requirements.</p>
+<p>Review the information in the <xref href="../../commercial/GA1/1.0commercial.install-GA-supportmatrix.dita" >Support Matrix</xref> and <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita" >Technical Overview</xref> for details about hardware and software requirements.</p>
 </li>
 <li>
 <p>Verify that the necessary <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >Prerequisites</xref> have been performed.</p>
@@ -60,7 +60,7 @@
 <ul>
 <li>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-kvm.dita" >Install with KVM hypervisor support</xref> and then <xref href="./commercial/GA1/1.0commercial.install-GA-vsa.dita" >configure HP StoreVirtual VSA for Block Storage</xref> or <xref href="./commercial/GA1/1.0commercial.install-3par.dita" >configure HP 3PAR StoreServ Storage</xref>.</p>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-kvm.dita" >Install with KVM hypervisor support</xref> and then <xref href="../../commercial/GA1/1.0commercial.install-GA-vsa.dita" >configure HP StoreVirtual VSA for Block Storage</xref> or <xref href="./commercial/GA1/1.0commercial.install-3par.dita" >configure HP 3PAR StoreServ Storage</xref>.</p>
 </li>
 <li>
 <p>

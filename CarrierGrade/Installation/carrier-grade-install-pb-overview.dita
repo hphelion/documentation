@@ -18,7 +18,7 @@
 <p>This document describes the installation process for HP Helion OpenStack(R) Carrier Grade in a baremetal environment.</p>
 <section id="about-the-installation"> <title>About the installation</title>
 <p>The HP Helion OpenStack(R) Carrier Grade installation installs HP Helion Lifecycle Management, creates a base HP Helion OpenStack(R) cloud, and configures network virtualization through HP Distributed Cloud Networking. Using a separate installation, you integrate Wind River Linux servers into the HP Helion OpenStack(R) Carrier Grade environment.</p>
-<p>After installation, you can interact with the HP Helion OpenStack(R) cloud using the <xref href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita" >Horizon graphical interface</xref> or using the CLIs of the respective <xref href="./CarrierGrade/Overview/carrier-grade.services-overview.dita" >services</xref>.</p>
+<p>After installation, you can interact with the HP Helion OpenStack(R) cloud using the <xref href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita" >Horizon graphical interface</xref> or using the CLIs of the respective <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >services</xref>.</p>
 </section>
 <section id="installation-process"> <title>Installation process</title>
 <p>Use the following process to install HP Helion OpenStack(R) Carrier Grade in a baremetal environment.</p>

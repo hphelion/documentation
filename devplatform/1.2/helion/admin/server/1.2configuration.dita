@@ -154,7 +154,7 @@ may also need to manually <xref type="section" href="#topic31232/server-config-e
 </xref>.</p>
 </section>
 <section id="changing-ip-addresses"> <title>Changing IP Addresses</title>
-<p>The Application Lifecycle Service <i>micro cloud</i> server is initially set up for <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-dhcp" >DHCP</xref> and <xref href="./devplatform/1.2/helion/user/reference/1.2glossary.dita#term-multicast-dns" >multicast DNS</xref>. This is
+<p>The Application Lifecycle Service <i>micro cloud</i> server is initially set up for <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-dhcp" >DHCP</xref> and <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-multicast-dns" >multicast DNS</xref>. This is
 often sufficient for local testing, but in this configuration has only a
 single node and can only be privately routed.</p>
 <p>As you move toward production use of the server, further configuration
@@ -902,7 +902,7 @@ Management Console <xref href="../../../../../devplatform/1.2/helion/admin/conso
     - deb http://apt.newrelic.com/debian/ newrelic non-free 
 </codeph>
 </codeblock>
-<p>Once a repository has been added to the list, <b>the GPG key must also be added</b> to the <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2docker.dita#modifying-or-updating-the-container-image" >Docker base image</xref> on each DEA (or the <xref href="./devplatform/1.2/helion/admin/server/1.2docker.dita#creating-a-docker-registry" >Docker registry</xref> server if configured).</p>
+<p>Once a repository has been added to the list, <b>the GPG key must also be added</b> to the <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2docker.dita#modifying-or-updating-the-container-image" >Docker base image</xref> on each DEA (or the <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2docker.dita#creating-a-docker-registry" >Docker registry</xref> server if configured).</p>
 <p>For example, to trust the GPG for the New Relic repository, add the following line to the <i>Dockerfile</i> for the base image:</p>
 <codeblock>
   <codeph>RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -
