@@ -34,7 +34,9 @@
 <li>Application Lifecycle Service <xref href="../devplatform/1.0devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
 
 <ul>
-<li>You can also quickly setup a cluster in the free and publicly available Helion cloud as part of the <xref href="../devplatform/1.0devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref>: </li>
+<li>You can also quickly set up a cluster in the free and publicly available Helion cloud as part of
+              the <xref href="../devplatform/1.0devplatform.ALS-developer-trial-quick-start.dita"
+                >Quick Start Developer Trial</xref>: </li>
 </ul>
 </li>
 <li>Logon and password credentials for the cluster.</li>
@@ -135,7 +137,7 @@ Create a database and execute a query against it.</p>
 <xref href="http://12factor.net/" scope="external" format="html" >The 12-Factor App</xref>
 </li>
 <li>
-<xref href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html" scope="external" format="html" >Tips from Cloud Foundry™</xref>
+  <xref href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html" scope="external" format="html" >Tips from <tm tmtype="tm">Cloud Foundry</tm>.</xref>
 </li>
 </ul>
 <!-- ===================== horizontal rule ===================== -->
