@@ -22,7 +22,7 @@
   <xref href="../../commercial/GA1/1.0commercial.faq.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
 </p>
 <p>This page answers many common questions about what HP Helion OpenStack(R) is, how it works, and what it can do for your enterprise.</p>
-<section id="about-hp-helion-openstack"> <title>About HP Helion OpenStack(R)</title>
+<section id="about-hp-helion-openstack2"> <title>About HP Helion OpenStack(R)</title>
 <ul>
 <li>
 <xref type="section" href="#topic7707/whatHelion">What is HP Helion OpenStack(R)</xref>
@@ -44,7 +44,7 @@
 </li>
 </ul>
 </section>
-<section id="specifications"> <title>Specifications</title>
+<section id="specifications2"> <title>Specifications</title>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.1commercial.whatsnew.dita" >What's new in this release?</xref>
@@ -82,7 +82,7 @@
 <xref type="section" href="#topic7707/localized">Is this release localized for non-English speaking markets?</xref> </li>
 </ul>
 </section>
-<section id="about-hp-helion-openstack"> <title>About HP Helion OpenStack(R)</title>
+<section id="about-hp-helion-openstack3"> <title>About HP Helion OpenStack(R)</title>
 </section>
 <section id="whatHelion"> <title>What is HP Helion OpenStack(R)</title>
 <p>HP Helion OpenStack(R) is a commercial-grade distribution of <xref href="http://www.openstack.org" scope="external" format="html" >OpenStack(R)</xref>, the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform.</p>
@@ -122,7 +122,7 @@
 <p>HP OpenStack(R) Helion does not support an update utility to update from previous releases. For help with updating, visit the <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref> page and choose your preferred method of contact.</p>
 </section>
 <section id="includeOS"> <title>Does HP Helion OpenStack(R) include an Operating System (OS)?</title>
-<p>Yes. It includes an integrated LinuxÂ(R) host OS hardened and tested for this distribution. All supported hardware and software configurations are laid out in the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>
+<p>Yes. It includes an integrated Linuxï¿½(R) host OS hardened and tested for this distribution. All supported hardware and software configurations are laid out in the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>
 </section>
 <section id="releaseversion"> <title>Which OpenStack(R) release does this distribution include?</title>
 <p>All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#OpenStack(R)" >HP Helion OpenStack(R) services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack(R) Juno</xref>. <xref href="http://www.hpcloud.com/learning-center" scope="external" format="html" >Learn more</xref> about HP's commitment to OpenStack(R) and how we're making it even better.</p>
@@ -130,7 +130,7 @@
 <section id="nonhphardware"> <title>Can HP Helion OpenStack(R) run on non-HP hardware?</title>
 <p>HP Helion OpenStack(R) does not require HP-branded hardware. All supported hardware and software configurations are laid out in the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>
 </section>
-<section id="more-information"> <title>More Information</title>
+<section id="more-information2"> <title>More Information</title>
 </section>
 <section id="MoreInfo"> <title>Where can I find more information?</title>
 <ul>
