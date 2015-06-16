@@ -27,11 +27,11 @@
 <section id="11"> <title>1.1</title>
 </section>
 <section id="changing-the-mbus-ip-core-node"> <title>Changing the MBUS IP (Core node)</title>
-<p>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-migrate" >kato node migrate</xref> or <xref href="./devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-op-static_ip" >kato op static ip</xref> on the Core node, then <xref href="./devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-attach" >kato node attach</xref> on all other cluster nodes to set the new MBUS IP.</p>
+<p>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-migrate" >kato node migrate</xref> or <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-op-static_ip" >kato op static ip</xref> on the Core node, then <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-attach" >kato node attach</xref> on all other cluster nodes to set the new MBUS IP.</p>
 </section>
 <section id="adding-new-relic-repositories"> <title>Adding New Relic Repositories</title>
 <p>The New Relic system monitoring (<b>newrelic-sysmond</b>) and PHP application monitoring (<b>newrelic-php5</b>) packages are no longer pre-installed in the ALS default Docker base container.</p>
-<p>To allow end users to install these packages in the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#requirements" >requirements</xref> section of their application config, admins should <xref href="./devplatform/1.2/helion/admin/server/1.2configuration.dita#allowed-repositories" >add New Relic repository URLS and keys</xref> to the system configuration.</p>
+<p>To allow end users to install these packages in the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#requirements" >requirements</xref> section of their application config, admins should <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#allowed-repositories" >add New Relic repository URLS and keys</xref> to the system configuration.</p>
 </section>
 <section id="php-55-repositories"> <title>PHP 5.5 Repositories</title>
 <p>PHP 5.5 in contained in the default Docker image. This version is more recent than the one available in the standard Ubuntu repositories.</p>
@@ -44,7 +44,7 @@
 </codeblock>
 </section>
 <section id="kato-data-users-exportimport-broken"> <title>Kato data users export/import broken</title>
-<p>The <b>kato data users export</b> and <b>kato data users import</b> commands, which save and load lists of users to and from CSV files, are non-functional in the current release. The <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-import" >kato data import</xref> and <xref href="./devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-export" >kato data export</xref> commands are still available for migrating users from one ALS installation to another.</p>
+<p>The <b>kato data users export</b> and <b>kato data users import</b> commands, which save and load lists of users to and from CSV files, are non-functional in the current release. The <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-import" >kato data import</xref> and <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-export" >kato data export</xref> commands are still available for migrating users from one ALS installation to another.</p>
 </section>
 <section id="kato-node-reset-factory-with-nopasswd"> <title>Kato node reset factory with NOPASSWD</title>
 <p>The kato <b>node reset factory</b> command will not work if <b>NOPASSWD</b> has been set for the admin account in <i>/etc/sudoers</i>. To work around this, revert the change to <i>/etc/sudoers</i> before resetting or start over with a new ALS VM.</p>

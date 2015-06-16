@@ -42,7 +42,7 @@
   <codeph>system oam-modify oam_subnet=subnet/netmask \
 </codeph>
 </codeblock>
-<p>After changing the OAM server configuration, you must lock and unlock the controllers. This process requires a <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host.dita#swact" >swact on the controllers</xref>. Then you must <xref href="./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >lock and unlock the compute nodes</xref> one at a time, ensuring that sufficient resources are available to migrate any running instances.</p>
+<p>After changing the OAM server configuration, you must lock and unlock the controllers. This process requires a <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host.dita#swact" >swact on the controllers</xref>. Then you must <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >lock and unlock the compute nodes</xref> one at a time, ensuring that sufficient resources are available to migrate any running instances.</p>
 <p>
   <xref type="section" href="#topic1462/top"> Return to Top </xref>
 </p>

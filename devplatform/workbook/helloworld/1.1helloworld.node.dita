@@ -139,14 +139,14 @@ Note that <b>name</b> is always required while other fields are optional.</p>
 <section id="key-learnings"> <title>Key Learnings</title>
 <ul>
 <li>
-<p>You interact with and deploy your app using the <xref href="../../../devplatform/helion/user/reference/1.1client-ref.dita" >ALS command line client</xref> or the web-based <xref href="./devplatform/helion/user/console/1.1index.dita" >ALS Management Console</xref>.</p>
+<p>You interact with and deploy your app using the <xref href="../../../devplatform/helion/user/reference/1.1client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../../devplatform/helion/user/console/1.1index.dita" >ALS Management Console</xref>.</p>
 </li>
 <li>
 <p>ALS requires configuration information to create an environment for your app. Configuration information is contained in the <i>manifest.yml</i> file.</p>
 </li>
 </ul>
 <p>
-<xref href="../../../devplatform/1.1devplatform.appdev.dita" >Exit Samples</xref> | <xref href="./devplatform/workbook/messaging/1.1messaging.node.dita" >Previous Sample</xref> | <xref href="./devplatform/workbook/database/1.1database.node.dita" >Next Sample</xref>
+<xref href="../../../devplatform/1.1devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../../../devplatform/workbook/messaging/1.1messaging.node.dita" >Previous Sample</xref> | <xref href="../../../devplatform/workbook/database/1.1database.node.dita" >Next Sample</xref>
 </p>
 </section>
 </body>

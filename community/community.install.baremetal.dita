@@ -200,7 +200,7 @@
 <p>Filesystem checking on reboot is disabled by default for the seed, undercloud and overcloud nodes. We recommend periodically manually running fsck to verify filesystem integrity.</p>
 </li>
 <li>
-<p>In the event you have trouble with the installation, review the <xref href="../community/community.troubleshoot.dita" >Issues and troubleshooting</xref> and <xref href="./community/community.faq.dita" >FAQ</xref> pages.</p>
+<p>In the event you have trouble with the installation, review the <xref href="../community/community.troubleshoot.dita" >Issues and troubleshooting</xref> and <xref href="../community/community.faq.dita" >FAQ</xref> pages.</p>
 </li>
 </ul>
 </section>

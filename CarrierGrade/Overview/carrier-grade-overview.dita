@@ -13,7 +13,7 @@
  <!--./CarrierGrade/Overview/carrier-grade-overview.md-->
  <!--permalink: /helion/openstack/carrier/overview/--></p>
 <p>
-<xref href="../../CarrierGrade/carrier-grade-index.dita" >▲ Documentation Home</xref> | <xref href="./CarrierGrade/Overview/carrier-grade-overview-hlm.dita" > Helion Lifecycle Management (HLM) Overview ▶</xref>
+<xref href="../../CarrierGrade/carrier-grade-index.dita" >▲ Documentation Home</xref> | <xref href="../../CarrierGrade/Overview/carrier-grade-overview-hlm.dita" > Helion Lifecycle Management (HLM) Overview ▶</xref>
 </p>
 <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
 <p>HP Helion OpenStack(R) Carrier Grade integrates Wind River Linux with HP Helion OpenStack(R) to enable carrier grade network functions virtualization (NFV) capabilities.</p>

@@ -55,8 +55,8 @@ To create interfaces, see <xref type="section" href="#topic3899/config">Configur
 </section>
 <section id="config"> <title>Configuring Virtual Routers</title>
 <p>You can create router interfaces to tenant networks using the web administration interface or the CLI.</p>
-<p>Before you can create interfaces to tenant networks, you must <xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.create.dita" >create the tenant networks</xref> and <xref href="./CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.subnet.dita" >associated subnets</xref>.</p>
-<p>For more information about tenant networks and subnets, see <xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-tenant.dita" >Planning the Tenant Management Networks</xref> and <xref href="./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-subnets.dita" >Managed and Unmanaged Subnets</xref>.</p>
+<p>Before you can create interfaces to tenant networks, you must <xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.create.dita" >create the tenant networks</xref> and <xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.subnet.dita" >associated subnets</xref>.</p>
+<p>For more information about tenant networks and subnets, see <xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-tenant.dita" >Planning the Tenant Management Networks</xref> and <xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-subnets.dita" >Managed and Unmanaged Subnets</xref>.</p>
 </section>
 <section id="admin"> <title>Administering Virtual Routers</title>
 <p>Users with administrative privileges can review and edit router information for all tenants.</p>

@@ -121,7 +121,7 @@ applications:
 <li>You can deploy your app using either the Helion CLI or the Eclipse <xref href="../../../devplatform/1.0devplatform.eclipse.dita" >plugin</xref>.</li>
 </ol>
 <p>
-<xref href="../../../devplatform/1.0devplatform.appdev.dita" >Exit Samples</xref> | <xref href="./devplatform/workbook/messaging/1.0messaging.php.dita" >Previous Sample</xref> | <xref href="./devplatform/workbook/database/1.0database.php.dita" >Next Sample</xref>
+<xref href="../../../devplatform/1.0devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../.././devplatform/workbook/messaging/1.0messaging.php.dita" >Previous Sample</xref> | <xref href="../../../devplatform/workbook/database/1.0database.php.dita" >Next Sample</xref>
 </p>
 </section>
 </body>

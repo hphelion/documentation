@@ -197,7 +197,7 @@ PS HPCS:\Security\SecurityGroups\111&gt;  ls
 <b>Note</b>: You have to use the security group ID, rather than the security group name (as set in the previous example).  To determine the security group ID, use the <codeph>ls</codeph> command on the SecurityGroups directory.</p>
 <p>
 <b>Note for Windows Images</b>: A security group requires port 3389 to connect to a Windows instance via the remote desktop protocol (RDP). Windows CLI automatically creates security group <codeph>rdp_group</codeph> with port 3389 open when it detects a Windows image type during creation, and automatically applies the <codeph>rdp_group</codeph> security group to that Windows instance. Security Group <codeph>rdp_group</codeph> is always added as a security group to Windows instances even when you specify other security groups as arguments with the <codeph>New-Server</codeph> cmdlet.</p>
-<p>For a full description of the options available with the <b>Add-Rule</b> command, please see the <xref href="../publiccloud/cli.windows.2.reference.dita#Add-Rule" >Add-Rule</xref> section of the <xref href="./publiccloud/cli.windows.2.reference.dita" >Windows CLI Reference</xref> page.</p>
+<p>For a full description of the options available with the <b>Add-Rule</b> command, please see the <xref href="../publiccloud/cli.windows.2.reference.dita#Add-Rule" >Add-Rule</xref> section of the <xref href="../publiccloud/cli.windows.2.reference.dita" >Windows CLI Reference</xref> page.</p>
 <p>To delete an existing security group rule:</p>
 <codeblock>
   <codeph>PS HPCS:\\&gt; Remove-SecurityGroup -id "3244"
@@ -216,7 +216,7 @@ PS HPCS:\Security\SecurityGroups\111&gt;  ls
 <b>Note for Windows Images</b>: When the Windows CLI detects you are creating a Windows server, it looks for the keypair <i>.pem</i> file in a specific location. The default location for the .pem file is <codeph>C:\Users\*username*\Documents\HP</codeph>. When the new-server operation has completed, the output is the Administrator password to be used with an RDP client. Please make note of it. 
 <!-- Hiding; referenced file missing
 For assistance on connecting to a Windows Instance, see [How to Access a Windows Instance via the Remote Desktop](/compute/using#WindowsRDP) or use the [quick connect feature](#QuickConnect). --></p>
-<p>For a full description of the options available with the <b>New-Server</b> command, please see the <xref href="../publiccloud/cli.windows.2.reference.dita#New-Server" >New-Server</xref> section of the <xref href="./publiccloud/cli.windows.2.reference.dita" >Windows CLI Reference</xref> page.</p>
+<p>For a full description of the options available with the <b>New-Server</b> command, please see the <xref href="../publiccloud/cli.windows.2.reference.dita#New-Server" >New-Server</xref> section of the <xref href="../publiccloud/cli.windows.2.reference.dita" >Windows CLI Reference</xref> page.</p>
 <p>To list the currently-available servers:</p>
 <codeblock>
   <codeph>PS HPCS:\\&gt; cd Servers
@@ -360,7 +360,7 @@ Id       Instance Id   Fixed IP        IP
 </codeph>
 </codeblock>
 <p>Where <codeph>-ip</codeph> represents the ID of the allocated IP address.</p>
-<p>For a complete list of all the available Compute commands, please see the <xref href="../publiccloud/cli.windows.2.reference.dita" >CLI reference page</xref> and <xref href="./publiccloud/cli.windows.2.help.dita" >Getting Help</xref>.</p>
+<p>For a complete list of all the available Compute commands, please see the <xref href="../publiccloud/cli.windows.2.reference.dita" >CLI reference page</xref> and <xref href="../publiccloud/cli.windows.2.help.dita" >Getting Help</xref>.</p>
 </section>
 </body>
 </topic>

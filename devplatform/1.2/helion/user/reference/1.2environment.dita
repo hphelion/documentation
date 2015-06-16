@@ -106,7 +106,7 @@ For example:</p>
 </section>
 <section id="helion-app-env"> <title>HELION_APP_ENV</title>
 <p>Note: Internal use, subject to change.
-Contains a list of all environment variables set with <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-env-add" >env-add</xref> or through the <xref href="./devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#env" >manifest.yml</xref> file.</p>
+Contains a list of all environment variables set with <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-env-add" >env-add</xref> or through the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#env" >manifest.yml</xref> file.</p>
 </section>
 <section id="helion-app-name"> <title>HELION_APP_NAME</title>
 <p>Contains the application name as specified during application push (or in <i>manifest.yml</i>). Available during staging as well as in the application instance.</p>
