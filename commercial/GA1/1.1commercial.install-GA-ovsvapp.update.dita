@@ -90,7 +90,7 @@ Aborting.
   <xref type="section" href="#topic4992/top"> Return to Top </xref>
 </p>
 </section>
-<section id="update"> <title>Update OVSvApp from version 1.1 to version 1.1.1</title>
+<section id="update1"> <title>Update OVSvApp from version 1.1 to version 1.1.1</title>
 <p>Use the following steps from the seed cloud host to update the OVSvApp.</p>
 <p>To update the OVSvApp:</p>
 <ol>
