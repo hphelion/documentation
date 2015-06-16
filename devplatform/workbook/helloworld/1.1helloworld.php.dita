@@ -125,10 +125,10 @@ applications:
 <section id="key-learnings"> <title>Key Learnings</title>
 <ol>
 <li>ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the <i>manifest.yml</i> file.</li>
-<li>You interact with and deploy your app using the <xref href="../../../devplatform/helion/user/reference/1.1client-ref.dita" >ALS command line client</xref> or the web-based <xref href="./devplatform/helion/user/console/1.1index.dita" >ALS Management Console</xref>.</li>
+<li>You interact with and deploy your app using the <xref href="../../../devplatform/helion/user/reference/1.1client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../../devplatform/helion/user/console/1.1index.dita" >ALS Management Console</xref>.</li>
 </ol>
 <p>
-<xref href="../../../devplatform/1.1devplatform.appdev.dita" >Exit Samples</xref> | <xref href="./devplatform/workbook/messaging/1.1messaging.php.dita" >Previous Sample</xref> | <xref href="./devplatform/workbook/database/1.1database.php.dita" >Next Sample</xref>
+<xref href="../../../devplatform/1.1devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../../../devplatform/workbook/messaging/1.1messaging.php.dita" >Previous Sample</xref> | <xref href="../../../devplatform/workbook/database/1.1database.php.dita" >Next Sample</xref>
 </p>
 </section>
 </body>

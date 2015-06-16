@@ -12,7 +12,7 @@
 <!--UNDER REVISION-->
  <!--./UseCases/TasksforAdmins/Domains/1.1commercial.dashboard.snapshot.public.md-->
  <!--permalink: /helion/commercial/1.1/dashboard/managing/snapshots/public/--></p>
-<p>When you <xref href="../../../UseCases/TasksforUsers/Images/1.1commercial.dashboard.images.create.dita" >create a image</xref> or a <xref href="./UseCases/TasksforAdmins/Images/1.1commercial.dashboard.snapshot.public.dita" >snapshot image</xref>, as an admin, you can determine if the snapshot is available only in the current project or to all projects in the domain.</p>
+<p>When you <xref href="../../../UseCases/TasksforUsers/Images/1.1commercial.dashboard.images.create.dita" >create a image</xref> or a <xref href="../../../UseCases/TasksforAdmins/Images/1.1commercial.dashboard.snapshot.public.dita" >snapshot image</xref>, as an admin, you can determine if the snapshot is available only in the current project or to all projects in the domain.</p>
 <section id="make-an-image-public"> <title>Make an image public</title>
 <ol>
 <li>

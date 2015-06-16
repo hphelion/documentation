@@ -987,7 +987,7 @@ Management Console <xref href="../../../../devplatform/helion/admin/console/1.0c
     - deb http://apt.newrelic.com/debian/ newrelic non-free 
 </codeph>
 </codeblock>
-<p>+Once a repository has been added to the list, <b>the GPG key must also be added</b> to the <xref href="../../../../devplatform/helion/admin/server/1.0docker.dita#modifying-or-updating-the-container-image" >Docker base image</xref> on each DEA (or the <xref href="./devplatform/helion/admin/server/1.0docker.dita#creating-a-docker-registry" >Docker registry</xref> server if configured).</p>
+<p>+Once a repository has been added to the list, <b>the GPG key must also be added</b> to the <xref href="../../../../devplatform/helion/admin/server/1.0docker.dita#modifying-or-updating-the-container-image" >Docker base image</xref> on each DEA (or the <xref href="../../../../devplatform/helion/admin/server/1.0docker.dita#creating-a-docker-registry" >Docker registry</xref> server if configured).</p>
 <p>For example, to trust the GPG for the New Relic repository, add the following line to the <i>Dockerfile</i> for the base image:</p>
 <codeblock>
   <codeph>RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -
