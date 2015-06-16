@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en">
-	<title>HP Converged Cloud</title>
+	<title>HP Helion</title>
 	<topicmeta>
 		<copyright>
 			<copyryear year="2015"/>
-			<copyrholder>HP Converged Cloud</copyrholder>
+			<copyrholder>HP Helion</copyrholder>
 		</copyright>
 		<prodinfo>
-			<prodname>HP Converged Cloud</prodname>
+			<prodname>HP Helion</prodname>
 			<vrmlist>
 				<vrm version="4.1.0"/>
 			</vrmlist>
