@@ -602,7 +602,7 @@ cluster node</p>
 [<i>\&lt;param&gt;...</i>]</p>
 <p>Add a new log drain.</p>
 </section>
-<section id="examples"> <title>Examples:</title>
+<section id="drain-examples"> <title>Examples:</title>
 <ul>
 <li>
 <p>Add a drain to receive system logs</p>
@@ -681,7 +681,7 @@ systail, event, apptail (comma-separated, no spaces)</p>
 <b>log</b> <b>stream</b> [<b>options</b>] <i>\&lt;key&gt;...</i>
 </p>
 </section>
-<section id="examples"> <title>Examples:</title>
+<section id="log-examples"> <title>Examples:</title>
 <ul>
 <li>
 <p>stream cloud events</p>
