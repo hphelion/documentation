@@ -56,7 +56,7 @@ instructions further down. But before you push the button, ensure that you have 
 <li>Click <b>Save</b>.</li>
 </ol>
 <p>
-<b>NOTE:</b> If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to <xref href="../../../devplatform/1.1devplatform.using-the-messaging-service.dita" >create and manage a RabbitMQ cluster</xref> in the Messaging Service, and link that instance to your <xref href="./devplatform/1.1devplatform.using-messaging-service-with-ALS.dita" >ALS cluster</xref>.</p>
+<b>NOTE:</b> If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to <xref href="../../../devplatform/1.1devplatform.using-the-messaging-service.dita" >create and manage a RabbitMQ cluster</xref> in the Messaging Service, and link that instance to your <xref href="../../../devplatform/1.1devplatform.using-messaging-service-with-ALS.dita" >ALS cluster</xref>.</p>
 </section>
 <section id="download-the-application-files"> <title>Download the Application Files</title>
 <p>
@@ -166,10 +166,10 @@ type: rabbitmq3
 <li>You need to provide configuration information so that ALS can bind to the RabbitMQ service. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>You will need to retrieve connection information for RabbitMQ from the application's environment variables.</li>
-<li>You interact with and deploy your app using the <xref href="../../../devplatform/helion/user/reference/1.1client-ref.dita" >ALS command line client</xref> or the web-based <xref href="./devplatform/helion/user/console/1.1index.dita" >ALS Management Console</xref>.</li>
+<li>You interact with and deploy your app using the <xref href="../../../devplatform/helion/user/reference/1.1client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../../devplatform/helion/user/console/1.1index.dita" >ALS Management Console</xref>.</li>
 </ul>
 <p>
-<xref href="../../../devplatform/1.1devplatform.appdev.dita" >Exit Samples</xref> | <xref href="./devplatform/workbook/database/1.1database.php.dita" >Previous Sample</xref> | <xref href="./devplatform/workbook/helloworld/1.1helloworld.php.dita" >Next Sample</xref>
+<xref href="../../../devplatform/1.1devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../../../devplatform/workbook/database/1.1database.php.dita" >Previous Sample</xref> | <xref href="../../../devplatform/workbook/helloworld/1.1helloworld.php.dita" >Next Sample</xref>
 </p>
 </section>
 </body>

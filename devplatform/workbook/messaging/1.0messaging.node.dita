@@ -148,7 +148,7 @@ applications:
 <li>You interact with and deploy your app using the Helion CLI or the <xref href="../../../devplatform/1.0devplatform.eclipse.dita" >Eclipse deployment plugin</xref>.</li>
 </ol>
 <p>
-<xref href="../../../devplatform/1.0devplatform.appdev.dita" >Exit Samples</xref> | <xref href="./devplatform/workbook/database/1.0database.node.dita" >Previous Sample</xref> | <xref href="./devplatform/workbook/helloworld/1.0helloworld.node.dita" >Next Sample</xref>
+<xref href="../../../devplatform/1.0devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../../../devplatform/workbook/database/1.0database.node.dita" >Previous Sample</xref> | <xref href="../../../devplatform/workbook/helloworld/1.0helloworld.node.dita" >Next Sample</xref>
 </p>
 </section>
 </body>

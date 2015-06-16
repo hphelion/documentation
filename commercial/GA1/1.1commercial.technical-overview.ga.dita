@@ -259,7 +259,7 @@ Users can create a bootable volume and use that to boot a VM.
 </p>
 </section>
 <section id="hardware-req"> <title>Hardware requirement</title>
-<p>For more information of Hardware configuration see <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita" >Hardware configuration</xref> and <xref href="./commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>
+<p>For more information of Hardware configuration see <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita" >Hardware configuration</xref> and <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>
 <p>
   <xref type="section" href="#topic24808/top"> Return to Top </xref>
 </p>
