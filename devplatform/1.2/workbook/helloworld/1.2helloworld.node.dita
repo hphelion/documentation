@@ -37,7 +37,7 @@
 </p>
 </section>
 <section id="about-the-application-files"> <title>About the Application Files</title>
-<p>To create a CloudFoundry™ app in Node.js, the only mandatory files are:</p>
+  <p>To create a <tm tmtype="tm">Cloud Foundry</tm> app in Node.js, the only mandatory files are:</p>
 <ul>
 <li>The main .js file</li>
 <li>manifest.yml</li>

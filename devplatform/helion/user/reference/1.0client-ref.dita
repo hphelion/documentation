@@ -5862,9 +5862,9 @@ specific command.</p>
 </tgroup>
 </table>
 </section>
-<section id="management"> <title>
-  <b>Management</b>
-</title>
+<section id="service-management"> <title>
+                <b>Service Management</b>
+            </title>
 </section>
 <section id="helion-bind-service-service-application"> <title>helion bind-service *\&lt;service* *\&lt;application*</title>
 <p>Bind the named service to the specified application.</p>

@@ -862,7 +862,7 @@ rbd children &lt;glance pool name&gt;/&lt;glance-image id&gt;@&lt;snap name&gt;
 <p>To create a volume see <xref href="http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html" scope="external" format="html" >OpenStack(R) User Guide</xref>
 </p>
 </section>
-<section id="using-the-cli"> <title>Using the CLI</title>
+<section id="using-the-cli3"> <title>Using the CLI</title>
 <p>To create a volume using the command-line interface (CLI), from the Overcloud controller node running the Ceph client, run the following command:</p>
 <codeblock>
   <codeph>Cinder create -display-name &lt;name of the volume&gt; &lt;volume size&gt;
@@ -910,11 +910,11 @@ rbd children &lt;glance pool name&gt;/&lt;glance-image id&gt;@&lt;snap name&gt;
 <p>
 <b>Note</b>: For Cinder backup, the Cinder volume to be  backed up must be in a detached state. The volume should not be attached to any of the instances or Virtual Machines.</p>
 </section>
-<section id="using-the-horizon-overcloud-dashboard"> <title>Using the Horizon overcloud dashboard</title>
+<section id="using-the-horizon-overcloud-dashboard2"> <title>Using the Horizon overcloud dashboard</title>
 <p>Create a volume backup  see <xref href="http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html" scope="external" format="html" >OpenStack(R) User Guide</xref>
 </p>
 </section>
-<section id="using-the-cli"> <title>Using the CLI</title>
+<section id="using-the-cli2"> <title>Using the CLI</title>
 <ol>
 <li>Login to the Overcloud using the <codeph>controllermanagement</codeph> command.</li>
 <li>
@@ -1440,7 +1440,7 @@ tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
 <li>To function properly, keep the original volume, whose snapshot was taken. If the original volume is deleted then the snapshot becomes unusable.</li>
 </ul>
 </section>
-<section id="using-the-horizon-overcloud-dashboard"> <title>Using the Horizon Overcloud dashboard</title>
+<section id="using-the-horizon-overcloud-dashboard3"> <title>Using the Horizon Overcloud dashboard</title>
 <p>To create a snapshot from volume, see <xref href="http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html" scope="external" format="html" >OpenStack(R) User Guide</xref>
 </p>
 </section>
@@ -1495,7 +1495,7 @@ tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
 <p>
 <b>Note</b>: For Cinder backups, the Cinder volume to be backed up must be in a detached state. The volume should not be attached to any of the instances or Virtual Machines.</p>
 </section>
-<section id="using-the-horizon-overcloud-dashboard"> <title>Using the Horizon Overcloud dashboard</title>
+<section id="using-the-horizon-overcloud-dashboard4"> <title>Using the Horizon Overcloud dashboard</title>
 <ol>
 <li>Log into the Overcloud Horizon.</li>
 <li>From the left panel, click the <b>Projects</b> tab and then <b>Instances</b> to view the list of  instances.</li>

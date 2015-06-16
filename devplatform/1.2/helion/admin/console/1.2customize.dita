@@ -154,7 +154,7 @@ EJS templates on the settings object (e.g.
 <li>eula_template: EulaTemplate,</li>
 <li>welcome_template: WelcomeTemplate,</li>
 <li>external_docs_url:
-'<xref href="../.." >http://docs.helion.com/3.0/</xref>',</li>
+'http://docs.hpcloud.com',</li>
 <li>use_local_docs: "false"</li>
 </ul>
 </section>

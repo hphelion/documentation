@@ -360,7 +360,7 @@ instructions.</p>
 <li>Hard-coded paths using <i>/app</i> or <i>/app/app</i>. Use paths relative to <i>\$HELION_APP_ROOT</i> instead.</li>
 </ul>
 </section>
-<section id="exporting-the-server-data"> <title>Exporting the server data</title>
+<section id="DEA-exporting-the-server-data"> <title>Exporting the server data</title>
 <p>Data export is done with the <i>kato data export</i> command. The command can export:</p>
 <ul>
 <li>Internal data (users, groups, quotas, settings, etc.)</li>

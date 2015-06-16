@@ -36,9 +36,8 @@ users.</p>
 <li>
 <xref href="../../../../devplatform/1.2/helion/user/console/1.2index.dita#management-console" >Management Console</xref>
 </li>
-<li>
-<xref href="console/app-store/" >Sample Applications</xref>
-</li>
+<li><xref href="console/1.2app-store.dita" scope="external"> Sample Applications</xref>
+        </li>
 </ul>
 </section>
 <section id="server-configuration"> <title>Advanced/Manual Server Configuration</title>
