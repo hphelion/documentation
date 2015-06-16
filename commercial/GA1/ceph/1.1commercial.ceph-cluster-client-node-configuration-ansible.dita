@@ -910,11 +910,11 @@ rbd children &lt;glance pool name&gt;/&lt;glance-image id&gt;@&lt;snap name&gt;
 <p>
 <b>Note</b>: For Cinder backup, the Cinder volume to be  backed up must be in a detached state. The volume should not be attached to any of the instances or Virtual Machines.</p>
 </section>
-<section id="using-the-horizon-overcloud-dashboard"> <title>Using the Horizon overcloud dashboard</title>
+<section id="using-the-horizon-overcloud-dashboard2"> <title>Using the Horizon overcloud dashboard</title>
 <p>Create a volume backup  see <xref href="http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html" scope="external" format="html" >OpenStack(R) User Guide</xref>
 </p>
 </section>
-<section id="using-the-cli"> <title>Using the CLI</title>
+<section id="using-the-cli2"> <title>Using the CLI</title>
 <ol>
 <li>Login to the Overcloud using the <codeph>controllermanagement</codeph> command.</li>
 <li>
@@ -925,7 +925,14 @@ rbd children &lt;glance pool name&gt;/&lt;glance-image id&gt;@&lt;snap name&gt;
 </codeph>
 </codeblock>
 
-<p>where:<!--A BR tag was used here in the original source.--><codeph>volume</codeph> is then name or ID of the volume to backup.<!--A BR tag was used here in the original source.--><codeph>container &lt;container&gt;</codeph> is the optional Backup container name. (Default=None) <!--A BR tag was used here in the original source.--><codeph>display-name &lt;display-name&gt;</codeph> is the optional backup name. (Default=None) <!--A BR tag was used here in the original source.--><codeph>display-description &lt;display-description&gt;</codeph> is the optional backup description.  (Default=None) </p>
+<p>where:<codeph>volume</codeph> is then name or ID of the volume to
+              backup.<!--A BR tag was used here in the original source.--><codeph>container
+              &lt;container&gt;</codeph> is the optional Backup container name. (Default=None)
+              <!--A BR tag was used here in the original source.--><codeph>display-name
+              &lt;display-name&gt;</codeph> is the optional backup name. (Default=None)
+              <!--A BR tag was used here in the original source.--><codeph>display-description
+              &lt;display-description&gt;</codeph> is the optional backup description.
+            (Default=None) </p>
 
 <p>The following example shows how to create a backup with the name of <b>deb7rawbackup</b> for an existing Cinder volume with the ID <b>0a2c6c62-627f-42d3-9b66-e4ba56db0ba7</b>:</p>
 
@@ -1440,11 +1447,11 @@ tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
 <li>To function properly, keep the original volume, whose snapshot was taken. If the original volume is deleted then the snapshot becomes unusable.</li>
 </ul>
 </section>
-<section id="using-the-horizon-overcloud-dashboard"> <title>Using the Horizon Overcloud dashboard</title>
+<section id="using-the-horizon-overcloud-dashboard3"> <title>Using the Horizon Overcloud dashboard</title>
 <p>To create a snapshot from volume, see <xref href="http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html" scope="external" format="html" >OpenStack(R) User Guide</xref>
 </p>
 </section>
-<section id="using-the-cli"> <title>Using the CLI</title>
+<section id="using-the-cli3"> <title>Using the CLI</title>
 <p>The following steps show how to create a snapshot using the CLI.</p>
 <ol>
 <li>
@@ -1495,7 +1502,7 @@ tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
 <p>
 <b>Note</b>: For Cinder backups, the Cinder volume to be backed up must be in a detached state. The volume should not be attached to any of the instances or Virtual Machines.</p>
 </section>
-<section id="using-the-horizon-overcloud-dashboard"> <title>Using the Horizon Overcloud dashboard</title>
+<section id="using-the-horizon-overcloud-dashboard4"> <title>Using the Horizon Overcloud dashboard</title>
 <ol>
 <li>Log into the Overcloud Horizon.</li>
 <li>From the left panel, click the <b>Projects</b> tab and then <b>Instances</b> to view the list of  instances.</li>

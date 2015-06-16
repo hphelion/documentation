@@ -69,7 +69,7 @@
 <li>Ceph</li>
 </ul>
 </section>
-<section id="OpenStack(R)"> <title>OpenStack(R) Services</title>
+<section id="OpenStack"> <title>OpenStack(R) Services</title>
 <p>The following services are foundation technologies used by the HP Helion OpenStack(R) Based on OpenStack(R) technology, HP Helion OpenStack(R) comprises of a set of services and architecture that defines a data-center-level operating system (DCOS).</p>
 <p>For information on enabling and maintaining each of these OpenStack(R) services, see <xref href="../../commercial/GA1/1.1commercial.network-administrator-notes.dita" >Network Administrator Notes</xref>.</p>
 <p>

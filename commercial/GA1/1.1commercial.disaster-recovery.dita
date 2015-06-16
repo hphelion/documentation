@@ -410,67 +410,67 @@ i-000015b9 at3-ui02 running nectarkey (376, np-rcc54) 0 m1.xxlarge 2012-06-19T00
 </section>
 <section id="seed"> <title>Seed</title>
 </section>
-<section id="shutdown"> <title>Shutdown</title>
+<section id="shutdown2"> <title>Shutdown</title>
 <p>Normally shut down the Seed VM and after that the KVM Host, to execute any necessary maintenance in the server.</p>
 </section>
-<section id="power-on"> <title>Power On</title>
+<section id="power-on1"> <title>Power On</title>
 <p>Normally power on the KVM Host and after that the Seed VM.</p>
 </section>
-<section id="considerations"> <title>Considerations</title>
+<section id="considerations2"> <title>Considerations</title>
 <p>During the time the Seed VM will also be shut down, the undercloud servers will not have access to the pxe-boot server. Do not shut down/reboot any of the servers during this period. Users will not be able to SSH to the undercloud and overcloud servers. This will not affect the overcloud usage.</p>
 </section>
 <section id="undercloud"> <title>UnderCloud</title>
 </section>
-<section id="shutdown"> <title>Shutdown</title>
+<section id="shutdown3"> <title>Shutdown</title>
 <p>Normally shut down the server, using the <codeph>nova stop</codeph> option in seed or manually access the OS and shut down the machine.</p>
 </section>
-<section id="power-on"> <title>Power On</title>
+<section id="power-on2"> <title>Power On</title>
 <p>Normally power on the server using <codeph>nova start</codeph> option in the seed or manually start the server using iLO.</p>
 </section>
-<section id="considerations"> <title>Considerations</title>
+<section id="considerations3"> <title>Considerations</title>
 <p>During the time that the Seed VM is shut down, the overcloud servers will not have access to the pxe-boot server. Do not shut down/reboot any of the servers during this period. This will not affect the overcloud usage.</p>
 </section>
 <section id="overcloud-controllers"> <title>Overcloud Controllers</title>
 </section>
-<section id="shutdown"> <title>Shutdown</title>
+<section id="shutdown4"> <title>Shutdown</title>
 <p>Normally shut down the server, using the <codeph>nova stop</codeph> option in the seed/undercloud or manually access the OS and shut down the machine.</p>
 </section>
-<section id="power-on"> <title>Power On</title>
+<section id="power-on3"> <title>Power On</title>
 <p>Normally power on the server using <codeph>nova start</codeph> option in the seed/undercloud or manually start the server using iLO.</p>
 </section>
-<section id="considerations"> <title>Considerations</title>
+<section id="considerations4"> <title>Considerations</title>
 <p>HP recommends that you do not shut down more than one controller at the same time or the High Availability functionality will not work. If only one server is shut down, the solution should not have any downtime. When the management controller is shut down, access to the VSA will be temporarily disabled, so the user can follow the steps to start cinder-volume in one of the other controller during the downtime period.</p>
 </section>
 <section id="overcloud-compute-nodes"> <title>Overcloud Compute Nodes</title>
 </section>
-<section id="shutdown"> <title>Shutdown</title>
+<section id="shutdown5"> <title>Shutdown</title>
 <p>Normally shut down the server, using the <codeph>nova stop</codeph> option in seed/undercloud or manually access the OS and shut down the machine.</p>
 </section>
-<section id="power-on"> <title>Power On</title>
+<section id="power-on4"> <title>Power On</title>
 <p>Normally power on the server using <codeph>nova start</codeph> option in the seed/undercloud or manually start the server using iLO. After power on process ends, the VM`s hosted in the node will be automatically started.</p>
 <p>Considerations</p>
 <p>To reduce the down time of the instances located in the compute node HP suggests migrating the instances to another server before shutting down the node. Is possible to shut down N compute nodes at the same without problem, just remember that capacity will be reduced.</p>
 </section>
 <section id="overcloud-swift"> <title>Overcloud Swift</title>
 </section>
-<section id="shutdown"> <title>Shutdown</title>
+<section id="shutdown6"> <title>Shutdown</title>
 <p>Normally shut down the server, using the <codeph>nova stop</codeph> option in seed/undercloud or manually access the OS and shut down the machine.</p>
 </section>
-<section id="power-on"> <title>Power On</title>
+<section id="power-on6"> <title>Power On</title>
 <p>Normally power on the server using <codeph>nova start</codeph> option in the seed/undercloud or manually start the server using iLO.</p>
 </section>
-<section id="considerations"> <title>Considerations</title>
+<section id="considerations5"> <title>Considerations</title>
 <p>HP recommends that you do not shut down both Swift servers at the same time or the High Availability functionality will not work. If only one server is shut down, the solution should not have any downtime.</p>
 </section>
 <section id="overcloud-vsa"> <title>Overcloud VSA</title>
 </section>
-<section id="shutdown"> <title>Shutdown</title>
+<section id="shutdown7"> <title>Shutdown</title>
 <p>Normally shut down the server, using the <codeph>nova stop</codeph> option in seed/undercloud or manually access the OS and shut down the machine.</p>
 </section>
-<section id="power-on"> <title>Power On</title>
+<section id="power-on5"> <title>Power On</title>
 <p>Normally power on the server using <codeph>nova start</codeph> option in the seed/undercloud or manually start the server using iLO.</p>
 </section>
-<section id="considerations"> <title>Considerations</title>
+<section id="considerations6"> <title>Considerations</title>
 <p>HP recommends that you do not shut down both VSA servers at the same time or the High Availability functionality, depending on your configuration, may not work. In the case of only one VSA server, if the server is shut down, the solution will not have the ability to create/manage/access the volumes created during the downtime.</p>
 <ol>
 <li>
