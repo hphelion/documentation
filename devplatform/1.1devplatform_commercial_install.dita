@@ -36,9 +36,9 @@
 	<li><xref type="section" href="#topic24073_1/prerequisites">Prerequisites</xref></li>
 	<li><xref type="section" href="#topic24073_1/installing-the-hp-helion-development-platform">Installing the HP Helion Development Platform</xref></li>
 	<li><xref type="section" href="#topic24073_1/installing-messaging">Installing Messaging</xref></li>
-	<li><xref type="section" href="#topic24073/install-als">Install the Application Lifecycle Service</xref></li>
-	<li><xref type="section" href="#topic24073/install-database">Install the Database Service</xref></li>
-	<li><xref type="section" href="#topic24073/install-marketplace">Install the Marketplace Service</xref></li>
+	<li><xref type="section" href="#topic24073_1/install-als">Install the Application Lifecycle Service</xref></li>
+	<li><xref type="section" href="#topic24073_1/install-database">Install the Database Service</xref></li>
+	<li><xref type="section" href="#topic24073_1/install-marketplace">Install the Marketplace Service</xref></li>
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
 
