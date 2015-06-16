@@ -56,7 +56,7 @@
 <li>
 <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-administration.dita#command-stacks" >helion stacks</xref>: List the supported stacks of the target.</li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-administration.dita#command-targets" >helion targets</xref>, <xref href="./devplatform/1.2/helion/user/reference/1.2client-ref-administration.dita#command-tokens" >helion tokens</xref>: List the available targets and their authorization tokens, if any.</li>
+<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-administration.dita#command-targets" >helion targets</xref>, <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-administration.dita#command-tokens" >helion tokens</xref>: List the available targets and their authorization tokens, if any.</li>
 <li>
 <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-administration.dita#command-usage" >helion usage</xref>: Show the current memory allocation and usage of the specified or current space.</li>
 <li>

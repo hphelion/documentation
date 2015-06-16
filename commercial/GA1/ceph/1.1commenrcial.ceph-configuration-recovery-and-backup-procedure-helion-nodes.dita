@@ -23,18 +23,14 @@
 </metadata>
 </prolog>
 <body>
-<p>
+
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commenrcial.ceph-configuration-recovery-and-backup-procedure-helion-nodes.md-->
- <!--permalink: /helion/openstack/1.1/ceph-configuration-recovery-and-backup-procedure-HP-Helion-nodes/--></p>
+ <!--permalink: /helion/openstack/1.1/ceph-configuration-recovery-and-backup-procedure-HP-Helion-nodes/-->
+
+<!-- # HP Helion OpenStack(R) 1.1: Ceph Configuring Backup and Recovery for HP Helion Nodes-->
 <p>
-<!--
-
-
-
-# HP Helion OpenStack(R) 1.1: Ceph Configuring Backup and Recovery for HP Helion Nodes
-
-The following steps ensure the recovering of the lost configuration.
+The following steps ensure the recovery of the lost configuration.
 
 1. Run the  `ceph_client_setup` script (available at [HDN](https://helion.hpwsportal.com)) on each of the controller/compute nodes. (For information on what files need to be copied from  the Ceph cluster node to their respective directories, refer to the script's README file.)
 2. To confirm ceph health, run:
@@ -46,33 +42,49 @@ The following steps ensure the recovering of the lost configuration.
 
         /home/ceph_client_setup/setup_scripts
 
-    1. Execute `sh patch_config_files.sh`
+    1. Execute sh patch_config_files.sh
 
-    2. Execute `sh helion_service_restarts.sh`
-
-
-####Sample files
-
-<table>
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;">
-    <th > Helion Node</th>
-    <th > Service/File name</th>    
-    <th>File Attachment </th>
-</tr>
-    <tr>
-<td>Controller node</td>
-<td>/etc/glance/glance-api.conf /etc/cinder/cinder.conf /etc/nova/nova.conf</td>
-<td>1. Log in to the <a href =" https://helion.hpwsportal.com"> HDN</a>. <br /> 2. Click the workloads category on the left side. <br /> 3. Click the storage subcategory to find all the Ceph related files. <br /> <b>Filename</b>  need ?-->
-
+    2. Execute sh helion_service_restarts.sh
 
 </p>
+<p>Sample files</p>
+
+<table>
+  <tgroup cols="3">
+
+    <thead> 
+      <row>
+        <entry>Helion Node</entry>
+        <entry> Service/File name</entry>    
+        <entry>File Attachment</entry>
+       </row>
+    </thead>
+<tbody>
 <row>
-<entry>Compute node</entry>
-<entry>/etc/nova/nova.conf</entry>
-<entry>1. Log in to the <xref href=" https://helion.hpwsportal.com" > HDN</xref>. <!--A BR tag was used here in the original source.--> 2. Click the workloads category on the left side. <!--A BR tag was used here in the original source.--> 3. Click the storage subcategory to find all the Ceph related files. <!-- <br /> <b>Filename</b> need ?-->
-</entry>
+  <entry> Controller node</entry>
+  <entry> /etc/glance/glance-api.conf /etc/cinder/cinder.conf /etc/nova/nova.conf</entry>
+
+  <entry> 1. Log in to the <xref href ="https://helion.hpwsportal.com" format="html"> HDN</xref>.  
+  2. Click the workloads category on the left side.  
+  3. Click the storage subcategory to find all the Ceph related files.  <b>Filename</b>  
+  </entry>
 </row>
+  <row>
+    <entry>Compute Node</entry>
+    <entry>/etc/nova/nova.conf</entry>
+    <entry>1. Log in to the <xref href="https://helion.hpwsportal.com" format="html"> HDN</xref>. 
+      <!--A BR tag was used here in the original source.--> 2. Click the workloads category on the left side.
+      <!--A BR tag was used here in the original source.--> 3. Click the storage subcategory to find all the 
+      Ceph related files. <!-- <br /> <b>Filename</b> need ?-->
+    </entry>
+  </row>
+</tbody>
+  </tgroup>
+</table>
+
+
+
+
 <p>The following tips will help you troubleshoot errors:</p>
 <ul>
 <li>
@@ -146,5 +158,6 @@ Round up the results to the nearest power of two. Rounding up is optional, but r
   <xref type="section" href="#topic3172/top"> Return to Top </xref>
 </p>
 </section>
+ 
 </body>
 </topic>

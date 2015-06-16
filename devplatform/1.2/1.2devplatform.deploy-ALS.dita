@@ -35,7 +35,7 @@
 </li>
 </ul>
 <section id="prereq"> <title>Prerequisites</title>
-<p>You need to <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >install</xref> the Helion Development Platform and the <xref href="./devplatform/1.2/1.2devplatform_commercial_install.dita#install-als" >Application Lifecycle Service</xref>.</p>
+<p>You need to <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >install</xref> the Helion Development Platform and the <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita#install-als" >Application Lifecycle Service</xref>.</p>
 </section>
 <section id="configure"> <title>Configuring an ALS Cluster</title>
 <ol>

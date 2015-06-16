@@ -221,7 +221,7 @@ gateway = enter the compute proxy gateway
 </codeblock>
 </li>
 <li>
-<p>Use the <xref href="../../commercial/GA1/1.1commerical.services-eon-overview.dita" >HP EON servcie CLI</xref> to deploy the ESX compute by executing the following steps from the undercloud node: <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->For details, refer to the <xref href="./commercial/GA1/1.1commercial.undercloud-eon-cli.dita" >EON CLI</xref> reference.</p>
+<p>Use the <xref href="../../commercial/GA1/1.1commerical.services-eon-overview.dita" >HP EON servcie CLI</xref> to deploy the ESX compute by executing the following steps from the undercloud node: <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->For details, refer to the <xref href="../../commercial/GA1/1.1commercial.undercloud-eon-cli.dita" >EON CLI</xref> reference.</p>
 
 <codeblock>
 <codeph>source /root/stackrc eon vcenter-add --name &lt;VCENTER_NAME&gt; --ip-address=&lt;VCENTER_IP_ADDRESS&gt; --username=&lt;VCENTER_USERNAME&gt; --password=&lt;VCENTER_PASSWORD&gt; --port=&lt;VCENTER_PORT&gt; eon cluster-import --vcenter-id=&lt;VCENTER_ID&gt; --cluster-moid=&lt;CLUSTER_MOID&gt; --cluster-name=&lt;CLUSTER_NAME&gt; eon cluster-activate --vcenter-id=&lt;VCENTER_ID&gt; --clusters &lt;CLUSTER_MOIDS&gt; [&lt;CLUSTER_MOIDS&gt; ...] 

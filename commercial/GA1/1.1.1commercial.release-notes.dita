@@ -80,11 +80,11 @@ This release supports the use of a <xref href="../../commercial/GA1/1.1.1commeri
 <p>For information on creating and deploying a Microsoft Windows Server that is Microsoft SVVP compliant on HP Helion OpenStack(R) as a Nova compute VM, see <xref href="../../commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita" >How to build a Microsoft Windows Server guest image for HP Helion OpenStack(R)</xref>.  <!--DOCS-917--></p>
 <p>Microsoft can provide technical support to customers with licensed Windows Server Operating Systems that are deployed as Nova compute VMs.</p>
 <p>
-<b>Swift diagnostic checks</b> - New diagnostics checks have been implemented for <xref href="../../commercial/GA1/1.1commerical.services-object-overview.dita" >Swift cluster</xref>. Diagnostic messages are sent to the <xref href="./commercial/GA1/1.1commerical.services-swift-deployment-monitor-replica-swift-status.dita" >Icinga service</xref>. <!--HPM15--></p>
+<b>Swift diagnostic checks</b> - New diagnostics checks have been implemented for <xref href="../../commercial/GA1/1.1commerical.services-object-overview.dita" >Swift cluster</xref>. Diagnostic messages are sent to the <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-replica-swift-status.dita" >Icinga service</xref>. <!--HPM15--></p>
 <p>
 <b>Improved recovery time</b> - When a virtual IP is moved to another overcloud controller on the system, the controller will become available in approximately one minute. <!--HPM121--></p>
 <p>
-<b>New Horizon Dashboard functionality</b> - The <xref href="../../commercial/GA1/1.1commercial.install-GA-DNSaaS.dita" >HP Helion OpenStack(R) DNSaaS service</xref> functionality is now accessible through the <xref href="./commercial/GA1/1.1commerical.services-horizon-overview.dita" >Horizon dashboard</xref>.</p>
+<b>New Horizon Dashboard functionality</b> - The <xref href="../../commercial/GA1/1.1commercial.install-GA-DNSaaS.dita" >HP Helion OpenStack(R) DNSaaS service</xref> functionality is now accessible through the <xref href="../../commercial/GA1/1.1commerical.services-horizon-overview.dita" >Horizon dashboard</xref>.</p>
 <p>
 <b>Multipath suppport for 3PAR</b> -  HP Helion OpenStack(R) now supports multipath for multiple I/O paths . Multipath helps maintain a constant connection between KVM host and its storage. See <xref href="../../commercial/GA1/1.1commercial.install-3par.dita" >Configuring Multipath for 3PAR</xref>.<!--HPM121--></p>
 <p>

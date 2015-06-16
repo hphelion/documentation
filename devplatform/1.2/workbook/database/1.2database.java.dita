@@ -42,7 +42,7 @@
 <li>Click <b>Save</b>.</li>
 </ol>
 <p>
-<b>NOTE</b>: If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is configured to use a database instance or master/slave pair provided by the Database Service. For more information, refer to <xref href="../../../../devplatform/1.2/1.2devplatform.database-instance.dita" >Using the Database Service</xref> and <xref href="./devplatform/1.2/1.2devplatform.database-ALS.dita" >Connecting the Database Service with ALS</xref>.</p>
+<b>NOTE</b>: If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is configured to use a database instance or master/slave pair provided by the Database Service. For more information, refer to <xref href="../../../../devplatform/1.2/1.2devplatform.database-instance.dita" >Using the Database Service</xref> and <xref href="../../../../devplatform/1.2/1.2devplatform.database-ALS.dita" >Connecting the Database Service with ALS</xref>.</p>
 </section>
 <section id="jdk"> <title>JDK</title>
 <p>Install the Java Development Kit (JDK) before installing other prerequisites.</p>
@@ -198,7 +198,7 @@ applications:
 <li>You interact with and deploy your app using the Helion CLI or the Eclipse <xref href="../../../../devplatform/1.2/1.2devplatform.eclipse.dita" >plugin</xref>.</li>
 </ol>
 <p>
-<xref href="../../../../devplatform/1.2/1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="./devplatform/1.2/workbook/helloworld/1.2helloworld.java.dita" >Previous Sample</xref> | <xref href="./devplatform/1.2/workbook/messaging/1.2messaging.java.dita" >Next Sample</xref>
+<xref href="../../../../devplatform/1.2/1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../../../../devplatform/1.2/workbook/helloworld/1.2helloworld.java.dita" >Previous Sample</xref> | <xref href="../../../../devplatform/1.2/workbook/messaging/1.2messaging.java.dita" >Next Sample</xref>
 </p>
 </section>
 </body>

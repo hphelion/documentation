@@ -285,7 +285,7 @@ v3.4.2</p>
 <ol>
 <li>
 <p>
-<b>ALS Cluster Create via UI does not provide a way to input proxy settings.</b> Either use <xref href="../devplatform/helion/admin/server/1.1configuration.dita#http-proxy" >the workaround</xref> to input proxy settings or create the cluster with the <xref href="./devplatform/helion/CLI/1.1ALS_Client_Reference.dita" >ALS Cluster Management Tool</xref>.</p>
+<b>ALS Cluster Create via UI does not provide a way to input proxy settings.</b> Either use <xref href="../devplatform/helion/admin/server/1.1configuration.dita#http-proxy" >the workaround</xref> to input proxy settings or create the cluster with the <xref href="../devplatform/helion/CLI/1.1ALS_Client_Reference.dita" >ALS Cluster Management Tool</xref>.</p>
 </li>
 <li>
 <p>

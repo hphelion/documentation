@@ -47,7 +47,7 @@ but a route can be mapped to only one space.</p>
 fully-qualified sub-domain (e.g. "myapp.myorg.example.com").</p>
 </section>
 <section id="management"> <title>Management</title>
-<p>You can manage spaces and organizations with the <xref href="../../../../../devplatform/1.2/helion/user/client/1.2index.dita" >helion client</xref> or the <xref href="./devplatform/1.2/helion/user/console/1.2index.dita" >Management Console</xref>.</p>
+<p>You can manage spaces and organizations with the <xref href="../../../../../devplatform/1.2/helion/user/client/1.2index.dita" >helion client</xref> or the <xref href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita" >Management Console</xref>.</p>
 </section>
 <section id="users-roles"> <title>Users and Roles</title>
 <p>Application Lifecycle Service users can take on one or more roles within Orgs and Spaces. These roles can be assigned by a Manager of the relevant scope or an Application Lifecycle Service Admin:</p>

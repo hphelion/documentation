@@ -47,7 +47,7 @@ accessible if needed to customize or create new container images.</p>
 </ul>
 <section id="modifying-or-updating-the-container-image"> <title>Modifying or Updating the Container Image</title>
 <p>Application containers are created from a base Docker image (a template used to create Linux containers). Admins can create new images to add specific software required by applications or update operating system packages.</p>
-<p>See also the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#upgrade-docker" >Upgrade the Docker Image</xref> section in the <xref href="./devplatform/1.2/helion/admin/best-practices/1.2index.dita" >Best Practices</xref> reference, which shows how to modify the Docker base image <b>without</b> changing <i>kato config</i>.</p>
+<p>See also the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#upgrade-docker" >Upgrade the Docker Image</xref> section in the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita" >Best Practices</xref> reference, which shows how to modify the Docker base image <b>without</b> changing <i>kato config</i>.</p>
 <p>To create a new base image for Application Lifecycle Service to use for application containers, perform the following steps <b>on all nodes running the DEA role</b>:</p>
 <ol>
 <li>
@@ -276,7 +276,7 @@ api.paas.example.com:49156/exampleco/newimg
 shared with all nodes.</p>
 </li>
 </ol>
-<p>The <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#upgrade-docker" >Upgrade the Docker Image</xref> section in the <xref href="./devplatform/1.2/helion/admin/best-practices/1.2index.dita" >Best Practices</xref> documentation explains how to modify the Docker base image without changing <i>kato config</i>.</p>
+<p>The <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#upgrade-docker" >Upgrade the Docker Image</xref> section in the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita" >Best Practices</xref> documentation explains how to modify the Docker base image without changing <i>kato config</i>.</p>
 </section>
 <section id="docker-privileged-containers"> <title>Privileged Containers</title>
 <p>ALS runs "unprivileged" Docker containers by default. The containers do not have access to any devices on the (virtual) host.</p>

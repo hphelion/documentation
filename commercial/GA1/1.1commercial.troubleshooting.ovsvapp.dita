@@ -26,7 +26,7 @@
  <!--./commercial/GA1/1.1commercial.troubleshooting.ovsvapp.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/ovsvapp/--></p>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.troubleshooting.dita" > ▲ Troubleshooting</xref> | <xref href="./commercial/GA1/1.1commercial.install-GA-ovsvapp.dita" > ▲ Deploying and Configuring OVSvApp on ESX hosts</xref> </p>
+<xref href="../../commercial/GA1/1.1commercial.troubleshooting.dita" > ▲ Troubleshooting</xref> | <xref href="../../commercial/GA1/1.1commercial.install-GA-ovsvapp.dita" > ▲ Deploying and Configuring OVSvApp on ESX hosts</xref> </p>
 <p>If you are having issues with the installation or operation of the OVSvApp, review these tips:</p>
 <ul>
 <li>

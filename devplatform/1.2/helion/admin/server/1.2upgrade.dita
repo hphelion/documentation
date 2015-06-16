@@ -82,7 +82,7 @@
 </ul>
 <section id="before-an-upgrade"> <title>Before an upgrade</title>
 <p>Ensure that you have the latest version of the Application Lifecycle Service installed before updating any nodes or clusters.</p>
-<p>If <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-patch" >kato patch</xref> has not been applied consistently, <xref href="./devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-attach" >kato node upgrade</xref> can still be executed. It will first upgrade the node to the latest release, which will include all of the interim patches.</p>
+<p>If <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-patch" >kato patch</xref> has not been applied consistently, <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-attach" >kato node upgrade</xref> can still be executed. It will first upgrade the node to the latest release, which will include all of the interim patches.</p>
 </section>
 <section id="free-disk-space"> <title>Free Disk Space</title>
 <p>Each node in the cluster to be upgraded requires at least 4GB free disk space except for the cache node, which needs at least 10GB free.</p>
@@ -115,7 +115,7 @@
 <p>This shuts down API requests but continues to serve web requests. The Management Console becomes "read only" with the exception of this toggle so that it can be brought back online. Remember to disable maintenance mode once the upgrade has been completed.</p>
 </section>
 <section id="backup-snapshot"> <title>Backups or Snapshots</title>
-<p>Back up all system and user data by performing a <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#backup-migration" >data export</xref> (recommended) or create <xref href="./devplatform/1.2/helion/admin/best-practices/1.2index.dita#bestpractices-snapshots" >snapshots</xref> of all nodes in your hypervisor.</p>
+<p>Back up all system and user data by performing a <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#backup-migration" >data export</xref> (recommended) or create <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#bestpractices-snapshots" >snapshots</xref> of all nodes in your hypervisor.</p>
 </section>
 <section id="proxy-settings"> <title>Proxy settings for Upgrades</title>
 <p>The systems being upgraded will need to be able to access the following
@@ -150,7 +150,7 @@ sudo chmod 0440 /etc/sudoers.d/nopasswd
 <p>With passwordless sudo in effect on all nodes, <i>kato node upgrade</i> should run without intervention. Obviously, this change has security implications, and is left to the discretion of the admin. Enable it only for the duration of the upgrade.</p>
 </section>
 <section id="extraDEA"> <title>Extra DEA Nodes</title>
-<p>While the upgrade is in progress, DEAs will be <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-attach" >retired</xref> one at a time and the hosted applications will be moved to other DEAs. If the system is operating at or close to capacity (all DEAs are fully populated) it will be necessary to add at least one <xref href="./devplatform/1.2/helion/admin/cluster/1.2index.dita#dea-nodes" >DEA node</xref> to the cluster before proceeding. Customers are typically permitted to exceed their node/memory license allocation during an upgrade.</p>
+<p>While the upgrade is in progress, DEAs will be <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-attach" >retired</xref> one at a time and the hosted applications will be moved to other DEAs. If the system is operating at or close to capacity (all DEAs are fully populated) it will be necessary to add at least one <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#dea-nodes" >DEA node</xref> to the cluster before proceeding. Customers are typically permitted to exceed their node/memory license allocation during an upgrade.</p>
 </section>
 <section id="executing-the-upgrade"> <title>Executing the upgrade</title>
 </section>
