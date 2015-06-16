@@ -29,63 +29,55 @@
 <colspec colname="col2"/>
 <tbody>
 <row>
+<entry><p>1. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/"
+                                    scope="external" format="html">Register for your Helion Public
+                                    Cloud Account</xref>
+                            </p>
+                            <p>2. <xref
+                                    href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/2"
+                                    scope="external" format="html">Download Tools</xref></p>
+                            <p>3. <xref
+                                    href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3"
+                                    scope="external" format="html">Create the Sandbox
+                                    Environment</xref>
+                            </p>
+                            <p>4. <xref
+                                    href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/4"
+                                    scope="external" format="html">Create a Cluster</xref>
+                            </p>
+                            <p>5. <xref
+                                    href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/5"
+                                    scope="external" format="html">Add Windows DEA and SQL Server
+                                    (Optional Step)</xref></p>
+                            <p>6. <b>Explore Sample Applications</b>
+                            </p></entry>
 <entry>
-<p>
-<p>
-1. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/" scope="external" format="html" >Register for your Helion Public Cloud Account</xref>
-</p>
-<p>
-2. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/2" scope="external" format="html" >Download Tools</xref>
-</p>
-<p>
-3. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3" scope="external" format="html" >Create the Sandbox Environment</xref>
-</p>
-<p>
-4. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/4" scope="external" format="html" >Create a Cluster</xref>
-</p>
-<p>
-5. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/5" scope="external" format="html" >Add Windows DEA and SQL Server (Optional Step)</xref>
-</p>
-  <table rowsep="0" colsep="0">
-<tgroup cols="1">
-<colspec colname="col1"/>
-<tbody>
-<row>
-<entry>
-    6. <b>Explore Sample Applications</b> 
-   </entry>
-   </row>
-</tbody>
-</tgroup>
-</table>
-</p>
-</entry>
-
-<entry>
-<b>Explore Sample Applications</b>
-<p>Congratulations! You are now ready to begin deploying apps to your new micro-cloud environment.</p>
-
-We have provided some sample applications in multiple programming languages for you to examine and deploy. These very simple applications provide insight on how to push applications and connect those applications to HP Helion OpenStack(R) services.
-<p/>
-<required-cleanup remap="form">
-<ph>
-    </ph>
-</required-cleanup>
-<p>If you are interested in exploring the new functionality, you can jump right into deploying WindowsÂ(R) applications.</p>
-<p/>
-<required-cleanup remap="form">
-<ph>
-    </ph>
-</required-cleanup>
-<!-- ===================== horizontal rule ===================== -->
-<ul>
-<li>If you have <b>encountered problems</b> with this installation, refer to the <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting" scope="external" format="html" >Troubleshooting tips</xref>.</li>
-<!--A BR tag was used here in the original source.-->
-<li>If you are ready to <b>take down</b> your sandbox environment, refer to the <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/termination" scope="external" format="html" >termination instructions</xref>.</li>
-<!--A BR tag was used here in the original source.-->
-<li>If you are <b>done with the Quick-Start guide</b>, return to the <xref href="http://docs.hpcloud.com/helion/devplatform/1.2" scope="external" format="html" >Helion Development Platform Documentation</xref>.</li>
-</ul>
-</entry>
+                            <b>Explore Sample Applications</b>
+                            <p>Congratulations! You are now ready to begin deploying apps to your
+                                new micro-cloud environment.</p>We have provided some <xref
+                                href="1.2devplatform.appdev.dita">sample applications</xref> in
+                            multiple programming languages for you to examine and deploy. These very
+                            simple applications provide insight on how to push applications and
+                            connect those applications to HP Helion <tm tmtype="reg">OpenStack</tm>
+                            services. <p>If you are interested in exploring the new functionality,
+                                you can jump right into<xref href="windows/windows_overview.dita"
+                                    scope="external"> deploying <tm tmtype="reg">Windows</tm>
+                                    applications</xref>.</p><ul>
+                                <li>If you have <b>encountered problems</b> with this installation,
+                                    refer to the <xref
+                                        href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting"
+                                        scope="external" format="html">Troubleshooting
+                                    tips</xref>.</li>
+                                <li>If you are ready to <b>take down</b> your sandbox environment,
+                                    refer to the <xref
+                                        href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/termination"
+                                        scope="external" format="html">termination
+                                        instructions</xref>.</li>
+                                <li>If you are <b>done with the Quick-Start guide</b>, return to the
+                                        <xref href="http://docs.hpcloud.com/helion/devplatform/1.2"
+                                        scope="external" format="html">Helion Development Platform
+                                        Documentation</xref>.</li>
+                            </ul></entry>
 </row>
 </tbody>
 </tgroup>
