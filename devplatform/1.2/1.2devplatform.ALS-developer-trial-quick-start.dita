@@ -30,14 +30,14 @@ You can also <xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc
                 <colspec colname="col1" colwidth="297.75pt"/>
                 <colspec colname="col2" colwidth="732.75pt"/>
                 <thead>
-                    <row>
+                    <row rowsep="0">
                         <entry/>
                         <entry/>
                     </row>
                 </thead>
                 <tbody>
                     <row>
-                        <entry>
+                        <entry rowsep="0">
                             <p><image href="../../media/star.gif" id="image_s3z_zdp_js" scale="50"
                                 />1. <b>Register for your Helion Public Cloud Account</b>
                             </p>
@@ -65,21 +65,18 @@ You can also <xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc
                                     Applications</xref>
                             </p>
                         </entry>
-                        <entry>
-                            <b>Register for Your Public Cloud Account</b>
-                            <p> Register for a <xref href="http://www.hpcloud.com/cloud-credit"
+                        <entry><b>Register for Your Public Cloud Account</b>
+                            <p>Register for a <xref href="http://www.hpcloud.com/cloud-credit"
                                     scope="external" format="html"> Helion Public Cloud</xref>
-                                account.</p>
-                            <p>Keep your username and password handy as you will be asked for them
-                                during installation. </p> Registering provides you with: <ul>
+                                account.</p><p>Keep your username and password handy as you will be
+                                asked for them during installation. </p> Registering provides you
+                            with: <ul>
                                 <li>A <xref href="http://www.hpcloud.com/cloud-credit"
                                         scope="external" format="html">Cloud Credit</xref> to help
                                     cover hosting costs for your sandbox environment </li>
                                 <li>Access to the Helion Development Platform download
                                     repositories</li>
-                            </ul>
-                            <p>
-                                <b>Note</b>: Ensure that you review <xref
+                            </ul><p><b>Note</b>: Ensure that you review <xref
                                     href="http://www.hpcloud.com/pricing" scope="external"
                                     format="html">HP Public Cloud pricing</xref> to understand what
                                 charges may be incurred if the use limits of the free credit offer
