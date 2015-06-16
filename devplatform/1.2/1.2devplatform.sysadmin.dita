@@ -27,7 +27,7 @@
 <section id="installation"> <title>Installation</title>
 <ul>
 <li>
-<xref href="/helion/openstack/" >HP Helion OpenStack(R) Installation</xref>
+  <xref href="../../commercial/GA1/Landing/1.1commercial.landing.install.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Installation</xref>
 </li>
 <li>
 <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >Development Platform Installation and Configuration</xref>

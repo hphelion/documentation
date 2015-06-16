@@ -116,7 +116,7 @@
 <section id="replicate"> <title>Replicating a Database</title>
 <p>Replicating a database creates a slave for your instance that replicates every action on the master. Creating a database instance that is automatically replicated results in more durable data and can prevent data loss in a disaster scenario.</p>
 </section>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="db-prerequisites"> <title>Prerequisites</title>
 <p>To follow this guide, you must have already <xref type="section" href="#topic5773/create">created</xref> a database instance that will be the master database.</p>
 </section>
 <section id="steps"> <title>Steps</title>
