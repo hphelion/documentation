@@ -79,7 +79,7 @@
 <xref type="section" href="#topic8233/localized">Is the release localized for non-English speaking markets?</xref>  </li>
 </ul>
 </section>
-<section id="about-hp-helion-openstack-community-edition"> <title>About HP Helion OpenStack(R) Community Edition</title>
+<section id="about-helion-openstack-community-edition"> <title>About HP Helion OpenStack(R) Community Edition</title>
 </section>
 <section id="whatcommunity"> <title>What is HP Helion OpenStack(R) Community edition?</title>
 <p>HP Helion OpenStack(R) is a commercial-grade distribution of <xref href="http://www.openstack.org" scope="external" format="html" >OpenStack(R)</xref>, the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform.</p>
@@ -111,7 +111,7 @@
 <p>The overcloud is the functional cloud available to run guest virtual machines and workloads. It offers access to the Nova, Neutron, Glance, Keystone, Cinder, Swift, Ironic, Heat, Horizon, and Ceilometer services.</p>
 <p>Creating and configuring the overcloud completes the overall Helion OpenStack(R) installation process.</p>
 </section>
-<section id="specifications"> <title>Specifications</title>
+<section id="specification"> <title>Specifications</title>
 </section>
 <section id="nodes"> <title>How many nodes does the Community edition support?</title>
 <p>Up to 30 nodes with up to 600 virtual machines, subject to the size of the VMs and hardware capacity.</p>
@@ -120,7 +120,7 @@
 <p>HP OpenStack(R) Helion does not support an update utility to update from previous releases. For help with updating, visit the <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref> page and choose your preferred method of contact.</p>
 </section>
 <section id="includeOS"> <title>Does HP Helion OpenStack(R) include an Operating System (OS)?</title>
-<p>Yes. It includes an integrated LinuxÂ(R) host OS hardened and tested for this distribution. All supported hardware and software configurations are laid out in the <xref href="../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>
+<p>Yes. It includes an integrated Linuxï¿½(R) host OS hardened and tested for this distribution. All supported hardware and software configurations are laid out in the <xref href="../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>
 </section>
 <section id="releaseversion"> <title>Which OpenStack(R) release does this distribution include?</title>
 <p>All of the <xref href="../commercial/GA1/1.1commerical.services-overview.dita#OpenStack(R)" >HP Helion OpenStack(R) services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack(R) Juno</xref>. <xref href="http://www.hpcloud.com/learning-center" scope="external" format="html" >Learn more</xref> about HP's commitment to OpenStack(R) and how we're making it even better.</p>
@@ -131,7 +131,7 @@
 <section id="nonhphardware"> <title>Can HP Helion OpenStack(R) Community edition be run on non-HP hardware?</title>
 <p>HP Helion OpenStack(R) does not require HP-branded hardware. All supported hardware and software configurations are laid out in the <xref href="../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>
 </section>
-<section id="more-information"> <title>More Information</title>
+<section id="more-inform"> <title>More Information</title>
 </section>
 <section id="alternative"> <title>Is there an alternative to the Community Edition?</title>
 <p>
