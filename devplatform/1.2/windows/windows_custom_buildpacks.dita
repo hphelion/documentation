@@ -58,14 +58,17 @@
 </ol>
 <p>For more information, please refer to the <xref href="https://github.com/hpcloud/cf-iis8-buildpack" scope="external" format="html" >Buildpack git project</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
-<xref href="../../../devplatform/1.2/windows/windows_overview.dita" >Windows Overview</xref>
-<xref href="../../../devplatform/1.2/windows/windows_firstapp.dita" >Deploying your first .NET Application</xref>
-<p> | </p>
-<xref href="../../../devplatform/1.2/windows/windows_tools_guide.dita" >Windows and .NET Tools Guide</xref>
-<xref href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita" >Building and Deploying Windows DEA and SQL Server Express Images</xref>
-<p> | </p>
-<xref href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita" >Glazier Reference Guide</xref>
-<xref href="../../../devplatform/1.2/windows/windows_adding_services.dita" >Adding Services to a Windows Application</xref>
-<p> | Deploying Windows Applications with the IIS Buildpack</p>
+<p><xref href="../../../devplatform/1.2/windows/windows_overview.dita">Windows Overview</xref> |
+        <xref href="../../../devplatform/1.2/windows/windows_firstapp.dita">Deploying your first
+        .NET Application</xref></p>
+<p><xref href="../../../devplatform/1.2/windows/windows_tools_guide.dita">Windows and .NET Tools
+        Guide</xref> | <xref
+        href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita">Building and
+        Deploying Windows DEA and SQL Server Express Images</xref></p>
+<p><xref href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita">Glazier
+        Reference Guide</xref> | <xref
+        href="../../../devplatform/1.2/windows/windows_adding_services.dita">Adding Services to a
+        Windows Application</xref></p>
+<p>Deploying Windows Applications with the IIS Buildpack</p>
 </body>
 </topic>
