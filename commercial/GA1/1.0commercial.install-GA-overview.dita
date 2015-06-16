@@ -60,11 +60,11 @@
 <ul>
 <li>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-kvm.dita" >Install with KVM hypervisor support</xref> and then <xref href="../../commercial/GA1/1.0commercial.install-GA-vsa.dita" >configure HP StoreVirtual VSA for Block Storage</xref> or <xref href="./commercial/GA1/1.0commercial.install-3par.dita" >configure HP 3PAR StoreServ Storage</xref>.</p>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-kvm.dita" >Install with KVM hypervisor support</xref> and then <xref href="../../commercial/GA1/1.0commercial.install-GA-vsa.dita" >configure HP StoreVirtual VSA for Block Storage</xref> or <xref href="../../commercial/GA1/1.0commercial.install-3par.dita" >configure HP 3PAR StoreServ Storage</xref>.</p>
 </li>
 <li>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-esx.dita" >Install with ESX hypervisor support</xref> and then <xref href="./commercial/GA1/1.0commercial.install-GA-ESX-Proxy.dita" >deploy the compute proxy on the ESX hosts</xref> and <xref href="./commercial/GA1/1.0commercial.install-GA-ovsvapp.dita" >deploy OVSvApp for HP Virtual Cloud Networking</xref>.</p>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-esx.dita" >Install with ESX hypervisor support</xref> and then <xref href="../../commercial/GA1/1.0commercial.install-GA-ESX-Proxy.dita" >deploy the compute proxy on the ESX hosts</xref> and <xref href="../../commercial/GA1/1.0commercial.install-GA-ovsvapp.dita" >deploy OVSvApp for HP Virtual Cloud Networking</xref>.</p>
 </li>
 </ul>
 </li>
