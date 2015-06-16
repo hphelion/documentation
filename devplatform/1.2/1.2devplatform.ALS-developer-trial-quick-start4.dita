@@ -37,27 +37,25 @@
                         <entry/>
                     </row>
                     <row>
-                        <entry><p>1. <xref
-                                    href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/"
-                                    scope="external" format="html">Register for your Helion Public
-                                    Cloud Account</xref>
-                            </p><p>2. <xref
-                                    href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/2"
-                                    scope="external" format="html">Download Tools</xref>
-                            </p><p>3. <xref
-                                    href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3"
-                                    scope="external" format="html">Create the Sandbox
-                                    Environment</xref></p><p><image href="../../media/star.gif"
-                                    id="image_lqs_gjp_js" scale="50"/>4. <b>Create A Cluster</b>
-                            </p>5. <xref
-                                href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/5"
-                                scope="external" format="html">Add Windows DEA and SQL Server
-                                (Optional Step)</xref>
-                            <p>6. <xref
-                                    href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/6"
-                                    scope="external" format="html">Explore Sample
-                                    Applications</xref>
-                            </p></entry>
+                        <entry>
+                            <p>1. <xref href="ALS-developer-trial-quick-start">Register for your
+                                    Helion Public Cloud Account</xref>
+                            </p>
+                            <p>2. <xref href="/ALS-developer-trial-quick-start2.dita">Download
+                                    Tools</xref>
+                            </p>
+                            <p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita"
+                                    >Create the Sandbox Environment</xref>
+                            </p>
+                            <p><image href="../../media/star.gif" id="image_lqs_gjp_js" scale="50"/>
+                                <b>4. Create A Cluster </b></p>
+                            <p>5. <xref href="1.2devplatform.ALS-developer-trial-quick-start5.dita"
+                                    >Add Windows DEA and SQL Server (Optional Step)</xref>
+                            </p>
+                            <p>6. <xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita"
+                                    >Explore Sample Applications</xref>
+                            </p>
+                        </entry>
                         <entry>
                             <b>Create a Cluster</b>
                             <p>For convenience, copy the command sets and paste them into a text

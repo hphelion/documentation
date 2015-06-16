@@ -34,28 +34,21 @@
           </row>
           <row>
             <entry>
-              <p>1. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/"
-                  scope="external" format="html">Register for your Helion Public Cloud
-                  Account</xref>
+              <p>1. <xref href="ALS-developer-trial-quick-start">Register for your Helion Public
+                  Cloud Account</xref>
               </p>
-              <p>2. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/2"
-                  scope="external" format="html">Download Tools</xref>
+              <p>2. <xref href="/ALS-developer-trial-quick-start2.dita">Download Tools</xref>
               </p>
-              <p>3. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3"
-                  scope="external" format="html">Create the Sandbox Environment</xref>
+              <p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the
+                  Sandbox Environment</xref>
               </p>
-              <p>4. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/4"
-                  scope="external" format="html">Create a Cluster</xref>
+              <p>4. <xref href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
+                  Cluster</xref>
               </p>
               <p><image href="../../media/star.gif" id="image_bmg_ms5_js" scale="50"
                   />5. <b>Add Windows DEA and SQL Server (Optional Step)</b></p>
               <p>6. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/6"
-                  scope="external" format="html">Explore Sample Applications</xref>
+                href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Explore Sample Applications</xref>
               </p>
             </entry>
             <entry>
