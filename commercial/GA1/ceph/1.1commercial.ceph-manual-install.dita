@@ -866,7 +866,7 @@ mkdir /var/lib/ceph/osd/ceph-12
 </ol>
 <p>Use <b>xfs</b> for better performance.</p>
 </section>
-<section id="script-to-create-xfs-file-system-on-partitioned-disks"> <title>Script to create xfs file system on partitioned disks</title>
+<section id="script-to-create-xfs-file-system-on-partitioned-disks2"> <title>Script to create xfs file system on partitioned disks</title>
 <p>The following example uses 13 drives in the system to create xfs file system.</p>
 <codeblock>
   <codeph>#!/bin/bash
@@ -1070,7 +1070,7 @@ host = ceph-osd1
 </codeph>
 </codeblock>
 </section>
-<section id="setting-up-additional-osd-nodes"> <title>Setting up additional OSD nodes</title>
+<section id="setting-up-additional-osd-nodes2"> <title>Setting up additional OSD nodes</title>
 <p>A healthy Ceph cluster needs at least 3 OSD nodes. (Follow steps similar to previous section to add additional nodes to form the quorum.) Update the <codeph>ceph.conf</codeph> file like that shown below before proceeding.</p>
 <codeblock>
   <codeph>[osd.0]
