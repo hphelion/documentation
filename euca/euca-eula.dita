@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4214">
-    <title>HP Helion Eucalyptus&#174;: Master Services Agreement</title>
+    <title>HP Helion <tm tmtype="reg">Eucalyptus</tm>: Master Services Agreement</title>
     <prolog>
         <metadata>
  
@@ -19,8 +19,9 @@
         </metadata>
     </prolog>
     <body>
-        <p>The Master Services Agreement is available as a PDF download.</p> - <xref
-            href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP%20Eucalyptus%20Master%20Services%20Agreement%20(MSA)%20for%20Products%20and%20Services_30%20April_2015.pdf"
-            format="pdf">Download the PDF document.</xref>
+        <p>The Master Services Agreement is available as a PDF download.</p>
+<p><xref
+                href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP%20Eucalyptus%20Master%20Services%20Agreement%20(MSA)%20for%20Products%20and%20Services_30%20April_2015.pdf"
+                format="pdf" scope="external">Download the PDF document</xref>. </p>
     </body>
 </topic>
