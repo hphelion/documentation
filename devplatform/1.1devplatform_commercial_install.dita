@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic24073_1">	
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic24073_1">	
 <title>HP Helion 1.1 Development Platform: Installation and Configuration</title>
 <titlealts>
 	<searchtitle>HP Helion 1.1 Development Platform: Commercial Installation and Configuration</searchtitle>
@@ -121,7 +122,6 @@ Confirm that you have access to the [pypi](https://pypi.python.org/pypi) site. T
 		curl https://10.0.0.10:5000
 </codeph></codeblock>
 </li>
-		<li>
 			<li><p>Run this command to install the Helion Development Platform. You can run this command on any machine that can access the Overcloud (it is recommended to run this command on the Seed node).</p><p> By default the Username is *admin* and the Region is *regionOne*. Use the admin *tenant_id* from the overcloud. The parameter <i>location/ephemeralca-cacert.crt</i> can be found on the Helion OpenStack seed VM at <i>/usr/local/share/ca-certificates/ephemeralca-cacert.crt</i>.</p>
 <codeblock><codeph>
 		sudo ./DevelopmentPlatform_Setup.sh \
@@ -161,11 +161,10 @@ This section provides details on installing the Messaging service from the Devel
 	<li>
 		<p>1. In the <b>Configure Services</b> panel locate the <b>Messaging</b> item in the Configure Services table and select <b>Download Service</b> and wait for the download to complete.
 		</p>
-	<img src="media/dev_install_messaging.png"/)>
+		<image href="../../media/dev_install_messaging.png" />
 
-		<p><b>Note:</b> Downloading multiple services simultaneously is not supported, and will
-	leave the server in an error state.
-		</p>	
+		<p><b>Note:</b> Downloading multiple services simultaneously is not supported, and will leave the server in an error state.</p>	
+	</li>
 		<li>Once the download is complete, click the <b>Configure Service</b> button to configure the Messaging Service and wait for the configuration step to complete.
 		</li>
 		<li>Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the <b>Messaging</b> panel under the current Project to begin using the Messaging Service.
@@ -201,7 +200,7 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 	<li>
 		Once the download is complete, click the <b>Configure Service</b> button to configure the Application Lifecycle Service and wait for the configuration step to complete.
 
-	<img src="media/dev_install_application-life-cycle.png"/)>
+		<image href="../media/dev_install_application-life-cycle.png" />
 	</li>
 	<li>
 		Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the <b>Application Lifecycle Service</b> panel under the current Project to being using Application Lifecycle Services.
@@ -210,9 +209,9 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 
 This section provides details on installing the Database Service from the Development Platform.
 	</section>
-	<section title="prerequisites-database"><title>Prerequisites</title>
+	<section id="prerequisites-database"><title>Prerequisites</title>
 </section>
-	<section title="availability_zones-database"><title>Availability Zones</title>
+	<section id="availability_zones-database"><title>Availability Zones</title>
 
 <p>To configure the Database Service in a highly available manner, it is necessary to create separate availability zones. As a best practice, HP recommends creating three availability zones. All compute hosts should be placed within one of these availability zones. If a compute host is not associated with an availability zone, the Database Service will not be able to provision a database instance to it. As a result, the Database Service may run out of capacity even though there are compute hosts with free capacity.
 </p>
@@ -247,74 +246,76 @@ The following command can be used to list all availability zones and the compute
 </p><p>
 If you are not configuring the Database Service to be highly available you must have the following quota available:
 </p>
-<table>
-  <thead>
-    <tr><th>Resource</th>
-  <th align="right">Usage</th>
-</tr>
-  </thead>
+		<table><tgroup cols="2">
+			<colspec colname="col1"/>
+			<colspec colname="col2"/>
+	<thead>
+    <row><entry>Resource</entry>
+  <entry align="right">Usage</entry>
+</row>
+	</thead>
   <tbody>
-    <tr><td>Floating IPs</td>
-  <td align="right">6</td>
-</tr>
-    <tr><td>Instances</td>
-  <td align="right">6</td>
-</tr>
-    <tr><td>Networks</td>
-  <td align="right">2</td>
-</tr>
-    <tr><td>RAM (GB)</td>
-  <td align="right">24</td>
-</tr>
-    <tr><td>Routers</td>
-  <td align="right">2</td>
-</tr>
-    <tr><td>Security Groups</td>
-  <td align="right">6</td>
-</tr>
-    <tr><td>Volumes</td>
-  <td align="right">4</td>
-</tr>
-    <tr><td>Volume Storage (GB)</td>
-  <td align="right">160</td>
-</tr>
-  </tbody>
+    <row><entry>Floating IPs</entry>
+  <entry align="right">6</entry>
+</row>
+    <row><entry>Instances</entry>
+    	<entry align="right">6</entry>
+</row>
+    <row><entry>Networks</entry>
+    	<entry align="right">2</entry>
+</row>
+    <row><entry>RAM (GB)</entry>
+    	<entry align="right">24</entry>
+</row>
+    <row><entry>Routers</entry>
+    	<entry align="right">2</entry>
+</row>
+    <row><entry>Security Groups</entry>
+    	<entry align="right">6</entry>
+</row>
+    <row><entry>Volumes</entry>
+    	<entry align="right">4</entry>
+</row>
+    <row><entry>Volume Storage (GB)</entry>
+    	<entry align="right">160</entry>
+</row>
+  </tbody></tgroup>
 </table>
 <p>	
 If you have set up Availability Zones and plan to install the Database Service in a highly-available configuration you must have the following quota available:
 </p>
-<table>
+		<table><tgroup cols="2">
   <thead>
-    <tr><th>Resource</th>
-  <th align="right">Usage</th>
-</tr>
+    <row><entry>Resource</entry>
+  <entry align="right">Usage</entry>
+</row>
   </thead>
   <tbody>
-    <tr><td>Floating IPs</td>
-  <td align="right">16</td>
-</tr>
-    <tr><td>Instances</td>
-  <td align="right">16</td>
-</tr>
-    <tr><td>Networks</td>
-  <td align="right">2</td>
-</tr>
-    <tr><td>RAM (GB)</td>
-  <td align="right">64</td>
-</tr>
-    <tr><td>Routers</td>
-  <td align="right">2</td>
-</tr>
-    <tr><td>Security Groups</td>
-  <td align="right">6</td>
-</tr>
-    <tr><td>Volumes</td>
-  <td align="right">4</td>
-</tr>
-    <tr><td>Volume Storage (GB)</td>
-  <td align="right">160</td>
-</tr>
-  </tbody>
+    <row><entry>Floating IPs</entry>
+  <entry align="right">16</entry>
+</row>
+    <row><entry>Instances</entry>
+    	<entry align="right">16</entry>
+</row>
+    <row><entry>Networks</entry>
+    	<entry align="right">2</entry>
+</row>
+    <row><entry>RAM (GB)</entry>
+    	<entry align="right">64</entry>
+</row>
+    <row><entry>Routers</entry>
+    	<entry align="right">2</entry>
+</row>
+    <row><entry>Security Groups</entry>
+    	<entry align="right">6</entry>
+</row>
+    <row><entry>Volumes</entry>
+    	<entry align="right">4</entry>
+</row>
+    <row><entry>Volume Storage (GB)</entry>
+  <entry align="right">160</entry>
+</row>
+  </tbody></tgroup>
 </table>
 
 <p>In addition to the quota mentioned above, for every database instance that is created by a user, the necessary resources to create that instance will be deducted from the admin tenant quota. The users database service quota will also be affected.
@@ -333,8 +334,7 @@ If you have set up Availability Zones and plan to install the Database Service i
 			<p><b>Note:</b> Downloading multiple services simultaneously is not supported, and will
 		leave the server in an error state.</p>
 </li></ol></section>
-	<section id="configure-database"><title>Configuring the Database Service
-	</title>
+	<section id="configure-database"><title>Configuring the Database Service</title>
 <ol><li>
 Once the download is complete, click the <b>Configure Service</b> button to begin configuration of the service. In the configuration dialog, specify the following configuration options:
 <ul>
@@ -349,14 +349,14 @@ Once the download is complete, click the <b>Configure Service</b> button to begi
 	<li><b>Ephemeral CA IP Address</b> (Required) - Specify the IP address of Ephemeral CA server.</li>
 	<li><b>Volume Type</b> (Required) -  The volume type to use when creating database instances.</li>
 	<li><b>Enable HA</b> - Specify if the database service is to be set up in a high-availability (HA) configuration. If selected, each component of the service will have three instances created and active at all times.</li> 
-</ul><p /></hostname>
+</ul><p />
 
-		<img src="media/dev_install_database_new.png"/)>
+		<image href="../media/dev_install_database_new.png" />
 
 </li>
 	<li>After all configuration options have been provided, select the <b>Configure</b> button to complete the configuration step. Wait for the configuration step to complete and the status to change to <b>Configured</b>.
 </li></ol>
-<hr />
+
 <p>
 The following steps will configure HAProxy to receive and forward HTTP requests to the VM that hosts the REST API endpoint for the Database Service.</p>
 		<p> <b>Note</b>: To perform these steps you must be connected to the overcloud.
@@ -408,32 +408,32 @@ This section provides details on installing the Marketplace service from the Dev
 
 The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack overcloud. The admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.
 
-<table>
+		<table><tgroup cols="2">
   <thead>
-    <tr><th>Resource</th>
-  <th align="right">Usage</th>
-</tr>
+    <row><entry>Resource</entry>
+  <entry align="right">Usage</entry>
+</row>
   </thead>
   <tbody>
-    <tr><td>Floating IPs</td>
-  <td align="right">16</td>
-</tr>
-    <tr><td>Instances</td>
-  <td align="right">4</td>
-</tr>
-    <tr><td>Networks</td>
-  <td align="right">1</td>
-</tr>
-    <tr><td>RAM (GB)</td>
-  <td align="right">8</td>
-</tr>
-    <tr><td>Routers</td>
-  <td align="right">2</td>
-</tr>
-    <tr><td>Security Groups</td>
-  <td align="right">4</td>
-</tr>
-  </tbody>
+    <row><entry>Floating IPs</entry>
+    	<entry align="right">16</entry>
+</row>
+    <row><entry>Instances</entry>
+    	<entry align="right">4</entry>
+</row>
+    <row><entry>Networks</entry>
+    	<entry align="right">1</entry>
+</row>
+    <row><entry>RAM (GB)</entry>
+    	<entry align="right">8</entry>
+</row>
+    <row><entry>Routers</entry>
+    	<entry align="right">2</entry>
+</row>
+    <row><entry>Security Groups</entry>
+    	<entry align="right">4</entry>
+</row>
+  </tbody></tgroup>
 </table>
 </section>
 	<section id="ports-marketplace"><title>Ports</title>
@@ -475,7 +475,7 @@ Increase the Ports quota to at least 100 using the following command in the [Net
 		<li> <b>Subnet range</b> (Required) - The subnet to use for Marketplace. </li>
 		</ul>
 		
-	<img src="media/dev_install_marketplace.png" />
+	<image href="../media/dev_install_marketplace.png" />
 	</li>
 		<li>
 			Do not attempt to install any Marketplace packages yet. Log out from the Horizon console.</li>
@@ -527,22 +527,23 @@ Download the Vertica package.
  	<li>
 	Select the "Vertica Trial Package for Marketplace". 
 
-	<img src="media/dev_install_vertica_1.png" />
+	<image href="../media/dev_install_vertica_1.png" />
 
  	</li>
  	<li>Select <b>Download Service</b>, and confirm the download.
 
-	<img src="media/dev_install_vertica_confirm.png" />
+	<image href="../media/dev_install_vertica_confirm.png" />
 
  	</li>
  	<li>Wait for the service to finish downloading. 
 
-	<img src="media/dev_install_vertica_2.png" />
+	<image href="../media/dev_install_vertica_2.png" /></li>
  </ol>
 	<b>Note:</b> Downloading multiple services simultaneously is not supported, and will
 	leave the server in an error state.
 		</li>
-		<li>Log back into the Horizon console as a non-admin user. Click on the <b>Marketplace</b> panel under the current Project to begin using the Marketplace Service. You may now install <xref href="/helion/devplatform/1.1/marketplace/#install>Marketplace packages</xref>.
+		<li>Log back into the Horizon console as a non-admin user. Click on the <b>Marketplace</b> panel under the current Project to begin using the Marketplace Service. You may now install <xref href="../devplatform/1.1devplatform.marketplace.install.dita#install">Marketplace packages</xref>.
 </li></ol></section>
-
-Your installation is now complete. If you encounter problems, refer to the <xref href="/helion/devplatform/1.1/install/troubleshooting/">Troubleshooting</xref>documentation.
+<section id="complete">
+	Your installation is now complete. If you encounter problems, refer to the <xref href="/helion/devplatform/1.1/install/troubleshooting">Troubleshooting</xref> documentation.</section>
+</body></topic>
