@@ -1,41 +1,57 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Services Map"
-permalink: /helion/openstack/1.1/services/mapHeat
-product: commercial.ga
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1769">
+<title>HP Helion OpenStack!registeredtrademarksymbol! 1.1: Services Map</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
-
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p> -->
-
-# HP Helion OpenStack&#174; 1.1: Services Map
-<br />
-
-<img src="media/heat_diagram.png" alt=""><br />
-<a href="/helion/openstack/1.1/services/map/"><img src="media/back.png" alt=""></a>
-
-##Heat orchestration service
-
-The HP Helion OpenStack Orchestration service leverages OpenStack Heat to provide template-based orchestration for describing a cloud application. It executes OpenStack API calls to generate running cloud applications.
-
-Heat is a service to orchestrate multiple composite cloud applications using the AWS CloudFormation template format, through both an OpenStack-native ReST API and a CloudFormation-compatible Query API.
-
-- Heat provides a template based orchestration for describing a cloud application by executing appropriate OpenStack API calls to generate running cloud applications.
-
-- The software integrates other core components of OpenStack into a one-file template system. The templates allow creation of most OpenStack resource types (such as instances, floating ips, volumes, security groups, users, etc), as well as some more advanced functionality such as instance high availability, instance autoscaling, and nested stacks. By providing very tight integration with other OpenStack core projects, all OpenStack core projects could receive a larger user base.
-
-- Allows deployers to integrate with Heat directly or by adding custom plugins.
+ <!--./commercial/GA1/1.1commercial.services-mapHeat.md-->
+ <!--permalink: /helion/openstack/1.1/services/mapHeat--></p>
+<p>
+  <!--A BR tag was used here in the original source.-->
+</p>
+<p>
+  <image href="/content/documentation/media/heat_diagram.png" placement="break">
+<alt/>
+</image>
+  <!--A BR tag was used here in the original source.-->
+  <xref href="/helion/openstack/1.1/services/map/" format="html">
+    <image href="/content/documentation/media/back.png">
+<alt/>
+</image>
+  </xref>
+</p>
+<section>
+<title>
+<!-- id="heat-orchestration-service" -->Heat orchestration service</title>
+<p>The HP Helion OpenStack!registeredtrademarksymbol! Orchestration service leverages OpenStack!registeredtrademarksymbol! Heat to provide template-based orchestration for describing a cloud application. It executes OpenStack!registeredtrademarksymbol! API calls to generate running cloud applications.</p>
+<p>Heat is a service to orchestrate multiple composite cloud applications using the AWS CloudFormation template format, through both an OpenStack!registeredtrademarksymbol!-native ReST API and a CloudFormation-compatible Query API.</p>
+<ul>
+<li>
+<p>Heat provides a template based orchestration for describing a cloud application by executing appropriate OpenStack!registeredtrademarksymbol! API calls to generate running cloud applications.</p>
+</li>
+<li>
+<p>The software integrates other core components of OpenStack!registeredtrademarksymbol! into a one-file template system. The templates allow creation of most OpenStack!registeredtrademarksymbol! resource types (such as instances, floating ips, volumes, security groups, users, etc), as well as some more advanced functionality such as instance high availability, instance autoscaling, and nested stacks. By providing very tight integration with other OpenStack!registeredtrademarksymbol! core projects, all OpenStack!registeredtrademarksymbol! core projects could receive a larger user base.</p>
+</li>
+<li>
+<p>Allows deployers to integrate with Heat directly or by adding custom plugins.</p>
+</li>
+</ul>
+</section>
+</body>
+<related-links>
+<linklist>
+<title>Collected links</title>
+<link href="/helion/openstack/1.1/services/map/" format="html">
+<linktext>
+    
+  </linktext>
+</link>
+</linklist>
+</related-links>
+</topic>
