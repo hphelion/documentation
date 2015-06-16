@@ -12,8 +12,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Instances/carrier-grade.managing.instances.md-->
  <!--permalink: /helion/commercial/carrier/dashboard/managing/instances/overview/--></p>
-<p>| <xref href="../../../CarrierGrade/AdminGuideNew/carrier-grade-admin-guide-new.dita" >▲ Administrators Guide</xref> | <xref href="./CarrierGrade/AdminGuideNew/Volumes/carrier-grade.managing.volumes.dita" >Managing Volumes ▶</xref>
-</p>
+<p><!--| <xref href="../../../CarrierGrade/AdminGuideNew/carrier-grade-admin-guide-new.dita">▲ Administrators Guide</xref> | <xref href="./CarrierGrade/AdminGuideNew/Volumes/carrier-grade.managing.volumes.dita">Managing Volumes ▶</xref> --></p>
 <p>Instances are virtual machines that run inside the cloud.</p>
 <p>How you interact with instances depends upon your user type, either an administrative user (admin) or a non-administrative user (user).</p>
 <p>

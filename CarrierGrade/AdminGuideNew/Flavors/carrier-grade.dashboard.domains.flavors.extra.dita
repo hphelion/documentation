@@ -44,7 +44,7 @@
 <li>
 <p>Use the Extra Spec drop-down list to add specifications. The following options are available:</p>
 
-<ul>
+<ol>
 <li>Custom Extra Spec. Available for internal use only.</li>
 <li>VCPU Model. The CPU model to use with the virtual machine. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.vcpu.dita" >Specifying the VCPU Model for a VM</xref>.</li>
 <li>CPU Policy. The policy for assigning dedicated physical or logical CPU resources to the VM. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.cpu.dita" >Specifying Dedicated CPUs for a VM</xref>.</li>
@@ -57,7 +57,7 @@
 </li>
 <li>Minimum Number of CPUs. Sets the minimum number of virtual CPUs for the flavor.</li>
 <li>Local Storage. Specifies whether to use local or remote ephemeral storage resources. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.vcpu.storage.dita" >Specifying Local Storage for a VM</xref>.</li>
-</ul>
+</ol>
 </li>
 <li>
 <p>Click <b>Create</b> to create a new the flavor.</p>

@@ -49,12 +49,14 @@
 <li>
 <p>For the project you want to modify, click the <b>Modify Users</b> button.</p>
 
-<p>On the Project Members tab of the Edit Project screen that displays, the users in the <b>Project Members</b> column can access and work with the current project.</p>
+<p>On the <b>Project Members</b> tab of the <b>Edit Project</b> screen that displays, the users in
+            the <b>Project Members</b> column can access and work with the current project.</p>
 </li>
 <li>
-<p>To remove a user to the project, click the <b>-</b> icon next to that user name in the <b>Project Members</b> column.</p>
+<p>To remove a user to the project, click the icon next to that user name in the <b>Project
+              Members</b> column.</p>
 
-<p>The user name is moved to the **All Users** column and can no longer access the project.</p>
+<p>The user name is moved to the <b>All Users</b> column and can no longer access the project.</p>
 </li>
 <li>
 <p>Click <b>Save</b>.</p>

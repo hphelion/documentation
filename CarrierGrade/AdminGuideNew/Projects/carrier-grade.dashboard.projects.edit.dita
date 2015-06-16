@@ -31,9 +31,10 @@
 <li>
 <p>On the <b>Project Info</b> tab of the <b>Create Project</b> screen:</p>
 
-<p>a. Enter a unique name for the project.
-b, Enter an identifying description for the project.
-c. Leave <b>Enabled</b> selected to create an active project or clear the option to create a</p>
+<p>a. Enter a unique name for the project. </p>
+          <p>b, Enter an identifying description for the project. </p>
+          <p>c. Leave <b>Enabled</b> selected to create an active project or clear the option to
+            create a</p>
 </li>
 <li>
 <p>Click the <b>Project Members</b> tab.</p>
@@ -48,15 +49,16 @@ c. Leave <b>Enabled</b> selected to create an active project or clear the option
 <p>Optionally, specify operational quotas for the project.</p>
 
 <ul>
-<li>Metadata Items. Metadata items allowed for each instance.</li>
-<li>VCPUs. Instance cores allowed for each project.</li>
-<li>Instances. Instances allowed for each project.</li>
-<li>Injected Files. Injected files allowed for each project.</li>
-<li>Injected File Content Bytes. Content bytes allowed for each injected file.</li>
-<li>Volumes. Volumes allowed for each project.</li>
-<li>Volume Snapshots. Volume snapshots allowed for each project.</li>
-<li>Total Size of Volumes and Snapshots- Enter the maximum total size for all volumes and snapshots allowed for the project.</li>
-<li>RAM (MB). RAM megabytes allowed for each instance.</li>
+<li><b>Metadata Items</b> - Metadata items allowed for each instance.</li>
+<li><b>VCPUs</b> - Instance cores allowed for each project.</li>
+<li><b>Instances</b> - Instances allowed for each project.</li>
+<li><b>Injected Files</b> - Injected files allowed for each project.</li>
+<li><b>Injected File Content Bytes</b> - Content bytes allowed for each injected file.</li>
+<li><b>Volumes</b> - Volumes allowed for each project.</li>
+<li><b>Volume Snapshots</b> - Volume snapshots allowed for each project.</li>
+<li><b>Total Size of Volumes and Snapshots</b>- Enter the maximum total size for all volumes and
+              snapshots allowed for the project.</li>
+<li><b>RAM (MB)</b> - RAM megabytes allowed for each instance.</li>
 </ul>
 <p>
 <b>Note:</b> Default values are set on the <xref href="../../../CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade.dashboard.default.quotas.dita" >Default screen</xref>.</p>
@@ -83,8 +85,9 @@ c. Leave <b>Enabled</b> selected to create an active project or clear the option
 <p>In the confirmation screen, click <b>Delete Project</b>.</p>
 </li>
 </ol>
-<p>The project is no longer available.  <xref type="section" href="#topic2121/top"> Return to Top </xref>
-</p>
+<p>The project is no longer available. </p>
+      <p><xref type="section" href="#topic2121/top"> Return to Top </xref>
+      </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

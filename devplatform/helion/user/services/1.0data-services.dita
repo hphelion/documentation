@@ -348,7 +348,7 @@ grouped by service type. VCAP_SERVICES variables use non-versioned service names
 initial database setup, modifying fields, running queries, or doing
 backups. These operations can be done using the <codeph>dbshell</codeph> (preferred) or <codeph>tunnel</codeph> commands.</p>
 </section>
-<section id="using-dbshell"> <title>Via <i>dbshell</i>
+<section id="tunnel-using-dbshell"> <title>Via <i>dbshell</i>
 </title>
 <p>The <i>helion dbshell</i> command creates an SSH tunnel to database services. To open an interactive shell to a service:</p>
 <codeblock>
@@ -518,7 +518,7 @@ command to remotely execute the dbexport tool:</p>
 remotely and direct the output to a local file. If run from a directory
 containing the manifest.yml file, the application name may be omitted.</p>
 </section>
-<section id="using-helion-tunnel"> <title>Using helion tunnel</title>
+<section id="backup-using-helion-tunnel"> <title>Using helion tunnel</title>
 <p>This method of database backup is provided for compatibility with Cloud Foundry. It tends to be slower than using <codeph>helion run ...</codeph>.</p>
 <p>To back up a MySQL database, use the <xref type="section" href="#topic19439/database-tunnel">tunnel</xref>
 command to make a connection to the server and export the data using

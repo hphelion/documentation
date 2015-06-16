@@ -78,7 +78,7 @@ Wind River Linux: &lt;IP_address&gt;/auth/login/
 </li>
 </ol>
 </section>
-<section id="set-the-maximum-scaling-range-using-horizon"> <title>Set the maximum scaling range using Horizon</title>
+<section id="set-the-maximum-vcpu-using-horizon"> <title>Set the maximum scaling range using Horizon</title>
 <p>For flavors on Wind River Linux servers, you can set the minimum number of vCPUs.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
