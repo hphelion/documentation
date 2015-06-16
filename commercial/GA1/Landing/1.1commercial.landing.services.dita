@@ -18,7 +18,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/Landing/1.1commercial.landing.services.md-->
  <!--permalink: /helion/openstack/1.1/landing/services/--></p>
-<section id="OpenStack(R)"> <title>OpenStack(R) Services</title>
+<section id="OpenStack"> <title>OpenStack(R) Services</title>
 <p>The following services are foundation technologies used by the HP Helion OpenStack(R)</p>
 <p>
 <xref href="../../../commercial/GA1/1.1commerical.services-compute-overview.dita" >Compute Operations</xref>
