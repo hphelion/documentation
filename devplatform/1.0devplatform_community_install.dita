@@ -339,7 +339,7 @@ If you are installing the HP Helion Development Platform <b>Commercial</b> editi
 </li>
 </ol>
 </section>
-<section id="database-connect"> <title>Download and Configure the Database Service</title>
+<section id="database-download"> <title>Download and Configure the Database Service</title>
 <p>In the <b>Configure Services</b> panel locate the <b>Database Service</b> item in the <b>Configure Services</b> table and select <b>Download Service</b> and wait for the download to complete.</p>
 <ol>
 <li>
@@ -421,10 +421,10 @@ If you are installing the HP Helion Development Platform <b>Commercial</b> editi
 </li>
 </ul>
 </section>
-<section id="marketplace-install"> <title>Prerequisites</title>
+<section id="marketplace-prereq"> <title>Prerequisites</title>
 <p>Before installing, make sure the following prerequisites are met:</p>
 </section>
-<section id="database-quota"> <title>Check Project Quotas</title>
+<section id="marketplace-quota"> <title>Check Project Quotas</title>
 <p>The Marketplace service will be installed into the Admin project of the Helion OpenStack(R) overcloud. The Admin project must have sufficient quota available and unused for the resources the service uses.</p>
 <p>To check existing quota availability:</p>
 <ol>
