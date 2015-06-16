@@ -30,21 +30,22 @@
 
 <ul>
 <li>
-<b>Volume Name:</b> Enter a name for the volume  </li>
+              <b>Volume Name</b> - Enter a name for the volume </li>
 <li>
-<b>Description:</b> Provide a brief description (optional).  </li>
+              <b>Description</b> - Provide a brief description (optional). </li>
 <li>
-<b>Volume Source:</b> Select one of the following options: 
-
-<ul>
-<li>No source, empty volume - creates an empty volume and does not contain a file system or a partition table  </li>
-<li>Image - a new field for Use image as a source displays. You can select the image from the list.  </li>
-</ul>
-</li>
+              <b>Volume Source</b> - Select one of the following options: <ul>
+                <li>No source, empty volume - creates an empty volume and does not contain a file
+                  system or a partition table </li>
+                <li>Image - a new field for Use image as a source displays. You can select the image
+                  from the list. </li>
+              </ul>
+            </li>
 <li>
-<b>Size:</b> Enter the size of the volume in gigabytes   </li>
+              <b>Size</b> - Enter the size of the volume in gigabytes </li>
 <li>
-<b>Availability Zone:</b> Select the availability zone. By default, this value is set to 'any availability zone'.  </li>
+              <b>Availability Zone</b> - Select the availability zone. By default, this value is set
+              to 'any availability zone'. </li>
 </ul>
 </li>
 <li>

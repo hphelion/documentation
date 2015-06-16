@@ -32,7 +32,7 @@
 <li>
 <p>In the <b>Create an Image</b> screen, provide the image information:</p>
 
-<ul>
+<ol>
 <li>Name - Enter a name for the image.</li>
 <li>Description - Optionally, enter a brief description of the image.</li>
 <li>Image Source - Choose the image source from the list. Your choices are Image Location and Image File.</li>
@@ -44,7 +44,7 @@
 <li>Minimum RAM (MB) - Enter the minimum memory size required to boot the image. Leave the field blank to specify no minimum.</li>
 <li>Public - Select this option to make the image public to all users with access to the current project. Leave the option clear to allow the image to be used in all projects in the domain.</li>
 <li>Protected - Select this option to prevent the image from being deleted.  Leave the option clear to allow the image to be deleted.</li>
-</ul>
+</ol>
 </li>
 <li>
 <p>Click <b>Create Image</b> to launch the image.</p>

@@ -32,12 +32,14 @@
 <p>In the <b>Create User</b> screen, enter the following:</p>
 
 <ul>
-<li>User Name - Enter a name for the user. The user will need this name to log in.</li>
-<li>Email - Optionally, enter an email associated with this user.</li>
-<li>Password - Enter a password for the user. The user will need the password to log in.</li>
-<li>Confirm Password - Re-enter the password to confirm.</li>
-<li>Primary Project - Select a primary project for the user. The primary project is simply the first project the user is associated with.</li>
-<li>Role - Select a role for the user. The role determines many of the tasks that the user can perform.</li>
+<li><b>User Name</b> - Enter a name for the user. The user will need this name to log in.</li>
+<li><b>Email</b> - Optionally, enter an email associated with this user.</li>
+<li><b>Password</b> - Enter a password for the user. The user will need the password to log in.</li>
+<li><b>Confirm Password</b> - Re-enter the password to confirm.</li>
+<li><b>Primary Project</b> - Select a primary project for the user. The primary project is simply
+              the first project the user is associated with.</li>
+<li><b>Role</b> - Select a role for the user. The role determines many of the tasks that the user
+              can perform.</li>
 </ul>
 </li>
 <li>

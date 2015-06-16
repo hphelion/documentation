@@ -39,12 +39,13 @@
 
 <p>If the router is connected to a network:</p>
 
-<codeblock>
-<codeph>a. Click the name of the router you want to delete.&lt;/li&gt;
-b. On the **Router Details** screen, select the interface(s) for the router and click **Delete Interface**.&lt;/li&gt;
-c. Return to the **Routers** screen.&lt;/li&gt;
-</codeph>
-</codeblock>
+
+  <p>a. Click the name of the router you want to delete.</p>
+  <p>b. On the <b>Router Details</b> screen, select the interface(s) for the router and click
+            **Delete Interface**.</p>
+  <p>c. Return to the <b>Routers</b> screen.</p>
+
+
 </li>
 <li>
 <p>For the router you want to delete, click <b>More &gt; Delete Router</b>.</p>

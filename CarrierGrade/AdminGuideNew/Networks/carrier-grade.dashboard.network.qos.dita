@@ -49,9 +49,9 @@ overflow limits.</p>
 
 <p>Project users can select available QoS policies when the tenant networks are created from the <xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.create.dita" >Create Network</xref> window and the Edit Network window.</p>
 
-<p>d. Enter a gateway IP address from the subnet or leave the <b>Gateway IP</b> field blank to use the default value for the gateway IP address; for example, 192.168.0.1 for 192.168.0.0/24.</p>
+<p>e. Enter a gateway IP address from the subnet or leave the <b>Gateway IP</b> field blank to use the default value for the gateway IP address; for example, 192.168.0.1 for 192.168.0.0/24.</p>
 
-<p>e. Leave <b>Disable Gateway</b> clear to enable the default gateway for this network, or select <b>Disable Gateway</b> to create the network with no default gateway.</p>
+<p>f. Leave <b>Disable Gateway</b> clear to enable the default gateway for this network, or select <b>Disable Gateway</b> to create the network with no default gateway.</p>
 </li>
 <li>
 <p>Click Next.</p>

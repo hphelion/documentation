@@ -56,14 +56,14 @@
 <li>
 <p>Enter the name that you want to assign to the flavor.</p>
 
-<ul>
+<ol>
 <li>In the <b>ID</b> field, enter a unique string that identifies this flavor.</li>
 <li>In the <b>VCPUs</b> field, enter the required number of virtual CPUs to be included in the flavor.</li>
 <li>In the <b>RAM MB</b> field, enter the virtual machine memory in megabytes to be included in the flavor.</li>
 <li>In the <b>Root Disk GB</b> field, enter the size for the virtual root disk size in gigabytes.</li>
 <li>From the <b>Ephemeral disk GB</b> field, enter the size of a secondary ephemeral data disk in gigabytes. This is an empty, unformatted disk and exists only for the life of the instance.</li>
 <li>From the <b>Swap Disk MB</b> field, enter the amount of swap space allocation for the flavor.</li>
-</ul>
+</ol>
 </li>
 <li>
 <p>Click the <b>Flavor Access</b> tab.</p>

@@ -35,7 +35,7 @@
 <li>
 <p>On the <b>Create New Server Group</b> screen:</p>
 
-<ul>
+<ol>
 <li>Select a project for the new service group should be associated with. </li>
 <li>Specify a name for the new server group.</li>
 <li>
@@ -60,7 +60,7 @@
 <li>
 <p>Specify the maximum number of instances that can co-exist as part of this server group.</p>
 </li>
-</ul>
+</ol>
 </li>
 <li>
 <p>Click <b>Create New Server Group</b>.</p>

@@ -28,7 +28,7 @@
 <li>
 <p>In the <b>Resize Instance</b> screen, select a different flavor from the <b>New Flavor</b> list.</p>
 
-<p>Refer to teh Flavor Details list for information on the selected falvor.</p>
+<p>Refer to the Flavor Details list for information on the selected falvor.</p>
 
 <p>The <b>Total RAM</b> meter under Project Limits will show how the resized instance affects the RAM allocated for the project.</p>
 </li>
