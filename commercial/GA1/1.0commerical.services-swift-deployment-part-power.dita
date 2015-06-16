@@ -26,156 +26,134 @@
 <p>The following table displays the  number of zones, the maximum and minimum number of drives, and the ring power defined for that particular configuration. With the defined disk drives number of zones and the ring power, 100 ring partition are defined on each disk drive. This is the smallest allowed number of partition. The Minimum Number of Drives column displays the number of drives that are required for the system to operate correctly. If you have fewer than the minimum number of drives specified, there will be too many partitions on the disk drive and Swift will fail to complete the audit and other processes.</p>
 <!--
 To use, given number of zones and the maximum number of disk drives anticipated for the system, pick a ring power from the table. With these many disk drives, number of zones and ring power, there will be 100 ring partitions on each disk drives. This is the smallest allowed number of partitions. If your system has fewer drives (i.e, starts small), look at the <min-mum-drives> column. For a given number of zones and ring power, this is the smallest number of disk drives you system must have to operate correctly. If you have fewer <min-mum-drives>, there will be too many partitions on the disk drive, and Swift will fail to complete audit and other processes.-->
-<table>
-<tgroup cols="4">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<thead>
-<row>
-<entry>Number of Zones</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Minimum Number of Drives</ph>
-</required-cleanup>
-</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Maximum Number of Drives</ph>
-</required-cleanup>
-</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Ring Power</ph>
-</required-cleanup>
-</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>3</entry>
-    <entry>13</entry>
-    <entry>3,932 </entry>
-    <entry>17 </entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>26</entry>
-    <entry>7,864</entry>
-    <entry>18 </entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>52</entry>
-    <entry>15,728 </entry>
-    <entry>19 </entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>104</entry>
-    <entry>31,457</entry>
-    <entry>20</entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>209</entry>
-    <entry>62,914 </entry>
-    <entry>21 </entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>419</entry>
-    <entry>125,829</entry>
-    <entry>22</entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>838</entry>
-    <entry>251,658</entry>
-    <entry>23</entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>1677</entry>
-    <entry>503,316</entry>
-    <entry>24 </entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>3355</entry>
-    <entry>1,006,632</entry>
-    <entry>25</entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>6710</entry>
-    <entry>2,013,265</entry>
-    <entry>26</entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>17</entry>
-    <entry> 5,242</entry>
-    <entry>17 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>34</entry>
-    <entry>10,485 </entry>
-    <entry>18 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>69</entry>
-    <entry>20,971</entry>
-    <entry>19 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>139</entry>
-    <entry>41,943</entry>
-    <entry>20 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>279</entry>
-    <entry>83,886</entry>
-    <entry>21 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>559</entry>
-    <entry>16,7772</entry>
-    <entry>22 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>1118</entry>
-    <entry> 335,544</entry>
-    <entry>23 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>2236</entry>
-    <entry> 671,088</entry>
-    <entry>24 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>4473</entry>
-    <entry>1,342,177</entry>
-    <entry>25 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>8947</entry>
-    <entry>2,684,354 </entry>
-    <entry>26</entry>
-</row>
-</tbody>
-</tgroup>
-</table>
+        <simpletable frame="all" relcolwidth="1.08* 1.01* 1.02* 1.0*" id="simpletable_qdk_h5p_js">
+            <sthead>
+                <stentry>Number of Zones</stentry>
+                <stentry>Minimum Number of Drives</stentry>
+                <stentry>Maximum Number of Drives</stentry>
+                <stentry>Ring Power</stentry>
+            </sthead>
+            <strow>
+                <stentry>3</stentry>
+                <stentry>13</stentry>
+                <stentry>3,932 </stentry>
+                <stentry>17 </stentry>
+            </strow>
+            <strow>
+                <stentry>3 </stentry>
+                <stentry>26</stentry>
+                <stentry>7,4864</stentry>
+                <stentry>18</stentry>
+            </strow>
+            <strow>
+                <stentry>3</stentry>
+                <stentry>52</stentry>
+                <stentry>15,728 </stentry>
+                <stentry>19</stentry>
+            </strow>
+            <strow>
+                <stentry>3</stentry>
+                <stentry>104</stentry>
+                <stentry>31,457</stentry>
+                <stentry>20</stentry>
+            </strow>
+            <strow>
+                <stentry>3</stentry>
+                <stentry>209</stentry>
+                <stentry>62,914 </stentry>
+                <stentry>21</stentry>
+            </strow>
+            <strow>
+                <stentry>3</stentry>
+                <stentry>419</stentry>
+                <stentry>125,829</stentry>
+                <stentry>22</stentry>
+            </strow>
+            <strow>
+                <stentry>3</stentry>
+                <stentry>838</stentry>
+                <stentry>251,658</stentry>
+                <stentry>23</stentry>
+            </strow>
+            <strow>
+                <stentry>3</stentry>
+                <stentry>1677</stentry>
+                <stentry>503,316</stentry>
+                <stentry>24</stentry>
+            </strow>
+            <strow>
+                <stentry>3</stentry>
+                <stentry>3355</stentry>
+                <stentry>1,006,632</stentry>
+                <stentry>25</stentry>
+            </strow>
+            <strow>
+                <stentry>3</stentry>
+                <stentry>6710</stentry>
+                <stentry>2,013,265</stentry>
+                <stentry>26</stentry>
+            </strow>
+            <strow>
+                <stentry>4</stentry>
+                <stentry>17</stentry>
+                <stentry>5,242</stentry>
+                <stentry>17</stentry>
+            </strow>
+            <strow>
+                <stentry>4</stentry>
+                <stentry>34</stentry>
+                <stentry>10,485 </stentry>
+                <stentry>18</stentry>
+            </strow>
+            <strow>
+                <stentry>4</stentry>
+                <stentry>69</stentry>
+                <stentry>20,971</stentry>
+                <stentry>19</stentry>
+            </strow>
+            <strow>
+                <stentry>4</stentry>
+                <stentry>139</stentry>
+                <stentry>41,943</stentry>
+                <stentry>20</stentry>
+            </strow>
+            <strow>
+                <stentry>4</stentry>
+                <stentry>279</stentry>
+                <stentry>83,886</stentry>
+                <stentry>21</stentry>
+            </strow>
+            <strow>
+                <stentry>4</stentry>
+                <stentry>559</stentry>
+                <stentry>16,7772</stentry>
+                <stentry>22</stentry>
+            </strow>
+            <strow>
+                <stentry>4</stentry>
+                <stentry>1118</stentry>
+                <stentry>335,544</stentry>
+                <stentry>23</stentry>
+            </strow>
+            <strow>
+                <stentry>4</stentry>
+                <stentry>2236</stentry>
+                <stentry>671,088</stentry>
+                <stentry>24</stentry>
+            </strow>
+            <strow>
+                <stentry>4</stentry>
+                <stentry>4473</stentry>
+                <stentry>1,342,177</stentry>
+                <stentry>25</stentry>
+            </strow>
+            <strow>
+                <stentry>4</stentry>
+                <stentry>8947</stentry>
+                <stentry>2,684,354 </stentry>
+                <stentry>26</stentry>
+            </strow>
+        </simpletable>
 <p>
   <xref href=" /helion/openstack/services/swift/deployment-scale-out/" > Back</xref>
 </p>
