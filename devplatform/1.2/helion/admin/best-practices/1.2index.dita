@@ -253,7 +253,7 @@ nodes to new nodes. Instead, the application droplets (zip files
 containing staged applications) are re-deployed to new DEA nodes from
 the Controller.</p>
 </section>
-<section id="exporting-the-server-data"> <title>Exporting the server data</title>
+<section id="dea-exporting-the-server-data"> <title>Exporting the server data</title>
 <p>Data export is done with the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-export" >
 <i>kato data
 export</i>
