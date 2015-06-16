@@ -58,7 +58,7 @@
 <p>
 <b>Note:</b> Helion OpenStack(R) version 1.1.1 is required for Helion Development Platform 1.2. Installing Helion Development Platform 1.2 on Helion OpenStack(R) versions 1.1 or 1.0 is not supported. If you currently have Helion OpenStack(R) version 1.1 with Helion Development Platform 1.1 installed, you will need to do the following to install Helion Development Platform 1.2:</p>
 <ul>
-<li>Perform a fresh <xref href="/helion/openstack/" >install</xref> of Helion OpenStack(R) version 1.1.1</li>
+<li>Perform a fresh <xref href="/helion/openstack" >install</xref> of Helion OpenStack(R) version 1.1.1</li>
 <li>Install Helion Development Platform 1.2 </li>
 </ul>
 <p>Before you begin installation:</p>
@@ -119,7 +119,7 @@
 </li>
 </ol>
 </section>
-<section id="installing-the-hp-helion-development-platform"> <title>Installing the HP Helion Development Platform</title>
+<section id="pre-installing-the-hp-helion-development-platform"> <title>Installing the HP Helion Development Platform</title>
 <ol>
 <li>
 <p>Navigate to the <i>dev-platform-installer</i> directory inside the dev-platform-installer.</p>
@@ -318,7 +318,7 @@ leave the server in an error state.</p>
 <section id="install-the-database-service"> <title>Install the Database Service<!--Removed anchor point install-database--><!-- id="install-database" --></title>
 <p>This section provides details on installing the Database Service from the Development Platform.</p>
 </section>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="db-prerequisites"> <title>Prerequisites</title>
 </section>
 <section id="availability-zones"> <title>Availability Zones</title>
 <p>To configure the Database Service in a highly available manner, it is necessary to create separate availability zones. As a best practice, HP recommends creating three availability zones. All compute hosts should be placed within one of these availability zones. If a compute host is not associated with an availability zone, the Database Service will not be able to provision a database instance to it. As a result, the Database Service may run out of capacity even though there are compute hosts with free capacity.</p>
@@ -458,7 +458,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 </table>
 <p>In addition to the quota mentioned above, for every database instance that is created by a user, the necessary resources to create that instance will be deducted from the admin tenant quota. The users database service quota will also be affected.</p>
 </section>
-<section id="connect-to-the-download-service"> <title>Connect to the Download Service</title>
+<section id="db-connect-to-the-download-service"> <title>Connect to the Download Service</title>
 <ol>
 <li>Open Horizon and login as the "admin" user. You must run the entire install logged in as "admin". </li>
 <li>
@@ -586,7 +586,7 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 <section id="install-the-marketplace-service"> <title>Install the Marketplace Service<!--Removed anchor point install-marketplace--><!-- id="install-marketplace" --></title>
 <p>This section provides details on installing the Marketplace service from the Development Platform.</p>
 </section>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="marketplace-quota"> <title>Prerequisites</title>
 <p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack(R) overcloud and the admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <table>
 <tgroup cols="2">
@@ -630,7 +630,7 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 <section id="installing-the-marketplace-service"> <title>Installing the Marketplace Service</title>
 <p>This section provides details on installing the Marketplace service from the Development Platform.</p>
 </section>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="marketplace-prerequisites"> <title>Prerequisites</title>
 <p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack(R) overcloud. The admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <table>
 <tgroup cols="2">
@@ -680,7 +680,7 @@ Increase the Ports quota to at least 100 using the following command in the <xre
 </codeph>
 </codeblock>
 </section>
-<section id="connect-to-the-download-service"> <title>Connect to the Download Service</title>
+<section id="marketplace-connect-to-the-download-service"> <title>Connect to the Download Service</title>
 <ol>
 <li>Open Horizon and login as the "admin" user. You must run the entire install logged in as "admin".</li>
 <li>

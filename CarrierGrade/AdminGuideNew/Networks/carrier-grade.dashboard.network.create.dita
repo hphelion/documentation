@@ -103,11 +103,11 @@
 </li>
 </ol>
 <p>The network is deleted and any instances attached to the networks are disconnected.</p>
-<ol>
-<li>
+
+<p>
 <xref type="section" href="#topic4189/top"> Return to Top </xref>
-</li>
-</ol>
+</p>
+
 </section>
 <section id="cli"> <title>Create a network using the CLI</title>
 <p>You can use CLI commands to add router interfaces. First, become the appropriate admin user:</p>

@@ -61,14 +61,13 @@
 <p>In the <b>Create Security Group</b> screen, enter a name for the group and, optionally, enter a description.</p>
 </li>
 </ol>
-<p>6.. Click <b>Create Security Group</b>.</p>
-<codeblock>
-  <codeph>The new group is created with two rules that allow all traffic from an instance associated to the group.
-</codeph>
-</codeblock>
-<ol>
-<li>You can use the following procedure to add ingress and egress rules to the security group as needed.</li>
-</ol>
+<p>6. Click <b>Create Security Group</b>.</p>
+
+<p>The new group is created with two rules that allow all traffic from an instance associated to the group.
+</p>
+
+<p>You can use the following procedure to add ingress and egress rules to the security group as needed.</p>
+
 </section>
 <section id="editgroups"> <title>Create security group rules</title>
 <p>To create security group rules, do the following:</p>

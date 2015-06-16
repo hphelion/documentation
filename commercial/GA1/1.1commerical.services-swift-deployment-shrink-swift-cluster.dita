@@ -26,9 +26,9 @@
 <p>
       <xref
         href="../../commercial/GA1/1.0commerical.services-swift-deployment-shrink-swift-cluster.dita"
-        >See the Helion OpenStack® 1.0 version of this page</xref>
+        >See the Helion OpenStack 1.0 version of this page</xref>
     </p>
-<p>HP Helion OpenStack® allows you to remove Swift cluster in any of the followings ways:</p>
+<p>HP Helion OpenStack allows you to remove Swift cluster in any of the followings ways:</p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita" >Remove an existing Disk from Object Nodes</xref>

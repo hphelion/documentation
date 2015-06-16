@@ -24,10 +24,15 @@
 <p>View the following information on these tabs:</p>
 
 <ul>
-<li>Services: Displays the internal name and the public OpenStack(R) name for each service, the host on which the service runs, and whether or not the service is enabled.</li>
-<li>Compute Services: Displays information specific to the Compute Service. Both host and zone are listed for each service, as well as its activation status.</li>
-<li>Block Storage Services: Displays information specific to the Volume Operations (Cinder) service. Both host and zone are listed for each service, as well as its activation status.</li>
-<li>Network Agents: Displays the network agents active within the cluster, such as L3 and DHCP agents, and the status of each agent.</li>
+<li><b>Services</b> - Displays the internal name and the public OpenStack(R) name for each service,
+            the host on which the service runs, and whether or not the service is enabled.</li>
+<li><b>Compute Services</b> - Displays information specific to the Compute Service. Both host and
+            zone are listed for each service, as well as its activation status.</li>
+<li><b>Block Storage Services</b> - Displays information specific to the Volume Operations (Cinder)
+            service. Both host and zone are listed for each service, as well as its activation
+            status.</li>
+<li><b>Network Agents</b> - Displays the network agents active within the cluster, such as L3 and
+            DHCP agents, and the status of each agent.</li>
 </ul>
 </li>
 </ol>

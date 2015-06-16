@@ -40,7 +40,10 @@
 <li>
 <p>Select <b>Disk Over Commit</b> to use the Overcommit feature.</p>
 
-<p>Dick Overcommit allows you to overcommit CPU and RAM on compute nodes. This allows you to increase the number of instances you can have running on your cloud, at the cost of reducing the performance of the instances. The Compute service uses the following ratios by default:</p>
+<p>Disk Overcommit allows you to overcommit CPU and RAM on compute nodes. This allows you to
+            increase the number of instances you can have running on your cloud, at the cost of
+            reducing the performance of the instances. The Compute service uses the following ratios
+            by default:</p>
 
 <ul>
 <li>CPU allocation ratio: 16:1</li>

@@ -32,14 +32,18 @@
   <!--Original: <span @class=>--><ph>To be determined</ph>
 </p>
 <!-- ===================== horizontal rule ===================== -->
-<xref href="../../../devplatform/1.2/windows/windows_overview.dita" >Windows Overview</xref>
-<xref href="../../../devplatform/1.2/windows/windows_firstapp.dita" >Deploying your first .NET Application</xref>
-<p> | </p>
-<xref href="../../../devplatform/1.2/windows/windows_tools_guide.dita" >Windows and .NET Tools Guide</xref>
-<xref href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita" >Building and Deploying Windows DEA and SQL Server Express Images</xref>
-<p> | Glazier Reference Guide</p>
-<xref href="../../../devplatform/1.2/windows/windows_adding_services.dita" >Adding Services to a Windows Application</xref>
-<p> | </p>
-<xref href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita" >Deploying Windows Applications with the IIS Buildpack</xref>
+<p><xref href="../../../devplatform/1.2/windows/windows_overview.dita">Windows Overview</xref> |
+        <xref href="../../../devplatform/1.2/windows/windows_firstapp.dita">Deploying your first
+        .NET Application</xref></p>
+<p><xref href="../../../devplatform/1.2/windows/windows_tools_guide.dita">Windows and .NET Tools
+        Guide</xref> | <xref
+        href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita">Building and
+        Deploying Windows DEA and SQL Server Express Images</xref></p>
+<p> Glazier Reference Guide | <xref
+        href="../../../devplatform/1.2/windows/windows_adding_services.dita">Adding Services to a
+        Windows Application</xref></p>
+<p>
+      <xref href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita">Deploying Windows
+        Applications with the IIS Buildpack</xref></p>
 </body>
 </topic>
