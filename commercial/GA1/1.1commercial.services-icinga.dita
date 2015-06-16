@@ -73,22 +73,24 @@
 </ul>
 </li>
 <li>
-<p>Click <b>Status</b> on the left panel and then click <b>Host Details</b>.
-<!--A BR tag was used here in the original source.--><image href="../../media/icinga_host-details.png" placement="break"/>
-</p>
+<p>Click <b>Status</b> on the left panel and then click <b>Host Details</b>.<image
+                            href="../../media/icinga_host-details.png" placement="break"/>
+                    </p>
 </li>
 <li>
 <p>In the <b>Host</b> column, click the icon next to the host IP (with tooltip that shows View Service Details For This Host) of the Swift storage node that you want to monitor.</p>
 </li>
 <li>
-<p>The <b>Service Status Details For Host All Hosts</b> page opens.
-<!--A BR tag was used here in the original source.--><image href="../../media/swift_icinga_view-details.png" placement="break"/>
-</p>
+<p>The <b>Service Status Details For Host All Hosts</b> page opens.<image
+                            href="../../media/swift_icinga_view-details.png" placement="break"/>
+                    </p>
 </li>
 <li>
-<p>Click the target Swift node IP address to open the <b>Service Status Details For Host &lt;Swift node IP address &gt;</b> to view the disk usage of the selected Swift node.
-<!--A BR tag was used here in the original source.--><image href="../../media/swift_icinga-disk-usage.png" placement="break"/>
-</p>
+<p>Click the target Swift node IP address to open the <b>Service Status Details For Host &lt;Swift
+                            node IP address &gt;</b> to view the disk usage of the selected Swift
+                        node. <image href="../../media/swift_icinga-disk-usage.png"
+                            placement="break"/>
+                    </p>
 </li>
 </ol>
 </section>
@@ -103,14 +105,14 @@
 <row>
 <entry>Status</entry>
     <entry>
-<required-cleanup remap="center">
-<ph>Message</ph>
-</required-cleanup>
+
+Message
+
 </entry>
     <entry>
-<required-cleanup remap="center">
-<ph>Cause/Resolution</ph>
-</required-cleanup>
+
+Cause/Resolution
+
 </entry>
 </row>
 </thead>
@@ -168,19 +170,21 @@
 </ul>
 </li>
 <li>
-<p>Click <b>Status</b> on the left panel and then click <b>Host Details</b>.
-<!--A BR tag was used here in the original source.--><image href="../../media/icinga_host-details.png" placement="break"/>
-</p>
+<p>Click <b>Status</b> on the left panel and then click <b>Host Details</b>. <image
+                            href="../../media/icinga_host-details.png" placement="break"/>
+                    </p>
 </li>
 <li>
-<p>In the <b>Host</b> column, click the icon next to the host IP to see <b>Host Status Details For All Hosts</b>.
-<!--A BR tag was used here in the original source.--><image href="../../media/swift_icinga_view-details.png" placement="break"/>
-</p>
+<p>In the <b>Host</b> column, click the icon next to the host IP to see <b>Host Status Details For
+                            All Hosts</b>.<image href="../../media/swift_icinga_view-details.png"
+                            placement="break"/>
+                    </p>
 </li>
-<li>Click the target Swift node IP address to open the <b>Service Status Details For Host <varname>IP Address</varname>
-</b> to see the replication status of the selected Swift node.
-<!--A BR tag was used here in the original source.--><image href="../../media/swift_icinga-replication-status.png" placement="break"/>
-</li>
+<li>Click the target Swift node IP address to open the <b>Service Status Details For Host
+                            <varname>IP Address</varname>
+                    </b> to see the replication status of the selected Swift node. <image
+                        href="../../media/swift_icinga-replication-status.png" placement="break"/>
+                </li>
 </ol>
 </section>
 <section id="repstatus"> <title>Status Messages for replication monitoring</title>
@@ -194,14 +198,14 @@
 <row>
 <entry>Status</entry>
     <entry>
-<required-cleanup remap="center">
-<ph>Message</ph>
-</required-cleanup>
+
+Message
+
 </entry>
     <entry>
-<required-cleanup remap="center">
-<ph>Cause/Resolution</ph>
-</required-cleanup>
+
+Cause/Resolution
+
 </entry>
 </row>
 </thead>
@@ -244,21 +248,23 @@
 </ul>
 </li>
 <li>
-<p>Click <b>Status</b> on the left panel and then click <b>Host Details </b>.
-<!--A BR tag was used here in the original source.--><image href="../../media/icinga_host-details.png" placement="break"/>
-</p>
+<p>Click <b>Status</b> on the left panel and then click <b>Host Details </b>. <image
+                            href="../../media/icinga_host-details.png" placement="break"/>
+                    </p>
 </li>
 <li>
-<p>In the Host column, click the icon next to the host IP of the Swift storage node to open <b>Service Status Details For Host <varname>All Hosts</varname>
-</b>.
-<!--A BR tag was used here in the original source.--><image href="../../media/swift_icinga_view-details.png" placement="break"/>
-</p>
+<p>In the Host column, click the icon next to the host IP of the Swift storage node to open
+                            <b>Service Status Details For Host <varname>All Hosts</varname>
+                        </b>.<image href="../../media/swift_icinga_view-details.png"
+                            placement="break"/>
+                    </p>
 </li>
 <li>
-<p>Click the Swift node IP address to open the <b>Service Status Details For Host <varname>Swift node IP address </varname>
-</b> to view the health status of the selected Swift node.
-<!--A BR tag was used here in the original source.--><image href="../../media/swift_icinga-health-status.png" placement="break"/>
-</p>
+<p>Click the Swift node IP address to open the <b>Service Status Details For Host <varname>Swift
+                                node IP address </varname>
+                        </b> to view the health status of the selected Swift node.<image
+                            href="../../media/swift_icinga-health-status.png" placement="break"/>
+                    </p>
 </li>
 </ol>
 </section>
@@ -273,14 +279,14 @@
 <row>
 <entry>Status</entry>
     <entry>
-<required-cleanup remap="center">
-<ph>Message</ph>
-</required-cleanup>
+
+Message
+
 </entry>
     <entry>
-<required-cleanup remap="center">
-<ph>Cause/Resolution</ph>
-</required-cleanup>
+
+Cause/Resolution
+
 </entry>
 </row>
 </thead>
@@ -293,9 +299,12 @@
 <row>
 <entry>WARNING </entry>
     <entry>Disabled : proxy-server</entry>
-    <entry>Service is temporarily disabled.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
-    The proxy-server has been disabled by the creation of a file in the "disable_path" config parameter. This is often used to temporarily disable a proxy server by removing it from the
-    load balancer or high availability system. To resolve this issue, delete the file indicated in the "disable_path" configuration parameter.</entry>
+    <entry>Service is temporarily disabled. The proxy-server has been disabled by the creation of a
+                                file in the "disable_path" config parameter. This is often used to
+                                temporarily disable a proxy server by removing it from the load
+                                balancer or high availability system. To resolve this issue, delete
+                                the file indicated in the "disable_path" configuration
+                                parameter.</entry>
 </row>
 <row>
 <entry>FAIL </entry>
@@ -308,7 +317,7 @@
 <p>
   <xref type="section" href="#topic6584/top"> Return to Top </xref>
 </p>
-<!-- ===================== horizontal rule ===================== -->
+
 </section>
 </body>
 </topic>
