@@ -647,7 +647,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
           <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-          <title><xsl:comment>"blah"</xsl:comment>
+          <title><xsl:result-document "blah">
             <xsl:value-of select="$title"/>
           </title>
           <link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css">
