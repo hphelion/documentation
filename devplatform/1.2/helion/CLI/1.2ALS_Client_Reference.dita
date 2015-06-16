@@ -375,12 +375,12 @@
 <section id="delete"> <title>Delete a Cluster</title>
 <p>This command deletes a cluster (<i>delete-cluster</i>).</p>
 </section>
-<section id="use-syntax"> <title>Use Syntax</title>
+<section id="delete-cluster-use-syntax"> <title>Use Syntax</title>
 <codeblock>cf-mgmt [global options] <b>delete-cluster</b> [command options] [arguments...] </codeblock>
 <p>For help with this command within the command-line interface, enter</p>
 <codeblock>cf-mgmt help delete-cluster</codeblock>
 </section>
-<section id="command-options"> <title>Command Options</title>
+<section id="delete-cluster-command-options"> <title>Command Options</title>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>
@@ -451,12 +451,12 @@
 <section id="addrole"> <title>Add Roles to an Existing Cluster</title>
 <p>Options can be passed when adding roles to an existing cluster (<i>add-role dea</i>). <!--A BR tag was used here in the original source.--><b>Note</b>: Adding a role will create one or more additional nodes in the cluster as part of the process.</p>
 </section>
-<section id="use-syntax"> <title>Use Syntax</title>
+<section id="add-role-use-syntax"> <title>Use Syntax</title>
 <codeblock>cf-mgmt [global options] <b>add-role</b> [subcommand] [subcommand options] [arguments...]</codeblock>
 <p>For help with this command within the command-line interface, enter</p>
 <codeblock>cf-mgmt add-role --help</codeblock>
 </section>
-<section id="subcommands"> <title>Subcommands</title>
+<section id="add-role-subcommands"> <title>Subcommands</title>
 <codeblock>cf-mgmt [global options] add-role <b>[subcommand]</b> [subcommand options] [arguments...]</codeblock>
 <table>
 <tgroup cols="2">
@@ -565,12 +565,12 @@
 <section id="addservice"> <title>Add Services to an Existing Cluster</title>
 <p>This command adds services to an existing cluster (<i>add-service</i>).</p>
 </section>
-<section id="use-syntax"> <title>Use Syntax</title>
+<section id="add-service-use-syntax"> <title>Use Syntax</title>
 <codeblock>cf-mgmt [global options] <b>add-service</b> [subcommand] [subcommand options] [arguments..]</codeblock>
 <p>For help with each subcommand, enter</p>
 <codeblock>cf-mgmt add-service <b>[subcommand]</b> --help</codeblock>
 </section>
-<section id="subcommands"> <title>Subcommands</title>
+  <section id="add-service-subcommands"> <title>Subcommands</title>
 <codeblock>cf-mgmt [global options] add-service <b>[subcommand]</b> [subcommand options] [arguments..]</codeblock>
 <table>
 <tgroup cols="2">
