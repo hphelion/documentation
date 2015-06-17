@@ -14,10 +14,9 @@
 			</vrmlist>
 		</prodinfo>
 	</topicmeta>
-
+ <!--permalink:         --> <topicref href="CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa.dita"/> 
  <!--permalink: /--> <topicref href="publiccloud/index.dita"/> 
-  <!--permalink: /helion/devplatform/1.0/--> <topicref href="devplatform/1.0devplatform.index.dita" locktitle="yes" navtitle="Documentation -- HP Helion 1.0 Development Platform ">
-  <!--permalink: /helion/devplatform/1.0/msgaas/als/--> <topicref href="devplatform/1.0devplatform.using-messaging-service-with-ALS.dita" locktitle="yes" navtitle="Using the Messaging Service with ALS -- HP Helion 1.0 Development Platform "/>
+  
  <!--permalink: /als/v1/--> <topicref href="devplatform/helion/1.0index.dita" locktitle="yes" navtitle="Application Lifecycle Service Documentation -- HP Helion 1.0 Development Platform ">
  <!--permalink: /als/v1/admin/--> <topicref href="devplatform/helion/admin/1.0index.dita" locktitle="yes" navtitle="Application Lifecycle Service Admin Guide -- HP Helion 1.0 Development Platform ">
    <!--permalink: /als/v1/admin/best-practices/--> <topicref href="devplatform/helion/admin/best-practices/1.0index.dita" locktitle="yes" navtitle="Best Practices -- HP Helion 1.0 Development Platform ">
@@ -85,13 +84,12 @@
  </topicref>
  </topicref>
  </topicref>
- </topicref>
-
-  <!--permalink: /helion/devplatform/1.1/--> <topicref href="devplatform/1.1devplatform.index.dita" locktitle="yes" navtitle="Documentation -- HP Helion 1.1 Development Platform ">
+  <!--permalink: /helion/devplatform/1.0/--> <topicref href="devplatform/1.0devplatform.index.dita" locktitle="yes" navtitle="Documentation -- HP Helion 1.0 Development Platform "/>
+  <!--permalink: /helion/devplatform/1.0/msgaas/als/--> <topicref href="devplatform/1.0devplatform.using-messaging-service-with-ALS.dita" locktitle="yes" navtitle="Using the Messaging Service with ALS -- HP Helion 1.0 Development Platform "/>
+  <!--permalink: /helion/devplatform/1.1/--> <topicref href="devplatform/1.1devplatform.index.dita" locktitle="yes" navtitle="Documentation -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/3rd-party-license-agreements/--> <topicref href="devplatform/1.1devplatform.thirdparty.licensing.dita"/> 
-  <!--permalink: /helion/devplatform/1.1/ALS-developer-trial-quick-start/--> <topicref href="devplatform/1.1devplatform.ALS-developer-trial-quick-start.dita" locktitle="yes" navtitle="Quick Start Developer Trial -- HP Helion 1.1 Development Platform "/>
-  
-  <!--permalink: /helion/devplatform/1.1/als/--> <topicref href="devplatform/helion/1.1index.dita" locktitle="yes" navtitle="Application Lifecycle Service Documentation -- HP Helion 1.1 Development Platform ">
+  <!--permalink: /helion/devplatform/1.1/ALS-developer-trial-quick-start/-->
+  <!--permalink: /helion/devplatform/1.1/als/--> <topicref href="devplatform/helion/1.1index.dita" locktitle="yes" navtitle="Application Lifecycle Service Documentation -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/als/admin/--> <topicref href="devplatform/helion/admin/1.1index.dita" locktitle="yes" navtitle="Application Lifecycle Service Admin Guide -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/als/admin/best-practices/--> <topicref href="devplatform/helion/admin/best-practices/1.1index.dita" locktitle="yes" navtitle="Best Practices -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/als/admin/best-practices/logging-examples/--> <topicref href="devplatform/helion/admin/best-practices/1.1logging-examples.dita" locktitle="yes" navtitle="Log Drain Examples -- HP Helion 1.1 Development Platform "/>
@@ -119,8 +117,7 @@
   <!--permalink: /helion/devplatform/1.1/als/client/constructor/--> <topicref href="devplatform/helion/CLI/1.1constructor_vm.dita" locktitle="yes" navtitle="HP Application Lifecycle Service (ALS) Constructor Virtual Machine -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/als/client/download/--> <topicref href="devplatform/helion/CLI/1.1ALS_Client_Downloads.dita"/> 
   <!--permalink: /helion/devplatform/1.1/als/client/reference/--> <topicref href="devplatform/helion/CLI/1.1ALS_Client_Reference.dita" locktitle="yes" navtitle="HP Helion ALS Cluster Management Tool Reference -- HP Helion 1.1 Development Platform "/>
-  </topicref>
-  <!--permalink: /helion/devplatform/1.1/als/user/--> <topicref href="devplatform/helion/user/1.1index.dita" locktitle="yes" navtitle="Application Lifecycle Service User Guide -- HP Helion 1.1 Development Platform ">
+  <!--permalink: /helion/devplatform/1.1/als/user/--> <topicref href="devplatform/helion/user/1.1index.dita" locktitle="yes" navtitle="Application Lifecycle Service User Guide -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/als/user/client/--> <topicref href="devplatform/helion/user/client/1.1index.dita" locktitle="yes" navtitle="HP Helion Application Lifecycle Service Client -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/als/user/console/--> <topicref href="devplatform/helion/user/console/1.1index.dita" locktitle="yes" navtitle="Management Console: User View -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/als/user/deploy/--> <topicref href="devplatform/helion/user/deploy/1.1index.dita" locktitle="yes" navtitle="General Deployment -- HP Helion 1.1 Development Platform "/>
@@ -182,7 +179,6 @@
   <!--permalink: /helion/devplatform/1.1/als/user/services/memcached/--> <topicref href="devplatform/helion/user/services/1.1memcached.dita" locktitle="yes" navtitle="Memcached Service -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/als/user/services/port-service/--> <topicref href="devplatform/helion/user/services/1.1port-service.dita" locktitle="yes" navtitle="Port Service (Harbor) -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/als/user/services/user-provided/--> <topicref href="devplatform/helion/user/services/1.1user-provided.dita" locktitle="yes" navtitle="User-Provided Services -- HP Helion 1.1 Development Platform "/>
-  </topicref>
   <!--permalink: /helion/devplatform/1.1/appdev/--> <topicref href="devplatform/1.1devplatform.appdev.dita" locktitle="yes" navtitle="Resources for Application Developers -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/connectdatabase/--> <topicref href="devplatform/1.1devplatform.database-ALS.dita" locktitle="yes" navtitle="Connecting the Database Service with the Application Lifecycle Service -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/databaseservice/--> <topicref href="devplatform/1.1devplatform.database-instance.dita" locktitle="yes" navtitle="Using the Database Service -- HP Helion 1.1 Development Platform "/>
@@ -196,6 +192,7 @@
   <!--permalink: /helion/devplatform/1.1/msgaas/als/--> <topicref href="devplatform/1.1devplatform.using-messaging-service-with-ALS.dita" locktitle="yes" navtitle="Using the Messaging Service with ALS -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/related-topics/--> <topicref href="devplatform/1.1devplatform.related-topics.dita" locktitle="yes" navtitle="Related Documentation -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/release-notes/--> <topicref href="devplatform/1.1devplatform.release-notes.dita" locktitle="yes" navtitle="Release Notes for HP Helion Development Platform 1.1 -- HP Helion 1.1 Development Platform "/>
+  <!--permalink: /helion/devplatform/1.1/sitemap/--> 
   <!--permalink: /helion/devplatform/1.1/sysadmin/--> <topicref href="devplatform/1.1devplatform.sysadmin.dita" locktitle="yes" navtitle="Resources for IT Ops -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/workbook/database/java/--> <topicref href="devplatform/workbook/database/1.1database.java.dita" locktitle="yes" navtitle="Java MySQL Database Sample -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/workbook/database/node/--> <topicref href="devplatform/workbook/database/1.1database.node.dita" locktitle="yes" navtitle="Node MySQL Database Sample -- HP Helion 1.1 Development Platform "/>
@@ -206,8 +203,7 @@
   <!--permalink: /helion/devplatform/1.1/workbook/messaging/java/--> <topicref href="devplatform/workbook/messaging/1.1messaging.java.dita" locktitle="yes" navtitle="Java RabbitMQ Messaging Sample -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/workbook/messaging/node/--> <topicref href="devplatform/workbook/messaging/1.1messaging.node.dita" locktitle="yes" navtitle="Node RabbitMQ Messaging Sample -- HP Helion 1.1 Development Platform "/>
   <!--permalink: /helion/devplatform/1.1/workbook/messaging/php/--> <topicref href="devplatform/workbook/messaging/1.1messaging.php.dita" locktitle="yes" navtitle="PHP RabbitMQ Messaging Sample -- HP Helion 1.1 Development Platform "/>
-  </topicref>
-  <!--permalink: /helion/devplatform/1.2/--> <topicref href="devplatform/1.2/1.2devplatform.index.dita" locktitle="yes" navtitle="Documentation -- HP Helion 1.2 Development Platform ">
+  <!--permalink: /helion/devplatform/1.2/--> <topicref href="devplatform/1.2/1.2devplatform.index.dita" locktitle="yes" navtitle="Documentation -- HP Helion 1.2 Development Platform "/>
   <!--permalink: /helion/devplatform/1.2/3rd-party-license-agreements/--> <topicref href="devplatform/1.2/1.2devplatform.thirdparty.licensing.dita"/> 
   <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/--> <topicref href="devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.dita" locktitle="yes" navtitle="Quick Start Developer Trial -- HP Helion 1.2 Development Platform "/>
   <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/2/--> <topicref href="devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start2.dita" locktitle="yes" navtitle="Quick Start Developer Trial -- HP Helion 1.2 Development Platform "/>
@@ -364,8 +360,7 @@
   <!--permalink: /helion/devplatform/workbook/messaging/java/--> <topicref href="devplatform/workbook/messaging/1.0messaging.java.dita" locktitle="yes" navtitle="Java RabbitMQ Messaging Sample -- HP Helion 1.0 Development Platform "/>
   <!--permalink: /helion/devplatform/workbook/messaging/node/--> <topicref href="devplatform/workbook/messaging/1.0messaging.node.dita" locktitle="yes" navtitle="Node RabbitMQ Messaging Sample -- HP Helion 1.0 Development Platform "/>
   <!--permalink: /helion/devplatform/workbook/messaging/php/--> <topicref href="devplatform/workbook/messaging/1.0messaging.php.dita" locktitle="yes" navtitle="PHP RabbitMQ Messaging Sample -- HP Helion 1.0 Development Platform "/>
-  </topicref>
-  <!--permalink:         --> <topicref href="CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa.dita"/> 
+ 
  <!--permalink: /api/copyright/--> <topicref href="api.copyright.dita"/> 
  <!--permalink: /automation/--> <topicref href="automation/csa.index.dita"/> 
  <!--permalink: /cloudos/community/services/compute/howto/--> <topicref href="community/community.services-compute-howto.dita"/> 
