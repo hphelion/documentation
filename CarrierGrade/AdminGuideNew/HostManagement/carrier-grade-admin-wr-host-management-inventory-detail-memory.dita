@@ -198,7 +198,7 @@ where
 * `hostid` is the name or UUID of the host from which to create the profile.
 </codeph>
 </codeblock>
-<p>You can apply this profile to other hosts by editing the host settings in the web administration interface. For information about editing a host, see  <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host.dita" >Working with Hosts</xref>.</p>
+<p>You can apply this profile to other hosts by editing the host settings in the web administration interface. For information about editing a host, see  <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita" >Working with Hosts</xref>.</p>
 <p>You can also use the following CLI command to apply a memory profile to a host:</p>
 <codeblock>
   <codeph>system host-apply-memprofile &lt;memoryprofile&gt; &lt;hostid&gt;

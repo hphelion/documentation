@@ -29,7 +29,7 @@ where policy is either dedicated or shared.
 </codeph>
 </codeblock>
 <p>
-<b>Note:</b> Using a single compute node for both shared and dedicated threads is not recommended. For clusters that must support threads of both types, use a host aggregate for each type. For more information, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host.dita" >Working with Hosts</xref>.</p>
+<b>Note:</b> Using a single compute node for both shared and dedicated threads is not recommended. For clusters that must support threads of both types, use a host aggregate for each type. For more information, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita" >Working with Hosts</xref>.</p>
 <p>
   <xref type="section" href="#topic2925/top"> Return to Top </xref>
 </p>

@@ -73,7 +73,7 @@
 <li>host name, personality, and the internal UUID and host ID reference numbers</li>
 <li>MAC and IP addresses on the internal management network</li>
 <li>serial ID, if known. Use the command system host-modify &lt;hostname&gt; serialid=xxx to update it.</li>
-<li>location, as entered by the operator using the Edit Host window. For more information, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host.dita" >Host Inventory</xref>
+<li>location, as entered by the operator using the Edit Host window. For more information, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita" >Host Inventory</xref>
 </li>
 <li>time stamps of when the host was created and last updated</li>
 <li>the host's state</li>

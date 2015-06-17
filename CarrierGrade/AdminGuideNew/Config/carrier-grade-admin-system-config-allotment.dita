@@ -65,11 +65,11 @@
 
 <p>a. <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the standby controller</xref>.</p>
 
-<p>b. <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host.dita#poweroff" >Power down the standby controller</xref>.</p>
+<p>b. <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#poweroff" >Power down the standby controller</xref>.</p>
 
 <p>c. Make any required hardware changes.</p>
 
-<p>d. <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host.dita#poweroff" >Power up the standby controller</xref>.</p>
+<p>d. <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#poweroff" >Power up the standby controller</xref>.</p>
 
 <p>e. Reinstall the HP Helion OpenStack(R) Carrier Grade software on the standby controller.</p>
 
