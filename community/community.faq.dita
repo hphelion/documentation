@@ -28,11 +28,9 @@
 <xref type="section" href="#topic8233/distrocost">Is there a cost associated with this distribution?</xref>
 </li>
 <li>
-<xref type="section" href="#topic8233/supportoptions">What support options are available?</xref>
-</li>
-<li>
-<xref type="section" href="#topic8233/hybridorpubliccloud">Does HP Helion OpenStack(R) Community edition work with hybrid or public cloud projects?</xref>
-</li>
+          <xref type="section" href="#topic8233/hybridorpubliccloud">Does HP Helion OpenStack(R)
+            Community edition work with hybrid or public cloud projects?</xref>
+        </li>
 <li>
 <xref type="section" href="#topic8233/TripleO">What is TripleO?</xref>
 
