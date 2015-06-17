@@ -64,7 +64,7 @@
 - Ceph
 -->
 </section>
-<section id="OpenStack(R)"> <title>OpenStack(R) Services</title>
+<section id="OpenStack"> <title>OpenStack(R) Services</title>
 <p>The following services are foundation technologies used by the HP Helion OpenStack(R) Based on OpenStack(R) technology, HP Helion OpenStack(R) comprises of a set of services and architecture that defines a data-center-level operating system (DCOS).</p>
 <p>
 <b>Compute Operations (Nova)</b>. The Compute service manages the hypervisors and virtual machines in your environment.</p>
