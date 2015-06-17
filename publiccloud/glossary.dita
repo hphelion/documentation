@@ -33,9 +33,9 @@
 <dd>Provisioning cloud resources.</dd>
 </dlentry>
 
-<dlentry>
-<dt>Apache Maven</dt>
-<dd>See <xref type="section" href="#topic12432/Maven">Maven</xref></dd>
+<dlentry id="apache">
+  <dt id="apache2"><xref href="#m/maven" format="dita">Apache Maven</xref></dt>
+<dd>See Maven</dd>
 </dlentry>
 
 <dlentry>
@@ -315,9 +315,9 @@
 <dd>The primary access location for the HP Helion Public Cloud interface.  The console consists of a main dashboard panel, along with compute, storage, and account panels.</dd>
 </dlentry>
 
-<dlentry>
-<dt>Maven</dt>
-<dd>An open source software project management and comprehension tool. (Also: <xref type="section" href="#topic12432/ApacheMaven">Apache Maven</xref> )</dd>
+<dlentry id="maven">
+<dt id="maven2">Maven</dt>
+<dd>An open source software project management and comprehension tool. (Also: <xref href="#a/Apache">Apache Maven</xref></dd>
 </dlentry>
 
 <dlentry>
