@@ -83,14 +83,12 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 <row>
 <entry>Status</entry>
     <entry>
-<required-cleanup remap="center">
 <ph>Message</ph>
-</required-cleanup>
+
 </entry>
     <entry>
-<required-cleanup remap="center">
 <ph>Cause/Resolution</ph>
-</required-cleanup>
+
 </entry>
 </row>
 </thead>
