@@ -12,7 +12,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.subnet.md-->
  <!--permalink: /helion/commercial/carrier/dashboard/managing/network/subnet/--></p>
-<p>When a <xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.create.dita" >network is created</xref>, a subnet (short for <i>subnetwork</i>) can be assigned upon creation. However, you might need to add a subnet to a network at a later time.</p>
+<p>When a <xref href="../Networks/carrier-grade.dashboard.network.create.dita" >network is created</xref>, a subnet (short for <i>subnetwork</i>) can be assigned upon creation. However, you might need to add a subnet to a network at a later time.</p>
 <p>A subnet is a logically visible subdivision of a network. A subnet enables you to group instances logically, while maintaining a single network address to connect to the Internet.</p>
 <p>An admin user can create and delete subnets as needed.</p>
 <codeblock>
@@ -23,7 +23,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Networks</b> link on the <b>Admin</b> dashboard <b>System</b> panel.</p>
@@ -69,11 +69,11 @@
 </ol>
 </section>
 <section id="deleteport"> <title>Delete a subnet</title>
-<p>Before you delete a subnet, you must first <xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.ports2.dita" >delete all ports</xref> associated with the subnet.</p>
+<p>Before you delete a subnet, you must first <xref href="../Networks/carrier-grade.dashboard.network.ports2.dita" >delete all ports</xref> associated with the subnet.</p>
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Networks</b> link on the <b>Admin</b> dashboard <b>System</b> panel.</p>

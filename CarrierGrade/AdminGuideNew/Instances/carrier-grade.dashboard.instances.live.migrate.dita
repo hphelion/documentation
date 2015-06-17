@@ -19,9 +19,9 @@
 <li>access to all non-local storage resources, including LVM/iSCSI and Cinder</li>
 <li>all the virtual machine networking options (unmodified/virtio, AVP kernel driver, AVP DPDK Poll Mode Driver), and AVS</li>
 </ul>
-<p>The Admin user can <xref href="../../../CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.migrate.dita" >initiate a live migration manually</xref> from the Horizon dashboard.</p>
+<p>The Admin user can <xref href="../Instances/carrier-grade.dashboard.instances.migrate.dita" >initiate a live migration manually</xref> from the Horizon dashboard.</p>
 <section id="live-migration-and-server-group-policies"> <title>Live Migration and Server Group Policies</title>
-<p>Virtual machines launched as part of a <xref href="../../../CarrierGrade/AdminGuideNew/ServerGroups/1.1commercial.managing.groups.dita" >Server Group</xref> are subject to additional live migration restrictions determined
+<p>Virtual machines launched as part of a <xref href="../ServerGroups/1.1commercial.managing.groups.dita" >Server Group</xref> are subject to additional live migration restrictions determined
 by the selection of scheduling policy.</p>
 <ul>
 <li>

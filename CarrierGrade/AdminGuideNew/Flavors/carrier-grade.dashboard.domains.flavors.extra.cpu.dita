@@ -20,7 +20,7 @@
 <p>If the CPU Policy is set to Shared, the virtual CPU threads are scheduled to run on any available core on the compute node. Also, they can be moved within the compute node from one core to another at any time. In a sense, the virtual CPU threads can be considered to be floating threads. This is the CPU affinity mask portion of the scheduling action.</p>
 <p>Additionally, when Shared is selected, the virtual CPU threads can share the core with other threads from the same virtual machine or other virtual machines. The default OpenStack(R) virtual CPU over-commit ratio is 16:1, which means that up to 16 virtual CPU threads can share a single core. Over-committing of virtual CPUs is highly
 discouraged in Carrier-Grade operations.</p>
-<p>To add this extra spec to a flavor using the web administration interface, use the CPU Policy selection in the Create Flavor Extra Spec drop-down menu. To access this menu, see <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Flavor Extra Specifications</xref>.</p>
+<p>To add this extra spec to a flavor using the web administration interface, use the CPU Policy selection in the Create Flavor Extra Spec drop-down menu. To access this menu, see <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Flavor Extra Specifications</xref>.</p>
 <p>To add the extra spec using the CLI, use the following command:</p>
 <codeblock>
   <codeph>    nova flavor-key flavor_name set hw:cpu_policy=policy
@@ -29,7 +29,7 @@ where policy is either dedicated or shared.
 </codeph>
 </codeblock>
 <p>
-<b>Note:</b> Using a single compute node for both shared and dedicated threads is not recommended. For clusters that must support threads of both types, use a host aggregate for each type. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host.dita" >Working with Hosts</xref>.</p>
+<b>Note:</b> Using a single compute node for both shared and dedicated threads is not recommended. For clusters that must support threads of both types, use a host aggregate for each type. For more information, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host.dita" >Working with Hosts</xref>.</p>
 <p>
   <xref type="section" href="#topic2925/top"> Return to Top </xref>
 </p>

@@ -57,7 +57,7 @@
 <!--<img src="/media/storevirtual-cluster-network-diagram1.png"/>-->
 <section id="next-step"> <title>Next Step</title>
 <p>
-  <xref href="../../../CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa-add-new-mgmt-group.dita" >Creating a StoreVirtual Cluster and adding it to a new Management Group</xref>
+  <xref href="../VSA/carrier.install-vsa-add-new-mgmt-group.dita" >Creating a StoreVirtual Cluster and adding it to a new Management Group</xref>
 </p>
 <p>
   <xref type="section" href="#topic2945/top"> Return to Top </xref>

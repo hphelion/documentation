@@ -38,7 +38,7 @@
 <li>system alarm-delete</li>
 <li>system alarm-history-list </li>
 </ul>
-<p>Before using the commands you must log in to the active controller as the Keystone admin user. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade-admin-wr-linux-users.dita" >Linux User Accounts</xref>.</p>
+<p>Before using the commands you must log in to the active controller as the Keystone admin user. For more information, see <xref href="../MiscTasks/carrier-grade-admin-wr-linux-users.dita" >Linux User Accounts</xref>.</p>
 <section id="list"> <title>Listing system alarms</title>
 <p>The <codeph>system alarm-list</codeph> command lists currently active alarms, as illustrated below</p>
 <p>Specific subsets of alarms, or a particular alarm, can be listed using one of the following --query command filters:</p>

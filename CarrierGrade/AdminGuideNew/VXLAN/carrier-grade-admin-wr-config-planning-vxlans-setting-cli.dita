@@ -36,7 +36,7 @@
 <!-- ===================== horizontal rule ===================== -->
 <p>VXLAN provider networks are an alternative to VLAN provider networks when VM L2 connectivity is required across separate Layer 2 network segments separated by one or more Layer 3 routers.</p>
 <p>The steps in this section describe how to set up a VXLAN provider network and add segmentation ranges using the
-command line interface. For information about using the Horizon interface, see <xref href="../../../CarrierGrade/AdminGuideNew/VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting.dita" >Setting Up a VXLAN Provider Network using Horizon</xref>.</p>
+command line interface. For information about using the Horizon interface, see <xref href="../VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting.dita" >Setting Up a VXLAN Provider Network using Horizon</xref>.</p>
 <p>To create a provider network using the CLI, use the following command:</p>
 <codeblock>
   <codeph>neutron providernet-create name \
@@ -96,7 +96,7 @@ command line interface. For information about using the Horizon interface, see <
 <codeph>time_to_live</codeph> - The time-to-live, measured in hops, for packets sent on the VXLAN. The value is decremented at each hop; when it reaches zero, the packet expires. You can use this to limit the scope of the VXLAN. For example, to limit the packet to no more than three router hops, use a time-to-live value of 4.</p>
 </li>
 </ul>
-<p>For more about these parameters, see <xref href="../../../CarrierGrade/AdminGuideNew/VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting.dita" >Setting Up a VXLAN Provider Network using Horizon</xref>.</p>
+<p>For more about these parameters, see <xref href="../VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting.dita" >Setting Up a VXLAN Provider Network using Horizon</xref>.</p>
 <p>You can obtain information about provider networks and segmentation ranges using the following commands.</p>
 <codeblock>
   <codeph>neutron net-list-on-providernet providernet

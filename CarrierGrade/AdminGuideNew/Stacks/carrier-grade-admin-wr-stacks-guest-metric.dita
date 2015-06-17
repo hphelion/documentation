@@ -30,7 +30,7 @@
 <p>To update the controller IP address, restart the instance.</p>
 <p>Ceilometer can accept data from meters that run directly on guest instances, integrating it with data from meters that run on the server and periodically query the instances. The data is pushed to the controller using CloudWatch and heat-cfntools.</p>
 <p>Guest-based metrics can offload platform processors and improve real-time monitoring for services such as thresholding, alarms, CSV file generation, and heat triggers. This example draws on the sample file <codeph>CPUScale.yaml</codeph> to develop a guest-based metric that scales a service based on CPU usage.</p>
-<p>To launch an example of guest-based performance monitoring from the web administration interface, see <xref href="../../../CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-autoscale.dita" >Resource Scaling</xref>. For more information about Ceilometer, see Resource Usage on page 82.</p>
+<p>To launch an example of guest-based performance monitoring from the web administration interface, see <xref href="../Stacks/carrier-grade-admin-wr-stacks-autoscale.dita" >Resource Scaling</xref>. For more information about Ceilometer, see Resource Usage on page 82.</p>
 <ol>
 <li>In the Parameters section, define any parameters to be used in the template.</li>
 </ol>

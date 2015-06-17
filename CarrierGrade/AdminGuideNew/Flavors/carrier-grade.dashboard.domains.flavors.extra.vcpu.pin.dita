@@ -21,7 +21,7 @@
 <p>
 <b>Note:</b> To use this extra spec, you must define a shared physical CPU on at least one host.</p>
 <p>You must also set the CPU Policy extra specification for the flavor to Dedicated. This enables the high-load vCPUs for the instance to be pinned.</p>
-<p>To add this extra spec to a flavor using the Horizon dashboard, use the VCPU Model selection in the <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Create Flavor Extra Spec drop-down menu</xref>.</p>
+<p>To add this extra spec to a flavor using the Horizon dashboard, use the VCPU Model selection in the <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Create Flavor Extra Spec drop-down menu</xref>.</p>
 <p>To set the Shared VCPU ID from the CLI, use a command of the following form:</p>
 <codeblock>
   <codeph>nova flavor-key flavor_name set

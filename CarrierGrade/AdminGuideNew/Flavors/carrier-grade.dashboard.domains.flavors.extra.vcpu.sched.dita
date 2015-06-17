@@ -25,7 +25,7 @@
 field.</li>
 <li>Real-Time Round Robin - Assigns a real-time, round-robin policy with nice priority of 1-99, specified in the associated <b>VCPU Priority</b> field.</li>
 </ul>
-<p>To add this extra spec to a flavor using the Horizon dashboard, use the VCPU Model selection in the <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Create Flavor Extra Spec drop-down menu</xref>.</p>
+<p>To add this extra spec to a flavor using the Horizon dashboard, use the VCPU Model selection in the <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Create Flavor Extra Spec drop-down menu</xref>.</p>
 <p>You can specify the scheduler policy and priority for non-boot virtual CPUs from the CLI using the <codeph>hw:wrs:vcpu:scheduler</codeph> parameter on the <codeph>nova flavor-key</codeph> command. This parameter accepts a semicolon-separated list of scheduler:priority:vcpus values as follows.</p>
 <ul>
 <li>scheduler - The scheduler policy. One of other, fifo, or rr to indicate non real-time, FIFO, and Round Robin policies respectively.</li>

@@ -133,7 +133,7 @@
 <b>Note:</b> Allocation of memory across NUMA node boundaries is not currently supported.</p>
 </li>
 </ol>
-<p>To pin the virtual NUMA nodes to host NUMA nodes, see <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.numa.pin.dita" >Pinning a Guest NUMA Node to a Host NUMA Node</xref>.</p>
+<p>To pin the virtual NUMA nodes to host NUMA nodes, see <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.numa.pin.dita" >Pinning a Guest NUMA Node to a Host NUMA Node</xref>.</p>
 <section id="viewing"> <title>Viewing the NUMA Node Configuration for a VM</title>
 <p>You can use the CLI to display the NUMA node configuration for a VM.</p>
 <p>Use the following command:</p>

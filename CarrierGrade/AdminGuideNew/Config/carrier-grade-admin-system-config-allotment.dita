@@ -28,7 +28,7 @@
 <!-- modeled after Wind River Admin Guide -->
 <p>You can change the allotments for controller-based storage at any time after installation. This includes the space allotted for database, image, and backup storage, and for clusters using an LVM backend, the space allotted for Cinder volume storage.</p>
 <p>
-<b>Note:</b> For clusters using a Ceph backend, Cinder volume storage is allotted on storage nodes, not on the controller node. To change the Cinder volume storage for a Ceph backend, see <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-storage.dita" >Replacing Active Storage Nodes</xref>.</p>
+<b>Note:</b> For clusters using a Ceph backend, Cinder volume storage is allotted on storage nodes, not on the controller node. To change the Cinder volume storage for a Ceph backend, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-storage.dita" >Replacing Active Storage Nodes</xref>.</p>
 <p>During software installation, the HP Helion OpenStack(R) Carrier Grade is configured with the following storage allotments:</p>
 <ul>
 <li>
@@ -40,7 +40,7 @@
 <li>
 <b>Volume storage</b> - For a system using LVM storage, the storage allotment for all Cinder volumes used by guest instances.</li>
 </ul>
-<p>You can change these allotments using the System Configuration controls in the web administration interface, or using the CLI. For CLI instructions, see <xref href="../../../CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-cli.dita" >System Configuration Management Using the CLI</xref>.</p>
+<p>You can change these allotments using the System Configuration controls in the web administration interface, or using the CLI. For CLI instructions, see <xref href="../Config/carrier-grade-admin-system-config-cli.dita" >System Configuration Management Using the CLI</xref>.</p>
 <p>To accommodate the changes, there must be enough disk space on the controller, including headroom needed to complete the operation. The headroom required is 45 GiB on the primary disk for a cluster using an LVM backend, or 65 GiB for a cluster using a Ceph backend. This is in addition to the space required for the new allotments. The requested changes are checked against available space on the affected disks; if there is not enough, the changes are disallowed.</p>
 <p>To provide more space, you can replace the affected disk or disks. Database, image, and backup storage use space on the primary disk. Cinder volume storage (on a cluster with an LVM backend) uses space on a disk selected by device node number during controller configuration. The replacement disk must occupy the same device node number.</p>
 <p>Changes to the Cinder volume storage may also affect the primary disk because of the headroom requirement.</p>
@@ -61,19 +61,19 @@
 
 <p>If you do not need to replace disks, you can skip this step. To determine whether you need to replace disks, calculate your storage requirements. Be sure to include the headroom required on the primary disk.</p>
 
-<p>To replace disks in the controllers, follow these steps. For more details, see <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-controller.dita" >Managing Controller Nodes</xref>.</p>
+<p>To replace disks in the controllers, follow these steps. For more details, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-controller.dita" >Managing Controller Nodes</xref>.</p>
 
-<p>a. <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the standby controller</xref>.</p>
+<p>a. <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the standby controller</xref>.</p>
 
-<p>b. <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host.dita#poweroff" >Power down the standby controller</xref>.</p>
+<p>b. <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host.dita#poweroff" >Power down the standby controller</xref>.</p>
 
 <p>c. Make any required hardware changes.</p>
 
-<p>d. <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host.dita#poweroff" >Power up the standby controller</xref>.</p>
+<p>d. <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host.dita#poweroff" >Power up the standby controller</xref>.</p>
 
 <p>e. Reinstall the HP Helion OpenStack(R) Carrier Grade software on the standby controller.</p>
 
-<p>f. <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the standby controller</xref>.</p>
+<p>f. <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the standby controller</xref>.</p>
 
 <p>g. [Swact the controllers](/helion/openstack/carrier/admin/host/management/inventory/host#swact}.</p>
 
@@ -82,7 +82,7 @@
 <li>
 <p>Edit the disk storage allotments.</p>
 
-<p>a. <xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<p>a. <xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 
 <p>b. Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
 
@@ -105,7 +105,7 @@
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the standby controller</xref>.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the standby controller</xref>.</p>
 </li>
 <li>
 <p>Reinstall the HP Helion OpenStack(R) Carrier Grade software on the standby controller.</p>
@@ -115,7 +115,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >unlock the standby controller</xref>.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >unlock the standby controller</xref>.</p>
 
 <p>When the controller is unlocked, the 250.001 Configuration out-of-date alarms against the controller are cleared.</p>
 </li>
@@ -124,14 +124,14 @@
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the new standby controller</xref>.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the new standby controller</xref>.</p>
 </li>
 <li>
 <p>Reinstall the HP Helion OpenStack(R) Carrier Grade software on the controller.</p>
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the controller</xref>.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the controller</xref>.</p>
 </li>
 <li>
 <p>Confirm that the 250.001 Configuration out-of-date alarms are cleared for both controllers.</p>
@@ -146,7 +146,7 @@
 </codeph>
 </codeblock>
 <p>Before you can change storage allotments, you must have enough disk space, including additional headroom required to complete the operation. If there is not enough disk space, changes to the storage allotment are disallowed.</p>
-<p>You can replace the disks in the controllers to provide more space. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-storage.dita" >Replacing Active Storage Nodes</xref>.</p>
+<p>You can replace the disks in the controllers to provide more space. For more information, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-storage.dita" >Replacing Active Storage Nodes</xref>.</p>
 <p>To support storage changes, you must reinstall the HP Helion OpenStack(R) Carrier Grade software on each controller during the disk replacement procedure. This is required even if the primary disk is not directly affected by the change. To reinstall the software, you can use the following command:</p>
 <codeblock>
   <codeph>system host-reinstall controller_name

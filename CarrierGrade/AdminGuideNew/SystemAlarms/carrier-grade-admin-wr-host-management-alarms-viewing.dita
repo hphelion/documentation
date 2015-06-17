@@ -169,7 +169,7 @@ textual conventions, an active alarm table, a historical alarm table, and traps.
 <section id="viewing"> <title>Viewing alarms</title>
 <p>On the web interface, click the Fault Management menu on the
 Admin tab, and then select the Active Alarms tab.</p>
-<p>For more information on accessing the Fault Managemen tab, see <xref href="../../../CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-alarms.dita#viewing" >Host Status and Alarms During System Configuration Changes</xref>.</p>
+<p>For more information on accessing the Fault Managemen tab, see <xref href="../Config/carrier-grade-admin-system-config-alarms.dita#viewing" >Host Status and Alarms During System Configuration Changes</xref>.</p>
 <p>The Fault Management tab contains two tabs:</p>
 <ul>
 <li>
@@ -194,9 +194,9 @@ Admin tab, and then select the Active Alarms tab.</p>
 <p>In order to have a workable SNMP configuration you must use the command
 line interface on the active controller to:</p>
 <ol>
-<li>Define at least one SNMP community string. See <xref href="../../../CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-community-strings.dita" >Adding an SNMP Community String</xref>.</li>
+<li>Define at least one SNMP community string. See <xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-community-strings.dita" >Adding an SNMP Community String</xref>.</li>
 <li>Configure at least one SNMP trap destination so that alarms can be
-reported as they happen. See <xref href="../../../CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-snmp-traps.dita" >Configuring SNMP Trap Destinations</xref>.</li>
+reported as they happen. See <xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-snmp-traps.dita" >Configuring SNMP Trap Destinations</xref>.</li>
 </ol>
 <p>
   <xref type="section" href="#topic6139/top"> Return to Top </xref>

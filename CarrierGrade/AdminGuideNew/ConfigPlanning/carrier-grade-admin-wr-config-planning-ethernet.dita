@@ -35,22 +35,22 @@
 <p>This section contains the following topics:</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-config.dita" >Configuring Ethernet Interfaces</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-config.dita" >Configuring Ethernet Interfaces</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-shared.dita" >Configuring Shared (VLAN) Ethernet Interfaces</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-shared.dita" >Configuring Shared (VLAN) Ethernet Interfaces</xref>
 </li>
 <li>
 <xref href="/helion/openstack/carrier/configuration/plan/ethernet/mtu" >Configuring Ethernet MTU</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-address-filtering.dita" >Filtering MAC Addresses on Virtual Interfaces</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-address-filtering.dita" >Filtering MAC Addresses on Virtual Interfaces</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-pci-pass.dita" >Configuring PCI Passthrough Ethernet Interfaces</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-pci-pass.dita" >Configuring PCI Passthrough Ethernet Interfaces</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-sr-iov.dita" >SR-IOV Ethernet Interfaces</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-sr-iov.dita" >SR-IOV Ethernet Interfaces</xref>
 </li>
 </ul>
 <p>On compute node data interfaces, the HP Helion OpenStack(R) Carrier Grade supports Ethernet Network Interface Cards (NIC) based on the following chip sets:</p>

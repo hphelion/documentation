@@ -57,7 +57,7 @@
 <p>Allocation pools can only be specified on system managed subnets.</p>
 </li>
 </ul>
-<p>On the web administration interface you set these attributes in the <xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.subnet.dita" >Subnet Detail tab of the Create Subnet window</xref>.</p>
+<p>On the web administration interface you set these attributes in the <xref href="../Networks/carrier-grade.dashboard.network.subnet.dita" >Subnet Detail tab of the Create Subnet window</xref>.</p>
 <section id="meta"> <title>Accessing the Metadata Server</title>
 <p>Access to the system's metadata server is available using the well known URL http://169.254.169.254. In the HP Helion OpenStack(R) Carrier Grade implementation, access to this address is provided by a virtual router attached to the tenant on which the access request is made. Virtual routers are automatically configured as proxies to the metadata service.</p>
 <p>The following requirements must be satisfied in order for a guest application to access the metadata service:</p>

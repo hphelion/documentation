@@ -34,40 +34,40 @@
 <p>This section contains the following topics:</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-management.dita" >Planning the Management Network</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-management.dita" >Planning the Management Network</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-infrastructure.dita" >Planning the Infrastructure Network</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-infrastructure.dita" >Planning the Infrastructure Network</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-board-mgmt.dita" >Planning the Board Management Network</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-board-mgmt.dita" >Planning the Board Management Network</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-oam.dita" >Planning the OAM Management Network</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-oam.dita" >Planning the OAM Management Network</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-provider.dita" >Planning the Provider Management Networks</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-provider.dita" >Planning the Provider Management Networks</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-tenant.dita" >Planning the Tenant Management Networks</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-tenant.dita" >Planning the Tenant Management Networks</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-vrs.dita" >Planning for Virtual Routers</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-vrs.dita" >Planning for Virtual Routers</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-subnets.dita" >Planning for Subnets</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-subnets.dita" >Planning for Subnets</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-guest-vlan.dita" >Planning for Guest VLANs</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-guest-vlan.dita" >Planning for Guest VLANs</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-l2.dita" >Planning for L2 Access Switches</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-l2.dita" >Planning for L2 Access Switches</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-diff.dita" >Planning for DiffServ-Based Priority Queuing and Scheduling</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-diff.dita" >Planning for DiffServ-Based Priority Queuing and Scheduling</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-qos.dita" >Planning for Quality of Service</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-qos.dita" >Planning for Quality of Service</xref>
 </li>
 </ul>
 <p>

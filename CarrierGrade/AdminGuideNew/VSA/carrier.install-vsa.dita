@@ -231,7 +231,7 @@ sudo invoke-rc.d networking restart
 </section>
 <section id="next-steps"> <title>Next Step</title>
 <p>
-  <xref href="../../../CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa-add-new-mgmt-group.dita" >Creating a StoreVirtual Cluster and Adding to a Management Group</xref>
+  <xref href="../VSA/carrier.install-vsa-add-new-mgmt-group.dita" >Creating a StoreVirtual Cluster and Adding to a Management Group</xref>
 </p>
 <p>
   <xref type="section" href="#topic4893/top"> Return to Top </xref>

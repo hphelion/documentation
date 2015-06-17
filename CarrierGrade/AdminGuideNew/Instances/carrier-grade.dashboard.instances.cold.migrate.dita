@@ -16,7 +16,7 @@
 <p>Migration enables an administrator to move a virtual-machine instance from one compute host to another. This feature is useful when a compute host requires maintenance. Migration can also be useful to redistribute the load when many VM instances are running on a specific physical machine.</p>
 <p>Cold migration causes the instance to be shut down for a period of time to be moved to another hypervisor. In this case, the instance recognizes that it was rebooted.</p>
 <ul>
-<li>Live migration. Almost no downtime. Useful when the instances must be kept running during the migration. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.live.migrate.dita" >Live Migration of Virtual Machines</xref>.</li>
+<li>Live migration. Almost no downtime. Useful when the instances must be kept running during the migration. For more information, see <xref href="../Instances/carrier-grade.dashboard.instances.live.migrate.dita" >Live Migration of Virtual Machines</xref>.</li>
 </ul>
 <section id="migrate-an-instance-on-an-hlinux-server"> <title>Migrate an instance on an hLinux server</title>
 <p>Instances on hLinux servers can be migrated</p>
@@ -24,7 +24,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Instances</b> link.</p>
@@ -43,7 +43,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Instances</b> link.</p>

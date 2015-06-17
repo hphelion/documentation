@@ -23,13 +23,13 @@
 <p>Click Access &amp; Security to work with security groups and rules to perform the following tasks:</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Security/carrier-grade.dashboard.security.groups.dita" >Create a security group</xref>
+<xref href="../Security/carrier-grade.dashboard.security.groups.dita" >Create a security group</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Security/carrier-grade.dashboard.security.groups.dita" >Create security group rules</xref>
+<xref href="../Security/carrier-grade.dashboard.security.groups.dita" >Create security group rules</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Security/carrier-grade.dashboard.security.keypairs.dita" >Managing Key Pairs</xref>
+<xref href="../Security/carrier-grade.dashboard.security.keypairs.dita" >Managing Key Pairs</xref>
 </li>
 </ul>
 </section>
@@ -50,7 +50,7 @@ Use the Identity panel in the Admin dashboard to [allow users to access groups](
 </section>
 <section id="changing-a-user-password"> <title>Changing a user password</title>
 <p>As an admin, you can use the Identity panel in the Admin dashboard to change a user's password.</p>
-<p>See: <xref href="../../../CarrierGrade/AdminGuideNew/Security/carrier-grade.dashboard.users.password.dita" >Changing a User Password</xref>.</p>
+<p>See: <xref href="../Security/carrier-grade.dashboard.users.password.dita" >Changing a User Password</xref>.</p>
 <p>
   <xref type="section" href="#topic1557/top"> Return to Top </xref>
 </p>

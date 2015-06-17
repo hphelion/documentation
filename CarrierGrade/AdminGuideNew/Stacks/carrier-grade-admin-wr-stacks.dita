@@ -31,19 +31,20 @@
 <xref href="/helion/openstack/carrier/admin/stacks/create" >Creating a Stack</xref>
 </li>
 <li>
-<xref href="/helion/openstack/carrier/admin/stacks/user-data" >Customizing Guest Images with User Data</xref>
+                <xref href="carrier-grade-admin-wr-stacks-user-data.dita">Customizing Guest Images
+                    with User Data</xref>
+            </li>
+<li>
+<xref href="../Stacks/carrier-grade-admin-wr-stacks-autoscale.dita" >Resource Scaling (Autoscaling)</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-autoscale.dita" >Resource Scaling (Autoscaling)</xref>
+<xref href="../Stacks/carrier-grade-admin-wr-stacks-sample-templates.dita" >Reporting a Guest Metric</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-sample-templates.dita" >Reporting a Guest Metric</xref>
+<xref href="../Stacks/carrier-grade-admin-wr-stacks-sample-templates.dita" >Sample Templates for HP Helion OpenStack(R) Carrier Grade</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-sample-templates.dita" >Sample Templates for HP Helion OpenStack(R) Carrier Grade</xref>
-</li>
-<li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-sample-resource-types.dita" >Supported Heat Resource Types</xref>
+<xref href="../Stacks/carrier-grade-admin-wr-stacks-sample-resource-types.dita" >Supported Heat Resource Types</xref>
 </li>
 </ul>
 <p>Using the CLI, you can obtain information on existing stacks in several ways:</p>
@@ -135,7 +136,7 @@ existing values in the environment file or the template.</li>
 </ul>
 </section>
 <section id="wind-river-linux-extensions-to-heat"> <title>Wind River Linux Extensions to Heat</title>
-<p>Several extensions to Heat are included with Wind River Linux. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-wr.dita" >Extensions to Heat</xref>.</p>
+<p>Several extensions to Heat are included with Wind River Linux. For more information, see <xref href="../Stacks/carrier-grade-admin-wr-stacks-wr.dita" >Extensions to Heat</xref>.</p>
 <p>
   <xref type="section" href="#topic5192/top"> Return to Top </xref>
 </p>

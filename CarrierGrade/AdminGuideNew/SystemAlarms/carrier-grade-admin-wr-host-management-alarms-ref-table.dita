@@ -38,7 +38,7 @@
 <li>system alarm-delete</li>
 <li>system alarm-history-list </li>
 </ul>
-<p>Before using the commands you must log in to the active controller as the Keystone admin user. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade-admin-wr-linux-users.dita" >Linux User Accounts</xref>.</p>
+<p>Before using the commands you must log in to the active controller as the Keystone admin user. For more information, see <xref href="../MiscTasks/carrier-grade-admin-wr-linux-users.dita" >Linux User Accounts</xref>.</p>
 <p>This topic contains the following alarm tables:</p>
 <ul>
 <li>

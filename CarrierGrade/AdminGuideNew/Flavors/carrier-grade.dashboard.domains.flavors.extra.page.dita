@@ -20,7 +20,7 @@ VM, or by defining an image with the required metadata property.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>Before you can request huge pages for a VM, you must define the available page sizes on the hosts in the cluster.</p>
 <p>Memory required by a guest is allocated as one or more pages of the requested size. Once allocated, the memory is unavailable for use by other guests until the instance is terminated.</p>
-<p>To add this extra spec to a flavor using the Horizon dashboard, use the VCPU Model selection in the <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Create Flavor Extra Spec drop-down menu</xref>
+<p>To add this extra spec to a flavor using the Horizon dashboard, use the VCPU Model selection in the <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Create Flavor Extra Spec drop-down menu</xref>
 </p>
 <p>You can also specify the extra spec from the CLI by setting the following parameter for a flavor:</p>
 <codeblock>

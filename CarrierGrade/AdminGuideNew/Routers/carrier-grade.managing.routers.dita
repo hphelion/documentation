@@ -23,13 +23,13 @@
 <p>The Network panel contains commands to view a visual representation of your network and to enable you to work with your router.</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Routers/carrier-grade.dashboard.router.create.dita" >Create a Router</xref>
+<xref href="../Routers/carrier-grade.dashboard.router.create.dita" >Create a Router</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Routers/carrier-grade.dashboard.router.delete.dita" >Delete a Router</xref>
+<xref href="../Routers/carrier-grade.dashboard.router.delete.dita" >Delete a Router</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Routers/carrier-grade.dashboard.router.connect.dita" >Connect a network to a router</xref>
+<xref href="../Routers/carrier-grade.dashboard.router.connect.dita" >Connect a network to a router</xref>
 </li>
 <li>Add / Remove an external network to/from a Router</li>
 </ul>
@@ -38,8 +38,8 @@
 <p>As an admin user, you can work on all of the router(s) in your domain, regardless of which project the network is associated with.</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Routers/carrier-grade.dashboard.router.admin.delete.dita" >Delete a router</xref>
-</li>
+          <xref href="carrier-grade.dashboard.router.delete.dita">Delete a router</xref>
+        </li>
 </ul>
 <p>Access the router commands using the System panel on the Admin dashboard.</p>
 <p>
