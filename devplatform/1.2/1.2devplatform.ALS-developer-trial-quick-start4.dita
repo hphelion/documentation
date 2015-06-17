@@ -30,7 +30,7 @@
 <table>
 <tgroup cols="2">
                 <colspec colname="col1" colwidth="400" colsep="1"/>
-                <colspec colname="col2"/>
+                <colspec colname="col2" colwidth="1*"/>
                  <tbody>
                     <row>
                         <entry/>
@@ -99,7 +99,7 @@ create-cluster ^
     --load http://clients.als.hpcloud.com/1.2/config/trial.yml</codeblock>
                                         </li>
                                         <li>For
-                                            Mac/Unix:<!--A BR tag was used here in the original source.-->
+                                            Mac/Unix:
                                             You do not need to open the RC file; the
                                                 <varname>source</varname> command will retrieve the
                                             necessary values from that file automatically.
@@ -115,14 +115,14 @@ cf-mgmt create-cluster \
                                         <varname>http://api.&lt;ipaddress&gt;.xip.io</varname> For
                                     example: <varname>htttp://api.255.255.255.255.xip.io</varname>
                                 </li>
-                                <!--A BR tag was used here in the original source.-->
+                                
                                 <li>Enter the Console URL in your web browser to navigate to the
                                     Management
-                                    Console.<!--A BR tag was used here in the original source.-->Note:
+                                    Console.Note:
                                     You may be "warned" that the Console has a self-signed
                                     certificate or that the site is "not trusted". These "warnings"
                                     can be safely ignored. </li>
-                                <!--A BR tag was used here in the original source.-->
+                                
                                 <li>Log in to the Console using the email and password you specified
                                     when you created the cluster.</li>
                             </ol> Congratulations! You are now ready to begin deploying apps to your
