@@ -26,8 +26,8 @@
 </p>
 <table>
 <tgroup cols="2">
-        <colspec colname="col1" colwidth="400" colsep="1"/>
-        <colspec colname="col2"/>
+        <colspec colname="col1" colwidth="300" colsep="1"/>
+        <colspec colname="col2" colwidth="2*"/>
         <tbody>
           <row>
             <entry/>
