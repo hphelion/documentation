@@ -54,9 +54,8 @@
 </codeph>
 </codeblock>
 <p>In addition to changing individual configuration items, you can also swap in entire full configuration environments by inserting a new configuration file with the <b>
-<required-cleanup remap="font">
 <ph>set-config -s</ph>
-</required-cleanup>
+
 </b> command.  This is useful if you are using multiple environments at your site--for example, you have a set of credentials that you use for development, but a different set of credentials for performing testing.  Substituting in a different config file gives you a quick way to switch back and forth between those environments.</p>
 <p>When you set to a new config file and the new file contains different credentials, you have to re-evaluate the list of Containers that the current user has access to. Changing your credentials is equivalent to changing your identity, and you may own just a small subset of Containers after the change. In this example you can see this rebinding in action.</p>
 <p>
@@ -67,9 +66,8 @@
 </section>
 <section id="viewing-your-service-catalog"> <title>Viewing Your Service Catalog</title>
 <p>If you want to take a look at your service catalog--for example, if you have modified some of your configuration credentials, and have authenticated them--you can use the <b>
-<required-cleanup remap="font">
 <ph>get-config -v</ph>
-</required-cleanup>
+
 </b> command.</p>
 <p>This command provides you with all the service catalog information for your most-currently authenticated credential set.</p>
 </section>
@@ -92,32 +90,25 @@ the object into your browser, a fully qualified URI can be obtained with the Get
 </p>
 </section>
 <section id="using-another-users-credentials"> <title>Using Another User's Credentials</title>
-<p>If you want to use the credentials of a particular user for a session ("imitating" that user), you can use the command <b>
-<required-cleanup remap="font">
-<ph> set-credentials</ph>
-</required-cleanup>
-</b>.  The <b>
-<required-cleanup remap="font">
-<ph> set-credentials</ph>
-</required-cleanup>
-</b> command allows you to define the access key, secret key, and tenant key for a session:</p>
+<p>If you want to use the credentials of a particular user for a session ("imitating" that user), you can use the command 
+  <b><ph> set-credentials</ph></b>.  
+  The command allows you to define the access key, secret key, and tenant key for a session:</p>
 <codeblock>
-  <codeph>    set-credentials -ak Access-Key -sk Secret-Key -t Tenant-ID
-</codeph>
+<codeph>set-credentials -ak Access-Key -sk Secret-Key -t Tenant-ID</codeph>
 </codeblock>
-<p>Where you choose your desired values for <required-cleanup remap="font">
+<p>Where you choose your desired values for 
 <ph>
 <b>Access-Key</b>
 </ph>
-</required-cleanup>, <required-cleanup remap="font">
+, 
 <ph>
 <b>Secret-Key</b>
 </ph>
-</required-cleanup>, and <required-cleanup remap="font">
+, and
 <ph>
 <b>Tenant-ID</b>
 </ph>
-</required-cleanup>.</p>
+.</p>
 </section>
 <section id="viewing-the-release-notes"> <title>Viewing the Release Notes</title>
 <p>The Get-Notes command gives you the ability to view release notes for the current version (no arguments), a specific version (-v), or all past versions of the product (-all).</p>
@@ -129,9 +120,9 @@ the object into your browser, a fully qualified URI can be obtained with the Get
 <p>Recommended Links</p>
 <ul>
 <li>
-<xref href="/publiccloud/cli/windows" >Index</xref> </li>
+<xref href="../publiccloud/cli.windows.2.dita" >Index</xref> </li>
 <li>
-<xref href="/publiccloud/cli/windows/reference" >Command Line Reference</xref> </li>
+<xref href="../publiccloud/cli.windows.2.reference.dita" >Command Line Reference</xref> </li>
 </ul>
 </section>
 </body>
