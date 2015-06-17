@@ -24,23 +24,21 @@
 </metadata>
 </prolog>
 <body>
-    <p><!--PUBLISHED--><!--./devplatform/1.2/windows/windows_powershell.md--><!--permalink: /helion/devplatform/1.2/windows/powershell/--></p>
-    <p>
-      <!--Original: <span @class=>--><ph>To be determined</ph>
-    </p>
-    <!-- ===================== horizontal rule ===================== -->
-    <p><xref href="../../../devplatform/1.2/windows/windows_overview.dita">Windows Overview</xref> |
-        <xref href="../../../devplatform/1.2/windows/windows_firstapp.dita">Deploying your first
-        .NET Application</xref></p>
-    <p><xref href="../../../devplatform/1.2/windows/windows_tools_guide.dita">Windows and .NET Tools
-        Guide</xref> | <xref
-        href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita">Building and
-        Deploying Windows DEA and SQL Server Express Images</xref>
-    </p>
-    <p>Glazier Reference Guide | <xref
-        href="../../../devplatform/1.2/windows/windows_adding_services.dita">Adding Services to a
-        Windows Application</xref></p>
-    <p><xref href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita">Deploying
-        Windows Applications with the IIS Buildpack</xref></p>
-  </body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/1.2/windows/windows_powershell.md-->
+ <!--permalink: /helion/devplatform/1.2/windows/powershell/--></p>
+<p>
+  <!--Original: <span @class=>--><ph>To be determined</ph>
+</p>
+</body>
+  <related-links>
+    <link href="../../../devplatform/1.2/windows/windows_overview.dita"><linktext>Windows Overview</linktext></link>
+    <link href="../../../devplatform/1.2/windows/windows_firstapp.dita"><linktext>Deploying your first .NET Application</linktext></link>
+    <link href="../../../devplatform/1.2/windows/windows_tools_guide.dita"><linktext>Windows and .NET Tools Guide</linktext></link>
+    <link href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita"><linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext></link>
+    <link href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita"><linktext>Glazier Reference Guide</linktext></link>
+    <link href="../../../devplatform/1.2/windows/windows_adding_services.dita"><linktext>Adding Services to a Windows Application</linktext></link>
+    <link href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita"><linktext>Deploying Windows Applications with the IIS Buildpack</linktext></link>
+  </related-links>
 </topic>
