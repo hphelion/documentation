@@ -52,7 +52,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
@@ -111,7 +111,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
@@ -131,7 +131,7 @@
 <li>
 <p>Enter a name for the new profile.</p>
 
-<p>Available interface profiles are listed, and can be removed, from the System Inventory page, as described in <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita" >Working with Hardware Profiles</xref>.</p>
+<p>Available interface profiles are listed, and can be removed, from the System Inventory page, as described in <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita" >Working with Hardware Profiles</xref>.</p>
 </li>
 <li>
 <p>Click <b>Create Interface Profile</b> to create the profile based on the interface and port configuration of the selected host.</p>
@@ -144,7 +144,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
@@ -154,7 +154,7 @@
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
 
 <p>Wait for the host to be reported as Locked.</p>
 </li>
@@ -200,7 +200,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
@@ -210,7 +210,7 @@
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host</xref> to make changes. Click <b>More</b> then select <b>Lock Host</b>.</p>
 
 <p>Wait for the host to be reported as Locked.</p>
 </li>

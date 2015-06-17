@@ -270,7 +270,11 @@ LaunchConfig:
 <p>Wind River Linux addresses reliability issues with the OpenStack(R) Havana implementation of cfn-push-stats, ensuring that guest instances can successfully pass Ceilometer metrics to the Controller.</p>
 </section>
 <section id="pass"> <title>Relaxed Requirements for Passing User Data</title>
-<p>The property <codeph>UserDataType</codeph> is a Wind River Linux template extension that you can use to pass user data to an instance even if the instance does not have <codeph>cloud-init</codeph> installed. For more information, see <xref href="/helion/openstack/carrier/admin/stacks/user-data" >Customizing Guest Images with User Data</xref>.</p>
+<p>The property <codeph>UserDataType</codeph> is a Wind River Linux template extension that you can
+                use to pass user data to an instance even if the instance does not have
+                    <codeph>cloud-init</codeph> installed. For more information, see <xref
+                    href="carrier-grade-admin-wr-stacks-user-data.dita">Customizing Guest Images
+                    with User Data</xref>.</p>
 </section>
 <section id="access"> <title>Improved User Access to Stacks</title>
 <p>Stacks can be created, modified, or deleted by admin or non-admin users.</p>

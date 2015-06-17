@@ -78,7 +78,7 @@ Carrier Grade implementation:</p>
 <li>Unlike Cinder-based storage, local storage does not persist when the instance is terminated or if the compute node fails.</li>
 <li>Live migration for local storage is not currently supported. Only cold migration is supported for an instance using local storage, where a new initial volume is created for the instance.</li>
 </ul>
-<p>To instantiate VMs on compute nodes configured for local storage, see <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.vcpu.storage.dita" >Specifying Local Storage for a VM</xref>.</p>
+<p>To instantiate VMs on compute nodes configured for local storage, see <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.vcpu.storage.dita" >Specifying Local Storage for a VM</xref>.</p>
 <p>
   <xref type="section" href="#topic4650/top"> Return to Top </xref>
 </p>

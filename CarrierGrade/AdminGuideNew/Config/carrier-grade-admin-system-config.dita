@@ -47,23 +47,23 @@
 <p>See the following topics:</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-alarms.dita" >Host Status and Alarms During System Configuration Changes</xref>
+<xref href="../Config/carrier-grade-admin-system-config-alarms.dita" >Host Status and Alarms During System Configuration Changes</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-ext-OAM.dita" >Changing the External Network (OAM) IP Configuration</xref>
+<xref href="../Config/carrier-grade-admin-system-config-ext-OAM.dita" >Changing the External Network (OAM) IP Configuration</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-dns.dita" >Changing the DNS Server Configuration</xref>
+<xref href="../Config/carrier-grade-admin-system-config-dns.dita" >Changing the DNS Server Configuration</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-ntp.dita" >Changing the NTP Server Configuration</xref>
+<xref href="../Config/carrier-grade-admin-system-config-ntp.dita" >Changing the NTP Server Configuration</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-allotment.dita" >Changing Storage Space Allotments on the Controller</xref>
+<xref href="../Config/carrier-grade-admin-system-config-allotment.dita" >Changing Storage Space Allotments on the Controller</xref>
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-cli.dita" >Adding an Infrastructure Network Using the CLI</xref>
+<xref href="../Config/carrier-grade-admin-system-config-cli.dita" >Adding an Infrastructure Network Using the CLI</xref>
 </p>
 
 <p>

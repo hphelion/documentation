@@ -16,10 +16,10 @@
 <p>You can add and remove metadata the following components:</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostAggregates/carrier-grade.dashboard.aggregate.managing.dita" >Host Aggregates</xref>
+<xref href="../HostAggregates/carrier-grade.dashboard.aggregate.managing.dita" >Host Aggregates</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.dita" >Flavors</xref>
+<xref href="../Flavors/carrier-grade.dashboard.domains.flavors.dita" >Flavors</xref>
 </li>
 <li>Images</li>
 </ul>
@@ -27,7 +27,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the component link.</p>

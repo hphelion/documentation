@@ -109,7 +109,7 @@
 </section>
 <section id="next-steps"> <title>Next Step</title>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/VSA/carrier.undercloud-storage-storevirtual.dita" >Working with HP StoreVirtual VSA</xref> REQUIRED</p>
+<xref href="../VSA/carrier.undercloud-storage-storevirtual.dita" >Working with HP StoreVirtual VSA</xref> REQUIRED</p>
 <p>
   <xref type="section" href="#topic3340/top"> Return to Top </xref>
 </p>

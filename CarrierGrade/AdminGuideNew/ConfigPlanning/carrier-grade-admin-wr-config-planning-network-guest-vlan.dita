@@ -40,10 +40,10 @@
 </ul>
 <p>The subnet-to-VLAN_ID mapping can be one-to-one, as in this example, or many-to-one. This means that tenant users can use a single VLAN ID of their choice to encapsulate traffic from one or more IP subnets.</p>
 <section id="creating-guest-vlans"> <title>Creating Guest VLANs</title>
-<p>Tenant users can define a guest VLAN when they add a new IP subnet to a tenant network they are creating, or to an existing one. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.guest.vlan.dita" >Adding and Removing Subnets</xref>.</p>
+<p>Tenant users can define a guest VLAN when they add a new IP subnet to a tenant network they are creating, or to an existing one. For more information, see <xref href="../Networks/carrier-grade.dashboard.network.guest.vlan.dita" >Adding and Removing Subnets</xref>.</p>
 </section>
 <section id="implementing-a-guest-vlan"> <title>Implementing a Guest VLAN</title>
-<p>Guest VLANs are implemented using available segmentation ranges from suitable provider networks, just as it is done when new tenant networks are created. Therefore all network design considerations regarding the configuration of L2 switches and the Neutron allocation strategy, described in <xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-tenant.dita" >Planning the Tenant Networks</xref> must be taken into consideration.</p>
+<p>Guest VLANs are implemented using available segmentation ranges from suitable provider networks, just as it is done when new tenant networks are created. Therefore all network design considerations regarding the configuration of L2 switches and the Neutron allocation strategy, described in <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-tenant.dita" >Planning the Tenant Networks</xref> must be taken into consideration.</p>
 <p>Additionally, note that the AVS will silently discard incoming VLAN-tagged VM traffic with unknown VLAN IDs, that is, with VLAN IDs not defined as guest VLANs on the particular tenant network.</p>
 <p>
   <xref type="section" href="#topic3428/top"> Return to Top </xref>

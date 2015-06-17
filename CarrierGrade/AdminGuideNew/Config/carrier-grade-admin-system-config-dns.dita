@@ -32,7 +32,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.</li>

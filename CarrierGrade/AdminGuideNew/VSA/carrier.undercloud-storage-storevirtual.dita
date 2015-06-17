@@ -248,7 +248,7 @@ or [Sirius client](/helion/openstack/carrier/sirius/cli/workflow/). --></p>
 </section>
 <section id="next-steps"> <title>Next Steps</title>
 <p>
-  <xref href="../../../CarrierGrade/AdminGuideNew/VSA/carrier.undercloud-oc-config-storevirtual.dita" >Working with StoreVirtual Backends</xref>
+  <xref href="../VSA/carrier.undercloud-oc-config-storevirtual.dita" >Working with StoreVirtual Backends</xref>
 </p>
 <p>
   <xref type="section" href="#topic5667/top"> Return to Top </xref>

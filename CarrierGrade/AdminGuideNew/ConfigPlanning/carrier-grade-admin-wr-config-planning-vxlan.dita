@@ -39,9 +39,9 @@
 
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting.dita" >Setting Up a VXLAN Provider Network using Horizon</xref> or </li>
+<xref href="../VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting.dita" >Setting Up a VXLAN Provider Network using Horizon</xref> or </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting-cli.dita" >Setting Up a VXLAN Provider Network using the CLI</xref>
+<xref href="../VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting-cli.dita" >Setting Up a VXLAN Provider Network using the CLI</xref>
 </li>
 </ul>
 </li>
@@ -50,7 +50,7 @@
 
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting-endpoints.dita" >Configuring VXLAN Endpoint IP Addresses</xref>
+<xref href="../VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting-endpoints.dita" >Configuring VXLAN Endpoint IP Addresses</xref>
 </li>
 </ul>
 </li>
@@ -59,12 +59,12 @@
 
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting-routes.dita" >Adding and Maintaining Routes for a VXLAN Network</xref>
+<xref href="../VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting-routes.dita" >Adding and Maintaining Routes for a VXLAN Network</xref>
 </li>
 </ul>
 </li>
 </ol>
-<p>You must also ensure that the networking environment meets certain minimum requirements. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-tenant.dita" >Planning the Tenant Networks</xref>
+<p>You must also ensure that the networking environment meets certain minimum requirements. For more information, see <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-tenant.dita" >Planning the Tenant Networks</xref>
 </p>
 <p>
   <xref type="section" href="#topic1573/top"> Return to Top </xref>

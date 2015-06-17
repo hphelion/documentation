@@ -24,7 +24,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Overview</b> link.</p>
@@ -56,7 +56,7 @@
 <p>Click <b>Action Log</b> to view the Instance Action List (same output as <codeph>nova instance-action-list</codeph>)</p>
 </li>
 <li>
-<p>Click Console to <xref href="../../../CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.console.dita" >launch a Console Window</xref>
+<p>Click Console to <xref href="../Instances/carrier-grade.dashboard.instances.console.dita" >launch a Console Window</xref>
 </p>
 </li>
 </ol>

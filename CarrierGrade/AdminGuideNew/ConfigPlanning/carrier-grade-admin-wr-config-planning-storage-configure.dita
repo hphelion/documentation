@@ -43,14 +43,14 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host to make changes</xref>.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host to make changes</xref>.</p>
 </li>
 <li>
 <p>Click the host to make changes to open the <b>Inventory Detail</b> page for the locked host.</p>
@@ -86,15 +86,15 @@
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the host</xref> to make the changes take effect.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the host</xref> to make the changes take effect.</p>
 </li>
 </ol>
 <p>The compute host is ready to provide local storage for use by VMs. Because a nova-local local volume group has
 been added, the host is automatically included in the local_storage_hosts host aggregate.</p>
 <p>To return a host to the remote_storage_hosts host aggregate, so that it is used to instantiate VMs configured for remote Cinder-based storage, delete the nova-local local volume group.</p>
 <p>To configure a VM to use local storage or remote Cinder-based storage, or to be instantiated on any compute host
-regardless of storage type, see <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.vcpu.storage.dita" >Specifying Local Storage for a VM</xref>.</p>
-<p>To add disks to a compute node for extra local storage, see <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita#adjust" >Adjusting Resources on a Compute Node</xref>.</p>
+regardless of storage type, see <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.vcpu.storage.dita" >Specifying Local Storage for a VM</xref>.</p>
+<p>To add disks to a compute node for extra local storage, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita#adjust" >Adjusting Resources on a Compute Node</xref>.</p>
 <section id="cli"> <title>Using the CLI</title>
 <p>As an alternative to the web administration interface, you can use the CLI to configure the host for local storage. For more information, see Managing Local Volume Groups and Managing Physical Volumes.</p>
 <p>

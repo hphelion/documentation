@@ -25,7 +25,7 @@ overflow limits.</p>
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Networks</b> link on the <b>Admin</b> dashboard <b>System</b> panel.</p>
@@ -47,7 +47,7 @@ overflow limits.</p>
 
 <p>The new QoS policy is available to only the selected project. If no pronect is selected, it is available to all projects in the cluster.</p>
 
-<p>Project users can select available QoS policies when the tenant networks are created from the <xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.create.dita" >Create Network</xref> window and the Edit Network window.</p>
+<p>Project users can select available QoS policies when the tenant networks are created from the <xref href="../Networks/carrier-grade.dashboard.network.create.dita" >Create Network</xref> window and the Edit Network window.</p>
 
 <p>e. Enter a gateway IP address from the subnet or leave the <b>Gateway IP</b> field blank to use the default value for the gateway IP address; for example, 192.168.0.1 for 192.168.0.0/24.</p>
 

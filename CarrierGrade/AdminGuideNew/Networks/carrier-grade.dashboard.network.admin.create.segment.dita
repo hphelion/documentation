@@ -17,13 +17,13 @@
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>This task assumes that provider networks have already been created to unlock the compute nodes and make the system operational. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita" >Creating and Deleting Provider Networks</xref>.</p>
+<p>This task assumes that provider networks have already been created to unlock the compute nodes and make the system operational. For more information, see <xref href="../Networks/carrier-grade.dashboard.network.admin.create.provider.dita" >Creating and Deleting Provider Networks</xref>.</p>
 <p>Segmentation ranges are sets of contiguous identifiers defined on a provider network. Each ID is used to implement a tenant network.</p>
 <p>Depending on how a segmentation range is configured, its ID can be available to all tenants (shared), or designated for use by a particular tenant. When a tenant or admin creates a new tenant network, it is assigned an ID automatically from the available ranges on available provider networks.</p>
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b> link.</p>
