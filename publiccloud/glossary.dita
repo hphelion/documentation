@@ -12,15 +12,14 @@
 <!--PUBLISHED-->
  <!--./publiccloud/glossary.md-->
  <!--permalink: /publiccloud/glossary/--></p>
-<p>Sometimes it's a little easy to become lost in the weeds of the cloud nomenclature; for such times, we've created this glossary to help you through.  While this glossary concentrates primarily on terms that are more specific to the HP Helion Public Cloud environment, we have tried to include a salad of general cloud computing terms to help you along.  If you need additional definitions, we suggest going on over to the <xref href="http://cloudglossary.com/" scope="external" format="html" >Open Stack Glossary</xref> and checking there.</p>
-<p>For a quick search of the <xref href="https://community.hpcloud.com/knowledge-base" scope="external" format="html" >Knowledge Base</xref>, just click on the blue highlighted term!</p>
+<p>Sometimes it's a little easy to become lost in the weeds of the cloud nomenclature; for such times, we've created this glossary to help you through.  While this glossary concentrates primarily on terms that are more specific to the HP Helion Public Cloud environment, we have tried to include a salad of general cloud computing terms to help you along.  If you need additional definitions, we suggest going on over to the <xref href="http://cloudglossary.com" scope="external" format="html" >Open Stack Glossary</xref> and checking there.</p>
 
 <section id="a"> <title>A</title>
 <dl>
 
 <dlentry>
 <dt>Abstraction Layer</dt>
-<dd>A coding layer that provides an intermediary (i.e., an "abstraction") between a programmer and a more complex underlying base code set.  For example, with Ruby Fog, the abstraction layer simplifies the complexities of the underlying <xref type="section" href="#topic12432/REST">REST</xref> <xref type="section" href="#topic12432/API">API</xref> and JSON/XML formatting of the <xref type="section" href="#topic12432/RequestAbstraction">request layer</xref> code.</dd>
+<dd>A coding layer that provides an intermediary (i.e., an "abstraction") between a programmer and a more complex underlying base code set.  For example, with Ruby Fog, the abstraction layer simplifies the complexities of the underlying REST API and JSON/XML formatting of the request layer code.</dd>
 </dlentry>
 
 <dlentry>
@@ -33,9 +32,9 @@
 <dd>Provisioning cloud resources.</dd>
 </dlentry>
 
-<dlentry id="apache">
-  <dt id="apache2"><xref href="#m/maven" format="dita">Apache Maven</xref></dt>
-<dd>See Maven</dd>
+<dlentry>
+<dt>Apache Maven</dt>
+<dd><i>See Maven</i></dd>
 </dlentry>
 
 <dlentry>
@@ -50,7 +49,7 @@
 
 <dlentry>
 <dt>Authentication</dt>
-<dd>In the context of the Identity Service, the act of confirming the identity of a user or the truth of a claim. The Identity Service will confirm that incoming request are being made by the user who claims to be making the call by validating a set of claims that the user is making. These claims are initially in the form of a set of credentials (username &amp; password, or user access keys). After initial confirmation, the Identity Service will issue the user a token which the user can then provide to demonstrate that their identity has been authenticated when making subsequent requests.</dd>
+<dd>In the context of the Identity Service, the act of confirming the identity of a user or the truth of a claim. The Identity Service will confirm that incoming request are being made by the user who claims to be making the call by validating a set of claims that the user is making. These claims are initially in the form of a set of credentials (username, password, or user access keys). After initial confirmation, the Identity Service will issue the user a token which the user can then provide to demonstrate that their identity has been authenticated when making subsequent requests.</dd>
 </dlentry>
 
 <dlentry>
@@ -81,7 +80,7 @@
 
 <dlentry>
 <dt>Bootable Image</dt>
-<dd><i>See</i> <xref type="section" href="#topic12432/VolumeBootable">Volume (bootable)</xref></dd>
+<dd><i>See Volume (bootable)</i></dd>
 </dlentry>
 
 <dlentry>
@@ -137,7 +136,7 @@
 
 <dlentry>
 <dt>Container</dt>
-<dd>A compartment for storing <xref type="section" href="#topic12432/object">objects</xref>.</dd>
+<dd>A compartment for storing objects.</dd>
 </dlentry>
 
 <dlentry>
@@ -153,12 +152,12 @@
 
 <dlentry>
 <dt>Dependency Management</dt>
-<dd>Coordinating and overseeing the dependencies between compute modules (e.g., in jclouds development), usually via project management tools such as <xref type="section" href="#topic12432/Maven">Apache Maven</xref>.</dd>
+<dd>Coordinating and overseeing the dependencies between compute modules (e.g., in jclouds development), usually via project management tools such as Apache Maven.</dd>
 </dlentry>
 
 <dlentry>
 <dt>Deprovisioning</dt>
-<dd>Deallocating a cloud resource. See <xref type="section" href="#topic12432/Provisioning">Provisioning</xref>.</dd>
+<dd>Deallocating a cloud resource. <i>See Provisioning.</i></dd>
 </dlentry>
 
 <dlentry>
@@ -195,7 +194,7 @@
 
 <dlentry>
 <dt>Floating IP Address</dt>
-<dd>An on-demand, allocatable public IP address on a network. In the context of HPCloud Services, you can allocate a number of floating IP addresses up to the quota limit, and then assign them to server <xref type="section" href="#topic12432/Instance">instances</xref>.</dd>
+<dd>An on-demand, allocatable public IP address on a network. In the context of HPCloud Services, you can allocate a number of floating IP addresses up to the quota limit, and then assign them to server instances.</dd>
 </dlentry>
 
 </dl>
@@ -246,22 +245,22 @@
 
 <dlentry>
 <dt>Image (bootable)</dt>
-<dd><i>See</i> <xref type="section" href="#topic12432/VolumeBootable">Volume (bootable)</xref>.</dd>
+<dd><i>See Volume (bootable).</i></dd>
 </dlentry>
 
 <dlentry>
 <dt>Image (partner)</dt>
-<dd>A server volume made available by HP partners. <i>See</i> <xref type="section" href="#topic12432/Image">Image</xref>.</dd>
+  <dd>A server volume made available by HP partners. <i>See Image.</i></dd>
 </dlentry>
 
 <dlentry>
 <dt>Image (private)</dt>
-<dd>A server volume you created from a <xref type="section" href="#topic12432/Snapshot">snapshot</xref> of an instance. <i>See</i> <xref type="section" href="#topic12432/Image">Image</xref>.</dd>
+  <dd>A server volume you created from a snapshot of an instance. <i>See Image.</i></dd>
 </dlentry>
 
 <dlentry>
 <dt>Image (public)</dt>
-<dd>A server volume provided by HP. <i>See</i> <xref type="section" href="#topic12432/Image">Image</xref>.</dd>
+  <dd>A server volume provided by HP. <i>See Image.</i></dd>
 </dlentry>
 
 <dlentry>
@@ -315,9 +314,9 @@
 <dd>The primary access location for the HP Helion Public Cloud interface.  The console consists of a main dashboard panel, along with compute, storage, and account panels.</dd>
 </dlentry>
 
-<dlentry id="maven">
-<dt id="maven2">Maven</dt>
-<dd>An open source software project management and comprehension tool. (Also: <xref href="#a/Apache">Apache Maven</xref></dd>
+<dlentry>
+<dt>Maven</dt>
+<dd>An open source software project management and comprehension tool. (Also: Apache Maven)</dd>
 </dlentry>
 
 <dlentry>
@@ -327,9 +326,9 @@
 
 <dlentry>
 <dt>Model Abstraction</dt>
-<dd>A coding layer that provides a more functional and user-friendly abstraction for the <xref type="section" href="#topic12432/Rest">REST</xref> API programming calls. For example, instead of a direct call to GET containers, via the model abstraction layer the programming call for GET container <b>container-name</b> is <codeph>directories.get("container-name")</codeph>.
+<dd>A coding layer that provides a more functional and user-friendly abstraction for the REST API programming calls. For example, instead of a direct call to GET containers, via the model abstraction layer the programming call for GET container <b>container-name</b> is <codeph>directories.get("container-name")</codeph>.
 
-A model layer can also include particular kinds of objects, and expose those objects characteristics using simple properties or attributes. For example, "Server" is a model that represents the concept of a virtual <xref type="section" href="#topic12432/Instance">instance</xref>, with the "Server" model including properties and attributes such as name, <xref type="section" href="#topic12432/Flavor">flavor</xref>, <xref type="section" href="#topic12432/Image">image</xref>, addresses, and so on.   See also, <xref type="section" href="#topic12432/AbstractionLayer">abstraction layer</xref>.</dd>
+A model layer can also include particular kinds of objects, and expose those objects characteristics using simple properties or attributes. For example, "Server" is a model that represents the concept of a virtual instance, with the "Server" model including properties and attributes such as name, flavor, image, addresses, and so on.   See also, abstraction layer.</dd>
 </dlentry>
 
 </dl>
@@ -355,7 +354,7 @@ A model layer can also include particular kinds of objects, and expose those obj
 </dlentry>
 
 <dlentry>
-<dt>OpenStack(R)</dt>
+  <dt><tm tmtype="reg">OpenStack</tm></dt>
 <dd>An open-source cloud computing operating system.</dd>
 </dlentry>
 
@@ -367,7 +366,7 @@ A model layer can also include particular kinds of objects, and expose those obj
 
 <dlentry>
 <dt>Partner Image</dt>
-<dd><i>See</i> <xref type="section" href="#topic12432/ImagePartner">Image (partner)</xref></dd>
+<dd><i>See Image (partner)</i></dd>
 </dlentry>
 
 <dlentry>
@@ -382,7 +381,7 @@ A model layer can also include particular kinds of objects, and expose those obj
 
 <dlentry>
 <dt>Private Image</dt>
-<dd><i>See</i> <xref type="section" href="#topic12432/ImagePrivate">Image (private)</xref></dd>
+  <dd><i>See Image (private)</i></dd>
 </dlentry>
 
 <dlentry>
@@ -392,7 +391,7 @@ A model layer can also include particular kinds of objects, and expose those obj
 
 <dlentry>
 <dt>Public Image</dt>
-<dd><i>See</i> <xref type="section" href="#topic12432/ImagePublic">Image (public)</xref></dd>
+  <dd><i>See Image (public)</i></dd>
 </dlentry>
 
 </dl>
@@ -431,7 +430,7 @@ A model layer can also include particular kinds of objects, and expose those obj
 
 <dlentry>
 <dt>Rule</dt>
-<dd>See <xref type="section" href="#topic12432/SecurityGroupRule">Security group rule</xref>.</dd>
+<dd><i>See Security group rule.</i></dd>
 </dlentry>
 
 <dlentry>
@@ -462,7 +461,7 @@ A model layer can also include particular kinds of objects, and expose those obj
 
 <dlentry>
 <dt>Server</dt>
-<dd>A compute instance that is created from a <xref type="section" href="#topic12432/Flavor">flavor</xref> combined with an <xref type="section" href="#topic12432/Image">image</xref>.</dd>
+<dd>A compute instance that is created from a flavor combined with an image.</dd>
 </dlentry>
 
 <dlentry>
@@ -530,7 +529,7 @@ A model layer can also include particular kinds of objects, and expose those obj
 
 <dlentry>
 <dt>Volume (bootable)</dt>
-<dd>A previously-saved (by a user) bootable server <xref type="section" href="#topic12432/Volume">volume</xref> (also sometimes called an <xref type="section" href="#topic12432/Image">image</xref></dd>
+<dd>A previously-saved (by a user) bootable server volume (also sometimes called an image</dd>
 </dlentry>
 
 </dl>
