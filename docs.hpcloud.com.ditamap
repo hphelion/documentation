@@ -16,61 +16,76 @@
 	</topicmeta>
  <!--permalink:         --> <topicref href="CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa.dita"/> 
  <!--permalink: /--> <topicref href="publiccloud/index.dita"/> 
- <!--permalink: /als/v1/--> <topicref href="devplatform/helion/1.0index.dita" locktitle="yes" navtitle="Application Lifecycle Service Documentation -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/--> <topicref href="devplatform/helion/admin/1.0index.dita" locktitle="yes" navtitle="Application Lifecycle Service Admin Guide -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/best-practices/--> <topicref href="devplatform/helion/admin/best-practices/1.0index.dita" locktitle="yes" navtitle="Best Practices -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/best-practices/logging-examples/--> <topicref href="devplatform/helion/admin/best-practices/1.0logging-examples.dita" locktitle="yes" navtitle="Log Drain Examples -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/cluster/--> <topicref href="devplatform/helion/admin/cluster/1.0index.dita" locktitle="yes" navtitle="Cluster Setup -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/cluster/cloud-init/--> <topicref href="devplatform/helion/admin/cluster/1.0cloud-init.dita" locktitle="yes" navtitle="Using the cloud-init Package -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/cluster/external-db/--> <topicref href="devplatform/helion/admin/cluster/1.0external-db.dita" locktitle="yes" navtitle="External Data Services -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/cluster/harbor/--> <topicref href="devplatform/helion/admin/cluster/1.0harbor.dita" locktitle="yes" navtitle="Harbor TCP/UDP Port Service -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/console/--> <topicref href="devplatform/helion/admin/console/1.0index.dita" locktitle="yes" navtitle="Management Console (Admin View) -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/console/app-store/--> <topicref href="devplatform/helion/admin/console/1.0app-store.dita" locktitle="yes" navtitle="Sample Applications -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/console/customize/--> <topicref href="devplatform/helion/admin/console/1.0customize.dita" locktitle="yes" navtitle="Customization -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/reference/add-service/--> <topicref href="devplatform/helion/admin/reference/1.0add-service.dita" locktitle="yes" navtitle="Adding System Services -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/reference/architecture/--> <topicref href="devplatform/helion/admin/reference/1.0architecture.dita" locktitle="yes" navtitle="Architectural Design -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/reference/groups/--> <topicref href="devplatform/helion/admin/reference/1.0groups.dita"/> 
- <!--permalink: /als/v1/admin/reference/kato-ref/--> <topicref href="devplatform/helion/admin/reference/1.0kato-ref.dita" locktitle="yes" navtitle="Kato Command Reference -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/reference/known-issues/--> <topicref href="devplatform/helion/admin/reference/1.0known-issues.dita" locktitle="yes" navtitle="Known Issues -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/reference/troubleshoot/--> <topicref href="devplatform/helion/admin/reference/1.0troubleshoot.dita" locktitle="yes" navtitle="Troubleshooting -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/server/--> <topicref href="devplatform/helion/admin/server/1.0index.dita" locktitle="yes" navtitle="Server Configuration -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/server/aok/--> <topicref href="devplatform/helion/admin/server/1.0aok.dita" locktitle="yes" navtitle="AOK Authentication Server -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/server/configuration/--> <topicref href="devplatform/helion/admin/server/1.0configuration.dita" locktitle="yes" navtitle="Detailed Configuration -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/server/docker/--> <topicref href="devplatform/helion/admin/server/1.0docker.dita" locktitle="yes" navtitle="Docker and Fence -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/server/logging/--> <topicref href="devplatform/helion/admin/server/1.0logging.dita" locktitle="yes" navtitle="Log Streams -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/server/operations/--> <topicref href="devplatform/helion/admin/server/1.0operations.dita" locktitle="yes" navtitle="Common Server Operations -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/server/router/--> <topicref href="devplatform/helion/admin/server/1.0router.dita" locktitle="yes" navtitle="ALS Router -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/admin/server/upgrade/--> <topicref href="devplatform/helion/admin/server/1.0upgrade.dita" locktitle="yes" navtitle="Upgrading Application Lifecycle Service -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/client/download/--> <topicref href="devplatform/helion/CLI/1.0ALS_Client_Downloads.dita" locktitle="yes" navtitle="HP Application Lifecycle Service (ALS) Client -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/--> <topicref href="devplatform/helion/user/1.0index.dita" locktitle="yes" navtitle="Application Lifecycle Service User Guide -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/client/--> <topicref href="devplatform/helion/user/client/1.0index.dita" locktitle="yes" navtitle="HP Helion Application Lifecycle Service Client -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/console/--> <topicref href="devplatform/helion/user/console/1.0index.dita" locktitle="yes" navtitle="Management Console -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/--> <topicref href="devplatform/helion/user/deploy/1.0index.dita" locktitle="yes" navtitle="General Deployment -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/app-debug/--> <topicref href="devplatform/helion/user/deploy/1.0app-debug.dita" locktitle="yes" navtitle="Remote Debugging -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/app-logs/--> <topicref href="devplatform/helion/user/deploy/1.0app-logs.dita" locktitle="yes" navtitle="Application Logs -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/buildpack/--> <topicref href="devplatform/helion/user/deploy/1.0buildpack.dita" locktitle="yes" navtitle="Buildpacks -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/languages/clojure/--> <topicref href="devplatform/helion/user/deploy/languages/1.0clojure.dita" locktitle="yes" navtitle="Clojure -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/languages/go/--> <topicref href="devplatform/helion/user/deploy/languages/1.0go.dita" locktitle="yes" navtitle="Go -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/languages/java/--> <topicref href="devplatform/helion/user/deploy/languages/1.0java.dita" locktitle="yes" navtitle="Developing in Java -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/languages/node/--> <topicref href="devplatform/helion/user/deploy/languages/1.0node.dita" locktitle="yes" navtitle="Developing in Node -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/languages/php/--> <topicref href="devplatform/helion/user/deploy/languages/1.0php.dita" locktitle="yes" navtitle="Developing In PHP -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/languages/ruby/--> <topicref href="devplatform/helion/user/deploy/languages/1.0ruby.dita"/> 
- <!--permalink: /als/v1/user/deploy/manifestyml/--> <topicref href="devplatform/helion/user/deploy/1.0manifestyml.dita" locktitle="yes" navtitle="Manifest.yml Options -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/newrelic/--> <topicref href="devplatform/helion/user/deploy/1.0newrelic.dita" locktitle="yes" navtitle="New Relic Monitoring -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/orgs-spaces/--> <topicref href="devplatform/helion/user/deploy/1.0orgs-spaces.dita" locktitle="yes" navtitle="Organizations and Spaces -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/other-frameworks/--> <topicref href="devplatform/helion/user/deploy/1.0other-frameworks.dita" locktitle="yes" navtitle="Generic and Standalone Frameworks -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/deploy/stackatoyml/--> <topicref href="devplatform/helion/user/deploy/1.0stackatoyml.dita" locktitle="yes" navtitle="HP Options -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/quick-start/--> <topicref href="devplatform/helion/user/quick-start/1.0index.dita" locktitle="yes" navtitle="Prerequisites -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/reference/client-ref/--> <topicref href="devplatform/helion/user/reference/1.0client-ref.dita" locktitle="yes" navtitle="Application Lifecycle Service Client Command Reference -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/reference/environment/--> <topicref href="devplatform/helion/user/reference/1.0environment.dita" locktitle="yes" navtitle="Environment Variables -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/reference/glossary/--> <topicref href="devplatform/helion/user/reference/1.0glossary.dita" locktitle="yes" navtitle="Glossary -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/reference/troubleshoot/--> <topicref href="devplatform/helion/user/reference/1.0troubleshoot.dita" locktitle="yes" navtitle="Troubleshooting -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/services/data-services/--> <topicref href="devplatform/helion/user/services/1.0data-services.dita" locktitle="yes" navtitle="Application Lifecycle Service Data Services -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/services/filesystem/--> <topicref href="devplatform/helion/user/services/1.0filesystem.dita" locktitle="yes" navtitle="Persistent File System -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/services/memcached/--> <topicref href="devplatform/helion/user/services/1.0memcached.dita" locktitle="yes" navtitle="Memcached Service -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/services/port-service/--> <topicref href="devplatform/helion/user/services/1.0port-service.dita" locktitle="yes" navtitle="Port Service (Harbor) -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /als/v1/user/services/user-provided/--> <topicref href="devplatform/helion/user/services/1.0user-provided.dita" locktitle="yes" navtitle="User-Provided Services -- HP Helion 1.0 Development Platform "/>
- <!--permalink: /api/copyright/--> <topicref href="api.copyright.dita"/> 
+  
+ <!--permalink: /als/v1/--> <topicref href="devplatform/helion/1.0index.dita" locktitle="yes" navtitle="Application Lifecycle Service Documentation -- HP Helion 1.0 Development Platform ">
+ <!--permalink: /als/v1/admin/--> <topicref href="devplatform/helion/admin/1.0index.dita" locktitle="yes" navtitle="Application Lifecycle Service Admin Guide -- HP Helion 1.0 Development Platform ">
+   <!--permalink: /als/v1/admin/best-practices/--> <topicref href="devplatform/helion/admin/best-practices/1.0index.dita" locktitle="yes" navtitle="Best Practices -- HP Helion 1.0 Development Platform ">
+   <!--permalink: /als/v1/admin/best-practices/logging-examples/--> <topicref href="devplatform/helion/admin/best-practices/1.0logging-examples.dita" locktitle="yes" navtitle="Log Drain Examples -- HP Helion 1.0 Development Platform "/>
+ </topicref>
+   <!--permalink: /als/v1/admin/cluster/--> <topicref href="devplatform/helion/admin/cluster/1.0index.dita" locktitle="yes" navtitle="Cluster Setup -- HP Helion 1.0 Development Platform ">
+   <!--permalink: /als/v1/admin/cluster/cloud-init/--> <topicref href="devplatform/helion/admin/cluster/1.0cloud-init.dita" locktitle="yes" navtitle="Using the cloud-init Package -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/admin/cluster/external-db/--> <topicref href="devplatform/helion/admin/cluster/1.0external-db.dita" locktitle="yes" navtitle="External Data Services -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/admin/cluster/harbor/--> <topicref href="devplatform/helion/admin/cluster/1.0harbor.dita" locktitle="yes" navtitle="Harbor TCP/UDP Port Service -- HP Helion 1.0 Development Platform "/>
+ </topicref>
+   <!--permalink: /als/v1/admin/console/--> <topicref href="devplatform/helion/admin/console/1.0index.dita" locktitle="yes" navtitle="Management Console (Admin View) -- HP Helion 1.0 Development Platform ">
+   <!--permalink: /als/v1/admin/console/app-store/--> <topicref href="devplatform/helion/admin/console/1.0app-store.dita" locktitle="yes" navtitle="Sample Applications -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/admin/console/customize/--> <topicref href="devplatform/helion/admin/console/1.0customize.dita" locktitle="yes" navtitle="Customization -- HP Helion 1.0 Development Platform "/>
+ </topicref>
+   <!--permalink: /als/v1/admin/reference/add-service/--> <topicref href="devplatform/helion/admin/reference/1.0add-service.dita" locktitle="yes" navtitle="Adding System Services -- HP Helion 1.0 Development Platform ">
+   <!--permalink: /als/v1/admin/reference/architecture/--> <topicref href="devplatform/helion/admin/reference/1.0architecture.dita" locktitle="yes" navtitle="Architectural Design -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/admin/reference/groups/--> <topicref href="devplatform/helion/admin/reference/1.0groups.dita"/> 
+   <!--permalink: /als/v1/admin/reference/kato-ref/--> <topicref href="devplatform/helion/admin/reference/1.0kato-ref.dita" locktitle="yes" navtitle="Kato Command Reference -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/admin/reference/known-issues/--> <topicref href="devplatform/helion/admin/reference/1.0known-issues.dita" locktitle="yes" navtitle="Known Issues -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/admin/reference/troubleshoot/--> <topicref href="devplatform/helion/admin/reference/1.0troubleshoot.dita" locktitle="yes" navtitle="Troubleshooting -- HP Helion 1.0 Development Platform "/>
+ </topicref>
+   <!--permalink: /als/v1/admin/server/--> <topicref href="devplatform/helion/admin/server/1.0index.dita" locktitle="yes" navtitle="Server Configuration -- HP Helion 1.0 Development Platform ">
+   <!--permalink: /als/v1/admin/server/aok/--> <topicref href="devplatform/helion/admin/server/1.0aok.dita" locktitle="yes" navtitle="AOK Authentication Server -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/admin/server/configuration/--> <topicref href="devplatform/helion/admin/server/1.0configuration.dita" locktitle="yes" navtitle="Detailed Configuration -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/admin/server/docker/--> <topicref href="devplatform/helion/admin/server/1.0docker.dita" locktitle="yes" navtitle="Docker and Fence -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/admin/server/logging/--> <topicref href="devplatform/helion/admin/server/1.0logging.dita" locktitle="yes" navtitle="Log Streams -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/admin/server/operations/--> <topicref href="devplatform/helion/admin/server/1.0operations.dita" locktitle="yes" navtitle="Common Server Operations -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/admin/server/router/--> <topicref href="devplatform/helion/admin/server/1.0router.dita" locktitle="yes" navtitle="ALS Router -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/admin/server/upgrade/--> <topicref href="devplatform/helion/admin/server/1.0upgrade.dita" locktitle="yes" navtitle="Upgrading Application Lifecycle Service -- HP Helion 1.0 Development Platform "/>
+ </topicref>
+   <!--permalink: /als/v1/user/--> <topicref href="devplatform/helion/user/1.0index.dita" locktitle="yes" navtitle="Application Lifecycle Service User Guide -- HP Helion 1.0 Development Platform ">
+   <!--permalink: /als/v1/user/client/--> <topicref href="devplatform/helion/user/client/1.0index.dita" locktitle="yes" navtitle="HP Helion Application Lifecycle Service Client -- HP Helion 1.0 Development Platform ">
+   <!--permalink: /als/v1/client/download/--> <topicref href="devplatform/helion/CLI/1.0ALS_Client_Downloads.dita" locktitle="yes" navtitle="HP Application Lifecycle Service (ALS) Client -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/user/console/--> <topicref href="devplatform/helion/user/console/1.0index.dita" locktitle="yes" navtitle="Management Console -- HP Helion 1.0 Development Platform "/>
+     <!--permalink: /als/v1/user/quick-start/--> <topicref href="devplatform/helion/user/quick-start/1.0index.dita" locktitle="yes" navtitle="Prerequisites -- HP Helion 1.0 Development Platform "/>
+ </topicref>
+     <!--permalink: /als/v1/user/deploy/--> <topicref href="devplatform/helion/user/deploy/1.0index.dita" locktitle="yes" navtitle="General Deployment -- HP Helion 1.0 Development Platform ">
+     <!--permalink: /als/v1/user/deploy/app-debug/--> <topicref href="devplatform/helion/user/deploy/1.0app-debug.dita" locktitle="yes" navtitle="Remote Debugging -- HP Helion 1.0 Development Platform "/>
+     <!--permalink: /als/v1/user/deploy/app-logs/--> <topicref href="devplatform/helion/user/deploy/1.0app-logs.dita" locktitle="yes" navtitle="Application Logs -- HP Helion 1.0 Development Platform "/>
+     <!--permalink: /als/v1/user/deploy/buildpack/--> <topicref href="devplatform/helion/user/deploy/1.0buildpack.dita" locktitle="yes" navtitle="Buildpacks -- HP Helion 1.0 Development Platform "/>
+       <!--permalink: /als/v1/user/deploy/manifestyml/--> <topicref href="devplatform/helion/user/deploy/1.0manifestyml.dita" locktitle="yes" navtitle="Manifest.yml Options -- HP Helion 1.0 Development Platform "/>
+       <!--permalink: /als/v1/user/deploy/newrelic/--> <topicref href="devplatform/helion/user/deploy/1.0newrelic.dita" locktitle="yes" navtitle="New Relic Monitoring -- HP Helion 1.0 Development Platform "/>
+       <!--permalink: /als/v1/user/deploy/orgs-spaces/--> <topicref href="devplatform/helion/user/deploy/1.0orgs-spaces.dita" locktitle="yes" navtitle="Organizations and Spaces -- HP Helion 1.0 Development Platform "/>
+       <!--permalink: /als/v1/user/deploy/other-frameworks/--> <topicref href="devplatform/helion/user/deploy/1.0other-frameworks.dita" locktitle="yes" navtitle="Generic and Standalone Frameworks -- HP Helion 1.0 Development Platform "/>
+       <!--permalink: /als/v1/user/deploy/stackatoyml/--> <topicref href="devplatform/helion/user/deploy/1.0stackatoyml.dita" locktitle="yes" navtitle="HP Options -- HP Helion 1.0 Development Platform "/>
+     <!--permalink: /als/v1/user/deploy/languages/clojure/--> <topicref href="devplatform/helion/user/deploy/languages/1.0clojure.dita" locktitle="yes" navtitle="Clojure -- HP Helion 1.0 Development Platform ">
+     <!--permalink: /als/v1/user/deploy/languages/go/--> <topicref href="devplatform/helion/user/deploy/languages/1.0go.dita" locktitle="yes" navtitle="Go -- HP Helion 1.0 Development Platform "/>
+     <!--permalink: /als/v1/user/deploy/languages/java/--> <topicref href="devplatform/helion/user/deploy/languages/1.0java.dita" locktitle="yes" navtitle="Developing in Java -- HP Helion 1.0 Development Platform "/>
+     <!--permalink: /als/v1/user/deploy/languages/node/--> <topicref href="devplatform/helion/user/deploy/languages/1.0node.dita" locktitle="yes" navtitle="Developing in Node -- HP Helion 1.0 Development Platform "/>
+     <!--permalink: /als/v1/user/deploy/languages/php/--> <topicref href="devplatform/helion/user/deploy/languages/1.0php.dita" locktitle="yes" navtitle="Developing In PHP -- HP Helion 1.0 Development Platform "/>
+     <!--permalink: /als/v1/user/deploy/languages/ruby/--> <topicref href="devplatform/helion/user/deploy/languages/1.0ruby.dita"/> 
+ </topicref>
+     </topicref>
+     <!--permalink: /als/v1/user/reference/client-ref/--> <topicref href="devplatform/helion/user/reference/1.0client-ref.dita" locktitle="yes" navtitle="Application Lifecycle Service Client Command Reference -- HP Helion 1.0 Development Platform ">
+     <!--permalink: /als/v1/user/reference/environment/--> <topicref href="devplatform/helion/user/reference/1.0environment.dita" locktitle="yes" navtitle="Environment Variables -- HP Helion 1.0 Development Platform "/>
+     <!--permalink: /als/v1/user/reference/glossary/--> <topicref href="devplatform/helion/user/reference/1.0glossary.dita" locktitle="yes" navtitle="Glossary -- HP Helion 1.0 Development Platform "/>
+     <!--permalink: /als/v1/user/reference/troubleshoot/--> <topicref href="devplatform/helion/user/reference/1.0troubleshoot.dita" locktitle="yes" navtitle="Troubleshooting -- HP Helion 1.0 Development Platform "/>
+ </topicref>
+   <!--permalink: /als/v1/user/services/data-services/--> <topicref href="devplatform/helion/user/services/1.0data-services.dita" locktitle="yes" navtitle="Application Lifecycle Service Data Services -- HP Helion 1.0 Development Platform ">
+   <!--permalink: /als/v1/user/services/filesystem/--> <topicref href="devplatform/helion/user/services/1.0filesystem.dita" locktitle="yes" navtitle="Persistent File System -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/user/services/memcached/--> <topicref href="devplatform/helion/user/services/1.0memcached.dita" locktitle="yes" navtitle="Memcached Service -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/user/services/port-service/--> <topicref href="devplatform/helion/user/services/1.0port-service.dita" locktitle="yes" navtitle="Port Service (Harbor) -- HP Helion 1.0 Development Platform "/>
+   <!--permalink: /als/v1/user/services/user-provided/--> <topicref href="devplatform/helion/user/services/1.0user-provided.dita" locktitle="yes" navtitle="User-Provided Services -- HP Helion 1.0 Development Platform "/>
+ </topicref>
+ </topicref>
+ </topicref>
+ </topicref>
+ 
+  <!--permalink: /api/copyright/--> <topicref href="api.copyright.dita"/> 
  <!--permalink: /automation/--> <topicref href="automation/csa.index.dita"/> 
  <!--permalink: /cloudos/community/services/compute/howto/--> <topicref href="community/community.services-compute-howto.dita"/> 
  <!--permalink: /cloudsystem/--> <topicref href="cloudsystem.landingpage.dita"/> 
