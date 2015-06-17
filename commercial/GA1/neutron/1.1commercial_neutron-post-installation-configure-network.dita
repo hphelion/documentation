@@ -545,13 +545,13 @@ http://&lt;internalVIP&gt;:5000/v2.0</entry>
 <table>
 <tgroup cols="">
 <thead>
-<row>
-<entry>Interface</entry>
-<entry>Description</entry>
-<entry>Initiating node (from)</entry>
-<entry>Receiving node (to)</entry>
-<entry>Port</entry>
-</row>
+            <row>
+              <entry>Interface</entry>
+              <entry>Description</entry>
+              <entry>Initiating node (from)</entry>
+              <entry>Receiving node (to)</entry>
+              <entry>Port</entry>
+            </row>
 </thead>
 <tbody>
 <row>
