@@ -36,19 +36,17 @@
 <b>Note:</b> The NuGet packages used in this tutorial are for sample purposes only. Verify that packages are working for your application before deploying them to a production environment.</p>
 <section id="adding-a-service-to-a-net-application"> <title>Adding a service to a .NET application</title>
 <ol>
-<li>
-<p>When deploying your application using <xref href="../../../devplatform/1.2/windows/windows_tools_guide.dita#cloudfoundryexplorer" >Cloud Foundry Explorer</xref>, in the deployment information window, enter the service information in the <b>Service</b> field in the format <codeph>Service Name, Service Type, Service Plan</codeph>:</p>
-
-<p>
-<image href="../../../media/windows_services.png"/>
-</p>
-</li>
+<li>When deploying your application using <xref
+            href="../../../devplatform/1.2/windows/windows_tools_guide.dita#cloudfoundryexplorer"
+            >Cloud Foundry Explorer</xref>, in the deployment information window, enter the service
+          information in the <b>Service</b> field in the format <codeph>Service Name, Service Type,
+            Service Plan</codeph>:<p>
+            <image href="../../../media/windows_services.png"/>
+          </p></li>
 <li>Deploy your application.</li>
-<li>
-<p>Once the application gets successfully created, your VCAP_SERVICES file will have a node such as the following:</p>
-
-<codeblock>
-<codeph>"redis-2.8": [
+<li>Once the application gets successfully created, your VCAP_SERVICES file will have a node such as
+          the
+          following:<codeblock><codeph>"redis-2.8": [
 {
   "name": "redistest",
   "label": "redis-2.8",
@@ -68,35 +66,23 @@
     "uri": "redis:\/\/01b32e35-248a-43d7-b90d-ab3f2611e644:f4774d0b-2f8d-45da-ba3e-545f0cb9b35a@192.168.1.50:5001\/"
   }
 }
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Add dependencies.</p>
-
-<ol>
-<li>
-<p>Add a JSON package. In this case, you'll install <b>JSON.NET</b>. Open the <b>Manage NuGet Packages</b> dialog (under <b>Tools-&gt;NuGet Package Manager-&gt;Manage NuGet Packages for Solution...</b>), select the <b>Online</b> node, and search for <b>JSON.NET</b>. Click <b>Install</b>.</p>
-
-<p>
-<image href="../../../media/windows_nuget_json.png"/>
-</p>
-</li>
-<li>
-<p>Add a Redis client. In this case, you'll install <b>StackExchange.Redis</b>. Open the <b>Manage NuGet Packages</b> dialog, , select the <b>Online</b> node, and search for <b>StackExchange.Redis</b>. Click <b>Install</b>.</p>
-
-<p>
-<image href="../../../media/windows_nuget_redis.png"/>
-</p>
-</li>
-</ol>
-</li>
-<li>
-<p>To verify that the services are working, create a new MVC5 View (CSHTML) page with the following contents:</p>
-
-<codeblock>
-<codeph>&lt;p&gt;
-Text from Redis:
+</codeph></codeblock></li>
+<li> Add dependencies.<ol>
+            <li> Add a JSON package. In this case, you'll install <b>JSON.NET</b>. Open the
+                <b>Manage NuGet Packages</b> dialog (under <b>Tools-&gt;NuGet Package
+                Manager-&gt;Manage NuGet Packages for Solution...</b>), select the <b>Online</b>
+              node, and search for <b>JSON.NET</b>. Click <b>Install</b>.<p>
+                <image href="../../../media/windows_nuget_json.png"/>
+              </p></li>
+            <li> Add a Redis client. In this case, you'll install <b>StackExchange.Redis</b>. Open
+              the <b>Manage NuGet Packages</b> dialog, , select the <b>Online</b> node, and search
+              for <b>StackExchange.Redis</b>. Click <b>Install</b>.<p>
+                <image href="../../../media/windows_nuget_redis.png"/>
+              </p></li>
+          </ol></li>
+<li> To verify that the services are working, create a new MVC5 View (CSHTML) page with the
+          following
+            contents:<codeblock>Text from Redis:
 @{
    try
     {                    
@@ -122,39 +108,27 @@ Text from Redis:
         @e.ToString();
     }
 
-}
-&lt;/p&gt;
-</codeph>
-</codeblock>
-
-<p>In the above code sample, the application does the following:</p>
-
-<ol>
-<li>Reads the Redis connection information from the VCAP_SERVICES environment variable</li>
-<li>Creates a connection to the Redis service</li>
-<li>Sends a string to the Redis service</li>
-<li>Reads a string back from the Redis service</li>
-<li>Displays the returned string</li>
+}</codeblock><p>In
+            the above code sample, the application does the following:</p><ol>
+            <li>Reads the Redis connection information from the VCAP_SERVICES environment
+              variable</li>
+            <li>Creates a connection to the Redis service</li>
+            <li>Sends a string to the Redis service</li>
+            <li>Reads a string back from the Redis service</li>
+            <li>Displays the returned string</li>
+          </ol></li>
+<li>Deploy and open the application. You will see the following result:<p>
+            <image href="../../../media/windows_redis_result.png"/>
+          </p></li>
 </ol>
-</li>
-<li>
-<p>Deploy and open the application. You will see the following result:</p>
-
-<p>
-<image href="../../../media/windows_redis_result.png"/>
-</p>
-</li>
-</ol>
-<!-- ===================== horizontal rule ===================== -->
-<xref href="../../../devplatform/1.2/windows/windows_overview.dita" >Windows Overview</xref>
-<xref href="../../../devplatform/1.2/windows/windows_firstapp.dita" >Deploying your first .NET Application</xref>
-<p> | </p>
-<xref href="../../../devplatform/1.2/windows/windows_tools_guide.dita" >Windows and .NET Tools Guide</xref>
-<xref href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita" >Building and Deploying Windows DEA and SQL Server Express Images</xref>
-<p> | </p>
-<xref href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita" >Glazier Reference Guide</xref>
-<p>Adding Services to a Windows Application | </p>
-<xref href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita" >Deploying Windows Applications with the IIS Buildpack</xref>
 </section>
 </body>
+  <related-links>
+    <link href="../../../devplatform/1.2/windows/windows_overview.dita"><linktext>Windows Overview</linktext></link>
+    <link href="../../../devplatform/1.2/windows/windows_firstapp.dita"><linktext>Deploying your first .NET Application</linktext></link>
+    <link href="../../../devplatform/1.2/windows/windows_tools_guide.dita"><linktext>Windows and .NET Tools Guide</linktext></link>
+    <link href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita"><linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext></link>
+    <link href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita"><linktext>Glazier Reference Guide</linktext></link>
+    <link href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita"><linktext>Deploying Windows Applications with the IIS Buildpack</linktext></link>
+  </related-links>
 </topic>

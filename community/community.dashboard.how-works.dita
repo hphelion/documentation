@@ -13,7 +13,11 @@
  <!--./community/community.dashboard.how-works.md-->
  <!--permalink: /helion/community/dashboard/how-works/--></p>
   <p><tm tmtype="reg">The HP Helion OpenStack</tm>Community dashboards are browser-based user interfaces that allow you to interact with the <tm tmtype="reg">HP Helion OpenStack</tm> Commercial overcloud. The overcloud is the end-user <tm tmtype="reg">OpenStack</tm> cloud.</p>
-  <p>The interface, based on <tm tmtype="reg">OpenStack</tm> Horizon, is grouped into dashboards, including <xref type="section" href="#topic2040/DashProject">Project</xref>, <xref type="section" href="#topic2040/DashAdmin">Admin</xref> and <xref type="section" href="#topic2040/DashSettings">Settings</xref>. Tabs on the left side of the interface expand and contract to show available commands grouped into <b>panels</b>.</p>
+  <p>The interface, based on <tm tmtype="reg">OpenStack</tm> Horizon, is grouped into dashboards,
+      including <xref href="#topic2040/project-dashboard" format="dita"/>, <xref
+        href="#topic2040/admin-dashboard" format="dita"/>,  and <xref
+        href="#topic2040/settings-dashboard" format="dita"/> Tabs on the left side of the interface
+      expand and contract to show available commands grouped into <b>panels</b>.</p>
 <!-- Need new
 <img src="/media/HorizonCommunity.png" alt="" width="600" />
 -->

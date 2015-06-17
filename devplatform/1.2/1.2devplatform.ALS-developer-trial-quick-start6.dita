@@ -25,8 +25,8 @@
 <p>We have provided several sample applications in multiple programming languages. Exploring and deploying these simple apps will help you understand how the push process works and how applications can be connected to the other HP Helion OpenStack(R) services.</p>
 <table>
 <tgroup cols="2">
-                <colspec colname="col1" colwidth="400" colsep="1"/>
-                <colspec colname="col2"/>
+                <colspec colname="col1" colsep="1" colwidth="300"/>
+                <colspec colname="col2" colwidth="*2"/>
                 <tbody>
                     <row>
                         <entry/>
@@ -34,21 +34,24 @@
                     </row>
                     <row>
                         <entry>
-                            <p>1. <xref href="ALS-developer-trial-quick-start">Register for your
-                                    Helion Public Cloud Account</xref>
+                            <p>1. <xref
+                                    href="1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952"
+                                    >Register for your Helion Public Cloud Account</xref>
                             </p>
-                            <p>2. <xref href="/ALS-developer-trial-quick-start2.dita">Download
-                                    Tools</xref>
+                            <p>2. <xref
+                                    href="1.2devplatform.ALS-developer-trial-quick-start2.dita#topic1743"
+                                    >Download Tools</xref>
                             </p>
-                            <p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita"
-                                    >Create the Sandbox Environment</xref>
-                            </p>
-                            <p>4. <xref href="1.2devplatform.ALS-developer-trial-quick-start4.dita"
+                            <p>3. <xref
+                                    href="1.2devplatform.ALS-developer-trial-quick-start3.dita#topic1871"
+                                    >Create the Sandbox Environment </xref></p>
+                            <p>4. <xref
+                                    href="1.2devplatform.ALS-developer-trial-quick-start4.dita#topic3239"
                                     >Create a Cluster</xref>
                             </p>
-                            <p>5. <xref href="1.2devplatform.ALS-developer-trial-quick-start5.dita"
-                                    >Add Windows DEA and SQL Server (Optional Step)</xref>
-                            </p>
+                            <p>5. <xref
+                                    href="1.2devplatform.ALS-developer-trial-quick-start5.dita#topic3017"
+                                    >Add Windows DEA and SQL Server (Optional Step) </xref></p>
                             <p><image href="../../media/star.gif" id="image_bmg_ms5_js" scale="50"
                                 />6. <b>Explore Sample Applications</b></p>
                         </entry>

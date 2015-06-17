@@ -40,7 +40,11 @@
         <li>one or more data networks</li>
       </ul><p>A single interface can optionally be configured to support more than one network using
         VLAN tagging. For more information, see <xref
+<<<<<<< HEAD
           href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-shared.dita"
+=======
+          href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-shared.dita"
+>>>>>>> 6df2f78ebc356490b3d988fe0d613ecf938d0ae1
           >Shared (VLAN) Ethernet Interfaces</xref>.</p><p>In addition, the management or
         infrastructure interfaces, or both, can be configured with an additional data network (see
         the HP Helion OpenStack(R) Carrier Grade Software Installation Guide: Editing Interface
@@ -57,6 +61,7 @@
         </li>
       </ul><p>Interface configurations are summarized in the following table.</p><p>
         <b>Note:</b> If a network attachment uses LAG, the corresponding interfaces on the storage
+<<<<<<< HEAD
         and compute nodes must also be configured manually to specify the interface type.</p><table>
         <tgroup cols="4">
           <colspec colname="col1"/>
@@ -69,31 +74,66 @@
               <entry>Controller</entry>
               <entry>Storage</entry>
               <entry>Compute</entry>
+=======
+        and compute nodes must also be configured manually to specify the interface type.</p><table
+        id="table_afr_2ky_js">
+        <tgroup cols="4">
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="newCol3" colwidth="1*"/>
+          <colspec colname="newCol2" colwidth="1*"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry><b>Interface</b></entry>
+              <entry colsep="1" rowsep="1"><b>Controller</b></entry>
+              <entry colsep="1" rowsep="1"><b>Storage</b>
+              </entry>
+              <entry colsep="1" rowsep="1"><b>Compute</b></entry>
+>>>>>>> 6df2f78ebc356490b3d988fe0d613ecf938d0ae1
             </row>
           </thead>
           <tbody>
             <row>
+<<<<<<< HEAD
               <entry>Mgmt</entry><entry>Configured automatically</entry>
               <entry>Configured automatically</entry>
+=======
+              <entry/>
+              <entry colsep="1" rowsep="1">Configured automatically</entry>
+              <entry colsep="1" rowsep="1">Configured automatically</entry>
+>>>>>>> 6df2f78ebc356490b3d988fe0d613ecf938d0ae1
               <entry>Configured automatically</entry>
             </row>
             <row>
               <entry>OAM</entry>
+<<<<<<< HEAD
               <entry>Configured automatically</entry>
               <entry>Not used</entry>
+=======
+              <entry colsep="1" rowsep="1">Configured automatically</entry>
+              <entry colsep="1" rowsep="1">Not used</entry>
+>>>>>>> 6df2f78ebc356490b3d988fe0d613ecf938d0ae1
               <entry>Not used</entry>
             </row>
             <row>
               <entry>Infra</entry>
+<<<<<<< HEAD
               <entry>Configured automatically</entry>
               <entry>For a dedicated interface, the interface is added automatically, but requires
                 additional manual configuration for the network type
                 <!--A BR tag was used here in the original source.-->For a shared interface,
                 configured manually</entry>
+=======
+              <entry colsep="1" rowsep="1">Configured automatically</entry>
+              <entry colsep="1" rowsep="1">For a dedicated interface, the interface is added
+                automatically, but requires additional manual configuration for the network type For
+                a shared interface, configured manually </entry>
+>>>>>>> 6df2f78ebc356490b3d988fe0d613ecf938d0ae1
               <entry>Configured manually</entry>
             </row>
             <row>
               <entry>Data</entry>
+<<<<<<< HEAD
               <entry>Not used</entry>
               <entry>Not used</entry>
               <entry>Configured manually</entry>
@@ -102,6 +142,16 @@
         </tgroup>
       </table><p>&lt;p&gt;</p>You can review and modify physical interface configurations from the
       web administration interface or the CLI. For more information, see:<ul>
+=======
+              <entry colsep="1" rowsep="1">Not used</entry>
+              <entry colsep="1" rowsep="1">Not used</entry>
+              <entry>Configured automatically</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>You can review and modify physical interface configurations from the web
+      administration interface or the CLI. For more information, see:<ul>
+>>>>>>> 6df2f78ebc356490b3d988fe0d613ecf938d0ae1
         <li>
           <i>HP Helion OpenStack(R) Carrier Grade Installation Guide: Editing Interface Settings</i>
         </li>
