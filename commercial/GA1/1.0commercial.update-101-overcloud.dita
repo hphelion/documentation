@@ -52,7 +52,7 @@ If the Readme.txt does not list any overcloud nodes, the update is complete. -->
 <p>Make sure a current backup of the management controller, controller0, and controller1 nodes exists, as described in <xref href="../../commercial/GA1/1.0commercial.backup-restore-GA.dita#overcloud" >Back Up and Restore</xref>.</p>
 </li>
 <li>
-<p>Review the <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita" >update prerequisites</xref> and make sure all necessary tasks have been performed, including <xref href="./commercial/GA1/1.0commercial.update-101-prereqs.dita#extract" >extracting the update scripts</xref>.</p>
+<p>Review the <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita" >update prerequisites</xref> and make sure all necessary tasks have been performed, including <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita#extract" >extracting the update scripts</xref>.</p>
 </li>
 <li>
 <p>Point the install script to the overcloud. The patch update scripts are based on the Ansible platform. When patching the overcloud, because the script is launched from the seed cloud host, you need to point the script to the overcloud node.</p>

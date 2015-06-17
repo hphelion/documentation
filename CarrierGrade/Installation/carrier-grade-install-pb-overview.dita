@@ -23,47 +23,41 @@
 <section id="installation-process"> <title>Installation process</title>
 <p>Use the following process to install HP Helion OpenStack(R) Carrier Grade in a baremetal environment.</p>
 <ol>
+<li>Review the <xref href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita"
+            >Technical Overview</xref> for information on the HP Helion OpenStack(R) Carrier Grade
+          environment.</li>
+<li>Review the <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita"
+            >Support Matrix</xref> to make sure your environment meets the minimum
+          requirements.</li>
 <li>
-<p>Review the <xref href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita" >Technical Overview</xref> for information on the HP Helion OpenStack(R) Carrier Grade environment.</p>
-</li>
+          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita"
+            >Installation Prerequisites</xref>
+        </li>
 <li>
-<p>Review the <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >Support Matrix</xref> to make sure your environment meets the minimum requirements.</p>
-</li>
+          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"
+            >Preparing the Network for Installation</xref>
+        </li>
 <li>
-<p>
-<xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita" >Installation Prerequisites</xref>
-</p>
-</li>
+          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.dita">Creating
+            the HLM Virtual Machine</xref>
+        </li>
 <li>
-<p>
-<xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita" >Preparing the Network for Installation</xref>
-</p>
-</li>
+          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita">HLM
+            Post-Installation Tasks</xref>
+        </li>
 <li>
-<p>
-<xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.dita" >Creating the HLM Virtual Machine</xref>
-</p>
-</li>
+          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.dita"
+            >Deploying the HLM and DCN Clouds</xref>
+        </li>
 <li>
-<p>
-<xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita" >HLM Post-Installation Tasks</xref>
-</p>
-</li>
+          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-verify.dita"
+            >Verifying the HLM and DCN Installation</xref>
+        </li>
 <li>
-<p>
-<xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.dita" >Deploying the HLM and DCN Clouds</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-verify.dita" >Verifying the HLM and DCN Installation</xref>
-</p>
-</li>
-<li>
-<p>
-<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack(R)" scope="external" format="html" >Install HP Helion OpenStack(R) Carrier Grade</xref>
-</p>
-</li>
+          <xref
+            href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack(R)"
+            scope="external" format="html">Install HP Helion OpenStack(R) Carrier Grade</xref>
+        </li>
 </ol>
 </section>
 <section id="first-step"> <title>First Step</title>

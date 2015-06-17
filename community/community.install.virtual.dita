@@ -139,7 +139,7 @@
 </section>
 <section id="install"> <title>Installing HP Helion OpenStack(R) Community</title>
 <p>Once you have met all of the hardware requirements and have completed the required tasks, you can begin your installation.</p>
-<p>In the event you have trouble with the installation, review the <xref href="../community/community.troubleshoot.dita" >Issues and troubleshooting</xref> and <xref href="./community/community.faq.dita" >FAQ</xref> pages.</p>
+<p>In the event you have trouble with the installation, review the <xref href="../community/community.troubleshoot.dita" >Issues and troubleshooting</xref> and <xref href="../community/community.faq.dita" >FAQ</xref> pages.</p>
 </section>
 <section id="getinstall"> <title>Unpacking the installation file</title>
 <p>The virtual installation of HP Helion OpenStack(R) Community for a single server is provided as a compressed TAR file. This is a large file because it contains all of the machine images required for the seed VM, the undercloud, the overcloud, and a guest VM image.</p>

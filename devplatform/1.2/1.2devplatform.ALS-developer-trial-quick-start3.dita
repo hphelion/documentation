@@ -25,8 +25,8 @@
 <p>During this step, you will log in to the Helion Public Cloud and use the web-based console to create the sandbox environment.</p>
 <table>
 <tgroup cols="2">
-        <colspec colname="col1" colwidth="297.75pt"/>
-        <colspec colname="col2" colwidth="702pt"/>
+        <colspec colname="col1" colwidth="400" colsep="1"/>
+        <colspec colname="col2" colsep="0"/>
         <thead>
           <row>
             <entry/>
@@ -35,21 +35,23 @@
         </thead>
         <tbody>
           <row>
-            <entry><p>1. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/"
-                  scope="external" format="html">Register for your Helion Public Cloud
-                  Account</xref></p><p>2. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/2"
-                  scope="external" format="html">Download Tools</xref>
-              </p><image href="../../media/star.gif" id="image_lqs_gjp_js" scale="50"/>3. <b>Create
-                the Sandbox Environment</b><p>4. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/4"
-                  scope="external" format="html">Create a Cluster</xref></p><p>5. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/5"
-                  scope="external" format="html">Add Windows DEA and SQL Server (Optional
-                  Step)</xref></p><p>6. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/6"
-                  scope="external" format="html">Explore Sample Applications</xref></p>
+            <entry>
+              <p>1. <xref href="ALS-developer-trial-quick-start">Register for your Helion Public
+                  Cloud Account</xref>
+              </p>
+              <p>2. <xref href="/ALS-developer-trial-quick-start2.dita">Download Tools</xref>
+              </p>
+              <p><image href="../../media/star.gif" id="image_lqs_gjp_js" scale="50"/>
+                <b>Create the Sandbox Environment</b></p>
+              <p>4. <xref href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
+                  Cluster</xref>
+              </p>
+              <p>5. <xref href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add Windows
+                  DEA and SQL Server (Optional Step)</xref>
+              </p>
+              <p>6. <xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Explore Sample
+                  Applications</xref>
+              </p>
             </entry>
             <entry>
               <b>Create the Sandbox Environment</b>

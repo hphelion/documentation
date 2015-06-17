@@ -28,8 +28,8 @@
 <p>
   <xref href="../../../../devplatform/helion/admin/cluster/1.0index.dita" >See the Helion 1.0 Development Platform version of this page</xref>
 </p>
-<p>This process begins with an installed <xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-micro-cloud" >micro cloud</xref>, which must then be cloned across several <xref href="./devplatform/helion/user/reference/1.1glossary.dita#term-node" >nodes</xref>. You connect to each node in turn and tell it which <xref href="./devplatform/helion/user/reference/1.1glossary.dita#term-role" >role</xref>s it is to serve, thereby distributing the processing load for maximum performance.</p>
-<p>In HP Helion, the Clusters Panel in the <xref href="../../../../devplatform/helion/user/console/1.1index.dita" >ALS management console</xref> makes these tasks much easier to accomplish. If you prefer to use the command line, you can also use the <xref href="./devplatform/helion/CLI/1.1ALS_Client_Reference.dita" >Cluster Configuration tool</xref> or <xref href="./devplatform/helion/admin/reference/1.1kato-ref.dita" >
+<p>This process begins with an installed <xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-micro-cloud" >micro cloud</xref>, which must then be cloned across several <xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-node" >nodes</xref>. You connect to each node in turn and tell it which <xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-role" >role</xref>s it is to serve, thereby distributing the processing load for maximum performance.</p>
+<p>In HP Helion, the Clusters Panel in the <xref href="../../../../devplatform/helion/user/console/1.1index.dita" >ALS management console</xref> makes these tasks much easier to accomplish. If you prefer to use the command line, you can also use the <xref href="../../../../devplatform/helion/CLI/1.1ALS_Client_Reference.dita" >Cluster Configuration tool</xref> or <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita" >
 <i>kato</i>
 </xref> commands.</p>
 <ul>
@@ -214,7 +214,7 @@ networking. To check the IP address, run:</p>
 <p>
   <b>Note</b>
 </p>
-<p>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-node-migrate" >kato node migrate</xref> on the Core node, then <xref href="./devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-node-attach" >kato node attach</xref> on all other cluster nodes.</p>
+<p>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-node-migrate" >kato node migrate</xref> on the Core node, then <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-node-attach" >kato node attach</xref> on all other cluster nodes.</p>
 </section>
 <section id="hostname"> <title>Hostname</title>
 <p>Next, set the <b>fully qualified hostname</b> of the Core node. This is required so that Application Lifecycle Service's internal configuration matches the <xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#server-config-dns" >DNS record</xref> created for
@@ -692,7 +692,7 @@ Router nodes. For example:</p>
 <section id="load-balancer-ssl-certificates"> <title>Load Balancer SSL Certificates</title>
 <p>The load balancer terminates SSL connections, so SSL certificates must
 be set up and maintained on this node.</p>
-<p>See the <xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#using-your-own-ssl-certificate" >Using your own SSL certificate</xref> and <xref href="./devplatform/helion/admin/server/1.1configuration.dita#ca-certificate-chaining" >CA Certificate Chaining</xref> sections for Application Lifecycle Service Load Balancer instructions.</p>
+<p>See the <xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#using-your-own-ssl-certificate" >Using your own SSL certificate</xref> and <xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#ca-certificate-chaining" >CA Certificate Chaining</xref> sections for Application Lifecycle Service Load Balancer instructions.</p>
 <p>For other load balancers, consult the documentation for your device or service on uploading/updating server certificates.</p>
 </section>
 </body>

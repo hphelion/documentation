@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5192">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Using Stacks, Templates, and Parameters</title>
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Working Stacks, Templates, and Parameters
+        (Orchestration)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1840">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Creating a Stack</title>
+<title>HP Helion OpenStack(R) Carrier Grade (Beta): Working with Stacks</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -14,10 +14,7 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-create.md-->
- <!--permalink: /helion/openstack/carrier/admin/stacks/create/--></p>
+<p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-create.md--><!--permalink: /helion/openstack/carrier/admin/stacks/--></p>
 <p>You can create a stack (or service) using the web administration interface, or you can use the command-line interface.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>

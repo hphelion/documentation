@@ -22,32 +22,33 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start2.md-->
  <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/2/--></p>
-<p>During this step, you will download and install the configuration tool, named <varname>cf-mgmt</varname>. This tool provides a quick way to pass configuration parameters to the Helion Development Platform. <!--A BR tag was used here in the original source.-->The download links and instructions will open in a separate page so you don't lose your place.
-</p>
+<p>During this step, you will download and install the configuration tool, named
+        <varname>cf-mgmt</varname>. This tool provides a quick way to pass configuration parameters
+      to the Helion Development Platform. The download links and instructions will open in a
+      separate page so you don't lose your place. </p>
 <table>
 <tgroup cols="2">
-        <colspec colname="col1" colwidth="300pt"/>
-        <colspec colname="col2" colwidth="724.5pt"/>
+        <colspec colname="col1" colwidth="400" colsep="1"/>
+        <colspec colname="col2" colwidth="1*"/>
         <tbody>
           <row>
-            <entry><p>1. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/"
-                  scope="external" format="html">Register for your Helion Public Cloud
-                  Account</xref>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry><p>1. <xref href="ALS-developer-trial-quick-start">Register for your Helion
+                  Public Cloud Account</xref>
               </p><image href="../../media/star.gif" id="image_lqs_gjp_js" scale="50"/>2.
                 <b>Download Tools</b>
-              <p>3. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3"
-                  scope="external" format="html">Create the Sandbox Environment</xref>
-              </p><p>4. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/4"
-                  scope="external" format="html">Create a Cluster</xref></p><p>5. <xref
-                  href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/5"
-                  scope="external" format="html">Add Windows DEA and SQL Server (Optional
-                  Step)</xref></p>6. <xref
-                href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/6"
-                scope="external" format="html">Explore Sample Applications</xref>
-            </entry>
+              <p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the
+                  Sandbox Environment</xref>
+              </p><p>4. <xref href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
+                  Cluster</xref>
+              </p><p>5. <xref href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add
+                  Windows DEA and SQL Server (Optional Step)</xref>
+              </p><p>6. <xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Explore
+                  Sample Applications</xref>
+              </p></entry>
             <entry>
               <b>Download the Configuration Tool</b>
               <p>Use the ALS management tool (<varname>cf-mgmt.exe</varname>) to construct, manage,
@@ -55,7 +56,7 @@
               your operating system.<ul>
                 <li>
                   <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-windows-x86_64.zip"
-                    scope="external" format="html">Windows(R)</xref>
+                    scope="external" format="html"><tm tmtype="reg">Windows</tm></xref>
                 </li>
                 <li>
                   <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-linux-x86_64.zip"
@@ -63,7 +64,7 @@
                 </li>
                 <li>
                   <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-osx-x86_64.zip"
-                    scope="external" format="html">Mac OS X(R)</xref>
+                    scope="external" format="html"><tm tmtype="reg">Mac OS X</tm></xref>
                 </li>
               </ul>Note: After installation, you may run the <varname>cf-mgmt update</varname>
               command at any time to check for and install the most recent version. <p>
@@ -75,7 +76,7 @@
               is appropriate for your operating system. <ul>
                 <li>
                   <xref href="http://clients.als.hpcloud.com/helion-1.2.0-win32-ix86.zip"
-                    scope="external" format="html">Windows(R)</xref>
+                    scope="external" format="html"><tm tmtype="reg">Windows</tm></xref>
                 </li>
                 <li>
                   <xref href="http://clients.als.hpcloud.com/helion-1.2.0-linux-glibc2.3-x86_64.zip"
@@ -84,7 +85,7 @@
                 <li>
                   <xref
                     href="http://clients.als.hpcloud.com/helion-1.2.0-macosx10.5-i386-x86_64.zip"
-                    scope="external" format="html">Mac OS X(R)</xref>
+                    scope="external" format="html"><tm tmtype="reg">Mac OS X</tm></xref>
                 </li>
               </ul> The <xref
                 href="http://docs.hpcloud.com/helion/devplatform/1.2/als/user/reference/client-ref"

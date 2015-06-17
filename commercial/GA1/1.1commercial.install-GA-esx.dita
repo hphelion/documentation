@@ -35,7 +35,7 @@
 <xref type="section" href="#topic8545/under">Installing the undercloud and overcloud</xref>
 </li>
 </ul>
-<p>Note that  the for ESX cloud deployments, the ESX administrator  is responsible for providing the network connectivity between the ESX Network and the Helion Cloud Management Network as documented in prerequisite section of the <xref href="../../commercial/GA1/1.1commercial.install-GA-ESX-Proxy.dita" >ESX Proxy page</xref>. Also read the information on the <xref href="./commercial/GA1/1.1commercial.install-GA-post-esx.dita" >deployment of vCenter ESX Compute proxy</xref>
+<p>Note that  the for ESX cloud deployments, the ESX administrator  is responsible for providing the network connectivity between the ESX Network and the Helion Cloud Management Network as documented in prerequisite section of the <xref href="../../commercial/GA1/1.1commercial.install-GA-ESX-Proxy.dita" >ESX Proxy page</xref>. Also read the information on the <xref href="../../commercial/GA1/1.1commercial.install-GA-post-esx.dita" >deployment of vCenter ESX Compute proxy</xref>
 </p>
 <p>Since ESX/vCenter integration is not fully automatic, vCenter administrators are advised of the following responsibilities to ensure secure operation:</p>
 <ul>

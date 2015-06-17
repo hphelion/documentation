@@ -22,7 +22,7 @@
  <!--./devplatform/1.2/helion/user/services/1.2data-services.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/services/data-services/--></p>
 <p>The Application Lifecycle Service includes a number of data services which can be bound to the
-applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="../../../../../devplatform/1.2/helion/user/services/1.2filesystem.dita#persistent-file-system" >persistent file system</xref> service and <xref href="./devplatform/1.2/helion/user/services/1.2memcached.dita#memcached" >Memcached</xref>.</p>
+applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="../../../../../devplatform/1.2/helion/user/services/1.2filesystem.dita#persistent-file-system" >persistent file system</xref> service and <xref href="../../../../../devplatform/1.2/helion/user/services/1.2memcached.dita#memcached" >Memcached</xref>.</p>
 <p>For detailed information on using an <b>external</b> database system, see <xref type="section" href="#topic19772/using-external-databases">Using External Database Services</xref>.</p>
 <ul>
 <li>
@@ -211,7 +211,7 @@ helion apps
 <li>
 <p>Pass all parameters in separate commands.</p>
 
-<p>These two commands (<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-create-service" >helion create-service</xref> and <xref href="./devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-bind-service" >helion bind-service</xref>) do the same thing as if all three parameters were passed using <codeph>create-service</codeph>, but provide additional flexibility to create and configure the service before binding it to an app.</p>
+<p>These two commands (<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-create-service" >helion create-service</xref> and <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-bind-service" >helion bind-service</xref>) do the same thing as if all three parameters were passed using <codeph>create-service</codeph>, but provide additional flexibility to create and configure the service before binding it to an app.</p>
 
 <codeblock>
 <codeph>create-service \&lt;service\&gt; \&lt;name\&gt;
@@ -350,7 +350,7 @@ grouped by service type. VCAP_SERVICES variables use non-versioned service names
 </ul>
 </section>
 <section id="accessing-database-services"> <title>Directly Accessing Database Services</title>
-<p>You may need to connect to a database service directly for purposes of initial database setup, modifying fields, running queries, or doing backups. These operations can be done using the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-dbshell" >helion dbshell</xref> (preferred) or <xref href="./devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-tunnel" >helion tunnel</xref> commands.</p>
+<p>You may need to connect to a database service directly for purposes of initial database setup, modifying fields, running queries, or doing backups. These operations can be done using the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-dbshell" >helion dbshell</xref> (preferred) or <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita#command-tunnel" >helion tunnel</xref> commands.</p>
 </section>
 <section id="using-dbshell"> <title>Via <i>dbshell</i>
 </title>
