@@ -13,7 +13,7 @@
 <!--PUBLISHED-->
  <!--./publiccloud/cli.windows.2.containers-and-folders.md-->
  <!--permalink: /publiccloud/cli/windows/containers-and-folders/--></p>
-<p>One of the key features of the HP Helion Public Cloud CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the <xref href="/publiccloud/object-storage" >HP Helion Public Cloud Object Storage Overview</xref> for overview information on Object Storage.)</p>
+<p>One of the key features of the HP Helion Public Cloud CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the <xref href="../publiccloud/object-storage.dita" >HP Helion Public Cloud Object Storage Overview</xref> for overview information on Object Storage.)</p>
 <p>
 <b>Note:</b> When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:</p>
 <codeblock>
@@ -141,12 +141,8 @@ PS demo:\&gt;
 <section id="StoragePaths"> <title>Storage Paths</title>
 <p>Storage paths in this system come in a few different varieties. People familiar with command line interfaces should feel at home with the ways that you can express a resources location within a HP-Cloud Object Storage based data store. The following resource addressing styles are supported by this Storage Provider.</p>
 <p/>
-<required-cleanup remap="meta">
 <ph/>
-</required-cleanup>
-<required-cleanup remap="meta">
 <ph/>
-</required-cleanup>
 <p/>
 <p/>
 <table outputclass="MsoTableLightShading">
@@ -1125,7 +1121,7 @@ PS testcon2:\&gt;
 <!--<img src="/media/MigrateS3All.jpg" width="580" height="444" alt="" />-->
 <p>The <codeph>-sk</codeph> option is your API secret key, and the <codeph>-ak</codeph> option is your access key.</p>
 <p>For additional information on this command, see <xref href="http://h30499.www3.hp.com/t5/Grounded-in-the-Cloud/Migrating-your-files-with-the-Windows-CLI/ba-p/6470822#.U20mfFf7Ex5" scope="external" format="html" >Migrating your files with the Windows CLI</xref> blog post.</p>
-<p>For a full description of the options available with the <b>Migrate-Drive</b> command, please see the <xref href="../publiccloud/cli.windows.2.reference.dita#Migrate-Drive" >Migrate-Drive</xref> section of the <xref href="/publiccloud/cli/windows/reference" >Windows CLI Reference</xref> page.</p>
+<p>For a full description of the options available with the <b>Migrate-Drive</b> command, please see the <xref href="../publiccloud/cli.windows.2.reference.dita#Migrate-Drive" >Migrate-Drive</xref> section of the <xref href="../publiccloud/cli.windows.2.reference.dita">Windows CLI Reference</xref> page.</p>
 </section>
 </body>
 </topic>
