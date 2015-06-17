@@ -466,7 +466,7 @@ http://&lt;internalVIP&gt;:5000/v2.0</entry>
 </p>
 <p>The following table describes the data flow between Helion nodes and StoreVirtual systems:</p>
 <table>
-<tgroup cols="">
+<tgroup cols="5">
 <thead>
 <row>
 <entry>Interface</entry>
@@ -543,7 +543,7 @@ http://&lt;internalVIP&gt;:5000/v2.0</entry>
 <p>
 <b>Note:</b> In the following table, the Volume Operation host refers to the overcloud controller that hosts the Volume Operations (Cinder) service.</p>
 <table>
-<tgroup cols="">
+<tgroup cols="5">
 <thead>
             <row>
               <entry>Interface</entry>
@@ -673,7 +673,7 @@ See Reference 6 below </entry>
 </p>
 <p>The following table describes the data flow between HP Helion OpenStack(R) nodes and ESX nodes:</p>
 <table>
-<tgroup cols="">
+<tgroup cols="4">
 <thead>
 <row>
 <entry>Description</entry>
@@ -714,7 +714,7 @@ See Reference 6 below </entry>
 <section id="service"> <title>Service network</title>
 <p>The Service Network (SVC) is created by the Network Operation service.  SVC provides a path from the Development Platform services (such as Database as a Service) running in Compute Operations VMs to the Centralized Logging Service running in the undercloud.   A route needs to exist from service subnet in the overcloud to the RabbitMQ on the undercloud controller.</p>
 <table>
-<tgroup cols="">
+<tgroup cols="4">
 <thead>
 <row>
 <entry>Description</entry>
