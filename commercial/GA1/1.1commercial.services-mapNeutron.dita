@@ -1,44 +1,55 @@
----
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: Services Map"
-permalink: /helion/openstack/1.1/services/mapNeutron
-product: commercial.ga
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic19956">
+	<title>HP Helion OpenStack(R) 1.1: Service Map</title>
+	<prolog>
+		<metadata>
+			<othermeta name="layout" content="default"/>
+			<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+			<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
+			<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
+			<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+			<othermeta name="role" content="Network Administrator"/>
+			<othermeta name="role" content="Network Architect"/>
+			<othermeta name="role" content="Vikas Deolaliker, Paul Kevin"/>
+			<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+			<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
+			<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
+			<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+		</metadata>
+	</prolog>
+	<body>
+		<!--PUBLISHED-->
+		<!--permalink: /helion/openstack/1.1/services/mapNeutron -->
+		<!-- product: commercial.ga -->	
+		
+		
+		<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p> -->
+		
+		<section id="servicesmap"> <title>HP Helion OpenStack&#174; 1.1: Services Map</title>
+			
+			
+			<!-- fix image syntax
+<image src="media/neutron_diagram.png" alt=""></image>
+<a href="/helion/openstack/1.1/services/map/"><img src="media/back.png" alt=""></img></a>
+-->
+			
+		</section>
+		
+		<section id="neutron"> <title>Neutron</title>
+			
+			Neutron is an OpenStack project to provide "networking as a service" between interface devices (e.g., vNICs) managed by other Openstack services (e.g., nova). 
+			
+			Neutron is a core and supported part of the OpenStack platform (for Essex, we were an "incubated" project, which means use is suggested only for those who really know what they're doing with Neutron).
+			
+			- Give cloud tenants an API to build rich networking topologies, and configure advanced network policies in the cloud. 
+			- Example: create multi-tier web application topology
+			- Enable innovation plugins (open and closed source) that introduce advanced network capabilities 
+			- Example: use L2-in-L3 tunneling to avoid VLAN limits, provide end-to-end QoS guarantees, used monitoring protocols like NetFlow.
+			- Let anyone build advanced network services (open and closed source) that plug into Openstack tenant networks. 
+			- Examples: LB-aaS, VPN-aaS, firewall-aaS, IDS-aaS, data-center-interconnect-aaS.
+			- Horizon GUI support for: o	Neutron L2 and L3 network and subnet creation/deletion o	Booting VMs on specific Neutron networks.
+			- API Extensibility Framework, including extensions for: o	"provider network", which maps Neutron L2 networks to a specific VLAN in the physical data center
+		</section></body>
+</topic>
 
----
-<!--PUBLISHED-->
-
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-
-
-
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p> -->
-
-# HP Helion OpenStack&#174; 1.1: Services Map
-<br />
-
-<img src="media/neutron_diagram.png" alt=""><br />
-<a href="/helion/openstack/1.1/services/map/"><img src="media/back.png" alt=""></a>
-
-##Neutron
-
-Neutron is an OpenStack project to provide "networking as a service" between interface devices (e.g., vNICs) managed by other Openstack services (e.g., nova). 
-
-Neutron is a core and supported part of the OpenStack platform (for Essex, we were an "incubated" project, which means use is suggested only for those who really know what they're doing with Neutron).
-
-- Give cloud tenants an API to build rich networking topologies, and configure advanced network policies in the cloud. 
-	- Example: create multi-tier web application topology
-- Enable innovation plugins (open and closed source) that introduce advanced network capabilities 
-	- Example: use L2-in-L3 tunneling to avoid VLAN limits, provide end-to-end QoS guarantees, used monitoring protocols like NetFlow.
-- Let anyone build advanced network services (open and closed source) that plug into Openstack tenant networks. 
-	- Examples: LB-aaS, VPN-aaS, firewall-aaS, IDS-aaS, data-center-interconnect-aaS.
-- Horizon GUI support for: o	Neutron L2 and L3 network and subnet creation/deletion o	Booting VMs on specific Neutron networks.
-- API Extensibility Framework, including extensions for: o	"provider network", which maps Neutron L2 networks to a specific VLAN in the physical data center
