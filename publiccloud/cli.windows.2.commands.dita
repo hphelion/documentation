@@ -53,7 +53,7 @@
 <xref href="../publiccloud/cli.windows.2.reference.dita#setmetadata" >set-metadata</xref>
 </li>
 </ul>
-<p>For a complete list of the HP Helion Public Cloud CLI software for Windows PowerShell commands along with their descriptions, please take a look at the <xref href="/publiccloud/cli/windows/reference" >CLI Command Reference</xref> page.</p>
+<p>For a complete list of the HP Helion Public Cloud CLI software for Windows PowerShell commands along with their descriptions, please take a look at the <xref href="../publiccloud/cli.windows.2.reference.dita" >CLI Command Reference</xref> page.</p>
 <p>
 <b>Note:</b> When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:</p>
 <codeblock>
