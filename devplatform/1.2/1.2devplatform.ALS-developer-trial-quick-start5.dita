@@ -25,60 +25,53 @@
 <p>An ALS cluster provides the support infrastructure necessary to deploy and manage applications. <!--A BR tag was used here in the original source.-->During this step, you will send a set of commands and variables to the <varname>cf-mgmt</varname> tool. The tool will use those parameters to create the cluster, set up the admin login credentials, and return a URL for the cluster's management console.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<tbody>
-<row>
-<entry>
-<p>
-<p>
-1. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/" scope="external" format="html" >Register for your Helion Public Cloud Account</xref>
-</p>
-<p>
-2. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/2" scope="external" format="html" >Download Tools</xref>
-</p>
-<p>
-3. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/3" scope="external" format="html" >Create the Sandbox Environment</xref>
-</p>
-<p>
-4. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/4" scope="external" format="html" >Create a Cluster</xref>
-</p>
-
-  <table rowsep="0" colsep="0">
-<tgroup cols="1">
-<colspec colname="col1"/>
-<tbody>
-<row>
-<entry>
-    5. <b>Add Windows DEA and SQL Server (Optional Step)</b>
-   </entry>
-   </row>
-</tbody>
-</tgroup>
-</table>
-<p>
-6. <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/6" scope="external" format="html" >Explore Sample Applications</xref>
-</p>
-</p>
-</entry>
-
-<entry>
-<b>Add Windows DEA and SQL Server</b>
-<p>This step is optional, but it exercises the new functionality in <!--A BR tag was used here in the original source.-->this version of the Helion Development Platform.</p>
-<p>
-<b>Note:</b> A Windows DEA and a SQL Server <b>cannot</b> both exist<!--A BR tag was used here in the original source.--> on the same virtual machine. You will need to create a virtual <!--A BR tag was used here in the original source.-->machine for each one.</p>
-<ol>
-<li>Open a terminal window and change directory to the location<!--A BR tag was used here in the original source.--> where you installed the <varname>cf-mgmt</varname> command-line tool.
-</li>
-<!--A BR tag was used here in the original source.-->
-<li>Run the appropriate set of commands in the <varname>cf-mgmt</varname> tool to<!--A BR tag was used here in the original source.--> add a DEA role and then add a service. In the unlikely event<!--A BR tag was used here in the original source.--> that the cluster creation fails, refer to the <xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting" scope="external" format="html" >Troubleshooting tips</xref>.<p>
-</p>
-<ol>
-<li>For Windows�(R):
-<ul>
-<li>Add the Windows DEA Role
-<codeblock>
-cf-mgmt.exe ^
+        <colspec colname="col1" colwidth="400" colsep="1"/>
+        <colspec colname="col2"/>
+        <tbody>
+  <row>
+            <entry/>
+            <entry/>
+          </row>
+          <row>
+            <entry>
+              <p>1. <xref href="ALS-developer-trial-quick-start">Register for your Helion Public
+                  Cloud Account</xref>
+              </p>
+              <p>2. <xref href="/ALS-developer-trial-quick-start2.dita">Download Tools</xref>
+              </p>
+              <p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the
+                  Sandbox Environment</xref>
+              </p>
+              <p>4. <xref href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
+                  Cluster</xref>
+              </p>
+              <p><image href="../../media/star.gif" id="image_bmg_ms5_js" scale="50"
+                  />5. <b>Add Windows DEA and SQL Server (Optional Step)</b></p>
+              <p>6. <xref
+                href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Explore Sample Applications</xref>
+              </p>
+            </entry>
+            <entry>
+              <b>Add Windows DEA and SQL Server</b>
+              <p>This step is optional, but it exercises the new functionality in
+                <!--A BR tag was used here in the original source.-->this version of the Helion
+                Development Platform.</p><p><b>Note:</b> A Windows DEA and a SQL Server
+                  <b>cannot</b> both exist<!--A BR tag was used here in the original source.--> on
+                the same virtual machine. You will need to create a virtual
+                <!--A BR tag was used here in the original source.-->machine for each one.</p><ol>
+                <li>Open a terminal window and change directory to the
+                  location<!--A BR tag was used here in the original source.--> where you installed
+                  the <varname>cf-mgmt</varname> command-line tool. </li>
+                <li>Run the appropriate set of commands in the <varname>cf-mgmt</varname> tool
+                  to<!--A BR tag was used here in the original source.--> add a DEA role and then
+                  add a service. In the unlikely
+                  event<!--A BR tag was used here in the original source.--> that the cluster
+                  creation fails, refer to the <xref
+                    href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting"
+                    scope="external" format="html">Troubleshooting tips</xref>. <ol>
+                      <li>For <tm tmtype="reg">Windows</tm>: <ul>
+                        <li>Add the Windows DEA Role
+                          <codeblock>cf-mgmt.exe ^
  --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
  --os-username &lt;OS_USERNAME from openstackrc&gt; ^
  --os-password &lt;OpenStack(R) password&gt; ^
@@ -87,12 +80,10 @@ cf-mgmt.exe ^
  --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
 add-role dea ^
  --keypair-name &lt;name of keypair created earlier&gt; ^
- --load http://clients.als.hpcloud.com/1.2/config/trial-windea.yml
-</codeblock>
-</li>
-<li>Add the SQL Server 2014 Service
-<codeblock>
-cf-mgmt.exe ^
+ --load http://clients.als.hpcloud.com/1.2/config/trial-windea.yml</codeblock>
+                        </li>
+                        <li>Add the SQL Server 2014 Service
+                          <codeblock>cf-mgmt.exe ^
  --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
  --os-username &lt;OS_USERNAME from openstackrc&gt; ^
  --os-password &lt;OpenStack(R) password&gt; ^
@@ -101,43 +92,33 @@ cf-mgmt.exe ^
  --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
 add-service mssql2014 ^
  --keypair-name &lt;name of keypair created earlier&gt; ^
- --load http://clients.als.hpcloud.com/1.2/config/trial-mssql2014.yml
-</codeblock>
-</li>
-</ul>
-</li>
-<li>For Mac / Unix:
-<ul>
-<li>Add the Windows DEA Role
-<codeblock>
-cf-mgmt add-role dea \
+ --load http://clients.als.hpcloud.com/1.2/config/trial-mssql2014.yml</codeblock></li>
+                      </ul></li>
+                    <li>For Mac / Unix: <ul>
+                        <li>Add the Windows DEA Role
+                          <codeblock>cf-mgmt add-role dea \
   --keypair-name &lt;name of keypair created earlier&gt; \
   --stack "win2012r2" \
   --load http://clients.als.hpcloud.com/1.2/config/trial-windea.yml
 </codeblock>
-</li>
-<li>Add the SQL Server 2014 Service
-<codeblock>cf-mgmt add-service mssql2014 \
+                        </li>
+                        <li>Add the SQL Server 2014 Service
+                          <codeblock>cf-mgmt add-service mssql2014 \
   --keypair-name &lt;name of keypair created earlier&gt; \
-  --load http://clients.als.hpcloud.com/1.2/config/trial-mssql2014.yml
-</codeblock>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<p>At this point, your Windows DEA and/or SQL Server instance<!--A BR tag was used here in the original source.--> is ready to use!
-No further action is necessary.</p>
-<p/>
-<required-cleanup remap="form">
-<ph>
-    </ph>
-</required-cleanup>
-</entry>
-</row>
-</tbody>
-</tgroup>
+  --load http://clients.als.hpcloud.com/1.2/config/trial-mssql2014.yml</codeblock></li>
+                      </ul></li>
+                  </ol></li>
+              </ol>
+              <p>At this point, your Windows DEA and/or SQL Server instance is ready to use! No
+                further action is necessary.</p></entry>
+          </row>
+          <row>
+            <entry/><entry align="right">
+              <xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita"><image href="../../media/NextButton.png" id="image_i4h_mjp_js" align="right"
+                /></xref></entry>
+          </row>
+        </tbody>
+      </tgroup>
 </table>
 </body>
 </topic>

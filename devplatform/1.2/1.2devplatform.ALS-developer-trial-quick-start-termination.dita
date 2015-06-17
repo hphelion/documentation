@@ -25,59 +25,48 @@
 <p>When you are done exploring your Developer Quick Start Trial, you can take the environment down just as easily.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
+<colspec colname="col1" colwidth="400" colsep="1"/>
 <colspec colname="col2"/>
 <tbody>
+                    <row>
+                        <entry/>
+                        <entry/>
+                    </row>
 <row>
+<entry><p>
+                                <image href="../../media/star.gif" id="image_s3q_vt5_js" scale="50"
+                                    /><b>Termination</b>
+                            </p><p>
+                                <xref
+                                    href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
+                                    >Troubleshooting</xref>
+                            </p><xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita"
+                                >Back to Quick Start</xref></entry>
 <entry>
-<p>
-
-<table rowsep="0" colsep="0">
-<tgroup cols="1">
-<colspec colname="col1"/>
-<tbody>
-<row>
-<entry>
-<b>Termination</b>
-</entry>
-</row>
-</tbody>
-</tgroup>
-</table>
-<p>
-<xref href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting" scope="external" format="html" >Troubleshooting</xref>
-</p>
-</p>
-</entry>
-
-
-
-<entry>
-<b>Termination</b>
-<p> To ensure that all resources are properly released, use the Horizon console.</p>
-
-<b>Terminate the Instance</b>
-<ol>
-<li>Log into the <xref href="https://horizon.hpcloud.com/" scope="external" format="html" >Horizon console</xref>. </li>
-<li>In the <b>Project</b> panel, select <b>Compute</b> and then select <b>Instances</b>.</li>
-<li>Click the checkbox next to the instance named <varname>cluster1-core</varname>.
-</li>
-<li>If you added a WindowsÂ(R) DEA node or a SQL Server service, you will have additional instances to delete. The names will all start with <varname>cluster1-</varname>. Check the checkboxes next to those instances.
-</li>
-<li>Click <b>Terminate Instances</b>.
-</li>
-</ol>
-<b>Terminate the Security Groups</b>
-<ol>
-<li>Log into the <xref href="https://horizon.hpcloud.com/" scope="external" format="html" >Horizon console</xref>. </li>
-<li>In the <b>Project</b> panel, select <b>Compute</b> and then select <b>Access &amp; Security</b>.</li>
-<li>Click the checkbox next to the groups named <varname>cluster1-SSH</varname>, <varname>cluster1-Router</varname>, and <varname>cluster1-Internal</varname>.
-</li>
-<li>Click <b>Delete Security Groups</b>.
-</li>
-</ol>
-<p/>
-</entry>
+              <b>Termination</b>
+              <p> To ensure that all resources are properly released, use the Horizon console.</p>
+              <b>Terminate the Instance</b>
+              <ol>
+                <li>Log into the <xref href="https://horizon.hpcloud.com/" scope="external"
+                    format="html">Horizon console</xref>. </li>
+                <li>In the <b>Project</b> panel, select <b>Compute</b> and then select
+                    <b>Instances</b>.</li>
+                <li>Click the checkbox next to the instance named <varname>cluster1-core</varname>. </li>
+                <li>If you added a <tm tmtype="reg">Windows</tm> DEA node or a SQL Server service, you will have
+                  additional instances to delete. The names will all start with
+                    <varname>cluster1-</varname>. Check the checkboxes next to those instances. </li>
+                <li>Click <b>Terminate Instances</b>. </li>
+              </ol>
+              <b>Terminate the Security Groups</b>
+              <ol>
+                <li>Log into the <xref href="https://horizon.hpcloud.com/" scope="external"
+                    format="html">Horizon console</xref>. </li>
+                <li>In the <b>Project</b> panel, select <b>Compute</b> and then select <b>Access
+                    &amp; Security</b>.</li>
+                <li>Click the checkbox next to the groups named <varname>cluster1-SSH</varname>,
+                    <varname>cluster1-Router</varname>, and <varname>cluster1-Internal</varname>. </li>
+                <li>Click <b>Delete Security Groups</b>. </li>
+              </ol></entry>
 </row>
 </tbody>
 </tgroup>
