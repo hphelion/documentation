@@ -14,965 +14,539 @@
  <!--permalink: /publiccloud/glossary/--></p>
 <p>Sometimes it's a little easy to become lost in the weeds of the cloud nomenclature; for such times, we've created this glossary to help you through.  While this glossary concentrates primarily on terms that are more specific to the HP Helion Public Cloud environment, we have tried to include a salad of general cloud computing terms to help you along.  If you need additional definitions, we suggest going on over to the <xref href="http://cloudglossary.com/" scope="external" format="html" >Open Stack Glossary</xref> and checking there.</p>
 <p>For a quick search of the <xref href="https://community.hpcloud.com/knowledge-base" scope="external" format="html" >Knowledge Base</xref>, just click on the blue highlighted term!</p>
+
 <section id="a"> <title>A</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="AbstractionLayer"> <title>Abstraction Layer</title>
-</section>
-</dt>
-<dd>
-<p>A coding layer that provides an intermediary (i.e., an "abstraction") between a programmer and a more complex underlying base code set.  For example, with Ruby Fog, the abstraction layer simplifies the complexities of the underlying <xref type="section" href="#topic12432/REST">REST</xref> <xref type="section" href="#topic12432/API">API</xref> and JSON/XML formatting of the <xref type="section" href="#topic12432/RequestAbstraction">request layer</xref> code.</p>
-</dd>
+<dt>Abstraction Layer</dt>
+<dd>A coding layer that provides an intermediary (i.e., an "abstraction") between a programmer and a more complex underlying base code set.  For example, with Ruby Fog, the abstraction layer simplifies the complexities of the underlying <xref type="section" href="#topic12432/REST">REST</xref> <xref type="section" href="#topic12432/API">API</xref> and JSON/XML formatting of the <xref type="section" href="#topic12432/RequestAbstraction">request layer</xref> code.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="ACL"> <title>ACL</title>
-</section>
-</dt>
-<dd>
-<p>Access control list; a list of permissions attached to an object.</p>
-</dd>
+<dt>ACL</dt>
+<dd>Access control list; a list of permissions attached to an object.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Allocation"> <title>Allocation</title>
-</section>
-</dt>
-<dd>
-<p>Provisioning cloud resources.</p>
-</dd>
+<dt>Allocation</dt>
+<dd>Provisioning cloud resources.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="ApacheMaven"> <title>Apache Maven</title>
-</section>
-</dt>
-<dd>
-<p>See <xref type="section" href="#topic12432/Maven">Maven</xref>
-</p>
-</dd>
+<dt>Apache Maven</dt>
+<dd>See <xref type="section" href="#topic12432/Maven">Maven</xref></dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="API"> <title>API</title>
-</section>
-</dt>
-<dd>
-<p>Application programming interface.</p>
-</dd>
+<dt>API</dt>
+<dd>Application programming interface.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="APIkey"> <title>API key</title>
-</section>
-</dt>
-<dd>
-<p>An API-based key used for authentication purposes (similar to a password, for example).</p>
-</dd>
+<dt>API key</dt>
+<dd>An API-based key used for authentication purposes (similar to a password, for example).</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Authentication"> <title>Authentication</title>
-</section>
-</dt>
-<dd>
-<p>In the context of the Identity Service, the act of confirming the identity of a user or the truth of a claim. The Identity Service will confirm that incoming request are being made by the user who claims to be making the call by validating a set of claims that the user is making. These claims are initially in the form of a set of credentials (username &amp; password, or user access keys). After initial confirmation, the Identity Service will issue the user a token which the user can then provide to demonstrate that their identity has been authenticated when making subsequent requests.</p>
-</dd>
+<dt>Authentication</dt>
+<dd>In the context of the Identity Service, the act of confirming the identity of a user or the truth of a claim. The Identity Service will confirm that incoming request are being made by the user who claims to be making the call by validating a set of claims that the user is making. These claims are initially in the form of a set of credentials (username &amp; password, or user access keys). After initial confirmation, the Identity Service will issue the user a token which the user can then provide to demonstrate that their identity has been authenticated when making subsequent requests.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="AuthenticationToken"> <title>Authentication Token</title>
-</section>
-</dt>
-<dd>
-<p>String which must be used for subsequent requests to other services.</p>
-</dd>
+<dt>Authentication Token</dt>
+<dd>String which must be used for subsequent requests to other services.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="AvailabilityZone"> <title>Availability Zone</title>
-</section>
-</dt>
-<dd>
-<p>A segment of the cloud and the largest organizational unit within it. Typically, a single availability zone is equivalent to a single data center, but this is not a requirement.</p>
-</dd>
+<dt>Availability Zone</dt>
+<dd>A segment of the cloud and the largest organizational unit within it. Typically, a single availability zone is equivalent to a single data center, but this is not a requirement.</dd>
 </dlentry>
 
 </dl>
 </section>
+
 <section id="b"> <title>B</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="Bindings"> <title>Bindings</title>
-</section>
-</dt>
-<dd>
-<p>Short for "language binding"--a library which provides an interface to functionality from a different programming language library.</p>
-</dd>
+<dt>Bindings</dt>
+<dd>Short for "language binding"--a library which provides an interface to functionality from a different programming language library.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="BlockStorage"> <title>Block Storage</title>
-</section>
-</dt>
-<dd>
-<p>Information stored in raw form, with no consideration as to the type of information.</p>
-</dd>
+<dt>Block Storage</dt>
+<dd>Information stored in raw form, with no consideration as to the type of information.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="BootableImage"> <title>Bootable Image</title>
-</section>
-</dt>
-<dd>
-<p>
-<i>See</i> <xref type="section" href="#topic12432/VolumeBootable">Volume (bootable)</xref>
-</p>
-</dd>
+<dt>Bootable Image</dt>
+<dd><i>See</i> <xref type="section" href="#topic12432/VolumeBootable">Volume (bootable)</xref></dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Bucket"> <title>Bucket</title>
-</section>
-</dt>
-<dd>
-<p>A collection of cloud objects with a unique, user-assigned key.</p>
-</dd>
+<dt>Bucket</dt>
+<dd>A collection of cloud objects with a unique, user-assigned key.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Burst"> <title>Burst</title>
-</section>
-</dt>
-<dd>
-<p>A temporary increase in the amount of server resources required by the system.</p>
-</dd>
+<dt>Burst</dt>
+<dd>A temporary increase in the amount of server resources required by the system.</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="c"> <title>C</title>
+
+<section id="c"><title>C</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="CDN"> <title>CDN</title>
-</section>
-</dt>
-<dd>
-<p>Content delivery network; an HP Helion Public Cloud service that provides distributed caching of object storage objects on geographically dispersed caching servers. Copies of the object are stored at a location more convenient to the end user system, allowing for better performance.</p>
-</dd>
+<dt>CDN</dt>
+<dd>Content delivery network; an HP Helion Public Cloud service that provides distributed caching of object storage objects on geographically dispersed caching servers. Copies of the object are stored at a location more convenient to the end user system, allowing for better performance.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="CDN-enabled"> <title>CDN-enabled</title>
-</section>
-</dt>
-<dd>
-<p>A container that has been enabled for a content delivery network.</p>
-</dd>
+<dt>CDN-enabled</dt>
+<dd>A container that has been enabled for a content delivery network.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="CLI"> <title>CLI</title>
-</section>
-</dt>
-<dd>
-<p>Command-line interface.</p>
-</dd>
+<dt>CLI</dt>
+<dd>Command-line interface.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="CloudCompute"> <title>Cloud Compute</title>
-</section>
-</dt>
-<dd>
-<p>HP's cloud computing platform, designed to provision and manage large networks of virtual machines.</p>
-</dd>
+<dt>Cloud Compute</dt>
+<dd>HP's cloud computing platform, designed to provision and manage large networks of virtual machines.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="CloudComputeUnit"> <title>Cloud Compute Unit (CCU)</title>
-</section>
-</dt>
-<dd>
-<p>An HP Helion Public Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an IntelÂ(R) 2012 XeonÂ(R) 2.60 GHz CPU.</p>
-</dd>
+<dt>Cloud Compute Unit (CCU)</dt>
+<dd>An HP Helion Public Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel(R) 2012 Xeon(R) 2.60 GHz CPU.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="CodePlex"> <title>CodePlex</title>
-</section>
-</dt>
-<dd>
-<p>An open source project-hosting web site maintained by Microsoft.</p>
-</dd>
+<dt>CodePlex</dt>
+<dd>An open source project-hosting web site maintained by Microsoft.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="ComputeCluster"> <title>Compute Cluster</title>
-</section>
-</dt>
-<dd>
-<p>A set of networked, loosely coupled computer systems acting together to perform very large tasks.</p>
-</dd>
+<dt>Compute Cluster</dt>
+<dd>A set of networked, loosely coupled computer systems acting together to perform very large tasks.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Container"> <title>Container</title>
-</section>
-</dt>
-<dd>
-<p>A compartment for storing <xref type="section" href="#topic12432/object">objects</xref>.</p>
-</dd>
+<dt>Container</dt>
+<dd>A compartment for storing <xref type="section" href="#topic12432/object">objects</xref>.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Credentials"> <title>Credentials</title>
-</section>
-</dt>
-<dd>
-<p>Data that belongs to, is owned by, and generally only known by a user that the user can present to prove they are who they are (since nobody else should know that data).</p>
-</dd>
+<dt>Credentials</dt>
+<dd>Data that belongs to, is owned by, and generally only known by a user that the user can present to prove they are who they are (since nobody else should know that data).</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="d"> <title>D</title>
+
+<section id="d"><title>D</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="DependencyManagement"> <title>Dependency Management</title>
-</section>
-</dt>
-<dd>
-<p>Coordinating and overseeing the dependencies between compute modules (e.g., in jclouds development), usually via project management tools such as <xref type="section" href="#topic12432/Maven">Apache Maven</xref>.</p>
-</dd>
+<dt>Dependency Management</dt>
+<dd>Coordinating and overseeing the dependencies between compute modules (e.g., in jclouds development), usually via project management tools such as <xref type="section" href="#topic12432/Maven">Apache Maven</xref>.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Deprovisioning"> <title>Deprovisioning</title>
-</section>
-</dt>
-<dd>
-<p>Deallocating a cloud resource. See <xref type="section" href="#topic12432/Provisioning">Provisioning</xref>.</p>
-</dd>
+<dt>Deprovisioning</dt>
+<dd>Deallocating a cloud resource. See <xref type="section" href="#topic12432/Provisioning">Provisioning</xref>.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Drupal"> <title>Drupal</title>
-</section>
-</dt>
-<dd>
-<p>A free software package that software source organization, management and content publishing capabilities.</p>
-</dd>
+<dt>Drupal</dt>
+<dd>A free software package that software source organization, management and content publishing capabilities.</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="e"> <title>E</title>
+
+<section id="e"><title>E</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="EC2"> <title>EC2</title>
-</section>
-</dt>
-<dd>
-<p>Elastic compute cloud; Amazon's cloud computing platform.</p>
-</dd>
+<dt>EC2</dt>
+<dd>Elastic compute cloud; Amazon's cloud computing platform.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Endpoint"> <title>Endpoint</title>
-</section>
-</dt>
-<dd>
-<p>A network-accessible address, usually described by URL, where a service may be accessed.</p>
-</dd>
+<dt>Endpoint</dt>
+<dd>A network-accessible address, usually described by URL, where a service may be accessed.</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="f"> <title>F</title>
+
+<section id="f"><title>F</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="Flavor"> <title>Flavor</title>
-</section>
-</dt>
-<dd>
-<p>A combination of disk space, memory (RAM), and usable CPU.</p>
-</dd>
+<dt>Flavor</dt>
+<dd>A combination of disk space, memory (RAM), and usable CPU.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="FloatingIPAddress"> <title>Floating IP Address</title>
-</section>
-</dt>
-<dd>
-<p>An on-demand, allocatable public IP address on a network. In the context of HPCloud Services, you can allocate a number of floating IP addresses up to the quota limit, and then assign them to server <xref type="section" href="#topic12432/Instance">instances</xref>.</p>
-</dd>
+<dt>Floating IP Address</dt>
+<dd>An on-demand, allocatable public IP address on a network. In the context of HPCloud Services, you can allocate a number of floating IP addresses up to the quota limit, and then assign them to server <xref type="section" href="#topic12432/Instance">instances</xref>.</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="g"> <title>G</title>
+
+<section id="g"><title>G</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="gem"> <title>gem</title>
-</section>
-</dt>
-<dd>
-<p>A package format of the RubyGems package manager for the Ruby programming language library.</p>
-</dd>
+<dt>gem</dt>
+<dd>A package format of the RubyGems package manager for the Ruby programming language library.</dd>
+</dlentry>
+
+<dlentry>
+<dt>git</dt>
+<dd>A distributed revision control and source management tool.</dd>
 </dlentry>
 
 
 <dlentry>
-<dt>
-<section id="git"> <title>git</title>
-</section>
-</dt>
-<dd>
-<p>A distributed revision control and source management tool.</p>
-</dd>
-</dlentry>
-
-
-<dlentry>
-<dt>
-<section id="GitHub"> <title>GitHub</title>
-</section>
-</dt>
-<dd>
-<p>A web-based hosting service for software projects using the git source management tool.</p>
-</dd>
+<dt>GitHub</dt>
+<dd>A web-based hosting service for software projects using the git source management tool.</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="h"> <title>H</title>
+
+<section id="h"><title>H</title>
 </section>
-<section id="i"> <title>I</title>
+
+<section id="i"><title>I</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="IdentityManagement"> <title>Identity Management</title>
-</section>
-</dt>
-<dd>
-<p>Allocation and dynamic distribution of identity information across security domains.</p>
-</dd>
+<dt>Identity Management</dt>
+<dd>Allocation and dynamic distribution of identity information across security domains.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="IKE"> <title>IKE</title>
-</section>
-</dt>
-<dd>
-<p>Internet Key Exchange</p>
-</dd>
+<dt>IKE</dt>
+<dd>Internet Key Exchange</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Image"> <title>Image</title>
-</section>
-</dt>
-<dd>
-<p>1) An installable release package of a program, application, or software system.  As in, "We need to install the new image of Ruby Fog."  2) A copy of a virtual server including the operating system information, system state, and application configurations.</p>
-</dd>
+<dt>Image</dt>
+<dd>1) An installable release package of a program, application, or software system.  As in, "We need to install the new image of Ruby Fog."  2) A copy of a virtual server including the operating system information, system state, and application configurations.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="ImageBootable"> <title>Image (bootable)</title>
-</section>
-</dt>
-<dd>
-<p>
-<i>See</i> <xref type="section" href="#topic12432/VolumeBootable">Volume (bootable)</xref>.</p>
-</dd>
+<dt>Image (bootable)</dt>
+<dd><i>See</i> <xref type="section" href="#topic12432/VolumeBootable">Volume (bootable)</xref>.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="ImagePartner"> <title>Image (partner)</title>
-</section>
-</dt>
-<dd>
-<p>A server volume made available by HP partners. <i>See</i> <xref type="section" href="#topic12432/Image">Image</xref>.</p>
-</dd>
+<dt>Image (partner)</dt>
+<dd>A server volume made available by HP partners. <i>See</i> <xref type="section" href="#topic12432/Image">Image</xref>.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="ImagePrivate"> <title>Image (private)</title>
-</section>
-</dt>
-<dd>
-<p>A server volume you created from a <xref type="section" href="#topic12432/Snapshot">snapshot</xref> of an instance. <i>See</i> <xref type="section" href="#topic12432/Image">Image</xref>.</p>
-</dd>
+<dt>Image (private)</dt>
+<dd>A server volume you created from a <xref type="section" href="#topic12432/Snapshot">snapshot</xref> of an instance. <i>See</i> <xref type="section" href="#topic12432/Image">Image</xref>.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="ImagePublic"> <title>Image (public)</title>
-</section>
-</dt>
-<dd>
-<p>A server volume provided by HP. <i>See</i> <xref type="section" href="#topic12432/Image">Image</xref>.</p>
-</dd>
+<dt>Image (public)</dt>
+<dd>A server volume provided by HP. <i>See</i> <xref type="section" href="#topic12432/Image">Image</xref>.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Instance"> <title>Instance</title>
-</section>
-</dt>
-<dd>
-<p>A virtual machine or server in the cloud environment.</p>
-</dd>
+<dt>Instance</dt>
+<dd>A virtual machine or server in the cloud environment.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="IPsec"> <title>IPsec</title>
-</section>
-</dt>
-<dd>
-<p>Internet Protocol Security (IPsec) is a technology protocol suite for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session. IPsec also includes protocols for establishing mutual authentication between agents at the beginning of the session and negotiation of cryptographic keys to be used during the session.</p>
-</dd>
+<dt>IPsec</dt>
+<dd>Internet Protocol Security (IPsec) is a technology protocol suite for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session. IPsec also includes protocols for establishing mutual authentication between agents at the beginning of the session and negotiation of cryptographic keys to be used during the session.</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="j"> <title>J</title>
+
+<section id="j"><title>J</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="jclouds"> <title>jclouds</title>
-</section>
-</dt>
-<dd>
-<p>An open source library that provides clojure and java functionality in the HP Helion Public Cloud environment.</p>
-</dd>
+<dt>jclouds</dt>
+<dd>An open source library that provides clojure and java functionality in the HP Helion Public Cloud environment.</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="k"> <title>K</title>
+
+<section id="k"><title>K</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="Key"> <title>Key</title>
-</section>
-</dt>
-<dd>
-<p>An identifying value used for verification purposes (for example, for logging in).</p>
-</dd>
+<dt>Key</dt>
+<dd>An identifying value used for verification purposes (for example, for logging in).</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="KeyPair"> <title>Key Pair</title>
-</section>
-</dt>
-<dd>
-<p>A pair of key values used for verification purposes; generally one key value is private, and the other public (i.e. user-owned).</p>
-</dd>
+<dt>Key Pair</dt>
+<dd>A pair of key values used for verification purposes; generally one key value is private, and the other public (i.e. user-owned).</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="l"> <title>L</title>
+
+<section id="l"><title>L</title>
 </section>
-<section id="m"> <title>M</title>
+
+<section id="m"><title>M</title>
 <dl>
-<dlentry>
-<dt>
-<section id="ManagementConsole"> <title>Management Console</title>
-</section>
-</dt>
-<dd>
-<p>The primary access location for the HP Helion Public Cloud interface.  The console consists of a main dashboard panel, along with compute, storage, and account panels.</p>
-</dd>
-</dlentry>
-
 
 <dlentry>
-<dt>
-<section id="Maven"> <title>Maven</title>
-</section>
-</dt>
-<dd>
-<p>An open source software project management and comprehension tool. (Also: <xref type="section" href="#topic12432/ApacheMaven">Apache Maven</xref> )</p>
-</dd>
+<dt>Management Console</dt>
+<dd>The primary access location for the HP Helion Public Cloud interface.  The console consists of a main dashboard panel, along with compute, storage, and account panels.</dd>
 </dlentry>
-
 
 <dlentry>
-<dt>
-<section id="Metadata"> <title>Metadata</title>
-</section>
-</dt>
-<dd>
-<p>Information about the object or container.</p>
-</dd>
+<dt>Maven</dt>
+<dd>An open source software project management and comprehension tool. (Also: <xref type="section" href="#topic12432/ApacheMaven">Apache Maven</xref> )</dd>
 </dlentry>
-
 
 <dlentry>
-<dt>
-<section id="ModelAbstraction"> <title>Model Abstraction</title>
-</section>
-</dt>
-<dd>
-<p>A coding layer that provides a more functional and user-friendly abstraction for the <xref type="section" href="#topic12432/Rest">REST</xref> API programming calls. For example, instead of a direct call to GET containers, via the model abstraction layer the programming call for GET container <b>container-name</b> is <codeph>directories.get("container-name")</codeph> .</p>
-</dd>
-<dd>A model layer can also include particular kinds of objects, and expose those objects characteristics using simple properties or attributes. For example, "Server" is a model that represents the concept of a virtual <xref type="section" href="#topic12432/Instance">instance</xref>, with the "Server" model including properties and attributes such as name, <xref type="section" href="#topic12432/Flavor">flavor</xref>, <xref type="section" href="#topic12432/Image">image</xref>, addresses, and so on.   See also, <xref type="section" href="#topic12432/AbstractionLayer">abstraction layer</xref>.</dd>
+<dt>Metadata</dt>
+<dd>Information about the object or container.</dd>
 </dlentry>
 
+<dlentry>
+<dt>Model Abstraction</dt>
+<dd>A coding layer that provides a more functional and user-friendly abstraction for the <xref type="section" href="#topic12432/Rest">REST</xref> API programming calls. For example, instead of a direct call to GET containers, via the model abstraction layer the programming call for GET container <b>container-name</b> is <codeph>directories.get("container-name")</codeph>.
 
+A model layer can also include particular kinds of objects, and expose those objects characteristics using simple properties or attributes. For example, "Server" is a model that represents the concept of a virtual <xref type="section" href="#topic12432/Instance">instance</xref>, with the "Server" model including properties and attributes such as name, <xref type="section" href="#topic12432/Flavor">flavor</xref>, <xref type="section" href="#topic12432/Image">image</xref>, addresses, and so on.   See also, <xref type="section" href="#topic12432/AbstractionLayer">abstraction layer</xref>.</dd>
+</dlentry>
 
 </dl>
 </section>
-<section id="n"> <title>N</title>
+
+<section id="n"><title>N</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="NATT"> <title>NAT-T</title>
-</section>
-</dt>
-<dd>
-<p>Network Address Translation - Traversal</p>
-</dd>
+<dt>NAT-T</dt>
+<dd>Network Address Translation - Traversal</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="o"> <title>O</title>
+
+<section id="o"><title>O</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="object"> <title>Object</title>
-</section>
-</dt>
-<dd>
-<p>Basic cloud computing storage entity, most typically a file.</p>
-</dd>
+<dt>Object</dt>
+<dd>Basic cloud computing storage entity, most typically a file.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="OpenStack(R)"> <title>OpenStack(R)</title>
-</section>
-</dt>
-<dd>
-<p>An open-source cloud computing operating system.</p>
-</dd>
+<dt>OpenStack(R)</dt>
+<dd>An open-source cloud computing operating system.</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="p"> <title>P</title>
+
+<section id="p"><title>P</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="PartnerImage"> <title>Partner Image</title>
-</section>
-</dt>
-<dd>
-<p>
-<i>See</i> <xref type="section" href="#topic12432/ImagePartner">Image (partner)</xref>
-</p>
-</dd>
+<dt>Partner Image</dt>
+<dd><i>See</i> <xref type="section" href="#topic12432/ImagePartner">Image (partner)</xref></dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="PHP"> <title>PHP</title>
-</section>
-</dt>
-<dd>
-<p>Hypertext pre-processor--a general-purpose server-side scripting language used to create dynamic (as opposed to static, i.e. that adjust to the device and software with which they are displayed) web pages.</p>
-</dd>
+<dt>PHP</dt>
+<dd>Hypertext pre-processor--a general-purpose server-side scripting language used to create dynamic (as opposed to static, i.e. that adjust to the device and software with which they are displayed) web pages.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="PowerShell"> <title>PowerShell</title>
-</section>
-</dt>
-<dd>
-<p>A Microsoft Windows command-line shell task automation framework which includes an interactive prompt and a scripting environment that can be used independently or in combination.  PowerShell is built on top of the .NET Framework common language runtime (CLR) and the .NET Framework, and accepts and returns .NET Framework objects.</p>
-</dd>
+<dt>PowerShell</dt>
+<dd>A Microsoft Windows command-line shell task automation framework which includes an interactive prompt and a scripting environment that can be used independently or in combination.  PowerShell is built on top of the .NET Framework common language runtime (CLR) and the .NET Framework, and accepts and returns .NET Framework objects.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="PrivateImage"> <title>Private Image</title>
-</section>
-</dt>
-<dd>
-<p>
-<i>See</i> <xref type="section" href="#topic12432/ImagePrivate">Image (private)</xref>
-</p>
-</dd>
+<dt>Private Image</dt>
+<dd><i>See</i> <xref type="section" href="#topic12432/ImagePrivate">Image (private)</xref></dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Provisioning"> <title>Provisioning</title>
-</section>
-</dt>
-<dd>
-<p>Allocating, auditing, and monitoring cloud resources for those who accesses and utilizes them.</p>
-</dd>
+<dt>Provisioning</dt>
+<dd>Allocating, auditing, and monitoring cloud resources for those who accesses and utilizes them.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="PublicImage"> <title>Public Image</title>
-</section>
-</dt>
-<dd>
-<p>
-<i>See</i> <xref type="section" href="#topic12432/ImagePublic">Image (public)</xref>
-</p>
-</dd>
+<dt>Public Image</dt>
+<dd><i>See</i> <xref type="section" href="#topic12432/ImagePublic">Image (public)</xref></dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="q"> <title>Q</title>
+
+<section id="q"><title>Q</title>
 </section>
-<section id="r"> <title>R</title>
+
+<section id="r"><title>R</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="REST"> <title>REST</title>
-</section>
-</dt>
-<dd>
-<p>Representational State Transfer; a model for providing web services of HTTP.</p>
-</dd>
+<dt>REST</dt>
+<dd>Representational State Transfer; a model for providing web services of HTTP.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="RequestAbstraction"> <title>Request Abstraction</title>
-</section>
-</dt>
-<dd>
-<p>A coding layer that provides programming language-specific access to the underlying core code base REST API HTTP calls.  For example, instead of including a call to the REST API by using HTTP <b>verb</b> (GET), path (/flavors), format (?format=json), and the other HTTP attributes, using the request layer you can simplify the call to <codeph>list_flavors()</codeph> (the specific call depends on the details of your specific request layer syntax).  The request layer handles all HTTP request and response parsing and exception handling.  Also <b>request layer</b>.</p>
-</dd>
+<dt>Request Abstraction</dt>
+<dd>A coding layer that provides programming language-specific access to the underlying core code base REST API HTTP calls.  For example, instead of including a call to the REST API by using HTTP <b>verb</b> (GET), path (/flavors), format (?format=json), and the other HTTP attributes, using the request layer you can simplify the call to <codeph>list_flavors()</codeph> (the specific call depends on the details of your specific request layer syntax).  The request layer handles all HTTP request and response parsing and exception handling.  Also <b>request layer</b>.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Role"> <title>Role</title>
-</section>
-</dt>
-<dd>
-<p>A personality that a user assumes when performing a specific set of operations. A role includes a set of rights and privileges. A user assuming that role inherits those rights and privileges.  A token that is issued to a user includes the list of roles that user can assume. Services that are being called by that user determine how they interpret the set of roles a user has and which operations or resources each roles grants access to.</p>
-</dd>
+<dt>Role</dt>
+<dd>A personality that a user assumes when performing a specific set of operations. A role includes a set of rights and privileges. A user assuming that role inherits those rights and privileges.  A token that is issued to a user includes the list of roles that user can assume. Services that are being called by that user determine how they interpret the set of roles a user has and which operations or resources each roles grants access to.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Ruby"> <title>Ruby</title>
-</section>
-</dt>
-<dd>
-<p>An object-oriented programming language, similar to Perl.</p>
-</dd>
+<dt>Ruby</dt>
+<dd>An object-oriented programming language, similar to Perl.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="RubyFog"> <title>Ruby Fog</title>
-</section>
-</dt>
-<dd>
-<p>Language binding for the Ruby programming language.</p>
-</dd>
+<dt>Ruby Fog</dt>
+<dd>Language binding for the Ruby programming language.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Rule"> <title>Rule</title>
-</section>
-</dt>
-<dd>
-<p>See <xref type="section" href="#topic12432/SecurityGroupRule">Security group rule</xref>.</p>
-</dd>
+<dt>Rule</dt>
+<dd>See <xref type="section" href="#topic12432/SecurityGroupRule">Security group rule</xref>.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="RVM"> <title>RVM</title>
-</section>
-</dt>
-<dd>
-<p>Ruby version manager; a command-line tool which allows you to install, manage, and work with multiple ruby environments</p>
-</dd>
+<dt>RVM</dt>
+<dd>Ruby version manager; a command-line tool which allows you to install, manage, and work with multiple ruby environments.</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="s"> <title>S</title>
+
+<section id="s"><title>S</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="SecurityGroup"> <title>Security Group</title>
-</section>
-</dt>
-<dd>
-<p>The security details for a particular <i>instance</i>, which must be defined at the creation of an instance.  These details include which ports, protocols, and IP addresses are opened by the remote virtual machine. The default security group allows SSH access only.</p>
-</dd>
+<dt>Security Group</dt>
+<dd>The security details for a particular <i>instance</i>, which must be defined at the creation of an instance.  These details include which ports, protocols, and IP addresses are opened by the remote virtual machine. The default security group allows SSH access only.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="SecurityGroupRule"> <title>Security Group Rule</title>
-</section>
-</dt>
-<dd>
-<p>The conditions and restrictions under which a particular security group operates, e.g. the protocols and ports for that group.</p>
-</dd>
+<dt>Security Group Rule</dt>
+<dd>The conditions and restrictions under which a particular security group operates, e.g. the protocols and ports for that group.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="SendGrid"> <title>SendGrid</title>
-</section>
-</dt>
-<dd>
-<p>A cloud-based email infrastructure.</p>
-</dd>
+<dt>SendGrid</dt>
+<dd>A cloud-based email infrastructure.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Server"> <title>Server</title>
-</section>
-</dt>
-<dd>
-<p>A compute instance that is created from a <xref type="section" href="#topic12432/Flavor">flavor</xref> combined with an <xref type="section" href="#topic12432/Image">image</xref>.</p>
-</dd>
+<dt>Server</dt>
+<dd>A compute instance that is created from a <xref type="section" href="#topic12432/Flavor">flavor</xref> combined with an <xref type="section" href="#topic12432/Image">image</xref>.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="ServiceCatalog"> <title>Service Catalog</title>
-</section>
-</dt>
-<dd>
-<p>List of services available to your and the endpoints that you access using the Authentication Token.</p>
-</dd>
+<dt>Service Catalog</dt>
+<dd>List of services available to your and the endpoints that you access using the Authentication Token.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Snapshot"> <title>Snapshot</title>
-</section>
-</dt>
-<dd>
-<p>A replica of an instance or volume that can be used to create new images or volumes.</p>
-</dd>
+<dt>Snapshot</dt>
+<dd>A replica of an instance or volume that can be used to create new images or volumes.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="SSL"> <title>SSL</title>
-</section>
-</dt>
-<dd>
-<p>Acronym for the secure socket layer encryption protocol.</p>
-</dd>
+<dt>SSL</dt>
+<dd>Acronym for the secure socket layer encryption protocol.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="strongSwan"> <title>strongSwan</title>
-</section>
-</dt>
-<dd>
-<p>strongSwan is an open source IPsec implementation for Linux 2.6 and 3.x kernels. The focus of the project is on strong authentication mechanisms using X.509 public key certificates and optional secure storage of private keys on smartcards through a standardized PKCS#11 interface.</p>
-</dd>
+<dt>strongSwan</dt>
+<dd>strongSwan is an open source IPsec implementation for Linux 2.6 and 3.x kernels. The focus of the project is on strong authentication mechanisms using X.509 public key certificates and optional secure storage of private keys on smartcards through a standardized PKCS#11 interface.</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="t"> <title>T</title>
+
+<section id="t"><title>T</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="Tenant"> <title>Tenant</title>
-</section>
-</dt>
-<dd>
-<p>A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc).</p>
-</dd>
+<dt>Tenant</dt>
+<dd>A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc).</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="TenantID"> <title>Tenant ID</title>
-</section>
-</dt>
-<dd>
-<p>An ID linking one or more accounts to one or more subscribed services. APIs and Bindings often require a Tenant ID in addition to authentication information.</p>
-</dd>
+<dt>Tenant ID</dt>
+<dd>An ID linking one or more accounts to one or more subscribed services. APIs and Bindings often require a Tenant ID in addition to authentication information.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="Token"> <title>Token</title>
-</section>
-</dt>
-<dd>
-<p>An arbitrary bit of text that is used to access resources. Each token has a scope which describes which resources are accessible with it.  While the Identity Service supports token-based authentication in this release, the intention is for it to support additional protocols in the future.</p>
-</dd>
+<dt>Token</dt>
+<dd>An arbitrary bit of text that is used to access resources. Each token has a scope which describes which resources are accessible with it.  While the Identity Service supports token-based authentication in this release, the intention is for it to support additional protocols in the future.</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="u"> <title>U</title>
+
+<section id="u"><title>U</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="User"> <title>User</title>
-</section>
-</dt>
-<dd>
-<p>A digital representation of a person, system, or service who uses HP Helion Public Cloud. The Identity Service will validate that incoming request are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.</p>
-</dd>
+<dt>User</dt>
+<dd>A digital representation of a person, system, or service who uses HP Helion Public Cloud. The Identity Service will validate that incoming request are being made by the user who claims to be making the call. Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a tenant which then limits where and how their tokens can be used to interact with services. Users are associated with tenants based on roles assigned to them with that tenant.</dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="v"> <title>V</title>
+
+<section id="v"><title>V</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="Volume"> <title>Volume</title>
-</section>
-</dt>
-<dd>
-<p>A defined partition of block-level storage that can be attached to an instance.</p>
-</dd>
+<dt>Volume</dt>
+<dd>A defined partition of block-level storage that can be attached to an instance.</dd>
 </dlentry>
 
-
 <dlentry>
-<dt>
-<section id="VolumeBootable"> <title>Volume (bootable)</title>
-</section>
-</dt>
-<dd>
-<p>A previously-saved (by a user) bootable server <xref type="section" href="#topic12432/Volume">volume</xref> (also sometimes called an <xref type="section" href="#topic12432/Image">image</xref>).</p>
-</dd>
+<dt>Volume (bootable)</dt>
+<dd>A previously-saved (by a user) bootable server <xref type="section" href="#topic12432/Volume">volume</xref> (also sometimes called an <xref type="section" href="#topic12432/Image">image</xref></dd>
 </dlentry>
 
 </dl>
 </section>
-<section id="w"> <title>W</title>
+
+<section id="w"><title>W</title>
 <dl>
+
 <dlentry>
-<dt>
-<section id="WebFarm"> <title>Web Farm</title>
-</section>
-</dt>
-<dd>
-<p>A bundle of HTTP servers used for handling web traffic.</p>
-</dd>
+<dt>Web Farm</dt>
+<dd>A bundle of HTTP servers used for handling web traffic.</dd>
 </dlentry>
 
 </dl>
 </section>
+
 <section id="x"> <title>X</title>
 </section>
 <section id="y"> <title>Y</title>
