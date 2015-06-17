@@ -107,7 +107,7 @@ BlockStorage  A place to manage Block Storage Volumes and Snapshots
 </codeph>
 </codeblock>
 <p>This removes the snapshot with the ID of 1111.</p>
-<p>For more details on the block storage commands, see the <xref href="../publiccloud/cli.windows.2.reference.dita#BlockStorage" >Block Storage</xref> section of the <xref href="/publiccloud/cli/windows/reference" >Windows CLI Reference</xref> page and <xref href="../publiccloud/cli.windows.2.help.dita" >Getting Help</xref>.</p>
+  <p>For more details on the block storage commands, see the <xref href="../publiccloud/cli.windows.2.reference.dita#BlockStorage" >Block Storage</xref> section of the <xref href="../publiccloud/cli.windows.2.reference.dita" >Windows CLI Reference</xref> page and <xref href="../publiccloud/cli.windows.2.help.dita" >Getting Help</xref>.</p>
 </section>
 </body>
 </topic>
