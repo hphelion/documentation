@@ -1,50 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2598">
-<title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
-<titlealts>
-<searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial Troubleshooting</searchtitle>
-</titlealts>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="Security Engineer"/>
-<othermeta name="role" content="ISV Developer"/>
-<othermeta name="role" content="Service Developer"/>
-<othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-</metadata>
-</prolog>
-<body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.md-->
- <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting/--></p>
-<p>Here are some tips for troubleshooting issues with the Quick Start Trial. If problems persist, the quickest solution is to just <xref href="/helion/devplatform/1.2/ALS-developer-trial-quick-start/6" >terminate the cluster</xref> and repeat the installation process. To ensure all resources are properly released, terminate the cluster from the Horizon console.</p>
-<table>
-<tgroup cols="2">
-<colspec colname="col1" colwidth="400" colsep="1"/>
-<colspec colname="col2"/>
-<tbody>
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic2598">
+  <title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
+  <titlealts>
+    <searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial
+      Troubleshooting</searchtitle>
+  </titlealts>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Development Platform"/>
+      <othermeta name="role" content="Application Developer"/>
+      <othermeta name="role" content="Security Engineer"/>
+      <othermeta name="role" content="ISV Developer"/>
+      <othermeta name="role" content="Service Developer"/>
+      <othermeta name="role" content="Jayme P"/>
+      <othermeta name="product-version1" content="HP Helion Development Platform"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>
+      <!--PUBLISHED-->
+      <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.md-->
+      <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting/--></p>
+    <p>Here are some tips for troubleshooting issues with the Quick Start Trial. If problems
+      persist, the quickest solution is to just <xref
+        href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita">terminate the
+        cluster</xref> and repeat the installation process. To ensure all resources are properly
+      released, terminate the cluster from the Horizon console.</p>
+    <table>
+      <tgroup cols="2">
+        <colspec colname="col1" colwidth="400" colsep="1"/>
+        <colspec colname="col2"/>
+        <tbody>
           <row>
             <entry/>
             <entry/>
           </row>
-<row>
-<entry>
-<p><xref href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita"
+          <row>
+            <entry>
+              <p><xref href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita"
                   >Termination</xref>
               </p>
-                <p><image href="../../media/star.gif" id="image_s3q_vt5_js" scale="50"/><b>
+              <p><image href="../../media/star.gif" id="image_s3q_vt5_js" scale="50"/><b>
                   Troubleshooting</b>
               </p>
               <p><xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Back to Quick
                   Start</xref></p>
-</entry>
+            </entry>
 
-<entry>
+            <entry>
               <b>Troubleshooting</b>
               <ul>
                 <li>Copy the provided commands into a text editor, change the values, and paste them
@@ -87,9 +93,9 @@
                   the hash character <b>#</b> at the end of the line; it is not part of the value.
                 </li>
               </ul></entry>
-</row>
-</tbody>
-</tgroup>
-</table>
-</body>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </body>
 </topic>
