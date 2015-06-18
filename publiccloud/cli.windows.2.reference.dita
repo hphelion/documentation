@@ -36,45 +36,48 @@
 </codeph>
 </codeblock>
 
-<section id="Nonservicespecific"> <title>Non-service-specific</title>
-
+  <section id="Nonservicespecific"> <title>Non-service-specific</title>
 <p>Following is the complete list of HP Helion Public Cloud Windows CLI commands that are not applicable to a specific service (compute, object storage, etc.).   To issue these commands, you need to navigate to a container or the HP Helion Public Cloud Services (HPCS) provider, issuing the following command:</p>
-
 <codeblock>
   <codeph>cd HPCS:</codeph>
 </codeblock>
-
-<dl>
-<dlentry>
-<dt>Get-Catalog</dt>
-<dd>Displays the current user's service catalog that was retrieved at login time.  This catalog stores each service the user has authorization to use.</dd>
-</dlentry>
-
-<dlentry>
-<dt>Syntax</dt>
-<dd>get-catalog {-v}</dd>
-</dlentry>
-
+<ul>
+<li>>Get-Catalog
+  <p>Displays the current user's service catalog that was retrieved at login time.  This catalog stores each service the user has authorization to use.</p>
+</li>
+<li>Syntax
+  <p>get-catalog {-v}</p>
+</li>
+<li>
+  <dl>
 <dlentry>
 <dt>v</dt>
 <dd>Verbose mode; displays detailed information about each service that's available</dd>
 </dlentry>
-
+  </dl>
+</li>
+  <li>Examples
+    <dl>
 <dlentry>
-<dt>Examples</dt>
+<dt>Example #1</dt>
 <dd>
 <codeblock>
-  <codeph>PS yourcontainer:\&gt; get-catalog</codeph>
+<codeph>PS yourcontainer:\&gt; get-catalog</codeph>
 </codeblock>
 <p>Lists the available services.</p>
+</dd>
+</dlentry>
+<dlentry>
+<dt>Example #2</dt>
+<dd>
 <codeblock>
 <codeph>PS yourcontainer:\&gt; get-catalog -v</codeph>
 </codeblock>
 <p>Lists the available services with extended information about each available service.</p>
-</dd>
-</dlentry>
-
+</dd></dlentry></dl></li></ul>
 </section>
+  
+  
 <section id="getconfig"> <title>Get-Config</title>
 <p>Lists the config file entries for the current session.</p>
 </section>
@@ -359,8 +362,7 @@ PS HPCS:\\&gt;
 <p>Sets the availability zone to "az-2-region-a.geo-1".</p>
 
 
-</dl>
-</section>
+</dl></section>
 
 
 <section id="Compute"> <title>Compute CLI Commands</title>
