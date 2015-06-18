@@ -238,7 +238,7 @@
 <p>This section explains the configuration of HP 3PAR Storeserv as a storage backend with Brocade Zone Manager.</p>
 <p>You can configure HP 3PAR as storage backend with Brocade Zone Manager.</p>
 </section>
-<section id="prerequisite"> <title>Prerequisite</title>
+<section id="prerequisite2"> <title>Prerequisite</title>
 <ul>
 <li>HP Helion OpenStack(R) cloud is successfully deployed.</li>
 <li>Sirius service is running in the undercloud.</li>
