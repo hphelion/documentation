@@ -86,7 +86,7 @@ This release supports the use of a <xref href="1.1.1commerical.services-customer
 <p>
 <b>New Horizon Dashboard functionality</b> - The <xref href="1.1commercial.install-GA-DNSaaS.dita" >HP Helion OpenStack(R) DNSaaS service</xref> functionality is now accessible through the <xref href="../../commercial/GA1/1.1commerical.services-horizon-overview.dita" >Horizon dashboard</xref>.</p>
 <p>
-<b>Multipath suppport for 3PAR</b> -  HP Helion OpenStack(R) now supports multipath for multiple I/O paths . Multipath helps maintain a constant connection between KVM host and its storage. See <xref href="../../commercial/GA1/1.1commercial.install-3par.dita" >Configuring Multipath for 3PAR</xref>.<!--HPM121--></p>
+<b>Multipath suppport for 3PAR</b> -  HP Helion OpenStack(R) now supports multipath for multiple I/O paths . Multipath  helps maintain a constant connection between KVM host and its storage. See <xref href="../../commercial/GA1/1.1commercial.install-3par.dita" >Configuring Multipath for 3PAR</xref>.<!--HPM121--></p>
 <p>
 <b>Transport Layer Security (TLS) support</b> - HP Helion OpenStack(R) now supports TLS protocols to protect internal traffic for Overcloud OpenStack(R) API and endpoints. <!--HPM16--></p>
 <p>
