@@ -38,10 +38,6 @@
     <!--permalink: /helion/devplatform/eclipse/--> <topicref href="devplatform/1.0devplatform.eclipse.dita" locktitle="yes" navtitle="Eclipse Deployment Plugin -- HP Helion 1.0 Development Platform "/>
  </topicref>
     <!--permalink: /helion/devplatform/sysadmin/--> <topicref href="devplatform/1.0devplatform.sysadmin.dita" locktitle="yes" navtitle="Resources for IT Ops -- HP Helion 1.0 Development Platform ">
-      <topicref href="devplatform/1.0devplatform.database-ALS.dita" locktitle="yes"
-        navtitle="Connecting the Database Service with the Application Lifecycle Service -- HP Helion 1.0 Development Platform "/>
-      <topicref href="devplatform/1.0devplatform.database-instance.dita" locktitle="yes"
-        navtitle="Using the Database Service -- HP Helion 1.0 Development Platform "/>
     <!--permalink: /helion/devplatform/messageservice/--> <topicref href="devplatform/1.0devplatform.using-the-messaging-service.dita" locktitle="yes" navtitle="Using the RabbitMQ Messaging Service -- HP Helion 1.0 Development Platform "/> 
     <!--permalink: /helion/devplatform/deploy/--> <topicref href="devplatform/1.0devplatform.deploy-ALS.dita" locktitle="yes" navtitle="Configuring and Deploying an Application Lifecycle Service Cluster -- HP Helion 1.0 Development Platform "/>
     <!--permalink: /helion/devplatform/1.0/msgaas/als/--> <topicref href="devplatform/1.0devplatform.using-messaging-service-with-ALS.dita" locktitle="yes" navtitle="Using the Messaging Service with ALS -- HP Helion 1.0 Development Platform "/>
@@ -281,8 +277,8 @@
       <!--permalink: /helion/devplatform/1.2/databaseservice/--> <topicref href="devplatform/1.2/1.2devplatform.database-instance.dita" locktitle="yes" navtitle="Using the Database Service -- HP Helion 1.2 Development Platform "/>
       <!--permalink: /helion/devplatform/1.2/messageservice/--> <topicref href="devplatform/1.2/1.2devplatform.using-the-messaging-service.dita" locktitle="yes" navtitle="Using the RabbitMQ Messaging Service -- HP Helion 1.2 Development Platform "/>
       <!--permalink: /helion/devplatform/1.2/msgaas/als/--> <topicref href="devplatform/1.2/1.2devplatform.using-messaging-service-with-ALS.dita" locktitle="yes" navtitle="Using the Messaging Service with ALS -- HP Helion 1.2 Development Platform "/>
-      <!--permalink: /helion/devplatform/connectdatabase/-->
-      <!--permalink: /helion/devplatform/databaseservice/-->
+      <!--permalink: /helion/devplatform/connectdatabase/--> <topicref href="devplatform/1.0devplatform.database-ALS.dita" locktitle="yes" navtitle="Connecting the Database Service with the Application Lifecycle Service -- HP Helion 1.0 Development Platform "/>
+      <!--permalink: /helion/devplatform/databaseservice/--> <topicref href="devplatform/1.0devplatform.database-instance.dita" locktitle="yes" navtitle="Using the Database Service -- HP Helion 1.0 Development Platform "/>
       <!--permalink: /helion/devplatform/1.2/als/user/services/data-services/--> <topicref href="devplatform/1.2/helion/user/services/1.2data-services.dita" locktitle="yes" navtitle="Application Lifecycle Service Data Services -- HP Helion 1.2 Development Platform "/>
       <!--permalink: /helion/devplatform/1.2/als/user/services/filesystem/--> <topicref href="devplatform/1.2/helion/user/services/1.2filesystem.dita" locktitle="yes" navtitle="Persistent File System -- HP Helion 1.2 Development Platform "/>
       <!--permalink: /helion/devplatform/1.2/als/user/services/memcached/--> <topicref href="devplatform/1.2/helion/user/services/1.2memcached.dita" locktitle="yes" navtitle="Memcached Service -- HP Helion 1.2 Development Platform "/>
@@ -398,6 +394,7 @@
       <!--permalink: /helion/openstack/1.1/technical-overview/--> <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"/>
       <!--permalink: /helion/openstack/1.1/support-matrix/--> <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita"/>
     </topicref>
+ 
  
     <!--permalink: /helion/openstack/1.1/landing/services/--> <topicref href="commercial/GA1/Landing/1.1commercial.landing.services.dita">
       <!--permalink: /helion/openstack/1.1/services/overview/--> <topicref href="commercial/GA1/1.1commerical.services-overview.dita"/>
