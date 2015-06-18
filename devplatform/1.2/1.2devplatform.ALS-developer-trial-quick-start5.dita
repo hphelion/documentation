@@ -80,8 +80,7 @@
  --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
 add-role dea ^
  --keypair-name &lt;name of keypair created earlier&gt; ^
- --load http://clients.als.hpcloud.com/1.2/config/trial-windea.yml</codeblock>
-                        </li>
+ --load http://clients.als.hpcloud.com/1.2/config/trial-windea.yml </codeblock></li>
                         <li>Add the SQL Server 2014 Service
                           <codeblock>cf-mgmt.exe ^
  --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
@@ -99,9 +98,7 @@ add-service mssql2014 ^
                           <codeblock>cf-mgmt add-role dea \
   --keypair-name &lt;name of keypair created earlier&gt; \
   --stack "win2012r2" \
-  --load http://clients.als.hpcloud.com/1.2/config/trial-windea.yml
-</codeblock>
-                        </li>
+  --load http://clients.als.hpcloud.com/1.2/config/trial-windea.yml</codeblock></li>
                         <li>Add the SQL Server 2014 Service
                           <codeblock>cf-mgmt add-service mssql2014 \
   --keypair-name &lt;name of keypair created earlier&gt; \

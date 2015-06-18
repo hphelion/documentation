@@ -56,25 +56,17 @@
             <entry>
               <b>Create the Sandbox Environment</b>
               <p> Log into the <xref href="https://horizon.hpcloud.com/" scope="external"
-                  format="html">Horizon console</xref> using the HP Helion Public
-                <!--A BR tag was used here in the original source.-->Cloud username and password
-                that you created <!--A BR tag was used here in the original source.--> during
-                  registration.<!--A BR tag was used here in the original source.--><image
-                  href="http://docs.hpcloud.com/media/quickstartWest.png" placement="break"
-                  id="image_czx_zkp_js"/>
+                  format="html">Horizon console</xref> using the HP Helion Public Cloud username and
+                password that you created during registration.</p><p><image
+                  href="../../media/quickstartWest.png" id="image_isz_fxc_ks"/>
               </p><ol>
                 <li>In the <b>US West section</b>, in the <b>Compute</b> row, click <b>Activate</b>
-                  <!--A BR tag was used here in the original source.-->to activate the Compute
-                  service.<!--A BR tag was used here in the original source.-->Activating the
-                  Compute service is required for
-                  creating<!--A BR tag was used here in the original source.--> VM
-                    instances.<!--A BR tag was used here in the original source.--><image
-                    href="http://docs.hpcloud.com/media/quickstartWestActivate.png"
-                    placement="break"/>
+                  to activate the Compute service.Activating the Compute service is required for
+                  creating VM instances.<image href="../../media/quickstartWestActivate.png"
+                    id="image_dlk_hxc_ks"/>
                 </li>
-                <li>Click the <b>Project</b> panel and then the <b>Compute</b>
-                    sub-panel.<!--A BR tag was used here in the original source.--><image
-                    href="http://docs.hpcloud.com/media/quickstartC11.png" placement="break"/>
+                <li>Click the <b>Project</b> panel and then the <b>Compute</b> sub-panel.<image
+                    href="../../media/quickstartC11.png" placement="break"/>
                 </li>
                 <li> Download the configuration file (RC file). RC files contain information about a
                   hosted service, including region, tenant, and other information required to create
@@ -82,20 +74,18 @@
                     <li>Click <b>Access &amp; Security</b> and then click the <b>API Access</b>
                       tab.</li>
                     <li> Click <b>Download OpenStack(R) RC file</b>.<image
-                        href="http://docs.hpcloud.com/media/quickstartDownloadRCFile_small.png"
-                        placement="break"/></li>
+                        href="../../media/quickstartC11.png" placement="break"/></li>
                   </ol>
                 </li>
                 <li>Create a key pair.<ol>
                     <li>Click on the <b>Compute</b> sub-panel and then click <b>Access &amp;
                         Security</b>.</li>
                     <li>Click on the <b>Key Pairs</b> tab and then click <b>+ Create Key
-                        Pair</b>.<image href="http://docs.hpcloud.com/media/quickstartE11_small.png"
-                        placement="break"/>
+                        Pair</b>.<image href="../../media/quickstartE11_small.png" placement="break"
+                      />
                     </li>
                     <li>Enter a name in the <b>Key Pair Name</b> field and then click <b>Create Key
-                        Pair</b>.<image
-                        href="http://docs.hpcloud.com/media/quickstartkeypair_small.png"
+                        Pair</b>.<image href="../../media/quickstartkeypair_small.png"
                         placement="break"/>
                     </li>
                     <li>Save the <varname>keyPairName.pem</varname> file somewhere convenient. If
@@ -105,11 +95,12 @@
                   </ol></li>
               </ol></entry>
           </row>
-          <row>
+          <row rowsep="0">
             <entry/>
             <entry align="right">
-              <xref href="1.2devplatform.ALS-developer-trial-quick-start4.dita"><image href="../../media/NextButton.png" id="image_i4h_mjp_js" align="right"
-                /></xref></entry>
+              <xref href="1.2devplatform.ALS-developer-trial-quick-start4.dita"><image
+                  href="../../media/NextButton.png" id="image_i4h_mjp_js" align="right"
+              /></xref></entry>
           </row>
         </tbody>
       </tgroup>
