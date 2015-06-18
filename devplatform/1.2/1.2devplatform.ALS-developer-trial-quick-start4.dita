@@ -80,8 +80,9 @@
                                         href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting"
                                         scope="external" format="html">Troubleshooting</xref>
                                     section for further instructions.<p>
-                                        <b>Note:</b> It may take about 15 minutes to deploy each
-                                        cluster image in this and the following step. </p><ul>
+                                        <note> It may take about 15 minutes to deploy each cluster
+                                            image in this and the following step. </note>
+                                    </p><ul>
                                         <li>For <tm tmtype="reg">Windows</tm>: Open the RC file you
                                             downloaded earlier in a text editor, as you will need to
                                             enter values from that file.
@@ -98,9 +99,7 @@ create-cluster ^
     --admin-password &lt;your password for the quick-start&gt; ^
     --load http://clients.als.hpcloud.com/1.2/config/trial.yml</codeblock>
                                         </li>
-                                        <li>For
-                                            Mac/Unix:
-                                            You do not need to open the RC file; the
+                                        <li>For Mac/Unix: You do not need to open the RC file; the
                                                 <varname>source</varname> command will retrieve the
                                             necessary values from that file automatically.
                                             <codeblock>source &lt;path to openstackrc file&gt;

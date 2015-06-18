@@ -66,8 +66,8 @@
                   <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-osx-x86_64.zip"
                     scope="external" format="html"><tm tmtype="reg">Mac OS X</tm></xref>
                 </li>
-              </ul>Note: After installation, you may run the <varname>cf-mgmt update</varname>
-              command at any time to check for and install the most recent version. <p>
+              </ul><note>After installation, you may run the <varname>cf-mgmt update</varname>
+                command at any time to check for and install the most recent version. </note><p>
                 <b>Download the ALS Client</b>
               </p>Use the ALS client to push application code up to the server, start and stop
               applications, link Helion OpenStack(R) services to applications, and perform other
