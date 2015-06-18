@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1743">
 <title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
 <titlealts>
-<searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial Step 2</searchtitle>
+<searchtitle>Quick Start Developer Trial Step 2: Download Tools</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
@@ -29,7 +29,7 @@
 <table>
 <tgroup cols="2">
         <colspec colname="col1" colwidth="400" colsep="1"/>
-        <colspec colname="col2" colwidth="1*"/>
+        <colspec colname="col2"/>
         <tbody>
           <row>
             <entry/>
