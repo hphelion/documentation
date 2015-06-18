@@ -18,7 +18,7 @@
   <!--permalink: /-->
   <topicref href="publiccloud/index.dita"/>
   <topicref href="devplatform/1.2/1.2devplatform.index.dita"
-    navtitle="HP Helion 1.2 Development Platform " locktitle="no">
+    navtitle="HP Helion 1.2 Development Platform ">
     <!--permalink: /helion/devplatform/1.2/3rd-party-license-agreements/-->
     <topicref href="devplatform/1.2/1.2devplatform.thirdparty.licensing.dita"
       navtitle="Open Source and Third-Party Software License Agreements"/>
@@ -1098,7 +1098,8 @@
   <!--permalink: /helion/devplatform/1.1/-->
   <!--permalink: /helion/devplatform/1.2/-->
   <!-- Getting Started-->
-  <topicref href="commercial/GA1/1.1commercial.index.dita">
+  <topicref href="commercial/GA1/1.1commercial.index.dita"
+    navtitle="HP Helion OpenStack(r) 1.1: Documentation Home">
     <topicref href="commercial/GA1/1.1commercial.whatsnew.dita"/>
     <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
     <topicref href="commercial/GA1/1.1commercial.release-notes.dita"/>
@@ -1532,7 +1533,8 @@
   <topicref href="helion.rack.solution.dita"/>
 -->
   <!-- Public cloud -->
-  <topicref href="publiccloud/publiccloud-overview.dita">
+  <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud Overview"
+    locktitle="yes">
     <topicref href="publiccloud/services.dita">
       <topicref href="publiccloud/identity.dita"/>
       <topicref href="publiccloud/compute.dita"/>
@@ -1591,5 +1593,10 @@
     <topicref href="publiccloud/vpn-quickstart.dita"/>
     <topicref href="publiccloud/plugins.teamcity.dita"/>
     <topicref href="publiccloud/glossary.dita"/>
+  </topicref>
+  <topicref href="euca/euca-landing-page.dita" navtitle="HP Helion Eucalyptus" locktitle="yes">
+    <topicref href="euca/euca.thirdparty.licensing.dita"
+      navtitle="Open Source and Third-Party License Agreements" locktitle="yes"/>
+    <topicref href="euca/euca-eula.dita" navtitle="Master Services Agreement" locktitle="yes"/>
   </topicref>
 </map>
