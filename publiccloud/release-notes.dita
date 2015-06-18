@@ -27,13 +27,13 @@
 <!--Moving forward, there will be more bulleted items for each release-->
 <section id="v135features"> <title>New and updated in version 13.5</title>
 <p>
-<b>New look and feel for the Management Console</b> - Based on the <xref href="http://docs.openstack.org/developer/horizon/" scope="external" format="html" >OpenStack(R) Horizon project</xref>, the new HP Helion Public Cloud Console interface and user experience is significantly improved from the original classic management console.  This new user interface provides you with project dashboards that display group-related services for easier availability and service management.  Documentation is  provided in-line and embedded throughout the console on many forms, reducing your clicks and improving your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See <xref href="/publiccloud/hpcloudconsole" >Getting Started with HP Helion Public Cloud Console</xref> for more information.</p>
+<b>New look and feel for the Management Console</b> - Based on the <xref href="http://docs.openstack.org/developer/horizon/" scope="external" format="html" >OpenStack(R) Horizon project</xref>, the new HP Helion Public Cloud Console interface and user experience is significantly improved from the original classic management console.  This new user interface provides you with project dashboards that display group-related services for easier availability and service management.  Documentation is  provided in-line and embedded throughout the console on many forms, reducing your clicks and improving your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See <xref href="../publiccloud/hpcloudconsole.dita" >Getting Started with HP Helion Public Cloud Console</xref> for more information.</p>
 <p>
 <b>Larger compute instances for big data and high-performance computing</b> -  New larger instance types allow you to run big data, analytics, and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow even greater flexibility to choose the virtual machine size that best fits your application's compute resource needs.</p>
 <p>
 <b>New virtual private cloud (VPC) networking capabilities</b> - The new VPC functionality provides the ability to deploy your workloads with even greater security within the public cloud for hybrid delivery or public cloud only by enabling you to create  isolated virtual networks within the HP Helion Public Cloud compute service. UsingSoftware Defined Networking (SDN), VPC  allows you to create a wide variety of network configurations specific to your individual workloads needs with a variety of public Internet accessibility options. You can also connect your public cloud network to your on-premise network, enabling true hybrid delivery through private and public infrastructures with a secure VPN connection performing as a single integrated system.</p>
 <p>
-<b>Networking topology visualization</b> - The new <xref href="/publiccloud/hpcloudconsole" >Horizon-based public cloud console</xref> inherits network topology infographics.  In addition to visualizing network relationships, you can perform dynamic network management, interactively creating networks and routers, and launching instances through a 2-D visualization scene.</p>
+<b>Networking topology visualization</b> - The new <xref href="../publiccloud/hpcloudconsole.dita" >Horizon-based public cloud console</xref> inherits network topology infographics.  In addition to visualizing network relationships, you can perform dynamic network management, interactively creating networks and routers, and launching instances through a 2-D visualization scene.</p>
 <p>
 <b>Faster data upload to the Cloud</b> - A new bulk import service reduces the time to market for applications requiring existing data by allowing you to quickly and easily load your data into <xref href="http://www.hpcloud.com/products-services/block-storage" scope="external" format="html" >HP Helion Public Cloud Block Storage</xref> or <xref href="http://www.hpcloud.com/products-services/object-storage" scope="external" format="html" >HP Helion Public Cloud Object Storage</xref>. The new service bypasses the process of transferring large amounts of information over the Internet and allows you to provide hard drives directly to HP's data centers where your data can be rapidly transferred.</p>
 <p>
@@ -80,7 +80,7 @@
 <xref type="section" href="#topic10638/Issues">Known issues</xref> and workarounds with version 13.5</li>
 </ul>
 </section>
-<section id="Recommendations"> <title>Recommendations</title>
+<section id="Recommendations2"> <title>Recommendations</title>
 <p>The following are our best-practices recommendations for versions 13.5.</p>
 </section>
 <section id="cloud-compute"> <title>Cloud Compute</title>
@@ -103,7 +103,7 @@ echo "<codeph>-l</codeph> <codeph>hostname</codeph>" | sudo tee -a /etc/hosts</l
 <section id="command-line-interface"> <title>Command-line Interface</title>
 <ul>
 <li>For best performance when transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the <xref href="https://horizon.hpcloud.com" scope="external" format="html" >Public Cloud Console</xref>.</li>
-<li>For easiest password reset, use the <xref href="/publiccloud/hpcloudconsole" >HP Helion Public Cloud Console</xref> interface.</li>
+<li>For easiest password reset, use the <xref href="../publiccloud/hpcloudconsole.dita" >HP Helion Public Cloud Console</xref> interface.</li>
 <li>To create a snapshot for an instance booted from a block volume, follow these steps for best results:<!--A BR tag was used here in the original source.--><ul>
 <li>Shut down the instance</li>
 <li>Delete the instance and wait until the volume is marked as <codeph>available</codeph>
@@ -133,22 +133,22 @@ Note that the port (fixed IP address) associated with the new instance might hav
 <li>During backups and restores you may see an <codeph>Unnecessary attribute</codeph> error; this is a spurious error that has no effect on successfully completing the backup and can be ignored.</li>
 </ul>
 </section>
-<section id="command-line-interface"> <title>Command-line Interface</title>
+<section id="command-line-interface2"> <title>Command-line Interface</title>
 <ul>
 <li>After successfully launching an instance if you find <codeph>ssh</codeph> not functioning properly, just relaunch the instance.</li>
-<li>Sometimes under certain circumstances in the Windows CLI, the <codeph>ls</codeph> command displays some fields as blank.  To view the contents of these fields, display the information using the <xref href="/publiccloud/hpcloudconsole" >HP Helion Public Cloud Console</xref> interface. The fields are:
+<li>Sometimes under certain circumstances in the Windows CLI, the <codeph>ls</codeph> command displays some fields as blank.  To view the contents of these fields, display the information using the <xref href="../publiccloud/hpcloudconsole.dita" >HP Helion Public Cloud Console</xref> interface. The fields are:
 
 <ul>
-<li>The <codeph>Attached To</codeph> and <codeph>Server Attached To</codeph> fields are may display as blank after you attach a server to a volume using the <xref href="../publiccloud/cli.windows.2.reference.dita#Attach-Volume" >Attach-Volume</xref> command</li>
-<li>The <codeph>Ext Gateway</codeph> field may display as blank after you execute the <xref href="../publiccloud/cli.windows.2.reference.dita#Update-Router" >Update-Router</xref> command</li>
-<li>The <codeph>Assigned Network Addresses</codeph> field may display as blank after you execute the <xref href="../publiccloud/cli.windows.2.reference.dita#New-Server" >New-Server</xref> command</li>
+<li>The <codeph>Attached To</codeph> and <codeph>Server Attached To</codeph> fields are may display as blank after you attach a server to a volume using the Attach-Volume command</li>
+<li>The <codeph>Ext Gateway</codeph> field may display as blank after you execute the Update-Router command</li>
+<li>The <codeph>Assigned Network Addresses</codeph> field may display as blank after you execute the New-Server command</li>
 </ul>
 </li>
 </ul>
 </section>
 <section id="hp-helion-public-cloud-console"> <title>HP Helion Public Cloud Console</title>
 <ul>
-<li>If you use the Identity service role-based access control (RBAC) at the panel level in the <xref href="/publiccloud/hpcloudconsole" >HP Helion Public Cloud Console</xref>, you may see action and service options that exceed your permission levels.  You can access these features through the CLI.</li>
+<li>If you use the Identity service role-based access control (RBAC) at the panel level in the <xref href="../publiccloud/hpcloudconsole.dita" >HP Helion Public Cloud Console</xref>, you may see action and service options that exceed your permission levels.  You can access these features through the CLI.</li>
 </ul>
 <!--##Resolved Issues in Version 13.5## {#v135resolved}
 
@@ -161,14 +161,14 @@ The following are resolved issues in version 13.5 of the HP Helion Public Cloud 
 <p>Additional related information about HP Helion Public Cloud can be found in the following links. Please note that HP Helion Public Cloud 12.12 support will be discontinued when the product is fully deprecated on June 1, 2014</p>
 <ul>
 <li>
-<xref href="/publiccloud/hpcloudconsole" >Getting Started with HP Helion Public Cloud Console</xref> for detailed console information.</li>
+<xref href="../publiccloud/hpcloudconsole.dita" >Getting Started with HP Helion Public Cloud Console</xref> for detailed console information.</li>
 <li>
 <xref href="../publiccloud/api.dita" >HP Helion Public Cloud Service APIs</xref> for an overview of the API specifications.</li>
 <li>
 <xref href="https://community.hpcloud.com/article/hp-helion-public-cloud-support-reference" scope="external" format="html" >HP Helion Public Cloud Support Reference</xref> for information on how to get started with the service.</li>
 <li>The <xref href="https://community.hpcloud.com/article/hp-helion-public-cloud-quick-start-guide" scope="external" format="html" >Quick Start Guide</xref> is a great resource for getting yourself up and running with the various HP Helion Public Cloud services in general.</li>
 <li>
-<xref href="https://www.hpcloud.com#" scope="external" format="html" >HP Helion Public Cloud web site</xref> for a discussion of our various products and services. </li>
+<xref href="https://www.hpcloud.com" scope="external" format="html" >HP Helion Public Cloud web site</xref> for a discussion of our various products and services. </li>
 <li>Our <xref href="https://www.hpcloud.com/support" scope="external" format="html" >support page</xref> provides support information.</li>
 </ul>
 </section>

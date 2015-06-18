@@ -17,7 +17,7 @@
 <p>Rather than force you to read this whole page to find the info you need, here are a few links that maybe can help you out quickly:</p>
 <ul>
 <li>
-<xref href="./publiccloud/sitemap.dita" >Site Map</xref>: This is a full map of all the documentation pages on the site.  Go here if you are looking for information on something specific, such as Ruby Fog Bindings, the Identity Service API, and other similar topics.</li>
+<xref href="../publiccloud/sitemap.dita" >Site Map</xref>: This is a full map of all the documentation pages on the site.  Go here if you are looking for information on something specific, such as Ruby Fog Bindings, the Identity Service API, and other similar topics.</li>
 <li>
 <xref href="https://community.hpcloud.com/knowledge-base" scope="external" format="html" >Knowledge Base</xref>: A collection of searchable information about HP Helion Public Cloud. (This link is also in the navigation sidebar over on the right-hand side of every page.)</li>
 <li>
@@ -25,7 +25,7 @@
 <li>
 <xref href="https://horizon.hpcloud.com/" scope="external" format="html" >Console</xref>: A link straight to the main HP Helion Public Cloud console.  Click on it and go!</li>
 <li>
-  <xref href="./publiccloud/downloads.dita" >Downloads</xref>: A listing of all the downloads currently available for HP Helion Public Cloud.</li>
+  <xref href="../publiccloud/downloads.dita" >Downloads</xref>: A listing of all the downloads currently available for HP Helion Public Cloud.</li>
 </ul>
 <!--Add this back in at GA:
 * [Release Notes](/release-notes): Overall release note information for the HP Helion Public Cloud software. -->
@@ -33,7 +33,7 @@
 <section id="site-navigation"> <title>Site Navigation</title>
 <p>You may have already noticed that the site has multiple methods for navigating; we've included these so that you can choose the method that works best for you:</p>
 <ul>
-  <li>The <xref href="./publiccloud/sitemap.dita" >Site Map</xref> itself, as mentioned above, contains a full map of all the documentation pages on the website.</li>
+  <li>The <xref href="../publiccloud/sitemap.dita" >Site Map</xref> itself, as mentioned above, contains a full map of all the documentation pages on the website.</li>
 <li>Next to the HP Helion Public Cloud logo at the top of the page, there are three navigation pull-down menus and two quick links:
 
 <ul>
@@ -44,7 +44,7 @@
 <li>
 <xref href="https://docs.hpcloud.com/publiccloud/overview" scope="external" format="html" >
 <b>Documentation</b>
-</xref>: This here stuff you're currently reading; all the documentation available for the HP Helion Public Cloud software (<xref href="./publiccloud/compute.dita" >Compute</xref>, <xref href="./publiccloud/object-storage.dita" >Object Storage</xref>, <xref href="./publiccloud/cdn.dita" >CDN</xref>, <xref href="./publiccloud/block-storage.dita" >Block Storage</xref>, <xref href="./publiccloud/identity.dita" >Identity Service</xref>, <xref href="./publiccloud/api.dita" >API</xref>, <xref href="./publiccloud/cli.dita" >CLI</xref>, <xref href="./publiccloud/bindings.dita" >Bindings</xref>)</li>
+</xref>: This here stuff you're currently reading; all the documentation available for the HP Helion Public Cloud software (<xref href="../publiccloud/compute.dita" >Compute</xref>, <xref href="../publiccloud/object-storage.dita" >Object Storage</xref>, <xref href="../publiccloud/cdn.dita" >CDN</xref>, <xref href="../publiccloud/block-storage.dita" >Block Storage</xref>, <xref href="../publiccloud/identity.dita" >Identity Service</xref>, <xref href="../publiccloud/api.dita" >API</xref>, <xref href="../publiccloud/cli.dita" >CLI</xref>, <xref href="../publiccloud/bindings.dita" >Bindings</xref>)</li>
 <li>
 <xref href="https://community.hpcloud.com/" scope="external" format="html" >
 <b>Community</b>
@@ -65,8 +65,8 @@
 </section>
 <section id="where-to-start"> <title>Where to Start</title>
 <ul>
-  <li>See the <xref href="./publiccloud/hpcloudconsole.dita" >Getting Started Guide with HP Helion Public Cloud Console </xref> to start navigating the web interface, activating your services, and getting up and running with the various available services</li>
-<li>If you're already well versed in the cloud, feel free to just go straight to the <xref href="https://horizon.hpcloud.com/" scope="external" format="html" >HP Helion Public Cloud Console</xref> and get going</li>
+  <li>See the <xref href="../publiccloud/hpcloudconsole.dita" >Getting Started Guide with HP Helion Public Cloud Console </xref> to start navigating the web interface, activating your services, and getting up and running with the various available services</li>
+<li>If you're already well versed in the cloud, feel free to just go straight to the <xref href="https://horizon.hpcloud.com" scope="external" format="html" >HP Helion Public Cloud Console</xref> and get going</li>
 </ul>
 <p>So there you have it; a quick overview of what's available to you.  If you have any comments or questions, please get in touch with us via the forums.  Enjoy!</p>
 </section>
