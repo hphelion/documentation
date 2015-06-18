@@ -38,11 +38,9 @@
 <p>The steps in this section describe how to set up a VXLAN provider network and add segmentation ranges using the
 command line interface. For information about using the Horizon interface, see <xref href="../VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting.dita" >Setting Up a VXLAN Provider Network using Horizon</xref>.</p>
 <p>To create a provider network using the CLI, use the following command:</p>
-<codeblock>
-  <codeph>neutron providernet-create name \
+<codeblock><codeph>neutron providernet-create name \
 --type=type --description=description mtu=mtu_size
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>where</p>
 <ul>
 <li>
@@ -55,14 +53,12 @@ command line interface. For information about using the Horizon interface, see <
 <codeph>mtu_size</codeph> is the maximum transmission unit size</li>
 </ul>
 <p>To add a segmentation range using the CLI, use the following command:</p>
-<codeblock>
-  <codeph>neutron providernet-range-create provider_network \
+<codeblock><codeph>neutron providernet-range-create provider_network \
 --name=range_name --tenant_id=tenant \
 --description=description --range min-max \
 --group multicast_address --port=udp_port \
 --ttl=time_to_live
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>where</p>
 <ul>
 <li>
@@ -98,11 +94,9 @@ command line interface. For information about using the Horizon interface, see <
 </ul>
 <p>For more about these parameters, see <xref href="../VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting.dita" >Setting Up a VXLAN Provider Network using Horizon</xref>.</p>
 <p>You can obtain information about provider networks and segmentation ranges using the following commands.</p>
-<codeblock>
-  <codeph>neutron net-list-on-providernet providernet
+<codeblock><codeph>neutron net-list-on-providernet providernet
 neutron providernet-range-show providernet-range
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <xref type="section" href="#topic3210/top"> Return to Top </xref>
 </p>

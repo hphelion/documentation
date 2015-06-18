@@ -36,10 +36,8 @@
 <li>
 <p>You can execute root-level commands as the root user. To become the root user, use the sudo command to elevate your privileges, followed by the command to be executed. For example, to run the config_controller command as the root user:</p>
 
-<codeblock>
-<codeph>sudo config_controller
-</codeph>
-</codeblock>
+<codeblock><codeph>sudo config_controller
+</codeph></codeblock>
 
 <p>If a password is requested, provide the password for the wrsroot account.</p>
 </li>
@@ -48,10 +46,8 @@
 
 <p>Source the script <codeph>/etc/nova/openrc</codeph> while working on the active controller to acquire Keystone administrative privileges.</p>
 
-<codeblock>
-<codeph>source /etc/nova/openrc
-</codeph>
-</codeblock>
+<codeblock><codeph>source /etc/nova/openrc
+</codeph></codeblock>
 
 <p>The system prompt changes to indicate the new acquired privileges.</p>
 </li>

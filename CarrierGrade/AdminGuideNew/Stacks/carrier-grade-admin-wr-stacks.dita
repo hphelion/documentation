@@ -118,20 +118,16 @@ existing values in the environment file or the template.</li>
 <li>
 <p>on the command line, using the -P option. Multiple -P arguments are supported.</p>
 
-<codeblock>
-<codeph>heat stack-create -P key1=val1 -P key2=val2
-</codeph>
-</codeblock>
+<codeblock><codeph>heat stack-create -P key1=val1 -P key2=val2
+</codeph></codeblock>
 </li>
 <li>
 <p>in an environment file:</p>
 
-<codeblock>
-<codeph>parameters:
+<codeblock><codeph>parameters:
     key:value
     key:value
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </li>
 </ul>
 </section>

@@ -37,79 +37,44 @@
 <p>For VXLAN connectivity between VMs, the compute nodes that host the VMs must be configured with endpoint IP addresses.</p>
 <p>To configure VXLAN enpoints:</p>
 <ol>
-<li>
-<p>Lock the compute node first.</p>
-
-<p>system host-lock hostname</p>
-
-<p>where <codeph>hostname</codeph> is the name of the compute node host</p>
-</li>
-<li>
-<p>Set the interface to support an IPv4 or IPv6 address, or both.</p>
-
-<codeblock>
-<codeph>system host-if-modify node ifname --ipv4-mode=ipv4mode --ipv6-mode=ipv6mode
-</codeph>
-</codeblock>
-
-<p>where</p>
-
-<ul>
-<li>
-<codeph>node</codeph> is the name or UUID of the compute node</li>
-<li>
-<codeph>ifname</codeph> is the name of the interface</li>
-<li>
-<codeph>ipv4mode</codeph> is either disabled or static</li>
-<li>
-<codeph>ipv6mode</codeph> is either disabled or static</li>
-</ul>
-</li>
-<li>
-<p>Add an IPv4 or IPv6 address to the interface.</p>
-
-<p>system host-addr-add node ifname ip_address prefix</p>
-
-<p>where</p>
-
-<ul>
-<li>
-<codeph>node</codeph> is the name or UUID of the compute node</li>
-<li>
-<codeph>ifname</codeph> is the name of the interface</li>
-<li>
-<codeph>ip_address</codeph> is an IPv4 or IPv6 address</li>
-<li>
-<codeph>prefix</codeph> is the netmask length for the address</li>
-</ul>
-<p>To delete an address, use the following commands:</p>
-
-<codeblock>
-<codeph>system host-addr-list
-</codeph>
-</codeblock>
-
-<p>This displays the UUIDs of existing addresses.</p>
-
-<codeblock>
-<codeph>system host-addr-delete uuid
-</codeph>
-</codeblock>
-
-<p>where uuid is the UUID of the address.</p>
-</li>
-<li>
-<p>Unlock the compute node and wait for it to become available.</p>
-
-<p>system host-unlock hostname</p>
-
-<p>where <codeph>hostname</codeph> is the name of the compute node host</p>
-</li>
+<li>Lock the compute node first.<p>system host-lock hostname</p><p>where <codeph>hostname</codeph>
+          is the name of the compute node host</p></li>
+<li>Set the interface to support an IPv4 or IPv6 address, or
+          both.<codeblock><codeph>system host-if-modify node ifname --ipv4-mode=ipv4mode --ipv6-mode=ipv6mode
+</codeph></codeblock><p>where</p><ul>
+          <li>
+            <codeph>node</codeph> is the name or UUID of the compute node</li>
+          <li>
+            <codeph>ifname</codeph> is the name of the interface</li>
+          <li>
+            <codeph>ipv4mode</codeph> is either disabled or static</li>
+          <li>
+            <codeph>ipv6mode</codeph> is either disabled or static</li>
+        </ul></li>
+<li>Add an IPv4 or IPv6 address to the interface.<p>system host-addr-add node ifname ip_address
+          prefix</p><p>where</p><ul>
+          <li>
+            <codeph>node</codeph> is the name or UUID of the compute node</li>
+          <li>
+            <codeph>ifname</codeph> is the name of the interface</li>
+          <li>
+            <codeph>ip_address</codeph> is an IPv4 or IPv6 address</li>
+          <li>
+            <codeph>prefix</codeph> is the netmask length for the address</li>
+        </ul><p>To delete an address, use the following
+          commands:</p><codeblock><codeph>system host-addr-list
+</codeph></codeblock><p>This
+          displays the UUIDs of existing
+          addresses.</p><codeblock><codeph>system host-addr-delete uuid
+</codeph></codeblock><p>where
+          uuid is the UUID of the address.</p></li>
+<li>Unlock the compute node and wait for it to become available.<p>system host-unlock
+          hostname</p><p>where <codeph>hostname</codeph> is the name of the compute node
+        host</p></li>
 </ol>
 <p>To delete routes, use the following command.</p>
 <p>system host-route-delete uuid ifname network prefix gateway metric</p>
-<codeblock>
-  <codeph>where 
+<codeblock>  <codeph>where 
 
 * `uuid` is the UUID of the route to be deleted.
 * `node` is the name or UUID of the compute node
@@ -121,10 +86,8 @@
 </codeph>
 </codeblock>
 <p>To list existing routes, including their UUIDs, use the following command.</p>
-<codeblock>
-  <codeph>system host-route-list
-</codeph>
-</codeblock>
+<codeblock><codeph>system host-route-list
+</codeph></codeblock>
 <p>
   <xref type="section" href="#topic2335/top"> Return to Top </xref>
 </p>

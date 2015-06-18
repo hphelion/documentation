@@ -20,56 +20,39 @@
 <p/>
 <p>To verify that the StoreVirtual storage system is deployed successfully, perform the following checks:</p>
 <ol>
-<li>
-<p>Log in to the undercloud from seed.</p>
-
-<codeblock>
+<li>Log in to the undercloud from
+        seed.<codeblock>
 <codeph># ssh heat-admin@&lt;undercloud IP address&gt;
 </codeph>
-</codeblock>
-</li>
-<li>
-<p>Source stackrc file and list the deployed StoreVirtual nodes.</p>
-
-<codeblock>
+</codeblock></li>
+<li>Source stackrc file and list the deployed StoreVirtual
+        nodes.<codeblock>
 <codeph># source stackrc 
 # heat stack-list
 # nova list|grep vsa
 </codeph>
-</codeblock>
-</li>
-<li>
-<p>Log in to the StoreVirtual system from the seed using the IP address retrieved 
-from the above steps.</p>
-
-<codeblock>
+</codeblock></li>
+<li>Log in to the StoreVirtual system from the seed using the IP address retrieved from the above
+        steps.<codeblock>
 <codeph># ssh heat-admin@&lt;StoreVirtual system IP Address&gt;
 </codeph>
-</codeblock>
-</li>
-<li>
-<p>Check the log files.</p>
-
-<codeblock>
+</codeblock></li>
+<li>Check the log files.<codeblock>
 <codeph># tail-f /installer.log
 </codeph>
-</codeblock>
-
-<p>The message "<i>Started VM vsa-hostname</i>" indicates the successful installation of StoreVirtual on the machine.The IP Address of the StoreVirtual storage system can be retrieved from this log file.</p>
-</li>
-<li>
-<p>To display the status of all the StoreVirtual VMs.</p>
-
-<codeblock>
+</codeblock><p>The
+          message "<i>Started VM vsa-hostname</i>" indicates the successful installation of
+          StoreVirtual on the machine.The IP Address of the StoreVirtual storage system can be
+          retrieved from this log file.</p></li>
+<li>To display the status of all the StoreVirtual
+          VMs.<codeblock>
 <codeph># virsh list --all 
 </codeph>
-</codeblock>
-
-<p>To get more details on the installer logs, check the <codeph>/var/log/storevirtual-installer.log</codeph> file.</p>
-</li>
-<li>
-<p>On successful installation of StoreVirtual VM on Baremetal, go to the Centralized Management Console (CMC) and discover the storage systems.</p>
-</li>
+</codeblock><p>To get more details
+          on the installer logs, check the <codeph>/var/log/storevirtual-installer.log</codeph>
+          file.</p></li>
+<li>On successful installation of StoreVirtual VM on Baremetal, go to the Centralized Management
+        Console (CMC) and discover the storage systems.</li>
 </ol>
 <section id="next-step"> <title>Next Step</title>
 <p>

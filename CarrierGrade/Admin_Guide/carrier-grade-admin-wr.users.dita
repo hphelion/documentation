@@ -122,8 +122,7 @@ A set of LDAP commands is available to operate on LDAP user accounts. The comman
 directory /usr/local/sbin, and are available to any user account in the sudoers list. Included commands are
 lsldap, ldapadduser, ldapdeleteuser, and several others starting with the prefix ldap. Use the command
 option --help on any command to display a brief help message, as illustrated below.</p>
-<codeblock>
-  <codeph>$ ldapadduser --help
+<codeblock><codeph>$ ldapadduser --help
 Usage : /usr/local/sbin/ldapadduser &lt;username&gt; &lt;groupname | gid&gt; [uid]
 $ ldapdeleteuser --help
 Usage : /usr/local/sbin/ldapdeleteuser &lt;username | uid&gt;

@@ -42,52 +42,39 @@
 <p>To populate the nova-local group with storage resources, you must also add physical volumes created on local disks:</p>
 <ol>
 <li>
-<p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
-</li>
+        <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
+          OpenStack(R) Horizon Dashboard</xref>.</li>
+<li>Click <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then
+        selecting the <b>Hosts</b> tab.</li>
 <li>
-<p>Click <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
-</li>
+        <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Lock
+          the host to make changes</xref>.</li>
+<li>Click the host to make changes to open the <b>Inventory Detail</b> page for the locked
+        host.</li>
+<li>Click the <b>Storage</b> tab.<p>For a compute node, the <b>Storage</b> tab displays three
+          lists:</p><ul>
+          <li>
+            <b>Disks</b> - Physical disks installed in the compute node.</li>
+          <li>
+            <b>Local Volume Groups</b> - Groups of physical volumes designated for use as local
+            storage for VMs.</li>
+          <li>
+            <b>Physical Volumes</b> - Partitions that have been initialized for logical volume
+            management (LVM) and assigned to a local volume group.</li>
+        </ul></li>
+<li>If the <codeph>nova-local</codeph> group is not in the <b>Local Volume Groups</b> list, add the
+        group by clicking <b>Add Local Volume Group</b> and accepting the defaults in the dialog box
+        that appears.</li>
+<li>Add a physical volume to the nova-local group by clicking <b>Add Physical Volume</b>:<p>a. The
+            <b>Local Volume Group</b> menu is automatically set to <codeph>nova-local</codeph>, and
+          cannot be changed.</p><p>b. Select a disk to provide storage from the <b>Disks</b> menu to
+          select a disk to provide storage. For the root disk, a designated partition (local_pv) is
+          used.</p><p>You can add any number of physical volumes to the <codeph>nova-local</codeph>
+          group, limited only by the number of available disks.</p></li>
+<li>Click <b>Create Physical Volume</b>.</li>
 <li>
-<p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the host to make changes</xref>.</p>
-</li>
-<li>
-<p>Click the host to make changes to open the <b>Inventory Detail</b> page for the locked host.</p>
-</li>
-<li>
-<p>Click the <b>Storage</b> tab.</p>
-
-<p>For a compute node, the <b>Storage</b> tab displays three lists:</p>
-
-<ul>
-<li>
-<b>Disks</b> -  Physical disks installed in the compute node.</li>
-<li>
-<b>Local Volume Groups</b> - Groups of physical volumes designated for use as local storage for VMs.</li>
-<li>
-<b>Physical Volumes</b> - Partitions that have been initialized for logical volume management (LVM) and assigned to a local volume group.</li>
-</ul>
-</li>
-<li>
-<p>If the <codeph>nova-local</codeph> group is not in the <b>Local Volume Groups</b> list, add the group by clicking <b>Add Local Volume Group</b> and accepting the defaults in the dialog box that appears.</p>
-</li>
-<li>
-<p>Add a physical volume to the nova-local group by clicking <b>Add Physical Volume</b>:</p>
-
-<p>a. The <b>Local Volume Group</b> menu is automatically set to <codeph>nova-local</codeph>, and cannot be changed.</p>
-
-<p>b. Select a disk to provide storage from the <b>Disks</b> menu to select a disk to provide storage. For the root disk, a designated partition (local_pv) is used.</p>
-
-<p>You can add any number of physical volumes to the <codeph>nova-local</codeph> group, limited only by the number of available disks.</p>
-</li>
-<li>
-<p>Click <b>Create Physical Volume</b>.</p>
-</li>
-<li>
-<p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the host</xref> to make the changes take effect.</p>
-</li>
+        <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Unlock
+          the host</xref> to make the changes take effect.</li>
 </ol>
 <p>The compute host is ready to provide local storage for use by VMs. Because a nova-local local volume group has
 been added, the host is automatically included in the local_storage_hosts host aggregate.</p>

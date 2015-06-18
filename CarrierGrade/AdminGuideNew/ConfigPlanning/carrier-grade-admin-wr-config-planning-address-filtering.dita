@@ -41,26 +41,17 @@
 </ul>
 <p>Address filtering is not active on virtual interfaces created before filtering is enabled.</p>
 <p>Use the following command to enable source MAC address filtering:</p>
-<codeblock>
-  <codeph>neutron setting-update --tenant-id=&lt;TENANTID&gt; \
+<codeblock><codeph>neutron setting-update --tenant-id=&lt;TENANTID&gt; \
 --mac-filtering={True|False}
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Filtering can be enabled or disabled from the Horizon interface. As the administrator:</p>
 <ol>
 <li>
-<p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Clicking <b>Projects</b> on the <b>Identity</b> menu.</p>
-</li>
-<li>
-<p>Select <b>Source MAC Filtering</b>.</p>
-</li>
-<li>
-<p>Click <b>Save</b>.</p>
-</li>
+        <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
+          OpenStack(R) Horizon Dashboard</xref>.</li>
+<li>Clicking <b>Projects</b> on the <b>Identity</b> menu.</li>
+<li>Select <b>Source MAC Filtering</b>.</li>
+<li>Click <b>Save</b>.</li>
 </ol>
 <p>
   <xref type="section" href="#topic2163/top"> Return to Top </xref>

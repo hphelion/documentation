@@ -28,8 +28,7 @@ The commands are installed in the <codeph>/usr/local/sbin</codeph> directory, an
 <li>ldapdeleteuser</li>
 </ul>
 <p>Use the command option <codeph>--help</codeph> on any command to display a brief help message, as illustrated below.</p>
-<codeblock>
-  <codeph>ldapadduser --help
+<codeblock><codeph>ldapadduser --help
 </codeph>
 </codeblock>
 <p>

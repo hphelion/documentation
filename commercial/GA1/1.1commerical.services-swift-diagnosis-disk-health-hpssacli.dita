@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6748">
-<title>HP Helion OpenStack® 1.1: Monitoring Disk Drives in Object Storage Using hpssacli
+<title>HP Helion OpenStack(R)1.1: Monitoring Disk Drives in Object Storage Using hpssacli
     Utility</title>
 <prolog>
 <metadata>
@@ -27,7 +27,7 @@
 <p>
       <xref
         href="../../commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita"
-        >See the Helion OpenStack® 1.0 version of this page</xref>
+        >See the Helion OpenStack(R)1.0 version of this page</xref>
     </p>
 <p>HP Helion Object Storage (Swift) provides native monitoring of Swift services and hardware resources like disk drives.To monitor the health status of the disk drives of the Swift cluster, monitoring scripts are introduced for HP hardware. The monitoring solution depends on hpssacli application to fetch various details of hardware to determine its health and publish to Icinga. hpssacli utility does not get installed implicitly as part of Swift node deployment.</p>
 <p>You are advised to download and install utility as per procedure mentioned below. If utility is not installed then Icinga dashboard will reflect the various disk parameters as critical.</p>

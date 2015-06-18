@@ -33,15 +33,11 @@
 <b>Note:</b> Access to the OAM network is interrupted during this procedure.</p>
 <p>To change the external network configuration:</p>
 <p>To view the existing OAM IP configuration, use the following command.</p>
-<codeblock>
-  <codeph>system oam-show
-</codeph>
-</codeblock>
+<codeblock><codeph>system oam-show
+</codeph></codeblock>
 <p>To change the OAM IP subnet, floating IP address, gateway IP address, or controller IP addresses, use the following command syntax.</p>
-<codeblock>
-  <codeph>system oam-modify oam_subnet=subnet/netmask \
-</codeph>
-</codeblock>
+<codeblock><codeph>system oam-modify oam_subnet=subnet/netmask \
+</codeph></codeblock>
 <p>After changing the OAM server configuration, you must lock and unlock the controllers. This process requires a <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#swact" >swact on the controllers</xref>. Then you must <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >lock and unlock the compute nodes</xref> one at a time, ensuring that sufficient resources are available to migrate any running instances.</p>
 <p>
   <xref type="section" href="#topic1462/top"> Return to Top </xref>
