@@ -26,7 +26,7 @@
 <table>
 <tgroup cols="2">
                 <colspec colname="col1" colsep="1" colwidth="300"/>
-                <colspec colname="col2"/>
+                <colspec colname="col2" colwidth="1*"/>
                 <tbody>
                     <row rowsep="0">
                         <entry/>
@@ -79,10 +79,6 @@
                                         <xref href="1.2devplatform.index.dita">Helion Development
                                         Platform Documentation</xref>.</li>
                             </ul></entry>
-                    </row>
-                    <row rowsep="0">
-                        <entry/>
-                        <entry/>
                     </row>
                 </tbody>
             </tgroup>

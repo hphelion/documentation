@@ -31,9 +31,8 @@
 <li>
   <xref href="http://docs.cloudfoundry.org/" scope="external" format="html" ><tm tmtype="tm">Cloud Foundry</tm></xref>
 </li>
-  <li><tm tmtype="reg">OpenStack</tm> <xref href="https://wiki.openstack.org/wiki/Trove" scope="external" format="html" >Trove</xref>
+  <li><tm tmtype="reg">OpenStack</tm><xref href="https://wiki.openstack.org/wiki/Trove" scope="external" format="html" >Trove</xref>
 </li>
 </ul>
-<!-- ===================== horizontal rule ===================== -->
 </body>
 </topic>

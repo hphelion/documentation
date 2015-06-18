@@ -58,15 +58,15 @@ Administrators can now run even more operations from the HP Helion OpenStack(R) 
 </p>
 <p>This issue applies to HP Helion Public Cloud only. When using <i>cf-mgmt create cluster</i> or <i>add-service</i> commands to create a new database, the operation fails. There is no workaround at this time.</p>
 <p>
-  <b>WindowsÂ(R) DEA and SQL Server services are not available through the ALS Management Console</b>
+  <b>Windows(R) DEA and SQL Server services are not available through the ALS Management Console</b>
 </p>
-<p>Although it appears that you can complete these tasks using the ALS Management Console, you must use the <xref href="../../devplatform/1.2/helion/CLI/1.2ALS_Client_Reference.dita" >
-<i>cf-mgmt</i> tool</xref> or the Horizon console to add WindowsÂ(R) DEA Nodes and SQL Server services.</p>
+<p>Although it appears that you can complete these tasks using the ALS Management Console, you must use the <xref href="helion/CLI/1.2ALS_Client_Reference.dita" >
+<i>cf-mgmt</i> tool</xref> or the Horizon console to add Windows(R) DEA Nodes and SQL Server services.</p>
 <p>
   <b>Windows Nodes do not support Linux services</b>
 </p>
-<p>Linux services -- for example, redis or mysql -- can not be added to WindowsÂ(R) nodes.</p>
-<!-- ===================== horizontal rule ===================== -->
+<p>Linux services -- for example, <i>redis</i> or <i>mySQL</i> -- can not be added to Windows(R)
+        nodes.</p>
 </section>
 </body>
 </topic>
