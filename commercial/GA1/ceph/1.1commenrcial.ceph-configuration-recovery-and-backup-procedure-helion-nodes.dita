@@ -32,12 +32,12 @@
 <p>
 The following steps ensure the recovery of the lost configuration.
 
-1. Run the  `ceph_client_setup` script (available at [HDN](https://helion.hpwsportal.com)) on each of the controller/compute nodes. (For information on what files need to be copied from  the Ceph cluster node to their respective directories, refer to the script's README file.)
+1. Run the  ceph_client_setup script available at  <xref href ="https://helion.hpwsportal.com" format="html"> HDN</xref> on each of the controller/compute nodes. (For information on what files need to be copied from  the Ceph cluster node to their respective directories, refer to the script's README file.)
 2. To confirm ceph health, run:
 
-     `ceph health`
+     ceph health
 
-3. If you reboot your controller and compute node after running the `ceph_client_setup` script, the patch update for `glance-api.conf`, `nova.conf`, `cinder.conf` might default to the original state. In this case, from each controller and compute node, go to:
+3. If you reboot your controller and compute node after running the ceph_client_setup script, the patch update for glance-api.conf, nova.conf, cinder.conf might default to the original state. In this case, from each controller and compute node, go to:
 
 
         /home/ceph_client_setup/setup_scripts
