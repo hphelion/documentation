@@ -108,10 +108,10 @@
 </ul>
 </section>
 <section id="bindings"> <title>Bindings</title>
-<p>If you are looking for an easier to use, language-specific way of using HP Identity Services, check out our <xref href="/publiccloud/bindings" >Bindings section</xref>.</p>
+<p>If you are looking for an easier to use, language-specific way of using HP Identity Services, check out our <xref href="../publiccloud/bindings.dita" >Bindings section</xref>.</p>
 </section>
 <section id="cli"> <title>CLI</title>
-<p>Want scriptable access you can put in a cron job or something similar?  Go on over to our <xref href="/publiccloud/cli" >CLI documentation</xref>.</p>
+<p>Want scriptable access you can put in a cron job or something similar?  Go on over to our <xref href="../publiccloud/cli.dita" >CLI documentation</xref>.</p>
 </section>
 </body>
 </topic>
