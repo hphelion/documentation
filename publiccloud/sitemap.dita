@@ -84,8 +84,6 @@
 <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN Examples](/cli/windows/2/cdn/)<br />-->
         <xref href="../publiccloud/cli.windows.2.block-storage.dita" >Block Storage Examples</xref>
 <!--A BR tag was used here in the original source.-->
-        <xref href="../publiccloud/cli.windows.2.reference.dita" >CLI Reference</xref>
-<!--A BR tag was used here in the original source.-->
         <xref href="../publiccloud/cli.windows.2.help.dita" >Getting Help</xref>
 <!--A BR tag was used here in the original source.-->
         <xref href="../publiccloud/cli.windows.2.release-notes.dita" >Release Notes</xref>

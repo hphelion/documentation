@@ -3792,7 +3792,7 @@ Transfer-Encoding: chunked
 </section>
 <section id="rescope_token"> <title>3.4.3.2 Rescope Token</title>
 </section>
-<section id="post-v3authtokens"> <title>POST /v3/auth/tokens</title>
+<section id="post-v3authtokens2"> <title>POST /v3/auth/tokens</title>
 <p>This API provides the ability to re-scope a valid token with another project. An existing unexpired token, regardless of its currently scoped or not, can be scoped to another project as long as the user has valid association with that project.</p>
 <p>Re-scoping of token can be done from</p>
 <ul>
@@ -3801,7 +3801,7 @@ Transfer-Encoding: chunked
 <li>Scoped token to unscoped token (with no projectId and projectName specified in request). Re-scoping of token does not alter the token expiration time. Rescoping the token returns different token.</li>
 </ul>
 </section>
-<section id="service-catalog"> <title>Service Catalog:</title>
+<section id="service-catalog2"> <title>Service Catalog:</title>
 <p>In case of un-scoped token request, the service catalog is going to include global active endpoint templates as endpoints in its data. In case of scoped token request, the service catalog is going to include project specific endpoints as well as global active endpoint templates as endpoints.</p>
 <p>
   <b>Request Data</b>

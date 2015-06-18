@@ -783,7 +783,7 @@
 <section id="Forfurtherinformation"> <title>For further information</title>
 <p>*For the latest updates to the current HP Helion Public Cloud Console release, see <xref href="../publiccloud/hz.whatsnewjan.2014.dita" >What's new with HP Helion Public Cloud Console</xref>..
 * For basic information about our HP Helion Public Cloud compute services, take a look at the <xref href="../publiccloud/compute.dita" >HP Helion Public Cloud compute overview</xref> page
-* If you'd rather use the HP Helion Public Cloud Command Line Interface (CLI) features, choose your topic of interest from our <xref href="/publiccloud/cli" >HP Helion Public Cloud CLI</xref> pages.</p>
+* If you'd rather use the HP Helion Public Cloud Command Line Interface (CLI) features, choose your topic of interest from our <xref href="../publiccloud/cli.dita" >HP Helion Public Cloud CLI</xref> pages.</p>
 </section>
 </body>
 </topic>
