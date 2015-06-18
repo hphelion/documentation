@@ -1531,8 +1531,8 @@
   <!-- Public cloud -->
   <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud" locktitle="yes">
     <topicref href="publiccloud/services.dita">
-      <topicref href="publiccloud/identity.dita"/>
-      <topicref href="publiccloud/compute.dita"/>
+      <topicref href="publiccloud/identity.dita" navtitle="Identity Service Overview" locktitle="yes"/>
+      <topicref href="publiccloud/compute.dita" navtitle="Compute Service Overview" locktitle="yes"/>
       <topicref href="publiccloud/block-storage.dita"/>
       <topicref href="publiccloud/dns.dita"/>
       <topicref href="publiccloud/lbaas.dita"/>
@@ -1546,8 +1546,8 @@
       <topicref href="publiccloud/cdn.dita"/>
     </topicref>
     <topicref href="publiccloud/api.dita">
-      <topicref href="content/api/c1.1/keystonev2-api.dita"/>
-      <topicref href="content/api/c1.1/keystone-api.dita"/>
+      <topicref href="content/api/c1.1/keystonev2-api.dita" navtitle="Identity Service v2 API" locktitle="yes"/>
+      <topicref href="content/api/c1.1/keystone-api.dita" navtitle="Identity Service v3 API" locktitle="yes"/>
       <topicref href="content/api/c1.1/nova-api.dita"/>
       <topicref href="content/api/c1.1/neutron-api.dita"/>
       <topicref href="content/api/c1.1/glance-api.dita"/>
@@ -1562,8 +1562,8 @@
     </topicref>
     <topicref href="publiccloud/cli.dita">
       <topicref href="publiccloud/cli.openstack.dita"/>
-      <topicref href="publiccloud/cli.windows.2.dita">
-        <topicref href="publiccloud/cli.windows.2.installation.dita"/>
+      <topicref href="publiccloud/cli.windows.2.dita" navtitle="HP Helion Public Cloud CLI for Windows PowerShell" locktitle="yes">
+        <topicref href="publiccloud/cli.windows.2.installation.dita" navtitle="PowerShell CLI Installation" locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.commands.dita"/>
         <topicref href="publiccloud/cli.windows.2.compute.dita"/>
         <topicref href="publiccloud/cli.windows.2.containers-and-folders.dita"/>
