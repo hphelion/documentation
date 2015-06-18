@@ -41,7 +41,7 @@
 </li>
 </ul>
 <section id="Helion-services"> <title>HP Helion OpenStack(R) Carrier Grade services- functional overview</title>
-<p>The following table outlines the functionality of HP Helion OpenStack(R)  Carrier Grade services based on the type of users - Users and Administrators. For a complete description of these services, see the <xref href="//helion/openstack/carrier/services/overview/" >Services Overview</xref> page.</p>
+<p>The following table outlines the functionality of HP Helion OpenStack(R)  Carrier Grade services based on the type of users - Users and Administrators. For a complete description of these services, see the <xref href="/helion/openstack/carrier/services/overview" >Services Overview</xref> page.</p>
 </section>
 <section id="deploy-arch"> <title>Deployment architecture</title>
 <p>You can deploy HP Helion OpenStack(R) Carrier Grade on a <xref href="http://www.linux-kvm.org/page/Main_Page" scope="external" format="html" >KVM hypervisor</xref>.</p>
