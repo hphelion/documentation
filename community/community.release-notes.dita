@@ -68,61 +68,59 @@
 <p>This release of the Community edition is shipped with the following supported services:</p>
 <table>
 <tgroup cols="3">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<thead>
-<row>
-    <entry>OpenStack(R)-powered capabilities</entry>
-    <entry>API supported</entry>
-    <entry>API version</entry>
-  </row>
-</thead>
-<tbody>
-<row>
-    <entry>Compute (Nova)</entry>
-    <entry>Full support</entry>
-    <entry>v2.0</entry>
-  </row>
-<row>
-    <entry>Object Storage (Swift)</entry>
-    <entry>Full support</entry>
-    <entry>v1.0</entry>
-  </row>
-<row>
-    <entry>Block Storage (Cinder)</entry>
-    <entry>Full support</entry>
-    <entry>v1.0 and v2.0</entry>
-  </row>
-<row>
-    <entry>Networking (Neutron)</entry>
-    <entry>Full support</entry>
-    <entry>v2.0</entry>
-  </row>
-<row>
-    <entry>Image Service (Glance)</entry>
-    <entry>Full support</entry>
-    <entry>v1.0 and v2.0</entry>
-  </row>
-<row>
-    <entry>Identity (Keystone)</entry>
-    <entry>Full support</entry>
-    <entry>v2.0 and v3.0</entry>
-  </row>
-<row>
-    <entry>Dashboard (Horizon)</entry>
-    <entry>Full support</entry>
-    <entry>N/A
-</entry>
-  </row>
-<row>
-    <entry>Orchestration (Heat)</entry>
-    <entry>Full support</entry>
-    <entry>N/A
-</entry>
-  </row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <thead>
+            <row rowsep="1">
+              <entry>OpenStack(R)-powered capabilities</entry>
+              <entry>API supported</entry>
+              <entry>API version</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Compute (Nova)</entry>
+              <entry>Full support</entry>
+              <entry>v2.0</entry>
+            </row>
+            <row>
+              <entry>Object Storage (Swift)</entry>
+              <entry>Full support</entry>
+              <entry>v1.0</entry>
+            </row>
+            <row>
+              <entry>Block Storage (Cinder)</entry>
+              <entry>Full support</entry>
+              <entry>v1.0 and v2.0</entry>
+            </row>
+            <row>
+              <entry>Networking (Neutron)</entry>
+              <entry>Full support</entry>
+              <entry>v2.0</entry>
+            </row>
+            <row>
+              <entry>Image Service (Glance)</entry>
+              <entry>Full support</entry>
+              <entry>v1.0 and v2.0</entry>
+            </row>
+            <row>
+              <entry>Identity (Keystone)</entry>
+              <entry>Full support</entry>
+              <entry>v2.0 and v3.0</entry>
+            </row>
+            <row>
+              <entry>Dashboard (Horizon)</entry>
+              <entry>Full support</entry>
+              <entry>N/A </entry>
+            </row>
+            <row>
+              <entry>Orchestration (Heat)</entry>
+              <entry>Full support</entry>
+              <entry>N/A </entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="recommendations"> <title>Recommendations for HP Helion OpenStack(R) Community</title>
@@ -149,10 +147,8 @@
 <li>
 <p>When issuing Neutron commands from inside the seed VM, we recommend you set the <codeph>LANG</codeph> environment variable to <codeph>C</codeph>.  Add the following line to the appropriate user configuration file:</p>
 
-<codeblock>
-<codeph>export LANG=C
-</codeph>
-</codeblock>
+<codeblock><codeph>export LANG=C
+</codeph></codeblock>
 </li>
 <li>
 <p>We recommend cleaning up any VMs using excess space, by executing the following commands:</p>
@@ -165,13 +161,11 @@
 <li>
 <p>For optimum VM operation and to avoid generating inaccurate error codes, we recommend you not reboot the overcloud controller but rather restart the applicable services by executing the following commands:</p>
 
-<codeblock>
-<codeph>sudo service nova-compute restart
+<codeblock><codeph>sudo service nova-compute restart
 sudo service nova-scheduler restart
 sudo service nova-conductor restart
 sudo service neutron-openvswitch-agent restart
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </li>
 <li>
 <p>It is possible in busier systems that Kibana logging system might not cope with amount of logs collected. You can correct this issue by increasing the heap size specified in the <codeph>/etc/default/elasticsearch</codeph> file from the default 2G to a higher value and restarting elasticsearch service.</p>
@@ -194,13 +188,11 @@ sudo service neutron-openvswitch-agent restart
 <li>
 <p>If after an overcloud controller reboot you determine the VMs are in an ERROR state, execute the following commands to restart the services and remove the error:</p>
 
-<codeblock>
-<codeph>sudo service nova-compute restart
+<codeblock><codeph>sudo service nova-compute restart
 sudo service nova-scheduler restart
 sudo service nova-conductor restart
 sudo service neutron-openvswitch-agent restart
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </li>
 </ul>
 <ol>

@@ -63,92 +63,87 @@ For detailed information, see the [Reference architecture](/helion/community/ref
 -->
 <table>
 <tgroup cols="4">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<thead>
-<row>
-<entry> Network </entry>
-<entry> Description </entry>
-<entry> VLAN type </entry>
-<entry> Server port </entry>
-
-</row>
-</thead>
-<tbody>
-<row>
-<entry> IPMI / iLO </entry>
-<entry> Network for server hardware management </entry>
-<entry> Untagged </entry>
-<entry> IPMI or iLO</entry>
-
-</row>
-<row>
-<entry> Undercloud management </entry>
-<entry> <ul>
-<li>Traffic for undercloud internal OpenStack(R) calls, Glance image downloads, etc.</li>
-<li>Provides access to undercloud API endpoints</li>
-<li>Used to PXE boot overcloud servers</li>
-</ul>
-</entry>
-<entry> Untagged </entry>
-<entry> eth0</entry>
-
-</row>
-<row>
-<entry> Overcloud management </entry>
-<entry> Traffic for overcloud internal OpenStack(R) calls, glance image downloads, etc. </entry>
-<entry> Tagged </entry>
-<entry> eth0</entry>
-
-</row>
-<row>
-<entry> SDN </entry>
-<entry> Network between workload VMs, e.g. carries VxLAN traffic </entry>
-<entry> Tagged </entry>
-<entry> eth0</entry>
-
-</row>
-<row>
-<entry> Storage </entry>
-<entry> iSCSi traffic between VMs and storage products like StoreVirtual </entry>
-<entry> Tagged </entry>
-<entry> eth0</entry>
-
-</row>
-<row>
-<entry> External </entry>
-<entry>
-<ul>
-<li> Connected to internet or intranet</li>
-<li>Provides floating IPs</li>
-</ul>
-</entry>
-<entry> Tagged </entry>
-<entry> eth0</entry>
-
-</row>
-<row>
-<entry> External-API </entry>
-<entry> <ul>
-<li>Connected to internet or intranet</li>
-<li>Provides access to overcloud API endpoints</li>
-</ul>
-</entry>
-<entry> Tagged </entry>
-<entry> eth0</entry>
-
-</row>
-<row>
-<entry> Swift </entry>
-<entry> Communication between swift servers (includes user data)  </entry>
-<entry> Tagged </entry>
-<entry> eth0</entry>
-
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <colspec colname="col4" colsep="1" rowsep="1"/>
+          <thead>
+            <row rowsep="1">
+              <entry> Network </entry>
+              <entry> Description </entry>
+              <entry> VLAN type </entry>
+              <entry> Server port </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> IPMI / iLO </entry>
+              <entry> Network for server hardware management </entry>
+              <entry> Untagged </entry>
+              <entry> IPMI or iLO</entry>
+            </row>
+            <row>
+              <entry> Undercloud management </entry>
+              <entry>
+                <ul>
+                  <li>Traffic for undercloud internal OpenStack(R) calls, Glance image downloads,
+                    etc.</li>
+                  <li>Provides access to undercloud API endpoints</li>
+                  <li>Used to PXE boot overcloud servers</li>
+                </ul>
+              </entry>
+              <entry> Untagged </entry>
+              <entry> eth0</entry>
+            </row>
+            <row>
+              <entry> Overcloud management </entry>
+              <entry> Traffic for overcloud internal OpenStack(R) calls, glance image downloads,
+                etc. </entry>
+              <entry> Tagged </entry>
+              <entry> eth0</entry>
+            </row>
+            <row>
+              <entry> SDN </entry>
+              <entry> Network between workload VMs, e.g. carries VxLAN traffic </entry>
+              <entry> Tagged </entry>
+              <entry> eth0</entry>
+            </row>
+            <row>
+              <entry> Storage </entry>
+              <entry> iSCSi traffic between VMs and storage products like StoreVirtual </entry>
+              <entry> Tagged </entry>
+              <entry> eth0</entry>
+            </row>
+            <row>
+              <entry> External </entry>
+              <entry>
+                <ul>
+                  <li> Connected to internet or intranet</li>
+                  <li>Provides floating IPs</li>
+                </ul>
+              </entry>
+              <entry> Tagged </entry>
+              <entry> eth0</entry>
+            </row>
+            <row>
+              <entry> External-API </entry>
+              <entry>
+                <ul>
+                  <li>Connected to internet or intranet</li>
+                  <li>Provides access to overcloud API endpoints</li>
+                </ul>
+              </entry>
+              <entry> Tagged </entry>
+              <entry> eth0</entry>
+            </row>
+            <row>
+              <entry> Swift </entry>
+              <entry> Communication between swift servers (includes user data) </entry>
+              <entry> Tagged </entry>
+              <entry> eth0</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="config"> <title>Network configuration</title>
@@ -203,16 +198,14 @@ For detailed information, see the [Reference architecture](/helion/community/ref
 </p>
 <p>The following example shows how to select a range of IP addresses from 10.23.144.10 to 10.23.151.254 with a subnet mask of 10.23.144.0/21. To avoid overlap with the default private network range of 10.0.0.0/8, <codeph>OVERCLOUD_FIXED_RANGE_CIDR</codeph> is changed to 10.0.0.0/16.</p>
 <p>During the <xref href="../community/community.install.baremetal.dita" >installation</xref> you must set <codeph>OVERCLOUD_NeutronPublicInterface</codeph> to the name of the VLAN on which the floating IP addresses will reside (you must create this VLAN separately).</p>
-<codeblock>
-  <codeph>export FLOATING_START=10.23.144.10
+<codeblock><codeph>export FLOATING_START=10.23.144.10
 export FLOATING_END=10.23.151.254
 export FLOATING_CIDR=10.23.144.0/21
 export OVERCLOUD_FIXED_RANGE_CIDR=10.0.0.0/16
 export OVERCLOUD_NeutronPublicInterface=vlan1515
 export NeutronPublicInterfaceRawDevice=eth0
 export OVERCLOUD_VIRTUAL_INTERFACE=eth0
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>This example assumes a homogeneous overcloud compute hardware.</p>
 <p>
 <b>Important:</b> IP addresses in the ranges chosen for the undercloud and overcloud must not be used by other nodes
