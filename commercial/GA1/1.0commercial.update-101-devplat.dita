@@ -116,7 +116,7 @@
 <p>
 <b>Note:</b> If the Marketplace service is not installed, see the <xref href="http://docs.hpcloud.com/helion/devplatform/install#install-marketplace" scope="external" format="html" >Helion OpenStack(R) Development Platform Install Guide</xref>.</p>
 </section>
-<section id="update-marketplace"> <title>Download the Marketplace Service</title>
+<section id="update-marketplace2"> <title>Download the Marketplace Service</title>
 <ol>
 <li>
 <p>In the <b>Configure Services</b> panel locate the <b>Marketplace Service</b> item in the Configure Services table and select <b>Download Service</b> and wait for the download to complete.</p>

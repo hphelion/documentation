@@ -40,19 +40,13 @@ To use, given number of zones and the maximum number of disk drives anticipated 
 <row>
 <entry>Number of Zones</entry>
     <entry>
-<required-cleanup remap="center">
 <ph>Minimum Number of Drives</ph>
-</required-cleanup>
 </entry>
     <entry>
-<required-cleanup remap="center">
 <ph>Maximum Number of Drives</ph>
-</required-cleanup>
 </entry>
     <entry>
-<required-cleanup remap="center">
 <ph>Ring Power</ph>
-</required-cleanup>
 </entry>
 </row>
 </thead>

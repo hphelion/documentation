@@ -32,12 +32,12 @@
 <p>
 The following steps ensure the recovery of the lost configuration.
 
-1. Run the  `ceph_client_setup` script (available at [HDN](https://helion.hpwsportal.com)) on each of the controller/compute nodes. (For information on what files need to be copied from  the Ceph cluster node to their respective directories, refer to the script's README file.)
+1. Run the  ceph_client_setup script available at  <xref href ="https://helion.hpwsportal.com" format="html"> HDN</xref> on each of the controller/compute nodes. (For information on what files need to be copied from  the Ceph cluster node to their respective directories, refer to the script's README file.)
 2. To confirm ceph health, run:
 
-     `ceph health`
+     ceph health
 
-3. If you reboot your controller and compute node after running the `ceph_client_setup` script, the patch update for `glance-api.conf`, `nova.conf`, `cinder.conf` might default to the original state. In this case, from each controller and compute node, go to:
+3. If you reboot your controller and compute node after running the ceph_client_setup script, the patch update for glance-api.conf, nova.conf, cinder.conf might default to the original state. In this case, from each controller and compute node, go to:
 
 
         /home/ceph_client_setup/setup_scripts
@@ -72,11 +72,10 @@ The following steps ensure the recovery of the lost configuration.
   <row>
     <entry>Compute Node</entry>
     <entry>/etc/nova/nova.conf</entry>
-    <entry>1. Log in to the <xref href="https://helion.hpwsportal.com" format="html"> HDN</xref>. 
-      <!--A BR tag was used here in the original source.--> 2. Click the workloads category on the left side.
-      <!--A BR tag was used here in the original source.--> 3. Click the storage subcategory to find all the 
-      Ceph related files. <!-- <br /> <b>Filename</b> need ?-->
-    </entry>
+    <entry>1. Log in to the <xref href="https://helion.hpwsportal.com" format="html"> HDN</xref> 2.
+              Click the workloads category on the left side.  3. Click the storage subcategory to
+              find all the Ceph related files. <!-- <br /> Filename need ?-->
+            </entry>
   </row>
 </tbody>
   </tgroup>
@@ -151,12 +150,10 @@ Round up the results to the nearest power of two. Rounding up is optional, but r
 <codeblock>
   <codeph>(200 * 100)
 ----------- = 6667. Nearest power of 2: 8192
- 3
+       3
 </codeph>
 </codeblock>
-<p>
-  <xref type="section" href="#topic3172/top"> Return to Top </xref>
-</p>
+
 </section>
  
 </body>
