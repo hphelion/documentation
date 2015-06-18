@@ -38,7 +38,7 @@
 </ul>
 <p>This page also describes how to <xref type="section" href="#topic6516/Upgrading">upgrade to a new version</xref> of the Windows CLI software.</p>
 <p>
-<xref href="/file/WinCLI-1.3.5.7.zip" >Please download the latest version of the HP Helion Public Cloud CLI software package for Windows PowerShell here (Version 1.3.5.7)</xref>!</p>
+  <xref href="../file/WinCLI-1.3.5.7.zip" scope="external" format="html" >Please download the latest version of the HP Helion Public Cloud CLI software package for Windows PowerShell here (Version 1.3.5.7)</xref>!</p>
 <section id="InstallationPrerequisites"> <title>Installation prerequisites</title>
 <p>The following are prerequisites for installing and running the HP Helion Public Cloud CLI Software for Windows PowerShell.</p>
 </section>
@@ -65,7 +65,7 @@ PS C:\Projects\Outgoing\HP&gt;
 <p>Close the Powershell window and reopen as administrator for the policy changes to take effect.</p>
 </section>
 <section id="RuntheInstallerPackage"> <title>Run the installer package</title>
-<p>Download the latest HP Helion Public Cloud CLI software package for Windows PowerShell.  (See the <xref href="/publiccloud/cli/windows/release-notes" >Release Notes</xref> for details on the current release.)</p>
+<p>Download the latest HP Helion Public Cloud CLI software package for Windows PowerShell.  (See the <xref href="../publiccloud/cli.windows.2.release-notes.dita" >Release Notes</xref> for details on the current release.)</p>
 <p>Launching the Windows installer package loads the following wizard.</p>
 <p>
   <image href="../media/WizardP1.jpg">
