@@ -53,81 +53,62 @@
 <p>This exercise creates the tenants tenant1 and tenant2, and sets up their resource quotas. It also adjusts resource
 quotas for the tenant admin.</p>
 <ol>
-<li>
-<p>List the set of tenants currently defined on the system.
-Select Projects in the Identity Panel section of the Admin tab to open the Projects page.</p>
-
-<p>You should see the two default tenants as illustrated:</p>
-
-<p>
-<image href="../../media/CGH-deploy-set-projects.png"/>
-</p>
-</li>
-<li>
-<p>Create a project named <codeph>tenant1</codeph>. See <xref href="../../CarrierGrade/AdminGuideNew/Projects/carrier-grade.dashboard.projects.create.dita" >Creating and Deleting Projects</xref>.</p>
-
-<p>a. Enter <codeph>tenant1</codeph> as the name and make sure the <b>Enabled</b> option is selected.</p>
-
-<p>b. Select the <b>Quota</b> tab, and fill in the quota values:</p>
-
-<codeblock>
+<li>List the set of tenants currently defined on the system. Select Projects in the Identity Panel
+          section of the Admin tab to open the Projects page.<p>You should see the two default
+            tenants as illustrated:</p><p>
+            <image href="../../media/CGH-deploy-set-projects.png"/>
+          </p></li>
+<li>Create a project named <codeph>tenant1</codeph>. See <xref
+            href="../../CarrierGrade/AdminGuideNew/Projects/carrier-grade.dashboard.projects.create.dita"
+            >Creating and Deleting Projects</xref>.<p>a. Enter <codeph>tenant1</codeph> as the name
+            and make sure the <b>Enabled</b> option is selected.</p><p>b. Select the <b>Quota</b>
+            tab, and fill in the quota values:</p><codeblock>
 <codeph>&lt;img src="/media/CGH-deploy-set-projects-quotas.png"&gt;
 </codeph>
-</codeblock>
-
-<p>
-<b>Note:</b> The resources are presented as a single long list of items. The image above has been edited to present them in a two-column array.</p>
-
-<p>c. Click Create Project to commit the configuration changes.</p>
-</li>
-<li>
-<p>Create a project named <codeph>tenant2</codeph>.</p>
-
-<p>Repeat the step above, this time to create a tenant named tenant2 with the same quota values.</p>
-</li>
-<li>
-<p>Edit the <codeph>admin</codeph> project to adjust the networking resource quotas. See <xref href="../../CarrierGrade/AdminGuideNew/Projects/carrier-grade.managing.projects.dita" >Modifying Projects</xref>.</p>
-
-<p>On the <b>Quota</b> tab, make sure that the networking resources are as follows:</p>
-
-<table>
-<tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<thead>
-<row>
-<entry>Field</entry>
-<entry>Value</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>Floating IPs</entry>
-<entry>50</entry>
-</row>
-<row>
-<entry>Networks</entry>
-<entry>10</entry>
-</row>
-<row>
-<entry>Ports</entry>
-<entry>50</entry>
-</row>
-<row>
-<entry>Routers</entry>
-<entry>10</entry>
-</row>
-<row>
-<entry>Subnets</entry>
-<entry>32</entry>
-</row>
-</tbody>
-</tgroup>
-</table>
-</li>
-<li>
-<p>Click Save to commit the configuration changes.</p>
-</li>
+</codeblock><p>
+            <b>Note:</b> The resources are presented as a single long list of items. The image above
+            has been edited to present them in a two-column array.</p><p>c. Click Create Project to
+            commit the configuration changes.</p></li>
+<li>Create a project named <codeph>tenant2</codeph>.<p>Repeat the step above, this time to create a
+            tenant named tenant2 with the same quota values.</p></li>
+<li>Edit the <codeph>admin</codeph> project to adjust the networking resource quotas. See <xref
+            href="../../CarrierGrade/AdminGuideNew/Projects/carrier-grade.managing.projects.dita"
+            >Modifying Projects</xref>.<p>On the <b>Quota</b> tab, make sure that the networking
+            resources are as follows:</p><table>
+            <tgroup cols="2">
+              <colspec colname="col1"/>
+              <colspec colname="col2"/>
+              <thead>
+                <row>
+                  <entry>Field</entry>
+                  <entry>Value</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>Floating IPs</entry>
+                  <entry>50</entry>
+                </row>
+                <row>
+                  <entry>Networks</entry>
+                  <entry>10</entry>
+                </row>
+                <row>
+                  <entry>Ports</entry>
+                  <entry>50</entry>
+                </row>
+                <row>
+                  <entry>Routers</entry>
+                  <entry>10</entry>
+                </row>
+                <row>
+                  <entry>Subnets</entry>
+                  <entry>32</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table></li>
+<li>Click Save to commit the configuration changes.</li>
 </ol>
 <p>The two projects are available. Quotas are established for both tenants, and updated for the admin project.</p>
 </section>
@@ -136,20 +117,17 @@ Select Projects in the Identity Panel section of the Admin tab to open the Proje
 This exercise creates the users <codeph>user1</codeph> and <codeph>user2</codeph> and associates them with the corresponding tenants.</p>
 <ol>
 <li>
-<p>
-<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Identity</b> dashboard, then the <b>Users</b> link to 1. list the users currently defined on the system.</p>
-</li>
-<li>
-<p>Create user <codeph>user1</codeph>. See <xref href="../../CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.users.create.dita" >Creating and Deleting Users</xref>. Assign <codeph>user1</codeph> to the project <codeph>tenant1</codeph>.</p>
-</li>
-<li>
-<p>Create user <codeph>user2</codeph>.</p>
-
-<p>Repeat the step above, this time to create a user named <codeph>user2</codeph> associated with project <codeph>tenant2</codeph>.</p>
-</li>
+          <xref
+            href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
+            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+<li>Click the <b>Identity</b> dashboard, then the <b>Users</b> link to 1. list the users currently
+          defined on the system.</li>
+<li>Create user <codeph>user1</codeph>. See <xref
+            href="../../CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.users.create.dita"
+            >Creating and Deleting Users</xref>. Assign <codeph>user1</codeph> to the project
+            <codeph>tenant1</codeph>.</li>
+<li>Create user <codeph>user2</codeph>.<p>Repeat the step above, this time to create a user named
+              <codeph>user2</codeph> associated with project <codeph>tenant2</codeph>.</p></li>
 </ol>
 <p>The two new users now exist in the system.</p>
 </section>
@@ -159,30 +137,19 @@ This exercise creates the users <codeph>user1</codeph> and <codeph>user2</codeph
 <p>The scenarios assume that two provider networks, provider-net-a and provider-net-b, have already been set up as part of system installation. For convenience, the instructions to set up these provider networks are repeated here. If you already have two provider networks with different names, you can use them instead, substituting their names in the following exercises.</p>
 <ol>
 <li>
-<p>
-<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b> link.</p>
-
-<p>The network(s) for the selected project appear.</p>
-</li>
-<li>
-<p>Select the <b>Provider Networks</b> tab.</p>
-</li>
-<li>
-<p>Click <b>Create Network</b>. See <xref href="../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita" >Creating and Deleting Provider Networks</xref>.</p>
-
-<p>Set the <b>Name</b> to <codeph>provider-net-a</codeph>, and set the Type to <codeph>vlan</codeph>.</p>
-</li>
-<li>
-<p>Click <b>Create Provider Network</b>.</p>
-</li>
-<li>
-<p>Repeat the steps to create a provider network named provider-net-b.</p>
-
-<p>Set the <b>Name</b> to <codeph>provider-net-b</codeph>, and set the Type to <codeph>vlan</codeph>.</p>
-</li>
+          <xref
+            href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
+            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+<li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b>
+            link.<p>The network(s) for the selected project appear.</p></li>
+<li>Select the <b>Provider Networks</b> tab.</li>
+<li>Click <b>Create Network</b>. See <xref
+            href="../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita"
+            >Creating and Deleting Provider Networks</xref>.<p>Set the <b>Name</b> to
+              <codeph>provider-net-a</codeph>, and set the Type to <codeph>vlan</codeph>.</p></li>
+<li>Click <b>Create Provider Network</b>.</li>
+<li>Repeat the steps to create a provider network named provider-net-b.<p>Set the <b>Name</b> to
+              <codeph>provider-net-b</codeph>, and set the Type to <codeph>vlan</codeph>.</p></li>
 </ol>
 <p>After creating a provider network of the VLAN type, you can assign one or more segmentation ranges consisting of a set of consecutive VLAN IDs. Segmentation ranges are required in order to set up tenant networks.</p>
 </section>
@@ -195,70 +162,43 @@ This exercise creates the users <codeph>user1</codeph> and <codeph>user2</codeph
 <p>To support the six tenant networks in the deployment scenarios, six VLAN IDs are needed. Several large segmentation ranges are defined, using both provider networks, so that more than enough VLAN IDs are available to meet the requirements.</p>
 <ol>
 <li>
-<p>
-<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b> link.</p>
-
-<p>The network(s) for the selected project appear.</p>
-</li>
-<li>
-<p>Select the <b>Provider Networks</b> tab.</p>
-</li>
-<li>
-<p>Add a segmentation range and assign it to a tenant.</p>
-
-<p>On the <b>Provider Network Overview</b> page, click <b>Create Range</b> to open the <b>Create Segmentation Range</b> page. Complete the fields as required. See <xref href="../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita" >Creating a Segmentation Range</xref>.</p>
-
-<p>
-<image href="../../media/CGH-deploy-set-projects-segment.png"/>
-</p>
-</li>
-<li>
-<p>Click Create Segmentation Range to commit the changes.</p>
-</li>
-<li>
-<p>Add a segmentation range on provider-net-a for use by <codeph>tenant2</codeph>.
-On the <b>Provider Network Overview</b> page, click <b>Create Range</b> to open the <b>Create Segmentation Range</b> page. Fill in the fields as shown:</p>
-
-<p>
-<image href="../../media/CGH-deploy-set-projects-segment2.png"/>
-</p>
-</li>
-<li>
-<p>Add a segmentation range on provider-net-a for use by the admin project.</p>
-
-<p>This step assigns a segmentation range with a single VLAN ID (10) for use only by the admin tenant. Later in this exercise, the admin tenant uses this VLAN ID for the external-net tenant network.</p>
-
-<p>On the <b>Provider Network Overview</b> page, click <b>Create Range</b> to display the <b>Create Segmentation Range</b> page. Fill in the fileds as shown:</p>
-
-<p>
-<image href="../../media/CGH-deploy-set-projects-segment3.png"/>
-</p>
-</li>
-<li>
-<p>Click <b>Create Segmentation Range</b> to commit the changes.</p>
-
-<p>This creates a segmentation range on provider-net-a for use by admin. The range includes a single VLAN ID (10). For reference, this range is assigned the name pnet-a-common.</p>
-</li>
-<li>
-<p>Edit provider-net-b to add a segmentation range.</p>
-
-<p>On the <b>Provider Networks</b> tab, click <codeph>provider-net-b</codeph>.</p>
-</li>
-<li>
-<p>Add a segmentation range on <codeph>provider-net-b</codeph> for use by all projects.</p>
-
-<p>On the <b>Provider Network Overview</b> page, click <b>Create Range</b> to open the <b>Create Segmentation Range</b> page. Fill in the fields as shown:</p>
-
-<p>
-<image href="../../media/CGH-deploy-set-projects-segment4.png"/>
-</p>
-</li>
-<li>
-<p>Click <b>Create Segmentation Range</b> to commit the changes.</p>
-</li>
+          <xref
+            href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
+            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+<li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b>
+            link.<p>The network(s) for the selected project appear.</p></li>
+<li>Select the <b>Provider Networks</b> tab.</li>
+<li>Add a segmentation range and assign it to a tenant.<p>On the <b>Provider Network Overview</b>
+            page, click <b>Create Range</b> to open the <b>Create Segmentation Range</b> page.
+            Complete the fields as required. See <xref
+              href="../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita"
+              >Creating a Segmentation Range</xref>.</p><p>
+            <image href="../../media/CGH-deploy-set-projects-segment.png"/>
+          </p></li>
+<li>Click Create Segmentation Range to commit the changes.</li>
+<li>Add a segmentation range on provider-net-a for use by <codeph>tenant2</codeph>. On the
+            <b>Provider Network Overview</b> page, click <b>Create Range</b> to open the <b>Create
+            Segmentation Range</b> page. Fill in the fields as shown:<p>
+            <image href="../../media/CGH-deploy-set-projects-segment2.png"/>
+          </p></li>
+<li>Add a segmentation range on provider-net-a for use by the admin project.<p>This step assigns a
+            segmentation range with a single VLAN ID (10) for use only by the admin tenant. Later in
+            this exercise, the admin tenant uses this VLAN ID for the external-net tenant
+            network.</p><p>On the <b>Provider Network Overview</b> page, click <b>Create Range</b>
+            to display the <b>Create Segmentation Range</b> page. Fill in the fileds as shown:</p><p>
+            <image href="../../media/CGH-deploy-set-projects-segment3.png"/>
+          </p></li>
+<li>Click <b>Create Segmentation Range</b> to commit the changes.<p>This creates a segmentation
+            range on provider-net-a for use by admin. The range includes a single VLAN ID (10). For
+            reference, this range is assigned the name pnet-a-common.</p></li>
+<li>Edit provider-net-b to add a segmentation range.<p>On the <b>Provider Networks</b> tab, click
+              <codeph>provider-net-b</codeph>.</p></li>
+<li>Add a segmentation range on <codeph>provider-net-b</codeph> for use by all projects.<p>On the
+              <b>Provider Network Overview</b> page, click <b>Create Range</b> to open the <b>Create
+              Segmentation Range</b> page. Fill in the fields as shown:</p><p>
+            <image href="../../media/CGH-deploy-set-projects-segment4.png"/>
+          </p></li>
+<li>Click <b>Create Segmentation Range</b> to commit the changes.</li>
 </ol>
 <p>This creates a shared segmentation range on provider-net-b. Shared segmentation ranges contain VLAN IDs that can be used by any tenant. This one includes VLAN IDs 568?599. For reference, this range is assigned the name <codeph>pnet-b-common</codeph>.</p>
 </section>
@@ -268,112 +208,71 @@ On the <b>Provider Network Overview</b> page, click <b>Create Range</b> to open 
 <p>The admin user creates IP subnets for the internal and external networks only. IP subnets for the tenant management networks are created by the users user1 and user2 later in the exercises (see Setting Up the Management Network).</p>
 <ol>
 <li>
-<p>
-<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
-</li>
+          <xref
+            href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
+            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+<li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b>
+          link.</li>
 <li>
-<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b> link.</p>
-</li>
-<li>
-<p>
-<xref href="../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.create.dita" >Create a network</xref> named <codeph>tenant1-mgmt-net</codeph>.</p>
-
-<p>The <codeph>tenant1-mgmt-net</codeph> network is created so that VMs on tenant1 can connect to an OpenStack(R) virtual router, which is added to the tenant and then associated with this network later in the exercises. This provides the VMs with access to OpenStack(R) services, and optionally to an external network, as shown in the scenario diagrams.</p>
-
-<p>Fill in the fields as shown:</p>
-
-<p>&lt;a href="media/CGH-deploy-set-tenant-net.png&gt;</p>
-</li>
-<li>
-<p>Click <b>Create Network</b> to commit the changes.</p>
-</li>
-<li>
-<p>Create the tenant network <codeph>tenant2-mgmt-net</codeph>.</p>
-
-<p>The tenant2-mgmt-net network is added so that VMs on tenant2 can connect to an OpenStack(R) virtual router implemented later on tenant2.</p>
-
-<p>From the <b>Networks</b> tab, click <b>Create Network</b> and fill in the form as shown:</p>
-
-<p>&lt;a href="media/CGH-deploy-set-tenant-net2.png&gt;</p>
-</li>
-<li>
-<p>Click <b>Create Network</b> to commit the changes.</p>
-</li>
-<li>
-<p>Create and configure the tenant network <codeph>internal-net</codeph>.</p>
-
-<p>The internal-net network is added to provide a connection between the two VMs created in the scenarios. As a network intended for general use, it is created on the admin tenant. To make it accessible to both tenants, it is set up as a shared network.</p>
-
-<p>a. Create the network.</p>
-
-<p>From the <b>Networks</b> tab, click <b>Create Network</b> and fill in the form as shown:</p>
-
-<p>&lt;a href="media/CGH-deploy-set-tenant-net3.png&gt;</p>
-
-<p>Click <b>Create Network</b> to commit the changes.</p>
-
-<p>b. Define a subnet on the new network.</p>
-
-<p>A subnet on internal-net is required by the routing scenario, to support Layer 3 routing between the VMs. The subnet is not used by the bridging scenario.</p>
-
-<p>On the <b>Network</b> tab, click the name of the new network you just created.</p>
-
-<p>c. Create the IP subnet internal-subnet.</p>
-
-<p>Click <b>Create Subnet</b> to open the Subnet tab. Fill in the form as shown:</p>
-
-<p>&lt;a href="media/CGH-deploy-set-tenant-net4.png&gt;</p>
-
-<p>d. Define the IP subnet's details.</p>
-
-<p>Select the Subnet Detail tab, and fill in the form as shown:</p>
-
-<p>&lt;a href="media/CGH-deploy-set-tenant-net5.png&gt;</p>
-
-<p>
-<b>Note:</b> The VLAN field is used here to indicate that packets sent to this subnet by any virtual machine must be tagged with VLAN ID 5.</p>
-
-<p>e, Click Create to commit the changes.</p>
-</li>
-<li>
-<p>Create and configure the tenant network <codeph>external-net</codeph>.</p>
-
-<p>The external-net network is added so that an outside network can connect to virtual machines on tenant1 or tenant2. This could be used for programming or provisioning access.</p>
-
-<p>Note: The bridging and routing scenarios do not demonstrate external access to the VMs. For these scenarios, the external-net network is not required.</p>
-
-<p>a. Create the tenant network.</p>
-
-<p>From the Networks tab, click Create Network and fill in the form as illustrated below:</p>
-
-<p>&lt;a href="media/CGH-deploy-set-tenant-net6.png&gt;</p>
-
-<p>b. Click <b>Create Network</b> to commit the changes.</p>
-
-<p>c. Define a subnet on the new network.</p>
-
-<p>On the <b>Network</b> tab, click the name of the new network you just created. The Network Overview page appears.</p>
-
-<p>d. Create the IP subnet <codeph>external-subnet</codeph>.</p>
-
-<p>Click <b>Create Subnet</b> to open the <b>Create Subnet</b> dialog box. Fill in the fields as shown:</p>
-
-<p>&lt;a href="media/CGH-deploy-set-tenant-net7.png&gt;</p>
-
-<p>e. Define the IP subnet's details.</p>
-
-<p>Select the <b>Subnet Detail</b> tab, and fill in the fields as shown:</p>
-
-<p>&lt;a href="media/CGH-deploy-set-tenant-net8.png&gt;</p>
-
-<p>For a network with System Managed Subnet selected, an IP address is automatically allocated for any virtual ethernet interface attached to the network. If Enable DHCP is also selected, a DHCP server is activated, so that the allocated address is offered in response to a DHCP request.</p>
-
-<p>g. Click <b>Create</b> to commit the changes.</p>
-</li>
+          <xref
+            href="../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.create.dita"
+            >Create a network</xref> named <codeph>tenant1-mgmt-net</codeph>.<p>The
+              <codeph>tenant1-mgmt-net</codeph> network is created so that VMs on tenant1 can
+            connect to an OpenStack(R) virtual router, which is added to the tenant and then
+            associated with this network later in the exercises. This provides the VMs with access
+            to OpenStack(R) services, and optionally to an external network, as shown in the
+            scenario diagrams.</p><p>Fill in the fields as shown:</p><p><image
+              href="../../media/CGH-deploy-set-tenant-net.png" id="image_nm2_mrg_ks"/></p></li>
+<li>Click <b>Create Network</b> to commit the changes.</li>
+<li>Create the tenant network <codeph>tenant2-mgmt-net</codeph>.<p>The tenant2-mgmt-net network is
+            added so that VMs on tenant2 can connect to an OpenStack(R) virtual router implemented
+            later on tenant2.</p><p>From the <b>Networks</b> tab, click <b>Create Network</b> and
+            fill in the form as shown:</p><p><image
+              href="../../media/CGH-deploy-set-tenant-net2.png" id="image_hmj_prg_ks"/></p></li>
+<li>Click <b>Create Network</b> to commit the changes.</li>
+<li>Create and configure the tenant network <codeph>internal-net</codeph>.<p>The internal-net
+            network is added to provide a connection between the two VMs created in the scenarios.
+            As a network intended for general use, it is created on the admin tenant. To make it
+            accessible to both tenants, it is set up as a shared network.</p><p>a. Create the
+            network.</p><p>From the <b>Networks</b> tab, click <b>Create Network</b> and fill in the
+            form as shown:</p><p><image href="../../media/CGH-deploy-set-tenant-net3.png"
+              id="image_p3x_srg_ks"/></p><p>Click <b>Create Network</b> to commit the
+            changes.</p><p>b. Define a subnet on the new network.</p><p>A subnet on internal-net is
+            required by the routing scenario, to support Layer 3 routing between the VMs. The subnet
+            is not used by the bridging scenario.</p><p>On the <b>Network</b> tab, click the name of
+            the new network you just created.</p><p>c. Create the IP subnet
+            internal-subnet.</p><p>Click <b>Create Subnet</b> to open the Subnet tab. Fill in the
+            form as shown:</p><p><image href="../../media/CGH-deploy-set-tenant-net4.png"
+              id="image_w12_xrg_ks"/></p><p>d. Define the IP subnet's details.</p><p>Select the
+            Subnet Detail tab, and fill in the form as shown:</p><p><image
+              href="../../media/CGH-deploy-set-tenant-net5.png" id="image_iws_zrg_ks"/></p><p>
+            <b>Note:</b> The VLAN field is used here to indicate that packets sent to this subnet by
+            any virtual machine must be tagged with VLAN ID 5.</p><p>e, Click Create to commit the
+            changes.</p></li>
+<li>Create and configure the tenant network <codeph>external-net</codeph>.<p>The external-net
+            network is added so that an outside network can connect to virtual machines on tenant1
+            or tenant2. This could be used for programming or provisioning access.</p><p>Note: The
+            bridging and routing scenarios do not demonstrate external access to the VMs. For these
+            scenarios, the external-net network is not required.</p><p>a. Create the tenant
+            network.</p><p>From the Networks tab, click Create Network and fill in the form as
+            illustrated below:</p><p><image href="../../media/CGH-deploy-set-tenant-net6.png"
+              id="image_gj4_csg_ks"/></p><p>b. Click <b>Create Network</b> to commit the
+            changes.</p><p>c. Define a subnet on the new network.</p><p>On the <b>Network</b> tab,
+            click the name of the new network you just created. The Network Overview page
+            appears.</p><p>d. Create the IP subnet <codeph>external-subnet</codeph>.</p><p>Click
+              <b>Create Subnet</b> to open the <b>Create Subnet</b> dialog box. Fill in the fields
+            as shown:</p><p><image href="../../media/CGH-deploy-set-tenant-net7.png"
+              id="image_cqx_dsg_ks"/></p><p>e. Define the IP subnet's details.</p><p>Select the
+              <b>Subnet Detail</b> tab, and fill in the fields as shown:</p><p><image
+              href="../../media/CGH-deploy-set-tenant-net8.png" id="image_yzs_fsg_ks"/></p><p>For a
+            network with System Managed Subnet selected, an IP address is automatically allocated
+            for any virtual ethernet interface attached to the network. If Enable DHCP is also
+            selected, a DHCP server is activated, so that the allocated address is offered in
+            response to a DHCP request.</p><p>g. Click <b>Create</b> to commit the changes.</p></li>
 </ol>
 <p>The external and internal tenant networks are set up and ready to be used. The tenant management networks are available, but their IP subnets have yet to be created.</p>
 <p>To display the current network topology for the admin tenant, click <b>Network Topology</b> in the <b>Manage Network</b> section of the <b>Project</b> tab.</p>
-<p>&lt;a href="media/CGH-deploy-set-tenant-net9.png&gt;</p>
+      <p><image href="../../media/CGH-deploy-set-tenant-net9.png" id="image_dhn_hsg_ks"/></p>
 <p>This shows networks owned by the admin project. To see the topology for networks owned by another project, log in as the user associated with that project.</p>
 <p>The tenant networks are assigned segmentation IDs automatically. To view the assigned IDs, display the Details page
 for the provider network.</p>
@@ -382,24 +281,20 @@ for the provider network.</p>
 <p>This task defines two virtual machine resource profiles, or flavors, for use when launching virtual machines.</p>
 <ol>
 <li>
-<p>
-<xref href="../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.dita" >Define the virtual machine flavor</xref> <codeph>example-guest.tiny</codeph>.</p>
-
-<p>a. In the Create Flavor screen, fill the fields as shown:</p>
-
-<p>&lt;a href="media/CGH-deploy-set-flavor.png&gt;</p>
-
-<p>b. Click <b>Create Flavor</b> to commit the flavor definition.</p>
-
-<p>The virtual machine flavor <codeph>example-guest.tiny</codeph> is created with an automatic ID. New virtual machines using this flavor get allocated 512 MB of memory, no disks, and one dedicated virtual CPU.</p>
-</li>
-<li>
-<p>Define the virtual machine flavor <codeph>example-guest.small</codeph>.</p>
-
-<p>Repeat the step above to create this new flavor, this time allocating two virtual CPUs.</p>
-
-<p>The virtual machine flavor example-guest.small is created with automatic ID. New virtual machines using this flavor get allocated 512 MB of memory, no disks, and two dedicated virtual CPUs.</p>
-</li>
+          <xref
+            href="../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.dita"
+            >Define the virtual machine flavor</xref>
+          <codeph>example-guest.tiny</codeph>.<p>a. In the Create Flavor screen, fill the fields as
+            shown:</p><p><image href="../../media/CGH-deploy-set-flavor.png" id="image_azq_jsg_ks"
+            /></p><p>b. Click <b>Create Flavor</b> to commit the flavor definition.</p><p>The
+            virtual machine flavor <codeph>example-guest.tiny</codeph> is created with an automatic
+            ID. New virtual machines using this flavor get allocated 512 MB of memory, no disks, and
+            one dedicated virtual CPU.</p></li>
+<li>Define the virtual machine flavor <codeph>example-guest.small</codeph>.<p>Repeat the step above
+            to create this new flavor, this time allocating two virtual CPUs.</p><p>The virtual
+            machine flavor example-guest.small is created with automatic ID. New virtual machines
+            using this flavor get allocated 512 MB of memory, no disks, and two dedicated virtual
+            CPUs.</p></li>
 </ol>
 <p>Note: The flavor <codeph>example-guest.tiny</codeph> is not used in the scenarios. All the instances in the scenarios require the extra CPU provided by <codeph>example-guest.small</codeph> to support AVP network interfaces.</p>
 </section>
@@ -408,23 +303,17 @@ for the provider network.</p>
 <p>This example assumes that a guest disk image named <codeph>example-guest.img</codeph> is available on the file system of the active controller. The guest image is available as part of HP Helion OpenStack(R) Carrier Grade.</p>
 <p>The image must be uploaded to the Image Operations (Glance) service, the OpenStack(R) image deployment service, so that it can be used to launch new virtual machines.</p>
 <ol>
+<li>List the images available on the system.<p>Select <b>Images</b> in the <b>System Panel</b>
+            section of the <b>Admin</b> tab to open the <b>Images</b> page.</p><p>Since no images
+            have been defined yet, an empty list is displayed.</p></li>
 <li>
-<p>List the images available on the system.</p>
-
-<p>Select <b>Images</b> in the <b>System Panel</b> section of the <b>Admin</b> tab to open the <b>Images</b> page.</p>
-
-<p>Since no images have been defined yet, an empty list is displayed.</p>
-</li>
-<li>
-<p>
-<xref href="../../CarrierGrade/AdminGuideNew/Images/carrier-grade.dashboard.images.create.dita" >Upload the guest image</xref> to the Image Operations service.</p>
-
-<p>a. Click <b>Create Image</b> and fill in the form as shown:</p>
-
-<p>&lt;a href="media/CGH-deploy-set-image.png&gt;</p>
-
-<p>b. Click Create Image to upload the guest image.</p>
-</li>
+          <xref
+            href="../../CarrierGrade/AdminGuideNew/Images/carrier-grade.dashboard.images.create.dita"
+            >Upload the guest image</xref> to the Image Operations service.<p>a. Click <b>Create
+              Image</b> and fill in the form as shown: </p><p><image
+              href="../../media/CGH-deploy-set-image.png" id="image_pmt_lsg_ks"/></p><p>&lt;a
+            href="media/CGH-deploy-set-image.png&gt;</p><p>b. Click Create Image to upload the guest
+            image.</p></li>
 </ol>
 <p>The image <codeph>example-guest</codeph> is available now.</p>
 <p>

@@ -26,11 +26,8 @@
 <p>This task assumes that provider networks have already been created in order to unlock the compute nodes and make the system operational.</p>
 <p>The scenarios require two provider networks of the VLAN type.</p>
 <ol>
-<li>
-<p>Create segmentation ranges on provider network <codeph>provider-net-a</codeph>.</p>
-
-<codeblock>
-<codeph>neutron providernet-range-create provider-net-a \
+<li>Create segmentation ranges on provider network
+        <codeph>provider-net-a</codeph>.<codeblock><codeph>neutron providernet-range-create provider-net-a \
 --name pnet-a-common --description "External network access" --range 10-10
 
 neutron providernet-range-create provider-net-a \
@@ -40,20 +37,12 @@ neutron providernet-range-create provider-net-a \
 neutron providernet-range-create provider-net-a \
 --name pnet-a-tenant2 --tenant-id ${tenant2_UUID} --description "Shared internal network" \
 --range 664-680
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create segmentation ranges on <codeph>provider-net-b</codeph>.</p>
-
-<codeblock>
-<codeph>neutron providernet-range-create provider-net-b \
+</codeph></codeblock></li>
+<li>Create segmentation ranges on
+          <codeph>provider-net-b</codeph>.<codeblock><codeph>neutron providernet-range-create provider-net-b \
 --name pnet-b-common --shared --description "External network access" --range 568-599
-</codeph>
-</codeblock>
-
-<p>The segmentation ranges are set.</p>
-</li>
+</codeph></codeblock><p>The
+          segmentation ranges are set.</p></li>
 </ol>
 <p>
   <xref type="section" href="#topic1499/top"> Return to Top </xref>
