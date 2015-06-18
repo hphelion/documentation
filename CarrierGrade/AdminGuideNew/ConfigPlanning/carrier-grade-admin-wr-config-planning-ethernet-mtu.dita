@@ -86,10 +86,8 @@ VLAN tag is present.</p>
 </li>
 </ul>
 <p>You can configure the MTU size from the web management interface when creating or modifying data interfaces and provider networks. On the CLI, use the option --mtu to modify the MTU size. For example:</p>
-<codeblock>
-  <codeph>    neutron providernet-create common-net --type vlan --mtu 9216
-</codeph>
-</codeblock>
+<codeblock><codeph> neutron providernet-create common-net --type vlan --mtu 9216
+</codeph></codeblock>
 <p>
   <xref type="section" href="#topic5626/top"> Return to Top </xref>
 </p>

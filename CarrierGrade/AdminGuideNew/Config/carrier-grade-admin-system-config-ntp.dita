@@ -34,82 +34,50 @@
 <section id="horizon"> <title>Changing the IP using the Horizon dashboard</title>
 <ol>
 <li>
-<p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
-
-<ul>
-<li>Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.</li>
-</ul>
-<p>The <b>System Configuration</b> pane is available from the System Panel section of the Admin menu.</p>
-</li>
+          <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
+            OpenStack(R) Horizon Dashboard</xref>.<ul>
+            <li>Use the IP address for the appropriate region where you want to make the change,
+              either: the hLinux region or the Wind River Linux region.</li>
+          </ul><p>The <b>System Configuration</b> pane is available from the System Panel section of
+            the Admin menu.</p></li>
+<li>Select the <b>NTP</b> tab.<p>The <b>NTP</b> page appears, showing the currently defined NTP
+            servers and their IP addresses.</p></li>
+<li>Click <b>Edit NTP</b>.<p>The <b>Edit NTP</b> dialog box appears.</p></li>
+<li>Replace the NTP Server IP addresses or names with different ones as required.<p>If you specify
+            the NTP servers using FQDNs you must have at least one valid DNS server defined on your
+            system.</p></li>
+<li>Click <b>Save</b>.<p>This raises major alarms against the controllers and services. You can view
+            the alarms on the Fault Management page.</p></li>
+<li>Lock then unlock the controllers to clear the alarms.<p>For more information, see <xref
+              href="../Config/carrier-grade-admin-system-config-ntp.dita">Locking and Unlocking a
+              System</xref>.</p><p>Wait for the host to become available. It is updated with the new
+            NTP server addresses, and its error message is cleared.</p></li>
+<li>Perform a swact on the active controller.<p>Click <b>More</b> &gt; <b>Swact Host</b> for the
+            active controller.</p></li>
 <li>
-<p>Select the <b>NTP</b> tab.</p>
-
-<p>The <b>NTP</b> page appears, showing the currently defined NTP servers and their IP addresses.</p>
-</li>
-<li>
-<p>Click <b>Edit NTP</b>.</p>
-
-<p>The <b>Edit NTP</b> dialog box appears.</p>
-</li>
-<li>
-<p>Replace the NTP Server IP addresses or names with different ones as required.</p>
-
-<p>If you specify the NTP servers using FQDNs you must have at least one valid DNS server defined on your system.</p>
-</li>
-<li>
-<p>Click <b>Save</b>.</p>
-
-<p>This raises major alarms against the controllers and services. You can view the alarms on the Fault Management page.</p>
-</li>
-<li>
-<p>Lock then unlock the controllers to clear the alarms.</p>
-
-<p>For more information, see <xref href="../Config/carrier-grade-admin-system-config-ntp.dita" >Locking and Unlocking a System</xref>.</p>
-
-<p>Wait for the host to become available. It is updated with the new NTP server addresses, and its error message is cleared.</p>
-</li>
-<li>
-<p>Perform a swact on the active controller.</p>
-
-<p>Click <b>More</b> &gt; <b>Swact Host</b> for the active controller.</p>
-</li>
-<li>
-<p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the original controller</xref>, which is in standby mode.</p>
-
-<p>Wait for the lock operation to be completed.</p>
-</li>
-<li>
-<p>Unlock the original controller.</p>
-
-<p>Wait for it to become available. It is updated with the new NTP server addresses, and its error message is cleared.</p>
-</li>
-<li>
-<p>Make sure that the 250.001 Configuration out-of-date alarms are cleared for both controllers.</p>
-</li>
+          <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Lock
+            the original controller</xref>, which is in standby mode.<p>Wait for the lock operation
+            to be completed.</p></li>
+<li>Unlock the original controller.<p>Wait for it to become available. It is updated with the new
+            NTP server addresses, and its error message is cleared.</p></li>
+<li>Make sure that the 250.001 Configuration out-of-date alarms are cleared for both
+          controllers.</li>
 </ol>
 </section>
 <section id="cli"> <title>Changing the IP using the CLI</title>
 <p>To view the existing NTP server configuration, use the following command.</p>
-<codeblock>
-  <codeph>system ntp-show
-</codeph>
-</codeblock>
+<codeblock><codeph>system ntp-show
+</codeph></codeblock>
 <p>To change the NTP server IP addresses, use the following command syntax. The <codeph>ntpservers</codeph> option takes a comma-delimited list of NTP server names.</p>
-<codeblock>
-  <codeph>system ntp-modify \
+<codeblock><codeph>system ntp-modify \
 ntpservers=server_1[,server_2][,server_3] action=apply
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>For example:</p>
-<codeblock>
-  <codeph>system ntp-modify \
+<codeblock><codeph>system ntp-modify \
 ntpservers=0.north-america.pool.ntp.org,\
 0.north-america.pool.ntp.org,0.north-america.pool.ntp.org \
 action=apply
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>After changing the NTP server configuration, you must lock and unlock both controllers. This process requires a <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#swact" >swact on the controllers</xref>.</p>
 <p>
   <xref type="section" href="#topic3229/top"> Return to Top </xref>

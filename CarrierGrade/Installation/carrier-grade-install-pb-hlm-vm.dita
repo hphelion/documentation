@@ -37,10 +37,8 @@
               <codeph>cg-hos-dcn-vsd.tar.gz.gpg</codeph> to the <codeph>/home/images</codeph>
             directory.</p><p>c. Decrypt and untar the PGP file using password
               <codeph>cghelion</codeph> when
-            prompted.</p><codeblock>
-<codeph>gpg -d cg-hos-dcn.tar.gz.gpg | tar -xzvf
-</codeph>
-</codeblock><p>d.
+            prompted.</p><codeblock><codeph>gpg -d cg-hos-dcn.tar.gz.gpg | tar -xzvf
+</codeph></codeblock><p>d.
             Copy the <codeph>infra-ansible-playbooks</codeph> file to <codeph>/root</codeph>. e.
             Decrypt and untar the file using password <codeph>cghelion</codeph> when
             prompted.</p><p>f. Copy the <codeph>cg-hos.tar.gz.gpg</codeph> file to
@@ -48,13 +46,11 @@
             the <codeph>cg-hos-dcn-vsc.tar.gz.gpg</codeph> file to
             <codeph>/root/cg</codeph>.</p><p>h. Copy the files from the
               <codeph>Patches/build-33</codeph>
-            folder</p><codeblock>
-<codeph>hnewcloud.sh
+            folder</p><codeblock><codeph>hnewcloud.sh
 ansible.cfg
 ilopxebootonce.py
 venom-patch.tar.gz
-</codeph>
-</codeblock><p>i.
+</codeph></codeblock><p>i.
             Extract the <codeph>venom-patch.tar.gz</codeph> and follow the readme file.</p><p>The
               <codeph>cg-hlm.qcow2</codeph> and <codeph>VSD-3.0.0_HP_r3.0_16.qcow2</codeph> are in
             the <codeph>/home/images</codeph> folder. Refer to the <codeph>group_vars/all</codeph>
@@ -64,8 +60,7 @@ venom-patch.tar.gz
           Comments added in the file explain each variable.</li>
 <li>Check the hosts file <codeph>/root/infra-ansible-playbooks/hosts</codeph> file and make sure it
           appears similar to the following. Make sure the VSD IP (DCM network) is
-          correct.<codeblock>
-<codeph>Update the vsd CLM IP in this file
+          correct.<codeblock><codeph>Update the vsd CLM IP in this file
 [vsd]
 10.200.50.21 ansible_ssh_user=root ansible_ssh_pass=Alcateldc
 
@@ -73,8 +68,7 @@ venom-patch.tar.gz
 
 [hlm_kvm_host]
 192.168.122.1 
-</codeph>
-</codeblock></li>
+</codeph></codeblock></li>
 </ol>
 </section>
 <section id="deploy-the-hlm-and-vsd-vm"> <title>Deploy the HLM and VSD VM</title>
@@ -82,19 +76,15 @@ venom-patch.tar.gz
 <ol>
 <li>Make sure the Ansible playbook file is not in executable mode.</li>
 <li>Execute the following
-            command:<codeblock>
-<codeph>ansible-playbook -i hosts setup_hlm_onBM.yml
-</codeph>
-</codeblock><p>The
+            command:<codeblock><codeph>ansible-playbook -i hosts setup_hlm_onBM.yml
+</codeph></codeblock><p>The
             above command will do the following
-            :</p><codeblock>
-<codeph>a. Copy both installation files (tar balls) to your HLM, decrypt, and extract the files.
+            :</p><codeblock><codeph>a. Copy both installation files (tar balls) to your HLM, decrypt, and extract the files.
 b. Execute the `updatepackages` command.
 c. Execute the `prepareenv` command.
 d. Execute the `Init cobbler` command.
 e. Execute the `Importiso` command.
-</codeph>
-</codeblock><p>You
+</codeph></codeblock><p>You
             will see similar message when the playbook is run successful.</p><p>
             <image href="../../media/CGH-Install-Ansible.png"/>
           </p></li>
@@ -110,33 +100,26 @@ e. Execute the `Importiso` command.
           VM.</li>
 <li>Decrypt and extract the <codeph>packages-patch.tar.gz.gpg</codeph> file, using the password
             <codeph>cghelion</codeph> when
-          prompted:<codeblock>
-<codeph>gpg -d packages-patch.tar.gz.gpg | tar -xzvf -
-</codeph>
-</codeblock></li>
+          prompted:<codeblock><codeph>gpg -d packages-patch.tar.gz.gpg | tar -xzvf -
+</codeph></codeblock></li>
 <li>Execute the following command to update the package list on the HLM
-          VM:<codeblock>
-<codeph>rm /root/packages/repo/debian/qemu*2.1.3*.deb
+          VM:<codeblock><codeph>rm /root/packages/repo/debian/qemu*2.1.3*.deb
 apt-get update
 apt-get -y --force-yes install dpkg-dev
 cd /root/packages/repo/debian
 dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz
-</codeph>
-</codeblock></li>
+</codeph></codeblock></li>
 <li>Execute the following command to update the package repository on the HLM
-          VM:<codeblock>
-<codeph>cd /root/cg-hlm/hlm-build
+          VM:<codeblock><codeph>cd /root/cg-hlm/hlm-build
 ./hlm_updatepackages.sh
-</codeph>
-</codeblock></li>
+</codeph></codeblock></li>
 </ol>
 </section>
 <section id="logging-into-vsd-node-creating-user-and-applying-license"> <title>Logging into VSD node, creating user and applying License</title>
 <p>VSD node provisioning happens as part of Infrastructure Ansible playbook run.</p>
 <p>You can SSH to the VSD VM from HLM KVM host using the DCM IP.</p>
 <codeblock><codeph> virsh console vsd
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>If everything is installed correctly, you should see the status as below from VSD VM.</p>
 <p>
   <image href="../../media/CGH-install-virsh-vsd.png"/>
@@ -146,13 +129,10 @@ dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz
 <p>By default VSD has only 8G memory. For better performance behavior, you can update the VSD memory to 16G.</p>
 <ol>
 <li>From KVM host,use the following command to bring down the VSD
-          VM:<codeblock>
-<codeph>virsh destroy vsd
-</codeph>
-</codeblock></li>
+          VM:<codeblock><codeph>virsh destroy vsd
+</codeph></codeblock></li>
 <li>Use the following command to edit the memory setting in the VSD XML
-          file:<codeblock>
-<codeph>virsh edit vsd 
+          file:<codeblock><codeph>virsh edit vsd 
 
 Current value 
     &lt;memory unit='KiB'&gt;8388608&lt;/memory&gt;
@@ -161,17 +141,12 @@ Current value
 Change to 
     &lt;memory unit='KiB'&gt;16777216&lt;/memory&gt;
     &lt;currentMemory unit='KiB'&gt;16777216&lt;/currentMemory&gt;
-</codeph>
-</codeblock></li>
-<li>Save the value<codeblock>
-<codeph>virsh save vsd
-</codeph>
-</codeblock></li>
+</codeph></codeblock></li>
+<li>Save the value<codeblock><codeph>virsh save vsd
+</codeph></codeblock></li>
 <li>Use the following command to start the
-            VM:<codeblock>
-<codeph>virsh start vsd
-</codeph>
-</codeblock><p>It might take 15 min or
+            VM:<codeblock><codeph>virsh start vsd
+</codeph></codeblock><p>It might take 15 min or
             more to sync with NTP and to get all the other VSD services up.</p></li>
 </ol>
 </section>
@@ -180,13 +155,11 @@ Change to
 <ol>
 <li>Using an internet browser such as Chrome or FireFox, navigate to the DCM IP of VSD.</li>
 <li>In the log in page, enter the default
-          credentials:<codeblock>
-<codeph>User Name: Csproot 
+          credentials:<codeblock><codeph>User Name: Csproot 
 Password: csproot 
 Org: csp 
 VSD Server : auto 
-</codeph>
-</codeblock></li>
+</codeph></codeblock></li>
 </ol>
 </section>
 <section id="applying-the-license"> <title>Applying the License</title>
@@ -331,18 +304,15 @@ VSD Server : auto
             address range to itself for serving python and debian repositories. Make sure that you
             set the first IP address of the CLM range for the eth2 (CLM) address of the HLM
             node.</p></li>
-<li>
-<p>Modify the <codeph>definition.json</codeph> file:</p>
-
-<codeblock><codeph>a. Set the number of compute systems to 2.
+<li>Modify the <codeph>definition.json</codeph>
+          file:<codeblock><codeph>a. Set the number of compute systems to 2.
 
     "count": 2, //number of computes in the resource pool.
 
 b. Update `ansible-vars` section with all the information based on your setup.
 
 c. Make sure you have two NTP entries at the end of this `definition.json` file as seen in the snapshot. If you have only one NTP server in your environment, specify the same NTP server twice.
-</codeph></codeblock>
-</li>
+</codeph></codeblock></li>
 <li>Once you have correctly edited all the json "Cloud Model" files, run the Helion Configuration
           Processor on
             these<codeblock><codeph>cd /usr/local/bin

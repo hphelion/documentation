@@ -20,41 +20,31 @@
 <p/>
 <p>To add a StoreVirtual system to any existing Management Group, do the following:</p>
 <ol>
-<li>
-<p>Open CMC.</p>
-
-<p>By default, the CMC is configured to discover the HP StoreVirtual VSA systems in the subnet on which it is installed. You can manually add the nodes also.</p>
-</li>
-<li>
-<p>In the CMC page, click <b>Find Systems</b> from the left panel.<!--A BR tag was used here in the original source.--> Find Systems dialogue box is displayed with an Enter IP pop-up box.</p>
-</li>
-<li>
-<p>You can choose <b>Add</b> or <b>Find</b> option to search the system. <!--A BR tag was used here in the original source.-->Find option  starts searching for the nodes in the subnet. Add option displays an <b>Enter IP</b> pop-up box to enter the IP of the StoreVirtual node.</p>
-</li>
-<li>
-<p>Click <b>OK</b> to proceed or click <b>Cancel</b> to cancel the process.<!--A BR tag was used here in the original source.-->The node is discovered and the details are displayed in a tabular format in the Find Systems dialogue box.</p>
-</li>
-<li>
-<p>(Optional) Click <b>Add</b> in the Find Systems dialogue box to add more nodes.</p>
-</li>
-<li>
-<p>(Optional) Click <b>Edit</b> in the Find Systems dialogue box to modify the details of the selected node.</p>
-</li>
-<li>
-<p>(Optional) Click <b>Remove</b> in the Find Systems box to delete a node.</p>
-</li>
-<li>
-<p>Click <b>Close</b> to return to the Home page.<!--A BR tag was used here in the original source.--> The discovered nodes are displayed under <b>Available Systems</b> option in the left panel.</p>
-</li>
-<li>
-<p>Right-click the node to display a menu and select <b>Add to an Existing Management Group</b>.</p>
-</li>
-<li>
-<p>Enter the name of the management group.</p>
-</li>
-<li>
-<p>Click <b>Add</b> to add the node to the group that you specified.<!--A BR tag was used here in the original source.--> The node is added to the management group.</p>
-</li>
+<li>Open CMC.<p>By default, the CMC is configured to discover the HP StoreVirtual VSA systems in the
+          subnet on which it is installed. You can manually add the nodes also.</p></li>
+<li>In the CMC page, click <b>Find Systems</b> from the left
+        panel.<!--A BR tag was used here in the original source.--> Find Systems dialogue box is
+        displayed with an Enter IP pop-up box.</li>
+<li>You can choose <b>Add</b> or <b>Find</b> option to search the system.
+        <!--A BR tag was used here in the original source.-->Find option starts searching for the
+        nodes in the subnet. Add option displays an <b>Enter IP</b> pop-up box to enter the IP of
+        the StoreVirtual node.</li>
+<li>Click <b>OK</b> to proceed or click <b>Cancel</b> to cancel the
+        process.<!--A BR tag was used here in the original source.-->The node is discovered and the
+        details are displayed in a tabular format in the Find Systems dialogue box.</li>
+<li>(Optional) Click <b>Add</b> in the Find Systems dialogue box to add more nodes.</li>
+<li>(Optional) Click <b>Edit</b> in the Find Systems dialogue box to modify the details of the
+        selected node.</li>
+<li>(Optional) Click <b>Remove</b> in the Find Systems box to delete a node.</li>
+<li>Click <b>Close</b> to return to the Home
+        page.<!--A BR tag was used here in the original source.--> The discovered nodes are
+        displayed under <b>Available Systems</b> option in the left panel.</li>
+<li>Right-click the node to display a menu and select <b>Add to an Existing Management
+        Group</b>.</li>
+<li>Enter the name of the management group.</li>
+<li>Click <b>Add</b> to add the node to the group that you
+        specified.<!--A BR tag was used here in the original source.--> The node is added to the
+        management group.</li>
 </ol>
 <p>
   <xref type="section" href="#topic1866/top"> Return to Top </xref>

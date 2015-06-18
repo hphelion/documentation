@@ -36,8 +36,7 @@
 </ol>
 <p>The use of parameters is optional. You can use them as required to improve readability and modularity. This
 example shows the parameters used in the remaining steps.</p>
-<codeblock>
-  <codeph>Parameters
+<codeblock><codeph>Parameters
     ...
     CustomMeterName:
         Description: Ceilometer meter to store
@@ -55,8 +54,7 @@ example shows the parameters used in the remaining steps.</p>
         Description: Metric value that will trigger a scale in if below
         Type: String
         Default: '5'
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <ol>
 <li> Initialize the service with a script that takes a measurement and returns a result.<p>In this
                     example, drawn from the sample file CPUScale.yaml, the file
@@ -70,8 +68,7 @@ example shows the parameters used in the remaining steps.</p>
                     = (100 * float(loadavg)) / float(num_cores) print percent mode: '000700' owner:
                     root group: root</p></li>
 <li>Add a script that pushes the result to the Ceilometer
-                    service.<p>/etc/cfn/send_guest_metrics:</p><codeblock>
-<codeph>content:
+                    service.<p>/etc/cfn/send_guest_metrics:</p><codeblock><codeph>content:
     Fn::Base64:
         Fn::Replace:
         - 'METRIC_NAME': {Ref: 'CustomMeterName'}
@@ -83,11 +80,9 @@ example shows the parameters used in the remaining steps.</p>
     mode: '000700'
     owner: root
     group: root
-</codeph>
-</codeblock></li>
+</codeph></codeblock></li>
 <li>Add a cron job to push the result at regular
-                intervals.<p>/etc/cron.d/cfn_cron:</p><codeblock>
-<codeph>    content:
+                intervals.<p>/etc/cron.d/cfn_cron:</p><codeblock><codeph>    content:
         Fn::Base64:
             Fn::Replace:
                 - 'AWS::StackName': {Ref: 'AWS::StackName'}
@@ -96,13 +91,11 @@ example shows the parameters used in the remaining steps.</p>
     mode: '000600'
     owner: root
     group: root
-</codeph>
-</codeblock></li>
+</codeph></codeblock></li>
 <li>Define an alarm to take action if the pushed measurements meet specified criteria.</li>
 </ol>
 <p>In this example, two alarms (OS::Ceilometer::Alarm) are defined. One is triggered if the average measurement over a given evaluation period exceeds a threshold. The other is triggered if the average measurement falls below a threshold. In each case, an action is defined to execute a scaling policy, defined separately in the template.</p>
-<codeblock>
-  <codeph>CPUGuestAlarmHigh:
+<codeblock><codeph>CPUGuestAlarmHigh:
     Type: OS::Ceilometer::Alarm
     Properties:
         description: Scale-out if the 1 minute avg for the meter is above the threshold
@@ -129,8 +122,7 @@ CPUGuestAlarmLow:
         - {"Fn::GetAtt": [ServerScaleInPolicy, AlarmUrl]}
         #matching_metadata: {'metadata.user_metadata.groupname': {Ref:'WebServerGroup'}}
         comparison_operator: lt
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <ol>
 <li>Define the scaling policies.<p>ServerScaleOutPolicy: Type: AWS::AutoScaling::ScalingPolicy
                     Properties: AdjustmentType: ChangeInCapacity AutoScalingGroupName: {Ref:

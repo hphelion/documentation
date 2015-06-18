@@ -70,123 +70,63 @@
 <section id="pub-key"> <title>Obtain a public key</title>
 <p>On the KVM host, the user <codeph>root</codeph> must have a public key.</p>
 <ol>
-<li>
-<p>Launch a terminal and log in to your KVM host as root:</p>
-
-<p>sudo su -</p>
-</li>
-<li>
-<p>Use the following command to create the key. Accept the default values.</p>
-
-<p>/root/.ssh/id_rsa</p>
-</li>
-<li>
-<p>install the public key into the authorized keys on the KVM host:</p>
-
-<codeblock>
-<codeph>ssh-copy-id &lt;IP_address&gt;
-</codeph>
-</codeblock>
-
-<p>Enter the IP address of the default network gateway on the KVM.</p>
-</li>
+<li>Launch a terminal and log in to your KVM host as root:<p>sudo su -</p></li>
+<li>Use the following command to create the key. Accept the default
+          values.<p>/root/.ssh/id_rsa</p></li>
+<li>install the public key into the authorized keys on the KVM
+            host:<codeblock><codeph>ssh-copy-id &lt;IP_address&gt;
+</codeph></codeblock><p>Enter the
+            IP address of the default network gateway on the KVM.</p></li>
 </ol>
 </section>
 <section id="proxy"> <title>Configure proxy information</title>
 <p>Before you begin your installation on the KVM host, if necessary configure the proxy information for your environment using the following steps:</p>
 <ol>
-<li>
-<p>Launch a terminal and log in to your KVM host as root:</p>
-
-<codeblock>
-<codeph>sudo su -
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Edit the <codeph>/etc/environment</codeph> file to add the following lines, using values specific to your environment:</p>
-
-<codeblock>
-<codeph>PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+<li>Launch a terminal and log in to your KVM host as
+          root:<codeblock><codeph>sudo su -
+</codeph></codeblock></li>
+<li>Edit the <codeph>/etc/environment</codeph> file to add the following lines, using values
+          specific to your
+            environment:<codeblock><codeph>PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export http_proxy=http://&lt;web_proxy_IP&gt;/
 export https_proxy=http://&lt;web_proxy_IP&gt;/
 export no_proxy=localhost,127.0.0.1,&lt;your 10.x IP address&gt;,&lt;provider_network&gt;
-</codeph>
-</codeblock>
-
-<p>Where:</p>
-
-<codeblock>
-<codeph>web_proxy_IP is your web proxy IP address.
+</codeph></codeblock><p>Where:</p><codeblock><codeph>web_proxy_IP is your web proxy IP address.
 provider_network is your ESX management network
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Source the <codeph>environments</codeph> file:</p>
-
-<codeblock>
-<codeph>source /etc/environment
-</codeph>
-</codeblock>
-</li>
+</codeph></codeblock></li>
+<li>Source the <codeph>environments</codeph>
+          file:<codeblock><codeph>source /etc/environment
+</codeph></codeblock></li>
 </ol>
 </section>
 <section id="packages"> <title>Install Ubuntu packages</title>
 <p>Before starting the installation, you must first install  Ubuntu.</p>
 <ol>
-<li>
-<p>Run the following all in one command to install packages:</p>
-
-<codeblock>
-<codeph>sudo su -l -c "apt-get install -y ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager xorg gnome-core gnome-system-tools gnome-app-install vlan sudo ansible"
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Add the 802.1q module to the kernel on boot. The 802.1q standard supports VLAN tagging on an ethernet network.</p>
-
-<codeblock>
-<codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Reboot the server</p>
-</li>
-<li>
-<p>Log out and re-login to the KVM host to activate the proxy configuration.</p>
-</li>
+<li>Run the following all in one command to install
+          packages:<codeblock><codeph>sudo su -l -c "apt-get install -y ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager xorg gnome-core gnome-system-tools gnome-app-install vlan sudo ansible"
+</codeph></codeblock></li>
+<li>Add the 802.1q module to the kernel on boot. The 802.1q standard supports VLAN tagging on an
+          ethernet
+          network.<codeblock><codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
+</codeph></codeblock></li>
+<li>Reboot the server</li>
+<li>Log out and re-login to the KVM host to activate the proxy configuration.</li>
 </ol>
 </section>
 <section id="configure-the-xrdp-remote-desktop-display"> <title>Configure the XRDP remote desktop display</title>
 <p>Configure XRDP for the remote desktop connection to access the server remotely as follows.</p>
 <ol>
-<li>
-<p>Edit the <codeph>sesman.ini</codeph> file:</p>
-
-<p>vi /etc/xrdp/sesman.ini</p>
-
-<p>a. Update the <codeph>MaxSessions=1</codeph> to <codeph>MaxSessions=50</codeph>.</p>
-
-<p>b. Configure the system to use XRDP:</p>
-
-<codeblock>
-<codeph>echo "xfce4-session" &gt; ~/.xinitrc
+<li>Edit the <codeph>sesman.ini</codeph> file:<p>vi /etc/xrdp/sesman.ini</p><p>a. Update the
+              <codeph>MaxSessions=1</codeph> to <codeph>MaxSessions=50</codeph>.</p><p>b. Configure
+            the system to use
+            XRDP:</p><codeblock><codeph>echo "xfce4-session" &gt; ~/.xinitrc
 </codeph>
-</codeblock>
-
-<p>c. Save and close the file.</p>
-</li>
-<li>
-<p>Restart the xrdp service:</p>
-
-<p>sudo /etc/init.d/xrdp restart</p>
-</li>
+</codeblock><p>c.
+            Save and close the file.</p></li>
+<li>Restart the xrdp service:<p>sudo /etc/init.d/xrdp restart</p></li>
 </ol>
 <p>If the XDRP display does not work as expected, (you see a gray screen), update the <codeph>startwm.sh</codeph> file:</p>
-<codeblock>
-  <codeph>vi /etc/xrdp/startwm.sh
+<codeblock><codeph>vi /etc/xrdp/startwm.sh
 
 #!/bin/sh
 
@@ -200,10 +140,8 @@ fi
 </codeph>
 </codeblock>
 <p>Make sure you add a space after "." then restart XDRP:</p>
-<codeblock>
-  <codeph>sudo /etc/init.d/xrdp restart
-</codeph>
-</codeblock>
+<codeblock><codeph>sudo /etc/init.d/xrdp restart
+</codeph></codeblock>
 </section>
 <section id="ntp"> <title>Install and configure NTP</title>
 <p>NTP is a networking protocol for clock synchronization between computer systems.</p>
@@ -214,99 +152,49 @@ fi
 <section id="getinstall"> <title>Download and unpack the installation packages</title>
 <p>Before you begin, you must download the required HP Helion OpenStack(R) installation package(s):</p>
 <ol>
-<li>
-<p>Download and extract the <codeph>cg-hlm.qcow2</codeph> and <codeph>VSD qcow2</codeph> files to the images folder.</p>
-</li>
-<li>
-<p>Download and extract the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file to the <codeph>/root</codeph> directory.</p>
-
-<codeblock>
-<codeph>cd /root
+<li>Download and extract the <codeph>cg-hlm.qcow2</codeph> and <codeph>VSD qcow2</codeph> files to
+          the images folder.</li>
+<li>Download and extract the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file to the
+            <codeph>/root</codeph>
+            directory.<codeblock><codeph>cd /root
 tar xjf /tmp/cg-infra-playbooks.tar.gz.gpg
-</codeph>
-</codeblock>
-
-<p>This will create the <codeph>/root/cg</codeph> directory and extract the contents into the directory.</p>
-</li>
-<li>
-<p>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> and <codeph>cg-hos-dcn.tar.gz.gpg</codeph> to the <codeph>/root/cg/</codeph> directory.</p>
-
-<p>The password to decrypt the files is <codeph>cghelion</codeph>.</p>
-</li>
+</codeph></codeblock><p>This
+            will create the <codeph>/root/cg</codeph> directory and extract the contents into the
+            directory.</p></li>
+<li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> and <codeph>cg-hos-dcn.tar.gz.gpg</codeph> to the
+            <codeph>/root/cg/</codeph> directory.<p>The password to decrypt the files is
+              <codeph>cghelion</codeph>.</p></li>
 </ol>
 </section>
 <section id="ssh"> <title>Configure SSH</title>
 <p>On the KVM host, the OpenSSH server must be running and the firewall configuration should allow access to the SSH ports.</p>
 <ol>
-<li>
-<p>Enable root login in the <codeph>/etc/ssh/sshd_config</codeph>:</p>
-
-<codeblock>
-<codeph>PermitRootLogin yes
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>In the <codeph>sshd_config</codeph> file, set the following variables:</p>
-
-<codeblock>
-<codeph># Authentication:
+<li>Enable root login in the
+          <codeph>/etc/ssh/sshd_config</codeph>:<codeblock><codeph>PermitRootLogin yes
+</codeph></codeblock></li>
+<li>In the <codeph>sshd_config</codeph> file, set the following
+          variables:<codeblock><codeph># Authentication:
 LoginGraceTime 120
 #PermitRootLogin without-password
 StrictModes no
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Disable strict host key checking:</p>
-
-<p>a. Navigate to the <codeph>config</codeph> file:</p>
-
-<codeblock>
-<codeph>cd ~/.ssh/config
-</codeph>
-</codeblock>
-
-<p>b. Set the <codeph>StrictHostKeyChecking</codeph> variable to No:</p>
-
-<codeblock>
-<codeph>StrictHostKeyChecking no
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Restart SSH service</p>
-
-<codeblock>
-<codeph>service ssh restart
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Configure the public key and passwordless SSH access.</p>
-
-<p>a. Enter the following command:</p>
-
-<codeblock>
-<codeph>ssh-keygen -t rsa 
-</codeph>
-</codeblock>
-
-<p>b. Press Enter to use default path (/root/.ssh/id_rsa)</p>
-
-<p>c. Press enter for passphrase</p>
-
-<p>d. Press enter again to confirm the empty passphrase</p>
-
-<p>The output of the public key will display, similar to the following:</p>
-
-<codeblock>
-<codeph>ssh-copy-id 192.168.122.1 
-</codeph>
-</codeblock>
-
-<p>If you get a permission denied error, make sure you are logged in as root.</p>
-</li>
+</codeph></codeblock></li>
+<li>Disable strict host key checking:<p>a. Navigate to the <codeph>config</codeph>
+            file:</p><codeblock><codeph>cd ~/.ssh/config
+</codeph></codeblock><p>b. Set the
+              <codeph>StrictHostKeyChecking</codeph> variable to
+          No:</p><codeblock><codeph>StrictHostKeyChecking no
+</codeph></codeblock></li>
+<li>Restart SSH service<codeblock><codeph>service ssh restart
+</codeph></codeblock></li>
+<li>Configure the public key and passwordless SSH access.<p>a. Enter the following
+            command:</p><codeblock><codeph>ssh-keygen -t rsa 
+</codeph></codeblock><p>b. Press Enter
+            to use default path (/root/.ssh/id_rsa)</p><p>c. Press enter for passphrase</p><p>d.
+            Press enter again to confirm the empty passphrase</p><p>The output of the public key
+            will display, similar to the
+            following:</p><codeblock><codeph>ssh-copy-id 192.168.122.1 
+</codeph></codeblock><p>If
+            you get a permission denied error, make sure you are logged in as root.</p></li>
 </ol>
 </section>
 <section id="next-step"> <title>Next Step</title>

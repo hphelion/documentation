@@ -21,16 +21,11 @@
 <p>Use the following steps to create three controller nodes, two compute nodes, a DCN Node and a VRS-G nodes.</p>
 <p>Use the following steps:</p>
 <ol>
-<li>
-<p>Deploy and configure the cloud services using the following command:</p>
-
-<codeblock>
-<codeph>hdeploy &lt;cloudname&gt; 
-</codeph>
-</codeblock>
-
-<p>You can run this command from anywhere. This process might approximatley three hours to install all seven nodes in a baremetal setup with LDAP enabled.</p>
-</li>
+<li>Deploy and configure the cloud services using the following
+          command:<codeblock><codeph>hdeploy &lt;cloudname&gt; 
+</codeph></codeblock><p>You can run
+          this command from anywhere. This process might approximatley three hours to install all
+          seven nodes in a baremetal setup with LDAP enabled.</p></li>
 </ol>
 <p>When this command completes successfully, there are three controller nodes, two compute nodes, one DCN Node and one VRS-G nodes deployed as shown in the networking topology.</p>
 <p>

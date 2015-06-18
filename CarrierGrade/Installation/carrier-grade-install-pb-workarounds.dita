@@ -16,13 +16,11 @@
 <section id="configuring-the-fnd-fin-role-for-the-dcn-cloud"> <title>Configuring the FND-FIN role for the DCN cloud</title>
 <p>Comment following services in <codeph>~/&lt;cloud-name&gt;/clouds/&lt;cloud-name&gt;/001/stage/ansible /roles/FND-FIN/tasks/main.yml</codeph> before you run <codeph>hdeploy</codeph>
 </p>
-<codeblock>
-  <codeph>neutron-l3-agent
+<codeblock><codeph>neutron-l3-agent
 neutron-dhcp-agent
 neutron-metadata-agent
 neutron-plugin-openvswitch-agent
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="enable-logging-for-the-hdeloy-ansible-playbook"> <title>Enable logging for the hdeloy - ansible-playbook</title>
 <p>Copy the <codeph>ansible.cfg</codeph> to the <codeph>~/&lt;cloud-name&gt;/clouds/&lt;cloud-name&gt;/001/stage/ansible/</codeph> directory before executing <codeph>hdeploy</codeph>.</p>
@@ -30,36 +28,22 @@ neutron-plugin-openvswitch-agent
 <section id="configure-the-ldp-ccn-and-ldp-cpn-roles"> <title>Configure the LDP-CCN and LDP-CPN roles</title>
 <p>To make sure that the LDP-CCN and LDP-CPN roles are created when LDAP integration is enabled.</p>
 <p>Remove the double quotes in the <codeph>definition.json</codeph> file for the <codeph>ldap_enabled</codeph> variable.</p>
-<codeblock>
-  <codeph>"ldap_enabled": 1     
-</codeph>
-</codeblock>
+<codeblock><codeph>"ldap_enabled": 1     
+</codeph></codeblock>
 </section>
 <section id="-"> <title> </title>
 <p>If you have LDAP enabled in <codeph>definition.json</codeph>, you need to comment and add this command in the <codeph>ldap.yml</codeph> file.</p>
 <ol>
-<li>
-<p>On the HLM VM, edit the <codeph>clouds/dcnjunobuild33bed2new/001/stage/ansible/roles/LDP-CCN/tasks/ldap.yml</codeph> file.</p>
-</li>
-<li>
-<p>Comment out the following line in the file:</p>
-
-<codeblock>
-<codeph># command: apt-get install python-ldap
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Add the following line:</p>
-
-<codeblock>
-<codeph>apt: name=python-ldap install_recommends=no state=latest force=yes
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Save and close the file.</p>
-</li>
+<li>On the HLM VM, edit the
+            <codeph>clouds/dcnjunobuild33bed2new/001/stage/ansible/roles/LDP-CCN/tasks/ldap.yml</codeph>
+          file.</li>
+<li>Comment out the following line in the
+          file:<codeblock><codeph># command: apt-get install python-ldap
+</codeph></codeblock></li>
+<li>Add the following
+          line:<codeblock><codeph>apt: name=python-ldap install_recommends=no state=latest force=yes
+</codeph></codeblock></li>
+<li>Save and close the file.</li>
 </ol>
 </section>
 <section id="next-step"> <title>Next Step</title>

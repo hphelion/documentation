@@ -31,41 +31,26 @@
 <section id="horizon"> <title>Change the IP address using the Horizon Dashboard</title>
 <ol>
 <li>
-<p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
-
-<ul>
-<li>Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.</li>
-</ul>
-<p>The <b>System Configuration</b> pane is available from the System Panel section of the Admin menu.</p>
-</li>
-<li>
-<p>Select the DNS tab.</p>
-
-<p>The <b>DNS page</b> appears, showing the currently defined DNS servers and their IP addresses.</p>
-</li>
-<li>
-<p>Click Edit DNS.</p>
-
-<p>The <b>Edit DNS</b> dialog box appears.</p>
-</li>
-<li>
-<p>Replace the DNS Server IP addresses with different ones as required.</p>
-</li>
+          <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
+            OpenStack(R) Horizon Dashboard</xref>.<ul>
+            <li>Use the IP address for the appropriate region where you want to make the change,
+              either: the hLinux region or the Wind River Linux region.</li>
+          </ul><p>The <b>System Configuration</b> pane is available from the System Panel section of
+            the Admin menu.</p></li>
+<li>Select the DNS tab.<p>The <b>DNS page</b> appears, showing the currently defined DNS servers and
+            their IP addresses.</p></li>
+<li>Click Edit DNS.<p>The <b>Edit DNS</b> dialog box appears.</p></li>
+<li>Replace the DNS Server IP addresses with different ones as required.</li>
 </ol>
 </section>
 <section id="cli"> <title>Change the IP address using the CLI</title>
 <p>To view the existing DNS server configuration, use the following command.</p>
-<codeblock>
-  <codeph>system dns-show
-</codeph>
-</codeblock>
+<codeblock><codeph>system dns-show
+</codeph></codeblock>
 <p>To change the DNS server IP addresses, use the following command syntax. The nameservers option takes a comma-delimited list of DNS server IP addresses.</p>
-<codeblock>
-  <codeph>system dns-modify \
+<codeblock><codeph>system dns-modify \
 nameservers=IP_address_1[,IP_address_2][,IP_address_3] action=apply
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <xref type="section" href="#topic1555/top"> Return to Top </xref>
 </p>

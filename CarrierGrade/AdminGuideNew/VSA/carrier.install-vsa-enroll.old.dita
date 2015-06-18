@@ -27,69 +27,34 @@
 <p>You must add a server to the cloud inventory to handle the increased number of nodes.</p>
 <p>Perform the following steps to add a physical server:</p>
 <ol>
-<li>
-<p>Log in to the seed VM:</p>
-
-<codeblock>
-<codeph>ssh root@&lt;Seed IP Address&gt;
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Make the respective Baremetal entry in <codeph>/root/baremetal.csv</codeph>.</p>
-</li>
-<li>
-<p>Add the node to <codeph>baremetal.csv</codeph> at the end.</p>
-
-<codeblock>
-<codeph>&lt;mac_address&gt;,&lt;user&gt;,&lt;password&gt;,&lt;ip_address&gt;,&lt;no_of_cpus&gt;,&lt;memory_MB&gt;,&lt;diskspace_GiB&gt;,&lt;role&gt;,&lt;power_managemenment&gt;
-</codeph>
-</codeblock>
-
-<p>The following sample displays the output of the above command:</p>
-
-<codeblock>
-<codeph>E8:39:35:2B:FA:30,administrator,password,10.1.192.46,12,73728,70,OvercloudVSAAOStorage,IPMI
+<li>Log in to the seed
+        VM:<codeblock><codeph>ssh root@&lt;Seed IP Address&gt;
+</codeph></codeblock></li>
+<li>Make the respective Baremetal entry in <codeph>/root/baremetal.csv</codeph>.</li>
+<li>Add the node to <codeph>baremetal.csv</codeph> at the
+          end.<codeblock><codeph>&lt;mac_address&gt;,&lt;user&gt;,&lt;password&gt;,&lt;ip_address&gt;,&lt;no_of_cpus&gt;,&lt;memory_MB&gt;,&lt;diskspace_GiB&gt;,&lt;role&gt;,&lt;power_managemenment&gt;
+</codeph></codeblock><p>The
+          following sample displays the output of the above
+          command:</p><codeblock><codeph>E8:39:35:2B:FA:30,administrator,password,10.1.192.46,12,73728,70,OvercloudVSAAOStorage,IPMI
 9C:B6:54:AD:55:A8,administrator,gone2far,10.1.192.50,12,73728,70,OvercloudVSAStorage,IPMI
-</codeph>
-</codeblock>
-
-<p>Ensure that a new node is added at the end of the file.</p>
-</li>
-<li>
-<p>Edit the scale counts in JSON environment variables file (for example: <codeph>kvm-custom-ips.json</codeph>) that was used during the initial installation to define the appropriate scale number:</p>
-
-<codeblock>
-<codeph>"vsa_scale": "&lt;no of StoreVirtual systems&gt;"
+</codeph></codeblock><p>Ensure
+          that a new node is added at the end of the file.</p></li>
+<li>Edit the scale counts in JSON environment variables file (for example:
+          <codeph>kvm-custom-ips.json</codeph>) that was used during the initial installation to
+        define the appropriate scale
+        number:<codeblock><codeph>"vsa_scale": "&lt;no of StoreVirtual systems&gt;"
 "vsa_ao_scale": "&lt;no of StoreVirtual systems with AO enabled&gt;"
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Source the environment variables file created during initial installation.</p>
-
-<codeblock>
-<codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/&lt;environment variables file name&gt;
-</codeph>
-</codeblock>
-
-<p>For example:</p>
-
-<codeblock>
-<codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Run the installer script:</p>
-
-<codeblock>
-<codeph>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2&gt;&amp;1 | tee update.log
-</codeph>
-</codeblock>
-
-<p>This will register a new Ironic node and create a new Nova instance and a new Heat stack.</p>
-</li>
+</codeph></codeblock></li>
+<li>Source the environment variables file created during initial
+          installation.<codeblock><codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/&lt;environment variables file name&gt;
+</codeph></codeblock><p>For
+          example:</p><codeblock><codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+</codeph></codeblock></li>
+<li>Run the installer
+          script:<codeblock><codeph>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2&gt;&amp;1 | tee update.log
+</codeph></codeblock><p>This
+          will register a new Ironic node and create a new Nova instance and a new Heat
+        stack.</p></li>
 </ol>
 <p>
 <!--**Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out Object storage nodes.-->

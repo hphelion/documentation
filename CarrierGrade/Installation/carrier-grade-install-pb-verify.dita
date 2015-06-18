@@ -20,27 +20,15 @@
 <p>Perform the following tasks to make sure the installation of the HLM VM, HLM Cloud and DCN Cloud has been successful.</p>
 <section id="ssh-to-the-vsc-node"> <title>SSH to the VSC node</title>
 <ol>
-<li>
-<p>SSH to your VSC VM from the DCM KVM Host using the DCM IP.</p>
-
-<codeblock>
-<codeph>Login: admin
+<li>SSH to your VSC VM from the DCM KVM Host using the DCM
+                    IP.<codeblock><codeph>Login: admin
 Password: admin
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Execute the following command:</p>
-
-<codeblock>
-<codeph>admin display-config
-</codeph>
-</codeblock>
-
-<p>The output appears, similar to the following:</p>
-
-<codeblock>
-<codeph>admin display-config
+</codeph></codeblock></li>
+<li>Execute the following
+                        command:<codeblock><codeph>admin display-config
+</codeph></codeblock><p>The
+                        output appears, similar to the
+                    following:</p><codeblock><codeph>admin display-config
 TiMOS-DC-C-3.0.4-OEM-76 cpm/i386  VSC Copyright (C) 2000-2015
 All rights reserved. All use subject to applicable license agreements.
 Built on Thu Jan 15 21:32:52 PST 2015 [c4263c] by builder in /rel3.0-DC/oem/4-OEM-76/panos/main
@@ -186,50 +174,35 @@ exit all
 
 Finished FRI MAY 15 23:20:05 2015 UTC
 </codeph>
-</codeblock>
-</li>
+</codeblock></li>
 </ol>
 </section>
 <section id="verify-the-vswitch"> <title>Verify the vSwitch</title>
 <p>Execute the below commands and check if the status is active</p>
-<codeblock>
-  <codeph>    show vswitch-controller vsd
+<codeblock><codeph> show vswitch-controller vsd
     show vswitch-controller xmpp-server
     ping router "management" &lt;vsd IP or domain name&gt;
 </codeph>
 </codeblock>
 </section>
-<section id="verify-the-vrs-g-node"> <title>Verify the VRS-G Node</title>
-<p>Verify that the VRS-G Node is properly configured. 
-VRS-G node provisioning happens as part of cloud deployment.</p>
-<p>From VSC Node, run this command.</p>
-<codeblock>
-  <codeph>    show vswitch-controller vswitches
+<section id="verify-the-vrs-g-node"><title>Verify the VRS-G Node</title><p>Verify that the VRS-G
+                Node is properly configured. VRS-G node provisioning happens as part of cloud
+                deployment.</p><p>From VSC Node, run this
+                command.</p><codeblock><codeph>show vswitch-controller vswitches
 
 **Note:** Depending on the number of computes, the list of entries will change
 </codeph>
-</codeblock>
-<p>If VRS-G node is not listed here, use the following steps:</p>
-<ol>
-<li>
-<p>Make sure the <codeph>/etc/resolv.conf</codeph> on each cloud nodes contains the domain name and DNS server</p>
-</li>
-<li>
-<p>Make sure the <codeph>/etc/resolv.conf</codeph> file contains the IP address of each DNS server on all the cloud nodes.</p>
-</li>
-</ol>
-<p>
-  <b>Example:</b>
-</p>
-<p>
-  <image href="../../media/CGH-install-verify-vrs.png"/>
-</p>
-<ol>
-<li>
-<p>Access the Horizon dashboard.</p>
-
-<codeblock>
-<codeph>a. Obtain the IP address using one of the following methods:
+</codeblock><p>If
+                VRS-G node is not listed here, use the following steps:</p><ol>
+                <li>Make sure the <codeph>/etc/resolv.conf</codeph> on each cloud nodes contains the
+                    domain name and DNS server</li>
+                <li>Make sure the <codeph>/etc/resolv.conf</codeph> file contains the IP address of
+                    each DNS server on all the cloud nodes.<p><b>Example:</b>
+                    </p><p>
+                        <image href="../../media/CGH-install-verify-vrs.png" id="image_wxs_flf_ks"
+                        /></p></li>
+                <li>Access the Horizon
+                    dashboard.<codeblock><codeph>a. Obtain the IP address using one of the following methods:
 
 * Search in the ~clouds/dcnjunobuild33bed2new/001/stage/net/hosts.hf file for `VIP`.
 
@@ -242,21 +215,16 @@ b. Log into the dashboard using the default credentials:
 
     login: admin
     password: admin
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Perform various tasks as a sanity check to make sure everything works as expected. For example:</p>
-
-<ul>
-<li>Upload an image </li>
-<li>Create a networks</li>
-<li>Launch an instance. </li>
-</ul>
-<p>For information on using the Horizon dashboard, see <xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita" >Operator Guide to Managing Your Cloud</xref>.</p>
-</li>
-</ol>
-</section>
+</codeph></codeblock></li>
+                <li>Perform various tasks as a sanity check to make sure everything works as
+                    expected. For example:<ul id="ul_pxd_4lf_ks">
+                        <li>Upload an image </li>
+                        <li>Create a networks</li>
+                        <li>Launch an instance</li>
+                    </ul></li>
+            </ol>For information on using the Horizon dashboard, see <xref
+                href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita"
+                >Operator Guide to Managing Your Cloud</xref>.</section>
 <section id="next-step"> <title>Next Step</title>
 <p>
 <xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack(R)" scope="external" format="html" >Install HP Helion OpenStack(R) Carrier Grade</xref> (Opens in PDF)</p>

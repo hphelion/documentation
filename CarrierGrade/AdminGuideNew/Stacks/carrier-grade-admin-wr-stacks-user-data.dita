@@ -27,8 +27,7 @@
 Server.</p>
 <p>Normally, this requires <codeph>cloud-init</codeph> to be installed in the guest, because the user data is converted to MIME format and then interpreted by <codeph>cloud-init</codeph>. For instances that do not include <codeph>cloud-init</codeph>, you can bypass the MIME conversion
 of user data by invoking a Wind River extension property and assigning the value 'RAW'. This allows the VM to retrieve the specified user data in unaltered format through a simple REST API call to the metadata server. The name of the property follows the convention for the associated resource type. For an AWS resource (for example, <codeph>AWS::EC2::Instance</codeph>), use <codeph>UserDataType</codeph>. For an OpenStack(R) resource (for example, <codeph>OS::Nova::Server</codeph>), use <codeph>user_data_type</codeph>. The following code fragment shows the property used with an AWS resource.</p>
-<codeblock>
-  <codeph>type : AWS::EC2::Instance
+<codeblock><codeph>type : AWS::EC2::Instance
 . . .
 UserDataType: 'RAW'
 UserData:
@@ -40,8 +39,7 @@ UserData:
         'AWS::SecretKey': {"Fn::GetAtt": [WebServerKeys, SecretAccessKey]}
     - |
 . . .
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
 <b>Note:</b> For a VM to access user data, it must have a DHCP-enabled interface on a tenant network that has a Neutron
 router. Typically, this is the interface to the VM's <codeph>EXT</codeph> network or an internal network. The Neutron router
