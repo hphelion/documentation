@@ -151,7 +151,7 @@ Round up the results to the nearest power of two. Rounding up is optional, but r
 <codeblock>
   <codeph>(200 * 100)
 ----------- = 6667. Nearest power of 2: 8192
- 3
+       3
 </codeph>
 </codeblock>
 <p>
