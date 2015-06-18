@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20493">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20505">
 <title>HP Helion OpenStack(R) 1.0: Sirius CLI Workflow</title>
 <prolog>
 <metadata>
@@ -20,7 +20,7 @@
 </prolog>
 <body>
 <p>
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
  <!--./commercial/GA1/1.0commercial.sirius-cli-workflow.md-->
  <!--permalink: /helion/openstack/sirius/cli/workflow/--></p>
 <p>
@@ -29,18 +29,18 @@
 <p>This page describes the workflow for adding HP StoreVirtual and HP 3PAR StoreServ integration to your cloud using the Sirius CLI.</p>
 <ul>
 <li>
-<xref type="section" href="#topic20493/before-you-begin">Before you begin</xref>
+<xref type="section" href="#topic20505/before-you-begin">Before you begin</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/process-flow">Process flow</xref>
+<xref type="section" href="#topic20505/process-flow">Process flow</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/add-configure-storevirtual">Add and configure HP StoreVirtual to your cloud inventory</xref>
+<xref type="section" href="#topic20505/add-configure-storevirtual">Add and configure HP StoreVirtual to your cloud inventory</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/add-configure-storeserv">Add and configure HP 3PAR StoreServ</xref> </li>
+<xref type="section" href="#topic20505/add-configure-storeserv">Add and configure HP 3PAR StoreServ</xref> </li>
 <li>
-<xref type="section" href="#topic20493/reconfigure-update">Reconfigure and update cloud</xref>
+<xref type="section" href="#topic20505/reconfigure-update">Reconfigure and update cloud</xref>
 </li>
 </ul>
 <section id="before-you-begin"> <title>Before you begin</title>
@@ -60,30 +60,30 @@
   <xref format="html" href="javascript:window.open('/media/sirius-cli-processflow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Process Flow Diagram (opens in a new window)</xref>
 </p>
 <p>
-  <xref type="section" href="#topic20493/top"> Return to Top </xref>
+  <xref type="section" href="#topic20505/top"> Return to Top </xref>
 </p>
 </section>
 <section id="add-configure-storevirtual"> <title>Add and configure HP StoreVirtual to your cloud inventory</title>
 <p>Perform the following steps to add and configure Storevirtual.</p>
 <ul>
 <li>
-<xref type="section" href="#topic20493/register-storevirtual">Register StoreVirtual clusters to the cloud inventory</xref>
+<xref type="section" href="#topic20505/register-storevirtual">Register StoreVirtual clusters to the cloud inventory</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/add-backend">Add StoreVirtual clusters as a backend for the cloud</xref>
+<xref type="section" href="#topic20505/add-backend">Add StoreVirtual clusters as a backend for the cloud</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/preview-cluster">Preview the cinder configuration for the StoreVirtual cluster</xref>
+<xref type="section" href="#topic20505/preview-cluster">Preview the cinder configuration for the StoreVirtual cluster</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/view-configured-list">View the list of configured StoreVirtual backends</xref> </li>
+<xref type="section" href="#topic20505/view-configured-list">View the list of configured StoreVirtual backends</xref> </li>
 </ul>
 </section>
 <section id="register-storevirtual"> <title>Register StoreVirtual clusters to the cloud inventory</title>
 <p>Ensure that the cluster details entered in the command correspond with the actual cluster details from the Centralized Management Console (CMC) tool.</p>
 <p>To register StoreVirtual clusters, enter the following command:</p>
 <codeblock>
-  <codeph> # sirius register-storevirtual-cluster -name=&lt;CLUSTER_NAME&gt; --hostname=&lt;CLUSTER_IP_ADDRESS&gt; --subnet=&lt;SUBNET&gt; --username=&lt;USERNAME&gt; --password=&lt;PASSWORD&gt; --port=&lt;SSH_PORT&gt;
+  <codeph> # sirius register-storevirtual-cluster -name=&lt;CLUSTER_NAME&gt; --hostname=&amp;lt;CLUSTER_IP_ADDRESS&gt; --subnet=&lt;SUBNET&gt; --username=&amp;lt;USERNAME&gt; --password=&amp;lt;PASSWORD&gt; --port=&amp;lt;SSH_PORT&gt;
 </codeph>
 </codeblock>
 <p>The sample output of the above command is given below:</p>
@@ -167,26 +167,26 @@ hplefthand_username=shausy
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic20493/top"> Return to Top </xref>
+  <xref type="section" href="#topic20505/top"> Return to Top </xref>
 </p>
 </section>
 <section id="add-configure-storeserv"> <title>Add HP 3PAR StoreServ to your cloud inventory and configure</title>
 <p>Perform the following steps to add and configure StoreServ.</p>
 <ul>
 <li>
-<xref type="section" href="#topic20493/register-storeserv">Register StoreServ to the cloud inventory</xref>
+<xref type="section" href="#topic20505/register-storeserv">Register StoreServ to the cloud inventory</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/register-inventory">Register StoreServ CPG to the cloud inventory</xref>
+<xref type="section" href="#topic20505/register-inventory">Register StoreServ CPG to the cloud inventory</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/add-cpg">Add StoreServ CPG as a backend for the cloud</xref>
+<xref type="section" href="#topic20505/add-cpg">Add StoreServ CPG as a backend for the cloud</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/preview-storeserv-cpg">Preview the cinder configuration for the StoreServ CPG</xref>
+<xref type="section" href="#topic20505/preview-storeserv-cpg">Preview the cinder configuration for the StoreServ CPG</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/view-storeserv-list">View the configured StoreServ backend list</xref>  </li>
+<xref type="section" href="#topic20505/view-storeserv-list">View the configured StoreServ backend list</xref>  </li>
 </ul>
 </section>
 <section id="register-storeserv"> <title>Register StoreServ to the cloud inventory</title>
@@ -196,9 +196,8 @@ hplefthand_username=shausy
 </codeph>
 </codeblock>
 <p>
-<i>Additional arguments</i>: --iscsi-ip <required-cleanup remap="iscsi_ip">
+<i>Additional arguments</i>: --iscsi-ip 
 <ph> [required for iSCSI type devices].</ph>
-</required-cleanup>
 </p>
 <p>The sample output of the above command is given below:</p>
 <codeblock>
@@ -320,25 +319,25 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic20493/top"> Return to Top </xref>
+  <xref type="section" href="#topic20505/top"> Return to Top </xref>
 </p>
 </section>
 <section id="reconfigure-update"> <title>Reconfigure and update cloud</title>
 <ol>
 <li>
-<xref type="section" href="#topic20493/generate-storevirtual-config">Generate StoreVirtual backend configuration JSON</xref>
+<xref type="section" href="#topic20505/generate-storevirtual-config">Generate StoreVirtual backend configuration JSON</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/generate-storeserv-config">Generate StoreServ backend configuration JSON</xref>
+<xref type="section" href="#topic20505/generate-storeserv-config">Generate StoreServ backend configuration JSON</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/update-overcloud-json">Update Overcloud configuration JSON</xref>
+<xref type="section" href="#topic20505/update-overcloud-json">Update Overcloud configuration JSON</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/load-config-export">Load the configuration and export required environment variables to prepare for updating cloud</xref>
+<xref type="section" href="#topic20505/load-config-export">Load the configuration and export required environment variables to prepare for updating cloud</xref>
 </li>
 <li>
-<xref type="section" href="#topic20493/update-overcloud">Update Overcloud</xref> </li>
+<xref type="section" href="#topic20505/update-overcloud">Update Overcloud</xref> </li>
 </ol>
 <p>The backends configured in the undercloud Sirius database will not be effective until the overcloud Cinder configuration is updated.</p>
 </section>
@@ -542,7 +541,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 <section id="more-information"> <title>More Information</title>
 <p>For the complete list of Sirius CLI commands, refer to  the <xref href="../../commercial/GA1/1.0commercial.sirius-cli.dita" >Sirius Manual</xref>.</p>
 <p>
-  <xref type="section" href="#topic20493/top"> Return to Top </xref>
+  <xref type="section" href="#topic20505/top"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
