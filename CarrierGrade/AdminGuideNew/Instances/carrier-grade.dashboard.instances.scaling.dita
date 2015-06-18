@@ -68,7 +68,7 @@ Wind River Linux: &lt;IP_address&gt;/auth/login/
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Flavors</b> link.</p>
 </li>
 <li>
-<p>In the <b>Flavors</b> screen, <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.dita" >create or edit a flavor</xref>.</p>
+<p>In the <b>Flavors</b> screen, <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.dita" >create or edit a flavor</xref>.</p>
 </li>
 <li>
 <p>Specify the maximum number of vCPUs for the instance. In the <b>vCPU</b> field, enter the maximum number of vCPUs.</p>
@@ -84,7 +84,7 @@ Wind River Linux: &lt;IP_address&gt;/auth/login/
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>You can specify the minimum number of vCPUs by adding an <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Extra Spec for the flavor</xref>.</p>
+<p>You can specify the minimum number of vCPUs by adding an <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Extra Spec for the flavor</xref>.</p>
 <ol>
 <li>
 <p>In the <b>Flavors</b> list, click the <b>Flavor Name</b> for the flavor you want to edit.</p>

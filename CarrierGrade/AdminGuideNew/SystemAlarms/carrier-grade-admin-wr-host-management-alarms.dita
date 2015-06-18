@@ -35,19 +35,19 @@
 <p>For more information, see the following topics:</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-viewing.dita" >Viewing System Alarms</xref>
+<xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-viewing.dita" >Viewing System Alarms</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-community-strings.dita" >Adding an SNMP Community String</xref>
+<xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-community-strings.dita" >Adding an SNMP Community String</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-snmp-traps.dita" >Configuring SNMP Trap Destinations</xref>
+<xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-snmp-traps.dita" >Configuring SNMP Trap Destinations</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-cli-commands.dita" >Using System Alarms CLI Commands</xref>
+<xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-cli-commands.dita" >Using System Alarms CLI Commands</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-ref-table.dita" >Alarm Reference Table</xref>
+<xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-ref-table.dita" >Alarm Reference Table</xref>
 </li>
 </ul>
 <p>

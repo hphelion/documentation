@@ -31,20 +31,20 @@
 <p>After making the required configuration changes, you can unlock the host and begin using it.</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-controller.dita" >Replacing Active Controller Nodes</xref>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-controller.dita" >Replacing Active Controller Nodes</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-storage.dita" >Replacing Active Storage Nodes</xref>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-storage.dita" >Replacing Active Storage Nodes</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita" >Managing Active Compute Nodes</xref>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita" >Managing Active Compute Nodes</xref>
 
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita#removing" >Removing Compute Nodes</xref>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita#removing" >Removing Compute Nodes</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita#adjust" >Adjusting Resources on a Compute Node</xref>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita#adjust" >Adjusting Resources on a Compute Node</xref>
 </li>
 </ul>
 </li>

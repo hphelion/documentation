@@ -42,7 +42,7 @@
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
 
-	<p>The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack&#174;.</p> 
+	<p>The HP Helion Development Platform is installed in the overcloud of HP Helion <tm tmtype="reg">OpenStack</tm>.</p> 
 
 	<p>Before you begin installation:</p>
 <ul>
@@ -50,7 +50,7 @@
 
 	<li>The Cinder block storage service must be configured with either [VSA](/helion/openstack/1.1/install/vsa/overview/) or [3Par](/helion/openstack/1.1/install/3par/).</li>
  
-	<li>If you installed HP Helion OpenStack&#174; with <b>KVM</b> hypervisor support, configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.</li>
+	<li>If you installed HP Helion OpenStack with <b>KVM</b> hypervisor support, configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.</li>
 
 	<li>The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements.</li>
 

@@ -43,15 +43,13 @@
 <p>Note that other file systems such as <codeph>/usr</codeph> or <codeph>/var</codeph> are not monitored.</p>
 <p>Perform the following steps to monitor the usage of Swift disk:</p>
 <ol>
-<li>
-<p>In the undercloud Horizon dashboard, log in to the <b>Icinga Dashboard</b> (http://&lt;undercloud_IP&gt;/icinga/). The default login credentials are as follows:</p>
-
-<ul>
-<li>Username: <i>icingaadmin</i>
-</li>
-<li>Password: <i>icingaadmin</i> </li>
-</ul>
-</li>
+<li>In the undercloud Horizon dashboard, log in to the <b>Icinga Dashboard</b>
+                    (http://&lt;undercloud_IP&gt;/icinga/). The default login credentials are as follows:<ul>
+                        <li>Username: <i>icingaadmin</i>
+                        </li>
+                        <li>Password: <i>icingaadmin</i>
+                        </li>
+                    </ul></li>
 <li>Click <b>Status</b> on the left panel and then click <b>Host Details</b>.
                         <!--A BR tag was used here in the original source.--><image
                         href="../media/icinga_host-details.png" placement="break"
@@ -65,11 +63,12 @@
                         href="../media/swift_icinga_view-details.png" placement="break"
                         id="image_xpq_vjr_js"/>
                 </li>
-<li>
-<p>Click the target Swift node IP address to open the <b>Service Status Details For Host &lt;Swift node IP address &gt;</b> to view the disk usage of the selected Swift node.
-<!--A BR tag was used here in the original source.--><image href="../media/swift_icinga-disk-usage.png" placement="break"/>
-</p>
-</li>
+<li>Click the target Swift node IP address to open the <b>Service Status Details For Host &lt;Swift
+                        node IP address &gt;</b> to view the disk usage of the selected Swift node.
+                        <!--A BR tag was used here in the original source.--><image
+                        href="../media/swift_icinga-disk-usage.png" placement="break"
+                        id="image_wvv_2q1_ks"/>
+                </li>
 </ol>
 </section>
 <section id="status-messages-for-disk-usage-monitoring"> <title>Status Messages for disk usage monitoring</title>

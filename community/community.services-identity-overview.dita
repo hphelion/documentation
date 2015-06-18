@@ -86,8 +86,7 @@
 <p>The <codeph>/etc/keystone/keystone.conf</codeph> file maps LDAP attributes to Identity attributes, including: users, roles, credentials, and security tokens.</p>
 <p>To configure Identity, set options in the /etc/keystone/keystone.conf file. Modify these examples as needed.</p>
 <p>To integrate Identity with LDAP</p>
-<codeblock>
-  <codeph>Enable the LDAP driver in the keystone.conf file:
+<codeblock><codeph>Enable the LDAP driver in the keystone.conf file:
 Select Text
 1
 2
@@ -175,12 +174,10 @@ Restart the Identity service:
 [Warning]   Warning
 
 During service restart, authentication and authorization are unavailable.
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Additional LDAP integration settings. Set these options in the keystone.conf file.</p>
 <p>Filters</p>
-<codeblock>
-  <codeph>Use filters to control the scope of data presented through LDAP.
+<codeblock><codeph>Use filters to control the scope of data presented through LDAP.
 Select Text
 1
 2
@@ -191,11 +188,9 @@ Select Text
 user_filter = (memberof=cn=openstack-users,ou=workgroups,dc=example,dc=org)
 tenant_filter =
 role_filter =
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>LDAP Account Status</p>
-<codeblock>
-  <codeph>Mask account status values for compatibility with various directory services. Superfluous accounts are filtered with user_filter.
+<codeblock><codeph>Mask account status values for compatibility with various directory services. Superfluous accounts are filtered with user_filter.
 
 For example, you can mask Active Directory account status attributes in the keystone.conf file:
 Select Text
@@ -208,8 +203,7 @@ Select Text
 user_enabled_attribute = userAccountControl
 user_enabled_mask = 2
 user_enabled_default = 512
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="working-with-the-identity-service"> <title>Working with the Identity Service</title>
 <p>To <xref href="../community/community.services-identity-using.dita" >perform tasks using the Identity service</xref>, you can use the API or CLI.</p>

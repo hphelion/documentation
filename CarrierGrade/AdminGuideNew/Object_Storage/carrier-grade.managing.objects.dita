@@ -16,18 +16,18 @@
 <p>You can use the dashboards to create and configure container store instances and move files in and out of store.</p>
 <p>How you interact with these store instance depends upon your user type, either an administrative user (admin) or a non-administrative user (user).</p>
 <p>
-<b>Note:</b> The administrative user can perform all of the user tasks in addition to the admin tasks, such as <xref href="../../../CarrierGrade/AdminGuideNew/Projects/carrier-grade.managing.projects.dita" >setting a quota for volumes</xref>.</p>
+<b>Note:</b> The administrative user can perform all of the user tasks in addition to the admin tasks, such as <xref href="../Projects/carrier-grade.managing.projects.dita" >setting a quota for volumes</xref>.</p>
 <section id="managing-object-storage-as-a-user"> <title>Managing object storage as a user</title>
 <p>As a user, you can work with any object storage container associated with the active project.</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Object_Storage/carrier-grade.dashboard.container.create.dita" >Create and delete a container</xref>
+<xref href="../Object_Storage/carrier-grade.dashboard.container.create.dita" >Create and delete a container</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Object_Storage/carrier-grade.dashboard.container.upload.dita" >Upload an object into or download an object from a container</xref>
+<xref href="../Object_Storage/carrier-grade.dashboard.container.upload.dita" >Upload an object into or download an object from a container</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Object_Storage/carrier-grade.dashboard.container.edit.dita" >Edit and delete an object in a container</xref>
+<xref href="../Object_Storage/carrier-grade.dashboard.container.edit.dita" >Edit and delete an object in a container</xref>
 </li>
 </ul>
 </section>

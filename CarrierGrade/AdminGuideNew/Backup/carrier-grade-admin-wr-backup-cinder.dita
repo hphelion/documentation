@@ -67,7 +67,7 @@
 <p>Log in as user <codeph>admin</codeph> to the active controller.</p>
 </li>
 <li>
-<p>Log in as user <codeph>wrsroot</codeph> to the active controller and source the script <codeph>/etc/nova/openrc</codeph> to obtain administrative privileges as described in <xref href="../../../CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade-admin-wr-linux-users.dita" >Linux User Accounts</xref>.</p>
+<p>Log in as user <codeph>wrsroot</codeph> to the active controller and source the script <codeph>/etc/nova/openrc</codeph> to obtain administrative privileges as described in <xref href="../MiscTasks/carrier-grade-admin-wr-linux-users.dita" >Linux User Accounts</xref>.</p>
 </li>
 <li>
 <p>Use the following command to identify the volume you want to back up.</p>
@@ -115,7 +115,7 @@
 <p>Log in as Keystone user <codeph>admin</codeph> to the active controller.</p>
 </li>
 <li>
-<p>Log in as user <codeph>wrsroot</codeph> to the active controller and source the script <codeph>/etc/nova/openrc</codeph> to obtain administrative privileges as described in <xref href="../../../CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade-admin-wr-linux-users.dita" >Linux User Accounts</xref>.</p>
+<p>Log in as user <codeph>wrsroot</codeph> to the active controller and source the script <codeph>/etc/nova/openrc</codeph> to obtain administrative privileges as described in <xref href="../MiscTasks/carrier-grade-admin-wr-linux-users.dita" >Linux User Accounts</xref>.</p>
 </li>
 <li>
 <p>Use the following command to identify the volume you want to back up.</p>

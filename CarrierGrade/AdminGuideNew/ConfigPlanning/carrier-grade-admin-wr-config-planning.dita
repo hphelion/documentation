@@ -35,16 +35,16 @@
 <p>This section contains the following information:</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet.dita" >Working with Ethernet Interfaces</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet.dita" >Working with Ethernet Interfaces</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network.dita" >Planning the Network</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network.dita" >Planning the Network</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-storage.dita" >Planning the Storage</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-storage.dita" >Planning the Storage</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-vxlan.dita" >Planning the VXLANs</xref>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-vxlan.dita" >Planning the VXLANs</xref>
 </li>
 </ul>
 <p>

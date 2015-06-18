@@ -52,7 +52,7 @@
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
@@ -114,7 +114,7 @@ The personality (Controller, Compute, or Storage) is confirmed in the menu. If y
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the node</xref> to make it available for use. Click <b>More</b> then <b>Unlock Host</b>.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the node</xref> to make it available for use. Click <b>More</b> then <b>Unlock Host</b>.</p>
 
 <p>The node is rebooted, and its Availability State is reported as <codeph>In-Test</codeph>. After a few minutes, it is reported as <codeph>Unlocked</codeph>, <codeph>Enabled</codeph>, and <codeph>Available</codeph>.</p>
 </li>

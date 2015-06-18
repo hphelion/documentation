@@ -44,11 +44,11 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref> as the admin user.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref> as the admin user.</p>
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the compute node</xref> you want to configure.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the compute node</xref> you want to configure.</p>
 </li>
 <li>
 <p>Configure the Ethernet interface to be used as a PCI passthrough interface.</p>
@@ -88,7 +88,7 @@
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the compute node</xref>.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the compute node</xref>.</p>
 </li>
 <li>
 <p>Launch the virtual machine.</p>
@@ -117,7 +117,7 @@
 </codeph>
 </codeblock>
 <p>The new virtual machine instance is up now. It has a PCI passthrough connection to the tenant network identified with VLAN ID 10.</p>
-<p>Access switches must be properly configured to ensure that virtual machines using PCI-passthrough or <xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-sr-iov.dita" >SRIOV Ethernet interfaces</xref> have the expected connectivity. In a common scenario, the virtual machine using these interfaces connects to external end points only, that is, it does not connect to other virtual machines in the same TiS cluster.</p>
+<p>Access switches must be properly configured to ensure that virtual machines using PCI-passthrough or <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-sr-iov.dita" >SRIOV Ethernet interfaces</xref> have the expected connectivity. In a common scenario, the virtual machine using these interfaces connects to external end points only, that is, it does not connect to other virtual machines in the same TiS cluster.</p>
 <p>In this case:</p>
 <ul>
 <li>Traffic between the virtual machine and the access switch can be tagged or untagged.</li>

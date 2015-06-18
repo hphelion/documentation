@@ -85,50 +85,52 @@
 <p>The following table lists the types of logs collected by Centralized Logging and provides information on how the logs are maintained.</p>
 <table>
 <tgroup cols="6">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<colspec colname="col5"/>
-<colspec colname="col6"/>
-<thead>
-<row>
-    <entry>Data name</entry>
-    <entry>Confidentiality</entry>
-    <entry>Integrity</entry>
-    <entry>
-Availability</entry>
-    <entry>Backup?</entry>
-    <entry>Description</entry>
-  </row>
-</thead>
-<tbody>
-<row>
-    <entry>Log records</entry>
-    <entry>Restricted</entry>
-    <entry>High</entry>
-    <entry>Medium</entry>
-    <entry>No</entry>
-    <entry>Log records have a limited life, and are not archived. The log file on the local filesystem provides a fallback source of logging data (up to 20GB or 45 days) if the logging system fails.</entry>
-  </row>
-<row>
-    <entry>Log metadata</entry>
-    <entry>Restricted</entry>
-    <entry>High</entry>
-    <entry>Medium</entry>
-    <entry>No</entry>
-    <entry>Elasticsearch indexes logged data to allow flexible searching.</entry>
-  </row>
-<row>
-    <entry>Credentials</entry>
-    <entry>Confidential</entry>
-    <entry>High</entry>
-    <entry>Medium</entry>
-    <entry>No</entry>
-    <entry>Credentials for access to Elasticsearch and RabbitMQ are stored in configuration files owned by root with mode 0600.</entry>
-  </row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <colspec colname="col4" colsep="1" rowsep="1"/>
+          <colspec colname="col5" colsep="1" rowsep="1"/>
+          <colspec colname="col6" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry>Data name</entry>
+              <entry>Confidentiality</entry>
+              <entry>Integrity</entry>
+              <entry> Availability</entry>
+              <entry>Backup?</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Log records</entry>
+              <entry>Restricted</entry>
+              <entry>High</entry>
+              <entry>Medium</entry>
+              <entry>No</entry>
+              <entry>Log records have a limited life, and are not archived. The log file on the
+                local filesystem provides a fallback source of logging data (up to 20GB or 45 days)
+                if the logging system fails.</entry>
+            </row>
+            <row>
+              <entry>Log metadata</entry>
+              <entry>Restricted</entry>
+              <entry>High</entry>
+              <entry>Medium</entry>
+              <entry>No</entry>
+              <entry>Elasticsearch indexes logged data to allow flexible searching.</entry>
+            </row>
+            <row>
+              <entry>Credentials</entry>
+              <entry>Confidential</entry>
+              <entry>High</entry>
+              <entry>Medium</entry>
+              <entry>No</entry>
+              <entry>Credentials for access to Elasticsearch and RabbitMQ are stored in
+                configuration files owned by root with mode 0600.</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 <p>Log rotation will happen daily or when the current logfile reaches 2GB, whichever happens sooner. The number of rotations held will be balanced to attempt to cap logs from all services at 200GB.</p>
 </section>

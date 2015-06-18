@@ -39,7 +39,7 @@ However, you can replace the primary or secondary disks, and you can replace fau
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.</li>
@@ -53,20 +53,20 @@ However, you can replace the primary or secondary disks, and you can replace fau
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the standby controller</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the standby controller</xref> by clicking <b>More</b> then <b>Lock Host</b> for the controller.</p>
 
 <p>Wait for the procedure to be completed.</p>
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host.dita#power" >Power down the standby controller</xref> and make any required hardware changes.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#power" >Power down the standby controller</xref> and make any required hardware changes.</p>
 
 <p>This may involve replacing disks, or replacing the host completely.</p>
 </li>
 <li>
 <p>Place the new or modified controller into service.</p>
 
-<p>a. <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host.dita#power" >Power up the controller</xref>.</p>
+<p>a. <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#power" >Power up the controller</xref>.</p>
 
 <p>Wait until the controller is reported as Locked, Enabled, and Available.</p>
 
@@ -81,13 +81,13 @@ However, you can replace the primary or secondary disks, and you can replace fau
 <p>
 <b>Note:</b> If the host does not boot from the management network, ensure that the host BIOS is configured for PXE boot.</p>
 
-<p>c. <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host.dita#swact" >Perform a swact</xref> by clicking <b>More</b> then <b>Swact Host</b> for the active controller.</p>
+<p>c. <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#swact" >Perform a swact</xref> by clicking <b>More</b> then <b>Swact Host</b> for the active controller.</p>
 
 <p>The standby controller becomes the active controller, and the original active controller is placed into standby.</p>
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the original active controller</xref>, which is in standby.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the original active controller</xref>, which is in standby.</p>
 
 <p>a. Open the Hosts list by clicking Inventory on the System Panel section of the Admin menu, and then selecting the Hosts tab.</p>
 
@@ -103,7 +103,7 @@ However, you can replace the primary or secondary disks, and you can replace fau
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host.dita#power" >Power up the new or modified controller</xref>.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#power" >Power up the new or modified controller</xref>.</p>
 </li>
 <li>
 <p>If required, <xref href="../../../CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita" >reinstall HP Helion OpenStack(R) Carrier Grade</xref> on the controller.</p>

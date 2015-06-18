@@ -37,21 +37,18 @@
                         <codeph>UNDERCLOUD_IP_ADDRESS</codeph> obtained after the install.<p>If you
                         did not retrieve the overcloud IP from the end of the install, enter the
                         following
-                    command:</p><codeblock>
-<codeph>. /root/tripleo/tripleo-undercloud-passwords
+                    command:</p><codeblock><codeph>. /root/tripleo/tripleo-undercloud-passwords
 TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
 OVERCLOUD_IP=$(heat output-show overcloud KeystoneURL | cut -d: -f2 | sed s,/,,g )
 echo $UNDERCLOUD_IP
-</codeph>
-</codeblock></li>
+</codeph></codeblock></li>
 <li>Log in as <codeph>demo</codeph> or <codeph>admin</codeph> using the corresponding passwords
                     obtained in step 1.</li>
-<li>In the Horizon console, you can obtain the IP address of the demo
-                    VM:<codeblock>
-<codeph>a. Click Project &gt; Compute &gt; Instance.
-b. Note the public IP address of the **demo** instance, starting with `192`.
-</codeph>
-</codeblock></li>
+<li>In the Horizon console, you can obtain the IP address of the demo VM:<ol id="ol_ath_2r1_ks">
+                        <li>Click Project &gt; Compute &gt; Instance.</li>
+                        <li>Note the public IP address of the **demo** instance, starting with
+                            `192`</li>
+                    </ol></li>
 </ol>
 </section>
 <section id="connectover"> <title>Connecting to the overcloud Horizon console</title>
@@ -64,21 +61,18 @@ b. Note the public IP address of the **demo** instance, starting with `192`.
                         <codeph>OVERCLOUD_IP_ADDRESS</codeph> obtained after the instal.<p>If you
                         did not retrieve the overcloud IP from the end of the install, enter the
                         following
-                    command:</p><codeblock>
-<codeph>. /root/work/tripleo/tripleo-undercloud-passwords
+                    command:</p><codeblock><codeph>. /root/work/tripleo/tripleo-undercloud-passwords
 TE_DATAFILE=/root/work/tripleo/ce_env.json . /root/work/tripleo/tripleo-incubator/undercloudrc
 OVERCLOUD_IP=$(heat output-show overcloud KeystoneURL | cut -d: -f2 | sed s,/,,g )
 echo $OVERCLOUD_IP
-</codeph>
-</codeblock></li>
+</codeph></codeblock></li>
 <li>Log in as <codeph>demo</codeph> or <codeph>admin</codeph> using the corresponding passwords
                     obtained in step 1.</li>
-<li>In the Horizon console, you can obtain the IP address of the demo
-                    VM:<codeblock>
-<codeph>a. Click Project &gt; Compute &gt; Instance.
-b. Note the public IP address of the **demo** instance, starting with `192`.
-</codeph>
-</codeblock></li>
+<li>In the Horizon console, you can obtain the IP address of the demo VM:<ol id="ol_w1r_hr1_ks">
+                        <li>Click Project &gt; Compute &gt; Instance.</li>
+                        <li>Note the public IP address of the **demo** instance, starting with
+                            `192`.</li>
+                    </ol></li>
 </ol>
 </section>
 <section id="connectvm"> <title>Connecting to the demo VM</title>
@@ -116,15 +110,11 @@ b. Note the public IP address of the **demo** instance, starting with `192`.
 <p>You can access these services with the following steps:</p>
 <ol>
 <li>To access the undercloud monitoring console, launch a web browser on the seed cloud host to the
-                    following IP address, using the undercloud IP address from the end of the install:<codeblock>
-<codeph>http://&lt;undercloud IP&gt;/icinga/
-</codeph>
-</codeblock><p>
+                    following IP address, using the undercloud IP address from the end of the install:<codeblock><codeph>http://&lt;undercloud IP&gt;/icinga/
+</codeph></codeblock><p>
                         <b>Example:</b>
-                    </p><codeblock>
-<codeph>http://192.0.2.2/icinga
-</codeph>
-</codeblock><p>If you
+                    </p><codeblock><codeph>http://192.0.2.2/icinga
+</codeph></codeblock><p>If you
                         did not retrieve the undercloud IP from the end of the install, enter the
                         following
                     command:</p><codeblock>
@@ -137,22 +127,16 @@ echo $UNDERCLOUD_IP
                     <codeph>icingaadmin</codeph>.</li>
 <li>To access the undercloud logging console, first obtain the Kibana password.<p>a. From the seed
                         cloud host log in to the undercloud as super
-                        user:</p><codeblock>
-<codeph>ssh heat-admin@&lt;undercloud IP&gt; 
+                        user:</p><codeblock><codeph>ssh heat-admin@&lt;undercloud IP&gt; 
 sudo su - 
-</codeph>
-</codeblock><p>b.
+</codeph></codeblock><p>b.
                         Enter the following command to display the
-                        password:</p><codeblock>
-<codeph>cat  /opt/kibana/htpasswd.cfg 
-</codeph>
-</codeblock><p>Make
+                        password:</p><codeblock><codeph>cat  /opt/kibana/htpasswd.cfg 
+</codeph></codeblock><p>Make
                         note of the password.</p></li>
 <li>Launch a web browser on the seed cloud host to the following IP address, using the undercloud IP
-                    address from the end of the install:<codeblock>
-<codeph>http://&lt;undercloud IP&gt;:81 
-</codeph>
-</codeblock><p>
+                    address from the end of the install:<codeblock><codeph>http://&lt;undercloud IP&gt;:81 
+</codeph></codeblock><p>
                         <b>Example:</b>
                     </p><codeblock>
 <codeph>http://192.0.2.2:81

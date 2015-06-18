@@ -28,7 +28,7 @@
 </ul>
 <p>
 <b>Note:</b> The Haswell model does not currently support transactional synchronization extensions (TSX).</p>
-<p>To add this extra spec to a flavor using the web administration interface, see <xref href="../../../CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Configuring Flavor Extra Specifications</xref>.</p>
+<p>To add this extra spec to a flavor using the web administration interface, see <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Configuring Flavor Extra Specifications</xref>.</p>
 <p>
   <xref type="section" href="#topic1356/top"> Return to Top </xref>
 </p>

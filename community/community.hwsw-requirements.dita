@@ -239,40 +239,44 @@
 <p>The following table maps the minimum server configuration into usable capacity of the overcloud for both virtual and baremetal installations.</p>
 <table>
 <tgroup cols="3">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<thead>
-<row>
-<entry>Service</entry>
-<entry>Usable capacity</entry>
-<entry>Notes</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry> VMs </entry>
-<entry> 6 standard.medium (4 GB memory, 80 GB disk) </entry>
-<entry> Assumes 8 GB of memory and 200 GB of disk overhead. Capacity increases linearly with compute nodes.</entry>
-</row>
-<row>
-<entry> Volumes </entry>
-<entry> 1800 GB</entry>
-<entry> Capacity is fixed</entry>
-</row>
-<row>
-<entry> Object storage</entry>
-<entry> 400 GB; equivalent to: <ul>
-                  <li>160 images, based on 2.5 GB images  or </li>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <thead>
+            <row rowsep="1">
+              <entry>Service</entry>
+              <entry>Usable capacity</entry>
+              <entry>Notes</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> VMs </entry>
+              <entry> 6 standard.medium (4 GB memory, 80 GB disk) </entry>
+              <entry> Assumes 8 GB of memory and 200 GB of disk overhead. Capacity increases
+                linearly with compute nodes.</entry>
+            </row>
+            <row>
+              <entry> Volumes </entry>
+              <entry> 1800 GB</entry>
+              <entry> Capacity is fixed</entry>
+            </row>
+            <row>
+              <entry> Object storage</entry>
+              <entry> 400 GB; equivalent to: <ul>
+                  <li>160 images, based on 2.5 GB images or </li>
                   <li>40 volume backups, based on 10 GB volumes</li>
                 </ul>
               </entry>
-<entry> In addition to your objects, object storage is used for images and volume backups. With 640 GB per server (after subtracting 60 GB for the OS) this leaves about 400 usable GB (1280/3.2). This is assuming an average Linux image/snapshot of 2.5 GB and a 10 GB cinder volume backup.
-
-<p>Note: These are the maximum figures assuming the storage is used exclusively for that type of object.</p>  </entry>
-</row>
-</tbody>
-</tgroup>
+              <entry> In addition to your objects, object storage is used for images and volume
+                backups. With 640 GB per server (after subtracting 60 GB for the OS) this leaves
+                about 400 usable GB (1280/3.2). This is assuming an average Linux image/snapshot of
+                2.5 GB and a 10 GB cinder volume backup. <p>Note: These are the maximum figures
+                  assuming the storage is used exclusively for that type of object.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="next"> <title>Next Steps</title>

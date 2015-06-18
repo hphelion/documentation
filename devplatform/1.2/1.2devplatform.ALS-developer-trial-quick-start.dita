@@ -70,11 +70,13 @@ You can also <xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc
                                     cover hosting costs for your sandbox environment </li>
                                 <li>Access to the Helion Development Platform download
                                     repositories</li>
-                            </ul><p><b>Note</b>: Ensure that you review <xref
-                                    href="http://www.hpcloud.com/pricing" scope="external"
-                                    format="html">HP Public Cloud pricing</xref> to understand what
-                                charges may be incurred if the use limits of the free credit offer
-                                are exceeded. </p></entry>
+                            </ul><p>
+                                <note>Ensure that you review <xref
+                                        href="http://www.hpcloud.com/pricing" scope="external"
+                                        format="html">HP Public Cloud pricing</xref> to understand
+                                    what charges may be incurred if the use limits of the free
+                                    credit offer are exceeded. </note>
+                            </p></entry>
                     </row>
                     <row>
                         <entry/>

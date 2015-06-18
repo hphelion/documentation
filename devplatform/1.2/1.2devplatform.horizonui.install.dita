@@ -27,10 +27,14 @@
  <!--permalink: /helion/devplatform/1.2/horizonuiinstallation/--></p>
 <p>This document shows how to install the Horizon UI for the <xref href="../../devplatform/1.2/helion/1.2index.dita" >Application Lifetime Service (ALS)</xref>, <xref href="../../devplatform/1.2/1.2devplatform.database-instance.dita" >Database as a Service (DBaaS)</xref>, and <xref href="../../devplatform/1.2/1.2devplatform.marketplace.install.dita" >Marketplace</xref> Services.</p>
 <p>
-<b>Note:</b> You will need to download and install the Horizon UI separately for each service you wish to upgrade.</p>
+      <note>You will need to download and install the Horizon UI separately for each service you
+        wish to upgrade.</note>
+    </p>
 <section id="step-1-retrieve-the-als-dbaas-and-marketplace-service-updates-from-codn"> <title>Step 1: Retrieve the ALS, DBaaS, and Marketplace Service Updates from CODN</title>
 <p>Use the <b>Helion Development Platform UI</b> to check CODN for a new Service Update for ALS, DBaaS, or Marketplace.</p>
-<p>If there are new Service Updates for ALS, DBaaS, or Marketplace, retrieve them from CODN. This will retrieve the ALS, DBaaS, and Marketplace packages from CODN and push them into a container in Swift within your local cloud.</p>
+<p>If there are new Service Updates for ALS, DBaaS, or Marketplace, retrieve them from CODN. This
+        will retrieve the installation packages from CODN and push them into a container in Swift
+        within your local cloud.</p>
 </section>
 <section id="step-2-install-the-als-dbaas-and-marketplace-service-updates"> <title>Step 2: Install the ALS, DBaaS, and Marketplace Service Updates</title>
 </section>
@@ -38,7 +42,7 @@
 <p>You will need the following pieces of information in order to run the service updates.</p>
 <table pgwide="1">
 <tgroup cols="2">
-<colspec colname="col1"/>
+<colspec colname="col1" colwidth="300" colsep="1"/>
 <colspec colname="col2"/>
 <thead>
 <row>
@@ -118,28 +122,22 @@ This can typically can be found inside the above container in Swift.
 </section>
 <section id="lets-get-to-it"> <title>Let's get to it!</title>
 <p>a) SSH to the seed node of your cloud:</p>
-<codeblock>
-# SSH to the base node 
+<codeblock># SSH to the base node 
 ssh USERNAME@BASE_NODE_IP
 
 # Become root
 sudo su (will prompt for password)
 
 # SSH to the seed node 
-ssh SEED_NODE_IP
-</codeblock>
+ssh SEED_NODE_IP</codeblock>
 <p>b) Ensure your environment has the proper credentials to perform the download from Swift:</p>
-<codeblock>
-
-# For ALS: Source the overcloud credentials to reach Swift 
+<codeblock># For ALS: Source the overcloud credentials to reach Swift 
 export TE_DATAFILE="/root/tripleo/ce_env.json"
 source /root/tripleo/tripleo-incubator/overcloudrc
 # For DBaaS and Marketplace: overcloud credentials needed here 
-source admin_over_creds
-</codeblock>
+source admin_over_creds</codeblock>
 <p>c) Use the Swift client to download the Service Update:</p>
-<codeblock>
-# List the contents of the Swift container for the desired service update
+<codeblock># List the contents of the Swift container for the desired service update
 # ALS
 swift list als-horizon-ui
 
@@ -153,15 +151,11 @@ swift list murano-dashboard-horizon-ui
 # ex: SERVICE_UPDATE_FILENAME.tar.gz 
 
 # Download the installation file 
-swift download CONTAINER_NAME SERVICE_UPDATE_FILENAME 
-</codeblock>
+swift download CONTAINER_NAME SERVICE_UPDATE_FILENAME </codeblock>
 <p>d) Once the file is downloaded, unzip/tar the file:</p>
-<codeblock>
-tar -zxvf SERVICE_UPDATE_FILENAME.tar.gz
-</codeblock>
+<codeblock>tar -zxvf SERVICE_UPDATE_FILENAME.tar.gz</codeblock>
 <p>e) Go to the newly created folder and execute the install script, passing in the location of the private key of the <b>heat-admin</b> account:</p>
-<codeblock>
-# For ALS: Source undercloud creds from the same location as the overcloudrc
+<codeblock># For ALS: Source undercloud creds from the same location as the overcloudrc
 source /root/tripleo/tripleo-incubator/undercloudrc
 
 # For DBaaS and Marketplace: Source undercloud creds 
@@ -169,12 +163,10 @@ source admin_under_creds
 
 # Fire up the install!
 cd SERVICE_UPDATE_FILENAME 
-./install.sh HEAT_ADMIN_KEY 
-</codeblock>
+./install.sh HEAT_ADMIN_KEY </codeblock>
 </section>
 <section id="step-3-configure-each-service"> <title>Step 3: Configure each service</title>
 <p>Return to the <b>Helion Development Platform UI</b> and click on "Configure" to configure each service.</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

@@ -67,7 +67,7 @@
 <p>To support IGMP and MDL snooping, Layer 3 routers must be configured for IGMP and MDL querying.</p>
 </li>
 <li>
-<p>To accommodate VXLAN encapsulation, the MTU values for Layer 2 switches and compute node data interfaces must allow for additional headers. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-mtu.dita" >Configuring Ethernet MTU</xref>.</p>
+<p>To accommodate VXLAN encapsulation, the MTU values for Layer 2 switches and compute node data interfaces must allow for additional headers. For more information, see <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-mtu.dita" >Configuring Ethernet MTU</xref>.</p>
 </li>
 <li>
 <p>To participate in a VXLAN network, the data interfaces on the compute nodes must be configured with IP addresses, and with route table entries for the destination subnets or the local gateway. For more information, see Configuring Endpoint IP Addresses and Adding and Maintaining Routes for a VXLAN Network.</p>

@@ -23,13 +23,13 @@
 <p>The <b>Network</b> panel contains commands to view a visual representation of your network and to enable you to work with your network.</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.viewing.dita" >View your network</xref>
+<xref href="../Networks/carrier-grade.dashboard.network.viewing.dita" >View your network</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.create.dita" >Create or delete a tenant network</xref>
+<xref href="../Networks/carrier-grade.dashboard.network.create.dita" >Create or delete a tenant network</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.enable.tenant.dita" >Enable or disable a tenant network</xref>
+<xref href="../Networks/carrier-grade.dashboard.network.enable.tenant.dita" >Enable or disable a tenant network</xref>
 </li>
 </ul>
 </section>
@@ -39,22 +39,22 @@
 <p>Access the networking commands using the <b>System</b> panel on the <b>Admin</b> dashboard.</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.dita" >Creating provider networks</xref>
+<xref href="../Networks/carrier-grade.dashboard.network.admin.create.dita" >Creating provider networks</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.dita" >Enable or disable a provider network</xref>
+<xref href="../Networks/carrier-grade.dashboard.network.admin.create.dita" >Enable or disable a provider network</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita" >Delete a provider network</xref>
+<xref href="../Networks/carrier-grade.dashboard.network.admin.create.provider.dita" >Delete a provider network</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.ports2.dita" >Create, Modify, or Delete a port on a Network</xref>
+<xref href="../Networks/carrier-grade.dashboard.network.ports2.dita" >Create, Modify, or Delete a port on a Network</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.qos.dita" >Creating QOS Policies</xref>
+<xref href="../Networks/carrier-grade.dashboard.network.qos.dita" >Creating QOS Policies</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita" >Creating a Segmentation Range</xref>
+<xref href="../Networks/carrier-grade.dashboard.network.admin.create.segment.dita" >Creating a Segmentation Range</xref>
 </li>
 </ul>
 <p>

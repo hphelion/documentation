@@ -29,7 +29,7 @@
  <!--./CarrierGrade/AdminGuideNew/VSA/carrier.vsa-overview.md-->
  <!--permalink: /helion/openstack/carrier/install/vsa/overview/--></p>
 <p>
-  <xref href="../../../CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa-add-new-mgmt-group.dita" >Deploy and Configure HP StoreVirtual VSA ▶</xref>
+  <xref href="../VSA/carrier.install-vsa-add-new-mgmt-group.dita" >Deploy and Configure HP StoreVirtual VSA ▶</xref>
 </p>
 <p>HP Helion OpenStack(R) bundles and facilitates deployment of HP StoreVirtual VSA which can be configured as backend for OpenStack(R) Cinder Block Storage.</p>
 <p>This page provides detailed information on using HP StoreVirtual VSA for realizing cloud storage.</p>
@@ -187,7 +187,7 @@ For more details on the Lefthand driver, refer to <xref href="http://docs.openst
 <section id="next-steps"> <title>Next Step</title>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa-add-new-mgmt-group.dita" >Deploy and Configure HP StoreVirtual VSA</xref>
+<xref href="../VSA/carrier.install-vsa-add-new-mgmt-group.dita" >Deploy and Configure HP StoreVirtual VSA</xref>
 </li>
 </ul>
 <p>

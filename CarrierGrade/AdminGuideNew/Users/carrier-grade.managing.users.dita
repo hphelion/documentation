@@ -16,16 +16,16 @@
 <p>As an admin, you can use the dashboards to:</p>
 <ul>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.users.create.dita" >Create and delete users</xref>
+<xref href="../Users/carrier-grade.dashboard.users.create.dita" >Create and delete users</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.users.enable.dita" >Disable and enable a user</xref>
+<xref href="../Users/carrier-grade.dashboard.users.enable.dita" >Disable and enable a user</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.users.password.dita" >Change a user password</xref>
+<xref href="../Users/carrier-grade.dashboard.users.password.dita" >Change a user password</xref>
 </li>
 <li>
-<xref href="../../../CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.projects.primary.dita" >Specify a primary project for a user</xref>
+<xref href="../Users/carrier-grade.dashboard.projects.primary.dita" >Specify a primary project for a user</xref>
 </li>
 </ul>
 <p>

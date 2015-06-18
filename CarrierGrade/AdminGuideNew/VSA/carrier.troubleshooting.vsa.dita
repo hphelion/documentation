@@ -25,7 +25,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/VSA/carrier.troubleshooting.vsa.md-->
  <!--permalink: /helion/openstack/carrier/services/troubleshooting/vsa/--></p>
-<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of LinuxÂ(R) provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of Linux(R) provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <p>Troubleshooting issues related to HP StoreVirtual VSA environments.</p>
 <ul>
 <li>
@@ -433,7 +433,9 @@ When there are less than two drives in the machine, the script will fail to exec
 <p>
   <b>Resolution</b>
 </p>
-<p>To fix this problem, manually update <codeph>VSA_PUBLIC_INTERFACE</codeph> in the <codeph>~/tripleo/overcloud-env.json</codeph> file with the interface name, for example, <codeph>eth1</codeph>.</p>
+<p>To fix this problem, update <codeph>VSA_PUBLIC_INTERFACE</codeph> in the
+          <codeph>~/tripleo/overcloud-env.json</codeph> file with the interface name, for example,
+          <codeph>eth1</codeph>.</p>
 <p/>
 <!-- ===================== horizontal rule ===================== -->
 <p>
