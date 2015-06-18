@@ -222,9 +222,8 @@
 <li>--vcenter-id &lt;VCENTER_ID&gt;: vCenter ID to activate clusters [Required].
 
 <ul>
-<li>--clusters &lt;CLUSTER_MOIDS&gt; [<required-cleanup remap="cluster_moids">
+<li>--clusters &lt;CLUSTER_MOIDS&gt; [
 <ph> ...]: MOIDs of the cluster to be activated [Required].</ph>
-</required-cleanup>
 </li>
 </ul>
 </li>
@@ -241,9 +240,8 @@
 <li>--vcenter-id &lt;VCENTER_ID&gt;: vCenter ID to deactivate clusters [Required].
 
 <ul>
-<li>--clusters &lt;CLUSTER_MOIDS&gt; [<required-cleanup remap="cluster_moids">
+<li>--clusters &lt;CLUSTER_MOIDS&gt; [
 <ph> ...]: MOIDs of the cluster to be deactivated [Required].            </ph>
-</required-cleanup>
 </li>
 </ul>
 </li>
