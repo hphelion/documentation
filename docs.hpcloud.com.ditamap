@@ -1529,8 +1529,7 @@
   <topicref href="helion.rack.solution.dita"/>
 -->
   <!-- Public cloud -->
-  <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud Overview"
-    locktitle="yes">
+  <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud" locktitle="yes">
     <topicref href="publiccloud/services.dita">
       <topicref href="publiccloud/identity.dita"/>
       <topicref href="publiccloud/compute.dita"/>
@@ -1572,7 +1571,6 @@
         <topicref href="publiccloud/cli.windows.2.help.dita"/>
         <topicref href="publiccloud/cli.windows.2.metadata.dita"/>
         <topicref href="publiccloud/cli.windows.2.misc.dita"/>
-        <topicref href="publiccloud/cli.windows.2.reference.dita"/>
         <topicref href="publiccloud/cli.windows.2.block-storage.dita"/>
         <topicref href="publiccloud/cli.windows.2.release-notes.dita"/>
       </topicref>
