@@ -72,11 +72,10 @@ The following steps ensure the recovery of the lost configuration.
   <row>
     <entry>Compute Node</entry>
     <entry>/etc/nova/nova.conf</entry>
-    <entry>1. Log in to the <xref href="https://helion.hpwsportal.com" format="html"> HDN</xref>. 
-      <!--A BR tag was used here in the original source.--> 2. Click the workloads category on the left side.
-      <!--A BR tag was used here in the original source.--> 3. Click the storage subcategory to find all the 
-      Ceph related files. <!-- <br /> <b>Filename</b> need ?-->
-    </entry>
+    <entry>1. Log in to the <xref href="https://helion.hpwsportal.com" format="html"> HDN</xref> 2.
+              Click the workloads category on the left side.  3. Click the storage subcategory to
+              find all the Ceph related files. <!-- <br /> Filename need ?-->
+            </entry>
   </row>
 </tbody>
   </tgroup>
