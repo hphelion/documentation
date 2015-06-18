@@ -1219,9 +1219,9 @@ Then a key/value pair of "architecture"/"amd64" will be stored as image metadata
 </section>
 <section id="4423-two-step-adding-new-image"> <title>4.4.2.3 Two-step Adding New Image</title>
 </section>
-<section id="post-images"> <title>POST /images</title>
+<section id="post-images2"> <title>POST /images</title>
 </section>
-<section id="put-imagesimage-id"> <title>PUT /images/{image_id}</title>
+<section id="put-imagesimage-id2"> <title>PUT /images/{image_id}</title>
 <p>Another way to add a new image to the Image service is to first register an image via a POST request and then upload the image data via a PUT.</p>
 <p>
   <b>Status Codes</b>
