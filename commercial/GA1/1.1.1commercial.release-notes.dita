@@ -22,7 +22,7 @@
  <!--./commercial/GA1/1.1.1commercial.release-notes.md-->
  <!--permalink: /helion/openstack/1.1.1/release-notes/11/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.release-notes.dita" >See the Release Notes for HP Helion OpenStack(R) 1.1.</xref>
+  <xref href="1.1commercial.release-notes.dita" >See the Release Notes for HP Helion OpenStack(R) 1.1.</xref>
 </p>
 <p>Thank you for your interest in HP Helion OpenStack(R) This document provides an overview of the features contained within HP Helion OpenStack(R) version 1.1.1, including known issues and workarounds, and where to find further information on the product release:</p>
 <ul>
@@ -58,16 +58,16 @@ HP Helion OpenStack(R) through its centralized logging infrastructure (Logstash,
 <p>Integration with HP ArcSight provides the ability to monitor, analyze, and correlate HP Helion OpenStack(R) logs through HP ArcSight Logger and ESM and supports continuous security monitoring of the entire HP Helion OpenStack(R) infrastructure. Technical details of this integration along with a step-by-step tutorial are available in the whitepaper entitled <xref href="http://www8.hp.com/h20195/V2/GetDocument.aspx?docname=4AA5-8025ENW&amp;cc=us&amp;lc=en" scope="external" format="html" >Monitoring HP Helion OpenStack(R) with HP ArcSight</xref>.</p>
 <p>
 <b>Enabled customer-provided certificates for all endpoints</b>
-This release supports the use of a <xref href="../../commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita" >customer-provided certificate</xref> without requiring any changes to the service configurations other than a possible restart.</p>
+This release supports the use of a <xref href="1.1.1commerical.services-customer-provided-certificates.dita" >customer-provided certificate</xref> without requiring any changes to the service configurations other than a possible restart.</p>
 </section>
 <section id="110"> <title>Features in HP Helion OpenStack(R) 1.1</title>
 <p>The following features have been added to HP Helion OpenStack(R) 1.1:</p>
 <p>
-<b>OpenStack(R) Juno support</b> All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#OpenStack(R)" >HP Helion OpenStack(R) services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack(R) Juno</xref>.</p>
+<b>OpenStack(R) Juno support</b> All of the <xref href="1.1commerical.services-overview.dita" >HP Helion OpenStack(R) services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack(R) Juno</xref>.</p>
 <p>
-<b>HP Helion OpenStack(R) Metering services</b> The <xref href="../../commercial/GA1/1.1commerical.services-reporting-overview.dita" >HP Helion OpenStack(R) Telemetry and Reporting service</xref> leverages the OpenStack(R) Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls.</p>
+<b>HP Helion OpenStack(R) Metering services</b> The <xref href="1.1commerical.services-reporting-overview.dita" >HP Helion OpenStack(R) Telemetry and Reporting service</xref> leverages the OpenStack(R) Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls.</p>
 <p>
-<b>Additional Components in Centralized Logging</b> <xref href="../../commercial/GA1/1.1commerical.services-logging-overview.dita" >Centralized logging support</xref> has now been added for the following additional components: <!--HPM-28--></p>
+<b>Additional Components in Centralized Logging</b> <xref href="1.1commerical.services-logging-overview.dita" >Centralized logging support</xref> has now been added for the following additional components: <!--HPM-28--></p>
 <ul>
 <li>HAProxy</li>
 <li>Syslog</li>
@@ -80,11 +80,11 @@ This release supports the use of a <xref href="../../commercial/GA1/1.1.1commeri
 <p>For information on creating and deploying a Microsoft Windows Server that is Microsoft SVVP compliant on HP Helion OpenStack(R) as a Nova compute VM, see <xref href="../../commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita" >How to build a Microsoft Windows Server guest image for HP Helion OpenStack(R)</xref>.  <!--DOCS-917--></p>
 <p>Microsoft can provide technical support to customers with licensed Windows Server Operating Systems that are deployed as Nova compute VMs.</p>
 <p>
-<b>Swift diagnostic checks</b> - New diagnostics checks have been implemented for <xref href="../../commercial/GA1/1.1commerical.services-object-overview.dita" >Swift cluster</xref>. Diagnostic messages are sent to the <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-replica-swift-status.dita" >Icinga service</xref>. <!--HPM15--></p>
+<b>Swift diagnostic checks</b> - New diagnostics checks have been implemented for <xref href="1.1commerical.services-object-overview.dita" >Swift cluster</xref>. Diagnostic messages are sent to the <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-replica-swift-status.dita" >Icinga service</xref>. <!--HPM15--></p>
 <p>
 <b>Improved recovery time</b> - When a virtual IP is moved to another overcloud controller on the system, the controller will become available in approximately one minute. <!--HPM121--></p>
 <p>
-<b>New Horizon Dashboard functionality</b> - The <xref href="../../commercial/GA1/1.1commercial.install-GA-DNSaaS.dita" >HP Helion OpenStack(R) DNSaaS service</xref> functionality is now accessible through the <xref href="../../commercial/GA1/1.1commerical.services-horizon-overview.dita" >Horizon dashboard</xref>.</p>
+<b>New Horizon Dashboard functionality</b> - The <xref href="1.1commercial.install-GA-DNSaaS.dita" >HP Helion OpenStack(R) DNSaaS service</xref> functionality is now accessible through the <xref href="../../commercial/GA1/1.1commerical.services-horizon-overview.dita" >Horizon dashboard</xref>.</p>
 <p>
 <b>Multipath suppport for 3PAR</b> -  HP Helion OpenStack(R) now supports multipath for multiple I/O paths . Multipath helps maintain a constant connection between KVM host and its storage. See <xref href="../../commercial/GA1/1.1commercial.install-3par.dita" >Configuring Multipath for 3PAR</xref>.<!--HPM121--></p>
 <p>
@@ -107,14 +107,14 @@ This release supports the use of a <xref href="../../commercial/GA1/1.1.1commeri
 <p>
 <b>Security documentation</b> - A new document is included in this release that contains recommendations for securing your HP Helion OpenStack(R) network. <xref href="../../commercial/GA1/1.1commercial.install-GA-security.dita" >Configuring your network securely</xref> details the firewall rules you can apply at the edge of the HP Helion OpenStack(R) deployment to protect against external abuse and defines router rules within the HP Helion OpenStack(R) deployment to protect against insider abuse or administrative errors.</p>
 <p>
-<b>HP Helion OpenStack(R) Flexible Control Plane</b> - The <xref href="../../commercial/GA1/1.1commerical.flexible-control-pane-overview.dita" >HP Helion OpenStack(R) Flexible Control Plane</xref> introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.</p>
+<b>HP Helion OpenStack(R) Flexible Control Plane</b> - The <xref href="1.1commerical.flexible-control-pane-overview.dita" >HP Helion OpenStack(R) Flexible Control Plane</xref> introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.</p>
 </section>
 <section id="10"> <title>Features in HP Helion OpenStack(R) 1.0</title>
 <p>The following features have been added to HP Helion OpenStack(R) 1.0:</p>
 <p>
-<b>OpenStack(R) Services</b> - The full set of standard <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#OpenStack(R)" >OpenStack(R) services</xref> is in HP Helion OpenStack(R) Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
+<b>OpenStack(R) Services</b> - The full set of standard <xref href="1.1commerical.services-overview.dita#OpenStack(R)" >OpenStack(R) services</xref> is in HP Helion OpenStack(R) Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
 <p>
-<b>Other Services</b> - <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#OpenStack(R)" >Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
+<b>Other Services</b> - <xref href="1.1commerical.services-overview.dita#OpenStack(R)" >Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
 <p>
 <b>LogStash/ElasticSearch</b> - This service provides enhanced security and supportability of the cloud by offering centralized logging.</p>
 <p>
@@ -260,7 +260,7 @@ Performing backups and creating bootable volumes will then work.-->   <!--CORE-2
 </codeph>
 </codeblock>
 
-<p>For more information on how to restart the singleton Cinder volume  service, see <xref href="../../commercial/GA1/1.0commerical.high-availability.dita#cinder-volume" >HP Helion OpenStack(R) 1.1: High Availability</xref>.</p>
+<p>For more information on how to restart the singleton Cinder volume  service, see <xref href="1.0commerical.high-availability.dita#cinder-volume" >HP Helion OpenStack(R) 1.1: High Availability</xref>.</p>
 </li>
 <li>
 <p>
@@ -282,7 +282,7 @@ Performing backups and creating bootable volumes will then work.-->   <!--CORE-2
 
 <ul>
 <li>
-<p>migrate the cinder-volume service to another node, for example, controller1 (refer to <xref href="../../commercial/GA1/1.0commerical.high-availability.dita#cinder-volume" >HP Helion OpenStack(R) 1.1: High Availability</xref>)</p>
+<p>migrate the cinder-volume service to another node, for example, controller1 (refer to <xref href="1.0commerical.high-availability.dita#cinder-volume" >HP Helion OpenStack(R) 1.1: High Availability</xref>)</p>
 </li>
 <li>
 <p>stop the cinder-backup service on controller0 using</p>
@@ -304,7 +304,7 @@ Performing backups and creating bootable volumes will then work.-->   <!--CORE-2
 <ul>
 <li>
 <p>When you resize an instance of Nova (in the Horizon portal under <i>Project &gt; Instances</i> and select <i>Resize Instance</i> from the drop-down list), the system produces the following error:
-â€˜â€˜Error: Unable to resize instance [instance name]â€(TM)â€(TM).
+â€˜â€˜Error: Unable to resize instance [instance name]ï¿½(TM)ï¿½(TM).
 <!--(NOV-6664) (NOV-6664) --></p>
 </li>
 <li>
@@ -339,7 +339,7 @@ to update the HEAT templates.
 <p>For additional information about HP Helion OpenStack(R) OpenStack(R) Cloud Software, and the HP Helion Support Center:</p>
 <ul>
 <li>
-<xref href="../../commercial/GA1/1.1commercial.index.dita" >HP Helion OpenStack(R) Documentation web site</xref>: Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion OpenStack(R) product offerings.</li>
+<xref href="1.1commercial.index.dita" >HP Helion OpenStack(R) Documentation web site</xref>: Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion OpenStack(R) product offerings.</li>
 <li>
 <xref href="http://www.openstack.org/" scope="external" format="html" >OpenStack(R) web site</xref>: Provides information on computing, networking, and storage in OpenStack(R) various programs such as TripleO, and the OpenStack(R) community.</li>
 <li>
@@ -348,7 +348,7 @@ to update the HEAT templates.
 </section>
 <section id="legal-notices-disclaimer"> <title>Legal Notices and Disclaimer</title>
 <!--See the [HP Helion OpenStack(R) Open Source and Third-Party Software License Agreements](/helion/openstack/1.1/commercial-3rd-party-license-agreements/).-->
-<p>LinuxÂ(R) is the registered trademark of Linus Torvalds in the U.S. and other countries.</p>
+<p>Linuxï¿½(R) is the registered trademark of Linus Torvalds in the U.S. and other countries.</p>
 <p>The OpenStack(R) Word Mark is either a registered trademark/service mark or trademark/service mark of the OpenStack(R) Foundation, in the United States and other countries and is used with the OpenStack(R) Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack(R) Foundation, or the OpenStack(R) community.</p>
 <p>
 <b>HP Helion OpenStack(R) Warranty</b>: 
