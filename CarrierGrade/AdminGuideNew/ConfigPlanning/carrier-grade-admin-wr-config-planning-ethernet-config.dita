@@ -117,7 +117,10 @@
 For more information about launching instances and
 connecting their virtual Ethernet interfaces, see the HP Helion OpenStack(R) Carrier Grade Reference Deployment Scenarios. The chapters on Deploying the Bridging Scenario and Deploying the Routing Scenario contain detailed examples for defining virtual Ethernet interfaces. --></p>
 <p>You can also connect a VM directly to a physical interface using PCI passthrough or or SR-IOV.</p>
-<p>See <xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-pci-pass.dita" >PCI Passthrough Ethernet Interfaces</xref> and <xref href="./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-sr-iov.dita" >SR-IOV Ethernet Interfaces</xref>.</p>
+<p>See <xref
+          href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-pci-pass.dita"
+  >PCI Passthrough Ethernet Interfaces</xref> and <xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-sr-iov.dita">SR-IOV Ethernet Interfaces</xref>
+  </p>
 <p>
   <xref type="section" href="#topic3824/top"> Return to Top </xref>
 </p>
