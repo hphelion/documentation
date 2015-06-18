@@ -491,7 +491,7 @@ Restore procedure completed
   <xref type="section" href="#topic18277/top"> Return to Top </xref>
 </p>
 </section>
-<section id="sherpaback"> <title>Backing up the overcloud database</title>
+<section id="sherpaback2"> <title>Backing up the overcloud database</title>
 <p>You should create a backup from the overcloud database on a regular basis as determined by the administrator or your organization's policies.</p>
 <p>Use the following steps to back up the overcloud database:</p>
 <ol>
@@ -549,7 +549,7 @@ Backup procedure completed
 </codeph>
 </codeblock>
 </section>
-<section id="sherparest"> <title>Restoring the overcloud database</title>
+<section id="sherparest2"> <title>Restoring the overcloud database</title>
 <p>You should restore the overcloud database when there is any problem with the node, for example:</p>
 <ul>
 <li>If the overcloud server fails (from a hardware or software issues)</li>
