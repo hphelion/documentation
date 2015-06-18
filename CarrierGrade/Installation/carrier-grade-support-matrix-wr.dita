@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8886">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta):Support Matrix for the Wind RiverÂ(R) Linux Region</title>
+<title>HP Helion OpenStack(R) Carrier Grade (Beta):Support Matrix for the Wind Riverï¿½(R) Linux Region</title>
 <titlealts>
 <searchtitle>HP Helion OpenStack(R) Carrier Grade: Support Matrix</searchtitle>
 </titlealts>
@@ -66,7 +66,7 @@
 <p>Controller nodes require an additional physical disk for volume storage. Storage nodes require an additional physical disk for OSD storage.</p>
 <p>The following minimum hard drive capacities are suggested for the hosts.</p>
 <table>
-<tgroup cols="">
+<tgroup cols="3">
 <thead>
 <row>
     <entry>Host</entry>
@@ -113,7 +113,7 @@ A two-disk RAID is suggested. </entry>
 <p>
 <b>NOTE:</b> The following table assumes that each interface is connected to a single network. An Ethernet interface can be shared by more than one network.</p>
 <table>
-<tgroup cols="">
+<tgroup cols="3">
 <thead>
 <row>
     <entry>Personality</entry>
