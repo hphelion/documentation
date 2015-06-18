@@ -821,7 +821,7 @@ Traceback (most recent call last):
 </li>
 </ol>
 </section>
-<section id="ansible"> <title>A lock problem occurred in Ironic during update of the undercloud using the Ansible script</title>
+<section id="ansible2"> <title>A lock problem occurred in Ironic during update of the undercloud using the Ansible script</title>
 <p>When performing the upgrade to HP Helion OpenStack(R) 1.0.1 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message. <!-- CORE 2043 --></p>
 <p>
   <b>Symptom</b>

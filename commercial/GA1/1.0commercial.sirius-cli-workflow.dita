@@ -196,9 +196,8 @@ hplefthand_username=shausy
 </codeph>
 </codeblock>
 <p>
-<i>Additional arguments</i>: --iscsi-ip <required-cleanup remap="iscsi_ip">
+<i>Additional arguments</i>: --iscsi-ip 
 <ph> [required for iSCSI type devices].</ph>
-</required-cleanup>
 </p>
 <p>The sample output of the above command is given below:</p>
 <codeblock>
