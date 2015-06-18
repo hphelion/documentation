@@ -28,29 +28,26 @@
 <p>
 <b>Note:</b> You can set up the scenario environment using the web administration interface or the CLI. For CLI instructions, see <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli.dita" >Deployment Scenarios Using the CLI</xref>.</p>
 <ol>
-<li>
-<p>Use the admin account to complete the following tasks, grouped as <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-admin.dita" >Administrative Tasks</xref>.</p>
-
-<ul>
-<li>Create tenants</li>
-<li>Create users</li>
-<li>Set up segmentation ranges on existing provider networks</li>
-<li>Set up tenant networks</li>
-<li>Set up flavors </li>
-</ul>
-</li>
-<li>
-<p>Use the <codeph>user1</codeph> and <codeph>user2</codeph> accounts to complete the following tasks on <codeph>tenant1</codeph>, grouped as <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-user.dita" >User Tasks</xref>.</p>
-
-<ul>
-<li>Create a keypair</li>
-<li>Create a private tenant network</li>
-<li>Configure the management network</li>
-<li>Set up a virtual router</li>
-<li>Set up a Cinder volume</li>
-<li>Set up a Glance image</li>
-</ul>
-</li>
+<li>Use the admin account to complete the following tasks, grouped as <xref
+          href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-admin.dita"
+          >Administrative Tasks</xref>.<ul>
+          <li>Create tenants</li>
+          <li>Create users</li>
+          <li>Set up segmentation ranges on existing provider networks</li>
+          <li>Set up tenant networks</li>
+          <li>Set up flavors </li>
+        </ul></li>
+<li>Use the <codeph>user1</codeph> and <codeph>user2</codeph> accounts to complete the following
+        tasks on <codeph>tenant1</codeph>, grouped as <xref
+          href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-user.dita"
+          >User Tasks</xref>.<ul>
+          <li>Create a keypair</li>
+          <li>Create a private tenant network</li>
+          <li>Configure the management network</li>
+          <li>Set up a virtual router</li>
+          <li>Set up a Cinder volume</li>
+          <li>Set up a Glance image</li>
+        </ul></li>
 </ol>
 <p>When these tasks have been completed, the environment is ready for scenario deployment.</p>
 <p>To deploy a Bridging Scenario, see <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-deploy.dita" >Deploying the Bridging Scenario</xref>.</p>

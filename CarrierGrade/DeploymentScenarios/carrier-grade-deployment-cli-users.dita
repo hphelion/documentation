@@ -25,28 +25,18 @@
 <!-- ===================== horizontal rule ===================== -->
 <p>This exercise creates the users <codeph>user1</codeph> and <codeph>user2</codeph>, and associates each one with a tenant.</p>
 <ol>
-<li>
-<p>Create user user1.</p>
-
-<codeblock>
-<codeph>keystone user-create --name user1 --pass user1 \
+<li>Create user
+        user1.<codeblock><codeph>keystone user-create --name user1 --pass user1 \
 
 --email user1@noreply.com --tenant ${tenant1_UUID}
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create user user2.</p>
-
-<codeblock>
-<codeph>keystone user-create --name user2 --pass user2 \
+</codeph></codeblock></li>
+<li>Create user
+          user2.<codeblock><codeph>keystone user-create --name user2 --pass user2 \
 
 --email user2@noreply.com --tenant ${tenant2_UUID}
-</codeph>
-</codeblock>
-
-<p>The two new users exist now in the system. No UUID variables are defined because they are not needed in any subsequent commands.</p>
-</li>
+</codeph></codeblock><p>The
+          two new users exist now in the system. No UUID variables are defined because they are not
+          needed in any subsequent commands.</p></li>
 </ol>
 <p>
   <xref type="section" href="#topic974/top"> Return to Top </xref>

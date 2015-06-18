@@ -75,21 +75,17 @@
 
 <p>For example, the following command stores the UUID of the admin tenant in the variable <codeph>admin_tenant_UUID</codeph>.</p>
 
-<codeblock>
-<codeph>export admin_tenant_UUID=`keystone
+<codeblock><codeph>export admin_tenant_UUID=`keystone
 tenant-list | grep admin | \
 awk '{print $2}'`
-</codeph>
-</codeblock>
+</codeph></codeblock>
 
 <p>The command keystone <codeph>tenant-list</codeph> generates a list of all tenants. This is piped to the grep command, which filters for the line containing the string admin. This in turn is piped to an awk command, which prints the content of the id column to the console. The result, the UUID, is stored in the variable <codeph>admin_tenant_UUID</codeph>.</p>
 
 <p>You can supply variables to other commands using the shell syntax ${variable}. For example, to adjust resource quotas for a tenant, you need to supply the UUID of the tenant. With the UUID stored as a variable, you can do this as shown in the following example:</p>
 
-<codeblock>
-<codeph>neutron quota-update --subnet 32 --tenant-id ${admin_tenant_UUID}
-</codeph>
-</codeblock>
+<codeblock><codeph>neutron quota-update --subnet 32 --tenant-id ${admin_tenant_UUID}
+</codeph></codeblock>
 
 <p>Note the use of <codeph>admin_tenant_UUID</codeph> to supply the UUID.</p>
 

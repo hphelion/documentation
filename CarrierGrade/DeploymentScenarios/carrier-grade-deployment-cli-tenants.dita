@@ -25,76 +25,40 @@
 <!-- ===================== horizontal rule ===================== -->
 <p>This exercise creates the tenants tenant1 and tenant2, and sets up their resource quotas.</p>
 <ol>
-<li>
-<p>Log in to the active controller as the Keystone admin user.</p>
-
-<codeblock>
-<codeph>$ source /etc/nova/openrc
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create a project (or, tenant) <codeph>tenant1</codeph>.</p>
-
-<codeblock>
-<codeph>keystone tenant-create --name tenant1
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create a project (or, tenant) <codeph>tenant2</codeph>.</p>
-
-<codeblock>
-<codeph>keystone tenant-create --name tenant2
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Set up the UUID variables for the new tenants.</p>
-
-<codeblock>
-<codeph>export tenant1_UUID=`keystone tenant-list | grep tenant1 | \
+<li>Log in to the active controller as the Keystone admin
+        user.<codeblock><codeph>$ source /etc/nova/openrc
+</codeph></codeblock></li>
+<li>Create a project (or, tenant)
+        <codeph>tenant1</codeph>.<codeblock><codeph>keystone tenant-create --name tenant1
+</codeph></codeblock></li>
+<li>Create a project (or, tenant)
+        <codeph>tenant2</codeph>.<codeblock><codeph>keystone tenant-create --name tenant2
+</codeph></codeblock></li>
+<li>Set up the UUID variables for the new
+        tenants.<codeblock><codeph>export tenant1_UUID=`keystone tenant-list | grep tenant1 | \
 awk '{print $2}'`
 
 export tenant2_UUID=`keystone tenant-list | grep tenant2 | \
 awk '{print $2}'`
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Adjust networking resource quotas for the projects.</p>
-
-<codeblock>
-<codeph>neutron quota-update --subnet 32 --network 32 --port 128 \
+</codeph></codeblock></li>
+<li>Adjust networking resource quotas for the
+        projects.<codeblock><codeph>neutron quota-update --subnet 32 --network 32 --port 128 \
 --tenant-id ${tenant1_UUID}
 
 neutron quota-update --subnet 32 --network 32 --port 128 \
 --tenant-id ${tenant2_UUID}
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Adjust VM quotas for the tenants.</p>
-
-<codeblock>
-<codeph>{tenant1_UUID} --instances 20 -- cores 40 \
+</codeph></codeblock></li>
+<li>Adjust VM quotas for the
+        tenants.<codeblock><codeph>{tenant1_UUID} --instances 20 -- cores 40 \
 --floating_ips 20
 
 nova quota-update ${tenant2_UUID} --instances 20 -- cores 40 \
 --floating_ips 20
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Adjust networking resource quotas for the tenant admin.</p>
-
-<codeblock>
-<codeph>neutron quota-update --subnet 32 --tenant-id {admin_tenant_UUID}
-</codeph>
-</codeblock>
-
-<p>The two additional tenants are available now, with quotas established.</p>
-</li>
+</codeph></codeblock></li>
+<li>Adjust networking resource quotas for the tenant
+          admin.<codeblock><codeph>neutron quota-update --subnet 32 --tenant-id {admin_tenant_UUID}
+</codeph></codeblock><p>The
+          two additional tenants are available now, with quotas established.</p></li>
 </ol>
 <p>
   <xref type="section" href="#topic1723/top"> Return to Top </xref>

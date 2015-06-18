@@ -28,133 +28,65 @@ then launches an instance on <codeph>tenant1</codeph>.</p>
 <p>
 <b>Note:</b> You must repeat this exercise as <codeph>user2</codeph>, substituting appropriate names for the tenant networks and other components, to launch a similar instance on <codeph>tenant2</codeph>.</p>
 <ol>
-<li>
-<p>Identify yourself as user user1 to the system.</p>
-
-<p>source /etc/nova/openrc.user1</p>
-</li>
-<li>
-<p>Register a public key for tenant tenant1.</p>
-
-<p>nova keypair-add --pub_key ~/.ssh/id_rsa.pub tenant1- <codeph>hostname</codeph>
-</p>
-
-<p>This command injects the existing key-pair of the Linux root account into the Nova database with the name <codeph>tenant1-controller-0</codeph> (assuming that the name of the host is <codeph>controller-0</codeph>). This named key-pair can be used to provide SSH access to the virtual machines when they are launched. You can use other available key-pairs or create new ones as required.</p>
-</li>
-<li>
-<p>Create and configure the tenant network <codeph>tenant1-net</codeph>.</p>
-
-<p>a. Create the tenant network.</p>
-
-<codeblock>
-<codeph>neutron net-create tenant1-net
-</codeph>
-</codeblock>
-
-<p>b. Define the IP subnet.</p>
-
-<codeblock>
-<codeph>neutron subnet-create --name tenant1-subnet \
+<li>Identify yourself as user user1 to the
+        system.<codeblock>source /etc/nova/openrc.user1</codeblock></li>
+<li>Register a public key for tenant
+          tenant1.<codeblock>nova keypair-add --pub_key ~/.ssh/id_rsa.pub tenant1- <codeph>hostname</codeph> </codeblock><p>This
+          command injects the existing key-pair of the Linux root account into the Nova database
+          with the name <codeph>tenant1-controller-0</codeph> (assuming that the name of the host is
+            <codeph>controller-0</codeph>). This named key-pair can be used to provide SSH access to
+          the virtual machines when they are launched. You can use other available key-pairs or
+          create new ones as required.</p></li>
+<li>Create and configure the tenant network <codeph>tenant1-net</codeph>.<p>a. Create the tenant
+          network.</p><codeblock><codeph>neutron net-create tenant1-net
+</codeph></codeblock><p>b.
+          Define the IP
+          subnet.</p><codeblock><codeph>neutron subnet-create --name tenant1-subnet \
 --no-gateway tenant1-net 172.31.1.0/24
-</codeph>
-</codeblock>
-
-<p>c. Set up the UUID variable for the new tenant network.</p>
-
-<codeblock>
-<codeph>export tenant1_net_UUID=`neutron net-list | grep tenant1-net | awk '{print $2}'`
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Configure the tenant network <codeph>tenant1-mgmt-net</codeph>.</p>
-
-<p>a. Create the management IP subnet.</p>
-
-<codeblock>
-<codeph>~(keystone_user1)$ neutron subnet-create --name tenant1-mgmt-subnet \
+</codeph></codeblock><p>c.
+          Set up the UUID variable for the new tenant
+        network.</p><codeblock><codeph>export tenant1_net_UUID=`neutron net-list | grep tenant1-net | awk '{print $2}'`
+</codeph></codeblock></li>
+<li>Configure the tenant network <codeph>tenant1-mgmt-net</codeph>.<p>a. Create the management IP
+          subnet.</p><codeblock><codeph>~(keystone_user1)$ neutron subnet-create --name tenant1-mgmt-subnet \
 tenant1-mgmt-net 192.168.102.0/24
-</codeph>
-</codeblock>
-
-<p>b. Create the virtual router tenant1-router.</p>
-
-<codeblock>
-<codeph>neutron router-create tenant1-router
-</codeph>
-</codeblock>
-
-<p>c. Set up the UUID variable for the new virtual router.</p>
-
-<codeblock>
-<codeph>export tenant1_router_UUID=`neutron router-list \
+</codeph></codeblock><p>b.
+          Create the virtual router
+          tenant1-router.</p><codeblock><codeph>neutron router-create tenant1-router
+</codeph></codeblock><p>c.
+          Set up the UUID variable for the new virtual
+          router.</p><codeblock><codeph>export tenant1_router_UUID=`neutron router-list \
 | grep tenant1-router | awk '{print $2}'`
-</codeph>
-</codeblock>
-
-<p>d. Connect the virtual router to the management IP subnet.</p>
-
-<codeblock>
-<codeph>neutron router-interface-add tenant1-router tenant1-mgmt-subnet
-</codeph>
-</codeblock>
-
-<p>e. Set up the UUID variable for the new tenant network.</p>
-
-<p>export external_net_UUID=<codeph>neutron net-list \ 
-| grep external-net | awk '{print $2}'</codeph>
-</p>
-
-<p>f. Add a default gateway interface to the tenant network <codeph>external-net</codeph>.</p>
-
-<codeblock>
-<codeph>eutron router-gateway-set ${tenant1_router_UUID}
+</codeph></codeblock><p>d.
+          Connect the virtual router to the management IP
+          subnet.</p><codeblock><codeph>neutron router-interface-add tenant1-router tenant1-mgmt-subnet
+</codeph></codeblock><p>e.
+          Set up the UUID variable for the new tenant network.</p><p>export
+            external_net_UUID=<codeph>neutron net-list \ | grep external-net | awk '{print
+            $2}'</codeph>
+        </p><p>f. Add a default gateway interface to the tenant network
+            <codeph>external-net</codeph>.</p><codeblock><codeph>eutron router-gateway-set ${tenant1_router_UUID}
 {external_net_UUID}
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Select the launch options.</p>
-
-<p>a. Select the type of virtual switching to use: Linux kernel bridging, DPDK-accelerated virtual switch, or Linux router.</p>
-
-<p>The type of switching is specified in a user data file supplied as an argument to the --user-data option. For more information, see [Setting Up User Data Using the CLI](#datacli}.</p>
-
-<p>b. Select the type of virtual interface, virtio or AVP, to connect to the tenant networks.</p>
-
-<p>This is done by specifying the virtual interface model to be associated with each virtual NIC. Use the options <codeph>vif-model=virtio</codeph>, and <codeph>vif-model=avp</codeph>, for the virtio and AVP ports respectively.</p>
-
-<p>Note: To change the interface type or the allocated NIC order, you must restart the instance with a new port assignment.</p>
-
-<p>c. Select the virtual machine flavor to use.</p>
-
-<p>Use the option --flavor to specify the flavor.</p>
-</li>
-<li>
-<p>Create UUID variables for the tenant networks.</p>
-
-<p>export tenant1_mgmt_net_UUID=<codeph>neutron net-list \
-| grep tenant1-mgmt-net | awk '{print $2}'</codeph>
-</p>
-
-<p>export tenant2_mgmt_net_UUID=<codeph>neutron net-list \
-| grep tenant2-mgmt-net | awk '{print $2}'</codeph>
-</p>
-</li>
-<li>
-<p>Create a UUID variable for the Cinder volume.</p>
-
-<p>export vol_UUID=<codeph>cinder list | grep vol-example-guest \
-| awk '{print $2}'</codeph>
-</p>
-</li>
-<li>
-<p>Launch the instances on both tenants.</p>
-</li>
+</codeph></codeblock></li>
+<li>Select the launch options.<p>a. Select the type of virtual switching to use: Linux kernel
+          bridging, DPDK-accelerated virtual switch, or Linux router.</p><p>The type of switching is
+          specified in a user data file supplied as an argument to the --user-data option. For more
+          information, see [Setting Up User Data Using the CLI](#datacli}.</p><p>b. Select the type
+          of virtual interface, virtio or AVP, to connect to the tenant networks.</p><p>This is done
+          by specifying the virtual interface model to be associated with each virtual NIC. Use the
+          options <codeph>vif-model=virtio</codeph>, and <codeph>vif-model=avp</codeph>, for the
+          virtio and AVP ports respectively.</p><p>Note: To change the interface type or the
+          allocated NIC order, you must restart the instance with a new port assignment.</p><p>c.
+          Select the virtual machine flavor to use.</p><p>Use the option --flavor to specify the
+          flavor.</p></li>
+<li>Create UUID variables for the tenant
+        networks.<codeblock>export tenant1_mgmt_net_UUID=<codeph>neutron net-list \ | grep tenant1-mgmt-net | awk '{print $2}'</codeph> </codeblock><codeblock>export tenant2_mgmt_net_UUID=<codeph>neutron net-list \ | grep tenant2-mgmt-net | awk '{print $2}'</codeph> </codeblock></li>
+<li>Create a UUID variable for the Cinder
+        volume.<codeblock>export vol_UUID=<codeph>cinder list | grep vol-example-guest \ | awk '{print $2}'</codeph> </codeblock></li>
+<li>Launch the instances on both tenants.</li>
 </ol>
 <p>The following example launches an instance named <codeph>tenant1-kernel-bridging</codeph>, using a Linux bridge.</p>
-<codeblock>
-  <codeph>nova boot --poll --key_name=tenant1-controller-0 \
+<codeblock><codeph>nova boot --poll --key_name=tenant1-controller-0 \
 --block_device_mapping vda=${vol_UUID}:::0 \
 --user-data=/usr/share/userdata/linux-bridge.txt \
 --flavor=100 \
@@ -162,14 +94,12 @@ tenant1-mgmt-net 192.168.102.0/24
 --nic net-id=${tenant1_net_UUID},vif-model=avp \
 --nic net-id=${internal_net_UUID},vif-model=avp \
 tenant1-kernel-bridging
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
 <b>Caution:</b> The order in which the network interfaces are selected determines how they are enumerated for the instance.</p>
 <p>This example uses the following order: eth0 (<codeph>tenant1-mgmt-net</codeph>) of the virtio type, and eth1 (<codeph>tenant1-net</codeph>) and eth2 (<codeph>internal-net</codeph>) of the avp type.</p>
 <p>The following example launches an instance named tenant1-dpdk bridging, using an AVP virtual network interface, and the DPDK-accelerated virtual switch.</p>
-<codeblock>
-  <codeph>nova boot --poll --key_name=tenant1-controller-0 \
+<codeblock><codeph>nova boot --poll --key_name=tenant1-controller-0 \
 --block_device_mapping vda=${vol_UUID}:::0 \
 --user-data=/usr/share/userdata/linux-dpdk-vswitch.txt \
 --flavor=101 \
@@ -177,11 +107,9 @@ tenant1-kernel-bridging
 --nic net-id=${tenant1_net_UUID},vif-model=avp \
 --nic net-id=${internal_net_UUID},vif-model=avp \
 tenant1-dpdk-bridging
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>The following example launches an instance named tenant1-routing, using AVP virtual network interfaces and a Linux router.</p>
-<codeblock>
-  <codeph>nova boot --poll --key_name=tenant1-controller-0 \
+<codeblock><codeph>nova boot --poll --key_name=tenant1-controller-0 \
 --block_device_mapping vda=${vol_UUID}:::0 \
 --user-data=/usr/share/userdata/tenant1-linux-router.txt \
 --flavor=101 \
@@ -189,8 +117,7 @@ tenant1-dpdk-bridging
 --nic net-id=${tenant1_net_UUID},vif-model=avp \
 --nic net-id=${internal_net_UUID},vif-model=avp \
 tenant1-routing
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>The instances are now running. Each one establishes a bridge or router between the last two interfaces in the command line, that is, between the tenant networks tenant1-net and internal-net.</p>
 <p>
   <xref type="section" href="#topic5693/top"> Return to Top </xref>

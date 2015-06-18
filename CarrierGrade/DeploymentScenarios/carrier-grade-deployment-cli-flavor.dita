@@ -24,35 +24,25 @@
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>Available flavors and their IDs can be listed using the following command:</p>
-<codeblock>
-  <codeph>nova flavor-list
-</codeph>
-</codeblock>
+<codeblock><codeph>nova flavor-list
+</codeph></codeblock>
 <ol>
-<li>
-<p>Define the flavor <codeph>example-guest.tiny</codeph>.</p>
-
-<codeblock>
-<codeph>nova flavor-create example-guest.tiny 100 512 0 1 \
+<li>Define the flavor
+          <codeph>example-guest.tiny</codeph>.<codeblock><codeph>nova flavor-create example-guest.tiny 100 512 0 1 \
 --dedicated-cpus true
-</codeph>
-</codeblock>
-
-<p>The flavor <codeph>example-guest.tiny</codeph> is created with ID 100. New virtual machines using this flavor are allocated 512 MB of memory, no disks, and one dedicated virtual CPU.</p>
-</li>
-<li>
-<p>Define the flavor <codeph>example-guest.small</codeph>.</p>
-
-<codeblock>
-<codeph>nova flavor-create example-guest.small 101 512 0 2 \
+</codeph></codeblock><p>The
+          flavor <codeph>example-guest.tiny</codeph> is created with ID 100. New virtual machines
+          using this flavor are allocated 512 MB of memory, no disks, and one dedicated virtual
+          CPU.</p></li>
+<li>Define the flavor
+          <codeph>example-guest.small</codeph>.<codeblock><codeph>nova flavor-create example-guest.small 101 512 0 2 \
 --dedicated-cpus true
-</codeph>
-</codeblock>
-
-<p>The flavor <codeph>example-guest.small</codeph> is created with ID 101. New virtual machines using this flavor are allocated 512 MB of memory, no disks, and two dedicated virtual CPUs.</p>
-
-<p>The two flavors <codeph>example-guest.tiny</codeph> and <codeph>example-guest.small</codeph> are now available. You can use them as resource allocation directives when launching new virtual machines.</p>
-</li>
+</codeph></codeblock><p>The
+          flavor <codeph>example-guest.small</codeph> is created with ID 101. New virtual machines
+          using this flavor are allocated 512 MB of memory, no disks, and two dedicated virtual
+          CPUs.</p><p>The two flavors <codeph>example-guest.tiny</codeph> and
+            <codeph>example-guest.small</codeph> are now available. You can use them as resource
+          allocation directives when launching new virtual machines.</p></li>
 </ol>
 <p>
   <xref type="section" href="#topic1434/top"> Return to Top </xref>
