@@ -73,14 +73,10 @@
 <row>
 <entry>Attributes</entry>
     <entry>
-<required-cleanup remap="center">
 <ph>Definition</ph>
-</required-cleanup>
 </entry>
     <entry>
-<required-cleanup remap="center">
 <ph>Recommendation</ph>
-</required-cleanup>
 </entry>
 </row>
 </thead>
@@ -104,7 +100,7 @@
 <b>Part Power</b>
 </entry>
     <entry>Defines the storage cluster capacity. Set the <varname>partition power</varname> value based on the total amount of storage you expect your entire ring to use.</entry>
-    <entry>  The parameter is an exponent: 2^X. Assuming that the average available drive capacity is 1-3 TB. For the partition power values, refer to <xref href="  /helion/openstack/services/swift/deployment/ring-power/" >Ring Power and Number of Partitions</xref>.
+    <entry>  The parameter is an exponent: 2^X. Assuming that the average available drive capacity is 1-3 TB. For the partition power values, refer to <xref href="  /helion/openstack/services/swift/deployment/ring-power" >Ring Power and Number of Partitions</xref>.
 </entry>
 </row>
 <row>
@@ -127,9 +123,7 @@
 <row>
 <entry>Attributes</entry>
     <entry>
-<required-cleanup remap="center">
 <ph>Definition</ph>
-</required-cleanup>
 </entry>
     </row>
 </thead>
