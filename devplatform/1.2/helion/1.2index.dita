@@ -32,12 +32,10 @@ hosting provider, it provides the backbone for your private or public PaaS.</p>
 <p>Documentation intended for system operators in charge of setting up, configuring, and maintaining the platform.</p>
 <ul>
 <li>
-          <xref href="../../../devplatform/1.2/helion/admin/1.2index.dita">Application Lifecycle
-            Service Admin Guide</xref>
-          <ul>
+          <xref href="admin/1.2index.dita#topic2276">Application Lifecycle Service Admin Guide </xref><ul>
             <li>
               <xref
-                href="../../../devplatform/1.2/helion/admin/1.2index.dita#wizard-based-cluster-creation"
+                href="admin/1.2index.dita#wizard-based-cluster-creation"
                 >Wizard-Based Cluster Creation</xref>
             </li>
             <li>
