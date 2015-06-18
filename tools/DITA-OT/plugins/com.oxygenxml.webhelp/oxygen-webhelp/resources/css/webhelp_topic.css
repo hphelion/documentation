@@ -18,7 +18,13 @@ body {
   line-height:18px;
   font-size:12px;
 }
-
+///////////////////
+.hometable {
+	border: 1px solid gray;
+	border-radius: 10px;
+}
+///////////////
+}
 /* Anchors */
 /* (Consolidated here P Fletcher 6/11/15) */
 
