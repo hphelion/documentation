@@ -29,70 +29,68 @@
 <p>The following table summarizes the tasks to be performed, the resource names to be supplied, and suggested strings for each user. In the instructions for each task, the strings for <codeph>user1</codeph> are used as a convenience.</p>
 <table>
 <tgroup cols="4">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<thead>
-<row>
-    <entry>Task</entry>
-    <entry>Resource Name</entry>
-    <entry>String for user1</entry>
-    <entry>String for user2</entry>
-  </row>
-</thead>
-<tbody>
-<row>
-    <entry>Adding a Keypair</entry>
-    <entry>KeyPair Name
-</entry>
-    <entry>tenant1-controller-0</entry>
-    <entry>tenant2-controller-0</entry>
-  </row>
-<row>
-    <entry/>
-    <entry>Network Name</entry>
-    <entry>tenant1-net</entry>
-    <entry>tenant2-net</entry>
-  </row>
-<row>
-    <entry/>
-    <entry>Subnet Name</entry>
-    <entry>tenant1-subnet</entry>
-    <entry>tenant2-subnet</entry>
-  </row>
-<row>
-    <entry>Adding a Tenant Network</entry>
-    <entry>Network Address</entry>
-    <entry> 172.31.1.0/24</entry>
-    <entry>172.31.2.0/24</entry>
-  </row>
-<row>
-    <entry>Setting Up the Management Network</entry>
-    <entry>Subnet Name</entry>
-    <entry>tenant1-mgmt-net</entry>
-    <entry>tenant2-mgmt-net</entry>
-  </row>
-<row>
-    <entry/>
-    <entry>Network Address</entry>
-    <entry>192.168.102.0/24</entry>
-    <entry>192.168.202.0/24</entry>
-  </row>
-<row>
-    <entry>Adding a Virtual Router</entry>
-    <entry>Router Name</entry>
-    <entry>tenant1-router</entry>
-    <entry>tenant2-router</entry>
-    <entry>Creating a Volume</entry>
-    <entry>
-</entry>
-    <entry>Volume Name</entry>
-    <entry>vol-example-guest</entry>
-    <entry>vol-example-guest</entry>
-  </row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <colspec colname="col4" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry>Task</entry>
+              <entry>Resource Name</entry>
+              <entry>String for user1</entry>
+              <entry>String for user2</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Adding a Keypair</entry>
+              <entry>KeyPair Name </entry>
+              <entry>tenant1-controller-0</entry>
+              <entry>tenant2-controller-0</entry>
+            </row>
+            <row>
+              <entry/>
+              <entry>Network Name</entry>
+              <entry>tenant1-net</entry>
+              <entry>tenant2-net</entry>
+            </row>
+            <row>
+              <entry/>
+              <entry>Subnet Name</entry>
+              <entry>tenant1-subnet</entry>
+              <entry>tenant2-subnet</entry>
+            </row>
+            <row>
+              <entry>Adding a Tenant Network</entry>
+              <entry>Network Address</entry>
+              <entry> 172.31.1.0/24</entry>
+              <entry>172.31.2.0/24</entry>
+            </row>
+            <row>
+              <entry>Setting Up the Management Network</entry>
+              <entry>Subnet Name</entry>
+              <entry>tenant1-mgmt-net</entry>
+              <entry>tenant2-mgmt-net</entry>
+            </row>
+            <row>
+              <entry/>
+              <entry>Network Address</entry>
+              <entry>192.168.102.0/24</entry>
+              <entry>192.168.202.0/24</entry>
+            </row>
+            <row>
+              <entry>Adding a Virtual Router</entry>
+              <entry>Router Name</entry>
+              <entry>tenant1-router</entry>
+              <entry>tenant2-router</entry>
+              <entry>Creating a Volume</entry>
+              <entry> </entry>
+              <entry>Volume Name</entry>
+              <entry>vol-example-guest</entry>
+              <entry>vol-example-guest</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 <p>When both users have completed the tasks, the test path can be exercised.</p>
 <p>This topic contains the following sections:</p>
@@ -122,45 +120,32 @@
 <p>To add a keypairs follow the directions below. For additional information, you can see <xref href="../../CarrierGrade/AdminGuideNew/Security/carrier-grade.dashboard.security.keypairs.dita" >Managing Key Pairs</xref>.</p>
 <ol>
 <li>
-<p>
-<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Project</b> dashboard, then the <b>Manage Compute</b> panel, then the <b>Access &amp; Security</b> link.</p>
-
-<p>The Access &amp; Security page is displayed with four tabs, <b>Security Groups</b>, <b>Key Pairs</b>, <b>Floating IPs</b>, and <b>API Access</b>. By default, <b>Security Groups</b> is the active tab.</p>
-</li>
-<li>
-<p>Click the <b>Key Pairs</b> tab to activate it.</p>
-
-<p>The list of Keypairs is displayed in a table.</p>
-</li>
-<li>
-<p>Click <b>Create Key Pair</b>.</p>
-</li>
-<li>
-<p>In the <b>Create Key Pair Name</b> box, enter <codeph>tenant1-controller-0</codeph> for the name of the key pair.</p>
-</li>
-<li>
-<p>Click <b>Create Key Pair</b>.</p>
-
-<p>The private key of the key pair is downloaded to your local system, either automatically or a dialog box prompts you to download the keypair.</p>
-</li>
-<li>
-<p>Click on the download link to have a local copy of the authentication keypair. You use it as you would use any keypair for SSH authentication between two workstations.</p>
-
-<ul>
-<li>Transfer the keypair to the workstation you plan to use to access the virtual machine over SSH.</li>
-<li>Copy the public key to the virtual machine. You can use the command ssh-copy-id from a Linux workstation, or transfer the public key using a command such as scp.</li>
-</ul>
-<p>Consult the openly available documentation on SSH for details.</p>
-</li>
-<li>
-<p>Click Save to place the private key on your local system.</p>
-</li>
-<li>
-<p>To complete the deployment scenarios, this task must be repeated as user2, using appropriate names as described in <xref type="section" href="#topic9303/values">the values table</xref>.</p>
-</li>
+          <xref
+            href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
+            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+<li>Click the <b>Project</b> dashboard, then the <b>Manage Compute</b> panel, then the <b>Access
+            &amp; Security</b> link.<p>The Access &amp; Security page is displayed with four tabs,
+              <b>Security Groups</b>, <b>Key Pairs</b>, <b>Floating IPs</b>, and <b>API Access</b>.
+            By default, <b>Security Groups</b> is the active tab.</p></li>
+<li>Click the <b>Key Pairs</b> tab to activate it.<p>The list of Keypairs is displayed in a
+            table.</p></li>
+<li>Click <b>Create Key Pair</b>.</li>
+<li>In the <b>Create Key Pair Name</b> box, enter <codeph>tenant1-controller-0</codeph> for the name
+          of the key pair.</li>
+<li>Click <b>Create Key Pair</b>.<p>The private key of the key pair is downloaded to your local
+            system, either automatically or a dialog box prompts you to download the
+          keypair.</p></li>
+<li>Click on the download link to have a local copy of the authentication keypair. You use it as you
+          would use any keypair for SSH authentication between two workstations.<ul>
+            <li>Transfer the keypair to the workstation you plan to use to access the virtual
+              machine over SSH.</li>
+            <li>Copy the public key to the virtual machine. You can use the command ssh-copy-id from
+              a Linux workstation, or transfer the public key using a command such as scp.</li>
+          </ul><p>Consult the openly available documentation on SSH for details.</p></li>
+<li>Click Save to place the private key on your local system.</li>
+<li>To complete the deployment scenarios, this task must be repeated as user2, using appropriate
+          names as described in <xref type="section" href="#topic9303/values">the values
+            table</xref>.</li>
 </ol>
 </section>
 <section id="tenant"> <title>Adding a Tenant Network</title>
@@ -169,61 +154,40 @@
 available to the user.</p>
 <p>To create and configure the tenant network <codeph>tenant1-net</codeph> follow the directions below. For additional information, you can see <xref href="../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.create.dita" >Create or delete a tenant network</xref>.</p>
 <ol>
-<li>
-<p>Select the Subnet tab to create the IP subnet <codeph>tenant1-subnet</codeph>.</p>
-
-<p>
-<b>Note:</b> A subnet is created on tenant1-net to make the VM reachable from the networks used by the test equipment.</p>
-
-<p>Fill in the fields as shown:</p>
-
-<p>a. Enter <codeph>tenant1-subnet</codeph> in the <b>Name</b> field.</p>
-
-<p>b. For user1, enter the subnet 172.31.1.0/24 in the <b>Network Address</b> field, as described in <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-components.dita" >Components of the Scenario Environment</xref>.</p>
-
-<p>c. Select IPv4 for the IP version.</p>
-
-<p>d. Leave the <b>Gateway Address</b> field blank.</p>
-
-<p>e. Click <b>Create</b> to commit the changes.</p>
-
-<p>The private tenant network is set up and ready to be used.</p>
-</li>
-<li>
-<p>To complete the deployment scenarios, this task must be repeated as user2, using appropriate names as described in <xref type="section" href="#topic9303/values">the values table</xref>.</p>
-</li>
+<li>Select the Subnet tab to create the IP subnet <codeph>tenant1-subnet</codeph>.<p>
+            <b>Note:</b> A subnet is created on tenant1-net to make the VM reachable from the
+            networks used by the test equipment.</p><p>Fill in the fields as shown:</p><p>a. Enter
+              <codeph>tenant1-subnet</codeph> in the <b>Name</b> field.</p><p>b. For user1, enter
+            the subnet 172.31.1.0/24 in the <b>Network Address</b> field, as described in <xref
+              href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-components.dita"
+              >Components of the Scenario Environment</xref>.</p><p>c. Select IPv4 for the IP
+            version.</p><p>d. Leave the <b>Gateway Address</b> field blank.</p><p>e. Click
+              <b>Create</b> to commit the changes.</p><p>The private tenant network is set up and
+            ready to be used.</p></li>
+<li>To complete the deployment scenarios, this task must be repeated as user2, using appropriate
+          names as described in <xref type="section" href="#topic9303/values">the values
+            table</xref>.</li>
 </ol>
 </section>
 <section id="mgmt"> <title>Setting Up the Management Network</title>
 <p>This exercise configures the IP subnet of the tenant management network <codeph>tenant1-mgmt-net</codeph>.</p>
 <p>To modify the management network <codeph>tenant1-mgmt-net</codeph>follow the directions below. For additional information, you can see <xref href="../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.create.dita" >Creating or Deleting Networks</xref>.</p>
 <ol>
-<li>
-<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b> link.</p>
-
-<p>The network(s) for the selected project appear.</p>
-</li>
-<li>
-<p>Click the <b>tenant1-mgmt-net</b> link.</p>
-</li>
-<li>
-<p>Click <b>Create Subnet</b> to open the <b>Subnet</b> tab. Fill in the fields as shown:</p>
-
-<p>a. Enter <codeph>tenant1-mgmt-subnet</codeph> in the <b>Name</b> field.</p>
-
-<p>b. For user1, enter the subnet 192.168.102.0/24 in the <b>Network Address</b> field, as described in <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-components.dita" >Components of the Scenario Environment</xref>.</p>
-
-<p>c. Select IPv4 for the IP version.</p>
-
-<p>d. Leave the <b>Gateway Address</b> field blank. If you do not provide a Gateway address, the default 192.168.102.1 is used.</p>
-
-<p>e. Click <b>Create</b> to commit the changes.</p>
-
-<p>f. Click Create to commit the changes.</p>
-</li>
-<li>
-<p>To complete the deployment scenarios, this task must be repeated as user2, using appropriate names as described in <xref type="section" href="#topic9303/values">the values table</xref>.</p>
-</li>
+<li>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b>
+            link.<p>The network(s) for the selected project appear.</p></li>
+<li>Click the <b>tenant1-mgmt-net</b> link.</li>
+<li>Click <b>Create Subnet</b> to open the <b>Subnet</b> tab. Fill in the fields as shown:<p>a.
+            Enter <codeph>tenant1-mgmt-subnet</codeph> in the <b>Name</b> field.</p><p>b. For user1,
+            enter the subnet 192.168.102.0/24 in the <b>Network Address</b> field, as described in
+              <xref
+              href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-components.dita"
+              >Components of the Scenario Environment</xref>.</p><p>c. Select IPv4 for the IP
+            version.</p><p>d. Leave the <b>Gateway Address</b> field blank. If you do not provide a
+            Gateway address, the default 192.168.102.1 is used.</p><p>e. Click <b>Create</b> to
+            commit the changes.</p><p>f. Click Create to commit the changes.</p></li>
+<li>To complete the deployment scenarios, this task must be repeated as user2, using appropriate
+          names as described in <xref type="section" href="#topic9303/values">the values
+            table</xref>.</li>
 </ol>
 </section>
 <section id="router"> <title>Adding a Virtual Router</title>
@@ -232,67 +196,34 @@ available to the user.</p>
 <p>To create the router <codeph>tenant1-router</codeph> follow the directions below. For additional information, you can see <xref href="../../CarrierGrade/AdminGuideNew/Routers/carrier-grade.dashboard.router.create.dita" >Creating a Router</xref>.</p>
 <ol>
 <li>
-<p>
-<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Routers</b> link.</p>
-
-<p>The routers for the selected project appear.</p>
-</li>
-<li>
-<p>Click <b>Create Router</b> to open the <b>Create router</b> tab.</p>
-
-<p>a. Enter <b>tenant1-router</b> in the <b>Router Name</b> field.</p>
-
-<p>b. Click <b>Create Router</b>.</p>
-</li>
-<li>
-<p>On the <b>Routers</b> page, click the name of the router to display the <b>Router Overview</b> page.</p>
-</li>
-<li>
-<p>Click <b>Add Interface</b> and fill in the fields as shown:</p>
-
-<p>a. Select <b>tenant1-mgmt-net</b> from the <b>Subnet</b> list.</p>
-
-<p>b. Leave the IP address blank.</p>
-
-<p>c. Click <b>Add Interface</b>.</p>
-
-<p>The new router interface is active.</p>
-</li>
-<li>
-<p>Set up the gateway information.</p>
-
-<p>a. Click <b>Set Gateway</b> for the router to open the <b>Set Gateway</b> screen.</p>
-
-<p>b. Select <b>external-net</b> from the <b>External Network</b> list.</p>
-
-<p>c. Click <b>Set Gateway</b>.</p>
-
-<p>The gateway interface is configured.</p>
-</li>
-<li>
-<p>Optionally name the network ports for easier reference.</p>
-
-<p>a. Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b> link.</p>
-
-<p>b. On the <b>Networks</b> page, click the link to the <codeph>tenant1-mgmt-net</codeph> network.</p>
-</li>
-<li>
-<p>Edit the name of the router port.</p>
-
-<p>a. For the router port, click <b>Edit Port</b> to open the Edit Port screen.</p>
-
-<p>b. Enter the desired name for the port.</p>
-
-<p>c. Click <b>Save Changes</b> to commit the name change.</p>
-
-<p>The router port is listed with the new name.</p>
-</li>
-<li>
-<p>To complete the deployment scenarios, this task must be repeated as user2, using appropriate names as described in <xref type="section" href="#topic9303/values">the values table</xref>.</p>
-</li>
+          <xref
+            href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
+            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+<li>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Routers</b>
+            link.<p>The routers for the selected project appear.</p></li>
+<li>Click <b>Create Router</b> to open the <b>Create router</b> tab.<p>a. Enter
+              <b>tenant1-router</b> in the <b>Router Name</b> field.</p><p>b. Click <b>Create
+              Router</b>.</p></li>
+<li>On the <b>Routers</b> page, click the name of the router to display the <b>Router Overview</b>
+          page.</li>
+<li>Click <b>Add Interface</b> and fill in the fields as shown:<p>a. Select <b>tenant1-mgmt-net</b>
+            from the <b>Subnet</b> list.</p><p>b. Leave the IP address blank.</p><p>c. Click <b>Add
+              Interface</b>.</p><p>The new router interface is active.</p></li>
+<li>Set up the gateway information.<p>a. Click <b>Set Gateway</b> for the router to open the <b>Set
+              Gateway</b> screen.</p><p>b. Select <b>external-net</b> from the <b>External
+              Network</b> list.</p><p>c. Click <b>Set Gateway</b>.</p><p>The gateway interface is
+            configured.</p></li>
+<li>Optionally name the network ports for easier reference.<p>a. Click the <b>Project</b> dashboard,
+            then the <b>System</b> panel, then the <b>Networks</b> link.</p><p>b. On the
+              <b>Networks</b> page, click the link to the <codeph>tenant1-mgmt-net</codeph>
+            network.</p></li>
+<li>Edit the name of the router port.<p>a. For the router port, click <b>Edit Port</b> to open the
+            Edit Port screen.</p><p>b. Enter the desired name for the port.</p><p>c. Click <b>Save
+              Changes</b> to commit the name change.</p><p>The router port is listed with the new
+            name.</p></li>
+<li>To complete the deployment scenarios, this task must be repeated as user2, using appropriate
+          names as described in <xref type="section" href="#topic9303/values">the values
+            table</xref>.</li>
 </ol>
 </section>
 <section id="volume"> <title>Creating a Volume</title>
@@ -300,35 +231,21 @@ available to the user.</p>
 <p>To create the volume <codeph>vol-example-guest</codeph> follow the directions below. For additional information, you can see <xref href="../../CarrierGrade/AdminGuideNew/Volumes/carrier-grade.dashboard.volume.create.dita" >Creating, Editing, and Deleting Volumes</xref>.</p>
 <ol>
 <li>
-<p>
-<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
-</li>
-<li>
-<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Volumes</b> link.</p>
-</li>
-<li>
-<p>Click <b>Create Volume</b>.</p>
-</li>
-<li>
-<p>In the <b>Create Volume</b> dialog box, fill in the fields as shown:</p>
-
-<p>a. Enter <b>vol-example-guest</b> in the <b>Volume Name</b> field.</p>
-
-<p>b. Optionally, enter a description.</p>
-
-<p>c. Leave the <b>Type</b> field blank.</p>
-
-<p>d. Enter <b>1</b> for Size (GB).</p>
-
-<p>e. Select Image from the <b>Volume Source</b> list.</p>
-
-<p>f. Select <b>example-guest (411.0 MB)</b> from the <b>Use image as source</b> list.</p>
-
-<p>g. Click <b>Create Volume</b>.</p>
-</li>
-<li>
-<p>To complete the deployment scenarios, this task must be repeated as user2, using appropriate names as described in <xref type="section" href="#topic9303/values">the values table</xref>.</p>
-</li>
+          <xref
+            href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
+            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+<li>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Volumes</b>
+          link.</li>
+<li>Click <b>Create Volume</b>.</li>
+<li>In the <b>Create Volume</b> dialog box, fill in the fields as shown:<p>a. Enter
+              <b>vol-example-guest</b> in the <b>Volume Name</b> field.</p><p>b. Optionally, enter a
+            description.</p><p>c. Leave the <b>Type</b> field blank.</p><p>d. Enter <b>1</b> for
+            Size (GB).</p><p>e. Select Image from the <b>Volume Source</b> list.</p><p>f. Select
+              <b>example-guest (411.0 MB)</b> from the <b>Use image as source</b> list.</p><p>g.
+            Click <b>Create Volume</b>.</p></li>
+<li>To complete the deployment scenarios, this task must be repeated as user2, using appropriate
+          names as described in <xref type="section" href="#topic9303/values">the values
+            table</xref>.</li>
 </ol>
 <p>
   <xref type="section" href="#topic9303/top"> Return to Top </xref>

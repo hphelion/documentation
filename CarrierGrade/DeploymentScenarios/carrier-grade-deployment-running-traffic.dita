@@ -47,15 +47,9 @@
 </ul>
 <p>The possible combinations are ranked from highest to lowest performance as follows:</p>
 <ol>
-<li>
-<p>DPDK-accelerated switch with AVP network interfaces (best performance)</p>
-</li>
-<li>
-<p>Linux-native bridging with AVP network interfaces</p>
-</li>
-<li>
-<p>Linux-native bridging with virtio network interfaces (poorest performance)</p>
-</li>
+<li>DPDK-accelerated switch with AVP network interfaces (best performance)</li>
+<li>Linux-native bridging with AVP network interfaces</li>
+<li>Linux-native bridging with virtio network interfaces (poorest performance)</li>
 </ol>
 </section>
 <section id="routing-scenario-connections"> <title>Routing Scenario Connections</title>

@@ -45,10 +45,8 @@
 <b>Tenant (or Project)</b> - An isolated resource container consisting of networks, storage volumes, images, instances (guest applications), authentication keys, and users. Tenants are the core resource structure on which all end user services are managed.</li>
 </ul>
 <p>The scenario environment has three tenants, identified as admin, tenant1, and tenant2. For convenience, the latter two are referred to as user tenants. The admin tenant is created as part of the HP Helion OpenStack(R) Carrier Greade installation. The user tenants are created by the admin user. See Creating Tenants and Updating Quotas.</p>
-<codeblock>
-  <codeph>**Note:** The identifier admin is used for both the system administrator and the admin tenant. They can be differentiated by context.
-</codeph>
-</codeblock>
+      <p><b>Note</b>:The identifier admin is used for both the system administrator and the admin
+        tenant. They can be differentiated by context.</p>
 <ul>
 <li>
 <p>
@@ -139,58 +137,57 @@ provider-net-b      568-599</p>
 
 <table>
 <tgroup cols="4">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<thead>
-<row>
-<entry>Tenant Network</entry>
-<entry>Created By</entry>
-<entry>Provider Network</entry>
-<entry> VLAN ID Allocation</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>external-net</entry>
-<entry>admin</entry>
-<entry>provider-net-a</entry>
-<entry>Manual</entry>
-</row>
-<row>
-<entry>
-internal-net</entry>
-<entry>admin</entry>
-<entry>provider-net-b</entry>
-<entry>Dynamic</entry>
-</row>
-<row>
-<entry>tenant1-mgmt-net</entry>
-<entry>admin</entry>
-<entry>provider-net-a</entry>
-<entry>Dynamic</entry>
-</row>
-<row>
-<entry>tenant1-net</entry>
-<entry>user1</entry>
-<entry>as allocated</entry>
-<entry>Dynamic</entry>
-</row>
-<row>
-<entry>tenant2-mgmt-net</entry>
-<entry>admin</entry>
-<entry>provider-net-a</entry>
-<entry>Dynamic</entry>
-</row>
-<row>
-<entry>tenant2-net</entry>
-<entry>user2</entry>
-<entry>as allocated</entry>
-<entry>Dynamic</entry>
-</row>
-</tbody>
-</tgroup>
+              <colspec colname="col1" colsep="1" rowsep="1"/>
+              <colspec colname="col2" colsep="1" rowsep="1"/>
+              <colspec colname="col3" colsep="1" rowsep="1"/>
+              <colspec colname="col4" colsep="1" rowsep="1"/>
+              <thead>
+                <row>
+                  <entry>Tenant Network</entry>
+                  <entry>Created By</entry>
+                  <entry>Provider Network</entry>
+                  <entry> VLAN ID Allocation</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>external-net</entry>
+                  <entry>admin</entry>
+                  <entry>provider-net-a</entry>
+                  <entry>Manual</entry>
+                </row>
+                <row>
+                  <entry> internal-net</entry>
+                  <entry>admin</entry>
+                  <entry>provider-net-b</entry>
+                  <entry>Dynamic</entry>
+                </row>
+                <row>
+                  <entry>tenant1-mgmt-net</entry>
+                  <entry>admin</entry>
+                  <entry>provider-net-a</entry>
+                  <entry>Dynamic</entry>
+                </row>
+                <row>
+                  <entry>tenant1-net</entry>
+                  <entry>user1</entry>
+                  <entry>as allocated</entry>
+                  <entry>Dynamic</entry>
+                </row>
+                <row>
+                  <entry>tenant2-mgmt-net</entry>
+                  <entry>admin</entry>
+                  <entry>provider-net-a</entry>
+                  <entry>Dynamic</entry>
+                </row>
+                <row>
+                  <entry>tenant2-net</entry>
+                  <entry>user2</entry>
+                  <entry>as allocated</entry>
+                  <entry>Dynamic</entry>
+                </row>
+              </tbody>
+            </tgroup>
 </table>
 </li>
 <li>
@@ -200,59 +197,59 @@ IP subnet. They are configured as follows:</p>
 
 <table>
 <tgroup cols="4">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<thead>
-<row>
-<entry>Subnet</entry>
-<entry>Address</entry>
-<entry>Tenant Network</entry>
-<entry>Created By</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>external-subnet</entry>
-<entry>192.168.2.0/24
-<!--A BR tag was used here in the original source.-->External Gateway
-<!--A BR tag was used here in the original source.-->192.168.2.1</entry>
-<entry> external-net</entry>
-<entry>admin</entry>
-</row>
-<row>
-<entry>internal-subnet</entry>
-<entry>10.1.1.0/24</entry>
-<entry>internal-net</entry>
-<entry>admin</entry>
-</row>
-<row>
-<entry>tenant1-mgmt-subnet</entry>
-<entry>192.168.102.0/24</entry>
-<entry>tenant1-mgmt-net</entry>
-<entry>user1</entry>
-</row>
-<row>
-<entry>tenant1-subnet</entry>
-<entry>172.31.1.0/24</entry>
-<entry>tenant1-net</entry>
-<entry>user1</entry>
-</row>
-<row>
-<entry>tenant2-mgmt-subnet</entry>
-<entry>192.168.202.0/24</entry>
-<entry>tenant2-mgmt-net</entry>
-<entry>user2</entry>
-</row>
-<row>
-<entry>tenant2-subnet</entry>
-<entry>172.31.2.0/24</entry>
-<entry>tenant2-net</entry>
-<entry>user2</entry>
-</row>
-</tbody>
-</tgroup>
+              <colspec colname="col1" colsep="1" rowsep="1"/>
+              <colspec colname="col2" colsep="1" rowsep="1"/>
+              <colspec colname="col3" colsep="1" rowsep="1"/>
+              <colspec colname="col4" colsep="1" rowsep="1"/>
+              <thead>
+                <row>
+                  <entry>Subnet</entry>
+                  <entry>Address</entry>
+                  <entry>Tenant Network</entry>
+                  <entry>Created By</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>external-subnet</entry>
+                  <entry>192.168.2.0/24
+                    <!--A BR tag was used here in the original source.-->External Gateway
+                    <!--A BR tag was used here in the original source.-->192.168.2.1</entry>
+                  <entry> external-net</entry>
+                  <entry>admin</entry>
+                </row>
+                <row>
+                  <entry>internal-subnet</entry>
+                  <entry>10.1.1.0/24</entry>
+                  <entry>internal-net</entry>
+                  <entry>admin</entry>
+                </row>
+                <row>
+                  <entry>tenant1-mgmt-subnet</entry>
+                  <entry>192.168.102.0/24</entry>
+                  <entry>tenant1-mgmt-net</entry>
+                  <entry>user1</entry>
+                </row>
+                <row>
+                  <entry>tenant1-subnet</entry>
+                  <entry>172.31.1.0/24</entry>
+                  <entry>tenant1-net</entry>
+                  <entry>user1</entry>
+                </row>
+                <row>
+                  <entry>tenant2-mgmt-subnet</entry>
+                  <entry>192.168.202.0/24</entry>
+                  <entry>tenant2-mgmt-net</entry>
+                  <entry>user2</entry>
+                </row>
+                <row>
+                  <entry>tenant2-subnet</entry>
+                  <entry>172.31.2.0/24</entry>
+                  <entry>tenant2-net</entry>
+                  <entry>user2</entry>
+                </row>
+              </tbody>
+            </tgroup>
 </table>
 <p>
 <b>Notes</b>:</p>
