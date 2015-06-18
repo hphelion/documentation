@@ -19,7 +19,7 @@ body {
   font-size:12px;
 }
 ///////////////////
-table {
+.hometable {
 	border: 1px solid gray;
 	border-radius: 10px;
 }
