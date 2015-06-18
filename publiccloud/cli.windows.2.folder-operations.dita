@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2059">
-<title>HP Helion Public Cloud CLI Software for Windows PowerShell: Folder Operations</title>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-</metadata>
-</prolog>
-<body>
-<p>
-<!--PUBLISHED-->
- <!--./publiccloud/cli.windows.2.folder-operations.md-->
- <!--permalink: /publiccloud/cli/windows/folder-operations/--></p>
-<p>When you consider the sheer quantity of data that could be potentially moved into the cloud you soon realize that operations on individual files are impractical at best. To remedy this we have the ability to copy entire sets of objects from your local machine to the store, within the store, and to your local machine in one operation. Each of these commands can be tailored to affect a specific folders contents, or any descendant folders beneath the target path. To address a folder, remember to include a trailing \ on the end of each path to indicate that you are working with a folder and not an individual file.</p>
-<p>
-  <b>Example: Local-to-Server Copy</b>
-</p>
-<p>In this example, we're making a copy of the local folder named Test to the current location on the server which is the root directory. The lack of target path will force the system to assume the current location is the target (this is also true of individual files). Notice that when the operation completes that a new Folder named Test has been created off of root, in other words folder operations are inclusive of the container that you're pointing to.</p>
-<p>
-  <image href="../media/CopyL2SNonRecursive.png">
-<alt/>
-</image>
-</p>
-<p>
-  <b>Example: Local-to-Server Copy (Recursive)</b>
-</p>
-<p>Here's another example of a Local to Remote copy but this time we will push an entire hierarchy of folders as shown below.</p>
-<p>
-  <image href="../media/CopyL2SRecursive.png">
-<alt/>
-</image>
-</p>
-<p>
-  <b>Example: Server-To-Local Copy</b>
-</p>
-<p>Now for the sake of completeness, let's throw this entire set of folders back to the client</p>
-<p>
-  <image href="../media/CopyS2L.png">
-<alt/>
-</image>
-</p>
-<p>Done...</p>
-<p>Now let's make sure that we can move these folders around on the server.</p>
-<p>
-  <b>Example: Intra-Server Copy (Recursive)</b>
-</p>
-<p>
-  <image href="../media/CopyIntraserverRecursive.png">
-<alt/>
-</image>
-</p>
-<section id="deleting-folders"> <title>Deleting Folders</title>
-<p>Finally, when we're done with a folder we can simply remove it. Note that when you delete a folder, all of its contents are deleted along with any child folders as well.</p>
-<p>
-  <image href="../media/DeleteFolders.png">
-<alt/>
-</image>
-</p>
-<p>Recommended Links</p>
-<ul>
-<li>
-<xref href="/publiccloud/cli/windows" >Index</xref>
-</li>
-<li>
-<xref href="../publiccloud/cli.windows.2.metadata.dita" >Working with Metadata</xref>
-</li>
-</ul>
-</section>
-</body>
+  <title>HP Helion Public Cloud CLI Software for Windows PowerShell: Folder Operations</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>
+      <!--PUBLISHED-->
+      <!--./publiccloud/cli.windows.2.folder-operations.md-->
+      <!--permalink: /publiccloud/cli/windows/folder-operations/--></p>
+    <p>When you consider the sheer quantity of data that could be potentially moved into the cloud you soon realize that operations on individual files are impractical at best. To remedy this we have the ability to copy entire sets of objects from your local machine to the store, within the store, and to your local machine in one operation. Each of these commands can be tailored to affect a specific folders contents, or any descendant folders beneath the target path. To address a folder, remember to include a trailing \ on the end of each path to indicate that you are working with a folder and not an individual file.</p>
+    <p>
+      <b>Example: Local-to-Server Copy</b>
+    </p>
+    <p>In this example, we're making a copy of the local folder named Test to the current location on the server which is the root directory. The lack of target path will force the system to assume the current location is the target (this is also true of individual files). Notice that when the operation completes that a new Folder named Test has been created off of root, in other words folder operations are inclusive of the container that you're pointing to.</p>
+    <p>
+      <image href="../media/CopyL2SNonRecursive.png">
+        <alt/>
+      </image>
+    </p>
+    <p>
+      <b>Example: Local-to-Server Copy (Recursive)</b>
+    </p>
+    <p>Here's another example of a Local to Remote copy but this time we will push an entire hierarchy of folders as shown below.</p>
+    <p>
+      <image href="../media/CopyL2SRecursive.png">
+        <alt/>
+      </image>
+    </p>
+    <p>
+      <b>Example: Server-To-Local Copy</b>
+    </p>
+    <p>Now for the sake of completeness, let's throw this entire set of folders back to the client</p>
+    <p>
+      <image href="../media/CopyS2L.png">
+        <alt/>
+      </image>
+    </p>
+    <p>Done...</p>
+    <p>Now let's make sure that we can move these folders around on the server.</p>
+    <p>
+      <b>Example: Intra-Server Copy (Recursive)</b>
+    </p>
+    <p>
+      <image href="../media/CopyIntraserverRecursive.png">
+        <alt/>
+      </image>
+    </p>
+    <section id="deleting-folders"> <title>Deleting Folders</title>
+      <p>Finally, when we're done with a folder we can simply remove it. Note that when you delete a folder, all of its contents are deleted along with any child folders as well.</p>
+      <p>
+        <image href="../media/DeleteFolders.png">
+          <alt/>
+        </image>
+      </p>
+      <p>Recommended Links</p>
+      <ul>
+        <li>
+          <xref href="../publiccloud/cli.windows.2.dita" >Index</xref>
+        </li>
+        <li>
+          <xref href="../publiccloud/cli.windows.2.metadata.dita" >Working with Metadata</xref>
+        </li>
+      </ul>
+    </section>
+  </body>
 </topic>
