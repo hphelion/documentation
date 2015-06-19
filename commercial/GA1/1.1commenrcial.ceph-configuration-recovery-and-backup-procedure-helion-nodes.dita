@@ -2,9 +2,9 @@
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3172">
 <title>Useful tips</title>
-<titlealts>
+<!--<titlealts>
 <searchtitle>HP Helion OpenStack(R) HP Helion Ceph Backup and Recovery</searchtitle>
-</titlealts>
+</titlealts>-->
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -72,11 +72,9 @@ The following steps ensure the recovery of the lost configuration.
   <row>
     <entry>Compute Node</entry>
     <entry>/etc/nova/nova.conf</entry>
-    <entry>1. Log in to the <xref href="https://helion.hpwsportal.com" format="html"> HDN</xref>. 
-      <!--A BR tag was used here in the original source.--> 2. Click the workloads category on the left side.
-      <!--A BR tag was used here in the original source.--> 3. Click the storage subcategory to find all the 
-      Ceph related files. <!-- <br /> <b>Filename</b> need ?-->
-    </entry>
+    <entry>1. Log in to the <xref href="https://helion.hpwsportal.com" format="html"> HDN</xref>.
+              2. Click the workloads category on the left side.  3. Click the storage subcategory to
+              find all the Ceph related files. Filename need ? </entry>
   </row>
 </tbody>
   </tgroup>
@@ -143,17 +141,17 @@ Cinder - /var/log/upstart
 <section id="choosing"> <title>Choosing the number of the placement group</title>
 <p>If there are more than 50 OSDs, we recommend approximately 50-100 PGs per OSD to balance resource usage, data durability and distribution. To get a baseline for a single pool of objects, use the following formula:</p>
 <p>
-  <image href="../../media/commercial-ceph-formula-placement-group.png"/>
+  <!--<image href="../../media/commercial-ceph-formula-placement-group.png"/>-->
 </p>
 <p>Where pool size is either the number of replicas for replicated pools or the K+M sum for erasure coded pools (as returned by <codeph>ceph osd erasure-code-profile get</codeph>).
 Round up the results to the nearest power of two. Rounding up is optional, but recommended for CRUSH to evenly balance the number of objects among PGs.</p>
 <p>For example, for a cluster with 200 OSDs and a pool size of 3 replicas, estimate the number of PGs as follows:</p>
-<codeblock>
+<!--<codeblock>
   <codeph>(200 * 100)
------------ = 6667. Nearest power of 2: 8192
+____________ = 6667. Nearest power of 2: 8192
        3
 </codeph>
-</codeblock>
+</codeblock>-->
 
 </section>
  
