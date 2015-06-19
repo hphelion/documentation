@@ -268,12 +268,15 @@ For information on Glazier, see <xref scope="local" format="dita" href="windows_
 </section>
 </body>
  <related-links>
-  <link href="../../../devplatform/1.2/windows/windows_overview.dita"><linktext>Windows Overview</linktext></link>
-  <link href="../../../devplatform/1.2/windows/windows_firstapp.dita"><linktext>Deploying your first .NET Application</linktext></link>
-  <link href="../../../devplatform/1.2/windows/windows_tools_guide.dita"><linktext>Windows and .NET Tools Guide</linktext></link>
-  <link href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita"><linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext></link>
-  <link href="../../../devplatform/1.2/windows/windows_adding_services.dita"><linktext>Adding Services to a Windows Application</linktext></link>
-  <link href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita"><linktext>Deploying Windows Applications with the IIS Buildpack</linktext></link>
+  <link href="windows_overview.dita"><linktext>Windows Overview</linktext></link>
+  <link href="windows_building_and_deploying.dita"><linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext></link>
+  <link href="windows_firstapp.dita"><linktext>Deploying your first .NET Application</linktext></link>
+  <link href="windows_tools_guide.dita"><linktext>Windows and .NET Tools Guide</linktext></link>
+  <link href="windows_glazier_reference_guide.dita"><linktext>Glazier Reference Guide</linktext></link>
+  <link href="windows_adding_services.dita"><linktext>Adding Services to a Windows Application</linktext></link>
+  <link href="windows_custom_buildpacks.dita"><linktext>Deploying Windows Applications with the IIS Buildpack</linktext></link>
+  <link href="windows_adding_services.dita"><linktext>Connecting Services to a Windows Application</linktext></link>
+  <link href="windows_growcluster.dita"><linktext>Growing and Renaming Clusters Using Horizon</linktext></link>
  </related-links>
 </topic>
 

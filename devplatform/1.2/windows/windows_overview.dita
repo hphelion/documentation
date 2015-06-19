@@ -44,7 +44,6 @@
         <li> <xref type="section" scope="local" href="#topic24073_2/process" format="dita">Process</xref></li>
         <li> <xref type="section" scope="local" href="#topic24073_2/softwarerequirements" format="dita">Software Requirements</xref></li>
         <li> <xref type="section" scope="local" href="#topic24073_2/licensing" format="dita">Windows Instance Licensing</xref></li>
-        <li> <xref type="section" scope="local" href="#topic24073_2/nextsteps" format="dita">Next Steps</xref></li>
     </ul>
 </section>
     <section id="overview"><title>Overview</title>
@@ -181,18 +180,18 @@
             <xref format="html" scope="external" href="https://www.microsoft.com/en-us/licensing/product-licensing/windows-server-2012-r2.aspx">Windows Server 2012 Volume Licensing</xref>, or contact your 
             Microsoft licensing representative.</p>
         </section>
-    <section id="nextsteps"><title>Next Steps </title>
-<ul>
-    <li> <xref scope="local" format="dita" href="growcluster">Growing and Renaming Clusters Using Horizon</xref> </li>
-    <li> <xref scope="local" format="dita" href="building_windows">Building and Deploying Windows DEA and SQL Server Express Images</xref></li>
-    <li> <xref scope="local" format="dita" href="deployingnet">Deploying your first .NET application</xref> </li>
-    <li> <xref scope="local" format="dita" href="glazier">Glazier Reference Guide</xref></li>
-    <li> <xref scope="local" format="dita" href="buildpack">Understanding IIS Buildpack</xref></li>
-    <li> <xref scope="local" format="dita" href="adding_services">Connecting Services to a Windows Application</xref></li>
-    <li> <xref scope="local" format="dita" href="tools_guide">Windows and .NET Tools Guide</xref></li>   
-</ul>
-        </section>
     </body>
+    <related-links>
+        <link href="windows_overview.dita"><linktext>Windows Overview</linktext></link>
+        <link href="windows_building_and_deploying.dita"><linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext></link>
+        <link href="windows_firstapp.dita"><linktext>Deploying your first .NET Application</linktext></link>
+        <link href="windows_tools_guide.dita"><linktext>Windows and .NET Tools Guide</linktext></link>
+        <link href="windows_glazier_reference_guide.dita"><linktext>Glazier Reference Guide</linktext></link>
+        <link href="windows_adding_services.dita"><linktext>Adding Services to a Windows Application</linktext></link>
+        <link href="windows_custom_buildpacks.dita"><linktext>Deploying Windows Applications with the IIS Buildpack</linktext></link>
+        <link href="windows_adding_services.dita"><linktext>Connecting Services to a Windows Application</linktext></link>
+        <link href="windows_growcluster.dita"><linktext>Growing and Renaming Clusters Using Horizon</linktext></link>
+    </related-links>
 </topic>
 
 
