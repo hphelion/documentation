@@ -1532,8 +1532,8 @@
         <topicref href="publiccloud/cli.windows.2.containers-and-folders.dita" navtitle="PowerShell CLI Object Storage Examples" locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.folder-operations.dita" navtitle="PowerShell CLI Folder Operations" locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.help.dita" navtitle="PowerShell CLI Help" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.misc.dita" navtitle="PowerShell CLI Folder Misc Features" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.release-notes.dita" navtitle="PowerShell CLI Folder Release Notes" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.misc.dita" navtitle="PowerShell CLI Misc Features" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.release-notes.dita" navtitle="PowerShell CLI Release Notes" locktitle="yes"/>
       </topicref>
       <topicref href="publiccloud/downloads.dita" navtitle="Helion Public Cloud Downloads" locktitle="yes"/>
       <topicref href="publiccloud/bindings.dita" navtitle="Helion Public Cloud Bindings Support" locktitle="yes"/>
