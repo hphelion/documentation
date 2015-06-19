@@ -25,9 +25,9 @@
  <!--./devplatform/1.2/1.2devplatform.index.md-->
  <!--permalink: /helion/devplatform/1.2/--></p>
 <p>
-  <xref href="/helion/devplatform/1.1" >See the Helion 1.1 Development Platform version of this page</xref>
+  <xref href="../1.1devplatform.index.dita">See the Helion 1.1 Development Platform version of this page</xref>
 </p>
-  <p>Welcome! The HP Helion Development Platform is a Platform-as-a-Service (PaaS) that helps developers build great cloud-native applications across private and public clouds.  Based on <xref href="http://cloudfoundry.org/index.html" scope="external" format="html" ><tm tmtype="tm">Cloud Foundry</tm></xref> and fully integrated with <xref href="/helion/openstack" >HP Helion <tm tmtype="reg">OpenStack</tm></xref>, the HP Helion Development Platform is open and interoperable, ensuring that developers can focus on building the right app for any environment.</p>
+  <p>Welcome! The HP Helion Development Platform is a Platform-as-a-Service (PaaS) that helps developers build great cloud-native applications across private and public clouds.  Based on <xref href="http://cloudfoundry.org/index.html" scope="external" format="html" ><tm tmtype="tm">Cloud Foundry</tm></xref> and fully integrated with <xref href="../../commercial/GA1/1.1commercial.index.dita" >HP Helion OpenStack (R)</xref>, the HP Helion Development Platform is open and interoperable, ensuring that developers can focus on building the right app for any environment.</p>
 <p>This documentation will help you get up to speed on the  Helion Development Platform as a Developer or Administrator.</p>
 <section id="platform-overview"> <title>Platform Overview</title>
 <p>The <xref href="../../devplatform/1.2/helion/1.2index.dita" >Application Lifecycle Service (ALS)</xref> is a Cloud Foundry-based, managed runtime environment for applications.</p>
@@ -38,7 +38,7 @@
 <li>It provides auto-scaling and application log drains.</li>
 </ul>
 <p>The Application Lifecycle Service is <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita#install-als" >installed</xref> as part of the Helion Development Platform. You can easily <xref href="../../devplatform/1.2/helion/admin/1.2index.dita#wizard-based-cluster-creation" >create and configure</xref> Application Lifecycle Service clusters from the Horizon management console, or explore this service by setting up a <xref href="../../devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> in the public cloud.</p>
-<p>Helion Development Platform version 1.2 includes a full end-to-end solution for creating and deploying .NET  applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of the Helion Development Platform. For more information on Windows and .NET support, see <xref href="/helion/devplatform/1.2/windows" >Windows Overview</xref>.</p>
+<p>Helion Development Platform version 1.2 includes a full end-to-end solution for creating and deploying .NET  applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of the Helion Development Platform. For more information on Windows and .NET support, see <xref href="../../devplatform/1.2/windows/windows_overview.dita" >Windows Overview</xref>.</p>
 </section>
 <section id="application-services"> <title>Application Services</title>
 <p>The HP Helion Development Platform provides additional Application Services that integrate into the Application Lifecycle Service. These currently include:</p>
@@ -74,7 +74,13 @@
 <li>The Messaging Service integrates with <xref href="../../commercial/GA1/1.1commerical.services-identity-overview.dita" >Keystone</xref> to remove the need to create separate credentials for RabbitMQ access. </li>
 <li>The Messaging Service allows developers to focus on building their apps without worrying about installing, configuring, and troubleshooting RabbitMQ.</li>
 </ul>
-<p>The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita#install-messaging" >install</xref> it and then <xref href="../../devplatform/1.2/1.2devplatform.using-the-messaging-service.dita" >configure</xref> it for <xref href="../../devplatform/1.2/1.2devplatform.using-messaging-service-with-ALS.dita" >use from within the Application Lifecycle Service</xref>.</p>
+<p>The Messaging Service is optionally installed as part of the Helion Development Platform. If not
+        installed as part of the platform, you can <xref
+          href="1.2devplatform_commercial_install.dita#topic24073/install-messaging">install</xref> it and then <xref
+          href="../../devplatform/1.2/1.2devplatform.using-the-messaging-service.dita"
+          >configure</xref> it for <xref
+          href="../../devplatform/1.2/1.2devplatform.using-messaging-service-with-ALS.dita">use from
+          within the Application Lifecycle Service</xref>.</p>
 <!--<table>
 <tgroup cols="2">
 <colspec colname="col1"/>
