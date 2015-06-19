@@ -5,7 +5,7 @@
     <shortdesc>An interactive look at the internals of HP Helion OpenStack</shortdesc>
     <taskbody>
         <context id="context_ykm_zvg_ks"><p/>Have a look at the services and functionalities
-            underlying HP Helion OpenStack <xref href="/documentation/commercial/GA1/ServicesFlow/" format="html"
+            underlying HP Helion OpenStack <xref href="ServicesFlow/index.html" format="html"
                 scope="external">on this page.</xref></context>
     </taskbody>
 </task>
