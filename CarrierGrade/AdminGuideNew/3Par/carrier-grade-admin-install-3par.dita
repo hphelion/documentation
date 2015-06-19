@@ -69,7 +69,7 @@
           OpenStack(R) Dashboard</xref> to configure HP StoreServ.(Recommended)</p>
 </section>
 <section id="using-the-cli"> <title>Using the CLI</title>
-  <p>You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See <xref href="/CarrierGrade/AdminGuideNew/3Par/carrier-grade-admin-sirius-cli-workflow.dita" >Configuring Storage Using Sirius</xref>
+  <p>You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See <xref href="../../../CarrierGrade/AdminGuideNew/3Par/carrier-grade-admin-sirius-cli-workflow.dita" >Configuring Storage Using Sirius</xref>
 </p>
 <p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack(R) command-line clients</xref>.</p>
 <p>
@@ -79,3 +79,4 @@
 </section>
 </body>
 </topic>
+
