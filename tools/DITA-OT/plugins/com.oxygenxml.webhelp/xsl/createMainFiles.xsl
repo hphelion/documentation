@@ -99,7 +99,8 @@ available in the base directory of this Oxygen Webhelp plugin.
     <xsl:call-template name="create-index-file">
       <xsl:with-param name="toc" select="$toc"/>
       <xsl:with-param name="title" select="$title"/>
-	  <xsl:template> tags.</xsl:template>
+	   
+	   
     </xsl:call-template>
   </xsl:template>
 
@@ -223,7 +224,7 @@ available in the base directory of this Oxygen Webhelp plugin.
           <xsl:if test="$withFrames">
             <base target="contentwin"/>
           </xsl:if>
-          <title>
+          <title>BBB
             <xsl:value-of select="$title"/>
           </title>
                     
@@ -567,11 +568,11 @@ available in the base directory of this Oxygen Webhelp plugin.
       <span>
         <xsl:choose>
           <xsl:when test="@href">
-            <a href="{@href}">
+            <a href="{@href}"> CCC
               <xsl:value-of select="$title"/>
             </a>
           </xsl:when>
-          <xsl:otherwise>
+          <xsl:otherwise> DDD
             <xsl:value-of select="$title"/>
           </xsl:otherwise>
         </xsl:choose>
@@ -648,7 +649,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
           <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>" 
-          <title>  
+          <title>  AAA
             <xsl:value-of select="$title"/>
           </title>
           <link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css">
