@@ -14,7 +14,7 @@
       </vrmlist>
     </prodinfo>
   </topicmeta>
-  <!--permalink:         -->
+  <!--permalink: -->
   <!--permalink: /-->
   <topicref href="publiccloud/index.dita"/>
   <topicref href="commercial/GA1/1.1commercial.index.dita"
@@ -337,14 +337,133 @@
   <topicref href="euca/euca-landing-page.dita"/>
   <topicref href="euca/euca.thirdparty.licensing.dita"/>
   <topicref href="commercial/GA1/2.0commercial.services-monasca.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.index.dita"/>
-  <topicref href="commercial/GA1/1.03rd-party-license-agreements.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-object-pyringos.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.backup-restore-GA.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.dashboard.how-works.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.dashboard.launch.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.eula.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.faq.dita"/>
+  <!--permalink: /helion/devplatform/1.0/-->
+  <!--permalink: /helion/devplatform/1.1/-->
+  <!--permalink: /helion/devplatform/1.2/-->
+  <!-- Getting Started-->
+  
+    
+    <!-- 1.0 -->
+  </topicref>
+  <topicref href="commercial/GA1/1.0commercial.index.dita">
+    <topicref href="commercial/GA1/1.03rd-party-license-agreements.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-object-pyringos.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.backup-restore-GA.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.dashboard.how-works.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.dashboard.launch.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.eula.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.faq.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-installation.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.glossary.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.high-availability.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-3par.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-CSV.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-add-nodes.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-DNSaaS.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-JSON.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-esx.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-ESX-Proxy.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-kvm.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-LDAP.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-NTP.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-ovsvapp.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-prereqs.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-security.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-verify.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-vsa.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.-vsa-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.networking-maskedIP.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.name-resolution.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.related-topics.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.release-notes.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-remove-replace-failed-overcloud-nodes.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-compute-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-dns-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-dvr-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-eon-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-eve-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-focus-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-horizon-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-identity-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-imaging-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-ironic-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-networking-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-object-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-scale-out-swift.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-disk.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-swift-deployment-expand-swift-cluster.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-health-check.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-replica-swift-status.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-swift-cluster.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-orchestration-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-reporting-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-sherpa-accessing-ui.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-sherpa-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-sirius-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-account-container.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-storage-node.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-starter-object-ring.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-add-proxy-node.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-proxy-node.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-part-power.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita"/>
+    <topicref
+      href="commercial/GA1/1.0commerical.services-swift-deployment-provision-swift-node.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-tripleo-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.troubleshooting.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-volume-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.sirius-cli.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.sirius-cli-workflow.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.site-index.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.install-GA-supportmatrix.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.technical-overview.ga.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-admin-settings.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-admin-updates-and-extensions.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-eon-cli.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-horizon-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-resources-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-resources-storage.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config-esx.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config-storeserv.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config-storevirtual.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-resource-esx-manage-vm.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-resource-esx.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-storage-storeserv.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.undercloud-storage-storevirtual.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.update-101-devplat.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.update-101-devplat.stopstart.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.update-101-obtaining.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.update-101-monitor.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.update-101-overcloud.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.update-101-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.update-101-prereqs.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.update-101-seed.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.update-101-troubleshooting.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.update-101-undercloud.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.vlan-providernetwork.dita"/>
   </topicref>
   <topicref href="devplatform/1.2/1.2devplatform.index.dita"
     navtitle="HP Helion 1.2 Development Platform ">
@@ -544,52 +663,36 @@
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-history.dita"
             locktitle="yes" navtitle="ALS Command Reference: History"/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-information.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Information "/>
+            locktitle="yes" navtitle="ALS Command Reference: Information "/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-management.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Management "/>
+            locktitle="yes" navtitle="ALS Command Reference: Management "/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-miscellaneous.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Miscellaneous "/>
+            locktitle="yes" navtitle="ALS Command Reference: Miscellaneous "/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-organizations.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Organizations "/>
+            locktitle="yes" navtitle="ALS Command Reference: Organizations "/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-placement.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Placement Zones "/>
+            locktitle="yes" navtitle="ALS Command Reference: Placement Zones "/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-quotas.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Quotas "/>
+            locktitle="yes" navtitle="ALS Command Reference: Quotas "/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-routes.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Routes "/>
+            locktitle="yes" navtitle="ALS Command Reference: Routes "/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-securitygroups.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Security Groups "/>
+            locktitle="yes" navtitle="ALS Command Reference: Security Groups "/>
           <topicref
             href="devplatform/1.2/helion/user/reference/1.2client-ref-service-management.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Service Management "/>
+            locktitle="yes" navtitle="ALS Command Reference: Service Management "/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-serviceplans.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Service Plans "/>
+            locktitle="yes" navtitle="ALS Command Reference: Service Plans "/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-services.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Services "/>
+            locktitle="yes" navtitle="ALS Command Reference: Services "/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-spacequotas.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Space Quotas "/>
+            locktitle="yes" navtitle="ALS Command Reference: Space Quotas "/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-spaces.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Spaces "/>
+            locktitle="yes" navtitle="ALS Command Reference: Spaces "/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-tokens.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: Authentication Tokens "/>
+            locktitle="yes" navtitle="ALS Command Reference: Authentication Tokens "/>
           <topicref href="devplatform/1.2/helion/user/reference/1.2client-ref-user-management.dita"
-            locktitle="yes"
-            navtitle="ALS Command Reference: User Management "
-          />
+            locktitle="yes" navtitle="ALS Command Reference: User Management "/>
         </topicref>
         <topicref href="devplatform/1.2/helion/CLI/1.2ALS_Client_Reference.dita" locktitle="yes"
           navtitle="Cluster Management Tool Installation and Reference"/>
@@ -830,8 +933,7 @@
         navtitle="Using the RabbitMQ Messaging Service "/>
       <!--permalink: /helion/devplatform/1.1/msgaas/als/-->
       <topicref href="devplatform/1.1devplatform.using-messaging-service-with-ALS.dita"
-        locktitle="yes"
-        navtitle="Using the Messaging Service with ALS "/>
+        locktitle="yes" navtitle="Using the Messaging Service with ALS "/>
       <topicref href="devplatform/helion/user/services/1.1data-services.dita" locktitle="yes"
         navtitle="ALS Data Services ">
         <!--permalink: /helion/devplatform/1.1/als/user/services/filesystem/-->
@@ -1013,8 +1115,7 @@
           navtitle="ALS Router "/>
         <!--permalink: /helion/devplatform/1.1/als/admin/server/upgrade/-->
         <topicref href="devplatform/helion/admin/server/1.1upgrade.dita" locktitle="yes"
-          navtitle="In-Place Upgrades of ALS Nodes and Clusters "
-        />
+          navtitle="In-Place Upgrades of ALS Nodes and Clusters "/>
       </topicref>
       <!--permalink: /helion/devplatform/1.1/als/user/-->
       <topicref href="devplatform/helion/user/1.1index.dita" locktitle="yes"
@@ -1113,7 +1214,6 @@
       </topicref>
     </topicref>
   </topicref>
-  <!--permalink: /helion/devplatform/1.0/-->
   <topicref href="devplatform/1.0devplatform.index.dita"
     navtitle="HP Helion 1.0 Development Platform " locktitle="yes">
     <!--permalink: /helion/devplatform/3rd-party-license-agreements/-->
@@ -1207,8 +1307,7 @@
         navtitle="Configuring and Deploying an Application Lifecycle Service Cluster "/>
       <!--permalink: /helion/devplatform/1.0/msgaas/als/-->
       <topicref href="devplatform/1.0devplatform.using-messaging-service-with-ALS.dita"
-        locktitle="yes"
-        navtitle="Using the Messaging Service with ALS "/>
+        locktitle="yes" navtitle="Using the Messaging Service with ALS "/>
     </topicref>
     <!--permalink: /als/v1/-->
     <topicref href="devplatform/helion/1.0index.dita"
@@ -1379,177 +1478,109 @@
       navtitle="Open Source and Third-Party License Agreements" locktitle="yes"/>
     <topicref href="euca/euca-eula.dita" navtitle="Master Services Agreement" locktitle="yes"/>
   </topicref>
-  <!--permalink: /helion/devplatform/1.1/-->
-  <!--permalink: /helion/devplatform/1.2/-->
-  <!-- Getting Started-->
-  <!-- 1.0 -->
-
-  <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-installation.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.glossary.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.high-availability.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-3par.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-CSV.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-add-nodes.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-DNSaaS.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-JSON.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-esx.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-ESX-Proxy.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-kvm.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-LDAP.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-NTP.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-ovsvapp.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-prereqs.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-security.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-verify.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-vsa.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.-vsa-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.networking-maskedIP.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.name-resolution.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.related-topics.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.release-notes.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-remove-replace-failed-overcloud-nodes.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-compute-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-dns-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-dvr-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-eon-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-eve-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-focus-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-horizon-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-identity-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-imaging-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-ironic-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-networking-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-object-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-scale-out-swift.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-disk.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-expand-swift-cluster.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-health-check.dita"/>
-  <topicref
-    href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-replica-swift-status.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-swift-cluster.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-orchestration-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-reporting-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-sherpa-accessing-ui.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-sherpa-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-sirius-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
-  <topicref
-    href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-account-container.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-storage-node.dita"/>
-  <topicref
-    href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
-  <topicref
-    href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-starter-object-ring.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-add-proxy-node.dita"/>
-  <topicref
-    href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
-  <topicref
-    href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-proxy-node.dita"/>
-  <topicref
-    href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-part-power.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-provision-swift-node.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-tripleo-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.troubleshooting.dita"/>
-  <topicref href="commercial/GA1/1.0commerical.services-volume-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.sirius-cli.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.sirius-cli-workflow.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.site-index.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.install-GA-supportmatrix.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.technical-overview.ga.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-admin-settings.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-admin-updates-and-extensions.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-eon-cli.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-horizon-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-resources-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-resources-storage.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config-esx.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config-storeserv.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config-storevirtual.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-resource-esx-manage-vm.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-resource-esx.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-storage-storeserv.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.undercloud-storage-storevirtual.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.update-101-devplat.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.update-101-devplat.stopstart.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.update-101-obtaining.dita"/>
- <topicref href="commercial/GA1/1.0commercial.update-101-monitor.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.update-101-overcloud.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.update-101-overview.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.update-101-prereqs.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.update-101-seed.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.update-101-troubleshooting.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.update-101-undercloud.dita"/>
-  <topicref href="commercial/GA1/1.0commercial.vlan-providernetwork.dita"/>
-  <topicref href="helion.rack.solution.dita"/>
-
-  <!-- Public cloud -->
-  <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud" locktitle="yes">
-    <topicref href="publiccloud/site-overview.dita" navtitle="Helion Public Cloud Website Overview" locktitle="yes"/>
-    <topicref href="publiccloud/services.dita" navtitle="Helion Public Cloud Services" locktitle="yes">
-      <topicref href="publiccloud/identity.dita" navtitle="Identity Service Overview" locktitle="yes"/>
+  <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud"
+    locktitle="yes">
+    <topicref href="publiccloud/site-overview.dita" navtitle="Helion Public Cloud Website Overview"
+      locktitle="yes"/>
+    <topicref href="publiccloud/services.dita" navtitle="Helion Public Cloud Services"
+      locktitle="yes">
+      <topicref href="publiccloud/identity.dita" navtitle="Identity Service Overview"
+        locktitle="yes"/>
       <topicref href="publiccloud/compute.dita" navtitle="Compute Service Overview" locktitle="yes"/>
-      <topicref href="publiccloud/block-storage.dita" navtitle="Block Storage Service Overview" locktitle="yes"/>
+      <topicref href="publiccloud/block-storage.dita" navtitle="Block Storage Service Overview"
+        locktitle="yes"/>
       <topicref href="publiccloud/dns.dita" navtitle="DNS Service Overview" locktitle="yes"/>
-      <topicref href="publiccloud/lbaas.dita" navtitle="Load Balancer Service Overview" locktitle="yes"/>
+      <topicref href="publiccloud/lbaas.dita" navtitle="Load Balancer Service Overview"
+        locktitle="yes"/>
       <topicref href="publiccloud/dbaas.dita" navtitle="Database Service Overview" locktitle="yes">
-        <topicref href="publiccloud/dbaas.tutorial.introduction.dita" navtitle="Database Service Tutorial" locktitle="yes"/>
+        <topicref href="publiccloud/dbaas.tutorial.introduction.dita"
+          navtitle="Database Service Tutorial" locktitle="yes"/>
       </topicref>
-      <topicref href="publiccloud/object-storage.dita" navtitle="Object Storage Service Overview" locktitle="yes">
-        <topicref href="publiccloud/object-storage.tutorial.introduction.dita" navtitle="Object Storage Service Tutorial" locktitle="yes"/>
+      <topicref href="publiccloud/object-storage.dita" navtitle="Object Storage Service Overview"
+        locktitle="yes">
+        <topicref href="publiccloud/object-storage.tutorial.introduction.dita"
+          navtitle="Object Storage Service Tutorial" locktitle="yes"/>
       </topicref>
       <topicref href="publiccloud/cdn.dita" navtitle="CDN Service Overview" locktitle="yes"/>
     </topicref>
     <topicref href="publiccloud/api.dita" navtitle="Helion Public Cloud APIs" locktitle="yes">
-      <topicref href="publiccloud/apidocs/c1.1/keystonev2-api.dita" navtitle="Identity Service v2 API" locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/keystone-api.dita" navtitle="Identity Service v3 API" locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/nova-api.dita" navtitle="Compute Service API" locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/neutron-api.dita" navtitle="Networking Service API" locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/glance-api.dita" navtitle="Image Service API" locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/cinder-api.dita" navtitle="Block Storage Service API" locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/dbaas-api.dita" navtitle="Database Service API" locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/dns-api.dita" navtitle="DNS Service API" locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/lbaas-api.dita" navtitle="Load Balancer Service API" locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/swift-api.dita" navtitle="Object Storage Service API" locktitle="yes"/>
-      <topicref href="publiccloud/apidocs/c1.1/cdn-api.dita" navtitle="CDN Service API" locktitle="yes"/>
-      <topicref href="publiccloud/api.copyright.v13.dita" navtitle="Copyright for Helion Public Cloud APIs" locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/keystonev2-api.dita"
+        navtitle="Identity Service v2 API" locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/keystone-api.dita" navtitle="Identity Service v3 API"
+        locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/nova-api.dita" navtitle="Compute Service API"
+        locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/neutron-api.dita" navtitle="Networking Service API"
+        locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/glance-api.dita" navtitle="Image Service API"
+        locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/cinder-api.dita" navtitle="Block Storage Service API"
+        locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/dbaas-api.dita" navtitle="Database Service API"
+        locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/dns-api.dita" navtitle="DNS Service API"
+        locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/lbaas-api.dita" navtitle="Load Balancer Service API"
+        locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/swift-api.dita" navtitle="Object Storage Service API"
+        locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/cdn-api.dita" navtitle="CDN Service API"
+        locktitle="yes"/>
+      <topicref href="publiccloud/api.copyright.v13.dita"
+        navtitle="Copyright for Helion Public Cloud APIs" locktitle="yes"/>
     </topicref>
     <topicref href="publiccloud/cli.dita" navtitle="Helion Public Cloud CLIs" locktitle="yes">
       <topicref href="publiccloud/cli.openstack.dita" navtitle="Openstack CLI" locktitle="yes"/>
-      <topicref href="publiccloud/cli.windows.2.dita" navtitle="Windows PowerShell CLI" locktitle="yes">
-        <topicref href="publiccloud/cli.windows.2.installation.dita" navtitle="PowerShell CLI Installation" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.commands.dita" navtitle="PowerShell CLI Commands Overview" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.compute.dita" navtitle="PowerShell CLI Compute Examples" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.metadata.dita" navtitle="PowerShell CLI Working With Metadata" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.block-storage.dita" navtitle="PowerShell CLI Block Storage Examples" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.containers-and-folders.dita" navtitle="PowerShell CLI Object Storage Examples" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.folder-operations.dita" navtitle="PowerShell CLI Folder Operations" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.help.dita" navtitle="PowerShell CLI Help" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.misc.dita" navtitle="PowerShell CLI Misc Features" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.release-notes.dita" navtitle="PowerShell CLI Release Notes" locktitle="yes"/>
+      <topicref href="publiccloud/cli.windows.2.dita" navtitle="Windows PowerShell CLI"
+        locktitle="yes">
+        <topicref href="publiccloud/cli.windows.2.installation.dita"
+          navtitle="PowerShell CLI Installation" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.commands.dita"
+          navtitle="PowerShell CLI Commands Overview" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.compute.dita"
+          navtitle="PowerShell CLI Compute Examples" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.metadata.dita"
+          navtitle="PowerShell CLI Working With Metadata" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.block-storage.dita"
+          navtitle="PowerShell CLI Block Storage Examples" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.containers-and-folders.dita"
+          navtitle="PowerShell CLI Object Storage Examples" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.folder-operations.dita"
+          navtitle="PowerShell CLI Folder Operations" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.help.dita" navtitle="PowerShell CLI Help"
+          locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.misc.dita" navtitle="PowerShell CLI Misc Features"
+          locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.release-notes.dita"
+          navtitle="PowerShell CLI Release Notes" locktitle="yes"/>
       </topicref>
-      <topicref href="publiccloud/downloads.dita" navtitle="Helion Public Cloud Downloads" locktitle="yes"/>
-      <topicref href="publiccloud/bindings.dita" navtitle="Helion Public Cloud Bindings Support" locktitle="yes"/>
+      <topicref href="publiccloud/downloads.dita" navtitle="Helion Public Cloud Downloads"
+        locktitle="yes"/>
+      <topicref href="publiccloud/bindings.dita" navtitle="Helion Public Cloud Bindings Support"
+        locktitle="yes"/>
     </topicref>
-    <topicref href="publiccloud/hpcloudconsole.dita" navtitle="Getting Started with Public Cloud Console" locktitle="yes"/>
-    <topicref href="publiccloud/release-notes.dita" navtitle="Helion Public Cloud Release Notes" locktitle="yes"/>
+    <topicref href="publiccloud/hpcloudconsole.dita"
+      navtitle="Getting Started with Public Cloud Console" locktitle="yes"/>
+    <topicref href="publiccloud/release-notes.dita" navtitle="Helion Public Cloud Release Notes"
+      locktitle="yes"/>
     <topicref href="publiccloud/hz.whatsnewjan.2014.dita"/>
-    <topicref href="publiccloud/upload-publish-partner-images135.dita" navtitle="Uploading and Publishing Partner Images" locktitle="yes" toc="no"/>
-    <topicref href="publiccloud/vpn-multisite.dita" navtitle="VPN Multi-Site Configuration Guide" locktitle="yes" toc="no"/>
-    <topicref href="publiccloud/vpn-quickstart.dita" navtitle="VPN Setup Quick Start Guide" locktitle="yes" toc="no"/>
-    <topicref href="publiccloud/plugins.teamcity.dita" navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes" toc="no"/>
-    <topicref href="publiccloud/glossary.dita" navtitle="Helion Public Cloud Glossary" locktitle="yes"/>
+    <topicref href="publiccloud/upload-publish-partner-images135.dita"
+      navtitle="Uploading and Publishing Partner Images" locktitle="yes" toc="no"/>
+    <topicref href="publiccloud/vpn-multisite.dita" navtitle="VPN Multi-Site Configuration Guide"
+      locktitle="yes" toc="no"/>
+    <topicref href="publiccloud/vpn-quickstart.dita" navtitle="VPN Setup Quick Start Guide"
+      locktitle="yes" toc="no"/>
+    <topicref href="publiccloud/plugins.teamcity.dita"
+      navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes" toc="no"/>
+    <topicref href="publiccloud/glossary.dita" navtitle="Helion Public Cloud Glossary"
+      locktitle="yes"/>
   </topicref>
   <topicref href="automation/csa.index.dita"/>
   <topicref href="codar-landing-page.dita" navtitle="HP Codar"/>
+
+  <!-- Public cloud -->
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
+  <topicref href="helion.rack.solution.dita"/>
 </map>
