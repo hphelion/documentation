@@ -104,16 +104,11 @@
 <thead>
 <row>
 <entry>Service</entry>
+    <entry><ph>Description</ph>
+                            </entry>
     <entry>
-<required-cleanup remap="center">
-<ph>Description</ph>
-</required-cleanup>
-</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Administrator task</ph>
-</required-cleanup>
-</entry>
+                                <ph>Administrator task</ph>
+                            </entry>
 </row>
 </thead>
 <tbody>
@@ -183,7 +178,7 @@
 </entry>
     <entry>The HP Helion Sherpa service is a content distribution catalog service provides a mechanism to download the content such as Image Operation images, Orchestration templates, and so forth, from the HP Helion CODN and install the content in the appropriate service such as the Identity service etc.
 
-    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href=" /helion/openstack/services/sherpa/overview/" >Learn more </xref> about the HP Helion Sherpa Service.
+    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-sherpa-overview.dita" >Learn more </xref> about the HP Helion Sherpa Service.
     </entry> 
     <entry>Administrators can download content such as software patches and updates from the HP Helion CODN and apply the downloaded content to their Helion OpenStack(R) installation. </entry>
 </row>
@@ -193,7 +188,7 @@
 </entry>
     <entry>The HP Helion ESX onboarding (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. The information is used for deployment and configuration of ESX Proxy Compute node. EON service is deployed in undercloud controller node.
 
-    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href=" /helion/openstack/services/eon/overview/" > Learn more</xref> HP Helion EON services.</entry>
+    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href=" ../../commercial/GA1/1.0commerical.services-eon-overview.dita" > Learn more</xref> HP Helion EON services.</entry>
     <entry>Administrators can interact with VMware vCenter servers to discover, inventory and map ESX clusters to be used by the Compute service. 
 </entry>
 </row>
@@ -202,7 +197,7 @@
 <b>Sirius services</b>
 </entry>
     <entry>The HP Helion OpenStack(R) Sirius service is a REST-based web service for storage device management. It is used to configure of storage services such as the  Block Storage and the Object Operations services that run in the overcloud and manage various storage devices.
-     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href=" /helion/openstack/services/sirius/overview/" >Learn more</xref> HP Helion OpenStack(R) Sirius service.</entry> 
+     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href=" ../../commercial/GA1/1.0commerical.services-sirius-overview.dita" >Learn more</xref> HP Helion OpenStack(R) Sirius service.</entry> 
     <entry>Administrators can maintain an inventory of used 3PAR devices and CPGs, and StoreVirtual devices and VSAs  and configure Cinder 3PAR and StoreVirtual backends.</entry>
 </row>
 <row>
@@ -210,7 +205,7 @@
 <b>DVR services</b>
 </entry>
     <entry>HP Helion OpenStack(R) Distributed Virtual Routing (DVR) allows you to define connectivity among different Virtual Network Switches (VNS) as well as connectivity between VNS hosts and the external network. HP Helion OpenStack(R) provides Distributed Virtual Routing to cloud users.
-     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href=" /helion/openstack/services/dvr/overview/" >Learn more</xref> HP Helion OpenStack(R) DVR service.</entry> 
+     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href=" ../../commercial/GA1/1.0commerical.services-dvr-overview.dita" >Learn more</xref> HP Helion OpenStack(R) DVR service.</entry> 
     <entry> Administrators can  create centralized router (legacy router).</entry>
 </row>
 </tbody>

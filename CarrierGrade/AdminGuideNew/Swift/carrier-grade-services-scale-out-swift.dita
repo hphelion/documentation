@@ -23,9 +23,6 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.md-->
  <!--permalink: /helion/openstack/carrier/services/object/overview/scale-out-swift/--></p>
-<!--
-<a href="/helion/openstack/carrier/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a>
--->
 <p>HP Helion OpenStack(R) Object Storage includes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).</p>
 <p>It is recommended to use these Starter servers as host for the following Swift services for scaled out Swift cluster:</p>
 <ol>

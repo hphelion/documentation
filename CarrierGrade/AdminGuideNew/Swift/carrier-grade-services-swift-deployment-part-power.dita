@@ -31,150 +31,147 @@
 To use, given number of zones and the maximum number of disk drives anticipated for the system, pick a ring power from the table. With these many disk drives, number of zones and ring power, there will be 100 ring partitions on each disk drives. This is the smallest allowed number of partitions. If your system has fewer drives (i.e, starts small), look at the <min-mum-drives> column. For a given number of zones and ring power, this is the smallest number of disk drives you system must have to operate correctly. If you have fewer <min-mum-drives>, there will be too many partitions on the disk drive, and Swift will fail to complete audit and other processes.-->
 <table>
 <tgroup cols="4">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<thead>
-<row>
-<entry>Number of Zones</entry>
-    <entry>
-<ph>Minimum Number of Drives</ph>
-
-</entry>
-    <entry>
-<ph>Maximum Number of Drives</ph>
-
-</entry>
-    <entry>
-<ph>Ring Power</ph>
-
-</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>3</entry>
-    <entry>13</entry>
-    <entry>3,932 </entry>
-    <entry>17 </entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>26</entry>
-    <entry>7,864</entry>
-    <entry>18 </entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>52</entry>
-    <entry>15,728 </entry>
-    <entry>19 </entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>104</entry>
-    <entry>31,457</entry>
-    <entry>20</entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>209</entry>
-    <entry>62,914 </entry>
-    <entry>21 </entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>419</entry>
-    <entry>125,829</entry>
-    <entry>22</entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>838</entry>
-    <entry>251,658</entry>
-    <entry>23</entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>1677</entry>
-    <entry>503,316</entry>
-    <entry>24 </entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>3355</entry>
-    <entry>1,006,632</entry>
-    <entry>25</entry>
-</row>
-<row>
-<entry>3</entry>
-    <entry>6710</entry>
-    <entry>2,013,265</entry>
-    <entry>26</entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>17</entry>
-    <entry> 5,242</entry>
-    <entry>17 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>34</entry>
-    <entry>10,485 </entry>
-    <entry>18 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>69</entry>
-    <entry>20,971</entry>
-    <entry>19 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>139</entry>
-    <entry>41,943</entry>
-    <entry>20 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>279</entry>
-    <entry>83,886</entry>
-    <entry>21 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>559</entry>
-    <entry>16,7772</entry>
-    <entry>22 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>1118</entry>
-    <entry> 335,544</entry>
-    <entry>23 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>2236</entry>
-    <entry> 671,088</entry>
-    <entry>24 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>4473</entry>
-    <entry>1,342,177</entry>
-    <entry>25 </entry>
-</row>
-<row>
-<entry>4</entry>
-    <entry>8947</entry>
-    <entry>2,684,354 </entry>
-    <entry>26</entry>
-</row>
-</tbody>
-</tgroup>
+                <colspec colname="col1" colsep="1" rowsep="1"/>
+                <colspec colname="col2" colsep="1" rowsep="1"/>
+                <colspec colname="col3" colsep="1" rowsep="1"/>
+                <colspec colname="col4" colsep="1" rowsep="1"/>
+                <thead>
+                    <row>
+                        <entry>Number of Zones</entry>
+                        <entry>
+                            <ph>Minimum Number of Drives</ph>
+                        </entry>
+                        <entry>
+                            <ph>Maximum Number of Drives</ph>
+                        </entry>
+                        <entry>
+                            <ph>Ring Power</ph>
+                        </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>3</entry>
+                        <entry>13</entry>
+                        <entry>3,932 </entry>
+                        <entry>17 </entry>
+                    </row>
+                    <row>
+                        <entry>3</entry>
+                        <entry>26</entry>
+                        <entry>7,864</entry>
+                        <entry>18 </entry>
+                    </row>
+                    <row>
+                        <entry>3</entry>
+                        <entry>52</entry>
+                        <entry>15,728 </entry>
+                        <entry>19 </entry>
+                    </row>
+                    <row>
+                        <entry>3</entry>
+                        <entry>104</entry>
+                        <entry>31,457</entry>
+                        <entry>20</entry>
+                    </row>
+                    <row>
+                        <entry>3</entry>
+                        <entry>209</entry>
+                        <entry>62,914 </entry>
+                        <entry>21 </entry>
+                    </row>
+                    <row>
+                        <entry>3</entry>
+                        <entry>419</entry>
+                        <entry>125,829</entry>
+                        <entry>22</entry>
+                    </row>
+                    <row>
+                        <entry>3</entry>
+                        <entry>838</entry>
+                        <entry>251,658</entry>
+                        <entry>23</entry>
+                    </row>
+                    <row>
+                        <entry>3</entry>
+                        <entry>1677</entry>
+                        <entry>503,316</entry>
+                        <entry>24 </entry>
+                    </row>
+                    <row>
+                        <entry>3</entry>
+                        <entry>3355</entry>
+                        <entry>1,006,632</entry>
+                        <entry>25</entry>
+                    </row>
+                    <row>
+                        <entry>3</entry>
+                        <entry>6710</entry>
+                        <entry>2,013,265</entry>
+                        <entry>26</entry>
+                    </row>
+                    <row>
+                        <entry>4</entry>
+                        <entry>17</entry>
+                        <entry> 5,242</entry>
+                        <entry>17 </entry>
+                    </row>
+                    <row>
+                        <entry>4</entry>
+                        <entry>34</entry>
+                        <entry>10,485 </entry>
+                        <entry>18 </entry>
+                    </row>
+                    <row>
+                        <entry>4</entry>
+                        <entry>69</entry>
+                        <entry>20,971</entry>
+                        <entry>19 </entry>
+                    </row>
+                    <row>
+                        <entry>4</entry>
+                        <entry>139</entry>
+                        <entry>41,943</entry>
+                        <entry>20 </entry>
+                    </row>
+                    <row>
+                        <entry>4</entry>
+                        <entry>279</entry>
+                        <entry>83,886</entry>
+                        <entry>21 </entry>
+                    </row>
+                    <row>
+                        <entry>4</entry>
+                        <entry>559</entry>
+                        <entry>16,7772</entry>
+                        <entry>22 </entry>
+                    </row>
+                    <row>
+                        <entry>4</entry>
+                        <entry>1118</entry>
+                        <entry> 335,544</entry>
+                        <entry>23 </entry>
+                    </row>
+                    <row>
+                        <entry>4</entry>
+                        <entry>2236</entry>
+                        <entry> 671,088</entry>
+                        <entry>24 </entry>
+                    </row>
+                    <row>
+                        <entry>4</entry>
+                        <entry>4473</entry>
+                        <entry>1,342,177</entry>
+                        <entry>25 </entry>
+                    </row>
+                    <row>
+                        <entry>4</entry>
+                        <entry>8947</entry>
+                        <entry>2,684,354 </entry>
+                        <entry>26</entry>
+                    </row>
+                </tbody>
+            </tgroup>
 </table>
 <p>
   <xref type="section" href="#topic1745/top"> Return to Top </xref>

@@ -71,7 +71,7 @@ Carrier Grade implementation:</p>
 </li>
 </ul>
 <p>The LVM/iSCSCI and Ceph-based storage backend options are exclusive. You select one or another when configuring controller-0 by selecting the appropriate storage option. Select lvm for the LVM/iSCSCI backend, or ceph for the Ceph backend. See the HP Helion OpenStack(R) Carrier Grade Software Installation Guide for details.</p>
-<p>As an alternative to persistent storage provided by the Cinder service, you can implement ephemeral local storage on the compute nodes where the VMs are instantiated. This is useful for VMs requiring local disk access for performance optimization. You can use a pre-allocated partition on the root disk, as well as additional disks optionally installed in the compute nodes. For more information, see <xref href="/helion/openstack/carrier/config/plan/storage/configure" >Configuring a Compute Host to Provide Local Storage</xref>.</p>
+<p>As an alternative to persistent storage provided by the Cinder service, you can implement ephemeral local storage on the compute nodes where the VMs are instantiated. This is useful for VMs requiring local disk access for performance optimization. You can use a pre-allocated partition on the root disk, as well as additional disks optionally installed in the compute nodes. For more information, see <xref href="../../AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-storage-configure.dita" >Configuring a Compute Host to Provide Local Storage</xref>.</p>
 <p>
 <b>Caution:</b> Local storage is ephemeral.</p>
 <ul>

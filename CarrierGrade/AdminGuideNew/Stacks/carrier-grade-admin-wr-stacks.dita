@@ -28,7 +28,7 @@
 <p>See the following topics on using stacks:</p>
 <ul>
 <li>
-<xref href="/helion/openstack/carrier/admin/stacks/create" >Creating a Stack</xref>
+<xref href="../../../CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-stacks-create.dita" >Creating a Stack</xref>
 </li>
 <li>
                 <xref href="carrier-grade-admin-wr-stacks-user-data.dita">Customizing Guest Images

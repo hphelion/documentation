@@ -43,65 +43,65 @@
 <b>Note:</b> In Helion 1.0, the Compute service is configured to provide only a subset of measurements listed at http://docs.openstack.org/developer/ceilometer/measurements.html#compute-nova for which the origin is listed as notification. This includes:</p>
 <table>
 <tgroup cols="5">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<colspec colname="col5"/>
-<thead>
-<row>
-    <entry>Name</entry>
-    <entry>Type</entry>
-    <entry>Unit</entry>
-    <entry>Resource</entry>
-    <entry>Note</entry>
-  </row>
-</thead>
-<tbody>
-<row>
-    <entry>instance</entry>
-    <entry>g</entry>
-    <entry>instance</entry>
-    <entry>inst ID</entry>
-    <entry>Existence of instance</entry>
-  </row>
-<row>
-    <entry>instance:&lt;type&gt;</entry>
-    <entry>g</entry>
-    <entry>instance</entry>
-    <entry>inst ID</entry>
-    <entry>Existence of instance &lt;type&gt; (openstack types)</entry>
-  </row>
-<row>
-    <entry>memory</entry>
-    <entry>g</entry>
-    <entry>MB</entry>
-    <entry>inst ID</entry>
-    <entry>Volume of RAM allocated in MB</entry>
-  </row>
-<row>
-    <entry>vcpus</entry>
-    <entry>g</entry>
-    <entry>vcpu</entry>
-    <entry>inst ID</entry>
-    <entry>Number of VCPUs</entry>
-  </row>
-<row>
-    <entry>disk.root.size</entry>
-    <entry>g</entry>
-    <entry>GB</entry>
-    <entry>inst ID</entry>
-    <entry>Size of root disk in GB</entry>
-  </row>
-<row>
-    <entry>disk.ephemeral.size</entry>
-    <entry>g</entry>
-    <entry>GB</entry>
-    <entry>inst ID</entry>
-    <entry>Size of ephemeral disk in GB</entry>
-  </row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <colspec colname="col4" colsep="1" rowsep="1"/>
+          <colspec colname="col5" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry>Name</entry>
+              <entry>Type</entry>
+              <entry>Unit</entry>
+              <entry>Resource</entry>
+              <entry>Note</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>instance</entry>
+              <entry>g</entry>
+              <entry>instance</entry>
+              <entry>inst ID</entry>
+              <entry>Existence of instance</entry>
+            </row>
+            <row>
+              <entry>instance:&lt;type&gt;</entry>
+              <entry>g</entry>
+              <entry>instance</entry>
+              <entry>inst ID</entry>
+              <entry>Existence of instance &lt;type&gt; (openstack types)</entry>
+            </row>
+            <row>
+              <entry>memory</entry>
+              <entry>g</entry>
+              <entry>MB</entry>
+              <entry>inst ID</entry>
+              <entry>Volume of RAM allocated in MB</entry>
+            </row>
+            <row>
+              <entry>vcpus</entry>
+              <entry>g</entry>
+              <entry>vcpu</entry>
+              <entry>inst ID</entry>
+              <entry>Number of VCPUs</entry>
+            </row>
+            <row>
+              <entry>disk.root.size</entry>
+              <entry>g</entry>
+              <entry>GB</entry>
+              <entry>inst ID</entry>
+              <entry>Size of root disk in GB</entry>
+            </row>
+            <row>
+              <entry>disk.ephemeral.size</entry>
+              <entry>g</entry>
+              <entry>GB</entry>
+              <entry>inst ID</entry>
+              <entry>Size of ephemeral disk in GB</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 <p>
 <b>Other Services</b> <xref href="../../commercial/GA1/1.0commerical.services-overview.dita#OpenStack(R)" >Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
@@ -231,7 +231,7 @@ $ sudo service neutron-openvswitch-agent restart
 <p>For additional information about HP Helion OpenStack(R) OpenStack(R) Cloud Software, and the HP Helion Support Center:</p>
 <ul>
 <li>
-<xref href="/helion/openstack/" >HP Helion OpenStack(R) Documentation web site</xref>: Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion OpenStack(R) product offerings.</li>
+  <xref href="http://docs.openstack.org/"  scope="external" format="html">HP Helion OpenStack(R) Documentation web site</xref>: Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion OpenStack(R) product offerings.</li>
 <li>
 <xref href="http://www.openstack.org/" scope="external" format="html" >OpenStack(R) web site</xref>: Provides information on computing, networking, and storage in OpenStack(R) various programs such as TripleO, and the OpenStack(R) community.</li>
 <li>
@@ -240,7 +240,7 @@ $ sudo service neutron-openvswitch-agent restart
 </section>
 <section id="legal-notices-disclaimer"> <title>Legal Notices and Disclaimer</title>
 <!--See the [HP Helion OpenStack(R) Open Source and Third-Party Software License Agreements](/helion/openstack/commercial-3rd-party-license-agreements/).-->
-<p>LinuxÂ(R) is the registered trademark of Linus Torvalds in the U.S. and other countries.</p>
+<p>Linuxï¿½(R) is the registered trademark of Linus Torvalds in the U.S. and other countries.</p>
 <p>
 <b>HP Helion OpenStack(R) Warranty</b>: 
 The programs included with the Debian Host Linux system are free software. The exact license terms for each program are described in the individual files in /usr/share/doc/*/copyright. Debian Host Linux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.</p>
