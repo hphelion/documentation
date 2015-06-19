@@ -80,11 +80,11 @@
             </tgroup>
         </table>
         
-        <!--
+        
         
         
         <p>The following tips will help you troubleshoot errors:</p>
-        <ul>
+     <!--   <ul>
             <li>
                 <p>Verify that the http proxy settings are correct in both <codeph>/etc/environment</codeph> and <codeph>/etc/apt/apt.conf</codeph> for connecting to external resources.</p>
             </li>
@@ -127,33 +127,39 @@ Cinder - /var/log/upstart
 </codeph>
 </codeblock>
             </li>
-        </ul>
+        </ul>-->
         <p>Gather these logs and contact HP support team.</p>
-        <ul>
+      <!--  <ul>
             <li>
                 <p>If any Placement Group (PG)-related issues occur in the Ceph cluster, refer to the following link:</p>
                 
                 <p>
-                    <!--<xref href="http://docs.ceph.com/docs/master/rados/operations/placement-groups/" scope="external" format="html" >http://docs.ceph.com/docs/master/rados/operations/placement-groups/</xref>-->
+                    <xref href="http://docs.ceph.com/docs/master/rados/operations/placement-groups/" scope="external" format="html" >http://docs.ceph.com/docs/master/rados/operations/placement-groups/</xref>
                 </p>
             </li>
-        </ul>
-        <section id="choosing"> <title>Choosing the number of the placement group</title>
-            <p>If there are more than 50 OSDs, we recommend approximately 50-100 PGs per OSD to balance resource usage, data durability and distribution. To get a baseline for a single pool of objects, use the following formula:</p>
+        </ul>-->
+      <!--  <section id="choosing">
+            <title>Choosing the number of the placement group</title>
+            <p>If there are more than 50 OSDs, we recommend approximately 50-100 PGs per OSD to
+                balance resource usage, data durability and distribution. To get a baseline for a
+                single pool of objects, use the following formula:</p>
             <p>
-                <!--<image href="../../media/commercial-ceph-formula-placement-group.png"/>-->
+                <image href="../../media/commercial-ceph-formula-placement-group.png"/>
             </p>
-            <p>Where pool size is either the number of replicas for replicated pools or the K+M sum for erasure coded pools (as returned by <codeph>ceph osd erasure-code-profile get</codeph>).
-                Round up the results to the nearest power of two. Rounding up is optional, but recommended for CRUSH to evenly balance the number of objects among PGs.</p>
-            <p>For example, for a cluster with 200 OSDs and a pool size of 3 replicas, estimate the number of PGs as follows:</p>-->
-            <!--<codeblock>
+            <p>Where pool size is either the number of replicas for replicated pools or the K+M sum
+                for erasure coded pools (as returned by <codeph>ceph osd erasure-code-profile
+                    get</codeph>). Round up the results to the nearest power of two. Rounding up is
+                optional, but recommended for CRUSH to evenly balance the number of objects among
+                PGs.</p>
+            <p>For example, for a cluster with 200 OSDs and a pool size of 3 replicas, estimate the
+                number of PGs as follows:</p>
+            <codeblock>
   <codeph>(200 * 100)
 ____________ = 6667. Nearest power of 2: 8192
        3
 </codeph>
-</codeblock>-->
-            
-        </section>
+</codeblock>
+        </section>-->
         
     </body>
 </topic>
