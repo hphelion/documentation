@@ -24,7 +24,7 @@
 <p>
 <b>Maturity Level</b>: Compute is currently in General Availability.</p>
 <p>
-<b>Version API Status</b>: The Compute service is based on OpenStack(R) Nova v2.0. The OpenStack(R) v1.0 Nova API is deprecated</p>
+  <b>Version API Status</b>: The Compute service is based on <tm tmtype="reg">OpenStack</tm> Nova v2.0. The <tm tmtype="reg">OpenStack</tm> v1.0 Nova API is deprecated</p>
 </section>
 <section id="12-document-revision-history"> <title>1.2 Document Revision History</title>
 <table>
@@ -12952,10 +12952,10 @@ Naws/HNm7BwTeXRI+XgnFaIB+yxVMmzmh0/qRVEPEC/P
 <section id="6-additional-references"> <title>6. Additional References</title>
 <ol>
 <li>
-<xref href="http://api.openstack.org" scope="external" format="html" >OpenStack(R) API Documentation</xref>
+  <xref href="http://api.openstack.org" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> API Documentation</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/api/openstack-compute/2/content/" scope="external" format="html" >OpenStack(R) Compute Developer Guide - API v2</xref>
+  <xref href="http://docs.openstack.org/api/openstack-compute/2/content/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Compute Developer Guide - API v2</xref>
 </li>
 </ol>
 </section>
