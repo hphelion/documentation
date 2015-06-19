@@ -55,7 +55,7 @@ HP Helion OpenStack(R) Carrier Grade integrates Wind River technologies with HP 
 <xref href="../devplatform/1.1devplatform.index.dita" >HP Helion Development Platform</xref>
 </ph>
 </entry>
-<entry>Based on Cloud Foundry™, this free add-on for HP Helion OpenStack(R) Community empowers developers and IT professionals with an open development platform designed for agility.
+  <entry>Based on <tm tmtype="tm">Cloud Foundry</tm>, this free add-on for HP Helion <tm tmtype="reg">OpenStack</tm> Community empowers developers and IT professionals with an open development platform designed for agility.
 </entry>
 </row>
 <row valign="top">

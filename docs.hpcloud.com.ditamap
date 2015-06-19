@@ -24,6 +24,7 @@
       <topicref href="commercial/GA1/1.1commercial.faq.dita"/>
       <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"/>
       <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.roll.dita"/>
     </topicref>
     <!-- Services -->
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.services.dita">
@@ -1371,17 +1372,17 @@
       <topicref href="publiccloud/cdn.dita" navtitle="CDN Service Overview" locktitle="yes"/>
     </topicref>
     <topicref href="publiccloud/api.dita" navtitle="Helion Public Cloud APIs" locktitle="yes">
-      <topicref href="content/api/c1.1/keystonev2-api.dita" navtitle="Identity Service v2 API" locktitle="yes"/>
-      <topicref href="content/api/c1.1/keystone-api.dita" navtitle="Identity Service v3 API" locktitle="yes"/>
-      <topicref href="content/api/c1.1/nova-api.dita" navtitle="Compute Service API" locktitle="yes"/>
-      <topicref href="content/api/c1.1/neutron-api.dita" navtitle="Networking Service API" locktitle="yes"/>
-      <topicref href="content/api/c1.1/glance-api.dita" navtitle="Image Service API" locktitle="yes"/>
-      <topicref href="content/api/c1.1/cinder-api.dita" navtitle="Block Storage Service API" locktitle="yes"/>
-      <topicref href="content/api/c1.1/dbaas-api.dita" navtitle="Database Service API" locktitle="yes"/>
-      <topicref href="content/api/c1.1/dns-api.dita" navtitle="DNS Service API" locktitle="yes"/>
-      <topicref href="content/api/c1.1/lbaas-api.dita" navtitle="Load Balancer Service API" locktitle="yes"/>
-      <topicref href="content/api/c1.1/swift-api.dita" navtitle="Object Storage Service API" locktitle="yes"/>
-      <topicref href="content/api/c1.1/cdn-api.dita" navtitle="CDN Service API" locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/keystonev2-api.dita" navtitle="Identity Service v2 API" locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/keystone-api.dita" navtitle="Identity Service v3 API" locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/nova-api.dita" navtitle="Compute Service API" locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/neutron-api.dita" navtitle="Networking Service API" locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/glance-api.dita" navtitle="Image Service API" locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/cinder-api.dita" navtitle="Block Storage Service API" locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/dbaas-api.dita" navtitle="Database Service API" locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/dns-api.dita" navtitle="DNS Service API" locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/lbaas-api.dita" navtitle="Load Balancer Service API" locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/swift-api.dita" navtitle="Object Storage Service API" locktitle="yes"/>
+      <topicref href="publiccloud/apidocs/c1.1/cdn-api.dita" navtitle="CDN Service API" locktitle="yes"/>
       <topicref href="publiccloud/api.copyright.v13.dita" navtitle="Copyright for Helion Public Cloud APIs" locktitle="yes"/>
     </topicref>
     <topicref href="publiccloud/cli.dita" navtitle="Helion Public Cloud CLIs" locktitle="yes">

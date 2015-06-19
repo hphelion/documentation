@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task id="task_i3p_z5g_ks">
+    <title>HP Helion OpenStack(R) Under the Hood</title>
+    <shortdesc>An interactive look at the internals of HP Helion OpenStack</shortdesc>
+    <taskbody>
+        <context id="context_ykm_zvg_ks"><p/>Have a look at the services and functionalities
+            underlying HP Helion OpenStack <xref href="ServicesFlow/index.html" format="html"
+                scope="external">on this page.</xref></context>
+    </taskbody>
+</task>
