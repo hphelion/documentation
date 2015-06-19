@@ -300,6 +300,8 @@
                     allowed.</li>
                 <li>Click <b>Add</b>. The rule is added for the instance.</li>
             </ol>
+        </section>
+        <section>
             <title><b>Installing and configuring DNSaaS</b></title>
             <p><b>IMPORTANT</b>: During DNSaaS installation, non-deterministic failures within the
                 infrastructure layer may cause the install to fail. If this occurs, DNSaaS
