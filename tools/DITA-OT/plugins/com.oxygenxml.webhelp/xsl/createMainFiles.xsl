@@ -224,7 +224,7 @@ available in the base directory of this Oxygen Webhelp plugin.
           <xsl:if test="$withFrames">
             <base target="contentwin"/>
           </xsl:if>
-          <title>BBB
+          <title> 
             <xsl:value-of select="$title"/>
           </title>
                     
@@ -284,8 +284,8 @@ available in the base directory of this Oxygen Webhelp plugin.
         </head>
         <body onload="javascript:showMenu('content');">
           <xsl:if test="$withFrames">
-            <div id="productTitle">XXX
-            <h1><noscript>zzz </noscript>
+            <div id="productTitle"> 
+            <h1> 
               <xsl:copy-of select="$title"/>
             </h1>
             </div>
@@ -326,8 +326,8 @@ available in the base directory of this Oxygen Webhelp plugin.
           <div id="header">
             <div id="lHeader">
               <xsl:if test="not($withFrames)">
-                <div id="productTitle">yyy
-                  <h1> <noscript>fff </noscript>
+                <div id="productTitle"><img src="http://www8.hp.com/hpnext/sites/default/files/content/documents/HP%20Helion%20Logo_Cloud_Martin%20Fink_New%20Style%20of%20IT_Hewlett-Packard.PNG" alt="HP Helion" height="42" width="42">
+                  <h1>  
                     <xsl:copy-of select="$title"/>
                   </h1>
                   <div class="framesLink">
@@ -568,11 +568,11 @@ available in the base directory of this Oxygen Webhelp plugin.
       <span>
         <xsl:choose>
           <xsl:when test="@href">
-            <a href="{@href}"> CCC
+            <a href="{@href}">  
               <xsl:value-of select="$title"/>
             </a>
           </xsl:when>
-          <xsl:otherwise> DDD
+          <xsl:otherwise>  
             <xsl:value-of select="$title"/>
           </xsl:otherwise>
         </xsl:choose>
@@ -649,7 +649,7 @@ available in the base directory of this Oxygen Webhelp plugin.
       <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
           <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>" 
-          <title>  AAA
+          <title> 
             <xsl:value-of select="$title"/>
           </title>
           <link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css">
