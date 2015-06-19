@@ -1541,10 +1541,10 @@
     <topicref href="publiccloud/hpcloudconsole.dita" navtitle="Getting Started with Public Cloud Console" locktitle="yes"/>
     <topicref href="publiccloud/release-notes.dita" navtitle="Helion Public Cloud Release Notes" locktitle="yes"/>
     <topicref href="publiccloud/hz.whatsnewjan.2014.dita"/>
-    <topicref href="publiccloud/upload-publish-partner-images135.dita" navtitle="Uploading and Publishing Partner Images" locktitle="yes"/>
-    <topicref href="publiccloud/vpn-multisite.dita" navtitle="VPN Multi-Site Configuration Guide" locktitle="yes"/>
-    <topicref href="publiccloud/vpn-quickstart.dita" navtitle="VPN Setup Quick Start Guide" locktitle="yes"/>
-    <topicref href="publiccloud/plugins.teamcity.dita" navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes"/>
+    <topicref href="publiccloud/upload-publish-partner-images135.dita" navtitle="Uploading and Publishing Partner Images" locktitle="yes" toc="no"/>
+    <topicref href="publiccloud/vpn-multisite.dita" navtitle="VPN Multi-Site Configuration Guide" locktitle="yes" toc="no"/>
+    <topicref href="publiccloud/vpn-quickstart.dita" navtitle="VPN Setup Quick Start Guide" locktitle="yes" toc="no"/>
+    <topicref href="publiccloud/plugins.teamcity.dita" navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes" toc="no"/>
     <topicref href="publiccloud/glossary.dita" navtitle="Helion Public Cloud Glossary" locktitle="yes"/>
   </topicref>
   <topicref href="automation/csa.index.dita"/>
