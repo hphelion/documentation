@@ -18,9 +18,7 @@
 <section id="enabling-name-resolution"> <title>Enabling name resolution</title>
 <p>To enable name resolution from tenant VMs in the overcloud, it is necessary to configure the DNS servers that will be used by <codeph>dnsmasq</codeph> as forwarders.</p>
 <ol>
-<li> Log in to your install system as root:<p>
-                        <codeph>sudo su -</codeph>
-                    </p></li>
+<li> Log in to your install system as root:<codeblock><codeph>sudo su -</codeph> </codeblock></li>
 <li>Locate the <codeph>overcloud_neutron_dhcp_agent.json file</codeph> at
                         <codeph>ce-installer/tripleo/hp_passthrough/overcloud_neutron_dhcp_agent.json</codeph>
                 </li>
