@@ -30,7 +30,9 @@
 
     <p><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i></p>
 
-<p>Helion Development Platform version 1.2 includes a full end-to-end solution for creating and deploying .NET Framework applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of the Helion Development Platform. HTTP-based .NET applications that follow the <xref format="html" href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry application model</xref> are a great fit for this feature support.
+<p>Helion Development Platform version 1.2 includes a full end-to-end solution for creating and deploying .NET Framework applications. Windows developers can now leverage their knowledge and use the tools 
+    they are accustomed to in order to leverage the power of the Helion Development Platform. HTTP-based .NET applications that follow 
+    the <xref format="html" scope="external" href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry application model</xref> are a great fit for this feature support.
 </p>
 <p>This document contains the following sections:
 </p>
