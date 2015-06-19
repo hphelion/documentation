@@ -1,19 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="concept_zyk_c43_ks">
- <title>HP Helion OpenStack<tm tmtype="reg">OpenStack</tm> 1.1: Undercloud
-  Horizon Overview</title>
- <shortdesc></shortdesc>
- <conbody>
-  <p>&lt;!-- &lt;p style="font-size: small;"> &lt;a
-   href="/helion/openstack/1.1/support-matrix-beta/">&amp;#9664; PREV&lt;/a> </p>
-  <p>Once you complete the undercloud and the overcloud installations, you can access the undercloud
-   Horizon dashboard, which is the management interface for the undercloud. </p>
- <title>Dashboard Features</title>
-  <p>The Horizon Dashboard displays the Overview page by default, and provides options in the left
-   panel. There are additional options located under the following tabs: <term/>Admin <term/>Project
-   <term/>Resources <term/>Overcloud  </p>
-  <p>The name of the user (who is logged in) is shown on the top bar along with a drop-down
-   menu.</p>
- </conbody>
-</concept>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7961">
+    <title>HP Helion OpenStack(R)1.1: Undercloud Horizon Overview</title>
+    <prolog>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion OpenStack(R)"/>
+            <othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+            <othermeta name="role" content="Systems Administrator"/>
+            <othermeta name="role" content="Cloud Architect"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Network Administrator"/>
+            <othermeta name="role" content="Service Developer"/>
+            <othermeta name="role" content="Cloud Administrator"/>
+            <othermeta name="role" content="Application Developer"/>
+            <othermeta name="role" content="Network Engineer"/>
+            <othermeta name="role" content="Paul F"/>
+            <othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
+            <othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+        </metadata>
+    </prolog>
+    <body>
+  <p>
+<!--PUBLISHED-->
+<!--./commercial/GA1/1.1commercial.undercloud-eon-cli.md-->
+ <!--permalink: /helion/openstack/1.1/undercloud/eon/cli/--></p>
+        <p>
+            <xref href="../../commercial/GA1/1.0commercial.undercloud-horizon-overview.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+        </p>
+ <p> Once you complete the undercloud and the overcloud installations, you can access the undercloud Horizon dashboard, which is the management interface for the undercloud. 
+        </p>
+        <section id="dashboard"> <title>Dashboard Features</title>
+            <p>The Horizon Dashboard displays the Overview page by default, and provides options in the left panel.</p>
+            <p>There are additional options located under the following tabs:</p>
+            <ul>
+                <li>Admin</li>
+                <li>Project</li>
+                <li>Resources</li>
+                <li>Overcloud</li>
+            </ul>
+            <p>The name of the user (who is logged in) is shown on the top bar along with a drop-down menu.</p>
+            <p><xref type="section" href="#topic7961/top"> Return to Top </xref></p>
+        </section>
+    </body>
+</topic>
