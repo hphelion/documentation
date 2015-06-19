@@ -99,6 +99,7 @@ available in the base directory of this Oxygen Webhelp plugin.
     <xsl:call-template name="create-index-file">
       <xsl:with-param name="toc" select="$toc"/>
       <xsl:with-param name="title" select="$title"/>
+	  <xsl:template> tags.</xsl:template>
     </xsl:call-template>
   </xsl:template>
 
@@ -646,8 +647,8 @@ available in the base directory of this Oxygen Webhelp plugin.
         omit-xml-declaration="yes">
       <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
-          <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>"BLAH"
-          <title> "BLAH"
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>" 
+          <title>  
             <xsl:value-of select="$title"/>
           </title>
           <link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css">
