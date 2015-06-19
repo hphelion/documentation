@@ -140,7 +140,7 @@ Cinder - /var/log/upstart
 </p>
 </li>
 </ul>
-<section id="choosing-the-number-of-the-placement-group"> <title>Choosing the number of the placement group</title>
+<section id="choosing"> <title>Choosing the number of the placement group</title>
 <p>If there are more than 50 OSDs, we recommend approximately 50-100 PGs per OSD to balance resource usage, data durability and distribution. To get a baseline for a single pool of objects, use the following formula:</p>
 <p>
   <image href="../../media/commercial-ceph-formula-placement-group.png"/>
@@ -151,12 +151,10 @@ Round up the results to the nearest power of two. Rounding up is optional, but r
 <codeblock>
   <codeph>(200 * 100)
 ----------- = 6667. Nearest power of 2: 8192
- 3
+       3
 </codeph>
 </codeblock>
-<p>
-  <xref type="section" href="#topic3172/top"> Return to Top </xref>
-</p>
+
 </section>
  
 </body>
