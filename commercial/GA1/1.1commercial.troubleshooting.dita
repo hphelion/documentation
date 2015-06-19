@@ -28,7 +28,7 @@
 <p>
   <xref href="../../commercial/GA1/1.0commercial.troubleshooting.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
 </p>
-<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of LinuxÂ(R) provided by HP (hLinux). This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions organized into the following topics:</p>
+<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of Linuxï¿½(R) provided by HP (hLinux). This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions organized into the following topics:</p>
 <ul>
 <li>
 <p>
@@ -66,9 +66,7 @@
 </p>
 </li>
 <li>
-<p>
-<xref href="/helion/openstack/1.1/services/troubleshooting/controllers" >Troubleshooting Controller Nodes</xref>
-</p>
+<p><xref href="1.1commercial.troubleshooting.controllers.dita">Troubleshooting Controller Nodes</xref></p>
 </li>
 <li>
 <p>

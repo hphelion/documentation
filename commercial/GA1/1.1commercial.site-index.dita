@@ -41,7 +41,7 @@
 <p>The following topics as needed contain information about HP Helion OpenStack(R)</p>
 <ul>
 <li>
-<xref href="/helion/openstack/1.1/release-notes/11" >Release Notes</xref> </li>
+<xref href="1.1commercial.release-notes.dita" >Release Notes</xref> </li>
 <li>
 <xref href="../../commercial/GA1/1.1commercial.faq.dita" >FAQs</xref>  </li>
 <li>
@@ -267,7 +267,7 @@
 
 <ul>
 <li>
-<xref href="/helion/openstack/1.1/sirius/cli/workflow" >Sirius CLI Workflow</xref>
+<xref href="1.1commercial.sirius-cli-workflow.dita">Sirius CLI Workflow</xref>
 </li>
 <li>
 <xref href="../../commercial/GA1/1.1commercial.sirius-cli.dita" >Configuring Your Storage Using Sirius</xref>

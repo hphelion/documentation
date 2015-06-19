@@ -31,7 +31,7 @@
 			
 			<!-- fix image syntax
 <image src="media/neutron_diagram.png" alt=""></image>
-<a href="/helion/openstack/1.1/services/map/"><img src="media/back.png" alt=""></img></a>
+<a href="/helion/openstack/1.1/services/map/"><img src="../../media/back.png"></img></a>
 -->
 			
 		</section>

@@ -28,7 +28,7 @@
  <!--./commercial/GA1/ceph/1.1commercial.ceph-overview.md-->
  <!--permalink: /helion/openstack/1.1/services/ceph/--></p>
 <p>The HP Helion OpenStack(R) 1.1 and 1.1.1 Ceph Storage Solution provides an unified scaleable and stable storage solution for the management of Helion OpenStack(R) Image service (Glance), Compute (Nova Boot Volumes) service, and Volume Storage (Cinder persistent Volumes) service. The solution also supports user backup and archive workloads to the Object Storage (Swift) API service writing to the same unified Ceph storage platform.</p>
-<p>This guide focuses on post installation, configuration and integration between HP Helion OpenStack(R) Â(R): 1.1 and 1.1.1 and Ceph Firefly 0.80.7 running on the hlinux kernel 3.14-29.4.</p>
+<p>This guide focuses on post installation, configuration and integration between HP Helion OpenStack(R) ï¿½(R): 1.1 and 1.1.1 and Ceph Firefly 0.80.7 running on the hlinux kernel 3.14-29.4.</p>
 <p>This guide assumes that you are familiar with the concepts of OpenStack(R) and Ceph. The main purpose of this guide is describe the integration of Ceph Block Storage with HP Helion OpenStack(R) 1.1 and 1.1.1, detail steps to install dependencies, configure HP Helion OpenStack(R) and Ceph Firefly, and provide troubleshooting guidance.</p>
 <!--Although installation steps are outlined, these are mostly as validity checks for dependencies. Most Enterprise Customers should have HP size and assist with the installation of HP Helion OpenStack(R) 1.1 and 1.1.1, and Inktank size and assist with the installation of Ceph Firefly 0.80.7. -->
 <section id="ceph-overview"> <title>Ceph Overview</title>
@@ -108,7 +108,7 @@ to store data from Ceph block device clients or from Ceph file system clients. C
 <xref href="../../../commercial/GA1/ceph/1.1commenrcial.ceph-helion-openstack-glance-ceph-interoperability.dita" >Helion OpenStack(R) Glance-Ceph Interoperability</xref>
 </li>
 <li>
-<xref href="/helion/openstack/1.1/ceph-hp-helion-openstack-cinder-storage" >Helion OpenStack(R) Cinder Ceph Storage</xref>
+<xref href="../../../commercial/GA1/ceph/1.1commenrcial.ceph-helion-openstack-ceph-hp-helion-openstack-cinder-storage.dita" >Helion OpenStack(R) Cinder Ceph Storage</xref>
 </li>
 <li>
 <xref href="../../../commercial/GA1/ceph/1.1commercial-ceph-helion-openstack-nova-ceph-Storage.dita" >Helion OpenStack(R) Nova Ceph Storage</xref>
