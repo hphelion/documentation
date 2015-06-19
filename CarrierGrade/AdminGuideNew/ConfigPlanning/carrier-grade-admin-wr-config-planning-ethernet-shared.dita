@@ -48,16 +48,12 @@ Settings.</p>
 <p>Options to share an interface using VLAN tagging are presented during the configuration controller script (see the <i>HP Helion OpenStack(R) Carrier Grade Installation Guide: The Controller Configuration Script</i>).</p>
 <p>To attach an interface to other networks after configuration, you can edit the interface; for details, see the <i>HP Helion OpenStack(R) Carrier Grade Installation Guide: Attaching to Networks Using a VLAN Interface</i>.</p>
 <p>You can also use the command line by logging into the active controller and becoming the Keystone admin user, and then using a command such as the following for each node:</p>
-<codeblock>
-  <codeph>system host-if-add -V 22 -n infra storage-0 infra0 vlan eth1
-</codeph>
-</codeblock>
+<codeblock><codeph>system host-if-add -V 22 -n infra storage-0 infra0 vlan eth1
+</codeph></codeblock>
 <p>This example configures the eth1 interface on storage-0 to connect to the infrastructure network using VLAN ID 22.</p>
 <p>To display VLAN information as well as dependencies, use a command such as the following:</p>
-<codeblock>
-  <codeph>system host-if-list controller-0
-</codeph>
-</codeblock>
+<codeblock><codeph>system host-if-list controller-0
+</codeph></codeblock>
 <p>The output lists all interfaces and associated networks. For each network that uses VLAN tagging, the vlan id is shown, as well as the shared interface used (in the uses i/f column). For shared interfaces, the names of the networks that use VLAN tagging on the interface are shown (in the used by i/f column).</p>
 <p>
   <xref type="section" href="#topic3188/top"> Return to Top </xref>
