@@ -326,7 +326,7 @@ available in the base directory of this Oxygen Webhelp plugin.
           <div id="header">
             <div id="lHeader">
               <xsl:if test="not($withFrames)">
-                <div id="productTitle"><img src="http://www8.hp.com/hpnext/sites/default/files/content/documents/HP%20Helion%20Logo_Cloud_Martin%20Fink_New%20Style%20of%20IT_Hewlett-Packard.PNG" alt="HP Helion" height="42" padding-top="5px" />
+                <div id="productTitle"><img src="http://www8.hp.com/hpnext/sites/default/files/content/documents/HP%20Helion%20Logo_Cloud_Martin%20Fink_New%20Style%20of%20IT_Hewlett-Packard.PNG" alt="HP Helion" height="42" style="padding-top:5px;" />
                   <h1>  
                     <!-- <xsl:copy-of select="$title"/> removed JLarsen 6/19/2015  -->
                   </h1>
