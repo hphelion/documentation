@@ -1036,11 +1036,11 @@ Date: Fri, 14 Oct 2011 21:18:40 GMT
 </section>
 <section id="rescope_token"> <title>3.4.2.2 Rescope Token</title>
 </section>
-<section id="post-tokens"> <title>POST /tokens</title>
+<section id="post-tokens2"> <title>POST /tokens</title>
 <p>This API provides the ability to re-scope a valid token with another tenant. An existing unexpired token, regardless of its currently scoped or not, can be scoped to another tenant as long as the user has valid association with that tenant.</p>
 <p>Re-scoping of token can be done from 1) unscoped token to a scoped token for specific tenant 2) scoped token from one tenant to another tenant 3) scoped token to unscoped token (with no tenantId and tenantName specified in request). Re-scoping of token does not alter the token expiration time and same token id is returned in response.</p>
 </section>
-<section id="service-catalog"> <title>Service Catalog:</title>
+<section id="service-catalog2"> <title>Service Catalog:</title>
 <p>In case of un-scoped token request, the service catalog is going to include global active endpoint templates as endpoints in its data. In case of scoped token request, the service catalog is going to include tenant specific endpoints as well as global active endpoint templates as endpoints.</p>
 <p>
   <b>Request Data</b>

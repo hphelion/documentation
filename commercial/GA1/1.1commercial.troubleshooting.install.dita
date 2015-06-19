@@ -151,7 +151,7 @@ At each step, you should have confirmation that what you have done works. At the
 <li>If the iLO console halts at <codeph>br-ctlplane</codeph> and you cannot reach the undercloud, and you are using Oneview, there is a patch for this. Or, remove Oneview. This problem can also be caused because there is more than one active connection. </li>
 </ul>
 </section>
-<section id="the-installer-terminates-abruptly"> <title>The installer terminates abruptly</title>
+<section id="the-installer-terminates-abruptly2"> <title>The installer terminates abruptly</title>
 <p>This issue can happen:</p>
 <ul>
 <li>If your disk size is less than what you specify in the <codeph>baremetal.csv</codeph> file, reduce the size in your .csv file.</li>
@@ -190,7 +190,7 @@ At each step, you should have confirmation that what you have done works. At the
 <li>If the Undercloud Nova list and Ironic node-list report node states as being <codeph>Active</codeph> and <codeph>Power ON</codeph>, the problem is somewhere in the overcloud Heat stack. To check this, run the <codeph>heat</codeph> <codeph>stack-show</codeph>, <codeph>event-list</codeph>, <codeph>event-show</codeph> commands. Check your logs. Also SSH into the overcloud nodes in your external VLAN and verify that routing is set correctly.</li>
 </ul>
 </section>
-<section id="the-installer-terminates-abruptly2"> <title>The installer terminates abruptly</title>
+<section id="the-installer-terminates-abruptly3"> <title>The installer terminates abruptly</title>
 <p>This issue can happen:</p>
 <ul>
 <li>If your disk size is less than what you specify in the <codeph>baremetal.csv</codeph> file, reduce the size in your .csv file.</li>
@@ -855,9 +855,7 @@ start: Unknown job: libvirt-bin
 </p>
 <p>This problem can be caused by your use of <codeph>sudo ?E</codeph> when executing the <codeph>hp_ced_host_manager</codeph>. Run  <codeph>hp_ced_host_manager</codeph> without specifying <codeph>sudo ?E</codeph>.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>
-  <!--A BR tag was used here in the original source.-->
-</p>
+<p/>
 </section>
 <section id="ironic-error"> <title>Node in Error Cannot be Controlled by Ironic or Nova</title>
 <p>
@@ -1040,6 +1038,10 @@ A a node being controlled by the seed or undercloud cannot be controlled either 
 <li>Ensure that every interface is defined in its on ifcfg-
 <ph> file within <codeph>/etc/sysconfig/network-scripts/</codeph>
 </ph>
+<!-- <<<<<<< HEAD
+=======
+
+>>>>>>> --> 694c34338fe00feb609967f18e592f354a2223a1
 </li>
 </ul>
 <!-- ===================== horizontal rule ===================== -->

@@ -1725,7 +1725,7 @@ have made within MySQL.</p>
 </section>
 <section id="instance_resize"> <title>4.5.3.2 Resize a specific instance</title>
 </section>
-<section id="post-instancesinstance-idaction"> <title>POST /instances/{instance_id}/action</title>
+<section id="post-instancesinstance-idaction2"> <title>POST /instances/{instance_id}/action</title>
 <p>This operation changes the size of the instance, assuming a valid
 flavorRef is provided. It restarts MySQL in the process.</p>
 <p>
@@ -2382,7 +2382,7 @@ You can utilize pagination to filter your response.  <i>See: <xref href="http://
 </section>
 <section id="instance_config_detach"> <title>4.5.5.13 Detach configuration from an instance</title>
 </section>
-<section id="put-instancesinstance-id"> <title>PUT /instances/{instance_id}</title>
+<section id="put-instancesinstance-id2"> <title>PUT /instances/{instance_id}</title>
 <p>Detaches a configuration resource from an instance.</p>
 <p>
   <b>Request Data</b>
@@ -2945,7 +2945,7 @@ are attached to.</p>
 </section>
 <section id="backup_create_incremental"> <title>4.5.8.4 Create an incremental backup for an instance</title>
 </section>
-<section id="post-backups"> <title>POST /backups</title>
+<section id="post-backups2"> <title>POST /backups</title>
 <p>Creates a new, incremental backup of an existing instance. The incremental backup will be created from the point in time specified by the parent backup.  All databases within the instance are backed up.</p>
 <p>Backups are stored in your Object Storage account, and the location is available via locationRef.</p>
 <p>
@@ -2998,7 +2998,7 @@ are attached to.</p>
 </section>
 <section id="backup_restore"> <title>4.5.8.5 Restore a backup to an instance</title>
 </section>
-<section id="post-instances"> <title>POST /instances</title>
+<section id="post-instances2"> <title>POST /instances</title>
 <p>This operation asynchronously provisions a new database instance. This call
 requires the user to specify a flavor. The service then provisions the
 instance with the requested flavor and sets up a volume of the
