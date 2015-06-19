@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.install-GA-JSON.md-->
  <!--permalink: /helion/openstack/install/envars/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.install-GA-JSON.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The HP Helion OpenStack(R) Installation process requires various configuration parameters to be specified. This is achieved through environment variables.</p>
 <p>As a user who is installing HP Helion OpenStack(R) can enter all required environment variables using a JSON (JavaScript Object Notation) file that comes with the installation package.</p>

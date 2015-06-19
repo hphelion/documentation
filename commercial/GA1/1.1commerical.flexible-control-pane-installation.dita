@@ -26,7 +26,7 @@
  <!--./commercial/GA1/1.1commerical.flexible-control-pane-installation.md-->
  <!--permalink: /helion/openstack/1.1/flexiblecontrol/install/--></p>
 <p>
-<xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-installation.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>.</p>
+
 <p>As you can see in the <xref href="../../commercial/GA1/1.1commerical.flexible-control-pane-overview.dita" >overview</xref> of the documentation for 1.0, HP Helion OpenStack(R) Flexible Control Plane (FCP) allows you to deploy the control plane in a virtual environment, reducing the control plane footprint to just three servers for proof of concept, evaluation, and exploration of HP Helion OpenStack(R) features.</p>
 <p>
 <b>Note:</b> As of HP Helion OpenStack(R) 1.1.1, FCP is in an experimental phase and we do not recommend you use FCP in your production environment. We recommend that you test FCP in your test environment, for small-scale clouds of up to eight compute nodes.</p>

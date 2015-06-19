@@ -18,7 +18,7 @@
  <!--./commercial/GA1/1.0commercial.install-add-nodes.md-->
  <!--permalink: /helion/openstack/install/add/nodes/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.install-add-nodes.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>
 By default, HP Helion Openstack cloud deploys a two node (termed as start-up swift nodes) Swift cluster as part of its deployment.</p>

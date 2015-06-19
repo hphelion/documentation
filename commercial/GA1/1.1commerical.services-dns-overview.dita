@@ -26,7 +26,7 @@
  <!--./commercial/GA1/1.1commerical.services-dns-overview.md-->
  <!--permalink: /helion/openstack/1.1/services/dns/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.0commerical.services-dns-overview.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
 <p>Based on the OpenStack(R) Designate project, the HP Helion OpenStack(R) DNS-as-a-service feature (DNSaaS) provides a Domain Name System (DNS) service for use by HP Helion OpenStack(R) users.</p>
 <p>DNSaaS includes a set of RESTful APIs for the display, creation, modification and deletion of DNS records.</p>

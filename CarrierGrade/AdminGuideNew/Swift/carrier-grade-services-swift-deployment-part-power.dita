@@ -24,7 +24,7 @@
  <!--./CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-part-power.md-->
  <!--permalink: /helion/openstack/carrier/services/swift/deployment/ring-power/--></p>
 <p>
-  <xref href="../../../commercial/GA1/1.0commerical.services-swift-deployment-part-power.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
 <p>The following table displays the  number of zones, the maximum and minimum number of drives, and the ring power defined for that particular configuration. With the defined disk drives number of zones and the ring power, 100 ring partition are defined on each disk drive. This is the smallest allowed number of partition. The Minimum Number of Drives column displays the number of drives that are required for the system to operate correctly. If you have fewer than the minimum number of drives specified, there will be too many partitions on the disk drive and Swift will fail to complete the audit and other processes.</p>
 <!--

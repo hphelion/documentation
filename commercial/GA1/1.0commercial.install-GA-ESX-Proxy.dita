@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.install-GA-ESX-Proxy.md-->
  <!--permalink: /helion/openstack/install/esx/proxy/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.install-GA-ESX-Proxy.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The HP Helion OpenStack(R) vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server managing one or more ESX hosts. The HP Helion OpenStack(R) Compute Service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.</p>
 <p>The general process for deploying the vCenter ESX compute proxy involves the following:</p>

@@ -22,7 +22,7 @@
  <!--./devplatform/helion/user/deploy/1.0buildpack.md-->
  <!--permalink: /als/v1/user/deploy/buildpack/--></p>
 <p>
-  <xref href="../../../../devplatform/helion/user/deploy/1.1buildpack.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 </p>
 <p>
 <xref href="https://devcenter.heroku.com/articles/buildpacks" scope="external" format="html" >Buildpacks</xref> are

@@ -28,7 +28,7 @@
 <p> <xref href="../../commercial/GA1/1.1commercial.install-GA-post-kvm.dita" >▲ Post-Installation for KVM Hypervisor</xref>
 </p>
 <p>
-  <xref href="../../commercial/GA1/1.0commercial.vlan-providernetwork.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
 <p>This page provides a detailed description to enable VLAN Provider Network in KVM Cloud Type.</p>
 <!---HP Helion &#174;OpenStack(R) can be deployed in multiple ways to fulfill certain requirements using an installer. Installers depend on Virtual Extensible Local Area Network (VxLAN) or Generic Routing Encapsulation (GRE) to isolate tenants which is an important requirement.  These two latest networking technologies have become de-facto standards for installers because they ease infrastructure readiness requirements while providing tenant isolation, independent of any hardware (Switch/Router) configuration.-->

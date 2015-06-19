@@ -31,7 +31,7 @@
 <p> <xref href="../../commercial/GA1/1.1commercial.install-GA-post-kvm.dita" >▲ Post-Installation for KVM Hypervisor</xref> | <xref href="../../commercial/GA1/1.1commercial.install-GA-vsa.dita" >Deploy and Configure HP StoreVirtual VSA ▶</xref>
 </p>
 <p>
-  <xref href="../../commercial/GA1/1.0commercial.-vsa-overview.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
 <p>HP Helion OpenStack(R) bundles and facilitates deployment of HP StoreVirtual VSA which can be configured as backend for OpenStack(R) Cinder Block Storage.</p>
 <p>This page provides detailed information on using HP StoreVirtual VSA for realizing cloud storage.</p>

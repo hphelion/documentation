@@ -21,7 +21,7 @@
  <!--./devplatform/helion/user/deploy/languages/1.0clojure.md-->
  <!--permalink: /als/v1/user/deploy/languages/clojure/--></p>
 <p>
-  <xref href="../../../../../devplatform/helion/user/deploy/languages/1.1clojure.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 </p>
 <p>Application Lifecycle Service supports deploying Clojure applications using
 <xref href="https://github.com/technomancy/leiningen" scope="external" format="html" >leiningen</xref>.</p>

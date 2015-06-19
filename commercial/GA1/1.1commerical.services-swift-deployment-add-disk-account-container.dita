@@ -24,7 +24,7 @@
  <!--./commercial/GA1/1.1commerical.services-swift-deployment-add-disk-account-container.md-->
  <!--permalink: /helion/openstack/1.1/services/swift/deployment/add-disk-account-container/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-add-disk-account-container.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
 <p>Proxy nodes store account and container objects. When new disks are added to a proxy node, the new disks expand the storage capacity of the account and container rings. The account and container rings exist as part of starter swift. We are adding disks to existing rings with new nodes to scale-out. Also, we recommend to use same sets of disks for account and container.</p>
 <ol>

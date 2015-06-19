@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.install-GA-esx.md-->
  <!--permalink: /helion/openstack/install/esx/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.install-GA-esx.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>HP Helion OpenStack(R) allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. This document provides installation instructions for HP Helion OpenStack(R) on a suitably specified and prepared system.</p>
 <section id="installing-hp-helion-openstack"> <title>Installing HP Helion OpenStack(R)<!--Removed anchor point install--><!-- id="install" --></title>

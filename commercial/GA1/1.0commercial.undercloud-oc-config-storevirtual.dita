@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.undercloud-oc-config-storevirtual.md-->
  <!--permalink: /helion/openstack/undercloud/oc/config/storevirtual/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.undercloud-oc-config-storevirtual.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>Once you register the StoreVirtual clusters as per your requirements, you can use the overcloud option in the Horizon undercloud dashboard for the following tasks:</p>
 <ul>

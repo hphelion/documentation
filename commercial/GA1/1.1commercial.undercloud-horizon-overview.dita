@@ -31,7 +31,7 @@ PageRefresh();
 <!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/prereqs/">NEXT &#9654;</a> </p> -->
 
 # HP Helion OpenStack&#174; 1.1: Undercloud Horizon Overview
-[See the Helion OpenStack 1.0 version of this page](/helion/openstack/undercloud/horizon/overview/)
+
 Once you complete the undercloud and the overcloud installations, you can access the undercloud Horizon dashboard, which is the management interface for the undercloud. 
 
 ##Dashboard Features
