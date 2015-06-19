@@ -214,9 +214,9 @@
 
  </section>
  
- <section><title>Setup Tools</title>
+ <section><title>Setup Tools</title></section>
 
-  <p><b id="als">ALS Cluster Management Tool (cf-mgmt)</b></p>
+ <section id="als"><title>ALS Cluster Management Tool (cf-mgmt)</title>
 
   <p>This tool is used to add services to new ALS clusters. The same tool is used for Linux and Windows instances.</p>
 
@@ -233,7 +233,8 @@
 
   <p>The ALS cluster management tool can be downloaded from the following location: <xref format="html" scope="external" href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/download">Download</xref>.</p>
 
-<b>Helion Client {#helion}</b>
+ </section>
+ <section id="helion"><title>Helion Client</title>
 
   <p>This tool is used to deploy applications from the command line. The same tool is used for deploying applications to Windows and Linux instances.</p>
 
@@ -254,9 +255,10 @@
  <li><xref format="html" scope="external" href="http://clients.als.hpcloud.com/helion-1.2.0-macosx10.5-i386-x86_64.zip"> <tm tmtype="reg">Mac OS X</tm></xref></li>
 </ul>
 
- </section><section><title>Windows Image Tool</title>
+ </section>
+ <section><title>Windows Image Tool</title></section>
 
-<b id="glazier">Glazier</b>
+ <section id="glazier"><title>Glazier</title>
 
   <p>Glazier is the tool used to create <tm tmtype="reg">Windows</tm> images for deployment to Helion OpenStack (HOS) Application Lifecycle Service (ALS) clusters. </p>
 
