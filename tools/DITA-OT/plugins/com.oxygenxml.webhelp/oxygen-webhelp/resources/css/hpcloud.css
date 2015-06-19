@@ -7,7 +7,7 @@
 	 /* Consolidating anchor tags here -- PFletcher 6/11/2015 */
 	
 	
-a {text-decoration: none !important;	} /*GLarsen 6/19/2015*/
+ text-decoration: none !important;	  /*GLarsen 6/19/2015*/
 	
 a.xref {
   /* Changed to $hp-accessible-blue: #007dba P Fletcher 6/11/15*/
@@ -17,6 +17,7 @@ a.xref {
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
   font-size: 13.3333330154419px;
+  text-decoration: none !important;	  /*GLarsen 6/19/2015*/
 }
 a.xref:visited {
   color: rgb(0, 0, 238);
@@ -24,6 +25,7 @@ a.xref:visited {
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
   font-size: 13.3333330154419px;
+  text-decoration: none !important;	  /*GLarsen 6/19/2015*/
 }
 a.xref:hover {
   /* Changed to $hp-hover-blue: #006699 P Fletcher 6/11/15*/
@@ -33,6 +35,7 @@ a.xref:hover {
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
   font-size: 13.3333330154419px;
+  text-decoration: none !important;	  /*GLarsen 6/19/2015*/
 }
 a.xref:active {
   color: rgb(0, 0, 238);
@@ -40,6 +43,7 @@ a.xref:active {
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
   font-size: 13.3333330154419px;
+  text-decoration: none !important;	  /*GLarsen 6/19/2015*/
 }
 
 /* Commenting out a.xref overrides: P Fletcher 6/11/15 */
