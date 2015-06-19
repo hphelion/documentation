@@ -33,13 +33,15 @@
       <topicref href="commercial/GA1/1.1commerical.services-compute-overview.dita">
         <topicref href="commercial/GA1/1.1commerical.services-compute-configDrive.dita"/>
       </topicref>
-      <topicref href="commercial/GA1/1.1commerical.services-identity-overview.dita">
-        <topicref href="commercial/GA1/1.1commerical.services-identity-configure-v3.dita"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-domains.dita"/>
-        <topicref href="commercial/GA1/LDAP-domain-config.dita"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita"/>
+      <topicref href="commercial/GA1/Landing/1.1commercial.landing.identity.dita">
+        <topicref href="commercial/GA1/1.1commerical.services-identity-overview.dita">
+          <topicref href="commercial/GA1/1.1commerical.services-identity-domains.dita"/>
+        </topicref>
         <topicref href="commercial/GA1/1.1commerical.services-identity-using.dita"/>
-        <topicref href="commercial/GA1/Landing/1.1commercial.landing.identity.dita"/>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita">
+          <topicref href="commercial/GA1/LDAP-domain-config.dita"/>
+        </topicref>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-configure-v3.dita"/>
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-imaging-overview.dita"/>
       <topicref href="commercial/GA1/1.1commerical.services-networking-overview.dita">
@@ -192,7 +194,7 @@
       <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-storage-storeserv.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-storage-storevirtual.dita"/>
-      <topicref href="commercial/GA1/Landing/1.1commercial.landing.install.dita"/>
+      
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.network.dita"/>
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita"/>
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"/>
@@ -222,7 +224,8 @@
       </topicref>
       <!-- Installation related -->
     </topicref>
-    <topicref href="commercial/GA1/1.1commercial.install-GA-overview.dita">
+    <topicref href="commercial/GA1/Landing/1.1commercial.landing.install.dita">
+      <topicref href="commercial/GA1/1.1commercial.install-GA-overview.dita"/>
       <topicref href="commercial/GA1/1.1commercial.install-3par.dita"/>
       <topicref href="commercial/GA1/1.1commercial.install-3par-multipath.dita"/>
       <topicref href="commercial/GA1/1.1commercial.install-add-nodes.dita"/>
@@ -1552,4 +1555,5 @@
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
+
 </map>
