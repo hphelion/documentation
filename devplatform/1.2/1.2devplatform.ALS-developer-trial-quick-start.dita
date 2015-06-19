@@ -1,90 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1952">
-<title>Quick Start Developer Trial Step 1: Register</title>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="Security Engineer"/>
-<othermeta name="role" content="ISV Developer"/>
-<othermeta name="role" content="Service Developer"/>
-<othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-</metadata>
-</prolog>
-<body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.md-->
- <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/--></p>
-<p>The Quick Start Developer Trial is the fastest way to evaluate the HP Helion Development Platform for yourself. Download the files, create and configure your sandbox environment, and deploy one or more sample applications. We provide several sample applications to help you get started quickly, but you may also use your own.</p>
-<p>
-    <b>Limited time offer:</b> Use the promotional code <b>WINHDP</b> to get a three-month free trial account on the HP Public Cloud. This limited promotional code is valid only for the first 250 customers and only for use with the Helion Development Platform trial. If you are a current HP Public Cloud user and want to explore the new <tm tmtype="reg">Windows</tm> features, please create a new account using this promotional code.
-</p>
-<p>To ensure your success, complete the installation steps in the order they are listed below.
-You can also <xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP%20Helion%20Development%20Platform%20Quick%20Start%20Instructions%201.2%20preview.pdf" scope="external" format="pdf">download the entire instruction set</xref> in a printable format.</p>
-<table>
-<tgroup cols="2">
-                <colspec colname="col1" colwidth="400" colsep="1"/>
-                <colspec colname="col2" colwidth="1*"/>
-                <thead>
-                    <row rowsep="0">
-                        <entry/>
-                        <entry/>
-                    </row>
-                </thead>
-                <tbody>
-                    <row>
-                        <entry rowsep="0">
-                            <p><image href="../../media/star.gif" id="image_s3z_zdp_js" scale="50"
-                                />1. <b>Register for your Helion Public Cloud Account</b>
-                            </p>
-                            <p>2. <xref href="1.2devplatform.ALS-developer-trial-quick-start2.dita"
-                                        >Download Tools</xref>
-                            </p>
-                            <p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita"
-                                        >Create the Sandbox Environment</xref>
-                            </p>
-                            <p>4. <xref
-                                        href="1.2devplatform.ALS-developer-trial-quick-start4.dita"
-                                        >Create a Cluster</xref>
-                            </p>
-                            <p>5. <xref href="1.2devplatform.ALS-developer-trial-quick-start5.dita"
-                                        >Add Windows DEA and SQL Server (Optional
-                                    Step)</xref>
-                            </p>
-                            <p>6. <xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita"
-                                        >Explore Sample Applications</xref>
-                            </p>
-                        </entry>
-                        <entry><b>Register for Your Public Cloud Account</b>
-                            <p>Register for a <xref href="http://www.hpcloud.com/cloud-credit"
-                                    scope="external" format="html"> Helion Public Cloud</xref>
-                                account.</p><p>Keep your username and password handy as you will be
-                                asked for them during installation. </p> Registering provides you
-                            with: <ul>
-                                <li>A <xref href="http://www.hpcloud.com/cloud-credit"
-                                        scope="external" format="html">Cloud Credit</xref> to help
-                                    cover hosting costs for your sandbox environment </li>
-                                <li>Access to the Helion Development Platform download
-                                    repositories</li>
-                            </ul><p>
-                                <note>Ensure that you review <xref
-                                        href="http://www.hpcloud.com/pricing" scope="external"
-                                        format="html">HP Public Cloud pricing</xref> to understand
-                                    what charges may be incurred if the use limits of the free
-                                    credit offer are exceeded. </note>
-                            </p></entry>
-                    </row>
-                    <row>
-                        <entry/>
-                        <entry align="right"><xref href="1.2devplatform.ALS-developer-trial-quick-start2.dita"><image href="../../media/NextButton.png"
-                                    id="image_gqc_sgp_js" align="right"/></xref></entry>
-                    </row>
-                </tbody>
-            </tgroup>
-</table>
-</body>
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic1952">
+    <title>Quick Start Developer Trial Step 1: Register</title>
+    <prolog>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion Development Platform"/>
+            <othermeta name="role" content="Application Developer"/>
+            <othermeta name="role" content="Security Engineer"/>
+            <othermeta name="role" content="ISV Developer"/>
+            <othermeta name="role" content="Service Developer"/>
+            <othermeta name="role" content="Jayme P"/>
+            <othermeta name="product-version1" content="HP Helion Development Platform"/>
+        </metadata>
+    </prolog>
+    <body>
+        <p><!--PUBLISHED--><!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.md--><!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/--></p>
+        <p>The Quick Start Developer Trial is the fastest way to evaluate the HP Helion Development
+            Platform for yourself. Download the files, create and configure your sandbox
+            environment, and deploy one or more sample applications. We provide several sample
+            applications to help you get started quickly, but you may also use your own.</p>
+        <p>
+            <b>Limited time offer:</b> Use the promotional code <b>WINHDP</b> to get a three-month
+            free trial account on the HP Public Cloud. This limited promotional code is valid only
+            for the first 250 customers and only for use with the Helion Development Platform trial.
+            If you are a current HP Public Cloud user and want to explore the new <tm tmtype="reg"
+                >Windows</tm> features, please create a new account using this promotional code. </p>
+        <p>To ensure your success, complete the installation steps in the order they are listed
+            below. You can also <xref
+                href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP%20Helion%20Development%20Platform%20Quick%20Start%20Instructions%201.2%20preview.pdf"
+                scope="external" format="pdf">download the entire instruction set</xref> in a
+            printable format.</p>
+        <simpletable>
+            <strow>
+                <stentry>
+                    <p><image href="../../media/star.gif" id="image_s3z_zdp_js" scale="50"/>1.
+                            <b>Register for your Helion Public Cloud Account</b>
+                    </p>
+                    <p>2. <xref href="1.2devplatform.ALS-developer-trial-quick-start2.dita">Download
+                            Tools</xref>
+                    </p>
+                    <p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create
+                            the Sandbox Environment</xref>
+                    </p>
+                    <p>4. <xref href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
+                            Cluster</xref>
+                    </p>
+                    <p>5. <xref href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add
+                            Windows DEA and SQL Server (Optional Step)</xref>
+                    </p>
+                    <p>6. <xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Explore
+                            Sample Applications</xref>
+                    </p>
+                </stentry>
+                <stentry><b>Register for Your Public Cloud Account</b>
+                    <p>Register for a <xref href="http://www.hpcloud.com/cloud-credit"
+                            scope="external" format="html"> Helion Public Cloud</xref>
+                        account.</p><p>Keep your username and password handy as you will be asked
+                        for them during installation. </p> Registering provides you with: <ul
+                        id="ul_e22_jyj_ks">
+                        <li>A <xref href="http://www.hpcloud.com/cloud-credit" scope="external"
+                                format="html">Cloud Credit</xref> to help cover hosting costs for
+                            your sandbox environment </li>
+                        <li>Access to the Helion Development Platform download repositories</li>
+                    </ul><p>
+                        <note>Ensure that you review <xref href="http://www.hpcloud.com/pricing"
+                                scope="external" format="html">HP Public Cloud pricing</xref> to
+                            understand what charges may be incurred if the use limits of the free
+                            credit offer are exceeded. </note>
+                    </p><xref href="1.2devplatform.ALS-developer-trial-quick-start2.dita"><image
+                            href="../../media/NextButton.png" id="image_gqc_sgp_js" align="right"
+                        /></xref></stentry>
+            </strow>
+        </simpletable>
+    </body>
 </topic>
