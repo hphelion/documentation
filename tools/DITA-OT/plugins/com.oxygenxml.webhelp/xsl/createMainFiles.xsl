@@ -284,7 +284,7 @@ available in the base directory of this Oxygen Webhelp plugin.
         </head>
         <body onload="javascript:showMenu('content');">
           <xsl:if test="$withFrames">
-            <div id="productTitle">
+            <div id="productTitle">XXX
             <h1>
               <xsl:copy-of select="$title"/>
             </h1>
@@ -326,7 +326,7 @@ available in the base directory of this Oxygen Webhelp plugin.
           <div id="header">
             <div id="lHeader">
               <xsl:if test="not($withFrames)">
-                <div id="productTitle">
+                <div id="productTitle">yyy
                   <h1>
                     <xsl:copy-of select="$title"/>
                   </h1>
