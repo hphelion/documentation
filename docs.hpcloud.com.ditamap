@@ -280,14 +280,13 @@
     <topicref href="commercial/GA1/1.1commercial.eula.dita"/>
     <!-- Glossary -->
     <topicref href="commercial/GA1/1.1commercial.glossary.dita"/>
-    <!-- Not in 1.1.1
-
+ 
     <topicref href="commercial/GA1/1.1commerical.services-eve-overview.dita"/> 
     <topicref  href="commercial/GA1/1.1commerical.services-focus-overview.dita"/> 
     <topicref href="commercial/GA1/1.1commercial.site-index.dita"/> 
-  -->
+  
     <!--Community-->
-    <!-- Hiding until organized
+ 
    
   <topicref href="community/community.services-identity-overview.dita"/>
   <topicref href="community/community.services-identity-using.dita"/>
@@ -340,7 +339,7 @@
   <topicref href="commercial/GA1/1.0commercial.dashboard.launch.dita"/>
   <topicref href="commercial/GA1/1.0commercial.eula.dita"/>
   <topicref href="commercial/GA1/1.0commercial.faq.dita"/>
--->
+
   </topicref>
   <topicref href="devplatform/1.2/1.2devplatform.index.dita"
     navtitle="HP Helion 1.2 Development Platform ">
