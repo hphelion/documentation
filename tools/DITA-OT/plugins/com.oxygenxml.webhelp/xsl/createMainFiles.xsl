@@ -99,6 +99,8 @@ available in the base directory of this Oxygen Webhelp plugin.
     <xsl:call-template name="create-index-file">
       <xsl:with-param name="toc" select="$toc"/>
       <xsl:with-param name="title" select="$title"/>
+	   
+	   
     </xsl:call-template>
   </xsl:template>
 
@@ -222,7 +224,7 @@ available in the base directory of this Oxygen Webhelp plugin.
           <xsl:if test="$withFrames">
             <base target="contentwin"/>
           </xsl:if>
-          <title>
+          <title> 
             <xsl:value-of select="$title"/>
           </title>
                     
@@ -282,8 +284,8 @@ available in the base directory of this Oxygen Webhelp plugin.
         </head>
         <body onload="javascript:showMenu('content');">
           <xsl:if test="$withFrames">
-            <div id="productTitle">
-            <h1>
+            <div id="productTitle"> 
+            <h1> 
               <xsl:copy-of select="$title"/>
             </h1>
             </div>
@@ -324,9 +326,9 @@ available in the base directory of this Oxygen Webhelp plugin.
           <div id="header">
             <div id="lHeader">
               <xsl:if test="not($withFrames)">
-                <div id="productTitle">
-                  <h1>
-                    <xsl:copy-of select="$title"/>
+                <div id="productTitle"><img src="http://www8.hp.com/hpnext/sites/default/files/content/documents/HP%20Helion%20Logo_Cloud_Martin%20Fink_New%20Style%20of%20IT_Hewlett-Packard.PNG" alt="HP Helion" height="42" style="padding-top:5px;" />
+                  <h1>  
+                    <!-- <xsl:copy-of select="$title"/> removed JLarsen 6/19/2015  -->
                   </h1>
                   <div class="framesLink">
                     <a href="index_frames.html" id="oldFrames">
@@ -566,11 +568,11 @@ available in the base directory of this Oxygen Webhelp plugin.
       <span>
         <xsl:choose>
           <xsl:when test="@href">
-            <a href="{@href}">
+            <a href="{@href}">  
               <xsl:value-of select="$title"/>
             </a>
           </xsl:when>
-          <xsl:otherwise>
+          <xsl:otherwise>  
             <xsl:value-of select="$title"/>
           </xsl:otherwise>
         </xsl:choose>
@@ -646,7 +648,7 @@ available in the base directory of this Oxygen Webhelp plugin.
         omit-xml-declaration="yes">
       <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
-          <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>" 
           <title> 
             <xsl:value-of select="$title"/>
           </title>
