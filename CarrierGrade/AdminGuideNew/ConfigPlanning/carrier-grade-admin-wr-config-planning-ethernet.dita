@@ -41,7 +41,7 @@
 <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-shared.dita" >Configuring Shared (VLAN) Ethernet Interfaces</xref>
 </li>
 <li>
-<xref href="/helion/openstack/carrier/configuration/plan/ethernet/mtu" >Configuring Ethernet MTU</xref>
+<xref href=" ../../AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-mtu.dita" >Configuring Ethernet MTU</xref>
 </li>
 <li>
 <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-address-filtering.dita" >Filtering MAC Addresses on Virtual Interfaces</xref>

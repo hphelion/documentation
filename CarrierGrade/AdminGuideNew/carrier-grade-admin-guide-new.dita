@@ -488,7 +488,7 @@
 <p>HP Helion OpenStack(R) Carrier Grade can generate system alarms when operational conditions change on any of the hosts in the cluster.</p>
 <ul>
 <li>
-<xref href="/helion/openstack/carrier/admin/alarms" >Working with System Alarms</xref>
+<xref href="../../CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms.dita" >Working with System Alarms</xref>
 
 <ul>
 <li>
