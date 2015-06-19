@@ -285,14 +285,13 @@
     <topicref href="commercial/GA1/1.1commercial.eula.dita"/>
     <!-- Glossary -->
     <topicref href="commercial/GA1/1.1commercial.glossary.dita"/>
-    <!-- Not in 1.1.1
+    <!-- Not in 1.1.1 -->
 
     <topicref href="commercial/GA1/1.1commerical.services-eve-overview.dita"/> 
     <topicref  href="commercial/GA1/1.1commerical.services-focus-overview.dita"/> 
     <topicref href="commercial/GA1/1.1commercial.site-index.dita"/> 
-  -->
+  
     <!--Community-->
-    <!-- Hiding until organized
    
   <topicref href="community/community.services-identity-overview.dita"/>
   <topicref href="community/community.services-identity-using.dita"/>
@@ -1384,7 +1383,7 @@
   <!--permalink: /helion/devplatform/1.2/-->
   <!-- Getting Started-->
   <!-- 1.0 -->
-  <!-- Hiding until organized
+
   <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-installation.dita"/>
   <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-overview.dita"/>
   <topicref href="commercial/GA1/1.0commercial.glossary.dita"/>
