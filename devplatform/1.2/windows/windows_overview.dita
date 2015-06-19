@@ -183,7 +183,6 @@
         </section>
     <section id="nextsteps"><title>Next Steps </title>
 <ul>
-
     <li> <xref scope="local" format="dita" href="growcluster">Growing and Renaming Clusters Using Horizon</xref> </li>
     <li> <xref scope="local" format="dita" href="building_windows">Building and Deploying Windows DEA and SQL Server Express Images</xref></li>
     <li> <xref scope="local" format="dita" href="deployingnet">Deploying your first .NET application</xref> </li>
