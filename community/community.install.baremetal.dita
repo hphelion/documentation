@@ -200,9 +200,7 @@
 <p>
 <b>Note:</b> This install file does not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.</p>
 <ol>
-<li> Log in to your install system as root:<p>
-            <codeph>sudo su -</codeph>
-          </p></li>
+<li> Log in to your install system as root:<codeblock><codeph>sudo su -</codeph></codeblock></li>
 <li>Register and then log in to download the HP Helion OpenStack(R) Community baremetal package from
           this site:<p>
             <xref
@@ -212,19 +210,17 @@
           </p><p>The download file is named: <codeph>Helion_Openstack_Community.tar.gz</codeph>
           </p></li>
 <li>Create a directory named <codeph>work</codeph> and extract the kit to the <codeph>work</codeph>
-            directory:<codeblock><codeph>`mkdir /root/work`
-`cd /root/work`
-`tar zxvf /root/Helion_Openstack_Community_V1.4.tar.gz`
+            directory:<codeblock><codeph>mkdir /root/work
+cd /root/work
+tar zxvf /root/Helion_Openstack_Community_V1.4.tar.gz
 </codeph></codeblock><p>This
             creates and populates a <codeph>tripleo/</codeph> directory within <b>root/work/</b>
             directory.</p></li>
 <li>
           <b>Optional:</b> To use an interface other than 'eth0' on the HOST as the bridge
           interface, for example eth3, use the following
-          command:<codeblock>
-<codeph>export BRIDGE_INTERFACE=eth3
-</codeph>
-</codeblock></li>
+          command:<codeblock><codeph>export BRIDGE_INTERFACE=eth3
+</codeph></codeblock></li>
 <li><b>Optional:</b> To use an IP address for the seed VM other than the default (192.0.2.1), use
           the following
           command:<codeblock><codeph>export BM_NETWORK_SEED_IP=192.168.10.1

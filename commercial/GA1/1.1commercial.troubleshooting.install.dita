@@ -170,7 +170,7 @@ At each step, you should have confirmation that what you have done works. At the
 <section id="installer-fails-at-the-overcloud-stack-creation"> <title>Installer fails at the overcloud stack creation</title>
 <p>As with problems creating the undercloud, this problem can happen because the installer times out or terminates abuptly.</p>
 </section>
-<section id="installer-times-out"> <title>Installer times out</title>
+<section id="installer-times-out2"> <title>Installer times out</title>
 <p>Check that you are exporting to the right bridge interface. For example, if your external interface is <codeph>em2</codeph>, and not <codeph>eth0</codeph>, make sure the relevant variables are set correctly in your JSON file. Also:</p>
 <ul>
 <li>Check the iLO console for a <codeph>daemon.error tgtd</codeph>, meaning the installer is stuck. To fix this:
@@ -190,7 +190,7 @@ At each step, you should have confirmation that what you have done works. At the
 <li>If the Undercloud Nova list and Ironic node-list report node states as being <codeph>Active</codeph> and <codeph>Power ON</codeph>, the problem is somewhere in the overcloud Heat stack. To check this, run the <codeph>heat</codeph> <codeph>stack-show</codeph>, <codeph>event-list</codeph>, <codeph>event-show</codeph> commands. Check your logs. Also SSH into the overcloud nodes in your external VLAN and verify that routing is set correctly.</li>
 </ul>
 </section>
-<section id="the-installer-terminates-abruptly"> <title>The installer terminates abruptly</title>
+<section id="the-installer-terminates-abruptly2"> <title>The installer terminates abruptly</title>
 <p>This issue can happen:</p>
 <ul>
 <li>If your disk size is less than what you specify in the <codeph>baremetal.csv</codeph> file, reduce the size in your .csv file.</li>
@@ -325,7 +325,7 @@ When you experience a crash, always check for corrupted data. Before you restart
 <xref type="section" href="#topic39140/ironic-error">Node in Error Cannot be Controlled by Ironic or Nova</xref>
 </li>
 <li>
-<xref type="section" href="#topic39140/windebug">Debugging a WindowsÂ(R) Server OS Using a Serial Connection</xref>
+<xref type="section" href="#topic39140/windebug">Debugging a Windowsï¿½(R) Server OS Using a Serial Connection</xref>
 </li>
 <li>
 <xref type="section" href="#topic39140/DNSvariables">Using the sample DNS JSON file variable names for setup causes errors</xref>
@@ -898,7 +898,7 @@ A a node being controlled by the seed or undercloud cannot be controlled either 
 <p>to clear the error and rerun the original Nova command.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="windebug"> <title>Debugging a WindowsÂ(R) Server OS Using a Serial Connection</title>
+<section id="windebug"> <title>Debugging a Windowsï¿½(R) Server OS Using a Serial Connection</title>
 <p>Debugging a Windows Server OS running as a Nova Compute VM on HP Helion OpenStack(R) will require setting up a serial connection between the VM and a debug host. Once a serial connection has been established between the VM and debug host, which is usually over the COM2 port, the Windows Debug utility will function properly.</p>
 <p>
 <b>Before you Begin</b>:</p>
@@ -1037,10 +1037,9 @@ A a node being controlled by the seed or undercloud cannot be controlled either 
   <b>On CentOS systems:</b>
 </p>
 <ul>
-<li>Ensure that every interface is defined in its on ifcfg-<required-cleanup remap="interface">
+<li>Ensure that every interface is defined in its on ifcfg-
 <ph> file within <codeph>/etc/sysconfig/network-scripts/</codeph>
 </ph>
-</required-cleanup>
 </li>
 </ul>
 <!-- ===================== horizontal rule ===================== -->

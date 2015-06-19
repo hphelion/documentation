@@ -17,7 +17,7 @@
 <p>
 <b>Document Version:</b> 2.0</p>
 <p>
-<b>Note:</b> If you are using HP Helion v12.12, see the <xref href="/api/monitoring/" >Monitoring API v1.0</xref>.</p>
+<b>Note:</b> If you are using HP Helion v12.12, see the <xref href="../../../publiccloud/apidocs/c1.1/maas-api.dita" >Monitoring API v1.0</xref>.</p>
 <section id="Section1_"> <title>1. Overview</title>
 <p>This document describes the HP Helion Public Cloud Monitoring API v1.1, which allows you to monitor resources in HP Helion Public Cloud.</p>
 <p>We will be referring to HP Helion Public Cloud Monitoring in this document as simply Monitoring.</p>
@@ -5155,7 +5155,7 @@ X-Auth-Token: ${Auth_Token}
 </codeph>
 </codeblock>
 </section>
-<section id="ServiceDetailsVersion"> <title>4.4.8 Metering</title>
+<section id="ServiceDetailsVersion2"> <title>4.4.8 Metering</title>
 <p>Changes settings for support and billing. Premium support gives access to a higher resolution data rate.</p>
 </section>
 <section id="ServiceDetailsSetMonitoringLevel"> <title>4.4.8.1 Set the Monitoring Level</title>

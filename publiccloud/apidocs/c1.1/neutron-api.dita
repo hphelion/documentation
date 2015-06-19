@@ -4247,7 +4247,7 @@ If an error occurs, the response body contains a description of the error.</p>
 </section>
 <section id="delete_router"> <title>4.5.5.1.5 Delete Router</title>
 </section>
-<section id="put-v20routersid"> <title>PUT /v2.0/routers/{id}</title>
+<section id="put-v20routersid2"> <title>PUT /v2.0/routers/{id}</title>
 <p>This operation removes a logical router. The operation will fail if the router still has internal interfaces attached.</p>
 <p>
 <b>Note:</b>  All router interfaces must be removed prior to deleting the router.  Router interfaces can be removed through the <xref type="section" href="#topic127886/delete_interface">Remove router interface</xref>
