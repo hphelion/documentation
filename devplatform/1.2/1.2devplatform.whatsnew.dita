@@ -36,10 +36,14 @@
 <p>
   <b>.NET and Windows support</b>
 </p>
-<p>Helion Development Platform version 1.2 includes a full end-to-end solution for creating and deploying .NET  applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of the Helion Development Platform. For more information on Windows and .NET support, see <xref href="/helion/devplatform/1.2/windows" >Windows Overview</xref>.</p>
+<p>Helion Development Platform version 1.2 includes a full end-to-end solution for creating and
+        deploying .NET applications. Windows developers can now leverage their knowledge and use the
+        tools they are accustomed to in order to leverage the power of the Helion Development
+        Platform. For more information on Windows and .NET support, see <xref
+          href="windows/windows_overview.dita#topic24073_2">Windows Overview.</xref></p>
 <p>
 <b>Updated Command Line Client</b> <!--A BR tag was used here in the original source.-->
-The <xref href="../../devplatform/1.2/helion/CLI/1.2ALS_Client_Reference.dita" >ALS command line client</xref> (cfmgmt.exe) has been updated to provide options for creating and managing WindowsÂ(R) DEA clusters.</p>
+The <xref href="../../devplatform/1.2/helion/CLI/1.2ALS_Client_Reference.dita" >ALS command line client</xref> (cfmgmt.exe) has been updated to provide options for creating and managing Windowsï¿½(R) DEA clusters.</p>
 </section>
 </body>
 </topic>

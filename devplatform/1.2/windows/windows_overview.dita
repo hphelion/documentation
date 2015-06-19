@@ -130,7 +130,7 @@
     <section id="development"><title>Application development and deployment</title>
 <ol>
 
-    <li> Download the <xref href="/helion/devplatform/1.2/als/client/download">Helion client tool</xref>.</li>
+    <li> Download the <xref href="../helion/CLI/1.2ALS_Client_Downloads.dita"> Helion client tool</xref>.</li>
     <li> Install the Cloud Foundry Explorer and Cloud Foundry MSBuild tasks in Visual Studio.</li>
     <li> Optionally, install the Cloud Foundry .NET SDK (for programmatic access to services.)</li>
     <li> Build your application.</li>
@@ -148,7 +148,7 @@
     <li> Virtio drivers version 0.1-81: <xref format="html" href="https://fedorapeople.org/groups/virt/virtio-win/deprecated-isos/stable/virtio-win-0.1-81.iso">Download</xref></li>
     <li> The Glazier tool: <xref format="html" href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</xref></li>
     <li> If applications are to be deployed and managed from the development environment, any edition of Visual Studio 2013, including the Community (free) edition.</li>
-    <li> The <xref format="html" href="/helion/devplatform/1.2/windows/deployingnet">Cloud Foundry Explorer Visual Studio extension</xref>. This extension can be found by searching for <b>Cloud Foundry Explorer</b> in the <i>Extensions and Updates</i> module of Visual Studio.</li>
+    <li> The <xref format="html" href="windows_deploying.dita">Cloud Foundry Explorer Visual Studio extension</xref>. This extension can be found by searching for <b>Cloud Foundry Explorer</b> in the <i>Extensions and Updates</i> module of Visual Studio.</li>
     <li>Helion OpenStack supports .NET applications created with .NET versions 2.0 through 4.5.2.</li>
 </ul>
         </section>

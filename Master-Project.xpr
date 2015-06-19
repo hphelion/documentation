@@ -28,6 +28,5 @@
         <folder path="publiccloud/"/>
         <folder path="unusedgraphics/"/>
         <folder path="UseCases/"/>
-        <file name="CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-viewing.dita"/>
     </projectTree>
 </project>

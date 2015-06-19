@@ -30,7 +30,7 @@
 
 <p>The HP Helion Development Platform currently contains four components: Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service.</p>
 
-<p>The following topics explain how to install and configure the HP Helion Development Platform. There is also <xref href="../../devplatform/1.2/1.2devplatform.troubleshooting.dita" >Troubleshooting</xref> documentation to handle issues that may occur.
+<p>The following topics explain how to install and configure the HP Helion Development Platform. There is also <xref href="1.2/1.2devplatform.troubleshooting.dita">Troubleshooting</xref> documentation to handle issues that may occur.
 </p>
 <ul>
 	<li><xref type="section" href="#topic24073_1/prerequisites">Prerequisites</xref></li>
