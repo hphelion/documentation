@@ -1354,66 +1354,62 @@
       navtitle="Open Source and Third-Party License Agreements" locktitle="yes"/>
     <topicref href="euca/euca-eula.dita" navtitle="Master Services Agreement" locktitle="yes"/>
   </topicref>
-  <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud Overview"
-    locktitle="yes">
-    <topicref href="publiccloud/services.dita">
-      <topicref href="publiccloud/identity.dita"/>
-      <topicref href="publiccloud/compute.dita"/>
-      <topicref href="publiccloud/block-storage.dita"/>
-      <topicref href="publiccloud/dns.dita"/>
-      <topicref href="publiccloud/lbaas.dita"/>
-      <topicref href="publiccloud/dbaas.dita">
-        <topicref href="publiccloud/dbaas.tutorial.introduction.dita"/>
+  <!-- Public cloud -->
+  <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud" locktitle="yes">
+    <topicref href="publiccloud/site-overview.dita" navtitle="Helion Public Cloud Website Overview" locktitle="yes"/>
+    <topicref href="publiccloud/services.dita" navtitle="Helion Public Cloud Services" locktitle="yes">
+      <topicref href="publiccloud/identity.dita" navtitle="Identity Service Overview" locktitle="yes"/>
+      <topicref href="publiccloud/compute.dita" navtitle="Compute Service Overview" locktitle="yes"/>
+      <topicref href="publiccloud/block-storage.dita" navtitle="Block Storage Service Overview" locktitle="yes"/>
+      <topicref href="publiccloud/dns.dita" navtitle="DNS Service Overview" locktitle="yes"/>
+      <topicref href="publiccloud/lbaas.dita" navtitle="Load Balancer Service Overview" locktitle="yes"/>
+      <topicref href="publiccloud/dbaas.dita" navtitle="Database Service Overview" locktitle="yes">
+        <topicref href="publiccloud/dbaas.tutorial.introduction.dita" navtitle="Database Service Tutorial" locktitle="yes"/>
       </topicref>
-      <topicref href="publiccloud/maas.dita"/>
-      <topicref href="publiccloud/object-storage.dita">
-        <topicref href="publiccloud/object-storage.tutorial.introduction.dita"/>
+      <topicref href="publiccloud/object-storage.dita" navtitle="Object Storage Service Overview" locktitle="yes">
+        <topicref href="publiccloud/object-storage.tutorial.introduction.dita" navtitle="Object Storage Service Tutorial" locktitle="yes"/>
       </topicref>
-      <topicref href="publiccloud/cdn.dita"/>
+      <topicref href="publiccloud/cdn.dita" navtitle="CDN Service Overview" locktitle="yes"/>
     </topicref>
-    <topicref href="publiccloud/api.dita">
-      <topicref href="content/api/c1.1/keystonev2-api.dita"/>
-      <topicref href="content/api/c1.1/keystone-api.dita"/>
-      <topicref href="content/api/c1.1/nova-api.dita"/>
-      <topicref href="content/api/c1.1/neutron-api.dita"/>
-      <topicref href="content/api/c1.1/glance-api.dita"/>
-      <topicref href="content/api/c1.1/cinder-api.dita"/>
-      <topicref href="content/api/c1.1/dbaas-api.dita"/>
-      <topicref href="content/api/c1.1/dns-api.dita"/>
-      <topicref href="content/api/c1.1/lbaas-api.dita"/>
-      <topicref href="content/api/c1.1/maas-api.dita"/>
-      <topicref href="content/api/c1.1/swift-api.dita"/>
-      <topicref href="content/api/c1.1/cdn-api.dita"/>
-      <topicref href="publiccloud/api.copyright.v13.dita"/>
+    <topicref href="publiccloud/api.dita" navtitle="Helion Public Cloud APIs" locktitle="yes">
+      <topicref href="content/api/c1.1/keystonev2-api.dita" navtitle="Identity Service v2 API" locktitle="yes"/>
+      <topicref href="content/api/c1.1/keystone-api.dita" navtitle="Identity Service v3 API" locktitle="yes"/>
+      <topicref href="content/api/c1.1/nova-api.dita" navtitle="Compute Service API" locktitle="yes"/>
+      <topicref href="content/api/c1.1/neutron-api.dita" navtitle="Networking Service API" locktitle="yes"/>
+      <topicref href="content/api/c1.1/glance-api.dita" navtitle="Image Service API" locktitle="yes"/>
+      <topicref href="content/api/c1.1/cinder-api.dita" navtitle="Block Storage Service API" locktitle="yes"/>
+      <topicref href="content/api/c1.1/dbaas-api.dita" navtitle="Database Service API" locktitle="yes"/>
+      <topicref href="content/api/c1.1/dns-api.dita" navtitle="DNS Service API" locktitle="yes"/>
+      <topicref href="content/api/c1.1/lbaas-api.dita" navtitle="Load Balancer Service API" locktitle="yes"/>
+      <topicref href="content/api/c1.1/swift-api.dita" navtitle="Object Storage Service API" locktitle="yes"/>
+      <topicref href="content/api/c1.1/cdn-api.dita" navtitle="CDN Service API" locktitle="yes"/>
+      <topicref href="publiccloud/api.copyright.v13.dita" navtitle="Copyright for Helion Public Cloud APIs" locktitle="yes"/>
     </topicref>
-    <topicref href="publiccloud/cli.dita">
-      <topicref href="publiccloud/cli.openstack.dita"/>
-      <topicref href="publiccloud/cli.windows.2.dita">
-        <topicref href="publiccloud/cli.windows.2.installation.dita"/>
-        <topicref href="publiccloud/cli.windows.2.commands.dita"/>
-        <topicref href="publiccloud/cli.windows.2.compute.dita"/>
-        <topicref href="publiccloud/cli.windows.2.containers-and-folders.dita"/>
-        <topicref href="publiccloud/cli.windows.2.folder-operations.dita"/>
-        <topicref href="publiccloud/cli.windows.2.help.dita"/>
-        <topicref href="publiccloud/cli.windows.2.metadata.dita"/>
-        <topicref href="publiccloud/cli.windows.2.misc.dita"/>
-        <topicref href="publiccloud/cli.windows.2.reference.dita"/>
-        <topicref href="publiccloud/cli.windows.2.block-storage.dita"/>
-        <topicref href="publiccloud/cli.windows.2.release-notes.dita"/>
+    <topicref href="publiccloud/cli.dita" navtitle="Helion Public Cloud CLIs" locktitle="yes">
+      <topicref href="publiccloud/cli.openstack.dita" navtitle="Openstack CLI" locktitle="yes"/>
+      <topicref href="publiccloud/cli.windows.2.dita" navtitle="Windows PowerShell CLI" locktitle="yes">
+        <topicref href="publiccloud/cli.windows.2.installation.dita" navtitle="PowerShell CLI Installation" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.commands.dita" navtitle="PowerShell CLI Commands Overview" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.compute.dita" navtitle="PowerShell CLI Compute Examples" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.metadata.dita" navtitle="PowerShell CLI Working With Metadata" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.block-storage.dita" navtitle="PowerShell CLI Block Storage Examples" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.containers-and-folders.dita" navtitle="PowerShell CLI Object Storage Examples" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.folder-operations.dita" navtitle="PowerShell CLI Folder Operations" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.help.dita" navtitle="PowerShell CLI Help" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.misc.dita" navtitle="PowerShell CLI Misc Features" locktitle="yes"/>
+        <topicref href="publiccloud/cli.windows.2.release-notes.dita" navtitle="PowerShell CLI Release Notes" locktitle="yes"/>
       </topicref>
-      <topicref href="publiccloud/downloads.dita"/>
-      <topicref href="publiccloud/bindings.dita"/>
+      <topicref href="publiccloud/downloads.dita" navtitle="Helion Public Cloud Downloads" locktitle="yes"/>
+      <topicref href="publiccloud/bindings.dita" navtitle="Helion Public Cloud Bindings Support" locktitle="yes"/>
     </topicref>
-    <topicref href="publiccloud/hpcloudconsole.dita"/>
-    <topicref href="publiccloud/release-notes.dita"/>
-    <topicref href="publiccloud/sitemap.dita"/>
-    <topicref href="publiccloud/site-overview.dita"/>
+    <topicref href="publiccloud/hpcloudconsole.dita" navtitle="Getting Started with Public Cloud Console" locktitle="yes"/>
+    <topicref href="publiccloud/release-notes.dita" navtitle="Helion Public Cloud Release Notes" locktitle="yes"/>
     <topicref href="publiccloud/hz.whatsnewjan.2014.dita"/>
-    <topicref href="publiccloud/upload-publish-partner-images135.dita"/>
-    <topicref href="publiccloud/vpn-multisite.dita"/>
-    <topicref href="publiccloud/vpn-quickstart.dita"/>
-    <topicref href="publiccloud/plugins.teamcity.dita"/>
-    <topicref href="publiccloud/glossary.dita"/>
+    <topicref href="publiccloud/upload-publish-partner-images135.dita" navtitle="Uploading and Publishing Partner Images" locktitle="yes" toc="no"/>
+    <topicref href="publiccloud/vpn-multisite.dita" navtitle="VPN Multi-Site Configuration Guide" locktitle="yes" toc="no"/>
+    <topicref href="publiccloud/vpn-quickstart.dita" navtitle="VPN Setup Quick Start Guide" locktitle="yes" toc="no"/>
+    <topicref href="publiccloud/plugins.teamcity.dita" navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes" toc="no"/>
+    <topicref href="publiccloud/glossary.dita" navtitle="Helion Public Cloud Glossary" locktitle="yes"/>
   </topicref>
   <topicref href="automation/csa.index.dita"/>
   <topicref href="codar-landing-page.dita" navtitle="HP Codar"/>
