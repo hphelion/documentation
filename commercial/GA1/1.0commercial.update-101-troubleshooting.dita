@@ -80,7 +80,7 @@ optionally re-attempt or resume playbook executions.</p>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic18446/top"> Return to Top </xref>
+  <xref href="#topic18446"> Return to Top </xref>
 </p>
 </section>
 <section id="nodeerror"> <title>Node goes to ERROR state during rebuild</title>
@@ -112,7 +112,7 @@ overload of the undercloud.</p>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic18446/top"> Return to Top </xref>
+  <xref href="#topic18446"> Return to Top </xref>
 </p>
 </section>
 <section id="mysqlmissing"> <title>MySQL CLI configuration file missing</title>
@@ -182,7 +182,7 @@ overload of the undercloud.</p>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic18446/top"> Return to Top </xref>
+  <xref href="#topic18446"> Return to Top </xref>
 </p>
 </section>
 <section id="mysqlfails"> <title>MySQL fails to start upon retrying update</title>
@@ -258,7 +258,7 @@ overload of the undercloud.</p>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic18446/top"> Return to Top </xref>
+  <xref href="#topic18446"> Return to Top </xref>
 </p>
 </section>
 <section id="mysqlsync"> <title>MySQL/Percona/Galera is out of sync</title>
@@ -360,7 +360,7 @@ overload of the undercloud.</p>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic18446/top"> Return to Top </xref>
+  <xref href="#topic18446"> Return to Top </xref>
 </p>
 </section>
 <section id="lastnode"> <title>MySQL "Node appears to be the last node in a cluster" error</title>
@@ -390,7 +390,7 @@ However, based on sequence, the current node should not be the last node.  As a 
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic18446/top"> Return to Top </xref>
+  <xref href="#topic18446"> Return to Top </xref>
 </p>
 </section>
 <section id="sshlost"> <title>SSH Connectivity is lost</title>
@@ -452,7 +452,7 @@ reboot
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic18446/top"> Return to Top </xref>
+  <xref href="#topic18446"> Return to Top </xref>
 </p>
 </section>
 <section id="posfix"> <title>Postfix fails to reload</title>
@@ -470,7 +470,7 @@ reboot
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic18446/top"> Return to Top </xref>
+  <xref href="#topic18446"> Return to Top </xref>
 </p>
 </section>
 <section id="apache2"> <title>Apache2 Fails to start</title>
@@ -504,7 +504,7 @@ msg: start: Job failed to start
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic18446/top"> Return to Top </xref>
+  <xref href="#topic18446"> Return to Top </xref>
 </p>
 </section>
 <section id="rabbitmq"> <title>RabbitMQ still running when restart is attempted</title>
@@ -518,7 +518,7 @@ msg: start: Job failed to start
 </p>
 <p>Find any processes running as <codeph>rabbitmq</codeph> on the box, and kill them, forcibly if need be.</p>
 <p>
-  <xref type="section" href="#topic18446/top"> Return to Top </xref>
+  <xref href="#topic18446"> Return to Top </xref>
 </p>
 </section>
 <section id="shutoff"> <title>Instance reported as powering on but the instance is in shutoff state</title>
@@ -582,7 +582,7 @@ msg: start: Job failed to start
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic18446/top"> Return to Top </xref>
+  <xref href="#topic18446"> Return to Top </xref>
 </p>
 </section>
 <section id="mnt"> <title>State drive /mnt is not mounted</title>
@@ -671,7 +671,7 @@ stderr: Error: unable to connect to node 'rabbit@overcloud-controller0-vahypr34i
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic18446/top"> Return to Top </xref>
+  <xref href="#topic18446"> Return to Top </xref>
 </p>
 </section>
 <section id="ironic"> <title>Ironic intermittently set maintenance mode to True during installation</title>
@@ -871,7 +871,7 @@ Traceback (most recent call last):
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic18446/top"> Return to Top </xref>
+  <xref href="#topic18446"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

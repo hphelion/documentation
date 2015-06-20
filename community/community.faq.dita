@@ -121,7 +121,7 @@
 <section id="nonhphardware"> <title>Can HP Helion OpenStack(R) Community edition be run on non-HP hardware?</title>
 <p>Yes, provided the hardware meets the minimum specification. HP will be working with HP Helion Community edition users to develop a list of third-party hardware on which the distribution is known to run.</p>
 <p>
-  <xref type="section" href="#topic9044/top"> Return to Top </xref>
+  <xref href="#topic9044"> Return to Top </xref>
 </p>
 </section>
 <section id="support-and-additional-resources"> <title>Support and additional resources</title>
@@ -912,7 +912,7 @@ Please visit http:/community.hpcloud.com or  ...
 
 -->
 <p>
-  <xref type="section" href="#topic9044/top"> Return to Top </xref>
+  <xref href="#topic9044"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

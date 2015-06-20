@@ -333,7 +333,7 @@ glance image-list
 <p>Upgrade the overcloud.</p>
 <p>For installation instructions, see <xref href="../../commercial/GA1/1.0commercial.update-101-overcloud.dita" >Updating the Overcloud</xref>.</p>
 <p>
-  <xref type="section" href="#topic7777/top"> Return to Top </xref>
+  <xref href="#topic7777"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

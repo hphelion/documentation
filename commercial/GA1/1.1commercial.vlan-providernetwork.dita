@@ -314,7 +314,7 @@ Where `<mac_address>` is the MAC address of the network interface from which to 
 <p>
 <b>Note</b>: The tenant network type is Vxlan. The <codeph>default-net</codeph> and <codeph>ext-net</codeph> should be Vxlan tenant networks, and do not conflict with the provider VLAN network.</p>
 <p>
-  <xref type="section" href="#topic8003/top"> Return to Top </xref>
+  <xref href="#topic8003"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

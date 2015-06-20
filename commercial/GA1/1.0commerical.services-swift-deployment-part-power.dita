@@ -174,11 +174,9 @@ To use, given number of zones and the maximum number of disk drives anticipated 
 </tbody>
 </tgroup>
 </table>
+
 <p>
-  <xref href="/helion/openstack/services/swift/deployment-scale-out"> Back</xref>
-</p>
-<p>
-  <xref type="section" href="#topic1674/top"> Return to Top </xref>
+  <xref href="#topic1674"> Return to Top </xref>
 </p>
 </body>
 </topic>

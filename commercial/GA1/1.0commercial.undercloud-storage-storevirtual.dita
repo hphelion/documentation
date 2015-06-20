@@ -127,7 +127,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic5728/top"> Return to Top </xref>
+  <xref href="#topic5728"> Return to Top </xref>
 </p>
 </section>
 <section id="edit-cluster"> <title>Edit a StoreVirtual cluster</title>
@@ -186,7 +186,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic5728/top"> Return to Top </xref>
+  <xref href="#topic5728"> Return to Top </xref>
 </p>
 </section>
 <section id="unregister-multiple-clusters"> <title>Unregister multiple clusters</title>
@@ -239,7 +239,7 @@
   <xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-storevirtual.dita" >Working with StoreVirtual Backends</xref>
 </p>
 <p>
-  <xref type="section" href="#topic5728/top"> Return to Top </xref>
+  <xref href="#topic5728"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

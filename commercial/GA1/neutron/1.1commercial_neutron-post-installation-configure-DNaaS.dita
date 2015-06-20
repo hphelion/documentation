@@ -564,7 +564,7 @@ sudo -i</codeph></codeblock></li>
                     <li><xref href="https://docs.hpcloud.com/api/dns/" format="html"
                             scope="external">HP Helion Public Cloud DNS API
                                 Specifications</xref><p><b>Note</b>: Public Cloud API and HP Helion
-                                    Openstack API details are similar.</p> <xref type="section" href="#topic19557/top"> Return to Top </xref></li>
+                                    Openstack API details are similar.</p> <xref href="#topic19557"> Return to Top </xref></li>
                 </ul></p>
         </section>
     </body>

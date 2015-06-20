@@ -160,7 +160,7 @@ volume_backend_name MyVolumeBackend
 <p>
 <b>Note</b>: Once the volume type is mapped to the backend, you can create volumes.</p>
 <p>
-  <xref type="section" href="#topic3936/top"> Return to Top </xref>
+  <xref href="#topic3936"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

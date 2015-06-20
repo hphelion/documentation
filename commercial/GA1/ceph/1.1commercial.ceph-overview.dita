@@ -138,7 +138,7 @@ to store data from Ceph block device clients or from Ceph file system clients. C
   <xref href="1.1commerical.services-ceph-archref.dita" >HP  Helion OpenStack(R) Ceph Architectural Reference</xref>
 </p>
 <p>
-  <xref type="section" href="#topic7563/top"> Return to Top </xref>
+  <xref href="#topic7563"> Return to Top </xref>
 </p>
 </section>
 </body>

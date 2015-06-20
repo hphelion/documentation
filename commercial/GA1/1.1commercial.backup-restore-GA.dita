@@ -228,7 +228,7 @@ Restore procedure completed
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic19267/top"> Return to Top </xref>
+  <xref href="#topic19267"> Return to Top </xref>
 </p>
 </section>
 <section id="under"> <title>Back up and restore the undercloud</title>
@@ -371,7 +371,7 @@ Backup procedure completed.
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic19267/top"> Return to Top </xref>
+  <xref href="#topic19267"> Return to Top </xref>
 </p>
 </section>
 <section id="over"> <title>Back up and restore the overcloud</title>
@@ -489,7 +489,7 @@ Restore procedure completed
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic19267/top"> Return to Top </xref>
+  <xref href="#topic19267"> Return to Top </xref>
 </p>
 </section>
 <section id="sherpaback2"> <title>Backing up the overcloud database</title>
@@ -615,7 +615,7 @@ Restore Procedure Completed
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic19267/top"> Return to Top </xref>
+  <xref href="#topic19267"> Return to Top </xref>
 </p>
 <!--
 ### Rebuilding the Overcloud Management Controller ### {#mgmt}
@@ -731,7 +731,7 @@ After the management controller is rebuilt, use the following steps below to dis
 <section id="for-more-information"> <title>For more information</title>
 <p>For information on Disaster Recovery (DR) and Business Continuity Planning (BCP) plans, see <xref href="../../commercial/GA1/1.1commercial.disaster-recovery.dita" >Disaster Recovery</xref>.</p>
 <p>
-  <xref type="section" href="#topic19267/top"> Return to Top </xref>
+  <xref href="#topic19267"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -65,7 +65,7 @@
 <section id="add-and-remove-nodes-on-kvm-hypervisors"> <title>Add and Remove  Nodes on KVM Hypervisors</title>
 <p>For more information, see <xref href="../../commercial/GA1/1.1commercial.install-add-nodes.dita" >Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</xref>.</p>
 <p>
-  <xref type="section" href="#topic3683/top"> Return to Top </xref>
+  <xref href="#topic3683"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

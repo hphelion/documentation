@@ -87,7 +87,7 @@ Aborting.
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic4992/top"> Return to Top </xref>
+  <xref href="#topic4992"> Return to Top </xref>
 </p>
 </section>
 <section id="update1"> <title>Update OVSvApp from version 1.1 to version 1.1.1</title>
@@ -190,7 +190,7 @@ Aborting.
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic4992/top"> Return to Top </xref>
+  <xref href="#topic4992"> Return to Top </xref>
 </p>
 <!-- Not needed?
 1. Make sure that DRS is enabled on the cluster on which 1.01 version of OVSvApp will be installed:

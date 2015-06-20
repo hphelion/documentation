@@ -277,7 +277,7 @@ UNDERCLOUD_IP_ADDRESS
 <section id="next-step"> <title>Next Step</title>
 <p>Verify that the installation completed successfully by connecting to the demo VM, Horizon dashboard and the monitoring interface. See <xref href="../community/community.verify.dita" >Verifying your installation</xref>.</p>
 <p>
-  <xref type="section" href="#topic8707/top"> Return to Top </xref>
+  <xref href="#topic8707"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

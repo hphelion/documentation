@@ -1745,7 +1745,7 @@ SEED_NAMESERVER=172.16.222.5
 </codeblock>
 <p>In this case, the overcloud-ce-vsastorage0 node was in the FAILED state for Heat.</p>
 <p>
-  <xref type="section" href="#topic51655/top"> Return to Top </xref>
+  <xref href="#topic51655"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

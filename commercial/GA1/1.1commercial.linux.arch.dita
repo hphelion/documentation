@@ -91,7 +91,7 @@
 <p>
 <xref format="html" href="javascript:window.open('/media/LinuxServiceArch_resize1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image</xref> (opens in a new window)</p>
 <p>
-  <xref type="section" href="#topic8765/top"> Return to Top </xref>
+  <xref href="#topic8765"> Return to Top </xref>
 </p>
 </section>
 <section id="components"> <title>Components</title>
@@ -145,7 +145,7 @@
 <li>Fetches packages from deejay as needed </li>
 </ul>
 <p>
-  <xref type="section" href="#topic8765/top"> Return to Top </xref>
+  <xref href="#topic8765"> Return to Top </xref>
 </p>
 </section>
 <section id="interfaces"> <title>Interfaces</title>
@@ -215,7 +215,7 @@ d. Timing: Packages are requested as needed.</p>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic8765/top"> Return to Top </xref>
+  <xref href="#topic8765"> Return to Top </xref>
 </p>
 </section>
 <section id="data"> <title>Data</title>
@@ -298,7 +298,7 @@ d. Timing: Packages are requested as needed.</p>
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic8765/top"> Return to Top </xref>
+  <xref href="#topic8765"> Return to Top </xref>
 </p>
 </section>
 <section id="dependencies"> <title>Dependencies</title>
@@ -307,7 +307,7 @@ d. Timing: Packages are requested as needed.</p>
 <li>Debian.org</li>
 </ul>
 <p>
-  <xref type="section" href="#topic8765/top"> Return to Top </xref>
+  <xref href="#topic8765"> Return to Top </xref>
 </p>
 </section>
 <section id="sequence"> <title>Sequence Diagrams</title>
@@ -321,7 +321,7 @@ d. Timing: Packages are requested as needed.</p>
 <p>
 <xref format="html" href="javascript:window.open('/media/LinuxCustodyChain75.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image</xref> (opens in a new window)</p>
 <p>
-  <xref type="section" href="#topic8765/top"> Return to Top </xref>
+  <xref href="#topic8765"> Return to Top </xref>
 </p>
 </section>
 <section id="implement"> <title>Implementation</title>
@@ -349,7 +349,7 @@ d. Timing: Packages are requested as needed.</p>
 <li>4x 1Gb NICs</li>
 </ul>
 <p>
-  <xref type="section" href="#topic8765/top"> Return to Top </xref>
+  <xref href="#topic8765"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

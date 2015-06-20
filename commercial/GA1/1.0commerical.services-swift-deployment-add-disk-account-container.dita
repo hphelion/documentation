@@ -193,7 +193,7 @@ rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP addre
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic4948/top"> Return to Top </xref>
+  <xref href="#topic4948"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

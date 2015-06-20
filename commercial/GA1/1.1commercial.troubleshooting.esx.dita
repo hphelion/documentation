@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.esx.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/esx/--></p>
-<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of LinuxÂ(R) provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of Linuxï¿½(R) provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <ul>
 <li>
 <xref type="section" href="#topic2362/nova-compute">nova-manage service list does not list the compute service as running</xref>
@@ -90,10 +90,7 @@
   <b>Resolution</b>
 </p>
 <p>Verify <codeph>tripleo/hp-ovsvapp/log/ovs_vapp.log</codeph> in the installer directory.</p>
-<p>
-  <!--A BR tag was used here in the original source.-->
-  <!--A BR tag was used here in the original source.-->
-</p>
+
 <!-- ===================== horizontal rule ===================== -->
 <p>
   <b>System Behavior/Message</b>
@@ -105,28 +102,28 @@
 <ul>
 <li>
 <p>To restart nova-compute, execute the following command in compute proxies</p>
-
+</li>
+</ul>
 <codeblock>
 <codeph># service nova-compute restart  
 </codeph>
 </codeblock>
-</li>
+<ul>
 <li>
 <p>To restart HP VCN agent, execute the following command in OVSvAPP vm's</p>
-
+</li>
+</ul>
+  
 <codeblock>
 <codeph>#service hpvcn-neutron-agent restart 
 </codeph>
 </codeblock>
 
-<p>
-<!--A BR tag was used here in the original source.-->
-</p>
-</li>
-</ul>
+
+
 <!-- ===================== horizontal rule ===================== -->
 <p>
-  <xref type="section" href="#topic2362/top"> Return to Top </xref>
+  <xref href="#topic2362"> Return to Top </xref>
 </p>
 </section>
 </body>

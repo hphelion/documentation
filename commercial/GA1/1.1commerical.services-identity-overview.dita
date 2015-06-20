@@ -113,7 +113,7 @@
 <section id="working-with-the-identity-service"> <title>Working with the Identity Service</title>
 <p>To <xref href="../../commercial/GA1/1.1commerical.services-identity-using.dita" >perform tasks using the Identity service</xref>, you can use the <xref href="http://api.openstack.org/api-ref-identity-v3.html" scope="external" format="html" >API</xref> or <xref href="http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html" scope="external" format="html" >CLI</xref>.</p>
 <p>
-  <xref type="section" href="#topic7556/top"> Return to Top </xref>
+  <xref href="#topic7556"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
