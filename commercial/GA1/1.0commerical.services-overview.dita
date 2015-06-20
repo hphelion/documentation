@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commerical.services-overview.md-->
  <!--permalink: /helion/openstack/services/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>OpenStack(R) is comprised of several integrated services. Each service works through an API (application programming interface) that allows services to work together and allows users to interact with the services.</p>
 <p>HP Helion OpenStack(R) includes a number of additional services to work with your cloud.</p>

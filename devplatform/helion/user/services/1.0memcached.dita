@@ -22,7 +22,7 @@
  <!--./devplatform/helion/user/services/1.0memcached.md-->
  <!--permalink: /als/v1/user/services/memcached/--></p>
 <section id="see-the-helion-11-development-platform-version-of-this-page"> <title>
-  See the Helion 1.1 Development Platform version of this page
+
 </title>
 <p>Memcached is an in-memory key-value store used for caching by many web
 applications and frameworks. It is available in Application Lifecycle Service as a service

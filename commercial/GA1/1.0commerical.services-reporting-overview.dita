@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commerical.services-reporting-overview.md-->
  <!--permalink: /helion/openstack/services/reporting/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-reporting-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The HP Helion OpenStack(R) Telemetry and Reporting service leverages the OpenStack(R) Ceilometer service to monitor the physical devices in your environment, including physical servers and network devices such as switches and firewalls.</p>
 <p>The Telemetry and Reporting service allows you to collect measurements using only one agent; it collects usage data from every component throughout your environment and stores the data in a single location.</p>

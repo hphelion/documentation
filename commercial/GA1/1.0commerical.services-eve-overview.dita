@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commerical.services-eve-overview.md-->
  <!--permalink: /helion/openstack/services/eve/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-eve-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 <p>As part of that investment HP Software has created an advanced provisioning technology, called Eve, which uses TOSCA standard semantics to express infrastructure templates that can be orchestrated against an OpenStack(R) Nova API.  As part of the Eve advanced provisioning service, hybrid provisioning can be accomplished with common templates across public and private OpenStack(R) API compliant clouds.</p>

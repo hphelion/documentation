@@ -22,7 +22,7 @@
  <!--./devplatform/workbook/messaging/1.0messaging.php.md-->
  <!--permalink: /helion/devplatform/workbook/messaging/php/--></p>
 <p>
-  <xref href="../../../devplatform/workbook/messaging/1.1messaging.php.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 </p>
 <p>This very simple PHP web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS and interact with it. Use this sample to ensure that you have set up your environment correctly for connecting to and working with RabbitMQ on the Helion Development Platform.</p>
 <section id="prerequisites"> <title>Prerequisites</title>

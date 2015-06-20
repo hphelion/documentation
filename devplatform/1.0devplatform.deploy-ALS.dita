@@ -25,7 +25,7 @@
  <!--./devplatform/1.0devplatform.deploy-ALS.md-->
  <!--permalink: /helion/devplatform/deploy/--></p>
 <p>
-<xref href="../devplatform/1.1devplatform.deploy-ALS.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 This document explains the process to configure and deploy an Application Lifecycle Service (ALS) cluster from the Horizon user interface.</p>
 <p>The document covers the following sections:</p>
 <ul>

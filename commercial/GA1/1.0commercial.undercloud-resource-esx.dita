@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.undercloud-resource-esx.md-->
  <!--permalink: /helion/openstack/undercloud/resource/esx/compute/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.undercloud-resource-esx.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The HP Helion OpenStack(R) Compute service provides a way to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.</p>
 <p>Compute allows you to work with <b>flavors</b>, which are unique combinations of disk space, memory capacity, and CPU; <b>images</b>, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and <b>servers</b>, which are virtual instances created by combining a flavor and an image.</p>

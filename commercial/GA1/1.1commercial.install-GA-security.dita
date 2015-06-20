@@ -19,7 +19,7 @@
  <!--./commercial/GA1/1.1commercial.install-GA-security.md-->
  <!--permalink: /helion/openstack/1.1/install/security/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.0commercial.install-GA-security.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
 <p>This document provides guidance on configuring your HP Helion OpenStack(R) network securely</p>
 <p>HP Helion OpenStack(R) has many built-in security controls, but the customer must take responsibility for configuring the network devices that integrate Helion services into an existing data center environment.  This includes defining firewall rules at the edge of the HP Helion OpenStack(R) deployment (to protect against external abuse) as well as defining router rules within the HP Helion OpenStack(R) deployment (to protect against insider abuse or administrative errors).</p>

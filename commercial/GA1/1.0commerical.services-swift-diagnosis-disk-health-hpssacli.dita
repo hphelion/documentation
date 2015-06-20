@@ -24,7 +24,7 @@
  <!--./commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.md-->
  <!--permalink: /helion/openstack/services/swift/diagnosis-disk-health/hpssacli/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The health of the disk  of the HP servers can be diagnosed using the <b>
 <i>hpsacli</i>

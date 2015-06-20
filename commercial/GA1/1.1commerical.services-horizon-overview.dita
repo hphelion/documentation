@@ -26,7 +26,7 @@
  <!--./commercial/GA1/1.1commerical.services-horizon-overview.md-->
  <!--permalink: /helion/openstack/1.1/services/horizon/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.0commerical.services-horizon-overview.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
 <p>Horizon is the OpenStack(R) service that serves as the basis for the HP Helion OpenStack(R) web interface or <b>dashboards</b>.</p>
 <p>The dashboards provide a web-based user interface to HP Helion OpenStack(R) services including <xref href="../../commercial/GA1/1.1commerical.services-compute-overview.dita" >Compute</xref>, <xref href="../../commercial/GA1/1.1commerical.services-volume-overview.dita" >Volume Operations</xref>, <xref href="../../commercial/GA1/1.1commerical.services-networking-overview.dita" >Networking</xref>, and <xref href="../../commercial/GA1/1.1commerical.services-identity-overview.dita" >Identity</xref>.</p>

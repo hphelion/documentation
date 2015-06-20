@@ -26,7 +26,7 @@
  <!--./commercial/GA1/1.1commercial.undercloud-resources-overview.md-->
  <!--permalink: /helion/openstack/1.1/undercloud/manage/resources/overview/--></p>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.undercloud-resources-overview.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 The <b>Resources</b> Tab in the undercloud Horizon  dashboard allows you to define resources for your cloud. This tab displays two main options: <b>Compute</b> and <b>Storage</b>. You can define the configurations for the compute as well as the storage based on your requirements using this tab.</p>
 <section id="working-with-the-resources-tab"> <title>Working with the Resources Tab</title>
 <p>This option allows you to define the required configurations for your cloud. The following options are displayed under the Resources Tab:</p>

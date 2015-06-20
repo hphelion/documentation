@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commerical.services-dns-overview.md-->
  <!--permalink: /helion/openstack/services/dns/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-dns-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <section id="for-more-information"> <title>For more information</title>
 <p>For more information on the OpenStack(R) Designate project, see the <xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >OpenStack(R) Designate wiki</xref>.</p>

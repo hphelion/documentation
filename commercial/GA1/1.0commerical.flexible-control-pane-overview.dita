@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commerical.flexible-control-pane-overview.md-->
  <!--permalink: /helion/openstack/flexiblecontrol/overview/--></p>
 <p>
-<xref href="../../commercial/GA1/1.1commerical.flexible-control-pane-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 The HP Helion OpenStack(R) Flexible Control Plane introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment.  This new configuration reduces the control plane footprint to just three servers from the current seven servers.</p>
 <p>This topic covers:</p>
 <ul>

@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commerical.services-remove-replace-failed-overcloud-nodes.md-->
  <!--permalink: /helion/openstack/removing/failedovercloud/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-remove-replace-failed-overcloud-nodes.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The three node overcloud controller cluster provides the highly available cloud control plane. For a single point of failure, you can recover any one of the overcloud controller node.</p>
 <p>If your deployed operating cloud incurs an irrecoverable hardware failure in one of the controller servers, you must do the following:</p>

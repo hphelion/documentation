@@ -13,7 +13,7 @@
  <!--./devplatform/helion/user/deploy/1.0index.md-->
  <!--permalink: /als/v1/user/deploy/--></p>
 <section id="see-the-helion-11-development-platform-version-of-this-page"> <title>
-  See the Helion 1.1 Development Platform version of this page
+
 </title>
 <p>Applications are typically deployed to Application Lifecycle Service by pushing source code
 and configuration to the system's API endpoint using the <xref href="../../../../devplatform/helion/user/client/1.0index.dita#client" >

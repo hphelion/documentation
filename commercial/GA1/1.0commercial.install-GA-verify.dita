@@ -18,7 +18,7 @@
  <!--./commercial/GA1/1.0commercial.install-GA-verify.md-->
  <!--permalink: /helion/openstack/install/verify/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.install-GA-verify.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>Once your installation is complete, you should make sure you can connect to your HP Helion OpenStack(R) cloud. You can accomplish this in any of the following ways:</p>
 <ul>

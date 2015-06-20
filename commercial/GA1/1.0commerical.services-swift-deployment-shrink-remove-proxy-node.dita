@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-proxy-node.md-->
  <!--permalink: /helion/openstack/services/swift/deployment/remove-proxy-node/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-proxy-node.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>It is recommended that you gradually reduce the weight in the ring and change the disk in the Swift cluster to avoid poor performance.</p>
 <p>Scale-out Proxy nodes can only be removed from the cloud after all the disks have been removed from the node.</p>

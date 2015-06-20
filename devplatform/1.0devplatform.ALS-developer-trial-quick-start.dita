@@ -13,7 +13,7 @@
  <!--./devplatform/1.0devplatform.ALS-developer-trial-quick-start.md-->
  <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/--></p>
 <p>
-<xref href="../devplatform/1.1devplatform.ALS-developer-trial-quick-start.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 This document explains the process to install and configure Helion Development Platform Application Lifecycle Service (ALS) in the public cloud. This is the fastest way to create a sandbox environment to evaluate the HP Helion Development Platform.</p>
 <p>ALS Cluster creation is enabled by using an ALS Constructor, a Virtual Machine (VM) image pre-loaded with configuration and orchestration software.  This image is available in every public cloud account.</p>
 <p>After you create your public cloud account, you will use the ALS Constructor to configure and create your cluster.  At the end of the process, you will have an endpoint URL that you can use to deploy your apps.

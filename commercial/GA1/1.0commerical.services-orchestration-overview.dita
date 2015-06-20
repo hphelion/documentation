@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commerical.services-orchestration-overview.md-->
  <!--permalink: /helion/openstack/services/orchestration/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-orchestration-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 <p>The HP Helion OpenStack(R) Orchestration service leverages OpenStack(R) Heat to provide template-based orchestration for describing a cloud application. It executes OpenStack(R) API calls to generate running cloud applications.</p>

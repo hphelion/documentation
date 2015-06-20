@@ -24,7 +24,7 @@
  <!--./commercial/GA1/1.1commerical.services-scale-out-swift.md-->
  <!--permalink: /helion/openstack/1.1/services/object/overview/scale-out-swift/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.0commerical.services-scale-out-swift.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
 <p>HP Helion OpenStack(R) Object Storage includes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).</p>
 <p>It is recommended to use these Starter servers as host for the following Swift services for scaled out Swift cluster:</p>

@@ -24,7 +24,7 @@
  <!--./devplatform/helion/admin/server/1.0upgrade.md-->
  <!--permalink: /als/v1/admin/server/upgrade/--></p>
 <p>
-  <xref href="../../../../devplatform/helion/admin/server/1.1upgrade.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 </p>
 <p>Application Lifecycle Service 1.0 provides the ability to upgrade a node or cluster in place
 via <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-upgrade" >

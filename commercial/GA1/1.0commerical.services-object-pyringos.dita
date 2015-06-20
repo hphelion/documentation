@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commerical.services-object-pyringos.md-->
  <!--permalink: /helion/openstack/GA1/services/object/pyringos/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-object-pyringos.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The ringos tool runs on the undercloud and helps to deploy Swift clusters.</p>
 <p>You can use the following commands using the ringos Client CLI package in the undercloud.</p>

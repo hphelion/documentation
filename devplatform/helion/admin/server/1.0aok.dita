@@ -24,7 +24,7 @@
  <!--./devplatform/helion/admin/server/1.0aok.md-->
  <!--permalink: /als/v1/admin/server/aok/--></p>
 <p>
-  <xref href="../../../../devplatform/helion/admin/server/1.1aok.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 </p>
 <p>AOK is Application Lifecycle Service's authentication management service (replacing Cloud Foundry's UAA Server). It issues tokens via OAuth2 for client applications such as the ALS client and the Management Console. AOK can connect to other back-end SSO services such as LDAP by using different <xref type="section" href="#topic7330/aok-strategies">Strategies</xref>.</p>
 <ul>
