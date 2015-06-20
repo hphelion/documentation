@@ -188,7 +188,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic10467/top"> Return to Top </xref>
+  <xref type="section" href="#topic10467"> Return to Top </xref>
 </p>
 </section>
 <section id="edit-storeserv"> <title>Edit a 3PAR StoreServ</title>
@@ -263,7 +263,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic10467/top"> Return to Top </xref>
+  <xref type="section" href="#topic10467"> Return to Top </xref>
 </p>
 </section>
 <section id="registering-cpg"> <title>Register 3PAR StoreServ Common Provisioning Groups (CPGs)</title>
@@ -356,7 +356,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic10467/top"> Return to Top </xref>
+  <xref type="section" href="#topic10467"> Return to Top </xref>
 </p>
 </section>
 <section id="unregister-cpg"> <title>Unregister a CPG</title>
@@ -438,7 +438,7 @@
   <xref href="../../commercial/GA1/1.1commercial.undercloud-oc-config-storeserv.dita" >Working with StoreServ Backends</xref>
 </p>
 <p>
-  <xref type="section" href="#topic10467/top"> Return to Top </xref>
+  <xref type="section" href="#topic10467"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

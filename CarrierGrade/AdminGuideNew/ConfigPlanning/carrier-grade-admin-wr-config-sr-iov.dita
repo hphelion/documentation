@@ -86,7 +86,7 @@
 </codeph></codeblock>
 <p>The new virtual machine instance is up now. It has a SR-IOV VF connection to the tenant1-net1 tenant network identified with VLAN ID 20.</p>
 <p>
-  <xref type="section" href="#topic4210/top"> Return to Top </xref>
+  <xref type="section" href="#topic4210"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

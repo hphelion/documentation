@@ -138,7 +138,7 @@ database_gib=10 image_gib=13 backup_gib=22 action=apply
 </codeph></codeblock>
 <p>Then you can unlock the controller to clear any Configuration out-of-date alarms. A controller swact is required to update both controllers.</p>
 <p>
-  <xref type="section" href="#topic7921/top"> Return to Top </xref>
+  <xref type="section" href="#topic7921"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -73,7 +73,7 @@
 <section id="about-lagae-interfaces"> <title>About LAG/AE Interfaces</title>
 <p>Ethernet interfaces in a LAG group should be attached to the same L2 switch to provide link protection. For more information about the different LAG modes see the HP Helion OpenStack(R) Carrier Grade Software Installation Guide.</p>
 <p>
-  <xref type="section" href="#topic1830/top"> Return to Top </xref>
+  <xref type="section" href="#topic1830"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -92,7 +92,7 @@ infra hostname networkname port
 </codeph></codeblock><p>You
           can now unlock the compute nodes. This clears any <codeph>Configuration
             out-of-date</codeph> errors.</p><p>
-          <xref type="section" href="#topic3610/top"> Return to Top </xref>
+          <xref type="section" href="#topic3610"> Return to Top </xref>
         </p></li>
 </ol>
 <!-- ===================== horizontal rule ===================== -->

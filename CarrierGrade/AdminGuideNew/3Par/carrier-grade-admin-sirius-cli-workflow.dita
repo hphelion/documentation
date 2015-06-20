@@ -63,7 +63,7 @@
   <xref format="html" href="javascript:window.open('/media/sirius-cli-processflow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Process Flow Diagram (opens in a new window)</xref>
 </p>
 <p>
-  <xref type="section" href="#topic21033/top"> Return to Top </xref>
+  <xref type="section" href="#topic21033"> Return to Top </xref>
 </p>
 </section>
 <section id="add-configure-storevirtual"> <title>Add and configure HP StoreVirtual to your cloud inventory</title>
@@ -170,7 +170,7 @@ hplefthand_username=shausy
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic21033/top"> Return to Top </xref>
+  <xref type="section" href="#topic21033"> Return to Top </xref>
 </p>
 </section>
 <section id="add-configure-storeserv"> <title>Add HP 3PAR StoreServ to your cloud inventory and configure</title>
@@ -320,7 +320,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic21033/top"> Return to Top </xref>
+  <xref type="section" href="#topic21033"> Return to Top </xref>
 </p>
 </section>
 <section id="config-brocade"> <title>Configure HP 3PAR Storeserv as a storage backend with Brocade Zone Manager</title>
@@ -547,7 +547,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 <section id="more-information"> <title>More Information</title>
 
 <p>
-  <xref type="section" href="#topic21033/top"> Return to Top </xref>
+  <xref type="section" href="#topic21033"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -30,7 +30,7 @@ hw:wrs:shared_vcpu=vcpu_id
 </codeblock>
 <p>where <codeph>vcpu_id</codeph> is an integer that identifies the vcpu (starting from 0).</p>
 <p>
-  <xref type="section" href="#topic1437/top"> Return to Top </xref>
+  <xref type="section" href="#topic1437"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

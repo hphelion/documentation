@@ -252,7 +252,7 @@ If you are integrating LDAP into your environment, you need to configure the Hor
 <section id="next-steps"> <title>Next Step</title>
 <p>See <xref href="../../commercial/GA1/1.1commercial.install-GA-post-esx.dita" >Post-Installation for ESX Hypervisor</xref>.</p>
 <p>
-  <xref type="section" href="#topic8545/top"> Return to Top </xref>
+  <xref type="section" href="#topic8545"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

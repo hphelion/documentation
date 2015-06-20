@@ -45,7 +45,7 @@ UserData:
 router. Typically, this is the interface to the VM's <codeph>EXT</codeph> network or an internal network. The Neutron router
 provides a route to the metadata server, which provides instances with access to user data.</p>
 <p>
-  <xref type="section" href="#topic2270/top"> Return to Top </xref>
+  <xref type="section" href="#topic2270"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

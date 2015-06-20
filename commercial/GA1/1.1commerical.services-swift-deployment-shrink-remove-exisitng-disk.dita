@@ -119,7 +119,7 @@ Devices:    id  region  zone      ip address  port  replication ip  replication 
       <codeblock><codeph># ringos copy-ring -s /root/ring-building/object-1.ring.gz -n &lt;Swift nodes IP address&gt;
 </codeph></codeblock>
       <p>
-        <xref type="section" href="#topic4147/top"> Return to Top </xref>
+        <xref type="section" href="#topic4147"> Return to Top </xref>
       </p>
       <p>
         <b>Related topics</b>

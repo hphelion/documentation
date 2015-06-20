@@ -85,7 +85,7 @@ regardless of storage type, see <xref href="../Flavors/carrier-grade.dashboard.d
 <section id="cli"> <title>Using the CLI</title>
 <p>As an alternative to the web administration interface, you can use the CLI to configure the host for local storage. For more information, see Managing Local Volume Groups and Managing Physical Volumes.</p>
 <p>
-  <xref type="section" href="#topic3661/top"> Return to Top </xref>
+  <xref type="section" href="#topic3661"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -352,7 +352,7 @@ tls_req_cert = demand
 <p>For information on all the attributes you can set for openLDAP/Active Directory, please refer to the LDAP connection settings listed above.</p>
 <p>Once the LDAP domain configuration as described above is complete,  you must restart Apache on all the overcloud controller nodes for the settings to take effect.</p>
 <p>
-  <xref type="section" href="#topic9275/top"> Return to Top </xref>
+  <xref type="section" href="#topic9275"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

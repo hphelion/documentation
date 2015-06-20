@@ -146,7 +146,7 @@ sftp&gt; get venom-patch.tar.gz
             file.</p><p>g. Rerun <codeph>hdeploy &lt;cloud-name&gt;</codeph>.</p></li>
 </ol>
 <p>
-  <xref type="section" href="#topic6730/top"> Return to Top </xref>
+  <xref type="section" href="#topic6730"> Return to Top </xref>
 </p>
 </section>
 </body>

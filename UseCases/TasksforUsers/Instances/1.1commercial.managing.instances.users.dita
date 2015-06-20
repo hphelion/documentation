@@ -39,7 +39,7 @@
 </ul>
 <p>You can also <xref href="../../../UseCases/TasksforUsers/IP_Addresses/1.1commercial.managing.ipaddress.dita" >associate, or assign, a floating IP address</xref> to an instance. A floating IP address makes the instance available on the external network.</p>
 <p>
-  <xref type="section" href="#topic804/top"> Return to Top </xref>
+  <xref type="section" href="#topic804"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

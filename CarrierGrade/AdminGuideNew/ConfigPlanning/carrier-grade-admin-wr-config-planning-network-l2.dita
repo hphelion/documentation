@@ -69,7 +69,7 @@ one set of VLANs with the best QoS for gold tenants</li>
 <p>Therefore, you must consider configuring the switch ports to which the management interfaces are attached to transition to the forwarding state immediately after the link goes up. This option is usually referred to as a PortFast.</p>
 <p>You should also consider configuring these ports to prevent them from participating on any STP exchanges. This is usually done by configuring them to avoid processing inbound and outbound BDPU STP packets completely. Consult your switch's manual for details.</p>
 <p>
-  <xref type="section" href="#topic2654/top"> Return to Top </xref>
+  <xref type="section" href="#topic2654"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

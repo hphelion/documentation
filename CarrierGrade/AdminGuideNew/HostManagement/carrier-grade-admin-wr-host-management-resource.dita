@@ -206,7 +206,7 @@ filter field is applied only when a specific metadata attribute is selected.</p>
 <p>
 <b>Note:</b> Changes to the retention period cause 250.001 Configuration out-of-date alarms to be raised briefly for the controller nodes. During this period, the status Config out-of-date is displayed for the controller nodes on the <b>Host</b> tab of the <b>Inventory</b> pane. These alarms are resolved and cleared automatically after a few seconds.</p>
 <p>
-  <xref type="section" href="#topic8785/top"> Return to Top </xref>
+  <xref type="section" href="#topic8785"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

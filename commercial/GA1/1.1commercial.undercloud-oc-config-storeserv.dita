@@ -114,7 +114,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic8341/top"> Return to Top </xref>
+  <xref type="section" href="#topic8341"> Return to Top </xref>
 </p>
 </section>
 <section id="expand-backend"> <title>Expand backend</title>
@@ -197,7 +197,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic8341/top"> Return to Top </xref>
+  <xref type="section" href="#topic8341"> Return to Top </xref>
 </p>
 </section>
 <section id="delete-backend"> <title>Delete backend</title>
@@ -240,7 +240,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic8341/top"> Return to Top </xref>
+  <xref type="section" href="#topic8341"> Return to Top </xref>
 </p>
 </section>
 <section id="update-overcloud"> <title>Update Overcloud</title>
@@ -443,7 +443,7 @@
 <section id="next-steps"> <title>Next Steps</title>
 <p>To use the newly added Cinder backend, create volume type and associate it with this backend using the <xref href="../../commercial/GA1/1.1commercial.map.volumetype.dita" >Horizon Overcloud Dashboard</xref> or Cinder CLI.</p>
 <p>
-  <xref type="section" href="#topic8341/top"> Return to Top </xref>
+  <xref type="section" href="#topic8341"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

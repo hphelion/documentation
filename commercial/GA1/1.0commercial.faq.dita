@@ -134,7 +134,7 @@ It is available with support for baremetal deployments (up to 30 Compute nodes).
 <section id="can-hp-helion-openstack-run-on-non-hp-hardware"> <title>Can HP Helion OpenStack(R) run on non-HP hardware?<!--Removed anchor point nonhphardware--><!-- id="nonhphardware" --></title>
 <p>Yes, provided the hardware meets the minimum specifications. We will continue to work to develop a list of third-party hardware on which the distribution is known to run.</p>
 <p>
-  <xref type="section" href="#topic7037/top"> Return to Top </xref>
+  <xref type="section" href="#topic7037"> Return to Top </xref>
 </p>
 </section>
 <section id="support-and-additional-resources"> <title>Support and additional resources</title>
@@ -170,7 +170,7 @@ You have access to:
 <p>To report issues with HP Helion OpenStack(R) please visit the <xref href="http://us-support.external.hp.com/portal/site/hpsc/public" scope="external" format="html" >HP Support Center</xref>.</p>
 <p>
 <!-- removed per JR's comment I We are hosting the support discussion forum for the edition at [https://ask.openstack.org](https://ask.openstack.org).  Developers in the community are very familiar with this forum and already participate in OpenStack(R)-related discussions there. Please tag your questions with 'HPHelion' to get our attention for any questions and issues you raise.--> 
-<xref type="section" href="#topic7037/top"> Return to Top </xref>
+<xref type="section" href="#topic7037"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 <!--

@@ -106,7 +106,7 @@ AVS.</li>
 <li>That other port is configured as usual, as a VLAN trunk port, and the tenant network's VLAN ID (10) is included in the tagged range. This ensures that VLAN 10 is common to both the passthrough/SR-IOV interface and the AVS port.</li>
 </ul>
 <p>
-  <xref type="section" href="#topic6261/top"> Return to Top </xref>
+  <xref type="section" href="#topic6261"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

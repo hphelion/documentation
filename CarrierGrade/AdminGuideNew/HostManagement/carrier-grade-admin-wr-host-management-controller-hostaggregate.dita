@@ -55,7 +55,7 @@ the <codeph>remote_storage_hosts</codeph> host aggregate. This ensures that the 
 <p>The <codeph>local_storage_hosts</codeph> and <codeph>remote_storage_hosts</codeph> memberships are updated automatically whenever a local volume group is added or removed on a compute host. For more information, see Configuring a Compute Host to Provide Local Storage.</p>
 <p>You can use host aggregates to meet special requirements. For example, you can create a pool of compute hosts to offer dedicated resources such as pinned NUMA nodes or specific huge page sizes, while grouping the remaining compute hosts to offer shared resources.</p>
 <p>
-  <xref type="section" href="#topic2139/top"> Return to Top </xref>
+  <xref type="section" href="#topic2139"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

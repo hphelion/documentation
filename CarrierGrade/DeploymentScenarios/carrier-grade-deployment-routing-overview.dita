@@ -30,7 +30,7 @@
 <p>Two end users, <codeph>user1</codeph> and <codeph>user2</codeph>, each launch an instance of the example guest image inside a virtual machine, deployed within the domain of corresponding tenants, <codeph>tenant1</codeph> and <codeph>tenant2</codeph>. Inside each instance, a user application creates a Layer 3 router configured with IP addresses and static routes.</p>
 <p>See <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-routing-deploy.dita" >Deploying the Routing Scenario</xref>.</p>
 <p>
-  <xref type="section" href="#topic1001/top"> Return to Top </xref>
+  <xref type="section" href="#topic1001"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

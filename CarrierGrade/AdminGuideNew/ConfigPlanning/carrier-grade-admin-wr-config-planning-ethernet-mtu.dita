@@ -89,7 +89,7 @@ VLAN tag is present.</p>
 <codeblock><codeph> neutron providernet-create common-net --type vlan --mtu 9216
 </codeph></codeblock>
 <p>
-  <xref type="section" href="#topic5626/top"> Return to Top </xref>
+  <xref type="section" href="#topic5626"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

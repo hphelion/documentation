@@ -20,7 +20,7 @@
 <p>You can create new instances. You can reboot, rebuild, pause, suspend any existing instance that you can access.</p>
 <p>For more information, see <xref href="../../UseCases/TasksforUsers/Instances/1.1commercial.managing.instances.users.dita" >Managing Instances with HP Helion OpenStack(R) Community</xref>.</p>
 <p>
-  <xref type="section" href="#topic4140/top"> Return to Top </xref>
+  <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
 </section>
 <section id="managing-networks"> <title>Managing networks</title>
@@ -29,7 +29,7 @@ A network is a pluggable, scalable system for managing networks and IP addresses
 <p>You can use the dashboards to create, delete, and configure your HP Helion OpenStack(R) Community network.</p>
 <p>For more information, see <xref href="../../UseCases/TasksforUsers/Networks/1.1commercial.managing.network.dita" >Managing Networks with HP Helion OpenStack(R) Community</xref>.</p>
 <p>
-  <xref type="section" href="#topic4140/top"> Return to Top </xref>
+  <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
 </section>
 <section id="managing-routers"> <title>Managing routers</title>
@@ -37,7 +37,7 @@ A network is a pluggable, scalable system for managing networks and IP addresses
 <p>You can use the dashboard to create, delete, and configure your HP Helion OpenStack(R) Community router, determine which networks connect to each router, and connect the router to an externally-available network, as needed.</p>
 <p>For more information, see <xref href="../../UseCases/TasksforUsers/Routers/1.1commercial.managing.routers.dita" >Managing Routers with HP Helion OpenStack(R) Community</xref>.</p>
 <p>
-  <xref type="section" href="#topic4140/top"> Return to Top </xref>
+  <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
 </section>
 <section id="managing-floating-ip-addresses"> <title>Managing floating IP addresses</title>
@@ -45,7 +45,7 @@ A network is a pluggable, scalable system for managing networks and IP addresses
 <p>You can use the dashboards to allocate and associate floating IP addresses to the instances on a network.</p>
 <p>For more information, see <xref href="../../UseCases/TasksforUsers/IP_Addresses/1.1commercial.managing.ipaddress.dita" >Managing Floating IP Addresses with HP Helion OpenStack(R) Community</xref>.</p>
 <p>
-  <xref type="section" href="#topic4140/top"> Return to Top </xref>
+  <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
 </section>
 <section id="managing-security"> <title>Managing security</title>
@@ -53,7 +53,7 @@ A network is a pluggable, scalable system for managing networks and IP addresses
 <p>You can use the dashboards to create, delete and configure security groups and security group rules to control access to your instance. You can also generate and import key pairs.</p>
 <p>For more information, see <xref href="../../UseCases/TasksforUsers/Security/1.1commercial.managing.security.dita" >Managing Security with HP Helion OpenStack(R) Community</xref>.</p>
 <p>
-  <xref type="section" href="#topic4140/top"> Return to Top </xref>
+  <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
 </section>
 <section id="managing-images"> <title>Managing images</title>
@@ -61,7 +61,7 @@ A network is a pluggable, scalable system for managing networks and IP addresses
 <p>You can use the dashboards to create and configure private virtual machine images.</p>
 <p>For more information, see <xref href="../../UseCases/TasksforUsers/Images/1.1commercial.managing.images.dita" >Managing Virtual Machine Images with HP Helion OpenStack(R) Community</xref>.</p>
 <p>
-  <xref type="section" href="#topic4140/top"> Return to Top </xref>
+  <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
 </section>
 <section id="managing-object-storage-containers"> <title>Managing object storage containers</title>
@@ -69,7 +69,7 @@ A network is a pluggable, scalable system for managing networks and IP addresses
 <p>You can use the dashboards to create and configure container storage instances and move files in and out of storage.</p>
 <p>For more information, see <xref href="../../UseCases/TasksforUsers/Object_Storage/1.1commercial.managing.objects.dita" >Managing Object Storage with HP Helion OpenStack(R) Community</xref>.</p>
 <p>
-  <xref type="section" href="#topic4140/top"> Return to Top </xref>
+  <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
 </section>
 <section id="managing-volumes"> <title>Managing volumes</title>
@@ -77,7 +77,7 @@ A network is a pluggable, scalable system for managing networks and IP addresses
 <p>You can create and configure volumes; create snapshots of volumes; update the metadata associated with a volume, extend the size of volumes, and attach and detach volumes from instances.</p>
 <p>For more information, see <xref href="../../UseCases/TasksforUsers/Volumes/1.1commercial.managing.volumes.dita" >Managing Block Storage Volumes with HP Helion OpenStack(R) Community</xref>.</p>
 <p>
-  <xref type="section" href="#topic4140/top"> Return to Top </xref>
+  <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

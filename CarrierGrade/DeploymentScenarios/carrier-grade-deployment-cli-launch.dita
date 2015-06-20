@@ -120,7 +120,7 @@ tenant1-routing
 </codeph></codeblock>
 <p>The instances are now running. Each one establishes a bridge or router between the last two interfaces in the command line, that is, between the tenant networks tenant1-net and internal-net.</p>
 <p>
-  <xref type="section" href="#topic5693/top"> Return to Top </xref>
+  <xref type="section" href="#topic5693"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

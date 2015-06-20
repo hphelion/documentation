@@ -120,7 +120,7 @@ Use the Volume Operations service to enable or disable services.-->
 <section id="for-more-information"> <title>For more information</title>
 <p>For more general information on how to operate your cloud, refer to the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an OpenStack(R) Cloud is put together. However, the HP Helion OpenStack(R) takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
 <p>
-  <xref type="section" href="#topic2606/top"> Return to Top </xref>
+  <xref type="section" href="#topic2606"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

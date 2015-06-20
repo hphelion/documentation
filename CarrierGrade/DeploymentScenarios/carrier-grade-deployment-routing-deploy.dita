@@ -142,7 +142,7 @@ ROUTES=(
 </p>
 <p>Once the virtual machines for both tenant users are running, you can run test traffic through the test path. For more information, see <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-running-traffic.dita" >Running Traffic Through the Test Paths</xref>.</p>
 <p>
-  <xref type="section" href="#topic5600/top"> Return to Top </xref>
+  <xref type="section" href="#topic5600"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

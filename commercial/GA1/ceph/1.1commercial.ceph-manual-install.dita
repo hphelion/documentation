@@ -1495,7 +1495,7 @@ restrict 192.168.51.0 mask 255.255.255.0 notrust
 <p>
 <xref href="../../../commercial/GA1/ceph/1.1commercia.ceph-high-availability-RADOSGW-authentication.dita" >Ceph Authentication</xref>.</p>
 <p>
-  <xref type="section" href="#topic42821/top"> Return to Top </xref>
+  <xref type="section" href="#topic42821"> Return to Top </xref>
 </p>
 </section>
 </body>

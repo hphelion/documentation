@@ -215,7 +215,7 @@ The Persister consumes the "alarm-state-transitioned-event" from the Message Que
 <li>Vertica (http://www.vertica.com): A commercial Enterprise class SQL analytics database that is highly scalable. It offers built-in automatic high-availability and excels at in-database analytics and compressing and storing massive amounts of data. In the HP Public Cloud we use Vertica in a number of areas such as metrics and many other data streams. Currently, we process around 25 K metrics/sec and store them for &gt; 13 month data retention periods. A free version of Vertica that can store up to 1 TB of data with no time-limit is available at, https://my.vertica.com/community/.</li>
 </ul>
 <p>
-  <xref type="section" href="#topic12031/top"> Return to Top </xref>
+  <xref type="section" href="#topic12031"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

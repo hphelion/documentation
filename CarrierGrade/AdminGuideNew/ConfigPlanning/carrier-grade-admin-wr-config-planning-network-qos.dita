@@ -36,7 +36,7 @@ overflow limits.</p>
 <p>QoS policies are created by the cluster administrator, and selected by the tenant users to apply on a per-tenant network basis.</p>
 <p>To create a new QoS policy, see <xref href="../Networks/carrier-grade.dashboard.network.qos.dita" >Creating QOS Policies</xref>.</p>
 <p>
-  <xref type="section" href="#topic1002/top"> Return to Top </xref>
+  <xref type="section" href="#topic1002"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

@@ -98,7 +98,7 @@ export OS_USER_DOMAIN_NAME=Default
 </codeblock>
 <p>OSC is using self-documenting approach. Use the <codeph>openstack --help</codeph> command to get list of available commands, and <codeph>openstack help &lt;cmd&gt;</codeph> to get help on a specific command.</p>
 <p>
-  <xref type="section" href="#topic3381/top"> Return to Top </xref>
+  <xref type="section" href="#topic3381"> Return to Top </xref>
 </p>
 </body>
 </topic>

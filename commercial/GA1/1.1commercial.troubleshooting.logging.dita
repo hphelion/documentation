@@ -110,7 +110,7 @@ yellow logstash-2015.02.11 5 1 27471823 0 13.6gb 13.6gb
 <p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref>.</p>
 <p>Before contacting HP Customer Support, <xref href="../../commercial/GA1/1.1commercial.troubleshooting.dita#sos" >run the <codeph>run-sosreport</codeph> command</xref> on the affected system.</p>
 <p>
-  <xref type="section" href="#topic2924/top"> Return to Top </xref>
+  <xref type="section" href="#topic2924"> Return to Top </xref>
 </p>
 </section>
 </body>

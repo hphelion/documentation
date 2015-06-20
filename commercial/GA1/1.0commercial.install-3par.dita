@@ -70,7 +70,7 @@ onLoad="window.refresh"
 </p>
 <p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack(R) command-line clients</xref>.</p>
 <p>
-  <xref type="section" href="#topic3166/top"> Return to Top </xref>
+  <xref type="section" href="#topic3166"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

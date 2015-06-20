@@ -46,7 +46,7 @@
 <p>Guest VLANs are implemented using available segmentation ranges from suitable provider networks, just as it is done when new tenant networks are created. Therefore all network design considerations regarding the configuration of L2 switches and the Neutron allocation strategy, described in <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-tenant.dita" >Planning the Tenant Networks</xref> must be taken into consideration.</p>
 <p>Additionally, note that the AVS will silently discard incoming VLAN-tagged VM traffic with unknown VLAN IDs, that is, with VLAN IDs not defined as guest VLANs on the particular tenant network.</p>
 <p>
-  <xref type="section" href="#topic3428/top"> Return to Top </xref>
+  <xref type="section" href="#topic3428"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

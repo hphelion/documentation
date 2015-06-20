@@ -156,7 +156,7 @@ See [Overview of the DNS as a Service](/helion/openstack/carrier/install/dnsaas/
 <p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref>. The <b>Architecture</b> section contains useful information about how an OpenStack(R) Cloud is put together. However, HP Helion OpenStack(R) takes care of these details for you. The <b>Operations</b> section contains information on how to manage the system.</p>
 <p>For more information on installing the command-line interface for interacting with services, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >installing the OpenStack(R) command-line clients</xref>.</p>
 <p>
-  <xref type="section" href="#topic4220/top"> Return to Top </xref>
+  <xref type="section" href="#topic4220"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

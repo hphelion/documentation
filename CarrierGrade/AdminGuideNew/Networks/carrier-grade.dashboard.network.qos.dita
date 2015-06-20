@@ -79,7 +79,7 @@ overflow limits.</p>
 <p>The handling of the scheduler weight is implemented as a per-packet token bucket for each tenant network. This means that each unit in the scheduler weight counts as one packet to be processed in sequence. In the previous example, the AVS processes 10 consecutive packets from tenant network A, followed by 100 packets from tenant network B. This implementation ensures a fair-share behavior that prevents any tenant network from running into total bandwidth starvation, even if its scheduler weight is relatively low.</p>
 <p>The range of values for the scheduler weight is arbitrary. You must however ensure that the values assigned to the different policies make sense for the intended applications.</p>
 <p>
-  <xref type="section" href="#topic4717/top"> Return to Top </xref>
+  <xref type="section" href="#topic4717"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

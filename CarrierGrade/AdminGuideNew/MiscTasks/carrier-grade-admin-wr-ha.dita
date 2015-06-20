@@ -78,7 +78,7 @@ machine instance.</p>
 <p>As with any other application, HA-aware applications benefit from the hardware and virtual machine monitoring processes, which provide them with automatic restart upon failures. When coupled with [server groups])/helion/commercial/carrier/dashboard/managing/groups/), they also benefit from the anti-affinity options to ensure that hot/standby running applications are protected against hardware failures.</p>
 <p>HA-aware applications also benefit from internal tenant networks on top of which the application's HA framework, and any journaling framework it may use, can be deployed.</p>
 <p>
-  <xref type="section" href="#topic6927/top"> Return to Top </xref>
+  <xref type="section" href="#topic6927"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

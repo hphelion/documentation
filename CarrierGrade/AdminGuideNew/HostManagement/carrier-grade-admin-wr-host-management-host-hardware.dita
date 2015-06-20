@@ -130,7 +130,7 @@ consists of the following elements:</p>
 <section id="memory"> <title>Memory Profiles</title>
 <p>A memory profile is a named assignment of huge pages for use as VM memory. For more information, see Creating and Using Memory Profiles.</p>
 <p>
-  <xref type="section" href="#topic4214/top"> Return to Top </xref>
+  <xref type="section" href="#topic4214"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -53,7 +53,7 @@ VM, or by defining an image with the required metadata property.</p>
 </codeblock>
 <p>Note that if you use image metadata to request a page size, the image is unable to access a large page unless the setting for the flavor is also large or any.</p>
 <p>
-  <xref type="section" href="#topic2388/top"> Return to Top </xref>
+  <xref type="section" href="#topic2388"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

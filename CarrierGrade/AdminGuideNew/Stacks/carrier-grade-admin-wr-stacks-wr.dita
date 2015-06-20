@@ -300,7 +300,7 @@ before internal_network is created.</p>
 <p>
 <codeph>OS::Neutron::QoSPolicy</codeph> - Defines a packet scheduling weight that can be referenced by a tenant network (OS::Neutron::Net).</p>
 <p>
-  <xref type="section" href="#topic9186/top"> Return to Top </xref>
+  <xref type="section" href="#topic9186"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

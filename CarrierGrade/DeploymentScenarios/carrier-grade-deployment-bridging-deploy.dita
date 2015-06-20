@@ -158,7 +158,7 @@ BRIDGE_PORTS="eth0,eth1.5"
 <p>
 <b>Note:</b> To complete the deployment scenarios, this task must be repeated as user2, substituting appropriate names. Once the virtual machines for both tenant users are running, you can run test traffic through the test path. For more information, see <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-running-traffic.dita" >Running Traffic Through the Test Paths</xref>.</p>
 <p>
-  <xref type="section" href="#topic6719/top"> Return to Top </xref>
+  <xref type="section" href="#topic6719"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

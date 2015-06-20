@@ -37,7 +37,7 @@
 <p>VXLAN provider networks are an alternative to VLAN provider networks when VM L2 connectivity is required across separate Layer 2 network segments separated by one or more Layer 3 routers.</p>
 <p>The steps in this section describe how to set up a VXLAN provider network and add segmentation ranges using the web administration interface. For information about using CLI commands, see <xref href="../VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting.dita" >Setting Up a VXLAN Provider Network Using the CLI</xref>.</p>
 <p>
-  <xref type="section" href="#topic1066/top"> Return to Top </xref>
+  <xref type="section" href="#topic1066"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

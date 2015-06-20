@@ -134,7 +134,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic7865/top"> Return to Top </xref>
+  <xref type="section" href="#topic7865"> Return to Top </xref>
 </p>
 </section>
 <section id="shrink-backend"> <title>Shrink backend</title>
@@ -187,7 +187,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic7865/top"> Return to Top </xref>
+  <xref type="section" href="#topic7865"> Return to Top </xref>
 </p>
 </section>
 <section id="generate-config"> <title>Generate configuration</title>
@@ -300,7 +300,7 @@
 <section id="next-steps"> <title>Next Steps</title>
 <p>To use the newly added Cinder backend, create volume type and associate it with this backend using <xref href="../../../commercial/GA1/carrier-grade-map.volumetype.dita" >Horizon Overcloud Dashboard</xref> or Cinder CLI.</p>
 <p>
-  <xref type="section" href="#topic7865/top"> Return to Top </xref>
+  <xref type="section" href="#topic7865"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

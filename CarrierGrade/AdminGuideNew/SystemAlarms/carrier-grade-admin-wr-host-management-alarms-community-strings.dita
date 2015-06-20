@@ -85,7 +85,7 @@
 </codeblock>
 <p>In this example, 10.10.10.100 is the HP Helion OpenStack(R) Carrier Grade's OAM floating IP address. The output, which is a large file, is redirected to the file oids.txt.</p>
 <p>
-  <xref type="section" href="#topic2364/top"> Return to Top </xref>
+  <xref type="section" href="#topic2364"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

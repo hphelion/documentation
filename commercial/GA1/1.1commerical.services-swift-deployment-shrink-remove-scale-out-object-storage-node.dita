@@ -166,7 +166,7 @@ sudo -i
 <b>Note:</b> If you receive warnings from Icinga after node removal, see <xref href="../../commercial/GA1/1.1commercial.troubleshooting.overcloud.dita" >Troubleshooting Node Removal</xref>
 </p>
 <p>
-  <xref type="section" href="#topic5065/top"> Return to Top </xref>
+  <xref type="section" href="#topic5065"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -254,7 +254,7 @@ one at a time.</p>
 <p>The HP Helion OpenStack(R) Carrier Grade sever is fully restored. The state of the system, including storage resources and virtual machines, is identical to the state the cluster was in when the backup procedure took place.</p>
 <p>Remember however, that passwords for local user accounts must be restored manually since they are not included as part of the backup and restore procedures. For more information, see [Linux User Accounts].</p>
 <p>
-  <xref type="section" href="#topic8612/top"> Return to Top </xref>
+  <xref type="section" href="#topic8612"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

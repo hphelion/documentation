@@ -115,7 +115,7 @@ fudge 127.127.1.0 stratum 10
 If your client (including your NTP server) has trouble syncing time, see [Troubleshooting NTP](/helion/openstack/1.1/services/troubleshooting/ntp#synch).
 -->
 <p>
-  <xref type="section" href="#topic4740/top"> Return to Top </xref>
+  <xref type="section" href="#topic4740"> Return to Top </xref>
 </p>
 </section>
 </body>

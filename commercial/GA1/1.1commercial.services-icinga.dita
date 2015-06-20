@@ -151,7 +151,7 @@ Cause/Resolution
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic6584/top"> Return to Top </xref>
+  <xref type="section" href="#topic6584"> Return to Top </xref>
 </p>
 </section>
 <section id="replication"> <title>Monitor Node Replication Status using Icinga</title>
@@ -229,7 +229,7 @@ Cause/Resolution
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic6584/top"> Return to Top </xref>
+  <xref type="section" href="#topic6584"> Return to Top </xref>
 </p>
 </section>
 <section id="health"> <title>Monitoring the Health of Services using Icinga</title>
@@ -315,7 +315,7 @@ Cause/Resolution
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic6584/top"> Return to Top </xref>
+  <xref type="section" href="#topic6584"> Return to Top </xref>
 </p>
 
 </section>

@@ -139,7 +139,7 @@ or [Sirius client](/helion/openstack/carrier/sirius/cli/workflow/). --></p>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic5667/top"> Return to Top </xref>
+  <xref type="section" href="#topic5667"> Return to Top </xref>
 </p>
 </section>
 <section id="edit-cluster"> <title>Edit a StoreVirtual cluster</title>
@@ -198,7 +198,7 @@ or [Sirius client](/helion/openstack/carrier/sirius/cli/workflow/). --></p>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic5667/top"> Return to Top </xref>
+  <xref type="section" href="#topic5667"> Return to Top </xref>
 </p>
 </section>
 <section id="unregister-multiple-clusters"> <title>Unregister multiple clusters</title>
@@ -251,7 +251,7 @@ or [Sirius client](/helion/openstack/carrier/sirius/cli/workflow/). --></p>
   <xref href="../VSA/carrier.undercloud-oc-config-storevirtual.dita" >Working with StoreVirtual Backends</xref>
 </p>
 <p>
-  <xref type="section" href="#topic5667/top"> Return to Top </xref>
+  <xref type="section" href="#topic5667"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

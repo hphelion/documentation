@@ -61,7 +61,7 @@ nova quota-update ${tenant2_UUID} --instances 20 -- cores 40 \
           two additional tenants are available now, with quotas established.</p></li>
 </ol>
 <p>
-  <xref type="section" href="#topic1723/top"> Return to Top </xref>
+  <xref type="section" href="#topic1723"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

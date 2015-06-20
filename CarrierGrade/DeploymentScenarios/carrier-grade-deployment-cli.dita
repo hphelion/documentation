@@ -100,7 +100,7 @@ awk '{print $2}'`
 source command to invoke the scripts.</p>
 <p>For more information on login accounts, see the <i>HP Helion OpenStack(R) Carrier Grade Installation Guide: About Login Accounts</i>.</p>
 <p>
-  <xref type="section" href="#topic4448/top"> Return to Top </xref>
+  <xref type="section" href="#topic4448"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -96,7 +96,7 @@ Configuring the OpenStack(R) Compute service is sufficient for Helion administra
 <section id="managing-the-database"> <title>Managing the Database</title>
 <p>The Database service provides scalable and reliable cloud provisioning functionality for both relational and non-relational database engines. Helion supports the OpenStack(R)</p>
 <p>
-  <xref type="section" href="#topic5798/top"> Return to Top </xref>
+  <xref type="section" href="#topic5798"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -50,7 +50,7 @@ hosts.</li>
 On a compute node in Available or Degraded state, the transition triggers the live migration of the active instances to another available compute node.</li>
 </ul>
 <p>
-  <xref type="section" href="#topic2992/top"> Return to Top </xref>
+  <xref type="section" href="#topic2992"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

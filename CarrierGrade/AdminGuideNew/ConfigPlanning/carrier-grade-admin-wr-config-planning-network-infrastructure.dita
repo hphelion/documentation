@@ -44,7 +44,7 @@
 </ul>
 <p>In addition to the number of compute nodes, other factors must be taken into account when deciding the type of infrastructure network to use. For example, live migration of large, memory-intensive, guest applications is likely to require additional network resources that might not be available in the current configuration. It is always safe toimplement the fastest infrastructure network possible.</p>
 <p>
-  <xref type="section" href="#topic1895/top"> Return to Top </xref>
+  <xref type="section" href="#topic1895"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

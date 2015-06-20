@@ -51,7 +51,7 @@
 <p>Compute uses a metadata service for virtual machine instances to retrieve instance-specific data.</p>
 <p>You can add and remove metadata for flavors, see <xref href="../MiscTasks/carrier-grade.dashboard.metadata.dita" >Managing Metadata</xref>.</p>
 <p>
-  <xref type="section" href="#topic1315/top"> Return to Top </xref>
+  <xref type="section" href="#topic1315"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

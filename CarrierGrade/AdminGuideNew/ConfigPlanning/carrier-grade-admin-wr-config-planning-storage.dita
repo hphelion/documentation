@@ -80,7 +80,7 @@ Carrier Grade implementation:</p>
 </ul>
 <p>To instantiate VMs on compute nodes configured for local storage, see <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.vcpu.storage.dita" >Specifying Local Storage for a VM</xref>.</p>
 <p>
-  <xref type="section" href="#topic4650/top"> Return to Top </xref>
+  <xref type="section" href="#topic4650"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

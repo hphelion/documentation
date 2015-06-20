@@ -184,7 +184,7 @@
 <section id="next"> <title>Next step</title>
 <p>For more information of Hardware configurations see the <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >Support Matrix</xref>.</p>
 <p>
-  <xref type="section" href="#topic3485/top"> Return to Top </xref>
+  <xref type="section" href="#topic3485"> Return to Top </xref>
 </p>
 <!--
 ### Backup and Restore nodes {#backup-restore-nodes}

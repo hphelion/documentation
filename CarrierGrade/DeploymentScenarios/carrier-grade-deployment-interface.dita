@@ -37,7 +37,7 @@ described in these scenarios.</p>
 <p>The deployment scenarios demonstrate the use of AVP interfaces with three types of virtualized network functions (VNFs): a Linux bridge, a DPDK-accelerated bridge, and a router. This illustrates the flexibility provided by HP Helion OpenStack(R) Carrier Grade to adapt to different deployment scenarios.</p>
 <p>The port assignments for the interfaces are based on the order in which the interfaces are arranged in the web administration interface, or defined in the command-line interface, when the instance is launched. The type of virtual network interface for each port is selected from a list in the web administration interface, or encoded in a <codeph>vif-model</codeph> attribute on the command line.</p>
 <p>
-  <xref type="section" href="#topic1837/top"> Return to Top </xref>
+  <xref type="section" href="#topic1837"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

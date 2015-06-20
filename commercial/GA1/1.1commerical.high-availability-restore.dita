@@ -451,7 +451,7 @@ bash -x ~root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --boot-se
     Wait the server start up and stabilize the instances should start automatically.
 -->
 <p>
-  <xref type="section" href="#topic6842/top"> Return to Top </xref>
+  <xref type="section" href="#topic6842"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

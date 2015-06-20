@@ -204,7 +204,7 @@ where:
 <p>To ensure that a given host NUMA node can support the VM requirements, you can review the CPU and memory complements for host NUMA nodes.</p>
 <p>To view the CPU complement for a NUMA Node (that is, for a socketed physical processor), use the vm-topology command.</p>
 <p>
-  <xref type="section" href="#topic6788/top"> Return to Top </xref>
+  <xref type="section" href="#topic6788"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

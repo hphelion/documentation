@@ -38,7 +38,7 @@
 <b>Note:</b> To highlight DPDK and AVP performance without additional Layer 3 routing or application overhead, the Bridging Scenario uses a VM to bridge two tenant networks. This configuration can cause Spanning Tree Protocol (STP) failures in Layer 2 switches connected to the networks. Disabling STP on the switches, or on the bridged tenant network VLANs, is recommended.</p>
 <p>See <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-deploy.dita" >Deploying the Bridging Scenario</xref>.</p>
 <p>
-  <xref type="section" href="#topic2036/top"> Return to Top </xref>
+  <xref type="section" href="#topic2036"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

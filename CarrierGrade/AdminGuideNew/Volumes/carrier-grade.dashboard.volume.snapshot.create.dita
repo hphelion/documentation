@@ -38,7 +38,7 @@
 <p>When you create a snapshot, by default the snapshot image can be used only with the current project.</p>
 <p>You can <xref href="../Images/carrier-grade.dashboard.images.public.dita" >make the snapshot public</xref> for use in all projects in the domain and you can <xref href="../Images/carrier-grade.dashboard.snapshot.protect.dita" >protect the image</xref> from being deleted.</p>
 <p>
-  <xref type="section" href="#topic1270/top"> Return to Top </xref>
+  <xref type="section" href="#topic1270"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

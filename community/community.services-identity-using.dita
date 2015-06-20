@@ -153,7 +153,7 @@ Use the Identity service to reset a password for a user.
 <section id="for-more-information"> <title>For more information</title>
 <p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref>. <!-- The *Architecture* section contains useful information about how an OpenStack(R) Cloud is put together. However, the HP Helion OpenStack(R) takes care of these details for you. The *Operations* section contains information on how to manage the system.--></p>
 <p>
-  <xref type="section" href="#topic5347/top"> Return to Top </xref>
+  <xref type="section" href="#topic5347"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

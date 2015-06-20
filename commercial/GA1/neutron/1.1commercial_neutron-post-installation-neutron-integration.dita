@@ -555,7 +555,7 @@ OVERCLOUD_SWIFT_PASSWORD=&lt;password&gt;
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic14425/top"> Return to Top </xref>
+  <xref type="section" href="#topic14425"> Return to Top </xref>
 </p>
 </section>
 <section id="configure-dhcp"> <title>Configure DHCP agent</title>
@@ -605,7 +605,7 @@ OVERCLOUD_SWIFT_PASSWORD=&lt;password&gt;
 <i>OpenStack(R) Administrator Guide</i>
 </b>, Advanced operational features.</p>
 <p>
-  <xref type="section" href="#topic14425/top"> Return to Top </xref>
+  <xref type="section" href="#topic14425"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

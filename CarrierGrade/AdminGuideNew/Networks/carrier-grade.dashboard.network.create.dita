@@ -105,7 +105,7 @@
 <p>The network is deleted and any instances attached to the networks are disconnected.</p>
 
 <p>
-<xref type="section" href="#topic4189/top"> Return to Top </xref>
+<xref type="section" href="#topic4189"> Return to Top </xref>
 </p>
 
 </section>
@@ -131,7 +131,7 @@ where `router_id` is the name or UUID of the router, and `externalnet_id` is the
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic4189/top"> Return to Top </xref>
+  <xref type="section" href="#topic4189"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

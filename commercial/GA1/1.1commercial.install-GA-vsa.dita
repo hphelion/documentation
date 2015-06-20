@@ -234,7 +234,7 @@ java -jar UI.jar
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic14809/top"> Return to Top </xref>
+  <xref type="section" href="#topic14809"> Return to Top </xref>
 </p>
 </section>
 <section id="deploy-vsa"> <title>Deploying HP StoreVirtual VSA</title>
@@ -359,7 +359,7 @@ java -jar UI.jar
  <!--   **Note**: While deploying a scale-out **proxy** node ensure that the value of `vsa_scale` is unchanged. While deploying a scale-out **object** node ensure that the value of `vsa_ao_scale` is unchanged.-->
 <b>NOTE</b>: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/VM  other than the storage systems in the SAN.</p>
 <p>
-  <xref type="section" href="#topic14809/top"> Return to Top </xref>
+  <xref type="section" href="#topic14809"> Return to Top </xref>
 </p>
 </section>
 <section id="setting-the-public-interface-parameter"> <title>Setting the public interface parameter</title>
@@ -537,7 +537,7 @@ from the above steps.</p>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic14809/top"> Return to Top </xref>
+  <xref type="section" href="#topic14809"> Return to Top </xref>
 </p>
 </section>
 <section id="adding-a-node"> <title>Adding HP StoreVirtual VSA System to an existing Management Group</title>
@@ -584,7 +584,7 @@ from the above steps.</p>
 <p>
 <xref href="../../commercial/GA1/1.1commercial.undercloud-storage-storevirtual.dita" >Working with HP StoreVirtual VSA</xref> REQUIRED</p>
 <p>
-  <xref type="section" href="#topic14809/top"> Return to Top </xref>
+  <xref type="section" href="#topic14809"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

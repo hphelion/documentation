@@ -134,7 +134,7 @@ existing values in the environment file or the template.</li>
 <section id="wind-river-linux-extensions-to-heat"> <title>Wind River Linux Extensions to Heat</title>
 <p>Several extensions to Heat are included with Wind River Linux. For more information, see <xref href="../Stacks/carrier-grade-admin-wr-stacks-wr.dita" >Extensions to Heat</xref>.</p>
 <p>
-  <xref type="section" href="#topic5192/top"> Return to Top </xref>
+  <xref type="section" href="#topic5192"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

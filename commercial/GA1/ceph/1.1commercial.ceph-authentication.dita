@@ -236,7 +236,7 @@ service nova-conductor restart
   <xref href="../../../commercial/GA1/ceph/1.1commercial-ceph-hp-helion-openstack-ceph-configuration.dita" >Ceph Configuration</xref>
 </p>
 <p>
-  <xref type="section" href="#topic6100/top"> Return to Top </xref>
+  <xref type="section" href="#topic6100"> Return to Top </xref>
 </p>
 </section>
 </body>

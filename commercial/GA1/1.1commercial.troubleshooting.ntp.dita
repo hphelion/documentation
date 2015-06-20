@@ -66,7 +66,7 @@ sudo nmap -p123 -sU -P0 &lt;localhost | known ntp host&gt;
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic997/top"> Return to Top </xref>
+  <xref type="section" href="#topic997"> Return to Top </xref>
 </p>
 </section>
 </body>

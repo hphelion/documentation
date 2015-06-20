@@ -79,7 +79,7 @@
 </ol>
 <p>A message is displayed on successful creation.</p>
 <p>
-  <xref type="section" href="#topic4091/top"> Return to Top </xref>
+  <xref type="section" href="#topic4091"> Return to Top </xref>
 </p>
 </section>
 <section id="editflavor"> <title>Edit a flavor</title>
@@ -113,14 +113,14 @@
 </ol>
 <p>A message is displayed on successful edit.</p>
 <p>
-  <xref type="section" href="#topic4091/top"> Return to Top </xref>
+  <xref type="section" href="#topic4091"> Return to Top </xref>
 </p>
 </section>
 <section id="editmeta"> <title>Managing Metadata</title>
 <p>Compute uses a metadata service for virtual machine instances to retrieve instance-specific data.</p>
 <p>You can add and remove metadata for flavors, see <xref href="../MiscTasks/carrier-grade.dashboard.metadata.dita" >Managing Metadata</xref>.</p>
 <p>
-  <xref type="section" href="#topic4091/top"> Return to Top </xref>
+  <xref type="section" href="#topic4091"> Return to Top </xref>
 </p>
 </section>
 <section id="extra"> <title>Creating extra specifications</title>
@@ -153,7 +153,7 @@
 </ol>
 <p>A message is displayed on successful delete.</p>
 <p>
-  <xref type="section" href="#topic4091/top"> Return to Top </xref>
+  <xref type="section" href="#topic4091"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
