@@ -498,7 +498,7 @@
     <topicref href="community/community.verify.dita"/>
   </topicref>
   <topicref href="devplatform/1.2/1.2devplatform.index.dita"
-    navtitle="HP Helion 1.2 Development Platform " locktitle="yes">//OASIS//DTD DITA Topic//EN"
+    navtitle="HP Helion 1.2 Development Platform " locktitle="yes"> <!--//OASIS//DTD DITA Topic//EN"-->
     <!--permalink: /helion/devplatform/1.2/3rd-party-license-agreements/-->
     <topicref href="devplatform/1.2/1.2devplatform.thirdparty.licensing.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
