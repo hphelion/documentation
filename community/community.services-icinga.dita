@@ -129,7 +129,7 @@
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic6490/top"> Return to Top </xref>
+  <xref href="#topic6490"> Return to Top </xref>
 </p>
 </section>
 <section id="repication"> <title>Monitor Node Replication Status using Icinga</title>
@@ -205,7 +205,7 @@
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic6490/top"> Return to Top </xref>
+  <xref href="#topic6490"> Return to Top </xref>
 </p>
 </section>
 <section id="health"> <title>Monitoring the Health of Services using Icinga</title>
@@ -286,7 +286,7 @@
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic6490/top"> Return to Top </xref>
+  <xref href="#topic6490"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

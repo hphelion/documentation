@@ -711,7 +711,7 @@ Aborting.
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic19352/top"> Return to Top </xref>
+  <xref href="#topic19352"> Return to Top </xref>
 </p>
 <!-- Not needed?
 1. Make sure that DRS is enabled on the cluster on which 1.01 version of OVSvApp will be installed:

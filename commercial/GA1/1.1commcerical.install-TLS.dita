@@ -101,7 +101,7 @@ export EPHEMERAL_CA_CERT_FILE=/root/&lt;company-cacert.crt&gt;
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic6223/top"> Return to Top </xref>
+  <xref href="#topic6223"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 <!-- Sources:

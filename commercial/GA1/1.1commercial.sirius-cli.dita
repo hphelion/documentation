@@ -84,7 +84,7 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic7877/top"> Return to Top </xref>
+  <xref href="#topic7877"> Return to Top </xref>
 </p>
 </section>
 <section id="hp-storevirtual-commands"> <title>HP StoreVirtual Commands<!--Removed anchor point storevirtual-commands--><!-- id="storevirtual-commands" --></title>
@@ -152,7 +152,7 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic7877/top"> Return to Top </xref>
+  <xref href="#topic7877"> Return to Top </xref>
 </p>
 </section>
 <section id="hp-storeserv-commands"> <title>HP StoreServ Commands<!--Removed anchor point hp-storeserv-commands--><!-- id="hp-storeserv-commands" --></title>
@@ -287,7 +287,7 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic7877/top"> Return to Top </xref>
+  <xref href="#topic7877"> Return to Top </xref>
 </p>
 </section>
 <section id="required-options"> <title>Required Options</title>
@@ -405,7 +405,7 @@ The endpoint type of OpenStack(R) Defaults to env[OS_ENDPOINT_TYPE].
     
     -??-os-endpoint-type OS_ENDPOINT_TYPE  -->
 <p>
-  <xref type="section" href="#topic7877/top"> Return to Top </xref>
+  <xref href="#topic7877"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

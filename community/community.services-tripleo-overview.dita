@@ -35,7 +35,7 @@
 <section id="for-more-information"> <title>For more information</title>
 <p>For information on TripleO, see the official <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" >OpenStack(R) TripleO wiki</xref>.</p>
 <p>
-  <xref type="section" href="#topic1948/top"> Return to Top </xref>
+  <xref href="#topic1948"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

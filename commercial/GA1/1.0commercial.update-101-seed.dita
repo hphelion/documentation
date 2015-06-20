@@ -165,7 +165,7 @@ Perform these basic tests to verify that the environment settings have been rest
 <section id="next-steps"> <title>Next Steps</title>
 <p>Update the undercloud. For installation instructions, see <xref href="../../commercial/GA1/1.0commercial.update-101-undercloud.dita" >Updating the Undercloud</xref>.</p>
 <p>
-  <xref type="section" href="#topic4522/top"> Return to Top </xref>
+  <xref href="#topic4522"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
