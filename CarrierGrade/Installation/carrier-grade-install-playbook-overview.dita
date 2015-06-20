@@ -11,7 +11,7 @@
             <othermeta name="layout" content="default"/>
         </metadata>
     </prolog>
-    <body><section id="top" />
+    <body>
 
         <p>This document describes the installation process for HP Helion OpenStack Carrier Grade in a baremetal environment.</p> 
         <section><title>About the installation</title> 

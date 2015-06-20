@@ -13,7 +13,7 @@
 <othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
 </metadata>
 </prolog>
-<body><section id="top" />
+<body>
 <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-create.md--><!--permalink: /helion/openstack/carrier/admin/stacks/--></p>
 <p>You can create a stack (or service) using the web administration interface, or you can use the command-line interface.</p>
 <!-- ===================== horizontal rule ===================== -->

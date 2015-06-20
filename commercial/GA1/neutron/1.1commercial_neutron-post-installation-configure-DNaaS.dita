@@ -19,7 +19,7 @@
             <othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
         </metadata>
     </prolog>
-    <body><section id="top" />
+    <body>
         <p><!--PUBLISHED--><!--./commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.md--><!--permalink: /helion/openstack/1.1/services/neutron/post/installation/configure-dnsaas/--></p>
         <p>Our managed DNS service, based on the OpenStack Designate project, is engineered to help
             you create, publish, and manage your DNS zones and records securely and efficiently to
