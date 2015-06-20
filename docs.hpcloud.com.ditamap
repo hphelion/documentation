@@ -506,7 +506,7 @@
     <topicref href="community/community.verify.dita"/>
   </topicref>
   <topicref href="devplatform/1.2/1.2devplatform.index.dita"
-    navtitle="HP Helion 1.2 Development Platform ">
+    navtitle="HP Helion 1.2 Development Platform " locktitle="yes">
     <!--permalink: /helion/devplatform/1.2/3rd-party-license-agreements/-->
     <topicref href="devplatform/1.2/1.2devplatform.thirdparty.licensing.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
@@ -668,6 +668,8 @@
     <topicref href="devplatform/1.2/helion/1.2index.dita" locktitle="yes"
       navtitle="Application Lifecycle Service Documentation">
       <!--permalink: /helion/devplatform/1.2/als/admin/-->
+      <topicref href="devplatform/1.2/helion/CLI/1.2constructor_vm.dita"
+        navtitle="ALS Constructor VM" locktitle="yes"/>
       <topichead navtitle="ALS Management Console">
         <topicref href="devplatform/1.2/helion/admin/console/1.2index.dita" locktitle="yes"
           navtitle="Management Console (Admin View)"/>
