@@ -7,7 +7,7 @@
 <othermeta name="layout" content="default"/>
 </metadata>
 </prolog>
-<body>
+<body><section id="top" />
 <p><!--UNDER REVISION--><!--./CarrierGrade/AdminGuideNew/Volumes/carrier-grade.dashboard.volume.type.md--><!--permalink: /helion/commercial/carrier/dashboard/managing/volume/type/--></p>
 <p>A volume type defines the characteristics of a volume. It usually maps to a set of capabilities of the storage back-end driver that is used for this volume.</p>
 <section id="create-a-volume-type"> <title>Create a volume type</title>

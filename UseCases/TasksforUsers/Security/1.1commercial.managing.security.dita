@@ -7,7 +7,7 @@
 <othermeta name="layout" content="default"/>
 </metadata>
 </prolog>
-<body>
+<body><section id="top" />
 <p>
 <!--UNDER REVISION-->
  <!--./UseCases/TasksforUsers/Security/1.1commercial.managing.security.md-->

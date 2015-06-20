@@ -13,7 +13,7 @@
             <othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
         </metadata>
     </prolog>
-    <body>
+    <body><section id="top" />
         <!--UNDER REVISION-->
         <!--permalink: /helion/openstack/carrier/admin/stacks/sample/template/-->
         <p>You can evaluate selected features of Heat using sample templates included with HP Helion
