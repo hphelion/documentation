@@ -20,7 +20,7 @@
 <othermeta name="product-version2" content="HP Helion OpenStack(R) 2.0"/>
 </metadata>
 </prolog>
-<body>
+<body><section id="top" />
 <p>
 <!--UNDER REVISION-->
  <!--./commercial/GA1/2.0commercial.services-monasca.md-->

@@ -7,7 +7,7 @@
 <othermeta name="layout" content="default"/>
 </metadata>
 </prolog>
-<body>
+<body><section id="top" />
 <p>
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.users.enable.md-->
