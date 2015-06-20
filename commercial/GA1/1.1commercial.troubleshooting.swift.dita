@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.swift.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/swift/--></p>
-<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of LinuxÂ(R) provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of Linuxï¿½(R) provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <ul>
 <li>
 <xref type="section" href="#topic8875/S3">Cannot create storage containers using Amazon S3 API</xref>
@@ -56,7 +56,7 @@
 <p>
   <b>Resolution</b>
 </p>
-<p>Create containers using the <xref href="../../commercial/GA1/1.1commerical.services-object-overview.dita" >Helion OpenStack(R) Object Storage Service</xref> through the Swift APIs or the Horizon dashboard.</p>
+<p>Create containers using the <xref href="1.1commerical.services-object-overview.dita" >Helion OpenStack(R) Object Storage Service</xref> through the Swift APIs or the Horizon dashboard.</p>
 </section>
 <section id="refreshfails"> <title>Scale-out nodes : os-refresh-configuration fails on Controller Nodes</title>
 <p>
