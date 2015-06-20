@@ -58,30 +58,18 @@ instructions further down. But before you push the button, ensure that you have 
 </li>
 <li>
 <p>Ensure that you are targeting your desired environment.  <!--A BR tag was used here in the original source.--> If you are not, execute</p>
-
-<codeblock>
-<codeph>helion target https://api.xx.xx.xx.xx.xip.io    
-</codeph>
-</codeblock>
+<codeph>helion target https://api.xx.xx.xx.xx.xip.io</codeph>
 </li>
 <li>
 <p>Ensure that you are logged in to your desired environment.  <!--A BR tag was used here in the original source.-->If you are not, execute</p>
-
-<codeblock>
-<codeph>helion login
-</codeph>
-</codeblock>
+<codeph>helion login</codeph>
 </li>
 <li>
 <p>If you are not already there, <codeph>cd</codeph> to the root directory of the sample.</p>
 </li>
 <li>
 <p>Deploy the application by using the command:</p>
-
-<codeblock>
-<codeph>helion push 
-</codeph>
-</codeblock>
+<codeph>helion push</codeph>
 </li>
 <li>
 <p>Accept any default values that you may be prompted for. <!--A BR tag was used here in the original source.--><b>Note</b>: By default, ALS Clusters are configured with two domains (private and public).  In some situations, the Helion CLI may prompt you to select a target domain.  If prompted, select the public domain from the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</p>
@@ -94,7 +82,6 @@ instructions further down. But before you push the button, ensure that you have 
 <li>Click <b>Applications</b>.</li>
 <li>If the file push was successful, you should see <b>hello-world-php</b> in the list of available applications. Note that the name, along with other variable values, was supplied through the <i>manifest.yml</i> file.</li>
 <li>Click <b>View App</b> to see your app in action.
-
 <ul>
 <li>This application displays a text message: <b>Hello World!</b>
 </li>
@@ -105,18 +92,16 @@ instructions further down. But before you push the button, ensure that you have 
 <section id="key-code-snippets"> <title>Key Code Snippets</title>
 <p>This simple PHP script prints "Hello World".</p>
 <codeblock>
-  <codeph>&lt;?php
+&lt;?php
 echo "\n Hello World \n";
 ?&gt;
-</codeph>
 </codeblock>
 <p>The <i>manifest.yml</i> file is the configuration information used by ALS to set up the environment. The <b>buildpack</b> element here informs ALS on the correct buildpack to use for PHP, which ensures the correct tools and runtimes are installed in the application environment.</p>
 <codeblock>
-  <codeph>---
+---
 applications:
 - name: hello-world-php  
   buildpack: https://github.com/cloudfoundry/php-buildpack.git
-</codeph>
 </codeblock>
 </section>
 <section id="key-learnings"> <title>Key Learnings</title>

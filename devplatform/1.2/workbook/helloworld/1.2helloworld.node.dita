@@ -58,30 +58,18 @@
 </li>
 <li>
 <p>Ensure that you are targeting your desired environment.  <!--A BR tag was used here in the original source.--> If you are not, execute</p>
-
-<codeblock>
-<codeph>helion target https://api.xx.xx.xx.xx.xip.io    
-</codeph>
-</codeblock>
+<codeph>helion target https://api.xx.xx.xx.xx.xip.io</codeph>
 </li>
 <li>
 <p>Ensure that you are logged in to your desired environment.  <!--A BR tag was used here in the original source.-->If you are not, execute</p>
-
-<codeblock>
-<codeph>helion login
-</codeph>
-</codeblock>
+<codeph>helion login</codeph>
 </li>
 <li>
 <p>If you are not already there, <codeph>cd</codeph> to the root directory of the sample.</p>
 </li>
 <li>
 <p>Deploy the application by using the command:</p>
-
-<codeblock>
-<codeph>helion push 
-</codeph>
-</codeblock>
+<codeph>helion push</codeph>
 </li>
 <li>
 <p>Accept any default values that you may be prompted for. <!--A BR tag was used here in the original source.--><b>Note</b>: By default, ALS Clusters are configured with two domains (private and public).  In some situations, the Helion CLI may prompt you to select a target domain.  If prompted, select the public domain from the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</p>
@@ -91,7 +79,7 @@
 <section id="key-code-snippets"> <title>Key Code Snippets</title>
 <p>This simple Servlet prints "Hello World".</p>
 <codeblock>
-  <codeph>// Load the http module 
+// Load the http module 
 var http = require('http');
 
 // The  HTTP server will respond with Hello World to all requests.
@@ -108,18 +96,16 @@ server.listen(port);
 
 // Print to the terminal
 console.log("Server listening to port: " + port);
-</codeph>
 </codeblock>
 <p>The <i>package.json</i> file is used by ALS during deployment. This is an extremely basic manifest file. 
 Note that <b>name</b> is always required while other fields are optional.</p>
 <codeblock>
-  <codeph>    {
+   {
       "name": "hello-world-node",
       "version": "1.0.0",
       "description" : "A 'Hello World' app demonstrating Node.js running on the Helion Development Platform.",
       "repository" : {"type": "git", "url": "git://notyetpublished"}
     }
-</codeph>
 </codeblock>
 </section>
 <section id="run-the-application"> <title>Run the Application</title>
