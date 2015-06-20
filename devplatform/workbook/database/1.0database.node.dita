@@ -48,7 +48,7 @@
 </section>
 <section id="download-the-application-files"> <title>Download the Application Files</title>
 <p>
-<xref href="https://github.com/HelionDevPlatform/helion-mysql-node/" scope="external" format="html" >Click here to access the code repository</xref>.</p>
+<xref href="https://github.com/HelionDevPlatform/helion-mysql-node" scope="external" format="html" >Click here to access the code repository</xref>.</p>
 </section>
 <section id="deploy-the-application"> <title>Deploy the Application</title>
 <p>
@@ -58,7 +58,7 @@
 <li>Open the <xref href="../../../devplatform/helion/user/reference/1.0client-ref.dita" >Helion command-line interface (CLI)</xref>
 </li>
 <li>
-<p>Ensure that you are targeting your desired environment.  <!--A BR tag was used here in the original source.--> If you are not, execute</p>
+<p>Ensure that you are targeting your desired environment.  If you are not, execute</p>
 
 <codeblock>
 <codeph>helion target https://api.xx.xx.xx.xx.example.com2. 
@@ -66,7 +66,7 @@
 </codeblock>
 </li>
 <li>
-<p>Ensure that you are logged in to your desired environment.  <!--A BR tag was used here in the original source.-->If you are not, execute</p>
+<p>Ensure that you are logged in to your desired environment.  If you are not, execute</p>
 
 <codeblock>
 <codeph>helion login
@@ -85,8 +85,7 @@
 </codeblock>
 </li>
 <li>
-<p>Accept any default values that you may be prompted for.
-<!--A BR tag was used here in the original source.--><b>Note</b>: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</p>
+<p>Accept any default values that you may be prompted for.  ><b>Note</b>: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</p>
 </li>
 </ol>
 </section>
