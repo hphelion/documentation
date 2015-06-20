@@ -290,7 +290,7 @@
     <!-- Troubleshooting -->
     <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita">
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"/>
+      <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita" toc="no"/> <!--not on site-->
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.controllers.dita"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.dns.dita"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.dita"/>
