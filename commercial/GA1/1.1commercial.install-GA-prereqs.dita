@@ -274,7 +274,7 @@ provider_network is your ESX management network
 <xref href="1.1commercial.install-GA-kvm.dita" >Installing and configuring on a KVM hypervisor</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-esx.dita" >Installing and configuring on an ESX hypervisor</xref>
+<xref href="1.1commercial.install-GA-esx.dita" >Installing and configuring on an ESX hypervisor</xref>
 </li>
 </ul>
 <p>
