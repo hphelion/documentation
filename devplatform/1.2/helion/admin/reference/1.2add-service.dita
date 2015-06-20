@@ -68,18 +68,14 @@
 </li>
 </ul>
 <p>Once the echo-service application has been deployed, an admin can add the service broker with the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-add-service-broker" >add-service-broker</xref> command.</p>
-<codeblock>
-  <codeph>helion add-service-broker
+<codeblock>helion add-service-broker
 Enter name: echo-broker
 Enter url: http://echo-service-broker.example.com
 Enter username: admin
 Enter password: mypasswd
-Creating new service broker [echo-broker] ... OK
-</codeph>
-</codeblock>
+Creating new service broker [echo-broker] ... OK</codeblock>
 <p>Once the service broker has been added to the system, the services it provides will become available to users:</p>
-<codeblock>
-  <codeph>helion services
+<codeblock>helion services
 ============== Service Plans ================
 
 +----+-------------+-------------------------------+----------+---------+-----------+----------------------------+------+
@@ -90,14 +86,9 @@ Creating new service broker [echo-broker] ... OK
 | FP | filesystem  | Persistent filesystem service | core     | 1.0     | free      | free                       |      |
 | FP | mysql       | MySQL database service        | core     | 5.5     | free      | free                       |      |
 | FP | postgresql  | PostgreSQL database service   | core     | 9.1     | free      | free                       |      |
-+----+-------------+-------------------------------+----------+---------+-----------+----------------------------+------+
-</codeph>
-</codeblock>
++----+-------------+-------------------------------+----------+---------+-----------+----------------------------+------+</codeblock>
 <p>By default, service plans are created as private (the "P" in the leftmost column above). To make the plan available to your Organization, run the following command:</p>
-<codeblock>
-  <codeph>helion update-service-plan --public echoservice
-</codeph>
-</codeblock>
+<codeblock>helion update-service-plan --public echoservice</codeblock>
 </section>
 </body>
 </topic>
