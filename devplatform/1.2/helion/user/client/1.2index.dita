@@ -48,8 +48,9 @@ available at the command line via the <i>helion help</i> command.</p>
 </ul>
 <section id="helion-client-setup"> <title>Application Lifecycle Service Client Installation</title>
 <p>
-<b>Note</b>: Using the Windows Helion client with
-<xref href="http://www.cygwin.com/" scope="external" format="html" >Cygwin</xref> is not supported.</p>
+        <note>Using the Windows Helion client with <xref href="http://www.cygwin.com/"
+            scope="external" format="html">Cygwin</xref> is not supported.</note>
+      </p>
 </section>
 <section id="download"> <title>Download</title>
 <p>You may <xref href="../../../../../devplatform/1.2/helion/CLI/1.2ALS_Client_Downloads.dita" >download the ALS client</xref> appropriate for your operating system.</p>
@@ -63,37 +64,20 @@ available at the command line via the <i>helion help</i> command.</p>
 <section id="installation"> <title>Installation</title>
 <ol>
 <li>Unzip the archive into a convenient directory.</li>
-<li>
-<p>Add the executable to your system/shell <codeph>\$PATH</codeph> by:</p>
-
-<ul>
-<li>
-<b>Windows</b>: path = %path%; (where path is the path to the Helion client)</li>
-<li>
-<b>Linux</b>, <b>OS X</b>: moving it to a directory in your <codeph>\$PATH</codeph>,</li>
-<li>creating a symlink from a directory in your <codeph>\$PATH</codeph>, or</li>
-<li>creating a shell alias for the executable.</li>
-</ul>
-</li>
-<li>
-<p>For Linux or Mac OS X: Make sure the file is set as executable</p>
-
-<codeblock>
-<codeph>chmod +x helion 
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>On some systems read access is also necessary.</p>
-
-<codeblock>
-<codeph>chmod 755 helion
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Confirm that the client is installed correctly by launching it and running <i>helion help</i>.</p>
-</li>
+<li>Add the executable to your system/shell <codeph>\$PATH</codeph> by:<ul>
+            <li>
+              <b>Windows</b>: path = %path%; (where path is the path to the Helion client)</li>
+            <li>
+              <b>Linux</b>, <b>OS X</b>: moving it to a directory in your
+              <codeph>\$PATH</codeph>,</li>
+            <li>creating a symlink from a directory in your <codeph>\$PATH</codeph>, or</li>
+            <li>creating a shell alias for the executable.</li>
+          </ul></li>
+<li> For Linux or Mac OS X: Make sure the file is set as
+          executable<codeblock>chmod +x helion</codeblock></li>
+<li> On some systems read access is also necessary.<codeblock>chmod 755 helion</codeblock></li>
+<li> Confirm that the client is installed correctly by launching it and running <i>helion
+          help</i>.</li>
 </ol>
 </section>
 <section id="configuration"> <title>Configuration</title>
@@ -101,19 +85,15 @@ available at the command line via the <i>helion help</i> command.</p>
 </section>
 <section id="targeting-the-api-endpoint"> <title>Target the API endpoint</title>
 <p>Before you can use the client, you must <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-getting-started.dita#command-target" >set the target URL</xref>, which is also known as the API Endpoint. This tells the client the location where it will push applications to. For example:</p>
-<codeblock>
-  <codeph>helion target api.helion.example.com
-</codeph>
-</codeblock>
+<codeblock>helion target api.helion.example.com</codeblock>
 <p>For a micro-cloud VM, it might be something like:</p>
-<codeblock>
-  <codeph>helion target api.helion-xxxx.local
-</codeph>
-</codeblock>
+<codeblock>helion target api.helion-xxxx.local</codeblock>
 </section>
 <section id="http-proxies"> <title>Configure HTTP Proxies</title>
 <p>
-<b>Note</b>: This configuration step should not be necessary on the Windows operating system, as the client queries the Internet Settings values.</p>
+        <note>This configuration step should not be necessary on the <tm tmtype="reg">Windows</tm>
+          operating system, as the client queries the Internet Settings values.</note>
+      </p>
 <p>If there is an HTTP/HTTPS proxy on your network between your client and
 the Application Lifecycle Service API endpoint, set the following environment variables in your shell as appropriate for your proxy.</p>
 <ul>
@@ -129,10 +109,7 @@ the Application Lifecycle Service API endpoint, set the following environment va
 </section>
 <section id="getting-help"> <title>Getting Help</title>
 <p>To get a list of available commands or help on a particular command, enter:</p>
-<codeblock>
-  <codeph>helion help [COMMAND]
-</codeph>
-</codeblock>
+<codeblock>helion help [COMMAND]</codeblock>
 <p>See also the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" >Command Reference</xref> for a full
 list of commands.</p>
 </section>

@@ -21,63 +21,73 @@
     </prolog>
     <body>
         <!-- permalink: /helion/devplatform/1.2/als/client/constructor-->
-<section><title>HP Helion 1.2 Development Platform: HP Application Lifecycle Service (ALS) Constructor Virtual Machine</title>
-
-The Constructor VM is normally a short-lived virtual machine that handles the provisioning of the Application Lifecycle Service (ALS) in an HP Helion <tm tmtype="reg">OpenStack</tm> public or private cloud. It can also function in a destructor mode to simplify the tear-down of the ALS platform-as-a-system.
-
-Nearly all management tasks for the Constructor VM (CVM) are easily performed from the Horizon web-based management console. Horizon performs a [Nova](http://docs.openstack.org/cli-reference/content/novaclient_commands.html) call with [cloud-init](http://cloudinit.readthedocs.org/en/latest/) [configuration data](http://docs.openstack.org/user-guide/content/inserting_userdata.html) to trigger the Helion ALS construction.  The OpenStack metadata service is used to communicate ALS construction status back to the Horizon UI.
-
-There are a few features and [troubleshooting](#troubleshooting) options, however, that cannot be managed from within the Horizon UI. Currently, it does not support:
-<ul>
-    <li>[adding services](#addservices) to an existing system.</li>
-    <li>[adding DEA nodes](#deanodes) to an existing system.</li>
-</ul>
- 
-The CVM self-terminates by default. This final self-termination action can be [overridden](#disable) by adding a configuration file option. This allows for system troubleshooting and examination of the construction [log file](#logfile) on the CVM. 
-
+<section><title>HP Helion 1.2 Development Platform: HP Application Lifecycle Service (ALS)
+                Constructor Virtual Machine</title> The Constructor VM is normally a short-lived
+            virtual machine that handles the provisioning of the Application Lifecycle Service (ALS)
+            in an HP Helion <tm tmtype="reg">OpenStack</tm> public or private cloud. It can also
+            function in a destructor mode to simplify the tear-down of the ALS platform-as-a-system.
+            Nearly all management tasks for the Constructor VM (CVM) are easily performed from the
+            Horizon web-based management console. Horizon performs a <xref
+                href="http://docs.openstack.org/cli-reference/content/novaclient_commands.html"
+                format="html" scope="external">Nova</xref> call with <xref
+                href="http://cloudinit.readthedocs.org/en/latest/" format="html" scope="external"
+                >cloud-init</xref>
+            <xref href="http://docs.openstack.org/user-guide/content/inserting_userdata.html"
+                format="html" scope="external">configuration data</xref> to trigger the Helion ALS
+            construction. The OpenStack metadata service is used to communicate ALS construction
+            status back to the Horizon UI. There are a few features and
+    <xref href="#topic_ktc_4bc_ks/troubleshooting">troubleshooting</xref> options, however, that cannot be managed from within
+            the Horizon UI. Currently, it does not support: <ul>
+                <li><xref href="#topic_ktc_4bc_ks/addservices">adding services</xref> to an existing system.</li>
+                <li><xref href="#topic_ktc_4bc_ks/deanodes">adding DEA nodes</xref> to an existing system.</li>
+            </ul> The CVM self-terminates by default. This final self-termination action can be
+    <xref href="#topic_ktc_4bc_ks/disable">overridden</xref> by adding a configuration file option. This allows for system
+    troubleshooting and examination of the construction <xref href="#topic_ktc_4bc_ks/logfile">log file</xref> on the CVM. 
 </section><section><title>CVM Boot Methodology</title> The CVM may be launched using several different
             methods. This flexibility allows you to choose the best method for initial ALS Helion
             system construction. The methods are as follows: <ol>
-                <li>Use the [Horizon wizard](#consoleboot). This is the simplest method.</li>
-                <li>Use a Nova CLI and a *cloud-init* configuration file (JSON). This allows for
+                <li>Use the <xref href="#topic_ktc_4bc_ks/consoleboot">Horizon wizard </xref>. This is the simplest method.</li>
+                <li>Use a Nova CLI and a <i>cloud-init</i> configuration file (JSON). This allows for
                     reproducible configuration, growth options, and troubleshooting.</li>
-                <li>Boot the CVM without a *cloud-init* configuration file in a Helion [private
-                    cloud](#privatecloud). After SSH login to the CVM the user will be prompted to
+                <li>Boot the CVM without a <i>cloud-init</i> configuration file in a Helion <xref href="#topic_ktc_4bc_ks/privatecloud">private
+                    cloud</xref>. After SSH login to the CVM the user will be prompted to
                     run a command line script to create (and possibly edit) an .ini style
                     configuration file.</li>
-                <li>Boot the CVM without a *cloud-init* configuration file in Helion [public
-                    cloud](#publiccloud). After SSH login to the CVM the user will be prompted to
+                <li>Boot the CVM without a <i>cloud-init</i> configuration file in Helion <xref href="#topic_ktc_4bc_ks/publiccloud">public
+                    cloud</xref>. After SSH login to the Constructor Virtual Machine, the user will be prompted to
                     run a command line script that will in turn launch the ALS Helion construction.
                     This allows a user to produce a Helion ALS system that consumes minimal
                     resources in the public cloud. </li>
-            </ol></section><section><title>Method #1: Using the Helion Wizard {#consoleboot}</title> Creating a cluster via the
+            </ol></section><section id="consoleboot"><title>Method #1: Using the Helion Wizard</title> Creating a cluster via the
             Horizon wizard is by far the simplest option. The wizard prompts the user for
             configuration options and passes the configuration and environment variable values to
             the CVM. <ol>
                 <li>The user creates a cluster using the ALS Horizon wizard.</li>
                 <li>Upon completion of the ALS Horizon wizard, the CVM boots.</li>
-                <li>The */etc/rc.local* script runs and detects the *cloud-init* file (JSON)
-                    generated by the input that was provided to the Horizon wizard.</li>
-                <li>The *cloud-init* JSON file is converted to *cluster.conf*, which is in a Python
-                    [ConfigParser](https://docs.python.org/2/library/configparser.html) format.</li>
-                <li>The assemble.py script runs using the values in *cluster.conf* to build the
+                <li>The <i>/etc/rc.local</i> script runs and detects the <i>cloud-init</i> file
+                    (JSON) generated by the input that was provided to the Horizon wizard.</li>
+                <li>The <i>cloud-init</i> JSON file is converted to <i>cluster.conf</i>, which is in a Python
+                        <xref href="https://docs.python.org/2/library/configparser.html"
+                        format="html" scope="external">ConfigParser </xref>format.</li>
+                <li>The assemble.py script runs using the values in <i>cluster.conf</i> to build the
                     Helion ALS system.</li>
-                <li>The CVM terminates. (Unless the termination is [overridden](#disable).)</li>
-            </ol></section><section><title>Method #2: Boot the VM using the Configuration File {#configfile}</title> This
-            method passes the configuration and environment variable values via a
-            [*cloud-init*](http://cloudinit.readthedocs.org/en/latest/) JSON file created prior to
-            booting the CVM. <ol>
-                <li>Perform a *nova* call with a *cloud-init* JSON file.</li>
+                <li>The CVM terminates. (Unless the termination is <xref href="#topic_ktc_4bc_ks/disable">overridden</xref>.)</li>
+            </ol></section><section id="configfile"><title>Method #2: Boot the VM using the Configuration File</title> This
+            method passes the configuration and environment variable values via a <xref
+                href="http://cloudinit.readthedocs.org/en/latest/" format="html" scope="external"
+                    ><i>cloud-init</i></xref> JSON file created prior to booting the CVM. <ol>
+                <li>Perform a <i>nova</i> call with a <i>cloud-init</i> JSON file.</li>
                 <li>The CVM boots.</li>
-                <li>The */etc/rc.local* script runs and detects the *cloud-init* file.</li>
-                <li>The *cloud-init* file is automatically converted from JSON to ConfigParser
-                    format and renamed *cluster.conf*.</li>
-                <li>The *assemble.py* script runs, using the values contained in *cluster.conf* to
-                    build the Helion ALS system.</li>
-            </ol> Here is an example of the *cloud-init* JSON file used for Helion ALS construction.
-            There are three sections of key-value pairs related to ALS (PaaS), OpenStack (IaaS), and
-            Control of the construction process. This configuration file is passed to the CVM during
-            the boot process.
+                <li>The <i>/etc/rc.local</i> script runs and detects the <i>cloud-init</i>
+                    file.</li>
+                <li>The <i>cloud-init</i> file is automatically converted from JSON to ConfigParser
+                    format and renamed <i>cluster.conf</i>.</li>
+                <li>The <i>assemble.py</i> script runs, using the values contained in
+                        <i>cluster.conf</i> to build the Helion ALS system.</li>
+            </ol> Here is an example of the <i>cloud-init</i> JSON file used for Helion ALS
+            construction. There are three sections of key-value pairs related to ALS (PaaS),
+            OpenStack (IaaS), and Control of the construction process. This configuration file is
+            passed to the CVM during the boot process.
             <codeblock>{
     "ALS": {
         "admin_email": "admin@example.com",
@@ -121,48 +131,55 @@ The CVM self-terminates by default. This final self-termination action can be [o
         "delete_database": "False",
         "terminate_constructor": "True"
     }
-}</codeblock></section><section><title>Method #3: Boot Without a *cloud-init* Configuration File (Helion private cloud)
-                {#privatecloud}</title> During the boot process the CVM will detect that a
-            [*cloud-init*](http://cloudinit.readthedocs.org/en/latest/) configuration file is not
-            present. When the user logs in via SSH, the CVM will prompt the user to run a script
-            which will create a configuration file. This prompt is provided by the system's Message
-            of the Day (motd). **Note**: Using this method requires the user to set up the network
-            to the CVM properly, including all routing information, security groups, ssh keys,
-            accessible IP addresses, and so on. <ol>
+}</codeblock></section><section id="privatecloud"><title>Method #3: Boot Without a <i>cloud-init</i> Configuration File
+                (Helion private cloud)</title> During the boot process the CVM will detect that a
+                <xref href="http://cloudinit.readthedocs.org/en/latest/" format="html"
+                scope="external">cloud-init</xref> configuration file is not present. When the user
+            logs in via SSH, the CVM will prompt the user to run a script which will create a
+            configuration file. This prompt is provided by the system's Message of the Day (motd).
+                <note>Using this method requires the user to set up the network to the CVM properly,
+                including all routing information, security groups, ssh keys, accessible IP
+                addresses, and so on. </note><ol>
                 <li>Create an instance of the ALS Installer and boot it manually, or perform a
-                    *Nova* boot without providing a *cloud-init* configuration file.</li>
-                <li>The CVM boots.</li>
-                <li>The */etc/rc.local* script runs and does not detect a *cloud-init* configuration
+                        <i>Nova</i> boot without providing a <i>cloud-init</i> configuration
                     file.</li>
-                <li>The user logs into the CVM via SSH.</li>
-                <li>The Message of the Day (MOTD) prompts the user to run *configure.py* to produce
-                    a *cluster.conf* .ini style configuration file in ConfigParser format.</li>
-                <li>The user has the option to manually edit the *cluster.conf* file.</li>
-                <li>The *assemble.py* script runs automatically, using the values contained in the
-                    *cluster.conf* file to build the Helion ALS system.</li>
-                <li>The CVM terminates. (Unless the termination is [overridden](#disable).)</li>
-            </ol></section><section><title>Method #4: Boot Without a Configuration File (Helion public cloud)
-                {#publiccloud}</title> This is the process used for the [Developer Quick-Start
-            trial](/helion/devplatform/1.2/ALS-developer-trial-quick-start/). During the boot
-            process the CVM will detect that a configuration file is not present. When the user logs
-            in, the CVM will prompt the user to run a script which will create a configuration file
-            specifically tailored for the public beta. **Note**: Using this method requires the user
-            to set up the network to the CVM properly, including all routing information, security
-            groups, ssh keys, accessible IP addresses, and so on. <ol>
-                <li>Create an VM instance using the ALS Installer image and boot it manually, or
-                    perform a *Nova* boot without providing a *cloud-init* configuration file.</li>
                 <li>The CVM boots.</li>
-                <li>During the boot process, the */etc/rc.local* script runs and does not detect a
-                    *cloud-init* configuration file.</li>
+                <li>The <i>/etc/rc.local </i>script runs and does not detect a <i>cloud-init</i>
+                    configuration file.</li>
+                <li>The user logs into the CVM via SSH.</li>
+                <li>The Message of the Day (MOTD) prompts the user to run <i>configure.py</i> to
+                    produce a <i>cluster.conf</i> .ini-style configuration file in ConfigParser
+                    format.</li>
+                <li>The user has the option to manually edit the <i>cluster.conf</i> file.</li>
+                <li>The <i>assemble.py</i> script runs automatically, using the values contained in
+                    the <i>cluster.conf</i> file to build the Helion ALS system.</li>
+                <li>The CVM terminates. (Unless the termination is <xref
+                        href="#topic_ktc_4bc_ks/disable">overridden</xref>).</li>
+            </ol></section><section id="publiccloud"><title>Method #4: Boot Without a Configuration File (Helion public
+                cloud)</title> This is the process used for the <xref
+                href="../../1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952">Developer
+                Quick-Start Trial</xref>. During the boot process the CVM will detect that a
+            configuration file is not present. When the user logs in, the CVM will prompt the user
+            to run a script which will create a configuration file specifically tailored for the
+            public beta. <note>Using this method requires the user to set up the network to the CVM
+                properly, including all routing information, security groups, ssh keys, accessible
+                IP addresses, and so on. </note><ol>
+                <li>Create an VM instance using the ALS Installer image and boot it manually, or
+                    perform a <i>Nova</i> boot without providing a <i>cloud-init</i> configuration
+                    file.</li>
+                <li>The CVM boots.</li>
+                <li>During the boot process, the <i>/etc/rc.local</i> script runs and does not
+                    detect a <i>cloud-init</i> configuration file.</li>
                 <li>When the user logs in via SSH, the Message of the Day (MOTD) prompts the user to
-                    run *trial_configure.py* to produce a *cluster.conf* .ini style configuration
+                    run trial_configure.py to produce a <i>cluster.conf</i> .ini-style configuration
                     file in ConfigParser format.</li>
-                <li>The *assemble.py* script runs automatically and applies the values contained in
-                    the *cluster.conf* file.</li>
-                <li>The CVM terminates. (Unless the termination is [overridden](#disable).)</li>
+                <li>The <i>assemble.py</i> script runs automatically and applies the values
+                    contained in the <i>cluster.conf</i> file.</li>
+                <li>The CVM terminates. (Unless the termination is <xref
+                        href="#topic_ktc_4bc_ks/disable">overridden</xref>.)</li>
             </ol> This is an example of the ConfigParser file format options that are generated for
             the Quick Start Trial:
-            <pre>
+            <codeblock>
 [OpenStack]
 auth_url = https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0
 username = 
@@ -192,9 +209,10 @@ admin_email = admin@example.com
 admin_password = 
 admin_org = als
 services_on_core = True
-</pre></section><section><title>DEA Growth Configuration File Example {#deanodes}</title> This example adds more DEA
-            nodes to an existing cluster. NOTE: The *dea_count* value is the number of DEAs to be
-            **added** in this growth mode; do not count any DEAs that already exist.
+</codeblock></section><section id="deanodes"><title>DEA Growth Configuration File Example</title> This example adds more
+            DEA nodes to an existing cluster.<note>The <i>dea_count</i> value is the number of DEAs
+                to be <b>added</b> in this growth mode; do not count any DEAs that already
+                exist.</note>
             <codeblock>
 [OpenStack]
 auth_url = https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0
@@ -214,11 +232,11 @@ services =
 
 [Control]
 grow_cluster = True
- </codeblock></section><section><title>Service Growth Configuration File Example {#addservices}</title> This example adds
-            more services to the cluster. NOTE: The comma-separated values in the list of services
-            contain only the services to be **added** in this growth mode. Do not list services that
-            already exist.
-            <codeblock>
+ </codeblock></section><section id="addservices"><title>Service Growth Configuration File Example</title> This example adds
+            more services to the cluster.<note>The comma-separated values in the list of services
+                contain only the services to be <b>added</b> in this growth mode. Do not list
+                services that already exist.
+            </note><codeblock>
 [OpenStack]
 auth_url = https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0
 username = 
@@ -237,7 +255,7 @@ services = filesystem,redis
 
 [Control]
 grow_cluster = True</codeblock></section>
-        <section><b>Troubleshooting {#troubleshooting} </b><table id="table_k14_s2c_ks">
+        <section id="troubleshooting"><title>Troubleshooting</title><table id="table_k14_s2c_ks">
                 <tgroup cols="3">
                     <thead>
                         <row>
@@ -285,13 +303,14 @@ grow_cluster = True</codeblock></section>
                     </tbody>
                 </tgroup>
             </table>
-            <b>Disable Self-destruction {#disable}</b> Add this option to the *cloud-init* JSON file
-            to prevent the CVM from self-destructing at the end of the Helion ALS construction
-            process. <codeblock>"Control": {
+            <sectiondiv id="disable"><b>Disable Self-destruction</b> Add this option to the
+                <i>cloud-init</i> JSON file to prevent the CVM from self-destructing at the end of the
+                Helion ALS construction process.
+                <codeblock>"Control": {
     "terminate_constructor": "False"
-}</codeblock>
-            <b>CVM Logfile Location {#logfile} </b> The CVM creates a log file during the
-            construction process. To view this log, SSH into the CVM and open the following file:
-            <codeblock>/tmp/assemble_log.txt </codeblock></section>
+}</codeblock></sectiondiv>
+            <sectiondiv id="logfile"><b>CVM Logfile Location</b> The CVM creates a log file during
+                the construction process. To view this log, SSH into the CVM and open the following
+                file: <codeblock>/tmp/assemble_log.txt </codeblock></sectiondiv></section>
 </body>
 </topic>
