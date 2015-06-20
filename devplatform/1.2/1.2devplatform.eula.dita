@@ -13,7 +13,7 @@
 <othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
 </metadata>
 </prolog>
-<body>
+<body><section id="top" />
 <p>
 <!--PUBLISHED-->
  <!--./devplatform/1.2/1.2devplatform.eula.md-->
