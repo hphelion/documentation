@@ -104,15 +104,12 @@ upgrades are simpler if the cluster nodes are configured with
 afterwards.</p>
 <p>The Constructor VM automatically generates a new 2048 bit RSA keypair on first boot which can be used for this purpose. If you wish to use a stronger key, or one with a passphrase, follow the Ubuntu documentation on <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Keys#Generating_RSA_Keys" scope="external" format="html" >Generating RSA Keys</xref>.</p>
 <p>To transfer the public key from the Core node to all non-Core nodes execute:</p>
-<codeblock>
-  <codeph>ssh-copy-id stackato@&lt;node hostname or IP&gt;
-</codeph>
-</codeblock>
+<codeblock>ssh-copy-id stackato@&lt;node hostname or IP&gt;</codeblock>
 <p>With the Core node's public key in place on all cluster nodes, you can
 <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#Disable_Password_Authentication" scope="external" format="html" >disable password authentication</xref> if desired.</p>
 </section>
 <section id="applying-updates"> <title>Applying Updates</title>
-<p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#upgrade" >
+  <p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita" >
 <i>kato node
 upgrade</i>
 </xref> or a <xref type="section" href="#topic16169/bestpractices-migration">
@@ -124,34 +121,23 @@ minor fixes to particular components) can be applied in place using the
 <i>kato patch</i>
 </xref>
 command.</p>
-<p>
-<b>Note</b>: If there is a web proxy on your network between the ALS systems and the ActiveState servers, first configure all nodes as per the Proxy Settings \&lt;server-config-http-proxy&gt; documentation.</p>
+      <note>If there is a web proxy on your network between the ALS systems and the ActiveState
+        servers, first configure all nodes as per the Proxy Settings
+        \&lt;server-config-http-proxy&gt; documentation.</note>
 <p>To see a list of patches available from HP, run the following
 command on any Application Lifecycle Service VM:</p>
-<codeblock>
-  <codeph>kato patch status
-</codeph>
-</codeblock>
+<codeblock>kato patch status</codeblock>
 <p>The command will list the updates available. For example:</p>
-<codeblock>
-  <codeph>1 update available to be installed.
+<codeblock>1 update available to be installed.
 
 Known updates:
   dea-memory-usage-reporting: Fix the reporting of helion stats usage on the DEA end.
     severity: required
-    roles affected: dea
-</codeph>
-</codeblock>
+    roles affected: dea</codeblock>
 <p>To apply all patches to all relevant cluster nodes:</p>
-<codeblock>
-  <codeph>kato patch install
-</codeph>
-</codeblock>
+<codeblock>kato patch install</codeblock>
 <p>To apply a particular patch, specify it by name:</p>
-<codeblock>
-  <codeph>kato patch install dea-memory-usage-reporting
-</codeph>
-</codeblock>
+<codeblock>kato patch install dea-memory-usage-reporting</codeblock>
 <p>Applying patches will automatically restart all patched roles. To
 prevent this, use the <codeph>--no-restart</codeph> option.</p>
 <p>To apply a patch only to the local Application Lifecycle Service VM (not the whole cluster),
@@ -162,17 +148,11 @@ use the <b>--local</b> option.</p>
 </section>
 <section id="upgrade-vm"> <title>Upgrade the VM</title>
 <p>To upgrade the VM, run the following command on all cluster nodes, one node at a time:</p>
-<codeblock>
-  <codeph>sudo unattended-upgrades -d
-</codeph>
-</codeblock>
+<codeblock>sudo unattended-upgrades -d</codeblock>
 <p>If you are using a proxy you may need to export http_proxy and
 https_proxy environment variables. For example:</p>
-<codeblock>
-  <codeph>sudo sh -c "http_proxy=http://myproxy.example.com:3128 \
-https_proxy=http://myproxy.example.com:3128 unattended-upgrades -d"
-</codeph>
-</codeblock>
+<codeblock>sudo sh -c "http_proxy=http://myproxy.example.com:3128 \
+https_proxy=http://myproxy.example.com:3128 unattended-upgrades -d"</codeblock>
 <p>This will run the <xref href="http://manpages.ubuntu.com/manpages/lucid/man8/unattended-upgrade.8.html" scope="external" format="html" >unattended-upgrades</xref> script to install all upgrades from the <i>-security</i> stream.</p>
 <p>Each node should be rebooted after <i>unattended-upgrades</i> completes to
 ensure that all new kernels, modules, and libraries are loaded.</p>
@@ -180,49 +160,28 @@ ensure that all new kernels, modules, and libraries are loaded.</p>
 <section id="upgrade-docker"> <title>Upgrade the Docker image</title>
 <p>The base Docker image used for application containers should also be upgraded once the VM is up-to-date. Perform the following steps on each DEA node in the cluster, one node at a time:</p>
 <ol>
-<li>
-<p>Create a new working directory:</p>
-
-<codeblock>
-<codeph>mkdir ~/upgrade-alsek &amp;&amp; cd $_
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create a <i>Dockerfile</i>. In this new directory, create a file named <b>Dockerfile</b> and add the following:</p>
-
-<codeblock>
-<codeph>FROM stackato/stack-alsek:kato-patched
+<li> Create a new working
+          directory:<codeblock>mkdir ~/upgrade-alsek &amp;&amp; cd $_</codeblock></li>
+<li> Create a <i>Dockerfile</i>. In this new directory, create a file named <b>Dockerfile</b> and
+          add the
+          following:<codeblock>FROM stackato/stack-alsek:kato-patched
 RUN apt-get update
 RUN unattended-upgrades -d
-RUN apt-get clean &amp;&amp; apt-get autoremove 
-</codeph>
-</codeblock>
-</li>
+RUN apt-get clean &amp;&amp; apt-get autoremove </codeblock></li>
 </ol>
 <p>The <b>kato-patched</b> tag is attached to the image most recently updated by <i>kato patch</i>. Use this as a starting point rather than <i>latest</i> to prevent the accumulation of too many AUFS filesystem layers.</p>
 <ol>
-<li>
-<p>Build the docker image with the <b>--no-cache=true</b> option. Give the image a tag relevant to this particular upgrade (e.g. upgrade-2014-09-19)</p>
-
-<codeblock>
-<codeph>sudo docker build --no-cache=true -rm -t stackato/stack-alsek:upgrade-2014-09-19 .
-</codeph>
-</codeblock>
-
-<p>The <b>.</b> (dot) at the end is important! It specifies that the <i>Dockerfile</i> to use is the one in the current directory.</p>
-</li>
-<li>
-<p>Tag the Docker image as the <i>latest</i> stack-alsek image:</p>
-
-<codeblock>
-<codeph>sudo docker tag stackato/stack-alsek:upgrade-2014-09-19 stackato/stack-alsek:latest
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>All running applications will need to be restarted by their owners or admins (using the Helion management console or the ALS client) in order for security upgrades to take effect within their application containers. You can check which image running apps are using by running <i>docker ps</i> on your DEAs (but <b>do not</b> use <i>docker restart</i>).</p>
-</li>
+<li> Build the docker image with the <b>--no-cache=true</b> option. Give the image a tag relevant to
+          this particular upgrade (e.g.
+            upgrade-2014-09-19)<codeblock>sudo docker build --no-cache=true -rm -t stackato/stack-alsek:upgrade-2014-09-19 .</codeblock><p>The
+              <b>.</b> (dot) at the end is important! It specifies that the <i>Dockerfile</i> to use
+            is the one in the current directory.</p></li>
+<li> Tag the Docker image as the <i>latest</i> stack-alsek
+          image:<codeblock>sudo docker tag stackato/stack-alsek:upgrade-2014-09-19 stackato/stack-alsek:latest</codeblock></li>
+<li> All running applications will need to be restarted by their owners or admins (using the Helion
+          management console or the ALS client) in order for security upgrades to take effect within
+          their application containers. You can check which image running apps are using by running
+            <i>docker ps</i> on your DEAs (but <b>do not</b> use <i>docker restart</i>).</li>
 </ol>
 </section>
 <section id="bestpractices-migration"> <title>Backup &amp; Migration</title>
@@ -265,42 +224,28 @@ command. The command can export:</p>
 <li>data services</li>
 </ul>
 <p>Start by logging into the VM via <codeph>ssh</codeph>:</p>
-<codeblock>
-  <codeph>ssh stackato@&lt;node hostname or IP&gt;
-</codeph>
-</codeblock>
+<codeblock>ssh stackato@&lt;node hostname or IP&gt;</codeblock>
 <p>A single-node micro cloud VM can be backed up with a single command:</p>
-<codeblock>
-  <codeph>kato data export --only-this-node
-</codeph>
-</codeblock>
+<codeblock>kato data export --only-this-node</codeblock>
 <p>A clustered setup can be backed up with a single command:</p>
-<codeblock>
-  <codeph>kato data export --cluster
-</codeph>
-</codeblock>
+<codeblock>kato data export --cluster</codeblock>
 <p>Once the export completes, you can use
 <xref href="http://manpages.ubuntu.com/manpages/lucid/man1/scp.1.html" scope="external" format="html" >scp</xref> or
 another utility (e.g. sftp, rsync) to move the .tgz file to another
 system, or save the file directly to a mounted external filesystem by
 specifying the full path and filename during export (see backup example
 below).</p>
-<p>
-  <b>Note</b>
-</p>
-<p>Exporting data can take several minutes. For clusters with constant
-usage or large numbers of users, apps, and databases, put the exporting
-system in <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita#cloud-controller" >Maintenance Mode</xref>
-(e.g. during a scheduled maintenance window) before exporting.</p>
+      <note>Exporting data can take several minutes. For clusters with constant usage or large
+        numbers of users, apps, and databases, put the exporting system in <xref
+          href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita#cloud-controller"
+          >Maintenance Mode</xref> (e.g. during a scheduled maintenance window) before
+        exporting.</note>
 </section>
 <section id="scheduled-backups"> <title>Scheduled backups</title>
 <p>Regular backup of controller data, apps, droplets, and service data is
 recommended for any production system. Implementation of a regular
 backup routine is left to the discretion of the Application Lifecycle Service administrator, but using <xref href="http://manpages.ubuntu.com/manpages/oneiric/man1/crontab.1.html" scope="external" format="html" >cron/crontab</xref> is one simple way is to automate this. For example, you could create an entry like the following in the root user's crontab on the filesystem node:</p>
-<codeblock>
-  <codeph>0 3 * * * su - helion /bin/bash -c '/home/helion/bin/kato data export --cluster /mnt/nas/helion-backup.tgz'
-</codeph>
-</codeblock>
+<codeblock>0 3 * * * su - helion /bin/bash -c '/home/helion/bin/kato data export --cluster /mnt/nas/helion-backup.tgz'</codeblock>
 <p>This runs <codeph>kato data export --cluster</codeph> every morning
 at 3AM as <codeph>root</codeph> using the <codeph>helion</codeph> user's login environment (required) and saves a .tgz file to a
 mounted external filesystem.</p>
@@ -326,15 +271,9 @@ some shell operations performed in the export require <codeph>sudo</codeph> when
   <b>Import the Data</b>
 </p>
 <p>Log in to the Application Lifecycle Service VM (or Core node) and run <codeph>kato data import</codeph> with the appropriate options. For example, to import all data into a new cluster from a .tgz file:</p>
-<codeblock>
-  <codeph>kato data import --cluster helion-export-xxxxxxxxxx.tgz
-</codeph>
-</codeblock>
+<codeblock>kato data import --cluster helion-export-xxxxxxxxxx.tgz</codeblock>
 <p>To import data from a running Application Lifecycle Service system instead, specify the hostname of the old Core node:</p>
-<codeblock>
-  <codeph>kato data import --cluster helion-host.example.com
-</codeph>
-</codeblock>
+<codeblock>kato data import --cluster helion-host.example.com</codeblock>
 </section>
 <section id="upgrade"> <title>Upgrading</title>
 <p>The <i>kato node upgrade</i> command was added in this version to allow upgrading Application Lifecycle Service clusters in place. See
@@ -369,22 +308,16 @@ instructions.</p>
 </ul>
 <p>You can save the .tgz output file directly to a mounted external filesystem by specifying the full path and filename during export (see backup example below). Alternately, wait until after the export and move the .tgz file to another system using <xref href="http://manpages.ubuntu.com/manpages/lucid/man1/scp.1.html" scope="external" format="html" >scp</xref> or another utility (sftp, rsync).</p>
 <p>Start by logging into the VM via SSH:</p>
-<codeblock>
-  <codeph>ssh stackato@&lt;node hostname or IP&gt;
-</codeph>
-</codeblock>
+<codeblock>ssh stackato@&lt;node hostname or IP&gt;</codeblock>
 <p>A single-node micro cloud VM can be backed up with a single command:</p>
-<codeblock>
-  <codeph>kato data export --only-this-node
-</codeph>
-</codeblock>
+<codeblock>kato data export --only-this-node</codeblock>
 <p>A clustered setup can be backed up with a single command:</p>
-<codeblock>
-  <codeph>kato data export -cluster
-</codeph>
-</codeblock>
+<codeblock>kato data export -cluster</codeblock>
 <p>
-<b>Note</b>: Exporting data can take several minutes. For clusters with constant usage or large numbers of users, apps, and databases, put the exporting system in Maintenance Mode, ideally during a scheduled maintenance window, before beginning the export.</p>
+        <note>Exporting data can take several minutes. For clusters with constant usage or large
+          numbers of users, apps, and databases, put the exporting system in Maintenance Mode,
+          ideally during a scheduled maintenance window, before beginning the export.</note>
+      </p>
 </section>
 <section id="bestpractices-snapshots"> <title>Snapshots</title>
 <p>Snapshots can be an effective way to save the state of a running virtual machine for backup, but caution is required when taking snapshots of a multi-node cluster.</p>
@@ -424,21 +357,17 @@ relocate</i>
 command(s).</li>
 </ul>
 <p>For example:</p>
-<codeblock>
-  <codeph>kato stop
+<codeblock>kato stop
 ...
 kato relocate services /mnt/ebs/services
 ...
 kato relocate droplets /mnt/ebs/droplets
 ...
 kato relocate containers /mnt/containers
-...
-</codeph>
-</codeblock>
+...</codeblock>
 <p>
-  <b>Note</b>
-</p>
-<p>For performance reasons, containers should not be relocated to EBS volumes.</p>
+        <note>For performance reasons, containers should not be relocated to EBS volumes.</note>
+      </p>
 </section>
 <section id="enabling-filesystem-quotas"> <title>Enabling Filesystem Quotas</title>
 <p>The Application Lifecycle Service filesystem quotas cannot be enforced by the system unless
@@ -450,23 +379,17 @@ command. The <xref href="../../../../../devplatform/1.2/helion/admin/reference/1
 will warn if this is necessary.</p>
 <p>For the example above, the <codeph>mount</codeph> step might look
 like this:</p>
-<codeblock>
-  <codeph>sudo mount -o remount,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 /mnt/containers
+<codeblock>sudo mount -o remount,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 /mnt/containers
 sudo quotacheck -vgumb /mnt/containers
-sudo quotaon -v /mnt/containers
-</codeph>
-</codeblock>
+sudo quotaon -v /mnt/containers</codeblock>
 <p>To ensure the quotas are preserved after reboot, edit
 <i>/etc/init.d/setup_helion_lxc</i> to include mount commands for each
 partition. The example above would require a block such as this:</p>
-<codeblock>
-  <codeph># enable quotas for Application Lifecycle Service containers
+<codeblock># enable quotas for Application Lifecycle Service containers
 if [[ -f "/mnt/containers/aquota.user" ]]; then
   mount -o remount,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 /mnt/containers
   quotaon -v /mnt/containers
-fi
-</codeph>
-</codeblock>
+fi</codeblock>
 </section>
 </body>
 </topic>

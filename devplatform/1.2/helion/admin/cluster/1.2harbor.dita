@@ -58,20 +58,14 @@ externally facing port.</p>
 <section id="requirements-setup"> <title>Requirements &amp; Setup</title>
 <p>An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#data-services-nodes" >data service roles</xref>.
 For example:</p>
-<codeblock>
-  <codeph>kato node attach -e harbor CORE_IP
-</codeph>
-</codeblock>
+<codeblock>kato node attach -e harbor CORE_IP</codeblock>
 <p>The node must be routable both externally by connecting clients, and the
 internal DEA nodes must be contactable by the Harbor node. You must also
 make allowances for any firewall rules so that the provisioned port
 range used by Harbor is open to the external network.</p>
 <p>The default range for these ports is '35000 - 40000', however you can
 view the current port range on the Harbor node by entering:</p>
-<codeblock>
-  <codeph>kato config get harbor_node port_range
-</codeph>
-</codeblock>
+<codeblock>kato config get harbor_node port_range</codeblock>
 <p>For each new service provisioned, Harbor will chose a random unassigned
 port from this range. This range can be set in the Management Console's
 <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita#console-settings" >Settings</xref> section, or by
@@ -81,15 +75,9 @@ using the <codeph>kato config set ...</codeph> command.</p>
 update the node config so that it provides these external connection
 details to the users service credentials.</p>
 <p>To set the externally routable hostname:</p>
-<codeblock>
-  <codeph>kato config set harbor_node hostname_external ext-services.example.com
-</codeph>
-</codeblock>
+<codeblock>kato config set harbor_node hostname_external ext-services.example.com</codeblock>
 <p>To set the externally routable IP:</p>
-<codeblock>
-  <codeph>kato config set harbor_node host_external 192.0.43.10
-</codeph>
-</codeblock>
+<codeblock>kato config set harbor_node host_external 192.0.43.10</codeblock>
 </section>
 <section id="troubleshooting"> <title>Troubleshooting</title>
 <p>If you have problems with the Harbor service, first check the status via
@@ -97,10 +85,7 @@ details to the users service credentials.</p>
 <p>The Harbor service can be safely restarted; any ports and routes
 provisioned are automatically added and the backends are re-validated on
 startup:</p>
-<codeblock>
-  <codeph>kato restart harbor
-</codeph>
-</codeblock>
+<codeblock>kato restart harbor</codeblock>
 <p>Check the log files for errors and warnings. Four Harbor log files can
 be found in the <i>/s/logs/</i> directory:</p>
 <ul>
