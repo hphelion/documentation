@@ -21,8 +21,10 @@
     navtitle="HP Helion OpenStack(r) 1.1: Documentation Home">
     <topicref href="commercial/GA1/1.1commercial.whatsnew.dita"/>
     <topicref href="commercial/GA1/1.1.1commercial.helion-update.dita"/>
-    <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
-    <topicref href="commercial/GA1/1.1commercial.release-notes.dita"/>
+    <topichead navtitle="HP Helion OpenStack(R): Release Notes">
+      <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.release-notes.dita"/>
+    </topichead>
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.start.dita">
       <topicref href="commercial/GA1/1.1commercial.faq.dita"/>
       <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"/>
@@ -279,7 +281,7 @@
       <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"/>
       <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
     </topichead>
-    <topichead navtitle="HP Helion OpenStack(R) 1.1:Using the Undercloud Horizon Dashboard">
+    <topichead navtitle="HP Helion OpenStack(R) 1.1: Using the Undercloud Horizon Dashboard">
       <topicref href="commercial/GA1/1.1commercial.using.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-admin-settings.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-resources-overview.dita"/>
