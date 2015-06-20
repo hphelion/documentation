@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.dashboard.how-works.md-->
  <!--permalink: /helion/openstack/dashboard/how-works/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The HP Helion OpenStack(R) Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack(R) Commercial overcloud. The overcloud is the end-user OpenStack(R) cloud.</p>
 <p>The interface, based on OpenStack(R) Horizon, is grouped into dashboards, including <xref type="section" href="#topic2121/DashProject">Project</xref>, <xref type="section" href="#topic2121/DashAdmin">Admin</xref> and <xref type="section" href="#topic2121/DashSettings">Settings</xref>. Tabs on the left side of the interface expand and contract to show available commands grouped into <b>panels</b>.</p>

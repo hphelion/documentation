@@ -24,7 +24,7 @@
  <!--./commercial/GA1/1.0commercial.sirius-cli.md-->
  <!--permalink: /helion/openstack/sirius-cli/--></p>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.sirius-cli.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 Once you complete the undercloud and overcloud installation, you can use the Sirius client CLI package to configure your storage.</p>
 <p>The python-Siriusclient CLI package provides a http-client coupled command line tool for managing the Sirius service. The client works with Keystone through the python-keystoneclient and thus requires OpenStack(R) Keystone credentials to be sourced or augmented along with the command. This requirement is in line with other OpenStack(R) clients. This service helps with configuring the storage devices such as StoreVirtual and StoreServ, which function as the backend for Cinder.</p>
 <p>You can use the following commands using the Sirius Client CLI package in the undercloud. For a list of all available commands, use the <xref type="section" href="#topic7877/help">Help Commands</xref>.</p>

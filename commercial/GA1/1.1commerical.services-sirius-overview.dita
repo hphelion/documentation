@@ -24,7 +24,7 @@
  <!--./commercial/GA1/1.1commerical.services-sirius-overview.md-->
  <!--permalink: /helion/openstack/1.1/services/sirius/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.0commerical.services-sirius-overview.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
 <p>The HP Helion OpenStack(R) Sirius Service is a REST-based web service for storage device  management. It is used to configure of storage services such as Cinder and Swift that run in the overcloud and manage various storage devices. It also provides REST-based automated deployment and management of certain sets of storage devices such as HP StoreServ FC, HP StoreServ iSCSI, and HP StoreVirtual.</p>
 <p>The Cloud Administrator is the primary user. Like the other HP Helion OpenStack(R) services, the HP Helion OpenStack(R) Sirius Service is compliant with the Keystone authentication service.</p>

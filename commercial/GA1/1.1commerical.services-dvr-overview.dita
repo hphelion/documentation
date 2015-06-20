@@ -26,7 +26,7 @@
  <!--./commercial/GA1/1.1commerical.services-dvr-overview.md-->
  <!--permalink: /helion/openstack/1.1/services/dvr/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.0commerical.services-dvr-overview.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
 <p>Distributed Virtual Routing (DVR) allows you to define connectivity among different VNSs as well as connectivity between VNS hosts and the external network. HP Helion OpenStack(R) provides Distributed Virtual Routing to cloud users.</p>
 <p>Distributed virtual routing is achieved through a set of distributed virtual routers. Each tenant has its own distributed virtual router to define the connectivity among the VNSs under the same tenant.</p>

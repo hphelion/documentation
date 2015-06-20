@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commerical.services-eon-overview.md-->
  <!--permalink: /helion/openstack/services/eon/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-eon-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>ESX integration in HP Helion OpenStack(R) enables administrators to connect their cloud to an existing VMware vCenter installation. The VMware vCenter driver connects to ESXi clusters in a vCenter through Compute proxy nodes. The Nova scheduler sees the ESXi clusters as compute nodes and uses that information for scheduling a new instance.</p>
 <p>The ESX on border (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. This information is used for deployment and configuration of ESX Proxy Compute nodes. The EON service is deployed in the undercloud controller node.</p>

@@ -22,7 +22,7 @@
  <!--./devplatform/helion/user/services/1.0port-service.md-->
  <!--permalink: /als/v1/user/services/port-service/--></p>
 <p>
-  <xref href="../../../../devplatform/helion/user/services/1.1port-service.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 </p>
 <p>HTTP and HTTPS ports and routing are provided automatically for all web applications deployed to Application Lifecycle Service (unless <xref href="../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#web" >processes:
 web:</xref> is set to

@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.install-GA-CSV.md-->
  <!--permalink: /helion/openstack/install/CSV/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.install-GA-CSV.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called <codeph>baremetal.csv</codeph>. Before you begin the installation process, you must create this file and upload the file to the installer system (called the seed cloud host) at the appropriate installation step.</p>
 <p>The baremetal.csv file informs the installer of the size of the Computer that each node will be installed into.</p>

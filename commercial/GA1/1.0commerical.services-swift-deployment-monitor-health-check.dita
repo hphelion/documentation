@@ -24,7 +24,7 @@
  <!--./commercial/GA1/1.0commerical.services-swift-deployment-monitor-health-check.md-->
  <!--permalink: /helion/openstack/services/object/swift/health-check/--></p>
 <p>
-<xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-check.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 Cloud admins can use the <b>
 <i>Icinga</i>
 </b> service running in the undercloud to monitor the health status of Account, Container, Proxy, and Object services.</p>

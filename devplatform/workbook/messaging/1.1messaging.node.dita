@@ -22,7 +22,7 @@
  <!--./devplatform/workbook/messaging/1.1messaging.node.md-->
  <!--permalink: /helion/devplatform/1.1/workbook/messaging/node/--></p>
 <p>
-<xref href="../../../devplatform/workbook/messaging/1.0messaging.node.dita" >See the Helion 1.0 Development Platform version of this page</xref>
+
 This  very simple Node.js web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS and interact with it. Use this sample to ensure that you have set up your environment correctly for connecting to, and working with RabbitMQ on the Helion Development Platform.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <p>If you are missing any of these items, you must <xref href="../../../devplatform/1.1devplatform.appdev.dita" >install them</xref>.</p>

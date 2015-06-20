@@ -26,7 +26,7 @@
  <!--./CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.md-->
  <!--permalink: /helion/openstack/carrier/services/reporting/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.0commerical.services-reporting-overview.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
 <p>
 <b>Note</b>: The deployment of the Helion OpenStack(R) v1.1 Metering service is considered experimental and targeted at developers investigating integration of external software applications with the Ceilometer API for showback, chargeback, and billing applications only. Only a limited set of metrics are available in the Helion OpenStack(R) v1.1 release. Developers interested in monitoring use cases should refer to the <xref href="https://wiki.openstack.org/wiki/Monasca" scope="external" format="html" >OpenStack(R) Monasca service</xref> which is targeted to be deployed in a future Helion OpenStack(R) release.</p>

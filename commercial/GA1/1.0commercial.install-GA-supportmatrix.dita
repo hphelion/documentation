@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.install-GA-supportmatrix.md-->
  <!--permalink: /helion/openstack/support-matrix/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>To ensure the performance and stability of the HP Helion OpenStack(R) environment, it is very important to meet the requirements and conform to the recommendations.</p>
 <p>This page provides an overview of the hardware and software that is supported for HP Helion OpenStack(R) including setup and configuration information.</p>

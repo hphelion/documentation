@@ -21,7 +21,7 @@
  <!--./devplatform/helion/user/deploy/languages/1.0go.md-->
  <!--permalink: /als/v1/user/deploy/languages/go/--></p>
 <p>
-  <xref href="../../../../../devplatform/helion/user/deploy/languages/1.1go.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 </p>
 <p>Go applications (<xref href="http://golang.org/" scope="external" format="html" >golang</xref>) are supported through a
 BuildPack framework, and can be pushed to Application Lifecycle Service with a basic setup.</p>

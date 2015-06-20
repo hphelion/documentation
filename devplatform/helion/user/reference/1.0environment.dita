@@ -22,7 +22,7 @@
  <!--./devplatform/helion/user/reference/1.0environment.md-->
  <!--permalink: /als/v1/user/reference/environment/--></p>
 <p>
-  <xref href="../../../../devplatform/helion/user/reference/1.1environment.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 </p>
 <p>Application Lifecycle Service exposes a number of predefined <xref href="http://manpages.ubuntu.com/manpages/utopic/en/man7/environ.7.html" scope="external" format="html" >environment variables</xref> during runtime, including hook processing, cron jobs and ssh commands.</p>
 <p>Some environment variables are also available during application <xref type="section" href="#topic7937/staging">staging</xref>.</p>

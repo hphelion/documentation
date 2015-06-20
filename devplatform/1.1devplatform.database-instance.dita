@@ -22,7 +22,7 @@
  <!--./devplatform/1.1devplatform.database-instance.md-->
  <!--permalink: /helion/devplatform/1.1/databaseservice/--></p>
 <p>
-<xref href="../devplatform/1.0devplatform.database-instance.dita" >See the Helion 1.0 Development Platform version of this page</xref>
+
 The database service provides lifecycle services for MySQL database instances. Lifecycle services include provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard.</p>
 <p>These instances can then be utilized by your applications to provide standard datastore/back-end functionality.</p>
 <p>The following topics explain how to create and manage a database:</p>

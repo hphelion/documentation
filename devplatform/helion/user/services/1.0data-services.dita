@@ -13,7 +13,7 @@
  <!--./devplatform/helion/user/services/1.0data-services.md-->
  <!--permalink: /als/v1/user/services/data-services/--></p>
 <p>
-  <xref href="../../../../devplatform/helion/user/services/1.1data-services.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 </p>
 <p>The Application Lifecycle Service includes a number of data services which can be bound to the
 applications you deploy. These include several databases (PostgreSQL,

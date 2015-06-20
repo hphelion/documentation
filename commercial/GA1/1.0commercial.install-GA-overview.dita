@@ -18,7 +18,7 @@
  <!--./commercial/GA1/1.0commercial.install-GA-overview.md-->
  <!--permalink: /helion/openstack/install/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.install-GA-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The HP Helion OpenStack(R) installation follows the standard <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" >TripleO deployment model</xref>, creating a seed, an undercloud and an overcloud.</p>
 <ul>

@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commerical.services-sherpa-accessing-ui.md-->
  <!--permalink: /helion/openstack/services/sherpa/accessing/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-sherpa-accessing-ui.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The <xref href="../../commercial/GA1/1.0commerical.services-sherpa-overview.dita" >HP Helion OpenStack(R) Sherpa Service</xref> provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment.</p>
 <p>You can make purchases using a self-service account on the public web server. Once a purchase is made, you can use the Sherpa UI and back-end service to download the content.</p>

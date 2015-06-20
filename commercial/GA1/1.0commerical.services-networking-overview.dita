@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commerical.services-networking-overview.md-->
  <!--permalink: /helion/openstack/services/networking/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-networking-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 <p>HP Helion OpenStack(R) Networking is a virtual networking service that leverages the OpenStack(R) Neutron service to provide network connectivity and addressing to HP Helion OpenStack(R) Compute service devices.</p>

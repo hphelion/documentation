@@ -22,7 +22,7 @@
  <!--./devplatform/helion/admin/reference/1.0known-issues.md-->
  <!--permalink: /als/v1/admin/reference/known-issues/--></p>
 <p>
-  <xref href="../../../../devplatform/helion/admin/reference/1.1known-issues.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 </p>
 <section id="buildpack-config-vars-deprecated"> <title>Buildpack config_vars Deprecated</title>
 <ul>
