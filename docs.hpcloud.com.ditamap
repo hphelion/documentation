@@ -20,6 +20,7 @@
   <topicref href="commercial/GA1/1.1commercial.index.dita"
     navtitle="HP Helion OpenStack(r) 1.1: Documentation Home">
     <topicref href="commercial/GA1/1.1commercial.whatsnew.dita"/>
+    <topicref href="commercial/GA1/1.1.1commercial.helion-update.dita"/>
     <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
     <topicref href="commercial/GA1/1.1commercial.release-notes.dita"/>
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.start.dita">
@@ -29,8 +30,23 @@
       <topicref href="commercial/GA1/1.1commercial.roll.dita"/>
       <topicref href="commercial/GA1/under_the_hood.dita"/>
     </topicref>
+    <topicref href="commercial/GA1/1.1commercial.faq.dita"/>
     <!-- Services -->
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.services.dita">
+      <topicref href="commercial/GA1/Landing/1.1commercial.landing.network.dita">
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-intro.dita"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-post-installation.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-neutron-integration.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita"
+        />
+      </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-overview.dita"/>
       <topicref href="commercial/GA1/1.1commerical.services-compute-overview.dita">
         <topicref href="commercial/GA1/1.1commerical.services-compute-configDrive.dita"/>
@@ -175,16 +191,6 @@
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita"/>
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"/>
       <!-- Using HOS -->
-      <topicref href="commercial/GA1/1.1commercial.using.dita">
-        <topicref href="commercial/GA1/1.1commercial.undercloud-admin-settings.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.undercloud-resources-overview.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.undercloud-resources-storage.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-esx.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storeserv.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storevirtual.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita"/>
-      </topicref>
       <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-storage-storeserv.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-storage-storevirtual.dita"/>
@@ -194,58 +200,26 @@
 
       
       <topicref href="commercial/GA1/1.1commercial.network-administrator-notes.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.related-topics.dita"/>
       <topicref href="commercial/GA1/1.1commerical.services-update.dita"/>
 
       <!-- Troubleshooting -->
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita">
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"/>
-        <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.controllers.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.dns.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.esx.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.logging.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.ntp.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.overcloud.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.ovsvapp.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.swift.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.vsa.dita"/>
-      </topicref>
 
       <!-- Networking -->
     </topicref>
-    <topicref href="commercial/GA1/Landing/1.1commercial.landing.network.dita">
-      <topicref href="commercial/GA1/neutron/1.1commercial_neutron-intro.dita"/>
-      <topicref href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita"/>
-      <topicref
-        href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.dita"/>
-      <topicref
-        href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita"/>
-      <topicref href="commercial/GA1/neutron/1.1commercial_neutron-post-installation.dita"/>
-      <topicref
-        href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-neutron-integration.dita"/>
-      <topicref
-        href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita"
-      />
-    </topicref>
-
-    <!-- Installation related -->
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.install.dita">
       <topicref href="commercial/GA1/1.1commercial.install-GA-overview.dita">
         <topicref href="commercial/GA1/1.1commercial.install-GA-virtual-control.dita"/>
         <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita" toc="no"/>
-        <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita" toc="no"/>
+        <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"
+          toc="no"/>
         <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita" toc="no"/>
       </topicref>
       <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita">
-         <topicref href="commercial/GA1/1.1commerical.install.HPLinux.dita">
+        <topicref href="commercial/GA1/1.1commerical.install.HPLinux.dita">
           <topicref href="commercial/GA1/1.1commercial.linux.arch.dita"/>
         </topicref>
       </topicref>
-        <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"/>
-      
+      <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"/>
       <!-- Prereqs -->
       <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs.dita">
         <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs-network.dita"/>
@@ -260,7 +234,6 @@
         </topicref>
         <topicref href="commercial/GA1/1.1commercial.install-GA-Moonshot.dita"/>
       </topicref>
-      
       <!-- Install KVM -->
       <topicref href="commercial/GA1/1.1commercial.install-GA-kvm.dita">
         <topicref href="commercial/GA1/1.1commercial.install-GA-post-kvm.dita">
@@ -277,12 +250,11 @@
           <topicref href="commercial/GA1/1.1commercial.install-3par-multipath.dita"/>
         </topicref>
       </topicref>
-      
       <!-- Install ESK -->
       <topicref href="commercial/GA1/1.1commercial.install-GA-esx.dita">
         <topicref href="commercial/GA1/1.1commercial.install-GA-post-esx.dita">
           <topicref href="commercial/GA1/1.1commercial.install-GA-ESX-Proxy.dita"/>
-            <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.dita">
+          <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.dita">
             <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.sample.dita"/>
             <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.update.dita"/>
           </topicref>
@@ -291,24 +263,32 @@
             href="commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita"
           />
         </topicref>
-
       </topicref>
-      
       <!-- Post Install -->
-      <!-- Hight Avail -->  
+      <!-- Hight Avail -->
       <topicref href="commercial/GA1/1.1commercial.install-GA-verify.dita">
         <topicref href="commercial/GA1/1.1commercial.install-GA-tempest-tests.dita"/>
       </topicref>
       <topichead navtitle="Installing on a Laptop">
         <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"/>
       </topichead>
-       
     </topicref>
-    <topichead navtitle="Post-Installation Tasks">
+    <topichead navtitle="HP Helion OpenStack(R) 1.1: Post-Installation Tasks">
       <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita"/>
       <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
       <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"/>
       <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
+    </topichead>
+    <topichead navtitle="HP Helion OpenStack(R) 1.1:Using the Undercloud Horizon Dashboard">
+      <topicref href="commercial/GA1/1.1commercial.using.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-admin-settings.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-resources-overview.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-resources-storage.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-esx.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storeserv.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storevirtual.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita"/>
     </topichead>
     <topichead navtitle="HP Helion OpenStack(R) 1.1: System Resotre and Recovery">
       <topicref
@@ -316,15 +296,32 @@
       <topicref href="commercial/GA1/1.1commerical.high-availability-restore.dita"/>
       <topicref href="commercial/GA1/1.1commercial.disaster-recovery.dita"/>
     </topichead>
+    <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita">
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"/>
+      <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.controllers.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.dns.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.esx.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.logging.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ntp.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.overcloud.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ovsvapp.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.swift.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.vsa.dita"/>
+    </topicref>
+    <topicref href="commercial/GA1/1.1commercial.related-topics.dita"/>
+
+    <!-- Installation related -->
       <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"/>
     <!-- Update -->
-    <topicref href="commercial/GA1/1.1.1commercial.helion-update.dita"/>
     <!-- FCP -->
     <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-overview.dita">
       <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-backup.dita"/>
       <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-installation.dita"/>
     </topicref>
-    <topichead navtitle="License Files">
+    <topichead navtitle="HP Helion OpenStack(R) 1.1: License Files">
       <topicref href="commercial/GA1/1.1.13rd-party-license-agreements.dita"/>
       <topicref href="commercial/GA1/1.13rd-party-license-agreements.dita"/>
       <topicref href="commercial/GA1/1.1commercial.eula.dita"/>
