@@ -264,8 +264,8 @@
 <entry> Object storage</entry>
 <entry> 400 GB; equivalent to:
 <ul>
-<li>160 images, based on 2.5 GB images</li>
-or
+<li>160 images, based on 2.5 GB images, or</li>
+
 <li>40 volume backups, based on 10 GB volumes</li>
  </ul>
 </entry>
