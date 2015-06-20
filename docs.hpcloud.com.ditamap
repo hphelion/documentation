@@ -33,20 +33,6 @@
     <topicref href="commercial/GA1/1.1commercial.faq.dita"/>
     <!-- Services -->
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.services.dita">
-      <topicref href="commercial/GA1/Landing/1.1commercial.landing.network.dita">
-        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-intro.dita"/>
-        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita"/>
-        <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.dita"/>
-        <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita"/>
-        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-post-installation.dita"/>
-        <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-neutron-integration.dita"/>
-        <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita"
-        />
-      </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-overview.dita"/>
       <topicref href="commercial/GA1/1.1commerical.services-compute-overview.dita">
         <topicref href="commercial/GA1/1.1commerical.services-compute-configDrive.dita"/>
@@ -63,53 +49,58 @@
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-imaging-overview.dita"/>
       <topicref href="commercial/GA1/1.1commerical.services-networking-overview.dita"> 
+        <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
       </topicref>
-      <topicref href="commercial/GA1/1.1commerical.services-object-overview.dita"/>
+      <topicref href="commercial/GA1/1.1commerical.services-object-overview.dita">
+        <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita"/>
+      </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-orchestration-overview.dita"/>
       <topicref href="commercial/GA1/1.1commerical.services-volume-overview.dita">
         <topicref href="commercial/GA1/1.1commercial.services-volume-fibre.dita"/>
       </topicref>
+      <!-- reprting = metering = ceilomter -->
       <topicref href="commercial/GA1/1.1commerical.services-reporting-overview.dita">
-        <topicref
-          href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita"/>
-        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-components.dita"/>
+        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-components.dita"/>        
         <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-metertypes.dita"/>
-        <topicref
-          href="commercial/GA1/ceilometer/1.1commerical.services-reporting-APIExtensions.dita"/>
         <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-RBAC.dita"/>
         <topicref
           href="commercial/GA1/ceilometer/1.1commercial.services-reporting-troubleshoot.dita"/>
+        <topicref
+          href="commercial/GA1/ceilometer/1.1commerical.services-reporting-APIExtensions.dita"/>
+        <topicref
+          href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita"/>
       </topicref>
       <!--Ceph stuff-->
       <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita">
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commerical.services-ceph-archref.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-authentication.dita"/>
+        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-pre-requisite.dita"/>
+      </topicref>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita"/>
         <topicref
           href="commercial/GA1/ceph/1.1commercial.ceph-cluster-client-node-configuration-ansible.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-glossary.dita"/>
+        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-monitoring.dita"/>
         <topicref
           href="commercial/GA1/ceph/1.1commercial.ceph-helion-openstack-ceph-storage-administration.dita"/>
-        <topicref
-          href="commercial/GA1/ceph/1.1commercial-ceph-helion-openstack-nova-ceph-Storage.dita"/>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-dmz-ha-proxy.dita"/>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-client.dita"/>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-manual-install.dita"/>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-authentication.dita"/>
         <topicref
           href="commercial/GA1/ceph/1.1commercial-ceph-hp-helion-openstack-ceph-configuration.dita"/>
         <topicref
+          href="commercial/GA1/ceph/1.1commenrcial.ceph-helion-openstack-glance-ceph-interoperability.dita"/>
+        <topicref
           href="commercial/GA1/ceph/1.1commenrcial.ceph-helion-openstack-ceph-hp-helion-openstack-cinder-storage.dita"/>
         <topicref
-          href="commercial/GA1/ceph/1.1commenrcial.ceph-helion-openstack-glance-ceph-interoperability.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-manual-install.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-monitoring.dita"/>
+          href="commercial/GA1/ceph/1.1commercial-ceph-helion-openstack-nova-ceph-Storage.dita"/>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-pools.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-client.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-dmz-ha-proxy.dita"/>
         <topicref
           href="commercial/GA1/ceph/1.1commercia.ceph-high-availability-RADOSGW-authentication.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-related-topics.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-pre-requisite.dita"/>
-      </topicref>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-glossary.dita"/>
+        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-related-topics.dita"/>
+        
       <topicref href="commercial/GA1/1.1commerical.services-sirius-overview.dita">
         <topicref href="commercial/GA1/1.1commercial.sirius-cli.dita"/>
         <topicref href="commercial/GA1/1.1commercial.sirius-cli-workflow.dita"/>
@@ -202,7 +193,7 @@
       <topicref href="commercial/GA1/1.1commercial.network-administrator-notes.dita"/>
       <topicref href="commercial/GA1/1.1commerical.services-update.dita"/>
 
-      <!-- Troubleshooting -->
+      
 
       <!-- Networking -->
     </topicref>
@@ -296,6 +287,8 @@
       <topicref href="commercial/GA1/1.1commerical.high-availability-restore.dita"/>
       <topicref href="commercial/GA1/1.1commercial.disaster-recovery.dita"/>
     </topichead>
+    
+    <!-- Troubleshooting -->
     <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita">
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"/>
       <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"/>
@@ -668,8 +661,6 @@
     <topicref href="devplatform/1.2/helion/1.2index.dita" locktitle="yes"
       navtitle="Application Lifecycle Service Documentation">
       <!--permalink: /helion/devplatform/1.2/als/admin/-->
-      <topicref href="devplatform/1.2/helion/CLI/1.2constructor_vm.dita"
-        navtitle="ALS Constructor VM" locktitle="yes"/>
       <topichead navtitle="ALS Management Console">
         <topicref href="devplatform/1.2/helion/admin/console/1.2index.dita" locktitle="yes"
           navtitle="Management Console (Admin View)"/>
