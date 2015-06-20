@@ -126,7 +126,7 @@ It is available with support for baremetal deployments (up to 30 Compute nodes).
 <p>HP provides automated, live distribution of updates.</p>
 </section>
 <section id="does-hp-helion-openstack-include-an-operating-system-os"> <title>Does HP Helion OpenStack(R) include an Operating System (OS)?<!--Removed anchor point includeOS--><!-- id="includeOS" --></title>
-<p>Yes. It includes an integrated LinuxÂ(R) host OS hardened and tested for this distribution.</p>
+<p>Yes. It includes an integrated Linuxï¿½(R) host OS hardened and tested for this distribution.</p>
 </section>
 <section id="does-this-distribution-include-the-openstack-icehouse-release"> <title>Does this distribution include the OpenStack(R) Icehouse release?<!--Removed anchor point icehouse--><!-- id="icehouse" --></title>
 <p>Yes, and HP is one of the first vendors to release a supported, productized distribution based on Icehouse, <xref href="../../community/community.index.dita" >HP Helion OpenStack(R) Community</xref>.</p>
@@ -137,7 +137,7 @@ It is available with support for baremetal deployments (up to 30 Compute nodes).
   <xref type="section" href="#topic7037"> Return to Top </xref>
 </p>
 </section>
-<section id="support-and-additional-resources"> <title>Support and additional resources</title>
+<section id="support-and-additional-resources2"> <title>Support and additional resources</title>
 </section>
 <section id="are-hp-support-services-included-with-hp-helion-openstack"> <title>Are HP support services included with HP Helion OpenStack(R)<!--Removed anchor point supportservices--><!-- id="supportservices" --></title>
 <!--No. An optional paid support contract from HP will be made available for purchase soon.-->
