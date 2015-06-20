@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic12988">
-<title>Virtual demo installation</title>
+  <title>Helion OpenStack(R) 1.1 and 1.1.1: Virtual demo installation</title>
 <titlealts>
 <searchtitle>HP Helion OpenStack(R) 1.1: Virtual demo installation</searchtitle>
 </titlealts>
@@ -88,7 +88,7 @@
 <section id="physical-requirements"> <title>Physical requirements</title>
 <ul>
 <li>
-<b>Processor</b>: The virtual demo runs best on a system with at least 1 IntelÂ(R) Core i7 Processor.</li>
+<b>Processor</b>: The virtual demo runs best on a system with at least 1 Intelï¿½(R) Core i7 Processor.</li>
 <li>
 <b>Memory</b>: It is recommended that you use 8 GB for each virtual machine, giving a total of 64 GB memory. See steps below to run with less memory.</li>
 <li>
