@@ -48,7 +48,7 @@
 <ul>
 <li>
 <p>Mac/UNIX: the JDK can be installed with the following command.</p>
-<codeph>sudo apt-get install default-jdk</codeph>
+<codeblock>sudo apt-get install default-jdk</codeblock>
 </li>
 <li>
 <p>PC: Navigate to the <xref href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" scope="external" format="html" >JDK installation page</xref> and run the appropriate JDK installer for your chosen platform.</p>
@@ -61,7 +61,7 @@
 <ul>
 <li>
 <p>Mac/UNIX: Maven can be installed with the following command:</p>
-<codeph>sudo apt-get install maven</codeph>
+<codeblock>sudo apt-get install maven</codeblock>
 </li>
 <li>
 <p>PC: Navigate to the <xref href="http://maven.apache.org/download.cgi" scope="external" format="html" >Maven installation page</xref> and follow the <xref href="http://maven.apache.org/guides/getting-started/windows-prerequisites.html" scope="external" format="html" >installation directions</xref>.</p>
@@ -74,7 +74,7 @@
 </section>
 <section id="build-the-application"> <title>Build the Application</title>
 <p>If you are not already there, <codeph>cd</codeph> to the root directory of the sample and execute:</p>
-<codeph>mvn clean package</codeph>
+<codeblock>mvn clean package</codeblock>
 <p>This builds the application with Maven. It will create the <i>rabbitmq-java-1.0.war</i> file  within the target directory.</p>
 </section>
 <section id="deploy-the-application"> <title>Deploy the Application</title>
@@ -86,18 +86,18 @@
 </li>
 <li>
 <p>Ensure that you are targeting your desired environment.  <!--A BR tag was used here in the original source.--> If you are not, execute</p>
-<codeph>helion target https://api.xx.xx.xx.xx.xip.io</codeph>
+<codeblock>helion target https://api.xx.xx.xx.xx.xip.io</codeblock>
 </li>
 <li>
 <p>Ensure that you are logged in to your desired environment.  <!--A BR tag was used here in the original source.-->If you are not, execute</p>
-<codeph>helion login</codeph>
+<codeblock>helion login</codeph>
 </li>
 <li>
 <p>If you are not already there, <codeph>cd</codeph> to the root directory of the sample.</p>
 </li>
 <li>
 <p>Deploy the application by using the command:</p>
-<codeph>helion push</codeph>
+<codeblock>helion push</codeph>
 </li>
 <li>
 <p>Accept any default values that you may be prompted for. <!--A BR tag was used here in the original source.--><b>Note</b>: By default, ALS clusters are configured with two domains (private and public). In some situations, the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</p>
