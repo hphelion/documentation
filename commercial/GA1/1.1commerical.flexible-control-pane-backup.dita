@@ -1584,12 +1584,9 @@ BM_NETWORK_CIDR=&lt;Netmask&gt;
 </li>
 <li>
 <p>Connect to the <codeph>Overcloud-2 VM</codeph> using SSH: 
-    ssh <required-cleanup remap="user">
-<ph>@<required-cleanup remap="ip_address">
-<ph/>
-</required-cleanup>
-</ph>
-</required-cleanup>
+  <codeblock>
+<codeph>   ssh &#60;user&#62; @&#60;ip_address&#62;</codeph></codeblock>
+
 </p>
 </li>
 <li>
