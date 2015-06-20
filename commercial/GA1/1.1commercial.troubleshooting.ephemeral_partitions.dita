@@ -25,7 +25,9 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/ephemeral_partitions/--></p>
-<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of LinuxÂ(R) provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP Helion OpenStack is an OpenStack technology coupled with a version of Linuxï¿½(R) provided by
+      HP. This topic describes all the known issues that you might encounter. To help you resolve
+      these issues, we have provided possible solutions.</p>
 <section id="an-ephemeral-partition-fails-to-unmount"> <title>An ephemeral partition fails to unmount</title>
 <p>If during an update, you receive the following error message:</p>
 <codeblock>
@@ -34,10 +36,11 @@
 </codeblock>
 <p>The most likely reason the partition failed to unmount is due to a process still holding a file handle on the partition. This normally happens when a process has failed to stop (where stop is issued by the Ansible playbook) or has been restarted (by <codeph>cron</codeph> for example) after the stop was issued.</p>
 <p>To find out which process is still running:</p>
-<ol>
+<ul>
 <li>
 <p>Log onto the failed nodes and enter:</p>
-
+</li>
+</ul>
 <codeblock>
 <codeph>ssh heat-admin@10.23.67.139 
 $ sudo su -
@@ -47,23 +50,26 @@ stunnel4 33047 root   24w   REG8,1  4812923 62128141 /mnt/state/var/log/stunnel4
 </codeph>
 </codeblock>
 
+<ul>
+  <li>
 <p>In the above example <codeph>stunnel4</codeph> has failed to stop.</p>
 </li>
 <li>
 <p>To stop the process and verify nothing is holding a file reference on <codeph>/mnt</codeph> enter:</p>
-
+</li>
+</ul>
 <codeblock>
 <codeph>root@overcloud-ce-controller-swiftstorage0-h7t3467lf7fx:~# pkill stunnel4
 root@overcloud-ce-controller-swiftstorage0-h7t3467lf7fx:~# lsof /mnt
 root@overcloud-ce-controller-swiftstorage0-h7t3467lf7fx:~# 
 </codeph>
 </codeblock>
-</li>
+<ul>
 <li>
 <p>Follow the procedure to restart <codeph>mysql</codeph> and <codeph>rabbitmq</codeph> from the <i>Tripleo-ansible Troubleshooting Guide</i>.
 Once restarted, re-run the overcloud ansible playbook and not the <codeph>update_oc.sh</codeph> script</p>
 </li>
-</ol>
+</ul>
 </section>
 </body>
 </topic>
