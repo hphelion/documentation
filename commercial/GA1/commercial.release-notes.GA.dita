@@ -110,7 +110,7 @@ $ sudo service neutron-openvswitch-agent restart
 <b>HP Helion OpenStack(R) Warranty</b>: 
 The programs included with the Debian Host Linux system are free software. The exact license terms for each program are described in the individual files in /usr/share/doc/*/copyright. Debian Host Linux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.</p>
 <p>
-  <xref type="section" href="#topic5681/top"> Return to Top </xref>
+  <xref href="#topic5681"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -237,7 +237,7 @@ Users can create a bootable volume and use that to boot a VM.
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic24808/top"> Return to Top </xref>
+  <xref href="#topic24808"> Return to Top </xref>
 </p>
 </section>
 <section id="deploy-arch"> <title>Deployment architecture</title>
@@ -255,13 +255,13 @@ Users can create a bootable volume and use that to boot a VM.
   <image href="../../media/topology_esxnew.png"/>
 </p>
 <p>
-  <xref type="section" href="#topic24808/top"> Return to Top </xref>
+  <xref href="#topic24808"> Return to Top </xref>
 </p>
 </section>
 <section id="hardware-req"> <title>Hardware requirement</title>
 <p>For more information of Hardware configuration see <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita" >Hardware configuration</xref> and <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>
 <p>
-  <xref type="section" href="#topic24808/top"> Return to Top </xref>
+  <xref href="#topic24808"> Return to Top </xref>
 </p>
 </section>
 <section id="networkarch"> <title>Network architecture</title>
@@ -476,7 +476,7 @@ Users can create a bootable volume and use that to boot a VM.
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic24808/top"> Return to Top </xref>
+  <xref href="#topic24808"> Return to Top </xref>
 </p>
 </section>
 <section id="networkplan"> <title>Network planning</title>
@@ -498,7 +498,7 @@ The Seed VM is expected to use eth0 to connect to the cluster network (and hence
 
 The physical cluster network can be shared by a number of logical networks, each with its own tagged VLAN and IP subnet. We recommend using at least one such network as the external network, with floating IPs coming from its subnet range. -->
 <p>
-  <xref type="section" href="#topic24808/top"> Return to Top </xref>
+  <xref href="#topic24808"> Return to Top </xref>
 </p>
 </section>
 <section id="install-configure"> <title>Installation planning</title>
@@ -592,7 +592,7 @@ Currently, supported DNS servers and networks include:
 
 * PowerDNS-->
 <p>
-  <xref type="section" href="#topic24808/top"> Return to Top </xref>
+  <xref href="#topic24808"> Return to Top </xref>
 </p>
 </section>
 <section id="highavailability"> <title>High availability</title>
@@ -600,7 +600,7 @@ Currently, supported DNS servers and networks include:
 <p>The OpenStack(R) services are deployed in a three node Controller cluster, which ensures availability of stateless services like API services and stateful services like MySQL or RabbitMQ.</p>
 <p>For more details on HA configuration, refer to <xref href="../../commercial/GA1/1.1commerical.high-availability.dita" >HP Helion OpenStack(R) High Availability</xref> and <xref href="http://docs.openstack.org/high-availability-guide/content/index.html" scope="external" format="html" >OpenStack(R) HA Guide</xref>.</p>
 <p>
-  <xref type="section" href="#topic24808/top"> Return to Top </xref>
+  <xref href="#topic24808"> Return to Top </xref>
 </p>
 <!--this is part of release 1.5
 ##Ceph Firefly 80.7 Storage Solution
@@ -616,7 +616,7 @@ For more details on Ceph integration, refer to [HP Helion OpenStack(R) Enterpris
 <p>For more information refer
 <xref href="../../commercial/GA1/1.1commercial.undercloud-admin-updates-and-extensions.dita" >Updates and extension</xref>.</p>
 <p>
-  <xref type="section" href="#topic24808/top"> Return to Top </xref>
+  <xref href="#topic24808"> Return to Top </xref>
 </p>
 </section>
 <section id="operate-manage"> <title>Operational management</title>
@@ -656,7 +656,7 @@ System and service health checks are based on the **check_mk** framework. Health
 <p>For more information see <xref href="../../commercial/GA1/1.1commercial.backup-restore-GA.dita" >HP Helion OpenStack(R) Back Up and Restore</xref>
 </p>
 <p>
-  <xref type="section" href="#topic24808/top"> Return to Top </xref>
+  <xref href="#topic24808"> Return to Top </xref>
 </p>
 </section>
 <section id="next"> <title>Next Step</title>
@@ -666,7 +666,7 @@ System and service health checks are based on the **check_mk** framework. Health
 <li>Or, try the <xref href="http://docs.hpcloud.com/content/documentation/commercial/GA1/RollYourOwn11/index.html" scope="external" format="html" >Roll Your Own Installation Guide</xref> for a more interactive installation process. </li>
 </ul>
 <p>
-  <xref type="section" href="#topic24808/top"> Return to Top </xref>
+  <xref href="#topic24808"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

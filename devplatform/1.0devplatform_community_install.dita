@@ -523,7 +523,7 @@ If you are installing the HP Helion Development Platform <b>Commercial</b> editi
 <p>There are situations in which a download will not complete.  One cause which is documented, is because the <codeph>tmp</codeph> directory ran out of space. There is a prerequisite to mount the <codeph>tmp</codeph> directory to a larger partition.  If you have completed this step and the download is still failing, then we will need to reset the download. In the current release, this requires a manual process.</p>
 <p>As the <i>admin</i> user, in the Admin project, click on <b>Project</b>, then <b>Object Store</b>. Open the <codeph>sherpa-cache</codeph> folder and delete the <codeph>wscatalog.&lt;id&gt;</codeph> folder which contains the cached download. The service should now be available to download again.</p>
 <p>
-  <xref type="section" href="#topic15079/top"> Return to Top </xref>
+  <xref href="#topic15079"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

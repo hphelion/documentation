@@ -54,7 +54,7 @@ For legacy containers created prior to the implementation of storage policies, y
 
 In other words, default means *create the container using this policy if no policy was specified* and Policy-0 means *apply the legacy policy to an existing container that does not have a specified policy*. Note that in the unique case where no other policies are defined, Policy-0 is also the default. -->
 <p>
-  <xref type="section" href="#topic2065/top"> Return to Top </xref>
+  <xref href="#topic2065"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

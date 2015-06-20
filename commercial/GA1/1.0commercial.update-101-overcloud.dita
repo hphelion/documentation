@@ -478,7 +478,7 @@ To manage the VMs launched using the older Compute proxy, use the same hostname 
 <p>If your cloud uses the optional HP Helion OpenStack(R) DNSaaS (Domain Name Server as a Service), upgrade DNSaaS.</p>
 <p>For installation instructions, see <xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" >DNSaaS Installation and Configuration</xref>.</p>
 <p>
-  <xref type="section" href="#topic14215/top"> Return to Top </xref>
+  <xref href="#topic14215"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -57,7 +57,7 @@ The Orchestration service allows users to work with stacks, which are a mechanis
 <section id="for-more-information"> <title>For more information</title>
 <p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an OpenStack(R) Cloud is put together. However, the HP Helion OpenStack(R) takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
 <p>
-  <xref type="section" href="#topic1948/top"> Return to Top </xref>
+  <xref href="#topic1948"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

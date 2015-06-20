@@ -215,7 +215,7 @@ If this error occurs, **confirm** that the cause is an ISCSI error.
 <p>
 <b>Note</b>: API requests will fail until the new keepalived cluster restarts.</p>
 <p>
-  <xref type="section" href="#topic2919/top"> Return to Top </xref>
+  <xref href="#topic2919"> Return to Top </xref>
 </p>
 </section>
 </body>

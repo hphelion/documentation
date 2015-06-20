@@ -569,7 +569,7 @@ https://&lt;internalVIP&gt;:5000/v2.0</entry>
 <p>Note that there are additional traffic flows necessary for StoreVirtual operation in addition to the interaction with Helion nodes described above. This includes CMC management console access, StoreVirtual inter-cluster communication and access to network services such as NTP.</p>
 <p>StoreVirtual port usage is described in <xref href="http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> in PDF.</p>
 <p>
-  <xref type="section" href="#topic20483/top"> Return to Top </xref>
+  <xref href="#topic20483"> Return to Top </xref>
 </p>
 </section>
 <section id="storeserv"> <title>Securing 3Par StoreServ network connections</title>
@@ -667,7 +667,7 @@ See Reference 6 below </entry>
 <p>Note that there are additional traffic flows necessary for StoreServ operation in addition to the interaction with the Helion nodes described in this section. This includes SSMC console access and Service Processor communication.</p>
 <p>StoreServ port usage is described on page 65 of the <xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf" scope="external" format="pdf">HP 3PAR StoreServ 10000 Storage Physical Planning Manual</xref> in PDF.</p>
 <p>
-  <xref type="section" href="#topic20483/top"> Return to Top </xref>
+  <xref href="#topic20483"> Return to Top </xref>
 </p>
 </section>
 <section id="additional"> <title>Additional Block Storage Resources</title>
@@ -700,7 +700,7 @@ See Reference 6 below </entry>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic20483/top"> Return to Top </xref>
+  <xref href="#topic20483"> Return to Top </xref>
 </p>
 </section>
 <section id="esx"> <title>Securing ESX network connections in Helion</title>
@@ -761,7 +761,7 @@ See Reference 6 below </entry>
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic20483/top"> Return to Top </xref>
+  <xref href="#topic20483"> Return to Top </xref>
 </p>
 </section>
 <section id="service"> <title>Service network</title>
@@ -790,7 +790,7 @@ See Reference 6 below </entry>
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic20483/top"> Return to Top </xref>
+  <xref href="#topic20483"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

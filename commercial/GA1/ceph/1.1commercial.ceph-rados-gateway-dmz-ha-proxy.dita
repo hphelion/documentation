@@ -250,7 +250,7 @@ swift -V 1.0 -A https://HA.ex.com/auth/v1.0 -U s3User:swiftUser -K Ks0qeIDJz5SBU
   <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-client.dita" >RADOS Gateway Client</xref>
 </p>
 <p>
-  <xref type="section" href="#topic6547/top"> Return to Top </xref>
+  <xref href="#topic6547"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

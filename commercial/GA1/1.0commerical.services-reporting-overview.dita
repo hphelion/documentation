@@ -93,7 +93,7 @@ The Telemetry and Reporting contains threshold alarms that you can configure to 
 <section id="for-more-information"> <title>For more information</title>
 <p>For information on how to operate your cloud, we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an OpenStack(R) cloud is put together. However, the HP Helion OpenStack(R) takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
 <p>
-  <xref type="section" href="#topic3035/top"> Return to Top </xref>
+  <xref href="#topic3035"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

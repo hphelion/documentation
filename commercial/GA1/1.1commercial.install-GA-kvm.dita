@@ -232,7 +232,7 @@ If you are integrating LDAP into your environment, you need to configure the Hor
 <section id="next-steps"> <title>Next Steps</title>
 <p>See <xref href="../../commercial/GA1/1.1commercial.install-GA-post-kvm.dita" >Post-Installation for KVM Hypervisor</xref>.</p>
 <p>
-  <xref type="section" href="#topic7417/top"> Return to Top </xref>
+  <xref href="#topic7417"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

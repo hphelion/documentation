@@ -626,7 +626,7 @@ heartbeat-tool/src/nodeaccess.py
   <xref href="https://helion.hpwsportal.com/" scope="external" format="html" >https://helion.hpwsportal.com/</xref>
 </p>
 <p>
-  <xref type="section" href="#topic64701/top"> Return to Top </xref>
+  <xref href="#topic64701"> Return to Top </xref>
 </p>
 </section>
 <section id="cluster-validation"> <title>Helion OpenStack(R) Ceph cluster validation</title>
@@ -748,7 +748,7 @@ filestore queue committing max bytes = 536870912
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic64701/top"> Return to Top </xref>
+  <xref href="#topic64701"> Return to Top </xref>
 </p>
 </section>
 <section id="client-validation"> <title>Helion OpenStack(R) Ceph client validation</title>
@@ -1426,7 +1426,7 @@ tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic64701/top"> Return to Top </xref>
+  <xref href="#topic64701"> Return to Top </xref>
 </p>
 </section>
 <section id="volume-snapshot"> <title>Volume snapshots</title>
@@ -1684,7 +1684,7 @@ tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic64701/top"> Return to Top </xref>
+  <xref href="#topic64701"> Return to Top </xref>
 </p>
 </section>
 <section id="gateway-validation"> <title>Ceph RADOS gateway validation</title>
@@ -1855,7 +1855,7 @@ export ST_KEY= abd
   <xref href="../../../commercial/GA1/ceph/1.1commenrcial.ceph-monitoring.dita" >Ceph Monitoring</xref>
 </p>
 <p>
-  <xref type="section" href="#topic64701/top"> Return to Top </xref>
+  <xref href="#topic64701"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
