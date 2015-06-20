@@ -24,33 +24,23 @@
 <xref href="https://github.com/technomancy/leiningen" scope="external" format="html" >leiningen</xref>.</p>
 <p>To create a new Clojure web application, install leiningen and
 <xref href="http://webnoir.org/" scope="external" format="html" >Noir</xref> (a Clojure web framework):</p>
-<codeblock>
-  <codeph>lein plugin install lein-noir 1.1.0
-</codeph>
-</codeblock>
+<codeblock>lein plugin install lein-noir 1.1.0</codeblock>
 <p>Create a Noir project:</p>
-<codeblock>
-  <codeph>lein noir new myapp
+<codeblock>lein noir new myapp
 ...
-cd myapp/
-</codeph>
-</codeblock>
+cd myapp/</codeblock>
 <p>Now deploy to Application Lifecycle Service. Accept the defaults for each prompt:</p>
-<codeblock>
-  <codeph>helion push myapp
+<codeblock>helion push myapp
 [...]
 Application Deployed URL: 'myapp.helion-xxxx.local'?
 [...]
-Starting Application: OK
-</codeph>
-</codeblock>
+Starting Application: OK</codeblock>
 <p>Open the application's URL in your browser to see the default Noir welcome
 page.</p>
 <section id="clojure-database-services-example"> <title>Clojure Database Services Example</title>
 <p>Taken from the <xref href="https://github.com/Stackato-Apps/4clojure/blob/stackato/src/foreclojure/config.clj#L6" scope="external" format="html" >4clojure sample
 app</xref>:</p>
-<codeblock>
-  <codeph>(defn assoc-cloud-env
+<codeblock>(defn assoc-cloud-env
   "Import Cloud Foundry / Application Lifecycle Service environment settings"
   [config]
   (let [port (Integer/parseInt (System/getenv "PORT"))
@@ -62,9 +52,7 @@ app</xref>:</p>
       :db-port    (cred "port")
       :db-user    (cred "username")
       :db-pwd     (cred "password")
-      :db-dbname  (cred "db"))))
-</codeph>
-</codeblock>
+      :db-dbname  (cred "db"))))</codeblock>
 </section>
 </body>
 </topic>

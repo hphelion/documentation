@@ -21,25 +21,10 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/deploy/1.2newrelic.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/deploy/newrelic/--></p>
-<p>
-<xref type="section" href="#topic5392/new-relic-for-ruby">New Relic for Ruby</xref>
-        -   <xref type="section" href="#topic5392/the-ruby-gem">The Ruby Gem</xref>
-        -   <xref type="section" href="#topic5392/installing-the-ruby-agent-with-the-bundler-gem">Installing the Ruby agent with the Bundler Gem</xref>
-        -   <xref type="section" href="#topic5392/configuration-file">Configuration File</xref>
-    -   <xref type="section" href="#topic5392/new-relic-for-python">New Relic for Python</xref>
-        -   <xref type="section" href="#topic5392/bottle-currency-example">Bottle Currency Example</xref>
-    -   <xref type="section" href="#topic5392/new-relic-for-java">New Relic for Java</xref>
-        -   <xref type="section" href="#topic5392/pet-catalog-example">Pet Catalog Example</xref>
-    -   <xref type="section" href="#topic5392/new-relic-for-php">New Relic for PHP</xref>
-        -   <xref type="section" href="#topic5392/wordpress-example">WordPress Example</xref>
-    -   <xref type="section" href="#topic5392/results">Results</xref>
-</p>
-<p>
-  <b>Note</b>
-</p>
-<p>These instructions are for use with Application Lifecycle Service. For further details,
-please see the <xref href="http://newrelic.com/docs/python/new-relic-for-python" scope="external" format="html" >New Relic
-site</xref>.</p>
+        <note>These instructions are for use with Application Lifecycle Service. For further
+            details, please see the <xref
+                href="http://newrelic.com/docs/python/new-relic-for-python" scope="external"
+                format="html">New Relic site</xref>.</note>
 <p>New Relic can be used to track your application analytics running in
 Application Lifecycle Service as well as for server monitoring. The languages it can
 currently be used with are:</p>
@@ -60,43 +45,26 @@ currently be used with are:</p>
 <p>In order to use New Relic, you need a <xref href="http://newrelic.com/" scope="external" format="html" >New Relic
 account</xref>.</p>
 <p>
-  <b>Note</b>
-</p>
-<p>For security reasons, avoid committing your license key to source
-control.</p>
+            <note>For security reasons, avoid committing your license key to source control.</note>
+        </p>
 <section id="new-relic-for-ruby"> <title>New Relic for Ruby</title>
 </section>
 <section id="the-ruby-gem"> <title>The Ruby Gem</title>
 <p>New Relic recommends installing the New Relic Ruby gem available on
 gemcutter as <codeph>newrelic_rpm</codeph>:</p>
-<codeblock>
-  <codeph>$ sudo gem install newrelic_rpm
-</codeph>
-</codeblock>
+<codeblock>$ sudo gem install newrelic_rpm</codeblock>
 <p>Update the Ruby Gem at any time by running:</p>
-<codeblock>
-  <codeph>$ sudo gem update newrelic_rpm
-</codeph>
-</codeblock>
+<codeblock>$ sudo gem update newrelic_rpm</codeblock>
 <p>Once the Ruby Gem is installed, add this line to your <i>Gemfile</i>:</p>
-<codeblock>
-  <codeph>$ gem 'newrelic_rpm'
-</codeph>
-</codeblock>
+<codeblock>$ gem 'newrelic_rpm'</codeblock>
 </section>
 <section id="installing-the-ruby-agent-with-the-bundler-gem"> <title>Installing the Ruby agent with the Bundler Gem</title>
 <p>Add the gem specification to your <i>Gemfile</i>. It's best to place the New
 Relic gem as low in the list as possible, allowing the frameworks above
 it to be instrumented when the gem initializes:</p>
-<codeblock>
-  <codeph>$ gem 'newrelic_rpm'
-</codeph>
-</codeblock>
+<codeblock>$ gem 'newrelic_rpm'</codeblock>
 <p>In the same folder as the <i>Gemfile</i>, run:</p>
-<codeblock>
-  <codeph>$ bundle install
-</codeph>
-</codeblock>
+<codeblock>$ bundle install</codeblock>
 </section>
 <section id="configuration-file"> <title>Configuration File</title>
 <p>After installing the agent, copy the newrelic.yml file into the config
@@ -115,36 +83,17 @@ configuration options that aren't in your <i>config/newrelic.yml</i> file.</p>
 <p>The minimal steps required to integrate New Relic to your Python WSGI
 application:</p>
 <ol>
-<li>
-<p>At the top of <i>wsgi.py</i>, add:</p>
-
-<codeblock>
-<codeph>import newrelic.agent
-newrelic.agent.initialize()
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>In <i>wsgi.py</i>, wrap your <codeph>application</codeph> WSGI entry
-point, eg:</p>
-
-<codeblock>
-<codeph>application = newrelic.agent.wsgi_application()(application)
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Add required newrelic environment variables to <i>manifest.yml</i>:</p>
-
-<codeblock>
-<codeph>env:
+<li> At the top of <i>wsgi.py</i>,
+                    add:<codeblock>import newrelic.agent
+newrelic.agent.initialize()</codeblock></li>
+<li> In <i>wsgi.py</i>, wrap your <codeph>application</codeph> WSGI entry point,
+                    eg:<codeblock>application = newrelic.agent.wsgi_application()(application)</codeblock></li>
+<li> Add required newrelic environment variables to
+                    <i>manifest.yml</i>:<codeblock>env:
       NEW_RELIC_LOG: stderr
       NEW_RELIC_LOG_LEVEL: DEBUG  # &lt;- this is optional
       NEW_RELIC_APP_NAME: &lt;your application name&gt;
-      NEW_RELIC_LICENSE_KEY: &lt;your license key&gt;
-</codeph>
-</codeblock>
-</li>
+      NEW_RELIC_LICENSE_KEY: &lt;your license key&gt;</codeblock></li>
 </ol>
 <p>An alternative to modifying your python is to wrap
 <codeph>$PROCESSES_WEB</codeph> in <i>manifest.yml</i> with
@@ -182,14 +131,11 @@ directory of your application along with WEB-INF folder.</p>
 <li>
 <p>.yml*:</p>
 
-<codeblock>
-<codeph>hooks:
+<codeblock>hooks:
     pre-running:
     - mv newrelic $HELION_APP_ROOT/tomcat/
     - cd $HELION_APP_ROOT/tomcat/newrelic
-    - java -jar newrelic.jar install
-</codeph>
-</codeblock>
+    - java -jar newrelic.jar install</codeblock>
 </li>
 </ul>
 </section>
@@ -211,8 +157,7 @@ directory of the application and make some modifications to
 </xref> directory
 containing the following:</p>
 
-<codeblock>
-<codeph>extension=newrelic.so
+<codeblock>extension=newrelic.so
 
 newrelic.daemon.logfile="/home/helion/logs/newrelic-daemon.log"
 newrelic.daemon.loglevel="warning"
@@ -221,9 +166,7 @@ newrelic.logfile="/home/helion/logs/php_agent.log"
 newrelic.loglevel="warning"
 
 newrelic.license="XXXXXXX-your-new-relic-key-XXXXXXXXXXX"
-newrelic.appname="YourAppName"
-</codeph>
-</codeblock>
+newrelic.appname="YourAppName"</codeblock>
 
 <p>The <codeph>license_key</codeph> can be found in your 'Account
 settings' page on New Relic.</p>
@@ -239,12 +182,9 @@ documentation</xref>.</p>
 <li>
 <p>Add the following section to a "hooks" section in <i>manifest.yml</i>:</p>
 
-<codeblock>
-<codeph>hooks:
+<codeblock>hooks:
     pre-running:
-    - mv -f newrelic.ini $HELION_APP_ROOT/apache/php/newrelic.ini
-</codeph>
-</codeblock>
+    - mv -f newrelic.ini $HELION_APP_ROOT/apache/php/newrelic.ini</codeblock>
 </li>
 </ul>
 </section>

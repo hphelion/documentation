@@ -43,22 +43,13 @@ application settings to use instance-specific values. These values are
 provided to Application Lifecycle Service using environment variables. For example, the
 application is not allowed to arbitrarily choose which port it runs on.
 It must use the port assigned by Application Lifecycle Service with the <codeph>PORT</codeph> variable. To access this in a node application:</p>
-<codeblock>
-  <codeph>process.env.PORT
-</codeph>
-</codeblock>
+<codeblock>process.env.PORT</codeblock>
 <p>Likewise, the host IP address is exposed by <codeph>VCAP_APP_HOST</codeph>:</p>
-<codeblock>
-  <codeph>process.env.VCAP_APP_HOST
-</codeph>
-</codeblock>
+<codeblock>process.env.VCAP_APP_HOST</codeblock>
 <p>To make the application usable in both local and Application Lifecycle Service deployments,
 use structures such as:</p>
-<codeblock>
-  <codeph>var port = process.env.PORT || 1337;
-var host = process.env.VCAP_APP_HOST || "127.0.0.1";
-</codeph>
-</codeblock>
+<codeblock>var port = process.env.PORT || 1337;
+var host = process.env.VCAP_APP_HOST || "127.0.0.1";</codeblock>
 </section>
 <section id="using-data-services"> <title>Using Data Services</title>
 <p>Data services need to be configured with values from VCAP_SERVICES, DATABASE_URL, or a database-specific environment
@@ -72,22 +63,18 @@ variable</xref>
 (REDIS_URL, MONGODB_URL, etc.) is often the simplest option.</p>
 <p>Use the variable in your code to connect your application to the
 database. For example:</p>
-<codeblock>
-  <codeph>console.log("attempting to connect to mongodb");
+<codeblock>console.log("attempting to connect to mongodb");
 if(process.env.MONGODB_URL){
   mongoose.connect(process.env.MONGODB_URL);
 } else {
   mongoose.connect("127.0.0.1", "myappdb", 27017);
-}
-</codeph>
-</codeblock>
+}</codeblock>
 <p>
 <codeph>VCAP_SERVICES</codeph> is a JSON object
 containing information about all the data service bound to the
 application. A typical <codeph>VCAP_SERVICES</codeph> variable
 containing a single MongoDB service might look like this:</p>
-<codeblock>
-  <codeph>{
+<codeblock>{
   "mongodb": [
     {
       "name": "todos",
@@ -109,13 +96,10 @@ containing a single MongoDB service might look like this:</p>
       }
     }
   ]
-}
-</codeph>
-</codeblock>
+}</codeblock>
 <p>To use this information in your application code, use something similar
 to this block:</p>
-<codeblock>
-  <codeph>if(process.env.VCAP_SERVICES){
+<codeblock>if(process.env.VCAP_SERVICES){
   var services = JSON.parse(process.env.VCAP_SERVICES);
   var dbcreds = services['mongodb'][0].credentials;
 }
@@ -125,9 +109,7 @@ if(dbcreds){
   mongoose.connect(dbcreds.host, dbcreds.db, dbcreds.port, {user: dbcreds.username, pass: dbcreds.password});
 } else {
   mongoose.connect("127.0.0.1", "myappdb", 27017);
-}
-</codeph>
-</codeblock>
+}</codeblock>
 <p>This is the typical pattern used for all databases exposed by
 VCAP_SERVICES.</p>
 </section>
