@@ -23,7 +23,7 @@
 </p>
 <p>This topic provides you links to OpenStack(R) documentation that you might find helpful when working with HP Helion OpenStack(R)</p>
 <section id="openstack-links"> <title>OpenStack(R) Links</title>
-<p>The HP Helion OpenStack(R) product contains OpenStack(R) technology coupled with a LinuxÂ(R) operating system.</p>
+<p>The HP Helion OpenStack(R) product contains OpenStack(R) technology coupled with a Linuxï¿½(R) operating system.</p>
 <p>For more information, refer to the official open source OpenStack(R) documentation site:</p>
 <ul>
 <li>
@@ -45,8 +45,8 @@
 <xref href="http://docs.openstack.org/trunk/openstack-ops/content/index.html" scope="external" format="html" >OpenStack(R) Operations Guide</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/api/quick-start/content/index.html#Compute_API_Quick_Start" scope="external" format="html" >OpenStack(R) API Quick Start</xref>
-</li>
+<xref href="http://docs.openstack.org/api/quick-start/content/index.html" scope="external" format="html" >OpenStack(R) API Quick Start</xref>
+  <!-- #Compute_API_Quick_Start --> </li>
 <li>
 <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >OpenStack(R) Command-line Clients</xref>
 </li>
