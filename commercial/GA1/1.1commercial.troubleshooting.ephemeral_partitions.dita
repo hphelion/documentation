@@ -25,7 +25,7 @@
       <!--PUBLISHED-->
       <!--./commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.md-->
       <!--permalink: /helion/openstack/1.1/services/troubleshooting/ephemeral_partitions/--></p>
-    <p>HP Helion OpenStack is an OpenStack technology coupled with a version of Linux�(R) provided by
+    <p>HP Helion OpenStack is an OpenStack technology coupled with a version of Linux(R) provided by
       HP. This topic describes all the known issues that you might encounter. To help you resolve
       these issues, we have provided possible solutions.</p>
     <section id="an-ephemeral-partition-fails-to-unmount"> <title>An ephemeral partition fails to unmount</title>
