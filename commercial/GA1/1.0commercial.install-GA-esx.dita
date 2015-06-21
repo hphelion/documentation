@@ -62,7 +62,7 @@
 </section>
 <section id="csv"> <title>Prepare baremetal.csv file</title>
 <p>Before installing, make sure you have created the <codeph>baremetal.csv</codeph> file that is required for installation.</p>
-<p>For more information, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv/" >Creating the baremetal.csv file</xref> in <i>HP <tm tmtype="reg">Helion Openstack</tm> Installation: Prerequisites</i>.</p>
+<p>For more information, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv" >Creating the baremetal.csv file</xref> in <i>HP <tm tmtype="reg">Helion Openstack</tm> Installation: Prerequisites</i>.</p>
 </section>
 <section id="name-resolution"> <title>Set DNS servers</title>
 <p>To set a default DNS name server for your HP <tm tmtype="reg">Helion Openstack</tm> Commercial cloud, refer to <xref href="../../commercial/GA1/1.0commercial.name-resolution.dita" >Enabling Name Resolution from Tenant VMs in the Overcloud</xref> before installation.</p>
