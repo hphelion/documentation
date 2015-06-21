@@ -112,7 +112,7 @@ This release supports the use of a <xref href="1.1.1commerical.services-customer
 <section id="10"> <title>Features in HP Helion <tm tmtype="reg">Openstack</tm> 1.0</title>
 <p>The following features have been added to HP Helion <tm tmtype="reg">Openstack</tm> 1.0:</p>
 <p>
-<b><tm tmtype="reg">Openstack</tm> Services</b> - The full set of standard <xref href="1.1commerical.services-overview.dita#<tm tmtype="reg">Openstack</tm>" ><tm tmtype="reg">Openstack</tm> services</xref> is in HP Helion <tm tmtype="reg">Openstack</tm> Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
+<b><tm tmtype="reg">Openstack</tm> Services</b> - The full set of standard <xref href="1.1commerical.services-overview.dita#Openstack" ><tm tmtype="reg">Openstack</tm> services</xref> is in HP Helion <tm tmtype="reg">Openstack</tm> Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
 <p>
 <b>Other Services</b> - <xref href="1.1commerical.services-overview.dita#<tm tmtype="reg">Openstack</tm>" >Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
 <p>
