@@ -6,17 +6,17 @@
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
-            <othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
-            <othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0"/>
-            <othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0.1"/>
-            <othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
+            <othermeta name="product-version" content="HP Helion Openstack"/>
+            <othermeta name="product-version" content="HP Helion Openstack 1.0"/>
+            <othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
+            <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
             <othermeta name="role" content="Network Administrator"/>
             <othermeta name="role" content="Network Architect"/>
             <othermeta name="role" content="Vikas Deolaliker, Paul Kevin"/>
-            <othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
-            <othermeta name="product-version2" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0"/>
-            <othermeta name="product-version3" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0.1"/>
-            <othermeta name="product-version4" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
+            <othermeta name="product-version1" content="HP Helion Openstack"/>
+            <othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
+            <othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
+            <othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
         </metadata>
     </prolog>
     <body>
