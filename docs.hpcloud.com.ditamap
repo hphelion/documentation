@@ -16,7 +16,7 @@
   </topicmeta>
   <topicref href="publiccloud/index.dita"/>
   <topicref href="commercial/GA1/1.1commercial.index.dita"
-    navtitle="HP Helion OpenStack(r) 1.1: Documentation Home">
+    navtitle="HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Documentation Home">
     <topicref href="commercial/GA1/1.1commercial.whatsnew.dita"/>
     <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
     <topicref href="commercial/GA1/1.1commercial.release-notes.dita"/>
