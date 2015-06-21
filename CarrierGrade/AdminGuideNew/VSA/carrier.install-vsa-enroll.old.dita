@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3340">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Enrolling the New Baremetal Server</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Enrolling the New Baremetal Server</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) Carrier Grade"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B, Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) Carrier Grade"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade"/>
 </metadata>
 </prolog>
 <body>

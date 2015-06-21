@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1184">
-<title>HP Helion OpenStack(R) 1.1: Manage Your Cloud</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Manage Your Cloud</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,27 +12,27 @@
 <!--UNDER REVISION-->
  <!--./UseCases/1.1commercial.dashboard.managing.md-->
  <!--permalink: /helion/commercial/1.1/dashboard/managing/--></p>
-<p>The HP Helion OpenStack(R) dashboards are browser-based interfaces that enable you to manage your entire cloud environment.</p>
-<p>The dashboards are based on OpenStack(R) Horizon and provide enhanced features.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> dashboards are browser-based interfaces that enable you to manage your entire cloud environment.</p>
+<p>The dashboards are based on <tm tmtype="reg">Openstack</tm> Horizon and provide enhanced features.</p>
 <p>Refer to these documentation resources:</p>
 <!-- Will we have this in Community
-* [HP Helion OpenStack(R) Community Troubleshooting](/helion/community/manage/troubleshooting/) &#8212; Provides tips to help you troubleshoot issues you may encounter with HP Helion OpenStack(R) Community. -->
+* [HP Helion <tm tmtype="reg">Openstack</tm> Community Troubleshooting](/helion/community/manage/troubleshooting/) &#8212; Provides tips to help you troubleshoot issues you may encounter with HP Helion <tm tmtype="reg">Openstack</tm> Community. -->
 <ul>
 <li>
-<xref href="../commercial/GA1/1.1commercial.dashboard.how-works.dita" >How to use the HP Helion OpenStack(R) Dashboards</xref> — Describes the Project and Administration dashboard user interface dialogs and options. </li>
+<xref href="../commercial/GA1/1.1commercial.dashboard.how-works.dita" >How to use the HP Helion <tm tmtype="reg">Openstack</tm> Dashboards</xref> — Describes the Project and Administration dashboard user interface dialogs and options. </li>
 <li>
-<xref href="../UseCases/TasksforUsers/1.1commercial.dashboard.users.dita" >Using HP Helion OpenStack(R) for Users</xref> — Describes the Operational Dashboard user interface dialogs and options.</li>
+<xref href="../UseCases/TasksforUsers/1.1commercial.dashboard.users.dita" >Using HP Helion <tm tmtype="reg">Openstack</tm> for Users</xref> — Describes the Operational Dashboard user interface dialogs and options.</li>
 </ul>
 <p>
 <b>Note:</b> Administrators can perform all of the user tasks in addition to the <xref href="../UseCases/TasksforAdmins/1.1commercial.dashboard.admin.dita" >admin</xref> tasks.</p>
 <ul>
 <li>
-<xref href="../UseCases/TasksforAdmins/1.1commercial.dashboard.admin.dita" >Using HP Helion OpenStack(R) for Administrators</xref> — Describes the Operational Dashboard user interface dialogs and options.</li>
+<xref href="../UseCases/TasksforAdmins/1.1commercial.dashboard.admin.dita" >Using HP Helion <tm tmtype="reg">Openstack</tm> for Administrators</xref> — Describes the Operational Dashboard user interface dialogs and options.</li>
 </ul>
 <!--
-* [HP Helion OpenStack(R) Building Images](/helion/commercial/1.1/manage/image-builder/) &#8212; Shows you how to use Disk Image Builder to create images for the HP Helion OpenStack(R)
+* [HP Helion <tm tmtype="reg">Openstack</tm> Building Images](/helion/commercial/1.1/manage/image-builder/) &#8212; Shows you how to use Disk Image Builder to create images for the HP Helion <tm tmtype="reg">Openstack</tm>
 
-* [HP Helion OpenStack(R) Backup and Restore](/helion/commercial/1.1/manage/backup-process/) &#8212; Explains how to backup and restore the components of the HP Helion OpenStack(R) Management Host. -->
+* [HP Helion <tm tmtype="reg">Openstack</tm> Backup and Restore](/helion/commercial/1.1/manage/backup-process/) &#8212; Explains how to backup and restore the components of the HP Helion <tm tmtype="reg">Openstack</tm> Management Host. -->
 <p>
   <xref type="section" href="#topic1184"> Return to Top </xref>
 </p>

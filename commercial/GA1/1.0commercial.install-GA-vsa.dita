@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13582">
-<title>HP Helion OpenStack(R) 1.0: Installation: Deploy and Configure HP StoreVirtual VSA</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Installation: Deploy and Configure HP StoreVirtual VSA</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -63,7 +63,7 @@
 </p>
 <!--1 - **Install CMC**
      
-   [Install CMC](#install-hp-storevirtual-cmc) on the seed node where the seed cloud is running. The CMC binary comes along with the HP Helion OpenStack(R) installer and is present in the **Tripleo** directory. 
+   [Install CMC](#install-hp-storevirtual-cmc) on the seed node where the seed cloud is running. The CMC binary comes along with the HP Helion <tm tmtype="reg">Openstack</tm> installer and is present in the **Tripleo** directory. 
 
 2 - **Add VSA Baremetal nodes to ironic database**
     
@@ -120,7 +120,7 @@
    * Execute [update cloud script](/helion/openstack/ga/undercloud/oc/config/storevirtual/) from seed cloud. -->
 </section>
 <section id="install-hp-storevirtual-cmc"> <title>Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux</title>
-<p>In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP Helion OpenStack(R) management network.</p>
+<p>In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP Helion <tm tmtype="reg">Openstack</tm> management network.</p>
 </section>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
@@ -128,7 +128,7 @@
 <p>You must be running the X Windows System to install the CMC.</p>
 </li>
 <li>
-<p>We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack(R) management network.</p>
+<p>We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion <tm tmtype="reg">Openstack</tm> management network.</p>
 </li>
 </ul>
 <p>
@@ -149,7 +149,7 @@
 <section id="installation"> <title>Installation</title>
 <ol>
 <li>
-<p>Verify if the CMC installer file inside <codeph>tripleo</codeph> directory (packaged along with the HP Helion OpenStack(R) installer) has the executable permission otherwise execute the following command:</p>
+<p>Verify if the CMC installer file inside <codeph>tripleo</codeph> directory (packaged along with the HP Helion <tm tmtype="reg">Openstack</tm> installer) has the executable permission otherwise execute the following command:</p>
 
 <codeblock>
 <codeph># chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
@@ -538,7 +538,7 @@ from the above steps.</p>
 <ul>
 <li>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.undercloud-resources-overview.dita" >Working with HP Helion OpenStack(R) Undercloud Horizon Dashboard</xref>-(Recommended)</p>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-resources-overview.dita" >Working with HP Helion <tm tmtype="reg">Openstack</tm> Undercloud Horizon Dashboard</xref>-(Recommended)</p>
 </li>
 <li>
 <p>
@@ -555,12 +555,12 @@ from the above steps.</p>
     For detailed intructions, see the  document. 
 - [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)-  REQUIRED
 
-    Our managed DNS service, based on the OpenStack(R) Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+    Our managed DNS service, based on the <tm tmtype="reg">Openstack</tm> Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
     For detailed installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
 <!--## Next step
 
-Configure HP 3PAR StoreServ, see [HP Helion OpenStack(R) Commercial: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/).-->
+Configure HP 3PAR StoreServ, see [HP Helion <tm tmtype="reg">Openstack</tm> Commercial: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/).-->
 <p>
   <xref type="section" href="#topic13582"> Return to Top </xref>
 </p>

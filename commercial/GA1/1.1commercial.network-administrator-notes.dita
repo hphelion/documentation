@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5798">
-<title>HP Helion OpenStack(R) 1.1: Network Administrator Notes</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Network Administrator Notes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Michael B"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,22 +25,22 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.network-administrator-notes.md-->
  <!--permalink: /helion/openstack/1.1/network/administrator/notes/--></p>
-<p>The HP Helion OpenStack(R) cloud networking platform is based on the OpenStack(R) standard. OpenStack(R) defines an architecture and compliant vendors (of which HP is one) create the implementations. HP Helion is one of these OpenStack(R) implementations.</p>
-<p>The OpenStack(R) Cloud Administrator Notes describe the common administrator tasks required to enable and maintain the primary OpenStack(R) services. These primary services are shown below.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> cloud networking platform is based on the <tm tmtype="reg">Openstack</tm> standard. <tm tmtype="reg">Openstack</tm> defines an architecture and compliant vendors (of which HP is one) create the implementations. HP Helion is one of these <tm tmtype="reg">Openstack</tm> implementations.</p>
+<p>The <tm tmtype="reg">Openstack</tm> Cloud Administrator Notes describe the common administrator tasks required to enable and maintain the primary <tm tmtype="reg">Openstack</tm> services. These primary services are shown below.</p>
 <p>
   <image href="../../media/commercial_openstack-services.png"/>
 </p>
-<p>As a Helion administrator, you should follow the OpenStack(R) Cloud Administrator Guide (available at <xref href="http://docs.openstack.org/" scope="external" format="html" >http://docs.openstack.org/</xref>) to enable and maintain each of these OpenStack(R) services. Then refer to this guide for additional information to enable and maintain Helion OpenStack(R) This guide will explain what you have to do in addition to, or instead of, what is in the OpenStack(R) guide.</p>
+<p>As a Helion administrator, you should follow the <tm tmtype="reg">Openstack</tm> Cloud Administrator Guide (available at <xref href="http://docs.openstack.org/" scope="external" format="html" >http://docs.openstack.org/</xref>) to enable and maintain each of these <tm tmtype="reg">Openstack</tm> services. Then refer to this guide for additional information to enable and maintain Helion <tm tmtype="reg">Openstack</tm> This guide will explain what you have to do in addition to, or instead of, what is in the <tm tmtype="reg">Openstack</tm> guide.</p>
 <p>To simplify the interaction between the <b>
-<i>OpenStack(R) Cloud Administrator Guide</i>
+<i><tm tmtype="reg">Openstack</tm> Cloud Administrator Guide</i>
 </b> and this guide, this Helion administrator guide mirrors the organization of the <b>
-<i>OpenStack(R) Cloud Administrator Guide</i>
-</b>. To manage Neutron for example, refer to the OpenStack(R) guide on Neutron (Chapter 7, Networking), then refer to Managing the Network service in this guide to determine if Helion OpenStack(R) requires configuration steps.</p>
-<p>Because OpenStack(R) defines a platform with multiple services, administrators need to understand how these services interact and interdepend. The following illustration explains these relationships.</p>
+<i><tm tmtype="reg">Openstack</tm> Cloud Administrator Guide</i>
+</b>. To manage Neutron for example, refer to the <tm tmtype="reg">Openstack</tm> guide on Neutron (Chapter 7, Networking), then refer to Managing the Network service in this guide to determine if Helion <tm tmtype="reg">Openstack</tm> requires configuration steps.</p>
+<p>Because <tm tmtype="reg">Openstack</tm> defines a platform with multiple services, administrators need to understand how these services interact and interdepend. The following illustration explains these relationships.</p>
 <p>
   <image href="../../media/commercial.network-administrator.png"/>
 </p>
-<p>The OpenStack(R) Cloud Administrator Guide is available on the OpenStack(R) website http://docs.openstack.org/admin-guide-cloud/content/index.html</p>
+<p>The <tm tmtype="reg">Openstack</tm> Cloud Administrator Guide is available on the <tm tmtype="reg">Openstack</tm> website http://docs.openstack.org/admin-guide-cloud/content/index.html</p>
 <p>To help you perform your administrative roles in these areas, this guide includes information on:</p>
 <ul>
 <li>
@@ -66,35 +66,35 @@
 </li>
 </ul>
 <section id="managing-the-identity-service-managing-the-identity-service"> <title>Managing the Identity service (#Managing-the-Identity-service)</title>
-<p>OpenStack(R) Identity, code-named keystone, is the default identity management system for OpenStack(R) Configuring the OpenStack(R) Identity service is sufficient for Helion administrators. No additional work is required to support HP Helion OpenStack(R)</p>
+<p><tm tmtype="reg">Openstack</tm> Identity, code-named keystone, is the default identity management system for <tm tmtype="reg">Openstack</tm> Configuring the <tm tmtype="reg">Openstack</tm> Identity service is sufficient for Helion administrators. No additional work is required to support HP Helion <tm tmtype="reg">Openstack</tm></p>
 </section>
 <section id="managing-the-dashboard-managing-the-dashboard"> <title>Managing the Dashboard (Managing-the-Dashboard)</title>
-<p>The OpenStack(R) dashboard, code named Horizon, is a Web-based interface that allows you to manage OpenStack(R) resources and services. The dashboard allows you to interact with the OpenStack(R) Compute cloud controller using the OpenStack(R) APIs. 
+<p>The <tm tmtype="reg">Openstack</tm> dashboard, code named Horizon, is a Web-based interface that allows you to manage <tm tmtype="reg">Openstack</tm> resources and services. The dashboard allows you to interact with the <tm tmtype="reg">Openstack</tm> Compute cloud controller using the <tm tmtype="reg">Openstack</tm> APIs. 
 In the Helion environment, HP uses HP Badge and the Helion undercloud dashboard in addition to Horizon.</p>
 </section>
 <section id="managing-the-compute-service-managing-the-compute-service"> <title>Managing the Compute service (Managing-the-Compute-service)</title>
-<p>The OpenStack(R) Compute service (code named Nova) allows you to control an Infrastructure-as-a-Service (IaaS) cloud computing platform. It gives you control over instances and networks, and allows you to manage access to the cloud through users and projects.
-Configuring the OpenStack(R) Compute service is sufficient for Helion administrators. No additional work is required.</p>
+<p>The <tm tmtype="reg">Openstack</tm> Compute service (code named Nova) allows you to control an Infrastructure-as-a-Service (IaaS) cloud computing platform. It gives you control over instances and networks, and allows you to manage access to the cloud through users and projects.
+Configuring the <tm tmtype="reg">Openstack</tm> Compute service is sufficient for Helion administrators. No additional work is required.</p>
 </section>
 <section id="managing-object-storage-managing-object-storage"> <title>Managing Object Storage (Managing-Object-Storage</title>
-<p>OpenStack(R) Object Storage (code-named swift) is open source software for creating redundant, scalable data storage using clusters of standardized storage servers. Configuring the OpenStack(R) Object Storage service is sufficient for Helion administrators. No additional work is required.</p>
+<p><tm tmtype="reg">Openstack</tm> Object Storage (code-named swift) is open source software for creating redundant, scalable data storage using clusters of standardized storage servers. Configuring the <tm tmtype="reg">Openstack</tm> Object Storage service is sufficient for Helion administrators. No additional work is required.</p>
 </section>
 <section id="managing-block-storage-managing-block-storage"> <title>Managing Block Storage (Managing-Block-Storage)</title>
-<p>The OpenStack(R) Block Storage service (code name Cinder) works through the interaction of a series of daemon processes named cinder-* that reside persistently on the host machine or machines.  For Helion, you have the option to configure backend support for:</p>
+<p>The <tm tmtype="reg">Openstack</tm> Block Storage service (code name Cinder) works through the interaction of a series of daemon processes named cinder-* that reside persistently on the host machine or machines.  For Helion, you have the option to configure backend support for:</p>
 <ul>
 <li>VSA</li>
 <li>3PAR</li>
 </ul>
 </section>
 <section id="managing-the-network-service-managing-the-network-service"> <title>Managing the Network service (Managing-the-Network-service)</title>
-<p>The Networking service, code-named Neutron, provides an API that lets you define network connectivity and addressing in the cloud.  Configuring the OpenStack(R) Network service is largely sufficient for Helion administrators.</p>
+<p>The Networking service, code-named Neutron, provides an API that lets you define network connectivity and addressing in the cloud.  Configuring the <tm tmtype="reg">Openstack</tm> Network service is largely sufficient for Helion administrators.</p>
 <p>For details on configuring Helion Neutron, see <xref href="../../commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita" >Neutron Prerequisites</xref>.</p>
 </section>
 <section id="managing-metering-managing-the-database"> <title>Managing Metering  (Managing-the-Database)</title>
-<p>Metering (code named Ceilometer) supports billing systems for OpenStack(R) cloud resources.  As the list of meters expands, metering data can be analyzed for different purposes other than billing.  Configuring the OpenStack(R) Metering service is sufficient for Helion administrators. No additional work is required.</p>
+<p>Metering (code named Ceilometer) supports billing systems for <tm tmtype="reg">Openstack</tm> cloud resources.  As the list of meters expands, metering data can be analyzed for different purposes other than billing.  Configuring the <tm tmtype="reg">Openstack</tm> Metering service is sufficient for Helion administrators. No additional work is required.</p>
 </section>
 <section id="managing-the-database"> <title>Managing the Database</title>
-<p>The Database service provides scalable and reliable cloud provisioning functionality for both relational and non-relational database engines. Helion supports the OpenStack(R)</p>
+<p>The Database service provides scalable and reliable cloud provisioning functionality for both relational and non-relational database engines. Helion supports the <tm tmtype="reg">Openstack</tm></p>
 <p>
   <xref type="section" href="#topic5798"> Return to Top </xref>
 </p>

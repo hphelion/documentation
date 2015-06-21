@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2061">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Administering the HP Helion OpenStack(R) Region</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Administering the HP Helion <tm tmtype="reg">Openstack</tm> Region</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -18,9 +18,9 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Admin_Guide/carrier-grade-admin-helion.md-->
  <!--permalink: /helion/openstack/carrier/admin/helion/--></p>
-<p>Use the following links for information on administrative tasks you can perform in the HP Helion OpenStack(R) region:</p>
+<p>Use the following links for information on administrative tasks you can perform in the HP Helion <tm tmtype="reg">Openstack</tm> region:</p>
 <section id="swift"> <title>Post-Installation Configuration</title>
-<p>After HP Helion OpenStack(R) Carrier Grade is installed and operational, you can perform any of the following configurations, as needed.</p>
+<p>After HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade is installed and operational, you can perform any of the following configurations, as needed.</p>
 <!--
 - [Integrating LDAP](/helion/openstack/carrier/services/identity/integrate-ldap/)
 - [Tracking masked IP addresses when using network address translation](/helion/openstack/carrier/maskedIP/)
@@ -28,7 +28,7 @@
 - [Removing and Replacing a Failed Overcloud Controller](/helion/openstack/carrier/removing/failedovercloud/)
 - [High Availability (HA)](/helion/openstack/carrier/high-availability/)
 - Installing and Configuring DNSaaS](/helion/openstack/carrier/install/dnsaas/)
-- [Backing Up and Restoring HP Helion OpenStack(R)
+- [Backing Up and Restoring HP Helion <tm tmtype="reg">Openstack</tm>
 
 -->
 </section>
@@ -153,7 +153,7 @@
 </li>
 </ul>
 </section>
-<section id="services"> <title>HP Helion OpenStack(R) Services</title>
+<section id="services"> <title>HP Helion <tm tmtype="reg">Openstack</tm> Services</title>
 <ul>
 <li>
 <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >Services Overview</xref>

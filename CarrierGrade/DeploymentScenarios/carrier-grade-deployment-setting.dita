@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1945">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Setting Up the Scenario Environment</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Setting Up the Scenario Environment</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -18,7 +18,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting.md-->
  <!--permalink: /helion/openstack/carrier/deploy/setting/--></p>
-<p>The deployment scenarios require an HP Helion OpenStack(R) Carrier Grade environment established by the admin user, and set up by end users user1 and user2.</p>
+<p>The deployment scenarios require an HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade environment established by the admin user, and set up by end users user1 and user2.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1693">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Installing HP StoreVirtual VSA</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Installing HP StoreVirtual VSA</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) Carrier Grade"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B, Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) Carrier Grade"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade"/>
 </metadata>
 </prolog>
 <body>
@@ -18,7 +18,7 @@
  <!--./CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa.old.md-->
  <!--permalink: /helion/openstack/carrier/install/vsa/old/  --></p>
 <p>This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend. It covers the following topics:</p>
-<p>Use the following steps to install HP StoreVirtual VSA in your HP Helion OpenStack(R) Carrier Grade cloud.</p>
+<p>Use the following steps to install HP StoreVirtual VSA in your HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade cloud.</p>
 <ol>
 <li>
 <p>On the KVM host, change to the directory where your cloud is installed.</p>

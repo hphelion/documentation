@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2578">
-<title>HP Helion OpenStack(R) 1.1: Monitor Disk Usage</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Monitor Disk Usage</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Sunitha K, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0"/>
+<othermeta name="product-version3" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -31,7 +31,7 @@
 </b> service, which runs in the undercloud, helps cloud admins monitor the disk usage of Object Storage (Swift) storage node(s).</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
-<li>HP Helion OpenStack(R) cloud is successfully deployed. <!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
+<li>HP Helion <tm tmtype="reg">Openstack</tm> cloud is successfully deployed. <!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
 </li>
 <li>The Icinga service is active and running in the undercloud</li>
 </ul>
@@ -104,7 +104,7 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 <row>
 <entry>WARNING </entry>
     <entry>Disk space low</entry>
-    <entry>The percentage used space of one of the disk drives exceeds the user defined threshold(Default set to 85% for HP Helion OpenStack(R) 1.0). It is important to prevent Swift devices becoming full because it is difficult to recover if this happens. To resolve, add more devices to the rings or ask your users to delete objects.</entry>
+    <entry>The percentage used space of one of the disk drives exceeds the user defined threshold(Default set to 85% for HP Helion <tm tmtype="reg">Openstack</tm> 1.0). It is important to prevent Swift devices becoming full because it is difficult to recover if this happens. To resolve, add more devices to the rings or ask your users to delete objects.</entry>
 </row>
 <row>
 <entry>FAIL </entry>

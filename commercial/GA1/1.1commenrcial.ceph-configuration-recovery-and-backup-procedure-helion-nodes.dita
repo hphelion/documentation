@@ -3,13 +3,13 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3172">
     <title>Useful tips</title>
     <!--<titlealts>
-<searchtitle>HP Helion OpenStack(R) HP Helion Ceph Backup and Recovery</searchtitle>
+<searchtitle>HP Helion <tm tmtype="reg">Openstack</tm> HP Helion Ceph Backup and Recovery</searchtitle>
 </titlealts>-->
     <prolog>
         <metadata>
             <othermeta name="layout" content="default"/>
-            <othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-            <othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+            <othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+            <othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
             <othermeta name="role" content="Storage Engineer"/>
             <othermeta name="role" content="Storage Architect"/>
             <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
             <othermeta name="role" content="Cloud Administrator"/>
             <othermeta name="role" content="Application Developer"/>
             <othermeta name="role" content="Paul F"/>
-            <othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-            <othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+            <othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+            <othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
         </metadata>
     </prolog>
     <body>
@@ -28,7 +28,7 @@
         <!--./commercial/GA1/ceph/1.1commenrcial.ceph-configuration-recovery-and-backup-procedure-helion-nodes.md-->
         <!--permalink: /helion/openstack/1.1/ceph-configuration-recovery-and-backup-procedure-HP-Helion-nodes/-->
         
-        <!-- # HP Helion OpenStack(R) 1.1: Ceph Configuring Backup and Recovery for HP Helion Nodes-->
+        <!-- # HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Ceph Configuring Backup and Recovery for HP Helion Nodes-->
         <p>
             The following steps ensure the recovery of the lost configuration.
             
@@ -95,7 +95,7 @@
                 <p>If a <codeph>Decrypt error</codeph> occurs from any of the Helion nodes with glance, cinder, or nova, make sure that all the Ceph cluster nodes are in same time zone. HP recommends that you configure a NTP server in the <codeph>/etc/ntp.conf</codeph> file on all Ceph cluster nodes.  After making changes, restart NTP [<codeph>/etc/init.d/ntp restart</codeph>]. Install the <codeph>ntp</codeph> package, if it is not there.</p>
             </li>
             <li>
-                <p>Make sure the Ceph cluster uses the same IP range as the Helion OpenStack(R) overcloud nodes. Also, make sure the IP range for the Ceph cluster does not conflict with those used by Helion set up.</p>
+                <p>Make sure the Ceph cluster uses the same IP range as the Helion <tm tmtype="reg">Openstack</tm> overcloud nodes. Also, make sure the IP range for the Ceph cluster does not conflict with those used by Helion set up.</p>
             </li>
             <li>
                 <p>Be sure to check the log files in <codeph>/var/log/ceph/</codeph> for each node. Any errors or exceptions are useful for troubleshooting.</p>

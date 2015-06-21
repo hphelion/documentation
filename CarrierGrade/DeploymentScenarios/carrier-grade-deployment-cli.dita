@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4448">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Deployment Scenarios using the CLI</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Deployment Scenarios using the CLI</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -23,7 +23,7 @@
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>Users who are comfortable with text-based commands and Linux-based operating systems can use a command-line interface (CLI) to install and manage all aspects of HP Helion OpenStack(R) Carrier Grade, including setting up the scenario environment and deploying scenarios. In addition to providing a compact and efficient environment, the CLI offers some capabilities not afforded by the web administration interface, such as the ability to save customization scripts (user data) for re-use.</p>
+<p>Users who are comfortable with text-based commands and Linux-based operating systems can use a command-line interface (CLI) to install and manage all aspects of HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade, including setting up the scenario environment and deploying scenarios. In addition to providing a compact and efficient environment, the CLI offers some capabilities not afforded by the web administration interface, such as the ability to save customization scripts (user data) for re-use.</p>
 <p>For general information about the scenarios, see <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-overview.dita" >Reference Deployment Scenarios</xref>. For more information on command-line systems, see <xref type="section" href="#topic4448/before">Before you begin</xref> below.</p>
 <p>To use the CLI, log in to the controller console as the admin user, or as <codeph>user1</codeph> or <codeph>user2</codeph>, depending on the task to be performed:</p>
 <ul>
@@ -94,11 +94,11 @@ awk '{print $2}'`
 </ul>
 </section>
 <section id="user-login-environment"> <title>User Login Environment</title>
-<p>For the HP Helion OpenStack(R) Carrier Grade server to identify the user who is executing system commands, a shell environment with the proper set of variables must be in place. For the cloud admin account, the shell is set up automatically when you log in as the Linux admin user.</p>
+<p>For the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade server to identify the user who is executing system commands, a shell environment with the proper set of variables must be in place. For the cloud admin account, the shell is set up automatically when you log in as the Linux admin user.</p>
 <p>You can create scripts for other users. Later in this presentation, the scripts <codeph>/etc/nova/openrc.user1</codeph> and <codeph>/etc/nova/openrc.user2</codeph> are created (for details, see [Creating Login Environment Files for Users]{#loginuser}</p>
 <p>To execute commands with the corresponding user identities, use the
 source command to invoke the scripts.</p>
-<p>For more information on login accounts, see the <i>HP Helion OpenStack(R) Carrier Grade Installation Guide: About Login Accounts</i>.</p>
+<p>For more information on login accounts, see the <i>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Installation Guide: About Login Accounts</i>.</p>
 <p>
   <xref type="section" href="#topic4448"> Return to Top </xref>
 </p>

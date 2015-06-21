@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic509">
-<title>HP Helion OpenStack(R) 1.1: Configuring Your Network Securely</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Configuring Your Network Securely</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Micael B"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -20,7 +20,7 @@
  <!--permalink: /helion/openstack/1.1/landing/security/--></p>
 <p>
 <xref href="../../../commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita" >Configuring Your Network Securely</xref>
-<!--A BR tag was used here in the original source.-->Learn about how to configure your HP Helion OpenStack(R) network securely.</p>
+<!--A BR tag was used here in the original source.-->Learn about how to configure your HP Helion <tm tmtype="reg">Openstack</tm> network securely.</p>
 <!-- ===================== horizontal rule ===================== -->
 </body>
 </topic>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7527">
-<title>HP Helion OpenStack(R) 1.0: Update Overview</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Update Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,11 +12,11 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.0commercial.update-101-overview.md-->
  <!--permalink: /helion/openstack/update/overview/101/--></p>
-<p>An HP Helion OpenStack(R) patch update is a series of images and scripts that enhance functionality or fix issues found in a  previous Helion release.</p>
+<p>An HP Helion <tm tmtype="reg">Openstack</tm> patch update is a series of images and scripts that enhance functionality or fix issues found in a  previous Helion release.</p>
 <p>The update process uses an image-based update technique, where the image that gives a particular node its features is replaced with a new image. This includes the operating system and the services that make a node type unique.</p>
 <p>During the process of updating, the node will be unavailable until it is updated with the new image.  When the node comes back up, the node will be using the new image and all the new services/functionality and fixes included in that updated image.</p>
 <p>There are unique images for all the node types in the cloud.  Only the images that need updating will be delivered as part of a patch update.</p>
-<p>There are multiple ways to update your cloud. This HP Helion OpenStack(R) documentation will describe the recommended path and provide alternatives for some nodes in advanced situations.  Unless you are an advanced user it is strongly suggested that you follow the recommended path.  To avoid errors please read the documentation in its entirety prior to starting an update.</p>
+<p>There are multiple ways to update your cloud. This HP Helion <tm tmtype="reg">Openstack</tm> documentation will describe the recommended path and provide alternatives for some nodes in advanced situations.  Unless you are an advanced user it is strongly suggested that you follow the recommended path.  To avoid errors please read the documentation in its entirety prior to starting an update.</p>
 <ul>
 <li>
 <xref type="section" href="#topic7527/overview">Overview of the Update Process</xref>
@@ -31,7 +31,7 @@
 <xref type="section" href="#topic7527/next-steps">Next Steps</xref>
 </li>
 </ul>
-<p>The HP Helion OpenStack(R) 1.01 update with apply to all of the nodes: seed, undercloud, overcloud controllers, overcloud Swift, overcloud VSA, and overcloud compute nodes. There is also an update for the optional HP Helion OpenStack(R) DNSaaS.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> 1.01 update with apply to all of the nodes: seed, undercloud, overcloud controllers, overcloud Swift, overcloud VSA, and overcloud compute nodes. There is also an update for the optional HP Helion <tm tmtype="reg">Openstack</tm> DNSaaS.</p>
 <section id="overview"> <title>Overview of the Update Process</title>
 <p>This section describes what you need to know at a high level to perform an update.</p>
 <ol>
@@ -88,13 +88,13 @@
 
 <ul>
 <li>
-<p>If your cloud uses the optional HP Helion OpenStack(R) DNSaaS (Domain Name Server as a Service), install HP Helion OpenStack(R) DNSaaS 1.01. For installation instructions, see <xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" >DNSaaS Installation and Configuration</xref>.</p>
+<p>If your cloud uses the optional HP Helion <tm tmtype="reg">Openstack</tm> DNSaaS (Domain Name Server as a Service), install HP Helion <tm tmtype="reg">Openstack</tm> DNSaaS 1.01. For installation instructions, see <xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" >DNSaaS Installation and Configuration</xref>.</p>
 
 <p>
 <b>Note:</b> The process for moving from DNSaaS 1.0 to DNSaaS 1.01 is to uninstall DNSaaS version 1.0, then install DNSaaS version 1.01. Do not attempt to install version 1.01 over the previous version.</p>
 </li>
 <li>
-<p>Review <xref href="../../commercial/GA1/1.0commercial.install-GA-security.dita" >Configuring Your Network Securely</xref> for information on configuring your HP Helion OpenStack(R) deployment to protect against external abuse and insider abuse or administrative errors.</p>
+<p>Review <xref href="../../commercial/GA1/1.0commercial.install-GA-security.dita" >Configuring Your Network Securely</xref> for information on configuring your HP Helion <tm tmtype="reg">Openstack</tm> deployment to protect against external abuse and insider abuse or administrative errors.</p>
 </li>
 </ul>
 </li>

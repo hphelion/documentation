@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6547">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Ceph RADOS Gateway - DMZ HAProxy</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Ceph RADOS Gateway - DMZ HAProxy</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1 Ceph RADOS Gateway - DMZ HAProxy</searchtitle>
+<searchtitle>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 Ceph RADOS Gateway - DMZ HAProxy</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -27,7 +27,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-dmz-ha-proxy.md-->
  <!--permalink: /helion/openstack/1.1/ceph-rados-gateway-dmz-ha-proxy/--></p>
-<p>The Ceph storage system is successfully integrated with HP Helion OpenStack(R) Ceph has a RADOS gateway that is a public facing interface and is vulnerable. Hence, any end user can gain access into a Helion system with this integration. To minimize risks, an external HAProxy is built in a DMZ environment behind a firewall. HAProxy is commonly used as a load balancer for TCP- and HTTP-based applications. It works as a reverse-proxy, which means it maintains two connections when allowing a client to cross it: a connection between HAProxy and the client, and  another between HAProxy and the server.</p>
+<p>The Ceph storage system is successfully integrated with HP Helion <tm tmtype="reg">Openstack</tm> Ceph has a RADOS gateway that is a public facing interface and is vulnerable. Hence, any end user can gain access into a Helion system with this integration. To minimize risks, an external HAProxy is built in a DMZ environment behind a firewall. HAProxy is commonly used as a load balancer for TCP- and HTTP-based applications. It works as a reverse-proxy, which means it maintains two connections when allowing a client to cross it: a connection between HAProxy and the client, and  another between HAProxy and the server.</p>
 <p>To ensure secured connectivity, the connections should use HTTPS (SSL over HTTP). Stunnel is used as an intermediate between the client with an HTTPs request and the HAProxy.  During normal operation, Stunnel receives the HTTPS request from client and hands  the request to a HAProxy instance that is bound to the loopback address (127.0.0.1) on the same box. HAProxy now forwards the HTTPs request to gateway nodes listening on port 443.</p>
 <p>The following diagram illustrates the communication flow between Helion-Ceph-DMZ and the HAProxy-Ceph Gateway</p>
 <p>

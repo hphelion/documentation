@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4946">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</searchtitle>
+<searchtitle>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Binamra S,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -21,9 +21,9 @@
  <!--./commercial/GA1/1.1commercial.install-add-nodes.md-->
  <!--permalink: /helion/openstack/1.1/install/add/nodes/--></p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update Helion <tm tmtype="reg">Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
 <p>
 <!---This document describes the steps to add and remove nodes (scale in or scale out the VSA and Compute nodes) on an already installed overcloud-->
 By default, HP Helion Openstack cloud deploys a two node (termed as start-up swift nodes) Swift cluster as part of its deployment.</p>
@@ -42,7 +42,7 @@ By default, HP Helion Openstack cloud deploys a two node (termed as start-up swi
 <section id="pre"> <title>Prerequisites</title>
 <p>Before you begin, ensure the following:</p>
 <ul>
-<li>The seed VM, undercloud and overcloud are installed using the HP Helion OpenStack(R) installer.</li>
+<li>The seed VM, undercloud and overcloud are installed using the HP Helion <tm tmtype="reg">Openstack</tm> installer.</li>
 </ul>
 </section>
 <section id="add"> <title>Add compute nodes</title>

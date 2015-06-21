@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10467">
-<title>HP Helion OpenStack(R) 1.1: Working with HP 3PAR StoreServ</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Working with HP 3PAR StoreServ</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -411,7 +411,7 @@
 </ol>
 </section>
 <section id="view-cpg"> <title>View CPG configuration</title>
-<p>Use this option to view the CPG configuration (as defined in OpenStack(R) Configuration Manual for HP 3PAR Cinder Block Storage Volume Driver).</p>
+<p>Use this option to view the CPG configuration (as defined in <tm tmtype="reg">Openstack</tm> Configuration Manual for HP 3PAR Cinder Block Storage Volume Driver).</p>
 <ol>
 <li>
 <p>Log in to the undercloud Horizon dashboard.</p>

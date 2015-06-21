@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1726">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Managing project quotas</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Managing project quotas</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -20,7 +20,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Identity</b> panel, then the <b>Projects</b> link.</p>

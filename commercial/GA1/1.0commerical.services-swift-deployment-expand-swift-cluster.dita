@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic795">
-<title>HP Helion OpenStack(R) 1.0: Expand Object Storage (Swift) Cluster</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Expand Object Storage (Swift) Cluster</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.0: Extend Object Storage (Swift) Cluster</searchtitle>
+<searchtitle>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Extend Object Storage (Swift) Cluster</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0"/>
+<othermeta name="product-version3" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -29,7 +29,7 @@
 <p>
 
 </p>
-<p>HP Helion OpenStack(R) allows you to expand Object Storage (Swift) clusters in any of the followings ways:</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> allows you to expand Object Storage (Swift) clusters in any of the followings ways:</p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-add-disk-storage-node.dita" >Add a New Scale-out Object Node</xref> </li>

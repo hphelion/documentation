@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2270">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Customizing Guest Images with User Data</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Customizing Guest Images with User Data</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,7 +26,7 @@
 <p>You can include user data by defining a UserData property for an instance. This sends configuration instructions to the instance at launch. For an example of user data, see the <codeph>CPUScale.yaml</codeph> template included with the Titanium
 Server.</p>
 <p>Normally, this requires <codeph>cloud-init</codeph> to be installed in the guest, because the user data is converted to MIME format and then interpreted by <codeph>cloud-init</codeph>. For instances that do not include <codeph>cloud-init</codeph>, you can bypass the MIME conversion
-of user data by invoking a Wind River extension property and assigning the value 'RAW'. This allows the VM to retrieve the specified user data in unaltered format through a simple REST API call to the metadata server. The name of the property follows the convention for the associated resource type. For an AWS resource (for example, <codeph>AWS::EC2::Instance</codeph>), use <codeph>UserDataType</codeph>. For an OpenStack(R) resource (for example, <codeph>OS::Nova::Server</codeph>), use <codeph>user_data_type</codeph>. The following code fragment shows the property used with an AWS resource.</p>
+of user data by invoking a Wind River extension property and assigning the value 'RAW'. This allows the VM to retrieve the specified user data in unaltered format through a simple REST API call to the metadata server. The name of the property follows the convention for the associated resource type. For an AWS resource (for example, <codeph>AWS::EC2::Instance</codeph>), use <codeph>UserDataType</codeph>. For an <tm tmtype="reg">Openstack</tm> resource (for example, <codeph>OS::Nova::Server</codeph>), use <codeph>user_data_type</codeph>. The following code fragment shows the property used with an AWS resource.</p>
 <codeblock><codeph>type : AWS::EC2::Instance
 . . .
 UserDataType: 'RAW'

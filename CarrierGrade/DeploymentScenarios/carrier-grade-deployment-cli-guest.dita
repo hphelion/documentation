@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1956">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Setting Up the Example Guest Image Using the CLI</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Setting Up the Example Guest Image Using the CLI</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -18,13 +18,13 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-guest.md-->
  <!--permalink: /helion/openstack/carrier/deploy/cli/guest/--></p>
-<p>You can use the CLI to import guest images for use with HP Helion OpenStack(R) Carrier Grade.</p>
+<p>You can use the CLI to import guest images for use with HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>An example guest disk image is distributed with HP Helion OpenStack(R) Carrier Grade. It must be transferred to the active controller using a tool such as scp. This exercise assumes that the image is available as <codeph>/usr/share/images/example-guest.img</codeph>.</p>
-<p>Once it is available in the controller, the image must be uploaded to the Image Operations service (Glance), the OpenStack(R) image deployment service.</p>
+<p>An example guest disk image is distributed with HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade. It must be transferred to the active controller using a tool such as scp. This exercise assumes that the image is available as <codeph>/usr/share/images/example-guest.img</codeph>.</p>
+<p>Once it is available in the controller, the image must be uploaded to the Image Operations service (Glance), the <tm tmtype="reg">Openstack</tm> image deployment service.</p>
 <p>Once it is available in Image Operations service, the image must be used to create a bootable Cinder volume. The volume can be used
 to launch an instance.</p>
 <ol>

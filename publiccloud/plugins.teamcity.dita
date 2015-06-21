@@ -73,7 +73,7 @@
 </section>
 <section id="creating-a-cloud-image"> <title>Creating a cloud image</title>
 <p>HP Helion Public Cloud plug-in needs a virtual image with pre-configured build agents to establish a connection with TeamCity server. A Cloud Image is any custom image or can be created from a snapshot using any of the pre-existing public/private images, for instance sizes equal to or greater than SMALL and for any Operating System.</p>
-<p>To create a Cloud Image, install the TeamCity build agent, Java SDK and other DevTest environment dependencies on the preferred virtual image and take a snapshot. Any user can upload the newly created or customized virtual image to HP Helion Public Cloud as a Public/Private/Partner image using HP's OpenStack(R) based Glance service.</p>
+<p>To create a Cloud Image, install the TeamCity build agent, Java SDK and other DevTest environment dependencies on the preferred virtual image and take a snapshot. Any user can upload the newly created or customized virtual image to HP Helion Public Cloud as a Public/Private/Partner image using HP's <tm tmtype="reg">Openstack</tm> based Glance service.</p>
 </section>
 <section id="creating-a-build-agent-snapshot"> <title>Creating a build agent snapshot</title>
 <ol>
@@ -110,7 +110,7 @@ Agent username - username name which can be used to establish SSH connection wit
 
 Private key file - private key which is created in HP management console and which is matched public key from point 3 above.
 
-Instance type - OpenStack(R) flavor (at least small)
+Instance type - <tm tmtype="reg">Openstack</tm> flavor (at least small)
 
 Security groups - the name of security group which is created in HP management console. Port 22 should be opened for agent.
 

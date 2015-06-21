@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8785">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Resource Usage</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Resource Usage</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,7 +26,7 @@
  <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-resource.md-->
  <!--permalink: /helion/openstack/carrier/admin/host/management/resources/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>Usage of system resources is monitored by Ceilometer, the standard OpenStack(R) mechanism for collecting and distributing performance monitoring samples from the cluster. The HP Helion OpenStack(R) Carrier Grade cluster extends Ceilometer with improved reports and new tools to facilitate offline analysis of the collected data.</p>
+<p>Usage of system resources is monitored by Ceilometer, the standard <tm tmtype="reg">Openstack</tm> mechanism for collecting and distributing performance monitoring samples from the cluster. The HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade cluster extends Ceilometer with improved reports and new tools to facilitate offline analysis of the collected data.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -38,7 +38,7 @@
 <li>triggering of threshold actions. The most common example is Heat actions to scale up and down a resource.</li>
 </ul>
 <p>The Ceilometer database is periodically cleaned in order to contain its size and prevent the overuse of storage resources on the controller nodes.</p>
-<p>The Ceilometer implementation in the HP Helion OpenStack(R) Carrier Grade improves on several aspects. They are described in the following sections:</p>
+<p>The Ceilometer implementation in the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade improves on several aspects. They are described in the following sections:</p>
 <ul>
 <li>
 <xref type="section" href="#topic8785/filters">Optimized Ceilometer Filters</xref>
@@ -54,11 +54,11 @@
 </li>
 </ul>
 <section id="filters"> <title>Optimized Ceilometer Filters</title>
-<p>The Ceilometer implementation in the HP Helion OpenStack(R) Carrier Grade is specially tuned to allow time-sensitive actions, such as Heat autoscaling, to take place in response to relatively high-frequency sample rates of system events.</p>
+<p>The Ceilometer implementation in the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade is specially tuned to allow time-sensitive actions, such as Heat autoscaling, to take place in response to relatively high-frequency sample rates of system events.</p>
 <p>The size of both the Ceilometer database and the CSV files are maintained under control at all times, while still enabling the required system actions to take place in real-time.</p>
 </section>
 <section id="reports"> <title>On-Line Ceilometer Reports</title>
-<p>On-line, on-demand, Ceilometer reports in the HP Helion OpenStack(R) Carrier Grade benefit from several improvements over the stock OpenStack(R) reporting tool, including:</p>
+<p>On-line, on-demand, Ceilometer reports in the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade benefit from several improvements over the stock <tm tmtype="reg">Openstack</tm> reporting tool, including:</p>
 <ul>
 <li>optimized Ceilometer database queries</li>
 <li>improved naming of menu entries on pull-down menus</li>
@@ -130,7 +130,7 @@ filter field is applied only when a specific metadata attribute is selected.</p>
 </ul>
 </section>
 <section id="backend"> <title>CSV Performance Monitoring Backend</title>
-<p>The HP Helion OpenStack(R) Carrier Grade provides access to performance measurement samples in the form of comma-separated values (CSV) files. They provide the following benefits:</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade provides access to performance measurement samples in the form of comma-separated values (CSV) files. They provide the following benefits:</p>
 <ul>
 <li>off-line permanent storage of large samples history</li>
 <li>enables the use of off-line tools for data analysis, accounting, and archiving</li>

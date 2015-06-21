@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic23276">
-<title>HP Helion OpenStack(R) 1.0: Troubleshooting</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Troubleshooting</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,7 +15,7 @@
 <p>
 
 </p>
-<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of LinuxÂ(R) provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> is an <tm tmtype="reg">Openstack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <p>For easy reference, we categorized the known issues and solutions as follows:</p>
 <ul>
 <li>
@@ -118,7 +118,7 @@
 </ol>
 <ul>
 <li>
-<p>If the overcloud controller is rebooted (due to a power issue, hardware upgrade, or similar event), OpenStack(R) compute tools such as <codeph>nova-list</codeph> might report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:</p>
+<p>If the overcloud controller is rebooted (due to a power issue, hardware upgrade, or similar event), <tm tmtype="reg">Openstack</tm> compute tools such as <codeph>nova-list</codeph> might report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:</p>
 
 <ol>
 <li>
@@ -173,7 +173,7 @@ $ sudo service nova-conductor restart
 <p>The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state in which the <codeph>Server Power</codeph> status as reported by the iLO is stuck in <codeph>RESET</codeph>. If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.</p>
 </li>
 <li>
-<p>On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion OpenStack(R) the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root:</p>
+<p>On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion <tm tmtype="reg">Openstack</tm> the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root:</p>
 
 <codeblock>
 <codeph># ip addr add 192.168.185.131/16 dev eth0 scope global
@@ -191,10 +191,10 @@ $ sudo service nova-conductor restart
 </ul>
 </li>
 <li>
-<p>Before you install the HP Helion OpenStack(R) DNSaaS or if you want to use Heat with HP Helion OpenStack(R) you <b>must</b> modify the /etc/heat/heat.conf file on the overcloud controller as follows.</p>
+<p>Before you install the HP Helion <tm tmtype="reg">Openstack</tm> DNSaaS or if you want to use Heat with HP Helion <tm tmtype="reg">Openstack</tm> you <b>must</b> modify the /etc/heat/heat.conf file on the overcloud controller as follows.</p>
 
 <p>
-<b>Important</b>: The installation of the HP Helion OpenStack(R) DNSaaS fails if you do not make these modifications.</p>
+<b>Important</b>: The installation of the HP Helion <tm tmtype="reg">Openstack</tm> DNSaaS fails if you do not make these modifications.</p>
 
 <ol>
 <li>

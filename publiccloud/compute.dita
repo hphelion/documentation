@@ -13,7 +13,7 @@
  <!--./publiccloud/compute.md-->
  <!--permalink: /publiccloud/compute/--></p>
 <!-- <iframe src="http://player.vimeo.com/video/33922384?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
-<p>Leveraging <xref href="http://openstack.org/projects/compute/" scope="external" format="html" >OpenStack(R) Compute</xref>, HP Helion Public Cloud compute provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.  Key terms include:</p>
+<p>Leveraging <xref href="http://openstack.org/projects/compute/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Compute</xref>, HP Helion Public Cloud compute provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.  Key terms include:</p>
 <ul>
 <li>
 <b>Flavor</b> - A unique combination of disk space, memory capacity, and CPU</li>

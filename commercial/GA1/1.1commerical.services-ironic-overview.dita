@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1235">
-<title>HP Helion OpenStack(R) 1.1: Ironic Service Overview</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Ironic Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.01"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.01"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.01"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version3" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0"/>
+<othermeta name="product-version4" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.01"/>
 </metadata>
 </prolog>
 <body>
@@ -25,11 +25,11 @@
 <p>
 
 </p>
-<p>HP Helion OpenStack(R) leverages the OpenStack(R) Ironic service during the installation for provisioning of the controller and KVM compute host in a baremetal deployment.</p>
-<p>Ironic is an OpenStack(R) service to provision baremetal, not virtual, machines by leveraging common technologies such as PXE boot and IPMI to cover a wide range of hardware. Supporting pluggable drivers allows vendor-specific functionality to be added.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> leverages the <tm tmtype="reg">Openstack</tm> Ironic service during the installation for provisioning of the controller and KVM compute host in a baremetal deployment.</p>
+<p>Ironic is an <tm tmtype="reg">Openstack</tm> service to provision baremetal, not virtual, machines by leveraging common technologies such as PXE boot and IPMI to cover a wide range of hardware. Supporting pluggable drivers allows vendor-specific functionality to be added.</p>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on Ironic, see OpenStack(R) <xref href="http://docs.openstack.org/developer/ironic/" scope="external" format="html" >Ironic's developer documentation</xref>.</p>
-<p>For more information on the HP Helion OpenStack(R) deployment model, see <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita" >HP Helion OpenStack(R) Technical Overview</xref>.</p>
+<p>For information on Ironic, see <tm tmtype="reg">Openstack</tm> <xref href="http://docs.openstack.org/developer/ironic/" scope="external" format="html" >Ironic's developer documentation</xref>.</p>
+<p>For more information on the HP Helion <tm tmtype="reg">Openstack</tm> deployment model, see <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Technical Overview</xref>.</p>
 <p>
   <xref type="section" href="#topic1235"> Return to Top </xref>
 </p>

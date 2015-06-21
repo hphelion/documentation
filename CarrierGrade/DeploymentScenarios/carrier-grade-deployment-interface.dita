@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1837">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): VM Network Interface Options</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): VM Network Interface Options</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -18,7 +18,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/DeploymentScenarios/carrier-grade-deployment-interface.md-->
  <!--permalink: /helion/openstack/carrier/deploy/interface/--></p>
-<p>HP Helion OpenStack(R) Carrier Grade supports both virtio and performance-optimized AVP network interface drivers.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade supports both virtio and performance-optimized AVP network interface drivers.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -30,11 +30,11 @@
 </li>
 <li>
 <p>
-<b>Accelerated Virtual Port (AVP)</b> - A high-performance virtual network interface available exclusively on the HP Helion OpenStack(R) Carrier Grade server. This type can be used with the Linux bridge application, the DPDK-accelerated bridge application, or the router application
+<b>Accelerated Virtual Port (AVP)</b> - A high-performance virtual network interface available exclusively on the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade server. This type can be used with the Linux bridge application, the DPDK-accelerated bridge application, or the router application
 described in these scenarios.</p>
 </li>
 </ul>
-<p>The deployment scenarios demonstrate the use of AVP interfaces with three types of virtualized network functions (VNFs): a Linux bridge, a DPDK-accelerated bridge, and a router. This illustrates the flexibility provided by HP Helion OpenStack(R) Carrier Grade to adapt to different deployment scenarios.</p>
+<p>The deployment scenarios demonstrate the use of AVP interfaces with three types of virtualized network functions (VNFs): a Linux bridge, a DPDK-accelerated bridge, and a router. This illustrates the flexibility provided by HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade to adapt to different deployment scenarios.</p>
 <p>The port assignments for the interfaces are based on the order in which the interfaces are arranged in the web administration interface, or defined in the command-line interface, when the instance is launched. The type of virtual network interface for each port is selected from a list in the web administration interface, or encoded in a <codeph>vif-model</codeph> attribute on the command line.</p>
 <p>
   <xref type="section" href="#topic1837"> Return to Top </xref>

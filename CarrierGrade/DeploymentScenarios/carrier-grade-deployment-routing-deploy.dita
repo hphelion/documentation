@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5600">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Deploying the Routing Scenario</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Deploying the Routing Scenario</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -29,7 +29,7 @@ tenant network used for test equipment access (tenant1-net or tenant2-net), and 
 <ol>
 <li>
         <xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
-          >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref> as the appropriate user (user1
+          >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref> as the appropriate user (user1
         or user2).</li>
 <li>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Overview</b>
         link.</li>

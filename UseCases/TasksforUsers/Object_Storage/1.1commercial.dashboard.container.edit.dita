@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1631">
-<title>HP Helion OpenStack(R) 1.1: Editing and Deleting Objects</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Editing and Deleting Objects</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,12 +12,12 @@
 <!--UNDER REVISION-->
  <!--./UseCases/TasksforUsers/Object_Storage/1.1commercial.dashboard.container.edit.md-->
  <!--permalink: /helion/commercial/1.1/dashboard/managing/container/edit/--></p>
-<p>An object is the basic storage entity that represents a file you store in the OpenStack(R) Object Storage system. When you upload data to OpenStack(R) Object Storage, the data is stored as-is (no compression or encryption) and consists of a location (container), the object's name, and any metadata consisting of key/value pairs</p>
+<p>An object is the basic storage entity that represents a file you store in the <tm tmtype="reg">Openstack</tm> Object Storage system. When you upload data to <tm tmtype="reg">Openstack</tm> Object Storage, the data is stored as-is (no compression or encryption) and consists of a location (container), the object's name, and any metadata consisting of key/value pairs</p>
 <section id="edit-an-object-in-a-container"> <title>Edit an object in a container</title>
 <ol>
 <li>
 <p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Helion Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Object Store</b> tab on the dashboard <b>Project</b> panel.</p>
@@ -46,7 +46,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Helion Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Object Store</b> tab on the dashboard <b>Project</b> panel.</p>

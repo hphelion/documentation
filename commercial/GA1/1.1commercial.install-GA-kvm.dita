@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6880">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Installation and Configuration for KVM Hypervisor</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Installation and Configuration for KVM Hypervisor</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Installation and Configuration for KVM Hypervisor</searchtitle>
+<searchtitle>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Installation and Configuration for KVM Hypervisor</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -21,11 +21,11 @@
  <!--./commercial/GA1/1.1commercial.install-GA-kvm.md-->
  <!--permalink: /helion/openstack/1.1/install/kvm/--></p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
-<p>HP Helion OpenStack(R) allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack(R) on a suitably specified and prepared system.</p>
-<section id="installing-hp-helion-openstack"> <title>Installing HP Helion OpenStack(R)</title>
+<p>(If you already have 1.1 installed, you can update Helion <tm tmtype="reg">Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HP Helion <tm tmtype="reg">Openstack</tm> on a suitably specified and prepared system.</p>
+<section id="installing-hp-helion-openstack"> <title>Installing HP Helion <tm tmtype="reg">Openstack</tm></title>
 <p>Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed cloud host:</p>
 <ul>
 <li>
@@ -187,10 +187,10 @@ For example:
 
 * NTP servers are validated
 
-b. The seed is customized and its OpenStack(R) services are configured and started. The undercloud node is registered with the seed's ironic service
+b. The seed is customized and its <tm tmtype="reg">Openstack</tm> services are configured and started. The undercloud node is registered with the seed's ironic service
 
 c. The undercloud is deployed, booted, and its heat stack is configured.
-The undercloud OpenStack(R) services are then configured and started.
+The undercloud <tm tmtype="reg">Openstack</tm> services are then configured and started.
 The overcloud nodes are registered with the undercloud's ironic service.
 
 d. The overcloud controller heat stack is configured, booting and deploying images to the Overcloud Controller nodes and the SwiftStorage nodes.
@@ -221,7 +221,7 @@ Output messages will indicate when the undercloud and overcloud controllers beco
 </ol>
 </section>
 <section id="verifying-your-installation"> <title>Verify your installation</title>
-<p>To verify that the installation is successful, connect to the HP Helion OpenStack(R) dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.1commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
+<p>To verify that the installation is successful, connect to the HP Helion <tm tmtype="reg">Openstack</tm> dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.1commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
 <!-- Not needed in 1.1
 ## Create projects for LDAP users {#ldap}
 

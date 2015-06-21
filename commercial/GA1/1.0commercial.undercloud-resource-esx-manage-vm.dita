@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10334">
-<title>HP Helion OpenStack(R) 1.0: Working with Virtual Environment(s)</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Working with Virtual Environment(s)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -17,7 +17,7 @@
 </p>
 <p>The Virtual Environment (ESX) option allows you to configure, manage and control multiple virtual instances. You can configure your ESX hypervisor by either using the Horizon dashboard in the undercloud or <xref href="../../commercial/GA1/1.0commercial.undercloud-eon-cli.dita" >EON</xref> client. This page describes the different tasks that you can perform using the ESX option in the undercloud.
 <!--
-Virtual Environment is a system which implements, manages, and controls multiple virtual instances. HP Helion OpenStack(R) supports two types of clouds:KVM and VMWare ESX. 
+Virtual Environment is a system which implements, manages, and controls multiple virtual instances. HP Helion <tm tmtype="reg">Openstack</tm> supports two types of clouds:KVM and VMWare ESX. 
 
 When using the ESX hypervisor, the only supported hypervisor is VMware Vsphere. With the ESX integration, you can provision and manage an overcloud ESX cluster. --></p>
 <section id="manage-virtual-environment"> <title>Manage virtual environment</title>

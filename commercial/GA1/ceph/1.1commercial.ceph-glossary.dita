@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3431">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Glossary</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Glossary</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Glossary</searchtitle>
+<searchtitle>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Glossary</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -27,7 +27,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commercial.ceph-glossary.md-->
  <!--permalink: /helion/openstack/1.1/ceph-glossary/--></p>
-<p>The following terms are common to Ceph. Ceph is a technology that integrates object, block, and file storage. It is integrated into Helion OpenStack(R) 1.1 and 1.1.1 cloud environments.</p>
+<p>The following terms are common to Ceph. Ceph is a technology that integrates object, block, and file storage. It is integrated into Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1 cloud environments.</p>
 <ul>
 <li>
 <p>Cephx - The Ceph authentication protocol. Cephx operates like Kerberos, and it has no single point of failure.</p>

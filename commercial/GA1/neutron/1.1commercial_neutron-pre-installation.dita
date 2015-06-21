@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13492">
-<title>HP Helion OpenStack(R) 1.1: Networking Operation (Neutron) Administrator: Preinstallation Requirements</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Networking Operation (Neutron) Administrator: Preinstallation Requirements</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Networking Operation (Neutron) Administrator: Preinstallation Requirement</searchtitle>
+<searchtitle>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Networking Operation (Neutron) Administrator: Preinstallation Requirement</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Network Administrator"/>
 <othermeta name="role" content="Network Architect"/>
 <othermeta name="role" content="Vikas Deolaliker, Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0"/>
+<othermeta name="product-version3" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,7 +26,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/neutron/1.1commercial_neutron-pre-installation.md-->
  <!--permalink: /helion/openstack/1.1/services/neutron/pre/installation/--></p>
-<p>Before the Helion OpenStack(R) network can be installed, the Helion Network Administrator must complete, or verify have been completed, the tasks described in this section.</p>
+<p>Before the Helion <tm tmtype="reg">Openstack</tm> network can be installed, the Helion Network Administrator must complete, or verify have been completed, the tasks described in this section.</p>
 <ul>
 <li>
 <xref type="section" href="#topic13492/select-hypervior">Select your hypervisor</xref>
@@ -39,8 +39,8 @@
 </li>
 </ul>
 <section id="select-hypervior"> <title>Select your hypervisor</title>
-<p>Helion OpenStack(R) supports both KVM and ESX hypervisors. Deployment requirements different depending on which platform you choose.</p>
-<p>Before installing HP Helion OpenStack(R) you are responsible for preparing the network for all installations. You must also prepare the network based on the type of hypervisor you are installing, KVM or ESX.</p>
+<p>Helion <tm tmtype="reg">Openstack</tm> supports both KVM and ESX hypervisors. Deployment requirements different depending on which platform you choose.</p>
+<p>Before installing HP Helion <tm tmtype="reg">Openstack</tm> you are responsible for preparing the network for all installations. You must also prepare the network based on the type of hypervisor you are installing, KVM or ESX.</p>
 <p>The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the Management network as described in this section.</p>
 </section>
 <section id="preparing-all-networks"> <title>Preparing all networks</title>
@@ -48,16 +48,16 @@
 <ul>
 <li>The machine hosting the seed VM, and all baremetal systems have to be connected to a management network.</li>
 <li>Nodes on this management network must be able to reach the iLO subsystem (<xref href="http://www8.hp.com/us/en/products/servers/ilo/index.html" scope="external" format="html" >HP Integrated Lights-Out</xref>) of each baremetal systems to enable host reboots as part of the install process.</li>
-<li>The Helion OpenStack(R) architecture required that the IPMI network is a separate network and a route exists from management network to the IPMI network for iLO access as explained above.</li>
+<li>The Helion <tm tmtype="reg">Openstack</tm> architecture required that the IPMI network is a separate network and a route exists from management network to the IPMI network for iLO access as explained above.</li>
 <li>Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.</li>
 <li>If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.</li>
 <li>The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.</li>
-<li>Configure Gratuitous ARP (GARP). When the tenant network is created, the Neutron L3 agents are responsible for sending GARP requests to detect IP conflicts and assist in refreshing the ARP cache of other nodes. If the external gateway already exists, the L3 agent also will trigger an update on iptables to insert NAT rules on the Network Node. Using this default behavior, Floating IPs are recycled among multiple VMs. Currently there is no OpenStack(R) configuration variable to control the delay or interval between GARP transmits. It is therefore the responsibility of the network administrator to enable GARPs to pass through the gateways and control the GARP delays in the underlying physical network so as not to trigger a timeout.</li>
+<li>Configure Gratuitous ARP (GARP). When the tenant network is created, the Neutron L3 agents are responsible for sending GARP requests to detect IP conflicts and assist in refreshing the ARP cache of other nodes. If the external gateway already exists, the L3 agent also will trigger an update on iptables to insert NAT rules on the Network Node. Using this default behavior, Floating IPs are recycled among multiple VMs. Currently there is no <tm tmtype="reg">Openstack</tm> configuration variable to control the delay or interval between GARP transmits. It is therefore the responsibility of the network administrator to enable GARPs to pass through the gateways and control the GARP delays in the underlying physical network so as not to trigger a timeout.</li>
 </ul>
-<p>In addition to preparing all HP Helion OpenStack(R) cloud networks, you need perform additional tasks based on which hypervisor you are using: <xref href="../../../commercial/GA1/1.1commercial.install-GA-prereqs.dita" >KVM</xref> or <xref href="../../../commercial/GA1/1.1commercial.install-GA-prereqs.dita" >ESX</xref>.</p>
+<p>In addition to preparing all HP Helion <tm tmtype="reg">Openstack</tm> cloud networks, you need perform additional tasks based on which hypervisor you are using: <xref href="../../../commercial/GA1/1.1commercial.install-GA-prereqs.dita" >KVM</xref> or <xref href="../../../commercial/GA1/1.1commercial.install-GA-prereqs.dita" >ESX</xref>.</p>
 </section>
 <section id="preparing-the-network-for-a-kvm-installation"> <title>Preparing the network for a KVM installation</title>
-<p>If you are installing HP Helion OpenStack(R) with KVM hypervisor support, you must configure your network as shown in the following diagram.</p>
+<p>If you are installing HP Helion <tm tmtype="reg">Openstack</tm> with KVM hypervisor support, you must configure your network as shown in the following diagram.</p>
 <p>
   <image href="../../../media/topology_kvm.png"/>
 </p>
@@ -66,12 +66,12 @@
 <b>Notes</b>:</p>
 <ul>
 <li>Distributed Virtual Routing (DVR) is used to route traffic between VMs and outside the cloud. As such, every Compute Node has a connection to the external network.</li>
-<li>Access to OpenStack(R) service APIs is from the management network.</li>
+<li>Access to <tm tmtype="reg">Openstack</tm> service APIs is from the management network.</li>
 <li>The network path for platform service log messages is from the VM, to the service network (installed as a second vNIC), to the Customer Router, to the management network, to the undercloud RabbitMQ, to LogStash.</li>
 </ul>
 </section>
 <section id="preparing-the-network-for-an-esx-installation"> <title>Preparing the network for an ESX installation</title>
-<p>If you are installing HP Helion OpenStack(R) for ESX hypervisor support, you must configure your network as shown in the following diagram.</p>
+<p>If you are installing HP Helion <tm tmtype="reg">Openstack</tm> for ESX hypervisor support, you must configure your network as shown in the following diagram.</p>
 <p>
   <image href="../../../media/topology_esxnew.png"/>
 </p>
@@ -91,7 +91,7 @@
 </ul>
 </section>
 <section id="other-customer-responsibilities-and-requirements-for-esx"> <title>Other customer responsibilities and requirements for ESX</title>
-<p>You are responsible for the following before beginning the HP Helion OpenStack(R) installation:</p>
+<p>You are responsible for the following before beginning the HP Helion <tm tmtype="reg">Openstack</tm> installation:</p>
 <ul>
 <li>installing and configuring VMWare vSphere version 5.5;</li>
 <li>providing the customer router and making sure the external, IPMI, and service networks are routed to and from the management network;</li>
@@ -147,7 +147,7 @@
 </ul>
 </section>
 <section id="install-ubuntu-1404-lts"> <title>Install Ubuntu 14.04 LTS</title>
-<p>The seed cloud host must have Ubuntu 14.04 LTS installed before performing the HP Helion OpenStack(R) installation.</p>
+<p>The seed cloud host must have Ubuntu 14.04 LTS installed before performing the HP Helion <tm tmtype="reg">Openstack</tm> installation.</p>
 </section>
 <section id="configure-ssh"> <title>Configure SSH</title>
 <p>On the seed cloud host, the OpenSSH server must be running and the firewall configuration should allow access to the SSH ports.</p>
@@ -190,13 +190,13 @@
 <section id="install-and-configure-ntp"> <title>Install and configure NTP</title>
 <p>NTP is a networking protocol for clock synchronization between computer systems.
 Before you start the installation, you must install NTP on the seed cloud host (installation system) and configure it as a NTP server. You will configure the undercloud and overcloud systems as NTP clients during the installation process.</p>
-<p>For information on installing NTP on the seed cloud host, see <xref href="../../../commercial/GA1/1.1commercial.install-GA-NTP.dita" >HP Helion OpenStack(R) Installation: NTP Server</xref>.</p>
+<p>For information on installing NTP on the seed cloud host, see <xref href="../../../commercial/GA1/1.1commercial.install-GA-NTP.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Installation: NTP Server</xref>.</p>
 </section>
 <section id="download-and-unpack-the-installation-package"> <title>Download and unpack the installation package</title>
-<p>Before you begin, you must download the required HP Helion OpenStack(R) installation package(s):</p>
+<p>Before you begin, you must download the required HP Helion <tm tmtype="reg">Openstack</tm> installation package(s):</p>
 <ol>
 <li>
-<p>Register and then log in to download the required installation package(s) from <xref href="https://helion.hpwsportal.com#/Product/%7B%22productId%22%3A%221247%22%7D/Show" scope="external" format="html" >HP Helion OpenStack(R) product installation</xref>.</p>
+<p>Register and then log in to download the required installation package(s) from <xref href="https://helion.hpwsportal.com#/Product/%7B%22productId%22%3A%221247%22%7D/Show" scope="external" format="html" >HP Helion <tm tmtype="reg">Openstack</tm> product installation</xref>.</p>
 
 <ul>
 <li>
@@ -218,8 +218,8 @@ Before you start the installation, you must install NTP on the seed cloud host (
 </entry>
 </row>
 <row>
-<entry>HP Helion OpenStack(R)</entry>
-<entry>HP_Helion_OpenStack(R)</entry>
+<entry>HP Helion <tm tmtype="reg">Openstack</tm></entry>
+<entry>HP_Helion_<tm tmtype="reg">Openstack</tm></entry>
 </row>
 </tbody>
 </tgroup>
@@ -244,11 +244,11 @@ Before you start the installation, you must install NTP on the seed cloud host (
 </entry>
 </row>
 <row>
-<entry>HP Helion OpenStack(R)</entry>
-<entry>HP_Helion_OpenStack(R)</entry>
+<entry>HP Helion <tm tmtype="reg">Openstack</tm></entry>
+<entry>HP_Helion_<tm tmtype="reg">Openstack</tm></entry>
 </row>
 <row>
-<entry>HP Helion OpenStack(R) vCenter Proxy Appliance</entry>
+<entry>HP Helion <tm tmtype="reg">Openstack</tm> vCenter Proxy Appliance</entry>
 <entry>overcloud_vcenter_compute_proxy_1.0.1.ova</entry>
 </row>
 </tbody>
@@ -269,10 +269,10 @@ Before you start the installation, you must install NTP on the seed cloud host (
 <p>Copy the installation package to the seed cloud host.</p>
 </li>
 <li>
-<p>Extract the HP Helion OpenStack(R) installation package to the <codeph>root</codeph> directory:</p>
+<p>Extract the HP Helion <tm tmtype="reg">Openstack</tm> installation package to the <codeph>root</codeph> directory:</p>
 
 <codeblock>
-<codeph>tar zxvf /root/HP_Helion_OpenStack(R)
+<codeph>tar zxvf /root/HP_Helion_<tm tmtype="reg">Openstack</tm>
 </codeph>
 </codeblock>
 
@@ -281,7 +281,7 @@ Before you start the installation, you must install NTP on the seed cloud host (
 </ol>
 </section>
 <section id="envars"> <title>Editing the JSON Environment Variables File for Installation</title>
-<p>To make the HP Helion OpenStack(R) installation process easier, you can enter all of the environment variables required by the installer into a JSON file that will be executed automatically. A JSON file is included in the installation package that you can modify with your environment variables.</p>
+<p>To make the HP Helion <tm tmtype="reg">Openstack</tm> installation process easier, you can enter all of the environment variables required by the installer into a JSON file that will be executed automatically. A JSON file is included in the installation package that you can modify with your environment variables.</p>
 <p>For information on editing the JSON environment variables file, see <xref href="../../../commercial/GA1/1.1commercial.install-GA-JSON.dita" >Editing the JSON Environment Variables File for Installation</xref>.</p>
 </section>
 <section id="csv"> <title>Create the baremetal.csv file</title>
@@ -331,8 +331,8 @@ Before you start the installation, you must install NTP on the seed cloud host (
 </section>
 <section id="ldap"> <title>Integrating LDAP (Lightweight Directory Access Protocol)</title>
 <p>
-<b>OPTIONAL</b> The HP Helion OpenStack(R) Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack(R) installation process.</p>
-<p>For information on integrating LDAP, see <xref href="../../../commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" >HP Helion OpenStack(R) Integrating LDAP</xref>.</p>
+<b>OPTIONAL</b> The HP Helion <tm tmtype="reg">Openstack</tm> Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion <tm tmtype="reg">Openstack</tm> installation process.</p>
+<p>For information on integrating LDAP, see <xref href="../../../commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Integrating LDAP</xref>.</p>
 </section>
 <section id="next-steps"> <title>Next Steps:</title>
 <p>

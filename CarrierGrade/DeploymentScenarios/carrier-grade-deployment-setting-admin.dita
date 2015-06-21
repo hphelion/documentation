@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic14511">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Reference Deployment Scenarios - Administrative Tasks</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Reference Deployment Scenarios - Administrative Tasks</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -119,7 +119,7 @@ This exercise creates the users <codeph>user1</codeph> and <codeph>user2</codeph
 <li>
           <xref
             href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
-            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+            >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</li>
 <li>Click the <b>Identity</b> dashboard, then the <b>Users</b> link to 1. list the users currently
           defined on the system.</li>
 <li>Create user <codeph>user1</codeph>. See <xref
@@ -139,7 +139,7 @@ This exercise creates the users <codeph>user1</codeph> and <codeph>user2</codeph
 <li>
           <xref
             href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
-            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+            >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</li>
 <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b>
             link.<p>The network(s) for the selected project appear.</p></li>
 <li>Select the <b>Provider Networks</b> tab.</li>
@@ -164,7 +164,7 @@ This exercise creates the users <codeph>user1</codeph> and <codeph>user2</codeph
 <li>
           <xref
             href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
-            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+            >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</li>
 <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b>
             link.<p>The network(s) for the selected project appear.</p></li>
 <li>Select the <b>Provider Networks</b> tab.</li>
@@ -210,7 +210,7 @@ This exercise creates the users <codeph>user1</codeph> and <codeph>user2</codeph
 <li>
           <xref
             href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
-            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+            >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</li>
 <li>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Networks</b>
           link.</li>
 <li>
@@ -218,14 +218,14 @@ This exercise creates the users <codeph>user1</codeph> and <codeph>user2</codeph
             href="../../CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.create.dita"
             >Create a network</xref> named <codeph>tenant1-mgmt-net</codeph>.<p>The
               <codeph>tenant1-mgmt-net</codeph> network is created so that VMs on tenant1 can
-            connect to an OpenStack(R) virtual router, which is added to the tenant and then
+            connect to an <tm tmtype="reg">Openstack</tm> virtual router, which is added to the tenant and then
             associated with this network later in the exercises. This provides the VMs with access
-            to OpenStack(R) services, and optionally to an external network, as shown in the
+            to <tm tmtype="reg">Openstack</tm> services, and optionally to an external network, as shown in the
             scenario diagrams.</p><p>Fill in the fields as shown:</p><p><image
               href="../../media/CGH-deploy-set-tenant-net.png" id="image_nm2_mrg_ks"/></p></li>
 <li>Click <b>Create Network</b> to commit the changes.</li>
 <li>Create the tenant network <codeph>tenant2-mgmt-net</codeph>.<p>The tenant2-mgmt-net network is
-            added so that VMs on tenant2 can connect to an OpenStack(R) virtual router implemented
+            added so that VMs on tenant2 can connect to an <tm tmtype="reg">Openstack</tm> virtual router implemented
             later on tenant2.</p><p>From the <b>Networks</b> tab, click <b>Create Network</b> and
             fill in the form as shown:</p><p><image
               href="../../media/CGH-deploy-set-tenant-net2.png" id="image_hmj_prg_ks"/></p></li>
@@ -299,9 +299,9 @@ for the provider network.</p>
 <p>Note: The flavor <codeph>example-guest.tiny</codeph> is not used in the scenarios. All the instances in the scenarios require the extra CPU provided by <codeph>example-guest.small</codeph> to support AVP network interfaces.</p>
 </section>
 <section id="guest"> <title>Setting Up the Example Guest Image</title>
-<p>You can import guest images for use with the HP Helion OpenStack(R) Carrier Grade server.</p>
-<p>This example assumes that a guest disk image named <codeph>example-guest.img</codeph> is available on the file system of the active controller. The guest image is available as part of HP Helion OpenStack(R) Carrier Grade.</p>
-<p>The image must be uploaded to the Image Operations (Glance) service, the OpenStack(R) image deployment service, so that it can be used to launch new virtual machines.</p>
+<p>You can import guest images for use with the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade server.</p>
+<p>This example assumes that a guest disk image named <codeph>example-guest.img</codeph> is available on the file system of the active controller. The guest image is available as part of HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade.</p>
+<p>The image must be uploaded to the Image Operations (Glance) service, the <tm tmtype="reg">Openstack</tm> image deployment service, so that it can be used to launch new virtual machines.</p>
 <ol>
 <li>List the images available on the system.<p>Select <b>Images</b> in the <b>System Panel</b>
             section of the <b>Admin</b> tab to open the <b>Images</b> page.</p><p>Since no images

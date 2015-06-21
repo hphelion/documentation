@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4210">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Configuring SR-IOV Ethernet Interfaces</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Configuring SR-IOV Ethernet Interfaces</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -38,13 +38,13 @@
 <li>Scales up more easily in a virtualized environment by providing multiple VFs that can be attached to multiple virtual machine interfaces.</li>
 <li>Shares the same limitations, including the lack of support for LAG, QoS, ACS, and live migration.</li>
 <li>Has the same requirements regarding the VLAN configuration of the access switches.</li>
-<li>Provides a similar configuration workflow when used on HP Helion OpenStack(R) Carrier Grade.</li>
+<li>Provides a similar configuration workflow when used on HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade.</li>
 </ul>
 <p>To configure the access switch:</p>
 <ol>
 <li>
         <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
-          OpenStack(R) Horizon Dashboard</xref> as the admin user.</li>
+          <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref> as the admin user.</li>
 <li>
         <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Lock
           the compute node</xref> you want to configure.</li>

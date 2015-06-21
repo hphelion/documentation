@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1469">
-<title>HP Helion OpenStack(R) 1.0: Related OpenStack(R) Documentation</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Related <tm tmtype="reg">Openstack</tm> Documentation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,34 +15,34 @@
 <p>
 
 </p>
-<p>This topic provides you links to OpenStack(R) documentation that you might find helpful when working with HP Helion OpenStack(R)</p>
-<section id="openstack-links"> <title>OpenStack(R) Links</title>
-<p>The HP Helion OpenStack(R) product contains OpenStack(R) technology coupled with a LinuxÂ(R) operating system.</p>
-<p>For more information, refer to the official open source OpenStack(R) documentation site:</p>
+<p>This topic provides you links to <tm tmtype="reg">Openstack</tm> documentation that you might find helpful when working with HP Helion <tm tmtype="reg">Openstack</tm></p>
+<section id="openstack-links"> <title><tm tmtype="reg">Openstack</tm> Links</title>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> product contains <tm tmtype="reg">Openstack</tm> technology coupled with a <tm tmtype="reg">Linux</tm> operating system.</p>
+<p>For more information, refer to the official open source <tm tmtype="reg">Openstack</tm> documentation site:</p>
 <ul>
 <li>
-<xref href="http://docs.openstack.org/" scope="external" format="html" >OpenStack(R) documentation home page</xref>
+<xref href="http://docs.openstack.org/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> documentation home page</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/glossary/content/glossary.html" scope="external" format="html" >OpenStack(R) Glossary</xref>
+<xref href="http://docs.openstack.org/glossary/content/glossary.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Glossary</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/user-guide/content/index.html" scope="external" format="html" >OpenStack(R) End User Guide</xref>
+<xref href="http://docs.openstack.org/user-guide/content/index.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> End User Guide</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html" scope="external" format="html" >OpenStack(R) Cloud Administrator Guide</xref>
+<xref href="http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Cloud Administrator Guide</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html" scope="external" format="html" >OpenStack(R) Administrator Guide for Networking</xref>
+<xref href="http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Administrator Guide for Networking</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/trunk/openstack-ops/content/index.html" scope="external" format="html" >OpenStack(R) Operations Guide</xref>
+<xref href="http://docs.openstack.org/trunk/openstack-ops/content/index.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Operations Guide</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/api/quick-start/content/index.html#Compute_API_Quick_Start" scope="external" format="html" >OpenStack(R) API Quick Start</xref>
+<xref href="http://docs.openstack.org/api/quick-start/content/index.html#Compute_API_Quick_Start" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> API Quick Start</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >OpenStack(R) Command-line Clients</xref>
+<xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Command-line Clients</xref>
 </li>
 </ul>
 <p>

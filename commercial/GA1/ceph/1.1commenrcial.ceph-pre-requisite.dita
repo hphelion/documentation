@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4054">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Ceph Firefly 0.80.7 Storage Solution: Prerequisites</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Ceph Firefly 0.80.7 Storage Solution: Prerequisites</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Ceph Firefly 0.80.7 Storage Solution: Prerequisites</searchtitle>
+<searchtitle>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Ceph Firefly 0.80.7 Storage Solution: Prerequisites</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -33,7 +33,7 @@
 <xref type="section" href="#topic4054/hardware-requirement">Hardware Requirement for Ceph Cluster</xref>
 </li>
 <li>
-<xref type="section" href="#topic4054/kvm">HP Helion OpenStack(R) 1.1: Installation and Configuration for KVM Hypervisor</xref>
+<xref type="section" href="#topic4054/kvm">HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Installation and Configuration for KVM Hypervisor</xref>
 </li>
 </ul>
 <section id="hardware-requirement"> <title>Hardware Requirement for Ceph Cluster</title>
@@ -202,7 +202,7 @@
 <colspec colname="col3"/>
 <thead>
 <row>
-<entry> HP Helion OpenStack(R)</entry>
+<entry> HP Helion <tm tmtype="reg">Openstack</tm></entry>
     <entry>CEPH Monitor/GateWays </entry>
     <entry>OSDs (6x15 SL4540)</entry>
 </row>
@@ -256,22 +256,22 @@
 <p>For more examples on Ceph Production Clusters, refer to: <xref href="http://www8.hp.com/h20195/v2/GetPDF.aspx/4AA5-2799ENW.pdf" scope="external" format="pdf">http://www8.hp.com/h20195/v2/GetPDF.aspx/4AA5-2799ENW.pdf</xref>
 </p>
 </section>
-<section id="kvm"> <title>Installation and Configuration HP Helion OpenStack(R) 1.1 and 1.1.1 for KVM Hypervisor</title>
-<p>HP Helion OpenStack(R) 1.1 or 1.1.1 should be successfully installed in the KVM hypervisor before installing Ceph.</p>
-<p>For more information on the HP Helion OpenStack(R) 1.1 or 1.1.1 for KVM hypervisor, refer to <xref href="http://docs.hpcloud.com/helion/openstack/1.1/install/kvm" scope="external" format="html" >HP Helion OpenStack(R) 1.x Installation Manual</xref>.</p>
+<section id="kvm"> <title>Installation and Configuration HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1 for KVM Hypervisor</title>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 or 1.1.1 should be successfully installed in the KVM hypervisor before installing Ceph.</p>
+<p>For more information on the HP Helion <tm tmtype="reg">Openstack</tm> 1.1 or 1.1.1 for KVM hypervisor, refer to <xref href="http://docs.hpcloud.com/helion/openstack/1.1/install/kvm" scope="external" format="html" >HP Helion <tm tmtype="reg">Openstack</tm> 1.x Installation Manual</xref>.</p>
 <!-- this is not there in the present cookbook
 ###Download and Access to the Solution Files and Documents {#Download-and-access}
 
-[HDN](https://helion.hpwsportal.com) is a remote web catalog containing a repository of software that HP OpenStack(R) Enterprise Customers can purchase.
+[HDN](https://helion.hpwsportal.com) is a remote web catalog containing a repository of software that HP <tm tmtype="reg">Openstack</tm> Enterprise Customers can purchase.
 
-To purchase software, register yourself (if this is your first time) to the HDN portal and then log in to download the required Helion OpenStack(R) Ceph Storage Solution packages.
+To purchase software, register yourself (if this is your first time) to the HDN portal and then log in to download the required Helion <tm tmtype="reg">Openstack</tm> Ceph Storage Solution packages.
 
 If you have any access issues with HDN, contact the HP sales team. -->
-<!--Once you have the necessary permissions, log in with your credentials. Select the Category **Workloads**, and the Sub-Category **Storage** to find the HP Helion OpenStack(R) Ceph Storage solution.
+<!--Once you have the necessary permissions, log in with your credentials. Select the Category **Workloads**, and the Sub-Category **Storage** to find the HP Helion <tm tmtype="reg">Openstack</tm> Ceph Storage solution.
 
 Each Ceph-related file is identified with the following description:
 
-* Helion OpenStack(R) Commercial integration with InkTank Ceph for Glance, Nova, and Cinder storage.
+* Helion <tm tmtype="reg">Openstack</tm> Commercial integration with InkTank Ceph for Glance, Nova, and Cinder storage.
 -->
 </section>
 <section id="something"> <title>

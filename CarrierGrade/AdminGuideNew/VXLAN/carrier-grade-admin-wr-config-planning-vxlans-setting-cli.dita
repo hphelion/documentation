@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3210">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Setting Up a VXLAN Provider Network Using the CLI</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Setting Up a VXLAN Provider Network Using the CLI</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) Carrier Grade (Beta): Setting Up a VXLAN Provider Network using the CLI</searchtitle>
+<searchtitle>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Setting Up a VXLAN Provider Network using the CLI</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -19,8 +19,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -83,7 +83,7 @@ command line interface. For information about using the Horizon interface, see <
 <codeph>udp_port</codeph> - The destination UDP port for packets sent on the VXLAN. You can select either:</p>
 
 <ul>
-<li>the IANA standard 4789 to use this range with the OpenStack(R) Neutron service</li>
+<li>the IANA standard 4789 to use this range with the <tm tmtype="reg">Openstack</tm> Neutron service</li>
 <li>the legacy standard 8472 for use with some commercial switch equipment.</li>
 </ul>
 </li>

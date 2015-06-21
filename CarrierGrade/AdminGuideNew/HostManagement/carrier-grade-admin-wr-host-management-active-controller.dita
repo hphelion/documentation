@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3238">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Replacing Active Controller Nodes</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Replacing Active Controller Nodes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -27,7 +27,7 @@
  <!--permalink: /helion/openstack/carrier/admin/host/management/active/controller/--></p>
 <!-- From the Titanium Server Admin Guide -->
 <p>You can replace controller nodes or disks while the system is running.
-The HP Helion OpenStack(R) Carrier Grade system uses exactly two controllers; you cannot add or remove a controller.
+The HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade system uses exactly two controllers; you cannot add or remove a controller.
 However, you can replace the primary or secondary disks, and you can replace faulty controller nodes.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
@@ -39,7 +39,7 @@ However, you can replace the primary or secondary disks, and you can replace fau
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.</li>
@@ -70,11 +70,11 @@ However, you can replace the primary or secondary disks, and you can replace fau
 
 <p>Wait until the controller is reported as Locked, Enabled, and Available.</p>
 
-<p>b. If required, <xref href="../../../CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita" >reinstall HP Helion OpenStack(R) Carrier Grade</xref> on the controller.</p>
+<p>b. If required, <xref href="../../../CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita" >reinstall HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade</xref> on the controller.</p>
 
 <p>Wait for the host to be reported as Locked, Disabled, and Online.</p>
 
-<p>If you are making disk changes to increase storage capacity, you must re-install HP Helion OpenStack(R) Carrier Grade. For more information, see Changing Storage Space Allotments on the Controller</p>
+<p>If you are making disk changes to increase storage capacity, you must re-install HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade. For more information, see Changing Storage Space Allotments on the Controller</p>
 
 <p>To reinstall the software on a host , click More &gt; Reinstall.</p>
 
@@ -106,7 +106,7 @@ However, you can replace the primary or secondary disks, and you can replace fau
 <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#power" >Power up the new or modified controller</xref>.</p>
 </li>
 <li>
-<p>If required, <xref href="../../../CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita" >reinstall HP Helion OpenStack(R) Carrier Grade</xref> on the controller.</p>
+<p>If required, <xref href="../../../CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita" >reinstall HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade</xref> on the controller.</p>
 </li>
 </ol>
 <p>The updated controllers are now in service. The controller that was formerly active is now the standby controller.</p>

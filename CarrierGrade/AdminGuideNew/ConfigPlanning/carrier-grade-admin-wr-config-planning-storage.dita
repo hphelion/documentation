@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4650">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Planning the Storage</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Planning the Storage</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -31,12 +31,12 @@
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>During HP Helion OpenStack(R) Carrier Grade software installation, the controller configuration script gives you the options to allocate space on the controller for the internal database, and for general storage volumes (images and disk space for the virtual machines).</p>
+<p>During HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade software installation, the controller configuration script gives you the options to allocate space on the controller for the internal database, and for general storage volumes (images and disk space for the virtual machines).</p>
 <p>The size of the database grows with the number system resources created by the system administrator and the tenants.</p>
 <p>This includes objects of all kinds such as compute nodes, provider networks, images, flavors, tenant networks, subnets, virtual machine instances and NICs. As a reference point, consider the following deployment scenario:</p>
 <ul>
 <li>two controllers</li>
-<li>four compute nodes with dual Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz each.</li>
+<li>four compute nodes with dual <tm tmtype="reg">Intel</tm> <tm tmtype="reg">Xeon</tm> CPU E5-2670 v2 @ 2.50GHz each.</li>
 <li>40 virtual machine instances</li>
 <li>120 tenant networks</li>
 <li>steady collection of power management statistics</li>
@@ -49,7 +49,7 @@ Persistent block storage for virtual machines is allocated by the Cinder service
 <ul>
 <li>
 <p>
-<b>LVM/iSCSI</b> - This backend provides block storage managed by the Linux Logical Volume Manager (LVM) exposed as iSCSI targets. In the HP Helion OpenStack(R) Carrier Grade implementation:</p>
+<b>LVM/iSCSI</b> - This backend provides block storage managed by the Linux Logical Volume Manager (LVM) exposed as iSCSI targets. In the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade implementation:</p>
 
 <ul>
 <li>Storage space is allocated on the active controller and automatically mounted over iSCSI by the virtual machines running on the compute nodes. No storage space is allocated on the compute nodes.</li>
@@ -59,18 +59,18 @@ Persistent block storage for virtual machines is allocated by the Cinder service
 </li>
 <li>
 <p>
-<b>Ceph</b> - This backend provides block storage using Ceph, a distributed storage system. In the HP Helion OpenStack(R)
+<b>Ceph</b> - This backend provides block storage using Ceph, a distributed storage system. In the HP Helion <tm tmtype="reg">Openstack</tm>
 Carrier Grade implementation:</p>
 
 <ul>
 <li>Storage space is allocated on the storage nodes exclusively. No persistent block storage space is allocated on the compute nodes or the controllers.</li>
-<li>Two storage nodes are used to provide a scalable and fully HA-protected storage solution. For details on hardware requirements and software installation procedures for storage nodes, refer to the HP Helion OpenStack(R) Carrier Grade Software Installation Guide.</li>
+<li>Two storage nodes are used to provide a scalable and fully HA-protected storage solution. For details on hardware requirements and software installation procedures for storage nodes, refer to the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Software Installation Guide.</li>
 </ul>
 <p>
 <b>Note:</b> For Ceph storage, an infrastructure network is required</p>
 </li>
 </ul>
-<p>The LVM/iSCSCI and Ceph-based storage backend options are exclusive. You select one or another when configuring controller-0 by selecting the appropriate storage option. Select lvm for the LVM/iSCSCI backend, or ceph for the Ceph backend. See the HP Helion OpenStack(R) Carrier Grade Software Installation Guide for details.</p>
+<p>The LVM/iSCSCI and Ceph-based storage backend options are exclusive. You select one or another when configuring controller-0 by selecting the appropriate storage option. Select lvm for the LVM/iSCSCI backend, or ceph for the Ceph backend. See the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Software Installation Guide for details.</p>
 <p>As an alternative to persistent storage provided by the Cinder service, you can implement ephemeral local storage on the compute nodes where the VMs are instantiated. This is useful for VMs requiring local disk access for performance optimization. You can use a pre-allocated partition on the root disk, as well as additional disks optionally installed in the compute nodes. For more information, see <xref href="../../AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-storage-configure.dita" >Configuring a Compute Host to Provide Local Storage</xref>.</p>
 <p>
 <b>Caution:</b> Local storage is ephemeral.</p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic18514">
-<title>HP Helion OpenStack(R) 1.0: Editing the JSON Environment Variables File for Installation</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Editing the JSON Environment Variables File for Installation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,8 +15,8 @@
 <p>
 
 </p>
-<p>The HP Helion OpenStack(R) Installation process requires various configuration parameters to be specified. This is achieved through environment variables.</p>
-<p>As a user who is installing HP Helion OpenStack(R) can enter all required environment variables using a JSON (JavaScript Object Notation) file that comes with the installation package.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Installation process requires various configuration parameters to be specified. This is achieved through environment variables.</p>
+<p>As a user who is installing HP Helion <tm tmtype="reg">Openstack</tm> can enter all required environment variables using a JSON (JavaScript Object Notation) file that comes with the installation package.</p>
 <p>The installation package contains a number of JSON files. You need to be concerned with only one of two, depending upon your install environment: <codeph>kvm-custom-ips.json</codeph> or <codeph>esx-custom-ips.json</codeph>. The files are located in the <codeph>/tripleo/config</codeph> directory after the installation package is extracted.</p>
 <p>You do not need to be able to create JSON files or need to understand how it functions. JSON is human-readable format contained in a text file for storing information that can be used to transfer data between servers.</p>
 <p>This file will be used to conduct operations such as adding or removing a node and integrating block storage. Make sure this file is preserved for future use.</p>
@@ -35,7 +35,7 @@
 <section id="env"> <title>Definition of Environment variables used during install</title>
 <p>The following section describes the environmental variables that affect your installation.</p>
 <p>
-<codeph>cloud_type</codeph> - Use this variable to specify whether the HP Helion OpenStack(R) will be installed with KVM or ESX hypervisor support.</p>
+<codeph>cloud_type</codeph> - Use this variable to specify whether the HP Helion <tm tmtype="reg">Openstack</tm> will be installed with KVM or ESX hypervisor support.</p>
 <p>
 <b>Note:</b> If set to <codeph>ESX</codeph>, the <codeph>compute_scale</codeph> variable and DVR variables are not required.</p>
 <p>
@@ -161,8 +161,8 @@ The following example sets the NTP server address. Do not copy this address.
 </codeph>
 </codeblock>
 <p>
-<codeph>control_virtual_router_id</codeph> - Use this variable to set a unique idenitifier for the HP Helion OpenStack(R) installation.</p>
-<p>HP Helion OpenStack(R) uses keepalived to manage virtual IPs. keepalived uses a unique id to synchronise its activities. If you plan to run multiple installations of HP Helion OpenStack(R) on the same network, each installation must be configured with a unique id by setting the environment variable <codeph>control_virtual_router_id</codeph> to a unique number (from 0 to 255) before running the installation. The default value, if unset, is 51.</p>
+<codeph>control_virtual_router_id</codeph> - Use this variable to set a unique idenitifier for the HP Helion <tm tmtype="reg">Openstack</tm> installation.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> uses keepalived to manage virtual IPs. keepalived uses a unique id to synchronise its activities. If you plan to run multiple installations of HP Helion <tm tmtype="reg">Openstack</tm> on the same network, each installation must be configured with a unique id by setting the environment variable <codeph>control_virtual_router_id</codeph> to a unique number (from 0 to 255) before running the installation. The default value, if unset, is 51.</p>
 <codeblock>
   <codeph>"control_virtual_router_id": "202",
 </codeph>
@@ -192,7 +192,7 @@ The following example sets the NTP server address. Do not copy this address.
 <p>
   <b>Configure the Service network</b>
 </p>
-<p>Helion OpenStack(R) requires a 3rd VLAN network called as Service Network which connects trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The purpose is to aggregate logs of PaaS components running on the VMs in the overcloud to the undercloud via this network.</p>
+<p>Helion <tm tmtype="reg">Openstack</tm> requires a 3rd VLAN network called as Service Network which connects trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The purpose is to aggregate logs of PaaS components running on the VMs in the overcloud to the undercloud via this network.</p>
 <p>This third network can be configured for the platform service guest instances to connect to undercloud controller by setting <codeph>NeutronSVCInterface</codeph> to a physically configured VLAN. The VLAN name used as the <codeph>NeutronSVCInterface</codeph> is expected to be of the form <codeph>vlan</codeph> followed by the VLAN id ( ex. vlan102 ).</p>
 <p>
 <b>Note:</b> These variables are optional for the ESX cloud type.</p>
@@ -229,12 +229,12 @@ The following example sets the NTP server address. Do not copy this address.
 <p>Identify the environment variables required for the installation based on the deployment scenario.</p>
 <ul>
 <li>
-<xref type="section" href="#topic18514/one">Deployment Scenario 1: HP Helion OpenStack(R) Deployment with custom IP addresses</xref>
+<xref type="section" href="#topic18514/one">Deployment Scenario 1: HP Helion <tm tmtype="reg">Openstack</tm> Deployment with custom IP addresses</xref>
 </li>
 </ul>
 </section>
-<section id="one"> <title>Deployment Scenario 1: HP Helion OpenStack(R) Deployment with custom IP addresses and VxLAN based Tenant Networks</title>
-<p>If you plan to use custom IP addresses in your HP Helion OpenStack(R) deployment, open the JSON file in the installation package named <codeph>kvm-custom-ips.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic18514/env">Definition of Environment variables used during install</xref>.</p>
+<section id="one"> <title>Deployment Scenario 1: HP Helion <tm tmtype="reg">Openstack</tm> Deployment with custom IP addresses and VxLAN based Tenant Networks</title>
+<p>If you plan to use custom IP addresses in your HP Helion <tm tmtype="reg">Openstack</tm> deployment, open the JSON file in the installation package named <codeph>kvm-custom-ips.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic18514/env">Definition of Environment variables used during install</xref>.</p>
 <p>All VLAN ID's &amp; IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.</p>
 <ol>
 <li>
@@ -316,21 +316,21 @@ The following example sets the NTP server address. Do not copy this address.
 </li>
 </ol>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-kvm.dita" >Return to HP Helion OpenStack(R) Installation and Configuration for KVM Hypervisor</xref>.</p>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-kvm.dita" >Return to HP Helion <tm tmtype="reg">Openstack</tm> Installation and Configuration for KVM Hypervisor</xref>.</p>
 </section>
 <section id="esx"> <title>Environment variables file for an ESX cloud type</title>
 <p>Identify the environment variables required for the installation based on the deployment scenario.</p>
 <ul>
 <li>
-<xref type="section" href="#topic18514/esxone">Deployment Scenario 1: HP Helion OpenStack(R) Deployment with custom IP addresses</xref>
+<xref type="section" href="#topic18514/esxone">Deployment Scenario 1: HP Helion <tm tmtype="reg">Openstack</tm> Deployment with custom IP addresses</xref>
 </li>
 <li>
-<xref type="section" href="#topic18514/esxtwo">Deployment Scenario 2: HP Helion OpenStack(R) Deployment with custom IP addresses and a VLAN provider Network for external access</xref>
+<xref type="section" href="#topic18514/esxtwo">Deployment Scenario 2: HP Helion <tm tmtype="reg">Openstack</tm> Deployment with custom IP addresses and a VLAN provider Network for external access</xref>
 </li>
 </ul>
 </section>
-<section id="esxone"> <title>Deployment Scenario 1: HP Helion OpenStack(R) Deployment with custom IP addresses</title>
-<p>If you plan to use custom IP addresses in your HP Helion OpenStack(R) deployment, open the JSON file in the installation package named <codeph>esx-custom-ips.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic18514/env">Definition of Environment variables used during install</xref>.</p>
+<section id="esxone"> <title>Deployment Scenario 1: HP Helion <tm tmtype="reg">Openstack</tm> Deployment with custom IP addresses</title>
+<p>If you plan to use custom IP addresses in your HP Helion <tm tmtype="reg">Openstack</tm> deployment, open the JSON file in the installation package named <codeph>esx-custom-ips.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic18514/env">Definition of Environment variables used during install</xref>.</p>
 <p>All VLAN ID's &amp; IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.</p>
 <ol>
 <li>
@@ -387,10 +387,10 @@ The following example sets the NTP server address. Do not copy this address.
 </li>
 </ol>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-esx.dita" >Return to HP Helion OpenStack(R) Installation and Configuration for ESX Hypervisor</xref>.</p>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-esx.dita" >Return to HP Helion <tm tmtype="reg">Openstack</tm> Installation and Configuration for ESX Hypervisor</xref>.</p>
 </section>
-<section id="esxtwo"> <title>Deployment Scenario 2: HP Helion OpenStack(R) Deployment with custom IP addresses and a VLAN provider Network for external access</title>
-<p>If you intend to use custom IP addresses and a VLAN provider network for external access in your HP Helion OpenStack(R) deployment, open the JSON file in the installation package named <codeph>esx-custom-ips.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic18514/env">Definition of Environment variables used during install</xref>.</p>
+<section id="esxtwo"> <title>Deployment Scenario 2: HP Helion <tm tmtype="reg">Openstack</tm> Deployment with custom IP addresses and a VLAN provider Network for external access</title>
+<p>If you intend to use custom IP addresses and a VLAN provider network for external access in your HP Helion <tm tmtype="reg">Openstack</tm> deployment, open the JSON file in the installation package named <codeph>esx-custom-ips.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic18514/env">Definition of Environment variables used during install</xref>.</p>
 <p>All VLAN ID's &amp; IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.</p>
 <ol>
 <li>
@@ -454,7 +454,7 @@ The following example sets the NTP server address. Do not copy this address.
 </li>
 </ol>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv" >Return to HP Helion OpenStack(R) Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv" >Return to HP Helion <tm tmtype="reg">Openstack</tm> Installation Prerequisites</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

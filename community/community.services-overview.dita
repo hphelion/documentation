@@ -98,7 +98,7 @@ See [Overview of the Loom Service](/helion/community/services/loom/overview/).
 <b>Ironic</b>. The Ironic service runs during the installation for provisioning of the controller and KVM compute host in a baremetal deployment.</p>
 <p>See <xref href="../community/community.services-ironic-overview.dita" >Overview of the Ironic Service</xref>.</p>
 <!-- Not in 1.4
-**Sirius**. HP Helion OpenStack(R) Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder and Swift) which run in the Overcloud on various storage devices.
+**Sirius**. HP Helion <tm tmtype="reg">Openstack</tm> Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder and Swift) which run in the Overcloud on various storage devices.
 
 See [Overview of Sirius Service](/helion/community/services/sirius/overview/)
 
@@ -107,18 +107,18 @@ See [Overview of Sirius Service](/helion/community/services/sirius/overview/)
 See [Overview of EON Service](/helion/community/services/eon/overview/)
 
 
-**DNSaaS**. The HP Helion OpenStack(R) DNSaaS (Domain Name System as a Service) provides a way to display, create, modify, and delete DNS records on the assigned DNS server network. 
+**DNSaaS**. The HP Helion <tm tmtype="reg">Openstack</tm> DNSaaS (Domain Name System as a Service) provides a way to display, create, modify, and delete DNS records on the assigned DNS server network. 
 
 See [Overview of the DNS as a Service](/helion/community/install/dnsaas/).
 
-**DVR**. Distributed Virtual Routing (DVR) allows you to define connectivity among different VNSs as well as connectivity between VNS hosts and the external network. HP Helion OpenStack(R) Community provides Distributed Virtual Routing to cloud users. 
+**DVR**. Distributed Virtual Routing (DVR) allows you to define connectivity among different VNSs as well as connectivity between VNS hosts and the external network. HP Helion <tm tmtype="reg">Openstack</tm> Community provides Distributed Virtual Routing to cloud users. 
 
 See [Overview of DVR Service](/helion/community/services/dvr/overview/).
 -->
 </section>
 <section id="info"> <title>For more information</title>
-<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref>. The <b>Architecture</b> section contains useful information about how an OpenStack(R) Cloud is put together. However, HP Helion OpenStack(R) takes care of these details for you. The <b>Operations</b> section contains information on how to manage the system.</p>
-<p>For more information on installing the command-line interface for interacting with services, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >installing the OpenStack(R) command-line clients</xref>.</p>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Operations Guide</xref>. The <b>Architecture</b> section contains useful information about how an <tm tmtype="reg">Openstack</tm> Cloud is put together. However, HP Helion <tm tmtype="reg">Openstack</tm> takes care of these details for you. The <b>Operations</b> section contains information on how to manage the system.</p>
+<p>For more information on installing the command-line interface for interacting with services, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >installing the <tm tmtype="reg">Openstack</tm> command-line clients</xref>.</p>
 <p>
   <xref type="section" href="#topic5696"> Return to Top </xref>
 </p>

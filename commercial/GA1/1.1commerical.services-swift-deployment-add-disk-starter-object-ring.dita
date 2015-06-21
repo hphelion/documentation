@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5932">
-<title>HP Helion OpenStack(R) 1.1: Add a Disk to Starter Object Ring</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Add a Disk to Starter Object Ring</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Keshava HP, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0"/>
+<othermeta name="product-version3" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -37,7 +37,7 @@
 </ol>
 <section id="prer"> <title>Prerequisite</title>
 <ul>
-<li>HP Helion OpenStack(R) cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Swift nodes are functional by default as they are part of cloud deployment.)</i>
+<li>HP Helion <tm tmtype="reg">Openstack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Swift nodes are functional by default as they are part of cloud deployment.)</i>
 </li>
 <li>All of the rings generated <b>must</b> be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.</li>
 <li>Make a backup of the rings before any operation.</li>

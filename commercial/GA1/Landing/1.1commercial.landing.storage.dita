@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1323">
-<title>HP Helion OpenStack(R) 1.1: Storage Options</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Storage Options</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Micael B"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -18,7 +18,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/Landing/1.1commercial.landing.storage.md-->
  <!--permalink: /helion/openstack/1.1/landing/storage/--></p>
-<p>HP Helion OpenStack(R) is provided with two baremetal installation options depending on your system configuration. It allows you to manage the KVM and ESX hypervisors and provision virtual ymachines.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> is provided with two baremetal installation options depending on your system configuration. It allows you to manage the KVM and ESX hypervisors and provision virtual ymachines.</p>
 <section id="kvm-Hypervisor"> <title>KVM Hypervisor</title>
 <p>You can use your KVM cloud with either HP Storevirtual or HP StoreServ (3PAR) storage:</p>
 </section>
@@ -43,7 +43,7 @@
 <section id="esx-hypervisor"> <title>ESX Hypervisor</title>
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.install-GA-ESX-Proxy.dita" >Deploy vCenter ESX compute proxy</xref>
-<!--A BR tag was used here in the original source.-->HP Helion OpenStack(R) supports VMWare ESX hypervisor to provision and manage an overcloud ESX cluster.</p>
+<!--A BR tag was used here in the original source.-->HP Helion <tm tmtype="reg">Openstack</tm> supports VMWare ESX hypervisor to provision and manage an overcloud ESX cluster.</p>
 </section>
 </body>
 </topic>

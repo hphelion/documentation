@@ -17,7 +17,7 @@
 <p>
 <b>Document Version:</b> 1.5</p>
 <section id="1-overview"> <title>1. Overview</title>
-<p>This document describes the HP Helion Public Cloud Image service, which is based on OpenStack(R) Glance.</p>
+<p>This document describes the HP Helion Public Cloud Image service, which is based on <tm tmtype="reg">Openstack</tm> Glance.</p>
 <p>We will be referring to HP Helion Public Cloud Image Service in this document as simply the Image service.</p>
 </section>
 <section id="11-api-maturity-level"> <title>1.1 API Maturity Level</title>
@@ -204,7 +204,7 @@
 </section>
 <section id="container-format"> <title>Container Format</title>
 <p>The container format refers to whether the virtual machine image is in a file format that also contains metadata about the actual virtual machine.</p>
-<p>Note that the container format string is not currently used by the Image service or other OpenStack(R) components, so it is safe to simply specify bare as the container format if you are unsure.</p>
+<p>Note that the container format string is not currently used by the Image service or other <tm tmtype="reg">Openstack</tm> components, so it is safe to simply specify bare as the container format if you are unsure.</p>
 <p>You can set your image's container format to one of the following:</p>
 <ul>
 <li>

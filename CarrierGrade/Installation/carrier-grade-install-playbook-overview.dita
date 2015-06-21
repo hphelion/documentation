@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5675">
-    <title>HP Helion OpenStack(R) Carrier Grade (Beta): Installation Overview</title>
+    <title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Installation Overview</title>
     <titlealts>
-        <searchtitle>HP Helion OpenStack(R) Carrier Grade (Beta): Installation Overivew</searchtitle>
+        <searchtitle>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Installation Overivew</searchtitle>
 
     </titlealts>
     <prolog>
@@ -54,14 +54,14 @@
 <!--UNDER REVISION-->
 <!--./CarrierGrade/Installation/carrier-grade-install-pb-overview.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/overview/--></p>
-<p>This document describes the installation process for HP Helion OpenStack(R) Carrier Grade in a baremetal environment.</p>
+<p>This document describes the installation process for HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade in a baremetal environment.</p>
 <section id="about-the-installation"> <title>About the installation</title>
     <p>The HP Helion OpenStack Carrier Grade Alpha installation will create a base HP Helion OpenStack cloud that uses the HP Networking (Neutron) service using Open vSwitch (OVS). </p>
     <p>The HP Helion OpenStack cloud will consist of three controller systems and two <xref href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-compute-overview.dita"> compute</xref> nodes. The installation also creates a KVM node virtual machine from which you can deploy <xref href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-volume-overview.dita">Volume Operation (Cinder) block storage</xref>. See theTechnical Overview and Support Matrix for more information.</p>
     <p>After installation, you can interact with the HP Helion OpenStack cloud using the<xref href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita">Horizon graphical interface</xref> or using the APIs of the respective <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">services</xref>.</p>
     </section>
 <section id="installation-process"> <title>Installation process</title>
-<p>Use the following process to install HP Helion OpenStack(R) Carrier Grade in a baremetal environment.</p>  
+<p>Use the following process to install HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade in a baremetal environment.</p>  
 <p>Cloud Deployment will occur in following 3 phases:</p>
  <ol>
      <li>Preparing HLM node</li>

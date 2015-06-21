@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic12031">
-<title>HP Helion OpenStack(R) 2.0: Monasca Overview</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 2.0: Monasca Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 2.0"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 2.0"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 2.0"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 2.0"/>
 </metadata>
 </prolog>
 <body>
@@ -25,7 +25,7 @@
 <!--UNDER REVISION-->
  <!--./commercial/GA1/2.0commercial.services-monasca.md-->
  <!--permalink: /helion/commercial/2.0/services/monasca/--></p>
-<p>Monasca is a multi-tenant, scalable, fault-tolerant monitoring-as-a-service, HTTP-based solution. It is open-source and integrates with OpenStack(R) It uses a REST API for high-speed metrics processing and querying, and has a streaming alarm and notification engine. The name "Monasca" is short for "monitoring at scale".</p>
+<p>Monasca is a multi-tenant, scalable, fault-tolerant monitoring-as-a-service, HTTP-based solution. It is open-source and integrates with <tm tmtype="reg">Openstack</tm> It uses a REST API for high-speed metrics processing and querying, and has a streaming alarm and notification engine. The name "Monasca" is short for "monitoring at scale".</p>
 <p>Monasca components consist of those that are part of the server cluster and those that interact only with the Monasca API.</p>
 <p>The Monasca agent is highly configurable and can collect measurements from many sources (unlike the previous monitor, Icinga, which monitored the Swift cluster). Monasca can even monitor itself. this self monitoring is known as Monitoring of Monasca or  MoM.</p>
 <p>Metrics are submitted and authenticated using Keystone and stored associated with a tenant ID.</p>
@@ -85,13 +85,13 @@ Monasca consists of:</p>
 <p>Config Database: A third-party component that stores a lot of the configuration and other information in the system. Currently, MySQL is supported.</p>
 </li>
 <li>
-<p>Monitoring Client (python-monascaclient): A Python command line client and library that communicates and controls the Monitoring API. The Monitoring Client was written using the OpenStack(R) Heat Python client as a framework. The Monitoring Client also has a Python library, "monascaclient" similar to the other OpenStack(R) clients, that can be used to quickly build additional capabilities. The Monitoring Client library is used by the Monitoring UI, Ceilometer publisher, and other components.</p>
+<p>Monitoring Client (python-monascaclient): A Python command line client and library that communicates and controls the Monitoring API. The Monitoring Client was written using the <tm tmtype="reg">Openstack</tm> Heat Python client as a framework. The Monitoring Client also has a Python library, "monascaclient" similar to the other <tm tmtype="reg">Openstack</tm> clients, that can be used to quickly build additional capabilities. The Monitoring Client library is used by the Monitoring UI, Ceilometer publisher, and other components.</p>
 </li>
 <li>
 <p>Alarm Configuration Manager: A Python process that will detect new metrics and configure alarms based on the configuration. It uses the monitoring client library that communicates with the Monitoring API. The Alarm Configuration Manager is a Python Daemon that runs on a configurable interval and detects new metrics that need to be alarmed and creates the alarms.</p>
 </li>
 <li>
-<p>Monitoring UI: A Horizon dashboard for visualizing the overall health and status of an OpenStack(R) cloud.</p>
+<p>Monitoring UI: A Horizon dashboard for visualizing the overall health and status of an <tm tmtype="reg">Openstack</tm> cloud.</p>
 </li>
 <li>
 <p>Ceilometer publisher: A multi-publisher plugin for Ceilometer, not shown, that converts and publishes samples to the Monitoring API.</p>

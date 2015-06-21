@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2270">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Monitor Node Replication Status using Icinga</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Monitor Node Replication Status using Icinga</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Keshava HP, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0"/>
+<othermeta name="product-version3" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -28,7 +28,7 @@
 </b> service running in the undercloud to monitor the replication status of nodes within the Object Storage (Swift) deployment.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
-<li>HP Helion OpenStack(R) cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment.)</i>
+<li>HP Helion <tm tmtype="reg">Openstack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment.)</i>
 </li>
 <li>The Icinga service is active and running in the undercloud.</li>
 </ul>
@@ -92,7 +92,7 @@
 <row>
 <entry>WARNING </entry>
     <entry>Replication not progressing</entry>
-    <entry>An account, container or object replicator process has not finished a complete scan  within the defined threshold  (Default set to 24 hours (86400 seconds) for HP Helion OpenStack(R) 1.0). Examine the account-replicator, container-replicator and object-replicator logs to see which process is "stuck". Usually, restarting the relevant process resolves the issue.</entry>
+    <entry>An account, container or object replicator process has not finished a complete scan  within the defined threshold  (Default set to 24 hours (86400 seconds) for HP Helion <tm tmtype="reg">Openstack</tm> 1.0). Examine the account-replicator, container-replicator and object-replicator logs to see which process is "stuck". Usually, restarting the relevant process resolves the issue.</entry>
 </row>
 <row>
 <entry>FAIL </entry>

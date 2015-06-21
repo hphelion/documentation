@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic9303">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): User Tasks</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): User Tasks</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -122,7 +122,7 @@
 <li>
           <xref
             href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
-            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+            >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</li>
 <li>Click the <b>Project</b> dashboard, then the <b>Manage Compute</b> panel, then the <b>Access
             &amp; Security</b> link.<p>The Access &amp; Security page is displayed with four tabs,
               <b>Security Groups</b>, <b>Key Pairs</b>, <b>Floating IPs</b>, and <b>API Access</b>.
@@ -192,13 +192,13 @@ available to the user.</p>
 </section>
 <section id="router"> <title>Adding a Virtual Router</title>
 <p>A virtual router is required on each user tenant to connect VMs to an external network, and to internal resources on the compute nodes.</p>
-<p>The deployment scenarios require an OpenStack(R) virtual router on each user tenant. The virtual router connects the VMs to a metadata server (nova-api) implemented on one of the compute nodes. The metadata server provides the user data when a VM instance is launched. A route to the metadata server is established automatically when the router is created.</p>
+<p>The deployment scenarios require an <tm tmtype="reg">Openstack</tm> virtual router on each user tenant. The virtual router connects the VMs to a metadata server (nova-api) implemented on one of the compute nodes. The metadata server provides the user data when a VM instance is launched. A route to the metadata server is established automatically when the router is created.</p>
 <p>To create the router <codeph>tenant1-router</codeph> follow the directions below. For additional information, you can see <xref href="../../CarrierGrade/AdminGuideNew/Routers/carrier-grade.dashboard.router.create.dita" >Creating a Router</xref>.</p>
 <ol>
 <li>
           <xref
             href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
-            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+            >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</li>
 <li>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Routers</b>
             link.<p>The routers for the selected project appear.</p></li>
 <li>Click <b>Create Router</b> to open the <b>Create router</b> tab.<p>a. Enter
@@ -233,7 +233,7 @@ available to the user.</p>
 <li>
           <xref
             href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
-            >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</li>
+            >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</li>
 <li>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Volumes</b>
           link.</li>
 <li>Click <b>Create Volume</b>.</li>

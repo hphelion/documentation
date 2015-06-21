@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8612">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Performing a System Data Restore</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Performing a System Data Restore</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -18,8 +18,8 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Backup/carrier-grade-admin-wr-retore.md-->
  <!--permalink: /helion/openstack/carrier/admin/backup/restore/--></p>
-<p>You can restore a HP Helion OpenStack(R) Carrier Grade cluster from available system data and Cinder volume backup files to bring it back to the operational state it was when the backup procedure took place.</p>
-<p>Restoring a HP Helion OpenStack(R) Carrier Grade cluster from a set of backup files is done by restoring one host at a time, starting with the controllers, then the storage nodes, and finally the compute nodes.</p>
+<p>You can restore a HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade cluster from available system data and Cinder volume backup files to bring it back to the operational state it was when the backup procedure took place.</p>
+<p>Restoring a HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade cluster from a set of backup files is done by restoring one host at a time, starting with the controllers, then the storage nodes, and finally the compute nodes.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -28,7 +28,7 @@
 <ul>
 <li>All cluster hosts must be powered down, just as if they were going to be initialized anew.</li>
 <li>All backup files are accessible from a USB flash drive locally attached to the controller where the restore operation takes place (controller-0).</li>
-<li>You have the HP Helion OpenStack(R) Carrier Grade installation image available on a USB flash drive, just as when the software was installed the first time. It is mandatory that you use the exact same version of the software used during the original installation, otherwise the restore procedure will fail.</li>
+<li>You have the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade installation image available on a USB flash drive, just as when the software was installed the first time. It is mandatory that you use the exact same version of the software used during the original installation, otherwise the restore procedure will fail.</li>
 <li>The restore procedure requires all hosts but controller-0 to boot over the internal management network using the PXE protocol, just as it was done during the initial software installation. </li>
 </ul>
 <p>Ideally, you cleaned up all hard drives in the cluster, and the old boot images are no longer present; the hosts then default to boot from the network when powered on. If this is not the case, you must configure each host manually for network booting right after this exercise asks you to power them on.</p>
@@ -50,7 +50,7 @@
 <ol>
 <li>
 <p>
-<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack(R)" scope="external" format="html" >Install the HP Helion OpenStack(R) Carrier Grade software on controller-0</xref>.</p>
+<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_<tm tmtype="reg">Openstack</tm>" scope="external" format="html" >Install the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade software on controller-0</xref>.</p>
 
 <p>When the software installation is complete, you should be able to log in using the host's console and the web administration interface.</p>
 </li>
@@ -251,7 +251,7 @@ one at a time.</p>
   <image href="../../../media/CGH-WR-System-Restore.png"/>
 </p>
 <p>As each compute node is restored, the original instances at the time the backups were done are started automatically.</p>
-<p>The HP Helion OpenStack(R) Carrier Grade sever is fully restored. The state of the system, including storage resources and virtual machines, is identical to the state the cluster was in when the backup procedure took place.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade sever is fully restored. The state of the system, including storage resources and virtual machines, is identical to the state the cluster was in when the backup procedure took place.</p>
 <p>Remember however, that passwords for local user accounts must be restored manually since they are not included as part of the backup and restore procedures. For more information, see [Linux User Accounts].</p>
 <p>
   <xref type="section" href="#topic8612"> Return to Top </xref>

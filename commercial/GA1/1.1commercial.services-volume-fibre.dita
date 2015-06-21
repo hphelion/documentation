@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8246">
-<title>HP Helion OpenStack(R) 1.1: Block Storage (Cinder): Auto-zoning - Brocade Fibre Channel Zone Manager</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Block Storage (Cinder): Auto-zoning - Brocade Fibre Channel Zone Manager</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Deepali V, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -20,8 +20,8 @@
  <!--./commercial/GA1/1.1commercial.services-volume-fibre.md-->
  <!--permalink: /helion/openstack/1.1/services/volume/Fibre/--></p>
 <p>Zoning is a fabric-based service in a Storage Area Network (SAN), which enables you to group host and storage nodes that need to communicate. Zoning allows nodes to communicates with each other if they are the member of a same zone.</p>
-<p>The Fibre Channel Zone Manager allows FC SAN Zone/Access control management in conjunction with Fibre Channel block storage. OpenStack(R) Cinder supports the auto-zoning functionality from Icehouse release.</p>
-<p>HP Helion OpenStack(R) 1.1 supports Brocade FC Zone Manager. Block Storage (Cinder) needs to be configured to enable auto-zoning using Brocade FC Zone Manager. The following section describes the procedure to add Brocade Zone Manager configuration to <codeph>cinder.conf</codeph>
+<p>The Fibre Channel Zone Manager allows FC SAN Zone/Access control management in conjunction with Fibre Channel block storage. <tm tmtype="reg">Openstack</tm> Cinder supports the auto-zoning functionality from Icehouse release.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 supports Brocade FC Zone Manager. Block Storage (Cinder) needs to be configured to enable auto-zoning using Brocade FC Zone Manager. The following section describes the procedure to add Brocade Zone Manager configuration to <codeph>cinder.conf</codeph>
 </p>
 <p>
   <b>Volume Operations: High-level component interactions with the FC Zone Manager</b>
@@ -34,7 +34,7 @@
 </p>
 <section id="prerequisite"> <title>Prerequisite</title>
 <ul>
-<li>HP Helion OpenStack(R) cloud is successfully deployed.</li>
+<li>HP Helion <tm tmtype="reg">Openstack</tm> cloud is successfully deployed.</li>
 <li>FC Brocade switches are accessible from nova compute and node where cinder services are running. </li>
 </ul>
 </section>
@@ -240,7 +240,7 @@
 </section>
 <section id="prerequisite2"> <title>Prerequisite</title>
 <ul>
-<li>HP Helion OpenStack(R) cloud is successfully deployed.</li>
+<li>HP Helion <tm tmtype="reg">Openstack</tm> cloud is successfully deployed.</li>
 <li>Sirius service is running in the undercloud.</li>
 <li>HP StoreServ (3PAR) device is accessible from the undercloud.</li>
 <li>FC Brocade switches are accessible from nova compute and node where cinder services are running. </li>
@@ -253,7 +253,7 @@
 <p>Perform the following steps to configure HP 3PAR as storage backend with Brocade Zone Manager.</p>
 <ol>
 <li>Perform the steps <xref type="section" href="#topic8246/brocade-zone">1- 4</xref> to add brocade zone manager configuration.
-2.Add and configure  HP StoreServ (3PAR) and update overcloud. See <xref href="../../commercial/GA1/1.1commercial.undercloud-oc-config-storeserv.dita" >HP Helion OpenStack(R) : Working With StoreServ Backends</xref> for detailed procedure..</li>
+2.Add and configure  HP StoreServ (3PAR) and update overcloud. See <xref href="../../commercial/GA1/1.1commercial.undercloud-oc-config-storeserv.dita" >HP Helion <tm tmtype="reg">Openstack</tm> : Working With StoreServ Backends</xref> for detailed procedure..</li>
 </ol>
 <!--
 
@@ -263,10 +263,10 @@ You can  configure HP StoreVirtual as storage backend with Brocade Zone Manager.
 
 ###Prerequisite
 
-* HP Helion OpenStack(R) cloud is successfully deployed.
+* HP Helion <tm tmtype="reg">Openstack</tm> cloud is successfully deployed.
 * FC Brocade switches are accessible from nova compute and node where cinder services are running. 
 * You must be running the X Windows System to install the CMC.
-* We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack(R) management network.
+* We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion <tm tmtype="reg">Openstack</tm> management network.
 
 **Note**: These changes are required for 64-bit operating system only.
 
@@ -275,7 +275,7 @@ You can  configure HP StoreVirtual as storage backend with Brocade Zone Manager.
 Perform the following steps to configure HP StoreVirtual as storage backend with Brocade Zone Manager.
 
 1. Perform the steps [1- 4](#brocade-zone) to add brocade zone manager configuration.
-2. Add and configure  HP StoreServ (3PAR) and update overcloud. See [HP Helion OpenStack(R) : Working With StoreVirtual Backends]( /helion/openstack/1.1/undercloud/oc/config/storevirtual/) for detailed procedure.
+2. Add and configure  HP StoreServ (3PAR) and update overcloud. See [HP Helion <tm tmtype="reg">Openstack</tm> : Working With StoreVirtual Backends]( /helion/openstack/1.1/undercloud/oc/config/storevirtual/) for detailed procedure.
 
 -->
 </section>

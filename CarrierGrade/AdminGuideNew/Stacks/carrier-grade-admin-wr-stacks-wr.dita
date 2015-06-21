@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic9186">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Extensions to Heat</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Extensions to Heat</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -142,7 +142,7 @@ PDN_Gateway-4:
 </codeph></codeblock>
 </section>
 <section id="naminmg"> <title>Simplified VM Instance Naming</title>
-<p>The Titanium Server introduces minor changes to the OpenStack(R) VM naming convention to make Heat-generated names more user-friendly.</p>
+<p>The Titanium Server introduces minor changes to the <tm tmtype="reg">Openstack</tm> VM naming convention to make Heat-generated names more user-friendly.</p>
 <p>
 <b>For a static resource</b>, launched VM instances are named using the name attribute of the <codeph>OS::Nova::Server</codeph> structure (without including the <codeph>&lt;StackTemplateName&gt;</codeph>).</p>
 <codeblock><codeph>Serving_Gateway:
@@ -254,10 +254,10 @@ LaunchConfig:
     ...
 </codeph></codeblock>
 <p>
-<b>Note:</b> This example uses AWS autoscaling resources and CFN format, but autoscaling is not limited to CFN templates. You can use AWS resources and OS (OpenStack(R) resources in any combination in either CFN or HOT templates.</p>
+<b>Note:</b> This example uses AWS autoscaling resources and CFN format, but autoscaling is not limited to CFN templates. You can use AWS resources and OS (<tm tmtype="reg">Openstack</tm> resources in any combination in either CFN or HOT templates.</p>
 </section>
 <section id="metrics"> <title>Improved Metrics Communication</title>
-<p>Wind River Linux addresses reliability issues with the OpenStack(R) Havana implementation of cfn-push-stats, ensuring that guest instances can successfully pass Ceilometer metrics to the Controller.</p>
+<p>Wind River Linux addresses reliability issues with the <tm tmtype="reg">Openstack</tm> Havana implementation of cfn-push-stats, ensuring that guest instances can successfully pass Ceilometer metrics to the Controller.</p>
 </section>
 <section id="pass"> <title>Relaxed Requirements for Passing User Data</title>
 <p>The property <codeph>UserDataType</codeph> is a Wind River Linux template extension that you can
@@ -284,7 +284,7 @@ before internal_network is created.</p>
 </codeph></codeblock>
 </section>
 <section id="add"> <title>Additional Heat Resources</title>
-<p>In addition to the standard OpenStack(R) resources available for Heat templates, you can use the following resources:</p>
+<p>In addition to the standard <tm tmtype="reg">Openstack</tm> resources available for Heat templates, you can use the following resources:</p>
 <p>
 <codeph>OS::SysInv::HostInterface</codeph> - Defines a host L2 interface (ethernet or LAG), including the physical ports, network type (oam, mgmt, data, or infra), and connectivity to provider networks.</p>
 <p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8341">
-<title>HP Helion OpenStack(R) 1.0: Working with StoreServ Backends</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Working with StoreServ Backends</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -295,7 +295,7 @@
 </codeph>
 </codeblock>
 
-<!--**Note:** HP 3PAR iSCSI OpenStack(R) driver provides the ability to select the best-fit target iSCSI port from a list of candidate ports. However, Sirius currently does not support this option. If you want to configure 3PAR iSCSI backend with more than one IP addresses, add the *hp3par&#095;iscsi_ips* with a comma-separated list of IP addresses in `/root/overcloud-config.json` instead of *iscsi&#095;ip&#095;address*. The addresses may define an IP port by using a colon (:) to separate the address from the port. Refer to the following example:
+<!--**Note:** HP 3PAR iSCSI <tm tmtype="reg">Openstack</tm> driver provides the ability to select the best-fit target iSCSI port from a list of candidate ports. However, Sirius currently does not support this option. If you want to configure 3PAR iSCSI backend with more than one IP addresses, add the *hp3par&#095;iscsi_ips* with a comma-separated list of IP addresses in `/root/overcloud-config.json` instead of *iscsi&#095;ip&#095;address*. The addresses may define an IP port by using a colon (:) to separate the address from the port. Refer to the following example:
 
 
     "3par": {

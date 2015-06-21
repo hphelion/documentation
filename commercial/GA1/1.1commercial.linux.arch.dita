@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8765">
-<title>HP Helion OpenStack(R) 1.1: Host Linux Architecture</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Host Linux Architecture</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Michael B"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,8 +25,8 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.linux.arch.md-->
  <!--permalink: /helion/openstack/1.1/install/linux/arch/--></p>
-<p>HP Helion OpenStack(R) Host Linux (Debian-based) project standardizes and controls our operating system environment for OpenStack(R) services by combining Linux elements from <codeph>Debian.org</codeph>, <codeph>Kernel.org</codeph>, and foreign sources, to support our CI/CD processes.</p>
-<p>The Host Linux repository provides a base Linux image for use by HP Helion OpenStack(R) (Helion) teams to package and build undercloud and overcloud nodes.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> Host Linux (Debian-based) project standardizes and controls our operating system environment for <tm tmtype="reg">Openstack</tm> services by combining Linux elements from <codeph>Debian.org</codeph>, <codeph>Kernel.org</codeph>, and foreign sources, to support our CI/CD processes.</p>
+<p>The Host Linux repository provides a base Linux image for use by HP Helion <tm tmtype="reg">Openstack</tm> (Helion) teams to package and build undercloud and overcloud nodes.</p>
 <ul>
 <li>
 <xref type="section" href="#topic8765/description">Service Description and Purpose</xref>
@@ -57,31 +57,31 @@
 </li>
 </ul>
 <section id="description"> <title>Service Description and Purpose</title>
-<p>Host Linux is an HP-controlled, HP-internal only, Open Source Software Repository derived from the Debian GNU/Linux distribution and is tailored to support HP Helion OpenStack(R) product versions and OpenStack(R)</p>
-<p>Host Linux is instantiated as a binary and source code repository, which is available to HP Helion OpenStack(R) and constituent HP development partners to create Host Linux operating system images as required for their specific and numerous product requirements.</p>
-<p>Host Linux is the host operating system for HP Helion OpenStack(R) Community edition and HP Helion OpenStack(R)</p>
-<p>Host Linux runs on physical servers (baremetal) to support the Helion stack, and is used to build images executing virtual OpenStack(R) and Helion services, Host Linux also supports TripleO (OpenStack(R)-on-OpenStack(R) install, start-up, and operations.</p>
-<p>Host Linux is internal and HP-use-only at this time, delivered to customers as a component of HP Helion OpenStack(R) and HP Helion OpenStack(R) Community.</p>
+<p>Host Linux is an HP-controlled, HP-internal only, Open Source Software Repository derived from the Debian GNU/Linux distribution and is tailored to support HP Helion <tm tmtype="reg">Openstack</tm> product versions and <tm tmtype="reg">Openstack</tm></p>
+<p>Host Linux is instantiated as a binary and source code repository, which is available to HP Helion <tm tmtype="reg">Openstack</tm> and constituent HP development partners to create Host Linux operating system images as required for their specific and numerous product requirements.</p>
+<p>Host Linux is the host operating system for HP Helion <tm tmtype="reg">Openstack</tm> Community edition and HP Helion <tm tmtype="reg">Openstack</tm></p>
+<p>Host Linux runs on physical servers (baremetal) to support the Helion stack, and is used to build images executing virtual <tm tmtype="reg">Openstack</tm> and Helion services, Host Linux also supports TripleO (<tm tmtype="reg">Openstack</tm>-on-<tm tmtype="reg">Openstack</tm> install, start-up, and operations.</p>
+<p>Host Linux is internal and HP-use-only at this time, delivered to customers as a component of HP Helion <tm tmtype="reg">Openstack</tm> and HP Helion <tm tmtype="reg">Openstack</tm> Community.</p>
 </section>
 <section id="repo"> <title>Host Linux Repository</title>
 <p>This section describes how Host Linux repository integrates <codeph>Debian.org</codeph>, <codeph>Kernel.org</codeph>, and foreign sources. The repository allows partners to select any current or archived packages, as needed.</p>
-<p>The packages in the repository are refreshed with each HP Helion OpenStack(R) release.</p>
+<p>The packages in the repository are refreshed with each HP Helion <tm tmtype="reg">Openstack</tm> release.</p>
 <p>Benefits of using the Host Linux repository instead of the <codeph>Debian.org</codeph>, <codeph>Kernel.org</codeph>, and foreign sources include:</p>
 <ul>
 <li>The packages are more stable</li>
-<li>The packages are optimized to work with HP Helion OpenStack(R)</li>
+<li>The packages are optimized to work with HP Helion <tm tmtype="reg">Openstack</tm></li>
 <li>The repository is more secure and provides a smaller attack surface</li>
 </ul>
 </section>
 <section id="debianorg"> <title>Debian.org</title>
-<p>The HP Helion OpenStack(R) Host Linux repository contains a focused set of 576 Debian packages, Host Linux re-branded. The <codeph>Debian.org</codeph> repository contains approximately 65,000 packages.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Host Linux repository contains a focused set of 576 Debian packages, Host Linux re-branded. The <codeph>Debian.org</codeph> repository contains approximately 65,000 packages.</p>
 </section>
 <section id="kernelorg"> <title>Kernel.org</title>
-<p>The HP Helion OpenStack(R) Host Linux repository contains the full set of 6 <codeph>Kernel.org</codeph> packages, optimized to work with HP Helion OpenStack(R) including kernel parameter tuning, removal of modules not required by Helion, and added drivers.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Host Linux repository contains the full set of 6 <codeph>Kernel.org</codeph> packages, optimized to work with HP Helion <tm tmtype="reg">Openstack</tm> including kernel parameter tuning, removal of modules not required by Helion, and added drivers.</p>
 </section>
 <section id="foreign-packages"> <title>Foreign Packages</title>
-<p>The HP Helion OpenStack(R) Host Linux repository contains 8 non-Debian packages and 10 Debian packages.</p>
-<p>These packages provide required HP Helion OpenStack(R) support not provided in OpenStack(R)</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Host Linux repository contains 8 non-Debian packages and 10 Debian packages.</p>
+<p>These packages provide required HP Helion <tm tmtype="reg">Openstack</tm> support not provided in <tm tmtype="reg">Openstack</tm></p>
 </section>
 <section id="servicearch"> <title>Service Architecture</title>
 <p>The following diagram represents the Host Linux service architecture.</p>

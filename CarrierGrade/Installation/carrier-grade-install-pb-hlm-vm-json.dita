@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Sample JSON File for the HLM Virtual Machine Installation</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Sample JSON File for the HLM Virtual Machine Installation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic19267">
-<title>HP Helion OpenStack(R) 1.1: Back Up and Restore</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Back Up and Restore</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.01"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.01"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Systems Administrator"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.01"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.01"/>
 </metadata>
 </prolog>
 <body>
@@ -21,7 +21,7 @@
 <p>
 
 </p>
-<p>The default HP Helion OpenStack(R) environment consists of a three-node cluster for most of the services plus other services such as RabbitMQ and MySQL. It is resilient to individual node failures as well as network split-brain situations.</p>
+<p>The default HP Helion <tm tmtype="reg">Openstack</tm> environment consists of a three-node cluster for most of the services plus other services such as RabbitMQ and MySQL. It is resilient to individual node failures as well as network split-brain situations.</p>
 <p>However, as part of your maintenance of the environment, you should create a back up of each component and be prepared to restore any component, should it become necessary.</p>
 <ul>
 <li>

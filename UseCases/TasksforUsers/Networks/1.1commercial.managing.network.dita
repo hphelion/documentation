@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1741">
-<title>HP Helion OpenStack(R) 1.1: Managing Networks</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Managing Networks</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,7 +13,7 @@
  <!--./UseCases/TasksforUsers/Networks/1.1commercial.managing.network.md-->
  <!--permalink: /helion/commercial/1.1/dashboard/managing/networks/--></p>
 <p>A network is a pluggable, scalable and API-driven system for managing networks and IP addresses.</p>
-<p>You can use the dashboards to create, delete, and configure your HP Helion OpenStack(R) network and subnet(s). You can also manage the ports in your network.</p>
+<p>You can use the dashboards to create, delete, and configure your HP Helion <tm tmtype="reg">Openstack</tm> network and subnet(s). You can also manage the ports in your network.</p>
 <p>How you interact with your network environment depends upon your user type, either an administrative user (admin) or a non-administrative user (user).</p>
 <p>
 <b>Note:</b> The admin can perform all of the user tasks in addition to the admin tasks.</p>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1138">
-<title>HP Helion OpenStack(R) 1.1: Compute Service</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Compute Service</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version2" content="HP Helion <tm tmtype="reg">Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -28,7 +28,7 @@
 <p>
 
 </p>
-<p>The HP Helion OpenStack(R) Compute service provides a way to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Compute service provides a way to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.</p>
 <p>Compute allows you to work with <b>flavors</b>, which are unique combinations of disk space, memory capacity, and CPU; <b>images</b>, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and <b>servers</b>, which are virtual instances created by combining a flavor and an image.</p>
 <p>A variety of flavors and images are provided by the HP Helion Compute service to create a wide mix of servers.</p>
 <p>Currently Compute Service has the following option:</p>
