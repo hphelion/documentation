@@ -404,7 +404,7 @@
 <p>Extract the HP Helion <tm tmtype="reg">Openstack</tm> installation package to the <codeph>root</codeph> directory:</p>
 
 <codeblock>
-<codeph>tar zxvf /root/HP_Helion_<tm tmtype="reg">Openstack</tm>
+<codeph>tar zxvf /root/HP_Helion_Openstack
 </codeph>
 </codeblock>
 
