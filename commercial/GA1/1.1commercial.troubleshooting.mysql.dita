@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2400">
 <title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Troubleshooting MySQL</title>
 <titlealts>
-<searchtitle>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Troubleshooting MqSQL</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: Troubleshooting MqSQL</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
