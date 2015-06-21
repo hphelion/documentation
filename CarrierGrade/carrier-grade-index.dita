@@ -33,7 +33,7 @@
 <xref href="../CarrierGrade/Overview/carrier-grade-overview.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Overview</xref>
 </li>
 <li>
-<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_<tm tmtype="reg">Openstack</tm>" scope="external" format="html" >HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Release Notes</xref>
+<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_Openstack" scope="external" format="html" >HP Helion Openstack Carrier Grade Release Notes</xref>
 </li>
 </ul>
 </section>
@@ -42,7 +42,7 @@
 <ul>
 <li>
 <p>
-<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_<tm tmtype="reg">Openstack</tm>" scope="external" format="html" >Administration Guide</xref>
+<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_Openstack" scope="external" format="html" >Administration Guide</xref>
 </p>
 
 <p>The Administration Guide is addressed to HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade administrators responsible for the following areas:</p>
