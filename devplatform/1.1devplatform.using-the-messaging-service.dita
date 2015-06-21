@@ -103,7 +103,7 @@
 <li>Identify the RabbitMQ cluster that you will manage from the clusters listed in the <b>Clusters</b> table.</li>
 <li>Click on <b>Manage Cluster</b> next to your cluster.<!--A BR tag was used here in the original source.--><image href="../media/usingRMQ3.png" placement="break"/>
 </li>
-<li>A new browser window will open with the log-in screen for the RabbitMQ cluster. Enter the same username and password you used to log in to HP Helion OpenStack(R) when creating the RabbitMQ cluster and select <b>Login</b>.<!--A BR tag was used here in the original source.--><image href="../media/usingRMQ4.png" placement="break"/>
+<li>A new browser window will open with the log-in screen for the RabbitMQ cluster. Enter the same username and password you used to log in to HP <tm tmtype="reg">Helion Openstack</tm> when creating the RabbitMQ cluster and select <b>Login</b>.<!--A BR tag was used here in the original source.--><image href="../media/usingRMQ4.png" placement="break"/>
 </li>
 <li>The management console for RabbitMQ will open. In the management console you can perform tasks such as monitor the queues and message rates, check resource usage on the instances, manage user accounts, and many others.  <!--A BR tag was used here in the original source.--><image href="../media/usingRMQ5.png" placement="break"/>
 </li>
@@ -115,7 +115,7 @@
 <p>For more information on using RabbitMQ and managing the RabbitMQ cluster, visit the <xref href="https://www.rabbitmq.com/documentation.html" scope="external" format="html" >RabbitMQ documentation site</xref>.</p>
 </li>
 <li>
-<p>For more information using HP Helion OpenStack(R) visit the <xref href="http://docs.hpcloud.com/helion/openstack/1.1/" scope="external" format="html" >documentation page</xref>.</p>
+<p>For more information using HP <tm tmtype="reg">Helion Openstack</tm> visit the <xref href="http://docs.hpcloud.com/helion/openstack/1.1/" scope="external" format="html" >documentation page</xref>.</p>
 </li>
 </ul>
 <p>

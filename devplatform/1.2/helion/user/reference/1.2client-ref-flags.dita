@@ -21,7 +21,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/reference/1.2client-ref-flags.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/reference/client-ref/flags/--></p>
-<p>These commands are new in Helion OpenStack(R) Development Platform 1.1</p>
+<p>These commands are new in <tm tmtype="reg">Helion Openstack</tm> Development Platform 1.1</p>
 <ul>
 <li>
 <xref type="section" href="#topic2298/command-disable-feature-flag">helion disable-feature-flag</xref>: Deactivate the specified feature. </li>

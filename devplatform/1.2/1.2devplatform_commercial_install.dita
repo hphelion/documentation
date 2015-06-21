@@ -54,11 +54,11 @@
 </li>
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack(R)</p>
+<p>The HP Helion Development Platform is installed in the overcloud of HP <tm tmtype="reg">Helion Openstack</tm></p>
 <p>
-<b>Note:</b> Helion OpenStack(R) version 1.1.1 is required for Helion Development Platform 1.2. Installing Helion Development Platform 1.2 on Helion OpenStack(R) versions 1.1 or 1.0 is not supported. If you currently have Helion OpenStack(R) version 1.1 with Helion Development Platform 1.1 installed, you will need to do the following to install Helion Development Platform 1.2:</p>
+<b>Note:</b> <tm tmtype="reg">Helion Openstack</tm> version 1.1.1 is required for Helion Development Platform 1.2. Installing Helion Development Platform 1.2 on <tm tmtype="reg">Helion Openstack</tm> versions 1.1 or 1.0 is not supported. If you currently have <tm tmtype="reg">Helion Openstack</tm> version 1.1 with Helion Development Platform 1.1 installed, you will need to do the following to install Helion Development Platform 1.2:</p>
 <ul>
-<li>Perform a fresh <xref href="/helion/openstack" >install</xref> of Helion OpenStack(R) version 1.1.1</li>
+<li>Perform a fresh <xref href="/helion/openstack" >install</xref> of <tm tmtype="reg">Helion Openstack</tm> version 1.1.1</li>
 <li>Install Helion Development Platform 1.2 </li>
 </ul>
 <p>Before you begin installation:</p>
@@ -67,13 +67,13 @@
 <p>The Cinder block storage service must be configured with either <xref href="../../commercial/GA1/1.1commercial.-vsa-overview.dita" >VSA</xref> or <xref href="../../commercial/GA1/1.1commercial.install-3par.dita" >3Par</xref>.</p>
 </li>
 <li>
-<p>If you installed HP Helion OpenStack(R) with <b>KVM</b> hypervisor support, configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.</p>
+<p>If you installed HP <tm tmtype="reg">Helion Openstack</tm> with <b>KVM</b> hypervisor support, configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.</p>
 </li>
 <li>
 <p>The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements.</p>
 </li>
 <li>
-<p>The HP Helion Development Platform installer (<codeph>DevelopmentPlatform_Enable.sh</codeph>) must be run on either the base or seed node of the Helion OpenStack(R) environment. It is strongly recommended to run the installer  on the seed node. The seed node will already have the requisite key (/root/.ssh/id_rsa) for access to the overcloud; if the installation is run on the base node, this key will need to be provided to the installer (see below).</p>
+<p>The HP Helion Development Platform installer (<codeph>DevelopmentPlatform_Enable.sh</codeph>) must be run on either the base or seed node of the <tm tmtype="reg">Helion Openstack</tm> environment. It is strongly recommended to run the installer  on the seed node. The seed node will already have the requisite key (/root/.ssh/id_rsa) for access to the overcloud; if the installation is run on the base node, this key will need to be provided to the installer (see below).</p>
 </li>
 <li>
 <p>The installer requires the following packages. If they are not found, it will prompt you to install them.</p>
@@ -98,7 +98,7 @@
 <section id="installing-the-hp-helion-development-platform"> <title>Downloading, Installing, and Updating HP Helion Development Platform</title>
 </section>
 <section id="downloading-the-latest-version-of-hp-helion-development-platform"> <title>Downloading the Latest Version of HP Helion Development Platform</title>
-<p>The installation of the HP Helion Development Platform for HP Helion OpenStack(R) is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.</p>
+<p>The installation of the HP Helion Development Platform for HP <tm tmtype="reg">Helion Openstack</tm> is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.</p>
 <p>
 <b>Note</b>: Should you need more assistance during installation, the install script also has a help feature.</p>
 <codeblock>
@@ -188,7 +188,7 @@ curl --insecure https://10.0.0.10:5000 # Ignore SSL
 </codeblock>
 </li>
 <li>
-<p>If you are installing from the Helion OpenStack(R) base node rather than the seed node, you will need to retrieve the CA certificate file from the overcloud controller. To do this, follow these steps:</p>
+<p>If you are installing from the <tm tmtype="reg">Helion Openstack</tm> base node rather than the seed node, you will need to retrieve the CA certificate file from the overcloud controller. To do this, follow these steps:</p>
 
 <ol>
 <li>
@@ -227,22 +227,22 @@ curl --insecure https://10.0.0.10:5000 # Ignore SSL
 </codeblock>
 
 <p>
-<b>Note:</b> This installer will check to ensure that you are installing on a compatible version of Helion OpenStack(R) You will only be allowed to install Helion Development Platform if you meet a minimum Helion OpenStack(R) version requirement (1.1.1). If the version of Helion OpenStack(R) is not compatible, you will see the following error:</p>
+<b>Note:</b> This installer will check to ensure that you are installing on a compatible version of <tm tmtype="reg">Helion Openstack</tm> You will only be allowed to install Helion Development Platform if you meet a minimum <tm tmtype="reg">Helion Openstack</tm> version requirement (1.1.1). If the version of <tm tmtype="reg">Helion Openstack</tm> is not compatible, you will see the following error:</p>
 
 <codeblock>
-<codeph>You are attempting to install Helion Development Platform version 1.2 on Helion OpenStack(R) Build 81.
+<codeph>You are attempting to install Helion Development Platform version 1.2 on <tm tmtype="reg">Helion Openstack</tm> Build 81.
 Can not continue.
-Minimum required Helion OpenStack(R) build number for this install is 85.  
+Minimum required <tm tmtype="reg">Helion Openstack</tm> build number for this install is 85.  
 </codeph>
 </codeblock>
 
-<p>If the version of Helion OpenStack(R) can't be determined, you will see the following error:</p>
+<p>If the version of <tm tmtype="reg">Helion Openstack</tm> can't be determined, you will see the following error:</p>
 
 <codeblock>
-<codeph>Can not identify Helion OpenStack(R) version.
+<codeph>Can not identify <tm tmtype="reg">Helion Openstack</tm> version.
 Version information not found from /root/tripleo/images/overcloud-compute*.qcow2
 Can not continue.
-Minimum required Helion OpenStack(R) build number for this install is 85.  
+Minimum required <tm tmtype="reg">Helion Openstack</tm> build number for this install is 85.  
 </codeph>
 </codeblock>
 </li>
@@ -361,7 +361,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 </ol>
 </section>
 <section id="quotas"> <title>Quotas</title>
-<p>The <b>Database Service</b> will be installed into the admin tenant of the Helion OpenStack(R) overcloud and the admin tenant must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+<p>The <b>Database Service</b> will be installed into the admin tenant of the <tm tmtype="reg">Helion Openstack</tm> overcloud and the admin tenant must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <p>If you are not configuring the Database Service to be highly available you must have the following quota available:</p>
 <table>
 <tgroup cols="2">
@@ -495,9 +495,9 @@ leave the server in an error state.</p>
 <li>
 <b>Key Pair</b> (Required) - Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.</li>
 <li>
-<b>External Network</b> (Required) - Network Name for the network that has external network access. For HP Helion OpenStack(R) Commercial Edition this network is named <b>ext-net</b> .</li>
+<b>External Network</b> (Required) - Network Name for the network that has external network access. For HP <tm tmtype="reg">Helion Openstack</tm> Commercial Edition this network is named <b>ext-net</b> .</li>
 <li>
-<b>Provider Network</b> (Required) - Network Name for the network that has network access to cloud infrastructure services. For HP Helion OpenStack(R) Commercial Edition this network is named <b>SVC</b>.</li>
+<b>Provider Network</b> (Required) - Network Name for the network that has network access to cloud infrastructure services. For HP <tm tmtype="reg">Helion Openstack</tm> Commercial Edition this network is named <b>SVC</b>.</li>
 <li>
 <b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have outbound access to the internet.</li>
 <li>
@@ -529,7 +529,7 @@ leave the server in an error state.</p>
 <p>The following steps will configure HAProxy to receive and forward HTTP requests to the VM that hosts the REST API endpoint for the Database Service.<!--A BR tag was used here in the original source.--><b>Note</b>: To perform these steps you must be connected to the overcloud.</p>
 <ol>
 <li>
-<p>Identify the API server IPs on the SVC network. You should have as many API servers (and IPs) as you have Availability Zones in your Helion OpenStack(R) installation.</p>
+<p>Identify the API server IPs on the SVC network. You should have as many API servers (and IPs) as you have Availability Zones in your <tm tmtype="reg">Helion Openstack</tm> installation.</p>
 
 <codeblock>
 <codeph>nova list | awk '/trove[0-9]*_api/{ print $4,"\t", substr($12,5) }' 
@@ -537,7 +537,7 @@ leave the server in an error state.</p>
 </codeblock>
 </li>
 <li>
-<p>Identify the Virtual IP used by the controller nodes to be able to load balance the Helion OpenStack(R) services:</p>
+<p>Identify the Virtual IP used by the controller nodes to be able to load balance the <tm tmtype="reg">Helion Openstack</tm> services:</p>
 
 <codeblock>
 <codeph>keystone endpoint-list | awk '/8779/{ print $6 }' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
@@ -545,7 +545,7 @@ leave the server in an error state.</p>
 </codeblock>
 </li>
 <li>
-<p>Update configuration on each of the Helion OpenStack(R) controller nodes by connecting to the controller and doing the following:</p>
+<p>Update configuration on each of the <tm tmtype="reg">Helion Openstack</tm> controller nodes by connecting to the controller and doing the following:</p>
 
 <p>a. Edit the <i>/etc/haproxy/manual/paas.cfg</i> file and add the following lines. The last line should be repeated once for each API server identified in step 1.</p>
 
@@ -587,7 +587,7 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 <p>This section provides details on installing the Marketplace service from the Development Platform.</p>
 </section>
 <section id="marketplace-quota"> <title>Prerequisites</title>
-<p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack(R) overcloud and the admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+<p>The <b>Marketplace Service</b> will be installed into the admin tenant of the <tm tmtype="reg">Helion Openstack</tm> overcloud and the admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>
@@ -631,7 +631,7 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 <p>This section provides details on installing the Marketplace service from the Development Platform.</p>
 </section>
 <section id="marketplace-prerequisites"> <title>Prerequisites</title>
-<p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack(R) overcloud. The admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+<p>The <b>Marketplace Service</b> will be installed into the admin tenant of the <tm tmtype="reg">Helion Openstack</tm> overcloud. The admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>
@@ -717,9 +717,9 @@ leave the server in an error state.</p>
 <li>
 <b>Key Pair</b> (Required) -  Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.</li>
 <li>
-<b>External Network</b> (Required) - Network Name for the network that has external network access. For HP Helion OpenStack(R) Commercial Edition this network is named 'ext-net'</li>
+<b>External Network</b> (Required) - Network Name for the network that has external network access. For HP <tm tmtype="reg">Helion Openstack</tm> Commercial Edition this network is named 'ext-net'</li>
 <li>
-<b>Provider Network</b> (Required) - Network Name for the network that has network access to cloud infrastructure services. For HP Helion OpenStack(R) Commercial Edition this network is named 'SVC'</li>
+<b>Provider Network</b> (Required) - Network Name for the network that has network access to cloud infrastructure services. For HP <tm tmtype="reg">Helion Openstack</tm> Commercial Edition this network is named 'SVC'</li>
 <li>
 <b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have outbound access to the internet.</li>
 <li>
@@ -752,10 +752,10 @@ leave the server in an error state.</p>
 </codeph>
 </codeblock>
 
-<p>Note that you should have as many API servers (and IPs) as you have Availability Zones in your Helion OpenStack(R) install.</p>
+<p>Note that you should have as many API servers (and IPs) as you have Availability Zones in your <tm tmtype="reg">Helion Openstack</tm> install.</p>
 </li>
 <li>
-<p>Identify the Virtual IP used by the controller nodes to be able to load balance the Helion OpenStack(R) services:</p>
+<p>Identify the Virtual IP used by the controller nodes to be able to load balance the <tm tmtype="reg">Helion Openstack</tm> services:</p>
 
 <codeblock>
 <codeph>keystone endpoint-list | awk '/8082/{ print $6}' | egrep -o "[0-9].[0-9].[0-9].[0-9]"
@@ -763,7 +763,7 @@ leave the server in an error state.</p>
 </codeblock>
 </li>
 <li>
-<p>Update configuration on each of the Helion OpenStack(R) controller nodes. <!--A BR tag was used here in the original source.--> For EACH node:</p>
+<p>Update configuration on each of the <tm tmtype="reg">Helion Openstack</tm> controller nodes. <!--A BR tag was used here in the original source.--> For EACH node:</p>
 
 <ol>
 <li>Connect to the controller.</li>

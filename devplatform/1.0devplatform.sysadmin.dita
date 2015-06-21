@@ -30,7 +30,7 @@
 <section id="installation"> <title>Installation</title>
 <ul>
 <li>
-<xref href="../commercial/GA1/1.0commercial.install-GA-overview.dita" >HP Helion OpenStack(R) Installation</xref>
+<xref href="../commercial/GA1/1.0commercial.install-GA-overview.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Installation</xref>
 </li>
 <li>
 <xref href="../devplatform/1.0devplatform_commercial_install.dita" >Development Platform Installation and Configuration</xref>
