@@ -457,7 +457,7 @@ http://&lt;internalVIP&gt;:5000/v2.0</entry>
 </p>
 <p>The following table describes the data flow between Helion nodes and StoreVirtual systems:</p>
 <table>
-<tgroup cols="">
+<tgroup cols="5">
 <thead>
 <row>
 <entry>Interface</entry>
@@ -539,7 +539,7 @@ http://&lt;internalVIP&gt;:5000/v2.0</entry>
 <p>
 <b>Note:</b> In the following table, the Volume Operation host refers to the overcloud controller that hosts the Volume Operations (Cinder) service.</p>
 <table>
-<tgroup cols="">
+<tgroup cols="5">
 <thead>
 <row>
 <entry>Interface</entry>
@@ -678,7 +678,7 @@ See Reference 6 below </entry>
 </p>
 <p>The following table describes the data flow between HP Helion <tm tmtype="reg">Openstack</tm> nodes and ESX nodes:</p>
 <table>
-<tgroup cols="">
+<tgroup cols="4">
 <thead>
 <row>
 <entry>Description</entry>
@@ -725,7 +725,7 @@ See Reference 6 below </entry>
 <b>Note:</b> The Service Network is intended for granting privileged access to the baremetal network, to privileged in-cloud services and workloads. As such, this network must remain configured with its default configuration of <b>shared=False, external=False</b>.</p>
 <p>Do not set either of these values to True; that will result in giving all cloud tenants privileged access to the baremetal network.</p>
 <table>
-<tgroup cols="">
+<tgroup cols="4">
 <thead>
 <row>
 <entry>Description</entry>
