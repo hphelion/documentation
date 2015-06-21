@@ -630,7 +630,7 @@ leave the server in an error state.</p>
 <b>Subnet range</b> (Required) - The subnet to use for Marketplace. <!--A BR tag was used here in the original source.--></li>
 </ul>
 <p>
-<image href="../ERROR2/dev_install_marketplace.png"/>
+<image href="media/dev_install_marketplace.png"/>
 </p>
 </li>
 <li>
@@ -708,19 +708,19 @@ server marketplace&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 <p>b) Select the "Vertica Trial Package for Marketplace".</p>
 
 <p>
-<image href="../ERROR2/dev_install_vertica_1.png"/>
+  <image href="media/dev_install_vertica_1.png"/>
 </p>
 
 <p>c) Select <b>Download Service</b>, and confirm the download.</p>
 
 <p>
-<image href="../ERROR2/dev_install_vertica_confirm.png"/>
+  <image href="media/dev_install_vertica_confirm.png"/>
 </p>
 
 <p>d) Wait for the service to finish downloading.</p>
 
 <p>
-<image href="../ERROR2/dev_install_vertica_2.png"/>
+  <image href="media/dev_install_vertica_2.png"/>
 </p>
 
 <p>
