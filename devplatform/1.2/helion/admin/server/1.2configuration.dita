@@ -403,7 +403,7 @@ to the DNS zone file as well. For example:</p>
 the Application Lifecycle Service VM (and be careful not to change the MAC address
 accidentally through the hypervisor). If Application Lifecycle Service is hosted on a cloud
 provider, assign a fixed IP address using the platform's tools (e.g.
-Floating IP on OpenStack(R)</p>
+Floating IP on <tm tmtype="reg">Openstack</tm></p>
 <p>With DNS records in place, the multicast DNS broadcast is no longer
 necessary. To turn it off on the Application Lifecycle Service server, use the command:</p>
 <codeblock>

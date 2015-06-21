@@ -81,7 +81,7 @@
                   a cluster. This RC file has been pre-configured for this sandbox project.<ol>
                     <li>Click <b>Access &amp; Security</b> and then click the <b>API Access</b>
                       tab.</li>
-                    <li> Click <b>Download OpenStack(R) RC file</b>.<image
+                    <li> Click <b>Download <tm tmtype="reg">Openstack</tm> RC file</b>.<image
                         href="http://docs.hpcloud.com/media/quickstartDownloadRCFile_small.png"
                         placement="break"/></li>
                   </ol>

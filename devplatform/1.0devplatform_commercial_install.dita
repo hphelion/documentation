@@ -376,7 +376,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <p>You should have as many API servers (and IPs) as you have AZs in your <tm tmtype="reg">Helion Openstack</tm> install.</p>
 </li>
 <li>
-<p>Identify the Virtual IP used by the controller nodes to be able to load balance the Helion   OpenStack(R) services:</p>
+<p>Identify the Virtual IP used by the controller nodes to be able to load balance the Helion   <tm tmtype="reg">Openstack</tm> services:</p>
 
 <codeblock>
 <codeph>keystone endpoint-list | awk '/8779/{ print $6}' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"

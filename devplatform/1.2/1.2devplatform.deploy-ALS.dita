@@ -80,7 +80,7 @@
 </p>
 </li>
 <li>
-<p>Select the <b>Database</b> tab of the <b>Create</b> <b>Cluster</b> dialog, and choose the databases to enable in the cluster. Detailed notes on how to create or connect to an OpenStack(R) MySQL database can be found <xref href="../../devplatform/1.2/1.2devplatform.database-ALS.dita" >here</xref>. <!--A BR tag was used here in the original source.--><image href="../../media/ALSConfig5.png" placement="break"/>
+<p>Select the <b>Database</b> tab of the <b>Create</b> <b>Cluster</b> dialog, and choose the databases to enable in the cluster. Detailed notes on how to create or connect to an <tm tmtype="reg">Openstack</tm> MySQL database can be found <xref href="../../devplatform/1.2/1.2devplatform.database-ALS.dita" >here</xref>. <!--A BR tag was used here in the original source.--><image href="../../media/ALSConfig5.png" placement="break"/>
 </p>
 </li>
 <li>
