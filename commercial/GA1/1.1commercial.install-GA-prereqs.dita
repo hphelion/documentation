@@ -238,7 +238,7 @@ provider_network is your ESX management network
 <p>Extract the HP <tm tmtype="reg">Helion Openstack</tm> installation package to the <codeph>root</codeph> directory:</p>
 
 <codeblock>
-<codeph>tar zxvf /root/HP_Helion_<tm tmtype="reg">OpenStack</tm>
+<codeph>tar zxvf /root/HP_Helion_OpenStack
 </codeph>
 </codeblock>
 

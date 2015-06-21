@@ -165,7 +165,7 @@
 <li>Overcloud Horizon Dashboard access</li>
 <li>External url - <codeph>https://horizon.fqdn.com/</codeph>
 </li>
-<li>Internal url (VIP) - <codeph>https://&lt;Helion<tm tmtype="reg">OpenStack</tm></codeph>
+<li>Internal url (VIP) - <codeph>https://&lt;HelionOpenStack</codeph>
 Note: all access to overcloud services now happens over a TLS connection. Read more about this change in <xref href="../../commercial/GA1/1.1commcerical.install-TLS.dita" >HP <tm tmtype="reg">Helion Openstack</tm> TLS Support</xref> HP <tm tmtype="reg">Helion Openstack</tm> TLS Support</li>
 </ul>
 <table>

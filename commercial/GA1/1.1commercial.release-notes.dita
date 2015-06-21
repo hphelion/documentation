@@ -51,7 +51,7 @@
 <section id="110"> <title>Features in HP <tm tmtype="reg">Helion Openstack</tm> 1.1</title>
 <p>The following features have been added to HP <tm tmtype="reg">Helion Openstack</tm> 1.1:</p>
 <p>
-<b><tm tmtype="reg">OpenStack</tm> Juno support</b> All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#<tm tmtype="reg">OpenStack</tm>" >HP <tm tmtype="reg">Helion Openstack</tm> services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Juno</xref>.</p>
+<b><tm tmtype="reg">OpenStack</tm> Juno support</b> All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#OpenStack" >HP Helion Openstack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Juno</xref>.</p>
 <p>
 <b>HP <tm tmtype="reg">Helion Openstack</tm> Metering services</b> The <xref href="../../commercial/GA1/1.1commerical.services-reporting-overview.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Telemetry and Reporting service</xref> leverages the <tm tmtype="reg">OpenStack</tm> Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls.</p>
 <p>
@@ -300,7 +300,7 @@ Performing backups and creating bootable volumes will then work.-->   <!--CORE-2
 </li>
 <li>
 <p>When you resize an instance of Nova (in the Horizon portal under <i>Project &gt; Instances</i> and select <i>Resize Instance</i> from the drop-down list), the system produces the following error:
-‘‘Error: Unable to resize instance [instance name]�(TM)�(TM).
+‘‘Error: Unable to resize instance [instance name]�(TM)�(TM).
 <!--(NOV-6664) (NOV-6664) --></p>
 </li>
 <li>
