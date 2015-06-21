@@ -15,7 +15,7 @@
 <p>
   <!--A BR tag was used here in the original source.-->
 </p>
-<p>The HP Helion OpenStack!registeredtrademarksymbol! Identity Service, known as Keystone, supports the option to specify identity driver configurations on a domain-by-domain basis, allowing, for example, a specific domain to have its own LDAP server. By default, the option to configure domain-specific drivers is enabled via the Helion installer as the following:</p>
+<p>The HP Helion OpenStack Identity Service, known as Keystone, supports the option to specify identity driver configurations on a domain-by-domain basis, allowing, for example, a specific domain to have its own LDAP server. By default, the option to configure domain-specific drivers is enabled via the Helion installer as the following:</p>
 <codeblock>
   <codeph>[identity]
 domain_specific_drivers_enabled = True
