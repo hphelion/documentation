@@ -41,7 +41,7 @@ If you are installing the HP Helion Development Platform <b>Commercial</b> editi
 </li>
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack(R)</p>
+<p>The HP Helion Development Platform is installed in the overcloud of HP <tm tmtype="reg">Helion Openstack</tm></p>
 <p>The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements used in this document.</p>
 <p>The installer requires the following packages. If they are not found, it will prompt you to install them.</p>
 <ul>
@@ -69,7 +69,7 @@ If you are installing the HP Helion Development Platform <b>Commercial</b> editi
 </ul>
 </section>
 <section id="download"> <title>Downloading and unpacking the installation file</title>
-<p>The installation of the HP Helion Development Platform for the HP Helion OpenStack(R) Community Edition is provided as a small compressed TAR file.  The images for the actual services will be downloaded by the installer.</p>
+<p>The installation of the HP Helion Development Platform for the HP <tm tmtype="reg">Helion Openstack</tm> Community Edition is provided as a small compressed TAR file.  The images for the actual services will be downloaded by the installer.</p>
 <p>
 <b>Note</b>: Should you need more assistance during installation, the install script also has a help feature.</p>
 <codeblock>
@@ -277,7 +277,7 @@ If you are installing the HP Helion Development Platform <b>Commercial</b> editi
 </ol>
 </section>
 <section id="database-quota"> <title>Check Project Quotas</title>
-<p>The Database service will be installed into the <b>Admin</b>project of the Helion OpenStack(R) overcloud. The <b>Admin</b> project must have sufficient quotas available for the service to use. To check existing quota availability, log in to Horizon as the <b>Admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+<p>The Database service will be installed into the <b>Admin</b>project of the <tm tmtype="reg">Helion Openstack</tm> overcloud. The <b>Admin</b> project must have sufficient quotas available for the service to use. To check existing quota availability, log in to Horizon as the <b>Admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <p>For the Community edition, the Database service requires that the Admin project have the following quotas available:</p>
 <table>
 <tgroup cols="2">
@@ -349,7 +349,7 @@ If you are installing the HP Helion Development Platform <b>Commercial</b> editi
 <b>Key Pair (Required)</b> - Enter the name of the key pair to install on all instances created as part of the Database service. The public key can be used by an admin to get SSH access to all instances.</p>
 
 <p>
-<b>External Network (Required)</b> - Enter the name of the network of the network that has external network access. For HP Helion OpenStack(R) Community edition this network is named 'ext-net'</p>
+<b>External Network (Required)</b> - Enter the name of the network of the network that has external network access. For HP <tm tmtype="reg">Helion Openstack</tm> Community edition this network is named 'ext-net'</p>
 
 <p>
 <b>NTP Server IP</b> - Enter the IP Address to an NTP server to use if instances will not have outbound access to the internet.</p>
@@ -425,7 +425,7 @@ If you are installing the HP Helion Development Platform <b>Commercial</b> editi
 <p>Before installing, make sure the following prerequisites are met:</p>
 </section>
 <section id="marketplace-quota"> <title>Check Project Quotas</title>
-<p>The Marketplace service will be installed into the Admin project of the Helion OpenStack(R) overcloud. The Admin project must have sufficient quota available and unused for the resources the service uses.</p>
+<p>The Marketplace service will be installed into the Admin project of the <tm tmtype="reg">Helion Openstack</tm> overcloud. The Admin project must have sufficient quota available and unused for the resources the service uses.</p>
 <p>To check existing quota availability:</p>
 <ol>
 <li>
@@ -497,7 +497,7 @@ If you are installing the HP Helion Development Platform <b>Commercial</b> editi
 <b>Key Pair (Required)</b> - Enter the name of the key pair to install on all instances created as part of the marketplace service. The public key can be used by an admin to get SSH access to all instances.</p>
 
 <p>
-<b>External Network (Required)</b> - Enter the name of the network of the network that has external network access. For HP Helion OpenStack(R) Community Edition this network is named 'ext-net'.</p>
+<b>External Network (Required)</b> - Enter the name of the network of the network that has external network access. For HP <tm tmtype="reg">Helion Openstack</tm> Community Edition this network is named 'ext-net'.</p>
 
 <p>
 <b>NTP Server IP</b> - Enter the IP Address to an NTP server to use if instances will not have outbound access to the internet.</p>

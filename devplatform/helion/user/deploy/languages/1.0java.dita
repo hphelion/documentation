@@ -23,9 +23,9 @@
 <p>
 
 </p>
-<p>Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry based Platform as a Service (PaaS), or writing applications that take advantage of HP Helion OpenStack(R) to manage infrastructure or software services, tools to enable successful development are available in Java.</p>
+<p>Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry based Platform as a Service (PaaS), or writing applications that take advantage of HP <tm tmtype="reg">Helion Openstack</tm> to manage infrastructure or software services, tools to enable successful development are available in Java.</p>
 <p>For more information on working with object storage, 
-see the <xref href="../../../../../commercial/GA1/1.0commerical.services-object-overview.dita" >HP Helion OpenStack(R) Object Storage Service Overview</xref>.</p>
+see the <xref href="../../../../../commercial/GA1/1.0commerical.services-object-overview.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Object Storage Service Overview</xref>.</p>
 <section id="using-jdbc"> <title>Using JDBC</title>
 <p>It is possible to access the database services using the standard JDBC
 API:</p>

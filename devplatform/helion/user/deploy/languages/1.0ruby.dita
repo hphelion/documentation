@@ -22,7 +22,7 @@
  <!--permalink: /als/v1/user/deploy/languages/ruby/--></p>
 <p>Whether you're deploying an application to the HP Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
-advantage of HP Helion OpenStack(R) to manage infrastructure or software services, tools
+advantage of HP <tm tmtype="reg">Helion Openstack</tm> to manage infrastructure or software services, tools
 to enable successful development are available in Ruby.</p>
 <!-- id="application-lifecycle-services" -->
 <section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>

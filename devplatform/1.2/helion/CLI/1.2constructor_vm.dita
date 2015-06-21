@@ -24,7 +24,7 @@
             <!--PUBLISHED-->
             <!--./devplatform/helion/CLI/1.2constructor_vm.md-->
             <!--permalink: /helion/devplatform/1.2/als/client/constructor/--></p>
-        <p>The Constructor VM is normally a short-lived virtual machine that handles the provisioning of the Application Lifecycle Service (ALS) in an HP Helion OpenStack(R) public or private cloud. It can also function in a destructor mode to simplify the tear-down of the ALS platform-as-a-system.</p>
+        <p>The Constructor VM is normally a short-lived virtual machine that handles the provisioning of the Application Lifecycle Service (ALS) in an HP <tm tmtype="reg">Helion Openstack</tm> public or private cloud. It can also function in a destructor mode to simplify the tear-down of the ALS platform-as-a-system.</p>
         <p>Nearly all management tasks for the Constructor VM (CVM) are easily performed from the Horizon web-based management console. Horizon performs a <xref href="http://docs.openstack.org/cli-reference/content/novaclient_commands.html" scope="external" format="html" >Nova</xref> call with <xref href="http://cloudinit.readthedocs.org/en/latest/" scope="external" format="html" >cloud-init</xref> <xref href="http://docs.openstack.org/user-guide/content/inserting_userdata.html" scope="external" format="html" >configuration data</xref> to trigger the Helion ALS construction.  The OpenStack(R) metadata service is used to communicate ALS construction status back to the Horizon UI.</p>
         <p>There are a few features and <xref type="section" href="#topic11989/troubleshooting">troubleshooting</xref> options, however, that cannot be managed from within the Horizon UI. Currently, it does not support:</p>
         <ul>

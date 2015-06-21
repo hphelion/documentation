@@ -27,7 +27,7 @@
 <p>
 
 </p>
-<p>Welcome! The HP Helion Development Platform is a Platform-as-a-Service (PaaS) that helps developers build great cloud-native applications across private and public clouds.  Based on <xref href="http://cloudfoundry.org/index.html" scope="external" format="html" >Cloud Foundry</xref>â„¢ and fully integrated with <xref href="../commercial/GA1/1.0commercial.index.dita" >HP Helion OpenStack(R)</xref>Â(R), the HP Helion Development Platform is open and interoperable, ensuring that developers can focus on building the right app for any environment.</p>
+<p>Welcome! The HP Helion Development Platform is a Platform-as-a-Service (PaaS) that helps developers build great cloud-native applications across private and public clouds.  Based on <xref href="http://cloudfoundry.org/index.html" scope="external" format="html" >Cloud Foundry</xref>â„¢ and fully integrated with <xref href="../commercial/GA1/1.0commercial.index.dita" >HP <tm tmtype="reg">Helion Openstack</tm></xref>Â(R), the HP Helion Development Platform is open and interoperable, ensuring that developers can focus on building the right app for any environment.</p>
 <p>This documentation will help you get up to speed on the  Helion Development Platform as a Developer or Administrator.</p>
 <section id="platform-overview"> <title>Platform Overview</title>
 <p>The <xref href="../devplatform/helion/1.0index.dita" >Application Lifecycle Service (ALS)</xref> is a Cloud Foundry-based, managed runtime environment for applications.</p>
@@ -139,7 +139,7 @@
 <li>
 <b>Quick Start Developer Trial</b>: The fastest way to set up a functional Helion Development Platform environment is the <xref href="../devplatform/1.0devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> (sandbox) on the public cloud.</li>
 <li>
-<b>Standard Installation</b>: Install a <xref href="../commercial/GA1/1.0commercial.install-GA-overview.dita" >Commercial HP Helion OpenStack(R)</xref>Â(R) cloud and then <xref href="../devplatform/1.0devplatform_commercial_install.dita" >install</xref> the Helion Development Platform.  </li>
+<b>Standard Installation</b>: Install a <xref href="../commercial/GA1/1.0commercial.install-GA-overview.dita" >Commercial HP <tm tmtype="reg">Helion Openstack</tm></xref>Â(R) cloud and then <xref href="../devplatform/1.0devplatform_commercial_install.dita" >install</xref> the Helion Development Platform.  </li>
 </ul>
 <!-- ===================== horizontal rule ===================== -->
 </section>

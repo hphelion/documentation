@@ -336,7 +336,7 @@ Custom buildpacks must be <xref href="../../../../../devplatform/1.2/helion/user
 <p>Performing a cache clear using whichever key combination is appropriate for the browser (ex: CTRL+SHIFT+F5) will resolve such errors. When scheduling an upgrade, notify the system users that they should not merely refresh (F5) but perform a cache clear after the upgrade is completed.</p>
 </section>
 <section id="restaging-apps"> <title>Restaging Apps Behind a Proxy</title>
-<p>When migrating applications from Helion OpenStack(R) 1.0 to 1.1, applications with broken 
+<p>When migrating applications from <tm tmtype="reg">Helion Openstack</tm> 1.0 to 1.1, applications with broken 
 support for <codeph>https_proxy</codeph> may fail during staging (or pre-running 
 hooks) because <codeph>https_proxy</codeph> is now always defined during these 
 stages, even when there is no upstream proxy behind the <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#staging-cache-app-http-proxy" >builtin 
