@@ -82,7 +82,7 @@
         "http_proxy": "",
         "https_proxy": ""
     },
-    "<tm tmtype="reg">Openstack</tm>": {
+    "Openstack": {
         "auth_url": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0",
         "az": "az1",
         "block_mount": "/block_storage",
@@ -144,7 +144,7 @@
 </ol>
 <p>This is an example of the ConfigParser file format options that are generated for the Quick Start Trial:</p>
 <codeblock>
-[<tm tmtype="reg">Openstack</tm>
+[Openstack
 auth_url = https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0
 username = 
 password = 
@@ -179,7 +179,7 @@ services_on_core = True
 <p>This example adds more DEA nodes to an existing cluster.</p>
 <p>NOTE: The <i>dea_count</i> value is the number of DEAs to be <b>added</b> in this growth mode; do not count any DEAs that already exist.</p>
 <codeblock>
-[<tm tmtype="reg">Openstack</tm>
+[Openstack
 auth_url = https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0
 username = 
 password = 
@@ -203,7 +203,7 @@ grow_cluster = True
 <p>This example adds more services to the cluster.</p>
 <p>NOTE: The comma-separated values in the list of services contain only the services to be <b>added</b> in this growth mode. Do not list services that already exist.</p>
 <codeblock>
-[<tm tmtype="reg">Openstack</tm>
+[Openstack
 auth_url = https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0
 username = 
 password = 

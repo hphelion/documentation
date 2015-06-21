@@ -110,7 +110,7 @@ Agent username - username name which can be used to establish SSH connection wit
 
 Private key file - private key which is created in HP management console and which is matched public key from point 3 above.
 
-Instance type - <tm tmtype="reg">OpenStack</tm> flavor (at least small)
+Instance type - OpenStack flavor (at least small)
 
 Security groups - the name of security group which is created in HP management console. Port 22 should be opened for agent.
 
