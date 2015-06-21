@@ -357,55 +357,49 @@
     <!-- 1.0 -->
   </topicref>
   <topicref href="commercial/GA1/1.0commercial.index.dita">
-    <topicref href="commercial/GA1/1.03rd-party-license-agreements.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-object-pyringos.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.backup-restore-GA.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.dashboard.how-works.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.dashboard.launch.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.eula.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.faq.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-installation.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.glossary.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.high-availability.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-3par.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-CSV.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-add-nodes.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-DNSaaS.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-JSON.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-esx.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-ESX-Proxy.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-kvm.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-LDAP.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-NTP.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-ovsvapp.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-prereqs.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-security.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-verify.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-vsa.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.-vsa-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.networking-maskedIP.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.name-resolution.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.related-topics.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.release-notes.dita"/>
-    <topicref
-      href="commercial/GA1/1.0commerical.services-remove-replace-failed-overcloud-nodes.dita"/>
+
+    <topicref href="commercial/GA1/1.0commercial.release-notes.dita"/>    
+    
+    <!-- Servics -->
+    <topicref href="commercial/GA1/1.0commerical.services-overview.dita">
     <topicref href="commercial/GA1/1.0commerical.services-compute-overview.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-dns-overview.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-dvr-overview.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-eon-overview.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-eve-overview.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-focus-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-horizon-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.services-horizon-overview.dita">
+      <topicref href="commercial/GA1/1.0commercial.dashboard.how-works.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.dashboard.launch.dita"/>
+    </topicref>
     <topicref href="commercial/GA1/1.0commerical.services-identity-overview.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-imaging-overview.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-ironic-overview.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-networking-overview.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-object-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-scale-out-swift.dita"/>
-    <topicref
+    <topicref href="commercial/GA1/1.0commerical.services-scale-out-swift.dita">
+      <!-- Swift -->
+      <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
+      <topicref
+        href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-account-container.dita"/>
+      <topicref
+        href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-storage-node.dita"/>
+      <topicref
+        href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
+      <topicref
+        href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-starter-object-ring.dita"/>
+      <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-add-proxy-node.dita"/>
+      <topicref
+        href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
+      <topicref
+        href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-proxy-node.dita"/>
+      <topicref
+        href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>
+      <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-part-power.dita"/>
+      <topicref href="commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita"/>
+      <topicref
+        href="commercial/GA1/1.0commerical.services-swift-deployment-provision-swift-node.dita"/>
+      <topicref
       href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-disk.dita"/>
     <topicref
@@ -416,66 +410,115 @@
       href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-replica-swift-status.dita"/>
     <topicref
       href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-swift-cluster.dita"/>
+    </topicref>
     <topicref href="commercial/GA1/1.0commerical.services-orchestration-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-overview.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-reporting-overview.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-sherpa-accessing-ui.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-sherpa-overview.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-sirius-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
-    <topicref
-      href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-account-container.dita"/>
-    <topicref
-      href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-storage-node.dita"/>
-    <topicref
-      href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
-    <topicref
-      href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-starter-object-ring.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-add-proxy-node.dita"/>
-    <topicref
-      href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
-    <topicref
-      href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-proxy-node.dita"/>
-    <topicref
-      href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-part-power.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita"/>
-    <topicref
-      href="commercial/GA1/1.0commerical.services-swift-deployment-provision-swift-node.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-tripleo-overview.dita"/>
     <topicref href="commercial/GA1/1.0commercial.troubleshooting.dita"/>
     <topicref href="commercial/GA1/1.0commerical.services-volume-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.sirius-cli.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.sirius-cli-workflow.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.site-index.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.install-GA-supportmatrix.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.technical-overview.ga.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-admin-settings.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-admin-updates-and-extensions.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-eon-cli.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-horizon-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-resources-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-resources-storage.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config-esx.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config-storeserv.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config-storevirtual.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-resource-esx-manage-vm.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-resource-esx.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-storage-storeserv.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.undercloud-storage-storevirtual.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.update-101-devplat.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.update-101-devplat.stopstart.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.update-101-obtaining.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.update-101-monitor.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.update-101-overcloud.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.update-101-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.update-101-prereqs.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.update-101-seed.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.update-101-troubleshooting.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.update-101-undercloud.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.vlan-providernetwork.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.sirius-cli.dita">
+      <topicref href="commercial/GA1/1.0commercial.sirius-cli-workflow.dita"/>
+      </topicref>
+    </topicref>
+    
+    
+    
+    <!-- Install -->
+    <topicref href="commercial/GA1/1.0commercial.install-GA-overview.dita">
+      <topicref href="commercial/GA1/1.0commercial.install-GA-supportmatrix.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.technical-overview.ga.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-3par.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-CSV.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.name-resolution.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-add-nodes.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-DNSaaS.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-JSON.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-esx.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-ESX-Proxy.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-kvm.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.vlan-providernetwork.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-LDAP.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-NTP.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-ovsvapp.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-prereqs.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-security.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-verify.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.install-GA-vsa.dita"/>
+    </topicref>
+
+    <!-- Update -->
+    <topicref href="commercial/GA1/1.0commercial.update-101-overview.dita">
+      <topicref href="commercial/GA1/1.0commercial.update-101-devplat.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.update-101-devplat.stopstart.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.update-101-obtaining.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.update-101-monitor.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.update-101-overcloud.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.update-101-prereqs.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.update-101-seed.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.update-101-troubleshooting.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.update-101-undercloud.dita"/>
+    </topicref>
+    
+    <!-- Using Undercloud -->
+    <topichead navtitle="HP Helion Openstack(R) 1.1: Using the Undercloud Horizon Dashboard">
+      <topicref href="commercial/GA1/1.0commercial.undercloud-admin-settings.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.undercloud-admin-updates-and-extensions.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.undercloud-eon-cli.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.undercloud-horizon-overview.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.undercloud-resources-overview.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.undercloud-resources-storage.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config-esx.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config-storeserv.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.undercloud-oc-config-storevirtual.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.undercloud-resource-esx-manage-vm.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.undercloud-resource-esx.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.undercloud-storage-storeserv.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.undercloud-storage-storevirtual.dita"/>
+    </topichead>
+    
+    <topichead navtitle="HP Helion Openstack(R) 1.1: Backup and Restore">
+      <topicref href="commercial/GA1/1.0commercial.backup-restore-GA.dita"/>
+    </topichead>
+    
+    <topicref href="commercial/GA1/1.0commerical.services-object-pyringos.dita"/>
+    
+    <topicref href="commercial/GA1/1.0commercial.eula.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.faq.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-installation.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.glossary.dita"/>
+    <topicref href="commercial/GA1/1.0commerical.high-availability.dita"/>
+    
+    <topicref
+      href="commercial/GA1/1.0commerical.services-remove-replace-failed-overcloud-nodes.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.-vsa-overview.dita"/>
+    <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita"/>
+    
+    <topichead navtitle="HP Helion Openstack(R) 1.0: Post-Installation Tasks">
+    <topicref href="commercial/GA1/1.0commercial.networking-maskedIP.dita"/>
+    </topichead>
+    
+    
+
+
+    
+    
+    
+
+    <topicref href="commercial/GA1/1.0commercial.related-topics.dita"/>
+
+    <topichead navtitle="HP Helion Openstack(R) 1.0: License Files">
+      <topicref href="commercial/GA1/1.03rd-party-license-agreements.dita"/>
+    </topichead>
+    
   </topicref>
+
+<!-- Community -->
+
   <topicref href="community/community.index.dita">
     <topicref href="community/community.services-identity-overview.dita"/>
     <topicref href="community/community.services-identity-using.dita"/>
