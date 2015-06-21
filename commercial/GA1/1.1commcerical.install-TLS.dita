@@ -5,7 +5,7 @@
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
 <othermeta name="product-version" content="HP Helion 1.1"/>
 <othermeta name="role" content="Service Developer"/>
 <othermeta name="role" content="Systems Administrator"/>
@@ -16,7 +16,7 @@
 <othermeta name="role" content="ISV Developer"/>
 <othermeta name="role" content="Application Architect"/>
 <othermeta name="role" content="Thom L, Tom C, Nancy M"/>
-<othermeta name="product-version1" content="HP Helion <tm tmtype="reg">Openstack</tm>"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
 <othermeta name="product-version2" content="HP Helion 1.1"/>
 </metadata>
 </prolog>
