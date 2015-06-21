@@ -51,7 +51,7 @@
 <li>Keystone</li>
 </ul>
 </section>
-<section id="<tm tmtype="reg">OpenStack</tm>"> <title><tm tmtype="reg">OpenStack</tm> Services</title>
+<section id="OpenStack"> <title><tm tmtype="reg">OpenStack</tm> Services</title>
 <p>The following services are foundation technologies used by the HP <tm tmtype="reg">Helion Openstack</tm> Based on <tm tmtype="reg">OpenStack</tm> technology, HP <tm tmtype="reg">Helion Openstack</tm> comprises of a set of services and architecture that defines a data-center-level operating system (DCOS).</p>
 <p>
 <b>Compute Operations</b>. The Compute service manages the hypervisors and virtual machines in your environment. Also known as <b>Nova</b>.</p>
