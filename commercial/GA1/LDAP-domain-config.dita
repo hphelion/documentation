@@ -68,7 +68,7 @@ tls_req_cert = demand
 <related-links>
 <linklist>
 <title>Collected links</title>
-<link href="/helion/openstack/1.1/services/identity/integrate-ldap/" format="html">
+  <link href="1.1commerical.services-identity-integrate-ldap.html" format="html">
 <linktext>LDAP connection settings</linktext>
 </link>
 </linklist>
