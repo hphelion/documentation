@@ -65,7 +65,7 @@
 <p>The HP Helion OpenStack(R) must be installed and configured.</p>
 </li>
 <li>
-<p>The VMware vSphereÂ(R) platform must be installed and configured.</p>
+<p>The VMware vSphereï¿½(R) platform must be installed and configured.</p>
 </li>
 <li>
 <p>The vCenter server must be reachable from the server where OVSvApp VM installation is launched.</p>
@@ -198,7 +198,7 @@ mgmt_port_name=mgmt
 <li>
 <p>Use the vSphere client to upload the <codeph>overcloud_esx_ovsvapp.ova</codeph> file to one of the ESX hosts in your data center:</p>
 
-<p>a. In the vSphere Client, click <b>File &gt; Deploy OVF Template</b>.</p>
+<p>a. In the vSphere Client, click <b>File &#62; Deploy OVF Template</b>.</p>
 
 <p>b. Follow the instructions in the wizard that displays to specify the data center, cluster, and node to install onto. Refer to the VMWare vSphere documentation, as needed.</p>
 
@@ -274,7 +274,7 @@ d. Clear the **Enable VMCI between VMs** option.
 
 <p>a. Right-click the OVSvApp appliance.</p>
 
-<p>b. Click <b>Template &gt; Convert to Template</b>.</p>
+<p>b. Click <b>Template &#62; Convert to Template</b>.</p>
 
 <p>vCenter Server marks that virtual machine as a template and displays the task in the Recent Tasks pane.</p>
 </li>
@@ -395,7 +395,7 @@ template_name=
 <p>d. Specify a name, the number of CPUs, and the amount of RAM  for the deployed OVSvApp.</p>
 
 <p>
-<b>Note</b>: During deployment, the <codeph>ovs_vm_name</codeph> setting is appended with each VM host name and IP address to appear as <codeph>&lt;ovs_vm_name&gt;_&lt;IP&gt;</codeph>.</p>
+<b>Note</b>: During deployment, the <codeph>ovs_vm_name</codeph> setting is appended with each VM host name and IP address to appear as <codeph>&#60;ovs_vm_name&#62;_&#60;IP&#62;</codeph>.</p>
 
 <codeblock>
 <codeph>[vmconfig]
@@ -454,7 +454,7 @@ esx_maintenance_mode=
 update_file_path=
 #Do you want to enable backup ? If True then a backup will be taken. If false then nothing will be taken as backup.
 do_backup=
-#WARNING Keep blank if you have installed &gt;= v1.0.1 . Input only for v1.0 OVSvAPPs which are not distinguishable among other tenant VMs.(*OPTIONAL)
+#WARNING Keep blank if you have installed &#62;= v1.0.1 . Input only for v1.0 OVSvAPPs which are not distinguishable among other tenant VMs.(*OPTIONAL)
 ovsvapp_prefix=
 </codeph>
 </codeblock>
@@ -506,7 +506,7 @@ python invoke_vapp_installer.py
 <p>Login to the overcloud controller from the seed VM host:</p>
 
 <codeblock>
-<codeph>ssh heat-admin@&lt;ip overcloud controller&gt;
+<codeph>ssh heat-admin@&#60;ip overcloud controller&#62;
 </codeph>
 </codeblock>
 </li>
@@ -629,10 +629,10 @@ python cleanup.py
 </codeblock>
 </li>
 <li>
-<p>From the seed cloud host, copy <codeph>/root/helion-update-1.1-to-&lt;version&gt;/tripleo/hp-ovsvapp/</codeph> folder from seed VM using the following command:</p>
+<p>From the seed cloud host, copy <codeph>/root/helion-update-1.1-to-&#60;version&#62;/tripleo/hp-ovsvapp/</codeph> folder from seed VM using the following command:</p>
 
 <codeblock>
-<codeph>scp -r root@&lt;seed-ip&gt;:/root/helion-update-1.1-to &lt;version&gt;/tripleo/hp-ovsvapp/ ./ 
+<codeph>scp -r root@&#60;seed-ip&#62;:/root/helion-update-1.1-to &#60;version&#62;/tripleo/hp-ovsvapp/ ./ 
 </codeph>
 </codeblock>
 </li>
@@ -686,7 +686,7 @@ cd /hp-ovsvapp/src/update #python updater.py
 <b>Note:</b> If you see the following error while updating the OVSvApp, it means that the system from where update is launched does not have the passwordless authentication enabled for OVSvApp.</p>
 
 <codeblock>
-<codeph>Fatal error: Needed to prompt for a connection or sudo password (host: &lt;ovs-vapp-ip&gt;), but input would be ambiguous in parallel mode
+<codeph>Fatal error: Needed to prompt for a connection or sudo password (host: &#60;ovs-vapp-ip&#62;), but input would be ambiguous in parallel mode
 Aborting. 
 </codeph>
 </codeblock>
