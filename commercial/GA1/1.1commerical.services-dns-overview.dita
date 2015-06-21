@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3261">
-<title>HP Helion OpenStack(R) 1.1: DNS as a Service (DNSaaS) Overview</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: DNS as a Service (DNSaaS) Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version2" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -28,9 +28,9 @@
 <p>
 
 </p>
-<p>Based on the OpenStack(R) Designate project, the HP Helion OpenStack(R) DNS-as-a-service feature (DNSaaS) provides a Domain Name System (DNS) service for use by HP Helion OpenStack(R) users.</p>
+<p>Based on the <tm tmtype="reg">OpenStack</tm> Designate project, the HP <tm tmtype="reg">Helion Openstack</tm> DNS-as-a-service feature (DNSaaS) provides a Domain Name System (DNS) service for use by HP <tm tmtype="reg">Helion Openstack</tm> users.</p>
 <p>DNSaaS includes a set of RESTful APIs for the display, creation, modification and deletion of DNS records.</p>
-<p>DNSaaS for the OpenStack(R) platform includes:</p>
+<p>DNSaaS for the <tm tmtype="reg">OpenStack</tm> platform includes:</p>
 <ul>
 <li>REST APIs for domain/record management</li>
 <li>Multi-tenancy</li>
@@ -40,7 +40,7 @@
 </ul>
 <p>For example, if a user wants to access <i>mytestdomain.com</i> in a web browser, DNS provides the mechanism the browser uses to locate the server's IP address (for example, <codeph>1.2.3.4</codeph>).</p>
 <p>
-<b>Note:</b> Installing HP Helion OpenStack(R) DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion OpenStack(R) and verified that it is  correctly configured and operational.</p>
+<b>Note:</b> Installing HP <tm tmtype="reg">Helion Openstack</tm> DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP <tm tmtype="reg">Helion Openstack</tm> and verified that it is  correctly configured and operational.</p>
 <p>Learn how to <xref href="../../commercial/GA1/1.1commercial.install-GA-DNSaaS.dita" >install DNS as a service</xref>.</p>
 <section id="key-terms"> <title>Key Terms</title>
 <p>Key terms include:</p>
@@ -69,7 +69,7 @@
 </section>
 <section id="using-the-cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
 <p>You can use the <i>python-designateclient</i> command line tool to access DNSaaS. See <xref href="http://python-designateclient.readthedocs.org/en/latest/shell.html" scope="external" format="html" >Install the client from PyPI</xref>.</p>
-<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack(R) command-line clients</xref>.</p>
+<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">OpenStack</tm> command-line clients</xref>.</p>
 </section>
 <section id="how-tos-with-the-hp-helion-dnsaas"> <title>How To's with the HP Helion DNSaaS<!--Removed anchor point howto--><!-- id="howto" --></title>
 <p>The HP DNSaaS provides a way to display, create, modify, and delete DNS records.</p>
@@ -92,7 +92,7 @@
 </ul>
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For more information on the OpenStack(R) Designate project, see the <xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >OpenStack(R) Designate wiki</xref>.</p>
+<p>For more information on the <tm tmtype="reg">OpenStack</tm> Designate project, see the <xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Designate wiki</xref>.</p>
 <p>
   <xref href="#topic3261"> Return to Top </xref>
 </p>

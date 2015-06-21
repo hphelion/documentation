@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2280">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Ceph Monitoring</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and 1.1.1: Ceph Monitoring</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Ceph Monitoring</searchtitle>
+<searchtitle>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Ceph Monitoring</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version2" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -27,7 +27,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commenrcial.ceph-monitoring.md-->
  <!--permalink: /helion/openstack/1.1/ceph-monitoring/--></p>
-<p>The HP Helion OpenStack(R) built-in monitoring packages allow the administrative monitoring of  Ceph. The Icinga service, which runs on the Undercloud, helps the cloud admin to monitor  Ceph. Icinga is configured as follows:</p>
+<p>The HP <tm tmtype="reg">Helion Openstack</tm> built-in monitoring packages allow the administrative monitoring of  Ceph. The Icinga service, which runs on the Undercloud, helps the cloud admin to monitor  Ceph. Icinga is configured as follows:</p>
 <ol>
 <li>Icinga: The main alerting server that runs each check periodically on every host.</li>
 <li>Icinga-web: TThe UI tool used to view the monitoring results.</li>
@@ -41,8 +41,8 @@
 <li>Username:icingaadmin</li>
 <li>Password:icingaadmin</li>
 </ul>
-<p>The servers for Helion OpenStack(R) overcloud and the Undercloud are monitored. Also, Icinga monitors a list of the services and applications in the <b>Service Details</b>.</p>
-<p>For Ceph Monitoring, the following scripts are run on Helion OpenStack(R) overcloud controller nodes and reports back the check results to the Icinga service:</p>
+<p>The servers for <tm tmtype="reg">Helion Openstack</tm> overcloud and the Undercloud are monitored. Also, Icinga monitors a list of the services and applications in the <b>Service Details</b>.</p>
+<p>For Ceph Monitoring, the following scripts are run on <tm tmtype="reg">Helion Openstack</tm> overcloud controller nodes and reports back the check results to the Icinga service:</p>
 <ol>
 <li>
 <codeph>check_ceph_osd_status.sh</codeph>: Monitors the status of the available OSDs (if all are up and in the cluster)</li>

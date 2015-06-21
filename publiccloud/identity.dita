@@ -18,7 +18,7 @@
 <alt/>
 </image>
 </p>
-<p>Based on <xref href="http://keystone.openstack.org/" scope="external" format="html" >Keystone, the OpenStack(R) Identity Service</xref>, the HP Helion Public Cloud Identity Service provides one-stop authentication for all HP Helion Public Cloud offerings.  Key terms include:</p>
+<p>Based on <xref href="http://keystone.openstack.org/" scope="external" format="html" >Keystone, the <tm tmtype="reg">OpenStack</tm> Identity Service</xref>, the HP Helion Public Cloud Identity Service provides one-stop authentication for all HP Helion Public Cloud offerings.  Key terms include:</p>
 <dl>
 <dlentry>
 <dt>

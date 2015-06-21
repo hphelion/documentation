@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4649">
-<title>HP Helion OpenStack(R) 1.0: Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Binamra S,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -37,7 +37,7 @@ By default, HP Helion Openstack cloud deploys a two node (termed as start-up swi
 <section id="pre"> <title>Prerequisites</title>
 <p>Before you begin, ensure the following:</p>
 <ul>
-<li>The seed VM, undercloud and overcloud are installed using the HP Helion OpenStack(R) installer.</li>
+<li>The seed VM, undercloud and overcloud are installed using the HP <tm tmtype="reg">Helion Openstack</tm> installer.</li>
 </ul>
 </section>
 <section id="add"> <title>Add compute nodes</title>

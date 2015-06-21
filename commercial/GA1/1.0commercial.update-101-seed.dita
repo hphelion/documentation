@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4522">
-<title>HP Helion OpenStack(R) 1.0: Updating the Seed VM</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Updating the Seed VM</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,8 +12,8 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.0commercial.update-101-seed.md-->
  <!--permalink: /helion/openstack/update/seed/101/--></p>
-<p>The seed update instructions are different from the instructions for the undercloud and overcloud updates.  Not all updates will include seed updates, please check the <xref href="../../commercial/GA1/1.0commercial.release-notes.dita" >HP Helion OpenStack(R) Release Notes</xref> to determine if there is a seed update.</p>
-<p>For HP Helion OpenStack(R) 1.01, you do not need to update the seed. However, you should perform the following steps to back up the seed VM and  download and extract the HP Helion OpenStack(R) patch update.</p>
+<p>The seed update instructions are different from the instructions for the undercloud and overcloud updates.  Not all updates will include seed updates, please check the <xref href="../../commercial/GA1/1.0commercial.release-notes.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Release Notes</xref> to determine if there is a seed update.</p>
+<p>For HP <tm tmtype="reg">Helion Openstack</tm> 1.01, you do not need to update the seed. However, you should perform the following steps to back up the seed VM and  download and extract the HP <tm tmtype="reg">Helion Openstack</tm> patch update.</p>
 <!-- Not needed for 1.01
 Updating the seed node involves saving current environment and configuration settings and restoring them after the update.
 -->
@@ -44,7 +44,7 @@ Updating the seed node involves saving current environment and configuration set
 <p>Before you proceed with seed node update, you should extract the updated scripts that is delivered as part of the patch.</p>
 </section>
 <section id="extract"> <title>Extract the required scripts and libraries</title>
-<p>As mentioned in the <xref href="../../commercial/GA1/1.0commercial.update-101-overview.dita" >Update Overview</xref>, a HP Helion OpenStack(R) patch update is composed of multiple major components.</p>
+<p>As mentioned in the <xref href="../../commercial/GA1/1.0commercial.update-101-overview.dita" >Update Overview</xref>, a HP <tm tmtype="reg">Helion Openstack</tm> patch update is composed of multiple major components.</p>
 <p>The Overcloud node images can be one of the components. If you have <xref href="../../commercial/GA1/1.0commercial.update-101-obtaining.dita" >downloaded the patch update using Sherpa</xref>, at this stage the overcloud node images are located in the undercloud image repository.</p>
 <p>The other files come as TAR files and are delivered to the undercloud local filesystem, by default, the <codeph>/tmp/heat_templates</codeph> folder.  It is possible to change the location of the undercloud patch update tarballs, during or after deployment. See <xref type="section" href="#topic4522/default">Change the default</xref> below.</p>
 <p>To extract the files:</p>
@@ -126,10 +126,10 @@ tar xvf seed_update_1.0.0-1.01.tar
 </ul>
 </section>
 <section id="extractpatch"> <title>Download and extract the patch update</title>
-<p>For HP Helion OpenStack(R) 1.01, you do not need to update the seed.</p>
+<p>For HP <tm tmtype="reg">Helion Openstack</tm> 1.01, you do not need to update the seed.</p>
 <ol>
 <li>
-<xref href="../../commercial/GA1/1.0commercial.update-101-obtaining.dita" >Download and extract the HP Helion OpenStack(R) patch update</xref>, if you have not done so already.  </li>
+<xref href="../../commercial/GA1/1.0commercial.update-101-obtaining.dita" >Download and extract the HP <tm tmtype="reg">Helion Openstack</tm> patch update</xref>, if you have not done so already.  </li>
 </ol>
 <p>
 <!-- Not needed for 1.01

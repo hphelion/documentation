@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13581">
-<title>HP Helion OpenStack(R) 1.0: Deploying Additional Scale-out Swift Nodes</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Deploying Additional Scale-out Swift Nodes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Ranjan J, Keshava HP, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version2" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0"/>
+<othermeta name="product-version3" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0.1"/>
+<othermeta name="product-version4" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -57,7 +57,7 @@
 <xref type="section" href="#topic13581/update-storage-scaleout-swift">Update the Storage Policy</xref> </li>
 </ol>
 <section id="preq"> <title>Prerequisites</title>
-<p>A HP Helion OpenStack(R) cloud must be deployed. Functional Swift starter nodes are created as an integral part of cloud deployment.</p>
+<p>A HP <tm tmtype="reg">Helion Openstack</tm> cloud must be deployed. Functional Swift starter nodes are created as an integral part of cloud deployment.</p>
 </section>
 <section id="define-object-ring:1"> <title>Define the Ring Attributes of Object Ring-1</title>
 <p>
@@ -340,7 +340,7 @@ For more details, see the <xref href="../../commercial/GA1/1.0commerical.service
 <p>Repeat the above steps for all of the object nodes.</p>
 </section>
 <section id="creating-scale-out-object-ring"> <title>Create a New Scale-out Object Ring</title>
-<p>Once the disk is formatted you can create a scale-out object ring. This ring is created for the scale-out Swift which is an extension of the Starter Swift nodes which are installed by default during HP Helion OpenStack(R) cloud deployment.</p>
+<p>Once the disk is formatted you can create a scale-out object ring. This ring is created for the scale-out Swift which is an extension of the Starter Swift nodes which are installed by default during HP <tm tmtype="reg">Helion Openstack</tm> cloud deployment.</p>
 <ol>
 <li>
 <p>Create a directory named <codeph>ring-building</codeph>.</p>

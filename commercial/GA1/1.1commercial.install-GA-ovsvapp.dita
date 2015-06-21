@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic19352">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Deploying and Configuring OVSvApp on ESX hosts</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and 1.1.1: Deploying and Configuring OVSvApp on ESX hosts</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Deploying and Configuring OVSvApp on ESX hosts</searchtitle>
+<searchtitle>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Deploying and Configuring OVSvApp on ESX hosts</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -21,11 +21,11 @@
  <!--./commercial/GA1/1.1commercial.install-GA-ovsvapp.md-->
  <!--permalink: /helion/openstack/1.1/install/ovsvapp/--></p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+  <b>This document describes the installation process for HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
-<p>HP Virtual Cloud Networking (VCN) is an enhanced Networking Operations (Neutron) service module of HP Helion OpenStack(R) that delivers network virtualization to orchestrate your data center infrastructure.</p>
-<p>The HP Virtual Cloud Networking Open vSwitch vApp (OVSvApp) appliance must be installed on each ESX hypervisor in the HP Helion OpenStack(R) environment to provision VMs in your VMware vCenter environment. Once deployed, the OVSvApp enables networking between the tenant Virtual Machines (VMs).</p>
+<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>HP Virtual Cloud Networking (VCN) is an enhanced Networking Operations (Neutron) service module of HP <tm tmtype="reg">Helion Openstack</tm> that delivers network virtualization to orchestrate your data center infrastructure.</p>
+<p>The HP Virtual Cloud Networking Open vSwitch vApp (OVSvApp) appliance must be installed on each ESX hypervisor in the HP <tm tmtype="reg">Helion Openstack</tm> environment to provision VMs in your VMware vCenter environment. Once deployed, the OVSvApp enables networking between the tenant Virtual Machines (VMs).</p>
 <p>The deployment process includes the following basic steps:</p>
 <ol>
 <li>Uploading the OVSvApp file to one of the ESX hosts in your data center.</li>
@@ -62,10 +62,10 @@
 <p>Before you install the OVSvApp, ensure the following:</p>
 <ul>
 <li>
-<p>The HP Helion OpenStack(R) must be installed and configured.</p>
+<p>The HP <tm tmtype="reg">Helion Openstack</tm> must be installed and configured.</p>
 </li>
 <li>
-<p>The VMware vSphere�(R) platform must be installed and configured.</p>
+<p>The VMware <tm tmtype="reg">vSphere</tm> platform must be installed and configured.</p>
 </li>
 <li>
 <p>The vCenter server must be reachable from the server where OVSvApp VM installation is launched.</p>
@@ -164,7 +164,7 @@ mgmt_port_name=mgmt
 </ul>
 </section>
 <section id="deploytemplate"> <title>Deploy the OVSvApp</title>
-<p>You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VMs provisioned from HP Helion OpenStack(R) environment. You must then configure the settings in the configuration file. The file can be used to clone and deploy OVSvApp on each host being managed by the controller.</p>
+<p>You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VMs provisioned from HP <tm tmtype="reg">Helion Openstack</tm> environment. You must then configure the settings in the configuration file. The file can be used to clone and deploy OVSvApp on each host being managed by the controller.</p>
 <p>The deploy process installs the OVSvApp as a virtual machine, which is referred to as <i>OVSvApp VM</i> in this document.</p>
 <p>
   <b>Notes</b>

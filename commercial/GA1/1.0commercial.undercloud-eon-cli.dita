@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5839">
-<title>HP Helion OpenStack(R) 1.0: Command Line Interface- EON</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Command Line Interface- EON</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -85,7 +85,7 @@
 </codeph>
 </codeblock>
 <p>
-<b>Note</b>: HP Helion OpenStack(R) supports three vCenters.</p>
+<b>Note</b>: HP <tm tmtype="reg">Helion Openstack</tm> supports three vCenters.</p>
 <ul>
 <li>
 <p>&lt;VCENTER_NAME&gt;: Name of the vCenter</p>
@@ -223,35 +223,35 @@
 <p>The following options must be supplied as arguments or as environment variables.</p>
 </section>
 <section id="os-username"> <title>OS username<!--Removed anchor point os-username--><!-- id="os-username" --></title>
-<p>Username of the keystone (OpenStack(R) environment). Defaults to env[OS_USERNAME].</p>
+<p>Username of the keystone (<tm tmtype="reg">OpenStack</tm> environment). Defaults to env[OS_USERNAME].</p>
 <codeblock>
   <codeph># --os-username OS_USERNAME
 </codeph>
 </codeblock>
 </section>
 <section id="os-password"> <title>OS password<!--Removed anchor point os-password--><!-- id="os-password" --></title>
-<p>Password of the keystone (OpenStack(R) environment).  Defaults to env[OS_PASSWORD].</p>
+<p>Password of the keystone (<tm tmtype="reg">OpenStack</tm> environment).  Defaults to env[OS_PASSWORD].</p>
 <codeblock>
   <codeph># --os-password OS_PASSWORD
 </codeph>
 </codeblock>
 </section>
 <section id="os-tenant-id"> <title>OS tenant ID<!--Removed anchor point os-tenant-id--><!-- id="os-tenant-id" --></title>
-<p>Tenant identification of the OpenStack(R) environment. Defaults to env[OS_TENANT_ID].</p>
+<p>Tenant identification of the <tm tmtype="reg">OpenStack</tm> environment. Defaults to env[OS_TENANT_ID].</p>
 <codeblock>
   <codeph># --os-tenant-id OS_TENANT_ID
 </codeph>
 </codeblock>
 </section>
 <section id="os-authentication-url"> <title>OS authentication URL<!--Removed anchor point os-auth-url--><!-- id="os-auth-url" --></title>
-<p>Authentication URL of the OpenStack(R) environment. Defaults to env[OS_AUTH_URL].</p>
+<p>Authentication URL of the <tm tmtype="reg">OpenStack</tm> environment. Defaults to env[OS_AUTH_URL].</p>
 <codeblock>
   <codeph># --os-auth-url OS_AUTH_URL
 </codeph>
 </codeblock>
 </section>
 <section id="os-authenticationtoken"> <title>OS authenticationtoken<!--Removed anchor point os-auth-token--><!-- id="os-auth-token" --></title>
-<p>Authentication token of the OpenStack(R) environment. Defaults to env[OS_AUTH_TOKEN].</p>
+<p>Authentication token of the <tm tmtype="reg">OpenStack</tm> environment. Defaults to env[OS_AUTH_TOKEN].</p>
 <codeblock>
   <codeph># --os-auth-token OS_AUTH_TOKEN
 </codeph>

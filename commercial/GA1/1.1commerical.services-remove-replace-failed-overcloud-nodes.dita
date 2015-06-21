@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic18311">
-<title>HP Helion OpenStack(R) 1.1: Removing and Replacing a Failed Overcloud Controller</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Removing and Replacing a Failed Overcloud Controller</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Stephen H, Nancy M"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version2" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -679,7 +679,7 @@ check_mk --list-hosts
 <section id="controller-troubleshooting"> <title>Controller troubleshooting</title>
 <ul>
 <li>
-<p>If a Heat stack-update appears to be taking a long time (30 minutes or longer), see <xref href="../../commercial/GA1/1.1commercial.troubleshooting.controllers.dita" >HP Helion OpenStack(R) Troubleshooting Controller Nodes</xref>
+<p>If a Heat stack-update appears to be taking a long time (30 minutes or longer), see <xref href="../../commercial/GA1/1.1commercial.troubleshooting.controllers.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Troubleshooting Controller Nodes</xref>
 </p>
 </li>
 <li>

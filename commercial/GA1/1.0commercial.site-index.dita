@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5163">
-<title>HP Helion OpenStack(R) 1.0: Site Index</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Site Index</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,22 +15,22 @@
 <p>
 
 </p>
-<p>The documentation for HP Helion OpenStack(R) includes the following:</p>
+<p>The documentation for HP <tm tmtype="reg">Helion Openstack</tm> includes the following:</p>
 <ul>
 <li>
 <xref type="section" href="#topic5163/release">Release Notes</xref>
 </li>
 <li>
-<xref type="section" href="#topic5163/getstart">Getting started with HP Helion OpenStack(R)</xref>
+<xref type="section" href="#topic5163/getstart">Getting started with HP <tm tmtype="reg">Helion Openstack</tm></xref>
 </li>
 <li>
 <xref type="section" href="#topic5163/related">Related documentation</xref>
 </li>
 <li>
-<xref type="section" href="#topic5163/install">Installing HP Helion OpenStack(R)</xref>
+<xref type="section" href="#topic5163/install">Installing HP <tm tmtype="reg">Helion Openstack</tm></xref>
 </li>
 <li>
-<xref type="section" href="#topic5163/update">Updating HP Helion OpenStack(R)</xref>
+<xref type="section" href="#topic5163/update">Updating HP <tm tmtype="reg">Helion Openstack</tm></xref>
 </li>
 <li>
 <xref type="section" href="#topic5163/underdash">Undercloud Horizon Dashboard</xref>
@@ -39,7 +39,7 @@
 <xref type="section" href="#topic5163/dash">Horizon Dashboard</xref>
 </li>
 <li>
-<xref type="section" href="#topic5163/services">HP Helion OpenStack(R) Services</xref>
+<xref type="section" href="#topic5163/services">HP <tm tmtype="reg">Helion Openstack</tm> Services</xref>
 </li>
 <li>
 <xref type="section" href="#topic5163/swift">Swift Deployment</xref>
@@ -56,8 +56,8 @@
   <xref href="../../commercial/GA1/1.0commercial.release-notes.dita" >Release Notes</xref>
 </p>
 </section>
-<section id="getstart"> <title>Getting started with HP Helion OpenStack(R)</title>
-<p>The following topics as needed contain information about HP Helion OpenStack(R)</p>
+<section id="getstart"> <title>Getting started with HP <tm tmtype="reg">Helion Openstack</tm></title>
+<p>The following topics as needed contain information about HP <tm tmtype="reg">Helion Openstack</tm></p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.0commercial.faq.dita" >FAQs</xref>  </li>
@@ -72,7 +72,7 @@
 </li>
 </ul>
 </section>
-<section id="install"> <title>Installing HP Helion OpenStack(R)</title>
+<section id="install"> <title>Installing HP <tm tmtype="reg">Helion Openstack</tm></title>
 <p>Review the following topics before you start the installation:</p>
 <ul>
 <li>
@@ -157,7 +157,7 @@
 </li>
 </ul>
 </section>
-<section id="update"> <title>Updating HP Helion OpenStack(R)</title>
+<section id="update"> <title>Updating HP <tm tmtype="reg">Helion Openstack</tm></title>
 <p>Review the following topics before you start an update:</p>
 <ul>
 <li>
@@ -250,8 +250,8 @@
 </li>
 </ul>
 </section>
-<section id="services"> <title>HP Helion OpenStack(R) Services</title>
-<p>Review the following topics related to the HP Horizon OpenStack(R) services:</p>
+<section id="services"> <title>HP <tm tmtype="reg">Helion Openstack</tm> Services</title>
+<p>Review the following topics related to the HP Horizon <tm tmtype="reg">OpenStack</tm> services:</p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.0commerical.services-overview.dita" >Services Overview</xref>
@@ -420,7 +420,7 @@
 </ul>
 </section>
 <section id="related"> <title>Related documentation</title>
-<p>This topic provides you links to OpenStack(R) documentation that you might find helpful when working with HP Helion OpenStack(R)</p>
+<p>This topic provides you links to <tm tmtype="reg">OpenStack</tm> documentation that you might find helpful when working with HP <tm tmtype="reg">Helion Openstack</tm></p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.0commercial.related-topics.dita" >Related documentation</xref>

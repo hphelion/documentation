@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3689">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: HP StoreServ (3PAR) Support</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and 1.1.1: HP StoreServ (3PAR) Support</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: HP StoreServ (3PAR) Support</searchtitle>
+<searchtitle>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: HP StoreServ (3PAR) Support</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -23,14 +23,14 @@
 <p>
 <xref href="../../commercial/GA1/1.1commercial.install-GA-post-kvm.dita" >▲ Post-Installation for KVM Hypervisor</xref> </p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+  <b>This document describes the installation process for HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
 <p>
 <xref href="http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html" scope="external" format="html" >HP 3PAR StoreServ</xref> is a storage array that supports Fibre Channel (FC) as well as iSCSI protocol. <xref href="http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html" scope="external" format="html" >HP 3PAR StoreServ</xref> is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. HP 3PAR StoreServ is also referred to as 3PAR.</p>
-<p>HP Helion OpenStack(R) provides a utility service called Sirius which can be used to configure 3PAR StoreServ arrays to realize block storage within the cloud.</p>
+<p>HP <tm tmtype="reg">Helion Openstack</tm> provides a utility service called Sirius which can be used to configure 3PAR StoreServ arrays to realize block storage within the cloud.</p>
 <p>
-<b>Note:</b> 3PAR support applies only to HP Helion OpenStack(R) with KVM hypervisor support.</p>
+<b>Note:</b> 3PAR support applies only to HP <tm tmtype="reg">Helion Openstack</tm> with KVM hypervisor support.</p>
 <!---The Cinder integration drivers run as Python libraries in the Cinder service to facilitate communication between Cinder and StoreServ arrays.-->
 <!---Devices can be connected to Cinder using Fibre Channel (FC) or using the iSCSI protocol.-->
 <section id="high-level-overview-of-hp-3par-storeserv-integration"> <title>High-level overview of HP 3PAR StoreServ Integration</title>
@@ -48,7 +48,7 @@
 </p>
 <ul>
 <li>
-<p>Download and install the HP 3PAR Inform Management Console(IMC) if it is not installed as part of the HP 3PAR installation. Refer to the URL provided in the undercloud Horizon Dashboard of HP Helion OpenStack(R) <!---Download the HP 3PAR Inform Management Console(IMC) from the URL provided in the undercloud Horizon Dashboard.--></p>
+<p>Download and install the HP 3PAR Inform Management Console(IMC) if it is not installed as part of the HP 3PAR installation. Refer to the URL provided in the undercloud Horizon Dashboard of HP <tm tmtype="reg">Helion Openstack</tm> <!---Download the HP 3PAR Inform Management Console(IMC) from the URL provided in the undercloud Horizon Dashboard.--></p>
 </li>
 <li>
 <p>Create CPGs in StoreServ using IMC. Refer to the online user guide  for managing the StoreServ using IMC.</p>
@@ -57,7 +57,7 @@
 <p>The subsequent sections provide the detailed instructions on  the integration workflow.</p>
 </section>
 <section id="multipath-support"> <title>Multipath Support</title>
-<p>HP Helion OpenStack(R) 1.1 release supports mutipath for HP 3PAR FC. You can enable multipath for HP 3PAR FC volumes only.</p>
+<p>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 release supports mutipath for HP 3PAR FC. You can enable multipath for HP 3PAR FC volumes only.</p>
 <p>To enable multipath move the <codeph>/etc/multipath.conf</codeph> to  <codeph>/tmp</codeph>.</p>
 <codeblock>
   <codeph>    mv /etc/multipath.conf /tmp
@@ -65,18 +65,18 @@
 </codeblock>
 <p>Restart the multipath daemon <codeph>service multipath-tools restart</codeph> on all compute and controller nodes. The <codeph>multipath -ll</codeph> command  lists the devices and path.</p>
 <p>
-<b>Note</b>: With HP Helion OpenStack(R) 1.1 release, 3PAR native multipath is enabled by default.</p>
+<b>Note</b>: With HP <tm tmtype="reg">Helion Openstack</tm> 1.1 release, 3PAR native multipath is enabled by default.</p>
 </section>
 <section id="working-with-hp-storeserv"> <title>Working with HP StoreServ</title>
 <p>HP 3PAR StoreServ can be configured for the cloud using the Horizon dashboard or using HP Sirius CLI</p>
 </section>
 <section id="using-the-dashboards"> <title>Using the dashboards</title>
-<p>You can use the <xref href="../../commercial/GA1/1.1commercial.undercloud-resources-overview.dita" >HP Helion OpenStack(R) Dashboard</xref> to configure HP StoreServ.(Recommended)</p>
+<p>You can use the <xref href="../../commercial/GA1/1.1commercial.undercloud-resources-overview.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Dashboard</xref> to configure HP StoreServ.(Recommended)</p>
 </section>
 <section id="using-the-cli"> <title>Using the CLI</title>
 <p>You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See <xref href="../../commercial/GA1/1.1commercial.sirius-cli-workflow.dita" >Configuring Storage Using Sirius</xref>
 </p>
-<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack(R) command-line clients</xref>.</p>
+<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">OpenStack</tm> command-line clients</xref>.</p>
 <p>
   <xref href="#topic3689"> Return to Top </xref>
 </p>

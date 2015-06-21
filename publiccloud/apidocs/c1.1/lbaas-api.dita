@@ -140,7 +140,7 @@ For both options, a user may configure the time delay between monitoring checks,
 <p>This section describes operations and guidelines that are common to all LBaaS APIs.</p>
 </section>
 <section id="41-authentication"> <title>4.1 Authentication</title>
-<p>The LBaaS API uses standard defined by OpenStack(R) Keystone project and used by the HP Helion for authentication. Please refer to the Identity service for more details on all authentication methods currently supported.</p>
+<p>The LBaaS API uses standard defined by <tm tmtype="reg">OpenStack</tm> Keystone project and used by the HP Helion for authentication. Please refer to the Identity service for more details on all authentication methods currently supported.</p>
 </section>
 <section id="42-service-accessendpoints"> <title>4.2 Service Access/Endpoints</title>
 <p>As shown in the example above, logging into your region will provide you with the appropriate LBaaS endpoints to use. In addition, all supported versions are published within the service catalog. A client may choose to use any LBaaS API version listed.</p>

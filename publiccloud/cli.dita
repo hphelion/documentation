@@ -17,7 +17,7 @@
 <li>
 <xref href="../publiccloud/cli.windows.2.dita" >Windows Powershell CLI for HP Helion Public Cloud</xref> - Control the HP Helion Public Cloud from a Windows Powershell environment</li>
 <li>
-<xref href="../publiccloud/cli.openstack.dita" >OpenStack(R) CLI tools</xref> - Work with HP Helion Public Cloud using the native OpenStack(R) Command Line Interface tools</li>
+<xref href="../publiccloud/cli.openstack.dita" ><tm tmtype="reg">OpenStack</tm> CLI tools</xref> - Work with HP Helion Public Cloud using the native <tm tmtype="reg">OpenStack</tm> Command Line Interface tools</li>
 </ul>
 </body>
 </topic>

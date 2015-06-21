@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3603">
-<title>HP Helion OpenStack(R) 1.0: Obtaining the Patch Update Package</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Obtaining the Patch Update Package</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.0commercial.update-101-obtaining.md-->
  <!--permalink: /helion/openstack/update/download/101/--></p>
-<p>An HP Helion OpenStack(R) patch update is a series of images and scripts that enhance functionality or fix issues found in a previous Helion release.</p>
+<p>An HP <tm tmtype="reg">Helion Openstack</tm> patch update is a series of images and scripts that enhance functionality or fix issues found in a previous Helion release.</p>
 <p>Before beginning the update, obtain the patch update package using one of the two following methods:</p>
 <ul>
 <li>Using the Helion Distribution Network by connecting to the catalog.</li>
@@ -39,7 +39,7 @@
 </p>
 </li>
 <li>
-<p>Select patch update file and click <b>Download</b> from from <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HP Helion OpenStack(R) product installation</xref>
+<p>Select patch update file and click <b>Download</b> from from <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HP <tm tmtype="reg">Helion Openstack</tm> product installation</xref>
 </p>
 
 <table>
@@ -56,8 +56,8 @@
 </entry>
 </row>
 <row>
-<entry>HP Helion OpenStack(R) Upgrade</entry>
-<entry>HP_Helion_OpenStack(R)</entry>
+<entry>HP <tm tmtype="reg">Helion Openstack</tm> Upgrade</entry>
+<entry>HP_Helion_<tm tmtype="reg">OpenStack</tm></entry>
 </row>
 </tbody>
 </tgroup>
@@ -73,7 +73,7 @@
 <p>If you have no internet access on the undercloud or you prefer not to use the internet, you can download directly from the download site using a browser. Then move or copy the patch update file to the undercloud node.</p>
 <ol>
 <li>
-<p>Use a browser on a separate system that has internet access and navigate to: <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HP Helion OpenStack(R) product installation</xref>.</p>
+<p>Use a browser on a separate system that has internet access and navigate to: <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HP <tm tmtype="reg">Helion Openstack</tm> product installation</xref>.</p>
 </li>
 <li>
 <p>Log in using your HP Web ID.</p>

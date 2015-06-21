@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5601">
-<title>HP Helion OpenStack(R) 1.1: Using the Identity Service (Keystone)</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Using the Identity Service (Keystone)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version2" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,12 +25,12 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commerical.services-identity-using.md-->
  <!--permalink: /helion/openstack/1.1/services/identity/using/--></p>
-<p>Based on OpenStack(R) Keystone, the HP Helion OpenStack(R) Identity service provides one-stop authentication.</p>
-<p>The following lists of tasks can be performed by a user or administrator through the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HP Helion OpenStack(R) Dashboard</xref>, the <xref href="http://api.openstack.org/api-ref-identity-v3.html" scope="external" format="html" >API</xref> or <xref href="http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html" scope="external" format="html" >CLI</xref>.</p>
+<p>Based on <tm tmtype="reg">OpenStack</tm> Keystone, the HP <tm tmtype="reg">Helion Openstack</tm> Identity service provides one-stop authentication.</p>
+<p>The following lists of tasks can be performed by a user or administrator through the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Dashboard</xref>, the <xref href="http://api.openstack.org/api-ref-identity-v3.html" scope="external" format="html" >API</xref> or <xref href="http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html" scope="external" format="html" >CLI</xref>.</p>
 <section id="UI"> <title>Using the dashboards</title>
-<p>You can use the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HP Helion OpenStack(R) Dashboard</xref> to work with the Identity service.</p>
+<p>You can use the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Dashboard</xref> to work with the Identity service.</p>
 <p>
-<b>Note:</b> <xref href="../../commercial/GA1/1.1commerical.services-identity-domains.dita" >Domain management</xref> is not available using the Helion OpenStack(R) Dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments.</p>
+<b>Note:</b> <xref href="../../commercial/GA1/1.1commerical.services-identity-domains.dita" >Domain management</xref> is not available using the <tm tmtype="reg">Helion Openstack</tm> Dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments.</p>
 <p>To use Keystone v3 in Horizon, manually change the settings. See <xref href="../../commercial/GA1/1.1commerical.services-identity-configure-v3.dita" >Configuring Horizon for Keystone v3</xref> for instructions and important restrictions.</p>
 <p>Depending upon your user type, <xref type="section" href="#topic5601/user">user</xref> or <xref type="section" href="#topic5601/admin">administrator</xref>, you can perform the following tasks.</p>
 </section>
@@ -143,13 +143,13 @@
 <p>Manage S3 signature validation.</p>
 </section>
 <section id="manage-federated-access"> <title>Manage Federated Access</title>
-<p>Configure federated access for use in HP Helion OpenStack(R)</p>
+<p>Configure federated access for use in HP <tm tmtype="reg">Helion Openstack</tm></p>
 </section>
 <section id="resetting-a-user-password"> <title>Resetting a user password</title>
 <p>Use the Identity service to reset a password for a user.</p>
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref>. <!-- The *Architecture* section contains useful information about how an OpenStack(R) Cloud is put together. However, the HP Helion OpenStack(R) takes care of these details for you. The *Operations* section contains information on how to manage the system.--></p>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>. <!-- The *Architecture* section contains useful information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together. However, the HP <tm tmtype="reg">Helion Openstack</tm> takes care of these details for you. The *Operations* section contains information on how to manage the system.--></p>
 <p>
   <xref href="#topic5601"> Return to Top </xref>
 </p>

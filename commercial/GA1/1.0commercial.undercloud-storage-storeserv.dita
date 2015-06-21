@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10467">
-<title>HP Helion OpenStack(R) 1.0: Working with HP 3PAR StoreServ</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Working with HP 3PAR StoreServ</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -398,7 +398,7 @@
 </ol>
 </section>
 <section id="view-cpg"> <title>View CPG configuration</title>
-<p>Use this option to view the CPG configuration (as defined in OpenStack(R) Configuration Manual for HP 3PAR Cinder Block Storage Volume Driver).</p>
+<p>Use this option to view the CPG configuration (as defined in <tm tmtype="reg">OpenStack</tm> Configuration Manual for HP 3PAR Cinder Block Storage Volume Driver).</p>
 <ol>
 <li>
 <p>Log in to the undercloud Horizon dashboard.</p>

@@ -18,7 +18,7 @@
 <p>Date: May 2014</p>
 <p>Document Revision: 1.9</p>
 <section id="1-overview"> <title>1. Overview</title>
-<p>The HP Helion Identity Service exposes the OpenStack(R) Keystone V3 API specification. Specifically, it supports token and credential based operations. A few things to note about the HP Identity Service are:</p>
+<p>The HP Helion Identity Service exposes the <tm tmtype="reg">OpenStack</tm> Keystone V3 API specification. Specifically, it supports token and credential based operations. A few things to note about the HP Identity Service are:</p>
 <ul>
 <li>Token created via v2 API can be validated via v3 API</li>
 <li>Token created via v3 API can be validated via v2 API.</li>
@@ -468,14 +468,14 @@ Status <codeph>expired</codeph>, <codeph>revoked</codeph>, <codeph>deleted</code
 the system and therefore immutable. They cannot be updated by the client.</p>
 <p>By default, key validity is 10 years.</p>
 <p>
-  <b>Differences Between Identity service and OpenStack(R) Keystone</b>
+  <b>Differences Between Identity service and <tm tmtype="reg">OpenStack</tm> Keystone</b>
 </p>
 <p>The Identity service does not support credential type <codeph>ec2</codeph>. Instead, it supports credential type <codeph>HP-IDM:access-key</codeph> with additional functionalities. Identity service access keys can be used to perform EC2 operations.</p>
-<p>The Identity service allows maximum of three (3) active credentials at any given time. OpenStack(R) Keystone has no limit on the number of credential a user can own. When listing credentials, you may use <codeph>status</codeph> query parameter to list the active credentials only. i.e. <codeph>status=active</codeph>. Otherwise, all credentials are returned. An HTTP code 403 will be returned if an operation (i.e. create/import/update) will exceed the maximum number of active credentials.</p>
-<p>OpenStack(R) Keystone supports optionally scoping a credential to a project by providing an <codeph>project_id</codeph> field. The Identity service does not support project scoping. If <codeph>project_id</codeph> is present during credential creation/import, it will be ignored.</p>
+<p>The Identity service allows maximum of three (3) active credentials at any given time. <tm tmtype="reg">OpenStack</tm> Keystone has no limit on the number of credential a user can own. When listing credentials, you may use <codeph>status</codeph> query parameter to list the active credentials only. i.e. <codeph>status=active</codeph>. Otherwise, all credentials are returned. An HTTP code 403 will be returned if an operation (i.e. create/import/update) will exceed the maximum number of active credentials.</p>
+<p><tm tmtype="reg">OpenStack</tm> Keystone supports optionally scoping a credential to a project by providing an <codeph>project_id</codeph> field. The Identity service does not support project scoping. If <codeph>project_id</codeph> is present during credential creation/import, it will be ignored.</p>
 <p>The Identity service will enforce key length during import. If the given <codeph>secret</codeph> field is less than the minimum 64 bits or greater than the maximum of 512 bits, an HTTP code 400 will be returned.</p>
-<p>The Identity service supports both credential creation and credential import while OpenStack(R) Keystone only supports credential import. Credential creation is a mechanism to have the system to generate the credential on behalf of the user.</p>
-<p>The Identity service supports self-service model for credential import and creation while OpenStack(R) Keystone does not. For self-service model, <codeph>user_id</codeph> is optional. If absent, it will be default to the user ID associated with the caller`s token.</p>
+<p>The Identity service supports both credential creation and credential import while <tm tmtype="reg">OpenStack</tm> Keystone only supports credential import. Credential creation is a mechanism to have the system to generate the credential on behalf of the user.</p>
+<p>The Identity service supports self-service model for credential import and creation while <tm tmtype="reg">OpenStack</tm> Keystone does not. For self-service model, <codeph>user_id</codeph> is optional. If absent, it will be default to the user ID associated with the caller`s token.</p>
 <p>
   <b>Status Lifecycle</b>
 </p>

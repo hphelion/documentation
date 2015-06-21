@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20357">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: DNSaaS Installation and Configuration</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and 1.1.1: DNSaaS Installation and Configuration</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: DNSaaS Installation and Configuration</searchtitle>
+<searchtitle>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: DNSaaS Installation and Configuration</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B, Gerladine K, Graham H,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -24,15 +24,15 @@
   <xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" />
 </p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+  <b>This document describes the installation process for HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
-<p>Our managed DNS service, based on the OpenStack(R) Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
-<p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack(R)</p>
+<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>Our managed DNS service, based on the <tm tmtype="reg">OpenStack</tm> Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
+<p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP <tm tmtype="reg">Helion Openstack</tm></p>
 <p>
 <b>Note</b>: These installation instructions assume that the associated project currently contains no instances (VMs). If this is not the case, see the instructions for <xref type="section" href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space before you begin.</p>
 <p>
-<b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on Helion OpenStack(R) 1.1 Do <b>not</b> attempt to install DNSaaS on any previous versions. </p>
+<b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on <tm tmtype="reg">Helion Openstack</tm> 1.1 Do <b>not</b> attempt to install DNSaaS on any previous versions. </p>
 <ul>
 <li>
 <xref type="section" href="#topic20357/preq">Prerequisites</xref>
@@ -70,11 +70,11 @@
 </ul>
 <section id="preq"> <title>Prerequisites</title>
 <p>
-<b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on Helion OpenStack(R) 1.1 Do <b>not</b> attempt to install DNSaaS on any previous versions. </p>
+<b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on <tm tmtype="reg">Helion Openstack</tm> 1.1 Do <b>not</b> attempt to install DNSaaS on any previous versions. </p>
 <p>
 <b>Note</b>: These installation instructions assume that the associated project currently contains no instances (VMs). If this is not the case, see the instructions for <xref type="section" href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space before you begin.</p>
 <ul>
-<li>HP Helion OpenStack(R) is successfully installed</li>
+<li>HP <tm tmtype="reg">Helion Openstack</tm> is successfully installed</li>
 <li>Download <xref type="section" href="#topic20357/publication">DNSaaS Installer Image</xref> </li>
 <li>
 <p>Obtain <xref type="section" href="#topic20357/target-cred">Target Credentials</xref>: credentials of the user+tenant where the service is to be deployed.</p>
@@ -578,7 +578,7 @@ sudo -i
 <li>
 <p>If you are using MSDNS (Microsoft DNS Server) you must install an agent on each the Microsoft DNS server. These steps must be performed on each Microsoft DNS server to install the agent:</p>
 
-<p>The installer for the agent is in <codeph>/opt/stack/designate-msdnsagent/OpenStack(R)</codeph> on the DNSaaS Installer VM; this is the one that you booted to install DNSaaS. <!--A BR tag was used here in the original source.-->Download this file and distribute it to all the target Microsoft DNS Servers.</p>
+<p>The installer for the agent is in <codeph>/opt/stack/designate-msdnsagent/<tm tmtype="reg">OpenStack</tm></codeph> on the DNSaaS Installer VM; this is the one that you booted to install DNSaaS. <!--A BR tag was used here in the original source.-->Download this file and distribute it to all the target Microsoft DNS Servers.</p>
 
 <p>a. Run the install.</p>
 
@@ -608,7 +608,7 @@ sudo -i
 
 <p>f. Go to <b>Start &gt; Programs &gt; Administrative Tools &gt; Services</b>.</p>
 
-<p>g. Restart the <b>OpenStack(R) Service</b>.</p>
+<p>g. Restart the <b><tm tmtype="reg">OpenStack</tm> Service</b>.</p>
 </li>
 </ol>
 </section>
@@ -686,7 +686,7 @@ sudo -i
 <xref href="https://docs.hpcloud.com/api/dns/" scope="external" format="html" >HP Helion Public Cloud DNS API Specifications</xref>
 </li>
 <li>
-<xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for OpenStack(R)</xref>
+<xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for <tm tmtype="reg">OpenStack</tm></xref>
 </li>
 </ul>
 <p>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20151">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Editing the Installation Configuration JSON File</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and 1.1.1: Editing the Installation Configuration JSON File</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Editing the Installation Configuration JSON File</searchtitle>
+<searchtitle>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Editing the Installation Configuration JSON File</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -21,11 +21,11 @@
  <!--./commercial/GA1/1.1commercial.install-GA-JSON.md-->
  <!--permalink: /helion/openstack/1.1/install/envars/--></p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+  <b>This document describes the installation process for HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
-<p>The HP Helion OpenStack(R) Installation process requires various configuration parameters to be specified. This is achieved through environment variables.</p>
-<p>A user who is installing HP Helion OpenStack(R) can enter all required environment variables using a JSON (JavaScript Object Notation) file that comes with the installation package.</p>
+<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>The HP <tm tmtype="reg">Helion Openstack</tm> Installation process requires various configuration parameters to be specified. This is achieved through environment variables.</p>
+<p>A user who is installing HP <tm tmtype="reg">Helion Openstack</tm> can enter all required environment variables using a JSON (JavaScript Object Notation) file that comes with the installation package.</p>
 <p>This document contains the following information:</p>
 <ul>
 <li>
@@ -66,11 +66,11 @@ After you modify a JSON file, you might want to validate the structure by runnin
 
 <ul>
 <li>
-<codeph>esx-custom-ips.json</codeph> - Use this file for installing HP Helion OpenStack(R) with ESX hypervisor support.</li>
+<codeph>esx-custom-ips.json</codeph> - Use this file for installing HP <tm tmtype="reg">Helion Openstack</tm> with ESX hypervisor support.</li>
 <li>
-<codeph>esx-custom-ips-vlan.json</codeph> - Use this file for installing HP Helion OpenStack(R) with ESX hypervisor support with a VLAN provider network.</li>
+<codeph>esx-custom-ips-vlan.json</codeph> - Use this file for installing HP <tm tmtype="reg">Helion Openstack</tm> with ESX hypervisor support with a VLAN provider network.</li>
 <li>
-<codeph>kvm-custom-ips.json</codeph> - Use this file for installing HP Helion OpenStack(R) with KVM hypervisor support.</li>
+<codeph>kvm-custom-ips.json</codeph> - Use this file for installing HP <tm tmtype="reg">Helion Openstack</tm> with KVM hypervisor support.</li>
 </ul>
 </li>
 <li>
@@ -93,7 +93,7 @@ After you modify a JSON file, you might want to validate the structure by runnin
 </li>
 <li>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" >Return to HP Helion OpenStack(R) Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" >Return to HP <tm tmtype="reg">Helion Openstack</tm> Installation Prerequisites</xref>.</p>
 </li>
 </ol>
 </section>
@@ -140,14 +140,14 @@ After you modify a JSON file, you might want to validate the structure by runnin
 </codeph>
 </codeblock>
 <p>
-<codeph>control_virtual_router_id</codeph> - Use this variable to set a unique idenitifier for the HP Helion OpenStack(R) installation.</p>
-<p>HP Helion OpenStack(R) uses keepalived to manage virtual IPs. keepalived uses a unique id to synchronise its activities. If you plan to run multiple installations of HP Helion OpenStack(R) on the same network, each installation must be configured with a unique id by setting the environment variable <codeph>control_virtual_router_id</codeph> to a unique number (from 0 to 255) before running the installation. The default value, if unset, is 51.</p>
+<codeph>control_virtual_router_id</codeph> - Use this variable to set a unique idenitifier for the HP <tm tmtype="reg">Helion Openstack</tm> installation.</p>
+<p>HP <tm tmtype="reg">Helion Openstack</tm> uses keepalived to manage virtual IPs. keepalived uses a unique id to synchronise its activities. If you plan to run multiple installations of HP <tm tmtype="reg">Helion Openstack</tm> on the same network, each installation must be configured with a unique id by setting the environment variable <codeph>control_virtual_router_id</codeph> to a unique number (from 0 to 255) before running the installation. The default value, if unset, is 51.</p>
 <codeblock>
   <codeph>"control_virtual_router_id": "202",
 </codeph>
 </codeblock>
 <p>
-<codeph>cloud_type</codeph> - Use this variable to specify whether the HP Helion OpenStack(R) will be installed with KVM or ESX hypervisor support.</p>
+<codeph>cloud_type</codeph> - Use this variable to specify whether the HP <tm tmtype="reg">Helion Openstack</tm> will be installed with KVM or ESX hypervisor support.</p>
 <p>
 <b>Note:</b> If set to <codeph>ESX</codeph>, the <codeph>compute_scale</codeph> variable and DVR variables are not required.</p>
 <p>
@@ -425,7 +425,7 @@ If this is the same value as <codeph>neutron/overcloud_public_interface</codeph>
 <b>Note:</b> The overcloud neutron external network (ext-net) assumes the gateway IP is the lowest non-zero host IP address in the <codeph>cidr</codeph> range.</p>
 </section>
 <section id="service"> <title>Configure the Service network</title>
-<p>Helion OpenStack(R) requires a third VLAN network called as Service Network which connects trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The purpose is to aggregate logs of PaaS components running on the VMs in the overcloud to the undercloud via this network.</p>
+<p><tm tmtype="reg">Helion Openstack</tm> requires a third VLAN network called as Service Network which connects trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The purpose is to aggregate logs of PaaS components running on the VMs in the overcloud to the undercloud via this network.</p>
 <p>This third network can be configured for the platform service guest instances to connect to undercloud controller by setting <codeph>NeutronSVCInterface</codeph> to a physically configured VLAN. The VLAN name used as the <codeph>NeutronSVCInterface</codeph> is expected to be of the form <codeph>vlan</codeph> followed by the VLAN id ( ex. vlan102 ).</p>
 <p>
 <b>Note:</b> These variables are optional for the ESX cloud type.</p>
@@ -444,7 +444,7 @@ If this is the same value as <codeph>neutron/overcloud_public_interface</codeph>
 </codeph>
 </codeblock>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#envars" >Return to HP Helion OpenStack(R) Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#envars" >Return to HP <tm tmtype="reg">Helion Openstack</tm> Installation Prerequisites</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

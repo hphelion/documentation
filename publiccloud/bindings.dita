@@ -12,17 +12,17 @@
 <!--PUBLISHED-->
  <!--./publiccloud/bindings.md-->
  <!--permalink: /publiccloud/bindings/--></p>
-<p>One of the advantages of being active with OpenStack(R) is that there is a healthy community of developers working on language bindings.  HP augments those in strategic areas and recommends others for your general use.  Take a gander at the choices you have at your disposal below.  Don't see what you need?  Don't be shy. <xref href="http://openstack.org/community" scope="external" format="html" >Get involved and create something for submittal back to OpenStack(R)</xref>.</p>
+<p>One of the advantages of being active with <tm tmtype="reg">OpenStack</tm> is that there is a healthy community of developers working on language bindings.  HP augments those in strategic areas and recommends others for your general use.  Take a gander at the choices you have at your disposal below.  Don't see what you need?  Don't be shy. <xref href="http://openstack.org/community" scope="external" format="html" >Get involved and create something for submittal back to <tm tmtype="reg">OpenStack</tm></xref>.</p>
 <section id="available-open-source-bindings"> <title>Available open source bindings</title>
 <p>We created this set of bindings and have them available as open source.  While not actively supported, we use these ourselves for various use cases and anyone in the public is free to expand upon them.</p>
 </section>
 <section id="javaclojure"> <title>Java/Clojure</title>
 <p>Java access to HP Helion Public Cloud Compute and HP Helion Public Cloud Objects is accomplished using the <xref href="https://jclouds.apache.org" scope="external" format="html" >jclouds multi-cloud library</xref>.  This easy to use library abstracts common cloud functionality into a simple interface.  HP has contributed a provider for both HP Helion Public Cloud Compute and Object Storage back to the jclouds community to make our services accessible to Java programmers.</p>
-<p>To get started, take a look at the <xref href="http://jclouds.apache.org/guides/openstack" scope="external" format="html" >OpenStack(R) - Getting Started Guide</xref> which walks you through the installation process and some sample code.</p>
+<p>To get started, take a look at the <xref href="http://jclouds.apache.org/guides/openstack" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> - Getting Started Guide</xref> which walks you through the installation process and some sample code.</p>
 <p>For more elaborate examples, take a look at the <xref href="https://github.com/jclouds/jclouds-examples" scope="external" format="html" >jclouds-examples repository over at GitHub</xref>.</p>
 </section>
 <section id="php-bindings-for-hp-helion-public-cloud"> <title>PHP Bindings for HP Helion Public Cloud</title>
-<p>HP Cloud has contributed our PHP bindings extensions to <xref href="http://hpcloud.github.com/HPCloud-PHP" scope="external" format="html" >OpenStack(R)</xref>. We use this on our own Drupal-based sites, like the one you're reading right now.</p>
+<p>HP Cloud has contributed our PHP bindings extensions to <xref href="http://hpcloud.github.com/HPCloud-PHP" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm></xref>. We use this on our own Drupal-based sites, like the one you're reading right now.</p>
 </section>
 <section id="drupal-module"> <title>Drupal Module</title>
 <p>Technically this isn't a binding but it's some open source that we use ourselves that we're making available to the public.  Take a look at our <xref href="http://drupal.org/project/hpcloud" scope="external" format="html" >HPCloud drupal module</xref>, which lets you use Object Storage and CDN to offload files (typically images) from your Drupal site to our services.</p>

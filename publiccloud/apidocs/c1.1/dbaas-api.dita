@@ -24,7 +24,7 @@
 <p>
 <b>Maturity Level</b>: Public Beta</p>
 <p>
-<b>Version API Status</b>: The Relational Database API is based on OpenStack(R) Trove v1.0.</p>
+<b>Version API Status</b>: The Relational Database API is based on <tm tmtype="reg">OpenStack</tm> Trove v1.0.</p>
 </section>
 <section id="12-document-revision-history"> <title>1.2 Document Revision History</title>
 <table>

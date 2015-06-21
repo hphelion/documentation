@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic694">
-<title>HP Helion OpenStack(R) 1.0: Shrink Object Storage (Swift) Cluster</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Shrink Object Storage (Swift) Cluster</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version2" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0"/>
+<othermeta name="product-version3" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0.1"/>
+<othermeta name="product-version4" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,7 +26,7 @@
 <p>
 
 </p>
-<p>HP Helion OpenStack(R) allows you to remove Swift cluster in any of the followings ways:</p>
+<p>HP <tm tmtype="reg">Helion Openstack</tm> allows you to remove Swift cluster in any of the followings ways:</p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita" >Remove an existing Disk from Object Nodes</xref>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3300">
-<title>HP Helion OpenStack(R) 1.0: Installing an NTP Server</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Installing an NTP Server</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -144,7 +144,7 @@ sudo nmap -p123 -sU -P0 &lt;localhost | known ntp host&gt;
 </section>
 <section id="stratum-lower-than-10"> <title>Stratum lower than 10<!--Removed anchor point fudge--><!-- id="fudge" --></title>
 <p>NTP uses a hierarchical, semi-layered system of time sources. Each level of this hierarchy is termed a "stratum" and is assigned a number starting with zero at the top. The number represents the distance from the reference clock and is used to prevent cyclical dependencies in the hierarchy.</p>
-<p>HP Helion OpenStack(R) uses stratum 10. If your NTP stratum is lower than 10, set up your host as the time source by fudging a stratum 10.</p>
+<p>HP <tm tmtype="reg">Helion Openstack</tm> uses stratum 10. If your NTP stratum is lower than 10, set up your host as the time source by fudging a stratum 10.</p>
 <ol>
 <li>
 <p>Configure host as a time source.</p>

@@ -33,7 +33,7 @@
 </li>
 </ul>
 <section id="Services"> <title>Available Services</title>
-<p>HP Helion Public Cloud consists of many services based on the different OpenStack(R) projects to provide the functionality you need. Visit the <xref href="../publiccloud/services.dita" >Available Services</xref> page for a complete list of services.</p>
+<p>HP Helion Public Cloud consists of many services based on the different <tm tmtype="reg">OpenStack</tm> projects to provide the functionality you need. Visit the <xref href="../publiccloud/services.dita" >Available Services</xref> page for a complete list of services.</p>
 </section>
 <section id="Starting"> <title>Starting to work with HP Helion Public Cloud</title>
 <p>Use the following links and tools to get to work with HP Helion Public Cloud:</p>
@@ -76,7 +76,7 @@
 <p>See <xref href="https://community.hpcloud.com/article/hp-helion-public-cloud-quick-start-guide" scope="external" format="html" >HP Helion Public Cloud - Quick Start Guide</xref>.</p>
 </li>
 <li>
-<p>If you're a developer, you'll want to look at the <xref href="https://wiki.openstack.org/wiki/SDKs" scope="external" format="html" >OpenStack(R) software development kit (SDK) information</xref>.</p>
+<p>If you're a developer, you'll want to look at the <xref href="https://wiki.openstack.org/wiki/SDKs" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> software development kit (SDK) information</xref>.</p>
 </li>
 <li>
 <p>Take a look at the a site map of the <xref href="../publiccloud/sitemap.dita" >documentation available on the site</xref> for a full list of the technical content pages available on the site.</p>

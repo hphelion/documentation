@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2677">
-<title>HP Helion OpenStack(R) 1.1: Networking Service (Neutron) Overview</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Networking Service (Neutron) Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version2" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -29,7 +29,7 @@
 
 </p>
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
-<p>HP Helion OpenStack(R) Networking is a virtual networking service that leverages the OpenStack(R) Neutron service to provide network connectivity and addressing to HP Helion OpenStack(R) Compute service devices.</p>
+<p>HP <tm tmtype="reg">Helion Openstack</tm> Networking is a virtual networking service that leverages the <tm tmtype="reg">OpenStack</tm> Neutron service to provide network connectivity and addressing to HP <tm tmtype="reg">Helion Openstack</tm> Compute service devices.</p>
 <p>The Networking service also provides an API to configure and manage a variety of network services.</p>
 <p>You can use the Networking service to connect guest servers or you can define and configure your own virtual network topology.</p>
 <p>You can also use the Networking service to identify the actual IP address of a malicious user, if you know the user's NAT address. For more information, see <xref href="../../commercial/GA1/1.1commercial.networking-maskedIP.dita" >Tracking masked IP addresses when using network address translation (NAT)</xref>.</p>
@@ -41,19 +41,19 @@
 <p>To perform tasks using the Networking service, you can use the dashboard, API or CLI.</p>
 </section>
 <section id="UI"> <title>Using the dashboards</title>
-<p>You can use the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HP Helion OpenStack(R) Dashboard</xref> to work with the Networking service.</p>
+<p>You can use the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Dashboard</xref> to work with the Networking service.</p>
 </section>
 <section id="API"> <title>Using the API</title>
-<p>You can use a low-level, raw REST API to access the Networking service. See the <xref href="http://developer.openstack.org/api-ref-networking-v2.html" scope="external" format="html" >OpenStack(R) Networking API v2.0 Reference</xref>.</p>
+<p>You can use a low-level, raw REST API to access the Networking service. See the <xref href="http://developer.openstack.org/api-ref-networking-v2.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Networking API v2.0 Reference</xref>.</p>
 </section>
 <section id="cli"> <title>Using the CLI</title>
-<p>You can use any of several command-line interface software to access Networking. See the <xref href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" scope="external" format="html" >OpenStack(R) Command Line Interface Reference</xref>.</p>
-<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack(R) command-line clients</xref>.</p>
+<p>You can use any of several command-line interface software to access Networking. See the <xref href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Command Line Interface Reference</xref>.</p>
+<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">OpenStack</tm> command-line clients</xref>.</p>
 <!--
 
-## How To's with the HP Helion OpenStack(R) Networking service ## {#howto}
+## How To's with the HP <tm tmtype="reg">Helion Openstack</tm> Networking service ## {#howto}
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack(R) Dashboard](/helion/openstack/1.1/dashboard/how-works/), the OpenStack(R) [CLI](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html) or OpenStack(R) [API](http://developer.openstack.org/api-ref-networking-v2.html).
+The following lists of tasks can be performed by a user or administrator through the [HP <tm tmtype="reg">Helion Openstack</tm> Dashboard](/helion/openstack/1.1/dashboard/how-works/), the <tm tmtype="reg">OpenStack</tm> [CLI](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html) or <tm tmtype="reg">OpenStack</tm> [API](http://developer.openstack.org/api-ref-networking-v2.html).
 
 The administrator can work with all projects in a domain. A user can only work with projects associated with that user.-->
 <!--### Working with networks ###
@@ -75,7 +75,7 @@ You can perform the following tasks:
 - **Adding and removing an external network to a router** - Attach or detach a router from an external network. -->
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an OpenStack(R) Cloud is put together. However, the HP Helion OpenStack(R) takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together. However, the HP <tm tmtype="reg">Helion Openstack</tm> takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
 <!-- In GA aether only?
 ### Adding and removing a network to a DHCP agent ###
 

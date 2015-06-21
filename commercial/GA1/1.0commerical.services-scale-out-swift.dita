@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2065">
-<title>HP Helion OpenStack(R) 1.0: About Scale-out Swift</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: About Scale-out Swift</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,7 +15,7 @@
 <p>
 
 </p>
-<p>HP Helion OpenStack(R) includes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).</p>
+<p>HP <tm tmtype="reg">Helion Openstack</tm> includes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).</p>
 <p>It is recommended to use these Starter servers as host for the following Swift services for scaled out Swift cluster:</p>
 <ol>
 <li>Swift Proxy </li>
@@ -27,20 +27,20 @@
 <!--
 We recommend you use these Starter servers as Swift Proxy Servers for the scaled out Swift cluster. To do this, you can use the *ringos* utility to add additional drives on that server to the Swift Account and Container rings. 
 -->
-- <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment.dita" >Step by step instructions for deploying additional Scale-out Swift Nodes with HP Helion OpenStack(R)</xref>
+- <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment.dita" >Step by step instructions for deploying additional Scale-out Swift Nodes with HP <tm tmtype="reg">Helion Openstack</tm></xref>
 </p>
 <section id="diagrams"> <title>Diagrams</title>
-<p>The HP Helion OpenStack(R) scale-out Swift architecture.</p>
+<p>The HP <tm tmtype="reg">Helion Openstack</tm> scale-out Swift architecture.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack(R) Scale-out (opens in a new window)</xref>
+  <xref format="html" href="javascript:window.open('/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP <tm tmtype="reg">Helion Openstack</tm> Scale-out (opens in a new window)</xref>
 </p>
-<p>The HP Helion OpenStack(R) life-cycle diagram.</p>
+<p>The HP <tm tmtype="reg">Helion Openstack</tm> life-cycle diagram.</p>
 <p>
   <xref format="html" href="javascript:window.open('/media/swift-cluster-lifecycle.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Swift cluster lifecycle(opens in a new window) </xref>
 </p>
 </section>
 <section id="storage-policies-and-policy-zero"> <title>Storage Policies and Policy Zero</title>
-<p>For containers created before the deployment of scale-out Swift, default policy is policy-0.  Policy-0 is used to store objects. However, a new storage policy (termed as policy-1) is configured as soon as you deploy a scale-out Swift and it becomes the new default policy. After the deployment of scale-out Swift, all new containers are mapped to the new storage policy and  objects associated to those containers are stored in the ring with policy-1. For more details on storage policy, see <xref href="http://docs.openstack.org/developer/swift/overview_policies.html" scope="external" format="html" >OpenStack(R) Swift overview policies</xref>.</p>
+<p>For containers created before the deployment of scale-out Swift, default policy is policy-0.  Policy-0 is used to store objects. However, a new storage policy (termed as policy-1) is configured as soon as you deploy a scale-out Swift and it becomes the new default policy. After the deployment of scale-out Swift, all new containers are mapped to the new storage policy and  objects associated to those containers are stored in the ring with policy-1. For more details on storage policy, see <xref href="http://docs.openstack.org/developer/swift/overview_policies.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Swift overview policies</xref>.</p>
 <!--
 All containers must have a storage policy. If a policy is not explicitly specified, the default policy is applied.
 

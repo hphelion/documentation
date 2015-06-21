@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6824">
-<title>HP Helion OpenStack(R) 1.1: Networking Operation (Neutron): Hardware Configuration and Software  Requirements</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Networking Operation (Neutron): Hardware Configuration and Software  Requirements</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Network Administrator"/>
 <othermeta name="role" content="Network Architect"/>
 <othermeta name="role" content="Vikas Deolaliker, Paul Kevin"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version2" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0"/>
+<othermeta name="product-version3" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.0.1"/>
+<othermeta name="product-version4" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -23,7 +23,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.md-->
  <!--permalink: /helion/openstack/1.1/services/neutron/pre/installation/hardware-software/--></p>
-<p>This page provides an overview of the hardware configuration and software requirement that the is supported for HP Helion OpenStack(R)</p>
+<p>This page provides an overview of the hardware configuration and software requirement that the is supported for HP <tm tmtype="reg">Helion Openstack</tm></p>
 <ul>
 <li>
 <xref type="section" href="#topic6824/hardware-req">Meet hardware configuration requirements</xref> </li>
@@ -302,7 +302,7 @@
 </p>
 </section>
 <section id="software-req"> <title>Meet software requirements</title>
-<p>This section explains the Helion OpenStack(R) software requirements. The software requirement for the Seed Cloud Host is Ubuntu 14.04 with the following packages.</p>
+<p>This section explains the <tm tmtype="reg">Helion Openstack</tm> software requirements. The software requirement for the Seed Cloud Host is Ubuntu 14.04 with the following packages.</p>
 <ul>
 <li>xrdp </li>
 <li>xfce4 </li>
@@ -321,7 +321,7 @@
 <p>Our Guest OS support is based on the hypervisor vendor.</p>
 <p>For ESX, refer to the <xref href="http://www.vmware.com/resources/compatibility/search.php?action=search&amp;deviceCategory=software&amp;advancedORbasic=advanced&amp;maxDisplayRows=50&amp;key=&amp;productId=4&amp;gos_vmw_product_release%5B%5D=90&amp;datePosted=-1&amp;partnerId%5B%5D=-1&amp;os_bits=-1&amp;os_use%5B%5D=-1&amp;os_family%5B%5D=-1&amp;os_type%5B%5D=-1&amp;rorre=0" scope="external" format="html" >VMware Compatibility Guide</xref>.</p>
 <p>For KVM refer to the following table:</p>
-<p>A <b>Qualified</b> Guest OS has been tested and will support the Guest OS running on HP Helion OpenStack(R)</p>
+<p>A <b>Qualified</b> Guest OS has been tested and will support the Guest OS running on HP <tm tmtype="reg">Helion Openstack</tm></p>
 <p>A <b>Certified</b> Guest OS has been officially certified with the appropriate vendor of the OS.</p>
 <table>
 <tgroup cols="3">
@@ -434,7 +434,7 @@
 </section>
 <section id="next-step"> <title>Next Steps</title>
 <p>
-  <xref href="../../../commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita" >HP Helion OpenStack(R) High Availability for Cloud Networking</xref>
+  <xref href="../../../commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita" >HP <tm tmtype="reg">Helion Openstack</tm> High Availability for Cloud Networking</xref>
 </p>
 <p>
   <xref href="#topic6824"> Return to Top </xref>

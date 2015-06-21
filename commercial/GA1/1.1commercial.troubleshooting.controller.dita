@@ -3,13 +3,13 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2128">
 <title>Heat Stack Updates Take 30+ Minutes</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Troubleshooting the Controller Nodes</searchtitle>
+<searchtitle>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Troubleshooting the Controller Nodes</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -19,8 +19,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version2" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -32,9 +32,9 @@
 
 
 
-# HP Helion OpenStack(R) 1.1: Troubleshooting the Controller Nodes
+# HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Troubleshooting the Controller Nodes
 
-HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of Linux&#174; provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.
+HP <tm tmtype="reg">Helion Openstack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of Linux&#174; provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.
 
 - [Heat Stack Updates Take 30+ Minutes](#foreverupdate)
 -->

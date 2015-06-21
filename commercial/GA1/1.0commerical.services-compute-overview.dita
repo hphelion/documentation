@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2568">
-<title>HP Helion OpenStack(R) 1.0: Compute Service Overview</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Compute Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,9 +15,9 @@
 <p>
 
 </p>
-<p>The HP Helion OpenStack(R) Compute Service leverages the  OpenStack(R) compute service to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.</p>
+<p>The HP <tm tmtype="reg">Helion Openstack</tm> Compute Service leverages the  <tm tmtype="reg">OpenStack</tm> compute service to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.</p>
 <p>Compute allows you to work with <b>flavors</b>, which are unique combinations of disk space, memory capacity, and CPU; <b>images</b>, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and <b>servers</b>, which are virtual instances created by combining a flavor and an image.</p>
-<p>A variety of flavors and images are provided by the HP Helion OpenStack(R) Compute Service to create a wide mix of servers.</p>
+<p>A variety of flavors and images are provided by the HP <tm tmtype="reg">Helion Openstack</tm> Compute Service to create a wide mix of servers.</p>
 <section id="key-terms"> <title>Key Terms</title>
 <p>Key terms include:</p>
 <ul>
@@ -39,20 +39,20 @@
 <p>To <xref type="section" href="#topic2568/howto">perform tasks using the Compute service</xref>, you can use the dashboard, API or CLI.</p>
 </section>
 <section id="UI"> <title>Using the dashboards</title>
-<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP Helion OpenStack(R) Dashboard</xref> to work with the Compute service.</p>
+<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Dashboard</xref> to work with the Compute service.</p>
 </section>
 <section id="using-the-api"> <title>Using the API<!--Removed anchor point API--><!-- id="API" --></title>
-<p>You can use a low-level, raw REST API access to the HP Compute service. See the <xref href="http://api.openstack.org/api-ref-compute-v2.html" scope="external" format="html" >OpenStack(R) Compute API v2.0 Reference</xref>.</p>
+<p>You can use a low-level, raw REST API access to the HP Compute service. See the <xref href="http://api.openstack.org/api-ref-compute-v2.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Compute API v2.0 Reference</xref>.</p>
 </section>
 <section id="using-the-cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
-<p>You can use the command-line interface software to access HP Compute. See the <xref href="http://docs.openstack.org/cli-reference/content/novaclient_commands.html" scope="external" format="html" >OpenStack(R) Command Line Interface Reference</xref>.</p>
-<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack(R) command-line clients</xref>.</p>
+<p>You can use the command-line interface software to access HP Compute. See the <xref href="http://docs.openstack.org/cli-reference/content/novaclient_commands.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Command Line Interface Reference</xref>.</p>
+<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">OpenStack</tm> command-line clients</xref>.</p>
 <!--
-## How To's with the HP Helion OpenStack(R) Compute Service<a name="howto"></a>
+## How To's with the HP <tm tmtype="reg">Helion Openstack</tm> Compute Service<a name="howto"></a>
 
 Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud 
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack(R) Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-compute-v2.html), or [CLI](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).
+The following lists of tasks can be performed by a user or administrator through the [HP <tm tmtype="reg">Helion Openstack</tm> Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-compute-v2.html), or [CLI](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).
 
 Depending upon your user type, user or administrator, you can perform the following tasks.
 
@@ -114,7 +114,7 @@ When working with the Compute service, you can perform a number of tasks with yo
 - **Suspending and resuming virtual machines** &#151; Suspend and un-suspend an instance. When you suspend an instance, its instance state is stored on disk, all memory is written to disk, and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available.-->
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an OpenStack(R) Cloud is put together. However, HP Helion OpenStack(R) takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together. However, HP <tm tmtype="reg">Helion Openstack</tm> takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
 <p>
   <xref href="#topic2568"> Return to Top </xref>
 </p>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic11103">
-<title>HP Helion OpenStack(R) 1.1.1: Configuring support for customer-provided certificates</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1: Configuring support for customer-provided certificates</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1.1 customer provided certificates</searchtitle>
+<searchtitle>HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1 customer provided certificates</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -19,8 +19,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Nancy M."/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version2" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -28,10 +28,10 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1.1commerical.services-customer-provided-certificates.md-->
  <!--permalink: /helion/openstack/1.1.1/customer-provided-certificates/--></p>
-<p>In HP Helion OpenStack(R) all services are configured to use transport layer security (TLS) as their communication protocol. Since TLS is secure (HTTPS), it checks for a certificate from a certificate authority (CA).</p>
+<p>In HP <tm tmtype="reg">Helion Openstack</tm> all services are configured to use transport layer security (TLS) as their communication protocol. Since TLS is secure (HTTPS), it checks for a certificate from a certificate authority (CA).</p>
 <p>The certificate that Helion expects to find is the one issued by the built-in ephemeral CA (ECA) (see <xref href="http://docs.hpcloud.com/helion/openstack/1.1/tls" scope="external" format="html" >TLS</xref>). However, customers may want to install their own certificates. If so,  Helion needs to know about the certificate.</p>
 <p>In order to accomplish this and maintain the chain of trust without the need to reconfigure services, a number of steps must be taken.</p>
-<p>Following this procedure will configure HP Helion OpenStack(R) to use customer-provided certificates for all endpoints. It will explain how to configure the existing load balancer to terminate SSL connections with a client provided server certificate and re-encrypt traffic to the service back ends served by stunnel proxies. Here you will also add the client-provided trust chain to the ECA trust file. Note that while this eliminates the need to reconfigure serices to use the certificate you as the customer provide, services may need to be restarted.</p>
+<p>Following this procedure will configure HP <tm tmtype="reg">Helion Openstack</tm> to use customer-provided certificates for all endpoints. It will explain how to configure the existing load balancer to terminate SSL connections with a client provided server certificate and re-encrypt traffic to the service back ends served by stunnel proxies. Here you will also add the client-provided trust chain to the ECA trust file. Note that while this eliminates the need to reconfigure serices to use the certificate you as the customer provide, services may need to be restarted.</p>
 <section id="the-problem"> <title>The problem</title>
 <p>Endpoints currently serve ECA signed certs and these cannot be validated without the ECA CA cert installed on client machines.</p>
 </section>
@@ -39,7 +39,7 @@
 <ol>
   <li>    Install the supplied certificate's trust chain (CA certificates) to all overcloud, undercloud and seed nodes.
 </li>
-  <li>   Restart all HP Helion OpenStack(R) services on all nodes.
+  <li>   Restart all HP <tm tmtype="reg">Helion Openstack</tm> services on all nodes.
 </li>
   <li>   Configure haproxy to use the supplied certificate to terminate the TLS connections and re-encrypt to service nodes.
 </li>
@@ -48,7 +48,7 @@
 <p>The above steps are described in detail in the following sections.</p>
 </section>
 <section id="updating-the-certificate-store-in-overcloud-nodes"> <title>Updating the certificate store in overcloud nodes</title>
-<p>The services use the endpoints to talk to other services and they'll fail validation because they're designed to find the ECA certificate in a specific file location. They also need to be told to trust the client provided server certificate. Because the cacert location has been hard coded in HP Helion OpenStack(R) 1.1.1,  the suggested solution is to put both public CA-signed certtificates and internal CA-signed certificates in a single file.</p>
+<p>The services use the endpoints to talk to other services and they'll fail validation because they're designed to find the ECA certificate in a specific file location. They also need to be told to trust the client provided server certificate. Because the cacert location has been hard coded in HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1,  the suggested solution is to put both public CA-signed certtificates and internal CA-signed certificates in a single file.</p>
 </section>
 <section id="getting-a-customer-certificate"> <title>Getting a customer certificate</title>
 <p>To get a customer certificate you need to follow a procedure similar to this:</p>
@@ -128,7 +128,7 @@ update-ca-certificates --fresh</codeblock>
 <p>This will also ensure that the trust chain update will persist across updates.</p>
 </section>
 <section id="restarting-services"> <title>Restarting Services</title>
-<p>All OpenStack(R) services on all nodes must be restarted to reread the trust chains.</p>
+<p>All <tm tmtype="reg">OpenStack</tm> services on all nodes must be restarted to reread the trust chains.</p>
 </section>
 <section id="reconfiguring-haproxy"> <title>Reconfiguring HAProxy</title>
 <p>Currently we use the haproxy as a software load balancer to tunnel TLS traffic to the service nodes. Haproxy listens on the virtual IP (VIP). A sample configuration might look like this:</p>

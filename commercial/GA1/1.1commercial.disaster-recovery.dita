@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic22433">
-<title>HP Helion OpenStack(R) 1.1: Disaster Recovery</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Disaster Recovery</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version2" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.disaster-recovery.md-->
  <!--permalink: /helion/openstack/1.1/disaster/recovery/--></p>
-<p>Disaster Recovery (DR) and Business Continuity Planning (BCP) plans are standard requirements for information security management systems (ISMSs) and compliance activities. These plans must be documented and periodically tested to make sure they work. For OpenStack(R) deployments, key areas include the management security domain, and any identified single points of failure (SPOFs).</p>
+<p>Disaster Recovery (DR) and Business Continuity Planning (BCP) plans are standard requirements for information security management systems (ISMSs) and compliance activities. These plans must be documented and periodically tested to make sure they work. For <tm tmtype="reg">OpenStack</tm> deployments, key areas include the management security domain, and any identified single points of failure (SPOFs).</p>
 <section id="recovering-from-a-cloud-os-failure"> <title>Recovering from a Cloud (OS) Failure</title>
 <p>This section discusses recovering a cloud deployment after a disaster.
 The procedures in this section explain how to recover your cloud after a disaster.</p>
@@ -41,7 +41,7 @@ The procedures in this section explain how to recover your cloud after a disaste
 <p>A compute node (<codeph>nova-compute</codeph>)</p>
 </li>
 <li>
-<p>A Storage Area Network (SAN) used by OpenStack(R) Block Storage (<codeph>cinder-volumes</codeph>)</p>
+<p>A Storage Area Network (SAN) used by <tm tmtype="reg">OpenStack</tm> Block Storage (<codeph>cinder-volumes</codeph>)</p>
 </li>
 </ol>
 <p>The worst case disaster scenario for a cloud is a loss of power, in which case all components, disks, network, are affected. Before a power loss:</p>
@@ -91,7 +91,7 @@ The procedures in this section explain how to recover your cloud after a disaste
 
 <p>You must determine the current relationship from a volume to its instance, because you will re-create the attachment.</p>
 
-<p>You can find this relationship by running <codeph>nova volume-list</codeph>. Note that the <b>nova</b> client includes the ability to get volume information from OpenStack(R) Block Storage (Cinder).</p>
+<p>You can find this relationship by running <codeph>nova volume-list</codeph>. Note that the <b>nova</b> client includes the ability to get volume information from <tm tmtype="reg">OpenStack</tm> Block Storage (Cinder).</p>
 </li>
 <li>
 <p>Update the database</p>
@@ -240,7 +240,7 @@ For additional Disaster Recovery Plan (DRP) information, see <xref href="http://
 </codeblock>
 </li>
 <li>
-<p>To preserve the user disk data on the evacuated server, deploy OpenStack(R) Compute with a shared file system. To configure your system, see <xref href="http://docs.openstack.org/admin-guide-cloud/content/section_configuring-compute-migrations.html" scope="external" format="html" >Configure migrations</xref>. In the following example, the password remains unchanged:</p>
+<p>To preserve the user disk data on the evacuated server, deploy <tm tmtype="reg">OpenStack</tm> Compute with a shared file system. To configure your system, see <xref href="http://docs.openstack.org/admin-guide-cloud/content/section_configuring-compute-migrations.html" scope="external" format="html" >Configure migrations</xref>. In the following example, the password remains unchanged:</p>
 
 <codeblock>
 <codeph>$ nova evacuate evacuated_server_name host_b --on-shared-storage    
@@ -263,7 +263,7 @@ i-000015b9 at3-ui02 running nectarkey (376, np-rcc54) 0 m1.xxlarge 2012-06-19T00
 </codeblock>
 </li>
 <li>
-<p>Review the status of the host by querying the Compute database. Important information is highlighted below. The following example converts an EC2 API instance ID into an OpenStack(R) ID. If you used the nova commands, you can substitute the ID directly. You can find the credentials for your database in <codeph>/etc/nova.conf</codeph>.</p>
+<p>Review the status of the host by querying the Compute database. Important information is highlighted below. The following example converts an EC2 API instance ID into an <tm tmtype="reg">OpenStack</tm> ID. If you used the nova commands, you can substitute the ID directly. You can find the credentials for your database in <codeph>/etc/nova.conf</codeph>.</p>
 
 <codeblock>
 <codeph>mysql&gt; SELECT * FROM instances WHERE id = CONV('15b9', 16, 10) \G;
@@ -324,7 +324,7 @@ i-000015b9 at3-ui02 running nectarkey (376, np-rcc54) 0 m1.xxlarge 2012-06-19T00
 <p>The above database update and <codeph>nova reboot</codeph> command are typically all that are required to recover a VM from a failed host. However, if further problems occur, consider looking at recreating the network filter configuration using <codeph>virsh</codeph>, restarting the Compute services or updating the <codeph>vm_state</codeph> and <codeph>power_state</codeph> in the Compute database.</p>
 </section>
 <section id="recover-from-a-uidgid-mismatch"> <title>Recover from, a UID/GID mismatch</title>
-<p>When running OpenStack(R) Compute, using a shared file system or an automated configuration tool, you could encounter a situation where some files on your compute node are using the wrong UID or GID.</p>
+<p>When running <tm tmtype="reg">OpenStack</tm> Compute, using a shared file system or an automated configuration tool, you could encounter a situation where some files on your compute node are using the wrong UID or GID.</p>
 <p>This causes a number of errors, such as being unable to do live migration or start virtual machines.</p>
 <p>The following procedure runs on <codeph>nova-compute</codeph> hosts, based on the KVM hypervisor, and should restore the situation:</p>
 <p>
@@ -369,7 +369,7 @@ i-000015b9 at3-ui02 running nectarkey (376, np-rcc54) 0 m1.xxlarge 2012-06-19T00
 </ol>
 </section>
 <section id="activepassive"> <title>Active/Passive</title>
-<p>In an active/passive configuration, systems are set up to bring additional resources online to replace those that have failed. For example, OpenStack(R) would write to the main database while maintaining a disaster recovery database that can be brought online in the event that the main database fails.</p>
+<p>In an active/passive configuration, systems are set up to bring additional resources online to replace those that have failed. For example, <tm tmtype="reg">OpenStack</tm> would write to the main database while maintaining a disaster recovery database that can be brought online in the event that the main database fails.</p>
 <p>Typically, an active/passive installation for a stateless service would maintain a redundant instance that can be brought online when required. Requests may be handled using a virtual IP address to facilitate return to service with minimal reconfiguration required.</p>
 <p>A typical active/passive installation for a stateful service maintains a replacement resource that can be brought online when required. A separate application (such as Pacemaker or Corosync) monitors these services, bringing the backup online as necessary.</p>
 </section>

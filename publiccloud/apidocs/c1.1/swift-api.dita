@@ -146,7 +146,7 @@ in <xref type="section" href="#topic150798/maturity_level">Maturity Level</xref>
 <row>
 <entry align="left"/>
   <entry align="left"/>
-  <entry align="left">Replaced "tenant" with "project/tenant" throughout the document. In OpenStack(R) "project" is replacing "tenant". In both cases, the <i>Id</i> is the same as the HP Helion Cloud Object Storage service <i>account</i>.</entry>
+  <entry align="left">Replaced "tenant" with "project/tenant" throughout the document. In <tm tmtype="reg">OpenStack</tm> "project" is replacing "tenant". In both cases, the <i>Id</i> is the same as the HP Helion Cloud Object Storage service <i>account</i>.</entry>
 </row>
 <row>
 <entry align="left"/>
@@ -245,7 +245,7 @@ Object names may not end with '/.' or '/..'. The object name length is limited t
 <p>Although you use URL-encoding to specify the URI of a container or object, when the API returns names (as in listing a container), the displayed names are not URL-encoded (i.e., they are the UTF-8 encoded names).</p>
 </section>
 <section id="23-consistency"> <title>2.3 Consistency</title>
-<p>The HP Helion Object Storage service is based on OpenStack(R) Swift. This provides an "eventual consistency" model. This means that when you update the system in some way, you are not necessarily guaranteed to have the update propagated to all parts of the system at once. This is a consequence of how the system operates. The HP Public Cloud Object Storage system comprises 100s of servers, uses multiple copies of data and multiple availability zones to achieve very high scalability (in terms of objects stored) and very high availability for the data. In such a design, consistency is traded off to achieve high scale and availability.</p>
+<p>The HP Helion Object Storage service is based on <tm tmtype="reg">OpenStack</tm> Swift. This provides an "eventual consistency" model. This means that when you update the system in some way, you are not necessarily guaranteed to have the update propagated to all parts of the system at once. This is a consequence of how the system operates. The HP Public Cloud Object Storage system comprises 100s of servers, uses multiple copies of data and multiple availability zones to achieve very high scalability (in terms of objects stored) and very high availability for the data. In such a design, consistency is traded off to achieve high scale and availability.</p>
 <p>As the name implies, the eventual consistency means that after updates, the update will be <i>eventually</i> visible to all parts of the system. In practice, you can rely on read-after-create consistency. That it, immediately after creating an object, you will be able to read or access that object. However, if you replace an object with a new copy, there are situations where the system might return the original object. This requires a specific sequence of server failures to end up in this situation and is unlikely to occur very often.</p>
 <p>A much more common inconsistency you may observe is that after you create, replace or delete an object, the container may not be updated to list the object -- or may have the timestamp of an older object. So when you list the contents of a container, it's possible the list contains objects that were deleted just before you performed the list operation. Similarly, the <xref type="section" href="#topic150798/x_account_object_count_response">X-Account-Object-Count</xref> metadata may take some time to update after objects are created or deleted.</p>
 <p>As far as possible, you should design applications to account for such possible inconsistencies.</p>
@@ -506,7 +506,7 @@ request header is used by the API to include the token in the request.</p>
 </li>
 </ul>
 <p>In addition, to credentials, you also specify a project -- either the Id or project Name. With your credentials and project, the Identity service checks to see whether you have activated the Object Storage service. If so, it returns an authentication token and the endpoints to all regions of the Object Storage service that you are activated for. See <xref type="section" href="#topic150798/service_catalog">Service Catalog</xref> for an example of how the authentication token and endpoints are returned.</p>
-<p>There are legacy OpenStack(R) Object Store APIs that used TempAuth or Swauth as their identity server. The Identity service offers a compatible interface. You use your username, password and project Id as shown in the following example. This example uses curl. The X-Storage-Url response header contains the Object Storage endpoint (including your account) and the X-Auth-Token response header contains your authentication token.</p>
+<p>There are legacy <tm tmtype="reg">OpenStack</tm> Object Store APIs that used TempAuth or Swauth as their identity server. The Identity service offers a compatible interface. You use your username, password and project Id as shown in the following example. This example uses curl. The X-Storage-Url response header contains the Object Storage endpoint (including your account) and the X-Auth-Token response header contains your authentication token.</p>
 <codeblock>
   <codeph>$ curl -i https://region-a.geo-1.identity.hpcloudsvc.com:35357/auth/v1.0/ -X GET -H 'x-auth-user: 12345678912345:sally' -H 'x-auth-key: MyPassword'
 
@@ -598,14 +598,14 @@ website to act as a proxy for the request.</p>
 <section id="2751-supported-methods"> <title>2.7.5.1 Supported Methods</title>
 <p>TempURL is designed to support GET, PUT, and HEAD requests only. POST is expected to be handled by <xref type="section" href="#topic150798/formpost">FormPost</xref>.</p>
 </section>
-<section id="2752-differences-between-object-storage-and-openstack-swift-tempurl-signature-generation"> <title>2.7.5.2 Differences Between Object Storage and OpenStack(R) Swift TempURL Signature Generation</title>
-<p>There are two differences between Object Storage and OpenStack(R) Swift TempURL signature generation:</p>
+<section id="2752-differences-between-object-storage-and-openstack-swift-tempurl-signature-generation"> <title>2.7.5.2 Differences Between Object Storage and <tm tmtype="reg">OpenStack</tm> Swift TempURL Signature Generation</title>
+<p>There are two differences between Object Storage and <tm tmtype="reg">OpenStack</tm> Swift TempURL signature generation:</p>
 <ul>
 <li>
-<p>OpenStack(R) Swift Temporary URLs (TempURL) required the X-Account-Meta-Temp-URL-Key header be set on the Swift account. In Object Storage you do not need to do this. Instead we use Access Keys to provide similar functionality.</p>
+<p><tm tmtype="reg">OpenStack</tm> Swift Temporary URLs (TempURL) required the X-Account-Meta-Temp-URL-Key header be set on the Swift account. In Object Storage you do not need to do this. Instead we use Access Keys to provide similar functionality.</p>
 </li>
 <li>
-<p>Object Storage Temporary URLs require the user's Project ID and Access Key ID to be prepended to the signature. OpenStack(R) Swift does not.</p>
+<p>Object Storage Temporary URLs require the user's Project ID and Access Key ID to be prepended to the signature. <tm tmtype="reg">OpenStack</tm> Swift does not.</p>
 </li>
 </ul>
 </section>
@@ -729,15 +729,15 @@ signature is explained in more detail later. You can see your Project Id in the 
   <p>The file input element(s) must be specified <i>after</i> the redirect, max_file_size, max_file_count, expires and signature attributes.</p>
 </lq>
 </section>
-<section id="2763-differences-between-object-storage-and-openstack-swift-formpost-signature-generation"> <title>2.7.6.3 Differences Between Object Storage and OpenStack(R) Swift FormPOST Signature Generation</title>
-<p>There are two differences between Object Storage and OpenStack(R) Swift FormPOST signature generation:</p>
+<section id="2763-differences-between-object-storage-and-openstack-swift-formpost-signature-generation"> <title>2.7.6.3 Differences Between Object Storage and <tm tmtype="reg">OpenStack</tm> Swift FormPOST Signature Generation</title>
+<p>There are two differences between Object Storage and <tm tmtype="reg">OpenStack</tm> Swift FormPOST signature generation:</p>
 <ul>
 <li>
-<p>OpenStack(R) Swift FormPOST requires the X-Account-Meta-Temp-URL-Key header be
+<p><tm tmtype="reg">OpenStack</tm> Swift FormPOST requires the X-Account-Meta-Temp-URL-Key header be
 set on the Swift account. In Object Storage you do not need to do this. Instead we use Access Keys to provide similar functionality.</p>
 </li>
 <li>
-<p>Object Storage FormPOST requires the user's Project ID and Access Key ID to be prepended to the signature. OpenStack(R) Swift does not.</p>
+<p>Object Storage FormPOST requires the user's Project ID and Access Key ID to be prepended to the signature. <tm tmtype="reg">OpenStack</tm> Swift does not.</p>
 </li>
 </ul>
 </section>
@@ -1971,12 +1971,12 @@ default page or a HTML directory listing.</p>
 </tgroup>
 </table>
 </section>
-<section id="222-notable-differences-from-openstack"> <title>2.22 Notable Differences from OpenStack(R)</title>
-<p>The Object Storage API is an implementation of OpenStack(R) Object
-Storage (Swift). OpenStack(R) Object Storage has core and optional features; specifically, there are a number of optional middleware components. Object Storage only supports the features described in this document. In addition, there are some differences to be aware of:</p>
+<section id="222-notable-differences-from-openstack"> <title>2.22 Notable Differences from <tm tmtype="reg">OpenStack</tm></title>
+<p>The Object Storage API is an implementation of <tm tmtype="reg">OpenStack</tm> Object
+Storage (Swift). <tm tmtype="reg">OpenStack</tm> Object Storage has core and optional features; specifically, there are a number of optional middleware components. Object Storage only supports the features described in this document. In addition, there are some differences to be aware of:</p>
 <ul>
 <li>
-<p>Object Storage naming conventions are slightly more restrictive than those described in the OpenStack(R) documentation referenced here. Specifically, containers and object names may not contain the following:</p>
+<p>Object Storage naming conventions are slightly more restrictive than those described in the <tm tmtype="reg">OpenStack</tm> documentation referenced here. Specifically, containers and object names may not contain the following:</p>
 </li>
 <li>
 <p>the double-quote character (")</p>

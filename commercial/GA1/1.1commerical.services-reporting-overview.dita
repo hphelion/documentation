@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3111">
-<title>HP Helion OpenStack(R) 1.1: Metering Service (Ceilometer) Overview</title>
+<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Metering Service (Ceilometer) Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP <tm tmtype="reg">Helion Openstack</tm>"/>
+<othermeta name="product-version2" content="HP <tm tmtype="reg">Helion Openstack</tm> 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -29,12 +29,12 @@
 
 </p>
 <p>
-<b>Note</b>: The deployment of the Helion OpenStack(R) v1.1 Metering service is considered experimental and targeted at developers investigating integration of external software applications with the Ceilometer API for showback, chargeback, and billing applications only. Only a limited set of metrics are available in the Helion OpenStack(R) v1.1 release. Developers interested in monitoring use cases should refer to the <xref href="https://wiki.openstack.org/wiki/Monasca" scope="external" format="html" >OpenStack(R) Monasca service</xref> which is targeted to be deployed in a future Helion OpenStack(R) release.</p>
-<p>The HP Helion OpenStack(R) Metering service leverages the OpenStack(R) Ceilometer service. A metering service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. No matter what purpose the data is used for, this service provides a reliable, consistent method for data collection.</p>
+<b>Note</b>: The deployment of the <tm tmtype="reg">Helion Openstack</tm> v1.1 Metering service is considered experimental and targeted at developers investigating integration of external software applications with the Ceilometer API for showback, chargeback, and billing applications only. Only a limited set of metrics are available in the <tm tmtype="reg">Helion Openstack</tm> v1.1 release. Developers interested in monitoring use cases should refer to the <xref href="https://wiki.openstack.org/wiki/Monasca" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Monasca service</xref> which is targeted to be deployed in a future <tm tmtype="reg">Helion Openstack</tm> release.</p>
+<p>The HP <tm tmtype="reg">Helion Openstack</tm> Metering service leverages the <tm tmtype="reg">OpenStack</tm> Ceilometer service. A metering service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. No matter what purpose the data is used for, this service provides a reliable, consistent method for data collection.</p>
 <section id="installation"> <title>Installation</title>
-<p>The metering service is automatically installed as part of the Helion OpenStack(R) installation process. It may be necessary to install the command-line interface (<xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >CLI</xref>) separately to perform various administrative tasks.</p>
-<p>The initial default configuration enables a limited subset of all potential meters, collecting a few essential measurements from the Nova, Cinder, Glance, and Neutron services only. With these measurements, the Ceilometer API can begin collecting basic Helion OpenStack(R) usage and status information.</p>
-<p>Additional metrics collection for all of the Helion OpenStack(R) infrastructure services, as well as other application and platform services, are targeted for future Helion OpenStack(R) releases.</p>
+<p>The metering service is automatically installed as part of the <tm tmtype="reg">Helion Openstack</tm> installation process. It may be necessary to install the command-line interface (<xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >CLI</xref>) separately to perform various administrative tasks.</p>
+<p>The initial default configuration enables a limited subset of all potential meters, collecting a few essential measurements from the Nova, Cinder, Glance, and Neutron services only. With these measurements, the Ceilometer API can begin collecting basic <tm tmtype="reg">Helion Openstack</tm> usage and status information.</p>
+<p>Additional metrics collection for all of the <tm tmtype="reg">Helion Openstack</tm> infrastructure services, as well as other application and platform services, are targeted for future <tm tmtype="reg">Helion Openstack</tm> releases.</p>
 </section>
 <section id="working-with-ceilometer"> <title>Working with Ceilometer</title>
 <p>All the Ceilometer processes have a unified configuration file that can be found at <i>/etc/ceilometer/ceilometer.conf</i> on the specific overcloud controller you are logged in to.</p>
