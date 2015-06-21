@@ -114,7 +114,7 @@ This release supports the use of a <xref href="1.1.1commerical.services-customer
 <p>
 <b><tm tmtype="reg">Openstack</tm> Services</b> - The full set of standard <xref href="1.1commerical.services-overview.dita#Openstack" ><tm tmtype="reg">Openstack</tm> services</xref> is in HP Helion <tm tmtype="reg">Openstack</tm> Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
 <p>
-<b>Other Services</b> - <xref href="1.1commerical.services-overview.dita#<tm tmtype="reg">Openstack</tm>" >Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
+<b>Other Services</b> - <xref href="1.1commerical.services-overview.dita#Openstack" >Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
 <p>
 <b>LogStash/ElasticSearch</b> - This service provides enhanced security and supportability of the cloud by offering centralized logging.</p>
 <p>

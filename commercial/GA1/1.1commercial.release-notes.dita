@@ -51,7 +51,7 @@
 <section id="110"> <title>Features in HP Helion <tm tmtype="reg">Openstack</tm> 1.1</title>
 <p>The following features have been added to HP Helion <tm tmtype="reg">Openstack</tm> 1.1:</p>
 <p>
-<b><tm tmtype="reg">Openstack</tm> Juno support</b> All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#<tm tmtype="reg">Openstack</tm>" >HP Helion <tm tmtype="reg">Openstack</tm> services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Juno</xref>.</p>
+<b><tm tmtype="reg">Openstack</tm> Juno support</b> All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#Openstack" >HP Helion <tm tmtype="reg">Openstack</tm> services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Juno</xref>.</p>
 <p>
 <b>HP Helion <tm tmtype="reg">Openstack</tm> Metering services</b> The <xref href="../../commercial/GA1/1.1commerical.services-reporting-overview.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Telemetry and Reporting service</xref> leverages the <tm tmtype="reg">Openstack</tm> Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls.</p>
 <p>
@@ -100,9 +100,9 @@
 <section id="10"> <title>Features in HP Helion <tm tmtype="reg">Openstack</tm> 1.0</title>
 <p>The following features have been added to HP Helion <tm tmtype="reg">Openstack</tm> 1.0:</p>
 <p>
-<b><tm tmtype="reg">Openstack</tm> Services</b> - The full set of standard <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#<tm tmtype="reg">Openstack</tm>" ><tm tmtype="reg">Openstack</tm> services</xref> is in HP Helion <tm tmtype="reg">Openstack</tm> Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
+<b><tm tmtype="reg">Openstack</tm> Services</b> - The full set of standard <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#Openstack" ><tm tmtype="reg">Openstack</tm> services</xref> is in HP Helion <tm tmtype="reg">Openstack</tm> Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
 <p>
-<b>Other Services</b> - <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#<tm tmtype="reg">Openstack</tm>" >Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
+<b>Other Services</b> - <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#Openstack" >Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
 <p>
 <b>LogStash/ElasticSearch</b> - This service provides enhanced security and supportability of the cloud by offering centralized logging.</p>
 <p>

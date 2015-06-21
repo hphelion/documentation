@@ -121,7 +121,7 @@
 <p>Yes. It includes an integrated <tm tmtype="reg">Linux</tm> host OS hardened and tested for this distribution. All supported hardware and software configurations are laid out in the <xref href="../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>
 </section>
 <section id="releaseversion"> <title>Which <tm tmtype="reg">Openstack</tm> release does this distribution include?</title>
-<p>All of the <xref href="../commercial/GA1/1.1commerical.services-overview.dita#<tm tmtype="reg">Openstack</tm>" >HP Helion <tm tmtype="reg">Openstack</tm> services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Juno</xref>. <xref href="http://www.hpcloud.com/learning-center" scope="external" format="html" >Learn more</xref> about HP's commitment to <tm tmtype="reg">Openstack</tm> and how we're making it even better.</p>
+<p>All of the <xref href="../commercial/GA1/1.1commerical.services-overview.dita#Openstack" >HP Helion <tm tmtype="reg">Openstack</tm> services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Juno</xref>. <xref href="http://www.hpcloud.com/learning-center" scope="external" format="html" >Learn more</xref> about HP's commitment to <tm tmtype="reg">Openstack</tm> and how we're making it even better.</p>
 </section>
 <section id="upgrade"> <title>Is the HP Helion <tm tmtype="reg">Openstack</tm> Community edition upgradable?</title>
 <p>To expand to larger, enterprise-grade installations, upgrade to the <xref href="../commercial/GA1/1.1commercial.index.dita" >full version</xref> of HP Helion <tm tmtype="reg">Openstack</tm></p>
