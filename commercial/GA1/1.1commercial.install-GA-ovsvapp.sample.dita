@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5065">
 <title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Deploying and Configuring OVSvApp on ESX hosts: Sample ovs_vapp.ini file</title>
 <titlealts>
-<searchtitle>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Deploying and Configuring OVSvApp on ESX hosts: Sample ovs_vapp.ini file</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: Deploying and Configuring OVSvApp on ESX hosts: Sample ovs_vapp.ini file</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
