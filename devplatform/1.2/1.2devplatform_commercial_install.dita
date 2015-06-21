@@ -230,7 +230,7 @@ curl --insecure https://10.0.0.10:5000 # Ignore SSL
 <b>Note:</b> This installer will check to ensure that you are installing on a compatible version of <tm tmtype="reg">Helion Openstack</tm> You will only be allowed to install Helion Development Platform if you meet a minimum <tm tmtype="reg">Helion Openstack</tm> version requirement (1.1.1). If the version of <tm tmtype="reg">Helion Openstack</tm> is not compatible, you will see the following error:</p>
 
 <codeblock>
-<codeph>You are attempting to install Helion Development Platform version 1.2 on <tm tmtype="reg">Helion Openstack</tm> Build 81.
+<codeph>You are attempting to install Helion Development Platform version 1.2 on Helion Openstack Build 81.
 Can not continue.
 Minimum required <tm tmtype="reg">Helion Openstack</tm> build number for this install is 85.  
 </codeph>
@@ -239,7 +239,7 @@ Minimum required <tm tmtype="reg">Helion Openstack</tm> build number for this in
 <p>If the version of <tm tmtype="reg">Helion Openstack</tm> can't be determined, you will see the following error:</p>
 
 <codeblock>
-<codeph>Can not identify <tm tmtype="reg">Helion Openstack</tm> version.
+<codeph>Can not identify Helion Openstack version.
 Version information not found from /root/tripleo/images/overcloud-compute*.qcow2
 Can not continue.
 Minimum required <tm tmtype="reg">Helion Openstack</tm> build number for this install is 85.  

@@ -177,7 +177,7 @@
 <li>Overcloud Horizon Dashboard access</li>
 <li>External url - <codeph>https://horizon.fqdn.com/</codeph>
 </li>
-<li>Internal url (VIP) - <codeph>http://&lt;Helion<tm tmtype="reg">Openstack</tm></codeph>
+<li>Internal url (VIP) - <codeph>http://&lt;HelionOpenstack</codeph>
 </li>
 </ul>
 <table>

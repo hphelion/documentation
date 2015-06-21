@@ -70,7 +70,7 @@
                           <codeblock>cf-mgmt.exe ^
  --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
  --os-username &lt;OS_USERNAME from openstackrc&gt; ^
- --os-password &lt;<tm tmtype="reg">Openstack</tm> password&gt; ^
+ --os-password &lt;Openstack password&gt; ^
  --os-tenant-id &lt;OS_TENANT_ID from openstackrc&gt; ^
  --os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^
  --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
@@ -81,7 +81,7 @@ add-role dea ^
                           <codeblock>cf-mgmt.exe ^
  --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
  --os-username &lt;OS_USERNAME from openstackrc&gt; ^
- --os-password &lt;<tm tmtype="reg">Openstack</tm> password&gt; ^
+ --os-password &lt;Openstack password&gt; ^
  --os-tenant-id &lt;OS_TENANT_ID from openstackrc&gt; ^
  --os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^
  --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^

@@ -187,7 +187,7 @@ For example:
 
 * NTP servers are validated
 
-b. The seed is customized and its <tm tmtype="reg">Openstack</tm> services are configured and started. The undercloud node is registered with the seed's ironic service
+b. The seed is customized and its Openstack services are configured and started. The undercloud node is registered with the seed's ironic service
 
 c. The undercloud is deployed, booted, and its heat stack is configured.
 The undercloud <tm tmtype="reg">Openstack</tm> services are then configured and started.
