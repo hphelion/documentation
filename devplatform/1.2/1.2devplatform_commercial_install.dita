@@ -230,7 +230,7 @@ curl --cacert ephemeral-cacert.crt https://10.0.0.10:5000 # Use own CACert
 <codeblock>
 <codeph>You are attempting to install Helion Development Platform version 1.2 on Helion Openstack Build 81.
 Can not continue.
-Minimum required <tm tmtype="reg">Helion Openstack</tm> build number for this install is 85.  
+Minimum required Helion Openstack build number for this install is 85.  
 </codeph>
 </codeblock>
 
@@ -240,7 +240,7 @@ Minimum required <tm tmtype="reg">Helion Openstack</tm> build number for this in
 <codeph>Can not identify Helion Openstack version.
 Version information not found from /root/tripleo/images/overcloud-compute*.qcow2
 Can not continue.
-Minimum required <tm tmtype="reg">Helion Openstack</tm> build number for this install is 85.  
+Minimum required Helion Openstack build number for this install is 85.  
 </codeph>
 </codeblock>
 </li>

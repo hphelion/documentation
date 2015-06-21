@@ -108,18 +108,18 @@
     - (optional) Specifies that you are using a Windows volume license. If this is specified, there is no need to specify --product-key (means you are using Windows VL)
 
 --os-network-id
-    - Openstack network id used for building the <tm tmtype="reg">Openstack</tm> image. Can be found 
+    - Openstack network id used for building the Openstack image. Can be found 
     - in Horizon interface under Project-&gt;Network-&gt;Networks-&gt;(network name)-&gt;ID
 
 --os-key-name
-    - <tm tmtype="reg">Openstack</tm> name of the key used for building the <tm tmtype="reg">Openstack</tm> image. Can be found
+    - Openstack name of the key used for building the <tm tmtype="reg">Openstack</tm> image. Can be found
     - in Horizon interface under Project-&gt;Compute-&gt;Access &amp; Security-&gt;Key Pairs
 
 --os-security-group
-    - <tm tmtype="reg">Openstack</tm> security group used for building the <tm tmtype="reg">Openstack</tm> image
+    - Openstack security group used for building the <tm tmtype="reg">Openstack</tm> image
  
 --os-flavor
-    - <tm tmtype="reg">Openstack</tm> flavor used for building the <tm tmtype="reg">Openstack</tm> image. Example: standard.medium
+    - Openstack flavor used for building the <tm tmtype="reg">Openstack</tm> image. Example: standard.medium
 
 --insecure
     - (optional) create a Windows image for a Development Platform installation that does not have an HTTPS certificate
