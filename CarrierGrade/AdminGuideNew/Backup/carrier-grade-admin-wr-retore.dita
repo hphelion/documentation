@@ -50,7 +50,7 @@
 <ol>
 <li>
 <p>
-<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_<tm tmtype="reg">Openstack</tm>" scope="external" format="html" >Install the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade software on controller-0</xref>.</p>
+<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_Openstack" scope="external" format="html" >Install the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade software on controller-0</xref>.</p>
 
 <p>When the software installation is complete, you should be able to log in using the host's console and the web administration interface.</p>
 </li>
