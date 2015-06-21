@@ -18,7 +18,7 @@
   <!--permalink: /-->
   <topicref href="publiccloud/index.dita"/>
   <topicref href="commercial/GA1/1.1commercial.index.dita"
-    navtitle="HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Documentation Home">
+    navtitle="HP Helion Openstack(R) 1.1: Documentation Home">
     <topicref href="commercial/GA1/1.1commercial.whatsnew.dita"/>
     <topicref href="commercial/GA1/1.1.1commercial.helion-update.dita"/>
     <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
@@ -276,13 +276,13 @@
         <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"/>
       </topichead>
     </topicref>
-    <topichead navtitle="HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Post-Installation Tasks">
+    <topichead navtitle="HP Helion Openstack(R) 1.1: Post-Installation Tasks">
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"/>
       <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita"/>
       <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
       <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
     </topichead>
-    <topichead navtitle="HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Using the Undercloud Horizon Dashboard">
+    <topichead navtitle="HP Helion Openstack(R) 1.1: Using the Undercloud Horizon Dashboard">
       <topicref href="commercial/GA1/1.1commercial.using.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-admin-settings.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-resources-overview.dita"/>
@@ -293,7 +293,7 @@
       <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storevirtual.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita"/>
     </topichead>
-    <topichead navtitle="HP <tm tmtype="reg">Helion Openstack</tm> 1.1: System Resotre and Recovery">
+    <topichead navtitle="HP Helion Openstack(R) 1.1: System Resotre and Recovery">
       <topicref
         href="commercial/GA1/1.1commerical.services-remove-replace-failed-overcloud-nodes.dita"/>
       <topicref href="commercial/GA1/1.1commerical.high-availability-restore.dita"/>
@@ -329,7 +329,7 @@
       <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-backup.dita"/>
       <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-installation.dita"/>
     </topicref>
-    <topichead navtitle="HP <tm tmtype="reg">Helion Openstack</tm> 1.1: License Files">
+    <topichead navtitle="HP Helion Openstack(R) 1.1: License Files">
       <topicref href="commercial/GA1/1.1.13rd-party-license-agreements.dita"/>
       <topicref href="commercial/GA1/1.13rd-party-license-agreements.dita"/>
       <topicref href="commercial/GA1/1.1commercial.eula.dita"/>
