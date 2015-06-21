@@ -66,7 +66,7 @@
 </ul>
 </section>
 <section id="usage"> <title>Usage</title>
-<p>To use the script, you need to have the following OpenStack(R) environment variables set:</p>
+<p>To use the script, you need to have the following <tm tmtype="reg">Openstack</tm> environment variables set:</p>
 <ul>
 <li>OS_TENANT_NAME</li>
 <li>OS_USERNAME</li>
@@ -75,7 +75,7 @@
 <li>OS_TENANT_ID</li>
 <li>OS_AUTH_URL</li>
 </ul>
-<p>It is recommended to set these environment variables using the OpenStack(R) RC file from the target environment. This can be obtained in Horizon, under Project-&gt;Compute-&gt;Access &amp; Security-&gt;API Access-&gt;<b>Download OpenStack(R) RC File</b>.</p>
+<p>It is recommended to set these environment variables using the <tm tmtype="reg">Openstack</tm> RC file from the target environment. This can be obtained in Horizon, under Project-&gt;Compute-&gt;Access &amp; Security-&gt;API Access-&gt;<b>Download <tm tmtype="reg">Openstack</tm> RC File</b>.</p>
 </section>
 <section id="commandline"> <title>Command-line arguments</title>
 <p>Syntax: <codeph>create-glazier</codeph>
@@ -107,18 +107,18 @@
     - (optional) Specifies that you are using a Windows volume license. If this is specified, there is no need to specify --product-key (means you are using Windows VL)
 
 --os-network-id
-    - OpenStack(R) network id used for building the OpenStack(R) image. Can be found 
+    - <tm tmtype="reg">Openstack</tm> network id used for building the <tm tmtype="reg">Openstack</tm> image. Can be found 
     - in Horizon interface under Project-&gt;Network-&gt;Networks-&gt;(network name)-&gt;ID
 
 --os-key-name
-    - OpenStack(R) name of the key used for building the OpenStack(R) image. Can be found
+    - <tm tmtype="reg">Openstack</tm> name of the key used for building the <tm tmtype="reg">Openstack</tm> image. Can be found
     - in Horizon interface under Project-&gt;Compute-&gt;Access &amp; Security-&gt;Key Pairs
 
 --os-security-group
-    - OpenStack(R) security group used for building the OpenStack(R) image
+    - <tm tmtype="reg">Openstack</tm> security group used for building the <tm tmtype="reg">Openstack</tm> image
  
 --os-flavor
-    - OpenStack(R) flavor used for building the OpenStack(R) image. Example: standard.medium
+    - <tm tmtype="reg">Openstack</tm> flavor used for building the <tm tmtype="reg">Openstack</tm> image. Example: standard.medium
 
 --insecure
     - (optional) create a Windows image for a Development Platform installation that does not have an HTTPS certificate

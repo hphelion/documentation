@@ -265,7 +265,7 @@ Minimum required <tm tmtype="reg">Helion Openstack</tm> build number for this in
 <section id="step-1-retrieve-the-als-service-update-from-hdn"> <title>Step 1: Retrieve the ALS Service Update from HDN</title>
 </section>
 <section id="preparation"> <title>Preparation</title>
-<p>Be sure that the <i>Admin</i> project is checked from the Project selector before you check for service updates. The Project selector is located at the top of the page to the right of the OpenStack(R) logo. This process will fail if a tenant/project other than "Admin" is selected.</p>
+<p>Be sure that the <i>Admin</i> project is checked from the Project selector before you check for service updates. The Project selector is located at the top of the page to the right of the <tm tmtype="reg">Openstack</tm> logo. This process will fail if a tenant/project other than "Admin" is selected.</p>
 <p>
   <image href="../../media/DevPlatInstallAdminCheck.png"/>
 </p>
