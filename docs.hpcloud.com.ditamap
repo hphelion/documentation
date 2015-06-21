@@ -52,7 +52,77 @@
         <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-object-overview.dita">
-        <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita"/>
+        <!-- All things Swift-->
+        <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita">
+          <topicref
+            href="commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.dita"/>
+          <topicref href="commercial/GA1/1.1commerical.services-swift-deployment.dita"/>
+          <topichead navtitle="Scale Up or Expand">
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-expand-swift-cluster.dita">
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-storage-node.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-proxy-node.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-account-container.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-starter-object-ring.dita"
+              />
+            </topicref>
+          </topichead>
+          <topichead navtitle="Shrink or Scale Down">
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-swift-cluster.dita">
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-proxy-node.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"
+              />
+            </topicref>
+          </topichead>
+          <topichead navtitle="Monitor">
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-cluster.dita">
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-disk.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-replica-swift-status.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-check.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-swift-services.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-proxy-health-checks.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-interface.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-mount-points.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-disk-drive(s).dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-access-ping.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-drive-audit.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-file-ownership.dita"/>
+              <topicref
+                href="commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.dita"
+              />
+            </topicref>
+          </topichead>
+          <topicref href="commercial/GA1/1.1commerical.services-object-pyringos.dita">
+            <topicref href="commercial/GA1/1.1commerical.services-swift-deployment-part-power.dita"
+            />
+          </topicref>
+        </topicref>
+          <!--permalink: /helion/openstack/1.1/GA1/services/object/pyringos/-->
+          
+        
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-orchestration-overview.dita"/>
       <topicref href="commercial/GA1/1.1commerical.services-volume-overview.dita">
@@ -74,7 +144,6 @@
       <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita">
         <topicref href="commercial/GA1/ceph/1.1commerical.services-ceph-archref.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-pre-requisite.dita"/>
-      </topicref>
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita"/>
         <topicref
           href="commercial/GA1/ceph/1.1commercial.ceph-cluster-client-node-configuration-ansible.dita"/>
@@ -97,6 +166,7 @@
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-pools.dita"/>
         <topicref
           href="commercial/GA1/ceph/1.1commercia.ceph-high-availability-RADOSGW-authentication.dita"/>
+      </topicref>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-glossary.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-related-topics.dita"/>
@@ -123,64 +193,7 @@
       <topicref href="commercial/GA1/1.1commerical.services-dns-overview.dita">
         <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"/>
       </topicref>
-      <!-- All things Swift-->
-      <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita">
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-cluster.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-disk.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-disk-drive(s).dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-expand-swift-cluster.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-file-ownership.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-check.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-swift-services.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-access-ping.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-interface.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-drive-audit.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-proxy-health-checks.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-mount-points.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-replica-swift-status.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-swift-cluster.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-account-container.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-storage-node.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-starter-object-ring.dita"/>
-        <topicref href="commercial/GA1/1.1commerical.services-swift-deployment-add-proxy-node.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-proxy-node.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>
-        <topicref href="commercial/GA1/1.1commerical.services-swift-deployment-part-power.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.dita"/>
-        <topicref
-          href="commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.dita"/>
-        <!--permalink: /helion/openstack/1.1/GA1/services/object/pyringos/-->
-        <topicref href="commercial/GA1/1.1commerical.services-object-pyringos.dita"/>
-        <topicref href="commercial/GA1/1.1commerical.services-swift-deployment.dita"/>
-      </topicref>
-
-
-      <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita"/>
-      <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"/>
+      
       <!-- Using HOS -->
       <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-storage-storeserv.dita"/>
@@ -264,9 +277,9 @@
       </topichead>
     </topicref>
     <topichead navtitle="HP Helion OpenStack(R) 1.1: Post-Installation Tasks">
+      <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"/>
       <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita"/>
       <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"/>
       <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
     </topichead>
     <topichead navtitle="HP Helion OpenStack(R) 1.1: Using the Undercloud Horizon Dashboard">
@@ -287,6 +300,9 @@
       <topicref href="commercial/GA1/1.1commercial.disaster-recovery.dita"/>
     </topichead>
     
+    <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita">
+      <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"/>
+    </topicref>
     <!-- Troubleshooting -->
     <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita">
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"/>
@@ -305,7 +321,7 @@
     </topicref>
     <topicref href="commercial/GA1/1.1commercial.related-topics.dita"/>
 
-    <!-- Installation related -->
+    <!-- backup -->
       <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"/>
     <!-- Update -->
     <!-- FCP -->
