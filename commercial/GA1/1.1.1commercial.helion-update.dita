@@ -108,7 +108,7 @@ nova show &lt;instance id&gt;
 </ol>
 <p>A sample of the output is:</p>
 <codeblock>
-  <codeph>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 Build 81
+  <codeph>HP Helion Openstack 1.1 Build 81
 </codeph>
 </codeblock>
 </section>
@@ -147,13 +147,13 @@ cd helion-update-1.1-to-&lt;version&gt;
 </codeblock>
 </li>
 <li>
-<p>Download the update kit <codeph>HP_Helion_<tm tmtype="reg">OpenStack</tm></codeph> to the <codeph>helion-update</codeph> directory on the seed VM.</p>
+<p>Download the update kit <codeph>HP_Helion OpenStack </codeph> to the <codeph>helion-update</codeph> directory on the seed VM.</p>
 </li>
 <li>
 <p>Extract the update kit by entering:</p>
 
 <codeblock>
-<codeph>tar -xvzf `HP_Helion_<tm tmtype="reg">OpenStack</tm>
+<codeph>tar -xvzf `HP_Helion_OpenStack 
 </codeph>
 </codeblock>
 </li>
@@ -193,7 +193,7 @@ cd helion-update-1.1-to-&lt;version&gt;
 
 <p>The space required cannot exceed the space available (that is, the output from the <codeph>du -hcs</codeph> command).</p>
 
-<p>If you need to free up space, you can safely remove the <codeph>HP_Helion_<tm tmtype="reg">OpenStack</tm></codeph> update kit that you just extracted</p>
+<p>If you need to free up space, you can safely remove the <codeph>HP_Helion_>OpenStack</codeph> update kit that you just extracted</p>
 </li>
 <li>
 <p>To prepare the seed host for starting the update, verify that the following files exist in the seed VM.</p>
@@ -972,7 +972,7 @@ ERROR: Backup of seed failed!!!!
 + exit 1
 </codeph>
 </codeblock>
-<p>Your backup attempt has failed. To recover from this state, you need to get <codeph>rabbitmq</codeph>, <codeph>mysql</codeph> and <codeph><tm tmtype="reg">OpenStack</tm></codeph> services running again by running the seed recovery script. to do this, enter:</p>
+<p>Your backup attempt has failed. To recover from this state, you need to get <codeph>rabbitmq</codeph>, <codeph>mysql</codeph> and <codeph>OpenStack</codeph> services running again by running the seed recovery script. to do this, enter:</p>
 <codeblock>
   <codeph>ssh root@&lt;seed-ip&gt;
 cd helion-update-1.1-to-&lt;version&gt;/tripleo/helion-update/seed_update

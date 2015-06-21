@@ -578,7 +578,7 @@ sudo -i
 <li>
 <p>If you are using MSDNS (Microsoft DNS Server) you must install an agent on each the Microsoft DNS server. These steps must be performed on each Microsoft DNS server to install the agent:</p>
 
-<p>The installer for the agent is in <codeph>/opt/stack/designate-msdnsagent/<tm tmtype="reg">OpenStack</tm></codeph> on the DNSaaS Installer VM; this is the one that you booted to install DNSaaS. <!--A BR tag was used here in the original source.-->Download this file and distribute it to all the target Microsoft DNS Servers.</p>
+<p>The installer for the agent is in <codeph>/opt/stack/designate-msdnsagent/OpenStack</codeph> on the DNSaaS Installer VM; this is the one that you booted to install DNSaaS. <!--A BR tag was used here in the original source.-->Download this file and distribute it to all the target Microsoft DNS Servers.</p>
 
 <p>a. Run the install.</p>
 
