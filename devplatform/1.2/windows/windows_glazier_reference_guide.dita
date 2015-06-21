@@ -107,7 +107,7 @@
     - (optional) Specifies that you are using a Windows volume license. If this is specified, there is no need to specify --product-key (means you are using Windows VL)
 
 --os-network-id
-    - Openstack network id used for building the <tm tmtype="reg">Openstack</tm> image. Can be found 
+    - Openstack network id used for building the Openstack image. Can be found 
     - in Horizon interface under Project-&gt;Network-&gt;Networks-&gt;(network name)-&gt;ID
 
 --os-key-name

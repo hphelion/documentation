@@ -55,7 +55,7 @@ Successfully logged into [https://api.example.hphelion.com]</codeblock>
           the <codeph>helion target</codeph>
             command:<codeblock>export HELION_TARGET='api.helion-xxx2.local'</codeblock><p>This
             target is used until the variable is unset or the terminal is closed. To unset
-          it:</p><codeblock><p>unset HELION_TARGET</p></codeblock></li>
+          it:</p><codeblock>unset HELION_TARGET</codeblock></li>
 </ol>
 </section>
 <section id="selecting-org-space"> <title>Selecting Org &amp; Space</title>

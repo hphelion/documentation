@@ -190,7 +190,7 @@ For example:
 b. The seed is customized and its Openstack services are configured and started. The undercloud node is registered with the seed's ironic service
 
 c. The undercloud is deployed, booted, and its heat stack is configured.
-The undercloud <tm tmtype="reg">Openstack</tm> services are then configured and started.
+The undercloud Openstack services are then configured and started.
 The overcloud nodes are registered with the undercloud's ironic service.
 
 d. The overcloud controller heat stack is configured, booting and deploying images to the Overcloud Controller nodes and the SwiftStorage nodes.
