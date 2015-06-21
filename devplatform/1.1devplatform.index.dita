@@ -127,7 +127,7 @@
   <b>Helion Command-Line Interface (CLI)</b>
   <!--A BR tag was used here in the original source.-->
 </p>
-<p>Use the Helion CLI to deploy your app to the development platform through the command line. <xref href="../devplatform/helion/user/client/1.1index.dita#helion-client-setup" >Setup</xref> instructions are available for here both Windows(R) and Unix/Mac operating systems.</p>
+<p>Use the Helion CLI to deploy your app to the development platform through the command line. <xref href="../devplatform/helion/user/client/1.1index.dita#helion-client-setup" >Setup</xref> instructions are available for here both <tm tmtype="reg">Windows</tm> and Unix/Mac operating systems.</p>
 <p>
 <b>Eclipse Plugin</b>
 <!--A BR tag was used here in the original source.-->
