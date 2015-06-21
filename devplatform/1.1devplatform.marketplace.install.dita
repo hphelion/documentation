@@ -139,7 +139,7 @@ The Marketplace, currently in beta, is a repository where teams can download the
 </ul>
 <ol>
 <li>Select the <b>image</b> to use. In this case there is only one image, the Vertica 7 Community Edition (Debian) image. </li>
-<li>Add a keypair if you don't have one already, by selecting the <b>+</b> link. If you are adding a keypair, you will be prompted to supply a name and a public key. You can generate a public key in *nix using <xref href="http://linux.die.net/man/1/ssh-keygen" scope="external" format="html" >ssh-keygen</xref> or WindowsÂ(R) using <xref href="http://the.earth.li/~sgtatham/putty/0.63/htmldoc/Chapter8.html#pubkey-puttygen" scope="external" format="html" >puTTYgen</xref>. Insert public key text and click the <b>Import Key Pair</b> button.</li>
+<li>Add a keypair if you don't have one already, by selecting the <b>+</b> link. If you are adding a keypair, you will be prompted to supply a name and a public key. You can generate a public key in *nix using <xref href="http://linux.die.net/man/1/ssh-keygen" scope="external" format="html" >ssh-keygen</xref> or <tm tmtype="reg">Windows</tm> using <xref href="http://the.earth.li/~sgtatham/putty/0.63/htmldoc/Chapter8.html#pubkey-puttygen" scope="external" format="html" >puTTYgen</xref>. Insert public key text and click the <b>Import Key Pair</b> button.</li>
 </ol>
 <p>
 <image href="../media/marketplace6.png"/>
