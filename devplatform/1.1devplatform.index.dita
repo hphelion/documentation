@@ -139,7 +139,7 @@
 <li>
 <b>Quick Start Developer Trial</b>: The fastest way to set up a functional Helion Development Platform environment is the <xref href="../devplatform/1.1devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> (sandbox) on the public cloud.</li>
 <li>
-<b>Standard Installation</b>: Install a <xref href="../commercial/GA1/1.1commercial.install-GA-overview.dita" >Commercial HP <tm tmtype="reg">Helion Openstack</tm></xref>(R) cloud and then <xref href="../devplatform/1.1devplatform_commercial_install.dita" >install</xref> the Helion Development Platform.  </li>
+<b>Standard Installation</b>: Install a <xref href="../commercial/GA1/1.1commercial.install-GA-overview.dita" >Commercial HP <tm tmtype="reg">Helion Openstack</tm></xref> cloud and then <xref href="../devplatform/1.1devplatform_commercial_install.dita" >install</xref> the Helion Development Platform.  </li>
 </ul>
 <!-- ===================== horizontal rule ===================== -->
 </section>
