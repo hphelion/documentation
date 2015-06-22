@@ -20,79 +20,52 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/deploy/languages/python/1.2index.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/python/--></p>
-<p>Whether youâ€(TM)re deploying an application to the HP Helion Development Platform, a
-Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
-advantage of HP <tm tmtype="reg">Helion Openstack</tm> to manage infrastructure or software services, tools
-to enable successful development are available in Python.</p>
+<p>Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry
+      based Platform as a Service (PaaS), or writing applications that take advantage of HP <tm
+        tmtype="reg">Helion Openstack</tm> to manage infrastructure or software services, tools to
+      enable successful development are available in Python.</p>
 <section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
-<p>Application Lifecycle Services (ALS), a CloudFoundry-based Platform as a
-Service, provides a means to execute Python applications on a managed platform.
-Deploying Python applications to the platform is normally done using a built-in
-<xref href="https://github.com/ActiveState/stackato-buildpack-python" scope="external" format="html" >Python buildpack</xref>.
-In order to deploy an application user a Python buildpack, you will need the
-following at the top level of your application:</p>
-<ul>
-  <li>
-<p>A Procfile with the command to run the application.  If the <codeph>wapiti.py</codeph> file was the file that started your application, you might use something like:</p>
+<p>Application Lifecycle Services (ALS), a Cloud Foundry-based Platform as a Service, provides a
+        means to execute Python applications on a managed platform. Deploying Python applications to
+        the platform is normally done using a built-in <xref
+          href="https://github.com/ActiveState/stackato-buildpack-python" scope="external"
+          format="html">Python buildpack</xref>. In order to deploy an application user a Python
+        buildpack, you will need the following at the top level of your application:</p>
+      <ul id="ul_myg_1ll_ls">
+        <li>A Procfile with the command to run the application. If the <codeph>wapiti.py</codeph>
+          file was the file that started your application, you might use something
+            like:<codeblock>web: python$PYTHON_VERSION wapiti.py</codeblock><p>in the
+              <i>manifest.yml</i> file with at least your application name. You may also place other
+            configuration information in this file such as module requirements. The minimal file
+            would look like: </p><codeblock>name: wapiti</codeblock></li>
+        <li>If your module requirements are not in the manifest.yml file, you might need a
+          requirements.txt or requiremenbts.pypm (pypm) file. For example your requirements.txt may
+          contain:<codeblock>cherrypy</codeblock></li>
+        <li>
+          <p>If the application is going to run some other version of Python other than Python 2.7
+            (the default),  you will need to include a<i> runtime.txt</i> file.  If your application
+            was to use Python 3.3, for example:</p>
+          <codeblock>python-3.3</codeblock>
+        </li>
+        <li>
+          <p> Finally, you will need a file to launch your application. For this example, we have
+            been talking about a <i>wapiti.py </i>file which would launch the application.</p>
+        </li>
+      </ul>
+<p>Use a web user interface or a command line client to manage the deployed application and its
+        services.</p>
 
-<codeblock>
-<codeph>web: python$PYTHON_VERSION wapiti.py
-</codeph>
-</codeblock>
-
-<p>in the <i>manifest.yml</i> file with at least your application name.  You may
-also place other configuration information in this file such as module
-requirements.  The minimal file would look like:
-</p>
-</li>
-</ul>
-<codeblock>name: wapiti
-</codeblock>
-<p>
-</p>
-<ul>
-<li>If your module requirements are not in the manifest.yml file, you
-might need a requirements.txt or requiremenbts.pypm (pypm) file.
-For example your requirements.txt may contain:</li>
-</ul>
-<codeblock>cherrypy
-</codeblock>
-<p>
-</p>
-<ul>
-<li>Possibly a runtime.txt file if the application is going to run some
-other version of Python other than Python 2.7 (the default).  If your
-application was to use Python 3.3 for example:</li>
-</ul>
-<codeblock>python-3.3
-</codeblock>
-<p>
-</p>
-<ul>
-<li>Finally, you will need a file to launch your application.  For this
-example, we have been talking about a wapiti.py file which would
-launch the application.</li>
-</ul>
-<p>Management of the deployed application and its services happens through a web
-user interface or a command line client.  To learn more see:</p>
-<ul>
-<li>
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/languages/python/1.2index.dita" >Working with applications in Python</xref>
-</li>
-<li>The <xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >manifest.yml</xref> reference.</li>
-</ul>
 </section>
 <section id="controlling-hp-helion-with-your-application"> <title>Controlling HP Helion with your Application</title>
-<p>If your Python application is going to control HP Helion resources, it can
-communicate directly with the <xref href="http://docs.hpcloud.com/api" scope="external" format="html"  outputclass="reference external">Helion REST APIs</xref>
-with a client or the Python SDK.  Currently, the Python SDK is very
-limited in features, so you will probably be forced to use the CLIs.
-The unified Python <tm tmtype="reg">Openstack</tm> Client has pretty good coverage of <tm tmtype="reg">Openstack</tm>
-features except for network (Neutron) and object store (Swift).  To get full
-coverage of features you would need to install the following CLIs in your
-requirements.txt file (using our earlier cherrypy example):</p>
-<codeblock>
-  <codeph>import os
+<p>If your Python application is going to control HP Helion resources, it can communicate directly
+        with the <xref href="http://docs.hpcloud.com/api" scope="external" format="html"
+          outputclass="reference external">Helion REST APIs</xref> with a client or the Python SDK.
+        Currently, the Python SDK is very limited in features, so you will probably be forced to use
+        the CLIs. The unified Python Openstack Client has pretty good coverage of Openstack features
+        except for network (Neutron) and object store (Swift). To get full coverage of features you
+        would need to install the following CLIs in your requirements.txt file (using our earlier
+        cherrypy example):</p>
+<codeblock>import os
 import cherrypy
 import subprocess
 
@@ -123,13 +96,11 @@ def posted(self, username, password, project, url, region, name):
     p = subprocess.Popen(["openstack", "volume", "show", name],
                          env=os.environ, stdout=subprocess.PIPE)
     result = p.communicate()[0]
-    return "&lt;title&gt;Volume %s&lt;/title&gt;\n&lt;pre&gt;%s&lt;/pre&gt;" % (name, result)
-</codeph>
-</codeblock>
+    return "&lt;title&gt;Volume %s&lt;/title&gt;\n&lt;pre&gt;%s&lt;/pre&gt;" % (name, result)</codeblock>
 <p>That example used the unified <tm tmtype="reg">Openstack</tm> CLI.  A similar thing would work for
 the network or object store clients.</p>
 <p>By default, Application Lifecycle Service uses the built-in Python
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks" >
+<xref href="../../1.2buildpack.dita" >
 <i>Buildpack</i>
 </xref> to deploy Python
 applications. To deploy applications using this buildpack, your
@@ -138,7 +109,7 @@ application:</p>
 <ul>
 <li>
 <p>a list of module requirements in a
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >
+<xref href="../../1.2manifestyml.dita" >
 <i>manifest.yml</i>
 </xref>,
 <xref href="http://www.pip-installer.org/en/latest/cookbook.html#requirements-files" scope="external" format="html" >requirements.txt
@@ -152,25 +123,19 @@ example, the
 <xref href="https://github.com/Stackato-Apps/example-python-django" scope="external" format="html" >example-python-django</xref>
 Application Lifecycle Service sample has the following simple <i>Procfile</i>:</p>
 
-<codeblock>
-<codeph>web: gunicorn helion.wsgi -b 0.0.0.0:$PORT
-</codeph>
-</codeblock>
+<codeblock>web: gunicorn helion.wsgi -b 0.0.0.0:$PORT</codeblock>
 </li>
 </ul>
 <p>This buildpack uses Python 2.7 by default. To specify Python 3.3, create
 a <i>runtime.txt</i> file setting the version (i.e. <codeph>python-3.3</codeph>) and use the \$PYTHON_VERSION environment variable in the
 Procfile <codeph>web:</codeph> command. For example:</p>
-<codeblock>
-  <codeph>web: python$PYTHON_VERSION app.py
-</codeph>
-</codeblock>
+<codeblock>web: python$PYTHON_VERSION app.py</codeblock>
 <p>See also: <xref href="https://github.com/ActiveState/stackato-buildpack-python" scope="external" format="html" >https://github.com/ActiveState/stackato-buildpack-python</xref>
 </p>
 </section>
 <section id="python-with-the-legacy-buildpack"> <title>Python with the Legacy Buildpack</title>
 <p>If your Python application has configuration for running on Application Lifecycle Service
-2.10 or earlier, you can deploy it using the <xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy" >
+  2.10 or earlier, you can deploy it using the <xref href="../../1.2buildpack.dita#topic3370/legacy-buildpack">
 <i>Legacy
 Buildpack</i>
 </xref>, which provides an
@@ -183,48 +148,46 @@ application object. For a minimal sample application, see
 <xref href="https://github.com/Stackato-Apps/wsgi-helloworld" scope="external" format="html" >wsgi-helloworld</xref>.</p>
 <p>You may add additional arguments to uWSGI in your
 <codeph>manifest.yml</codeph>, eg:</p>
-<codeblock>
-  <codeph>processes:
-  web: $HELION_UWSGI --mount foo=app.py --import module
-</codeph>
-</codeblock>
+<codeblock>processes:
+  web: $HELION_UWSGI --mount foo=app.py --import module</codeblock>
 <p>It is possible to <xref type="section" href="#topic11550/uwsgi-python-static-files">
 <i>serve static files with
 uWSGI</i>
 </xref>.</p>
 </section>
-<section id="django"> <title>Django</title>
+<section id="django"> <title>Deploying Django applications</title>
 <ul>
 <li>
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/languages/python/1.2django.dita" >Deploying Django applications</xref>
-
-<ul>
-<li>
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/languages/python/1.2django.dita#getting-started" >Getting started</xref>
-</li>
-<li>
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/languages/python/1.2django.dita#configuring-database" >Configuring database</xref>
-</li>
-<li>
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/languages/python/1.2django.dita#configuring-static-media" >Configuring static media</xref>
-</li>
-<li>
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/languages/python/1.2django.dita#configuring-project-location" >Configuring project
-location</xref>
-</li>
-</ul>
-</li>
+          <ul>
+            <li>
+              <xref
+                href="1.2django.dita"
+                >Getting started</xref>
+            </li>
+            <li>
+              <xref
+                href="1.2django.dita#topic3654/configuring-database"
+                >Configuring database</xref>
+            </li>
+            <li>
+              <xref
+                href="1.2django.dita#topic3654/configuring-static-media"
+                >Configuring static media</xref>
+            </li>
+            <li>
+              <xref
+                href="1.2django.dita#topic3654/configuring-project-location"
+                >Configuring project location</xref>
+            </li>
+          </ul></li>
 </ul>
 </section>
 <section id="application-url"> <title>Application URL</title>
 <p>Some applications require the user to specify the APP_URL. Below is an
 example on how to obtain the correct urls:</p>
-<codeblock>
-  <codeph>import json
+<codeblock>import json
 vcap_app = json.loads(os.environ['VCAP_APPLICATION'])
-APP_URL = 'http://' + vcap_app['uris'][0]
-</codeph>
-</codeblock>
+APP_URL = 'http://' + vcap_app['uris'][0]</codeblock>
 </section>
 <section id="database-services"> <title>Database Services</title>
 <p>Some minor edits are required to make your application work with a
@@ -236,8 +199,7 @@ database. Python database configurations are located inside
 found in the <codeph>os.environ</codeph> variable, under
 <codeph>DATABASE_URL</codeph>. Here is an example of getting the
 correct credentials.</p>
-<codeblock>
-  <codeph>import urlparse
+<codeblock>import urlparse
 DATABASES = {}
 if 'DATABASE_URL' in os.environ:
     url = urlparse.urlparse(os.environ['DATABASE_URL'])
@@ -260,13 +222,10 @@ else:
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-        }
-</codeph>
-</codeblock>
+        }</codeblock>
 </section>
 <section id="vcap-services"> <title>VCAP_SERVICES</title>
-<codeblock>
-  <codeph>import json
+<codeblock>import json
 vcap_services = json.loads(os.environ['VCAP_SERVICES'])
 srv = vcap_services['mysql'][0]
 cred = srv['credentials']
@@ -279,69 +238,58 @@ DATABASES = {
         'HOST': cred['hostname'],
         'PORT': cred['port'],
     }
-}
-</codeph>
-</codeblock>
+}</codeblock>
 </section>
 <section id="worker-applications"> <title>Worker Applications</title>
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#command" >
+  <xref href="../../1.2manifestyml.dita#topic20922/command" >
 <i>command</i>
 </xref> key and set the
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#web" >
+  <xref href="../../1.2manifestyml.dita#topic20922/web" >
 <i>processes:
 web</i>
 </xref> key to
 Null ("\~").</p>
 </section>
 <section id="example"> <title>Example</title>
-<codeblock>
-  <codeph>name: python-app
+<codeblock>name: python-app
 framework:
   type: python
   runtime: python27
 command: python worker.py
 processes:
-  web: ~
-</codeph>
-</codeblock>
+  web: ~</codeblock>
 </section>
 <section id="serving-static-files-with-uwsgi"> <title>Serving Static Files with uWSGI</title>
 <p>It is possible to serve static files with uWSGI using
 <codeph>processes: web:</codeph> in the
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >
+<xref href="../../1.2manifestyml.dita" >
 <i>manifest.yml</i>
 </xref> file to specify
 folders that will be served statically and not by the app.</p>
 <p>To make a single folder serve statically, use <codeph>--check-static</codeph>:</p>
-<codeblock>
-  <codeph>processes:
-    web: $HELION_UWSGI --check-static $HOME/&lt;folder&gt;
-</codeph>
-</codeblock>
+<codeblock>processes:
+    web: $HELION_UWSGI --check-static $HOME/&lt;folder&gt;</codeblock>
 <p>To specify multiple folders with static files that do not share a common
 root, use <codeph>--static-map</codeph>:</p>
-<codeblock>
-  <codeph>processes:
-    web: $HELION_UWSGI --static-map /foo=$HOME/static --static-map /bar=$HOME/sub
-</codeph>
-</codeblock>
+<codeblock>processes:
+    web: $HELION_UWSGI --static-map /foo=$HOME/static --static-map /bar=$HOME/sub</codeblock>
 <p>In this case <i>/foo/index.html</i> would serve <i>\$HOME/static/index.html</i>,
 and <i>/bar/index.html</i> would serve <i>\$HOME/sub/index.html</i>. If the file
 doesn't exist, then uWSGI will forward the request to the app.</p>
 <p>
-<b>Note</b>: Serving static files via uWSGI is only available for Perl and Python
-frameworks.</p>
+        <note>Serving static files via uWSGI is only available for Perl and Python
+          frameworks.</note>
+      </p>
 </section>
 <section id="using-a-custom-web-server"> <title>Using a custom web server</title>
 <p>To use a different web server instead of uWSGI, specify its startup
 command in <codeph>manifest.yml</codeph>. Here's a sample
 manifest.yml used to deploy a Django 1.4 application named "dj14" using
 gunicorn:</p>
-<codeblock>
-  <codeph>name: dj14
+<codeblock>name: dj14
 
 framework:
   type: python
@@ -351,51 +299,43 @@ processes:
 
 requirements:
   pypm: [gunicorn]
-  pip: ["http://www.djangoproject.com/download/1.4-beta-1/tarball#egg=django-1.4b1"]
-</codeph>
-</codeblock>
+  pip: ["http://www.djangoproject.com/download/1.4-beta-1/tarball#egg=django-1.4b1"]</codeblock>
 <p>The custom web server must bind to IP address <codeph>0.0.0.0</codeph> and port <codeph>$PORT</codeph>. The same trick can be
 used to serve non-WSGI applications (such as Tornado). See the
 <xref href="https://github.com/Stackato-Apps/bottle-py3" scope="external" format="html" >bottle-py3 example</xref> sample
 for an example.</p>
 </section>
 <section id="installing-python-packages"> <title>Installing Python Packages</title>
-<p>
-  <b>Note</b>
-</p>
-<p>To install packages from custom repository/mirror. Use the
-<xref href="../../../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#term-pip-opts" >
-<i>PIP_OPTS</i>
-</xref> or
-<xref href="../../../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#term-pypm-opts" >
-<i>PYPM_OPTS</i>
-</xref>
-<xref href="../../../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#environment-variables" >
-<i>environment
-variables</i>
-</xref>.</p>
+<p>To install packages from custom repository/mirror, use the <xref
+  href="../../../reference/1.2environment.dita#topic7631/term-pip-opts">
+          <i>PIP_OPTS</i>
+        </xref> or <xref
+          href="../../../reference/1.2environment.dita#topic7631/term-pypm-opts">
+          <i>PYPM_OPTS</i>
+        </xref>
+        <xref
+          href="../../../reference/1.2environment.dita#topic7631/environment-variables">
+          <i>environment variables</i>
+        </xref>.</p>
 <p>Application dependencies such as web frameworks or modules from PyPI can
-be installed using <xref href="../../../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-pypm" >
+  be installed using <xref href="../../../reference/1.2glossary.dita#topic6187/term-pypm" >
 <i>PyPM</i>
 </xref>
-and/or <xref href="../../../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-pip" >
+  and/or <xref href="../../../reference/1.2glossary.dita#topic6187/term-pip" >
 <i>pip</i>
 </xref>.</p>
 </section>
 <section id="pypm"> <title>PyPM</title>
-<p>Definition <xref href="../../../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-pypm" >
+  <p>Definition <xref href="../../../reference/1.2glossary.dita#topic6187term-pypm" >
 <i>PyPM</i>
 </xref>
 </p>
 <p>To install packages during application deployment with PyPM, add the
 requirements to manifest.yml:</p>
-<codeblock>
-  <codeph>requirements:
+<codeblock>requirements:
   pypm:
     - tornado
-    - pymongo
-</codeph>
-</codeblock>
+    - pymongo</codeblock>
 <p>See the <xref href="https://github.com/Stackato-Apps/tornado-chat-mongo/blob/master/manifest.yml" scope="external" format="html" >manifest.yml of
 tornado-chat-mongo</xref>
 sample app for an example.</p>
@@ -408,36 +348,33 @@ setting the <codeph>PYPM_REQUIREMENTS_FILE</codeph> environment
 variable.</p>
 </section>
 <section id="pip"> <title>pip</title>
-<p>Definition <xref href="../../../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-pip" >
+  <p>Definition <xref href="../../../reference/1.2glossary.dita#topic6187/term-pip" >
 <i>pip</i>
 </xref>
 </p>
 <p>In addition - or as alternative - to
-<xref href="../../../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-pypm" >
+  <xref href="../../../reference/1.2glossary.dita#topic6187/term-pypm" >
 <i>PyPM</i>
 </xref>, your application
 can also make use of pip to install certain dependencies. The above
 tornado-chat-mongo sample installs "pycurl" using
-<xref href="../../../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-pip" >
+  <xref href="../../../reference/1.2glossary.dita#topic6187/term-pip" >
 <i>pip</i>
 </xref>:</p>
-<codeblock>
-  <codeph>requirements:
+<codeblock>requirements:
   pypm:
     - tornado
     - pymongo
   pip:
-    - pycurl
-</codeph>
-</codeblock>
+    - pycurl</codeblock>
 <p>If your application already contains a <codeph>requirements.txt</codeph> file, that will be automatically used to install dependencies;
 no need to specify them manually in manifest.yml. The name of this file
 can be overridden by setting the <codeph>PIP_REQUIREMENTS_FILE</codeph> environment variable.</p>
 <p>
-  <b>Note</b>
-</p>
-<p>A <xref href="https://github.com/pypa/pip/issues/219" scope="external" format="html" >bug in pip</xref> may prevent the
-log file from being accessed by <codeph>helion logs</codeph>.</p>
+        <note>A <xref href="https://github.com/pypa/pip/issues/219" scope="external" format="html"
+            >bug in pip</xref> may prevent the log file from being accessed by <codeph>helion
+            logs</codeph>.</note>
+      </p>
 </section>
 <section id="pypy-support"> <title>PyPy Support</title>
 <p>Here is an example of pushing an app using PyPy.</p>
@@ -445,71 +382,57 @@ log file from being accessed by <codeph>helion logs</codeph>.</p>
 repository.</p>
 <p>Then add the following <codeph>BUILDPACK_URL</codeph> to the
 <i>manifest.yml</i> file:</p>
-<codeblock>
-  <codeph>env:
-  BUILDPACK_URL: git://github.com/HP/heroku-buildpack-pypy.git
-</codeph>
-</codeblock>
+<codeblock>env:
+  BUILDPACK_URL: git://github.com/HP/heroku-buildpack-pypy.git</codeblock>
 <p>Finally, push the app to Application Lifecycle Service:</p>
-<codeblock>
-  <codeph>helion push -n
-</codeph>
-</codeblock>
+<codeblock>helion push -n</codeblock>
 </section>
 <section id="other-python-frameworks"> <title>Other Python Frameworks</title>
 <p>Examples of deploying other frameworks are included in the <xref href="https://github.com/Stackato-Apps" scope="external" format="html" >GitHub
 samples repo</xref>:</p>
 <ul>
-<li>Bottle framework
-
-<ul>
-<li>
-<xref href="https://github.com/Stackato-Apps/bottle-currency" scope="external" format="html" >Bottle
-Currency</xref>
-</li>
-<li>
-<xref href="https://github.com/Stackato-Apps/bottle-py3" scope="external" format="html" >Python 3</xref>
-</li>
-</ul>
-</li>
-<li>Django
-
-<ul>
-<li>
-<xref href="https://github.com/Stackato-Apps/django-gtd" scope="external" format="html" >django-gtd</xref>
-</li>
-<li>
-<xref href="https://github.com/Stackato-Apps/pinax-social" scope="external" format="html" >pinax-social</xref>
-</li>
-</ul>
-</li>
-<li>Pylons Pyramid
-
-<ul>
-<li>
-<xref href="https://github.com/Stackato-Apps/pyramid-virginia" scope="external" format="html" >virginia</xref>
-</li>
-<li>
-<xref href="https://github.com/Stackato-Apps/pyramid-default" scope="external" format="html" >default</xref>
-</li>
-</ul>
-</li>
-<li>Tornado
-
-<ul>
-<li>
-<xref href="https://github.com/Stackato-Apps/tornado-chat-mongo" scope="external" format="html" >chat</xref>
-</li>
-</ul>
-</li>
-<li>Werkzeug
-
-<ul>
-<li>
-<xref href="https://github.com/Stackato-Apps/werkzeug-debugger" scope="external" format="html" >werkzeug-debugger</xref>
-</li>
-</ul>
-</li>
+<li>Bottle framework <ul>
+            <li>
+              <xref href="https://github.com/Stackato-Apps/bottle-currency" scope="external"
+                format="html">Bottle Currency</xref>
+            </li>
+            <li>
+              <xref href="https://github.com/Stackato-Apps/bottle-py3" scope="external"
+                format="html">Python 3</xref>
+            </li>
+          </ul></li>
+<li>Django <ul>
+            <li>
+              <xref href="https://github.com/Stackato-Apps/django-gtd" scope="external"
+                format="html">django-gtd</xref>
+            </li>
+            <li>
+              <xref href="https://github.com/Stackato-Apps/pinax-social" scope="external"
+                format="html">pinax-social</xref>
+            </li>
+          </ul></li>
+<li>Pylons Pyramid <ul>
+            <li>
+              <xref href="https://github.com/Stackato-Apps/pyramid-virginia" scope="external"
+                format="html">virginia</xref>
+            </li>
+            <li>
+              <xref href="https://github.com/Stackato-Apps/pyramid-default" scope="external"
+                format="html">default</xref>
+            </li>
+          </ul></li>
+<li>Tornado <ul>
+            <li>
+              <xref href="https://github.com/Stackato-Apps/tornado-chat-mongo" scope="external"
+                format="html">chat</xref>
+            </li>
+          </ul></li>
+<li>Werkzeug <ul>
+            <li>
+              <xref href="https://github.com/Stackato-Apps/werkzeug-debugger" scope="external"
+                format="html">werkzeug-debugger</xref>
+            </li>
+          </ul></li>
 <li>Celery
 
 <ul>
