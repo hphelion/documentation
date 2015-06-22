@@ -72,16 +72,10 @@
 <thead>
 <row>
 <entry>Attributes</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Definition</ph>
-</required-cleanup>
-</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Recommendation</ph>
-</required-cleanup>
-</entry>
+    <entry><ph>Definition</ph>
+              </entry>
+    <entry><ph>Recommendation</ph>
+              </entry>
 </row>
 </thead>
 <tbody>
@@ -121,51 +115,48 @@
 <section id="table-b-other-attributes"> <title>Table B - Other Attributes</title>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<thead>
-<row>
-<entry>Attributes</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Definition</ph>
-</required-cleanup>
-</entry>
-    </row>
-</thead>
-<tbody>
-<row>
-<entry>
-<b>Disk Label</b>
-</entry>
-    <entry>Defines disk label of the disk. For more information refer to <xref href=" #preparing-disks-on-swift-nodes" >Preparing disks on Swift nodes</xref>
-</entry>
-     
-</row>
-<row>
-<entry>
-<b>Port</b>
-</entry>
-    <entry>Port specifies the port number of the node. It is recommended to use the following port number:
-    <!--A BR tag was used here in the original source.--><ul>
-<li>
-    Object ring - 6000</li>
-<li>
-    Container ring - 6001 </li>
-<li>
-    Account ring - 6002</li>
-</ul>
-</entry>
-    </row>
-<row>
-<entry>
-<b>Weight</b>
-</entry>
-    <entry>Weight helps the cluster to calculate the partition that must be assigned to the drive. The higher the weight, the greater number of partitions Swift must assign to the drive.  It is recommended to add or remove drives gradually using a weighted approach to avoid degraded performance of the Swift cluster. The weight will gradually increase or decrease by 25% until it becomes 100% or 0.</entry>
-
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry>Attributes</entry>
+              <entry><ph>Definition</ph>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <b>Disk Label</b>
+              </entry>
+              <entry>Defines disk label of the disk. For more information refer to <xref
+                  href=" #preparing-disks-on-swift-nodes">Preparing disks on Swift nodes</xref>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <b>Port</b>
+              </entry>
+              <entry>Port specifies the port number of the node. It is recommended to use the
+                following port number: <!--A BR tag was used here in the original source.--><ul>
+                  <li> Object ring - 6000</li>
+                  <li> Container ring - 6001 </li>
+                  <li> Account ring - 6002</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <b>Weight</b>
+              </entry>
+              <entry>Weight helps the cluster to calculate the partition that must be assigned to
+                the drive. The higher the weight, the greater number of partitions Swift must assign
+                to the drive. It is recommended to add or remove drives gradually using a weighted
+                approach to avoid degraded performance of the Swift cluster. The weight will
+                gradually increase or decrease by 25% until it becomes 100% or 0.</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="prepare-undercloudswift"> <title>Prepare the undercloud to manage Swift clusters</title>
