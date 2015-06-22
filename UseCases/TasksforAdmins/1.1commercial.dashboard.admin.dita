@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2010">
-<title>HP Helion OpenStack(R) 1.1: Using as an Admin User</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Using as an Admin User</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,29 +26,29 @@
 </ul>
 <p>For more information, see <xref href="../../UseCases/TasksforAdmins/Domains/1.1commercial.managing.domains.dita" >Managing Domains</xref>.</p>
 <p>
-  <xref type="section" href="#topic2010/top"> Return to Top </xref>
+  <xref type="section" href="#topic2010"> Return to Top </xref>
 </p>
 </section>
 <section id="managing-projects"> <title>Managing projects</title>
 <p>You can create new projects and manage existing projects, such as controlling access to projects by assigning roles to users and groups.</p>
 <p>For more information, see <xref href="../../UseCases/TasksforAdmins/Projects/1.1commercial.managing.projects.dita" >Managing Projects</xref>.</p>
 <p>
-  <xref type="section" href="#topic2010/top"> Return to Top </xref>
+  <xref type="section" href="#topic2010"> Return to Top </xref>
 </p>
 </section>
 <section id="managing-networks"> <title>Managing networks</title>
 <p>A network is a pluggable, scalable system for managing networks and IP addresses.</p>
-<p>You can use the dashboards to create, delete, and configure your HP Helion OpenStack(R) subnet(s) and ports.</p>
+<p>You can use the dashboards to create, delete, and configure your HP Helion <tm tmtype="reg">Openstack</tm> subnet(s) and ports.</p>
 <p>For more information, see <xref href="../../UseCases/TasksforUsers/Networks/1.1commercial.managing.network.dita" >Managing Networks</xref>.</p>
 <p>
-  <xref type="section" href="#topic2010/top"> Return to Top </xref>
+  <xref type="section" href="#topic2010"> Return to Top </xref>
 </p>
 </section>
 <section id="managing-users"> <title>Managing users</title>
 <p>You can use the dashboard to create new users, assign users to projects, and change a user password as needed.</p>
 <p>For more information, see <xref href="../../UseCases/TasksforAdmins/Users/1.1commercial.managing.users.dita" >Managing Users</xref>.</p>
 <p>
-  <xref type="section" href="#topic2010/top"> Return to Top </xref>
+  <xref type="section" href="#topic2010"> Return to Top </xref>
 </p>
 </section>
 <section id="managing-images"> <title>Managing images</title>

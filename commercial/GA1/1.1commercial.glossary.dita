@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic17421">
-<title>HP Helion OpenStack(R) 1.1: Glossary</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Glossary</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Lou G"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -19,10 +19,10 @@
  <!--./commercial/GA1/1.1commercial.glossary.md-->
  <!--permalink: /helion/openstack/1.1/glossary/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.0commercial.glossary.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
-<p>Use this glossary to get definitions of terms used throughout the HP Helion OpenStack(R)-documentation.</p>
-<p>For more terms, see the <xref href="http://docs.openstack.org/glossary/content/glossary.html" scope="external" format="html" >OpenStack(R) glossary</xref> also.</p>
+<p>Use this glossary to get definitions of terms used throughout the HP Helion <tm tmtype="reg">Openstack</tm>-documentation.</p>
+<p>For more terms, see the <xref href="http://docs.openstack.org/glossary/content/glossary.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> glossary</xref> also.</p>
 <p>
 <xref type="section" href="#topic17421/a">A</xref> | <xref type="section" href="#topic17421/b">B</xref> | <xref type="section" href="#topic17421/c">C</xref> | <xref type="section" href="#topic17421/d">D</xref> | <xref type="section" href="#topic17421/e">E</xref> | <xref type="section" href="#topic17421/f">F</xref> | <xref type="section" href="#topic17421/g">G</xref> | <xref type="section" href="#topic17421/h">H</xref> | <xref type="section" href="#topic17421/i">I</xref> | <xref type="section" href="#topic17421/j">J</xref> | <xref type="section" href="#topic17421/k">K</xref> | <xref type="section" href="#topic17421/l">L</xref> | <xref type="section" href="#topic17421/m">M</xref> | 
 <xref type="section" href="#topic17421/n">N</xref> | <xref type="section" href="#topic17421/o">O</xref> | <xref type="section" href="#topic17421/p">P</xref> | <xref type="section" href="#topic17421/q">Q</xref> | <xref type="section" href="#topic17421/r">R</xref> | <xref type="section" href="#topic17421/s">S</xref> | <xref type="section" href="#topic17421/t">T</xref> | <xref type="section" href="#topic17421/u">U</xref> | <xref type="section" href="#topic17421/v">V</xref> | <xref type="section" href="#topic17421/w">W</xref> | <xref type="section" href="#topic17421/x">X</xref> | <xref type="section" href="#topic17421/y">Y</xref> | <xref type="section" href="#topic17421/z">Z</xref>
@@ -39,7 +39,7 @@
 <p>Used for administrative functions such as TFTP booting, DHCP assignments, KVM, system logs, backups, and other monitoring.</p>
 <!-- JS: Not in Core and probably not in Enterprise edition:
 ###Administration Dashboard###
-The HP Helion OpenStack(R) Administration Dashboard enables administrators to manage their cloud infrastructure. Tasks include launching instances, 
+The HP Helion <tm tmtype="reg">Openstack</tm> Administration Dashboard enables administrators to manage their cloud infrastructure. Tasks include launching instances, 
 uploading images, creating resource pools, and using designer tools to create topologies. Hosted (preferably) on the Controller node. See also [Operational Dashboard](#Operational-Dashboard), which is 
 used for the initial cloud installation, setup, configuration, and creation, before starting the Administration Dashboard. 
 -->
@@ -48,7 +48,7 @@ used for the initial cloud installation, setup, configuration, and creation, bef
 <p>The provisioning of cloud resources such as VM placement in data centers, network virtualization, and network routing.</p>
 </section>
 <section id="api"> <title>API<!--Removed anchor point API--><!-- id="API" --></title>
-<p>An Application Programming Interface (API) is a set of routines, protocols, and tools for building software applications. An API makes it easier to develop a program by providing all the building blocks. A programmer then puts the blocks together. HP Helion OpenStack(R) provides several <xref type="section" href="#topic17421/REST">REST</xref> APIs that enable programmers to write applications consistent with the operating environment.</p>
+<p>An Application Programming Interface (API) is a set of routines, protocols, and tools for building software applications. An API makes it easier to develop a program by providing all the building blocks. A programmer then puts the blocks together. HP Helion <tm tmtype="reg">Openstack</tm> provides several <xref type="section" href="#topic17421/REST">REST</xref> APIs that enable programmers to write applications consistent with the operating environment.</p>
 </section>
 <section id="api-key"> <title>API key</title>
 <p>An API-based key used for <xref type="section" href="#topic17421/Auth">authentication</xref>, such as a <xref type="section" href="#topic17421/Token">token</xref>.</p>
@@ -97,10 +97,10 @@ Also known as an install module, defines the capability of a service or role to 
 <p>One advantage of cloud computing is that the resources can be provisioned or released rapidly, with minimal management effort or service provider interaction.</p>
 </section>
 <section id="compute"> <title>Compute<!--Removed anchor point Compute--><!-- id="Compute" --></title>
-<p>The HP OpenStack(R) service that manages the hypervisors and virtual machines in your environment. Compute provides a cloud computing fabric controller, the main part of an Infrastructure as a Service (IaaS) platform. Also known as <xref type="section" href="#topic17421/Nova">Nova</xref>.</p>
+<p>The HP <tm tmtype="reg">Openstack</tm> service that manages the hypervisors and virtual machines in your environment. Compute provides a cloud computing fabric controller, the main part of an Infrastructure as a Service (IaaS) platform. Also known as <xref type="section" href="#topic17421/Nova">Nova</xref>.</p>
 </section>
 <section id="compute-node"> <title>Compute Node</title>
-<p>The machine that hosts cloud virtual machine instances using any supported hypervisor with OpenStack(R) In the current release,  HP Helion OpenStack(R) supports KVM (qemu-kvm) and VMware (ESXi) as hypervisors. The compute node hosts OpenStack(R) services called Nova-compute and Neutron l2 agent. Multiple compute nodes can be created to expand cloud capacity.</p>
+<p>The machine that hosts cloud virtual machine instances using any supported hypervisor with <tm tmtype="reg">Openstack</tm> In the current release,  HP Helion <tm tmtype="reg">Openstack</tm> supports KVM (qemu-kvm) and VMware (ESXi) as hypervisors. The compute node hosts <tm tmtype="reg">Openstack</tm> services called Nova-compute and Neutron l2 agent. Multiple compute nodes can be created to expand cloud capacity.</p>
 </section>
 <section id="credentials"> <title>Credentials</title>
 <p>Data that belongs to, is owned by, and generally only known by a user. A user can present this information to verify identity. Associated with the <xref type="section" href="#topic17421/Identity">Identity service</xref>.</p>
@@ -125,7 +125,7 @@ Also known as an install module, defines the capability of a service or role to 
 <p>A network-accessible address, usually described by URL, where a service may be accessed. Associated with the <xref type="section" href="#topic17421/Identity">Identity service</xref>.</p>
 <!-- Not in Commercial beta
 ###Eve###
- A HP Helion OpenStack(R) composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses the Graffiti service to determine the resource pool existence, traits, and user identity mapping. -->
+ A HP Helion <tm tmtype="reg">Openstack</tm> composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses the Graffiti service to determine the resource pool existence, traits, and user identity mapping. -->
 </section>
 <section id="f"> <title>F</title>
 </section>
@@ -140,7 +140,7 @@ Also known as an install module, defines the capability of a service or role to 
 <p>An on-demand, allocatable public IP address on a network. You can allocate a number of floating IP addresses up to the quota limit, and then assign them to <xref type="section" href="#topic17421/Instance">instances</xref>.</p>
 <!-- Not in Commercial beta
 ###Focus###
- The  HP Helion OpenStack(R) Topology Document Repository Service, which is used to discover, register, version, and retrieve the document types needed to describe TOSCA-based infrastructure topologies while provisioning a cloud. See [TOSCA](#TOSCA). -->
+ The  HP Helion <tm tmtype="reg">Openstack</tm> Topology Document Repository Service, which is used to discover, register, version, and retrieve the document types needed to describe TOSCA-based infrastructure topologies while provisioning a cloud. See [TOSCA](#TOSCA). -->
 </section>
 <section id="fully-qualified-domain-name-fqdn"> <title>Fully Qualified Domain Name (FQDN)</title>
 <p>The complete domain name for a specific computer, or host, on the Internet. The FQDN consists of two parts: the hostname and the domain name.</p>
@@ -148,21 +148,21 @@ Also known as an install module, defines the capability of a service or role to 
 <section id="g"> <title>G</title>
 </section>
 <section id="glance"> <title>Glance<!--Removed anchor point Glance--><!-- id="Glance" --></title>
-<p>Glance is the Helion OpenStack(R) imaging service and includes discovery, registering, and the retrieval of virtual machine images.</p>
+<p>Glance is the Helion <tm tmtype="reg">Openstack</tm> imaging service and includes discovery, registering, and the retrieval of virtual machine images.</p>
 <!-- Not in Commercial beta
 ###Graffiti###
-The HP Helion OpenStack(R) Resource Pool Registry and Capability Tagging Service, providing a dictionary of the "capabilities" of all the resources in a cloud environment; a searchable directory to find cloud resources based on their capabilities; the mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings; and the base concepts of requirements and capabilities within TOSCA. -->
+The HP Helion <tm tmtype="reg">Openstack</tm> Resource Pool Registry and Capability Tagging Service, providing a dictionary of the "capabilities" of all the resources in a cloud environment; a searchable directory to find cloud resources based on their capabilities; the mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings; and the base concepts of requirements and capabilities within TOSCA. -->
 </section>
 <section id="h"> <title>H</title>
 </section>
 <section id="helion-distribution-network-hdn"> <title>Helion Distribution Network (HDN)</title>
-<p>A catalog-based HP Helion OpenStack(R) service that allows off-the-shelf content (like workloads, images, and patches) to be imported into your deployed cloud. To access HDN, see the Updates &amp; Extensions panel in the  HP Helion OpenStack(R) user interface. You can import content from the HDN portal or from a local folder.</p>
+<p>A catalog-based HP Helion <tm tmtype="reg">Openstack</tm> service that allows off-the-shelf content (like workloads, images, and patches) to be imported into your deployed cloud. To access HDN, see the Updates &amp; Extensions panel in the  HP Helion <tm tmtype="reg">Openstack</tm> user interface. You can import content from the HDN portal or from a local folder.</p>
 </section>
 <section id="heat"> <title>Heat</title>
 <p>See <xref type="section" href="#topic17421/Orchestration">Orchestration</xref>.</p>
 </section>
 <section id="horizon"> <title>Horizon</title>
-<p>The Horizon service is the basis of the HP Helion OpenStack(R) dashboards.</p>
+<p>The Horizon service is the basis of the HP Helion <tm tmtype="reg">Openstack</tm> dashboards.</p>
 </section>
 <section id="hybrid-cloud"> <title>Hybrid cloud</title>
 <p>A cloud infrastructure that is a composition of two or more distinct cloud infrastructures (private or public) which remain unique entities but are bound together by standardized or proprietary technology that enables data and application portability such as cloud bursting for load balancing between clouds.</p>
@@ -173,7 +173,7 @@ The HP Helion OpenStack(R) Resource Pool Registry and Capability Tagging Service
 <section id="i"> <title>I</title>
 </section>
 <section id="identity-service"> <title>Identity Service<!--Removed anchor point Identity--><!-- id="Identity" --></title>
-<p>The HP OpenStack(R) service that performs identity management (domains, projects and users), generates access tokens, and provides service catalog functionality.</p>
+<p>The HP <tm tmtype="reg">Openstack</tm> service that performs identity management (domains, projects and users), generates access tokens, and provides service catalog functionality.</p>
 </section>
 <section id="image"> <title>Image<!--Removed anchor point Image--><!-- id="Image" --></title>
 <p>1) An installable release package of a program, application, or software.</p>
@@ -184,13 +184,13 @@ See also <xref type="section" href="#topic17421/ImagePriv">Private image</xref> 
 <p>A virtual disk <xref type="section" href="#topic17421/Image">image</xref> file that the Compute service can load up to create a virtual machine.</p>
 </section>
 <section id="image-management"> <title>Image Management<!--Removed anchor point Image--><!-- id="Image" --></title>
-<p>The HP OpenStack(R) service that discovers, registers, and retrieves virtual machine (VM) images. Also known as Glance.</p>
+<p>The HP <tm tmtype="reg">Openstack</tm> service that discovers, registers, and retrieves virtual machine (VM) images. Also known as Glance.</p>
 </section>
 <section id="image-metadata"> <title>Image metadata<!--Removed anchor point ImageMeta--><!-- id="ImageMeta" --></title>
 <p>Metadata information about <xref type="section" href="#topic17421/Image">images</xref>. For example: metadata includes the image identifier, name, status, size, disk format, container format, owner, and custom properties. Metadata is data that describes other data.</p>
 </section>
 <section id="installer-system"> <title>Installer System<!--Removed anchor point Installer--><!-- id="Installer" --></title>
-<p>The machine where HP OpenStack(R) Helion installation is initiated. This is the same machine as the <xref type="section" href="#topic17421/KVMhost">KVM host</xref> and is called the <xref type="section" href="#topic17421/Seed-Cloud">seed VM</xref>.</p>
+<p>The machine where HP <tm tmtype="reg">Openstack</tm> Helion installation is initiated. This is the same machine as the <xref type="section" href="#topic17421/KVMhost">KVM host</xref> and is called the <xref type="section" href="#topic17421/Seed-Cloud">seed VM</xref>.</p>
 </section>
 <section id="instance"> <title>Instance<!--Removed anchor point Instance--><!-- id="Instance" --></title>
 <p>A virtual machine that runs inside the cloud.</p>
@@ -202,7 +202,7 @@ See also <xref type="section" href="#topic17421/ImagePriv">Private image</xref> 
 <p>The network that connects the baremetal host to the Intelligent Platform Management Interface (IPMI).</p>
 </section>
 <section id="ironic"> <title>Ironic</title>
-<p>The HP OpenStack(R) project to provision <xref type="section" href="#topic17421/Baremetal">baremetal</xref> nodes by leveraging common technologies such as PXE boot and <xref type="section" href="#topic17421/IPMI">IPMI</xref> to cover a wide range of hardware. This project also supports pluggable drivers to allow adding vendor-specific functionality.</p>
+<p>The HP <tm tmtype="reg">Openstack</tm> project to provision <xref type="section" href="#topic17421/Baremetal">baremetal</xref> nodes by leveraging common technologies such as PXE boot and <xref type="section" href="#topic17421/IPMI">IPMI</xref> to cover a wide range of hardware. This project also supports pluggable drivers to allow adding vendor-specific functionality.</p>
 </section>
 <section id="j"> <title>J</title>
 </section>
@@ -219,7 +219,7 @@ See also <xref type="section" href="#topic17421/ImagePriv">Private image</xref> 
 </p>
 </section>
 <section id="kvm-hypervisor"> <title>KVM Hypervisor<!--Removed anchor point KVMhyp--><!-- id="KVMhyp" --></title>
-<p>The virtualization layer in <xref type="section" href="#topic17421/KVM">Kernel-based Virtual Machine or KVM</xref>. The KVM hypervisor is a default hypervisor supported by the HP OpenStack(R) <xref type="section" href="#topic17421/Compute">Compute service</xref>.</p>
+<p>The virtualization layer in <xref type="section" href="#topic17421/KVM">Kernel-based Virtual Machine or KVM</xref>. The KVM hypervisor is a default hypervisor supported by the HP <tm tmtype="reg">Openstack</tm> <xref type="section" href="#topic17421/Compute">Compute service</xref>.</p>
 </section>
 <section id="kvm-host"> <title>KVM Host<!--Removed anchor point KVMhost--><!-- id="KVMhost" --></title>
 <p>The machine which runs the <xref type="section" href="#topic17421/KVM">Kernel-based Virtual Machine or KVM</xref>.  This is the same machine as the <xref type="section" href="#topic17421/Installer">Installer System</xref>.</p>
@@ -232,12 +232,12 @@ See also <xref type="section" href="#topic17421/ImagePriv">Private image</xref> 
 <p>Monitoring of Monasca. Monasca can monitor a wide range of Helion services, including itself.</p>
 </section>
 <section id="monasca"> <title>Monasca</title>
-<p>The monitoring as a service solution introduced in Helion 2.0. Monasca (meaning monitoring at scale) is an open source solution that integrates with OpenStack(R) It is fault-tolerant, multi-tenant, scalable, and high performing.</p>
+<p>The monitoring as a service solution introduced in Helion 2.0. Monasca (meaning monitoring at scale) is an open source solution that integrates with <tm tmtype="reg">Openstack</tm> It is fault-tolerant, multi-tenant, scalable, and high performing.</p>
 </section>
 <section id="n"> <title>N</title>
 </section>
 <section id="networking"> <title>Networking<!--Removed anchor point Networking--><!-- id="Networking" --></title>
-<p>The OpenStack(R) Network Connectivity Service used to create and provision virtual networks. Also known as <xref type="section" href="#topic17421/Neutron">Neutron</xref>
+<p>The <tm tmtype="reg">Openstack</tm> Network Connectivity Service used to create and provision virtual networks. Also known as <xref type="section" href="#topic17421/Neutron">Neutron</xref>
 </p>
 </section>
 <section id="neutron"> <title>Neutron<!--Removed anchor point Neutron--><!-- id="Neutron" --></title>
@@ -252,16 +252,16 @@ See also <xref type="section" href="#topic17421/ImagePriv">Private image</xref> 
 <section id="o"> <title>O</title>
 </section>
 <section id="object-operations"> <title>Object Operations<!--Removed anchor point Object--><!-- id="Object" --></title>
-<p>The HP OpenStack(R) service used to store and retrieve large amounts of data in virtual containers.</p>
+<p>The HP <tm tmtype="reg">Openstack</tm> service used to store and retrieve large amounts of data in virtual containers.</p>
 </section>
 <section id="on-demand-self-service"> <title>On-demand self service</title>
 <p>A service where a consumer can unilaterally provision computing capabilities, such as server time and network storage, as needed, automatically, without requiring human interaction with each service provider.</p>
 </section>
-<section id="openstack"> <title>OpenStack(R)</title>
+<section id="openstack"> <title><tm tmtype="reg">Openstack</tm></title>
 <p>An open-source cloud computing operating system.</p>
 <!-- JS: Not in Core, I think. 
 ###Operational Dashboard<a name="Operational-Dashboard"></a>
-The HP Helion OpenStack(R) Operational Dashboard is used to install, set up, configure, and stand up a cloud environment See also [Administration Dashboard](#Administration-Dashboard), which is 
+The HP Helion <tm tmtype="reg">Openstack</tm> Operational Dashboard is used to install, set up, configure, and stand up a cloud environment See also [Administration Dashboard](#Administration-Dashboard), which is 
 used to manage the cloud that you created. 
 -->
 </section>
@@ -270,7 +270,7 @@ used to manage the cloud that you created.
 <xref type="section" href="#topic17421/Undercloud">Undercloud</xref>.</p>
 </section>
 <section id="orchestration"> <title>Orchestration<!--Removed anchor point Orchestration--><!-- id="Orchestration" --></title>
-<p>The HP Helion OpenStack(R) service that provides a template-based method for describing a cloud application. A template is a YAML file that describes the infrastructure for a cloud application. Templates contain vendor-independent specifications for launching a particular service or application. Also known as <xref type="section" href="#topic17421/Heat">Heat</xref>.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> service that provides a template-based method for describing a cloud application. A template is a YAML file that describes the infrastructure for a cloud application. Templates contain vendor-independent specifications for launching a particular service or application. Also known as <xref type="section" href="#topic17421/Heat">Heat</xref>.</p>
 </section>
 <section id="p"> <title>P</title>
 </section>
@@ -342,7 +342,7 @@ details of your specific request layer syntax).  The request layer handles all H
 <p>Refers to the Seed Host (Seed Cloud Host).</p>
 </section>
 <section id="seed-vm"> <title>Seed VM<!--Removed anchor point Seed-Cloud--><!-- id="Seed-Cloud" --></title>
-<p>A bootable image that is deployed into a virtual machine (VM). The seed VM is a <xref type="section" href="#topic17421/KVM">Kernel-based Virtual Machine</xref>. This running hLinux VM contains the minimal Seed Cloud. This is the minimum that OpenStack(R) needs to allow Ironic to install the Undercloud. See also <xref type="section" href="#topic17421/Undercloud">undercloud</xref>.</p>
+<p>A bootable image that is deployed into a virtual machine (VM). The seed VM is a <xref type="section" href="#topic17421/KVM">Kernel-based Virtual Machine</xref>. This running hLinux VM contains the minimal Seed Cloud. This is the minimum that <tm tmtype="reg">Openstack</tm> needs to allow Ironic to install the Undercloud. See also <xref type="section" href="#topic17421/Undercloud">undercloud</xref>.</p>
 <p>Also referred to simply as the Seed. See also <xref type="section" href="#topic17421/Undercloud">undercloud</xref> and <xref type="section" href="#topic17421/Overcloud">overcloud</xref>.</p>
 </section>
 <section id="server"> <title>Server<!--Removed anchor point Server--><!-- id="Server" --></title>
@@ -354,7 +354,7 @@ details of your specific request layer syntax).  The request layer handles all H
 <section id="t"> <title>T</title>
 </section>
 <section id="telemetry-and-reporting"> <title>Telemetry and Reporting<!--Removed anchor point Reporting--><!-- id="Reporting" --></title>
-<p>The HP Helion OpenStack(R) service that enables a single infrastructure to collect measurements within your cloud environment. Also known as <xref type="section" href="#topic17421/Ceilometer">Ceilometer</xref>.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> service that enables a single infrastructure to collect measurements within your cloud environment. Also known as <xref type="section" href="#topic17421/Ceilometer">Ceilometer</xref>.</p>
 </section>
 <section id="tenant"> <title>Tenant<!--Removed anchor point Tenant--><!-- id="Tenant" --></title>
 <p>See <xref type="section" href="#topic17421/Project">Project</xref>.</p>
@@ -366,7 +366,7 @@ details of your specific request layer syntax).  The request layer handles all H
 <p>An arbitrary bit of text that is used to access resources. Each token has a scope that describes the resources are accessible with the token. Associated with the <xref type="section" href="#topic17421/Identity">Identity service</xref>.</p>
 </section>
 <section id="tripleo"> <title>TripleO<!--Removed anchor point TripleO--><!-- id="TripleO" --></title>
-<p>A program aimed at installing, upgrading and operating OpenStack(R) clouds using its own cloud facilities as the foundations; it builds on Nova, Neutron and Heat to automate fleet management at data center scale or scaled down to as few as two machines.</p>
+<p>A program aimed at installing, upgrading and operating <tm tmtype="reg">Openstack</tm> clouds using its own cloud facilities as the foundations; it builds on Nova, Neutron and Heat to automate fleet management at data center scale or scaled down to as few as two machines.</p>
 </section>
 <section id="u"> <title>U</title>
 </section>
@@ -382,7 +382,7 @@ details of your specific request layer syntax).  The request layer handles all H
 <p>An architecture where devices appear to be physically connected.</p>
 </section>
 <section id="virtual-cloud-networking-vcn"> <title>Virtual Cloud Networking (VCN)</title>
-<p>Virtual Cloud Networking (VCN) is an enhanced OpenStack(R) Networking service (Neutron) that delivers network virtualization enabled by software-defined networking (SDN). SDN orchestrates the entire data canter infrastructure.</p>
+<p>Virtual Cloud Networking (VCN) is an enhanced <tm tmtype="reg">Openstack</tm> Networking service (Neutron) that delivers network virtualization enabled by software-defined networking (SDN). SDN orchestrates the entire data canter infrastructure.</p>
 </section>
 <section id="virtual-extensible-lan-vxlan"> <title>Virtual Extensible LAN (VxLAN)</title>
 <p>A network virtualization technology that addresses the scalability problems associated with large cloud computing deployments. It uses a VLAN-like encapsulation technique to encapsulate MAC-based OSI layer 2 Ethernet frames within layer 3 UDP packets.</p>
@@ -397,7 +397,7 @@ details of your specific request layer syntax).  The request layer handles all H
 <p>A bootable machine previously saved by a user.</p>
 </section>
 <section id="volume-operations"> <title>Volume Operations<!--Removed anchor point Volume--><!-- id="Volume" --></title>
-<p>The HP OpenStack(R) service that provides volume management in cloud environments. Also known as <xref type="section" href="#topic17421/Cinder">Cinder</xref>.</p>
+<p>The HP <tm tmtype="reg">Openstack</tm> service that provides volume management in cloud environments. Also known as <xref type="section" href="#topic17421/Cinder">Cinder</xref>.</p>
 </section>
 <section id="vsa-cluster"> <title>VSA cluster<!--Removed anchor point VSAcluster--><!-- id="VSAcluster" --></title>
 <p>An architecture that includes multiple hosts and provides shared datastores that are connected to all hosts in the datacenter. See also <xref type="section" href="#topic17421/VSA">Virtual Storage Appliance</xref>.</p>
@@ -410,7 +410,7 @@ details of your specific request layer syntax).  The request layer handles all H
 </section>
 <section id="z"> <title>Z</title>
 <p>
-  <xref type="section" href="#topic17421/top"> Return to Top </xref>
+  <xref type="section" href="#topic17421"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

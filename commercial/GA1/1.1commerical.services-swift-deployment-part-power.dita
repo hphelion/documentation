@@ -5,17 +5,17 @@
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Keshava HP, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -154,11 +154,9 @@ To use, given number of zones and the maximum number of disk drives anticipated 
                 <stentry>26</stentry>
             </strow>
         </simpletable>
+
 <p>
-  <xref href=" /helion/openstack/1.1/services/swift/deployment-scale-out/" > Back</xref>
-</p>
-<p>
-  <xref type="section" href="#topic1674/top"> Return to Top </xref>
+  <xref type="section" href="#topic1674"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

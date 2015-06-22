@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6499">
-<title>HP Helion OpenStack(R) 1.1: Compute Service: Troubleshooting</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Compute Service: Troubleshooting</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="System Engineer"/>
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Network Administrator"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,7 +25,7 @@
 <section id="configdrive"> <title>Storing Metadata on a Configuration Drive</title>
 <p>
 <!--DOCS-950-->
-The HP Helion OpenStack(R) compute service can be configured to <xref href="../../commercial/GA1/1.1commerical.services-compute-configDrive.dita" >write metadata to a special configuration drive</xref> that contains information normally available through the metadata service.</p>
+The HP Helion <tm tmtype="reg">Openstack</tm> compute service can be configured to <xref href="../../commercial/GA1/1.1commerical.services-compute-configDrive.dita" >write metadata to a special configuration drive</xref> that contains information normally available through the metadata service.</p>
 </section>
 <section id="cleanup"> <title>Compute Databases Become Less Performant Over Time</title>
 <p>

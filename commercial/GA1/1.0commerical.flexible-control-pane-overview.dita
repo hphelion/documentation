@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic9437">
-<title>HP Helion OpenStack(R) 1.0: Flexible Control Plane Overview</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Flexible Control Plane Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,8 +13,8 @@
  <!--./commercial/GA1/1.0commerical.flexible-control-pane-overview.md-->
  <!--permalink: /helion/openstack/flexiblecontrol/overview/--></p>
 <p>
-<xref href="../../commercial/GA1/1.1commerical.flexible-control-pane-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
-The HP Helion OpenStack(R) Flexible Control Plane introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment.  This new configuration reduces the control plane footprint to just three servers from the current seven servers.</p>
+
+The HP Helion <tm tmtype="reg">Openstack</tm> Flexible Control Plane introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment.  This new configuration reduces the control plane footprint to just three servers from the current seven servers.</p>
 <p>This topic covers:</p>
 <ul>
 <li>
@@ -122,7 +122,7 @@ In this example the CIDR (Classless Inter-Domain Routing) address of the IPMI ne
 - HDD: 2TB</p>
 </section>
 <section id="prereq"> <title>Prerequisites</title>
-<p>The Flexible Control Plane configuration has the same prerequisites as HP Helion OpenStack(R) 1.01. Please be sure the environment satisfies the prerequisites before beginning installation.</p>
+<p>The Flexible Control Plane configuration has the same prerequisites as HP Helion <tm tmtype="reg">Openstack</tm> 1.01. Please be sure the environment satisfies the prerequisites before beginning installation.</p>
 <ul>
 <li>
 <xref href="http://docs.hpcloud.com/helion/openstack/install/prereqs/" scope="external" format="html" >Installation Prerequisites</xref>
@@ -136,7 +136,7 @@ In this example the CIDR (Classless Inter-Domain Routing) address of the IPMI ne
 </ul>
 </section>
 <section id="kvmsetup"> <title>KVM Host Setup</title>
-<p>Set up KVM hosts and ensure all the hardware requirements are met and the required prerequisites are fulfilled before you begin your installation. Note that there are further prerequisites beyond those listed for HP Helion OpenStack(R) 1.01 mentioned previously.</p>
+<p>Set up KVM hosts and ensure all the hardware requirements are met and the required prerequisites are fulfilled before you begin your installation. Note that there are further prerequisites beyond those listed for HP Helion <tm tmtype="reg">Openstack</tm> 1.01 mentioned previously.</p>
 <ol>
 <li>The following packages must be installed on all the KVM hosts. 
 
@@ -164,7 +164,7 @@ In this example the CIDR (Classless Inter-Domain Routing) address of the IPMI ne
 </ol>
 </section>
 <section id="options"> <title>Configurable Options for Flexible Control Plane</title>
-<p>The following section describes the environment variables involved in configuring the Flexible Control Plane. These variables are new with Flexible Control Plane, so you won't have seen them before if you are familiar with the HP Helion OpenStack(R) installation process.  You will set them during the installation process outlined in the <xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-installation.dita" >installation instructions</xref>. Here, just take note of what is configurable in this release, and what the settings mean.</p>
+<p>The following section describes the environment variables involved in configuring the Flexible Control Plane. These variables are new with Flexible Control Plane, so you won't have seen them before if you are familiar with the HP Helion <tm tmtype="reg">Openstack</tm> installation process.  You will set them during the installation process outlined in the <xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-installation.dita" >installation instructions</xref>. Here, just take note of what is configurable in this release, and what the settings mean.</p>
 </section>
 <section id="variables"> <title>Configurable Variables</title>
 <p>Below are descriptions of available configuration variables. Again, you will set these later, during the installation step-by-step process.</p>
@@ -175,7 +175,7 @@ In this example the CIDR (Classless Inter-Domain Routing) address of the IPMI ne
 </codeph>
 </codeblock>
 <p>
-<b>HP_ MULTI_ KVM</b>  This variable enables the heterogeneous environment to support the multiple hypervisors to host HP Helion OpenStack(R) Control Plane. The best practice is to set it to three (3).</p>
+<b>HP_ MULTI_ KVM</b>  This variable enables the heterogeneous environment to support the multiple hypervisors to host HP Helion <tm tmtype="reg">Openstack</tm> Control Plane. The best practice is to set it to three (3).</p>
 <codeblock>
   <codeph>export HP_MULTI_ KVM=3
 </codeph>

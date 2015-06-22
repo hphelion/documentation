@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7915">
-<title>HP Helion OpenStack(R) 1.1: Networking Operation (Neutron): Post Installation Tasks</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Networking Operation (Neutron): Post Installation Tasks</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Network Administrator"/>
 <othermeta name="role" content="Network Architect"/>
 <othermeta name="role" content="Vikas Deolaliker, Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -23,9 +23,9 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/neutron/1.1commercial_neutron-post-installation.md-->
  <!--permalink: /helion/openstack/1.1/services/neutron/post/installation/--></p>
-<p>Once the Helion OpenStack(R) virtual network plan has been deployed, the Network Administrator has tasks that must be completed before the network is ready for users. Other tasks are optional. Finally, there are tasks which require configuring services other than Neutron but which Neutron depends. The Network Administrator is responsible for either configuring these tasks or confirming that they have been properly completed.</p>
-<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref>. The Architecture section contains useful information about how an OpenStack(R) Cloud is put together.</p>
-<p>However, the HP Helion OpenStack(R) takes care of these details for you. The <b>
+<p>Once the Helion <tm tmtype="reg">Openstack</tm> virtual network plan has been deployed, the Network Administrator has tasks that must be completed before the network is ready for users. Other tasks are optional. Finally, there are tasks which require configuring services other than Neutron but which Neutron depends. The Network Administrator is responsible for either configuring these tasks or confirming that they have been properly completed.</p>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Operations Guide</xref>. The Architecture section contains useful information about how an <tm tmtype="reg">Openstack</tm> Cloud is put together.</p>
+<p>However, the HP Helion <tm tmtype="reg">Openstack</tm> takes care of these details for you. The <b>
 <i>Operations</i>
 </b> section contains information on how to manage your system.</p>
 <p>The following are typical post-installation configuration options.</p>
@@ -49,7 +49,7 @@
 <xref href="../../../commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-DNaaS.dita" >Configure DNSaaS</xref>
 </li>
 <li>
-<xref href="../../../commercial/GA1/1.1commercial.backup-restore-GA.dita" >Backing up and restoring your Helion OpenStack(R) configuration</xref>
+<xref href="../../../commercial/GA1/1.1commercial.backup-restore-GA.dita" >Backing up and restoring your Helion <tm tmtype="reg">Openstack</tm> configuration</xref>
 </li>
 <li>
 <xref href="../../../commercial/GA1/neutron/1.1commercial_neutron-post-installation-neutron-integration.dita" >Neutron Integration</xref>
@@ -57,22 +57,22 @@
 </ul>
 <section id="configure-plug-ins"> <title>Configuring plug-ins</title>
 <p>Refer to the <b>
-<i>OpenStack(R) Administrator Guide</i>
+<i><tm tmtype="reg">Openstack</tm> Administrator Guide</i>
 </b>, Advanced configuration options for information on configuring the appropriate plug ins for your network.</p>
 </section>
 <section id="configure-neutron-agents"> <title>Configure Neutron agents</title>
 <p>Refer to the <b>
-<i>OpenStack(R) Administrator Guide</i>
+<i><tm tmtype="reg">Openstack</tm> Administrator Guide</i>
 </b>, Configure Neutron agents for information on configuring the appropriate network agents for your network.</p>
 </section>
 <section id="tracking-masked-ip"> <title>Tracking masked IP addresses</title>
-<p>Network Address Translation (NAT), also known as floating IP addresses, is a technique malicious users employ to mask their originating IP address. Using NAT, a malicious user can attempt a masked attack on resources in your HP Helion OpenStack(R) cloud.</p>
+<p>Network Address Translation (NAT), also known as floating IP addresses, is a technique malicious users employ to mask their originating IP address. Using NAT, a malicious user can attempt a masked attack on resources in your HP Helion <tm tmtype="reg">Openstack</tm> cloud.</p>
 <p>As a result of this IP address masking, you may receive notification of abuse that appears to originate at an IP address which is part of your own IP address range.</p>
 <p>Once you have detected such malicious activity, and if you can determine the user's NAT address, you may be able to identify the actual IP address using one of the following methods. These methods allow lookup of the Nova VM associated with the source of the abusive network traffic.</p>
 </section>
 <section id="method-1"> <title>Method 1</title>
 <ol>
-<li>Log in to the HP Helion OpenStack(R) Commercial dashboard as cloud admin.</li>
+<li>Log in to the HP Helion <tm tmtype="reg">Openstack</tm> Commercial dashboard as cloud admin.</li>
 <li>Select the project you want to work with.</li>
 <li>Click the Access &amp; Security link on the <b>Project</b> dashboard <b>Compute</b> panel.</li>
 <li>The <b>Access &amp; Security</b> page is displayed with four tabs, <b>Security Groups</b>, <b>Key Pairs</b>, <b>Floating IPs</b>, and <b>API Access</b>.</li>
@@ -228,7 +228,7 @@
   <xref href="../../../commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita" >Configuring Your Network Securely</xref>
 </p>
 <p>
-  <xref type="section" href="#topic7915/top"> Return to Top </xref>
+  <xref type="section" href="#topic7915"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

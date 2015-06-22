@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1757">
-<title>HP Helion OpenStack(R) 1.1: Managing the Domain</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Managing the Domain</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -49,7 +49,7 @@
 Use the Admin dashboard to enable and disable services in a domain.
 -->
 <p>
-  <xref type="section" href="#topic1757/top"> Return to Top </xref>
+  <xref type="section" href="#topic1757"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

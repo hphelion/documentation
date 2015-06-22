@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1871">
 <title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
 <titlealts>
-<searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial Step 3</searchtitle>
+<searchtitle>Quick Start Developer Trial Step 3: Create Sandbox</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
@@ -23,7 +23,7 @@
  <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start3.md-->
  <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/3/--></p>
 <p>During this step, you will log in to the Helion Public Cloud and use the web-based console to create the sandbox environment.</p>
-<table>
+<table class="xxx">
 <tgroup cols="2">
         <colspec colname="col1" colwidth="300" colsep="1"/>
         <colspec colname="col2" colsep="0"/>
@@ -73,7 +73,7 @@
                   a cluster. This RC file has been pre-configured for this sandbox project.<ol>
                     <li>Click <b>Access &amp; Security</b> and then click the <b>API Access</b>
                       tab.</li>
-                    <li> Click <b>Download OpenStack(R) RC file</b>.<image
+                    <li> Click <b>Download <tm tmtype="reg">Openstack</tm> RC file</b>.<image
                         href="../../media/quickstartC11.png" placement="break"/></li>
                   </ol>
                 </li>

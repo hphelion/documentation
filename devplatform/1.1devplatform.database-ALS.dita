@@ -25,7 +25,7 @@
  <!--./devplatform/1.1devplatform.database-ALS.md-->
  <!--permalink: /helion/devplatform/1.1/connectdatabase/--></p>
 <p>
-<xref href="../devplatform/1.0devplatform.database-ALS.dita" >See the Helion 1.0 Development Platform version of this page</xref>
+
 If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is configured to use a database instance or master/slave pair provided by the Database Service. This is an option at cluster create time.</p>
 <p>
   <image href="../media/databaseALS.png"/>

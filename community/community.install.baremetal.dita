@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic16854">
-<title>HP Helion OpenStack(R) Community Baremetal Installation and Configuration</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Community Baremetal Installation and Configuration</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./community/community.install.baremetal.md-->
  <!--permalink: /helion/community/install/--></p>
-<p>This page explains how to install and configure HP Helion OpenStack(R) Community baremetal multi-node deployment — ideal for a small-scale, private cloud.</p>
+<p>This page explains how to install and configure HP Helion <tm tmtype="reg">Openstack</tm> Community baremetal multi-node deployment — ideal for a small-scale, private cloud.</p>
 <p>This installation, which is launched on an installer system, deploys to a minimum of 7 baremetal servers, to which you can add up to 36 compute nodes:</p>
 <ul>
 <li>1 undercloud</li>
@@ -58,7 +58,7 @@
 </li>
 <li>
 <p>
-<xref type="section" href="#topic16854/install">Installing HP Helion OpenStack(R) Community</xref>
+<xref type="section" href="#topic16854/install">Installing HP Helion <tm tmtype="reg">Openstack</tm> Community</xref>
 </p>
 
 <ul>
@@ -75,7 +75,7 @@
 <p>Before starting the installation, make sure your hardware, software, and networking meet the minimum requirements and are properly configured.</p>
 </section>
 <section id="hardware"> <title>Hardware requirements</title>
-<p>To install a HP Helion OpenStack(R) Community multi-node baremetal configuration, you must meet the hardware requirements described in <xref href="../community/community.hwsw-requirements.dita" >Community Hardware and Software Requirements</xref>.</p>
+<p>To install a HP Helion <tm tmtype="reg">Openstack</tm> Community multi-node baremetal configuration, you must meet the hardware requirements described in <xref href="../community/community.hwsw-requirements.dita" >Community Hardware and Software Requirements</xref>.</p>
 </section>
 <section id="software"> <title>Software requirements</title>
 <p>To ensure a successful installation, you must meet the software requirements described in the <xref href="../community/community.hwsw-requirements.dita#software" >Software configuration</xref> section in Community Hardware and Software Requirements.</p>
@@ -152,10 +152,10 @@
 </ul>
 </section>
 <section id="name-resolution"> <title>Set DNS servers by default</title>
-<p>To set a default DNS name server for your HP Helion OpenStack(R) Community cloud, refer to <xref href="../community/community.name-resolution.dita" >Enabling name resolution from tenant VMs in the overcloud</xref> before installation.</p>
+<p>To set a default DNS name server for your HP Helion <tm tmtype="reg">Openstack</tm> Community cloud, refer to <xref href="../community/community.name-resolution.dita" >Enabling name resolution from tenant VMs in the overcloud</xref> before installation.</p>
 </section>
 <section id="install-notes"> <title>About the installation process</title>
-<p>There are a few things you should be aware of before you begin your HP Helion OpenStack(R) Community baremetal installation.</p>
+<p>There are a few things you should be aware of before you begin your HP Helion <tm tmtype="reg">Openstack</tm> Community baremetal installation.</p>
 <ul>
 <li>
 <p>Loading images is slow, so be patient.</p>
@@ -178,7 +178,7 @@
 </li>
 </ul>
 </section>
-<section id="install"> <title>Installing HP Helion OpenStack(R) Community</title>
+<section id="install"> <title>Installing HP Helion <tm tmtype="reg">Openstack</tm> Community</title>
 <p>Once you have met all of the hardware requirements and have completed the required tasks, you can begin your installation. The following two sections will walk you through:</p>
 <ul>
 <li>
@@ -196,35 +196,31 @@
 <b>IMPORTANT:</b> During the installation process, <b>DO NOT RESTART</b> the seed cloud host (the system running the installer and seed VM). Restarting this system disrupts the baremetal bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must complete the installation process again.</p>
 </section>
 <section id="getinstall"> <title>Downloading and unpacking installation file</title>
-<p>The HP Helion OpenStack(R) Community baremetal installation is provided as a compressed TAR file. To download and unpack this file, complete the following steps.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Community baremetal installation is provided as a compressed TAR file. To download and unpack this file, complete the following steps.</p>
 <p>
 <b>Note:</b> This install file does not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.</p>
 <ol>
-<li> Log in to your install system as root:<p>
-            <codeph>sudo su -</codeph>
-          </p></li>
-<li>Register and then log in to download the HP Helion OpenStack(R) Community baremetal package from
+<li> Log in to your install system as root:<codeblock><codeph>sudo su -</codeph></codeblock></li>
+<li>Register and then log in to download the HP Helion <tm tmtype="reg">Openstack</tm> Community baremetal package from
           this site:<p>
             <xref
               href="https://helion.hpwsportal.com#/Product/%7B%22productId%22%3A%221320%22%7D/Show"
-              scope="external" format="html">HP Helion OpenStack(R) Community edition Installation
+              scope="external" format="html">HP Helion <tm tmtype="reg">Openstack</tm> Community edition Installation
               Package</xref>
           </p><p>The download file is named: <codeph>Helion_Openstack_Community.tar.gz</codeph>
           </p></li>
 <li>Create a directory named <codeph>work</codeph> and extract the kit to the <codeph>work</codeph>
-            directory:<codeblock><codeph>`mkdir /root/work`
-`cd /root/work`
-`tar zxvf /root/Helion_Openstack_Community_V1.4.tar.gz`
+            directory:<codeblock><codeph>mkdir /root/work
+cd /root/work
+tar zxvf /root/Helion_Openstack_Community_V1.4.tar.gz
 </codeph></codeblock><p>This
             creates and populates a <codeph>tripleo/</codeph> directory within <b>root/work/</b>
             directory.</p></li>
 <li>
           <b>Optional:</b> To use an interface other than 'eth0' on the HOST as the bridge
           interface, for example eth3, use the following
-          command:<codeblock>
-<codeph>export BRIDGE_INTERFACE=eth3
-</codeph>
-</codeblock></li>
+          command:<codeblock><codeph>export BRIDGE_INTERFACE=eth3
+</codeph></codeblock></li>
 <li><b>Optional:</b> To use an IP address for the seed VM other than the default (192.0.2.1), use
           the following
           command:<codeblock><codeph>export BM_NETWORK_SEED_IP=192.168.10.1
@@ -387,10 +383,10 @@ export FLOATING_CIDR=192.0.8.0/21
             </li>
             <li>
               <p>
-                <codeph>OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID</codeph> - HP Helion OpenStack(R)
+                <codeph>OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID</codeph> - HP Helion <tm tmtype="reg">Openstack</tm>
                 Community uses keepalived to manage virtual IPs. keepalived uses a unique id to
                 synchronise its activities. If you plan to run multiple installations of HP Helion
-                OpenStack(R) Community edition on the same network, each installation must be
+                <tm tmtype="reg">Openstack</tm> Community edition on the same network, each installation must be
                 configured with a unique id by setting the environment variable
                   <codeph>OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID</codeph> to a unique number (from 0 to
                 255) before running the installation. The default value, if unset, is 51.</p>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2478">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Creating Login Environment Files for Users</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Creating Login Environment Files for Users</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,66 +25,43 @@
 <!-- ===================== horizontal rule ===================== -->
 <p>This exercise creates the scripts <codeph>/etc/nova/openrc.user1</codeph> and <codeph>/etc/nova/openrc.user2</codeph>. The new scripts are created by copying the original admin login environment script <codeph>/etc/nova/openrc</codeph>, and replacing the admin user identifier and its current password with new values.</p>
 <ol>
-<li>
-<p>Create the login environment script for user <codeph>user1</codeph>.</p>
-
-<p>a. Copy the environment script used by the user admin.</p>
-
-<codeblock>
-<codeph>cp /etc/nova/openrc /etc/nova/openrc.user1
-</codeph>
-</codeblock>
-
-<p>b. Edit the new file to include the new login credentials.</p>
-
-<p>The modified file should look similar to the one illustrated below:</p>
-
-<codeblock>
-<codeph>export OS_USERNAME=user1
+<li>Create the login environment script for user <codeph>user1</codeph>.<p>a. Copy the environment
+          script used by the user
+          admin.</p><codeblock><codeph>cp /etc/nova/openrc /etc/nova/openrc.user1
+</codeph></codeblock><p>b.
+          Edit the new file to include the new login credentials.</p><p>The modified file should
+          look similar to the one illustrated below:</p><codeblock><codeph>export OS_USERNAME=user1
 export OS_TENANT_NAME=tenant1
 export OS_PASSWORD=`TERM=linux /usr/bin/keyring get 'CGCS' user1`
 export OS_AUTH_URL=http://192.168.204.2:35357/v2.0/
 export CGTS_URL=http://192.168.204.2:6385
 export PS1='[\u@\h \W(keystone_user1)]\$ '
-</codeph>
-</codeblock>
-
-<p>
-<b>Note:</b> The IP address shown here is an example, based on the default controller node floating address suggested during the controller configuration script. Depending on your system configuration, the actual IP address may be different.</p>
-
-<p>The login environment script for user <codeph>user1</codeph>, with password <codeph>user1</codeph>, is now available.</p>
-</li>
-<li>
-<p>Create the login environment script for user <codeph>user2</codeph>.</p>
-
-<p>a. Copy the environment script used by the user admin.</p>
-
-<codeblock>
-<codeph>cp /etc/nova/openrc /etc/nova/openrc.user2
-</codeph>
-</codeblock>
-
-<p>b. Edit the new file to include the new login credentials.</p>
-
-<p>The modified file should look similar to the one illustrated below:</p>
-
-<codeblock>
-<codeph>export OS_USERNAME=user2
+</codeph></codeblock><p>
+          <b>Note:</b> The IP address shown here is an example, based on the default controller node
+          floating address suggested during the controller configuration script. Depending on your
+          system configuration, the actual IP address may be different.</p><p>The login environment
+          script for user <codeph>user1</codeph>, with password <codeph>user1</codeph>, is now
+          available.</p></li>
+<li>Create the login environment script for user <codeph>user2</codeph>.<p>a. Copy the environment
+          script used by the user
+          admin.</p><codeblock><codeph>cp /etc/nova/openrc /etc/nova/openrc.user2
+</codeph></codeblock><p>b.
+          Edit the new file to include the new login credentials.</p><p>The modified file should
+          look similar to the one illustrated
+          below:</p><codeblock><codeph>export OS_USERNAME=user2
 export OS_TENANT_NAME=tenant2
 export OS_PASSWORD=`TERM=linux /usr/bin/keyring get 'CGCS' user2`
 export OS_AUTH_URL=http://192.168.204.2:35357/v2.0/
 export CGTS_URL=http://192.168.9.204:6385
 export PS1='[\u@\h \W(keystone_user2)]\$ '
-</codeph>
-</codeblock>
-
-<p>The login environment script for user <codeph>user2</codeph>, with password <codeph>user2</codeph>, is now available.</p>
-
-<p>The two new user login environments are available. You can source them in order to execute commands with the corresponding user identities.</p>
-</li>
+</codeph></codeblock><p>The
+          login environment script for user <codeph>user2</codeph>, with password
+            <codeph>user2</codeph>, is now available.</p><p>The two new user login environments are
+          available. You can source them in order to execute commands with the corresponding user
+          identities.</p></li>
 </ol>
 <p>
-  <xref type="section" href="#topic2478/top"> Return to Top </xref>
+  <xref type="section" href="#topic2478"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

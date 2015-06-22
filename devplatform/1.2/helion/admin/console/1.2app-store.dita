@@ -53,8 +53,7 @@ config</xref>.</p>
 <p>
 <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-YAML" >YAML</xref> files describe the settings for each set of apps, including the container and a link to the source  repository for
 each app. For example:</p>
-<codeblock>
-  <codeph>store:
+<codeblock>store:
   title: Third Party Apps for Application Lifecycle Service Development Platform
   contact: Application Lifecycle Service Development Platform Support 
   icon: http://static.als.hpcloud.com/hp.ico
@@ -96,9 +95,7 @@ apps:
   mem: 64
   license: MIT
   src: https://github.com/Helion-Apps/node-chat.git
-  info: https://github.com/Helion-Apps/node-chat.git#readme
-</codeph>
-</codeblock>
+  info: https://github.com/Helion-Apps/node-chat.git#readme</codeblock>
 <p>The YAML string requires two top-level keys: <b>store</b>
 and <b>apps</b>.</p>
 </section>
@@ -193,10 +190,9 @@ URL, <b>default</b>, or other variable value.</dd>
 
 </dl>
 <p>
-  <b>Note</b>
-</p>
-<p>The store definition settings do not override settings in the
-application's <i>manifest.yml</i> file.</p>
+        <note>The store definition settings do not override settings in the application's
+            <i>manifest.yml</i> file.</note>
+      </p>
 </section>
 <section id="hosting-the-store-definition-files"> <title>Hosting the Definition Files</title>
 <p>The YAML files defining the stores can be served via HTTP or HTTPS by
@@ -214,10 +210,7 @@ your store definition YAML file then click <b>Add Sample Applications URL</b>.</
 <p>Sample Applications URLs can also be viewed, added, deleted, enabled, and disabled
 with <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" >kato config</xref>. For
 example:</p>
-<codeblock>
-  <codeph>kato config get cloud_controller_ng app_store
-</codeph>
-</codeblock>
+<codeblock>kato config get cloud_controller_ng app_store</codeblock>
 </section>
 </body>
 </topic>

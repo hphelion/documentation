@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10109">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Components of the Scenario Environment</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Components of the Scenario Environment</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -27,13 +27,13 @@
 <ul>
 <li>
 <p>
-<b>System Administrator</b> - Has access to the administration components of HP Helion OpenStack(R) Carrier Grade to manage users and resources.</p>
+<b>System Administrator</b> - Has access to the administration components of HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade to manage users and resources.</p>
 
-<p>The scenario environment has only one system administrator, identified as the admin user. This user is defined as part of the HP Helion OpenStack(R) Carrier Grade installation.</p>
+<p>The scenario environment has only one system administrator, identified as the admin user. This user is defined as part of the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade installation.</p>
 </li>
 <li>
 <p>
-<b>End Users</b> - Have access to the user components of HP Helion OpenStack(R) Carrier Grade to manage a set of system resources under the quotas and constraints set up by the system administrator.</p>
+<b>End Users</b> - Have access to the user components of HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade to manage a set of system resources under the quotas and constraints set up by the system administrator.</p>
 
 <p>The scenario environment has two end users identified as user1 and user2. They are created by the admin user (see Creating Users on page 16).</p>
 </li>
@@ -44,17 +44,15 @@
 <li>
 <b>Tenant (or Project)</b> - An isolated resource container consisting of networks, storage volumes, images, instances (guest applications), authentication keys, and users. Tenants are the core resource structure on which all end user services are managed.</li>
 </ul>
-<p>The scenario environment has three tenants, identified as admin, tenant1, and tenant2. For convenience, the latter two are referred to as user tenants. The admin tenant is created as part of the HP Helion OpenStack(R) Carrier Greade installation. The user tenants are created by the admin user. See Creating Tenants and Updating Quotas.</p>
-<codeblock>
-  <codeph>**Note:** The identifier admin is used for both the system administrator and the admin tenant. They can be differentiated by context.
-</codeph>
-</codeblock>
+<p>The scenario environment has three tenants, identified as admin, tenant1, and tenant2. For convenience, the latter two are referred to as user tenants. The admin tenant is created as part of the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Greade installation. The user tenants are created by the admin user. See Creating Tenants and Updating Quotas.</p>
+      <p><b>Note</b>:The identifier admin is used for both the system administrator and the admin
+        tenant. They can be differentiated by context.</p>
 <ul>
 <li>
 <p>
 <b>Provider Network</b> - A logical transport mechanism for the tenant networks. Provider networks are realized over physical transport resources.</p>
 
-<p>For the deployment scenarios, an operational HP Helion OpenStack(R) Carrier Grade system is assumed, implying that provider networks have already been established. Until at least one provider network has been defined and associated with <codeph>compute-node</codeph> data interfaces, it is not possible to unlock the compute nodes or make the system operational.</p>
+<p>For the deployment scenarios, an operational HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade system is assumed, implying that provider networks have already been established. Until at least one provider network has been defined and associated with <codeph>compute-node</codeph> data interfaces, it is not possible to unlock the compute nodes or make the system operational.</p>
 
 <p>Provider networks are created by the admin user.</p>
 
@@ -131,7 +129,7 @@ provider-net-b      568-599</p>
 
 <p>Each of these networks is assigned by the admin user for use by a single tenant. The admin user is able to specify the provider network and VLAN on which they are implemented, ensuring that the tenants can use them to connect to specific devices on specific physical networks.</p>
 
-<p>In the scenarios, each user uses the management network to connect the VMs to a virtual router on the tenant. In addition to establishing a path to the external network, the virtual router establishes connections to OpenStack(R) services such as the metadata service, which provides instances with access to user data.</p>
+<p>In the scenarios, each user uses the management network to connect the VMs to a virtual router on the tenant. In addition to establishing a path to the external network, the virtual router establishes connections to <tm tmtype="reg">Openstack</tm> services such as the metadata service, which provides instances with access to user data.</p>
 </li>
 <li>
 <p>
@@ -139,58 +137,57 @@ provider-net-b      568-599</p>
 
 <table>
 <tgroup cols="4">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<thead>
-<row>
-<entry>Tenant Network</entry>
-<entry>Created By</entry>
-<entry>Provider Network</entry>
-<entry> VLAN ID Allocation</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>external-net</entry>
-<entry>admin</entry>
-<entry>provider-net-a</entry>
-<entry>Manual</entry>
-</row>
-<row>
-<entry>
-internal-net</entry>
-<entry>admin</entry>
-<entry>provider-net-b</entry>
-<entry>Dynamic</entry>
-</row>
-<row>
-<entry>tenant1-mgmt-net</entry>
-<entry>admin</entry>
-<entry>provider-net-a</entry>
-<entry>Dynamic</entry>
-</row>
-<row>
-<entry>tenant1-net</entry>
-<entry>user1</entry>
-<entry>as allocated</entry>
-<entry>Dynamic</entry>
-</row>
-<row>
-<entry>tenant2-mgmt-net</entry>
-<entry>admin</entry>
-<entry>provider-net-a</entry>
-<entry>Dynamic</entry>
-</row>
-<row>
-<entry>tenant2-net</entry>
-<entry>user2</entry>
-<entry>as allocated</entry>
-<entry>Dynamic</entry>
-</row>
-</tbody>
-</tgroup>
+              <colspec colname="col1" colsep="1" rowsep="1"/>
+              <colspec colname="col2" colsep="1" rowsep="1"/>
+              <colspec colname="col3" colsep="1" rowsep="1"/>
+              <colspec colname="col4" colsep="1" rowsep="1"/>
+              <thead>
+                <row>
+                  <entry>Tenant Network</entry>
+                  <entry>Created By</entry>
+                  <entry>Provider Network</entry>
+                  <entry> VLAN ID Allocation</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>external-net</entry>
+                  <entry>admin</entry>
+                  <entry>provider-net-a</entry>
+                  <entry>Manual</entry>
+                </row>
+                <row>
+                  <entry> internal-net</entry>
+                  <entry>admin</entry>
+                  <entry>provider-net-b</entry>
+                  <entry>Dynamic</entry>
+                </row>
+                <row>
+                  <entry>tenant1-mgmt-net</entry>
+                  <entry>admin</entry>
+                  <entry>provider-net-a</entry>
+                  <entry>Dynamic</entry>
+                </row>
+                <row>
+                  <entry>tenant1-net</entry>
+                  <entry>user1</entry>
+                  <entry>as allocated</entry>
+                  <entry>Dynamic</entry>
+                </row>
+                <row>
+                  <entry>tenant2-mgmt-net</entry>
+                  <entry>admin</entry>
+                  <entry>provider-net-a</entry>
+                  <entry>Dynamic</entry>
+                </row>
+                <row>
+                  <entry>tenant2-net</entry>
+                  <entry>user2</entry>
+                  <entry>as allocated</entry>
+                  <entry>Dynamic</entry>
+                </row>
+              </tbody>
+            </tgroup>
 </table>
 </li>
 <li>
@@ -200,59 +197,59 @@ IP subnet. They are configured as follows:</p>
 
 <table>
 <tgroup cols="4">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<thead>
-<row>
-<entry>Subnet</entry>
-<entry>Address</entry>
-<entry>Tenant Network</entry>
-<entry>Created By</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>external-subnet</entry>
-<entry>192.168.2.0/24
-<!--A BR tag was used here in the original source.-->External Gateway
-<!--A BR tag was used here in the original source.-->192.168.2.1</entry>
-<entry> external-net</entry>
-<entry>admin</entry>
-</row>
-<row>
-<entry>internal-subnet</entry>
-<entry>10.1.1.0/24</entry>
-<entry>internal-net</entry>
-<entry>admin</entry>
-</row>
-<row>
-<entry>tenant1-mgmt-subnet</entry>
-<entry>192.168.102.0/24</entry>
-<entry>tenant1-mgmt-net</entry>
-<entry>user1</entry>
-</row>
-<row>
-<entry>tenant1-subnet</entry>
-<entry>172.31.1.0/24</entry>
-<entry>tenant1-net</entry>
-<entry>user1</entry>
-</row>
-<row>
-<entry>tenant2-mgmt-subnet</entry>
-<entry>192.168.202.0/24</entry>
-<entry>tenant2-mgmt-net</entry>
-<entry>user2</entry>
-</row>
-<row>
-<entry>tenant2-subnet</entry>
-<entry>172.31.2.0/24</entry>
-<entry>tenant2-net</entry>
-<entry>user2</entry>
-</row>
-</tbody>
-</tgroup>
+              <colspec colname="col1" colsep="1" rowsep="1"/>
+              <colspec colname="col2" colsep="1" rowsep="1"/>
+              <colspec colname="col3" colsep="1" rowsep="1"/>
+              <colspec colname="col4" colsep="1" rowsep="1"/>
+              <thead>
+                <row>
+                  <entry>Subnet</entry>
+                  <entry>Address</entry>
+                  <entry>Tenant Network</entry>
+                  <entry>Created By</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>external-subnet</entry>
+                  <entry>192.168.2.0/24
+                    <!--A BR tag was used here in the original source.-->External Gateway
+                    <!--A BR tag was used here in the original source.-->192.168.2.1</entry>
+                  <entry> external-net</entry>
+                  <entry>admin</entry>
+                </row>
+                <row>
+                  <entry>internal-subnet</entry>
+                  <entry>10.1.1.0/24</entry>
+                  <entry>internal-net</entry>
+                  <entry>admin</entry>
+                </row>
+                <row>
+                  <entry>tenant1-mgmt-subnet</entry>
+                  <entry>192.168.102.0/24</entry>
+                  <entry>tenant1-mgmt-net</entry>
+                  <entry>user1</entry>
+                </row>
+                <row>
+                  <entry>tenant1-subnet</entry>
+                  <entry>172.31.1.0/24</entry>
+                  <entry>tenant1-net</entry>
+                  <entry>user1</entry>
+                </row>
+                <row>
+                  <entry>tenant2-mgmt-subnet</entry>
+                  <entry>192.168.202.0/24</entry>
+                  <entry>tenant2-mgmt-net</entry>
+                  <entry>user2</entry>
+                </row>
+                <row>
+                  <entry>tenant2-subnet</entry>
+                  <entry>172.31.2.0/24</entry>
+                  <entry>tenant2-net</entry>
+                  <entry>user2</entry>
+                </row>
+              </tbody>
+            </tgroup>
 </table>
 <p>
 <b>Notes</b>:</p>
@@ -268,11 +265,11 @@ IP subnet. They are configured as follows:</p>
 </li>
 <li>
 <p>
-<b>Virtual Router</b> - Created by the end users, the virtual routers provide the VMs with connections to the external network, and to OpenStack(R) services running on the compute node, such as the metadata service used to provide instances with access to user data when they are launched. Two routers are created, tenant1-router and tenant2-router, each within its corresponding tenant container (see Adding a Virtual Router).</p>
+<b>Virtual Router</b> - Created by the end users, the virtual routers provide the VMs with connections to the external network, and to <tm tmtype="reg">Openstack</tm> services running on the compute node, such as the metadata service used to provide instances with access to user data when they are launched. Two routers are created, tenant1-router and tenant2-router, each within its corresponding tenant container (see Adding a Virtual Router).</p>
 </li>
 <li>
 <p>
-<b>Glance Guest Image</b> - The example guest image provided with HP Helion OpenStack(R) Carrier Grade must be imported into the OpenStack(R)
+<b>Glance Guest Image</b> - The example guest image provided with HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade must be imported into the <tm tmtype="reg">Openstack</tm>
 Glance service for use. Images can be imported by the admin user(see Setting Up the Example Guest Image) or by end users.</p>
 </li>
 <li>
@@ -298,7 +295,7 @@ Glance service for use. Images can be imported by the admin user(see Setting Up 
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic10109/top"> Return to Top </xref>
+  <xref type="section" href="#topic10109"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

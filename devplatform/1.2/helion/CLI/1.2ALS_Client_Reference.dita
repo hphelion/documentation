@@ -30,23 +30,22 @@
 <xref type="section" href="#topic13234/update">Update the cf-mgmt Tool</xref>
 </li>
 <li>
-<xref type="section" href="#topic13234/commands">Cluster Commands</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic13234/create">Create a Cluster</xref>
-</li>
-<li>
-<xref type="section" href="#topic13234/delete">Delete a Cluster</xref>
-</li>
-<li>
-<xref type="section" href="#topic13234/addrole">Add a Role to an Existing Cluster</xref>
-</li>
-<li>
-<xref type="section" href="#topic13234/addservice">Add a Service to an Existing Cluster</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic13234/commands">Cluster Commands</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic13234/create">Create a Cluster</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13234/delete">Delete a Cluster</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13234/addrole">Add a Role to an Existing Cluster</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13234/addservice">Add a Service to an Existing
+              Cluster</xref>
+          </li>
+        </ul></li>
 </ul>
 <section id="configuration-values"> <title>Configuration Values</title>
 <p>There are three ways to pass configuration values into ALS:</p>
@@ -57,12 +56,14 @@
 </li>
 </ul>
 <p>ALS maintains separate configuration files.</p>
-<p>One configuration file contains the values for the global variables. The global configuration file is located in the home directory and is named <i>cf-mgmt.yml</i>. <!--A BR tag was used here in the original source.-->Global level <b>commands</b> create, delete, and add clusters. <!--A BR tag was used here in the original source.-->
- Global level <b>configurations</b> manage tenants, users, versions, and other system information.</p>
+<p>One configuration file contains the values for the global variables. The global configuration
+        file is located in the home directory and is named <i>cf-mgmt.yml</i>. Global level
+          <b>commands</b> create, delete, and add clusters. Global level <b>configurations</b>
+        manage tenants, users, versions, and other system information.</p>
 <p>The other configuration files, specified by the <b>--load</b> option, includes the values that should be passed to arguments for a specific command. Values must be included in the appropriate file for correct scoping; putting a command-specific value in the global file, for example, will not function as desired.</p>
 </section>
 <section id="global"> <title>Global Options</title>
-<p>These variables affect the entire cluster; they are <b>global</b> in scope. These environment variables are configured to work with the OpenStack(R) Python tools to enable faster integration.</p>
+<p>These variables affect the entire cluster; they are <b>global</b> in scope. These environment variables are configured to work with the <tm tmtype="reg">Openstack</tm> Python tools to enable faster integration.</p>
 <codeblock>cf-mgmt <b>[global options]</b> command [command options] [arguments...] </codeblock>
 <table>
 <tgroup cols="3">
@@ -89,37 +90,37 @@
   </row>
 <row>
     <entry>--os-username</entry>
-    <entry>OpenStack(R) user name</entry>
+    <entry><tm tmtype="reg">Openstack</tm> user name</entry>
     <entry>$OS_USERNAME</entry>
   </row>
 <row>
     <entry>--os-password</entry>
-    <entry>OpenStack(R) password</entry>
+    <entry><tm tmtype="reg">Openstack</tm> password</entry>
     <entry>$OS_PASSWORD</entry>
   </row>
 <row>
     <entry>--os-auth-url</entry>
-    <entry>OpenStack(R) authentication URL</entry>
+    <entry><tm tmtype="reg">Openstack</tm> authentication URL</entry>
     <entry>$OS_AUTH_URL</entry>
   </row>
 <row>
     <entry>--os-tenant-id</entry>
-    <entry>OpenStack(R) tenant ID</entry>
+    <entry><tm tmtype="reg">Openstack</tm> tenant ID</entry>
     <entry>$OS_TENANT_ID</entry>
   </row>
 <row>
     <entry>--os-tenant-name</entry>
-    <entry>OpenStack(R) tenant name</entry>
+    <entry><tm tmtype="reg">Openstack</tm> tenant name</entry>
     <entry>$OS_TENANT_NAME</entry>
   </row>
 <row>
     <entry>--os-region-name</entry>
-    <entry>OpenStack(R) region</entry>
+    <entry><tm tmtype="reg">Openstack</tm> region</entry>
     <entry>$OS_REGION_NAME</entry>
   </row>
 <row>
     <entry>--os-cacert</entry>
-    <entry>OpenStack(R) CA certificate</entry>
+    <entry><tm tmtype="reg">Openstack</tm> CA certificate</entry>
     <entry>$OS_CACERT</entry>
   </row>
 <row>
@@ -449,7 +450,9 @@
 </table>
 </section>
 <section id="addrole"> <title>Add Roles to an Existing Cluster</title>
-<p>Options can be passed when adding roles to an existing cluster (<i>add-role dea</i>). <!--A BR tag was used here in the original source.--><b>Note</b>: Adding a role will create one or more additional nodes in the cluster as part of the process.</p>
+<p>Options can be passed when adding roles to an existing cluster (<i>add-role dea</i>).
+          <note>Adding a role will create one or more additional nodes in the cluster as part of the
+          process.</note></p>
 </section>
 <section id="add-role-use-syntax"> <title>Use Syntax</title>
 <codeblock>cf-mgmt [global options] <b>add-role</b> [subcommand] [subcommand options] [arguments...]</codeblock>
@@ -747,10 +750,11 @@
 </section>
 <section id="update-the-cf-mgmt-tool"> <title>Update the cf-mgmt Tool</title>
 <p>This command checks for and downloads the latest version of the <varname>cf-mgmt.exe</varname> tool.</p>
-<codeblock>cf-mgmt <b>update</b>
-</codeblock>
+<codeblock>cf-mgmt <b>update</b></codeblock>
 <p>
-<b>Note</b>: There are no arguments for this command. Passing the Help option will generate an empty list.</p>
+        <note>There are no arguments for this command. Passing the Help option will generate an
+          empty list.</note>
+      </p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>

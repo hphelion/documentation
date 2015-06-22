@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1567">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Resource Scaling (Autoscaling)</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Resource Scaling (Autoscaling)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -32,7 +32,7 @@
 <p>Performance metrics can be collected and reported from the Wind River Linux servers, or by the guests using guest
 metrics. For more information about guest metrics, see Reporting a Guest Metric](/helion/commercial/carrier/dashboard/managing/instances/guest/).</p>
 <p>
-  <xref type="section" href="#topic1567/top"> Return to Top </xref>
+  <xref type="section" href="#topic1567"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

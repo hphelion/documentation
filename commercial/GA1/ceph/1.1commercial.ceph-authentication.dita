@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6100">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: CEPHX Authentication</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: CEPHX Authentication</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: CEPHX Authentication</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: CEPHX Authentication</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -131,8 +131,8 @@ ceph.client.cinder-backup.keyring to all controller, compute and to all ceph nod
 </codeblock>
 </li>
 </ol>
-<p>At this point, if a Glance user attempts to access a Cinder or a Nova pool, the Ceph cluster would reject the attempt with a <b>Permission Denied</b> error message. Therefore, you have to change  the<codeph>glance-api.conf</codeph>, <codeph>cinder.conf</codeph> on controller nodes and <codeph>nova-api.conf</codeph> on controller and compute nodes to include appropriate user-pool mapping. Also, on compute nodes, the secret key to <codeph>libvirt</codeph> must be added. For details, refer <xref href="http://ceph.com/docs/master/rbd/rbd-openstack#setup-ceph-client-authentication" scope="external" format="html" >OpenStack(R) Ceph Authentication document</xref>.</p>
-<p>Perform following steps on HP Helion OpenStack(R) nodes.</p>
+<p>At this point, if a Glance user attempts to access a Cinder or a Nova pool, the Ceph cluster would reject the attempt with a <b>Permission Denied</b> error message. Therefore, you have to change  the<codeph>glance-api.conf</codeph>, <codeph>cinder.conf</codeph> on controller nodes and <codeph>nova-api.conf</codeph> on controller and compute nodes to include appropriate user-pool mapping. Also, on compute nodes, the secret key to <codeph>libvirt</codeph> must be added. For details, refer <xref href="http://ceph.com/docs/master/rbd/rbd-openstack#setup-ceph-client-authentication" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Ceph Authentication document</xref>.</p>
+<p>Perform following steps on HP Helion <tm tmtype="reg">Openstack</tm> nodes.</p>
 <ol>
 <li>
 <p>On first compute node, add the secret key to <codeph>libvirt</codeph> and remove the temporary copy of the key. Execute <codeph>uuidgen</codeph>.</p>
@@ -236,7 +236,7 @@ service nova-conductor restart
   <xref href="../../../commercial/GA1/ceph/1.1commercial-ceph-hp-helion-openstack-ceph-configuration.dita" >Ceph Configuration</xref>
 </p>
 <p>
-  <xref type="section" href="#topic6100/top"> Return to Top </xref>
+  <xref type="section" href="#topic6100"> Return to Top </xref>
 </p>
 </section>
 </body>

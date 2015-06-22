@@ -21,7 +21,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/helion/user/reference/1.1client-ref-securitygroups.md-->
  <!--permalink: /helion/devplatform/1.1/als/user/reference/client-ref/securitygroups/--></p>
-<p>These commands are new in in HP Helion OpenStack(R) Development Platform 1.1.</p>
+<p>These commands are new in in HP <tm tmtype="reg">Helion Openstack</tm> Development Platform 1.1.</p>
 <ul>
 <li>
 <xref type="section" href="#topic5620/command-bind-security-group">helion bind-security-group</xref>: Bind the named security group to the current space, the specified space, or the running and staging phases. </li>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4165">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Administrators Guide</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Administrators Guide</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -18,12 +18,12 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Admin_Guide/carrier-grade-admin-guide.md-->
  <!--permalink: /helion/openstack/carrier/admin/old/--></p>
-<p>Use the following links for information on administrative tasks you can perform for the HP Helion OpenStack(R) Carrier Grade:</p>
-<section id="managing-your-hp-helion-openstack-carrier-grade-cloud"> <title>Managing Your HP Helion OpenStack(R) Carrier Grade Cloud</title>
-<p>For information on the day-to-day administrative tasks you can perform in the HP Helion OpenStack(R) Carrier Grade, see <xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita" >Managing Your Cloud</xref>.</p>
+<p>Use the following links for information on administrative tasks you can perform for the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade:</p>
+<section id="managing-your-hp-helion-openstack-carrier-grade-cloud"> <title>Managing Your HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Cloud</title>
+<p>For information on the day-to-day administrative tasks you can perform in the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade, see <xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita" >Managing Your Cloud</xref>.</p>
 </section>
 <section id="configure-block-storage-by-either-deploying-vsa-or-using-hp-3par-array"> <title>Configure Block Storage by either deploying VSA or using HP 3Par Array</title>
-<p>Use one of the following methods to add block storage to your HP Helion OpenStack(R) cloud:</p>
+<p>Use one of the following methods to add block storage to your HP Helion <tm tmtype="reg">Openstack</tm> cloud:</p>
 <ul>
 <li>
 <p>Configure HP StoreVirtual VSA</p>
@@ -43,7 +43,7 @@
 </section>
 <section id="configure-a-swift-scale-out-cluster"> <title>Configure a Swift Scale-Out cluster</title>
 <p>An optional Swift Scale-Out cluster instance of between two and twelve servers that is used for production cloud Object storage use (Scale-Out Swift extends the Starter Swift Cluster enabling greater capacity while maintaining any initial data present in Starter Swift).</p>
-<p>HP Helion OpenStack(R) Carrier Grade includes integral, built-in support for Scale-out Object Storage (Swift) to the cloud. The HP Helion OpenStack(R) Carrier Grade cloud deployment includes automatic creation of a Swift cluster and starter nodes. It also enables SSL automatically to secure the data transmission.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade includes integral, built-in support for Scale-out Object Storage (Swift) to the cloud. The HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade cloud deployment includes automatic creation of a Swift cluster and starter nodes. It also enables SSL automatically to secure the data transmission.</p>
 <p>For more information, see <xref href="../../CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita" >Object Storage (Swift) Service Overview</xref>.</p>
 </section>
 <section id="migrating-virtual-machines"> <title>Migrating Virtual Machines</title>
@@ -65,7 +65,7 @@
 <p>For more information, see <xref href="../../CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.scaling.dita" >Scaling Virtual Machine Resources</xref>.</p>
 </section>
 <section id="virtual-machines-and-carrier-grade-availability"> <title>Virtual Machines and Carrier-Grade Availability</title>
-<p>The Wind River Linux servers in HP Helion OpenStack(R) Carrier Grade provide a health monitoring mechanism that can be used to implement and support the deployment of guest applications in Carrier-Grade High Availability (HA) mode.</p>
+<p>The Wind River Linux servers in HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade provide a health monitoring mechanism that can be used to implement and support the deployment of guest applications in Carrier-Grade High Availability (HA) mode.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -81,21 +81,21 @@
 <!-- Hide for alpha
 - [Troubleshooting](/helion/openstack/carrier/services/troubleshooting/)
 
-## Administering the HP Helion OpenStack(R) Carrier Grade using Helion Lifecycle Management
+## Administering the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade using Helion Lifecycle Management
 
-Using HLM, you can install and upgrade HP Helion OpenStack(R) Carrier Grade and do....
+Using HLM, you can install and upgrade HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade and do....
 
 For information on the administrative tasks you can perform using HLM, see [Using Helion Lifecycle Management](/helion/openstack/carrier/admin/hlm/).
 
-## Administering HP Helion OpenStack(R) Carrier Grade
+## Administering HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade
 
-For information on the administrative tasks you can perform in the HP Helion OpenStack(R) region, see [Administering the HP Helion OpenStack(R) Region](/helion/openstack/carrier/admin/helion/)
+For information on the administrative tasks you can perform in the HP Helion <tm tmtype="reg">Openstack</tm> region, see [Administering the HP Helion <tm tmtype="reg">Openstack</tm> Region](/helion/openstack/carrier/admin/helion/)
 
 
 
 ## Administering HP Distributed Cloud Networking (DCN)
 
-Using DCN, you can install and upgrade HP Helion OpenStack(R) Carrier Grade and do...
+Using DCN, you can install and upgrade HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade and do...
 
 For information on the administrative tasks you can perform using DCN, see [Administering HP Distributed Cloud Networking (DCN)](/helion/openstack/carrier/admin/dcn/).
 
@@ -105,7 +105,7 @@ For information on the administrative tasks you can perform in the WindRiver reg
 
 -->
 <p>
-  <xref type="section" href="#topic4165/top"> Return to Top </xref>
+  <xref type="section" href="#topic4165"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

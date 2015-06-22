@@ -17,7 +17,7 @@
 <p>
 <b>Document Version:</b> 1.5</p>
 <section id="1-overview"> <title>1. Overview</title>
-<p>The HP Helion Public Cloud Networking Service is based on <xref href="https://wiki.openstack.org/wiki/Neutron" scope="external" format="html" >OpenStack(R) Neutron</xref>.</p>
+<p>The HP Helion Public Cloud Networking Service is based on <xref href="https://wiki.openstack.org/wiki/Neutron" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Neutron</xref>.</p>
 <p>HP Helion Public Cloud Networking is a virtual network service that provides a powerful API to define the network connectivity and addressing used by devices from other services, such as HP Helion Public Cloud Compute. The HP Helion Public Cloud Networking API supports virtual network, subnet, router and port abstractions to describe network resources.</p>
 <p>Users can configure rich network topologies by creating and configuring networks, subnets, ports and routers.  Other services such as Compute may be used to attach virtual devices to ports on these networks.  In particular, Networking supports each tenant having multiple private networks, and allows tenants to choose their own IP addressing scheme, even if those IP addresses overlap with those used by other tenants.  This enables advanced cloud networking use cases, such as building multi-tiered web applications and allowing applications to be migrated to the Cloud without changing IP addresses.</p>
 <p>HP Helion Public Cloud Networking API extensions provide additional abstractions and features. The Networking service supports the following extensions:</p>
@@ -43,7 +43,7 @@
 Networking is currently in General Availability.</p>
 <p>
 <b>Version API Status</b>:<!--A BR tag was used here in the original source.-->
-The Networking service is based upon OpenStack(R) Neutron v2.0 API.</p>
+The Networking service is based upon <tm tmtype="reg">Openstack</tm> Neutron v2.0 API.</p>
 </section>
 <section id="12-document-revision-history"> <title>1.2 Document Revision History</title>
 <table>
@@ -279,7 +279,7 @@ D - Attribute value can be deleted</p>
 <li>IPv6 is currently not supported</li>
 <li>Multi-NIC on a single instance is not supported</li>
 </ul>
-<p>Networking does not support all OpenStack(R) Networking APIs and extensions as documented in the OpenStack(R) Networking API Guide.  Operations not supported for customer use include:</p>
+<p>Networking does not support all <tm tmtype="reg">Openstack</tm> Networking APIs and extensions as documented in the <tm tmtype="reg">Openstack</tm> Networking API Guide.  Operations not supported for customer use include:</p>
 <ul>
 <li>Bulk Create Networks  </li>
 <li>Bulk Create Subnets  </li>
@@ -4247,7 +4247,7 @@ If an error occurs, the response body contains a description of the error.</p>
 </section>
 <section id="delete_router"> <title>4.5.5.1.5 Delete Router</title>
 </section>
-<section id="put-v20routersid"> <title>PUT /v2.0/routers/{id}</title>
+<section id="put-v20routersid2"> <title>PUT /v2.0/routers/{id}</title>
 <p>This operation removes a logical router. The operation will fail if the router still has internal interfaces attached.</p>
 <p>
 <b>Note:</b>  All router interfaces must be removed prior to deleting the router.  Router interfaces can be removed through the <xref type="section" href="#topic127886/delete_interface">Remove router interface</xref>

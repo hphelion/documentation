@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3699">
-<title>HP Helion OpenStack(R) 1.0: Working with ESX Clusters</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Working with ESX Clusters</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.undercloud-oc-config-esx.md-->
  <!--permalink: /helion/openstack/undercloud/oc/config/esx/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.undercloud-oc-config-esx.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>In the undercloud, you register your vCenter and import the clusters from the EON data of the registered vCenter. These resources are available in your cloud after registration and it can be allocated for the usage of cloud.</p>
 <p>You can perform the following activities in the Horizon undercloud dashboard.</p>
@@ -100,7 +100,7 @@
 <li>Click Done.</li>
 </ol>
 <p>
-  <xref type="section" href="#topic3699/top"> Return to Top </xref>
+  <xref type="section" href="#topic3699"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

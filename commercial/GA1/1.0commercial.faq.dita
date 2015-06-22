@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7037">
-<title>HP Helion OpenStack(R) 1.0: FAQ</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: FAQ</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,17 +13,17 @@
  <!--./commercial/GA1/1.0commercial.faq.md-->
  <!--permalink: /helion/openstack/faq/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.faq.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>Welcome to FAQ!</p>
-<p>This page answers most commonly asked  queries that you might have while working with HP Helion OpenStack(R)</p>
-<!--##Understanding HP Helion OpenStack(R)-->
+<p>This page answers most commonly asked  queries that you might have while working with HP Helion <tm tmtype="reg">Openstack</tm></p>
+<!--##Understanding HP Helion <tm tmtype="reg">Openstack</tm>-->
 <ul>
 <li>
-<xref type="section" href="#topic7037/whatHelion">What is HP Helion OpenStack(R)</xref>
+<xref type="section" href="#topic7037/whatHelion">What is HP Helion <tm tmtype="reg">Openstack</tm></xref>
 </li>
 <li>
-<xref type="section" href="#topic7037/distroenable">What does HP Helion OpenStack(R) enable me to do?</xref>
+<xref type="section" href="#topic7037/distroenable">What does HP Helion <tm tmtype="reg">Openstack</tm> enable me to do?</xref>
 </li>
 <li>
 <xref type="section" href="#topic7037/TripleO">What is TripleO?</xref>
@@ -37,7 +37,7 @@
 <li>
 <xref type="section" href="#topic7037/localized">Is the release localized for non-English speaking markets?</xref> </li>
 <li>
-<xref type="section" href="#topic7037/hybridorpubliccloud">Does the HP Helion OpenStack(R) work with hybrid or public cloud projects?</xref>
+<xref type="section" href="#topic7037/hybridorpubliccloud">Does the HP Helion <tm tmtype="reg">Openstack</tm> work with hybrid or public cloud projects?</xref>
 </li>
 <li>
 <xref type="section" href="#topic7037/nodes">How many nodes and virtual machines does it support?</xref>  </li>
@@ -48,15 +48,15 @@
 <xref type="section" href="#topic7037/includeOS">Does it include an Operating System (OS)?</xref>
 </li>
 <li>
-<xref type="section" href="#topic7037/icehouse">Does this distribution include the OpenStack(R) Icehouse release?</xref> </li>
+<xref type="section" href="#topic7037/icehouse">Does this distribution include the <tm tmtype="reg">Openstack</tm> Icehouse release?</xref> </li>
 <li>
-<xref type="section" href="#topic7037/nonhphardware">Can HP Helion OpenStack(R) run on non-HP hardware?</xref>
+<xref type="section" href="#topic7037/nonhphardware">Can HP Helion <tm tmtype="reg">Openstack</tm> run on non-HP hardware?</xref>
 </li>
 </ul>
 <section id="support-and-additional-resources"> <title>Support and additional resources</title>
 <ul>
 <li>
-<xref type="section" href="#topic7037/supportservices">Are HP support services included with HP Helion OpenStack(R)</xref>
+<xref type="section" href="#topic7037/supportservices">Are HP support services included with HP Helion <tm tmtype="reg">Openstack</tm></xref>
 </li>
 <li>
 <xref type="section" href="#topic7037/supportoptions">What support options are available?</xref>
@@ -65,44 +65,44 @@
 <xref type="section" href="#topic7037/MoreInfo">Where can I find more information?</xref>
 </li>
 <li>
-<xref type="section" href="#topic7037/reportissues">Where can I report issues with HP OpenStack(R) Helion?</xref> </li>
+<xref type="section" href="#topic7037/reportissues">Where can I report issues with HP <tm tmtype="reg">Openstack</tm> Helion?</xref> </li>
 </ul>
 </section>
-<section id="what-is-hp-helion-openstack"> <title>What is HP Helion OpenStack(R)<!--Removed anchor point whatHelion--><!-- id="whatHelion" --></title>
-<p>HP Helion OpenStack(R) is a commercial distribution built on OpenStack(R) technology that provides an open, scalable, highly available enterprise-grade cloud software platform to help customers build, manage, and consume hybrid clouds.</p>
-<!-- Removed per Gary's comments I HP Helion OpenStack(R) is the first OpenStack(R) distribution from HP. It is free to download and will be kept updated frequently to stay current with OpenStack(R) developments. It is the foundational technology for all HP Helion products in the future.-->
+<section id="what-is-hp-helion-openstack"> <title>What is HP Helion <tm tmtype="reg">Openstack</tm><!--Removed anchor point whatHelion--><!-- id="whatHelion" --></title>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> is a commercial distribution built on <tm tmtype="reg">Openstack</tm> technology that provides an open, scalable, highly available enterprise-grade cloud software platform to help customers build, manage, and consume hybrid clouds.</p>
+<!-- Removed per Gary's comments I HP Helion <tm tmtype="reg">Openstack</tm> is the first <tm tmtype="reg">Openstack</tm> distribution from HP. It is free to download and will be kept updated frequently to stay current with <tm tmtype="reg">Openstack</tm> developments. It is the foundational technology for all HP Helion products in the future.-->
 </section>
-<section id="what-does-hp-helion-openstack-enable-me-to-do"> <title>What does HP Helion OpenStack(R) enable me to do?<!--Removed anchor point distroenable--><!-- id="distroenable" --></title>
-<p>You have consistently given us feedback to release a distribution of OpenStack(R) technology - fully tested, hardened and supported by HP. With this version, you can deploy a cloud with a minimum of 8 nodes and up to 100 nodes and have the ability to experience OpenStack(R) technology.</p>
-<!-- Removed per JR's comments The final version of this free distribution enables you to evaluate OpenStack(R) and to deploy small-scale private clouds in production (up to 30 nodes). They will be able to do this more quickly and easily with HP's simplified installation and update mechanisms.-->
-<!-- #### Removed per Gary's comments I How does HP Helion OpenStack(R) compare to other OpenStack(R) distributions on the market? #### {#howcompare}
+<section id="what-does-hp-helion-openstack-enable-me-to-do"> <title>What does HP Helion <tm tmtype="reg">Openstack</tm> enable me to do?<!--Removed anchor point distroenable--><!-- id="distroenable" --></title>
+<p>You have consistently given us feedback to release a distribution of <tm tmtype="reg">Openstack</tm> technology - fully tested, hardened and supported by HP. With this version, you can deploy a cloud with a minimum of 8 nodes and up to 100 nodes and have the ability to experience <tm tmtype="reg">Openstack</tm> technology.</p>
+<!-- Removed per JR's comments The final version of this free distribution enables you to evaluate <tm tmtype="reg">Openstack</tm> and to deploy small-scale private clouds in production (up to 30 nodes). They will be able to do this more quickly and easily with HP's simplified installation and update mechanisms.-->
+<!-- #### Removed per Gary's comments I How does HP Helion <tm tmtype="reg">Openstack</tm> compare to other <tm tmtype="reg">Openstack</tm> distributions on the market? #### {#howcompare}
 
-HP Helion OpenStack(R) is one of the first distributions in the market, based on up-to-date code from the OpenStack(R) community. It is derived from pure OpenStack(R) and open source technologies, configured and packaged by HP. For example, TripleO, which is used for installation and update, is the official OpenStack(R) project for deployment.-->
+HP Helion <tm tmtype="reg">Openstack</tm> is one of the first distributions in the market, based on up-to-date code from the <tm tmtype="reg">Openstack</tm> community. It is derived from pure <tm tmtype="reg">Openstack</tm> and open source technologies, configured and packaged by HP. For example, TripleO, which is used for installation and update, is the official <tm tmtype="reg">Openstack</tm> project for deployment.-->
 <!--#### Removed as per JR's comments Is there a cost associated with this distribution? #### {#distrocost} 
 
-It is free to download. An optional support package will be available to purchase from HP for access to HP OpenStack(R) technical support.  
+It is free to download. An optional support package will be available to purchase from HP for access to HP <tm tmtype="reg">Openstack</tm> technical support.  
 -->
 </section>
 <section id="what-is-tripleo"> <title>What is TripleO?<!--Removed anchor point TripleO--><!-- id="TripleO" --></title>
-<p>OpenStack(R)-on-OpenStack(R) or TripleO, is an official  OpenStack(R) project for deployment of OpenStack(R) systems. It builds on the core resource-provisioning strengths of OpenStack(R) technology. It enables you to administrate your cloud, and deploy and maintain virtual and baremetal installations of OpenStack(R) using the same APIs you are familiar with for deploying workloads on an OpenStack(R) cloud. A template-based deployment engine (using OpenStack(R) Heat) allows for rigorous testing and reliable, repeatable deployments of known configurations.</p>
+<p><tm tmtype="reg">Openstack</tm>-on-<tm tmtype="reg">Openstack</tm> or TripleO, is an official  <tm tmtype="reg">Openstack</tm> project for deployment of <tm tmtype="reg">Openstack</tm> systems. It builds on the core resource-provisioning strengths of <tm tmtype="reg">Openstack</tm> technology. It enables you to administrate your cloud, and deploy and maintain virtual and baremetal installations of <tm tmtype="reg">Openstack</tm> using the same APIs you are familiar with for deploying workloads on an <tm tmtype="reg">Openstack</tm> cloud. A template-based deployment engine (using <tm tmtype="reg">Openstack</tm> Heat) allows for rigorous testing and reliable, repeatable deployments of known configurations.</p>
 <p>A TripleO installation includes a seed, the undercloud and the overcloud.</p>
 </section>
 <section id="what-is-a-seed"> <title>What is a seed?<!--Removed anchor point whatisseed--><!-- id="whatisseed" --></title>
-<p>A seed VM is a bootable KVM VM image provided as part of HP Helion OpenStack(R) and is deployed in a VM instance. This image contains the minimum services required of OpenStack(R) to function and to be able to provision physical hardware to deploy the undercloud. The services are Nova, Neutron, Glance, Keystone, Ironic &amp; Heat.</p>
-<p>This is the first phase of the HP Helion OpenStack(R) installation.</p>
+<p>A seed VM is a bootable KVM VM image provided as part of HP Helion <tm tmtype="reg">Openstack</tm> and is deployed in a VM instance. This image contains the minimum services required of <tm tmtype="reg">Openstack</tm> to function and to be able to provision physical hardware to deploy the undercloud. The services are Nova, Neutron, Glance, Keystone, Ironic &amp; Heat.</p>
+<p>This is the first phase of the HP Helion <tm tmtype="reg">Openstack</tm> installation.</p>
 </section>
 <section id="what-is-the-undercloud"> <title>What is the undercloud?<!--Removed anchor point whatisundercloud--><!-- id="whatisundercloud" --></title>
-<p>The undercloud server is a basic single-node OpenStack(R) installation running on a single physical server used to deploy, test, manage, and update the overcloud servers. There is no HA configuration for the undercloud.</p>
-<p>It contains a strictly limited sub-set of OpenStack(R) just enough to interact with the overcloud. The services running on the undercloud are Nova, Neutron, Glance, Keystone, Ironic, Heat, Horizon &amp; Ceilometer. This server also contains HP Helion content distribution catalog  service, which provides a mechanism to download and install content and updates for the overcloud.</p>
+<p>The undercloud server is a basic single-node <tm tmtype="reg">Openstack</tm> installation running on a single physical server used to deploy, test, manage, and update the overcloud servers. There is no HA configuration for the undercloud.</p>
+<p>It contains a strictly limited sub-set of <tm tmtype="reg">Openstack</tm> just enough to interact with the overcloud. The services running on the undercloud are Nova, Neutron, Glance, Keystone, Ironic, Heat, Horizon &amp; Ceilometer. This server also contains HP Helion content distribution catalog  service, which provides a mechanism to download and install content and updates for the overcloud.</p>
 <p>The undercloud also hosts images for various server types which will form the functional cloud environment - the overcloud. These images are overcloud Controller, overcloud Compute, overcloud Swift &amp; overcloud Compute Proxy (required for clouds that support VMWare ESX as a hypervisor).</p>
-<p>This is the second phase of the HP Helion OpenStack(R) installation.</p>
+<p>This is the second phase of the HP Helion <tm tmtype="reg">Openstack</tm> installation.</p>
 </section>
 <section id="what-is-the-overcloud"> <title>What is the overcloud?<!--Removed anchor point whatisovercloud--><!-- id="whatisovercloud" --></title>
 <p>The overcloud is the functional cloud available to run guest virtual machines and workloads. It offers access to the Nova, Neutron, Glance, Keystone, Cinder, Swift, Ironic, Heat, Horizon, and Ceilometer services.</p>
-<p>Setting up the overcloud completes the overall Helion OpenStack(R) installation process.</p>
+<p>Setting up the overcloud completes the overall Helion <tm tmtype="reg">Openstack</tm> installation process.</p>
 <!--####What is available in this version?<a name="preview"></a>
 
-On June 30th, we announced a preview of HP Helion OpenStack(R) that enables you to deploy an OpenStack(R) TripleO-based cloud experience and evaluate the Icehouse release of OpenStack(R)  
+On June 30th, we announced a preview of HP Helion <tm tmtype="reg">Openstack</tm> that enables you to deploy an <tm tmtype="reg">Openstack</tm> TripleO-based cloud experience and evaluate the Icehouse release of <tm tmtype="reg">Openstack</tm>  
 
 It is available with support for baremetal deployments (up to 30 Compute nodes). We plan to release new versions roughly every six weeks.-->
 <!--
@@ -115,31 +115,31 @@ It is available with support for baremetal deployments (up to 30 Compute nodes).
 <section id="is-the-release-localized-for-non-english-speaking-markets"> <title>Is the release localized for non-English speaking markets?<!--Removed anchor point localized--><!-- id="localized" --></title>
 <p>No. The 2014 release is English only.</p>
 </section>
-<section id="does-hp-helion-openstack-work-with-hybrid-or-public-cloud-projects"> <title>Does HP Helion OpenStack(R) work with hybrid or public cloud projects?<!--Removed anchor point hybridorpubliccloud--><!-- id="hybridorpubliccloud" --></title>
-<p>No. Currently, HP Helion OpenStack(R) is supported by HP for small-scale, private cloud deployments only.</p>
+<section id="does-hp-helion-openstack-work-with-hybrid-or-public-cloud-projects"> <title>Does HP Helion <tm tmtype="reg">Openstack</tm> work with hybrid or public cloud projects?<!--Removed anchor point hybridorpubliccloud--><!-- id="hybridorpubliccloud" --></title>
+<p>No. Currently, HP Helion <tm tmtype="reg">Openstack</tm> is supported by HP for small-scale, private cloud deployments only.</p>
 </section>
 <section id="how-many-nodes-and-virtual-machines-does-it-support"> <title>How many nodes and virtual machines does it support?<!--Removed anchor point nodes--><!-- id="nodes" --></title>
-<p>HP Helion OpenStack(R) will support up to 100 nodes and 40 VMs per node.</p>
-<!--In the final release, it will support scalable deployments of thousands of compute nodes supporting tens of thousands of VMs. This has been tested and proven using the best practices developed by HP over the past three years running OpenStack(R) public cloud services at scale.-->
+<p>HP Helion <tm tmtype="reg">Openstack</tm> will support up to 100 nodes and 40 VMs per node.</p>
+<!--In the final release, it will support scalable deployments of thousands of compute nodes supporting tens of thousands of VMs. This has been tested and proven using the best practices developed by HP over the past three years running <tm tmtype="reg">Openstack</tm> public cloud services at scale.-->
 </section>
 <section id="how-can-i-update-the-software"> <title>How can I update the software?<!--Removed anchor point softwareupdate--><!-- id="softwareupdate" --></title>
 <p>HP provides automated, live distribution of updates.</p>
 </section>
-<section id="does-hp-helion-openstack-include-an-operating-system-os"> <title>Does HP Helion OpenStack(R) include an Operating System (OS)?<!--Removed anchor point includeOS--><!-- id="includeOS" --></title>
-<p>Yes. It includes an integrated LinuxÂ(R) host OS hardened and tested for this distribution.</p>
+<section id="does-hp-helion-openstack-include-an-operating-system-os"> <title>Does HP Helion <tm tmtype="reg">Openstack</tm> include an Operating System (OS)?<!--Removed anchor point includeOS--><!-- id="includeOS" --></title>
+<p>Yes. It includes an integrated <tm tmtype="reg">Linux</tm> host OS hardened and tested for this distribution.</p>
 </section>
-<section id="does-this-distribution-include-the-openstack-icehouse-release"> <title>Does this distribution include the OpenStack(R) Icehouse release?<!--Removed anchor point icehouse--><!-- id="icehouse" --></title>
-<p>Yes, and HP is one of the first vendors to release a supported, productized distribution based on Icehouse, <xref href="../../community/community.index.dita" >HP Helion OpenStack(R) Community</xref>.</p>
+<section id="does-this-distribution-include-the-openstack-icehouse-release"> <title>Does this distribution include the <tm tmtype="reg">Openstack</tm> Icehouse release?<!--Removed anchor point icehouse--><!-- id="icehouse" --></title>
+<p>Yes, and HP is one of the first vendors to release a supported, productized distribution based on Icehouse, <xref href="../../community/community.index.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Community</xref>.</p>
 </section>
-<section id="can-hp-helion-openstack-run-on-non-hp-hardware"> <title>Can HP Helion OpenStack(R) run on non-HP hardware?<!--Removed anchor point nonhphardware--><!-- id="nonhphardware" --></title>
+<section id="can-hp-helion-openstack-run-on-non-hp-hardware"> <title>Can HP Helion <tm tmtype="reg">Openstack</tm> run on non-HP hardware?<!--Removed anchor point nonhphardware--><!-- id="nonhphardware" --></title>
 <p>Yes, provided the hardware meets the minimum specifications. We will continue to work to develop a list of third-party hardware on which the distribution is known to run.</p>
 <p>
-  <xref type="section" href="#topic7037/top"> Return to Top </xref>
+  <xref type="section" href="#topic7037"> Return to Top </xref>
 </p>
 </section>
-<section id="support-and-additional-resources"> <title>Support and additional resources</title>
+<section id="support-and-additional-resources2"> <title>Support and additional resources</title>
 </section>
-<section id="are-hp-support-services-included-with-hp-helion-openstack"> <title>Are HP support services included with HP Helion OpenStack(R)<!--Removed anchor point supportservices--><!-- id="supportservices" --></title>
+<section id="are-hp-support-services-included-with-hp-helion-openstack"> <title>Are HP support services included with HP Helion <tm tmtype="reg">Openstack</tm><!--Removed anchor point supportservices--><!-- id="supportservices" --></title>
 <!--No. An optional paid support contract from HP will be made available for purchase soon.-->
 <p>In the next release, we hope to deliver full life-cycle services to help you from strategy through design, implementation, support and education.</p>
 </section>
@@ -147,11 +147,11 @@ It is available with support for baremetal deployments (up to 30 Compute nodes).
 <p>Foundation Care 8x5 support is included, providing additional support levels including same day and 24x7 coverage.</p>
 <p>HP Support provides access to experts in <xref href="http://h20427.www2.hp.com/campaign/hp-cloud-centre-of-excellence/ap/en/index.html" scope="external" format="html" >HP's Global Cloud Center of Excellence</xref> as a single source of support and accountability, which also qualifies you for indemnification.
 <!--
-HP Helion OpenStack(R) will be covered by Foundation Care Operations support at an additional cost, which will be available in the near future. You would be able to interact with experts in [HP's Global Cloud Center of Excellence](http://h20427.www2.hp.com/campaign/hp-cloud-centre-of-excellence/ap/en/index.html) as a single source of support and accountability.
+HP Helion <tm tmtype="reg">Openstack</tm> will be covered by Foundation Care Operations support at an additional cost, which will be available in the near future. You would be able to interact with experts in [HP's Global Cloud Center of Excellence](http://h20427.www2.hp.com/campaign/hp-cloud-centre-of-excellence/ap/en/index.html) as a single source of support and accountability.
 
 You have access to:     
-* HP OpenStack(R) technical experts, tools and best practices 
-* HP Helion OpenStack(R) edition software support
+* HP <tm tmtype="reg">Openstack</tm> technical experts, tools and best practices 
+* HP Helion <tm tmtype="reg">Openstack</tm> edition software support
 * Installation advisory support
 * Help with software features and operational support
 --></p>
@@ -159,31 +159,31 @@ You have access to:
 <section id="where-can-i-find-more-information"> <title>Where can I find more information?<!--Removed anchor point MoreInfo--><!-- id="MoreInfo" --></title>
 <ul>
 <li>
-<xref href="http://www8.hp.com/us/en/cloud/hphelion-openstack.html" scope="external" format="html" >HP Helion OpenStack(R) Portal</xref>
+<xref href="http://www8.hp.com/us/en/cloud/hphelion-openstack.html" scope="external" format="html" >HP Helion <tm tmtype="reg">Openstack</tm> Portal</xref>
 </li>
 <li>
-<xref href="https://docs.hpcloud.com/helion/openstack/" scope="external" format="html" >HP Helion OpenStack(R) Documentation</xref> 
-<!--* [HP Helion OpenStack(R) Support Forum](https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion) (Tag your questions with 'HPHelion')--></li>
+<xref href="https://docs.hpcloud.com/helion/openstack/" scope="external" format="html" >HP Helion <tm tmtype="reg">Openstack</tm> Documentation</xref> 
+<!--* [HP Helion <tm tmtype="reg">Openstack</tm> Support Forum](https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion) (Tag your questions with 'HPHelion')--></li>
 </ul>
 </section>
-<section id="where-can-i-report-issues-with-hp-helion-openstack"> <title>Where can I report issues with HP Helion OpenStack(R)<!--Removed anchor point reportissues--><!-- id="reportissues" --></title>
-<p>To report issues with HP Helion OpenStack(R) please visit the <xref href="http://us-support.external.hp.com/portal/site/hpsc/public" scope="external" format="html" >HP Support Center</xref>.</p>
+<section id="where-can-i-report-issues-with-hp-helion-openstack"> <title>Where can I report issues with HP Helion <tm tmtype="reg">Openstack</tm><!--Removed anchor point reportissues--><!-- id="reportissues" --></title>
+<p>To report issues with HP Helion <tm tmtype="reg">Openstack</tm> please visit the <xref href="http://us-support.external.hp.com/portal/site/hpsc/public" scope="external" format="html" >HP Support Center</xref>.</p>
 <p>
-<!-- removed per JR's comment I We are hosting the support discussion forum for the edition at [https://ask.openstack.org](https://ask.openstack.org).  Developers in the community are very familiar with this forum and already participate in OpenStack(R)-related discussions there. Please tag your questions with 'HPHelion' to get our attention for any questions and issues you raise.--> 
-<xref type="section" href="#topic7037/top"> Return to Top </xref>
+<!-- removed per JR's comment I We are hosting the support discussion forum for the edition at [https://ask.openstack.org](https://ask.openstack.org).  Developers in the community are very familiar with this forum and already participate in <tm tmtype="reg">Openstack</tm>-related discussions there. Please tag your questions with 'HPHelion' to get our attention for any questions and issues you raise.--> 
+<xref type="section" href="#topic7037"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 <!--
 
-####Does the distribution include non-OpenStack(R) tools? #### {#nonopenstack}
+####Does the distribution include non-<tm tmtype="reg">Openstack</tm> tools? #### {#nonopenstack}
 
-No. HP Helion OpenStack(R) is a pure distribution that leverages OpenStack(R) standards coupled with HP Virtual Cloud Networking (VCN) application and ESX support.
+No. HP Helion <tm tmtype="reg">Openstack</tm> is a pure distribution that leverages <tm tmtype="reg">Openstack</tm> standards coupled with HP Virtual Cloud Networking (VCN) application and ESX support.
 
 [When can I expect support for baremetal deployment?](#baremetal)
 
-####Is HP Helion OpenStack(R) integrated with other HP Helion products and solutions? #### {#integrated}
+####Is HP Helion <tm tmtype="reg">Openstack</tm> integrated with other HP Helion products and solutions? #### {#integrated}
 
-Yes. These products will reference "Powered by HP OpenStack(R)"
+Yes. These products will reference "Powered by HP <tm tmtype="reg">Openstack</tm>"
 
 -->
 </section>

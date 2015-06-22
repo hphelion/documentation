@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3041">
-<title>HP Helion OpenStack(R) 1.1: Managing Compute Flavors</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Managing Compute Flavors</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -29,7 +29,7 @@
 <p>To create a flavor:</p>
 <ol>
 <li>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</li>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Helion Dashboard</xref>.</li>
 </ol>
 <p>2 Click the <b>Flavors</b> link on the <b>Admin</b> dashboard <b>System</b> panel.
     The flavors in the domain are listed.</p>
@@ -71,7 +71,7 @@ A message is displayed on successful creation.</p>
 <ol>
 <li>
 <p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Helion Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Flavors</b> link on the <b>Admin</b> dashboard <b>System</b> panel.</p>
@@ -99,7 +99,7 @@ A message is displayed on successful creation.</p>
 <ol>
 <li>
 <p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Helion Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Flavors</b> link on the <b>Admin</b> dashboard <b>System</b> panel.</p>
@@ -115,7 +115,7 @@ A message is displayed on successful creation.</p>
 </ol>
 <p>A message is displayed on successful delete.</p>
 <p>
-  <xref type="section" href="#topic3041/top"> Return to Top </xref>
+  <xref type="section" href="#topic3041"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

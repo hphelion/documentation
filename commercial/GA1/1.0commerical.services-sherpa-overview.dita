@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2031">
-<title>HP Helion OpenStack(R) 1.0: Sherpa Service Overview</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Sherpa Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,9 +13,9 @@
  <!--./commercial/GA1/1.0commerical.services-sherpa-overview.md-->
  <!--permalink: /helion/openstack/services/sherpa/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-sherpa-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
-<p>The HP Helion OpenStack(R) Sherpa Service provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Sherpa Service provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment.</p>
 <p>You can make purchases using a self-service account on the public web server. Once a purchase is made, you can use the Sherpa UI and back-end service to download the content from the web catalog using your self-service account. The content is then published into the various cloud repositories within HP Helion so that the end users can deploy virtual machines and other content from within the cloud.</p>
 <p>Content may include patches, plugins, images, models, and so forth that may be used to update, improve, extend, or provide content for the cloud.</p>
 <!--Compute allows you to work with *flavors*, which are unique combinations of disk space, memory capacity, and CPU; *images*, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and *servers*, which are virtual instances created using a flavor and an image
@@ -35,19 +35,19 @@ Key terms include:
 <p>To perform tasks using the Sherpa service, you can use the Horizon dashboards.</p>
 </section>
 <section id="using-the-dashboards"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
-<p>You can use the <xref href="../../commercial/GA1/1.0commercial.undercloud-admin-updates-and-extensions.dita" >HP Helion OpenStack(R) Dashboard</xref> to work with the Sherpa service.</p>
+<p>You can use the <xref href="../../commercial/GA1/1.0commercial.undercloud-admin-updates-and-extensions.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Dashboard</xref> to work with the Sherpa service.</p>
 <!--###Using the API ### {#API}
  
-You can use a low-level, raw REST API access to the HP Compute service. See the [OpenStack(R) Compute API v2.0 Reference](http://api.openstack.org/api-ref-compute-v2.html).-->
+You can use a low-level, raw REST API access to the HP Compute service. See the [<tm tmtype="reg">Openstack</tm> Compute API v2.0 Reference](http://api.openstack.org/api-ref-compute-v2.html).-->
 <!--###Using the CLI### {#cli}
 
 You can use the command-line interface software to access Sherpa. See the [to give the hyperlink].
 
-For more information on installing the CLI, see [Install the OpenStack(R) command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).-->
-<!--## How To's with the HP Helion OpenStack(R) Compute Service ## {#howto}-->
+For more information on installing the CLI, see [Install the <tm tmtype="reg">Openstack</tm> command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).-->
+<!--## How To's with the HP Helion <tm tmtype="reg">Openstack</tm> Compute Service ## {#howto}-->
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud 
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack(R) Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-compute-v2.html), or [CLI](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).-->
+The following lists of tasks can be performed by a user or administrator through the [HP Helion <tm tmtype="reg">Openstack</tm> Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-compute-v2.html), or [CLI](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).-->
 <p>The Dashboard presents different options depending on the installation, location within the cloud, and the role of the Sherpa user currently logged in. Cloud Architects or Administrators, for example, can use the dashboard to update their clouds.</p>
 <p>When Sherpa is deployed in the undercloud and connected to the remote catalog web service, it pulls overcloud images and other support content down into the undercloud so that the images are deployed or upgraded properly.</p>
 <p>Sherpa may also be deployed in the overcloud to provide new content or workloads to be deployed within the overcloud. <!-- how?? --></p>
@@ -108,7 +108,7 @@ When working with the Compute service, you can perform a number of tasks with yo
 - **Pausing and un-pausing instances** &#151; Pause and un-pause an instance. The `pause` command stores the state of the instance in RAM. A paused instance continues to run in a frozen state.
 - **Suspending and resuming virtual machines** &#151; Suspend and un-suspend an instance. When you suspend an instance, its instance state is stored on disk, all memory is written to disk, and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available.-->
 <p>
-  <xref type="section" href="#topic2031/top"> Return to Top </xref>
+  <xref type="section" href="#topic2031"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

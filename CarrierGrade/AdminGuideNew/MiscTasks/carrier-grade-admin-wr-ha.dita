@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6927">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Virtual Machines and Carrier-Grade Availability</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Virtual Machines and Carrier-Grade Availability</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -18,7 +18,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade-admin-wr-ha.md-->
  <!--permalink: /helion/openstack/carrier/admin/carrier-grade-avail/--></p>
-<p>The Wind River Linux servers in HP Helion OpenStack(R) Carrier Grade provide a health monitoring mechanism that can be used to implement and support the deployment of guest applications in Carrier-Grade High Availability (HA) mode.</p>
+<p>The Wind River Linux servers in HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade provide a health monitoring mechanism that can be used to implement and support the deployment of guest applications in Carrier-Grade High Availability (HA) mode.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -78,7 +78,7 @@ machine instance.</p>
 <p>As with any other application, HA-aware applications benefit from the hardware and virtual machine monitoring processes, which provide them with automatic restart upon failures. When coupled with [server groups])/helion/commercial/carrier/dashboard/managing/groups/), they also benefit from the anti-affinity options to ensure that hot/standby running applications are protected against hardware failures.</p>
 <p>HA-aware applications also benefit from internal tenant networks on top of which the application's HA framework, and any journaling framework it may use, can be deployed.</p>
 <p>
-  <xref type="section" href="#topic6927/top"> Return to Top </xref>
+  <xref type="section" href="#topic6927"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

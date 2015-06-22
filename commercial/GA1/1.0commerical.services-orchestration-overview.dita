@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1948">
-<title>HP Helion OpenStack(R) 1.0: Orchestration Service (Heat) Overview</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Orchestration Service (Heat) Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,28 +13,28 @@
  <!--./commercial/GA1/1.0commerical.services-orchestration-overview.md-->
  <!--permalink: /helion/openstack/services/orchestration/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-orchestration-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
-<p>The HP Helion OpenStack(R) Orchestration service leverages OpenStack(R) Heat to provide template-based orchestration for describing a cloud application. It executes OpenStack(R) API calls to generate running cloud applications.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Orchestration service leverages <tm tmtype="reg">Openstack</tm> Heat to provide template-based orchestration for describing a cloud application. It executes <tm tmtype="reg">Openstack</tm> API calls to generate running cloud applications.</p>
 <section id="working-with-the-orchestration-service"> <title>Working with the Orchestration Service</title>
 <p>To <xref type="section" href="#topic1948/howto">perform tasks using the Orchestration service</xref>, you can use the dashboard, API or CLI.</p>
 </section>
 <section id="using-the-dashboards"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
-<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP Helion OpenStack(R) Dashboard</xref> to work with the Orchestration service.</p>
+<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Dashboard</xref> to work with the Orchestration service.</p>
 </section>
 <section id="using-the-api"> <title>Using the API<!--Removed anchor point API--><!-- id="API" --></title>
-<p>You can use a low-level, raw REST API access to the Orchestration service. See the <xref href="http://developer.openstack.org/api-ref-orchestration-v1.html" scope="external" format="html" >OpenStack(R) Orchestration API v1 Reference</xref>.</p>
+<p>You can use a low-level, raw REST API access to the Orchestration service. See the <xref href="http://developer.openstack.org/api-ref-orchestration-v1.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Orchestration API v1 Reference</xref>.</p>
 </section>
 <section id="using-the-cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
-<p>You can use any of several command-line interface software to access the Orchestration service. See the <xref href="http://docs.openstack.org/cli-reference/content/heatclient_commands.html" scope="external" format="html" >OpenStack(R) Command Line Interface Reference</xref>.</p>
-<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack(R) command-line clients</xref>.</p>
+<p>You can use any of several command-line interface software to access the Orchestration service. See the <xref href="http://docs.openstack.org/cli-reference/content/heatclient_commands.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Command Line Interface Reference</xref>.</p>
+<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">Openstack</tm> command-line clients</xref>.</p>
 <!-- 
 ## How To's with the HP Helion Orchestration Service ## {#howto}
 
 Taken from http://docs.openstack.org/user-guide/content/heatclient_commands.html 
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack(R) Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack(R) [CLI](http://docs.openstack.org/cli-reference/content/heatclient_commands.html) or OpenStack(R) [API](http://developer.openstack.org/api-ref-orchestration-v1.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion <tm tmtype="reg">Openstack</tm> Dashboard](/helion/openstack/dashboard/how-works/), the <tm tmtype="reg">Openstack</tm> [CLI](http://docs.openstack.org/cli-reference/content/heatclient_commands.html) or <tm tmtype="reg">Openstack</tm> [API](http://developer.openstack.org/api-ref-orchestration-v1.html).
 
 ### Working with stacks ###
 
@@ -55,9 +55,9 @@ The Orchestration service allows users to work with stacks, which are a mechanis
 -->
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an OpenStack(R) Cloud is put together. However, the HP Helion OpenStack(R) takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">Openstack</tm> Cloud is put together. However, the HP Helion <tm tmtype="reg">Openstack</tm> takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
 <p>
-  <xref type="section" href="#topic1948/top"> Return to Top </xref>
+  <xref type="section" href="#topic1948"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

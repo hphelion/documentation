@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6730">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Installation Troubleshooting</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Installation Troubleshooting</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,10 +12,10 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-troubleshoot.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/trouble/--></p>
-<p>This installation troubleshooting guide is written for HP Helion OpenStack(R) Carrier Grade installers who, during or after building the environment, find that the cloud environment does not work as expected. The HP Helion OpenStack(R) Carrier Grade environment is not itself complex but it does include a sufficient number of components that isolating a fault can be challenging.</p>
+<p>This installation troubleshooting guide is written for HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade installers who, during or after building the environment, find that the cloud environment does not work as expected. The HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade environment is not itself complex but it does include a sufficient number of components that isolating a fault can be challenging.</p>
 <p>The goal of this guide is to help you to identify the problem or problems affecting your cloud installation and efficiently fix them.</p>
-<section id="the-hp-helion-openstack-directory-does-not-get-copied"> <title>The HP Helion OpenStack(R) directory does not get copied</title>
-<p>The <codeph>hnewcloud</codeph> command should copy the HP Helion OpenStack(R) directory to the <codeph>~/&lt;cloud-name&gt;</codeph>folder.</p>
+<section id="the-hp-helion-openstack-directory-does-not-get-copied"> <title>The HP Helion <tm tmtype="reg">Openstack</tm> directory does not get copied</title>
+<p>The <codeph>hnewcloud</codeph> command should copy the HP Helion <tm tmtype="reg">Openstack</tm> directory to the <codeph>~/&lt;cloud-name&gt;</codeph>folder.</p>
 </section>
 <section id="resolution"> <title>Resolution</title>
 <p>Copy the <codeph>hnewcloud.sh</codeph> script to HLM node under <codeph>/opt/bin/hnewcloud.sh</codeph> before <codeph>hnewcloud</codeph> script is run.</p>
@@ -146,7 +146,7 @@ sftp&gt; get venom-patch.tar.gz
             file.</p><p>g. Rerun <codeph>hdeploy &lt;cloud-name&gt;</codeph>.</p></li>
 </ol>
 <p>
-  <xref type="section" href="#topic6730/top"> Return to Top </xref>
+  <xref type="section" href="#topic6730"> Return to Top </xref>
 </p>
 </section>
 </body>

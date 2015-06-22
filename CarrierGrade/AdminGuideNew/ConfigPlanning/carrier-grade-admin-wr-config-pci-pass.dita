@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6261">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Configuring PCI Passthrough Ethernet Interfaces</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Configuring PCI Passthrough Ethernet Interfaces</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -43,79 +43,51 @@
 <p>To configure the access switch:</p>
 <ol>
 <li>
-<p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref> as the admin user.</p>
-</li>
+        <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
+          <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref> as the admin user.</li>
 <li>
-<p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Lock the compute node</xref> you want to configure.</p>
-</li>
+        <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Lock
+          the compute node</xref> you want to configure.</li>
+<li>Configure the Ethernet interface to be used as a PCI passthrough interface.<p>a. Click
+            <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then
+          selecting the <b>Hosts</b> tab.</p><p>b. In the <b>Hosts</b> list, click the name of the
+          compute node where the PCI interface is available.</p><p>c. Click the <b>Interfaces</b>
+          tab, and finally click the <b>Edit Interface</b> button associated with the interface you
+          want to configure.</p><p>d. Specify the interface to associtate.</p><p>e. Select
+            <codeph>pci-passthrough</codeph> under <b>Network Type</b>.</p><p>f. Select the provider
+          network to connect with.</p><p>e. Click <b>Save</b>.</p></li>
+<li>Create the <codeph>net0</codeph> tenant network by click <b>Networks</b> on the <b>Admin</b>
+          menu.<p>a. Click <b>Create Network</b>
+        </p><p>b. In the <b>Select Network</b> screen, select a network that has access to the
+          tenant network.</p><p>c. Set the segmentation ID to <codeph>10</codeph>.</p><p>d. Click
+            <b>Create Network</b>.</p></li>
+<li>Configure the access switch.<p>Configure the physical port on the access switch used to connect
+          to Ethernet interface eth8 as an access port with default VLAN ID of 10. Traffic across
+          the connection is therefore untagged, and effectively integrated into the targeted tenant
+          network.</p><p>You can also use a trunk port on the access switch so that it handles
+          tagged packets as well. However, this opens the possibility for guest applications to join
+          other tenant networks using tagged packets with different VLAN IDs, which might compromise
+          the security of the system. See L2 Access Switches for other details regarding the
+          configuration of the access switch.</p></li>
 <li>
-<p>Configure the Ethernet interface to be used as a PCI passthrough interface.</p>
-
-<p>a. Click <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
-
-<p>b. In the <b>Hosts</b> list, click the name of the compute node where the PCI interface is available.</p>
-
-<p>c. Click the <b>Interfaces</b> tab, and finally click the <b>Edit Interface</b> button associated with the interface you want to configure.</p>
-
-<p>d. Specify the interface to associtate.</p>
-
-<p>e. Select <codeph>pci-passthrough</codeph> under <b>Network Type</b>.</p>
-
-<p>f. Select the provider network to connect with.</p>
-
-<p>e. Click <b>Save</b>.</p>
-</li>
-<li>
-<p>Create the <codeph>net0</codeph> tenant network by click <b>Networks</b> on the <b>Admin</b> menu.</p>
-
-<p>a. Click <b>Create Network</b>
-</p>
-
-<p>b. In the <b>Select Network</b> screen, select a network that has access to the tenant network.</p>
-
-<p>c. Set the segmentation ID to <codeph>10</codeph>.</p>
-
-<p>d. Click <b>Create Network</b>.</p>
-</li>
-<li>
-<p>Configure the access switch.</p>
-
-<p>Configure the physical port on the access switch used to connect to Ethernet interface eth8 as an access port with default VLAN ID of 10. Traffic across the connection is therefore untagged, and effectively integrated into the targeted tenant network.</p>
-
-<p>You can also use a trunk port on the access switch so that it handles tagged packets as well. However, this opens the possibility for guest applications to join other tenant networks using tagged packets with different VLAN IDs, which might compromise the security of the system. See L2 Access Switches for other details regarding the configuration of the access switch.</p>
-</li>
-<li>
-<p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >Unlock the compute node</xref>.</p>
-</li>
-<li>
-<p>Launch the virtual machine.</p>
-
-<p>a. Log into Horizon as a non-admin user to the web management interface.</p>
-
-<p>b. Click <b>Instance</b> on the <b>Compute</b> section of the <b>Pronect</b> menu.</p>
-
-<p>c. Click <b>Launch Instance</b>.</p>
-
-<p>d. In the <b>Launch Instance</b> screen, configure the necessary options for the new virtual machine. In particular, click the <b>Networking</b> tab and add a PCI passthrough interface on the tenant network. Add other network interfaces as needed.</p>
-
-<p>e. Click the Launch button to proceed.</p>
-</li>
+        <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Unlock
+          the compute node</xref>.</li>
+<li>Launch the virtual machine.<p>a. Log into Horizon as a non-admin user to the web management
+          interface.</p><p>b. Click <b>Instance</b> on the <b>Compute</b> section of the
+            <b>Pronect</b> menu.</p><p>c. Click <b>Launch Instance</b>.</p><p>d. In the <b>Launch
+            Instance</b> screen, configure the necessary options for the new virtual machine. In
+          particular, click the <b>Networking</b> tab and add a PCI passthrough interface on the
+          tenant network. Add other network interfaces as needed.</p><p>e. Click the Launch button
+          to proceed.</p></li>
 </ol>
 <p>The interface can also be configured using the following CLI commands:</p>
-<codeblock>
-  <codeph>system host-if-modify \
+<codeblock><codeph>system host-if-modify \
 -nt pci-passthrough -p group0-data0 compute-0 eth8
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Passthrough interfaces can be attached from the CLI when booting a new virtual machine, as illustrated below:</p>
-<codeblock>
-  <codeph>nova boot \
+<codeblock><codeph>nova boot \
 --nic net-id=704e9f3b,vif-model=pci-passthrough my-new-vm
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>The new virtual machine instance is up now. It has a PCI passthrough connection to the tenant network identified with VLAN ID 10.</p>
 <p>Access switches must be properly configured to ensure that virtual machines using PCI-passthrough or <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-sr-iov.dita" >SRIOV Ethernet interfaces</xref> have the expected connectivity. In a common scenario, the virtual machine using these interfaces connects to external end points only, that is, it does not connect to other virtual machines in the same TiS cluster.</p>
 <p>In this case:</p>
@@ -134,7 +106,7 @@ AVS.</li>
 <li>That other port is configured as usual, as a VLAN trunk port, and the tenant network's VLAN ID (10) is included in the tagged range. This ensures that VLAN 10 is common to both the passthrough/SR-IOV interface and the AVS port.</li>
 </ul>
 <p>
-  <xref type="section" href="#topic6261/top"> Return to Top </xref>
+  <xref type="section" href="#topic6261"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

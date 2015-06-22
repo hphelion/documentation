@@ -22,7 +22,7 @@
  <!--./devplatform/helion/user/deploy/1.0app-debug.md-->
  <!--permalink: /als/v1/user/deploy/app-debug/--></p>
 <p>
-  <xref href="../../../../devplatform/helion/user/deploy/1.1app-debug.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 </p>
 <p>Different languages have different tools and protocols for remote
 debugging, but most require a connection between the running application

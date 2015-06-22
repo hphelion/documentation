@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1945">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Setting Up the Scenario Environment</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Setting Up the Scenario Environment</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -18,7 +18,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting.md-->
  <!--permalink: /helion/openstack/carrier/deploy/setting/--></p>
-<p>The deployment scenarios require an HP Helion OpenStack(R) Carrier Grade environment established by the admin user, and set up by end users user1 and user2.</p>
+<p>The deployment scenarios require an HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade environment established by the admin user, and set up by end users user1 and user2.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -28,35 +28,32 @@
 <p>
 <b>Note:</b> You can set up the scenario environment using the web administration interface or the CLI. For CLI instructions, see <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli.dita" >Deployment Scenarios Using the CLI</xref>.</p>
 <ol>
-<li>
-<p>Use the admin account to complete the following tasks, grouped as <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-admin.dita" >Administrative Tasks</xref>.</p>
-
-<ul>
-<li>Create tenants</li>
-<li>Create users</li>
-<li>Set up segmentation ranges on existing provider networks</li>
-<li>Set up tenant networks</li>
-<li>Set up flavors </li>
-</ul>
-</li>
-<li>
-<p>Use the <codeph>user1</codeph> and <codeph>user2</codeph> accounts to complete the following tasks on <codeph>tenant1</codeph>, grouped as <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-user.dita" >User Tasks</xref>.</p>
-
-<ul>
-<li>Create a keypair</li>
-<li>Create a private tenant network</li>
-<li>Configure the management network</li>
-<li>Set up a virtual router</li>
-<li>Set up a Cinder volume</li>
-<li>Set up a Glance image</li>
-</ul>
-</li>
+<li>Use the admin account to complete the following tasks, grouped as <xref
+          href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-admin.dita"
+          >Administrative Tasks</xref>.<ul>
+          <li>Create tenants</li>
+          <li>Create users</li>
+          <li>Set up segmentation ranges on existing provider networks</li>
+          <li>Set up tenant networks</li>
+          <li>Set up flavors </li>
+        </ul></li>
+<li>Use the <codeph>user1</codeph> and <codeph>user2</codeph> accounts to complete the following
+        tasks on <codeph>tenant1</codeph>, grouped as <xref
+          href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-user.dita"
+          >User Tasks</xref>.<ul>
+          <li>Create a keypair</li>
+          <li>Create a private tenant network</li>
+          <li>Configure the management network</li>
+          <li>Set up a virtual router</li>
+          <li>Set up a Cinder volume</li>
+          <li>Set up a Glance image</li>
+        </ul></li>
 </ol>
 <p>When these tasks have been completed, the environment is ready for scenario deployment.</p>
 <p>To deploy a Bridging Scenario, see <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-deploy.dita" >Deploying the Bridging Scenario</xref>.</p>
 <p>To deploy a Routing Scenario, see <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-deploy.dita" >Deploying the Routing Scenario</xref>.</p>
 <p>
-  <xref type="section" href="#topic1945/top"> Return to Top </xref>
+  <xref type="section" href="#topic1945"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

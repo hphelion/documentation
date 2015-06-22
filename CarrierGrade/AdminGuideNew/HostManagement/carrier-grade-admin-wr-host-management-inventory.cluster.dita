@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1373">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Working with Cluster Systems</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Working with Cluster Systems</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,12 +26,12 @@
  <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory.cluster.md-->
  <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/cluster/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>The HP Helion OpenStack(R) Carrier Grade cluster is represented internally by a unique object referred to as the <i>system</i>.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade cluster is represented internally by a unique object referred to as the <i>system</i>.</p>
 <p>Information about this object is available from the <b>Systems</b> tab on the <b>System Inventory</b> page.</p>
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.</li>
@@ -46,7 +46,7 @@
 <p>After committing the changes, the <b>Systems</b> tab is displayed with the updated information.</p>
 <p>The new name displays on the top left corner of the web management interface, and on the welcome message when logging in to the nodes using an SSH client.</p>
 <p>
-  <xref type="section" href="#topic1373/top"> Return to Top </xref>
+  <xref type="section" href="#topic1373"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

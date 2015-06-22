@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2817">
-<title>HP Helion OpenStack(R) 1.1: Creating Instances</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Creating Instances</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -23,7 +23,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Helion Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Instances</b> link on the <b>Project</b> dashboard <b>Compute</b> panel.</p>
@@ -73,7 +73,7 @@
 <li>
 <p>On the Post-Creation tab, optionally, enter a script to pass user data to the instance at launch time.</p>
 
-<p>For more details, refer to the OpenStack(R) documentation, such as <xref href="http://docs.openstack.org/user-guide/content/user-data.html" scope="external" format="html" >Configure instances at boot</xref>.</p>
+<p>For more details, refer to the <tm tmtype="reg">Openstack</tm> documentation, such as <xref href="http://docs.openstack.org/user-guide/content/user-data.html" scope="external" format="html" >Configure instances at boot</xref>.</p>
 </li>
 <li>
 <p>On the <b>Advanced Options</b> tab, select either <b>Automatic</b> or <b>Manual</b> in the <b>Disc Partition</b> list</p>
@@ -85,7 +85,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic2817/top"> Return to Top </xref>
+  <xref type="section" href="#topic2817"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

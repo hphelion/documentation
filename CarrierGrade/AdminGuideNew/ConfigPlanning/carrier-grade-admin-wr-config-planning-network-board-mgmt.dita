@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2881">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Planning the Board Management Network</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Planning the Board Management Network</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -32,12 +32,12 @@
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>The board management network provides for out-of-band reset, power-up, and power-down operations on HP hosts.</p>
-<p>Support for this network is selected during controller configuration; for details, see the HP Helion OpenStack(R) Carrier Grade Software Installation Guide: The Controller Configuration Script. To support this feature, compute and storage nodes must be equipped with iLO3 or iLO4 (Integrated Lights Out) board management modules.</p>
+<p>Support for this network is selected during controller configuration; for details, see the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Software Installation Guide: The Controller Configuration Script. To support this feature, compute and storage nodes must be equipped with iLO3 or iLO4 (Integrated Lights Out) board management modules.</p>
 <p>Compute and storage nodes connect using iLO modules, while controller nodes use the management port in tagged mode. The controller nodes can optionally attach using their own iLO modules, if available.</p>
 <p>To use a board management network, you must do the following:</p>
 <ul>
 <li>
-<p>On the HP Helion OpenStack(R) Carrier Grade:</p>
+<p>On the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade:</p>
 
 <ul>
 <li>Designate a VLAN ID for use by the board management network.</li>
@@ -46,7 +46,7 @@
 </ul>
 </li>
 <li>
-<p>On the HP Helion OpenStack(R) Carrier Grade internal L2 switch:</p>
+<p>On the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade internal L2 switch:</p>
 
 <ul>
 <li>Configure a VLAN using the designated VLAN ID for the board management network.</li>
@@ -71,7 +71,7 @@ access to the module.</p>
 <p>For details on configuring or provisioning switch ports or iLO modules, consult the user documentation supplied with
 the equipment.</p>
 <p>
-  <xref type="section" href="#topic2881/top"> Return to Top </xref>
+  <xref type="section" href="#topic2881"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

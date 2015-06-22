@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2121">
-<title>HP Helion OpenStack(R) 1.0: How to use the Helion Dashboards</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: How to use the Helion Dashboards</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,10 +13,10 @@
  <!--./commercial/GA1/1.0commercial.dashboard.how-works.md-->
  <!--permalink: /helion/openstack/dashboard/how-works/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
-<p>The HP Helion OpenStack(R) Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack(R) Commercial overcloud. The overcloud is the end-user OpenStack(R) cloud.</p>
-<p>The interface, based on OpenStack(R) Horizon, is grouped into dashboards, including <xref type="section" href="#topic2121/DashProject">Project</xref>, <xref type="section" href="#topic2121/DashAdmin">Admin</xref> and <xref type="section" href="#topic2121/DashSettings">Settings</xref>. Tabs on the left side of the interface expand and contract to show available commands grouped into <b>panels</b>.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion <tm tmtype="reg">Openstack</tm> Commercial overcloud. The overcloud is the end-user <tm tmtype="reg">Openstack</tm> cloud.</p>
+<p>The interface, based on <tm tmtype="reg">Openstack</tm> Horizon, is grouped into dashboards, including <xref type="section" href="#topic2121/DashProject">Project</xref>, <xref type="section" href="#topic2121/DashAdmin">Admin</xref> and <xref type="section" href="#topic2121/DashSettings">Settings</xref>. Tabs on the left side of the interface expand and contract to show available commands grouped into <b>panels</b>.</p>
 <!-- Need new
 <img src="/media/HorizonCommunity.png" alt="" width="600" />
 -->
@@ -46,7 +46,7 @@ To access the dashboard, <xref href="../../commercial/GA1/1.0commercial.dashboar
   <image href="../../media/HelionDashboardDetail.png"/>
 </p>
 <p>
-  <xref type="section" href="#topic2121/top"> Return to Top </xref>
+  <xref type="section" href="#topic2121"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

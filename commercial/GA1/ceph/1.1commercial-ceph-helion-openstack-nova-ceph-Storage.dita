@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2174">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Ceph Nova Storage</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Ceph Nova Storage</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Ceph Nova Storage</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: Ceph Nova Storage</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -188,7 +188,7 @@ There are two ways to attach a Cinder volume to a Nova instance.
 
 **Attaching a Cinder volume from Horizon overcloud dashboard**
 
-To attach a Cinder volume to Nova instance [OpenStack(R) User Guide](http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html)
+To attach a Cinder volume to Nova instance [<tm tmtype="reg">Openstack</tm> User Guide](http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html)
 -->
 <!--
 1. In the Horizon Dashboard, click the **Project** Tab.  
@@ -394,7 +394,7 @@ vdc volume size after copying cirros img 1
   <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-rados-gateway.dita" >Ceph RADOS Gateway</xref>
 </p>
 <p>
-  <xref type="section" href="#topic2174/top"> Return to Top </xref>
+  <xref type="section" href="#topic2174"> Return to Top </xref>
 </p>
 </section>
 </body>

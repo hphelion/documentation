@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic19956">
-<title>HP Helion OpenStack(R) 1.1: Networking Operation (Neutron): Configuring Your Network Securely</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Networking Operation (Neutron): Configuring Your Network Securely</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Network Administrator"/>
 <othermeta name="role" content="Network Architect"/>
 <othermeta name="role" content="Vikas Deolaliker, Paul Kevin"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -23,10 +23,10 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.md-->
  <!--permalink: /helion/openstack/1.1/services/neutron/post/installation/configure-network-securely/--></p>
-<p>This document provides guidance on configuring your HP Helion OpenStack(R) network securely.</p>
+<p>This document provides guidance on configuring your HP Helion <tm tmtype="reg">Openstack</tm> network securely.</p>
 <p>
 <b>Note</b>: All netowrk-related quota changes - including security groups and security group rules - must be made through the Neutron API (that is, using the neutron CLI). Do not use other services (such as Nova) to make network quota changes.</p>
-<p>HP Helion OpenStack(R) has many built-in security controls, but the customer must take responsibility for configuring the network devices that integrate Helion services into an existing data center environment. This includes defining firewall rules at the edge of the HP Helion OpenStack(R) deployment (to protect against external abuse) as well as defining router rules within the HP Helion OpenStack(R) deployment (to protect against insider abuse or administrative errors).</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> has many built-in security controls, but the customer must take responsibility for configuring the network devices that integrate Helion services into an existing data center environment. This includes defining firewall rules at the edge of the HP Helion <tm tmtype="reg">Openstack</tm> deployment (to protect against external abuse) as well as defining router rules within the HP Helion <tm tmtype="reg">Openstack</tm> deployment (to protect against insider abuse or administrative errors).</p>
 <p>The concepts you should consider when implementing network security are:</p>
 <ul>
 <li>
@@ -52,16 +52,16 @@
 </li>
 </ul>
 <section id="network"> <title>Network Topology</title>
-<p>HP Helion OpenStack(R) is deployed on three physical networks: IPMI, Fibre Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in the following figure.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> is deployed on three physical networks: IPMI, Fibre Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in the following figure.</p>
 </section>
-<section id="fig1"> <title>Typical HP Helion OpenStack(R) network topology</title>
+<section id="fig1"> <title>Typical HP Helion <tm tmtype="reg">Openstack</tm> network topology</title>
 <p>
   <image href="../../../media/Helion_Security1_50.png"/>
 </p>
-<p>In the above figure, the Border Router and the Aggregation Router are customer devices that perform routing at the perimeter of the environment. The Load Balancer is a recommended customer device to provide TLS termination. The following sections provide guidance on how to configure these network devices for improved security. Note that HP Helion OpenStack(R) includes IPtable rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.</p>
+<p>In the above figure, the Border Router and the Aggregation Router are customer devices that perform routing at the perimeter of the environment. The Load Balancer is a recommended customer device to provide TLS termination. The following sections provide guidance on how to configure these network devices for improved security. Note that HP Helion <tm tmtype="reg">Openstack</tm> includes IPtable rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.</p>
 </section>
 <section id="securing-the-perimeter"> <title>Securing the Perimeter</title>
-<p>The perimeter is indicated by the Border Router icon in <xref type="section" href="#topic19956/fig1">Typical HP Helion OpenStack(R) network topology</xref>
+<p>The perimeter is indicated by the Border Router icon in <xref type="section" href="#topic19956/fig1">Typical HP Helion <tm tmtype="reg">Openstack</tm> network topology</xref>
 </p>
 <p>When securing the perimeter, consider:</p>
 <ul>
@@ -144,13 +144,13 @@
 </section>
 <section id="serverconnect"> <title>Server connectivity recommendations</title>
 <p>When configuring server connectivity, consider the following:</p>
-<p>As shown in figure <xref type="section" href="#topic19956/fig1">Typical HP Helion OpenStack(R) network topology</xref>, all of the Cloud Controller servers are members of all three VLANs. However, these servers have IP addresses configured only for the management VLAN.</p>
+<p>As shown in figure <xref type="section" href="#topic19956/fig1">Typical HP Helion <tm tmtype="reg">Openstack</tm> network topology</xref>, all of the Cloud Controller servers are members of all three VLANs. However, these servers have IP addresses configured only for the management VLAN.</p>
 </section>
 <section id="publicend"> <title>Public endpoint recommendations</title>
-<p>We recommend a load balancer be placed in front of the OpenStack(R) APIs that can fill these functions:</p>
+<p>We recommend a load balancer be placed in front of the <tm tmtype="reg">Openstack</tm> APIs that can fill these functions:</p>
 <p>A. Terminate the SSL connection.
 <!--A BR tag was used here in the original source.-->B. Redirect http &gt; https.
-<!--A BR tag was used here in the original source.-->C. Map standard https port (tcp/443) to native OpenStack(R) ports.</p>
+<!--A BR tag was used here in the original source.-->C. Map standard https port (tcp/443) to native <tm tmtype="reg">Openstack</tm> ports.</p>
 </section>
 <section id="loadbalance"> <title>Configuring the load balancer</title>
 <p>Use the following steps when configuring the load balancer:</p>
@@ -177,7 +177,7 @@
 <li>Overcloud Horizon Dashboard access</li>
 <li>External url - <codeph>https://horizon.fqdn.com/</codeph>
 </li>
-<li>Internal url (VIP) - <codeph>http://&lt;HelionOpenStack(R)</codeph>
+<li>Internal url (VIP) - <codeph>http://&lt;HelionOpenstack</codeph>
 </li>
 </ul>
 <table>
@@ -234,7 +234,7 @@ http://&lt;internalVIP&gt;:5000/v2.0</entry>
 </table>
 <p>
 <b>Note:</b>  These mapping are not an integral part of the Keystone service catalog. When a Keystone catalog is requested, it will always return the management IP. The Cloud administrator needs to publish the equivalent public endpoint for each service that needs to be externalized. Consider other endpoints to consider, such as the VNC console and so forth.</p>
-<p>To protect against external attacks on Helion services, your firewall should be configured with a rule to block any requests originating from outside the network that attempts to reach any of the HP Helion OpenStack(R) nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the HP Helion OpenStack(R) installation, other than those indicated this table:</p>
+<p>To protect against external attacks on Helion services, your firewall should be configured with a rule to block any requests originating from outside the network that attempts to reach any of the HP Helion <tm tmtype="reg">Openstack</tm> nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the HP Helion <tm tmtype="reg">Openstack</tm> installation, other than those indicated this table:</p>
 <table>
 <tgroup cols="4">
 <colspec colname="col1"/>
@@ -438,8 +438,8 @@ http://&lt;internalVIP&gt;:5000/v2.0</entry>
 </p>
 </section>
 <section id="blockstorage"> <title>Securing Block Storage network connections</title>
-<p>The customer deploying HP Helion OpenStack(R) is responsible for securing the block storage networks. Network data flows for block storage should be restricted using access control lists or other mechanisms in the customer's network devices which can include routers, switches, or firewalls. Block storage data flows interacting with HP Helion OpenStack(R) are described here to assist with defining those controls. References are given to documentation on data flows within the storage cluster itself, but not necessarily interacting with HP Helion OpenStack(R) nodes.</p>
-<p>HP Helion OpenStack(R) supports StoreVirtual or 3Par StoreServ storage arrays which are described separately.</p>
+<p>The customer deploying HP Helion <tm tmtype="reg">Openstack</tm> is responsible for securing the block storage networks. Network data flows for block storage should be restricted using access control lists or other mechanisms in the customer's network devices which can include routers, switches, or firewalls. Block storage data flows interacting with HP Helion <tm tmtype="reg">Openstack</tm> are described here to assist with defining those controls. References are given to documentation on data flows within the storage cluster itself, but not necessarily interacting with HP Helion <tm tmtype="reg">Openstack</tm> nodes.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> supports StoreVirtual or 3Par StoreServ storage arrays which are described separately.</p>
 <ul>
 <li>
 <xref type="section" href="#topic19956/storevirt">Securing StoreVirtual VSA network connections</xref>
@@ -655,14 +655,14 @@ See Reference 6 below </entry>
 </ol>
 </section>
 <section id="esx"> <title>Securing ESX network connections in Helion</title>
-<p>If your deployment includes ESX Integration, you can improve network security by configuring access control lists for the ESX network.  The ESX Tenant network (also shown below) is managed by the Networking Operations service (Neutron).  The ESX network is not installed or managed by HP Helion OpenStack(R) You must install and manage this network and makes sure there is a route to the Management network.</p>
+<p>If your deployment includes ESX Integration, you can improve network security by configuring access control lists for the ESX network.  The ESX Tenant network (also shown below) is managed by the Networking Operations service (Neutron).  The ESX network is not installed or managed by HP Helion <tm tmtype="reg">Openstack</tm> You must install and manage this network and makes sure there is a route to the Management network.</p>
 <p>The ESX network is used for:</p>
 <ul>
 <li>Traffic between the OVSvApp VMs running on every ESX Host to communicate with the Network Operations message queue on the overcloud controller</li>
 <li>The vCenter Proxy to communicate with the message queue for the Volume Operations service (Cinder) and the Compute Operations service (Nova)</li>
 <li>The EON service to communicate with the vCenter server</li>
 </ul>
-<p>The following figure depicts the Logical deployment of the ESX Integration in HP Helion OpenStack(R)</p>
+<p>The following figure depicts the Logical deployment of the ESX Integration in HP Helion <tm tmtype="reg">Openstack</tm></p>
 </section>
 <section id="fig9"> <title>ESX Integration in a logical deployment</title>
 <p>
@@ -671,7 +671,7 @@ See Reference 6 below </entry>
 <p>
   <xref format="html" href="javascript:window.open('/media/Helion_Security9.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
 </p>
-<p>The following table describes the data flow between HP Helion OpenStack(R) nodes and ESX nodes:</p>
+<p>The following table describes the data flow between HP Helion <tm tmtype="reg">Openstack</tm> nodes and ESX nodes:</p>
 <table>
 <tgroup cols="4">
 <thead>
@@ -734,7 +734,7 @@ See Reference 6 below </entry>
 </tgroup>
 </table>
 <p>Refer to the <b>
-<i>OpenStack(R) Administrator Guide</i>
+<i><tm tmtype="reg">Openstack</tm> Administrator Guide</i>
 </b>, Networking, Authentication and authorization for information on configuring the authentication and authorization protocol for your network.</p>
 </section>
 <section id="next-step"> <title>Next Step</title>
@@ -742,14 +742,14 @@ See Reference 6 below </entry>
 <li>(Optional) <xref href="../../../commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-DNaaS.dita" >Configure DNSaaS</xref>
 </li>
 <li>
-<xref href="../../../commercial/GA1/1.1commercial.backup-restore-GA.dita" >Backing up and restoring your Helion OpenStack(R) configuration</xref>
+<xref href="../../../commercial/GA1/1.1commercial.backup-restore-GA.dita" >Backing up and restoring your Helion <tm tmtype="reg">Openstack</tm> configuration</xref>
 </li>
 <li>
 <xref href="../../../commercial/GA1/neutron/1.1commercial_neutron-post-installation-neutron-integration.dita" >Neutron Integration</xref>
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic19956/top"> Return to Top </xref>
+  <xref type="section" href="#topic19956"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

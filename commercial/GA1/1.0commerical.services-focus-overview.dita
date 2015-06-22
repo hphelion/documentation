@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1698">
-<title>HP Helion OpenStack(R) 1.0: Focus Service Overview</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Focus Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,10 +13,10 @@
  <!--./commercial/GA1/1.0commerical.services-focus-overview.md-->
  <!--permalink: /helion/openstack/services/focus/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-focus-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md); text from docs.hpcloud.com/helion/openstack/prepare/overview/ -->
-<p>The HP Helion OpenStack(R) Focus service serves as the Topology Design Registry and Repository Service. Focus provides for persistent store and management of TOSCA-based templates. Focus allows you to:</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Focus service serves as the Topology Design Registry and Repository Service. Focus provides for persistent store and management of TOSCA-based templates. Focus allows you to:</p>
 <p>Focus allows you to:</p>
 <ul>
 <li>Search for documents based on criteria</li>
@@ -26,22 +26,22 @@
 <li>Delete a document or a specific document version</li>
 </ul>
 <section id="dashboard"> <title>Using the Administration Dashboard</title>
-<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP Helion OpenStack(R) Dashboard</xref> to work with the Focus service.</p>
+<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Dashboard</xref> to work with the Focus service.</p>
 </section>
 <section id="API"> <title>Using the API to access Focus</title>
-<p>You can use a low-level, raw REST API access to HP Helion OpenStack(R) Focus service. See .</p>
+<p>You can use a low-level, raw REST API access to HP Helion <tm tmtype="reg">Openstack</tm> Focus service. See .</p>
 </section>
 <section id="cli"> <title>Using the CLI</title>
-<p>You can use any of several command-line interface software to access HP Helion OpenStack(R) Focus service. See .</p>
+<p>You can use any of several command-line interface software to access HP Helion <tm tmtype="reg">Openstack</tm> Focus service. See .</p>
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref> The <i>Architecture</i> section contains useful information about how an OpenStack(R) Cloud is put together. However, the HP Helion OpenStack(R) edition takes care of these details for you. The <i>Operations</i> contains information on how to manage the system.</p>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Operations Guide</xref> The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">Openstack</tm> Cloud is put together. However, the HP Helion <tm tmtype="reg">Openstack</tm> edition takes care of these details for you. The <i>Operations</i> contains information on how to manage the system.</p>
 <!-- hide me Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Helion OpenStack(R) Operational Dashboard Help](/helion/openstack/manage/operational-dashboard/)
-* [HP Helion OpenStack(R) Administration Dashboard Help](/helion/openstack/manage/administration-dashboard/) -->
+* [HP Helion <tm tmtype="reg">Openstack</tm> Operational Dashboard Help](/helion/openstack/manage/operational-dashboard/)
+* [HP Helion <tm tmtype="reg">Openstack</tm> Administration Dashboard Help](/helion/openstack/manage/administration-dashboard/) -->
 <p>
-  <xref type="section" href="#topic1698/top"> Return to Top </xref>
+  <xref type="section" href="#topic1698"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

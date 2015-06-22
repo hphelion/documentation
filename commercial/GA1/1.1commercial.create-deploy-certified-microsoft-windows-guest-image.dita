@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8573">
-<title>HP Helion OpenStack(R) 1.1: How to build Microsoft Windows Server guest images for HP Helion OpenStack(R)</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: How to build Microsoft Windows Server guest images for HP Helion <tm tmtype="reg">Openstack</tm></title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Lou G"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,17 +25,17 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.md-->
  <!--permalink: /helion/openstack/1.1/create-deploy/certified-microsoft-windows/guest-image/--></p>
-<p>This document describes how to create and deploy the following Microsoft Windows Server guest images on HP Helion OpenStack(R)<!--A BR tag was used here in the original source.--><xref type="section" href="#topic8573/supported">How to build a supported Microsoft Windows Server guest image for HP Helion OpenStack(R)</xref> <xref type="section" href="#topic8573/nonsupported">How to build a non-supported Microsoft Windows Server guest image for HP Helion OpenStack(R)</xref>
+<p>This document describes how to create and deploy the following Microsoft Windows Server guest images on HP Helion <tm tmtype="reg">Openstack</tm><!--A BR tag was used here in the original source.--><xref type="section" href="#topic8573/supported">How to build a supported Microsoft Windows Server guest image for HP Helion <tm tmtype="reg">Openstack</tm></xref> <xref type="section" href="#topic8573/nonsupported">How to build a non-supported Microsoft Windows Server guest image for HP Helion <tm tmtype="reg">Openstack</tm></xref>
 </p>
-<section id="hp-helion-openstack-with-microsoft-windows-server-reference-architecture"> <title>HP Helion OpenStack(R) with Microsoft Windows Server Reference Architecture</title>
-<p>HP Helion OpenStack(R) is HPs hardened, tested, enterprise-grade distribution of OpenStack(R) cloud software, designed to deliver the best open source cloud computing technology in a stable, maintainable and manageable package. It offers a number of value-added services that complement and enhance OpenStack(R) technologies. This document describes how to create a Microsoft Windows Server 2012, 2012 R2, 2008, or 2008 R2 image for deployment within HP Helion OpenStack(R) The Microsoft Windows Server images can be created on a 64-bit workstation running Ubuntu 13.10 or higher on physical hardware that supports KVM.</p>
+<section id="hp-helion-openstack-with-microsoft-windows-server-reference-architecture"> <title>HP Helion <tm tmtype="reg">Openstack</tm> with Microsoft Windows Server Reference Architecture</title>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> is HPs hardened, tested, enterprise-grade distribution of <tm tmtype="reg">Openstack</tm> cloud software, designed to deliver the best open source cloud computing technology in a stable, maintainable and manageable package. It offers a number of value-added services that complement and enhance <tm tmtype="reg">Openstack</tm> technologies. This document describes how to create a Microsoft Windows Server 2012, 2012 R2, 2008, or 2008 R2 image for deployment within HP Helion <tm tmtype="reg">Openstack</tm> The Microsoft Windows Server images can be created on a 64-bit workstation running Ubuntu 13.10 or higher on physical hardware that supports KVM.</p>
 <p>
 <b>Note:</b> To determine the maximum supported Windows Server VM configuration for a given CPU architecture, please review the HP entries in the <xref href="http://www.windowsservercatalog.com/results.aspx?&amp;chtext=&amp;cstext=&amp;csttext=&amp;chbtext=&amp;bCatID=1521&amp;cpID=897&amp;avc=0&amp;ava=0&amp;avq=0&amp;OR=1&amp;PGS=25&amp;ready=0" scope="external" format="html" >Windows Server Catalog</xref> for Server Virtualization.</p>
 </section>
-<section id="supported"> <title>How to build a supported Microsoft Windows Server guest image for HP Helion OpenStack(R)</title>
-<p>The following section describes the procedure to create and deploy Microsoft Windows Server that is Microsoft SVVP (Server Virtualization Validation Program) compliant on HP Helion OpenStack(R) as a Nova compute VM</p>
+<section id="supported"> <title>How to build a supported Microsoft Windows Server guest image for HP Helion <tm tmtype="reg">Openstack</tm></title>
+<p>The following section describes the procedure to create and deploy Microsoft Windows Server that is Microsoft SVVP (Server Virtualization Validation Program) compliant on HP Helion <tm tmtype="reg">Openstack</tm> as a Nova compute VM</p>
 </section>
-<section id="create-and-deploy-a-supported-microsoft-windows-server-image-on-hp-helion-openstack"> <title>Create and deploy a supported Microsoft Windows Server image on HP Helion OpenStack(R)</title>
+<section id="create-and-deploy-a-supported-microsoft-windows-server-image-on-hp-helion-openstack"> <title>Create and deploy a supported Microsoft Windows Server image on HP Helion <tm tmtype="reg">Openstack</tm></title>
 <p>In the following steps we will use Windows Server 2012 as the example. Windows Server evaluation images are available on the <xref href="http://www.microsoft.com/en-us/evalcenter/try" scope="external" format="html" >Microsoft website</xref> (registration required).
 To create a Microsoft Windows Server 2012 guest image, follow these steps:</p>
 <ol>
@@ -110,7 +110,7 @@ You can add useful metadata information to the image, such as operating system i
 </li>
 </ol>
 </section>
-<section id="nonsupported"> <title>How to build a non-supported Microsoft Windows Server guest image for HP Helion OpenStack(R)</title>
+<section id="nonsupported"> <title>How to build a non-supported Microsoft Windows Server guest image for HP Helion <tm tmtype="reg">Openstack</tm></title>
 <p>In the following steps we will use Windows Server 2012 as the example. Windows Server evaluation images are available on the <xref href="http://www.microsoft.com/en-us/evalcenter/try" scope="external" format="html" >Microsoft website</xref> (registration required).
 To create a Microsoft Windows Server 2012 guest image, follow these steps: </p>
 <ol>
@@ -182,7 +182,7 @@ Use Virt-manager to start Installation of Windows Server 2012 and provide the fo
 </ol>
 </section>
 <section id="more-information"> <title>More information</title>
-<p>HP Helion Professional Services are available to assist you along each step of your cloud journey, from helping you define your business needs to deploying Microsoft Windows Server VMs within your HP Helion OpenStack(R) cloud. As your trusted adviser, we will show you how to get started, the steps you will take to achieve your desired business outcomes, and once it's up and running we will show you how to support and scale your cloud based on best practices gained in operating one of the world's largest OpenStack(R) clouds and thousands of customer cloud deployments.</p>
+<p>HP Helion Professional Services are available to assist you along each step of your cloud journey, from helping you define your business needs to deploying Microsoft Windows Server VMs within your HP Helion <tm tmtype="reg">Openstack</tm> cloud. As your trusted adviser, we will show you how to get started, the steps you will take to achieve your desired business outcomes, and once it's up and running we will show you how to support and scale your cloud based on best practices gained in operating one of the world's largest <tm tmtype="reg">Openstack</tm> clouds and thousands of customer cloud deployments.</p>
 </section>
 <section id="learn-more-at"> <title>Learn more at:</title>
 <ul>
@@ -197,7 +197,7 @@ Use Virt-manager to start Installation of Windows Server 2012 and provide the fo
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic8573/top"> Return to Top </xref>
+  <xref type="section" href="#topic8573"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

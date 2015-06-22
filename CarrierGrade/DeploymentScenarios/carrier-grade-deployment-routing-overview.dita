@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1001">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Routing Scenario Overview</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Routing Scenario Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -30,7 +30,7 @@
 <p>Two end users, <codeph>user1</codeph> and <codeph>user2</codeph>, each launch an instance of the example guest image inside a virtual machine, deployed within the domain of corresponding tenants, <codeph>tenant1</codeph> and <codeph>tenant2</codeph>. Inside each instance, a user application creates a Layer 3 router configured with IP addresses and static routes.</p>
 <p>See <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-routing-deploy.dita" >Deploying the Routing Scenario</xref>.</p>
 <p>
-  <xref type="section" href="#topic1001/top"> Return to Top </xref>
+  <xref type="section" href="#topic1001"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

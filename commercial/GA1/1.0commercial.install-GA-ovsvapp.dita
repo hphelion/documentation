@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic23018">
-<title>HP Helion OpenStack(R) 1.0: Deploying and Configuring OVSvApp on ESX hosts</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Deploying and Configuring OVSvApp on ESX hosts</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,9 +13,9 @@
  <!--./commercial/GA1/1.0commercial.install-GA-ovsvapp.md-->
  <!--permalink: /helion/openstack/install/ovsvapp/--></p>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-ovsvapp.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
-HP Virtual Cloud Networking (VCN) is an enhanced Networking Operations (Neutron) service module of HP Helion OpenStack(R) that delivers network virtualization to orchestrate your data center infrastructure.</p>
-<p>The HP Virtual Cloud Networking Open vSwitch vApp (OVSvApp) appliance must be installed on each ESX hypervisor in the HP Helion OpenStack(R) environment to provision VMs in your VMware vCenter environment. Once deployed, the OVSvApp enables networking between the tenant Virtual Machines (VMs).</p>
+
+HP Virtual Cloud Networking (VCN) is an enhanced Networking Operations (Neutron) service module of HP Helion <tm tmtype="reg">Openstack</tm> that delivers network virtualization to orchestrate your data center infrastructure.</p>
+<p>The HP Virtual Cloud Networking Open vSwitch vApp (OVSvApp) appliance must be installed on each ESX hypervisor in the HP Helion <tm tmtype="reg">Openstack</tm> environment to provision VMs in your VMware vCenter environment. Once deployed, the OVSvApp enables networking between the tenant Virtual Machines (VMs).</p>
 <p>The deployment process includes the following basic steps:</p>
 <ol>
 <li>Uploading the OVSvApp file to one of the ESX hosts in your data center.</li>
@@ -56,10 +56,10 @@ HP Virtual Cloud Networking (VCN) is an enhanced Networking Operations (Neutron)
 <p>Before you install the OVSvApp, ensure the following:</p>
 <ul>
 <li>
-<p>The HP Helion OpenStack(R) must be installed and configured.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> must be installed and configured.</p>
 </li>
 <li>
-<p>The VMware vSphereÂ(R) platform must be installed and configured.</p>
+<p>The VMware <tm tmtype="reg">vSphere</tm> platform must be installed and configured.</p>
 </li>
 <li>
 <p>The vCenter server must be reachable from the server where OVSvApp VM installation is launched.</p>
@@ -131,7 +131,7 @@ trunk_interface={'vmxnet3':'vlan_trunk'}
 <p>Please make sure that ESX host does not have another iteration of the OVSvApp already deployed.</p>
 </li>
 <li>
-<p>The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#network_prepare" >Preparing the network for an ESX installation</xref> in <i>Prerequisites</i>.</p>
+<p>The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see <xref href="1.0commercial.install-GA-prereqs.dita#network_prepare" >Preparing the network for an ESX installation</xref> in <i>Prerequisites</i>.</p>
 </li>
 <li>
 <p>All ESX hosts must have synchronized time settings. If hosts have different time, the deployment will fail.</p>
@@ -152,7 +152,7 @@ trunk_interface={'vmxnet3':'vlan_trunk'}
 </ul>
 </section>
 <section id="deploytemplate"> <title>Deploy the OVSvApp</title>
-<p>You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VMs provisioned from HP Helion OpenStack(R) environment. You must then configure the settings in the configuration file. The file can be used to clone and deploy OVSvApp on each host being managed by the controller.</p>
+<p>You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VMs provisioned from HP Helion <tm tmtype="reg">Openstack</tm> environment. You must then configure the settings in the configuration file. The file can be used to clone and deploy OVSvApp on each host being managed by the controller.</p>
 <p>The deploy process installs the OVSvApp as a virtual machine, which is referred to as <i>OVSvApp VM</i> in this document.</p>
 <p>
   <b>Note</b>
@@ -736,13 +736,13 @@ python invoke_vapp_installer.py
 <li>
 <p>Install DNS as a service (DNSaaS) (Optional).</p>
 
-<p>If you have not installed DNSaaS, see <xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" >DNSaaS Installation and Configuration</xref>.</p>
+<p>If you have not installed DNSaaS, see <xref href="1.0commercial.install-GA-DNSaaS.dita" >DNSaaS Installation and Configuration</xref>.</p>
 
-<p>DNSaaS is our managed DNS service, based on the OpenStack(R) Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
+<p>DNSaaS is our managed DNS service, based on the <tm tmtype="reg">Openstack</tm> Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic23018/top"> Return to Top </xref>
+  <xref type="section" href="#topic23018"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

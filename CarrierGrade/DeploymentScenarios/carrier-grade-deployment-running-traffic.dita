@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4104">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Running Traffic Through the Test Paths</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Running Traffic Through the Test Paths</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -18,7 +18,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/DeploymentScenarios/carrier-grade-deployment-running-traffic.md-->
  <!--permalink: /helion/openstack/carrier/deploy/running-traffic/--></p>
-<p>You can exercise the HP Helion OpenStack(R) Carrier Grade components by running test traffic through the test path for the <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-overview.dita" >Bridging Scenario Overview</xref> or <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-routing-overview.dita" >Routing Scenario Overview</xref>.</p>
+<p>You can exercise the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade components by running test traffic through the test path for the <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-overview.dita" >Bridging Scenario Overview</xref> or <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-routing-overview.dita" >Routing Scenario Overview</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -47,15 +47,9 @@
 </ul>
 <p>The possible combinations are ranked from highest to lowest performance as follows:</p>
 <ol>
-<li>
-<p>DPDK-accelerated switch with AVP network interfaces (best performance)</p>
-</li>
-<li>
-<p>Linux-native bridging with AVP network interfaces</p>
-</li>
-<li>
-<p>Linux-native bridging with virtio network interfaces (poorest performance)</p>
-</li>
+<li>DPDK-accelerated switch with AVP network interfaces (best performance)</li>
+<li>Linux-native bridging with AVP network interfaces</li>
+<li>Linux-native bridging with virtio network interfaces (poorest performance)</li>
 </ol>
 </section>
 <section id="routing-scenario-connections"> <title>Routing Scenario Connections</title>
@@ -77,7 +71,7 @@
 <li>Use bidirectional test traffic. This gives the virtual switches in the test path, both Linux-native and DPDK-accelerated, as well as all other physical switches involved in the connection, the opportunity to populate the MAC address-to-port tables for both directions, minimizing the amount of flooded traffic.</li>
 </ul>
 <p>One-way traffic is not typical of a real-world deployment, in which
-there is always at least a small amount of traffic in each direction. One-way traffic results in CPU-intensive activity as packets are sent to all destination ports instead of one port. In addition, HP Helion OpenStack(R) Carrier Grade server implements flooded-packet throttling to protect VMs, limiting the rate to 100Mb/s per virtual switch CPU. The effect is to reduce the overall
+there is always at least a small amount of traffic in each direction. One-way traffic results in CPU-intensive activity as packets are sent to all destination ports instead of one port. In addition, HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade server implements flooded-packet throttling to protect VMs, limiting the rate to 100Mb/s per virtual switch CPU. The effect is to reduce the overall
 switching throughput substantially.</p>
 <ul>
 <li>
@@ -88,7 +82,7 @@ switching throughput substantially.</p>
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic4104/top"> Return to Top </xref>
+  <xref type="section" href="#topic4104"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

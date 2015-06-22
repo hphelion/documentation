@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1810">
-<title>HP Helion OpenStack(R) 1.1: Configuring Horizon for Keystone v3</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Configuring Horizon for Keystone v3</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B, Emily W, Dan N,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -33,7 +33,7 @@
 <li>
 <p>Edit the file as follows:</p>
 
-<p>a. Set the OpenStack(R) API version to version 3:</p>
+<p>a. Set the <tm tmtype="reg">Openstack</tm> API version to version 3:</p>
 
 <codeblock>
 <codeph>OPENSTACK_API_VERSIONS = {

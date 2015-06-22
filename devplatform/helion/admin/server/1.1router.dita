@@ -24,7 +24,7 @@
  <!--./devplatform/helion/admin/server/1.1router.md-->
  <!--permalink: /helion/devplatform/1.1/als/admin/server/router/--></p>
 <p>
-<xref href="../../../../devplatform/helion/admin/server/1.0router.dita" >See the Helion 1.0 Development Platform version of this page</xref>
+
 The Application Lifecycle Service Router role manages HTTP and HTTPS traffic between web clients and application instances. In conjunction with the Cloud
 Controller, it maps application URLs to the corresponding application
 instances running in Linux containers on DEA nodes, distributing load

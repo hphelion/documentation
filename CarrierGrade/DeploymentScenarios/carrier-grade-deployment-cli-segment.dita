@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1499">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Creating Segmentation Ranges Using the CLI</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Creating Segmentation Ranges Using the CLI</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,11 +26,8 @@
 <p>This task assumes that provider networks have already been created in order to unlock the compute nodes and make the system operational.</p>
 <p>The scenarios require two provider networks of the VLAN type.</p>
 <ol>
-<li>
-<p>Create segmentation ranges on provider network <codeph>provider-net-a</codeph>.</p>
-
-<codeblock>
-<codeph>neutron providernet-range-create provider-net-a \
+<li>Create segmentation ranges on provider network
+        <codeph>provider-net-a</codeph>.<codeblock><codeph>neutron providernet-range-create provider-net-a \
 --name pnet-a-common --description "External network access" --range 10-10
 
 neutron providernet-range-create provider-net-a \
@@ -40,23 +37,15 @@ neutron providernet-range-create provider-net-a \
 neutron providernet-range-create provider-net-a \
 --name pnet-a-tenant2 --tenant-id ${tenant2_UUID} --description "Shared internal network" \
 --range 664-680
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create segmentation ranges on <codeph>provider-net-b</codeph>.</p>
-
-<codeblock>
-<codeph>neutron providernet-range-create provider-net-b \
+</codeph></codeblock></li>
+<li>Create segmentation ranges on
+          <codeph>provider-net-b</codeph>.<codeblock><codeph>neutron providernet-range-create provider-net-b \
 --name pnet-b-common --shared --description "External network access" --range 568-599
-</codeph>
-</codeblock>
-
-<p>The segmentation ranges are set.</p>
-</li>
+</codeph></codeblock><p>The
+          segmentation ranges are set.</p></li>
 </ol>
 <p>
-  <xref type="section" href="#topic1499/top"> Return to Top </xref>
+  <xref type="section" href="#topic1499"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

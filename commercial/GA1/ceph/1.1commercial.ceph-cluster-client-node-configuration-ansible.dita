@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic64701">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Configuring Ceph Cluster and Client Nodes using Ansible Playbooks</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Configuring Ceph Cluster and Client Nodes using Ansible Playbooks</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Configuring Ceph Cluster and Client Nodes using Ansible Playbooks</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: Configuring Ceph Cluster and Client Nodes using Ansible Playbooks</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -48,10 +48,10 @@
 <xref type="section" href="#topic64701/heartbeat-monitoring">Heartbeat Monitoring Tool (Optional)</xref>
 </li>
 <li>
-<xref type="section" href="#topic64701/cluster-validation">Helion OpenStack(R) Ceph cluster validation</xref>
+<xref type="section" href="#topic64701/cluster-validation">Helion <tm tmtype="reg">Openstack</tm> Ceph cluster validation</xref>
 </li>
 <li>
-<xref type="section" href="#topic64701/client-validation">Helion OpenStack(R) Ceph Client Validation</xref>
+<xref type="section" href="#topic64701/client-validation">Helion <tm tmtype="reg">Openstack</tm> Ceph Client Validation</xref>
 
 <ol>
 <li>
@@ -121,7 +121,7 @@ IMPORTANT: Ensure that <codeph>mon-master</codeph> is the first node to be defin
 Also, if there is only one RADOS node, then the type must be <codeph>radosgw-master</codeph>. </p>
 
 <p>
-<b>user</b>: used to login to Ceph nodes for performing the configuration. In this case it is <b>hlinux</b>. (<b>hlinux</b> refers to HP Linux for HP Helion OpenStack(R)</p>
+<b>user</b>: used to login to Ceph nodes for performing the configuration. In this case it is <b>hlinux</b>. (<b>hlinux</b> refers to HP Linux for HP Helion <tm tmtype="reg">Openstack</tm></p>
 
 <p>
 <b>osd-partition-type</b>: partition type to be used while formatting the disk for OSD storage (This attribute exists only for OSD type node).</p>
@@ -608,7 +608,7 @@ f0:92:1c:05:33:12,helioncsel,m0ng00s3,10.1.67.123,179,163840,200,overcloud-ceph-
 </ul>
 </section>
 <section id="heartbeat-monitoring"> <title>Heartbeat Monitoring Tool (Optional)</title>
-<p>The Heartbeat tool is written in Python and it is an open ended tool so other 3rd party service and status checks can be added or extended. This tool is run on the seed node from the HP Helion setup. This tool continuously queries for HP Helion OpenStack(R) services and provides notifications to the pre-defined administrator when config file mismatches are detected, or when any of the specified services in config file are down. The Configuration service automatically reapplies the known good config files when the checksum does not match. It then restarts the associated services specified in the config file and triggers the validation script to do a minimal check for that service. Even if the config files are overwritten when the checksum does not match, a backup of the existing file from the current folder (named  <codeph>[filename].timestamp</codeph>) is also saved in the backup folder. This allows the admin to verify the changes at any time.</p>
+<p>The Heartbeat tool is written in Python and it is an open ended tool so other 3rd party service and status checks can be added or extended. This tool is run on the seed node from the HP Helion setup. This tool continuously queries for HP Helion <tm tmtype="reg">Openstack</tm> services and provides notifications to the pre-defined administrator when config file mismatches are detected, or when any of the specified services in config file are down. The Configuration service automatically reapplies the known good config files when the checksum does not match. It then restarts the associated services specified in the config file and triggers the validation script to do a minimal check for that service. Even if the config files are overwritten when the checksum does not match, a backup of the existing file from the current folder (named  <codeph>[filename].timestamp</codeph>) is also saved in the backup folder. This allows the admin to verify the changes at any time.</p>
 <p>The Heartbeat tar files are:</p>
 <codeblock>
   <codeph>heartbeat-tool/Readme.md 
@@ -626,11 +626,11 @@ heartbeat-tool/src/nodeaccess.py
   <xref href="https://helion.hpwsportal.com/" scope="external" format="html" >https://helion.hpwsportal.com/</xref>
 </p>
 <p>
-  <xref type="section" href="#topic64701/top"> Return to Top </xref>
+  <xref type="section" href="#topic64701"> Return to Top </xref>
 </p>
 </section>
-<section id="cluster-validation"> <title>Helion OpenStack(R) Ceph cluster validation</title>
-<p>To validate the Helion OpenStack(R) Ceph cluster, perform the following:</p>
+<section id="cluster-validation"> <title>Helion <tm tmtype="reg">Openstack</tm> Ceph cluster validation</title>
+<p>To validate the Helion <tm tmtype="reg">Openstack</tm> Ceph cluster, perform the following:</p>
 <ol>
 <li>
 <p>Verify Ceph default pools by entering:</p>
@@ -748,10 +748,10 @@ filestore queue committing max bytes = 536870912
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic64701/top"> Return to Top </xref>
+  <xref type="section" href="#topic64701"> Return to Top </xref>
 </p>
 </section>
-<section id="client-validation"> <title>Helion OpenStack(R) Ceph client validation</title>
+<section id="client-validation"> <title>Helion <tm tmtype="reg">Openstack</tm> Ceph client validation</title>
 <p>This section explains how to validate Glance.</p>
 </section>
 <section id="glance"> <title>Glance</title>
@@ -859,7 +859,7 @@ rbd children &lt;glance pool name&gt;/&lt;glance-image id&gt;@&lt;snap name&gt;
 </ul>
 </section>
 <section id="using-the-horizon-overcloud-dashboard"> <title>Using the Horizon Overcloud dashboard</title>
-<p>To create a volume see <xref href="http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html" scope="external" format="html" >OpenStack(R) User Guide</xref>
+<p>To create a volume see <xref href="http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> User Guide</xref>
 </p>
 </section>
 <section id="using-the-cli3"> <title>Using the CLI</title>
@@ -911,7 +911,7 @@ rbd children &lt;glance pool name&gt;/&lt;glance-image id&gt;@&lt;snap name&gt;
 <b>Note</b>: For Cinder backup, the Cinder volume to be  backed up must be in a detached state. The volume should not be attached to any of the instances or Virtual Machines.</p>
 </section>
 <section id="using-the-horizon-overcloud-dashboard2"> <title>Using the Horizon overcloud dashboard</title>
-<p>Create a volume backup  see <xref href="http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html" scope="external" format="html" >OpenStack(R) User Guide</xref>
+<p>Create a volume backup  see <xref href="http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> User Guide</xref>
 </p>
 </section>
 <section id="using-the-cli2"> <title>Using the CLI</title>
@@ -1419,7 +1419,7 @@ tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic64701/top"> Return to Top </xref>
+  <xref type="section" href="#topic64701"> Return to Top </xref>
 </p>
 </section>
 <section id="volume-snapshot"> <title>Volume snapshots</title>
@@ -1441,7 +1441,7 @@ tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
 </ul>
 </section>
 <section id="using-the-horizon-overcloud-dashboard3"> <title>Using the Horizon Overcloud dashboard</title>
-<p>To create a snapshot from volume, see <xref href="http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html" scope="external" format="html" >OpenStack(R) User Guide</xref>
+<p>To create a snapshot from volume, see <xref href="http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> User Guide</xref>
 </p>
 </section>
 <section id="using-the-cli"> <title>Using the CLI</title>
@@ -1677,7 +1677,7 @@ tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic64701/top"> Return to Top </xref>
+  <xref type="section" href="#topic64701"> Return to Top </xref>
 </p>
 </section>
 <section id="gateway-validation"> <title>Ceph RADOS gateway validation</title>
@@ -1848,7 +1848,7 @@ export ST_KEY= abd
   <xref href="../../../commercial/GA1/ceph/1.1commenrcial.ceph-monitoring.dita" >Ceph Monitoring</xref>
 </p>
 <p>
-  <xref type="section" href="#topic64701/top"> Return to Top </xref>
+  <xref type="section" href="#topic64701"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

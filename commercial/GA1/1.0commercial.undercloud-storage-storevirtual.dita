@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5728">
-<title>HP Helion OpenStack(R) 1.0: Working with HP StoreVirtual VSA</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Working with HP StoreVirtual VSA</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.undercloud-storage-storevirtual.md-->
  <!--permalink: /helion/openstack/undercloud/storage/storevirtual/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.undercloud-storage-storevirtual.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The StoreVirtual option allows you to configure HP StoreVirtual VSA cluster as storage.You can configure your StoreVirtual by either using the Horizon undercloud dashboard(<i>Recommended</i>) or <xref href="../../commercial/GA1/1.0commercial.sirius-cli-workflow.dita" >Sirius client</xref>.</p>
 <p>This page describes the different tasks that you can perform using the StoreVirtual option in the Horizon undercloud dashboard.</p>
@@ -127,7 +127,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic5728/top"> Return to Top </xref>
+  <xref type="section" href="#topic5728"> Return to Top </xref>
 </p>
 </section>
 <section id="edit-cluster"> <title>Edit a StoreVirtual cluster</title>
@@ -186,7 +186,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic5728/top"> Return to Top </xref>
+  <xref type="section" href="#topic5728"> Return to Top </xref>
 </p>
 </section>
 <section id="unregister-multiple-clusters"> <title>Unregister multiple clusters</title>
@@ -215,7 +215,7 @@
 </ol>
 </section>
 <section id="view-configuration"> <title>View configuration</title>
-<p>Use this option to view the cluster configuration (as defined in the HP Helion OpenStack(R) Configuration Manual for HP LeftHand/StoreVirtual Block Storage Volume Driver).</p>
+<p>Use this option to view the cluster configuration (as defined in the HP Helion <tm tmtype="reg">Openstack</tm> Configuration Manual for HP LeftHand/StoreVirtual Block Storage Volume Driver).</p>
 <ol>
 <li>
 <p>Log in to the Horizon undercloud dashboard.</p>
@@ -239,7 +239,7 @@
   <xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-storevirtual.dita" >Working with StoreVirtual Backends</xref>
 </p>
 <p>
-  <xref type="section" href="#topic5728/top"> Return to Top </xref>
+  <xref type="section" href="#topic5728"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

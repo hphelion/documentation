@@ -30,7 +30,7 @@
     <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
   </ph>
 </p>
-<p>Glazier is a collection of scripts used for building Windows images for deployment to a Helion OpenStack(R) environment. The image that the tool creates can be configured either by using command-line switches, or by using a Glazier profile.</p>
+<p>Glazier is a collection of scripts used for building Windows images for deployment to a <tm tmtype="reg">Helion Openstack</tm> environment. The image that the tool creates can be configured either by using command-line switches, or by using a Glazier profile.</p>
 <p>For an example on how to use Glazier to create a Windows image, see <xref href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita" >Building and Deploying Windows DEA and SQL Server Express Images</xref>.</p>
 <ul>
 <li>
@@ -66,7 +66,7 @@
 </ul>
 </section>
 <section id="usage"> <title>Usage</title>
-<p>To use the script, you need to have the following OpenStack(R) environment variables set:</p>
+<p>To use the script, you need to have the following <tm tmtype="reg">Openstack</tm> environment variables set:</p>
 <ul>
 <li>OS_TENANT_NAME</li>
 <li>OS_USERNAME</li>
@@ -75,14 +75,13 @@
 <li>OS_TENANT_ID</li>
 <li>OS_AUTH_URL</li>
 </ul>
-<p>It is recommended to set these environment variables using the OpenStack(R) RC file from the target environment. This can be obtained in Horizon, under Project-&gt;Compute-&gt;Access &amp; Security-&gt;API Access-&gt;<b>Download OpenStack(R) RC File</b>.</p>
+<p>It is recommended to set these environment variables using the <tm tmtype="reg">Openstack</tm> RC file from the target environment. This can be obtained in Horizon, under Project-&gt;Compute-&gt;Access &amp; Security-&gt;API Access-&gt;<b>Download <tm tmtype="reg">Openstack</tm> RC File</b>.</p>
 </section>
 <section id="commandline"> <title>Command-line arguments</title>
 <p>Syntax: <codeph>create-glazier</codeph>
 </p>
 <p>Available options:</p>
-<codeblock>
---windows-iso /path/to/windows_iso_kit      
+<codeblock>--windows-iso /path/to/windows_iso_kit      
     - specifies the location of the Windows iso image
 
 --sql-server-iso /path/to/sqlserver_iso_kit 
@@ -108,18 +107,18 @@
     - (optional) Specifies that you are using a Windows volume license. If this is specified, there is no need to specify --product-key (means you are using Windows VL)
 
 --os-network-id
-    - OpenStack(R) network id used for building the OpenStack(R) image. Can be found 
+    - Openstack network id used for building the Openstack image. Can be found 
     - in Horizon interface under Project-&gt;Network-&gt;Networks-&gt;(network name)-&gt;ID
 
 --os-key-name
-    - OpenStack(R) name of the key used for building the OpenStack(R) image. Can be found
+    - Openstack name of the key used for building the Openstack image. Can be found
     - in Horizon interface under Project-&gt;Compute-&gt;Access &amp; Security-&gt;Key Pairs
 
 --os-security-group
-    - OpenStack(R) security group used for building the OpenStack(R) image
+    - Openstack security group used for building the Openstack image
  
 --os-flavor
-    - OpenStack(R) flavor used for building the OpenStack(R) image. Example: standard.medium
+    - Openstack flavor used for building the Openstack image. Example: standard.medium
 
 --insecure
     - (optional) create a Windows image for a Development Platform installation that does not have an HTTPS certificate
@@ -147,8 +146,7 @@
     - (optional) Sets the https proxy in the created virtual machine
     - 
 --help                      
-    - shows this message
-</codeblock>
+    - shows this message</codeblock>
 </section>
 <section id="profile"> <title>Creating a Glazier Profile</title>
 <p>A profile can be used to configure Glazier. By default we provide the profiles you need to create the images you need to enable working with Windows. However, you can create a custom profile. Create the profile in the following format:</p>
@@ -161,8 +159,7 @@
 </section>
 <section id="sample-featurescsv-file"> <title>Sample features.csv file</title>
 <p>The <codeph>features.csv</codeph> file should have the following format:</p>
-<codeblock>
-  <codeph>csv
+<codeblock>  csv
 Feature,Core,Standard,Desired
 NetFx4ServerFeatures,Enabled,Enabled,Enabled
 NetFx4,Enabled,Enabled,Enabled
@@ -177,48 +174,45 @@ IIS-IIS6ManagementCompatibility,Disabled,Disabled,Removed
 IIS-Metabase,Disabled,Disabled,Removed
 IIS-WMICompatibility,Disabled,Disabled,Removed
 IIS-LegacyScripts,Disabled,Disabled,Removed
-IIS-FTPServer,Disabled,Disabled,Removed
-</codeph>
-</codeblock>
+IIS-FTPServer,Disabled,Disabled,Removed</codeblock>
 </section>
 <section id="sample-resourcescsv-file"> <title>Sample resources.csv file</title>
 <p>The <codeph>resources.csv</codeph> file should have the following format:</p>
-<codeblock>
-  <codeph>csv
+<codeblock>csv
 destination,url
-\installers\product.zip,http://download.domain.com/product.zip
-</codeph>
-</codeblock>
+\installers\product.zip,http://download.domain.com/product.zip</codeblock>
 </section>
 <section id="sample-toolscsv-file"> <title>Sample tools.csv file</title>
 <p>The <codeph>tools.csv</codeph> file should have the following format:</p>
-<codeblock>
-  <codeph>csv
+<codeblock>csv
 destination,url
-tool.zip,http://download.domain.com/tool.zip
-</codeph>
-</codeblock>
+tool.zip,http://download.domain.com/tool.zip</codeblock>
 </section>
 <section id="sample-powershell-script"> <title>Sample PowerShell script</title>
 <p>The <codeph>specialize.ps1</codeph> file is a PowerShell script that will run as one of the last steps on the <codeph>temp instance</codeph>.</p>
 <p>Sample <codeph>specialize.ps1</codeph>:</p>
-<codeblock>
-  <codeph>powershell
+<codeblock>powershell
 # Open firewall port 80
-New-NetFirewallRule -DisplayName 'Allow HTTP' -Direction Inbound -LocalPort 80 -Protocol TCP -Action Allow
-</codeph>
-</codeblock>
+New-NetFirewallRule -DisplayName 'Allow HTTP' -Direction Inbound -LocalPort 80 -Protocol TCP -Action Allow</codeblock>
 <p>After creating the profile, use the <codeph>--profile</codeph> command-line switch (above).</p>
-<!-- ===================== horizontal rule ===================== -->
-<xref href="../../../devplatform/1.2/windows/windows_overview.dita" >Windows Overview</xref>
-<xref href="../../../devplatform/1.2/windows/windows_firstapp.dita" >Deploying your first .NET Application</xref>
-<p> | </p>
-<xref href="../../../devplatform/1.2/windows/windows_tools_guide.dita" >Windows and .NET Tools Guide</xref>
-<xref href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita" >Building and Deploying Windows DEA and SQL Server Express Images</xref>
-<p> | Glazier Reference Guide</p>
-<xref href="../../../devplatform/1.2/windows/windows_adding_services.dita" >Adding Services to a Windows Application</xref>
-<p> | </p>
-<xref href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita" >Deploying Windows Applications with the IIS Buildpack</xref>
 </section>
 </body>
+    <related-links>
+        <link href="windows_overview.dita#topic24073_2"><linktext>Windows Overview</linktext></link>
+        <link href="../../../devplatform/1.2/windows/windows_tools_guide.dita">
+            <linktext>Windows and .NET Tools Guide</linktext>
+        </link>
+        <link href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita">
+            <linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext>
+        </link>
+        <link href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita">
+            <linktext>Glazier Reference Guide</linktext>
+        </link>
+        <link href="../../../devplatform/1.2/windows/windows_adding_services.dita">
+            <linktext>Adding Services to a Windows Application</linktext>
+        </link>
+        <link href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita">
+            <linktext>Deploying Windows Applications with the IIS Buildpack</linktext>
+        </link>
+    </related-links>
 </topic>

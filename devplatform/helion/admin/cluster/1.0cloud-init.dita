@@ -26,7 +26,7 @@
  <!--./devplatform/helion/admin/cluster/1.0cloud-init.md-->
  <!--permalink: /als/v1/admin/cluster/cloud-init/--></p>
 <p>
-  <xref href="../../../../devplatform/helion/admin/cluster/1.1cloud-init.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 </p>
 <p>
 <xref href="https://help.ubuntu.com/community/CloudInit" scope="external" format="html" >cloud-init</xref> (the Ubuntu
@@ -34,7 +34,7 @@ package for handling early initialization of cloud instances) can be
 used to provide additional flexibility when configuring Application Lifecycle Service cluster
 nodes, and can simplify joining a cluster and assigning roles.</p>
 <p>cloud-init can be configured at instance launch time by pasting YAML
-directly into the OpenStack(R) Horizon interface.</p>
+directly into the <tm tmtype="reg">Openstack</tm> Horizon interface.</p>
 <p>For example, given a core node at IP 10.2.3.4, the following
 cloud-config would add a new DEA node to the cluster:</p>
 <codeblock>
@@ -56,11 +56,8 @@ booted.</li>
 <codeph>extname</codeph> when supplied with a fully qualified
 domain name will run <codeph>kato rename &lt;extname&gt;</codeph> on
 the instance first boot.</li>
-<li>Roles takes a list of roles to configure the node with. For guidance
-on how to work with roles see
-<xref href="index.dita">
-<i>Roles</i>
-</xref>.</li>
+<li>Roles takes a list of roles to configure the node with. For guidance on how to work with roles
+        see <xref href="1.0index.dita#topic17783/roles"/>.</li>
 </ul>
 <section id="securing-the-new-node"> <title>Securing the new node</title>
 <p>To lock down and secure this new node, you could use standard cloud-config directives for adding any SSH keys, randomizing passwords, and/or disabling password based authentication entirely. An example that creates a data services node, enables passwordless sudo for the admin group, and disables password based authentication:</p>

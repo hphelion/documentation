@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1779">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Specifying Local Storage for a VM</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Specifying Local Storage for a VM</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -49,7 +49,7 @@ set aggregate_instance_extra_specs=integer_value
 <p>If this extra specification is not defined for a flavor, then VMs launched using the flavor are instantiated without
 regard for the storage type.</p>
 <p>
-  <xref type="section" href="#topic1779/top"> Return to Top </xref>
+  <xref type="section" href="#topic1779"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

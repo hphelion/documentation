@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic974">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Creating Users Using the CLI</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Creating Users Using the CLI</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,31 +25,21 @@
 <!-- ===================== horizontal rule ===================== -->
 <p>This exercise creates the users <codeph>user1</codeph> and <codeph>user2</codeph>, and associates each one with a tenant.</p>
 <ol>
-<li>
-<p>Create user user1.</p>
-
-<codeblock>
-<codeph>keystone user-create --name user1 --pass user1 \
+<li>Create user
+        user1.<codeblock><codeph>keystone user-create --name user1 --pass user1 \
 
 --email user1@noreply.com --tenant ${tenant1_UUID}
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create user user2.</p>
-
-<codeblock>
-<codeph>keystone user-create --name user2 --pass user2 \
+</codeph></codeblock></li>
+<li>Create user
+          user2.<codeblock><codeph>keystone user-create --name user2 --pass user2 \
 
 --email user2@noreply.com --tenant ${tenant2_UUID}
-</codeph>
-</codeblock>
-
-<p>The two new users exist now in the system. No UUID variables are defined because they are not needed in any subsequent commands.</p>
-</li>
+</codeph></codeblock><p>The
+          two new users exist now in the system. No UUID variables are defined because they are not
+          needed in any subsequent commands.</p></li>
 </ol>
 <p>
-  <xref type="section" href="#topic974/top"> Return to Top </xref>
+  <xref type="section" href="#topic974"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

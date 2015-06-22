@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1968">
-<title>HP Helion OpenStack(R) 1.0: Undercloud Horizon Dashboard: Settings Tab</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Undercloud Horizon Dashboard: Settings Tab</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.undercloud-admin-settings.md-->
  <!--permalink: /helion/openstack/undercloud/admin/settings/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.undercloud-admin-settings.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The options on the Settings tab allow changes to the following:</p>
 <ul>
@@ -44,7 +44,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic1968/top"> Return to Top </xref>
+  <xref type="section" href="#topic1968"> Return to Top </xref>
 </p>
 </section>
 <section id="change-password"> <title>Change Password<!--Removed anchor point change-password--><!-- id="change-password" --></title>
@@ -70,7 +70,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic1968/top"> Return to Top </xref>
+  <xref type="section" href="#topic1968"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

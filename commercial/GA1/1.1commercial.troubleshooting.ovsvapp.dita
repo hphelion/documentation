@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2976">
-<title>HP Helion OpenStack(R) 1.1: Troubleshooting OVSvApp Installation and Operation</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Troubleshooting OVSvApp Installation and Operation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -79,7 +79,7 @@
 <p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref>.</p>
 <p>Before contacting HP Customer Support, <xref href="../../commercial/GA1/1.1commercial.troubleshooting.dita#sos" >run the <codeph>run-sosreport</codeph> command</xref> on the affected system.</p>
 <p>
-  <xref type="section" href="#topic2976/top"> Return to Top </xref>
+  <xref type="section" href="#topic2976"> Return to Top </xref>
 </p>
 </section>
 </body>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2088">
-<title>HP Helion OpenStack(R) 1.1: How to use the Helion Dashboards</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: How to use the Helion Dashboards</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Michael B"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,10 +26,10 @@
  <!--./commercial/GA1/1.1commercial.dashboard.how-works.md-->
  <!--permalink: /helion/openstack/1.1/dashboard/how-works/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
-<p>The HP Helion OpenStack(R) Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack(R) Commercial overcloud. The overcloud is the end-user OpenStack(R) cloud.</p>
-<p>The interface, based on OpenStack(R) Horizon, is grouped into dashboards, including <xref type="section" href="#topic2088/DashProject">Project</xref>, <xref type="section" href="#topic2088/DashAdmin">Admin</xref> and <xref type="section" href="#topic2088/DashSettings">Settings</xref>. Tabs on the left side of the interface expand and contract to show available commands grouped into <b>panels</b>.</p>
+<p>The HP Helion <tm tmtype="reg">Openstack</tm> Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion <tm tmtype="reg">Openstack</tm> Commercial overcloud. The overcloud is the end-user <tm tmtype="reg">Openstack</tm> cloud.</p>
+<p>The interface, based on <tm tmtype="reg">Openstack</tm> Horizon, is grouped into dashboards, including <xref type="section" href="#topic2088/DashProject">Project</xref>, <xref type="section" href="#topic2088/DashAdmin">Admin</xref> and <xref type="section" href="#topic2088/DashSettings">Settings</xref>. Tabs on the left side of the interface expand and contract to show available commands grouped into <b>panels</b>.</p>
 <!-- Need new
 <img src="/media/HorizonCommunity.png" alt="" width="600" />
 -->
@@ -53,7 +53,7 @@ To access the dashboard, <xref href="../../commercial/GA1/1.1commercial.dashboar
 <p>For a look at the dashboard options, see <xref href="../../commercial/GA1/1.1commerical.services-horizon-overview.dita" >Horizon Overview</xref>
 </p>
 <p>
-  <xref type="section" href="#topic2088/top"> Return to Top </xref>
+  <xref type="section" href="#topic2088"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

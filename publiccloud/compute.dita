@@ -13,7 +13,7 @@
  <!--./publiccloud/compute.md-->
  <!--permalink: /publiccloud/compute/--></p>
 <!-- <iframe src="http://player.vimeo.com/video/33922384?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
-<p>Leveraging <xref href="http://openstack.org/projects/compute/" scope="external" format="html" >OpenStack(R) Compute</xref>, HP Helion Public Cloud compute provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.  Key terms include:</p>
+<p>Leveraging <xref href="http://openstack.org/projects/compute/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Compute</xref>, HP Helion Public Cloud compute provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.  Key terms include:</p>
 <ul>
 <li>
 <b>Flavor</b> - A unique combination of disk space, memory capacity, and CPU</li>
@@ -28,17 +28,17 @@
 <p>Do you need low level, raw REST API access to HP Helion Public Cloud compute?  Take a look at the Compute API page for the version of HP Helion Public Cloud you are using:</p>
 <ul>
 <li>
-<xref href="/publiccloud/api/compute" >
+<xref href="../publiccloud/apidocs/c1.1/nova-api.dita" >
 <b>Compute API page</b>
 </xref>
 </li>
 </ul>
 </section>
 <section id="bindings"> <title>Bindings</title>
-<p>If you are looking for an easier to use, language-specific way of using HP Helion Public Cloud compute, check out our <xref href="/bindings" >Bindings section</xref>.</p>
+<p>If you are looking for an easier to use, language-specific way of using HP Helion Public Cloud compute, check out our <xref href="../publiccloud/bindings.dita" >Bindings section</xref>.</p>
 </section>
 <section id="cli"> <title>CLI</title>
-<p>Want scriptable access you can put in a cron job or something similar?  Go on over to our <xref href="/publiccloud/cli" >CLI documentation</xref>.</p>
+<p>Want scriptable access you can put in a cron job or something similar?  Go on over to our <xref href="../publiccloud/cli.dita" >CLI documentation</xref>.</p>
 </section>
 <section id="for-further-information"> <title>For further information</title>
 <p>Check out the following pages for more information on using HP Helion Public Cloud compute services:</p>

@@ -21,7 +21,7 @@
  <!--./devplatform/helion/user/deploy/languages/1.0node.md-->
  <!--permalink: /als/v1/user/deploy/languages/node/--></p>
 <p>
-  <xref href="../../../../../devplatform/helion/user/deploy/languages/1.1node.dita" >See the Helion 1.1 Development Platform version of this page</xref>
+
 </p>
 <p>Application Lifecycle Service has a built in Node framework with multiple versions of the
 <xref href="http://nodejs.org/" scope="external" format="html" >Node.js</xref> runtime. <xref href="https://npmjs.org/" scope="external" format="html" >NPM</xref> is used

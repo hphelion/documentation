@@ -21,37 +21,44 @@
  </prolog>
 <body>
  <section><title>HP Helion 1.2 Development Platform: <tm tmtype="reg">Windows</tm> and .NET Tools Guide</title>
-   <ph><i>*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
-     Microsoft Corporation in the United States and/or other countries.*</i></ph> Helion Development
-   Platform 1.2 adds tooling support for deploying Windows images and .NET Framework HTTP-based
-   applications. This document describes how to install and use these tools. <p> This document
+   <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
+     Microsoft Corporation in the United States and/or other countries.</i></ph> 
+  
+  <p>Helion Development Platform 1.2 adds tooling support for deploying Windows images and .NET Framework HTTP-based
+   applications. This document describes how to install and use these tools. </p>
+  <p> This document
     contains the following sections: </p>
-   <b>.NET tools:</b>
+  <p><b>.NET tools:</b></p>
    <ul id="ul_dmq_khw_js">
-    <li>[Cloud Foundry Extensions](#cloudfoundryextensions)</li>
-    <li>[Cloud Foundry MSBuild Tasks](#msbuild)</li>
-    <li>[Cloud Foundry .NET SDK](#sdk)</li>
+    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/cloudfoundryextensions" format="dita">Cloud Foundry Extensions</xref></li>
+    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/msbuild">Cloud Foundry MSBuild Tasks</xref></li>
+    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/sdk">Cloud Foundry .NET SDK</xref></li>
    </ul>
    <b>Setup tools</b><ul id="ul_jgl_fhw_js">
-    <li> [ALS Cluster Management (cf-mgmt)](#ALS)</li>
-    <li> [Helion client (helion)](#helion) </li>
-   </ul>Windows Image Tool<ul id="ul_nrc_3hw_js">
-    <li>[Glazier](#glazier)</li>
+    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/ALS">ALS Cluster Management (cf-mgmt)</xref></li>
+    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/helion">Helion client (helion)</xref></li>
+   </ul>
+  <b>Windows Image Tool</b><ul id="ul_nrc_3hw_js">
+    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/glazier">Glazier</xref></li>
    </ul></section>
- <section><title>Cloud Foundry Extensions {#cloudfoundryextensions}</title> <p>This Visual Studio 2013 extension
+ <section id="cloudfoundryextensions"><title>Cloud Foundry Extensions</title> <p>This Visual Studio 2013 extension
     is used to deploy and manage .NET applications. The extension can be used in any edition of VS
     2013, including the Community (free) edition.</p></section>
  <section><title>Installation</title> Follow these steps to install the Cloud Foundry Extensions: <ol>
-    <li>Select **Tools-&gt;Extensions and Updates** in Visual Studio 2013.</li>
-    <li>In the **Extensions and Updates** panel, search for **Cloud Foundry Extentions** in the
+  <li>Select <b>Tools-&gt;Extensions and Updates</b> in Visual Studio 2013.</li>
+  <li>In the <b>Extensions and Updates</b> panel, search for <b>Cloud Foundry Extentions</b> in the
      **Online** section.</li>
     <li>Install the extension from the search results.</li>
-   </ol> The Cloud Foundry Extensions page on Visual Studio Gallery can be found <xref href="https://visualstudiogallery.msdn.microsoft.com/4cad4d95-099c-449e-9d90-7d4da5c4a0c0?SRC=Home" format="external">here</xref>. </section>
-<section><title>The Cloud Foundry Explorer Window</title> The explorer can be opened in Visual
-   Studio under **View -&gt;Other Windows -&gt;Cloud Foundry Explorer**. <p>The explorer window
-    shows endpoints that you have successfully connected to:</p><p>
-    <image href="../../../media/windows_cf_explorer.PNG" id="image_fnz_g3w_js" align="left"/></p><p>
-    The Cloud Foundry Explorer Window displays the following types of nodes: </p><table>
+   </ol> <p>The Cloud Foundry Extensions page on Visual Studio Gallery can be found 
+    <xref href="https://visualstudiogallery.msdn.microsoft.com/4cad4d95-099c-449e-9d90-7d4da5c4a0c0?SRC=Home" format="external">here</xref>. </p></section>
+ 
+<section><title>The Cloud Foundry Explorer Window</title> 
+ <p>The explorer can be opened in Visual
+  Studio under **View -&gt;Other Windows -&gt;Cloud Foundry Explorer**. </p>
+ <p>The explorer window shows endpoints that you have successfully connected to:</p>
+ <p><image placement="break" href="../../../media/windows_cf_explorer.PNG" id="image_fnz_g3w_js" align="left"/></p>
+ <p>The Cloud Foundry Explorer Window displays the following types of nodes: </p>
+ <table>
     <tgroup cols="1">
      <tbody>
       <row>
@@ -170,97 +177,106 @@
     </tgroup>
    </table></section>
  <section><title>Deploying an application</title>
-  <p>For an example of how to deploy an application from Visual Studio, see <xref href="windows_firstapp.dita#topic_amr_q3w_js">Deploying your first .NET Application</xref>.</p>
+  <p>For an example of how to deploy an application from Visual Studio, see <xref format="dita" scope="local" href="windows_firstapp/topic_amr_q3w_js">Deploying your first .NET Application</xref>.</p>
 
-  <p>**Note:** Currently, only Web Application Projects can be deployed from Cloud Foundry Explorer; Web Site Projects are not supported. Web Site Projects can still be deployed from the command line.</p>
+  <p><note>Currently, only Web Application Projects can be deployed from Cloud Foundry Explorer; Web Site Projects are not supported. Web Site Projects can still be deployed from the command line.</note></p>
 
- </section><section><title>Cloud Foundry MSBuild Tasks {#msbuild}</title>
-
-These MSBuild processes allow you to build and deploy .NET applications to Cloud Foundry instances as part of the usual build process for your application. 
-
-The MSBuild tasks can be installed using NuGet:
-
-1. Right-click the project in **Solution Explorer** and select **Manage NuGet Packages**.
-	
-	img src="media/windows_manage_packages.png"
-2. Search for **Cloud Foundry MSBuild Tasks** in the **Online** section
-3. Click **Install**
-
-	img src="media/windows_select_msbuild.png"
+ </section>
  
-The MSBuild Tasks NuGet package can be found "http://www.nuget.org/packages/cf-msbuild-tasks/" here.
+ <section id="msbuild"><title>Cloud Foundry MSBuild Tasks</title>
 
-For more information on MSBuild, see "https://msdn.microsoft.com/en-us/library/dd393574.aspx" >MSBuild on MSDN .
+  <p>These MSBuild processes allow you to build and deploy .NET applications to Cloud Foundry instances as part of the usual build process for your application. </p>
 
- </section><section><title>Cloud Foundry .NET SDK {#sdk}</title>
+  <p>The MSBuild tasks can be installed using NuGet:</p>
+  <ol><li>Right-click the project in <b>Solution Explorer</b> and select <b>Manage NuGet Packages</b>
+   <image placement="break" href="../../../media/windows_manage_packages.png"/></li>
+ <li>Search for <b>Cloud Foundry MSBuild Tasks</b> in the <b>Online</b> section</li>
+ <li>Click <b>Install</b>
+  <image placement="break" href="../../../media/windows_select_msbuild.png"/></li>
+</ol>
+  <p>The MSBuild Tasks NuGet package can be found <xref format="html" scope="external" href="http://www.nuget.org/packages/cf-msbuild-tasks/">here</xref>.</p>
 
-The SDK is used for programmatic access to controlling Windows images and .NET applications. Using the SDK, developers can create build and deployment automation and tools that interact with the ALS APIs.
+  <p>For more information on MSBuild, see <xref scope="external" format="html" href="https://msdn.microsoft.com/en-us/library/dd393574.aspx" >MSBuild on MSDN </xref>.</p>
 
-The Cloud Foundry .NET SDK can be installed using NuGet:
+ </section>
+ <section id="sdk"><title>Cloud Foundry .NET SDK</title>
 
-* Right-click the project in **Solution Explorer** and select **Manage NuGet Packages**.
-* Search for **Cloud Foundry .NET SDK**
-* Click **Install**
+  <p>The SDK is used for programmatic access to controlling Windows images and .NET applications. Using the SDK, developers can create build and deployment automation and tools that interact with the ALS 
+   APIs.</p>
 
-The CloudFoundry NuGet package can be found "http://www.nuget.org/packages/cf-dotnet-sdk/">here 
+  <p>The Cloud Foundry .NET SDK can be installed using NuGet:</p>
+<ul>
+ <li>Right-click the project in <b>Solution Explorer</b> and select <b>Manage NuGet Packages</b>.</li>
+ <li>Search for <b>Cloud Foundry .NET SDK</b></li>
+ <li>Click <b>Install</b></li>
+</ul>
+  <p>The CloudFoundry NuGet package can be found <xref format="html" scope="external" href="http://www.nuget.org/packages/cf-dotnet-sdk/">here</xref>.</p>
 
- </section><section><title>Setup Tools</title>
+ </section>
+ 
+ <section><title>Setup Tools</title></section>
 
-<b>ALS Cluster Management Tool (cf-mgmt) {#ALS}</b>
+ <section id="als"><title>ALS Cluster Management Tool (cf-mgmt)</title>
 
-This tool is used to add services to new ALS clusters. The same tool is used for Linux and Windows instances.
+  <p>This tool is used to add services to new ALS clusters. The same tool is used for Linux and Windows instances.</p>
 
-To add a DEA role to a Windows instance, use the following syntax:
+  <p>To add a DEA role to a Windows instance, use the following syntax:</p>
 
-  <codeph>cf-mgmt add-role dea --load &lt;filename>.yml</codeph>
+  <codeblock>cf-mgmt add-role dea --load &lt;filename>.yml</codeblock>
 
-To add a SQL Server role to a Windows instance, use the following syntax:
+  <p>To add a SQL Server role to a Windows instance, use the following syntax:</p>
 
-  <codeph>cf-mgmt add-service mssql2014 --load &lt;filename>.yml</codeph>
+  <codeblock>cf-mgmt add-service mssql2014 --load &lt;filename>.yml</codeblock>
 
-For more information on the ALS cluster management tool, see http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference">HP Helion ALS Cluster Management Tool Reference.
+  <p>For more information on the ALS cluster management tool, see 
+   <xref format="html" scope="external" href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference">HP Helion ALS Cluster Management Tool Reference</xref>.</p>
 
-The ALS cluster management tool can be downloaded from the following location: http://docs.hpcloud.com/helion/devplatform/1.2/als/client/download">Download
+  <p>The ALS cluster management tool can be downloaded from the following location: <xref format="html" scope="external" href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/download">Download</xref>.</p>
 
-<b>Helion Client {#helion}</b>
+ </section>
+ <section id="helion"><title>Helion Client</title>
 
-This tool is used to deploy applications from the command line. The same tool is used for deploying applications to Windows and Linux instances.
+  <p>This tool is used to deploy applications from the command line. The same tool is used for deploying applications to Windows and Linux instances.</p>
 
-**Note:** .NET applications are built on the server using **MSBuild**. You should verify that your application builds with **MSBuild** before deploying.
+  <note>.NET applications are built on the server using <b>MSBuild</b>. You should verify that your application builds with <b>MSBuild</b> before deploying.</note>
 
-To deploy a .NET application to a Windows instance, use the following syntax from the same folder as your <codeph>manifest.yml</codeph> file:
+  <p>To deploy a .NET application to a Windows instance, use the following syntax from the same folder as your <codeph>manifest.yml</codeph> file:</p>
 		<codeblock>helion target &lt;cluster URL>
 		helion login
 		helion push --stack win2012r2 </codeblock>
 
-For more information on the Helion client, see "/helion/devplatform/1.2/als/user/reference/client-ref">HP Helion 1.2 Development Platform: Application Lifecycle Service Client Command Reference
+  <p>For more information on the Helion client, see <xref format="dita" scope="local" href="../helion/user/reference/1.2client-ref.dita#topic13355">HP Helion 1.2 Development Platform: Application Lifecycle Service Client Command Reference</xref></p>
 
-The Helion client tool can be downloaded from the following locations: 
+  <p>The Helion client tool can be downloaded from the following locations: </p>
 
 <ul>
- <li>http://clients.als.hpcloud.com/helion-1.2.0-win32-ix86.zip" <tm tmtype="reg">Windows</tm></li>
-<li>http://clients.als.hpcloud.com/helion-1.2.0-linux-glibc2.3-x86_64.zip" Linux x64</li>
- <li>http://clients.als.hpcloud.com/helion-1.2.0-macosx10.5-i386-x86_64.zip" <tm tmtype="reg">Mac OS X</tm></li>
+ <li><xref format="html" scope="external" href="http://clients.als.hpcloud.com/helion-1.2.0-win32-ix86.zip"> <tm tmtype="reg">Windows</tm></xref></li>
+ <li><xref format="html" scope="external" href="http://clients.als.hpcloud.com/helion-1.2.0-linux-glibc2.3-x86_64.zip"> Linux x64</xref></li>
+ <li><xref format="html" scope="external" href="http://clients.als.hpcloud.com/helion-1.2.0-macosx10.5-i386-x86_64.zip"> <tm tmtype="reg">Mac OS X</tm></xref></li>
 </ul>
 
- </section><section><title>Windows Image Tool</title>
+ </section>
+ <section><title>Windows Image Tool</title></section>
 
-<b>Glazier {#glazier}</b>
+ <section id="glazier"><title>Glazier</title>
 
-Glazier is the tool used to create <tm tmtype="reg">Windows</tm> images for deployment to Helion OpenStack (HOS) Application Lifecycle Service (ALS) clusters. 
+  <p>Glazier is the tool used to create <tm tmtype="reg">Windows</tm> images for deployment to Helion OpenStack (HOS) Application Lifecycle Service (ALS) clusters. </p>
 
-Glazier can be downloaded from the following location: "http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download 
+  <p>Glazier can be downloaded from the following location: <xref format="html" scope="external" href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</xref>. </p>
 
-For information on Glazier, see "/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide.
+For information on Glazier, see <xref scope="local" format="dita" href="windows_glazier_reference_guide.dita">Glazier Reference Guide</xref>.
 </section>
 </body>
  <related-links>
-  <link href="../../../devplatform/1.2/windows/windows_overview.dita"><linktext>Windows Overview</linktext></link>
-  <link href="../../../devplatform/1.2/windows/windows_firstapp.dita"><linktext>Deploying your first .NET Application</linktext></link>
-  <link href="../../../devplatform/1.2/windows/windows_tools_guide.dita"><linktext>Windows and .NET Tools Guide</linktext></link>
-  <link href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita"><linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext></link>
-  <link href="../../../devplatform/1.2/windows/windows_adding_services.dita"><linktext>Adding Services to a Windows Application</linktext></link>
-  <link href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita"><linktext>Deploying Windows Applications with the IIS Buildpack</linktext></link>
+  <link href="windows_overview.dita"><linktext>Windows Overview</linktext></link>
+  <link href="windows_building_and_deploying.dita"><linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext></link>
+  <link href="windows_firstapp.dita"><linktext>Deploying your first .NET Application</linktext></link>
+  <link href="windows_tools_guide.dita"><linktext>Windows and .NET Tools Guide</linktext></link>
+  <link href="windows_glazier_reference_guide.dita"><linktext>Glazier Reference Guide</linktext></link>
+  <link href="windows_adding_services.dita"><linktext>Adding Services to a Windows Application</linktext></link>
+  <link href="windows_custom_buildpacks.dita"><linktext>Deploying Windows Applications with the IIS Buildpack</linktext></link>
+  <link href="windows_adding_services.dita"><linktext>Connecting Services to a Windows Application</linktext></link>
+  <link href="windows_growcluster.dita"><linktext>Growing and Renaming Clusters Using Horizon</linktext></link>
  </related-links>
 </topic>
 

@@ -50,7 +50,7 @@
 <p>The addition of the Visual Studio Cloud Foundry Explorer and MS Build tasks enable the .NET enterprise developer to deploy and manage their application directly from the favorite development IDE, command line environment or build agent.</p>
 <p>
 <b>Horizon panel updates for IT operations</b>
-Administrators can now run even more operations from the HP Helion OpenStack(R) Horizon management console, including renaming clusters, adding DEA nodes, adding roles, proxy support and DNS suffixes.</p>
+Administrators can now run even more operations from the HP <tm tmtype="reg">Helion Openstack</tm> Horizon management console, including renaming clusters, adding DEA nodes, adding roles, proxy support and DNS suffixes.</p>
 </section>
 <section id="known"> <title>Known Issues</title>
 <p>
@@ -58,14 +58,14 @@ Administrators can now run even more operations from the HP Helion OpenStack(R) 
 </p>
 <p>This issue applies to HP Helion Public Cloud only. When using <i>cf-mgmt create cluster</i> or <i>add-service</i> commands to create a new database, the operation fails. There is no workaround at this time.</p>
 <p>
-  <b>Windows(R) DEA and SQL Server services are not available through the ALS Management Console</b>
+  <b><tm tmtype="reg">Windows</tm> DEA and SQL Server services are not available through the ALS Management Console</b>
 </p>
 <p>Although it appears that you can complete these tasks using the ALS Management Console, you must use the <xref href="helion/CLI/1.2ALS_Client_Reference.dita" >
-<i>cf-mgmt</i> tool</xref> or the Horizon console to add Windows(R) DEA Nodes and SQL Server services.</p>
+<i>cf-mgmt</i> tool</xref> or the Horizon console to add <tm tmtype="reg">Windows</tm> DEA Nodes and SQL Server services.</p>
 <p>
   <b>Windows Nodes do not support Linux services</b>
 </p>
-<p>Linux services -- for example, <i>redis</i> or <i>mySQL</i> -- can not be added to Windows(R)
+<p>Linux services -- for example, <i>redis</i> or <i>mySQL</i> -- can not be added to <tm tmtype="reg">Windows</tm>
         nodes.</p>
 </section>
 </body>

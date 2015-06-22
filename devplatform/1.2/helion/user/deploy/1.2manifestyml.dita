@@ -169,8 +169,7 @@
 <p>This key contains a list of options corresponding to individual apps to
 be pushed. Each sub-key should match the name of folders where the files
 for each app are contained. For example:</p>
-<codeblock>
-  <codeph>applications:
+<codeblock>applications:
   web:
     name: springweb
     framework:
@@ -182,24 +181,19 @@ for each app are contained. For example:</p>
     framework:
       name: node
     instances: 1
-    mem: 64
-</codeph>
-</codeblock>
+    mem: 64</codeblock>
 <p>Here the two keys <codeph>web:</codeph> and <codeph>worker:</codeph> match subdirectories (named <codeph>web</codeph> and
 <codeph>worker</codeph>) of the directory containing the
 <i>manifest.yml</i> file.</p>
 <p>The shortcut "." can be used if the application code is in the top level
 directory along with the <i>manifest.yml</i> file:</p>
-<codeblock>
-  <codeph>applications:
+<codeblock>applications:
   .:
     name: singleapp
     framework:
       name: spring
     instances: 1
-    mem: 512
-</codeph>
-</codeblock>
+    mem: 512</codeblock>
 </section>
 <section id="depends-on"> <title>depends-on:</title>
 <p>When deploying multiple applications from a single <i>manifest.yml</i> use
@@ -208,8 +202,7 @@ apps are started and stopped. An app with the <codeph>depends-on:</codeph> optio
 pushed and are running on the server.</p>
 <p>In the previous example, if you wanted to ensure that <codeph>web</codeph> was started before <codeph>worker</codeph>, you would add
 <codeph>depends-on: worker</codeph> in the <codeph>web:</codeph> section:</p>
-<codeblock>
-  <codeph>applications:
+<codeblock>applications:
   web:
     depends-on: worker
     name: springweb
@@ -222,9 +215,7 @@ pushed and are running on the server.</p>
     framework:
       name: node
     instances: 1
-    mem: 64
-</codeph>
-</codeblock>
+    mem: 64</codeblock>
 <p>If an app is stopped or restarted, the process happens in the reverse
 order.</p>
 </section>
@@ -241,8 +232,7 @@ order.</p>
 <li>requirements</li>
 </ul>
 <p>For example:</p>
-<codeblock>
-  <codeph>applications:
+<codeblock>applications:
   .:
     name: celery-demo
     buildpack: https://github.com/ActiveState/stackato-buildpack-python.git
@@ -261,9 +251,7 @@ order.</p>
           - sudo mount /dev/shm
       min_version:
         server: 0.9.0.143
-        client: 1.0
-</codeph>
-</codeblock>
+        client: 1.0</codeblock>
 <p>Configuration options for Application Lifecycle Service applications can be stored in a
 <i>manifest.yml</i> file in the top-level application directory.</p>
 <p>The <i>manifest.yml</i> file defines <b>keys</b> and associated <b>values</b> which
@@ -284,27 +272,19 @@ user will be prompted during <codeph>helion push</codeph> to
 provide a name. The name can also be specified on the command line (eg.
 <codeph>helion push currency-converter</codeph>).</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>name: currency-converter
-</codeph>
-</codeblock>
-<p>
-  <b>Note</b>
-</p>
-<p>The application name must be a valid <xref href="http://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_host_names" scope="external" format="html" >hostname
-label</xref>
-(i.e. containing only alphanumeric characters and hyphens).</p>
+<codeblock>name: currency-converter</codeblock>
+      <note> The application name must be a valid <xref
+          href="http://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_host_names"
+          scope="external" format="html">hostname label</xref> (i.e. containing only alphanumeric
+        characters and hyphens).</note>
 </section>
 <section id="buildpack"> <title>buildpack:</title>
 <p>The Git repository URL for the specific
 <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks" >buildpack</xref> used to deploy the application.
 For example:</p>
-<codeblock>
-  <codeph>name: java-app
+<codeblock>  name: java-app
 mem: 512M
-buildpack: https://github.com/heroku/heroku-buildpack-java.git
-</codeph>
-</codeblock>
+buildpack: https://github.com/heroku/heroku-buildpack-java.git</codeblock>
 <p>If unset, Application Lifecycle Service will check to see if the application triggers the
 <codeph>detect</codeph> scripts in any of its <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-built-in" >built-in
 buildpacks</xref>.</p>
@@ -313,9 +293,6 @@ buildpacks</xref>.</p>
 <p>Allows the app to specify a framework and runtime to be used. Specifying
 a value for the <codeph>framework</codeph> key triggers the use of
 the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy" >Legacy Buildpack</xref>.</p>
-<p>
-  <b>Note</b>
-</p>
 <p>The keys in the <codeph>framework</codeph> section are used with
 the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy" >Legacy Buildpack</xref> only.
 Applications using language or framework-specific buildpacks do not
@@ -337,52 +314,36 @@ select the best option based on available data. Can also be input with
 the command line option --runtime, -f (eg.
 <codeph>helion push --runtime python32</codeph>).</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>framework:
+<codeblock>  framework:
   type: python
-  runtime: python32
-</codeph>
-</codeblock>
+  runtime: python32</codeblock>
 </section>
 <section id="document-root"> <title>document-root:</title>
 <p>Overrides the default document-root setting (\$HOME) for the web server.</p>
-<p>
-  <b>Note</b>
-</p>
-<p>Node.js, Perl, PHP, and Python frameworks only.</p>
+      <note> Applies to Node.js, Perl, PHP, and Python frameworks only.</note>
 <p>Setting a deeper document root directory avoids the problem of exposing
 supporting files (e.g. <i>manifest.yml</i>) over HTTP.</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>framework:
+<codeblock>  framework:
   type: php
-  document-root: web
-</codeph>
-</codeblock>
+  document-root: web</codeblock>
 <p>The document-root must always be specified relative to \$HOME
 (/home/helion/app).</p>
 </section>
 <section id="start-file"> <title>start-file:</title>
 <p>Set the main application filename.</p>
 <p>
-  <b>Note</b>
-</p>
-<p>Perl and Python frameworks only.</p>
+        <note>Applies to Perl and Python frameworks only.</note>
+      </p>
 <p>If your application does not use a conventional filename (e.g. app.psgi
 for Perl, wsgi.py for Python) using this option, possibly in conjunction
 with <b>document-root</b>, avoids the need to refactor the application for
 Application Lifecycle Service. For example:</p>
-<codeblock>
-  <codeph>framework:
-  start-file: temp.psgi
-</codeph>
-</codeblock>
+<codeblock>  framework:
+  start-file: temp.psgi</codeblock>
 <p>Or:</p>
-<codeblock>
-  <codeph>framework:
-  start-file: temp.py
-</codeph>
-</codeblock>
+<codeblock>  framework:
+  start-file: temp.py</codeblock>
 <p>This value will be used by the
 <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#term-processes-web" >PROCESSES_WEB</xref> and
 HELION_START_FILE environment variables. Any changes to
@@ -396,14 +357,11 @@ the macro is expanded before the pre-running hooks are run.</p>
 \$HOME directory of the application when the application is pushed to
 Application Lifecycle Service. For example, Java applications will often have a 'target'
 sub-directory containing the output of ant or mvn builds:</p>
-<codeblock>
-  <codeph>name: sample
+<codeblock> name: sample
 framework:
   type: java_web
   runtime: java7
-app-dir: target
-</codeph>
-</codeblock>
+app-dir: target</codeblock>
 <p>If required, you can also set
 <xref type="section" href="#topic20922/yml-document-root">document-root</xref> in the
 <xref type="section" href="#topic20922/yml-framework">framework</xref> section to specify a
@@ -422,39 +380,29 @@ needed, list them on separate lines as in the example below.</p>
 available services. If not specified, the user may be prompted during
 <codeph>helion push</codeph>.</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>services:
+<codeblock>  services:
   customerdb: mysql
-  paymentsdb: mysql
-</codeph>
-</codeblock>
+  paymentsdb: mysql</codeblock>
 <p>The Application Lifecycle Service client supports <xref type="section" href="#topic20922/yml-key-substitution">key
 substitution</xref> for service names,
 allowing you to create service names based on the specified application
 name. For example:</p>
-<codeblock>
-  <codeph>services:
-  ${name}-db: mysql
-</codeph>
-</codeblock>
+<codeblock>  services:
+  ${name}-db: mysql</codeblock>
 <p>The application name can be set as an option to the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-push" >helion push</xref> command, overriding
 the <b>name</b> value defined in <i>manifest.yml</i>. Use this technique when
 pushing multiple versions of the same application (using different
 names) if you want them to use separate databases. For example:</p>
-<codeblock>
-  <codeph>name: sample
+<codeblock>  name: sample
 
 framework:
   type: node
 
 services:
-  ${name}-db: mysql
-</codeph>
-</codeblock>
+  ${name}-db: mysql</codeblock>
 <p>Using the name specified in <i>manifest.yml</i>, a data service is created to
 match that name:</p>
-<codeblock>
-  <codeph>helion push -n
+<codeblock>  helion push -n
 Pushing application 'sample'...
 Framework:       node
 Runtime:         &lt;framework-specific default&gt;
@@ -462,14 +410,11 @@ Application Url: sample.helion-pjw3.local
 Creating Application [sample]: OK
 Binding service [sample-db]: OK
 ...
-Starting Application [sample]: ...OK
-</codeph>
-</codeblock>
+Starting Application [sample]: ...OK</codeblock>
 <p>If you specify a new name for the application as an argument to
 <codeph>helion push</codeph>, a new service with a matching name
 is created rather than binding to the existing 'sample-db' service:</p>
-<codeblock>
-  <codeph>helion push sample-2 -n
+<codeblock>  helion push sample-2 -n
 Pushing application 'sample-2'...
 Framework:       node
 Runtime:         &lt;framework-specific default&gt;
@@ -486,9 +431,7 @@ helion apps
 +-------------+---+---------+------------------------------+-------------+
 | sample      | 1 | RUNNING | sample.helion-pjw3.local   | sample-db   |
 | sample-2    | 1 | RUNNING | sample-2.helion-pjw3.local | sample-2-db |
-+-------------+---+---------+------------------------------+-------------+
-</codeph>
-</codeblock>
++-------------+---+---------+------------------------------+-------------+</codeblock>
 </section>
 <section id="requirements"> <title>Requirements</title>
 <p>Specifies required modules and allows the installation of additional OS
@@ -497,57 +440,44 @@ packages.</p>
 <section id="os-packages"> <title>OS Packages</title>
 <p>OS packages can be added in an <codeph>ubuntu:</codeph> block
 within a <codeph>staging:</codeph> and/or <codeph>running:</codeph> block. Plain strings are treated as package names:</p>
-<codeblock>
-  <codeph>requirements:
+<codeblock>  requirements:
   staging:
     ubuntu:
       - libfoo-dev
   running:
     ubuntu:
       - libfoo
-      - some-app
-</codeph>
-</codeblock>
+      - some-app</codeblock>
 <p>To add the OS requirements to both the staging and running phases add
 the <codeph>ubuntu:</codeph> block directly beneath the
 <codeph>requirements:</codeph> key:</p>
-<codeblock>
-  <codeph>requirements:
+<codeblock>  requirements:
   ubuntu:
-    - libfoo-dev
-</codeph>
-</codeblock>
+    - libfoo-dev</codeblock>
 <p>If your account has been given sudo privileges in application
 containers, you can use arrays to add additional repositories,
 overriding repository restrictions set by admins.</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>requirements:
+<codeblock>  requirements:
   staging:
     ubuntu:
       - ["ppa:gophers/go"]
       - golang-stable
   running:
     ubuntu:
-      - libfoo
-</codeph>
-</codeblock>
+      - libfoo</codeblock>
 </section>
 <section id="language-modules"> <title>Language Modules</title>
 <p>For the installation of language modules, replace the
 <i>requirements.txt</i> file. For Python, <codeph>pypm:</codeph> and <codeph>pip:</codeph> can be specified:</p>
-<codeblock>
-  <codeph>requirements:
+<codeblock>  requirements:
   pypm:
     - tornado
     - pymongo
   pip:
-    - pycurl
-</codeph>
-</codeblock>
+    - pycurl</codeblock>
 <p>For Perl, <codeph>ppm:</codeph> or <codeph>cpan:</codeph> can be specified:</p>
-<codeblock>
-  <codeph>requirements:
+<codeblock>  requirements:
   ppm:
     - CGI::Application::PSGI
     - Plack::Builder
@@ -555,9 +485,7 @@ overriding repository restrictions set by admins.</p>
 requirements:
   cpan:
     - CGI::Application::PSGI
-    - Plack::Builder
-</codeph>
-</codeblock>
+    - Plack::Builder</codeblock>
 </section>
 <section id="mem"> <title>mem:</title>
 <p>The amount of memory to allocate for the application.</p>
@@ -566,10 +494,7 @@ requirements:
 <p>If not specified, user may be prompted during <codeph>helion push</codeph>. Can also be specified on the command line (eg.
 <codeph>helion push --mem 256M</codeph>).</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>mem: 64M
-</codeph>
-</codeblock>
+<codeblock>  mem: 64M</codeblock>
 </section>
 <section id="disk"> <title>disk:</title>
 <p>The amount of disk space to allocate for the application (minimum
@@ -579,47 +504,34 @@ requirements:
 <p>If not specified, 2GB of disk space is allocated. Can also be specified
 on the command line (eg. <codeph>helion push --disk 768M</codeph>).</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>mem: 3.5GB
-</codeph>
-</codeblock>
+<codeblock>  mem: 3.5GB</codeblock>
 </section>
 <section id="instances"> <title>instances:</title>
 <p>The number of instances to allocate for the application. If not
 specified, defaults to 1. Can be specified on the command line (eg.
-<codeph>helion push --instances 2</codeph>).</p>
+helion push <codeph>--instances 2</codeph>).</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>instances: 2
-</codeph>
-</codeblock>
+<codeblock>  instances: 2</codeblock>
 </section>
 <section id="url-or-urls"> <title>url (or urls):</title>
 <p>List of URLs mapped to the application. For example:</p>
-<codeblock>
-  <codeph>name: cms-platform
+<codeblock>  name: cms-platform
 
 url:
   - blog.example.org
-  - exampleblog.com
-</codeph>
-</codeblock>
+  - exampleblog.com</codeblock>
 <p>With this key specified, Application Lifecycle Service will not assign a default
 "appname.paasname.com" URL to the application. If you would like this
 URL assigned as well, add <codeph>${name}.${target-base}</codeph>
 to the list of URLs.</p>
-<p>See <xref href="index.dita">Mapping App URLs</xref> for more
-information.</p>
+<p>See <xref href="1.2index.dita#topic18647/mapping-app-urls"/> for more information.</p>
 </section>
 <section id="env"> <title>env:</title>
 <p>A map of environment variables to initialize for the application. Each
 subkey is the name of the variable, with an associated value.</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>env:
-  HOME_IP_ADDRESS: 127.0.0.1
-</codeph>
-</codeblock>
+<codeblock>  env:
+  HOME_IP_ADDRESS: 127.0.0.1</codeblock>
 <p>Avoid using this for values which should not be stored in plain text,
 such as API keys and passwords.</p>
 </section>
@@ -649,8 +561,7 @@ for the variable, to be presented to the user as a menu rather than
 prompting for a string (no default).</li>
 </ul>
 <p>For example:</p>
-<codeblock>
-  <codeph>env:
+<codeblock>  env:
   MY_SPECIAL_VAR:
     default: "development"
     required: y
@@ -660,35 +571,29 @@ prompting for a string (no default).</li>
       - "development"
       - "testing"
       - "staging"
-      - "production"
-</codeph>
-</codeblock>
+      - "production"</codeblock>
 <p>Pushing with the <codeph>--no-prompt</codeph> option will fail with
 the error message "Required variable <i>VAR_NAME</i> not set" if "required"
 is set but no value is given (via "default", "inherit" or the
 <codeph>--env</codeph> option).</p>
 <p>
-  <b>Note</b>
-</p>
-<p>These attributes are only recognized by the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >ALS client</xref>.</p>
+        <note>These attributes are only recognized by the <xref
+            href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita">ALS
+            client</xref>.</note>
+      </p>
 </section>
 <section id="processes"> <title>processes:</title>
 </section>
 <section id="web"> <title>web:</title>
-<p>
-  <b>Note</b>
-</p>
-<p>Used with the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy" >Legacy buildpack</xref>
-only. When using other buildpacks, create a
-<xref href="https://devcenter.heroku.com/articles/procfile" scope="external" format="html" >Procfile</xref> in the
-application's root directory.</p>
+      <note> Used with the <xref
+          href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy"
+          >Legacy buildpack</xref> only. When using other buildpacks, create a <xref
+          href="https://devcenter.heroku.com/articles/procfile" scope="external" format="html"
+          >Procfile</xref> in the application's root directory.</note>
 <p>Specify a custom command to launch your web application or to pass
 custom arguments to uWSGI. For example:</p>
-<codeblock>
-  <codeph>processes:
-  web: python3.2 app.py
-</codeph>
-</codeblock>
+<codeblock>  processes:
+  web: python3.2 app.py</codeblock>
 <p>This key is required when using the
 <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2other-frameworks.dita#generic-framework" >generic</xref> framework, but is
 optionally available for all other frameworks.</p>
@@ -700,15 +605,12 @@ port.</p>
 <b>If set to Null ("\~")</b>, the application is treated as a worker
 application and not provisioned with a URL. For example, an application
 that just runs a background Perl script might look like this:</p>
-<codeblock>
-  <codeph>name: perlwork
+<codeblock>  name: perlwork
 framework:
   type: perl
 command: perl worker.pl
 processes:
-  web: ~
-</codeph>
-</codeblock>
+  web: ~</codeblock>
 <p>A 'command:' value must be present for worker applications.</p>
 <p>If the application exists solely to run commands via
 <xref type="section" href="#topic20922/yml-cron">cron</xref>, a dummy command such as '<i>sleep 365d</i>'
@@ -728,42 +630,30 @@ uWSGI options to the command.</p>
 <p>Used for worker applications to start a background process. Below is an
 example using the
 <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2other-frameworks.dita#standalone-framework" >standalone</xref> framework:</p>
-<codeblock>
-  <codeph>name: helion-worker
+<codeblock>  name: helion-worker
 instances: 1
 framework:
   type: standalone
   runtime: ruby18
-command: ruby worker.rb
-</codeph>
-</codeblock>
+command: ruby worker.rb</codeblock>
 </section>
 <section id="cron"> <title>cron:</title>
 <p>Commands listed here are added to the crontab file. See the section on
 <xref href="index.dita">Crontab Support</xref> for details.</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>cron:
+<codeblock>  cron:
   - PLUGH=xyzzy
-  - "*/1 * * * * env &gt; $HOME/env"
-</codeph>
-</codeblock>
+  - "*/1 * * * * env &gt; $HOME/env"</codeblock>
 </section>
 <section id="ignores"> <title>ignores:</title>
 <p>A list of .gitignore-style patterns. Files and directories in the
 application directory matching at least one pattern are ignored during
 "push" and "update".</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>ignores: ["tmp", ".git"]
-</codeph>
-</codeblock>
+<codeblock>  ignores: ["tmp", ".git"]</codeblock>
 <p>To include all hidden files or folders simply use an empty list.</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>ignores: []
-</codeph>
-</codeblock>
+<codeblock>  ignores: []</codeblock>
 <p>If not specified, a default list is used to exclude files and folders
 not typically required in a deployed application (e.g. the dot files and
 folders of various source code control systems).</p>
@@ -778,27 +668,18 @@ file to be included into <i>manifest.yml</i>.</p>
 <p>Example:</p>
 <p>
 <i>parent.yml</i>:</p>
-<codeblock>
-  <codeph>env:
-  COMPANY: The ABC Company
-</codeph>
-</codeblock>
+<codeblock>  env:
+  COMPANY: The ABC Company</codeblock>
 <p>
 <i>manifest.yml</i>:</p>
-<codeblock>
-  <codeph>name: example-app
+<codeblock>  name: example-app
 inherit: parent.yml
-mem: 64M
-</codeph>
-</codeblock>
+mem: 64M</codeblock>
 <p>effect from processing:</p>
-<codeblock>
-  <codeph>name: example-app
+<codeblock>  name: example-app
 env:
   COMPANY: The ABC Company
-mem: 64M
-</codeph>
-</codeblock>
+mem: 64M</codeblock>
 </section>
 <section id="hooks"> <title>hooks:</title>
 <p>Hooks are commands that are run at various point of the staging and
@@ -833,28 +714,22 @@ staging is complete and before the app is started. The commands are run
 sequentially, in the order listed, each time an app is started or
 restarted.</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>hooks:
+<codeblock>  hooks:
   pre-staging:
     - python prestagingsetup.py
   post-staging:
     - python manage.py syncdb --noinput
     - python manage.py migrate --noinput
   pre-running:
-  - python prerunsetup.py
-</codeph>
-</codeblock>
+  - python prerunsetup.py</codeblock>
 <p>Hook processing ends and staging aborts if a command returns a nonzero
 exit status (i.e. if the command fails). You can suppress this behavior
 by prefacing the command with "-" to force staging to proceed despite
 failures. The "-" must be included in a quoted command string. For
 example:</p>
-<codeblock>
-  <codeph>hooks:
+<codeblock>  hooks:
   post-staging:
-    - "-python manage.py syncdb --noinput"
-</codeph>
-</codeblock>
+    - "-python manage.py syncdb --noinput"</codeblock>
 <p>Commands used in the <codeph>hooks:</codeph> keys may not include
 shell metacharacters, such as "&amp;&amp;" for combining commands, "#" for
 comments, "\&lt;", "&gt;" or "|" for I/O redirection.</p>
@@ -863,41 +738,29 @@ or forcing zero exit status, wrap your command in a <i>script.sh</i> file and
 use <codeph>sh +x script.sh</codeph> as your hook command.</p>
 <p>Also note that if only a single command needs to be run, the list format
 is not needed and can be included on the same line:</p>
-<codeblock>
-  <codeph>hooks:
+<codeblock>  hooks:
   post-staging: python staging.py
-  pre-running:  python running.py
-</codeph>
-</codeblock>
+  pre-running:  python running.py</codeblock>
 </section>
 <section id="drain"> <title>drain:</title>
 <p>
 <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2app-logs.dita#application-logs-drain" >Application log drains</xref> can be
 added to an application when it is deployed by describing them in a
 <codeph>drain:</codeph> block with a drain name and URL:</p>
-<codeblock>
-  <codeph>drain:
-  drain_name: protocol://host.domain.tld:port/
-</codeph>
-</codeblock>
+<codeblock>  drain:
+  drain_name: protocol://host.domain.tld:port/</codeblock>
 <p>To enable JSON logging, specify the URL separately along with a
 <codeph>json: true</codeph> line:</p>
-<codeblock>
-  <codeph>drain:
+<codeblock>  drain:
   drain_name:
     url: protocol://host.domain.tld:port/
-    json: true
-</codeph>
-</codeblock>
+    json: true</codeblock>
 <p>For example:</p>
-<codeblock>
-  <codeph>drain:
+<codeblock>  drain:
   mytestdrain: udp://logs.loggly.com:12346/
   otherdrain:
     url: tcp://logs.papertrailapp.com:12345/
-    json: true
-</codeph>
-</codeblock>
+    json: true</codeblock>
 </section>
 <section id="min-version"> <title>min_version:</title>
 <p>Sets requirements for the minimum version of the client and server under
@@ -906,37 +769,28 @@ which the app will run.</p>
 <section id="client"> <title>client:</title>
 <p>The minimum version of the Application Lifecycle Service client needed to manage the app.</p>
 <p>To determine the client version, use:</p>
-<codeblock>
-  <codeph>helion version
+<codeblock>  helion version
 
-helion 0.3.13.0.18
-</codeph>
-</codeblock>
+helion 0.3.13.0.18</codeblock>
 <p>Example:</p>
-<codeblock>
-  <codeph>min_version:
-  client: 0.3.13.0.18
-</codeph>
-</codeblock>
+<codeblock>  min_version:
+  client: 0.3.13.0.18</codeblock>
 </section>
 <section id="server"> <title>server:</title>
 <p>The minimum version of the Application Lifecycle Service server needed to run the app.</p>
 </section>
-<section id="key-substitution"> <title>Key Substitution</title>
-<p>The value of any key in <i>manifest.yml</i> can be inserted in other keys
-using the \${<i>key</i>} syntax. For example:</p>
-<codeblock>
-  <codeph>name: example-app
+<section id="key-substitution">
+      <title>Key Substitution</title>
+      <p>The value of any key in <i>manifest.yml</i> can be inserted in other keys using the
+          \${<i>key</i>} syntax. For example:</p>
+      <codeblock>  name: example-app
 env:
-  MY_NAME: ${name}
-</codeph>
-</codeblock>
-<p>This defines a "MY_NAME" environment variable with the value
-"example-app".</p>
-<p>A small number of keys are predefined for your use within
-<i>manifest.yml</i>:</p>
-<codeblock>
-  <codeph>  ------------------------------------------------------------------------
+  MY_NAME: ${name}</codeblock>
+      <p>This defines a "MY_NAME" environment variable with the value "example-app".  <note>See the
+          services section for an example of variable key substitution for yaml key
+        names.</note></p>
+      <p>A small number of keys are predefined for your use within <i>manifest.yml</i>:</p>
+      <codeblock>  ------------------------------------------------------------------------
   key
   substitution
   value
@@ -948,24 +802,7 @@ env:
   string of      
   random         
   characters     
-  ------------------------------------------------------------------------
-</codeph>
-</codeblock>
-<p>
-<b>Note</b>
-See the <xref type="section" href="#topic20922/services">services</xref> section for an example of variable key substitution for <i>yaml</i> key names.</p>
-<!-- ##stackato {#manifest-yml-stackato} 
-
-The following Stackato-specific options, if necessary, need to be placed in a **stackato** block within the **Application** block. They are indented as sub-keys. 
-
-processes <stackato_yml-processes>`: 
-min_version <stackato_yml-version>`: 
-ignores <stackato_yml-ignores>`: 
-hooks <stackato_yml-hooks>`: 
-cron <stackato_yml-cron>`: 
-requirements <stackato_yml-requirements>`:
-
--->
-</section>
+  ------------------------------------------------------------------------</codeblock>
+    </section>
 </body>
 </topic>

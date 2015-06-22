@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1382">
-<title>HP Helion OpenStack(R) 1.1: Managing Block Storage Volumes</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Managing Block Storage Volumes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -41,7 +41,7 @@
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic1382/top"> Return to Top </xref>
+  <xref type="section" href="#topic1382"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

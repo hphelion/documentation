@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3536">
-<title>HP Helion OpenStack(R) 1.0: Identity Service Overview</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Identity Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,10 +13,10 @@
  <!--./commercial/GA1/1.0commerical.services-identity-overview.md-->
  <!--permalink: /helion/openstack/services/identity/overview/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-identity-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
-<p>Based on OpenStack(R) Keystone, the HP Helion OpenStack(R) Identity service provides one-stop authentication. It performs the following functions:</p>
+<p>Based on <tm tmtype="reg">Openstack</tm> Keystone, the HP Helion <tm tmtype="reg">Openstack</tm> Identity service provides one-stop authentication. It performs the following functions:</p>
 <ul>
 <li>
 <p>
@@ -63,7 +63,7 @@
 <p>A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc).</p>
 </section>
 <section id="service"> <title>Service</title>
-<p>An OpenStack(R) service, such as Compute (Nova), Object Storage (Swift), or Image Service (Glance). Provides one or more endpoints through which users can access resources and perform operations.</p>
+<p>An <tm tmtype="reg">Openstack</tm> service, such as Compute (Nova), Object Storage (Swift), or Image Service (Glance). Provides one or more endpoints through which users can access resources and perform operations.</p>
 </section>
 <section id="endpoint"> <title>Endpoint</title>
 <p>A network-accessible address, usually described by a URL, where a service may be accessed.</p>
@@ -117,18 +117,18 @@ Users can belong to specific role(s), which is a set of rights and privileges.
 <p>To <xref type="section" href="#topic3536/howto">perform tasks using the Identity service</xref>, you can use the dashboard, API or CLI.</p>
 </section>
 <section id="using-the-dashboards"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
-<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP Helion OpenStack(R) Dashboard</xref> to work with the Identity service.</p>
+<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Dashboard</xref> to work with the Identity service.</p>
 </section>
 <section id="using-the-api"> <title>Using the API<!--Removed anchor point API--><!-- id="API" --></title>
-<p>You can use a low-level, raw REST API to access  HP Identity. See the <xref href="http://api.openstack.org/api-ref-identity-v2.html" scope="external" format="html" >OpenStack(R) Identity API v2.0 Reference</xref>.</p>
+<p>You can use a low-level, raw REST API to access  HP Identity. See the <xref href="http://api.openstack.org/api-ref-identity-v2.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Identity API v2.0 Reference</xref>.</p>
 </section>
 <section id="using-the-cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
-<p>You can use the command-line interface software to access HP Identity. See the <xref href="http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html" scope="external" format="html" >OpenStack(R) Command Line Interface Reference</xref>.</p>
-<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack(R) command-line clients</xref>.</p>
+<p>You can use the command-line interface software to access HP Identity. See the <xref href="http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Command Line Interface Reference</xref>.</p>
+<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">Openstack</tm> command-line clients</xref>.</p>
 <!--
-## How To's with the HP Helion OpenStack(R) Identity Service<a name="howto"></a>
+## How To's with the HP Helion <tm tmtype="reg">Openstack</tm> Identity Service<a name="howto"></a>
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack(R) Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-identity-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion <tm tmtype="reg">Openstack</tm> Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-identity-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
 
 Depending upon your user type, [user](#user) or [administrator](#admin), you can perform the following tasks.
@@ -191,7 +191,7 @@ Manage EC2 and S3 signature validation.
 
 ### Manage Federated Access 
 
-Configure federated access for use in HP Helion OpenStack(R)
+Configure federated access for use in HP Helion <tm tmtype="reg">Openstack</tm>
 
 ### Resetting a user password ###
 
@@ -200,9 +200,9 @@ Use the Identity service to reset a password for a user.
 -->
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack(R) Operations Guide</xref>. <!-- The *Architecture* section contains useful information about how an OpenStack(R) Cloud is put together. However, the HP Helion OpenStack(R) takes care of these details for you. The *Operations* section contains information on how to manage the system.--></p>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Operations Guide</xref>. <!-- The *Architecture* section contains useful information about how an <tm tmtype="reg">Openstack</tm> Cloud is put together. However, the HP Helion <tm tmtype="reg">Openstack</tm> takes care of these details for you. The *Operations* section contains information on how to manage the system.--></p>
 <p>
-  <xref type="section" href="#topic3536/top"> Return to Top </xref>
+  <xref type="section" href="#topic3536"> Return to Top </xref>
 </p>
 </section>
 </body>

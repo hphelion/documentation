@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2358">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Performing a System Data Backup</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Performing a System Data Backup</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -18,7 +18,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Backup/carrier-grade-admin-wr-backup.md-->
  <!--permalink: /helion/openstack/carrier/admin/backup/--></p>
-<p>A system data backup captures core system information needed to restore a fully operational HP Helion OpenStack(R) Carrier Grade cluster.</p>
+<p>A system data backup captures core system information needed to restore a fully operational HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade cluster.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -74,7 +74,7 @@
 </ol>
 <p>The system data backup is now complete. The backup files must be kept in a secured location, probably holding multiple copies of them for redundancy purposes.</p>
 <p>
-  <xref type="section" href="#topic2358/top"> Return to Top </xref>
+  <xref type="section" href="#topic2358"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

@@ -27,7 +27,7 @@
 <ul>
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita" >Cluster</xref>
 </li>
-<li>The  <xref href="../../../../devplatform/1.2/helion/user/client/1.2index.dita" >Helion command-line interface (CLI)</xref> must be installed.</li>
+<li>The <xref href="../../../../devplatform/1.2/helion/user/client/1.2index.dita" >Helion command-line interface (CLI)</xref> must be installed.</li>
 <li>Access to the web-based <xref href="../../../../devplatform/1.2/helion/user/console/1.2index.dita" >Helion Management Console</xref>.</li>
 </ul>
 </section>
@@ -57,30 +57,18 @@
 </li>
 <li>
 <p>Ensure that you are targeting your desired environment.  <!--A BR tag was used here in the original source.--> If you are not, execute</p>
-
-<codeblock>
-<codeph>helion target https://api.xx.xx.xx.xx.xip.io    
-</codeph>
-</codeblock>
+<codeblock>helion target https://api.xx.xx.xx.xx.xip.io</codeph>
 </li>
 <li>
 <p>Ensure that you are logged in to your desired environment.  <!--A BR tag was used here in the original source.-->If you are not, execute</p>
-
-<codeblock>
-<codeph>helion login
-</codeph>
-</codeblock>
+<codeblock>helion login</codeblock>
 </li>
 <li>
 <p>If you are not already there, <codeph>cd</codeph> to the root directory of the sample.</p>
 </li>
 <li>
 <p>Deploy the application by using the command:</p>
-
-<codeblock>
-<codeph>helion push
-</codeph>
-</codeblock>
+<codeblock>helion push</codeblock>
 </li>
 <li>
 <p>Accept any default values that you may be prompted for. <!--A BR tag was used here in the original source.--><b>Note</b>: By default, ALS clusters are configured with two domains (private and public). In some situations, the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</p>
@@ -90,7 +78,7 @@
 <section id="key-code-snippets"> <title>Key Code Snippets</title>
 <p>This section of the messaging.js file shows how to retrieve the connection information for the RabbitMQ cluster from the application's environment variables. The code then creates a connection to the cluster and publishes a message to a queue.</p>
 <codeblock>
-  <codeph>//get the rabbitMQ connection string from the environment variables.
+//get the rabbitMQ connection string from the environment variables.
 var connectionString = process.env.RABBITMQ_URL || "amqp://localhost";
 
 //Connect to RabbitMQ.
@@ -101,11 +89,11 @@ var rabbitMqConnection = amqp.createConnection({ url: connectionString });
 rabbitMqConnection.once('ready', function() {
     rabbitMqConnection.queue('msg-queue', {} , function(queue) {
       rabbitMqConnection.publish('msg-queue', { message: newMessage });
-</codeph>
+
 </codeblock>
 <p>This section of the messaging.js file shows how to create a connection to the RabbitMQ cluster then subscribe to a message queue and extract the message text.</p>
 <codeblock>
-  <codeph>//Connect to RabbitMQ.
+//Connect to RabbitMQ.
 var rabbitMqConnection = amqp.createConnection({ url: connectionString });
 
 ...
@@ -114,11 +102,11 @@ rabbitMqConnection.once('ready', function() {
     rabbitMqConnection.queue('msg-queue', {} , function(queue) {
       queue.subscribe(function(msg) {
         var message = msg.message;
-</codeph>
+
 </codeblock>
 <p>The <i>manifest.yml</i> file is the configuration information used by ALS to set up the environment. The <i>services</i> element listed below instructs ALS on how to bind the RabbitMQ service provided by the ALS cluster to the application.</p>
 <codeblock>
-  <codeph>---
+---
 applications:
   .:    framework:
       name: node
@@ -128,7 +116,6 @@ applications:
      rabbitmq:
        type: rabbitmq3
     instances: 1
-</codeph>
 </codeblock>
 </section>
 <section id="run-the-application"> <title>Run the Application</title>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6719">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Deploying the Bridging Scenario</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Deploying the Bridging Scenario</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -31,131 +31,115 @@
 <p>Before deploying this scenario, disable Spanning Tree Protocol (STP) on the switches connected to the networks or the tenant network VLANs.</p>
 <ol>
 <li>
-<p>
-<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref> as the appropriate user (user1 or user2).</p>
-</li>
-<li>
-<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Overview</b> link.</p>
-</li>
-<li>
-<p>Select <b>Instances</b> in the <b>Manage Compute</b> section of the <b>Project</b> tab to open the <b>Instances</b> page.</p>
-
-<p>Since no instances are currently running, an empty list is displayed.</p>
-</li>
-<li>
-<p>Configure the virtual machine details by clicking <b>Launch Instance</b> to display the Launch Instance window. Fill in the information in the Details tab, as illustrated below:</p>
-
-<p>
-<image href="../../media/CGH-deploy-bridge-launch.png"/>
-</p>
-
-<p>In this example you are configuring an instance named tenant1-vm, with the flavor example-guest.small, booting from the volume named volexample- guest.</p>
-
-<p>For more information on creating VMs, see <xref href="../../CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.create.dita" >Creating a New Compute Instance</xref>.</p>
-</li>
-<li>
-<p>Configure the virtual machine authentication credentials.</p>
-
-<p>In the <b>Launch Instance</b> window, select the Access &amp; Security tab and associate the available tenant's keypair with this instance. Use a suitable password ( tenant1 in this example) for administration.</p>
-</li>
-<li>
-<p>Connect the VM to the required tenant networks.</p>
-
-<p>All tenant networks accessible to the tenant are available for use by the virtual machine. You can use the Networking tab of the Launch Instance dialog box to connect the VM to a tenant network, by moving the network from the Available Networks list to the Selected Networks list . This connects the tenant network to a virtual ethernet interface ethn on the VM, where <codeph>n</codeph> is the next available integer starting from zero.</p>
-
-<p>a. List the available tenant networks.</p>
-
-<p>In the <b>Launch Instance</b> window, select the <b>Networking</b> tab. This displays the available networks at the bottom, and the currently selected networks at the top.</p>
-
-<p>b. Connect the required tenant networks.</p>
-
-<p>Click the blue + buttons on the Available Networks list to move the tenant networks to the Selected Networks list, as shown:</p>
-
-<p>
-<image href="../../media/CGH-deploy-bridge-launch-after.png"/>
-</p>
-
-<p>
-<b>Note:</b> The order in which the networks are moved determines the order in which the virtual ethernet interfaces <codeph>eth0</codeph>, <codeph>eth1</codeph>, <codeph>eth2</codeph>, and so on are assigned. In the scenarios, the example guest image is configured to bridge or route between <codeph>eth1</codeph> and <codeph>eth2</codeph>. The networks to be attached to the bridge or router must be moved in the proper order for compatibility with this configuration.</p>
-
-<p>First, move the tenant1-mgmt-net network. This connects it to interface <codeph>eth0</codeph> on the virtual machine. Then move tenant1-net and internal-net, in that order, to assign them to eth1 and eth2 on the virtual machine.</p>
-
-<p>For each interface, you can specify the driver type from a drop-down menu. In this example, eth0 (NIC-1) is configured as a virtio interface, suitable for low-level management traffic. The eth1 (NIC-2) and eth2 (NIC-3) interfaces are configured as accelerated AVP ports for highthroughput traffic. You can select any other combination, as required by your application.</p>
-
-<p>Once the three network interfaces have been selected, the Networking tab appears as follows:</p>
-
-<p>
-<image href="../../media/CGH-deploy-bridge-launch-nic.png"/>
-</p>
-
-<p>
-<b>Note:</b> The interface type and allocated NIC order cannot be changed after the instance is launched. To use different port assignments, you must shut down and delete the instance, and then launch a new instance.</p>
-</li>
-<li>
-<p>Implement a function on the guest image.</p>
-
-<p>You can implement a function on a guest image by applying user data.</p>
-
-<p>In the Launch Instance window, select the Post-Creation tab and populate the Customization Script text box with the appropriate user data.</p>
-
-<p>
-<b>Caution:</b> The first line in the user data is a mandatory comment. Without it, the user data is ignored, and all network interfaces are initialized using DHCP.</p>
-
-<ul>
-<li>
-<p>To implement a Linux bridge on the guest image, add the following user data for both tenant1 and tenant2:</p>
-
-<codeblock>
-<codeph>#wrs-config
+        <xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"
+          >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref> as the appropriate user (user1
+        or user2).</li>
+<li>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Overview</b>
+        link.</li>
+<li>Select <b>Instances</b> in the <b>Manage Compute</b> section of the <b>Project</b> tab to open
+        the <b>Instances</b> page.<p>Since no instances are currently running, an empty list is
+          displayed.</p></li>
+<li>Configure the virtual machine details by clicking <b>Launch Instance</b> to display the Launch
+        Instance window. Fill in the information in the Details tab, as illustrated below:<p>
+          <image href="../../media/CGH-deploy-bridge-launch.png"/>
+        </p><p>In this example you are configuring an instance named tenant1-vm, with the flavor
+          example-guest.small, booting from the volume named volexample- guest.</p><p>For more
+          information on creating VMs, see <xref
+            href="../../CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.create.dita"
+            >Creating a New Compute Instance</xref>.</p></li>
+<li>Configure the virtual machine authentication credentials.<p>In the <b>Launch Instance</b>
+          window, select the Access &amp; Security tab and associate the available tenant's keypair
+          with this instance. Use a suitable password ( tenant1 in this example) for
+          administration.</p></li>
+<li>Connect the VM to the required tenant networks.<p>All tenant networks accessible to the tenant
+          are available for use by the virtual machine. You can use the Networking tab of the Launch
+          Instance dialog box to connect the VM to a tenant network, by moving the network from the
+          Available Networks list to the Selected Networks list . This connects the tenant network
+          to a virtual ethernet interface ethn on the VM, where <codeph>n</codeph> is the next
+          available integer starting from zero.</p><p>a. List the available tenant
+          networks.</p><p>In the <b>Launch Instance</b> window, select the <b>Networking</b> tab.
+          This displays the available networks at the bottom, and the currently selected networks at
+          the top.</p><p>b. Connect the required tenant networks.</p><p>Click the blue + buttons on
+          the Available Networks list to move the tenant networks to the Selected Networks list, as
+          shown:</p><p>
+          <image href="../../media/CGH-deploy-bridge-launch-after.png"/>
+        </p><p>
+          <b>Note:</b> The order in which the networks are moved determines the order in which the
+          virtual ethernet interfaces <codeph>eth0</codeph>, <codeph>eth1</codeph>,
+            <codeph>eth2</codeph>, and so on are assigned. In the scenarios, the example guest image
+          is configured to bridge or route between <codeph>eth1</codeph> and <codeph>eth2</codeph>.
+          The networks to be attached to the bridge or router must be moved in the proper order for
+          compatibility with this configuration.</p><p>First, move the tenant1-mgmt-net network.
+          This connects it to interface <codeph>eth0</codeph> on the virtual machine. Then move
+          tenant1-net and internal-net, in that order, to assign them to eth1 and eth2 on the
+          virtual machine.</p><p>For each interface, you can specify the driver type from a
+          drop-down menu. In this example, eth0 (NIC-1) is configured as a virtio interface,
+          suitable for low-level management traffic. The eth1 (NIC-2) and eth2 (NIC-3) interfaces
+          are configured as accelerated AVP ports for highthroughput traffic. You can select any
+          other combination, as required by your application.</p><p>Once the three network
+          interfaces have been selected, the Networking tab appears as follows:</p><p>
+          <image href="../../media/CGH-deploy-bridge-launch-nic.png"/>
+        </p><p>
+          <b>Note:</b> The interface type and allocated NIC order cannot be changed after the
+          instance is launched. To use different port assignments, you must shut down and delete the
+          instance, and then launch a new instance.</p></li>
+<li>Implement a function on the guest image.<p>You can implement a function on a guest image by
+          applying user data.</p><p>In the Launch Instance window, select the Post-Creation tab and
+          populate the Customization Script text box with the appropriate user data.</p><p>
+          <b>Caution:</b> The first line in the user data is a mandatory comment. Without it, the
+          user data is ignored, and all network interfaces are initialized using DHCP.</p><ul>
+          <li>
+            <p>To implement a Linux bridge on the guest image, add the following user data for both
+              tenant1 and tenant2:</p>
+            <codeblock><codeph>#wrs-config
 FUNCTIONS="bridge"
 BRIDGE_PORTS="eth1,eth2.5"
-</codeph>
-</codeblock>
-</li>
-</ul>
-<p>These key-value pairs implement a Linux-kernel bridge attached to interfaces <codeph>eth1</codeph> and <codeph>eth2.5</codeph>, where the notation eth2.5 indicates traffic on eth2 tagged with VLAN ID 5.</p>
-
-<ul>
-<li>
-<p>To implement a DPDK-accelerated bridge on the guest image, add the following user data for both tenant1 and tenant2.</p>
-
-<codeblock>
+</codeph></codeblock>
+          </li>
+        </ul><p>These key-value pairs implement a Linux-kernel bridge attached to interfaces
+            <codeph>eth1</codeph> and <codeph>eth2.5</codeph>, where the notation eth2.5 indicates
+          traffic on eth2 tagged with VLAN ID 5.</p><ul>
+          <li>
+            <p>To implement a DPDK-accelerated bridge on the guest image, add the following user
+              data for both tenant1 and tenant2.</p>
+            <codeblock>
 <codeph>#wrs-config
 FUNCTIONS="hugepages,vswitch"
 BRIDGE_PORTS="eth0,eth1.5"
 </codeph>
 </codeblock>
-</li>
-</ul>
-<p>These key-value pairs implement a DPDK-accelerated bridge attached to two network interfaces, identified as <codeph>eth0</codeph> and <codeph>eth1.5</codeph>. The notation <codeph>eth1.5</codeph> indicates traffic on <codeph>eth1</codeph> tagged with <codeph>VLAN ID 5</codeph>. For this type of VNF, the interfaces are identified with respect to the bridge rather than the Linux kernel. They map to the Linux kernel interfaces as follows:</p>
-
-<table>
-<tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<thead>
-<row>
-<entry>Linux Kernel</entry>
-<entry>DPDK-Accelerated Bridge</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>eth0 (tenant1-mgmt-net)</entry>
-<entry>--</entry>
-</row>
-<row>
-<entry>eth1 (tenant1-net)</entry>
-<entry>eth0</entry>
-</row>
-<row>
-<entry>eth2 (internal-net)</entry>
-<entry>eth1</entry>
-</row>
-</tbody>
-</tgroup>
-</table>
-</li>
+          </li>
+        </ul><p>These key-value pairs implement a DPDK-accelerated bridge attached to two network
+          interfaces, identified as <codeph>eth0</codeph> and <codeph>eth1.5</codeph>. The notation
+            <codeph>eth1.5</codeph> indicates traffic on <codeph>eth1</codeph> tagged with
+            <codeph>VLAN ID 5</codeph>. For this type of VNF, the interfaces are identified with
+          respect to the bridge rather than the Linux kernel. They map to the Linux kernel
+          interfaces as follows:</p><table>
+          <tgroup cols="2">
+            <colspec colname="col1" colsep="1" rowsep="1"/>
+            <colspec colname="col2" colsep="1" rowsep="1"/>
+            <thead>
+              <row>
+                <entry>Linux Kernel</entry>
+                <entry>DPDK-Accelerated Bridge</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>eth0 (tenant1-mgmt-net)</entry>
+                <entry>--</entry>
+              </row>
+              <row>
+                <entry>eth1 (tenant1-net)</entry>
+                <entry>eth0</entry>
+              </row>
+              <row>
+                <entry>eth2 (internal-net)</entry>
+                <entry>eth1</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></li>
 <li>
 <p>Launch the instance.</p>
 
@@ -174,7 +158,7 @@ BRIDGE_PORTS="eth0,eth1.5"
 <p>
 <b>Note:</b> To complete the deployment scenarios, this task must be repeated as user2, substituting appropriate names. Once the virtual machines for both tenant users are running, you can run test traffic through the test path. For more information, see <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-running-traffic.dita" >Running Traffic Through the Test Paths</xref>.</p>
 <p>
-  <xref type="section" href="#topic6719/top"> Return to Top </xref>
+  <xref type="section" href="#topic6719"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

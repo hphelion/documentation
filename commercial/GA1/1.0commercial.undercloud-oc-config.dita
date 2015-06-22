@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic877">
-<title>HP Helion OpenStack(R) 1.0: Manage Overcloud Configuration</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Manage Overcloud Configuration</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.undercloud-oc-config.md-->
  <!--permalink: /helion/openstack/undercloud/oc/config/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.undercloud-oc-config.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The overcloud options define the configurations of the overcloud. You can define the configurations for <xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-esx.dita" >ESX Clusters</xref>, <xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-storevirtual.dita" >StoreVirtual Backends</xref>, and <xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-storeserv.dita" >StoreServ Backends</xref>.</p>
 <p>To define the configuration:</p>
@@ -24,7 +24,7 @@
 <li>Select the desired tab on the Configure Cloud page:<b>ESX Clusters</b>, <b>StoreVirtual Backends</b> and <b>StoreServ Backends</b>.</li>
 </ol>
 <p>
-  <xref type="section" href="#topic877/top"> Return to Top </xref>
+  <xref type="section" href="#topic877"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

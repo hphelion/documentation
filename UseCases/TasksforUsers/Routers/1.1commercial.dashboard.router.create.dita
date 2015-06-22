@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1054">
-<title>HP Helion OpenStack(R) 1.1: Creating a Router</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Creating a Router</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,7 +18,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Helion Dashboard</xref>.</p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Helion Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Routers</b> link on the <b>Project</b> dashboard <b>Network</b> panel.</p>
@@ -36,7 +36,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic1054/top"> Return to Top </xref>
+  <xref type="section" href="#topic1054"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1027">
-<title>HP Helion OpenStack(R) 1.1: Troubleshooting Overcloud Node Removal</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Troubleshooting Overcloud Node Removal</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Troubleshooting Node Removal</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: Troubleshooting Node Removal</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -19,8 +19,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Nancy M"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -80,7 +80,7 @@
 </p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-  <xref type="section" href="#topic1027/top"> Return to Top </xref>
+  <xref type="section" href="#topic1027"> Return to Top </xref>
 </p>
 </section>
 </body>

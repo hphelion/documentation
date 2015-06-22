@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2924">
-<title>HP Helion OpenStack(R) 1.1: Troubleshooting Logging</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Troubleshooting Logging</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.logging.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/logging/--></p>
-<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of LinuxÂ(R) provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> is an <tm tmtype="reg">Openstack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <section id="logging-best-practices"> <title>Logging Best Practices</title>
 <p>By default a full backup includes all logs. Logs can  be large,  which can slow down the backup process. During this time, the control plane is offline.</p>
 <p>To balance having useful logs with optimizing system performance, you should routinely clean up logs from <codeph>logstash</codeph> to only keep logs of interest. You should only do a full backup if you need to preserve logs. In  most cases, the exclude option is appropriate.</p>
@@ -108,9 +108,9 @@ yellow logstash-2015.02.11 5 1 27471823 0 13.6gb 13.6gb
 </section>
 <section id="sos"> <title>Contacting Customer Service</title>
 <p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref>.</p>
-<p>Before contacting HP Customer Support, <xref href="../../commercial/GA1/1.1commercial.troubleshooting.dita#sos" >run the <codeph>run-sosreport</codeph> command</xref> on the affected system.</p>
+<p>Before contacting HP Customer Support, <xref href="1.1commercial.troubleshooting.dita" >run the <codeph>run-sosreport</codeph> command</xref> on the affected system.</p>
 <p>
-  <xref type="section" href="#topic2924/top"> Return to Top </xref>
+  <xref type="section" href="#topic2924"> Return to Top </xref>
 </p>
 </section>
 </body>

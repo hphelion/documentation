@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3824">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Configuring Ethernet Interfaces</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Configuring Ethernet Interfaces</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -31,149 +31,98 @@
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<section id="physical"><title>Physical Ethernet Interfaces</title><p>The physical Ethernet
-        interfaces on HP Helion OpenStack(R) Carrier Grade nodes are configured to use the following
-        networks:</p><ul>
-        <li>the internal management network</li>
-        <li>the external OAM network</li>
-        <li>the infrastructure network, if present</li>
-        <li>one or more data networks</li>
-      </ul><p>A single interface can optionally be configured to support more than one network using
-        VLAN tagging. For more information, see <xref
-<<<<<<< HEAD
-          href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-shared.dita"
-=======
-          href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-shared.dita"
->>>>>>> 6df2f78ebc356490b3d988fe0d613ecf938d0ae1
-          >Shared (VLAN) Ethernet Interfaces</xref>.</p><p>In addition, the management or
-        infrastructure interfaces, or both, can be configured with an additional data network (see
-        the HP Helion OpenStack(R) Carrier Grade Software Installation Guide: Editing Interface
-        Settings).</p><ul>
-        <li>
-          <p>On the controller nodes, all Ethernet interfaces are configured automatically when the
-            nodes are initialized, based on the information provided in the controller configuration
-            script (see the HP Helion OpenStack(R) Carrier Grade Installation Guide: The Controller
-            Configuration Script).</p>
-        </li>
-        <li>
-          <p>On compute and storage nodes, the Ethernet interfaces for the management network are
-            configured automatically. The remaining interfaces require manual configuration.</p>
-        </li>
-      </ul><p>Interface configurations are summarized in the following table.</p><p>
-        <b>Note:</b> If a network attachment uses LAG, the corresponding interfaces on the storage
-<<<<<<< HEAD
-        and compute nodes must also be configured manually to specify the interface type.</p><table>
-        <tgroup cols="4">
-          <colspec colname="col1"/>
-          <colspec colname="col2"/>
-          <colspec colname="col3"/>
-          <colspec colname="col4"/>
-          <thead>
-            <row>
-              <entry>Interface</entry>
-              <entry>Controller</entry>
-              <entry>Storage</entry>
-              <entry>Compute</entry>
-=======
-        and compute nodes must also be configured manually to specify the interface type.</p><table
-        id="table_afr_2ky_js">
-        <tgroup cols="4">
-          <colspec colname="col1" colsep="1" rowsep="1"/>
-          <colspec colname="newCol3" colwidth="1*"/>
-          <colspec colname="newCol2" colwidth="1*"/>
-          <colspec colname="col2" colsep="1" rowsep="1"/>
-          <thead>
-            <row>
-              <entry><b>Interface</b></entry>
-              <entry colsep="1" rowsep="1"><b>Controller</b></entry>
-              <entry colsep="1" rowsep="1"><b>Storage</b>
-              </entry>
-              <entry colsep="1" rowsep="1"><b>Compute</b></entry>
->>>>>>> 6df2f78ebc356490b3d988fe0d613ecf938d0ae1
-            </row>
-          </thead>
-          <tbody>
-            <row>
-<<<<<<< HEAD
-              <entry>Mgmt</entry><entry>Configured automatically</entry>
-              <entry>Configured automatically</entry>
-=======
-              <entry/>
-              <entry colsep="1" rowsep="1">Configured automatically</entry>
-              <entry colsep="1" rowsep="1">Configured automatically</entry>
->>>>>>> 6df2f78ebc356490b3d988fe0d613ecf938d0ae1
-              <entry>Configured automatically</entry>
-            </row>
-            <row>
-              <entry>OAM</entry>
-<<<<<<< HEAD
-              <entry>Configured automatically</entry>
-              <entry>Not used</entry>
-=======
-              <entry colsep="1" rowsep="1">Configured automatically</entry>
-              <entry colsep="1" rowsep="1">Not used</entry>
->>>>>>> 6df2f78ebc356490b3d988fe0d613ecf938d0ae1
-              <entry>Not used</entry>
-            </row>
-            <row>
-              <entry>Infra</entry>
-<<<<<<< HEAD
-              <entry>Configured automatically</entry>
-              <entry>For a dedicated interface, the interface is added automatically, but requires
-                additional manual configuration for the network type
-                <!--A BR tag was used here in the original source.-->For a shared interface,
-                configured manually</entry>
-=======
-              <entry colsep="1" rowsep="1">Configured automatically</entry>
-              <entry colsep="1" rowsep="1">For a dedicated interface, the interface is added
-                automatically, but requires additional manual configuration for the network type For
-                a shared interface, configured manually </entry>
->>>>>>> 6df2f78ebc356490b3d988fe0d613ecf938d0ae1
-              <entry>Configured manually</entry>
-            </row>
-            <row>
-              <entry>Data</entry>
-<<<<<<< HEAD
-              <entry>Not used</entry>
-              <entry>Not used</entry>
-              <entry>Configured manually</entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table><p>&lt;p&gt;</p>You can review and modify physical interface configurations from the
-      web administration interface or the CLI. For more information, see:<ul>
-=======
-              <entry colsep="1" rowsep="1">Not used</entry>
-              <entry colsep="1" rowsep="1">Not used</entry>
-              <entry>Configured automatically</entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>You can review and modify physical interface configurations from the web
-      administration interface or the CLI. For more information, see:<ul>
->>>>>>> 6df2f78ebc356490b3d988fe0d613ecf938d0ae1
-        <li>
-          <i>HP Helion OpenStack(R) Carrier Grade Installation Guide: Editing Interface Settings</i>
-        </li>
-        <li>
-          <i>the HP Helion OpenStack(R) Carrier Grade Installation Guide: Creating Data
-            Interfaces</i>
-        </li>
-        <li>
-          <i>the HP Helion OpenStack(R) Carrier Grade Installation Guide: Command-line
-            Installation</i>.</li>
-      </ul><p>You can also save the interface configurations for a particular node to use as a
-        profile or template when setting up other nodes. For more information, see Interfaces on
-        page 112.</p></section>
+<section id="physical"> <title>Physical Ethernet Interfaces</title>
+<p>The physical Ethernet interfaces on HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade nodes are configured to use the following networks:</p>
+<ul>
+<li>the internal management network</li>
+<li>the external OAM network</li>
+<li>the infrastructure network, if present</li>
+<li>one or more data networks</li>
+</ul>
+<p>A single interface can optionally be configured to support more than one network using VLAN tagging. For more information, see <xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-shared.dita" >Shared (VLAN) Ethernet Interfaces</xref>.</p>
+<p>In addition, the management or infrastructure interfaces, or both, can be configured with an additional data network (see the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Software Installation Guide: Editing Interface Settings).</p>
+<ul>
+<li>
+<p>On the controller nodes, all Ethernet interfaces are configured automatically when the nodes are initialized, based on the information provided in the controller configuration script (see the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Installation Guide: The Controller Configuration Script).</p>
+</li>
+<li>
+<p>On compute and storage nodes, the Ethernet interfaces for the management network are configured automatically. The remaining interfaces require manual configuration.</p>
+</li>
+</ul>
+<p>Interface configurations are summarized in the following table.</p>
+<p>
+<b>Note:</b> If a network attachment uses LAG, the corresponding interfaces on the storage and compute nodes must also be configured manually to specify the interface type.</p>
+      <p>
+        <table frame="all" rowsep="1" colsep="1" id="table_tyy_4ph_ks">
+          <tgroup cols="4">
+            <colspec colname="newCol1" colnum="1" colwidth="1*"/>
+            <colspec colname="c1" colnum="2" colwidth="1.0*"/>
+            <colspec colname="newCol3" colnum="3" colwidth="1*"/>
+            <colspec colname="c2" colnum="4" colwidth="1.0*"/>
+            <thead>
+              <row>
+                <entry>Interface</entry>
+                <entry>Controller</entry>
+                <entry>Storage</entry>
+                <entry>Compute</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry/>
+                <entry> Configured automatically </entry>
+                <entry> Configured automatically </entry>
+                <entry> Configured automatically </entry>
+              </row>
+              <row>
+                <entry>OAM</entry>
+                <entry> Configured automatically </entry>
+                <entry>Not used</entry>
+                <entry/>
+              </row>
+              <row>
+                <entry>Infra</entry>
+                <entry> Configured automatically </entry>
+                <entry> For a dedicated interface, the interface is added automatically, but
+                  requires additional manual configuration for the network type For a shared
+                  interface, configured manually </entry>
+                <entry> Configured manually </entry>
+              </row>
+              <row>
+                <entry>Data</entry>
+                <entry>Not used</entry>
+                <entry>Not used</entry>
+                <entry> Configured manually </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+<p>You can review and modify physical interface configurations from the web administration interface or the CLI. For more information, see:</p>
+<ul>
+<li>
+<i>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Installation Guide: Editing Interface Settings</i>
+</li>
+<li>
+<i>the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Installation Guide: Creating Data Interfaces</i>
+</li>
+<li>
+<i>the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Installation Guide: Command-line Installation</i>.</li>
+</ul>
+<p>You can also save the interface configurations for a particular node to use as a profile or template when setting up other nodes. For more information, see Interfaces on page 112.</p>
+</section>
 <section id="virtual-ethernet-interfaces"> <title>Virtual Ethernet Interfaces</title>
-<p>The virtual Ethernet interfaces for guest VMs running on HP Helion OpenStack(R) Carrier Grade are defined when an instance is launched. They connect the VM to tenant networks, which are virtual networks defined over provider networks, which in turn are abstractions associated with physical interfaces assigned to data networks on the compute nodes. Several virtual interface driver options are available. 
+<p>The virtual Ethernet interfaces for guest VMs running on HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade are defined when an instance is launched. They connect the VM to tenant networks, which are virtual networks defined over provider networks, which in turn are abstractions associated with physical interfaces assigned to data networks on the compute nodes. Several virtual interface driver options are available. 
 <!--
 For more information about launching instances and
-connecting their virtual Ethernet interfaces, see the HP Helion OpenStack(R) Carrier Grade Reference Deployment Scenarios. The chapters on Deploying the Bridging Scenario and Deploying the Routing Scenario contain detailed examples for defining virtual Ethernet interfaces. --></p>
+connecting their virtual Ethernet interfaces, see the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Reference Deployment Scenarios. The chapters on Deploying the Bridging Scenario and Deploying the Routing Scenario contain detailed examples for defining virtual Ethernet interfaces. --></p>
 <p>You can also connect a VM directly to a physical interface using PCI passthrough or or SR-IOV.</p>
-<p>See <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-pci-pass.dita" >PCI Passthrough Ethernet Interfaces</xref> and <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-sr-iov.dita" >SR-IOV Ethernet Interfaces</xref>.</p>
+<p>See <xref
+          href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-pci-pass.dita"
+  >PCI Passthrough Ethernet Interfaces</xref> and <xref href="../../../CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-sr-iov.dita">SR-IOV Ethernet Interfaces</xref>
+  </p>
 <p>
-  <xref type="section" href="#topic3824/top"> Return to Top </xref>
+  <xref type="section" href="#topic3824"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

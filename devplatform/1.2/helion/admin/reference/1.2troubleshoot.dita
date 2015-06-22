@@ -58,10 +58,7 @@ monitoring containers and making sure they are relaunched if there's a
 problem. The <i>health_manager.log</i> file contains information on all
 application instances running on the system.</p>
 <p>Sometimes you may see "CRASHED" notifications such as this:</p>
-<codeblock>
-  <codeph>[2013-04-07 22:42:01.329571] hm - pid=2701 tid=5b3b fid=5cbf  DEBUG -- healthmanager.status: {"droplet":119,"state":"CRASHED"}
-</codeph>
-</codeblock>
+<codeblock>[2013-04-07 22:42:01.329571] hm - pid=2701 tid=5b3b fid=5cbf  DEBUG -- healthmanager.status: {"droplet":119,"state":"CRASHED"}</codeblock>
 <p>A CRASHED status means that the app crashed within the container and the
 health_manager is no longer able to find a running process that looks
 like that app (e.g. for a Node app, the node process isn't running; for
@@ -79,10 +76,7 @@ user applications and service instances running on the system.</p>
 <p>The helion group \&lt;command-users-groups-limits&gt; command can be used
 by admin accounts to inspect applications and service instances for any
 group or user. For example:</p>
-<codeblock>
-  <codeph>helion group jane.doe@example.com
-</codeph>
-</codeblock>
+<codeblock>helion group jane.doe@example.com</codeblock>
 <p>This sets the scope of subsequent operations to the specified user. Use
 <codeph>helion group --reset</codeph> to return to the scope of
 the logged-in admin user.</p>
@@ -93,10 +87,7 @@ the system metrics. This functionality is provided by the
 <codeph>helion admin report</codeph> command. It generates a
 single file (by default named <i>\&lt;target&gt;-report.tgz</i>) that can be
 provided to the Application Lifecycle Service support team for analysis:</p>
-<codeblock>
-  <codeph>helion admin report
-</codeph>
-</codeblock>
+<codeblock>helion admin report</codeblock>
 <p>The file is several megabytes in size and will take a few seconds to
 generate. Send it, along with a detailed description of your problem, to
 HP at: <xref href="mailto:als-support@hp.com" format="html" >als-support@hp.com</xref>
@@ -107,11 +98,8 @@ HP at: <xref href="mailto:als-support@hp.com" format="html" >als-support@hp.com<
   <b>When pushing an app, the Application Lifecycle Service Client reports OK but app isn't running</b>
 </p>
 <p>The final output from pushing an app should look like:</p>
-<codeblock>
-  <codeph>Staging Application: OK
-Starting Application: OK
-</codeph>
-</codeblock>
+<codeblock>Staging Application: OK
+Starting Application: OK</codeblock>
 <p>If the app is being pushed to multiple instances, the client waits
 until at least one instance is running, and exits at that point (it
 does not wait until all instances are active). If afterwards you run
@@ -127,19 +115,13 @@ Address. To investigate and resolve, try the following:</p>
 <li>
 <p>Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-tty-console" >tty console</xref>:</p>
 
-<codeblock>
-<codeph>arp -n
-</codeph>
-</codeblock>
+<codeblock>arp -n</codeblock>
 </li>
 <li>
 <p>Check that the DHCP client is running:</p>
 
-<codeblock>
-<codeph>pgrep dhclient
-grep dhclient /var/log/syslog
-</codeph>
-</codeblock>
+<codeblock>pgrep dhclient
+grep dhclient /var/log/syslog</codeblock>
 </li>
 <li>
 <p>Connect to the DHCP server and verify that it is receiving client requests from the Application Lifecycle Service server.</p>
@@ -147,10 +129,7 @@ grep dhclient /var/log/syslog
 <li>
 <p>If your network is statically configured, assign an IP address on the Application Lifecycle Service server by editing the <xref href="http://manpages.ubuntu.com/manpages/utopic/en/man5/interfaces.5.html" scope="external" format="html" >interfaces</xref> file:</p>
 
-<codeblock>
-<codeph>/etc/network/interfaces
-</codeph>
-</codeblock>
+<codeblock>/etc/network/interfaces</codeblock>
 </li>
 </ul>
 </section>

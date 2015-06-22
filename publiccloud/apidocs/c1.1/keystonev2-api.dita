@@ -17,7 +17,7 @@
 </p>
 <p>Date: November 2014</p>
 <section id="1-overview"> <title>1. Overview</title>
-<p>The HP Identity Service exposes the OpenStack(R) Keystone V2 API specification. Specifically, it supports token based operations. A few things to note about the HP Identity Service are:</p>
+<p>The HP Identity Service exposes the <tm tmtype="reg">Openstack</tm> Keystone V2 API specification. Specifically, it supports token based operations. A few things to note about the HP Identity Service are:</p>
 <ul>
 <li>Token created via v2 API can be validated via v3 API</li>
 <li>Token created via v3 API can be validated via v2 API.</li>
@@ -651,7 +651,7 @@ If a request is invalid (doesn't present the required headers or credentials), t
 <section id="authenticate"> <title>3.4.2.1 Authenticate</title>
 </section>
 <section id="post-tokens"> <title>POST /tokens</title>
-<p>This API is used to authenticate a user to be able to use an OpenStack(R) service. The result of a successful authentication is a token to be used with service requests. A username and password or access/secret key credentials are given as input to this interface. If authentication succeeds, the response will include an authentication token and service catalog ( list of available services for that user ). Tokens are valid for 12 hours. Issued tokens can become invalid in two cases:</p>
+<p>This API is used to authenticate a user to be able to use an <tm tmtype="reg">Openstack</tm> service. The result of a successful authentication is a token to be used with service requests. A username and password or access/secret key credentials are given as input to this interface. If authentication succeeds, the response will include an authentication token and service catalog ( list of available services for that user ). Tokens are valid for 12 hours. Issued tokens can become invalid in two cases:</p>
 <ol>
 <li>the token has expired</li>
 <li>the token has been revoked.</li>
@@ -1036,11 +1036,11 @@ Date: Fri, 14 Oct 2011 21:18:40 GMT
 </section>
 <section id="rescope_token"> <title>3.4.2.2 Rescope Token</title>
 </section>
-<section id="post-tokens"> <title>POST /tokens</title>
+<section id="post-tokens2"> <title>POST /tokens</title>
 <p>This API provides the ability to re-scope a valid token with another tenant. An existing unexpired token, regardless of its currently scoped or not, can be scoped to another tenant as long as the user has valid association with that tenant.</p>
 <p>Re-scoping of token can be done from 1) unscoped token to a scoped token for specific tenant 2) scoped token from one tenant to another tenant 3) scoped token to unscoped token (with no tenantId and tenantName specified in request). Re-scoping of token does not alter the token expiration time and same token id is returned in response.</p>
 </section>
-<section id="service-catalog"> <title>Service Catalog:</title>
+<section id="service-catalog2"> <title>Service Catalog:</title>
 <p>In case of un-scoped token request, the service catalog is going to include global active endpoint templates as endpoints in its data. In case of scoped token request, the service catalog is going to include tenant specific endpoints as well as global active endpoint templates as endpoints.</p>
 <p>
   <b>Request Data</b>

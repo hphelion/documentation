@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1730">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Adding and Maintaining Routes for a VXLAN Network</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Adding and Maintaining Routes for a VXLAN Network</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -32,15 +32,12 @@
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>Before making interface changes, you must lock the compute node first.</p>
-<codeblock>
-  <codeph>system host-lock hostname
+<codeblock><codeph>system host-lock hostname
 
 where `hostname` is the name of the compute node host
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>To add routes, use the following command.</p>
-<codeblock>
-  <codeph>system host-route-add node ifname network prefix gateway metric
+<codeblock><codeph>system host-route-add node ifname network prefix gateway metric
 
 where
 
@@ -50,12 +47,10 @@ where
 * `prefix` is the netmask length for the network address
 * `gateway` is the default gateway
 * `metric` is the cost of the route (the number of hops)
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>To delete routes, use the following command.</p>
 <p>system host-route-delete uuid ifname network prefix gateway metric</p>
-<codeblock>
-  <codeph>where 
+<codeblock><codeph>where 
 
 * `uuid` is the UUID of the route to be deleted.
 * `node` is the name or UUID of the compute node
@@ -64,15 +59,12 @@ where
 * `prefix` is the netmask length for the network address
 * `gateway` is the default gateway
 * `metric` is the cost of the route (the number of hops)
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>To list existing routes, including their UUIDs, use the following command.</p>
-<codeblock>
-  <codeph>system host-route-list
-</codeph>
-</codeblock>
+<codeblock><codeph>system host-route-list
+</codeph></codeblock>
 <p>
-  <xref type="section" href="#topic1730/top"> Return to Top </xref>
+  <xref type="section" href="#topic1730"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

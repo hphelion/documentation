@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1886">
-<title>HP Helion OpenStack(R) 1.1: Monitoring the Drive Audit</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Monitoring the Drive Audit</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Karthik P, Keshava HP, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -24,7 +24,7 @@
 <p>Note: Run <b>Icinga</b> check once in every 30 minutes for drive audit to complete one run on  a large system.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
-<li>HP Helion OpenStack(R) cloud is successfully deployed. <!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
+<li>HP Helion <tm tmtype="reg">Openstack</tm> cloud is successfully deployed. <!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
 </li>
 <li>The Icinga service is active and running in the undercloud</li>
 </ul>
@@ -93,7 +93,7 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic1886/top"> Return to Top </xref>
+  <xref type="section" href="#topic1886"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7747">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Managing Wind River Linux User Accounts</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Managing Wind River Linux User Accounts</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -53,7 +53,7 @@ To become the root user, use the sudo command to elevate your privileges, follow
 executed. For example, to run the config_controller command as the root user:
 sudo config_controller
 If a password is requested, provide the password for the wrsroot account.</li>
-<li>You can execute OpenStack(R) administrative commands as the Keystone admin user.
+<li>You can execute <tm tmtype="reg">Openstack</tm> administrative commands as the Keystone admin user.
 Source the script /etc/nova/openrc while working on the active controller to acquire Keystone
 administrative privileges.
 source /etc/nova/openrc
@@ -71,14 +71,14 @@ Password changes are not enforced automatically on first login, and they are not
 the exception of the wrsroot account, for which passwords changed on the active controller are propagated to other
 hosts.) Any special considerations for these accounts, if any, must be configured manually.
 Local user accounts can be added to the sudoers list using the visudo command. They can also source the script /
-etc/nova/openrc to become OpenStack(R) administrators when working on the active controller.
+etc/nova/openrc to become <tm tmtype="reg">Openstack</tm> administrators when working on the active controller.
 Backup and restore operations of home directories and passwords must be done manually. They are ignored by the
 system backup and restore utilities. See System Backups on page 167 for further details.
 LDAP User Accounts
 You can create regular Linux user accounts using the Titanium Server LDAP service. LDAP accounts are centrally
 managed; changes made on any host are propagated automatically to all hosts on the cluster.
 In other respects, LDAP user accounts behave as any local user account. They can be added to the sudoers list, and
-can acquire OpenStack(R) administration credentials when executing on the active controller.
+can acquire <tm tmtype="reg">Openstack</tm> administration credentials when executing on the active controller.
 LDAP user accounts share the following set of attributes:</li>
 <li>The initial password is the name of the account.</li>
 <li>The initial password must be changed immediately upon first login.</li>
@@ -105,7 +105,7 @@ admin</li>
 <p>A cloud administrative account, comparable in purpose to the default admin account used in the web
 management interface.
 This user account operates on a restricted Linux shell, with very limited access to native Linux commands.
-However, the shell is preconfigured to have administrative access to OpenStack(R) commands, including the
+However, the shell is preconfigured to have administrative access to <tm tmtype="reg">Openstack</tm> commands, including the
 available Titanium Server CLI extensions.
 operator
 A host administrative account. It has access to all native Linux commands and is included in the sudoers list.
@@ -122,8 +122,7 @@ A set of LDAP commands is available to operate on LDAP user accounts. The comman
 directory /usr/local/sbin, and are available to any user account in the sudoers list. Included commands are
 lsldap, ldapadduser, ldapdeleteuser, and several others starting with the prefix ldap. Use the command
 option --help on any command to display a brief help message, as illustrated below.</p>
-<codeblock>
-  <codeph>$ ldapadduser --help
+<codeblock><codeph>$ ldapadduser --help
 Usage : /usr/local/sbin/ldapadduser &lt;username&gt; &lt;groupname | gid&gt; [uid]
 $ ldapdeleteuser --help
 Usage : /usr/local/sbin/ldapdeleteuser &lt;username | uid&gt;

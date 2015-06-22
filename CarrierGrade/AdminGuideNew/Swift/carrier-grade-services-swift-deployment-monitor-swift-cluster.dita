@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic802">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Monitor Object Storage (Swift) Cluster</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Monitor Object Storage (Swift) Cluster</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -23,7 +23,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-cluster.md-->
  <!--permalink: /helion/openstack/carrier/services/object/swift/Monitor-cluster/--></p>
-<p>HP Helion OpenStack(R) allows you to monitor Object Storage (Swift) cluster in any of the followings ways:</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> allows you to monitor Object Storage (Swift) cluster in any of the followings ways:</p>
 <ul>
 <li>
 <xref href="../../../CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-disk.dita" >Monitor Disk Usage</xref>
@@ -60,7 +60,7 @@
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic802/top"> Return to Top </xref>
+  <xref type="section" href="#topic802"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

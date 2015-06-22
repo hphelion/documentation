@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3017">
-<title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
+  <title>Quick Start Developer Trial Step 5: Windows (optional)</title>
 <titlealts>
-<searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial Step 5</searchtitle>
+<searchtitle>Quick Start Developer Trial Step 5: Windows (optional)</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
@@ -70,7 +70,7 @@
                           <codeblock>cf-mgmt.exe ^
  --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
  --os-username &lt;OS_USERNAME from openstackrc&gt; ^
- --os-password &lt;OpenStack(R) password&gt; ^
+ --os-password &lt;Openstack password&gt; ^
  --os-tenant-id &lt;OS_TENANT_ID from openstackrc&gt; ^
  --os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^
  --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
@@ -81,7 +81,7 @@ add-role dea ^
                           <codeblock>cf-mgmt.exe ^
  --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
  --os-username &lt;OS_USERNAME from openstackrc&gt; ^
- --os-password &lt;OpenStack(R) password&gt; ^
+ --os-password &lt;Openstack password&gt; ^
  --os-tenant-id &lt;OS_TENANT_ID from openstackrc&gt; ^
  --os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^
  --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^

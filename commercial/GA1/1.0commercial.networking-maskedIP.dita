@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6253">
-<title>HP Helion OpenStack(R) 1.0: Tracking masked IP addresses when using network address translation (NAT)</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Tracking masked IP addresses when using network address translation (NAT)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,14 +13,14 @@
  <!--./commercial/GA1/1.0commercial.networking-maskedIP.md-->
  <!--permalink: /helion/openstack/maskedIP/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.networking-maskedIP.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>Network Address Translation (NAT) is used to mask an originating IP address. As a result, you may receive notification of abuse that appears to originate from an IP address which is part of your own IP address range.</p>
 <p>You can identify the source IP address by using one of the following methods. These methods allow lookup of the Nova VM associated with the masked IP address.</p>
 <section id="method-1"> <title>Method 1</title>
 <ol>
 <li>
-<p>Log in to the HP Helion OpenStack(R) Commercial dashboard as cloud admin.</p>
+<p>Log in to the HP Helion <tm tmtype="reg">Openstack</tm> Commercial dashboard as cloud admin.</p>
 </li>
 <li>
 <p>Select the project you want to work with.</p>
@@ -199,7 +199,7 @@
 <p>Using this information, you can now see all the details of the malicious instance.  You may choose to shut it down, contact the instance owner to investigate further.  or both.</p>
 
 <p>
-<xref type="section" href="#topic6253/top"> Return to Top </xref>
+<xref type="section" href="#topic6253"> Return to Top </xref>
 </p>
 </li>
 </ol>

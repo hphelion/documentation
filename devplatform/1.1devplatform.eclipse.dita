@@ -22,7 +22,7 @@
  <!--./devplatform/1.1devplatform.eclipse.md-->
  <!--permalink: /helion/devplatform/1.1/eclipse/--></p>
 <p>
-  <xref href="../devplatform/1.0devplatform.eclipse.dita" >See the Helion 1.0 Development Platform version of this page</xref>
+
 </p>
 <p>If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to the HP Helion Development Platform.</p>
 <p>Follow the steps outlined in this document to get the plugin up and running and to deploy one of the sample apps.</p>

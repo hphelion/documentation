@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5528">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Creating a StoreVirtual Cluster and Adding to a Management Group</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Creating a StoreVirtual Cluster and Adding to a Management Group</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) Carrier Grade (Beta): Creating a StoreVirtual Cluster and Adding it to a New Management Group</searchtitle>
+<searchtitle>HP Helion Openstack Carrier Grade (Beta): Creating a StoreVirtual Cluster and Adding it to a New Management Group</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) Carrier Grade"/>
+<othermeta name="product-version" content="HP Helion Openstack Carrier Grade"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B, Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) Carrier Grade"/>
+<othermeta name="product-version1" content="HP Helion Openstack Carrier Grade"/>
 </metadata>
 </prolog>
 <body>
@@ -149,7 +149,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic5528/top"> Return to Top </xref>
+  <xref type="section" href="#topic5528"> Return to Top </xref>
 </p>
 </section>
 <section id="adding-a-node"> <title>Adding HP StoreVirtual VSA System to an existing Management Group</title>
@@ -197,7 +197,7 @@
   <xref href="../VSA/carrier.install-add-mgmt-group.dita" >Adding HP StoreVirtual VSA System to an Existing Management Group</xref>
 </p>
 <p>
-  <xref type="section" href="#topic5528/top"> Return to Top </xref>
+  <xref type="section" href="#topic5528"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

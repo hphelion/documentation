@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10467">
-<title>HP Helion OpenStack(R) 1.0: Working with HP 3PAR StoreServ</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Working with HP 3PAR StoreServ</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -14,7 +14,7 @@
  <!--permalink: /helion/openstack/undercloud/storage/storeserv/--></p>
 <!--what is HP Helion CLoud referring to in bullet 1??-->
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.undercloud-storage-storeserv.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The StoreServ option allows you to configure HP 3PAR StoreServ as storage. HP 3PAR StoreServ is also referred to as 3PAR. Before you start working with StoreServ, ensure that it is accessible from the undercloud and you have all the required details to register the device using Sirius service.</p>
 <p>You can configure a 3PAR device by using the undercloud Horizon dashboard (<i>recommended</i>) or the <xref href="../../commercial/GA1/1.0commercial.sirius-cli-workflow.dita" >Sirius client</xref>. This page describes the different tasks that you can perform using the StoreServ option in the undercloud Horizon dashboard.</p>
@@ -175,7 +175,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic10467/top"> Return to Top </xref>
+  <xref type="section" href="#topic10467"> Return to Top </xref>
 </p>
 </section>
 <section id="edit-storeserv"> <title>Edit a 3PAR StoreServ</title>
@@ -250,7 +250,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic10467/top"> Return to Top </xref>
+  <xref type="section" href="#topic10467"> Return to Top </xref>
 </p>
 </section>
 <section id="registering-cpg"> <title>Register 3PAR StoreServ Common Provisioning Groups (CPGs)</title>
@@ -343,7 +343,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic10467/top"> Return to Top </xref>
+  <xref type="section" href="#topic10467"> Return to Top </xref>
 </p>
 </section>
 <section id="unregister-cpg"> <title>Unregister a CPG</title>
@@ -398,7 +398,7 @@
 </ol>
 </section>
 <section id="view-cpg"> <title>View CPG configuration</title>
-<p>Use this option to view the CPG configuration (as defined in OpenStack(R) Configuration Manual for HP 3PAR Cinder Block Storage Volume Driver).</p>
+<p>Use this option to view the CPG configuration (as defined in <tm tmtype="reg">Openstack</tm> Configuration Manual for HP 3PAR Cinder Block Storage Volume Driver).</p>
 <ol>
 <li>
 <p>Log in to the undercloud Horizon dashboard.</p>
@@ -425,7 +425,7 @@
   <xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-storeserv.dita" >Working with StoreServ Backends</xref>
 </p>
 <p>
-  <xref type="section" href="#topic10467/top"> Return to Top </xref>
+  <xref type="section" href="#topic10467"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

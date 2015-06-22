@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6505">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Ceph Configuration</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Ceph Configuration</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Ceph Configuration</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: Ceph Configuration</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -27,8 +27,8 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commercial-ceph-hp-helion-openstack-ceph-configuration.md-->
  <!--permalink: /helion/openstack/1.1/ceph-hp-helion-openstack-ceph-configuration/--></p>
-<p>This section describes the integration of HP Helion OpenStack(R) 1.1 or 1.1.1, and Ceph Firefly 0.80.7 on a hLinux3.14.29.4 kernel.</p>
-<p>Before configuring Helion OpenStack(R) Ceph make sure that HP Helion OpenStack(R) 1.1 or 1.1.1 is installed successfully.</p>
+<p>This section describes the integration of HP Helion <tm tmtype="reg">Openstack</tm> 1.1 or 1.1.1, and Ceph Firefly 0.80.7 on a hLinux3.14.29.4 kernel.</p>
+<p>Before configuring Helion <tm tmtype="reg">Openstack</tm> Ceph make sure that HP Helion <tm tmtype="reg">Openstack</tm> 1.1 or 1.1.1 is installed successfully.</p>
 <p>
 <b>Note</b>: The Ceph client script is only run on the Helion controller and compute nodes during a manual deployment of the Ceph cluster. If you are using Ansible to configure your Helion nodes and Ceph cluster, you can ignore the manual section.</p>
 <section id="ceph-client-install"> <title>Ceph Client Install</title>
@@ -37,7 +37,7 @@
 <b>Note</b>: See note above. If you are using Ansible to configure your Helion nodes and Ceph cluster, you can ignore the manual section.</p>
 </section>
 <section id="automated-install"> <title>Automated Install</title>
-<p>The <codeph>ceph_client_setup.tar</codeph> contains Debian packages, Helion OpenStack(R) Ceph configuration scripts, and the patch file to make the required alterations to the Nova, Glance, and Cinder configuration files. These Debian packages must be installed while installing the Ceph firefly 0.80.7 client packages on the HP Helion overcloud controller and compute nodes. The script present in the tar file helps to automate the installation process.</p>
+<p>The <codeph>ceph_client_setup.tar</codeph> contains Debian packages, Helion <tm tmtype="reg">Openstack</tm> Ceph configuration scripts, and the patch file to make the required alterations to the Nova, Glance, and Cinder configuration files. These Debian packages must be installed while installing the Ceph firefly 0.80.7 client packages on the HP Helion overcloud controller and compute nodes. The script present in the tar file helps to automate the installation process.</p>
 <p>Once the Ceph cluster is fully operational, run the tar file on the Helion controller nodes (occ0, occ1, and oc mgmt nodes) and the compute node. At the final stage of the installation process, the Ceph client confirms connectivity to the Ceph cluster.</p>
 </section>
 <section id="running-the-automated-scripts"> <title>Running the automated scripts</title>
@@ -152,7 +152,7 @@
 </tr>
     <tr>
 <td>Ceph client package file to be installed on the running Controller and Compute nodes in the
-HP Helion OpenStack(R) commercial build</td>
+HP Helion <tm tmtype="reg">Openstack</tm> commercial build</td>
 <td>`https://helion.hpwsportal.com` Click on the workloads category on the left side and then you click on the storage subcategory to find all the Ceph related files.<br /></td>
 </tr>
   <table>
@@ -208,7 +208,7 @@ The following example displays the ceph version:
 </p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-  <xref type="section" href="#topic6505/top"> Return to Top </xref>
+  <xref type="section" href="#topic6505"> Return to Top </xref>
 </p>
 </section>
 </body>

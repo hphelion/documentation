@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4971">
-<title>HP Helion OpenStack(R) 1.0: Remove Scale-out Object Storage Node</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Remove Scale-out Object Storage Node</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Keshava HP, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -24,7 +24,7 @@
  <!--./commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.md-->
  <!--permalink: /helion/openstack/services/swift/deployment/remove-scale-out-object-node/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>It is recommended that you gradually reduce the weight in the ring when removing disks from the Swift cluster to avoid poor performance.</p>
 <p>Object nodes can only be removed once all disks have been removed from the node.</p>
@@ -44,7 +44,7 @@
 </ol>
 <section id="prer"> <title>Prerequisite</title>
 <ul>
-<li>HP Helion OpenStack(R) cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
+<li>HP Helion <tm tmtype="reg">Openstack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
 </li>
 <li>Scale-out object-ring:1 is deployed.</li>
 <li>All of the rings generated <b>must</b> be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.</li>
@@ -301,7 +301,7 @@ sudo -i
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic4971/top"> Return to Top </xref>
+  <xref type="section" href="#topic4971"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

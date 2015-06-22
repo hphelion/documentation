@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2780">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Using Helion Lifecycle Management</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Using Helion Lifecycle Management</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -18,7 +18,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Admin_Guide/carrier-grade-admin-hlm.md-->
  <!--permalink: /helion/openstack/carrier/admin/hlm/--></p>
-<p>Using HLM, you can install and upgrade HP Helion OpenStack(R) Carrier Grade and can perform the following:</p>
+<p>Using HLM, you can install and upgrade HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade and can perform the following:</p>
 <!-- From Kenobi LCM4Cloud.pptx per Bryan Murray -->
 <section id="provisioning"> <title>Provisioning</title>
 <ul>
@@ -135,7 +135,7 @@ U.  Display the desired state cloud topology.
 V.  Explain current/desired state cloud topology
 -->
 <p>
-  <xref type="section" href="#topic2780/top"> Return to Top </xref>
+  <xref type="section" href="#topic2780"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Deploying the HLM and DCN Clouds</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Deploying the HLM and DCN Clouds</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -21,16 +21,11 @@
 <p>Use the following steps to create three controller nodes, two compute nodes, a DCN Node and a VRS-G nodes.</p>
 <p>Use the following steps:</p>
 <ol>
-<li>
-<p>Deploy and configure the cloud services using the following command:</p>
-
-<codeblock>
-<codeph>hdeploy &lt;cloudname&gt; 
-</codeph>
-</codeblock>
-
-<p>You can run this command from anywhere. This process might approximatley three hours to install all seven nodes in a baremetal setup with LDAP enabled.</p>
-</li>
+<li>Deploy and configure the cloud services using the following
+          command:<codeblock><codeph>hdeploy &lt;cloudname&gt; 
+</codeph></codeblock><p>You can run
+          this command from anywhere. This process might approximatley three hours to install all
+          seven nodes in a baremetal setup with LDAP enabled.</p></li>
 </ol>
 <p>When this command completes successfully, there are three controller nodes, two compute nodes, one DCN Node and one VRS-G nodes deployed as shown in the networking topology.</p>
 <p>
@@ -43,7 +38,7 @@
   <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-verify.dita" >Verify the Installation</xref>
 </p>
 <p>
-  <xref type="section" href="#topic1107/top"> Return to Top </xref>
+  <xref type="section" href="#topic1107"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

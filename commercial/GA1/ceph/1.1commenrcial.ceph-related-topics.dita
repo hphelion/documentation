@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1412">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Ceph Related Topics</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Ceph Related Topics</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Ceph Related Topics</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: Ceph Related Topics</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -27,7 +27,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commenrcial.ceph-related-topics.md-->
  <!--permalink: /helion/openstack/1.1/ceph-related-topics/--></p>
-<p>This topic provides you links to related documentation that you might find helpful when working with HP Helion OpenStack(R) 1.1 and 1.1.1, Ceph Firefly 80.7 Storage Solution.</p>
+<p>This topic provides you links to related documentation that you might find helpful when working with HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1, Ceph Firefly 80.7 Storage Solution.</p>
 <ol>
 <li>
 <p>With increased density, efficiency, serviceability, and flexibility, the HP ProLiant SL4540 Gen8 Server, DL360/380 Gen8, BL460/660 Gen8 servers will be the perfect solution for scale-out storage needs. For more information, refer to <xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6464822#!tab=features" scope="external" format="html" >hp.com/servers/sl4540</xref>
@@ -49,7 +49,7 @@
 </li>
 <li>
 <p>
-<xref href="http://docs.openstack.org/" scope="external" format="html" >Introduction to OpenStack(R) Block Storage using Cinder and Nova</xref>
+<xref href="http://docs.openstack.org/" scope="external" format="html" >Introduction to <tm tmtype="reg">Openstack</tm> Block Storage using Cinder and Nova</xref>
 </p>
 </li>
 <li>
@@ -82,7 +82,7 @@
   <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-glossary.dita" >Ceph Glossary</xref>
 </p>
 <p>
-  <xref type="section" href="#topic1412/top"> Return to Top </xref>
+  <xref type="section" href="#topic1412"> Return to Top </xref>
 </p>
 </section>
 </body>

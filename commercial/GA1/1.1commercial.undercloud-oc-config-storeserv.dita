@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8341">
-<title>HP Helion OpenStack(R) 1.1: Working with StoreServ Backends</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Working with StoreServ Backends</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,7 +26,7 @@
  <!--./commercial/GA1/1.1commercial.undercloud-oc-config-storeserv.md-->
  <!--permalink: /helion/openstack/1.1/undercloud/oc/config/storeserv/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-storeserv.dita" >See the Helion OpenStack(R) 1.0 version of this page</xref>
+
 </p>
 <p>Once you register the StoreServ systems as per your requirements, you can use the overcloud option in the Horizon undercloud dashboard for the following tasks:</p>
 <ul>
@@ -114,7 +114,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic8341/top"> Return to Top </xref>
+  <xref type="section" href="#topic8341"> Return to Top </xref>
 </p>
 </section>
 <section id="expand-backend"> <title>Expand backend</title>
@@ -197,7 +197,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic8341/top"> Return to Top </xref>
+  <xref type="section" href="#topic8341"> Return to Top </xref>
 </p>
 </section>
 <section id="delete-backend"> <title>Delete backend</title>
@@ -240,7 +240,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic8341/top"> Return to Top </xref>
+  <xref type="section" href="#topic8341"> Return to Top </xref>
 </p>
 </section>
 <section id="update-overcloud"> <title>Update Overcloud</title>
@@ -308,7 +308,7 @@
 </codeph>
 </codeblock>
 
-<!--**Note:** HP 3PAR iSCSI OpenStack(R) driver provides the ability to select the best-fit target iSCSI port from a list of candidate ports. However, Sirius currently does not support this option. If you want to configure 3PAR iSCSI backend with more than one IP addresses, add the *hp3par&#095;iscsi_ips* with a comma-separated list of IP addresses in `/root/overcloud-config.json` instead of *iscsi&#095;ip&#095;address*. The addresses may define an IP port by using a colon (:) to separate the address from the port. Refer to the following example:
+<!--**Note:** HP 3PAR iSCSI <tm tmtype="reg">Openstack</tm> driver provides the ability to select the best-fit target iSCSI port from a list of candidate ports. However, Sirius currently does not support this option. If you want to configure 3PAR iSCSI backend with more than one IP addresses, add the *hp3par&#095;iscsi_ips* with a comma-separated list of IP addresses in `/root/overcloud-config.json` instead of *iscsi&#095;ip&#095;address*. The addresses may define an IP port by using a colon (:) to separate the address from the port. Refer to the following example:
 
 
     "3par": {
@@ -443,7 +443,7 @@
 <section id="next-steps"> <title>Next Steps</title>
 <p>To use the newly added Cinder backend, create volume type and associate it with this backend using the <xref href="../../commercial/GA1/1.1commercial.map.volumetype.dita" >Horizon Overcloud Dashboard</xref> or Cinder CLI.</p>
 <p>
-  <xref type="section" href="#topic8341/top"> Return to Top </xref>
+  <xref type="section" href="#topic8341"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

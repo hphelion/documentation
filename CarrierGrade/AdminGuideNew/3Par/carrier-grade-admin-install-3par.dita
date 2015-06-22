@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3689">
-<title>HP Helion OpenStack(R) Carrier Grade: HP StoreServ (3PAR) Support</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade: HP StoreServ (3PAR) Support</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) Carrier Grade: HP StoreServ (3PAR) Support</searchtitle>
+<searchtitle>HP Helion Openstack Carrier Grade: HP StoreServ (3PAR) Support</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) Carrier Grade"/>
+<othermeta name="product-version" content="HP Helion Openstack Carrier Grade"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -22,7 +22,7 @@
 <p>HP Helion OpenStack Carrier Grade provides a utility service called Sirius which can be used to
       configure 3PAR StoreServ arrays to realize block storage within the cloud.</p>
 <p>
-<b>Note:</b> 3PAR support applies only to HP Helion OpenStack(R) with KVM hypervisor support.</p>
+<b>Note:</b> 3PAR support applies only to HP Helion <tm tmtype="reg">Openstack</tm> with KVM hypervisor support.</p>
 <!---The Cinder integration drivers run as Python libraries in the Cinder service to facilitate communication between Cinder and StoreServ arrays.-->
 <!---Devices can be connected to Cinder using Fibre Channel (FC) or using the iSCSI protocol.-->
 <section id="high-level-overview-of-hp-3par-storeserv-integration"> <title>High-level overview of HP 3PAR StoreServ Integration</title>
@@ -59,23 +59,24 @@
 </codeblock>
 <p>Restart the multipath daemon <codeph>service multipath-tools restart</codeph> on all compute and controller nodes. The <codeph>multipath -ll</codeph> command  lists the devices and path.</p>
 <p>
-<b>Note</b>: With HP Helion OpenStack(R) 1.1 release, 3PAR native multipath is enabled by default.</p>
+<b>Note</b>: With HP Helion <tm tmtype="reg">Openstack</tm> 1.1 release, 3PAR native multipath is enabled by default.</p>
 </section>
 <section id="working-with-hp-storeserv"> <title>Working with HP StoreServ</title>
 <p>HP 3PAR StoreServ can be configured for the cloud using the Horizon dashboard or using HP Sirius CLI</p>
 </section>
 <section id="using-the-dashboards"> <title>Using the dashboards</title>
 <p>You can use the <xref href="../Dashboard/carrier-grade.dashboard.how-works.dita">HP Helion
-          OpenStack(R) Dashboard</xref> to configure HP StoreServ.(Recommended)</p>
+          <tm tmtype="reg">Openstack</tm> Dashboard</xref> to configure HP StoreServ.(Recommended)</p>
 </section>
 <section id="using-the-cli"> <title>Using the CLI</title>
-  <p>You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See <xref href="/CarrierGrade/AdminGuideNew/3Par/carrier-grade-admin-sirius-cli-workflow.dita" >Configuring Storage Using Sirius</xref>
+  <p>You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See <xref href="../../../CarrierGrade/AdminGuideNew/3Par/carrier-grade-admin-sirius-cli-workflow.dita" >Configuring Storage Using Sirius</xref>
 </p>
-<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack(R) command-line clients</xref>.</p>
+<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">Openstack</tm> command-line clients</xref>.</p>
 <p>
-  <xref type="section" href="#topic3689/top"> Return to Top </xref>
+  <xref type="section" href="#topic3689"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>
+

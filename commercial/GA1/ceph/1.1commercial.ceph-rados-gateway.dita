@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8352">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Ceph Reliable Autonomic Distributed Object Store Gateway (RADOSGW)</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Ceph Reliable Autonomic Distributed Object Store Gateway (RADOSGW)</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Ceph Reliable Autonomic Distributed Object Store Gateway (RADOSGW)</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: Ceph Reliable Autonomic Distributed Object Store Gateway (RADOSGW)</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -637,7 +637,7 @@ Assuming that the Ceph client packages are already installed, perform following 
 <!--
 ###Integrating the RADOS Gateway - Keystone Authentication
 
-Integration of the RADOS Gateway with the Helion OpenStack(R) Identity service (Keystone) sets up the Gateway to authorize and accept Keystone users automatically. Users are created in RADOS pools provided they have valid Keystone tokens. For details refer to [RADOS pools and Keystone tokens](http://ceph.com/docs/master/radosgw/keystone).
+Integration of the RADOS Gateway with the Helion <tm tmtype="reg">Openstack</tm> Identity service (Keystone) sets up the Gateway to authorize and accept Keystone users automatically. Users are created in RADOS pools provided they have valid Keystone tokens. For details refer to [RADOS pools and Keystone tokens](http://ceph.com/docs/master/radosgw/keystone).
 
 **Assumptions**
 
@@ -791,7 +791,7 @@ To achieve this integration, perform the following steps.
   <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-pools.dita" >Ceph RADOS Gateway Pools</xref>
 </p>
 <p>
-  <xref type="section" href="#topic8352/top"> Return to Top </xref>
+  <xref type="section" href="#topic8352"> Return to Top </xref>
 </p>
 </section>
 </body>

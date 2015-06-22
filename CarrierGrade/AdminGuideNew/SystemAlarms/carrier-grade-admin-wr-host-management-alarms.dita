@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1051">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Working with System Alarms</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Working with System Alarms</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,7 +26,7 @@
  <!--./CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms.md-->
  <!--permalink: /helion/openstack/carrier/admin/alarms/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>HP Helion OpenStack(R) Carrier Grade can generate system alarms when operational conditions change on any of the hosts in the cluster.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade can generate system alarms when operational conditions change on any of the hosts in the cluster.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -51,7 +51,7 @@
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic1051/top"> Return to Top </xref>
+  <xref type="section" href="#topic1051"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

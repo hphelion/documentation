@@ -1,422 +1,700 @@
-/helion/openstack/1.1/fcp/backup.restore/---
-layout: default
-title: "HP Helion OpenStack&#174; 1.1: DNSaaS Configuration (Optional)"
-permalink: /helion/openstack/1.1/services/neutron/post/installation/configure-dnsaas/
-product: commercial.ga
-product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack 1.0
-product-version3: HP Helion OpenStack 1.0.1
-product-version4: HP Helion OpenStack 1.1
-role1: Network Administrator
-role2: Network Architect
-authors: Vikas Deolaliker, Paul Farley
-
----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20357">
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: DNSaaS Installation and Configuration</title>
+<titlealts>
+<searchtitle>HP Helion Openstack 1.1: DNSaaS Installation and Configuration</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Michael B, Gerladine K, Graham H,"/>
+<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
 <!--PUBLISHED-->
+ <!--./commercial/GA1/1.1commercial.install-GA-DNSaaS.md-->
+ <!--permalink: /helion/openstack/1.1/install/dnsaas/--></p>
+<p>
+  <xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" />
+</p>
+<p>
+  <b>This document describes the installation process for HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1.</b>
+</p>
+<p>(If you already have 1.1 installed, you can update Helion <tm tmtype="reg">Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>Our managed DNS service, based on the <tm tmtype="reg">Openstack</tm> Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
+<p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion <tm tmtype="reg">Openstack</tm></p>
+<p>
+<b>Note</b>: These installation instructions assume that the associated project currently contains no instances (VMs). If this is not the case, see the instructions for <xref type="section" href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space before you begin.</p>
+<p>
+<b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on Helion <tm tmtype="reg">Openstack</tm> 1.1 Do <b>not</b> attempt to install DNSaaS on any previous versions. </p>
+<ul>
+<li>
+<xref type="section" href="#topic20357/preq">Prerequisites</xref>
+</li>
+<li>
+<xref type="section" href="#topic20357/credentials">Creating Prerequisite Credentials</xref>
 
+<ul>
+<li>
+<xref type="section" href="#topic20357/target-cred">Target Credentials</xref>
+</li>
+<li>
+<xref type="section" href="#topic20357/service-cred">Service Credentials</xref>
+</li>
+</ul>
+</li>
+<li>
+<xref type="section" href="#topic20357/publication">Sherpa CSU Publication and Booting the Installer VM</xref>
+</li>
+<li>
+<xref type="section" href="#topic20357/configure">Installing and Configuring DNSaaS</xref>
+</li>
+<li>
+<xref type="section" href="#topic20357/configovercloud">Configure the Overcloud Load Balancer for DNSaaS</xref>
+</li>
+<li>
+<xref type="section" href="#topic20357/keyreg">Registering the Service with Keystone</xref>
+</li>
+<li>
+<xref type="section" href="#topic20357/uninstall">Uninstalling DNaaS</xref>
+</li>
+<li>
+<xref type="section" href="#topic20357/moreinfo">More Information</xref>
+</li>
+</ul>
+<section id="preq"> <title>Prerequisites</title>
+<p>
+<b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on Helion <tm tmtype="reg">Openstack</tm> 1.1 Do <b>not</b> attempt to install DNSaaS on any previous versions. </p>
+<p>
+<b>Note</b>: These installation instructions assume that the associated project currently contains no instances (VMs). If this is not the case, see the instructions for <xref type="section" href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space before you begin.</p>
+<ul>
+<li>HP Helion <tm tmtype="reg">Openstack</tm> is successfully installed</li>
+<li>Download <xref type="section" href="#topic20357/publication">DNSaaS Installer Image</xref> </li>
+<li>
+<p>Obtain <xref type="section" href="#topic20357/target-cred">Target Credentials</xref>: credentials of the user+tenant where the service is to be deployed.</p>
 
-<script>
+<ul>
+<li>This user should have the <b>admin</b> and  <b>_member_</b> roles.</li>
+<li>Username</li>
+<li>Password</li>
+<li>Tenant/Project Name</li>
+</ul>
+</li>
+<li>
+<p>Obtain <xref type="section" href="#topic20357/service-cred">Service Credentials</xref>: credentials for the user+tenant used to validate end user tokens.</p>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+<ul>
+<li>This user should be in the <b>service</b> tenant, have the <b>admin</b> and  <b>_member_</b> roles, and be called <b>designate</b>.</li>
+<li>Username</li>
+<li>Password</li>
+<li>Tenant/Project Name</li>
+</ul>
+</li>
+<li>A generated SSH Key for accessing the Service VMs</li>
+<li>
+<p>A chosen backend driver and its prerequisites:</p>
 
-PageRefresh();
+<ul>
+<li>
+<p>PowerDNS (self hosted)<!--A BR tag was used here in the original source.-->
+A domain name for the nameservers ("Namesever FQDNs"). For example, if your nameservers are to be named <i>ns1.mycompany.com</i>, you will need the <i>mycompany.com</i> domain.</p>
+</li>
+<li>
+<p>Microsoft DNS (self-hosted)</p>
 
-</script>
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/install/ovsvapp/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/related-links/">NEXT &#9654;</a> </p> -->
+<ul>
+<li>At least one Microsoft DNS server installed and configured</li>
+<li>Knowledge of the FQDNs for all MS DNS servers to be used ("Namesever FQDNs")</li>
+</ul>
+</li>
+<li>
+<p>DynECT (3rd Party)</p>
 
-# HP Helion OpenStack&#174; 1.1: DNSaaS Configuration (Optional)
+<ul>
+<li>An active service contract with DynECT</li>
+<li>
+<p>Knowledge of the FQDNs for all DynECT nameservers allocated to your account ("Namsever FQDNs")</p>
 
-Configuring Domain Name System as a service (DNSaaS) is optional.
+<ul>
+<li>ns1.p13.dynect.net.</li>
+<li>ns2.p13.dynect.net.</li>
+<li>ns3.p13.dynect.net.</li>
+<li>ns4.p13.dynect.net.</li>
+</ul>
+</li>
+<li>API credentials for DynECT
 
-Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. 
+<ul>
+<li>Customer Name</li>
+<li>Username</li>
+<li>Password</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Akamai (3rd Party)</p>
 
-It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack.
+<ul>
+<li>An active service contract with Akamai</li>
+<li>Knowledge of the FQDNs for all Akamai nameservers allocated to your account ("Namesever FQDNs")</li>
+<li>API credentials for Akamai
 
-<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.01, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.01 over the previous version. </p>
-
-To configure DNSaaS review:
-
-
-- [Prerequisites](#preq)
-- [Creating Prerequisite Credentials](#credentials)
-	- [Target Credentials](#target-cred)
-	- [Service Credentials](#service-cred)
-- [Sherpa CSU Publication and Booting the Installer VM](#publication)
-- [Installing and Configuring DNSaaS](#configure)
-- [Configure the Overcloud Load Balancer for DNSaaS](#configovercloud)
-- [Registering the Service with Keystone](#keyreg)
-- [Uninstalling DNaaS](#uninstall)
-- [More Information](#moreinfo)
-
-
-##Prerequisites {#preq}
-<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.01, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.01 over the previous version. </p>
-
-* HP Helion OpenStack is successfully installed
-* Download [DNSaaS Installer Image](#publication) <br /> 
-* Obtain [Target Credentials](#target-cred): credentials of the user+tenant where the service is to be deployed.
-	* This user should have the **admin** and  **\_member_** roles.
-	* Username
-	* Password
-	* Tenant/Project Name
-
-* Obtain [Service Credentials](#service-cred): credentials for the user+tenant used to validate end user tokens.
-	* This user should be in the **service** tenant, have the **admin** and  **\_member_** roles, and be called **designate**.
-	* Username
-	* Password
-	* Tenant/Project Name
-* A generated SSH Key for accessing the Service VMs
-* A chosen backend driver and its prerequisites:
-	* PowerDNS (self hosted)  
-		A domain name for the nameservers ("Namesever FQDNs"). For example, if your nameservers are to be named *ns1.mycompany.com*, you will need the *mycompany.com* domain.
-
-	* Microsoft DNS (self-hosted)
-		* At least one Microsoft DNS server installed and configured
-		* Knowledge of the FQDNs for all MS DNS servers to be used ("Namesever FQDNs")
-
-	* DynECT (3rd Party)
-		* An active service contract with DynECT
-		* Knowledge of the FQDNs for all DynECT nameservers allocated to your account ("Namsever FQDNs")
-	
-			-     ns1.p13.dynect.net.
-			-     ns2.p13.dynect.net.
-			-     ns3.p13.dynect.net.
-			-     ns4.p13.dynect.net.
-		* API credentials for DynECT
-			* Customer Name
-			* Username
-			* Password
-
-	* Akamai (3rd Party)
-		* An active service contract with Akamai
-		* Knowledge of the FQDNs for all Akamai nameservers allocated to your account ("Namesever FQDNs")
-		* API credentials for Akamai
-			* Username
-			* Password
+<ul>
+<li>Username</li>
+<li>Password</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>
+<b>Important:</b> The DNS install will not work if the associated project has existing instances (VMs). If the project has existing VMs, the admin must increase the quota levels to the following for that project before attempting to install DNS.</p>
+<ul>
+<li>instances:16</li>
+<li>RAM: 44 GB</li>
+<li>Volumes: 6</li>
+<li>Storage:240</li>
+</ul>
 <!--
 ## Uploading script to Sherpa (do we need to upload the DNaaS script to sherpa) ??
 -->
-## Creating Prerequisite Credentials {#credentials}
+</section>
+<section id="credentials"> <title>Creating Prerequisite Credentials</title>
+<p>You must create both <b>target</b> and <b>service</b> credentials.</p>
+</section>
+<section id="target-cred"> <title>Target Credentials</title>
+<p>Target credentials are the credentials of the user+tenant where the service is to be deployed. Target credentials include a <b>tenant</b> and a <b>username</b>. Service credentials can only be created after the Target credentials have been successfully created.</p>
+<ul>
+<li>
+<p>Create tenant</p>
 
-You must create both **target** and **service** credentials.
+<codeblock>
+<codeph>keystone tenant-create --name dnsaas --description "DNSaaS Service" 
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Create username</p>
 
-###Target Credentials {#target-cred}
-Target credentials are the credentials of the user+tenant where the service is to be deployed. Target credentials include a **tenant** and a **username**. Service credentials can only be created after the Target credentials have been successfully created.
+<codeblock>
+<codeph>keystone user-create --name dnsaas --tenant dnsaas --email dnsaas@example.com --pass password
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Add role (this role is added for user)</p>
 
-* Create tenant
-		
-		$ keystone tenant-create --name dnsaas --description "DNSaaS Service" 
+<codeblock>
+<codeph>$ keystone user-role-add --user dnsaas --tenant dnsaas --role admin
+</codeph>
+</codeblock>
+</li>
+</ul>
+</section>
+<section id="service-cred"> <title>Service Credentials</title>
+<p>Service Credentials are credentials for the user+tenant used to validate end user tokens. Service credentials can only be created after the Target credentials have been successfully created. This user should be in the <b>service</b> tenant, have the <b>admin</b> and  <b>_member_</b> roles, and be named <b>designate</b>.</p>
+<ul>
+<li>
+<p>Create service credentials</p>
 
-* Create username
+<codeblock>
+<codeph>keystone user-create --name designate --tenant service --email designate@example.com --pass password
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Add admin role to service user command</p>
 
-		$ keystone user-create --name dnsaas --tenant dnsaas --email dnsaas@example.com --pass password
+<codeblock>
+<codeph>keystone user-role-add --user designate --tenant service --role admin
+</codeph>
+</codeblock>
+</li>
+</ul>
+</section>
+<section id="publication"> <title>Sherpa CSU Publication and Booting the Installer VM</title>
+<p>Before proceeding with the DNaaS installation, ensure that you have met all the prerequisites, which includes gathering the required information, creating the necessary users/projects and ensuring the users/projects have the appropriate roles. Failure to do so will result in a failed install.</p>
+</section>
+<section id="publish-csu-contents"> <title>Publish CSU contents</title>
+<ol>
+<li>Log in to the Horizon dashboard using <b>Target Credentials</b>. </li>
+<li>Click <b>Admin</b> Tab in the left panel.<!--A BR tag was used here in the original source.-->  The tab displays an option in the left panel.</li>
+<li>Click <b>Updates and Extensions</b> and then select <b>Updates and Extensions</b> to open the Updates and Extensions page.</li>
+<li>
+<p>Click <b>Configure</b> in the top-right corner of the page to display the Configure dialog box.</p>
+</li>
+<li>
+<p>Log in with Helion Content Delivery Network credentials. <!--A BR tag was used here in the original source.--> If you do not yet have login credentials for the Helion Delivery Network, create an account.</p>
 
-* Add role (this role is added for user)
+<p>a. On the Horizon undercloud dashboard, click  the <b>Admin</b> tab in the left panel.</p>
 
-		$ keystone user-role-add --user dnsaas --tenant dnsaas --role admin
+<p>b.  Click <b>Updates and Extensions</b> and then select <b>Updates and Extensions</b> to open the Updates and Extensions page.</p>
 
-###Service Credentials {#service-cred}
-Service Credentials are credentials for the user+tenant used to validate end user tokens. Service credentials can only be created after the Target credentials have been successfully created. This user should be in the **service** tenant, have the **admin** and  **\_member_** roles, and be named **designate**.
+<p>c. Click <b>Configure</b> in the top-right corner of the page to display the Configure dialog box.</p>
 
-- Create service credentials
+<p>d. Click <b>Sign up Now</b> below the description in the Configure dialog box.<!--A BR tag was used here in the original source.--> 
+   The page navigates to the HP Helion Product Catalog. Then, do the following:</p>
 
-		$ keystone user-create --name designate --tenant service --email designate@example.com --pass password
+<p>e. Click <b>Sign In</b> in the top of the page to open the HP Web ID dialog box.</p>
 
-* Add admin role to service user command 
+<p>f. Click <b>Sign Up for Web ID</b> to create log-in credentials. The HP WEB ID dialog box is displayed.</p>
 
-		$ keystone user-role-add --user designate --tenant service --role admin
- 
-## Sherpa CSU Publication and Booting the Installer VM {#publication}
+<p>g. Enter the required details.</p>
 
-Before proceeding with the DNaaS installation, ensure that you have met all the prerequisites, which includes gathering the required information, creating the necessary users/projects and ensuring the users/projects have the appropriate roles. Failure to do so will result in a failed install.
+<p>h. Select the check box next to <b>I agree to the Terms of Use</b> to accept the terms and conditions.</p>
 
-###Publish CSU contents
+<p>i. Click <b>Submit</b>.<!--A BR tag was used here in the original source.--> The credentials are authenticated and the account is created. <!--A BR tag was used here in the original source.--> Once you register on the HP Helion Product Catalog, you are required to configure your credentials.</p>
+</li>
+<li>Click <b>Download</b> against the package that you want to download on your local system from a  list of .csu file. </li>
+<li>Select the appropriate file (for example: <b>dns.csu</b>) from the list and click <b>Publish</b>. </li>
+<li>Click <b>Publish</b> to install the package. </li>
+</ol>
+</section>
+<section id="boot-the-installer-vm"> <title>Boot the installer VM</title>
+<ol>
+<li>Log in to the Horizon dashboard using <b>Target Credentials</b>.</li>
+<li>Click <b>Project</b>. The tab displays an option in the left panel.</li>
+<li>Click <b>Compute</b>  and then select <b>Images</b> to open the Image page.</li>
+<li>
+<p>Select the image file from the list and click <b>Launch</b>. For example: select  <b>dnsaas-installer_1.1.0.30</b> to launch this image. <!--A BR tag was used here in the original source.-->
+A Launch Instance dialog box displays with five tabs: Details Tab, Access &amp; Security Tab, Networking Tab, Post-Creation Tab and Advance Options. By default, Details is the active tab.</p>
+</li>
+<li>
+<p>On the Details Tab, do the following:</p>
 
-1. Log in to the Horizon dashboard using **Target Credentials**. 
-2. Click **Admin** Tab in the left panel.<br />  The tab displays an option in the left panel.
-3. Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
-4. Click **Configure** in the top-right corner of the page to display the Configure dialog box.
+<p>a. In the <b>Instance Name</b>  (Virtual Machine (VM))box enter the name of the instance. For example :<b>dnsaas-installer</b>.</p>
 
-5. Log in with Helion Content Delivery Network credentials. <br /> If you do not yet have login credentials for the Helion Delivery Network, create an account.
+<p>b.From the <b>Flavor</b> drop-down list and select the flavor. For example: <b>m1.small</b>
+</p>
+</li>
+<li>
+<p>On the <b>Access and Security</b> Tab, do the following:</p>
 
-	a. On the Horizon undercloud dashboard, click  the **Admin** tab in the left panel.
+<p>a. From the <b>Keypair</b> drop-down list, select an appropriate SSH keypair.</p>
+</li>
+<li>
+<p>On the <b>Networking</b> Tab, select the <b>default-net</b> network, if it is not populated automatically.</p>
+</li>
+<li>
+<p>Click <b>Launch</b> to launch the Instance. You are taken to the Instances page with the progress bar displaying the completion progress.</p>
+</li>
+<li>
+<p>Select the launched instance in the Instance table.</p>
 
-	b.	Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
-
-	c. Click **Configure** in the top-right corner of the page to display the Configure dialog box.
-
-	d. Click **Sign up Now** below the description in the Configure dialog box.<br /> 
-       The page navigates to the HP Helion Product Catalog. Then, do the following:<br />  
-    
-	e. Click **Sign In** in the top of the page to open the HP Web ID dialog box.
-
-	f. Click **Sign Up for Web ID** to create log-in credentials. The HP WEB ID dialog box is displayed. 
-    
-	g. Enter the required details.
-  
-	h. Select the check box next to **I agree to the Terms of Use** to accept the terms and conditions.
-
-	i. Click **Submit**.<br /> The credentials are authenticated and the account is created. <br /> Once you register on the HP Helion Product Catalog, you are required to configure your credentials.
-6. Click **Download** against the package that you want to download on your local system from a  list of .csu file. 
-8. Select the appropriate file (for example: **dns.csu**) from the list and click **Publish**. 
-9. Click **Publish** to install the package. 
-
-
-###Boot the installer VM
-
-1. Log in to the Horizon dashboard using **Target Credentials**.
-2. Click **Project**. The tab displays an option in the left panel.
-3. Click **Compute**  and then select **Images** to open the Image page.
-4. Select the image file from the list and click **Launch**. For example: select  **dnsaas-installer_1.0.0.30** to launch this image. <br />
-	A Launch Instance dialog box displays with five tabs: Details Tab, Access & Security Tab, Networking Tab, Post-Creation Tab and Advance Options. By default, Details is the active tab.
-
-5. On the Details Tab, do the following:
-
-   	a. In the **Instance Name**  (Virtual Machine (VM))box enter the name of the instance. For example :**dnsaas-installer**.
-
-  	 b.From the **Flavor** drop-down list and select the flavor. For example: **m1.small**
-
-6. On the **Access and Security** Tab, do the following:
-
- 	a. From the **Keypair** drop-down list, select an appropriate SSH keypair.
-	
-7. On the **Networking** Tab, select the **default-net** network, if it is not populated automatically.
-
-8. Click **Launch** to launch the Instance. You are taken to the Instances page with the progress bar displaying the completion progress.
-
-9. Select the launched instance in the Instance table.
+<!-- Remove or hide per Graham HORI-3315
 10. Click **More** against the instance to display the drop-down list and select **Associate Floating IP**. Manage Floating IP Associations box is displayed.
-
-11. Perform the following steps in the Manage Floating IP Associations:
-
-   	a. From the **IP Address** drop-down list, select the Floating IP address. Ensure that you remember the selected IP address.
-	
-   	b. From the **Port to be associated** drop-down list, select the  port.
-
-  	c. Click **Associate**.
-
-12. Click **Access and Security**. Access & Security page is displayed.
-13. Select the appropriate security group from the list and click **Manage Rules**. For example: select **default** as a security group. The page navigates to Manage Security Group Rules: &lt;name of security> page.
-
-14. Click **Add Rule**. Add Rule dialog box is displayed.
-
-15. In the **Port** box, enter the port value as **22**.
-
-16. (Optionally) Restrict the CIDR from which SSH connections should be allowed. <!-- (**how do we restrict CIDR? do we need to enter any value or select any value in the CIDR box??**) ?? -->
-
-17. Click **Add**.  The rule is added for the instance.<!-- (**What message is displayed after you click add??)** -->
-
-
-##Installing and configuring DNSaaS {#configure}
-
-**IMPORTANT**: During DNSaaS installation, non-deterministic failures within the infrastructure layer may cause the install to fail. If this occurs, DNSaaS installation should be retried up to two times.
-
-
-1. SSH to install VM.
-
-		$ ssh -i samplekey.pem debian@<Floating IP Address associated with the DNS Installer VM>
-
-
-	<!--
-	$ ssh debian@<Floating IP Address associated with the Installer Instance above> -->
-
-	**Note**: Before you begin the installation, you must create a configuration file. You can do this by modifying the sample configuration file included with the DNSaaS installer files.
-
-2. Create the SSH Public Key which is used by the Service VMs.
-
-	It is recommended to use the same SSH key which was used to boot the installer VM. If you choose to use a different SSH key, please ensure you retain both SSH private keys for future use.
-
-3. Copy the SSH Public Key. 
-
-		$ cp .ssh/authorized_keys id_rsa.pub
-
-
-4. Copy the sample configuration file to your home directory:
-
-     	$ cp /etc/dnsaas-installer/dnsaas-installer.conf.sample ~/dnsaas-installer.conf
-
-5. Edit your copy of the configuration file with the required changes:
- 
-    	$ nano dnsaas-installer.conf
-		
-   	A. DEFAULT section:
-
-	   * auth&#095;url &#8212; Keystone auth URL
-	   * target&#095;project&#095;name &#8212; Project name where the service is installed
-	   * target&#095;username &#8212; Username used to deploy and run the service
-	   * target&#095;region&#095;name &#8212; Region name to deploy the service in
-	    
-   	B. Designate section:
-
-	   * ssh&#095;public&#095;key &#8212; The SSH public key to be installed on the instances for management access
-	   * ntp&#095;server &#8212; An IP or DNS name for an NTP server to sync time with
-	   * database&#095;root&#095;password &#8212; Password for the database root user
-	   * database&#095;designate&#095;password &#8212; Password for the database designate user
-	   * database&#095;powerdns&#095;password &#8212; Password for the database powerdns user
-	   * messaging&#095;root&#095;password &#8212; Password for the messaging root user
-	   * messaging&#095;designate&#095;password &#8212; Password for the messaging designate user
-	   * keystone&#095;host &#8212; Hostname or IP address of Keystone endpoint.
-	  * service&#095;project &#8212; Project name for a user with permission to validate Keystone tokens
-	  * service&#095;user &#8212; Username for a user with permission to validate Keystone tokens
-	  * service&#095;password &#8212; Password for a user with permission to validate Keystone tokens
-	  * backend&#095;driver &#8212; Backend driver to use (powerdns, dynect, akamai)
-
- 	C. If you select MSDNS (Microsoft DNS Server) you must set the following options in the designate section:
-
-	 * msdns&#095;servers: A comma separated list of the Microsoft DNS servers short hostnames
-	 * messaging&#095;access&#095;cidr: A CIDR to allow inbound access from the Microsoft DNS servers
-
-
-	D. If you select DynECT you must set the following options in the designate section:
-
-	   * dynect&#095;customer&#095;name &#8212; Customer name provided by Dyn
-	   *  dynect&#095;username &#8212; Username provided by Dyn
-	   * dynect&#095;password &#8212; Password provided by Dyn
-
-
-	E. If you select Akamai you must set the following options in the designate section:
-	
-	   * akamai_username: The username that was set up as part of your Akamai signup
-	* akamai_password: The password that was set up as part of your Akamai signup
-	
-
-6. Run the installer validation command to verify the configuration file
-
-     	 $ dnsaas-installer --target-password <Target User Password> validate
-
-7. After you validate the configuration file, run the DNSaaS installer:
-
-      	 $ dnsaas-installer --target-password <Target User Password> install
-
-
-
-##Configure the Overcloud Load Balancer for DNSaaS {#configovercloud}
-
- You must configure HAProxy before you configure the overcloud Load Balance for DNaaS.
-
-To configure HAProxy use the following command: 
-
-	$ dnsaas-installer --target-password <Target User Password> haproxy
-
-The HA Proxy configuration file will be displayed as the sample below:
-	
-	2014-09-17 23:31:05.670       INFO HAProxy configuration
-	### START HAPROXY CONFIG
-	listen designate
-	  bind 0.0.0.0:9001
-	  mode tcp
-	  balance source
-	  option tcpka
-	  option tcplog
-	   
-	  server 10.22.171.32 10.22.171.32 check inter 2000 rise 2 fall 5
-	  server 10.22.171.22 10.22.171.22 check inter 2000 rise 2 fall 5
-	  server 10.22.171.21 10.22.171.21 check inter 2000 rise 2 fall 5
-	### END HAPROXY CONFIG
-
-
-After the configuration of HAProxy, SSH to all three overcloud controllers. 
-
-Perform the following steps on each controller node:
-
-1. SSH overcloud as root
-
-		ssh heat-admin@<IP address of overcloud>
-
-2. nano  `paas.cfg` to edit the configuration file 
-
- 		/etc/haproxy/manual/paas.cfg
-
-3. Paste the HA Proxy configuration file, which is generated in step 1, at the end of the `pass.cfg` file
-
-4. Save the `pass.cfg` file.
-
-		 CTRL+X
-
-5. Reload HA Proxy
-
-		service haproxy reload 
-
-6. Open the Designate API port in the firewall and run the following commands:
-
-   	a. Run
-	
-		iptables -I INPUT 1 -p tcp -m tcp --dport 9001 -j ACCEPT
-
-   	b. Run
-
-		iptables-save > /etc/iptables/iptables 
-
-
-## Registering the service with Keystone {#keyreg}
-
-You  can register the DNS service and endpoint as a user or an admin. 
-
-You do not have to immediately register the DNS service in Keystone; however, if you choose to register the DNS service and endpoint execute the following command:
- 
-User:
- 
-	dnsaas-installer --target-password password keystone-registration
-
-##Initial Service Configuration
-
-You must perform an initial configuration step to communicate the names of the servers that serve DNS to Designate. Please ensure you have a valid set of admin credentials in the standard OS_* environment variables before proceeding.
-
-For the "Nameserver FQDNs" gathered during the [prerequisites](#preq) step, issue a `server-create` command for each name to add the server:
- 
-	$ designate server-create --name ns1.example.com.
-
-For example :
-
-	designate server-create --name ns1.p13.dynect.net.
-
-##Additional backend install
-
-If you are using Microsoft DNS Server you should perform the following additional steps:
-
-1. Download Designate Microsoft DNS Agent installer.
-2. Execute the installer on each of the Microsoft DNS servers.
-3. Edit `msdnsagent.conf` files 
-
-		C:\Program Files (x86)\Designate\designate-msdnsagent.conf
-
-4. Restart the `designate-msdnsagent` service using the windows Services GUI. 
-
-##Post-install cleanup
-
-The installer VM is no longer required. Archive the configuration file and the SSH public and private keys used and optionally delete the dnsaas-installer instance.
-
-##Uninstall DNaaS {#uninstall}
-
-To uninstall the DNaaS:
-
-1. Enter the following command to list the DNaaS Stack ID:
-
-	`$ heat stack-list`
-
-
-2. Using python-heatclient and the Target Credentials supplied to the installer, verify the DNSaaS Stack ID and delete it.
-
-		$ heat stack-delete <stack ID>
-
-**Note**: Installer VM can also be deleted, if it is not deleted already.
-
-The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the [Keystone documentation](http://docs.openstack.org/developer/keystone/).
-
-##More Information {#moreinfo}
-For more information, see:
-
-* [HP Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/)
-* [Designate DNSaaS services for OpenStack](https://wiki.openstack.org/wiki/Designate)
-
-**Note**: Public Cloud API and HP Helion Openstack API details are similar.
-
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
-
-
+--></li>
+<li>
+<p>Generate a floating IP address to use:</p>
+
+<p>a. Open a shell.</p>
+
+<p>b. Make sure you have the nova command line client installed.</p>
+
+<p>c. Download the <xref type="section" href="#topic20357/target-cred">target credentials</xref> in an RC file, for example using Horizon.</p>
+
+<p>d. Source the credentials.</p>
+
+<codeblock>
+<codeph>source &lt;filename&gt;openrc.sh
+</codeph>
+</codeblock>
+
+<p>e. Run the <codeph>nova floating-ip-create</codeph> command to  return a floating IP address.</p>
+
+<p>f. Run the <codeph>nova floating-ip-associate dnsaas-installer &lt;floating-ip&gt;</codeph> command using the IP address you obtained in the previouis step.</p>
+</li>
+<li>
+<p>Perform the following steps in the Manage Floating IP Associations:</p>
+
+<p>a. From the <b>IP Address</b> drop-down list, select the Floating IP address. Ensure that you remember the selected IP address.</p>
+
+<p>b. From the <b>Port to be associated</b> drop-down list, select the  port.</p>
+
+<p>c. Click <b>Associate</b>.</p>
+</li>
+<li>
+<p>Click <b>Access and Security</b>. Access &amp; Security page is displayed.</p>
+</li>
+<li>
+<p>Select the appropriate security group from the list and click <b>Manage Rules</b>. For example: select <b>default</b> as a security group. The page navigates to Manage Security Group Rules: &lt;name of security&gt; page.</p>
+</li>
+<li>
+<p>Click <b>Add Rule</b>. Add Rule dialog box is displayed.</p>
+</li>
+<li>
+<p>In the <b>Port</b> box, enter the port value as <b>22</b>.</p>
+</li>
+<li>
+<p>(Optionally) Restrict the CIDR from which SSH connections should be allowed. <!-- (**how do we restrict CIDR? do we need to enter any value or select any value in the CIDR box??**) ?? --></p>
+</li>
+<li>
+<p>Click <b>Add</b>.  The rule is added for the instance.<!-- (**What message is displayed after you click add??)** --></p>
+</li>
+</ol>
+</section>
+<section id="configure"> <title>Installing and configuring DNSaaS</title>
+<p>
+<b>IMPORTANT</b>: During DNSaaS installation, non-deterministic failures within the infrastructure layer may cause the install to fail. If this occurs, DNSaaS installation should be retried up to two times.</p>
+<ol>
+<li>
+<p>SSH to install VM.</p>
+
+<codeblock>
+<codeph>ssh -i samplekey.pem debian@&lt;Floating IP Address associated with the DNS Installer VM&gt;
+</codeph>
+</codeblock>
+
+<!--
+$ ssh debian@<Floating IP Address associated with the Installer Instance above> -->
+
+<p>
+<b>Note</b>: Before you begin the installation, you must create a configuration file. You can do this by modifying the sample configuration file included with the DNSaaS installer files.</p>
+</li>
+<li>
+<p>Create the SSH Public Key which is used by the Service VMs.</p>
+
+<p>It is recommended to use the same SSH key which was used to boot the installer VM. If you choose to use a different SSH key, please ensure you retain both SSH private keys for future use.</p>
+</li>
+<li>
+<p>Copy the SSH Public Key.</p>
+
+<codeblock>
+<codeph>cp .ssh/authorized_keys id_rsa.pub
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Copy the sample configuration file to your home directory:</p>
+
+<codeblock>
+<codeph>cp /etc/dnsaas-installer/dnsaas-installer.conf.sample ~/dnsaas-installer.conf
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Edit your copy of the configuration file with the required changes:</p>
+
+<codeblock>
+<codeph>nano dnsaas-installer.conf
+</codeph>
+</codeblock>
+
+<p>A. DEFAULT section:</p>
+
+<ul>
+<li>
+<codeph>target_project_name</codeph> - Project name where the service is installed</li>
+<li>
+<codeph>target_username</codeph> - Username used to deploy and run the service</li>
+<li>
+<codeph>target_region_name</codeph> - Region name to deploy the service in</li>
+<li>
+<codeph>undercloud_vip</codeph>   This is the IP used to connect to the undercloud. This should be output by the Helion EE installer</li>
+<li>
+<codeph>overcloud_vip</codeph> - This is the IP used to connect to the undercloud. This should be output by the Helion EE installer</li>
+</ul>
+<p>B. Designate section:</p>
+
+<ul>
+<li>
+<codeph>ntp_servers</codeph> -List of NTP servers to use in the DNSaaS VMs.</li>
+<li>
+<codeph>ssh_public_key</codeph> - The SSH public key to be installed on the instances for management access</li>
+<li>
+<codeph>ca_certificate</codeph> - The CA Certificate used by the Overcloud API endpoints. This is available on the overcloud control nodes This should point to a CA cert file on disk.</li>
+<li>
+<codeph>database_root_password</codeph> - Password for the database root user. This should be over 16 characters.</li>
+<li>
+<codeph>database_designate_password</codeph> - Password for the database designate user. This should be over 16 characters.</li>
+<li>
+<codeph>database_powerdns_password</codeph> - Password for the database powerdns user. This should be over 16 characters.</li>
+<li>
+<codeph>messaging_root_password</codeph> - Password for the messaging root user. This should be over 16 characters.</li>
+<li>
+<codeph>messaging_designate_password</codeph> - Password for the messaging designate user. This should be over 16 characters.</li>
+<li>
+<codeph>service_project</codeph> - Project name for a user with permission to validate Keystone tokens</li>
+<li>
+<codeph>service_user</codeph> - Username for a user with permission to validate Keystone tokens</li>
+<li>
+<codeph>service_password</codeph> - Password for a user with permission to validate Keystone tokens</li>
+<li>
+<codeph>ephemeralca_password</codeph> - EphemeralCA Password. This must match the eCA password value from the overcloud passwords file. This should be output by the Helion EE installer</li>
+<li>
+<codeph>backend_driver</codeph> - Backend driver to use (powerdns, dynect, akamai)</li>
+<li>
+<codeph>enable_beaver</codeph> - Enable Central Logging Support</li>
+<li>
+<codeph>beaver_rabbit_password</codeph> - Beaver RabbitMQ Connection Password This must match the RabbitMQ password value from the undercloud passwords file. This should be output by the Helion EE installer</li>
+</ul>
+<p>C. If you select MSDNS (Microsoft DNS Server) you must set the following options in the designate section:</p>
+
+<ul>
+<li>
+<codeph>msdns_servers</codeph> - A comma separated list of the Microsoft DNS servers short hostnames.</li>
+<li>
+<codeph>msdns_also_notify</codeph> - List of IP addresses for name servers to notify when a zone is changed (Comma separated). These should be the IP addresses of the Microsoft DNS Servers. </li>
+<li>
+<codeph>messaging_access_cidr</codeph> - A CIDR to allow inbound access from the Microsoft DNS servers.</li>
+<li>
+<codeph>nameserver_allow_axfr_ips</codeph> - CIDRs that are allow do zone transfers from the PowerDNS servers (Required for use with akamai, DynECT and Microsoft) - list of IPs and / or CIDRs. (Comma separated). This should be set to allow connections from the Microsoft DNS Servers  </li>
+</ul>
+<p>D. If you select Akamai you must set the following options in the designate section:</p>
+
+<ul>
+<li>
+<codeph>akamai_username</codeph>: The username that was set up as part of your Akamai signup.</li>
+<li>
+<codeph>akamai_password</codeph>: The password that was set up as part of your Akamai signup.</li>
+<li>
+<codeph>akamai_also_notify</codeph> - List of IP addresses for name servers to notify when a zone is changed (Comma separated). These should be the IP addresses provided by Akamai during signup</li>
+<li>
+<codeph>nameserver_allow_axfr_ips</codeph> - CIDRs that are allow do zone transfers from the PowerDNS servers (Required for use with akamai, DynECT and Microsoft) - list of IPs and / or CIDRs. (Comma separated). This should be set to allow connections from the Akamai Zone Transfer Agents (provided during Akamai sign up)</li>
+</ul>
+<p>E. If you select DynECT you must set the following options in the designate section:</p>
+
+<ul>
+<li>
+<codeph>dynect_customer_name</codeph> - Customer name provided by DynECT signup.</li>
+<li>
+<codeph>dynect_username</codeph> - Username provided by DynECT signup.</li>
+<li>
+<codeph>dynect_password</codeph> - Password provided by DynECT signup.</li>
+<li>
+<codeph>dynect_also_notify</codeph> - List of hostnames for name servers to notify when a zone is changed (Comma separated). These should be the IP addresses provided by DynECT during signup.</li>
+<li>
+<codeph>nameserver_allow_axfr_ips</codeph> - CIDRs that are allow do zone transfers from the PowerDNS servers (Required for use with akamai, DynECT and Microsoft) - list of IPs and / or CIDRs. (Comma separated). This should be set to allow connections from the Akamai Zone Transfer Agents (provided during Akamai sign up). </li>
+</ul>
+</li>
+<li>
+<p>Run the installer validation command to verify the configuration file</p>
+
+<codeblock>
+<codeph> $ dnsaas-installer --target-password &lt;Target User Password&gt; validate
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>After you validate the configuration file, run the DNSaaS installer:</p>
+
+<codeblock>
+<codeph> $ dnsaas-installer --target-password &lt;Target User Password&gt; install
+</codeph>
+</codeblock>
+</li>
+</ol>
+</section>
+<section id="configovercloud"> <title>Configure the Overcloud Load Balancer for DNSaaS</title>
+<p>You must configure HAProxy before you configure the overcloud Load Balance for DNaaS.</p>
+<p>To configure HAProxy use the following command:</p>
+<codeblock>
+  <codeph>$ dnsaas-installer --target-password &lt;Target User Password&gt; haproxy
+</codeph>
+</codeblock>
+<p>The HA Proxy configuration file will be displayed as the sample below:</p>
+<codeblock>
+  <codeph>2014-09-17 23:31:05.670       INFO HAProxy configuration
+### START HAPROXY CONFIG
+listen designate
+  bind 0.0.0.0:9001
+  mode tcp
+  balance source
+  option tcpka
+  option tcplog
+  option httpchk GET /
+
+  server 10.22.171.32 10.22.171.32 check inter 2000 rise 2 fall 5
+  server 10.22.171.22 10.22.171.22 check inter 2000 rise 2 fall 5
+  server 10.22.171.21 10.22.171.21 check inter 2000 rise 2 fall 5
+### END HAPROXY CONFIG
+</codeph>
+</codeblock>
+<p>After the configuration of HAProxy, SSH to all three overcloud controllers.</p>
+<p>Perform the following steps on each controller node:</p>
+<ol>
+<li>
+<p>SSH overcloud and sudo:</p>
+
+<codeblock>
+<codeph>ssh heat-admin@&lt;IP address of overcloud&gt;
+sudo -i
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>nano  <codeph>paas.cfg</codeph> to edit the configuration file</p>
+
+<codeblock>
+<codeph>nano /etc/haproxy/manual/paas.cfg
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Paste the HA Proxy configuration file, which is generated in step 1, at the end of the <codeph>pass.cfg</codeph> file</p>
+</li>
+<li>
+<p>Save the <codeph>pass.cfg</codeph> file.</p>
+
+<codeblock>
+<codeph> CTRL+X
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Reload HA Proxy</p>
+
+<codeblock>
+<codeph>service haproxy reload 
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Open the Designate API port in the firewall and run the following commands:</p>
+
+<p>a. Run</p>
+
+<codeblock>
+<codeph>iptables -I INPUT 1 -p tcp -m tcp --dport 9001 -j ACCEPT
+</codeph>
+</codeblock>
+
+<p>b. Run</p>
+
+<codeblock>
+<codeph>iptables-save &gt; /etc/iptables/iptables 
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>If you are using MSDNS (Microsoft DNS Server) you must install an agent on each the Microsoft DNS server. These steps must be performed on each Microsoft DNS server to install the agent:</p>
+
+<p>The installer for the agent is in <codeph>/opt/stack/designate-msdnsagent/Openstack</codeph> on the DNSaaS Installer VM; this is the one that you booted to install DNSaaS. <!--A BR tag was used here in the original source.-->Download this file and distribute it to all the target Microsoft DNS Servers.</p>
+
+<p>a. Run the install.</p>
+
+<p>b. Open the DNS Configuration (in <b>Start &gt; Programs &gt; HP &gt; DNS Configuration</b>) and select <b>Run as Administrator</b>.</p>
+
+<p>c. In the window that displays:</p>
+
+<ul>
+<li>
+<b>RabbitMQ Hosts</b> - Enter the IP address for the Messaging Outputs, each entry on a line, with no commas. </li>
+<li>
+<b>RabbitMQ Port</b> - Leave the default.</li>
+<li>
+<b>RabbitMQ User</b> - Leave as the default (<codeph>designate</codeph>)</li>
+<li>
+<codeph>RabbitMQ Password / Confirm Password</codeph> - Enter the value of the <codeph>messaging_designate_password</codeph> value in the <codeph>dnsaas-installer.conf</codeph>.</li>
+<li>
+<b>Master DNS Servers</b> - Enter the IP addresses of the Nameserver Outputs, each entry on a line, with no commas.</li>
+<li>
+<b>Agent Name</b> - Enter one of the values set in <codeph>msdns_servers</codeph> config value, and unique per MS DNS server</li>
+<li>
+<codeph>CA Cert</codeph> - Enter the value of the <codeph>ephemeral-ca.crt</codeph> file on the seed cloud host.</li>
+</ul>
+<p>d. Click <b>Validate</b>.</p>
+
+<p>e. Click <b>Save</b>.</p>
+
+<p>f. Go to <b>Start &gt; Programs &gt; Administrative Tools &gt; Services</b>.</p>
+
+<p>g. Restart the <b><tm tmtype="reg">Openstack</tm> Service</b>.</p>
+</li>
+</ol>
+</section>
+<section id="keyreg"> <title>Registering the service with Keystone</title>
+<p>You  can register the DNS service and endpoint as a user or an admin.</p>
+<p>You do not have to immediately register the DNS service in Keystone; however, if you choose to register the DNS service and endpoint execute the following command:</p>
+<p>User:</p>
+<codeblock>
+  <codeph>dnsaas-installer --target-password &lt;Target User Password&gt; keystone-registration
+</codeph>
+</codeblock>
+</section>
+<section id="initial-service-configuration"> <title>Initial Service Configuration</title>
+<p>You must perform an initial configuration step to communicate the names of the servers that serve DNS to Designate. Please ensure you have a valid set of admin credentials in the standard OS_* environment variables before proceeding.</p>
+<p>For the "Nameserver FQDNs" gathered during the <xref type="section" href="#topic20357/preq">prerequisites</xref> step, issue a <codeph>server-create</codeph> command for each name to add the server:</p>
+<codeblock>
+  <codeph>$ designate server-create --name ns1.example.com.
+</codeph>
+</codeblock>
+<p>For example :</p>
+<codeblock>
+  <codeph>designate server-create --name ns1.p13.dynect.net.
+</codeph>
+</codeblock>
+</section>
+<section id="post-install-cleanup"> <title>Post-install cleanup</title>
+<p>The installer VM is no longer required. Archive the configuration file and the SSH public and private keys used and optionally delete the dnsaas-installer instance.</p>
+</section>
+<section id="uninstall"> <title>Uninstall DNaaS</title>
+<p>To uninstall the DNaaS:</p>
+<ol>
+<li>
+<p>Enter the following command to list the DNaaS Stack ID:</p>
+
+<p>
+<codeph>$ heat stack-list</codeph>
+</p>
+</li>
+<li>
+<p>Using python-heatclient and the Target Credentials supplied to the installer, verify the DNSaaS Stack ID and delete it.</p>
+
+<codeblock>
+<codeph>$ heat stack-delete &lt;stack ID&gt;
+</codeph>
+</codeblock>
+</li>
+</ol>
+<p>
+<b>Note</b>: Installer VM can also be deleted, if it is not deleted already.</p>
+<p>The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the <xref href="http://docs.openstack.org/developer/keystone/" scope="external" format="html" >Keystone documentation</xref>.</p>
+</section>
+<section id="increasequotas"> <title>Troubleshooting: Increasing Quotas</title>
+<p>If the associated project already has existing instances (VMs), the DNSaaS installation will not have sufficient room to complete. An admin must increase the quota levels to allow sufficient room before installation.</p>
+<ol>
+<li>Log in to the Horizon console.</li>
+<li>In the <b>Project</b> panel, click <b>Identity</b> and then click <b>Projects</b>.</li>
+<li>Find the project in the list and click <b>Modify Users</b>.</li>
+<li>Click <b>Edit Project</b> and then click the <b>Quota</b> tab.</li>
+<li>Increase the following quotas to create sufficient room:
+
+<ul>
+<li>Instances: Add 16</li>
+<li>RAM: Add 44 GB </li>
+<li>Volumes: Add 6</li>
+<li>Storage: Add 240 GB</li>
+</ul>
+</li>
+<li>Click <b>Save</b>.</li>
+</ol>
+</section>
+<section id="moreinfo"> <title>More Information</title>
+<p>For more information, see:</p>
+<ul>
+<li>
+<xref href="https://docs.hpcloud.com/api/dns/" scope="external" format="html" >HP Helion Public Cloud DNS API Specifications</xref>
+</li>
+<li>
+<xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for <tm tmtype="reg">Openstack</tm></xref>
+</li>
+</ul>
+<p>
+<b>Note</b>: Public Cloud API and HP Helion Openstack API details are similar.</p>
+<p>
+  <xref type="section" href="#topic20357"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

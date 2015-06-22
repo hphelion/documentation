@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic14809">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Installation: Deploy and Configure HP StoreVirtual VSA</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Installation: Deploy and Configure HP StoreVirtual VSA</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Installation: Deploy and Configure HP StoreVirtual VSA</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: Installation: Deploy and Configure HP StoreVirtual VSA</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B, Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -22,9 +22,9 @@
  <!--permalink: /helion/openstack/1.1/install/vsa/--></p>
 <p/>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update Helion <tm tmtype="reg">Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
 <p>This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend. It covers the following topics:</p>
 <ul>
 <li>
@@ -73,7 +73,7 @@
 </p>
 <!--1 - **Install CMC**
      
-   [Install CMC](#install-hp-storevirtual-cmc) on the seed node where the seed cloud is running. The CMC binary comes with the HP Helion OpenStack(R) installer and is present in the **Tripleo** directory. 
+   [Install CMC](#install-hp-storevirtual-cmc) on the seed node where the seed cloud is running. The CMC binary comes with the HP Helion <tm tmtype="reg">Openstack</tm> installer and is present in the **Tripleo** directory. 
 
 2 - **Add VSA Baremetal nodes to ironic database**
     
@@ -130,7 +130,7 @@
    * Execute [update cloud script](/helion/openstack/1.1/undercloud/oc/config/storevirtual/) from seed cloud. -->
 </section>
 <section id="install-hp-storevirtual-cmc"> <title>Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux</title>
-<p>In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP Helion OpenStack(R) management network.</p>
+<p>In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP Helion <tm tmtype="reg">Openstack</tm> management network.</p>
 </section>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
@@ -138,7 +138,7 @@
 <p>You must be running the X Windows System to install the CMC.</p>
 </li>
 <li>
-<p>We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack(R) management network.</p>
+<p>We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion <tm tmtype="reg">Openstack</tm> management network.</p>
 </li>
 </ul>
 <p>
@@ -159,7 +159,7 @@
 <section id="installation"> <title>Installation</title>
 <ol>
 <li>
-<p>Verify if the CMC installer file inside <codeph>tripleo</codeph> directory (packaged with the HP Helion OpenStack(R) installer) has executable permission. If not, execute the following command:</p>
+<p>Verify if the CMC installer file inside <codeph>tripleo</codeph> directory (packaged with the HP Helion <tm tmtype="reg">Openstack</tm> installer) has executable permission. If not, execute the following command:</p>
 
 <codeblock>
 <codeph># chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
@@ -234,7 +234,7 @@ java -jar UI.jar
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic14809/top"> Return to Top </xref>
+  <xref type="section" href="#topic14809"> Return to Top </xref>
 </p>
 </section>
 <section id="deploy-vsa"> <title>Deploying HP StoreVirtual VSA</title>
@@ -276,10 +276,10 @@ java -jar UI.jar
 <p>Seed Cloud is installed and is running.</p>
 </li>
 </ul>
-<p>The license for the StoreVirtual VSA license is bundled with HP Helion OpenStack(R) and has a maximum limit of 50 TB per node. Hence the total amount of the configured storage on an individual StoreVirtual node should not exceed 50 TB. To extend the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16 nodes, which means configured storage on a VSA cluster can be as much as 800 TB.</p>
+<p>The license for the StoreVirtual VSA license is bundled with HP Helion <tm tmtype="reg">Openstack</tm> and has a maximum limit of 50 TB per node. Hence the total amount of the configured storage on an individual StoreVirtual node should not exceed 50 TB. To extend the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16 nodes, which means configured storage on a VSA cluster can be as much as 800 TB.</p>
 <p>
 <!--
-**Note**: Use of StoreVirtual VSA is included with your Helion OpenStack(R) license.  When installing StoreVirtual VSA under the Helion OpenStack(R) license, the CMC may display a message that some features are not licensed. This message displays in error and can be ignored if you have licensed the physical server with a Helion OpenStack(R) license. 
+**Note**: Use of StoreVirtual VSA is included with your Helion <tm tmtype="reg">Openstack</tm> license.  When installing StoreVirtual VSA under the Helion <tm tmtype="reg">Openstack</tm> license, the CMC may display a message that some features are not licensed. This message displays in error and can be ignored if you have licensed the physical server with a Helion <tm tmtype="reg">Openstack</tm> license. 
 -->
 <!--<img src="/media/storevirtual-cluster-network-diagram1.png"/>--></p>
 </section>
@@ -359,7 +359,7 @@ java -jar UI.jar
  <!--   **Note**: While deploying a scale-out **proxy** node ensure that the value of `vsa_scale` is unchanged. While deploying a scale-out **object** node ensure that the value of `vsa_ao_scale` is unchanged.-->
 <b>NOTE</b>: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/VM  other than the storage systems in the SAN.</p>
 <p>
-  <xref type="section" href="#topic14809/top"> Return to Top </xref>
+  <xref type="section" href="#topic14809"> Return to Top </xref>
 </p>
 </section>
 <section id="setting-the-public-interface-parameter"> <title>Setting the public interface parameter</title>
@@ -537,7 +537,7 @@ from the above steps.</p>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic14809/top"> Return to Top </xref>
+  <xref type="section" href="#topic14809"> Return to Top </xref>
 </p>
 </section>
 <section id="adding-a-node"> <title>Adding HP StoreVirtual VSA System to an existing Management Group</title>
@@ -584,7 +584,7 @@ from the above steps.</p>
 <p>
 <xref href="../../commercial/GA1/1.1commercial.undercloud-storage-storevirtual.dita" >Working with HP StoreVirtual VSA</xref> REQUIRED</p>
 <p>
-  <xref type="section" href="#topic14809/top"> Return to Top </xref>
+  <xref type="section" href="#topic14809"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

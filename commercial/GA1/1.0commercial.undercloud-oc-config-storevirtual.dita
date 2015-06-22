@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7833">
-<title>HP Helion OpenStack(R) 1.0: Working With StoreVirtual Backends</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Working With StoreVirtual Backends</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.undercloud-oc-config-storevirtual.md-->
  <!--permalink: /helion/openstack/undercloud/oc/config/storevirtual/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.undercloud-oc-config-storevirtual.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>Once you register the StoreVirtual clusters as per your requirements, you can use the overcloud option in the Horizon undercloud dashboard for the following tasks:</p>
 <ul>
@@ -130,7 +130,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic7833/top"> Return to Top </xref>
+  <xref type="section" href="#topic7833"> Return to Top </xref>
 </p>
 </section>
 <section id="shrink-backend"> <title>Shrink backend</title>
@@ -183,7 +183,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic7833/top"> Return to Top </xref>
+  <xref type="section" href="#topic7833"> Return to Top </xref>
 </p>
 </section>
 <section id="generate-config"> <title>Generate configuration</title>
@@ -296,7 +296,7 @@
 <section id="next-steps"> <title>Next Steps</title>
 <p>To use the newly added Cinder backend, create volume type and associate it with this backend using <xref href="../../commercial/GA1/1.0commercial.map.volumetype.dita" >Horizon Overcloud Dashboard</xref> or Cinder CLI.</p>
 <p>
-  <xref type="section" href="#topic7833/top"> Return to Top </xref>
+  <xref type="section" href="#topic7833"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

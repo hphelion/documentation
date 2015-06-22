@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./publiccloud/cli.windows.2.release-notes.md-->
  <!--permalink: /publiccloud/cli/windows/release-notes/--></p>
-<p>These are the release notes for the HP Helion Public Cloud CLI software for Windows PowerShell.  The current release number for the <xref href="/cli/windows" >HP Helion Public Cloud CLI software for Windows PowerShell</xref> is version 1.3.5.7, released on 11/15/2013.  These release notes contain the following information:</p>
+<p>These are the release notes for the HP Helion Public Cloud CLI software for Windows PowerShell.  The current release number for the <xref href="../publiccloud/cli.windows.2.dita" >HP Helion Public Cloud CLI software for Windows PowerShell</xref> is version 1.3.5.7, released on 11/15/2013.  These release notes contain the following information:</p>
 <ul>
 <li>
 <xref type="section" href="#topic5095/v1339">Release 1.3.3.9 Features</xref>
@@ -34,7 +34,7 @@
 </li>
 </ul>
 <p>
-<xref href="/file/WinCLI-1.3.5.7.zip" >Please download the latest version of the HP Helion Public Cloud CLI software for Windows PowerShell (Version 1.3.5.7)</xref>!</p>
+  <xref href="../file/WinCLI-1.3.5.7.zip" scope="external" format="html" >Please download the latest version of the HP Helion Public Cloud CLI software for Windows PowerShell (Version 1.3.5.7)</xref>!</p>
 <!--##Release 1.3.5.7 Features## {#v1357}
 
 This release was made available on 11/15/2013 and contains the following new features:
@@ -85,7 +85,7 @@ This release was made available on 11/15/2013 and contains the following new fea
 </li>
 </ul>
 </section>
-<section id="known-issues"> <title>Known Issues</title>
+<section id="known-issues2"> <title>Known Issues</title>
 <ul>
 <li>
 <b>Issue</b>: You cannot add a new security group rule to an existing security group.<!--A BR tag was used here in the original source.--><i>WorkAround</i>: Use the 
@@ -98,7 +98,7 @@ This release was made available on 11/15/2013 and contains the following new fea
 <li>Support for changing the color assigned to an availability zone.</li>
 </ul>
 </section>
-<section id="known-issues"> <title>Known Issues</title>
+<section id="known-issues3"> <title>Known Issues</title>
 <p>None this release.</p>
 </section>
 <section id="v1301"> <title>Release 1.3.0.1 Features</title>
@@ -108,7 +108,7 @@ This release was made available on 11/15/2013 and contains the following new fea
 <li>Support for creating and removing block storage snapshots</li>
 </ul>
 </section>
-<section id="known-issues"> <title>Known Issues</title>
+<section id="known-issues4"> <title>Known Issues</title>
 <ul>
 <li>
 <b>Resolved</b>: You can now access the keypair information from the command-line interface (CLI).</li>
@@ -122,20 +122,20 @@ This release was made available on 11/15/2013 and contains the following new fea
 <i>Migrate-Drive</i>: This object storage command gives you the capability to migrate existing stores of data from external sources like S3, Dropbox and Skydrive to a target Container within HP Object Storage, saving you the trouble of having to do it by hand or (worse) one file at a time.  Take a look at <xref href="http://h30529.www3.hp.com/t5/HP-Scaling-the-Cloud-Blog/Migrating-your-files-with-the-Windows-CLI/ba-p/523" scope="external" format="html" >Travis' blog post</xref> on this feature for more info.</li>
 </ul>
 </section>
-<section id="known-issues"> <title>Known Issues</title>
+<section id="known-issues5"> <title>Known Issues</title>
 <p>None this release.</p>
 </section>
 <section id="v1201"> <title>Release 1.2.0.1 Information</title>
 </section>
-<section id="new-features"> <title>New Features</title>
+<section id="new-features2"> <title>New Features</title>
 <ul>
 <li>
-<i>Nova compute</i>: Full access to the OpenStack(R) Nova compute infrastructure via the Windows command line, allowing you to manage and manipulate servers, flavors, images, keypairs, security groups, and so on.</li>
+<i>Nova compute</i>: Full access to the <tm tmtype="reg">Openstack</tm> Nova compute infrastructure via the Windows command line, allowing you to manage and manipulate servers, flavors, images, keypairs, security groups, and so on.</li>
 <li>
 <i>CDN</i>: Support through the CLI for the HP Helion Public Cloud Services content delivery network (CDN), providing you with distributed caching of object storage objects on geographically dispersed caching servers. Copies of the object are stored at a location more convenient to the end user system, allowing for better performance.</li>
 </ul>
 </section>
-<section id="known-issues"> <title>Known Issues</title>
+<section id="known-issues6"> <title>Known Issues</title>
 <ul>
 <li>
 <b>Issue</b>: You cannot access the keypair information from the command-line interface (CLI).<!--A BR tag was used here in the original source.--><i>WorkAround</i>: Access the keypair information through the management console.</li>

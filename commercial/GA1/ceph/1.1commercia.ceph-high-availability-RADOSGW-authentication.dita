@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8041">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Ceph RADOS Gateway- Keystone Authentication</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Ceph RADOS Gateway- Keystone Authentication</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Ceph RADOS Gateway- Keystone Authentication</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: Ceph RADOS Gateway- Keystone Authentication</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -27,9 +27,9 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commercia.ceph-high-availability-RADOSGW-authentication.md-->
  <!--permalink: /helion/openstack/1.1/ceph-rados-gateway-keystone-authentication/--></p>
-<p>Integrating the RADOS Gateway with the Helion OpenStack(R) identity service (Keystone) sets up the Gateway to authorize and accept Keystone users automatically. Users are created in RADOS pools provided they have valid Keystone token. For more details see, <xref href="http://ceph.com/docs/master/radosgw/keystone/" scope="external" format="html" >Ceph OpenStack(R) documentation</xref>
+<p>Integrating the RADOS Gateway with the Helion <tm tmtype="reg">Openstack</tm> identity service (Keystone) sets up the Gateway to authorize and accept Keystone users automatically. Users are created in RADOS pools provided they have valid Keystone token. For more details see, <xref href="http://ceph.com/docs/master/radosgw/keystone/" scope="external" format="html" >Ceph <tm tmtype="reg">Openstack</tm> documentation</xref>
 </p>
-<p>Helion OpenStack(R) 1.1 and 1.1.1 HAProxy can be used to enable high availability and load balancing for RADOS Gateway nodes. With HAProxy, Swift requests are load balanced between two gateway nodes. If one of them goes down, then all requests are processed by the remaining live node. Once the failed node recovers, load balancing is re-enabled. Load balancing is done using the round robin algorithm so that each node is used in turn, and load balancing is fair.</p>
+<p>Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1 HAProxy can be used to enable high availability and load balancing for RADOS Gateway nodes. With HAProxy, Swift requests are load balanced between two gateway nodes. If one of them goes down, then all requests are processed by the remaining live node. Once the failed node recovers, load balancing is re-enabled. Load balancing is done using the round robin algorithm so that each node is used in turn, and load balancing is fair.</p>
 <section id="assumptions"> <title>Assumptions</title>
 <p>The following assumptions apply to this configuration:</p>
 <ul>
@@ -43,7 +43,7 @@
 </ul>
 </section>
 <section id="steps"> <title>Steps</title>
-<p>The steps to achieve integration of Helion OpenStack(R) HAProxy, Keystone, and RADOSGW are:</p>
+<p>The steps to achieve integration of Helion <tm tmtype="reg">Openstack</tm> HAProxy, Keystone, and RADOSGW are:</p>
 </section>
 <section id="ceph-admin-node"> <title>Ceph Admin Node</title>
 <ul>
@@ -332,7 +332,7 @@ s3User.buckets
 [Ceph Related Topics]( /helion/openstack/1.1/ceph/ceph-related-topics/)
 -->
 <p>
-  <xref type="section" href="#topic8041/top"> Return to Top </xref>
+  <xref type="section" href="#topic8041"> Return to Top </xref>
 </p>
 </section>
 </body>

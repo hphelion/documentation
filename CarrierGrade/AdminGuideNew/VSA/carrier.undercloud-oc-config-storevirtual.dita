@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7865">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Working With StoreVirtual Backends</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Working With StoreVirtual Backends</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) Carrier Grade"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack Carrier Grade"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) Carrier Grade"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack Carrier Grade"/>
 </metadata>
 </prolog>
 <body>
@@ -134,7 +134,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic7865/top"> Return to Top </xref>
+  <xref type="section" href="#topic7865"> Return to Top </xref>
 </p>
 </section>
 <section id="shrink-backend"> <title>Shrink backend</title>
@@ -187,7 +187,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic7865/top"> Return to Top </xref>
+  <xref type="section" href="#topic7865"> Return to Top </xref>
 </p>
 </section>
 <section id="generate-config"> <title>Generate configuration</title>
@@ -300,7 +300,7 @@
 <section id="next-steps"> <title>Next Steps</title>
 <p>To use the newly added Cinder backend, create volume type and associate it with this backend using <xref href="../../../commercial/GA1/carrier-grade-map.volumetype.dita" >Horizon Overcloud Dashboard</xref> or Cinder CLI.</p>
 <p>
-  <xref type="section" href="#topic7865/top"> Return to Top </xref>
+  <xref type="section" href="#topic7865"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20505">
-<title>HP Helion OpenStack(R) 1.0: Sirius CLI Workflow</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Sirius CLI Workflow</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Sunitha K, Deepali V, Vandana S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -24,7 +24,7 @@
  <!--./commercial/GA1/1.0commercial.sirius-cli-workflow.md-->
  <!--permalink: /helion/openstack/sirius/cli/workflow/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.sirius-cli-workflow.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>This page describes the workflow for adding HP StoreVirtual and HP 3PAR StoreServ integration to your cloud using the Sirius CLI.</p>
 <ul>
@@ -60,7 +60,7 @@
   <xref format="html" href="javascript:window.open('/media/sirius-cli-processflow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Process Flow Diagram (opens in a new window)</xref>
 </p>
 <p>
-  <xref type="section" href="#topic20505/top"> Return to Top </xref>
+  <xref type="section" href="#topic20505"> Return to Top </xref>
 </p>
 </section>
 <section id="add-configure-storevirtual"> <title>Add and configure HP StoreVirtual to your cloud inventory</title>
@@ -167,7 +167,7 @@ hplefthand_username=shausy
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic20505/top"> Return to Top </xref>
+  <xref type="section" href="#topic20505"> Return to Top </xref>
 </p>
 </section>
 <section id="add-configure-storeserv"> <title>Add HP 3PAR StoreServ to your cloud inventory and configure</title>
@@ -196,9 +196,8 @@ hplefthand_username=shausy
 </codeph>
 </codeblock>
 <p>
-<i>Additional arguments</i>: --iscsi-ip <required-cleanup remap="iscsi_ip">
+<i>Additional arguments</i>: --iscsi-ip 
 <ph> [required for iSCSI type devices].</ph>
-</required-cleanup>
 </p>
 <p>The sample output of the above command is given below:</p>
 <codeblock>
@@ -320,7 +319,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic20505/top"> Return to Top </xref>
+  <xref type="section" href="#topic20505"> Return to Top </xref>
 </p>
 </section>
 <section id="reconfigure-update"> <title>Reconfigure and update cloud</title>
@@ -542,7 +541,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 <section id="more-information"> <title>More Information</title>
 <p>For the complete list of Sirius CLI commands, refer to  the <xref href="../../commercial/GA1/1.0commercial.sirius-cli.dita" >Sirius Manual</xref>.</p>
 <p>
-  <xref type="section" href="#topic20505/top"> Return to Top </xref>
+  <xref type="section" href="#topic20505"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

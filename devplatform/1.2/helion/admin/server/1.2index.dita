@@ -36,9 +36,10 @@ virtualization host.</p>
 <p>
 <b>Security Note</b>: If the Application Lifecycle Service server is running on a publicly routable network, the password should be changed as soon as possible.</p>
 <p>
-  <b>Note</b>
-</p>
-<p>If the cluster was created using the Horizon Management Console Panel or Application Lifecycle Service Installer CLI, you must log in with your SSH key you selected during cluster creation.</p>
+        <note>If the cluster was created using the Horizon Management Console Panel or Application
+          Lifecycle Service Installer CLI, you must log in with your SSH key you selected during
+          cluster creation.</note>
+      </p>
 <p>Command access to the Application Lifecycle Service server is available in several ways:</p>
 <ul>
 <li>
@@ -47,24 +48,15 @@ virtualization host.</p>
 <li>
 <p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" >Application Lifecycle Service Client</xref> command, which in addition to specialized functions can provide remote shell access to the server:</p>
 
-<codeblock>
-<codeph>helion target helion@helion-xxxx.local
-helion ssh api
-</codeph>
-</codeblock>
+<codeblock>helion target helion@helion-xxxx.local
+helion ssh api</codeblock>
 </li>
 <li>
 <p>The familiar <codeph>ssh</codeph> command:</p>
 
-<codeblock>
-<codeph>ssh helion@helion-xxxx.local
-</codeph>
-</codeblock>
+<codeblock>ssh helion@helion-xxxx.local</codeblock>
 </li>
 </ul>
-<p>
-<b>Note</b>
-<!-- For ssh access on Windows, we recommend [MSYS](http://sourceforge.net/apps/trac/mingw-w64/wiki/MSYS).--></p>
 <p>On the server, the control command for Application Lifecycle Service is called
 <codeph>kato</codeph>. It is used for configuration and node
 management procedures such as start, stop, role specialization, and

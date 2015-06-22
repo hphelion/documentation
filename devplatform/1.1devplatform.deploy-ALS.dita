@@ -25,7 +25,7 @@
  <!--./devplatform/1.1devplatform.deploy-ALS.md-->
  <!--permalink: /helion/devplatform/1.1/deploy/--></p>
 <p>
-<xref href="../devplatform/1.0devplatform.deploy-ALS.dita" >See the Helion 1.0 Development Platform version of this page</xref>
+
 This document explains the process to configure and deploy an Application Lifecycle Service (ALS) cluster from the Horizon user interface.</p>
 <p>The document covers the following sections:</p>
 <ul>
@@ -82,7 +82,7 @@ This document explains the process to configure and deploy an Application Lifecy
 </p>
 </li>
 <li>
-<p>Select the <b>Database</b> tab of the <b>Create</b> <b>Cluster</b> dialog, and choose the databases to enable in the cluster. Detailed notes on how to create or connect to an OpenStack(R) MySQL database can be found <xref href="../devplatform/1.1devplatform.database-ALS.dita" >here</xref>. <!--A BR tag was used here in the original source.--><image href="../media/ALSConfig5.png" placement="break"/>
+<p>Select the <b>Database</b> tab of the <b>Create</b> <b>Cluster</b> dialog, and choose the databases to enable in the cluster. Detailed notes on how to create or connect to an <tm tmtype="reg">Openstack</tm> MySQL database can be found <xref href="../devplatform/1.1devplatform.database-ALS.dita" >here</xref>. <!--A BR tag was used here in the original source.--><image href="../media/ALSConfig5.png" placement="break"/>
 </p>
 </li>
 <li>

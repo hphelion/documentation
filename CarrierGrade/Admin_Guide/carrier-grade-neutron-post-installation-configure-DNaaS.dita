@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic15074">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): DNSaaS Configuration (Optional)</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): DNSaaS Configuration (Optional)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Network Administrator"/>
 <othermeta name="role" content="Network Architect"/>
 <othermeta name="role" content="Vikas Deolaliker, Paul Kevin"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack(R) 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -24,8 +24,8 @@
  <!--./CarrierGrade/Admin_Guide/carrier-grade-neutron-post-installation-configure-DNaaS.md-->
  <!--permalink: /helion/openstack/carrier/services/neutron/post/installation/configure-dnsaas/--></p>
 <p>Configuring Domain Name System as a service (DNSaaS) is optional.</p>
-<p>Our managed DNS service, based on the OpenStack(R) Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
-<p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack(R)</p>
+<p>Our managed DNS service, based on the <tm tmtype="reg">Openstack</tm> Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
+<p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion <tm tmtype="reg">Openstack</tm></p>
 <p>
 <b>Caution</b>: Before migrating to DNSaaS 1.01, you <b>
 <varname>must</varname>
@@ -72,7 +72,7 @@
 <varname>must</varname>
 </b> first <xref type="section" href="#topic15074/uninstall">uninstall</xref> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.01 over the previous version. </p>
 <ul>
-<li>HP Helion OpenStack(R) is successfully installed</li>
+<li>HP Helion <tm tmtype="reg">Openstack</tm> is successfully installed</li>
 <li>Download <xref type="section" href="#topic15074/publication">DNSaaS Installer Image</xref> </li>
 <li>
 <p>Obtain <xref type="section" href="#topic15074/target-cred">Target Credentials</xref>: credentials of the user+tenant where the service is to be deployed.</p>
@@ -583,13 +583,13 @@ listen designate
 <xref href="https://docs.hpcloud.com/api/dns/" scope="external" format="html" >HP Helion Public Cloud DNS API Specifications</xref>
 </li>
 <li>
-<xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for OpenStack(R)</xref>
+<xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for <tm tmtype="reg">Openstack</tm></xref>
 </li>
 </ul>
 <p>
 <b>Note</b>: Public Cloud API and HP Helion Openstack API details are similar.</p>
 <p>
-  <xref type="section" href="#topic15074/top"> Return to Top </xref>
+  <xref type="section" href="#topic15074"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

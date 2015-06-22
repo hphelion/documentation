@@ -112,7 +112,7 @@
             <li>Add a keypair if you don't have one already, by selecting the <b>+</b> link. If you
               are adding a keypair, you will be prompted to supply a name and a public key. You can
               generate a public key in *nix using <xref href="http://linux.die.net/man/1/ssh-keygen"
-                scope="external" format="html">ssh-keygen</xref> or Windows(R) using <xref
+                scope="external" format="html">ssh-keygen</xref> or <tm tmtype="reg">Windows</tm> using <xref
                 href="http://the.earth.li/~sgtatham/putty/0.63/htmldoc/Chapter8.html#pubkey-puttygen"
                 scope="external" format="html">puTTYgen</xref>. Insert public key text and click the
                 <b>Import Key Pair</b> button.</li>

@@ -68,7 +68,7 @@
 <p>The Application Lifecycle Service VM is a stand-alone <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-micro-cloud" >micro cloud</xref> virtual machine with all the components necessary for running a test environment in one instance. For use on a larger scale, the VM can be cloned and assigned specific roles: Router, Cloud Controller, Droplet Execution
 Agents (DEAs, or worker nodes), or specific database services.</p>
 <p>
-  <image href="/content/documentation/devplatform/helion/images/helion-architecture-diagram.png"/>
+  <image href="../../../../../media/helion-architecture-diagram.png"/>
 </p>
 <section id="architecture-roles"> <title>Roles</title>
 </section>
@@ -129,10 +129,7 @@ application instances.</p>
 <section id="architecture-role-groups"> <title>Role Groups</title>
 <p>Role groups represent a set of roles. For example the <b>data-services</b>
 group provides all databases plus RabbitMQ and the filesystem service:</p>
-<codeblock>
-  <codeph>kato role add data-services
-</codeph>
-</codeblock>
+<codeblock>kato role add data-services</codeblock>
 <p>Additional groups can be defined by administrators in
 <i>/s/etc/kato/role_groups.yml</i>.</p>
 </section>

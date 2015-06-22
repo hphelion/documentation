@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1434">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Setting Up Flavors Using the CLI</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Setting Up Flavors Using the CLI</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -24,38 +24,28 @@
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>Available flavors and their IDs can be listed using the following command:</p>
-<codeblock>
-  <codeph>nova flavor-list
-</codeph>
-</codeblock>
+<codeblock><codeph>nova flavor-list
+</codeph></codeblock>
 <ol>
-<li>
-<p>Define the flavor <codeph>example-guest.tiny</codeph>.</p>
-
-<codeblock>
-<codeph>nova flavor-create example-guest.tiny 100 512 0 1 \
+<li>Define the flavor
+          <codeph>example-guest.tiny</codeph>.<codeblock><codeph>nova flavor-create example-guest.tiny 100 512 0 1 \
 --dedicated-cpus true
-</codeph>
-</codeblock>
-
-<p>The flavor <codeph>example-guest.tiny</codeph> is created with ID 100. New virtual machines using this flavor are allocated 512 MB of memory, no disks, and one dedicated virtual CPU.</p>
-</li>
-<li>
-<p>Define the flavor <codeph>example-guest.small</codeph>.</p>
-
-<codeblock>
-<codeph>nova flavor-create example-guest.small 101 512 0 2 \
+</codeph></codeblock><p>The
+          flavor <codeph>example-guest.tiny</codeph> is created with ID 100. New virtual machines
+          using this flavor are allocated 512 MB of memory, no disks, and one dedicated virtual
+          CPU.</p></li>
+<li>Define the flavor
+          <codeph>example-guest.small</codeph>.<codeblock><codeph>nova flavor-create example-guest.small 101 512 0 2 \
 --dedicated-cpus true
-</codeph>
-</codeblock>
-
-<p>The flavor <codeph>example-guest.small</codeph> is created with ID 101. New virtual machines using this flavor are allocated 512 MB of memory, no disks, and two dedicated virtual CPUs.</p>
-
-<p>The two flavors <codeph>example-guest.tiny</codeph> and <codeph>example-guest.small</codeph> are now available. You can use them as resource allocation directives when launching new virtual machines.</p>
-</li>
+</codeph></codeblock><p>The
+          flavor <codeph>example-guest.small</codeph> is created with ID 101. New virtual machines
+          using this flavor are allocated 512 MB of memory, no disks, and two dedicated virtual
+          CPUs.</p><p>The two flavors <codeph>example-guest.tiny</codeph> and
+            <codeph>example-guest.small</codeph> are now available. You can use them as resource
+          allocation directives when launching new virtual machines.</p></li>
 </ol>
 <p>
-  <xref type="section" href="#topic1434/top"> Return to Top </xref>
+  <xref type="section" href="#topic1434"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

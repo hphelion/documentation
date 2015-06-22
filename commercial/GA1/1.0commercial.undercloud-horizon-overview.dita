@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic934">
-<title>HP Helion OpenStack(R) 1.0: Undercloud Horizon Overview</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Undercloud Horizon Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.undercloud-horizon-overview.md-->
  <!--permalink: /helion/openstack/undercloud/horizon/overview/--></p>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.undercloud-horizon-overview.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 Once you complete the undercloud and the overcloud installations, you can access the undercloud Horizon dashboard, which is the management interface for the undercloud.</p>
 <section id="dashboard-features"> <title>Dashboard Features</title>
 <p>The Horizon Dashboard displays the Overview page by default, and provides options in the left panel.</p>
@@ -34,7 +34,7 @@ Once you complete the undercloud and the overcloud installations, you can access
 </ul>
 <p>The name of the user (who is logged in) is shown on the top bar along with a drop-down menu.</p>
 <p>
-  <xref type="section" href="#topic934/top"> Return to Top </xref>
+  <xref type="section" href="#topic934"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

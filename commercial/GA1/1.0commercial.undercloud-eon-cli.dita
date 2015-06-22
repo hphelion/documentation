@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5839">
-<title>HP Helion OpenStack(R) 1.0: Command Line Interface- EON</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Command Line Interface- EON</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,7 +13,7 @@
  <!--./commercial/GA1/1.0commercial.undercloud-eon-cli.md-->
  <!--permalink: /helion/openstack/undercloud/eon/cli/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.1commercial.undercloud-eon-cli.dita" >See the Helion OpenStack(R) 1.1 version of this page</xref>
+
 </p>
 <p>The EON client CLI package provides an http-client coupled command-line tool for managing Eon (ESX management) services.</p>
 <p>You can issue the following command using the EON client CLI package in the undercloud:</p>
@@ -85,7 +85,7 @@
 </codeph>
 </codeblock>
 <p>
-<b>Note</b>: HP Helion OpenStack(R) supports three vCenters.</p>
+<b>Note</b>: HP Helion <tm tmtype="reg">Openstack</tm> supports three vCenters.</p>
 <ul>
 <li>
 <p>&lt;VCENTER_NAME&gt;: Name of the vCenter</p>
@@ -216,48 +216,48 @@
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic5839/top"> Return to Top </xref>
+  <xref type="section" href="#topic5839"> Return to Top </xref>
 </p>
 </section>
 <section id="required-arguments"> <title>Required Commands</title>
 <p>The following options must be supplied as arguments or as environment variables.</p>
 </section>
 <section id="os-username"> <title>OS username<!--Removed anchor point os-username--><!-- id="os-username" --></title>
-<p>Username of the keystone (OpenStack(R) environment). Defaults to env[OS_USERNAME].</p>
+<p>Username of the keystone (<tm tmtype="reg">Openstack</tm> environment). Defaults to env[OS_USERNAME].</p>
 <codeblock>
   <codeph># --os-username OS_USERNAME
 </codeph>
 </codeblock>
 </section>
 <section id="os-password"> <title>OS password<!--Removed anchor point os-password--><!-- id="os-password" --></title>
-<p>Password of the keystone (OpenStack(R) environment).  Defaults to env[OS_PASSWORD].</p>
+<p>Password of the keystone (<tm tmtype="reg">Openstack</tm> environment).  Defaults to env[OS_PASSWORD].</p>
 <codeblock>
   <codeph># --os-password OS_PASSWORD
 </codeph>
 </codeblock>
 </section>
 <section id="os-tenant-id"> <title>OS tenant ID<!--Removed anchor point os-tenant-id--><!-- id="os-tenant-id" --></title>
-<p>Tenant identification of the OpenStack(R) environment. Defaults to env[OS_TENANT_ID].</p>
+<p>Tenant identification of the <tm tmtype="reg">Openstack</tm> environment. Defaults to env[OS_TENANT_ID].</p>
 <codeblock>
   <codeph># --os-tenant-id OS_TENANT_ID
 </codeph>
 </codeblock>
 </section>
 <section id="os-authentication-url"> <title>OS authentication URL<!--Removed anchor point os-auth-url--><!-- id="os-auth-url" --></title>
-<p>Authentication URL of the OpenStack(R) environment. Defaults to env[OS_AUTH_URL].</p>
+<p>Authentication URL of the <tm tmtype="reg">Openstack</tm> environment. Defaults to env[OS_AUTH_URL].</p>
 <codeblock>
   <codeph># --os-auth-url OS_AUTH_URL
 </codeph>
 </codeblock>
 </section>
 <section id="os-authenticationtoken"> <title>OS authenticationtoken<!--Removed anchor point os-auth-token--><!-- id="os-auth-token" --></title>
-<p>Authentication token of the OpenStack(R) environment. Defaults to env[OS_AUTH_TOKEN].</p>
+<p>Authentication token of the <tm tmtype="reg">Openstack</tm> environment. Defaults to env[OS_AUTH_TOKEN].</p>
 <codeblock>
   <codeph># --os-auth-token OS_AUTH_TOKEN
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic5839/top"> Return to Top </xref>
+  <xref type="section" href="#topic5839"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

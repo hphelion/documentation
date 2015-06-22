@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4920">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Cinder Ceph Storage</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Cinder Ceph Storage</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Cinder Ceph Storage</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: Cinder Ceph Storage</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Paul F, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -85,7 +85,7 @@ ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/openstack/lib/pytho
 </li>
 </ol>
 <section id="configuring-cinder"> <title>Configuring Cinder</title>
-<p>HP Helion OpenStack(R) requires the <codeph>rbd</codeph> driver to interact with Ceph block devices. The pool name must be specified for the block device. To specify the pool name on the overcloud controller nodes edit <codeph>cinder.conf</codeph>.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> requires the <codeph>rbd</codeph> driver to interact with Ceph block devices. The pool name must be specified for the block device. To specify the pool name on the overcloud controller nodes edit <codeph>cinder.conf</codeph>.</p>
 <p>Perform the following steps to configure Cinder.</p>
 <ol>
 <li>
@@ -125,9 +125,9 @@ service cinder-api restart
 </ol>
 <p>Once the cinder service is restarted, you can create a volume.</p>
 </section>
-<section id="helion-openstack-cinder-backup-ceph-storage"> <title>Helion OpenStack(R) Cinder Backup Ceph Storage</title>
+<section id="helion-openstack-cinder-backup-ceph-storage"> <title>Helion <tm tmtype="reg">Openstack</tm> Cinder Backup Ceph Storage</title>
 <p>The Ceph backup driver performs the data backup operation on the volume to a Ceph RADOS Block Device (RBD). Backups can be performed between different Ceph pools and Ceph clusters. This section explains the backup and restore procedure for Cinder volumes.</p>
-<p>On the Helion controller and compute node, if the Ceph client softwares are successfully installed and the Ceph configuration and keyring files are copied in the Helion controller and compute nodes, then the Helion OpenStack(R) Ceph Configuration service performs the following steps:</p>
+<p>On the Helion controller and compute node, if the Ceph client softwares are successfully installed and the Ceph configuration and keyring files are copied in the Helion controller and compute nodes, then the Helion <tm tmtype="reg">Openstack</tm> Ceph Configuration service performs the following steps:</p>
 <ol>
 <li>
 <p>Verify Ceph health status by entering:</p>
@@ -268,7 +268,7 @@ restore_discard_excess_bytes=true
   <xref href="../../../commercial/GA1/ceph/1.1commercial-ceph-helion-openstack-nova-ceph-Storage.dita" >Ceph Nova Storage</xref>
 </p>
 <p>
-  <xref type="section" href="#topic4920/top"> Return to Top </xref>
+  <xref type="section" href="#topic4920"> Return to Top </xref>
 </p>
 </section>
 </body>

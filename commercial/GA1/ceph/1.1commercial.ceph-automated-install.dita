@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10341">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Ceph Automated Installation</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Ceph Automated Installation</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Ceph Automated Installation</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: Ceph Automated Installation</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Engineer"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -18,8 +18,8 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Binamra S, Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -27,7 +27,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commercial.ceph-automated-install.md-->
  <!--permalink: /helion/openstack/1.1/commercial.ceph-automated-install/--></p>
-<p>The installation workflow of HP Helion OpenStack(R) 1.1 or 1.1.1 is shown in the following diagram.</p>
+<p>The installation workflow of HP Helion <tm tmtype="reg">Openstack</tm> 1.1 or 1.1.1 is shown in the following diagram.</p>
 <p>
   <image href="../../../media/ceph-installation-flow.png"/>
 </p>
@@ -196,7 +196,7 @@ orchestration.py
 </codeblock>
 </li>
 <li>
-<p>Modify <codeph>/server/server.json</codeph> to include OpenStack(R) credentials from the Undercloud (<codeph>stackrc</codeph>), network, and keypair that you want to use. The following is a sample of <codeph>server.json</codeph>:</p>
+<p>Modify <codeph>/server/server.json</codeph> to include <tm tmtype="reg">Openstack</tm> credentials from the Undercloud (<codeph>stackrc</codeph>), network, and keypair that you want to use. The following is a sample of <codeph>server.json</codeph>:</p>
 
 <codeblock>
 <codeph>root@hLinux:~/helion-ceph/node-provisioner/server# cat server.json
@@ -223,7 +223,7 @@ orchestration.py
 <p>
 <b>PORT</b> is 8085 which can be used as a service port.</p>
 <p>
-<b>OS_VERSION</b> is the OpenStack(R) API version. Should be set to <b>2</b>.</p>
+<b>OS_VERSION</b> is the <tm tmtype="reg">Openstack</tm> API version. Should be set to <b>2</b>.</p>
 <p>
 <b>OS_USER</b> is supplied from the Undercloud <codeph>stackrc</codeph> file. For example: <b>admin</b>.</p>
 <p>
@@ -434,7 +434,7 @@ hlinux@admin-overcloud-ceph-admin:~$
 </p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-  <xref type="section" href="#topic10341/top"> Return to Top </xref>
+  <xref type="section" href="#topic10341"> Return to Top </xref>
 </p>
 </section>
 </body>

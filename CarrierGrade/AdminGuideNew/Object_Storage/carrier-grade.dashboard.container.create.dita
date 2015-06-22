@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1829">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Creating and Deleting Containers</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Creating and Deleting Containers</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,7 +13,7 @@
  <!--./CarrierGrade/AdminGuideNew/Object_Storage/carrier-grade.dashboard.container.create.md-->
  <!--permalink: /helion/commercial/carrier/dashboard/managing/container/create/--></p>
 <p>A container is a storage compartment for your data and provides a way for you to organize your
-      data. You can think of a container as a folder in Windows(R) or a directory in UNIX(R). The
+      data. You can think of a container as a folder in <tm tmtype="reg">Windows</tm> or a directory in <tm tmtype="reg">UNIX</tm>. The
       primary difference between a container and these other file system concepts is that containers
       cannot be nested. You can, however, create an unlimited number of containers within your
       account. Data must be stored in a container so you must have at least one container defined in
@@ -22,7 +22,7 @@
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Object Store</b> link.</p>
@@ -42,7 +42,7 @@
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack(R) Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Object Store</b> link.</p>
@@ -62,7 +62,7 @@
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic1829/top"> Return to Top </xref>
+  <xref type="section" href="#topic1829"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

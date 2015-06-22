@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1418">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Managing LDAP User Accounts</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Managing LDAP User Accounts</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -28,12 +28,11 @@ The commands are installed in the <codeph>/usr/local/sbin</codeph> directory, an
 <li>ldapdeleteuser</li>
 </ul>
 <p>Use the command option <codeph>--help</codeph> on any command to display a brief help message, as illustrated below.</p>
-<codeblock>
-  <codeph>ldapadduser --help
+<codeblock><codeph>ldapadduser --help
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic1418/top"> Return to Top </xref>
+  <xref type="section" href="#topic1418"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

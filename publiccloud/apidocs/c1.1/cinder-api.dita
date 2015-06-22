@@ -18,9 +18,9 @@
 <b>Document Version:</b> 1.7</p>
 <section id="1-overview"> <title>1. Overview</title>
 <p>The HP Helion Public Cloud Block Storage service is based on
-<xref href="http://docs.openstack.org/developer/cinder/" scope="external" format="html" >OpenStack(R) Cinder</xref>.</p>
-<p>HP Helion Public Cloud Block Storage provides persistent block devices that can be attached to <xref href="/api/compute/" >HP Helion Public Cloud Compute instances</xref>. HP Helion Public Cloud Block Storage volumes can be created in sizes from 1GB to 2047GB. Volumes attached to instances can be used as standard block devices. As volumes areexposed as standard block devices, the user is responsible for partitioning them and creating filesystems on them. There are no limitations on whatfilesystems can be created on volumes other than those imposed by the operating system running on the instance to which to volume is attached. Volumes persistuntil the user deletes them. A volume can only be attached to one instance at a time.</p>
-<p>HP Helion Public Cloud Block Storage provides data durability with volume snapshots and volume backups. Snapshots capture the point in time state of a volume and are quick to create. A volume from which snapshots have been created cannot be deleted while any of these snapshots remains in existence. To use a snapshot, the user must create a new volume from the snapshot. Backups are full copies of volumes stored to <xref href="/api/object-storage/" >HP Helion Public Cloud Object Storage</xref>. Since they are full copies, they take longer to create than snapshots. Backups are independent of the original volume once created and are intended for archival and disaster recovery purposes.</p>
+<xref href="http://docs.openstack.org/developer/cinder/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Cinder</xref>.</p>
+<p>HP Helion Public Cloud Block Storage provides persistent block devices that can be attached to <xref href="nova-api.dita" >HP Helion Public Cloud Compute instances</xref>. HP Helion Public Cloud Block Storage volumes can be created in sizes from 1GB to 2047GB. Volumes attached to instances can be used as standard block devices. As volumes areexposed as standard block devices, the user is responsible for partitioning them and creating filesystems on them. There are no limitations on whatfilesystems can be created on volumes other than those imposed by the operating system running on the instance to which to volume is attached. Volumes persistuntil the user deletes them. A volume can only be attached to one instance at a time.</p>
+  <p>HP Helion Public Cloud Block Storage provides data durability with volume snapshots and volume backups. Snapshots capture the point in time state of a volume and are quick to create. A volume from which snapshots have been created cannot be deleted while any of these snapshots remains in existence. To use a snapshot, the user must create a new volume from the snapshot. Backups are full copies of volumes stored to <xref href="swift-api.dita">HP Helion Public Cloud Object Storage</xref>. Since they are full copies, they take longer to create than snapshots. Backups are independent of the original volume once created and are intended for archival and disaster recovery purposes.</p>
 <p>HP Helion Public Cloud Block Storage also supports bootable volumes, volumes which are pre-initialized with an operating system image.</p>
 <p>We will be referring to HP Helion Public Cloud Block Storage in this document as simply Block Storage or Block Storage service.</p>
 </section>
@@ -153,7 +153,7 @@ a backup, the backup must be restored to a new or existing volume.</p>
 <ul>
 <li>The Block Storage API - a RESTful API which allows users to view,
 create, delete, modify, snapshot, backup and restore volumes.</li>
-<li>An extension to the <xref href="/api/compute/" >Compute API</xref> which allows users
+  <li>An extension to the <xref href="nova-api.dita >Compute API</xref> which allows users
 to attach/detach volumes to/from instances.</li>
 <li>The volume service which handles volume requests.</li>
 <li>The volume backup service which handles volume backup requests.</li>
@@ -167,10 +167,10 @@ do so.</p>
 </section>
 <section id="31-accounts"> <title>3.1 Accounts</title>
 <p>An account is created when a user first signs up with HP Helion Public Cloud. A <i>project</i> (with an associated <i>project_id</i>) is also created on first signing up with the cloud. All calls to the Block Storage APIs include the users
-<i>project_id</i> as part of the call. HP Helion and the OpenStack(R) community previously used the term <i>tenant</i> to refer to the what is now known as a <i>project</i>. The terms can be used interchangeably when reviewing HP Helion documentation (this document uses the term <i>project</i>).</p>
-<p>Similarly, the references to <i>tenant_id</i> can be read as <i>project_id</i>. For upstream OpenStack(R) tools and libraries (including <i>python-cinderclient</i> which can be used to interact with the Block Storage API), you can provide your <i>project_name</i> anywhere <i>tenant_name</i> is requested and your <i>project_id</i> anywhere <i>tenant_id</i> is requested. Similarly, where APIs return <i>tenant_id</i> or <i>tenantId</i>, this is equivalent to your <i>project_id</i>.</p>
+<i>project_id</i> as part of the call. HP Helion and the <tm tmtype="reg">Openstack</tm> community previously used the term <i>tenant</i> to refer to the what is now known as a <i>project</i>. The terms can be used interchangeably when reviewing HP Helion documentation (this document uses the term <i>project</i>).</p>
+<p>Similarly, the references to <i>tenant_id</i> can be read as <i>project_id</i>. For upstream <tm tmtype="reg">Openstack</tm> tools and libraries (including <i>python-cinderclient</i> which can be used to interact with the Block Storage API), you can provide your <i>project_name</i> anywhere <i>tenant_name</i> is requested and your <i>project_id</i> anywhere <i>tenant_id</i> is requested. Similarly, where APIs return <i>tenant_id</i> or <i>tenantId</i>, this is equivalent to your <i>project_id</i>.</p>
 <p>For additional details on accounts, tenants and projects please refer to the
-<xref href="/api/identity/" >Identity Service Overview</xref>.</p>
+  <xref href="keystone-api.dita" >Identity Service Overview</xref>.</p>
 </section>
 <section id="32-regions-and-availability-zones"> <title>3.2 Regions and Availability Zones</title>
 <p>
@@ -1862,7 +1862,7 @@ id="9b211c57-7fb5-4811-88ea-15fc30908dba" size="1"&gt;
   <b>Quota Limits</b>
 </p>
 <p>There are no specified quota limits associated with backups. The only limits are 
-those imposed by <xref href="/api/object-storage/" >HP Object Storage</xref> where backups are 
+  those imposed by <xref href="../../../publiccloud/apidocs/c1.1/swift-api.dita" >HP Object Storage</xref> where backups are 
 actually stored. When restoring a backup, the normal quota limits for volumes
 apply if a new volume is created as part of a restore operation. See 
 <i>Quota Limits</i> in <xref type="section" href="#topic65119/volumes">Block Storage Volumes</xref> for details.</p>
@@ -2384,7 +2384,7 @@ volume_id="e5185058-943a-4cb4-96d9-72c184c337d6" /&gt;
 </codeblock>
 </section>
 <section id="455-servers"> <title>4.5.5 Servers</title>
-<p>See <xref href="/api/compute#Server" >Compute Service Servers</xref> for details of
+  <p>See <xref href="../../../publiccloud/apidocs/c1.1/nova-api.dita#Server" >Compute Service Servers</xref> for details of
 the Server resource. From the Block Storage Service perspective,
 a server is system to which a <xref type="section" href="#topic65119/volume_resource">volume</xref> can be attached.
 When a volume is attached to a server, the server can mount the volume
@@ -2407,7 +2407,7 @@ formatted with a filesystem and so on).</p>
 <p>
   <b>Rate Limits</b>
 </p>
-<p>See <xref href="/api/compute/" >Compute instances</xref> for details of the rate limits
+  <p>See <xref href="../../../publiccloud/apidocs/c1.1/nova-api.dita" >Compute instances</xref> for details of the rate limits
 associated with the Server resource.</p>
 <p>
   <b>Quota Limits</b>

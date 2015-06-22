@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2654">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Planning for L2 Access Switches</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Planning for L2 Access Switches</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,12 +26,12 @@
  <!--./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-l2.md-->
  <!--permalink: /helion/openstack/carrier/configuration/plan/network/guest/l2/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>L2 access switches connect the HP Helion OpenStack(R) Carrier Grade hosts to the different networks. Proper configuration of the access ports is necessary to ensure proper traffic flow.</p>
+<p>L2 access switches connect the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade hosts to the different networks. Proper configuration of the access ports is necessary to ensure proper traffic flow.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>One or more L2 switches can be used to connect the HP Helion OpenStack(R) Carrier Grade hosts to the different networks. When sharing a single L2 switch you must ensure proper isolation of the network traffic.</p>
+<p>One or more L2 switches can be used to connect the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade hosts to the different networks. When sharing a single L2 switch you must ensure proper isolation of the network traffic.</p>
 <p>
   <b>Example:</b>
 </p>
@@ -65,11 +65,11 @@ one set of VLANs with the best QoS for gold tenants</li>
 <p>One or more L2 switches, not necessarily inter-connected, with one L2 switch per provider network.</p>
 </li>
 </ul>
-<p>Switch ports that send tagged traffic are referred to as trunk ports. They usually participate in the Spanning Tree Protocol (STP) from the moment the link goes up, which usually translates into several seconds of delay before the trunk port moves to the forwarding state. This delay is likely to impact services such as DHCP and PXE which are used during regular operations of HP Helion OpenStack(R) Carrier Grade.</p>
+<p>Switch ports that send tagged traffic are referred to as trunk ports. They usually participate in the Spanning Tree Protocol (STP) from the moment the link goes up, which usually translates into several seconds of delay before the trunk port moves to the forwarding state. This delay is likely to impact services such as DHCP and PXE which are used during regular operations of HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade.</p>
 <p>Therefore, you must consider configuring the switch ports to which the management interfaces are attached to transition to the forwarding state immediately after the link goes up. This option is usually referred to as a PortFast.</p>
 <p>You should also consider configuring these ports to prevent them from participating on any STP exchanges. This is usually done by configuring them to avoid processing inbound and outbound BDPU STP packets completely. Consult your switch's manual for details.</p>
 <p>
-  <xref type="section" href="#topic2654/top"> Return to Top </xref>
+  <xref type="section" href="#topic2654"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </body>

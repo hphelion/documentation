@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8910">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Troubleshooting Scale-Out Swift</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Troubleshooting Scale-Out Swift</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Systems Administrator"/>
 <othermeta name="role" content="Cloud Architect"/>
 <othermeta name="role" content="Storage Administrator"/>
@@ -16,8 +16,8 @@
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,7 +25,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting.swift.md-->
  <!--permalink: /helion/openstack/carrier/services/troubleshooting/swift/--></p>
-<p>HP Helion OpenStack(R) is an OpenStack(R) technology coupled with a version of LinuxÂ(R) provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> is an <tm tmtype="reg">Openstack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <ul>
 <li>
 <xref type="section" href="#topic8910/S3">Cannot create storage containers using Amazon S3 API</xref>
@@ -52,11 +52,11 @@
 <p>
   <b>Probable Cause</b>
 </p>
-<p>HP Helion OpenStack(R) does not support Amazon S3 API.</p>
+<p>HP Helion <tm tmtype="reg">Openstack</tm> does not support Amazon S3 API.</p>
 <p>
   <b>Resolution</b>
 </p>
-<p>Create containers using the <xref href="../../../CarrierGrade/ServicesOverviews/carrier-grade-services-object-overview.dita" >Helion OpenStack(R) Object Storage Service</xref> through the Swift APIs or the Horizon dashboard.</p>
+<p>Create containers using the <xref href="../../../CarrierGrade/ServicesOverviews/carrier-grade-services-object-overview.dita" >Helion <tm tmtype="reg">Openstack</tm> Object Storage Service</xref> through the Swift APIs or the Horizon dashboard.</p>
 </section>
 <section id="refreshfails"> <title>Scale-out nodes : os-refresh-configuration fails on Controller Nodes</title>
 <p>
@@ -419,7 +419,7 @@ sed: -e expression #1, char 24: unknown option to `s'
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic8910/top"> Return to Top </xref>
+  <xref type="section" href="#topic8910"> Return to Top </xref>
 </p>
 </section>
 </body>

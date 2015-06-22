@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6184">
-<title>HP Helion OpenStack(R) Carrier Grade (Beta): Linux User Accounts</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Linux User Accounts</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="All"/>
 <othermeta name="role" content="Paul F"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R)"/>
-<othermeta name="product-version2" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -24,7 +24,7 @@
 <p>This is a local, per-host, account created automatically when a new host is provisioned. On controller nodes, this account is available even before the config_controller script is executed.</p>
 <p>The default initial password is wrsroot.</p>
 <ul>
-<li>The initial password must be changed immediately when you log in to controller-0 for the first time. For details, see the <xref href="../../../CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita" >HP Helion OpenStack(R) Carrier Grade Installation Guide</xref>.</li>
+<li>The initial password must be changed immediately when you log in to controller-0 for the first time. For details, see the <xref href="../../../CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Installation Guide</xref>.</li>
 <li>After five consecutive unsuccessful login attempts, further attempts are blocked for about five minutes.</li>
 </ul>
 <p>Subsequent password changes must be executed on the active controller to ensure that they propagate to all other hosts in the cluster. Otherwise, they remain local to the host where they were executed, and are overwritten on the next reboot to match the password on the active controller.</p>
@@ -36,22 +36,18 @@
 <li>
 <p>You can execute root-level commands as the root user. To become the root user, use the sudo command to elevate your privileges, followed by the command to be executed. For example, to run the config_controller command as the root user:</p>
 
-<codeblock>
-<codeph>sudo config_controller
-</codeph>
-</codeblock>
+<codeblock><codeph>sudo config_controller
+</codeph></codeblock>
 
 <p>If a password is requested, provide the password for the wrsroot account.</p>
 </li>
 <li>
-<p>You can execute OpenStack(R) administrative commands as the Keystone admin user.</p>
+<p>You can execute <tm tmtype="reg">Openstack</tm> administrative commands as the Keystone admin user.</p>
 
 <p>Source the script <codeph>/etc/nova/openrc</codeph> while working on the active controller to acquire Keystone administrative privileges.</p>
 
-<codeblock>
-<codeph>source /etc/nova/openrc
-</codeph>
-</codeblock>
+<codeblock><codeph>source /etc/nova/openrc
+</codeph></codeblock>
 
 <p>The system prompt changes to indicate the new acquired privileges.</p>
 </li>
@@ -60,12 +56,12 @@
 <section id="local-user-accounts"> <title>Local User Accounts</title>
 <p>You can manage regular Linux user accounts on any host in the cluster using standard Linux commands. New accounts created on one host are not automatically propagated to other hosts.</p>
 <p>Password changes are not enforced automatically on first login, and they are not propagated by the system (with the exception of the wrsroot account, for which passwords changed on the active controller are propagated to other hosts.) Any special considerations for these accounts, if any, must be configured manually.</p>
-<p>Local user accounts can be added to the sudoers list using the visudo command. They can also source the <codeph>/etc/nova/openrc</codeph>  script to become OpenStack(R) administrators when working on the active controller.</p>
+<p>Local user accounts can be added to the sudoers list using the visudo command. They can also source the <codeph>/etc/nova/openrc</codeph>  script to become <tm tmtype="reg">Openstack</tm> administrators when working on the active controller.</p>
 <p>Backup and restore operations of home directories and passwords must be done manually. They are ignored by the system backup and restore utilities. For more information, See <xref href="../../../CarrierGrade/AdminGuideNew/Backup/carrier-grade-admin-wr-backup.dita" >Performing a System Data Backup</xref>.</p>
 </section>
 <section id="ldap-user-accounts"> <title>LDAP User Accounts</title>
-<p>You can create regular Linux user accounts using the HP Helion OpenStack(R) Carrier Grade LDAP service. LDAP accounts are centrally managed; changes made on any host are propagated automatically to all hosts on the cluster.</p>
-<p>In other respects, LDAP user accounts behave as any local user account. They can be added to the sudoers list, and can acquire OpenStack(R) administration credentials when executing on the active controller.</p>
+<p>You can create regular Linux user accounts using the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade LDAP service. LDAP accounts are centrally managed; changes made on any host are propagated automatically to all hosts on the cluster.</p>
+<p>In other respects, LDAP user accounts behave as any local user account. They can be added to the sudoers list, and can acquire <tm tmtype="reg">Openstack</tm> administration credentials when executing on the active controller.</p>
 <p>LDAP user accounts share the following set of attributes:</p>
 <ul>
 <li>The initial password is the name of the account.</li>
@@ -91,7 +87,7 @@
 <p>
 <b>admin</b> - A cloud administrative account, comparable in purpose to the default admin account used in the web management interface.</p>
 
-<p>This user account operates on a restricted Linux shell, with very limited access to native Linux commands. However, the shell is preconfigured to have administrative access to OpenStack(R) commands, including the available HP Helion OpenStack(R) Carrier Grade CLI extensions.</p>
+<p>This user account operates on a restricted Linux shell, with very limited access to native Linux commands. However, the shell is preconfigured to have administrative access to <tm tmtype="reg">Openstack</tm> commands, including the available HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade CLI extensions.</p>
 </li>
 <li>
 <p>
@@ -101,7 +97,7 @@
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic6184/top"> Return to Top </xref>
+  <xref type="section" href="#topic6184"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5996">
-<title>HP Helion OpenStack(R) 1.1 and 1.1.1: Preparing the Network</title>
+<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Preparing the Network</title>
 <titlealts>
-<searchtitle>HP Helion OpenStack(R) 1.1: Preparing the Network</searchtitle>
+<searchtitle>HP Helion Openstack 1.1: Preparing the Network</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion OpenStack(R) 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -22,10 +22,10 @@
  <!--permalink: /helion/openstack/1.1/install/prereqs/network/--></p>
 <p> <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita" >▲ Installation Prerequisites</xref>  </p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack(R) 1.1 and HP Helion OpenStack(R) 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack(R) from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack(R) 1.1.1 Update Guide</xref>.)</p>
-<p>Before installing HP Helion OpenStack(R) you are responsible for preparing the network for all installations. You must also prepare the network based on the type of hypervisor you are installing, KVM or ESX.</p>
+<p>(If you already have 1.1 installed, you can update Helion <tm tmtype="reg">Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>Before installing HP Helion <tm tmtype="reg">Openstack</tm> you are responsible for preparing the network for all installations. You must also prepare the network based on the type of hypervisor you are installing, KVM or ESX.</p>
 <p>The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the Management network as described in this section.</p>
 <section id="network"> <title>Preparing all networks</title>
 <p>To ensure a successful installation, you must satisfy these network configuration requirements:</p>
@@ -37,7 +37,7 @@
 <p>Nodes on this management network must be able to reach the iLO subsystem (<xref href="http://www8.hp.com/us/en/products/servers/ilo/index.html" scope="external" format="html" >HP Integreated Lights-Out</xref>) of each baremetal systems to enable host reboots as part of the install process.</p>
 </li>
 <li>
-<p>The Helion OpenStack(R) architecture required that the IPMI network is a separate network and a route exists from management network to the IPMI network for iLO access as explained above.</p>
+<p>The Helion <tm tmtype="reg">Openstack</tm> architecture required that the IPMI network is a separate network and a route exists from management network to the IPMI network for iLO access as explained above.</p>
 </li>
 <li>
 <p>Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.</p>
@@ -49,26 +49,26 @@
 <p>The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.</p>
 </li>
 </ul>
-<p>In addition to preparing all HP Helion OpenStack(R) cloud networks, you need perform additional  tasks based on which hypervisor you are using: <xref type="section" href="#topic5996/network_KVM">KVM</xref> or <xref type="section" href="#topic5996/network_ESX">ESX</xref>.</p>
+<p>In addition to preparing all HP Helion <tm tmtype="reg">Openstack</tm> cloud networks, you need perform additional  tasks based on which hypervisor you are using: <xref type="section" href="#topic5996/network_KVM">KVM</xref> or <xref type="section" href="#topic5996/network_ESX">ESX</xref>.</p>
 </section>
 <section id="network_KVM"> <title>Preparing the network for a KVM installation</title>
-<p>If you are installing HP Helion OpenStack(R) with KVM hypervisor support, you must configure your network as shown in the following diagram.</p>
+<p>If you are installing HP Helion <tm tmtype="reg">Openstack</tm> with KVM hypervisor support, you must configure your network as shown in the following diagram.</p>
 <p>
-<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack(R) architecture diagram for KVM network architecture.</xref>(opens in a new window)</p>
+<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion <tm tmtype="reg">Openstack</tm> architecture diagram for KVM network architecture.</xref>(opens in a new window)</p>
 <p>You are responsible for providing the internal and external customer router and making sure the external, IPMI, and service networks are routed to and from the management network.</p>
 <p>
   <b>Notes:</b>
 </p>
 <ul>
 <li>Distributed Virtual Routing (DVR) is used to route traffic between VMs and outside the cloud. As such, every Compute Node has a connection to the external network.</li>
-<li>Access to OpenStack(R) service APIs is from the management network.</li>
+<li>Access to <tm tmtype="reg">Openstack</tm> service APIs is from the management network.</li>
 <li>The network path for platform service log messages is from the VM, to the service network (installed as a second vNIC), to the Customer Router, to  the management network, to the undercloud RabbitMQ, to LogStash.</li>
 </ul>
 </section>
 <section id="network_ESX"> <title>Preparing the network for an ESX installation</title>
-<p>If you are installing HP Helion OpenStack(R) for ESX hypervisor support, you must configure your network as shown in the following diagram.</p>
+<p>If you are installing HP Helion <tm tmtype="reg">Openstack</tm> for ESX hypervisor support, you must configure your network as shown in the following diagram.</p>
 <p>
-<xref format="html" href="javascript:window.open('/media/topology_esxnew.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack(R) architecture diagram for ESX network architecture.</xref>(opens in a new window)</p>
+<xref format="html" href="javascript:window.open('/media/topology_esxnew.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion <tm tmtype="reg">Openstack</tm> architecture diagram for ESX network architecture.</xref>(opens in a new window)</p>
 <p>
   <b>Note</b>
 </p>
@@ -103,7 +103,7 @@
 -->
 </section>
 <section id="other_network_ESX"> <title>Other customer responsibilities and requirements for ESX</title>
-<p>You are responsible for the following before beginning the HP Helion OpenStack(R) installation:</p>
+<p>You are responsible for the following before beginning the HP Helion <tm tmtype="reg">Openstack</tm> installation:</p>
 <ul>
 <li>
 <p>installing and configuring VMWare vSphere version 5.5;</p>

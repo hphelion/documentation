@@ -14,7 +14,7 @@
  <!--permalink: /publiccloud/object-storage/tutorial/introduction/--></p>
 <p>The HP Helion Public Cloud CDN enables objects in HP Helion Public Cloud Object Storage to be available over a <xref href="https://en.wikipedia.org/wiki/Content_delivery_network" scope="external" format="html" >Content Delivery Network (CDN)</xref>. CDNs allow objects to be fetched from locations close to users enabling users to download the objects more quickly. This article provides an introduction into how the CDN works with object storage and some basic ways you can use it.</p>
 <section id="making-objects-available-to-the-cdn"> <title>Making Objects Available To The CDN</title>
-<p>Containers within object storage are private by default, meaning that only those with API, <xref href="/publiccloud/cli" >CLI</xref>, or 
+<p>Containers within object storage are private by default, meaning that only those with API, <xref href="../publiccloud/cli.dita" >CLI</xref>, or 
 <xref href="https://horizon.hpcloud.com/" scope="external" format="html" >HP Helion Public Cloud Console</xref> access to the containers can read or write to the objects within them. A container can be toggled to be public, allowing all objects within the container to be openly available. When this happens, the container and each object within the container gets a URL that can be shared.</p>
 <p>A second and similar option available is to CDN enable a container. By enabling this the container and the objects within a container will have two public URLs pointing to a CDN to obtain the objects. The URLs are to the object via a CDN in <xref href="https://en.wikipedia.org/wiki/HTTPS" scope="external" format="html" >SSL</xref> and non-SSL forms.</p>
 <p>All of these URLs are available through the console, CLIs, and the API.</p>
@@ -43,7 +43,7 @@
 <p>To setup a custom domain for a non-SSL path can happen through the use of <xref href="https://en.wikipedia.org/wiki/CNAME_record" scope="external" format="html" >CDNAME</xref> DNS records. By creating a CNAME record mapping a custom domain to the domain generated for the container users will be routed to the objects.</p>
 </section>
 <section id="more-information"> <title>More Information</title>
-<p>For more information on HP Helion Public Cloud CDN see the <xref href="/publiccloud/cdn" >documentation</xref> or <xref href="../publiccloud/bindings.dita" >language libraries</xref>.</p>
+<p>For more information on HP Helion Public Cloud CDN see the <xref href="../publiccloud/cdn.dita" >documentation</xref> or <xref href="../publiccloud/bindings.dita" >language libraries</xref>.</p>
 </section>
 </body>
 </topic>

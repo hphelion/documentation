@@ -28,19 +28,16 @@
 <p>
 <xref href="https://help.ubuntu.com/community/CloudInit" scope="external" format="html" >cloud-init</xref> (the Ubuntu package for handling early initialization of cloud instances) can be used to provide additional flexibility when configuring Application Lifecycle Service cluster nodes, and can simplify joining a cluster and assigning roles.</p>
 <p>cloud-init can be configured at instance launch time by pasting YAML
-directly into the OpenStack(R) Horizon interface.</p>
+directly into the <tm tmtype="reg">Openstack</tm> Horizon interface.</p>
 <p>For example, given a core node at IP 10.2.3.4, the following
 cloud-config would add a new DEA node to the cluster:</p>
-<codeblock>
-  <codeph>#cloud-config
+<codeblock>#cloud-config
 
 helion:
   nats:
     ip: 10.2.3.4
   roles: ['dea']
-  extname: "paas.example.com" 
-</codeph>
-</codeblock>
+  extname: "paas.example.com" </codeblock>
 <ul>
 <li>
 <codeph>nats:ip</codeph> will run
@@ -54,8 +51,7 @@ the instance first boot.</li>
 </ul>
 <section id="securing-the-new-node"> <title>Securing the new node</title>
 <p>To lock down and secure this new node, you could use standard cloud-config directives for adding any SSH keys, randomizing passwords, and/or disabling password based authentication entirely. An example that creates a data services node, enables passwordless sudo for the admin group, and disables password based authentication:</p>
-<codeblock>
-  <codeph>#cloud-config
+<codeblock>#cloud-config
 
 helion:
   nats:
@@ -77,9 +73,7 @@ bootcmd:
   - sed
   - -ri
   - s|^%admin .*|%admin ALL=\(ALL\) NOPASSWD:ALL|
-  - /etc/sudoers
-</codeph>
-</codeblock>
+  - /etc/sudoers</codeblock>
 </section>
 <section id="custom-system-configuration"> <title>Custom System Configuration</title>
 <p>In addition to the Application Lifecycle Service node configuration tasks described above, cloud-init can be used for a variety of system setup tasks:</p>
