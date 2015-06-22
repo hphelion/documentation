@@ -33,7 +33,7 @@ disk space to install additional packages, depending on what you wish to do with
 <p>To install HP Linux for HP <tm tmtype="reg">Helion Openstack</tm> follow the steps below:</p>
 <ol>
 <li>Insert, mount, or otherwise connect the  ISO media to your target device. Boot the device from the media. This may involve using basic input/output system (BIOS) commands or the function keys (&lt;F1&gt;, &lt;F9&gt;, and so on) to override the normal boot process of your device.
-  <!--A BR tag was used here in the original source.--><image href="../../media/hplinux/start.png" placement="break"/>
+  <!--A BR tag was used here in the original source.--><image href="../../media/start.png" placement="break"/>
 </li>
 <li>
 Type the word <b>install</b> and press the Enter key, which will initiate the installation process. You may safely ignore error messages about the "mount" command failing:
@@ -44,7 +44,7 @@ Subsequent screens will look similar to this one. Remember to press Enter to exe
 
 
 
-  <image href="../../media/hplinux/language.png" placement="break"/>
+  <image href="../../media/language.png" placement="break"/>
 <!--A BR tag was used here in the original source.-->
 </li>
 
@@ -83,7 +83,7 @@ Confirm the root password. Press Enter.
 <li>On the screen entitled Partition disks, select the desired partitioning method for your setup, Select Guided - use entire disk and set up LVM from the list and press Enter.
 
 
-  <image href="../../media/hplinux/partition1.png" placement="break"/>
+  <image href="../../media/partition1.png" placement="break"/>
 </li>
 
 <li>Next, select the correct disk and press Enter.
