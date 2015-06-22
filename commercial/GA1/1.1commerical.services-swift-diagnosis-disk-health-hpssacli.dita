@@ -24,11 +24,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.md-->
  <!--permalink: /helion/openstack/1.1/services/swift/diagnosis-disk-health/hpssacli/--></p>
-<p>
-      <xref
-        href="../../commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita"
 
-    </p>
 <p>HP Helion Object Storage (Swift) provides native monitoring of Swift services and hardware resources like disk drives.To monitor the health status of the disk drives of the Swift cluster, monitoring scripts are introduced for HP hardware. The monitoring solution depends on hpssacli application to fetch various details of hardware to determine its health and publish to Icinga. hpssacli utility does not get installed implicitly as part of Swift node deployment.</p>
 <p>You are advised to download and install utility as per procedure mentioned below. If utility is not installed then Icinga dashboard will reflect the various disk parameters as critical.</p>
 <section id="hp-smart-storage-administrator-cli-20220-hpssacli"> <title>HP Smart Storage Administrator CLI 2.0.22.0 (HPSSACLI)</title>

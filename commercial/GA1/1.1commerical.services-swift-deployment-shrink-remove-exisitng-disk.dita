@@ -23,11 +23,8 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-exisitng-disk.md-->
  <!--permalink: /helion/openstack/1.1/services/swift/deployment/remove-existing-disk/--></p>
-<p>
-      <xref
-        href="../../commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"
 
-    </p>
+
 <p>Perform the following steps to remove a disk from object nodes.</p>
 <ol>
 <li>

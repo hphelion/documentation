@@ -23,11 +23,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.md-->
  <!--permalink: /helion/openstack/1.1/services/swift/deployment/remove-scale-out-object-node/--></p>
-<p>
-      <xref
-        href="../../commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"
 
-    </p>
 <p>It is recommended that you gradually reduce the weight in the ring when removing disks from the Swift cluster to avoid poor performance.</p>
 <p>Object nodes can only be removed once all disks have been removed from the node.</p>
 <ol>
