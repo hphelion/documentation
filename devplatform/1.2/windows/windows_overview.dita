@@ -130,7 +130,7 @@
     <section id="development"><title>Application development and deployment</title>
 <ol>
 
-    <li> Download the <xref href="/helion/devplatform/1.2/als/client/download">Helion client tool</xref>.</li>
+    <li> Download the <xref href="../helion/CLI/1.2ALS_Client_Downloads.dita">Helion client tool</xref>.</li>
     <li> Install the Cloud Foundry Explorer and Cloud Foundry MSBuild tasks in Visual Studio.</li>
     <li> Optionally, install the Cloud Foundry .NET SDK (for programmatic access to services.)</li>
     <li> Build your application.</li>
