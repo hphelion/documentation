@@ -45,7 +45,7 @@
 
 <ol>
 <li>Open <codeph>&lt;sample directory&gt;/C#/ContosoUniversity.sln</codeph> in Visual Studio.</li> 
-<li>Install the <b>Cloud Foundry MSBuild Tasks</b> following these directions here: <xref scope="local" format="dita" href="windows_tools_guide.dita#tools_guide/msbuild" Windows and .NET Tools Guide: Cloud Foundry Explorer</li> 
+<li>Install the <b>Cloud Foundry MSBuild Tasks</b> following these directions here: <xref scope="local" format="dita" href="windows_tools_guide.dita#tools_guide/msbuild"></xref> Windows and .NET Tools Guide: Cloud Foundry Explorer</li> 
 <li>In Visual Studio, open <codeph>web.config</codeph>.</li>
 <li>Change the following configuration line (this will pull the connection string parameters from environment variables, rather than using hardcoded values):
 
