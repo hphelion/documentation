@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3017">
-<title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
+  <title>Quick Start Developer Trial Step 5: Windows (optional)</title>
 <titlealts>
-<searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial Step 5</searchtitle>
+<searchtitle>Quick Start Developer Trial Step 5: Windows (optional)</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
@@ -22,7 +22,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start5.md-->
  <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/5/--></p>
-<p>An ALS cluster provides the support infrastructure necessary to deploy and manage applications. <!--A BR tag was used here in the original source.-->During this step, you will send a set of commands and variables to the <varname>cf-mgmt</varname> tool. The tool will use those parameters to create the cluster, set up the admin login credentials, and return a URL for the cluster's management console.</p>
+<p>An ALS cluster provides the support infrastructure necessary to deploy and manage applications. During this step, you will send a set of commands and variables to the <varname>cf-mgmt</varname> tool. The tool will use those parameters to create the cluster, set up the admin login credentials, and return a URL for the cluster's management console.</p>
 <table>
 <tgroup cols="2">
         <colspec colname="col1" colwidth="400" colsep="1"/>
@@ -37,7 +37,7 @@
               <p>1. <xref href="ALS-developer-trial-quick-start">Register for your Helion Public
                   Cloud Account</xref>
               </p>
-              <p>2. <xref href="/ALS-developer-trial-quick-start2.dita">Download Tools</xref>
+              <p>2. <xref href="ALS-developer-trial-quick-start2.dita">Download Tools</xref>
               </p>
               <p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the
                   Sandbox Environment</xref>
@@ -53,23 +53,19 @@
             </entry>
             <entry>
               <b>Add Windows DEA and SQL Server</b>
-              <p>This step is optional, but it exercises the new functionality in
-                <!--A BR tag was used here in the original source.-->this version of the Helion
-                Development Platform.</p><p><b>Note:</b> A Windows DEA and a SQL Server
-                  <b>cannot</b> both exist<!--A BR tag was used here in the original source.--> on
-                the same virtual machine. You will need to create a virtual
-                <!--A BR tag was used here in the original source.-->machine for each one.</p><ol>
-                <li>Open a terminal window and change directory to the
-                  location<!--A BR tag was used here in the original source.--> where you installed
+              <p>This step is optional, but it exercises the new functionality in this version of
+                the Helion Development Platform.</p><p>
+                <note>A Windows DEA and a SQL Server <b>cannot</b> both exist on the same virtual
+                  machine. You will need to create a virtual machine for each one.</note>
+              </p><ol>
+                <li>Open a terminal window and change directory to the location where you installed
                   the <varname>cf-mgmt</varname> command-line tool. </li>
-                <li>Run the appropriate set of commands in the <varname>cf-mgmt</varname> tool
-                  to<!--A BR tag was used here in the original source.--> add a DEA role and then
-                  add a service. In the unlikely
-                  event<!--A BR tag was used here in the original source.--> that the cluster
+                <li>Run the appropriate set of commands in the <varname>cf-mgmt</varname> tool to
+                  add a DEA role and then add a service. In the unlikely event that the cluster
                   creation fails, refer to the <xref
                     href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting"
                     scope="external" format="html">Troubleshooting tips</xref>. <ol>
-                      <li>For <tm tmtype="reg">Windows</tm>: <ul>
+                    <li>For <tm tmtype="reg">Windows</tm>: <ul>
                         <li>Add the Windows DEA Role
                           <codeblock>cf-mgmt.exe ^
  --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
@@ -80,8 +76,7 @@
  --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
 add-role dea ^
  --keypair-name &lt;name of keypair created earlier&gt; ^
- --load http://clients.als.hpcloud.com/1.2/config/trial-windea.yml</codeblock>
-                        </li>
+ --load http://clients.als.hpcloud.com/1.2/config/trial-windea.yml </codeblock></li>
                         <li>Add the SQL Server 2014 Service
                           <codeblock>cf-mgmt.exe ^
  --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
@@ -99,9 +94,7 @@ add-service mssql2014 ^
                           <codeblock>cf-mgmt add-role dea \
   --keypair-name &lt;name of keypair created earlier&gt; \
   --stack "win2012r2" \
-  --load http://clients.als.hpcloud.com/1.2/config/trial-windea.yml
-</codeblock>
-                        </li>
+  --load http://clients.als.hpcloud.com/1.2/config/trial-windea.yml</codeblock></li>
                         <li>Add the SQL Server 2014 Service
                           <codeblock>cf-mgmt add-service mssql2014 \
   --keypair-name &lt;name of keypair created earlier&gt; \

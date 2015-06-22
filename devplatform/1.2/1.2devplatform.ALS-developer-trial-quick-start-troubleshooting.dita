@@ -1,50 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2598">
-<title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
-<titlealts>
-<searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial Troubleshooting</searchtitle>
-</titlealts>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="Security Engineer"/>
-<othermeta name="role" content="ISV Developer"/>
-<othermeta name="role" content="Service Developer"/>
-<othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-</metadata>
-</prolog>
-<body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.md-->
- <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting/--></p>
-<p>Here are some tips for troubleshooting issues with the Quick Start Trial. If problems persist, the quickest solution is to just <xref href="/helion/devplatform/1.2/ALS-developer-trial-quick-start/6" >terminate the cluster</xref> and repeat the installation process. To ensure all resources are properly released, terminate the cluster from the Horizon console.</p>
-<table>
-<tgroup cols="2">
-<colspec colname="col1" colwidth="400" colsep="1"/>
-<colspec colname="col2"/>
-<tbody>
-          <row>
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic2598">
+  <title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
+  <titlealts>
+    <searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial
+      Troubleshooting</searchtitle>
+  </titlealts>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Development Platform"/>
+      <othermeta name="role" content="Application Developer"/>
+      <othermeta name="role" content="Security Engineer"/>
+      <othermeta name="role" content="ISV Developer"/>
+      <othermeta name="role" content="Service Developer"/>
+      <othermeta name="role" content="Jayme P"/>
+      <othermeta name="product-version1" content="HP Helion Development Platform"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>
+      <!--PUBLISHED-->
+      <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.md-->
+      <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting/--></p>
+    <p>Here are some tips for troubleshooting issues with the Quick Start Trial. If problems
+      persist, the quickest solution is to just <xref
+        href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita">terminate the
+        cluster</xref> and repeat the installation process. To ensure all resources are properly
+      released, terminate the cluster from the Horizon console.</p>
+    <table>
+      <tgroup cols="2">
+        <colspec colname="col1" colwidth="300" colsep="1"/>
+        <colspec colname="col2"/>
+        <tbody>
+          <row rowsep="0">
             <entry/>
             <entry/>
           </row>
-<row>
-<entry>
-<p><xref href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita#topic1244"
+          <row rowsep="0">
+            <entry>
+              <p><xref href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita"
                   >Termination</xref>
               </p>
-                <p><image href="../../media/star.gif" id="image_s3q_vt5_js" scale="50"/><b>
+              <p><image href="../../media/star.gif" id="image_s3q_vt5_js" scale="50"/><b>
                   Troubleshooting</b>
               </p>
               <p><xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Back to Quick
                   Start</xref></p>
-</entry>
-
-<entry>
+            </entry>
+            <entry>
               <b>Troubleshooting</b>
               <ul>
                 <li>Copy the provided commands into a text editor, change the values, and paste them
@@ -56,15 +61,13 @@
                 <li>If you receive the following error, return to the Horizon console and <xref
                     href="https://community.hpcloud.com/article/how-create-or-delete-network#create"
                     scope="external" format="html">create a public-facing network</xref>.
-                  <codeblock>Error has occurred creating the cluster:Parameter validation failed - No networks found. Please add a network and rerun the tool.</codeblock>
-                </li>
+                  <codeblock>Error has occurred creating the cluster:Parameter validation failed - No networks found. Please add a network and rerun the tool.</codeblock></li>
                 <li>If you receive a timeout error while deploying, first verify that you have <xref
                     href="https://community.hpcloud.com/article/how-create-or-delete-network#create"
                     scope="external" format="html">created a public-facing network</xref>. You may
                   also change the default timeout value using the <varname>wait time</varname>
                   command in the <varname>cf-mgmt</varname> tool. Example:
-                  <codeblock>--max-corenode-wait-duration "10m"</codeblock>
-                </li>
+                  <codeblock>--max-corenode-wait-duration "10m"</codeblock></li>
                 <li>If you want to deploy more than one cluster, you need to manually edit the
                   cluster title and cluster prefix in the <varname>trial.yml</varname> file after
                   you download it.</li>
@@ -87,9 +90,9 @@
                   the hash character <b>#</b> at the end of the line; it is not part of the value.
                 </li>
               </ul></entry>
-</row>
-</tbody>
-</tgroup>
-</table>
-</body>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </body>
 </topic>

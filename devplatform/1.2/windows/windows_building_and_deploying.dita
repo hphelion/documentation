@@ -174,7 +174,7 @@
 </ol>
 </section>
 <section id="enabling"> <title>Enabling Windows and SQL Server in your ALS cluster</title>
-<p>Note that you can do this <xref href="/helion/devplatform/1.2/growcluster" >through the Horizon console</xref> instead of the command line if you prefer.</p>
+<p>Note that you can do this <xref href="windows_growcluster.dita" >through the Horizon console</xref> instead of the command line if you prefer.</p>
 </section>
 <section id="add-windows-dea"> <title>Add Windows DEA</title>
 <ol>
