@@ -276,7 +276,7 @@ api.paas.example.com:49156/exampleco/newimg
 <p>This step only needs to be done once, as the configuration change is
 shared with all nodes.</p>
 </li>
-</ol>../best-practices/1.1index.dita
+</ol>
   <p>The <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#upgrade-docker" >Upgrade the Docker Image</xref> section in the <xref href="../best-practices/1.1index.dita" >Best Practices</xref> documentation explains how to modify the Docker base image without changing <i>kato config</i>.</p>
 </section>
 <section id="docker-privileged-containers"> <title>Privileged Containers</title>
