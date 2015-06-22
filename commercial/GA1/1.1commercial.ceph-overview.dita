@@ -69,7 +69,7 @@ to store data from Ceph block device clients or from Ceph file system clients. C
 </p>
 </section>
 <section id="integrating-ceph-block-storage-with-hp-helion-openstack"> <title>Integrating Ceph Block Storage with HP Helion <tm tmtype="reg">Openstack</tm></title>
-<p>The following sections provides details on the integration of Ceph Block Storage with HP Helion <tm tmtype="reg">Openstack</tm></p>
+<!--<p>The following sections provides details on the integration of Ceph Block Storage with HP Helion <tm tmtype="reg">Openstack</tm></p>
 <ol>
 <li>
 <xref href="ceph/1.1commerical.services-ceph-archref.dita">HP Helion <tm tmtype="reg">Openstack</tm> 1.x Ceph Architectural Reference</xref>
@@ -131,7 +131,7 @@ to store data from Ceph block device clients or from Ceph file system clients. C
 <li>
 <xref href="ceph/1.1commenrcial.ceph-related-topics.dita">Related Topics</xref>
 </li>
-</ol>
+</ol>-->
 </section>
 <section id="next-steps"> <title>Next Steps</title>
 <p>
