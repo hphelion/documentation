@@ -331,7 +331,7 @@
   <topicref href="codar-landing-page.dita"/>
   <topicref href="euca/euca-landing-page.dita"/>
   <topicref href="euca/euca.thirdparty.licensing.dita"/>
-  <topicref href="commercial/GA1/2.0commercial.services-monasca.dita"/>
+
   <topicref href="commercial/GA1/1.0commercial.index.dita"/>
   <topicref href="commercial/GA1/1.03rd-party-license-agreements.dita"/>
   <topicref href="commercial/GA1/1.0commerical.services-object-pyringos.dita"/>
@@ -1490,7 +1490,7 @@
   <!--permalink: /helion/commercial/1.1/dashboard/managing/volumes/-->
   <!--permalink: /helion/commercial/1.1/services/icinga/-->
   <!--permalink: /helion/commercial/1.1/services/kibana/-->
-  <!--permalink: /helion/commercial/2.0/services/monasca/-->
+ 
   <!--permalink: /helion/commercial/carrier/dashboard/managing/-->
   <!--permalink: /helion/commercial/carrier/dashboard/managing/aggregates/-->
   <!--permalink: /helion/commercial/carrier/dashboard/managing/container/create/-->
