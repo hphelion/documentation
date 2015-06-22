@@ -882,6 +882,8 @@
           <!--permalink: /helion/devplatform/1.2/als/user/deploy/buildpack/-->
           <topicref href="devplatform/1.2/helion/user/deploy/1.2buildpack.dita" locktitle="yes"
             navtitle="Buildpacks">
+            <topicref href="devplatform/1.2/helion/user/deploy/1.2adding-buildpack.dita"
+              navtitle="Adding Buildpacks" locktitle="yes"/>
             <topicref href="devplatform/1.2/helion/user/deploy/1.2other-frameworks.dita"
               locktitle="yes" navtitle="Generic and Standalone Frameworks"/>
             <topicref href="devplatform/1.2/helion/user/deploy/languages/1.2clojure.dita"
