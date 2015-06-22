@@ -153,7 +153,7 @@ a backup, the backup must be restored to a new or existing volume.</p>
 <ul>
 <li>The Block Storage API - a RESTful API which allows users to view,
 create, delete, modify, snapshot, backup and restore volumes.</li>
-  <li>An extension to the <xref href="nova-api.dita >Compute API</xref> which allows users
+  <li>An extension to the <xref href="nova-api.dita">Compute API</xref> which allows users
 to attach/detach volumes to/from instances.</li>
 <li>The volume service which handles volume requests.</li>
 <li>The volume backup service which handles volume backup requests.</li>
