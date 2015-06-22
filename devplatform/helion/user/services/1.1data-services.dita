@@ -246,9 +246,9 @@ $ helion apps
 </codeph>
 </codeblock>
 </li>
-</ol>
+</ol>../reference/1.1client-ref-service-management.dita
 <p>For further information on the commands for managing services, or to remotely check the settings and credentials of any ALS service, please see
-the <xref href="/helion/devplatform/1.1/als/user/reference/client-ref/servicemanagement" >ALS Service Management</xref> command reference.</p>
+  the <xref href="../reference/1.1client-ref-service-management.dita" >ALS Service Management</xref> command reference.</p>
 </section>
 <section id="using-database-services"> <title>Using Database Service Environment Variables</title>
 <p>When you bind a database service to an application, <xref href="../../../../devplatform/helion/user/reference/1.1environment.dita#environment-variables" >environment variables</xref> containing that service's host, port, and credentials are added to the application container. You can use these environment variables in your code to connect to the service, rather than having to discover and then hard-code in such details.</p>
