@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7563">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic7563">
 <title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Ceph Firefly 0.80.7 Storage Solution</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Ceph Firefly 0.80.7 Storage Solution</searchtitle>
@@ -72,70 +72,70 @@ to store data from Ceph block device clients or from Ceph file system clients. C
 <p>The following sections provides details on the integration of Ceph Block Storage with HP Helion <tm tmtype="reg">Openstack</tm></p>
 <ol>
 <li>
-<xref href="ceph/1.1commerical.services-ceph-archref.dita" >HP Helion <tm tmtype="reg">Openstack</tm> 1.x Ceph Architectural Reference</xref>
+<xref href="ceph/1.1commerical.services-ceph-archref.dita">HP Helion <tm tmtype="reg">Openstack</tm> 1.x Ceph Architectural Reference</xref>
 </li>
 <li>
-<xref href="ceph/1.1commenrcial.ceph-pre-requisite.dita" >HP Helion <tm tmtype="reg">Openstack</tm> 1.x Ceph Firefly 0.80.7 Storage Solution: Prerequisites</xref>
+<xref href="ceph/1.1commenrcial.ceph-pre-requisite.dita">HP Helion <tm tmtype="reg">Openstack</tm> 1.x Ceph Firefly 0.80.7 Storage Solution: Prerequisites</xref>
 </li>
 <li>
-<xref href="ceph/1.1commercial.ceph-automated-install.dita" >Automated Installation</xref>
+<xref href="ceph/1.1commercial.ceph-automated-install.dita">Automated Installation</xref>
 </li>
 <li>
-<xref href="ceph/1.1commercial.ceph-cluster-client-node-configuration-ansible.dita" >Configure Ceph Cluster and Client Nodes using Ansible Playbooks</xref>
+<xref href="ceph/1.1commercial.ceph-cluster-client-node-configuration-ansible.dita">Configure Ceph Cluster and Client Nodes using Ansible Playbooks</xref>
 </li>
 <li>
-<xref href="ceph/1.1commenrcial.ceph-monitoring.dita" >Ceph Monitoring</xref>
+<xref href="ceph/1.1commenrcial.ceph-monitoring.dita">Ceph Monitoring</xref>
 </li>
 <li>
-<xref href="ceph/1.1commercial.ceph-helion-openstack-ceph-storage-administration.dita" >Ceph Administration</xref>
+<xref href="ceph/1.1commercial.ceph-helion-openstack-ceph-storage-administration.dita">Ceph Administration</xref>
 </li>
 <li>
-<xref href="ceph/1.1commercial.ceph-rados-gateway-dmz-ha-proxy.dita" >Ceph RADOS Gateway - DMZ HAProxy</xref>
+<xref href="ceph/1.1commercial.ceph-rados-gateway-dmz-ha-proxy.dita">Ceph RADOS Gateway - DMZ HAProxy</xref>
 </li>
 <li>
-<xref href="ceph/1.1commercial.ceph-rados-gateway-client.dita" >RADOS Gateway Client</xref>
+<xref href="ceph/1.1commercial.ceph-rados-gateway-client.dita">RADOS Gateway Client</xref>
 </li>
 <li>
-<xref href="ceph/1.1commercial.ceph-manual-install.dita" >Manual Validation</xref>
+<xref href="ceph/1.1commercial.ceph-manual-install.dita">Manual Validation</xref>
 </li>
 <li>
-<xref href="ceph/1.1commercial.ceph-authentication.dita" >Ceph Authentication</xref>
+<xref href="ceph/1.1commercial.ceph-authentication.dita">Ceph Authentication</xref>
 </li>
 <li>
-<xref href="ceph/1.1commercial-ceph-hp-helion-openstack-ceph-configuration.dita" >Manual Ceph Configuration</xref>
+<xref href="ceph/1.1commercial-ceph-hp-helion-openstack-ceph-configuration.dita">Manual Ceph Configuration</xref>
 </li>
 <li>
-<xref href="ceph/1.1commenrcial.ceph-helion-openstack-glance-ceph-interoperability.dita" >Helion <tm tmtype="reg">Openstack</tm> Glance-Ceph Interoperability</xref>
+<xref href="ceph/1.1commenrcial.ceph-helion-openstack-glance-ceph-interoperability.dita">Helion <tm tmtype="reg">Openstack</tm> Glance-Ceph Interoperability</xref>
 </li>
 <li>
-  <xref href="ceph/1.1commenrcial.ceph-helion-openstack-ceph-hp-helion-openstack-cinder-storage.dita" >Helion <tm tmtype="reg">Openstack</tm> Cinder Ceph Storage</xref>
+  <xref href="ceph/1.1commenrcial.ceph-helion-openstack-ceph-hp-helion-openstack-cinder-storage.dita">Helion <tm tmtype="reg">Openstack</tm> Cinder Ceph Storage</xref>
 </li>
 <li>
-<xref href="ceph/1.1commercial-ceph-helion-openstack-nova-ceph-Storage.dita" >Helion <tm tmtype="reg">Openstack</tm> Nova Ceph Storage</xref>
+<xref href="ceph/1.1commercial-ceph-helion-openstack-nova-ceph-Storage.dita">Helion <tm tmtype="reg">Openstack</tm> Nova Ceph Storage</xref>
 </li>
 <li>
-<xref href="ceph/1.1commercial.ceph-rados-gateway.dita" >Ceph RADOS Gateway</xref>
+<xref href="ceph/1.1commercial.ceph-rados-gateway.dita">Ceph RADOS Gateway</xref>
 </li>
 <li>
-<xref href="ceph/1.1commercial.ceph-rados-gateway-pools.dita" >Ceph RADOS Gateway Pools</xref>
+<xref href="ceph/1.1commercial.ceph-rados-gateway-pools.dita">Ceph RADOS Gateway Pools</xref>
 </li>
 <li>
-<xref href="ceph/1.1commercia.ceph-high-availability-RADOSGW-authentication.dita" >Ceph RADOS Gateway- Keystone Authentication</xref>
+<xref href="ceph/1.1commercia.ceph-high-availability-RADOSGW-authentication.dita">Ceph RADOS Gateway- Keystone Authentication</xref>
 </li>
 <li>
-<xref href="ceph/1.1commenrcial.ceph-troubleshooting.dita" >Troubleshooting</xref>
+<xref href="ceph/1.1commenrcial.ceph-troubleshooting.dita">Troubleshooting</xref>
 </li>
 <li>
-<xref href="ceph/1.1commercial.ceph-glossary.dita" >Glossary</xref>
+<xref href="ceph/1.1commercial.ceph-glossary.dita">Glossary</xref>
 </li>
 <li>
-<xref href="ceph/1.1commenrcial.ceph-related-topics.dita" >Related Topics</xref>
+<xref href="ceph/1.1commenrcial.ceph-related-topics.dita">Related Topics</xref>
 </li>
 </ol>
 </section>
 <section id="next-steps"> <title>Next Steps</title>
 <p>
-  <xref href="ceph/1.1commerical.services-ceph-archref.dita" >HP  Helion <tm tmtype="reg">Openstack</tm> Ceph Architectural Reference</xref>
+  <xref href="ceph/1.1commerical.services-ceph-archref.dita">HP  Helion <tm tmtype="reg">Openstack</tm> Ceph Architectural Reference</xref>
 </p>
 <p>
   <xref type="section" href="#topic7563"> Return to Top </xref>
