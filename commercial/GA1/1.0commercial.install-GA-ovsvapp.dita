@@ -294,6 +294,7 @@ cd vmware-tools-distrib/
 <codeblock>
 <codeph>[vmware]
 #VCenter IP
+[See version 1.1 of this page](/)
 vcenter_ip=
 #Vcenter FQDN(Provide FQDN, only if your vcenter certificate is generated with FQDN)(*OPTIONAL)
 vcenter_fqdn=

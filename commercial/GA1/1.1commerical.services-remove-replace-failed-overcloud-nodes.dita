@@ -632,6 +632,7 @@ tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud --skip-
 <codeph># show the failed node in ironic (using the failed_node_id variable from above)
 ironic node-show --instance $failed_node_id
 # remove the failed node from ironic, using the uuid
+[See version 1.0 of this page](/)
 ironic node-delete $ironic_failed_node_id
 </codeph>
 </codeblock>

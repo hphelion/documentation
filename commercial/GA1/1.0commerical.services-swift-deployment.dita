@@ -192,6 +192,7 @@
 <codeblock>
 <codeph># ssh heat-admin@&lt;undercloud IP address&gt;
 # sudo -i
+[See version 1.1 of this page](/)
 # mv ~heat-admin/id_rsa ~/.ssh/ 
 </codeph>
 </codeblock>

@@ -362,69 +362,82 @@
     
     <!-- Servics -->
     <topicref href="commercial/GA1/1.0commerical.services-overview.dita">
-    <topicref href="commercial/GA1/1.0commerical.services-compute-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-dns-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-dvr-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-eon-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-eve-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-focus-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-horizon-overview.dita">
-      <topicref href="commercial/GA1/1.0commercial.dashboard.how-works.dita"/>
-      <topicref href="commercial/GA1/1.0commercial.dashboard.launch.dita"/>
-    </topicref>
-    <topicref href="commercial/GA1/1.0commerical.services-identity-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-imaging-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-ironic-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-networking-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-object-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-scale-out-swift.dita">
-      <!-- Swift -->
-      <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
-      <topicref
-        href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-account-container.dita"/>
-      <topicref
-        href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-storage-node.dita"/>
-      <topicref
-        href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
-      <topicref
-        href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-starter-object-ring.dita"/>
-      <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-add-proxy-node.dita"/>
-      <topicref
-        href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
-      <topicref
-        href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-proxy-node.dita"/>
-      <topicref
-        href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>
-      <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-part-power.dita"/>
-      <topicref href="commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita"/>
-      <topicref
-        href="commercial/GA1/1.0commerical.services-swift-deployment-provision-swift-node.dita"/>
-      <topicref
-      href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-disk.dita"/>
-    <topicref
-      href="commercial/GA1/1.0commerical.services-swift-deployment-expand-swift-cluster.dita"/>
-    <topicref
-      href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-health-check.dita"/>
-    <topicref
-      href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-replica-swift-status.dita"/>
-    <topicref
-      href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-swift-cluster.dita"/>
-    </topicref>
-    <topicref href="commercial/GA1/1.0commerical.services-orchestration-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-reporting-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-sherpa-accessing-ui.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-sherpa-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-sirius-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-tripleo-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.troubleshooting.dita"/>
-    <topicref href="commercial/GA1/1.0commerical.services-volume-overview.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.sirius-cli.dita">
-      <topicref href="commercial/GA1/1.0commercial.sirius-cli-workflow.dita"/>
+      <topicref href="commercial/GA1/1.0commerical.services-compute-overview.dita"/>
+      <topicref href="commercial/GA1/1.0commerical.services-identity-overview.dita"/>
+      <topicref href="commercial/GA1/1.0commerical.services-imaging-overview.dita"/>
+      <topicref href="commercial/GA1/1.0commerical.services-networking-overview.dita"/>
+      <topicref href="commercial/GA1/1.0commerical.services-object-overview.dita"/>
+        <!-- Swift -->
+        <topicref href="commercial/GA1/1.0commerical.services-scale-out-swift.dita">
+          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
+          <topicref
+          href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-account-container.dita"/>
+          <topicref
+          href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-storage-node.dita"/>
+          <topicref
+          href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
+          <topicref
+          href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-starter-object-ring.dita"/>
+          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-add-proxy-node.dita"/>
+          <topicref
+          href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
+          <topicref
+          href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-proxy-node.dita"/>
+          <topicref
+          href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>
+          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-part-power.dita"/>
+          <topicref href="commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita"/>
+          <topicref
+          href="commercial/GA1/1.0commerical.services-swift-deployment-provision-swift-node.dita"/>
+          <topicref
+          href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.dita"/>
+          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-disk.dita"/>
+          <topicref
+          href="commercial/GA1/1.0commerical.services-swift-deployment-expand-swift-cluster.dita"/>
+          <topicref
+          href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-health-check.dita"/>
+          <topicref
+          href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-replica-swift-status.dita"/>
+          <topicref
+          href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-swift-cluster.dita"/>
+        </topicref>
+      <topicref href="commercial/GA1/1.0commerical.services-orchestration-overview.dita"/>
+      <topicref href="commercial/GA1/1.0commerical.services-volume-overview.dita"/>
+      <topicref href="commercial/GA1/1.0commerical.services-horizon-overview.dita">
+        <topicref href="commercial/GA1/1.0commercial.dashboard.how-works.dita"/>
+        <topicref href="commercial/GA1/1.0commercial.dashboard.launch.dita"/>
       </topicref>
+      <topicref href="commercial/GA1/1.0commerical.services-sherpa-overview.dita">  
+        <topicref href="commercial/GA1/1.0commerical.services-sherpa-accessing-ui.dita"/>
+      </topicref>
+      <topicref href="commercial/GA1/1.0commerical.services-sirius-overview.dita">
+        <topicref href="commercial/GA1/1.0commercial.sirius-cli.dita"/>
+        <topicref href="commercial/GA1/1.0commercial.sirius-cli-workflow.dita"/>
+      </topicref>   
+      <topicref href="commercial/GA1/1.0commerical.services-eon-overview.dita"/>
+      <topicref href="commercial/GA1/1.0commerical.services-dns-overview.dita"/>
+      <topicref href="commercial/GA1/1.0commerical.services-tripleo-overview.dita"/>  
+      <topicref href="commercial/GA1/1.0commerical.services-ironic-overview.dita"/>  
+    <topicref href="commercial/GA1/1.0commerical.services-dvr-overview.dita"/>
+    
+    <!-- Not in 1.0 -->
+    <topicref href="commercial/GA1/1.0commerical.services-eve-overview.dita" toc="no"/>
+      <topicref href="commercial/GA1/1.0commerical.services-focus-overview.dita" toc="no"/>
+    
+    
+    
+    
+    
+    
+    <topicref href="commercial/GA1/1.0commerical.services-reporting-overview.dita"/>
+    
+    
+    
+    
+   
     </topicref>
     
-    
+    <topicref href="commercial/GA1/1.0commercial.troubleshooting.dita"/>
     
     <!-- Install -->
     <topicref href="commercial/GA1/1.0commercial.install-GA-overview.dita">

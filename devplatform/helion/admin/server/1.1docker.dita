@@ -168,6 +168,7 @@ RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -
 RUN apt-get update
 RUN apt-get install newrelic-sysmond
 # The nrsysmond scripts are run with sudo
+[See version 1.0 of this page](/)
 RUN echo "HELION ALL= NOPASSWD: /etc/init.d/newrelic-sysmond" &gt;&gt; /etc/sudoers
 RUN echo "HELION ALL= NOPASSWD: /usr/sbin/nrsysmond-config" &gt;&gt; /etc/sudoers
 

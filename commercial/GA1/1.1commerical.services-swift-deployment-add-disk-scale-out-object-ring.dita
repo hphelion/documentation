@@ -53,6 +53,7 @@
 <codeblock>
 <codeph># ssh heat-admin@&lt;Undercloud IP address&gt; 
 # sudo -i
+[See version 1.0 of this page](/)
 </codeph>
 </codeblock>
 </li>
