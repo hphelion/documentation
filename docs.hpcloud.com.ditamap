@@ -340,7 +340,7 @@
     <!-- Not in 1.1.1 -->
     <topicref href="commercial/GA1/1.1commerical.services-eve-overview.dita" toc="no"/> 
     <topicref  href="commercial/GA1/1.1commerical.services-focus-overview.dita" toc="no"/> 
-    <topicref href="commercial/GA1/1.1commercial.site-index.dita"/> 
+    <topicref href="commercial/GA1/1.1commercial.site-index.dita" toc="no"/> 
     <!-- Files in MD repo Under Revision not in DITA -->      
     <topicref href="commercial/GA1/1.1commercial.install-GA-OpenStackClient.dita" toc="no"/>
     <topicref href="commercial/GA1/1.1commercial.install-ip-addresses.dita" toc="no"/>
