@@ -276,7 +276,7 @@ api.paas.example.com:49156/exampleco/newimg
 shared with all nodes.</p>
 </li>
 </ol>
-<p>The <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#upgrade-docker" >Upgrade the Docker Image</xref> section in the <xref href="/helion/devplatform/1.1/als/admin/best-practices" >Best Practices</xref> documentation explains how to modify the Docker base image without changing <i>kato config</i>.</p>
+  <p>The <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#upgrade-docker" >Upgrade the Docker Image</xref> section in the <xref href="../best-practices/1.1index.dita" >Best Practices</xref> documentation explains how to modify the Docker base image without changing <i>kato config</i>.</p>
 </section>
 <section id="docker-privileged-containers"> <title>Privileged Containers</title>
 <p>ALS runs "unprivileged" Docker containers by default. The containers do not have access to any devices on the (virtual) host.</p>
