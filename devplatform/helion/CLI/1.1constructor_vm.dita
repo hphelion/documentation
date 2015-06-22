@@ -82,7 +82,7 @@
         "http_proxy": "",
         "https_proxy": ""
     },
-    "<Openstack</tm>": {
+    "Openstack": {
         "auth_url": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0",
         "az": "az1",
         "block_mount": "/block_storage",
