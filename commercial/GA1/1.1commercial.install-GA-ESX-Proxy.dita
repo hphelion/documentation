@@ -172,7 +172,7 @@ sudo poweroff
 <codeblock>
 <codeph>[vmware]
 # Details related to vCenter in which Compute Proxy VM will be created
-[See version 1.0 of this page](/)
+jgl
 # 
 # Datacenter name
 datacenter=

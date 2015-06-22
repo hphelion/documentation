@@ -42,7 +42,7 @@
 <codeblock>
 <codeph># ssh heat-admin@&lt;Undercloud IP address&gt; 
 # sudo -i
-[See version 1.1 of this page](/)
+jgl
 </codeph>
 </codeblock>
 </li>

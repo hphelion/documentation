@@ -252,7 +252,7 @@
 <!--3. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.  3. Source the cloud configuration file to `/root/<environment variable file>` if it is absent.
 
 # cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json 4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:--></li>
-[See version 1.1 of this page](/)
+jgl
 <li>
 <p>Append the environment variables file with the JSON snippet(obtained from <xref type="section" href="#topic8341/generate-config">Generate Config</xref>). Ensure the JSON file format is unbroken. A sample of the file is given below:</p>
 
