@@ -52,7 +52,7 @@
         <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-object-overview.dita">
-        <!-- All things Swift-->
+        <!-- All Things Swift-->
         <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita">
           <topicref
             href="commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.dita"/>
