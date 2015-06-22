@@ -68,8 +68,10 @@ to store data from Ceph block device clients or from Ceph file system clients. C
   <image href="../../../media/helion_virtual_machine_access_ceph_storage.png"/>
 </p>
 </section>
-  <!--
+
 <section id="integrating-ceph-block-storage-with-hp-helion-openstack"> <title>Integrating Ceph Block Storage with HP <tm tmtype="reg">Helion Openstack</tm></title>
+  <p>Please see the Ceph topics on the left for integration with HP Helion OpenStack.</p>
+  <!--
 <p>The following sections provides details on the integration of Ceph Block Storage with HP <tm tmtype="reg">Helion Openstack</tm></p>
 <ol>
 <li>
@@ -135,12 +137,13 @@ to store data from Ceph block device clients or from Ceph file system clients. C
 <xref href="1.1commenrcial.ceph-related-topics.dita">Related Topics</xref>
 </li>
 </ol>
+-->
 </section>
 <section id="next-steps"> <title>Next Steps</title>
 <p>
   <xref href="1.1commerical.services-ceph-archref.dita">HP  <tm tmtype="reg">Helion Openstack</tm> Ceph Architectural Reference</xref>
 </p>
 
-</section>-->
+</section>
 </body>
 </topic>
