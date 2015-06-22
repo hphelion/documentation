@@ -58,7 +58,7 @@
 <p>
 <b>Note:</b> <tm tmtype="reg">Helion Openstack</tm> version 1.1.1 is required for Helion Development Platform 1.2. Installing Helion Development Platform 1.2 on <tm tmtype="reg">Helion Openstack</tm> versions 1.1 or 1.0 is not supported. If you currently have <tm tmtype="reg">Helion Openstack</tm> version 1.1 with Helion Development Platform 1.1 installed, you will need to do the following to install Helion Development Platform 1.2:</p>
 <ul>
-<li>Perform a fresh <xref href="/helion/openstack/" >install</xref> of <tm tmtype="reg">Helion Openstack</tm> version 1.1.1</li>
+  <li>Perform a fresh <xref href="../../commercial/GA1/1.0commercial.index.dita" >install</xref> of <tm tmtype="reg">Helion Openstack</tm> version 1.1.1</li>
 <li>Install Helion Development Platform 1.2 </li>
 </ul>
 <p>Before you begin installation:</p>
