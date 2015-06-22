@@ -108,10 +108,6 @@
 </section>
 <section id="for-more-information"> <title>For more information</title>
 <p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Operations Guide</xref> The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">Openstack</tm> Cloud is put together. However, the HP Helion <tm tmtype="reg">Openstack</tm> Community edition takes care of these details for you. The <i>Operations</i> contains information on how to manage the system.</p>
-<!-- hide me Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
-
-* [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/)
-* [HP Cloud OS Administration Dashboard Help](/cloudos/manage/administration-dashboard/) -->
 <p>
   <xref type="section" href="#topic5402"> Return to Top </xref>
 </p>
