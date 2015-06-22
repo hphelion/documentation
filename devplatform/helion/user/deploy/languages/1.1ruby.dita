@@ -74,7 +74,7 @@ end
 storage = Fog::Storage.new(credentials_hash)
 
 #list directories
-jgl
+
 storage.directories
 
 #create a directory

@@ -140,7 +140,7 @@
 <codeblock>
 <codeph># apt-get update
 # dpkg --add-architecture i386
-jgl
+
 # apt-get install openjdk-7-jdk:i386
 </codeph>
 </codeblock>

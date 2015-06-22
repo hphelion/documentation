@@ -195,7 +195,7 @@ export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
 <codeblock>
 <codeph># source envfile
 # bash -x tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed | tee  create-seed.log
-jgl
+
 </codeph>
 </codeblock>
 </li>

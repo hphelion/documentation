@@ -96,7 +96,7 @@ rabbitmqctl forget_cluster_node &lt;node&gt; # the full rabbit name of the faile
 <codeblock>
 <codeph>source ~root/tripleo/tripleo-incubator/undercloudrc
 # set the nova node id for use later
-jgl
+
 failed_node_id=$(nova list --minimal | grep Mgmt | cut -d '|' -f 2)
 ironic_failed_node_id=$(ironic node-show --instance $failed_node_id | grep " uuid" | cut -f3 -d"|" | sed 's/\s//')
 </codeph>

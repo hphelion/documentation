@@ -314,7 +314,7 @@ pyVmomi is the Python SDK for the VMware vSphere API that allows you to manage E
 <codeblock>
 <codeph>[vmware]
 #VCenter IP
-jgl
+
 vcenter_ip=
 #Vcenter FQDN(Provide FQDN, only if your vcenter certificate is generated with FQDN)(*OPTIONAL)
 vcenter_fqdn=

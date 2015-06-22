@@ -210,7 +210,7 @@
 <codeblock>
 <codeph># source envfile
 # bash -x tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed | tee  create-seed.log
-jgl
+
 </codeph>
 </codeblock>
 </li>
