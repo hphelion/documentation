@@ -57,7 +57,7 @@
 </li>
 <li>
 <p>Ensure that you are targeting your desired environment.  <!--A BR tag was used here in the original source.--> If you are not, execute</p>
-<codeblock>helion target https://api.xx.xx.xx.xx.xip.io</codeph>
+<codeblock>helion target https://api.xx.xx.xx.xx.xip.io</codeblock>
 </li>
 <li>
 <p>Ensure that you are logged in to your desired environment.  <!--A BR tag was used here in the original source.-->If you are not, execute</p>
