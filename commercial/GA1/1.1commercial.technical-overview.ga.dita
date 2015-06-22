@@ -161,7 +161,15 @@ Users can create a bootable volume and use that to boot a VM.
 <b>Network Operations (Neutron)
 </b>
 </entry>
-    <entry>The HP <tm tmtype="reg">Helion Openstack</tm> Network Operations service provides network connectivity and IP addressing for virtual machines managed by Compute service.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--> User can create and configure virtual networks and routers, subnets, floating IP addresses, security groups, load balancers and firewalls.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.1commerical.services-networking-overview.dita" >Learn more</xref> about the Network Operations service.</entry>
+    <entry>The HP <tm tmtype="reg">Helion Ogipenstack</tm> Network Operations service provides
+                                network connectivity and IP addressing for virtual machines managed
+                                by Compute
+                                service.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
+                                User can create and configure virtual networks and routers, subnets,
+                                floating IP addresses, security groups, load balancers and
+                                    firewalls.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref
+                                    href="../../commercial/GA1/1.1commerical.services-networking-overview.dita"
+                                    >Learn more</xref> about the Network Operations service.</entry>
     <entry>Administrators can also create an external network, and work with DHCP agents and L3 agents.</entry>
 </row>
 <row>
