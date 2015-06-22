@@ -62,7 +62,8 @@ tls_cacertfile = /mnt/state/etc/keystone/ssl/certs/ca.pem
 tls_req_cert = demand
 </codeph>
 </codeblock>
-<p>For information on all the attributes you can set for openLDAP/Active Directory, please refer to <xref href="/helion/openstack/1.1/services/identity/integrate-ldap/" format="html">LDAP connection settings</xref>.</p>
+<p>For information on all the attributes you can set for openLDAP/Active Directory, please refer to
+        <xref href="1.1commerical.services-identity-integrate-ldap.dita#topic9275/connect"/></p>
 <p>Once the LDAP domain configuration as described above is complete, you must restart Apache and Keystone for the settings to take effect.</p>
 </body>
 <related-links>
