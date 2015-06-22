@@ -38,7 +38,7 @@
 <xref type="section" href="#topic6367/install">Installing a package</xref>
 </li>
 <li>
-<xref type="section" href="#topic6367/create">Deploying an environment</xref>
+<xref type="section" href="#topic6367/create">Creating a target environment</xref>
 </li>
 <li>
 <xref type="section" href="#topic6367/deploy">Creating a Deployed Instance of an Application</xref>
@@ -47,7 +47,7 @@
 <xref type="section" href="#topic6367/notes">Deployment Notes</xref>
 </li>
 </ul>
-<section id="marketplace-concepts"> <title>Marketplace Concepts</title>
+<section id="concepts"> <title>Marketplace Concepts</title>
 <p>The Marketplace deploys packages of services and applications to specified environments.</p>
 <ul>
 <li>The term <b>Application</b> covers both applications and services that can reside in the Marketplace. For the purposes of this documentation, we will use the term Application even though we are deploying a database, which is a service. </li>
@@ -57,14 +57,14 @@
 <b>Environments</b> are groups of Applications managed by a single tenant. Applications within a single Environment <i>may</i> be logically related to one another, but do not have to be.  Applications in different Environments are always independent from one another. </li>
 </ul>
 </section>
-<section id="prerequisites"> <title>Prerequisites</title>
-<p>Install the Marketplace component of the <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref> during the Development Platform install process.</p>
+<section id="prereq"> <title>Prerequisites</title>
+<p>Install the Marketplace component of the <xref scope="local" format="dita" href="1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref> during the Development Platform install process.</p>
 </section>
-<section id="installing-a-package"> <title>Installing a Package</title>
+<section id="install"> <title>Installing a Package</title>
 <p>In this example, the package being installed is the Vertica 7 Community Edition package.</p>
 <p>Note that you must log out of the Horizon dashboard and then log back in at least once after Marketplace installation before installing any Marketplace packages. This will ensure that Horizon has properly loaded all Marketplace services prior to package installation.</p>
 </section>
-<section id="create-a-target-environment"> <title>Create a Target Environment</title>
+<section id="create"> <title>Creating a Target Environment</title>
 <ol>
 <li> Log into Horizon and open the <b>Marketplace</b> panel under your Project. Click on
             <b>Application Catalog</b>, and then click on the Environments tab.<p>
@@ -78,7 +78,7 @@
           </p></li>
 </ol>
 </section>
-<section id="create-a-deployed-instance-of-an-application"> <title>Create a Deployed Instance of an Application</title>
+<section id="deploy"> <title>Create a Deployed Instance of an Application</title>
 <p>The following section will show how to create an instance of Vertica 7 Community Edition in the environment created above.</p>
 <ol>
 <li> Log in to the Horizon console and open the <b>Marketplace</b> panel under your Project. </li>
@@ -157,7 +157,7 @@
           </ol></li>
 </ol>
 </section>
-<section id="deployment-notes"> <title>Deployment Notes</title>
+<section id="notes"> <title>Deployment Notes</title>
 <p>This section discusses some of the details of deployment that you may encounter.</p>
 <ol>
 <li>Environments cannot be deployed unless there is at least one Application in the Environment. </li>
