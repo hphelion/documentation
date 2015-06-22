@@ -556,7 +556,7 @@
           <topicref href="community/community.networking-maskedIP.dita"/>
         </topichead>
         
-        
+       
         <topicref href="community/community.services-overview.dita">
           <topicref href="community/community.services-compute-overview.dita">
             <topicref href="community/community.services-compute-howto.dita"/>
