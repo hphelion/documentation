@@ -65,8 +65,8 @@ machine with all the components necessary for running a test environment
 in one instance. For use on a larger scale, the VM can be cloned and
 assigned specific roles: Router, Cloud Controller, Droplet Execution
 Agents (DEAs, or worker nodes), or specific database services.</p>
-<p>
-  <image href="/content/documentation/devplatform/helion/images/helion-architecture-diagram.png"/>
+<p> 
+  <image href="../../../../media/helion-architecture-diagram.png"/>
 </p>
 <section id="roles"> <title>Roles</title>
 </section>
