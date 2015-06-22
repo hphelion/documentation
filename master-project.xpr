@@ -16,6 +16,5 @@
         <folder path="pdf_sources/"/>
         <folder path="publiccloud/"/>
         <folder path="unusedgraphics/"/>
-        <folder path="UseCases/"/>
     </projectTree>
 </project>
