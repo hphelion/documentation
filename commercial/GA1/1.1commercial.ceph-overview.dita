@@ -84,7 +84,7 @@ to store data from Ceph block device clients or from Ceph file system clients. C
 <xref href="ceph/1.1commercial.ceph-cluster-client-node-configuration-ansible.dita" >Configure Ceph Cluster and Client Nodes using Ansible Playbooks</xref>
 </li>
 <li>
-<xref href="ceph/1.1commenrcial.ceph-monitoring.dita" >Ceph Monitoring</xref>
+<xref href="1.1commenrcial.ceph-monitoring.dita" >Ceph Monitoring</xref>
 </li>
 <li>
 <xref href="ceph/1commercial.ceph-helion-openstack-ceph-storage-administration.dita" >Ceph Administration</xref>
