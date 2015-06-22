@@ -16,8 +16,7 @@
 			<!--A BR tag was used here in the original source.-->
 		</p>
 		<p>The HP Helion OpenStack Identity Service, known as Keystone, supports the option to specify identity driver configurations on a domain-by-domain basis, allowing, for example, a specific domain to have its own LDAP server. By default, the option to configure domain-specific drivers is enabled via the Helion installer as the following:</p>
-		<codeblock>
-  <codeph>[identity]
+		<codeblock>  <codeph>[identity]
 domain_specific_drivers_enabled = True
 domain_config_dir = /etc/keystone/domains
 </codeph>
@@ -62,7 +61,8 @@ tls_cacertfile = /mnt/state/etc/keystone/ssl/certs/ca.pem
 tls_req_cert = demand
 </codeph>
 </codeblock>
-		<p>For information on all the attributes you can set for openLDAP/Active Directory, please refer to <xref href="/helion/openstack/1.1/services/identity/integrate-ldap/" format="html">LDAP connection settings</xref>.</p>
+		<p>For information on all the attributes you can set for openLDAP/Active Directory, please refer
+			to <xref href="1.1commerical.services-identity-integrate-ldap.dita#topic9275">LDAP connection settings.</xref></p>
 		<p>Once the LDAP domain configuration as described above is complete, you must restart Apache and Keystone for the settings to take effect.</p>
 	</body>
 	<related-links>
@@ -70,7 +70,7 @@ tls_req_cert = demand
 			<title>Collected links</title>
 			<link href="1.1commerical.services-identity-integrate-ldap.html" format="html">
 				<linktext>LDAP connection settings</linktext>
-			</link>
+			</link >
 		</linklist>
 	</related-links>
 </topic>
