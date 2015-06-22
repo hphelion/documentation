@@ -26,11 +26,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.md-->
  <!--permalink: /helion/openstack/1.1/services/swift/provision-nodes/--></p>
-<p>
-      <xref
-        href="../../commercial/GA1/1.0commerical.services-swift-deployment-provision-swift-node.dita"
 
-    </p>
 <p>This page describes the procedure to provision scale-out object and proxy nodes. 
 <!--
 **Caution**: Do not provision proxy and scale-out object nodes together as the requirements for each are different. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out object storage nodes. --></p>
