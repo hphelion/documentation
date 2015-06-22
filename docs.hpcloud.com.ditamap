@@ -28,7 +28,7 @@
       <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"/>
       <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita"/>
       <topicref href="commercial/GA1/1.1commercial.roll.dita"/>
-      <topicref href="commercial/GA1/under_the_hood.dita"/>
+      <topicref href="commercial/GA1/under_the_hood.dita" toc="no"/>
     </topicref>
     <topicref href="commercial/GA1/1.1commercial.faq.dita"/>
     <!-- Services -->
