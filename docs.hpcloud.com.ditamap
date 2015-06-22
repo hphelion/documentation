@@ -530,9 +530,73 @@
     
   </topicref>
  
-    <!--Community-->
-  <topicref href="api.copyright.dita"/>
-
+  <!-- Community -->
+  
+  <topicref href="community/community.index.dita">
+    
+    <topichead navtitle="Getting Started">    
+      <topicref href="community/community.release-notes.dita"/>
+      <topicref href="community/community.faq.dita"/>
+      <topicref href="community/community.related-topics.dita"/>
+    </topichead>
+    
+    <topichead navtitle="Installation and configuration">    
+      <topicref href="community/community.install-overview.dita"/>
+      <topicref href="community/community.hwsw-requirements.dita"/>    
+      <topicref href="community/community.name-resolution.dita"/>
+      <topicref href="community/community.install.baremetal.dita">
+        <topicref href="community/community.network-requirements.dita"/>
+      </topicref>
+      <topicref href="community/community.install.virtual.dita"/>
+      <topicref href="community/community.verify.dita"/>
+     </topichead>
+         
+     <topichead navtitle="Post-Install">    
+          <topicref href="community/community.services-identity-configure-v3.dita"/>
+          <topicref href="community/community.networking-maskedIP.dita"/>
+        </topichead>
+        
+        
+        <topicref href="community/community.services-overview.dita">
+          <topicref href="community/community.services-compute-overview.dita">
+            <topicref href="community/community.services-compute-howto.dita"/>
+          </topicref>
+          
+          <topicref href="community/community.services-identity-overview.dita">
+            <topicref href="community/community.services-identity-using.dita"/>
+            <topicref href="community/community.services-identity-configure-v3.dita"/>
+          </topicref>
+          <topicref href="community/community.services-imaging-overview.dita"/>
+          <topicref href="community/community.services-networking-overview.dita"/>
+          <topicref href="community/community.services-orchestration-overview.dita"/>
+          <topicref href="community/community.services-volume-overview.dita"/>
+          <topicref href="community/community.services-reporting-overview.dita"/>
+          <topicref href="community/community.services-horizon-overview.dita"/>
+          <topicref href="community/community.services-sherpa-overview.dita"/>
+          <topicref href="community/community.services-tripleo-overview.dita"/>
+          <topicref href="community/community.services-ironic-overview.dita"/>
+          <topicref href="community/community.services-icinga.dita"/>
+          <topicref href="community/community.services-logging-overview.dita"/>
+        </topicref>
+        
+        
+        <topichead navtitle="Horizon Dashboard">
+         <topicref href="community/community.dashboard.launch.dita"/>
+         <topicref href="community/community.dashboard.how-works.dita"/>
+        </topichead>
+    
+    <topicref href="community/community.troubleshoot.dita"/>
+    
+    <topichead navtitle="License Agreements">
+    <topicref href="community/community.3rd-party-license-agreements.dita"/>
+    <topicref href="community/community.eula.dita"/>
+    </topichead>
+    
+    
+  </topicref>
+  
+  
+  <!--Dev Plat-->  
   
     
  
@@ -1599,6 +1663,7 @@
         locktitle="yes"/>
       <topicref href="publiccloud/api.copyright.v13.dita"
         navtitle="Copyright for Helion Public Cloud APIs" locktitle="yes"/>
+      
     </topicref>
     <topicref href="publiccloud/cli.dita" navtitle="Helion Public Cloud CLIs" locktitle="yes">
       <topicref href="publiccloud/cli.openstack.dita" navtitle="Openstack CLI" locktitle="yes"/>
