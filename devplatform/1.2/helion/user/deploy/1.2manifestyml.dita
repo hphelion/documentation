@@ -608,8 +608,7 @@ url:
 "appname.paasname.com" URL to the application. If you would like this
 URL assigned as well, add <codeph>${name}.${target-base}</codeph>
 to the list of URLs.</p>
-<p>See <xref href="index.dita">Mapping App URLs</xref> for more
-information.</p>
+<p>See <xref href="1.2index.dita#topic18647/mapping-app-urls"/>for more information.</p>
 </section>
 <section id="env"> <title>env:</title>
 <p>A map of environment variables to initialize for the application. Each
