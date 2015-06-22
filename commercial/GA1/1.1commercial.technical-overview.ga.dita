@@ -196,7 +196,7 @@ Users can create a bootable volume and use that to boot a VM.
 </entry>
     <entry>The HP Helion Sherpa service is a content distribution catalog service provides a mechanism to download the content such as Image Operation images, Orchestration templates, and so forth, from the HP Helion [HDN](https://helion.hpwsportal.com) and install the content in the appropriate service such as the Identity service etc.
 
-    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href=" /helion/openstack/1.1/services/sherpa/overview/" >Learn more </xref> about the HP Helion Sherpa Service.
+        <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.1commerical.services-sherpa-overview.dita" >Learn more </xref> about the HP Helion Sherpa Service.
     </entry> 
     <entry>Administrators can download content such as software patches and updates from the HP Helion [HDN](https://helion.hpwsportal.com) and apply the downloaded content to their <tm tmtype="reg">Helion Openstack</tm> installation. </entry>
 </row>
