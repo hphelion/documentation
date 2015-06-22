@@ -110,7 +110,7 @@ tables:</p>
 <section id="configuring-static-media"> <title>Configuring static media</title>
 <p>There are various ways to serve static files for a Django application. While Option #1 is the most recommended for production deployments, option #3 is the simplest for non-production/development/test/QA deployments.</p>
 <ol>
-<li>Directly serve static files with uWSGI. See <xref href="index.dita">
+<li>Directly serve static files with uWSGI. See <xref href="1.2index.dita">
 <i>Serving static files with uWSGI</i>
 </xref> for details. or:</li>
 <li>Use <codeph>django.contrib.staticfiles</codeph>, which is
