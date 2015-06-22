@@ -49,23 +49,21 @@
 
 <ul>
 <li>
-<xref type="section" href="#topic20922/framework">framework:</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic20922/type">type:</xref>
-</li>
-<li>
-<xref type="section" href="#topic20922/runtime">runtime:</xref>
-</li>
-<li>
-<xref type="section" href="#topic20922/document-root">document-root:</xref>
-</li>
-<li>
-<xref type="section" href="#topic20922/start-file">start-file:</xref>
-</li>
-</ul>
-</li>
+            <xref type="section" href="#topic20922/framework">framework:</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic20922/type">type:</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic20922/runtime">runtime:</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic20922/document-root">document-root:</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic20922/start-file">start-file:</xref>
+              </li>
+            </ul></li>
 <li>
 <xref type="section" href="#topic20922/app-dir">app-dir</xref>
 </li>
@@ -73,17 +71,15 @@
 <xref type="section" href="#topic20922/services">services:</xref>
 </li>
 <li>
-<xref type="section" href="#topic20922/requirements">requirements:</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic20922/os-packages">OS Packages</xref>
-</li>
-<li>
-<xref type="section" href="#topic20922/language-modules">Language Modules</xref>
-</li>
-</ul>
-</li>
+            <xref type="section" href="#topic20922/requirements">requirements:</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic20922/os-packages">OS Packages</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic20922/language-modules">Language Modules</xref>
+              </li>
+            </ul></li>
 <li>
 <xref type="section" href="#topic20922/mem">mem:</xref>
 </li>
@@ -97,23 +93,19 @@
 <xref type="section" href="#topic20922/url-or-urls">url (or urls):</xref>
 </li>
 <li>
-<xref type="section" href="#topic20922/env">env:</xref>
-
-<ul>
+            <xref type="section" href="#topic20922/env">env:</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic20922/env-attributes">env Attributes</xref>
+              </li>
+            </ul></li>
 <li>
-<xref type="section" href="#topic20922/env-attributes">env Attributes</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic20922/processes">processes:</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic20922/web">web:</xref>
-</li>
-</ul>
-</li>
+            <xref type="section" href="#topic20922/processes">processes:</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic20922/web">web:</xref>
+              </li>
+            </ul></li>
 <li>
 <xref type="section" href="#topic20922/command">command:</xref>
 </li>
@@ -127,38 +119,34 @@
 <xref type="section" href="#topic20922/inherit">inherit:</xref>
 </li>
 <li>
-<xref type="section" href="#topic20922/hooks">hooks:</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic20922/pre-push">pre-push:</xref>
-</li>
-<li>
-<xref type="section" href="#topic20922/pre-staging">pre-staging:</xref>
-</li>
-<li>
-<xref type="section" href="#topic20922/post-staging">post-staging:</xref>
-</li>
-<li>
-<xref type="section" href="#topic20922/pre-running">pre-running:</xref>
-</li>
-</ul>
-</li>
+            <xref type="section" href="#topic20922/hooks">hooks:</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic20922/pre-push">pre-push:</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic20922/pre-staging">pre-staging:</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic20922/post-staging">post-staging:</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic20922/pre-running">pre-running:</xref>
+              </li>
+            </ul></li>
 <li>
 <xref type="section" href="#topic20922/drain">drain:</xref>
 </li>
 <li>
-<xref type="section" href="#topic20922/min-version">min_version:</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic20922/client">client:</xref>
-</li>
-<li>
-<xref type="section" href="#topic20922/server">server:</xref>
-</li>
-</ul>
-</li>
+            <xref type="section" href="#topic20922/min-version">min_version:</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic20922/client">client:</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic20922/server">server:</xref>
+              </li>
+            </ul></li>
 <li>
 <xref type="section" href="#topic20922/key-substitution">Key Substitution</xref>
 </li>
@@ -389,7 +377,7 @@ allowing you to create service names based on the specified application
 name. For example:</p>
 <codeblock>  services:
   ${name}-db: mysql</codeblock>
-<p>The application name can be set as an option to the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-push" >helion push</xref> command, overriding
+  <p>The application name can be set as an option to the <xref type="section" href="../../user/reference/1.2client-ref-management.dita#topic50918/command-push" >helion push</xref> command, overriding
 the <b>name</b> value defined in <i>manifest.yml</i>. Use this technique when
 pushing multiple versions of the same application (using different
 names) if you want them to use separate databases. For example:</p>
@@ -524,7 +512,7 @@ url:
 "appname.paasname.com" URL to the application. If you would like this
 URL assigned as well, add <codeph>${name}.${target-base}</codeph>
 to the list of URLs.</p>
-<p>See <xref href="1.2index.dita#topic18647/mapping-app-urls"/> for more information.</p>
+  <p>See <xref type="section" href="1.2index.dita#topic18647/mapping-app-urls"/> for more information.</p>
 </section>
 <section id="env"> <title>env:</title>
 <p>A map of environment variables to initialize for the application. Each
@@ -537,8 +525,8 @@ such as API keys and passwords.</p>
 </section>
 <section id="env-attributes"> <title>env Attributes</title>
 <p>Each environment variable can have attributes which modify the
-interactive behavior of the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >ALS client</xref> when using the
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-push" >push</xref> command. These
+  interactive behavior of the <xref href="../../user/reference/1.2client-ref.dita" >ALS client</xref> when using the
+  <xref type="section" href="../../user/reference/1.2client-ref-management.dita#topic50918/command-push" >push</xref> command. These
 attributes are set with the following keys:</p>
 <ul>
 <li>
@@ -578,15 +566,14 @@ is set but no value is given (via "default", "inherit" or the
 <codeph>--env</codeph> option).</p>
 <p>
         <note>These attributes are only recognized by the <xref
-            href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita">ALS
+          href="../../user/reference/1.2client-ref.dita">ALS
             client</xref>.</note>
       </p>
 </section>
 <section id="processes"> <title>processes:</title>
 </section>
 <section id="web"> <title>web:</title>
-      <note> Used with the <xref
-          href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy"
+  <note> Used with the <xref type="section" href="../../user/deploy/1.2buildpack.dita#topic3370/buildpacks-legacy"
           >Legacy buildpack</xref> only. When using other buildpacks, create a <xref
           href="https://devcenter.heroku.com/articles/procfile" scope="external" format="html"
           >Procfile</xref> in the application's root directory.</note>
@@ -595,7 +582,7 @@ custom arguments to uWSGI. For example:</p>
 <codeblock>  processes:
   web: python3.2 app.py</codeblock>
 <p>This key is required when using the
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2other-frameworks.dita#generic-framework" >generic</xref> framework, but is
+  <xref type="section" href="../../user/deploy/1.2other-frameworks.dita#topic2413/generic-framework" >generic</xref> framework, but is
 optionally available for all other frameworks.</p>
 <p>
 <b>If defined</b>, this process is expected to launch a HTTP server bound
@@ -629,7 +616,7 @@ uWSGI options to the command.</p>
 <section id="command"> <title>command:</title>
 <p>Used for worker applications to start a background process. Below is an
 example using the
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2other-frameworks.dita#standalone-framework" >standalone</xref> framework:</p>
+  <xref type="section" href="../../user/deploy/1.2other-frameworks.dita#topic2413/standalone-framework" >standalone</xref> framework:</p>
 <codeblock>  name: helion-worker
 instances: 1
 framework:
@@ -639,7 +626,7 @@ command: ruby worker.rb</codeblock>
 </section>
 <section id="cron"> <title>cron:</title>
 <p>Commands listed here are added to the crontab file. See the section on
-<xref href="index.dita">Crontab Support</xref> for details.</p>
+  <xref type="section" href="index.dita#topic18647/crontab-support">Crontab Support</xref> for details.</p>
 <p>Example:</p>
 <codeblock>  cron:
   - PLUGH=xyzzy
@@ -744,7 +731,7 @@ is not needed and can be included on the same line:</p>
 </section>
 <section id="drain"> <title>drain:</title>
 <p>
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2app-logs.dita#application-logs-drain" >Application log drains</xref> can be
+  <xref href="../user/deploy/1.2app-logs.dita#topic5165/application-logs-drain" >Application log drains</xref> can be
 added to an application when it is deployed by describing them in a
 <codeph>drain:</codeph> block with a drain name and URL:</p>
 <codeblock>  drain:
@@ -769,8 +756,7 @@ which the app will run.</p>
 <section id="client"> <title>client:</title>
 <p>The minimum version of the Application Lifecycle Service client needed to manage the app.</p>
 <p>To determine the client version, use:</p>
-<codeblock>  helion version
-
+<codeblock>helion version
 helion 0.3.13.0.18</codeblock>
 <p>Example:</p>
 <codeblock>  min_version:
