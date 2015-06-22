@@ -172,7 +172,7 @@ Minimum required Helion OpenStack build number for this install is 85.  </codebl
           following:<codeblock>2014-06-17 16:53:19.765       INFO Install Complete</codeblock></li>
 </ol>
 </section>
-<section id="install-services"> <title>Installing Services</title>
+<section id="installing-services"> <title>Installing Services</title>
 <p>The following steps describe how to download, install, and configure each of the Helion Development Platform services (Application Lifecycle Service [ALS], Messaging, Database, and Marketplace) using the Horizon interface.</p>
 </section>
 <section id="install-als"> <title>Application Lifecycle Service (ALS)</title>
@@ -225,7 +225,7 @@ Minimum required Helion OpenStack build number for this install is 85.  </codebl
           Project to begin using the Messaging Service.</li>
 </ol>
 </section>
-<section id="install-the-database-service"> <title>Install the Database Service</title>
+  <section id="install-database"> <title>Install the Database Service</title>
 <p>This section provides details on installing the Database Service from the Development Platform.</p>
 </section>
 <section id="db-prerequisites"> <title>Prerequisites</title>
@@ -492,7 +492,7 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 </tgroup>
 </table>
 </section>
-<section id="installing-the-marketplace-service"> <title>Installing the Marketplace Service</title>
+  <section id="install-marketplace"> <title>Installing the Marketplace Service</title>
 <p>This section provides details on installing the Marketplace service from the Development Platform.</p>
 </section>
 <section id="marketplace-prerequisites"> <title>Prerequisites</title>
@@ -650,7 +650,7 @@ server marketplace&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 <li> The installation is complete. Log back into the Horizon console (You may use a non-Admin
           account here.) Click on the <b>Marketplace</b> panel under the current Project to begin
           using the Marketplace Service. You may now install <xref
-            href="../../devplatform/1.2/1.2devplatform.marketplace.install.dita#install">Marketplace
+            href="1.2devplatform.marketplace.install.dita#topic6367/install">Marketplace
             packages</xref>.</li>
 </ol>
 <p>Your installation is now complete. If you encounter problems, refer to the <xref href=" 1.2devplatform.troubleshooting.dita" >Troubleshooting</xref> documentation.</p>
