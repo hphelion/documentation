@@ -4,20 +4,17 @@
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options/>
     </meta>
-    <projectTree name="master-project.xpr">
+    <projectTree name="Master-Project.xpr">
         <folder path="automation/"/>
         <folder path="CarrierGrade/"/>
         <folder path="CloudGraphics/"/>
-        <folder path="cloudos/"/>
         <folder path="commercial/"/>
         <folder path="community/"/>
-        <folder path="content/"/>
         <folder path="devplatform/"/>
         <folder path="euca/"/>
         <folder path="media/"/>
         <folder path="pdf_sources/"/>
         <folder path="publiccloud/"/>
         <folder path="unusedgraphics/"/>
-        <folder path="UseCases/"/>
     </projectTree>
 </project>
