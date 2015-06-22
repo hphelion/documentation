@@ -709,7 +709,7 @@ System and service health checks are based on the **check_mk** framework. Health
 <section id="backup-restore-nodes"> <title>Backup and Restore nodes</title>
 <p>Backup and restore scripts and procedures are provided for the seed VM, undercloud, overcloud management controller (running singleton services like Sherpa), and the MySQL database deployed in the controller cluster. These scripts are to be used by administrators managing the OpenStack(R) Cloud.</p>
 <p>Backup and Restore of VM instances/snapshots and volumes/snapshots for workloads in the cloud is supported using the Object Storage service.</p>
-<p>For more information see <xref href="1.1commercial.backup-restore-GA.dita" >HP Helion OpenStack(R) Back Up and Restore</xref>
+<p>For more information see <xref href="../../commercial/GA1/1.1commercial.backup-restore-GA.dita" >HP Helion OpenStack(R) Back Up and Restore</xref>
 </p>
 <p>
   <xref type="section" href="#topic24808/top"> Return to Top </xref>
