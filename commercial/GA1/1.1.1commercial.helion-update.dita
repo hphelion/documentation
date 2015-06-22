@@ -597,10 +597,10 @@ date
 <p>Update the playbook by entering:</p>
 
 <codeblock>
-    root@hLinux:~# cp -p ~/helion-update-1.1-to<required-cleanup remap="version">
-<ph>/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml ~/helion-update-1.1-to-<required-cleanup remap="version">
+    root@hLinux:~# cp -p ~/helion-update-1.1-to&#60;version&#62;
+<ph>/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml ~/helion-update-1.1-to-&#60;version&#62;
 <ph>/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml.orig
-    root@hLinux:~# cat &gt; ~/helion-update-1.1-to-<required-cleanup remap="version">
+    root@hLinux:~# cat &gt; ~/helion-update-1.1-to-&#60;version&#62;
 <ph>/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml 
     # Copyright (C) 2014 Hewlett-Packard Development Company, L.P.
     #
@@ -641,11 +641,11 @@ date
       command: os-collect-config --force --one
       when: test_bypass_os_collect_config != true
 </ph>
-</required-cleanup>
+
 </ph>
-</required-cleanup>
+
 </ph>
-</required-cleanup>
+
 </codeblock>
 </li>
 <li>
