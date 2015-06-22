@@ -22,8 +22,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start2.md-->
  <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/2/--></p>
-<p>During this step, you will download and install the configuration tool, named
-        <varname>cf-mgmt</varname>. This tool provides a quick way to pass configuration parameters
+<p>During this step, you will download and install the configuration tool, named <i>cf-mgmt</i>. This tool provides a quick way to pass configuration parameters
       to the Helion Development Platform. The download links and instructions will open in a
       separate page so you don't lose your place. </p>
 <table>
@@ -31,11 +30,11 @@
         <colspec colname="col1" colwidth="400" colsep="1"/>
         <colspec colname="col2"/>
         <tbody>
-          <row>
+          <row rowsep="0">
             <entry/>
             <entry/>
           </row>
-          <row>
+          <row rowsep="0">
             <entry><p>1. <xref href="ALS-developer-trial-quick-start">Register for your Helion
                   Public Cloud Account</xref>
               </p><image href="../../media/star.gif" id="image_lqs_gjp_js" scale="50"/>2.
@@ -51,9 +50,9 @@
               </p></entry>
             <entry>
               <b>Download the Configuration Tool</b>
-              <p>Use the ALS management tool (<varname>cf-mgmt.exe</varname>) to construct, manage,
-                update, or delete ALS clusters.</p> Click the download link that is appropriate for
-              your operating system.<ul>
+              <p>Use the ALS management tool (<i>cf-mgmt.exe</i>) to construct, manage, update, or
+                delete ALS clusters.</p> Click the download link that is appropriate for your
+              operating system.<ul>
                 <li>
                   <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-windows-x86_64.zip"
                     scope="external" format="html"><tm tmtype="reg">Windows</tm></xref>
@@ -66,14 +65,14 @@
                   <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-osx-x86_64.zip"
                     scope="external" format="html"><tm tmtype="reg">Mac OS X</tm></xref>
                 </li>
-              </ul><note>After installation, you may run the <varname>cf-mgmt update</varname>
-                command at any time to check for and install the most recent version. </note><p>
+              </ul><note>After installation, you may run the <i>cf-mgmt update </i>command at any
+                time to check for and install the most recent version. </note><p>
                 <b>Download the ALS Client</b>
               </p>Use the ALS client to push application code up to the server, start and stop
-              applications, link <tm tmtype="reg">Helion Openstack</tm> services to applications, and perform other
-              application management operations. <p>Download this tool if you intend to push
-                applications to your quick-start trial environment. </p>Click the download link that
-              is appropriate for your operating system. <ul>
+              applications, link <tm tmtype="reg">Helion Openstack</tm> services to applications,
+              and perform other application management operations. <p>Download this tool if you
+                intend to push applications to your quick-start trial environment. </p>Click the
+              download link that is appropriate for your operating system. <ul>
                 <li>
                   <xref href="http://clients.als.hpcloud.com/helion-1.2.0-win32-ix86.zip"
                     scope="external" format="html"><tm tmtype="reg">Windows</tm></xref>
@@ -92,11 +91,12 @@
                 scope="external" format="html">Command Reference</xref> has full descriptions of all
               ALS Client commands and options. </entry>
           </row>
-          <row>
+          <row rowsep="0">
             <entry/>
             <entry align="right">
-              <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita"><image href="../../media/NextButton.png" id="image_i4h_mjp_js" align="right"
-                /></xref></entry>
+              <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita"><image
+                  href="../../media/NextButton.png" id="image_i4h_mjp_js" align="right"
+              /></xref></entry>
           </row>
         </tbody>
       </tgroup>
