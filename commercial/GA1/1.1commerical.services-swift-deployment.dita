@@ -66,60 +66,50 @@
 <section id="table-a"> <title>Table A</title>
 <table>
 <tgroup cols="3">
-          <colspec colname="col1" colsep="1" rowsep="1"/>
-          <colspec colname="col2" colsep="1" rowsep="1"/>
-          <colspec colname="col3" colsep="1" rowsep="1"/>
-          <thead>
-            <row>
-              <entry>Attributes</entry>
-              <entry><ph>Definition</ph>
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry>Attributes</entry>
+    <entry><ph>Definition</ph>
               </entry>
-              <entry>
-                <ph>Recommendation</ph>
+    <entry><ph>Recommendation</ph>
               </entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry>
-                <b>Zone</b>
-              </entry>
-              <entry>Defines single point of failure within your cluster. </entry>
-              <entry>It is recommended to use a single zone with multiple servers. Having multiple
-                servers (at least three) ensures that the replicas are distributed across servers,
-                not all on one.</entry>
-            </row>
-            <row>
-              <entry>
-                <b>Replica Count</b>
-              </entry>
-              <entry>Defines the number of copies of objects created.</entry>
-              <entry>The recommended value is 3.</entry>
-            </row>
-            <row>
-              <entry>
-                <b>Part Power</b>
-              </entry>
-              <entry>Defines the storage cluster capacity. Set the <varname>partition
-                  power</varname> value based on the total amount of storage you expect your entire
-                ring to use.</entry>
-              <entry> The parameter is an exponent: 2^X. Assuming that the average available drive
-                capacity is 1-3 TB. For the partition power values, refer to <xref
-                  href="1.1commerical.services-swift-deployment-part-power.dita"/>
-                <xref href=" /helion/openstack/1.1/services/swift/deployment/ring-power/">Ring Power
-                  and Number of Partitions</xref>. </entry>
-            </row>
-            <row>
-              <entry>
-                <b>Min part hour</b>
-              </entry>
-              <entry>This should be set to however long a full replication/update cycle takes. No
-                partition is moved twice during the specified amount of time.</entry>
-              <entry> The recommended value is 24 hours. Note that this restriction is ignored in
-                the case of device failure when there is no option other than reassignment.</entry>
-            </row>
-          </tbody>
-        </tgroup>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>
+<b>Zone</b>
+</entry>
+    <entry>Defines single point of failure within your cluster. </entry>
+    <entry>It is recommended to use a single zone with multiple servers. Having multiple servers (at least three) ensures that the replicas are distributed across servers, not all on one.</entry>
+</row>
+<row>
+<entry>
+<b>Replica Count</b>
+</entry>
+    <entry>Defines the number of copies of objects created.</entry>
+    <entry>The recommended value is 3.</entry>
+</row>
+<row>
+<entry>
+<b>Part Power</b>
+</entry>
+    <entry>Defines the storage cluster capacity. Set the <varname>partition power</varname> value based on the total amount of storage you expect your entire ring to use.</entry>
+  <entry>  The parameter is an exponent: 2^X. Assuming that the average available drive capacity is 1-3 TB. For the partition power values, refer to <xref href="1.1commerical.services-swift-deployment-part-power.dita" >Ring Power and Number of Partitions</xref>.
+</entry>
+</row>
+<row>
+<entry>
+<b>Min part hour</b>
+</entry>
+    <entry>This should be set to however long a full replication/update cycle takes. No partition is moved twice during the specified amount of time.</entry>
+    <entry> The recommended value is 24 hours. Note that this restriction is ignored in the case of device failure when there is no option other than reassignment.</entry>
+</row>
+</tbody>
+</tgroup>
 </table>
 </section>
 <section id="table-b-other-attributes"> <title>Table B - Other Attributes</title>
