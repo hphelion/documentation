@@ -9,11 +9,15 @@
                         <String>keys.context</String>
                         <String>${pdu}/docs.hpcloud.com.ditamap</String>
                     </entry>
+                    <entry>
+                        <String>validation.scenarios</String>
+                        <validationScenario-array/>
+                    </entry>
                 </serializableOrderedMap>
             </serialized>
         </options>
     </meta>
-    <projectTree name="Master-Project.xpr">
+    <projectTree name="master-project.xpr">
         <folder path="automation/"/>
         <folder path="CarrierGrade/"/>
         <folder path="CloudGraphics/"/>
