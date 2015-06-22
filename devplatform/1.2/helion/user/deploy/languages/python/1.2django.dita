@@ -81,14 +81,13 @@ else:
 </codeblock>
 
 <p>
-<b>Note</b>: In the future, this may be automatically written to <i>local_settings.py</i> (similar to ep.io and others)</p>
+<note>In the future, this may be automatically written to <i>local_settings.py</i> (similar to ep.io and others)</note></p>
 </li>
 <li>
 <p>Then add a new dependency to <i>requirements.txt</i>:</p>
 
 <codeblock>
-<codeph>echo 'mysql-python' &gt;&gt; requirements.txt
-</codeph>
+echo 'mysql-python' &gt;&gt; requirements.txt
 </codeblock>
 </li>
 </ol>

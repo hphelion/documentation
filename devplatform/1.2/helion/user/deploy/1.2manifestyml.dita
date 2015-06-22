@@ -21,7 +21,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/deploy/1.2manifestyml.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/deploy/manifestyml/--></p>
-<p>The <i>manifest.yml</i> file sets application configuration options which are then passed to ALS during the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-push" >helion push</xref> command.</p>
+  <p>The <i>manifest.yml</i> file sets application configuration options which are then passed to ALS during the <xref href="#topic20922/command-push" >helion push</xref> command.</p>
 <p>This file is the standard application configuration file format for all Cloud Foundry systems, allowing for portability from those systems to Application Lifecycle Service without configuration changes. See <xref href="http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html" scope="external" format="html" >Application Manifests</xref> for the complete canonical documentation.</p>
 <p>The client uses the keys to determine values that are otherwise passed by the user as arguments or as answers to prompts.</p>
 <ul>
