@@ -1390,7 +1390,6 @@
       <topicref href="publiccloud/cli.openstack.dita" navtitle="Openstack CLI" locktitle="yes"/>
       <topicref href="publiccloud/cli.windows.2.dita" navtitle="Windows PowerShell CLI" locktitle="yes">
         <topicref href="publiccloud/cli.windows.2.installation.dita" navtitle="PowerShell CLI Installation" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.commands.dita" navtitle="PowerShell CLI Commands Overview" locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.compute.dita" navtitle="PowerShell CLI Compute Examples" locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.metadata.dita" navtitle="PowerShell CLI Working With Metadata" locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.block-storage.dita" navtitle="PowerShell CLI Block Storage Examples" locktitle="yes"/>
