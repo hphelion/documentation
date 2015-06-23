@@ -213,7 +213,7 @@
       <topicref href="commercial/GA1/1.1commercial.install-GA-overview.dita">
         <topicref href="commercial/GA1/1.1commercial.roll.dita"/>
         <topicref href="commercial/GA1/1.1commercial.install-GA-virtual-control.dita"/>
-        <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita" toc="no"/>
+        <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita"/>
         <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"
           toc="no"/>
         <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita" toc="no"/>
