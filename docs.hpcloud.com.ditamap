@@ -1653,5 +1653,6 @@
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
-  <topicref href="carrier-grade-admin-guide.ditamap" navtitle="HP Helion OpenStack Carrier Grade" locktitle="yes"/> 
+  <topicref href="CarrierGrade/carrier-grade-index.dita"/>
+  <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/> 
 </map>
