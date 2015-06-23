@@ -55,14 +55,6 @@ a {
   a:visited {
   text-decoration: none !important;
   }*/
- 
-@font-face {
-    font-family:"icomoon";src:url("http://docs.hpcloud.com/fonts/icomoon.eot");src:url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"),url("../fonts/icomoon.woff") format("woff"),url("../fonts/icomoon.ttf") format("truetype"),url("../fonts/icomoon.svg#icomoon") format("svg");font-weight:normal;font-style:normal;
-}
-
-@font-face {
-    font-family:"HP Simplified Rg";src:url('http://docs.hpcloud.com/fonts/HPSimplifiedW01-Regular.eot');src:url('../fonts/HPSimplifiedW01-Regular.eot?#iefix') format('eot'),url('../fonts/HPSimplifiedW01-Regular.woff') format('woff'),url('../fonts/HPSimplifiedW01-Regular.ttf') format('truetype'),url('../fonts/HPSimplifiedW01-Regular.svg') format('svg');
-}
 
 #splitterContainer .menuItemSelected {
   background-color: rgb(249, 249, 249);
