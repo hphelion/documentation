@@ -32,9 +32,9 @@ For help with troubleshooting Helion <tm tmtype="reg">OpenStack</tm> 1.1 general
 </p>
 <section id="installing-the-cloud-environment"> <title>Installing the cloud environment</title>
 <p>Helion <tm tmtype="reg">OpenStack</tm> installation requirements are fully documented in the support matrix at:
-<xref href="http://docs.hpcloud.com/helion/openstack/support-matrix/" scope="external" format="html" >Support Matrix</xref>
+<xref href="1.1commercial.install-GA-supportmatrix.dita" scope="external" format="html" >Support Matrix</xref>
 The process of building the seed cloud host, creating the seed VM, the overcloud, and the undercloud are described at: 
-<xref href="1.1commercial.troubleshooting.install.dita" >Helion installation overview</xref>
+<xref href="1.1commercial.install-GA-overview.dita" >Helion installation overview</xref>
 At each step, you should have confirmation that what you have done works. At the conclusion of each major installation process, you will have confirmation that your installation works or does not. If you encounter issues, you should fix them before proceeding. After taking all these steps to resolve an error being reported, you may find that your cloud installation still does not work. This document will help you troubleshoot that experience.</p>
 </section>
 <section id="helion-installation"> <title>Helion installation</title>
