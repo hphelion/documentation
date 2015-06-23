@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8501">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> Identity Service Overview</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> Identity Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,7 +13,7 @@
  <!--./community/community.services-identity-overview.md-->
  <!--permalink: /helion/community/services/identity/overview/--></p>
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
-<p>Based on <tm tmtype="reg">OpenStack</tm> Keystone, the HP <tm tmtype="reg">Helion Openstack</tm> Identity service provides one-stop authentication.</p>
+<p>Based on <tm tmtype="reg">OpenStack</tm> Keystone, the HP <tm tmtype="reg">Helion OpenStack</tm> Identity service provides one-stop authentication.</p>
 <p>The Identity service enables you to create and configure users, specify user roles and credentials, and issue security tokens.</p>
 <p>The Identity service validates that incoming requests are being made by the user who claims to be making the call.</p>
 <p>Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a project (or, tenant) which then limits where and how their tokens can be used to interact with services. Users are assigned roles that can be used to control access to projects.</p>
@@ -21,24 +21,24 @@
 <p>Users can belong to specific role(s), which is a set of rights and privileges.</p>
 <p>The Identity service provides Identity, Token, Catalog and Policy services:</p>
 <p>
-<b>User Management</b> - The HP <tm tmtype="reg">Helion Openstack</tm> Identity Service tracks users and their permissions. The main components of user management include:</p>
+<b>User Management</b> - The HP <tm tmtype="reg">Helion OpenStack</tm> Identity Service tracks users and their permissions. The main components of user management include:</p>
 <ul>
 <li>Users</li>
 <li>Projects</li>
 <li>Roles</li>
 </ul>
 <p>
-<b>Service management</b> - The HP <tm tmtype="reg">Helion Openstack</tm> Identity Service provides a catalog of available services with their API endpoints. The main components of service management are:</p>
+<b>Service management</b> - The HP <tm tmtype="reg">Helion OpenStack</tm> Identity Service provides a catalog of available services with their API endpoints. The main components of service management are:</p>
 <ul>
 <li>Services</li>
 <li>Endpoints</li>
 </ul>
 <p>
-<b>Group management</b> -  The HP <tm tmtype="reg">Helion Openstack</tm> Identity Service allows administrators to create groups and add users to groups. Then, rather than assign a role to each user individually, assign a role to the group. Every group is in a domain.</p>
+<b>Group management</b> -  The HP <tm tmtype="reg">Helion OpenStack</tm> Identity Service allows administrators to create groups and add users to groups. Then, rather than assign a role to each user individually, assign a role to the group. Every group is in a domain.</p>
 <p>
 <b>
 <xref href="../commercial/GA1/1.1commerical.services-identity-domains.dita" >Domain management</xref>
-</b> - The HP <tm tmtype="reg">Helion Openstack</tm> Identity Service allows administrators to create tenants, users, and groups within a domain and assign roles to users and groups.</p>
+</b> - The HP <tm tmtype="reg">Helion OpenStack</tm> Identity Service allows administrators to create tenants, users, and groups within a domain and assign roles to users and groups.</p>
 <section id="key-components"> <title>Key Components</title>
 <p>The Identity service primarily works on the following key concepts:</p>
 </section>
@@ -215,7 +215,7 @@ user_enabled_default = 512
 <p>To <xref href="../community/community.services-identity-using.dita" >perform tasks using the Identity service</xref>, you can use the API or CLI.</p>
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>. <!-- The *Architecture* section contains useful information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together. However, the HP <tm tmtype="reg">Helion Openstack</tm> takes care of these details for you. The *Operations* section contains information on how to manage the system.--></p>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>. <!-- The *Architecture* section contains useful information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together. However, the HP <tm tmtype="reg">Helion OpenStack</tm> takes care of these details for you. The *Operations* section contains information on how to manage the system.--></p>
 <p>
   <xref href="#topic8501"> Return to Top </xref>
 </p>

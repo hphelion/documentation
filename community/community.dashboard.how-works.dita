@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2040">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> Community: How to use the Helion Dashboards</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> Community: How to use the Helion Dashboards</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./community/community.dashboard.how-works.md-->
  <!--permalink: /helion/community/dashboard/how-works/--></p>
-<p>The HP <tm tmtype="reg">Helion Openstack</tm> Community dashboards are browser-based user interfaces that allow you to interact with the HP <tm tmtype="reg">Helion Openstack</tm> Commercial overcloud. The overcloud is the end-user <tm tmtype="reg">OpenStack</tm> cloud.</p>
+<p>The HP <tm tmtype="reg">Helion OpenStack</tm> Community dashboards are browser-based user interfaces that allow you to interact with the HP <tm tmtype="reg">Helion OpenStack</tm> Commercial overcloud. The overcloud is the end-user <tm tmtype="reg">OpenStack</tm> cloud.</p>
 <p>The interface, based on <tm tmtype="reg">OpenStack</tm> Horizon, is grouped into dashboards, including <xref type="section" href="#topic2040/DashProject">Project</xref>, <xref type="section" href="#topic2040/DashAdmin">Admin</xref> and <xref type="section" href="#topic2040/DashSettings">Settings</xref>. Tabs on the left side of the interface expand and contract to show available commands grouped into <b>panels</b>.</p>
 <!-- Need new
 <img src="/media/HorizonCommunity.png" alt="" width="600" />

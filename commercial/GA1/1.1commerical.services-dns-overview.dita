@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3261">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: DNS as a Service (DNSaaS) Overview</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: DNS as a Service (DNSaaS) Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -28,7 +28,7 @@
 <p>
 
 </p>
-<p>Based on the <tm tmtype="reg">OpenStack</tm> Designate project, the HP <tm tmtype="reg">Helion Openstack</tm> DNS-as-a-service feature (DNSaaS) provides a Domain Name System (DNS) service for use by HP <tm tmtype="reg">Helion Openstack</tm> users.</p>
+<p>Based on the <tm tmtype="reg">OpenStack</tm> Designate project, the HP <tm tmtype="reg">Helion OpenStack</tm> DNS-as-a-service feature (DNSaaS) provides a Domain Name System (DNS) service for use by HP <tm tmtype="reg">Helion OpenStack</tm> users.</p>
 <p>DNSaaS includes a set of RESTful APIs for the display, creation, modification and deletion of DNS records.</p>
 <p>DNSaaS for the <tm tmtype="reg">OpenStack</tm> platform includes:</p>
 <ul>
@@ -40,7 +40,7 @@
 </ul>
 <p>For example, if a user wants to access <i>mytestdomain.com</i> in a web browser, DNS provides the mechanism the browser uses to locate the server's IP address (for example, <codeph>1.2.3.4</codeph>).</p>
 <p>
-<b>Note:</b> Installing HP <tm tmtype="reg">Helion Openstack</tm> DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP <tm tmtype="reg">Helion Openstack</tm> and verified that it is  correctly configured and operational.</p>
+<b>Note:</b> Installing HP <tm tmtype="reg">Helion OpenStack</tm> DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP <tm tmtype="reg">Helion OpenStack</tm> and verified that it is  correctly configured and operational.</p>
 <p>Learn how to <xref href="../../commercial/GA1/1.1commercial.install-GA-DNSaaS.dita" >install DNS as a service</xref>.</p>
 <section id="key-terms"> <title>Key Terms</title>
 <p>Key terms include:</p>

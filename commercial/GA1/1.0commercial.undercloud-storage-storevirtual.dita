@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5728">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Working with HP StoreVirtual VSA</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Working with HP StoreVirtual VSA</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -215,7 +215,7 @@
 </ol>
 </section>
 <section id="view-configuration"> <title>View configuration</title>
-<p>Use this option to view the cluster configuration (as defined in the HP <tm tmtype="reg">Helion Openstack</tm> Configuration Manual for HP LeftHand/StoreVirtual Block Storage Volume Driver).</p>
+<p>Use this option to view the cluster configuration (as defined in the HP <tm tmtype="reg">Helion OpenStack</tm> Configuration Manual for HP LeftHand/StoreVirtual Block Storage Volume Driver).</p>
 <ol>
 <li>
 <p>Log in to the Horizon undercloud dashboard.</p>

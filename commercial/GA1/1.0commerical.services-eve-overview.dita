@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3179">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Eve Service Overview</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Eve Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -17,7 +17,7 @@
 </p>
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 <p>As part of that investment HP Software has created an advanced provisioning technology, called Eve, which uses TOSCA standard semantics to express infrastructure templates that can be orchestrated against an <tm tmtype="reg">OpenStack</tm> Nova API.  As part of the Eve advanced provisioning service, hybrid provisioning can be accomplished with common templates across public and private <tm tmtype="reg">OpenStack</tm> API compliant clouds.</p>
-<p>The Eve service is the HP <tm tmtype="reg">Helion Openstack</tm> infrastructure topology provisioning service. Eve allows you to:</p>
+<p>The Eve service is the HP <tm tmtype="reg">Helion OpenStack</tm> infrastructure topology provisioning service. Eve allows you to:</p>
 <ul>
 <li>Provision TOSCA-based infrastructure topology designs (composite, hybrid, and distributed).</li>
 <li>Separate topology creation and resource pool binding, for simpler, reusable topologies.</li>
@@ -37,15 +37,15 @@
 <section id="working-with-the-provisioning-service"> <title>Working with the Provisioning Service</title>
 </section>
 <section id="API"> <title>Using the API to access Eve</title>
-<p>You can use a low-level, raw REST API access to HP <tm tmtype="reg">Helion Openstack</tm> Eve service. See .</p>
+<p>You can use a low-level, raw REST API access to HP <tm tmtype="reg">Helion OpenStack</tm> Eve service. See .</p>
 </section>
 <section id="cli"> <title>Using the CLI</title>
-<p>You can use any of several command-line interface software to access HP <tm tmtype="reg">Helion Openstack</tm> Eve service. See .</p>
+<p>You can use any of several command-line interface software to access HP <tm tmtype="reg">Helion OpenStack</tm> Eve service. See .</p>
 </section>
 <section id="bindings"> <title>Using language bindings</title>
-<p>You can use any of several language bindings to access HP <tm tmtype="reg">Helion Openstack</tm> Eve service. See .</p>
+<p>You can use any of several language bindings to access HP <tm tmtype="reg">Helion OpenStack</tm> Eve service. See .</p>
 <!--
-## How To's with the HP <tm tmtype="reg">Helion Openstack</tm> Image Operations Service ## {#howto}
+## How To's with the HP <tm tmtype="reg">Helion OpenStack</tm> Image Operations Service ## {#howto}
 
 The following lists of tasks can be performed by a user or administrator through the [HP Administration Dashboard](/helion/openstack/manage/administration-dashboard/), the <tm tmtype="reg">OpenStack</tm> [CLI]() or <tm tmtype="reg">OpenStack</tm> [API]().
 
@@ -73,11 +73,11 @@ The following lists of tasks can be performed by a user or administrator through
 - Remove volume group from server group-->
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref> The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together. However, the HP <tm tmtype="reg">Helion Openstack</tm> edition takes care of these details for you. The <i>Operations</i> contains information on how to manage the system.</p>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref> The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together. However, the HP <tm tmtype="reg">Helion OpenStack</tm> edition takes care of these details for you. The <i>Operations</i> contains information on how to manage the system.</p>
 <!-- hide me Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP <tm tmtype="reg">Helion Openstack</tm> Operational Dashboard Help](/helion/openstack/manage/operational-dashboard/)
-* [HP <tm tmtype="reg">Helion Openstack</tm> Administration Dashboard Help](/helion/openstack/manage/administration-dashboard/) -->
+* [HP <tm tmtype="reg">Helion OpenStack</tm> Operational Dashboard Help](/helion/openstack/manage/operational-dashboard/)
+* [HP <tm tmtype="reg">Helion OpenStack</tm> Administration Dashboard Help](/helion/openstack/manage/administration-dashboard/) -->
 <p>
   <xref href="#topic3179"> Return to Top </xref>
 </p>

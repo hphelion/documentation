@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8875">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Troubleshooting Scale-Out Swift</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Troubleshooting Scale-Out Swift</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.swift.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/swift/--></p>
-<p>HP <tm tmtype="reg">Helion Openstack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP <tm tmtype="reg">Helion OpenStack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <ul>
 <li>
 <xref type="section" href="#topic8875/S3">Cannot create storage containers using Amazon S3 API</xref>
@@ -52,11 +52,11 @@
 <p>
   <b>Probable Cause</b>
 </p>
-<p>HP <tm tmtype="reg">Helion Openstack</tm> does not support Amazon S3 API.</p>
+<p>HP <tm tmtype="reg">Helion OpenStack</tm> does not support Amazon S3 API.</p>
 <p>
   <b>Resolution</b>
 </p>
-<p>Create containers using the <xref href="1.1commerical.services-object-overview.dita" ><tm tmtype="reg">Helion Openstack</tm> Object Storage Service</xref> through the Swift APIs or the Horizon dashboard.</p>
+<p>Create containers using the <xref href="1.1commerical.services-object-overview.dita" ><tm tmtype="reg">Helion OpenStack</tm> Object Storage Service</xref> through the Swift APIs or the Horizon dashboard.</p>
 </section>
 <section id="refreshfails"> <title>Scale-out nodes : os-refresh-configuration fails on Controller Nodes</title>
 <p>

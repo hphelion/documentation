@@ -21,7 +21,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/reference/1.2client-ref-control.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/reference/client-ref/control/--></p>
-<p>These commands are new in <tm tmtype="reg">Helion Openstack</tm> Development Platform 1.1</p>
+<p>These commands are new in <tm tmtype="reg">Helion OpenStack</tm> Development Platform 1.1</p>
 <ul>
 <li>
 <xref type="section" href="#topic3247/command-migrate">helion migrate</xref>: Move the application to a different space.</li>
@@ -92,7 +92,7 @@
 </table>
 </section>
 <section id="command-restage"> <title>helion restage &lt;<i>application</i>&gt;</title>
-<p>Restages an application and regenerates its droplet. This command is new in <tm tmtype="reg">Helion Openstack</tm> 1.1</p>
+<p>Restages an application and regenerates its droplet. This command is new in <tm tmtype="reg">Helion OpenStack</tm> 1.1</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>

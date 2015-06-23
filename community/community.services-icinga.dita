@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6490">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> Icinga Service</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> Icinga Service</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,7 +15,7 @@
 <p>The <b>
 <i>Icinga</i>
 </b> service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s).</p>
-<p>HP <tm tmtype="reg">Helion Openstack</tm> allows you to monitor Swift cluster in any of the followings ways:</p>
+<p>HP <tm tmtype="reg">Helion OpenStack</tm> allows you to monitor Swift cluster in any of the followings ways:</p>
 <ul>
 <li>
 <xref type="section" href="#topic6490/diskuse">Monitor Disk Usage</xref>
@@ -29,7 +29,7 @@
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
-<li>HP <tm tmtype="reg">Helion Openstack</tm> cloud is successfully deployed. </li>
+<li>HP <tm tmtype="reg">Helion OpenStack</tm> cloud is successfully deployed. </li>
 <li>All nodes are functional by default as they are part of cloud deployment</li>
 <li>The Icinga service is active and running in the undercloud</li>
 </ul>
@@ -108,7 +108,7 @@
 <row>
 <entry>WARNING </entry>
     <entry>Disk space low</entry>
-    <entry>The percentage used space of one of the disk drives exceeds the user defined threshold(Default set to 85% for HP <tm tmtype="reg">Helion Openstack</tm> 1.0). It is important to prevent Swift devices becoming full because it is difficult to recover if this happens. To resolve, add more devices to the rings or ask your users to delete objects.</entry>
+    <entry>The percentage used space of one of the disk drives exceeds the user defined threshold(Default set to 85% for HP <tm tmtype="reg">Helion OpenStack</tm> 1.0). It is important to prevent Swift devices becoming full because it is difficult to recover if this happens. To resolve, add more devices to the rings or ask your users to delete objects.</entry>
 </row>
 <row>
 <entry>FAIL </entry>

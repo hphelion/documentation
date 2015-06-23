@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2606">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Block Storage Volume Operations (Cinder) Overview</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Block Storage Volume Operations (Cinder) Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -16,10 +16,10 @@
 
 </p>
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
-<p>The HP <tm tmtype="reg">Helion Openstack</tm> Block Storage Volume Operations uses the <tm tmtype="reg">OpenStack</tm> Cinder (Block Storage) service to manage storage volumes, including creating volumes, creating volume snapshots, and configuring volumes.</p>
+<p>The HP <tm tmtype="reg">Helion OpenStack</tm> Block Storage Volume Operations uses the <tm tmtype="reg">OpenStack</tm> Cinder (Block Storage) service to manage storage volumes, including creating volumes, creating volume snapshots, and configuring volumes.</p>
 <p>Once created, you can easily disconnect block storage volumes from one instance and attach them to another. You can also create snapshots of these volumes.</p>
-<p>HP <tm tmtype="reg">Helion Openstack</tm> uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that the storage controller runs as a virtual appliance and helps realize Software Defined Block Storage. To use StoreVirtual you must use the KVM hypervisor.</p>
-<p>HP <tm tmtype="reg">Helion Openstack</tm> also supports HP StoreServ 3PAR as a Cinder backend.</p>
+<p>HP <tm tmtype="reg">Helion OpenStack</tm> uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that the storage controller runs as a virtual appliance and helps realize Software Defined Block Storage. To use StoreVirtual you must use the KVM hypervisor.</p>
+<p>HP <tm tmtype="reg">Helion OpenStack</tm> also supports HP StoreServ 3PAR as a Cinder backend.</p>
 <section id="working-with-the-volume-operations-service"> <title>Working with the Volume Operations Service</title>
 <p>To perform tasks using the Volume Operations service, you can use the dashboard, API or CLI.</p>
 <ul>
@@ -36,7 +36,7 @@
 </ul>
 </section>
 <section id="using-the-dashboards"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
-<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Dashboard</xref> to work with the Volume Operations service.</p>
+<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Dashboard</xref> to work with the Volume Operations service.</p>
 </section>
 <section id="using-the-api"> <title>Using the API<!--Removed anchor point API--><!-- id="API" --></title>
 <p>You can use a low-level, raw REST API for access to the HP Volume Operations service. See the <xref href="http://developer.openstack.org/api-ref-blockstorage-v2.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Block Storage API v2.0 Reference</xref>.</p>
@@ -47,7 +47,7 @@
 <!--
 ## How To's with the HP Helion Volume Operations Service<a name="howto"></a>
  
-The following lists of tasks can be performed by a user or administrator through the [HP <tm tmtype="reg">Helion Openstack</tm> Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://developer.openstack.org/api-ref-blockstorage-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/cinderclient_commands.html).
+The following lists of tasks can be performed by a user or administrator through the [HP <tm tmtype="reg">Helion OpenStack</tm> Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://developer.openstack.org/api-ref-blockstorage-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/cinderclient_commands.html).
 
 Depending upon your user type, [user](#user) or [administrator](#admin), you can perform the following tasks.
 
@@ -105,7 +105,7 @@ Use the Volume Operations service to create or delete volume types.
 Use the Volume Operations service to enable or disable services.-->
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For more general information on how to operate your cloud, refer to the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together. However, the HP <tm tmtype="reg">Helion Openstack</tm> takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
+<p>For more general information on how to operate your cloud, refer to the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together. However, the HP <tm tmtype="reg">Helion OpenStack</tm> takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
 <p>
   <xref href="#topic2606"> Return to Top </xref>
 </p>

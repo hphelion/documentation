@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5847">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Installation and Configuration for ESX Hypervisor</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Installation and Configuration for ESX Hypervisor</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -20,8 +20,8 @@
 <p>
 
 </p>
-<p>HP <tm tmtype="reg">Helion Openstack</tm> allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. This document provides installation instructions for HP <tm tmtype="reg">Helion Openstack</tm> on a suitably specified and prepared system.</p>
-<section id="installing-hp-helion-openstack"> <title>Installing HP <tm tmtype="reg">Helion Openstack</tm><!--Removed anchor point install--><!-- id="install" --></title>
+<p>HP <tm tmtype="reg">Helion OpenStack</tm> allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. This document provides installation instructions for HP <tm tmtype="reg">Helion OpenStack</tm> on a suitably specified and prepared system.</p>
+<section id="installing-hp-helion-openstack"> <title>Installing HP <tm tmtype="reg">Helion OpenStack</tm><!--Removed anchor point install--><!-- id="install" --></title>
 <p>The installation and configuration process for ESX consists of the following general steps:</p>
 <ul>
 <li>Verify Prerequisites
@@ -34,7 +34,7 @@
 </ul>
 </li>
 <li>Download and extracting the installation packages</li>
-<li>Installing HP <tm tmtype="reg">Helion Openstack</tm>
+<li>Installing HP <tm tmtype="reg">Helion OpenStack</tm>
 
 <ul>
 <li>Configure proxy information</li>
@@ -52,7 +52,7 @@
 <section id="pre"> <title>Verify Prerequisites</title>
 <p>To ensure successful installation, <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita" >perform required pre-installation tasks</xref> before you start.</p>
 </section>
-<section id="install"> <title>Installing HP <tm tmtype="reg">Helion Openstack</tm></title>
+<section id="install"> <title>Installing HP <tm tmtype="reg">Helion OpenStack</tm></title>
 <p>Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed cloud host:</p>
 <ul>
 <li>
@@ -187,7 +187,7 @@
 <p>If possible, leave this console display open as you will need the passwords to verify the installation.</p>
 </section>
 <section id="verifying-your-installation"> <title>Verify your installation</title>
-<p>To verify that the installation is successful, connect to the HP <tm tmtype="reg">Helion Openstack</tm> dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.1commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
+<p>To verify that the installation is successful, connect to the HP <tm tmtype="reg">Helion OpenStack</tm> dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.1commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
 <!-- Not needed in 1.1
 ## Create projects for LDAP users {#ldap}
 

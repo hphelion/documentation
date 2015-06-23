@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8087">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and 1.1.1: Verifying the Install Using Embedded Tests</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Verifying the Install Using Embedded Tests</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Verifying the Install Using Embedded Tests</searchtitle>
 </titlealts>
@@ -21,11 +21,11 @@
  <!--./commercial/GA1/1.1commercial.install-GA-tempest-tests.md-->
  <!--permalink: /helion/openstack/1.1/install/tempest-tests/--></p>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
 <p>Tempest is a set of integration tests for <tm tmtype="reg">OpenStack</tm> API validation, Scenarios, and other specific tests to be run against a live <tm tmtype="reg">OpenStack</tm> cluster.</p>
-<p>A version of the upstream <xref href="http://docs.openstack.org/developer/tempest/" scope="external" format="html" >Tempest</xref> integration tests  is pre-deployed in the HP <tm tmtype="reg">Helion Openstack</tm> undercloud.</p>
+<p>A version of the upstream <xref href="http://docs.openstack.org/developer/tempest/" scope="external" format="html" >Tempest</xref> integration tests  is pre-deployed in the HP <tm tmtype="reg">Helion OpenStack</tm> undercloud.</p>
 <p>You can use these embedded tests to verify if the deployed overcloud is functional.</p>
 <ul>
 <li>

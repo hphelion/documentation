@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2031">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Sherpa Service Overview</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Sherpa Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -28,7 +28,7 @@
 <p>
 
 </p>
-<p>The HP <tm tmtype="reg">Helion Openstack</tm> Sherpa Service provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment.</p>
+<p>The HP <tm tmtype="reg">Helion OpenStack</tm> Sherpa Service provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment.</p>
 <p>You can make purchases using a self-service account on the public web server. Once a purchase is made, you can use the Sherpa UI and back-end service to download the content from the web catalog using your self-service account. The content is then published into the various cloud repositories within HP Helion so that the end users can deploy virtual machines and other content from within the cloud.</p>
 <p>Content may include patches, plugins, images, models, and so forth that may be used to update, improve, extend, or provide content for the cloud.</p>
 <!--Compute allows you to work with *flavors*, which are unique combinations of disk space, memory capacity, and CPU; *images*, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and *servers*, which are virtual instances created using a flavor and an image
@@ -48,7 +48,7 @@ Key terms include:
 <p>To perform tasks using the Sherpa service, you can use the Horizon dashboards.</p>
 </section>
 <section id="using-the-dashboards"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
-<p>You can use the <xref href="../../commercial/GA1/1.1commercial.undercloud-admin-updates-and-extensions.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Dashboard</xref> to work with the Sherpa service.</p>
+<p>You can use the <xref href="../../commercial/GA1/1.1commercial.undercloud-admin-updates-and-extensions.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Dashboard</xref> to work with the Sherpa service.</p>
 <!--###Using the API ### {#API}
  
 You can use a low-level, raw REST API access to the HP Compute service. See the [<tm tmtype="reg">OpenStack</tm> Compute API v2.0 Reference](http://api.openstack.org/api-ref-compute-v2.html).-->
@@ -57,10 +57,10 @@ You can use a low-level, raw REST API access to the HP Compute service. See the 
 You can use the command-line interface software to access Sherpa. See the [to give the hyperlink].
 
 For more information on installing the CLI, see [Install the <tm tmtype="reg">OpenStack</tm> command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).-->
-<!--## How To's with the HP <tm tmtype="reg">Helion Openstack</tm> Compute Service ## {#howto}-->
+<!--## How To's with the HP <tm tmtype="reg">Helion OpenStack</tm> Compute Service ## {#howto}-->
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud 
 
-The following lists of tasks can be performed by a user or administrator through the [HP <tm tmtype="reg">Helion Openstack</tm> Dashboard](/helion/openstack/1.1/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-compute-v2.html), or [CLI](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).-->
+The following lists of tasks can be performed by a user or administrator through the [HP <tm tmtype="reg">Helion OpenStack</tm> Dashboard](/helion/openstack/1.1/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-compute-v2.html), or [CLI](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).-->
 <p>The Dashboard presents different options depending on the installation, location within the cloud, and the role of the Sherpa user currently logged in. Cloud Architects or Administrators, for example, can use the dashboard to update their clouds.</p>
 <p>When Sherpa is deployed in the undercloud and connected to the remote catalog web service, it pulls overcloud images and other support content down into the undercloud so that the images are deployed or upgraded properly.</p>
 <p>Sherpa may also be deployed in the overcloud to provide new content or workloads to be deployed within the overcloud. <!-- how?? --></p>

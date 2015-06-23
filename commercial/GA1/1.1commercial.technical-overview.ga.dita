@@ -132,7 +132,7 @@
 <entry>
 <b>Compute Operations (Nova)</b>
 </entry>
-    <entry>The HP <tm tmtype="reg">Helion Openstack</tm> Compute supports an API to instantiate and manage virtual servers on KVM  and VMware ESX hypervisors. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--> Users can create and manage the life cycle of virtual machines (suspend, resume, snapshot, and so forth), attach block storage volumes, work with security groups and key pairs, and associate floating IP addresses. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
+    <entry>The HP <tm tmtype="reg">Helion OpenStack</tm> Compute supports an API to instantiate and manage virtual servers on KVM  and VMware ESX hypervisors. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--> Users can create and manage the life cycle of virtual machines (suspend, resume, snapshot, and so forth), attach block storage volumes, work with security groups and key pairs, and associate floating IP addresses. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
 Users can also boot a VM using a Cinder volume as the root partition.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.1commerical.services-compute-overview.dita" >Learn more</xref> about the Compute Operations service.</entry>
     <entry> Administrators can also configure server flavors, modify project quotas, configure availability zones, enable and disable services, and work with virtual machines.</entry>
 </row>
@@ -140,7 +140,7 @@ Users can also boot a VM using a Cinder volume as the root partition.<!--A BR ta
 <entry>
 <b>Block Storage<!--A BR tag was used here in the original source.-->Volume (Cinder)</b>
 </entry>
-    <entry>The HP <tm tmtype="reg">Helion Openstack</tm> Block Storage supports an API to instantiate and manage block storage volumes on HP StoreServ 3PAR devices and StoreVirtual Software Defined Storage. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->User can create volumes, attach them to VMs, and take snapshots and backups.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
+    <entry>The HP <tm tmtype="reg">Helion OpenStack</tm> Block Storage supports an API to instantiate and manage block storage volumes on HP StoreServ 3PAR devices and StoreVirtual Software Defined Storage. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->User can create volumes, attach them to VMs, and take snapshots and backups.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
 Users can create a bootable volume and use that to boot a VM.
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.1commerical.services-volume-overview.dita" >Learn more </xref> about the Volume Operations service.
     </entry>
@@ -151,7 +151,7 @@ Users can create a bootable volume and use that to boot a VM.
 <entry>
 <b>Object Operations (Swift)</b>
 </entry>
-    <entry>The HP <tm tmtype="reg">Helion Openstack</tm> Object and Operations service helps manage the storage and retrieval of objects in publicly accessible machines. 
+    <entry>The HP <tm tmtype="reg">Helion OpenStack</tm> Object and Operations service helps manage the storage and retrieval of objects in publicly accessible machines. 
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->Users can configure storage containers, upload and download container files, and delete container files.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.1commerical.services-object-overview.dita" >Learn more</xref> about the Object Operations service and Ringos.</entry>
     
     <entry>Administrators can easily start with two auto-configured storage nodes, and then scale out by deploying additional Swift Proxy and Object Storage nodes. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->The Ringos CLI Utility is provided to format drives and easily manage Swift rings. </entry>
@@ -176,7 +176,7 @@ Users can create a bootable volume and use that to boot a VM.
 <entry>
 <b>Identity Operations (Keystone)</b>
 </entry>
-    <entry>The HP <tm tmtype="reg">Helion Openstack</tm> Identity Operations service provides one-stop authentication.
+    <entry>The HP <tm tmtype="reg">Helion OpenStack</tm> Identity Operations service provides one-stop authentication.
 
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.1commerical.services-identity-overview.dita" >Learn more</xref> about the Identity Operations service.</entry>
     <entry>Administrators can create and configure projects/tenants and users, and set credentials, and issue security tokens.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->MySQL and LDAP/ADS are supported.</entry>
@@ -185,7 +185,7 @@ Users can create a bootable volume and use that to boot a VM.
 <entry>
 <b>Image Operations (Glance)</b>
 </entry>
-    <entry>The HP <tm tmtype="reg">Helion Openstack</tm> Image Operations service helps to manage virtual machine images, including querying and updating image metadata, and retrieval of the actual image data.
+    <entry>The HP <tm tmtype="reg">Helion OpenStack</tm> Image Operations service helps to manage virtual machine images, including querying and updating image metadata, and retrieval of the actual image data.
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
     User can create, modify, and delete private images.     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.1commerical.services-imaging-overview.dita" >Learn more</xref> about Image Operations.</entry>
     <entry>Administrators can create, modify and delete public images and private images. These images are made available to the users.</entry>
@@ -206,7 +206,7 @@ Users can create a bootable volume and use that to boot a VM.
 
         <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.1commerical.services-sherpa-overview.dita" >Learn more </xref> about the HP Helion Sherpa Service.
     </entry> 
-    <entry>Administrators can download content such as software patches and updates from the HP Helion [HDN](https://helion.hpwsportal.com) and apply the downloaded content to their <tm tmtype="reg">Helion Openstack</tm> installation. </entry>
+    <entry>Administrators can download content such as software patches and updates from the HP Helion [HDN](https://helion.hpwsportal.com) and apply the downloaded content to their <tm tmtype="reg">Helion OpenStack</tm> installation. </entry>
 </row>
 <row>
 <entry>
@@ -222,23 +222,23 @@ Users can create a bootable volume and use that to boot a VM.
 <entry>
 <b>Sirius services</b>
 </entry>
-    <entry>The HP <tm tmtype="reg">Helion Openstack</tm> Sirius service is a REST-based web service for storage device management. It is used to configure of storage services such as the  Block Storage and the Object Operations services that run in the overcloud and manage various storage devices.
-        <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="1.1commerical.services-sirius-overview.dita" >Learn more</xref> HP <tm tmtype="reg">Helion Openstack</tm> Sirius service.</entry> 
+    <entry>The HP <tm tmtype="reg">Helion OpenStack</tm> Sirius service is a REST-based web service for storage device management. It is used to configure of storage services such as the  Block Storage and the Object Operations services that run in the overcloud and manage various storage devices.
+        <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="1.1commerical.services-sirius-overview.dita" >Learn more</xref> HP <tm tmtype="reg">Helion OpenStack</tm> Sirius service.</entry> 
     <entry>Administrators can maintain an inventory of used 3PAR devices and CPGs, and StoreVirtual devices and VSAs  and configure Cinder 3PAR and StoreVirtual backends.</entry>
 </row>
 <row>
 <entry>
 <b>DVR services</b>
 </entry>
-    <entry>HP <tm tmtype="reg">Helion Openstack</tm> Distributed Virtual Routing (DVR) allows you to define connectivity among different Virtual Network Switches (VNS) as well as connectivity between VNS hosts and the external network. HP <tm tmtype="reg">Helion Openstack</tm> provides Distributed Virtual Routing to cloud users.
-        <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="1.1commerical.services-dvr-overview.dita" >Learn more</xref> HP <tm tmtype="reg">Helion Openstack</tm> DVR service.</entry> 
+    <entry>HP <tm tmtype="reg">Helion OpenStack</tm> Distributed Virtual Routing (DVR) allows you to define connectivity among different Virtual Network Switches (VNS) as well as connectivity between VNS hosts and the external network. HP <tm tmtype="reg">Helion OpenStack</tm> provides Distributed Virtual Routing to cloud users.
+        <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="1.1commerical.services-dvr-overview.dita" >Learn more</xref> HP <tm tmtype="reg">Helion OpenStack</tm> DVR service.</entry> 
     <entry> Administrators can  create centralized router (legacy router).</entry>
 </row>
 <row>
 <entry>
 <b>Ceilometer</b>
 </entry>
-    <entry>HP <tm tmtype="reg">Helion Openstack</tm> Metering, based on Ceilometer, takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. The service can be configured to record data, trigger specific action when a pre-defined condition is met, or both. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.1commerical.services-reporting-overview.dita" >Learn more</xref> about the HP <tm tmtype="reg">Helion Openstack</tm> Metering service.</entry> 
+    <entry>HP <tm tmtype="reg">Helion OpenStack</tm> Metering, based on Ceilometer, takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. The service can be configured to record data, trigger specific action when a pre-defined condition is met, or both. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.1commerical.services-reporting-overview.dita" >Learn more</xref> about the HP <tm tmtype="reg">Helion OpenStack</tm> Metering service.</entry> 
     <entry> Administrators can create and configure information collection from various HP Helion services.</entry>
 </row>
 </tbody>

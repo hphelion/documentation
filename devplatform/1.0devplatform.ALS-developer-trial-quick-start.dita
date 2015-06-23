@@ -101,9 +101,9 @@ The document covers the following sections:</p>
 
 <ul>
 <li>
-<b><tm tmtype="reg">Openstack</tm> Username</b> This is the username for your HP Public Cloud account.</li>
+<b><tm tmtype="reg">OpenStack</tm> Username</b> This is the username for your HP Public Cloud account.</li>
 <li>
-<b><tm tmtype="reg">Openstack</tm> Password</b> This is the password for your HP Public Cloud account.</li>
+<b><tm tmtype="reg">OpenStack</tm> Password</b> This is the password for your HP Public Cloud account.</li>
 <li>
 <b>Tenant ID</b> If you have multiple values, select one.</li>
 <li>

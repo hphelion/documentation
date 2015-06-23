@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1886">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Monitoring the Drive Audit</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Monitoring the Drive Audit</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -24,7 +24,7 @@
 <p>Note: Run <b>Icinga</b> check once in every 30 minutes for drive audit to complete one run on  a large system.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
-<li>HP <tm tmtype="reg">Helion Openstack</tm> cloud is successfully deployed. <!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
+<li>HP <tm tmtype="reg">Helion OpenStack</tm> cloud is successfully deployed. <!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
 </li>
 <li>The Icinga service is active and running in the undercloud</li>
 </ul>

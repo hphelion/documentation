@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic9174">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and 1.1.1: Installation Configuration JSON File Deployment Scenarios</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Installation Configuration JSON File Deployment Scenarios</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Installation Configuration JSON File Deployment Scenarios</searchtitle>
 </titlealts>
@@ -22,9 +22,9 @@
  <!--permalink: /helion/openstack/1.1/install/envars/deploy/--></p>
 <p> <xref href="../../commercial/GA1/1.1commercial.install-GA-JSON.dita" > ▲ Editing the JSON Environment Variables File for Installation</xref> </p>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
 <p>Edit the <xref href="../../commercial/GA1/1.1commercial.install-GA-JSON.dita" >JSON file</xref> based on the applicable scenario:</p>
 <ul>
 <li>
@@ -36,7 +36,7 @@
 </ul>
 <section id="kvm"> <title>Configuration variables file for a KVM install</title>
 <p>Identify the configuration variables required for the installation based on the deployment scenario.</p>
-<p>If you plan to use custom IP addresses in your HP <tm tmtype="reg">Helion Openstack</tm> deployment, open the JSON file in the installation package named <codeph>kvm-custom-ips.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic9174/env">Definition of Environment variables used during install</xref>.</p>
+<p>If you plan to use custom IP addresses in your HP <tm tmtype="reg">Helion OpenStack</tm> deployment, open the JSON file in the installation package named <codeph>kvm-custom-ips.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic9174/env">Definition of Environment variables used during install</xref>.</p>
 <p>All VLAN ID's &amp; IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.</p>
 <ol>
 <li>
@@ -127,7 +127,7 @@
 </li>
 <li>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" >Return to HP <tm tmtype="reg">Helion Openstack</tm> Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" >Return to HP <tm tmtype="reg">Helion OpenStack</tm> Installation Prerequisites</xref>.</p>
 </li>
 </ol>
 </section>
@@ -135,15 +135,15 @@
 <p>Identify the configuration variables required for the installation based on the deployment scenario.</p>
 <ul>
 <li>
-<xref type="section" href="#topic9174/esxone">Deployment Scenario 1: HP <tm tmtype="reg">Helion Openstack</tm> Deployment with custom IP addresses</xref>
+<xref type="section" href="#topic9174/esxone">Deployment Scenario 1: HP <tm tmtype="reg">Helion OpenStack</tm> Deployment with custom IP addresses</xref>
 </li>
 <li>
-<xref type="section" href="#topic9174/esxtwo">Deployment Scenario 2: HP <tm tmtype="reg">Helion Openstack</tm> Deployment with custom IP addresses and a VLAN provider Network for external access</xref>
+<xref type="section" href="#topic9174/esxtwo">Deployment Scenario 2: HP <tm tmtype="reg">Helion OpenStack</tm> Deployment with custom IP addresses and a VLAN provider Network for external access</xref>
 </li>
 </ul>
 </section>
-<section id="esxone"> <title>Deployment Scenario 1: HP <tm tmtype="reg">Helion Openstack</tm> Deployment with custom IP addresses</title>
-<p>If you plan to use custom IP addresses in your HP <tm tmtype="reg">Helion Openstack</tm> deployment, open the JSON file in the installation package named <codeph>esx-custom-ips.json</codeph> and edit the following configuration variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic9174/env">Definition of Environment variables used during install</xref>.</p>
+<section id="esxone"> <title>Deployment Scenario 1: HP <tm tmtype="reg">Helion OpenStack</tm> Deployment with custom IP addresses</title>
+<p>If you plan to use custom IP addresses in your HP <tm tmtype="reg">Helion OpenStack</tm> deployment, open the JSON file in the installation package named <codeph>esx-custom-ips.json</codeph> and edit the following configuration variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic9174/env">Definition of Environment variables used during install</xref>.</p>
 <p>All VLAN ID's &amp; IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.</p>
 <ol>
 <li>
@@ -204,12 +204,12 @@
 </li>
 <li>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" >Return to HP <tm tmtype="reg">Helion Openstack</tm> Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" >Return to HP <tm tmtype="reg">Helion OpenStack</tm> Installation Prerequisites</xref>.</p>
 </li>
 </ol>
 </section>
-<section id="esxtwo"> <title>Deployment Scenario 2: HP <tm tmtype="reg">Helion Openstack</tm> Deployment with custom IP addresses and a VLAN provider Network for external access</title>
-<p>If you intend to use custom IP addresses and a VLAN provider network for external access in your HP <tm tmtype="reg">Helion Openstack</tm> deployment, open the JSON file in the installation package named <codeph>esx-custom-ips-vlan.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic9174/env">Definition of Environment variables used during install</xref>.</p>
+<section id="esxtwo"> <title>Deployment Scenario 2: HP <tm tmtype="reg">Helion OpenStack</tm> Deployment with custom IP addresses and a VLAN provider Network for external access</title>
+<p>If you intend to use custom IP addresses and a VLAN provider network for external access in your HP <tm tmtype="reg">Helion OpenStack</tm> deployment, open the JSON file in the installation package named <codeph>esx-custom-ips-vlan.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic9174/env">Definition of Environment variables used during install</xref>.</p>
 <p>All VLAN ID's &amp; IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.</p>
 <ol>
 <li>
@@ -277,11 +277,11 @@
 </li>
 <li>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" >Return to HP <tm tmtype="reg">Helion Openstack</tm> Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" >Return to HP <tm tmtype="reg">Helion OpenStack</tm> Installation Prerequisites</xref>.</p>
 </li>
 </ol>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-JSON.dita" >Return to HP <tm tmtype="reg">Helion Openstack</tm> Editing the JSON Environment Variables File for Installation</xref>.</p>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-JSON.dita" >Return to HP <tm tmtype="reg">Helion OpenStack</tm> Editing the JSON Environment Variables File for Installation</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
