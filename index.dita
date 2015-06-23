@@ -38,17 +38,17 @@
 <xref type="section" href="#topic20137/install-messaging">Install the Messaging Service</xref>
 </li>
 <li>
-<xref type="section" href="#topic20137/install-als">Install the Application Lifecycle Service</xref>
+  <xref type="section" href="#topic20137/install-the-application-lifecycle-service-als">Install the Application Lifecycle Service</xref>
 </li>
 <li>
 <xref type="section" href="#topic20137/install-database">Install the Database Service</xref>
 </li>
 <li>
-<xref type="section" href="#topic20137/install-marketplace">Install the Marketplace Service</xref>
+  <xref type="section" href="#topic20137/install-the-marketplace-service">Install the Marketplace Service</xref>
 </li>
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>The HP Helion Development Platform is installed in the overcloud of HP Helion <tm tmtype="reg">OpenStack</tm></p>
+<p>The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack</p>
 <p>Before you begin installation:</p>
 <ul>
 <li>
@@ -58,7 +58,8 @@
 <p>The Cinder block storage service must be configured with either <xref href="commercial/GA1/1.1commercial.-vsa-overview.dita" >VSA</xref> or <xref href="commercial/GA1/1.1commercial.install-3par.dita" >3Par</xref>.</p>
 </li>
 <li>
-<p>If you installed HP Helion <tm tmtype="reg">OpenStack</tm> with <b>KVM</b> hypervisor support, configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.</p>
+<p>If you installed HP Helion OpenStack with <b>KVM</b> hypervisor support, configure HP
+            StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.</p>
 </li>
 <li>
 <p>The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements.</p>
@@ -79,7 +80,9 @@
 <section id="installing-the-hp-helion-development-platform"> <title>Installing the HP Helion Development Platform</title>
 </section>
 <section id="downloading-and-unpacking-the-installation-file"> <title>Downloading and unpacking the installation file</title>
-<p>The installation of the HP Helion Development Platform for the HP Helion <tm tmtype="reg">OpenStack</tm> Commercial Edition is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.</p>
+<p>The installation of the HP Helion Development Platform for the HP Helion OpenStack Commercial
+        Edition is provided as a small compressed tar file. The images for the actual services will
+        be downloaded at the installer's request.</p>
 <p>
         <note>Should you need more assistance during installation, the install script also has a
           help feature.</note>
@@ -100,23 +103,16 @@
             command:<codeblock>export https_proxy={ip address or url of http proxy} </codeblock><p>Example:</p><codeblock>export https_proxy=http://proxy.example.com</codeblock></li>
 <li> Confirm that you have access to the <xref href="https://pypi.python.org/pypi" scope="external"
             format="html">pypi</xref> site. The following commands will verify access to the site
-          and download one of the prerequisite files as a brief test. <b>Note</b>: If <i>ping</i> is
-          unavailable, use
-          <i>wget</i>.<codeblock>ping pypi.python.org
+          and download one of the prerequisite files as a brief test.<note>If <i>ping</i> is
+            unavailable, use
+          <i>wget</i>.</note><codeblock>ping pypi.python.org
 sudo -E pip install python-novaclient</codeblock></li>
 <li> If your network uses a proxy, you must define the proxy exclusion list so that proxies are not
           used for communicating with the services in the overcloud. To define the proxy exclusion
           list, enter the following
             command:<codeblock>export no_proxy=localhost,127.0.0.1,{ip address or host name of identity service aka keystone}  </codeblock><p>Example:</p><codeblock>export no_proxy=localhost,127.0.0.1,10.0.0.10 </codeblock></li>
-<li>
-<p>Validate Keystone access on port 5000 using <i>curl</i>.</p>
-
-<codeblock>curl https://{ip address or host name of identity service aka keystone}:5000</codeblock>
-
-<p>Example:</p>
-
-<codeblock>curl https://10.0.0.10:5000</codeblock>
-</li>
+<li> Validate Keystone access on port 5000 using
+            <i>curl</i>.<codeblock>curl https://{ip address or host name of identity service aka keystone}:5000</codeblock><p>Example:</p><codeblock>curl https://10.0.0.10:5000</codeblock></li>
 <li> Run this command to install the Helion Development Platform. You can run this command on any
           machine that can access the overcloud, but it is recommended that you run it on the seed
           node. By default the Username is <i>admin</i> and the Region is <i>regionOne</i>. Use the
@@ -165,7 +161,13 @@ sudo -E pip install python-novaclient</codeblock></li>
 <p>This section provides details on installing the Application Lifecycle service from the Development Platform.</p>
 </section>
 <section id="prereq"> <title>Prerequisites</title>
-<p>For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. This process is documented in Step 7 of <xref href="http://docs.hpcloud.com/helion/community/install#startseed" scope="external" format="html" >"Starting the seed and building your cloud"</xref> in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the <xref href="devplatform/helion/admin/server/1.1configuration.dita#http-proxy" >Administration Guide</xref>.</p>
+  <p>For ALS to install dependencies for deployed applications, you must provide ALS with outbound
+        Internet connectivity. This process is documented in Step 7 of <xref
+          href="community/community.install.baremetal.dita#topic16854/startseed">"Starting the seed
+          and building your cloud"</xref> in the baremetal installation instructions. If an HTTP
+        Proxy is required for Internet downloads, follow the instructions in the <xref
+          href="devplatform/helion/admin/server/1.1configuration.dita#topic31295/http-proxy">ALS Administration
+          Guide</xref>.</p>
 </section>
 <section id="connect-to-download-service3"> <title>Connect to the Download Service</title>
 <ol>
@@ -217,7 +219,10 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
 </ol>
 </section>
 <section id="quotas"> <title>Quotas</title>
-<p>The <b>Database Service</b> will be installed into the admin tenant of the Helion <tm tmtype="reg">OpenStack</tm> overcloud and the admin tenant must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+<p>The <b>Database Service</b> will be installed into the admin tenant of the Helion OpenStack
+        overcloud and the admin tenant must have sufficient quota available and unused resources for
+        the service to use. To check existing quota availability, log-in to Horizon as the
+          <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <p>If you are not configuring the Database Service to be highly available you must have the following quota available:</p>
 <table>
 <tgroup cols="2">
@@ -377,8 +382,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
               <p>
                 <b>Enable HA</b> - Specify if the database service is to be set up in a
                 high-availability (HA) configuration. If selected, each component of the service
-                will have three instances created and active at all times.
-                <!--A BR tag was used here in the original source.--></p>
+                will have three instances created and active at all times. </p>
               <p>
                 <image href="media/dev_install_database_new.png" placement="break"/>
               </p>
@@ -396,8 +400,8 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
           <li> Identify the Virtual IP used by the controller nodes to be able to load balance the
             Helion OpenStack
             services:<codeblock>keystone endpoint-list | awk '/8779/{ print $6 }' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"</codeblock></li>
-          <li> Update configuration on each of the Helion <tm tmtype="reg">OpenStack</tm> controller
-            nodes by connecting to the controller and doing the following:<ol>
+          <li> Update configuration on each of the Helion OpenStack controller nodes by connecting
+            to the controller and doing the following:<ol>
               <li>Edit the <i>/etc/haproxy/manual/paas.cfg</i> file and add the following lines. The
                 last line should be repeated once for each API server identified in step
                 1.<codeblock>listen trove_api
@@ -415,15 +419,18 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
             user and click on the <b>Database</b> panel under the current Project to being using
             Database Service. </li>
         </ol></sectiondiv></section>
-<section id="install-the-marketplace-service"> <title>Install the Marketplace Service<!--Removed anchor point install-marketplace--><!-- id="install-marketplace" --></title>
+<section id="install-the-marketplace-service"> <title>Install the Marketplace Service</title>
 <p>This section provides details on installing the Marketplace service from the Development Platform.</p>
 </section>
 <section id="prereq2"> <title>Prerequisites</title>
-<p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion <tm tmtype="reg">OpenStack</tm> overcloud. The admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+<p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack
+        overcloud. The admin tenant must have sufficient quota available and unused for the
+        resources the service uses. To check existing quota availability, log in to Horizon as the
+          <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
+<colspec colname="col1" colwidth="300"/>
+<colspec colname="col2" colwidth="300"/>
 <thead>
 <row>
 <entry>Resource</entry>
@@ -535,8 +542,8 @@ Increase the Ports quota to at least 100 using the following command in the <xre
             <li> Identify the Virtual IP used by the controller nodes to be able to load balance the
               Helion OpenStack
               services:<codeblock>keystone endpoint-list | awk '/8082/{ print $6}' |  grep -Eo '([0-9]*\.){3}[0-9]*'</codeblock></li>
-            <li> Update configuration on each of the Helion OpenStack controller nodes. <!--A BR tag was used here in the original source.-->
-              <b>For EACH node:</b><ol>
+            <li> Update configuration on each of the Helion OpenStack controller nodes. <b>For EACH
+                node:</b><ol>
                 <li>Connect to the controller.</li>
                 <li> Open the <i>/etc/haproxy/manual/paas.cfg</i> file and add the following lines.
                   <codeblock>listen marketplace_api
