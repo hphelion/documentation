@@ -648,8 +648,6 @@
         navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
       <topicref href="devplatform/1.2/windows/windows_custom_buildpacks.dita" locktitle="yes"
         navtitle="Deploying Windows Applications with the IIS Buildpack"/>
-      <topicref href="devplatform/1.2/windows/windows_deploying.dita" locktitle="yes"
-        navtitle="Deploying Windows Applications to Specific Servers"/>
       <topicref href="devplatform/1.2/windows/windows_glazier_reference_guide.dita" locktitle="yes"
         navtitle="Glazier Reference Guide"/>
       <topicref href="devplatform/1.2/windows/windows_remoting.dita" locktitle="yes"
