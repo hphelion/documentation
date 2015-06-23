@@ -61,7 +61,7 @@
         <xref format="dita" scope="local" href="windows_tools_guide.dita#topic_w5z_kcw_js/helion">application deployment tools</xref> can be used for 
         both Windows and Linux deployments.</li>
     <li> Additional developer tools, including an SDK for programmatic access to services, and a 
-        <xref format="dita" scope="local" href="windows_tools_guide.dita#topic_w5z_kcw_js/#cloudfoundryextensions">Visual Studio extension</xref> for 
+        <xref format="dita" scope="local" href="windows_tools_guide.dita#topic_w5z_kcw_js/cloudfoundryextensions">Visual Studio extension</xref> for 
         deploying and managing applications.</li>
     <li> Feature-rich application sandboxing, including memory and CPU management, and application isolation. This allows applications to coexist within a single 
         ALS cluster, saving the overhead of running 
