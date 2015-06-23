@@ -741,8 +741,7 @@ command: ruby worker.rb
 </codeblock>
 </section>
 <section id="cron"> <title>cron:</title>
-<p>Commands listed here are added to the crontab file. See the section on
-<xref href="index.dita">Crontab Support</xref> for details.</p>
+<p>Commands listed here are added to the crontab file. </p>
 <p>Example:</p>
 <codeblock>
   <codeph>cron:

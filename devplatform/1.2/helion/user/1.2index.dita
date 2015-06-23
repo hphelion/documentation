@@ -28,8 +28,8 @@ web server, application dependencies, databases, and other services.</p>
 <section id="quick-start"> <title>Quick Start</title>
 <ul>
 <li>
-<xref href="../user/quick-start/1.2index.dita">Quick Start</xref>
-</li>
+          <xref href="../../1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952">Quick
+            Start </xref></li>
 <li>
   <xref href="../user/quick-start/1.2index.dita#topic4730/management-console">Management Console</xref>
 </li>

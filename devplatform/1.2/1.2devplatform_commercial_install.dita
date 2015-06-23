@@ -653,7 +653,9 @@ server marketplace&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
             href="1.2devplatform.marketplace.install.dita#topic6367/install">Marketplace
             packages</xref>.</li>
 </ol>
-<p>Your installation is now complete. If you encounter problems, refer to the <xref href=" 1.2devplatform.troubleshooting.dita" >Troubleshooting</xref> documentation.</p>
+<p>Your installation is now complete. If you encounter problems, refer to the <xref
+          href="1.2devplatform.troubleshooting.dita#topic4855">Troubleshooting</xref>
+        documentation.</p>
 </section>
 </body>
 </topic>
