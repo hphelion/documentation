@@ -35,7 +35,7 @@
             version 1.1.1 or later.</p>
         <p>Note that Windows DEA nodes and SQL Server services will not appear in the Horizon
             interface until you upload the appropriate images into Glance.</p>
-        <p>After <xref href="/helion/devplatform/1.2/deploy/" format="html">creating a
+        <p>After <xref href="helion/user/deploy/1.2index.dita">creating a
                 cluster</xref>, go to the <b>Clusters</b> page. [<b>Project</b> tab &gt; expand
                 <b>Application Lifecycle Service</b> &gt; <b>Clusters</b>] Click on the
                 <b>Actions</b> down arrow to display the options and select the desired
@@ -62,13 +62,4 @@
                     href="../../../media/growcluster4.png" placement="break"
             /></p></section>
     </body>
-    <related-links>
-        <link href="../../../devplatform/1.2/windows/windows_overview.dita"><linktext>Windows Overview</linktext></link>
-        <link href="../../../devplatform/1.2/windows/windows_firstapp.dita"><linktext>Deploying your first .NET Application</linktext></link>
-        <link href="../../../devplatform/1.2/windows/windows_tools_guide.dita"><linktext>Windows and .NET Tools Guide</linktext></link>
-        <link href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita"><linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext></link>
-        <link href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita"><linktext>Glazier Reference Guide</linktext></link>
-        <link href="../../../devplatform/1.2/windows/windows_adding_services.dita"><linktext>Adding Services to a Windows Application</linktext></link>
-        <link href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita"><linktext>Deploying Windows Applications with the IIS Buildpack</linktext></link>
-    </related-links>
 </topic>
