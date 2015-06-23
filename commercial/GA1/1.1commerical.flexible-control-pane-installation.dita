@@ -307,7 +307,7 @@ bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh \
 <section id="postinstall"> <title>Post-Installation Steps</title>
 <ul>
 <li>
-<xref href="1.1commercial.install-GA-kvm.dita#verifying-your-installation">Verify the installation</xref>
+<xref href="1.1commercial.install-GA-kvm.dita">Verify the installation</xref>
 </li>
 <li>Configure Block Storage
 
