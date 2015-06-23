@@ -22,13 +22,13 @@
     <topicref href="commercial/GA1/1.1commercial.whatsnew.dita"/>
     <topicref href="commercial/GA1/1.1.1commercial.helion-update.dita"/>
     <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
-    <topicref href="commercial/GA1/1.1commercial.release-notes.dita" toc="no"/>
+    <topicref href="commercial/GA1/1.1commercial.release-notes.dita"  /><!--set to toc=no later-->
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.start.dita">
       <topicref href="commercial/GA1/1.1commercial.faq.dita"/>
       <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"/>
       <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita"/>
       <topicref href="commercial/GA1/1.1commercial.network-administrator-notes.dita"/>
-      <topicref href="commercial/GA1/under_the_hood.dita" toc="no"/>
+      <topicref href="commercial/GA1/under_the_hood.dita" /><!--set to toc=no later-->
     </topicref>
     <topicref href="commercial/GA1/1.1commercial.faq.dita"/>
     <!-- Services -->
@@ -215,8 +215,8 @@
         <topicref href="commercial/GA1/1.1commercial.install-GA-virtual-control.dita"/>
         <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita"/>
         <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"
-          toc="no"/>
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita" toc="no"/>
+          /><!--set to toc=no later-->
+        <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita" /><!--set to toc=no later-->
       </topicref>
       <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita">
         <topicref href="commercial/GA1/1.1commerical.install.HPLinux.dita">
@@ -229,7 +229,7 @@
         <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs-network.dita"/>
         <topicref href="commercial/GA1/1.1commercial.install-GA-NTP.dita"/>
         <topicref href="commercial/GA1/1.1commercial.install-GA-JSON.dita">
-          <topicref href="commercial/GA1/1.1commercial.install-GA-JSON-scenarios.dita" toc="no"/>
+          <topicref href="commercial/GA1/1.1commercial.install-GA-JSON-scenarios.dita" /><!--set to toc=no later-->
         </topicref>
         <topicref href="commercial/GA1/1.1commercial.install-GA-CSV.dita"/>
         <topicref href="commercial/GA1/1.1commercial.name-resolution.dita"/>
@@ -307,7 +307,7 @@
     <!-- Troubleshooting -->
     <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita">
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita" toc="no"/> <!--not on site-->
+      <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita" /><!--set to toc=no later--> <!--not on site-->
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.controllers.dita"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.dns.dita"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.dita"/>
@@ -341,13 +341,13 @@
    
     <!-- Glossary -->
     <!-- Not in 1.1.1 -->
-    <topicref href="commercial/GA1/1.1commerical.services-eve-overview.dita" toc="no"/> 
-    <topicref  href="commercial/GA1/1.1commerical.services-focus-overview.dita" toc="no"/> 
-    <topicref href="commercial/GA1/1.1commercial.site-index.dita" toc="no"/>
+    <topicref href="commercial/GA1/1.1commerical.services-eve-overview.dita" /><!--set to toc=no later--> 
+    <topicref  href="commercial/GA1/1.1commerical.services-focus-overview.dita" /><!--set to toc=no later--> 
+    <!--set to toc=no later  removed site index. not needed-->
     <topicref href="commercial/GA1/1.1commercial.glossary.dita"/> 
     <!-- Files in MD repo Under Revision not in DITA -->      
-    <topicref href="commercial/GA1/1.1commercial.install-GA-OpenStackClient.dita" toc="no"/>
-    <topicref href="commercial/GA1/1.1commercial.install-ip-addresses.dita" toc="no"/>
+    <topicref href="commercial/GA1/1.1commercial.install-GA-OpenStackClient.dita" /><!--set to toc=no later-->
+    <topicref href="commercial/GA1/1.1commercial.install-ip-addresses.dita" /><!--set to toc=no later-->
  
  
  
@@ -438,9 +438,9 @@
       <topicref href="commercial/GA1/1.0commerical.services-dvr-overview.dita"/>
       
       <!-- Not in 1.0 -->
-      <topicref href="commercial/GA1/1.0commerical.services-eve-overview.dita" toc="no"/>
-      <topicref href="commercial/GA1/1.0commerical.services-focus-overview.dita" toc="no"/>
-      <topicref href="commercial/GA1/1.0commerical.services-reporting-overview.dita" toc="no"/>
+      <topicref href="commercial/GA1/1.0commerical.services-eve-overview.dita" /><!--set to toc=no later-->
+      <topicref href="commercial/GA1/1.0commerical.services-focus-overview.dita" /><!--set to toc=no later-->
+      <topicref href="commercial/GA1/1.0commerical.services-reporting-overview.dita" /><!--set to toc=no later-->
       
     </topicref>
     
@@ -535,7 +535,7 @@
       <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-overview.dita"/>
       <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-installation.dita"/>
     </topichead>
-    <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita" toc="no"/>
+    <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita" /><!--set to toc=no later-->
     <topicref href="commercial/GA1/1.0commercial.related-topics.dita"/>
     <topichead navtitle="HP Helion Openstack(R) 1.0: License Files">
       <topicref href="commercial/GA1/1.0commercial.eula.dita"/>
@@ -727,8 +727,6 @@
         navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
       <topicref href="devplatform/1.2/windows/windows_custom_buildpacks.dita" locktitle="yes"
         navtitle="Deploying Windows Applications with the IIS Buildpack"/>
-      <topicref href="devplatform/1.2/windows/windows_deploying.dita" locktitle="yes"
-        navtitle="Deploying Windows Applications to Specific Servers"/>
       <topicref href="devplatform/1.2/windows/windows_glazier_reference_guide.dita" locktitle="yes"
         navtitle="Glazier Reference Guide"/>
       <topicref href="devplatform/1.2/windows/windows_remoting.dita" locktitle="yes"
@@ -778,6 +776,8 @@
     <topicref href="devplatform/1.2/helion/1.2index.dita" locktitle="yes"
       navtitle="Application Lifecycle Service Documentation">
       <!--permalink: /helion/devplatform/1.2/als/admin/-->
+      <topicref href="devplatform/1.2/helion/CLI/1.2constructor_vm.dita"
+        navtitle="ALS Constructor VM" locktitle="yes"/>
       <topichead navtitle="ALS Management Console">
         <topicref href="devplatform/1.2/helion/admin/console/1.2index.dita" locktitle="yes"
           navtitle="Management Console (Admin View)"/>
@@ -917,6 +917,8 @@
         <!--permalink: /helion/devplatform/1.2/als/user/client/-->
         <!--permalink: /helion/devplatform/1.2/als/user/console/-->
         <!--permalink: /helion/devplatform/1.2/als/user/deploy/-->
+        <topicref href="devplatform/1.2/helion/user/quick-start/1.2index.dita"
+          navtitle="ALS Quick Start" locktitle="yes"/>
         <topicref href="devplatform/1.2/helion/user/deploy/1.2index.dita" locktitle="yes"
           navtitle="General Deployment">
           <!--permalink: /helion/devplatform/1.2/als/user/deploy/app-debug/-->
@@ -1579,6 +1581,8 @@
         <topicref href="devplatform/helion/user/deploy/1.0index.dita" locktitle="yes"
           navtitle="General Deployment ">
           <!--permalink: /als/v1/user/deploy/app-debug/-->
+          <topicref href="devplatform/helion/user/quick-start/1.0index.dita"
+            navtitle="ALS Quick Start" locktitle="yes"/>
           <topicref href="devplatform/helion/user/deploy/1.0app-debug.dita" locktitle="yes"
             navtitle="Remote Debugging "/>
           <!--permalink: /als/v1/user/deploy/app-logs/-->
@@ -1626,7 +1630,9 @@
     </topicref>
   </topicref>
   <topicref href="euca/euca-landing-page.dita">
-    <topicref href="euca/euca.thirdparty.licensing.dita"/>
+    <topicref href="euca/euca.thirdparty.licensing.dita"
+      navtitle="Open-Source and Third-Party License Agreements" locktitle="yes"/>
+    <topicref href="euca/euca-eula.dita" navtitle="Master Services Agreement" locktitle="yes"/>
   </topicref>
   
   <!-- BEGIN Public cloud -->
@@ -1715,13 +1721,13 @@
       locktitle="yes"/>
     <topicref href="publiccloud/hz.whatsnewjan.2014.dita"/>
     <topicref href="publiccloud/upload-publish-partner-images135.dita"
-      navtitle="Uploading and Publishing Partner Images" locktitle="yes" toc="no"/>
+      navtitle="Uploading and Publishing Partner Images" locktitle="yes" /><!--set to toc=no later-->
     <topicref href="publiccloud/vpn-multisite.dita" navtitle="VPN Multi-Site Configuration Guide"
-      locktitle="yes" toc="no"/>
+      locktitle="yes" /><!--set to toc=no later-->
     <topicref href="publiccloud/vpn-quickstart.dita" navtitle="VPN Setup Quick Start Guide"
-      locktitle="yes" toc="no"/>
+      locktitle="yes" /><!--set to toc=no later-->
     <topicref href="publiccloud/plugins.teamcity.dita"
-      navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes" toc="no"/>
+      navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes" /><!--set to toc=no later-->
     <topicref href="publiccloud/glossary.dita" navtitle="Helion Public Cloud Glossary"
       locktitle="yes"/>
   </topicref>
