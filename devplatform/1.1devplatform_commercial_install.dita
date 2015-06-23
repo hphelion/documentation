@@ -161,13 +161,12 @@ This section provides details on installing the Messaging service from the Devel
 </section>
 <section id="download-and-configure-the-messaging-service"> <title>Download and Configure the Messaging Service</title>
 <ol>
-	<li>
-		<p>1. In the <b>Configure Services</b> panel locate the <b>Messaging</b> item in the Configure Services table and select <b>Download Service</b> and wait for the download to complete.
-		</p>
-		<image href="../../media/dev_install_messaging.png" />
-
-		<p><b>Note:</b> Downloading multiple services simultaneously is not supported, and will leave the server in an error state.</p>	
-	</li>
+	<li> In the <b>Configure Services</b> panel locate the <b>Messaging</b> item in the Configure
+					Services table and select <b>Download Service</b> and wait for the download to
+					complete. <p><image placement="break" href="../media/dev_install_messaging.png"
+							id="image_wbz_pys_ls"/><b>Note:</b> Downloading multiple services
+						simultaneously is not supported, and will leave the server in an error
+						state.</p></li>
 		<li>Once the download is complete, click the <b>Configure Service</b> button to configure the Messaging Service and wait for the configuration step to complete.
 		</li>
 		<li>Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the <b>Messaging</b> panel under the current Project to begin using the Messaging Service.
