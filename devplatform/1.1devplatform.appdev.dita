@@ -49,61 +49,57 @@
 <section id="java"> <title>Java</title>
 <ol>
 <li>
-<p>
-<xref href="../devplatform/workbook/helloworld/1.1helloworld.java.dita" >Hello World</xref> <!--A BR tag was used here in the original source.-->
-The Hello World sample is as simple as it gets: Hello World!</p>
-</li>
+          <xref href="../devplatform/workbook/helloworld/1.1helloworld.java.dita">Hello World</xref>
+          <!--A BR tag was used here in the original source.--> The Hello World sample is as simple
+          as it gets: Hello World!</li>
 <li>
-<p>
-<xref href="../devplatform/workbook/database/1.1database.java.dita" >Working with Databases</xref> <!--A BR tag was used here in the original source.-->
-Create a database and execute a query against it. </p>
-</li>
+          <xref href="../devplatform/workbook/database/1.1database.java.dita">Working with
+            Databases</xref>
+          <!--A BR tag was used here in the original source.--> Create a database and execute a
+          query against it. </li>
 <li>
-<p>
-<xref href="../devplatform/workbook/messaging/1.1messaging.java.dita" >Working with Messaging</xref>
-<!--A BR tag was used here in the original source.--> Enter, send, and display a brief message.</p>
-</li>
+          <xref href="../devplatform/workbook/messaging/1.1messaging.java.dita">Working with
+            Messaging</xref>
+          <!--A BR tag was used here in the original source.--> Enter, send, and display a brief
+          message.</li>
 </ol>
 <p>More Helion <xref href="../devplatform/helion/user/deploy/languages/1.1java.dita" >Java</xref> references.</p>
 </section>
 <section id="node"> <title>Node</title>
 <ol>
 <li>
-<p>
-<xref href="../devplatform/workbook/helloworld/1.1helloworld.node.dita" >Hello World</xref>
-<!--A BR tag was used here in the original source.-->
-The Hello World sample is as simple as it gets: Hello World!</p>
-</li>
+          <xref href="../devplatform/workbook/helloworld/1.1helloworld.node.dita">Hello World</xref>
+          <!--A BR tag was used here in the original source.--> The Hello World sample is as simple
+          as it gets: Hello World!</li>
 <li>
-<p>
-<xref href="../devplatform/workbook/database/1.1database.node.dita" >Working with Databases</xref> <!--A BR tag was used here in the original source.-->
-Create a database and execute a query against it.</p>
-</li>
+          <xref href="../devplatform/workbook/database/1.1database.node.dita">Working with
+            Databases</xref>
+          <!--A BR tag was used here in the original source.--> Create a database and execute a
+          query against it.</li>
 <li>
-<p>
-<xref href="../devplatform/workbook/messaging/1.1messaging.node.dita" >Working with Messaging</xref>
-<!--A BR tag was used here in the original source.--> Enter, send, and display a brief message.</p>
-</li>
+          <xref href="../devplatform/workbook/messaging/1.1messaging.node.dita">Working with
+            Messaging</xref>
+          <!--A BR tag was used here in the original source.--> Enter, send, and display a brief
+          message.</li>
 </ol>
 <p>More Helion <xref href="../devplatform/helion/user/deploy/languages/1.1node.dita" >Node</xref> references.</p>
 </section>
 <section id="PHP"> <title>PHP</title>
 <ol>
 <li>
-<p>
-<xref href="../devplatform/workbook/helloworld/1.1helloworld.php.dita" >Hello World</xref> <!--A BR tag was used here in the original source.-->
-The Hello World sample is as simple as it gets: Hello World!</p>
-</li>
+          <xref href="../devplatform/workbook/helloworld/1.1helloworld.php.dita">Hello World</xref>
+          <!--A BR tag was used here in the original source.--> The Hello World sample is as simple
+          as it gets: Hello World!</li>
 <li>
-<p>
-<xref href="../devplatform/workbook/database/1.1database.php.dita" >Working with Databases</xref> <!--A BR tag was used here in the original source.-->
-Create a database and execute a query against it.</p>
-</li>
+          <xref href="../devplatform/workbook/database/1.1database.php.dita">Working with
+            Databases</xref>
+          <!--A BR tag was used here in the original source.--> Create a database and execute a
+          query against it.</li>
 <li>
-<p>
-<xref href="../devplatform/workbook/messaging/1.1messaging.php.dita" >Working with Messaging</xref>
-<!--A BR tag was used here in the original source.--> Enter, send, and display a brief message.</p>
-</li>
+          <xref href="../devplatform/workbook/messaging/1.1messaging.php.dita">Working with
+            Messaging</xref>
+          <!--A BR tag was used here in the original source.--> Enter, send, and display a brief
+          message.</li>
 </ol>
 <p>More Helion <xref href="../devplatform/helion/user/deploy/languages/1.1php.dita" >PHP</xref> references.</p>
 </section>
