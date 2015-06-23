@@ -26,13 +26,13 @@
 <table>
 <tgroup cols="2">
                 <colspec colname="col1" colsep="1" colwidth="300"/>
-                <colspec colname="col2" colwidth="*2"/>
+                <colspec colname="col2" colwidth="1*"/>
                 <tbody>
-                    <row>
+                    <row rowsep="0">
                         <entry/>
                         <entry/>
                     </row>
-                    <row>
+                    <row rowsep="0">
                         <entry>
                             <p>1. <xref
                                     href="1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952"
@@ -59,26 +59,25 @@
                             <b>Explore Sample Applications</b>
                             <p>Congratulations! You are now ready to begin deploying apps to your
                                 new micro-cloud environment.</p> We have provided some <xref
-                                href="1.2devplatform.appdev.dita" scope="external">sample
-                                applications</xref> in multiple programming languages for you to
-                            examine and deploy. These very simple applications provide insight on
-                            how to push applications and connect those applications to HP Helion <tm
+                                href="1.2devplatform.appdev.dita#topic2457">sample applications
+                            </xref>in multiple programming languages for you to examine and deploy.
+                            These very simple applications provide insight on how to push
+                            applications and connect those applications to HP Helion <tm
                                 tmtype="reg">OpenStack</tm> services. <p>If you are interested in
                                 exploring the new functionality, you can jump right into <xref
-                                    href="windows/windows_deploying.dita">deploying
-                                        <tm tmtype="reg">Windows</tm> applications</xref>.</p><!-- ===================== horizontal rule ===================== -->
-                            <ul>
+                                    href="windows/windows_deploying.dita">deploying <tm tmtype="reg"
+                                        >Windows</tm> applications</xref>.</p><ul>
                                 <li>If you have <b>encountered problems</b> with this installation,
                                     refer to the <xref
-                                        href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita">Troubleshooting
-                                    tips</xref>.</li>
+                                        href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
+                                        >Troubleshooting tips</xref>.</li>
                                 <li>If you are ready to <b>take down</b> your sandbox environment,
-                                    refer to the 
-                                        <xref href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita">termination
-                                        instructions</xref>.</li>
+                                    refer to the <xref
+                                        href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita"
+                                        >termination instructions</xref>.</li>
                                 <li>If you are <b>done with the Quick-Start guide</b>, return to the
-                                    <xref href="1.2devplatform.index.dita">Helion Development Platform
-                                        Documentation</xref>.</li>
+                                        <xref href="1.2devplatform.index.dita#topic5490">Helion
+                                        Development Platform Documentation</xref>.</li>
                             </ul></entry>
                     </row>
                 </tbody>
