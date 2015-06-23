@@ -217,7 +217,7 @@ sudo service neutron-openvswitch-agent restart
 <li>
 <xref href="../community/community.faq.dita" >FAQ</xref>: Contains some frequently asked questions about the HP <tm tmtype="reg">Helion OpenStack</tm> Community edition release</li>
 <li>
-<xref href="http://docs.hpcloud.com/helion/community/install-overview/" scope="external" format="html" >Installation and configuration</xref>: A set of tasks that walk you through the installation and configuration process.</li>
+  <xref href="community.install-overview.dita" scope="external" format="html" >Installation and configuration</xref>: A set of tasks that walk you through the installation and configuration process.</li>
 <li>
 <xref href="../community/community.related-topics.dita" >Related Topics</xref>: Links to pertinent HP <tm tmtype="reg">Helion OpenStack</tm> Community and <tm tmtype="reg">OpenStack</tm> documentation.</li>
 <li>
