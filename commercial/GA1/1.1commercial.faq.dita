@@ -135,7 +135,7 @@
 <section id="MoreInfo"> <title>Where can I find more information?</title>
 <ul>
 <li>
-<xref href="https://docs.hpcloud.com/helion/openstack/1.1/" scope="external" format="html" >HP Helion <tm tmtype="reg">OpenStack</tm> Documentation</xref> </li>
+<xref href="1.1commercial.index.dita" scope="external" format="html" >HP Helion <tm tmtype="reg">OpenStack</tm> Documentation</xref> </li>
 <li>
 <xref href="http://www8.hp.com/us/en/cloud/hphelion-openstack.html" scope="external" format="html" >HP Helion <tm tmtype="reg">OpenStack</tm> Portal</xref>
 </li>
