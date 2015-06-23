@@ -33,7 +33,7 @@
       ensuring that developers can focus on building the right app for any environment.</p>
 <p>This documentation will help you get up to speed on the  Helion Development Platform as a Developer or Administrator.</p>
 <section id="platform-overview"> <title>Platform Overview</title>
-<p>The <xref href="/helion/1.1index.dita" >Application Lifecycle Service (ALS)</xref> is a Cloud Foundry-based, managed runtime environment for applications.</p>
+<p>The <xref href="helion/1.1index.dita" >Application Lifecycle Service (ALS)</xref> is a Cloud Foundry-based, managed runtime environment for applications.</p>
 <ul>
   <li>It supports <xref href="1.1devplatform.appdev.dita#topic2390/java" >Java</xref>, <xref href="1.1devplatform.appdev.dita#topic2390/node" >Node</xref>, <xref href="1.1devplatform.appdev.dita#topic2390/PHP" >PHP</xref>, and other language runtimes.</li>
 <li>It provides easy access to services like MySQL, PostgreSQL, RabbitMQ, and Memcache.</li>

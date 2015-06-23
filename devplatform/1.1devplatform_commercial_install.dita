@@ -122,18 +122,21 @@ Confirm that you have access to the [pypi](https://pypi.python.org/pypi) site. T
 		curl https://10.0.0.10:5000
 </codeph></codeblock>
 </li>
-			<li><p>Run this command to install the Helion Development Platform. You can run this command on any machine that can access the Overcloud (it is recommended to run this command on the Seed node).</p><p> By default the Username is *admin* and the Region is *regionOne*. Use the admin *tenant_id* from the overcloud. The parameter <i>location/ephemeralca-cacert.crt</i> can be found on the Helion OpenStack seed VM at <i>/usr/local/share/ca-certificates/ephemeralca-cacert.crt</i>.</p>
-<codeblock><codeph>
-		sudo ./DevelopmentPlatform_Setup.sh \
-			-p {admin_user_password} \
-			-a {auth_host_ip_address} \
-			-u {username} \
-			-i {tenant_id} \
-			-r {region_name} \
-			-e {location/ephemeralca-cacert.crt} \
-			install
-</codeph></codeblock>
-		</li>
+			<li> Run this command to install the Helion Development Platform. You can run this command on any
+					machine that can access the Overcloud (it is recommended to run this command on
+					the Seed node).<p> By default the Username is *admin* and the Region is
+						*regionOne*. Use the admin *tenant_id* from the overcloud. The parameter
+							<i>location/ephemeralca-cacert.crt</i> can be found on the Helion
+						OpenStack seed VM at
+							<i>/usr/local/share/ca-certificates/ephemeralca-cacert.crt</i>.</p><codeblock>sudo ./DevelopmentPlatform_Setup.sh \
+	-p {admin_user_password} \
+	-a {auth_host_ip_address} \
+	-u {username} \
+	-i {tenant_id} \
+	-r {region_name} \
+	-e {location/ephemeralca-cacert.crt} \
+install
+</codeblock></li>
 		<li>
 13. Once the installation is complete, you should see output similar to the following:
  <codeblock>
