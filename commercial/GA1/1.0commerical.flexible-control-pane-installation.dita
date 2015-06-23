@@ -365,10 +365,10 @@ export OVERCLOUD_LIBVIRT_TYPE=kvm
 
 <ul>
 <li>
-<xref href="http://docs.hpcloud.com/helion/openstack/install/vsa/overview" scope="external" format="html" >For VSA</xref>
+<xref href="1.0commercial.install-GA-vsa.dita" scope="external" format="html" >For VSA</xref>
 </li>
 <li>
-<xref href="http://docs.hpcloud.com/helion/openstack/install/3par" scope="external" format="html" >For 3PAR</xref>
+<xref href="1.0commercial.install-3par.dita" scope="external" format="html" >For 3PAR</xref>
 </li>
 </ul>
 </li>
