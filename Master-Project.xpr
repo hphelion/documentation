@@ -17,14 +17,13 @@
             </serialized>
         </options>
     </meta>
-    <projectTree name="Master-Project.xpr">
+    <projectTree name="master-project.xpr">
         <folder path="automation/"/>
         <folder path="CarrierGrade/"/>
         <folder path="CloudGraphics/"/>
         <folder path="cloudos/"/>
         <folder path="commercial/"/>
         <folder path="community/"/>
-        <folder path="content/"/>
         <folder path="devplatform/"/>
         <folder path="euca/"/>
         <folder path="media/"/>
