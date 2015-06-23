@@ -196,7 +196,7 @@
 </entry>
     <entry>The HP Helion ESX onboarding (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. The information is used for deployment and configuration of ESX Proxy Compute node. EON service is deployed in undercloud controller node.
 
-    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="1.0commerical.services-eon-overview.dita"> Learn more</xref> HP Helion EON services.</entry>
+        <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="1.0commerical.services-eon-overview.dita"> Learn more</xref> HP Helion EON services.</entry>
     <entry>Administrators can interact with VMware vCenter servers to discover, inventory and map ESX clusters to be used by the Compute service. 
 </entry>
 </row>
