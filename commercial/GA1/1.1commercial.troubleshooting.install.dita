@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic39140">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic39140">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Installation Troubleshooting</title>
 <prolog>
 <metadata>
@@ -28,13 +28,13 @@
 <p>This Helion installation troubleshooting guide is written for Helion <tm tmtype="reg">OpenStack</tm> installers who, during or after building the Helion <tm tmtype="reg">OpenStack</tm> environment, find that the cloud environment does not work as expected. The Helion <tm tmtype="reg">OpenStack</tm> environment is not itself complex but it does include a sufficient number of components that isolating a fault can be challenging.</p>
 <p>The goal of this guide is to help you to identify the problem or problems affecting your cloud installation and efficiently fix them.<!--A BR tag was used here in the original source.-->
 For help with troubleshooting Helion <tm tmtype="reg">OpenStack</tm> 1.1 general issues, refer to:
-<xref href="http://docs.hpcloud.com/helion/openstack/services/troubleshooting/" scope="external" format="html" >Troubleshooting Helion</xref>
+<xref href="http://docs.hpcloud.com/helion/openstack/services/troubleshooting/" scope="external" format="html">Troubleshooting Helion</xref>
 </p>
 <section id="installing-the-cloud-environment"> <title>Installing the cloud environment</title>
 <p>Helion <tm tmtype="reg">OpenStack</tm> installation requirements are fully documented in the support matrix at:
-<xref href="1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>
+<xref href="1.1commercial.install-GA-supportmatrix.dita">Support Matrix</xref>
 The process of building the seed cloud host, creating the seed VM, the overcloud, and the undercloud are described at: 
-<xref href="1.1commercial.install-GA-overview.dita" >Helion installation overview</xref>
+<xref href="1.1commercial.install-GA-overview.dita">Helion installation overview</xref>
 At each step, you should have confirmation that what you have done works. At the conclusion of each major installation process, you will have confirmation that your installation works or does not. If you encounter issues, you should fix them before proceeding. After taking all these steps to resolve an error being reported, you may find that your cloud installation still does not work. This document will help you troubleshoot that experience.</p>
 </section>
 <section id="helion-installation"> <title>Helion installation</title>
@@ -413,7 +413,7 @@ To check if nodes are in maintenance state, source the undercloud credentials:</
 </ol>
 </section>
 <section id="if-all-else-fails"> <title>If all else fails</title>
-<p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref>. Before contacting HP Customer Support, run the <codeph>run-sosreport</codeph> command on the affected nodes. The <codeph>run-sosreport</codeph> command will gather specific reports that will help diagnose your issue. You do not need to be admin (root) to run this command.</p>
+<p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html">HP Customer Support</xref>. Before contacting HP Customer Support, run the <codeph>run-sosreport</codeph> command on the affected nodes. The <codeph>run-sosreport</codeph> command will gather specific reports that will help diagnose your issue. You do not need to be admin (root) to run this command.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="fatal-pci"> <title>Fatal PCI Express Device Error</title>
@@ -903,7 +903,7 @@ A a node being controlled by the seed or undercloud cannot be controlled either 
 <p>
 <b>Before you Begin</b>:</p>
 <ul>
-<li>Deploy a <xref href="http://docs.openstack.org/user-guide-admin/content/specify-host-to-boot-instances-on.html" scope="external" format="html" >debug host on the same compute host</xref> as the target Windows instance.</li>
+<li>Deploy a <xref href="http://docs.openstack.org/user-guide-admin/content/specify-host-to-boot-instances-on.html" scope="external" format="html">debug host on the same compute host</xref> as the target Windows instance.</li>
 <li>The user will need to be able to log into the host with <i>superuser</i> privileges. To safely gain superuser privileges, add <codeph>sudo</codeph> as a prefix to each command executed.</li>
 </ul>
 <p>
