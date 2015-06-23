@@ -134,7 +134,7 @@ bash -x ~&lt;kvmuser&gt;/hp_ced_host_manager.sh --remote-setup
 </codeph>
 </codeblock>
 
-  <p>g. Create the <i>overcloud-config.json</i> file with the following contents. For definitions of the variables used and suggested values refer to the list of available <xref href="1.1commercial.install-GA-JSON.dita" scope="external" format="html">environment variables</xref>.</p>
+  <p>g. Create the <i>overcloud-config.json</i> file with the following contents. For definitions of the variables used and suggested values refer to the list of available <xref href="1.1commercial.install-GA-JSON.dita">environment variables</xref>.</p>
 
 <codeblock>
 <codeph> {
