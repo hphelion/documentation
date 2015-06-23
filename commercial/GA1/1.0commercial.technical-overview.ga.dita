@@ -625,7 +625,7 @@ Currently, supported DNS servers and networks include:
 <section id="highavailability"> <title>High availability</title>
 <p>The HP Helion <tm tmtype="reg">OpenStack</tm> High Availability (HA) architecture ensures that cloud resources are always available on request, resulting in uninterrupted operations for users.</p>
 <p>The <tm tmtype="reg">OpenStack</tm> services are deployed in a three node Controller cluster, which ensures availability of stateless services like API services and stateful services like MySQL or RabbitMQ.</p>
-<p>For more details on HA configuration, refer to <xref href="../../commercial/GA1/1.0commerical.high-availability.dita">HP Helion <tm tmtype="reg">OpenStack</tm> High Availability</xref> and <xref href="http://docs.openstack.org/high-availability-guide/content/index.html" scope="external" format="html"><tm tmtype="reg">OpenStack</tm> HA Guide</xref>.</p>
+<p>For more details on HA configuration, refer to <xref href="../../commercial/GA1/1.0commerical.high-availability.dita">HP Helion <tm tmtype="reg">OpenStack</tm> High Availability</xref> and <xref href="http://docs.openstack.org/high-availability-guide/content/index.html" ><tm tmtype="reg">OpenStack</tm> HA Guide</xref>.</p>
 <p>
   <xref type="section" href="#topic25331"> Return to Top </xref>
 </p>
