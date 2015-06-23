@@ -776,6 +776,8 @@
     <topicref href="devplatform/1.2/helion/1.2index.dita" locktitle="yes"
       navtitle="Application Lifecycle Service Documentation">
       <!--permalink: /helion/devplatform/1.2/als/admin/-->
+      <topicref href="devplatform/1.2/helion/CLI/1.2constructor_vm.dita"
+        navtitle="ALS Constructor VM" locktitle="yes"/>
       <topichead navtitle="ALS Management Console">
         <topicref href="devplatform/1.2/helion/admin/console/1.2index.dita" locktitle="yes"
           navtitle="Management Console (Admin View)"/>
@@ -915,6 +917,8 @@
         <!--permalink: /helion/devplatform/1.2/als/user/client/-->
         <!--permalink: /helion/devplatform/1.2/als/user/console/-->
         <!--permalink: /helion/devplatform/1.2/als/user/deploy/-->
+        <topicref href="devplatform/1.2/helion/user/quick-start/1.2index.dita"
+          navtitle="ALS Quick Start" locktitle="yes"/>
         <topicref href="devplatform/1.2/helion/user/deploy/1.2index.dita" locktitle="yes"
           navtitle="General Deployment">
           <!--permalink: /helion/devplatform/1.2/als/user/deploy/app-debug/-->
@@ -1577,6 +1581,8 @@
         <topicref href="devplatform/helion/user/deploy/1.0index.dita" locktitle="yes"
           navtitle="General Deployment ">
           <!--permalink: /als/v1/user/deploy/app-debug/-->
+          <topicref href="devplatform/helion/user/quick-start/1.0index.dita"
+            navtitle="ALS Quick Start" locktitle="yes"/>
           <topicref href="devplatform/helion/user/deploy/1.0app-debug.dita" locktitle="yes"
             navtitle="Remote Debugging "/>
           <!--permalink: /als/v1/user/deploy/app-logs/-->
@@ -1624,7 +1630,9 @@
     </topicref>
   </topicref>
   <topicref href="euca/euca-landing-page.dita">
-    <topicref href="euca/euca.thirdparty.licensing.dita"/>
+    <topicref href="euca/euca.thirdparty.licensing.dita"
+      navtitle="Open-Source and Third-Party License Agreements" locktitle="yes"/>
+    <topicref href="euca/euca-eula.dita" navtitle="Master Services Agreement" locktitle="yes"/>
   </topicref>
   
   <!-- BEGIN Public cloud -->
