@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20357">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic20357">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: DNSaaS Installation and Configuration</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: DNSaaS Installation and Configuration</searchtitle>
@@ -26,7 +26,7 @@
 <p>
   <b>This document describes the installation process for HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion <tm tmtype="reg">OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update Helion <tm tmtype="reg">OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="1.1.1commercial.helion-update.dita">HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
 <p>Our managed DNS service, based on the <tm tmtype="reg">OpenStack</tm> Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
 <p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion <tm tmtype="reg">OpenStack</tm></p>
 <p>
@@ -658,7 +658,7 @@ sudo -i
 </ol>
 <p>
 <b>Note</b>: Installer VM can also be deleted, if it is not deleted already.</p>
-<p>The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the <xref href="http://docs.openstack.org/developer/keystone/" scope="external" format="html" >Keystone documentation</xref>.</p>
+<p>The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the <xref href="http://docs.openstack.org/developer/keystone/" scope="external" format="html">Keystone documentation</xref>.</p>
 </section>
 <section id="increasequotas"> <title>Troubleshooting: Increasing Quotas</title>
 <p>If the associated project already has existing instances (VMs), the DNSaaS installation will not have sufficient room to complete. An admin must increase the quota levels to allow sufficient room before installation.</p>
@@ -683,10 +683,10 @@ sudo -i
 <p>For more information, see:</p>
 <ul>
 <li>
-<xref href="https://docs.hpcloud.com/api/dns/" scope="external" format="html" >HP Helion Public Cloud DNS API Specifications</xref>
+<xref href="https://docs.hpcloud.com/api/dns/" scope="external" format="html">HP Helion Public Cloud DNS API Specifications</xref>
 </li>
 <li>
-<xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for <tm tmtype="reg">OpenStack</tm></xref>
+<xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html">Designate DNSaaS services for <tm tmtype="reg">OpenStack</tm></xref>
 </li>
 </ul>
 <p>
