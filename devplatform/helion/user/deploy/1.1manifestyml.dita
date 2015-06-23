@@ -333,10 +333,10 @@ Application Lifecycle Service. For example:</p>
 <codeblock>  framework:
   start-file: temp.py</codeblock>
 <p>This value will be used by the
-  <xref href="..reference/1.1environment.dita#topic7695/processes-web" >PROCESSES_WEB</xref> and
+  <xref href="../reference/1.1environment.dita#topic7695/processes-web">PROCESSES_WEB</xref> and
 HELION_START_FILE environment variables. Any changes to
 HELION_START_FILE at runtime will not change the value of
-  <xref href="../reference/1.1environment.dita#topic7695/processes-web" >PROCESSES_WEB</xref> as
+  <xref href="../reference/1.1environment.dita#topic7695/processes-web">PROCESSES_WEB</xref> as
 the macro is expanded before the pre-running hooks are run.</p>
 </section>
 <section id="app-dir"> <title>app-dir</title>
@@ -625,7 +625,7 @@ command: ruby worker.rb</codeblock>
 </section>
 <section id="cron"> <title>cron:</title>
 <p>Commands listed here are added to the crontab file. See the section on
-  <xref type="section" href="index.dita#topic18647/crontab-support">Crontab Support</xref> for details.</p>
+  <xref type="section" href="1.1index.dita#topic18647/crontab-support">Crontab Support</xref> for details.</p>
 <p>Example:</p>
 <codeblock>  cron:
   - PLUGH=xyzzy

@@ -55,8 +55,14 @@
 <li>Select <b>HP Helion Development Platform</b> from the tree view and click <b>Next</b>.<!--A BR tag was used here in the original source.--><image href="../media/eclipse5.png" placement="break"/>
 <image href="../media/eclipse6.png"/>
 </li>
-<li>Add a new Cloud URL by hitting the Manage Cloud button.  Enter the URL of your ALS cluster and give it a name. If you don't have an ALS cluster set up, the fastest way to create one is to use the <xref href="../devplatform/1.1devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> in the public cloud.<!--A BR tag was used here in the original source.--><image href="../media/eclipse7.png" placement="break"/>
-</li>
+<li>Add a new Cloud URL by hitting the Manage Cloud button. Enter the URL of your ALS cluster and
+                    give it a name. If you don't have an ALS cluster set up, the fastest way to
+                    create one is to use the <xref
+                        href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952"
+                        >Quick Start Developer Trial</xref> in the public
+                        cloud.<!--A BR tag was used here in the original source.--><image
+                        href="../media/eclipse7.png" placement="break"/>
+                </li>
 </ol>
 <p>- <b>Note</b>: You may receive a warning that the peer is not authenticated, this is expected behavior as ALS images use a self-signed certificate. Select Yes when prompted with this error message.
     <image href="../media/eclipse8.png"/>
