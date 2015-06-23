@@ -14,7 +14,6 @@
       <!--permalink: /publiccloud/cli/windows/--></p>
     <p>The HP Helion Public Cloud command-line interface (CLI) software for Windows PowerShell is a tool which allows Windows users to manage their HP Helion Public Cloud services from the command line.</p>
     <p>Surf to the appropriate page to learn how to install the software, use the various features, and see how to go about getting help.</p>
-    <p>For a full list of all the commands available, start with the <xref href="../publiccloud/cli.windows.2.reference.dita" >command line reference</xref>.</p>
     <ul>
       <li>
         <xref href="../publiccloud/cli.windows.2.installation.dita" >Installation</xref>
@@ -30,9 +29,6 @@
       </li>
       <li>
         <xref href="../publiccloud/cli.windows.2.block-storage.dita" >Block Storage Examples</xref>
-      </li>
-      <li>
-        <xref href="../publiccloud/cli.windows.2.reference.dita" >Command Line Reference</xref>
       </li>
       <li>
         <xref href="../publiccloud/cli.windows.2.help.dita" >Getting Help</xref>
