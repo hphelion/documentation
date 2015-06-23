@@ -40,8 +40,9 @@ web server, application dependencies, databases, and other services.</p>
               Service Client</xref>
         </li>
 <li>
-  <xref href="../user/quick-start/1.2index.dita#topic4730/setting-organization-and-space">Setting Organization and Space</xref>
-</li>
+          <xref href="../quick-start/1.2index.dita#topic4745/setting-organization-and-space">Setting
+            Organization and Space</xref>
+        </li>
 <li>
   <xref href="../user/quick-start/1.2index.dita#topic4730/deploying-apps">Deploying Apps</xref>
 </li>
@@ -57,7 +58,7 @@ web server, application dependencies, databases, and other services.</p>
           <xref href="../client/1.2index.dita#topic3165">Application Lifecycle Service Client</xref>
           <ul>
             <li>
-              <xref href="../user/client/1.2index.dita#topic3165/helion-client-setup">Application
+              <xref href="../client/1.2index.dita#topic3165/helion-client-setup">Application
                 Lifecycle Service Client Setup</xref>
             </li>
             <li>
@@ -155,8 +156,8 @@ web server, application dependencies, databases, and other services.</p>
           <xref href="../../admin/console/1.2customize.dita#topic5029/welcome-page">Welcome</xref>
         </li>
 <li>
-  <xref href="../admin/console/1.2customize.dita#topic5029/organization-view">Organization View</xref>
-</li>
+          <xref href="../console/1.2index.dita#topic8844/organization-view">Organization View</xref>
+        </li>
 <li>
   <xref href="../admin/console/1.2customize.dita#topic5029/space-view">Space View</xref>
 </li>

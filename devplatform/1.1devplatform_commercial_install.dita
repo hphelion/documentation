@@ -166,9 +166,9 @@ sudo -E pip install python-novaclient</codeblock></li>
 <section id="prereq"> <title>Prerequisites</title>
   <p>For ALS to install dependencies for deployed applications, you must provide ALS with outbound
         Internet connectivity. This process is documented in Step 7 of <xref
-          href="community/community.install.baremetal.dita#topic16854/startseed">"Starting the seed
-          and building your cloud"</xref> in the baremetal installation instructions. If an HTTP
-        Proxy is required for Internet downloads, follow the instructions in the <xref
+          href="../community/community.install.baremetal.dita#topic16854/startseed">"Starting the
+          seed and building your cloud"</xref> in the baremetal installation instructions. If an
+        HTTP Proxy is required for Internet downloads, follow the instructions in the <xref
           href="helion/admin/server/1.1configuration.dita#topic31295/http-proxy">ALS Administration
           Guide</xref>.</p>
 </section>
