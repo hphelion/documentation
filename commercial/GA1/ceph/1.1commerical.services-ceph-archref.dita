@@ -74,7 +74,7 @@
   <xref format="html" href="javascript:window.open('/media/ceph-deployment-example.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
 </p>
 <section id="for-more-information"> <title>For more information</title>
-<p><xref href="1.1commercial.ceph-overview.dita#topic7563">Ceph Integration Overview</xref>
+<p><xref href="1.1commercial.ceph-overview.dita">Ceph Integration Overview</xref>
       </p>
 </section>
 <section id="next-steps"> <title>Next Steps</title>
