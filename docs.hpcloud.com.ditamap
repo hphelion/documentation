@@ -1628,6 +1628,8 @@
   <topicref href="euca/euca-landing-page.dita">
     <topicref href="euca/euca.thirdparty.licensing.dita"/>
   </topicref>
+  
+  <!-- BEGIN Public cloud -->
   <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud"
     locktitle="yes">
     <topicref href="publiccloud/site-overview.dita" navtitle="Helion Public Cloud Website Overview"
@@ -1678,16 +1680,13 @@
         locktitle="yes"/>
       <topicref href="publiccloud/api.copyright.v13.dita"
         navtitle="Copyright for Helion Public Cloud APIs" locktitle="yes"/>
-      
-    </topicref>
+      </topicref>
     <topicref href="publiccloud/cli.dita" navtitle="Helion Public Cloud CLIs" locktitle="yes">
       <topicref href="publiccloud/cli.openstack.dita" navtitle="Openstack CLI" locktitle="yes"/>
       <topicref href="publiccloud/cli.windows.2.dita" navtitle="Windows PowerShell CLI"
         locktitle="yes">
         <topicref href="publiccloud/cli.windows.2.installation.dita"
           navtitle="PowerShell CLI Installation" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.commands.dita"
-          navtitle="PowerShell CLI Commands Overview" locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.compute.dita"
           navtitle="PowerShell CLI Compute Examples" locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.metadata.dita"
@@ -1726,10 +1725,10 @@
     <topicref href="publiccloud/glossary.dita" navtitle="Helion Public Cloud Glossary"
       locktitle="yes"/>
   </topicref>
+  <!-- END Public cloud -->
+  
   <topicref href="automation/csa.index.dita"/>
   <topicref href="codar-landing-page.dita" navtitle="HP Codar"/>
-
-  <!-- Public cloud -->
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
