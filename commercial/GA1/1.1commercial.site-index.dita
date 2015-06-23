@@ -121,10 +121,10 @@
 <p>Review the following topics related to optional and required post-installation steps:</p>
 <ul>
 <li>
-<xref href="http://docs.hpcloud.com/helion/openstack/1.1/install/post-kvm/" scope="external" format="html" >Post-Installation for KVM Hypervisor</xref>
+  <xref href="1.1commercial.install-GA-post-kvm.dita" scope="external" format="html" >Post-Installation for KVM Hypervisor</xref>
 </li>
 <li>
-<xref href="http://docs.hpcloud.com/helion/openstack/1.1/install/post-kvm/" scope="external" format="html" >Post-Installation for KVM Hypervisor</xref>
+  <xref href="1.1commercial.install-GA-post-kvm.dita" scope="external" format="html" >Post-Installation for KVM Hypervisor</xref>
 </li>
 <li>
 <xref href="../../commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" >Integrating LDAP</xref>
