@@ -62,11 +62,9 @@ drop that instance from its list of backends available for the
 externally facing port.</p>
 </section>
 <section id="requirements-setup"> <title>Requirements &amp; Setup</title>
-<p>An Application Lifecycle Service VM can be configured as a Harbor node in the same way as
-other <xref href="index.dita">
-<i>data service roles</i>
-</xref>.
-For example:</p>
+<p>An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other
+            <i><xref href="1.0index.dita#topic17783/roles">data service roles</xref></i> . For
+        example:</p>
 <codeblock>
   <codeph>$ kato node attach -e harbor CORE_IP
 </codeph>
