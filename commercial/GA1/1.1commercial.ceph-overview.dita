@@ -141,7 +141,7 @@
     </section>
     <section id="next-steps"> <title>Next Steps</title>
       <p>
-        <xref href="1.1commerical.services-ceph-archref.dita">HP  <tm tmtype="reg">Helion OpenStack</tm> Ceph Architectural Reference</xref>
+        <xref href="ceph/1.1commerical.services-ceph-archref.dita">HP  <tm tmtype="reg">Helion OpenStack</tm> Ceph Architectural Reference</xref>
       </p>
       
     </section>
