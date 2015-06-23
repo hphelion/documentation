@@ -330,7 +330,7 @@
     <!-- Update -->
     <!-- FCP -->
     <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-overview.dita">
-      <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-backup.dita"/>
+     
       <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-installation.dita"/>
     </topicref>
     <topichead navtitle="HP Helion Openstack(R) 1.1: License Files">
