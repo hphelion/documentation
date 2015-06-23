@@ -549,7 +549,7 @@
       </topicref>
       <topicref href="community/community.install.virtual.dita"/>
       <topicref href="community/community.verify.dita"/>
-     </topichead>
+     </topichead> 
          
      <topichead navtitle="Post-Install">    
           <topicref href="community/community.services-identity-configure-v3.dita"/>
