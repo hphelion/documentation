@@ -144,7 +144,7 @@
 <xref href="http://www8.hp.com/us/en/cloud/hphelion-openstack-community.html" scope="external" format="html" >HP <tm tmtype="reg">Helion OpenStack</tm> Community Portal</xref>
 </li>
 <li>
-  <xref href="community.index.dita" scope="external" format="html" >HP <tm tmtype="reg">Helion OpenStack</tm> Community Documentation</xref> </li>
+  <xref href="community.index.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Community Documentation</xref> </li>
 <li>
 <xref href="https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion" scope="external" format="html" >HP <tm tmtype="reg">Helion OpenStack</tm> Support Forum</xref> (Tag your questions with 'HPHelion')</li>
 </ul>

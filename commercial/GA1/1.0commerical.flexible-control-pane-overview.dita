@@ -125,13 +125,13 @@ In this example the CIDR (Classless Inter-Domain Routing) address of the IPMI ne
 <p>The Flexible Control Plane configuration has the same prerequisites as HP <tm tmtype="reg">Helion OpenStack</tm> 1.01. Please be sure the environment satisfies the prerequisites before beginning installation.</p>
 <ul>
 <li>
-  <xref href="1.0commercial.install-GA-prereqs.dita" scope="external" format="html" >Installation Prerequisites</xref>
+  <xref href="1.0commercial.install-GA-prereqs.dita" >Installation Prerequisites</xref>
 </li>
 <li>
-  <xref href="1.0commercial.technical-overview.ga.dita" scope="external" format="html" >Network Topology Requirements</xref>
+  <xref href="1.0commercial.technical-overview.ga.dita">Network Topology Requirements</xref>
 </li>
 <li>
-  <xref href="1.0commercial.install-GA-supportmatrix.dita" scope="external" format="html" >Hardware/Software Requirements</xref>
+  <xref href="1.0commercial.install-GA-supportmatrix.dita" >Hardware/Software Requirements</xref>
 </li>
 </ul>
 </section>

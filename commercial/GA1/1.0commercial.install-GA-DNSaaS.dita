@@ -565,7 +565,7 @@ listen designate
 </ol>
 <p>
 <b>Note</b>: Installer VM can also be deleted, if it is not deleted already.</p>
-  <p>The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the <xref href="../../publiccloud/apidocs/c1.1/dns-api.dita" scope="external" format="html" >Keystone documentation</xref>.</p>
+  <p>The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the <xref href="../../publiccloud/apidocs/c1.1/dns-api.dita" >Keystone documentation</xref>.</p>
 </section>
 <section id="moreinfo"> <title>More Information</title>
 <p>For more information, see:</p>
