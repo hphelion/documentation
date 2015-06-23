@@ -365,7 +365,7 @@ export OVERCLOUD_LIBVIRT_TYPE=kvm
 
 <ul>
 <li>
-<xref href="1.0commercial.-vsa-overview.dita" >For VSA</xref>
+<xref href="1.0commercial.-vsa-overview.dita">For VSA</xref>
 </li>
 <li>
 <xref href="1.0commercial.install-3par.dita" >For 3PAR</xref>
