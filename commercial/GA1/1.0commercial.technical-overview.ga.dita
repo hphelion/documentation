@@ -197,7 +197,7 @@
 <b>Sirius services</b>
 </entry>
     <entry>The HP Helion OpenStack(R) Sirius service is a REST-based web service for storage device management. It is used to configure of storage services such as the  Block Storage and the Object Operations services that run in the overcloud and manage various storage devices.
-     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href=" ../../commercial/GA1/1.0commerical.services-sirius-overview.dita" >Learn more</xref> HP Helion OpenStack(R) Sirius service.</entry> 
+     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="1.0commerical.services-sirius-overview.dita" >Learn more</xref> HP Helion OpenStack(R) Sirius service.</entry> 
     <entry>Administrators can maintain an inventory of used 3PAR devices and CPGs, and StoreVirtual devices and VSAs  and configure Cinder 3PAR and StoreVirtual backends.</entry>
 </row>
 <row>
