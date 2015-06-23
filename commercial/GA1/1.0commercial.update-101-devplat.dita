@@ -12,7 +12,9 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.0commercial.update-101-devplat.md-->
  <!--permalink: /helion/openstack/update/devplat/101/--></p>
-<p>The HP Helion Development Platform currently contains four products: <xref href="../../devplatform/1.0devplatform.index.dita" >Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service</xref>.</p>
+<p>The HP Helion Development Platform currently contains four products: <xref
+        href="../../devplatform/1.0devplatform.index.dita#topic5165">Application Lifecycle Service
+        (ALS), Marketplace Service, Messaging Service and Database Service</xref>.</p>
 <p>The following sections explain how to update the HP Helion Development Platform.</p>
 <ul>
 <li>
@@ -37,7 +39,10 @@
 <section id="prerequisites"> <title>Prerequisites</title>
 <p>The following guide outlines the steps to update Helion Development Platform from version 1.0 to 1.01. Before executing these steps, ensure you have upgraded HP <tm tmtype="reg">Helion OpenStack</tm> to 1.01 as described in the <xref href="../../commercial/GA1/1.0commercial.update-101-overview.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Update Overview</xref>.</p>
 <p>
-  <b>Note:</b> If you created a new installation of 1.01, bypassing 1.0, you need to install HP <tm tmtype="reg">Helion OpenStack</tm> Development Platform Services, and not update. See <xref href="../../devplatform/1.0devplatform_community_install.dita" >Development Platform Install Guide</xref>.</p>
+        <b>Note:</b> If you created a new installation of 1.01, bypassing 1.0, you need to install
+        HP <tm tmtype="reg">Helion OpenStack</tm> Development Platform Services, and not update. See
+          <xref href="../../devplatform/1.0devplatform_community_install.dita#topic15079"
+          >Development Platform Install Guide</xref>.</p>
 </section>
 <section id="update-messaging"> <title>Update the Messaging Service</title>
 <p>This section provides details on updating the Messaging Service for <tm tmtype="reg">Helion OpenStack</tm> Development Platform. This assumes that the Messaging Service is installed in your cloud.</p>

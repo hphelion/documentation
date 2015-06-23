@@ -40,11 +40,12 @@
 </row>
 <row valign="top">
 <entry>
-<!--Original: <span @class=>-->
-<ph>
-<xref href="../devplatform/1.2/1.2devplatform.index.dita" >HP Helion Development Platform</xref>
-</ph>
-</entry>
+              <!--Original: <span @class=>-->
+              <ph>
+                <xref href="../devplatform/1.2/1.2devplatform.index.dita#topic5490">HP Helion
+                  Development Platform</xref>
+              </ph>
+            </entry>
   <entry>Based on <tm tmtype="reg">Cloud Foundry</tm>, this add-on for Helion <tm tmtype="reg">OpenStack</tm> empowers developers and IT professionals with an open development platform designed for agility.
 </entry>
 </row>
