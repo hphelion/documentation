@@ -38,7 +38,7 @@
 </section>
 <section id="features-in-hp-helion-openstack-10"> <title>Features in HP <tm tmtype="reg">Helion OpenStack</tm> 1.0</title>
 <p>
-<b>OpenStack Services</b> - The full set of standard <xref href="1.0commerical.services-overview.dita#OpenStack">Open Stack services"</xref> is in HP <tm tmtype="reg">Helion OpenStack</tm> Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image Operations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
+<b>OpenStack Services</b> - The full set of standard <xref href="1.0commerical.services-overview.dita">Open Stack services"</xref> is in HP <tm tmtype="reg">Helion OpenStack</tm> Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image Operations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
 <p>
 <b>Note:</b> In Helion 1.0, the Compute service is configured to provide only a subset of measurements listed at http://docs.openstack.org/developer/ceilometer/measurements.html#compute-nova for which the origin is listed as notification. This includes:</p>
 <table>
