@@ -40,7 +40,7 @@
 </li>
 </ul>
 <section id="top"> <title>Overview</title>
-<p>HP Helion Public Cloud Networking, based on <tm tmtype="reg">Openstack</tm> Networking, gives you a broad new spectrum of functionality to define and configure virtual networks.</p>
+<p>HP Helion Public Cloud Networking, based on <tm tmtype="reg">OpenStack</tm> Networking, gives you a broad new spectrum of functionality to define and configure virtual networks.</p>
 <p>A default network configuration comes with HP Helion Public Cloud Compute Service activation. Your network is ready to deploy HP Helion Public Cloud Compute virtual machines (instances) without further configuration required. The default configuration includes:</p>
 <ul>
 <li>A network   </li>
@@ -52,7 +52,7 @@
 <p>
 <b>Note:</b> This guide uses strongSwan for the IPsec functionality.</p>
 <p>A site-to-site VPN allows multiple fixed locations to establish secure connections with each other over a public network such as the Internet. Site-to-site VPN extends a defined network, making computer resources from one network available to other networks.</p>
-<p>For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the <tm tmtype="reg">Openstack</tm> Networking API.  The customization can be done on either the command line or through the HP Helion Public Cloud Management Console.</p>
+<p>For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the <tm tmtype="reg">OpenStack</tm> Networking API.  The customization can be done on either the command line or through the HP Helion Public Cloud Management Console.</p>
 <p>Before starting, ensure that you have adequate permissions to accomplish each of the following steps.</p>
 <p>
 <b>Note:</b> VPN instances are a potential single point of failure. We will soon be posting a high availability VPN setup guide, so please stay tuned.</p>
@@ -68,7 +68,7 @@
 <ul>
 <li>Local network configuration in HP Helion Public Cloud     </li>
 <li>HP Helion Public Cloud Compute and Networking services </li>
-<li><tm tmtype="reg">Openstack</tm> Nova and Neutron CLI and API   </li>
+<li><tm tmtype="reg">OpenStack</tm> Nova and Neutron CLI and API   </li>
 <li>Virtual Private Networks (VPN)    </li>
 <li>strongSwan or other IPsec-based software solutions   </li>
 </ul>

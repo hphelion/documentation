@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1711">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Requirements for the Deployment Scenarios</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Requirements for the Deployment Scenarios</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,7 +18,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/DeploymentScenarios/carrier-grade-deployment-requirements.md-->
  <!--permalink: /helion/openstack/carrier/deploy/requirements/--></p>
-<p>The Deployment Scenarios are built on a prepared HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade server cluster.</p>
+<p>The Deployment Scenarios are built on a prepared HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade server cluster.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -26,7 +26,7 @@
 <p>The following resources are required for deployment:</p>
 <ul>
 <li>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade server cluster with two provider networks of the VLAN type. The provider networks are used to realize tenant networks owned by the admin, tenant1, and tenant2 tenants.</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade server cluster with two provider networks of the VLAN type. The provider networks are used to realize tenant networks owned by the admin, tenant1, and tenant2 tenants.</p>
 
 <p>In the scenarios, the provider networks are named provider-net-a and provider-net-b. You can use any two provider networks. For information on provider network setup.</p>
 </li>
@@ -40,7 +40,7 @@
 <p>In the scenarios, a single compute node is used to host both VMs. In practice, you could use different compute nodes, each connected to both provider networks.</p>
 </li>
 <li>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade server environment provisioned with tenant networks, users, VM flavors, and a virtual router on each tenant network.</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade server environment provisioned with tenant networks, users, VM flavors, and a virtual router on each tenant network.</p>
 
 <p>For information on setting up this environment, see <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting.dita" >Setting Up the Scenario Environment</xref>.</p>
 </li>

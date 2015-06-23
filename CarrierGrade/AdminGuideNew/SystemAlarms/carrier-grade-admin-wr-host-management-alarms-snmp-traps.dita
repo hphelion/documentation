@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1796">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Configuring SNMP Trap Destinations</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Configuring SNMP Trap Destinations</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,12 +26,12 @@
  <!--./CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-snmp-traps.md-->
  <!--permalink: /helion/openstack/carrier/admin/alarms/snmp/traps/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>SNMP trap destinations are hosts configured in the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade to receive unsolicited SNMP notifications.</p>
+<p>SNMP trap destinations are hosts configured in the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade to receive unsolicited SNMP notifications.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>Destination hosts are specified by IP address, or by host name if it can be properly resolved by the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade.</p>
+<p>Destination hosts are specified by IP address, or by host name if it can be properly resolved by the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade.</p>
 <p>Notifications are sent to the hosts using a designated community string so that they can be validated.</p>
 <ol>
 <li>

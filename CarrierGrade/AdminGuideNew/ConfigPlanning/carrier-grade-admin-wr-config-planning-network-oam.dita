@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1836">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Planning the OAM Network</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Planning the OAM Network</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,7 +26,7 @@
  <!--./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-oam.md-->
  <!--permalink: /helion/openstack/carrier/configuration/plan/network/oam/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>The OAM (operations, administration, and management) network enables the web administration interface, the command-line management clients, SNMP interface, and the REST APIs to manage the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade cluster.</p>
+<p>The OAM (operations, administration, and management) network enables the web administration interface, the command-line management clients, SNMP interface, and the REST APIs to manage the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade cluster.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -34,7 +34,7 @@
 <p>You must consider the following guidelines:</p>
 <ul>
 <li>
-<p>Deploy proper firewall mechanisms to access this network. Ensuring that access to the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade management interfaces is not compromised should be of primary concern.</p>
+<p>Deploy proper firewall mechanisms to access this network. Ensuring that access to the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade management interfaces is not compromised should be of primary concern.</p>
 </li>
 <li>
 <p>Consider whether the OAM management network needs access to the open Internet. Limiting access to an internal network might be advisable, keeping in mind that access to configured DNS and NTP servers may still be needed.</p>

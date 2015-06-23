@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic749">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Extend Object Storage (Swift) Cluster</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Extend Object Storage (Swift) Cluster</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -23,7 +23,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-expand-swift-cluster.md-->
  <!--permalink: /helion/openstack/carrier/services/object/swift/expand-cluster/--></p>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> allows you to extend Object Storage (Swift) cluster sin any of the followings ways:</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> allows you to extend Object Storage (Swift) cluster sin any of the followings ways:</p>
 <ul>
 <li>
 <xref href="../../../CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-storage-node.dita" >Add a New Scale-out Object Node</xref> </li>

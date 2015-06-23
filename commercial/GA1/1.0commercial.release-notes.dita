@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic11002">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.01 Release Notes</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.01 Release Notes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,30 +15,30 @@
 <p>
 
 </p>
-<p>Thank you for your interest in HP Helion <tm tmtype="reg">Openstack</tm> This document provides an overview of the features contained within HP Helion <tm tmtype="reg">Openstack</tm> version 1.01, including known issues and workarounds, and where to find further information on the product release:</p>
+<p>Thank you for your interest in HP Helion <tm tmtype="reg">OpenStack</tm> This document provides an overview of the features contained within HP Helion <tm tmtype="reg">OpenStack</tm> version 1.01, including known issues and workarounds, and where to find further information on the product release:</p>
 <ul>
 <li>
-<xref type="section" href="#topic11002/features">Features in HP Helion <tm tmtype="reg">Openstack</tm></xref> </li>
+<xref type="section" href="#topic11002/features">Features in HP Helion <tm tmtype="reg">OpenStack</tm></xref> </li>
 <li>
 <xref type="section" href="#topic11002/known-issues">Known Issues in this Release</xref>
 </li>
 <li>
 <xref type="section" href="#topic11002/For-Further-Information">For Further Information</xref> </li>
 </ul>
-<section id="features"> <title>Features in HP Helion <tm tmtype="reg">Openstack</tm></title>
-<p>The following features have been added to HP Helion <tm tmtype="reg">Openstack</tm> by release.</p>
+<section id="features"> <title>Features in HP Helion <tm tmtype="reg">OpenStack</tm></title>
+<p>The following features have been added to HP Helion <tm tmtype="reg">OpenStack</tm> by release.</p>
 </section>
-<section id="features-in-hp-helion-openstack-101"> <title>Features in HP Helion <tm tmtype="reg">Openstack</tm> 1.01</title>
+<section id="features-in-hp-helion-openstack-101"> <title>Features in HP Helion <tm tmtype="reg">OpenStack</tm> 1.01</title>
 <p>
 <b>Defect fixes</b> - A number of defects were addressed and fixed in this release.</p>
 <p>
-<b>Security documentation</b> - A new document is included in this release that contains recommendations for securing your HP Helion <tm tmtype="reg">Openstack</tm> network. <xref href="1.0commercial.install-GA-security.dita" >Configuring your network securely</xref> details the firewall rules you can apply at the edge of the HP Helion <tm tmtype="reg">Openstack</tm> deployment to protect against external abuse and defines router rules within the HP Helion <tm tmtype="reg">Openstack</tm> deployment to protect against insider abuse or administrative errors.</p>
+<b>Security documentation</b> - A new document is included in this release that contains recommendations for securing your HP Helion <tm tmtype="reg">OpenStack</tm> network. <xref href="1.0commercial.install-GA-security.dita" >Configuring your network securely</xref> details the firewall rules you can apply at the edge of the HP Helion <tm tmtype="reg">OpenStack</tm> deployment to protect against external abuse and defines router rules within the HP Helion <tm tmtype="reg">OpenStack</tm> deployment to protect against insider abuse or administrative errors.</p>
 <p>
-<b>HP Helion <tm tmtype="reg">Openstack</tm> Flexible Control Plane</b> The <xref href="1.0commerical.flexible-control-pane-overview.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Flexible Control Plane</xref> introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.</p>
+<b>HP Helion <tm tmtype="reg">OpenStack</tm> Flexible Control Plane</b> The <xref href="1.0commerical.flexible-control-pane-overview.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Flexible Control Plane</xref> introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.</p>
 </section>
-<section id="features-in-hp-helion-openstack-10"> <title>Features in HP Helion <tm tmtype="reg">Openstack</tm> 1.0</title>
+<section id="features-in-hp-helion-openstack-10"> <title>Features in HP Helion <tm tmtype="reg">OpenStack</tm> 1.0</title>
 <p>
-<b><tm tmtype="reg">Openstack</tm> Services</b> - The full set of standard <xref href="commercial/GA1/1.0commerical.services-overview.dita#Openstack" >Openstack services</xref> is in HP Helion <tm tmtype="reg">Openstack</tm> Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image Operations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
+<b><tm tmtype="reg">OpenStack</tm> Services</b> - The full set of standard <xref href="commercial/GA1/1.0commerical.services-overview.dita#Openstack" >Openstack services</xref> is in HP Helion <tm tmtype="reg">OpenStack</tm> Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image Operations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
 <p>
 <b>Note:</b> In Helion 1.0, the Compute service is configured to provide only a subset of measurements listed at http://docs.openstack.org/developer/ceilometer/measurements.html#compute-nova for which the origin is listed as notification. This includes:</p>
 <table>
@@ -112,23 +112,23 @@
 <p>
 <b>HP StoreVirtual VSA</b> -  <xref href="http://www8.hp.com/us/en/products/storage-software/product-detail.html?oid=5306917" scope="external" format="html" >HP StoreVirtual VSA</xref> is storage virtualization software used as the default fault-tolerant, software-defined storage backend for the Volume Operations service, and provides easy deployment on KVM nodes meeting on-demand scale-out requirements of cloud storage without sacrificing performance.</p>
 <p>
-<b>Support for VMWare ESX</b> - VMWare ESX is a baremetal hypervisor. HP Helion <tm tmtype="reg">Openstack</tm> makes ESX host onboarding and management easier and lets you setup the ESX proxy node during installation of the overcloud.</p>
+<b>Support for VMWare ESX</b> - VMWare ESX is a baremetal hypervisor. HP Helion <tm tmtype="reg">OpenStack</tm> makes ESX host onboarding and management easier and lets you setup the ESX proxy node during installation of the overcloud.</p>
 <p>
 <b>HP Virtual Cloud Networking (VCN) Application</b> - Enables you to create networks, subnets and ports, as well as security groups and security group rules for your ESX clusters using OVSvApp.</p>
 </section>
 <section id="known-issues"> <title>Known Issues in this Release</title>
-<p>The following are the known issues for HP Helion <tm tmtype="reg">Openstack</tm></p>
+<p>The following are the known issues for HP Helion <tm tmtype="reg">OpenStack</tm></p>
 <p>
   <b>Installation Issues</b>
 </p>
-<p>When installing HP Helion <tm tmtype="reg">Openstack</tm> you might experience the following issues:</p>
+<p>When installing HP Helion <tm tmtype="reg">OpenStack</tm> you might experience the following issues:</p>
 <ul>
 <li>If a set of baremetal servers differ in specifications (such as memory or disk capacity), the installation fails. Specify the server with the lowest specs as the second entry in the <codeph>baremetal.csv</codeph> file. <!-- (CORE-1409) --></li>
 </ul>
 <p>
   <b>Operational Issues</b>
 </p>
-<p>When using HP Helion <tm tmtype="reg">Openstack</tm> you might experience the following issues:</p>
+<p>When using HP Helion <tm tmtype="reg">OpenStack</tm> you might experience the following issues:</p>
 <ul>
 <li>
 <p>A snapshot of an instance that was launched from a bootable volume might not boot. In addition, the Glance CLI and Horizon Dashboard might not report the snapshot properly. The snapshot will be listed as an image (not a snapshot) with a size of 0 and a blank disk format.</p>
@@ -164,7 +164,7 @@ $ sudo service neutron-openvswitch-agent restart
 <p>
   <b>Helion Dashboard</b>
 </p>
-<p>When using HP Helion <tm tmtype="reg">Openstack</tm> you might experience the following issues:</p>
+<p>When using HP Helion <tm tmtype="reg">OpenStack</tm> you might experience the following issues:</p>
 <ul>
 <li>
 <p>On the <b>Floating IPs</b> tab in the Helion Dashboard (<b>Project &gt; Access &amp; Security &gt; Floating IPs</b>) all of the buttons (Associate, Disassociate, Release Floating IP) might not appear under certain circumstances. To make the buttons appear, first attempt to allocate a new floating IP. If the buttons are still not present, log out and log in as the same user.</p>
@@ -190,7 +190,7 @@ $ sudo service neutron-openvswitch-agent restart
 <p>
   <b>Other Issues</b>
 </p>
-<p>Other issues you might experience when using HP Helion <tm tmtype="reg">Openstack</tm></p>
+<p>Other issues you might experience when using HP Helion <tm tmtype="reg">OpenStack</tm></p>
 <ul>
 <li>
 <p>If a project and user has been deleted, there is no way in the Helion Dashboard delete the networks associated with the project and user. To clean up artifacts created by a user account that has been deleted, use the CLI tools rather than the Horizon console. <!--(DOCS-733) --></p>
@@ -199,10 +199,10 @@ $ sudo service neutron-openvswitch-agent restart
 <p>When you resize an instance of Nova, it produces an error <!--(NOV-6664) -->.</p>
 </li>
 <li>
-<p>After updating the undercloud to HP Helion <tm tmtype="reg">Openstack</tm> 1.01, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can <xref href="1.0commercial.undercloud-storage-storevirtual.dita#register-cluster" >manually register a new cluster</xref> with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) --></p>
+<p>After updating the undercloud to HP Helion <tm tmtype="reg">OpenStack</tm> 1.01, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can <xref href="1.0commercial.undercloud-storage-storevirtual.dita#register-cluster" >manually register a new cluster</xref> with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) --></p>
 </li>
 <li>
-<p>A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion <tm tmtype="reg">Openstack</tm> <!-- (EE-21) --></p>
+<p>A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion <tm tmtype="reg">OpenStack</tm> <!-- (EE-21) --></p>
 </li>
 <li>
 <p>When a controller node crashes, it must be rebooted to return to its operational state. <!-- (CORE-1387) --></p>
@@ -211,7 +211,7 @@ $ sudo service neutron-openvswitch-agent restart
 <p>The Helion Core installation process leaves behind a shared private network defined. <!-- (CORE-586) --></p>
 </li>
 <li>
-<p>When a virtual IP address (VIP) is moved to a new controller, the <tm tmtype="reg">Openstack</tm> services stop responding to any CLI commands. The system will recover after several minutes. <!-- (CORE-1716) --></p>
+<p>When a virtual IP address (VIP) is moved to a new controller, the <tm tmtype="reg">OpenStack</tm> services stop responding to any CLI commands. The system will recover after several minutes. <!-- (CORE-1716) --></p>
 </li>
 <li>
 <p>The Compute service does not handle or recover from RabbitMQ Server process failure. <!-- (CORE-1559) --></p>
@@ -228,28 +228,28 @@ $ sudo service neutron-openvswitch-agent restart
 </ul>
 </section>
 <section id="For-Further-Information"> <title>For Further Information</title>
-<p>For additional information about HP Helion <tm tmtype="reg">Openstack</tm> <tm tmtype="reg">Openstack</tm> Cloud Software, and the HP Helion Support Center:</p>
+<p>For additional information about HP Helion <tm tmtype="reg">OpenStack</tm> <tm tmtype="reg">OpenStack</tm> Cloud Software, and the HP Helion Support Center:</p>
 <ul>
 <li>
-  <xref href="http://docs.openstack.org/"  scope="external" format="html">HP Helion <tm tmtype="reg">Openstack</tm> Documentation web site</xref>: Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion <tm tmtype="reg">Openstack</tm> product offerings.</li>
+  <xref href="http://docs.openstack.org/"  scope="external" format="html">HP Helion <tm tmtype="reg">OpenStack</tm> Documentation web site</xref>: Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion <tm tmtype="reg">OpenStack</tm> product offerings.</li>
 <li>
-<xref href="http://www.openstack.org/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> web site</xref>: Provides information on computing, networking, and storage in <tm tmtype="reg">Openstack</tm> various programs such as TripleO, and the <tm tmtype="reg">Openstack</tm> community.</li>
+<xref href="http://www.openstack.org/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> web site</xref>: Provides information on computing, networking, and storage in <tm tmtype="reg">OpenStack</tm> various programs such as TripleO, and the <tm tmtype="reg">OpenStack</tm> community.</li>
 <li>
-<xref href="http://us-support.external.hp.com/portal/site/hpsc/public" scope="external" format="html" >HP Support Center</xref>: Provides a way to report issues with HP Helion <tm tmtype="reg">Openstack</tm></li>
+<xref href="http://us-support.external.hp.com/portal/site/hpsc/public" scope="external" format="html" >HP Support Center</xref>: Provides a way to report issues with HP Helion <tm tmtype="reg">OpenStack</tm></li>
 </ul>
 </section>
 <section id="legal-notices-disclaimer"> <title>Legal Notices and Disclaimer</title>
-<!--See the [HP Helion <tm tmtype="reg">Openstack</tm> Open Source and Third-Party Software License Agreements](/helion/openstack/commercial-3rd-party-license-agreements/).-->
+<!--See the [HP Helion <tm tmtype="reg">OpenStack</tm> Open Source and Third-Party Software License Agreements](/helion/openstack/commercial-3rd-party-license-agreements/).-->
 <p><tm tmtype="reg">Linux</tm> is the registered trademark of Linus Torvalds in the U.S. and other countries.</p>
 <p>
-<b>HP Helion <tm tmtype="reg">Openstack</tm> Warranty</b>: 
+<b>HP Helion <tm tmtype="reg">OpenStack</tm> Warranty</b>: 
 The programs included with the Debian Host Linux system are free software. The exact license terms for each program are described in the individual files in /usr/share/doc/*/copyright. Debian Host Linux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.</p>
 <p>
   <xref type="section" href="#topic11002"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="openstack-trademark-attribution"> <title><tm tmtype="reg">Openstack</tm> Trademark Attribution</title>
+<section id="openstack-trademark-attribution"> <title><tm tmtype="reg">OpenStack</tm> Trademark Attribution</title>
 </section>
 </body>
 </topic>

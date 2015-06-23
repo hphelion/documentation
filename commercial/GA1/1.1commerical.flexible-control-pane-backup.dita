@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic33045">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Backup and Restore Flexible Control Plane Hosts</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Backup and Restore Flexible Control Plane Hosts</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,13 +26,13 @@
  <!--./commercial/GA1/1.1commerical.flexible-control-pane-backup.md-->
  <!--permalink: /helion/openstack/1.1/fcp/backup.restore/--></p>
 <!-- taken from http://wiki.hpcloud.net/display/core/Helion+1.1+FCP+KVM+Hosts+backup+and+recovery+procedure -->
-<p>This document describes how to back up an HP Helion <tm tmtype="reg">Openstack</tm> Flexible Control Plane (FCP) configuration and how to restore the FCP configuration from the backed-up nodes.</p>
-<p>The HP Helion <tm tmtype="reg">Openstack</tm> FCP architectural configuration enables you to deploy the control plane in a virtual environment. This configuration reduces the control plane footprint to just three servers from the current seven servers. For more information, see <xref href="../../commercial/GA1/1.1commerical.flexible-control-pane-overview.dita" >Flexible Control Plane Overview</xref>.</p>
-<p>The backup and restore process involves running commands on each of the three servers that host the HP Helion <tm tmtype="reg">Openstack</tm> components. The backup process requires an additional server to store backed-up files.</p>
+<p>This document describes how to back up an HP Helion <tm tmtype="reg">OpenStack</tm> Flexible Control Plane (FCP) configuration and how to restore the FCP configuration from the backed-up nodes.</p>
+<p>The HP Helion <tm tmtype="reg">OpenStack</tm> FCP architectural configuration enables you to deploy the control plane in a virtual environment. This configuration reduces the control plane footprint to just three servers from the current seven servers. For more information, see <xref href="../../commercial/GA1/1.1commerical.flexible-control-pane-overview.dita" >Flexible Control Plane Overview</xref>.</p>
+<p>The backup and restore process involves running commands on each of the three servers that host the HP Helion <tm tmtype="reg">OpenStack</tm> components. The backup process requires an additional server to store backed-up files.</p>
 <p>This document contains the following topics:</p>
 <ul>
 <li>
-<xref type="section" href="#topic33045/about">About HP Helion <tm tmtype="reg">Openstack</tm> FCP</xref>
+<xref type="section" href="#topic33045/about">About HP Helion <tm tmtype="reg">OpenStack</tm> FCP</xref>
 </li>
 <li>
 <xref type="section" href="#topic33045/back">Backing Up Helion FCP</xref>
@@ -1167,9 +1167,9 @@ Successfully pivoted
 <p>Make sure the network setup where the new node will be installed is consistent with the following requirements.</p>
 <ul>
 <li>
-<p>Install HP Linux for HP Helion <tm tmtype="reg">Openstack</tm> Ubuntu 14.04 LTS or Debian 8</p>
+<p>Install HP Linux for HP Helion <tm tmtype="reg">OpenStack</tm> Ubuntu 14.04 LTS or Debian 8</p>
 
-<p>The seed cloud host must have HP Linux for HP Helion <tm tmtype="reg">Openstack</tm> Ubuntu 14.04 LTS or Debian 8 installed before performing the restore procedure.</p>
+<p>The seed cloud host must have HP Linux for HP Helion <tm tmtype="reg">OpenStack</tm> Ubuntu 14.04 LTS or Debian 8 installed before performing the restore procedure.</p>
 </li>
 <li>
 <p>Configure SSH</p>

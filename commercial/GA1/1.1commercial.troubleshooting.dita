@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2105">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Troubleshooting</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Troubleshooting</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -28,7 +28,7 @@
 <p>
 
 </p>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> is an <tm tmtype="reg">Openstack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP (hLinux). This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions organized into the following topics:</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP (hLinux). This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions organized into the following topics:</p>
 <ul>
 <li>
 <p>
@@ -102,8 +102,8 @@
 <p>The command gathers specific information into a file that will help diagnose your issue. The file is located in the <codeph>/tmp</codeph> directory under a name in the format <codeph>sosreport-&lt;system hostname&gt;-&lt;timestamp&gt;.tar.xz</codeph>. For example: <codeph>/tmp/sosreport-hLinux-20150218083619.tar.xz</codeph>.</p>
 <p>Customer Support will help determine the best way to relay the information in the file to them.</p>
 </section>
-<section id="determining-the-helion-openstack-version"> <title>Determining the Helion <tm tmtype="reg">Openstack</tm> version</title>
-<p>Run the following command on any Helion <tm tmtype="reg">Openstack</tm> node (seed, undercloud, overcloud control plane), to determine the installed version:</p>
+<section id="determining-the-helion-openstack-version"> <title>Determining the Helion <tm tmtype="reg">OpenStack</tm> version</title>
+<p>Run the following command on any Helion <tm tmtype="reg">OpenStack</tm> node (seed, undercloud, overcloud control plane), to determine the installed version:</p>
 <codeblock>
   <codeph>cat /etc/HP_Helion_version
 </codeph>

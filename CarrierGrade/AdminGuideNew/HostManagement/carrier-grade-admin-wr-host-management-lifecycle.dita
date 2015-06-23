@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2992">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): The Life Cycle of a Host System</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): The Life Cycle of a Host System</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,14 +26,14 @@
  <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-lifecycle.md-->
  <!--permalink: /helion/openstack/carrier/admin/host/management/lifecycle/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>The life cycle of a host is the set of state transitions the host goes through as its current state changes. The host states in the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade are based on the ITU X.731 State Management Function Specification for Open Systems.</p>
+<p>The life cycle of a host is the set of state transitions the host goes through as its current state changes. The host states in the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade are based on the ITU X.731 State Management Function Specification for Open Systems.</p>
 <p>The current state of a host is determined by the allowed combinations of the administrative, operational, and availability states at any given time. The following figure illustrates the life cycle of a host.</p>
 <p>The description that follows uses the availability states only.</p>
 <p>The life cycle of a new host starts when it is discovered by the active controller on the internal management network.</p>
 <p>A new host is initially reported as Offline. As an exception, the first controller, controller-0, is automatically set to available during initial commissioning. The following are the available transitions. Numbers are attached to them for easier reference:</p>
 <ul>
 <li>
-<b>Offline to Online</b> -  This transition takes place once the administrator configures the host name and personality of the host. During the transition, the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade software is installed and the host reboots. The transition concludes when the controller establishes maintenance and inventory connectivity with the new host.</li>
+<b>Offline to Online</b> -  This transition takes place once the administrator configures the host name and personality of the host. During the transition, the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade software is installed and the host reboots. The transition concludes when the controller establishes maintenance and inventory connectivity with the new host.</li>
 <li>
 <b>Online to InTest</b> - This transition takes place when the administrator requests to move the host from the locked to the unlocked
 administrative states. The host reboots first. After it finishes booting, it establishes maintenance communication and enters the transient InTest state. 

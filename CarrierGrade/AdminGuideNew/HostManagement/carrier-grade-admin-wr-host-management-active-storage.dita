@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2639">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Replacing Active Storage Nodes</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Replacing Active Storage Nodes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -31,15 +31,15 @@
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>A HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade system with a Ceph storage backend uses exactly two storage nodes; you cannot add or remove storage nodes. However, you can add disks to a storage node to increase capacity, and you can replace a faulty host.</p>
+<p>A HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade system with a Ceph storage backend uses exactly two storage nodes; you cannot add or remove storage nodes. However, you can add disks to a storage node to increase capacity, and you can replace a faulty host.</p>
 <p>
-<b>Note:</b> The storage node pair in a HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade system provides redundancy for High Availability. A balanced storage capacity is recommended, in which each host has sufficient independent
+<b>Note:</b> The storage node pair in a HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade system provides redundancy for High Availability. A balanced storage capacity is recommended, in which each host has sufficient independent
 resources to meet the operational requirements of the system.</p>
 <p>To replace a storage node on an active system:</p>
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.</li>
@@ -70,7 +70,7 @@ resources to meet the operational requirements of the system.</p>
 
 <ul>
 <li>For disk replacement, no additional configuration changes are needed. </li>
-<li>For disk addition, you must create a new storage volume (OSD) before you can use the new disk. For more information, see the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Software Installation Guide: Creating Storage Volumes.</li>
+<li>For disk addition, you must create a new storage volume (OSD) before you can use the new disk. For more information, see the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade Software Installation Guide: Creating Storage Volumes.</li>
 <li>For host replacement, you must <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#delete" >delete the existing host</xref> using <b>More</b> then <b>Delete Host</b>. Then you must initialize the new host with a personality as a storage node, configure its interfaces, and create storage volumes. </li>
 </ul>
 </li>

@@ -29,7 +29,7 @@
 <section id="prerequisites-before-you-begin"> <title>Prerequisites - Before you begin</title>
 <p>In order to download and deploy these sample applications, you must have the necessary framework installed and configured.</p>
 <ul>
-<li>HP <tm tmtype="reg">Helion Openstack</tm> <xref href="../commercial/GA1/1.1commercial.install-GA-overview.dita" >cloud deployed</xref>
+<li>HP <tm tmtype="reg">Helion OpenStack</tm> <xref href="../commercial/GA1/1.1commercial.install-GA-overview.dita" >cloud deployed</xref>
 </li>
 <li>Application Lifecycle Service <xref href="1.1devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
 

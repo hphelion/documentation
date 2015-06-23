@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1722">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Establishing Provider Networks Using the CLI</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Establishing Provider Networks Using the CLI</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -25,7 +25,7 @@
 <!-- ===================== horizontal rule ===================== -->
 <p>Provider networks are required before compute nodes can be unlocked. For this reason, they are often set up as part of system installation.</p>
 <p>The scenarios assume that two provider networks, provider-net-a and provider-net-b, have already been set up as part of system installation. For convenience, the instructions to set up these provider networks are repeated here. If you already have two provider networks with different names, you can use them instead, substituting their names in the following exercises.</p>
-<p>For more information about setting up provider networks, see the <i>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Software Installation Guide: Configuring Provider Networks</i>.</p>
+<p>For more information about setting up provider networks, see the <i>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade Software Installation Guide: Configuring Provider Networks</i>.</p>
 <ol>
 <li>Log in to the active controller as the Keystone admin
         user.<codeblock><codeph>source /etc/nova/openrc

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7148">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Installation Prerequisites</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Installation Prerequisites</title>
 <titlealts>
 <searchtitle>HP Helion Openstack Installation Prerequisites</searchtitle>
 </titlealts>
@@ -15,9 +15,9 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-prereqs.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/prereqs/--></p>
-<p>This document describes the prerequisite steps and one time setup on your KVM host required to install HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade in a baremetal environment.</p>
+<p>This document describes the prerequisite steps and one time setup on your KVM host required to install HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade in a baremetal environment.</p>
 <section id="hardware"> <title>Hardware and software requirements</title>
-<p>Before you start, if you have not done so already, make sure your environment meets the hardware and software requirements. See the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Support Matrix</xref>.</p>
+<p>Before you start, if you have not done so already, make sure your environment meets the hardware and software requirements. See the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Support Matrix</xref>.</p>
 </section>
 <section id="prepbare"> <title>Preparing the baremetal systems</title>
 <p>Perform the following tasks on each baremetal system before starting the install:</p>
@@ -46,7 +46,7 @@
 </ul>
 </section>
 <section id="kvm"> <title>Preparing the KVM host</title>
-<p>The following tasks need to be performed on the KVM host, the system where the you will launch the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade installation.</p>
+<p>The following tasks need to be performed on the KVM host, the system where the you will launch the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade installation.</p>
 <ul>
 <li>Install Ubuntu Server 14.04.2 LTS</li>
 <li>Configure SSH</li>
@@ -65,7 +65,7 @@
 </ul>
 </section>
 <section id="ubuntu"> <title>Install Ubuntu Server 14.04.2 LTS</title>
-<p>The KVM host must have Ubuntu Server 14.04.2 LTS installed before performing the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade installation.</p>
+<p>The KVM host must have Ubuntu Server 14.04.2 LTS installed before performing the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade installation.</p>
 </section>
 <section id="pub-key"> <title>Obtain a public key</title>
 <p>On the KVM host, the user <codeph>root</codeph> must have a public key.</p>
@@ -145,12 +145,12 @@ fi
 </section>
 <section id="ntp"> <title>Install and configure NTP</title>
 <p>NTP is a networking protocol for clock synchronization between computer systems.</p>
-<p>The HP Helion <tm tmtype="reg">Openstack</tm> cloud nodes must be configured as NTP clients and point to the same NTP server.</p>
+<p>The HP Helion <tm tmtype="reg">OpenStack</tm> cloud nodes must be configured as NTP clients and point to the same NTP server.</p>
 <p>You can install NTP on the KVM host and configure it as an NTP server. Or, you can use a pre-existing NTP server that is reachable from the management network.  You will also need to configure the undercloud and overcloud systems as NTP clients pointing to the NTP server you have chosen to use during the installation process.</p>
 <p>For information on installing NTP on the KVM host, see <xref href="../../CarrierGrade/Installation/carrier-grade-install-NTP.dita" >Installing an NTP Server</xref>.</p>
 </section>
 <section id="getinstall"> <title>Download and unpack the installation packages</title>
-<p>Before you begin, you must download the required HP Helion <tm tmtype="reg">Openstack</tm> installation package(s):</p>
+<p>Before you begin, you must download the required HP Helion <tm tmtype="reg">OpenStack</tm> installation package(s):</p>
 <ol>
 <li>Download and extract the <codeph>cg-hlm.qcow2</codeph> and <codeph>VSD qcow2</codeph> files to
           the images folder.</li>

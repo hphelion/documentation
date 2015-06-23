@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic9592">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Community 1.4 Release Notes</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Community 1.4 Release Notes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,38 +12,38 @@
 <!--PUBLISHED-->
  <!--./community/community.release-notes.md-->
  <!--permalink: /helion/community/release-notes/--></p>
-<!--**Product Name:** HP Helion <tm tmtype="reg">Openstack</tm> Community
-**<tm tmtype="reg">Openstack</tm> release name:** Icehouse-->
-<p>Thanks for your interest in HP Helion <tm tmtype="reg">Openstack</tm> Community! These release notes contain the following information about this release:</p>
+<!--**Product Name:** HP Helion <tm tmtype="reg">OpenStack</tm> Community
+**<tm tmtype="reg">OpenStack</tm> release name:** Icehouse-->
+<p>Thanks for your interest in HP Helion <tm tmtype="reg">OpenStack</tm> Community! These release notes contain the following information about this release:</p>
 <ul>
 <li>
 <xref type="section" href="#topic9592/versions">Available product versions</xref>
 </li>
 <li>
-<xref type="section" href="#topic9592/features">Features in HP Helion <tm tmtype="reg">Openstack</tm> Community edition</xref> </li>
+<xref type="section" href="#topic9592/features">Features in HP Helion <tm tmtype="reg">OpenStack</tm> Community edition</xref> </li>
 <li>
 <xref type="section" href="#topic9592/supported-services">Supported services</xref>
 </li>
 <li>
-<xref type="section" href="#topic9592/recommendations">Recommendations for HP Helion <tm tmtype="reg">Openstack</tm> Community</xref>
+<xref type="section" href="#topic9592/recommendations">Recommendations for HP Helion <tm tmtype="reg">OpenStack</tm> Community</xref>
 </li>
 <li>
 <xref type="section" href="#topic9592/for-further-information">For further information</xref> </li>
 </ul>
 <section id="versions"> <title>Available product versions</title>
-<p>This release of the HP Helion <tm tmtype="reg">Openstack</tm> Community edition contains a single download of the product that covers both virtual and baremetal deployment:</p>
+<p>This release of the HP Helion <tm tmtype="reg">OpenStack</tm> Community edition contains a single download of the product that covers both virtual and baremetal deployment:</p>
 <ul>
 <li>
-<i>A virtual deployment of HP Helion <tm tmtype="reg">Openstack</tm> Community</i>. First released in early May, 2014, this provides a "cloud-in-a-box" virtual deployment targeted towards enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on <tm tmtype="reg">Openstack</tm> Cloud Software. It's a pure, free and downloadable <tm tmtype="reg">Openstack</tm> distribution that speeds up deployment and simplifies the management of small-scale, open cloud environments and infrastructure services. It is not intended to be used in a production environment to run real workloads.</li>
+<i>A virtual deployment of HP Helion <tm tmtype="reg">OpenStack</tm> Community</i>. First released in early May, 2014, this provides a "cloud-in-a-box" virtual deployment targeted towards enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on <tm tmtype="reg">OpenStack</tm> Cloud Software. It's a pure, free and downloadable <tm tmtype="reg">OpenStack</tm> distribution that speeds up deployment and simplifies the management of small-scale, open cloud environments and infrastructure services. It is not intended to be used in a production environment to run real workloads.</li>
 <li>
-<i>A baremetal deployment of HP Helion <tm tmtype="reg">Openstack</tm> Community</i>. First released in June, 2014, this edition installs in a physical environment. The baremetal installation allows you to build an <tm tmtype="reg">Openstack</tm> cloud spanning multiple physical nodes. During installation, this edition sets up an undercloud host and deploys the overcloud on 3 controller hosts, 2 physical Swift nodes, and up to 36 physical compute nodes. </li>
+<i>A baremetal deployment of HP Helion <tm tmtype="reg">OpenStack</tm> Community</i>. First released in June, 2014, this edition installs in a physical environment. The baremetal installation allows you to build an <tm tmtype="reg">OpenStack</tm> cloud spanning multiple physical nodes. During installation, this edition sets up an undercloud host and deploys the overcloud on 3 controller hosts, 2 physical Swift nodes, and up to 36 physical compute nodes. </li>
 </ul>
 <p>These release notes cover both deployments.</p>
 </section>
-<section id="features"> <title>Features in HP Helion <tm tmtype="reg">Openstack</tm> Community</title>
+<section id="features"> <title>Features in HP Helion <tm tmtype="reg">OpenStack</tm> Community</title>
 <p>The following sections list the features in the current version, 1.4, and previous versions.</p>
 </section>
-<section id="features-in-hp-helion-openstack-community-14"> <title>Features in HP Helion <tm tmtype="reg">Openstack</tm> Community 1.4</title>
+<section id="features-in-hp-helion-openstack-community-14"> <title>Features in HP Helion <tm tmtype="reg">OpenStack</tm> Community 1.4</title>
 <p>
 <b>Additional overcloud controllers for high availability</b> — The number of installed overcloud controller nodes has been increased to 3. The additional nodes should allow Community to continue operating if a single control node fails. Previously, the Community edition installed a single overcloud controller node.</p>
 <p>
@@ -52,17 +52,17 @@
 <b>Kibana interface support</b> — Kibana is an open source (Apache Licensed), browser based analytics and search dashboard for ElasticSearch. For more information, see the <xref href="http://www.elasticsearch.org/guide/en/kibana/current/_introduction.html" scope="external" format="html" >Kibana web site</xref>
 </p>
 <p>
-<b><tm tmtype="reg">Openstack</tm> Juno-2 development milestone</b> — HP Helion <tm tmtype="reg">Openstack</tm> Community edition fully supports the second milestone of the <tm tmtype="reg">Openstack</tm> Juno development cycle, including features and bug fixes implemented since Juno-1.</p>
+<b><tm tmtype="reg">OpenStack</tm> Juno-2 development milestone</b> — HP Helion <tm tmtype="reg">OpenStack</tm> Community edition fully supports the second milestone of the <tm tmtype="reg">OpenStack</tm> Juno development cycle, including features and bug fixes implemented since Juno-1.</p>
 <p>
-<b>Distributed Virtual Routing (DVR)</b> — HP Helion <tm tmtype="reg">Openstack</tm> Community edition fully supports the DVR implemented in <tm tmtype="reg">Openstack</tm> Juno-3 plus some fixes from Juno-final.</p>
+<b>Distributed Virtual Routing (DVR)</b> — HP Helion <tm tmtype="reg">OpenStack</tm> Community edition fully supports the DVR implemented in <tm tmtype="reg">OpenStack</tm> Juno-3 plus some fixes from Juno-final.</p>
 </section>
-<section id="features-in-hp-helion-openstack-community-ga"> <title>Features in HP Helion <tm tmtype="reg">Openstack</tm> Community GA</title>
+<section id="features-in-hp-helion-openstack-community-ga"> <title>Features in HP Helion <tm tmtype="reg">OpenStack</tm> Community GA</title>
 <p>
-<b>Pure <tm tmtype="reg">Openstack</tm> technology</b> — This edition allows you to experience a cloud deployment using <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> TripleO</xref>.</p>
+<b>Pure <tm tmtype="reg">OpenStack</tm> technology</b> — This edition allows you to experience a cloud deployment using <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> TripleO</xref>.</p>
 <p>
 <b>Speeds cloud service delivery</b> — Outstanding launch pad for your small-scale open cloud environment or proof-of-concept cloud services, with simple, fast creation of cloud environments and applications to speed business value.</p>
 <p>
-<b>Close-to-trunk release</b> — Allows your lab or small-scale production environment to continue to benefit from the very latest capabilities of <tm tmtype="reg">Openstack</tm> technology, closely tracking the community trunk release.</p>
+<b>Close-to-trunk release</b> — Allows your lab or small-scale production environment to continue to benefit from the very latest capabilities of <tm tmtype="reg">OpenStack</tm> technology, closely tracking the community trunk release.</p>
 </section>
 <section id="supported-services"> <title>Supported services</title>
 <p>This release of the Community edition is shipped with the following supported services:</p>
@@ -73,7 +73,7 @@
           <colspec colname="col3" colsep="1" rowsep="1"/>
           <thead>
             <row rowsep="1">
-              <entry><tm tmtype="reg">Openstack</tm>-powered capabilities</entry>
+              <entry><tm tmtype="reg">OpenStack</tm>-powered capabilities</entry>
               <entry>API supported</entry>
               <entry>API version</entry>
             </row>
@@ -123,7 +123,7 @@
         </tgroup>
 </table>
 </section>
-<section id="recommendations"> <title>Recommendations for HP Helion <tm tmtype="reg">Openstack</tm> Community</title>
+<section id="recommendations"> <title>Recommendations for HP Helion <tm tmtype="reg">OpenStack</tm> Community</title>
 <p>This section describes the HP recommendations for optimizing performance, utility, and functionality with this software version. We have also provided information about some known issues for reference purposes. This section contains:</p>
 <ul>
 <li>
@@ -171,12 +171,12 @@ sudo service neutron-openvswitch-agent restart
 <p>It is possible in busier systems that Kibana logging system might not cope with amount of logs collected. You can correct this issue by increasing the heap size specified in the <codeph>/etc/default/elasticsearch</codeph> file from the default 2G to a higher value and restarting elasticsearch service.</p>
 </li>
 <li>
-<p>After deleting a cloud or an entire HP Helion <tm tmtype="reg">Openstack</tm> Community installation, make sure you perform a full disk erasure on the associated storage devices to prevent exposure of sensitive data that might have been stored there.</p>
+<p>After deleting a cloud or an entire HP Helion <tm tmtype="reg">OpenStack</tm> Community installation, make sure you perform a full disk erasure on the associated storage devices to prevent exposure of sensitive data that might have been stored there.</p>
 </li>
 </ul>
 </section>
 <section id="known-issues"> <title>Known issues in this release</title>
-<p>The following are the known issues for HP Helion <tm tmtype="reg">Openstack</tm> Community edition:</p>
+<p>The following are the known issues for HP Helion <tm tmtype="reg">OpenStack</tm> Community edition:</p>
 <p>
   <b>Operations</b>
 </p>
@@ -202,24 +202,24 @@ sudo service neutron-openvswitch-agent restart
 </section>
 <section id="for-further-information"> <title>For further information</title>
 <p>The kit comes with a README.txt which lists a number of recommendations and requirements. Please read and follow it carefully.</p>
-<p>For additional information on HP Helion <tm tmtype="reg">Openstack</tm> Community, <tm tmtype="reg">Openstack</tm> Cloud Software and TripleO:</p>
+<p>For additional information on HP Helion <tm tmtype="reg">OpenStack</tm> Community, <tm tmtype="reg">OpenStack</tm> Cloud Software and TripleO:</p>
 <ul>
 <li>
-<xref href="../community/community.index.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Community Documentation web site</xref>: Provides the topics listed below.</li>
+<xref href="../community/community.index.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Community Documentation web site</xref>: Provides the topics listed below.</li>
 <li>
-<xref href="../community/community.faq.dita" >FAQ</xref>: Contains some frequently asked questions about the HP Helion <tm tmtype="reg">Openstack</tm> Community edition release</li>
+<xref href="../community/community.faq.dita" >FAQ</xref>: Contains some frequently asked questions about the HP Helion <tm tmtype="reg">OpenStack</tm> Community edition release</li>
 <li>
 <xref href="http://docs.hpcloud.com/helion/community/install-overview/" scope="external" format="html" >Installation and configuration</xref>: A set of tasks that walk you through the installation and configuration process.</li>
 <li>
-<xref href="../community/community.related-topics.dita" >Related Topics</xref>: Links to pertinent HP Helion <tm tmtype="reg">Openstack</tm> Community and <tm tmtype="reg">Openstack</tm> documentation.</li>
+<xref href="../community/community.related-topics.dita" >Related Topics</xref>: Links to pertinent HP Helion <tm tmtype="reg">OpenStack</tm> Community and <tm tmtype="reg">OpenStack</tm> documentation.</li>
 <li>
-<xref href="http://docs.openstack.org/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> documentation home page</xref>
+<xref href="http://docs.openstack.org/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> documentation home page</xref>
 </li>
 <li>
 <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" >TripleO documentation</xref>
 </li>
 <li>
-<xref href="https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion/page:1/" scope="external" format="html" >HP Helion <tm tmtype="reg">Openstack</tm> Support Forum</xref> (Tag your questions with HPHelion)</li>
+<xref href="https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion/page:1/" scope="external" format="html" >HP Helion <tm tmtype="reg">OpenStack</tm> Support Forum</xref> (Tag your questions with HPHelion)</li>
 </ul>
 </section>
 <section id="legal-notices-disclaimer"> <title>Legal Notices and Disclaimer</title>

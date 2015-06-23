@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8545">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Installation and Configuration for ESX Hypervisor</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Installation and Configuration for ESX Hypervisor</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Installation and Configuration for ESX Hypervisor</searchtitle>
 </titlealts>
@@ -21,11 +21,11 @@
  <!--./commercial/GA1/1.1commercial.install-GA-esx.md-->
  <!--permalink: /helion/openstack/1.1/install/esx/--></p>
 <p>
-  <b>This document describes the installation process for HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion <tm tmtype="reg">Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. This document provides installation instructions for HP Helion <tm tmtype="reg">Openstack</tm> on a suitably specified and prepared system.</p>
-<section id="installing-hp-helion-openstack"> <title>Installing HP Helion <tm tmtype="reg">Openstack</tm></title>
+<p>(If you already have 1.1 installed, you can update Helion <tm tmtype="reg">OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. This document provides installation instructions for HP Helion <tm tmtype="reg">OpenStack</tm> on a suitably specified and prepared system.</p>
+<section id="installing-hp-helion-openstack"> <title>Installing HP Helion <tm tmtype="reg">OpenStack</tm></title>
 <p>Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed cloud host:</p>
 <ul>
 <li>
@@ -242,7 +242,7 @@ Output messages will indicate when the undercloud and overcloud controllers beco
 <p>If possible, leave this console display open as you will need the passwords to verify the installation.</p>
 </section>
 <section id="verifying-your-installation"> <title>Verify your installation</title>
-<p>To verify that the installation is successful, connect to the HP Helion <tm tmtype="reg">Openstack</tm> dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.1commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
+<p>To verify that the installation is successful, connect to the HP Helion <tm tmtype="reg">OpenStack</tm> dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.1commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
 <!-- Not needed in 1.1
 ## Create projects for LDAP users {#ldap}
 

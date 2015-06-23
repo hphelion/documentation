@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3381">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Configuring for <tm tmtype="reg">Openstack</tm></title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Configuring for <tm tmtype="reg">OpenStack</tm></title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Configuring for Openstack</searchtitle>
 </titlealts>
@@ -18,17 +18,17 @@
 <body>
 <p>
 <!--UNDER REVISION-->
- <!--./commercial/GA1/1.1commercial.install-GA-<tm tmtype="reg">Openstack</tm>-->
+ <!--./commercial/GA1/1.1commercial.install-GA-<tm tmtype="reg">OpenStack</tm>-->
  <!--permalink: /helion/openstack/1.1/install/openstack-client/--></p>
 <p> <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#ldap" >▲ Prerequisites</xref> </p>
 <p>
-  <b>This document describes the installation process for HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion <tm tmtype="reg">Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
-<p>The <tm tmtype="reg">Openstack</tm> (OSC) is a command-line client for <tm tmtype="reg">Openstack</tm> that brings the command set for Compute, Identity, Image, Object Store and Volume APIs together in a single shell with a uniform command structure.</p>
-<p>OSC is also known as the <b><tm tmtype="reg">Openstack</tm> unified command line utility</b>. For more information on using <tm tmtype="reg">Openstack</tm> see <tm tmtype="reg">Openstack</tm> documentation's on <xref href="http://docs.openstack.org/developer/python-openstackclient/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm></xref>.</p>
-<p>To use OSC with HP Helion <tm tmtype="reg">Openstack</tm> you need to change some environment variables that are set by the stackrc file.</p>
-<p>To configure HP Helion <tm tmtype="reg">Openstack</tm> to use the <tm tmtype="reg">Openstack</tm></p>
+<p>(If you already have 1.1 installed, you can update Helion <tm tmtype="reg">OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>The <tm tmtype="reg">OpenStack</tm> (OSC) is a command-line client for <tm tmtype="reg">OpenStack</tm> that brings the command set for Compute, Identity, Image, Object Store and Volume APIs together in a single shell with a uniform command structure.</p>
+<p>OSC is also known as the <b><tm tmtype="reg">OpenStack</tm> unified command line utility</b>. For more information on using <tm tmtype="reg">OpenStack</tm> see <tm tmtype="reg">OpenStack</tm> documentation's on <xref href="http://docs.openstack.org/developer/python-openstackclient/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm></xref>.</p>
+<p>To use OSC with HP Helion <tm tmtype="reg">OpenStack</tm> you need to change some environment variables that are set by the stackrc file.</p>
+<p>To configure HP Helion <tm tmtype="reg">OpenStack</tm> to use the <tm tmtype="reg">OpenStack</tm></p>
 <ol>
 <li>
 <p>Log in to the seed cloud host.</p>
@@ -74,7 +74,7 @@ export OS_USER_DOMAIN_NAME=Default
 <li>
 <codeph>OS_TENANT_NAME</codeph> -- Must be unset (or set to empty string).</li>
 <li>
-<codeph>OS_IDENTITY_API_VERSION</codeph> -- Use this variable to specify <tm tmtype="reg">Openstack</tm> Identity API version <codeph>3</codeph>.</li>
+<codeph>OS_IDENTITY_API_VERSION</codeph> -- Use this variable to specify <tm tmtype="reg">OpenStack</tm> Identity API version <codeph>3</codeph>.</li>
 <li>
 <codeph>OS_AUTH_URL</codeph> -- Use this variable to configre the Keystone API endpoint to version 3. The default stackrc sets this to the version 2 endpoint.</li>
 <li>

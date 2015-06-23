@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3302">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Adding and Removing Subnets</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Adding and Removing Subnets</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -23,7 +23,7 @@
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Networks</b> link on the <b>Admin</b> dashboard <b>System</b> panel.</p>
@@ -73,7 +73,7 @@
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Networks</b> link on the <b>Admin</b> dashboard <b>System</b> panel.</p>

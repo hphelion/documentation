@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6536">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Community: Tracking masked IP addresses when using network address translation (NAT)</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Community: Tracking masked IP addresses when using network address translation (NAT)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,12 +12,12 @@
 <!--PUBLISHED-->
  <!--./community/community.networking-maskedIP.md-->
  <!--permalink: /helion/community/maskedIP/--></p>
-<p>Network Address Translation (NAT), also known as floating IP addresses, is a technique malicious users employ to mask their originating IP address.  Using NAT, a malicious user can attempt a masked attack on resources in your HP Helion <tm tmtype="reg">Openstack</tm> cloud.</p>
+<p>Network Address Translation (NAT), also known as floating IP addresses, is a technique malicious users employ to mask their originating IP address.  Using NAT, a malicious user can attempt a masked attack on resources in your HP Helion <tm tmtype="reg">OpenStack</tm> cloud.</p>
 <p>As a result of this IP address masking, you may receive notification of abuse that appears to originate at an IP address which is part of your own IP address range.</p>
 <p>Once you have detected such malicious activity, and if you can determine the user's NAT address, you may be able to identify the actual IP address using one of the following methods. These methods allow lookup of the Nova VM associated with the source of the abusive network traffic.</p>
 <section id="method-1"> <title>Method 1</title>
 <ol>
-<li> Log in to the HP Helion <tm tmtype="reg">Openstack</tm> Community dashboard as cloud admin.</li>
+<li> Log in to the HP Helion <tm tmtype="reg">OpenStack</tm> Community dashboard as cloud admin.</li>
 <li>Select the project you want to work with.</li>
 <li>Click the <b>Access &amp; Security</b> link on the <b>Project</b> dashboard <b>Compute</b>
           panel.</li>

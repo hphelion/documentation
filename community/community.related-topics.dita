@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1067">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Community Related Documentation</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Community Related Documentation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,8 +12,8 @@
 <!--PUBLISHED-->
  <!--./community/community.related-topics.md-->
  <!--permalink: /helion/community/related-links/--></p>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> Community edition is based on <tm tmtype="reg">Openstack</tm> technology and an HP configured <tm tmtype="reg">Linux</tm> operating system.</p>
-<p>For more information, refer to the <tm tmtype="reg">Openstack</tm> documentation site:</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> Community edition is based on <tm tmtype="reg">OpenStack</tm> technology and an HP configured <tm tmtype="reg">Linux</tm> operating system.</p>
+<p>For more information, refer to the <tm tmtype="reg">OpenStack</tm> documentation site:</p>
 <ul>
 <li>
 <p>
@@ -27,32 +27,32 @@
 </li>
 <li>
 <p>
-<xref href="http://docs.openstack.org/glossary/content/glossary.html" scope="external" format="html"><tm tmtype="reg">Openstack</tm> Glossary</xref>
+<xref href="http://docs.openstack.org/glossary/content/glossary.html" scope="external" format="html"><tm tmtype="reg">OpenStack</tm> Glossary</xref>
 </p>
 </li>
 <li>
 <p>
-<xref href="http://docs.openstack.org/user-guide/content/index.html" scope="external" format="html"><tm tmtype="reg">Openstack</tm> End User Guide</xref>
+<xref href="http://docs.openstack.org/user-guide/content/index.html" scope="external" format="html"><tm tmtype="reg">OpenStack</tm> End User Guide</xref>
 </p>
 </li>
 <li>
 <p>
-<xref href="http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html" scope="external" format="html"><tm tmtype="reg">Openstack</tm> Cloud Administrator Guide</xref>
+<xref href="http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html" scope="external" format="html"><tm tmtype="reg">OpenStack</tm> Cloud Administrator Guide</xref>
 </p>
 </li>
 <li>
 <p>
-<xref href="http://docs.openstack.org/trunk/openstack-network/admin/content/index.html" scope="external" format="html"><tm tmtype="reg">Openstack</tm> Networking Administration Guide</xref>
+<xref href="http://docs.openstack.org/trunk/openstack-network/admin/content/index.html" scope="external" format="html"><tm tmtype="reg">OpenStack</tm> Networking Administration Guide</xref>
 </p>
 </li>
 <li>
 <p>
-<xref href="http://docs.openstack.org/trunk/openstack-ops/content/index.html" scope="external" format="html"><tm tmtype="reg">Openstack</tm> Operations Guide</xref>
+<xref href="http://docs.openstack.org/trunk/openstack-ops/content/index.html" scope="external" format="html"><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>
 </p>
 </li>
 <li>
 <p>
-<xref href="http://api.openstack.org/api-ref.html" scope="external" format="html"><tm tmtype="reg">Openstack</tm> API Complete Reference</xref>
+<xref href="http://api.openstack.org/api-ref.html" scope="external" format="html"><tm tmtype="reg">OpenStack</tm> API Complete Reference</xref>
 </p>
 
 <p>

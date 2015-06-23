@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2925">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Specifying Dedicated CPUs for a VM</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Specifying Dedicated CPUs for a VM</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,7 +18,7 @@
 <p>Selecting Dedicated effectively affines each virtual CPU thread to a dedicated core, and ensures that the core is not shared with other virtual CPU threads.</p>
 <p>The Dedicated setting is recommended for Carrier-Grade requirements to prevent over-commitment of host resources, and to minimize the impact that scheduling events may have on the latency and throughput responses of the guest kernel.</p>
 <p>If the CPU Policy is set to Shared, the virtual CPU threads are scheduled to run on any available core on the compute node. Also, they can be moved within the compute node from one core to another at any time. In a sense, the virtual CPU threads can be considered to be floating threads. This is the CPU affinity mask portion of the scheduling action.</p>
-<p>Additionally, when Shared is selected, the virtual CPU threads can share the core with other threads from the same virtual machine or other virtual machines. The default <tm tmtype="reg">Openstack</tm> virtual CPU over-commit ratio is 16:1, which means that up to 16 virtual CPU threads can share a single core. Over-committing of virtual CPUs is highly
+<p>Additionally, when Shared is selected, the virtual CPU threads can share the core with other threads from the same virtual machine or other virtual machines. The default <tm tmtype="reg">OpenStack</tm> virtual CPU over-commit ratio is 16:1, which means that up to 16 virtual CPU threads can share a single core. Over-committing of virtual CPUs is highly
 discouraged in Carrier-Grade operations.</p>
 <p>To add this extra spec to a flavor using the web administration interface, use the CPU Policy selection in the Create Flavor Extra Spec drop-down menu. To access this menu, see <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Flavor Extra Specifications</xref>.</p>
 <p>To add the extra spec using the CLI, use the following command:</p>

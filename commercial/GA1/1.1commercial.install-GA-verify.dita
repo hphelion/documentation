@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5033">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Verifying your Installation</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Verifying your Installation</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Verifying your installation</searchtitle>
 </titlealts>
@@ -23,10 +23,10 @@
 <p> <xref href="../../commercial/GA1/1.1commercial.install-GA-kvm.dita" >▲ Installation and Configuration for KVM Hypervisor</xref> or  <xref href="../../commercial/GA1/1.1commercial.install-GA-esx.dita" >▲ Installation and Configuration for ESX Hypervisor</xref>
 </p>
 <p>
-  <b>This document describes the installation process for HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion <tm tmtype="reg">Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
-<p>Once your installation is complete, you should make sure you can connect to your HP Helion <tm tmtype="reg">Openstack</tm> cloud. You can accomplish this in any of the following ways:</p>
+<p>(If you already have 1.1 installed, you can update Helion <tm tmtype="reg">OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>Once your installation is complete, you should make sure you can connect to your HP Helion <tm tmtype="reg">OpenStack</tm> cloud. You can accomplish this in any of the following ways:</p>
 <ul>
 <li>
 <xref type="section" href="#topic5033/connectunder">Connecting to the undercloud Horizon console</xref>
@@ -160,7 +160,7 @@ echo $OVERCLOUD_IP
 </ol>
 </section>
 <section id="connectmonitor"> <title>Connect to the monitoring and logging interfaces</title>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> includes monitoring logging. The monitoring service uses <xref href="../../community/community.services-icinga.dita" >Icinga</xref> interface and the logging service uses the Kibana interface.</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> includes monitoring logging. The monitoring service uses <xref href="../../community/community.services-icinga.dita" >Icinga</xref> interface and the logging service uses the Kibana interface.</p>
 <p>You can access these services with the following steps:</p>
 <ol>
 <li>
@@ -229,7 +229,7 @@ sudo su -
 </section>
 <section id="next-step"> <title>Next Step</title>
 <ul>
-<li>Review <xref href="../../community/community.related-topics.dita" ><tm tmtype="reg">Openstack</tm> documentation</xref> </li>
+<li>Review <xref href="../../community/community.related-topics.dita" ><tm tmtype="reg">OpenStack</tm> documentation</xref> </li>
 <li>
 <p>See how to <xref href="../../community/community.dashboard.how-works.dita" >use the Horizon dashboard</xref>.</p>
 

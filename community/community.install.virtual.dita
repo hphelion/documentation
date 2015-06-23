@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8707">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Community Virtual Installation and Configuration</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Community Virtual Installation and Configuration</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./community/community.install.virtual.md-->
  <!--permalink: /helion/community/install-virtual/--></p>
-<p>This page provides instructions on how to perform a virtual installation of HP Helion <tm tmtype="reg">Openstack</tm> Community onto a suitably specified and prepared single server. This cloud-in-a-box is designed to let you test the functionality of HP Helion <tm tmtype="reg">Openstack</tm> Community. It is not intended to be used in a production environment to run real workloads; therefore, no support is available.</p>
+<p>This page provides instructions on how to perform a virtual installation of HP Helion <tm tmtype="reg">OpenStack</tm> Community onto a suitably specified and prepared single server. This cloud-in-a-box is designed to let you test the functionality of HP Helion <tm tmtype="reg">OpenStack</tm> Community. It is not intended to be used in a production environment to run real workloads; therefore, no support is available.</p>
 <p>It is important to read through this page before starting your installation. Before you begin your installation, we recommend you review the complete <xref href="../community/community.hwsw-requirements.dita" >Hardware and Software Requirements</xref> page. Note, however, that we have included the basic requirements on this page.</p>
 <ul>
 <li>
@@ -41,7 +41,7 @@
 </li>
 <li>
 <p>
-<xref type="section" href="#topic8707/install">Installing HP Helion <tm tmtype="reg">Openstack</tm> Community</xref>
+<xref type="section" href="#topic8707/install">Installing HP Helion <tm tmtype="reg">OpenStack</tm> Community</xref>
 </p>
 
 <ul>
@@ -101,7 +101,7 @@
 <p>Before installing, it is necessary to configure the DNS servers that will be used by dnsmasq as forwarders. Refer to <xref href="../community/community.name-resolution.dita" >Enabling name resolution from tenant VMs in the overcloud</xref>for instructions.</p>
 </section>
 <section id="install-notes"> <title>About the installation process</title>
-<p>There are a few things you should be aware of before you begin your HP Helion <tm tmtype="reg">Openstack</tm> Community virtual installation.</p>
+<p>There are a few things you should be aware of before you begin your HP Helion <tm tmtype="reg">OpenStack</tm> Community virtual installation.</p>
 <ul>
 <li>
 <p>The install will run until the demo completes loading the demo VM.</p>
@@ -117,23 +117,23 @@
 </li>
 </ul>
 </section>
-<section id="install"> <title>Installing HP Helion <tm tmtype="reg">Openstack</tm> Community</title>
+<section id="install"> <title>Installing HP Helion <tm tmtype="reg">OpenStack</tm> Community</title>
 <p>Once you have met all of the hardware requirements and have completed the required tasks, you can begin your installation.</p>
 <p>In the event you have trouble with the installation, review the <xref href="../community/community.troubleshoot.dita" >Issues and troubleshooting</xref> and <xref href="../community/community.faq.dita" >FAQ</xref> pages.</p>
 </section>
 <section id="getinstall"> <title>Unpacking the installation file</title>
-<p>The virtual installation of HP Helion <tm tmtype="reg">Openstack</tm> Community for a single server is provided as a compressed TAR file. This is a large file because it contains all of the machine images required for the seed VM, the undercloud, the overcloud, and a guest VM image.</p>
+<p>The virtual installation of HP Helion <tm tmtype="reg">OpenStack</tm> Community for a single server is provided as a compressed TAR file. This is a large file because it contains all of the machine images required for the seed VM, the undercloud, the overcloud, and a guest VM image.</p>
 <p>
 <b>Note:</b> This install file does not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.</p>
 <p>To begin the installation:</p>
 <ol>
 <li> Log in to your system as root.<codeblock><codeph>sudo su -
 </codeph></codeblock></li>
-<li> Register and then log in to download the HP Helion <tm tmtype="reg">Openstack</tm> Community virtual package from
+<li> Register and then log in to download the HP Helion <tm tmtype="reg">OpenStack</tm> Community virtual package from
           this site:<p>
             <xref
               href="https://helion.hpwsportal.com#/Product/%7B%22productId%22%3A%221320%22%7D/Show"
-              scope="external" format="html">HP Helion <tm tmtype="reg">Openstack</tm> Community Edition Installation
+              scope="external" format="html">HP Helion <tm tmtype="reg">OpenStack</tm> Community Edition Installation
               Package</xref>
           </p><p>The download file is named: <codeph>Helion_Openstack_Community_V1.4.tar.gz</codeph>
           </p></li>
@@ -197,7 +197,7 @@ tar zxvf /{full path to downloaded file from step 2}/Helion_Openstack_Community_
             pauses while services and VMs are set up in the background.</p></li>
 <li>When the deployment completes, a message displays asking you to submit information on the
           install to HP. Enter <codeph>Y</codeph> to submit or any other key to not submit.</li>
-<li>The installer lists several IP addresses of various HP Helion <tm tmtype="reg">Openstack</tm> components. Make note
+<li>The installer lists several IP addresses of various HP Helion <tm tmtype="reg">OpenStack</tm> components. Make note
           of the following IP addresses for use when verifying the
           install:<codeblock><codeph>OVERCLOUD_IP_ADDRESS
 UNDERCLOUD_IP_ADDRESS

@@ -13,7 +13,7 @@
  <!--./publiccloud/object-storage.md-->
  <!--permalink: /publiccloud/object-storage/--></p>
 <!-- <iframe src="https://player.vimeo.com/video/32118778?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
-<p>Leveraging <xref href="http://openstack.org/projects/storage/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Storage</xref>, HP Helion Public Cloud object storage provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  Key terms include:</p>
+<p>Leveraging <xref href="http://openstack.org/projects/storage/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Storage</xref>, HP Helion Public Cloud object storage provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  Key terms include:</p>
 <ul>
 <li>
 <b>Object</b> - The basic storage entity, most typically a file</li>
