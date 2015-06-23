@@ -12,31 +12,28 @@
       <!--PUBLISHED-->
       <!--./publiccloud/cli.windows.2.md-->
       <!--permalink: /publiccloud/cli/windows/--></p>
-    <p>The HP Helion Public Cloud command-line interface (CLI) software for Windows PowerShell is a tool which allows Windows users to manage their HP Helion Public Cloud services from the command line.</p>
-    <p>Surf to the appropriate page to learn how to install the software, use the various features, and see how to go about getting help.</p>
-    <ul>
-      <li>
-        <xref href="../publiccloud/cli.windows.2.installation.dita" >Installation</xref>
-      </li>
-      <li>
-        <xref href="../publiccloud/cli.windows.2.commands.dita" >Commands Overview</xref>
-      </li>
-      <li>
-        <xref href="../publiccloud/cli.windows.2.compute.dita" >Compute Examples</xref>
-      </li>
-      <li>
-        <xref href="../publiccloud/cli.windows.2.containers-and-folders.dita" >Object Storage Examples</xref>
-      </li>
-      <li>
-        <xref href="../publiccloud/cli.windows.2.block-storage.dita" >Block Storage Examples</xref>
-      </li>
-      <li>
-        <xref href="../publiccloud/cli.windows.2.help.dita" >Getting Help</xref>
-      </li>
-      <li>
-        <xref href="../publiccloud/cli.windows.2.release-notes.dita" >Release Notes</xref>
-      </li>
-    </ul>
-    <p><xref href="../file/WinCLI-1.3.5.7.zip" scope="external" format="html" >Download the HP Helion Public Cloud command-line interface (CLI) software for Windows PowerShell</xref>.</p>
-  </body>
+<p>The HP Helion Public Cloud command-line interface (CLI) software for Windows PowerShell is a tool which allows Windows users to manage their HP Helion Public Cloud services from the command line.</p>
+<p>Surf to the appropriate page to learn how to install the software, use the various features, and see how to go about getting help.</p>
+<ul>
+<li>
+<xref href="../publiccloud/cli.windows.2.installation.dita" >Installation</xref>
+</li>
+<li>
+<xref href="../publiccloud/cli.windows.2.compute.dita" >Compute Examples</xref>
+</li>
+<li>
+<xref href="../publiccloud/cli.windows.2.containers-and-folders.dita" >Object Storage Examples</xref>
+</li>
+<li>
+<xref href="../publiccloud/cli.windows.2.block-storage.dita" >Block Storage Examples</xref>
+</li>
+<li>
+<xref href="../publiccloud/cli.windows.2.help.dita" >Getting Help</xref>
+</li>
+<li>
+<xref href="../publiccloud/cli.windows.2.release-notes.dita" >Release Notes</xref>
+</li>
+</ul>
+<p><xref href="../file/WinCLI-1.3.5.7.zip" scope="external" format="html" >Download the HP Helion Public Cloud command-line interface (CLI) software for Windows PowerShell</xref>.</p>
+</body>
 </topic>
