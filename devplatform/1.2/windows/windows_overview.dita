@@ -61,7 +61,7 @@
         <xref format="dita" scope="local" href="windows_tools_guide.dita#topic_w5z_kcw_js/helion">application deployment tools</xref> can be used for 
         both Windows and Linux deployments.</li>
     <li> Additional developer tools, including an SDK for programmatic access to services, and a 
-        <xref format="dita" scope="local" href="windows_tools_guide.dita#topic_w5z_kcw_js/#cloudfoundryextensions">Visual Studio extension</xref> for 
+        <xref format="dita" scope="local" href="windows_tools_guide.dita#topic_w5z_kcw_js/cloudfoundryextensions">Visual Studio extension</xref> for 
         deploying and managing applications.</li>
     <li> Feature-rich application sandboxing, including memory and CPU management, and application isolation. This allows applications to coexist within a single 
         ALS cluster, saving the overhead of running 
@@ -210,17 +210,6 @@
             Microsoft licensing representative.</p>
         </section>
     </body>
-    <related-links>
-        <link href="windows_overview.dita"><linktext>Windows Overview</linktext></link>
-        <link href="windows_building_and_deploying.dita"><linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext></link>
-        <link href="windows_firstapp.dita"><linktext>Deploying your first .NET Application</linktext></link>
-        <link href="windows_tools_guide.dita"><linktext>Windows and .NET Tools Guide</linktext></link>
-        <link href="windows_glazier_reference_guide.dita"><linktext>Glazier Reference Guide</linktext></link>
-        <link href="windows_adding_services.dita"><linktext>Adding Services to a Windows Application</linktext></link>
-        <link href="windows_custom_buildpacks.dita"><linktext>Deploying Windows Applications with the IIS Buildpack</linktext></link>
-        <link href="windows_adding_services.dita"><linktext>Connecting Services to a Windows Application</linktext></link>
-        <link href="windows_growcluster.dita"><linktext>Growing and Renaming Clusters Using Horizon</linktext></link>
-    </related-links>
 </topic>
 
 

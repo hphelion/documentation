@@ -95,19 +95,19 @@ web server, application dependencies, databases, and other services.</p>
                   <xref href="../user/deploy/1.2buildpack.dita">Buildpacks</xref>
                 </li>
                 <li>
-                  <xref href="../user/deploy/1.2other-frameworks.dita">Generic &amp; Standalone
+                  <xref href="1.2other-frameworks.dita#topic2413">Generic &amp; Standalone
                     Frameworks</xref>
                 </li>
               </ul></li>
             <li>Languages <ul>
                 <li>
-                  <xref href="../user/deploy/languages/1.2java.dita">Java</xref>
+                  <xref href="languages/1.2java.dita#topic2811">Java</xref>
                 </li>
                 <li>
                   <xref href="../user/deploy/languages/1.2node.dita">Node.js</xref>
                 </li>
                 <li>
-                  <xref href="../user/deploy/languages/1.2php.dita">PHP</xref>
+                  <xref href="languages/1.2php.dita#topic5845">PHP</xref>
                 </li>
               </ul></li>
           </ul></li>
@@ -145,8 +145,9 @@ web server, application dependencies, databases, and other services.</p>
 <section id="management-console"> <title>Management Console</title>
 <ul>
 <li>
-  <xref href="../admin/console/1.2customize.dita">Customize the Management Console</xref>
-</li>
+          <xref href="../../admin/console/1.2customize.dita#topic5029">Customize the Management
+            Console</xref>
+        </li>
 <li>
   <xref href="../admin/console/1.2customize.dita#topic5029/welcome">Welcome</xref>
 </li>

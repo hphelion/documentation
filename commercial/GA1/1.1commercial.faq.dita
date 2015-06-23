@@ -169,9 +169,9 @@ You have access to:
 <li>
 <xref href="http://www8.hp.com/us/en/cloud/hphelion-openstack.html" scope="external" format="html" >HP <tm tmtype="reg">Helion OpenStack</tm> Portal</xref>
 </li>
-<li>
-  <xref href="1.1commercial.index.dita" scope="external" format="html" >HP <tm tmtype="reg">Helion OpenStack</tm> Documentation</xref> 
-<!--* [HP <tm tmtype="reg">Helion OpenStack</tm> Support Forum](https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion) (Tag your questions with 'HPHelion')--></li>
+  <!--<li>
+
+* [HP <tm tmtype="reg">Helion OpenStack</tm> Support Forum](https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion) (Tag your questions with 'HPHelion')</li>-->
 </ul>
 </section>
 <section id="where-can-i-report-issues-with-hp-helion-openstack"> <title>Where can I report issues with HP <tm tmtype="reg">Helion OpenStack</tm><!--Removed anchor point reportissues--><!-- id="reportissues" --></title>

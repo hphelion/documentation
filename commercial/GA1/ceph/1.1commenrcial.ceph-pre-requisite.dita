@@ -258,7 +258,7 @@
 </section>
 <section id="kvm"> <title>Installation and Configuration HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1 for KVM Hypervisor</title>
 <p>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 or 1.1.1 should be successfully installed in the KVM hypervisor before installing Ceph.</p>
-  <p>For more information on the HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 or 1.1.1 for KVM hypervisor, refer to <xref href="../1.1commercial.install-GA-kvm.dita" scope="external" format="html" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.x Installation Manual</xref>.</p>
+  <p>For more information on the HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 or 1.1.1 for KVM hypervisor, refer to <xref href="../1.1commercial.install-GA-kvm.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.x Installation Manual</xref>.</p>
 <!-- this is not there in the present cookbook
 ###Download and Access to the Solution Files and Documents {#Download-and-access}
 
