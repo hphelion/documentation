@@ -96,7 +96,7 @@ This release supports the use of a <xref href="1.1.1commerical.services-customer
 <p>
 <b>Enable Unified Extensible Firmware Interface (UEFI) support for Gen8 and Gen9 HP Servers</b> - UEFI is industry standard set of interfaces between the system firmware, the operating system, and between various components of the system firmware delivers enhanced security benefits for the HP ProLiant Gen8 and Gen9 Server family. UEFI is meant to replace the Basic Input/Output System (BIOS) firmware interface. For more information, see <xref href="http://www8.hp.com/us/en/products/server-software/product-detail.html?oid=6935826" scope="external" format="html" >HP Unified Extensible Firmware Interface</xref>.<!--HPM12--></p>
 <p>
-<b>Compute Service Configuration Drive</b> - The HP Helion OpenStack(R) compute service can be configured to <xref href="../../commercial/GA1/1.1commerical.troubleshooting.compute.dita#configdrive" >write metadata to a special configuration drive</xref> that contains information normally available through the metadata service.</p>
+<b>Compute Service Configuration Drive</b> - The HP Helion OpenStack(R) compute service can be configured to <xref href="../../commercial/GA1/1.1commerical.troubleshooting.compute.dita">write metadata to a special configuration drive</xref> that contains information normally available through the metadata service.</p>
 <p>
 <b>Ruby CLI No Longer Supported</b> - The Ruby CLI (unix_cli) is no longer supported. Users are advised to consider the Python CLIs as an alternative.</p>
 </section>

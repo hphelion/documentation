@@ -508,12 +508,11 @@ request header is used by the API to include the token in the request.</p>
 <p>In addition, to credentials, you also specify a project -- either the Id or project Name. With your credentials and project, the Identity service checks to see whether you have activated the Object Storage service. If so, it returns an authentication token and the endpoints to all regions of the Object Storage service that you are activated for. See <xref type="section" href="#topic150798/service_catalog">Service Catalog</xref> for an example of how the authentication token and endpoints are returned.</p>
 <p>There are legacy <tm tmtype="reg">OpenStack</tm> Object Store APIs that used TempAuth or Swauth as their identity server. The Identity service offers a compatible interface. You use your username, password and project Id as shown in the following example. This example uses curl. The X-Storage-Url response header contains the Object Storage endpoint (including your account) and the X-Auth-Token response header contains your authentication token.</p>
 <codeblock>
-  <codeph>$ curl -i https://region-a.geo-1.identity.hpcloudsvc.com:35357/auth/v1.0/ -X GET -H 'x-auth-user: 12345678912345:sally' -H 'x-auth-key: MyPassword'
+$ curl -i https://region-a.geo-1.identity.hpcloudsvc.com:35357/auth/v1.0/ -X GET -H 'x-auth-user: 12345678912345:sally' -H 'x-auth-key: MyPassword'
 
 HTTP/1.1 200 OK
 X-Storage-Url: https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345
 X-Auth-Token: HPAuth_1234
-</codeph>
 </codeblock>
 <p>The authentication that you receive is known as a "scoped" token, i.e., it is specific for the project and the Object Storage account associated with the project.</p>
 </section>
@@ -537,12 +536,10 @@ supply a X-Auth-Token in their requests. This is explained in <xref type="sectio
 </ul>
 <p>To allow anybody to both list objects in a container and access the objects, use both values separated by a ','. For example, if you want to allow anybody complete read access to a container, set the X-Container-Read request header as follows:</p>
 <codeblock>
-  <codeph>X-Container-Read: .r:*,.rlistings
-</codeph>
+X-Container-Read: .r:*,.rlistings
 </codeblock>
 <lq>
   <p>Note: the <codeph>.r</codeph> in the ACL value is named for 'referrer' -- not 'read'</p>
-  
   <p>Note: the <codeph>*</codeph> in the ACL value is a literal <codeph>*</codeph>; it does not mean that user or hostnames can be specified in this piece of the ACL string.</p>
 </lq>
 </section>
@@ -551,20 +548,17 @@ supply a X-Auth-Token in their requests. This is explained in <xref type="sectio
 <p>Users of Object Storage can share containers with one another by providing a user name (or names) with the X-Container-Read and X-Container-Write container metadata. The ACL value provides access to both list the objects in the container as well as access to the individual objects in the container.</p>
 <p>For example, to grant access to user Sally for read access you can set the X-Container-Read as follows:</p>
 <codeblock>
-  <codeph>X-Container-Read: *:sally
-</codeph>
+X-Container-Read: *:sally
 </codeblock>
 <p>To allow user Sally to also write to objects in a contains, you should also
 set the X-Container-Write request header as follows:</p>
 <codeblock>
-  <codeph>X-Container-Read: *:sally
+X-Container-Read: *:sally
 X-Container-Write: *:sally
-</codeph>
 </codeblock>
 <p>If there are several users, use a comma separated list as shown in the following example:</p>
 <codeblock>
-  <codeph>X-Container-Read: *:sally,*:joe@hp.com
-</codeph>
+X-Container-Read: *:sally,*:joe@hp.com
 </codeblock>
 <lq>
   <p>Note: use the <i>username</i> in the ACL. In many cases, the username is the same as your email address. In this example, <codeph>joe@hp.com</codeph> is the user's username.</p>
@@ -620,7 +614,6 @@ website to act as a proxy for the request.</p>
 </li>
 <li>
 <p>An HMAC-SHA1 (RFC 2104) signature. This is generated using:</p>
-
 <ul>
 <li>The HTTP method to allow (GET or PUT)</li>
 <li>The Unix timestamp the access should be allowed until</li>
@@ -631,7 +624,7 @@ website to act as a proxy for the request.</p>
 </ul>
 <p>For example, here is code generating the signature for a GET, valid for the next 60 seconds, on /v1/12345678912345/container/object:</p>
 <codeblock>
-  <codeph>import hmac
+import hmac
 from hashlib import sha1
 from time import time
 method = 'GET'
@@ -643,14 +636,12 @@ secret_key = 'EHLzysK9S1QRWkwvVpVHsGZyM715OH4S2kJ'
 hmac_body = '%s\n%s\n%s' % (method, expires, path)
 sig = project_id + ':' + access_key_id + ':' + hmac.new(secret_key, hmac_body,
     sha1).hexdigest()
-</codeph>
 </codeblock>
 </section>
 <section id="2754-using-temporary-urls"> <title>2.7.5.4 Using Temporary URLs</title>
 <p>Let's say the signature ends up equaling "12345678912345:GP54NNRN2TKBVWH449AG:da39a3ee5e6b4b0d3255bfef95601890afd80709" and expires ends up "1323479485". Then, for example, the website could provide a link to:</p>
 <codeblock>
-  <codeph>https://swift-cluster.example.com/v1/12345678912345/container/object?temp_url_sig=12345678912345%3AGP54NNRN2TKBVWH449AG%3Ada39a3ee5e6b4b0d3255bfef95601890afd80709&amp;temp_url_expires=1323479485
-</codeph>
+https://swift-cluster.example.com/v1/12345678912345/container/object?temp_url_sig=12345678912345%3AGP54NNRN2TKBVWH449AG%3Ada39a3ee5e6b4b0d3255bfef95601890afd80709&amp;temp_url_expires=1323479485
 </codeblock>
 <p>Any alteration of the resource path or query arguments will cause an "401 Unauthorized" error to be returned. Similarly, a PUT where GET was the allowed method will also fail. HEAD is allowed if GET or PUT is allowed.</p>
 </section>
@@ -661,7 +652,7 @@ sig = project_id + ':' + access_key_id + ':' + hmac.new(secret_key, hmac_body,
 <p>FormPOST cannot be used to upload <xref type="section" href="#topic150798/large_objects">Large Objects</xref> or <xref type="section" href="#topic150798/tarball_upload">Auto Archive Extract</xref> objects.</p>
 <p>The format of the form is shown in this example:</p>
 <codeblock>
-  <codeph>&lt;form action="{object-store-url}" method="POST"
+&lt;form action="{object-store-url}" method="POST"
                enctype="multipart/form-data"&gt;
 &lt;input type="hidden" name="redirect" value="{redirect-url}" /&gt;
 &lt;input type="hidden" name="max_file_size" value="{bytes}" /&gt;
@@ -671,7 +662,6 @@ sig = project_id + ':' + access_key_id + ':' + hmac.new(secret_key, hmac_body,
 &lt;input type="file" name="{object-name}" /&gt;
 &lt;input type="submit" /&gt;
 &lt;/form&gt;
-</codeph>
 </codeblock>
 <lq>
   <p>Note: The form method must be POST and the enctype must be set as
@@ -680,19 +670,16 @@ sig = project_id + ':' + access_key_id + ':' + hmac.new(secret_key, hmac_body,
 <p>The object-store-url is the URL to the Object Storage destination,
 such as:</p>
 <codeblock>
-  <codeph>https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345678912345/photos/
-</codeph>
+https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345678912345/photos/
 </codeblock>
 <p>The name of each object uploaded will be appended to the object-store-url given. In the above example, the object is uploaded to the photos container. To upload to a pseudo-directory, include the full name including the slash ("/")
 character as shown in this example:</p>
 <codeblock>
-  <codeph>https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345678912345/photos/2013/vacation/
-</codeph>
+https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345678912345/photos/2013/vacation/
 </codeblock>
 <p>The object-store-url is really a prefix for the object name, so if the name of the file input type attribute is "one", the following URL...</p>
 <codeblock>
-  <codeph>https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345678912345/photos/2013/vacation/venice-
-</codeph>
+https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345678912345/photos/2013/vacation/venice-
 </codeblock>
 <p>... would create an object called 2013/vacation/venice-one in the photos
 container.</p>
@@ -752,7 +739,6 @@ set on the Swift account. In Object Storage you do not need to do this. Instead 
 </li>
 <li>
 <p>An HMAC-SHA1 (RFC 2104) signature. This is generated using:</p>
-
 <ul>
 <li>The full path to where the objects are stored</li>
 <li>The value of the redirect attribute</li>
@@ -766,7 +752,7 @@ set on the Swift account. In Object Storage you do not need to do this. Instead 
 <p>For example, here is code generating a signature valid for the next 600
 seconds:</p>
 <codeblock>
-  <codeph>import hmac
+import hmac
 from hashlib import sha1
 from time import time
 
@@ -781,7 +767,6 @@ secret_key = 'EHLzysK9S1QRWkwvVpVHsGZyM715OH4S2kJ'
 hmac_body = '%s\n%s\n%s\n%s\n%s' % (path, redirect,
     max_file_size, max_file_count, expires)
 signature = project_id + ':' + access_key_id + ':' + hmac.new(secret_key, hmac_body, sha1).hexdigest()
-</codeph>
 </codeblock>
 <lq>
   <p>Note: Be certain to use the full path, from the /v1/ onward.</p>
@@ -795,7 +780,7 @@ signature = project_id + ':' + access_key_id + ':' + hmac.new(secret_key, hmac_b
 <p>An Access Key has two parts - an Access Key ID and a Secret Key. As you can see below, the Access Key ID appears in the Authorization header. However, the Secret Key does not. Obviously, you should only reveal the Secret Key to trusted parties.</p>
 <p>The value for the Authorization header is constructed as follows:</p>
 <codeblock>
-  <codeph>Authorization = "HP" + " " + ProjectID + ":" + AccessKeyId + ":" + Signature;
+Authorization = "HP" + " " + ProjectID + ":" + AccessKeyId + ":" + Signature;
 
 Signature = Base64( HMAC-SHA1( SecretKey, UTF-8-Encoding-Of( StringToSign ) ) );
 
@@ -806,7 +791,6 @@ StringToSign = HTTP-Verb + "\n" +
     CanonicalizedResource;
 
 CanonicalizedResource = (described below)
-</codeph>
 </codeblock>
 <p>The CanonicalizedResource is the path of the account, container or object you are accessing. However, you must observe some conventions in constructing the path used in the signing process. Specifically:</p>
 <ul>
@@ -824,11 +808,10 @@ CanonicalizedResource = (described below)
 <section id="2772-using-signature-based-authentication"> <title>2.7.7.2 Using Signature Based Authentication</title>
 <p>Here's an example of using signature based authentication in a request:</p>
 <codeblock>
-  <codeph>GET /v1/12345678912345/images/January/snow.jpg HTTP/1.1
+GET /v1/12345678912345/images/January/snow.jpg HTTP/1.1
 Host: region-a.geo-1.objects.hpcloudsvc.com
 Date: Mon, 26 Mar 2007 19:37:58 +0000
 Authorization: HP 971350225483156:GP54NNRN2TKBVWH449AG:frJIUN8DYpKDtOLCwo//yllqDzg=
-</codeph>
 </codeblock>
 </section>
 <section id="pagination"> <title>2.8 Retrieving large number of container or object names</title>
@@ -838,37 +821,33 @@ Authorization: HP 971350225483156:GP54NNRN2TKBVWH449AG:frJIUN8DYpKDtOLCwo//yllqD
 <p>If the number of names returned equals the limit given (or 10,000 if no limit is given), it can be assumed there are more names to be listed. If the name list is exactly divisible by the limit, the last request has no content.</p>
 <p>For example, let's use a listing of five names</p>
 <codeblock>
-  <codeph>apples
+apples
 bananas
 kiwis
 oranges
 pears
-</codeph>
 </codeblock>
 <p>We'll use a limit of two to show how things work:</p>
 <codeblock>
-  <codeph>GET /v1/1234567891012345?limit=2
+GET /v1/1234567891012345?limit=2
 
 apples
 bananas
-</codeph>
 </codeblock>
 <p>Since two items were received, you can assume there are more
 names to list, so you make another request with a marker of the last
 item returned:</p>
 <codeblock>
-  <codeph>GET /v1/1234567891012345?limit=2&amp;marker=bananas
+GET /v1/1234567891012345?limit=2&amp;marker=bananas
 
 kiwis
 oranges
-</codeph>
 </codeblock>
 <p>Again, two items are returned; there may be more:</p>
 <codeblock>
-  <codeph>GET /v1/1234567891012345?limit=2&amp;marker=oranges
+GET /v1/1234567891012345?limit=2&amp;marker=oranges
 
 pears
-</codeph>
 </codeblock>
 <p>With this one-item response we received less than the limit number of names, indicating that this is the end of the list.</p>
 </section>
@@ -903,7 +882,7 @@ Create placeholder objects to represent folders or directories. The objects are 
 <p>To show how to construct and navigate through a hierarchy, we will use a container containing 7 objects. In this example, we will use the slash ('/') character as the delimiter.</p>
 <p>Here is a full listing of the container in plain text:</p>
 <codeblock>
-  <codeph>GET /v1/12345678912345/test_container
+GET /v1/12345678912345/test_container
 X-Container-Object-Count: 7
 
 dir1/obj1
@@ -913,12 +892,11 @@ dir4/obj4
 dir4/obj5
 obj6
 obj7
-</codeph>
 </codeblock>
 <p>Notice that there are 7 objects. The first object has a name of <codeph>dir1/obj1</codeph> -- not <codeph>obj1</codeph>, i.e., the name contains the hierarchical structure.</p>
 <p>By adding the <codeph>format=json</codeph> query parameter, we can see the objects in more detail.</p>
 <codeblock>
-  <codeph>GET /v1/12345678912345/test_container?format=json
+GET /v1/12345678912345/test_container?format=json
 X-Container-Object-Count: 7
 
 [
@@ -930,11 +908,10 @@ X-Container-Object-Count: 7
     {"name":"obj6","hash":"b917968b8ad501a40af22c0bf4d83ee0","bytes":377,"content_type":"application/octet-stream", "last_modified":"2012-11-22T15:19:26.524310"},
     {"name":"obj7","hash":"b917968b8ad501a40af22c0bf4d83ee0","bytes":377,"content_type":"application/octet-stream", "last_modified":"2012-11-22T15:19:33.865370"}
 ]
-</codeph>
 </codeblock>
 <p>To list only the objects in the first "level" of our pseudo hierarchy, we can use the <codeph>delimiter=/</codeph> query parameter as follows:</p>
 <codeblock>
-  <codeph>GET https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container?format=json&amp;delimiter=/
+GET https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container?format=json&amp;delimiter=/
 X-Container-Object-Count: 7
 
 [
@@ -944,29 +921,26 @@ X-Container-Object-Count: 7
     {"name":"obj6","hash":"b917968b8ad501a40af22c0bf4d83ee0","bytes":377,"content_type":"application/octet-stream", "last_modified":"2012-11-22T15:19:26.524310"},
     {"name":"obj7","hash":"b917968b8ad501a40af22c0bf4d83ee0","bytes":377,"content_type":"application/octet-stream", "last_modified":"2012-11-22T15:19:33.865370"}
 ]
-</codeph>
 </codeblock>
 <p>The effect of delimiter is to examine all object names up to the <codeph>/</codeph> character and to collapse all common or duplicate elements. Where common/duplicate name parts are found, it uses the "subdir" JSON element. The same happens for XML. Notice that X-Container-Object-Count is still 7, even though there are only 5 names shown. The "subdir" elements are <i>not</i> objects -- an attempt to <codeph>GET /v1/12345678912345/test_container/dir1/</codeph> would fail with <codeph>403 Not Found</codeph>.</p>
 <p>To descend into one of the "directories", we use the <codeph>prefix</codeph> query parameter as follows. Note the slash ("/") at the end of the prefix:</p>
 <codeblock>
-  <codeph>GET https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container?format=json&amp;delimiter=/&amp;prefix=dir2/
+GET https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container?format=json&amp;delimiter=/&amp;prefix=dir2/
 X-Container-Object-Count: 7
 
 [
     {"subdir":"dir2/dir3/"}
 ]
-</codeph>
 </codeblock>
 <p>Descending further, we add <codeph>dir3/</codeph> to the <codeph>prefix</codeph> as follows:</p>
 <codeblock>
-  <codeph>GET https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container?format=json&amp;delimiter=/&amp;prefix=dir2/dir3
+GET https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container?format=json&amp;delimiter=/&amp;prefix=dir2/dir3
 X-Container-Object-Count: 7
 
 [
     {"name":"dir2/dir3/obj2","hash":"b917968b8ad501a40af22c0bf4d83ee0","bytes":377,"content_type":"application/octet-stream", "last_modified":"2012-11-22T15:40:48.596260"},
     {"name":"dir2/dir3/obj3","hash":"b917968b8ad501a40af22c0bf4d83ee0","bytes":377,"content_type":"application/octet-stream", "last_modified":"2012-11-22T15:41:04.902890"}
 ]
-</codeph>
 </codeblock>
 </section>
 <section id="292-using-path-query-parameter"> <title>2.9.2 Using path query parameter</title>
@@ -976,7 +950,7 @@ X-Container-Object-Count: 7
 </lq>
 <p>If we do this for each of the "directories" in the <xref type="section" href="#topic150798/prefix_delimiter">prefix/delimiter</xref> example, and then list the contents of the container, we get:</p>
 <codeblock>
-  <codeph>GET https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container?format=json
+GET https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container?format=json
 X-Container-Object-Count: 11
 
 [
@@ -992,12 +966,11 @@ X-Container-Object-Count: 11
     {"name":"obj6","hash":"b917968b8ad501a40af22c0bf4d83ee0","bytes":377,"content_type":"application/octet-stream", "last_modified":"2012-11-22T15:19:26.524310"},
     {"name":"obj7","hash":"b917968b8ad501a40af22c0bf4d83ee0","bytes":377,"content_type":"application/octet-stream", "last_modified":"2012-11-22T15:19:33.865370"}
 ]
-</codeph>
 </codeblock>
 <p>Now <codeph>dir1/</codeph>, <codeph>dir2/</codeph>, <codeph>dir2/dir3/</codeph>, and <codeph>dir4/</codeph> are real objects. The <xref type="section" href="#topic150798/x_container_object_count_response">X-Container-Object-Count</xref> response header now shows 10 objects in the system.</p>
 <p>Here we query to top level of the container (where path is empty sting):</p>
 <codeblock>
-  <codeph>GET https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container?format=json&amp;path=
+GET https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container?format=json&amp;path=
 X-Container-Object-Count: 11
 
 [
@@ -1007,18 +980,16 @@ X-Container-Object-Count: 11
     {"name":"obj6","hash":"b917968b8ad501a40af22c0bf4d83ee0","bytes":377,"content_type":"application/octet-stream", "last_modified":"2012-11-22T15:19:26.524310"},
     {"name":"obj7","hash":"b917968b8ad501a40af22c0bf4d83ee0","bytes":377,"content_type":"application/octet-stream", "last_modified":"2012-11-22T15:19:33.865370"}
 ]
-</codeph>
 </codeblock>
 <p>Here we descend into <codeph>dir4/</codeph>:</p>
 <codeblock>
-  <codeph>GET https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container?format=json&amp;path=dir4
+GET https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container?format=json&amp;path=dir4
 X-Container-Object-Count: 10
 
 [
     {"name":"dir4/obj4","hash":"b917968b8ad501a40af22c0bf4d83ee0","bytes":377,"content_type":"application/octet-stream", "last_modified":"2012-11-22T15:41:20.756000"},
     {"name":"dir4/obj5","hash":"b917968b8ad501a40af22c0bf4d83ee0","bytes":377,"content_type":"application/octet-stream", "last_modified":"2012-11-22T15:42:49.804350"}
 ]
-</codeph>
 </codeblock>
 <p>Notice that path was set to <codeph>dir4</codeph>. It could also have been set to <codeph>dir4/</codeph> -- the effect is the same.</p>
 </section>
@@ -1037,10 +1008,7 @@ headers as documented in [RFC 2616](http://www.ietf.org/rfc/rfc2616.txt](http://
 HTTP <i>Range</i> header. Object Storage supports "bytes" as the range unit.</p>
 <p>A range is specified in two basic ways:</p>
 <ul>
-<li>
-<p>
-<codeph>first-byte-position - last-byte-position</codeph> -- this retrieves the content starting at <codeph>first-byte-position</codeph> and ending at <codeph>last-byte-position</codeph>. The byte offsets start at zero (so 0 starts at first byte) and bytes positions are inclusive (so 0-0 is the first byte of content).</p>
-</li>
+<li><codeph>first-byte-position - last-byte-position</codeph> -- this retrieves the content starting at <codeph>first-byte-position</codeph> and ending at <codeph>last-byte-position</codeph>. The byte offsets start at zero (so 0 starts at first byte) and bytes positions are inclusive (so 0-0 is the first byte of content).</li>
 <li>
 <p>
 <codeph>- length</codeph> -- this retrieves the final <codeph>length</codeph> bytes of the content.</p>
@@ -1072,12 +1040,11 @@ If so, it defaults to be the last byte of the file.</p>
 <p>When you specify a range, the GET request returns a 206 Partial Content
 code (instead of the usual 200 OK). In addition, a Content-Range response header is added. For example, in response to <codeph>Range: bytes=-3</codeph>, the response header is as follows:</p>
 <codeblock>
-  <codeph>Content-Range: bytes 7-9/10
-</codeph>
+Content-Range: bytes 7-9/10
 </codeblock>
 <p>You may also specify several ranges in the <i>Range</i> header.  In this example, the first two and final three bytes of the content are being requested:</p>
 <codeblock>
-  <codeph>$ curl -i -H 'x-auth-token: HPAuth_1234' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/www/0123 -X GET -H 'range: bytes=0-1,-3'
+$ curl -i -H 'x-auth-token: HPAuth_1234' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/www/0123 -X GET -H 'range: bytes=0-1,-3'
 
 HTTP/1.1 206 Partial Content
 Content-Length: 263
@@ -1096,7 +1063,6 @@ Content-Range: bytes 7-9/10
 
 789
 --d103b85868e4567035e3148996623809--
-</codeph>
 </codeblock>
 <p>As you can see the data is transmitted as a multipart message using the
 <i>multipart/byteranges</i> content type.</p>
@@ -1201,7 +1167,7 @@ Content-Range: bytes 7-9/10
 </ul>
 <p>This is an example of a static large object manifest containing three segment objects. In this example, we illustrate that in contrast to dynamic large objects, you can use a number of containers and the object names do not have to conform to a specific pattern.</p>
 <codeblock>
-  <codeph>[
+[
   {
     "path": "/mycontainer/objseg1",
     "etag": "0228c7926b8b642dfb29554cd1f00963",
@@ -1218,7 +1184,6 @@ Content-Range: bytes 7-9/10
     "size_bytes": 256
   }
 ]
-</codeph>
 </codeblock>
 <p>The <xref type="section" href="#topic150798/content_length_request">Content-Length</xref> request header must contain the length of the json content -- not the length of the segment objects. However, after the PUT operation completes, the Content-Length metadata is set to the total length of all the object segments. A similar situation applies to the <xref type="section" href="#topic150798/etag_request">ETag</xref>. If used in the PUT operation, it must contain the MD5 checksum of the json content. The ETag metadata value is then set to be the MD5 checksum of the concatenated ETag values of the object segments. You may also set the <xref type="section" href="#topic150798/content_type_request">Content-Type</xref> request header and custom object metadata.</p>
 <p>When the PUT operation sees the ?multipart-manifest=put query string, it reads the request body and verifies that each segment object exists and that the sizes and ETags match. If there is a mismatch, the PUToperation will fail.</p>
@@ -1237,31 +1202,28 @@ Content-Range: bytes 7-9/10
 <p>Assuming we've already divided our image into three files, let's upload them.</p>
 <p>Uploading first segment:</p>
 <codeblock>
-  <codeph>$ curl -X PUT -i -H "X-Auth-Token: {Auth_Token}" -T ./piece1 https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/segments/terrier-jpg-one
+$ curl -X PUT -i -H "X-Auth-Token: {Auth_Token}" -T ./piece1 https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/segments/terrier-jpg-one
 HTTP/1.1 201 Created
 Content-Length: 4000000
 Etag: f7365c1419b4f349592c00bd0cfb9b9a
-</codeph>
 </codeblock>
 <p>Uploading second segment:</p>
 <codeblock>
-  <codeph>$ curl -X PUT -i -H "X-Auth-Token: {Auth_Token}" -T ./piece2 https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/segments/terrier-jpg-two
+$ curl -X PUT -i -H "X-Auth-Token: {Auth_Token}" -T ./piece2 https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/segments/terrier-jpg-two
 HTTP/1.1 201 Created
 Content-Length: 2000000
 Etag: ad81e97b10e870613aecb5ced52adbaa
-</codeph>
 </codeblock>
 <p>Uploading final segment:</p>
 <codeblock>
-  <codeph>$ curl -X PUT -i -H "X-Auth-Token: {Auth_Token}" -T ./piece3 https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/segments/terrier-jpg-three
+$ curl -X PUT -i -H "X-Auth-Token: {Auth_Token}" -T ./piece3 https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/segments/terrier-jpg-three
 HTTP/1.1 201 Created
 Content-Length: 1000
 Etag: 00b046c9d74c3e8f93b320c5e5fdc2c3
-</codeph>
 </codeblock>
 <p>At this stage we are ready to create the manifest listing. Notice that the size and ETag are copied from uploads above. Lets use an editor to create a file called manifest.json with the following content:</p>
 <codeblock>
-  <codeph>[
+[
     {
         "path": "segments/terrier-jpg-one",
         "etag": "f7365c1419b4f349592c00bd0cfb9b9a",
@@ -1278,21 +1240,18 @@ Etag: 00b046c9d74c3e8f93b320c5e5fdc2c3
     {
     }
 ]
-</codeph>
 </codeblock>
 <p>The final operation is to upload this content into a manifest object. To indicate that this is a manifest object, you need to specify the ?multipart-manifest=put query string.</p>
 <codeblock>
-  <codeph>$ curl -X PUT -i -H "X-Auth-Token: {Auth_Token}" -T ./manifest.json https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345//images/terrier-jpg?multipart-manifest=put -H 'x-object-meta-md5-content: afa2d672e75ef34aa9cf17e615f61a44'
-</codeph>
+$ curl -X PUT -i -H "X-Auth-Token: {Auth_Token}" -T ./manifest.json https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345//images/terrier-jpg?multipart-manifest=put -H 'x-object-meta-md5-content: afa2d672e75ef34aa9cf17e615f61a44'
 </codeblock>
 <p>We can now examine our static large object. Notice that the size is the total size of all the segments.</p>
 <codeblock>
-  <codeph>$ curl -X HEAD -i -H "X-Auth-Token: {Auth_Token}" https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/images/terrier-jpg
+$ curl -X HEAD -i -H "X-Auth-Token: {Auth_Token}" https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/images/terrier-jpg
 HTTP/1.1 200 OK
 Content-Length: 6001000
 Etag: "0c922c37f915efb1c9b97e6328b3e660"
 X-Object-Meta-Md5-Content: afa2d672e75ef34aa9cf17e615f61a44
-</codeph>
 </codeblock>
 </section>
 <section id="dlo"> <title>2.12.2 Dynamic Large Object Creation</title>
@@ -1313,7 +1272,7 @@ upload the segments as individual objects and create a manifest object telling O
 </lq>
 <p>The following shows an example of uploading a segmented object called maps/world.jpg. The object is in the <codeph>images</codeph> container. For illustrative purposes, the object segments are stored in the <codeph>image-segments</codeph> container. The final operation is to download the segmented object. Note the <xref type="section" href="#topic150798/content_length_response">Content-Length</xref> and <xref type="section" href="#topic150798/etag_response">ETag</xref> response headers.</p>
 <codeblock>
-  <codeph>$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/image-segments/world-seg-1 -X PUT -T world-seg.1
+$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/image-segments/world-seg-1 -X PUT -T world-seg.1
 HTTP/1.1 201 Created
 Content-Length: 100
 Content-Type: application/octet-stream
@@ -1336,7 +1295,6 @@ Content-Length: 300
 ETag: "4e12eb0effb78728966205d154967a67"
 
 [ .. ]
-</codeph>
 </codeblock>
 <lq>
   <p>Note: the MD5 checksum in the <xref type="section" href="#topic150798/etag_response">ETag</xref> header is the MD5 checksum of the concatenated string of MD5 checksums/ETags for each of the segments in the manifest - not the MD5 checksum of the content that was downloaded. Also the value is enclosed in double-quote characters.</p>
@@ -1351,7 +1309,7 @@ objects, use <xref type="section" href="#topic150798/large_objects">object segme
 <p>In the following example, the object is uploaded in two chunks. As you can see
 the size is given before each chunk of data. The size is expressed as the number of octets of the data expressed in hexadecimal. The final chunk has a size of 0, indicating the end of content.</p>
 <codeblock>
-  <codeph>  PUT /v1/12345678912345/{container}/{object} HTTP/1.1
+PUT /v1/12345678912345/{container}/{object} HTTP/1.1
   Transfer-Encoding: chunked                     
 
   19
@@ -1359,7 +1317,6 @@ the size is given before each chunk of data. The size is expressed as the number
   D
    into chunks.
   0
-</codeph>
 </codeblock>
 <lq>
   <p>Note: the chunk size only indicates the size of the chunk data. This does not include the trailing CRLF ("\r\n")</p>
@@ -1372,20 +1329,18 @@ example, a video.</p>
 <p>In the example, the content-encoding header is assigned with an
 attachment type that indicates how the file should be downloaded:</p>
 <codeblock>
-  <codeph>$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container_1/vid -X PUT -T vid -H 'Content-Type: video/mp4' -H 'Content-Encoding: gzip'
+$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container_1/vid -X PUT -T vid -H 'Content-Type: video/mp4' -H 'Content-Encoding: gzip'
 HTTP/1.1 201 Created
 ETag: 4281c348eaf83e70ddce0e07221c3d28
-</codeph>
 </codeblock>
 </section>
 <section id="content_disposition_header"> <title>2.15 Enabling Browser Bypass with the Content-Disposition Header</title>
 <p>When an object is assigned the Content-Disposition header you can override a browser's default behavior for a file so that the downloader saves the file rather than displaying it using default browser settings.</p>
 <p>In the example, the content-encoding header is assigned with an attachment type that indicates how the file should be downloaded.</p>
 <codeblock>
-  <codeph>$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container_1/image.tif -X PUT -T image1.tif -H 'Content-Type: image/tiff' -H 'Content-Disposition: attachment; filename=image.tif'
+$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/test_container_1/image.tif -X PUT -T image1.tif -H 'Content-Type: image/tiff' -H 'Content-Disposition: attachment; filename=image.tif'
 HTTP/1.1 201 Created
 ETag: 4281c348eaf83e70ddce0e07221c3d28
-</codeph>
 </codeblock>
 </section>
 <section id="tarball_upload"> <title>2.16 Archive Auto Extraction</title>
@@ -1508,34 +1463,31 @@ this time.</p>
 <p>The following example shows a text/plain response body where there are
 no failures:</p>
 <codeblock>
-  <codeph> Number Files Created: 10
+Number Files Created: 10
  Errors:
-</codeph>
 </codeblock>
 <p>The following example shows a text/plain response where there are some failures:</p>
 <codeblock>
-  <codeph> Number Files Created: 8 
+Number Files Created: 8 
  Errors:
  /v1/12345678912345/mycontainer/home/xx%3Cyy, 400 Bad Request
  /v1/12345678912345/mycontainer/../image.gif, 400 Bad Request
-</codeph>
 </codeblock>
 <p>This is the same failure response in application/json format. This example output has been reformatted with whitespace to make it clearer -- the actual response has no such whitespace.</p>
 <codeblock>
-  <codeph> {
+{
      "Number Files Created": 1,
      "Errors": [
          ["/v1/12345678912345/mycontainer/home/xx%3Cyy", "400 Bad Request"],
          ["/v1/12345678912345/mycontainer/../image.gif", "400 Bad Request"]
      ]
 }
-</codeph>
 </codeblock>
 </section>
 <section id="2165-archive-auto-extract-example"> <title>2.16.5 Archive Auto extract Example</title>
 <p>The following shows an archive being uploaded. In this example, a container called "www" is created containing two objects -- "index.html" and "images/flower.gif". The <codeph>-t</codeph> option is used to demonstrate the archive member names.</p>
 <codeblock>
-  <codeph>$ tar -tf tarball.tar
+$ tar -tf tarball.tar
 ./www
 ./www/index.html
 ./www/images
@@ -1547,20 +1499,18 @@ Content-Length: 41
 Content-Type: application/json
 
 {"Number Files Created": 2, "Errors": []}
-</codeph>
 </codeblock>
 <p>We can demonstrate that the www container now contains two objects as follows.
 Note since the archive member <codeph>./www/images</codeph> is a directory (not a regular file)
 it is not uploaded; there is no object called <codeph>images</codeph>.</p>
 <codeblock>
-  <codeph>$ curl https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/www -H 'x-auth-token: {Auth_Token}' -X GET
+$ curl https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/www -H 'x-auth-token: {Auth_Token}' -X GET
 HTTP/1.1 200 OK
 Content-Length: 29
 X-Container-Object-Count: 2
 
 images/flower.gif
 index.html
-</codeph>
 </codeblock>
 </section>
 <section id="bulk_delete"> <title>2.17 Bulk Delete</title>
@@ -1575,12 +1525,10 @@ index.html
 </li>
 <li>
 <p>To indicate an object, specify the container and object name as follows:</p>
-
 <p>{container-name}/{object-name}</p>
 </li>
 <li>
 <p>To indicate a container, specify the container name as follows:</p>
-
 <p>{container-name}</p>
 </li>
 <li>
@@ -1630,38 +1578,35 @@ index.html
 </ul>
 <p>The following example shows a text/plain response body where there are no failures:</p>
 <codeblock>
-  <codeph>Number Deleted: 2
+Number Deleted: 2
 Number Not Found: 0
 Errors:
-</codeph>
 </codeblock>
 <p>The following example shows an XML response where there is one error. In this example, the mycontainer is not empty:</p>
 <codeblock>
-  <codeph>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;delete&gt;
 &lt;number_deleted&gt;2&lt;/number_deleted&gt;
 &lt;number_not_found&gt;4&lt;/number_not_found&gt;
 &lt;errors&gt;
 &lt;object&gt;&lt;name&gt;/v1/12345678912345/mycontainer&lt;/name&gt;&lt;status&gt;409 Conflict&lt;/status&gt;&lt;/object&gt;&lt;/errors&gt;
 &lt;/delete&gt;
-</codeph>
 </codeblock>
 <p>The following shows a JSON response. This text has been reformatted for clarity:</p>
 <codeblock>
-  <codeph>{
+{
     "Number Not Found": 4,
     "Number Deleted": 2,
     "Errors": [
         ["/v1/12345678912345/mycontaine", "409 Conflict"]
     ]
 }
-</codeph>
 </codeblock>
 </section>
 <section id="2173-bulk-delete-example"> <title>2.17.3 Bulk Delete Example</title>
 <p>The following example shows two objects and a container being deleted using the bulk delete operation. The items to be deleted are listed in the body.txt file. A JSON response body is requested using the Accept header.</p>
 <codeblock>
-  <codeph>$ echo body.txt
+$ echo body.txt
 mycontainer/object1
 mycontainer/subdir1/object2
 www
@@ -1672,7 +1617,6 @@ Content-Length: 58
 Content-Type: application/json
 
 {"Number Not Found": 0, "Number Deleted": 3, "Errors": []}
-</codeph>
 </codeblock>
 </section>
 <section id="container_synchronization"> <title>2.18 Container Synchronization</title>
@@ -1709,7 +1653,6 @@ Content-Type: application/json
 <ol>
 <li>
 <p>Set the following metadata on the source container:</p>
-
 <ul>
 <li>X-Container-Sync-To. This is the full path name of the destination, e.g.  https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345987654321/dest</li>
 <li>X-Container-Sync-Key. This is the value of the shared secret value, e.g. "our-secret"</li>
@@ -1717,7 +1660,6 @@ Content-Type: application/json
 </li>
 <li>
 <p>Set the following metadata on the destination container:</p>
-
 <ul>
 <li>X-Container-Sync-Key. This is the value of the shared secret value, e.g. "our-secret"</li>
 </ul>
@@ -1728,21 +1670,18 @@ Content-Type: application/json
 person must have the credentials for both projects. In a simpler scenario, where the containers are both in the same project, the authorization token would be the same.</p>
 <p>Here, the source is set up:</p>
 <codeblock>
-  <codeph>$ curl https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/src -H 'x-auth-token: {Auth_Token}' -X PUT -H 'x-container-sync-to: https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345987654321/dest' -H 'x-container-sync-key: our-secret'
-</codeph>
+$ curl https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/src -H 'x-auth-token: {Auth_Token}' -X PUT -H 'x-container-sync-to: https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345987654321/dest' -H 'x-container-sync-key: our-secret'
 </codeblock>
 <p>Here, the destination is setup with a secret value:</p>
 <codeblock>
-  <codeph>$ curl https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345987654321/dest -H 'x-auth-token: {Auth_Token}' -X PUT -H 'x-container-sync-key: our-secret'
-</codeph>
+$ curl https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345987654321/dest -H 'x-auth-token: {Auth_Token}' -X PUT -H 'x-container-sync-key: our-secret'
 </codeblock>
 <p>The following example shows setting up two-way synchronization where the account and container names are the same on both systems.
 Notice that the commands are nearly identical except for the "region-a" and "region-b" strings in the paths.</p>
 <codeblock>
-  <codeph>$ curl https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/photos -H 'x-auth-token: {Auth_Token}' -X PUT -H 'x-container-sync-to: https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345678912345/photos' -H 'x-container-sync-key: my-secret'
+$ curl https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/photos -H 'x-auth-token: {Auth_Token}' -X PUT -H 'x-container-sync-to: https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345678912345/photos' -H 'x-container-sync-key: my-secret'
 
 $ curl https://region-b.geo-1.objects.hpcloudsvc.com/v1/12345678912345/photos -H 'x-auth-token: {Auth_Token}' -X PUT -H 'x-container-sync-to: https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/photos' -H 'x-container-sync-key: my-secret'
-</codeph>
 </codeblock>
 </section>
 <section id="object_versioning"> <title>2.19 Object Versioning</title>
@@ -1755,7 +1694,6 @@ metadata on the container.</p>
 is a container that will hold old versions of the objects. It is recommended that you use a different versions-location container for each version-enabled container.</p>
 <lq>
   <p>Note: the name of the container must be UTF-8 encoded and then URL-encoded in the X-Versions-Location request header.</p>
-  
   <p>Note: A <xref type="section" href="#topic150798/large_objects">Large Object</xref> manifest object cannot be versioned. However, a manifest object may point to versioned segment objects.</p>
 </lq>
 <p>Once you enable versions on a container, the system behaves as follows:</p>
@@ -1768,7 +1706,6 @@ is a container that will hold old versions of the objects. It is recommended tha
 </li>
 <li>
 <p>If you now PUT an object of the same name into the container, two actions are performed:</p>
-
 <ul>
 <li>
 <p>A copy of the original object is made and placed in the versions-location container. This copy contains the contents and metadata of the original object.</p>
@@ -1805,12 +1742,11 @@ container to be deleted.</p>
 The value is the name of a container. The container must already exist. If the versions-location container does not exist, the PUT/POST operation will not fail. However, when you first attempt to replace an object in the version-enabled container, the PUT operation will fail with a 412 Precondition Failed error.</p>
 <p>This example shows the <i>mywork</i> container being enabled using <i>priorwork</i> container as the versions-location container; it first creates the versions-location container:</p>
 <codeblock>
-  <codeph>$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/priorwork -X PUT
+$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/priorwork -X PUT
 HTTP/1.1 201 Created
 
 $ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/mywork -X POST -H 'x-versions-location: priorwork'
 HTTP/1.1 204 No Content
-</codeph>
 </codeblock>
 <p>To disable versioning, perform a POST operation to the version-enabled
 container with a blank or empty value for the X-Versions-Location request
@@ -1819,8 +1755,7 @@ header.</p>
 a recent version of curl that sets headers to an empty string using the ";"
 character.</p>
 <codeblock>
-  <codeph>$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/mywork -X POST -H 'x-versions-location;'
-</codeph>
+$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/mywork -X POST -H 'x-versions-location;'
 </codeblock>
 <p>When you disable versioning nothing happens to the objects in the version-enabled or versions-location container. However, the next time you perform a PUT operation to an object that already exists, it is simply replaced and no copy is made to the versions-location container.</p>
 <p>You may reenable versioning on a container. If you use the original versions-location container, a DELETE operation will restore the prior version.</p>
@@ -1864,9 +1799,8 @@ be deleted. For example, to request that the object be deleted on 1st March 2013
 </ul>
 <p>The following example shows an example of using the X-Delete-At request header:</p>
 <codeblock>
-  <codeph>$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/mycontainer/myobj_1 -X POST -H 'x-delete-at: 1362144600'
+$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/mycontainer/myobj_1 -X POST -H 'x-delete-at: 1362144600'
 HTTP/1.1 202 Accepted
-</codeph>
 </codeblock>
 <p>The following example shows an example of using the X-Delete-After request
 header. In this example, we demonstrate that an attempt to retrieve the
@@ -1874,7 +1808,7 @@ object after the delete-at time returns 404 Not Found. We also show that
 the object continues to appear in the container for some time
 after the delete-at time.</p>
 <codeblock>
-  <codeph>$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/mycontainer/myobj_2 -X POST -H 'x-delete-after: 30'
+$ curl -i -H 'x-auth-token: {Auth_Token}' https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/mycontainer/myobj_2 -X POST -H 'x-delete-after: 30'
 HTTP/1.1 202 Accepted
 
 $ sleep 31 
@@ -1898,7 +1832,6 @@ X-Container-Object-Count: 1
 X-Container-Bytes-Used: 1000
 
 myobj_1
-</codeph>
 </codeblock>
 </section>
 <section id="staticweb"> <title>2.21 StaticWeb</title>
@@ -1965,7 +1898,7 @@ default page or a HTML directory listing.</p>
 </row>
 <row>
 <entry align="left">X-Container-Meta-Web-Directory-Type</entry>
-  <entry align="left">When X-Container-Meta-Web-Listings is set to true and you access a pseudo-directory, the system will respond with a listing. This always works for path-style pseudo-directories. However, if you use directory-objects, the listing only works if the Content-Type of the object is "application/directory". If you use a different content type (for example, "folder") for pseudo-directories, you must set X-Container-Meta-Web-Directory-Type. StaticWeb will then recognize this as a pseudo-directory.</entry>
+  <entry align="left">When X-Container-Meta-Web-Listings is set to true and you access a pseudo-directory, the system will respond with a listing. This always works for path-style pseudo-directories. However, if you use directory-objects, the listing only works if the Content-Type of the object is "application/directory". If you use a different content type (for example, "folder") for pseudo-directories, you must set X-Container-Meta-Web-Directory-Type. StaticWeb will then recognize this as a pseudo-directory.  Also applies to X-Container-Meta-Web-Index.</entry>
 </row>
 </tbody>
 </tgroup>
@@ -2012,7 +1945,7 @@ See <xref type="section" href="#topic150798/temp_url">Temporary URLs</xref> for 
 <section id="32-regions"> <title>3.2 Regions</title>
 <p>Object Storage has the following service instances in these regions:</p>
 <ul>
-<li>region-a-geo-1 - US West   </li>
+<li>region-a-geo-1 - US West</li>
 <li>region-b.geo-1 - US East</li>
 </ul>
 <p>Each region is a distinct storage entity. Each contains its own set of containers and objects -- there is no shared data between the regions.</p>
@@ -2024,7 +1957,7 @@ See <xref type="section" href="#topic150798/temp_url">Temporary URLs</xref> for 
 <xref href="https://docs.hpcloud.com/identity" scope="external" format="html" >https://docs.hpcloud.com/identity</xref>.</p>
 <p>The service is exposed in the service catalog, as shown in the following fragment. Note the user has the Admin role and is activated for two regions of the Object Storage service.</p>
 <codeblock>
-  <codeph>{"access": {
+{"access": {
     "token": {
         "expires": "2012-11-21T23:14:30.559Z",
         "id": "HPAuth_1234",
@@ -2080,7 +2013,6 @@ See <xref type="section" href="#topic150798/temp_url">Temporary URLs</xref> for 
     .
     .
     .
-</codeph>
 </codeblock>
 </section>
 <section id="4-rest-api-specifications"> <title>4. REST API Specifications</title>
@@ -2311,10 +2243,12 @@ See <xref type="section" href="#topic150798/temp_url">Temporary URLs</xref> for 
 <p>Many operations accept request headers. This section provides an overview of each request header. Consult the specific operation to determine if the header applies to the operation and any other notes that are of interest.</p>
 </section>
 <section id="accept_request"> <title>4.2.1 Accept</title>
-<p>Where applicable, this determines how the response body is formatted. For example, you can use this to list the objects in a container as:
-* text (text/plain)
-* JSON (application/json)
-* XML (text/xml, application/xml)</p>
+<p>Where applicable, this determines how the response body is formatted. For example, you can use this to list the objects in a container as:</p>
+<ul>
+<li>text (text/plain)</li>
+<li>JSON (application/json)</li>
+<li>XML (text/xml, application/xml)</li>
+</ul>
 </section>
 <section id="content_length_request"> <title>4.2.2 Content-Length</title>
 <p>Where applicable, this is the length in bytes of the body of the request.
@@ -2327,11 +2261,10 @@ For objects, you may use the <xref type="section" href="#topic150798/transfer_en
 <section id="date_request"> <title>4.2.4 Date</title>
 <p>When specified, this is the date and time at which the operation request is made. The value should be expressed as shown in one of the following examples:</p>
 <codeblock>
-  <codeph>  Sun, 06 Nov 1994 08:49:37 +0000 ; RFC 2822
-  Sun, 06 Nov 1994 08:49:37 GMT   ; RFC 822, updated by RFC 1123
-  Sunday, 06-Nov-94 08:49:37 GMT  ; RFC 850, obsoleted by RFC 1036
-  Sun Nov  6 08:49:37 1994        ; ANSI C's asctime() format
-</codeph>
+Sun, 06 Nov 1994 08:49:37 +0000 ; RFC 2822
+Sun, 06 Nov 1994 08:49:37 GMT   ; RFC 822, updated by RFC 1123
+Sunday, 06-Nov-94 08:49:37 GMT  ; RFC 850, obsoleted by RFC 1036
+Sun Nov  6 08:49:37 1994        ; ANSI C's asctime() format
 </codeblock>
 <p>As you can see, the date and time is expressed in GMT or UTC time. The first example ("Sun, 06 Nov 1994 08:49:37 +0000") is the preferred format. However, Object Storage uses the second example ("Sun, 06 Nov 1994 08:49:37 GMT") when displaying dates.</p>
 </section>
@@ -2367,9 +2300,8 @@ For objects, you may use the <xref type="section" href="#topic150798/transfer_en
 <section id="date_response"> <title>4.3.1 Date</title>
 <p>When supplied, the Date header is the time of the operation expressed in GMT (effectively UTC) as shown in the following example:</p>
 <codeblock>
-  <codeph>  HTTP/1.1 200 OK
-  Date: Sun, 06 Nov 1994 08:49:37 GMT
-</codeph>
+HTTP/1.1 200 OK
+Date: Sun, 06 Nov 1994 08:49:37 GMT
 </codeblock>
 </section>
 <section id="last_modified_response"> <title>4.3.2 Last-Modified</title>
@@ -2522,21 +2454,19 @@ has no containers.</p>
 and size (bytes) of all objects in the listed container.</p>
 <p>Text/Plain</p>
 <codeblock>
-  <codeph> test_container_1  
- test_container_2   
-</codeph>
+test_container_1  
+test_container_2   
 </codeblock>
 <p>JSON</p>
 <codeblock>
-  <codeph> [
+[
      {"name":"test_container_1", "count":2, "bytes":78},
      {"name":"test_container_2", "count":1, "bytes":17}  
- ]   
-</codeph>
+]   
 </codeblock>
 <p>XML</p>
 <codeblock>
-  <codeph> &lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
 
  &lt;account name="12345678912345"&gt;  
    &lt;container&gt;
@@ -2550,7 +2480,6 @@ and size (bytes) of all objects in the listed container.</p>
      &lt;bytes&gt;17&lt;/bytes&gt;
    &lt;/container&gt;
  &lt;/account&gt;
-</codeph>
 </codeblock>
 <p>
   <b>Error Response</b>
@@ -2564,8 +2493,7 @@ and size (bytes) of all objects in the listed container.</p>
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}
-</codeph>
+curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}
 </codeblock>
 </section>
 <section id="account_post"> <title>4.4.1.2 Update Account Metadata</title>
@@ -2624,8 +2552,7 @@ and size (bytes) of all objects in the listed container.</p>
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -H 'X-Account-Meta-{name}: {value}' -H 'X-Remove-Account-Meta-{name}: {value}' {BaseURI}/v1/{project_id}
-</codeph>
+curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -H 'X-Account-Meta-{name}: {value}' -H 'X-Remove-Account-Meta-{name}: {value}' {BaseURI}/v1/{project_id}
 </codeblock>
 </section>
 <section id="account_head"> <title>4.4.1.3 Retrieve Account Metadata</title>
@@ -2682,8 +2609,7 @@ and size (bytes) of all objects in the listed container.</p>
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X HEAD -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}
-</codeph>
+curl -i -k -X HEAD -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}
 </codeblock>
 </section>
 <section id="442-container"> <title>4.4.2 Container</title>
@@ -2770,8 +2696,7 @@ None.</p>
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}
-</codeph>
+curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}
 </codeblock>
 </section>
 <section id="container_post"> <title>4.4.2.2 Update Container Metadata</title>
@@ -2839,8 +2764,7 @@ None.</p>
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -H 'X-Container-Meta-{name}: {value}' {BaseURI}/v1/{project_id}/{container}
-</codeph>
+curl -i -k -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -H 'X-Container-Meta-{name}: {value}' {BaseURI}/v1/{project_id}/{container}
 </codeblock>
 </section>
 <section id="container_get"> <title>4.4.2.3 List Objects in a Container</title>
@@ -2917,20 +2841,21 @@ See <xref type="section" href="#topic150798/pseudo_hierarchies">Pseudo-Hierarchi
   <b>Response Data</b>
 </p>
 <p>If there are objects, their names are returned in the response body in the requested format. The JSON and XML formats
-list additional data about each object as follows:
-* hash - The MD5 checksum for the contents on the object
-* bytes -- The size in bytes of the object
-* content_type - The MIME type of the object
-* last_modified - The date and time the object was created or the time at which the object metadata was last updated.</p>
+list additional data about each object as follows:</p>
+  <ul>
+    <li>hash - The MD5 checksum for the contents on the object</li>
+    <li>bytes -- The size in bytes of the object</li>
+    <li>content_type - The MIME type of the object</li>
+    <li>last_modified - The date and time the object was created or the time at which the object metadata was last updated.</li>
+  </ul>
 <p>Text/Plain</p>
 <codeblock>
-  <codeph> test_obj_1
- test_obj_2
-</codeph>
+test_obj_1
+test_obj_2
 </codeblock>
 <p>JSON</p>
 <codeblock>
-  <codeph>[
+[
    {
      "name": "test_obj_1",
      "hash": "4281c348eaf83e70ddce0e07221c3d28",
@@ -2946,11 +2871,10 @@ list additional data about each object as follows:
      "last_modified": "2009-02-03T05:26:32.612278"
    }
  ]
-</codeph>
 </codeblock>
 <p>XML</p>
 <codeblock>
-  <codeph>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;container name="test_container_1"&gt;
     &lt;object&gt;
         &lt;name&gt;test_object_1&lt;/name&gt;
@@ -2967,7 +2891,6 @@ list additional data about each object as follows:
         &lt;last_modified&gt;2009-02-03T05:26:32.612278&lt;/last_modified&gt;
     &lt;/object&gt;
 &lt;/container&gt;
-</codeph>
 </codeblock>
 <p>The following response headers are returned:</p>
 <ul>
@@ -3008,8 +2931,7 @@ list additional data about each object as follows:
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}
-</codeph>
+curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}
 </codeblock>
 </section>
 <section id="container_head"> <title>4.4.2.4 Retrieve the Metadata of a Container</title>
@@ -3080,8 +3002,7 @@ list additional data about each object as follows:
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X HEAD -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}
-</codeph>
+curl -i -k -X HEAD -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}
 </codeblock>
 </section>
 <section id="container_delete"> <title>4.4.2.5 Delete a Container</title>
@@ -3134,8 +3055,7 @@ list additional data about each object as follows:
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X DELETE -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}
-</codeph>
+curl -i -k -X DELETE -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}
 </codeblock>
 </section>
 <section id="443-object"> <title>4.4.3 Object</title>
@@ -3262,8 +3182,7 @@ request. This causes the <i>manifest</i> to be downloaded instead of the concate
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}/{object}
-</codeph>
+curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}/{object}
 </codeblock>
 </section>
 <section id="object_head"> <title>4.4.3.2 Retrieve the Metadata of an Object</title>
@@ -3344,8 +3263,7 @@ is not the length of the response body but is the size in bytes of the object co
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X HEAD -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}/{object}
-</codeph>
+curl -i -k -X HEAD -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}/{object}
 </codeblock>
 </section>
 <section id="object_put"> <title>4.4.3.3 Create/Replace Object</title>
@@ -3466,15 +3384,13 @@ returned.</p>
   <i>Creating a pseudo directory in a container</i>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -H 'Content-Type: application/directory' -H 'Content-Length: 0' {BaseURI}/v1/{project_id}/{container}/{object}
-</codeph>
+curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -H 'Content-Type: application/directory' -H 'Content-Length: 0' {BaseURI}/v1/{project_id}/{container}/{object}
 </codeblock>
 <p>
   <i>Uploading an object to a container</i>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -T {local_file_path} {BaseURI}/v1/{project_id}/{container}/{object}
-</codeph>
+curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -T {local_file_path} {BaseURI}/v1/{project_id}/{container}/{object}
 </codeblock>
 </section>
 <section id="object_copy"> <title>4.4.3.4 Copy Object</title>
@@ -3569,10 +3485,9 @@ request header must be set:</p>
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X COPY -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -H 'Destination: {container}/{object}' {BaseURI}/v1/{project_id}/{container}/{object}
+curl -i -k -X COPY -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -H 'Destination: {container}/{object}' {BaseURI}/v1/{project_id}/{container}/{object}
 
 curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -H 'X-Copy-From: {container}/{object}' -H 'Content-Length: 0' {BaseURI}/v1/{project_id}/{container}/{object}
-</codeph>
 </codeblock>
 </section>
 <section id="object_delete"> <title>4.4.3.5 Delete an object</title>
@@ -3623,8 +3538,7 @@ curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/js
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X DELETE -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}/{object}
-</codeph>
+curl -i -k -X DELETE -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1/{project_id}/{container}/{object}
 </codeblock>
 </section>
 <section id="object_post"> <title>4.4.3.6 Update Object Metadata</title>
@@ -3712,8 +3626,7 @@ behaves as described in <xref type="section" href="#topic150798/formpost">FormPo
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -H 'X-Object-Meta-{name}: {value}' {BaseURI}/v1/{project_id}/{container}/{object}
-</codeph>
+curl -i -k -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -H 'X-Object-Meta-{name}: {value}' {BaseURI}/v1/{project_id}/{container}/{object}
 </codeblock>
 </section>
 <section id="444-bulk-operations"> <title>4.4.4 Bulk Operations</title>
@@ -3805,8 +3718,7 @@ None.</p>
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -T tarball.tar {BaseURI}/v1/{project_id}?extract-archive=tar
-</codeph>
+curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -T tarball.tar {BaseURI}/v1/{project_id}?extract-archive=tar
 </codeblock>
 </section>
 <section id="bulkop_delete"> <title>4.4.4.2 Bulk Delete</title>
@@ -3869,8 +3781,7 @@ information.</p>
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl https://region-a.geo-1.objects.hpcloudsvc.com/v1/{project_id}?bulk-delete -H 'x-auth-token: {auth_token}' -X DELETE -T body.txt -H 'content-type: text/plain' -H 'accept: application/json'
-</codeph>
+curl https://region-a.geo-1.objects.hpcloudsvc.com/v1/{project_id}?bulk-delete -H 'x-auth-token: {auth_token}' -X DELETE -T body.txt -H 'content-type: text/plain' -H 'accept: application/json'
 </codeblock>
 </section>
 </body>
