@@ -268,25 +268,25 @@ provide a name. The name can also be specified on the command line (eg.
 </section>
 <section id="buildpack"> <title>buildpack:</title>
 <p>The Git repository URL for the specific
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks" >buildpack</xref> used to deploy the application.
+<xref href="1.1buildpack.dita" >buildpack</xref> used to deploy the application.
 For example:</p>
 <codeblock>  name: java-app
 mem: 512M
 buildpack: https://github.com/heroku/heroku-buildpack-java.git</codeblock>
 <p>If unset, Application Lifecycle Service will check to see if the application triggers the
-<codeph>detect</codeph> scripts in any of its <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-built-in" >built-in
+<codeph>detect</codeph> scripts in any of its <xref href="1.1buildpack.dita#buildpacks-built-in" >built-in
 buildpacks</xref>.</p>
 </section>
 <section id="framework"> <title>framework:</title>
 <p>Allows the app to specify a framework and runtime to be used. Specifying
 a value for the <codeph>framework</codeph> key triggers the use of
-the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy" >Legacy Buildpack</xref>.</p>
+  the <xref href="1.1buildpack.dita#topic3434/legacy-buildpack" >Legacy Buildpack</xref>.</p>
 <p>The keys in the <codeph>framework</codeph> section are used with
-the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy" >Legacy Buildpack</xref> only.
+  the <xref href="1.1buildpack.dita#topic3434/legacy-buildpack" >Legacy Buildpack</xref> only.
 Applications using language or framework-specific buildpacks do not
 require these values, and should instead specify the
 <xref type="section" href="#topic20922/yml-buildpack">buildpack</xref> or rely on the detection scripts
-of the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-built-in" >built-in buildpacks</xref>.</p>
+  of the <xref href="1.1buildpack.dita#topic3434/built-in-buildpacks" >built-in buildpacks</xref>.</p>
 </section>
 <section id="type"> <title>type:</title>
 <p>The framework to use. Check <codeph>helion frameworks</codeph>
@@ -333,10 +333,10 @@ Application Lifecycle Service. For example:</p>
 <codeblock>  framework:
   start-file: temp.py</codeblock>
 <p>This value will be used by the
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#term-processes-web" >PROCESSES_WEB</xref> and
+  <xref href="../reference/1.1environment.dita#topic7695/processes-web">PROCESSES_WEB</xref> and
 HELION_START_FILE environment variables. Any changes to
 HELION_START_FILE at runtime will not change the value of
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#term-processes-web" >PROCESSES_WEB</xref> as
+  <xref href="../reference/1.1environment.dita#topic7695/processes-web">PROCESSES_WEB</xref> as
 the macro is expanded before the pre-running hooks are run.</p>
 </section>
 <section id="app-dir"> <title>app-dir</title>
@@ -355,9 +355,8 @@ app-dir: target</codeblock>
 <xref type="section" href="#topic20922/yml-framework">framework</xref> section to specify a
 sub-directory of the application \$HOME to be used as the document root.</p>
 <p>To launch multiple applications from multiple sub-directories use a
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#manifest-yml" >
 <i>manifest.yml</i>
-</xref> file.</p>
+ file.</p>
 </section>
 <section id="services"> <title>services:</title>
 <p>A list of services to create and bind to the application. Each sub key
@@ -377,7 +376,7 @@ allowing you to create service names based on the specified application
 name. For example:</p>
 <codeblock>  services:
   ${name}-db: mysql</codeblock>
-  <p>The application name can be set as an option to the <xref type="section" href="../../user/reference/1.2client-ref-management.dita#topic50918/command-push" >helion push</xref> command, overriding
+  <p>The application name can be set as an option to the <xref type="section" href="../reference/1.1client-ref-management.dita#topic50918/command-push" >helion push</xref> command, overriding
 the <b>name</b> value defined in <i>manifest.yml</i>. Use this technique when
 pushing multiple versions of the same application (using different
 names) if you want them to use separate databases. For example:</p>
@@ -512,7 +511,7 @@ url:
 "appname.paasname.com" URL to the application. If you would like this
 URL assigned as well, add <codeph>${name}.${target-base}</codeph>
 to the list of URLs.</p>
-  <p>See <xref type="section" href="1.2index.dita#topic18647/mapping-app-urls"/> for more information.</p>
+  <p>See <xref type="section" href="1.1index.dita#topic18647/mapping-app-urls"/> for more information.</p>
 </section>
 <section id="env"> <title>env:</title>
 <p>A map of environment variables to initialize for the application. Each
@@ -525,8 +524,8 @@ such as API keys and passwords.</p>
 </section>
 <section id="env-attributes"> <title>env Attributes</title>
 <p>Each environment variable can have attributes which modify the
-  interactive behavior of the <xref href="../../user/reference/1.2client-ref.dita" >ALS client</xref> when using the
-  <xref type="section" href="../../user/reference/1.2client-ref-management.dita#topic50918/command-push" >push</xref> command. These
+  interactive behavior of the <xref href="../reference/1.1client-ref.dita" >ALS client</xref> when using the
+  <xref type="section" href="../reference/1.1client-ref-management.dita#topic50918/command-push" >push</xref> command. These
 attributes are set with the following keys:</p>
 <ul>
 <li>
@@ -566,14 +565,14 @@ is set but no value is given (via "default", "inherit" or the
 <codeph>--env</codeph> option).</p>
 <p>
         <note>These attributes are only recognized by the <xref
-          href="../../user/reference/1.2client-ref.dita">ALS
+          href="../reference/1.1client-ref.dita">ALS
             client</xref>.</note>
       </p>
 </section>
 <section id="processes"> <title>processes:</title>
 </section>
 <section id="web"> <title>web:</title>
-  <note> Used with the <xref type="section" href="../../user/deploy/1.2buildpack.dita#topic3370/buildpacks-legacy"
+  <note> Used with the <xref type="section" href="1.1buildpack.dita#topic3434/legacy-buildpack"
           >Legacy buildpack</xref> only. When using other buildpacks, create a <xref
           href="https://devcenter.heroku.com/articles/procfile" scope="external" format="html"
           >Procfile</xref> in the application's root directory.</note>
@@ -582,7 +581,7 @@ custom arguments to uWSGI. For example:</p>
 <codeblock>  processes:
   web: python3.2 app.py</codeblock>
 <p>This key is required when using the
-  <xref type="section" href="../../user/deploy/1.2other-frameworks.dita#topic2413/generic-framework" >generic</xref> framework, but is
+  <xref type="section" href="1.1other-frameworks.dita#topic2413/generic-framework" >generic</xref> framework, but is
 optionally available for all other frameworks.</p>
 <p>
 <b>If defined</b>, this process is expected to launch a HTTP server bound
@@ -616,7 +615,7 @@ uWSGI options to the command.</p>
 <section id="command"> <title>command:</title>
 <p>Used for worker applications to start a background process. Below is an
 example using the
-  <xref type="section" href="../../user/deploy/1.2other-frameworks.dita#topic2413/standalone-framework" >standalone</xref> framework:</p>
+  <xref type="section" href="1.1other-frameworks.dita#topic2413/standalone-framework" >standalone</xref> framework:</p>
 <codeblock>  name: helion-worker
 instances: 1
 framework:
@@ -626,7 +625,7 @@ command: ruby worker.rb</codeblock>
 </section>
 <section id="cron"> <title>cron:</title>
 <p>Commands listed here are added to the crontab file. See the section on
-  <xref type="section" href="index.dita#topic18647/crontab-support">Crontab Support</xref> for details.</p>
+  <xref type="section" href="1.1index.dita#topic18647/crontab-support">Crontab Support</xref> for details.</p>
 <p>Example:</p>
 <codeblock>  cron:
   - PLUGH=xyzzy
@@ -731,7 +730,7 @@ is not needed and can be included on the same line:</p>
 </section>
 <section id="drain"> <title>drain:</title>
 <p>
-  <xref href="../user/deploy/1.2app-logs.dita#topic5165/application-logs-drain" >Application log drains</xref> can be
+  <xref href="1.1app-logs.dita#topic5165/application-logs-drain" >Application log drains</xref> can be
 added to an application when it is deployed by describing them in a
 <codeph>drain:</codeph> block with a drain name and URL:</p>
 <codeblock>  drain:

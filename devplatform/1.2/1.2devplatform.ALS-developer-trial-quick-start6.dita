@@ -65,7 +65,7 @@
                             applications and connect those applications to HP Helion <tm
                                 tmtype="reg">OpenStack</tm> services. <p>If you are interested in
                                 exploring the new functionality, you can jump right into <xref
-                                    href="windows/windows_deploying.dita">deploying <tm tmtype="reg"
+                                    href="windows/windows_firstapp.dita">deploying <tm tmtype="reg"
                                         >Windows</tm> applications</xref>.</p><ul>
                                 <li>If you have <b>encountered problems</b> with this installation,
                                     refer to the <xref
