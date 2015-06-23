@@ -35,7 +35,7 @@
             version 1.1.1 or later.</p>
         <p>Note that Windows DEA nodes and SQL Server services will not appear in the Horizon
             interface until you upload the appropriate images into Glance.</p>
-        <p>After <xref href="helion/user/deploy/1.2index.dita">creating a
+        <p>After <xref href="../helion/user/deploy/1.2index.dita">creating a
                 cluster</xref>, go to the <b>Clusters</b> page. [<b>Project</b> tab &gt; expand
                 <b>Application Lifecycle Service</b> &gt; <b>Clusters</b>] Click on the
                 <b>Actions</b> down arrow to display the options and select the desired
