@@ -65,8 +65,8 @@ web server, application dependencies, databases, and other services.</p>
               <xref href="../client/1.2index.dita#topic3165/getting-help">Getting Help</xref>
             </li>
             <li>
-              <xref href="../user/client/1.2index.dita#topic3165/targeting-the-api-endpoint"
-                >Targeting the API Endpoint</xref>
+              <xref href="../client/1.2index.dita#topic3165/targeting-the-api-endpoint">Targeting
+                the API Endpoint</xref>
             </li>
             <li>
               <xref href="../user/client/1.2index.dita#topic3165/http-proxies">HTTP Proxies</xref>
@@ -162,8 +162,8 @@ web server, application dependencies, databases, and other services.</p>
           <xref href="../console/1.2index.dita#topic8844/space-view">Space View</xref>
         </li>
 <li>
-  <xref href="../admin/console/1.2customize.dita#topic5029/application-view">Application View</xref>
-</li>
+          <xref href="../console/1.2index.dita#topic8844/application-view">Application View</xref>
+        </li>
 <li>
   <xref href="../admin/console/1.2customize.dita#topic5029/service-instance-view">Service Instance View</xref>
 </li>
