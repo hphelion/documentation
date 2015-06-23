@@ -40,7 +40,13 @@
 <li>It allows Disk, Memory and Placement Zone constraints to be set per application.</li>
 <li>It provides auto-scaling and application log drains.</li> 
 </ul>
-  <p>The Application Lifecycle Service is <xref href="1.1devplatform_commercial_install.dita#topic24073_1/install-als" >installed</xref> as part of the Helion Development Platform. You can easily <xref href="1.1devplatform.deploy-ALS.dita" >create and configure</xref> Application Lifecycle Service clusters from the Horizon management console, or explore this service by setting up a <xref href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> in the public cloud.</p>
+  <p>The Application Lifecycle Service is <xref
+          href="1.1devplatform_commercial_install.dita#topic24073_1/install-als">installed</xref> as
+        part of the Helion Development Platform. You can easily <xref
+          href="1.1devplatform.deploy-ALS.dita">create and configure</xref> Application Lifecycle
+        Service clusters from the Horizon management console, or explore this service by setting up
+        a <xref href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952">Quick Start
+          Developer Trial</xref> in the public cloud.</p>
 </section>
 <section id="application-services"> <title>Application Services</title>
 <p>The HP Helion Development Platform provides additional Application Services that integrate into the Application Lifecycle Service. These currently include:</p>
@@ -127,8 +133,8 @@
 <li>
           <b>Quick Start Developer Trial</b>: The fastest way to set up a functional Helion
           Development Platform environment is the <xref
-            href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita">Quick Start Developer
-            Trial</xref> on the public cloud.</li>
+            href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952">Quick Start
+            Developer Trial </xref>on the public cloud.</li>
 <li>
           <b>Standard Installation</b>: Install a <xref
             href="../commercial/GA1/1.1commercial.install-GA-overview.dita">Commercial HP OpenStack
