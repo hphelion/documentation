@@ -29,18 +29,20 @@
 <section id="prerequisites-before-you-begin"> <title>Prerequisites - Before you begin</title>
 <p>In order to download and deploy these sample applications, you must have the necessary framework installed and configured.</p>
 <ul>
-<li>HP <tm tmtype="reg">Helion Openstack</tm> <xref href="../commercial/GA1/1.1commercial.install-GA-overview.dita" >cloud deployed</xref>
+<li>HP <tm tmtype="reg">Helion OpenStack</tm> <xref href="../commercial/GA1/1.1commercial.install-GA-overview.dita" >cloud deployed</xref>
 </li>
-<li>Application Lifecycle Service <xref href="../devplatform/1.1devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
+<li>Application Lifecycle Service <xref href="1.1devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
 
 <ul>
-<li>You can also quickly setup a cluster in the free and publicly available Helion cloud as part of the <xref href="../devplatform/1.1devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref>: </li>
+<li>You can also quickly set up a cluster in the free and publicly available Helion cloud as part of
+              the <xref href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita">Quick Start
+                Developer Trial</xref>. </li>
 </ul>
 </li>
 <li>Logon and password credentials for the cluster.</li>
-<li>Access to the <xref href="../devplatform/helion/user/client/1.1index.dita" >Helion command-line interface (CLI)</xref>
+<li>Access to the <xref href="helion/user/client/1.1index.dita" >Helion command-line interface (CLI)</xref>
 </li>
-<li>(Optional) Access to the <xref href="../devplatform/1.1devplatform.eclipse.dita" >Eclipse</xref> deployment plugin for JAVA applications.</li>
+<li>(Optional) Access to the <xref href="1.1devplatform.eclipse.dita" >Eclipse</xref> deployment plugin for JAVA applications.</li>
 </ul>
 </section>
 <section id="sample"> <title>Sample code</title>
@@ -49,83 +51,79 @@
 <section id="java"> <title>Java</title>
 <ol>
 <li>
-<p>
-<xref href="../devplatform/workbook/helloworld/1.1helloworld.java.dita" >Hello World</xref> <!--A BR tag was used here in the original source.-->
-The Hello World sample is as simple as it gets: Hello World!</p>
-</li>
+          <xref href="workbook/helloworld/1.1helloworld.java.dita">Hello World</xref>
+           The Hello World sample is as simple
+          as it gets: Hello World!</li>
 <li>
-<p>
-<xref href="../devplatform/workbook/database/1.1database.java.dita" >Working with Databases</xref> <!--A BR tag was used here in the original source.-->
-Create a database and execute a query against it. </p>
-</li>
+          <xref href="workbook/database/1.1database.java.dita">Working with
+            Databases</xref>
+           Create a database and execute a
+          query against it. </li>
 <li>
-<p>
-<xref href="../devplatform/workbook/messaging/1.1messaging.java.dita" >Working with Messaging</xref>
-<!--A BR tag was used here in the original source.--> Enter, send, and display a brief message.</p>
-</li>
+          <xref href="workbook/messaging/1.1messaging.java.dita">Working with
+            Messaging</xref>
+           Enter, send, and display a brief
+          message.</li>
 </ol>
-<p>More Helion <xref href="../devplatform/helion/user/deploy/languages/1.1java.dita" >Java</xref> references.</p>
+<p>More Helion <xref href="helion/user/deploy/languages/1.1java.dita" >Java</xref> references.</p>
 </section>
 <section id="node"> <title>Node</title>
 <ol>
 <li>
-<p>
-<xref href="../devplatform/workbook/helloworld/1.1helloworld.node.dita" >Hello World</xref>
-<!--A BR tag was used here in the original source.-->
-The Hello World sample is as simple as it gets: Hello World!</p>
-</li>
+          <xref href="workbook/helloworld/1.1helloworld.node.dita">Hello World</xref>
+           The Hello World sample is as simple
+          as it gets: Hello World!</li>
 <li>
-<p>
-<xref href="../devplatform/workbook/database/1.1database.node.dita" >Working with Databases</xref> <!--A BR tag was used here in the original source.-->
-Create a database and execute a query against it.</p>
-</li>
+          <xref href="workbook/database/1.1database.node.dita">Working with
+            Databases</xref>
+           Create a database and execute a
+          query against it.</li>
 <li>
-<p>
-<xref href="../devplatform/workbook/messaging/1.1messaging.node.dita" >Working with Messaging</xref>
-<!--A BR tag was used here in the original source.--> Enter, send, and display a brief message.</p>
-</li>
+          <xref href="workbook/messaging/1.1messaging.node.dita">Working with
+            Messaging</xref>
+           Enter, send, and display a brief
+          message.</li>
 </ol>
-<p>More Helion <xref href="../devplatform/helion/user/deploy/languages/1.1node.dita" >Node</xref> references.</p>
+<p>More Helion <xref href="helion/user/deploy/languages/1.1node.dita" >Node</xref> references.</p>
 </section>
 <section id="PHP"> <title>PHP</title>
 <ol>
 <li>
-<p>
-<xref href="../devplatform/workbook/helloworld/1.1helloworld.php.dita" >Hello World</xref> <!--A BR tag was used here in the original source.-->
-The Hello World sample is as simple as it gets: Hello World!</p>
-</li>
+          <xref href="workbook/helloworld/1.1helloworld.php.dita">Hello World</xref>
+           The Hello World sample is as simple
+          as it gets: Hello World!</li>
 <li>
-<p>
-<xref href="../devplatform/workbook/database/1.1database.php.dita" >Working with Databases</xref> <!--A BR tag was used here in the original source.-->
-Create a database and execute a query against it.</p>
-</li>
+          <xref href="workbook/database/1.1database.php.dita">Working with
+            Databases</xref>
+           Create a database and execute a
+          query against it.</li>
 <li>
-<p>
-<xref href="../devplatform/workbook/messaging/1.1messaging.php.dita" >Working with Messaging</xref>
-<!--A BR tag was used here in the original source.--> Enter, send, and display a brief message.</p>
-</li>
+          <xref href="workbook/messaging/1.1messaging.php.dita">Working with
+            Messaging</xref>
+           Enter, send, and display a brief
+          message.</li>
 </ol>
-<p>More Helion <xref href="../devplatform/helion/user/deploy/languages/1.1php.dita" >PHP</xref> references.</p>
+<p>More Helion <xref href="helion/user/deploy/languages/1.1php.dita" >PHP</xref> references.</p>
 </section>
 <section id="other-references"> <title>Other references</title>
 <ul>
 <li>
-<xref href="../devplatform/1.1devplatform.marketplace.install.dita" >Installing the Marketplace</xref>
+<xref href="1.1devplatform.marketplace.install.dita" >Installing the Marketplace</xref>
 </li>
 <li>
-<xref href="../devplatform/helion/user/reference/1.1client-ref.dita#command-ref-client" >ALS command-line interface (CLI) reference</xref>
+<xref href="helion/user/reference/1.1client-ref.dita#command-ref-client" >ALS command-line interface (CLI) reference</xref>
 </li>
 <li>
-<xref href="../devplatform/helion/user/1.1index.dita" >Application Lifecycle Service (ALS) User's Guide</xref>
+<xref href="helion/user/1.1index.dita" >Application Lifecycle Service (ALS) User's Guide</xref>
 </li>
 <li>
-<xref href="../devplatform/helion/user/deploy/1.1app-debug.dita" >Remote Debugging</xref>
+<xref href="helion/user/deploy/1.1app-debug.dita" >Remote Debugging</xref>
 </li>
 <li>
-<xref href="../devplatform/helion/user/console/1.1index.dita" >The Management Console</xref>
+<xref href="helion/user/console/1.1index.dita" >The Management Console</xref>
 </li>
 <li>
-<xref href="../devplatform/helion/user/deploy/1.1app-logs.dita" >Logs, Streams, and Drains</xref>
+<xref href="helion/user/deploy/1.1app-logs.dita" >Logs, Streams, and Drains</xref>
 </li>
 </ul>
 </section>
@@ -138,7 +136,6 @@ Create a database and execute a query against it.</p>
   <xref href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html" scope="external" format="html" >Tips from <tm tmtype="tm">Cloud Foundry</tm></xref>
 </li>
 </ul>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

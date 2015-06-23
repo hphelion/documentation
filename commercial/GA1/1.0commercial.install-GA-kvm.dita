@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10604">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Installation and Configuration for KVM Hypervisor</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Installation and Configuration for KVM Hypervisor</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,8 +15,8 @@
 <p>
 
 </p>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HP Helion <tm tmtype="reg">Openstack</tm> on a suitably specified and prepared system.</p>
-<section id="installing-hp-helion-openstack"> <title>Installing HP Helion <tm tmtype="reg">Openstack</tm></title>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HP Helion <tm tmtype="reg">OpenStack</tm> on a suitably specified and prepared system.</p>
+<section id="installing-hp-helion-openstack"> <title>Installing HP Helion <tm tmtype="reg">OpenStack</tm></title>
 <p>The installation and configuration process for KVM consists of the following general steps:</p>
 <ul>
 <li>
@@ -47,7 +47,7 @@
 <xref type="section" href="#topic10604/getinstall">Downloading and extracting the installation packages</xref>
 </li>
 <li>
-<xref type="section" href="#topic10604/install">Installing HP Helion <tm tmtype="reg">Openstack</tm></xref>
+<xref type="section" href="#topic10604/install">Installing HP Helion <tm tmtype="reg">OpenStack</tm></xref>
 
 <ul>
 <li>
@@ -84,7 +84,7 @@
 <section id="deploy-arch"> <title>Review the KVM deployment architecture</title>
 <p>The following diagram depicts the required network topology for a KVM installation.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >KVM deployment of HP Helion <tm tmtype="reg">Openstack</tm> (opens in a new window)</xref>
+  <xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >KVM deployment of HP Helion <tm tmtype="reg">OpenStack</tm> (opens in a new window)</xref>
 </p>
 <p>For detailed network requirements, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#network_prepare" >Installation: Prerequisites</xref>.</p>
 </section>
@@ -94,18 +94,18 @@
 </section>
 <section id="csv"> <title>Prepare baremetal.csv file</title>
 <p>Before installing, make sure you have created the <codeph>baremetal.csv</codeph> file that is required for installation.</p>
-<p>For more information, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv" >Creating the baremetal.csv file</xref> in <i>HP Helion <tm tmtype="reg">Openstack</tm> Installation: Prerequisites</i>.</p>
+<p>For more information, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv" >Creating the baremetal.csv file</xref> in <i>HP Helion <tm tmtype="reg">OpenStack</tm> Installation: Prerequisites</i>.</p>
 </section>
 <section id="name-resolution"> <title>Set DNS servers</title>
-<p>To set a default DNS name server for your HP Helion <tm tmtype="reg">Openstack</tm> Commercial cloud, refer to <xref href="../../commercial/GA1/1.0commercial.name-resolution.dita" >Enabling Name Resolution from Tenant VMs in the Overcloud</xref> before installation.</p>
+<p>To set a default DNS name server for your HP Helion <tm tmtype="reg">OpenStack</tm> Commercial cloud, refer to <xref href="../../commercial/GA1/1.0commercial.name-resolution.dita" >Enabling Name Resolution from Tenant VMs in the Overcloud</xref> before installation.</p>
 </section>
 <section id="prepseed"> <title>Prepare the cloud seed host to create the seed VM</title>
 <p>On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#ubuntu" >Installation: Prerequisites</xref>.</p>
 </section>
 <section id="getinstall"> <title>Downloading and extracting the installation packages</title>
-<p>Before you begin, you must have downloaded and extracted the required HP Helion <tm tmtype="reg">Openstack</tm> installation packages. See <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >Installation: Prerequisites</xref>.</p>
+<p>Before you begin, you must have downloaded and extracted the required HP Helion <tm tmtype="reg">OpenStack</tm> installation packages. See <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >Installation: Prerequisites</xref>.</p>
 </section>
-<section id="install"> <title>Installing HP Helion <tm tmtype="reg">Openstack</tm></title>
+<section id="install"> <title>Installing HP Helion <tm tmtype="reg">OpenStack</tm></title>
 <p>Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed VM host:</p>
 <ul>
 <li>
@@ -270,7 +270,7 @@ export no_proxy=localhost,127.0.0.1,&lt;your 10.x IP address&gt;
 </ol>
 </section>
 <section id="verifying-your-installation"> <title>Verify your installation</title>
-<p>To verify that the installation is successful, connect to the HP Helion <tm tmtype="reg">Openstack</tm> dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.0commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
+<p>To verify that the installation is successful, connect to the HP Helion <tm tmtype="reg">OpenStack</tm> dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.0commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
 <!-- Hiding until I determine if linked doc will work
 
 ### Connect to the undercloud Horizon console {#connectconsoleunder}
@@ -411,11 +411,11 @@ Steps 1-5 Maybe not needed per Chris Cannon
 <p>Configure Block Storage by either deploying VSA or using HP 3Par Array</p>
 <ul>
 <li>
-<p>Configure HP Helion <tm tmtype="reg">Openstack</tm> tenant networks to use VLAN Provider Network.</p>
+<p>Configure HP Helion <tm tmtype="reg">OpenStack</tm> tenant networks to use VLAN Provider Network.</p>
 
-<p>HP Helion <tm tmtype="reg">Openstack</tm> defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. You can configure VLAN on HP Helion <tm tmtype="reg">Openstack</tm> to enable communication with tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX.</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. You can configure VLAN on HP Helion <tm tmtype="reg">OpenStack</tm> to enable communication with tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX.</p>
 
-<p>For instructions, see <xref href="../../commercial/GA1/1.0commercial.vlan-providernetwork.dita" >Enabling VLAN Provider Network in HP Helion <tm tmtype="reg">Openstack</tm></xref>.</p>
+<p>For instructions, see <xref href="../../commercial/GA1/1.0commercial.vlan-providernetwork.dita" >Enabling VLAN Provider Network in HP Helion <tm tmtype="reg">OpenStack</tm></xref>.</p>
 </li>
 <li>
 <p>Configure HP StoreVirtual VSA</p>
@@ -429,7 +429,7 @@ Steps 1-5 Maybe not needed per Chris Cannon
 
 <p>An optional HP 3Par storage array that can be used to provide high performance Cinder block storage</p>
 
-<p>For instructions, see the <xref href="../../commercial/GA1/1.0commercial.install-3par.dita" >HP Helion <tm tmtype="reg">Openstack</tm> HP StoreServ (3PAR) Support</xref> document.</p>
+<p>For instructions, see the <xref href="../../commercial/GA1/1.0commercial.install-3par.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> HP StoreServ (3PAR) Support</xref> document.</p>
 </li>
 <li>
 <p>Configure a Swift Scale-Out cluster (Optional)</p>
@@ -441,7 +441,7 @@ Steps 1-5 Maybe not needed per Chris Cannon
 <li>
 <p>Install DNS as a service (DNSaaS) (Optional).</p>
 
-<p>Our managed DNS service, based on the <tm tmtype="reg">Openstack</tm> Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
+<p>Our managed DNS service, based on the <tm tmtype="reg">OpenStack</tm> Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
 
 <p>For installation instructions, see <xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" >DNSaaS Installation and Configuration</xref>.</p>
 </li>

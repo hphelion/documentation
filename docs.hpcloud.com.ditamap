@@ -142,7 +142,7 @@
           href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita"/>
       </topicref>
       <!--Ceph stuff-->
-      <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita">
+      <topicref href="commercial/GA1/1.1commercial.ceph-overview.dita">
         <topicref href="commercial/GA1/ceph/1.1commerical.services-ceph-archref.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-pre-requisite.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita"/>
@@ -1606,8 +1606,6 @@
         locktitle="yes">
         <topicref href="publiccloud/cli.windows.2.installation.dita"
           navtitle="PowerShell CLI Installation" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.commands.dita"
-          navtitle="PowerShell CLI Commands Overview" locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.compute.dita"
           navtitle="PowerShell CLI Compute Examples" locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.metadata.dita"

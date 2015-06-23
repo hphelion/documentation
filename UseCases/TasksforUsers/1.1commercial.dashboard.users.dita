@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4140">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Using the Dashboard as a Non-Admin User</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Using the Dashboard as a Non-Admin User</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,7 +18,7 @@
 <section id="managing-instances"> <title>Managing instances</title>
 <p>You can use the dashboards to manage instances to which you have access.</p>
 <p>You can create new instances. You can reboot, rebuild, pause, suspend any existing instance that you can access.</p>
-<p>For more information, see <xref href="../../UseCases/TasksforUsers/Instances/1.1commercial.managing.instances.users.dita" >Managing Instances with HP Helion <tm tmtype="reg">Openstack</tm> Community</xref>.</p>
+<p>For more information, see <xref href="../../UseCases/TasksforUsers/Instances/1.1commercial.managing.instances.users.dita" >Managing Instances with HP Helion <tm tmtype="reg">OpenStack</tm> Community</xref>.</p>
 <p>
   <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
@@ -26,16 +26,16 @@
 <section id="managing-networks"> <title>Managing networks</title>
 <p>/
 A network is a pluggable, scalable system for managing networks and IP addresses.</p>
-<p>You can use the dashboards to create, delete, and configure your HP Helion <tm tmtype="reg">Openstack</tm> Community network.</p>
-<p>For more information, see <xref href="../../UseCases/TasksforUsers/Networks/1.1commercial.managing.network.dita" >Managing Networks with HP Helion <tm tmtype="reg">Openstack</tm> Community</xref>.</p>
+<p>You can use the dashboards to create, delete, and configure your HP Helion <tm tmtype="reg">OpenStack</tm> Community network.</p>
+<p>For more information, see <xref href="../../UseCases/TasksforUsers/Networks/1.1commercial.managing.network.dita" >Managing Networks with HP Helion <tm tmtype="reg">OpenStack</tm> Community</xref>.</p>
 <p>
   <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
 </section>
 <section id="managing-routers"> <title>Managing routers</title>
 <p>Each network can be assigned a router, which provides a gateway to external networks.</p>
-<p>You can use the dashboard to create, delete, and configure your HP Helion <tm tmtype="reg">Openstack</tm> Community router, determine which networks connect to each router, and connect the router to an externally-available network, as needed.</p>
-<p>For more information, see <xref href="../../UseCases/TasksforUsers/Routers/1.1commercial.managing.routers.dita" >Managing Routers with HP Helion <tm tmtype="reg">Openstack</tm> Community</xref>.</p>
+<p>You can use the dashboard to create, delete, and configure your HP Helion <tm tmtype="reg">OpenStack</tm> Community router, determine which networks connect to each router, and connect the router to an externally-available network, as needed.</p>
+<p>For more information, see <xref href="../../UseCases/TasksforUsers/Routers/1.1commercial.managing.routers.dita" >Managing Routers with HP Helion <tm tmtype="reg">OpenStack</tm> Community</xref>.</p>
 <p>
   <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
@@ -43,15 +43,15 @@ A network is a pluggable, scalable system for managing networks and IP addresses
 <section id="managing-floating-ip-addresses"> <title>Managing floating IP addresses</title>
 <p>Floating IP addresses allow external access to the instances in your network. When an instance is created, it is assigned an internal, private IP address. You can assign public floating IP address to an instance that you want to access externally.</p>
 <p>You can use the dashboards to allocate and associate floating IP addresses to the instances on a network.</p>
-<p>For more information, see <xref href="../../UseCases/TasksforUsers/IP_Addresses/1.1commercial.managing.ipaddress.dita" >Managing Floating IP Addresses with HP Helion <tm tmtype="reg">Openstack</tm> Community</xref>.</p>
+<p>For more information, see <xref href="../../UseCases/TasksforUsers/IP_Addresses/1.1commercial.managing.ipaddress.dita" >Managing Floating IP Addresses with HP Helion <tm tmtype="reg">OpenStack</tm> Community</xref>.</p>
 <p>
   <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
 </section>
 <section id="managing-security"> <title>Managing security</title>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> Community uses security groups and key pairs to control access to instances in your cloud.</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> Community uses security groups and key pairs to control access to instances in your cloud.</p>
 <p>You can use the dashboards to create, delete and configure security groups and security group rules to control access to your instance. You can also generate and import key pairs.</p>
-<p>For more information, see <xref href="../../UseCases/TasksforUsers/Security/1.1commercial.managing.security.dita" >Managing Security with HP Helion <tm tmtype="reg">Openstack</tm> Community</xref>.</p>
+<p>For more information, see <xref href="../../UseCases/TasksforUsers/Security/1.1commercial.managing.security.dita" >Managing Security with HP Helion <tm tmtype="reg">OpenStack</tm> Community</xref>.</p>
 <p>
   <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
@@ -59,7 +59,7 @@ A network is a pluggable, scalable system for managing networks and IP addresses
 <section id="managing-images"> <title>Managing images</title>
 <p>A virtual machine image is a single file which contains a virtual disk that has a bootable operating system installed on it. Images can be used to create instances.</p>
 <p>You can use the dashboards to create and configure private virtual machine images.</p>
-<p>For more information, see <xref href="../../UseCases/TasksforUsers/Images/1.1commercial.managing.images.dita" >Managing Virtual Machine Images with HP Helion <tm tmtype="reg">Openstack</tm> Community</xref>.</p>
+<p>For more information, see <xref href="../../UseCases/TasksforUsers/Images/1.1commercial.managing.images.dita" >Managing Virtual Machine Images with HP Helion <tm tmtype="reg">OpenStack</tm> Community</xref>.</p>
 <p>
   <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
@@ -67,7 +67,7 @@ A network is a pluggable, scalable system for managing networks and IP addresses
 <section id="managing-object-storage-containers"> <title>Managing object storage containers</title>
 <p>With object storage, objects and files are written to multiple disk drives spread throughout servers in the data center, with the Helion software responsible for ensuring data replication and integrity across the cluster.</p>
 <p>You can use the dashboards to create and configure container storage instances and move files in and out of storage.</p>
-<p>For more information, see <xref href="../../UseCases/TasksforUsers/Object_Storage/1.1commercial.managing.objects.dita" >Managing Object Storage with HP Helion <tm tmtype="reg">Openstack</tm> Community</xref>.</p>
+<p>For more information, see <xref href="../../UseCases/TasksforUsers/Object_Storage/1.1commercial.managing.objects.dita" >Managing Object Storage with HP Helion <tm tmtype="reg">OpenStack</tm> Community</xref>.</p>
 <p>
   <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>
@@ -75,7 +75,7 @@ A network is a pluggable, scalable system for managing networks and IP addresses
 <section id="managing-volumes"> <title>Managing volumes</title>
 <p>Volumes are block storage devices that allow you to expand the storage capacity of an instance. Volumes may only be attached to one server at a time, and will retain data, even when not attached to an instance.</p>
 <p>You can create and configure volumes; create snapshots of volumes; update the metadata associated with a volume, extend the size of volumes, and attach and detach volumes from instances.</p>
-<p>For more information, see <xref href="../../UseCases/TasksforUsers/Volumes/1.1commercial.managing.volumes.dita" >Managing Block Storage Volumes with HP Helion <tm tmtype="reg">Openstack</tm> Community</xref>.</p>
+<p>For more information, see <xref href="../../UseCases/TasksforUsers/Volumes/1.1commercial.managing.volumes.dita" >Managing Block Storage Volumes with HP Helion <tm tmtype="reg">OpenStack</tm> Community</xref>.</p>
 <p>
   <xref type="section" href="#topic4140"> Return to Top </xref>
 </p>

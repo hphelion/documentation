@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2181">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: TripleO Service Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: TripleO Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -28,18 +28,18 @@
 <p>
 
 </p>
-<p>TripleO (<tm tmtype="reg">Openstack</tm>-On-<tm tmtype="reg">Openstack</tm> is a service that handles installing, upgrading and operating <tm tmtype="reg">Openstack</tm> clouds using <tm tmtype="reg">Openstack</tm> cloud facilities as the foundation. TripleO builds on the <xref href="../../commercial/GA1/1.1commerical.services-compute-overview.dita" >Compute</xref>, <xref href="../../commercial/GA1/1.1commerical.services-networking-overview.dita" >Networking</xref> and <xref href="../../commercial/GA1/1.1commerical.services-orchestration-overview.dita" >Orchestration</xref> services to automate fleet management for as few as two machines or a full data center.</p>
-<p>The <xref href="../../commercial/GA1/1.1commercial.install-GA-overview.dita" >HP Helion <tm tmtype="reg">Openstack</tm> installation</xref> follows the standard TripleO deployment model, creating a seed, an undercloud and an overcloud.</p>
+<p>TripleO (<tm tmtype="reg">OpenStack</tm>-On-<tm tmtype="reg">OpenStack</tm> is a service that handles installing, upgrading and operating <tm tmtype="reg">OpenStack</tm> clouds using <tm tmtype="reg">OpenStack</tm> cloud facilities as the foundation. TripleO builds on the <xref href="../../commercial/GA1/1.1commerical.services-compute-overview.dita" >Compute</xref>, <xref href="../../commercial/GA1/1.1commerical.services-networking-overview.dita" >Networking</xref> and <xref href="../../commercial/GA1/1.1commerical.services-orchestration-overview.dita" >Orchestration</xref> services to automate fleet management for as few as two machines or a full data center.</p>
+<p>The <xref href="../../commercial/GA1/1.1commercial.install-GA-overview.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> installation</xref> follows the standard TripleO deployment model, creating a seed, an undercloud and an overcloud.</p>
 <section id="key-terms"> <title>Key Terms</title>
 <p>Key terms include:</p>
 <ul>
 <li>
 <p>
-<b>seed</b> - The seed cloud is a bootable image that is deployed in a VM instance. This image, which is provided as part of HP Helion <tm tmtype="reg">Openstack</tm> contains the minimum services required for <tm tmtype="reg">Openstack</tm> to function and to provision physical hardware to deploy the undercloud.</p>
+<b>seed</b> - The seed cloud is a bootable image that is deployed in a VM instance. This image, which is provided as part of HP Helion <tm tmtype="reg">OpenStack</tm> contains the minimum services required for <tm tmtype="reg">OpenStack</tm> to function and to provision physical hardware to deploy the undercloud.</p>
 </li>
 <li>
 <p>
-<b>undercloud</b> - The undercloud server is a basic single-node <tm tmtype="reg">Openstack</tm> installation running on a single physical server used to deploy, test, manage, and update the overcloud servers. There is no HA configuration for the undercloud. It contains a strictly limited sub-set of <tm tmtype="reg">Openstack</tm> services; just enough to  permit interaction with the overcloud.</p>
+<b>undercloud</b> - The undercloud server is a basic single-node <tm tmtype="reg">OpenStack</tm> installation running on a single physical server used to deploy, test, manage, and update the overcloud servers. There is no HA configuration for the undercloud. It contains a strictly limited sub-set of <tm tmtype="reg">OpenStack</tm> services; just enough to  permit interaction with the overcloud.</p>
 </li>
 <li>
 <p>
@@ -48,8 +48,8 @@
 </ul>
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on TripleO, see the official <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> TripleO wiki</xref>.</p>
-<p>For more information on the HP Helion <tm tmtype="reg">Openstack</tm> deployment model, see <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Technical Overview</xref>.</p>
+<p>For information on TripleO, see the official <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> TripleO wiki</xref>.</p>
+<p>For more information on the HP Helion <tm tmtype="reg">OpenStack</tm> deployment model, see <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Technical Overview</xref>.</p>
 <p>
   <xref type="section" href="#topic2181"> Return to Top </xref>
 </p>

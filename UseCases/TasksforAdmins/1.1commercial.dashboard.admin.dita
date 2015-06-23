@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2010">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Using as an Admin User</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Using as an Admin User</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -38,7 +38,7 @@
 </section>
 <section id="managing-networks"> <title>Managing networks</title>
 <p>A network is a pluggable, scalable system for managing networks and IP addresses.</p>
-<p>You can use the dashboards to create, delete, and configure your HP Helion <tm tmtype="reg">Openstack</tm> subnet(s) and ports.</p>
+<p>You can use the dashboards to create, delete, and configure your HP Helion <tm tmtype="reg">OpenStack</tm> subnet(s) and ports.</p>
 <p>For more information, see <xref href="../../UseCases/TasksforUsers/Networks/1.1commercial.managing.network.dita" >Managing Networks</xref>.</p>
 <p>
   <xref type="section" href="#topic2010"> Return to Top </xref>

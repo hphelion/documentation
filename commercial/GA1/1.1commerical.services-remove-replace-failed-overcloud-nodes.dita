@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic18311">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Removing and Replacing a Failed Overcloud Controller</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Removing and Replacing a Failed Overcloud Controller</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -475,7 +475,7 @@ xargs -d" " -n 1 -I controller_ip $ssh_sudo "$restore_original" &lt;&lt;&lt; $re
 <section id="controller2"> <title>Removing and replacing controller2</title>
 <p>The following sections provide instructions on how to remove and replace a failed <codeph>controller2</codeph> node.</p>
 </section>
-<section id="remove-the-failed-controller"> <title>Remove the failed controller</title>
+<section id="remove-failed-controller"> <title>Remove the failed controller</title>
 <ol>
 <li>
 <p>Make sure that <codeph>controller2</codeph> is halted.</p>
@@ -595,7 +595,7 @@ make overcloud-ce-trickle
 </li>
 </ol>
 </section>
-<section id="add-a-replacement-controller"> <title>Add a replacement controller</title>
+<section id="add-replacement-controller"> <title>Add a replacement controller</title>
 <ol>
 <li>
 <p>Make sure the new node is available in Ironic.</p>
@@ -679,7 +679,7 @@ check_mk --list-hosts
 <section id="controller-troubleshooting"> <title>Controller troubleshooting</title>
 <ul>
 <li>
-<p>If a Heat stack-update appears to be taking a long time (30 minutes or longer), see <xref href="../../commercial/GA1/1.1commercial.troubleshooting.controllers.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Troubleshooting Controller Nodes</xref>
+<p>If a Heat stack-update appears to be taking a long time (30 minutes or longer), see <xref href="../../commercial/GA1/1.1commercial.troubleshooting.controllers.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Troubleshooting Controller Nodes</xref>
 </p>
 </li>
 <li>

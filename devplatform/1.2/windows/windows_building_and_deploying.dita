@@ -30,7 +30,7 @@
     <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
   </ph>
 </p>
-<p>This document demonstrates how to create and deploy a Windows image in an HP <tm tmtype="reg">Helion Openstack</tm> environment to be used in Helion Development Platform. Image creation is needed to enable Windows support. This process can take several hours (approximately 7 hours, depending on hardware and network) and in most cases can be left unattended once the scripts begin execution.</p>
+<p>This document demonstrates how to create and deploy a Windows image in an HP <tm tmtype="reg">Helion OpenStack</tm> environment to be used in Helion Development Platform. Image creation is needed to enable Windows support. This process can take several hours (approximately 7 hours, depending on hardware and network) and in most cases can be left unattended once the scripts begin execution.</p>
 <section id="prerequsites"> <title>Prerequsites</title>
 </section>
 <section id="host-prerequisites"> <title>Host Prerequisites</title>
@@ -40,7 +40,7 @@
 <li>Virtualization support enabled</li>
 <li>16 GB RAM recommended.</li>
 <li>100 GB available disk space</li>
-<li>Connectivity to the Internet and the <tm tmtype="reg">Helion Openstack</tm> environment where the Windows image will be deployed</li>
+<li>Connectivity to the Internet and the <tm tmtype="reg">Helion OpenStack</tm> environment where the Windows image will be deployed</li>
 </ul>
 </section>
 <section id="software-prerequisites"> <title>Software Prerequisites</title>
@@ -78,9 +78,9 @@
 <section id="setup-information-needed"> <title>Setup Information Needed</title>
 <ul>
 <li>A Windows product key for Windows Server 2012R2. A multiple activation key is strongly recommended, as temporary instances will be created that need product keys.</li>
-<li>The RC file for the target <tm tmtype="reg">Helion Openstack</tm> environment. This can be downloaded from the Horizon interface, under <b>Project-&gt;Compute-&gt;Access &amp; Security-&gt;API Access-&gt;Download <tm tmtype="reg">Openstack</tm> RC File</b>.</li>
+<li>The RC file for the target <tm tmtype="reg">Helion OpenStack</tm> environment. This can be downloaded from the Horizon interface, under <b>Project-&gt;Compute-&gt;Access &amp; Security-&gt;API Access-&gt;Download <tm tmtype="reg">OpenStack</tm> RC File</b>.</li>
 <li>
-<p>The certificate for the target <tm tmtype="reg">Helion Openstack</tm> environment. To retrieve this certificate, do the following:</p>
+<p>The certificate for the target <tm tmtype="reg">Helion OpenStack</tm> environment. To retrieve this certificate, do the following:</p>
 
 <ol>
 <li>

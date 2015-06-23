@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic39140">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Installation Troubleshooting</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Installation Troubleshooting</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -25,20 +25,20 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.install.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/install/--></p>
-<p>This Helion installation troubleshooting guide is written for Helion <tm tmtype="reg">Openstack</tm> installers who, during or after building the Helion <tm tmtype="reg">Openstack</tm> environment, find that the cloud environment does not work as expected. The Helion <tm tmtype="reg">Openstack</tm> environment is not itself complex but it does include a sufficient number of components that isolating a fault can be challenging.</p>
+<p>This Helion installation troubleshooting guide is written for Helion <tm tmtype="reg">OpenStack</tm> installers who, during or after building the Helion <tm tmtype="reg">OpenStack</tm> environment, find that the cloud environment does not work as expected. The Helion <tm tmtype="reg">OpenStack</tm> environment is not itself complex but it does include a sufficient number of components that isolating a fault can be challenging.</p>
 <p>The goal of this guide is to help you to identify the problem or problems affecting your cloud installation and efficiently fix them.<!--A BR tag was used here in the original source.-->
-For help with troubleshooting Helion <tm tmtype="reg">Openstack</tm> 1.1 general issues, refer to:
+For help with troubleshooting Helion <tm tmtype="reg">OpenStack</tm> 1.1 general issues, refer to:
 <xref href="http://docs.hpcloud.com/helion/openstack/services/troubleshooting/" scope="external" format="html" >Troubleshooting Helion</xref>
 </p>
 <section id="installing-the-cloud-environment"> <title>Installing the cloud environment</title>
-<p>Helion <tm tmtype="reg">Openstack</tm> installation requirements are fully documented in the support matrix at:
+<p>Helion <tm tmtype="reg">OpenStack</tm> installation requirements are fully documented in the support matrix at:
 <xref href="http://docs.hpcloud.com/helion/openstack/support-matrix/" scope="external" format="html" >Support Matrix</xref>
 The process of building the seed cloud host, creating the seed VM, the overcloud, and the undercloud are described at: 
-<xref href="http://docs.hpcloud.com/helion/openstack/install/overview/" scope="external" format="html" >Helion installation overview</xref>
+<xref href="1.1commercial.troubleshooting.install.dita" scope="external" format="html" >Helion installation overview</xref>
 At each step, you should have confirmation that what you have done works. At the conclusion of each major installation process, you will have confirmation that your installation works or does not. If you encounter issues, you should fix them before proceeding. After taking all these steps to resolve an error being reported, you may find that your cloud installation still does not work. This document will help you troubleshoot that experience.</p>
 </section>
 <section id="helion-installation"> <title>Helion installation</title>
-<p>By the time you are ready to start the Helion <tm tmtype="reg">Openstack</tm> installation process, you will have confirmed that your hardware and your Linux environments are ready for it. If you do this incorrectly, your installation will likely fail.</p>
+<p>By the time you are ready to start the Helion <tm tmtype="reg">OpenStack</tm> installation process, you will have confirmed that your hardware and your Linux environments are ready for it. If you do this incorrectly, your installation will likely fail.</p>
 <p>The installation is mostly scripted such that if you run the script and if the outcome is as expected, you can reasonably expect that your installation is correct up to this point. If there are problems, you should be alerted that a problem has occurred. By the end of your installation procedure, you will either have a working Helion environment for your virtual, baremetal, KVM, or ESX environment or you should have the information you need to identify what needs fixing.</p>
 </section>
 <section id="standard-procedures"> <title>Standard procedures</title>
@@ -70,7 +70,7 @@ At each step, you should have confirmation that what you have done works. At the
 <p>Log into your overcloud and undercloud Horizon instances and confirm that your servers are accounted for.</p>
 </li>
 <li>
-<p>In general, HP recommends that you disable any firewalls inside of your image and use <tm tmtype="reg">Openstack</tm> security groups to restrict access to instances. The reason is that having a firewall installed on your instance can make it more difficult to troubleshoot networking issues if you cannot connect to your instance.</p>
+<p>In general, HP recommends that you disable any firewalls inside of your image and use <tm tmtype="reg">OpenStack</tm> security groups to restrict access to instances. The reason is that having a firewall installed on your instance can make it more difficult to troubleshoot networking issues if you cannot connect to your instance.</p>
 </li>
 <li>
 <p>DHCP servers configured on the undercloud/overcloud deployment network segment should be disabled, or the MAC addresses used for all nodes should be on the denied list for the DHCP server running on that network segment.</p>
@@ -95,7 +95,7 @@ At each step, you should have confirmation that what you have done works. At the
 </section>
 <section id="could-not-access-the-kvm-host-on-the-seed-vm"> <title>Could not access the KVM host on the seed VM</title>
 <p>Check that you are exporting to the right bridge interface.</p>
-<p>Make sure that the seed VM is the gateway. This is a bug in older builds. If you are using an older Helion <tm tmtype="reg">Openstack</tm> build (prior to release 1.01), see your release notes for more information. Also, verify that your routing is correct. If not, use route commands to fix it.</p>
+<p>Make sure that the seed VM is the gateway. This is a bug in older builds. If you are using an older Helion <tm tmtype="reg">OpenStack</tm> build (prior to release 1.01), see your release notes for more information. Also, verify that your routing is correct. If not, use route commands to fix it.</p>
 </section>
 <section id="launching-a-new-kvm-virtual-machine-instance-fails-with-errorstate"> <title>Launching a new KVM virtual machine instance fails with <codeph>ERRORstate</codeph>
 </title>
@@ -231,7 +231,7 @@ Also you can bypass the firewall by creating the VLAN interface on the KVM host.
 <li>Demo VM creation fails. Skip the demo VM instance creation by entering <codeph>?skip-demo</codeph> on <codeph>installer.sh</codeph>.</li>
 </ul>
 </section>
-<section id="installer-completed-correctly-but-my-helion-openstack-cloud-does-not-work"> <title>Installer completed correctly, but my Helion <tm tmtype="reg">Openstack</tm> cloud does not work</title>
+<section id="installer-completed-correctly-but-my-helion-openstack-cloud-does-not-work"> <title>Installer completed correctly, but my Helion <tm tmtype="reg">OpenStack</tm> cloud does not work</title>
 <p>The likely reasons this happens are:</p>
 <ul>
 <li>
@@ -738,7 +738,7 @@ In case it is not set as <b>root:root</b> then change it to root using:</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="reboot-accident"> <title>Accidental Reboot of Overcloud Controller</title>
-<p>If the overcloud controller is rebooted (due to a power issue, hardware upgrade, or similar event), <tm tmtype="reg">Openstack</tm> compute tools such as <codeph>nova-list</codeph> might report that the VMs are in an ERROR state, rendering the overcloud unusable.</p>
+<p>If the overcloud controller is rebooted (due to a power issue, hardware upgrade, or similar event), <tm tmtype="reg">OpenStack</tm> compute tools such as <codeph>nova-list</codeph> might report that the VMs are in an ERROR state, rendering the overcloud unusable.</p>
 <p>To restore the overcloud to an operational state, follow the steps below:</p>
 <ol>
 <li>
@@ -795,7 +795,7 @@ sudo service nova-conductor restart
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="bridge-persists"> <title>Network Bridge Persists After Uninstall</title>
-<p>On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion <tm tmtype="reg">Openstack</tm> the network bridge persists.</p>
+<p>On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion <tm tmtype="reg">OpenStack</tm> the network bridge persists.</p>
 <p>To revert the network configuration to its pre-installation state, run the following commands as user <codeph>root</codeph>:</p>
 <codeblock>
   <codeph>ip addr add 192.168.185.131/16 dev eth0 scope global
@@ -811,11 +811,11 @@ ovs-vsctl del-port NIC
 </ul>
 <!-- ===================== horizontal rule ===================== -->
 <!-- Removed per Ramakrishna Bhupathi. Not required in 1.1  
-### Modify the Heat Configuration File Before HP Helion <tm tmtype="reg">Openstack</tm> Installation {#heat-config}
+### Modify the Heat Configuration File Before HP Helion <tm tmtype="reg">OpenStack</tm> Installation {#heat-config}
 
-Before you install the HP Helion <tm tmtype="reg">Openstack</tm> DNSaaS or if you want to use Heat with HP Helion <tm tmtype="reg">Openstack</tm> you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
+Before you install the HP Helion <tm tmtype="reg">OpenStack</tm> DNSaaS or if you want to use Heat with HP Helion <tm tmtype="reg">OpenStack</tm> you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
 
-<span style="color:red">**Important**:</span> The installation of the HP Helion <tm tmtype="reg">Openstack</tm> DNSaaS **fails** if you do not make these modifications.
+<span style="color:red">**Important**:</span> The installation of the HP Helion <tm tmtype="reg">OpenStack</tm> DNSaaS **fails** if you do not make these modifications.
 
 **Note**: You must have admin ssh access to the overcloud controller.
 
@@ -899,7 +899,7 @@ A a node being controlled by the seed or undercloud cannot be controlled either 
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="windebug"> <title>Debugging a <tm tmtype="reg">Windows</tm> Server OS Using a Serial Connection</title>
-<p>Debugging a Windows Server OS running as a Nova Compute VM on HP Helion <tm tmtype="reg">Openstack</tm> will require setting up a serial connection between the VM and a debug host. Once a serial connection has been established between the VM and debug host, which is usually over the COM2 port, the Windows Debug utility will function properly.</p>
+<p>Debugging a Windows Server OS running as a Nova Compute VM on HP Helion <tm tmtype="reg">OpenStack</tm> will require setting up a serial connection between the VM and a debug host. Once a serial connection has been established between the VM and debug host, which is usually over the COM2 port, the Windows Debug utility will function properly.</p>
 <p>
 <b>Before you Begin</b>:</p>
 <ul>

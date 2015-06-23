@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3847">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Controller Nodes and High Availability</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Controller Nodes and High Availability</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -47,27 +47,27 @@ controller failure.</p>
 <section id="about"> <title>About controller HA</title>
 <p>Controller services are organized internally into the following groups:</p>
 <ul>
-<li>Cloud Services - The enhanced <tm tmtype="reg">Openstack</tm> components, including Nova, Neutron, Cinder, Ceilometer, and Heat</li>
-<li>Controller Services - Core HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade services such as maintenance and inventory</li>
+<li>Cloud Services - The enhanced <tm tmtype="reg">OpenStack</tm> components, including Nova, Neutron, Cinder, Ceilometer, and Heat</li>
+<li>Controller Services - Core HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade services such as maintenance and inventory</li>
 <li>Directory Services - LDAP services </li>
 <li>OAM Services - OAM access services</li>
 <li>Patching Services - Patching alarm services</li>
 <li>Storage Monitoring Services - Storage alarm services</li>
 <li>Storage Services - Storage REST API services</li>
-<li>Web Services - The HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade <tm tmtype="reg">Openstack</tm> Horizon service and web server</li>
+<li>Web Services - The HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade <tm tmtype="reg">OpenStack</tm> Horizon service and web server</li>
 </ul>
 <p>Each of these groups is run in 1:1 HA mode by the controllers. This means that while some service groups can be active on controller-0, and in standby on controller-1, others are active on controller-1, and in standby on controller-0.</p>
 <p>The high-availability framework constantly monitors and reports on the health of the individual services within each of the service groups on both controllers. When a service fails, a decision is made on whether to restart it on the same controller, or to switch the corresponding service group to the other controller. This decision depends on the criticality and the dependencies of the affected service.</p>
 </section>
 <section id="controller"> <title>Viewing the active controller</title>
-<p>Services in the Controller Services group drive core functionality in the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade. The controller where they are running is referred to as the active controller.</p>
-<p>When working from the CLI on a controller node it is often important to ensure that you are working on the active controller, for example, to execute <tm tmtype="reg">Openstack</tm> admin operations, or to change the password of the wrsroot user account. See Linux User Accounts on page 16 for further details on the wrsroot account.</p>
+<p>Services in the Controller Services group drive core functionality in the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade. The controller where they are running is referred to as the active controller.</p>
+<p>When working from the CLI on a controller node it is often important to ensure that you are working on the active controller, for example, to execute <tm tmtype="reg">OpenStack</tm> admin operations, or to change the password of the wrsroot user account. See Linux User Accounts on page 16 for further details on the wrsroot account.</p>
 <p>You can ensure you are working on the active controller by using the OAM floating IP address as the destination address in the SSH command.</p>
 <p>To determine which host is the active controller:</p>
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
@@ -84,7 +84,7 @@ controller failure.</p>
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>

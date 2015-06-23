@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1333">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Working with Cluster Systems</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Working with Cluster Systems</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,7 +26,7 @@
  <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-clusters.md-->
  <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/clusters/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>The HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade cluster is represented internally by a unique object referred to as the system.</p>
+<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade cluster is represented internally by a unique object referred to as the system.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -34,7 +34,7 @@
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Systems</b> tab.</p>

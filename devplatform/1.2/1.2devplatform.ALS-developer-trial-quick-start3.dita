@@ -39,8 +39,8 @@
               <p>1. <xref href="ALS-developer-trial-quick-start">Register for your Helion Public
                   Cloud Account</xref>
               </p>
-              <p>2. <xref href="ALS-developer-trial-quick-start2.dita">Download Tools</xref>
-              </p>
+              <p>2.<xref href="1.2devplatform.ALS-developer-trial-quick-start2.dita#topic1743">
+                  Download Tools</xref></p>
               <p><image href="../../media/star.gif" id="image_lqs_gjp_js" scale="50"/>
                 <b>Create the Sandbox Environment</b></p>
               <p>4. <xref href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
@@ -73,7 +73,7 @@
                   a cluster. This RC file has been pre-configured for this sandbox project.<ol>
                     <li>Click <b>Access &amp; Security</b> and then click the <b>API Access</b>
                       tab.</li>
-                    <li> Click <b>Download <tm tmtype="reg">Openstack</tm> RC file</b>.<image
+                    <li> Click <b>Download <tm tmtype="reg">OpenStack</tm> RC file</b>.<image
                         href="../../media/quickstartC11.png" placement="break"/></li>
                   </ol>
                 </li>

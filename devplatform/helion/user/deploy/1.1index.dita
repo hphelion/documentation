@@ -90,7 +90,7 @@ space:</p>
 </codeblock>
 </section>
 <section id="pushing-application-code"> <title>Pushing Application Code</title>
-<p>Change to the root directory of your source code project, and use the <codeph>helion push</codeph> command to deploy your application. If you have a <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita" >
+<p>Change to the root directory of your source code project, and use the <codeph>helion push</codeph> command to deploy your application. If you have a <xref href="1.1manifestyml.dita" >
 <i>manifest.yml</i>
 </xref> config file in this directory, you can use just:</p>
 <codeblock>
@@ -294,7 +294,7 @@ null:~$
 <b>Note</b>: Cron commands are only executed on instance #0 of the app.</p>
 <p>Cron commands can be provided either in a regular crontab file in the
 root directory of the app, or via the <codeph>cron:</codeph>
-section in <i>manifest.yml</i> (See <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita" >
+section in <i>manifest.yml</i> (See <xref href="1.1manifestyml.dita" >
 <i>manifest.yml options</i>
 </xref>.</p>
 <p>The <codeph>HOME</codeph> and <codeph>PATH</codeph>

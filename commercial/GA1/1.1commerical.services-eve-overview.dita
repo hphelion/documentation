@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3178">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 Eve Service Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 Eve Service Overview</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Eve Service Overview</searchtitle>
 </titlealts>
@@ -27,12 +27,12 @@
 
 </p>
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
-<p>As part of that investment HP Software has created an advanced provisioning technology, called Eve, which uses TOSCA standard semantics to express infrastructure templates that can be orchestrated against an <tm tmtype="reg">Openstack</tm> Nova API.  As part of the Eve advanced provisioning service, hybrid provisioning can be accomplished with common templates across public and private <tm tmtype="reg">Openstack</tm> API compliant clouds.</p>
-<p>The Eve service is the HP Helion <tm tmtype="reg">Openstack</tm> infrastructure topology provisioning service. Eve allows you to:</p>
+<p>As part of that investment HP Software has created an advanced provisioning technology, called Eve, which uses TOSCA standard semantics to express infrastructure templates that can be orchestrated against an <tm tmtype="reg">OpenStack</tm> Nova API.  As part of the Eve advanced provisioning service, hybrid provisioning can be accomplished with common templates across public and private <tm tmtype="reg">OpenStack</tm> API compliant clouds.</p>
+<p>The Eve service is the HP Helion <tm tmtype="reg">OpenStack</tm> infrastructure topology provisioning service. Eve allows you to:</p>
 <ul>
 <li>Provision TOSCA-based infrastructure topology designs (composite, hybrid, and distributed).</li>
 <li>Separate topology creation and resource pool binding, for simpler, reusable topologies.</li>
-<li>Integrate via a plug-in model with Cloud API's (e.g., <tm tmtype="reg">Openstack</tm> Nova) for orchestrating provisioning.</li>
+<li>Integrate via a plug-in model with Cloud API's (e.g., <tm tmtype="reg">OpenStack</tm> Nova) for orchestrating provisioning.</li>
 <li>Create and configure network services such as virtual load-balancers and configuration management services.</li>
 </ul>
 <p>Eve also provides a logical execution container for flexible deployment of web-scale, stateless, thread controlled, non-blocking coarse-grained services.</p>
@@ -48,17 +48,17 @@
 <section id="working-with-the-provisioning-service"> <title>Working with the Provisioning Service</title>
 </section>
 <section id="API"> <title>Using the API to access Eve</title>
-<p>You can use a low-level, raw REST API access to HP Helion <tm tmtype="reg">Openstack</tm> Eve service. See .</p>
+<p>You can use a low-level, raw REST API access to HP Helion <tm tmtype="reg">OpenStack</tm> Eve service. See .</p>
 </section>
 <section id="cli"> <title>Using the CLI</title>
-<p>You can use any of several command-line interface software to access HP Helion <tm tmtype="reg">Openstack</tm> Eve service. See .</p>
+<p>You can use any of several command-line interface software to access HP Helion <tm tmtype="reg">OpenStack</tm> Eve service. See .</p>
 </section>
 <section id="bindings"> <title>Using language bindings</title>
-<p>You can use any of several language bindings to access HP Helion <tm tmtype="reg">Openstack</tm> Eve service. See .</p>
+<p>You can use any of several language bindings to access HP Helion <tm tmtype="reg">OpenStack</tm> Eve service. See .</p>
 <!--
-## How To's with the HP Helion <tm tmtype="reg">Openstack</tm> Image Operations Service ## {#howto}
+## How To's with the HP Helion <tm tmtype="reg">OpenStack</tm> Image Operations Service ## {#howto}
 
-The following lists of tasks can be performed by a user or administrator through the [HP Administration Dashboard](/helion/openstack/1.1/manage/administration-dashboard/), the <tm tmtype="reg">Openstack</tm> [CLI]() or <tm tmtype="reg">Openstack</tm> [API]().
+The following lists of tasks can be performed by a user or administrator through the [HP Administration Dashboard](/helion/openstack/1.1/manage/administration-dashboard/), the <tm tmtype="reg">OpenStack</tm> [CLI]() or <tm tmtype="reg">OpenStack</tm> [API]().
 
 ###Working with topologies
 
@@ -84,11 +84,11 @@ The following lists of tasks can be performed by a user or administrator through
 - Remove volume group from server group-->
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Operations Guide</xref> The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">Openstack</tm> Cloud is put together. However, the HP Helion <tm tmtype="reg">Openstack</tm> edition takes care of these details for you. The <i>Operations</i> contains information on how to manage the system.</p>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref> The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together. However, the HP Helion <tm tmtype="reg">OpenStack</tm> edition takes care of these details for you. The <i>Operations</i> contains information on how to manage the system.</p>
 <!-- hide me Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Helion <tm tmtype="reg">Openstack</tm> Operational Dashboard Help](/helion/openstack/1.1/manage/operational-dashboard/)
-* [HP Helion <tm tmtype="reg">Openstack</tm> Administration Dashboard Help](/helion/openstack/1.1/manage/administration-dashboard/) -->
+* [HP Helion <tm tmtype="reg">OpenStack</tm> Operational Dashboard Help](/helion/openstack/1.1/manage/operational-dashboard/)
+* [HP Helion <tm tmtype="reg">OpenStack</tm> Administration Dashboard Help](/helion/openstack/1.1/manage/administration-dashboard/) -->
 <p>
   <xref type="section" href="#topic3178"> Return to Top </xref>
 </p>

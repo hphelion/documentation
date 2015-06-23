@@ -626,7 +626,7 @@ command: ruby worker.rb</codeblock>
 </section>
 <section id="cron"> <title>cron:</title>
 <p>Commands listed here are added to the crontab file. See the section on
-  <xref type="section" href="index.dita#topic18647/crontab-support">Crontab Support</xref> for details.</p>
+  <xref type="section" href="1.2index.dita#topic18647/crontab-support">Crontab Support</xref> for details.</p>
 <p>Example:</p>
 <codeblock>  cron:
   - PLUGH=xyzzy
@@ -731,7 +731,7 @@ is not needed and can be included on the same line:</p>
 </section>
 <section id="drain"> <title>drain:</title>
 <p>
-  <xref href="../user/deploy/1.2app-logs.dita#topic5165/application-logs-drain" >Application log drains</xref> can be
+  <xref href="1.2app-logs.dita#topic5165/helion-drain" >Application log drains</xref> can be
 added to an application when it is deployed by describing them in a
 <codeph>drain:</codeph> block with a drain name and URL:</p>
 <codeblock>  drain:

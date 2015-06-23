@@ -17,7 +17,7 @@
 </p>
 <p>Date: November 2014</p>
 <section id="1-overview"> <title>1. Overview</title>
-<p>The HP Identity Service exposes the <tm tmtype="reg">Openstack</tm> Keystone V2 API specification. Specifically, it supports token based operations. A few things to note about the HP Identity Service are:</p>
+<p>The HP Identity Service exposes the <tm tmtype="reg">OpenStack</tm> Keystone V2 API specification. Specifically, it supports token based operations. A few things to note about the HP Identity Service are:</p>
 <ul>
 <li>Token created via v2 API can be validated via v3 API</li>
 <li>Token created via v3 API can be validated via v2 API.</li>
@@ -651,7 +651,7 @@ If a request is invalid (doesn't present the required headers or credentials), t
 <section id="authenticate"> <title>3.4.2.1 Authenticate</title>
 </section>
 <section id="post-tokens"> <title>POST /tokens</title>
-<p>This API is used to authenticate a user to be able to use an <tm tmtype="reg">Openstack</tm> service. The result of a successful authentication is a token to be used with service requests. A username and password or access/secret key credentials are given as input to this interface. If authentication succeeds, the response will include an authentication token and service catalog ( list of available services for that user ). Tokens are valid for 12 hours. Issued tokens can become invalid in two cases:</p>
+<p>This API is used to authenticate a user to be able to use an <tm tmtype="reg">OpenStack</tm> service. The result of a successful authentication is a token to be used with service requests. A username and password or access/secret key credentials are given as input to this interface. If authentication succeeds, the response will include an authentication token and service catalog ( list of available services for that user ). Tokens are valid for 12 hours. Issued tokens can become invalid in two cases:</p>
 <ol>
 <li>the token has expired</li>
 <li>the token has been revoked.</li>

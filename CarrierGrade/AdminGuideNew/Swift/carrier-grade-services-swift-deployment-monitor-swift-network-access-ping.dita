@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1704">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Monitor the Network Access (Ping)</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Monitor the Network Access (Ping)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -24,7 +24,7 @@
 </b> service running in the undercloud to monitor the network access of all the Swift nodes. The host that are part of ring can be determined using swift-ring-builder and only those nodes are verified for connectivity.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
-<li>HP Helion <tm tmtype="reg">Openstack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
+<li>HP Helion <tm tmtype="reg">OpenStack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
 </li>
 <li>The Icinga service is active and running in the undercloud.</li>
 </ul>

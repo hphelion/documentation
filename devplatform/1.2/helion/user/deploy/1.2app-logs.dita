@@ -31,7 +31,7 @@ using the <b>View Logs</b> button on the application Details page, or</li>
 <i>helion logs</i>
 </xref>
 command</li>
-<li>application log <xref type="section" href="#topic5165/application-logs-drain">
+  <li>application log <xref type="section" href="#topic5165/helion-drain">
 <i>drains</i>
 </xref>
 </li>
@@ -87,7 +87,7 @@ line as a JSON object.</p>
             href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-files">
             <i>helion files</i>
           </xref> command to fetch the relevant log file from the <i>logs/</i> directory or create a
-          log <xref type="section" href="#topic5165/application-logs-drain">
+          log <xref type="section" href="#topic5165/helion-drain">
             <i>drain</i>
           </xref> preemptively (where possible).</note>
       </p>

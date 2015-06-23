@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic11470">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Metering Service (Ceilometer): Best Practices and Optimization</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Metering Service (Ceilometer): Best Practices and Optimization</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -86,7 +86,7 @@
 <entry>g</entry> 
 <entry>instance</entry>
 <entry> inst ID</entry>
-<entry>Existence of instance of <varname>type</varname> (Where <varname>type</varname> is a valid <tm tmtype="reg">Openstack</tm> types.) </entry>
+<entry>Existence of instance of <varname>type</varname> (Where <varname>type</varname> is a valid <tm tmtype="reg">OpenStack</tm> types.) </entry>
 </row>
 <row>
 <entry>memory</entry>
@@ -143,7 +143,7 @@ service nova-conductor restart
 service nova-novncproxy restart
 </codeph>
 </codeblock>
-<p>For a more in-depth look at how information is sent over <i>openstack.common.rpc</i>, refer to the <xref href="http://docs.openstack.org/developer/ceilometer/measurements.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Ceilometer documentation</xref>.</p>
+<p>For a more in-depth look at how information is sent over <i>openstack.common.rpc</i>, refer to the <xref href="http://docs.openstack.org/developer/ceilometer/measurements.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Ceilometer documentation</xref>.</p>
 <p>
 <b>Validation</b>
 After the Nova service is re-started, the notification daemons using the namespace <i>ceilometer.notification</i> should receive some traffic. Each plugin can listen to any topic(s), but by default it will listen to <i>notifications.info</i>.</p>
@@ -252,7 +252,7 @@ Ceilometer data collection is configured by modifying the <i>pipeline.yml</i> fi
 <p>
 <b>Note</b>: The <i>pipeline.yml</i> configuration file needs to be changed on <b>all</b> the controller nodes to actually affect the white-listing and or polling strategy.</p>
 <p>The configuration file is comprised of two major elements: <b>sources</b> and <b>sinks</b>. <b>Sources</b> are data harvested from notifications posted by services or collected through polling. <b>Sinks</b> represent how that data is modified before it is published to the internal queue for collection and storage.</p>
-<p>In the Sources section there is a list of default meters. These meters are the data that is going to be collected. The list of meters can be easily reduced or increased by editing the <i>pipeline.yml</i> configuration file and then restarting the <xref href="../../../commercial/GA1/ceilometer/1.1commerical.services-reporting-components.dita#centralagent" >Ceilometer Central Agent</xref> and the <xref href="../../../commercial/GA1/ceilometer/1.1commerical.services-reporting-components.dita#collector" >Ceilometer Collector</xref>. If more meters are desired, please refer to the <xref href="http://docs.openstack.org/developer/ceilometer/measurements.html#measurements" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Ceilometer documentation</xref>.</p>
+<p>In the Sources section there is a list of default meters. These meters are the data that is going to be collected. The list of meters can be easily reduced or increased by editing the <i>pipeline.yml</i> configuration file and then restarting the <xref href="../../../commercial/GA1/ceilometer/1.1commerical.services-reporting-components.dita#centralagent" >Ceilometer Central Agent</xref> and the <xref href="../../../commercial/GA1/ceilometer/1.1commerical.services-reporting-components.dita#collector" >Ceilometer Collector</xref>. If more meters are desired, please refer to the <xref href="http://docs.openstack.org/developer/ceilometer/measurements.html#measurements" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Ceilometer documentation</xref>.</p>
 <codeblock>
   <codeph>---
 sources:

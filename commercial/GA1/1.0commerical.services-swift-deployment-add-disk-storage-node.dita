@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2840">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Add New Scale-out Object Node</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Add New Scale-out Object Node</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -29,7 +29,7 @@
 </ol>
 <section id="preq"> <title>Prerequisite</title>
 <ul>
-<li>HP Helion <tm tmtype="reg">Openstack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Swift nodes are functional by default as they are part of cloud deployment)</i>
+<li>HP Helion <tm tmtype="reg">OpenStack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Swift nodes are functional by default as they are part of cloud deployment)</i>
 </li>
 <li>Scale-out object-ring:1 is deployed.</li>
 </ul>

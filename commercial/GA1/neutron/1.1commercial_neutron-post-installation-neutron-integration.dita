@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic14425">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Networking Operation (Neutron) Integration</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Networking Operation (Neutron) Integration</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -67,7 +67,7 @@
 </section>
 <section id="integrating-ldap"> <title>Integrating LDAP</title>
 <p>Using Lightweight Directory Access Protocol (LDAP) has a dependency on Identify Management Service (Keystone). Coordinate your LDAP configuration with the Keystone administrator.</p>
-<p>The HP Helion <tm tmtype="reg">Openstack</tm> Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes. LDAP integration must be performed during the HP Helion <tm tmtype="reg">Openstack</tm> installation process.</p>
+<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes. LDAP integration must be performed during the HP Helion <tm tmtype="reg">OpenStack</tm> installation process.</p>
 <p>The process for integrating LDAP involves the following steps:</p>
 <ul>
 <li>
@@ -373,10 +373,10 @@ OVERCLOUD_SWIFT_PASSWORD=&lt;password&gt;
 </ol>
 <p>Follow the steps described in the installation instructions to deploy the overcloud nodes.</p>
 <p>
-  <xref href="../../../commercial/GA1/1.1commercial.install-GA-kvm.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Installation and Configuration for KVM Hypervisor</xref>
+  <xref href="../../../commercial/GA1/1.1commercial.install-GA-kvm.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Installation and Configuration for KVM Hypervisor</xref>
 </p>
 <p>
-  <xref href="../../../commercial/GA1/1.1commercial.install-GA-esx.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Installation and Configuration for ESX Hypervisor</xref>
+  <xref href="../../../commercial/GA1/1.1commercial.install-GA-esx.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Installation and Configuration for ESX Hypervisor</xref>
 </p>
 </section>
 <section id="horizon"> <title>Configure Horizon</title>
@@ -559,50 +559,50 @@ OVERCLOUD_SWIFT_PASSWORD=&lt;password&gt;
 </p>
 </section>
 <section id="configure-dhcp"> <title>Configure DHCP agent</title>
-<p>The details for configuring this feature are available from the <tm tmtype="reg">Openstack</tm> website at: <xref href="http://docs.openstack.org/" scope="external" format="html" >http://docs.openstack.org/</xref>
+<p>The details for configuring this feature are available from the <tm tmtype="reg">OpenStack</tm> website at: <xref href="http://docs.openstack.org/" scope="external" format="html" >http://docs.openstack.org/</xref>
 </p>
 <p>Refer to the <b>
-<i><tm tmtype="reg">Openstack</tm> Cloud Administrator Guide</i>
+<i><tm tmtype="reg">OpenStack</tm> Cloud Administrator Guide</i>
 </b>, Networking chapter.</p>
 </section>
 <section id="configure-l3"> <title>Configure L3 agent</title>
-<p>The details for configuring this feature are available from the <tm tmtype="reg">Openstack</tm> website at: 
+<p>The details for configuring this feature are available from the <tm tmtype="reg">OpenStack</tm> website at: 
 <xref href="http://docs.openstack.org/" scope="external" format="html" >http://docs.openstack.org/</xref>
 </p>
 <p>Refer to the <b>
-<i><tm tmtype="reg">Openstack</tm> Administrator Guide</i>
+<i><tm tmtype="reg">OpenStack</tm> Administrator Guide</i>
 </b>, Advanced operational features.</p>
 </section>
 <section id="configure-l3-metering"> <title>Configure L3 metering agent</title>
-<p>The details for configuring this feature are available from the <tm tmtype="reg">Openstack</tm> website at: 
+<p>The details for configuring this feature are available from the <tm tmtype="reg">OpenStack</tm> website at: 
 <xref href="http://docs.openstack.org/" scope="external" format="html" >http://docs.openstack.org/</xref>
 </p>
 <p>Refer to the <b>
-<i><tm tmtype="reg">Openstack</tm> Administrator Guide</i>
+<i><tm tmtype="reg">OpenStack</tm> Administrator Guide</i>
 </b>, Advanced operational features.</p>
 </section>
 <section id="configure-load-balancer"> <title>Configure Load-Balancer</title>
-<p>The details for configuring this feature are available from the <tm tmtype="reg">Openstack</tm> website at: 
+<p>The details for configuring this feature are available from the <tm tmtype="reg">OpenStack</tm> website at: 
 <xref href="http://docs.openstack.org/" scope="external" format="html" >http://docs.openstack.org/</xref>
 </p>
 <p>Refer to the <b>
-<i><tm tmtype="reg">Openstack</tm> Administrator Guide</i>
+<i><tm tmtype="reg">OpenStack</tm> Administrator Guide</i>
 </b>, Advanced operational features.</p>
 </section>
 <section id="configure-hyper-V"> <title>Configure Hyper-V L2 agent</title>
-<p>The details for configuring this feature are available from the <tm tmtype="reg">Openstack</tm> website at: 
+<p>The details for configuring this feature are available from the <tm tmtype="reg">OpenStack</tm> website at: 
 <xref href="http://docs.openstack.org/" scope="external" format="html" >http://docs.openstack.org/</xref>
 </p>
 <p>Refer to the <b>
-<i><tm tmtype="reg">Openstack</tm> Administrator Guide</i>
+<i><tm tmtype="reg">OpenStack</tm> Administrator Guide</i>
 </b>, Advanced operational features.</p>
 </section>
 <section id="logging"> <title>Logging</title>
-<p>The details for configuring this feature are available from the <tm tmtype="reg">Openstack</tm> website at: 
+<p>The details for configuring this feature are available from the <tm tmtype="reg">OpenStack</tm> website at: 
 <xref href="http://docs.openstack.org/" scope="external" format="html" >http://docs.openstack.org/</xref>
 </p>
 <p>Refer to the <b>
-<i><tm tmtype="reg">Openstack</tm> Administrator Guide</i>
+<i><tm tmtype="reg">OpenStack</tm> Administrator Guide</i>
 </b>, Advanced operational features.</p>
 <p>
   <xref type="section" href="#topic14425"> Return to Top </xref>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1495">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): HP Helion <tm tmtype="reg">Openstack</tm> Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): HP Helion <tm tmtype="reg">OpenStack</tm> Overview</title>
 <titlealts>
 <searchtitle>HP Helion Openstack Carrier Grade: HP Helion Openstack Overview</searchtitle>
 </titlealts>
@@ -20,9 +20,9 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Overview/carrier-grade-overview-helion.md-->
  <!--permalink: /helion/openstack/carrier/helion/overview/--></p>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> is a commercial-grade distribution of <tm tmtype="reg">Openstack</tm> the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid cloud in a resilient, maintainable platform. HP Helion <tm tmtype="reg">Openstack</tm> enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> offers many services based on the different <tm tmtype="reg">Openstack</tm> projects to provide the functionality you need. Visit the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Services Overview page</xref> for a complete list of services.</p>
-<p>If you're unfamiliar with what's inside the box, have a look at the components inside HP Helion <tm tmtype="reg">Openstack</tm> on the <xref href="http://docs.hpcloud.com/content/documentation/commercial/GA1/ServicesFlow/index.html" scope="external" format="html" >Under the Hood</xref> page.</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> is a commercial-grade distribution of <tm tmtype="reg">OpenStack</tm> the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid cloud in a resilient, maintainable platform. HP Helion <tm tmtype="reg">OpenStack</tm> enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> offers many services based on the different <tm tmtype="reg">OpenStack</tm> projects to provide the functionality you need. Visit the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Services Overview page</xref> for a complete list of services.</p>
+<p>If you're unfamiliar with what's inside the box, have a look at the components inside HP Helion <tm tmtype="reg">OpenStack</tm> on the <xref href="http://docs.hpcloud.com/content/documentation/commercial/GA1/ServicesFlow/index.html" scope="external" format="html" >Under the Hood</xref> page.</p>
 <p>
   <xref type="section" href="#topic1495"> Return to Top </xref>
 </p>

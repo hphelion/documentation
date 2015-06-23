@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1076">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Horizon Service Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,11 +12,11 @@
 <!--PUBLISHED-->
  <!--./community/community.services-horizon-overview.md-->
  <!--permalink: /helion/community/services/horizon/overview/--></p>
-<p>Horizon is the <tm tmtype="reg">Openstack</tm> service that serves as the basis for the HP Helion <tm tmtype="reg">Openstack</tm> web interface or <b>dashboards</b>.</p>
-<p>The dashboards provide a web-based user interface to HP Helion <tm tmtype="reg">Openstack</tm> services including <xref href="../community/community.services-compute-overview.dita" >Compute</xref>, <xref href="../community/community.services-volume-overview.dita" >Volume Operations</xref>, <xref href="../community/community.services-networking-overview.dita" >Networking</xref>, and <xref href="../community/community.services-identity-overview.dita" >Identity</xref>.</p>
+<p>Horizon is the <tm tmtype="reg">OpenStack</tm> service that serves as the basis for the HP Helion <tm tmtype="reg">OpenStack</tm> web interface or <b>dashboards</b>.</p>
+<p>The dashboards provide a web-based user interface to HP Helion <tm tmtype="reg">OpenStack</tm> services including <xref href="../community/community.services-compute-overview.dita" >Compute</xref>, <xref href="../community/community.services-volume-overview.dita" >Volume Operations</xref>, <xref href="../community/community.services-networking-overview.dita" >Networking</xref>, and <xref href="../community/community.services-identity-overview.dita" >Identity</xref>.</p>
 <p>Horizon ships with several dashboards, including a <b>Project</b> dashboard, an <b>Admin</b> dashboard, and a <b>System</b> dashboard. These dashboards provide administrators and users with a graphical interface to access, provision and automate cloud-based resources.</p>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on using the dashboards, see <xref href="../community/community.dashboard.how-works.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Dashboard</xref>.</p>
+<p>For information on using the dashboards, see <xref href="../community/community.dashboard.how-works.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Dashboard</xref>.</p>
 <p>
   <xref type="section" href="#topic1076"> Return to Top </xref>
 </p>

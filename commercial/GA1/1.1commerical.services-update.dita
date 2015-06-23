@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic590">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Update</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Update</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -25,7 +25,7 @@
 <!--UNDER REVISION-->
  <!--./commercial/GA1/1.1commerical.services-update.md-->
  <!--permalink: /helion/openstack/1.1/update/overview/11/--></p>
-<p>The HP <tm tmtype="reg">Openstack</tm> Helion update utility supports updating Helion 1.0 to Helion 1.01. You cannot update from Helion 1.0 or 1.01 to 1.1 at this time. For help with updating from your current release to a newer release, contact Customer Support.</p>
+<p>The HP <tm tmtype="reg">OpenStack</tm> Helion update utility supports updating Helion 1.0 to Helion 1.01. You cannot update from Helion 1.0 or 1.01 to 1.1 at this time. For help with updating from your current release to a newer release, contact Customer Support.</p>
 <!-- ===================== horizontal rule ===================== -->
 </body>
 </topic>

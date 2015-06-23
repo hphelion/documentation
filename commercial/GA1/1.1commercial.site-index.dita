@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5147">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Site Index</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Site Index</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -23,22 +23,22 @@
 </p>
 <p>A list of all the pages on docs.hpcloud.com can be found in the <xref href="/master-toc" >Master TOC</xref>
 </p>
-<p>The documentation for HP Helion <tm tmtype="reg">Openstack</tm> includes the following:</p>
+<p>The documentation for HP Helion <tm tmtype="reg">OpenStack</tm> includes the following:</p>
 <!-- Trying something
 * [Release Notes](#release)
-* [Getting started with HP Helion <tm tmtype="reg">Openstack</tm>
+* [Getting started with HP Helion <tm tmtype="reg">OpenStack</tm>
 * [Related documentation](#related)
-* [Installing HP Helion <tm tmtype="reg">Openstack</tm>
-* [Updating HP Helion <tm tmtype="reg">Openstack</tm>
+* [Installing HP Helion <tm tmtype="reg">OpenStack</tm>
+* [Updating HP Helion <tm tmtype="reg">OpenStack</tm>
 * [Undercloud Horizon Dashboard](#underdash)
 * [Horizon Dashboard](#dash)
-* [HP Helion <tm tmtype="reg">Openstack</tm> Services](#services)
+* [HP Helion <tm tmtype="reg">OpenStack</tm> Services](#services)
 * [Object Storage (Swift) Deployment](#swift)
 * [License files](#license)
 * [Related documentation](#related)
 -->
-<section id="getstart"> <title>Getting started with HP Helion <tm tmtype="reg">Openstack</tm></title>
-<p>The following topics as needed contain information about HP Helion <tm tmtype="reg">Openstack</tm></p>
+<section id="getstart"> <title>Getting started with HP Helion <tm tmtype="reg">OpenStack</tm></title>
+<p>The following topics as needed contain information about HP Helion <tm tmtype="reg">OpenStack</tm></p>
 <ul>
 <li>
 <xref href="1.1commercial.release-notes.dita" >Release Notes</xref> </li>
@@ -55,7 +55,7 @@
 </li>
 </ul>
 </section>
-<section id="install"> <title>Installing HP Helion <tm tmtype="reg">Openstack</tm></title>
+<section id="install"> <title>Installing HP Helion <tm tmtype="reg">OpenStack</tm></title>
 <p>Review the following topics before you start the installation:</p>
 <ul>
 <li>
@@ -114,7 +114,7 @@
 <section id="installing-on-a-laptop"> <title>Installing on a laptop</title>
 <ul>
 <li>
-<xref href="../../commercial/GA1/1.1commercial.install-laptop-demo.dita" >HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Virtual demo installation</xref>
+<xref href="../../commercial/GA1/1.1commercial.install-laptop-demo.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Virtual demo installation</xref>
 </li>
 </ul>
 </section>
@@ -149,10 +149,10 @@
 <xref href="../../commercial/GA1/1.1commerical.services-remove-replace-failed-overcloud-nodes.dita" >Removing and Replacing a Failed Overcloud Controller</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/neutron/1.1commercial_neutron-intro.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Neutron Administrator Pre and Post Installation Tasks</xref>
+<xref href="../../commercial/GA1/neutron/1.1commercial_neutron-intro.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Neutron Administrator Pre and Post Installation Tasks</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita" >How to build a Microsoft Windows Server guest image for HP Helion <tm tmtype="reg">Openstack</tm></xref>
+<xref href="../../commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita" >How to build a Microsoft Windows Server guest image for HP Helion <tm tmtype="reg">OpenStack</tm></xref>
 </li>
 </ul>
 </section>
@@ -214,8 +214,8 @@
 </li>
 </ul>
 </section>
-<section id="services"> <title>HP Helion <tm tmtype="reg">Openstack</tm> Services</title>
-<p>Review the following topics related to the HP Horizon <tm tmtype="reg">Openstack</tm> services:</p>
+<section id="services"> <title>HP Helion <tm tmtype="reg">OpenStack</tm> Services</title>
+<p>Review the following topics related to the HP Horizon <tm tmtype="reg">OpenStack</tm> services:</p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.1commerical.services-overview.dita" >Services Overview</xref>
@@ -422,7 +422,7 @@
 </ul>
 </section>
 <section id="related"> <title>Related documentation</title>
-<p>This topic provides you links to <tm tmtype="reg">Openstack</tm> documentation that you might find helpful when working with HP Helion <tm tmtype="reg">Openstack</tm></p>
+<p>This topic provides you links to <tm tmtype="reg">OpenStack</tm> documentation that you might find helpful when working with HP Helion <tm tmtype="reg">OpenStack</tm></p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.1commercial.related-topics.dita" >Related documentation</xref>

@@ -43,8 +43,7 @@
 router in Application Lifecycle Service is designed for HTTP(S) traffic only, if user
 applications require other protocols, consider setting up Harbor.</p>
 <p>Information on using the Harbor port service with deployed applications
-is in the <xref href="../../../../devplatform/helion/user/services/1.0port-service.dita#port-service" >
-<i>Port Service (Harbor)
+  is in the <xref href="../../user/services/1.0port-service.dita" ><i>Port Service (Harbor)
 documentation</i>
 </xref>.</p>
 <section id="architecture"> <title>Architecture</title>
@@ -63,27 +62,21 @@ externally facing port.</p>
 </section>
 <section id="requirements-setup"> <title>Requirements &amp; Setup</title>
 <p>An Application Lifecycle Service VM can be configured as a Harbor node in the same way as
-other <xref href="index.dita">
+other <xref href="1.0index.dita">
 <i>data service roles</i>
 </xref>.
 For example:</p>
-<codeblock>
-  <codeph>$ kato node attach -e harbor CORE_IP
-</codeph>
-</codeblock>
+<codeblock>$ kato node attach -e harbor CORE_IP</codeblock>
 <p>The node must be routable both externally by connecting clients, and the
 internal DEA nodes must be contactable by the Harbor node. You must also
 make allowances for any firewall rules so that the provisioned port
 range used by Harbor is open to the external network.</p>
 <p>The default range for these ports is '35000 - 40000', however you can
 view the current port range on the Harbor node by entering:</p>
-<codeblock>
-  <codeph>$ kato config get harbor_node port_range
-</codeph>
-</codeblock>
+<codeblock>$ kato config get harbor_node port_range</codeblock>
 <p>For each new service provisioned, Harbor will chose a random unassigned
 port from this range. This range can be set in the Management Console's
-<xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#console-settings" >
+<xref href="../console/1.0customize.dita" >
 <i>Settings</i>
 </xref> section, or by
 using the <codeph>kato config set ...</codeph> command.</p>
@@ -92,35 +85,23 @@ using the <codeph>kato config set ...</codeph> command.</p>
 update the node config so that it provides these external connection
 details to the users service credentials.</p>
 <p>To set the externally routable hostname:</p>
-<codeblock>
-  <codeph>$ kato config set harbor_node hostname_external ext-services.example.com
-</codeph>
-</codeblock>
+<codeblock>$ kato config set harbor_node hostname_external ext-services.example.com</codeblock>
 <p>To set the externally routable IP:</p>
-<codeblock>
-  <codeph>$ kato config set harbor_node host_external 192.0.43.10
-</codeph>
-</codeblock>
+<codeblock>$ kato config set harbor_node host_external 192.0.43.10</codeblock>
 </section>
 <section id="troubleshooting"> <title>Troubleshooting</title>
-<p>If you have problems with the Harbor service, first check the status via
-'kato status'.</p>
+<p>If you have problems with the Harbor service, first check the status via <codeph>kato
+          status</codeph>.</p>
 <p>The Harbor service can be safely restarted; any ports and routes
 provisioned are automatically added and the backends are re-validated on
 startup:</p>
-<codeblock>
-  <codeph>$ kato restart harbor
-</codeph>
-</codeblock>
+<codeblock>$ kato restart harbor</codeblock>
 <p>Check the log files for errors and warnings. Four Harbor log files can
 be found in the <i>/s/logs/</i> directory:</p>
-<codeblock>
-  <codeph>* harbor_gateway.log
+<codeblock>* harbor_gateway.log
 * harbor_node.log
 * harbor_proxy_connector.log
-* harbor_redis.log
-</codeph>
-</codeblock>
+* harbor_redis.log</codeblock>
 <p>No Application Lifecycle Service processes should conflict with the default Harbor port
 range. However, in systems with additional custom processes running,
 other processes may assume control of a port within Harbor's port range.

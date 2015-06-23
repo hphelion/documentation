@@ -35,7 +35,7 @@
 </li>
 </ul>
 <section id="prereq"> <title>Prerequisites</title>
-<p>You need to <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >install</xref> the Helion Development Platform and the <xref href="../devplatform/1.2/1.2devplatform_commercial_install.dita#install-als" >Application Lifecycle Service</xref>.</p>
+  <p>You need to <xref href="1.2devplatform_commercial_install.dita" >install</xref> the Helion Development Platform and the <xref href="1.2devplatform_commercial_install.dita#topic24073/install-als" >Application Lifecycle Service</xref>.</p>
 </section>
 <section id="configure"> <title>Configuring an ALS Cluster</title>
 <ol>
@@ -86,7 +86,7 @@
 <li> Select the <b>Database</b> tab of the <b>Create</b>
           <b>Cluster</b> dialog, and choose the databases to enable in the cluster. Detailed notes
           on how to create or connect to a MySQL database can be found <xref
-            href="../../devplatform/1.2/1.2devplatform.database-ALS.dita">here</xref>. <image
+            href="1.2devplatform.database-ALS.dita">here</xref>. <image
             href="../../media/ALSConfig5.png" placement="break" id="image_dwp_rzc_ks"/>
         </li>
 <li>Click on the <b>Proxies</b> tab of the Create Cluster dialog and enter the addresses of the
@@ -101,7 +101,7 @@
           cluster, which can be reached in the <b>Clusters</b> view or by the <b>Cluster Details</b>
           page. <image href="../../media/ALSConfig7.png" placement="break" id="image_hyv_tzc_ks"/>
         </li>
-<li>The <xref href="../../devplatform/1.2/helion/1.2index.dita">Application Lifecycle Service
+<li>The <xref href="helion/1.2index.dita">Application Lifecycle Service
             Documentation </xref> provides an overview of how to administer and use the configured
           cluster, which opens up in a separate tab and requires the admin credentials set in step 3
           to access and provision.</li>

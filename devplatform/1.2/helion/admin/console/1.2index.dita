@@ -193,13 +193,13 @@ else, supply the assigned hostname instead (ex: <i>api.helion-test.example.com</
       </p>
 <p>Once you've logged in, you can begin to add other users and admins, enable and disable services, and generally set up the system to your requirements.</p>
 <p>Basic Application Lifecycle Service administration can be done through the Management
-Console, but some maintenance and configuration tasks may need to be done at the command line using the <i>kato</i> command. See the <xref href="../reference/1.2kato-ref.dita#kato-command-ref" >Kato Command Reference</xref> for a full list of options.</p>
+  Console, but some maintenance and configuration tasks may need to be done at the command line using the <i>kato</i> command. See the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref" >Kato Command Reference</xref> for a full list of options.</p>
 <p>The Application Lifecycle Service Management Console will periodically send non-identifying pingbacks (Application Lifecycle Service version number and UUID) to HP servers to help improve the web console experience. You can disable this option by setting</p>
 <codeblock>theme_settings['pingback_allowed'] = false;</codeblock>
 <p>in the <i>settings.js</i> file as described in the <xref href="../console/1.2customize.dita" >Customization</xref> documentation.</p>
 </section>
 <section id="welcome"> <title>Welcome Page</title>
-<p>The top-level page of the Management Console displays quick links to the most used resources and views. The blue buttons are for features also available to regular end users. See <xref href="../../user/console/1.2index.dita#user-console-welcome" >Management Console (User View)</xref>.</p>
+  <p>The top-level page of the Management Console displays quick links to the most used resources and views. The blue buttons are for features also available to regular end users. See <xref href="../../user/console/1.2index.dita#topic8844/welcome" >Management Console (User View)</xref>.</p>
 <p>Available patches for the system, new releases, and the latest news are also displayed on this page.</p>
 <p>Green buttons expose Admin-only functionality:</p>
 <ul>
@@ -242,7 +242,7 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <section id="cluster-nodes"> <title>Cluster Nodes</title>
 <p>Displays a list of nodes in the current cluster, and what services are running on each node. In a micro cloud configuration, only the current local node (127.0.0.1) is shown.</p>
 <p>To enable or disable services on a node, click the Configure Roles button (cog icon) to see the Node Settings, showing a list of all available roles and checkboxes to enable or disable each one. Click Save to apply changes.</p>
-  <p>See also the <xref href="../reference/1.2kato-ref.dita1.2#topic39432/kato-command-ref-role-add" >kato role</xref> and <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-info" >kato info</xref> command documentation for the CLI equivalents, and the <xref href="../cluster/1.2index.dita" >Cluster Setup</xref> documentation for information on adding nodes to the cluster.</p>
+  <p>See also the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-role-add" >kato role</xref> and <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-info" >kato info</xref> command documentation for the CLI equivalents, and the <xref href="../cluster/1.2index.dita" >Cluster Setup</xref> documentation for information on adding nodes to the cluster.</p>
 </section>
 <section id="patches"> <title>Available Patches</title>
 <p>Displays a list of available patches for the current cluster.</p>

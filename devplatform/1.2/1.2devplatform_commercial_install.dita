@@ -29,7 +29,10 @@
  <!--./devplatform/1.2/1.2devplatform_commercial_install.md-->
  <!--permalink: /helion/devplatform/1.2/install/--></p>
 <p>HP Helion Development Platform version 1.2 currently contains the Application Lifecycle Service, Database, Marketplace, and Messaging services.</p>
-<p>The following topics explain how to install and configure a new deployment of the HP Helion Development Platform version 1.2. There is also <xref href="1.2devplatform.troubleshooting.dita" >Troubleshooting</xref> documentation to handle issues that may occur.</p>
+<p>The following topics explain how to install and configure a new deployment of the HP Helion
+      Development Platform version 1.2. There is also <xref
+        href="1.2devplatform.troubleshooting.dita">Troubleshooting</xref> documentation to handle
+      issues that may occur.</p>
 <ul>
 <li>
 <xref type="section" href="#topic24073/prerequisites">Prerequisites</xref>
@@ -653,7 +656,8 @@ server marketplace&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
             href="1.2devplatform.marketplace.install.dita#topic6367/install">Marketplace
             packages</xref>.</li>
 </ol>
-<p>Your installation is now complete. If you encounter problems, refer to the <xref href=" 1.2devplatform.troubleshooting.dita" >Troubleshooting</xref> documentation.</p>
+<p>Your installation is now complete. If you encounter problems, refer to the <xref
+          href="1.2devplatform.troubleshooting.dita">Troubleshooting</xref> documentation.</p>
 </section>
 </body>
 </topic>

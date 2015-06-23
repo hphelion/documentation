@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1771">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Helion Lifecycle Management (HLM) Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Helion Lifecycle Management (HLM) Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,7 +13,7 @@
  <!--./CarrierGrade/Overview/carrier-grade-overview-hlm.md-->
  <!--permalink: /helion/openstack/carrier/hlm/overview/--></p>
 <!-- From http://wiki.hpcloud.net/display/core/Helion+Lifecycle+Management+Root -->
-<p>Helion Lifecycle Management (HLM) is an application that is used to deploy HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade and can be used for ongoing operations and maintenance of the system.</p>
+<p>Helion Lifecycle Management (HLM) is an application that is used to deploy HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade and can be used for ongoing operations and maintenance of the system.</p>
 <ul>
 <li>
 <p>
@@ -33,7 +33,7 @@
 </li>
 <li>
 <p>
-<b>Helion Operation &amp; Maintenance.</b> HLM is responsible for the deploy, upgrade and maintenance lifecycle of the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade system.</p>
+<b>Helion Operation &amp; Maintenance.</b> HLM is responsible for the deploy, upgrade and maintenance lifecycle of the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade system.</p>
 </li>
 </ul>
 <p>

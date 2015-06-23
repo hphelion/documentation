@@ -21,29 +21,6 @@
 <!--PUBLISHED-->
  <!--./devplatform/helion/user/deploy/1.1manifestyml.md-->
  <!--permalink: /helion/devplatform/1.1/als/user/deploy/manifestyml/--></p>
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20922">
-<title>HP Helion 1.2 Development Platform: Manifest.yml Options</title>
-<prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Development Platform"/>
-<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
-<othermeta name="role" content="Application Developer"/>
-<othermeta name="role" content="ISV Developer"/>
-<othermeta name="role" content="Service Developer"/>
-<othermeta name="role" content="Systems Administrator"/>
-<othermeta name="role" content="Jayme P"/>
-<othermeta name="product-version1" content="HP Helion Development Platform"/>
-<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
-</metadata>
-</prolog>
-<body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/deploy/1.2manifestyml.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/deploy/manifestyml/--></p>
   <p>The <i>manifest.yml</i> file sets application configuration options which are then passed to ALS during the <xref href="#topic20922/command-push" >helion push</xref> command.</p>
 <p>This file is the standard application configuration file format for all Cloud Foundry systems, allowing for portability from those systems to Application Lifecycle Service without configuration changes. See <xref href="http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html" scope="external" format="html" >Application Manifests</xref> for the complete canonical documentation.</p>
 <p>The client uses the keys to determine values that are otherwise passed by the user as arguments or as answers to prompts.</p>
@@ -84,7 +61,7 @@
                 <xref type="section" href="#topic20922/document-root">document-root:</xref>
               </li>
               <li>
-                <xref type="section" href="#topic20922/start-file">start-file:</xref>
+                <xref href="#topic20986/start-file" format="dita">start-file</xref>
               </li>
             </ul></li>
 <li>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1345">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Support Matrix for the KVM Host (HLM)</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Support Matrix for the KVM Host (HLM)</title>
 <titlealts>
 <searchtitle>HP Helion Openstack Carrier Grade: Support Matrix</searchtitle>
 </titlealts>
@@ -21,7 +21,7 @@
  <!--./CarrierGrade/Installation/carrier-grade-support-matrix-hlm.md-->
  <!--permalink: /helion/openstack/carrier/support-matrix/hlm/--></p>
 <p>
-<xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >▲ HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Support Matrix</xref> |  <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-helion.dita" > Support Matrix for HP Helion <tm tmtype="reg">Openstack</tm> ▶</xref> </p>
+<xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >▲ HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Support Matrix</xref> |  <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-helion.dita" > Support Matrix for HP Helion <tm tmtype="reg">OpenStack</tm> ▶</xref> </p>
 <p>To ensure the performance and stability of the HP Lifecycle Management, it is very important to meet the requirements and conform to the following recommendations.</p>
 <section id="software-requirements"> <title>Software Requirements</title>
 <p>The KVM Host is a computer running Ubuntu Server 14.04.2 LTS. The following packages are also required:</p>

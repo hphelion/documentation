@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic25331">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Technical Overview</title>
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic25331">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Technical Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,12 +15,12 @@
 <p>
 
 </p>
-<p>This page introduces you to HP Helion <tm tmtype="reg">Openstack</tm> an enterprise-grade distribution of the <tm tmtype="reg">Openstack</tm> cloud operating system.</p>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> allows you to easily deploy <tm tmtype="reg">Openstack</tm> Cloud Services in a secure, highly available configuration, and subsequently deploy, manage and operate your cloud infrastructure in production.</p>
-<p>It is  designed to offer a number of value-added services that complement and enhance <tm tmtype="reg">Openstack</tm> and set up a cloud. HP <tm tmtype="reg">Openstack</tm> is enabled to manage KVM and VMWare ESX hypervisors.</p>
+<p>This page introduces you to HP Helion <tm tmtype="reg">OpenStack</tm> an enterprise-grade distribution of the <tm tmtype="reg">OpenStack</tm> cloud operating system.</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> allows you to easily deploy <tm tmtype="reg">OpenStack</tm> Cloud Services in a secure, highly available configuration, and subsequently deploy, manage and operate your cloud infrastructure in production.</p>
+<p>It is  designed to offer a number of value-added services that complement and enhance <tm tmtype="reg">OpenStack</tm> and set up a cloud. HP <tm tmtype="reg">OpenStack</tm> is enabled to manage KVM and VMWare ESX hypervisors.</p>
 <ul>
 <li>
-<xref type="section" href="#topic25331/Helion-services">HP Helion <tm tmtype="reg">Openstack</tm> services</xref>
+<xref type="section" href="#topic25331/Helion-services">HP Helion <tm tmtype="reg">OpenStack</tm> services</xref>
 </li>
 <li>
 <xref type="section" href="#topic25331/deploy-arch">Deployment architecture</xref>
@@ -94,8 +94,8 @@
 <xref type="section" href="#topic25331/next">Next Steps</xref>
 </li>
 </ul>
-<section id="Helion-services"> <title>HP Helion <tm tmtype="reg">Openstack</tm> Services- Functional Overview</title>
-<p>The following table outlines the functionality of HP Helion <tm tmtype="reg">Openstack</tm> services based on the type of users - Users and Administrators. For a complete description of these services, see the <xref href="../../commercial/GA1/1.0commerical.services-overview.dita" >Services Overview</xref> page.</p>
+<section id="Helion-services"> <title>HP Helion <tm tmtype="reg">OpenStack</tm> Services- Functional Overview</title>
+<p>The following table outlines the functionality of HP Helion <tm tmtype="reg">OpenStack</tm> services based on the type of users - Users and Administrators. For a complete description of these services, see the <xref href="../../commercial/GA1/1.0commerical.services-overview.dita">Services Overview</xref> page.</p>
 <table>
 <tgroup cols="3">
 <colspec colname="col1"/>
@@ -124,15 +124,15 @@
 <entry>
 <b>Compute Operations (Nova)</b>
 </entry>
-    <entry>The HP Helion <tm tmtype="reg">Openstack</tm> Compute supports an API to instantiate and manage virtual servers on KVM  and VMware ESX hypervisors. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--> Users can create and manage the life cycle of virtual machines (suspend, resume, snapshot, and so forth), attach block storage volumes, work with security groups and key pairs, and associate floating IP addresses. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-compute-overview.dita" >Learn more</xref> about the Compute Operations service.</entry>
+    <entry>The HP Helion <tm tmtype="reg">OpenStack</tm> Compute supports an API to instantiate and manage virtual servers on KVM  and VMware ESX hypervisors. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--> Users can create and manage the life cycle of virtual machines (suspend, resume, snapshot, and so forth), attach block storage volumes, work with security groups and key pairs, and associate floating IP addresses. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-compute-overview.dita">Learn more</xref> about the Compute Operations service.</entry>
     <entry> Administrators can also configure server flavors, modify project quotas, configure availability zones, enable and disable services, and work with virtual machines.</entry>
 </row>
 <row>
 <entry>
 <b>Block Storage<!--A BR tag was used here in the original source.-->Volume (Cinder)</b>
 </entry>
-    <entry>The HP Helion <tm tmtype="reg">Openstack</tm> Block Storage supports an API to instantiate and manage block storage volumes on HP StoreServ 3PAR devices and StoreVirtual Software Defined Storage. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->User can create volumes, attach them to VMs, and take snapshots and backups.
-    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-volume-overview.dita" >Learn more </xref> about the Volume Operations service.
+    <entry>The HP Helion <tm tmtype="reg">OpenStack</tm> Block Storage supports an API to instantiate and manage block storage volumes on HP StoreServ 3PAR devices and StoreVirtual Software Defined Storage. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->User can create volumes, attach them to VMs, and take snapshots and backups.
+    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-volume-overview.dita">Learn more </xref> about the Volume Operations service.
     </entry>
     <entry>Administrators can deploy StoreVirtual VSA Software Defined Storage, and configure drivers for StoreVirtual and StoreServ 3PAR using the Sirius service. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
     Administrsators can create volume types and associate quality of service with volume types, and map StoreServ and StoreVirtual backends to the volume types.</entry>
@@ -141,8 +141,8 @@
 <entry>
 <b>Object Operations (Swift)</b>
 </entry>
-    <entry>The HP Helion <tm tmtype="reg">Openstack</tm> Object and Operations service helps manage the storage and retrieval of objects in publicly accessible physical machines. 
-    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->Users can configure storage containers, upload and download container files, and delete container files.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-object-overview.dita" >Learn more</xref> about the Object Operations service and Ringos.</entry>
+    <entry>The HP Helion <tm tmtype="reg">OpenStack</tm> Object and Operations service helps manage the storage and retrieval of objects in publicly accessible physical machines. 
+    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->Users can configure storage containers, upload and download container files, and delete container files.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-object-overview.dita">Learn more</xref> about the Object Operations service and Ringos.</entry>
     
     <entry>Administrators can easily start with two auto-configured storage nodes, and then scale out by deploying additional Swift Proxy and Object Storage nodes. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->The Ringos CLI Utility is provided to format drives and easily manage Swift rings. </entry>
  </row>
@@ -151,25 +151,25 @@
 <b>Network Operations (Neutron)<b/>
 </b>
 </entry>
-    <entry>The HP Helion <tm tmtype="reg">Openstack</tm> Network Operations service provides network connectivity and IP addressing for virtual machines managed by Compute service.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--> User can create and configure virtual networks and routers, subnets, floating IP addresses, security groups, load balancers and firewalls.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-networking-overview.dita" >Learn more</xref> about the Network Operations service.</entry>
+    <entry>The HP Helion <tm tmtype="reg">OpenStack</tm> Network Operations service provides network connectivity and IP addressing for virtual machines managed by Compute service.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--> User can create and configure virtual networks and routers, subnets, floating IP addresses, security groups, load balancers and firewalls.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-networking-overview.dita">Learn more</xref> about the Network Operations service.</entry>
     <entry>Administrators can also create an external network, and work with DHCP agents and L3 agents.</entry>
 </row>
 <row>
 <entry>
 <b>Identity Operations (Keystone)</b>
 </entry>
-    <entry>The HP Helion <tm tmtype="reg">Openstack</tm> Identity Operations service provides one-stop authentication.
+    <entry>The HP Helion <tm tmtype="reg">OpenStack</tm> Identity Operations service provides one-stop authentication.
 
-    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-identity-overview.dita" >Learn more</xref> about the Identity Operations service.</entry>
+    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-identity-overview.dita">Learn more</xref> about the Identity Operations service.</entry>
     <entry>Administrators can create and configure projects/tenants and users, and set credentials, and issue security tokens.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->MySQL and LDAP/ADS are supported.</entry>
     </row>
 <row>
 <entry>
 <b>Image Operations (Glance)</b>
 </entry>
-    <entry>The HP Helion <tm tmtype="reg">Openstack</tm> Image Operations service helps to manage virtual machine images, including querying and updating image metadata, and retrieval of the actual image data.
+    <entry>The HP Helion <tm tmtype="reg">OpenStack</tm> Image Operations service helps to manage virtual machine images, including querying and updating image metadata, and retrieval of the actual image data.
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
-    User can create, modify, and delete private images.     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-imaging-overview.dita" >Learn more</xref> about Image Operations.</entry>
+    User can create, modify, and delete private images.     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-imaging-overview.dita">Learn more</xref> about Image Operations.</entry>
     <entry>Administrators can create, modify and delete public images and private images. These images are made available to the users.</entry>
 </row>
 <row>
@@ -177,8 +177,8 @@
 <b>Orchestration (Heat)</b>
 </entry>
     <entry>The HP Helion Orchestration service enables you to deploy and configure multiple composite cloud applications using template formats. It enables you to work with nested stacks, which are a mechanism of using built-in stack definitions for specific resource types.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
-    Users can create stacks, suspend and resume stacks, view information on stacks, view information on events, work with stack templates and infrastructure resources (such as servers, floating IPs, volumes, and security groups).<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-orchestration-overview.dita" >Learn more</xref> about the Orchestration services.</entry> 
-    <entry>Administrators can deploy and configure the <tm tmtype="reg">Openstack</tm> overcloud using the Orchestration service provided in the undercloud.</entry>
+    Users can create stacks, suspend and resume stacks, view information on stacks, view information on events, work with stack templates and infrastructure resources (such as servers, floating IPs, volumes, and security groups).<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-orchestration-overview.dita">Learn more</xref> about the Orchestration services.</entry> 
+    <entry>Administrators can deploy and configure the <tm tmtype="reg">OpenStack</tm> overcloud using the Orchestration service provided in the undercloud.</entry>
 </row>
 <row>
 <entry>
@@ -186,9 +186,9 @@
 </entry>
     <entry>The HP Helion Sherpa service is a content distribution catalog service provides a mechanism to download the content such as Image Operation images, Orchestration templates, and so forth, from the HP Helion CODN and install the content in the appropriate service such as the Identity service etc.
 
-    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-sherpa-overview.dita" >Learn more </xref> about the HP Helion Sherpa Service.
+    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-sherpa-overview.dita">Learn more </xref> about the HP Helion Sherpa Service.
     </entry> 
-    <entry>Administrators can download content such as software patches and updates from the HP Helion CODN and apply the downloaded content to their Helion <tm tmtype="reg">Openstack</tm> installation. </entry>
+    <entry>Administrators can download content such as software patches and updates from the HP Helion CODN and apply the downloaded content to their Helion <tm tmtype="reg">OpenStack</tm> installation. </entry>
 </row>
 <row>
 <entry>
@@ -196,7 +196,7 @@
 </entry>
     <entry>The HP Helion ESX onboarding (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. The information is used for deployment and configuration of ESX Proxy Compute node. EON service is deployed in undercloud controller node.
 
-    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="../../commercial/GA1/1.0commerical.services-eon-overview.dita" > Learn more</xref> HP Helion EON services.</entry>
+    </entry>
     <entry>Administrators can interact with VMware vCenter servers to discover, inventory and map ESX clusters to be used by the Compute service. 
 </entry>
 </row>
@@ -204,8 +204,8 @@
 <entry>
 <b>Sirius services</b>
 </entry>
-    <entry>The HP Helion <tm tmtype="reg">Openstack</tm> Sirius service is a REST-based web service for storage device management. It is used to configure of storage services such as the  Block Storage and the Object Operations services that run in the overcloud and manage various storage devices.
-     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="1.0commerical.services-sirius-overview.dita" >Learn more</xref> HP Helion <tm tmtype="reg">Openstack</tm> Sirius service.</entry> 
+    <entry>The HP Helion <tm tmtype="reg">OpenStack</tm> Sirius service is a REST-based web service for storage device management. It is used to configure of storage services such as the  Block Storage and the Object Operations services that run in the overcloud and manage various storage devices.
+     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="1.0commerical.services-sirius-overview.dita">Learn more</xref> HP Helion <tm tmtype="reg">OpenStack</tm> Sirius service.</entry> 
     <entry>Administrators can maintain an inventory of used 3PAR devices and CPGs, and StoreVirtual devices and VSAs  and configure Cinder 3PAR and StoreVirtual backends.</entry>
 </row>
 <row>
@@ -213,8 +213,8 @@
 <b>DVR services</b>
 </entry>
 
-    <entry>HP Helion <tm tmtype="reg">Openstack</tm> Distributed Virtual Routing (DVR) allows you to define connectivity among different Virtual Network Switches (VNS) as well as connectivity between VNS hosts and the external network. HP Helion <tm tmtype="reg">Openstack</tm> provides Distributed Virtual Routing to cloud users.
-     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="1.0commerical.services-dvr-overview.dita" >Learn more</xref> HP Helion <tm tmtype="reg">Openstack</tm> DVR service.</entry> 
+    <entry>HP Helion <tm tmtype="reg">OpenStack</tm> Distributed Virtual Routing (DVR) allows you to define connectivity among different Virtual Network Switches (VNS) as well as connectivity between VNS hosts and the external network. HP Helion <tm tmtype="reg">OpenStack</tm> provides Distributed Virtual Routing to cloud users.
+     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref href="1.0commerical.services-dvr-overview.dita">Learn more</xref> HP Helion <tm tmtype="reg">OpenStack</tm> DVR service.</entry> 
 
     <entry> Administrators can  create centralized router (legacy router).</entry>
 </row>
@@ -226,7 +226,7 @@
 </p>
 </section>
 <section id="deploy-arch"> <title>Deployment architecture</title>
-<p>You can deploy HP Helion <tm tmtype="reg">Openstack</tm> in two different environments depending on the hypervisor: KVM or ESX.</p>
+<p>You can deploy HP Helion <tm tmtype="reg">OpenStack</tm> in two different environments depending on the hypervisor: KVM or ESX.</p>
 </section>
 <section id="KVM-env"> <title>KVM environment</title>
 <p>The following diagram depicts a simplified deployment scenario using KVM.</p>
@@ -243,7 +243,7 @@
 </p>
 </section>
 <section id="hardware-req"> <title>Hardware requirement</title>
-<p>The following hardware requirements are required to install HP Helion <tm tmtype="reg">Openstack</tm></p>
+<p>The following hardware requirements are required to install HP Helion <tm tmtype="reg">OpenStack</tm></p>
 <ul>
 <li>At least 8 and up to 100 baremetal systems with the following configuration:
 
@@ -274,7 +274,7 @@
 </ul>
 </li>
 </ul>
-<p>For more information of Hardware configuration see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >Hardware configuration</xref> and <xref href="../../commercial/GA1/1.0commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>
+<p>For more information of Hardware configuration see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita">Hardware configuration</xref> and <xref href="../../commercial/GA1/1.0commercial.install-GA-supportmatrix.dita">Support Matrix</xref>.</p>
 <p>
   <xref type="section" href="#topic25331"> Return to Top </xref>
 </p>
@@ -303,7 +303,7 @@
 </ul>
 </li>
 </ul>
-<p>For detailed information, see the <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#network" >Preparing the network</xref> section of the <i>Prerequisites</i>.</p>
+<p>For detailed information, see the <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#network">Preparing the network</xref> section of the <i>Prerequisites</i>.</p>
 <table>
 <tgroup cols="4">
 <colspec colname="col1"/>
@@ -330,7 +330,7 @@
 <row>
 <entry> Undercloud management </entry>
 <entry> <ul>
-<li>Traffic for undercloud internal <tm tmtype="reg">Openstack</tm> calls, Image Operation service downloads, and so forth.</li>
+<li>Traffic for undercloud internal <tm tmtype="reg">OpenStack</tm> calls, Image Operation service downloads, and so forth.</li>
 <li>Provides access to undercloud API endpoints</li>
 <li>Used to PXE boot overcloud servers</li>
 </ul>
@@ -341,7 +341,7 @@
 </row>
 <row>
 <entry> Overcloud management </entry>
-<entry> Traffic for overcloud internal <tm tmtype="reg">Openstack</tm> calls, Image Operations service downloads, and so forth. </entry>
+<entry> Traffic for overcloud internal <tm tmtype="reg">OpenStack</tm> calls, Image Operations service downloads, and so forth. </entry>
 <entry> Untagged </entry>
 <entry> eth0</entry>
 
@@ -508,10 +508,10 @@
 </section>
 <section id="networkplan"> <title>Network planning</title>
 <p>You must manage and prepare the network based on the type of hypervisor.</p>
-<p>For more details information on network planning see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >Preparing your network</xref>.</p>
+<p>For more details information on network planning see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita">Preparing your network</xref>.</p>
 </section>
 <section id="networksecurity"> <title>Network security</title>
-<p>The Network Administrator must set up routing and firewalls for tenants to access service APIs which are only exposed on the management network. For more information on guidelines for setting up security firewalls and routing see <xref href="../../commercial/GA1/1.0commercial.install-GA-security.dita" >Network security</xref>.</p>
+<p>The Network Administrator must set up routing and firewalls for tenants to access service APIs which are only exposed on the management network. For more information on guidelines for setting up security firewalls and routing see <xref href="../../commercial/GA1/1.0commercial.install-GA-security.dita">Network security</xref>.</p>
 <!--
 
 The physical machines need to have their management processors (iLO) connected to a network that is reachable from the Seed VM. The physical machines and the Seed VM need to be connected to a fast network.
@@ -529,8 +529,8 @@ The physical cluster network can be shared by a number of logical networks, each
 </p>
 </section>
 <section id="install-configure"> <title>Installation planning</title>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> uses three linked installation phases, called <tm tmtype="reg">Openstack</tm>-on-<tm tmtype="reg">Openstack</tm> (TripleO), to deploy a complete <tm tmtype="reg">Openstack</tm> cloud. TripleO simulates the deployment of <tm tmtype="reg">Openstack</tm> by creating and configuring baremetal servers to successfully run a cloud deployment.</p>
-<p>TripleO is <tm tmtype="reg">Openstack</tm> official project for deployment, configuration, and life cycle management of <tm tmtype="reg">Openstack</tm> clouds. A TripleO installation includes a seed, undercloud and overcloud:</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> uses three linked installation phases, called <tm tmtype="reg">OpenStack</tm>-on-<tm tmtype="reg">OpenStack</tm> (TripleO), to deploy a complete <tm tmtype="reg">OpenStack</tm> cloud. TripleO simulates the deployment of <tm tmtype="reg">OpenStack</tm> by creating and configuring baremetal servers to successfully run a cloud deployment.</p>
+<p>TripleO is <tm tmtype="reg">OpenStack</tm> official project for deployment, configuration, and life cycle management of <tm tmtype="reg">OpenStack</tm> clouds. A TripleO installation includes a seed, undercloud and overcloud:</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>
@@ -540,23 +540,23 @@ The physical cluster network can be shared by a number of logical networks, each
 <entry>
 <b>Seed VM</b>
 </entry>
-    <entry>The Seed cloud is deployed as a VM instance. This image contains minimal <tm tmtype="reg">Openstack</tm> services required to deploy and update the undercloud on a baremetal server.
+    <entry>The Seed cloud is deployed as a VM instance. This image contains minimal <tm tmtype="reg">OpenStack</tm> services required to deploy and update the undercloud on a baremetal server.
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
     The host server running the seed VM is also used to run backup restore procedures for the seed VM, undercloud and overcloud. The seed VM is also used to run the StoreVirtual CMC Management Console.
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
-    The seed VM does not run in a HA configuration, but is an important component of the cloud. Learn more about the <xref href="../../commercial/GA1/1.0commercial.backup-restore-GA.dita" >Backup and Restore procedures</xref> to restore the seed VM in event of server problems.
+    The seed VM does not run in a HA configuration, but is an important component of the cloud. Learn more about the <xref href="../../commercial/GA1/1.0commercial.backup-restore-GA.dita">Backup and Restore procedures</xref> to restore the seed VM in event of server problems.
 </entry>
 </row>
 <row>
 <entry>
 <b>Undercloud</b>
 </entry>
-     <entry>A single-server deployment of a limited set of <tm tmtype="reg">Openstack</tm> services, called the undercloud, is used to deploy, test, manage, and update all the overcloud servers. 
+     <entry>A single-server deployment of a limited set of <tm tmtype="reg">OpenStack</tm> services, called the undercloud, is used to deploy, test, manage, and update all the overcloud servers. 
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
     The undercloud comprises the Compute, Ironic, Networking Operations, Object Operations, Identity Operations, and Orchestration services, which are used to deploy and configure various nodes of the overcloud on baremetal servers.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->The Centralized Logging and Monitoring components run in the undercloud and can be accessed using a Web Browser. <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->The Sherpa, Eon and Sirius services also run in the undercloud, and can be accessed via panels in the Horizon Dashboard fr the undercloud.
     The undercloud does not run in a HA configuration, but is an important component of the cloud. 
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
-    Learn more about the <xref href="../../commercial/GA1/1.0commercial.backup-restore-GA.dita" >Backup and Restore procedures</xref> to restore the undercloud in event of server problems. 
+    Learn more about the <xref href="../../commercial/GA1/1.0commercial.backup-restore-GA.dita">Backup and Restore procedures</xref> to restore the undercloud in event of server problems. 
  </entry>
 </row>
 <row>
@@ -564,8 +564,8 @@ The physical cluster network can be shared by a number of logical networks, each
 <b>Overcloud<b/>
 </b>
 </entry>
-    <entry>The overcloud is the functional cloud available to end users for running guest virtual machines and workloads. The overcloud comprises <tm tmtype="reg">Openstack</tm> Cloud Services deployed on controller nodes, and a number of compute nodes and storage nodes. 
-    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->The cloud services in the overcloud, used by end users, include Compute, Networking, Block Storage, Object Operations, Horizon, Image Operations, Identity Operations, and Orchestration as described in the <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita#Helion-services" > Functional Overview </xref>section above. 
+    <entry>The overcloud is the functional cloud available to end users for running guest virtual machines and workloads. The overcloud comprises <tm tmtype="reg">OpenStack</tm> Cloud Services deployed on controller nodes, and a number of compute nodes and storage nodes. 
+    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->The cloud services in the overcloud, used by end users, include Compute, Networking, Block Storage, Object Operations, Horizon, Image Operations, Identity Operations, and Orchestration as described in the <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita#Helion-services"> Functional Overview </xref>section above. 
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->These services are deployed in a highly available cluster across the three Controller nodes.
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->For KVM based Hypervisor environments, the overcloud also comprises Nova Compute nodes running the KVM hypervisor, and Block Storage nodes running the StoreVirtual VSA.
 </entry>
@@ -576,34 +576,34 @@ The physical cluster network can be shared by a number of logical networks, each
 <p>
 <b>Note:</b> You cannot build or rebuild the images. Direct editing of the Orchestration (Heat) templates is possible, but not supported. Configuration is limited to those items supported by the configuration tool and Horizon.</p>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-overview.dita" >Learn more</xref> about installing and configuring HP Helion <tm tmtype="reg">Openstack</tm></p>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-overview.dita">Learn more</xref> about installing and configuring HP Helion <tm tmtype="reg">OpenStack</tm></p>
 </section>
 <section id="install-option"> <title>Installation options</title>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> is provided with two baremetal installation options depending on your system configuration.  It allows you to manage the KVM and ESX hypervisors and provision virtual machines.</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> is provided with two baremetal installation options depending on your system configuration.  It allows you to manage the KVM and ESX hypervisors and provision virtual machines.</p>
 </section>
 <section id="kvm-Hypervisor"> <title>KVM Hypervisor with HP StoreVirtual VSA support</title>
 <p>Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.</p>
 <p>
-<xref type="section" href="#topic25331/KVM-env">HP Helion <tm tmtype="reg">Openstack</tm> architecture diagram for KVM network architecture</xref>.</p>
+<xref type="section" href="#topic25331/KVM-env">HP Helion <tm tmtype="reg">OpenStack</tm> architecture diagram for KVM network architecture</xref>.</p>
 <!-- this is redundant diagram
 <img src="/media/topology_kvm.png"/)> -->
 <p>HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. VSA eliminates the need for external shared storage required to implement Block Storage features. VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.</p>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> architecture diagram for Store Virtual volume type mapping</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> architecture diagram for Store Virtual volume type mapping</p>
 <p>
   <image href="../../media/reference-architecture-StoreVirtual-volume-type-mapping.png"/>
 </p>
 <p>
-<b>Note:</b> Your HP Helion <tm tmtype="reg">Openstack</tm> installation can be configured <xref href="../../commercial/GA1/1.0commercial.install-3par.dita" >to use 3Par for block storage</xref>.</p>
+<b>Note:</b> Your HP Helion <tm tmtype="reg">OpenStack</tm> installation can be configured <xref href="../../commercial/GA1/1.0commercial.install-3par.dita">to use 3Par for block storage</xref>.</p>
 </section>
 <section id="esx-hypervisor"> <title>ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support</title>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Compute node scheduler sees each cluster as compute and uses the same for scheduling a new instances.</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Compute node scheduler sees each cluster as compute and uses the same for scheduling a new instances.</p>
 <p>An ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK. All the details of vCenter in the Cloud Controller  are required to be captured. The EON service sub-component, captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters managed by ESX Proxy Compute node.</p>
 <p>The ESX integration uses the OVSvApp application to connect the vCenter networking to the Network Operations controller to manage workload networks.</p>
 <p>
-<xref type="section" href="#topic25331/esx-env">HP Helion <tm tmtype="reg">Openstack</tm> architecture diagram for ESX</xref>
+<xref type="section" href="#topic25331/esx-env">HP Helion <tm tmtype="reg">OpenStack</tm> architecture diagram for ESX</xref>
 <!--redundant diagram
 <img src="/media/commercial_esx_network_architecture.png"/> --></p>
-<p>The HP Virtual Cloud Networking (VCN) application is an enhanced Networking Operations (Neutron) module of HP Helion <tm tmtype="reg">Openstack</tm> that delivers network virtualization to orchestrate your data center infrastructure.</p>
+<p>The HP Virtual Cloud Networking (VCN) application is an enhanced Networking Operations (Neutron) module of HP Helion <tm tmtype="reg">OpenStack</tm> that delivers network virtualization to orchestrate your data center infrastructure.</p>
 <p>HP VCN enables you to build a robust, multi-tenant networking infrastructure that delivers ready-to-use compute, storage, and networking by providing;</p>
 <ul>
 <li>Scalable, secure, and hardened enterprise cloud networking</li>
@@ -611,9 +611,9 @@ The physical cluster network can be shared by a number of logical networks, each
 </ul>
 </section>
 <section id="DNSaaS"> <title>DNS as a service (DNSaaS)</title>
-<p>After installing HP Helion <tm tmtype="reg">Openstack</tm> you have the option to install HP Helion <tm tmtype="reg">Openstack</tm> DNS as a service (DNSaaS) support. The HP Helion <tm tmtype="reg">Openstack</tm> DNS (Domain Name System) service, based on the <tm tmtype="reg">Openstack</tm> Designate project, is a managed DNS service engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
+<p>After installing HP Helion <tm tmtype="reg">OpenStack</tm> you have the option to install HP Helion <tm tmtype="reg">OpenStack</tm> DNS as a service (DNSaaS) support. The HP Helion <tm tmtype="reg">OpenStack</tm> DNS (Domain Name System) service, based on the <tm tmtype="reg">OpenStack</tm> Designate project, is a managed DNS service engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" >Learn more</xref> about DNSaaS installation and configuration.</p>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita">Learn more</xref> about DNSaaS installation and configuration.</p>
 <!--
 Currently, supported DNS servers and networks include: 
 
@@ -623,9 +623,9 @@ Currently, supported DNS servers and networks include:
 </p>
 </section>
 <section id="highavailability"> <title>High availability</title>
-<p>The HP Helion <tm tmtype="reg">Openstack</tm> High Availability (HA) architecture ensures that cloud resources are always available on request, resulting in uninterrupted operations for users.</p>
-<p>The <tm tmtype="reg">Openstack</tm> services are deployed in a three node Controller cluster, which ensures availability of stateless services like API services and stateful services like MySQL or RabbitMQ.</p>
-<p>For more details on HA configuration, refer to <xref href="../../commercial/GA1/1.0commerical.high-availability.dita" >HP Helion <tm tmtype="reg">Openstack</tm> High Availability</xref> and <xref href="http://docs.openstack.org/high-availability-guide/content/index.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> HA Guide</xref>.</p>
+<p>The HP Helion <tm tmtype="reg">OpenStack</tm> High Availability (HA) architecture ensures that cloud resources are always available on request, resulting in uninterrupted operations for users.</p>
+<p>The <tm tmtype="reg">OpenStack</tm> services are deployed in a three node Controller cluster, which ensures availability of stateless services like API services and stateful services like MySQL or RabbitMQ.</p>
+<p>For more details on HA configuration, refer to <xref href="../../commercial/GA1/1.0commerical.high-availability.dita">HP Helion <tm tmtype="reg">OpenStack</tm> High Availability</xref> and <xref href="http://docs.openstack.org/high-availability-guide/content/index.html" scope="external" format="html"><tm tmtype="reg">OpenStack</tm> HA Guide</xref>.</p>
 <p>
   <xref type="section" href="#topic25331"> Return to Top </xref>
 </p>
@@ -633,7 +633,7 @@ Currently, supported DNS servers and networks include:
 <section id="updates-and-extensions"> <title>Updates and extensions</title>
 <p>Updates and extensions provides a mechanism to download and install the content and updates for the overcloud.</p>
 <p>For more information refer
-<xref href="../../commercial/GA1/1.0commercial.undercloud-admin-updates-and-extensions.dita" >Updates and extension</xref>.</p>
+<xref href="../../commercial/GA1/1.0commercial.undercloud-admin-updates-and-extensions.dita">Updates and extension</xref>.</p>
 <p>
   <xref type="section" href="#topic25331"> Return to Top </xref>
 </p>
@@ -642,36 +642,36 @@ Currently, supported DNS servers and networks include:
 <p>The following systems help you manage your cloud services.</p>
 </section>
 <section id="centralized-logging"> <title>Centralized Logging</title>
-<p>Centralized logging is based on <xref href="http://logstash.net/" scope="external" format="html" >Logstash</xref>, <xref href="http://www.elasticsearch.org/" scope="external" format="html" >Elasticsearch</xref>, and <xref href="http://www.elasticsearch.org/guide/en/kibana/current/_dashboard_schema.html" scope="external" format="html" >Kibana Dashboard</xref> which is deployed in the undercloud server.</p>
+<p>Centralized logging is based on <xref href="http://logstash.net/" scope="external" format="html">Logstash</xref>, <xref href="http://www.elasticsearch.org/" scope="external" format="html">Elasticsearch</xref>, and <xref href="http://www.elasticsearch.org/guide/en/kibana/current/_dashboard_schema.html" scope="external" format="html">Kibana Dashboard</xref> which is deployed in the undercloud server.</p>
 <p>Centralized logging helps the administrator triage and troubleshoot the distributed cloud deployment from the undercloud. The user is not required to access the  several remote server (SSH) to view the individual log files.</p>
 <p>
 <b>Note:</b> Logging requires 4GB of disk space to make sure that all logging messages are retained. <!-- CORE-1964 --></p>
 </section>
 <section id="monitoring"> <title>Monitoring</title>
-<p>The administrator can monitor the availability of all hosts and services in the overcloud using the <xref href="https://www.icinga.org/" scope="external" format="html" >Icinga Monitoring server</xref> deployed in the undercloud.</p>
+<p>The administrator can monitor the availability of all hosts and services in the overcloud using the <xref href="https://www.icinga.org/" scope="external" format="html">Icinga Monitoring server</xref> deployed in the undercloud.</p>
 <p>System and service health checks are based on the <b>check_mk</b> framework. Health checks are executed locally on each node, and their results are sent over to the central Icinga server, thereby distributing the processing and allowing the Icinga server to scale up. When new nodes are added to the cloud, they are automatically discovered and monitored.</p>
-<p>For more information refer to <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.dita" >Monitoring</xref>.</p>
+<p>For more information refer to <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.dita">Monitoring</xref>.</p>
 </section>
 <section id="add-remove-replace-nodes"> <title>Add, remove and replace nodes</title>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> provides automation scripts to add capacity to the cloud for compute, storage, and networking.</p>
-<p>You can prepare hardware servers and incrementally deploy HP Compute nodes, HP StoreVirtual VSA Block Storage nodes, and <tm tmtype="reg">Openstack</tm> Swift Proxy and Object Storage nodes.</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> provides automation scripts to add capacity to the cloud for compute, storage, and networking.</p>
+<p>You can prepare hardware servers and incrementally deploy HP Compute nodes, HP StoreVirtual VSA Block Storage nodes, and <tm tmtype="reg">OpenStack</tm> Swift Proxy and Object Storage nodes.</p>
 <p>Conversely, you can decommission servers and remove specific nodes from the cloud.</p>
 <p>If any of the controller nodes fails, you can remove and replace controller nodes, while re-connecting them automatically into the HA cluster.</p>
-<p>For more information refer to <xref href="../../commercial/GA1/1.0commerical.services-remove-replace-failed-overcloud-nodes.dita" >Removing and Replacing a Failed Overcloud Controller</xref>.</p>
-<p>For more information on adding (Scale Out) or removing (Scale In) nodes (KVM Compute Nodes) to an already-installed overcloud on a KVM hypervisor, see <xref href="../../commercial/GA1/1.0commercial.install-add-nodes.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</xref>.</p>
+<p>For more information refer to <xref href="../../commercial/GA1/1.0commerical.services-remove-replace-failed-overcloud-nodes.dita">Removing and Replacing a Failed Overcloud Controller</xref>.</p>
+<p>For more information on adding (Scale Out) or removing (Scale In) nodes (KVM Compute Nodes) to an already-installed overcloud on a KVM hypervisor, see <xref href="../../commercial/GA1/1.0commercial.install-add-nodes.dita">HP Helion <tm tmtype="reg">OpenStack</tm> Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</xref>.</p>
 </section>
 <section id="backup-restore-nodes"> <title>Backup and Restore nodes</title>
-<p>Backup and restore scripts and procedures are provided for the seed VM, undercloud, overcloud management controller (running singleton services like Sherpa), and the MySQL database deployed in the controller cluster. These scripts are to be used by administrators managing the <tm tmtype="reg">Openstack</tm> Cloud.</p>
+<p>Backup and restore scripts and procedures are provided for the seed VM, undercloud, overcloud management controller (running singleton services like Sherpa), and the MySQL database deployed in the controller cluster. These scripts are to be used by administrators managing the <tm tmtype="reg">OpenStack</tm> Cloud.</p>
 <p>Backup and Restore of VM instances/snapshots and volumes/snapshots for workloads in the cloud is supported using the Object Storage service.</p>
-<p>For more information see <xref href="../../commercial/GA1/1.0commercial.backup-restore-GA.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Back Up and Restore</xref>
+<p>For more information see <xref href="../../commercial/GA1/1.0commercial.backup-restore-GA.dita">HP Helion <tm tmtype="reg">OpenStack</tm> Back Up and Restore</xref>
 </p>
 <p>
   <xref type="section" href="#topic25331"> Return to Top </xref>
 </p>
 </section>
 <section id="next"> <title>Next Steps</title>
-<p>Review the <xref href="../../commercial/GA1/1.0commercial.install-GA-supportmatrix.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Support Matrix</xref>.</p>
-<p>To prepare your environment for the installation, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Installation: Prerequisites</xref>.</p>
+<p>Review the <xref href="../../commercial/GA1/1.0commercial.install-GA-supportmatrix.dita">HP Helion <tm tmtype="reg">OpenStack</tm> Support Matrix</xref>.</p>
+<p>To prepare your environment for the installation, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita">HP Helion <tm tmtype="reg">OpenStack</tm> Installation: Prerequisites</xref>.</p>
 <p>
   <xref type="section" href="#topic25331"> Return to Top </xref>
 </p>

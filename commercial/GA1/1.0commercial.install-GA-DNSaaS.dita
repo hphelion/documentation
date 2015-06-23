@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic15064">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: DNSaaS Installation and Configuration</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: DNSaaS Installation and Configuration</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,8 +15,8 @@
 <p>
 
 </p>
-<p>Our managed DNS service, based on the <tm tmtype="reg">Openstack</tm> Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
-<p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion <tm tmtype="reg">Openstack</tm></p>
+<p>Our managed DNS service, based on the <tm tmtype="reg">OpenStack</tm> Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
+<p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion <tm tmtype="reg">OpenStack</tm></p>
 <p>
 <b>Caution</b>: Before migrating to DNSaaS 1.01, you <b>
 <varname>must</varname>
@@ -62,7 +62,7 @@
 <varname>must</varname>
 </b> first <xref type="section" href="#topic15064/uninstall">uninstall</xref> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.01 over the previous version. </p>
 <ul>
-<li>HP Helion <tm tmtype="reg">Openstack</tm> is successfully installed</li>
+<li>HP Helion <tm tmtype="reg">OpenStack</tm> is successfully installed</li>
 <li>Download <xref type="section" href="#topic15064/publication">DNSaaS Installer Image</xref> </li>
 <li>
 <p>Obtain <xref type="section" href="#topic15064/target-cred">Target Credentials</xref>: credentials of the user+tenant where the service is to be deployed.</p>
@@ -574,7 +574,7 @@ listen designate
 <xref href="https://docs.hpcloud.com/api/dns/" scope="external" format="html" >HP Helion Public Cloud DNS API Specifications</xref>
 </li>
 <li>
-<xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for <tm tmtype="reg">Openstack</tm></xref>
+<xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for <tm tmtype="reg">OpenStack</tm></xref>
 </li>
 </ul>
 <p>

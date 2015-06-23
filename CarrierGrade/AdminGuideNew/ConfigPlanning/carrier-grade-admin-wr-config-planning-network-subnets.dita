@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4830">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Planning for Subnets</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Planning for Subnets</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -59,7 +59,7 @@
 </ul>
 <p>On the web administration interface you set these attributes in the <xref href="../Networks/carrier-grade.dashboard.network.subnet.dita" >Subnet Detail tab of the Create Subnet window</xref>.</p>
 <section id="meta"> <title>Accessing the Metadata Server</title>
-<p>Access to the system's metadata server is available using the well known URL http://169.254.169.254. In the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade implementation, access to this address is provided by a virtual router attached to the tenant on which the access request is made. Virtual routers are automatically configured as proxies to the metadata service.</p>
+<p>Access to the system's metadata server is available using the well known URL http://169.254.169.254. In the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade implementation, access to this address is provided by a virtual router attached to the tenant on which the access request is made. Virtual routers are automatically configured as proxies to the metadata service.</p>
 <p>The following requirements must be satisfied in order for a guest application to access the metadata service:</p>
 <ul>
 <li>There is a route table entry to route traffic destined to the 169.254.169.254 address via a Neutron router, or via a suitable static route to the 169.254.169.254 address.</li>

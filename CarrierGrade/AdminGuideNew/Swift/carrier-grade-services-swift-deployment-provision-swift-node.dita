@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3429">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Provisioning Object Storage (Swift) Node(s)</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Provisioning Object Storage (Swift) Node(s)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -36,7 +36,7 @@
 <xref type="section" href="#topic3429/verify-swift-node-deployment">Verify the node deployment</xref> </li>
 </ul>
 <section id="Preq"> <title>Prerequisites</title>
-<p>A HP Helion <tm tmtype="reg">Openstack</tm> cloud must be deployed. This ensures that the Starter Swift nodes are installed and functional as they are part of the default HP Helion <tm tmtype="reg">Openstack</tm> cloud deployment.</p>
+<p>A HP Helion <tm tmtype="reg">OpenStack</tm> cloud must be deployed. This ensures that the Starter Swift nodes are installed and functional as they are part of the default HP Helion <tm tmtype="reg">OpenStack</tm> cloud deployment.</p>
 <p>You can check the health of the starter nodes using the following command. All nodes should be in <b>ACTIVE</b> status and the power state should be <b>Running</b>.</p>
 <codeblock>
   <codeph># nova list

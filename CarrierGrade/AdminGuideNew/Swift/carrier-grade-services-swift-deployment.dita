@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic14614">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Deploying Additional Scale-out Object Storage (Swift) Nodes</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Deploying Additional Scale-out Object Storage (Swift) Nodes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -54,7 +54,7 @@
 <xref type="section" href="#topic14614/update-storage-scaleout-swift">Update the Storage Policy</xref> </li>
 </ol>
 <section id="preq"> <title>Prerequisites</title>
-<p>A HP Helion <tm tmtype="reg">Openstack</tm> cloud must be deployed. Functional Swift starter nodes are created as an integral part of cloud deployment.</p>
+<p>A HP Helion <tm tmtype="reg">OpenStack</tm> cloud must be deployed. Functional Swift starter nodes are created as an integral part of cloud deployment.</p>
 </section>
 <section id="define-object-ring:1"> <title>Define the Ring Attributes of Object Ring-1</title>
 <p>
@@ -367,7 +367,7 @@ For more details, see the <xref href="../../../CarrierGrade/ServicesOverviews/ca
 <p>Repeat the above steps for all of the object nodes.</p>
 </section>
 <section id="creating-scale-out-object-ring"> <title>Create a New Scale-out Object Ring</title>
-<p>Once the disk is formatted you can create a scale-out object ring. This ring is created for the scale-out Swift which is an extension of the Starter Swift nodes which are installed by default during HP Helion <tm tmtype="reg">Openstack</tm> cloud deployment.</p>
+<p>Once the disk is formatted you can create a scale-out object ring. This ring is created for the scale-out Swift which is an extension of the Starter Swift nodes which are installed by default during HP Helion <tm tmtype="reg">OpenStack</tm> cloud deployment.</p>
 <ol>
 <li>
 <p>Create a directory named <codeph>ring-building</codeph>.</p>
