@@ -87,18 +87,15 @@
 CNAME corresponding to the container. The CDN service returns this CNAME to you in the <xref type="section" href="#topic37013/x_cdn_uri_response">X-Cdn-Uri</xref> response header. You can then access objects in the container using this endpoint -- bypassing the normal Object Storage service access point.</p>
 <p>For example, you could could have a container called <codeph>animals</codeph>. Using the Object Storage API, you would access an object called <codeph>mose.jpg</codeph> with a URL such as the following:</p>
 <codeblock>
-  <codeph>https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/animals/mose.jpg
-</codeph>
+https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/animals/mose.jpg
 </codeblock>
 <p>When you CDN-enable the 'animals' container, the system assigns a CNAME and returns it in the <xref type="section" href="#topic37013/x_cdn_uri_response">X-CDN-URI</xref> response header. Here is an example of such a response:</p>
 <codeblock>
-  <codeph>http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com`
-</codeph>
+http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com`
 </codeblock>
 <p>In this example, the CNAME <codeph>h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com</codeph> has been assigned to this container. To access the object via the CDN service, use this URL:</p>
 <codeblock>
-  <codeph>http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com/mose.jpg
-</codeph>
+http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com/mose.jpg
 </codeblock>
 <lq>
   <p>Note: It can take up to 20 minutes for the CNAME to propagate to the DNS servers. During that time the CDN URLs will not resolve.</p>
@@ -119,13 +116,11 @@ CNAME corresponding to the container. The CDN service returns this CNAME to you 
 <section id="cdn_response"> <title>2.1.3 Accessing Objects via the Content Data Network</title>
 <p>As mentioned above, when an Object Storage container is CDN-enabled, the URI is in the <xref type="section" href="#topic37013/x_cdn_uri_response">X-CDN-URI</xref> (HTTP) and <xref type="section" href="#topic37013/x_cdn_ssl_uri_response">X-CDN-SSL-URI</xref> (HTTPS) response headers. You can append the object name to create a URL for the object. For example, if X-CDN-SSL-URI is:</p>
 <codeblock>
-  <codeph>https://a248.e.akamai.net/cdn.hpcloudsvc.com/hfca975d1c4bdcd674a70d36b24552607/prodaw2
-</codeph>
+https://a248.e.akamai.net/cdn.hpcloudsvc.com/hfca975d1c4bdcd674a70d36b24552607/prodaw2
 </codeblock>
 <p>If your object is called <codeph>mose.jpg</codeph>, the resulting URL is:</p>
 <codeblock>
-  <codeph>https://a248.e.akamai.net/cdn.hpcloudsvc.com/hfca975d1c4bdcd674a70d36b24552607/prodaw2/mose.jpg
-</codeph>
+https://a248.e.akamai.net/cdn.hpcloudsvc.com/hfca975d1c4bdcd674a70d36b24552607/prodaw2/mose.jpg
 </codeblock>
 <p>You may embed this URL in web pages. When a browser opens this URL, it is accessing the Content Data Network -- not the underlying Object Storage service.</p>
 <p>When you access the object via the Content Data Network, the GET operation includes the following response headers:</p>
@@ -151,7 +146,7 @@ CNAME corresponding to the container. The CDN service returns this CNAME to you 
 </ul>
 <p>The following example, shows how you could use curl to download an object from a CDN-enabled container.</p>
 <codeblock>
-  <codeph>curl -i http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com/mose.jpg -X GET
+curl -i http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com/mose.jpg -X GET
 HTTP/1.1 200 OK
 Last-Modified: Wed, 12 Dec 2012 18:12:38 GMT
 ETag: "d82f932e50cec6c5b2c5a502dc3840bf"
@@ -159,7 +154,6 @@ Content-Length: 21
 Content-Type: text/plain; charset=UTF-8
 Cache-Control: public, max-age=86392
 Expires: Wed, 12 Dec 2012 18:27:48 GMT
-</codeph>
 </codeblock>
 </section>
 <section id="staticweb"> <title>2.2 CDN Interaction with Object Storage StaticWeb</title>
@@ -172,80 +166,66 @@ Expires: Wed, 12 Dec 2012 18:27:48 GMT
 <li>Automatic directory listing. This is disabled by default.</li>
 </ul>
 <p>When you CDN-enable a container and the container exists in Object Storage, the CDN service automatically configures the container with StaticWeb metadata.</p>
-<p>The default values we use are described in <xref type="section" href="#topic37013/staticweb_metadata">Customizing StaticWeb Metadata</xref>. If the default values do not not suit your application, you are free to change the StaticWeb metadata using the Object Storage API. You do not change this metadata using the CDN API.</p>
+<p>The default values we use are described in <xref type="section" href="#topic37013/staticweb_metadata">Customizing StaticWeb Metadata</xref>. If the default values do not suit your application, you are free to change the StaticWeb metadata using the Object Storage API. You do not change this metadata using the CDN API.</p>
 </section>
 <section id="staticweb-example"> <title>2.2.2 Step by Step StaticWeb Example</title>
 <p>In this example, our web site will have two HTML pages ("index.html", "about/index.html") and an image ("mose.jpg") in our CDN-enabled container. The homepage ("index.html") looks like this:</p>
 <codeblock>
-  <codeph>&lt;html&gt;
+&lt;html&gt;
 &lt;title1&gt;Home Page&lt;/title&gt;
 &lt;p&gt;There is more information in this &lt;a href="/about/"&gt;sub page&lt;/a&gt;&lt;/p&gt;
-</codeph>
 </codeblock>
 <p>The subpage ("about/html") looks like this:</p>
 <codeblock>
-  <codeph>&lt;html&gt;
+&lt;html&gt;
 &lt;title&gt;Subpage&lt;/title&gt;
 &lt;p&gt;This is what a &lt;a hef="/mose.jpg"&gt;Mose&lt;/a&gt; looks like.&lt;/p&gt;
-</codeph>
 </codeblock>
 <p>Upload the files into the "animals" container. The Object Storage URLs for these objects are now:</p>
 <codeblock>
-  <codeph>https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/animals/index.html
+https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/animals/index.html
 https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/animals/about/index.html
 https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/animals/mose.jpg
-</codeph>
 </codeblock>
 <p>You can use the Public Cloud Console to upload these files. Alternatively can also use the Object Storage API directly. For example, to upload the "about/index.html" object, use a command such as the following:</p>
 <codeblock>
-  <codeph>$ curl -H "X-Auth-Token: {Auth_Token}" https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/animals/about/index.html -X PUT -T ./about/index.html
-</codeph>
+$ curl -H "X-Auth-Token: {Auth_Token}" https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/animals/about/index.html -X PUT -T ./about/index.html
 </codeblock>
 <p>Next CDN-enable the "animals" container <xref type="section" href="#topic37013/container_put">see CDN-Enable a Container</xref>). You can use the Public Cloud Console to CDN-enable the container. Alternatively can also Use the CDN API as shown in this example:</p>
 <codeblock>
-  <codeph>$ curl -H "X-Auth-Token: {Auth_Token}" https://region-a.geo-1.cdnmgmt.hpcloudsvc.com/v1.0/12345678912345/animals -X PUT 
+$ curl -H "X-Auth-Token: {Auth_Token}" https://region-a.geo-1.cdnmgmt.hpcloudsvc.com/v1.0/12345678912345/animals -X PUT 
 HTTP/1.1 201 Created
 X-Cdn-Uri: http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com
-</codeph>
 </codeblock>
 <p>As you can see, the enable operation returns the X-CDN-URI that allows you to access the content through the CDN service. The full URL's for the three objects are as follows:</p>
 <codeblock>
-  <codeph>http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com/index.html
+http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com/index.html
 http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com/about/index.html
 http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com/mose.jpg
-</codeph>
 </codeblock>
-<p>Notice that the container name ("animals") does not appear in the URL.
+<p>Notice that the container name ("animals") does not appear in the URL.  
 The CNAME (h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com) assigned to you is not very convenient. Assuming you owned the example.com domain, you could create a CNAME called mose.example.com pointing to h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com. The URL for the "index.html" object now becomes simply:</p>
 <codeblock>
-  <codeph>http://mose.example.com
-</codeph>
+http://mose.example.com
 </codeblock>
-<p>As you can see, you don't need to specify the path to the "index.html" object because we have automatically configured this as the default page. This also applies to [pseudo-directories](#pseudo_directtories]. For completeness, here is a full list of the URLs that all resolve to the "about/index.html" page:</p>
+  <p>As you can see, you don't need to specify the path to the "index.html" object because we have automatically configured this as the default page. This also applies to <xref type="section" href="#topic37013/pseudo_directories">pseudo-directories</xref>. For completeness, here is a full list of the URLs that all resolve to the "about/index.html" page:</p>
 <codeblock>
-  <codeph>http://mose.example.com/about
 http://mose.example.com/about/
 http://mose.example.com/about/index.html
-http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com/about
 http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com/about/
 http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com/about/index.html
-https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/animals/about
 https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/animals/about/
 https://region-a.geo-1.objects.hpcloudsvc.com/v1/12345678912345/animals/about/index.html
-</codeph>
 </codeblock>
-<p>The last three URLs bypass the CDN service and provide direct access to the objects. Normally, you would not give these URLs to your users. However, these URLs can be useful to test your web site since any changes are immediately visible whereas with the CDN changes only become visible after the Time to Live (TTL) expires.</p>
+<p>The last two URLs bypass the CDN service and provide direct access to the objects. Normally, you would not give these URLs to your users. However, these URLs can be useful to test your web site since any changes are immediately visible whereas with the CDN changes only become visible after the Time to Live (TTL) expires.</p>
 <lq>
-  <p>Note: the paths ending in "/" (e.g., "/about/") cause the system to respond with a "redirect" -- not the actual page.</p>
-  
-  <p>Note: in this example, "about/" does not actually exist as an object in the Object Storage system. This is known as a pseudo-directory. See later for restrictions on <xref type="section" href="#topic37013/pseudo_directories">pseudo-directories</xref>.</p>
+<p>Note: the paths ending in "/" (e.g., "/about/") cause the system to respond with a "redirect" -- not the actual page.</p>
+<p>Note: in this example, "about/" does not actually exist as an object in the Object Storage system. This is known as a pseudo-directory. See later for restrictions on <xref type="section" href="#topic37013/pseudo_directories">pseudo-directories</xref>.</p>
 </lq>
 </section>
 <section id="staticweb_metadata"> <title>2.2.3 Customizing StaticWeb Metadata</title>
 <p>The following table describes the StaticWeb metadata and describes the defaults applied when you CDN-enable a container. As mentioned earlier, this metadata is set on the Object Storage container and is <b>not</b> seen or modified through the CDN API.</p>
-<p>As described in the table, some settings depend on whether the container is
-already public through the HP Helion Object Storage API. A container is
-public if the X-Container-Read metadata has a value such as ".r:*, .rlistings". The general principal is that if you could list the container contents through the Object Storage API, you should also be able to list the contents via the CDN endpoint. Otherwise, automatic container listings is disabled.</p>
+<p>As described in the table, some settings depend on whether the container is already public through the HP Helion Object Storage API. A container is public if the X-Container-Read metadata has a value such as ".r:*, .rlistings". The general principal is that if you could list the container contents through the Object Storage API, you should also be able to list the contents via the CDN endpoint. Otherwise, automatic container listings is disabled.</p>
 <table>
 <tgroup cols="4">
 <colspec colname="col1"/>
@@ -264,7 +244,7 @@ public if the X-Container-Read metadata has a value such as ".r:*, .rlistings". 
 <row>
 <entry align="left">X-Container-Read</entry>
   <entry align="left">Not set (private)</entry>
-  <entry align="left">The X-Container-Read value is set to ".r:*, .rlistings". This makes the container publically visible to everybody through the Object Storage API (in addition to being also publically available through the CDN).</entry>
+  <entry align="left">The X-Container-Read value is set to ".r:*, .rlistings". This makes the container publicly visible to everybody through the Object Storage API (in addition to being also publicly available through the CDN).</entry>
   <entry align="left"/>
 </row>
 <row>
@@ -303,12 +283,18 @@ public if the X-Container-Read metadata has a value such as ".r:*, .rlistings". 
   <entry align="left">This provides the name of a style file used for automatic directory listings.</entry>
   <entry align="left">We do not set this value. If you use automatic web listings, you can upload the style file to the container and set this metadata to contain the style file object name.</entry>
 </row>
+<row>
+<entry align="left">X-Container-Meta-Web-Directory-Type</entry>
+<entry align="left">N/A</entry>
+<entry align="left">N/A</entry>
+<entry align="left">Sets the content-type of directory marker objects. If the header is not set, default is application/directory. Directory marker objects are 0-byte objects that represent directories to create a simulated hierarchical structure.</entry>
+</row>
 </tbody>
 </tgroup>
 </table>
 <p>You may use the Object Storage API to change any of this metadata.</p>
 </section>
-<section id="pseudo_directories"> <title>2.2.4 Pseudo-Dirctory Notes</title>
+<section id="pseudo_directories"> <title>2.2.4 Pseudo-Directory Notes</title>
 <p>As explained in the Object Storage API Specification, there are two ways to implement directory-like structures within a container. These are referred to pseudo-directories because there is no real directory structure within a container. However, you can search for pseudo-directories as follows:</p>
 <ul>
 <li>
@@ -318,16 +304,13 @@ public if the X-Container-Read metadata has a value such as ".r:*, .rlistings". 
 <p>Use path searching. Create placeholder objects to represent folders or directories. The objects are also named to include the hierarchy. For example, you would create an object called "about/" in addition the "about/index.html" object.</p>
 </li>
 </ul>
-<lq>
-  <p>Note: at this time, automatic directory listing (Container-Meta-Web-Listings=true) does not support path-style pseudo directories.</p>
-</lq>
 </section>
 <section id="225-staticweb-and-https-ssl-access"> <title>2.2.5 StaticWeb and HTTPS (SSL) Access</title>
 <p>At this time, the default page and automatic directory listing features do not work for HTTPS accesses to the root of a container. They work as expected for access to pseudo-directories.</p>
 </section>
 <section id="23-relationship-between-cdn-and-object-storage-container"> <title>2.3 Relationship between CDN and Object Storage Container</title>
 <p>A container does not need to exist in the Object Storage service when you use the CDN service to enable a container (see <xref type="section" href="#topic37013/container_put">CDN-Enable a Container</xref>). A side effect of CDN-enabling a container is that the underlying container is also created in the Object Storage service.</p>
-<p>At this time, the system will not stop you from deleting the underlying container from the Object Storage service. We may change this behaviour in a future release, so we recommend you do not delete the Object Storage container until you have also deleted the container from the CDN service.</p>
+<p>At this time, the system will not stop you from deleting the underlying container from the Object Storage service. We may change this behavior in a future release, so we recommend you do not delete the Object Storage container until you have also deleted the container from the CDN service.</p>
 <p>
 <xref type="section" href="#topic37013/container_delete">Deleting a CDN service container</xref> does not delete the underlying Object Storage container. It simply means that the CDN will no longer contain objects (this is subject to the Time to Live (TTL) value -- the objects may not be flushed from the Content Data Network until the TTL expires). The underlying data remains intact in the Object Storage service.</p>
 <p>You can re-enable a previously deleted CDN container.</p>
@@ -341,16 +324,14 @@ public if the X-Container-Read metadata has a value such as ".r:*, .rlistings". 
 </section>
 <section id="242-getting-an-authentication-token"> <title>2.4.2 Getting an authentication token</title>
 <p>To make a request to the Identity Service, you need:</p>
-<p>Your credentials<!--A BR tag was used here in the original source.-->
-Your project Id or project Name.</p>
+<ul>
+  <li>Your credentials</li>
+  <li>Your project Id or project Name</li>
+</ul>
 <p>The credentials can either be:</p>
 <ul>
-<li>
-<p>Username and password, i.e., the same username and password they would use to log into the Public Cloud Console</p>
-</li>
-<li>
-<p>Access Key ID and Access Secret Key. You can see your Access Keys on the Manage Access Keys option in the user menu of the Public Cloud Console. Access Keys are more suitable for use in APIs because you can create them for use in a specific application. However, if you suspect that an application's Access Keys have been compromised, you can delete the Access Key. This is more convenient than changing your password credentials. However, not all API bindings support Access Keys.</p>
-</li>
+<li>Username and password, i.e., the same username and password they would use to log into the Public Cloud Console</li>
+<li>Access Key ID and Access Secret Key. You can see your Access Keys on the Manage Access Keys option in the user menu of the Public Cloud Console. Access Keys are more suitable for use in APIs because you can create them for use in a specific application. However, if you suspect that an application's Access Keys have been compromised, you can delete the Access Key. This is more convenient than changing your password credentials. However, not all API bindings support Access Keys.</li>
 </ul>
 <p>In addition, to credentials, you also specify a project -- either the Id or Name. With your credentials and project, the Identity Service checks to see whether you have activated the CDN service. If so, it returns an authentication token and the endpoints to all instances of the CDN service that you are activated for. See <xref type="section" href="#topic37013/service_catalog">Service Catalog</xref> for an example of how the authentication token and endpoints are returned.</p>
 </section>
@@ -435,8 +416,8 @@ object names must be UTF-8 encoded. The length restrictions should be checked ag
 <section id="32-regions-and-availability-zones"> <title>3.2 Regions and Availability Zones</title>
 <p>The CDN service has the following service instances in these regions:</p>
 <ul>
-<li>region-a-geo-1 - US West   </li>
-<li>region-b.geo-2 - US East</li>
+<li>region-a-geo-1 - US West</li>
+<li>region-b.geo-1 - US East</li>
 </ul>
 <p>Each instance or region is a distinct storage entity. Each contains its own set of containers and objects -- there is no shared data between the regions.</p>
 </section>
@@ -446,7 +427,7 @@ object names must be UTF-8 encoded. The length restrictions should be checked ag
 <xref href="http://docs.hpcloud.com/api/v13/identity" scope="external" format="html" >http://docs.hpcloud.com/api/v13/identity</xref>.</p>
 <p>The service is exposed in the service catalog, as shown in the following fragment. Note the user is activated for two instances of the CDN service. Use the <codeph>publicURL</codeph> to perform all CDN API operations described in this document.</p>
 <codeblock>
-  <codeph>{
+{
     "name": "CDN",
     "type": "hpext:cdn",
     "endpoints": [
@@ -468,7 +449,6 @@ object names must be UTF-8 encoded. The length restrictions should be checked ag
       }
     ]
 }
-</codeph>
 </codeblock>
 </section>
 <section id="4-rest-api-specifications"> <title>4. REST API Specifications</title>
@@ -561,7 +541,7 @@ object names must be UTF-8 encoded. The length restrictions should be checked ag
 <p>This can be used to temporarily disable a CDN-enabled container. Setting the value to 'False', disables the container. Setting to 'True', re-enables the container.</p>
 </section>
 <section id="x_auth_token_request"> <title>4.2.2 X-Auth-Token</title>
-<p>An authentication token must be presented to the service. This identifies the user and determimes whether they are allowed to perform the request. See <xref type="section" href="#topic37013/using_tokens">Using Authentication Tokens</xref> for more information.</p>
+<p>An authentication token must be presented to the service. This identifies the user and determines whether they are allowed to perform the request. See <xref type="section" href="#topic37013/using_tokens">Using Authentication Tokens</xref> for more information.</p>
 </section>
 <section id="x_ttl_request"> <title>4.2.3 X-TTL</title>
 <p>This is the value of the <xref type="section" href="#topic37013/ttl">Time to Live (TTL)</xref>. The value is in seconds.</p>
@@ -602,7 +582,7 @@ None.</p>
 </section>
 <section id="get-v10project-id"> <title>GET /v1.0/{project_id}</title>
 <p>Retrieve a list of existing CDN-enabled containers.</p>
-<p>There is also support for filtering the list to return only the list of containers that are currently CDN-enabled. Passing in a query parameter of <codeph>?enabled_only=true</codeph> will suppress containers that have X-CDN-Enabled set to <codeph>False</codeph> so they will not appear appear in the list.</p>
+<p>There is also support for filtering the list to return only the list of containers that are currently CDN-enabled. Passing in a query parameter of <codeph>?enabled_only=true</codeph> will suppress containers that have X-CDN-Enabled set to <codeph>False</codeph> so they will not appear in the list.</p>
 <p>When doing a GET request against an account or container, the service returns a maximum of 10,000 names per request. To retrieve subsequent names, you must make another request with a <i>marker</i> parameter. The marker indicates where the last list left off; the system returns  names greater than this marker, up to
 10,000 again. Note that the marker value should be URL-encoded prior to sending the HTTP request.</p>
 <p>If 10,000 is larger than desired, a <i>limit</i> parameter may be given.</p>
@@ -660,14 +640,13 @@ about the container as follows:
 * log_retention - Reserved for future use</p>
 <p>Text/Plain</p>
 <codeblock>
-  <codeph>beets
+beets
 animals
 surveillance
-</codeph>
 </codeblock>
 <p>JSON</p>
 <codeblock>
-  <codeph>{
+{
   "name":"beets",
   "cdn_enabled":true,
   "ttl":86400,
@@ -691,11 +670,10 @@ surveillance
   "x-cdn-ssl-uri" : "https://a248.e.akamai.net/cdn.hpcloudsvc.com/defbbb5c59541c721905ae1a7a433b50c/prodaw2",
   "log_retention":false
 }
-</codeph>
 </codeblock>
 <p>XML</p>
 <codeblock>
-  <codeph>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;account name="12345678912345"&gt;
   &lt;container&gt;
     &lt;name&gt;beets&lt;/name&gt;
@@ -722,7 +700,6 @@ surveillance
     &lt;log_retention&gt;False&lt;/log_retention&gt;
   &lt;/container&gt;
 &lt;/account&gt;
-</codeph>
 </codeblock>
 <p>
   <b>Error Response</b>
@@ -740,8 +717,7 @@ surveillance
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X GET -H "X-Auth-Token: {Auth_Token}" {BaseURI}/v1.0/{project_id}?enabled_only=true
-</codeph>
+curl -i -k -X GET -H "X-Auth-Token: {Auth_Token}" {BaseURI}/v1.0/{project_id}?enabled_only=true
 </codeblock>
 </section>
 <section id="container_resource"> <title>4.4.2 Container</title>
@@ -826,8 +802,7 @@ CDN-enabled as requested. If the container is already CDN-enabled, a 202 (Accept
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X PUT -H "X-Auth-Token: {Auth_Token}" {BaseURI}/v1.0/{project_id}/animals
-</codeph>
+curl -i -k -X PUT -H "X-Auth-Token: {Auth_Token}" {BaseURI}/v1.0/{project_id}/animals
 </codeblock>
 </section>
 <section id="container_head"> <title>4.4.2.2 Retrieve CDN-Enabled Container Metadata</title>
@@ -889,8 +864,7 @@ The attributes are returned in response headers.</p>
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X HEAD -H "X-Auth-Token: {Auth_Token}" {BaseURI}/v1.0/{project_id}/animals
-</codeph>
+curl -i -k -X HEAD -H "X-Auth-Token: {Auth_Token}" {BaseURI}/v1.0/{project_id}/animals
 </codeblock>
 </section>
 <section id="container_post"> <title>4.4.2.3 Update Metadata of a CDN-Enabled Container</title>
@@ -960,14 +934,13 @@ Contact the Support Team if you urgently need to purge the CDN cache.</p>
   <b>Curl Example</b>
 </p>
 <codeblock>
-  <codeph>curl -i -k -X POST -H "X-Auth-Token: {Auth_Token}" {BaseURI}/v1.0/{project_id}/animals -H "x_ttl: 1024"
-</codeph>
+curl -i -k -X POST -H "X-Auth-Token: {Auth_Token}" {BaseURI}/v1.0/{project_id}/animals -H "x_ttl: 1024"
 </codeblock>
 </section>
 <section id="container_delete"> <title>4.4.2.4 Delete a CDN-Enabled Container</title>
 </section>
 <section id="delete-v10project-idcontainer"> <title>DELETE /v1.0/{project_id}/{container}</title>
-<p>This operation removes an outdated or unwanted container from the list of CDN-enabled containers. Use this operation when you do not expect to CDN-enable the container at a later time. Instead if you anticipate CND-enabling the container, you can temporarily disable it with the <xref type="section" href="#topic37013/container_post">Update CDN Metadata</xref> operation.</p>
+<p>This operation removes an outdated or unwanted container from the list of CDN-enabled containers. Use this operation when you do not expect to CDN-enable the container at a later time. Instead if you anticipate CDN-enabling the container, you can temporarily disable it with the <xref type="section" href="#topic37013/container_post">Update CDN Metadata</xref> operation.</p>
 <p>When you delete a CDN-enabled container, the operation will only take effect on any content cached by the CDN service when the <xref type="section" href="#topic37013/ttl">Time to Live (TTL)</xref> has expired. Contact the Support Team if you urgently need to purge the CDN cache.</p>
 <p>This operation does not delete the underlying container in the Object Storage service.</p>
 <p>
