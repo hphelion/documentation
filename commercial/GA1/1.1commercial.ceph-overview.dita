@@ -53,19 +53,19 @@
       <p>The Ceph object gateway is built on <codeph>librgw</codeph> to provide applications with a RESTful gateway to Ceph storage clusters. The Ceph object storage supports the following two interfaces:</p>
       <ol>
         <li>
-          <p>
-            <b>Swift-compatible</b>: Provides object storage functionality with a large subset of the <tm tmtype="reg">OpenStack</tm> Swift API. HP supports this interface and 3rd-party integrations with the Swift API.</p>
-        </li>
+          <b>Swift-compatible</b>: Provides object storage functionality with a large subset of the
+            <tm tmtype="reg">OpenStack</tm> Swift API. HP supports this interface and 3rd-party
+          integrations with the Swift API.</li>
         <li>
-          <p>
-            <b>S3-compatible</b>: Provides object storage functionality with a large subset of the Amazon S3 RESTful API. This functionality is not support in this release <!--This is not supported by HP as part of the Solution, but it has passed minimal API testing.--></p>
-        </li>
+          <b>S3-compatible</b>: Provides object storage functionality with a large subset of the
+          Amazon S3 RESTful API. This functionality is not support in this release
+          <!--This is not supported by HP as part of the Solution, but it has passed minimal API testing.--></li>
       </ol>
       <p>The Ceph RADOSGW daemon (radosgw) is a fastCGI module for interacting with a Ceph storage cluster. The Ceph object gateway can store data in the same Ceph storage cluster used 
         to store data from Ceph block device clients or from Ceph file system clients. Ceph maintains its own user authentication and allows for extension to HP <tm tmtype="reg">Helion OpenStack</tm> Keystone Authentication. For User Archive and Backup workloads originating from HP <tm tmtype="reg">Helion OpenStack</tm> Tenant Project Virtual Machines, HP recommends integrating through Keystone as a consistent authentication model.</p>
       <p>The following diagram shows <tm tmtype="reg">Helion OpenStack</tm> Virtual Machine Access to Ceph Storage</p>
       <p>
-        <image href="../../../media/helion_virtual_machine_access_ceph_storage.png"/>
+        <image href="../../media/helion_virtual_machine_access_ceph_storage.png"/>
       </p>
     </section>
     

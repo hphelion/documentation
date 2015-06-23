@@ -210,8 +210,8 @@ sudo -E pip install python-novaclient
 <p>In the <b>Configure Services</b> panel locate the <b>Messaging</b> item in the Configure Services table and select <b>Download Service</b> and wait for the download to complete.</p>
 
 <p>
-<image href="../ERROR2/dev_install_messaging.png"/>
-</p>
+            <image href="media/dev_install_messaging.png"/>
+          </p>
 
 <p>
 <b>Note:</b> Downloading multiple services simultaneously is not supported, and will
