@@ -21,8 +21,8 @@
  <!--./commercial/GA1/1.1commercial.install-GA-DNSaaS.md-->
  <!--permalink: /helion/openstack/1.1/install/dnsaas/--></p>
 <p>
-  <xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" />
-</p>
+      <xref href="../1.0commercial.install-GA-DNSaaS.dita#topic15064">See the Helion OpenStack version 1.0 of this page</xref>
+    </p>
 <p>
   <b>This document describes the installation process for HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1.</b>
 </p>

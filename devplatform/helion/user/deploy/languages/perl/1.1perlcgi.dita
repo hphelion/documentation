@@ -21,16 +21,14 @@
  <!--./devplatform/helion/user/deploy/languages/perl/1.1perlcgi.md-->
  <!--permalink: /helion/devplatform/1.1/als/user/deploy/languages/perl/perlcgi/--></p>
   <p>The <i>perlcgi</i> framework can be used to run <i>any</i> CGI script, but, like the <xref
-    href="1.1index.dita">perl</xref> framework, it provides ActivePerl in the default
-    PATH and supports module installation via <xref href="1.1index.dita#topic8895/cpan-modules-via-ppm">PPM</xref> and <xref
-      href="index.dita">
-      <i>cpanm</i>
-    </xref>.</p>
-  <p>Unlike the perl framework, setting the <xref type="section" href="../../1.1manifestyml.dita#topic20986/start-file" >
-    <i>start-file</i>
-  </xref> option
-    has no effect, as there is no permanently running application. A new
-    instance of a CGI script is started for each request.</p>
+        href="1.1index.dita">perl</xref> framework, it provides ActivePerl in the default PATH and
+      supports module installation via <xref href="1.1index.dita#topic8895/cpan-modules-via-ppm"
+        >PPM</xref> and <xref href="1.1index.dita#topic8895/cpan-modules-via-cpanm">cpanm</xref>
+      .</p>
+  <p>Unlike the perl framework, setting the <xref
+        href="../../1.1manifestyml.dita#topic20986/start-file"/> option has no effect, as there is
+      no permanently running application. A new instance of a CGI script is started for each
+      request.</p>
   <p>Perl scripts deployed with this framework should begin with:</p>
   <codeblock>#!/usr/bin/env perl</codeblock>
   <section id="example"> <title>Example</title>
