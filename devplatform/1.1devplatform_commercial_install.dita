@@ -55,7 +55,10 @@
 <p>You must log in to the system where you intend to run the installation script as the <i>root</i> user.</p>
 </li>
 <li>
-<p>The Cinder block storage service must be configured with either <xref href="commercial/GA1/1.1commercial.-vsa-overview.dita" >VSA</xref> or <xref href="commercial/GA1/1.1commercial.install-3par.dita" >3Par</xref>.</p>
+<p>The Cinder block storage service must be configured with either <xref
+              href="../commercial/GA1/1.1commercial.-vsa-overview.dita#topic9930">VSA</xref> or
+              <xref href="../commercial/GA1/1.1commercial.install-3par.dita#topic3689"
+            >3Par</xref>.</p>
 </li>
 <li>
 <p>If you installed HP Helion OpenStack with <b>KVM</b> hypervisor support, configure HP
@@ -147,7 +150,7 @@ sudo -E pip install python-novaclient</codeblock></li>
 <ol>
 <li> In the <b>Configure Services</b> panel locate the <b>Messaging</b> item in the Configure
           Services table and select <b>Download Service</b> and wait for the download to complete.<p>
-            <image href="media/dev_install_messaging.png" placement="break"/>
+            <image href="../media/dev_install_messaging.png" placement="break"/>
           </p><note>Downloading multiple services simultaneously is not supported, and will leave
             the server in an error state.</note></li>
 <li> Once the download is complete, click the <b>Configure Service</b> button to configure the
@@ -166,7 +169,7 @@ sudo -E pip install python-novaclient</codeblock></li>
           href="community/community.install.baremetal.dita#topic16854/startseed">"Starting the seed
           and building your cloud"</xref> in the baremetal installation instructions. If an HTTP
         Proxy is required for Internet downloads, follow the instructions in the <xref
-          href="devplatform/helion/admin/server/1.1configuration.dita#topic31295/http-proxy">ALS Administration
+          href="helion/admin/server/1.1configuration.dita#topic31295/http-proxy">ALS Administration
           Guide</xref>.</p>
 </section>
 <section id="connect-to-download-service3"> <title>Connect to the Download Service</title>
@@ -188,7 +191,7 @@ sudo -E pip install python-novaclient</codeblock></li>
           </p></li>
 <li> Once the download is complete, click the <b>Configure Service</b> button to configure the
           Application Lifecycle Service and wait for the configuration step to complete.<p>
-            <image href="media/dev_install_application-life-cycle.png" placement="break"/>
+            <image href="../media/dev_install_application-life-cycle.png" placement="break"/>
           </p></li>
 <li> Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and
           click on the <b>Application Lifecycle Service</b> panel under the current Project to being
@@ -384,7 +387,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
                 high-availability (HA) configuration. If selected, each component of the service
                 will have three instances created and active at all times. </p>
               <p>
-                <image href="media/dev_install_database_new.png" placement="break"/>
+                <image href="../media/dev_install_database_new.png" placement="break"/>
               </p>
             </li>
           </ul></li>
@@ -530,7 +533,7 @@ Increase the Ports quota to at least 100 using the following command in the <xre
               <b>Subnet range</b> (Required) - The subnet to use for Marketplace.
               <!--A BR tag was used here in the original source.--></li>
           </ul><p>
-            <image href="media/dev_install_marketplace.png" placement="break"/>
+            <image href="../media/dev_install_marketplace.png" placement="break"/>
           </p></li>
 <li> Do not attempt to install any Marketplace packages yet. Log out from the Horizon console.</li>
 <li> The following steps will configure HAProxy to receive and forward HTTP requests to the VM that
@@ -562,13 +565,12 @@ server marketplace&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 <li> Download the Vertica package.
   <ol><li>Open Horizon and log in as the "admin" user. Then click on
             the admin panel in Horizon and select the Development Platform Panel under Admin. Then
-            click on the Configure Services sub-panel.</li><li>Select the "Vertica Trial Package
-            for Marketplace".
-              <image href="media/dev_install_vertica_1.png" placement="break"/>
-            </li><li>Select <b>Download Service</b> and confirm the download.
-              <image href="media/dev_install_vertica_confirm.png" placement="break"/>
-            </li><li>Wait for the service to finish downloading.
-              <image href="media/dev_install_vertica_2.png" placement="break"/></li>
+            click on the Configure Services sub-panel.</li><li>Select the "Vertica Trial Package for Marketplace". <image
+                href="../media/dev_install_vertica_1.png" placement="break"/>
+            </li><li>Select <b>Download Service</b> and confirm the download. <image
+                href="../media/dev_install_vertica_confirm.png" placement="break"/>
+            </li><li>Wait for the service to finish downloading. <image href="../media/dev_install_vertica_2.png"
+                placement="break"/></li>
   </ol>
             <note>Downloading multiple services simultaneously is not supported, and will
             leave the server in an error state.</note></li>
@@ -577,7 +579,9 @@ server marketplace&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
             <xref href="1.1devplatform.marketplace.install.dita">Marketplace
             packages</xref>.</li>
 </ol>
-<p>Your installation is now complete. If you encounter problems, refer to the <xref href="devplatform/1.1devplatform.troubleshooting.dita" >Troubleshooting</xref> documentation.</p>
+<p>Your installation is now complete. If you encounter problems, refer to the <xref
+          href="1.1devplatform.troubleshooting.dita#topic6542">Troubleshooting</xref>
+        documentation.</p>
 </section>
 </body>
 </topic>

@@ -730,9 +730,10 @@ is not needed and can be included on the same line:</p>
 </section>
 <section id="drain"> <title>drain:</title>
 <p>
-  <xref href="../user/deploy/1.2app-logs.dita#topic5165/application-logs-drain" >Application log drains</xref> can be
-added to an application when it is deployed by describing them in a
-<codeph>drain:</codeph> block with a drain name and URL:</p>
+        <xref
+            href="1.2app-logs.dita#topic5165/helion-drain">Application log drains</xref> can
+        be added to an application when it is deployed by describing them in a
+          <codeph>drain:</codeph> block with a drain name and URL:</p>
 <codeblock>  drain:
   drain_name: protocol://host.domain.tld:port/</codeblock>
 <p>To enable JSON logging, specify the URL separately along with a

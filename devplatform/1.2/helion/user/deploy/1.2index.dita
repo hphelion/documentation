@@ -32,11 +32,13 @@ web server, application dependencies, databases, and other services.</p>
             Start</xref>
         </li>
 <li>
-  <xref href="../user/quick-start/1.2index.dita#topic4730/management-console">Management Console</xref>
-</li>
+          <xref href="../quick-start/1.2index.dita#topic4745/management-console">Management Console
+          </xref></li>
 <li>
-  <xref href="../user/quick-start/1.2index.dita#topic4730/helion-client">Application Lifecycle Service Client</xref>
-</li>
+          <xref
+              href="../client/1.2index.dita#topic3165/helion-client-setup">Application Lifecycle
+              Service Client</xref>
+        </li>
 <li>
   <xref href="../user/quick-start/1.2index.dita#topic4730/setting-organization-and-space">Setting Organization and Space</xref>
 </li>
@@ -48,8 +50,9 @@ web server, application dependencies, databases, and other services.</p>
 <section id="helion-client"> <title>Application Lifecycle Service Client</title>
 <ul>
 <li>
-<xref href="../user/reference/1.2client-ref.dita">Application Lifecycle Service Client Command Reference</xref>
-</li>
+          <xref href="../reference/1.2client-ref.dita#topic13355/getting-started">Application
+            Lifecycle Service Client Command Reference</xref>
+        </li>
 <li>
           <xref href="../client/1.2index.dita#topic3165">Application Lifecycle Service Client</xref>
           <ul>
@@ -83,7 +86,7 @@ web server, application dependencies, databases, and other services.</p>
           <xref href="1.2app-debug.dita#topic1398">Remote Debugging</xref>
         </li>
 <li>
-          <xref href="../user/deploy/1.2index.dita">Frameworks &amp; Languages</xref>
+          Frameworks &amp; Languages
           <ul>
             <li>Frameworks <ul>
                 <li>
@@ -149,8 +152,8 @@ web server, application dependencies, databases, and other services.</p>
             Console</xref>
         </li>
 <li>
-  <xref href="../admin/console/1.2customize.dita#topic5029/welcome">Welcome</xref>
-</li>
+          <xref href="../../admin/console/1.2customize.dita#topic5029/welcome-page">Welcome</xref>
+        </li>
 <li>
   <xref href="../admin/console/1.2customize.dita#topic5029/organization-view">Organization View</xref>
 </li>
