@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6326">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> Community Hardware and Software Requirements</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> Community Hardware and Software Requirements</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./community/community.hwsw-requirements.md-->
  <!--permalink: /helion/community/hwsw-requirements/--></p>
-<p>This page provides an overview of the hardware and software that is supported for HP <tm tmtype="reg">Helion Openstack</tm> Community edition and includes setup and configuration information. For the performance and stability of the HP <tm tmtype="reg">Helion Openstack</tm> Community edition environment, it is very important to meet the requirements and conform to the minimum recommendations.</p>
+<p>This page provides an overview of the hardware and software that is supported for HP <tm tmtype="reg">Helion OpenStack</tm> Community edition and includes setup and configuration information. For the performance and stability of the HP <tm tmtype="reg">Helion OpenStack</tm> Community edition environment, it is very important to meet the requirements and conform to the minimum recommendations.</p>
 <ul>
 <li>
 <xref type="section" href="#topic6326/supportedhw">Supported hardware</xref>
@@ -37,7 +37,7 @@
 </li>
 </ul>
 <section id="supportedhw"> <title>Supported hardware</title>
-<p>The following hardware is supported for <tm tmtype="reg">Helion Openstack</tm> Community edition for both virtual and baremetal installations:</p>
+<p>The following hardware is supported for <tm tmtype="reg">Helion OpenStack</tm> Community edition for both virtual and baremetal installations:</p>
 </section>
 <section id="hp-proliant-bladesystem"> <title>HP Proliant BladeSystem</title>
 <ul>
@@ -138,7 +138,7 @@
 </ul>
 </section>
 <section id="baremetal"> <title>Hardware configuration for baremetal installations</title>
-<p>The <xref href="../community/community.install.baremetal.dita" >multi-node baremetal installation of HP <tm tmtype="reg">Helion Openstack</tm> Community</xref> is configured for a minimum of 7 and maximum of 36 baremetal systems, plus a system to run the installation. For this installation, your hardware must meet the following minimum requirements:</p>
+<p>The <xref href="../community/community.install.baremetal.dita" >multi-node baremetal installation of HP <tm tmtype="reg">Helion OpenStack</tm> Community</xref> is configured for a minimum of 7 and maximum of 36 baremetal systems, plus a system to run the installation. For this installation, your hardware must meet the following minimum requirements:</p>
 <ul>
 <li>
 <p>A system to run the installer (called the seed cloud host or installer system) and host the seed VM that meets the following minimum requirements:</p>

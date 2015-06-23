@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4645">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Update Prerequisites</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Update Prerequisites</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -64,7 +64,7 @@ sudo -i
 <!--removing as per JIRA 
 ### Extract the required scripts and libraries ### {#extract}
 
-As mentioned in the [Update Overview](/helion/openstack/update/overview/101/), a HP <tm tmtype="reg">Helion Openstack</tm> patch update is composed of multiple major components.  
+As mentioned in the [Update Overview](/helion/openstack/update/overview/101/), a HP <tm tmtype="reg">Helion OpenStack</tm> patch update is composed of multiple major components.  
 
 The Overcloud node images can be one of the components. If you have [downloaded the patch update using Sherpa](/helion/openstack/update/download/101/), at this stage the overcloud node images are located in the undercloud image repository. 
 

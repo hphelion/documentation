@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5932">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Add a Disk to Starter Object Ring</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Add a Disk to Starter Object Ring</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -37,7 +37,7 @@
 </ol>
 <section id="prer"> <title>Prerequisite</title>
 <ul>
-<li>HP <tm tmtype="reg">Helion Openstack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Swift nodes are functional by default as they are part of cloud deployment.)</i>
+<li>HP <tm tmtype="reg">Helion OpenStack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Swift nodes are functional by default as they are part of cloud deployment.)</i>
 </li>
 <li>All of the rings generated <b>must</b> be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.</li>
 <li>Make a backup of the rings before any operation.</li>

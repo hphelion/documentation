@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5798">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Network Administrator Notes</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Network Administrator Notes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -25,17 +25,17 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.network-administrator-notes.md-->
  <!--permalink: /helion/openstack/1.1/network/administrator/notes/--></p>
-<p>The HP <tm tmtype="reg">Helion Openstack</tm> cloud networking platform is based on the <tm tmtype="reg">OpenStack</tm> standard. <tm tmtype="reg">OpenStack</tm> defines an architecture and compliant vendors (of which HP is one) create the implementations. HP Helion is one of these <tm tmtype="reg">OpenStack</tm> implementations.</p>
+<p>The HP <tm tmtype="reg">Helion OpenStack</tm> cloud networking platform is based on the <tm tmtype="reg">OpenStack</tm> standard. <tm tmtype="reg">OpenStack</tm> defines an architecture and compliant vendors (of which HP is one) create the implementations. HP Helion is one of these <tm tmtype="reg">OpenStack</tm> implementations.</p>
 <p>The <tm tmtype="reg">OpenStack</tm> Cloud Administrator Notes describe the common administrator tasks required to enable and maintain the primary <tm tmtype="reg">OpenStack</tm> services. These primary services are shown below.</p>
 <p>
   <image href="../../media/commercial_openstack-services.png"/>
 </p>
-<p>As a Helion administrator, you should follow the <tm tmtype="reg">OpenStack</tm> Cloud Administrator Guide (available at <xref href="http://docs.openstack.org/" scope="external" format="html" >http://docs.openstack.org/</xref>) to enable and maintain each of these <tm tmtype="reg">OpenStack</tm> services. Then refer to this guide for additional information to enable and maintain <tm tmtype="reg">Helion Openstack</tm> This guide will explain what you have to do in addition to, or instead of, what is in the <tm tmtype="reg">OpenStack</tm> guide.</p>
+<p>As a Helion administrator, you should follow the <tm tmtype="reg">OpenStack</tm> Cloud Administrator Guide (available at <xref href="http://docs.openstack.org/" scope="external" format="html" >http://docs.openstack.org/</xref>) to enable and maintain each of these <tm tmtype="reg">OpenStack</tm> services. Then refer to this guide for additional information to enable and maintain <tm tmtype="reg">Helion OpenStack</tm> This guide will explain what you have to do in addition to, or instead of, what is in the <tm tmtype="reg">OpenStack</tm> guide.</p>
 <p>To simplify the interaction between the <b>
 <i><tm tmtype="reg">OpenStack</tm> Cloud Administrator Guide</i>
 </b> and this guide, this Helion administrator guide mirrors the organization of the <b>
 <i><tm tmtype="reg">OpenStack</tm> Cloud Administrator Guide</i>
-</b>. To manage Neutron for example, refer to the <tm tmtype="reg">OpenStack</tm> guide on Neutron (Chapter 7, Networking), then refer to Managing the Network service in this guide to determine if <tm tmtype="reg">Helion Openstack</tm> requires configuration steps.</p>
+</b>. To manage Neutron for example, refer to the <tm tmtype="reg">OpenStack</tm> guide on Neutron (Chapter 7, Networking), then refer to Managing the Network service in this guide to determine if <tm tmtype="reg">Helion OpenStack</tm> requires configuration steps.</p>
 <p>Because <tm tmtype="reg">OpenStack</tm> defines a platform with multiple services, administrators need to understand how these services interact and interdepend. The following illustration explains these relationships.</p>
 <p>
   <image href="../../media/commercial.network-administrator.png"/>
@@ -66,7 +66,7 @@
 </li>
 </ul>
 <section id="managing-the-identity-service-managing-the-identity-service"> <title>Managing the Identity service (#Managing-the-Identity-service)</title>
-<p><tm tmtype="reg">OpenStack</tm> Identity, code-named keystone, is the default identity management system for <tm tmtype="reg">OpenStack</tm> Configuring the <tm tmtype="reg">OpenStack</tm> Identity service is sufficient for Helion administrators. No additional work is required to support HP <tm tmtype="reg">Helion Openstack</tm></p>
+<p><tm tmtype="reg">OpenStack</tm> Identity, code-named keystone, is the default identity management system for <tm tmtype="reg">OpenStack</tm> Configuring the <tm tmtype="reg">OpenStack</tm> Identity service is sufficient for Helion administrators. No additional work is required to support HP <tm tmtype="reg">Helion OpenStack</tm></p>
 </section>
 <section id="managing-the-dashboard-managing-the-dashboard"> <title>Managing the Dashboard (Managing-the-Dashboard)</title>
 <p>The <tm tmtype="reg">OpenStack</tm> dashboard, code named Horizon, is a Web-based interface that allows you to manage <tm tmtype="reg">OpenStack</tm> resources and services. The dashboard allows you to interact with the <tm tmtype="reg">OpenStack</tm> Compute cloud controller using the <tm tmtype="reg">OpenStack</tm> APIs. 

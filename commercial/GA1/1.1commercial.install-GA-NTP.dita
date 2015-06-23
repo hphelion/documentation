@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5226">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and 1.1.1: Configuring NTP</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Configuring NTP</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Configuring NTP</searchtitle>
 </titlealts>
@@ -21,12 +21,12 @@
  <!--./commercial/GA1/1.1commercial.install-GA-NTP.md-->
  <!--permalink: /helion/openstack/1.1/install/ntp/--></p>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
-<p>This page provides detailed information on <xref type="section" href="#topic5226/client">configuring HP <tm tmtype="reg">Helion Openstack</tm> nodes</xref> for Network Time Protocol (NTP) and <xref type="section" href="#topic5226/server">instlling an NTP server on the seed cloud host</xref>.</p>
+<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>This page provides detailed information on <xref type="section" href="#topic5226/client">configuring HP <tm tmtype="reg">Helion OpenStack</tm> nodes</xref> for Network Time Protocol (NTP) and <xref type="section" href="#topic5226/server">instlling an NTP server on the seed cloud host</xref>.</p>
 <p>NTP is a networking protocol for clock synchronization between computer systems. The undercloud and overcloud systems are configured as NTP clients during the installation process.</p>
-<p>HP <tm tmtype="reg">Helion Openstack</tm> requires that all nodes point to the same NTP server. You can use an external NTP server or configure the seed cloud host as a server.</p>
+<p>HP <tm tmtype="reg">Helion OpenStack</tm> requires that all nodes point to the same NTP server. You can use an external NTP server or configure the seed cloud host as a server.</p>
 <p>
   <b>Notes:</b>
 </p>
@@ -161,7 +161,7 @@ ntp0001.use 123 10.22.170.17    2365    4   4   1d0 1000    384
 <section id="fudge"> <title>Fudging a stratum lower than 10</title>
 <p>NTP uses a hierarchical, semi-layered system of time sources. Each level of this hierarchy is termed a <i>stratum</i> and is assigned a number starting with zero at the top. The number represents the distance from the reference clock and is used to prevent cyclical dependencies in the hierarchy.</p>
 <p>The numerically lower the stratum value, the higher priority that clock has.</p>
-<p>HP <tm tmtype="reg">Helion Openstack</tm> uses stratum 10. Using a numerically high stratum ensures that this is only used if all external clocks fail. This will mitigate skew until external clocks return to service.</p>
+<p>HP <tm tmtype="reg">Helion OpenStack</tm> uses stratum 10. Using a numerically high stratum ensures that this is only used if all external clocks fail. This will mitigate skew until external clocks return to service.</p>
 <p>If your NTP stratum is numerically less than 10, set up your host as the time source by fudging a stratum 10.</p>
 <ol>
 <li>

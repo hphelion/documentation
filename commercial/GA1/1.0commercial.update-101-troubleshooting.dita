@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic18446">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Update Troubleshooting</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Update Troubleshooting</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -262,7 +262,7 @@ overload of the undercloud.</p>
 </p>
 </section>
 <section id="mysqlsync"> <title>MySQL/Percona/Galera is out of sync</title>
-<p><tm tmtype="reg">Helion Openstack</tm> is configured to store all of its state in a multi-node synchronous replication Percona XtraDB Cluster database, which uses Galera for replication. This database must be in sync and have the full complement of servers before updates can be performed safely.</p>
+<p><tm tmtype="reg">Helion OpenStack</tm> is configured to store all of its state in a multi-node synchronous replication Percona XtraDB Cluster database, which uses Galera for replication. This database must be in sync and have the full complement of servers before updates can be performed safely.</p>
 <p>
   <b>Symptoms:</b>
 </p>
@@ -770,7 +770,7 @@ stderr: Error: unable to connect to node 'rabbit@overcloud-controller0-vahypr34i
 </ol>
 </section>
 <section id="ansible"> <title>Ironic service cannot be restarted on the undercloud</title>
-<p>When performing the upgrade to HP <tm tmtype="reg">Helion Openstack</tm> 1.0.1 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message.</p>
+<p>When performing the upgrade to HP <tm tmtype="reg">Helion OpenStack</tm> 1.0.1 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message.</p>
 <p>
   <b>Symptom</b>
 </p>
@@ -822,7 +822,7 @@ Traceback (most recent call last):
 </ol>
 </section>
 <section id="ansible2"> <title>A lock problem occurred in Ironic during update of the undercloud using the Ansible script</title>
-<p>When performing the upgrade to HP <tm tmtype="reg">Helion Openstack</tm> 1.0.1 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message. <!-- CORE 2043 --></p>
+<p>When performing the upgrade to HP <tm tmtype="reg">Helion OpenStack</tm> 1.0.1 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message. <!-- CORE 2043 --></p>
 <p>
   <b>Symptom</b>
 </p>

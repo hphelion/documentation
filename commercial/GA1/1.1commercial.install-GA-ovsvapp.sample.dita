@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5065">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and 1.1.1: Deploying and Configuring OVSvApp on ESX hosts: Sample ovs_vapp.ini file</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Deploying and Configuring OVSvApp on ESX hosts: Sample ovs_vapp.ini file</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Deploying and Configuring OVSvApp on ESX hosts: Sample ovs_vapp.ini file</searchtitle>
 </titlealts>
@@ -23,9 +23,9 @@
 <p> <xref href="../../commercial/GA1/1.1commercial.install-GA-ovsvapp.dita" >▲  Deploying and Configuring OVSvApp on ESX hosts</xref>
 </p>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion Openstack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
 <p>The following is a sample <codeph>ovs_vapp.ini</codeph> file for use with <xref href="../../commercial/GA1/1.1commercial.install-GA-ovsvapp.dita" >Deploying and Configuring OVSvApp on ESX hosts</xref>.</p>
 <codeblock>
   <codeph>[vmware]

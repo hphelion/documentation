@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1123">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Identity Management</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Identity Management</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -29,7 +29,7 @@
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" >Integrate the Identity Service (Keystone) with LDAP/AD</xref>
-<!--A BR tag was used here in the original source.-->Learn about how to configure the HP <tm tmtype="reg">Helion Openstack</tm> Identity service to integrate your organization's existing to use Lightweight Directory Access Protocol (LDAP) service.</p>
+<!--A BR tag was used here in the original source.-->Learn about how to configure the HP <tm tmtype="reg">Helion OpenStack</tm> Identity service to integrate your organization's existing to use Lightweight Directory Access Protocol (LDAP) service.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commerical.services-identity-configure-v3.dita" >Configuring Horizon for Keystone v3</xref>

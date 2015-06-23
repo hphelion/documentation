@@ -49,14 +49,8 @@
         </image>
       </p>
       <p>If you want to revert back to the defaults as defined in your CLI.config file just issue the following command.</p>
-      <codeblock>
-        <codeph>       Set-config -resetcfg
-        </codeph>
-      </codeblock>
-      <p>In addition to changing individual configuration items, you can also swap in entire full configuration environments by inserting a new configuration file with the <b>
-        <ph>set-config -s</ph>
-        
-      </b> command.  This is useful if you are using multiple environments at your site--for example, you have a set of credentials that you use for development, but a different set of credentials for performing testing.  Substituting in a different config file gives you a quick way to switch back and forth between those environments.</p>
+      <codeblock>Set-config -resetcfg</codeblock>
+      <p>In addition to changing individual configuration items, you can also swap in entire full configuration environments by inserting a new configuration file with the <codeph>set-config -s</codeph> command.  This is useful if you are using multiple environments at your site--for example, you have a set of credentials that you use for development, but a different set of credentials for performing testing.  Substituting in a different config file gives you a quick way to switch back and forth between those environments.</p>
       <p>When you set to a new config file and the new file contains different credentials, you have to re-evaluate the list of Containers that the current user has access to. Changing your credentials is equivalent to changing your identity, and you may own just a small subset of Containers after the change. In this example you can see this rebinding in action.</p>
       <p>
         <image href="../media/SET-CONFIGFILE.jpg">
@@ -65,10 +59,7 @@
       </p>
     </section>
     <section id="viewing-your-service-catalog"> <title>Viewing Your Service Catalog</title>
-      <p>If you want to take a look at your service catalog--for example, if you have modified some of your configuration credentials, and have authenticated them--you can use the <b>
-        <ph>get-config -v</ph>
-        
-      </b> command.</p>
+      <p>If you want to take a look at your service catalog--for example, if you have modified some of your configuration credentials, and have authenticated them--you can use the <codeph>get-config -v</codeph> command.</p>
       <p>This command provides you with all the service catalog information for your most-currently authenticated credential set.</p>
     </section>
     <section id="finding-an-objects-location"> <title>Finding an Objects Location</title>
@@ -93,9 +84,7 @@
       <p>If you want to use the credentials of a particular user for a session ("imitating" that user), you can use the command 
         <b><ph> set-credentials</ph></b>.  
         The command allows you to define the access key, secret key, and tenant key for a session:</p>
-      <codeblock>
-        <codeph>set-credentials -ak Access-Key -sk Secret-Key -t Tenant-ID</codeph>
-      </codeblock>
+      <codeblock>set-credentials -ak Access-Key -sk Secret-Key -t Tenant-ID</codeblock>
       <p>Where you choose your desired values for 
         <ph>
           <b>Access-Key</b>
@@ -121,9 +110,7 @@
       <ul>
         <li>
           <xref href="../publiccloud/cli.windows.2.dita" >Index</xref> </li>
-        <li>
-          <xref href="../publiccloud/cli.windows.2.reference.dita" >Command Line Reference</xref> </li>
-      </ul>
+       </ul>
     </section>
   </body>
 </topic>

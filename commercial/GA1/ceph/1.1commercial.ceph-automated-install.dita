@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10341">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and 1.1.1: Ceph Automated Installation</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Ceph Automated Installation</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Ceph Automated Installation</searchtitle>
 </titlealts>
@@ -27,7 +27,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commercial.ceph-automated-install.md-->
  <!--permalink: /helion/openstack/1.1/commercial.ceph-automated-install/--></p>
-<p>The installation workflow of HP <tm tmtype="reg">Helion Openstack</tm> 1.1 or 1.1.1 is shown in the following diagram.</p>
+<p>The installation workflow of HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 or 1.1.1 is shown in the following diagram.</p>
 <p>
   <image href="../../../media/ceph-installation-flow.png"/>
 </p>

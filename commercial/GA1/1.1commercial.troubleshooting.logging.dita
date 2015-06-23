@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2924">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Troubleshooting Logging</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Troubleshooting Logging</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.logging.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/logging/--></p>
-<p>HP <tm tmtype="reg">Helion Openstack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP <tm tmtype="reg">Helion OpenStack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <section id="logging-best-practices"> <title>Logging Best Practices</title>
 <p>By default a full backup includes all logs. Logs can  be large,  which can slow down the backup process. During this time, the control plane is offline.</p>
 <p>To balance having useful logs with optimizing system performance, you should routinely clean up logs from <codeph>logstash</codeph> to only keep logs of interest. You should only do a full backup if you need to preserve logs. In  most cases, the exclude option is appropriate.</p>

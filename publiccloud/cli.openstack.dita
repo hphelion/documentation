@@ -12,8 +12,8 @@
 <!--PUBLISHED-->
  <!--./publiccloud/cli.openstack.md-->
  <!--permalink: /publiccloud/cli/openstack/--></p>
-  <p>You can interact with HP Helion Public Cloud using the native <tm tmtype="reg">OpenStack</tm> Command-Line Interface (CLI) tools.</p>
-  <p>HP Helion Public Cloud is based on <tm tmtype="reg">OpenStack</tm> The latest <tm tmtype="reg">OpenStack</tm> CLIs and libraries are compatible with our HP Helion Public Cloud. We recommend using a recent version of each of the CLI tools, which you can install using our instructions linked below.</p>
+<p>You can interact with HP Helion Public Cloud using the native <tm tmtype="reg">OpenStack</tm> Command-Line Interface (CLI) tools.</p>
+<p>HP Helion Public Cloud is based on <tm tmtype="reg">OpenStack</tm> The latest <tm tmtype="reg">OpenStack</tm> CLIs and libraries are compatible with our HP Helion Public Cloud. We recommend using a recent version of each of the CLI tools, which you can install using our instructions linked below.</p>
 <ul>
 <li>
 <xref href="https://community.hpcloud.com/article/command-line-interface-cli-tool-installation-instructions" scope="external" format="html" >Installation</xref>

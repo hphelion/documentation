@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4455">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and 1.1.1: Installing HP Linux for HP <tm tmtype="reg">Helion Openstack</tm></title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Installing HP Linux for HP <tm tmtype="reg">Helion OpenStack</tm></title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Installing HP Linux for HP Helion Openstack</searchtitle>
 </titlealts>
@@ -18,11 +18,11 @@
  <!--./commercial/GA1/1.1commerical.install.HPLinux.md-->
  <!--permalink: /helion/openstack/1.1commercial/install/HPLinux/--></p>
 <p>
-  <b>This document describes the process for installing HP Linux for HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and HP <tm tmtype="reg">Helion Openstack</tm> 1.1.1.</b>
+  <b>This document describes the process for installing HP Linux for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
 </p>
-<p>Before installing HP <tm tmtype="reg">Helion Openstack</tm> you may choose to use HP Linux for HP <tm tmtype="reg">Helion Openstack</tm> as your operating system.</p>
+<p>Before installing HP <tm tmtype="reg">Helion OpenStack</tm> you may choose to use HP Linux for HP <tm tmtype="reg">Helion OpenStack</tm> as your operating system.</p>
 <p>
-  <b>Prerequisites for installing HP Linux for HP <tm tmtype="reg">Helion Openstack</tm></b>
+  <b>Prerequisites for installing HP Linux for HP <tm tmtype="reg">Helion OpenStack</tm></b>
 </p>
 <ul>
 <li>You must have at least 105MB of RAM to use this installer.</li>
@@ -30,7 +30,7 @@
 disk space to install additional packages, depending on what you wish to do with your new HP Linux for HP Helion system.</li>
 <li>HP Linux for HP Helion is supported on the same hardware as the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >HP Helion Open Stack support matrix</xref>.</li>
 </ul>
-<p>To install HP Linux for HP <tm tmtype="reg">Helion Openstack</tm> follow the steps below:</p>
+<p>To install HP Linux for HP <tm tmtype="reg">Helion OpenStack</tm> follow the steps below:</p>
 <ol>
 <li>Insert, mount, or otherwise connect the  ISO media to your target device. Boot the device from the media. This may involve using basic input/output system (BIOS) commands or the function keys (&lt;F1&gt;, &lt;F9&gt;, and so on) to override the normal boot process of your device.
   <!--A BR tag was used here in the original source.--><image href="../../media/start.png" placement="break"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3803">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1 and 1.1.1: Ceph RADOS Gateway - Client</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Ceph RADOS Gateway - Client</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1 Ceph RADOS Gateway - Client</searchtitle>
 </titlealts>
@@ -113,7 +113,7 @@ export SWIFT_AUTHVERSION=2
 <p>Perform the following steps:</p>
 <ul>
 <li>
-<p>Create Ceph pool, Ceph user as in the previous section for backup &lt;<b>placeholder of the backup</b>&gt;. Note: for large deployments where hundreds of discrete users and pools will be created, managed, and audited, consider integrating the HP <tm tmtype="reg">Helion Openstack</tm> Tenant Project user, Keystone, and the Ceph user and associated pool(s).</p>
+<p>Create Ceph pool, Ceph user as in the previous section for backup &lt;<b>placeholder of the backup</b>&gt;. Note: for large deployments where hundreds of discrete users and pools will be created, managed, and audited, consider integrating the HP <tm tmtype="reg">Helion OpenStack</tm> Tenant Project user, Keystone, and the Ceph user and associated pool(s).</p>
 </li>
 <li>
 <p>Install the Swift client (and other components as specified in the Ceph RADOSGW Client section) on the user client Virtual Machine.</p>

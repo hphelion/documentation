@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4609">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> Verifying your installation</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> Verifying your installation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./community/community.verify.md-->
  <!--permalink: /helion/community/verify/--></p>
-<p>Once your installation is complete, you should make sure you can connect to your HP <tm tmtype="reg">Helion Openstack</tm> Community cloud. You can accomplish this in any of the following ways:</p>
+<p>Once your installation is complete, you should make sure you can connect to your HP <tm tmtype="reg">Helion OpenStack</tm> Community cloud. You can accomplish this in any of the following ways:</p>
 <ul>
 <li>
 <xref type="section" href="#topic4609/connectunder">Connecting to the undercloud Horizon console</xref>
@@ -139,7 +139,7 @@ b. Note the public IP address of the **demo** instance, starting with `192`.
 </ol>
 </section>
 <section id="connectmonitor"> <title>Connecting to the monitoring and logging interfaces</title>
-<p>HP <tm tmtype="reg">Helion Openstack</tm> Community includes monitoring logging. The monitoring service uses <xref href="../community/community.services-icinga.dita" >Icinga</xref> interface and the logging service uses the Kibana interface.</p>
+<p>HP <tm tmtype="reg">Helion OpenStack</tm> Community includes monitoring logging. The monitoring service uses <xref href="../community/community.services-icinga.dita" >Icinga</xref> interface and the logging service uses the Kibana interface.</p>
 <p>You can access these services with the following steps:</p>
 <ol>
 <li>

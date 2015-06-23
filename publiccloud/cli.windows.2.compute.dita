@@ -39,7 +39,6 @@
 <xref type="section" href="#topic13345/IPManagement">Floating IP Management</xref>
 </li>
 </ul>
-<p>For complete details on the commands--syntax, descriptions, and so forth--take a look at the <xref href="../publiccloud/cli.windows.2.reference.dita" >CLI Reference</xref> page.</p>
 <section id="Navigation"> <title>Navigation</title>
 <p>To execute commands in Windows PowerShell, first open a Windows PowerShell window; under the Start menu, it is typically under <codeph>All Programs &gt; Accessories &gt; Windows PowerShell</codeph>.  Select the shell appropriate to your system, either the 64-bit or 32-bit version.  Enter the HP Helion Public Cloud Services CLI by entering:</p>
 <codeblock>
@@ -197,7 +196,6 @@ PS HPCS:\Security\SecurityGroups\111&gt;  ls
 <b>Note</b>: You have to use the security group ID, rather than the security group name (as set in the previous example).  To determine the security group ID, use the <codeph>ls</codeph> command on the SecurityGroups directory.</p>
 <p>
 <b>Note for Windows Images</b>: A security group requires port 3389 to connect to a Windows instance via the remote desktop protocol (RDP). Windows CLI automatically creates security group <codeph>rdp_group</codeph> with port 3389 open when it detects a Windows image type during creation, and automatically applies the <codeph>rdp_group</codeph> security group to that Windows instance. Security Group <codeph>rdp_group</codeph> is always added as a security group to Windows instances even when you specify other security groups as arguments with the <codeph>New-Server</codeph> cmdlet.</p>
-<p>For a full description of the options available with the <b>Add-Rule</b> command, please see the <xref href="../publiccloud/cli.windows.2.reference.dita#Add-Rule" >Add-Rule</xref> section of the <xref href="../publiccloud/cli.windows.2.reference.dita" >Windows CLI Reference</xref> page.</p>
 <p>To delete an existing security group rule:</p>
 <codeblock>
   <codeph>PS HPCS:\\&gt; Remove-SecurityGroup -id "3244"
@@ -216,7 +214,6 @@ PS HPCS:\Security\SecurityGroups\111&gt;  ls
 <b>Note for Windows Images</b>: When the Windows CLI detects you are creating a Windows server, it looks for the keypair <i>.pem</i> file in a specific location. The default location for the .pem file is <codeph>C:\Users\*username*\Documents\HP</codeph>. When the new-server operation has completed, the output is the Administrator password to be used with an RDP client. Please make note of it. 
 <!-- Hiding; referenced file missing
 For assistance on connecting to a Windows Instance, see [How to Access a Windows Instance via the Remote Desktop](/compute/using#WindowsRDP) or use the [quick connect feature](#QuickConnect). --></p>
-<p>For a full description of the options available with the <b>New-Server</b> command, please see the <xref href="../publiccloud/cli.windows.2.reference.dita#New-Server" >New-Server</xref> section of the <xref href="../publiccloud/cli.windows.2.reference.dita" >Windows CLI Reference</xref> page.</p>
 <p>To list the currently-available servers:</p>
 <codeblock>
   <codeph>PS HPCS:\\&gt; cd Servers
@@ -270,7 +267,7 @@ Creating an image of an active server produces a state 'snapshot' of the server 
   <codeph>PS HPCS:\\&gt;  Connect-Server 2111
 </codeph>
 </codeblock>
-<p>This connects you to the server with the ID <codeph>2111</codeph>.  You can also connect to a server by <xref href="../publiccloud/cli.windows.2.reference.dita" >navigating</xref> to a server directory and entering the <codeph>Connect-Server</codeph> command with no arguments:</p>
+<p>This connects you to the server with the ID <codeph>2111</codeph>.  You can also connect to a server by navigating to a server directory and entering the <codeph>Connect-Server</codeph> command with no arguments:</p>
 <codeblock>
   <codeph>PS HPCS:\\&gt;  cd Servers
 PS HPCS:\Servers&gt; cd 2111
@@ -317,8 +314,7 @@ PS HPCS:\Servers\2111&gt; Connect-Server
 </ul>
 </section>
 <section id="ResetPassword"> <title>Reset-Password</title>
-<p>For Windows Instances only, if you change your Windows password manually via <xref href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa383015(v=vs.85).aspx" scope="external" format="html" >RDP</xref>, you need to manually sync the password with the Windows CLI with the <xref href="../publiccloud/cli.windows.2.reference.dita#reset-password" >
-<codeph>Reset-Password</codeph> cmdlet</xref> for the <codeph>connect-server</codeph> command to work. If you use the <codeph>get-password</codeph> cmdlet to fetch your original de-crypted Administrator password, and it's available, it will overwrite the password sync.</p>
+<p>For Windows Instances only, if you change your Windows password manually via <xref href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa383015(v=vs.85).aspx" scope="external" format="html" >RDP</xref>, you need to manually sync the password with the Windows CLI with the <codeph>Reset-Password</codeph> cmdlet for the <codeph>connect-server</codeph> command to work. If you use the <codeph>get-password</codeph> cmdlet to fetch your original de-crypted Administrator password, and it's available, it will overwrite the password sync.</p>
 <codeblock>
   <codeph>PS HPCS:\&gt; reset-password -id 1234 -p "Thisisalongpassword!"
 </codeph>
@@ -360,7 +356,7 @@ Id       Instance Id   Fixed IP        IP
 </codeph>
 </codeblock>
 <p>Where <codeph>-ip</codeph> represents the ID of the allocated IP address.</p>
-<p>For a complete list of all the available Compute commands, please see the <xref href="../publiccloud/cli.windows.2.reference.dita" >CLI reference page</xref> and <xref href="../publiccloud/cli.windows.2.help.dita" >Getting Help</xref>.</p>
+<p>For a complete list of all the available Compute commands, please see <xref href="../publiccloud/cli.windows.2.help.dita" >Getting Help</xref>.</p>
 </section>
 </body>
 </topic>

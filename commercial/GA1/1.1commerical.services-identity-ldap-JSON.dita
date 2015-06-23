@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic11546">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Sample LDAP Server Connection Settings JSON File</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Sample LDAP Server Connection Settings JSON File</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -22,7 +22,7 @@
 <!-- Based on https://wiki.hpcloud.net/display/csbu/Integrating+Keystone+with+LDAP+in+Helion+1.1 -->
 <p>The following is a sample LDAP Server connection settings JSON file with typical values entered. This example is to demonstrate how to complete the JSON values and is not intended for users to copy the values into their cloud.</p>
 <p>
-<b>NOTE:</b> This sample file also provides information on how to configure a different LDAP authentication source per directory. This is the first implementation of this new feature in <tm tmtype="reg">Helion Openstack</tm> and is intended as a Technology Preview targeted at proof of concept deployments.</p>
+<b>NOTE:</b> This sample file also provides information on how to configure a different LDAP authentication source per directory. This is the first implementation of this new feature in <tm tmtype="reg">Helion OpenStack</tm> and is intended as a Technology Preview targeted at proof of concept deployments.</p>
 <p>See <xref href="../../commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" >Integrate the Identity Service (Keystone) with LDAP/AD</xref> for information on using and modifying this file.</p>
 <codeblock>
   <codeph>    {

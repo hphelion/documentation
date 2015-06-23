@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1948">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> Community TripleO Service Overview</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> Community TripleO Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -14,13 +14,13 @@
  <!--permalink: /helion/community/services/tripleo/overview/--></p>
 <!-- <p style="font-size: small;"> <a href="../community/community.services-overview.dita">&#9650; UP</a> | <a href="../community/community.services-compute-overview.dita"> NEXT &#9654</a> </p> -->
 <p>TripleO (<tm tmtype="reg">OpenStack</tm>-On-<tm tmtype="reg">OpenStack</tm> is a service that handles installing, upgrading and operating <tm tmtype="reg">OpenStack</tm> clouds using <tm tmtype="reg">OpenStack</tm> cloud facilities as the foundation. TripleO builds on the <xref href="../community/community.services-compute-overview.dita" >Compute</xref>, <xref href="../community/community.services-networking-overview.dita" >Networking</xref> and <xref href="../community/community.services-orchestration-overview.dita" >Orchestration</xref> services to automate fleet management for as few as two machines or a full data center.</p>
-<p>The <xref href="../community/community.install-overview.dita" >HP <tm tmtype="reg">Helion Openstack</tm> installation</xref> follows the standard TripleO deployment model, creating a seed, an undercloud and an overcloud.</p>
+<p>The <xref href="../community/community.install-overview.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> installation</xref> follows the standard TripleO deployment model, creating a seed, an undercloud and an overcloud.</p>
 <section id="key-terms"> <title>Key Terms</title>
 <p>Key terms include:</p>
 <ul>
 <li>
 <p>
-<b>seed</b> - The seed cloud is a bootable image that is deployed in a VM instance. This image, which is provided as part of HP <tm tmtype="reg">Helion Openstack</tm> contains the minimum services required for <tm tmtype="reg">OpenStack</tm> to function and to provision physical hardware to deploy the undercloud.</p>
+<b>seed</b> - The seed cloud is a bootable image that is deployed in a VM instance. This image, which is provided as part of HP <tm tmtype="reg">Helion OpenStack</tm> contains the minimum services required for <tm tmtype="reg">OpenStack</tm> to function and to provision physical hardware to deploy the undercloud.</p>
 </li>
 <li>
 <p>

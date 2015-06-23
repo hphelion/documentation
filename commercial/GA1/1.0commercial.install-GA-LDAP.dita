@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic12189">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Integrating LDAP</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Integrating LDAP</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.0commercial.install-GA-LDAP.md-->
  <!--permalink: /helion/openstack/install/ldap/--></p>
-<p>The HP <tm tmtype="reg">Helion Openstack</tm> Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes. LDAP integration must be performed during the HP <tm tmtype="reg">Helion Openstack</tm> installation process.</p>
+<p>The HP <tm tmtype="reg">Helion OpenStack</tm> Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes. LDAP integration must be performed during the HP <tm tmtype="reg">Helion OpenStack</tm> installation process.</p>
 <p>The process for integrating LDAP involves the following steps:</p>
 <ul>
 <li>
@@ -317,10 +317,10 @@ OVERCLOUD_SWIFT_PASSWORD=&lt;password&gt;
 </ol>
 <p>Follow the steps described in the installation instructions to deploy the overcloud nodes.</p>
 <p>
-  <xref href="../../commercial/GA1/1.0commercial.install-GA-kvm.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Installation and Configuration for KVM Hypervisor</xref>
+  <xref href="../../commercial/GA1/1.0commercial.install-GA-kvm.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Installation and Configuration for KVM Hypervisor</xref>
 </p>
 <p>
-  <xref href="../../commercial/GA1/1.0commercial.install-GA-esx.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Installation and Configuration for ESX Hypervisor</xref>
+  <xref href="../../commercial/GA1/1.0commercial.install-GA-esx.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Installation and Configuration for ESX Hypervisor</xref>
 </p>
 </section>
 <section id="horizon"> <title>Configure Horizon</title>

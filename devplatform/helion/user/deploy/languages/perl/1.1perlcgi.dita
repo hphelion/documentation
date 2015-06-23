@@ -20,27 +20,24 @@
 <!--PUBLISHED-->
  <!--./devplatform/helion/user/deploy/languages/perl/1.1perlcgi.md-->
  <!--permalink: /helion/devplatform/1.1/als/user/deploy/languages/perl/perlcgi/--></p>
-<p>The <i>perlcgi</i> framework can be used to run <i>any</i> CGI script, but, like the <xref
-  href="1.1index.dita#topic8895">perl</xref> framework, it provides
-      ActivePerl in the default PATH and supports module installation via <xref href="index.dita"
-        >PPM</xref> and <xref href="index.dita">
-        <i>cpanm</i>
-      </xref>.</p>
-<p>Unlike the perl framework, setting the <xref href="../../../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#start-file" >
-<i>start-file</i>
-</xref> option
-has no effect, as there is no permanently running application. A new
-instance of a CGI script is started for each request.</p>
-<p>Perl scripts deployed with this framework should begin with:</p>
-<codeblock>
-  <codeph>#!/usr/bin/env perl
-</codeph>
-</codeblock>
-<section id="example"> <title>Example</title>
-<ul>
-<li>
-<xref href="https://github.com/Stackato-Apps/perlcgi-env" scope="external" format="html" >perlcgi-env</xref>: A simple Perl CGI script that displays environment variables.</li>
-</ul>
-</section>
+  <p>The <i>perlcgi</i> framework can be used to run <i>any</i> CGI script, but, like the <xref
+    href="1.2index.dita#topic8895">perl</xref> framework, it provides ActivePerl in the default
+    PATH and supports module installation via <xref href="index.dita#topic8895/cpan-modules-via-ppm">PPM</xref> and <xref
+      href="index.dita">
+      <i>cpanm</i>
+    </xref>.</p>
+  <p>Unlike the perl framework, setting the <xref type="section" href="../../../deploy/1.2manifestyml.dita#topic20922/start-file" >
+    <i>start-file</i>
+  </xref> option
+    has no effect, as there is no permanently running application. A new
+    instance of a CGI script is started for each request.</p>
+  <p>Perl scripts deployed with this framework should begin with:</p>
+  <codeblock>#!/usr/bin/env perl</codeblock>
+  <section id="example"> <title>Example</title>
+    <ul>
+      <li>
+        <xref href="https://github.com/Stackato-Apps/perlcgi-env" scope="external" format="html" >perlcgi-env</xref>: A simple Perl CGI script that displays environment variables.</li>
+    </ul>
+  </section>
 </body>
 </topic>

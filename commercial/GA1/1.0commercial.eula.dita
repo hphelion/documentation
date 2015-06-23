@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic16065">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: Software License Terms</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Software License Terms</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -28,9 +28,9 @@
 </ul>
 <section id="eula"> <title>Part 1: HP End User License Agreement</title>
 <p>
-<b>1. Applicability.</b> This end user license agreement (the "Agreement") governs the use of accompanying HP <tm tmtype="reg">Helion Openstack</tm> Software ("Software"), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this Agreement.</p>
+<b>1. Applicability.</b> This end user license agreement (the "Agreement") governs the use of accompanying HP <tm tmtype="reg">Helion OpenStack</tm> Software ("Software"), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this Agreement.</p>
 <p>
-<b>2. Terms.</b> This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at: <xref href="http://docs.hpcloud.com/helion/openstack/3rd-party-license-agreements/" scope="external" format="html" >HP <tm tmtype="reg">Helion Openstack</tm> Open Source and Third-Party Software License Agreements</xref>.</p>
+  <b>2. Terms.</b> This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at: <xref href="1.03rd-party-license-agreements.dita" scope="external" format="html" >HP <tm tmtype="reg">Helion OpenStack</tm> Open Source and Third-Party Software License Agreements</xref>.</p>
 <p>
 <b>3. Authorization</b>. If you agree to this Agreement on behalf of another person or entity, you warrant you have authority to do so.</p>
 <p>
@@ -95,7 +95,7 @@ in the governing Agreement.</p>
 <p>
 <b>Internal Use</b> - Use of the Software for purposes of supporting Customer's internal business operations or functions.</p>
 <p>
-<b>Management Software</b> - An HP <tm tmtype="reg">Helion Openstack</tm> management software running on a Physical Server for the sole purpose of deploying or managing a Cloud Fabric.</p>
+<b>Management Software</b> - An HP <tm tmtype="reg">Helion OpenStack</tm> management software running on a Physical Server for the sole purpose of deploying or managing a Cloud Fabric.</p>
 <p>
 <b>Physical Server</b> - A single, physical hardware server or other computer but is not a Virtual Machine.</p>
 <p>
@@ -144,7 +144,7 @@ Subject to Customer's compliance with the terms and conditions of this Agreement
 </p>
 </section>
 <section id="ancilliary"> <title>Part 3: Ancillary and Open Source Software for Software</title>
-<p>Additional license authorizations related to ancillary, third party and open source software components are available at: <xref href="http://docs.hpcloud.com/helion/openstack/3rd-party-license-agreements/" scope="external" format="html" >HP <tm tmtype="reg">Helion Openstack</tm> Open Source and Third-Party Software License Agreements</xref>.</p>
+  <p>Additional license authorizations related to ancillary, third party and open source software components are available at: <xref href="1.03rd-party-license-agreements.dita" scope="external" format="html" >HP <tm tmtype="reg">Helion OpenStack</tm> Open Source and Third-Party Software License Agreements</xref>.</p>
 <p>
   <xref href="#topic16065"> Return to Top </xref>
 </p>

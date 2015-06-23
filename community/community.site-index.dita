@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1477">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> Community Site Index</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> Community Site Index</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,10 +13,10 @@
  <!--./community/community.site-index.md-->
  <!--permalink: /helion/community/siteindex/--></p>
 <section id="hp-helion-openstack-community-documentation-home"> <title>
-  HP <tm tmtype="reg">Helion Openstack</tm> Community Documentation Home
+  HP <tm tmtype="reg">Helion OpenStack</tm> Community Documentation Home
 </title>
 </section>
-<section id="getting-started-with-hp-helion-openstack-community"> <title>Getting started with HP <tm tmtype="reg">Helion Openstack</tm> Community</title>
+<section id="getting-started-with-hp-helion-openstack-community"> <title>Getting started with HP <tm tmtype="reg">Helion OpenStack</tm> Community</title>
 <ul>
 <li>
 <xref href="../community/community.release-notes.dita" >Release notes</xref> </li>
@@ -27,7 +27,7 @@
 </li>
 </ul>
 </section>
-<section id="install-configure-your-hp-helion-openstack-community-cloud"> <title>Install &amp; configure your HP <tm tmtype="reg">Helion Openstack</tm> Community cloud</title>
+<section id="install-configure-your-hp-helion-openstack-community-cloud"> <title>Install &amp; configure your HP <tm tmtype="reg">Helion OpenStack</tm> Community cloud</title>
 <ul>
 <li>
 <xref href="../community/community.install-overview.dita" >Installation overview</xref>

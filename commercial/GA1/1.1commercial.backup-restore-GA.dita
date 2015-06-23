@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic19267">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Back Up and Restore</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Back Up and Restore</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -21,7 +21,7 @@
 <p>
 
 </p>
-<p>The default HP <tm tmtype="reg">Helion Openstack</tm> environment consists of a three-node cluster for most of the services plus other services such as RabbitMQ and MySQL. It is resilient to individual node failures as well as network split-brain situations.</p>
+<p>The default HP <tm tmtype="reg">Helion OpenStack</tm> environment consists of a three-node cluster for most of the services plus other services such as RabbitMQ and MySQL. It is resilient to individual node failures as well as network split-brain situations.</p>
 <p>However, as part of your maintenance of the environment, you should create a back up of each component and be prepared to restore any component, should it become necessary.</p>
 <ul>
 <li>
@@ -351,7 +351,7 @@ Backup procedure completed.
 </codeph>
 </codeblock>
 
-<p>For more information on the <codeph>baremetal.csv</codeph> file, see the <xref href="http://docs.hpcloud.com/helion/openstack/1.1/install/prereqs#csv" scope="external" format="html" >Installation Prerequisites</xref>.</p>
+  <p>For more information on the <codeph>baremetal.csv</codeph> file, see the <xref href="1.1commercial.install-GA-prereqs.dita#csv" scope="external" format="html" >Installation Prerequisites</xref>.</p>
 </li>
 <li>
 <p>Execute the following script from the <codeph>/root/tripleo/tripleo-incubator/</codeph>scripts directory:</p>

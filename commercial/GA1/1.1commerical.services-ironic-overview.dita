@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1235">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Ironic Service Overview</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Ironic Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -25,11 +25,11 @@
 <p>
 
 </p>
-<p>HP <tm tmtype="reg">Helion Openstack</tm> leverages the <tm tmtype="reg">OpenStack</tm> Ironic service during the installation for provisioning of the controller and KVM compute host in a baremetal deployment.</p>
+<p>HP <tm tmtype="reg">Helion OpenStack</tm> leverages the <tm tmtype="reg">OpenStack</tm> Ironic service during the installation for provisioning of the controller and KVM compute host in a baremetal deployment.</p>
 <p>Ironic is an <tm tmtype="reg">OpenStack</tm> service to provision baremetal, not virtual, machines by leveraging common technologies such as PXE boot and IPMI to cover a wide range of hardware. Supporting pluggable drivers allows vendor-specific functionality to be added.</p>
 <section id="for-more-information"> <title>For more information</title>
 <p>For information on Ironic, see <tm tmtype="reg">OpenStack</tm> <xref href="http://docs.openstack.org/developer/ironic/" scope="external" format="html" >Ironic's developer documentation</xref>.</p>
-<p>For more information on the HP <tm tmtype="reg">Helion Openstack</tm> deployment model, see <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita" >HP <tm tmtype="reg">Helion Openstack</tm> Technical Overview</xref>.</p>
+<p>For more information on the HP <tm tmtype="reg">Helion OpenStack</tm> deployment model, see <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Technical Overview</xref>.</p>
 <p>
   <xref href="#topic1235"> Return to Top </xref>
 </p>

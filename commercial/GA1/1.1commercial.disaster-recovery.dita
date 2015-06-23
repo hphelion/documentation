@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic22433">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.1: Disaster Recovery</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Disaster Recovery</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -628,7 +628,7 @@ seqno: 959325
 <section id="recovering-from-failed-controllers"> <title>Recovering from failed controllers</title>
 <p>In the event that you need to recover a controller, or inadvertently delete a controller, refer to the following link for recovery details.</p>
 <p>
-  <xref href="http://docs.hpcloud.com//helion/openstack/1.1/removing/failedovercloud#removecontroller1" scope="external" format="html" >http://docs.hpcloud.com//helion/openstack/1.1/removing/failedovercloud#removecontroller1</xref>
+  <xref href="1.1commerical.services-remove-replace-failed-overcloud-nodes.dita#removecontroller1" >http://docs.hpcloud.com/helion/openstack/1.1/removing/failedovercloud#removecontroller1</xref>
 </p>
 <p>
   <xref href="#topic22433"> Return to Top </xref>

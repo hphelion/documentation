@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic15064">
-<title>HP <tm tmtype="reg">Helion Openstack</tm> 1.0: DNSaaS Installation and Configuration</title>
+<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: DNSaaS Installation and Configuration</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -16,7 +16,7 @@
 
 </p>
 <p>Our managed DNS service, based on the <tm tmtype="reg">OpenStack</tm> Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
-<p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP <tm tmtype="reg">Helion Openstack</tm></p>
+<p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP <tm tmtype="reg">Helion OpenStack</tm></p>
 <p>
 <b>Caution</b>: Before migrating to DNSaaS 1.01, you <b>
 <varname>must</varname>
@@ -62,7 +62,7 @@
 <varname>must</varname>
 </b> first <xref type="section" href="#topic15064/uninstall">uninstall</xref> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.01 over the previous version. </p>
 <ul>
-<li>HP <tm tmtype="reg">Helion Openstack</tm> is successfully installed</li>
+<li>HP <tm tmtype="reg">Helion OpenStack</tm> is successfully installed</li>
 <li>Download <xref type="section" href="#topic15064/publication">DNSaaS Installer Image</xref> </li>
 <li>
 <p>Obtain <xref type="section" href="#topic15064/target-cred">Target Credentials</xref>: credentials of the user+tenant where the service is to be deployed.</p>
@@ -565,13 +565,13 @@ listen designate
 </ol>
 <p>
 <b>Note</b>: Installer VM can also be deleted, if it is not deleted already.</p>
-<p>The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the <xref href="http://docs.openstack.org/developer/keystone/" scope="external" format="html" >Keystone documentation</xref>.</p>
+  <p>The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the <xref href="../../publiccloud/apidocs/c1.1/dns-api.dita" scope="external" format="html" >Keystone documentation</xref>.</p>
 </section>
 <section id="moreinfo"> <title>More Information</title>
 <p>For more information, see:</p>
 <ul>
 <li>
-<xref href="https://docs.hpcloud.com/api/dns/" scope="external" format="html" >HP Helion Public Cloud DNS API Specifications</xref>
+  <xref href="../../publiccloud/apidocs/c1.1/dns-api.dita" >HP Helion Public Cloud DNS API Specifications</xref>
 </li>
 <li>
 <xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for <tm tmtype="reg">OpenStack</tm></xref>
