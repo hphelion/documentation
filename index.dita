@@ -228,10 +228,10 @@ leave the server in an error state.</p>
 <section id="install-the-application-lifecycle-service-als"> <title>Install the Application Lifecycle Service (ALS)<!--Removed anchor point install-als--><!-- id="install-als" --></title>
 <p>This section provides details on installing the Application Lifecycle service from the Development Platform.</p>
 </section>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="prereq"> <title>Prerequisites</title>
 <p>For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. This process is documented in Step 7 of <xref href="http://docs.hpcloud.com/helion/community/install#startseed" scope="external" format="html" >"Starting the seed and building your cloud"</xref> in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the <xref href="devplatform/helion/admin/server/1.1configuration.dita#http-proxy" >Administration Guide</xref>.</p>
 </section>
-<section id="connect-to-the-download-service"> <title>Connect to the Download Service</title>
+<section id="connect-to-download-service3"> <title>Connect to the Download Service</title>
 <ol>
 <li>
 <p>Open Horizon and login as the "Admin" user. Then click on the <b>Admin</b> panel in Horizon and select <b>Development Platform</b>. Finally, click on <b>Configure Services</b>.</p>
@@ -268,7 +268,7 @@ leave the server in an error state.</p>
 <section id="install-database"> <title>Install the Database Service</title>
 <p>This section provides details on installing the Database Service from the Development Platform.</p>
 </section>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="prereq1"> <title>Prerequisites</title>
 </section>
 <section id="availability-zones"> <title>Availability Zones</title>
 <p>To configure the Database Service in a highly available manner, it is necessary to create separate availability zones. As a best practice, HP recommends creating three availability zones. All compute hosts should be placed within one of these availability zones. If a compute host is not associated with an availability zone, the Database Service will not be able to provision a database instance to it. As a result, the Database Service may run out of capacity even though there are compute hosts with free capacity.</p>
@@ -408,7 +408,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 </table>
 <p>In addition to the quota mentioned above, for every database instance that is created by a user, the necessary resources to create that instance will be deducted from the admin tenant quota. The users database service quota will also be affected.</p>
 </section>
-<section id="connect-to-the-download-service"> <title>Connect to the Download Service</title>
+<section id="connect-to-download-service1"> <title>Connect to the Download Service</title>
 <ol>
 <li>
 <p>Open Horizon and log in as the "admin" user. Then click on the admin panel in Horizon and select the <b>Development Platform</b> panel under Admin. Then click on the <b>Configure Services</b> sub-panel.</p>
@@ -531,7 +531,7 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 <section id="install-the-marketplace-service"> <title>Install the Marketplace Service<!--Removed anchor point install-marketplace--><!-- id="install-marketplace" --></title>
 <p>This section provides details on installing the Marketplace service from the Development Platform.</p>
 </section>
-<section id="prerequisites"> <title>Prerequisites</title>
+<section id="prereq2"> <title>Prerequisites</title>
 <p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion <tm tmtype="reg">OpenStack</tm> overcloud. The admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <table>
 <tgroup cols="2">
@@ -581,7 +581,7 @@ Increase the Ports quota to at least 100 using the following command in the <xre
 </codeph>
 </codeblock>
 </section>
-<section id="connect-to-the-download-service"> <title>Connect to the Download Service</title>
+<section id="connect-to-download-service2"> <title>Connect to the Download Service</title>
 <ol>
 <li>
 <p>Open Horizon and log in as the "admin" user. Then click on the admin panel in Horizon and select the <b>Development Platform</b> Panel under Admin. Then click on the <b>Configure Services</b> sub-panel.</p>

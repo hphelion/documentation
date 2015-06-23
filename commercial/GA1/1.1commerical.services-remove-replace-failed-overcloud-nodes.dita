@@ -475,7 +475,7 @@ xargs -d" " -n 1 -I controller_ip $ssh_sudo "$restore_original" &lt;&lt;&lt; $re
 <section id="controller2"> <title>Removing and replacing controller2</title>
 <p>The following sections provide instructions on how to remove and replace a failed <codeph>controller2</codeph> node.</p>
 </section>
-<section id="remove-the-failed-controller"> <title>Remove the failed controller</title>
+<section id="remove-failed-controller"> <title>Remove the failed controller</title>
 <ol>
 <li>
 <p>Make sure that <codeph>controller2</codeph> is halted.</p>
@@ -595,7 +595,7 @@ make overcloud-ce-trickle
 </li>
 </ol>
 </section>
-<section id="add-a-replacement-controller"> <title>Add a replacement controller</title>
+<section id="add-replacement-controller"> <title>Add a replacement controller</title>
 <ol>
 <li>
 <p>Make sure the new node is available in Ironic.</p>
