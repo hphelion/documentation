@@ -50,7 +50,7 @@
      **Online** section.</li>
     <li>Install the extension from the search results.</li>
    </ol> <p>The Cloud Foundry Extensions page on Visual Studio Gallery can be found 
-    <xref href="https://visualstudiogallery.msdn.microsoft.com/4cad4d95-099c-449e-9d90-7d4da5c4a0c0?SRC=Home" format="external">here</xref>. </p></section>
+    <xref href="https://visualstudiogallery.msdn.microsoft.com/4cad4d95-099c-449e-9d90-7d4da5c4a0c0?SRC=Home" format="html" scope="external">here</xref>. </p></section>
  
 <section><title>The Cloud Foundry Explorer Window</title> 
  <p>The explorer can be opened in Visual
@@ -177,7 +177,8 @@
     </tgroup>
    </table></section>
  <section><title>Deploying an application</title>
-  <p>For an example of how to deploy an application from Visual Studio, see <xref format="dita" scope="local" href="windows_firstapp/topic_amr_q3w_js">Deploying your first .NET Application</xref>.</p>
+  <p>For an example of how to deploy an application from Visual Studio, see <xref
+     href="windows_firstapp.dita#topic_amr_q3w_js" scope="local" format="dita">Deploying your first .NET Application</xref>.</p>
 
   <p><note>Currently, only Web Application Projects can be deployed from Cloud Foundry Explorer; Web Site Projects are not supported. Web Site Projects can still be deployed from the command line.</note></p>
 
@@ -228,10 +229,12 @@
 
   <codeblock>cf-mgmt add-service mssql2014 --load &lt;filename>.yml</codeblock>
 
-  <p>For more information on the ALS cluster management tool, see 
-   <xref format="html" scope="external" href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference">HP Helion ALS Cluster Management Tool Reference</xref>.</p>
+  <p>For more information on the ALS cluster management tool, see <xref
+     href="../helion/CLI/1.2ALS_Client_Reference.dita#topic13234" scope="local" format="dita">Helion ALS Cluster Management Tool
+     Reference</xref>.</p>
 
-  <p>The ALS cluster management tool can be downloaded from the following location: <xref format="html" scope="external" href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/download">Download</xref>.</p>
+  <p>The ALS cluster management tool can be downloaded from the following location: <xref
+     href="../helion/CLI/1.2ALS_Client_Downloads.dita#topic843" format="dita" scope="local">Download</xref>.</p>
 
  </section>
  <section id="helion"><title>Helion Client</title>
@@ -267,17 +270,6 @@
 For information on Glazier, see <xref scope="local" format="dita" href="windows_glazier_reference_guide.dita">Glazier Reference Guide</xref>.
 </section>
 </body>
- <related-links>
-  <link href="windows_overview.dita"><linktext>Windows Overview</linktext></link>
-  <link href="windows_building_and_deploying.dita"><linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext></link>
-  <link href="windows_firstapp.dita"><linktext>Deploying your first .NET Application</linktext></link>
-  <link href="windows_tools_guide.dita"><linktext>Windows and .NET Tools Guide</linktext></link>
-  <link href="windows_glazier_reference_guide.dita"><linktext>Glazier Reference Guide</linktext></link>
-  <link href="windows_adding_services.dita"><linktext>Adding Services to a Windows Application</linktext></link>
-  <link href="windows_custom_buildpacks.dita"><linktext>Deploying Windows Applications with the IIS Buildpack</linktext></link>
-  <link href="windows_adding_services.dita"><linktext>Connecting Services to a Windows Application</linktext></link>
-  <link href="windows_growcluster.dita"><linktext>Growing and Renaming Clusters Using Horizon</linktext></link>
- </related-links>
 </topic>
 
 
