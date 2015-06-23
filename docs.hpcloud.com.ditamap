@@ -1649,8 +1649,10 @@
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
   <topicref href="CarrierGrade/carrier-grade-index.dita">
-    <topichead navtitle="Installing the Non-VNF Servers"/>
-    <topichead navtitle="Installing the VNF Server (PDF)"/>
+    <topichead navtitle="Installing the Non-KVM Servers"/>
+    <topichead navtitle="Installing the KVM Server (PDF)">
+      <mapref href="PDF/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf" format="pdf"/>
+    </topichead>
     <topichead navtitle="Administrator Guide">
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
     </topichead>
