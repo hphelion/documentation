@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic51655">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1.1: Update Procedure</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1: Update Procedure</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Update Procedure</searchtitle>
 </titlealts>
@@ -28,21 +28,21 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1.1commercial.helion-update.md-->
  <!--permalink: /helion/openstack/1.1.1/update/--></p>
-<p>Welcome to the HP Helion <tm tmtype="reg">Openstack</tm> v1.1.1 update instructions. These instructions apply to existing HP Helion <tm tmtype="reg">Openstack</tm> v1.1 installations and describe how you can update your HP Helion <tm tmtype="reg">Openstack</tm> cloud environment from v1.1 to v1.1.1. (The process of updating a Helion <tm tmtype="reg">Openstack</tm> v1.0 or v1.01 release to Helion <tm tmtype="reg">Openstack</tm> v1.1.1 is not supported.)</p>
+<p>Welcome to the HP Helion <tm tmtype="reg">OpenStack</tm> v1.1.1 update instructions. These instructions apply to existing HP Helion <tm tmtype="reg">OpenStack</tm> v1.1 installations and describe how you can update your HP Helion <tm tmtype="reg">OpenStack</tm> cloud environment from v1.1 to v1.1.1. (The process of updating a Helion <tm tmtype="reg">OpenStack</tm> v1.0 or v1.01 release to Helion <tm tmtype="reg">OpenStack</tm> v1.1.1 is not supported.)</p>
 <p>
 <b>Note to Helion Development Platform users</b>: 
-The HP Helion Development Platform requires HP Helion <tm tmtype="reg">Openstack</tm> v1.1.1. However, HP Helion <tm tmtype="reg">Openstack</tm> v1.1.1 does not currently support updating the HP Helion Development Platform from v1.1 to v1.2.</p>
+The HP Helion Development Platform requires HP Helion <tm tmtype="reg">OpenStack</tm> v1.1.1. However, HP Helion <tm tmtype="reg">OpenStack</tm> v1.1.1 does not currently support updating the HP Helion Development Platform from v1.1 to v1.2.</p>
 <!--At this time, the Helion Development Platform requires HP Helion Open Stack v1.1.1. Upgrading Helion Development Platform from v1.1 to v1.2 is currently not supported. -->
 <p>
-<b>Note</b>: You can also deploy the HP Helion <tm tmtype="reg">Openstack</tm> v1.1.1 release from scratch. For those instructions, please see <xref href="../../commercial/GA1/1.1commercial.install-GA-overview.dita" >Installing Helion <tm tmtype="reg">Openstack</tm></xref>.
+<b>Note</b>: You can also deploy the HP Helion <tm tmtype="reg">OpenStack</tm> v1.1.1 release from scratch. For those instructions, please see <xref href="../../commercial/GA1/1.1commercial.install-GA-overview.dita" >Installing Helion <tm tmtype="reg">OpenStack</tm></xref>.
 <!--verify link--></p>
-<!-- Helion <tm tmtype="reg">Openstack</tm> v1.1.1 update scripts update HP Helion <tm tmtype="reg">Openstack</tm> v1.1 to version v1.1.1 and starts the update process of Helion Development Platform v1.1 to v1.2. To complete the HP Helion Development Platform update to v1.2, refer to the HP Helion Development Platform documentation listed in [Updating Helion Development Platform](/helion/devplatform/1.2/upgrade/). -->
+<!-- Helion <tm tmtype="reg">OpenStack</tm> v1.1.1 update scripts update HP Helion <tm tmtype="reg">OpenStack</tm> v1.1 to version v1.1.1 and starts the update process of Helion Development Platform v1.1 to v1.2. To complete the HP Helion Development Platform update to v1.2, refer to the HP Helion Development Platform documentation listed in [Updating Helion Development Platform](/helion/devplatform/1.2/upgrade/). -->
 <!--
-**Note for Helion Development Platform version v1.1 users**: This Helion <tm tmtype="reg">Openstack</tm> version v1.1.1 update procedure supports Helion Development Platform version v1.2, (and only Helion Development Platform version v1.2). For users who have installed Helion <tm tmtype="reg">Openstack</tm> v1.1 and Helion Development Platform v1.1, when you update to Helion <tm tmtype="reg">Openstack</tm> v1.1.1, you also need to update to Helion Development Platform v1.2.  
+**Note for Helion Development Platform version v1.1 users**: This Helion <tm tmtype="reg">OpenStack</tm> version v1.1.1 update procedure supports Helion Development Platform version v1.2, (and only Helion Development Platform version v1.2). For users who have installed Helion <tm tmtype="reg">OpenStack</tm> v1.1 and Helion Development Platform v1.1, when you update to Helion <tm tmtype="reg">OpenStack</tm> v1.1.1, you also need to update to Helion Development Platform v1.2.  
 
-**Important for HP Helion Development Platform users**: During the HP Helion <tm tmtype="reg">Openstack</tm> v1.1.1 update, you will need to stop your Helion Development Platform services. Failure to do so will likely damage your existing Helion Development Platform v1.1 installation. 
+**Important for HP Helion Development Platform users**: During the HP Helion <tm tmtype="reg">OpenStack</tm> v1.1.1 update, you will need to stop your Helion Development Platform services. Failure to do so will likely damage your existing Helion Development Platform v1.1 installation. 
 For details on the HP Helion Development Platform update to v1.2, see [Updating Helion Development Platform](/helion/devplatform/1.2/upgrade/). -->
-<p>The process of updating HP Helion <tm tmtype="reg">Openstack</tm> v1.1 to HP Helion <tm tmtype="reg">Openstack</tm> v1.1.1 consists of three procedures:</p>
+<p>The process of updating HP Helion <tm tmtype="reg">OpenStack</tm> v1.1 to HP Helion <tm tmtype="reg">OpenStack</tm> v1.1.1 consists of three procedures:</p>
 <ol>
 <li>
 <xref type="section" href="#topic51655/seed-update-process">Update the seed host</xref>
@@ -55,7 +55,7 @@ For details on the HP Helion Development Platform update to v1.2, see [Updating 
 </li>
 </ol>
 <p>These procedures are described in the following sections. You must perform each of these three procedures in the order presented: first the seed host, then the undercloud, and finally, the overcloud.</p>
-<p>Allow a full day for the  HP Helion <tm tmtype="reg">Openstack</tm> v1.1.1 update to complete. During the update process, affected systems will be offline.</p>
+<p>Allow a full day for the  HP Helion <tm tmtype="reg">OpenStack</tm> v1.1.1 update to complete. During the update process, affected systems will be offline.</p>
 <p>
 <b>Note</b>: Nodes to be updated must be in a "good" state before running the update. Specifically, being in a "good" state means:</p>
 <ul>
@@ -281,7 +281,7 @@ remote_update_tripleo_root_directory = /root/helion-update-1.1-to-&lt;version&gt
 </li>
 </ol>
 </section>
-<section id="uc-update-process"> <title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 to 1.1.X undercloud update process</title>
+<section id="uc-update-process"> <title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 to 1.1.X undercloud update process</title>
 <p>The procedure will guide you through updating the undercloud by running the <codeph>update_uc.sh</codeph> shell script.</p>
 <!-- copy note from seed host for devplat users -->
 <p>
@@ -293,7 +293,7 @@ If you are updating to a release that includes new Orchestration (Heat) template
   <codeph>./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-undercloud 
 </codeph>
 </codeblock>
-<p>To update your HP Helion <tm tmtype="reg">Openstack</tm> undercloud from v1.1 to v1.1.1:</p>
+<p>To update your HP Helion <tm tmtype="reg">OpenStack</tm> undercloud from v1.1 to v1.1.1:</p>
 <ol>
 <li>
 <p>Log on to the seed VM.</p>
@@ -327,7 +327,7 @@ cd tripleo/helion-update/undercloud_update
 </codeblock>
 </li>
 <li>
-<p>Your HP Helion <tm tmtype="reg">Openstack</tm> undercloud is now updated. Confirm that update was successful by examining the <codeph>/var/log/ansible/ansible.log</codeph>.  This report should not list any unreachable nodes:</p>
+<p>Your HP Helion <tm tmtype="reg">OpenStack</tm> undercloud is now updated. Confirm that update was successful by examining the <codeph>/var/log/ansible/ansible.log</codeph>.  This report should not list any unreachable nodes:</p>
 
 <codeblock>
 <codeph>PLAY RECAP ********************************************************************
@@ -667,7 +667,7 @@ cd helion-update-1.1-to-&lt;version&gt;/tripleo/helion-update/overcloud_update
 </codeph>
 </codeblock>
 
-<p>Your HP Helion <tm tmtype="reg">Openstack</tm> overcloud is now updated.</p>
+<p>Your HP Helion <tm tmtype="reg">OpenStack</tm> overcloud is now updated.</p>
 </li>
 <li>
 <p>Confirm that update was successful by examining the <codeph>/var/log/ansible/ansible.log</codeph>.  This report should not list any unreachable nodes:</p>
@@ -738,7 +738,7 @@ cd helion-update-1.1-to-&lt;version&gt;/tripleo/helion-update/overcloud_update
 <!-- replace with link to /helion/devplatform/1.2/upgrade/ -->
 <!-- ###Updating the overcloud manually
 
-This procedure allows you to update your overcloud installation from HP Helion <tm tmtype="reg">Openstack</tm> v1.1 to Helion v1.1.1 by executing the update commands directly and not relying on the update scripts. (HP Helion Development Platform users must shutdown before updating the overcloud. When the update is complete, the Development Platform VMs need to be restarted.) 
+This procedure allows you to update your overcloud installation from HP Helion <tm tmtype="reg">OpenStack</tm> v1.1 to Helion v1.1.1 by executing the update commands directly and not relying on the update scripts. (HP Helion Development Platform users must shutdown before updating the overcloud. When the update is complete, the Development Platform VMs need to be restarted.) 
 
 To update your overcloud:
 
@@ -1250,7 +1250,7 @@ and the host has failed to reboot. When this happens, you will get this error Me
 </ul>
 </section>
 <section id="mysqlperconagalera-is-out-of-sync"> <title>MySQL/Percona/Galera is out of sync</title>
-<p><tm tmtype="reg">Openstack</tm> is configured to store all of its states in a multi-node, synchronous replication Percona XtraDB Cluster database, which uses Galera for replication. This database must be in sync and have the full
+<p><tm tmtype="reg">OpenStack</tm> is configured to store all of its states in a multi-node, synchronous replication Percona XtraDB Cluster database, which uses Galera for replication. This database must be in sync and have the full
 complement of servers before updates can be performed safely.</p>
 <p>The problem is update fails with errors about Galera and/or MySQL being <codeph>Out of Sync</codeph>.</p>
 <p>To fix this issue:</p>
@@ -1671,7 +1671,7 @@ Then stop the instance by entering:</p>
 </codeblock>
 </section>
 <section id="envvarsignored"> <title>Environment variables being ignored</title>
-<p>When running the <codeph>update_sd.sh</codeph> script to upgrade from HP Helion <tm tmtype="reg">Openstack</tm> v1.1 to v1.1.1,  the default 192.0.6.0/24 network is used instead of the networks that are defined by the <codeph>kvm-custom-ips.json</codeph> file.
+<p>When running the <codeph>update_sd.sh</codeph> script to upgrade from HP Helion <tm tmtype="reg">OpenStack</tm> v1.1 to v1.1.1,  the default 192.0.6.0/24 network is used instead of the networks that are defined by the <codeph>kvm-custom-ips.json</codeph> file.
 The reason this happens is the person doing the update neglected to set the ENV variables before running the update command. These ENV variables were set when the system was installed and the same ENV variable set (with the same values) must be used for the update.</p>
 <p>The following is an example of ENV variables:</p>
 <codeblock>

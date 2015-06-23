@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3035">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Telemetry and Reporting Service Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Telemetry and Reporting Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,7 +15,7 @@
 <p>
 
 </p>
-<p>The HP Helion <tm tmtype="reg">Openstack</tm> Telemetry and Reporting service leverages the <tm tmtype="reg">Openstack</tm> Ceilometer service to monitor the physical devices in your environment, including physical servers and network devices such as switches and firewalls.</p>
+<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Telemetry and Reporting service leverages the <tm tmtype="reg">OpenStack</tm> Ceilometer service to monitor the physical devices in your environment, including physical servers and network devices such as switches and firewalls.</p>
 <p>The Telemetry and Reporting service allows you to collect measurements using only one agent; it collects usage data from every component throughout your environment and stores the data in a single location.</p>
 <p>The Telemetry and Reporting service contains three types of monitors:</p>
 <ul>
@@ -40,19 +40,19 @@
 <p>To perform tasks using the Telemetry and Reporting service, you can use the dashboard, API, or CLI.</p>
 </section>
 <section id="UI"> <title>Using the dashboards</title>
-<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP Helion <tm tmtype="reg">Openstack</tm> Dashboard</xref> to work with the Telemetry and Reporting service.</p>
+<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Dashboard</xref> to work with the Telemetry and Reporting service.</p>
 </section>
 <section id="using-the-api"> <title>Using the API<!--Removed anchor point API--><!-- id="API" --></title>
-<p>You can use a low-level, raw REST API for access to HP Telemetry and Reporting. See the <xref href="http://developer.openstack.org/api-ref-telemetry-v2.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Telemetry API v2.0 Reference</xref>.</p>
+<p>You can use a low-level, raw REST API for access to HP Telemetry and Reporting. See the <xref href="http://developer.openstack.org/api-ref-telemetry-v2.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Telemetry API v2.0 Reference</xref>.</p>
 </section>
 <section id="using-the-cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
-<p>You can use any of several command-line interfaces to access HP Telemetry and Reporting. See the <xref href="http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Command Line Interface Reference</xref>.</p>
-<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">Openstack</tm> command-line clients</xref>.</p>
+<p>You can use any of several command-line interfaces to access HP Telemetry and Reporting. See the <xref href="http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Command Line Interface Reference</xref>.</p>
+<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">OpenStack</tm> command-line clients</xref>.</p>
 <!--
 
 ## How To's with the HP Helion Telemetry and Reporting Service<a name="howto"></a>
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion <tm tmtype="reg">Openstack</tm> Dashboard](/helion/openstack/dashboard/how-works/), the <tm tmtype="reg">Openstack</tm> [CLI](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html) or <tm tmtype="reg">Openstack</tm> [API](http://developer.openstack.org/api-ref-telemetry-v2.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion <tm tmtype="reg">OpenStack</tm> Dashboard](/helion/openstack/dashboard/how-works/), the <tm tmtype="reg">OpenStack</tm> [CLI](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html) or <tm tmtype="reg">OpenStack</tm> [API](http://developer.openstack.org/api-ref-telemetry-v2.html).
 
 ### Working with the Telemetry and Reporting service collection actions ###
 
@@ -91,7 +91,7 @@ The Telemetry and Reporting contains threshold alarms that you can configure to 
  -->
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on how to operate your cloud, we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">Openstack</tm> cloud is put together. However, the HP Helion <tm tmtype="reg">Openstack</tm> takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
+<p>For information on how to operate your cloud, we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">OpenStack</tm> cloud is put together. However, the HP Helion <tm tmtype="reg">OpenStack</tm> takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
 <p>
   <xref type="section" href="#topic3035"> Return to Top </xref>
 </p>

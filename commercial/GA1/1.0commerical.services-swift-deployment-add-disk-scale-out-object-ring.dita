@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2619">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Add a Disk to a Scale-out Object Ring</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Add a Disk to a Scale-out Object Ring</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,7 +26,7 @@
 </ol>
 <section id="prer"> <title>Prerequisite</title>
 <ul>
-<li>HP Helion <tm tmtype="reg">Openstack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Swift nodes are functional by default as they are part of cloud deployment.)</i>
+<li>HP Helion <tm tmtype="reg">OpenStack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Swift nodes are functional by default as they are part of cloud deployment.)</i>
 </li>
 <li>Scale-out object-ring:1 has been deployed.</li>
 <li>All of the rings generated <b>must</b> be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.</li>

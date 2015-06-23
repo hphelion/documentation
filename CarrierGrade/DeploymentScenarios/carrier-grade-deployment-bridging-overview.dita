@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2036">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Bridging Scenario Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Bridging Scenario Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -32,8 +32,8 @@
 <li>Layer 2 bridging in the Linux kernel</li>
 <li>Layer 2 bridging using an Intel DPDK-accelerated virtual switch</li>
 </ul>
-<p>The selected mode of operation is passed to the instance using <tm tmtype="reg">Openstack</tm> user data.</p>
-<p>To demonstrate the performance optimizations offered by the AVP and AVS features of HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade, the network interfaces in the test path use AVP network drivers in combination with the Linux or DPDK-accelerated bridging. You can also use standard Linux virtio network drivers in combination with standard Linux-kernel Layer 2 bridging, but this will yield poorer performance.</p>
+<p>The selected mode of operation is passed to the instance using <tm tmtype="reg">OpenStack</tm> user data.</p>
+<p>To demonstrate the performance optimizations offered by the AVP and AVS features of HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade, the network interfaces in the test path use AVP network drivers in combination with the Linux or DPDK-accelerated bridging. You can also use standard Linux virtio network drivers in combination with standard Linux-kernel Layer 2 bridging, but this will yield poorer performance.</p>
 <p>
 <b>Note:</b> To highlight DPDK and AVP performance without additional Layer 3 routing or application overhead, the Bridging Scenario uses a VM to bridge two tenant networks. This configuration can cause Spanning Tree Protocol (STP) failures in Layer 2 switches connected to the networks. Disabling STP on the switches, or on the bridged tenant network VLANs, is recommended.</p>
 <p>See <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-deploy.dita" >Deploying the Bridging Scenario</xref>.</p>

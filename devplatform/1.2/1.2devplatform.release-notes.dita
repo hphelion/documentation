@@ -50,7 +50,7 @@
 <p>The addition of the Visual Studio Cloud Foundry Explorer and MS Build tasks enable the .NET enterprise developer to deploy and manage their application directly from the favorite development IDE, command line environment or build agent.</p>
 <p>
 <b>Horizon panel updates for IT operations</b>
-Administrators can now run even more operations from the HP <tm tmtype="reg">Helion Openstack</tm> Horizon management console, including renaming clusters, adding DEA nodes, adding roles, proxy support and DNS suffixes.</p>
+Administrators can now run even more operations from the HP <tm tmtype="reg">Helion OpenStack</tm> Horizon management console, including renaming clusters, adding DEA nodes, adding roles, proxy support and DNS suffixes.</p>
 </section>
 <section id="known"> <title>Known Issues</title>
 <p>

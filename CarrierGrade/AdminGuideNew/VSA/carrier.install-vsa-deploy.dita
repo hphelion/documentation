@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2945">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Deploying HP StoreVirtual VSA Storage Sytems</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Deploying HP StoreVirtual VSA Storage Sytems</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -51,9 +51,9 @@
 <p>KVM Cloud is installed and is running.</p>
 </li>
 </ul>
-<p>The license for the StoreVirtual VSA license is bundled with HP Helion <tm tmtype="reg">Openstack</tm> and has a maximum limit of 50 TB per node. Hence the total amount of the configured storage on an individual StoreVirtual node should not exceed 50 TB. To extend the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16 nodes, which means configured storage on a VSA cluster can be as much as 800 TB.</p>
+<p>The license for the StoreVirtual VSA license is bundled with HP Helion <tm tmtype="reg">OpenStack</tm> and has a maximum limit of 50 TB per node. Hence the total amount of the configured storage on an individual StoreVirtual node should not exceed 50 TB. To extend the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16 nodes, which means configured storage on a VSA cluster can be as much as 800 TB.</p>
 <p>
-<b>Note</b>: Use of StoreVirtual VSA is included with your Helion <tm tmtype="reg">Openstack</tm> license.  When installing StoreVirtual VSA under the Helion <tm tmtype="reg">Openstack</tm> license, the CMC may display a message that some features are not licensed. This message displays in error and can be ignored if you have licensed the physical server with a Helion <tm tmtype="reg">Openstack</tm> license.</p>
+<b>Note</b>: Use of StoreVirtual VSA is included with your Helion <tm tmtype="reg">OpenStack</tm> license.  When installing StoreVirtual VSA under the Helion <tm tmtype="reg">OpenStack</tm> license, the CMC may display a message that some features are not licensed. This message displays in error and can be ignored if you have licensed the physical server with a Helion <tm tmtype="reg">OpenStack</tm> license.</p>
 <!--<img src="/media/storevirtual-cluster-network-diagram1.png"/>-->
 <section id="next-step"> <title>Next Step</title>
 <p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2174">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1 and 1.1.1: Ceph Nova Storage</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Ceph Nova Storage</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Ceph Nova Storage</searchtitle>
 </titlealts>
@@ -188,7 +188,7 @@ There are two ways to attach a Cinder volume to a Nova instance.
 
 **Attaching a Cinder volume from Horizon overcloud dashboard**
 
-To attach a Cinder volume to Nova instance [<tm tmtype="reg">Openstack</tm> User Guide](http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html)
+To attach a Cinder volume to Nova instance [<tm tmtype="reg">OpenStack</tm> User Guide](http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html)
 -->
 <!--
 1. In the Horizon Dashboard, click the **Project** Tab.  

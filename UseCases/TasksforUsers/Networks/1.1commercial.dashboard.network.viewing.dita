@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic868">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Viewing Your Network</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Viewing Your Network</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,7 +15,7 @@
 <p>The <b>Network Topology</b> screen is a physical representation of your network configuration.</p>
 <p>Your network looks similar to the following diagram.</p>
 <p>
-<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">Openstack</tm> Helion Dashboard</xref> and select the <b>Network Topology</b> link on the <b>Project</b> dashboard <b>Network</b> panel.</p>
+<xref href="../../../commercial/GA1/1.1commercial.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Helion Dashboard</xref> and select the <b>Network Topology</b> link on the <b>Project</b> dashboard <b>Network</b> panel.</p>
 <p>
   <!--A BR tag was used here in the original source.-->
   <image href="../../../media/compute-network-topology-def-crop.png" placement="break">

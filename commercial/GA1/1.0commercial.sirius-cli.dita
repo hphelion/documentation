@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7877">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.0: Configuring Your Storage Using Sirius</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Configuring Your Storage Using Sirius</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,7 +26,7 @@
 <p>
 
 Once you complete the undercloud and overcloud installation, you can use the Sirius client CLI package to configure your storage.</p>
-<p>The python-Siriusclient CLI package provides a http-client coupled command line tool for managing the Sirius service. The client works with Keystone through the python-keystoneclient and thus requires <tm tmtype="reg">Openstack</tm> Keystone credentials to be sourced or augmented along with the command. This requirement is in line with other <tm tmtype="reg">Openstack</tm> clients. This service helps with configuring the storage devices such as StoreVirtual and StoreServ, which function as the backend for Cinder.</p>
+<p>The python-Siriusclient CLI package provides a http-client coupled command line tool for managing the Sirius service. The client works with Keystone through the python-keystoneclient and thus requires <tm tmtype="reg">OpenStack</tm> Keystone credentials to be sourced or augmented along with the command. This requirement is in line with other <tm tmtype="reg">OpenStack</tm> clients. This service helps with configuring the storage devices such as StoreVirtual and StoreServ, which function as the backend for Cinder.</p>
 <p>You can use the following commands using the Sirius Client CLI package in the undercloud. For a list of all available commands, use the <xref type="section" href="#topic7877/help">Help Commands</xref>.</p>
 <ul>
 <li>
@@ -340,43 +340,43 @@ Path of CA TLS certificate(s) used to verify the remote server's certificate. Wi
      # -??-timeout TIMEOUT -->
 </section>
 <section id="os-username"> <title>OS username</title>
-<p>Username of the keystone (<tm tmtype="reg">Openstack</tm> Defaults to env[OS_USERNAME].</p>
+<p>Username of the keystone (<tm tmtype="reg">OpenStack</tm> Defaults to env[OS_USERNAME].</p>
 <codeblock>
   <codeph># --os-username OS_USERNAME
 </codeph>
 </codeblock>
 </section>
 <section id="os-password"> <title>OS PASSWORD</title>
-<p>Password of the keystone (<tm tmtype="reg">Openstack</tm>  Defaults to env[OS_PASSWORD].</p>
+<p>Password of the keystone (<tm tmtype="reg">OpenStack</tm>  Defaults to env[OS_PASSWORD].</p>
 <codeblock>
   <codeph># --os-password OS_PASSWORD
 </codeph>
 </codeblock>
 </section>
 <section id="os-tenant-id"> <title>OS TENANT ID</title>
-<p>Tenant identification of the <tm tmtype="reg">Openstack</tm> Defaults to env[OS_TENANT_ID].</p>
+<p>Tenant identification of the <tm tmtype="reg">OpenStack</tm> Defaults to env[OS_TENANT_ID].</p>
 <codeblock>
   <codeph># --os-tenant-id OS_TENANT_ID
 </codeph>
 </codeblock>
 <!--###OS TENANT NAME
-Tenant name of the <tm tmtype="reg">Openstack</tm> Defaults to env[OS&#095;TENANT_NAME].
+Tenant name of the <tm tmtype="reg">OpenStack</tm> Defaults to env[OS&#095;TENANT_NAME].
         
     -??-os-tenant-name OS_TENANT_NAME-->
 </section>
 <section id="os-auth-url"> <title>OS AUTH URL</title>
-<p>Authentication URL of <tm tmtype="reg">Openstack</tm> Defaults to env[OS_AUTH_URL].</p>
+<p>Authentication URL of <tm tmtype="reg">OpenStack</tm> Defaults to env[OS_AUTH_URL].</p>
 <codeblock>
   <codeph># --os-auth-url OS_AUTH_URL
 </codeph>
 </codeblock>
 <!--###OS REGION NAME
-The region name of  <tm tmtype="reg">Openstack</tm> Defaults to env[OS_REGION_NAME].
+The region name of  <tm tmtype="reg">OpenStack</tm> Defaults to env[OS_REGION_NAME].
 
     -??-os-region-name OS_REGION_NAME  -->
 </section>
 <section id="os-auth-token"> <title>OS AUTH TOKEN</title>
-<p>Authentication token of <tm tmtype="reg">Openstack</tm> Defaults to env[OS_AUTH_TOKEN].</p>
+<p>Authentication token of <tm tmtype="reg">OpenStack</tm> Defaults to env[OS_AUTH_TOKEN].</p>
 <codeblock>
   <codeph># --os-auth-token OS_AUTH_TOKEN
 </codeph>
@@ -395,13 +395,13 @@ The API version of Sirius. Defaults to env[SIRIUS_API_VERSION] or 1
                         
  
 ###OS SERVICE TYPE
-The service type of <tm tmtype="reg">Openstack</tm> to env[OS_SERVICE_TYPE].
+The service type of <tm tmtype="reg">OpenStack</tm> to env[OS_SERVICE_TYPE].
 
     -??-os-service-type OS_SERVICE_TYPE
                         
  
 ###OS ENDPOINT TYPE
-The endpoint type of <tm tmtype="reg">Openstack</tm> Defaults to env[OS_ENDPOINT_TYPE].
+The endpoint type of <tm tmtype="reg">OpenStack</tm> Defaults to env[OS_ENDPOINT_TYPE].
     
     -??-os-endpoint-type OS_ENDPOINT_TYPE  -->
 <p>

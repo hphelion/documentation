@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3485">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Technical Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Technical Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -25,10 +25,10 @@
  <!--permalink: /helion/openstack/carrier/technical-overview/--></p>
 <p> <xref href="../../CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita" >▲ Installation Overview</xref> | <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >Support Matrix ▶</xref>
 </p>
-<p>This page introduces you to HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade, a carrier-grade distribution of <tm tmtype="reg">Openstack</tm> the leading open source cloud computing platform.</p>
+<p>This page introduces you to HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade, a carrier-grade distribution of <tm tmtype="reg">OpenStack</tm> the leading open source cloud computing platform.</p>
 <ul>
 <li>
-<xref type="section" href="#topic3485/Helion-services">HP Helion <tm tmtype="reg">Openstack</tm> services</xref>
+<xref type="section" href="#topic3485/Helion-services">HP Helion <tm tmtype="reg">OpenStack</tm> services</xref>
 </li>
 <li>
 <xref type="section" href="#topic3485/deploy-arch">Deployment architecture</xref>
@@ -40,11 +40,11 @@
 <xref type="section" href="#topic3485/next">Hardware requirement</xref>
 </li>
 </ul>
-<section id="Helion-services"> <title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade services- functional overview</title>
-<p>The following table outlines the functionality of HP Helion <tm tmtype="reg">Openstack</tm>  Carrier Grade services based on the type of users - Users and Administrators. For a complete description of these services, see the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >Services Overview</xref> page.</p>
+<section id="Helion-services"> <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade services- functional overview</title>
+<p>The following table outlines the functionality of HP Helion <tm tmtype="reg">OpenStack</tm>  Carrier Grade services based on the type of users - Users and Administrators. For a complete description of these services, see the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >Services Overview</xref> page.</p>
 </section>
 <section id="deploy-arch"> <title>Deployment architecture</title>
-<p>You can deploy HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade on a <xref href="http://www.linux-kvm.org/page/Main_Page" scope="external" format="html" >KVM hypervisor</xref>.</p>
+<p>You can deploy HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade on a <xref href="http://www.linux-kvm.org/page/Main_Page" scope="external" format="html" >KVM hypervisor</xref>.</p>
 <p>The following diagram depicts a simplified deployment scenario using KVM.</p>
 <!-- This image is for beta release only. Replace for beta -->
 <p>
@@ -159,7 +159,7 @@
 <row>
 <entry> CLM </entry>
 <entry> CAN </entry>
-<entry> Accessing <tm tmtype="reg">Openstack</tm> APIs </entry>
+<entry> Accessing <tm tmtype="reg">OpenStack</tm> APIs </entry>
 </row>
 <row>
 <entry> DCM </entry>
@@ -189,11 +189,11 @@
 <!--
 ### Backup and Restore nodes {#backup-restore-nodes}
 
-Backup and restore scripts and procedures are provided for the seed VM, undercloud, overcloud management controller (running singleton services like Sherpa), and the MySQL database deployed in the controller cluster. These scripts are to be used by administrators managing the <tm tmtype="reg">Openstack</tm> Cloud.
+Backup and restore scripts and procedures are provided for the seed VM, undercloud, overcloud management controller (running singleton services like Sherpa), and the MySQL database deployed in the controller cluster. These scripts are to be used by administrators managing the <tm tmtype="reg">OpenStack</tm> Cloud.
 
 Backup and Restore of VM instances/snapshots and volumes/snapshots for workloads in the cloud is supported using the Object Storage service.
 
-For more information see [HP Helion <tm tmtype="reg">Openstack</tm> Back Up and Restore](/helion/openstack/1.1/backup.restore/)
+For more information see [HP Helion <tm tmtype="reg">OpenStack</tm> Back Up and Restore](/helion/openstack/1.1/backup.restore/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top </a>
 -->

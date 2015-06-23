@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3188">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Configuring Shared (VLAN) Ethernet Interfaces</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Configuring Shared (VLAN) Ethernet Interfaces</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -43,10 +43,10 @@
 <li>One interface for the management network, with the OAM and infrastructure networks also implemented on it using VLAN tagging.</li>
 </ul>
 <p>
-<b>Note:</b> You can configure a data network on a management or infrastructure interface by editing the interface and selecting both types of network, and then selecting the VLAN provider network. For more information,see the Network Type discussion in the HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Installation Guide: Interface
+<b>Note:</b> You can configure a data network on a management or infrastructure interface by editing the interface and selecting both types of network, and then selecting the VLAN provider network. For more information,see the Network Type discussion in the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade Installation Guide: Interface
 Settings.</p>
-<p>Options to share an interface using VLAN tagging are presented during the configuration controller script (see the <i>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Installation Guide: The Controller Configuration Script</i>).</p>
-<p>To attach an interface to other networks after configuration, you can edit the interface; for details, see the <i>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade Installation Guide: Attaching to Networks Using a VLAN Interface</i>.</p>
+<p>Options to share an interface using VLAN tagging are presented during the configuration controller script (see the <i>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade Installation Guide: The Controller Configuration Script</i>).</p>
+<p>To attach an interface to other networks after configuration, you can edit the interface; for details, see the <i>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade Installation Guide: Attaching to Networks Using a VLAN Interface</i>.</p>
 <p>You can also use the command line by logging into the active controller and becoming the Keystone admin user, and then using a command such as the following for each node:</p>
 <codeblock><codeph>system host-if-add -V 22 -n infra storage-0 infra0 vlan eth1
 </codeph></codeblock>

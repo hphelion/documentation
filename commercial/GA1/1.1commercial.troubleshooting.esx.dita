@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2362">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> 1.1: Troubleshooting ESX and OVSvApp</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Troubleshooting ESX and OVSvApp</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.esx.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/esx/--></p>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> is an <tm tmtype="reg">Openstack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <ul>
 <li>
 <xref type="section" href="#topic2362/nova-compute">nova-manage service list does not list the compute service as running</xref>

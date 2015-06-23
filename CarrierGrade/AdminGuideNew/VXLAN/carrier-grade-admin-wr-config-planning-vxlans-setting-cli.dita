@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3210">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Setting Up a VXLAN Provider Network Using the CLI</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Setting Up a VXLAN Provider Network Using the CLI</title>
 <titlealts>
 <searchtitle>HP Helion Openstack Carrier Grade (Beta): Setting Up a VXLAN Provider Network using the CLI</searchtitle>
 </titlealts>
@@ -83,7 +83,7 @@ command line interface. For information about using the Horizon interface, see <
 <codeph>udp_port</codeph> - The destination UDP port for packets sent on the VXLAN. You can select either:</p>
 
 <ul>
-<li>the IANA standard 4789 to use this range with the <tm tmtype="reg">Openstack</tm> Neutron service</li>
+<li>the IANA standard 4789 to use this range with the <tm tmtype="reg">OpenStack</tm> Neutron service</li>
 <li>the legacy standard 8472 for use with some commercial switch equipment.</li>
 </ul>
 </li>

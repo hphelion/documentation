@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4147">
-<title>HP Helion <tm tmtype="reg">Openstack</tm>1.1: Remove an existing Disk from Object Nodes</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm>1.1: Remove an existing Disk from Object Nodes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -36,7 +36,7 @@
 </ol>
 <section id="prer"> <title>Prerequisite</title>
 <ul>
-<li>HP Helion <tm tmtype="reg">Openstack</tm>cloud is successfully
+<li>HP Helion <tm tmtype="reg">OpenStack</tm>cloud is successfully
             deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Storage
             (Swift) nodes are functional by default as they are part of cloud deployment)</i>
         </li>

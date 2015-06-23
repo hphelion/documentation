@@ -12,25 +12,25 @@
 <!--PUBLISHED-->
  <!--./community/community.install-overview.md-->
  <!--permalink: /helion/community/install-overview/--></p>
-<p>HP Helion <tm tmtype="reg">Openstack</tm> Community is installed using <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" >TripleO</xref> which uses three linked installation phases to deploy a complete <tm tmtype="reg">Openstack</tm> cloud.</p>
+<p>HP Helion <tm tmtype="reg">OpenStack</tm> Community is installed using <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" >TripleO</xref> which uses three linked installation phases to deploy a complete <tm tmtype="reg">OpenStack</tm> cloud.</p>
 <ul>
 <li>
   <p>Seed  - The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained <tm tmtype="reg">OpenStack</tm> components that are used to deploy the undercloud. The seed deploys the undercloud by using the HP Ironic service to deploy a specific undercloud machine image.</p>
 </li>
 <li>
-  <p>Undercloud - The undercloud is a complete <tm tmtype="reg">Openstack</tm> installation, which is then used to deploy the overcloud. In <tm tmtype="reg">HP Helion OpenStack</tm>Community, the undercloud can be a separate baremetal server or a virtual machine on the Seed host.</p>
+  <p>Undercloud - The undercloud is a complete <tm tmtype="reg">OpenStack</tm> installation, which is then used to deploy the overcloud. In <tm tmtype="reg">HP Helion OpenStack</tm>Community, the undercloud can be a separate baremetal server or a virtual machine on the Seed host.</p>
 </li>
 <li>
-<p>Overcloud<!--Removed anchor point overcloud--><!-- id="overcloud" --> - The overcloud is the end-user <tm tmtype="reg">Openstack</tm> cloud. In HP Helion <tm tmtype="reg">Openstack</tm> Community, the undercloud can be separate baremetal servers or virtual machines on the Seed host.</p>
+<p>Overcloud<!--Removed anchor point overcloud--><!-- id="overcloud" --> - The overcloud is the end-user <tm tmtype="reg">OpenStack</tm> cloud. In HP Helion <tm tmtype="reg">OpenStack</tm> Community, the undercloud can be separate baremetal servers or virtual machines on the Seed host.</p>
 </li>
 </ul>
-<p>With HP Helion <tm tmtype="reg">Openstack</tm> Community, you can quickly and easily spin up clouds using two types of installation paths:</p>
+<p>With HP Helion <tm tmtype="reg">OpenStack</tm> Community, you can quickly and easily spin up clouds using two types of installation paths:</p>
 <ul>
-<li>A virtual installation for testing and proof-of-concept use. In the virtual installation, TripleO simulates the deployment of <tm tmtype="reg">Openstack</tm> by creating and configuring a set of virtual machines (VMs) that play the roles that baremetal machines would in a non-cloud deployment.</li>
+<li>A virtual installation for testing and proof-of-concept use. In the virtual installation, TripleO simulates the deployment of <tm tmtype="reg">OpenStack</tm> by creating and configuring a set of virtual machines (VMs) that play the roles that baremetal machines would in a non-cloud deployment.</li>
 <li>A multi-node, barmetal installation for small-scale production. For the baremetal installation, you will need to have available enough baremetal servers to accommodate your installation, as described in <xref href="../community/community.hwsw-requirements.dita" >Community Hardware and Software Requirements</xref>.</li>
 </ul>
 <section id="virtual-installation"> <title>Virtual installation</title>
-<p>This demonstration release is designed to let you test the functionality of HP Helion <tm tmtype="reg">Openstack</tm> Community. It is not intended to be used in a production environment to run real workloads, and therefore no support is available.</p>
+<p>This demonstration release is designed to let you test the functionality of HP Helion <tm tmtype="reg">OpenStack</tm> Community. It is not intended to be used in a production environment to run real workloads, and therefore no support is available.</p>
 <p>This installation is a fixed, virtual configuration of:</p>
 <ul>
 <li>1 undercloud</li>
@@ -47,7 +47,7 @@
 <xref href="../community/community.install.virtual.dita" >Learn how to install and configure a virtual cloud</xref>.</p>
 </section>
 <section id="baremetal-installation"> <title>Baremetal installation</title>
-<p>This HP Helion <tm tmtype="reg">Openstack</tm> Community baremetal multi-node deployment is for a small-scale, private cloud.</p>
+<p>This HP Helion <tm tmtype="reg">OpenStack</tm> Community baremetal multi-node deployment is for a small-scale, private cloud.</p>
 <p>The installation deploys to a minimum 7 baremetal server configuration:</p>
 <ul>
 <li>1 undercloud</li>
@@ -73,7 +73,7 @@
 <p>Review the information on the minimum requirements for your hardware and software before starting the installation. See <xref href="../community/community.hwsw-requirements.dita" >Hardware and Software Requirements</xref>.</p>
 </li>
 <li>
-<p>For more information on HP Helion <tm tmtype="reg">Openstack</tm> Community, see:</p>
+<p>For more information on HP Helion <tm tmtype="reg">OpenStack</tm> Community, see:</p>
 
 <ul>
 <li>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1477">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Community Site Index</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Community Site Index</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,10 +13,10 @@
  <!--./community/community.site-index.md-->
  <!--permalink: /helion/community/siteindex/--></p>
 <section id="hp-helion-openstack-community-documentation-home"> <title>
-  HP Helion <tm tmtype="reg">Openstack</tm> Community Documentation Home
+  HP Helion <tm tmtype="reg">OpenStack</tm> Community Documentation Home
 </title>
 </section>
-<section id="getting-started-with-hp-helion-openstack-community"> <title>Getting started with HP Helion <tm tmtype="reg">Openstack</tm> Community</title>
+<section id="getting-started-with-hp-helion-openstack-community"> <title>Getting started with HP Helion <tm tmtype="reg">OpenStack</tm> Community</title>
 <ul>
 <li>
 <xref href="../community/community.release-notes.dita" >Release notes</xref> </li>
@@ -27,7 +27,7 @@
 </li>
 </ul>
 </section>
-<section id="install-configure-your-hp-helion-openstack-community-cloud"> <title>Install &amp; configure your HP Helion <tm tmtype="reg">Openstack</tm> Community cloud</title>
+<section id="install-configure-your-hp-helion-openstack-community-cloud"> <title>Install &amp; configure your HP Helion <tm tmtype="reg">OpenStack</tm> Community cloud</title>
 <ul>
 <li>
 <xref href="../community/community.install-overview.dita" >Installation overview</xref>
@@ -59,25 +59,25 @@
 </li>
 </ul>
 </section>
-<section id="openstack-reference"> <title><tm tmtype="reg">Openstack</tm> reference</title>
+<section id="openstack-reference"> <title><tm tmtype="reg">OpenStack</tm> reference</title>
 <ul>
 <li>
-<xref href="http://docs.openstack.org/" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> documentation home page</xref>
+<xref href="http://docs.openstack.org/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> documentation home page</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/glossary/content/glossary.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Glossary</xref>
+<xref href="http://docs.openstack.org/glossary/content/glossary.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Glossary</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/user-guide/content/index.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> End User Guide</xref>
+<xref href="http://docs.openstack.org/user-guide/content/index.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> End User Guide</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Cloud Administrator Guide</xref>
+<xref href="http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Cloud Administrator Guide</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/trunk/openstack-network/admin/content/index.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Networking Administration Guide</xref>
+<xref href="http://docs.openstack.org/trunk/openstack-network/admin/content/index.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Networking Administration Guide</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/trunk/openstack-ops/content/index.html" scope="external" format="html" ><tm tmtype="reg">Openstack</tm> Operations Guide</xref>
+<xref href="http://docs.openstack.org/trunk/openstack-ops/content/index.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>
 </li>
 </ul>
 </section>

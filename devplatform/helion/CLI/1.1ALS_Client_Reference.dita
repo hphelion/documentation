@@ -58,7 +58,7 @@
 <p>The other configuration files, specified by the <b>--load</b> option, includes the values that should be passed to arguments for a specific command. Values must be included in the appropriate file for correct scoping; putting a command-specific value in the global file, for example, will not function as desired.</p>
 </section>
 <section id="global"> <title>Global Options</title>
-<p>These variables affect the entire cluster; they are <b>global</b> in scope. These environment variables are configured to work with the <tm tmtype="reg">Openstack</tm> Python tools to enable faster integration.</p>
+<p>These variables affect the entire cluster; they are <b>global</b> in scope. These environment variables are configured to work with the <tm tmtype="reg">OpenStack</tm> Python tools to enable faster integration.</p>
 <codeblock>cf-mgmt <b>[global options]</b> command [command options] [arguments...] </codeblock>
 <table>
 <tgroup cols="3">
@@ -85,37 +85,37 @@
   </row>
 <row>
     <entry>--os-username</entry>
-    <entry><tm tmtype="reg">Openstack</tm> user name</entry>
+    <entry><tm tmtype="reg">OpenStack</tm> user name</entry>
     <entry>$OS_USERNAME</entry>
   </row>
 <row>
     <entry>--os-password</entry>
-    <entry><tm tmtype="reg">Openstack</tm> password</entry>
+    <entry><tm tmtype="reg">OpenStack</tm> password</entry>
     <entry>$OS_PASSWORD</entry>
   </row>
 <row>
     <entry>--os-auth-url</entry>
-    <entry><tm tmtype="reg">Openstack</tm> authentication URL</entry>
+    <entry><tm tmtype="reg">OpenStack</tm> authentication URL</entry>
     <entry>$OS_AUTH_URL</entry>
   </row>
 <row>
     <entry>--os-tenant-id</entry>
-    <entry><tm tmtype="reg">Openstack</tm> tenant ID</entry>
+    <entry><tm tmtype="reg">OpenStack</tm> tenant ID</entry>
     <entry>$OS_TENANT_ID</entry>
   </row>
 <row>
     <entry>--os-tenant-name</entry>
-    <entry><tm tmtype="reg">Openstack</tm> tenant name</entry>
+    <entry><tm tmtype="reg">OpenStack</tm> tenant name</entry>
     <entry>$OS_TENANT_NAME</entry>
   </row>
 <row>
     <entry>--os-region-name</entry>
-    <entry><tm tmtype="reg">Openstack</tm> region</entry>
+    <entry><tm tmtype="reg">OpenStack</tm> region</entry>
     <entry>$OS_REGION_NAME</entry>
   </row>
 <row>
     <entry>--os-cacert</entry>
-    <entry><tm tmtype="reg">Openstack</tm> CA certificate</entry>
+    <entry><tm tmtype="reg">OpenStack</tm> CA certificate</entry>
     <entry>$OS_CACERT</entry>
   </row>
 <row>

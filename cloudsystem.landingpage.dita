@@ -18,7 +18,7 @@
  <!--./cloudsystem.landingpage.md-->
  <!--permalink: /cloudsystem/--></p>
 <p>HP Helion CloudSystem lets you automate end-to-end service lifecycle management for any cloud service, from infrastructure to application. As part of the HP Helion portfolio of hybrid cloud products and delivered as an HP ConvergedSystem, HP CloudSystem integrates all of the hardware, software, and services you need to realize a fully configured, enterprise-grade solution.</p>
-<p>HP CloudSystem software is built on a foundation of enterprise-grade <tm tmtype="reg">Openstack</tm> technologies, providing a common architecture across private, public, and hybrid clouds. You can be confident that you are using an industry-leading, vendor-neutral, open cloud architecture.</p>
+<p>HP CloudSystem software is built on a foundation of enterprise-grade <tm tmtype="reg">OpenStack</tm> technologies, providing a common architecture across private, public, and hybrid clouds. You can be confident that you are using an industry-leading, vendor-neutral, open cloud architecture.</p>
 <section id="get-started-with-hp-cloudsystem"> <title>Get Started with HP CloudSystem</title>
 <p>Use the following link to begin working with <xref href="http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04517071" scope="external" format="html" >HP CloudSystem: HP CloudSystem 8.1 Update 2 Installation and Configuration Guide (PDF)</xref>
 </p>
@@ -63,7 +63,7 @@
 </li>
 <li>
 <p>
-<xref href="http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04525353" scope="external" format="html" >HP CloudSystem: Using <tm tmtype="reg">Openstack</tm> CLIs</xref>
+<xref href="http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04525353" scope="external" format="html" >HP CloudSystem: Using <tm tmtype="reg">OpenStack</tm> CLIs</xref>
 </p>
 </li>
 <li>

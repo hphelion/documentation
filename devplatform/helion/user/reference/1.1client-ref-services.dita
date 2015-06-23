@@ -23,9 +23,9 @@
  <!--permalink: /helion/devplatform/1.1/als/user/reference/client-ref/services/--></p>
 <ul>
 <li>
-<xref type="section" href="#topic3972/command-marketplace">helion marketplace</xref>: List the supported service plans of the target for the current or specified space. This command is new in HP <tm tmtype="reg">Helion Openstack</tm> 1.1. </li>
+<xref type="section" href="#topic3972/command-marketplace">helion marketplace</xref>: List the supported service plans of the target for the current or specified space. This command is new in HP <tm tmtype="reg">Helion OpenStack</tm> 1.1. </li>
 <li>
-<xref type="section" href="#topic3972/command-purge-service-offerings">helion purge-service-offerings</xref>: Purge all offerings of the service type from the system. <b>Warning</b> use with caution.  This command is new in HP <tm tmtype="reg">Helion Openstack</tm> 1.1. </li>
+<xref type="section" href="#topic3972/command-purge-service-offerings">helion purge-service-offerings</xref>: Purge all offerings of the service type from the system. <b>Warning</b> use with caution.  This command is new in HP <tm tmtype="reg">Helion OpenStack</tm> 1.1. </li>
 <li>
 <xref type="section" href="#topic3972/command-service">helion service</xref>: Show information about the named service.</li>
 <li>
@@ -40,7 +40,7 @@
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="command-marketplace"> <title>helion marketplace</title>
-<p>List the supported service plans of the target, for the current or specified space. This command is new in <tm tmtype="reg">Helion Openstack</tm> 1.1.</p>
+<p>List the supported service plans of the target, for the current or specified space. This command is new in <tm tmtype="reg">Helion OpenStack</tm> 1.1.</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>
@@ -91,7 +91,7 @@ authorization tokens.</entry>
 </table>
 </section>
 <section id="command-purge-service-offerings"> <title>helion purge-service-offerings &lt;<i>service</i>&gt;</title>
-<p>Purge all offerings of the service type from the system. <b>Warning</b>: Do this <b>only</b> for services that have already had their brokers killed, leaving behind orphans. This command is new in <tm tmtype="reg">Helion Openstack</tm> 1.1.</p>
+<p>Purge all offerings of the service type from the system. <b>Warning</b>: Do this <b>only</b> for services that have already had their brokers killed, leaving behind orphans. This command is new in <tm tmtype="reg">Helion OpenStack</tm> 1.1.</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>

@@ -33,7 +33,7 @@
     <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
   </ph>
 </p>
-<p>This tutorial demonstrates how to set up Remote Desktop access to new Windows instances running in HP <tm tmtype="reg">Helion Openstack</tm> Since the instances are running full versions of Windows, you must connect to them using Remote Desktop rather than SSH.</p>
+<p>This tutorial demonstrates how to set up Remote Desktop access to new Windows instances running in HP <tm tmtype="reg">Helion OpenStack</tm> Since the instances are running full versions of Windows, you must connect to them using Remote Desktop rather than SSH.</p>
 <p>The steps needed to do this are as follows:</p>
 <ul>
 <li>
@@ -46,7 +46,7 @@
 <xref type="section" href="#topic1035/get_pw_cloud">Retrieve the Windows instance password (Public Cloud)</xref>
 </li>
 <li>
-<xref type="section" href="#topic1035/get_pw_hos">Retrieve the Windows instance password (<tm tmtype="reg">Helion Openstack</tm></xref>
+<xref type="section" href="#topic1035/get_pw_hos">Retrieve the Windows instance password (<tm tmtype="reg">Helion OpenStack</tm></xref>
 </li>
 </ul>
 <section id="create_security"> <title>Create the RDP Security Group</title>

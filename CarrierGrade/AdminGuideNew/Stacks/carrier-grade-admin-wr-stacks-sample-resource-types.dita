@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1488">
-<title>HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade (Beta): Supported Heat Resource Types</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Supported Heat Resource Types</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,12 +18,12 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-sample-resource-types.md-->
  <!--permalink: /helion/openstack/carrier/admin/stacks/resource-types/--></p>
-<p>The HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade implementation of Heat has been tested with most commonly-used resource types.</p>
+<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade implementation of Heat has been tested with most commonly-used resource types.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>The following resource types have been tested for use with HP Helion <tm tmtype="reg">Openstack</tm> Carrier Grade.</p>
+<p>The following resource types have been tested for use with HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade.</p>
 <ul>
 <li>AWS::AutoScaling::AutoScalingGroup</li>
 <li>AWS::AutoScaling::LaunchConfiguration</li>
