@@ -142,7 +142,7 @@
           href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita"/>
       </topicref>
       <!--Ceph stuff-->
-      <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita">
+      <topicref href="commercial/GA1/1.1commercial.ceph-overview.dita">
         <topicref href="commercial/GA1/ceph/1.1commerical.services-ceph-archref.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-pre-requisite.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita"/>
