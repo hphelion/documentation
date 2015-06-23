@@ -30,11 +30,12 @@
 </row>
 <row valign="top">
 <entry>
-<!--Original: <span @class=>-->
-<ph>
-<xref href="../community/community.index.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Community</xref>
-</ph>
-</entry>
+              <!--Original: <span @class=>-->
+              <ph>
+                <xref href="../community/community.index.dita#topic2348">HP Helion <tm tmtype="reg">OpenStack</tm>
+                  Community</xref>
+              </ph>
+            </entry>
 <entry>Pure and free-to-license distribution of <tm tmtype="reg">OpenStack</tm> technology for small scale open cloud environments. </entry>
 </row>
 <row valign="top">
