@@ -23,18 +23,19 @@
 <entry>
 <!--Original: <span @class=>-->
 <ph>
-<xref href="../commercial/GA1/1.1commercial.index.dita" >HP <tm tmtype="reg">Helion OpenStack</tm></xref>
+<xref href="../commercial/GA1/1.1commercial.index.dita" >HP Helion <tm tmtype="reg">OpenStack</tm></xref>
 </ph>
 </entry>
-<entry>A commercial grade software solution that enables customers to deploy private, managed, hybrid, and public cloud services based on <tm tmtype="reg">OpenStack</tm>  HP <tm tmtype="reg">Helion OpenStack</tm> reduces complexity of cloud deployments, and is the underlying platform for the Helion Development Platform.</entry>
+<entry>A commercial grade software solution that enables customers to deploy private, managed, hybrid, and public cloud services based on <tm tmtype="reg">OpenStack</tm>  HP Helion <tm tmtype="reg">OpenStack</tm> reduces complexity of cloud deployments, and is the underlying platform for the Helion Development Platform.</entry>
 </row>
 <row valign="top">
 <entry>
-<!--Original: <span @class=>-->
-<ph>
-<xref href="../community/community.index.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Community</xref>
-</ph>
-</entry>
+              <!--Original: <span @class=>-->
+              <ph>
+                <xref href="../community/community.index.dita#topic2348">HP Helion <tm tmtype="reg">OpenStack</tm>
+                  Community</xref>
+              </ph>
+            </entry>
 <entry>Pure and free-to-license distribution of <tm tmtype="reg">OpenStack</tm> technology for small scale open cloud environments. </entry>
 </row>
 <row valign="top">
@@ -44,7 +45,7 @@
 <xref href="../devplatform/1.2/1.2devplatform.index.dita" >HP Helion Development Platform</xref>
 </ph>
 </entry>
-  <entry>Based on <tm tmtype="reg">Cloud Foundry</tm>, this add-on for <tm tmtype="reg">Helion OpenStack</tm> empowers developers and IT professionals with an open development platform designed for agility.
+  <entry>Based on <tm tmtype="reg">Cloud Foundry</tm>, this add-on for Helion <tm tmtype="reg">OpenStack</tm> empowers developers and IT professionals with an open development platform designed for agility.
 </entry>
 </row>
 <row valign="top">
@@ -85,7 +86,6 @@
 </ph>
 </entry>
 <entry>A continuous delivery solution that provides automated deployment and release management of complex multi-tier applications across the application lifecycle.
-
 </entry>
 </row>
 <row valign="top">
@@ -115,7 +115,7 @@
 <xref href="../helion.rack.solution.dita" >HP Helion Cloud Solutions </xref>
 </ph>
 </entry>
-<entry>Built, tested, and validated by HP cloud experts, our optimized cloud solutions are based on HP <tm tmtype="reg">Helion OpenStack</tm> industry-leading HP ProLiant servers and supporting HP Helion product and service offerings. Solutions like HP Helion Content Depot and HP Helion Rack include everything you need to be successful when facing a demanding cloud use case. 
+<entry>Built, tested, and validated by HP cloud experts, our optimized cloud solutions are based on HP Helion <tm tmtype="reg">OpenStack</tm> industry-leading HP ProLiant servers and supporting HP Helion product and service offerings. Solutions like HP Helion Content Depot and HP Helion Rack include everything you need to be successful when facing a demanding cloud use case. 
 
 </entry>
 </row>

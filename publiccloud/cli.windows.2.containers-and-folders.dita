@@ -14,18 +14,15 @@
  <!--./publiccloud/cli.windows.2.containers-and-folders.md-->
  <!--permalink: /publiccloud/cli/windows/containers-and-folders/--></p>
 <p>One of the key features of the HP Helion Public Cloud CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the <xref href="../publiccloud/object-storage.dita" >HP Helion Public Cloud Object Storage Overview</xref> for overview information on Object Storage.)</p>
-<p>
-<b>Note:</b> When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:</p>
+<p><b>Note:</b> When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:</p>
 <codeblock>
-  <codeph> PS: HPCS:\&gt; cd "my container:"
- PS: HPCS:\&gt; new-container -name "my new container"
-</codeph>
+PS: HPCS:\&gt; cd "my container:"
+PS: HPCS:\&gt; new-container -name "my new container"
 </codeblock>
 <p>
 <b>Note</b>: The HP Helion Public Cloud CLI software for Windows PowerShell supports the <xref href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx" scope="external" format="html" >standard Windows wildcard</xref> characters asterix (<codeph>*</codeph>), question mark (<codeph>?</codeph>), and range brackets (<codeph>[]</codeph>) for the <codeph>ls, copy</codeph> and <codeph>delete</codeph> object storage commands.</p>
 <section id="InteractingwiththeStorageService"> <title>Interacting with the Storage Service</title>
-<!-- <iframe src="http://player.vimeo.com/video/33349560?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
-<p>In addition to the video tutorial, which shows you how the basics of our object storage PowerShell environment, this page contains the following examples:</p>
+<p>This page contains the following examples:</p>
 <ul>
 <li>
 <xref type="section" href="#topic41966/CreatingStorageContainers">Creating Storage Containers</xref>
@@ -77,7 +74,7 @@
 <section id="CreatingStorageContainers"> <title>Creating Storage Containers</title>
 <p>Storage Containers act as a fundamental unit of storage in HP Object Storage. These items are very similar to disk volumes that one would traditionally use to maintain a set of hierarchically organized folders. PowerShell offers a natural way to represent these Storage Containers through the use of Providers. Instances of these Powershell providers are called drives and each storage container that you create is represented as one. To illustrate this concept let's first create a Storage Container with the <codeph>New-Container</codeph> command. When Powershell first opens, use the <codeph>cd HPCS:</codeph> command to use the HPCS providers</p>
 <codeblock>
-  <codeph>------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 Welcome to the HP-Cloud Object Storage Powershell Environment.
 ===============================================================
 
@@ -93,12 +90,10 @@ PS HPCS:\&gt; new-container -name demo
 Storage Container demo created successfully.
 
 PS HPCS:\&gt; 
-</codeph>
 </codeblock>
-<!--<img src="/media/NewContainer_0.jpg" width="580" height="212" alt="" />-->
 <p>Now we can list out all of the available PowerShell drives on the system and we should see the Storage Container that we just created.</p>
 <codeblock>
-  <codeph>PS b1:\&gt; get-psdrive
+PS b1:\&gt; get-psdrive
 
 Name        Used (GB)    Free (GB)  Provider         Root
 ----        ---------    ---------  --------         ----
@@ -110,12 +105,10 @@ C              240.17      1620.85  FileSystem       C:\
 D                                   FileSystem       \    
 demo                                HP-Objects. . .  /
 . . .
-</codeph>
 </codeblock>
-<!--<img src="/media/GetPSDrive_0.jpg" width="580" height="573" alt="" />-->
 <p>In the example above, notice the value of "HP-Objects..."  in the "Provider" column. These are HP-Cloud Object Storage drives that you can mount like any other drive with the <codeph>CD</codeph> command.</p>
 <codeblock>
-  <codeph>PS con1:\&gt; cd demo:
+PS con1:\&gt; cd demo:
 PS demo:\&gt; ls
 
 ===============================================================
@@ -128,23 +121,15 @@ Total # Items Found      : 0
 Total # Bytes in Folder  : 0
 
 PS demo:\&gt; 
-</codeph>
 </codeblock>
-<!--<img src="/media/VerifyNewContainer.jpg" width="580" height="204" alt="" />-->
 <p>One caveat when creating new Storage Containers is that you must be attached to an existing Storage Container to have newly created Storage Containers show up in the Get-PsDrive results without a shell restart. The first time that you open the shell you won't have any Storage Containers to attach to. In this case, just CD to the default drive with:</p>
 <codeblock>
-  <codeph>CD HPSO-Init: 
-</codeph>
+CD HPSO-Init: 
 </codeblock>
-<p>At this point you can issue the <codeph>[New-Container](/publiccloud/cli/windows/reference#New-Container)</codeph> command and a subsequent issuance of Get-PSDrive lists what you just created (The default drive will not show up the next time you load the shell as it exists only temporarily to bootstrap the Storage Container creation process). Now it's time to take the file system for a spin but before we do that, let's go over a few basic concepts.</p>
+<p>At this point you can issue the <codeph>New-Container</codeph> command and a subsequent issuance of Get-PSDrive lists what you just created (The default drive will not show up the next time you load the shell as it exists only temporarily to bootstrap the Storage Container creation process). Now it's time to take the file system for a spin but before we do that, let's go over a few basic concepts.</p>
 </section>
 <section id="StoragePaths"> <title>Storage Paths</title>
 <p>Storage paths in this system come in a few different varieties. People familiar with command line interfaces should feel at home with the ways that you can express a resources location within a HP-Cloud Object Storage based data store. The following resource addressing styles are supported by this Storage Provider.</p>
-<p/>
-<ph/>
-<ph/>
-<p/>
-<p/>
 <table outputclass="MsoTableLightShading">
 <tgroup cols="3">
 <colspec colname="col1"/>
@@ -152,83 +137,36 @@ PS demo:\&gt;
 <colspec colname="col3"/>
 <tbody>
 <row>
-<entry>
-  <b>
-<!--Original: <span @class=>-->
-<ph>Name</ph>
-</b>
-  </entry>
-  <entry>
-  <b>
-<!--Original: <span @class=>-->
-<ph>Description</ph>
-</b>
-  </entry>
-  <entry>
-  <b>
-<!--Original: <span @class=>-->
-<ph>Example</ph>
-</b>
-  </entry>
- </row>
+<entry><b><ph>Name</ph></b></entry>
+<entry><b><ph>Description</ph></b></entry>
+<entry><b><ph>Example</ph></b></entry>
+</row>
 <row>
-<entry>
-  <!--Original: <span @class=>--><ph>Fully Qualified \ Absolute Paths</ph>
-  </entry>
-  <entry>
-  <!--Original: <span @class=>--><ph>This type of path includes the entire
-  address to the resource including the Storage Container name.</ph>
-  </entry>
-  <entry>
-  <!--Original: <span @class=>--><ph>Storage Container\Folder1\Folder2</ph>
-  </entry>
- </row>
+<entry><ph>Fully Qualified \ Absolute Paths</ph></entry>
+<entry><ph>This type of path includes the entire address to the resource including the Storage Container name.</ph></entry>
+<entry><ph>Storage Container\Folder1\Folder2</ph></entry>
+</row>
 <row>
-<entry>
-  <!--Original: <span @class=>--><ph>Relative Paths (Adjacent Folder)</ph>
-  </entry>
-  <entry>
-  <!--Original: <span @class=>--><ph>This type of path simply specifies the
-  adjacent folder.</ph>
-  </entry>
-  <entry>
-  <!--Original: <span @class=>--><ph>PS TestStorage Container:\Folder1&gt; ls
-  Folder2 (Where Folder2 is a direct descendant of Folder1)</ph>
-  </entry>
- </row>
+<entry><ph>Relative Paths (Adjacent Folder)</ph></entry>
+<entry><ph>This type of path simply specifies the adjacent folder.</ph></entry>
+<entry><ph>PS TestStorage Container:\Folder1&gt; ls Folder2 (Where Folder2 is a direct descendant of Folder1)</ph></entry>
+</row>
 <row>
-<entry>
-  <!--Original: <span @class=>--><ph>Relative Paths (Deep Node)</ph>
-  </entry>
-  <entry>
-  <!--Original: <span @class=>--><ph>This Path gives a deep address to a node in
-  the tree relative to its current position.</ph>
-  </entry>
-  <entry>
-  <!--Original: <span @class=>--><ph>PS TestStorage Container :\Folder1&gt; ls Folder2
-  \ Folder3 \ Folder4</ph>
-  </entry>
- </row>
+<entry><ph>Relative Paths (Deep Node)</ph></entry>
+<entry><ph>This Path gives a deep address to a node in the tree relative to its current position.</ph></entry>
+<entry><ph>PS TestStorage Container :\Folder1&gt; ls Folder2 \ Folder3 \ Folder4</ph></entry>
+</row>
 <row>
-<entry>
-  <!--Original: <span @class=>--><ph>Implicit Target Path</ph>
-  </entry>
-  <entry>
-  <!--Original: <span @class=>--><ph>This is when the target path is omitted
-  from a command. In these circumstances, the command will assume the current
-  folder to be the target</ph>
-  </entry>
-  <entry>
-  <!--Original: <span @class=>--><ph>PS TestStorage Container:\Folder1&gt; Copy
-  c:\Documents\Test.xml</ph>
-  </entry>
- </row>
+<entry><ph>Implicit Target Path</ph></entry>
+<entry><ph>This is when the target path is omitted from a command. In these circumstances, the command will assume the current folder to be the target</ph></entry>
+<entry><ph>PS TestStorage Container:\Folder1&gt; Copy c:\Documents\Test.xml</ph></entry>
+</row>
 </tbody>
 </tgroup>
 </table>
 <p>Here are some example directory listings (ls) of folders using the various addressing styles described above..</p>
 <codeblock>
-  <codeph>PS b1:\&gt; ls
+PS b1:\&gt; ls
 
 ------------------------------------------------------------------------------------------------------
 Storage Container : b1
@@ -282,14 +220,12 @@ Total # Items Found       : 0
 Total # Bytes in Folder   : 0
 
 PS b1:\&gt;
-</codeph>
 </codeblock>
-<!--<img src="/media/lsExamples.png" width="580" height="579" alt="" />-->
 </section>
 <section id="CreatingFolders"> <title>Creating Folders</title>
 <p>Creating a Folder in HP-Cloud Object Storage is as easy as issuing the MD command..</p>
 <codeblock>
-  <codeph>PS demo:\&gt; ls
+PS demo:\&gt; ls
 
 ------------------------------------------------------------------------------------------------------
 Storage Container : demo
@@ -332,29 +268,22 @@ Total # Items Found       : 0
 Total # Bytes in Folder   : 0
 
 PS demo:\newFolderTest&gt;
-</codeph>
 </codeblock>
-<!--<img src="/media/CreatingFolders_0.jpg" width="580" height="573" alt="" />-->
 <p>Based on our supported Storage Path styles we can also create directory structures like so..</p>
 <codeblock>
-  <codeph>PS demo:\&gt; md d1
+PS demo:\&gt; md d1
 PS demo:\&gt; md d1\d2
 PS demo:\&gt; md d1\d2\d3
 PS demo:\&gt; 
-</codeph>
 </codeblock>
-<!--<img src="/media/CreateDirectories.jpg" width="580" height="119" alt="" />-->
 <p>This will create a hierarchy of folders with D1 acting as the root, D2 as its immediate descendant, with D3 being the terminal node.</p>
 </section>
 <section id="FolderOperations"> <title>Folder Operations</title>
-<p>When you consider the sheer quantity of data that could be potentially moved into the cloud you soon realize that operations on individual files are impractical at best. To remedy this we have the ability to copy entire sets of objects from your local machine to the store, within the store, and to your local machine in one operation. Each of these commands can be tailored to affect a specific folders contents, or any descendant folders beneath the target path. To address a folder, remember to include a trailing <codeph/> on the  end of each path to indicate that you are working with a folder and not an individual file.</p>
-<p>
-  <b>Example: Local-to-Server Copy</b>
-</p>
-<p>In this example, we're making a copy of the local folder named Test to the current location on the server which is the root directory. The lack of target path will force the system to assume the current location is the target (this is also true of individual files).
-Notice that when the operation completes that a new Folder named Test has been created off of root, in other words folder operations are inclusive of the container that you're pointing to.</p>
+<p>When you consider the sheer quantity of data that could be potentially moved into the cloud you soon realize that operations on individual files are impractical at best. To remedy this we have the ability to copy entire sets of objects from your local machine to the store, within the store, and to your local machine in one operation. Each of these commands can be tailored to affect a specific folders contents, or any descendant folders beneath the target path. To address a folder, remember to include a trailing <codeph>/</codeph> on the end of each path to indicate that you are working with a folder and not an individual file.</p>
+<p><b>Example: Local-to-Server Copy</b></p>
+<p>In this example, we're making a copy of the local folder named Test to the current location on the server which is the root directory. The lack of target path will force the system to assume the current location is the target (this is also true of individual files).  Notice that when the operation completes that a new Folder named Test has been created off of root, in other words folder operations are inclusive of the container that you're pointing to.</p>
 <codeblock>
-  <codeph>PS b1:\&gt; copy c:\test\
+PS b1:\&gt; copy c:\test\
 
 Copying c:\test\anothertest.txt
 Copying c:\test\anothertest2.txt
@@ -404,15 +333,11 @@ Total # Items Found       : 3
 Total # Bytes in Folder   : 113640
 
 PS b1:\test&gt;
-</codeph>
 </codeblock>
-<!--<img src="/media/CopyL2SNonRecursive.png" width="580" height="573" alt="" />-->
-<p>
-  <b>Example: Local-to-Server Copy (Recursive)</b>
-</p>
+<p><b>Example: Local-to-Server Copy (Recursive)</b></p>
 <p>Here's another example of a Local to Remote copy but this time we will push an entire hierarchy of folders as shown below.</p>
 <codeblock>
-  <codeph>PS b1:\&gt; copy c:\test\ -recurse
+PS b1:\&gt; copy c:\test\ -recurse
 
 Copying c:\test\anothertest.txt
 Copying c:\test\anothertest2.txt
@@ -447,15 +372,11 @@ Operation Summary
 ------------------------------------------------------------------------------------------------------
 Total Files Copied : 27
 Total Bytes Copied : 372650
-</codeph>
 </codeblock>
-<!--<img src="/media/CopyL2SRecursive.png" width="580" height="573" alt="" />-->
-<p>
-  <b>Example: Server-To-Local Copy</b>
-</p>
+<p><b>Example: Server-To-Local Copy</b></p>
 <p>Now for the sake of completeness, let's throw this entire set of folders back to the client</p>
 <codeblock>
-  <codeph>PS b1:\&gt; ls test\
+PS b1:\&gt; ls test\
 
 
 ------------------------------------------------------------------------------------------------------
@@ -497,13 +418,11 @@ Operation Summary
 ------------------------------------------------------------------------------------------------------
 Total Files Copied : 10
 Total Bytes Copied : 127630
-</codeph>
 </codeblock>
-<!--<img src="/media/CopyS2L.png" width="580" height="573" alt="" />-->
 <p>Done...</p>
 <p>Now let's make sure that we can move these folders around on the server.</p>
 <codeblock>
-  <codeph>PS b1&gt;\&gt; md testIncoming
+PS b1&gt;\&gt; md testIncoming
 PS b1:\&gt; copy test\ testIncoming\ -recurse
 
 Copying test/anothertest.txt
@@ -522,14 +441,12 @@ Operation Summary
 ------------------------------------------------------------------------------------------------------
 Total Files Copied : 10
 Total Bytes Copied : 207560
-</codeph>
 </codeblock>
-<!--<img src="/media/CopyIntraserverRecursive.png" width="580" height="573" alt="" />-->
 </section>
 <section id="DeletingFolders"> <title>Deleting Folders</title>
 <p>Finally, when we're done with a folder we can simply remove it. Note that when you delete a folder, all of its contents are deleted along with any child folders as well.</p>
 <codeblock>
-  <codeph>PS b1:\&gt; ls
+PS b1:\&gt; ls
 
 
 ------------------------------------------------------------------------------------------------------
@@ -565,14 +482,12 @@ Total # Bytes in Folder   : 0
 
 
 PS b1:\&gt;
-</codeph>
 </codeblock>
-<!--<img src="/media/DeleteFolders.png" width="580" height="381" alt="" />-->
 </section>
 <section id="WorkingwithMetaData"> <title>Working with MetaData</title>
 <p>When required, you have the ability to store user defined meta-data along with the objects placed within a Container. This is accomplished with the  set-metadata cmdlet. Input values for this parameter are a series of one to many key value pairs. Each Key Value pair must be enclosed in quotes and separated by the Pipe (|) character. Individual Key Values Pairs are delimited by a comma. For example..</p>
 <codeblock>
-  <codeph>PS b1:\&gt; set-metadata anothertest.txt -md "author|Travis", "priority|high"
+PS b1:\&gt; set-metadata anothertest.txt -md "author|Travis", "priority|high"
 PS b1:\&gt; get-metadata anothertest.txt
 ------------------------------------------------------------------------------------------------------
 Meta-Data for anothertest.txt is as follows.    
@@ -586,9 +501,7 @@ Value = Travis
 --------------------------------
 
 PS b1:\&gt;
-</codeph>
 </codeblock>
-<!--<img src="/media/Metadata.png" width="580" height="189" alt="" />-->
 <p>In addition, you can also see how one would view meta-data on an existing object with the Get-MetaData command.</p>
 </section>
 <section id="ChangingResponseFormats"> <title>Changing Response Formats</title>
@@ -599,12 +512,10 @@ PS b1:\&gt;
 <li>JSON</li>
 </ul>
 <p>This cmdlet will take effect for the duration of the Session only.</p>
-<p>
-  <b>Example: XML Based Responses</b>
-</p>
+<p><b>Example: XML Based Responses</b></p>
 <p>This example shows how we can quickly produce an XML file of what we find in the test folder. In addition, output received from cmdlets adhere to the format as well. Note the response of the "ls" command.</p>
 <codeblock>
-  <codeph>------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 Welcome to the HP-Cloud Object Storage Powershell Environment.
 ------------------------------------------------------------------------------------------------------
 
@@ -662,12 +573,10 @@ Directory of      : b1 \
 &lt;/container&gt;
 
 PS b1:\&gt;
-</codeph>
 </codeblock>
-<!--<img src="/media/SetFormatXML.png" width="580" height="573" alt="" />-->
 <p>A quick JSON example.</p>
 <codeblock>
-  <codeph>PS b1:\&gt; set-format -rf JSON
+PS b1:\&gt; set-format -rf JSON
 
 Response format set to JSON
 
@@ -698,9 +607,7 @@ Total # Bytes in Folder   : 3572
 
 
 PS b1:\&gt; ls
-</codeph>
 </codeblock>
-<!--<img src="/media/SetFormatJSON_0.png" width="580" height="390" alt="" />-->
 </section>
 <section id="ChangingConfigurationFiles"> <title>Changing Configuration Files</title>
 <p>This system persist its settings in the CLI.config file located in the users application directory. This file is important as it's used for storing Credentials, connection information such as addresses and timeout values, and various other settings. Each time the shell loads, this file is opened and it's settings are used throughout the session. There may be times when you wish to temporarily change these settings to accommodate impersonation, environment change (Pro, QA etc) or other testing scenarios. This can be done in one of two ways:</p>
@@ -710,7 +617,7 @@ PS b1:\&gt; ls
 </ul>
 <p>First, to see what the current configuration you are running under use the Get-Config cmdlet.  Assume that connectivity issues have required us to increment the http timeout period for each connection. This specific value can be altered via the Set-Config cmdlet.</p>
 <codeblock>
-  <codeph>PS b1:\&gt; get-config
+PS b1:\&gt; get-config
 
 ------------------------------------------------------------------------------------------------------
 Current Session Settings are as follows.
@@ -757,18 +664,13 @@ max-keys                        1000
 
 
 PS b1:\&gt; ls        
-</codeph>
 </codeblock>
-<!--<img src="/media/SecureGetConfig2.png" width="580" height="573" alt="" />-->
 <p>If you want to revert back to the defaults as defined in your CLI.config file just issue the following command.</p>
-<codeblock>
-  <codeph>       Set-config -resetcfg
-</codeph>
-</codeblock>
-<p>In addition to changing individual configuration items, you can also swap in entire full configuration environments by inserting a new configuration file with the **<codeph>set-config -s**</codeph> command.  This is useful if you are using multiple environments at your site--for example, you have a set of credentials that you use for development, but a different set of credentials for performing testing.  Substituting in a different config file gives you a quick way to switch back and forth between those environments.</p>
+<codeblock>Set-config -resetcfg</codeblock>
+<p>In addition to changing individual configuration items, you can also swap in entire full configuration environments by inserting a new configuration file with the <codeph>set-config -s</codeph> command.  This is useful if you are using multiple environments at your site--for example, you have a set of credentials that you use for development, but a different set of credentials for performing testing.  Substituting in a different config file gives you a quick way to switch back and forth between those environments.</p>
 <p>When you set to a new config file and the new file contains different credentials, you have to re-evaluate the list of Containers that the current user has access to. Changing your credentials is equivalent to changing your identity, and you may own just a small subset of Containers after the change. In this example you can see this rebinding in action.</p>
 <codeblock>
-  <codeph>PS dogs:\&gt; get-config
+PS dogs:\&gt; get-config
 
 ------------------------------------------------------------------------------------------------------
 Current Session Settings are as follows.
@@ -828,14 +730,12 @@ Storage Container : [yQAContainer6] now available
 Storage Container : [yQAContainer8] now available
 
 PS dogs:\&gt;    
-</codeph>
 </codeblock>
-<!--<img src="/media/SET-CONFIGFILE.jpg" width="580" height="547" alt="" />-->
 </section>
 <section id="ViewingYourServiceCatalog"> <title>Viewing Your Service Catalog</title>
-<p>If you want to take a look at your service catalog--for example, if you have modified some of your configuration credentials, and have authenticated them--you can use the **<codeph>get-config -v**</codeph> command, as shown below:</p>
+<p>If you want to take a look at your service catalog--for example, if you have modified some of your configuration credentials, and have authenticated them--you can use the <codeph>get-config -v</codeph> command, as shown below:</p>
 <codeblock>
-  <codeph>PS dogs:\&gt; get-catalog
+PS dogs:\&gt; get-catalog
 
 ------------------------------------------------------------------------------------------------------
 You have access to the following services.
@@ -897,15 +797,13 @@ Version Info    :
 Version List    :
 
 PS dogs:\&gt; get-catalog
-</codeph>
 </codeblock>
-<!--<img src="/media/viewing%20config%20file.jpg" width="580" height="547" alt="" />-->
 <p>This command provides you with all the service catalog information for your most-currently authenticated credential set.</p>
 </section>
 <section id="FindinganObjectsLocation"> <title>Finding an Object's Location</title>
-<p>The contents of the Object store are URI addressable given that you have the proper permissions to view the resource. If you would like a quick way to load the object into your browser, a fully qualified URI can be obtained with the <xref href="../publiccloud/cli.windows.2.reference.dita#get-uri" >Get-Uri cmdlet</xref>.</p>
+<p>The contents of the Object store are URI addressable given that you have the proper permissions to view the resource. If you would like a quick way to load the object into your browser, a fully qualified URI can be obtained with the <codeph>Get-Uri cmdlet</codeph>.</p>
 <codeblock>
-  <codeph>------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 Welcome to the HP-Cloud Object Storage Powershell Environment.
 ------------------------------------------------------------------------------------------------------
 
@@ -937,28 +835,20 @@ PS b1:\&gt; get-uri anothertest.txt
 Object located at: https://region-a.geo-1.objects.hpcloudsvc.com:443/v1/AUTH_ed097cde-cb84-4d72-b37e-a4be48c98d0
 
 PS b1:\&gt;
-</codeph>
 </codeblock>
-<!--<img src="/media/get-location_0.png" width="580" height="376" alt="" />-->
 <p>Note : When you issue this command the URI is also pasted to the Windows clipboard for your convenience. If you want to disable this behavior simply set the CLI.config option entitled PasteGetURIResultsToClipboard to false.</p>
 </section>
 <section id="AddingandRemovingDrives"> <title>Adding and Removing Drives</title>
-<p>There are times when you want to add or remove a drive from your list of available drives when it owned by another user.  To perform these actions, you can use the <xref href="../publiccloud/cli.windows.2.reference.dita#New-Container" >new-container</xref> and <xref href="../publiccloud/cli.windows.2.reference.dita#Remove-Container" >remove-container</xref> cmdlets.</p>
+<p>There are times when you want to add or remove a drive from your list of available drives when it owned by another user.  To perform these actions, you can use the <codeph>new-container</codeph> and <codeph>remove-container</codeph> cmdlets.</p>
 <p>To add a Container that someone else owns to your list of available drives:</p>
-<codeblock>
-  <codeph>new-container -url https://objects.werr.net:443/v1/9153476658759/rgtest2
-</codeph>
-</codeblock>
+<codeblock>new-container -url https://objects.werr.net:443/v1/9153476658759/rgtest2</codeblock>
 <p>This adds the container <codeph>rgtest2</codeph> to your list of available drives.  To remove the container from your list:</p>
-<codeblock>
-  <codeph>remove-container rgtest2
-</codeph>
-</codeblock>
+<codeblock>remove-container rgtest2</codeblock>
 </section>
 <section id="GettingVersionInformation"> <title>Getting Version Information</title>
 <p>It may be useful at times to know what version of the product you are using. Just issue the Get-Version command to get the main assembly location, product and CLR version.</p>
 <codeblock>
-  <codeph>------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 Welcome to the HP-Cloud Object Storage Powershell Environment.
 ------------------------------------------------------------------------------------------------------
 
@@ -973,22 +863,17 @@ PS demo:\&gt; get-version
 Assembly Location   : C:\Projects\Outgoing\HP\HPCloud.Client.Powershell.fll
 Product Version     : 1.0.0.0
 CLR Version         : v4.0.30319
-</codeph>
 </codeblock>
-<!--<img src="/media/GetVersion.png" width="580" height="223" alt="" />-->
 </section>
 <section id="UsingAnotherUsersCredentials"> <title>Using Another User's Credentials</title>
-<p>If you want to use the credentials of a particular user for a session ("imitating" that user), you can use the command **<codeph>set-credentials**</codeph>.  The **<codeph>set-credentials**</codeph> command allows you to define the access key, secret key, and tenant key for a session:</p>
-<codeblock>
-  <codeph>    set-credentials -ak Access-Key -sk Secret-Key -t Tenant-ID
-</codeph>
-</codeblock>
-<p>Where you choose your desired values for <codeph>**Access-Key</codeph>**, <codeph>**Secret-Key</codeph>**, and <codeph>**Tenant-ID</codeph>**.</p>
+<p>If you want to use the credentials of a particular user for a session ("imitating" that user), you can use the command <codeph>set-credentials</codeph>.  The <codeph>set-credentials</codeph> command allows you to define the access key, secret key, and tenant key for a session:</p>
+<codeblock>set-credentials -ak Access-Key -sk Secret-Key -t Tenant-ID</codeblock>
+<p>Where you choose your desired values for <codeph>Access-Key</codeph>, <codeph>Secret-Key</codeph>, and <codeph>Tenant-ID</codeph>.</p>
 </section>
 <section id="ViewingtheReleaseNotes"> <title>Viewing the Release Notes</title>
 <p>The <codeph>Get-Notes</codeph> command gives you the ability to view release notes for the current version (no arguments), a specific version (-v), or all past versions of the product (-all).</p>
 <codeblock>
-  <codeph>------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 Welcome to the HP-Cloud Object Storage Powershell Environment.
 ------------------------------------------------------------------------------------------------------
 
@@ -1062,14 +947,12 @@ Notes   :
      * laoiab laltl lalkdljafdk
 
 PS demo:\&gt; 
-</codeph>
 </codeblock>
-<!--<img src="/media/GetNotes.png" width="580" height="544" alt="" />-->
 </section>
 <section id="MigratingYourFiles"> <title>Migrating Your Files From Another Storage System</title>
 <p>The Migrate-Drive command gives you the ability to migrate your data from a non-HP Helion Public Cloud storage system such as Amazon S3, Dropbox, or Microsoft Skydrive into the HP Helion Public Cloud system easily and quickly.  This example uses Amazon S3 buckets.  To move the TLPRoot and TLPTest2 Buckets in S3 and the TLPTest2 Bucket contained MikeConfig.txt and NewHelp.text files to the HP Helion Public Cloud system:</p>
 <codeblock>
-  <codeph>------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 Welcome to the HP-Cloud Object Storage Powershell Environment.
 ------------------------------------------------------------------------------------------------------
 
@@ -1116,12 +999,9 @@ Total Files Copied : 11
 Total Bytes Copied : 1025000
 
 PS testcon2:\&gt;
-</codeph>
 </codeblock>
-<!--<img src="/media/MigrateS3All.jpg" width="580" height="444" alt="" />-->
 <p>The <codeph>-sk</codeph> option is your API secret key, and the <codeph>-ak</codeph> option is your access key.</p>
 <p>For additional information on this command, see <xref href="http://h30499.www3.hp.com/t5/Grounded-in-the-Cloud/Migrating-your-files-with-the-Windows-CLI/ba-p/6470822#.U20mfFf7Ex5" scope="external" format="html" >Migrating your files with the Windows CLI</xref> blog post.</p>
-<p>For a full description of the options available with the <b>Migrate-Drive</b> command, please see the <xref href="../publiccloud/cli.windows.2.reference.dita#Migrate-Drive" >Migrate-Drive</xref> section of the <xref href="../publiccloud/cli.windows.2.reference.dita">Windows CLI Reference</xref> page.</p>
 </section>
 </body>
 </topic>

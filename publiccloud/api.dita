@@ -53,7 +53,7 @@
 <ul>
 <li>
 <xref href="../publiccloud/apidocs/c1.1/maas-api.dita" >Monitoring v1.1</xref>: API for the HP Helion Public Cloud Monitoring  v13.5; facilitates monitoring of the health and other metrics for the resources in HP Helion Public Cloud.</li>
-</ul>
+</ul>/
 </section>
 <section id="privbeta"> <title>APIs in Private Beta</title>
 <p>You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!</p>
