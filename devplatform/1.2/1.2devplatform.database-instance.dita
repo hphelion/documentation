@@ -29,8 +29,9 @@
 <xref type="section" href="#topic5773/create">Create a database instance</xref>
 </li>
 <li>
-<xref type="section" href="#topic5773/backup">Create a database backup</xref>
-</li>
+        <xref href="#topic5773/creating-a-database-backup" format="dita">Create a database
+          backup</xref>
+      </li>
 <li>
 <xref type="section" href="#topic5773/replicate">Replicate a database</xref>
 </li>
@@ -42,53 +43,58 @@
 <ol>
 <li>Install the <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref>. </li>
 <li>
-<xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita#install-database" >Configure</xref> the database service.</li>
+          <xref href="1.2devplatform_commercial_install.dita#topic24073/install-database">Configure
+            the database service</xref>.</li>
 </ol>
 </section>
 <section id="create"> <title>Creating a Database Instance</title>
 <ol>
-<li> Log into the Horizon console.</li>
-<li> Under your project, open the Database panel and then click the <b>Instances</b> tab. <image
-            href="../../media/createDBinstance1.png" placement="break" id="image_j3q_ybd_ks"/></li>
-<li> Click <b>Launch Instance</b>.</li>
-<li> In the <b>Details</b> tab, specify the following options:<ul>
-            <li>
-              <b>Instance Name</b> - the name of the MySQL instance to create </li>
-            <li>
-              <b>Flavor</b> - the size of the instance to host the database on<image
-                href="../../media/createDBinstance2.png" placement="break" scale="50"/></li>
-            <li>
-              <b>Volume Size</b> - the size of the volume to host the data on (in GB). Note: this
-                <b>cannot</b> be changed later.</li>
-            <li>
-              <b>Datastore</b> - the MySQL database version to create</li>
-            <li>
-              <b>Availability Zone</b> (optional) the availability zone that the database will be
-              created in.<image href="../../media/createDBinstance1.png" placement="break"/>
-            </li>
-          </ul></li>
-<li> Under the <b>Networking</b> tab, specify the network to associate the database instance with.
-          This is required and should be the same network that any application that accesses the
-          database is on. <image href="../../media/createDBinstance3.png" placement="break"
-            id="image_dgk_1cd_ks"/>
-        </li>
-<li>Optional - Specify the initial database to create on the database instance. This option can be
-          used to pre-populate the instance with a database and a user for that database. <image
-            href="../../media/createDBinstance4.png" placement="break" scale="50"/>
-        </li>
+<li>
+<p>Log into the Horizon console.</p>
+</li>
+<li>
+<p>Under your project, open the Database panel and then click the <b>Instances</b> tab. <!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance1.png" placement="break"/>
+</p>
+</li>
+<li>
+<p>Click <b>Launch Instance</b>.</p>
+</li>
+<li>
+<p>In the <b>Details</b> tab, specify the following options:</p>
+
+<ul>
+<li>
+<b>Instance Name</b> - the name of the MySQL instance to create </li>
+<li>
+<b>Flavor</b> - the size of the instance to host the database on<!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance2.png" placement="break"/>
+</li>
+<li>
+<b>Volume Size</b> - the size of the volume to host the data on (in GB). Note: this <b>cannot</b> be changed later.</li>
+<li>
+<b>Datastore</b> - the MySQL database version to create</li>
+<li>
+<b>Availability Zone</b> (optional) the availability zone that the database will be created in.<!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance1.png" placement="break"/>
+</li>
+</ul>
+</li>
+<li>
+<p>Under the <b>Networking</b> tab, specify the network to associate the database instance with. This is required and should be the same network that any application that accesses the database is on. <!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance3.png" placement="break"/>
+</p>
+</li>
+<li>Optional - Specify the initial database to create on the database instance. This option can be used to pre-populate the instance with a database and a user for that database.  <!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance4.png" placement="break"/>
+</li>
 <li>Click <b>Launch</b>.</li>
-<li>In the <b>Database</b> tab, open the <b>Instances</b> panel. This panel displays the status of
-          the newly created database instance. <image href="../../media/createDBinstance5.png"
-            placement="break"/></li>
+<li>In the <b>Database</b> tab, open the <b>Instances</b> panel. This panel displays the status of the newly created database instance. <!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance5.png" placement="break"/>
+</li>
 <li>Once the database instance has reached <b>Active</b> status, the instance is ready to use.</li>
 </ol>
 </section>
-<section id="creating-a-database-backup"> <title>Creating a Database Backup</title>
+<section id="creating-a-database-backup"> <title>Creating a Database Backup<!--Removed anchor point backup--><!-- id="backup" --></title>
 <p>The following section will demonstrate how to back up an existing database instance. This will take a backup of the entire database instance. If necessary, the backup can be restored to a new instance at a later time.</p>
 <ol>
 <li>Log in to the Horizon console.</li>
 <li>Under your project, open the <b>Database</b> panel and then click the <b>Instances</b> tab.</li>
-<li>A list of active database instances will be displayed. Identify the database instance to back up and click <b>Create Backup</b> next to that instance.<image href="../../media/createDBinstance6.png" placement="break"/>
+<li>A list of active database instances will be displayed. Identify the database instance to back up and click <b>Create Backup</b> next to that instance.<!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance6.png" placement="break"/>
 </li>
 <li>In the <b>Backup Database</b> dialog, specify the following information:
 
@@ -100,14 +106,13 @@
 <li>
 <b>Description</b> - a text description of the backup (optional).</li>
 <li>
-<b>Parent Backup</b> - if a previous backup of this database instance exists. it is possible to take an incremental backup. An incremental backup will process faster because it only stores the differences between the two. Select the previous backup if an incremental backup is desired.<image href="../../media/createDBinstance7.png" placement="break"/>
+<b>Parent Backup</b> - if a previous backup of this database instance exists. it is possible to take an incremental backup. An incremental backup will process faster because it only stores the differences between the two. Select the previous backup if an incremental backup is desired.<!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance7.png" placement="break"/>
 </li>
 </ul>
 </li>
 <li>Click <b>Backup</b>.</li>
-<li>In the <b>Database</b> panel, click the <b>Backups</b> tab to view all existing backups,
-          including the newly-created backup.<image href="../../media/createDBinstance8.png"
-            placement="break"/></li>
+<li>In the <b>Database</b> panel, click the <b>Backups</b> tab to view all existing backups, including the newly-created backup.<!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance8.png" placement="break"/>
+</li>
 </ol>
 </section>
 <section id="replicate"> <title>Replicating a Database</title>
@@ -119,7 +124,7 @@
 <section id="steps"> <title>Steps</title>
 <ol>
 <li>Log in to the Horizon console.</li>
-<li>Under your project, open the <b>Database</b> panel and then click the <b>Instances</b> tab.<image href="../../media/createDBinstance9.png" placement="break"/>
+<li>Under your project, open the <b>Database</b> panel and then click the <b>Instances</b> tab.<!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance9.png" placement="break"/>
 </li>
 <li>Click <b>Launch Instance</b>.</li>
 <li>In the <b>Details</b> tab, specify the following options:
@@ -134,23 +139,16 @@
 <li>
 <b>Datastore</b> - the MySQL datastore version to create.</li>
 <li>
-              <b>Availability Zone</b> (optional) - the availability zone that the database will be
-              created in. For replication, it is important for this to be in a different
-              availability zone than the master.<image href="../../media/createDBinstance10.png"
-                placement="break" scale="50"/></li>
+<b>Availability Zone</b> (optional) - the availability zone that the database will be created in. For replication, it is important for this to be in a different availability zone than the master.<!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance10.png" placement="break"/>
+</li>
 </ul>
 </li>
-<li>Under the <b>Networking</b> tab, specify the network to associate the database instance with.
-          This is required and should be the same network that any application that accesses the
-          database is on.<image href="../../media/createDBinstance11.png" placement="break"
-            scale="75"/>
-        </li>
-<li>Click the <b>Advanced</b> tab and then use the <b>Replicate from Instance</b> drop-down to
-          select the master instance to replicate.<image href="../../media/createDBinstance12.png"
-            placement="break" scale="50"/>
-        </li>
-<li>Click <b>Launch</b> to create the replica.<image href="../../media/createDBinstance13.png"
-            placement="break"/></li>
+<li>Under the <b>Networking</b> tab, specify the network to associate the database instance with. This is required and should be the same network that any application that accesses the database is on.<!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance11.png" placement="break"/>
+</li>
+<li>Click the <b>Advanced</b> tab  and then use the <b>Replicate from Instance</b> drop-down to select the master instance to replicate.<!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance12.png" placement="break"/>
+</li>
+<li>Click <b>Launch</b> to create the replica.<!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance13.png" placement="break"/>
+</li>
 </ol>
 </section>
 <section id="floatIP"> <title>Attaching a Floating IP to the Database Instance</title>
@@ -158,14 +156,31 @@
 <p>To create a database with a floating IP address follow these steps from the command line. Note the following instructions require that you use the Trove CLI to create a database instance.</p>
 <p>For more information on using the Trove CLI, refer to the <xref type="section" href="#topic5773/more">More Resources</xref> section at the end of this guide.</p>
 <ol>
-<li>Pre-provision a port on the network that the instance will be attached to using the neutron CLI.
-          Note down the port-id of the port
-          created:<codeblock>neutron port-create &lt;network-id&gt;</codeblock></li>
-<li>When creating the trove instance pass in the port id as the nic
-          parameter:<codeblock>trove create &lt;name&gt; &lt;flavor-id&gt; --size &lt;size&gt; --nic port-id=&lt;port-id&gt;</codeblock></li>
-<li>Create a Floating IP using neutron and attach it to the port provisioned in step
-          1:<codeblock>neutron floatingip-create &lt;floating-network&gt;
-neutron floatingip-associate &lt;floating-ip-id&gt; &lt;port-id&gt;</codeblock></li>
+<li>
+<p>Pre-provision a port on the network that the instance will be attached to using the neutron CLI. Note down the port-id of the port created:</p>
+
+<codeblock>
+<codeph>$ neutron port-create &lt;network-id&gt;
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>When creating the trove instance pass in the port id as the nic parameter:</p>
+
+<codeblock>
+<codeph>$ trove create &lt;name&gt; &lt;flavor-id&gt; --size &lt;size&gt; --nic port-id=&lt;port-id&gt;
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Create a Floating IP using neutron and attach it to the port provisioned in step 1:</p>
+
+<codeblock>
+<codeph>$ neutron floatingip-create &lt;floating-network&gt;
+$ neutron floatingip-associate &lt;floating-ip-id&gt; &lt;port-id&gt;
+</codeph>
+</codeblock>
+</li>
 </ol>
 </section>
 <section id="more"> <title>More Resources</title>
@@ -173,6 +188,7 @@ neutron floatingip-associate &lt;floating-ip-id&gt; &lt;port-id&gt;</codeblock><
 <li>More information on <xref href="http://docs.openstack.org/developer/trove/" scope="external" format="html" >Trove</xref>.</li>
 <li>More information on <xref href="https://community.hpcloud.com/article/creating-and-configuring-database-instance" scope="external" format="html" >using the Trove CLI</xref> to create a database instance.</li>
 </ul>
+<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>
