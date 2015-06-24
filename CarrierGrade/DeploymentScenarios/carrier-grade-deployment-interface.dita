@@ -24,6 +24,7 @@
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
 <ul>
+  
 <li>
 <p>
 <b>virtio</b> -  The standard interface type for I/O virtualization in Linux. This type can be used with the Linux bridge application or the router application described in these scenarios.</p>

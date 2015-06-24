@@ -122,7 +122,7 @@ Procfile web: command. For example:</p>
 </section>
 <section id="python-with-the-legacy-buildpack"> <title>Python with the Legacy Buildpack</title>
 <p>If your Python application has configuration for running on Application Lifecycle Service
-  2.10 or earlier, you can deploy it using the <xref href="../../../deploy/1.1/buildpack.dita#topic3434/legacy-buildpack" >
+  2.10 or earlier, you can deploy it using the <xref href="../../../deploy/1.1buildpack.dita#topic3434/legacy-buildpack" >
 <i>Legacy
 Buildpack</i>
 </xref>, which provides an

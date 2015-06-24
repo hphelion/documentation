@@ -1496,6 +1496,8 @@
         navtitle="ALS User Guide ">
         <!--permalink: /als/v1/user/client/-->
         <!--permalink: /als/v1/user/deploy/-->
+        <topicref href="devplatform/helion/user/quick-start/1.0index.dita"
+          navtitle="ALS Quick Start" locktitle="yes"/>
         <topicref href="devplatform/helion/user/deploy/1.0index.dita" locktitle="yes"
           navtitle="General Deployment ">
           <!--permalink: /als/v1/user/deploy/app-debug/-->
@@ -1660,15 +1662,42 @@
     <topicref href="CarrierGrade/Overview/carrier-grade-overview.dita">
       <topicref href="CarrierGrade/Overview/carrier-grade-overview-non-kvm.dita"/>
       <topicref href="CarrierGrade/Overview/carrier-grade-overview-kvm.dita"/>
-      <topicref href="CarrierGrade/Overview/carrier-grade.services-overview.dita"/>
+      <topicref href="CarrierGrade/Overview/carrier-grade.services-overview.dita">
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-compute-overview.dita"/>
+        <topicref
+          href="CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita"/>
+        <topicref
+          href="CarrierGrade/ServicesOverviews/carrier-grade-services-orchestration-overview.dita"/>
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
+        />
+      </topicref>
     </topicref>
-    <topichead navtitle="Installing the Non-KVM Servers"/>
+    <topichead navtitle="Installing the Non-KVM Servers">
+      <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix.dita">
+        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-dcn.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-helion.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-hlm.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-wr.dita"/>
+      </topicref>
+      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"/>
+      <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-overview.dita">
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-NTP.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-troubleshoot.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-verify.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita"/>
+      </topicref>
+    </topichead>
     <topichead navtitle="Installing the KVM Server (PDF)">
       <topicref href="PDF/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf" navtitle="HP Helion OpenStack Carrier Grade Software Install" locktitle="yes" format="pdf"/>
     </topichead>
-    
-    <topichead navtitle="Administrator Guide">
-      <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
-    </topichead>
+    <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
+    <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-scarios.ditamap"
+      format="ditamap"/>
   </topicref> 
 </map>

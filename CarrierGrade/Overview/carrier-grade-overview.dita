@@ -62,7 +62,7 @@
         Grade documentation, this environment is referred to as KVM.</p><p>For more information, see
           <xref href="carrier-grade-overview-kvm.dita">KVM Environment
       Overview</xref>.</p></section>
-    <section>Service Overview<p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade is comprised
+  <section><title>Service Overview</title><p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade is comprised
         of a number of services, including several OpenStack and HP Helion OpenStack
         services.</p><p>For more information, see <xref href="carrier-grade.services-overview.dita"
           >Services Overview</xref>.</p></section>
