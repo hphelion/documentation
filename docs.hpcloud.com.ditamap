@@ -1580,7 +1580,7 @@
         <!--permalink: /als/v1/user/client/-->
         <!--permalink: /als/v1/user/deploy/-->
         <topicref href="devplatform/helion/user/quick-start/1.0index.dita"
-          navtitle="ALS Quick Start" locktitle="yes"/>
+          navtitle="ALS Quick Start Guide" locktitle="yes"/>
         <topicref href="devplatform/helion/user/deploy/1.0index.dita" locktitle="yes"
           navtitle="General Deployment ">
           <!--permalink: /als/v1/user/deploy/app-debug/-->
