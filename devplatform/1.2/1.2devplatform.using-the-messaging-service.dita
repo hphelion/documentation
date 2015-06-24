@@ -112,7 +112,7 @@
 <p>For more information on using RabbitMQ and managing the RabbitMQ cluster, visit the <xref href="https://www.rabbitmq.com/documentation.html" scope="external" format="html" >RabbitMQ documentation site</xref>.</p>
 </li>
 <li>
-<p>For more information using HP <tm tmtype="reg">Helion OpenStack</tm> visit the <xref href="http://docs.hpcloud.com/helion/openstack/" scope="external" format="html" >documentation page</xref>.</p>
+  <p>For more information using HP <tm tmtype="reg">Helion OpenStack</tm> visit the <xref href="../../commercial/GA1/1.1commercial.index.dita" scope="external" format="html" >documentation page</xref>.</p>
 </li>
 </ul>
 <p>
