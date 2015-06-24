@@ -189,9 +189,6 @@
 <xref href="../../CarrierGrade/AdminGuideNew/Routers/carrier-grade.dashboard.router.connect.dita" >Connect a network to a router</xref>
 </li>
 <li>Add / Remove an external network to/from a Router</li>
-<li>
-<xref href="../../CarrierGrade/AdminGuideNew/Routers/carrier-grade.dashboard.router.admin.delete.dita" >Delete a router</xref>
-</li>
 </ul>
 </li>
 </ul>
@@ -331,9 +328,8 @@
 <li>
 <xref href="../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-clusters.dita" >Working with Cluster Systems</xref>
 </li>
-<li>
-<xref href="../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host.dita" >Working with Hosts</xref>
-</li>
+  <li><xref href="HostManagement/carrier-grade-admin-wr-host-management.dita#topic11233">Working with Hosts</xref>
+ </li>
 <li>
 <xref href="../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-lifecycle.dita" >The Life Cycle of a Host System</xref>
 </li>
