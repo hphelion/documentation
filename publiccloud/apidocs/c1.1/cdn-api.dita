@@ -424,7 +424,7 @@ object names must be UTF-8 encoded. The length restrictions should be checked ag
 <section id="service_catalog"> <title>3.3 Service Catalog</title>
 <p>The Identity Service is used to authenticate users. See <xref type="section" href="#topic37013/using_tokens">Using Authentication Tokens</xref> for more information.</p>
 <p>For additional details on the Identity Service, please refer 
-  <xref href="tokeystone-api.dita" >http://docs.hpcloud.com/api/v13/identity</xref>.</p>
+  <xref href="keystone-api.dita" >http://docs.hpcloud.com/api/v13/identity</xref>.</p>
 <p>The service is exposed in the service catalog, as shown in the following fragment. Note the user is activated for two instances of the CDN service. Use the <codeph>publicURL</codeph> to perform all CDN API operations described in this document.</p>
 <codeblock>
 {
