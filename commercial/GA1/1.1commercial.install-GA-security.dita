@@ -682,7 +682,7 @@ See Reference 6 below </entry>
 <li>
 <!--Removed anchor point ref2-->
 <!-- id="ref2" -->
-<xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03983799-2.pdf#page=263" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> (PDF)</li>
+<xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03983799-2.pdf" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> (PDF)</li>
 <li>
 <xref href="http://hp.com/go/storevirtual" scope="external" format="html" >StoreVirtual information</xref>
 </li>
