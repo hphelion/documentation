@@ -1668,8 +1668,11 @@
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita"/>
         <topicref
           href="CarrierGrade/ServicesOverviews/carrier-grade-services-orchestration-overview.dita"/>
-        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
-        />
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita">
+          <topicref href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"/>
+          <topicref
+            href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"/>
+        </topicref>
       </topicref>
     </topicref>
     <topichead navtitle="Installing the Non-KVM Servers">
