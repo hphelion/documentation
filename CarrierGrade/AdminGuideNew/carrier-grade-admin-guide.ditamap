@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
-<bookmap>
- <booktitle>
-  <mainbooktitle>HP Helion OpenStack Carrier Grade Administrator Guide</mainbooktitle>
- </booktitle>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA BookMap//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+ <title>HP Helion OpenStack Carrier Grade Administrator Guide </title>
 	<!--<topicmeta>
 		<copyright>
 			<copyryear year="2015"/>
@@ -16,7 +14,7 @@
 			</vrmlist>
 		</prodinfo>
 	</topicmeta>
---> <chapter href="ConfigPlanning/carrier-grade-admin-wr-config-planning.dita">
+--> <topicref href="ConfigPlanning/carrier-grade-admin-wr-config-planning.dita">
   <topicref href="ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet.dita">
    <topicref href="ConfigPlanning/carrier-grade-admin-wr-config-pci-pass.dita"/>
    <topicref href="ConfigPlanning/carrier-grade-admin-wr-config-planning-address-filtering.dita"/>
@@ -49,20 +47,20 @@
    <topicref href="VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting-endpoints.dita"/>
    <topicref href="VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting-routes.dita"/>
   </topicref>
- </chapter>
- <chapter href="Config/carrier-grade-admin-system-config.dita">
+ </topicref>
+ <topicref href="Config/carrier-grade-admin-system-config.dita">
   <topicref href="Config/carrier-grade-admin-system-config-alarms.dita"/>
   <topicref href="Config/carrier-grade-admin-system-config-ext-OAM.dita"/>
   <topicref href="Config/carrier-grade-admin-system-config-dns.dita"/>
   <topicref href="Config/carrier-grade-admin-system-config-ntp.dita"/>
   <topicref href="Config/carrier-grade-admin-system-config-allotment.dita"/>
   <topicref href="Config/carrier-grade-admin-system-config-cli.dita"/>
- </chapter>
- <chapter href="HostManagement/carrier-grade-admin-wr-host-management.dita">
+ </topicref>
+ <topicref href="HostManagement/carrier-grade-admin-wr-host-management.dita">
   <topicref href="HostManagement/carrier-grade-admin-wr-host-management-clusters.dita"/>
   <topicref href="HostManagement/carrier-grade-admin-wr-host-management-resource.dita"/>
- </chapter>
- <chapter href="HostManagement/carrier-grade-admin-wr-host-management-hardware-inventory.dita">
+ </topicref>
+ <topicref href="HostManagement/carrier-grade-admin-wr-host-management-hardware-inventory.dita">
   <topicref href="HostManagement/carrier-grade-admin-wr-host-management-host-clusters.dita"/>
   <topicref href="HostManagement/carrier-grade-admin-wr-host-management.dita"/>
   <topicref href="HostManagement/carrier-grade-admin-wr-host-management-lifecycle.dita"/>
@@ -91,9 +89,9 @@
   <topicref
    href="HostManagement/carrier-grade-admin-wr-host-management-controller-hostaggregate.dita"/>
   <topicref href="HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"/>
- </chapter>
- <chapter href="HostAggregates/carrier-grade.dashboard.aggregate.managing.dita"/>
- <chapter href="Instances/carrier-grade.managing.instances.dita">
+ </topicref>
+ <topicref href="HostAggregates/carrier-grade.dashboard.aggregate.managing.dita"/>
+ <topicref href="Instances/carrier-grade.managing.instances.dita">
   <topicref href="Instances/carrier-grade.managing.instances.dita">
    <topicref href="Instances/carrier-grade.dashboard.instances.view.dita"/>
    <topicref href="Instances/carrier-grade.dashboard.instances.create.dita"/>
@@ -146,8 +144,8 @@
   </topicref>
   <topicref href="MiscTasks/carrier-grade.dashboard.system.info.dita"/>
   <topicref href="MiscTasks/carrier-grade.dashboard.metadata.dita"/>
- </chapter>
- <chapter href="Networks/carrier-grade.managing.network.dita">
+ </topicref>
+ <topicref href="Networks/carrier-grade.managing.network.dita">
   <topicref href="Networks/carrier-grade.dashboard.network.viewing.dita"/>
   <topicref href="Networks/carrier-grade.managing.network.dita">
    <topicref href="Networks/carrier-grade.dashboard.network.create.dita"/>
@@ -166,8 +164,8 @@
    <topicref href="Routers/carrier-grade.dashboard.router.connect.dita"/>
    <topicref href="Routers/carrier-grade.dashboard.router.delete.dita"/>
   </topicref>
- </chapter>
- <chapter href="Object_Storage/carrier-grade.managing.objects.dita">
+ </topicref>
+ <topicref href="Object_Storage/carrier-grade.managing.objects.dita">
   <topicref href="Object_Storage/carrier-grade.dashboard.container.create.dita">
    <topicref href="Object_Storage/carrier-grade.dashboard.container.upload.dita"/>
    <topicref href="Object_Storage/carrier-grade.dashboard.container.edit.dita"/>
@@ -195,37 +193,44 @@
    <topicref href="Stacks/carrier-grade-admin-wr-stacks-user-data.dita"/>
    <topicref href="Stacks/carrier-grade-admin-wr-stacks-wr.dita"/>
   </topicref>
- </chapter>
- <chapter href="MiscTasks/carrier-grade.dashboard.default.quotas.dita"/>
- <chapter href="Security/carrier-grade.managing.security.dita">
+ </topicref>
+ <topicref href="MiscTasks/carrier-grade.dashboard.default.quotas.dita"/>
+ <topicref href="Security/carrier-grade.managing.security.dita">
   <topicref href="Security/carrier-grade.dashboard.security.groups.dita"/>
   <topicref href="Security/carrier-grade.dashboard.security.keypairs.dita"/>
   <topicref href="Security/carrier-grade.dashboard.users.password.dita"/>
- </chapter>
- <chapter href="Users/carrier-grade.managing.users.dita">
+ </topicref>
+ <topicref href="Users/carrier-grade.managing.users.dita">
   <topicref href="Users/carrier-grade.dashboard.users.create.dita"/>
   <topicref href="Users/carrier-grade.dashboard.projects.primary.dita"/>
   <topicref href="Users/carrier-grade.dashboard.users.enable.dita"/>
   <topicref href="Users/carrier-grade.dashboard.users.password.dita"/>
- </chapter>
- <chapter href="HostManagement/carrier-grade-admin-wr-host-management-host-initialize-compute.dita">
+ </topicref>
+ <topicref href="Projects/carrier-grade.managing.projects.dita">
+  <topicref href="Projects/carrier-grade.dashboard.projects.create.dita"/>
+  <topicref href="Projects/carrier-grade.dashboard.projects.edit.dita"/>
+  <topicref href="Projects/carrier-grade.dashboard.projects.quotas.dita"/>
+  <topicref href="Projects/carrier-grade.dashboard.projects.users.dita"/>
+  <topicref href="Projects/carrier-grade.dashboard.projects.view.dita"/>
+ </topicref>
+ <topicref href="HostManagement/carrier-grade-admin-wr-host-management-host-initialize-compute.dita">
   <topicref
    href="HostManagement/carrier-grade-admin-wr-host-management-host-initialize-compute.dita"/>
   <topicref
    href="HostManagement/carrier-grade-admin-wr-host-management-host-initialize-controller.dita"/>
   <topicref
    href="HostManagement/carrier-grade-admin-wr-host-management-host-initialize-storage.dita"/>
- </chapter>
- <chapter href="SystemAlarms/carrier-grade-admin-wr-host-management-alarms.dita">
+ </topicref>
+ <topicref href="SystemAlarms/carrier-grade-admin-wr-host-management-alarms.dita">
   <topicref href="SystemAlarms/carrier-grade-admin-wr-host-management-alarms-viewing.dita"/>
   <topicref href="SystemAlarms/carrier-grade-admin-wr-host-management-alarms-community-strings.dita"/>
   <topicref href="SystemAlarms/carrier-grade-admin-wr-host-management-alarms-snmp-traps.dita"/>
   <topicref href="SystemAlarms/carrier-grade-admin-wr-host-management-alarms-cli-commands.dita"/>
   <topicref href="SystemAlarms/carrier-grade-admin-wr-host-management-alarms-ref-table.dita"/>
- </chapter>
- <chapter href="MiscTasks/carrier-grade-admin-ldap-manage.dita"/>
- <chapter href="Backup/carrier-grade-admin-wr-backup.dita">
+ </topicref>
+ <topicref href="MiscTasks/carrier-grade-admin-ldap-manage.dita"/>
+ <topicref href="Backup/carrier-grade-admin-wr-backup.dita">
   <topicref href="Backup/carrier-grade-admin-wr-retore.dita"/>
   <topicref href="Backup/carrier-grade-admin-wr-backup-cinder.dita"/>
- </chapter>
-</bookmap>
+ </topicref>
+</map>
