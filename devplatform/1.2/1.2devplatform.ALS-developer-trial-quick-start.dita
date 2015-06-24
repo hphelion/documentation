@@ -32,7 +32,8 @@
                     <strow>
                         <stentry>
                             <p>1. <image href="../../media/star.gif" id="image_s3z_zdp_js"
-                            scale="50"/><b>Register for your Helion Public Cloud Account</b></p>
+                            scale="50"/>
+                        <b>Register for your Helion Public Cloud Account</b></p>
                             <p>2. <xref href="1.2devplatform.ALS-developer-trial-quick-start2.dita">Download Tools</xref></p>
                             <p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the Sandbox Environment</xref></p>
                             <p>4. <xref href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a Cluster</xref></p>

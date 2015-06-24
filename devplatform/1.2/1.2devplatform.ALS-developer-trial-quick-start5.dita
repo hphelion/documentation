@@ -23,50 +23,39 @@
  <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start5.md-->
  <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/5/--></p>
 <p>An ALS cluster provides the support infrastructure necessary to deploy and manage applications. During this step, you will send a set of commands and variables to the <varname>cf-mgmt</varname> tool. The tool will use those parameters to create the cluster, set up the admin login credentials, and return a URL for the cluster's management console.</p>
-<table>
-<tgroup cols="2">
-        <colspec colname="col1" colwidth="400" colsep="1"/>
-        <colspec colname="col2"/>
-        <tbody>
-  <row>
-            <entry/>
-            <entry/>
-          </row>
-          <row>
-            <entry>
+<simpletable>
+          <strow>
+            <stentry>
               <p>1. <xref href="ALS-developer-trial-quick-start">Register for your Helion Public
                   Cloud Account</xref>
               </p>
               <p>2. <xref href="1.2devplatform.ALS-developer-trial-quick-start2.dita#topic1743"
-                  >Download Tools </xref></p>
+                  >Download Tools</xref>
+              </p>
               <p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the
-                  Sandbox Environment</xref>
-              </p>
+                  Sandbox Environment</xref></p>
               <p>4. <xref href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
-                  Cluster</xref>
-              </p>
-              <p><image href="../../media/star.gif" id="image_bmg_ms5_js" scale="50"
-                  />5. <b>Add Windows DEA and SQL Server (Optional Step)</b></p>
-              <p>6. <xref
-                href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Explore Sample Applications</xref>
-              </p>
-            </entry>
-            <entry>
-              <b>Add Windows DEA and SQL Server</b>
-              <p>This step is optional, but it exercises the new functionality in this version of
-                the Helion Development Platform.</p><p>
-                <note>A Windows DEA and a SQL Server <b>cannot</b> both exist on the same virtual
-                  machine. You will need to create a virtual machine for each one.</note>
-              </p><ol>
-                <li>Open a terminal window and change directory to the location where you installed
-                  the <varname>cf-mgmt</varname> command-line tool. </li>
-                <li>Run the appropriate set of commands in the <varname>cf-mgmt</varname> tool to
-                  add a DEA role and then add a service. In the unlikely event that the cluster
-                  creation fails, refer to the <xref
-                    href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita#topic2598">Troubleshooting tips</xref>. <ol>
-                    <li>For <tm tmtype="reg">Windows</tm>: <ul>
-                        <li>Add the Windows DEA Role
-                          <codeblock>cf-mgmt.exe ^
+                  Cluster</xref></p>
+              <p>5. <image href="../../media/star.gif" scale="50" id="image_zft_5cb_ms"/>
+                <b>Add Windows DEA and SQL Server (Optional Step)</b></p>
+              <p>6. <xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Explore Sample
+                  Applications</xref></p>
+            </stentry>
+            <stentry><p>This step is optional, but it exercises the new functionality in this
+            version of the Helion Development Platform.</p><p>
+            <note>A Windows DEA and a SQL Server <b>cannot</b> both exist on the same virtual
+              machine. You will need to create a virtual machine for each one.</note>
+          </p><ol>
+            <li>Open a terminal window and change directory to the location where you installed the
+                <varname>cf-mgmt</varname> command-line tool. </li>
+            <li>Run the appropriate set of commands in the <varname>cf-mgmt</varname> tool to add a
+              DEA role and then add a service. In the unlikely event that the cluster creation
+              fails, refer to the <xref
+                href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita#topic2598"
+                >Troubleshooting tips</xref>. <ol>
+                <li>For <tm tmtype="reg">Windows</tm>: <ul>
+                    <li>Add the Windows DEA Role
+                      <codeblock>cf-mgmt.exe ^
  --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
  --os-username &lt;OS_USERNAME from openstackrc&gt; ^
  --os-password &lt;Openstack password&gt; ^
@@ -76,8 +65,8 @@
 add-role dea ^
  --keypair-name &lt;name of keypair created earlier&gt; ^
  --load http://clients.als.hpcloud.com/1.2/config/trial-windea.yml </codeblock></li>
-                        <li>Add the SQL Server 2014 Service
-                          <codeblock>cf-mgmt.exe ^
+                    <li>Add the SQL Server 2014 Service
+                      <codeblock>cf-mgmt.exe ^
  --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
  --os-username &lt;OS_USERNAME from openstackrc&gt; ^
  --os-password &lt;Openstack password&gt; ^
@@ -87,30 +76,25 @@ add-role dea ^
 add-service mssql2014 ^
  --keypair-name &lt;name of keypair created earlier&gt; ^
  --load http://clients.als.hpcloud.com/1.2/config/trial-mssql2014.yml</codeblock></li>
-                      </ul></li>
-                    <li>For Mac / Unix: <ul>
-                        <li>Add the Windows DEA Role
-                          <codeblock>cf-mgmt add-role dea \
+                  </ul></li>
+                <li>For Mac / Unix: <ul>
+                    <li>Add the Windows DEA Role
+                      <codeblock>cf-mgmt add-role dea \
   --keypair-name &lt;name of keypair created earlier&gt; \
   --stack "win2012r2" \
   --load http://clients.als.hpcloud.com/1.2/config/trial-windea.yml</codeblock></li>
-                        <li>Add the SQL Server 2014 Service
-                          <codeblock>cf-mgmt add-service mssql2014 \
+                    <li>Add the SQL Server 2014 Service
+                      <codeblock>cf-mgmt add-service mssql2014 \
   --keypair-name &lt;name of keypair created earlier&gt; \
   --load http://clients.als.hpcloud.com/1.2/config/trial-mssql2014.yml</codeblock></li>
-                      </ul></li>
-                  </ol></li>
-              </ol>
-              <p>At this point, your Windows DEA and/or SQL Server instance is ready to use! No
-                further action is necessary.</p></entry>
-          </row>
-          <row>
-            <entry/><entry align="right">
-              <xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita"><image href="../../media/NextButton.png" id="image_i4h_mjp_js" align="right"
-                /></xref></entry>
-          </row>
-        </tbody>
-      </tgroup>
-</table>
+                  </ul></li>
+              </ol></li>
+          </ol><p>At this point, your Windows DEA and/or SQL Server instance is ready to use! No
+            further action is necessary.</p><xref
+            href="1.2devplatform.ALS-developer-trial-quick-start6.dita">
+            <image href="../../media/NextButton.png" id="image_i4h_mjp_js" placement="break"/>
+          </xref></stentry>
+          </strow>
+</simpletable>
 </body>
 </topic>

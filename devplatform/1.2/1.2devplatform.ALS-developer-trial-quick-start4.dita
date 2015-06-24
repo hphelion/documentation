@@ -27,17 +27,9 @@
                 <varname>cf-mgmt</varname> tool. The tool will use those parameters to create the
             cluster, set up the admin login credentials, and return a URL for the cluster's
             management console.</p>
-<table>
-<tgroup cols="2">
-                <colspec colname="col1" colwidth="400" colsep="1"/>
-                <colspec colname="col2" colwidth="1*"/>
-                 <tbody>
-                    <row>
-                        <entry/>
-                        <entry/>
-                    </row>
-                    <row>
-                        <entry>
+<simpletable>
+                 <strow>
+                        <stentry>
                             <p>1. <xref href="ALS-developer-trial-quick-start">Register for your
                                     Helion Public Cloud Account</xref>
                             </p>
@@ -46,48 +38,38 @@
                                     >Download Tools</xref>
                             </p>
                             <p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita"
-                                    >Create the Sandbox Environment</xref>
-                            </p>
-                            <p><image href="../../media/star.gif" id="image_lqs_gjp_js" scale="50"/>
-                                <b>4. Create A Cluster </b></p>
+                                    >Create the Sandbox Environment</xref></p>
+                            <p>4. <image href="../../media/star.gif" scale="50"
+                                    id="image_zft_5cb_ms"/>
+                                <b>Create a Cluster</b></p>
                             <p>5. <xref href="1.2devplatform.ALS-developer-trial-quick-start5.dita"
-                                    >Add Windows DEA and SQL Server (Optional Step)</xref>
-                            </p>
+                                    >Add Windows DEA and SQL Server (Optional Step)</xref></p>
                             <p>6. <xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita"
-                                    >Explore Sample Applications</xref>
-                            </p>
-                        </entry>
-                        <entry>
-                            <b>Create a Cluster</b>
-                            <p>For convenience, copy the command sets and paste them into a text
-                                editor. You can edit them there and then paste that information into
-                                the <xref
-                                    href="helion/user/reference/1.2client-ref.dita"
-                                    >
-                                    <varname>cf-mgmt</varname>
-                                </xref> tool as necessary. </p><ol>
-                                <li>Open a terminal window and change directory to the location
-                                    where you installed the <xref
-                                        href="helion/user/reference/1.2client-ref.dita"
-                                        >
-                                        <varname>cf-mgmt</varname>
-                                    </xref> command-line tool. </li>
-                                <li>Run the following set of commands using the <xref
-                                    href="helion/user/reference/1.2client-ref.dita"
-                                        >
-                                        <varname>cf-mgmt</varname>
-                                    </xref> tool to create the cluster. In the unlikely event that
-                                    the cluster creation fails, refer to the <xref
-                                        href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
-                                        >Troubleshooting</xref>
-                                    section for further instructions.<p>
-                                        <note> It may take about 15 minutes to deploy each cluster
-                                            image in this and the following step. </note>
-                                    </p><ul>
-                                        <li>For <tm tmtype="reg">Windows</tm>: Open the RC file you
-                                            downloaded earlier in a text editor, as you will need to
-                                            enter values from that file.
-                                            <codeblock>cf-mgmt.exe ^
+                                    >Explore Sample Applications</xref></p>
+                        </stentry>
+                        <stentry>For convenience, copy the command sets and paste them into a text
+                    editor. You can edit them there and then paste that information into the <xref
+                        href="helion/user/reference/1.2client-ref.dita">
+                        <varname>cf-mgmt</varname>
+                    </xref> tool as necessary. <ol>
+                        <li>Open a terminal window and change directory to the location where you
+                            installed the <xref href="helion/user/reference/1.2client-ref.dita">
+                                <varname>cf-mgmt</varname>
+                            </xref> command-line tool. </li>
+                        <li>Run the following set of commands using the <xref
+                                href="helion/user/reference/1.2client-ref.dita">
+                                <varname>cf-mgmt</varname>
+                            </xref> tool to create the cluster. In the unlikely event that the
+                            cluster creation fails, refer to the <xref
+                                href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
+                                >Troubleshooting</xref> section for further instructions.<p>
+                                <note> It may take about 15 minutes to deploy each cluster image in
+                                    this and the following step. </note>
+                            </p><ul>
+                                <li>For <tm tmtype="reg">Windows</tm>: Open the RC file you
+                                    downloaded earlier in a text editor, as you will need to enter
+                                    values from that file.
+                                    <codeblock>cf-mgmt.exe ^
     --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
     --os-username &lt;OS_USERNAME from openstackrc&gt; ^
     --os-password &lt;Openstack password&gt; ^
@@ -99,43 +81,35 @@ create-cluster ^
     --admin-email &lt;your login for the quick-start&gt; ^
     --admin-password &lt;your password for the quick-start&gt; ^
     --load http://clients.als.hpcloud.com/1.2/config/trial.yml</codeblock>
-                                        </li>
-                                        <li>For Mac/Unix: You do not need to open the RC file; the
-                                                <varname>source</varname> command will retrieve the
-                                            necessary values from that file automatically.
-                                            <codeblock>source &lt;path to openstackrc file&gt;
+                                </li>
+                                <li>For Mac/Unix: You do not need to open the RC file; the
+                                        <varname>source</varname> command will retrieve the
+                                    necessary values from that file automatically.
+                                    <codeblock>source &lt;path to openstackrc file&gt;
 cf-mgmt create-cluster \
    --keypair-name &lt;name of keypair created earlier&gt; \
    --admin-email &lt;your login for the quick-start&gt; \
    --admin-password &lt;your password for the quick-start&gt; \
    --load http://clients.als.hpcloud.com/1.2/config/trial.yml</codeblock></li>
-                                    </ul></li>
-                                <li>After the <varname>cf-mgmt</varname> tool creates the cluster,
-                                    it displays the ALS Console URL. This URL will have the form
-                                        <varname>http://api.&lt;ipaddress&gt;.xip.io</varname> For
-                                    example: <varname>htttp://api.255.255.255.255.xip.io</varname>
-                                </li>
-                                
-                                <li>Enter the Console URL in your web browser to navigate to the
-                                    Management
-                                    Console.Note:
-                                    You may be "warned" that the Console has a self-signed
-                                    certificate or that the site is "not trusted". These "warnings"
-                                    can be safely ignored. </li>
-                                
-                                <li>Log in to the Console using the email and password you specified
-                                    when you created the cluster.</li>
-                            </ol> Congratulations! You are now ready to begin deploying apps to your
-                            new micro-cloud environment.</entry>
-                    </row>
-                    <row>
-                        <entry> </entry>
-                        <entry align="right"><xref
-                                href="1.2devplatform.ALS-developer-trial-quick-start5.dita"><image href="../../media/NextButton.png"
-                                    id="image_i4h_mjp_js" align="right"/></xref></entry>
-                    </row>
-                </tbody>
-            </tgroup>
-</table>
+                            </ul></li>
+                        <li>After the <varname>cf-mgmt</varname> tool creates the cluster, it
+                            displays the ALS Console URL. This URL will have the form
+                                <varname>http://api.&lt;ipaddress&gt;.xip.io</varname> For example:
+                                <varname>htttp://api.255.255.255.255.xip.io</varname>
+                        </li>
+                        <li>Enter the Console URL in your web browser to navigate to the Management
+                            Console.Note: You may be "warned" that the Console has a self-signed
+                            certificate or that the site is "not trusted". These "warnings" can be
+                            safely ignored. </li>
+                        <li>Log in to the Console using the email and password you specified when
+                            you created the cluster.</li>
+                    </ol> Congratulations! You are now ready to begin deploying apps to your new
+                    micro-cloud environment. <xref
+                        href="1.2devplatform.ALS-developer-trial-quick-start5.dita">
+                        <image href="../../media/NextButton.png" id="image_i4h_mjp_js"
+                            placement="break"/>
+                    </xref></stentry>
+                    </strow>
+</simpletable>
 </body>
 </topic>
