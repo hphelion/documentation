@@ -157,10 +157,10 @@ EJS templates on the settings object (e.g.
 <li>support_template: SupportTemplate,</li>
 <li>eula_template: EulaTemplate,</li>
 <li>welcome_template: WelcomeTemplate,</li>
-<li>external_docs_url: <xref href="http://docs.hpcloud.com" format="html" scope="external"/></li>
+  <li>external_docs_url: <xref href="./../../../publiccloud/index.dita" /></li>
 <li>use_local_docs: "false"</li>
 </ul>
-</section>
+</section>.
 <section id="restoring-values"> <title>Restoring values</title>
 <p>Each setting has an individual <b>Load Default</b> button (refresh icon to
 the left of the value field) which will replace the customized value
