@@ -259,7 +259,7 @@ After modification, the baremetal.csv will look like the one given below.</p>
 </codeblock>
 </li>
 <li>
-<p>Create the <i>overcloud-config.json</i> file with the following contents. For definitions of the variables used and suggested values refer to the list of available <xref href="http://docs.hpcloud.com/helion/openstack/install/envars" scope="external" format="html">environment variables</xref>.</p>
+  <p>Create the <i>overcloud-config.json</i> file with the following contents. For definitions of the variables used and suggested values refer to the list of available <xref href="1.0commercial.install-GA-JSON.dita" >environment variables</xref>.</p>
 
 <codeblock>
 <codeph>{
@@ -359,7 +359,7 @@ export OVERCLOUD_LIBVIRT_TYPE=kvm
 <section id="postinstall"> <title>Post-Installation Steps</title>
 <ul>
 <li>
-<xref href="http://docs.hpcloud.com/helion/openstack/install/kvm#verifying-your-installation" scope="external" format="html">Verify the installation</xref>
+  <xref href="1.0commercial.install-GA-kvm.dita#verifying-your-installation" >Verify the installation</xref>
 </li>
 <li>Configure Block Storage
 

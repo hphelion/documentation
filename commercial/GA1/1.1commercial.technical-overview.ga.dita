@@ -811,8 +811,9 @@ System and service health checks are based on the **check_mk** framework. Health
 <section id="next"> <title>Next Step</title>
 <p>Prepare your environment for the installation.</p>
 <ul>
+    
 <li>See <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Installation: Prerequisites</xref>.</li>
-<li>Or, try the <xref href="http://docs.hpcloud.com/content/documentation/commercial/GA1/RollYourOwn11/index.html" scope="external" format="html" >Roll Your Own Installation Guide</xref> for a more interactive installation process. </li>
+        <li>Or, try the <xref href="RollYourOwn11/index.html" scope="external" format="html" >Roll Your Own Installation Guide</xref> for a more interactive installation process. </li>
 </ul>
 <p>
   <xref type="section" href="#topic24808"> Return to Top </xref>

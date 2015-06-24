@@ -49,10 +49,11 @@
 <section id="controller0"> <title>Restore controller-0</title>
 <ol>
 <li>
-<p>
-<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_Openstack" scope="external" format="html" >Install the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade software on controller-0</xref>.</p>
-
-<p>When the software installation is complete, you should be able to log in using the host's console and the web administration interface.</p>
+<p><xref
+              href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf"
+              format="pdf" scope="external">Install the HP Helion <tm tmtype="reg">OpenStack</tm>
+  Carrier Grade software on controller-0</xref></p>
+       <p>When the software installation is complete, you should be able to log in using the host's console and the web administration interface.</p>
 </li>
 <li>
 <p>Log in to the console as user <codeph>wrsroot</codeph> with password <codeph>wrsroot</codeph>.</p>

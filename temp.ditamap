@@ -28,7 +28,7 @@
       <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"/>
       <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita"/>
       <topicref href="commercial/GA1/1.1commercial.network-administrator-notes.dita"/>
-      <topicref href="commercial/GA1/under_the_hood.dita" toc="no"/><!--set to toc=no later-->
+      <topicref href="commercial/GA1/under_the_hood.dita"/><!--set to toc=no later-->
     </topicref>
     <topicref href="commercial/GA1/1.1commercial.faq.dita"/>
     <!-- Services -->
@@ -530,6 +530,10 @@
   </topicref>
  
     <!--Community-->
+  <topicref href="api.copyright.dita"/>
+
+  
+    
  
   <topicref href="devplatform/1.2/1.2devplatform.index.dita"
     navtitle="HP Helion 1.2 Development Platform " locktitle="yes"> <!--//OASIS//DTD DITA Topic//EN"-->
@@ -651,8 +655,6 @@
         navtitle="Deploying your first .NET Application"/>
       <topicref href="devplatform/1.2/windows/windows_tools_guide.dita" locktitle="yes"
         navtitle="Windows and .NET Applications Tools Guide"/>
-      <topicref href="devplatform/1.2/windows/windows_growcluster.dita"
-        navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
     </topichead>
     <!--permalink: /helion/devplatform/1.2/als/-->
     <topicref href="devplatform/1.2/1.2devplatform.sysadmin.dita" locktitle="yes"
@@ -835,8 +837,6 @@
         <!--permalink: /helion/devplatform/1.2/als/user/client/-->
         <!--permalink: /helion/devplatform/1.2/als/user/console/-->
         <!--permalink: /helion/devplatform/1.2/als/user/deploy/-->
-        <topicref href="devplatform/1.2/helion/user/quick-start/1.2index.dita"
-          navtitle="ALS Quick Start" locktitle="yes"/>
         <topicref href="devplatform/1.2/helion/user/deploy/1.2index.dita" locktitle="yes"
           navtitle="General Deployment">
           <!--permalink: /helion/devplatform/1.2/als/user/deploy/app-debug/-->
@@ -1545,10 +1545,8 @@
       </topicref>
     </topicref>
   </topicref>
-  <topicref href="euca/euca-landing-page.dita" navtitle="HP Helion Eucalyptus" locktitle="yes">
-    <topicref href="euca/euca.thirdparty.licensing.dita"
-      navtitle="Open Source and Third-Party Licensing" locktitle="yes"/>
-    <topicref href="euca/euca-eula.dita" navtitle="Master Services Agreement" locktitle="yes"/>
+  <topicref href="euca/euca-landing-page.dita">
+    <topicref href="euca/euca.thirdparty.licensing.dita"/>
   </topicref>
   <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud"
     locktitle="yes">
@@ -1670,7 +1668,236 @@
     <topichead navtitle="Administrator Guide">
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
     </topichead>
-    <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-scarios.ditamap"
-      format="ditamap"/>
   </topicref> 
 </map>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<bookmap>
+ <booktitle>
+  <mainbooktitle>HP Helion OpenStack Carrier Grade Administrator Guide</mainbooktitle>
+ </booktitle>
+	<!--<topicmeta>
+		<copyright>
+			<copyryear year="2015"/>
+			<copyrholder>HP Helion OpenStack Carrier Grade</copyrholder>
+		</copyright>
+		<prodinfo>
+			<prodname>HP Helion OpenStack Carrier Grade</prodname>
+			<vrmlist>
+				<vrm version="4.1.0"/>
+			</vrmlist>
+		</prodinfo>
+	</topicmeta>
+--> <chapter href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning.dita">
+  <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-pci-pass.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-address-filtering.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-config.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-mtu.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-shared.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-sr-iov.dita"/>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-management.dita"/>
+   <topicref
+    href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-infrastructure.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-board-mgmt.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-oam.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-provider.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-tenant.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-vrs.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-subnets.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-guest-vlan.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-l2.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-diff.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-qos.dita"/>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-storage.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-storage-configure.dita"/>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-vxlan.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting-cli.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting-endpoints.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting-routes.dita"/>
+  </topicref>
+ </chapter>
+ <chapter href="CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config.dita">
+  <topicref href="CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-alarms.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-ext-OAM.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-dns.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-ntp.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-allotment.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-cli.dita"/>
+ </chapter>
+ <chapter href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita">
+  <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-clusters.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-resource.dita"/>
+ </chapter>
+ <chapter href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-hardware-inventory.dita">
+  <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-clusters.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-lifecycle.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory.cluster.dita"/>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-controller.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-storage.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita"/>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail.dita">
+   <topicref
+    href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-processor.dita"/>
+   <topicref
+    href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-memory.dita"/>
+   <topicref
+    href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-storage.dita"/>
+   <topicref
+    href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-ports.dita"/>
+   <topicref
+    href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita"/>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-controller-HA.dita"/>
+  <topicref
+   href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-controller-hostaggregate.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"/>
+ </chapter>
+ <chapter href="CarrierGrade/AdminGuideNew/HostAggregates/carrier-grade.dashboard.aggregate.managing.dita"/>
+ <chapter href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.managing.instances.dita">
+  <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.managing.instances.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.view.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.create.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.stop.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.suspend.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.reboot.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.rebuild.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.resize.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.scaling.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.pause.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.snapshot.create.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.managing.instances.ipaddress.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.console.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.migrate.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.live.migrate.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.cold.migrate.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.terminate.dita"/>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/Volumes/carrier-grade.managing.volumes.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/Volumes/carrier-grade.dashboard.volume.create.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Volumes/carrier-grade.dashboard.volume.snapshot.create.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Volumes/carrier-grade.dashboard.volume.extend.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Volumes/carrier-grade.dashboard.volume.attach.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Volumes/carrier-grade.dashboard.volume.type.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Volumes/carrier-grade.dashboard.volume.backup.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Volumes/carrier-grade.dashboard.volume.create.image.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Volumes/carrier-grade.dashboard.volume.instance.create.dita"/>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.flavors.access.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.dita">
+    <topicref href="CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.vcpu.dita"/>
+    <topicref href="CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.cpu.dita"/>
+    <topicref href="CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.numa.dita"/>
+    <topicref href="CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.vcpu.pin.dita"/>
+    <topicref href="CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.numa.pin.dita"/>
+    <topicref href="CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.page.dita"/>
+    <topicref href="CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.api.dita"/>
+    <topicref href="CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.vcpu.storage.dita"/>
+    <topicref href="CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.vcpu.sched.dita"/>
+   </topicref>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/Images/carrier-grade.managing.images.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/Images/carrier-grade.dashboard.images.create.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Images/carrier-grade.dashboard.images.delete.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Images/carrier-grade.dashboard.images.details.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Images/carrier-grade.dashboard.images.modify.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Images/carrier-grade.dashboard.images.public.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Images/carrier-grade.dashboard.snapshot.protect.dita"/>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade.dashboard.system.info.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade.dashboard.metadata.dita"/>
+ </chapter>
+ <chapter href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.managing.network.dita">
+  <topicref href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.viewing.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.managing.network.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.create.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.enable.tenant.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.ports2.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.subnet.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.guest.vlan.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.qos.dita"/>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/Routers/carrier-grade.managing.routers.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/Routers/carrier-grade.dashboard.router.create.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Routers/carrier-grade.dashboard.router.admin.enable.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Routers/carrier-grade.dashboard.router.connect.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Routers/carrier-grade.dashboard.router.delete.dita"/>
+  </topicref>
+ </chapter>
+ <chapter href="CarrierGrade/AdminGuideNew/Object_Storage/carrier-grade.managing.objects.dita">
+  <topicref href="CarrierGrade/AdminGuideNew/Object_Storage/carrier-grade.dashboard.container.create.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/Object_Storage/carrier-grade.dashboard.container.upload.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Object_Storage/carrier-grade.dashboard.container.edit.dita"/>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/3Par/carrier-grade-admin-install-3par.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/3Par/carrier-grade-admin-install-3par-multipath.dita"/>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/VSA/carrier.vsa-overview.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa-deploy.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa-add-new-mgmt-group.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/VSA/carrier.install-add-mgmt-group.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/VSA/carrier.undercloud-storage-storevirtual.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/VSA/carrier.undercloud-oc-config-storevirtual.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa-enroll.old.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/VSA/carrier.troubleshooting.vsa.dita"/>
+  </topicref>
+  <topicref href="CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks.dita">
+   <topicref href="CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-stacks-create.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-autoscale.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-create.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-guest-metric.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-sample-resource-types.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-sample-templates.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-user-data.dita"/>
+   <topicref href="CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-wr.dita"/>
+  </topicref>
+ </chapter>
+ <chapter href="CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade.dashboard.default.quotas.dita"/>
+ <chapter href="CarrierGrade/AdminGuideNew/Security/carrier-grade.managing.security.dita">
+  <topicref href="CarrierGrade/AdminGuideNew/Security/carrier-grade.dashboard.security.groups.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/Security/carrier-grade.dashboard.security.keypairs.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/Security/carrier-grade.dashboard.users.password.dita"/>
+ </chapter>
+ <chapter href="CarrierGrade/AdminGuideNew/Users/carrier-grade.managing.users.dita">
+  <topicref href="CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.users.create.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.projects.primary.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.users.enable.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.users.password.dita"/>
+ </chapter>
+ <chapter href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-initialize-compute.dita">
+  <topicref
+   href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-initialize-compute.dita"/>
+  <topicref
+   href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-initialize-controller.dita"/>
+  <topicref
+   href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-initialize-storage.dita"/>
+ </chapter>
+ <chapter href="CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms.dita">
+  <topicref href="CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-viewing.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-community-strings.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-snmp-traps.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-cli-commands.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-ref-table.dita"/>
+ </chapter>
+ <chapter href="CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade-admin-ldap-manage.dita"/>
+ <chapter href="CarrierGrade/AdminGuideNew/Backup/carrier-grade-admin-wr-backup.dita">
+  <topicref href="CarrierGrade/AdminGuideNew/Backup/carrier-grade-admin-wr-retore.dita"/>
+  <topicref href="CarrierGrade/AdminGuideNew/Backup/carrier-grade-admin-wr-backup-cinder.dita"/>
+ </chapter>
+</bookmap>

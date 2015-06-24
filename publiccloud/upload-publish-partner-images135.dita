@@ -15,7 +15,7 @@
 <p>
   <!--Removed anchor point publishPartnerImage--><!-- id="publishPartnerImage" -->
 </p>
-<p>This document describes how to use the HP Helion Public Cloud Image API to upload images and make them available for public use in the public cloud. It is not intended to be an exhaustive description of <xref href="http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html" scope="external" format="html" >managing images using the Glance client</xref>. For additional detail, see the <xref href="http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html" scope="external" format="html" >glance command reference</xref> and the <xref href="http://docs.hpcloud.com/publiccloud/api/image/" scope="external" format="html" >HP Helion Public Cloud Image Service API specification</xref>.</p>
+  <p>This document describes how to use the HP Helion Public Cloud Image API to upload images and make them available for public use in the public cloud. It is not intended to be an exhaustive description of <xref href="http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html" scope="external" format="html" >managing images using the Glance client</xref>. For additional detail, see the <xref href="http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html" scope="external" format="html" >glance command reference</xref> and the <xref href="apidocs/c1.1/glance-api.dita" >HP Helion Public Cloud Image Service API specification</xref>.</p>
 <p>
 <b>Note:</b> As an image owner, it is your responsibility to ensure you have rights to use any software included in the image. HP is not responsible or liable for any unauthorized use of software by the owner of an image.</p>
 <p>

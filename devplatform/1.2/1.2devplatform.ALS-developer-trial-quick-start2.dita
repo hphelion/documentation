@@ -35,7 +35,7 @@
             <entry/>
           </row>
           <row rowsep="0">
-            <entry><p>1. <xref href="ALS-developer-trial-quick-start">Register for your Helion
+            <entry><p>1. <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita">Register for your Helion
                   Public Cloud Account</xref>
               </p><image href="../../media/star.gif" id="image_lqs_gjp_js" scale="50"/>2.
                 <b>Download Tools</b>
@@ -87,8 +87,8 @@
                     scope="external" format="html"><tm tmtype="reg">Mac OS X</tm></xref>
                 </li>
               </ul> The <xref
-                href="http://docs.hpcloud.com/helion/devplatform/1.2/als/user/reference/client-ref"
-                scope="external" format="html">Command Reference</xref> has full descriptions of all
+                href="helion/user/reference/1.2client-ref.dita"
+                >Command Reference</xref> has full descriptions of all
               ALS Client commands and options. </entry>
           </row>
           <row rowsep="0">

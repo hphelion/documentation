@@ -745,7 +745,7 @@
 <p>Enter alarm name in "Create Alarm" box.</p>
 </li>
 <li>
-<p>Enter an alarm expression as indicated under "Description" in the "Create Alarm" box.  <xref href="http://docs.hpcloud.com/publiccloud/api/monitoring#AlarmExpressions" scope="external" format="html" >Click</xref> to see the "Alarm Expressions" section for setup information or use the link in the interface. When the expression you set is true, it triggers a notification.</p>
+  <p>Enter an alarm expression as indicated under "Description" in the "Create Alarm" box.  <xref href="apidocs/c1.1/maas-api.dita#AlarmExpressions" >Click</xref> to see the "Alarm Expressions" section for setup information or use the link in the interface. When the expression you set is true, it triggers a notification.</p>
 </li>
 <li>
 <p>Select an alarm action name and click "Create Alarm."</p>

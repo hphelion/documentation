@@ -20,7 +20,7 @@
  <!--./commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-drive-audit.md-->
  <!--permalink: /helion/openstack/1.1/services/object/swift/monitor-swift-drive-audit/--></p>
 <p>Drive audit runs <codeph>swift-drive-audit</codeph> to find a errors in <codeph>kern.log</codeph>. It reports the list of drives which have errors. The devices which are used for Swift are verified for an error and then reported.  The devices are not automatically unmounted. <!-- so as to allow for the disk to self-heal?(we can use "recover"), if possible.--></p>
-<p>If the disk errors occur the operator must perform the maintenance on the disk by <xref href="http://docs.hpcloud.c,om/helion/openstack/1.1/services/swift/deployment/remove-existing-disk/" scope="external" format="html" >removing the disk</xref> from the Swift cluster or <xref href="http://docs.hpcloud.com/helion/openstack/1.1/services/swift/deployment/add-disk-scale-out/" scope="external" format="html" >replacing the disk</xref> with a new one.</p>
+    <p>If the disk errors occur the operator must perform the maintenance on the disk by <xref href="http://docs.hpcloud.c,om/helion/openstack/1.1/services/swift/deployment/remove-existing-disk/" scope="external" format="html" >removing the disk</xref> from the Swift cluster or <xref href="1.1commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita">replacing the disk</xref> with a new one.</p>
 <p>Note: Run <b>Icinga</b> check once in every 30 minutes for drive audit to complete one run on  a large system.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>

@@ -833,7 +833,7 @@ padding: 25px;
             <div class="iDoc_textblock">
                 <h2>All-in-one guide to your cloud installation</h2>
                 <div class="iDoc_textblockbody">
-<p>Note: You may follow the procedures outlined here to install HP Helion OpenStack 1.1 / 1.1.1. If you would like to update an existing HP Helion OpenStack 1.1 deployment to HP Helion OpenStack 1.1.1, please follow the update procedure in the <a href="http://docs.hpcloud.com/helion/openstack/1.1.1/update">HP Helion OpenStack 1.1.1: Update Procedure guide</a>.</p>
+<p>Note: You may follow the procedures outlined here to install HP Helion OpenStack 1.1 / 1.1.1. If you would like to update an existing HP Helion OpenStack 1.1 deployment to HP Helion OpenStack 1.1.1, please follow the update procedure in the <a href="../1.1.1commercial.helion-update.html">HP Helion OpenStack.html 1.1.1: Update Procedure guide</a>.</p>
                     <p>Installing HP Helion OpenStack requires proper selection and preparation of your baremetal servers,  installation of a hypervisor and host operating system for the seed cloud, the undercloud, and finally the overcloud, with storage configurations, LDAP integration, and so forth following the completed installation.</p>
                 </div>
             </div>
@@ -841,9 +841,9 @@ padding: 25px;
                 <h2>How to use this guide</h2>
                 <div class="iDoc_textblockbody">
                     <p>Because this is a guide to HP Helion OpenStack installation, it begins after you have chosen your hardware, installed your hypervisor, and are ready to make the choices necessary to configure your networks and install necessary packages for the software portion of the install.</p>
-                    <p>Before you begin, we assume you have already read the supported hardware and software sections of the Helion documentation. If not, that information is available <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/support-matrix/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">here</a></span> or directly at the Helion docs web site:</p>
-                    <p> <a href="http://docs.hpcloud.com/helion/openstack/1.1/support-matrix/" target="_blank">HP Helion OpenStack Support Matrix</a></p>
-                    <p>HP Helion OpenStack supports virtualization via KVM or ESX. This guide will take you through the required steps beginning after the installation or enabling of your hypervisor. Most steps are self-contained, with only a few links to docs.hpcloud.net for tasks not strictly required for installation.</p>
+                    <p>Before you begin, we assume you have already read the supported hardware and software sections of the Helion documentation. If not, that information is available <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.install-GA-supportmatrix.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">here</a>.</span> <!--or directly at the Helion docs web site:</p>
+                    <p> <a href="http://docs.hpcloud.com/helion/openstack/1.1/support-matrix/" target="_blank">HP Helion OpenStack Support Matrix</a>--></p>
+                    <p>HP Helion OpenStack supports virtualization via KVM or ESX. This guide will take you through the required steps beginning after the installation or enabling of your hypervisor. Most steps are self-contained, with only a few links to the docs.hpcloud documentation site for tasks not strictly required for installation.</p>
                     <p>There are only a few choices you must make before beginning, and they depend upon the hypervisor you are running on.</p>
                     <p>As you proceed through the installation, you may check off the major sections you have completed. If you choose to print the guide, you may check off the boxes for each individual task.</p>
                     <p>Note, if you want to create your environment variables and configuration files here, you must print them from inside the doc or copy/paste and save them to a plain text file. Values you enter will not be saved across page views of the configuration sections. Most configuration samples herein can be edited on the page.</p>
@@ -983,7 +983,7 @@ Finish the installation.</p>
 
                             <h3>Disabling SR-IOV</h3>
 
-<p>In the HP Helion OpenStack 1.1 release,  we recommend that you disable SR-IOV in the NIC BIOS (not just in the kernel) on undercloud nodes. (See <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/prereqs/">Installation Prerequisites</a> for more infomation.)</p>
+<p>In the HP Helion OpenStack 1.1 release,  we recommend that you disable SR-IOV in the NIC BIOS (not just in the kernel) on undercloud nodes. (See <a href="../1.1commercial.install-GA-prereqs.html">Installation Prerequisites</a> for more infomation.)</p>
 
 
                             <div class="MCDropDown_0">
@@ -1263,7 +1263,7 @@ Note also:
 
  <p>&lt;transit_address&gt; is also known as 'Cartridge Address' &lt;target_address&gt; is also known as 'Node Address' For example: <br>HP_Moonshot:0x84:0x72</p>
 <p>
- HP Moonshot hardware will use ipmitool as its power manager. See the additional notes in the <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/moonshot/" target="_blank">HP Moonshot document</a>.
+ HP Moonshot hardware will use ipmitool as its power manager. See the additional notes in the <a href="../1.1commercial.install-GA-Moonshot.html" target="_blank">HP Moonshot document</a>.
 </p>
 
 </li>
@@ -1281,7 +1281,7 @@ Note also:
                         </div>
                         <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_10" style="display: none;">
                             <p>The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.</p>
-                            <p>For information on integrating LDAP, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/install/prereqs/#ldap" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack: Integrating LDAP</a></span> or visit the helion docs site for the <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/prereqs/#ldap" target="_blank">HP Helion OpenStack: Integrating LDAP</a> page.</p>
+                            <p>For information on integrating LDAP, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.install-GA-prereqs.html#ldap" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack: Integrating LDAP</a>.</span> <!--or visit the helion docs site for the <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/prereqs/#ldap" target="_blank">HP Helion OpenStack: Integrating LDAP</a> page.--></p>
                         </div>
                     </div>
                     <div class="MCDropDown_0">
@@ -1703,9 +1703,9 @@ by clicking the button. You must save or print from this location in the page. V
 
 
 																						You may create the LDAP settings JSON file in the section below. You may edit the sample below and then either copy/paste into a text file, or print from this location. <br>
-											For defnitions of the variables, see <a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/services/identity/integrate-ldap/#connect-jumplink-span" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: LDAP connection settings</a><br><br>
+											For defnitions of the variables, see <a href="javascript:void(0);" MadCap:src="../1.1commerical.services-identity-integrate-ldap.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: LDAP connection settings</a><br><br>
 
-											For information about secure connections between Keystone and LDAP, see <a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/services/identity/integrate-ldap/#keystone-jumplink-span" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: Keystone CA storage and signing key/certificate files</a><br><br>
+											For information about secure connections between Keystone and LDAP, see <a href="javascript:void(0);" MadCap:src="../1.1commerical.services-identity-integrate-ldap.html#keystone-jumplink-span" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: Keystone CA storage and signing key/certificate files</a><br><br>
 											
 
 
@@ -2206,7 +2206,7 @@ by clicking the button. You must save or print from this location in the page. V
 
 After creating the overcloud_keystone_ldap.json file, copy it to the /root/tripleo/hp_passthrough folder:
 											<p class="codebox">scp overcloud_keystone_ldap.json root@&lt;seed_VM_IP_address&gt;:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json</p>
-											Place overcloud-env.json file (if created as per <a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/services/identity/integrate-ldap/#keystone-jumplink-span" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: Keystone CA storage and signing key/certificate files</a>) into the /root/tripleo folder.
+											Place overcloud-env.json file (if created as per <a href="javascript:void(0);" MadCap:src="../1.1commerical.services-identity-integrate-ldap.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: Keystone CA storage and signing key/certificate files</a>) into the /root/tripleo folder.
 											<p class="codebox">scp overcloud-env.json root@&lt;seed_VM_IP_address&gt;:/root/tripleo/overcloud-env.json</p>
 
 
@@ -2231,7 +2231,7 @@ After creating the overcloud_keystone_ldap.json file, copy it to the /root/tripl
                                     <p>If your installation is successful, a message similar to the following is displayed:</p>
                                     <p class="codebox"><span style="font-size: 10pt;">"HP - completed - Tue Oct 23 16:20:20 UTC 2014"</span>
                                     </p>
-                                    <p>Note: If the installation does not complete properly, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/services/troubleshooting/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Troubleshooting</a></span> or visit the page on the Helion docs site: <a href="http://docs.hpcloud.com/helion/openstack/1.1/services/troubleshooting/" target="_blank">Troubleshooting</a>.</p>
+                                    <p>Note: If the installation does not complete properly, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.troubleshooting.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Troubleshooting</a>.</span> <!--or visit the page on the Helion docs site: <a href="http://docs.hpcloud.com/helion/openstack/1.1/services/troubleshooting/" target="_blank">Troubleshooting</a>.--></p>
                                     <p>If possible, leave this console display open as you will need the passwords to verify the installation.</p>
                                 </div>
                             </div>
@@ -2277,7 +2277,7 @@ echo $OVERCLOUD_IP</pre></div></li>
                                         <li value="6">In the Horizon console, you can obtain the IP address of the demo VM:</li>
                                         <li value="7">Click Project &gt; Compute &gt; Instance. Note the public IP address of the demo instance, which begins with 192.</li>
                                     </ol>
-                                    <p>Further verification steps can be found here: <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/install/verify/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Verifying Your Installation</a></span> or at the Helion docs site on the <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/verify/" target="_blank">Verifying Your Installation</a> page.</p>
+                                    <p>Further verification steps can be found here: <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.install-GA-verify.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Verifying Your Installation</a></span><!-- or at the Helion docs site on the <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/verify/" target="_blank">Verifying Your Installation</a>--></p>
                                 </div>
                             </div>
                         </div>
@@ -2375,7 +2375,7 @@ echo $OVERCLOUD_IP</pre></div></li>
                                             <p>Perform the following steps on the undercloud node using the EON CLI or the Horizon dashboard.</p>
                                             <p><b>Deploy the proxy using the undercloud Horizon dashboard</b>
                                             </p>
-                                            <p>To deploy the ESX compute proxy using the undercloud Horizon dashboard, open the <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/undercloud/resource/esx#register-vcenter" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Register vCenter</a></span> section of the Virtual Environments document or visit the Helion docs site <a href="http://docs.hpcloud.com/helion/openstack/1.1/undercloud/resource/esx#register-vcenter" target="_blank">Register vCenter</a></p>
+                                            <p>To deploy the ESX compute proxy using the undercloud Horizon dashboard, open the <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.undercloud-resource-esx.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Register vCenter</a></span> section of the Virtual Environments document.<!-- or visit the Helion docs site <a href="http://docs.hpcloud.com/helion/openstack/1.1/undercloud/resource/esx#register-vcenter" target="_blank">Register vCenter</a>--></p>
                                             <p><b>Deploy the proxy using the EON CLI</b>
                                             </p>
                                             <p>To deploy the ESX compute proxy using the EON CLI, execute the following steps from the UNDERCLOUD node:</p>
@@ -2470,7 +2470,7 @@ echo $OVERCLOUD_IP</pre></div></li>
 
                                             <p>2. Use the HP EON service CLI to deploy the 
 ESX compute proxy. 
-For details refer here to the <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/undercloud/eon/cli/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">EON CLI reference</a></span></span> <span style="font-size: 12pt;">or visit the page on the Helion docs site at <a href="http://docs.hpcloud.com/helion/openstack/1.1/undercloud/eon/cli/" target="_blank">EON CLI reference</a></p>
+For details refer here to the <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.undercloud-eon-cli.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">EON CLI reference</a></span></span> <span style="font-size: 12pt;">. <!--or visit the page on the Helion docs site at <a href="http://docs.hpcloud.com/helion/openstack/1.1/undercloud/eon/cli/" target="_blank">EON CLI reference</a>--></p>
 
 <p>You can edit the command below and copy/paste into a text file. For a definition of the values, click the values link. Remember not to keep the angle brackets, and fill in more entries if you have more clusters only [&lt;CLUSTER_MOIDS&gt; ...] </p>
 </p>
@@ -2545,7 +2545,7 @@ For details refer here to the <span class="MCPopup"><a href="javascript:void(0);
                                 <div class="MCDropDownHead_0"><a class="dropDownHotspot_1" href="javascript:void(0);" id="MCDropDownHotSpot_2127199652_21" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/xHP_Exp_expand.png" MadCap:altsrc="SkinSupport/xHP_Exp_collapse.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/xHP_Exp_collapse.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" /><b>&#11036; Deploy the Open vSwitch vApp (REQUIRED).</b></a>
                                 </div>
                                 <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_21" style="display: none;">
-                                    <p>If you have not deployed the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp), open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/install/ovsvapp/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: Deploying and Configuring OVSvApp on ESX hosts</a></span> or visit on the HP Helion docs site <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/ovsvapp/" target="_blank">HP Helion OpenStack®: Deploying and Configuring OVSvApp on ESX hosts</a> for complete instructions.</p>
+                                    <p>If you have not deployed the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp), open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.install-GA-ovsvapp.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: Deploying and Configuring OVSvApp on ESX hosts</a></span>.<!-- or visit on the HP Helion docs site <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/ovsvapp/" target="_blank">HP Helion OpenStack®: Deploying and Configuring OVSvApp on ESX hosts</a> for complete instructions.--></p>
                                     <p>OVSvApp must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).HP Virtual Cloud Networking (VCN) is an enhanced Networking Operations (Neutron) service module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.</p>
                                     <p>The HP Virtual Cloud Networking Open vSwitch vApp (OVSvApp) appliance must be installed on each ESX hypervisor in the HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, the OVSvApp enables networking between the tenant Virtual Machines (VMs).</p>
                                     <p>The deployment process includes the following basic steps:</p>
@@ -2554,14 +2554,14 @@ For details refer here to the <span class="MCPopup"><a href="javascript:void(0);
                                         <li value="2">Adding your settings to the configuration file so that the OVSvApp deployment script can clone the file on each host being managed by the overcloud controller.</li>
                                         <li value="3">Running the deployment script.</li>
                                     </ol>
-                                    <p><span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/install/ovsvapp/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack®: Deploying and Configuring OVSvApp on ESX hosts</a></span> has complete instructions</p>
+                                    <p><span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.install-GA-ovsvapp.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack®: Deploying and Configuring OVSvApp on ESX hosts</a></span> has complete instructions</p>
                                 </div>
                             </div>
                             <div class="MCDropDown_0">
                                 <div class="dropDownHead_1"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2127199652_22" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/xHP_Exp_expand.png" MadCap:altsrc="SkinSupport/xHP_Exp_collapse.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/xHP_Exp_collapse.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" /><b>&#11036; Install DNS as a service (DNSaaS) (Optional).</b></a>
                                 </div>
                                 <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_22" style="display: none;">
-                                    <p>If you have not installed DNSaaS, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/install/dnsaas/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">DNSaaS Installation and Configuration </a></span>or visit it on the HP Helion docs site: <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/dnsaas/" target="_blank">DNSaaS Installation and Configuration</a>. DNSaaS is HP's managed DNS service based on the OpenStack Designate project. It is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently on either a public or private DNS server network.</p>
+                                    <p>If you have not installed DNSaaS, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.install-GA-DNSaaS.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">DNSaaS Installation and Configuration </a>.</span><!--or visit it on the HP Helion docs site: <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/dnsaas/" target="_blank">DNSaaS Installation and Configuration</a>.--> DNSaaS is HP's managed DNS service based on the OpenStack Designate project. It is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently on either a public or private DNS server network.</p>
                                 </div>
                             </div>
                         </div>
@@ -3038,7 +3038,7 @@ Note also:
 
  <p>&lt;transit_address&gt; is also known as 'Cartridge Address' &lt;target_address&gt; is also known as 'Node Address' For example: <br>HP_Moonshot:0x84:0x72</p>
 <p>
- HP Moonshot hardware will use ipmitool as its power manager. See the additional notes in the <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/moonshot/" target="_blank">HP Moonshot document</a>.
+ HP Moonshot hardware will use ipmitool as its power manager. See the additional notes in the <a href="../1.1commercial.install-GA-Moonshot.html" target="_blank">HP Moonshot document</a>.
 </p>
 
 </li>
@@ -3093,8 +3093,8 @@ Note also:
 											</ul>
 										</ul>
 											You may create the LDAP settings JSON file (overcloud_keystone_ldap.json) in the section below. You may edit the sample provided and then either copy/paste into a text file, or print from this location. <br><br>
-											For defnitions of the variables, see <a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/services/identity/integrate-ldap/#connect-jumplink-span" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: LDAP connection settings</a><br><br>
-												For information about secure connections between Keystone and LDAP, see <a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/services/identity/integrate-ldap/#keystone-jumplink-span" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: Keystone CA storage and signing key/certificate files</a><br><br>
+											For defnitions of the variables, see <a href="javascript:void(0);" MadCap:src="../1.1commerical.services-identity-integrate-ldap.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: LDAP connection settings</a><br><br>
+												For information about secure connections between Keystone and LDAP, see <a href="javascript:void(0);" MadCap:src="../1.1commerical.services-identity-integrate-ldap.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: Keystone CA storage and signing key/certificate files</a><br><br>
 
 <a name="ldap2"></a>
 
@@ -3629,7 +3629,7 @@ Chassis Power is on.</pre></div>
                             <p>If your installation is successful, a message similar to the following is displayed:</p>
                             <p class="codebox"><span style="font-size: 10pt;">"HP - completed - Tue Oct 23 16:20:20 UTC 2014"</span>
                             </p>
-                            <p>Note: If the installation does not complete properly, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/services/troubleshooting/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Troubleshooting</a></span> or see the <a href="http://docs.hpcloud.com/helion/openstack/1.1/services/troubleshooting/" target="_blank">Troubleshooting</a> page on the Helion docs site.</p>
+                            <p>Note: If the installation does not complete properly, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.troubleshooting.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Troubleshooting</a></span>.<!-- or see the <a href="http://docs.hpcloud.com/helion/openstack/1.1/services/troubleshooting/" target="_blank">Troubleshooting</a> page on the Helion docs site.--></p>
                         </div>
                     </div>
                     <div MadCap:conditions="xHPc_iDoc_Conditions.ESX,xHPc_iDoc_Conditions.KVM">
@@ -3673,7 +3673,7 @@ echo $OVERCLOUD_IP
                                 <p>3. Log in as demo or admin using the corresponding passwords obtained in step 1.</p>
                                 <p>4. In the Horizon console, you can obtain the IP address of the demo VM:</p>
                                 <p>Click Project &gt; Compute &gt; Instance. Note the public IP address of the demo instance, starting with 192.</p>
-                                <p>For further verification steps, open  <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/install/verify/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Verifying Your Installation</a></span> or visit the <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/verify/" target="_blank">Verifying Your Installation</a> page on the Helion docs site.</p>
+                                <p>For further verification steps, open  <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.install-GA-verify.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Verifying Your Installation</a></span>. <!--or visit the <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/verify/" target="_blank">Verifying Your Installation</a> page on the Helion docs site.--></p>
                             </div>
                         </div>
                     </div>
@@ -3699,7 +3699,7 @@ echo $OVERCLOUD_IP
                                 </div>
                                 <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_34" style="display: none;">
                                     <p>HP Helion OpenStack defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. You can configure VLAN on HP Helion OpenStack to enable communication with tenants' virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX.</p>
-                                    <p>For instructions, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/vlan/provider/network/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Enabling VLAN Provider Network in HP Helion OpenStack</a></span> or visit the Helion docs site: <a href="http://docs.hpcloud.com/helion/openstack/1.1/vlan/provider/network/" target="_blank">Enabling VLAN Provider Network in HP Helion OpenStack.</a></p>
+                                    <p>For instructions, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.vlan-providernetwork.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Enabling VLAN Provider Network in HP Helion OpenStack</a></span>.<!-- or visit the Helion docs site: <a href="http://docs.hpcloud.com/helion/openstack/1.1/vlan/provider/network/" target="_blank">Enabling VLAN Provider Network in HP Helion OpenStack.</a>--></p>
                                 </div>
                             </div>
                      
@@ -3714,7 +3714,7 @@ echo $OVERCLOUD_IP
                                     </div>
                                     <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_35" style="display: none;">
                                         <p>HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.</p>
-                                        <p>For instructions, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/install/vsa/overview" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Configuring HP StoreVirtual VSA for Block Storage </a></span> or see the <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/vsa/overview" target="_blank">Configuring HP StoreVirtual VSA for Block Storage </a> document on the Helion docs site.</p>
+                                        <p>For instructions, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.-vsa-overview.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Configuring HP StoreVirtual VSA for Block Storage </a></span>. <!-- or see the <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/vsa/overview" target="_blank">Configuring HP StoreVirtual VSA for Block Storage </a> document on the Helion docs site.--></p>
                                     </div>
                                 </div>
                             </div>
@@ -3724,7 +3724,7 @@ echo $OVERCLOUD_IP
                                     </div>
                                     <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_36" style="display: none;">
                                         <p>An optional HP 3Par storage array that can be used to provide high performance Cinder block storage</p>
-                                        <p>For instructions, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/install/3par/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack®: HP StoreServ (3PAR) Support</a></span> or see the Helion docs site: <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/3par/" target="_blank">HP Helion OpenStack®: HP StoreServ (3PAR) Support</a>.</p>
+                                        <p>For instructions, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.install-3par.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack®: HP StoreServ (3PAR) Support</a></span>. <!-- or see the Helion docs site: <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/3par/" target="_blank">HP Helion OpenStack®: HP StoreServ (3PAR) Support</a>.--></p>
                                     </div>
                                 </div>
                             </div>
@@ -3733,7 +3733,7 @@ echo $OVERCLOUD_IP
                                 </div>
                                 <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_37" style="display: none;">
                                     <p>An optional Swift Scale-Out cluster instance of between two and twelve servers that is used for production cloud Object storage use (Scale-Out Swift extends the Starter Swift Cluster enabling  greater capacity while maintaining any initial data present in Starter Swift).</p>
-                                    <p>For instructions, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/services/object/overview/scale-out-swift/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Scale-out Swift</a></span> or see the <a href="http://docs.hpcloud.com/helion/openstack/1.1/services/object/overview/scale-out-swift/" target="_blank">Scale-out Swift</a> document on the Helion docs site.</p>
+                                    <p>For instructions, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commerical.services-scale-out-swift.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Scale-out Swift</a></span>. <!-- or see the <a href="http://docs.hpcloud.com/helion/openstack/1.1/services/object/overview/scale-out-swift/" target="_blank">Scale-out Swift</a> document on the Helion docs site.--></p>
                                 </div>
                             </div>
                         </div>
@@ -3743,7 +3743,7 @@ echo $OVERCLOUD_IP
                         </div>
                         <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_38" style="display: none;">
                             <p>Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
-                            <p>If you have not installed DNSaaS, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/install/dnsaas/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">DNSaaS Installation and Configuration</a></span> or see the Heion docs site: <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/dnsaas/" target="_blank">DNSaaS Installation and Configuration</a>.</p>
+                            <p>If you have not installed DNSaaS, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../1.1commercial.install-GA-DNSaaS.html" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">DNSaaS Installation and Configuration</a></span>.<!-- or see the Heion docs site: <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/dnsaas/" target="_blank">DNSaaS Installation and Configuration</a>.--></p>
                         </div>
                     </div>
                 </div>

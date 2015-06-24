@@ -162,7 +162,7 @@ You have access to:
 <xref href="http://www8.hp.com/us/en/cloud/hphelion-openstack.html" scope="external" format="html" >HP Helion <tm tmtype="reg">OpenStack</tm> Portal</xref>
 </li>
 <li>
-<xref href="https://docs.hpcloud.com/helion/openstack/" scope="external" format="html" >HP Helion <tm tmtype="reg">OpenStack</tm> Documentation</xref> 
+  <xref href="1.1commercial.index.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Documentation</xref> 
 <!--* [HP Helion <tm tmtype="reg">OpenStack</tm> Support Forum](https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion) (Tag your questions with 'HPHelion')--></li>
 </ul>
 </section>

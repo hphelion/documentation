@@ -37,10 +37,10 @@
 <section id="adding-a-service-to-a-net-application"> <title>Adding a service to a .NET application</title>
 <ol>
 <li>When deploying your application using <xref
-            href="../../../devplatform/1.2/windows/windows_tools_guide.dita#cloudfoundryexplorer"
-            >Cloud Foundry Explorer</xref>, in the deployment information window, enter the service
-          information in the <b>Service</b> field in the format <codeph>Service Name, Service Type,
-            Service Plan</codeph>:<p>
+            href="windows_tools_guide.dita#topic_w5z_kcw_js/cloudfoundryextensions">Cloud Foundry
+            Explorer</xref>, in the deployment information window, enter the service information in
+          the <b>Service</b> field in the format <codeph>Service Name, Service Type, Service
+            Plan</codeph>:<p>
             <image href="../../../media/windows_services.png"/>
           </p></li>
 <li>Deploy your application.</li>
@@ -123,12 +123,4 @@
 </ol>
 </section>
 </body>
-  <related-links>
-    <link href="../../../devplatform/1.2/windows/windows_overview.dita"><linktext>Windows Overview</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_firstapp.dita"><linktext>Deploying your first .NET Application</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_tools_guide.dita"><linktext>Windows and .NET Tools Guide</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita"><linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita"><linktext>Glazier Reference Guide</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita"><linktext>Deploying Windows Applications with the IIS Buildpack</linktext></link>
-  </related-links>
 </topic>

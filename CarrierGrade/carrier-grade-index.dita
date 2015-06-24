@@ -19,8 +19,8 @@
 <p>Use the following links to begin installing HP <tm tmtype="reg">OpenStack</tm> Carrier Grade:</p>
 <ul>
 <li>
-<p>
-<xref href="../CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita" >Installing HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade</xref>.</p>
+<p><xref href="Installation/carrier-grade-install-playbook-overview.dita#topic5675"/>
+          </p>
 
 <p>Start with this document for complete instructions on how to install your HP Helion <tm tmtype="reg">OpenStack</tm> cloud, including system requirements, prerequisites.</p>
 </li>
@@ -30,20 +30,22 @@
 <p>Use the following link to review some high-level overview information about HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade:</p>
 <ul>
 <li>
-<xref href="../CarrierGrade/Overview/carrier-grade-overview.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade Overview</xref>
-</li>
+          <xref href="Overview/carrier-grade-overview.dita#topic4010"/>
+        </li>
 <li>
-<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_Openstack" scope="external" format="html" >HP Helion Openstack Carrier Grade Release Notes</xref>
-</li>
+          <xref
+            href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Release_Notes.pdf"
+            format="pdf" scope="external">HP Helion Openstack Carrier Grade Release Notes</xref>
+        </li>
 </ul>
 </section>
 <section id="getstart"> <title>Getting started with HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade</title>
 <p>Use the following links and tools to begin working with HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade:</p>
 <ul>
 <li>
-<p>
-<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_Openstack" scope="external" format="html" >Administration Guide</xref>
-</p>
+<p><xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Administration_Guide.pdf"
+              format="pdf" scope="external">Administration Guide</xref>
+          </p>
 
 <p>The Administration Guide is addressed to HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade administrators responsible for the following areas:</p>
 

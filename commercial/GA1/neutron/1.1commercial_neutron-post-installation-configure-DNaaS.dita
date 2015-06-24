@@ -683,7 +683,7 @@ sudo -i
 <p>For more information, see:</p>
 <ul>
 <li>
-<xref href="https://docs.hpcloud.com/api/dns/" scope="external" format="html" >HP Helion Public Cloud DNS API Specifications</xref>
+  <xref href="../../../publiccloud/apidocs/c1.1/dns-api.dita" >HP Helion Public Cloud DNS API Specifications</xref>
 </li>
 <li>
 <xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for <tm tmtype="reg">OpenStack</tm></xref>

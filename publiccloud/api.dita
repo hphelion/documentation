@@ -18,9 +18,6 @@
 <xref type="section" href="#topic2806/apiga">APIs in general availability</xref>
 </li>
 <li>
-<xref type="section" href="#topic2806/pubbeta">APIs in public beta</xref>
-</li>
-<li>
 <xref type="section" href="#topic2806/privbeta">APIs in private beta</xref>
 </li>
 </ul>
@@ -48,12 +45,6 @@
 <li>
 <xref href="../publiccloud/apidocs/c1.1/dbaas-api.dita" >Relational Database</xref>: API for the HP Helion Public Cloud Relational Database service; simplifies the creation and management of MySQL database instances.</li>
 </ul>
-</section>
-<section id="pubbeta"> <title>APIs in Public Beta</title>
-<ul>
-<li>
-<xref href="../publiccloud/apidocs/c1.1/maas-api.dita" >Monitoring v1.1</xref>: API for the HP Helion Public Cloud Monitoring  v13.5; facilitates monitoring of the health and other metrics for the resources in HP Helion Public Cloud.</li>
-</ul>/
 </section>
 <section id="privbeta"> <title>APIs in Private Beta</title>
 <p>You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!</p>
