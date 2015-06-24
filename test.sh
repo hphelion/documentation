@@ -11,13 +11,16 @@ echo -e "\e[1m==================================================================
 cat docs.hpcloud.com.ditamap > temp.ditamap
 
 #find ditamaps referenced by docs.hpcloud.com.ditamap
-for i in `grep ditamap docs.hpcloud.com.ditamap  | sed 's|.*href=\"||' | sed 's|ditamap\" .*|ditamap|'`
+for i in `grep ditamap docs.hpcloud.com.ditamap  | sed 's|.*href=\"||' | sed 's|ditamap\".*|ditamap|'`
 do
 	if [ -e "$i" ]
 	then
 		
 		echo "Merging $i with docs.hpcloud.com for testing"
-		cat $i >> temp.ditamap
+        
+        	PARTPATH=`echo $i | sed 's|[^/]*\.ditamap||'`
+         
+		cat $i | sed "s|href=\"|href=\"$PARTPATH|" >> temp.ditamap
 	else
 		echo -e "\e[31;1mWARNING:\e[0m The ditamap docs.hpcloud.com.com calls the ditamap" 
          	echo "$i"
@@ -28,15 +31,14 @@ do
 done
 
 #Extract all dita files from docs.hpcloud.com ditamap
-cat temp.ditamap | tr '\n' @ | sed 's|<\![^><]*->||g' | tr '@' '\
-n' | sed 's|<topicref href=\"||' | sed 's|".*||'  | sed 's| ||g' | grep dita |
-grep -v ditamap | sort | uniq > called_dita_files.tmp
+cat temp.ditamap | sed -e :a -re 's/<!--.*?-->//g;/<!--/N;//ba' | grep dita | sed 's|.*href=\"||' | sed 's|".*||'  | sed 's| ||g' | grep -v ditamap | sort | uniq > called_dita_files.tmp
+
 
 
 
 
 #Collect all ditafiles on disk
-find . -name "*.dita" | sed 's|\./||' | sort  | uniq > all_dita_files_on_disk.tmp
+find . -name "*.dita" | sed 's|\./||' | sort > all_dita_files_on_disk.tmp
 
 
 if [[ -s all_dita_files_on_disk.tmp  &&  -s called_dita_files.tmp ]];
@@ -49,16 +51,7 @@ Files called by docs.hpcloud.com, but which are not present on the file system
 These files produce entries in the webhelp TOC, but the links are broken.
 \e[0m"
 
-for i in `cat all_dita_files_on_disk.tmp`
-do
-
-if [[ -n $(grep -l $i called_dita_files.tmp) ]]
-then
-
-echo $i
-
-fi
-
+diff -d all_dita_files_on_disk.tmp called_dita_files.tmp  | grep ">" 
 
 echo -e "\e[1m
 
@@ -71,8 +64,7 @@ checked by the \"Project Files in the ditamap that are not building\"
 Best practice is to include these in the dita file and set to toc=no
 \e[0m"
 	diff -d all_dita_files_on_disk.tmp called_dita_files.tmp  | grep "<" 	
-  
-echo 1 
+    
     
  
 #Set HipChat authorization and room     
@@ -88,7 +80,7 @@ CONSOLE=${BUILD_URL}console
   
 
 # number of descrepancies
-NUMBER=`diff -d all_dita_files_on_disk.tmp called_dita_files.tmp  | egrep "(<|>)" | wc`
+NUMBER=`diff -d all_dita_files_on_disk.tmp called_dita_files.tmp  | egrep "(<|>)" | wc -l`
 
  
 #Send notification to hipchat
@@ -102,7 +94,7 @@ curl \
 {
 	"color":"yellow",
 	"notify":false,
-	"message":"In the bundle-2015-may branch, the dita files in the repo and the dita files referenced by the ditamap do not match (<a href=\"$CONSOLE\">here</a>.)",
+	"message":"In the bundle-2015-may branch, the dita files in the repo and the dita files referenced by the ditamap do not match. See the $NUMBER issues (<a href=\"$CONSOLE\">here</a>.)",
 	"message_format":"html"
 }
 EOP
@@ -117,6 +109,7 @@ else
      
      exit 0
 fi
+
 
 
 
