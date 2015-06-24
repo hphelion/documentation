@@ -17,7 +17,7 @@
 </p>
 <p>HP <tm tmtype="reg">Helion OpenStack</tm> is a commercial-grade distribution of <tm tmtype="reg">OpenStack</tm> the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP <tm tmtype="reg">Helion OpenStack</tm> enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
 <p>HP <tm tmtype="reg">Helion OpenStack</tm> offers many services based on the different <tm tmtype="reg">OpenStack</tm> projects to provide the functionality you need. Visit the <xref href="../../commercial/GA1/1.0commerical.services-overview.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Services Overview page</xref> for a complete list of services.</p>
-<p>If you're unfamiliar with what's inside the box, have a look at the components inside HP <tm tmtype="reg">Helion OpenStack</tm> on the <xref href="http://docs.hpcloud.com/content/documentation/commercial/GA1/ServicesFlow/index.html" scope="external" format="html" >Under the Hood</xref> page.</p>
+  <p>If you're unfamiliar with what's inside the box, have a look at the components inside HP <tm tmtype="reg">Helion OpenStack</tm> on the <xref href="ServicesFlow/index.html" scope="external" format="html" >Under the Hood</xref> page.</p>
 <section id="get-started-with-hp-helion-openstack"> <title>Get Started with HP <tm tmtype="reg">Helion OpenStack</tm></title>
 <p>Use the following links and tools to begin working with HP <tm tmtype="reg">Helion OpenStack</tm></p>
 <ul>
