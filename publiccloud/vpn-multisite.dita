@@ -111,12 +111,12 @@ IPsec Dead Peer Detection (DPD) will be enabled on the AWS Endpoint. We recommen
 <section id="configvpn"> <title>Configure the VPN for the IKE and IPsec proposals</title>
 <p>This section uses strongSwan to configure the IKE and IPsec proposals from the previous section.</p>
 <p>
-<b>Note:</b> Make sure you have configured your VPN Gateway instance according to the <xref href="http://docs.hpcloud.com/publiccloud/compute/vpn-quickstart" scope="external" format="html" >"VPN Quick Start Guide"</xref>.</p>
+  <b>Note:</b> Make sure you have configured your VPN Gateway instance according to the <xref href="vpn-quickstart.dita" >"VPN Quick Start Guide"</xref>.</p>
 </section>
 <section id="strongswan-configuration-files"> <title>strongSwan configuration files</title>
 <ol>
 <li>SSH into the VPN instance on your VPC using your Public IP Address and ssh keys. 
-<b>Note:</b> Use either a Windows client with PuTTY or a Linux client with ssh to access your VPN instance shell (see the <xref href="http://docs.hpcloud.com/publiccloud/compute/vpn-quickstart" scope="external" format="html" >VPN Quick Start Guide</xref>).</li>
+  <b>Note:</b> Use either a Windows client with PuTTY or a Linux client with ssh to access your VPN instance shell (see the <xref href="vpn-quickstart.dita" >VPN Quick Start Guide</xref>).</li>
 <li>
 <p>Once logged in, run the following command to see the <i>IPsec.conf</i> file in the strongSwan configuration files.</p>
 
@@ -403,7 +403,7 @@ conn Site-C
 </p>
 </section>
 <section id="trouble"> <title>Troubleshoot and verify connections</title>
-<p>See the "<xref href="http://docs.hpcloud.com/publiccloud/compute/vpn-quickstart" scope="external" format="html" >VPN Quick Start Guide</xref>" for instructions on how to troubleshoot and verify connections.</p>
+  <p>See the "<xref href="vpn-quickstart.dita">VPN Quick Start Guide</xref>" for instructions on how to troubleshoot and verify connections.</p>
 </section>
 <section id="info"> <title>For further information</title>
 <ul>
