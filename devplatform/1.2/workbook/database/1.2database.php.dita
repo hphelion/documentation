@@ -64,28 +64,45 @@ instructions further down. But before you push the button, ensure that you have 
 </section>
 <section id="deploy-the-application"> <title>Deploy the Application</title>
 <p>
-<b>Note</b>: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be <xref href="../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#staging-cache-app-http-proxy" >made aware of the proxy</xref>. The sample applications require access to the Internet in order to download dependent packages.</p>
+                <b>Note</b>: Application Lifecycle Service clusters that require an upstream HTTP
+                proxy to access the internet will need to be <xref
+                    href="../../helion/admin/server/1.2configuration.dita#topic31232/staging-cache-app-http-proxy"
+                    >made aware of the proxy</xref>. The sample applications require access to the
+                Internet in order to download dependent packages.</p>
 <p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the <xref href="../../../../devplatform/1.2/1.2devplatform.eclipse.dita" >plugin</xref>.</p>
 <ol>
 <li>Open the <xref href="../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >Helion command-line interface (CLI)</xref>
 </li>
 <li>
 <p>Ensure that you are targeting your desired environment.  <!--A BR tag was used here in the original source.--> If you are not, execute</p>
-<codeph>helion target https://api.xx.xx.xx.xx.xip.io</codeph>
+
+<codeblock>
+<codeph>helion target https://api.xx.xx.xx.xx.xip.io    
+</codeph>
+</codeblock>
 </li>
 <li>
 <p>Ensure that you are logged in to your desired environment.  <!--A BR tag was used here in the original source.-->If you are not, execute</p>
-<codeph>helion login</codeph>
+
+<codeblock>
+<codeph>helion login
+</codeph>
+</codeblock>
 </li>
 <li>
 <p>If you are not already there, <codeph>cd</codeph> to the root directory of the sample.</p>
 </li>
 <li>
 <p>Deploy the application by using the command:</p>
-<codeph>helion push</codeph>
+
+<codeblock>
+<codeph>helion push
+</codeph>
+</codeblock>
 </li>
 <li>
-<p>Accept any default values that you may be prompted for.  ><b>Note</b>: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</p>
+<p>Accept any default values that you may be prompted for.
+<!--A BR tag was used here in the original source.--><b>Note</b>: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <i>&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io</i>)</p>
 </li>
 </ol>
 </section>
@@ -95,6 +112,7 @@ instructions further down. But before you push the button, ensure that you have 
 <li>Click <b>Applications</b>. </li>
 <li>If the file push was successful, you should see <b>mysql-php</b> in the list of available applications.</li>
 <li>In the upper right-hand corner, click <b>View App</b> to see your app in action.
+
 <ul>
 <li>This app connects to the MySQL service, executes a query, and displays a page showing the retrieved text.  </li>
 </ul>
@@ -105,7 +123,7 @@ instructions further down. But before you push the button, ensure that you have 
 <p>This first line in this section of the index.php file shows how to retrieve the connection information for the MySQL instance from the application's environment variables. The connection information is represented using JSON.</p>
 <p>The rest of the code shown here parses the JSON string that was retrieved and builds the appropriate connection string. Once the connection has been made, the code executes a query, reads the results, and closes the connection.</p>
 <codeblock>
-$services = getenv('VCAP_SERVICES');
+  <codeph>$services = getenv('VCAP_SERVICES');
 
 $json = json_decode($services, TRUE);
 
@@ -143,16 +161,18 @@ mysqli_free_result($result);
 
 // Finally, close the MySQL connection. 
 mysqli_close($con); 
+</codeph>
 </codeblock>
 <p>The <i>manifest.yml</i> file contains the configuration information used by ALS to set up the environment. The <b>services</b> element informs ALS on how to bind to the MySQL service provided by the ALS cluster to the application. The file also uses the <b>buildpack</b> element that is used by ALS to configure the application environment for using PHP.</p>
 <codeblock>
---- 
+  <codeph>--- 
 applications: 
     - name: mysql-php
     buildpack: https://github.com/cloudfoundry/php-buildpack.git 
     services: 
         ${name}-db: 
             type: mysql 
+</codeph>
 </codeblock>
 </section>
 <section id="key-learnings"> <title>Key Learnings</title>
