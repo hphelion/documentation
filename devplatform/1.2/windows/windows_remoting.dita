@@ -46,19 +46,16 @@
 <xref type="section" href="#topic1035/get_pw_cloud">Retrieve the Windows instance password (Public Cloud)</xref>
 </li>
 <li>
-<xref type="section" href="#topic1035/get_pw_hos">Retrieve the Windows instance password (<tm tmtype="reg">Helion OpenStack</tm></xref>
+<xref type="section" href="#topic1035/get_pw_hos">Retrieve the Windows instance password (<tm tmtype="reg">Helion OpenStack</tm>)</xref>
 </li>
 </ul>
-<section id="create_security"> <title>Create the RDP Security Group</title>
+<section id="create_security"> <title>Create an RDP Security Group</title>
 </section>
+  <section id="add_security"><title>Add the RDP security group to the instance</title>
+  </section>
+  <section id="get_pw_cloud"><title>Retrieve the Windows instance password (Public Cloud)</title>
+  </section>
+  <section id="get_pw_hos"><title>Retrieve the Windows instance password (<tm tmtype="reg">Helion OpenStack</tm>)</title>
+  </section>
 </body>
-  <related-links>
-    <link href="../../../devplatform/1.2/windows/windows_overview.dita"><linktext>Windows Overview</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_firstapp.dita"><linktext>Deploying your first .NET Application</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_tools_guide.dita"><linktext>Windows and .NET Tools Guide</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita"><linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita"><linktext>Glazier Reference Guide</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_adding_services.dita"><linktext>Adding Services to a Windows Application</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita"><linktext>Deploying Windows Applications with the IIS Buildpack</linktext></link>
-  </related-links>
 </topic>
