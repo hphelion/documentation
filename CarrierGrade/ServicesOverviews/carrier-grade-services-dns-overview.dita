@@ -59,7 +59,7 @@ Key terms include:
 
 - **DNS Server** -??- A server that stores the DNS records for a domain name, such as address (A or AAAA) records, name server (NS) records, and mail exchanger (MX) records.
 
-    A user of DNSaaS needs to set the nameservers for their domains, as described in the [API document](http://docs.hpcloud.com/api/dns).
+    A user of DNSaaS needs to set the nameservers for their domains, as described in the [API document](http://docs. hpcloud. com/api/dns).
 
 ## Working with DNSaaS
 
@@ -67,7 +67,7 @@ To [perform tasks using DNSaaS](#howto), you can use the API or CLI.
 
 ###Using the API to access DNSaaS<a name="API"></a>
  
-You can use a low-level, raw REST API access to DNSaaS. See the [HP Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/).
+You can use a low-level, raw REST API access to DNSaaS. See the [HP Helion Public Cloud DNS API Specifications](https://docs. hpcloud. com/api/dns/).
 
 ###Using the CLI<a name="cli"></a>
 
@@ -80,7 +80,7 @@ For more information on installing the CLI, see [Install the <tm tmtype="reg">Op
 
 The HP DNSaaS provides a way to display, create, modify, and delete DNS records. 
 
-The following lists of tasks can be performed by a user or administrator through the [API](http://docs.hpcloud.com/api/dns), or [CLI](http://python-designateclient.readthedocs.org/en/latest/shell.html).
+The following lists of tasks can be performed by a user or administrator through the [API](http://docs. hpcloud. com/api/dns), or [CLI](http://python-designateclient.readthedocs.org/en/latest/shell.html).
 
 
 ### Domain Operations ###

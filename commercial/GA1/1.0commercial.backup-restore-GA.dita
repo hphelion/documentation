@@ -350,7 +350,7 @@ Backup procedure completed.
 </codeph>
 </codeblock>
 
-<p>For more information on the <codeph>baremetal.csv</codeph> file, see the <xref href="http://docs.hpcloud.com/helion/openstack/install/prereqs#csv" scope="external" format="html" >Installation Prerequisites</xref>.</p>
+  <p>For more information on the <codeph>baremetal.csv</codeph> file, see the <xref href="1.0commercial.install-GA-prereqs.dita#csv">Installation Prerequisites</xref>.</p>
 </li>
 <li>
 <p>Execute the following script:</p>
