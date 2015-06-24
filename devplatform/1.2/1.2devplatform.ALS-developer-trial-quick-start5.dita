@@ -63,7 +63,7 @@
                 <li>Run the appropriate set of commands in the <varname>cf-mgmt</varname> tool to
                   add a DEA role and then add a service. In the unlikely event that the cluster
                   creation fails, refer to the <xref
-                    href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting"
+                    href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
                     scope="external" format="html">Troubleshooting tips</xref>. <ol>
                     <li>For <tm tmtype="reg">Windows</tm>: <ul>
                         <li>Add the Windows DEA Role
