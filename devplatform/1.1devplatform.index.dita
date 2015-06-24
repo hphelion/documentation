@@ -41,7 +41,7 @@
 <li>It provides auto-scaling and application log drains.</li> 
 </ul>
   <p>The Application Lifecycle Service is <xref
-          href="1.1devplatform_commercial_install.dita#topic24073_1/install-als">installed</xref> as
+          href="1.1devplatform_commercial_install.dita#topic240731/install-als">installed</xref> as
         part of the Helion Development Platform. You can easily <xref
           href="1.1devplatform.deploy-ALS.dita">create and configure</xref> Application Lifecycle
         Service clusters from the Horizon management console, or explore this service by setting up
@@ -62,7 +62,7 @@
 <li>The Database service provides a simple and easy way to access and utilize features in a database without the overhead of administration.  </li>
 </ul>
   <p>The Database as a Service is optionally <xref
-          href="1.1devplatform_commercial_install.dita#topic24073_1/install-database">installed and
+          href="1.1devplatform_commercial_install.dita#topic240731/install-database">installed and
           configured</xref> as part of the Helion Development Platform. If not installed as part of
         the platform, you can install it separately and then configure it for <xref
           href="1.1devplatform.database-ALS.dita">use from within the Application Lifecycle
@@ -70,7 +70,7 @@
 <simpletable>
 <strow>
     <stentry>
-      <xref href="1.1devplatform_commercial_install.dita#topic24073_1/install-database" >Install</xref>
+      <xref href="1.1devplatform_commercial_install.dita#topic240731/install-database" >Install</xref>
       </stentry>
     <stentry>
                 <xref href="1.1devplatform.database-instance.dita">Provision</xref>
@@ -85,11 +85,11 @@
 <li>The Messaging Service integrates with <xref href="../commercial/GA1/1.1commerical.services-identity-overview.dita" >Keystone</xref> to remove the need to create separate credentials for RabbitMQ access. </li>
 <li>The Messaging Service allows developers to focus on building their apps without worrying about installing, configuring, and troubleshooting RabbitMQ.</li>
 </ul>
-  <p>The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can <xref href="1.1devplatform_commercial_install.dita#topic24073_1/install-messaging" >install</xref> it and then <xref href="1.1devplatform.using-the-messaging-service.dita" >configure</xref> it for <xref href="1.1devplatform.using-messaging-service-with-ALS.dita" >use from within the Application Lifecycle Service</xref>.</p>
+  <p>The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can <xref href="1.1devplatform_commercial_install.dita#topic240731/install-messaging" >install</xref> it and then <xref href="1.1devplatform.using-the-messaging-service.dita" >configure</xref> it for <xref href="1.1devplatform.using-messaging-service-with-ALS.dita" >use from within the Application Lifecycle Service</xref>.</p>
 <simpletable>
 <strow>
     <stentry>
-      <xref href="1.1devplatform_commercial_install.dita#topic24073_1/install-messaging" >Install</xref>
+      <xref href="1.1devplatform_commercial_install.dita#topic240731/install-messaging" >Install</xref>
       </stentry>
     <stentry>
       <xref href="1.1devplatform.using-the-messaging-service.dita" >Provision</xref>
@@ -104,11 +104,11 @@
 <li>It automates installation and enablement of supported applications and services.</li>
 <li>Includes instructions for installing an instance of Vertica Community Edition.</li>
 </ul>
-  <p>The Marketplace is optionally installed as part of the Helion Development Platform. You can <xref href="1.1devplatform_commercial_install.dita#topic24073_1/install-marketplace">install</xref> and <xref href="1.1devplatform.marketplace.install.dita" >use</xref> it to easily install applications and services to accelerate your development efforts.</p>
+  <p>The Marketplace is optionally installed as part of the Helion Development Platform. You can <xref href="1.1devplatform_commercial_install.dita#topic240731/install-marketplace">install</xref> and <xref href="1.1devplatform.marketplace.install.dita" >use</xref> it to easily install applications and services to accelerate your development efforts.</p>
 <simpletable>
 <strow>
     <stentry>
-      <xref href="1.1devplatform_commercial_install.dita#topic24073_1/install-marketplace">Install</xref>
+      <xref href="1.1devplatform_commercial_install.dita#topic240731/install-marketplace">Install</xref>
       </stentry>
     <stentry>
       <xref href="1.1devplatform.marketplace.install.dita">Provision</xref>
