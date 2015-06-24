@@ -30,17 +30,19 @@
 <simpletable>
 
                     <strow>
-                        <stentry>
-                            <p>1. <image href="../../media/star.gif" id="image_s3z_zdp_js"
-                            scale="50"/>
-                        <b>Register for your Helion Public Cloud Account</b></p>
-                            <p>2. <xref href="1.2devplatform.ALS-developer-trial-quick-start2.dita">Download Tools</xref></p>
-                            <p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the Sandbox Environment</xref></p>
-                            <p>4. <xref href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a Cluster</xref></p>
-                            <p>5. <xref href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add Windows DEA and SQL Server (Optional Step)</xref></p>
-                           <p>6. <xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Explore Sample Applications</xref></p>
-                            
-                        </stentry>
+                        <stentry>1. <image href="../../media/star.gif" id="image_s3z_zdp_js"
+                        scale="50"/>
+                    <b>Register for your Helion Public Cloud Account</b><p>2. <xref
+                            href="1.2devplatform.ALS-developer-trial-quick-start2.dita">Download
+                            Tools</xref></p><p>3. <xref
+                            href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the
+                            Sandbox Environment</xref></p><p>4. <xref
+                            href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
+                            Cluster</xref></p><p>5. <xref
+                            href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add Windows
+                            DEA and SQL Server (Optional Step)</xref></p><p>6. <xref
+                            href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Explore
+                            Sample Applications</xref></p></stentry>
                         <stentry>Register for a <xref href="http://www.hpcloud.com/cloud-credit"
                         scope="external" format="html"> Helion Public Cloud</xref> account.<p>Keep
                         your username and password handy as you will be asked for them during
