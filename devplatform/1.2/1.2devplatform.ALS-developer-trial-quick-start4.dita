@@ -61,23 +61,23 @@
                             <p>For convenience, copy the command sets and paste them into a text
                                 editor. You can edit them there and then paste that information into
                                 the <xref
-                                    href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference"
+                                    href="helion/CLI/1.2ALS_Client_Reference.dita"
                                     scope="external" format="html">
                                     <varname>cf-mgmt</varname>
                                 </xref> tool as necessary. </p><ol>
                                 <li>Open a terminal window and change directory to the location
                                     where you installed the <xref
-                                        href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference"
+                                        href="helion/CLI/1.2ALS_Client_Reference.dita"
                                         scope="external" format="html">
                                         <varname>cf-mgmt</varname>
                                     </xref> command-line tool. </li>
                                 <li>Run the following set of commands using the <xref
-                                        href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference"
+                                    href="helion/CLI/1.2ALS_Client_Reference.dita"
                                         scope="external" format="html">
                                         <varname>cf-mgmt</varname>
                                     </xref> tool to create the cluster. In the unlikely event that
                                     the cluster creation fails, refer to the <xref
-                                        href="http://docs.hpcloud.com/helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting"
+                                        href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
                                         scope="external" format="html">Troubleshooting</xref>
                                     section for further instructions.<p>
                                         <note> It may take about 15 minutes to deploy each cluster
