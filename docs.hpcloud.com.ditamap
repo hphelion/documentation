@@ -735,6 +735,8 @@
         navtitle="Deploying your first .NET Application"/>
       <topicref href="devplatform/1.2/windows/windows_tools_guide.dita" locktitle="yes"
         navtitle="Windows and .NET Applications Tools Guide"/>
+      <topicref href="devplatform/1.2/windows/windows_growcluster.dita"
+        navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
     </topichead>
     <!--permalink: /helion/devplatform/1.2/als/-->
     <topicref href="devplatform/1.2/1.2devplatform.sysadmin.dita" locktitle="yes"
@@ -1020,13 +1022,12 @@
     <topicref href="devplatform/1.1devplatform.release-notes.dita" locktitle="yes"
       navtitle="Release Notes"/>
     <topichead navtitle="Installation and Configuration">
-      <topicref href="index.dita" locktitle="yes"
-        navtitle="Commercial Installation and Configuration "
-        ><!--permalink: /helion/devplatform/1.1/marketplace/--><!--permalink: /helion/devplatform/1.1/install/troubleshooting/--><!--permalink: /helion/devplatform/1.1/related-topics/--><!--permalink: /helion/devplatform/1.1/release-notes/--></topicref>
-      <topicref href="devplatform/1.1devplatform.marketplace.install.dita" locktitle="yes"
-        navtitle="The Marketplace (Beta) "/>
+      <topicref href="devplatform/1.1devplatform_commercial_install.dita"
+        navtitle="Installation and Configuration" locktitle="yes"/>
       <topicref href="devplatform/1.1devplatform.troubleshooting.dita" locktitle="yes"
         navtitle="Installation Troubleshooting "/>
+      <topicref href="devplatform/1.1devplatform.marketplace.install.dita" locktitle="yes"
+        navtitle="The Marketplace (Beta) "/>
       <topicref href="devplatform/1.1devplatform.related-topics.dita" locktitle="yes"
         navtitle="Related Documentation "/>
     </topichead>
@@ -1578,11 +1579,11 @@
         navtitle="ALS User Guide ">
         <!--permalink: /als/v1/user/client/-->
         <!--permalink: /als/v1/user/deploy/-->
+        <topicref href="devplatform/helion/user/quick-start/1.0index.dita"
+          navtitle="ALS Quick Start Guide" locktitle="yes"/>
         <topicref href="devplatform/helion/user/deploy/1.0index.dita" locktitle="yes"
           navtitle="General Deployment ">
           <!--permalink: /als/v1/user/deploy/app-debug/-->
-          <topicref href="devplatform/helion/user/quick-start/1.0index.dita"
-            navtitle="ALS Quick Start" locktitle="yes"/>
           <topicref href="devplatform/helion/user/deploy/1.0app-debug.dita" locktitle="yes"
             navtitle="Remote Debugging "/>
           <!--permalink: /als/v1/user/deploy/app-logs/-->

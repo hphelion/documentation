@@ -4,8 +4,8 @@
     <title>HP <tm tmtype="reg">Helion OpenStack</tm> Under the Hood</title>
     <shortdesc>An interactive look at the internals of HP Helion OpenStack</shortdesc>
     <taskbody>
-        <context id="context_ykm_zvg_ks"><p/>Have a look at the services and functionalities
+        <context id="context_ykm_zvg_ks"><p/><!--Have a look at the services and functionalities
             underlying HP Helion OpenStack <xref href="ServicesFlow/index.html" format="html"
-                scope="external">on this page.</xref></context>
+                scope="external">on this page.</xref>--></context>
     </taskbody>
 </task>
