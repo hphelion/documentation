@@ -28,7 +28,7 @@
 <p>This Helion installation troubleshooting guide is written for Helion <tm tmtype="reg">OpenStack</tm> installers who, during or after building the Helion <tm tmtype="reg">OpenStack</tm> environment, find that the cloud environment does not work as expected. The Helion <tm tmtype="reg">OpenStack</tm> environment is not itself complex but it does include a sufficient number of components that isolating a fault can be challenging.</p>
 <p>The goal of this guide is to help you to identify the problem or problems affecting your cloud installation and efficiently fix them.<!--A BR tag was used here in the original source.-->
 For help with troubleshooting Helion <tm tmtype="reg">OpenStack</tm> 1.1 general issues, refer to:
-<xref href="http://docs.hpcloud.com/helion/openstack/services/troubleshooting/" scope="external" format="html">Troubleshooting Helion</xref>
+  <xref href="1.0commercial.troubleshooting.dita" >Troubleshooting Helion</xref>
 </p>
 <section id="installing-the-cloud-environment"> <title>Installing the cloud environment</title>
 <p>Helion <tm tmtype="reg">OpenStack</tm> installation requirements are fully documented in the support matrix at:
