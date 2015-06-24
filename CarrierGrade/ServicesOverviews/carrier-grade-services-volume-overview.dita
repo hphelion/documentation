@@ -33,9 +33,9 @@
 <section id="working-with-the-volume-operations-service"> <title>Working with the Volume Operations Service</title>
 <p>To perform tasks using the Volume Operations service, you can use the dashboard, API or CLI.</p>
 <ul>
-<li>
-<xref href="../../CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa-overview.dita" >Working with HP StoreVirtual VSA</xref>
-<!--
+        <li><xref href="../AdminGuideNew/VSA/carrier.install-vsa.dita#topic4893">Working with HP
+            StoreVirtual
+          VSA</xref><!--
 * [Working with HP 3PAR StoreServ](/helion/openstack/carrier/install/3par/)
 --></li>
 </ul>
