@@ -729,8 +729,6 @@
         navtitle="Deploying Windows Applications with the IIS Buildpack"/>
       <topicref href="devplatform/1.2/windows/windows_glazier_reference_guide.dita" locktitle="yes"
         navtitle="Glazier Reference Guide"/>
-      <topicref href="devplatform/1.2/windows/windows_remoting.dita" locktitle="yes"
-        navtitle="Providing Remote Desktop Access to Windows DEA and Windows SQL Server Instances"/>
       <topicref href="devplatform/1.2/windows/windows_firstapp.dita" locktitle="yes"
         navtitle="Deploying your first .NET Application"/>
       <topicref href="devplatform/1.2/windows/windows_tools_guide.dita" locktitle="yes"

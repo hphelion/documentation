@@ -56,16 +56,20 @@ For details on the HP Helion Development Platform update to v1.2, see [Updating 
 </ol>
 <p>These procedures are described in the following sections. You must perform each of these three procedures in the order presented: first the seed host, then the undercloud, and finally, the overcloud.</p>
 <p>Allow a full day for the  HP <tm tmtype="reg">Helion OpenStack</tm> v1.1.1 update to complete. During the update process, affected systems will be offline.</p>
-<p>
-<b>Note</b>: Nodes to be updated must be in a "good" state before running the update. Specifically, being in a "good" state means:</p>
+    <p><b>Important</b>: Before starting your update: </p>
+    <ol id="ol_hqm_fw1_ms">
+      <li> Make a backup of the seed, undercloud, and overcloud using the standard procedures before
+        commencing the update process. <!-- DOCS-1354 --></li>
+      <li> Check that the nodes to be updated are in a "good" state before running the update.
+        Specifically, being in a "good" state means:</li>
+    </ol>
 <ul>
 <li>Nodes must be up</li>
 <li>Nodes must be running</li>
 <li>Heat state of each node to be updated must not include any FAIL status</li>
 </ul>
-<p>
-<b>Note</b>: You must take a backup of the seed, undercloud, and overcloud using the standard procedures before commencing the update process.
-<!-- DOCS-1354 --></p>
+  <p><b>Note</b>: This document describes <codeph>/root/tripleo</codeph> as the installation directory for the
+    current (1.1) version. You can install this update whereever you want but if you use a directory other than <codeph>/root/tripleo</codeph>, you will need to modify the commands shown.</p>
 <section id="deployment-considerations"> <title>Deployment considerations</title>
 <p>Check that the deployed nodes (all seed VM, undercloud, and overcloud nodes) are accessible (SSH) and pingable. Note the network and bridge configurations on all nodes using the <codeph>ifconfig</codeph> and <codeph>ovs-vsctl show</codeph> commands.</p>
 <p>Check the version of the Glance images that were used to deploy each of the overcloud nodes before the update. To check the Glance image versions:</p>
@@ -137,12 +141,13 @@ nova show &lt;instance id&gt;
 <p>Remove any update folders and content from previous update attempts in the <codeph>/root</codeph> folder using the <codeph>rm</codeph> command.</p>
 </li>
 <li>
-<p>From <codeph>/root</codeph>, create the <codeph>helion-update-1.1-to-&lt;version&gt;</codeph> directory then change to this directory by entering:</p>
+<p>From <codeph>/root</codeph>, create the <codeph>helion-update-1.1-to-1.1.1</codeph> directory
+            then change to this directory by entering:</p>
 
 <codeblock>
 <codeph>cd /root
-mkdir helion-update-1.1-to-&lt;version&gt;
-cd helion-update-1.1-to-&lt;version&gt;
+mkdir helion-update-1.1-to-1.1.1
+cd helion-update-1.1-to-1.1.1
 </codeph>
 </codeblock>
 </li>
@@ -161,7 +166,7 @@ cd helion-update-1.1-to-&lt;version&gt;
 <p>Copy the <codeph>kvm-custom-ips.json</codeph> file to the new directory by entering:</p>
 
 <codeblock>
-<codeph>cp ~/tripleo/configs/kvm-custom-ips.json ~/helion-update-1.1-to-&lt;version&gt;/tripleo/configs/kvm-custom-ips.json
+<codeph>cp ~/tripleo/configs/kvm-custom-ips.json ~/helion-update-1.1-to-1.1.1/tripleo/configs/kvm-custom-ips.json
 </codeph>
 </codeblock>
 </li>
@@ -227,12 +232,14 @@ openssl x509 -noout -in /root/eca.crt
 </codeblock>
 </li>
 <li>
-<p>From <codeph>/root</codeph> on the seed host, create the <codeph>helion-update-1.1-to-&lt;version&gt;</codeph> directory then change to this directory by entering:</p>
+<p>From <codeph>/root</codeph> on the seed host, create the
+              <codeph>helion-update-1.1-to-1.1.1</codeph> directory then change to this directory by
+            entering:</p>
 
 <codeblock>
 <codeph>cd /root
-mkdir helion-update-1.1-to-&lt;version&gt;
-cd helion-update-1.1-to-&lt;version&gt; 
+mkdir helion-update-1.1-to-1.1.1
+cd helion-update-1.1-to-1.1.1 
 </codeph>
 </codeblock>
 </li>
@@ -240,18 +247,22 @@ cd helion-update-1.1-to-&lt;version&gt;
 <p>Copy the seed update script from the downloaded update kit on the seed VM to the seed host by entering:</p>
 
 <codeblock>
-<codeph>scp root@&lt;seed-vm-ip&gt;:/root/helion-update-1.1-to-&lt;version&gt;/tripleo/helion-update/seed_update/update_sd.sh .
+<codeph>scp root@&lt;seed-vm-ip&gt;:/root/helion-update-1.1-to-1.1.1/tripleo/helion-update/seed_update/update_sd.sh .
 </codeph>
 </codeblock>
 </li>
 <li>
-<p>Run the seed update script <codeph>update_sd.sh</codeph> from the seed host. Make sure you run <codeph>update_sd.sh</codeph> from the update directory you created: <codeph>/root/helion-update-1.1-to-&lt;version&gt;)</codeph> using the seed host's  <codeph>tripleo</codeph> root directory (<codeph>/root/tripleo</codeph>) and remote update root (extracted updated kit directory on the seed VM) as arguments.</p>
+<p>Run the seed update script <codeph>update_sd.sh</codeph> from the seed host. Make sure you run
+              <codeph>update_sd.sh</codeph> from the update directory you created:
+              <codeph>/root/helion-update-1.1-to-1.1.1)</codeph> using the seed host's
+              <codeph>tripleo</codeph> root directory (<codeph>/root/tripleo</codeph>) and remote
+            update root (extracted updated kit directory on the seed VM) as arguments.</p>
 
 <p>For example:</p>
 
 <codeblock>
 <codeph>host_tripleo_root_directory = /root/tripleo
-remote_update_tripleo_root_directory = /root/helion-update-1.1-to-&lt;version&gt;
+remote_update_tripleo_root_directory = /root/helion-update-1.1-to-1.1.1
 </codeph>
 </codeblock>
 </li>
@@ -308,9 +319,9 @@ If you are updating to a release that includes new Orchestration (Heat) template
 
 <codeblock>
 <codeph>cd /root
-mkdir helion-update-1.1-to-&lt;version&gt;
-cd helion-update-1.1-to-&lt;version&gt;
-wget http://&lt;url&gt;/helion_ee_&lt;version&gt;.tgz
+mkdir helion-update-1.1-to-1.1.1
+cd helion-update-1.1-to-1.1.1
+wget http://&lt;url&gt;/helion_ee_1.1.1.tgz
 </codeph>
 </codeblock>
 </li>
@@ -318,11 +329,11 @@ wget http://&lt;url&gt;/helion_ee_&lt;version&gt;.tgz
 <p>Extract the update kit, copy the <codeph>kvm-custom-ips.json</codeph>, and run the update script.</p>
 
 <codeblock>
-<codeph>tar -xvzf helion_ee_&lt;version&gt;.tgz
-cp ~/tripleo/configs/kvm-custom-ips.json ~/helion-update-1.1-to-&lt;version&gt;/tripleo/configs/kvm-custom-ips.json
+<codeph>tar -xvzf helion_ee_1.1.1.tgz
+cp ~/tripleo/configs/kvm-custom-ips.json ~/helion-update-1.1-to-1.1.1/tripleo/configs/kvm-custom-ips.json
 source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 cd tripleo/helion-update/undercloud_update
-./update_uc.sh ~/helion-update-1.1-to-&lt;version&gt;/tripleo
+./update_uc.sh ~/helion-update-1.1-to-1.1.1/tripleo
 </codeph>
 </codeblock>
 </li>
@@ -373,9 +384,9 @@ chmod 775 /mnt/state/var/eon/data
 
 <codeblock>
 <codeph>cd /root
-mkdir helion-update-1.1-to-&lt;version&gt;
-cd helion-update-1.1-to-&lt;version&gt;
-wget http://&lt;url&gt;/helion_ee_&lt;version&gt;.tgz
+mkdir helion-update-1.1-to-1.1.1
+cd helion-update-1.1-to-1.1.1
+wget http://&lt;url&gt;/helion_ee_1.1.1.tgz
 </codeph>
 </codeblock>
 </li>
@@ -383,7 +394,7 @@ wget http://&lt;url&gt;/helion_ee_&lt;version&gt;.tgz
 <p>Extract the update kit:</p>
 
 <codeblock>
-<codeph>tar -xvzf helion_ee_&lt;version&gt;.tgz
+<codeph>tar -xvzf helion_ee_1.1.1.tgz
 </codeph>
 </codeblock>
 </li>
@@ -391,7 +402,7 @@ wget http://&lt;url&gt;/helion_ee_&lt;version&gt;.tgz
 <p>Copy the new templates from the location where you unpacked the new kit to the original <codeph>/root/tripleo/tripleo-heat-templates</codeph> directory</p>
 
 <codeblock>
-<codeph>cp -r /root/helion-update-1.1-to-&lt;version&gt;/tripleo/tripleo-heat-templates /root/tripleo/
+<codeph>cp -r /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-heat-templates /root/tripleo/
 </codeph>
 </codeblock>
 
@@ -402,7 +413,7 @@ wget http://&lt;url&gt;/helion_ee_&lt;version&gt;.tgz
 <p>Copy the new passthrough files from the location where you unpacked the new kit to the original <codeph>/root/tripleo/hp_passthrough</codeph> directory.</p>
 
 <codeblock>
-<codeph>cp -r /root/helion-update-1.1-to-&lt;version&gt;/tripleo/hp_passthrough /root/tripleo/
+<codeph>cp -r /root/helion-update-1.1-to-1.1.1/tripleo/hp_passthrough /root/tripleo/
 </codeph>
 </codeblock>
 
@@ -413,7 +424,7 @@ wget http://&lt;url&gt;/helion_ee_&lt;version&gt;.tgz
 <p>Copy the new installation scripts from the location where you unpacked the new kit to the original <codeph>/root/tripleo/tripleo-incubator/scripts</codeph> directory</p>
 
 <codeblock>
-<codeph>cp -r /root/helion-update-1.1-to-&lt;version&gt;/tripleo/tripleo-incubator/scripts /root/tripleo/tripleo-incubator/
+<codeph>cp -r /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-incubator/scripts /root/tripleo/tripleo-incubator/
 </codeph>
 </codeblock>
 </li>
@@ -576,7 +587,7 @@ root@overcloud-ce-controller-controller0-xoni6co2hxes:~#
 <p>Apply the following edit to the pre-flight_check.yml file:</p>
 
 <codeblock>
-<codeph>root@hLinux:~# sed -i 's/status=started/state=started/g' ~/helion-update-1.1-to-&lt;version&gt;/tripleo/helion-update/tripleo-ansible/playbooks/pre-flight_check.yml
+<codeph>root@hLinux:~# sed -i 's/status=started/state=started/g' ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/pre-flight_check.yml
 </codeph>
 </codeblock>
 </li>
@@ -584,7 +595,7 @@ root@overcloud-ce-controller-controller0-xoni6co2hxes:~#
 <p>Add the 61-sleep playbook by creating the 61-sleep file as follows:</p>
 
 <codeblock>
-<codeph>root@hLinux:~# cat &gt; ~/helion-update-1.1-to-&lt;version&gt;/tripleo/helion-update/tripleo-ansible/playbooks/files/61-sleep  
+<codeph>root@hLinux:~# cat &gt; ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/files/61-sleep  
 #!/bin/bash
 set -x
 echo 'Short sleep'
@@ -597,10 +608,10 @@ date
 <p>Update the playbook by entering:</p>
 
 <codeblock>
-    root@hLinux:~# cp -p ~/helion-update-1.1-to&#60;version&#62;
-<ph>/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml ~/helion-update-1.1-to-&#60;version&#62;
+    root@hLinux:~# cp -p ~/helion-update-1.1-to1.1.1
+<ph>/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml ~/helion-update-1.1-to-1.1.1
 <ph>/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml.orig
-    root@hLinux:~# cat &gt; ~/helion-update-1.1-to-&#60;version&#62;
+    root@hLinux:~# cat &gt; ~/helion-update-1.1-to-1.1.1
 <ph>/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml 
     # Copyright (C) 2014 Hewlett-Packard Development Company, L.P.
     #
@@ -652,7 +663,7 @@ date
 <p>To verify that the new file is correct, please run:</p>
 
 <codeblock>
-<codeph>root@hLinux:~# python -c 'import yaml; f=open("/root/helion-update-1.1-to-&lt;version&gt;/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml", "r"); yaml.safe_load(f);'
+<codeph>root@hLinux:~# python -c 'import yaml; f=open("/root/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml", "r"); yaml.safe_load(f);'
 root@hLinux:~# echo $?
 0
 </codeph>
@@ -663,8 +674,8 @@ root@hLinux:~# echo $?
 
 <codeblock>
 <codeph>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
-cd helion-update-1.1-to-&lt;version&gt;/tripleo/helion-update/overcloud_update
-./update_oc.sh ~/helion-update-1.1-to-&lt;version&gt;/tripleo &amp;| tee update_oc.log
+cd helion-update-1.1-to-1.1.1/tripleo/helion-update/overcloud_update
+./update_oc.sh ~/helion-update-1.1-to-1.1.1/tripleo &amp;| tee update_oc.log
 </codeph>
 </codeblock>
 
@@ -750,8 +761,8 @@ To update your overcloud:
 2. Create the new Helion update directory, change to it, and download the update kit on the seed by entering:
  
         cd /root
-        mkdir helion-update-1.1-to-<version>
-        cd helion-update-1.1-to-<version>
+        mkdir helion-update-1.1-to-1.1.1
+        cd helion-update-1.1-to-1.1.1
         wget http://<url>/helion_ee_1.1.X.tgz
 
 3. Untar the file by entering:
@@ -761,7 +772,7 @@ To update your overcloud:
 4. Log onto the seed and change to the downloaded directory bu entering:
 
         ssh root@<seed-ip>
-        cd helion-update-1.1-to-<version>
+        cd helion-update-1.1-to-1.1.1
 
 5. Source the undercloud credentials by entering:
 
@@ -786,21 +797,21 @@ To update your overcloud:
 
 8. Upload new images to Glance by entering:
 
-        BUILD_NO=$(cat /root/helion-update-1.1-to-<version>/tripleo/ce_env.json  | grep build_number | awk '{print $2}')
-        /root/helion-update-1.1-to-<version>/tripleo/tripleo-incubator/scripts/load-image \
-          -d /root/helion-update-1.1-to-<version>/tripleo/images/overcloud-compute-$BUILD_NO.qcow2
-        /root/helion-update-1.1-to-<version>/tripleo/tripleo-incubator/scripts/load-image \
-          -d /root/helion-update-1.1-to-<version>/tripleo/images/overcloud-control-$BUILD_NO.qcow2
-        /root/helion-update-1.1-to-<version>/tripleo/tripleo-incubator/scripts/load-image \
-          -d /root/helion-update-1.1-to-<version>/tripleo/images/overcloud-swift-$BUILD_NO.qcow2
+        BUILD_NO=$(cat /root/helion-update-1.1-to-1.1.1/tripleo/ce_env.json  | grep build_number | awk '{print $2}')
+        /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-incubator/scripts/load-image \
+          -d /root/helion-update-1.1-to-1.1.1/tripleo/images/overcloud-compute-$BUILD_NO.qcow2
+        /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-incubator/scripts/load-image \
+          -d /root/helion-update-1.1-to-1.1.1/tripleo/images/overcloud-control-$BUILD_NO.qcow2
+        /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-incubator/scripts/load-image \
+          -d /root/helion-update-1.1-to-1.1.1/tripleo/images/overcloud-swift-$BUILD_NO.qcow2
         glance image-create -??-name bm-deploy-kernel -??-is-public True \
-          -??-disk-format aki < /root/helion-update-1.1-to-<version>/tripleo/images/deploy-ramdisk-ironic.kernel
+          -??-disk-format aki < /root/helion-update-1.1-to-1.1.1/tripleo/images/deploy-ramdisk-ironic.kernel
         glance image-create -??-name bm-deploy-ramdisk -??-is-public True \
-          -??-disk-format ari < /root/helion-update-1.1-to-<version>/tripleo/images/deploy-ramdisk-ironic.initramfs
+          -??-disk-format ari < /root/helion-update-1.1-to-1.1.1/tripleo/images/deploy-ramdisk-ironic.initramfs
 
 9. Update image names and set build metadata by entering:
   
-        cd /root/helion-update-1.1-to-<version>/tripleo/tripleo-incubator/scripts/
+        cd /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-incubator/scripts/
         ./set-sherpa-metadata overcloud-compute-$BUILD_NO
         ./set-sherpa-metadata overcloud-control-$BUILD_NO
         ./set-sherpa-metadata overcloud-swift-$BUILD_NO
@@ -808,7 +819,7 @@ To update your overcloud:
 10. Update the TripleO Ansible playbook by entering:
 
         mv /opt/stack/triple-ansible /opt/stack/triple-ansible-1.1
-        cp -r /root/helion-update-1.1-to-<version>/tripleo/helion-update/tripleo-ansible/ /opt/stack/
+        cp -r /root/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/ /opt/stack/
 
 Refer to the Ansible update README for more details on running the play.
 
@@ -833,7 +844,7 @@ To run the HP Helion Development Platform scripts, perform the following steps:
 1. Provide path to the SSH private key that can be used to connect to the service control plane VMs.
 1. Source credentials for the Nova account which was used to set up the HPD service by entering:
 
-        cd /root/helion-update-1.1-to-<version>/tripleo/helion-update/tripleo-ansible 
+        cd /root/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible 
         ansible-playbook -??-extra-vars dev_plat_service=<service> -??-private-key <path to SSH private key> -??-skip_ha_checks=True -u heat-admin -i plugins/inventory/dev_platform_heat.py playbooks/dev-platform/dev_platform_pre_check.yml 
    
 
@@ -857,7 +868,7 @@ After running update on the overcloud, the VMs running on the Compute hosts are 
 
 1. Source the credentials for the Nova account which was used to set up the HPD service by entering: 
 
-            cd /root/helion-update-1.1-to-<version>/tripleo/helion-update/tripleo-ansible 
+            cd /root/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible 
             scripts/dev-platform/restart_dev_platform_instances.bash 
    
 
@@ -875,7 +886,7 @@ After running update on the overcloud, the VMs running on the Compute hosts are 
 <p>It is a good practice to copy the <codeph>HP_Helion_Version</codeph> type to the Tripleo directory so that it reflects the version that was updated. This lets other administrators know that the environment has been updated.</p>
 <p>To replace the version file with the latest,  on the seed VM, enter:</p>
 <codeblock>
-  <codeph>cp ~/helion-update-1.1-to-&lt;version&gt;/tripleo/HP_Helion_Version ~/tripleo/
+  <codeph>cp ~/helion-update-1.1-to-1.1.1/tripleo/HP_Helion_Version ~/tripleo/
 </codeph>
 </codeblock>
 </section>
@@ -975,7 +986,7 @@ ERROR: Backup of seed failed!!!!
 <p>Your backup attempt has failed. To recover from this state, you need to get <codeph>rabbitmq</codeph>, <codeph>mysql</codeph> and <codeph>OpenStack</codeph> services running again by running the seed recovery script. to do this, enter:</p>
 <codeblock>
   <codeph>ssh root@&lt;seed-ip&gt;
-cd helion-update-1.1-to-&lt;version&gt;/tripleo/helion-update/seed_update
+cd helion-update-1.1-to-1.1.1/tripleo/helion-update/seed_update
 ./seed_recover.sh
 </codeph>
 </codeblock>
@@ -1050,8 +1061,10 @@ OUTPUT=PING 192.0.2.1 (192.0.2.1) 56(84) bytes of data.
 
 <ul>
 <li>Expected IP address of the seed host.</li>
-<li>Location of the backup folder.  It should be  at <codeph>/root/helion-update-1.1-to-&lt;version&gt;/backup*</codeph>.  For example:<codeph>/root/helion-update-1.1-to-1.1.74/backup-0/</codeph>
-</li>
+<li>Location of the backup folder. It should be at
+                <codeph>/root/helion-update-1.1-to-1.1.1/backup*</codeph>. For
+                example:<codeph>/root/helion-update-1.1-to-1.1.74/backup-0/</codeph>
+            </li>
 </ul>
 </li>
 <li>
@@ -1066,14 +1079,14 @@ OUTPUT=PING 192.0.2.1 (192.0.2.1) 56(84) bytes of data.
 <p>Run the restore script directly by entering:</p>
 
 <codeblock>
-<codeph>/root/helion-update-1.1-to-&lt;version&gt;/helion-update/seed_update/seed_update.sh --restore-seed &lt;backup directory&gt; --ip-address &lt;seed IP address&gt;
+<codeph>/root/helion-update-1.1-to-1.1.1/helion-update/seed_update/seed_update.sh --restore-seed &lt;backup directory&gt; --ip-address &lt;seed IP address&gt;
 </codeph>
 </codeblock>
 
 <p>For example:</p>
 
 <codeblock>
-<codeph>/root/helion-update-1.1-to-&lt;version&gt;/helion-update/seed_update/seed_update.sh --restore-seed /root/helion-update-1.1-to-&lt;version&gt;/backup-0/ --ip-address 192.2.0.1
+<codeph>/root/helion-update-1.1-to-1.1.1/helion-update/seed_update/seed_update.sh --restore-seed /root/helion-update-1.1-to-1.1.1/backup-0/ --ip-address 192.2.0.1
 </codeph>
 </codeblock>
 </li>
@@ -1681,7 +1694,7 @@ BM_NETWORK_SEED_IP=10.34.55.66
 BM_NETWORK_CIDR=10.34.55.0/24
 BM_NETWORK_GATEWAY=10.34.55.1
 SEED_NAMESERVER=172.16.222.5 
-./update_sd.sh /root/tripleo /root/helion-update-1.1-to-&lt;version&gt; | tee seed_update.log
+./update_sd.sh /root/tripleo /root/helion-update-1.1-to-1.1.1 | tee seed_update.log
 </codeph>
 </codeblock>
 </section>
@@ -1717,7 +1730,7 @@ SEED_NAMESERVER=172.16.222.5
 <codeblock>
   <codeph>    source /opt/stack/venvs/ansible/bin/activate
 
-    (ansible)root@hLinux:~/helion-update-1.1-to-&lt;version&gt;/tripleo/helion-update/overcloud_update# ansible -vvv -o -i /opt/stack/tripleo-ansible/plugins/inventory/heat.py -u heat-admin -m ping all
+    (ansible)root@hLinux:~/helion-update-1.1-to-1.1.1/tripleo/helion-update/overcloud_update# ansible -vvv -o -i /opt/stack/tripleo-ansible/plugins/inventory/heat.py -u heat-admin -m ping all
     Traceback (most recent call last):
     File "/opt/stack/venvs/ansible/bin/ansible", line 194, in &lt;module&gt;
         (runner, results) = cli.run(options, args)
@@ -1738,9 +1751,9 @@ SEED_NAMESERVER=172.16.222.5
     File "/usr/lib/python2.7/json/decoder.py", line 384, in raw_decode
         raise ValueError("No JSON object could be decoded")
     ValueError: No JSON object could be decoded
-    (ansible)root@hLinux:~/helion-update-1.1-to-&lt;version&gt;/tripleo/helion-update/overcloud_update# /opt/stack/tripleo-ansible/plugins/inventory/heat.py --list
+    (ansible)root@hLinux:~/helion-update-1.1-to-1.1.1/tripleo/helion-update/overcloud_update# /opt/stack/tripleo-ansible/plugins/inventory/heat.py --list
     overcloud-ce-vsastorage0/6dd10abb-482e-4eaf-b061-158efe5f8a15 stack is incomplete, in state FAILED
-    (ansible)root@hLinux:~/helion-update-1.1-to-&lt;version&gt;/tripleo/helion-update/overcloud_update# 
+    (ansible)root@hLinux:~/helion-update-1.1-to-1.1.1/tripleo/helion-update/overcloud_update# 
 </codeph>
 </codeblock>
 <p>In this case, the overcloud-ce-vsastorage0 node was in the FAILED state for Heat.</p>
