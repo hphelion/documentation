@@ -102,12 +102,11 @@ sudo -E pip install python-novaclient</codeblock></li>
 					used for communicating with the services in the overcloud. To define the proxy
 					exclusion list, enter the following command:
 					<codeblock>export no_proxy=localhost,127.0.0.1,{ip address or host name of identity service aka keystone} 	</codeblock>
-					Example: <codeblock>export no_proxy=localhost,127.0.0.1,10.0.0.10 	</codeblock>
-				</li>
+					Example:
+					<codeblock>export no_proxy=localhost,127.0.0.1,10.0.0.10 	</codeblock></li>
 <li>Validate Keystone access on port 5000 using <i>curl</i>.
 					<codeblock>curl https://{ip address or host name of identity service aka keystone}:5000</codeblock>
-					Example: <codeblock>curl https://10.0.0.10:5000</codeblock>
-				</li>
+					Example: <codeblock>curl https://10.0.0.10:5000 </codeblock></li>
 			<li> Run this command to install the Helion Development Platform. You can run this command on any
 					machine that can access the Overcloud, but it is recommended to run this command
 					on the Seed node.<p> By default the Username is <i>admin</i> and the Region is
