@@ -13,7 +13,7 @@
  <!--./publiccloud/vpn-multisite.md-->
  <!--permalink: /publiccloud/compute/vpn-multisite/--></p>
 <p>Once you have set up your initial VPN connection, you can extend your network to your different private sites. This guide provides you the basic steps to configure a VPN Virtual Machine (instance) and establish a secure connection between private sites to your HP Helion Public Cloud VPN.</p>
-<p>For this procedure, we assume that you have an active HP Helion Public Cloud account with a VPN instance set up (see the <xref href="http://docs.hpcloud.com/publiccloud/compute/vpn-quickstart" scope="external" format="html" >VPN Quick Start Guide</xref> to set up the initial VPN instance).</p>
+  <p>For this procedure, we assume that you have an active HP Helion Public Cloud account with a VPN instance set up (see the <xref href="vpn-quickstart.dita" >VPN Quick Start Guide</xref> to set up the initial VPN instance).</p>
 <p>While you can set up your Compute service instance and VPN using any Linux OS, for the purpose of this guide, we use an Ubuntu instance and strongSwan IPsec. This configuration has been tested, but you can use this guide as a basis for connecting your sites to your HP Helion Public Cloud VPN.</p>
 <p>This guide covers the following:</p>
 <ul>
