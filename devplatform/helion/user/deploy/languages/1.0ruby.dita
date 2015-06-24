@@ -78,7 +78,7 @@ a console application.</p>
 <p>&lt;</p>
 <p>div class="section" id="hp-helion-sdk"&gt;</p>
 <section id="hp-helion-sdk"> <title>HP Helion SDK</title>
-<p>Ruby applications can communicate directly with the <xref href="http://docs.hpcloud.com/api" scope="external" format="html"  outputclass="reference external">Helion APIs</xref> through a REST client
+  <p>Ruby applications can communicate directly with the <xref href="../../../../../publiccloud/api.dita" >Helion APIs</xref> through a REST client
 or use the SDK. The SDK is designed to have a simple well documented API to simplify working with the
 services.</p>
 <p>To understand how it works, here is an example of writing and reading from object storage:</p>
