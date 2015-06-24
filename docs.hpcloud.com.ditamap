@@ -1660,9 +1660,37 @@
     <topicref href="CarrierGrade/Overview/carrier-grade-overview.dita">
       <topicref href="CarrierGrade/Overview/carrier-grade-overview-non-kvm.dita"/>
       <topicref href="CarrierGrade/Overview/carrier-grade-overview-kvm.dita"/>
-      <topicref href="CarrierGrade/Overview/carrier-grade.services-overview.dita"/>
+      <topicref href="CarrierGrade/Overview/carrier-grade.services-overview.dita">
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-compute-overview.dita"/>
+        <topicref
+          href="CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita"/>
+        <topicref
+          href="CarrierGrade/ServicesOverviews/carrier-grade-services-orchestration-overview.dita"/>
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
+        />
+      </topicref>
     </topicref>
-    <topichead navtitle="Installing the Non-KVM Servers"/>
+    <topichead navtitle="Installing the Non-KVM Servers">
+      <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix.dita">
+        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-dcn.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-helion.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-hlm.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-wr.dita"/>
+      </topicref>
+      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"/>
+      <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-overview.dita">
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-NTP.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-troubleshoot.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-verify.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita"/>
+      </topicref>
+    </topichead>
     <topichead navtitle="Installing the KVM Server (PDF)">
       <topicref href="PDF/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf" navtitle="HP Helion OpenStack Carrier Grade Software Install" locktitle="yes" format="pdf"/>
     </topichead>
