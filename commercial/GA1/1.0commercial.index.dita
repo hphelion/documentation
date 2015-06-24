@@ -39,9 +39,7 @@
 <li>
 <xref href="../../commercial/GA1/1.0commercial.install-GA-supportmatrix.dita" >Support matrix</xref>
 </li>
-<li>
-<xref href="../../commercial/GA1/1.0commercial.site-index.dita" >Documentation site index</xref>
-</li>
+
 <li>For definitions of key terms, see the <xref href="../../commercial/GA1/1.0commercial.glossary.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Glossary</xref>
 </li>
 <li>For detailed REST API information, <xref href="../../commercial/GA1/1.0commerical.services-overview.dita" >use the links on the Services Overview page</xref>. </li>
