@@ -31,22 +31,22 @@ The Marketplace, currently in beta, is a repository where teams can download the
 <p>The following topics explain how to install and deploy an instance of Vertica 7 Community Edition:</p>
 <ul>
 <li>
-<xref type="section" href="#topic6013/concepts">Marketplace concepts</xref>
+<xref type="section" href="#topic6013/marketplace-concepts">Marketplace concepts</xref>
 </li>
 <li>
-<xref type="section" href="#topic6013/prereq">Prerequisites</xref>
+  <xref type="section" href="#topic6013/prerequisites">Prerequisites</xref>
 </li>
 <li>
-<xref type="section" href="#topic6013/install">Installing a package</xref>
+  <xref type="section" href="#topic6013/installing-a-package">Installing a package</xref>
 </li>
 <li>
-<xref type="section" href="#topic6013/create">Deploying an environment</xref>
+  <xref type="section" href="#topic6013/create-a-target-environment">Deploying an environment</xref>
 </li>
 <li>
-<xref type="section" href="#topic6013/deploy">Creating a Deployed Instance of an Application</xref>
+  <xref type="section" href="#topic6013/create-a-deployed-instance-of-an-application">Creating a Deployed Instance of an Application</xref>
 </li>
 <li>
-<xref type="section" href="#topic6013/notes">Deployment Notes</xref>
+<xref type="section" href="#topic6013/deployment-notes">Deployment Notes</xref>
 </li>
 </ul>
 <section id="marketplace-concepts"> <title>  Marketplace Concepts</title>
@@ -60,7 +60,9 @@ The Marketplace, currently in beta, is a repository where teams can download the
 </ul>
 </section>
 <section id="prerequisites"> <title>  Prerequisites</title>
-<p>Install the Marketplace component of the <xref href="1.1devplatform_commercial_install.dita" >HP Helion Development Platform</xref> during the Development Platform install process.</p>
+<p>Install the Marketplace component of the <xref
+          href="1.1devplatform_commercial_install.dita#topic240731/install-marketplace">HP Helion Development
+          Platform</xref> during the Development Platform install process.</p>
 </section>
 <section id="installing-a-package"> <title>  Installing a Package</title>
 <p>In this example, the package being installed is the Vertica 7 Community Edition package.</p>

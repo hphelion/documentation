@@ -23,7 +23,7 @@
 <p>The <i>perlcgi</i> framework can be used to run <i>any</i> CGI script, but, like the <xref
         href="1.2index.dita#topic8895">perl</xref> framework, it provides ActivePerl in the default
   PATH and supports module installation via <xref href="1.2index.dita#topic8895/cpan-modules-via-ppm">PPM</xref> and <xref
-        href="index.dita">
+    href="1.2index.dita#topic8895/cpan-modules-via-cpanm">
         <i>cpanm</i>
       </xref>.</p>
   <p>Unlike the perl framework, setting the <xref type="section" href="../../../deploy/1.2manifestyml.dita#topic20922/start-file" >

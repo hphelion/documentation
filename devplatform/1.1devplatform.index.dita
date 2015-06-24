@@ -33,14 +33,20 @@
       ensuring that developers can focus on building the right app for any environment.</p>
 <p>This documentation will help you get up to speed on the  Helion Development Platform as a Developer or Administrator.</p>
 <section id="platform-overview"> <title>Platform Overview</title>
-<p>The <xref href="/helion/1.1index.dita" >Application Lifecycle Service (ALS)</xref> is a Cloud Foundry-based, managed runtime environment for applications.</p>
+<p>The <xref href="helion/1.1index.dita" >Application Lifecycle Service (ALS)</xref> is a Cloud Foundry-based, managed runtime environment for applications.</p>
 <ul>
   <li>It supports <xref href="1.1devplatform.appdev.dita#topic2390/java" >Java</xref>, <xref href="1.1devplatform.appdev.dita#topic2390/node" >Node</xref>, <xref href="1.1devplatform.appdev.dita#topic2390/PHP" >PHP</xref>, and other language runtimes.</li>
 <li>It provides easy access to services like MySQL, PostgreSQL, RabbitMQ, and Memcache.</li>
 <li>It allows Disk, Memory and Placement Zone constraints to be set per application.</li>
-<li>It provides auto-scaling and application log drains.</li>
+<li>It provides auto-scaling and application log drains.</li> 
 </ul>
-  <p>The Application Lifecycle Service is <xref href="1.1devplatform_commercial_install.dita#topic24073_1/install-als" >installed</xref> as part of the Helion Development Platform. You can easily <xref href="1.1devplatform.deploy-ALS.dita" >create and configure</xref> Application Lifecycle Service clusters from the Horizon management console, or explore this service by setting up a <xref href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> in the public cloud.</p>
+  <p>The Application Lifecycle Service is installed as part of the <xref
+          href="1.1devplatform_commercial_install.dita">Helion Development
+          Platform</xref>. You can easily <xref href="1.1devplatform.deploy-ALS.dita">create and
+          configure</xref> Application Lifecycle Service clusters from the Horizon management
+        console, or explore this service by setting up a <xref
+          href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952">Quick Start
+          Developer Trial</xref> in the public cloud.</p>
 </section>
 <section id="application-services"> <title>Application Services</title>
 <p>The HP Helion Development Platform provides additional Application Services that integrate into the Application Lifecycle Service. These currently include:</p>
@@ -55,16 +61,21 @@
           relational and non-relational databases. </li>
 <li>The Database service provides a simple and easy way to access and utilize features in a database without the overhead of administration.  </li>
 </ul>
-  <p>The <xref href="1.1devplatform.database-ALS.dita" >Database as a Service</xref> is optionally <xref href="1.1devplatform_commercial_install.dita#topic24073_1/install-database" >installed and configured</xref> as part of the Helion Development Platform. If not installed as part of the platform, you can install it and then configure it for <xref href="1.1devplatform.database-ALS.dita" >use from within the Application Lifecycle Service</xref>.</p>
+  <p>The Database as a Service is optionally <xref
+          href="1.1devplatform_commercial_install.dita#topic240731/install-database">installed and
+          configured</xref> as part of the Helion Development Platform. If not installed as part of
+        the platform, you can install it separately and then configure it for <xref
+          href="1.1devplatform.database-ALS.dita">use from within the Application Lifecycle
+          Service</xref>.</p>
 <simpletable>
 <strow>
     <stentry>
-      <xref href="install#install-database" >Install</xref>
+      <xref href="1.1devplatform_commercial_install.dita#topic240731/install-database" >Install</xref>
       </stentry>
     <stentry>
-                <xref href="databaseservice">Provision</xref>
+                <xref href="1.1devplatform.database-instance.dita">Provision</xref>
               </stentry>
-              <stentry><xref href="connectdatabase">Connect with ALS</xref></stentry>
+              <stentry><xref href="1.1devplatform.database-ALS.dita">Connect with ALS</xref></stentry>
             </strow>
 </simpletable>
 </section>
@@ -74,15 +85,15 @@
 <li>The Messaging Service integrates with <xref href="../commercial/GA1/1.1commerical.services-identity-overview.dita" >Keystone</xref> to remove the need to create separate credentials for RabbitMQ access. </li>
 <li>The Messaging Service allows developers to focus on building their apps without worrying about installing, configuring, and troubleshooting RabbitMQ.</li>
 </ul>
-  <p>The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can <xref href="1.1devplatform_commercial_install.dita#topic24073_1/install-messaging" >install</xref> it and then <xref href="1.1devplatform.using-the-messaging-service.dita" >configure</xref> it for <xref href="1.1devplatform.using-messaging-service-with-ALS.dita" >use from within the Application Lifecycle Service</xref>.</p>
+  <p>The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can <xref href="1.1devplatform_commercial_install.dita#topic240731/install-messaging" >install</xref> it and then <xref href="1.1devplatform.using-the-messaging-service.dita" >configure</xref> it for <xref href="1.1devplatform.using-messaging-service-with-ALS.dita" >use from within the Application Lifecycle Service</xref>.</p>
 <simpletable>
 <strow>
     <stentry>
-      <xref href="install#install-messaging" >Install</xref>
+      <xref href="1.1devplatform_commercial_install.dita#topic240731/install-messaging" >Install</xref>
       </stentry>
     <stentry>
-      <xref href="messageservice" >Provision</xref>
-      <xref href="msgaas/als" >Connect with ALS</xref>
+      <xref href="1.1devplatform.using-the-messaging-service.dita" >Provision</xref>
+      <xref href="1.1devplatform.using-messaging-service-with-ALS.dita" >Connect with ALS</xref>
     </stentry>
   </strow>
 </simpletable>
@@ -93,14 +104,14 @@
 <li>It automates installation and enablement of supported applications and services.</li>
 <li>Includes instructions for installing an instance of Vertica Community Edition.</li>
 </ul>
-  <p>The Marketplace is optionally installed as part of the Helion Development Platform. You can <xref href="1.1devplatform_commercial_install.dita#topic24073_1/install-marketplace" >install</xref> and <xref href="1.1devplatform.marketplace.install.dita" >use</xref> it to easily install applications and services to accelerate your development efforts.</p>
+  <p>The Marketplace is optionally installed as part of the Helion Development Platform. You can <xref href="1.1devplatform_commercial_install.dita#topic240731/install-marketplace">install</xref> and <xref href="1.1devplatform.marketplace.install.dita" >use</xref> it to easily install applications and services to accelerate your development efforts.</p>
 <simpletable>
 <strow>
     <stentry>
-      <xref href="install#install-marketplace" >Install</xref>
+      <xref href="1.1devplatform_commercial_install.dita#topic240731/install-marketplace">Install</xref>
       </stentry>
     <stentry>
-      <xref href="marketplace" >Provision</xref>
+      <xref href="1.1devplatform.marketplace.install.dita">Provision</xref>
     </stentry>
   </strow>
 </simpletable>
@@ -110,7 +121,7 @@
 <p>
         <b>Helion Command-Line Interface (CLI)</b>
       </p>
-<p>Use the Helion CLI to deploy your app to the development platform through the command line. <xref href="helion/user/client/1.1index.dita#helion-client-setup" >Setup</xref> instructions are available for here both <tm tmtype="reg">Windows</tm> and Unix/Mac operating systems.</p>
+  <p>Use the Helion CLI to deploy your app to the development platform through the command line. <xref href="helion/user/client/1.1index.dita#topic1757/helion-client-setup" >Setup</xref> instructions are available for here both <tm tmtype="reg">Windows</tm> and Unix/Mac operating systems.</p>
 <p>
         <b>Eclipse Plugin</b>  If your developers work in the Eclipse IDE, <xref
           href="1.1devplatform.eclipse.dita">install and use</xref> the Eclipse plug-in to quickly
@@ -120,9 +131,15 @@
 <p>Most of the Helion Development Platform documentation assumes that you've already provisioned an environment where you can deploy your apps. There are two ways to deploy Development Platform technology:</p>
 <ul>
 <li>
-<b>Quick Start Developer Trial</b>: The fastest way to set up a functional Helion Development Platform environment is the <xref href="1.1devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> (sandbox) on the public cloud.</li>
+          <b>Quick Start Developer Trial</b>: The fastest way to set up a functional Helion
+          Development Platform environment is the <xref
+            href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952">Quick Start
+            Developer Trial </xref>on the public cloud.</li>
 <li>
-<b>Standard Installation</b>: Install a <xref href="../commercial/GA1/1.1commercial.install-GA-overview.dita" >Commercial HP <tm tmtype="reg">Helion OpenStack</tm></xref> cloud and then <xref href="1.1devplatform_commercial_install.dita" >install</xref> the Helion Development Platform.  </li>
+          <b>Standard Installation</b>: Install a <xref
+            href="../commercial/GA1/1.1commercial.install-GA-overview.dita">Commercial HP OpenStack
+          </xref> cloud and then <xref href="1.1devplatform_commercial_install.dita">install</xref>
+          the Helion Development Platform. </li>
 </ul>
 </section>
 </body>
