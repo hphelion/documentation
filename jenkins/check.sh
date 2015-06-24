@@ -25,10 +25,10 @@ do
 if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  -H \?\? )" ]];
 					then
 						echo $i
+						echo "1" > checktmp
 					fi
 done
  
-  
 #Set Internal Field Separator to % (to preserve white space at the beginning and end of badstrings)
 IFS='%'
 

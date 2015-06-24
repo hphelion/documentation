@@ -14,13 +14,8 @@ VERSION:      1.6 (for fileset 2.0x)
 
 @font-face
  {
- font-family: 'HPSimplifiedLocal';
- src: url('./xHP_Simplified_0.ttf');
- src: url('./xHP_Simplified_BdIt_0.ttf');
- src: url('./xHP_Simplified_It_0.ttf'); 
- src: url('./xHP_Simplified_Lt_0.ttf');
- src: url('./xHP_Simplified_LtIt_0.ttf'); 
- src: url('./xHP_Simplified_Rg_0.ttf');
+ font-family: 'sans-serif';
+
  } 
 
  
