@@ -1668,5 +1668,7 @@
     <topichead navtitle="Administrator Guide">
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
     </topichead>
+    <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-scarios.ditamap"
+      format="ditamap"/>
   </topicref> 
 </map>

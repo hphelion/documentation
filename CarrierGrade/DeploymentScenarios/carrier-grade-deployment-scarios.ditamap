@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<bookmap>
+ <booktitle>
+  <mainbooktitle>HP Helion OpenStack Carrier Grade Reference Deployment Scenarios</mainbooktitle>
+ </booktitle>
+	<!--<topicmeta>
+		<copyright>
+			<copyryear year="2015"/>
+			<copyrholder>HP Helion OpenStack Carrier Grade</copyrholder>
+		</copyright>
+		<prodinfo>
+			<prodname>HP Helion OpenStack Carrier Grade</prodname>
+			<vrmlist>
+				<vrm version="4.1.0"/>
+			</vrmlist>
+		</prodinfo>
+	</topicmeta>
+-->
+ <topicref href="carrier-grade-deployment.dita">
+  <topicref href="carrier-grade-deployment-overview.dita"/>
+  <topicref href="carrier-grade-deployment-requirements.dita"/>
+  <topicref href="carrier-grade-deployment-networks.dita"/>
+  <topicref href="carrier-grade-deployment-interface.dita"/>
+  <topicref href="carrier-grade-deployment-cli-environ.dita"/>
+ </topicref>
+ <topicref href="carrier-grade-deployment-setting.dita">
+  <topicref href="carrier-grade-deployment-setting-components.dita"/>
+  <topicref href="carrier-grade-deployment-setting-admin.dita"/>
+  <topicref href="carrier-grade-deployment-setting-user.dita"/>
+ </topicref>
+ <topicref href="carrier-grade-deployment-running-traffic.dita"/>
+ <topicref href="carrier-grade-deployment-bridging-overview.dita">
+  <topicref href="carrier-grade-deployment-bridging-deploy.dita"/>
+ </topicref>
+ <topicref href="carrier-grade-deployment-routing-overview.dita">
+  <topicref href="carrier-grade-deployment-routing-deploy.dita"/>
+ </topicref>
+ <topicref href="carrier-grade-deployment-cli.dita">
+  <topicref href="carrier-grade-deployment-cli-segment.dita"/>
+  <topicref href="carrier-grade-deployment-cli-data.dita"/>
+  <topicref href="carrier-grade-deployment-cli-flavor.dita"/>
+  <topicref href="carrier-grade-deployment-cli-guest.dita"/>
+  <topicref href="carrier-grade-deployment-cli-launch.dita"/>
+  <topicref href="carrier-grade-deployment-cli-provider.dita"/>
+  <topicref href="carrier-grade-deployment-cli-tenant.dita"/>
+  <topicref href="carrier-grade-deployment-cli-tenants.dita"/>
+  <topicref href="carrier-grade-deployment-cli-users.dita"/>
+ </topicref>
+</bookmap>
