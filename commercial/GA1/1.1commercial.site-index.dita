@@ -21,8 +21,8 @@
 <p>
 
 </p>
-<p>A list of all the pages on docs.hpcloud.com can be found in the <xref href="/master-toc" >Master TOC</xref>
-</p>
+
+
 <p>The documentation for HP Helion <tm tmtype="reg">OpenStack</tm> includes the following:</p>
 <!-- Trying something
 * [Release Notes](#release)
@@ -122,10 +122,10 @@
 <p>Review the following topics related to optional and required post-installation steps:</p>
 <ul>
 <li>
-<xref href="http://docs.hpcloud.com/helion/openstack/1.1/install/post-kvm/" scope="external" format="html" >Post-Installation for KVM Hypervisor</xref>
+  <xref href="1.1commercial.install-GA-post-kvm.dita" >Post-Installation for KVM Hypervisor</xref>
 </li>
 <li>
-<xref href="http://docs.hpcloud.com/helion/openstack/1.1/install/post-kvm/" scope="external" format="html" >Post-Installation for KVM Hypervisor</xref>
+  <xref href="1.1commercial.install-GA-post-kvm.dita" >Post-Installation for KVM Hypervisor</xref>
 </li>
 <li>
 <xref href="../../commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" >Integrating LDAP</xref>
