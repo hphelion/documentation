@@ -651,6 +651,8 @@
         navtitle="Deploying your first .NET Application"/>
       <topicref href="devplatform/1.2/windows/windows_tools_guide.dita" locktitle="yes"
         navtitle="Windows and .NET Applications Tools Guide"/>
+      <topicref href="devplatform/1.2/windows/windows_growcluster.dita"
+        navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
     </topichead>
     <!--permalink: /helion/devplatform/1.2/als/-->
     <topicref href="devplatform/1.2/1.2devplatform.sysadmin.dita" locktitle="yes"
@@ -833,6 +835,8 @@
         <!--permalink: /helion/devplatform/1.2/als/user/client/-->
         <!--permalink: /helion/devplatform/1.2/als/user/console/-->
         <!--permalink: /helion/devplatform/1.2/als/user/deploy/-->
+        <topicref href="devplatform/1.2/helion/user/quick-start/1.2index.dita"
+          navtitle="ALS Quick Start" locktitle="yes"/>
         <topicref href="devplatform/1.2/helion/user/deploy/1.2index.dita" locktitle="yes"
           navtitle="General Deployment">
           <!--permalink: /helion/devplatform/1.2/als/user/deploy/app-debug/-->
@@ -1541,8 +1545,10 @@
       </topicref>
     </topicref>
   </topicref>
-  <topicref href="euca/euca-landing-page.dita">
-    <topicref href="euca/euca.thirdparty.licensing.dita"/>
+  <topicref href="euca/euca-landing-page.dita" navtitle="HP Helion Eucalyptus" locktitle="yes">
+    <topicref href="euca/euca.thirdparty.licensing.dita"
+      navtitle="Open Source and Third-Party Licensing" locktitle="yes"/>
+    <topicref href="euca/euca-eula.dita" navtitle="Master Services Agreement" locktitle="yes"/>
   </topicref>
   <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud"
     locktitle="yes">
