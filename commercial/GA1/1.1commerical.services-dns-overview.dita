@@ -68,7 +68,9 @@
   <p>You can use a low-level, raw REST API access to DNSaaS. See the <xref href="../../publiccloud/apidocs/c1.1/dns-api.dita">HP Helion Public Cloud DNS API Specifications</xref>.</p>
 </section>
 <section id="using-the-cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
-<p>You can use the <i>python-designateclient</i> command line tool to access DNSaaS. See <xref href="http://python-designateclient.readthedocs.org/en/latest/shell.html" scope="external" format="html" >Install the client from PyPI</xref>.</p>
+<p>You can use the <i>python-designateclient</i> command line tool to access DNSaaS. See  <xref
+          href="http://python-designateclient.readthedocs.org/en/latest/shell.html" format="html"
+          scope="external">Install the client from PyPI</xref>.</p>
 <p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">OpenStack</tm> command-line clients</xref>.</p>
 </section>
 <section id="how-tos-with-the-hp-helion-dnsaas"> <title>How To's with the HP Helion DNSaaS<!--Removed anchor point howto--><!-- id="howto" --></title>
