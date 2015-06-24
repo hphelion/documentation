@@ -24,7 +24,8 @@
 <xref href="../publiccloud/dns.dita" >DNS</xref>: A managed domain name service that features anycast routing hosted by HP.</li>
 <li>
 <xref href="../publiccloud/identity.dita" >Identity service</xref>: One-stop authentication for all HP Helion Public Cloud Service offerings.</li>
-<xref href="../publiccloud/object-storage.dita" >Object storage</xref>: A way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. </li>
+<li>
+  <xref href="../publiccloud/object-storage.dita" >Object storage</xref>: A way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. </li>
 <li>
 <xref href="../publiccloud/dbaas.dita" >Relational Database</xref>: Provides you with a simplified method for creation and management of MySQL database instances.</li>
 </ul>
