@@ -721,18 +721,18 @@
       <topicref href="devplatform/1.2/windows/windows_overview.dita" locktitle="yes"
         navtitle="Windows Overview"
         ><!--permalink: /helion/devplatform/1.2/windows/adding_services/--><!--permalink: /helion/devplatform/1.2/windows/building_windows/--><!--permalink: /helion/devplatform/1.2/windows/buildpack/--><!--permalink: /helion/devplatform/1.2/windows/deploying/--><!--permalink: /helion/devplatform/1.2/windows/glazier/--><!--permalink: /helion/devplatform/1.2/windows/powershell/--><!--permalink: /helion/devplatform/1.2/windows/remoting/--><!--permalink: /helion/devplatform/1.2/windows/deployingnet/--></topicref>
-      <topicref href="devplatform/1.2/windows/windows_adding_services.dita" locktitle="yes"
-        navtitle="Adding Services to Windows Applications"/>
-      <topicref href="devplatform/1.2/windows/windows_building_and_deploying.dita" locktitle="yes"
-        navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
-      <topicref href="devplatform/1.2/windows/windows_custom_buildpacks.dita" locktitle="yes"
-        navtitle="Deploying Windows Applications with the IIS Buildpack"/>
-      <topicref href="devplatform/1.2/windows/windows_glazier_reference_guide.dita" locktitle="yes"
-        navtitle="Glazier Reference Guide"/>
       <topicref href="devplatform/1.2/windows/windows_firstapp.dita" locktitle="yes"
         navtitle="Deploying your first .NET Application"/>
+      <topicref href="devplatform/1.2/windows/windows_adding_services.dita" locktitle="yes"
+        navtitle="Adding Services to Windows Applications"/>
       <topicref href="devplatform/1.2/windows/windows_tools_guide.dita" locktitle="yes"
         navtitle="Windows and .NET Applications Tools Guide"/>
+      <topicref href="devplatform/1.2/windows/windows_custom_buildpacks.dita" locktitle="yes"
+        navtitle="Deploying Windows Applications with the IIS Buildpack"/>
+      <topicref href="devplatform/1.2/windows/windows_building_and_deploying.dita" locktitle="yes"
+        navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
+      <topicref href="devplatform/1.2/windows/windows_glazier_reference_guide.dita" locktitle="yes"
+        navtitle="Glazier Reference Guide"/>
       <topicref href="devplatform/1.2/windows/windows_growcluster.dita"
         navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
     </topichead>
