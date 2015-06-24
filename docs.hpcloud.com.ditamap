@@ -1664,6 +1664,7 @@
     <topichead navtitle="Installing the KVM Server (PDF)">
       <topicref href="PDF/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf" navtitle="HP Helion OpenStack Carrier Grade Software Install" locktitle="yes" format="pdf"/>
     </topichead>
+    
     <topichead navtitle="Administrator Guide">
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
     </topichead>
