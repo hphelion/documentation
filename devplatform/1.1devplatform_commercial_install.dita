@@ -46,9 +46,14 @@
 
 	<p>Before you begin installation:</p>
 <ul>
-	<li>You must log in to the system where you intend to run the installation script as the *root* user.</li>
+	<li>You must log in to the system where you intend to run the installation script as the
+						<i>root</i> user.</li>
 
-	<li>The Cinder block storage service must be configured with either [VSA](/helion/openstack/1.1/install/vsa/overview/) or [3Par](/helion/openstack/1.1/install/3par/).</li>
+	<li>The Cinder block storage service must be configured with either <xref
+						href="../commercial/GA1/1.1commercial.-vsa-overview.dita#topic9930"
+						>VSA</xref> or <xref
+						href="../commercial/GA1/1.1commercial.install-3par.dita#topic3689"
+						>3Par</xref>.</li>
  
 	<li>If you installed HP Helion OpenStack with <b>KVM</b> hypervisor support, configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.</li>
 
