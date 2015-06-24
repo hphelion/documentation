@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
-<bookmap>
- <booktitle>
-  <mainbooktitle>HP Helion OpenStack Carrier Grade Reference Deployment Scenarios</mainbooktitle>
- </booktitle>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+ <title>HP Helion OpenStack Carrier Grade Reference Deployment Scenarios</title>
 	<!--<topicmeta>
 		<copyright>
 			<copyryear year="2015"/>
@@ -47,4 +45,4 @@
   <topicref href="carrier-grade-deployment-cli-tenants.dita"/>
   <topicref href="carrier-grade-deployment-cli-users.dita"/>
  </topicref>
-</bookmap>
+</map>
