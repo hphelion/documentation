@@ -56,13 +56,13 @@
 <tbody>
 <row>
     <entry>
-      <xref href="http://docs.hpcloud.com/helion/devplatform/install#install-database" scope="external" format="html" >Install</xref>
+      <xref href="1.0devplatform_commercial_install.dita#install-database" >Install</xref>
       <!--A BR tag was used here in the original source.-->
     </entry>
     <entry>
-      <xref href="http://docs.hpcloud.com/helion/devplatform/databaseservice/" scope="external" format="html" >Provision</xref>
+      <xref href="1.1devplatform.database-instance.dita" >Provision</xref>
       <!--A BR tag was used here in the original source.-->
-      <xref href="http://docs.hpcloud.com/helion/devplatform/connectdatabase/" scope="external" format="html" >Connect with ALS</xref>
+      <xref href="1.1devplatform.database-ALS.dita" >Connect with ALS</xref>
     </entry>
   </row>
 </tbody>
@@ -83,13 +83,13 @@
 <tbody>
 <row>
     <entry>
-      <xref href="http://docs.hpcloud.com/helion/devplatform/install#install-messaging/" scope="external" format="html" >Install</xref>
+      <xref href="1.0devplatform_commercial_install.dita#install-messaging/" >Install</xref>
       <!--A BR tag was used here in the original source.-->
     </entry>
     <entry>
-      <xref href="http://docs.hpcloud.com/helion/devplatform/messageservice/" scope="external" format="html" >Provision</xref>
+      <xref href="1.0devplatform.using-the-messaging-service.dita" >Provision</xref>
       <!--A BR tag was used here in the original source.-->
-      <xref href="http://docs.hpcloud.com/helion/devplatform/1.0/msgaas/als/" scope="external" format="html" >Connect with ALS</xref>
+      <xref href="1.0devplatform.using-messaging-service-with-ALS.dita" >Connect with ALS</xref>
     </entry>
   </row>
 </tbody>
@@ -110,11 +110,11 @@
 <tbody>
 <row>
     <entry>
-      <xref href="http://docs.hpcloud.com/helion/devplatform/install#install-marketplace" scope="external" format="html" >Install</xref>
+      <xref href="1.0devplatform_commercial_install.dita#install-marketplace" >Install</xref>
       <!--A BR tag was used here in the original source.-->
     </entry>
     <entry>
-      <xref href="http://docs.hpcloud.com/helion/devplatform/marketplace/" scope="external" format="html" >Provision</xref>
+      <xref href="1.0devplatform.marketplace.install.dita" >Provision</xref>
     </entry>
   </row>
 </tbody>
