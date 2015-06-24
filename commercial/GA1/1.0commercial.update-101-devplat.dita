@@ -37,12 +37,12 @@
 <section id="prerequisites"> <title>Prerequisites</title>
 <p>The following guide outlines the steps to update Helion Development Platform from version 1.0 to 1.01. Before executing these steps, ensure you have upgraded HP Helion <tm tmtype="reg">OpenStack</tm> to 1.01 as described in the <xref href="../../commercial/GA1/1.0commercial.update-101-overview.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Update Overview</xref>.</p>
 <p>
-<b>Note:</b> If you created a new installation of 1.01, bypassing 1.0, you need to install HP Helion <tm tmtype="reg">OpenStack</tm> Development Platform Services, and not update. See <xref href="http://docs.hpcloud.com/helion/devplatform/install/" scope="external" format="html" >Development Platform Install Guide</xref>.</p>
+  <b>Note:</b> If you created a new installation of 1.01, bypassing 1.0, you need to install HP Helion <tm tmtype="reg">OpenStack</tm> Development Platform Services, and not update. See <xref href="../../devplatform/1.0devplatform_commercial_install.dita" >Development Platform Install Guide</xref>.</p>
 </section>
 <section id="update-messaging"> <title>Update the Messaging Service</title>
 <p>This section provides details on updating the Messaging Service for Helion <tm tmtype="reg">OpenStack</tm> Development Platform. This assumes that the Messaging Service is installed in your cloud.</p>
 <p>
-<b>Note:</b> If the Message Service is not installed, see the <xref href="http://docs.hpcloud.com/helion/devplatform/install#install-messaging" scope="external" format="html" >Helion <tm tmtype="reg">OpenStack</tm> Development Platform Install Guide</xref>.</p>
+  <b>Note:</b> If the Message Service is not installed, see the <xref href="../../devplatform/1.0devplatform_commercial_install.dita#install-messaging" >Helion <tm tmtype="reg">OpenStack</tm> Development Platform Install Guide</xref>.</p>
 </section>
 <section id="download"> <title>Download the Messaging Service</title>
 <ol>
@@ -63,7 +63,7 @@
 <section id="update-als"> <title>Update the Application Lifecycle Service (ALS)</title>
 <p>This section provides details on updating the Application Lifestyle service (ALS) for Helion <tm tmtype="reg">OpenStack</tm> Development Platform. This assumes that (ALS) is installed in your cloud.</p>
 <p>
-<b>Note:</b> If the Message Service is not installed, see the <xref href="http://docs.hpcloud.com/helion/devplatform/install#install-als" scope="external" format="html" >Helion <tm tmtype="reg">OpenStack</tm> Development Platform Install Guide</xref>.</p>
+  <b>Note:</b> If the Message Service is not installed, see the <xref href="../../devplatform/1.0devplatform_commercial_install.dita#install-als" >Helion <tm tmtype="reg">OpenStack</tm> Development Platform Install Guide</xref>.</p>
 <p>The process for updating ALS requires you to remove then have asked that you remove the current version then installing ALS 1.01.</p>
 </section>
 <section id="remove-als"> <title>Remove Application Lifecycle Service 1.0</title>
@@ -98,7 +98,7 @@
 <section id="update-database"> <title>Update the Database Service</title>
 <p>This section provides details on updating the Database Service for Helion <tm tmtype="reg">OpenStack</tm> Development Platform. This assumes that the Database service is installed in your cloud.</p>
 <p>
-<b>Note:</b> If the Database service is not installed, see the <xref href="http://docs.hpcloud.com/helion/devplatform/install#install-database" scope="external" format="html" >Helion <tm tmtype="reg">OpenStack</tm> Development Platform Install Guide</xref>.</p>
+  <b>Note:</b> If the Database service is not installed, see the <xref href="../../devplatform/1.0devplatform_commercial_install.dita#install-database">Helion <tm tmtype="reg">OpenStack</tm> Development Platform Install Guide</xref>.</p>
 </section>
 <section id="download-db"> <title>Download the Database Service</title>
 <p>To download the latest version of the Database service:</p>
@@ -114,7 +114,7 @@
 <section id="update-marketplace"> <title>Update the Marketplace Service</title>
 <p>This section provides details on updating the Marketplace service for the Helion <tm tmtype="reg">OpenStack</tm> Development Platform. This assumes that the Marketplace service is installed in your cloud.</p>
 <p>
-<b>Note:</b> If the Marketplace service is not installed, see the <xref href="http://docs.hpcloud.com/helion/devplatform/install#install-marketplace" scope="external" format="html" >Helion <tm tmtype="reg">OpenStack</tm> Development Platform Install Guide</xref>.</p>
+  <b>Note:</b> If the Marketplace service is not installed, see the <xref href="../../devplatform/1.0devplatform_commercial_install.dita#install-marketplace" >Helion <tm tmtype="reg">OpenStack</tm> Development Platform Install Guide</xref>.</p>
 </section>
 <section id="update-marketplace2"> <title>Download the Marketplace Service</title>
 <ol>
