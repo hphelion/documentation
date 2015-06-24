@@ -64,7 +64,11 @@ instructions further down. But before you push the button, ensure that you have 
 </section>
 <section id="deploy-the-application"> <title>Deploy the Application</title>
 <p>
-<b>Note</b>: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be <xref href="../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#staging-cache-app-http-proxy" >made aware of the proxy</xref>. The sample applications require access to the Internet in order to download dependent packages.</p>
+        <b>Note</b>: Application Lifecycle Service clusters that require an upstream HTTP proxy to
+        access the internet will need to be <xref
+          href="../../helion/admin/server/1.2configuration.dita#topic31232/staging-cache-app-http-proxy"
+          >made aware of the proxy</xref>. The sample applications require access to the Internet in
+        order to download dependent packages.</p>
 <p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the <xref href="../../../../devplatform/1.2/1.2devplatform.eclipse.dita" >plugin</xref>.</p>
 <ol>
 <li>Open the <xref href="../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >ALS command-line interface (CLI)</xref>
