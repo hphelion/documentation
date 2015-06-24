@@ -197,22 +197,4 @@ New-NetFirewallRule -DisplayName 'Allow HTTP' -Direction Inbound -LocalPort 80 -
 <p>After creating the profile, use the <codeph>--profile</codeph> command-line switch (above).</p>
 </section>
 </body>
-    <related-links>
-        <link href="windows_overview.dita#topic24073_2"><linktext>Windows Overview</linktext></link>
-        <link href="../../../devplatform/1.2/windows/windows_tools_guide.dita">
-            <linktext>Windows and .NET Tools Guide</linktext>
-        </link>
-        <link href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita">
-            <linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext>
-        </link>
-        <link href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita">
-            <linktext>Glazier Reference Guide</linktext>
-        </link>
-        <link href="../../../devplatform/1.2/windows/windows_adding_services.dita">
-            <linktext>Adding Services to a Windows Application</linktext>
-        </link>
-        <link href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita">
-            <linktext>Deploying Windows Applications with the IIS Buildpack</linktext>
-        </link>
-    </related-links>
 </topic>
