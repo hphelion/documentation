@@ -71,7 +71,7 @@ a console application.</p>
 <p>To learn more see:</p>
 <ul outputclass="simple">
 <li>
-<xref href="http://docs.hpcloud.com/als/v1/user/deploy/languages/ruby/" scope="external" format="html"  outputclass="reference external">Working with applications in ruby</xref>
+  <xref href="1.0ruby.dita">Working with applications in ruby</xref>
 </li>
 <li>The [manifest.yml](/als/v1/user/deploy/manifestyml/) reference</li>
 </ul>
