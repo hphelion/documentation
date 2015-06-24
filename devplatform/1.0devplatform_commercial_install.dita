@@ -149,7 +149,7 @@
 <p>This section provides details on installing the Application Lifecycle service from the Development Platform.</p>
 </section>
 <section id="als-prerequisites"> <title>Prerequisites</title>
-<p>For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. This process is documented in Step 7 of <xref href="http://docs.hpcloud.com/helion/community/install#startseed" scope="external" format="html" >"Starting the seed and building your cloud"</xref> in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the <xref href="../devplatform/helion/admin/server/1.1configuration.dita#http-proxy" >Administration Guide</xref>.</p>
+  <p>For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. This process is documented in Step 7 of <xref href="../community/community.install.baremetal.dita#startseed" >"Starting the seed and building your cloud"</xref> in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the <xref href="../devplatform/helion/admin/server/1.1configuration.dita#http-proxy" >Administration Guide</xref>.</p>
 </section>
 <section id="als-connect-to-the-download-service"> <title>Connect to the Download Service</title>
 <ol>
