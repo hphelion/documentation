@@ -696,6 +696,8 @@
     <topicref href="devplatform/1.2/helion/1.2index.dita" locktitle="yes"
       navtitle="Application Lifecycle Service Documentation">
       <!--permalink: /helion/devplatform/1.2/als/admin/-->
+      <topicref href="devplatform/1.2/helion/CLI/1.2constructor_vm.dita"
+        navtitle="ALS Constructor Virtual Machine" locktitle="yes"/>
       <topichead navtitle="ALS Management Console">
         <topicref href="devplatform/1.2/helion/admin/console/1.2index.dita" locktitle="yes"
           navtitle="Management Console (Admin View)"/>
@@ -936,8 +938,8 @@
     <topicref href="devplatform/1.1devplatform.release-notes.dita" locktitle="yes"
       navtitle="Release Notes"/>
     <topichead navtitle="Installation and Configuration">
-      <topicref href="index.dita" locktitle="yes"
-        navtitle="Commercial Installation and Configuration "
+      <topicref href="devplatform/1.1devplatform_commercial_install.dita" locktitle="yes"
+        navtitle="Installation and Configuration "
         ><!--permalink: /helion/devplatform/1.1/marketplace/--><!--permalink: /helion/devplatform/1.1/install/troubleshooting/--><!--permalink: /helion/devplatform/1.1/related-topics/--><!--permalink: /helion/devplatform/1.1/release-notes/--></topicref>
       <topicref href="devplatform/1.1devplatform.marketplace.install.dita" locktitle="yes"
         navtitle="The Marketplace (Beta) "/>
