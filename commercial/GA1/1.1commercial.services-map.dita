@@ -17,9 +17,9 @@
 </p>
 <p>
   <imagemap>
-<image href="/content/documentation/media/serviceflow.png">
-<alt/>
-</image>
+<image href="../../media/serviceflow.png">
+                    <alt/>
+                </image>
 <!-- id="mainHOS" -->
     <area>
 <shape>rect</shape>

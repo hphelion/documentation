@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1769">
-<title>HP Helion OpenStack!registeredtrademarksymbol! 1.1: Services Map</title>
+  <title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Services Map</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -16,16 +16,16 @@
   <!--A BR tag was used here in the original source.-->
 </p>
 <p>
-  <image href="/content/documentation/media/heat_diagram.png" placement="break">
-<alt/>
-</image>
-  <!--A BR tag was used here in the original source.-->
-  <xref href="/helion/openstack/1.1/services/map/" format="html">
-    <image href="/content/documentation/media/back.png">
-<alt/>
-</image>
-  </xref>
-</p>
+      <image href="../../media/heat_diagram.png" placement="break">
+        <alt/>
+      </image>
+      <!--A BR tag was used here in the original source.-->
+      <xref href="/helion/openstack/1.1/services/map/" format="html">
+        <image href="../../media/back.png">
+          <alt/>
+        </image>
+      </xref>
+    </p>
 <section>
 <title>
 <!-- id="heat-orchestration-service" -->Heat orchestration service</title>
@@ -47,11 +47,9 @@
 <related-links>
 <linklist>
 <title>Collected links</title>
-<link href="/helion/openstack/1.1/services/map/" format="html">
-<linktext>
-    
-  </linktext>
-</link>
+<link href="1.1commercial.services-map.dita">
+        <linktext>Service Map </linktext>
+      </link>
 </linklist>
 </related-links>
 </topic>
