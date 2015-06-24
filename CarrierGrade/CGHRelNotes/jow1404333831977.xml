@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6108">
+
+    <title>Known Problems and Limitations</title>
+    <shortdesc>You may encounter some known limitations when working with this release.</shortdesc>
+    <prolog>
+        <author>Jim Owens</author>
+        <author>Pedro Sanchez</author>
+    </prolog>
+    <body>
+        <section>
+            <title>SR-IOV limitations</title>
+            <ul>
+                <li>
+                    <p>SR-IOV is supported only for Intel 82599.</p>
+                </li>
+                <li>
+                    <p>The maximum number of VFs per NIC is 32.</p>
+                </li>
+                <li>
+                    <p>SR-IOV and PCI passthrough cannot both be used on the same provider
+                        network.</p>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <title>Interface or interface consolidation limitations</title>
+            <ul>
+                <li>
+                    <p>VLAN over bonded interface without an assigned network type
+                        is not supported.</p>
+                </li>
+                <li>
+                    <p>Addition of an infrastructure interface after installation is not
+                        functional.</p>
+                </li>
+                <li>
+                    <p>Consolidation of the infrastructure network over the OAM
+                        network is not supported.</p>
+                </li>
+                <li>
+                    <p>Stacked VLANs are not supported. On a consolidated management
+                        or infrastructure interface, a VLAN provider network can be associated
+                        directly with the untagged interface; however, flat or VXLAN provider
+                        networks must be associated with a consolidated VLAN data interface.</p>
+                </li>
+                <li>
+                    <p>Interface profiles cannot be created for <!--AE and -->VLAN
+                        interface types. </p>
+                </li>
+                <li>
+                    <p>The <cmdname>system
+                            host-if-modify-ports</cmdname> command is deprecated.<!--  --></p>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <title>Mellanox limitations</title>
+            <ul>
+                <li>
+                    <p>For a Mellanox CX3, all ports must be used ether for data
+                        interfaces, or for non-data interfaces. It is not possible to use some ports
+                        for data interfaces and others for non-data interfaces on the same Mellanox
+                        CX3 NIC.</p>
+                </li>
+                <li>
+                    <p>Jumbo frames are not supported on Mellanox NICs.</p>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <title>Installation does not fully utilize disks greater than two terabytes</title>
+            <p>HP Helion OpenStack Carrier Grade can be installed on disks greater than 2 TB, but only 2 TB of the
+                disk is useable.</p>
+        </section>
+        <section>
+            <title>Cannot create Cinder LVM volumes using disks greater than two
+                terabytes</title>
+            <p>Using a disk greater than 2 TB for Cinder LVM results in a
+                    <filepath>config_controller</filepath> failure.</p>
+        </section>
+        <section>
+            <title>Guest heartbeat and notification features are not fully
+                validated.</title>
+            <p>Heartbeat and notification services for VMs are not fully validated. </p>
+        </section>
+        <section>
+            <title>Cinder API version generates a log warning</title>
+            <p>The V1 API for Cinder in use by this version of HP Helion OpenStack Carrier Grade is deprecated,
+                resulting in log warnings.</p>
+        </section>
+    </body>
+</topic>
