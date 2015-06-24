@@ -1653,6 +1653,11 @@
   <!-- Carrier Grade -->
   
   <topicref href="CarrierGrade/carrier-grade-index.dita">
+    <topicref href="CarrierGrade/Overview/carrier-grade-overview.dita">
+      <topicref href="CarrierGrade/Overview/carrier-grade-overview-non-kvm.dita"/>
+      <topicref href="CarrierGrade/Overview/carrier-grade-overview-kvm.dita"/>
+      <topicref href="CarrierGrade/Overview/carrier-grade.services-overview.dita"/>
+    </topicref>
     <topichead navtitle="Installing the Non-KVM Servers"/>
     <topichead navtitle="Installing the KVM Server (PDF)">
       <topicref href="PDF/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf" navtitle="HP Helion OpenStack Carrier Grade Software Install" locktitle="yes" format="pdf"/>
