@@ -277,16 +277,7 @@ network-name: {network name}
 </section>
 <section id="activating-windows-images"> <title>Activating Windows Images</title>
 <p>When a Windows DEA or SQL Server image node added to an ALS server, these instances need to be activated to be compliant with <xref href="https://www.microsoft.com/licensing/" scope="external" format="html" >Microsoft licensing</xref>. You can activate by either connecting to them with Remote Desktop and activating Windows manually, or by using KVM.</p>
-<!-- ===================== horizontal rule ===================== -->
-<xref href="../../../devplatform/1.2/windows/windows_overview.dita" >Windows Overview</xref>
-<xref href="../../../devplatform/1.2/windows/windows_firstapp.dita" >Deploying your first .NET Application</xref>
-<p> | </p>
-<xref href="../../../devplatform/1.2/windows/windows_tools_guide.dita" >Windows and .NET Tools Guide</xref>
-<p> Building and Deploying Windows DEA and SQL Server Express Images | </p>
-<xref href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita" >Glazier Reference Guide</xref>
-<xref href="../../../devplatform/1.2/windows/windows_adding_services.dita" >Adding Services to a Windows Application</xref>
-<p> | </p>
-<xref href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita" >Deploying Windows Applications with the IIS Buildpack</xref>
+
 </section>
 </body>
 </topic>
