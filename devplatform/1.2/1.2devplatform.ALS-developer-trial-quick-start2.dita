@@ -87,7 +87,7 @@
                     scope="external" format="html"><tm tmtype="reg">Mac OS X</tm></xref>
                 </li>
               </ul> The <xref
-                href="http://docs.hpcloud.com/helion/devplatform/1.2/als/user/reference/client-ref"
+                href="helion/user/reference/1.2client-ref.dita"
                 scope="external" format="html">Command Reference</xref> has full descriptions of all
               ALS Client commands and options. </entry>
           </row>
