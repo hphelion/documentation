@@ -29,8 +29,9 @@
 <xref type="section" href="#topic5773/create">Create a database instance</xref>
 </li>
 <li>
-<xref type="section" href="#topic5773/backup">Create a database backup</xref>
-</li>
+        <xref href="#topic5773/creating-a-database-backup" format="dita">Create a database
+          backup</xref>
+      </li>
 <li>
 <xref type="section" href="#topic5773/replicate">Replicate a database</xref>
 </li>
@@ -42,7 +43,8 @@
 <ol>
 <li>Install the <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref>. </li>
 <li>
-<xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita#install-database" >Configure</xref> the database service.</li>
+          <xref href="1.2devplatform_commercial_install.dita#topic24073/install-database">Configure
+            the database service</xref>.</li>
 </ol>
 </section>
 <section id="create"> <title>Creating a Database Instance</title>
