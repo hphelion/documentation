@@ -123,12 +123,4 @@
 </ol>
 </section>
 </body>
-  <related-links>
-    <link href="../../../devplatform/1.2/windows/windows_overview.dita"><linktext>Windows Overview</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_firstapp.dita"><linktext>Deploying your first .NET Application</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_tools_guide.dita"><linktext>Windows and .NET Tools Guide</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita"><linktext>Building and Deploying Windows DEA and SQL Server Express Images</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita"><linktext>Glazier Reference Guide</linktext></link>
-    <link href="../../../devplatform/1.2/windows/windows_custom_buildpacks.dita"><linktext>Deploying Windows Applications with the IIS Buildpack</linktext></link>
-  </related-links>
 </topic>
