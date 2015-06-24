@@ -109,6 +109,11 @@ web server, application dependencies, databases, and other services.</p>
                 <li>
                   <xref href="../user/deploy/languages/1.2php.dita">PHP</xref>
                 </li>
+                <li><xref href="deploy/languages/perl/1.2index.dita">Perl</xref></li>
+                <li><xref href="deploy/languages/python/1.2index.dita">Python</xref></li>
+                <li><xref href="deploy/languages/1.2clojure.dita">Clojure</xref></li>
+                <li><xref href="deploy/languages/1.2go.dita">Go</xref></li>
+                <li><xref href="deploy/languages/1.2ruby.dita">Ruby</xref></li>
               </ul></li>
           </ul></li>
 </ul>
@@ -167,22 +172,6 @@ web server, application dependencies, databases, and other services.</p>
 </li>
 <li>
   <xref href="../admin/console/1.2customize.dita#topic5029/support">Support</xref>
-</li>
-</ul>
-</section>
-<section id="reference"> <title>Reference</title>
-<ul>
-<li>
-<xref href="../user/reference/1.2environment.dita">Environment Variables</xref>
-</li>
-<li>
-          <xref href="../user/reference/1.2glossary.dita">Glossary</xref>
-        </li>
-<li>
-          <xref href="../user/reference/1.2troubleshoot.dita">Troubleshooting</xref>
-        </li>
-<li>
-<xref href="../user/reference/1.2api.dita">Application Lifecycle Service Client API</xref>
 </li>
 </ul>
 </section>
