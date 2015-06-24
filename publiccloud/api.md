@@ -11,7 +11,6 @@ product: public-cloud
 We offer a number of HP Helion Public Cloud APIs. In addition, we have some public beta and private beta APIs that you can put to use, so please give them a try.
 
 * [APIs in general availability](#apiga)
-* [APIs in public beta](#pubbeta)
 * [APIs in private beta](#privbeta)
 
 ##HP Helion Public Cloud APIs in General Availability {#apiga}
@@ -29,14 +28,9 @@ There are a number of HP Helion Public Cloud APIs available for your programming
 * [Object Storage](/publiccloud/api/object-storage/): API for HP Helion Public Cloud object storage; a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. 
 * [Relational Database](/publiccloud/api/dbaas/): API for the HP Helion Public Cloud Relational Database service; simplifies the creation and management of MySQL database instances.
 
-##APIs in Public Beta {#pubbeta}
-
-* [Monitoring v1.1](/publiccloud/api/monitoring/): API for the HP Helion Public Cloud Monitoring  v13.5; facilitates monitoring of the health and other metrics for the resources in HP Helion Public Cloud.
-
 ##APIs in Private Beta {#privbeta}
 
 You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!
-
 
 * [Load Balancer as a Service (LBaaS)](/publiccloud/api/lbaas/): API for the HP Helion Public Cloud Load Balancer service; facilitates creation and management of load balancers.
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://horizon.hpcloud.com/landing/pbr/hpext:lbaas).  Service use is free of charge during the private beta period.	

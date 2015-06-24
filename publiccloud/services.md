@@ -15,7 +15,6 @@ There are a number of HP Helion Public Cloud services available for you:
 * [Compute](/publiccloud/compute/): A method for you to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.
 * [DNS](/publiccloud/dns/): A managed domain name service that features anycast routing hosted by HP.
 * [Identity service](/publiccloud/identity/): One-stop authentication for all HP Helion Public Cloud Service offerings.
-* [Monitoring](/publiccloud/maas/): Allows you to monitor the health and other metrics of your resources in HP Helion Public Cloud.
 * [Object storage](/publiccloud/object-storage/): A way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. 
 * [Relational Database](/publiccloud/dbaas/): Provides you with a simplified method for creation and management of MySQL database instances.
 
