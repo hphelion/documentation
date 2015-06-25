@@ -721,8 +721,7 @@
     <!--permalink: /helion/devplatform/1.2/sysadmin/-->
     <topichead navtitle="Windows Reference">
       <topicref href="devplatform/1.2/windows/windows_overview.dita" locktitle="yes"
-        navtitle="Windows Overview"
-        ><!--permalink: /helion/devplatform/1.2/windows/adding_services/--><!--permalink: /helion/devplatform/1.2/windows/building_windows/--><!--permalink: /helion/devplatform/1.2/windows/buildpack/--><!--permalink: /helion/devplatform/1.2/windows/deploying/--><!--permalink: /helion/devplatform/1.2/windows/glazier/--><!--permalink: /helion/devplatform/1.2/windows/powershell/--><!--permalink: /helion/devplatform/1.2/windows/remoting/--><!--permalink: /helion/devplatform/1.2/windows/deployingnet/--></topicref>
+        navtitle="Windows Overview"/>
       <topicref href="devplatform/1.2/windows/windows_firstapp.dita" locktitle="yes"
         navtitle="Deploying your first .NET Application"/>
       <topicref href="devplatform/1.2/windows/windows_adding_services.dita" locktitle="yes"

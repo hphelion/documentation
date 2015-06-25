@@ -2,16 +2,7 @@
 <project version="16.1">
     <meta>
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
-        <options>
-            <serialized version="16.1" xml:space="preserve">
-                <map>
-                    <entry>
-                        <String>keys.context</String>
-                        <String>${pdu}/docs.hpcloud.com.ditamap</String>
-                    </entry>
-                </map>
-            </serialized>
-        </options>
+        <options/>
     </meta>
     <projectTree name="master-project.xpr">
         <folder path="automation/"/>
