@@ -36,25 +36,16 @@
   <image href="../../../media/helion-openstack50.png"/>
 </p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/helion-openstack.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
-</p>
-<p>
-  <b>Communication Diagram from <tm tmtype="reg">Helion OpenStack</tm> to Ceph Cluster</b>
-  <!--A BR tag was used here in the original source.-->
-</p>
+      <b>Communication Diagram from <tm tmtype="reg">Helion OpenStack</tm> to Ceph Cluster</b>
+      <!--A BR tag was used here in the original source.-->
+    </p>
 <p>
   <image href="../../../media/cephcomm50.png"/>
-</p>
-<p>
-  <xref format="html" href="javascript:window.open('/media/cephcomm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
 </p>
 <p>
 <b>Logical Reference Architecture Diagram for Ceph Cluster</b> </p>
 <p>
   <image href="../../../media/cephlogicalarch50.png"/>
-</p>
-<p>
-  <xref format="html" href="javascript:window.open('/media/cephlogicalarch.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
 </p>
 <p>
   <b><tm tmtype="reg">Helion OpenStack</tm> with Ceph Cluster Deployment Example</b>
@@ -69,9 +60,6 @@
 <p>
   <image href="../../../media/ceph-deployment-example.png" placement="break"/>
   <!--A BR tag was used here in the original source.-->
-</p>
-<p>
-  <xref format="html" href="javascript:window.open('/media/ceph-deployment-example.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
 </p>
 <section id="for-more-information"> <title>For more information</title>
 <p>
