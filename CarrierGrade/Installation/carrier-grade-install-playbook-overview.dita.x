@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5675">
-    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Installation Overview</title>
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installation Overview</title>
     <titlealts>
-        <searchtitle>HP Helion Openstack Carrier Grade (Beta): Installation Overivew</searchtitle>
+        <searchtitle>HP Helion Openstack Carrier Grade 1.1: Installation Overivew</searchtitle>
 
     </titlealts>
     <prolog>

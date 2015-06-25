@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4470">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Distributed Cloud Networking (DCN) Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Distributed Cloud Networking (DCN) Overview</title>
 <titlealts>
-<searchtitle>HP Helion Openstack Carrier Grade (Beta): Distributed Cloud Networking Overview</searchtitle>
+<searchtitle>HP Helion Openstack Carrier Grade 1.1: Distributed Cloud Networking Overview</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
