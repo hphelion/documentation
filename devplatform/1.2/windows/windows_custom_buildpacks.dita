@@ -33,13 +33,11 @@
 <p>A <b>Buildpack</b> is a collection of scripts that specify what frameworks and runtimes are to be deployed with an application.</p>
 <p>When you build and deploy a Windows application, the following steps take place:</p>
 <ol>
-<li>
-<p>You will be prompted for connection data (Endpoint, login, and password), and whether to ignore SSL errors. You should check "Ignore SSL errors" in the dialog if your deployment environment uses self-signed SSL certificates (such as HP Helion Public Cloud).</p>
-
-<p>
-<image href="../../../media/windows_publish_credentials.png"/>
-</p>
-</li>
+<li> You will be prompted for connection data (Endpoint, login, and password), and whether to ignore
+        SSL errors. You should check "Ignore SSL errors" in the dialog if your deployment
+        environment uses self-signed SSL certificates (such as HP Helion Public Cloud).<p>
+          <image href="../../../media/windows_publish_credentials.png" placement="break"/>
+        </p></li>
 <li>Application settings are collected from <codeph>manifest.yml</codeph>.</li>
 <li>If a local build is requested, projects in the solution directory are deployed to a temporary folder and compiled with <b>MSBuild</b>.</li>
 <li>Projects are deployed using the <b>CloudFoundry MS Build Tasks</b>.</li>

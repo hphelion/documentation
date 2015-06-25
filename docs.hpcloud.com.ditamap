@@ -20,9 +20,9 @@
   <topicref href="commercial/GA1/1.1commercial.index.dita"
     navtitle="HP Helion Openstack(R) 1.1: Documentation Home">
     <topicref href="commercial/GA1/1.1commercial.whatsnew.dita"/>
-    <topicref href="commercial/GA1/1.1.1commercial.helion-update.dita"/>
+    <topicref href="commercial/GA1/1.1.1commercial.helion-update.dita" navtitle="Update to HP Helion OpenStack 1.1.1"/>
     <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
-    <topicref href="commercial/GA1/1.1commercial.release-notes.dita"/><!--set to toc=no later-->
+    <topicref href="commercial/GA1/1.1commercial.release-notes.dita"  /><!--set to toc=no later-->
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.start.dita">
       <topicref href="commercial/GA1/1.1commercial.faq.dita"/>
       <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"/>
@@ -142,7 +142,7 @@
           href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita"/>
       </topicref>
       <!--Ceph stuff-->
-      <topicref href="commercial/GA1/1.1commercial.ceph-overview.dita">
+      <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita">
         <topicref href="commercial/GA1/ceph/1.1commerical.services-ceph-archref.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-pre-requisite.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita"/>
@@ -213,9 +213,10 @@
       <topicref href="commercial/GA1/1.1commercial.install-GA-overview.dita">
         <topicref href="commercial/GA1/1.1commercial.roll.dita"/>
         <topicref href="commercial/GA1/1.1commercial.install-GA-virtual-control.dita"/>
-        <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita"/> <!--set to toc=no later-->
-        <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"/><!--set to toc=no later-->
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"/><!--set to toc=no later-->
+        <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita"/>
+        <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"
+          /><!--set to toc=no later-->
+        <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita" /><!--set to toc=no later-->
       </topicref>
       <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita">
         <topicref href="commercial/GA1/1.1commerical.install.HPLinux.dita">
@@ -228,7 +229,8 @@
         <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs-network.dita"/>
         <topicref href="commercial/GA1/1.1commercial.install-GA-NTP.dita"/>
         <topicref href="commercial/GA1/1.1commercial.install-GA-JSON.dita">
-          <topicref href="commercial/GA1/1.1commercial.install-GA-JSON-scenarios.dita"/><!--set to toc=no later-->
+          <topicref href="commercial/GA1/1.1commercial.install-ip-addresses.dita"/>
+          <topicref href="commercial/GA1/1.1commercial.install-GA-JSON-scenarios.dita" /><!--set to toc=no later-->
         </topicref>
         <topicref href="commercial/GA1/1.1commercial.install-GA-CSV.dita"/>
         <topicref href="commercial/GA1/1.1commercial.name-resolution.dita"/>
@@ -276,13 +278,14 @@
         <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"/>
       </topichead>
     </topicref>
+    <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita">
+      <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
+    </topicref>
     <topichead navtitle="HP Helion Openstack(R) 1.1: Post-Installation Tasks">
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"/>
-      <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
       <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
     </topichead>
-    <topichead navtitle="HP Helion Openstack(R) 1.1: Using the Undercloud Horizon Dashboard">
+    <topichead navtitle="HP Helion Openstack(R) 1.1: Undercloud Operations">
       <topicref href="commercial/GA1/1.1commercial.using.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-admin-settings.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-resources-overview.dita"/>
@@ -294,6 +297,7 @@
       <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita"/>
     </topichead>
     <topichead navtitle="HP Helion Openstack(R) 1.1: System Restore and Recovery">
+      <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"/>
       <topicref
         href="commercial/GA1/1.1commerical.services-remove-replace-failed-overcloud-nodes.dita"/>
       <topicref href="commercial/GA1/1.1commerical.high-availability-restore.dita"/>
@@ -306,7 +310,7 @@
     <!-- Troubleshooting -->
     <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita">
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"/> <!--not on site--><!--set to toc=no later-->
+      <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita" /><!--set to toc=no later--> <!--not on site-->
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.controllers.dita"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.dns.dita"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.dita"/>
@@ -325,11 +329,10 @@
     <topicref href="commercial/GA1/1.1commerical.services-logging-overview.dita"/>
 
     <!-- backup -->
-      <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"/>
     <!-- Update -->
     <!-- FCP -->
     <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-overview.dita">
-      <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-backup.dita"/>
+     
       <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-installation.dita"/>
     </topicref>
     <topichead navtitle="HP Helion Openstack(R) 1.1: License Files">
@@ -340,13 +343,13 @@
    
     <!-- Glossary -->
     <!-- Not in 1.1.1 -->
-    <topicref href="commercial/GA1/1.1commerical.services-eve-overview.dita"/> <!--set to toc=no later-->
-    <topicref  href="commercial/GA1/1.1commerical.services-focus-overview.dita"/> <!--set to toc=no later--> 
-  <!--set to toc=no later. site index not needed leaving comment just in case-->
+    <topicref href="commercial/GA1/1.1commerical.services-eve-overview.dita" /><!--set to toc=no later--> 
+    <topicref  href="commercial/GA1/1.1commerical.services-focus-overview.dita" /><!--set to toc=no later--> 
+    <!--set to toc=no later  removed site index. not needed-->
     <topicref href="commercial/GA1/1.1commercial.glossary.dita"/> 
     <!-- Files in MD repo Under Revision not in DITA -->      
-    <topicref href="commercial/GA1/1.1commercial.install-GA-OpenStackClient.dita"/><!--set to toc=no later-->
-    <topicref href="commercial/GA1/1.1commercial.install-ip-addresses.dita"/> <!--set to toc=no later-->
+    <topicref href="commercial/GA1/1.1commercial.install-GA-OpenStackClient.dita" /><!--set to toc=no later-->
+    <topicref href="commercial/GA1/1.1commercial.install-ip-addresses.dita" /><!--set to toc=no later-->
  
  
  
@@ -365,47 +368,62 @@
       <topicref href="commercial/GA1/1.0commerical.services-identity-overview.dita"/>
       <topicref href="commercial/GA1/1.0commerical.services-imaging-overview.dita"/>
       <topicref href="commercial/GA1/1.0commerical.services-networking-overview.dita"/>
-      <topicref href="commercial/GA1/1.0commerical.services-object-overview.dita"/>
+      <topicref href="commercial/GA1/1.0commerical.services-object-overview.dita">
+        <topicref href="commercial/GA1/1.0commerical.services-scale-out-swift.dita">
+          <topichead navtitle="Scale up or expand">
+            <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
+            <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-provision-swift-node.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-expand-swift-cluster.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-storage-node.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-add-proxy-node.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-account-container.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-starter-object-ring.dita"/>
+            <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-part-power.dita"
+            />
+          </topichead>
+          <topichead navtitle="Shrink or scale down">
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-proxy-node.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-swift-cluster.dita"
+            />
+          </topichead>
+          <topichead navtitle="Monitor">
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-disk.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-replica-swift-status.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-health-check.dita"/>
+            <topicref
+              href="commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita"
+            />
+          </topichead>
+          <topicref href="commercial/GA1/1.0commerical.services-object-pyringos.dita"/>
+        </topicref>
+      </topicref>
       
       <!-- Swift -->
-      <topicref href="commercial/GA1/1.0commerical.services-scale-out-swift.dita">
-        
-        <topichead navtitle="Scale up or expand">
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment.dita"/>      
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-provision-swift-node.dita"/>
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-expand-swift-cluster.dita"/>
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-storage-node.dita"/>
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-add-proxy-node.dita"/>
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-account-container.dita"/>
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-add-disk-starter-object-ring.dita"/>
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-part-power.dita"/>
-        </topichead>
-        
-        <topichead navtitle="Shrink or scale down">     
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-proxy-node.dita"/>
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>  
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-shrink-swift-cluster.dita"/>     
-        </topichead>
-        
-        <topichead navtitle="Monitor">     
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-cluster.dita"/>         
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-swift-disk.dita"/>
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-replica-swift-status.dita"/>
-          <topicref href="commercial/GA1/1.0commerical.services-swift-deployment-monitor-health-check.dita"/>
-          <topicref href="commercial/GA1/1.0commerical.services-swift-diagnosis-disk-health-hpssacli.dita"/>
-        </topichead>
-        
-        <topicref href="commercial/GA1/1.0commerical.services-object-pyringos.dita"/>
-        
-      </topicref>
       <topicref href="commercial/GA1/1.0commerical.services-orchestration-overview.dita"/>
       <topicref href="commercial/GA1/1.0commerical.services-volume-overview.dita"/>
       <topicref href="commercial/GA1/1.0commerical.services-horizon-overview.dita">
-        <topicref href="commercial/GA1/1.0commercial.dashboard.how-works.dita"/>
         <topicref href="commercial/GA1/1.0commercial.dashboard.launch.dita"/>
+        <topicref href="commercial/GA1/1.0commercial.dashboard.how-works.dita"/>
         <topicref href="commercial/GA1/1.0commercial.undercloud-horizon-overview.dita"/>
       </topicref>
       <topicref href="commercial/GA1/1.0commerical.services-sherpa-overview.dita">  
@@ -422,9 +440,9 @@
       <topicref href="commercial/GA1/1.0commerical.services-dvr-overview.dita"/>
       
       <!-- Not in 1.0 -->
-      <topicref href="commercial/GA1/1.0commerical.services-eve-overview.dita"/><!--set to toc=no later-->
-      <topicref href="commercial/GA1/1.0commerical.services-focus-overview.dita"/> <!--set to toc=no later-->
-      <topicref href="commercial/GA1/1.0commerical.services-reporting-overview.dita"/> <!--set to toc=no later-->
+      <topicref href="commercial/GA1/1.0commerical.services-eve-overview.dita" /><!--set to toc=no later-->
+      <topicref href="commercial/GA1/1.0commerical.services-focus-overview.dita" /><!--set to toc=no later-->
+      <topicref href="commercial/GA1/1.0commerical.services-reporting-overview.dita" /><!--set to toc=no later-->
       
     </topicref>
     
@@ -456,6 +474,7 @@
         <topicref href="commercial/GA1/1.0commercial.install-GA-ovsvapp.dita"/>
         
       </topicref>
+      <topicref href="commercial/GA1/1.0commerical.high-availability.dita"/>
       
       
       <topichead navtitle="HP Helion Openstack(R) 1.0: Post-Installation Tasks">
@@ -463,7 +482,6 @@
         <topicref href="commercial/GA1/1.0commercial.install-GA-LDAP.dita"/>
         <topicref href="commercial/GA1/1.0commercial.install-GA-verify.dita"/>	
         <topicref href="commercial/GA1/1.0commercial.install-GA-DNSaaS.dita"/>
-        <topicref href="commercial/GA1/1.0commerical.high-availability.dita"/>
       </topichead>
       
       
@@ -519,17 +537,16 @@
       <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-overview.dita"/>
       <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-installation.dita"/>
     </topichead>
-    <topicref href="commercial/GA1/1.0commercial.glossary.dita"/>
-    <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita"/> <!--set to toc=no later-->
+    <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita" /><!--set to toc=no later-->
     <topicref href="commercial/GA1/1.0commercial.related-topics.dita"/>
     <topichead navtitle="HP Helion Openstack(R) 1.0: License Files">
       <topicref href="commercial/GA1/1.0commercial.eula.dita"/>
       <topicref href="commercial/GA1/1.03rd-party-license-agreements.dita"/>
     </topichead>
+    <topicref href="commercial/GA1/1.0commercial.glossary.dita"/>
     
   </topicref>
  
-    <!--Community-->
   <!-- Community -->
   
   <topicref href="community/community.index.dita">
@@ -549,54 +566,57 @@
       </topicref>
       <topicref href="community/community.install.virtual.dita"/>
       <topicref href="community/community.verify.dita"/>
-    </topichead> 
-    
-    <topichead navtitle="Post-Install">    
-      <topicref href="community/community.services-identity-configure-v3.dita"/>
-      <topicref href="community/community.networking-maskedIP.dita"/>
-    </topichead>
-    
-    
-    <topicref href="community/community.services-overview.dita">
-      <topicref href="community/community.services-compute-overview.dita">
-        <topicref href="community/community.services-compute-howto.dita"/>
-      </topicref>
-      
-      <topicref href="community/community.services-identity-overview.dita">
-        <topicref href="community/community.services-identity-using.dita"/>
-        <topicref href="community/community.services-identity-configure-v3.dita"/>
-      </topicref>
-      <topicref href="community/community.services-imaging-overview.dita"/>
-      <topicref href="community/community.services-networking-overview.dita"/>
-      <topicref href="community/community.services-orchestration-overview.dita"/>
-      <topicref href="community/community.services-volume-overview.dita"/>
-      <topicref href="community/community.services-reporting-overview.dita"/>
-      <topicref href="community/community.services-horizon-overview.dita"/>
-      <topicref href="community/community.services-sherpa-overview.dita"/>
-      <topicref href="community/community.services-tripleo-overview.dita"/>
-      <topicref href="community/community.services-ironic-overview.dita"/>
-      <topicref href="community/community.services-icinga.dita"/>
-      <topicref href="community/community.services-logging-overview.dita"/>
-    </topicref>
-    
-    
-    <topichead navtitle="Horizon Dashboard">
-      <topicref href="community/community.dashboard.launch.dita"/>
-      <topicref href="community/community.dashboard.how-works.dita"/>
-    </topichead>
+     </topichead> 
+         
+     <topichead navtitle="Post-Install">    
+          <topicref href="community/community.services-identity-configure-v3.dita"/>
+          <topicref href="community/community.networking-maskedIP.dita"/>
+        </topichead>
+        
+       
+        <topicref href="community/community.services-overview.dita">
+          <topicref href="community/community.services-compute-overview.dita">
+            <topicref href="community/community.services-compute-howto.dita"/>
+          </topicref>
+          
+          <topicref href="community/community.services-identity-overview.dita">
+            <topicref href="community/community.services-identity-using.dita"/>
+            <topicref href="community/community.services-identity-configure-v3.dita"/>
+          </topicref>
+          <topicref href="community/community.services-imaging-overview.dita"/>
+          <topicref href="community/community.services-networking-overview.dita"/>
+          <topicref href="community/community.services-orchestration-overview.dita"/>
+          <topicref href="community/community.services-volume-overview.dita"/>
+          <topicref href="community/community.services-reporting-overview.dita"/>
+          <topicref href="community/community.services-horizon-overview.dita"/>
+          <topicref href="community/community.services-sherpa-overview.dita"/>
+          <topicref href="community/community.services-tripleo-overview.dita"/>
+          <topicref href="community/community.services-ironic-overview.dita"/>
+          <topicref href="community/community.services-icinga.dita"/>
+          <topicref href="community/community.services-logging-overview.dita"/>
+        </topicref>
+        
+        
+        <topichead navtitle="Horizon Dashboard">
+         <topicref href="community/community.dashboard.launch.dita"/>
+         <topicref href="community/community.dashboard.how-works.dita"/>
+        </topichead>
     
     <topicref href="community/community.troubleshoot.dita"/>
     
     <topichead navtitle="License Agreements">
-      <topicref href="community/community.3rd-party-license-agreements.dita"/>
-      <topicref href="community/community.eula.dita"/>
+    <topicref href="community/community.3rd-party-license-agreements.dita"/>
+    <topicref href="community/community.eula.dita"/>
     </topichead>
     
     
   </topicref>
   
   
-
+  <!--Dev Plat-->  
+  
+    
+ 
   <topicref href="devplatform/1.2/1.2devplatform.index.dita"
     navtitle="HP Helion 1.2 Development Platform " locktitle="yes"> <!--//OASIS//DTD DITA Topic//EN"-->
     <!--permalink: /helion/devplatform/1.2/3rd-party-license-agreements/-->
@@ -701,22 +721,19 @@
     <!--permalink: /helion/devplatform/1.2/sysadmin/-->
     <topichead navtitle="Windows Reference">
       <topicref href="devplatform/1.2/windows/windows_overview.dita" locktitle="yes"
-        navtitle="Windows Overview"
-        ><!--permalink: /helion/devplatform/1.2/windows/adding_services/--><!--permalink: /helion/devplatform/1.2/windows/building_windows/--><!--permalink: /helion/devplatform/1.2/windows/buildpack/--><!--permalink: /helion/devplatform/1.2/windows/deploying/--><!--permalink: /helion/devplatform/1.2/windows/glazier/--><!--permalink: /helion/devplatform/1.2/windows/powershell/--><!--permalink: /helion/devplatform/1.2/windows/remoting/--><!--permalink: /helion/devplatform/1.2/windows/deployingnet/--></topicref>
-      <topicref href="devplatform/1.2/windows/windows_adding_services.dita" locktitle="yes"
-        navtitle="Adding Services to Windows Applications"/>
-      <topicref href="devplatform/1.2/windows/windows_building_and_deploying.dita" locktitle="yes"
-        navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
-      <topicref href="devplatform/1.2/windows/windows_custom_buildpacks.dita" locktitle="yes"
-        navtitle="Deploying Windows Applications with the IIS Buildpack"/>
-      <topicref href="devplatform/1.2/windows/windows_glazier_reference_guide.dita" locktitle="yes"
-        navtitle="Glazier Reference Guide"/>
-      <topicref href="devplatform/1.2/windows/windows_remoting.dita" locktitle="yes"
-        navtitle="Providing Remote Desktop Access to Windows DEA and Windows SQL Server Instances"/>
+        navtitle="Windows Overview"/>
       <topicref href="devplatform/1.2/windows/windows_firstapp.dita" locktitle="yes"
         navtitle="Deploying your first .NET Application"/>
+      <topicref href="devplatform/1.2/windows/windows_adding_services.dita" locktitle="yes"
+        navtitle="Adding Services to Windows Applications"/>
       <topicref href="devplatform/1.2/windows/windows_tools_guide.dita" locktitle="yes"
         navtitle="Windows and .NET Applications Tools Guide"/>
+      <topicref href="devplatform/1.2/windows/windows_custom_buildpacks.dita" locktitle="yes"
+        navtitle="Deploying Windows Applications with the IIS Buildpack"/>
+      <topicref href="devplatform/1.2/windows/windows_building_and_deploying.dita" locktitle="yes"
+        navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
+      <topicref href="devplatform/1.2/windows/windows_glazier_reference_guide.dita" locktitle="yes"
+        navtitle="Glazier Reference Guide"/>
       <topicref href="devplatform/1.2/windows/windows_growcluster.dita"
         navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
     </topichead>
@@ -761,7 +778,7 @@
       navtitle="Application Lifecycle Service Documentation">
       <!--permalink: /helion/devplatform/1.2/als/admin/-->
       <topicref href="devplatform/1.2/helion/CLI/1.2constructor_vm.dita"
-        navtitle="ALS Constructor Virtual Machine" locktitle="yes"/>
+        navtitle="ALS Constructor VM" locktitle="yes"/>
       <topichead navtitle="ALS Management Console">
         <topicref href="devplatform/1.2/helion/admin/console/1.2index.dita" locktitle="yes"
           navtitle="Management Console (Admin View)"/>
@@ -1004,13 +1021,12 @@
     <topicref href="devplatform/1.1devplatform.release-notes.dita" locktitle="yes"
       navtitle="Release Notes"/>
     <topichead navtitle="Installation and Configuration">
-      <topicref href="devplatform/1.1devplatform_commercial_install.dita" locktitle="yes"
-        navtitle="Installation and Configuration "
-        ><!--permalink: /helion/devplatform/1.1/marketplace/--><!--permalink: /helion/devplatform/1.1/install/troubleshooting/--><!--permalink: /helion/devplatform/1.1/related-topics/--><!--permalink: /helion/devplatform/1.1/release-notes/--></topicref>
-      <topicref href="devplatform/1.1devplatform.marketplace.install.dita" locktitle="yes"
-        navtitle="The Marketplace (Beta) "/>
+      <topicref href="devplatform/1.1devplatform_commercial_install.dita"
+        navtitle="Installation and Configuration" locktitle="yes"/>
       <topicref href="devplatform/1.1devplatform.troubleshooting.dita" locktitle="yes"
         navtitle="Installation Troubleshooting "/>
+      <topicref href="devplatform/1.1devplatform.marketplace.install.dita" locktitle="yes"
+        navtitle="The Marketplace (Beta) "/>
       <topicref href="devplatform/1.1devplatform.related-topics.dita" locktitle="yes"
         navtitle="Related Documentation "/>
     </topichead>
@@ -1563,7 +1579,7 @@
         <!--permalink: /als/v1/user/client/-->
         <!--permalink: /als/v1/user/deploy/-->
         <topicref href="devplatform/helion/user/quick-start/1.0index.dita"
-          navtitle="ALS Quick Start" locktitle="yes"/>
+          navtitle="ALS Quick Start Guide" locktitle="yes"/>
         <topicref href="devplatform/helion/user/deploy/1.0index.dita" locktitle="yes"
           navtitle="General Deployment ">
           <!--permalink: /als/v1/user/deploy/app-debug/-->
@@ -1613,11 +1629,13 @@
       </topicref>
     </topicref>
   </topicref>
-  <topicref href="euca/euca-landing-page.dita" navtitle="HP Helion Eucalyptus" locktitle="yes">
+  <topicref href="euca/euca-landing-page.dita">
     <topicref href="euca/euca.thirdparty.licensing.dita"
-      navtitle="Open Source and Third-Party Licensing" locktitle="yes"/>
+      navtitle="Open-Source and Third-Party License Agreements" locktitle="yes"/>
     <topicref href="euca/euca-eula.dita" navtitle="Master Services Agreement" locktitle="yes"/>
   </topicref>
+  
+  <!-- BEGIN Public cloud -->
   <topicref href="publiccloud/publiccloud-overview.dita" navtitle="HP Helion Public Cloud"
     locktitle="yes">
     <topicref href="publiccloud/site-overview.dita" navtitle="Helion Public Cloud Website Overview"
@@ -1668,7 +1686,7 @@
         locktitle="yes"/>
       <topicref href="publiccloud/api.copyright.v13.dita"
         navtitle="Copyright for Helion Public Cloud APIs" locktitle="yes"/>
-    </topicref>
+      </topicref>
     <topicref href="publiccloud/cli.dita" navtitle="Helion Public Cloud CLIs" locktitle="yes">
       <topicref href="publiccloud/cli.openstack.dita" navtitle="Openstack CLI" locktitle="yes"/>
       <topicref href="publiccloud/cli.windows.2.dita" navtitle="Windows PowerShell CLI"
@@ -1703,178 +1721,21 @@
       locktitle="yes"/>
     <topicref href="publiccloud/hz.whatsnewjan.2014.dita"/>
     <topicref href="publiccloud/upload-publish-partner-images135.dita"
-      navtitle="Uploading and Publishing Partner Images" locktitle="yes"/> <!--set to toc=no later-->
+      navtitle="Uploading and Publishing Partner Images" locktitle="yes" /><!--set to toc=no later-->
     <topicref href="publiccloud/vpn-multisite.dita" navtitle="VPN Multi-Site Configuration Guide"
-      locktitle="yes"/> <!--set to toc=no later-->
+      locktitle="yes" /><!--set to toc=no later-->
     <topicref href="publiccloud/vpn-quickstart.dita" navtitle="VPN Setup Quick Start Guide"
-      locktitle="yes"/> <!--set to toc=no later-->
+      locktitle="yes" /><!--set to toc=no later-->
     <topicref href="publiccloud/plugins.teamcity.dita"
-      navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes"/> <!--set to toc=no later-->
+      navtitle="HP TeamCity Plugin for Helion Public Cloud" locktitle="yes" /><!--set to toc=no later-->
     <topicref href="publiccloud/glossary.dita" navtitle="Helion Public Cloud Glossary"
       locktitle="yes"/>
   </topicref>
+  <!-- END Public cloud -->
+  
   <topicref href="automation/csa.index.dita"/>
   <topicref href="codar-landing-page.dita" navtitle="HP Codar"/>
-
-  <!-- Public cloud -->
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
-  
-  
-  <!-- Carrier Grade -->
-  
-  <topicref href="CarrierGrade/carrier-grade-index.dita">
-    <topichead navtitle="HP Helion Carrier Grade 1.1: KVM Region Release Notes">
-      <topicref href="CarrierGrade/CGHRelNotes/jow1404333830215.xml"/>
-      <topicref href="CarrierGrade/CGHRelNotes/jow1404333830815.xml"/>
-      <topicref href="CarrierGrade/CGHRelNotes/jow1404333831397.xml"/>
-      <topicref href="CarrierGrade/CGHRelNotes/jow1404333831977.xml"/>
-    </topichead>
-    <topicref href="CarrierGrade/Overview/carrier-grade-overview.dita">
-      <topicref href="CarrierGrade/Overview/carrier-grade-overview-non-kvm.dita"/>
-      <topicref href="CarrierGrade/Overview/carrier-grade-overview-kvm.dita"/>
-      <topicref href="CarrierGrade/Overview/carrier-grade.services-overview.dita">
-        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-compute-overview.dita"/>
-        <topicref
-          href="CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita"/>
-        <topicref
-          href="CarrierGrade/ServicesOverviews/carrier-grade-services-orchestration-overview.dita"/>
-        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita">
-          <topicref href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"/>
-          <topicref
-            href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"/>
-        </topicref>
-      </topicref>
-    </topicref>
-    <topichead navtitle="Installing the Non-KVM Region">
-      <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix.dita">
-        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-dcn.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-helion.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-hlm.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-wr.dita"/>
-      </topicref>
-      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"/>
-      <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-overview.dita">
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-NTP.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-troubleshoot.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-verify.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita"/>
-      </topicref>
-    </topichead>
-    <topichead navtitle="Installing the KVM Region (PDF)">
-      <topicref href="PDF/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf"
-        navtitle="HP Helion OpenStack Carrier Grade Software Install" locktitle="yes" format="pdf"/>
-    </topichead>
-    <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita">
-      <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-account-container.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-starter-object-ring.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-storage-node.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-proxy-node.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-expand-swift-cluster.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-disk-drive(s).dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-health-check.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-health-swift-services.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-replica-swift-status.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-cluster.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-disk.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-drive-audit.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-file-ownership.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-mount-points.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-network-access-ping.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-network-interface.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-proxy-health-checks.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-part-power.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-provision-swift-node.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-remove-proxy-node.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-swift-cluster.dita"/>
-      <topicref
-        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-diagnosis-disk-health-hpssacli.dita"/>
-      <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting.swift.dita"/>
-      <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting-overcloud.dita"
-      />
-    </topicref>
-    <topichead navtitle="HP Helion OpenStack Carrier Grade Administrator Guide">
-      <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
-    </topichead>
-    <topichead
-      navtitle="HP Helion OpenStack Carrier Grade (Beta): Reference Deployment Scenarios Guide">
-      <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment.dita">
-        <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-overview.dita"/>
-        <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-requirements.dita"/>
-        <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-networks.dita"/>
-        <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-interface.dita"/>
-        <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-environ.dita"/>
-        <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting.dita">
-          <topicref
-            href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-admin.dita"/>
-          <topicref
-            href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-components.dita"/>
-          <topicref
-            href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting-user.dita"/>
-        </topicref>
-        <topicref
-          href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-running-traffic.dita"/>
-        <topicref
-          href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-overview.dita">
-          <topicref
-            href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-deploy.dita"/>
-        </topicref>
-        <topicref
-          href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-routing-overview.dita">
-          <topicref
-            href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-routing-deploy.dita"/>
-        </topicref>
-        <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli.dita">
-          <topicref
-            href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-segment.dita"/>
-          <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-data.dita"/>
-          <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-flavor.dita"/>
-          <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-guest.dita"/>
-          <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-launch.dita"/>
-          <topicref
-            href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-provider.dita"/>
-          <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-tenant.dita"/>
-          <topicref
-            href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-tenants.dita"/>
-          <topicref href="CarrierGrade/DeploymentScenarios/carrier-grade-deployment-cli-users.dita"
-          />
-        </topicref>
-      </topicref>
-    </topichead>
-  </topicref> 
 </map>

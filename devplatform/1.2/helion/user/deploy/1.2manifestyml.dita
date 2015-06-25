@@ -377,7 +377,7 @@ allowing you to create service names based on the specified application
 name. For example:</p>
 <codeblock>  services:
   ${name}-db: mysql</codeblock>
-  <p>The application name can be set as an option to the <xref type="section" href="../../user/reference/1.2client-ref-management.dita#topic50918/command-push" type="section" scope="external"  >helion push</xref> command, overriding
+  <p>The application name can be set as an option to the <xref type="section" href="../../user/reference/1.2client-ref-management.dita#topic50918/command-push">helion push</xref> command, overriding
 the <b>name</b> value defined in <i>manifest.yml</i>. Use this technique when
 pushing multiple versions of the same application (using different
 names) if you want them to use separate databases. For example:</p>
@@ -512,7 +512,7 @@ url:
 "appname.paasname.com" URL to the application. If you would like this
 URL assigned as well, add <codeph>${name}.${target-base}</codeph>
 to the list of URLs.</p>
-  <p>See <xref type="section" href="1.2index.dita#topic18647/mapping-app-urls" type="section" scope="external" /> for more information.</p>
+  <p>See <xref type="section" href="1.2index.dita#topic18647/mapping-app-urls">Mapping App URLS</xref> for more information.</p>
 </section>
 <section id="env"> <title>env:</title>
 <p>A map of environment variables to initialize for the application. Each
@@ -526,7 +526,7 @@ such as API keys and passwords.</p>
 <section id="env-attributes"> <title>env Attributes</title>
 <p>Each environment variable can have attributes which modify the
   interactive behavior of the <xref href="../../user/reference/1.2client-ref.dita" >ALS client</xref> when using the
-  <xref type="section" href="../../user/reference/1.2client-ref-management.dita#topic50918/command-push" type="section" scope="external"  >push</xref> command. These
+  <xref type="section" href="../../user/reference/1.2client-ref-management.dita#topic50918/command-push">push</xref> command. These
 attributes are set with the following keys:</p>
 <ul>
 <li>
@@ -573,8 +573,7 @@ is set but no value is given (via "default", "inherit" or the
 <section id="processes"> <title>processes:</title>
 </section>
 <section id="web"> <title>web:</title>
-  <note> Used with the <xref type="section" href="../../user/deploy/1.2buildpack.dita#topic3370/buildpacks-legacy" type="section" scope="external" 
-          >Legacy buildpack</xref> only. When using other buildpacks, create a <xref
+  <note> Used with the <xref type="section" href="../../user/deploy/1.2buildpack.dita#topic3370/buildpacks-legacy">Legacy buildpack</xref> only. When using other buildpacks, create a <xref
           href="https://devcenter.heroku.com/articles/procfile" scope="external" format="html"
           >Procfile</xref> in the application's root directory.</note>
 <p>Specify a custom command to launch your web application or to pass
@@ -582,7 +581,7 @@ custom arguments to uWSGI. For example:</p>
 <codeblock>  processes:
   web: python3.2 app.py</codeblock>
 <p>This key is required when using the
-  <xref type="section" href="../../user/deploy/1.2other-frameworks.dita#topic2413/generic-framework" type="section" scope="external"  >generic</xref> framework, but is
+  <xref type="section" href="../../user/deploy/1.2other-frameworks.dita#topic2413/generic-framework">generic</xref> framework, but is
 optionally available for all other frameworks.</p>
 <p>
 <b>If defined</b>, this process is expected to launch a HTTP server bound
@@ -616,7 +615,7 @@ uWSGI options to the command.</p>
 <section id="command"> <title>command:</title>
 <p>Used for worker applications to start a background process. Below is an
 example using the
-  <xref type="section" href="../../user/deploy/1.2other-frameworks.dita#topic2413/standalone-framework" type="section" scope="external"  >standalone</xref> framework:</p>
+  <xref type="section" href="../../user/deploy/1.2other-frameworks.dita#topic2413/standalone-framework">standalone</xref> framework:</p>
 <codeblock>  name: helion-worker
 instances: 1
 framework:
@@ -625,8 +624,7 @@ framework:
 command: ruby worker.rb</codeblock>
 </section>
 <section id="cron"> <title>cron:</title>
-<p>Commands listed here are added to the crontab file. See the section on
-  <xref type="section" href="1.2index.dita#topic18647/crontab-support" type="section" scope="external" >Crontab Support</xref> for details.</p>
+<p>Commands listed here are added to the crontab file. </p>
 <p>Example:</p>
 <codeblock>  cron:
   - PLUGH=xyzzy
@@ -731,9 +729,10 @@ is not needed and can be included on the same line:</p>
 </section>
 <section id="drain"> <title>drain:</title>
 <p>
-  <xref href="1.2app-logs.dita#topic5165/helion-drain" type="section" scope="external"  >Application log drains</xref> can be
-added to an application when it is deployed by describing them in a
-<codeph>drain:</codeph> block with a drain name and URL:</p>
+        <xref
+            href="1.2app-logs.dita#topic5165/helion-drain">Application log drains</xref> can
+        be added to an application when it is deployed by describing them in a
+          <codeph>drain:</codeph> block with a drain name and URL:</p>
 <codeblock>  drain:
   drain_name: protocol://host.domain.tld:port/</codeblock>
 <p>To enable JSON logging, specify the URL separately along with a
