@@ -229,6 +229,7 @@
         <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs-network.dita"/>
         <topicref href="commercial/GA1/1.1commercial.install-GA-NTP.dita"/>
         <topicref href="commercial/GA1/1.1commercial.install-GA-JSON.dita">
+          <topicref href="commercial/GA1/1.1commercial.install-ip-addresses.dita"/>
           <topicref href="commercial/GA1/1.1commercial.install-GA-JSON-scenarios.dita" /><!--set to toc=no later-->
         </topicref>
         <topicref href="commercial/GA1/1.1commercial.install-GA-CSV.dita"/>

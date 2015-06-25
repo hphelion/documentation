@@ -36,162 +36,96 @@ software or services.</p>
 <xref type="section" href="#topic2651/logging-examples-logstash">Logstash</xref>
 </li>
 <li>
-<xref type="section" href="#topic2651/hello-world-custom-drain">Hello World Custom Drain Example</xref>
-<!--   [*Loggly*](#logging-examples-loggly)--></li>
+        <xref type="section" href="#topic2651/hello-world-custom-drain">Hello World Custom Drain
+          Example</xref>
+      </li>
 </ul>
 <p>
-<b>Note</b>: Do not forward both application and system logs to the same destination.</p>
-<section id="logging-examples-papertrail"> <title>Papertrail</title>
-<ol>
-<li>
-<xref href="https://papertrailapp.com/plans" scope="external" format="html" >Create an account for Papertrail</xref>
-</li>
-<li>
-<p>In the Dashboard screen, click <i>Add Systems</i>.
-<image href="../../../../../media/ppt1.png"/>
-</p>
-</li>
-<li>
-<p>In the Setup Systems screen under <i>Other log methods</i>, click
-<i>Alternatives</i>.
-<image href="../../../../../media/ppt2.png"/>
-</p>
-</li>
-<li>
-<p>Choose option C: <i>My system's hostname changes</i> and give it a
-suitable name.
-<image href="../../../../../media/ppt3.png"/>
-</p>
-</li>
-<li>
-<p>Note down the <b>port number</b>. You need this later on.
-<image href="../../../../../media/ppt4.png"/>
-</p>
-</li>
-<li>
-<p>Enable system logging (via udp) by executing the following kato command:</p>
-</li>
-</ol>
-<p>
-  <codeph>kato log drain add drain-name udp://logs.papertrailapp.com:port#</codeph>
-</p>
-<p>
-  <b>Note</b>
-</p>
-<p>Papertrail requires systail log lines to have <codeph>&lt;13&gt;l</codeph> at the beginning of each line. Make sure the drain you are forwarding is formatted this way (see example in <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2logging.dita#logging-drains-save-format" >
-<i>Saving Custom Log Formats</i>
-</xref>).</p>
-<!-- Loggly[](#loggly "Permalink to this headline")
-
-1.  [Create an account for Loggly](https://app.loggly.com/)
-2.  Under *Incoming Data* tab, click *Add Input*.
-    <img src="/media/loggly1.png" />
-3.  In the Add Input screen:
-    -   Choose *Syslog UDP or TCP*
-    -   Choose *Combination Log Type*
-    -   [Optional] For JSON Logging, Choose UDP or TCP **with Stripe** and enable **JSON Logging**. (for system logs)
-    <img src="/media/loggly2.png" />
-4.  If we want to accept logs from any Application Lifecycle Service nodes or applications modify Allowed Devices section:
-    -   Click *Add device*
-     <img src="/media/loggly3.png" />
-    -   Add IP Address 0.0.0.0/0 when prompted
-     <img src="/media/loggly4.png" />
-5.  Turn off discovery since we allowed all devices. Also, note down the
-    **port number**.
-     <img src="/media/loggly5.png" />
-6. Enable system logging by executing **one** of the following kato commands:
-
-        kato log drain add drain-name udp://logs.loggly.com:port#
-
-        kato log drain add drain-name tcp://logs.loggly.com:port#
-
-Loggly supports JSON format with minor configuration changes shown above. Enable system JSON logging by executing the following kato command:
-
-    kato log drain add (dashdash)format json drain-name tcp://logs.loggly.com:port#
-
--->
-</section>
+      <note>Do not forward both application and system logs to the same destination.</note>
+    </p>
+<section id="logging-examples-papertrail">
+      <title>Papertrail</title>
+      <ol>
+        <li>
+          <xref href="https://papertrailapp.com/plans" scope="external" format="html">Create an
+            account for Papertrail</xref>
+        </li>
+        <li> In the Dashboard screen, click <i>Add Systems</i>. <image
+            href="../../../../../media/ppt1.png" id="image_gtf_x1c_ms" placement="break"/>
+        </li>
+        <li> In the Setup Systems screen under <i>Other log methods</i>, click <i>Alternatives</i>.
+            <image href="../../../../../media/ppt2.png" placement="break" id="image_ith_fbc_ms"/>
+        </li>
+        <li> Choose option C: <i>My system's hostname changes</i> and give it a suitable name.
+            <image href="../../../../../media/ppt3.png" placement="break" id="image_xrc_fbc_ms"/>
+        </li>
+        <li> Note down the <b>port number</b>. You need this later on. <image
+            href="../../../../../media/ppt4.png" placement="break" id="image_urv_2bc_ms"/>
+        </li>
+        <li> Enable system logging (via udp) by executing the following kato command:</li>
+      </ol>
+      <p>
+        <codeph>kato log drain add drain-name udp://logs.papertrailapp.com:port#</codeph>
+      </p>
+      <p>
+        <note>Papertrail requires systail log lines to have <codeph>&lt;13&gt;l</codeph> at the
+          beginning of each line. Make sure the drain you are forwarding is formatted this way (see
+          example in <xref
+            href="../../../../../devplatform/1.2/helion/admin/server/1.2logging.dita#logging-drains-save-format">
+            <i>Saving Custom Log Formats</i>
+          </xref>).</note>
+      </p>
+    </section>
 <section id="logging-examples-splunk"> <title>Splunk</title>
 <ol>
-<li>Set up <xref href="http://www.splunk.com/download" scope="external" format="html" >Splunk Server</xref>.</li>
+<li>Set up a  <xref href="http://www.splunk.com/download" scope="external" format="html">Splunk
+            Server</xref>.</li>
 <li>In the Welcome screen, click <b>Add data</b>.
-<image href="../../../../../media/splunk1.png"/>
+  <image href="../../../../../media/splunk1.png" placement="break"/>
 </li>
-<li>
-<p>Under <b>Choose a Data Source</b>, click <b>From a TCP port</b> (or UDP)<!--A BR tag was used here in the original source.--><image href="../../../../../media/splunk2.png" placement="break"/>
-</p>
-</li>
-<li>
-<p>In the <b>Add New Source</b> screen:</p>
+<li> Under <b>Choose a Data Source</b>, click <b>From a TCP port</b> (or UDP)<image
+            href="../../../../../media/splunk2.png" placement="break" id="image_g11_dbc_ms"/>
+        </li>
+<li> In the <b>Add New Source</b> screen:<ul>
+            <li>Select a TCP/UDP port greater than <b>9999</b>
+            </li>
+            <li>Give it a suitable <b>Source name</b>.</li>
+            <li>Set sourcetype to <b>Manual</b>
+            </li>
+            <li>Leave Source Type <b>empty</b>
+              <image href="../../../../../media/splunk3.png" placement="break"/>
+            </li>
+          </ul></li>
+<li> Enable system logging by executing <b>one</b> of the following kato
+          commands:<codeblock>kato log drain add drain-name splunk-server-address:port#
 
-<ul>
-<li>Select a TCP/UDP port greater than <b>9999</b>
-</li>
-<li>Give it a suitable <b>Source name</b>.</li>
-<li>Set sourcetype to <b>Manual</b>
-</li>
-<li>Leave Source Type <b>empty</b>
-<image href="../../../../../media/splunk3.png"/>
-</li>
-</ul>
-</li>
-<li>
-<p>Enable system logging by executing <b>one</b> of the following kato commands:</p>
-
-<codeblock>
-<codeph>kato log drain add drain-name splunk-server-address:port#
-
-kato log drain add drain-name tcp://splunk-server-address:port#
-</codeph>
-</codeblock>
-</li>
+kato log drain add drain-name tcp://splunk-server-address:port#</codeblock></li>
 </ol>
 <p>Splunk supports JSON format without further configuration. Enable system JSON logging by executing the following kato command:</p>
-<codeblock>
-  <codeph>kato log drain add --format json drain-name tcp://splunk-server-address:port#
-</codeph>
-</codeblock>
+<codeblock>kato log drain add --format json drain-name tcp://splunk-server-address:port#</codeblock>
 </section>
 <section id="logging-examples-logstash"> <title>Logstash</title>
 <ol>
-<li>
-<p>Download and install <xref href="http://www.elasticsearch.org/overview/logstash/download/" scope="external" format="html" >Logstash</xref>.</p>
-</li>
-<li>
-<p>Configure Logstash to add a UDP or TCP listener on the port of your choosing.  For example, for a UDP listener on port 10000, add the following to the <i>logstash.conf</i> file:</p>
-
-<codeblock>
-<codeph>input { 
+<li> Download and install <xref href="http://www.elasticsearch.org/overview/logstash/download/"
+            scope="external" format="html">Logstash</xref>.</li>
+<li> Configure Logstash to add a UDP or TCP listener on the port of your choosing. For example, for
+          a UDP listener on port 10000, add the following to the <i>logstash.conf</i>
+          file:<codeblock>input { 
    udp { 
       port =&gt; '10000' 
    } 
-} 
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Enable system logging (via udp) by executing the following kato command:</p>
-
-<codeblock>
-<codeph>kato log drain add *drain-name* udp://logstash-server-address:*port#* 
-</codeph>
-</codeblock>
-</li>
+} </codeblock></li>
+<li> Enable system logging (via udp) by executing the following kato
+          command:<codeblock>kato log drain add *drain-name* udp://logstash-server-address:*port#* </codeblock></li>
 </ol>
 </section>
 <section id="hello-world-custom-drain"> <title>Hello World Custom Drain</title>
 <p>The command below starts a drain target server on a node and pipes it to a local file:</p>
-<codeblock>
-  <codeph>nc -lk 0.0.0.0 10000 &gt; log-output.txt
-</codeph>
-</codeblock>
+<codeblock>nc -lk 0.0.0.0 10000 &gt; log-output.txt</codeblock>
 <p>As long as that nc command runs, this will funnel logs from all drains, targeting it into the file log-output.txt</p>
 <p>Enable system logging by executing <b>one</b> of the following kato commands:</p>
-<codeblock>
-  <codeph>kato log drain add drain-name udp://server-address:port#
-kato log drain add drain-name tcp://server-address:port#
-</codeph>
-</codeblock>
+<codeblock>kato log drain add drain-name udp://server-address:port#
+kato log drain add drain-name tcp://server-address:port#</codeblock>
 </section>
 </body>
 </topic>
