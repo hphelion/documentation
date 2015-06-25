@@ -33,62 +33,62 @@
 <xref type="section" href="#topic16169/applying-updates">Applying Updates</xref>
 </li>
 <li>
-<xref type="section" href="#topic16169/bestpractices-ubuntu-security">Security Patches</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic16169/upgrade-docker">Upgrade the Docker image</xref>
-</li>
-<li>
-<xref type="section" href="#topic16169/upgrade-vm">Upgrade the VM</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic16169/bestpractices-ubuntu-security">Security
+          Patches</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic16169/upgrade-docker">Upgrade the Docker image</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic16169/upgrade-vm">Upgrade the VM</xref>
+          </li>
+        </ul></li>
 <li>
 <xref type="section" href="#topic16169/bestpractices-migration">Backup &amp; Migration</xref>
 </li>
 <li>
-<xref type="section" href="#topic16169/limitations">Limitations</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic16169/custom-services">Custom Services</xref>
-</li>
-<li>
-<xref type="section" href="#topic16169/hard-coded-database-connection-info">Hard-coded Database Connection Info</xref>
-</li>
-<li>
-<xref type="section" href="#topic16169/deas">DEAs</xref>
-</li>
-<li>
-<xref type="section" href="#topic16169/exporting-the-server-data">Exporting the server data</xref>
-</li>
-<li>
-<xref type="section" href="#topic16169/scheduled-backups">Scheduled backups</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic16169/limitations">Limitations</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic16169/custom-services">Custom Services</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic16169/hard-coded-database-connection-info">Hard-coded
+              Database Connection Info</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic16169/deas">DEAs</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic16169/exporting-the-server-data">Exporting the server
+              data</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic16169/scheduled-backups">Scheduled backups</xref>
+          </li>
+        </ul></li>
 <li>
 <xref type="section" href="#topic16169/importing-the-server-data">Importing the server data</xref>
 </li>
 <li>
-<xref type="section" href="#topic16169/upgrade">Upgrading (v1.0 and later)</xref>
-</li>
+        <xref type="section" href="#topic16169/upgrade">Upgrading</xref>
+      </li>
 <li>
 <xref type="section" href="#topic16169/bestpractices-snapshots">Snapshots</xref>
 </li>
 <li>
-<xref type="section" href="#topic16169/bestpractices-persistent-storage">Persistent Storage</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic16169/relocating-services-droplets-and-containers">Relocating Services, Droplets, and Containers</xref>
-</li>
-<li>
-<xref type="section" href="#topic16169/enabling-filesystem-quotas">Enabling Filesystem Quotas</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic16169/bestpractices-persistent-storage">Persistent
+          Storage</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic16169/relocating-services-droplets-and-containers"
+              >Relocating Services, Droplets, and Containers</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic16169/enabling-filesystem-quotas">Enabling Filesystem
+              Quotas</xref>
+          </li>
+        </ul></li>
 <li>
 <xref type="section" href="#topic16169/server-monitoring-with-new-relic">Server Monitoring with New Relic</xref>
 </li>
@@ -109,7 +109,7 @@ afterwards.</p>
 <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#Disable_Password_Authentication" scope="external" format="html" >disable password authentication</xref> if desired.</p>
 </section>
 <section id="applying-updates"> <title>Applying Updates</title>
-  <p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita" >
+<p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#upgrade" >
 <i>kato node
 upgrade</i>
 </xref> or a <xref type="section" href="#topic16169/bestpractices-migration">
@@ -121,14 +121,16 @@ minor fixes to particular components) can be applied in place using the
 <i>kato patch</i>
 </xref>
 command.</p>
-      <note>If there is a web proxy on your network between the ALS systems and the ActiveState
-        servers, first configure all nodes as per the Proxy Settings
-        \&lt;server-config-http-proxy&gt; documentation.</note>
+<p>
+        <note> If there is a web proxy on your network between the ALS systems and the ActiveState
+          servers, first configure all nodes as per the Proxy Settings
+          \&lt;server-config-http-proxy&gt; documentation.</note>
+      </p>
 <p>To see a list of patches available from HP, run the following
 command on any Application Lifecycle Service VM:</p>
 <codeblock>kato patch status</codeblock>
 <p>The command will list the updates available. For example:</p>
-<codeblock>1 update available to be installed.
+<codeblock>  1 update available to be installed.
 
 Known updates:
   dea-memory-usage-reporting: Fix the reporting of helion stats usage on the DEA end.
@@ -162,8 +164,8 @@ ensure that all new kernels, modules, and libraries are loaded.</p>
 <ol>
 <li> Create a new working
           directory:<codeblock>mkdir ~/upgrade-alsek &amp;&amp; cd $_</codeblock></li>
-<li> Create a <i>Dockerfile</i>. In this new directory, create a file named <b>Dockerfile</b> and
-          add the
+<li> Create a <i>Dockerfile</i> in the new directory. Create a file named <b>Dockerfile</b> and add
+          the
           following:<codeblock>FROM stackato/stack-alsek:kato-patched
 RUN apt-get update
 RUN unattended-upgrades -d
@@ -212,7 +214,7 @@ nodes to new nodes. Instead, the application droplets (zip files
 containing staged applications) are re-deployed to new DEA nodes from
 the Controller.</p>
 </section>
-<section id="exporting-the-server-data"> <title>Exporting the server data</title>
+<section id="dea-exporting-the-server-data"> <title>Exporting the server data</title>
 <p>Data export is done with the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-export" >
 <i>kato data
 export</i>
@@ -299,7 +301,7 @@ instructions.</p>
 <li>Hard-coded paths using <i>/app</i> or <i>/app/app</i>. Use paths relative to <i>\$HELION_APP_ROOT</i> instead.</li>
 </ul>
 </section>
-<section id="DEA-exporting-the-server-data"> <title>Exporting the server data</title>
+<section id="exporting-the-server-data"> <title>Exporting the server data</title>
 <p>Data export is done with the <i>kato data export</i> command. The command can export:</p>
 <ul>
 <li>Internal data (users, groups, quotas, settings, etc.)</li>
@@ -314,10 +316,7 @@ instructions.</p>
 <p>A clustered setup can be backed up with a single command:</p>
 <codeblock>kato data export -cluster</codeblock>
 <p>
-        <note>Exporting data can take several minutes. For clusters with constant usage or large
-          numbers of users, apps, and databases, put the exporting system in Maintenance Mode,
-          ideally during a scheduled maintenance window, before beginning the export.</note>
-      </p>
+<b>Note</b>: Exporting data can take several minutes. For clusters with constant usage or large numbers of users, apps, and databases, put the exporting system in Maintenance Mode, ideally during a scheduled maintenance window, before beginning the export.</p>
 </section>
 <section id="bestpractices-snapshots"> <title>Snapshots</title>
 <p>Snapshots can be an effective way to save the state of a running virtual machine for backup, but caution is required when taking snapshots of a multi-node cluster.</p>
@@ -357,7 +356,7 @@ relocate</i>
 command(s).</li>
 </ul>
 <p>For example:</p>
-<codeblock>kato stop
+<codeblock>  kato stop
 ...
 kato relocate services /mnt/ebs/services
 ...
@@ -385,7 +384,7 @@ sudo quotaon -v /mnt/containers</codeblock>
 <p>To ensure the quotas are preserved after reboot, edit
 <i>/etc/init.d/setup_helion_lxc</i> to include mount commands for each
 partition. The example above would require a block such as this:</p>
-<codeblock># enable quotas for Application Lifecycle Service containers
+<codeblock>  # enable quotas for Application Lifecycle Service containers
 if [[ -f "/mnt/containers/aquota.user" ]]; then
   mount -o remount,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 /mnt/containers
   quotaon -v /mnt/containers
