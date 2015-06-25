@@ -34,8 +34,7 @@
 <li>Application Lifecycle Service <xref href="../devplatform/1.0devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
 
 <ul>
-<li>You can also quickly set up a cluster in the free and publicly available Helion cloud as part of
-              the <xref href="../devplatform/1.0devplatform.ALS-developer-trial-quick-start.dita"
+<li>You can also quickly set up a cluster in the free and publicly available Helion cloud as part ofthe <xref href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita">
                 >Quick Start Developer Trial</xref>: </li>
 </ul>
 </li>
