@@ -51,7 +51,7 @@
 <section id="110"> <title>Features in HP <tm tmtype="reg">Helion OpenStack</tm> 1.1</title>
 <p>The following features have been added to HP <tm tmtype="reg">Helion OpenStack</tm> 1.1:</p>
 <p>
-<b><tm tmtype="reg">OpenStack</tm> Juno support</b> All of the <xref href="1.1commerical.services-overview.dita#OpenStack">HP Helion Openstack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html"><tm tmtype="reg">OpenStack</tm> Juno</xref>.</p>
+<b><tm tmtype="reg">OpenStack</tm> Juno support</b> All of the <xref href="1.1commerical.services-overview.dita#OpenStack" type="section" scope="external" >HP Helion Openstack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html"><tm tmtype="reg">OpenStack</tm> Juno</xref>.</p>
 <p>
 <b>HP <tm tmtype="reg">Helion OpenStack</tm> Metering services</b> The <xref href="1.1commerical.services-reporting-overview.dita">HP <tm tmtype="reg">Helion OpenStack</tm> Telemetry and Reporting service</xref> leverages the <tm tmtype="reg">OpenStack</tm> Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls.</p>
 <p>
@@ -84,7 +84,7 @@
 <p>
 <b>Enable Unified Extensible Firmware Interface (UEFI) support for Gen8 and Gen9 HP Servers</b> - UEFI is industry standard set of interfaces between the system firmware, the operating system, and between various components of the system firmware delivers enhanced security benefits for the HP ProLiant Gen8 and Gen9 Server family. UEFI is meant to replace the Basic Input/Output System (BIOS) firmware interface. For more information, see <xref href="http://www8.hp.com/us/en/products/server-software/product-detail.html?oid=6935826" scope="external" format="html">HP Unified Extensible Firmware Interface</xref>.<!--HPM12--></p>
 <p>
-<b>Compute Service Configuration Drive</b> - The HP <tm tmtype="reg">Helion OpenStack</tm> compute service can be configured to <xref href="1.1commerical.troubleshooting.compute.dita#configdrive">write metadata to a special configuration drive</xref> that contains information normally available through the metadata service.</p>
+<b>Compute Service Configuration Drive</b> - The HP <tm tmtype="reg">Helion OpenStack</tm> compute service can be configured to <xref href="1.1commerical.troubleshooting.compute.dita#configdrive" type="section" scope="external" >write metadata to a special configuration drive</xref> that contains information normally available through the metadata service.</p>
 <p>
 <b>Ruby CLI No Longer Supported</b> - The Ruby CLI (unix_cli) is no longer supported. Users are advised to consider the Python CLIs as an alternative.</p>
 </section>
@@ -253,7 +253,7 @@ Performing backups and creating bootable volumes will then work.-->   <!--CORE-2
 </codeph>
 </codeblock>
 
-<p>For more information on how to restart the singleton Cinder volume  service, see <xref href="1.0commerical.high-availability.dita#cinder-volume">HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: High Availability</xref>.</p>
+<p>For more information on how to restart the singleton Cinder volume  service, see <xref href="1.0commerical.high-availability.dita#cinder-volume" type="section" scope="external" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: High Availability</xref>.</p>
 </li>
 <li>
 <p>
@@ -275,7 +275,7 @@ Performing backups and creating bootable volumes will then work.-->   <!--CORE-2
 
 <ul>
 <li>
-<p>migrate the cinder-volume service to another node, for example, controller1 (refer to <xref href="1.0commerical.high-availability.dita#cinder-volume">HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: High Availability</xref>)</p>
+<p>migrate the cinder-volume service to another node, for example, controller1 (refer to <xref href="1.0commerical.high-availability.dita#cinder-volume" type="section" scope="external" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: High Availability</xref>)</p>
 </li>
 <li>
 <p>stop the cinder-backup service on controller0 using</p>

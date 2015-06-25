@@ -196,7 +196,7 @@ Before you start the installation, you must install NTP on the seed cloud host (
 <p>Before you begin, you must download the required HP <tm tmtype="reg">Helion OpenStack</tm> installation package(s):</p>
 <ol>
 <li>
-<p>Register and then log in to download the required installation package(s) from <xref href="https://helion.hpwsportal.com#/Product/%7B%22productId%22%3A%221247%22%7D/Show" scope="external" format="html" >HP <tm tmtype="reg">Helion OpenStack</tm> product installation</xref>.</p>
+<p>Register and then log in to download the required installation package(s) from <xref href="https://helion.hpwsportal.com#/Product/%7B%22productId%22%3A%221247%22%7D/Show" type="section" scope="external" format="html" >HP <tm tmtype="reg">Helion OpenStack</tm> product installation</xref>.</p>
 
 <ul>
 <li>

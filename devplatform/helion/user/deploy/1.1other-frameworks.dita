@@ -35,13 +35,13 @@ interface.</li>
 </ul>
 <p>These two frameworks make no assumptions about the application type and
 can be customized to run a wide variety of non-standard applications.</p>
-<p>Any language <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#runtime" >
+<p>Any language <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#runtime" type="section" scope="external"  >
 <i>runtime</i>
 </xref>
 available on the server can be specified in the config file. If a
 runtime is not specified, Python 2.7 is made available by default.</p>
 <section id="generic"> <title>Generic</title>
-<p>The Generic framework requires a custom <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#processes" >
+<p>The Generic framework requires a custom <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#processes" type="section" scope="external"  >
 <i>processes:web</i>
 </xref> setting in
 <i>manifest.yml</i> specifying a command to start the web process (e.g. a
@@ -57,7 +57,7 @@ processes:
 </codeph>
 </codeblock>
 <p>If you wish to run an application <i>without</i> a web interface (i.e. a
-background "worker" process), <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#processes-web-null" >
+background "worker" process), <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#processes-web-null" type="section" scope="external"  >
 <i>set 'processes: web:' to
 Null</i>
 </xref> or use the
@@ -65,7 +65,7 @@ Standalone framework instead.</p>
 </section>
 <section id="standalone"> <title>Standalone</title>
 <p>The Standalone framework uses a custom command specified in the
-<xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#command" >
+<xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#command" type="section" scope="external"  >
 <i>command:</i>
 </xref> key to start a
 background worker process.</p>

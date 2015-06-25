@@ -55,7 +55,7 @@
 <p>Which additional services and software you have installed, such as the HP Development Platform for Helion.  If you know the recommended update plans for these services, that can help you plan your overall Helion update.</p>
 </li>
 <li>
-<p>Any special layouts such as availability zones may affect your decision on the sequence of nodes you wish to update.  There are additional details of this in the <xref href="../../commercial/GA1/1.0commercial.update-101-overcloud.dita#compute" >Compute (n-scale, not ESX)</xref> section of <i>Updating the Overcloud</i>.</p>
+<p>Any special layouts such as availability zones may affect your decision on the sequence of nodes you wish to update.  There are additional details of this in the <xref href="../../commercial/GA1/1.0commercial.update-101-overcloud.dita#compute" type="section" scope="external"  >Compute (n-scale, not ESX)</xref> section of <i>Updating the Overcloud</i>.</p>
 </li>
 </ul>
 </li>

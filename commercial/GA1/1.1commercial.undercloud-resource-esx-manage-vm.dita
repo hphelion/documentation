@@ -135,7 +135,7 @@ After successful registration the vCenter server is displayed in the ESX vCenter
 </li>
 </ol>
 </section>
-<section id="view-registered-esx-vcenters"> <title>View Registered ESX vCenters<!--Removed anchor point view-registered-vCenter--><!-- id="view-registered-vCenter" --></title>
+<section id="view-registered-vCenter"> <title>View Registered ESX vCenters<!--Removed anchor point view-registered-vCenter--><!-- id="view-registered-vCenter" --></title>
 <p>To view the list of registered ESX vCenter, do the following:</p>
 <ol>
 <li>
@@ -162,7 +162,7 @@ The following information is displayed:</p>
 </ol>
 <p>All the registered vCenter will be listed in the Manage Virtual Environment page.</p>
 </section>
-<section id="edit-vcenter"> <title>Edit vCenter<!--Removed anchor point edit-vCenter--><!-- id="edit-vCenter" --></title>
+<section id="edit-vCenter"> <title>Edit vCenter<!--Removed anchor point edit-vCenter--><!-- id="edit-vCenter" --></title>
 <p>When there is any change in the vCenter details you can use the edit option to capture the modification made in the vCenter details in the HP Helion Horizon undercloud  dashboard.</p>
 <p>To edit the vCenter, do the following:</p>
 <ol>
@@ -183,7 +183,7 @@ The following information is displayed:</p>
 </li>
 </ol>
 </section>
-<section id="unregistering-vcenters"> <title>Unregistering vCenters<!--Removed anchor point unregister-vCenter--><!-- id="unregister-vCenter" --></title>
+<section id="unregister-vCenter"> <title>Unregistering vCenters<!--Removed anchor point unregister-vCenter--><!-- id="unregister-vCenter" --></title>
 <p>With a help of single command you can unregister vCenter.</p>
 <ul>
 <li>
@@ -269,7 +269,7 @@ OR</p>
 </li>
 </ol>
 </section>
-<section id="view-cluster-details"> <title>View Cluster Details<!--Removed anchor point view-cluster--><!-- id="view-cluster" --></title>
+<section id="view-cluster"> <title>View Cluster Details<!--Removed anchor point view-cluster--><!-- id="view-cluster" --></title>
 <p>To view the details of the registered ESX vCenter, do the following:</p>
 <ol>
 <li>
@@ -298,7 +298,7 @@ OR</p>
 </li>
 </ol>
 </section>
-<section id="unimporting-clusters"> <title>Unimporting Clusters<!--Removed anchor point unimport-cluster--><!-- id="unimport-cluster" --></title>
+<section id="unimport-cluster"> <title>Unimporting Clusters<!--Removed anchor point unimport-cluster--><!-- id="unimport-cluster" --></title>
 <p>You can unimport multiple clusters or a single cluster with a single command.</p>
 <ul>
 <li>

@@ -205,7 +205,7 @@
 <section id="hp-proliant-bladesystem"> <title>HP Proliant BladeSystem</title>
 <ul>
 <li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers#%21view=grid&amp;page=1&amp;facet=ProLiant-SL-Scalable" scope="external" format="html" >BL160 Gen8</xref>
+<xref href="http://www8.hp.com/us/en/products/proliant-servers#%21view=grid&amp;page=1&amp;facet=ProLiant-SL-Scalable" type="section" scope="external" format="html" >BL160 Gen8</xref>
 </li>
 <li>
 <xref href="http://shopping1.hp.com/is-bin/INTERSHOP.enfinity/WFS/WW-USSMBPublicStore-Site/en_US/-/USD/ViewStandardCatalog-Browse?CatalogCategoryID=Vt4Q7habZVsAAAE3bqp1vE0Q" scope="external" format="html" >BL420c Gen8</xref>
@@ -233,7 +233,7 @@
 <section id="hp-proliant-rack-servers"> <title>HP Proliant Rack Servers</title>
 <ul>
 <li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers#%21view=grid&amp;page=1&amp;facet=ProLiant-SL-Scalable" scope="external" format="html" >DL310 Gen8</xref>
+<xref href="http://www8.hp.com/us/en/products/proliant-servers#%21view=grid&amp;page=1&amp;facet=ProLiant-SL-Scalable" type="section" scope="external" format="html" >DL310 Gen8</xref>
 </li>
 <li>
 <xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527" scope="external" format="html" >DL320 Gen8</xref>

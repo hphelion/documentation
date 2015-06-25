@@ -27,7 +27,7 @@
 <p>If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to HP Helion Development Platform.</p>
 <p>Follow the steps outlined in this document to get the plugin up and running and to deploy one of the sample apps.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>If you'd like to deploy the provided <xref href="../devplatform/1.0devplatform.appdev.dita#java" >Java samples</xref>, you will need to install the following prerequisites. If necessary, locate the version appropriate for your environment and install it before continuing.</p>
+<p>If you'd like to deploy the provided <xref href="../devplatform/1.0devplatform.appdev.dita#java" type="section" scope="external"  >Java samples</xref>, you will need to install the following prerequisites. If necessary, locate the version appropriate for your environment and install it before continuing.</p>
 <ul>
 <li>The Java <xref href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" scope="external" format="html" >Runtime Environment</xref> </li>
 <li>The <xref href="https://www.eclipse.org/downloads/packages" scope="external" format="html" >Eclipse IDE for Java EE developers</xref> </li>

@@ -77,7 +77,7 @@
 </ul>
 <section id="sos"> <title>Contacting Customer Service</title>
 <p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref>.</p>
-<p>Before contacting HP Customer Support, <xref href="../../commercial/GA1/1.1commercial.troubleshooting.dita#sos" >run the <codeph>run-sosreport</codeph> command</xref> on the affected system.</p>
+<p>Before contacting HP Customer Support, <xref href="../../commercial/GA1/1.1commercial.troubleshooting.dita#sos" type="section" scope="external"  >run the <codeph>run-sosreport</codeph> command</xref> on the affected system.</p>
 <p>
   <xref href="#topic2976"> Return to Top </xref>
 </p>

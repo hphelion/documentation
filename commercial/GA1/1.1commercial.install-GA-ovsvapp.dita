@@ -143,7 +143,7 @@ mgmt_port_name=mgmt
 <p>Please make sure that ESX host does not have another iteration of the OVSvApp already deployed.</p>
 </li>
 <li>
-<p>The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#network_prepare" >Preparing the network for an ESX installation</xref> in <i>Prerequisites</i>.</p>
+<p>The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#network_prepare" type="section" scope="external"  >Preparing the network for an ESX installation</xref> in <i>Prerequisites</i>.</p>
 </li>
 <li>
 <p>All ESX hosts must have synchronized time settings. If hosts have different time, the deployment will fail.</p>

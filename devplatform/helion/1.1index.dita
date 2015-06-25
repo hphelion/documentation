@@ -39,22 +39,22 @@
 
 <ul>
 <li>
-<xref href="../../devplatform/helion/admin/1.1index.dita#wizard-based-cluster-creation" >Wizard-Based Cluster Creation</xref>
+<xref href="../../devplatform/helion/admin/1.1index.dita#wizard-based-cluster-creation" type="section" scope="external"  >Wizard-Based Cluster Creation</xref>
 </li>
 <li>
-<xref href="../../devplatform/helion/admin/1.1index.dita#management-console" >Management Console</xref>
+<xref href="../../devplatform/helion/admin/1.1index.dita#management-console" type="section" scope="external"  >Management Console</xref>
 </li>
 <li>
-<xref href="../../devplatform/helion/admin/1.1index.dita#server-configuration" >Server Configuration</xref>
+<xref href="../../devplatform/helion/admin/1.1index.dita#server-configuration" type="section" scope="external"  >Server Configuration</xref>
 </li>
 <li>
-<xref href="../../devplatform/helion/admin/1.1index.dita#cluster-configuration" >Cluster Configuration</xref>
+<xref href="../../devplatform/helion/admin/1.1index.dita#cluster-configuration" type="section" scope="external"  >Cluster Configuration</xref>
 </li>
 <li>
-<xref href="../../devplatform/helion/admin/1.1index.dita#best-practices" >Best Practices</xref>
+<xref href="../../devplatform/helion/admin/1.1index.dita#best-practices" type="section" scope="external"  >Best Practices</xref>
 </li>
 <li>
-<xref href="../../devplatform/helion/admin/1.1index.dita#reference" >Reference</xref>
+<xref href="../../devplatform/helion/admin/1.1index.dita#reference" type="section" scope="external"  >Reference</xref>
 </li>
 </ul>
 </li>
@@ -68,25 +68,25 @@
 
 <ul>
 <li>
-<xref href="../../devplatform/helion/user/1.1index.dita#quick-start" >Quick Start</xref>
+<xref href="../../devplatform/helion/user/1.1index.dita#quick-start" type="section" scope="external"  >Quick Start</xref>
 </li>
 <li>
-<xref href="../../devplatform/helion/user/1.1index.dita#helion-client" >Application Lifecycle Service Client</xref>
+<xref href="../../devplatform/helion/user/1.1index.dita#helion-client" type="section" scope="external"  >Application Lifecycle Service Client</xref>
 </li>
 <li>
-<xref href="../../devplatform/helion/user/1.1index.dita#deploying-applications" >Deploying Applications</xref>
+<xref href="../../devplatform/helion/user/1.1index.dita#deploying-applications" type="section" scope="external"  >Deploying Applications</xref>
 </li>
 <li>
-<xref href="../../devplatform/helion/user/1.1index.dita#services" >Services</xref>
+<xref href="../../devplatform/helion/user/1.1index.dita#services" type="section" scope="external"  >Services</xref>
 </li>
 <li>
-<xref href="../../devplatform/helion/user/1.1index.dita#logging-monitoring" >Logging &amp; Monitoring</xref>
+<xref href="../../devplatform/helion/user/1.1index.dita#logging-monitoring" type="section" scope="external"  >Logging &amp; Monitoring</xref>
 </li>
 <li>
-<xref href="../../devplatform/helion/user/1.1index.dita#management-console" >Management Console</xref>
+<xref href="../../devplatform/helion/user/1.1index.dita#management-console" type="section" scope="external"  >Management Console</xref>
 </li>
 <li>
-<xref href="../../devplatform/helion/user/1.1index.dita#reference" >Reference</xref>
+<xref href="../../devplatform/helion/user/1.1index.dita#reference" type="section" scope="external"  >Reference</xref>
 </li>
 </ul>
 </li>

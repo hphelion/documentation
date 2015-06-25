@@ -35,19 +35,19 @@ As you read in the <xref href="../../commercial/GA1/1.0commerical.flexible-contr
 <p>Before you can install the Flexible Control Plane, you will need to:</p>
 <ul>
 <li>
-<xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita#prereq" >Review prerequisites and configure the infrastructure</xref> accordingly</li>
+<xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita#prereq" type="section" scope="external"  >Review prerequisites and configure the infrastructure</xref> accordingly</li>
 <li>
-<xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita#configfiles" >Create configuration files</xref>
+<xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita#configfiles" type="section" scope="external"  >Create configuration files</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita#kvmsetup" >Set up KMV hosts</xref>
+<xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita#kvmsetup" type="section" scope="external"  >Set up KMV hosts</xref>
 </li>
 <li>Deploy an HP Helion cloud</li>
 </ul>
 </section>
 <section id="instruct"> <title>Step-by-step Installation Instructions</title>
 <ol>
-<li>On each of the three <xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita#kvmsetup" >KVM hosts</xref> prepared earlier, create a <i>brbm</i> bridge and add the physical NIC which connects to the Helion Management network (that carries the PXE/DHCP, message queue, and other API-related traffic) along with other networks.</li>
+<li>On each of the three <xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita#kvmsetup" type="section" scope="external"  >KVM hosts</xref> prepared earlier, create a <i>brbm</i> bridge and add the physical NIC which connects to the Helion Management network (that carries the PXE/DHCP, message queue, and other API-related traffic) along with other networks.</li>
 <li>
 <p>For example, on KVM Host A, the NIC is <b>eth1</b>:</p>
 

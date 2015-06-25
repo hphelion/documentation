@@ -85,13 +85,13 @@
 <section id="working-with-the-image-operations-service"> <title>Working with the Image Operations Service</title>
 <p>To <xref type="section" href="#topic4195/howto">perform tasks using the Image Operations service</xref>, you can use the dashboard, API or CLI.</p>
 </section>
-<section id="using-the-dashboards"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
+<section id="UI"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
 <p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Dashboard</xref> to work with the Image Operations service.</p>
 </section>
-<section id="using-the-api"> <title>Using the API<!--Removed anchor point API--><!-- id="API" --></title>
+<section id="API"> <title>Using the API<!--Removed anchor point API--><!-- id="API" --></title>
 <p>You can use a low-level, raw REST API access to HP Image Operations service. See the <xref href="http://developer.openstack.org/api-ref-image-v2.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Image Service API v2.0 Reference</xref>.</p>
 </section>
-<section id="using-the-cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
+<section id="cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
 <p>You can use any of several command-line interface software to access HP Image service. See the <xref href="http://docs.openstack.org/cli-reference/content/glanceclient_commands.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Command Line Interface Reference</xref>.</p>
 <p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">OpenStack</tm> command-line clients</xref>.
 <!--

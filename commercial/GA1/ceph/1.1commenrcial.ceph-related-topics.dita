@@ -30,7 +30,7 @@
 <p>This topic provides you links to related documentation that you might find helpful when working with HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1, Ceph Firefly 80.7 Storage Solution.</p>
 <ol>
 <li>
-<p>With increased density, efficiency, serviceability, and flexibility, the HP ProLiant SL4540 Gen8 Server, DL360/380 Gen8, BL460/660 Gen8 servers will be the perfect solution for scale-out storage needs. For more information, refer to <xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6464822#!tab=features" scope="external" format="html" >hp.com/servers/sl4540</xref>
+<p>With increased density, efficiency, serviceability, and flexibility, the HP ProLiant SL4540 Gen8 Server, DL360/380 Gen8, BL460/660 Gen8 servers will be the perfect solution for scale-out storage needs. For more information, refer to <xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6464822#!tab=features" type="section" scope="external" format="html" >hp.com/servers/sl4540</xref>
 </p>
 </li>
 <li>
@@ -64,12 +64,12 @@
 </li>
 <li>
 <p>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6464822#!tab=specs" scope="external" format="html" >HP Proliant 3XSL4540 Gen8 1G Mezz HBA Server</xref>
+<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6464822#!tab=specs" type="section" scope="external" format="html" >HP Proliant 3XSL4540 Gen8 1G Mezz HBA Server</xref>
 </p>
 </li>
 <li>
 <p>
-<xref href="http://h17007.www1.hp.com/us/en/networking/products/switches/HP_5900_Switch_Series/index.aspx#.VAeNxGXn9Co" scope="external" format="html" >HP 5900 Switch Series</xref>
+<xref href="http://h17007.www1.hp.com/us/en/networking/products/switches/HP_5900_Switch_Series/index.aspx#.VAeNxGXn9Co" type="section" scope="external" format="html" >HP 5900 Switch Series</xref>
 </p>
 </li>
 <li>

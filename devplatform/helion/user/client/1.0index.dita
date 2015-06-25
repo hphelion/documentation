@@ -28,7 +28,7 @@
 to Application Lifecycle Service. You can use it to push application code up to the server,
 start and stop applications, create data services and link them to
 applications, and a number of other application management operations.</p>
-<p>The <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" >Command Reference</xref> has full descriptions of all client commands and options. These details are also available at the command line via the <i>helion help</i> command.</p>
+<p>The <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" type="section" scope="external"  >Command Reference</xref> has full descriptions of all client commands and options. These details are also available at the command line via the <i>helion help</i> command.</p>
 <section id="helion-client-setup"> <title>Application Lifecycle Service Client Setup</title>
 <p>
 <b>Note</b>: Using the Windows Helion client with
@@ -67,7 +67,7 @@ applications, and a number of other application management operations.</p>
   <codeph>helion help [COMMAND]
 </codeph>
 </codeblock>
-<p>See also the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" >Command Reference</xref> for a full
+<p>See also the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" type="section" scope="external"  >Command Reference</xref> for a full
 list of commands.</p>
 </section>
 <section id="targeting-the-api-endpoint"> <title>Targeting the API Endpoint</title>

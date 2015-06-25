@@ -38,7 +38,7 @@
 <b>User-Provided Service Instances</b>
 </xref>: Credentials and connection information for <i>external</i> services.</li>
 </ul>
-<p>The <xref href="../../../../devplatform/helion/user/reference/1.1client-ref.dita#command-services" >helion services</xref> command will show a list of all System Services available on the current target. This command will also display a list of Provisioned Services allocated to the currently authenticated user.</p>
+<p>The <xref href="../../../../devplatform/helion/user/reference/1.1client-ref.dita#command-services" type="section" scope="external"  >helion services</xref> command will show a list of all System Services available on the current target. This command will also display a list of Provisioned Services allocated to the currently authenticated user.</p>
 <p>Administrators can configure external data services to work in the same way that core System Services do, providing users and applications with access to existing software and infrastructure.</p>
 <section id="service-brokers"> <title>Service Brokers</title>
 <p>Service brokers are RESTful web services which connect Helion to services that the hosted apps can consume.</p>
@@ -64,13 +64,13 @@
 <p>Descriptions of the settings from the <b>services</b> block in this file can be found in the following Cloud Foundry documentation:</p>
 <ul>
 <li>
-<xref href="http://docs.cloudfoundry.org/services/api.html#catalog-mgmt" scope="external" format="html" >Service Broker API: Catalog Management</xref>
+<xref href="http://docs.cloudfoundry.org/services/api.html#catalog-mgmt" type="section" scope="external" format="html" >Service Broker API: Catalog Management</xref>
 </li>
 <li>
 <xref href="http://docs.cloudfoundry.org/services/catalog-metadata.html" scope="external" format="html" >Catalog Metadata</xref>
 </li>
 </ul>
-<p>Once the echo-service application has been deployed, an admin can add the service broker with the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref.dita#command-add-service-broker" >add-service-broker</xref> command.</p>
+<p>Once the echo-service application has been deployed, an admin can add the service broker with the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref.dita#command-add-service-broker" type="section" scope="external"  >add-service-broker</xref> command.</p>
 <codeblock>
   <codeph>helion add-service-broker
 Enter name: echo-broker

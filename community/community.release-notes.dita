@@ -140,7 +140,7 @@
   <b>Installation</b>
 </p>
 <ul>
-<li>To enable VM functionality, be sure to install the required Ubuntu packages, as described in the <xref href="../community/community.hwsw-requirements.dita#software" >Software configuration</xref> section in Community Hardware and Software Requirements.</li>
+<li>To enable VM functionality, be sure to install the required Ubuntu packages, as described in the <xref href="../community/community.hwsw-requirements.dita#software" type="section" scope="external"  >Software configuration</xref> section in Community Hardware and Software Requirements.</li>
 </ul>
 <p>
   <b>Operations</b>

@@ -22,7 +22,7 @@
  <!--./devplatform/1.2/helion/admin/reference/1.2groups.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/reference/groups/--></p>
 <section id="-warning-"> <title>* Warning *</title>
-<p>Application Lifecycle Service Groups have been <b>replaced</b> by <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" >
+<p>Application Lifecycle Service Groups have been <b>replaced</b> by <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >
 <i>Organizations and
 Spaces</i>
 </xref>.</p>

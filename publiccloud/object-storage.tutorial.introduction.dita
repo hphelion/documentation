@@ -25,8 +25,8 @@
 <p>An important distinction here is that the CDN locations pull objects to them when users request them. The objects are not pushed to all the edge locations beforehand.</p>
 </section>
 <section id="web-browsers-and-caching"> <title>Web Browsers And Caching</title>
-<p>A common web browser caching strategy is to store static assets in the browser cache and <xref href="https://developers.google.com/speed/docs/best-practices/caching#LeverageBrowserCaching" scope="external" format="html" >instruct the browser to not check for updates until some point in the future</xref>. When using a CDN this happens a little differently. Instead, the local CDN location stores the file from the time it requested it through the length of time the container is configured to cache the file.</p>
-<p>On every page request the browser will ask the CDN if there is an update. If there has been no change the CDN will respond with a <xref href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#3xx_Redirection" scope="external" format="html" >
+<p>A common web browser caching strategy is to store static assets in the browser cache and <xref href="https://developers.google.com/speed/docs/best-practices/caching#LeverageBrowserCaching" type="section" scope="external" format="html" >instruct the browser to not check for updates until some point in the future</xref>. When using a CDN this happens a little differently. Instead, the local CDN location stores the file from the time it requested it through the length of time the container is configured to cache the file.</p>
+<p>On every page request the browser will ask the CDN if there is an update. If there has been no change the CDN will respond with a <xref href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#3xx_Redirection" type="section" scope="external" format="html" >
 <i>304 Not Modified</i>
 </xref> and the web browser will use the version stored in cache. Since the CDN server being checked is local it is close to the user and these requests are very fast. This shifts the knowledge of how long objects should cached from the end user's web browser to the CDN.</p>
 </section>

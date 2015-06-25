@@ -25,19 +25,19 @@
 debugging, but most require a connection between the running application
 code and the debugging tool or IDE on a port and protocol other than
 standard HTTP(S).</p>
-<p>Application Lifecycle Service makes this possible through the <xref href="../../../../../devplatform/1.2/helion/user/services/1.2port-service.dita#port-service" >Harbor port
+<p>Application Lifecycle Service makes this possible through the <xref href="../../../../../devplatform/1.2/helion/user/services/1.2port-service.dita#port-service" type="section" scope="external"  >Harbor port
 service</xref>, and the
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-push" >
+<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-push" type="section" scope="external"  >
 <i>push</i>
 </xref> command has
 a <codeph>-d</codeph> option to set up port forwarding for a remote
 debugging session automatically.</p>
-<p>See the <xref href="../../../../../devplatform/1.2/helion/user/deploy/languages/1.2java.dita#java-web-debug" >JPDA Debugging</xref> section
+<p>See the <xref href="../../../../../devplatform/1.2/helion/user/deploy/languages/1.2java.dita#java-web-debug" type="section" scope="external"  >JPDA Debugging</xref> section
 of the Java deployment documentation for an example.</p>
 <section id="helion-debug-command"> <title>HELION_DEBUG_COMMAND</title>
 <p>The command-line client can automatically start a local debugger client or IDE instance with connection information for a newly pushed application.</p>
 <p>When the <codeph>-d</codeph> debugging option is given to
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-push" >
+<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-push" type="section" scope="external"  >
 <i>push</i>
 </xref> command,
 the client looks for a HELION_DEBUG_COMMAND environment variable. If

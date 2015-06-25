@@ -68,7 +68,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </li>
 </ul>
 <section id="os"> <title><tm tmtype="reg">OpenStack</tm> version information</title>
-<p>All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#HP" >Helion Openstack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack Juno</xref>.</p>
+<p>All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#HP" type="section" scope="external"  >Helion Openstack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack Juno</xref>.</p>
 </section>
 <section id="deploy-arch"> <title>Deployment Architecture</title>
 <p>The following diagrams depict simplified deployment scenarios:</p>

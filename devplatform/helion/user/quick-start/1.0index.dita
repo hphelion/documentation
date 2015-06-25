@@ -40,7 +40,7 @@ been set up for you on the system.</p>
 <p>The interface should be mostly self-explanatory. It exposes most of the
 functionality you have access to as an end user, but to deploy your own
 applications from source code on your local machine you will need to install and use
-the Helion <xref href="../client/1.0index.dita#topic2972/helion-client-setup" >Application Lifestyle Service client</xref>.</p>
+the Helion <xref href="../client/1.0index.dita#topic2972/helion-client-setup" type="section" scope="external"  >Application Lifestyle Service client</xref>.</p>
 </section>
 <section id="application-lifecycle-service-client"> <title>Application Lifecycle Service Client</title>
 <p>The Helion client is used for pushing

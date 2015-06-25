@@ -36,17 +36,17 @@ source code to the system.</p>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/user/quick-start/1.0index.dita#management-console" >Management Console</xref>
+<xref href="../../../devplatform/helion/user/quick-start/1.0index.dita#management-console" type="section" scope="external"  >Management Console</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/user/quick-start/1.0index.dita#helion-client" >Application Lifecycle Service Client</xref>
+<xref href="../../../devplatform/helion/user/quick-start/1.0index.dita#helion-client" type="section" scope="external"  >Application Lifecycle Service Client</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/user/quick-start/1.0index.dita#setting-organization-and-space" >Setting Organization and
+<xref href="../../../devplatform/helion/user/quick-start/1.0index.dita#setting-organization-and-space" type="section" scope="external"  >Setting Organization and
 Space</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/user/quick-start/1.0index.dita#deploying-apps" >Deploying Apps</xref>
+<xref href="../../../devplatform/helion/user/quick-start/1.0index.dita#deploying-apps" type="section" scope="external"  >Deploying Apps</xref>
 </li>
 </ul>
 </li>
@@ -62,19 +62,19 @@ Space</xref>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/user/client/1.0index.dita#helion-client-setup" >Application Lifecycle Service Client Setup</xref>
+<xref href="../../../devplatform/helion/user/client/1.0index.dita#helion-client-setup" type="section" scope="external"  >Application Lifecycle Service Client Setup</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/user/client/1.0index.dita#getting-help" >Getting Help</xref>
+<xref href="../../../devplatform/helion/user/client/1.0index.dita#getting-help" type="section" scope="external"  >Getting Help</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/user/client/1.0index.dita#targeting-the-api-endpoint" >Targeting the API Endpoint</xref>
+<xref href="../../../devplatform/helion/user/client/1.0index.dita#targeting-the-api-endpoint" type="section" scope="external"  >Targeting the API Endpoint</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/user/client/1.0index.dita#http-proxies" >HTTP Proxies</xref>
+<xref href="../../../devplatform/helion/user/client/1.0index.dita#http-proxies" type="section" scope="external"  >HTTP Proxies</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/user/client/1.0index.dita#removing-the-client" >Removing the Client</xref>
+<xref href="../../../devplatform/helion/user/client/1.0index.dita#removing-the-client" type="section" scope="external"  >Removing the Client</xref>
 </li>
 </ul>
 </li>
@@ -92,7 +92,7 @@ Space</xref>
 <xref href="../../../devplatform/helion/user/deploy/1.0app-debug.dita" >Remote Debugging</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/user/deploy/1.0index.dita#language-specific-deploy" >
+<xref href="../../../devplatform/helion/user/deploy/1.0index.dita#language-specific-deploy" type="section" scope="external"  >
 <b>Frameworks &amp; Languages</b>
 </xref>
 
@@ -164,26 +164,26 @@ Space</xref>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#welcome" >Welcome</xref>
+<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#welcome" type="section" scope="external"  >Welcome</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#organization-view" >Organization View</xref>
+<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#organization-view" type="section" scope="external"  >Organization View</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#space-view" >Space View</xref>
+<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#space-view" type="section" scope="external"  >Space View</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#application-view" >Application View</xref>
+<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#application-view" type="section" scope="external"  >Application View</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#service-instance-view" >Service Instance
+<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#service-instance-view" type="section" scope="external"  >Service Instance
 View</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#app-store" >Sample Applications</xref>
+<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#app-store" type="section" scope="external"  >Sample Applications</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#support" >Support</xref>
+<xref href="../../../devplatform/helion/admin/console/1.0customize.dita#support" type="section" scope="external"  >Support</xref>
 </li>
 </ul>
 </li>

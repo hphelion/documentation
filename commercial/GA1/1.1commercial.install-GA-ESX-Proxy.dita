@@ -40,7 +40,7 @@
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
 <li>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-esx.dita#verifying-your-installation" >Verify your cloud installation</xref>.</li>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-esx.dita#verifying-your-installation" type="section" scope="external"  >Verify your cloud installation</xref>.</li>
 <li>Set up the management port-group in DVS. Make sure  that there is a proper network connection between the overcloud controller and the port-group.</li>
 <li>Verify the network connection between the overcloud controller and the proxy.</li>
 <li>Ping the gateway of the ESX Network or log in to the server where you will deploy the ESX Compute proxy.</li>
@@ -161,7 +161,7 @@ sudo poweroff
 <p>Perform the following steps on the undercloud node using the <xref type="section" href="#topic8887/deploy_cli">EON CLI</xref> or the <xref type="section" href="#topic8887/deploy_ui">Horizon dashboard</xref>.</p>
 </section>
 <section id="deploy-the-proxy-using-the-undercloud-horizon-dashboard-"> <title>Deploy the proxy using the undercloud Horizon dashboard <!--Removed anchor point deploy_ui--><!-- id="deploy_ui" --></title>
-<p>To deploy the ESX compute proxy using the undercloud Horizon dashboard, see the <xref href="../../commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita#register-vcenter" >Register vCenter section</xref> of the Virtual Environments document.</p>
+<p>To deploy the ESX compute proxy using the undercloud Horizon dashboard, see the <xref href="../../commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita#register-vcenter" type="section" scope="external"  >Register vCenter section</xref> of the Virtual Environments document.</p>
 </section>
 <section id="deploy-the-proxy-using-the-eon-cli-"> <title>Deploy the proxy using the EON CLI <!--Removed anchor point deploy_cli--><!-- id="deploy_cli" --></title>
 <p>To deploy the ESX compute proxy using the EON CLI, execute the following steps from the undercloud node:</p>

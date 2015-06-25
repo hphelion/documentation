@@ -31,7 +31,7 @@ whether or not it is installed in @INC. It makes this distinction based
 on the presence of a <i>Makefile.PL</i> or <i>BUILD.PL</i> file in the app
 directory, so it is important to have one even if all prerequisites are
 installed via <i>requirements.txt</i>.</p>
-<p>Alternatively, the Home directory can be <xref href="https://metacpan.org/module/Catalyst#Home" scope="external" format="html" >set
+<p>Alternatively, the Home directory can be <xref href="https://metacpan.org/module/Catalyst#Home" type="section" scope="external" format="html" >set
 explicitly</xref> with environment
 variables. For example, you could set CATALYST_HOME in <i>manifest.yml</i>:</p>
 <codeblock>
