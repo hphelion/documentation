@@ -284,7 +284,7 @@
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"/>
       <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
     </topichead>
-    <topichead navtitle="HP Helion Openstack(R) 1.1: Using the Undercloud Horizon Dashboard">
+    <topichead navtitle="HP Helion Openstack(R) 1.1: Undercloud Operations">
       <topicref href="commercial/GA1/1.1commercial.using.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-admin-settings.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-resources-overview.dita"/>
