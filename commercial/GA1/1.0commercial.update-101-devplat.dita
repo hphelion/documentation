@@ -107,7 +107,10 @@
 <section id="update-database"> <title>Update the Database Service</title>
 <p>This section provides details on updating the Database Service for <tm tmtype="reg">Helion OpenStack</tm> Development Platform. This assumes that the Database service is installed in your cloud.</p>
 <p>
-  <b>Note:</b> If the Database service is not installed, see the <xref href="../../devplatform/1.0devplatform_commercial_install.dita#install-database" scope="external" format="html" ><tm tmtype="reg">Helion OpenStack</tm> Development Platform Install Guide</xref>.</p>
+        <b>Note:</b> If the Database service is not installed, see the  <xref
+          href="../../devplatform/1.0devplatform_commercial_install.dita#topic15281/install-database"
+        />
+      </p>
 </section>
 <section id="download-db"> <title>Download the Database Service</title>
 <p>To download the latest version of the Database service:</p>
