@@ -57,7 +57,7 @@ configuration.</p>
 servers, Application Lifecycle Service must have access to an administrator account on the
 database server with permissions to create users and databases. The
 credentials for this account, along with the hostname and port of the
-database server, are set in the Application Lifecycle Service configuration (via <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" >
+database server, are set in the Application Lifecycle Service configuration (via <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" >
 <i>kato
 config</i>
 </xref>).</p>
