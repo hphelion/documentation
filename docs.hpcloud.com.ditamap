@@ -19,7 +19,8 @@
   <topicref href="publiccloud/index.dita"/>
   <topicref href="commercial/GA1/1.1commercial.index.dita"
     navtitle="HP Helion Openstack(R) 1.1: Documentation Home">
-    <topicref href="commercial/GA1/1.1commercial.whatsnew.dita" navtitle="What's New in 1.1"/>
+    <topicref href="commercial/GA1/1.1commercial.whatsnew.dita" navtitle="What's New in 1.1"
+      locktitle="yes"/>
     <topicref href="commercial/GA1/1.1.1commercial.helion-update.dita" navtitle="Update to HP Helion OpenStack 1.1.1"/>
     <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
     <topicref href="commercial/GA1/1.1commercial.release-notes.dita"  /><!--set to toc=no later-->
@@ -49,8 +50,23 @@
       </topicref>
       
       <topicref href="commercial/GA1/1.1commerical.services-imaging-overview.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.services-networking-overview.dita"> 
+      <topicref href="commercial/GA1/1.1commerical.services-networking-overview.dita">
+        <topicref href="commercial/GA1/1.1commercial.services-mapNeutron.dita"/> 
         <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-post-installation.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-DNaaS.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-neutron-integration.dita"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-intro.dita"/>
+        <topicref href="commercial/GA1/1.1commerical.services-dvr-overview.dita"/>
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-object-overview.dita">
         <!-- All Things Swift-->
@@ -142,7 +158,7 @@
           href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita"/>
       </topicref>
       <!--Ceph stuff-->
-      <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita">
+      <topicref href="commercial/GA1/1.1commercial.ceph-overview.dita">
         <topicref href="commercial/GA1/ceph/1.1commerical.services-ceph-archref.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-pre-requisite.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita"/>
@@ -170,6 +186,9 @@
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-glossary.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-related-topics.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"/>
+        <topicref
+          href="commercial/GA1/1.1commenrcial.ceph-configuration-recovery-and-backup-procedure-helion-nodes.dita"
+          navtitle="Ceph Backup and Recovery" locktitle="yes"/>
       </topicref>
         
       <topicref href="commercial/GA1/1.1commerical.services-sirius-overview.dita">
@@ -295,6 +314,8 @@
       <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storeserv.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storevirtual.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-admin-updates-and-extensions.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-horizon-overview.dita"/>
     </topichead>
     <topichead navtitle="HP Helion Openstack(R) 1.1: System Restore and Recovery">
       <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"/>
@@ -1738,4 +1759,169 @@
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
+  
+  <!-- Carrier Grade -->
+  
+  <topicref href="CarrierGrade/carrier-grade-index.dita">
+    <topichead navtitle="HP Helion Carrier Grade 1.1: KVM Region Release Notes">
+      <topicref href="CarrierGrade/CGHRelNotes/jow1404333830215.xml"/>
+      <topicref href="CarrierGrade/CGHRelNotes/jow1404333830815.xml"/>
+      <topicref href="CarrierGrade/CGHRelNotes/jow1404333831397.xml"/>
+      <topicref href="CarrierGrade/CGHRelNotes/jow1404333831977.xml"/>
+    </topichead>
+    <topicref href="CarrierGrade/Overview/carrier-grade-overview.dita">
+      <topicref href="CarrierGrade/Overview/carrier-grade-overview-non-kvm.dita"/>
+      <topicref href="CarrierGrade/Overview/carrier-grade-overview-kvm.dita"/>
+      <topicref href="CarrierGrade/Overview/carrier-grade.services-overview.dita">
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-compute-overview.dita"/>
+        <topicref
+          href="CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita"/>
+        <topicref
+          href="CarrierGrade/ServicesOverviews/carrier-grade-services-orchestration-overview.dita"/>
+        <topicref href="CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita">
+          <topicref href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"/>
+          <topicref
+            href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"/>
+        </topicref>
+      </topicref>
+    </topicref>
+    <topichead navtitle="Installing the Non-KVM Region">
+      <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix.dita">
+        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-dcn.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-helion.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-hlm.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-wr.dita"/>
+      </topicref>
+      <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"/>
+      <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-overview.dita">
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita">
+          <topicref href="CarrierGrade/Installation/carrier-grade-install-NTP.dita"/>
+          <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.dita"/>
+          <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"/>
+        </topicref>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-rc0.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-verify.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-troubleshoot.dita"/>
+      </topicref>
+    </topichead>
+    <topichead navtitle="Installing the KVM Region (PDF)">
+      <topicref href="PDF/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf"
+        navtitle="HP Helion OpenStack Carrier Grade Software Install" locktitle="yes" format="pdf"/>
+    </topichead>
+    <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita">
+      <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-account-container.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-starter-object-ring.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-storage-node.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-proxy-node.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-expand-swift-cluster.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-disk-drive(s).dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-health-check.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-health-swift-services.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-replica-swift-status.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-cluster.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-disk.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-drive-audit.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-file-ownership.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-mount-points.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-network-access-ping.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-network-interface.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-proxy-health-checks.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-part-power.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-provision-swift-node.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-remove-proxy-node.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-swift-cluster.dita"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-diagnosis-disk-health-hpssacli.dita"/>
+      <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting.swift.dita"/>
+      <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting-overcloud.dita"
+      />
+    </topicref>
+    <topichead navtitle="HP Helion OpenStack Carrier Grade Administrator Guide">
+      <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
+    </topichead>
+    <topichead
+      navtitle="HP Helion OpenStack Carrier Grade (Beta): Reference Deployment Scenarios Guide">
+      <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
+        <!-- topicref href="jow1410639575680.xml"/  Pktgen Scenario removed 2014-09-19 -->
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638776646.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638924240.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411430962060.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411435660602.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411482049845.xml"/>
+      </topicref>
+      <topicref href="CarrierGrade/DeploymentScenarios3/jow1410636108227.xml">
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411497294920.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333821651.xml">
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333723047.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333728991.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1424192677556.xml"/>
+          <!-- Removing from map until needed for GA release
+                  <topicref href="rst1433175643400.xml"/>
+            </topicref>-->
+          <topicref href="CarrierGrade/DeploymentScenarios3/rst1432665605712.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1410637938926.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333714134.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333668441.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333673732.xml"/>
+        </topicref>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333809139.xml" >
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333586935.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333594789.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/rec1433352802888.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1410804489611.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1408735356648.xml"/>
+        </topicref>
+      </topicref>
+      <topicref href="CarrierGrade/DeploymentScenarios3/jow1411149829129.xml"/>
+      <topicref href="CarrierGrade/DeploymentScenarios3/jow1411149875790.xml"/>
+      <topicref href="CarrierGrade/DeploymentScenarios3/jow1411677830752.xml"/>
+      <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333819947.xml">
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333822865.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333823466.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1424188329479.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/rst1432757329786.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411739340460.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333587606.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333825310.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333825972.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333826563.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827217.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827838.xml"/>
+      </topicref>
+    </topichead>
+  </topicref> 
+<!-- ======= -->
+
+=======
+>>>>>>> eeaee41025ac2b4680650e580af406c67822e963
 </map>
