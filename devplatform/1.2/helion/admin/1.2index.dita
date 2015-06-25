@@ -23,18 +23,18 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/admin/1.2index.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/--></p>
-<p>Application Lifecycle Service is HP's cloud application framework for creating a
-multi-language, secure and private Platform-as-a-Service (PaaS). This
-guide covers how to set it up and how to configure it for your end
-users.</p>
+<p>Application Lifecycle Service is our cloud application framework for creating a multi-language,
+      secure and private Platform-as-a-Service (PaaS). This guide covers how to set it up and how to
+      configure it for your end users.</p>
 <section id="wizard-based-cluster-creation"> <title>Wizard-Based Cluster Creation</title>
-<p>You can easily create and access Application Lifecycle Service clusters from the <xref href="../../../../devplatform/1.2/1.2devplatform.deploy-ALS.dita" >Project Dashboard</xref>
-</p>
+<p>You can easily create and access Application Lifecycle Service clusters from the <xref
+          href="../../1.2devplatform.deploy-ALS.dita">Horizon Dashboard</xref>
+      </p>
 </section>
 <section id="management-console"> <title>Helion Development Platform Management Console</title>
 <ul>
 <li>
-<xref href="../../../../devplatform/1.2/helion/user/console/1.2index.dita#management-console" >Management Console</xref>
+<xref href="../user/console/1.2index.dita" >Management Console</xref>
 </li>
 <li>
 <xref href="console/1.2app-store.dita">Sample Applications </xref></li>
@@ -44,248 +44,234 @@ users.</p>
 <p>This section covers advanced configuration settings that allow you to modify default cluster component behavior.</p>
 <ul>
 <li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2index.dita" >Server Configuration</xref>
-
-<ul>
+          <xref href="server/1.2index.dita">Server Configuration</xref>
+          <ul>
+            <li>
+              <xref href="server/1.2index.dita#topic3007/accessing-server-via-the-command-line"
+                >Accessing Server via the Command Line</xref>
+            </li>
+            <li>
+              <xref href="server/1.2index.dita#topic3007/common-operations">Common Operations</xref>
+            </li>
+            <li>
+              <xref href="server/1.2index.dita#topic3007/detailed-configuration">Detailed
+                Configuration</xref>
+            </li>
+          </ul></li>
 <li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2index.dita#accessing-server-via-the-command-line" >Accessing Server via the Command
-Line</xref>
-</li>
+          <xref href="server/1.2router.dita">Router</xref>
+          <ul>
+            <li>
+              <xref href="server/1.2router.dita#topic3030/settings">Settings</xref>
+            </li>
+            <li>
+              <xref href="server/1.2router.dita#topic3030/websockets">WebSockets</xref>
+            </li>
+            <li>
+              <xref href="server/1.2router.dita#topic3030/router-spdy">SPDY</xref>
+            </li>
+          </ul></li>
 <li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2index.dita#common-operations" >Common Operations</xref>
-</li>
+          <xref href="server/1.2docker.dita">Docker &amp; Fence</xref>
+          <ul>
+            <li>
+              <xref href="server/1.2docker.dita#topic7767/modifying-or-updating-the-container-image">Modifying
+                or Updating the Container Image</xref>
+            </li>
+            <li>
+              <xref href="server/1.2docker.dita#topic7767/admin-hooks">Admin Hooks</xref>
+            </li>
+            <li>
+              <xref href="server/1.2docker.dita#topic7767/creating-a-docker-registry">Creating a
+                Docker Registry</xref>
+            </li>
+          </ul></li>
 <li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2index.dita#detailed-configuration" >Detailed
-Configuration</xref>
-</li>
-</ul>
-</li>
+          <xref href="server/1.2logging.dita">Log Streams</xref>
+          <ul>
+            <li>
+              <xref href="server/1.2logging.dita#topic11928/logyard">Logyard</xref>
+            </li>
+            <li>
+              <xref href="server/1.2logging.dita#topic11928/drains">Drains</xref>
+            </li>
+            <li>
+              <xref href="server/1.2logging.dita#topic11928/configuration">Configuration</xref>
+            </li>
+            <li>
+              <xref href="server/1.2logging.dita#topic11928/debugging-logyard">Debugging
+                Logyard</xref></li>
+            <li>
+              <xref
+                href="best-practices/1.2logging-examples.dita#topic2651/hello-world-custom-drain"
+                >Hello World Custom Drain Sample</xref>
+            </li>
+          </ul></li>
 <li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2router.dita" >Router</xref>
-
-<ul>
+          <xref href="server/1.2aok.dita">AOK Authentication Server</xref>
+          <ul>
+            <li>
+              <xref href="server/1.2aok.dita#topic8359/end-user-login">End User Login</xref>
+            </li>
+            <li>
+              <xref href="server/1.2aok.dita#topic8359strategies">Strategies</xref>
+            </li>
+            <li>
+              <xref href="server/1.2aok.dita#topic8359/configuration">Configuration</xref>
+            </li>
+            <li>
+              <xref href="server/1.2aok.dita#topic8359/user-management">User Management</xref>
+            </li>
+            <li>
+              <xref href="server/1.2aok.dita#topic8359/first-admin-user-setup">First Admin User
+                Setup</xref>
+            </li>
+            <li>
+              <xref href="server/1.2aok.dita#topic8359/regular-ldap-user-setup">Regular LDAP User
+                Setup</xref>
+            </li>
+          </ul></li>
 <li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2router.dita#settings" >Settings</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2router.dita#websockets" >WebSockets</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2router.dita#router-spdy" >SPDY</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2docker.dita" >Docker &amp; Fence</xref>
-
-<ul>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2docker.dita#modifying-or-updating-the-container-image" >Modifying or Updating the Container
-Image</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2docker.dita#admin-hooks" >Admin Hooks</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2docker.dita#creating-a-docker-registry" >Creating a Docker
-Registry</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2logging.dita" >Log Streams</xref>
-
-<ul>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2logging.dita#logyard" >Logyard</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2logging.dita#drains" >Drains</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2logging.dita#configuration" >Configuration</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2logging.dita#debugging-logyard" >Debugging Logyard</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2aok.dita" >AOK Authentication Server</xref>
-
-<ul>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2aok.dita#end-user-login" >End User Login</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2aok.dita#strategies" >Strategies</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2aok.dita#configuration" >Configuration</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2aok.dita#user-management" >User Management</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2aok.dita#first-admin-user-setup" >First Admin User Setup</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2aok.dita#regular-ldap-user-setup" >Regular LDAP User
-Setup</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita" >Upgrading Application Lifecycle Service</xref>
-
-<ul>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#before-an-upgrade" >Before an upgrade</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#executing-the-upgrade" >Executing the
-upgrade</xref>
-</li>
-</ul>
-</li>
+          <xref href="server/1.2upgrade.dita">Upgrading Application Lifecycle Service</xref>
+          <ul>
+            <li>
+              <xref href="server/1.2upgrade.dita#topic13180/before-an-upgrade">Before an
+                upgrade</xref>
+            </li>
+            <li>
+              <xref href="server/1.2upgrade.dita#topic13180/executing-the-upgrade">Executing the
+                upgrade</xref>
+            </li>
+          </ul></li>
 </ul>
 </section>
 <section id="cluster-configuration"> <title>Advanced/Manual Cluster Configuration</title>
 <p>This section provides information on how to set up a standalone cluster and modify default cluster level settings.</p>
 <ul>
 <li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita" >Cluster Setup</xref>
-
-<ul>
+          <xref href="cluster/1.2index.dita">Cluster Setup</xref>
+          <ul>
+            <li>
+              <xref href="cluster/1.2index.dita#topic18326/roles">Roles</xref>
+            </li>
+            <li>
+              <xref href="cluster/1.2index.dita#topic18326/preparing-the-core-node">Preparing the
+                Core Node</xref>
+            </li>
+            <li>
+              <xref href="cluster/1.2index.dita#topic18326/attaching-nodes-and-enabling-roles"
+                >Attaching Nodes and Enabling Roles</xref>
+            </li>
+            <li>
+              <xref href="cluster/1.2index.dita#topic18326/example-clusters">Example Clusters</xref>
+            </li>
+            <li>
+              <xref
+                href="cluster/1.2index.dita#topic18326/roles-requiring-persistent-or-shared-storage"
+                >Roles Requiring Persistent or Shared Storage</xref>
+            </li>
+            <li>
+              <xref href="cluster/1.2index.dita#topic18326/port-configuration">Port
+                Configuration</xref>
+            </li>
+            <li>
+              <xref href="cluster/1.2index.dita#topic18326/multiple-controllers">Multiple
+                Controllers</xref>
+            </li>
+            <li>
+              <xref href="cluster/1.2index.dita#topic18326/load-balancer-and-multiple-routers">Load
+                Balancer and Multiple Routers</xref>
+            </li>
+          </ul></li>
 <li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#roles" >Roles</xref>
-</li>
+          <xref href="cluster/1.2cloud-init.dita">cloud-init</xref>
+          <ul>
+            <li>
+              <xref href="cluster/1.2cloud-init.dita#topic2346/securing-the-new-node">Securing the
+                new node</xref>
+            </li>
+            <li>
+              <xref href="cluster/1.2cloud-init.dita#topic2346/custom-system-configuration">Custom
+                System Configuration</xref>
+            </li>
+          </ul></li>
 <li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#preparing-the-core-node" >Preparing the Core
-Node</xref>
-</li>
+          <xref href="cluster/1.2external-db.dita">External Data Services</xref>
+          <ul>
+            <li>
+              <xref href="cluster/1.2external-db.dita#topic4533/general-principles">General
+                Principles</xref>
+            </li>
+            <li>
+              <xref href="cluster/1.2external-db.dita#topic4533/mysql">MySQL</xref>
+            </li>
+            <li>
+              <xref href="cluster/1.2external-db.dita#topic4533/postgresql">PostgreSQL</xref>
+            </li>
+            <li>
+              <xref href="cluster/1.2external-db.dita#topic4533/troubleshooting"
+                >Troubleshooting</xref>
+            </li>
+            <li><xref href="reference/1.2add-service.dita">Adding System Services</xref>
+            </li>
+          </ul></li>
 <li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#attaching-nodes-and-enabling-roles" >Attaching Nodes and Enabling
-Roles</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#example-clusters" >Example Clusters</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#roles-requiring-persistent-or-shared-storage" >Roles Requiring Persistent or Shared
-Storage</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#port-configuration" >Port Configuration</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#multiple-controllers" >Multiple Controllers</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#load-balancer-and-multiple-routers" >Load Balancer and Multiple
-Routers</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2cloud-init.dita" >cloud-init</xref>
-
-<ul>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2cloud-init.dita#securing-the-new-node" >Securing the new
-node</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2cloud-init.dita#custom-system-configuration" >Custom System
-Configuration</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2external-db.dita" >External Data Services</xref>
-
-<ul>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2external-db.dita#general-principles" >General
-Principles</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2external-db.dita#mysql" >MySQL</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2external-db.dita#postgresql" >PostgreSQL</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2external-db.dita#troubleshooting" >Troubleshooting</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2harbor.dita" >Harbor: TCP/UDP Port Service</xref>
-
-<ul>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2harbor.dita#architecture" >Architecture</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2harbor.dita#requirements-setup" >Requirements &amp; Setup</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2harbor.dita#troubleshooting" >Troubleshooting</xref>
-</li>
-</ul>
-</li>
+          <xref href="cluster/1.2harbor.dita">Harbor: TCP/UDP Port Service</xref>
+          <ul>
+            <li>
+              <xref href="cluster/1.2harbor.dita#topic4009/architecture">Architecture</xref>
+            </li>
+            <li>
+              <xref href="cluster/1.2harbor.dita#topic4009/requirements-setup">Requirements &amp;
+                Setup</xref>
+            </li>
+            <li>
+              <xref href="cluster/1.2harbor.dita#topic4009/troubleshooting">Troubleshooting</xref>
+            </li>
+          </ul></li>
 </ul>
 </section>
 <section id="best-practices"> <title>Best Practices</title>
 <ul>
 <li>
-<xref href="../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita" >Best Practices</xref>
-
-<ul>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#applying-updates" >Applying Updates</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#backup-migration" >Backup &amp; Migration</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#upgrade" >Upgrading (v1.0 and
-later)</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#storage" >Persistent
-Storage</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/best-practices/1.2logging-examples.dita#hello-world-custom-drain" >Hello World Custom Drain Sample</xref>
-</li>
+          <xref href="best-practices/1.2index.dita">Best Practices</xref>
+          <ul>
+            <li>
+              <xref href="best-practices/1.2index.dita#topic16169/applying-updates">Applying
+                Updates</xref>
+            </li>
+            <li>
+              <xref href="best-practices/1.2index.dita#topic16169/bestpractices-migration">Backup &amp;
+                Migration</xref>
+            </li>
+            <li>
+              <xref href="best-practices/1.2index.dita#topic16169/upgrade">Upgrading</xref>
+            </li>
+            <li>
+              <xref href="best-practices/1.2index.dita#topic16169/storage">Persistent Storage</xref>
+            </li>
+          </ul></li>
 </ul>
 </section>
 <section id="reference"> <title>Reference</title>
 <ul>
 <li>
-<xref href="../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita" >Kato Command Reference</xref>
+<xref href="reference/1.2kato-ref.dita" >Kato Command Reference</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >Client Command Reference</xref>
+          <xref href="../user/reference/1.2client-ref.dita">ALS Client Command Reference</xref>
+        </li>
+<li>
+<xref href="../user/deploy/1.2orgs-spaces.dita" >Managing Groups, Users &amp; Limits</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" >Managing Groups, Users &amp; Limits</xref>
+<xref href="reference/1.2architecture.dita" >Architectural Design</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/1.2/helion/admin/reference/1.2architecture.dita" >Architectural Design</xref>
+<xref href="../user/reference/1.2glossary.dita" >Glossary</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita" >Glossary</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/reference/1.2troubleshoot.dita" >Troubleshooting</xref>
-</li>
-<li>
-<xref href="../../../../devplatform/1.2/helion/admin/reference/1.2add-service.dita" >Adding System Services</xref>
+<xref href="reference/1.2troubleshoot.dita" >Troubleshooting</xref>
 </li>
 </ul>
 </section>
