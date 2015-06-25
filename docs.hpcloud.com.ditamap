@@ -19,7 +19,8 @@
   <topicref href="publiccloud/index.dita"/>
   <topicref href="commercial/GA1/1.1commercial.index.dita"
     navtitle="HP Helion Openstack(R) 1.1: Documentation Home">
-    <topicref href="commercial/GA1/1.1commercial.whatsnew.dita"/>
+    <topicref href="commercial/GA1/1.1commercial.whatsnew.dita" navtitle="What's New in 1.1"
+      locktitle="yes"/>
     <topicref href="commercial/GA1/1.1.1commercial.helion-update.dita" navtitle="Update to HP Helion OpenStack 1.1.1"/>
     <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
     <topicref href="commercial/GA1/1.1commercial.release-notes.dita"  /><!--set to toc=no later-->
