@@ -304,41 +304,23 @@ If you are updating to a release that includes new Orchestration (Heat) template
   <codeph>./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-undercloud 
 </codeph>
 </codeblock>
-<p>To update your HP <tm tmtype="reg">Helion OpenStack</tm> undercloud from v1.1 to v1.1.1:</p>
+<p>To update your HP <tm tmtype="reg">Helion OpenStack</tm> undercloud from v1.1 to v1.1.1, from the
+        seed VM:</p>
 <ol>
 <li>
-<p>Log on to the seed VM.</p>
+  <p>Source the <codeph>kvm-custom-ips.json</codeph> file and run the update script by entering:</p>
 
 <codeblock>
-<codeph>ssh root@&lt;seed-ip&gt;
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Download the update kit onto the seed VM.</p>
-
-<codeblock>
-<codeph>cd /root
-mkdir helion-update-1.1-to-1.1.1
-cd helion-update-1.1-to-1.1.1
-wget http://&lt;url&gt;/helion_ee_1.1.1.tgz
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Extract the update kit, copy the <codeph>kvm-custom-ips.json</codeph>, and run the update script.</p>
-
-<codeblock>
-<codeph>tar -xvzf helion_ee_1.1.1.tgz
-cp ~/tripleo/configs/kvm-custom-ips.json ~/helion-update-1.1-to-1.1.1/tripleo/configs/kvm-custom-ips.json
 source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 cd tripleo/helion-update/undercloud_update
 ./update_uc.sh ~/helion-update-1.1-to-1.1.1/tripleo
-</codeph>
 </codeblock>
 </li>
 <li>
-<p>Your HP <tm tmtype="reg">Helion OpenStack</tm> undercloud is now updated. Confirm that update was successful by examining the <codeph>/var/log/ansible/ansible.log</codeph>.  This report should not list any unreachable nodes:</p>
+<p>Confirm that update was successful by examining the
+            <codeph>/var/log/ansible/ansible.log</codeph>. This report should not list any
+            unreachable or failed nodes. That is <codeph>unreachable=0</codeph> and
+              <codeph>failed=0</codeph> as shown in the example output below:</p>
 
 <codeblock>
 <codeph>PLAY RECAP ********************************************************************
