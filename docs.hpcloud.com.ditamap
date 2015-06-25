@@ -296,6 +296,7 @@
       <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita"/>
     </topichead>
     <topichead navtitle="HP Helion Openstack(R) 1.1: System Restore and Recovery">
+      <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"/>
       <topicref
         href="commercial/GA1/1.1commerical.services-remove-replace-failed-overcloud-nodes.dita"/>
       <topicref href="commercial/GA1/1.1commerical.high-availability-restore.dita"/>
@@ -327,7 +328,6 @@
     <topicref href="commercial/GA1/1.1commerical.services-logging-overview.dita"/>
 
     <!-- backup -->
-      <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"/>
     <!-- Update -->
     <!-- FCP -->
     <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-overview.dita">
