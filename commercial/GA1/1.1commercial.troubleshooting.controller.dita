@@ -67,12 +67,10 @@ HP <tm tmtype="reg">Helion OpenStack</tm> is an <tm tmtype="reg">OpenStack</tm> 
 sudo rm -rf /mnt/state/var/lib/rabbitmq
 sudo rm -rf /mnt/state/var/log/rabbitmq
 sudo os-refresh-config
-ironic port-create --address <required-cleanup remap="mac">
-<ph> --node_uuid <required-cleanup remap="uuid">
+ironic port-create --address 
+<ph> --node_uuid 
 <ph/>
-</required-cleanup>
 </ph>
-</required-cleanup>
 </p>
 </li>
 </ul>
