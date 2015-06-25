@@ -46,7 +46,7 @@
 <p>Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed cloud host:</p>
 <ul>
 <li>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#proxy" >Configure proxy information</xref>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#proxy" type="section" scope="external"  >Configure proxy information</xref>
 </li>
 <li>
 <xref type="section" href="#topic7417/startseed">Install the seed VM and building your cloud</xref>
@@ -100,7 +100,7 @@
 <codeph>baremetal.csv</codeph> configuration file</xref> file is correct and upload the file to <codeph>/root</codeph>.</p>
 
 <p>
-<b>Note:</b> For more information on creating this file, refer to <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" >Creating the baremetal.csv file</xref> on the <i>Prerequisites</i> page.</p>
+<b>Note:</b> For more information on creating this file, refer to <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section" scope="external"  >Creating the baremetal.csv file</xref> on the <i>Prerequisites</i> page.</p>
 </li>
 <li>
 <p>If you are integrating LDAP into your environment, copy the configuration files, as described in <xref href="../../commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" >Integrating LDAP</xref>, to the seed cloud host.</p>

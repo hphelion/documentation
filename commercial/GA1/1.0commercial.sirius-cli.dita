@@ -45,7 +45,7 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
 <xref type="section" href="#topic7877/required-options">Required Options</xref>
 </li>
 </ul>
-<section id="help-commands"> <title>Help Commands<!--Removed anchor point help--><!-- id="help" --></title>
+<section id="help"> <title>Help Commands<!--Removed anchor point help--><!-- id="help" --></title>
 </section>
 <section id="help"> <title>Help</title>
 <p>You can display the help of this program or one of its sub-programs</p>
@@ -87,7 +87,7 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
   <xref href="#topic7877"> Return to Top </xref>
 </p>
 </section>
-<section id="hp-storevirtual-commands"> <title>HP StoreVirtual Commands<!--Removed anchor point storevirtual-commands--><!-- id="storevirtual-commands" --></title>
+<section id="storevirtual-commands"> <title>HP StoreVirtual Commands<!--Removed anchor point storevirtual-commands--><!-- id="storevirtual-commands" --></title>
 </section>
 <section id="list-storevirtual-cluster"> <title>List StoreVirtual cluster</title>
 <p>You can list the clusters in StoreVirtual which are registered with Sirius.</p>

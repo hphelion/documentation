@@ -112,10 +112,10 @@ This release supports the use of a <xref href="1.1.1commerical.services-customer
 <section id="10"> <title>Features in HP Helion OpenStack(R) 1.0</title>
 <p>The following features have been added to HP Helion OpenStack(R) 1.0:</p>
 <p>
-<b>OpenStack(R) Services</b> - The full set of standard <xref href="1.1commerical.services-overview.dita#OpenStack(R)" >OpenStack(R) services</xref> is in HP Helion OpenStack(R) Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
+<b>OpenStack(R) Services</b> - The full set of standard <xref href="1.1commerical.services-overview.dita#OpenStack(R)" type="section" scope="external"  >OpenStack(R) services</xref> is in HP Helion OpenStack(R) Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
 <p>
 
-<b>Other Services</b> - <xref href="1.1commerical.services-overview.dita#Other">Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
+<b>Other Services</b> - <xref href="1.1commerical.services-overview.dita#Other" type="section" scope="external" >Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
 <p>
 <b>LogStash/ElasticSearch</b> - This service provides enhanced security and supportability of your cloud by offering centralized logging.</p>
 <p>
@@ -261,7 +261,7 @@ Performing backups and creating bootable volumes will then work.-->   <!--CORE-2
 </codeph>
 </codeblock>
 
-<p>For more information on how to restart the singleton Cinder volume  service, see <xref href="1.0commerical.high-availability.dita#cinder-volume" >HP Helion OpenStack(R) 1.1: High Availability</xref>.</p>
+<p>For more information on how to restart the singleton Cinder volume  service, see <xref href="1.0commerical.high-availability.dita#cinder-volume" type="section" scope="external"  >HP Helion OpenStack(R) 1.1: High Availability</xref>.</p>
 </li>
 <li>
 <p>
@@ -283,7 +283,7 @@ Performing backups and creating bootable volumes will then work.-->   <!--CORE-2
 
 <ul>
 <li>
-<p>migrate the cinder-volume service to another node, for example, controller1 (refer to <xref href="1.0commerical.high-availability.dita#cinder-volume" >HP Helion OpenStack(R) 1.1: High Availability</xref>)</p>
+<p>migrate the cinder-volume service to another node, for example, controller1 (refer to <xref href="1.0commerical.high-availability.dita#cinder-volume" type="section" scope="external"  >HP Helion OpenStack(R) 1.1: High Availability</xref>)</p>
 </li>
 <li>
 <p>stop the cinder-backup service on controller0 using</p>

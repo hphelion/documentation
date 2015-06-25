@@ -55,7 +55,7 @@ set environment variables. This mechanism is fully supported in Application Life
 / Cloud Foundry v2, and is used by all of the built-in buildpacks.</p>
 </section>
 <section id="legacy-buildpack-and-environment-variables"> <title>Legacy Buildpack and Environment Variables</title>
-<p>When using the <xref href="../../../../devplatform/helion/user/deploy/1.0buildpack.dita#buildpacks" >
+<p>When using the <xref href="../../../../devplatform/helion/user/deploy/1.0buildpack.dita#buildpacks" type="section" scope="external"  >
 <i>Legacy
 Buildpack</i>
 </xref>, environment
@@ -68,7 +68,7 @@ restarted.</p>
 changing the values in <i>manifest.yml</i>.</p>
 </section>
 <section id="service-gateway-log-errors-in-maintenance-mode"> <title>Service Gateway Log Errors in Maintenance Mode</title>
-<p>With Application Lifecycle Service set in <xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#console-settings" >
+<p>With Application Lifecycle Service set in <xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#console-settings" type="section" scope="external"  >
 <i>Maintenance
 Mode</i>
 </xref>, all "_gateway"
@@ -97,7 +97,7 @@ these addresses wherever possible, as these addresses are subject to
 change with cluster configuration.</p>
 <p>If the VM instance can locally resolve a hostname rather than an IP
 address, it's generally best practice to use the hostname.</p>
-<p>If not, Application Lifecycle Service provides various <xref href="../../../../devplatform/helion/user/reference/1.0environment.dita#environment-variables" >
+<p>If not, Application Lifecycle Service provides various <xref href="../../../../devplatform/helion/user/reference/1.0environment.dita#environment-variables" type="section" scope="external"  >
 <i>environment
 variables</i>
 </xref>

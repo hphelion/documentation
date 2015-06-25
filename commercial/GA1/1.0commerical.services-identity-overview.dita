@@ -116,13 +116,13 @@ Users can belong to specific role(s), which is a set of rights and privileges.
 <section id="working-with-the-identity-service"> <title>Working with the Identity Service</title>
 <p>To <xref type="section" href="#topic3536/howto">perform tasks using the Identity service</xref>, you can use the dashboard, API or CLI.</p>
 </section>
-<section id="using-the-dashboards"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
+<section id="UI"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
 <p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Dashboard</xref> to work with the Identity service.</p>
 </section>
-<section id="using-the-api"> <title>Using the API<!--Removed anchor point API--><!-- id="API" --></title>
+<section id="API"> <title>Using the API<!--Removed anchor point API--><!-- id="API" --></title>
 <p>You can use a low-level, raw REST API to access  HP Identity. See the <xref href="http://api.openstack.org/api-ref-identity-v2.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Identity API v2.0 Reference</xref>.</p>
 </section>
-<section id="using-the-cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
+<section id="cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
 <p>You can use the command-line interface software to access HP Identity. See the <xref href="http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Command Line Interface Reference</xref>.</p>
 <p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">OpenStack</tm> command-line clients</xref>.</p>
 <!--

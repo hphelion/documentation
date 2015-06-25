@@ -32,7 +32,7 @@
 <entry>
               <!--Original: <span @class=>-->
               <ph>
-                <xref href="../community/community.index.dita#topic2348">HP Helion <tm tmtype="reg">OpenStack</tm>
+                <xref href="../community/community.index.dita#topic2348" type="section" scope="external" >HP Helion <tm tmtype="reg">OpenStack</tm>
                   Community</xref>
               </ph>
             </entry>
@@ -42,7 +42,7 @@
 <entry>
               <!--Original: <span @class=>-->
               <ph>
-                <xref href="../devplatform/1.2/1.2devplatform.index.dita#topic5490">HP Helion
+                <xref href="../devplatform/1.2/1.2devplatform.index.dita#topic5490" type="section" scope="external" >HP Helion
                   Development Platform</xref>
               </ph>
             </entry>

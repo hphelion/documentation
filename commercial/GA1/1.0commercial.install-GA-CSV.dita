@@ -59,7 +59,7 @@
 <p>
 <b>Important</b>: Make sure that the information specified is correct. If any node fails to install, you must restart the installation from the beginning.</p>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv" >Return to HP <tm tmtype="reg">Helion OpenStack</tm> Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv" type="section" scope="external"  >Return to HP <tm tmtype="reg">Helion OpenStack</tm> Installation Prerequisites</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
 </body>
 </topic>

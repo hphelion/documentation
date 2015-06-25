@@ -93,7 +93,7 @@ After you modify a JSON file, you might want to validate the structure by runnin
 </li>
 <li>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" >Return to HP <tm tmtype="reg">Helion OpenStack</tm> Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section" scope="external"  >Return to HP <tm tmtype="reg">Helion OpenStack</tm> Installation Prerequisites</xref>.</p>
 </li>
 </ol>
 </section>
@@ -103,7 +103,7 @@ After you modify a JSON file, you might want to validate the structure by runnin
 <b>Important:</b> Some of these values are options. If a value is optional, enter a value, if needed. If you do not need to specify an optional value, delete the value from the JSON file. Do not set optional variables to empty strings, as this might override a default value with the empty strig.</p>
 <p>
 <codeph>node_min_disk</codeph> - Use this variable to set the global minimum acceptable disk size for the installation in GiB.</p>
-<p>The default disk sizes per role are set as defined in the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita#baremetal" >Support Matrix</xref>. You should only set this value to override those defaults. You should deploy with at least the recommended disk size in all cases.</p>
+<p>The default disk sizes per role are set as defined in the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita#baremetal" type="section" scope="external"  >Support Matrix</xref>. You should only set this value to override those defaults. You should deploy with at least the recommended disk size in all cases.</p>
 <p>
 <codeph>controller_scale</codeph> - (optional) Specify the number of overcloud controllers.</p>
 <p>
@@ -444,7 +444,7 @@ If this is the same value as <codeph>neutron/overcloud_public_interface</codeph>
 </codeph>
 </codeblock>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#envars" >Return to HP <tm tmtype="reg">Helion OpenStack</tm> Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#envars" type="section" scope="external"  >Return to HP <tm tmtype="reg">Helion OpenStack</tm> Installation Prerequisites</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

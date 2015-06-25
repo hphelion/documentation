@@ -26,7 +26,7 @@
 <p>
 
 </p>
-<p>Application Lifecycle Service's <xref href="../../../../devplatform/helion/admin/reference/1.1architecture.dita#architecture-dea" >DEA role</xref> runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the <i>fence</i> process, which in turn uses
+<p>Application Lifecycle Service's <xref href="../../../../devplatform/helion/admin/reference/1.1architecture.dita#architecture-dea" type="section" scope="external"  >DEA role</xref> runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the <i>fence</i> process, which in turn uses
 <xref href="http://docs.docker.io/en/latest/" scope="external" format="html" >Docker</xref> to create and destroy Linux
 containers on demand.</p>
 <p>Typically, admins will not have to work directly with Docker, but it is
@@ -47,7 +47,7 @@ accessible if needed to customize or create new container images.</p>
 </ul>
 <section id="modifying-or-updating-the-container-image"> <title>Modifying or Updating the Container Image</title>
 <p>Application containers are created from a base Docker image (a template used to create Linux containers). Admins can create new images to add specific software required by applications or update operating system packages.</p>
-<p>See also the <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#upgrade-docker" >Upgrade the Docker Image</xref> section in the <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita" >Best Practices</xref> reference, which shows how to modify the Docker base image <b>without</b> changing <i>kato config</i>.</p>
+<p>See also the <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#upgrade-docker" type="section" scope="external"  >Upgrade the Docker Image</xref> section in the <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita" >Best Practices</xref> reference, which shows how to modify the Docker base image <b>without</b> changing <i>kato config</i>.</p>
 <p>To create a new base image for Application Lifecycle Service to use for application containers, perform the following steps <b>on all nodes running the DEA role</b>:</p>
 <ol>
 <li>
@@ -80,13 +80,13 @@ RUN apt-get -y install libgraphite2-dev
 
 <ul>
 <li>
-<xref href="http://docs.docker.io/en/latest/use/builder#from" scope="external" format="html" >FROM</xref>:
+<xref href="http://docs.docker.io/en/latest/use/builder#from" type="section" scope="external" format="html" >FROM</xref>:
 inherits the environment and installed software from the latest patched version of the app image.</li>
 <li>
-<xref href="http://docs.docker.io/en/latest/use/builder#run" scope="external" format="html" >RUN</xref>:
+<xref href="http://docs.docker.io/en/latest/use/builder#run" type="section" scope="external" format="html" >RUN</xref>:
 specifies arbitrary commands to run before saving the image.</li>
 <li>
-<xref href="http://docs.docker.io/en/latest/use/builder#add" scope="external" format="html" >ADD</xref>: could
+<xref href="http://docs.docker.io/en/latest/use/builder#add" type="section" scope="external" format="html" >ADD</xref>: could
 be used to copy files into the image.
 <!--A BR tag was used here in the original source.--></li>
 </ul>
@@ -241,7 +241,7 @@ example:</p>
 </codeph>
 </codeblock>
 
-<p>If the new image is simply an updated version of the default base image, you can tag the image <b>helion/stack-alsek:latest</b> (as described in the <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#bestpractices-ubuntu-security" >Ubuntu Security Updates</xref> and skip the following step.</p>
+<p>If the new image is simply an updated version of the default base image, you can tag the image <b>helion/stack-alsek:latest</b> (as described in the <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#bestpractices-ubuntu-security" type="section" scope="external"  >Ubuntu Security Updates</xref> and skip the following step.</p>
 </li>
 <li>
 <p>Push the newly built Docker image to the registry:</p>
@@ -277,7 +277,7 @@ api.paas.example.com:49156/exampleco/newimg
 shared with all nodes.</p>
 </li>
 </ol>
-  <p>The <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#upgrade-docker" >Upgrade the Docker Image</xref> section in the <xref href="../best-practices/1.1index.dita" >Best Practices</xref> documentation explains how to modify the Docker base image without changing <i>kato config</i>.</p>
+  <p>The <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#upgrade-docker" type="section" scope="external"  >Upgrade the Docker Image</xref> section in the <xref href="../best-practices/1.1index.dita" >Best Practices</xref> documentation explains how to modify the Docker base image without changing <i>kato config</i>.</p>
 </section>
 <section id="docker-privileged-containers"> <title>Privileged Containers</title>
 <p>ALS runs "unprivileged" Docker containers by default. The containers do not have access to any devices on the (virtual) host.</p>
@@ -287,7 +287,7 @@ via NFS, so an option exists to change Docker container creation to "privileged"
   <codeph>kato config set dea_ng docker/privileged true 
 </codeph>
 </codeblock>
-<p>This <xref href="https://docs.docker.com/reference/run#runtime-privilege-and-lxc-configuration" scope="external" format="html" >container privilege elevation</xref> would normally be used in conjunction with <i>sudo</i> container access in the quota:</p>
+<p>This <xref href="https://docs.docker.com/reference/run#runtime-privilege-and-lxc-configuration" type="section" scope="external" format="html" >container privilege elevation</xref> would normally be used in conjunction with <i>sudo</i> container access in the quota:</p>
 <codeblock>
   <codeph>helion quota configure --allow-sudo 
 </codeph>

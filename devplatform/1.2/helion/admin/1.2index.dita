@@ -47,14 +47,14 @@
           <xref href="server/1.2index.dita">Server Configuration</xref>
           <ul>
             <li>
-              <xref href="server/1.2index.dita#topic3007/accessing-server-via-the-command-line"
+              <xref href="server/1.2index.dita#topic3007/accessing-server-via-the-command-line" type="section" scope="external" 
                 >Accessing Server via the Command Line</xref>
             </li>
             <li>
-              <xref href="server/1.2index.dita#topic3007/common-operations">Common Operations</xref>
+              <xref href="server/1.2index.dita#topic3007/common-operations" type="section" scope="external" >Common Operations</xref>
             </li>
             <li>
-              <xref href="server/1.2index.dita#topic3007/detailed-configuration">Detailed
+              <xref href="server/1.2index.dita#topic3007/detailed-configuration" type="section" scope="external" >Detailed
                 Configuration</xref>
             </li>
           </ul></li>
@@ -62,27 +62,27 @@
           <xref href="server/1.2router.dita">Router</xref>
           <ul>
             <li>
-              <xref href="server/1.2router.dita#topic3030/settings">Settings</xref>
+              <xref href="server/1.2router.dita#topic3030/settings" type="section" scope="external" >Settings</xref>
             </li>
             <li>
-              <xref href="server/1.2router.dita#topic3030/websockets">WebSockets</xref>
+              <xref href="server/1.2router.dita#topic3030/websockets" type="section" scope="external" >WebSockets</xref>
             </li>
             <li>
-              <xref href="server/1.2router.dita#topic3030/router-spdy">SPDY</xref>
+              <xref href="server/1.2router.dita#topic3030/router-spdy" type="section" scope="external" >SPDY</xref>
             </li>
           </ul></li>
 <li>
           <xref href="server/1.2docker.dita">Docker &amp; Fence</xref>
           <ul>
             <li>
-              <xref href="server/1.2docker.dita#topic7767/modifying-or-updating-the-container-image">Modifying
+              <xref href="server/1.2docker.dita#topic7767/modifying-or-updating-the-container-image" type="section" scope="external" >Modifying
                 or Updating the Container Image</xref>
             </li>
             <li>
-              <xref href="server/1.2docker.dita#topic7767/admin-hooks">Admin Hooks</xref>
+              <xref href="server/1.2docker.dita#topic7767/admin-hooks" type="section" scope="external" >Admin Hooks</xref>
             </li>
             <li>
-              <xref href="server/1.2docker.dita#topic7767/creating-a-docker-registry">Creating a
+              <xref href="server/1.2docker.dita#topic7767/creating-a-docker-registry" type="section" scope="external" >Creating a
                 Docker Registry</xref>
             </li>
           </ul></li>
@@ -90,16 +90,16 @@
           <xref href="server/1.2logging.dita">Log Streams</xref>
           <ul>
             <li>
-              <xref href="server/1.2logging.dita#topic11928/logyard">Logyard</xref>
+              <xref href="server/1.2logging.dita#topic11928/logyard" type="section" scope="external" >Logyard</xref>
             </li>
             <li>
-              <xref href="server/1.2logging.dita#topic11928/drains">Drains</xref>
+              <xref href="server/1.2logging.dita#topic11928/drains" type="section" scope="external" >Drains</xref>
             </li>
             <li>
-              <xref href="server/1.2logging.dita#topic11928/configuration">Configuration</xref>
+              <xref href="server/1.2logging.dita#topic11928/configuration" type="section" scope="external" >Configuration</xref>
             </li>
             <li>
-              <xref href="server/1.2logging.dita#topic11928/debugging-logyard">Debugging
+              <xref href="server/1.2logging.dita#topic11928/debugging-logyard" type="section" scope="external" >Debugging
                 Logyard</xref></li>
             <li>
               <xref
@@ -111,23 +111,23 @@
           <xref href="server/1.2aok.dita">AOK Authentication Server</xref>
           <ul>
             <li>
-              <xref href="server/1.2aok.dita#topic8359/end-user-login">End User Login</xref>
+              <xref href="server/1.2aok.dita#topic8359/end-user-login" type="section" scope="external" >End User Login</xref>
             </li>
             <li>
-              <xref href="server/1.2aok.dita#topic8359strategies">Strategies</xref>
+              <xref href="server/1.2aok.dita#topic8359strategies" type="section" scope="external" >Strategies</xref>
             </li>
             <li>
-              <xref href="server/1.2aok.dita#topic8359/configuration">Configuration</xref>
+              <xref href="server/1.2aok.dita#topic8359/configuration" type="section" scope="external" >Configuration</xref>
             </li>
             <li>
-              <xref href="server/1.2aok.dita#topic8359/user-management">User Management</xref>
+              <xref href="server/1.2aok.dita#topic8359/user-management" type="section" scope="external" >User Management</xref>
             </li>
             <li>
-              <xref href="server/1.2aok.dita#topic8359/first-admin-user-setup">First Admin User
+              <xref href="server/1.2aok.dita#topic8359/first-admin-user-setup" type="section" scope="external" >First Admin User
                 Setup</xref>
             </li>
             <li>
-              <xref href="server/1.2aok.dita#topic8359/regular-ldap-user-setup">Regular LDAP User
+              <xref href="server/1.2aok.dita#topic8359/regular-ldap-user-setup" type="section" scope="external" >Regular LDAP User
                 Setup</xref>
             </li>
           </ul></li>
@@ -135,11 +135,11 @@
           <xref href="server/1.2upgrade.dita">Upgrading Application Lifecycle Service</xref>
           <ul>
             <li>
-              <xref href="server/1.2upgrade.dita#topic13180/before-an-upgrade">Before an
+              <xref href="server/1.2upgrade.dita#topic13180/before-an-upgrade" type="section" scope="external" >Before an
                 upgrade</xref>
             </li>
             <li>
-              <xref href="server/1.2upgrade.dita#topic13180/executing-the-upgrade">Executing the
+              <xref href="server/1.2upgrade.dita#topic13180/executing-the-upgrade" type="section" scope="external" >Executing the
                 upgrade</xref>
             </li>
           </ul></li>
@@ -152,18 +152,18 @@
           <xref href="cluster/1.2index.dita">Cluster Setup</xref>
           <ul>
             <li>
-              <xref href="cluster/1.2index.dita#topic18326/roles">Roles</xref>
+              <xref href="cluster/1.2index.dita#topic18326/roles" type="section" scope="external" >Roles</xref>
             </li>
             <li>
-              <xref href="cluster/1.2index.dita#topic18326/preparing-the-core-node">Preparing the
+              <xref href="cluster/1.2index.dita#topic18326/preparing-the-core-node" type="section" scope="external" >Preparing the
                 Core Node</xref>
             </li>
             <li>
-              <xref href="cluster/1.2index.dita#topic18326/attaching-nodes-and-enabling-roles"
+              <xref href="cluster/1.2index.dita#topic18326/attaching-nodes-and-enabling-roles" type="section" scope="external" 
                 >Attaching Nodes and Enabling Roles</xref>
             </li>
             <li>
-              <xref href="cluster/1.2index.dita#topic18326/example-clusters">Example Clusters</xref>
+              <xref href="cluster/1.2index.dita#topic18326/example-clusters" type="section" scope="external" >Example Clusters</xref>
             </li>
             <li>
               <xref
@@ -171,15 +171,15 @@
                 >Roles Requiring Persistent or Shared Storage</xref>
             </li>
             <li>
-              <xref href="cluster/1.2index.dita#topic18326/port-configuration">Port
+              <xref href="cluster/1.2index.dita#topic18326/port-configuration" type="section" scope="external" >Port
                 Configuration</xref>
             </li>
             <li>
-              <xref href="cluster/1.2index.dita#topic18326/multiple-controllers">Multiple
+              <xref href="cluster/1.2index.dita#topic18326/multiple-controllers" type="section" scope="external" >Multiple
                 Controllers</xref>
             </li>
             <li>
-              <xref href="cluster/1.2index.dita#topic18326/load-balancer-and-multiple-routers">Load
+              <xref href="cluster/1.2index.dita#topic18326/load-balancer-and-multiple-routers" type="section" scope="external" >Load
                 Balancer and Multiple Routers</xref>
             </li>
           </ul></li>
@@ -187,11 +187,11 @@
           <xref href="cluster/1.2cloud-init.dita">cloud-init</xref>
           <ul>
             <li>
-              <xref href="cluster/1.2cloud-init.dita#topic2346/securing-the-new-node">Securing the
+              <xref href="cluster/1.2cloud-init.dita#topic2346/securing-the-new-node" type="section" scope="external" >Securing the
                 new node</xref>
             </li>
             <li>
-              <xref href="cluster/1.2cloud-init.dita#topic2346/custom-system-configuration">Custom
+              <xref href="cluster/1.2cloud-init.dita#topic2346/custom-system-configuration" type="section" scope="external" >Custom
                 System Configuration</xref>
             </li>
           </ul></li>
@@ -199,17 +199,17 @@
           <xref href="cluster/1.2external-db.dita">External Data Services</xref>
           <ul>
             <li>
-              <xref href="cluster/1.2external-db.dita#topic4533/general-principles">General
+              <xref href="cluster/1.2external-db.dita#topic4533/general-principles" type="section" scope="external" >General
                 Principles</xref>
             </li>
             <li>
-              <xref href="cluster/1.2external-db.dita#topic4533/mysql">MySQL</xref>
+              <xref href="cluster/1.2external-db.dita#topic4533/mysql" type="section" scope="external" >MySQL</xref>
             </li>
             <li>
-              <xref href="cluster/1.2external-db.dita#topic4533/postgresql">PostgreSQL</xref>
+              <xref href="cluster/1.2external-db.dita#topic4533/postgresql" type="section" scope="external" >PostgreSQL</xref>
             </li>
             <li>
-              <xref href="cluster/1.2external-db.dita#topic4533/troubleshooting"
+              <xref href="cluster/1.2external-db.dita#topic4533/troubleshooting" type="section" scope="external" 
                 >Troubleshooting</xref>
             </li>
             <li><xref href="reference/1.2add-service.dita">Adding System Services</xref>
@@ -219,14 +219,14 @@
           <xref href="cluster/1.2harbor.dita">Harbor: TCP/UDP Port Service</xref>
           <ul>
             <li>
-              <xref href="cluster/1.2harbor.dita#topic4009/architecture">Architecture</xref>
+              <xref href="cluster/1.2harbor.dita#topic4009/architecture" type="section" scope="external" >Architecture</xref>
             </li>
             <li>
-              <xref href="cluster/1.2harbor.dita#topic4009/requirements-setup">Requirements &amp;
+              <xref href="cluster/1.2harbor.dita#topic4009/requirements-setup" type="section" scope="external" >Requirements &amp;
                 Setup</xref>
             </li>
             <li>
-              <xref href="cluster/1.2harbor.dita#topic4009/troubleshooting">Troubleshooting</xref>
+              <xref href="cluster/1.2harbor.dita#topic4009/troubleshooting" type="section" scope="external" >Troubleshooting</xref>
             </li>
           </ul></li>
 </ul>
@@ -237,18 +237,18 @@
           <xref href="best-practices/1.2index.dita">Best Practices</xref>
           <ul>
             <li>
-              <xref href="best-practices/1.2index.dita#topic16169/applying-updates">Applying
+              <xref href="best-practices/1.2index.dita#topic16169/applying-updates" type="section" scope="external" >Applying
                 Updates</xref>
             </li>
             <li>
-              <xref href="best-practices/1.2index.dita#topic16169/bestpractices-migration">Backup &amp;
+              <xref href="best-practices/1.2index.dita#topic16169/bestpractices-migration" type="section" scope="external" >Backup &amp;
                 Migration</xref>
             </li>
             <li>
-              <xref href="best-practices/1.2index.dita#topic16169/upgrade">Upgrading</xref>
+              <xref href="best-practices/1.2index.dita#topic16169/upgrade" type="section" scope="external" >Upgrading</xref>
             </li>
             <li>
-              <xref href="best-practices/1.2index.dita#topic16169/storage">Persistent Storage</xref>
+              <xref href="best-practices/1.2index.dita#topic16169/storage" type="section" scope="external" >Persistent Storage</xref>
             </li>
           </ul></li>
 </ul>

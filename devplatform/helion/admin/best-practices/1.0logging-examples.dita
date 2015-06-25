@@ -79,7 +79,7 @@ suitable name.
 </ol>
 <p>
 <b>Note</b>: Papertrail requires systail log lines to have <codeph>&lt;13&gt;l</codeph> at the beginning of each line. Make sure the drain you are
-forwarding is formatted this way (see example in <xref href="../../../../devplatform/helion/admin/server/1.0logging.dita#logging-drains-save-format" >Saving Custom Log
+forwarding is formatted this way (see example in <xref href="../../../../devplatform/helion/admin/server/1.0logging.dita#logging-drains-save-format" type="section" scope="external"  >Saving Custom Log
 Formats</xref>).</p>
 </section>
 <section id="loggly"> <title>Loggly</title>

@@ -132,7 +132,7 @@
 <entry>
 <b>Disk Label</b>
 </entry>
-    <entry>Defines disk label of the disk. For more information refer to <xref href=" #preparing-disks-on-swift-nodes" >Preparing disks on Swift nodes</xref>
+    <entry>Defines disk label of the disk. For more information refer to <xref href=" #preparing-disks-on-swift-nodes" type="section" scope="external"  >Preparing disks on Swift nodes</xref>
 </entry>
      
 </row>

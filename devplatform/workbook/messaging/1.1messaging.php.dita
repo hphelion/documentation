@@ -33,7 +33,7 @@
 <li>Access to the <xref href="../../../devplatform/helion/user/client/1.1index.dita" >Helion command-line client (CLI)</xref>.</li>
 <li>Access to the web-based <xref href="../../../devplatform/helion/user/console/1.1index.dita" >ALS Management Console</xref>.</li>
 <li>The RabbitMQ service is not enabled by default. Check and <xref type="section" href="#topic6705/rabbitmq">make sure it is enabled</xref>.</li>
-<li>Register for access to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HP Helion Development Platform</xref> (HDN).</li>
+<li>Register for access to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" type="section" scope="external" format="html" >HP Helion Development Platform</xref> (HDN).</li>
 </ul>
 <!--## One-Button Deployment to HP Helion
 
@@ -67,7 +67,7 @@ instructions further down. But before you push the button, ensure that you have 
 </section>
 <section id="deploy-the-application"> <title>Deploy the Application</title>
 <p>
-<b>Note</b>: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be <xref href="../../../devplatform/helion/admin/server/1.1configuration.dita#staging-cache-app-http-proxy" >made aware of the proxy</xref>. The sample applications require access to the Internet in order to download dependent packages.</p>
+<b>Note</b>: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be <xref href="../../../devplatform/helion/admin/server/1.1configuration.dita#staging-cache-app-http-proxy" type="section" scope="external"  >made aware of the proxy</xref>. The sample applications require access to the Internet in order to download dependent packages.</p>
 <p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the <xref href="../../../devplatform/1.1devplatform.eclipse.dita" >plugin</xref>.</p>
 <ol>
 <li>Open the <xref href="../../../devplatform/helion/user/reference/1.1client-ref.dita" >ALS command-line interface (CLI)</xref>

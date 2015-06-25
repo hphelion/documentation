@@ -57,7 +57,7 @@
 <li>
 <p>The Cinder block storage service must be configured with either <xref
               href="../commercial/GA1/1.1commercial.-vsa-overview.dita#topic9930">VSA</xref> or
-              <xref href="../commercial/GA1/1.1commercial.install-3par.dita#topic3689"
+              <xref href="../commercial/GA1/1.1commercial.install-3par.dita#topic3689" type="section" scope="external" 
             >3Par</xref>.</p>
 </li>
 <li>

@@ -95,7 +95,7 @@ use. This value must correspond exactly to one of the supported strategy
 names.</p>
 </section>
 <section id="configuration"> <title>Configuration</title>
-<p>To configure AOK, set the following keys in the AOK config using the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" >kato
+<p>To configure AOK, set the following keys in the AOK config using the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" type="section" scope="external"  >kato
 config set</xref> commands:</p>
 <ul>
 <li>

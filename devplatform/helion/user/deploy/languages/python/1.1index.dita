@@ -106,7 +106,7 @@ application:</p>
   <xref href="../../../deploy/1.1manifestyml.dita" >
 <i>manifest.yml</i>
 </xref></li><li>
-<xref href="http://www.pip-installer.org/en/latest/cookbook.html#requirements-files" scope="external" format="html" >requirements.txt
+<xref href="http://www.pip-installer.org/en/latest/cookbook.html#requirements-files" type="section" scope="external" format="html" >requirements.txt
 (pip)</xref>, or a <xref href="http://code.activestate.com/pypm/" scope="external" format="html" ><i>requirements.pypm</i></xref>
 file.</li>
 <li>a Procfile specifying the command to run the application server. For example, the <xref
@@ -122,7 +122,7 @@ Procfile web: command. For example:</p>
 </section>
 <section id="python-with-the-legacy-buildpack"> <title>Python with the Legacy Buildpack</title>
 <p>If your Python application has configuration for running on Application Lifecycle Service
-  2.10 or earlier, you can deploy it using the <xref href="../../../deploy/1.1buildpack.dita#topic3434/legacy-buildpack" >
+  2.10 or earlier, you can deploy it using the <xref href="../../../deploy/1.1buildpack.dita#topic3434/legacy-buildpack" type="section" scope="external"  >
 <i>Legacy
 Buildpack</i>
 </xref>, which provides an
@@ -144,14 +144,14 @@ web: $HELION_UWSGI --mount foo=app.py --import module</codeblock>
           <xref href="1.1django.dita">Deploying Django applications</xref>
         </li>
         <li>
-          <xref href="1.1django.dita#topic3654/configuring-database">Configuring database</xref>
+          <xref href="1.1django.dita#topic3654/configuring-database" type="section" scope="external" >Configuring database</xref>
         </li>
         <li>
-          <xref href="1.1django.dita#topic3654/configuring-static-media">Configuring static
+          <xref href="1.1django.dita#topic3654/configuring-static-media" type="section" scope="external" >Configuring static
             media</xref>
         </li>
         <li>
-          <xref href="1.1django.dita#topic3654/configuring-project-location">Configuring project
+          <xref href="1.1django.dita#topic3654/configuring-project-location" type="section" scope="external" >Configuring project
             location</xref>
         </li>
 </ul>
@@ -218,10 +218,10 @@ DATABASES = {
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-<xref href="../../../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#command" >
+<xref href="../../../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#command" type="section" scope="external"  >
 <i>command</i>
 </xref> key and set the
-<xref href="../../../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#web" >
+<xref href="../../../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#web" type="section" scope="external"  >
 <i>processes: web</i>
 </xref> key to
 Null ("\~").</p>
@@ -289,15 +289,15 @@ for an example.</p>
           <i>environment variables</i>
         </xref>.</p>
 <p>Application dependencies such as web frameworks or modules from PyPI can
-  be installed using <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pypm" >
+  be installed using <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pypm" type="section" scope="external"  >
 <i>PyPM</i>
 </xref>
-  and/or <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pip" >
+  and/or <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pip" type="section" scope="external"  >
 <i>pip</i>
 </xref>.</p>
 </section>
 <section id="pypm"> <title>PyPM</title>
-  <p>Definition <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pypm" >
+  <p>Definition <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pypm" type="section" scope="external"  >
 <i>PyPM</i>
 </xref>
 </p>
@@ -309,16 +309,16 @@ requirements to manifest.yml:</p>
     - pymongo</codeblock>
 <p>See the <xref href="https://github.com/Stackato-Apps/tornado-chat-mongo/blob/master/manifest.yml" scope="external" format="html" >manifest.yml of tornado-chat-mongo</xref>
 sample app for an example.</p>
-<p>Alternatively, you can list the modules in a top-level requirements-pypm.txt file. The format is similar, if not same, as <xref href="http://pip.readthedocs.org/en/latest/user_guide.html#requirements-files" scope="external" format="html" >pip requirements files</xref> and accepts version specification. The name of this file can be overridden by setting the PYPM_REQUIREMENTS_FILE environment variable.</p>
+<p>Alternatively, you can list the modules in a top-level requirements-pypm.txt file. The format is similar, if not same, as <xref href="http://pip.readthedocs.org/en/latest/user_guide.html#requirements-files" type="section" scope="external" format="html" >pip requirements files</xref> and accepts version specification. The name of this file can be overridden by setting the PYPM_REQUIREMENTS_FILE environment variable.</p>
 </section>
 <section id="pip"> <title>pip</title>
-  <p>Definition <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pip" >
+  <p>Definition <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pip" type="section" scope="external"  >
 <i>pip</i>
 </xref>
 </p>
-  <p>In addition - or as alternative - to <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pypm" >
+  <p>In addition - or as alternative - to <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pypm" type="section" scope="external"  >
 <i>PyPM</i>
-  </xref>, your application can also make use of pip to install certain dependencies. The above tornado-chat-mongo sample installs "pycurl" using <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pip" >
+  </xref>, your application can also make use of pip to install certain dependencies. The above tornado-chat-mongo sample installs "pycurl" using <xref href="../../../../user/reference/1.1glossary.dita#topic6251/term-pip" type="section" scope="external"  >
 <i>pip</i>
 </xref>:</p>
 <codeblock>  requirements:

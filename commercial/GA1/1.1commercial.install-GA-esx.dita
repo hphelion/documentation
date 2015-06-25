@@ -119,11 +119,11 @@
 <p>The prompt will change to <codeph>root@hLinux</codeph>.</p>
 </li>
 <li>
-<p>Make sure the information in the <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#req-info" >
+<p>Make sure the information in the <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#req-info" type="section" scope="external"  >
 <codeph>baremetal.csv</codeph> configuration file</xref> file is correct and upload the file to <codeph>/root</codeph>.</p>
 
 <p>
-<b>Note:</b> For more information on creating this file, refer to <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#req-info" >Creating the baremetal.csv file</xref> on the <i>Prerequisites</i> page.</p>
+<b>Note:</b> For more information on creating this file, refer to <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#req-info" type="section" scope="external"  >Creating the baremetal.csv file</xref> on the <i>Prerequisites</i> page.</p>
 </li>
 <li>
 <p>If you are integrating LDAP into your environment, copy the configuration files, as described in <xref href="../../commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" >Integrating LDAP</xref>, to the seed cloud host.</p>

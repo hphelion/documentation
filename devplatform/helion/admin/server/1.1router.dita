@@ -44,7 +44,7 @@ between multiple instances (containers) as required.</p>
 <xref href="http://www.websocket.org/aboutwebsocket.html" scope="external" format="html" >WebSocket</xref> (including
 "wss://" secure web sockets) and <xref href="http://www.chromium.org/spdy" scope="external" format="html" >SPDY</xref>.</p>
 <section id="settings"> <title>Settings</title>
-<p>The Router is configured using <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-config" >
+<p>The Router is configured using <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-config" type="section" scope="external"  >
 <i>kato config</i>
 </xref>. The following settings are configurable:</p>
 <p>
@@ -106,7 +106,7 @@ snippets to help prevent frame based clickjacking.</p>
 </section>
 <section id="websockets"> <title>WebSockets</title>
 <p>Applications using web sockets must use the VCAP_APP_PORT or PORT
-<xref href="../../../../devplatform/helion/user/reference/1.1environment.dita#environment-variables" >
+<xref href="../../../../devplatform/helion/user/reference/1.1environment.dita#environment-variables" type="section" scope="external"  >
 <i>environment variables</i>
 </xref>
 to set the default listener port of the WebSocket server.</p>

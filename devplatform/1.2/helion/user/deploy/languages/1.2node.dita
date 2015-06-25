@@ -23,7 +23,7 @@
 <p>Application Lifecycle Service has a built in Node framework with multiple versions of the
 <xref href="http://nodejs.org/" scope="external" format="html" >Node.js</xref> runtime. <xref href="https://npmjs.org/" scope="external" format="html" >NPM</xref> is used
 to install Node packages automatically.</p>
-<p>Deployable <xref href="../../../../../../devplatform/1.2/1.2devplatform.appdev.dita#node" >sample applications</xref> are available in this language.</p>
+<p>Deployable <xref href="../../../../../../devplatform/1.2/1.2devplatform.appdev.dita#node" type="section" scope="external"  >sample applications</xref> are available in this language.</p>
 <section id="node-npm"> <title>NPM</title>
 <p>Your application should list dependencies in a standard, top-level
 <xref href="https://docs.npmjs.com/getting-started/creating-node-modules" scope="external" format="html" >
@@ -31,7 +31,7 @@ to install Node packages automatically.</p>
 automatically installs packages listed in the "dependencies" section
 before starting the server.</p>
 <p>Alternatively, you can call NPM directly using
-<xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#hooks" >
+<xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#hooks" type="section" scope="external"  >
 <i>hooks</i>
 </xref> in the <i>manifest.yml</i>
 file.</p>
@@ -62,12 +62,12 @@ var host = process.env.VCAP_APP_HOST || "127.0.0.1";
 </section>
 <section id="using-data-services"> <title>Using Data Services</title>
 <p>Data services need to be configured with values from VCAP_SERVICES, DATABASE_URL, or a database-specific environment
-variable (see also <xref href="../../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#database-accessing" >Using Configured Database
+variable (see also <xref href="../../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#database-accessing" type="section" scope="external"  >Using Configured Database
 Services</xref>).</p>
 <p>If the database module you use supports URL-formatted connection
 strings, using the
-<xref href="../../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#database-database-url" >DATABASE_URL</xref>
-or <xref href="../../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#database-specific-url" >database-specific URL
+<xref href="../../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#database-database-url" type="section" scope="external"  >DATABASE_URL</xref>
+or <xref href="../../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#database-specific-url" type="section" scope="external"  >database-specific URL
 variable</xref>
 (REDIS_URL, MONGODB_URL, etc.) is often the simplest option.</p>
 <p>Use the variable in your code to connect your application to the

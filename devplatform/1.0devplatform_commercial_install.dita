@@ -66,7 +66,7 @@
 </codeblock>
 <ol>
 <li>
-<p>Register and download the package from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HP Helion Development Platform</xref>
+<p>Register and download the package from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" type="section" scope="external" format="html" >HP Helion Development Platform</xref>
 </p>
 </li>
 <li>
@@ -149,7 +149,7 @@
 <p>This section provides details on installing the Application Lifecycle service from the Development Platform.</p>
 </section>
 <section id="als-prerequisites"> <title>Prerequisites</title>
-  <p>For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. This process is documented in Step 7 of <xref href="../community/community.install.baremetal.dita#startseed" >"Starting the seed and building your cloud"</xref> in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the <xref href="../devplatform/helion/admin/server/1.1configuration.dita#http-proxy" >Administration Guide</xref>.</p>
+  <p>For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. This process is documented in Step 7 of <xref href="../community/community.install.baremetal.dita#startseed" >"Starting the seed and building your cloud"</xref> in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the <xref href="../devplatform/helion/admin/server/1.1configuration.dita#http-proxy" type="section" scope="external"  >Administration Guide</xref>.</p>
 </section>
 <section id="als-connect-to-the-download-service"> <title>Connect to the Download Service</title>
 <ol>
@@ -504,7 +504,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <p>Do not attempt to install any Marketplace packages yet. Log out from the Horizon dashboard.</p>
 </li>
 <li>
-<p>Log back into the Horizon dashboard and click on the <b>Marketplace</b> panel under the current Project to begin using the Marketplace Service. You may now install <xref href="../devplatform/1.0devplatform.marketplace.install.dita#install" >Marketplace packages</xref>.</p>
+<p>Log back into the Horizon dashboard and click on the <b>Marketplace</b> panel under the current Project to begin using the Marketplace Service. You may now install <xref href="../devplatform/1.0devplatform.marketplace.install.dita#install" type="section" scope="external"  >Marketplace packages</xref>.</p>
 </li>
 </ol>
 </section>

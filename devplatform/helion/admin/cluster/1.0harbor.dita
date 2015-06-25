@@ -43,7 +43,7 @@
 router in Application Lifecycle Service is designed for HTTP(S) traffic only, if user
 applications require other protocols, consider setting up Harbor.</p>
 <p>Information on using the Harbor port service with deployed applications
-is in the <xref href="../../../../devplatform/helion/user/services/1.0port-service.dita#port-service" >
+is in the <xref href="../../../../devplatform/helion/user/services/1.0port-service.dita#port-service" type="section" scope="external"  >
 <i>Port Service (Harbor)
 documentation</i>
 </xref>.</p>
@@ -63,7 +63,7 @@ externally facing port.</p>
 </section>
 <section id="requirements-setup"> <title>Requirements &amp; Setup</title>
 <p>An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other
-            <i><xref href="1.0index.dita#topic17783/roles">data service roles</xref></i> . For
+            <i><xref href="1.0index.dita#topic17783/roles" type="section" scope="external" >data service roles</xref></i> . For
         example:</p>
 <codeblock>
   <codeph>$ kato node attach -e harbor CORE_IP
@@ -81,7 +81,7 @@ view the current port range on the Harbor node by entering:</p>
 </codeblock>
 <p>For each new service provisioned, Harbor will chose a random unassigned
 port from this range. This range can be set in the Management Console's
-<xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#console-settings" >
+<xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#console-settings" type="section" scope="external"  >
 <i>Settings</i>
 </xref> section, or by
 using the <codeph>kato config set ...</codeph> command.</p>

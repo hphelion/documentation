@@ -88,7 +88,7 @@
 </codeblock>
 <ol>
 <li>
-<p>Register at and download the package from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HP Helion Development Platform</xref> (HDN).</p>
+<p>Register at and download the package from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" type="section" scope="external" format="html" >HP Helion Development Platform</xref> (HDN).</p>
 </li>
 <li>
 <p>Before you begin the installation, unpack the tar file.</p>
@@ -225,11 +225,11 @@ leave the server in an error state.</p>
 </li>
 </ol>
 </section>
-<section id="install-the-application-lifecycle-service-als"> <title>Install the Application Lifecycle Service (ALS)<!--Removed anchor point install-als--><!-- id="install-als" --></title>
+<section id="install-als"> <title>Install the Application Lifecycle Service (ALS)<!--Removed anchor point install-als--><!-- id="install-als" --></title>
 <p>This section provides details on installing the Application Lifecycle service from the Development Platform.</p>
 </section>
 <section id="prerequisites"> <title>Prerequisites</title>
-  <p>For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. This process is documented in Step 7 of <xref href="community/community.install.baremetal.dita#startseed" >"Starting the seed and building your cloud"</xref> in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the <xref href="../devplatform/helion/admin/server/1.1configuration.dita#http-proxy" >Administration Guide</xref>.</p>
+  <p>For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. This process is documented in Step 7 of <xref href="community/community.install.baremetal.dita#startseed" >"Starting the seed and building your cloud"</xref> in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the <xref href="../devplatform/helion/admin/server/1.1configuration.dita#http-proxy" type="section" scope="external"  >Administration Guide</xref>.</p>
 </section>
 <section id="connect-to-the-download-service"> <title>Connect to the Download Service</title>
 <ol>
@@ -528,7 +528,7 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 </li>
 </ol>
 </section>
-<section id="install-the-marketplace-service"> <title>Install the Marketplace Service<!--Removed anchor point install-marketplace--><!-- id="install-marketplace" --></title>
+<section id="install-marketplace"> <title>Install the Marketplace Service<!--Removed anchor point install-marketplace--><!-- id="install-marketplace" --></title>
 <p>This section provides details on installing the Marketplace service from the Development Platform.</p>
 </section>
 <section id="prerequisites"> <title>Prerequisites</title>
@@ -728,7 +728,7 @@ server marketplace&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 leave the server in an error state.</p>
 </li>
 <li>
-<p>Log back into the Horizon console as a non-admin user. Click on the <b>Marketplace</b> panel under the current Project to begin using the Marketplace Service. You may now install <xref href="../devplatform/1.1devplatform.marketplace.install.dita#install" >Marketplace packages</xref>.</p>
+<p>Log back into the Horizon console as a non-admin user. Click on the <b>Marketplace</b> panel under the current Project to begin using the Marketplace Service. You may now install <xref href="../devplatform/1.1devplatform.marketplace.install.dita#install" type="section" scope="external"  >Marketplace packages</xref>.</p>
 </li>
 </ol>
 <p>Your installation is now complete. If you encounter problems, refer to the <xref href="../devplatform/1.1devplatform.troubleshooting.dita" >Troubleshooting</xref> documentation.</p>

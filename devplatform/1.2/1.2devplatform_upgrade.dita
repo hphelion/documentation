@@ -39,7 +39,7 @@
 <xref type="section" href="#topic3949/HDPstart">Restarting Helion Development Platform control plane VMs</xref>
 </li>
 </ul>
-<section id="stopping-helion-development-platform-services"> <title>Stopping Helion Development Platform services<!--Removed anchor point HDPstop--><!-- id="HDPstop" --></title>
+<section id="HDPstop"> <title>Stopping Helion Development Platform services<!--Removed anchor point HDPstop--><!-- id="HDPstop" --></title>
 <p>Before stopping services, check that the service control plane is in healthy state (this is required for trove and marketplace).</p>
 <p>To run the Helion Devleopment Platform scripts, perform the following steps:</p>
 <ol>
@@ -96,7 +96,7 @@ ansible-playbook \
 </ol>
 <p>You can now run the update script.</p>
 </section>
-<section id="restarting-helion-development-platform-control-plane-vms"> <title>Restarting Helion Development Platform control plane VMs<!--Removed anchor point HDPstart--><!-- id="HDPstart" --></title>
+<section id="HDPstart"> <title>Restarting Helion Development Platform control plane VMs<!--Removed anchor point HDPstart--><!-- id="HDPstart" --></title>
 <p>After running update on the overcloud, the VMs running on the Compute hosts are in a shutdown state, so you need to first start the Helion Development Platform service control plane VMs. To do this:</p>
 <ol>
 <li>

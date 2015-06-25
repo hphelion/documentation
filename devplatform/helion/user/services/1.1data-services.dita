@@ -25,7 +25,7 @@
 
 </p>
 <p>The Application Lifecycle Service includes a number of data services which can be bound to the
-applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="../../../../devplatform/helion/user/services/1.1filesystem.dita#persistent-file-system" >persistent file system</xref> service and <xref href="../../../../devplatform/helion/user/services/1.1memcached.dita#memcached" >Memcached</xref>.</p>
+applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="../../../../devplatform/helion/user/services/1.1filesystem.dita#persistent-file-system" >persistent file system</xref> service and <xref href="../../../../devplatform/helion/user/services/1.1memcached.dita#memcached" type="section" scope="external"  >Memcached</xref>.</p>
 <p>For detailed information on using an <b>external</b> database system, see <xref type="section" href="#topic19835/using-external-databases">Using External Database Services</xref>.</p>
 <ul>
 <li>
@@ -135,22 +135,22 @@ services:
 <p>Possible service types are:</p>
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-filesystem" >filesystem</xref>
+<xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-filesystem" type="section" scope="external"  >filesystem</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-memcached" >memcached</xref>
+<xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-memcached" type="section" scope="external"  >memcached</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-mysql" >mysql</xref>
+<xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-mysql" type="section" scope="external"  >mysql</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-postgresql" >postgresql</xref>
+<xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-postgresql" type="section" scope="external"  >postgresql</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-RabbitMQ" >rabbitmq</xref>
+<xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-RabbitMQ" type="section" scope="external"  >rabbitmq</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-Redis" >redis</xref>
+<xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-Redis" type="section" scope="external"  >redis</xref>
 </li>
 </ul>
 <p>To access the database services after they've been created, see <xref type="section" href="#topic19835/accessing-database-services">Accessing Database Services</xref>.</p>
@@ -214,7 +214,7 @@ helion apps
 <li>
 <p>Pass all parameters in separate commands.</p>
 
-<p>These two commands (<xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-create-service" >helion create-service</xref> and <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-bind-service" >helion bind-service</xref>) do the same thing as if all three parameters were passed using <codeph>create-service</codeph>, but provide additional flexibility to create and configure the service before binding it to an app.</p>
+<p>These two commands (<xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-create-service" >helion create-service</xref> and <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-bind-service" type="section" scope="external"  >helion bind-service</xref>) do the same thing as if all three parameters were passed using <codeph>create-service</codeph>, but provide additional flexibility to create and configure the service before binding it to an app.</p>
 
 <codeblock>
 <codeph>create-service \&lt;service\&gt; \&lt;name\&gt;
@@ -251,8 +251,8 @@ $ helion apps
   the <xref href="../reference/1.1client-ref-service-management.dita" >ALS Service Management</xref> command reference.</p>
 </section>
 <section id="using-database-services"> <title>Using Database Service Environment Variables</title>
-<p>When you bind a database service to an application, <xref href="../../../../devplatform/helion/user/reference/1.1environment.dita#environment-variables" >environment variables</xref> containing that service's host, port, and credentials are added to the application container. You can use these environment variables in your code to connect to the service, rather than having to discover and then hard-code in such details.</p>
-<p>Examples of how to parse and use these variables can be found in the <xref href="../../../../devplatform/helion/user/deploy/1.1index.dita#language-specific-deployment" >Language-Specific Deployment</xref> section.</p>
+<p>When you bind a database service to an application, <xref href="../../../../devplatform/helion/user/reference/1.1environment.dita#environment-variables" type="section" scope="external"  >environment variables</xref> containing that service's host, port, and credentials are added to the application container. You can use these environment variables in your code to connect to the service, rather than having to discover and then hard-code in such details.</p>
+<p>Examples of how to parse and use these variables can be found in the <xref href="../../../../devplatform/helion/user/deploy/1.1index.dita#language-specific-deployment" type="section" scope="external"  >Language-Specific Deployment</xref> section.</p>
 </section>
 <section id="database-url"> <title>DATABASE_URL<!--Removed anchor point database-url--><!-- id="database-url" --></title>
 <p>
@@ -353,11 +353,11 @@ grouped by service type. VCAP_SERVICES variables use non-versioned service names
 </ul>
 </section>
 <section id="accessing-database-services"> <title>Directly Accessing Database Services</title>
-<p>You may need to connect to a database service directly for purposes of initial database setup, modifying fields, running queries, or doing backups. These operations can be done using the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-management.dita#command-dbshell" >helion dbshell</xref> (preferred) or <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-tunnel" >helion tunnel</xref> commands.</p>
+<p>You may need to connect to a database service directly for purposes of initial database setup, modifying fields, running queries, or doing backups. These operations can be done using the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-management.dita#command-dbshell" >helion dbshell</xref> (preferred) or <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-tunnel" type="section" scope="external"  >helion tunnel</xref> commands.</p>
 </section>
 <section id="using-dbshell"> <title>Via <i>dbshell</i>
 </title>
-<p>The <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-management.dita#command-dbshell" >helion dbshell</xref> command creates an SSH tunnel to database services. To open an interactive shell to a service:</p>
+<p>The <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-management.dita#command-dbshell" type="section" scope="external"  >helion dbshell</xref> command creates an SSH tunnel to database services. To open an interactive shell to a service:</p>
 <codeblock>
   <codeph>helion dbshell &lt;application_name&gt; &lt;service_name&gt;
 </codeph>
@@ -377,7 +377,7 @@ hook in <i>manifest.yml</i> such as:</p>
 </codeblock>
 </section>
 <section id="using-tunnel"> <title>Using Tunnel</title>
-<p>The <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-tunnel" >helion tunnel</xref> command is an alternative
+<p>The <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-tunnel" type="section" scope="external"  >helion tunnel</xref> command is an alternative
 method for accessing database services. The command creates a small Ruby
 application which proxies database requests over HTTP. This is the
 standard method for database access in Cloud Foundry, but tends to be
@@ -515,7 +515,7 @@ staging process is complete but before the app starts to run.</p>
 <section id="backing-up-a-mysql-database"> <title>Backing up a MySQL database</title>
 </section>
 <section id="using-helion-run"> <title>Using helion run</title>
-<p>To export a MySQL database, use the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-management.dita#command-run" >helion run</xref> command to remotely execute the dbexport tool:</p>
+<p>To export a MySQL database, use the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-management.dita#command-run" type="section" scope="external"  >helion run</xref> command to remotely execute the dbexport tool:</p>
 <codeblock>
   <codeph>helion run [application-name] dbexport service-name &gt; dumpfile.sql
 </codeph>
@@ -529,7 +529,7 @@ containing the manifest.yml file, the application name may be omitted.</p>
 <p>To back up a MySQL database, use the <xref type="section" href="#topic19835/sqltunnel">tunnel</xref>
 command to make a connection to the server and export the data using
 <codeph>mysqldump</codeph>.</p>
-<p>Use the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-tunnel" >helion tunnel</xref> command to access the service (in
+<p>Use the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-tunnel" type="section" scope="external"  >helion tunnel</xref> command to access the service (in
 this example a MySQL database named <codeph>customerdb</codeph>):</p>
 <codeblock>
   <codeph>helion tunnel customerdb
@@ -555,7 +555,7 @@ Which client would you like to start?
 </codeblock>
 <p>Select option <b>3. mysqldump</b>. You will be prompted to enter a path to
 where the dump will be saved.</p>
-<p>See the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-tunnel" >helion tunnel</xref> command documentation for other
+<p>See the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-tunnel" type="section" scope="external"  >helion tunnel</xref> command documentation for other
 ways of accessing a MySQL database. See <xref type="section" href="#topic19835/importing-a-mysql-database">Importing a MySQL database</xref> for details on importing a
 file created by mysqldump into an existing MySQL database service.</p>
 </section>
@@ -567,7 +567,7 @@ file created by mysqldump into an existing MySQL database service.</p>
   <codeph>helion dbshell [application name] [service name] &lt; dumpfile.sql
 </codeph>
 </codeblock>
-<p>The <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-management.dita#command-dbshell" >helion dbshell</xref> command redirects the contents of a local database dump file to the
+<p>The <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-management.dita#command-dbshell" type="section" scope="external"  >helion dbshell</xref> command redirects the contents of a local database dump file to the
 appropriate database client running in the application instance (i.e.
 equivalent to <codeph>helion run dbshell ...</codeph>). If run
 from a directory containing the <i>manifest.yml</i> file, the application and
@@ -576,7 +576,7 @@ service names may be omitted.</p>
 <section id="sqltunnel"> <title>Using helion tunnel</title>
 <p>This method of database import is provided for compatibility with Cloud Foundry. It tends to be slower than using <codeph>helion run ...</codeph>.</p>
 <p>To import data from a <i>mysqldump</i> file into an existing
-MySQL database service, use the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-tunnel" >helion tunnel</xref> command:</p>
+MySQL database service, use the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-tunnel" type="section" scope="external"  >helion tunnel</xref> command:</p>
 <codeblock>
   <codeph>helion tunnel &lt;servicename&gt;
 
@@ -607,7 +607,7 @@ terminal window to enter commands through.</p>
   <codeph>mysql --protocol=TCP --host=localhost --port=10000 --user=&lt;user&gt; --password=&lt;pass&gt; &lt;name&gt; &lt; mydatabase.sql
 </codeph>
 </codeblock>
-<p>See the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-tunnel" >helion tunnel</xref> command documentation for other
+<p>See the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-service-management.dita#command-tunnel" type="section" scope="external"  >helion tunnel</xref> command documentation for other
 ways of accessing a MySQL database. See <xref type="section" href="#topic19835/backing-up-a-mysql-database">Backing up a MySQL database</xref> for details on how to create
 a <codeph>mysqldump</codeph> backup that can then be imported into
 another database service.</p>
@@ -634,7 +634,7 @@ Redis:         'redis-2.x' -&gt; 'redis'
 variable. See the following language-specific documentation:</p>
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/user/deploy/languages/1.1php.dita#php-data-services" >PHP Data Services</xref>
+<xref href="../../../../devplatform/helion/user/deploy/languages/1.1php.dita#php-data-services" type="section" scope="external"  >PHP Data Services</xref>
 </li>
 </ul>
 <p>The following changes to sample applications show this modification:</p>
@@ -651,7 +651,7 @@ variable. See the following language-specific documentation:</p>
 </ul>
 </section>
 <section id="sqlite"> <title>SQLite</title>
-<p>Applications can use an <xref href="http://www.sqlite.org/" scope="external" format="html" >SQLite database</xref> as an alternative to Application Lifecycle Service database services. However, since the filesystem of an application container is ephemeral -- destroyed when an application is stopped, restarted, or updated -- <b>always</b> store the SQLite file on a <xref href="../../../../devplatform/helion/user/services/1.1filesystem.dita#persistent-file-system" >Persistent File System</xref> mount point to avoid losing data.</p>
+<p>Applications can use an <xref href="http://www.sqlite.org/" scope="external" format="html" >SQLite database</xref> as an alternative to Application Lifecycle Service database services. However, since the filesystem of an application container is ephemeral -- destroyed when an application is stopped, restarted, or updated -- <b>always</b> store the SQLite file on a <xref href="../../../../devplatform/helion/user/services/1.1filesystem.dita#persistent-file-system" type="section" scope="external"  >Persistent File System</xref> mount point to avoid losing data.</p>
 </section>
 </body>
 </topic>

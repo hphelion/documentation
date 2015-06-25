@@ -31,7 +31,7 @@ Key terms include:
 <section id="working-with-the-sherpa-service"> <title>Working with the Sherpa Service</title>
 <p>To perform tasks using the Sherpa service, you can use the Horizon dashboards.</p>
 </section>
-<section id="using-the-dashboards"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
+<section id="UI"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
 <p>You can use the HP <tm tmtype="reg">Helion OpenStack</tm> Dashboard to work with the Sherpa service.</p>
 <!-- ###Using the API ### {#API}
  

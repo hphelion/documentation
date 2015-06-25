@@ -40,7 +40,7 @@
 <li>
 <xref type="section" href="#topic3699/restore-proxy">Restore a proxy</xref> </li>
 </ul>
-<section id="activate-clusters"> <title>Activate clusters<!--Removed anchor point activate-cluster--><!-- id="activate-cluster" --></title>
+<section id="activate-cluster"> <title>Activate clusters<!--Removed anchor point activate-cluster--><!-- id="activate-cluster" --></title>
 <p>Perform the following steps to activate clusters:</p>
 <ol>
 <li>
@@ -69,7 +69,7 @@
 </li>
 </ol>
 </section>
-<section id="deactivate-clusters"> <title>Deactivate clusters<!--Removed anchor point deactivate-cluster--><!-- id="deactivate-cluster" --></title>
+<section id="deactivate-cluster"> <title>Deactivate clusters<!--Removed anchor point deactivate-cluster--><!-- id="deactivate-cluster" --></title>
 <ol>
 <li>
 <p>In the Horizon undercloud dashboard, click the <b>Resource</b> Tab in the left panel.<!--A BR tag was used here in the original source.--> The tab displays an option in the left panel.</p>
@@ -97,7 +97,7 @@
 </li>
 </ol>
 </section>
-<section id="restore-a-proxy"> <title>Restore a Proxy<!--Removed anchor point restore-proxy--><!-- id="restore-proxy" --></title>
+<section id="restore-proxy"> <title>Restore a Proxy<!--Removed anchor point restore-proxy--><!-- id="restore-proxy" --></title>
 <p>You can restore failed or deleted compute proxies. Select a vCenter to restore its compute proxy. Ensure that you remove any existing compute proxy VM (if any) from the vCenter before proceeding.</p>
 <ol>
 <li>

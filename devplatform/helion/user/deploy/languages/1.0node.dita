@@ -32,7 +32,7 @@ to install Node packages automatically.</p>
 automatically installs packages listed in the "dependencies" section
 before starting the server.</p>
 <p>Alternatively, you can call NPM directly using
-<xref href="../../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#hooks" >
+<xref href="../../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#hooks" type="section" scope="external"  >
 <i>hooks</i>
 </xref> in the <i>manifest.yml</i>
 file.</p>
@@ -63,14 +63,14 @@ var host = process.env.VCAP_APP_HOST || "127.0.0.1";
 </section>
 <section id="using-data-services"> <title>Using Data Services</title>
 <p>Data services need to be configured with values from VCAP_SERVICES, DATABASE_URL, or a database-specific environment
-variable (see also <xref href="../../../../../devplatform/helion/user/services/1.0data-services.dita#database-accessing" >
+variable (see also <xref href="../../../../../devplatform/helion/user/services/1.0data-services.dita#database-accessing" type="section" scope="external"  >
 <i>Using Configured Database
 Services</i>
 </xref>).</p>
 <p>If the database module you use supports URL-formatted connection
 strings, using the
-<xref href="../../../../../devplatform/helion/user/services/1.0data-services.dita#database-database-url" >DATABASE_URL</xref>
-or <xref href="../../../../../devplatform/helion/user/services/1.0data-services.dita#database-specific-url" >
+<xref href="../../../../../devplatform/helion/user/services/1.0data-services.dita#database-database-url" type="section" scope="external"  >DATABASE_URL</xref>
+or <xref href="../../../../../devplatform/helion/user/services/1.0data-services.dita#database-specific-url" type="section" scope="external"  >
 <i>database-specific URL
 variable</i>
 </xref>

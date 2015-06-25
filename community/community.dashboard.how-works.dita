@@ -25,14 +25,14 @@ How you interact with your network environment depends upon your user type, eith
 To access the dashboard, <xref href="../community/community.dashboard.launch.dita" >enter the dashboard URL in a supported browser and log in</xref>.</p>
 <p>
 <b>Note:</b> When accessing Horizon in a virtual environment, use the public network address, not the management network address. In a default configuration, the URL is http://192.0.8.2.</p>
-<section id="project-dashboard"> <title>Project dashboard<!--Removed anchor point DashProject--><!-- id="DashProject" --></title>
+<section id="DashProject"> <title>Project dashboard<!--Removed anchor point DashProject--><!-- id="DashProject" --></title>
 <p>Use the <b>Project</b> dashboard to implement and build out your cloud. This dashboard contains tools to create virtual server instances, create and configure your network, configure access tools (such as key pairs and security groups) and cloud resource templates (stacks).</p>
 </section>
-<section id="admin-dashboard"> <title>Admin dashboard<!--Removed anchor point DashAdmin--><!-- id="DashAdmin" --></title>
+<section id="DashAdmin"> <title>Admin dashboard<!--Removed anchor point DashAdmin--><!-- id="DashAdmin" --></title>
 <p>Use the <b>Admin</b> dashboard to view, allocate, and manage all resources within the cloud.</p>
 <p>The Admin dashboard allows you to manage instances, define flavors, create and configure images, manage networks, view system resources, manage projects, and manage users.</p>
 </section>
-<section id="settings-dashboard"> <title>Settings dashboard<!--Removed anchor point DashSettings--><!-- id="DashSettings" --></title>
+<section id="DashSettings"> <title>Settings dashboard<!--Removed anchor point DashSettings--><!-- id="DashSettings" --></title>
 <p>Use the <b>Settings</b> dashboard to change your display language and settings, your time zone, and your password.</p>
 <p>Click <b>Settings</b> in the user menu to display the Settings dashboard.</p>
 <p>
