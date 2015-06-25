@@ -16,5 +16,6 @@
         <folder path="pdf_sources/"/>
         <folder path="publiccloud/"/>
         <folder path="unusedgraphics/"/>
+        <file name="devplatform/1.2/helion/admin/cluster/1.2index.dita"/>
     </projectTree>
 </project>

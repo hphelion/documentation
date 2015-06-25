@@ -86,7 +86,7 @@
 </section>
 <section id="free-disk-space"> <title>Free Disk Space</title>
 <p>Each node in the cluster to be upgraded requires at least 4GB free disk space except for the cache node, which needs at least 10GB free.</p>
-  <p>If sufficient disk space cannot be reserved in the existing cluster for an upgrade, consider creating a new cluster and <xref href="../best-practices/1.2index.dita#topic16169/backup-migration">migrating the data</xref> rather than upgrading in place.</p>
+  <p>If sufficient disk space cannot be reserved in the existing cluster for an upgrade, consider creating a new cluster and <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-migration">migrating the data</xref> rather than upgrading in place.</p>
 <p>To add additional space on the cache node specifically for the upgrade:</p>
 <ul>
 <li>mount an external filesystem on the cache node</li>
@@ -104,12 +104,12 @@
 <p>Use the <b>free</b> or <b>vmstat</b> commands to determine how much memory is available on each VM and use <b>kato stop</b> to temporarily stop roles if more memory is required.</p>
 </section>
 <section id="maintenance-mode"> <title>Maintenance Mode</title>
-  <p>Before beginning an upgrade, put Application Lifecycle Service in maintenance mode using the <xref href="../console/1.2customize.dita#topic5029/console-settings-maintenance-mode" >Cloud Controller Settings</xref> or the following <i>kato</i> command:</p>
+  <p>Before beginning an upgrade, put Application Lifecycle Service in maintenance mode using the <xref href="../console/1.2customize.dita#topic5029/console-settings" >Cloud Controller Settings</xref> or the following <i>kato</i> command:</p>
 <codeblock>kato config set cloud_controller_ng maintenance_mode true</codeblock>
 <p>This shuts down API requests but continues to serve web requests. The Management Console becomes "read only" with the exception of this toggle so that it can be brought back online. Remember to disable maintenance mode once the upgrade has been completed.</p>
 </section>
 <section id="backup-snapshot"> <title>Backups or Snapshots</title>
-  <p>Back up all system and user data by performing a <xref href="../best-practices/1.2index.dita#backup-migration" >data export</xref> (recommended) or create <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-snapshots" type="section">snapshots</xref> of all nodes in your hypervisor.</p>
+  <p>Back up all system and user data by performing a <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-migration" >data export</xref> (recommended) or create <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-snapshots" type="section">snapshots</xref> of all nodes in your hypervisor.</p>
 </section>
 <section id="proxy-settings"> <title>Proxy settings for Upgrades</title>
 <p>The systems being upgraded will need to be able to access the following

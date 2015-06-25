@@ -245,16 +245,16 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <section id="cluster-nodes"> <title>Cluster Nodes</title>
 <p>Displays a list of nodes in the current cluster, and what services are running on each node. In a micro cloud configuration, only the current local node (127.0.0.1) is shown.</p>
 <p>To enable or disable services on a node, click the Configure Roles button (cog icon) to see the Node Settings, showing a list of all available roles and checkboxes to enable or disable each one. Click Save to apply changes.</p>
-<p>See also the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-role-add" >kato role</xref> and <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-info" >kato info</xref> command documentation for the CLI equivalents, and the <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#cluster-setup" type="section" scope="external"  >Cluster Setup</xref> documentation for information on adding nodes to the cluster.</p>
+  <p>See also the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-role-add" >kato role</xref> and <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-info" >kato info</xref> command documentation for the CLI equivalents, and the <xref href="../cluster/1.2index.dita#topic18326/cluster-setup" type="section" scope="external"  >Cluster Setup</xref> documentation for information on adding nodes to the cluster.</p>
 </section>
 <section id="patches"> <title>Available Patches</title>
 <p>Displays a list of available patches for the current cluster.</p>
 </section>
 <section id="app-org"> <title>Applications &amp; Organizations</title>
-<p>Links to the <xref href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita#application-view" >Applications</xref> and <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >Organizations</xref> lists.</p>
+  <p>Links to the <xref href="../../user/console/1.2index.dita#topic8844/application-view" >Applications</xref> and <xref href="../../user/deploy/1.2orgs-spaces.dita" type="section" scope="external"  >Organizations</xref> lists.</p>
 </section>
 <section id="domains"> <title>Domains</title>
-<p>A filterable list of all domains configured on the system, showing whether they are <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces-domains" type="section" scope="external"  >Shared or Owned domains</xref>.</p>
+  <p>A filterable list of all domains configured on the system, showing whether they are <xref href="../../user/deploy/1.2orgs-spaces.dita#topic2729/orgs-spaces-domains" type="section" scope="external"  >Shared or Owned domains</xref>.</p>
 </section>
 <section id="routes"> <title>Routes</title>
 <p>A filterable list of routes in the system.</p>
@@ -323,7 +323,7 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <li>
 <b>Support Email</b>: The email address displayed to end users when errors are encountered. Use an address which is monitored by administrators.</li>
 <li>
-<b>Sample App URLs</b>: URIs for URIs for JSON files which populate the <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita#app-store" type="section" scope="external"  >Sample Applications</xref> The URIs need not be public, but must be accessible from the controller node.</li>
+<b>Sample App URLs</b>: URIs for URIs for JSON files which populate the <xref href="../console/1.2index.dita#app-store" type="section" scope="external"  >Sample Applications</xref> The URIs need not be public, but must be accessible from the controller node.</li>
 <li>
 <b>Allowed Repos</b>: Debian package repositories allowed in application containers. End users can install additional packages (e.g. with  apt-get  or  aptitude) only from these repositories. When adding new repositories, GPG keys for each new repo must also be added to the Docker base container See <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#allowed-repositories" type="section" scope="external"  >Allowed Repositories</xref>.</li>
 </ul>
