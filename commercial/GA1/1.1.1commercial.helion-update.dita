@@ -352,93 +352,31 @@ chmod 775 /mnt/state/var/eon/data
 **Note for Helion Development Platform users**: The Helion Development Platform must be shut down before updating the overcloud. For instructions on shutting down the Development Platform, see [Updating Helion Development Platform](/helion/devplatform/1.2/upgrade/).
 -->
 <p>The v1.1.1 release includes new Orchestration (Heat) templates and new passthrough files. To apply these new templates to your system before updating the overcloud:</p>
-<ol>
-<li>
-<p>Log on to the seed VM.</p>
-
-<codeblock>
+<ol id="ol_z5h_d1h_ms">
+        <li>
+          <p>Log on to the seed VM.</p>
+          <codeblock>
 <codeph>ssh root@&lt;seed-ip&gt;
 </codeph>
 </codeblock>
-</li>
-<li>
-<p>Download the update kit on the seed.</p>
-
-<codeblock>
-<codeph>cd /root
-mkdir helion-update-1.1-to-1.1.1
-cd helion-update-1.1-to-1.1.1
-wget http://&lt;url&gt;/helion_ee_1.1.1.tgz
-</codeph>
+        </li>
+        <li>
+          <p>Copy the new installation scripts, passthrough files and heat templates to their
+            respective original <codeph>/root/tripleo/</codeph> directories. If you made
+            modifications to the passthrough files or heat templates, you will need to reapply these
+            changes to the newly copied files. In this case it is advisable to back up the existing
+            files for your own reference before proceeding:</p>
+          <codeblock>
+cp -r /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-incubator/scripts /root/tripleo/tripleo-incubator/
+cp -r /root/helion-update-1.1-to-1.1.1/tripleo/hp_passthrough /root/tripleo/
+cp -r /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-heat-templates /root/tripleo/
 </codeblock>
-</li>
-<li>
-<p>Extract the update kit:</p>
-
-<codeblock>
-<codeph>tar -xvzf helion_ee_1.1.1.tgz
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Copy the new templates from the location where you unpacked the new kit to the original <codeph>/root/tripleo/tripleo-heat-templates</codeph> directory</p>
-
-<codeblock>
-<codeph>cp -r /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-heat-templates /root/tripleo/
-</codeph>
-</codeblock>
-
-<p>
-<b>Note</b>: if you have made modifications to your original heat templates, you will need to re-apply them to the new templates. These instructions are included in this procedure.</p>
-</li>
-<li>
-<p>Copy the new passthrough files from the location where you unpacked the new kit to the original <codeph>/root/tripleo/hp_passthrough</codeph> directory.</p>
-
-<codeblock>
-<codeph>cp -r /root/helion-update-1.1-to-1.1.1/tripleo/hp_passthrough /root/tripleo/
-</codeph>
-</codeblock>
-
-<p>
-            <b>Note</b>: if you have made modifications to your original passthrough files, you will
-            need to re-apply them to the new passthrough files. </p>
-</li>
-<li>
-<p>Copy the new installation scripts from the location where you unpacked the new kit to the original <codeph>/root/tripleo/tripleo-incubator/scripts</codeph> directory</p>
-
-<codeblock>
-<codeph>cp -r /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-incubator/scripts /root/tripleo/tripleo-incubator/
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Copy the new <codeph>my.cnf</codeph> image element from the undercloud to each of the overcloud controller nodes. Log on to the seed and source the seed credentials. To do this, enter:</p>
-
-<codeblock>
-<codeph>root@hLinux:~# . stackrc
-root@hLinux:~# undercloudip=`nova list | grep ctlplane | awk '{print $12}' | sed -e "s/.*=\\([0-9.]*\\).*/\1/"`
-root@hLinux:~# scp heat-admin@${undercloudip}:/usr/libexec/os-apply-config/templates/mnt/state/etc/mysql/my.cnf /tmp/my.cnf
-</codeph>
-</codeblock>
-
-<p>Source the undercloud creds and copy the file to each of the overcloud controllers by entering:</p>
-
-<codeblock>
-<codeph>TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
-for ip in `nova list | grep controller[0-2] | awk '{print $12}' | sed -e "s/.*=\\([0-9.]*\\).*/\1/"`; do
-echo $ip;
-scp /usr/libexec/os-apply-config/templates/mnt/state/etc/mysql/my.cnf heat-admin@$ip:~
-ssh heat-admin@$ip "sudo cp ~heat-admin/my.cnf /usr/libexec/os-apply-config/templates/mnt/state/etc/mysql/"
-done
-</codeph>
-</codeblock>
-
-<!--DOCS-1355 says this step makes copying to /tmp and /usr/libexec unnecessary and /tmp should be cleaned up. Referring back to Tom Q. --></li>
-<li>
-<p>Create the new <codeph>from-heat.conf</codeph> file on the seed using the following command:</p>
-
-<codeblock>
-<codeph>root@hLinux:~# cat &gt; from-heat.conf 
+        </li>
+        <li>
+          <p>Create the new <codeph>from-heat.conf</codeph> file on the seed using the following
+            command:</p>
+          <codeblock>
+<codeph>root@hLinux:~# cat &gt; from-heat.conf &lt;&lt;EOF
 {{#stunnel}}
 {{#connect_host}}
 pid = /var/run/stunnel4/from-heat.pid
@@ -473,129 +411,101 @@ ciphers = {{{.}}}
 {{/ports}}
 {{/connect_host}}
 {{/stunnel}}
+EOF
 </codeph>
 </codeblock>
-</li>
-<li>
-<p>Copy the new stunnel image element to <codeph>/usr/libexec/os-apply-config/templates/etc/stunnel/from-heat.conf</codeph> on each of the overcloud controllers. Log on to the seed and source the undercloud credentials and copy the file to each of the overcloud controllers by entering:</p>
-
-<codeblock>
+        </li>
+        <li>
+          <p>Copy the new <codeph>my.cnf</codeph> and <codeph>stunnel/from-heat.conf</codeph> files to each of the overcloud
+            controller nodes:  To do this, enter:</p>
+          <codeblock>
 <codeph>TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
 for ip in `nova list | grep controller[0-2] | awk '{print $12}' | sed -e "s/.*=\\([0-9.]*\\).*/\1/"`; do
 echo $ip;
-scp from-heat.conf heat-admin@$ip:~
-ssh heat-admin@$ip "sudo cp ~heat-admin/from-heat.conf /usr/libexec/os-apply-config/templates/etc/stunnel/"
-ssh heat-admin@$ip "sudo /usr/local/bin/os-apply-config  --validate"
-done
-</codeph>
+scp from-heat.conf heat-admin@$ip:~ 
+scp /usr/libexec/os-apply-config/templates/mnt/state/etc/mysql/my.cnf heat-admin@$ip:~ 
+ssh heat-admin@$ip "sudo cp ~heat-admin/my.cnf /usr/libexec/os-apply-config/templates/mnt/state/etc/mysql/" 
+ssh heat-admin@$ip "sudo cp ~heat-admin/from-heat.conf /usr/libexec/os-apply-config/templates/etc/stunnel/" 
+ssh heat-admin@$ip "sudo /usr/local/bin/os-apply-config  --validate" 
+done</codeph>
 </codeblock>
-</li>
-<li>
-<p>Run <codeph>update-overcloud</codeph> to apply the new templates and passthrough files by logging on to the seed as root and 
-changing to the original /root directory and running:</p>
-
-<codeblock>
+        </li>
+        <li>
+          <p>Load the custom-ips json file, along with any custom variables that were defined for
+            the initial installation of the overcloud. Then as root user, run
+              <codeph>update-overcloud</codeph> to apply the new templates and passthrough files
+            from the <codeph>/root</codeph> directory on the seed. For example:</p>
+          <codeblock>
 <codeph>cd /root
 source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+OVERCLOUD_COMPUTESCALE=5
+OVERCLOUD_NEUTRON_DVR=True
+OVERCLOUD_NTP_SERVER=10.22.33.44 
 ./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud
 </codeph>
 </codeblock>
-
-<p>
-<b>Note</b>: If you defined any custom variables for the initial installation of the overcloud, you need to export them again before executing the hp_ced_installer.sh script. For example:</p>
-
-<codeblock>
-<codeph>root@hLinux:~# OVERCLOUD_COMPUTESCALE=5
-OVERCLOUD_NEUTRON_DVR=True
-OVERCLOUD_NTP_SERVER=10.22.33.44 
-./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud --skip-demo |&amp; tee /roo/tq_up_oc_1.log
-</codeph>
-</codeblock>
-
-<p>The above command should apply the new templates and passthrough files. However, because the images have not yet been updated, the process should end in failure with the message:</p>
-
-<codeblock>
+          <p>Because the images have not yet been updated, the above command should return  the
+            message:</p>
+          <codeblock>
 <codeph>++ wait_for 30 10 nova service-list --binary nova-compute '2&gt;/dev/null' '|' grep 'enabled.*\ up\ '
 Timing out after 300 seconds:
 COMMAND=nova service-list --binary nova-compute 2&gt;/dev/null | grep enabled.*\ up\
 OUTPUT=
-root@hLinux:~#
 </codeph>
 </codeblock>
-
-<p>This is expected behavior for KVM-based systems.</p>
-</li>
-<li>
-<p>Log onto each overcloud controller in turn and restart MySQL and stunnel. This ensures that they are listening on the correct ports. To restart MySQL, enter:</p>
-
-<codeblock>
-<codeph>root@overcloud-ce-controller-controller0-xoni6co2hxes:~# service mysql stop
-[ ok ] Stopping MySQL (Percona XtraDB Cluster): mysqld.
-root@overcloud-ce-controller-controller0-xoni6co2hxes:~# service mysql start
-[ ok ] Starting MySQL (Percona XtraDB Cluster) database server: mysqld . . . .[....] SST in progress, setting sleep higher: mysqld ..
-root@overcloud-ce-controller-controller0-xoni6co2hxes:~# service mysql status
-[info] Percona XtraDB Cluster up and running.
-</codeph>
+          <p>This is expected behavior for KVM-based systems.</p>
+        </li>
+        <li>
+          <p>Restart MySQL and stunnel on the overcloud controller nodes by entering:</p>
+          <codeblock>
+for ip in `nova list | grep controller[0-2] | awk '{print $12}
+ ' | sed -e "s/.=\\([0-9.]\\).*/\1/"`; do 
+echo $ip; 
+ssh heat-admin@$ip "sudo service mysql restart; sudo service mysql status”
+ssh heat-admin@$ip "sudo service stunnel4 restart; sudo service stunnel4 status”
+ssh heat-admin@$ip "sudo netstat -napd | grep 3307 | grep LIST"
+done
 </codeblock>
-
-<p>To restart stunnel, enter:</p>
-
-<codeblock>
-<codeph>root@overcloud-ce-controller-controller0-xoni6co2hxes:~# service stunnel4 stop
-Stopping SSL tunnels: [stopped: /etc/stunnel/from-heat.conf] stunnel.
-root@overcloud-ce-controller-controller0-xoni6co2hxes:~# service stunnel4 start
-Starting SSL tunnels: [Started: /etc/stunnel/from-heat.conf] stunnel.
-root@overcloud-ce-controller-controller0-xoni6co2hxes:~# service stunnel4 status
-SSL tunnels status: /etc/stunnel/from-heat.conf: running
-root@overcloud-ce-controller-controller0-xoni6co2hxes:~#
-</codeph>
-</codeblock>
-
-<p>Verify that MySQL is now listening on port 3307 by entering:</p>
-
-<codeblock>
-<codeph>root@overcloud-ce-controller-controller0-xoni6co2hxes:~# netstat -napd | grep 3307 | grep LIST
+          <p><b>Warning</b>: Do not proceed with the following steps unless <codeph>netstat</codeph>
+            command shows MySQL listening on port 3307.  To verify that MySQL is now listening on
+            port 3307 enter:</p>
+          <codeblock>
+<codeph>netstat -napd | grep 3307 | grep LIST
 tcp        0      0 127.0.0.1:3307          0.0.0.0:*               LISTEN      32049/mysqld    
-root@overcloud-ce-controller-controller0-xoni6co2hxes:~# 
 </codeph>
 </codeblock>
-
-<p>
-<b>Warning</b>: Do not proceed with the following steps if MySQL is not listening on port 3307.</p>
-
-<p>
-<b>Note</b>: The Nova service-list will report that overcloud services are 'down'. At this stage, this is expected behavior. (You may need to wait for approximately 10 minutes to allow <codeph>os-apply-config</codeph> to complete running on each controller node before <codeph>nova service-list</codeph> returns this information.)</p>
-</li>
-<li>
-<p>Apply the following edit to the pre-flight_check.yml file:</p>
-
-<codeblock>
-<codeph>root@hLinux:~# sed -i 's/status=started/state=started/g' ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/pre-flight_check.yml
+          <p> .</p>
+          <p>
+            <b>Note</b>: Nova's <codeph>service-list</codeph> will report that overcloud services are 'down'. At this
+            stage, this is expected behavior. (You may need to wait for approximately 10 minutes to
+            allow <codeph>os-apply-config</codeph> to complete running on each controller node
+            before <codeph>nova service-list</codeph> returns this information.)</p>
+        </li>
+        <li>
+          <p>Apply the following edit to the pre-flight_check.yml file:</p>
+          <codeblock>
+<codeph>sed -i 's/status=started/state=started/g' ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/pre-flight_check.yml
 </codeph>
 </codeblock>
-</li>
-<li>
-<p>Add the 61-sleep playbook by creating the 61-sleep file as follows:</p>
-
-<codeblock>
-<codeph>root@hLinux:~# cat &gt; ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/files/61-sleep  
+        </li>
+        <li>
+          <p>Add the 61-sleep playbook by creating the 61-sleep file as follows:</p>
+          <codeblock>
+<codeph>cat &gt; ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/files/61-sleep &lt;&lt;EOF
 #!/bin/bash
 set -x
 echo 'Short sleep'
 sleep 20
 date
+EOF
 </codeph>
 </codeblock>
-</li>
-<li>
-<p>Update the playbook by entering:</p>
-
-<codeblock>
-    root@hLinux:~# cp -p ~/helion-update-1.1-to1.1.1
-<ph>/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml ~/helion-update-1.1-to-1.1.1
-<ph>/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml.orig
-    root@hLinux:~# cat &gt; ~/helion-update-1.1-to-1.1.1
-<ph>/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml 
+        </li>
+        <li>
+          <p>Update the <codeph>step_run_occ</codeph> playbook by entering:</p>
+          <codeblock>
+cp -p ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml ~/helion-update-1.1-to-/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml.orig
+cat &gt; ~/helion-update-1.1-to-/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml &lt;&lt; EOF
     # Copyright (C) 2014 Hewlett-Packard Development Company, L.P.
     #
     # Licensed under the Apache License, Version 2.0 (the "License");
@@ -634,40 +544,34 @@ date
     - name: "Execute os-collect-config"
       command: os-collect-config --force --one
       when: test_bypass_os_collect_config != true
-</ph>
-
-</ph>
-
-</ph>
+EOF
 
 </codeblock>
-</li>
-<li>
-<p>To verify that the new file is correct, please run:</p>
-
-<codeblock>
-<codeph>root@hLinux:~# python -c 'import yaml; f=open("/root/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml", "r"); yaml.safe_load(f);'
-root@hLinux:~# echo $?
+        </li>
+        <li>
+          <p>To verify that the new file is correct,  run:</p>
+          <codeblock>
+<codeph>python -c 'import yaml; f=open("/root/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml", "r"); yaml.safe_load(f);'
+echo $?
 0
 </codeph>
 </codeblock>
-</li>
-<li>
-<p>Run the update script:</p>
-
-<codeblock>
+        </li>
+        <li>
+          <p>Run the update script:</p>
+          <codeblock>
 <codeph>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 cd helion-update-1.1-to-1.1.1/tripleo/helion-update/overcloud_update
-./update_oc.sh ~/helion-update-1.1-to-1.1.1/tripleo &amp;| tee update_oc.log
+./update_oc.sh ~/helion-update-1.1-to-1.1.1/tripleo |&amp; tee update_oc.log
 </codeph>
 </codeblock>
-
-<p>Your HP <tm tmtype="reg">Helion OpenStack</tm> overcloud is now updated.</p>
-</li>
-<li>
-<p>Confirm that update was successful by examining the <codeph>/var/log/ansible/ansible.log</codeph>.  This report should not list any unreachable nodes:</p>
-
-<codeblock>
+          <p>Your HP <tm tmtype="reg">Helion OpenStack</tm> overcloud is now updated.</p>
+        </li>
+        <li>
+          <p>Confirm that update was successful by examining the
+              <codeph>/var/log/ansible/ansible.log</codeph>. This report should not list any
+            unreachable nodes:</p>
+          <codeblock>
 <codeph>PLAY RECAP ********************************************************************
 10.23.67.141   : ok=122  changed=74   unreachable=0failed=0
 10.23.67.143   : ok=37   changed=22   unreachable=0failed=0
@@ -678,8 +582,8 @@ cd helion-update-1.1-to-1.1.1/tripleo/helion-update/overcloud_update
 10.23.67.148   : ok=60   changed=30   unreachable=0failed=0
 </codeph>
 </codeblock>
-</li>
-</ol>
+        </li>
+      </ol>
 </section>
 <section id="post-update-cleanup"> <title>Post update cleanup</title>
 <p>After you have successfully updated the overcloud, there are some files that you should delete. Perform the following steps on all nodes in the overcloud (including controller nodes, Swift nodes, Nova compute nodes, etc.) To find and delete these files:</p>
