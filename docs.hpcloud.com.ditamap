@@ -1738,6 +1738,7 @@
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
+<<<<<<< HEAD
   
   <!-- Carrier Grade -->
   
@@ -1901,4 +1902,6 @@
   </topicref> 
 <!-- ======= -->
 
+=======
+>>>>>>> eeaee41025ac2b4680650e580af406c67822e963
 </map>

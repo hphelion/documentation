@@ -150,10 +150,8 @@ application object. For a minimal sample application, see
 <codeph>manifest.yml</codeph>, eg:</p>
 <codeblock>processes:
   web: $HELION_UWSGI --mount foo=app.py --import module</codeblock>
-<p>It is possible to <xref type="section" href="#topic11550/uwsgi-python-static-files">
-<i>serve static files with
-uWSGI</i>
-</xref>.</p>
+<p>It is possible to <xref href="#topic11550/serving-static-files-with-uwsgi" format="dita"><i>serve
+            static files with uWSGI</i></xref> .</p>
 </section>
 <section id="django"> <title>Deploying Django applications</title>
 <ul>
@@ -306,17 +304,12 @@ used to serve non-WSGI applications (such as Tornado). See the
 for an example.</p>
 </section>
 <section id="installing-python-packages"> <title>Installing Python Packages</title>
-<p>To install packages from custom repository/mirror, use the <xref
-  href="../../../reference/1.2environment.dita#topic7631/term-pip-opts">
-          <i>PIP_OPTS</i>
-        </xref> or <xref
-          href="../../../reference/1.2environment.dita#topic7631/term-pypm-opts">
-          <i>PYPM_OPTS</i>
-        </xref>
-        <xref
-          href="../../../reference/1.2environment.dita#topic7631/environment-variables">
-          <i>environment variables</i>
-        </xref>.</p>
+<p>To install packages from custom repository/mirror, use the <xref href="#topic11550/pip"
+          format="dita"><i>PIP_OPTS</i></xref> or <xref href="#topic11550/pypm" format="dita"
+            ><i>PYPM_OPTS</i></xref>
+        
+          environment variables
+        .</p>
 <p>Application dependencies such as web frameworks or modules from PyPI can
   be installed using <xref href="../../../reference/1.2glossary.dita#topic6187/term-pypm" type="section" scope="external"  >
 <i>PyPM</i>
