@@ -725,7 +725,7 @@ certificates through the router or
 <p>To avoid this, the generated certificate for the base URL of the PaaS can be replaced with a signed certificate issued by a CA.</p>
 <p>For additional Org-owned and Shared domains, SSL certificates can be added using the SNI method described further below.</p>
 </section>
-<section id="using-your-own-ssl-certificate"> <title>Replacing the Default SSL Certificate</title>
+<section id="using-your-own-ssl-certificate"> <title>Using Your Own SSL Certificate (Replacing the Default)</title>
 <p>On all router and controller nodes, upload your <i>.key</i> file to the <i>/etc/ssl/private/</i> directory and your <i>.crt</i> file to <i>/etc/ssl/certs/</i>.</p>
 <p>Change the following settings with <i>kato config</i> to point to the new files:</p>
 <codeblock>

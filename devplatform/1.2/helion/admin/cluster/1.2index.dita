@@ -25,8 +25,8 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/admin/cluster/1.2index.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/cluster/--></p>
-<p>This process begins with an installed <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-micro-cloud" >micro cloud</xref>, which must then be cloned across several <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-node" >nodes</xref>. You connect to each node in turn and tell it which <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-role" >role</xref>s it is to serve, thereby distributing the processing load for maximum performance.</p>
-<p>In HP Helion, the Clusters Panel in the <xref href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita" >ALS management console</xref> makes these tasks much easier to accomplish. If you prefer to use the command line, you can also use the <xref href="../../../../../devplatform/1.2/helion/CLI/1.2ALS_Client_Reference.dita" >Cluster Configuration tool</xref> or <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita" >
+  <p>This process begins with an installed <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud" >micro cloud</xref>, which must then be cloned across several <xref href="../../user/reference/1.2glossary.dita#topic6187/term-node" >nodes</xref>. You connect to each node in turn and tell it which <xref href="../../user/reference/1.2glossary.dita#topic6187/term-role" >role</xref>s it is to serve, thereby distributing the processing load for maximum performance.</p>
+<p>In HP Helion, the Clusters Panel in the <xref href="../../user/console/1.2index.dita" >ALS management console</xref> makes these tasks much easier to accomplish. If you prefer to use the command line, you can also use the <xref href="../../CLI/1.2ALS_Client_Reference.dita" >Cluster Configuration tool</xref> or <xref href="../reference/1.2kato-ref.dita" >
 <i>kato</i>
 </xref> commands.</p>
 <ul>
@@ -34,65 +34,62 @@
 <xref type="section" href="#topic18326/roles">Node Roles</xref>
 </li>
 <li>
-<xref type="section" href="#topic18326/preparing-the-core-node">Preparing the Core Node</xref>
-
-<ul>
+        <xref type="section" href="#topic18326/preparing-the-core-node">Preparing the Core
+          Node</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic18326/core-ip">CORE_IP</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/hostname">Hostname</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/wildcard-dns">Wildcard DNS</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/core-node">Core Node</xref>
+          </li>
+        </ul></li>
 <li>
-<xref type="section" href="#topic18326/core-ip">CORE_IP</xref>
-</li>
+        <xref type="section" href="#topic18326/attaching-nodes-and-enabling-roles">Attaching Nodes
+          and Enabling Roles</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic18326/router-nodes">Router Nodes</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/data-services-nodes">Data Services Nodes</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/dea-nodes">DEA Nodes</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/verification">Verification</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/removing-nodes">Removing Nodes</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/role-configuration-using-the-management-console"
+              >Role Configuration using the Management Console</xref>
+          </li>
+        </ul></li>
 <li>
-<xref type="section" href="#topic18326/hostname">Hostname</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/wildcard-dns">Wildcard DNS</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/core-node">Core Node</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic18326/attaching-nodes-and-enabling-roles">Attaching Nodes and Enabling Roles</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic18326/router-nodes">Router Nodes</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/data-services-nodes">Data Services Nodes</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/dea-nodes">DEA Nodes</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/verification">Verification</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/removing-nodes">Removing Nodes</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/role-configuration-using-the-management-console">Role Configuration using the Management Console</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic18326/example-clusters">Sample Cluster Examples</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic18326/single-node">Single-Node</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/three-node">Three-Node</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/five-node">Five-Node</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/node">20-Node</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic18326/example-clusters">Sample Cluster Examples</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic18326/single-node">Single-Node</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/three-node">Three-Node</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/five-node">Five-Node</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/node">20-Node</xref>
+          </li>
+        </ul></li>
 <li>
 <xref type="section" href="#topic18326/roles-requiring-persistent-or-shared-storage">Roles Requiring Persistent or Shared Storage</xref>
 </li>
@@ -103,73 +100,76 @@
 <xref type="section" href="#topic18326/multiple-controllers">Multiple Controllers</xref>
 </li>
 <li>
-<xref type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer and Multiple Routers</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic18326/rename-the-load-balancer">Rename the Load Balancer</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/set-up-the-core-node">Set up the Core Node</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/set-up-supplemental-routers">Set up Supplemental Routers</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/configure-the-helion-load-balancer">Configure the Application Lifecycle Service Load Balancer</xref>
-</li>
-<li>
-<xref type="section" href="#topic18326/load-balancer-ssl-certificates">Load Balancer SSL Certificates</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer and
+          Multiple Routers</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic18326/rename-the-load-balancer">Rename the Load
+              Balancer</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/set-up-the-core-node">Set up the Core Node</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/set-up-supplemental-routers">Set up Supplemental
+              Routers</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/configure-the-helion-load-balancer">Configure the
+              Application Lifecycle Service Load Balancer</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic18326/load-balancer-ssl-certificates">Load Balancer SSL
+              Certificates</xref>
+          </li>
+        </ul></li>
 </ul>
 <section id="roles"> <title>Node Roles</title>
-<p>An Application Lifecycle Service <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-node" >node</xref> can
+  <p>An Application Lifecycle Service <xref href="../../user/reference/1.2glossary.dita#topic6187/term-node" >node</xref> can
 take on one or more of the following roles:</p>
 <ul>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2architecture.dita#architecture-primary" >primary</xref>
+<xref href="../reference/1.2architecture.dita#architecture-primary" >primary</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2architecture.dita#architecture-cloud-controller" >controller</xref>
+<xref href="../reference/1.2architecture.dita#architecture-cloud-controller" >controller</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2architecture.dita#architecture-router" >router</xref>
+<xref href="../reference/1.2architecture.dita#architecture-router" >router</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2architecture.dita#architecture-droplet-execution-agents" >dea</xref>
+<xref href="../reference/1.2architecture.dita#architecture-droplet-execution-agents" >dea</xref>
 </li>
 <li>mdns (intended for micro clouds)</li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/services/1.2filesystem.dita#creating-a-persistent-file-system" >filesystem</xref>
+<xref href="../../user/services/1.2filesystem.dita#creating-a-persistent-file-system" >filesystem</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-mysql" >mysql</xref>
+  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-mysql" >mysql</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-postgresql" >postgresql</xref>
+  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-postgresql" >postgresql</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-RabbitMQ" >rabbit</xref>
+  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-RabbitMQ" >rabbit</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-Redis" >redis</xref>
+  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-Redis" >redis</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/services/1.2memcached.dita" >memcached</xref>
+<xref href="../../user/services/1.2memcached.dita" >memcached</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2harbor.dita" >Harbor</xref> (TCP/UDP port service)</li>
+<xref href="../cluster/1.2harbor.dita" >Harbor</xref> (TCP/UDP port service)</li>
 </ul>
 <p>The command line tool used to configure Application Lifecycle Service servers is called
-<xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref" >kato</xref>. You can see a
-list of the available roles at the command line by running the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-info" >kato
+  <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref" >kato</xref>. You can see a
+list of the available roles at the command line by running the <xref href="../reference/1.2kato-ref.dita" >kato
 info</xref> command.</p>
-<p>Setup of cluster nodes is done using the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-attach" >kato
+  <p>Setup of cluster nodes is done using the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" >kato
 node</xref> setup,
 add, attach, and remove sub-commands.</p>
-<p>The <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-info" >kato info</xref>
+  <p>The <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-info" >kato info</xref>
 command will show:</p>
 <ul>
 <li>
@@ -183,137 +183,106 @@ command will show:</p>
 <section id="preparing-the-core-node"> <title>Preparing the Core Node</title>
 <p>In an Application Lifecycle Service cluster, one node is dedicated as the Core node. This node
 will have a
-<xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2architecture.dita#architecture-cloud-controller" >controller</xref>,
-<xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2architecture.dita#architecture-primary" >primary</xref>,
-<xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2architecture.dita#architecture-base" >base</xref>, and
-<xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2architecture.dita#architecture-router" >router</xref> role but
+  <xref href="../reference/1.2architecture.dita#topic4407/architecture-cloud-controller" >controller</xref>,
+  <xref href="../reference/1.2architecture.dita#topic4407/architecture-primary" >primary</xref>,
+  <xref href="../reference/1.2architecture.dita#topic4407/architecture-base" >base</xref>, and
+  <xref href="../reference/1.2architecture.dita#topic4407/architecture-router" >router</xref> role but
 can also include additional roles.</p>
 <p>Boot an Application Lifecycle Service VM and set up the Core node as described below, then add
 the other nodes and assign roles.</p>
 </section>
 <section id="core-ip"> <title>CORE_IP</title>
-<p>A <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#setting-a-static-ip" >static IP address</xref> is
+<p>A <xref href="../server/1.2configuration.dita#setting-a-static-ip" >static IP address</xref> is
 necessary to provide a consistent network interface for other nodes to connect to. This address is called the MBUS IP. If your IaaS or cloud orchestration software provides IP addresses which persist indefinitely and are not reset on reboot you may not have to set this explicitly.</p>
 <p>Take note of the internal IP address of the Core node. It will be required in the following steps to configure additional nodes to attach to the Core node.</p>
 <p>Make sure that the IP address of its <codeph>eth0</codeph> interface is registering the correct address, which may not be the case if you have set a static IP and not yet rebooted or restarted
 networking. To check the IP address, run:</p>
-<codeblock>
-  <codeph>ifconfig eth0
-</codeph>
-</codeblock>
-<p>If necessary, use the kato <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-op-static_ip" >
+<codeblock>ifconfig eth0</codeblock>
+  <p>If necessary, use the kato <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-op-static_ip" >
 <i>op static_ip</i>
 </xref> command to set the static IP address:</p>
-<codeblock>
-  <codeph>kato op static_ip
-</codeph>
-</codeblock>
-<p>
-  <b>Note</b>
-</p>
-<p>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-migrate" >kato node migrate</xref> on the Core node, then <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-attach" >kato node attach</xref> on all other cluster nodes.</p>
+<codeblock>kato op static_ip</codeblock>
+  <note>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-migrate" >kato node migrate</xref> on the Core node, then <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" >kato node attach</xref> on all other cluster nodes.</note>
 </section>
 <section id="hostname"> <title>Hostname</title>
-<p>Next, set the <b>fully qualified hostname</b> of the Core node. This is required so that Application Lifecycle Service's internal configuration matches the <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#server-config-dns" >DNS record</xref> created for
+  <p>Next, set the <b>fully qualified hostname</b> of the Core node. This is required so that Application Lifecycle Service's internal configuration matches the <xref href="../server/1.2configuration.dita#topic31232/server-config-dns" >DNS record</xref> created for
 this system.</p>
 <p>To set the hostname, run:</p>
-<codeblock>
-  <codeph>kato node rename hostname.example.com --no-restart
-</codeph>
-</codeblock>
+<codeblock>kato node rename hostname.example.com --no-restart</codeblock>
 <p>This hostname will become the basename of the "API endpoint" address
 used by clients (e.g. "https://api.hostname.example.com").</p>
-<p>
-  <b>Note</b>
-</p>
-<p>If you are building a cluster with multiple Routers separate from the Core node, the load balancer or gateway router must take on the API endpoint address. Consult the <xref type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer and Multiple Routers</xref> section below.</p>
+      <note> If you are building a cluster with multiple Routers separate from the Core node, the load
+          balancer or gateway router must take on the API endpoint address. Consult the <xref
+            type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer and
+            Multiple Routers</xref> section below.</note>
 </section>
 <section id="wildcard-dns"> <title>Wildcard DNS</title>
 <p>A wildcard DNS record is necessary to resolve not only the API endpoint,
 but all applications which will subsequently be deployed on the PaaS.
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#server-config-dns" >Create a wildcard DNS record</xref> for the <xref type="section" href="#topic18326/core-node">Core node</xref> or <xref type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer/Router</xref>.</p>
+  <xref href="../server/1.2configuration.dita#topic31232/server-config-dns" >Create a wildcard DNS record</xref> for the <xref type="section" href="#topic18326/core-node">Core node</xref> or <xref type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer/Router</xref>.</p>
 </section>
 <section id="core-node"> <title>Core Node</title>
 <p>On the Core node, execute the following command:</p>
-<codeblock>
-  <codeph>kato node setup core api.hostname.example.com
-</codeph>
-</codeblock>
+<codeblock>kato node setup core api.hostname.example.com</codeblock>
 <p>This sets up the Core node with just the implicit <b>controller</b>,
 <b>primary</b>, and <b>router</b> roles. The <b>router</b> role is <b>required</b> on this node even if there are other routers in the cluster and even if the node is not exposed to the Internet.</p>
 <p>If you intend to set up the rest of the cluster immediately, you would
 carry on to enable those roles you ultimately intend to run on the Core
 node. For example, to set up a Core node with the <b>controller</b>,
 <b>primary</b>, <b>router</b>, and <b>dea</b> roles:</p>
-<codeblock>
-  <codeph>kato node setup core api.hostname.example.com
-kato role add dea
-</codeph>
-</codeblock>
+<codeblock>kato node setup core api.hostname.example.com
+kato role add dea</codeblock>
 <p>Then proceed to configure the other VMs by attaching them to the Core
 node and assigning their particular roles.</p>
 </section>
 <section id="attaching-nodes-and-enabling-roles"> <title>Attaching Nodes and Enabling Roles</title>
 <p>Adding nodes to the cluster involves attaching the new VMs to the Core
-node's IP address using the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-attach" >kato node attach</xref>
+  node's IP address using the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" >kato node attach</xref>
 command. This command will check that the new node has a version number
 compatible with the Core node before attaching it.</p>
 <p>Roles can be added (or removed) on the new node after attaching using
-the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-role-add" >kato role</xref>
+  the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-role-add" >kato role</xref>
 command, but it is generally preferable to enable roles during the
 <codeph>kato attach</codeph> step using the <codeph>-e</codeph> (enable) option as described below for each of the node types.</p>
 </section>
 <section id="router-nodes"> <title>Router Nodes</title>
 <p>In smaller clusters, the Router role enabled on a Core node should be sufficient for the Core node to function as the gateway. To attach a node enabling just the router role:</p>
-<codeblock>
-  <codeph>kato node attach -e router CORE_IP
-</codeph>
-</codeblock>
-<p>If a Router-only node is functioning as the gateway, the public DNS entry for the API endpoint must point to that node. For larger clusters requiring multiple gateway Routers, see the <xref type="section" href="#topic18326/cluster-load-balancer">Load Balancer and Multiple Routers</xref> section below.</p>
+<codeblock>kato node attach -e router CORE_IP</codeblock>
+  <p>If a Router-only node is functioning as the gateway, the public DNS entry for the API endpoint must point to that node. For larger clusters requiring multiple gateway Routers, see the <xref type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer and Multiple Routers</xref> section below.</p>
 </section>
 <section id="data-services-nodes"> <title>Data Services Nodes</title>
 <p>Data services can share a single node (small clusters) or run on
 separate nodes (recommended for production clusters). To set up all
 available data services on a single node and attach it to the Core node,
 run the following command on the data services node:</p>
-<codeblock>
-  <codeph>kato node attach -e data-services CORE_IP
-</codeph>
-</codeblock>
+<codeblock>kato node attach -e data-services CORE_IP</codeblock>
 <p>
-  <b>Note</b>
-</p>
-<p>The <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2harbor.dita" >Harbor</xref> port service needs a publicly
-routable IP and exposed port range if you want to provide externally accessible TCP and UDP ports for user applications. See the <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2harbor.dita#requirements-setup" >Harbor Requirements &amp; Setup</xref> documentation for details.</p>
+        <note>The <xref href="../cluster/1.2harbor.dita">Harbor</xref> port service needs a publicly
+          routable IP and exposed port range if you want to provide externally accessible TCP and
+          UDP ports for user applications. See the <xref
+            href="../cluster/1.2harbor.dita#topic4009/requirements-setup">Harbor Requirements &amp;
+            Setup</xref> documentation for details.</note>
+      </p>
 </section>
 <section id="dea-nodes"> <title>DEA Nodes</title>
-<p>Nodes which stage application code and run application containers are called Droplet Execution Agents (DEAs). Once the controller node is running, you can begin to add some of these nodes with the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-attach" >kato node attach</xref> command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the Core node:</p>
-<codeblock>
-  <codeph>kato node attach -e dea CORE_IP
-</codeph>
-</codeblock>
+  <p>Nodes which stage application code and run application containers are called Droplet Execution Agents (DEAs). Once the controller node is running, you can begin to add some of these nodes with the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" >kato node attach</xref> command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the Core node:</p>
+<codeblock>kato node attach -e dea CORE_IP</codeblock>
 <p>Continue this process until you have added all the desired DEA nodes.</p>
 </section>
 <section id="verification"> <title>Verification</title>
 <p>To verify that all the cluster nodes are configured as expected, run the
 following command on the Core node:</p>
-<codeblock>
-  <codeph>kato status --all
-</codeph>
-</codeblock>
+<codeblock>kato status --all</codeblock>
 </section>
 <section id="removing-nodes"> <title>Removing Nodes</title>
-<p>Use the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-detach" >kato node remove</xref> to
-remove a node from the cluster. Run the following command on the core
-node.</p>
-<codeblock>
-  <codeph>kato node remove NODE_IP
-</codeph>
-</codeblock>
+  <p>Use the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-detach">kato
+          node detach</xref> to remove a node from the cluster. Run the following command on the
+        core node.</p>
+<codeblock>kato node remove NODE_IP</codeblock>
 </section>
 <section id="role-configuration-using-the-management-console"> <title>Role Configuration using the Management Console</title>
 <p>Once cluster nodes are connected to the Core node, roles can be enabled
-or disabled using the <xref href="../../../../../devplatform/1.2/helion/admin/1.2index.dita#cluster-configuration" >manual cluster configuration</xref> options in the Management
+  or disabled using the <xref href="../1.2index.dita#topic2276/cluster-configuration" >manual cluster configuration</xref> options in the Management
 Console.</p>
 </section>
 <section id="example-clusters"> <title>Example Clusters</title>
@@ -326,11 +295,8 @@ much like a micro cloud, but can be used as the starting point for
 building a cluster later.</p>
 <p>All that is required here is to enable all roles except for <b>mdns</b>
 (not used in a clustered or cloud-hosted environment):</p>
-<codeblock>
-  <codeph>kato node setup core api.hostname.example.com
-kato role add --all-but mdns
-</codeph>
-</codeblock>
+<codeblock>kato node setup core api.hostname.example.com
+kato role add --all-but mdns</codeblock>
 </section>
 <section id="three-node"> <title>Three-Node</title>
 <p>This is the smallest viable cluster deployment, but it lacks the fault
@@ -406,40 +372,40 @@ and easy snapshotting. Nodes with the following roles should have their
 <p>Though Memcache and Redis are in-memory data stores, system service info
 data is stored on disk, so backing them with a persistent filesystem is
 recommended.</p>
-<p>In clusters with multiple Cloud Controllers, the nodes <b>must</b> share a common <i>/home/helion/helion/data</i> mount point as described <xref type="section" href="#topic18326/cluster-multi-controllers">below</xref> in order to work together properly.</p>
-<p>See the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#bestpractices-persistent-storage" >Persistent Storage</xref> documentation for instructions on relocating service data, application
+  <p>In clusters with multiple Cloud Controllers, the nodes <b>must</b> share a common <i>/home/helion/helion/data</i> mount point as described <xref type="section" href="#topic18326/multiple-controllers">below</xref> in order to work together properly.</p>
+  <p>See the <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-persistent-storage" >Persistent Storage</xref> documentation for instructions on relocating service data, application
 droplets, and containers.</p>
 </section>
 <section id="port-configuration"> <title>Port Configuration</title>
-<p>The Application Lifecycle Service <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-micro-cloud" >micro cloud</xref> runs with the following ports exposed:</p>
+  <p>The Application Lifecycle Service <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud" >micro cloud</xref> runs with the following ports exposed:</p>
 <table>
 <tgroup cols="3">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<tbody>
-<row>
-    <entry>Port</entry>
-    <entry>Type</entry>
-    <entry>Service</entry>
-  </row>
-<row>
-    <entry>22</entry>
-    <entry>tcp</entry>
-    <entry>ssh</entry>
-  </row>
-<row>
-    <entry>25</entry>
-    <entry>tcp</entry>
-    <entry>smtp</entry>
-  </row>
-<row>
-    <entry>80</entry>
-    <entry>tcp</entry>
-    <entry>http</entry>
-  </row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colwidth="99.75pt"/>
+          <colspec colname="col2" colwidth="93pt"/>
+          <colspec colname="col3" colwidth="83.25pt"/>
+          <tbody>
+            <row>
+              <entry>Port</entry>
+              <entry>Type</entry>
+              <entry>Service</entry>
+            </row>
+            <row>
+              <entry>22</entry>
+              <entry>tcp</entry>
+              <entry>ssh</entry>
+            </row>
+            <row>
+              <entry>25</entry>
+              <entry>tcp</entry>
+              <entry>smtp</entry>
+            </row>
+            <row>
+              <entry>80</entry>
+              <entry>tcp</entry>
+              <entry>http</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 <p>On a production cluster, or a micro-cloud running on a cloud hosting
 provider, only ports 22 (SSH), 80 (HTTPS) and 443 (HTTPS) need to be
@@ -455,58 +421,58 @@ communication, <b>Destination</b> nodes need to listen on the specified
 port.</p>
 <table>
 <tgroup cols="5">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<colspec colname="col5"/>
-<tbody>
-<row>
-    <entry>Port Range</entry>
-    <entry>Type</entry>
-    <entry>Source</entry>
-    <entry>Destination</entry>
-    <entry>Required By</entry>
-  </row>
-<row>
-    <entry>22</entry>
-    <entry>tcp</entry>
-    <entry>all nodes</entry>
-    <entry>all nodes</entry>
-    <entry>ssh/scp/sshfs</entry>
-  </row>
-<row>
-    <entry>4222</entry>
-    <entry>tcp</entry>
-    <entry>all nodes</entry>
-    <entry>controller</entry>
-    <entry>NATS</entry>
-  </row>
-<row>
-    <entry>3306</entry>
-    <entry>tcp</entry>
-    <entry>dea/controller</entry>
-    <entry>MySQL nodes</entry>
-    <entry>MySQL</entry>
-  </row>
-<row>
-    <entry>5432</entry>
-    <entry>tcp</entry>
-    <entry>dea/controller</entry>
-    <entry>postgresql nodes</entry>
-    <entry>postgreSQL</entry>
-  </row>
-<row>
-    <entry>5454</entry>
-    <entry>tcp</entry>
-    <entry>all nodes</entry>
-    <entry>controller</entry>
-    <entry>redis</entry>
-  </row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colwidth="91.5pt"/>
+          <colspec colname="col2" colwidth="101.25pt"/>
+          <colspec colname="col3" colwidth="111.75pt"/>
+          <colspec colname="col4" colwidth="110.25pt"/>
+          <colspec colname="col5" colwidth="96pt"/>
+          <tbody>
+            <row>
+              <entry>Port Range</entry>
+              <entry>Type</entry>
+              <entry>Source</entry>
+              <entry>Destination</entry>
+              <entry>Required By</entry>
+            </row>
+            <row>
+              <entry>22</entry>
+              <entry>tcp</entry>
+              <entry>all nodes</entry>
+              <entry>all nodes</entry>
+              <entry>ssh/scp/sshfs</entry>
+            </row>
+            <row>
+              <entry>4222</entry>
+              <entry>tcp</entry>
+              <entry>all nodes</entry>
+              <entry>controller</entry>
+              <entry>NATS</entry>
+            </row>
+            <row>
+              <entry>3306</entry>
+              <entry>tcp</entry>
+              <entry>dea/controller</entry>
+              <entry>MySQL nodes</entry>
+              <entry>MySQL</entry>
+            </row>
+            <row>
+              <entry>5432</entry>
+              <entry>tcp</entry>
+              <entry>dea/controller</entry>
+              <entry>postgresql nodes</entry>
+              <entry>postgreSQL</entry>
+            </row>
+            <row>
+              <entry>5454</entry>
+              <entry>tcp</entry>
+              <entry>all nodes</entry>
+              <entry>controller</entry>
+              <entry>redis</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
-<p>More information about <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-NATS" >NATS</xref> is available in the Glossary.</p>
+  <p>More information about <xref href="../../user/reference/1.2glossary.dita#topic6187/term-NATS" >NATS</xref> is available in the Glossary.</p>
 <p>Each node can be internally firewalled using
 <xref href="http://manpages.ubuntu.com/manpages/utopic/en/man8/iptables.8.html" scope="external" format="html" >iptables</xref> to
 apply the above rules.</p>
@@ -515,7 +481,7 @@ apply the above rules.</p>
 <ul>
 <li>Ports 80 and 443 need only be open to the world on router nodes.</li>
 <li>Port 4222 should be open on all nodes for
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-NATS" >NATS</xref> communication
+  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-NATS" >NATS</xref> communication
 with the MBUS IP (core Cloud Controller)</li>
 <li>Port 9022 should be open to allow transfer of droplets to and from
 the DEAs, and Cloud Controllers.</li>
@@ -536,76 +502,41 @@ nodes (via SSHFS).</li>
 (default 41000 - 61000) which can be exposed externally if required.</li>
 </ul>
 <p>
-<b>Note</b>: Harbor (Port Service) Node Configuration</p>
-<p>The optional <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2harbor.dita#harbor" >Harbor</xref> TCP/UDP port service must be
+        <note>Harbor (Port Service) Node Configuration</note>
+      </p>
+  <p>The optional <xref href="../cluster/1.2harbor.dita" >Harbor</xref> TCP/UDP port service must be
 set up on a node with a public network interface if you wish to enable
 port forwarding for user applications. The security group or firewall
 settings for this node should make the configured port range accessible
-publicly. See <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2harbor.dita#harbor-setup" >Harbor Setup</xref> for full
+publicly. See <xref href="1.2harbor.dita#topic4009/requirements-setup" >Harbor Setup</xref> for full
 configuration instructions.</p>
 </section>
 <section id="multiple-controllers"> <title>Multiple Controllers</title>
 <p>An Application Lifecycle Service cluster can have multiple controller nodes running on separate VMs to improve performance. To do this, all controller nodes must share the following two important data directories on a high-availability filesystem server:</p>
-<codeblock>
-  <codeph>/home/stackato/stackato/data
-/var/stackato/data/cloud_controller_ng/tmp/staged_droplet_uploads  
-</codeph>
-</codeblock>
+<codeblock>/home/stackato/stackato/data
+/var/stackato/data/cloud_controller_ng/tmp/staged_droplet_uploads  </codeblock>
 <p>
-<b>Note</b>: Although the <i>router</i> role must be enabled on the Core node, it is not required for additional Controller nodes. The type of filesystem, storage server, and network mount method are left to the discretion of the Application Lifecycle Service administrator.</p>
+        <note> Although the <i>router</i> role must be enabled on the Core node, it is not required
+          for additional Controller nodes. The type of filesystem, storage server, and network mount
+          method are left to the discretion of the Application Lifecycle Service
+          administrator.</note>
+      </p>
 <ol>
 <li>Create a shared filesystem on a Network Attached Storage device.</li>
-<li>
-<p>Stop the controller process on the Core node before proceeding
-further:</p>
-
-<codeblock>
-<codeph>kato stop controller
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>On the Core node <i>and on each additional controller node</i>:</p>
-
-<p>A.   Create a mount point:</p>
-
-<codeblock>
-<codeph>    sudo mkdir /mnt/controller
-</codeph>
-</codeblock>
-
-<p>B.   Mount the shared filesystem on the mount point.</p>
-
-<p>C.   Set aside the original <codeph>/home/helion/helion/data</codeph>:</p>
-
-<codeblock>
-<codeph>    mv /home/helion/helion/data /home/helion/helion/data.old
-</codeph>
-</codeblock>
-
-<p>D.   Create a symlink from <codeph>/home/helion/helion/data</codeph> to the mount point:</p>
-
-<codeblock>
-<codeph>    ln -s /mnt/controller /home/helion/helion/data
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>On the Core node, start the controller process:</p>
-
-<codeblock>
-<codeph>kato start controller
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Run the following command on the additional Controller nodes to  enable <i>only</i> the controller process:</p>
-
-<codeblock>
-<codeph>kato node attach -e controller *CORE_IP*
-</codeph>
-</codeblock>
-</li>
+<li> Stop the controller process on the Core node before proceeding
+          further:<codeblock>kato stop controller</codeblock></li>
+<li> On the Core node and on <b>each additional </b>controller node:<ol id="ol_vj2_ypg_ms">
+            <li>Create a mount point:<codeblock>sudo mkdir /mnt/controller</codeblock></li>
+            <li> Mount the shared filesystem on the mount point.</li>
+            <li> Set aside the original
+              <codeph>/home/helion/helion/data</codeph>:<codeblock>mv /home/helion/helion/data /home/helion/helion/data.old</codeblock></li>
+            <li>Create a symlink from <codeph>/home/helion/helion/data</codeph> to the mount
+              point:<codeblock>ln -s /mnt/controller /home/helion/helion/data</codeblock></li>
+          </ol></li>
+<li> On the Core node, start the controller
+          process:<codeblock>kato start controller</codeblock></li>
+<li> Run the following command on the additional Controller nodes to enable <i>only</i> the
+          controller process:<codeblock>kato node attach -e controller *CORE_IP*</codeblock></li>
 </ol>
 </section>
 <section id="load-balancer-and-multiple-routers"> <title>Load Balancer and Multiple Routers</title>
@@ -614,7 +545,7 @@ balancer must be configured to distribute connections between the
 Routers. Though most users will prefer to use a hardware load balancer
 or elastic load balancing service provided by the cloud hosting
 provider, an Application Lifecycle Service VM can be configured to take on this role.</p>
-<p>The <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-setup-load_balancer" >kato node setup load_balancer</xref>
+  <p>The <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-setup-load_balancer" >kato node setup load_balancer</xref>
 command retrieves IP addresses of every router in the cluster and
 configures an nginx process to distribute load (via round-robin) among a
 pool of Routers and handle SSL termination.</p>
@@ -624,25 +555,16 @@ multiple Routers:</p>
 <section id="rename-the-load-balancer"> <title>Rename the Load Balancer</title>
 <p>The Load Balancer is the primary point of entry to the cluster. It must
 have a public-facing IP address and take on the primary hostname for the
-system as <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#server-config-dns" >configured in DNS</xref>. Run the following on Load Balancer node:</p>
-<codeblock>
-  <codeph>kato node rename *hostname.example.com*
-</codeph>
-</codeblock>
+system as <xref href="../server/1.2configuration.dita#topic31232/server-config-dns" >configured in DNS</xref>. Run the following on Load Balancer node:</p>
+<codeblock>kato node rename *hostname.example.com*</codeblock>
 </section>
 <section id="set-up-the-core-node"> <title>Set up the Core Node</title>
 <p>The Core node will need to temporarily take on the API endpoint hostname
 of the Application Lifecycle Service system (i.e. the same name as the Load Balancer above).
 Run the following on the Core node:</p>
-<codeblock>
-  <codeph>kato node rename *hostname.example.com*
-</codeph>
-</codeblock>
+<codeblock>kato node rename *hostname.example.com*</codeblock>
 <p>If it is not already configured as the Core node, do so now:</p>
-<codeblock>
-  <codeph>kato node setup core api.\ *hostname.example.com*
-</codeph>
-</codeblock>
+<codeblock>kato node setup core api.\ *hostname.example.com*</codeblock>
 <p>The <codeph>kato node rename</codeph> command above is being used
 to set internal Application Lifecycle Service parameters, but all hosts on a network should
 ultimately have unique hostnames. After setup, rename the Core node
@@ -651,45 +573,32 @@ ultimately have unique hostnames. After setup, rename the Core node
 </section>
 <section id="set-up-supplemental-routers"> <title>Set up Supplemental Routers</title>
 <p>As with the Core node, you will need to run <codeph>kato node rename</codeph>on each router with the same API endpoint hostname. Run the following on each Router:</p>
-<codeblock>
-  <codeph>kato node rename *hostname.example.com*
-</codeph>
-</codeblock>
+<codeblock>kato node rename *hostname.example.com*</codeblock>
 <p>Then enable the 'router' role and attach the node to the cluster:</p>
-<codeblock>
-  <codeph>kato node attach -e router &lt;MBUS_IP&gt;
-</codeph>
-</codeblock>
+<codeblock>kato node attach -e router &lt;MBUS_IP&gt;</codeblock>
 <p>As above, rename each host manually after configuration to give them
 unique hostnames. The MBUS_IP is the network interface of the Core node
 (usually eth0).</p>
 </section>
 <section id="configure-the-helion-load-balancer"> <title>Configure the Application Lifecycle Service Load Balancer</title>
 <p>
-<b>Note</b>: An Application Lifecycle Service node configured as a Load Balancer cannot have any other roles enabled.</p>
+        <note> An Application Lifecycle Service node configured as a Load Balancer cannot have any
+          other roles enabled.</note>
+      </p>
 <p>Attach the Application Lifecycle Service VM to the Core node:</p>
-<codeblock>
-  <codeph>kato node attach &lt;MBUS_IP&gt;
-</codeph>
-</codeblock>
+<codeblock>kato node attach &lt;MBUS_IP&gt;</codeblock>
 <p>To set up the node as a Load Balancer automatically:</p>
-<codeblock>
-  <codeph>kato node setup load_balancer --force
-</codeph>
-</codeblock>
+<codeblock>kato node setup load_balancer --force</codeblock>
 <p>This command fetches the IP addresses of all configured routers in the
 cluster.</p>
 <p>To set up the Load Balancer manually, specify the IP addresses of the
 Router nodes. For example:</p>
-<codeblock>
-  <codeph>kato node setup load_balancer 10.5.31.140 10.5.31.145
-</codeph>
-</codeblock>
+<codeblock>kato node setup load_balancer 10.5.31.140 10.5.31.145</codeblock>
 </section>
 <section id="load-balancer-ssl-certificates"> <title>Load Balancer SSL Certificates</title>
 <p>The load balancer terminates SSL connections, so SSL certificates must
 be set up and maintained on this node.</p>
-<p>See the <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#using-your-own-ssl-certificate" >Using your own SSL certificate</xref> and <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#ca-certificate-chaining" >CA Certificate Chaining</xref> sections for Application Lifecycle Service Load Balancer instructions.</p>
+  <p>See the <xref href="../server/1.2configuration.dita#topic31232/using-your-own-ssl-certificate" >Using your own SSL certificate</xref> and <xref href="../server/1.2configuration.dita#topic31232/ca-certificate-chaining" >CA Certificate Chaining</xref> sections for Application Lifecycle Service Load Balancer instructions.</p>
 <p>For other load balancers, consult the documentation for your device or service on uploading/updating server certificates.</p>
 </section>
 </body>
