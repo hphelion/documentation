@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the KVM
+    Cloud</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Michael B,"/>
+<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.md-->
+ <!--permalink: /helion/openstack/carrier/install/pb/hlm-cloud/--></p>
+<p>At this point, the HLM VM is up and running.</p>
+<p>Use the following steps to deploy a cloud in the KVM region.</p>
+<p>Use the following steps:</p>
+<ol>
+      <li>Login to HLM VM.</li>
+<li>Deploy and configure the cloud services using the following command: <codeblock>cd
+hnewcloud HCGCloud &lt;cloudname&gt; </codeblock>
+        <p>You can run this command from anywhere. This process might approximatley three hours to
+          install all seven nodes in a baremetal setup.</p></li>
+  <li> Change to the cloud directory, based on the name you entered above.
+    <codeblock>cd &lt;cloudname&gt; </codeblock>
+    Where &lt;cloudname&gt; is the name you assigned to the cloud.</li>
+    <li>Provision Baremetal Controller nodes by providing necessary fields in node-provision.json
+        using the following command: <codeblock>hprovision &lt;cloudname&gt;</codeblock> Where
+        &lt;cloudname&gt; is the name you assigned to the cloud. 
+      <p>Please take a note of interface when shows up for the interfaces. You might need this information later in the installation. </p></li>
+  <li>After the baremetal nodes are provisioned, ensure <codeph>nodes.json</codeph> file is generated and password-less ssh connection can be established to these nodes from HLM VM</li>
+</ol>
+  <section><title>Edit JSON Files</title>
+  <p>The following json files need to be updated as required for your networking infrastructure.   
+    <ul><li>environment.json</li>
+      <li>lnet-control-data.json (optional: only if your BLS is on separate interface)</li>
+      <li>definition.json</li></ul></p>
+  </section>
+    <section><title>Roll in Cinder backend changes</title>
+      <ol><li>Change to the <parmname>cinder/blocks</parmname> directory for your cloud:
+        <codeblock>cd ~/&lt;cloudname&gt;/services/cinder/blocks</codeblock>
+        Where &lt;cloudname&gt; is the name you assigned to the cloud.</li>
+        <li>copy cinder_conf_default.hp3parSample to cinder_conf_default and edit the same to map to
+          3PAR settings. For example:
+          <codeblock>--LR4 3PAR details (connectivity is still being worked upon ETA 06/22/2015. 
+hp3par_api_url=https://10.1.2.18:8080/api/v1
+hp3par_username=cghelion
+hp3par_password=cghelion#
+hp3par_cpg=bronze
+san_ip=172.16.0.11
+san_login=cghelion
+san_password=cghelion#
+hp3par_iscsi_ips=172.16.0.11,172.16.0.12,172.16.0.13,172.16.0.14
+volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
+hp3par_debug=False
+hp3par_iscsi_chap_enabled=false
+hp3par_snapshot_retention=48
+hp3par_snapshot_expiration=72
+          
+          
+-- LR1 3PAR details (ip address not in same block causing deployment issues)
+hp3par_api_url=https://10.1.64.55:8080/api/v1 
+hp3par_username=cgadmin 
+hp3par_password=cgh123cgh 
+hp3par_cpg=CGH_CPG 
+san_ip=172.16.64.201
+san_login=cgadmin 
+san_password=cgh123cgh 
+volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver 
+hp3par_iscsi_ips=172.16.64.201,172.16.64.202,172.16.64.203,172.16.64.204
+hp3par_debug=False 
+hp3par_iscsi_chap_enabled=false
+hp3par_snapshot_retention=48
+hp3par_snapshot_expiration=72</codeblock></li>
+     
+<li>Execute configuration processor
+  <codeblock>cfgproc -d definition.json</codeblock></li>
+        <li>OPTIONAL (not needed in LR4) Edit the interface definition (*.cfg) file for the <parmname>issci</parmname> network for each node. 
+          Open the intf file at <codeph>~/&lt;cloudname&gt;/clouds/WRCloud/001/stage/net/intf</codeph>. Initialize network interfaces. Where &lt;cloudname&gt; is the name you assigned to the cloud.
+  <codeblock>hnetinit WRCloud</codeblock>
+OPTIONAL (not needed in LR1) Hand edit interface definition (*.cfg) file for PXE network to ensure it matches to the one discovered in #3</li> 
+<li>Deploy cloud
+  <codeblock>hdeploy WRCloud</codeblock></li>    
+              </ol>
+      <p>Once cloud deployment is successfully complete, 3 controller nodes in standard region are available with shared services - Keystone, Glance, Cinder and Swift.</p>
+    </section>
+  <section><title>Bring Up Controller-0 in the WR Region</title> 
+    <ol><li>Make sure other nodes to be used in WR region are shutdown.</li>
+      <li>Attach the wr-iso to designated controller node:<ol id="ol_i3q_hmg_ms">
+            <li> LR1: uploaded to
+              <codeblock>15.204.209.7 C:\WR-Drops\2015-06-05-Drop3\2015-06-05-Drop3\Titanium-Server-host-installer-15.05-b10.iso</codeblock></li>
+        <li>LR4: uploaded to
+              <codeblock>15.215.66.56 E:\Builds\WR-Drop-3\2015-06-05-Drop3\Titanium-Server-host-installer-15.05-b10.iso</codeblock></li>
+          </ol></li>
+    
+      <li>Follow through install wizard (ensure you select Graphics mode for controller ONLY, instead of Controller+Compute).</li>
+      <li>On reboot, login as wrsroot wrsroot; change the password.</li>
+      <li>Temporarily assign an IP address on PXE nic - eth0 (use one you have reserved for WR-PXE
+          IP) <codeblock>ip addr add 192.168.101.254/24 dev eth0
+ifconfig eth0 up</codeblock></li>
+      <li>SCP following files to <codeph>/home/wrsroot/</codeph> of the controller-0:
+        <codeblock>DROP_3_PATCH.1.patch  # LR4: E:\Builds\WR-Drop-3\2015-06-05-Drop3\patches\design
+DROP_3_PATCH.4.patch  # LR4: E:\Builds\WR-Drop-3\2015-06-05-Drop3\patches\design
+DROP_3_PATCH.3.patch  # LR4: E:\Builds\WR-Drop-3\2015-06-05-Drop3\patches\design
+DROP_3_PATCH.5.patch  # LR4: E:\Builds\WR-Drop-3\2015-06-05-Drop3\patches\design
+region_config # HLM VM ~/&lt;cloudname&gt;/clouds/build40/001/stage/windriver-config
+cakey.pem    # HLM VM ~/&lt;cloudname&gt;/clouds/build40/001/stage/windriver-config
+hp_license.lic # LR4: E:\Builds\WR-Drop-3
+helion_branding-v1.1.tgz # LR4: E:\Builds\WR-Drop-3</codeblock>
+        Where &lt;cloudname&gt; is the name you assigned to the cloud.</li>
+     
+      <li>Move the <codeph>helion_branding-v1.1.tgz</codeph> to <codeph>/opt/branding</codeph> on the controller-0 </li>
+   
+      <li>Apply patches (patch location: <codeph>C:\WR-Drops\2015-06-05-Drop3\2015-06-05-Drop3)</codeph>: For example - 
+      <codeph>
+      sudo wrs-patch upload /home/wrsroot/DROP_3_PATCH.1.patch
+      sudo wrs-patch upload /home/wrsroot/DROP_3_PATCH.3.patch
+      sudo wrs-patch upload /home/wrsroot/DROP_3_PATCH.4.patch
+      sudo wrs-patch upload /home/wrsroot/DROP_3_PATCH.5.patch
+      sudo wrs-patch apply DROP_3_PATCH.1
+      sudo wrs-patch apply DROP_3_PATCH.3
+      sudo wrs-patch apply DROP_3_PATCH.4
+      sudo wrs-patch apply DROP_3_PATCH.5
+      sudo wrs-patch install-local
+      sudo reboot
+      </codeph></li>
+   
+   <li>Installer the WR Region
+     <codeblock>sudo config_region</codeblock>
+     Ignore the message which displays during Config_region process.
+      <codeblock>Step 9 of 29 [####  ]dm-6 WRITE SAME failed. Manually seroing.</codeblock></li>
+
+      <li>After <codeph>controller-0</codeph> is deployed, deploy the remaining nodes as <codeph>controller-1</codeph> and
+        <codeph>compute-'n'</codeph>. For example: Make sure you give hostname unique across various clouds and
+          builds to ensure it doesn't conflict with your previous cloud install or other's cloud
+          install as 3par is keeping records and might not work.
+          <codeblock>system host-add --hostname controller-1 --personality controller --mgmt_mac 6C:3B:E5:A3:BB:90 --bm_mac 38:63:bb:2d:78:b0 --bm_ip 10.1.68.162 --bm_type ilo4 --bm_username helioncsel --bm_password admblabla
+system host-add --hostname &lt;unique-compute-name> --personality compute --mgmt_mac d0:bf:9c:f1:b0:80 --mgmt_ip 192.168.204.124 --bm_mac 38:63:bb:2d:78:b0 --bm_ip 128.224.150.227 --bm_type ilo4 --bm_username Administrator --bm_password CTE69HAU</codeblock></li>
+        <li>While registering compute nodes, make sure you specify the <codeph>mgmt_ip</codeph>.
+          This IP should from the WR CLM range (refer to the region_config file) and must not
+          overlap controller IPs. It is save to start after a block of 10 IPs.</li> 
+        <li>Set the controller-1 and compute-0 to <codeph>One-time PXE boot from network</codeph>.</li>
+
+      <li>PXE boot all the registered nodes.</li> 
+      
+      <li>Login to Horizon and monitor the status of nodes being PXE booted. After succesful PXE boot, Operational State as Disabled and Availability State as Online in the Admin &gt; Inventory page</li>
+      
+      <li>For each compute node in the ineventory, do the following<ol id="ul_gss_srg_ms">
+            <li>Create Infra interface. See <xref
+                href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"
+              /></li>
+            <li>Create a Provider Network. See <xref
+                href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita#topic3878"
+              />.</li>
+            <li>Create VLAN Ranges on the provider network using the <b>Create Segmentation
+                Range</b> option. See <xref
+                href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita#topic2171"
+              />.</li>
+            <li>Create data interface. Due to latest networking changes, ensure you create data
+              interface either of the following AE mode is tied to each interface:
+              <codeblock>eth2 and eth3 - Active/Standby
+eth4 and eth5 - Balanced XOR / Layer 2</codeblock></li></ol></li>
+    
+      
+      <li>Unlock the compute nodes.
+        Compute nodes will reboot. Keep polling the status on the inventory page to show <b>Available</b> and <b>Online</b>.</li> 
+        
+      <li>Access the Horizon dashboard using the CAN network IP (HTTPS). By default, Horizon is
+          restricted to access the CAN network using the CLM network as the default gateway You can
+          workaround this, use SSH to access each controller node and update the filters:
+          <codeblock>echo 0 > /proc/sys/net/ipv4/conf/default/rp_filter
+echo 0 > /proc/sys/net/ipv4/conf/all/rp_filter
+echo 0 > /proc/sys/net/ipv4/conf/eth0.&lt;CAN_VLAN_ID&gt;/rp_filter
+echo 0 > /proc/sys/net/ipv4/conf/eth0.&lt;CLM_VLAN_ID&gt;/rp_filter
+echo 1 > /proc/sys/net/ipv4/ip_forward </codeblock></li>
+    </ol>
+  </section>
+  <section>
+<p>
+  <xref type="section" href="#topic1107"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

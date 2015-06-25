@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6151">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Working with Host Interfaces</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Working with Host Interfaces</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -41,8 +41,8 @@
 <xref type="section" href="#topic6151/creating">Creating an Interface Profile</xref>
 </li>
 <li>
-<xref type="section" href="#topic6151/create">Creating a new interface details</xref>
-</li>
+        <xref type="section" href="#topic6151/create">Creating a new interface</xref>
+      </li>
 <li>
 <xref type="section" href="#topic6151/editing">Editing Interface Details</xref>
 </li>
@@ -138,7 +138,7 @@
 </li>
 </ol>
 </section>
-<section id="create"> <title>Creating a new interface details</title>
+<section id="create"> <title>Creating a new interface </title>
 <p>You can create new logical interfaces.</p>
 <p>To create a host interface:</p>
 <ol>

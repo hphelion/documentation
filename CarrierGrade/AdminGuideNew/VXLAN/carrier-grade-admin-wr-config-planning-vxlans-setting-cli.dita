@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3210">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Setting Up a VXLAN Provider Network Using the CLI</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Setting Up a VXLAN Provider Network Using the CLI</title>
 <titlealts>
-<searchtitle>HP Helion Openstack Carrier Grade (Beta): Setting Up a VXLAN Provider Network using the CLI</searchtitle>
+<searchtitle>HP Helion Openstack Carrier Grade 1.1: Setting Up a VXLAN Provider Network using the CLI</searchtitle>
 </titlealts>
 <prolog>
 <metadata>

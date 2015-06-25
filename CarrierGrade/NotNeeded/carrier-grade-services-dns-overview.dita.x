@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic492">
 <title>For more information</title>
 <titlealts>
-<searchtitle>HP Helion Openstack Carrier Grade (Beta): DNS as a Service (DNSaaS) Overview</searchtitle>
+<searchtitle>HP Helion Openstack Carrier Grade 1.1: DNS as a Service (DNSaaS) Overview</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
@@ -29,7 +29,7 @@
  <!--./CarrierGrade/ServicesOverviews/carrier-grade-services-dns-overview.md-->
  <!--permalink: /helion/openstack/carrier/services/dns/overview/--></p>
 <!--
-# HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): DNS as a Service (DNSaaS) Overview#
+# HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: DNS as a Service (DNSaaS) Overview#
 
 Based on the <tm tmtype="reg">OpenStack</tm> Designate project, the HP Helion <tm tmtype="reg">OpenStack</tm> DNS-as-a-service feature (DNSaaS) provides a Domain Name System (DNS) service for use by HP Helion <tm tmtype="reg">OpenStack</tm> users.
 

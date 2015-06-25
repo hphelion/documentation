@@ -14,7 +14,7 @@
  <!--permalink: /cloudos/community/services/compute/howto/--></p>
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
 <p>Leveraging <tm tmtype="reg">OpenStack</tm> Compute, the HP Helion <tm tmtype="reg">OpenStack</tm> Community Compute provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.</p>
-<p>The following lists of tasks can be performed by a user or administrator through the <xref href="../cloudos/manage.operational-dashboard.how-opdash-works.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Community Dashboard</xref>, the <tm tmtype="reg">OpenStack</tm> CLI or <tm tmtype="reg">OpenStack</tm> API.</p>
+  <p>The following lists of tasks can be performed by a user or administrator through the <xref href="community.dashboard.how-works.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Community Dashboard</xref>, the <tm tmtype="reg">OpenStack</tm> CLI or <tm tmtype="reg">OpenStack</tm> API.</p>
 <p>For details on performing these tasks using the API or CLI, see the following <tm tmtype="reg">OpenStack</tm> documentation:</p>
 <ul>
 <li>

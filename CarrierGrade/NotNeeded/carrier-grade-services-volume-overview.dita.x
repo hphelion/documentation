@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2530">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Block Storage Volume Operations (Cinder) Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Block Storage Volume Operations (Cinder) Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
