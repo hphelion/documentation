@@ -112,7 +112,7 @@ nova show &lt;instance id&gt;
 </ol>
 <p>A sample of the output is:</p>
 <codeblock>
-  <codeph>HP Helion Openstack 1.1 Build 81
+<codeph>HP Helion Openstack 1.1 Build 81
 </codeph>
 </codeblock>
 </section>
@@ -121,7 +121,7 @@ nova show &lt;instance id&gt;
 <p>
 <b>Note</b>: You must have the <codeph>jq</codeph> package for your version of Ubuntu installed on the seed host. If you need to install this package, enter:</p>
 <codeblock>
-  <codeph>apt-get install jq
+<codeph>apt-get install jq
 </codeph>
 </codeblock>
 <!--
@@ -301,7 +301,7 @@ If you are updating to a release that includes new Orchestration (Heat) template
 <p>The update process does not automatically overwrite your Heat template, which would cause you to lose your modifications. If you have modified your Heat template, then you will need to update the new templates with these modifications.</p>
 <p>To apply updated Heat templates, as root, run:</p>
 <codeblock>
-  <codeph>./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-undercloud 
+<codeph>./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-undercloud 
 </codeph>
 </codeblock>
 <p>To update your HP <tm tmtype="reg">Helion OpenStack</tm> undercloud from v1.1 to v1.1.1, from the
@@ -466,9 +466,9 @@ ssh heat-admin@$ip "sudo service stunnel4 restart; sudo service stunnel4 statusâ
 ssh heat-admin@$ip "sudo netstat -napd | grep 3307 | grep LIST"
 done
 </codeblock>
-          <p><b>Warning</b>: Do not proceed with the following steps unless <codeph>netstat</codeph>
-            command shows MySQL listening on port 3307.  To verify that MySQL is now listening on
-            port 3307 enter:</p>
+          <p><b>Warning</b>: Do not proceed with the following steps unless the
+              <codeph>netstat</codeph> command shows MySQL listening on port 3307. To verify that
+            MySQL is now listening on port 3307 enter:</p>
           <codeblock>
 <codeph>netstat -napd | grep 3307 | grep LIST
 tcp        0      0 127.0.0.1:3307          0.0.0.0:*               LISTEN      32049/mysqld    
@@ -570,7 +570,8 @@ cd helion-update-1.1-to-1.1.1/tripleo/helion-update/overcloud_update
         <li>
           <p>Confirm that update was successful by examining the
               <codeph>/var/log/ansible/ansible.log</codeph>. This report should not list any
-            unreachable nodes:</p>
+            unreachable or failed nodes. That is <codeph>unreachable=0</codeph> and
+              <codeph>failed=0</codeph> as shown in the example output below:</p>
           <codeblock>
 <codeph>PLAY RECAP ********************************************************************
 10.23.67.141   : ok=122  changed=74   unreachable=0failed=0
@@ -865,14 +866,14 @@ Use <codeph>ovs-vsctl show</codeph> to check that all bridges and ports still ex
 <section id="backup-fails"> <title>Backup fails</title>
 <p>If you see the error message:</p>
 <codeblock>
-  <codeph>+ echo 'ERROR: Backup of seed failed!!!!'
+<codeph>+ echo 'ERROR: Backup of seed failed!!!!'
 ERROR: Backup of seed failed!!!!
 + exit 1
 </codeph>
 </codeblock>
 <p>Your backup attempt has failed. To recover from this state, you need to get <codeph>rabbitmq</codeph>, <codeph>mysql</codeph> and <codeph>OpenStack</codeph> services running again by running the seed recovery script. to do this, enter:</p>
 <codeblock>
-  <codeph>ssh root@&lt;seed-ip&gt;
+<codeph>ssh root@&lt;seed-ip&gt;
 cd helion-update-1.1-to-1.1.1/tripleo/helion-update/seed_update
 ./seed_recover.sh
 </codeph>
@@ -881,7 +882,7 @@ cd helion-update-1.1-to-1.1.1/tripleo/helion-update/seed_update
 <section id="backup-failed-due-to-seed-host-running-out-of-disk-space"> <title>Backup failed due to seed host running out of disk space</title>
 <p>If your backup fails because the disk lacks sufficient space you will note that the backup sequence froze or failed. You will also see that the disk space utilization check of the seed host returns 100%. You can check disk utilization by entering:</p>
 <codeblock>
-  <codeph>df -h /
+<codeph>df -h /
 </codeph>
 </codeblock>
 <p>To fix this problem:</p>
@@ -930,12 +931,12 @@ service rabbitmq-server stop
 <section id="seed-host-update-fails-noting-unable-to-ping-192021"> <title>Seed host update fails noting unable to ping 192.0.2.1</title>
 <p>If your seed host update fails, your deployment will NOT utilize the 192.0.2.0/24 demo IP network range. You will see in your log:</p>
 <codeblock>
-  <codeph>"Waiting for seed host to configure"
+<codeph>"Waiting for seed host to configure"
 </codeph>
 </codeblock>
 <p>Pings to host 192.0.2.1 will time out with the following message:</p>
 <codeblock>
-  <codeph>Timing out after 10 seconds:
+<codeph>Timing out after 10 seconds:
 COMMAND=ping -c 1 192.0.2.1
 OUTPUT=PING 192.0.2.1 (192.0.2.1) 56(84) bytes of data.
 </codeph>
@@ -1029,7 +1030,7 @@ This can happen from time to time due to network errors or a temporary overload 
 <p>While rare, there is the possibility that something unexpected happened during a rebuild
 and the host has failed to reboot. When this happens, you will get this error Message:</p>
 <codeblock>
-  <codeph>msg: Timeout waiting for the server to come up.. Please check manually
+<codeph>msg: Timeout waiting for the server to come up.. Please check manually
 </codeph>
 </codeblock>
 <p>To fix this problem, follow the steps detailed in: "A node goes to ERROR state during rebuild".</p>
@@ -1093,7 +1094,7 @@ and the host has failed to reboot. When this happens, you will get this error Me
 <section id="mysql-fails-to-start-after-retrying-the-update"> <title>MySQL fails to start after retrying the update</title>
 <p>If the update was aborted or failed during the Update sequence before a single MySQL controller was operational, MySQL will fail to start upon retrying. In this case, you will see the following error messages:</p>
 <codeblock>
-  <codeph>* `msg: Starting MySQL (Percona XtraDB Cluster) database server: mysqld . . . . The server quit without updating PID file (/var/run/mysqld/mysqld.pid)`
+<codeph>* `msg: Starting MySQL (Percona XtraDB Cluster) database server: mysqld . . . . The server quit without updating PID file (/var/run/mysqld/mysqld.pid)`
 
 * `stderr: ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (111)`
 
@@ -1246,7 +1247,7 @@ although based on its sequence, it should not be the last node.  As a result the
 error is thrown and update is aborted.</p>
 <p>The full message is:</p>
 <codeblock>
-  <codeph>Galera Replication. Node appears to be the last node in a cluster; cannot safely proceed unless overridden via `single_controller`setting. See README.rst
+<codeph>Galera Replication. Node appears to be the last node in a cluster; cannot safely proceed unless overridden via `single_controller`setting. See README.rst
 </codeph>
 </codeblock>
 <p>To fix this problem:</p>
@@ -1266,7 +1267,7 @@ that similar issues in a physical environment may indicate issues in the
 underlying network infrastructure.</p>
 <p>When Ansible loses SSH connectivity causing an update attempt to fail, you will see the following output:</p>
 <codeblock>
-  <codeph>fatal: [192.0.2.25] =&gt; SSH encountered an unknown error. The
+<codeph>fatal: [192.0.2.25] =&gt; SSH encountered an unknown error. The
 output was: OpenSSH_6.6.1, OpenSSL 1.0.1i-dev xx XXX xxxx
 debug1: Reading configuration data /etc/ssh/ssh_config debug1:
 /etc/ssh/ssh_config line 19: Applying options for * debug1:
@@ -1279,7 +1280,7 @@ pipe FATAL: all hosts have already failed  - aborting
 <p>Early Ubuntu Trusty kernel versions have known issues with KVM which severely impact SSH connectivity to instances. To avoid this issue, Test hosts should have a minimum kernel version of 3.13.0-36-generic.</p>
 <p>The update steps, running as root, are:</p>
 <codeblock>
-  <codeph>apt-get update
+<codeph>apt-get update
 apt-get dist-upgrade
 reboot
 </codeph>
@@ -1288,7 +1289,7 @@ reboot
 <p>Similar error messages may occur with long running processes, such as database creation/upgrade steps.  These cases will generally have partial program execution log output immediately before the broken pipe message visible. Should this be the case, Ansible and OpenSSH may need to have their configuration files tuned to meet the needs of the environment.</p>
 <p>Consult the Ansible configuration file to see available connection settings ssh_args, timeout, and possibly pipelining. To see this file, enter:</p>
 <codeblock>
-  <codeph>    https://github.com/ansible/ansible/blob/release1.7.0/examples/ansible.cfg
+<codeph>    https://github.com/ansible/ansible/blob/release1.7.0/examples/ansible.cfg
 </codeph>
 </codeblock>
 <p>As Ansible uses OpenSSH, consult the <codeph>ssh_config</codeph> manual, in paricular the <codeph>ServerAliveInterval</codeph> and <codeph>ServerAliveCountMax</codeph> options.</p>
@@ -1298,7 +1299,7 @@ reboot
 <p>Confirm that this is the case by examining  the <codeph>/var/log/upstart/os-collect-config.log</codeph> for an indication that <codeph>service postfix reload</codeph> failed.</p>
 <p>To fix this issue, start postfix by entering:</p>
 <codeblock>
-  <codeph>    sudo service postfix start
+<codeph>    sudo service postfix start
 </codeph>
 </codeblock>
 </section>
@@ -1306,7 +1307,7 @@ reboot
 <!-- DOCS-1101, DOCS-1257 -->
 <p>The default ephemeral certificate location is <codeph>/root</codeph>. This works for normal Helion installations. If you have specified another location, when you update Helion, you must specify the certificate location as <codeph>/root</codeph>. For example, the correct environment variable location and file name is:</p>
 <codeblock>
-  <codeph>EPHEMERAL_CA_KEY_FILE=/root/eca.key
+<codeph>EPHEMERAL_CA_KEY_FILE=/root/eca.key
 EPHEMERAL_CA_CERT_FILE=/root/eca.crt
 </codeph>
 </codeblock>
@@ -1314,7 +1315,7 @@ EPHEMERAL_CA_CERT_FILE=/root/eca.crt
 <section id="apache2-fails-to-start"> <title>Apache2 fails to start</title>
 <p>Apache2 requires several self-signed SSL certificates to be properly configured but because of earlier failures in the setup process these certificaties may not have been configured correctly. If this is the case, you will see the following error message:</p>
 <codeblock>
-  <codeph>* failed: [192.0.2.25] =&gt; (item=apache2) =&gt; {"failed": true, "item": "apache2"}
+<codeph>* failed: [192.0.2.25] =&gt; (item=apache2) =&gt; {"failed": true, "item": "apache2"}
 * msg: start: Job failed to start
 </codeph>
 </codeblock>
@@ -1325,7 +1326,7 @@ EPHEMERAL_CA_CERT_FILE=/root/eca.crt
 </ul>
 <p>To fix this problem, re-run <codeph>os-collect-config</codeph> to reassert the SSL certificates by entering:</p>
 <codeblock>
-  <codeph>    sudo os-collect-config --force --one
+<codeph>    sudo os-collect-config --force --one
 </codeph>
 </codeblock>
 </section>
@@ -1379,7 +1380,7 @@ EPHEMERAL_CA_CERT_FILE=/root/eca.crt
 <p>In the rare event that an error occurred between the state drive being unmounted and the rebuild command being triggered, the <codeph>/mnt</codeph> volume on the instance upon which the rebuild command was executed will be in an unmounted state.</p>
 <p>In this state, you will not be able to start MySQL and RabbitMQ. You will likely see these (pre-flight check) error messages:</p>
 <codeblock>
-  <codeph>failed: [192.0.2.24] =&gt; {"changed": true, "cmd":
+<codeph>failed: [192.0.2.24] =&gt; {"changed": true, "cmd":
 "rabbitmqctl -n rabbit@$(hostname) status" stderr: Error:
 unable to connect to node
 'rabbit@overcloud-controller0-vahypr34iy2x': nodedown
@@ -1387,12 +1388,12 @@ unable to connect to node
 </codeblock>
 <p>Attempts to start MySQL or RabbitMQ  manually will fail and you will see:</p>
 <codeblock>
-  <codeph>start: Job failed to start
+<codeph>start: Job failed to start
 </codeph>
 </codeblock>
 <p>Upgrade attempts return with an error indicating:</p>
 <codeblock>
-  <codeph>TASK: [fail msg="Galera Replication, Node appears to be the last node in a cluster;  cannot safely proceed unless overridden via `single_controller` setting. See README.rst"]
+<codeph>TASK: [fail msg="Galera Replication, Node appears to be the last node in a cluster;  cannot safely proceed unless overridden via `single_controller` setting. See README.rst"]
 </codeph>
 </codeblock>
 <p>If you run the <codeph>df</codeph> command, the return does not show a volume mounted as <codeph>/mnt</codeph>.</p>
@@ -1437,7 +1438,7 @@ unable to connect to node
 <section id="vms-do-not-shut-down-properly-during-upgrade"> <title>VMs do not shut down properly during upgrade</title>
 <p>During the upgrade process, VMs on Compute nodes are shut down gracefully. If the VMs do not shut down, this can cause the upgrade to stop. If this is the case, you will see a playbook run which ends with a message similar to:</p>
 <codeblock>
-  <codeph>failed: [10.23.210.31] =&gt; {"failed": true}} msg: The ephemeral
+<codeph>failed: [10.23.210.31] =&gt; {"failed": true}} msg: The ephemeral
 storage of this system failed to be cleaned up properly and
 processes or files are still in use. The previous ansible play
 should have information to help troubleshoot this issue.
@@ -1446,28 +1447,28 @@ should have information to help troubleshoot this issue.
 <p>The output of the playbook run prior to this message contains a process listing and a listing of open files.</p>
 <p>The state drive on the Compute node, <codeph>/mnt</codeph>, is still in use and cannot be unmounted. You can confirm this by entering:</p>
 <codeblock>
-  <codeph>    lsof -n | grep /mnt
+<codeph>lsof -n | grep /mnt
 </codeph>
 </codeblock>
 <p>To see which VMs are running, enter:</p>
 <codeblock>
-  <codeph>    virsh list
+<codeph>virsh list
 </codeph>
 </codeblock>
 <p>If <codeph>virsh list</codeph> fails, you may need to restart <codeph>libvirt-bin</codeph> or <codeph>libvirtd</codeph> depending on which process you are running. To restart, enter:</p>
 <codeblock>
-  <codeph>    service libvirt-bin restart
+<codeph>service libvirt-bin restart
 </codeph>
 </codeblock>
 <p>or</p>
 <codeblock>
-  <codeph>    service libvirtd restart
+<codeph>service libvirtd restart
 </codeph>
 </codeblock>
 <p>To fix this problem, you will have to intervene manually. You will need to determine why the VMs did not shut down properly, and resolve the issue.</p>
 <p>You can forcely shutdown non-responsive VMs by entering:</p>
 <codeblock>
-  <codeph>virsh destroy &lt;id&gt;
+<codeph>virsh destroy &lt;id&gt;
 </codeph>
 </codeblock>
 <p>Note that this can corrupt filesystems on the VM.</p>
@@ -1528,12 +1529,12 @@ should have information to help troubleshoot this issue.
 <p>This problem occurs when you attempt to perform an online upgrade, However the playbook execution failed when you attempted to download the new image from Glance. You get a message that <codeph>glanceclient</codeph> was not found.</p>
 <p>If you are attempting to execute the Ansible playbook on the seed host or undercloud node, source the Ansible virtual environment by entering:</p>
 <codeblock>
-  <codeph>  source /opt/stack/venvs/ansible/bin/activate
+<codeph>source /opt/stack/venvs/ansible/bin/activate
 </codeph>
 </codeblock>
 <p>Once the Ansible virtual environment has been sourced, on the node from which you are attempting to execute Ansible, enter:</p>
 <codeblock>
-  <codeph>  sudo pip install python-glanceclient 
+<codeph>sudo pip install python-glanceclient 
 </codeph>
 </codeblock>
 </section>
@@ -1542,13 +1543,13 @@ should have information to help troubleshoot this issue.
 <p>The problem occurs when you perform an online upgrade. The result of which is that a Compute node cannot be logged into, or is otherwise in a non-working state.</p>
 <p>To fix this issue, from the undercloud enter:</p>
 <codeblock>
-  <codeph>source /root/stackrc
+<codeph>source /root/stackrc
 </codeph>
 </codeblock>
 <p>Identify the instance ID of the broken Compute node using the <codeph>nova list</codeph> command.
 Then stop the instance by entering:</p>
 <codeblock>
-  <codeph>nova stop &lt;instance-id&gt; 
+<codeph>nova stop &lt;instance-id&gt; 
 </codeph>
 </codeblock>
 <p>Return to the host from which you ran the upgrade and re-run the playbook without the <codeph>-e online_upgrade=True</codeph> option.</p>
@@ -1557,17 +1558,17 @@ Then stop the instance by entering:</p>
 <section id="ironic-fails-because-nodes-are-in-maintenance-mode"> <title>Ironic fails because nodes are in maintenance mode</title>
 <p>During an update, nodes must NOT be in maintenance mode; otherwise Ironic returns an error message such as the following:</p>
 <codeblock>
-  <codeph>During sync_power_state, max retries exceeded for node 0677d7e8-2e2b-4b12-b426-4b2950d7a5f2, node state None does not match expected state 'power on'. Updating DB state to 'None' Switching node to maintenance mode.
+<codeph>During sync_power_state, max retries exceeded for node 0677d7e8-2e2b-4b12-b426-4b2950d7a5f2, node state None does not match expected state 'power on'. Updating DB state to 'None' Switching node to maintenance mode.
 </codeph>
 </codeblock>
 <p>If the command <codeph>ironic node-set-maintenance</codeph> fails to properly change nodes from maintenance mode, you must either update the database directly using:</p>
 <codeblock>
-  <codeph>mysql&gt; update nodes set maintenance=0;
+<codeph>mysql&gt; update nodes set maintenance=0;
 </codeph>
 </codeblock>
 <p>or enter:</p>
 <codeblock>
-  <codeph> ironic node-update &lt;ironic node-id&gt; replace maintenance=False.
+<codeph>ironic node-update &lt;ironic node-id&gt; replace maintenance=False.
 </codeph>
 </codeblock>
 </section>
@@ -1575,8 +1576,7 @@ Then stop the instance by entering:</p>
 <p>When running the <codeph>update_sd.sh</codeph> script to upgrade from HP <tm tmtype="reg">Helion OpenStack</tm> v1.1 to v1.1.1,  the default 192.0.6.0/24 network is used instead of the networks that are defined by the <codeph>kvm-custom-ips.json</codeph> file.
 The reason this happens is the person doing the update neglected to set the ENV variables before running the update command. These ENV variables were set when the system was installed and the same ENV variable set (with the same values) must be used for the update.</p>
 <p>The following is an example of ENV variables:</p>
-<codeblock>
-  <codeph>SEED_NTP_SERVER=10.34.56.78 BRIDGE_INTERFACE=eth2
+<codeblock><codeph>SEED_NTP_SERVER=10.34.56.78 BRIDGE_INTERFACE=eth2
 BM_NETWORK_SEED_IP=10.34.55.66
 BM_NETWORK_CIDR=10.34.55.0/24
 BM_NETWORK_GATEWAY=10.34.55.1
@@ -1588,7 +1588,7 @@ SEED_NAMESERVER=172.16.222.5
 <section id="overcloud-error-message-ansible-host-key-checkingfalse"> <title>Overcloud error message: ANSIBLE_HOST_KEY_CHECKING=False</title>
 <p>If, during the update-overcloud operation, you see the following failure:</p>
 <codeblock>
-  <codeph>    Attempting to connect to each host
+<codeph>   Attempting to connect to each host
     + ANSIBLE_HOST_KEY_CHECKING=False
     + ansible -o -i /opt/stack/tripleo-ansible/plugins/inventory/heat.py -u heat-admin -m ping all
     Traceback (most recent call last):
@@ -1615,7 +1615,7 @@ SEED_NAMESERVER=172.16.222.5
 </codeblock>
 <p>then, you can check the source of the issue by:</p>
 <codeblock>
-  <codeph>    source /opt/stack/venvs/ansible/bin/activate
+<codeph>source /opt/stack/venvs/ansible/bin/activate
 
     (ansible)root@hLinux:~/helion-update-1.1-to-1.1.1/tripleo/helion-update/overcloud_update# ansible -vvv -o -i /opt/stack/tripleo-ansible/plugins/inventory/heat.py -u heat-admin -m ping all
     Traceback (most recent call last):
