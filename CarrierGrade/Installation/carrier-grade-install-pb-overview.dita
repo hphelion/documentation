@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1925">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade (Beta): Installation Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installation Overview</title>
 <titlealts>
-<searchtitle>HP Helion Openstack Carrier Grade (Beta): Installation Overivew</searchtitle>
+<searchtitle>HP Helion Openstack Carrier Grade 1.1: Installation Overivew</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
@@ -15,7 +15,8 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-overview.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/overview/--></p>
-<p>This document describes the installation process for HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade in a baremetal environment.</p>
+<p>This document describes the process for installing HP Helion <tm tmtype="reg">OpenStack</tm>
+      Carrier Grade in a baremetal environment in the Non-KVM region.</p>
 <section id="about-the-installation"> <title>About the installation</title>
 <p>The HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade installation installs HP Helion Lifecycle Management, creates a base HP Helion <tm tmtype="reg">OpenStack</tm> cloud, and configures network virtualization through HP Distributed Cloud Networking. Using a separate installation, you integrate Wind River Linux servers into the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade environment.</p>
 <p>After installation, you can interact with the HP Helion <tm tmtype="reg">OpenStack</tm> cloud using the <xref
@@ -33,18 +34,15 @@
 <li>Review the <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita"
             >Support Matrix</xref> to make sure your environment meets the minimum
           requirements.</li>
-<li>
-          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita"
-            >Installation Prerequisites</xref>
-        </li>
+<li> Perform any required or optional <xref
+            href="../../CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita"
+            >Installation Prerequisites</xref>. </li>
 <li>
           <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"
             >Preparing the Network for Installation</xref>
         </li>
-<li>
-          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.dita">Creating
-            the HLM Virtual Machine</xref>
-        </li>
+<li> Install the non-KVM region controller-0 and configure a temporary IP address on an accessible
+          interface, preferably PXE</li>
 <li>
           <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita">HLM
             Post-Installation Tasks</xref>
