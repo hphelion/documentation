@@ -29,8 +29,8 @@
 </ul>
 <p>In each scenario, two VM instances are launched, and a test path is established between them for performance evaluations.</p>
 <p>
-  <b>Chapter 1: Overview</b>
-</p>
+      <b>Overview</b>
+    </p>
 <p>
   <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-overview.dita" >Reference Deployment Scenarios Overview</xref>
 </p>
@@ -56,8 +56,8 @@
   <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-interface.dita" >VM Network Interface Options</xref>
 </p>
 <p>
-  <b>Chapter 2: Setting Up the Scenario Environments</b>
-</p>
+      <b>Setting Up the Scenario Environments</b>
+    </p>
 <p>
   <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-setting.dita" >Setting Up the Scenario Environment</xref>
 </p>
@@ -73,8 +73,8 @@
 </li>
 </ul>
 <p>
-  <b>Chapter 3: Deploying the Scenarios</b>
-</p>
+      <b>Deploying the Scenarios</b>
+    </p>
 <p>
   <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-bridging-deploy.dita" >Deploying the Bridging Scenario</xref>
 </p>
@@ -85,8 +85,8 @@
   <xref href="../../CarrierGrade/DeploymentScenarios/carrier-grade-deployment-running-traffic.dita" >Running Traffic Through the Test Paths</xref>
 </p>
 <p>
-  <b>Chapter 4: Deployment Scenarios using the CLI</b>
-</p>
+      <b>Deployment Scenarios using the CLI</b>
+    </p>
 <ul>
 <li>
 <p>

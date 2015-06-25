@@ -200,6 +200,9 @@
   <topicref href="Security/carrier-grade.dashboard.security.keypairs.dita"/>
   <topicref href="Security/carrier-grade.dashboard.users.password.dita"/>
  </topicref>
+ <topicref href="ServerGroups/1.1commercial.managing.groups.dita">
+  <topicref href="ServerGroups/1.1commercial.managing.groups.create.dita"/>
+ </topicref>
  <topicref href="Users/carrier-grade.managing.users.dita">
   <topicref href="Users/carrier-grade.dashboard.users.create.dita"/>
   <topicref href="Users/carrier-grade.dashboard.projects.primary.dita"/>
@@ -228,6 +231,8 @@
   <topicref href="SystemAlarms/carrier-grade-admin-wr-host-management-alarms-cli-commands.dita"/>
   <topicref href="SystemAlarms/carrier-grade-admin-wr-host-management-alarms-ref-table.dita"/>
  </topicref>
+ <topicref href="MiscTasks/carrier-grade-admin-wr-ha.dita"/>
+ <topicref href="MiscTasks/carrier-grade-admin-wr-linux-users.dita"/>
  <topicref href="MiscTasks/carrier-grade-admin-ldap-manage.dita"/>
  <topicref href="Backup/carrier-grade-admin-wr-backup.dita">
   <topicref href="Backup/carrier-grade-admin-wr-retore.dita"/>
