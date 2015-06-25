@@ -63,7 +63,7 @@
         <p>
           <b>Helion Operation &amp; Maintenance.</b> HLM is responsible for the deploy, upgrade and
           maintenance lifecycle of the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade
-          system.</p>
+          system. See <xref href="carrier-grade-overview-hlm.dita#topic1771"/>.</p>
       </li>
     </ul>
 <p>

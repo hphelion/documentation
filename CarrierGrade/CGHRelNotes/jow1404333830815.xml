@@ -4,7 +4,7 @@
 
     <title>Changes in This Release</title>
     <shortdesc>This release of HP Helion OpenStack Carrier Grade includes a number of performance
-        enhancements and additions to functionality. </shortdesc>
+        enhancements and additions to functionality in the KVM region. </shortdesc>
     <prolog>
         <author>Jim Owens</author>
         <author>Pedro Sanchez</author>

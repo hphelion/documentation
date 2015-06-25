@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6108">
 
     <title>Known Problems and Limitations</title>
-    <shortdesc>You may encounter some known limitations when working with this release.</shortdesc>
+    <shortdesc>You may encounter some known limitations when working in the KVM region of this release.</shortdesc>
     <prolog>
         <author>Jim Owens</author>
         <author>Pedro Sanchez</author>
@@ -71,7 +71,7 @@
         </section>
         <section>
             <title>Installation does not fully utilize disks greater than two terabytes</title>
-            <p>HP Helion OpenStack Carrier Grade can be installed on disks greater than 2 TB, but only 2 TB of the
+            <p>HP Helion OpenStack Carrier Grade in the KVM region can be installed on disks greater than 2 TB, but only 2 TB of the
                 disk is useable.</p>
         </section>
         <section>

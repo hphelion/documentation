@@ -84,7 +84,10 @@ available at the command line via the <i>helion help</i> command.</p>
 <p>After installation, perform the following configuration steps before attempting to use the client.</p>
 </section>
 <section id="targeting-the-api-endpoint"> <title>Target the API endpoint</title>
-<p>Before you can use the client, you must <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-getting-started.dita#command-target" >set the target URL</xref>, which is also known as the API Endpoint. This tells the client the location where it will push applications to. For example:</p>
+<p>Before you can use the client, you must <xref
+          href="../reference/1.2client-ref-getting-started.dita#topic2439/command-target">set the
+          target URL</xref>, which is also known as the API Endpoint. This tells the client the
+        location where it will push applications to. For example:</p>
 <codeblock>helion target api.helion.example.com</codeblock>
 <p>For a micro-cloud VM, it might be something like:</p>
 <codeblock>helion target api.helion-xxxx.local</codeblock>
