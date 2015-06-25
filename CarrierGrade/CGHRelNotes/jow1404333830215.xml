@@ -16,14 +16,12 @@
             industry, into a unique carrier grade, industry-leading solution to deliver a
             price-performance ratio well above alternative solutions. HP Helion OpenStack Carrier Grade is aligned
             with the ETSI-NFV architecture</p>
-        <p>For more information on using HP Helion OpenStack Carrier Grade, see the <cite>HP Helion OpenStack Carrier Grade Software Installation Guide</cite> and the <cite ixia_locid="9">HP Helion OpenStack Carrier Grade Administration Guide</cite>. For information on using
+        <p>For more information on using HP Helion OpenStack Carrier Grade, see the <cite>HP Helion OpenStack Carrier Grade Software Installation Guide</cite> and the <cite>HP Helion OpenStack Carrier Grade Administration Guide</cite>. For information on using
             the HP Helion OpenStack Carrier Grade Developer API, including API definitions and usage descriptions, see
             the <cite>HP Helion OpenStack Carrier Grade SDK</cite> in the file <filepath>Titanium-Server-SDK.tgz</filepath>.</p>
         <section>
             <title>Supported Hardware Platforms</title>
-            <p>Wind River has partnered with leading hardware vendors to certify
-                HP Helion OpenStack Carrier Grade running on several of their products. The following is the list of
-                certified platforms:</p>
+            <p>The following is the list of certified platforms for running HP Helion OpenStack Carrier Grade in the KVM region:</p>
             <table frame="all" id="table_kp4_l3b_ln">
                 <title>HP Helion OpenStack Carrier Grade Certified Hardware Platforms</title>
                 <tgroup cols="2">

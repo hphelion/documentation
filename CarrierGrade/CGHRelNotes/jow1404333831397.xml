@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6108">
 
     <title>Usage Caveats</title>
-    <shortdesc>There are some usage issues you should be aware of when working with this
+    <shortdesc>There are some usage issues you should be aware of when working working in the KVM region of this
   release.</shortdesc>
     <prolog>
         <author>Jim Owens</author>

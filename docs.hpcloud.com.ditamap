@@ -1747,7 +1747,7 @@
         </topicref>
       </topicref>
     </topicref>
-    <topichead navtitle="Installing the Non-KVM Servers">
+    <topichead navtitle="Installing the Non-KVM Region">
       <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix.dita">
         <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-dcn.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-helion.dita"/>
@@ -1768,8 +1768,9 @@
         <topicref href="CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita"/>
       </topicref>
     </topichead>
-    <topichead navtitle="Installing the KVM Server (PDF)">
-      <topicref href="PDF/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf" navtitle="HP Helion OpenStack Carrier Grade Software Install" locktitle="yes" format="pdf"/>
+    <topichead navtitle="Installing the KVM Region (PDF)">
+      <topicref href="PDF/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf"
+        navtitle="HP Helion OpenStack Carrier Grade Software Install" locktitle="yes" format="pdf"/>
     </topichead>
     <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita">
       <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment.dita"/>
