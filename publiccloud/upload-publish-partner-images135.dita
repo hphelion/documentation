@@ -64,7 +64,7 @@
 </li>
 </ul>
 </section>
-<section id="getting-started"> <title id="gettingstarted">Getting started</title>
+<section id="getting-started"> <title>Getting started</title>
 <p>Image upload refers to the uploading of a virtual machine image into HP Helion Public Cloud, which creates a new image containing your image data and associated metadata.</p>
 <p>
 <b>Important:</b> Images are region-specific; an image is only available in the region to which it has been uploaded. If you need an image in multiple regions, you must create it in each region.</p>
