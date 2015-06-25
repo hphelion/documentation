@@ -277,10 +277,11 @@
         <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"/>
       </topichead>
     </topicref>
+    <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita">
+      <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
+    </topicref>
     <topichead navtitle="HP Helion Openstack(R) 1.1: Post-Installation Tasks">
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"/>
-      <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
       <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
     </topichead>
     <topichead navtitle="HP Helion Openstack(R) 1.1: Using the Undercloud Horizon Dashboard">
@@ -472,6 +473,7 @@
         <topicref href="commercial/GA1/1.0commercial.install-GA-ovsvapp.dita"/>
         
       </topicref>
+      <topicref href="commercial/GA1/1.0commerical.high-availability.dita"/>
       
       
       <topichead navtitle="HP Helion Openstack(R) 1.0: Post-Installation Tasks">
@@ -479,7 +481,6 @@
         <topicref href="commercial/GA1/1.0commercial.install-GA-LDAP.dita"/>
         <topicref href="commercial/GA1/1.0commercial.install-GA-verify.dita"/>	
         <topicref href="commercial/GA1/1.0commercial.install-GA-DNSaaS.dita"/>
-        <topicref href="commercial/GA1/1.0commerical.high-availability.dita"/>
       </topichead>
       
       
