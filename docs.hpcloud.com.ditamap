@@ -49,8 +49,23 @@
       </topicref>
       
       <topicref href="commercial/GA1/1.1commerical.services-imaging-overview.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.services-networking-overview.dita"> 
+      <topicref href="commercial/GA1/1.1commerical.services-networking-overview.dita">
+        <topicref href="commercial/GA1/1.1commercial.services-mapNeutron.dita"/> 
         <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-post-installation.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-DNaaS.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-neutron-integration.dita"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.dita"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-intro.dita"/>
+        <topicref href="commercial/GA1/1.1commerical.services-dvr-overview.dita"/>
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-object-overview.dita">
         <!-- All Things Swift-->
@@ -142,7 +157,7 @@
           href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita"/>
       </topicref>
       <!--Ceph stuff-->
-      <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita">
+      <topicref href="commercial/GA1/1.1commercial.ceph-overview.dita">
         <topicref href="commercial/GA1/ceph/1.1commerical.services-ceph-archref.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-pre-requisite.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita"/>
@@ -170,6 +185,9 @@
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-glossary.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-related-topics.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"/>
+        <topicref
+          href="commercial/GA1/1.1commenrcial.ceph-configuration-recovery-and-backup-procedure-helion-nodes.dita"
+          navtitle="Ceph Backup and Recovery" locktitle="yes"/>
       </topicref>
         
       <topicref href="commercial/GA1/1.1commerical.services-sirius-overview.dita">
@@ -295,6 +313,8 @@
       <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storeserv.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storevirtual.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-admin-updates-and-extensions.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-horizon-overview.dita"/>
     </topichead>
     <topichead navtitle="HP Helion Openstack(R) 1.1: System Restore and Recovery">
       <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"/>
@@ -1738,7 +1758,6 @@
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
-<<<<<<< HEAD
   
   <!-- Carrier Grade -->
   
