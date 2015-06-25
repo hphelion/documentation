@@ -22,7 +22,7 @@
  <!--./devplatform/1.2/helion/user/console/1.2index.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/console/--></p>
 <p>The Management Console is a web interface for Application Lifecycle Service (ALS). Using the same API as the Helion CLI client, it provides access to a subset of features for deploying, scaling, and configuring applications as well as monitoring quota usage, and viewing logs.</p>
-<p>The interface differs for Admin and non-Admin users. The features described below are available and visible to end users. For information on the Management Console view for Admins, see the <xref href="../../admin/console/1.2index.dita" >Console Admin Guide</xref>.</p>
+<p>The interface differs for Admin and non-Admin users. The features described below are available and visible to end users. For information on the Management Console view for Admins, see the <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita" >Console Admin Guide</xref>.</p>
 <ul>
 <li>
 <xref type="section" href="#topic8844/welcome">Welcome Page</xref>
@@ -65,13 +65,16 @@
 <b>Read the Documentation</b>: By default, this links to the ALS documentation at <xref href="../../../../../devplatform/1.2/helion/1.2index.dita" >docs.hpcloud.com</xref>
 </li>
 <li>
-<b>Contact Support</b>: Link to the <xref type="section" href="#topic8844/user-console-support">Support</xref> page.</li>
+          <b>Contact Support</b>: Link to the <xref href="#topic8844/support" format="dita"
+            >Support</xref> page.</li>
 <li>
 <b>Download the Client</b>: Link to the locally hosted <xref href="../../../../../devplatform/1.2/helion/user/client/1.2index.dita#client" type="section" scope="external"  >CLI client</xref> download.</li>
 <li>
-<b>Deploy Sample Applications</b>: Link to the <xref type="section" href="#topic8844/user-console-app-store">Sample Applications</xref>.</li>
+          <b>Deploy Sample Applications</b>: Link to the <xref href="#topic8844/sample-apps"
+            format="dita">Sample Applications</xref>.</li>
 <li>
-<b>Organizations Membership</b>: Link to the end user view of the <xref type="section" href="#topic8844/user-console-welcome">Organizations</xref> page.</li>
+          <b>Organizations Membership</b>: Link to the end user view of the <xref
+            href="#topic8844/welcome" format="dita">Organizations</xref> page.</li>
 <li>
 <b>Account Details</b>: Shows the account details of the current user. Also accessible from the drop down list at the top left.</li>
 </ul>
@@ -173,7 +176,7 @@
 <section id="space-view"> <title>Space View</title>
 <ul>
 <li>
-<b>Apps</b>: A filterable list of applications in the Space. Clicking an app name opens an <xref type="section" href="#topic8844/user-console-app">administrative view of that application</xref>.</li>
+<b>Apps</b>: A filterable list of applications in the Space. Clicking an app name opens an administrative view of that application.</li>
 <li>
 <b>Timeline</b>: A real-time stream of events and discussions relevant to the Space. The creation, update, and deletion of apps and services appear here as notifications which can be commented on by members of the service-instance-viewSpace. Discussions can be started by any member, tagged, and assigned to an application (which makes the item visible in the Application view).</li>
 <li>
@@ -189,7 +192,7 @@
 </ul>
 </li>
 <li>
-<b>Services</b>: A list of services bound to applications in the Space. Clicking a service name in either section opens an <xref type="section" href="#topic8844/user-console-service">administrative view of that service</xref>.
+<b>Services</b>: A list of services bound to applications in the Space. Clicking a service name in either section opens an administrative view of that service.
 
 <ul>
 <li>
