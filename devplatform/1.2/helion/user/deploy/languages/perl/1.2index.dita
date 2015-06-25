@@ -40,7 +40,8 @@ so there is no need to create a separate app.psgi for them.</p>
 <xref href="https://github.com/Stackato-Apps/mojo-helloworld" scope="external" format="html" >app.pl</xref>. You
 could rename <codeph>app.pl</codeph> to <codeph>app.psgi</codeph> instead, but using the approach above
 allows you to set PSGI-specific configurations in a separate file.</p>
-<p>It is possible to <xref type="section" href="#topic8895/uwsgi-perl-static-files">serve static files with uWSGI</xref>.</p>
+<p>It is possible to <xref href="#topic8895/serving-static-files-with-uwsgi" format="dita">serve
+        static files with uWSGI</xref>.</p>
 <p>The <xref href="../../../../../../../devplatform/1.2/helion/user/deploy/languages/perl/1.2perlcgi.dita#perlcgi" type="section" scope="external"  >
 <i>perlcgi</i>
 </xref> framework is also available for

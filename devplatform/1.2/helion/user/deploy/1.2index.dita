@@ -91,25 +91,24 @@ web server, application dependencies, databases, and other services.</p>
           <ul>
             <li>Frameworks <ul>
                 <li>
-                  <xref href="1.2orgs-spaces.dita#topic2729" type="section" scope="external" >Organizations &amp; Spaces</xref>
+                  <xref href="1.2orgs-spaces.dita#topic2729" type="section" scope="local" >Organizations &amp; Spaces</xref>
                 </li>
                 <li>
-                  <xref href="1.2buildpack.dita#topic3370" type="section" scope="external" >Buildpacks</xref>
+                  <xref href="1.2buildpack.dita#topic3370" type="section" scope="local" >Buildpacks</xref>
                 </li>
                 <li>
-                  <xref href="1.2other-frameworks.dita#topic2413" type="section" scope="external" >Generic &amp; Standalone
-                    Frameworks</xref>
+                  <xref href="1.2other-frameworks.dita#topic2413" type="section" scope="local" format="dita" >Generic &amp; Standalone Frameworks</xref>
                 </li>
               </ul></li>
             <li>Languages <ul>
                 <li>
-                  <xref href="languages/1.2java.dita#topic2811" type="section" scope="external" >Java</xref>
+                  <xref href="languages/1.2java.dita#topic2811" type="section" scope="local" >Java</xref>
                 </li>
                 <li>
-                  <xref href="languages/1.2node.dita#topic3629/node-npm" type="section" scope="external" >Node.js</xref>
+                  <xref href="languages/1.2node.dita#topic3629/node-npm" type="section" scope="local" >Node.js</xref>
                 </li>
                 <li>
-                  <xref href="languages/1.2php.dita#topic5845" type="section" scope="external" >PHP</xref>
+                  <xref href="languages/1.2php.dita#topic5845" type="section" scope="local" >PHP</xref>
                 </li>
               </ul></li>
           </ul></li>
@@ -169,7 +168,7 @@ web server, application dependencies, databases, and other services.</p>
             View</xref>
         </li>
 <li>
-          <xref href="../../admin/console/1.2app-store.dita#topic5271" type="section" scope="external" >Sample Applications</xref>
+          <xref href="../../admin/console/1.2app-store.dita#topic5271" type="section" scope="local" >Sample Applications</xref>
         </li>
 </ul>
 </section>

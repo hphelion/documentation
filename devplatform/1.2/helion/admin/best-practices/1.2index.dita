@@ -81,8 +81,9 @@
           Storage</xref>
         <ul>
           <li>
-            <xref type="section" href="#topic16169/relocating-services-droplets-and-containers"
-              >Relocating Services, Droplets, and Containers</xref>
+            <xref
+              href="#topic16169/relocating-services-droplets-and-containers-relocating-services-droplets-and-containers"
+              format="dita">Relocating Services, Droplets, and Containers</xref>
           </li>
           <li>
             <xref type="section" href="#topic16169/enabling-filesystem-quotas">Enabling Filesystem
@@ -239,9 +240,8 @@ specifying the full path and filename during export (see backup example
 below).</p>
       <note>Exporting data can take several minutes. For clusters with constant usage or large
         numbers of users, apps, and databases, put the exporting system in <xref
-          href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita#cloud-controller"
-          >Maintenance Mode</xref> (e.g. during a scheduled maintenance window) before
-        exporting.</note>
+          href="../console/1.2index.dita#topic13823/cloud-controller">Maintenance Mode</xref> (e.g.
+        during a scheduled maintenance window) before exporting.</note>
 </section>
 <section id="scheduled-backups"> <title>Scheduled backups</title>
 <p>Regular backup of controller data, apps, droplets, and service data is

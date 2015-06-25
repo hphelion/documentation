@@ -174,10 +174,17 @@ administration and management of the Application Lifecycle Service Server. Many 
 https://helion-xxxx.local
 </codeph>
 </codeblock>
-<p>On a <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-micro-cloud" >micro cloud</xref> VM where the local network supports <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-multicast-dns" type="section" scope="external"  >multicast DNS</xref>, the hostname will be <codeph>helion-xxxx.local</codeph>. If you have configured the
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#server-config-hostname" type="section" scope="external"  >hostname</xref> and
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#server-config-dns" type="section" scope="external"  >DNS</xref> of the Application Lifecycle Service server manually, or are connecting to a server administered by someone
-else, supply the assigned hostname instead (ex: <i>api.helion-test.example.com</i>).</p>
+<p>On a <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud">micro
+          cloud</xref> VM where the local network supports <xref
+          href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-multicast-dns"
+          type="section" scope="external">multicast DNS</xref>, the hostname will be
+          <codeph>helion-xxxx.local</codeph>. If you have configured the <xref
+          href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#server-config-hostname"
+          type="section" scope="external">hostname</xref> and <xref
+          href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#server-config-dns"
+          type="section" scope="external">DNS</xref> of the Application Lifecycle Service server
+        manually, or are connecting to a server administered by someone else, supply the assigned
+        hostname instead (ex: <i>api.helion-test.example.com</i>).</p>
 <p>Enter the URL into your web browser and the Management Console will load. The Console is supported on the following browsers:</p>
 <ul>
 <li>Chrome 30+ (WebKit)</li>
@@ -206,19 +213,29 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <p>Available patches for the system, new releases, and the latest news are also displayed on this page.</p>
 <p>Green buttons expose Admin-only functionality:</p>
 <ul>
-<li>Configure Available Services: Opens the <xref type="section" href="#topic13823/console-cluster-nodes">Cluster Nodes</xref> view showing which roles are running on which nodes. From this view you can add or remove Service roles on the various nodes in the cluster (or on 127.0.0.1 for micro clouds).</li>
-<li>Manage Organizations: Opens the <xref type="section" href="#topic13823/console-organizations">Organizations</xref> view.</li>
-<li>Manage Users: Opens the <xref type="section" href="#topic13823/console-users">Users</xref> view.</li>
+<li>Configure Available Services: Opens the <xref href="#topic13823/cluster-nodes" format="dita"
+            >Cluster Nodes</xref> view showing which roles are running on which nodes. From this
+          view you can add or remove Service roles on the various nodes in the cluster (or on
+          127.0.0.1 for micro clouds).</li>
+<li>Manage Organizations: Opens the <xref href="#topic13823/organizations" format="dita"
+            >Organizations</xref> view.</li>
+<li>Manage Users: Opens the <xref href="#topic13823/users" format="dita">Users </xref>view.</li>
 <li>View All Deployed Applications: Opens the <xref type="section" href="#topic13823/applications">Console Applications</xref> view.</li>
 <li>View Cloud Events: Opens the <xref type="section" href="#topic13823/cloud-events">Cloud Events</xref> view.</li>
-<li>View Dashboard: Opens the <xref type="section" href="#topic13823/dashboard">Dashboard</xref>.</li>
+<li>View Dashboard: Opens the <xref href="#topic13823/dashboards" format="dita"
+          >Dashboard</xref>.</li>
 </ul>
 </section>
 <section id="applications"> <title>Applications</title>
 <p>The Applications section displays a list of all apps on the server. Click anywhere on the line for an app to view its details. Admins have the same permissions in the <xref href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita#user-console-app" type="section" scope="external"  >Application View</xref> as a Developer of the space it was deployed to.</p>
 </section>
 <section id="organizations"> <title>Organizations</title>
-<p>The top level Organizations page allows Admins to add and delete <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" >Organizations</xref>. Clicking on an organization name opens its details. This view is the same as a regular user's <xref href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita#user-console-organizations" type="section" scope="external"  >Organizations view</xref>, but admin users can also edit quotas and add/remove domains, spaces, and users.</p>
+<p>The top level Organizations page allows Admins to add and delete <xref
+          href="#topic13823/organizations" format="dita">Organizations</xref>. Clicking on an
+        organization name opens its details. This view is the same as a regular user's <xref
+          href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita#user-console-organizations"
+          type="section" scope="external">Organizations view</xref>, but admin users can also edit
+        quotas and add/remove domains, spaces, and users.</p>
 </section>
 <section id="support"> <title>Support</title>
 <p>The Support menu includes the same options as the regular user's menu.</p>
@@ -299,8 +316,9 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <p>Memory usage statistics and a usage bar graph for all configured <xref type="section" href="#topic13823/dea-zones-placement">Placement Zones</xref>.</p>
 </section>
 <section id="avail-zone-usage"> <title>Availability Zone Usage</title>
-<p>Memory usage statistics and a usage bar graph for all configured <xref type="section" href="#topic13823/dea-zones-availability">Availability Zones</xref>
-</p>
+<p>Memory usage statistics and a usage bar graph for all configured <xref
+          href="#topic13823/dea-zones-available" format="dita">Availability Zones</xref>
+      </p>
 </section>
 <section id="router-stats"> <title>Router Stats</title>
 <p>Shows realtime results for incoming requests (connections per second), routing errors (errors per second), and an overview of the cumulative requests to the system.</p>
@@ -411,7 +429,11 @@ commands and <xref href="../../../../../devplatform/1.2/helion/admin/reference/1
 </ul>
 </section>
 <section id="harbor"> <title>Harbor</title>
-<p>Settings for the <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2harbor.dita#harbor" >Harbor</xref> TCP/UDP port service. See <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2harbor.dita#harbor-setup" type="section" scope="external"  >Harbor: Requirements &amp; Setup</xref> for more information.</p>
+<p>Settings for the <xref href="../cluster/1.2harbor.dita#topic4009">Harbor </xref>TCP/UDP port
+        service. See <xref
+          href="../../../../../devplatform/1.2/helion/admin/cluster/1.2harbor.dita#harbor-setup"
+          type="section" scope="external">Harbor: Requirements &amp; Setup</xref> for more
+        information.</p>
 <ul>
 <li>
 <b>External Host</b>: The public IP (if configured) for the Harbor node.</li>
