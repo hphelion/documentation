@@ -28,7 +28,7 @@
 <p>
 
 </p>
-<p>The Management Console can be extensively customized and themed. Administrators can add or remove runtimes, frameworks and services from the system, and change the look and content of the <xref href="../../../../devplatform/helion/user/console/1.1index.dita#management-console" >Management Console</xref> interface.</p>
+<p>The Management Console can be extensively customized and themed. Administrators can add or remove runtimes, frameworks and services from the system, and change the look and content of the <xref href="../../../../devplatform/helion/user/console/1.1index.dita#management-console" type="section" scope="external"  >Management Console</xref> interface.</p>
 <ul>
 <li>
 <xref type="section" href="#topic5093/console-settings">Console Settings</xref>

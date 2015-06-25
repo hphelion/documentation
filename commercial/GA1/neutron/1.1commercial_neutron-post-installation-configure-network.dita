@@ -529,7 +529,7 @@ http://&lt;internalVIP&gt;:5000/v2.0</entry>
   <image href="../../../media/Helion_Security6.png"/>
 </p>
 <p>Note that there are additional traffic flows necessary for StoreVirtual operation in addition to the interaction with Helion nodes described above. This includes CMC management console access, StoreVirtual inter-cluster communication and access to network services such as NTP.</p>
-<p>StoreVirtual port usage is described in <xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03983799-2.pdf#page=263" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> in PDF.</p>
+<p>StoreVirtual port usage is described in <xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03983799-2.pdf#page=263" type="section" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> in PDF.</p>
 </section>
 <section id="storeserv"> <title>Securing 3Par StoreServ network connections</title>
 <p>HP Helion Openstack supports iSCSI or Fibre Channel connectivity with 3PAR StoreServ. If using Fibre Channel, then the Compute nodes and the overcloud controller hosting Block Storage (Cinder) will require Fibre Channel connectivity with the 3PAR array. For iSCSI, connectivity will be through the management VLAN. The StoreServ REST API and SSH command line interfaces must be accessible from the management VLAN as well.</p>
@@ -632,7 +632,7 @@ See Reference 6 below </entry>
 <li>
 <!--Removed anchor point ref2-->
 <!-- id="ref2" -->
-<xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03983799-2.pdf#page=263" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> (PDF)</li>
+<xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03983799-2.pdf#page=263" type="section" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> (PDF)</li>
 <li>
 <xref href="http://hp.com/go/storevirtual" scope="external" format="html" >StoreVirtual information</xref>
 </li>
@@ -647,7 +647,7 @@ See Reference 6 below </entry>
 <!-- id="ref6" -->
 <xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf" scope="external" format="pdf">HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65</xref> (PDF)  </li>
 <li>
-<xref href="http://tools.ietf.org/html/rfc3723#page-28" scope="external" format="html" >RFC3723 - Securing Block Storage</xref>
+<xref href="http://tools.ietf.org/html/rfc3723#page-28" type="section" scope="external" format="html" >RFC3723 - Securing Block Storage</xref>
 </li>
 <li>
 <xref href="http://tools.ietf.org/html/rfc7143" scope="external" format="html" >RFC7143 - Internet Small Computer System Interface (iSCSI) Protocol</xref>

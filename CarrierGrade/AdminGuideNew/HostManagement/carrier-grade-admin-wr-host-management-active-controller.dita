@@ -59,14 +59,14 @@ However, you can replace the primary or secondary disks, and you can replace fau
 </li>
 <li>
 <p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#power" >Power down the standby controller</xref> and make any required hardware changes.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section" scope="external"  >Power down the standby controller</xref> and make any required hardware changes.</p>
 
 <p>This may involve replacing disks, or replacing the host completely.</p>
 </li>
 <li>
 <p>Place the new or modified controller into service.</p>
 
-<p>a. <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#power" >Power up the controller</xref>.</p>
+<p>a. <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section" scope="external"  >Power up the controller</xref>.</p>
 
 <p>Wait until the controller is reported as Locked, Enabled, and Available.</p>
 
@@ -81,7 +81,7 @@ However, you can replace the primary or secondary disks, and you can replace fau
 <p>
 <b>Note:</b> If the host does not boot from the management network, ensure that the host BIOS is configured for PXE boot.</p>
 
-<p>c. <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#swact" >Perform a swact</xref> by clicking <b>More</b> then <b>Swact Host</b> for the active controller.</p>
+<p>c. <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#swact" type="section" scope="external"  >Perform a swact</xref> by clicking <b>More</b> then <b>Swact Host</b> for the active controller.</p>
 
 <p>The standby controller becomes the active controller, and the original active controller is placed into standby.</p>
 </li>
@@ -103,7 +103,7 @@ However, you can replace the primary or secondary disks, and you can replace fau
 </li>
 <li>
 <p>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#power" >Power up the new or modified controller</xref>.</p>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section" scope="external"  >Power up the new or modified controller</xref>.</p>
 </li>
 <li>
 <p>If required, <xref href="../../../CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita" >reinstall HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade</xref> on the controller.</p>

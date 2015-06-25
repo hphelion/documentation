@@ -22,8 +22,8 @@
  <!--permalink: /helion/devplatform/1.1/als/user/deploy/languages/perl/perlcgi/--></p>
   <p>The <i>perlcgi</i> framework can be used to run <i>any</i> CGI script, but, like the <xref
         href="1.1index.dita">perl</xref> framework, it provides ActivePerl in the default PATH and
-      supports module installation via <xref href="1.1index.dita#topic8895/cpan-modules-via-ppm"
-        >PPM</xref> and <xref href="1.1index.dita#topic8895/cpan-modules-via-cpanm">cpanm</xref>
+      supports module installation via <xref href="1.1index.dita#topic8895/cpan-modules-via-ppm" type="section" scope="external" 
+        >PPM</xref> and <xref href="1.1index.dita#topic8895/cpan-modules-via-cpanm" type="section" scope="external" >cpanm</xref>
       .</p>
   <p>Unlike the perl framework, setting the <xref
         href="../../1.1manifestyml.dita#topic20986/start-file"/> option has no effect, as there is

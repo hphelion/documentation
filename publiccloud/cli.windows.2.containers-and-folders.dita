@@ -1001,7 +1001,7 @@ Total Bytes Copied : 1025000
 PS testcon2:\&gt;
 </codeblock>
 <p>The <codeph>-sk</codeph> option is your API secret key, and the <codeph>-ak</codeph> option is your access key.</p>
-<p>For additional information on this command, see <xref href="http://h30499.www3.hp.com/t5/Grounded-in-the-Cloud/Migrating-your-files-with-the-Windows-CLI/ba-p/6470822#.U20mfFf7Ex5" scope="external" format="html" >Migrating your files with the Windows CLI</xref> blog post.</p>
+<p>For additional information on this command, see <xref href="http://h30499.www3.hp.com/t5/Grounded-in-the-Cloud/Migrating-your-files-with-the-Windows-CLI/ba-p/6470822#.U20mfFf7Ex5" type="section" scope="external" format="html" >Migrating your files with the Windows CLI</xref> blog post.</p>
 </section>
 </body>
 </topic>

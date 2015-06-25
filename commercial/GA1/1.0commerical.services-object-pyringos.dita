@@ -34,7 +34,7 @@
 <xref type="section" href="#topic3873/misc">Miscellaneous Commands</xref>
 </li>
 </ul>
-<section id="help-commands"> <title>Help Commands<!--Removed anchor point help--><!-- id="help" --></title>
+<section id="help"> <title>Help Commands<!--Removed anchor point help--><!-- id="help" --></title>
 </section>
 <section id="help"> <title>Help</title>
 <p>You can display the help of this program or one of its sub-programs</p>
@@ -47,7 +47,7 @@
 </codeph></codeblock>
 <p>The following command line are used to perform ringos activities.</p>
 </section>
-<section id="ring-commands"> <title>Ring Commands<!--Removed anchor point ring--><!-- id="ring" --></title>
+<section id="ring"> <title>Ring Commands<!--Removed anchor point ring--><!-- id="ring" --></title>
 </section>
 <section id="create-ring"> <title>Create ring<!--Removed anchor point create-ring--><!-- id="create-ring" --></title>
 <p>Create a ring based on part_power, replicas, and min_part_hours.</p>
@@ -59,7 +59,7 @@
 Created ring /root/ring-building/object-1.builder
 </codeph></codeblock>
 </section>
-<section id="add-disk-to-a-ring"> <title>Add disk to a ring<!--Removed anchor point add-disk-to-ring--><!-- id="add-disk-to-ring" --></title>
+<section id="add-disk-to-ring"> <title>Add disk to a ring<!--Removed anchor point add-disk-to-ring--><!-- id="add-disk-to-ring" --></title>
 <p>Adding a ring to a disk.</p>
 <codeblock><codeph># ringos add-disk-to-ring -f &lt;BUILDER&gt; -i &lt;IP&gt; [-p &lt;PORT&gt;] -d &lt;DISK&gt; -w &lt;WEIGHT&gt; [-r &lt;REGION&gt;] [-z &lt;ZONE&gt;] 
 </codeph></codeblock>
@@ -80,7 +80,7 @@ In the following example a disk is added to a ring:
     Added disk 192.0.2.29:a1410063335 to ring
 -->
 </section>
-<section id="view-a-ring"> <title>View a ring<!--Removed anchor point view-ring--><!-- id="view-ring" --></title>
+<section id="view-ring"> <title>View a ring<!--Removed anchor point view-ring--><!-- id="view-ring" --></title>
 <p>View contents of a given ring.</p>
 <codeblock><codeph># ringos view-ring -f &lt;BUILDER&gt;
 </codeph></codeblock>
@@ -100,12 +100,12 @@ In the following example, you can view the content of the ring
       0         1    1               192.0.2.29  6000      192.0.2.29      6000        a1410063335    100.00          0-100.00
 -->
 </section>
-<section id="re-balance-a-ring"> <title>Re-balance a ring<!--Removed anchor point rebalance-ring--><!-- id="rebalance-ring" --></title>
+<section id="rebalance-ring"> <title>Re-balance a ring<!--Removed anchor point rebalance-ring--><!-- id="rebalance-ring" --></title>
 <p>Re-balances a given ring after adding disk to the ring.</p>
 <codeblock><codeph># ringos rebalance-ring -f &lt;BUILDER&gt;
 </codeph></codeblock>
 </section>
-<section id="copy-a-ring-"> <title>Copy a ring <!--Removed anchor point copy-ring--><!-- id="copy-ring" --></title>
+<section id="copy-ring"> <title>Copy a ring <!--Removed anchor point copy-ring--><!-- id="copy-ring" --></title>
 <ul>
 <li>
 <p>Copies ring to the available nodes.</p>
@@ -126,7 +126,7 @@ In the following example, you can view the content of the ring
 </li>
 </ul>
 </section>
-<section id="remove-a-disk-from-the-ring"> <title>Remove a disk from the ring<!--Removed anchor point remove-disk-from-ring--><!-- id="remove-disk-from-ring" --></title>
+<section id="remove-disk-from-ring"> <title>Remove a disk from the ring<!--Removed anchor point remove-disk-from-ring--><!-- id="remove-disk-from-ring" --></title>
 <p>In case of failure you can removes a given disk from ring.</p>
 <codeblock><codeph># ringos remove-disk-from-ring -f &lt;BUILDER&gt; -s &lt;SEARCH_VAL&gt;
 </codeph></codeblock>
@@ -134,36 +134,36 @@ In the following example, you can view the content of the ring
 <codeblock><codeph># ringos remove-disk-from-ring -f /root/ring-building/object-1.builder -s d0
 </codeph></codeblock>
 </section>
-<section id="validate-a-ring"> <title>Validate a Ring<!--Removed anchor point validate-ring--><!-- id="validate-ring" --></title>
+<section id="validate-ring"> <title>Validate a Ring<!--Removed anchor point validate-ring--><!-- id="validate-ring" --></title>
 <p>Run validate routine on the ring.</p>
 <codeblock><codeph># ringos validate-ring -f &lt;BUILDER&gt;
 </codeph></codeblock>
 </section>
-<section id="search-for-a-ring"> <title>Search for a Ring<!--Removed anchor point search-ring--><!-- id="search-ring" --></title>
+<section id="search-ring"> <title>Search for a Ring<!--Removed anchor point search-ring--><!-- id="search-ring" --></title>
 <p>Shows information about matching devices.</p>
 <codeblock><codeph># ringos search-ring -f &lt;BUILDER&gt; -s &lt;SEARCH_VAL&gt;
 </codeph></codeblock>
 </section>
-<section id="write-to-a-ring"> <title>Write to a Ring<!--Removed anchor point write-ring--><!-- id="write-ring" --></title>
+<section id="write-ring"> <title>Write to a Ring<!--Removed anchor point write-ring--><!-- id="write-ring" --></title>
 <p>Writes the builder contents onto a ring file.</p>
 <codeblock><codeph># ringos write-ring -f &lt;BUILDER&gt;
 </codeph></codeblock>
 </section>
-<section id="node-commands"> <title>Node Commands<!--Removed anchor point node--><!-- id="node" --></title>
+<section id="node"> <title>Node Commands<!--Removed anchor point node--><!-- id="node" --></title>
 </section>
 <section id="list-swift-nodes"> <title>List Swift nodes<!--Removed anchor point list-swift-nodes--><!-- id="list-swift-nodes" --></title>
 <p>List the available Swift nodes (starter, contianer, proxy, and object nodes) in the cloud.</p>
 <codeblock><codeph># ringos list-swift-nodes -t &lt;TYPE&gt;
 </codeph></codeblock>
 </section>
-<section id="list-disks-in-nodes"> <title>List disks in nodes<!--Removed anchor point list-disks--><!-- id="list-disks" --></title>
+<section id="list-disks"> <title>List disks in nodes<!--Removed anchor point list-disks--><!-- id="list-disks" --></title>
 <p>List disks and size of the disks on a given node.</p>
 <codeblock><codeph># ringos list-disks -n &lt;NODE&gt; -u heat admin
 </codeph></codeblock>
 </section>
-<section id="disk-commands"> <title>Disk Commands<!--Removed anchor point disk--><!-- id="disk" --></title>
+<section id="disk"> <title>Disk Commands<!--Removed anchor point disk--><!-- id="disk" --></title>
 </section>
-<section id="format-and-mount-disks-"> <title>Format and Mount Disks <!--Removed anchor point format-disks--><!-- id="format-disks" --></title>
+<section id="format-disks"> <title>Format and Mount Disks <!--Removed anchor point format-disks--><!-- id="format-disks" --></title>
 <p>To format and mount all the available disks on a node.</p>
 <codeblock><codeph># ringos format-disks -n &lt;IP address of the node&gt; -u heat-admin -d all
 </codeph></codeblock>
@@ -171,7 +171,7 @@ In the following example, you can view the content of the ring
 <codeblock><codeph># ringos format-disks -n &lt;IP address of the node&gt; -u heat-admin -d &lt;DISK&gt; [-l &lt;LABEL&gt;]
 </codeph></codeblock>
 </section>
-<section id="set-weight-to-disk"> <title>Set weight to disk<!--Removed anchor point weight-disk--><!-- id="weight-disk" --></title>
+<section id="weight-disk"> <title>Set weight to disk<!--Removed anchor point weight-disk--><!-- id="weight-disk" --></title>
 <p>To set the weight gradually or remove gradually.</p>
 <codeblock><codeph># ringos set-weight -f &lt;BUILDER&gt; -s &lt;SEARCH_VAL&gt; -w &lt;WEIGHT&gt;
 </codeph></codeblock>
@@ -179,7 +179,7 @@ In the following example, you can view the content of the ring
 <codeblock><codeph># ringos set-weight -f object-1.builder -s d5 -w 0
 </codeph></codeblock>
 </section>
-<section id="miscellaneous-commands"> <title>Miscellaneous Commands<!--Removed anchor point misc--><!-- id="misc" --></title>
+<section id="misc"> <title>Miscellaneous Commands<!--Removed anchor point misc--><!-- id="misc" --></title>
 </section>
 <section id="set-replica"> <title>Set replica</title>
 <p>Change replica count to given replicas</p>

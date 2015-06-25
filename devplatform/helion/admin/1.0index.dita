@@ -37,7 +37,7 @@ users.</p>
 <section id="management-console"> <title>Helion Development Platform Management Console</title>
 <ul>
 <li>
-<xref href="../../../devplatform/helion/user/console/1.0index.dita#management-console" >Management Console</xref>
+<xref href="../../../devplatform/helion/user/console/1.0index.dita#management-console" type="section" scope="external"  >Management Console</xref>
 </li>
 <li>
 <xref href="../../../devplatform/helion/admin/console/1.0app-store.dita" >Sample Applications</xref>
@@ -52,14 +52,14 @@ users.</p>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0index.dita#accessing-server-via-the-command-line" >Accessing Server via the Command
+<xref href="../../../devplatform/helion/admin/server/1.0index.dita#accessing-server-via-the-command-line" type="section" scope="external"  >Accessing Server via the Command
 Line</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0index.dita#common-operations" >Common Operations</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0index.dita#common-operations" type="section" scope="external"  >Common Operations</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0index.dita#detailed-configuration" >Detailed
+<xref href="../../../devplatform/helion/admin/server/1.0index.dita#detailed-configuration" type="section" scope="external"  >Detailed
 Configuration</xref>
 </li>
 </ul>
@@ -69,13 +69,13 @@ Configuration</xref>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0router.dita#settings" >Settings</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0router.dita#settings" type="section" scope="external"  >Settings</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0router.dita#websockets" >WebSockets</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0router.dita#websockets" type="section" scope="external"  >WebSockets</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0router.dita#router-spdy" >SPDY</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0router.dita#router-spdy" type="section" scope="external"  >SPDY</xref>
 </li>
 </ul>
 </li>
@@ -84,14 +84,14 @@ Configuration</xref>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0docker.dita#modifying-or-updating-the-container-image" >Modifying or Updating the Container
+<xref href="../../../devplatform/helion/admin/server/1.0docker.dita#modifying-or-updating-the-container-image" type="section" scope="external"  >Modifying or Updating the Container
 Image</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0docker.dita#admin-hooks" >Admin Hooks</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0docker.dita#admin-hooks" type="section" scope="external"  >Admin Hooks</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0docker.dita#creating-a-docker-registry" >Creating a Docker
+<xref href="../../../devplatform/helion/admin/server/1.0docker.dita#creating-a-docker-registry" type="section" scope="external"  >Creating a Docker
 Registry</xref>
 </li>
 </ul>
@@ -101,16 +101,16 @@ Registry</xref>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0logging.dita#logyard" >Logyard</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0logging.dita#logyard" type="section" scope="external"  >Logyard</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0logging.dita#drains" >Drains</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0logging.dita#drains" type="section" scope="external"  >Drains</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0logging.dita#configuration" >Configuration</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0logging.dita#configuration" type="section" scope="external"  >Configuration</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0logging.dita#debugging-logyard" >Debugging Logyard</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0logging.dita#debugging-logyard" type="section" scope="external"  >Debugging Logyard</xref>
 </li>
 </ul>
 </li>
@@ -119,22 +119,22 @@ Registry</xref>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#end-user-login" >End User Login</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#end-user-login" type="section" scope="external"  >End User Login</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#strategies" >Strategies</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#strategies" type="section" scope="external"  >Strategies</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#configuration" >Configuration</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#configuration" type="section" scope="external"  >Configuration</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#user-management" >User Management</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#user-management" type="section" scope="external"  >User Management</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#first-admin-user-setup" >First Admin User Setup</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#first-admin-user-setup" type="section" scope="external"  >First Admin User Setup</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#regular-ldap-user-setup" >Regular LDAP User
+<xref href="../../../devplatform/helion/admin/server/1.0aok.dita#regular-ldap-user-setup" type="section" scope="external"  >Regular LDAP User
 Setup</xref>
 </li>
 </ul>
@@ -144,10 +144,10 @@ Setup</xref>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0upgrade.dita#before-an-upgrade" >Before an upgrade</xref>
+<xref href="../../../devplatform/helion/admin/server/1.0upgrade.dita#before-an-upgrade" type="section" scope="external"  >Before an upgrade</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/server/1.0upgrade.dita#executing-the-upgrade" >Executing the
+<xref href="../../../devplatform/helion/admin/server/1.0upgrade.dita#executing-the-upgrade" type="section" scope="external"  >Executing the
 upgrade</xref>
 </li>
 </ul>
@@ -162,31 +162,31 @@ upgrade</xref>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#roles" >Roles</xref>
+<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#roles" type="section" scope="external"  >Roles</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#preparing-the-core-node" >Preparing the Core
+<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#preparing-the-core-node" type="section" scope="external"  >Preparing the Core
 Node</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#attaching-nodes-and-enabling-roles" >Attaching Nodes and Enabling
+<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#attaching-nodes-and-enabling-roles" type="section" scope="external"  >Attaching Nodes and Enabling
 Roles</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#example-clusters" >Example Clusters</xref>
+<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#example-clusters" type="section" scope="external"  >Example Clusters</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#roles-requiring-persistent-or-shared-storage" >Roles Requiring Persistent or Shared
+<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#roles-requiring-persistent-or-shared-storage" type="section" scope="external"  >Roles Requiring Persistent or Shared
 Storage</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#port-configuration" >Port Configuration</xref>
+<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#port-configuration" type="section" scope="external"  >Port Configuration</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#multiple-controllers" >Multiple Controllers</xref>
+<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#multiple-controllers" type="section" scope="external"  >Multiple Controllers</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#load-balancer-and-multiple-routers" >Load Balancer and Multiple
+<xref href="../../../devplatform/helion/admin/cluster/1.0index.dita#load-balancer-and-multiple-routers" type="section" scope="external"  >Load Balancer and Multiple
 Routers</xref>
 </li>
 </ul>
@@ -196,11 +196,11 @@ Routers</xref>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0cloud-init.dita#securing-the-new-node" >Securing the new
+<xref href="../../../devplatform/helion/admin/cluster/1.0cloud-init.dita#securing-the-new-node" type="section" scope="external"  >Securing the new
 node</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0cloud-init.dita#custom-system-configuration" >Custom System
+<xref href="../../../devplatform/helion/admin/cluster/1.0cloud-init.dita#custom-system-configuration" type="section" scope="external"  >Custom System
 Configuration</xref>
 </li>
 </ul>
@@ -210,17 +210,17 @@ Configuration</xref>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0external-db.dita#general-principles" >General
+<xref href="../../../devplatform/helion/admin/cluster/1.0external-db.dita#general-principles" type="section" scope="external"  >General
 Principles</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0external-db.dita#mysql" >MySQL</xref>
+<xref href="../../../devplatform/helion/admin/cluster/1.0external-db.dita#mysql" type="section" scope="external"  >MySQL</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0external-db.dita#postgresql" >PostgreSQL</xref>
+<xref href="../../../devplatform/helion/admin/cluster/1.0external-db.dita#postgresql" type="section" scope="external"  >PostgreSQL</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0external-db.dita#troubleshooting" >Troubleshooting</xref>
+<xref href="../../../devplatform/helion/admin/cluster/1.0external-db.dita#troubleshooting" type="section" scope="external"  >Troubleshooting</xref>
 </li>
 </ul>
 </li>
@@ -229,13 +229,13 @@ Principles</xref>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0harbor.dita#architecture" >Architecture</xref>
+<xref href="../../../devplatform/helion/admin/cluster/1.0harbor.dita#architecture" type="section" scope="external"  >Architecture</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0harbor.dita#requirements-setup" >Requirements &amp; Setup</xref>
+<xref href="../../../devplatform/helion/admin/cluster/1.0harbor.dita#requirements-setup" type="section" scope="external"  >Requirements &amp; Setup</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/cluster/1.0harbor.dita#troubleshooting" >Troubleshooting</xref>
+<xref href="../../../devplatform/helion/admin/cluster/1.0harbor.dita#troubleshooting" type="section" scope="external"  >Troubleshooting</xref>
 </li>
 </ul>
 </li>
@@ -248,23 +248,23 @@ Principles</xref>
 
 <ul>
 <li>
-<xref href="../../../devplatform/helion/admin/best-practices/1.0index.dita#applying-updates" >Applying Updates</xref>
+<xref href="../../../devplatform/helion/admin/best-practices/1.0index.dita#applying-updates" type="section" scope="external"  >Applying Updates</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/best-practices/1.0index.dita#backup-migration" >Backup &amp; Migration</xref>
+<xref href="../../../devplatform/helion/admin/best-practices/1.0index.dita#backup-migration" type="section" scope="external"  >Backup &amp; Migration</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/best-practices/1.0index.dita#upgrade" >Upgrading (v1.0 and
+<xref href="../../../devplatform/helion/admin/best-practices/1.0index.dita#upgrade" type="section" scope="external"  >Upgrading (v1.0 and
 later)</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/best-practices/1.0index.dita#storage" >Persistent
+<xref href="../../../devplatform/helion/admin/best-practices/1.0index.dita#storage" type="section" scope="external"  >Persistent
 Storage</xref>
 </li>
 </ul>
 </li>
 <li>
-<xref href="../../../devplatform/helion/admin/best-practices/1.0logging-examples.dita#hello-world-custom-drain" >Hello World Custom Drain Sample</xref>
+<xref href="../../../devplatform/helion/admin/best-practices/1.0logging-examples.dita#hello-world-custom-drain" type="section" scope="external"  >Hello World Custom Drain Sample</xref>
 </li>
 </ul>
 </section>
@@ -277,7 +277,7 @@ Storage</xref>
 <xref href="../../../devplatform/helion/user/reference/1.0client-ref.dita" >Client Command Reference</xref>
 </li>
 <li>
-<xref href="../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces" >Managing Groups, Users &amp; Limits</xref>
+<xref href="../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >Managing Groups, Users &amp; Limits</xref>
 </li>
 <li>
 <xref href="../../../devplatform/helion/admin/reference/1.0architecture.dita" >Architectural Design</xref>

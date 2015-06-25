@@ -49,7 +49,7 @@
 <section id="userprojects"> <title>Working with projects</title>
 <p>All project-level tasks must be performed by an administrator.</p>
 </section>
-<section id="tasks-performed-by-an-administrator"> <title>Tasks performed by an Administrator<!--Removed anchor point admin--><!-- id="admin" --></title>
+<section id="admin"> <title>Tasks performed by an Administrator<!--Removed anchor point admin--><!-- id="admin" --></title>
 <p>The following Identity service tasks are usually performed by someone with the <i>administrator</i> role.</p>
 </section>
 <section id="admindomains"> <title>Working with domains</title>

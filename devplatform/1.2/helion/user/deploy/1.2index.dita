@@ -21,10 +21,10 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/deploy/1.2index.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/deploy/--></p>
-<p>Applications are typically deployed to Application Lifecycle Service by pushing source code and configuration to the system's API endpoint using the <xref href="../../../../../devplatform/1.2/helion/user/client/1.2index.dita#client" >
+<p>Applications are typically deployed to Application Lifecycle Service by pushing source code and configuration to the system's API endpoint using the <xref href="../../../../../devplatform/1.2/helion/user/client/1.2index.dita#client" type="section" scope="external"  >
 <i>cf-mgmt</i> cluster management tool</xref> or other clients that use the Application Lifecycle Service or Cloud Foundry API.</p>
 <p>The steps for deploying applications will be slightly different
-depending on the application and its requirements. To examine and deploy actual applications, see the samples at <xref href="../../../../../devplatform/1.2/1.2devplatform.appdev.dita#sample" >Resources for Application Developers</xref>.</p>
+depending on the application and its requirements. To examine and deploy actual applications, see the samples at <xref href="../../../../../devplatform/1.2/1.2devplatform.appdev.dita#sample" type="section" scope="external"  >Resources for Application Developers</xref>.</p>
 <p>
       <note>Application deployment is done primarily using <xref
           href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita"
@@ -32,11 +32,11 @@ depending on the application and its requirements. To examine and deploy actual 
         frameworks for existing application configurations.</note>
     </p>
 <section id="targeting-authenticating"> <title>Targeting &amp; Authenticating</title>
-<p>Before deploying an app, the client must first <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-getting-started.dita#command-target" >target</xref> Application Lifecycle Service's API endpoint URL. This will generally be the same URL that exposes the Management Console. For example:</p>
+<p>Before deploying an app, the client must first <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-getting-started.dita#command-target" type="section" scope="external"  >target</xref> Application Lifecycle Service's API endpoint URL. This will generally be the same URL that exposes the Management Console. For example:</p>
 <codeblock>helion target api.example.com
 Successfully targeted to [https://api.example.hphelion.com]
 ...</codeblock>
-<p>Use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-getting-started.dita#command-login" >helion login</xref> command to authenticate with your username and password:</p>
+<p>Use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-getting-started.dita#command-login" type="section" scope="external"  >helion login</xref> command to authenticate with your username and password:</p>
 <codeblock>helion login &lt;username&gt;
 Attempting login to [https://api.example.hphelion.com]
 Password: ******
@@ -59,7 +59,7 @@ Successfully logged into [https://api.example.hphelion.com]</codeblock>
 </ol>
 </section>
 <section id="selecting-org-space"> <title>Selecting Org &amp; Space</title>
-<p>If your account is a member of multiple <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" >organizations</xref>, choose which one you
+<p>If your account is a member of multiple <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >organizations</xref>, choose which one you
 want to operate under:</p>
 <codeblock>helion switch-org exampleco</codeblock>
 <p>Likewise, if you are a member of more than one space, choose a default
@@ -95,7 +95,7 @@ app.0:   =&gt; http://0.0.0.0:50932/
 app.0: CTRL + C to shutdown
 OK
 http://env.heli.on/ deployed</codeblock>
-<p>The client will show staging and running logs for the deployment process. To inspect these logs after deployment has finished, use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-information.dita#command-logs" >helion logs</xref> command.</p>
+<p>The client will show staging and running logs for the deployment process. To inspect these logs after deployment has finished, use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-information.dita#command-logs" type="section" scope="external"  >helion logs</xref> command.</p>
 </section>
 <section id="language-specific-deployment"> <title>Language-Specific Deployment</title>
 <p>See each of these sections for language-specific deployment details.  (*) Deployable small <xref
@@ -132,7 +132,7 @@ changes.</p>
 <dlentry>
 <dt><b>manifest.yml</b>
           </dt>
-<dd>A <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#manifest-yml" >
+<dd>A <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#manifest-yml" type="section" scope="external"  >
 <i>manifest.yml</i>
 </xref> file should be added to the root of your application to hold installation details as well as setup configuration instructions for your app.</dd>
 </dlentry>
@@ -144,32 +144,32 @@ If you want to use Application Lifecycle Service's data services, your code will
     (e.g. DATABASE_URL). The code should generally check for the
     existence of these environment variables, use them if they exist,
     and otherwise fall back to some default setting.</p>
-<p>See the <xref href="../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#data-services" >
+<p>See the <xref href="../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#data-services" type="section" scope="external"  >
 <i>Data Services</i>
 </xref> section for further details.</p>
 <p>
 <b>Environment Variables</b>
 A number of special environment variables are available during
     staging and runtime. These can be used in
-    <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#hooks" >
+    <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#hooks" type="section" scope="external"  >
 <i>hooks</i>
 </xref> or application code
     (for setting up databases, filesystem services, web server options,
     and cron jobs) in places where you would normally use hard-coded
     paths, credentials, or host-specific values.</p>
-<p>See the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#environment-variables" >
+<p>See the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#environment-variables" type="section" scope="external"  >
 <i>Environment
     Variables</i>
 </xref>
     section for a complete list.</p>
 </section>
 <section id="helion-push"> <title>Application Lifecycle Service push</title>
-<p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-push" >helion push</xref> command
+<p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-push" type="section" scope="external"  >helion push</xref> command
 creates (or updates) applications on Application Lifecycle Service. It negotiates with the
 API endpoint to reserve application URLs, allocate application
 instances, provision data services, upload application code, and
 optionally stage and start the application.</p>
-<p>The command will prompt for options or use those specified in a <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#manifest-yml" >
+<p>The command will prompt for options or use those specified in a <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#manifest-yml" type="section" scope="external"  >
 <i>manifest.yml</i>
 </xref> file.</p>
 <p>
@@ -178,10 +178,10 @@ optionally stage and start the application.</p>
             scope="external" format="html">hostname label</xref> meaning that it contains only
           alphanumeric characters and hyphens.</note>
       </p>
-<p>The <codeph>push</codeph> command implicitly stages and starts the application unless the <codeph>--no-start</codeph> option is used. With this option, applications are pushed in a pre-staged, stopped state where variables can be added (e.g. for use in staging hooks). The application can then be staged and started with the  <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-start" >helion start</xref> command or the Start button in the <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita#user-console-welcome" >Management Console</xref>.</p>
+<p>The <codeph>push</codeph> command implicitly stages and starts the application unless the <codeph>--no-start</codeph> option is used. With this option, applications are pushed in a pre-staged, stopped state where variables can be added (e.g. for use in staging hooks). The application can then be staged and started with the  <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-start" >helion start</xref> command or the Start button in the <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita#user-console-welcome" type="section" scope="external"  >Management Console</xref>.</p>
 <p>The client will display staging logs while pushing the application but
 will generally exit before any application logs are visible. To view the
-application logs, use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-information.dita#command-logs" >helion logs</xref> command.</p>
+application logs, use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-information.dita#command-logs" type="section" scope="external"  >helion logs</xref> command.</p>
 </section>
 <section id="allowed-file-types"> <title>Allowed File Types</title>
 <p>During the push process, Application Lifecycle Service includes only three file types:</p>
@@ -202,14 +202,14 @@ must be globally unique, and are allocated on a "first come, first
 serve" basis.</li>
 <li>
 <b>Application names</b> must be unique within the scope of the
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" >
+<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >
 <i>space</i>
 </xref>. Applications deployed in
 different spaces can have the same name, but the full application
 URL must be globally unique URL.</li>
 <li>
 <b>Service names</b> must be unique within the scope of the
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" >
+<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >
 <i>space</i>
 </xref>. The name given to a service
 during creation is a pointer to a globally unique string (i.e. the
@@ -219,7 +219,7 @@ with services created in other orgs and spaces.</li>
 </ul>
 </section>
 <section id="url-assignment"> <title>URL Assignment</title>
-<p>The ALS client assigns URLs for applications as follows during <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-push" >helion push</xref>.</p>
+<p>The ALS client assigns URLs for applications as follows during <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-push" type="section" scope="external"  >helion push</xref>.</p>
 <ol>
 <li>URLs set with the <codeph>--url</codeph> option take precedence.</li>
 <li>If no URLs are set with <codeph>--url</codeph> option, URLs specified in the <i>manifest.yml</i> file are used.</li>
@@ -235,17 +235,17 @@ with services created in other orgs and spaces.</li>
 </section>
 <section id="placement-zones"> <title>Placement Zones</title>
 <p>Placement zones are groups of DEA nodes which allow for segregation of application instances into different parts of a cluster, possibly with different physical hardware characteristics or network policies.</p>
-<p>DEA nodes are tagged by a administrator with a placement zone name. Users pushing applications can specify which placement zone the application instances are run on by using the <i>--placement-zone</i> option for the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-push" >helion push</xref>, or by changing the Placement Zone in the application's Settings view in the Management Console.</p>
+<p>DEA nodes are tagged by a administrator with a placement zone name. Users pushing applications can specify which placement zone the application instances are run on by using the <i>--placement-zone</i> option for the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-push" type="section" scope="external"  >helion push</xref>, or by changing the Placement Zone in the application's Settings view in the Management Console.</p>
 <p>The other relevant  client commands are:</p>
 <ul>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-placement.dita#command-placement-zone" >helion placement-zone</xref>: Show the list of DEAs associated with the specified placement zone.</li>
+<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-placement.dita#command-placement-zone" type="section" scope="external"  >helion placement-zone</xref>: Show the list of DEAs associated with the specified placement zone.</li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-placement.dita#command-placement-zones" >helion placement-zones</xref>: Show the available placement zones.</li>
+<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-placement.dita#command-placement-zones" type="section" scope="external"  >helion placement-zones</xref>: Show the available placement zones.</li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-placement.dita#command-set-placement-zone" >helion set-placement-zone</xref>: Associate the application with a specific placement zone.</li>
+<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-placement.dita#command-set-placement-zone" type="section" scope="external"  >helion set-placement-zone</xref>: Associate the application with a specific placement zone.</li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-placement.dita#command-unset-placement-zone" >helion unset-placement-zone</xref>: Remove the association between an application and its current placement zone.</li>
+<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-placement.dita#command-unset-placement-zone" type="section" scope="external"  >helion unset-placement-zone</xref>: Remove the association between an application and its current placement zone.</li>
 </ul>
 </section>
 <section id="application-containers"> <title>Application Containers</title>
@@ -298,7 +298,7 @@ application's name and the base URL for the system. An application named
 "myblog" deployed to an Application Lifecycle Service system at "api.example.com" would be given
 the URL "myblog.example.com".</p>
 <p>In addition to this default URL, additional URLs can be set for an
-application using the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-map" >helion map</xref>. The application
+application using the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-map" type="section" scope="external"  >helion map</xref>. The application
 will respond to requests on the mapped URL, provided a DNS record has
 been set up resolving to Application Lifecycle Service's external IP or hostname.</p>
 <p>For example, to map a URL to an existing application on Application Lifecycle Service:</p>
@@ -342,7 +342,7 @@ round robin between available instances of both versions:</p>
 +-------------+---+---------+--------------------+-------------+</codeblock>
 <p>As you gain confidence with the new revision, you can increase the
 number of instances of 'myapp-v2' (i.e. phasing that version into
-production rather than cutting over) and eventually <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-unmap" >unmap</xref> 'example.com' from the original 'myapp'.</p>
+production rather than cutting over) and eventually <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-unmap" type="section" scope="external"  >unmap</xref> 'example.com' from the original 'myapp'.</p>
 </section>
 <section id="best-practices"> <title>Best Practices</title>
 </section>
@@ -395,7 +395,7 @@ helion apps
 <p>While both versions of the application are live and mapped to the same
 production URL, the router will round-robin web requests to this URL
 between both versions.</p>
-<p>Next, <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-unmap" >unmap</xref> the production URL from the first app:</p>
+<p>Next, <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-unmap" type="section" scope="external"  >unmap</xref> the production URL from the first app:</p>
 <codeblock>helion unmap customertracker-v1 customertracker.example.com</codeblock>
 <p>The old version is still available in case it's needed for rollback. If
 everything works as expected with the newer code, delete the old app:</p>
@@ -440,14 +440,14 @@ manager</xref>
 
 <ul>
 <li>
-<xref href="https://github.com/balor/connect-memcached#connect-memcached" scope="external" format="html" >connect-memcached</xref>, a session store that uses Memcached</li>
+<xref href="https://github.com/balor/connect-memcached#connect-memcached" type="section" scope="external" format="html" >connect-memcached</xref>, a session store that uses Memcached</li>
 </ul>
 </li>
 <li>PHP:
 
 <ul>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/languages/1.2php.dita#php-persistent-sessions-filesystem" >Persistent Sessions</xref>
+<xref href="../../../../../devplatform/1.2/helion/user/deploy/languages/1.2php.dita#php-persistent-sessions-filesystem" type="section" scope="external"  >Persistent Sessions</xref>
 </li>
 <li>
 <xref href="http://php.net/manual/en/memcached.sessions.php" scope="external" format="html" >Memcached session support</xref>

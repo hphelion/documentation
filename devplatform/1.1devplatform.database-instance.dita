@@ -44,7 +44,7 @@ The database service provides lifecycle services for MySQL database instances. L
 <ol>
 <li>Install the <xref href="../devplatform/1.1devplatform_commercial_install.dita" >HP Helion Development Platform</xref>. </li>
 <li>
-<xref href="../devplatform/1.1devplatform_commercial_install.dita#install-database" >Configure</xref> the database service.</li>
+<xref href="../devplatform/1.1devplatform_commercial_install.dita#install-database" type="section" scope="external"  >Configure</xref> the database service.</li>
 </ol>
 </section>
 <section id="create"> <title>Creating a Database Instance</title>
@@ -89,7 +89,7 @@ The database service provides lifecycle services for MySQL database instances. L
 <li>Once the database instance has reached <b>Active</b> status, the instance is ready to use.</li>
 </ol>
 </section>
-<section id="creating-a-database-backup"> <title>Creating a Database Backup<!--Removed anchor point backup--><!-- id="backup" --></title>
+<section id="backup"> <title>Creating a Database Backup<!--Removed anchor point backup--><!-- id="backup" --></title>
 <p>The following section will demonstrate how to back up an existing database instance. This will take a backup of the entire database instance. If necessary, the backup can be restored to a new instance at a later time.</p>
 <ol>
 <li>Log in to the Horizon console.</li>

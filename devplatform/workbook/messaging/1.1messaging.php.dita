@@ -29,14 +29,14 @@
       Development Platform.</p>
 <section id="prereq"> <title>Prerequisites</title>
 <ul>
-<li>An installation of the <xref href="../../1.1devplatform_commercial_install.dita#topic240731">HP
+<li>An installation of the <xref href="../../1.1devplatform_commercial_install.dita#topic240731" type="section" scope="external" >HP
             Helion Development Platform.</xref></li>
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/1.1index.dita" >Cluster</xref>
 </li>
   <li>Access to the <xref href="../../helion/user/client/1.1index.dita" >Helion command-line client (CLI)</xref>.</li>
   <li>Access to the web-based <xref href="../../helion/user/console/1.1index.dita" >ALS Management Console</xref>.</li>
 <li>The RabbitMQ service is not enabled by default. Check and <xref type="section" href="#topic6705/rabbitmq">make sure it is enabled</xref>.</li>
-<li>Register for access to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HP Helion Development Platform</xref> (HDN).</li>
+<li>Register for access to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" type="section" scope="external" format="html" >HP Helion Development Platform</xref> (HDN).</li>
 </ul>
 </section>
 <section id="deployment-steps"> <title>Deployment Steps</title>

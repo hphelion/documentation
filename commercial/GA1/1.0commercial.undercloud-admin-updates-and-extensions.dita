@@ -30,7 +30,7 @@
 <xref type="section" href="#topic4442/download-a-package">Download a package</xref>
 </li>
 </ul>
-<section id="register-for-helion-distribution-network-access"> <title>Register for Helion Distribution Network Access<!--Removed anchor point Signup-for-Helion-Distribution-Network--><!-- id="Signup-for-Helion-Distribution-Network" --></title>
+<section id="Signup-for-Helion-Distribution-Network"> <title>Register for Helion Distribution Network Access<!--Removed anchor point Signup-for-Helion-Distribution-Network--><!-- id="Signup-for-Helion-Distribution-Network" --></title>
 <p>You cannot access the updates from the HP Helion Horizon undercloud dashboard unless you are a registered user.</p>
 <p>To register on the Helion Distribution Network:</p>
 <ol>
@@ -65,7 +65,7 @@ The page navigates to the HP Helion Product Catalog. Then, do the following:</p>
 </ol>
 <p>Once you register on the HP Helion Product Catalog, you are required to configure your credentials.</p>
 </section>
-<section id="configure-credentials"> <title>Configure credentials<!--Removed anchor point configcre--><!-- id="configcre" --></title>
+<section id="configcre"> <title>Configure credentials<!--Removed anchor point configcre--><!-- id="configcre" --></title>
 <p>To configure your credentials:</p>
 <ol>
 <li>

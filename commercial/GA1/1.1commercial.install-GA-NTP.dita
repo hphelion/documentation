@@ -190,7 +190,7 @@ fudge 127.127.1.0 stratum 10
 <section id="troubleshooting"> <title>Troubleshooting</title>
 </section>
 <section id="trouble-synching"> <title>Trouble synching</title>
-<p>If your client (including your NTP server) has trouble syncing time, see <xref href="../../commercial/GA1/1.1commercial.troubleshooting.ntp.dita#synch" >Troubleshooting NTP</xref>.</p>
+<p>If your client (including your NTP server) has trouble syncing time, see <xref href="../../commercial/GA1/1.1commercial.troubleshooting.ntp.dita#synch" type="section" scope="external"  >Troubleshooting NTP</xref>.</p>
 <p>
   <xref type="section" href="#topic5226"> Return to Top </xref>
 </p>

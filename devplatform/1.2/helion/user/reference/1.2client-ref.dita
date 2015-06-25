@@ -28,12 +28,12 @@
 </title>
 <ul>
 <li>
-          <xref href="1.2client-ref-getting-started.dita#topic2439/command-login">helion
+          <xref href="1.2client-ref-getting-started.dita#topic2439/command-login" type="section" scope="external" >helion
             login</xref>: Logs in to the current or specified target with the named user.</li>
 <li>
-  <xref href="1.2client-ref-getting-started.dita#topic2439/command-logout" >helion logout</xref>: Logs the current user out of the current, specified, or all targets.</li>
+  <xref href="1.2client-ref-getting-started.dita#topic2439/command-logout" type="section" scope="external"  >helion logout</xref>: Logs the current user out of the current, specified, or all targets.</li>
 <li>
-  <xref href="1.2client-ref-getting-started.dita#topic2439/command-target" >helion target</xref>: Set the target API endpoint for the client or report the current target.</li>
+  <xref href="1.2client-ref-getting-started.dita#topic2439/command-target" type="section" scope="external"  >helion target</xref>: Set the target API endpoint for the client or report the current target.</li>
 </ul>
 </section>
 <section id="administration"> <title>
@@ -41,33 +41,33 @@
 </title>
 <ul>
 <li>
-          <xref href="1.2client-ref-administration.dita#topic11202/command-admin-grant">helion admin
+          <xref href="1.2client-ref-administration.dita#topic11202/command-admin-grant" type="section" scope="external" >helion admin
             grant</xref>: Grant the named user administrator privileges for the current or specified
           target.</li>
 <li>
-  <xref href="1.2client-ref-administration.dita#topic11202/command-admin-list" >helion admin list</xref>: Show a list of the administrators for the current or specified target.</li>
+  <xref href="1.2client-ref-administration.dita#topic11202/command-admin-list" type="section" scope="external"  >helion admin list</xref>: Show a list of the administrators for the current or specified target.</li>
 <li>
-<xref href="1.2client-ref-administration.dita#topic11202/command-admin-patch" >helion admin patch</xref>: Apply a patch to the current or specified target.</li>
+<xref href="1.2client-ref-administration.dita#topic11202/command-admin-patch" type="section" scope="external"  >helion admin patch</xref>: Apply a patch to the current or specified target.</li>
 <li>
-<xref href="1.2client-ref-administration.dita#topic11202/command-admin-report" >helion admin report</xref>: Retrieve a report containing the logs of the current or specified target.</li>
+<xref href="1.2client-ref-administration.dita#topic11202/command-admin-report" type="section" scope="external"  >helion admin report</xref>: Retrieve a report containing the logs of the current or specified target.</li>
 <li>
-<xref href="1.2client-ref-administration.dita#topic11202/command-admin-revoke" >helion admin revoke</xref>: Revoke administrator privileges for the named user at the current or specified target.</li>
+<xref href="1.2client-ref-administration.dita#topic11202/command-admin-revoke" type="section" scope="external"  >helion admin revoke</xref>: Revoke administrator privileges for the named user at the current or specified target.</li>
 <li>
-<xref href="1.2client-ref-administration.dita#topic11202/command-info" >helion info</xref>: Show the basic system and account information.</li>
+<xref href="1.2client-ref-administration.dita#topic11202/command-info" type="section" scope="external"  >helion info</xref>: Show the basic system and account information.</li>
 <li>
-<xref href="1.2client-ref-administration.dita#topic11202/command-show-token" >helion show-token</xref>: Print the current target's authorization token.</li>
+<xref href="1.2client-ref-administration.dita#topic11202/command-show-token" type="section" scope="external"  >helion show-token</xref>: Print the current target's authorization token.</li>
 <li>
-<xref href="1.2client-ref-administration.dita#topic11202/command-stacks" >helion stacks</xref>: List the supported stacks of the target.</li>
+<xref href="1.2client-ref-administration.dita#topic11202/command-stacks" type="section" scope="external"  >helion stacks</xref>: List the supported stacks of the target.</li>
 <li>
-<xref href="1.2client-ref-administration.dita#topic11202/command-targets" >helion targets</xref>, <xref href="1.2client-ref-administration.dita#topic11202/command-tokens" >helion tokens</xref>: List the available targets and their authorization tokens, if any.</li>
+<xref href="1.2client-ref-administration.dita#topic11202/command-targets" >helion targets</xref>, <xref href="1.2client-ref-administration.dita#topic11202/command-tokens" type="section" scope="external"  >helion tokens</xref>: List the available targets and their authorization tokens, if any.</li>
 <li>
-<xref href="1.2client-ref-administration.dita#topic11202/command-usage" >helion usage</xref>: Show the current memory allocation and usage of the specified or current space.</li>
+<xref href="1.2client-ref-administration.dita#topic11202/command-usage" type="section" scope="external"  >helion usage</xref>: Show the current memory allocation and usage of the specified or current space.</li>
 <li>
-<xref href="1.2client-ref-administration.dita#topic11202/command-user" >helion user</xref>: Show the name of the current user in the current or specified target.</li>
+<xref href="1.2client-ref-administration.dita#topic11202/command-user" type="section" scope="external"  >helion user</xref>: Show the name of the current user in the current or specified target.</li>
 <li>
-<xref href="1.2client-ref-administration.dita#topic11202/command-user-info" >helion user-info</xref>: Shows the information of a user in the current or specified target.</li>
+<xref href="1.2client-ref-administration.dita#topic11202/command-user-info" type="section" scope="external"  >helion user-info</xref>: Shows the information of a user in the current or specified target.</li>
 <li>
-<xref href="1.2client-ref-administration.dita#topic11202/command-version" >helion version</xref>: Print the version number of the client.</li>
+<xref href="1.2client-ref-administration.dita#topic11202/command-version" type="section" scope="external"  >helion version</xref>: Print the version number of the client.</li>
 </ul>
 </section>
 <section id="applications"> <title>
@@ -75,15 +75,15 @@
 </title>
 <ul>
 <li>
-  <xref href="1.2client-ref-applications.dita#topic5470/command-app" >helion app</xref>: Show the information of the specified application.</li>
+  <xref href="1.2client-ref-applications.dita#topic5470/command-app" type="section" scope="external"  >helion app</xref>: Show the information of the specified application.</li>
 <li>
-  <xref href="1.2client-ref-applications.dita#topic5470/command-apps" >helion apps</xref>: List the applications deployed to the target.</li>
+  <xref href="1.2client-ref-applications.dita#topic5470/command-apps" type="section" scope="external"  >helion apps</xref>: List the applications deployed to the target.</li>
 <li>
-  <xref href="1.2client-ref-applications.dita#topic5470/command-list" >helion list</xref>: List the applications deployed to the target.</li>
+  <xref href="1.2client-ref-applications.dita#topic5470/command-list" type="section" scope="external"  >helion list</xref>: List the applications deployed to the target.</li>
 <li>
-  <xref href="1.2client-ref-applications.dita#topic5470/command-releases" >helion releases</xref>: Show the list of versions for the specified application.</li>
+  <xref href="1.2client-ref-applications.dita#topic5470/command-releases" type="section" scope="external"  >helion releases</xref>: Show the list of versions for the specified application.</li>
 <li>
-  <xref href="1.2client-ref-applications.dita#topic5470/command-versions" >helion versions</xref>: Show the list of versions for the specified application.</li>
+  <xref href="1.2client-ref-applications.dita#topic5470/command-versions" type="section" scope="external"  >helion versions</xref>: Show the list of versions for the specified application.</li>
 </ul>
 </section>
 <section id="authentication-tokens"> <title>
@@ -91,13 +91,13 @@
 </title>
 <ul>
 <li>
-  <xref href="1.2client-ref-tokens.dita#topic3706/command-create-service-auth-token" >helion create-service-auth-token</xref>: Create a new service authentication token.</li>
+  <xref href="1.2client-ref-tokens.dita#topic3706/command-create-service-auth-token" type="section" scope="external"  >helion create-service-auth-token</xref>: Create a new service authentication token.</li>
 <li>
-  <xref href="1.2client-ref-tokens.dita#topic3706/command-delete-service-auth-token" >helion delete-service-auth-token</xref>: Delete the specified service authentication token</li>
+  <xref href="1.2client-ref-tokens.dita#topic3706/command-delete-service-auth-token" type="section" scope="external"  >helion delete-service-auth-token</xref>: Delete the specified service authentication token</li>
 <li>
-  <xref href="1.2client-ref-tokens.dita#topic3706/command-service-auth-tokens" >helion service-auth-tokens</xref>:Show all service authentication tokens known to the target. </li>
+  <xref href="1.2client-ref-tokens.dita#topic3706/command-service-auth-tokens" type="section" scope="external"  >helion service-auth-tokens</xref>:Show all service authentication tokens known to the target. </li>
 <li>
-  <xref href="1.2client-ref-tokens.dita#topic3706/command-update-service-auth-token" >helion update-service-auth-token</xref>: Update the specified service authentication token.</li>
+  <xref href="1.2client-ref-tokens.dita#topic3706/command-update-service-auth-token" type="section" scope="external"  >helion update-service-auth-token</xref>: Update the specified service authentication token.</li>
 </ul>
 </section>
 <section id="brokers"> <title>
@@ -105,17 +105,17 @@
 </title>
 <ul>
 <li>
-  <xref href="1.2client-ref-brokers.dita#topic5507/command-add-service-broker" >helion add-service-broker</xref>: Make the named service broker known.</li>
+  <xref href="1.2client-ref-brokers.dita#topic5507/command-add-service-broker" type="section" scope="external"  >helion add-service-broker</xref>: Make the named service broker known.</li>
 <li>
-  <xref href="1.2client-ref-brokers.dita#topic5507/command-create-service-broker" >helion create-service-broker</xref>: Make the named service broker known. </li>
+  <xref href="1.2client-ref-brokers.dita#topic5507/command-create-service-broker" type="section" scope="external"  >helion create-service-broker</xref>: Make the named service broker known. </li>
 <li>
-  <xref href="1.2client-ref-brokers.dita#topic5507/command-delete-service-broker" >helion delete-service-broker</xref>: Remove the named service broker from the target</li>
+  <xref href="1.2client-ref-brokers.dita#topic5507/command-delete-service-broker" type="section" scope="external"  >helion delete-service-broker</xref>: Remove the named service broker from the target</li>
 <li>
-<xref href="1.2client-ref-brokers.dita#topic5507/command-remove-service-broker" >helion remove-service-broker</xref>: Remove the named service broker from the target.</li>
+<xref href="1.2client-ref-brokers.dita#topic5507/command-remove-service-broker" type="section" scope="external"  >helion remove-service-broker</xref>: Remove the named service broker from the target.</li>
 <li>
-<xref href="1.2client-ref-brokers.dita#topic5507/command-service-brokers" >helion service-brokers</xref>: Show the list of known service brokers.</li>
+<xref href="1.2client-ref-brokers.dita#topic5507/command-service-brokers" type="section" scope="external"  >helion service-brokers</xref>: Show the list of known service brokers.</li>
 <li>
-<xref href="1.2client-ref-brokers.dita#topic5507/command-update-service-broker" >helion update-service-broker</xref>: Update the target's knowledge of the named service broker.</li>
+<xref href="1.2client-ref-brokers.dita#topic5507/command-update-service-broker" type="section" scope="external"  >helion update-service-broker</xref>: Update the target's knowledge of the named service broker.</li>
 </ul>
 </section>
 <section id="buildpacks"> <title>
@@ -123,15 +123,15 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-buildpacks.dita#topic3572/command-buildpacks" >helion buildpacks</xref>: Show all buildpacks known to the target in the order they are checked in during auto-detection.</li>
+<xref href="1.2client-ref-buildpacks.dita#topic3572/command-buildpacks" type="section" scope="external"  >helion buildpacks</xref>: Show all buildpacks known to the target in the order they are checked in during auto-detection.</li>
 <li>
-<xref href="1.2client-ref-buildpacks.dita#topic3572/command-create-buildpack" >helion create-buildpack</xref>: Add a buildpack to the target.</li>
+<xref href="1.2client-ref-buildpacks.dita#topic3572/command-create-buildpack" type="section" scope="external"  >helion create-buildpack</xref>: Add a buildpack to the target.</li>
 <li>
-<xref href="1.2client-ref-buildpacks.dita#topic3572/command-delete-buildpack" >helion delete-buildpack</xref>: Remove the specified buildpack from the target.</li>
+<xref href="1.2client-ref-buildpacks.dita#topic3572/command-delete-buildpack" type="section" scope="external"  >helion delete-buildpack</xref>: Remove the specified buildpack from the target.</li>
 <li>
-<xref href="1.2client-ref-buildpacks.dita#topic3572/command-rename-buildpack" >helion rename-buildpack</xref>: Change the name of the specified buildpack.</li>
+<xref href="1.2client-ref-buildpacks.dita#topic3572/command-rename-buildpack" type="section" scope="external"  >helion rename-buildpack</xref>: Change the name of the specified buildpack.</li>
 <li>
-<xref href="1.2client-ref-buildpacks.dita#topic3572/command-update-buildpack" >helion update-buildpack</xref>: Change the information known about the specified buildpack.</li>
+<xref href="1.2client-ref-buildpacks.dita#topic3572/command-update-buildpack" type="section" scope="external"  >helion update-buildpack</xref>: Change the information known about the specified buildpack.</li>
 </ul>
 </section>
 <section id="control"> <title>
@@ -139,9 +139,9 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-buildpacks.dita#topic3247/command-migrate" >helion migrate</xref>: Move the application to a different space. </li>
+<xref href="1.2client-ref-buildpacks.dita#topic3247/command-migrate" type="section" scope="external"  >helion migrate</xref>: Move the application to a different space. </li>
 <li>
-<xref href="1.2client-ref-buildpacks.dita#topic3247/command-restage" >helion restage</xref>: Restage an application and regenerate its droplet.</li>
+<xref href="1.2client-ref-buildpacks.dita#topic3247/command-restage" type="section" scope="external"  >helion restage</xref>: Restage an application and regenerate its droplet.</li>
 </ul>
 </section>
 <section id="domains"> <title>
@@ -149,11 +149,11 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-domains.dita#topic2161/command-create-domain" >helion create-domain</xref>: Create a new domain.</li>
+<xref href="1.2client-ref-domains.dita#topic2161/command-create-domain" type="section" scope="external"  >helion create-domain</xref>: Create a new domain.</li>
 <li>
-<xref href="1.2client-ref-domains.dita#topic2161/command-delete-domain" >helion delete-domain</xref>: Delete the named domain.</li>
+<xref href="1.2client-ref-domains.dita#topic2161/command-delete-domain" type="section" scope="external"  >helion delete-domain</xref>: Delete the named domain.</li>
 <li>
-<xref href="1.2client-ref-domains.dita#topic2161/command-domains" >helion domains</xref>: List the available domains in the specified space or all domains.</li>
+<xref href="1.2client-ref-domains.dita#topic2161/command-domains" type="section" scope="external"  >helion domains</xref>: List the available domains in the specified space or all domains.</li>
 </ul>
 </section>
 <section id="feature-flags"> <title>
@@ -161,13 +161,13 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-flags.dita#topic2298/command-disable-feature-flag" >helion disable-feature-flag</xref>: Deactivate the specified feature. </li>
+<xref href="1.2client-ref-flags.dita#topic2298/command-disable-feature-flag" type="section" scope="external"  >helion disable-feature-flag</xref>: Deactivate the specified feature. </li>
 <li>
-<xref href="1.2client-ref-flags.dita#topic2298/command-enable-feature-flag" >helion enable-feature-flag</xref>: Activate the specified feature.</li>
+<xref href="1.2client-ref-flags.dita#topic2298/command-enable-feature-flag" type="section" scope="external"  >helion enable-feature-flag</xref>: Activate the specified feature.</li>
 <li>
-<xref href="1.2client-ref-flags.dita#topic2298/command-feature-flag" >helion feature-flag</xref>: Show the details of the specified feature flag.     </li>
+<xref href="1.2client-ref-flags.dita#topic2298/command-feature-flag" type="section" scope="external"  >helion feature-flag</xref>: Show the details of the specified feature flag.     </li>
 <li>
-<xref href="1.2client-ref-flags.dita#topic2298/command-feature-flags" >helion feature-flags</xref>:  Show all known feature flags and the status of each one.</li>
+<xref href="1.2client-ref-flags.dita#topic2298/command-feature-flags" type="section" scope="external"  >helion feature-flags</xref>:  Show all known feature flags and the status of each one.</li>
 </ul>
 </section>
 <section id="history"> <title>
@@ -175,11 +175,11 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-history.dita#topic958/command-history-clear" >helion history clear</xref>: Clear the saved history.</li>
+<xref href="1.2client-ref-history.dita#topic958/command-history-clear" type="section" scope="external"  >helion history clear</xref>: Clear the saved history.</li>
 <li>
-<xref href="1.2client-ref-history.dita#topic958/command-history-limit" >helion history limit</xref>: Limit the size of the history or display the current limit.</li>
+<xref href="1.2client-ref-history.dita#topic958/command-history-limit" type="section" scope="external"  >helion history limit</xref>: Limit the size of the history or display the current limit.</li>
 <li>
-<xref href="1.2client-ref-history.dita#topic958/command-history-list" >helion history list</xref>: Show the saved history of commands.</li>
+<xref href="1.2client-ref-history.dita#topic958/command-history-list" type="section" scope="external"  >helion history list</xref>: Show the saved history of commands.</li>
 </ul>
 </section>
 <section id="information"> <title>
@@ -187,35 +187,35 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-crashes" >helion crashes</xref>: List recent application crashes.</li>
+<xref href="1.2client-ref-information.dita#topic17778/command-crashes" type="section" scope="external"  >helion crashes</xref>: List recent application crashes.</li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-crashlogs" >helion crashlogs</xref>: Display log information for the application.</li>
+<xref href="1.2client-ref-information.dita#topic17778/command-crashlogs" type="section" scope="external"  >helion crashlogs</xref>: Display log information for the application.</li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-disk" >helion disk</xref>: Show the disk reservation for a deployed application.</li>
+<xref href="1.2client-ref-information.dita#topic17778/command-disk" type="section" scope="external"  >helion disk</xref>: Show the disk reservation for a deployed application.</li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-drain-list" >helion drain list</xref>: Show the list of drains attached to the application. </li>
+<xref href="1.2client-ref-information.dita#topic17778/command-drain-list" type="section" scope="external"  >helion drain list</xref>: Show the list of drains attached to the application. </li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-drains" >helion drains</xref>: Show the list of drains attached to the application. </li>
+<xref href="1.2client-ref-information.dita#topic17778/command-drains" type="section" scope="external"  >helion drains</xref>: Show the list of drains attached to the application. </li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-env" >helion env</xref>: List the application's environment variables.</li>
+<xref href="1.2client-ref-information.dita#topic17778/command-env" type="section" scope="external"  >helion env</xref>: List the application's environment variables.</li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-events" >helion events</xref>: Show recorded application events for an application or space.</li>
+<xref href="1.2client-ref-information.dita#topic17778/command-events" type="section" scope="external"  >helion events</xref>: Show recorded application events for an application or space.</li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-file" >helion file</xref>: Display directory listing or file.</li>
+<xref href="1.2client-ref-information.dita#topic17778/command-file" type="section" scope="external"  >helion file</xref>: Display directory listing or file.</li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-files" >helion files</xref>: Display directory listing or files.</li>
+<xref href="1.2client-ref-information.dita#topic17778/command-files" type="section" scope="external"  >helion files</xref>: Display directory listing or files.</li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-health" >helion health</xref>: Report the health of the specified application(s).</li>
+<xref href="1.2client-ref-information.dita#topic17778/command-health" type="section" scope="external"  >helion health</xref>: Report the health of the specified application(s).</li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-instances" >helion instances</xref>: List application instances for a deployed application.</li>
+<xref href="1.2client-ref-information.dita#topic17778/command-instances" type="section" scope="external"  >helion instances</xref>: List application instances for a deployed application.</li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-logs" >helion logs</xref>: Display the application log stream.</li>
+<xref href="1.2client-ref-information.dita#topic17778/command-logs" type="section" scope="external"  >helion logs</xref>: Display the application log stream.</li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-mem" >helion mem</xref>: Show the memory reservation for a deployed application.</li>
+<xref href="1.2client-ref-information.dita#topic17778/command-mem" type="section" scope="external"  >helion mem</xref>: Show the memory reservation for a deployed application.</li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-stats" >helion stats</xref>: Display the resource usage for a deployed application.</li>
+<xref href="1.2client-ref-information.dita#topic17778/command-stats" type="section" scope="external"  >helion stats</xref>: Display the resource usage for a deployed application.</li>
 <li>
-<xref href="1.2client-ref-information.dita#topic17778/command-tail" >helion tail</xref>: Monitor file for changes and stream the changes.</li>
+<xref href="1.2client-ref-information.dita#topic17778/command-tail" type="section" scope="external"  >helion tail</xref>: Monitor file for changes and stream the changes.</li>
 </ul>
 </section>
 <section id="management"> <title>
@@ -223,51 +223,51 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-create-app" >helion create-app</xref>: Create an empty application with the specified configuration.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-create-app" type="section" scope="external"  >helion create-app</xref>: Create an empty application with the specified configuration.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-dbshell" >helion dbshell</xref>: Invoke interactive db shell for a bound service.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-dbshell" type="section" scope="external"  >helion dbshell</xref>: Invoke interactive db shell for a bound service.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-delete" >helion delete</xref>: Delete the specified application(s).</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-delete" type="section" scope="external"  >helion delete</xref>: Delete the specified application(s).</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-drain-add" >helion drain add</xref>: Attach a new named drain to the application.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-drain-add" type="section" scope="external"  >helion drain add</xref>: Attach a new named drain to the application.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-drain-delete" >helion drain delete</xref>: Remove the named drain from the application.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-drain-delete" type="section" scope="external"  >helion drain delete</xref>: Remove the named drain from the application.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-env-add" >helion env-add</xref>: Add the specified environment variable to the named application.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-env-add" type="section" scope="external"  >helion env-add</xref>: Add the specified environment variable to the named application.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-env-del" >helion env-del</xref>: Remove the specified environment variable from the named application.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-env-del" type="section" scope="external"  >helion env-del</xref>: Remove the specified environment variable from the named application.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-map" >helion map</xref>: Make the application accessible through the specified URL (a route consisting of host and domain).</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-map" type="section" scope="external"  >helion map</xref>: Make the application accessible through the specified URL (a route consisting of host and domain).</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-open" >helion open</xref>: Open the url of the specified application in the default web browser.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-open" type="section" scope="external"  >helion open</xref>: Open the url of the specified application in the default web browser.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-push" >helion push</xref>: Configure, create, push, map, and start a new application</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-push" type="section" scope="external"  >helion push</xref>: Configure, create, push, map, and start a new application</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-rename" >helion rename</xref>: Rename the specified application.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-rename" type="section" scope="external"  >helion rename</xref>: Rename the specified application.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-restart" >helion restart</xref>: Stop and restart a deployed application.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-restart" type="section" scope="external"  >helion restart</xref>: Stop and restart a deployed application.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-rollback" >helion rollback</xref>: Switch to a different version of the application.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-rollback" type="section" scope="external"  >helion rollback</xref>: Switch to a different version of the application.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-run" >helion run</xref>: Run a specified command on a running instance.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-run" type="section" scope="external"  >helion run</xref>: Run a specified command on a running instance.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-scale" >helion scale</xref>: Update the number of instances, memory and/or disk reservation for a deployed application.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-scale" type="section" scope="external"  >helion scale</xref>: Update the number of instances, memory and/or disk reservation for a deployed application.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-scp" >helion scp</xref>: Copy source files and directories to the destination.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-scp" type="section" scope="external"  >helion scp</xref>: Copy source files and directories to the destination.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-set-env" >helion set-env</xref>: Add the specified environment variable to the named application.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-set-env" type="section" scope="external"  >helion set-env</xref>: Add the specified environment variable to the named application.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-ssh" >helion ssh</xref>: SSH to a running instance (or target), or run a specific command.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-ssh" type="section" scope="external"  >helion ssh</xref>: SSH to a running instance (or target), or run a specific command.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-start" >helion start</xref>: Start a deployed application.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-start" type="section" scope="external"  >helion start</xref>: Start a deployed application.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-stop" >helion stop</xref>: Stop a deployed application.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-stop" type="section" scope="external"  >helion stop</xref>: Stop a deployed application.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-switch-version" >helion switch-version</xref>: Switch to a different version of the application.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-switch-version" type="section" scope="external"  >helion switch-version</xref>: Switch to a different version of the application.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-unmap" >helion unmap</xref>: Unregister the application from a URL.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-unmap" type="section" scope="external"  >helion unmap</xref>: Unregister the application from a URL.</li>
 <li>
-<xref href="1.2client-ref-management.dita#topic50918/command-unset-env" >helion unset-env</xref>: Remove the specified environment variable from the named application.</li>
+<xref href="1.2client-ref-management.dita#topic50918/command-unset-env" type="section" scope="external"  >helion unset-env</xref>: Remove the specified environment variable from the named application.</li>
 </ul>
 </section>
 <section id="miscellaneous"> <title>
@@ -275,27 +275,27 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-admin" >helion admin</xref>: A set of administrative tasks.</li>
+<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-admin" type="section" scope="external"  >helion admin</xref>: A set of administrative tasks.</li>
 <li>
-<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-alias" >helion alias</xref>: Create a shortcut for a command.  </li>
+<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-alias" type="section" scope="external"  >helion alias</xref>: Create a shortcut for a command.  </li>
 <li>
-<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-aliases" >helion aliases</xref>: List the known aliases (shortcuts).</li>
+<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-aliases" type="section" scope="external"  >helion aliases</xref>: List the known aliases (shortcuts).</li>
 <li>
-<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-color" >helion color</xref>: Management of terminal colors.</li>
+<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-color" type="section" scope="external"  >helion color</xref>: Management of terminal colors.</li>
 <li>
-<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-curl" >helion curl</xref>: Run a raw REST request against the chosen target.</li>
+<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-curl" type="section" scope="external"  >helion curl</xref>: Run a raw REST request against the chosen target.</li>
 <li>
-<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-drain" >helion drain</xref>: Commands for the management of drains attached to applications.</li>
+<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-drain" type="section" scope="external"  >helion drain</xref>: Commands for the management of drains attached to applications.</li>
 <li>
-<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-guid" >helion guid</xref>: Map the specified name into a GUID given the type.</li>
+<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-guid" type="section" scope="external"  >helion guid</xref>: Map the specified name into a GUID given the type.</li>
 <li>
-<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-help" >helion help</xref>: Retrieve help for a command or command set.</li>
+<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-help" type="section" scope="external"  >helion help</xref>: Retrieve help for a command or command set.</li>
 <li>
-<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-named-entities" >helion named-entities</xref>: List the entity types usable for GUID.</li>
+<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-named-entities" type="section" scope="external"  >helion named-entities</xref>: List the entity types usable for GUID.</li>
 <li>
-<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-trace" >helion trace</xref>: Print the saved REST trace for the last client command to stdout.</li>
+<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-trace" type="section" scope="external"  >helion trace</xref>: Print the saved REST trace for the last client command to stdout.</li>
 <li>
-<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-unalias" >helion unalias</xref>: Remove a shortcut by name.</li>
+<xref href="1.2client-ref-miscellaneous.dita#topic3989/command-unalias" type="section" scope="external"  >helion unalias</xref>: Remove a shortcut by name.</li>
 </ul>
 </section>
 <section id="organizations"> <title>
@@ -303,27 +303,27 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-organizations.dita#topic6634/command-create-org" >helion create-org</xref>: Create a new organization.</li>
+<xref href="1.2client-ref-organizations.dita#topic6634/command-create-org" type="section" scope="external"  >helion create-org</xref>: Create a new organization.</li>
 <li>
-<xref href="1.2client-ref-organizations.dita#topic6634/delete-org" >helion command-delete-org</xref>: Delete the named organization</li>
+<xref href="1.2client-ref-organizations.dita#topic6634/delete-org" type="section" scope="external"  >helion command-delete-org</xref>: Delete the named organization</li>
 <li>
-<xref href="1.2client-ref-organizations.dita#topic6634/command-link-user-org" >helion link-user-org</xref>: Add the specified user to the named organization in various roles.</li>
+<xref href="1.2client-ref-organizations.dita#topic6634/command-link-user-org" type="section" scope="external"  >helion link-user-org</xref>: Add the specified user to the named organization in various roles.</li>
 <li>
-<xref href="1.2client-ref-organizations.dita#topic6634/command-org" >helion org</xref>: Show the named organization's information.    </li>
+<xref href="1.2client-ref-organizations.dita#topic6634/command-org" type="section" scope="external"  >helion org</xref>: Show the named organization's information.    </li>
 <li>
-<xref href="1.2client-ref-organizations.dita#topic6634/command-orgs" >helion orgs</xref>: List the available organizations.</li>
+<xref href="1.2client-ref-organizations.dita#topic6634/command-orgs" type="section" scope="external"  >helion orgs</xref>: List the available organizations.</li>
 <li>
-<xref href="1.2client-ref-organizations.dita#topic6634/command-org-users" >helion org-users</xref>: Show the users for the organization by role. </li>
+<xref href="1.2client-ref-organizations.dita#topic6634/command-org-users" type="section" scope="external"  >helion org-users</xref>: Show the users for the organization by role. </li>
 <li>
-<xref href="1.2client-ref-organizations.dita#topic6634/command-quota-org" >helion quota-org</xref>: Set the quotas for the current or named organization.</li>
+<xref href="1.2client-ref-organizations.dita#topic6634/command-quota-org" type="section" scope="external"  >helion quota-org</xref>: Set the quotas for the current or named organization.</li>
 <li>
-<xref href="1.2client-ref-organizations.dita#topic6634/command-rename-org" >helion rename-org</xref>: Rename the named organization.</li>
+<xref href="1.2client-ref-organizations.dita#topic6634/command-rename-org" type="section" scope="external"  >helion rename-org</xref>: Rename the named organization.</li>
 <li>
-<xref href="1.2client-ref-organizations.dita#topic6634/command-switch-org" >helion switch-org</xref>: Switch the current organization to the named organization.</li>
+<xref href="1.2client-ref-organizations.dita#topic6634/command-switch-org" type="section" scope="external"  >helion switch-org</xref>: Switch the current organization to the named organization.</li>
 <li>
-<xref href="1.2client-ref-organizations.dita#topic6634/command-unlink-user-org" >helion unlink-user-org</xref>: Remove the specified user from the named organization in various roles. </li>
+<xref href="1.2client-ref-organizations.dita#topic6634/command-unlink-user-org" type="section" scope="external"  >helion unlink-user-org</xref>: Remove the specified user from the named organization in various roles. </li>
 <li>
-<xref href="1.2client-ref-organizations.dita#topic6634/command-update-org" >helion update-org</xref>: Change one or more attributes of an organization in a single call.</li>
+<xref href="1.2client-ref-organizations.dita#topic6634/command-update-org" type="section" scope="external"  >helion update-org</xref>: Change one or more attributes of an organization in a single call.</li>
 </ul>
 </section>
 <section id="placement-zones"> <title>
@@ -331,13 +331,13 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-placement.dita#topic4565/command-placement-zone" >helion placement-zone</xref>: Show the list of DEAs associated with the specified placement zone.</li>
+<xref href="1.2client-ref-placement.dita#topic4565/command-placement-zone" type="section" scope="external"  >helion placement-zone</xref>: Show the list of DEAs associated with the specified placement zone.</li>
 <li>
-<xref href="1.2client-ref-placement.dita#topic4565/command-placement-zones" >helion placement-zones</xref>: Show the available placement zones.</li>
+<xref href="1.2client-ref-placement.dita#topic4565/command-placement-zones" type="section" scope="external"  >helion placement-zones</xref>: Show the available placement zones.</li>
 <li>
-<xref href="1.2client-ref-placement.dita#topic4565/command-set-placement-zone" >helion set-placement-zone</xref>: Associate the application with a specific placement zone.</li>
+<xref href="1.2client-ref-placement.dita#topic4565/command-set-placement-zone" type="section" scope="external"  >helion set-placement-zone</xref>: Associate the application with a specific placement zone.</li>
 <li>
-<xref href="1.2client-ref-placement.dita#topic4565/command-unset-placement-zone" >helion unset-placement-zone</xref>: Remove the association between an application and its current placement zone.</li>
+<xref href="1.2client-ref-placement.dita#topic4565/command-unset-placement-zone" type="section" scope="external"  >helion unset-placement-zone</xref>: Remove the association between an application and its current placement zone.</li>
 </ul>
 </section>
 <section id="quotas"> <title>
@@ -345,19 +345,19 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-quotas.dita#topic5727/command-quota-configure" >helion quota configure</xref>: Reconfigure the named quota plan.</li>
+<xref href="1.2client-ref-quotas.dita#topic5727/command-quota-configure" type="section" scope="external"  >helion quota configure</xref>: Reconfigure the named quota plan.</li>
 <li>
-<xref href="1.2client-ref-quotas.dita#topic5727/command-quota-create" >helion quota create</xref>: Create a new quota plan.</li>
+<xref href="1.2client-ref-quotas.dita#topic5727/command-quota-create" type="section" scope="external"  >helion quota create</xref>: Create a new quota plan.</li>
 <li>
-<xref href="1.2client-ref-quotas.dita#topic5727/command-quota-delete" >helion quota delete</xref>: Delete the named quota plan.</li>
+<xref href="1.2client-ref-quotas.dita#topic5727/command-quota-delete" type="section" scope="external"  >helion quota delete</xref>: Delete the named quota plan.</li>
 <li>
-<xref href="1.2client-ref-quotas.dita#topic5727/command-quota-list" >helion quota list</xref>: List the available quota plans. </li>
+<xref href="1.2client-ref-quotas.dita#topic5727/command-quota-list" type="section" scope="external"  >helion quota list</xref>: List the available quota plans. </li>
 <li>
-<xref href="1.2client-ref-quotas.dita#topic5727/command-quota-rename" >helion quota rename</xref>: Rename the named quota plan.</li>
+<xref href="1.2client-ref-quotas.dita#topic5727/command-quota-rename" type="section" scope="external"  >helion quota rename</xref>: Rename the named quota plan.</li>
 <li>
-<xref href="1.2client-ref-quotas.dita#topic5727/command-quota-show" >helion quota show</xref>: Show the details of the named quota plan</li>
+<xref href="1.2client-ref-quotas.dita#topic5727/command-quota-show" type="section" scope="external"  >helion quota show</xref>: Show the details of the named quota plan</li>
 <li>
-<xref href="1.2client-ref-quotas.dita#topic5727/command-quotas" >helion quotas</xref>: List the available quota plans.</li>
+<xref href="1.2client-ref-quotas.dita#topic5727/command-quotas" type="section" scope="external"  >helion quotas</xref>: List the available quota plans.</li>
 </ul>
 </section>
 <section id="routes"> <title>
@@ -365,9 +365,9 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-routes.dita#topic2750/command-delete-route" >helion delete-route</xref>: Delete the named route.</li>
+<xref href="1.2client-ref-routes.dita#topic2750/command-delete-route" type="section" scope="external"  >helion delete-route</xref>: Delete the named route.</li>
 <li>
-<xref href="1.2client-ref-routes.dita#topic2750/command-routes" >helion routes</xref>: List all routes or routes available in the specified space. </li>
+<xref href="1.2client-ref-routes.dita#topic2750/command-routes" type="section" scope="external"  >helion routes</xref>: List all routes or routes available in the specified space. </li>
 </ul>
 </section>
 <section id="security-groups"> <title>
@@ -375,19 +375,19 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-securitygroups.dita#topic5620/command-bind-security-group" >helion bind-security-group</xref>: Bind the named security group to the current space, the specified space, or the running and staging phases. </li>
+<xref href="1.2client-ref-securitygroups.dita#topic5620/command-bind-security-group" type="section" scope="external"  >helion bind-security-group</xref>: Bind the named security group to the current space, the specified space, or the running and staging phases. </li>
 <li>
-<xref href="1.2client-ref-securitygroups.dita#topic5620/command-create-security-group" >helion create-security-group</xref>: Create a new security group.</li>
+<xref href="1.2client-ref-securitygroups.dita#topic5620/command-create-security-group" type="section" scope="external"  >helion create-security-group</xref>: Create a new security group.</li>
 <li>
-<xref href="1.2client-ref-securitygroups.dita#topic5620/command-delete-security-group" >helion delete-security-group</xref>: Delete the named security group.</li>
+<xref href="1.2client-ref-securitygroups.dita#topic5620/command-delete-security-group" type="section" scope="external"  >helion delete-security-group</xref>: Delete the named security group.</li>
 <li>
-<xref href="1.2client-ref-securitygroups.dita#topic5620/command-security-group" >helion security-group</xref>: Show the details of the named security group.</li>
+<xref href="1.2client-ref-securitygroups.dita#topic5620/command-security-group" type="section" scope="external"  >helion security-group</xref>: Show the details of the named security group.</li>
 <li>
-<xref href="1.2client-ref-securitygroups.dita#topic5620/command-security-groups" >helion security-groups</xref>: Show all known security groups or just those assigned to the running and staging phases.</li>
+<xref href="1.2client-ref-securitygroups.dita#topic5620/command-security-groups" type="section" scope="external"  >helion security-groups</xref>: Show all known security groups or just those assigned to the running and staging phases.</li>
 <li>
-<xref href="1.2client-ref-securitygroups.dita#topic5620/command-unbind-security-group" >helion unbind-security-group</xref>: Drop the named security group from the current space, the specified space, or the running and staging phases.</li>
+<xref href="1.2client-ref-securitygroups.dita#topic5620/command-unbind-security-group" type="section" scope="external"  >helion unbind-security-group</xref>: Drop the named security group from the current space, the specified space, or the running and staging phases.</li>
 <li>
-<xref href="1.2client-ref-securitygroups.dita#topic5620/command-update-security-group" >helion update-security-group</xref>: Modify the named security group.</li>
+<xref href="1.2client-ref-securitygroups.dita#topic5620/command-update-security-group" type="section" scope="external"  >helion update-security-group</xref>: Modify the named security group.</li>
 </ul>
 </section>
 <section id="service-management"> <title>
@@ -395,21 +395,21 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-service-management.dita#topic10567/command-bind-service" >helion bind-service</xref>: Bind the named service to the specified application.</li>
+<xref href="1.2client-ref-service-management.dita#topic10567/command-bind-service" type="section" scope="external"  >helion bind-service</xref>: Bind the named service to the specified application.</li>
 <li>
-<xref href="1.2client-ref-service-management.dita#topic10567/command-clone-services" >helion clone-services</xref>: Copy the service bindings of the source application to the destination application.</li>
+<xref href="1.2client-ref-service-management.dita#topic10567/command-clone-services" type="section" scope="external"  >helion clone-services</xref>: Copy the service bindings of the source application to the destination application.</li>
 <li>
-<xref href="1.2client-ref-service-management.dita#topic10567/command-create-service" >helion create-service</xref>: Create a new provisioned service and optionally bind it to an application.</li>
+<xref href="1.2client-ref-service-management.dita#topic10567/command-create-service" type="section" scope="external"  >helion create-service</xref>: Create a new provisioned service and optionally bind it to an application.</li>
 <li>
-<xref href="1.2client-ref-service-management.dita#topic10567/command-delete-service" >helion delete-service</xref>: Delete the named provisioned service.</li>
+<xref href="1.2client-ref-service-management.dita#topic10567/command-delete-service" type="section" scope="external"  >helion delete-service</xref>: Delete the named provisioned service.</li>
 <li>
-<xref href="1.2client-ref-service-management.dita#topic10567/command-rename-service" >helion rename-service</xref>: Rename the specified service instance.</li>
+<xref href="1.2client-ref-service-management.dita#topic10567/command-rename-service" type="section" scope="external"  >helion rename-service</xref>: Rename the specified service instance.</li>
 <li>
-<xref href="1.2client-ref-service-management.dita#topic10567/command-tunnel" >helion tunnel</xref>: Create a local tunnel to a service and optionally start a local client as well.</li>
+<xref href="1.2client-ref-service-management.dita#topic10567/command-tunnel" type="section" scope="external"  >helion tunnel</xref>: Create a local tunnel to a service and optionally start a local client as well.</li>
 <li>
-<xref href="1.2client-ref-service-management.dita#topic10567/command-unbind-service" >helion unbind-service</xref>: Disconnect the named service from the specified application.</li>
+<xref href="1.2client-ref-service-management.dita#topic10567/command-unbind-service" type="section" scope="external"  >helion unbind-service</xref>: Disconnect the named service from the specified application.</li>
 <li>
-<xref href="1.2client-ref-service-management.dita#topic10567/command-update-user-provided-service" >helion update-user-provided-service</xref>: Update the credentials of a user provided service.</li>
+<xref href="1.2client-ref-service-management.dita#topic10567/command-update-user-provided-service" type="section" scope="external"  >helion update-user-provided-service</xref>: Update the credentials of a user provided service.</li>
 </ul>
 </section>
 <section id="service-plans"> <title>
@@ -417,15 +417,15 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-serviceplans.dita#topic4355/command-hide-service-plan" >helion hide-service-plan</xref>: Hide the specified service-plan from the named organization.</li>
+<xref href="1.2client-ref-serviceplans.dita#topic4355/command-hide-service-plan" type="section" scope="external"  >helion hide-service-plan</xref>: Hide the specified service-plan from the named organization.</li>
 <li>
-<xref href="1.2client-ref-serviceplans.dita#topic4355/command-service-plan" >helion service-plan</xref>: Show the details of the specified service plan</li>
+<xref href="1.2client-ref-serviceplans.dita#topic4355/command-service-plan" type="section" scope="external"  >helion service-plan</xref>: Show the details of the specified service plan</li>
 <li>
-<xref href="1.2client-ref-serviceplans.dita#topic4355/command-service-plans" >helion service-plans</xref>: List all available plans of the supported services</li>
+<xref href="1.2client-ref-serviceplans.dita#topic4355/command-service-plans" type="section" scope="external"  >helion service-plans</xref>: List all available plans of the supported services</li>
 <li>
-<xref href="1.2client-ref-serviceplans.dita#topic4355/command-show-service-plan" >helion show-service-plan</xref>: Make the specified service plan visible to the named organization.</li>
+<xref href="1.2client-ref-serviceplans.dita#topic4355/command-show-service-plan" type="section" scope="external"  >helion show-service-plan</xref>: Make the specified service plan visible to the named organization.</li>
 <li>
-<xref href="1.2client-ref-serviceplans.dita#topic4355/command-update-service-plan" >helion update-service-plan</xref>: Update the target's knowledge of the named service plan.</li>
+<xref href="1.2client-ref-serviceplans.dita#topic4355/command-update-service-plan" type="section" scope="external"  >helion update-service-plan</xref>: Update the target's knowledge of the named service plan.</li>
 </ul>
 </section>
 <section id="services"> <title>
@@ -433,13 +433,13 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-services.dita#topic3675/command-marketplace" >helion marketplace</xref>: List the supported service plans of the target for the current or specified space. </li>
+<xref href="1.2client-ref-services.dita#topic3675/command-marketplace" type="section" scope="external"  >helion marketplace</xref>: List the supported service plans of the target for the current or specified space. </li>
 <li>
-<xref href="1.2client-ref-services.dita#topic3675/command-purge-service-offerings" >helion purge-service-offerings</xref>: Purge all offerings of the service type from the system. <b>Warning</b> use with caution.</li>
+<xref href="1.2client-ref-services.dita#topic3675/command-purge-service-offerings" type="section" scope="external"  >helion purge-service-offerings</xref>: Purge all offerings of the service type from the system. <b>Warning</b> use with caution.</li>
 <li>
-<xref href="1.2client-ref-services.dita#topic3675/command-service" >helion service</xref>: Show information about the named service.</li>
+<xref href="1.2client-ref-services.dita#topic3675/command-service" type="section" scope="external"  >helion service</xref>: Show information about the named service.</li>
 <li>
-<xref href="1.2client-ref-services.dita#topic3675/command-services" >helion services</xref>: List the supported and provisioned services of the target.</li>
+<xref href="1.2client-ref-services.dita#topic3675/command-services" type="section" scope="external"  >helion services</xref>: List the supported and provisioned services of the target.</li>
 </ul>
 </section>
 <section id="spaces"> <title>
@@ -447,25 +447,25 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-spaces.dita#topic9898/command-create-space" >helion create-space</xref>: Create a new space.</li>
+<xref href="1.2client-ref-spaces.dita#topic9898/command-create-space" type="section" scope="external"  >helion create-space</xref>: Create a new space.</li>
 <li>
-<xref href="1.2client-ref-spaces.dita#topic9898/command-delete-space" >helion delete-space</xref>: Delete the named space.</li>
+<xref href="1.2client-ref-spaces.dita#topic9898/command-delete-space" type="section" scope="external"  >helion delete-space</xref>: Delete the named space.</li>
 <li>
-<xref href="1.2client-ref-spaces.dita#topic9898/command-link-user-space" >helion link-user-space</xref>: Add the specified user to the named space in various roles. </li>
+<xref href="1.2client-ref-spaces.dita#topic9898/command-link-user-space" type="section" scope="external"  >helion link-user-space</xref>: Add the specified user to the named space in various roles. </li>
 <li>
-<xref href="1.2client-ref-spaces.dita#topic9898/command-rename-space" >helion rename-space</xref>: Rename the named space.</li>
+<xref href="1.2client-ref-spaces.dita#topic9898/command-rename-space" type="section" scope="external"  >helion rename-space</xref>: Rename the named space.</li>
 <li>
-<xref href="1.2client-ref-spaces.dita#topic9898/command-space-users" >helion space-users</xref>: Show the users for the space, by role.</li>
+<xref href="1.2client-ref-spaces.dita#topic9898/command-space-users" type="section" scope="external"  >helion space-users</xref>: Show the users for the space, by role.</li>
 <li>
-<xref href="1.2client-ref-spaces.dita#topic9898/command-space" >helion space</xref>: Show the named space's information.  </li>
+<xref href="1.2client-ref-spaces.dita#topic9898/command-space" type="section" scope="external"  >helion space</xref>: Show the named space's information.  </li>
 <li>
-<xref href="1.2client-ref-spaces.dita#topic9898/command-spaces" >helion spaces</xref>: List the available spaces in the specified organization.</li>
+<xref href="1.2client-ref-spaces.dita#topic9898/command-spaces" type="section" scope="external"  >helion spaces</xref>: List the available spaces in the specified organization.</li>
 <li>
-<xref href="1.2client-ref-spaces.dita#topic9898/command-switch-space" >helion switch-space</xref>: Switch from the current space to the named space. </li>
+<xref href="1.2client-ref-spaces.dita#topic9898/command-switch-space" type="section" scope="external"  >helion switch-space</xref>: Switch from the current space to the named space. </li>
 <li>
-<xref href="1.2client-ref-spaces.dita#topic9898/command-unlink-user-space" >helion unlink-user-space</xref>: Remove the specified user from the named space in various roles.</li>
+<xref href="1.2client-ref-spaces.dita#topic9898/command-unlink-user-space" type="section" scope="external"  >helion unlink-user-space</xref>: Remove the specified user from the named space in various roles.</li>
 <li>
-<xref href="1.2client-ref-spaces.dita#topic9898/command-update-space" >helion update-space </xref>: Change one or more attributes of a space in a single call.</li>
+<xref href="1.2client-ref-spaces.dita#topic9898/command-update-space" type="section" scope="external"  >helion update-space </xref>: Change one or more attributes of a space in a single call.</li>
 </ul>
 </section>
 <section id="space-quotas"> <title>
@@ -473,21 +473,21 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-spacequotas.dita#topic7566/command-create-space-quota" >helion create-space-quota</xref>: Create a new space quota. </li>
+<xref href="1.2client-ref-spacequotas.dita#topic7566/command-create-space-quota" type="section" scope="external"  >helion create-space-quota</xref>: Create a new space quota. </li>
 <li>
-<xref href="1.2client-ref-spacequotas.dita#topic7566/command-delete-space-quota" >helion delete-space-quota</xref>: Delete the named space quota. </li>
+<xref href="1.2client-ref-spacequotas.dita#topic7566/command-delete-space-quota" type="section" scope="external"  >helion delete-space-quota</xref>: Delete the named space quota. </li>
 <li>
-<xref href="1.2client-ref-spacequotas.dita#topic7566/command-rename-space-quota" >helion rename-space-quota</xref>: Rename the named space quota.</li>
+<xref href="1.2client-ref-spacequotas.dita#topic7566/command-rename-space-quota" type="section" scope="external"  >helion rename-space-quota</xref>: Rename the named space quota.</li>
 <li>
-<xref href="1.2client-ref-spacequotas.dita#topic7566/command-set-space-quota" >helion set-space-quota</xref>: Assign the specified space quota to the current or specified space</li>
+<xref href="1.2client-ref-spacequotas.dita#topic7566/command-set-space-quota" type="section" scope="external"  >helion set-space-quota</xref>: Assign the specified space quota to the current or specified space</li>
 <li>
-<xref href="1.2client-ref-spacequotas.dita#topic7566/command-space-quota" >helion space-quota</xref>: Show the details of the named space quota. </li>
+<xref href="1.2client-ref-spacequotas.dita#topic7566/command-space-quota" type="section" scope="external"  >helion space-quota</xref>: Show the details of the named space quota. </li>
 <li>
-<xref href="1.2client-ref-spacequotas.dita#topic7566/command-space-quotas" >helion space-quotas</xref>: List the space quotas owned by the current, specified, or all organizations.</li>
+<xref href="1.2client-ref-spacequotas.dita#topic7566/command-space-quotas" type="section" scope="external"  >helion space-quotas</xref>: List the space quotas owned by the current, specified, or all organizations.</li>
 <li>
-<xref href="1.2client-ref-spacequotas.dita#topic7566/command-unset-space-quota" >helion unset-space-quota</xref>: Drop the space quota from the current or specified space.</li>
+<xref href="1.2client-ref-spacequotas.dita#topic7566/command-unset-space-quota" type="section" scope="external"  >helion unset-space-quota</xref>: Drop the space quota from the current or specified space.</li>
 <li>
-<xref href="1.2client-ref-spacequotas.dita#topic7566/command-update-space-quota" >helion update-space-quota</xref>: Modify the named space quota.</li>
+<xref href="1.2client-ref-spacequotas.dita#topic7566/command-update-space-quota" type="section" scope="external"  >helion update-space-quota</xref>: Modify the named space quota.</li>
 </ul>
 </section>
 <section id="user-management"> <title>
@@ -495,21 +495,21 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-user-management.dita#topic7058/command-add-user" >helion add-user</xref>: Register a new user in the current or specified target. Requires admin privileges.</li>
+<xref href="1.2client-ref-user-management.dita#topic7058/command-add-user" type="section" scope="external"  >helion add-user</xref>: Register a new user in the current or specified target. Requires admin privileges.</li>
 <li>
-<xref href="1.2client-ref-user-management.dita#topic7058/command-delete-user" >helion delete-user</xref>: Delete the named user and the user's applications and services from the current or specified target. Requires admin privileges.</li>
+<xref href="1.2client-ref-user-management.dita#topic7058/command-delete-user" type="section" scope="external"  >helion delete-user</xref>: Delete the named user and the user's applications and services from the current or specified target. Requires admin privileges.</li>
 <li>
-<xref href="1.2client-ref-user-management.dita#topic7058/command-login-fields" >helion login-fields</xref>: Show the names of the credential fields needed for a login. </li>
+<xref href="1.2client-ref-user-management.dita#topic7058/command-login-fields" type="section" scope="external"  >helion login-fields</xref>: Show the names of the credential fields needed for a login. </li>
 <li>
-<xref href="1.2client-ref-user-management.dita#topic7058/command-passwd" >helion passwd</xref>: Change the password of the current user in the current or specified target.</li>
+<xref href="1.2client-ref-user-management.dita#topic7058/command-passwd" type="section" scope="external"  >helion passwd</xref>: Change the password of the current user in the current or specified target.</li>
 <li>
-<xref href="1.2client-ref-user-management.dita#topic7058/command-register" >helion register</xref>: Register a new user in the current or specified target. Requires admin privileges.</li>
+<xref href="1.2client-ref-user-management.dita#topic7058/command-register" type="section" scope="external"  >helion register</xref>: Register a new user in the current or specified target. Requires admin privileges.</li>
 <li>
-<xref href="1.2client-ref-user-management.dita#topic7058/command-token" >helion token</xref>: Interactively set authentication token.</li>
+<xref href="1.2client-ref-user-management.dita#topic7058/command-token" type="section" scope="external"  >helion token</xref>: Interactively set authentication token.</li>
 <li>
-<xref href="1.2client-ref-user-management.dita#topic7058/command-unregister" >helion unregister</xref>: Delete the named user and the user's applications and services from the current or specified target. Requires admin privileges.</li>
+<xref href="1.2client-ref-user-management.dita#topic7058/command-unregister" type="section" scope="external"  >helion unregister</xref>: Delete the named user and the user's applications and services from the current or specified target. Requires admin privileges.</li>
 <li>
-<xref href="1.2client-ref-user-management.dita#topic7058/command-users" >helion users</xref>: Show the list of users known to the current or specified target.</li>
+<xref href="1.2client-ref-user-management.dita#topic7058/command-users" type="section" scope="external"  >helion users</xref>: Show the list of users known to the current or specified target.</li>
 </ul>
 </section>
 </body>

@@ -33,7 +33,7 @@ most commonly used resources:</p>
 </xref>
 page.</li>
 <li>
-<b>Download the Client</b>: Link to the locally hosted <xref href="../../../../devplatform/helion/user/client/1.0index.dita#client" >
+<b>Download the Client</b>: Link to the locally hosted <xref href="../../../../devplatform/helion/user/client/1.0index.dita#client" type="section" scope="external"  >
 <i>CLI
 client</i>
 </xref> download.</li>
@@ -51,7 +51,7 @@ accessible from the drop down list at the top left.</li>
 </section>
 <section id="organization-view"> <title>Organization View</title>
 <p>The Organizations page shows a list of all
-<xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces" >
+<xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >
 <i>Organizations</i>
 </xref> that the
 current user is a member of. Depending on how the ALS PaaS has been
@@ -69,7 +69,7 @@ and how much of it is currently used by applications.</li>
 </ul>
 </li>
 <li>
-<b>Domains</b>: Domains belonging to the Organization that can be used by applications deployed to <xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces" >
+<b>Domains</b>: Domains belonging to the Organization that can be used by applications deployed to <xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >
 <i>Spaces</i>
 </xref> in the Organization. Typically, these will be a subdomain of the Application Lifecycle Service system itself. For example, an Organization called <codeph>acme</codeph> on a PaaS with the address <codeph>api.example.org</codeph> might have the domain <codeph>\*.acme.example.org</codeph>.</li>
 </ul>
@@ -85,7 +85,7 @@ Space</i>
 </xref>.</li>
 <li>Users: A list of Users who are members of the Organization, showing
 the Email address and Organization
-<xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces-roles" >
+<xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces-roles" type="section" scope="external"  >
 <i>Roles</i>
 </xref> of each.
 
@@ -148,12 +148,12 @@ settings, reports, and logs.</li>
 it uses, when it was created, and when it was last modified.</li>
 <li>
 <b>Routes</b>: Essentially, the URLs mapped to the application. These
-<xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces-routes" >
+<xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces-routes" type="section" scope="external"  >
 <i>Routes</i>
 </xref> are made
 up of the name of the application name (a virtual hostname) followed
 by a dot and a
-<xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces-domains" >
+<xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces-domains" type="section" scope="external"  >
 <i>Domain</i>
 </xref> (assigned
 to the Org and Space).</li>
@@ -202,7 +202,7 @@ view of that service instance showing:</p>
 <li>its current state</li>
 </ul>
 <p>For more information on a service instance, such as its credentials, use
-the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-service" >
+the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-service" type="section" scope="external"  >
 <codeph>helion service</codeph>
 </xref>
 command.</p>

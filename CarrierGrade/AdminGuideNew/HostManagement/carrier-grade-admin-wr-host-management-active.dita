@@ -41,10 +41,10 @@
 
 <ul>
 <li>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita#removing" >Removing Compute Nodes</xref>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita#removing" type="section" scope="external"  >Removing Compute Nodes</xref>
 </li>
 <li>
-<xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita#adjust" >Adjusting Resources on a Compute Node</xref>
+<xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita#adjust" type="section" scope="external"  >Adjusting Resources on a Compute Node</xref>
 </li>
 </ul>
 </li>

@@ -26,7 +26,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/admin/server/1.2docker.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/server/docker/--></p>
-<p>Application Lifecycle Service's <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2architecture.dita#architecture-dea" >DEA role</xref> runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the <i>fence</i> process, which in turn uses
+<p>Application Lifecycle Service's <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2architecture.dita#architecture-dea" type="section" scope="external"  >DEA role</xref> runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the <i>fence</i> process, which in turn uses
 <xref href="http://docs.docker.io/en/latest/" scope="external" format="html" >Docker</xref> to create and destroy Linux
 containers on demand.</p>
 <p>Typically, admins will not have to work directly with Docker, but it is
@@ -47,7 +47,7 @@ accessible if needed to customize or create new container images.</p>
 </ul>
 <section id="modifying-or-updating-the-container-image"> <title>Modifying or Updating the Container Image</title>
 <p>Application containers are created from a base Docker image (a template used to create Linux containers). Admins can create new images to add specific software required by applications or update operating system packages.</p>
-<p>See also the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#upgrade-docker" >Upgrade the Docker Image</xref> section in the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita" >Best Practices</xref> reference, which shows how to modify the Docker base image <b>without</b> changing <i>kato config</i>.</p>
+<p>See also the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#upgrade-docker" type="section" scope="external"  >Upgrade the Docker Image</xref> section in the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita" >Best Practices</xref> reference, which shows how to modify the Docker base image <b>without</b> changing <i>kato config</i>.</p>
 <p>To create a new base image for Application Lifecycle Service to use for application containers, perform the following steps <b>on all nodes running the DEA role</b>:</p>
 <ol>
 <li> Start with an empty working directory:<codeblock>mkdir ~/newimg
@@ -60,15 +60,15 @@ helion/stack/alsek</codeblock></li>
           update or installation command. For example:<codeblock>FROM helion/stack-alsek:kato-patched
 RUN apt-get -y install libgraphite2-dev</codeblock><ul>
             <li>
-              <xref href="http://docs.docker.io/en/latest/use/builder#from" scope="external"
+              <xref href="http://docs.docker.io/en/latest/use/builder#from" type="section" scope="external"
                 format="html">FROM</xref>: inherits the environment and installed software from the
               latest patched version of the app image.</li>
             <li>
-              <xref href="http://docs.docker.io/en/latest/use/builder#run" scope="external"
+              <xref href="http://docs.docker.io/en/latest/use/builder#run" type="section" scope="external"
                 format="html">RUN</xref>: specifies arbitrary commands to run before saving the
               image.</li>
             <li>
-              <xref href="http://docs.docker.io/en/latest/use/builder#add" scope="external"
+              <xref href="http://docs.docker.io/en/latest/use/builder#add" type="section" scope="external"
                 format="html">ADD</xref>: could be used to copy files into the image.
               <!--A BR tag was used here in the original source.--></li>
           </ul></li>
@@ -181,14 +181,14 @@ api.paas.example.com:49156/exampleco/newimg</codeblock><p>This
             step only needs to be done once, as the configuration change is shared with all
             nodes.</p></li>
 </ol>
-<p>The <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#upgrade-docker" >Upgrade the Docker Image</xref> section in the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita" >Best Practices</xref> documentation explains how to modify the Docker base image without changing <i>kato config</i>.</p>
+<p>The <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#upgrade-docker" type="section" scope="external"  >Upgrade the Docker Image</xref> section in the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita" >Best Practices</xref> documentation explains how to modify the Docker base image without changing <i>kato config</i>.</p>
 </section>
 <section id="docker-privileged-containers"> <title>Privileged Containers</title>
 <p>ALS runs "unprivileged" Docker containers by default. The containers do not have access to any devices on the (virtual) host.</p>
 <p>This is a barrier to certain operations such as mounting disk partitions 
 via NFS, so an option exists to change Docker container creation to "privileged":</p>
 <codeblock>kato config set dea_ng docker/privileged true </codeblock>
-<p>This <xref href="https://docs.docker.com/reference/run#runtime-privilege-and-lxc-configuration" scope="external" format="html" >container privilege elevation</xref> would normally be used in conjunction with <i>sudo</i> container access in the quota:</p>
+<p>This <xref href="https://docs.docker.com/reference/run#runtime-privilege-and-lxc-configuration" type="section" scope="external" format="html" >container privilege elevation</xref> would normally be used in conjunction with <i>sudo</i> container access in the quota:</p>
 <codeblock>helion quota configure --allow-sudo </codeblock>
 <p>
 <b>Warning:</b>  <b>Every application running under this configuration has the potential to become root on the host.</b> These changes should only be made when all users of the system are completely trusted (i.e. with admin privileges) as they compromise the isolation between application containers and host.</p>

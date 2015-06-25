@@ -454,7 +454,7 @@ The following example sets the NTP server address. Do not copy this address.
 </li>
 </ol>
 <p>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv" >Return to HP Helion <tm tmtype="reg">OpenStack</tm> Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv" type="section" scope="external"  >Return to HP Helion <tm tmtype="reg">OpenStack</tm> Installation Prerequisites</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

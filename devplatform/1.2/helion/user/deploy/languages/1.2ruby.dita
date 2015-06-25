@@ -151,10 +151,10 @@ applications.</p>
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-<xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#command" >
+<xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#command" type="section" scope="external"  >
 <i>command</i>
 </xref> key and set the
-<xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#web" >
+<xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#web" type="section" scope="external"  >
 <i>processes: web</i>
 </xref>
 key to Null ("\~").</p>
@@ -171,7 +171,7 @@ processes:
 <section id="general-guidelines"> <title>General Guidelines</title>
 </section>
 <section id="app-web-servers"> <title>App/Web Servers</title>
-<p>For the best performance, <xref href="https://devcenter.heroku.com/articles/ruby#webserver" scope="external" format="html" >using the Thin Ruby webserver</xref> is recommended.
+<p>For the best performance, <xref href="https://devcenter.heroku.com/articles/ruby#webserver" type="section" scope="external" format="html" >using the Thin Ruby webserver</xref> is recommended.
 Include <codeph>gem 'thin'</codeph> in your <i>Gemfile</i>.</p>
 </section>
 <section id="bundler"> <title>Bundler</title>
@@ -183,7 +183,7 @@ via:</p>
 <p>Generally, <codeph>bundle exec</codeph> must be used when running any commands that are installed through Gemfile/bundler.</p>
 <p>To run <codeph>rake stats</codeph>, for instance, use the <codeph>helion run</codeph> command:</p>
 <codeblock>helion run *appname* bundle exec rake stats</codeblock>
-<p>See the <xref href="../../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" >ALS Command Reference</xref> for details on the use of <codeph>helion run</codeph>.</p>
+<p>See the <xref href="../../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" type="section" scope="external"  >ALS Command Reference</xref> for details on the use of <codeph>helion run</codeph>.</p>
 </section>
 <section id="references"> <title>References</title>
 <ul>

@@ -42,7 +42,7 @@
 <ol>
 <li>Install the <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref>. </li>
 <li>
-          <xref href="1.2devplatform_commercial_install.dita#topic24073/installing-services"
+          <xref href="1.2devplatform_commercial_install.dita#topic24073/installing-services" type="section" scope="external" 
             >Configure the services</xref>.</li>
 </ol>
 </section>

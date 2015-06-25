@@ -26,7 +26,7 @@
 </p>
 <p>An Application Lifecycle Service PaaS can be extensively customized and themed. PaaS
 administrators can add or remove runtimes, frameworks and services from
-the system, and change the look and content of the <xref href="../../../../devplatform/helion/user/console/1.0index.dita#management-console" >
+the system, and change the look and content of the <xref href="../../../../devplatform/helion/user/console/1.0index.dita#management-console" type="section" scope="external"  >
 <i>Management
 Console</i>
 </xref> interface.</p>

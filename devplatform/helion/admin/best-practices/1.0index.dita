@@ -83,7 +83,7 @@ Containers</xref>
 </ul>
 </li>
 </ul>
-<p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../../../../devplatform/helion/admin/server/1.0upgrade.dita#upgrade" >
+<p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../../../../devplatform/helion/admin/server/1.0upgrade.dita#upgrade" type="section" scope="external"  >
 <i>kato node
 upgrade</i>
 </xref> or a <xref type="section" href="#topic9421/bestpractices-migration">
@@ -91,7 +91,7 @@ upgrade</i>
 or cluster</i>
 </xref>, but patch releases (normally
 minor fixes to particular components) can be applied in place using the
-<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-patch" >
+<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-patch" type="section" scope="external"  >
 <i>kato patch</i>
 </xref>
 command.</p>
@@ -142,7 +142,7 @@ important when migrating to a new cluster.</p>
 </section>
 <section id="custom-services"> <title>Custom Services</title>
 <p>Application Lifecycle Service can export and import data from built-in data services running
-on Application Lifecycle Service nodes, but it has no mechanism to handle data in <xref href="../../../../devplatform/helion/admin/cluster/1.0external-db.dita#external-db" >
+on Application Lifecycle Service nodes, but it has no mechanism to handle data in <xref href="../../../../devplatform/helion/admin/cluster/1.0external-db.dita#external-db" type="section" scope="external"  >
 <i>external
 databases</i>
 </xref> (unless
@@ -167,7 +167,7 @@ containing staged applications) are re-deployed to new DEA nodes from
 the Controller.</p>
 </section>
 <section id="exporting-the-server-data"> <title>Exporting the server data</title>
-<p>Data export is done with the <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-data-export" >
+<p>Data export is done with the <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-data-export" type="section" scope="external"  >
 <i>kato data
 export</i>
 </xref>
@@ -203,7 +203,7 @@ below).</p>
 </p>
 <p>Exporting data can take several minutes. For clusters with constant
 usage or large numbers of users, apps, and databases, put the exporting
-system in <xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#console-settings" >
+system in <xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#console-settings" type="section" scope="external"  >
 <i>Maintenance Mode</i>
 </xref>
 (e.g. during a scheduled maintenance window) before exporting.</p>
@@ -225,7 +225,7 @@ node:</p>
 at 3AM as <codeph>root</codeph> using the <codeph>helion</codeph> user's login environment (required) and saves a .tgz file to a
 mounted external filesystem.</p>
 <p>Scheduled (non-interactive) backups using the <codeph>kato export</codeph> command will need to be run by <codeph>root</codeph> as
-some shell operations performed in the export require <codeph>sudo</codeph> when run interactively. For clusters, passwordless <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication" scope="external" format="html" >SSH key
+some shell operations performed in the export require <codeph>sudo</codeph> when run interactively. For clusters, passwordless <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication" type="section" scope="external" format="html" >SSH key
 authentication</xref>
 between the Core node and all other nodes will also need to be set up.
 The command should be run on the node hosting the 'filesystem' role, as
@@ -245,7 +245,7 @@ the terms and conditions.</p>
 </p>
 <p>All roles in the new cluster should be started prior to proceeding with
 import. If you would like all services to be imported, their
-corresponding roles must be enabled (see also <xref href="../../../../devplatform/helion/admin/reference/1.0known-issues.dita#known-issues-rabbit-import" >
+corresponding roles must be enabled (see also <xref href="../../../../devplatform/helion/admin/reference/1.0known-issues.dita#known-issues-rabbit-import" type="section" scope="external"  >
 <i>Importing Apps using
 RabbitMQ
 2.4</i>
@@ -267,7 +267,7 @@ hostname of the old Core node:</p>
 <section id="upgrade"> <title>Upgrading (v1.0 and later)</title>
 <p>The <codeph>kato node upgrade</codeph> command was added in
 Application Lifecycle Service 1.0 to allow upgrading Application Lifecycle Service systems in place. See
-<xref href="../../../../devplatform/helion/admin/server/1.0upgrade.dita#upgrade" >
+<xref href="../../../../devplatform/helion/admin/server/1.0upgrade.dita#upgrade" type="section" scope="external"  >
 <i>Upgrading Application Lifecycle Service</i>
 </xref> for full
 instructions.</p>
@@ -309,7 +309,7 @@ containers to larger partitions:</p>
 <i>quotas enabled</i>
 </xref>),</li>
 <li>create directories for the items you wish to move,</li>
-<li>run the <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-relocate" >
+<li>run the <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-relocate" type="section" scope="external"  >
 <i>kato
 relocate</i>
 </xref>
@@ -337,7 +337,7 @@ block volumes.</p>
 <p>The Application Lifecycle Service filesystem quotas cannot be enforced by the system unless
 they are mounted on partitions which support Linux quotas. This may need
 to be specified explicitly when running the <codeph>mount</codeph>
-command. The <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-relocate" >
+command. The <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-relocate" type="section" scope="external"  >
 <i>kato
 relocate</i>
 </xref> command

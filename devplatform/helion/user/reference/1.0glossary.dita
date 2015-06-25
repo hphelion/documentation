@@ -110,7 +110,7 @@ Network</xref>.</dd>
 <dlentry>
 <dt>doozerd</dt>
 <dd>A consistent distributed data store. Used for cluster management in
-Application Lifecycle Service. (see <xref href="https://github.com/ha/doozerd#readme" scope="external" format="html" >Doozer project on
+Application Lifecycle Service. (see <xref href="https://github.com/ha/doozerd#readme" type="section" scope="external" format="html" >Doozer project on
 GitHub</xref>)</dd>
 </dlentry>
 
