@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1410636108227" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="1">Setting Up the Scenario Environment</title>
+    <shortdesc ixia_locid="2">The deployment scenarios require a HP Helion OpenStack Carrier Grade environment
+        established by the <nameliteral ixia_locid="40">admin</nameliteral> user, and set up by end
+        users <nameliteral ixia_locid="117">user1</nameliteral> and<nameliteral ixia_locid="119">
+            user2</nameliteral>. </shortdesc>
+    <prolog>
+        <author ixia_locid="3">Michael B</author>
+        <author ixia_locid="135">Pedro Sanchez</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001E_N1001B_N10001" ixia_locid="4">
+            <p ixia_locid="121">The <nameliteral ixia_locid="123">admin</nameliteral> user must
+                define user accounts, shared and external tenant networks, and VM flavors for the
+                end users. The end users <nameliteral ixia_locid="118">user1</nameliteral>
+                    and<nameliteral ixia_locid="120"> user2</nameliteral> can set up the remaining
+                required resources, including keypairs, private tenant networks, virtual routers,
+                Cinder volumes, Glance images, and virtual machine instances.</p>
+            <p ixia_locid="122">For an overview of the components that make up the scenario
+                environment, see <xref href="jow1411497294920.xml" ixia_locid="131"/>.</p>
+            <note id="note_N10052_N10030_N1002D_N10001" ixia_locid="124">
+                <p ixia_locid="125">You can set up the scenario environment using the web
+                    administration interface or the CLI. For CLI instructions, see <xref href="jow1404333819947.xml" ixia_locid="132"/>.</p>
+            </note>
+        </context>
+        <steps>
+            <step id="step_N1002F_N1002C_N1001E_N10001" ixia_locid="38">
+                <cmd ixia_locid="39">Use the <nameliteral ixia_locid="45">admin</nameliteral>
+                    account to complete the following tasks, grouped as <xref href="jow1404333821651.xml" ixia_locid="127"/>.</cmd>
+                <substeps id="substeps_zyw_sq3_np">
+                    <substep ixia_locid="50">
+                        <cmd ixia_locid="51">Create tenants ( see <xref href="jow1404333723047.xml" ixia_locid="54"/>).</cmd>
+                    </substep>
+                    <substep ixia_locid="55">
+                        <cmd ixia_locid="56">Create users (see <xref href="jow1404333728991.xml" ixia_locid="59"/>).</cmd>
+                    </substep>
+                    <substep ixia_locid="65">
+                        <cmd ixia_locid="66">Set up segmentation ranges on existing provider
+                            networks (see <xref href="jow1410637938926.xml" ixia_locid="69"/>).</cmd>
+                    </substep>
+                    <substep ixia_locid="60">
+                        <cmd ixia_locid="61">Set up tenant networks (see <xref href="jow1404333714134.xml" ixia_locid="64"/>).</cmd>
+                    </substep>
+                    <substep ixia_locid="70">
+                        <cmd ixia_locid="71">Set up flavors (see <xref href="jow1404333668441.xml" ixia_locid="74"/>).</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step id="step_N1009C_N10027_N1001B_N10001" ixia_locid="32">
+                <cmd ixia_locid="33">Use the <nameliteral ixia_locid="75">user1</nameliteral>
+                    account to complete the following tasks on <nameliteral ixia_locid="129">tenant1</nameliteral>, grouped as <xref href="jow1404333809139.xml" ixia_locid="128"/>. </cmd>
+                <substeps id="substeps_dm3_fr3_np">
+                    <substep ixia_locid="79">
+                        <cmd ixia_locid="80">Create a keypair (see <xref href="jow1404333586935.xml" ixia_locid="83"/>).</cmd>
+                    </substep>
+                    <substep ixia_locid="84">
+                        <cmd ixia_locid="85">Create a private tenant network (see <xref href="jow1404333594789.xml" ixia_locid="88"/>).</cmd>
+                    </substep>
+                    <substep ixia_locid="89">
+                        <cmd ixia_locid="90">Configure the management network (see <xref href="rec1433352802888.xml" ixia_locid="93"/>) .</cmd>
+                    </substep>
+                    <substep ixia_locid="94">
+                        <cmd ixia_locid="95">Set up a virtual router (see <xref href="jow1410804489611.xml" ixia_locid="98"/>).</cmd>
+                    </substep>
+                    <substep ixia_locid="99">
+                        <cmd ixia_locid="100">Set up a <nameliteral ixia_locid="133">Cinder</nameliteral> volume (see
+                                <xref href="jow1408735356648.xml" ixia_locid="103"/>).</cmd>
+                    </substep>
+                    <substep ixia_locid="104">
+                        <cmd ixia_locid="105">Set up a <nameliteral ixia_locid="134">Glance</nameliteral> image (see
+                                <xref href="jow1404333673732.xml" ixia_locid="108"/>).</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step id="step_N10165_N10040_N1002A_N10001" ixia_locid="109">
+                <cmd ixia_locid="110">Use the <nameliteral ixia_locid="111">user2 </nameliteral>
+                    account to complete the same User Tasks for
+                    <nameliteral ixia_locid="130">tenant2</nameliteral>.</cmd>
+            </step>
+        </steps>
+        <result id="result_N10172_N1002A_N10001" ixia_locid="34">
+            <p ixia_locid="35">When these tasks have been completed, the environment is ready for
+                scenario deployment.</p>
+        </result>
+        <postreq id="postreq_N1017D_N1002A_N10001" ixia_locid="112">
+            <p ixia_locid="113">To deploy a Bridging Scenario, see <xref href="jow1411149829129.xml" ixia_locid="114"/>.</p>
+            <p ixia_locid="115">To deploy a Routing Scenario, see <xref href="jow1411149875790.xml" ixia_locid="116"/>.</p>
+        </postreq>
+    </taskbody>
+</task-wr>

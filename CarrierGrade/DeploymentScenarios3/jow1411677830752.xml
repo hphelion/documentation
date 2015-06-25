@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1411677830752" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="53">Running Traffic Through the Test Paths</title>
+ <shortdesc ixia_locid="2">You can exercise the HP Helion OpenStack Carrier Grade components by running test traffic
+  through the test path for the Bridging or Routing Scenarios.</shortdesc>
+ <prolog>
+  <author ixia_locid="30">Michael B</author>
+  <author ixia_locid="3">Pedro Sanchez</author>
+ </prolog>
+ <conbody>
+  <p ixia_locid="48">For a description of the scenarios, including illustrations of the test paths,
+   see <xref href="jow1410640041471.xml" ixia_locid="54"/>.</p>
+  <section id="section_N10030_N10024_N10001" ixia_locid="55">
+   <title ixia_locid="56">Bridging Scenario Connections</title>
+   <p ixia_locid="57">To connect test equipment for a Bridging Scenario, you require the
+    following:</p>
+   <ul id="ul_o3w_m24_y4">
+    <li ixia_locid="59">
+     <p ixia_locid="61">Access to an edge Layer 2 switch connected to the physical network on which
+      the provider networks <nameliteral ixia_locid="63">provider-net-a</nameliteral> and
+       <nameliteral ixia_locid="65">provider-net-b</nameliteral> are implemented. The switch must be
+      configured for connection to the tenant networks <nameliteral ixia_locid="67">tenant1-net</nameliteral> and <nameliteral ixia_locid="69">tenant2-net</nameliteral>,
+      realized on the provider networks. For switch connectivity details, consult the <nameliteral ixia_locid="51">admin</nameliteral> user.</p>
+    </li>
+    <li ixia_locid="71">
+     <p ixia_locid="73">The VLAN IDs for the tenant networks on the provider network. You can obtain
+      this information from the <nameliteral ixia_locid="52">admin</nameliteral> user.</p>
+    </li>
+   </ul>
+   <p ixia_locid="75">Connect a traffic generator and analyzer ports to the appropriate ports on the
+    Layer 2 switch, using the appropriate VLANs.</p>
+   <p ixia_locid="23">Test performance is influenced substantially by the following factors: </p>
+   <ul id="ul_gdt_m34_y4">
+    <li ixia_locid="42">
+     <p ixia_locid="43">the type of virtual switch deployed in each tenant (Linux-native bridging or
+      DPDK-accelerated)</p>
+    </li>
+    <li ixia_locid="44">
+     <p ixia_locid="45">the type of virtual interface used to attach to the tenant networks (virtio
+      or AVP)</p>
+    </li>
+   </ul>
+   <p ixia_locid="46">The possible combinations are ranked from highest to lowest performance as
+    follows:</p>
+   <ol id="ol_gm2_bj4_y4">
+    <li ixia_locid="24">
+     <p ixia_locid="25">DPDK-accelerated switch with AVP network interfaces (best performance)</p>
+    </li>
+    <li ixia_locid="26">
+     <p ixia_locid="27">Linux-native bridging with AVP network interfaces</p>
+    </li>
+    <li ixia_locid="28">
+     <p ixia_locid="29">Linux-native bridging with virtio network  interfaces (poorest
+      performance)</p>
+    </li>
+   </ol>
+  </section>
+  <section id="section_N100C0_N10024_N10001" ixia_locid="77">
+   <title ixia_locid="78">Routing Scenario Connections</title>
+   <p ixia_locid="58">To connect test equipment for a Routing Scenario, you require the
+    following:</p>
+   <ul id="ul_ogh_zxy_np">
+    <li ixia_locid="60">
+     <p ixia_locid="62">A connection to the physical network on which the provider networks
+       <nameliteral ixia_locid="64">provider-net-a</nameliteral> and <nameliteral ixia_locid="66">provider-net-b</nameliteral> are implemented. The connection can be direct or through a
+      Layer 3 edge router.</p>
+    </li>
+    <li ixia_locid="72">
+     <p ixia_locid="74">The IP subnets assigned to the tenant networks <nameliteral ixia_locid="68">tenant1-net</nameliteral> and <nameliteral ixia_locid="70">tenant2-net</nameliteral>.</p>
+    </li>
+   </ul>
+   <p ixia_locid="76">Connect a traffic generator and analyzer ports to the physical network,
+    configured with IP addresses on the appropriate subnets.</p>
+   <p ixia_locid="79">Test performance is influenced by the use of virtio network interfaces or AVP network
+    interfaces, with AVP providing better performance.</p>
+  </section>
+  <section id="section_N10104_N10024_N10001" ixia_locid="80">
+   <title ixia_locid="81">Test Recommendations</title>
+   <p ixia_locid="17">For realistic performance figures, follow these recommendations:</p>
+   <ul id="ul_pcl_c24_y4">
+    <li ixia_locid="18">
+     <p ixia_locid="19">Use bidirectional test traffic. This gives the virtual switches in the test
+      path, both Linux-native and DPDK-accelerated, as well as all other physical switches involved
+      in the connection, the opportunity to populate the MAC address-to-port tables for both
+      directions, minimizing the amount of flooded traffic.</p>
+     <p ixia_locid="20"> One-way traffic is not typical of a real-world deployment, in which there
+      is always at least a small amount of traffic in each direction. One-way traffic results in
+      CPU-intensive activity as packets are sent to all destination ports instead of one port.  In
+      addition, the HP Helion OpenStack Carrier Grade implements flooded-packet throttling to protect VMs, limiting
+      the rate to 100Mb/s per virtual switch CPU. The effect is to reduce the overall switching
+      throughput substantially.</p>
+    </li>
+    <li ixia_locid="21">
+     <p ixia_locid="22">Use at least 20 different IP-5-tuple traffic flows. The AVS switch on the
+      compute node host and the switches of the example guest images implement software-based
+      multi-core switching that balances traffic across multiple cores based on IP-5-tuple flows.
+      Fewer IP-5-tuple flows translate into sub-optimal flow balancing decisions, which in turn
+      translate into poor usage of the available cores.</p>
+    </li>
+    <li ixia_locid="82">
+     <p ixia_locid="83">Consider the effect of packet size on performance. At the platform level, larger packets
+      require less packet processing overhead. At the application level, larger packets may or may
+      not require more processing overhead, depending on the nature of the application. </p>
+    </li>
+   </ul>
+  </section>
+ </conbody>
+</concept-wr>

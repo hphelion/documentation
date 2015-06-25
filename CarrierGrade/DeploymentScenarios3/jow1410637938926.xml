@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1410637938926" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="1">Creating Segmentation Ranges</title>
+    <shortdesc conref="jow1425657297895.xml#jow1425657297895/shortdesc_N10017_N1000E_N10001" ixia_locid="4"/>
+    <prolog>
+        <author ixia_locid="3">MichaelB</author>
+    </prolog>
+    <taskbody>
+        <prereq conref="jow1425657297895.xml#jow1425657297895/prereq_N10027_N10024_N10001" id="prereq_N10022_N1001F_N10001" ixia_locid="355"/>
+        <context id="context_N10028_N1001F_N10001" ixia_locid="367">
+            <p conref="jow1425657297895.xml#jow1425657297895/seg_range_definition" ixia_locid="368"/>
+            <p conref="jow1425657297895.xml#jow1425657297895/p_seg_range_sharing" ixia_locid="369"/>
+            <p ixia_locid="370">For a provider network of type VLAN, the identifiers are called VLAN IDs.</p>
+            <p conref="jow1425657297895.xml#jow1425657297895/p_seg_ranges_in_scenarios" ixia_locid="371"/>
+        </context>
+        <steps id="steps_vnj_bdg_hr">
+            <step conref="jow1425657297895.xml#jow1425657297895/step_N10037_N10034_N1001C_N10001" id="step_N10030_N1002C_N1001F_N10001" ixia_locid="357">
+                <cmd ixia_locid="358"/>
+            </step>
+            <step conref="jow1425657297895.xml#jow1425657297895/step_N100A8_N1004A_N10024_N10001" id="step_N10039_N1002C_N1001F_N10001" ixia_locid="359">
+                <cmd ixia_locid="360"/>
+            </step>
+            <step id="step_N10042_N1002C_N1001F_N10001" ixia_locid="361">
+                <cmd conref="jow1425657297895.xml#jow1425657297895/cmd_add_seg_range" ixia_locid="362"/>
+                <info conref="jow1425657297895.xml#jow1425657297895/info_add_seg-range" ixia_locid="363"/>
+                <info conref="jow1425657297895.xml#jow1425657297895/info_pnet_a_tenant1_screen" ixia_locid="366"/>
+            </step>
+            <step conref="jow1425657297895.xml#jow1425657297895/step_N101B9_N1005C_N10032_N1000F_N10001" id="step_N1004F_N1002C_N1001F_N10001" ixia_locid="364">
+                <cmd ixia_locid="365"/>
+            </step>
+            <step id="step_N1013D_N1004A_N10024_N10001" ixia_locid="285">
+                <cmd ixia_locid="286">Add a segmentation range on <nameliteral ixia_locid="278">provider-net-a</nameliteral> for use by <nameliteral ixia_locid="287">tenant2</nameliteral>.</cmd>
+                <info ixia_locid="177">
+                    <p ixia_locid="179">On the <wintitle ixia_locid="181">Provider Network
+                            Overview</wintitle> page, click <uicontrol ixia_locid="183">Create
+                            Range</uicontrol> to open the <wintitle ixia_locid="185">Create
+                            Segmentation Range</wintitle> page. Fill in the form as illustrated
+                        below:</p>
+                    <fig id="fig_kqv_sb3_wq" ixia_locid="187">
+                        <image href="jow1408644359361.image" id="image_lqv_sb3_wq" ixia_locid="192" placement="inline" width="4in"/>
+                    </fig>
+                    <p ixia_locid="189">Click <uicontrol ixia_locid="191">Create Segmentation
+                            Range</uicontrol> to commit the changes.</p>
+                </info>
+                <stepresult ixia_locid="288">
+                    <p ixia_locid="289">This creates a segmentation range on <nameliteral ixia_locid="290">provider-net-a</nameliteral> for use by <nameliteral ixia_locid="291">tenant2</nameliteral>. The range includes VLAN IDs
+                        664‒680 . For reference, this range is assigned the name <nameliteral ixia_locid="292">pnet-a-tenant2</nameliteral>.</p>
+                </stepresult>
+            </step>
+            <step id="step_N10194_N1004A_N10024_N10001" ixia_locid="293">
+                <cmd ixia_locid="294">Add a segmentation range on <nameliteral ixia_locid="295">provider-net-a</nameliteral> for use by the <nameliteral ixia_locid="308">admin</nameliteral> tenant.</cmd>
+                <info ixia_locid="74">
+                    <p ixia_locid="309">This step assigns a segmentation range with a single VLAN ID
+                        (10) for use only by the <nameliteral ixia_locid="310">admin</nameliteral>
+                        tenant. Later in this exercise, the <nameliteral ixia_locid="311">admin</nameliteral> tenant uses this VLAN ID for the <nameliteral ixia_locid="312">external-net</nameliteral> tenant network.</p>
+                    <p ixia_locid="75">On the <wintitle ixia_locid="76">Provider Network
+                            Overview</wintitle> page, click <uicontrol ixia_locid="77">Create
+                            Range</uicontrol> to display the <wintitle ixia_locid="78">Create
+                            Segmentation Range</wintitle> page. Fill in the form as illustrated
+                        below:</p>
+                    <fig id="fig_irq_n1j_wq" ixia_locid="79">
+                        <image href="jow1404333679506.image" id="image_srq_n1j_wq" ixia_locid="80" placement="inline" width="4in"/>
+                    </fig>
+                    <p ixia_locid="81">Click <uicontrol ixia_locid="82">Create Segmentation
+                            Range</uicontrol> to commit the changes.</p>
+                </info>
+                <stepresult ixia_locid="296">
+                    <p ixia_locid="315">This creates a segmentation range on <nameliteral ixia_locid="317">provider-net-a</nameliteral> for use by <nameliteral ixia_locid="319">admin</nameliteral>. The range includes a single VLAN
+                        ID (10). For reference, this range is assigned the name <nameliteral ixia_locid="320">pnet-a-common</nameliteral>.</p>
+                </stepresult>
+            </step>
+            <step id="step_N101E6_N1004A_N10024_N10001" ixia_locid="301">
+                <cmd ixia_locid="302">Edit <nameliteral ixia_locid="303">provider-net-b</nameliteral> to add a segmentation range.</cmd>
+                <info ixia_locid="240">
+                    <p ixia_locid="242">On the <uicontrol ixia_locid="244">Provider
+                            Networks</uicontrol> tab, click <nameliteral ixia_locid="261">provider-net-b</nameliteral>.</p>
+                </info>
+                <stepresult ixia_locid="247">
+                    <p ixia_locid="249">The <wintitle ixia_locid="251">Provider Network
+                            Overview</wintitle> page appears. </p>
+                    <fig id="fig_wqk_xbj_wq" ixia_locid="253">
+                        <image href="jow1412012173429.image" id="image_grk_xbj_wq" ixia_locid="263" placement="inline" width="5.5in">
+                            <alt ixia_locid="264">Provider Network Overview for provider-net-b</alt>
+                        </image>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N1022F_N1004A_N10024_N10001" ixia_locid="322">
+                <cmd ixia_locid="324">Add a segmentation range on <nameliteral ixia_locid="326">provider-net-b</nameliteral> for use by all tenants.</cmd>
+                <info ixia_locid="328">
+                    <p ixia_locid="330">On the <wintitle ixia_locid="332">Provider Network
+                            Overview</wintitle> page, click <uicontrol ixia_locid="334">Create
+                            Range</uicontrol> to open the <wintitle ixia_locid="336">Create
+                            Segmentation Range</wintitle> page. Fill in the form as illustrated
+                        below:</p>
+                    <fig id="fig_svz_jbj_wq" ixia_locid="338">
+                        <image href="jow1404333685642.image" id="image_cwz_jbj_wq" ixia_locid="340" placement="inline" width="4in"/>
+                    </fig>
+                    <p ixia_locid="342">Click <uicontrol ixia_locid="344">Create Segmentation
+                            Range</uicontrol> to commit the changes.</p>
+                </info>
+                <stepresult ixia_locid="346">
+                    <p ixia_locid="348">This creates a <term ixia_locid="350">shared</term>
+                        segmentation range on <nameliteral ixia_locid="352">provider-net-b</nameliteral>. Shared segmentation ranges contain VLAN
+                        IDs that can be used by any tenant. This one includes VLAN IDs 568‒599. For
+                        reference, this range is assigned the name <nameliteral ixia_locid="354">pnet-b-common</nameliteral>.</p>
+                </stepresult>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

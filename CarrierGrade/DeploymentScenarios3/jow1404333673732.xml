@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333673732" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <title ixia_locid="1">Setting Up the Example Guest Image</title>
+    <shortdesc ixia_locid="2">You can import guest images for use with the HP Helion OpenStack Carrier Grade.</shortdesc>
+    <prolog>
+        <author ixia_locid="36">Michael B</author>
+        <author ixia_locid="3">PedroSanchez</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N10020_N1001D_N10001" ixia_locid="4">
+            <p ixia_locid="34">This example assumes that a guest disk image named <filepath ixia_locid="6">example-guest.img</filepath> is available on the file system of
+                the active controller. The guest image is available as part of the HP Helion OpenStack Carrier Grade
+                product on WindShare or on the product DVD.</p>
+            <p ixia_locid="35">The image must be uploaded to <nameliteral ixia_locid="7">Glance</nameliteral>, the OpenStack image deployment service, so that it can be
+                used to launch new virtual machines.</p>
+        </context>
+        <steps>
+            <step id="step_N10038_N10035_N1001D_N10001" ixia_locid="8">
+                <cmd ixia_locid="9">List the images available on the system.</cmd>
+                <info ixia_locid="10">
+                    <p ixia_locid="11">Select <uicontrol ixia_locid="12">Images</uicontrol> in the
+                        System Panel section of the <uicontrol ixia_locid="13">Admin</uicontrol> tab
+                        to open the <wintitle ixia_locid="14">Images</wintitle> page.</p>
+                </info>
+                <stepresult ixia_locid="15">
+                    <p ixia_locid="16">Since no images have been defined yet, an empty list is displayed as
+                        illustrated below.</p>
+                    <fig id="fig_N10063_N1005A_N10038_N10035_N1001D_N10001" ixia_locid="17">
+                        <image href="jow1404333669166.image" id="image_ins_lfy_xn" ixia_locid="18" placement="inline" width="6in"/>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N10074_N10035_N1001D_N10001" ixia_locid="19">
+                <cmd ixia_locid="20">Upload the guest image to the Glance service.</cmd>
+                <info ixia_locid="21">
+                    <p ixia_locid="22">Click <nameliteral ixia_locid="23">Create Image</nameliteral>
+                        and fill in the form as illustrated below:</p>
+                    <fig id="fig_N1008A_N1007C_N10073_N10035_N1001D_N10001" ixia_locid="24">
+                        <image href="jow1404333670698.image" id="image_tw5_n1b_yn" ixia_locid="25" placement="inline" width="5in"/>
+                    </fig>
+                    <p ixia_locid="26">Click <uicontrol ixia_locid="27">Create Image</uicontrol> to
+                        upload the guest image.</p>
+                </info>
+            </step>
+        </steps>
+        <result id="result_N100A3_N1001D_N10001" ixia_locid="28">
+            <p ixia_locid="29">The Glance image <nameliteral ixia_locid="30">example-guest</nameliteral> is available now. The <wintitle ixia_locid="31">Images</wintitle> page appears as follows:</p>
+            <fig id="fig_N100B9_N100A5_N1001D_N10001" ixia_locid="32">
+                <image href="jow1404333672312.image" id="image_xkh_x1b_yn" ixia_locid="33" placement="inline" width="6in"/>
+            </fig>
+        </result>
+    </taskbody>
+</task-wr>

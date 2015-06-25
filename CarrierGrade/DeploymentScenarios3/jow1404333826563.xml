@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333826563" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Setting Up Flavors Using the CLI</title>
+    <shortdesc ixia_locid="2">You can use the CLI to define virtual hardware resource profiles, or
+            <i ixia_locid="36">flavors</i>, for use when launching virtual machines.</shortdesc>
+    <prolog>
+        <author ixia_locid="35">Michael B</author>
+        <author ixia_locid="4">Tom Towle</author>
+        <author ixia_locid="3">Pedro Sanchez</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N10023_N10020_N10001" ixia_locid="5">
+            <p ixia_locid="7">Available flavors and their IDs can be listed using the following
+                command:</p>
+            <codeblock ixia_locid="8"><systemoutput ixia_locid="37">~(keystone_admin)$ </systemoutput><userinput ixia_locid="10">nova flavor-list</userinput></codeblock>
+        </context>
+        <steps>
+            <step id="step_N1003C_N10039_N10020_N10001" ixia_locid="11">
+                <cmd ixia_locid="12">Define the flavor <nameliteral ixia_locid="13">example-guest.tiny</nameliteral>.</cmd>
+                <stepxmp ixia_locid="14">
+                    <codeblock ixia_locid="15"><systemoutput ixia_locid="40">~(keystone_admin)$ </systemoutput><userinput ixia_locid="43">nova flavor-create example-guest.tiny 100 512 0 1</userinput>
+<systemoutput ixia_locid="41">~(keystone_admin)$ </systemoutput><userinput ixia_locid="44">nova flavor-key example-guest.tiny set hw:cpu_policy=dedicated</userinput></codeblock>
+                </stepxmp>
+                <stepresult ixia_locid="18">
+                    <p ixia_locid="19">The flavor <nameliteral ixia_locid="20">example-guest.tiny</nameliteral> is created with ID 100. New virtual
+                        machines using this flavor are allocated 512 MB of memory, no disks, and one
+                        dedicated virtual CPU.</p>
+                </stepresult>
+            </step>
+            <step id="step_N10061_N10039_N10020_N10001" ixia_locid="21">
+                <cmd ixia_locid="22">Define the flavor <nameliteral ixia_locid="23">example-guest.small</nameliteral>.</cmd>
+                <stepxmp ixia_locid="24">
+                    <codeblock ixia_locid="25"><systemoutput ixia_locid="39">~(keystone_admin)$ </systemoutput><userinput ixia_locid="27">nova flavor-create example-guest.small 101 512 0 2</userinput>
+<systemoutput ixia_locid="42">~(keystone_admin)$ </systemoutput><userinput ixia_locid="45">nova flavor-key example-guest.tiny set hw:cpu_policy=dedicated</userinput></codeblock>
+                </stepxmp>
+                <stepresult ixia_locid="28">
+                    <p ixia_locid="29">The flavor <nameliteral ixia_locid="30">example-guest.small</nameliteral> is created with ID 101. New virtual
+                        machines using this flavor are allocated 512 MB of memory, no disks, and two
+                        dedicated virtual CPUs.</p>
+                </stepresult>
+            </step>
+        </steps>
+        <result id="result_N10085_N10020_N10001" ixia_locid="31">
+            <p ixia_locid="32">The two flavors <nameliteral ixia_locid="33">example-guest.tiny</nameliteral> and <nameliteral ixia_locid="34">example-guest.small</nameliteral> are now available. You can use them as
+                resource allocation directives when launching new virtual machines.</p>
+        </result>
+    </taskbody>
+</task-wr>

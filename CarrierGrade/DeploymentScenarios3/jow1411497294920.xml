@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1411497294920" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="317">Components of the Scenario Environment</title>
+ <shortdesc ixia_locid="318">The components that make up the scenario environment can be divided
+  into  <term ixia_locid="319">actors</term> and <term ixia_locid="320">resources</term>. Actors
+  execute system commands to operate on resources. Resources are passive objects on which system
+  operations take place.</shortdesc>
+ <prolog>
+  <author ixia_locid="321">Michael B</author>
+ </prolog>
+ <conbody>
+  <section id="section_N1002C_N10029_N10001" ixia_locid="349">
+   <title ixia_locid="350">Actors</title>
+   <dl>
+    <dlentry ixia_locid="6">
+     <dt ixia_locid="7">System Administrator</dt>
+     <dd ixia_locid="8">
+      <p ixia_locid="9">Has access to the administration components of the HP Helion OpenStack Carrier Grade to manage
+       users and resources.</p>
+      <p ixia_locid="10">The scenario environment has only one system administrator, identified as
+       the <nameliteral ixia_locid="11">admin</nameliteral> user. This user is defined as part of
+       the HP Helion OpenStack Carrier Grade installation. </p>
+     </dd>
+    </dlentry>
+    <dlentry ixia_locid="12">
+     <dt ixia_locid="13">End Users</dt>
+     <dd ixia_locid="14">
+      <p ixia_locid="15">Have access to the user components of the HP Helion OpenStack Carrier Grade to manage a set
+       of system resources under the quotas and constraints set up by the system administrator.</p>
+      <p ixia_locid="16">The scenario environment has two end users identified as <nameliteral ixia_locid="17">user1</nameliteral> and <nameliteral ixia_locid="18">user2</nameliteral>.
+       They are created by the <nameliteral ixia_locid="299">admin</nameliteral> user (see <xref href="jow1404333728991.xml" ixia_locid="300"/>).</p>
+     </dd>
+    </dlentry>
+   </dl>
+  </section>
+  <section id="section_N10084_N10029_N10001" ixia_locid="351">
+   <title ixia_locid="352">Resources</title>
+   <dl>
+    <dlentry ixia_locid="20">
+     <dt ixia_locid="21">Tenant (or Project)</dt>
+     <dd ixia_locid="22">
+      <p ixia_locid="23">An isolated resource container consisting of networks, storage volumes,
+       images, instances (guest applications), authentication keys, and users. Tenants are the core
+       resource structure on which all end user services are managed.</p>
+      <p ixia_locid="24">The scenario environment has three tenants, identified as <nameliteral ixia_locid="25">admin</nameliteral>, <nameliteral ixia_locid="26">tenant1</nameliteral>, and
+        <nameliteral ixia_locid="27">tenant2</nameliteral>. For convenience, the latter two are
+       referred to as <term ixia_locid="292">user tenants</term>. The <nameliteral ixia_locid="301">admin</nameliteral> tenant is created as part of the HP Helion OpenStack Carrier Grade installation. The user
+       tenants are created by the <nameliteral ixia_locid="302">admin</nameliteral> user (see <xref href="jow1404333723047.xml" ixia_locid="303"/>). </p>
+      <note id="note_N100A4_N10082_N10079_N10076_N1001F_N10001" ixia_locid="353">
+       <p ixia_locid="355">The identifier <nameliteral ixia_locid="357">admin</nameliteral> is used
+        for both the system administrator and the <nameliteral ixia_locid="419">admin</nameliteral>
+        tenant. They can be differentiated by context.</p>
+      </note>
+     </dd>
+    </dlentry>
+    <dlentry ixia_locid="359">
+     <dt ixia_locid="361">Provider Network</dt>
+     <dd ixia_locid="363">
+      <p ixia_locid="365">A logical transport mechanism for the tenant networks. Provider networks
+       are realized over physical transport resources.</p>
+      <p ixia_locid="322">For the deployment scenarios, an operational HP Helion OpenStack Carrier Grade system is
+       assumed, implying that provider networks have already been established. Until at least one
+       provider network has been defined and associated with compute-node data interfaces, it is not
+       possible to unlock the compute nodes or make the system operational.</p>
+      <p ixia_locid="323">Provider networks are created by the <nameliteral ixia_locid="367">admin</nameliteral> user. For more information on creating them, or on unlocking nodes, see
+       the <cite ixia_locid="325">HP Helion OpenStack Carrier Grade Software Installation Guide</cite>.</p>
+      <p ixia_locid="324">The scenarios use two provider networks of the VLAN type. In the scenario
+       environment, they are identified as <nameliteral ixia_locid="326">provider-net-a</nameliteral> and <nameliteral ixia_locid="327">provider-net-b</nameliteral>.</p>
+      <dl>
+       <dlentry ixia_locid="369">
+        <dt ixia_locid="371"><nameliteral ixia_locid="373">provider-net-a</nameliteral></dt>
+        <dd ixia_locid="375">
+         <p ixia_locid="377">Used for management tenant networks carrying OAM traffic such as SSH,
+          SNMP, or FTP traffic. Tenant networks using this provider network are created by the
+           <nameliteral ixia_locid="420">admin</nameliteral> user, and used by end users.</p>
+        </dd>
+       </dlentry>
+       <dlentry ixia_locid="379">
+        <dt ixia_locid="381"><nameliteral ixia_locid="383">provider-net-b</nameliteral></dt>
+        <dd ixia_locid="385">
+         <p ixia_locid="387">Used for user-plane private tenant networks. Tenant networks using this
+          provider network are created by the end users for their own use.</p>
+        </dd>
+       </dlentry>
+      </dl>
+     </dd>
+    </dlentry>
+    <dlentry ixia_locid="328">
+     <dt ixia_locid="329">Segmentation Range</dt>
+     <dd ixia_locid="330">
+      <p ixia_locid="331">A set of consecutive VLAN IDs on a provider network of the VLAN type.
+       Segmentation ranges are defined by the <nameliteral ixia_locid="332">admin</nameliteral> user
+       for each provider network. A segmentation range can be shared by all tenants, or assigned to
+       an individual tenant.</p>
+      <p ixia_locid="333">The segmentation ranges provide VLAN IDs for tenant networks. When a
+       tenant network is created by the <nameliteral ixia_locid="334">admin</nameliteral> user or an
+       end user, it is assigned to a VLAN ID. The <nameliteral ixia_locid="335">admin</nameliteral>
+       user has the ability to assign a new tenant network to a specific provider network and VLAN
+       ID. For other users, the tenant network is assigned to the first available VLAN ID in the
+       available segmentation ranges.</p>
+      <note id="note_N1015A_N10143_N1013C_N10085_N10029_N10001" ixia_locid="336">
+       <p ixia_locid="337">Each VLAN ID must be unique on the physical network used to implement the
+        provider network. If two or more provider networks are implemented on the same physical
+        network, they cannot share the same VLAN ID. Therefore, the segmentation ranges on such
+        provider networks must not overlap.<!-- --> For the scenario environment, the following
+        segmentation ranges are defined for illustration purposes. Only a few of them are used for
+        tenant networks.</p>
+      </note>
+      <table frame="all" id="table_tgp_pwj_ln">
+       <tgroup cols="2">
+        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+        <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+        <thead>
+         <row>
+          <entry ixia_locid="392">
+           <p ixia_locid="394">Provider Network</p>
+          </entry>
+          <entry ixia_locid="396">
+           <p ixia_locid="398">Segmentation Range</p>
+          </entry>
+         </row>
+        </thead>
+        <tbody>
+         <row>
+          <entry ixia_locid="400">
+           <p ixia_locid="402"><nameliteral ixia_locid="404">provider-net-a</nameliteral></p>
+          </entry>
+          <entry ixia_locid="406">
+           <p ixia_locid="408">10, 623-642, 664-680</p>
+          </entry>
+         </row>
+         <row>
+          <entry ixia_locid="410">
+           <p ixia_locid="412"><nameliteral ixia_locid="414">provider-net-b</nameliteral></p>
+          </entry>
+          <entry ixia_locid="416">
+           <p ixia_locid="418">568-599</p>
+          </entry>
+         </row>
+        </tbody>
+       </tgroup>
+      </table>
+      <p ixia_locid="354">The segmentation ranges and VLAN IDs set up for the deployment scenarios
+       are as follows:</p>
+      <ul id="ul_dq5_15s_np">
+       <li ixia_locid="386">
+        <p ixia_locid="388">On <nameliteral ixia_locid="54">provider-net-a</nameliteral>:</p>
+        <ul id="ul_l5t_c5s_np">
+         <li ixia_locid="55">
+          <p ixia_locid="56">one range assigned to the admin tenant (VLAN ID 10)</p>
+         </li>
+         <li ixia_locid="368">
+          <p ixia_locid="391">one range assigned to tenant1 (VLAN IDs 623-642)</p>
+         </li>
+         <li ixia_locid="395">
+          <p ixia_locid="397">one range assigned to tenant2 (VLAN IDs 664-680)</p>
+         </li>
+        </ul>
+       </li>
+       <li ixia_locid="401">
+        <p ixia_locid="403">On <nameliteral ixia_locid="405">provider-net-b</nameliteral>:</p>
+        <ul id="ul_q3c_d5s_np">
+         <li ixia_locid="407">
+          <p ixia_locid="409">one range shared by all tenants (VLAN IDs 568-599)</p>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </dd>
+    </dlentry>
+    <dlentry ixia_locid="78">
+     <dt ixia_locid="79">Tenant Network</dt>
+     <dd ixia_locid="80">
+      <p ixia_locid="81">A logical transport network realized over a provider network. Tenant
+       networks can be set up by the <nameliteral ixia_locid="305">admin</nameliteral> user (see
+        <xref href="jow1404333714134.xml" ixia_locid="306"/>) or by end users (see <xref href="jow1404333594789.xml" ixia_locid="307"/>). For an <nameliteral ixia_locid="308">admin</nameliteral> user, additional options are available, for example to specify the
+       provider network and VLAN ID.</p>
+      <p ixia_locid="82">The scenario environment has the following tenant networks:</p>
+      <dl>
+       <dlentry ixia_locid="83">
+        <dt ixia_locid="84"><nameliteral ixia_locid="85">external-net</nameliteral></dt>
+        <dd ixia_locid="86">
+         <p ixia_locid="87">Associated with the <nameliteral ixia_locid="88">admin</nameliteral>
+          tenant, and implemented over the <nameliteral ixia_locid="89">provider-net-a</nameliteral>
+          provider network. The VLAN ID for this tenant network is manually set to 10.</p>
+         <p ixia_locid="338">This tenant network is set up as an <term ixia_locid="339">external
+           network</term>. When a virtual router in a tenant is connected to an external network, it
+          uses the gateway IP address of the external network as its default route. This provides a
+          path to networks outside the system, including the open Internet.</p>
+         <p ixia_locid="340">The <nameliteral ixia_locid="341">external-net</nameliteral> tenant
+          network is included for demonstration purposes. It is not used by the bridging or routing
+          test path scenarios.</p>
+        </dd>
+       </dlentry>
+       <dlentry ixia_locid="90">
+        <dt ixia_locid="91"><nameliteral ixia_locid="92">internal-net</nameliteral></dt>
+        <dd ixia_locid="93">
+         <p ixia_locid="94">Associated with the <nameliteral ixia_locid="95">admin</nameliteral>
+          tenant, and implemented over the <nameliteral ixia_locid="293">provider-net-b</nameliteral> provider network. The VLAN ID for this tenant network is
+          dynamically allocated.</p>
+         <p ixia_locid="342">This network is set up as a <term ixia_locid="343">shared
+           network</term>. Shared networks are accessible to all tenants. This one provides a path
+          to connect the VMs on <nameliteral ixia_locid="344">tenant1</nameliteral> and <nameliteral ixia_locid="345">tenant2</nameliteral>.</p>
+        </dd>
+       </dlentry>
+       <dlentry ixia_locid="101">
+        <dt ixia_locid="102"><nameliteral ixia_locid="103">tenant1-mgmt-net</nameliteral> and
+          <nameliteral ixia_locid="104">tenant2-mgmt-net</nameliteral></dt>
+        <dd ixia_locid="105">
+         <p ixia_locid="106">Management networks associated with the corresponding user tenants, and
+          implemented over the <nameliteral ixia_locid="294">provider-net-a</nameliteral> provider
+          network. They are created by the <nameliteral ixia_locid="107">admin</nameliteral> user on
+          behalf of the user tenants. The VLAN IDs for these tenant networks are dynamically
+          allocated.</p>
+         <p ixia_locid="346">Each of these networks is assigned by the <nameliteral ixia_locid="347">admin</nameliteral> user for use by a single tenant. The admin user is able to specify
+          the provider network and VLAN on which they are implemented, ensuring that the tenants can
+          use them to connect to specific devices on specific physical networks.</p>
+         <p ixia_locid="348">In the scenarios, each user uses the management network to connect the
+          VMs to a virtual router on the tenant. In addition to establishing a path to the external
+          network, the virtual router establishes connections to OpenStack services such as the
+          metadata service, which provides instances with access to user data. </p>
+        </dd>
+       </dlentry>
+       <dlentry ixia_locid="108">
+        <dt ixia_locid="109"><nameliteral ixia_locid="110">tenant1-net</nameliteral> and
+          <nameliteral ixia_locid="111">tenant2-net</nameliteral></dt>
+        <dd ixia_locid="112">
+         <p ixia_locid="113">High-performance data networks associated with the corresponding user
+          tenants. They are created by the respective end users. The provider networks and VLAN IDs
+          for these tenant networks are dynamically allocated based on the resources available to
+          the tenant.</p>
+        </dd>
+       </dlentry>
+      </dl>
+      <table frame="all" id="table_rs1_qbb_mn">
+       <tgroup cols="4">
+        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+        <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+        <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+        <colspec colname="c4" colnum="4" colwidth="1.0*"/>
+        <thead>
+         <row>
+          <entry ixia_locid="114">
+           <p ixia_locid="115">Tenant Network</p>
+          </entry>
+          <entry ixia_locid="116">
+           <p ixia_locid="117">Created By</p>
+          </entry>
+          <entry ixia_locid="118">
+           <p ixia_locid="119">Provider Network</p>
+          </entry>
+          <entry ixia_locid="120">
+           <p ixia_locid="121">VLAN ID Allocation</p>
+          </entry>
+         </row>
+        </thead>
+        <tbody>
+         <row>
+          <entry ixia_locid="122">
+           <p ixia_locid="123">external-net</p>
+          </entry>
+          <entry ixia_locid="124">
+           <p ixia_locid="125">admin</p>
+          </entry>
+          <entry ixia_locid="126">
+           <p ixia_locid="127">provider-net-a</p>
+          </entry>
+          <entry ixia_locid="128">
+           <p ixia_locid="129">Manual</p>
+          </entry>
+         </row>
+         <row>
+          <entry ixia_locid="130">
+           <p ixia_locid="131">internal-net</p>
+          </entry>
+          <entry ixia_locid="132">
+           <p ixia_locid="133">admin</p>
+          </entry>
+          <entry ixia_locid="134">
+           <p ixia_locid="135">provider-net-b</p>
+          </entry>
+          <entry ixia_locid="136">
+           <p ixia_locid="137">Dynamic</p>
+          </entry>
+         </row>
+         <row>
+          <entry ixia_locid="138">
+           <p ixia_locid="139">tenant1-mgmt-net</p>
+          </entry>
+          <entry ixia_locid="140">
+           <p ixia_locid="141">admin</p>
+          </entry>
+          <entry ixia_locid="142">
+           <p ixia_locid="143">provider-net-a</p>
+          </entry>
+          <entry ixia_locid="144">
+           <p ixia_locid="145">Dynamic</p>
+          </entry>
+         </row>
+         <row>
+          <entry ixia_locid="146">
+           <p ixia_locid="147">tenant1-net</p>
+          </entry>
+          <entry ixia_locid="148">
+           <p ixia_locid="149">user1</p>
+          </entry>
+          <entry ixia_locid="150">
+           <p ixia_locid="151">as allocated</p>
+          </entry>
+          <entry ixia_locid="152">
+           <p ixia_locid="153">Dynamic</p>
+          </entry>
+         </row>
+         <row>
+          <entry ixia_locid="154">
+           <p ixia_locid="155">tenant2-mgmt-net</p>
+          </entry>
+          <entry ixia_locid="156">
+           <p ixia_locid="157">admin</p>
+          </entry>
+          <entry ixia_locid="158">
+           <p ixia_locid="159">provider-net-a</p>
+          </entry>
+          <entry ixia_locid="160">
+           <p ixia_locid="161">Dynamic</p>
+          </entry>
+         </row>
+         <row>
+          <entry ixia_locid="162">
+           <p ixia_locid="163">tenant2-net</p>
+          </entry>
+          <entry ixia_locid="164">
+           <p ixia_locid="165">user2</p>
+          </entry>
+          <entry ixia_locid="166">
+           <p ixia_locid="167">as allocated</p>
+          </entry>
+          <entry ixia_locid="168">
+           <p ixia_locid="169">Dynamic</p>
+          </entry>
+         </row>
+        </tbody>
+       </tgroup>
+      </table>
+     </dd>
+    </dlentry>
+    <dlentry ixia_locid="170">
+     <dt ixia_locid="171">Data Network</dt>
+     <dd ixia_locid="172">
+      <p ixia_locid="173">IP subnets configured on the tenant network. In the deployment scenarios,
+       each tenant network supports a single IP subnet. They are configured as follows:</p>
+      <table frame="all" id="table_dff_xq1_mn">
+       <tgroup cols="4">
+        <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+        <colspec colname="c5" colnum="2" colwidth="1.0*"/>
+        <colspec colname="c6" colnum="3" colwidth="1.0*"/>
+        <colspec colname="newCol5" colnum="4"/>
+        <thead>
+         <row>
+          <entry ixia_locid="174">
+           <p ixia_locid="175">Subnet</p>
+          </entry>
+          <entry ixia_locid="176">
+           <p ixia_locid="177">Address</p>
+          </entry>
+          <entry ixia_locid="178">
+           <p ixia_locid="179">Tenant Network</p>
+          </entry>
+          <entry ixia_locid="180">
+           <p ixia_locid="181">Created By</p>
+          </entry>
+         </row>
+        </thead>
+        <tbody>
+         <row>
+          <entry ixia_locid="182">
+           <p ixia_locid="183">external-subnet</p>
+          </entry>
+          <entry ixia_locid="184">
+           <p ixia_locid="185">192.168.2.0/24</p>
+           <p ixia_locid="186">External Gateway 192.168.2.1</p>
+          </entry>
+          <entry ixia_locid="187">
+           <p ixia_locid="188">external-net</p>
+          </entry>
+          <entry ixia_locid="189">
+           <p ixia_locid="190">admin</p>
+          </entry>
+         </row>
+         <row>
+          <entry ixia_locid="191">
+           <p ixia_locid="192">internal-subnet</p>
+          </entry>
+          <entry ixia_locid="193">
+           <p ixia_locid="194">10.1.1.0/24</p>
+          </entry>
+          <entry ixia_locid="195">
+           <p ixia_locid="196">internal-net</p>
+          </entry>
+          <entry ixia_locid="197">
+           <p ixia_locid="198">admin</p>
+          </entry>
+         </row>
+         <row>
+          <entry ixia_locid="199">
+           <p ixia_locid="200">tenant1-mgmt-subnet</p>
+          </entry>
+          <entry ixia_locid="201">
+           <p ixia_locid="202">192.168.102.0/24</p>
+          </entry>
+          <entry ixia_locid="203">
+           <p ixia_locid="204">tenant1-mgmt-net</p>
+          </entry>
+          <entry ixia_locid="205">
+           <p ixia_locid="206">user1</p>
+          </entry>
+         </row>
+         <row>
+          <entry ixia_locid="207">
+           <p ixia_locid="208">tenant1-subnet</p>
+          </entry>
+          <entry ixia_locid="209">
+           <p ixia_locid="210">172.31.1.0/24</p>
+          </entry>
+          <entry ixia_locid="211">
+           <p ixia_locid="212">tenant1-net</p>
+          </entry>
+          <entry ixia_locid="213">
+           <p ixia_locid="214">user1</p>
+          </entry>
+         </row>
+         <row>
+          <entry ixia_locid="215">
+           <p ixia_locid="216">tenant2-mgmt-subnet</p>
+          </entry>
+          <entry ixia_locid="217">
+           <p ixia_locid="218">192.168.202.0/24</p>
+          </entry>
+          <entry ixia_locid="219">
+           <p ixia_locid="220">tenant2-mgmt-net</p>
+          </entry>
+          <entry ixia_locid="221">
+           <p ixia_locid="222">user2</p>
+          </entry>
+         </row>
+         <row>
+          <entry ixia_locid="223">
+           <p ixia_locid="224">tenant2-subnet</p>
+          </entry>
+          <entry ixia_locid="225">
+           <p ixia_locid="226">172.31.2.0/24</p>
+          </entry>
+          <entry ixia_locid="227">
+           <p ixia_locid="228">tenant2-net</p>
+          </entry>
+          <entry ixia_locid="229">
+           <p ixia_locid="230">user2</p>
+          </entry>
+         </row>
+        </tbody>
+       </tgroup>
+      </table>
+      <note id="note_N104FC_N10390_N10387_N10080_N1002E_N10001" ixia_locid="297">
+       <p ixia_locid="298">The IP subnets for the tenant data networks <nameliteral ixia_locid="309">tenant1-subnet</nameliteral> and <nameliteral ixia_locid="310">tenant2-subnet</nameliteral> are not applicable for the Bridging Scenario.</p>
+      </note>
+      <note id="note_N1054B_N103DF_N103D6_N10076_N1001F_N10001" ixia_locid="231">
+       <p ixia_locid="232">The data network <nameliteral ixia_locid="233">internal-subnet</nameliteral> uses application-level VLAN tagging. In the scenarios, guest
+        VLAN ID 5 is used.</p>
+      </note>
+     </dd>
+    </dlentry>
+    <dlentry ixia_locid="234">
+     <dt ixia_locid="235">Virtual Router</dt>
+     <dd ixia_locid="236">
+      <p ixia_locid="237">Created by the end users, the virtual routers provide the VMs with
+       connections to the external network, and to OpenStack services running on the compute node,
+       such as the metadata service used to provide instances with access to user data when they are
+       launched. Two routers are created, <nameliteral ixia_locid="238">tenant1-router</nameliteral>
+       and <nameliteral ixia_locid="239">tenant2-router</nameliteral>, each within its corresponding
+       tenant container (see <xref href="jow1410804489611.xml" ixia_locid="421"/>).</p>
+     </dd>
+    </dlentry>
+    <dlentry ixia_locid="242">
+     <dt ixia_locid="243">Glance Guest Image</dt>
+     <dd ixia_locid="244">
+      <p ixia_locid="245">The example guest image provided with the HP Helion OpenStack Carrier Grade must be imported
+       into the OpenStack <nameliteral ixia_locid="422">Glance</nameliteral> service for use. Images can be imported
+       by the <nameliteral ixia_locid="312">admin</nameliteral> user (see <xref href="jow1404333673732.xml" ixia_locid="313"/>) or by end users.</p>
+     </dd>
+    </dlentry>
+    <dlentry ixia_locid="257">
+     <dt ixia_locid="258">User Data</dt>
+     <dd ixia_locid="259">
+      <p ixia_locid="260">For the example guest image, user data is used to specify the function to
+       be implemented (Linux kernel bridge, DPDK-accelerated bridge, or router) and the virtual
+       ports or IP subnets to be connected by the switches. For details, see <xref href="jow1411149829129.xml" ixia_locid="423"/> and <xref href="jow1411149875790.xml" ixia_locid="424"/>.</p>
+     </dd>
+    </dlentry>
+    <dlentry ixia_locid="273">
+     <dt ixia_locid="274">Virtual Machine Flavor</dt>
+     <dd ixia_locid="275">
+      <p ixia_locid="276">End users specify the virtual hardware resources allocated to a machine by
+       selecting a flavor. Two flavors are defined, as follows:</p>
+      <dl>
+       <dlentry ixia_locid="277">
+        <dt ixia_locid="278"><nameliteral ixia_locid="279">example-guest.tiny</nameliteral></dt>
+        <dd ixia_locid="280">
+         <p ixia_locid="281">Designed for an example guest VM with Linux kernel-based networking
+          with virtio virtual network interfaces. A virtual machine of this type gets allocated 512
+          MB of memory, no disks, and one dedicated virtual CPU (vCPU).</p>
+        </dd>
+       </dlentry>
+       <dlentry ixia_locid="283">
+        <dt ixia_locid="284"><nameliteral ixia_locid="285">example-guest.small</nameliteral></dt>
+        <dd ixia_locid="286">
+         <p ixia_locid="287">Designed for an example guest VM with AVP-type virtual networking
+          interfaces. A virtual machine of this type gets allocated 512 MB of memory, no disks, and
+          two dedicated virtual CPUs.</p>
+        </dd>
+       </dlentry>
+      </dl>
+      <p ixia_locid="314">Flavors are defined by the <nameliteral ixia_locid="315">admin</nameliteral> user (see <xref href="jow1404333668441.xml" ixia_locid="316"/>).</p>
+     </dd>
+    </dlentry>
+   </dl>
+  </section>
+ </conbody>
+</concept-wr>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333728991" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Creating  Users </title>
+    <shortdesc ixia_locid="2">The <nameliteral ixia_locid="45">admin</nameliteral> user must create
+        end users for the Deployment Scenarios.</shortdesc>
+    <prolog>
+        <author ixia_locid="46">Michael B</author>
+        <author ixia_locid="3">PedroSanchez</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
+            <p ixia_locid="5">This exercise creates the users <nameliteral ixia_locid="6">user1</nameliteral> and <nameliteral ixia_locid="7">user2</nameliteral> and
+                associates them with the corresponding tenants.</p>
+        </context>
+        <steps>
+            <step id="step_N10033_N10030_N1001C_N10001" ixia_locid="8">
+                <cmd ixia_locid="9">List the users currently defined on the system.</cmd>
+                <info ixia_locid="10">
+                    <p ixia_locid="11">Select <uicontrol ixia_locid="12">Users</uicontrol> in the
+                        Identity Panel section of the <uicontrol ixia_locid="13">Admin</uicontrol>
+                        tab to open the <wintitle ixia_locid="14">Users</wintitle> page.</p>
+                </info>
+                <stepresult ixia_locid="15">
+                    <p ixia_locid="16">The default users are listed as illustrated below:</p>
+                    <fig id="fig_N10055_N1004E_N10033_N10030_N1001C_N10001" ixia_locid="17">
+                        <image href="jow1404333723809.image" id="image_ins_lfy_xn" ixia_locid="18" placement="inline" width="6in"/>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N10064_N10030_N1001C_N10001" ixia_locid="19">
+                <cmd ixia_locid="20">Create user <nameliteral ixia_locid="21">user1</nameliteral>.</cmd>
+                <info ixia_locid="22">
+                    <p ixia_locid="23">Click <uicontrol ixia_locid="24">Create User</uicontrol> to
+                        open the <wintitle ixia_locid="25">Create User</wintitle> window. Fill in
+                        the information as illustrated below (use <nameliteral ixia_locid="26">user1</nameliteral> as the password):</p>
+                    <fig id="fig_N10081_N1006E_N10063_N10030_N1001C_N10001" ixia_locid="27">
+                        <image href="jow1404333725619.image" id="image_as2_fvy_xn" ixia_locid="28" placement="inline" width="4in"/>
+                    </fig>
+                    <p ixia_locid="29">Click <uicontrol ixia_locid="30">Create User</uicontrol> to
+                        commit the changes.</p>
+                </info>
+            </step>
+            <step id="step_N10099_N10030_N1001C_N10001" ixia_locid="31">
+                <cmd ixia_locid="32">Create user <nameliteral ixia_locid="33">user2</nameliteral>.</cmd>
+                <info ixia_locid="34">
+                    <p ixia_locid="35">Repeat the step above, this time to create a user named
+                            <nameliteral ixia_locid="36">user2</nameliteral> associated with tenant
+                            <nameliteral ixia_locid="37">tenant2</nameliteral>.</p>
+                </info>
+                <stepresult ixia_locid="38">
+                    <p ixia_locid="39">Once created, the <wintitle ixia_locid="40">Users</wintitle> page displays the
+                        additional users as illustrated below:</p>
+                    <fig id="fig_N100BD_N100B2_N10097_N10030_N1001C_N10001" ixia_locid="41">
+                        <image href="jow1404333727198.image" id="image_qd5_lky_xn" ixia_locid="42" placement="inline" width="6in"/>
+                    </fig>
+                </stepresult>
+            </step>
+        </steps>
+        <result id="result_N100C9_N1001C_N10001" ixia_locid="43">
+            <p ixia_locid="44">The two new users now exist in the system.</p>
+        </result>
+    </taskbody>
+</task-wr>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="rst1432665605712" xml:lang="en-us">
+<!-- Modification History
+  Draft template 08/07/2014      
+-->
+    <title ixia_locid="57">Unlocking the Compute Nodes</title>
+    <shortdesc id="shortdesc" ixia_locid="2">Unlocked compute nodes are required to launch
+        instances.</shortdesc>
+    <prolog>
+        <author ixia_locid="59">RonStone</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001E_N1001B_N10001" ixia_locid="60">
+            <p ixia_locid="90">In order to unlock a compute node, you must attach its data interfaces to provider
+                networks. You can then unlock the node using the web administration interface.</p>
+            <note id="note_N1002D_N10023_N10020_N10001" ixia_locid="91">
+                <p ixia_locid="92">HP Helion OpenStack Carrier Grade automatically creates an Ethernet interface for each port it
+                    detects on the compute node during software installation. The Reference
+                    Deployment Scenarios assume that these interfaces have been created and are
+                    available to be edited. You can also manually create interfaces of other types,
+                    including Aggregated Ethernet and VLAN, and then edit them to attach them to
+                    networks. For more information, see the <cite ixia_locid="72">HP Helion OpenStack Carrier Grade
+                        Software Installation Guide: Network Interface Provisioning</cite>.</p>
+                <p ixia_locid="71"/>
+            </note>
+        </context>
+        <steps>
+            <step conref="jow1426453628262.xml#jow1426453628262/step_N1002B_N10028_N1001C_N10001" id="step_N1003B_N10038_N1001C_N10001" ixia_locid="10">
+                <cmd ixia_locid="11"/>
+            </step>
+            <step conref="rst1432664776488.xml#rst1432664776488/step_N10044_N10038_N1001C_N10001" id="step_N10038_N1002A_N1001B_N10001" ixia_locid="63">
+                <cmd ixia_locid="64"/>
+            </step>
+            <step conref="rst1432664776488.xml#rst1432664776488/step_N10066_N10038_N1001C_N10001" id="step_N10041_N1002A_N1001B_N10001" ixia_locid="65">
+                <cmd ixia_locid="66"/>
+            </step>
+            <step id="step_N10088_N10038_N1001C_N10001" ixia_locid="26">
+                <cmd ixia_locid="27">Select the <uicontrol ixia_locid="93">Network Type</uicontrol> for the
+                    interface.</cmd>
+                <info ixia_locid="94">
+                    <p ixia_locid="95">Select <uicontrol ixia_locid="96">data</uicontrol> to create
+                        a data interface. A <uicontrol ixia_locid="97">Provider Network</uicontrol>
+                        selection is added to the dialog box.</p>
+                    <fig id="fig_hlz_yrr_2s" ixia_locid="105">
+                        <image href="jow1432910067240.image" id="image_nql_zrr_2s" ixia_locid="106">
+                            <alt ixia_locid="107">TiS Add Ethernet Data Interface</alt>
+                        </image>
+                    </fig>
+                </info>
+            </step>
+            <step id="step_N10101_N10038_N1001C_N10001" ixia_locid="55">
+                <cmd ixia_locid="56">Attach the interface to a provider network.</cmd>
+                <info ixia_locid="70">
+                    <p ixia_locid="98">To attach the interface to a provider network, select the provider network.
+                        You can attach to more than one by selecting multiple provider networks.</p>
+                </info>
+            </step>
+            <step conref="rst1432664776488.xml#rst1432664776488/step_N10116_N10038_N1001C_N10001" id="step_N10078_N1002A_N1001B_N10001" ixia_locid="73">
+                <cmd ixia_locid="74"/>
+            </step>
+            <step conref="jow1404333506827.xml#jow1404333506827/unlock-node" id="step_N100C4_N10042_N10020_N10001" ixia_locid="108">
+                <cmd ixia_locid="109"/>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>
