@@ -400,7 +400,8 @@ wget http://&lt;url&gt;/helion_ee_1.1.1.tgz
 </codeblock>
 
 <p>
-<b>Note</b>: if you have made modifications to your original passthrough files, you will need to re-apply them to the new passthrough files. These instructions are included in this procedure.</p>
+            <b>Note</b>: if you have made modifications to your original passthrough files, you will
+            need to re-apply them to the new passthrough files. </p>
 </li>
 <li>
 <p>Copy the new installation scripts from the location where you unpacked the new kit to the original <codeph>/root/tripleo/tripleo-incubator/scripts</codeph> directory</p>
