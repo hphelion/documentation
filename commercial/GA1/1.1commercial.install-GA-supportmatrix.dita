@@ -189,7 +189,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="mezzanine-adapters"> <title>Mezzanine Adapters:</title>
 </section>
-<section id="flexiblelom"> <title>FlexibleLOM</title>
+<section id="flexible-lom"> <title>FlexibleLOM</title>
 <ul>
 <li>HP Flex-10 10Gb 2-port 530FLB Adapter</li>
 <li>HP Flex Fabric 10Gb 2-port 534FLB Adapter</li>
@@ -198,7 +198,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <li>HP FlexFabric 20Gb 2-port 650FLB Adapter </li>
 </ul>
 </section>
-<section id="nic"> <title>NIC</title>
+<section id="nic-flex"> <title>NIC</title>
 <ul>
 <li>HP Flex-10 10Gb 2-port 530M Adapter</li>
 <li>HP FlexFabric 10Gb 2-port 534M Adapter</li>
@@ -208,14 +208,14 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <li>HP FlexFabric 20Gb 2-port 650M Adapter </li>
 </ul>
 </section>
-<section id="sas"> <title>SAS</title>
+<section id="sas-smartarray"> <title>SAS</title>
 <ul>
 <li>HP Smart Array P244br/ 1GB FBWC 12 Gb 2-ports Int SAS Controller</li>
 <li>HP Smart Array P721m/2GB FBWC 6Gb 4-ports Ext Mezzanine SAS Controller</li>
 <li>HP Smart Array P731m/2GB FBWC 6Gb 4-ports Ext Mezzanine SAS Controller </li>
 </ul>
 </section>
-<section id="fc"> <title>FC</title>
+<section id="fibrechannel"> <title>FC</title>
 <ul>
 <li>HP LPe1205A 8Gb Fibre Channel Host Bus Adapter for BladeSystem c-Class</li>
 <li>HP LPe1605 16Gb Fibre Channel HBA for BladeSystem c-Class</li>

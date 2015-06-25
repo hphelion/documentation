@@ -399,8 +399,6 @@ conn Site-C
 <li>From Site-B send traffic from subnet 192.168.4.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.</li>
 <li>From Site-C send traffic from subnet 192.168.3.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.</li>
 </ul>
-<p>back to the <xref type="section" href="#topic13796/top">top</xref>
-</p>
 </section>
 <section id="trouble"> <title>Troubleshoot and verify connections</title>
   <p>See the "<xref href="vpn-quickstart.dita">VPN Quick Start Guide</xref>" for instructions on how to troubleshoot and verify connections.</p>

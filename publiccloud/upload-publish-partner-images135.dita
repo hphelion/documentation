@@ -45,7 +45,7 @@
 <p>This document explains how to upload images and make them public within <b>Partner Images</b>, described in the following sections:</p>
 <ul>
 <li>
-<xref type="section" href="#topic26477/publishGetStarted">Getting started</xref>
+<xref type="section" href="#topic26477/getting-started">Getting started</xref>
 </li>
 <li>
 <xref type="section" href="#topic26477/publishWindowsSnap">Creating an image from a snapshot</xref>
@@ -64,7 +64,7 @@
 </li>
 </ul>
 </section>
-<section id="getting-started"> <title>Getting started<!--Removed anchor point publishGetStarted--><!-- id="publishGetStarted" --></title>
+<section id="getting-started"> <title>Getting started</title>
 <p>Image upload refers to the uploading of a virtual machine image into HP Helion Public Cloud, which creates a new image containing your image data and associated metadata.</p>
 <p>
 <b>Important:</b> Images are region-specific; an image is only available in the region to which it has been uploaded. If you need an image in multiple regions, you must create it in each region.</p>
