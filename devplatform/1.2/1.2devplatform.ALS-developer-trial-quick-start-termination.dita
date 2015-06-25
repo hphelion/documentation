@@ -25,15 +25,15 @@
 <p>When you are done exploring your Developer Quick Start Trial, you can take the environment down just as easily.</p>
 <simpletable>
 <strow>
-<stentry><p>
-                                <image href="../../media/star.gif" id="image_s3q_vt5_js" scale="50"
-                                    /><b>Termination</b>
-                            </p><p>
-                                <xref
-                                    href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
-                                    >Troubleshooting</xref>
-                            </p><xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita"
-                                >Back to Quick Start</xref></stentry>
+<stentry>
+                    <image href="../../media/star.gif" id="image_s3q_vt5_js" scale="50"
+                        /><b>Termination</b>
+                    <p>
+                        <xref
+                            href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
+                            >Troubleshooting</xref>
+                    </p><xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Back to
+                        Quick Start</xref></stentry>
 <stentry><p>To ensure that all your resources are properly released, use the Horizon console.</p>
                     <b>Terminate the Instance</b>
                     <ol>
