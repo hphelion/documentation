@@ -20,25 +20,27 @@
    </metadata>
  </prolog>
 <body>
- <section><title>HP Helion 1.2 Development Platform: <tm tmtype="reg">Windows</tm> and .NET Tools Guide</title>
+ <section><title>HP Helion 1.2 Development Platform: <tm tmtype="reg">Windows</tm> and .NET Tools
+    Guide</title>
    <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
-     Microsoft Corporation in the United States and/or other countries.</i></ph> 
-  
-  <p>Helion Development Platform 1.2 adds tooling support for deploying Windows images and .NET Framework HTTP-based
-   applications. This document describes how to install and use these tools. </p>
-  <p> This document
-    contains the following sections: </p>
-  <p><b>.NET tools:</b></p>
-   <ul id="ul_dmq_khw_js">
-    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/cloudfoundryextensions" format="dita">Cloud Foundry Extensions</xref></li>
-    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/msbuild">Cloud Foundry MSBuild Tasks</xref></li>
-    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/sdk">Cloud Foundry .NET SDK</xref></li>
+     Microsoft Corporation in the United States and/or other countries.</i></ph>
+   <p>Helion Development Platform 1.2 adds tooling support for deploying Windows images and .NET
+    Framework HTTP-based applications. This document describes how to install and use these tools.
+   </p> This document contains the following sections:  <p><b>.NET tools:</b></p><ul
+    id="ul_dmq_khw_js">
+    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/cloudfoundryextensions"
+      format="dita">Cloud Foundry Extensions</xref></li>
+    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/msbuild">Cloud Foundry MSBuild
+      Tasks</xref></li>
+    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/sdk">Cloud Foundry .NET
+      SDK</xref></li>
    </ul>
    <b>Setup tools</b><ul id="ul_jgl_fhw_js">
-    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/ALS">ALS Cluster Management (cf-mgmt)</xref></li>
-    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/helion">Helion client (helion)</xref></li>
+    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/als">ALS Cluster Management (cf-mgmt)</xref></li>
+    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/helion">Helion client
+      (helion)</xref></li>
    </ul>
-  <b>Windows Image Tool</b><ul id="ul_nrc_3hw_js">
+   <b>Windows Image Tool</b><ul id="ul_nrc_3hw_js">
     <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/glazier">Glazier</xref></li>
    </ul></section>
  <section id="cloudfoundryextensions"><title>Cloud Foundry Extensions</title> <p>This Visual Studio 2013 extension
