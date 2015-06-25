@@ -56,7 +56,7 @@
 <p>Acronym for <xref href="http://www.cpan.org/" scope="external" format="html" >Comprehensive Perl Archive Network</xref>.</p>
 </section>
 <section id="term-doozerd"> <title>doozerd</title>
-<p>A consistent distributed data store. Used for cluster management in Application Lifecycle Service. (see <xref href="https://github.com/ha/doozerd#readme" scope="external" format="html" >Doozer project on GitHub</xref>)</p>
+<p>A consistent distributed data store. Used for cluster management in Application Lifecycle Service. (see <xref href="https://github.com/ha/doozerd#readme" type="section" scope="external" format="html" >Doozer project on GitHub</xref>)</p>
 </section>
 <section id="term-DHCP"> <title>DHCP</title>
 <p>

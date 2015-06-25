@@ -35,7 +35,7 @@
 <section id="using-the-dashboards"> <title>Using the dashboards<!--Removed anchor point UI""--><!-- id="UI&quot;&quot;" --></title>
 <p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Dashboard</xref> to work with the Sirius service.</p>
 </section>
-<section id="using-the-cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
+<section id="cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
 <p>You can use the command-line interface to access HP Sirius service. See <xref href="../../commercial/GA1/1.0commercial.sirius-cli.dita" >Configuring Your Storage Using Sirius</xref>
 </p>
 <p>

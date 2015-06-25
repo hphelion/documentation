@@ -27,7 +27,7 @@
 
 </p>
 <p>Application Lifecycle Service 1.0 provides the ability to upgrade a node or cluster in place
-via <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-upgrade" >
+via <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-upgrade" type="section" scope="external"  >
 <i>kato node
 upgrade</i>
 </xref>
@@ -72,7 +72,7 @@ the upgrade process works.</p>
 </section>
 <section id="maintenance-mode"> <title>Maintenance Mode</title>
 <p>Before beginning an upgrade, put Application Lifecycle Service in maintenance mode in the
-<xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#console-settings-maintenance-mode" >
+<xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#console-settings-maintenance-mode" type="section" scope="external"  >
 <i>Cloud Controller
 Settings</i>
 </xref> or
@@ -98,7 +98,7 @@ public URIs:</p>
 node if a proxy is in use on your network.</p>
 </section>
 <section id="rsa-keys"> <title>RSA keys</title>
-<p>For cluster upgrades, you should <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication" scope="external" format="html" >set up SSH keys for password-less
+<p>For cluster upgrades, you should <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication" type="section" scope="external" format="html" >set up SSH keys for password-less
 authentication</xref>
 between the Core node and all other cluster nodes. Without this, you
 will be prompted for the 'helion' system user password multiple times
@@ -140,7 +140,7 @@ have enabled. This order is then followed when upgrading nodes.</p>
 nodes that don't match (e.g. data service nodes) are added to the end to
 be upgraded last.</p>
 <p>The order can be overridden with the
-<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-upgrade" >
+<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-upgrade" type="section" scope="external"  >
 <i>--role-order</i>
 </xref>
 option.</p>
@@ -181,7 +181,7 @@ HP Application Lifecycle Service Support.</p>
 <p>Next, the upgrade packages are downloaded and a validation check is
 performed on the files to make sure everything required for an upgrade
 is available. If the node is a DEA it is then
-<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-retire" >
+<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-retire" type="section" scope="external"  >
 <i>retired</i>
 </xref> to
 make sure any applications running on the node are evacuated before the

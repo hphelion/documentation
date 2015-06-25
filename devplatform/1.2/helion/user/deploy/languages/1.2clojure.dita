@@ -38,7 +38,7 @@ Starting Application: OK</codeblock>
 <p>Open the application's URL in your browser to see the default Noir welcome
 page.</p>
 <section id="clojure-database-services-example"> <title>Clojure Database Services Example</title>
-<p>Taken from the <xref href="https://github.com/Stackato-Apps/4clojure/blob/stackato/src/foreclojure/config.clj#L6" scope="external" format="html" >4clojure sample
+<p>Taken from the <xref href="https://github.com/Stackato-Apps/4clojure/blob/stackato/src/foreclojure/config.clj#L6" type="section" scope="external" format="html" >4clojure sample
 app</xref>:</p>
 <codeblock>(defn assoc-cloud-env
   "Import Cloud Foundry / Application Lifecycle Service environment settings"

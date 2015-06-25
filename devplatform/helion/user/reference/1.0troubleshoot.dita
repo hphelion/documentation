@@ -26,9 +26,9 @@
 </title>
 </section>
 <section id="ssh-to-failed-containers"> <title>SSH to Failed Containers</title>
-<p>For troubleshooting and diagnostic purposes, it is possible to use helion ssh to access a <xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-container" >
+<p>For troubleshooting and diagnostic purposes, it is possible to use helion ssh to access a <xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-container" type="section" scope="external"  >
 <i>container</i>
-</xref> that has recently failed or did not start correctly. Containers are kept for one hour before being reclaimed. See the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" >
+</xref> that has recently failed or did not start correctly. Containers are kept for one hour before being reclaimed. See the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" type="section" scope="external"  >
 <i>Command Reference</i>
 </xref> for details on the <codeph>helion ssh</codeph> command.</p>
 </section>
@@ -76,7 +76,7 @@ Starting Application: OK
 <p>This error is reported when the Application Lifecycle Service server does not have an IP Address. To investigate and resolve, try the following:</p>
 <ul>
 <li>
-<p>Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its <xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-tty-console" >
+<p>Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its <xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-tty-console" type="section" scope="external"  >
 <i>tty console</i>
 </xref>:</p>
 

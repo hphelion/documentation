@@ -220,7 +220,7 @@
         </tgroup>
 </table>
 </section>
-<section id="identity-dashboard"> <title>Identity dashboard<!--Removed anchor point DashIdent--><!-- id="DashIdent" --></title>
+<section id="DashIdent"> <title>Identity dashboard<!--Removed anchor point DashIdent--><!-- id="DashIdent" --></title>
 <p>Use the <b>Admin</b> panel to create and delete users, change user passwords, assign users to projects, and other tasks.</p>
 <table>
 <tgroup cols="2">

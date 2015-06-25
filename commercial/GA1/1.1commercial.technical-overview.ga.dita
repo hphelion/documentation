@@ -390,7 +390,7 @@
 </ul>
 </li>
 </ul>
-<p>For detailed information, see the <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#network" >Preparing the network</xref> section of the <i>Prerequisites</i>.</p>
+<p>For detailed information, see the <xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#network" type="section" scope="external"  >Preparing the network</xref> section of the <i>Prerequisites</i>.</p>
 <table>
 <tgroup cols="3">
                     <colspec colname="col1" colsep="1" rowsep="1"/>

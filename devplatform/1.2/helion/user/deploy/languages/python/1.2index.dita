@@ -112,7 +112,7 @@ application:</p>
 <xref href="../../1.2manifestyml.dita" >
 <i>manifest.yml</i>
 </xref>,
-<xref href="http://www.pip-installer.org/en/latest/cookbook.html#requirements-files" scope="external" format="html" >requirements.txt
+<xref href="http://www.pip-installer.org/en/latest/cookbook.html#requirements-files" type="section" scope="external" format="html" >requirements.txt
 (pip)</xref>,
 or <i>requirements.pypm</i> (<xref href="http://code.activestate.com/pypm/" scope="external" format="html" >pypm</xref>)
 file.</p>
@@ -135,7 +135,7 @@ Procfile <codeph>web:</codeph> command. For example:</p>
 </section>
 <section id="python-with-the-legacy-buildpack"> <title>Python with the Legacy Buildpack</title>
 <p>If your Python application has configuration for running on Application Lifecycle Service
-  2.10 or earlier, you can deploy it using the <xref href="../../1.2buildpack.dita#topic3370/legacy-buildpack">
+  2.10 or earlier, you can deploy it using the <xref href="../../1.2buildpack.dita#topic3370/legacy-buildpack" type="section" scope="external" >
 <i>Legacy
 Buildpack</i>
 </xref>, which provides an
@@ -244,10 +244,10 @@ DATABASES = {
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-  <xref href="../../1.2manifestyml.dita#topic20922/command" >
+  <xref href="../../1.2manifestyml.dita#topic20922/command" type="section" scope="external"  >
 <i>command</i>
 </xref> key and set the
-  <xref href="../../1.2manifestyml.dita#topic20922/web" >
+  <xref href="../../1.2manifestyml.dita#topic20922/web" type="section" scope="external"  >
 <i>processes:
 web</i>
 </xref> key to
@@ -318,15 +318,15 @@ for an example.</p>
           <i>environment variables</i>
         </xref>.</p>
 <p>Application dependencies such as web frameworks or modules from PyPI can
-  be installed using <xref href="../../../reference/1.2glossary.dita#topic6187/term-pypm" >
+  be installed using <xref href="../../../reference/1.2glossary.dita#topic6187/term-pypm" type="section" scope="external"  >
 <i>PyPM</i>
 </xref>
-  and/or <xref href="../../../reference/1.2glossary.dita#topic6187/term-pip" >
+  and/or <xref href="../../../reference/1.2glossary.dita#topic6187/term-pip" type="section" scope="external"  >
 <i>pip</i>
 </xref>.</p>
 </section>
 <section id="pypm"> <title>PyPM</title>
-  <p>Definition <xref href="../../../reference/1.2glossary.dita#topic6187term-pypm" >
+  <p>Definition <xref href="../../../reference/1.2glossary.dita#topic6187term-pypm" type="section" scope="external"  >
 <i>PyPM</i>
 </xref>
 </p>
@@ -341,24 +341,24 @@ tornado-chat-mongo</xref>
 sample app for an example.</p>
 <p>Alternatively, you can list the modules in a top-level
 <codeph>requirements-pypm.txt</codeph> file. The format is similar,
-if not same, as <xref href="http://pip.readthedocs.org/en/latest/user_guide.html#requirements-files" scope="external" format="html" >pip requirements
+if not same, as <xref href="http://pip.readthedocs.org/en/latest/user_guide.html#requirements-files" type="section" scope="external" format="html" >pip requirements
 files</xref> and
 accepts version specification. The name of this file can be overridden by
 setting the <codeph>PYPM_REQUIREMENTS_FILE</codeph> environment
 variable.</p>
 </section>
 <section id="pip"> <title>pip</title>
-  <p>Definition <xref href="../../../reference/1.2glossary.dita#topic6187/term-pip" >
+  <p>Definition <xref href="../../../reference/1.2glossary.dita#topic6187/term-pip" type="section" scope="external"  >
 <i>pip</i>
 </xref>
 </p>
 <p>In addition - or as alternative - to
-  <xref href="../../../reference/1.2glossary.dita#topic6187/term-pypm" >
+  <xref href="../../../reference/1.2glossary.dita#topic6187/term-pypm" type="section" scope="external"  >
 <i>PyPM</i>
 </xref>, your application
 can also make use of pip to install certain dependencies. The above
 tornado-chat-mongo sample installs "pycurl" using
-  <xref href="../../../reference/1.2glossary.dita#topic6187/term-pip" >
+  <xref href="../../../reference/1.2glossary.dita#topic6187/term-pip" type="section" scope="external"  >
 <i>pip</i>
 </xref>:</p>
 <codeblock>requirements:

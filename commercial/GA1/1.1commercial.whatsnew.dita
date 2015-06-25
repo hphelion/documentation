@@ -21,7 +21,7 @@
 <section id="hp-helion-openstack"> <title>HP Helion <tm tmtype="reg">OpenStack</tm></title>
 <p>The following features have been added to HP Helion <tm tmtype="reg">OpenStack</tm> 1.1:</p>
 <p>
-<b><tm tmtype="reg">OpenStack</tm> Juno support</b> <!--A BR tag was used here in the original source.-->All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#Openstack" >HP Helion <tm tmtype="reg">OpenStack</tm> services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Juno</xref>.</p>
+<b><tm tmtype="reg">OpenStack</tm> Juno support</b> <!--A BR tag was used here in the original source.-->All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#Openstack" type="section" scope="external"  >HP Helion <tm tmtype="reg">OpenStack</tm> services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Juno</xref>.</p>
 <p>
 <b>HP Helion <tm tmtype="reg">OpenStack</tm> Metering services</b> <!--A BR tag was used here in the original source.-->The <xref href="../../commercial/GA1/1.1commerical.services-reporting-overview.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Telemetry and Reporting service</xref> leverages the <tm tmtype="reg">OpenStack</tm> Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. The service employs filters to avoid high loads of inessential data on shared resources. <!--HPM24--></p>
 <p>

@@ -697,7 +697,7 @@ See Reference 6 below </entry>
 <!-- id="ref6" -->
 <xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf" scope="external" format="pdf">HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65</xref> (PDF)  </li>
 <li>
-<xref href="http://tools.ietf.org/html/rfc3723#page-28" scope="external" format="html" >RFC3723 - Securing Block Storage</xref>
+<xref href="http://tools.ietf.org/html/rfc3723#page-28" type="section" scope="external" format="html" >RFC3723 - Securing Block Storage</xref>
 </li>
 <li>
 <xref href="http://tools.ietf.org/html/rfc7143" scope="external" format="html" >RFC7143 - Internet Small Computer System Interface (iSCSI) Protocol</xref>

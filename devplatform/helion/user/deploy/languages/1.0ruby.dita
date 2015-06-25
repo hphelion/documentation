@@ -260,7 +260,7 @@ services.</p>
 <p>
   <b>Note</b>
 </p>
-<p>See <xref href="../../../../../devplatform/helion/user/deploy/1.0buildpack.dita#buildpacks" >Buildpacks</xref> for an alternative way
+<p>See <xref href="../../../../../devplatform/helion/user/deploy/1.0buildpack.dita#buildpacks" type="section" scope="external"  >Buildpacks</xref> for an alternative way
 to deploy Ruby on Rails applications.</p>
 </section>
 <section id="using-ruby-20"> <title>Using Ruby 2.0</title>
@@ -344,10 +344,10 @@ applications.</p>
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-<xref href="../../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#command" >
+<xref href="../../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#command" type="section" scope="external"  >
 <i>command</i>
 </xref> key and set the
-<xref href="../../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#web" >
+<xref href="../../../../../devplatform/helion/user/deploy/1.0manifestyml.dita#web" type="section" scope="external"  >
 <i>processes: web</i>
 </xref>
 key to Null ("\~").</p>
@@ -371,7 +371,7 @@ processes:
 Include <codeph>gem 'thin'</codeph> in your <i>Gemfile</i>.</p>
 <ul>
 <li>
-<xref href="https://devcenter.heroku.com/articles/ruby#webserver" scope="external" format="html" >Using Thin
+<xref href="https://devcenter.heroku.com/articles/ruby#webserver" type="section" scope="external" format="html" >Using Thin
 Webserver</xref>:
 Heroku Dev Center.</li>
 </ul>
@@ -393,7 +393,7 @@ any commands that are installed through Gemfile/bundler.</p>
   <codeph>$ helion run *appname* bundle exec rake stats
 </codeph>
 </codeblock>
-<p>See the <xref href="../../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" >Command
+<p>See the <xref href="../../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" type="section" scope="external"  >Command
 Reference</xref> for
 details on the use of <codeph>helion run</codeph>.</p>
 </section>

@@ -109,7 +109,7 @@
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power" >Power down the host</xref>.</p>
+<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section" scope="external"  >Power down the host</xref>.</p>
 </li>
 <li>
 <p>Make any required resource changes (for example, BIOS changes required for proper operation).</p>
@@ -118,7 +118,7 @@
 </li>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power" >Power on the host</xref> and wait for it to reboot fully.</p>
+<xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita#power" type="section" scope="external"  >Power on the host</xref> and wait for it to reboot fully.</p>
 
 <p>When the host is fully rebooted, it is shown as Locked, Enabled, and Available in the Hosts list.</p>
 

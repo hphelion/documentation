@@ -35,26 +35,26 @@
           <xref href="admin/1.2index.dita">Application Lifecycle Service Admin Guide</xref>
           <ul>
             <li>
-              <xref href="admin/1.2index.dita#topic2276/wizard-based-cluster-creation">Wizard-Based
+              <xref href="admin/1.2index.dita#topic2276/wizard-based-cluster-creation" type="section" scope="external" >Wizard-Based
                 Cluster Creation</xref>
             </li>
             <li>
-              <xref href="admin/1.2index.dita#topic2276/management-console">Management
+              <xref href="admin/1.2index.dita#topic2276/management-console" type="section" scope="external" >Management
                 Console</xref>
             </li>
             <li>
-              <xref href="admin/1.2index.dita#topic2276/server-configuration">Server
+              <xref href="admin/1.2index.dita#topic2276/server-configuration" type="section" scope="external" >Server
                 Configuration</xref>
             </li>
             <li>
-              <xref href="admin/1.2index.dita#topic2276/cluster-configuration">Cluster
+              <xref href="admin/1.2index.dita#topic2276/cluster-configuration" type="section" scope="external" >Cluster
                 Configuration</xref>
             </li>
             <li>
-              <xref href="admin/1.2index.dita#topic2276/best-practices">Best Practices</xref>
+              <xref href="admin/1.2index.dita#topic2276/best-practices" type="section" scope="external" >Best Practices</xref>
             </li>
             <li>
-              <xref href="admin/1.2index.dita#topic2276/reference">Reference</xref>
+              <xref href="admin/1.2index.dita#topic2276/reference" type="section" scope="external" >Reference</xref>
             </li>
           </ul></li>
       </ul>
@@ -68,25 +68,25 @@
           <xref href="user/1.2index.dita">Application Lifecycle Service User Guide</xref>
           <ul>
             <li>
-              <xref href="user/1.2index.dita#topic1693/quick-start">Quick Start</xref>
+              <xref href="user/1.2index.dita#topic1693/quick-start" type="section" scope="external" >Quick Start</xref>
             </li>
             <li>
               <xref href="CLI/1.2ALS_Client_Downloads.dita">Application Lifecycle Service
                 Client</xref>
             </li>
             <li>
-              <xref href="user/1.2index.dita#topic1693/deploying-applications">Deploying
+              <xref href="user/1.2index.dita#topic1693/deploying-applications" type="section" scope="external" >Deploying
                 Applications</xref>
             </li>
             <li>
-              <xref href="user/1.2index.dita#topic1693/services">Services</xref>
+              <xref href="user/1.2index.dita#topic1693/services" type="section" scope="external" >Services</xref>
             </li>
             <li>
-              <xref href="user/1.2index.dita#topic1693/logging-monitoring">Logging &amp;
+              <xref href="user/1.2index.dita#topic1693/logging-monitoring" type="section" scope="external" >Logging &amp;
                 Monitoring</xref>
             </li>
             <li>
-              <xref href="user/1.2index.dita#topic1693/management-console">Management Console</xref>
+              <xref href="user/1.2index.dita#topic1693/management-console" type="section" scope="external" >Management Console</xref>
             </li>
           </ul></li>
       </ul>

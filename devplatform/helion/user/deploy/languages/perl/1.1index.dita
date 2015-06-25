@@ -37,7 +37,7 @@ require 'app.pl';</codeblock>
 could rename <codeph>app.pl</codeph> to <codeph>app.psgi</codeph> instead, but using the approach above
 allows you to set PSGI-specific configurations in a separate file.</p>
 <p>It is possible to <xref type="section" href="#topic8895/uwsgi-perl-static-files">serve static files with uWSGI</xref>.</p>
-  <p>The <xref href="1.1perlcgi.dita#topic751/perlcgi" >
+  <p>The <xref href="1.1perlcgi.dita#topic751/perlcgi" type="section" scope="external"  >
 <i>perlcgi</i>
 </xref> framework is also available for
 running traditional Perl CGI applications without PSGI.</p>
@@ -107,10 +107,10 @@ else {
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-  <xref type="section" href="../../../deploy/1.1manifestyml.dita#topic20986/command" >
+  <xref type="section" href="../../../deploy/1.1manifestyml.dita#topic20986/command" type="section" scope="external"  >
 <i>command</i>
 </xref> key and set the
-  <xref type="section" href="../../../deploy/1.1manifestyml.dita#topic20986/web" >
+  <xref type="section" href="../../../deploy/1.1manifestyml.dita#topic20986/web" type="section" scope="external"  >
 <i>processes:
 web</i>
 </xref> key to
@@ -203,7 +203,7 @@ Application Lifecycle Service will use this if there is no <i>cpanfile</i> or <i
 <section id="cpanfile"> <title>cpanfile</title>
 <p>The <xref href="https://metacpan.org/module/MIYAGAWA/Module-CPANfile-0.9031/lib/cpanfile.pod" scope="external" format="html" >cpanfile</xref> format is preferable for Perl web applications, as <i>Makefile.PL</i> is
 generally intended for Perl modules. It allows for more elaborate
-specification of module dependencies (see the <xref href="https://metacpan.org/module/MIYAGAWA/Module-CPANfile-0.9031/lib/cpanfile.pod#SYNOPSIS" scope="external" format="html" >cpanfile
+specification of module dependencies (see the <xref href="https://metacpan.org/module/MIYAGAWA/Module-CPANfile-0.9031/lib/cpanfile.pod#SYNOPSIS" type="section" scope="external" format="html" >cpanfile
 SYNOPSIS</xref>
 for more information).</p>
 </section>
@@ -225,7 +225,7 @@ will install those modules from the cached files.</p>
 with numerous module dependencies, especially if those dependencies have
 large test suites.</p>
 <p>To disable testing for cpanm in staging, set
-<xref href="http://search.cpan.org/dist/App-cpanminus/bin/cpanm#OPTIONS" scope="external" format="html" >PERL_CPANM_OPT</xref>
+<xref href="http://search.cpan.org/dist/App-cpanminus/bin/cpanm#OPTIONS" type="section" scope="external" format="html" >PERL_CPANM_OPT</xref>
   to '--notest' in <xref href="../../../deploy/1.1manifestyml.dita" >
 <i>manifest.yml</i>
 </xref>:</p>

@@ -351,7 +351,7 @@ Backup procedure completed.
 </codeph>
 </codeblock>
 
-  <p>For more information on the <codeph>baremetal.csv</codeph> file, see the <xref href="1.1commercial.install-GA-prereqs.dita#csv">Installation Prerequisites</xref>.</p>
+  <p>For more information on the <codeph>baremetal.csv</codeph> file, see the <xref href="1.1commercial.install-GA-prereqs.dita#csv" type="section" scope="external" >Installation Prerequisites</xref>.</p>
 </li>
 <li>
 <p>Execute the following script from the <codeph>/root/tripleo/tripleo-incubator/</codeph>scripts directory:</p>

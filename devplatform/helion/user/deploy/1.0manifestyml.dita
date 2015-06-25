@@ -292,7 +292,7 @@ provide a name. The name can also be specified on the command line (eg.
 <p>
   <b>Note</b>
 </p>
-<p>The application name must be a valid <xref href="http://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_host_names" scope="external" format="html" >hostname
+<p>The application name must be a valid <xref href="http://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_host_names" type="section" scope="external" format="html" >hostname
 label</xref>
 (i.e. containing only alphanumeric characters and hyphens).</p>
 </section>
@@ -458,7 +458,7 @@ name. For example:</p>
   ${name}-db: mysql
 </codeph>
 </codeblock>
-  <p>The application name can be set as an option to the <xref href="../reference/1.0client-ref.dita#topic203269/helion-push-application" >
+  <p>The application name can be set as an option to the <xref href="../reference/1.0client-ref.dita#topic203269/helion-push-application" type="section" scope="external"  >
 <i>helion
 push</i>
 </xref> command, overriding
@@ -596,7 +596,7 @@ url:
 "appname.paasname.com" URL to the application. If you would like this
 URL assigned as well, add <codeph>${name}.${target-base}</codeph>
 to the list of URLs.</p>
-<p>See  <xref href="1.0index.dita#topic15975/mapping-app-urls"/> for more information.</p>
+<p>See  <xref href="1.0index.dita#topic15975/mapping-app-urls" type="section" scope="external" /> for more information.</p>
 </section>
 <section id="env"> <title>env:</title>
 <p>A map of environment variables to initialize for the application. Each
@@ -611,7 +611,7 @@ such as API keys and passwords.</p>
 <p>Each environment variable can have attributes which modify the
   interactive behavior of the <xref href="../reference/1.0client-ref.dita"><i>helion client</i>
 </xref> when using the
-  <xref href="../reference/1.0client-ref.dita#topic203269/helion-push-application" >
+  <xref href="../reference/1.0client-ref.dita#topic203269/helion-push-application" type="section" scope="external"  >
 <i>push</i>
 </xref> command. These
 attributes are set with the following keys:</p>

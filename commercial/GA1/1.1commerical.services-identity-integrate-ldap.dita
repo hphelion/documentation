@@ -17,7 +17,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commerical.services-identity-integrate-ldap.md-->
  <!--permalink: /helion/openstack/1.1/services/identity/integrate-ldap/--></p>
-<p> <xref href="1.1commercial.install-GA-prereqs.dita#ldap">▲ Prerequisites</xref> </p>
+<p> <xref href="1.1commercial.install-GA-prereqs.dita#ldap" type="section" scope="external" >▲ Prerequisites</xref> </p>
 <!-- Based on https://wiki.hpcloud.net/display/csbu/Integrating+Keystone+with+LDAP+in+Helion+1.1 -->
 <p>The HP Helion <tm tmtype="reg">OpenStack</tm> Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes.     LDAP integration can be performed during the HP Helion <tm tmtype="reg">OpenStack</tm> installation process.</p>
 <p>Multiple authentication backends are supported, using the Keystone Domain-Specific Configuration feature. Separate authentication domains can be created to authenticate users on single LDAP server with different filters, or on different LDAP servers.</p>
@@ -295,10 +295,10 @@
 </ol>
 <p>Follow the steps described in the installation instructions to deploy the overcloud nodes.</p>
 <p>
-  <xref href="1.1commercial.install-GA-kvm.dita#startseed">HP Helion <tm tmtype="reg">OpenStack</tm> Installation and Configuration for KVM Hypervisor</xref>
+  <xref href="1.1commercial.install-GA-kvm.dita#startseed" type="section" scope="external" >HP Helion <tm tmtype="reg">OpenStack</tm> Installation and Configuration for KVM Hypervisor</xref>
 </p>
 <p>
-  <xref href="1.1commercial.install-GA-esx.dita#startseed">HP Helion <tm tmtype="reg">OpenStack</tm> Installation and Configuration for ESX Hypervisor</xref>
+  <xref href="1.1commercial.install-GA-esx.dita#startseed" type="section" scope="external" >HP Helion <tm tmtype="reg">OpenStack</tm> Installation and Configuration for ESX Hypervisor</xref>
 </p>
 </section>
 <section id="per-domain-ldap-backend-configuration-post-installation"> <title>Per-domain LDAP Backend Configuration Post-installation</title>

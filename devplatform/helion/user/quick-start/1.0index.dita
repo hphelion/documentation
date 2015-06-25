@@ -24,7 +24,7 @@ you will need:</p>
 <li>a web browser</li>
 </ul>
 <section id="management-console"> <title>Management Console</title>
-<p>The web interface for Application Lifecycle Service is called the <xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#management-console" >
+<p>The web interface for Application Lifecycle Service is called the <xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#management-console" type="section" scope="external"  >
 <i>Management
 Console</i>
 </xref>. You can use it to:</p>
@@ -40,7 +40,7 @@ been set up for you on the system.</p>
 <p>The interface should be mostly self-explanatory. It exposes most of the
 functionality you have access to as an end user, but to deploy your own
 applications from source code on your local machine you will need to install and use
-the Helion <xref href="../../../../devplatform/helion/user/client/1.0index.dita#helion-client-setup" >Application Lifestyle Service client</xref>.</p>
+the Helion <xref href="../../../../devplatform/helion/user/client/1.0index.dita#helion-client-setup" type="section" scope="external"  >Application Lifestyle Service client</xref>.</p>
 </section>
 <section id="application-lifecycle-service-client"> <title>Application Lifecycle Service Client</title>
 <p>The Helion client is used for pushing
@@ -61,7 +61,7 @@ Linux x64)</li>
 <li>Confirm that the client is installed correctly by running
 <codeph>helion help</codeph>.</li>
 </ol>
-<p>The <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" >
+<p>The <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" type="section" scope="external"  >
 <i>Application Lifecycle Service Client Command
 Reference</i>
 </xref> has a full
@@ -92,7 +92,7 @@ Successfully logged into [https://api.example.hphelion.com]
 </section>
 <section id="setting-organization-and-space"> <title>Setting Organization and Space</title>
 <p>If you are logging in for the first time, your user account will not
-automatically choose an <xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces" >
+automatically choose an <xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >
 <i>Organization and
 Space</i>
 </xref> for deployment. You will need to set these manually.</p>
@@ -120,10 +120,10 @@ Space:        dev
 <b>Note</b>:If your account is not a member of a Space, you will need an
 Organization Manager to add you as a Developer. If you are an
 Organization Manager or Admin, you can create new Spaces in the
-<xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#user-console-space" >
+<xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#user-console-space" type="section" scope="external"  >
 <i>Management Console</i>
 </xref> or with
-the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-create-space" >
+the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-create-space" type="section" scope="external"  >
 <i>helion
 create-space</i>
 </xref>
@@ -164,7 +164,7 @@ application or run:</p>
 </codeph>
 </codeblock>
 <p>Documentation on configuring applications in specific languages and
-frameworks is available in the <xref href="../../../../devplatform/helion/user/deploy/1.0index.dita#deploying-apps" >
+frameworks is available in the <xref href="../../../../devplatform/helion/user/deploy/1.0index.dita#deploying-apps" type="section" scope="external"  >
 <i>Deploying Apps</i>
 </xref> section.</p>
 </section>

@@ -26,7 +26,7 @@
 <p>
 
 </p>
-<p>Application Lifecycle Service's <xref href="../../../../devplatform/helion/admin/reference/1.0architecture.dita#architecture-dea" >DEA role</xref>
+<p>Application Lifecycle Service's <xref href="../../../../devplatform/helion/admin/reference/1.0architecture.dita#architecture-dea" type="section" scope="external"  >DEA role</xref>
 runs Linux containers to isolate user applications during staging and at
 runtime. Management of these application containers is handled by the
 <codeph>fence</codeph> process, which in turn uses <xref href="http://docs.docker.io/en/latest/" scope="external" format="html" >Docker</xref> to create and destroy Linux containers on demand.</p>
@@ -83,14 +83,14 @@ RUN apt-get -y install libgraphite2-dev
 
 <ul>
 <li>
-<xref href="http://docs.docker.io/en/latest/use/builder#from" scope="external" format="html" >FROM</xref>:
+<xref href="http://docs.docker.io/en/latest/use/builder#from" type="section" scope="external" format="html" >FROM</xref>:
 inherits the environment and installed software from Application Lifecycle Service's
 app image.</li>
 <li>
-<xref href="http://docs.docker.io/en/latest/use/builder#run" scope="external" format="html" >RUN</xref>:
+<xref href="http://docs.docker.io/en/latest/use/builder#run" type="section" scope="external" format="html" >RUN</xref>:
 specifies arbitrary commands to run before saving the image.</li>
 <li>
-<xref href="http://docs.docker.io/en/latest/use/builder#add" scope="external" format="html" >ADD</xref>: could
+<xref href="http://docs.docker.io/en/latest/use/builder#add" type="section" scope="external" format="html" >ADD</xref>: could
 be used to copy files into the image.</li>
 </ul>
 </li>

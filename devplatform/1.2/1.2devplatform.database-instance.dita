@@ -43,7 +43,7 @@
 <ol>
 <li>Install the <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref>. </li>
 <li>
-          <xref href="1.2devplatform_commercial_install.dita#topic24073/install-database">Configure
+          <xref href="1.2devplatform_commercial_install.dita#topic24073/install-database" type="section" scope="external" >Configure
             the database service</xref>.</li>
 </ol>
 </section>
@@ -89,7 +89,7 @@
 <li>Once the database instance has reached <b>Active</b> status, the instance is ready to use.</li>
 </ol>
 </section>
-<section id="creating-a-database-backup"> <title>Creating a Database Backup<!--Removed anchor point backup--><!-- id="backup" --></title>
+<section id="backup"> <title>Creating a Database Backup<!--Removed anchor point backup--><!-- id="backup" --></title>
 <p>The following section will demonstrate how to back up an existing database instance. This will take a backup of the entire database instance. If necessary, the backup can be restored to a new instance at a later time.</p>
 <ol>
 <li>Log in to the Horizon console.</li>

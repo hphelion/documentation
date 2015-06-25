@@ -44,7 +44,7 @@
 </ul>
 <p>For more information about types of routers, see <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network.dita" >Planning for Virtual Routers</xref>.</p>
 
-<p>Note: The <b>Router Type</b> field is shown only for the admin user. For other tenants, a centralized router is added.The admin user can change this setting on behalf of another tenant after the router has been added. For more information, see <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-vrs.dita#admin" >Administering Virtual Routers</xref>.</p>
+<p>Note: The <b>Router Type</b> field is shown only for the admin user. For other tenants, a centralized router is added.The admin user can change this setting on behalf of another tenant after the router has been added. For more information, see <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-vrs.dita#admin" type="section" scope="external"  >Administering Virtual Routers</xref>.</p>
 </li>
 <li>
 <p>Click <b>Create Router</b>.</p>

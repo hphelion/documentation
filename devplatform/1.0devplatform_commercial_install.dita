@@ -66,7 +66,7 @@
 </codeblock>
 <ol>
 <li>
-<p>Register and download the package from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" scope="external" format="html" >HP Helion Development Platform</xref>
+<p>Register and download the package from the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" type="section" scope="external" format="html" >HP Helion Development Platform</xref>
 </p>
 </li>
 <li>
@@ -499,7 +499,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <p>Do not attempt to install any Marketplace packages yet. Log out from the Horizon dashboard.</p>
 </li>
 <li>
-<p>Log back into the Horizon dashboard and click on the <b>Marketplace</b> panel under the current Project to begin using the Marketplace Service. You may now install <xref href="../devplatform/1.0devplatform.marketplace.install.dita#install" >Marketplace packages</xref>.</p>
+<p>Log back into the Horizon dashboard and click on the <b>Marketplace</b> panel under the current Project to begin using the Marketplace Service. You may now install <xref href="../devplatform/1.0devplatform.marketplace.install.dita#install" type="section" scope="external"  >Marketplace packages</xref>.</p>
 </li>
 </ol>
 </section>
