@@ -116,7 +116,7 @@
 </section>
 <section id="packages"> <title>Install Debian or Ubuntu packages</title>
 <p>Before starting the installation, you must first install Debian 8 or Ubuntu 14.04 LTS.</p>
-<p>For more information about the Debian or Ubuntu packages that are required for the seed cloud host, see <xref href="1.1commercial.install-GA-supportmatrix.dita#software-requirements-jumplink-span" type="section" scope="external"  >Support Matrix</xref>.</p>
+  <p>For more information about the Debian or Ubuntu packages that are required for the seed cloud host, see <xref href="1.1commercial.install-GA-supportmatrix.dita#topic12282/software-requirements" type="section">Support Matrix</xref>.</p>
 </section>
 <section id="ntp"> <title>Install and configure NTP</title>
 <p>NTP is a networking protocol for clock synchronization between computer systems.</p>
