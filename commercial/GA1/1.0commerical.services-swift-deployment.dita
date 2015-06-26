@@ -41,9 +41,7 @@
 <li>
 <xref type="section" href="#topic13581/deploying-scale-out-Swift-object-nodes">Deploy the Scale-out Object Nodes</xref>
 </li>
-<li>
-<xref type="section" href="#topic13581/verifying-deployed-swift-nodes">Verify the Deployed Nodes</xref>
-</li>
+      <li><xref href="#topic13581/verifying-deployed-Swift-nodes" format="dita"/></li>
 <li>
 <xref type="section" href="#topic13581/preparing-disks-on-Swift-nodes">Prepare the Disks on the Deployed Nodes</xref>
 </li>
@@ -140,9 +138,8 @@
               <entry>
                 <b>Disk Label</b>
               </entry>
-              <entry>Defines disk label of the disk. For more information refer to <xref
-                  href=" #preparing-disks-on-swift-nodes" type="section" scope="external">Preparing
-                  disks on Swift nodes</xref>
+              <entry>Defines disk label of the disk. For more information refer to  <xref
+                  href="#topic13581/preparing-disks-on-swift-nodes" format="dita">Preparing disks on Swift nodes</xref>
               </entry>
             </row>
             <row>

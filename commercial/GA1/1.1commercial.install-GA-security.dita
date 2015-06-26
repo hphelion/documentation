@@ -84,9 +84,6 @@
 <xref type="section" href="#topic20483/loadbalance">Configuring the load balancer</xref>
 </li>
 <li>
-<xref type="section" href="#topic20483/ssloffload">About SSL Offloading on Load Balancer</xref>
-</li>
-<li>
 <xref type="section" href="#topic20483/ipmapping">IP mapping concerns</xref>
 </li>
 </ul>
@@ -170,142 +167,143 @@ Note: all access to overcloud services now happens over a TLS connection. Read m
 </ul>
 <table>
 <tgroup cols="3">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<thead>
-<row>
-<entry>API</entry>
-<entry>Public Endpoint</entry>
-<entry>Management Endpoint</entry>
-</row>
-</thead>
-<tbody>
-<row>
-    <entry>Identity (Keystone)</entry>
-    <entry>https://keystone.fqdn.com/v2.0</entry>
-    <entry>
-https://&lt;internalVIP&gt;:5000/v2.0</entry>
-  </row>
-<row>
-    <entry>Image (Glance)</entry>
-    <entry>https://glance.fqdn.com/</entry>
-    <entry>https://&lt;internalVIP&gt;:9292/</entry>
-  </row>
-<row>
-    <entry>Network (Neutron)</entry>
-    <entry>https://neutron.fqdn.com/</entry>
-    <entry>https://&lt;internalVIP&gt;:9696/</entry>
-  </row>
-<row>
-    <entry>Compute (Nova)</entry>
-    <entry>https://nova.fqdn.com/v2/$(tenant_id)s</entry>
-    <entry>https://&lt;internalVIP&gt;:8774/v2/$(tenant_id)s</entry>
-  </row>
-<row>
-    <entry>Volume (Cinder)</entry>
-    <entry>https://cinder.fqdn.com/v1/%(tenant_id)s</entry>
-    <entry>https://&lt;internalVIP&gt;:8776/v1/%(tenant_id)s</entry>
-  </row>
-<row>
-    <entry>Orchestration (Heat)</entry>
-    <entry>https://heat.fqdn.com/v1/%(tenant_id)s</entry>
-    <entry>https://&lt;internalVIP&gt;:8004/v1/%(tenant_id)s</entry>
-  </row>
-<row>
-    <entry>Object Store (Swift)</entry>
-    <entry>https://swift.fqdn.com/v1/AUTH_%(tenant_id)s</entry>
-    <entry>https://&lt;internalVIP&gt;:8080/v1/AUTH_%(tenant_id)s</entry>
-  </row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry>API</entry>
+              <entry>Public Endpoint</entry>
+              <entry>Management Endpoint</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Identity (Keystone)</entry>
+              <entry>https://keystone.fqdn.com/v2.0</entry>
+              <entry> https://&lt;internalVIP&gt;:5000/v2.0</entry>
+            </row>
+            <row>
+              <entry>Image (Glance)</entry>
+              <entry>https://glance.fqdn.com/</entry>
+              <entry>https://&lt;internalVIP&gt;:9292/</entry>
+            </row>
+            <row>
+              <entry>Network (Neutron)</entry>
+              <entry>https://neutron.fqdn.com/</entry>
+              <entry>https://&lt;internalVIP&gt;:9696/</entry>
+            </row>
+            <row>
+              <entry>Compute (Nova)</entry>
+              <entry>https://nova.fqdn.com/v2/$(tenant_id)s</entry>
+              <entry>https://&lt;internalVIP&gt;:8774/v2/$(tenant_id)s</entry>
+            </row>
+            <row>
+              <entry>Volume (Cinder)</entry>
+              <entry>https://cinder.fqdn.com/v1/%(tenant_id)s</entry>
+              <entry>https://&lt;internalVIP&gt;:8776/v1/%(tenant_id)s</entry>
+            </row>
+            <row>
+              <entry>Orchestration (Heat)</entry>
+              <entry>https://heat.fqdn.com/v1/%(tenant_id)s</entry>
+              <entry>https://&lt;internalVIP&gt;:8004/v1/%(tenant_id)s</entry>
+            </row>
+            <row>
+              <entry>Object Store (Swift)</entry>
+              <entry>https://swift.fqdn.com/v1/AUTH_%(tenant_id)s</entry>
+              <entry>https://&lt;internalVIP&gt;:8080/v1/AUTH_%(tenant_id)s</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 <p>
 <b>Note:</b>  These mapping are not an integral part of the Keystone service catalog. When a Keystone catalog is requested, it will always return the management IP. The Cloud administrator needs to publish the equivalent public endpoint for each service that needs to be externalized. Consider other endpoints to consider, such as the VNC console and so forth.</p>
 <p>To protect against external attacks on Helion services, your firewall should be configured with a rule to block any requests originating from outside the network that attempts to reach any of the HP <tm tmtype="reg">Helion OpenStack</tm> nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the HP <tm tmtype="reg">Helion OpenStack</tm> installation, other than those indicated this table:</p>
 <table>
 <tgroup cols="4">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<thead>
-<row>
-<entry>Description</entry>
-<entry>Initiating node (from)</entry>
-<entry>Receiving node (to)</entry>
-<entry>Port</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>User requests to API endpoints and Horizon console</entry>
-<entry>External network</entry>
-<entry>Cloud Controller Nodes</entry>
-<entry>443</entry>
-</row>
-<row>
-<entry>Cloud Administrator access for Administrator/Operations activities</entry>
-<entry>Your enterprise intranet/VPN</entry>
-<entry>All Helion nodes</entry>
-<entry>22, 80, 81,8080, 6080</entry>
-</row>
-<row>
-<entry>Integration with end user portals/application</entry>
-<entry>Your enterprise intranet/VPN</entry>
-<entry>All Helion nodes</entry>
-<entry>5000, 9292, 9696, 8774, 8776, 8004</entry>
-</row>
-<row>
-<entry>Used for shipping logs into LogStash</entry>
-<entry>Within the cloud</entry>
-<entry>Undercloud Controller/VIP</entry>
-<entry>TCP 5672</entry>
-</row>
-<row>
-<entry>Ephermeral CA Service - used to obtain SSL certificates</entry>
-<entry>Within the cloud</entry>
-<entry>Overcloud VIP</entry>
-<entry>TCP 14000</entry>
-</row>
-<row>
-<entry>Keystone Admin API - used to validate end user authentication tokens</entry>
-<entry>Within the cloud</entry>
-<entry>Overcloud VIP</entry>
-<entry>TCP 35357</entry>
-</row>
-<row>
-<entry>Keystone API - used by backup while uploading to Swift</entry>
-<entry>Within the cloud</entry>
-<entry>Overcloud VIP</entry>
-<entry>TCP 5000</entry>
-</row>
-<row>
-<entry>Swift API - used by backup</entry>
-<entry>Within the cloud</entry>
-<entry>Overcloud VIP</entry>
-<entry>TCP 8080</entry>
-</row>
-<row>
-<entry>Heat metadata API service - used by instances to retrieve their configuration</entry>
-<entry>Within the cloud</entry>
-<entry>Overcloud VIP</entry>
-<entry>TCP 8000</entry>
-</row>
-<row>
-<entry>Heat CloudWatch API service - used by instances  to retrieve their configuration and report status back to Heat</entry>
-<entry>Within the cloud</entry>
-<entry>Overcloud VIP</entry>
-<entry>TCP 8003</entry>
-</row>
-<row>
-<entry>DNSaaS API servers - used to designate the API service</entry>
-<entry>Baremetal server</entry>
-<entry>Within the cloud</entry>
-<entry>TCP 9001</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <colspec colname="col4" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry>Description</entry>
+              <entry>Initiating node (from)</entry>
+              <entry>Receiving node (to)</entry>
+              <entry>Port</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>User requests to API endpoints and Horizon console</entry>
+              <entry>External network</entry>
+              <entry>Cloud Controller Nodes</entry>
+              <entry>443</entry>
+            </row>
+            <row>
+              <entry>Cloud Administrator access for Administrator/Operations activities</entry>
+              <entry>Your enterprise intranet/VPN</entry>
+              <entry>All Helion nodes</entry>
+              <entry>22, 80, 81,8080, 6080</entry>
+            </row>
+            <row>
+              <entry>Integration with end user portals/application</entry>
+              <entry>Your enterprise intranet/VPN</entry>
+              <entry>All Helion nodes</entry>
+              <entry>5000, 9292, 9696, 8774, 8776, 8004</entry>
+            </row>
+            <row>
+              <entry>Used for shipping logs into LogStash</entry>
+              <entry>Within the cloud</entry>
+              <entry>Undercloud Controller/VIP</entry>
+              <entry>TCP 5672</entry>
+            </row>
+            <row>
+              <entry>Ephermeral CA Service - used to obtain SSL certificates</entry>
+              <entry>Within the cloud</entry>
+              <entry>Overcloud VIP</entry>
+              <entry>TCP 14000</entry>
+            </row>
+            <row>
+              <entry>Keystone Admin API - used to validate end user authentication tokens</entry>
+              <entry>Within the cloud</entry>
+              <entry>Overcloud VIP</entry>
+              <entry>TCP 35357</entry>
+            </row>
+            <row>
+              <entry>Keystone API - used by backup while uploading to Swift</entry>
+              <entry>Within the cloud</entry>
+              <entry>Overcloud VIP</entry>
+              <entry>TCP 5000</entry>
+            </row>
+            <row>
+              <entry>Swift API - used by backup</entry>
+              <entry>Within the cloud</entry>
+              <entry>Overcloud VIP</entry>
+              <entry>TCP 8080</entry>
+            </row>
+            <row>
+              <entry>Heat metadata API service - used by instances to retrieve their
+                configuration</entry>
+              <entry>Within the cloud</entry>
+              <entry>Overcloud VIP</entry>
+              <entry>TCP 8000</entry>
+            </row>
+            <row>
+              <entry>Heat CloudWatch API service - used by instances to retrieve their configuration
+                and report status back to Heat</entry>
+              <entry>Within the cloud</entry>
+              <entry>Overcloud VIP</entry>
+              <entry>TCP 8003</entry>
+            </row>
+            <row>
+              <entry>DNSaaS API servers - used to designate the API service</entry>
+              <entry>Baremetal server</entry>
+              <entry>Within the cloud</entry>
+              <entry>TCP 9001</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="back-end"> <title>Securing the Object Operations (Swift) back-end network connections</title>
@@ -320,151 +318,153 @@ https://&lt;internalVIP&gt;:5000/v2.0</entry>
 <p>The following table describes the data flow between Helion nodes for Object Operations (Swift) back-end traffic:</p>
 <table>
 <tgroup cols="5">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<colspec colname="col5"/>
-<thead>
-<row>
-<entry>Interface</entry>
-<entry>Description</entry>
-<entry>Initiating node (from)</entry>
-<entry>Receiving node (to)</entry>
-<entry>Port</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>1</entry>
-<entry>Admin access via SSH <!--A BR tag was used here in the original source.-->Pyringos copy of ring files via SCP</entry>
-<entry>Undercloud controller</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>22</entry>
-</row>
-<row>
-<entry>2</entry>
-<entry>Admin access via SSH<!--A BR tag was used here in the original source.-->Pyringos copy of ring files via SCP</entry>
-<entry>Undercloud controller</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>22</entry>
-</row>
-<row>
-<entry>3</entry>
-<entry>Admin access via SSH</entry>
-<entry>Undercloud controller</entry>
-<entry>Object Storage</entry>
-<entry>22</entry>
-</row>
-<row>
-<entry>3</entry>
-<entry>Pyringos copy of ring files via SCP</entry>
-<entry>Undercloud controller</entry>
-<entry>Object Storage</entry>
-<entry>22</entry>
-</row>
-<row>
-<entry>4</entry>
-<entry>Swift proxy to object server over HTTP</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>Object Storage</entry>
-<entry>6000</entry>
-</row>
-<row>
-<entry>4</entry>
-<entry>Rsync</entry>
-<entry>Object Storage</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>873</entry>
-</row>
-<row>
-<entry>4</entry>
-<entry>Container update over HTTP</entry>
-<entry>Object Storage</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>6001,6002</entry>
-</row>
-<row>
-<entry>5</entry>
-<entry>Swift proxy to object server over HTTP</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>Object Storage</entry>
-<entry>6000</entry>
-</row>
-<row>
-<entry>5</entry>
-<entry>Rsync</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>Object Storage</entry>
-<entry>873</entry>
-</row>
-<row>
-<entry>5</entry>
-<entry>Rsync</entry>
-<entry>Object Storage</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>873</entry>
-</row>
-<row>
-<entry>5</entry>
-<entry>Container update over HTTP</entry>
-<entry>Object Storage</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>6001,6002
-</entry>
-</row>
-<row>
-<entry>6</entry>
-<entry>Rsync</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>873</entry>
-</row>
-<row>
-<entry>6</entry>
-<entry>Rsync</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>873</entry>
-</row>
-<row>
-<entry>6</entry>
-<entry>Container update over HTTP</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>6001,6002</entry>
-</row>
-<row>
-<entry>6</entry>
-<entry>Container update over HTTP</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>6001,6002
-</entry>
-</row>
-<row>
-<entry>7</entry>
-<entry>HA Proxy forwards API requests via HTTP</entry>
-<entry>Cloud Controller</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>8080</entry>
-</row>
-<row>
-<entry>8</entry>
-<entry>HA Proxy forwards API requests via HTTP</entry>
-<entry>Cloud Controller</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>8080</entry>
-</row>
-<row>
-<entry>8</entry>
-<entry>Rsync</entry>
-<entry>Object Storage</entry>
-<entry>Object Storage   </entry>
-<entry>873</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <colspec colname="col4" colsep="1" rowsep="1"/>
+          <colspec colname="col5" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry>Interface</entry>
+              <entry>Description</entry>
+              <entry>Initiating node (from)</entry>
+              <entry>Receiving node (to)</entry>
+              <entry>Port</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>1</entry>
+              <entry>Admin access via SSH
+                <!--A BR tag was used here in the original source.-->Pyringos copy of ring files via
+                SCP</entry>
+              <entry>Undercloud controller</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>22</entry>
+            </row>
+            <row>
+              <entry>2</entry>
+              <entry>Admin access via
+                SSH<!--A BR tag was used here in the original source.-->Pyringos copy of ring files
+                via SCP</entry>
+              <entry>Undercloud controller</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>22</entry>
+            </row>
+            <row>
+              <entry>3</entry>
+              <entry>Admin access via SSH</entry>
+              <entry>Undercloud controller</entry>
+              <entry>Object Storage</entry>
+              <entry>22</entry>
+            </row>
+            <row>
+              <entry>3</entry>
+              <entry>Pyringos copy of ring files via SCP</entry>
+              <entry>Undercloud controller</entry>
+              <entry>Object Storage</entry>
+              <entry>22</entry>
+            </row>
+            <row>
+              <entry>4</entry>
+              <entry>Swift proxy to object server over HTTP</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>Object Storage</entry>
+              <entry>6000</entry>
+            </row>
+            <row>
+              <entry>4</entry>
+              <entry>Rsync</entry>
+              <entry>Object Storage</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>873</entry>
+            </row>
+            <row>
+              <entry>4</entry>
+              <entry>Container update over HTTP</entry>
+              <entry>Object Storage</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>6001,6002</entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry>Swift proxy to object server over HTTP</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>Object Storage</entry>
+              <entry>6000</entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry>Rsync</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>Object Storage</entry>
+              <entry>873</entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry>Rsync</entry>
+              <entry>Object Storage</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>873</entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry>Container update over HTTP</entry>
+              <entry>Object Storage</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>6001,6002 </entry>
+            </row>
+            <row>
+              <entry>6</entry>
+              <entry>Rsync</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>873</entry>
+            </row>
+            <row>
+              <entry>6</entry>
+              <entry>Rsync</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>873</entry>
+            </row>
+            <row>
+              <entry>6</entry>
+              <entry>Container update over HTTP</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>6001,6002</entry>
+            </row>
+            <row>
+              <entry>6</entry>
+              <entry>Container update over HTTP</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>6001,6002 </entry>
+            </row>
+            <row>
+              <entry>7</entry>
+              <entry>HA Proxy forwards API requests via HTTP</entry>
+              <entry>Cloud Controller</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>8080</entry>
+            </row>
+            <row>
+              <entry>8</entry>
+              <entry>HA Proxy forwards API requests via HTTP</entry>
+              <entry>Cloud Controller</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>8080</entry>
+            </row>
+            <row>
+              <entry>8</entry>
+              <entry>Rsync</entry>
+              <entry>Object Storage</entry>
+              <entry>Object Storage </entry>
+              <entry>873</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 <p>Applying access control lists (ACLs) for flows in the table above produces the logical deployment, displayed in <xref type="section" href="#topic20483/fig4">Figure 4</xref>:</p>
 </section>

@@ -20,11 +20,11 @@
 <!--##Understanding HP <tm tmtype="reg">Helion OpenStack</tm>-->
 <ul>
 <li>
-<xref type="section" href="#topic7037/whatHelion">What is HP <tm tmtype="reg">Helion OpenStack</tm></xref>
-</li>
+  <xref href="#topic7037/what-is-hp-helion-openstack" format="dita">What is HP <tm tmtype="reg">Helion
+    OpenStack</tm></xref></li>
 <li>
-<xref type="section" href="#topic7037/distroenable">What does HP <tm tmtype="reg">Helion OpenStack</tm> enable me to do?</xref>
-</li>
+  <xref href="#topic7037/what-does-hp-helion-openstack-enable-me-to-do" format="dita">What does HP <tm tmtype="reg">Helion
+    OpenStack</tm> enable me to do?</xref></li>
 <li>
 <xref type="section" href="#topic7037/TripleO">What is TripleO?</xref>
 </li>
@@ -37,27 +37,29 @@
 <li>
 <xref type="section" href="#topic7037/localized">Is the release localized for non-English speaking markets?</xref> </li>
 <li>
-<xref type="section" href="#topic7037/hybridorpubliccloud">Does the HP <tm tmtype="reg">Helion OpenStack</tm> work with hybrid or public cloud projects?</xref>
-</li>
+  <xref href="#topic7037/does-hp-helion-openstack-work-with-hybrid-or-public-cloud-projects"
+          format="dita">Does the HP <tm tmtype="reg"
+            >Helion OpenStack</tm> work with hybrid or public cloud projects?</xref></li>
 <li>
 <xref type="section" href="#topic7037/nodes">How many nodes and virtual machines does it support?</xref>  </li>
 <li>
 <xref type="section" href="#topic7037/softwareupdate">How can I update the software?</xref>
 </li>
 <li>
-<xref type="section" href="#topic7037/includeOS">Does it include an Operating System (OS)?</xref>
-</li>
-<li>
-<xref type="section" href="#topic7037/icehouse">Does this distribution include the <tm tmtype="reg">OpenStack</tm> Icehouse release?</xref> </li>
-<li>
-<xref type="section" href="#topic7037/nonhphardware">Can HP <tm tmtype="reg">Helion OpenStack</tm> run on non-HP hardware?</xref>
-</li>
+        <xref href="#topic7037/does-hp-helion-openstack-include-an-operating-system-os"
+          format="dita">Does it include an Operating System (OS)?</xref>
+      </li>
+<li><xref href="#topic7037/does-this-distribution-include-the-openstack-icehouse-release"
+          format="dita"/>
+      </li>
+      <li><xref href="#topic7037/can-hp-helion-openstack-run-on-non-hp-hardware" format="dita"
+        /></li>
 </ul>
 <section id="support-and-additional-resources"> <title>Support and additional resources</title>
 <ul>
-<li>
-<xref type="section" href="#topic7037/supportservices">Are HP support services included with HP <tm tmtype="reg">Helion OpenStack</tm></xref>
-</li>
+<li><xref href="#topic7037/are-hp-support-services-included-with-hp-helion-openstack" format="dita">Are HP support services included
+            with HP <tm tmtype="reg">Helion OpenStack</tm></xref>
+        </li>
 <li>
 <xref type="section" href="#topic7037/supportoptions">What support options are available?</xref>
 </li>
@@ -65,7 +67,10 @@
 <xref type="section" href="#topic7037/MoreInfo">Where can I find more information?</xref>
 </li>
 <li>
-<xref type="section" href="#topic7037/reportissues">Where can I report issues with HP <tm tmtype="reg">OpenStack</tm> Helion?</xref> </li>
+          <xref href="#topic7037/where-can-i-report-issues-with-hp-helion-openstack" format="dita"
+            >Where can I report issues with HP
+              <tm tmtype="reg">OpenStack</tm> Helion?</xref>
+        </li>
 </ul>
 </section>
 <section id="what-is-hp-helion-openstack"> <title>What is HP <tm tmtype="reg">Helion OpenStack</tm><!--Removed anchor point whatHelion--><!-- id="whatHelion" --></title>

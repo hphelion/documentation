@@ -742,8 +742,8 @@ https://region-b.geo-1.network.hpcloudsvc.com</p>
 <row>
 <entry align="left"/>
   <entry align="left">
-<xref type="section" href="#topic127886/get_securityGroupRule">Get Security Group Rule</xref>
-</entry>
+                <xref href="#topic127886/get_securityGroupRules" format="dita">Get Security Group Rule</xref>
+              </entry>
   <entry align="left">GET</entry>
   <entry align="left">/security-group-rules/{id}</entry>
   <entry align="left">Y/Y</entry>
@@ -760,8 +760,9 @@ https://region-b.geo-1.network.hpcloudsvc.com</p>
 <row>
 <entry align="left"/>
   <entry align="left">
-<xref type="section" href="#topic127886/get_securityGroupRule">List Security Group Rules</xref>
-</entry>
+                <xref href="#topic127886/list_securityGroupRules" format="dita">List Security Group
+                  Rules</xref>
+              </entry>
   <entry align="left">GET</entry>
   <entry align="left">/security-group-rules</entry>
   <entry align="left">Y/Y</entry>
@@ -5844,7 +5845,9 @@ If an error occurs, the response body contains a description of the error.</p>
 </section>
 <section id="post-v20security-groups"> <title>POST /v2.0/security-groups</title>
 <p>This operation creates a new Security Group.</p>
-<p>Rules may be added to the Security Group through [Create Security Group Rule](#create_Security GroupRule) and deleted via <xref type="section" href="#topic127886/delete_SecurityGroupRule">Delete Security Group Rule</xref>.</p>
+<p>Rules may be added to the Security Group through [Create Security Group Rule](#create_Security
+        GroupRule) and deleted via <xref href="#topic127886/delete_securityGroupRule" format="dita">Delete Security Group
+          Rule</xref>.</p>
 <p>
 <b>Request Data</b>
 <!--A BR tag was used here in the original source.-->

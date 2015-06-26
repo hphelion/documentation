@@ -12213,7 +12213,8 @@ Naws/HNm7BwTeXRI+XgnFaIB+yxVMmzmh0/qRVEPEC/P
 <section id="addFloatingIpWithFixed"> <title>4.4.22.1 Add Floating IP with Fixed</title>
 </section>
 <section id="post-v2project-idserversserver-idaction27"> <title>POST /v2/{project_id}/servers/{server_id}/action</title>
-<p>Extends the <xref type="section" href="#topic310608/addFloatingIP">Add Floating IP</xref> operation to allow the user to specify a Fixed IP address.</p>
+<p>Extends the <xref href="#topic310608/addFloatingIp" format="dita">Add Floating IP</xref> operation to
+        allow the user to specify a Fixed IP address.</p>
 <p>
   <b>Request Parameters</b>
 </p>
@@ -12961,7 +12962,8 @@ Naws/HNm7BwTeXRI+XgnFaIB+yxVMmzmh0/qRVEPEC/P
 </section>
 <section id="7-glossary"> <title>7. Glossary</title>
 <p>
-<b>Server:</b> A server is a irtual machine instance within Compute. See <xref type="section" href="#topic310608/Servers">Servers</xref>.</p>
+        <b>Server:</b> A server is a irtual machine instance within Compute. See <xref
+          href="#topic310608/Server" format="dita">Servers</xref>.</p>
 <p>
 <b>Flavor:</b> A set of attributes which describe the resources available to a server. See <xref type="section" href="#topic310608/Flavors">Flavors</xref>.</p>
 <p>

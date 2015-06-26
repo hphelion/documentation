@@ -378,10 +378,10 @@ Backup procedure completed.
 </section>
 <section id="over"> <title>Back up and restore the overcloud</title>
 <p>The following sections describe how and when to back up and restore the overcloud.</p>
-<p>You can <xref href="#topic19267/sherpaback3" format="dita">back up</xref> and <xref type="section"
-          href="#topic19267/sherparest">restore</xref> an overcloud server or <xref type="section"
-          href="#topic19267/databack">back up</xref> and <xref type="section"
-          href="#topic19267/datarest">restore</xref> the overcloud database.</p>
+<p>You can <xref href="#topic19267/sherpaback3" format="dita">back up</xref> and <xref
+          type="section" href="#topic19267/sherparest">restore</xref> an overcloud server or <xref
+          href="#topic19267/sherpaback2" format="dita">back up</xref> and <xref
+          href="#topic19267/sherparest2" format="dita">restore</xref> the overcloud database.</p>
 </section>
 <section id="sherpaback3"> <title>Backing up an overcloud server</title>
 <p>You should create a backup of the overcloud servers when any Update and Extension is download to the system.</p>

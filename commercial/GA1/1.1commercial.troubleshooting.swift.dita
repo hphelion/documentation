@@ -31,9 +31,6 @@
 <xref type="section" href="#topic8875/S3">Cannot create storage containers using Amazon S3 API</xref>
 </li>
 <li>
-<xref type="section" href="#topic8875/failnew">Failure of newly added compute or VSA node during Scale-out</xref>
-</li>
-<li>
 <xref type="section" href="#topic8875/refreshfails">Scale-out nodes : os-refresh-configuration fails on Controller Node</xref>
 </li>
 <li>
