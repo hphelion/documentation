@@ -72,7 +72,9 @@ a {
 #splitterContainer .menuItemSelected {
   background-color: rgb(249, 249, 249);
   color: rgb(9, 65, 91);
-  font-family: 'Trebuchet MS';
+  /*font-family: 'Trebuchet MS'; */
+  /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
+  font-family: HPSimplified !important;
   font-size: 13.3333330154419px;
   font-weight: bold;
   font-style: normal;
@@ -91,7 +93,9 @@ a {
 #splitterContainer .topic:not(.menuItemSelected):hover {
   color: rgb(0, 0, 128);
   font-weight: bold;
-  font-family: arial, helvetica, tahoma, sans-serif;
+  /*font-family: arial, helvetica, tahoma, sans-serif;*/
+  /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
+  font-family: HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
@@ -120,7 +124,9 @@ a {
 #header #productTitle H1 {
   color: rgb(255, 255, 255);
   font-weight: bold;
-  font-family: "HP Simplified",Arial,Helvetica,sans-serif;
+  /* Change font to HPSimplified */
+  /* font-family: "HP Simplified",Arial,Helvetica,sans-serif;*/
+  font-family:HPSimplified !important;
   font-style: inherit;
   font-size: 30px;
   font-variant: normal;
@@ -148,7 +154,10 @@ a {
   border-left-width: 1;
   border-top-left-radius: 0;
   color: rgb(255, 255, 255);
-  font-family: 'Trebuchet MS';
+  /* Change font to HPSimplified */
+  
+  font-family:HPSimplified !important;*/
+  /*font-family: 'Trebuchet MS';*/
   font-size: 13.3333330154419px;
   font-weight: 400;
   font-style: normal;
@@ -178,7 +187,9 @@ a {
   line-height: 18px;
   text-shadow: rgb(255, 255, 255) 0px 1px 0px;
   color: rgb(255, 255, 255);
-  font-family: 'Trebuchet MS';
+  /* font-family: 'Trebuchet MS';*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   font-size: 13.3333330154419px;
   font-weight: 400;
   font-style: normal;
@@ -190,7 +201,9 @@ a {
 #header .navheader_parent_path {
   color: rgb(255, 255, 255);
   font-weight: 400;
-  font-family: 'Trebuchet MS';
+  /* font-family: 'Trebuchet MS';*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   font-variant: normal;
@@ -198,7 +211,9 @@ a {
 #header .link {
   color: rgb(255, 255, 255);
   font-weight: 400;
-  font-family: 'Trebuchet MS';
+  /* font-family: 'Trebuchet MS';*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   text-align: start;
@@ -219,7 +234,9 @@ a {
 #splitterContainer .topic:not(.menuItemSelected) {
   color: rgb(0, 0, 128);
   font-weight: 400;
-  font-family: arial, helvetica, tahoma, sans-serif;
+  /* font-family: arial, helvetica, tahoma, sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   text-align: left;
@@ -258,9 +275,12 @@ a {
   text-align: start;
   text-decoration: none;
   line-height: 25px;
-  //text-shadow: rgba(0, 0, 0, 0) 0px 0px 0px;
+  /*text-shadow: rgba(0, 0, 0, 0) 0px 0px 0px;*/
   color: rgb(19, 19, 20);
-  font-family: "HP Simplified",Arial,Helvetica,sans-serif;
+  
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
+  /*font-family: "HP Simplified",Arial,Helvetica,sans-serif;*/
   margin-bottom: 30px;
   font-size: 25px;
   font-weight: bold;
@@ -278,51 +298,66 @@ a {
   line-height: 18px;
   text-shadow: none;
   box-shadow: 3px 0px 0px rgba(0, 0, 0, 0);
-  font-family: "HP Simplified",Arial,Helvetica,sans-serif;
+  
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
+  /* font-family: "HP Simplified",Arial,Helvetica,sans-serif;*/
 }
 .title.topictitle2 {
   background-color: rgb(236, 236, 236);
-  font-family: "HP Simplified",Arial,Helvetica,sans-serif;
+  /*font-family: "HP Simplified",Arial,Helvetica,sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
 }
 .shortdesc {
   color: rgb(0, 0, 0);
   font-weight: 400;
-  font-family: arial, helvetica, sans-serif;
+  /*font-family: arial, helvetica, sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
 .p {
   color: rgb(0, 0, 0);
   font-weight: 400;
-  font-family: arial, helvetica, sans-serif;
+  /*font-family: arial, helvetica, sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
 .example {
   color: rgb(0, 0, 0);
   font-weight: 400;
-  font-family: arial, helvetica, sans-serif;
+  /*font-family: arial, helvetica, sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
 .dl {
   color: rgb(0, 0, 0);
   font-weight: 400;
-  font-family: arial, helvetica, sans-serif;
+  /*font-family: arial, helvetica, sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
 .dt {
   color: rgb(0, 0, 0);
   font-weight: bold;
-  font-family: arial, helvetica, sans-serif;
+  /*font-family: arial, helvetica, sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
 .dd {
   color: rgb(0, 0, 0);
   font-weight: 400;
-  font-family: arial, helvetica, sans-serif;
+  /*font-family: arial, helvetica, sans-serif;*/
   font-style: normal;
   font-size: 13.3333330154419px;
 }
@@ -336,28 +371,36 @@ a {
 .tablecap {
   color: rgb(0, 0, 0);
   font-weight: 400;
-  font-family: arial, helvetica, sans-serif;
+  /*font-family: arial, helvetica, sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
 span.uicontrol {
   color: rgb(0, 0, 0);
   font-weight: bold;
-  font-family: arial, helvetica, sans-serif;
+  /*font-family: arial, helvetica, sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
 span.wintitle {
   color: rgb(0, 0, 0);
   font-weight: 400;
-  font-family: arial, helvetica, sans-serif;
+  /*font-family: arial, helvetica, sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
 .footer a {
   color: rgb(68, 68, 68);
   font-weight: 400;
-  font-family: arial, helvetica, sans-serif;
+  /*font-family: arial, helvetica, sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   font-style: normal;
   font-size: 10.8000001907349px;
 }
@@ -450,10 +493,14 @@ input.searchButton {
     padding 10px;
     margin-left: 0px;
     margin-right: 100px;
-    font-family: "HP Simplified",Arial,Helvetica,sans-serif;
+    /*font-family: "HP Simplified",Arial,Helvetica,sans-serif;*/
+      /* Change font to HPSimplified */
+    font-family:HPSimplified !important;
   }
 #mainRight p {
- font-family: "HP Simplified",Arial,Helvetica,sans-serif;
+ /*font-family:"HP Simplified",arial, helvetica, sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
 
 }
   #frontTable {
@@ -509,7 +556,9 @@ input.searchButton {
 
 #homeDescript {
   margin-top: 40px;
-  font-family: "HP Simplified",Arial,Helvetica,sans-serif;
+  /*font-family:"HP Simplified",arial, helvetica, sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
   width: 700px;
   margin-left: 50px;
 }
