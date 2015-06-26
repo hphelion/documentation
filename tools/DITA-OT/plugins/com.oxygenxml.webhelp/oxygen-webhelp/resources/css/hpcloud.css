@@ -14,7 +14,7 @@ a.xref {
   color:#007dba;
   font-weight: 400;
   /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
-  font-family: HPSimplified;
+  font-family: HPSimplified  !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   text-decoration:none;
@@ -25,7 +25,7 @@ a.xref:visited {
   color: rgb(0, 0, 238);
   font-weight: 400;
     /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
-  font-family: HPSimplified;
+  font-family: HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   text-decoration:none;
@@ -37,7 +37,7 @@ a.xref:hover {
   color:#006699;
   font-weight: 400;
     /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
-  font-family: HPSimplified;
+  font-family: HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   text-decoration:none;
@@ -47,7 +47,7 @@ a.xref:active {
   color: rgb(0, 0, 238);
   font-weight: 400;
     /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
-  font-family: HPSimplified;
+  font-family: HPSimplified !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   text-decoration:none;
