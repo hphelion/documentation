@@ -24,8 +24,7 @@
                 provided. You can use them in different combinations to evaluate the effect on
                 latency and throughput.</p>
             <note id="note_N1026A_N1023A_N101F8_N101C8_N101A0_N100E4_N10024_N10001" ixia_locid="198">
-                <p ixia_locid="199">For a Layer-2 DPDK bridge, the bridged ports must be configured
-                    for AVP. For a Linux bridge, they can be configured for virtio or AVP.</p>
+                <p>For a Layer-2 DPDK bridge, the bridged ports must be configured for AVP. For a Linux bridge, they can be configured for virtio or AVP.</p>
             </note>
         </context>
         <prereq id="prereq_N10074_N10029_N10001" ixia_locid="226">
@@ -37,16 +36,20 @@
                 <cmd ixia_locid="242">Log into the web administration interface as the appropriate
                     user (<nameliteral ixia_locid="243">user1</nameliteral> or <nameliteral ixia_locid="244">user2</nameliteral>).</cmd>
             </step>
-            <step conref="jow1411907862923.xml#jow1411907862923/step_N1003F_N1003C_N1001C_N10001" id="step_N10078_N10074_N10029_N10001" ixia_locid="213">
+            <step conref="jow1411907862923.xml#jow1411907862923/step_N1003F_N1003C_N1001C_N10001"
+                id="step_N10078_N10074_N10029_N10001" ixia_locid="213">
                 <cmd ixia_locid="214"/>
             </step>
-            <step conref="jow1411907862923.xml#jow1411907862923/example-app-vm-details" id="step_N10081_N10074_N10029_N10001" ixia_locid="215">
+            <step conref="jow1411907862923.xml#jow1411907862923/example-app-vm-details"
+                id="step_N10081_N10074_N10029_N10001" ixia_locid="215">
                 <cmd ixia_locid="216"/>
             </step>
-            <step conref="jow1411907862923.xml#jow1411907862923/step_N100AD_N1003C_N1001C_N10001" id="step_N1008A_N10074_N10029_N10001" ixia_locid="217">
+            <step conref="jow1411907862923.xml#jow1411907862923/step_N100AD_N1003C_N1001C_N10001"
+                id="step_N1008A_N10074_N10029_N10001" ixia_locid="217">
                 <cmd ixia_locid="218"/>
             </step>
-            <step conref="jow1411907862923.xml#jow1411907862923/step_N100D6_N1003C_N1001C_N10001" id="step_N10093_N10074_N10029_N10001" ixia_locid="219">
+            <step conref="jow1411907862923.xml#jow1411907862923/step_N100D6_N1003C_N1001C_N10001"
+                id="step_N10093_N10074_N10029_N10001" ixia_locid="219">
                 <cmd ixia_locid="220"/>
             </step>
             <step id="step_N10264_N100CA_N10024_N10001" ixia_locid="174">
@@ -136,7 +139,8 @@ BRIDGE_PORTS="eth0,eth1.5"</userinput></codeblock>
                     </ul>
                 </info>
             </step>
-            <step conref="jow1411907862923.xml#jow1411907862923/step_N10270_N1003C_N1001C_N10001" id="step_N101C6_N10074_N10029_N10001" ixia_locid="223">
+            <step conref="jow1411907862923.xml#jow1411907862923/step_N10270_N1003C_N1001C_N10001"
+                id="step_N101C6_N10074_N10029_N10001" ixia_locid="223">
                 <cmd ixia_locid="224"/>
             </step>
         </steps>

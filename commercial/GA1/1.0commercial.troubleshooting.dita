@@ -1054,7 +1054,7 @@ If RabbitMQ is not running, start RabbitMQ using the `start rabbitmqserver` comm
 <HR>
 
 ##Configuring the `dnsmasq_dns_servers` list for the undercloud and overcloud {#config_dnas}
->>>>>>> b9d57eb337ad163596659fb19b8dbd01770325a1
+
 
 To enable name resolution from tenant VMs in the overcloud, it is necessary
 to configure the DNS servers which will be used by `dnsmasq` as forwarders.  To
