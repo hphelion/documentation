@@ -80,7 +80,7 @@ mv /tmp/tripleo-ansible /opt/stack/
 <p>When locating the update files, use the directory set in <codeph>/etc/sherpa/sherpa.conf</codeph>.</p>
 <ul>
 <li>
-<p>Review the <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita" >update prerequisites</xref> and make sure all necessary tasks have been performed. <!-- including [extracting the update scripts](/helion/openstack/update/prereqs/101#extract)-->.</p>
+<p>Review the <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita" >update prerequisites</xref> and make sure all necessary tasks have been performed. <!-- including [extracting the update scripts]( removed update extract link. unlikely to come back)-->.</p>
 </li>
 <li>
 <p>Backup a copy of the undercloud to restore in case of catastrophic failures.  For information, see <xref href="../../commercial/GA1/1.0commercial.backup-restore-GA.dita" >Back Up and Restore</xref>.</p>
