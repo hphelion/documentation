@@ -30,6 +30,7 @@ The HP Helion <tm tmtype="reg">OpenStack</tm> compute service can be configured 
 <section id="cleanup"> <title>Compute Databases Become Less Performant Over Time</title>
 <p>
 <!--DOCS-1183-->
+  <!-- this is commented out in the bundle version. The bundle version should be published as a one line topic. Paul -->
 When the Compute Service deletes an entity, such as an instance, it <i>marks</i> the relevant database rows as deleted, but does not actually <i>remove</i> those rows from the database. As the number of "soft-deleted" rows builds up, they begin to have a significantly detrimental impact on the database's performance.</p>
 <p>When a row is marked as "deleted", two values are set.</p>
 <ul>
