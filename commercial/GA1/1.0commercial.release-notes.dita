@@ -109,7 +109,7 @@
 </table>
 <p>
 
-<b>Other Services</b> <xref href="1.0commerical.services-overview.dita#Other" type="section" scope="external"  >Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
+  <b>Other Services</b> <xref href="1.0commerical.services-overview.dita#topic6622/Other" type="section">Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
 <p>
 <b>LogStash/ElasticSearch</b> - This service provides enhanced security and supportability of the cloud by offering centralized logging.</p>
 <p>
