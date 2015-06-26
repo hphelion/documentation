@@ -19,10 +19,7 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./commercial/GA1/1.0commercial.sirius-cli-workflow.md-->
- <!--permalink: /helion/openstack/sirius/cli/workflow/--></p>
+<p><!--PUBLISHED--><!--./commercial/GA1/1.0commercial.sirius-cli-workflow.md--><!--permalink: /helion/openstack/sirius/cli/workflow/--></p>
 <p>
 
 </p>
@@ -82,13 +79,10 @@
 <section id="register-storevirtual"> <title>Register StoreVirtual clusters to the cloud inventory</title>
 <p>Ensure that the cluster details entered in the command correspond with the actual cluster details from the Centralized Management Console (CMC) tool.</p>
 <p>To register StoreVirtual clusters, enter the following command:</p>
-<codeblock>
-  <codeph> # sirius register-storevirtual-cluster -name=&lt;CLUSTER_NAME&gt; --hostname=&amp;lt;CLUSTER_IP_ADDRESS&gt; --subnet=&lt;SUBNET&gt; --username=&amp;lt;USERNAME&gt; --password=&amp;lt;PASSWORD&gt; --port=&amp;lt;SSH_PORT&gt;
-</codeph>
-</codeblock>
+<codeblock><codeph> # sirius register-storevirtual-cluster -name=&lt;CLUSTER_NAME&gt; --hostname=&amp;lt;CLUSTER_IP_ADDRESS&gt; --subnet=&lt;SUBNET&gt; --username=&amp;lt;USERNAME&gt; --password=&amp;lt;PASSWORD&gt; --port=&amp;lt;SSH_PORT&gt;
+</codeph></codeblock>
 <p>The sample output of the above command is given below:</p>
-<codeblock>
-  <codeph>  Property   | Value                                |
+<codeblock><codeph>  Property   | Value                                |
 +------------+--------------------------------------+
 | created_at | 2014-08-23 02:49:41.066854           |
 | deleted    | False                                |
@@ -102,16 +96,13 @@
 | updated_at | 2014-08-23 02:49:41.066921           |
 | username   | shausy                               |
 +------------+---------------------------------------
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="add-backend"> <title>Add StoreVirtual clusters as a backend for the cloud</title>
 <p>The VOLUME_BACKEND_NAME parameter allows you to map all the StoreVirtual clusters with the same VOLUME_BACKEND_ value to a specific volume type, created in the overcloud. Adding a StoreVirtual cluster as a backend moves the cluster to  the 'reserved' state which implies that the cluster cannot be removed from the cloud unless the corresponding backends are removed.</p>
 <p>To add a backend, enter the following command</p>
-<codeblock>
-  <codeph># sirius add-storevirtual-backend &lt;CLUSTER_ID&gt; --backend-name &lt;VOLUME_BACKEND_NAME&gt;
-</codeph>
-</codeblock>
+<codeblock><codeph># sirius add-storevirtual-backend &lt;CLUSTER_ID&gt; --backend-name &lt;VOLUME_BACKEND_NAME&gt;
+</codeph></codeblock>
 <p>The sample output of the above command is given below:</p>
 <codeblock>
   <codeph>+----------------------------------------------------------------------+
@@ -127,18 +118,14 @@
 | volume_backend_name           | lhn                                                                                               |
 | volume_driver                 | cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver |
 +-------------------------------+----------------------------------------------------------------------+
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="preview-cluster"> <title>Preview the cinder configuration for StoreVirtual cluster</title>
 <p>To view the StoreVirtual cluster configuration, enter the following command</p>
-<codeblock>
-  <codeph># sirius storevirtual-cluster-show &lt;CLUSTER_ID&gt; --backend-name &lt;VOLUME_BACKEND_NAME&gt;
-</codeph>
-</codeblock>
+<codeblock><codeph># sirius storevirtual-cluster-show &lt;CLUSTER_ID&gt; --backend-name &lt;VOLUME_BACKEND_NAME&gt;
+</codeph></codeblock>
 <p>The sample output of the cinder.conf is given below:</p>
-<codeblock>
-  <codeph>[cluster_f2b30740-455a-11e4-a483-00b53da47ef7]
+<codeblock><codeph>[cluster_f2b30740-455a-11e4-a483-00b53da47ef7]
 hplefthand_iscsi_chap_enabled=true
 hplefthand_password=password
 hplefthand_clustername=skcluster01
@@ -147,25 +134,20 @@ volume_driver=cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriv
 hplefthand_api_url=https://10.1.192.47:8081/lhos
 hplefthand_debug=false
 hplefthand_username=shausy
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="view-configured-list"> <title>View the list of configured StoreVirtual backends</title>
 <p>To view the list of configured StoreVirtual backends, enter the following command</p>
-<codeblock>
-  <codeph># sirius storevirtual-backend-list
-</codeph>
-</codeblock>
+<codeblock><codeph># sirius storevirtual-backend-list
+</codeph></codeblock>
 <p>The sample output of the above command is given below:</p>
-<codeblock>
-  <codeph>+----------------------------------------------+--------------+---------------------+
+<codeblock><codeph>+----------------------------------------------+--------------+---------------------+
 | Backend ID                                   | Cluster Name | Volume Backend Name |
 +----------------------------------------------+--------------+---------------------+
 | cluster_8f45ef72-2a77-11e4-af1e-00cd664a1470 | skcluster01  | lhn                 |
 | cluster_f2b30740-455a-11e4-a483-00b53da47ef7 | skcluster02  | lhn                 |
 +----------------------------------------------+--------------+---------------------+
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <xref href="#topic20505"> Return to Top </xref>
 </p>
@@ -191,17 +173,14 @@ hplefthand_username=shausy
 </section>
 <section id="register-storeserv"> <title>Register StoreServ to the cloud inventory</title>
 <p>To register StoreServ, enter the following command</p>
-<codeblock>
-  <codeph># sirius register-storeserv --name &lt;STORESERV_NAME&gt; --hostname &lt;STORESERV_IP&gt; --username &lt;USERNAME&gt; --password &lt;PASSWORD&gt; --port &lt;SSH_PORT&gt; --san-ip &lt;SAN_IP&gt; --san-username &lt;SAN_USERNAME&gt; --san-password &lt;SAN_PASSWORD&gt; --device-type &lt;DEVICE_TYPE&gt;
-</codeph>
-</codeblock>
+<codeblock><codeph># sirius register-storeserv --name &lt;STORESERV_NAME&gt; --hostname &lt;STORESERV_IP&gt; --username &lt;USERNAME&gt; --password &lt;PASSWORD&gt; --port &lt;SSH_PORT&gt; --san-ip &lt;SAN_IP&gt; --san-username &lt;SAN_USERNAME&gt; --san-password &lt;SAN_PASSWORD&gt; --device-type &lt;DEVICE_TYPE&gt;
+</codeph></codeblock>
 <p>
 <i>Additional arguments</i>: --iscsi-ip 
 <ph> [required for iSCSI type devices].</ph>
 </p>
 <p>The sample output of the above command is given below:</p>
-<codeblock>
-  <codeph>+--------------+--------------------------------------+
+<codeblock><codeph>+--------------+--------------------------------------+
 | Property     | Value                                |
 +--------------+--------------------------------------+
 | created_at   | 2014-08-23 03:00:30.503326           |
@@ -220,8 +199,7 @@ hplefthand_username=shausy
 | updated_at   | 2014-08-23 03:00:30.503439           |
 | username     | 3paradm                              |
 +--------------+--------------------------------------+
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
 <b>Note</b>: For more than one iSCSI IP addresses, use a comma separated list . The ports can also be specified along with the IP addresses (separated by colon), if required.</p>
 <p>
@@ -230,14 +208,12 @@ hplefthand_username=shausy
 <p>--iscsi-ip 10.1.2.200,10.1.2.100:3380,10.1.2.102</p>
 </section>
 <section id="register-inventory"> <title>Register StoreServ CPG to the cloud inventory</title>
-<p>List the available CPGs in the StoreServ device. From the available CPG list identify the ones to be registered to the cloud using the following command</p>
-<codeblock>
-  <codeph># sirius storeserv-show &lt;STORESERV_ID&gt; --cpg-list true
-</codeph>
-</codeblock>
+<p>List the available CPGs in the StoreServ device. From the available CPG list identify the ones to
+        be registered to the cloud using the following command:</p>
+<codeblock><codeph># sirius storeserv-show &lt;STORESERV_ID&gt; --cpg-list true
+</codeph></codeblock>
 <p>The sample output of the above command is as below:</p>
-<codeblock>
-  <codeph>+--------------------------------------+------------+-------+------+
+<codeblock><codeph>+--------------------------------------+------------+-------+------+
 | UUID                                 | Name       | State | RAID |
 +--------------------------------------+------------+-------+------+
 | 6287cd1a-f8fb-4e10-93b0-88152db3b5df | 3par_iscsi | 1     | 2    |
@@ -245,40 +221,30 @@ hplefthand_username=shausy
 | db8b945c-b4f1-464d-9790-554d9b8c321e | FC_r1      | 1     | 2    |
 | f3740765-119f-4d0d-9bc5-c254cd0209f4 | FC_r61     | 1     | 4    |
 +--------------------------------------+------------+-------+------+
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Register the CPG(s) under the StoreServ using the following command. Multiple CPGs can be registered at a time for a given StoreServ device</p>
-<codeblock>
-  <codeph># sirius register-cpg --cpgs &lt;CPG_UUID&gt; [&lt;CPG_UUID&gt; ...] --storeserv-id &lt;STORESERV_ID&gt;
-</codeph>
-</codeblock>
+<codeblock><codeph># sirius register-cpg --cpgs &lt;CPG_UUID&gt; [&lt;CPG_UUID&gt; ...] --storeserv-id &lt;STORESERV_ID&gt;
+</codeph></codeblock>
 <p>Verify the registered CPG list</p>
-<codeblock>
-  <codeph># sirius cpg-list --storeserv-id &lt;STORESERV_ID&gt;
-</codeph>
-</codeblock>
+<codeblock><codeph># sirius cpg-list --storeserv-id &lt;STORESERV_ID&gt;
+</codeph></codeblock>
 <p>The sample output of the above command is as below:</p>
-<codeblock>
-  <codeph>    +--------------------------------------+---------+-------+------+------------+
+<codeblock><codeph>    +--------------------------------------+---------+-------+------+------------+
     | ID                                   | Name    | State | RAID | Status     |
     +--------------------------------------+---------+-------+------+------------+
     | b86f8f87-d546-40b6-9ac5-3fa5169958dd | 3par_FC | 1     | 4    | registered |
     | db8b945c-b4f1-464d-9790-554d9b8c321e | FC_r1   | 1     | 2    | registered |
     +--------------------------------------+---------+-------+------+------------+
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="add-cpg"> <title>Add StoreServ CPG as a backend for the cloud</title>
 <p>The VOLUME_BACKEND_NAME parameter allows you to map all the StoreServ CPGs with the same VOLUME_BACKEND_NAME value to a specific volume type, created in the overcloud.
 Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which implies that the CPG cannot be removed from the cloud unless the corresponding backend is removed.</p>
 <p>To add the StoreServ CPG as backend, enter the following command</p>
-<codeblock>
-  <codeph># sirius add-storeserv-backend --storeserv-id &lt;STORESERV_ID&gt; --cpg-id &lt;CPG_ID&gt; --backend-name &lt;VOLUME_BACKEND_NAME&gt;
-</codeph>
-</codeblock>
+<codeblock><codeph># sirius add-storeserv-backend --storeserv-id &lt;STORESERV_ID&gt; --cpg-id &lt;CPG_ID&gt; --backend-name &lt;VOLUME_BACKEND_NAME&gt;
+</codeph></codeblock>
 <p>The sample output of the above command is given below:</p>
-<codeblock>
-  <codeph>+---------------------+--------------------------------------------------------+
+<codeblock><codeph>+---------------------+--------------------------------------------------------+
 | Property            | Value                                                  |
 +---------------------+--------------------------------------------------------+
 | backend_id          | CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd               |
@@ -292,32 +258,25 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 | volume_backend_name | 3par                                                   |
 | volume_driver       | cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver |
 +---------------------+--------------------------------------------------------+
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="preview-storeserv-cpg"> <title>Preview the Cinder configuration for the StoreServ CPG</title>
 <p>To view the cinder configuration for the StoreServ CPG, enter the following command</p>
-<codeblock>
-  <codeph># sirius cpg-show --storeserv-id &lt;STORESERV_ID&gt; --cpg-id &lt;CPG_ID&gt; --backend-name &lt;VOLUME_BACKEND_NAME&gt;
-</codeph>
-</codeblock>
+<codeblock><codeph># sirius cpg-show --storeserv-id &lt;STORESERV_ID&gt; --cpg-id &lt;CPG_ID&gt; --backend-name &lt;VOLUME_BACKEND_NAME&gt;
+</codeph></codeblock>
 </section>
 <section id="view-storeserv-list"> <title>View the configured StoreServ backend list</title>
 <p>To view the list of configured StoreServ backends, enter the following command</p>
-<codeblock>
-  <codeph># sirius storeserv-backend-list
-</codeph>
-</codeblock>
+<codeblock><codeph># sirius storeserv-backend-list
+</codeph></codeblock>
 <p>The sample output of the above command is given below:</p>
-<codeblock>
-  <codeph>+------------------------------------------+----------+---------------------+
+<codeblock><codeph>+------------------------------------------+----------+---------------------+
 | Backend ID                               | CPG Name | Volume Backend Name |
 +------------------------------------------+----------+---------------------+
 | CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd | 3par_FC  | 3par                |
 | CPG_db8b945c-b4f1-464d-9790-554d9b8c321e | FC_r1    | 3par                |
 +------------------------------------------+----------+---------------------+
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <xref href="#topic20505"> Return to Top </xref>
 </p>
@@ -347,13 +306,10 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 <section id="generate-storevirtual-backend-configuration-json-generate-storevirtual-config"> <title>Generate StoreVirtual backend configuration JSON {generate-storevirtual-config}</title>
 <p>You can download the Cinder configuration relevant to HP StoreVirtual for your cloud once you create the backend.</p>
 <p>To generate StoreVirtual backend configuration JSON, enter the following command</p>
-<codeblock>
-  <codeph># sirius storevirtual-backend-list --format json
-</codeph>
-</codeblock>
+<codeblock><codeph># sirius storevirtual-backend-list --format json
+</codeph></codeblock>
 <p>The sample output of the above command is given below:</p>
-<codeblock>
-  <codeph>{
+<codeblock><codeph>{
     "DEFAULT": {
         "enabled_backends": [
             "cluster_8f45ef72-2a77-11e4-af1e-00cd664a1470",
@@ -381,19 +337,15 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
         "hplefthand_username": "user"
     }   
 }
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="generate-storeserv-config"> <title>Generate StoreServ backend configuration JSON</title>
 <p>You can download the Cinder configuration relevant to HP StoreServ for your cloud once you create the backend.</p>
 <p>To generate StoreServ backend configuration JSON, enter the following command</p>
-<codeblock>
-  <codeph># sirius storeserv-backend-list --format json
-</codeph>
-</codeblock>
+<codeblock><codeph># sirius storeserv-backend-list --format json
+</codeph></codeblock>
 <p>The sample output of the above command is given below:</p>
-<codeblock>
-  <codeph>    {
+<codeblock><codeph>    {
         "DEFAULT": {
             "enabled_backends": [
                 "CPG_db8b945c-b4f1-464d-9790-554d9b8c321e",
@@ -423,8 +375,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
             "san_ip": "15.214.241.21"
         }
     }
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="update-overcloud-json"> <title>Update Overcloud configuration JSON</title>
 <p>Update the <codeph>/root/overcloud-config.json</codeph> in the Seed node with the generated backend data. Add the StoreVirtual backend configuration as a JSON key-pair with key <b>vsa</b> and StoreServ backend configuration with key <b>3par</b> to the existing JSON.</p>
@@ -432,8 +383,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 <p>
   <b>Before the update:</b>
 </p>
-<codeblock>
-  <codeph>{
+<codeblock><codeph>{
   "cloud_type": "KVM",
   "compute_scale": 1,
   "vsa_scale": 0,
@@ -446,13 +396,11 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
     "undercloud_server": ""
   }
 }
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <b>After the update:</b>
 </p>
-<codeblock>
-  <codeph>    {
+<codeblock><codeph>    {
       "cloud_type": "KVM",
       "compute_scale": 1,
       "vsa_scale": 0,
@@ -523,22 +471,17 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
         }
       }
     }
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="load-the-configuration-and-export-required-environment-variables-to-prepare-for-updating-cloudload-config-export"> <title>Load the configuration and export required environment variables to prepare for updating cloud{#load-config-export}</title>
 <p>Enter the following command</p>
-<codeblock>
-  <codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
-</codeph>
-</codeblock>
+<codeblock><codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+</codeph></codeblock>
 </section>
 <section id="update-overcloud"> <title>Update Overcloud</title>
 <p>Enter the following command to update the overcloud:</p>
-<codeblock>
-  <codeph># bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud
-</codeph>
-</codeblock>
+<codeblock><codeph># bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud
+</codeph></codeblock>
 <p>When the update has completed, the Cinder service in the overcloud will be configured to have the StoreVirtual clusters and StoreServ CPG as backends.</p>
 </section>
 <section id="more-information"> <title>More Information</title>
