@@ -14,9 +14,7 @@ available in the base directory of this Oxygen Webhelp plugin.
     font-family: HPSimplified;
     src: url(HPSimplified-Rg.ttf);
 }
-body {
-    font-family: HPSimplified !important;
-}
+
 p {
     font-family: HPSimplified !important;
 }
@@ -27,6 +25,7 @@ body {
   background-color:white;
   /*background-color:#f2f2f2;*/
   /* font-family: arial, helvetica, sans-serif; */
+  font-family: HPSimplified !important;
   line-height:18px;
   font-size:12px;
 }

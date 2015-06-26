@@ -12,7 +12,9 @@ html,body {
     margin: 0;
     padding: 0;
     background-color: #fff;
-    font-family: arial, helvetica, sans-serif;
+    /* Changing all fonts to HP Simplified 6/26 
+    font-family: arial, helvetica, sans-serif; */
+    font-family: HPSimplified !important;
     font-size: 10pt;
 }
 
@@ -103,7 +105,9 @@ html,body {
     text-decoration: none;
     font-size: 10pt;
     color: navy;
-    font-family: arial, helvetica, tahoma, sans-serif;
+    /*font-family: arial, helvetica, tahoma, sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
     white-space: nowrap;
 }
 #contentBlock a:hover{
@@ -240,7 +244,9 @@ a.foundResult:hover{
     position: relative;
     float: right;
     font-size: 13px;
-    font-family: Arial,sans-serif;
+    /*font-family: Arial,sans-serif;*/
+  /* Change font to HPSimplified */
+  font-family:HPSimplified !important;
     color: #888;
 }
 
