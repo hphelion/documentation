@@ -52,7 +52,7 @@
 <p>Before you can install Helion OpenStack using the FCP approach, you will need to:</p>
 <ul>
 <li>
-<xref href="1.1commerical.flexible-control-pane-overview.dita#prereq" type="section" scope="external" >Review prerequisites and configure the infrastructure</xref> accordingly</li>
+  <xref href="1.1commerical.flexible-control-pane-overview.dita#topic6925/prereq" type="section">Review prerequisites and configure the infrastructure</xref> accordingly</li>
 <li>
 <xref href="1.1commerical.flexible-control-pane-overview.dita#configfiles" type="section" scope="external" >Create configuration files</xref>
 </li>

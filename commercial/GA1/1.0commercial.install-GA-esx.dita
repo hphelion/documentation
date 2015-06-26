@@ -307,7 +307,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 -->
 </section>
 <section id="ldap"> <title>Create projects for LDAP users</title>
-<p>If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see <i>Configure Horizon</i> on the <xref href="../../commercial/GA1/1.0commercial.install-GA-LDAP.dita#horizon" type="section" scope="external"  >Integrating LDAP page</xref>.</p>
+        <p>If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see <i>Configure Horizon</i> on the <xref href="../../commercial/GA1/1.0commercial.install-GA-LDAP.dita#topic12189/horizon" type="section">Integrating LDAP page</xref>.</p>
 </section>
 <section id="next-steps"> <title>Next Step</title>
 <ul>
