@@ -12,7 +12,7 @@ available in the base directory of this Oxygen Webhelp plugin.
 /* Changing font to HP Siplified PFletcher 6/26/2015 */
 @font-face {
     font-family: HPSimplified;
-    src: url(HPSimplified-Rg.ttf);
+    src: url(HPSimplified-Rg.ttf)  format('truetype');
 }
 
 p {
