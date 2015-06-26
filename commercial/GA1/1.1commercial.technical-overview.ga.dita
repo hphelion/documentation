@@ -192,7 +192,7 @@
                             <entry>
                                 <b>Network Operations (Neutron) </b>
                             </entry>
-                            <entry>The HP <tm tmtype="reg">Helion Ogipenstack</tm> Network
+                            <entry>The HP <tm tmtype="reg">Helion Openstack</tm> Network
                                 Operations service provides network connectivity and IP addressing
                                 for virtual machines managed by Compute
                                 service.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
