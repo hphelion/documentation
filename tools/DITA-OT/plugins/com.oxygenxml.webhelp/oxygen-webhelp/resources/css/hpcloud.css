@@ -10,34 +10,43 @@
 a.xref {
   /* Changed to $hp-accessible-blue: #007dba P Fletcher 6/11/15*/
   /*color: rgb(0, 0, 238);*/
+  /* Remove underlines P Fletcher 6/26/2015 */
   color:#007dba;
   font-weight: 400;
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
   font-size: 13.3333330154419px;
+  text-decoration:none;
 }
+
 a.xref:visited {
+/* Remove underlines P Fletcher 6/26/2015 */
   color: rgb(0, 0, 238);
   font-weight: 400;
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
   font-size: 13.3333330154419px;
+  text-decoration:none;
 }
 a.xref:hover {
   /* Changed to $hp-hover-blue: #006699 P Fletcher 6/11/15*/
   /*color: rgb(0, 0, 238);*/
+  /* Remove underlines P Fletcher 6/26/2015 */
   color:#006699;
   font-weight: 400;
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
   font-size: 13.3333330154419px;
+  text-decoration:none;
 }
 a.xref:active {
+/* Remove underlines P Fletcher 6/26/2015 */
   color: rgb(0, 0, 238);
   font-weight: 400;
   font-family: arial, helvetica, sans-serif;
   font-style: normal;
   font-size: 13.3333330154419px;
+  text-decoration:none;
 }
 
 /* Commenting out a.xref overrides: P Fletcher 6/11/15 */
@@ -105,7 +114,7 @@ a {
   margin-left: 370px;
 }
 #header #productTitle H1 {
-  /*color: rgb(255, 255, 255);*/
+  color: rgb(255, 255, 255);
   font-weight: bold;
   font-family: "HP Simplified",Arial,Helvetica,sans-serif;
   font-style: inherit;

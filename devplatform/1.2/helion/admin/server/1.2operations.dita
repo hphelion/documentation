@@ -40,8 +40,10 @@
 <xref type="section" href="#topic4410/resetting-the-vm">Resetting the VM</xref>
 </li>
 <li>
-<xref type="section" href="#topic4410/monitoring-the-helion-server">Monitoring The Application Lifecycle Service Server</xref> - <xref type="section" href="#topic4410/management-console">Management Console</xref>
-</li>
+        <xref href="#topic4410/monitoring-the-application-lifecycle-service-server" format="dita"
+          >Monitoring The Application Lifecycle Service Server</xref> - <xref type="section"
+          href="#topic4410/management-console">Management Console</xref>
+      </li>
 <li>
 <xref type="section" href="#topic4410/new-relic">New Relic</xref>
 </li>
@@ -173,8 +175,11 @@ helion register superuser@example.net
 <section id="server-backup-import-and-export"> <title>Server Backup, Import, and Export</title>
 <p>The import and export functionality can be used to do regular backups,
 or to move the Application Lifecycle Service configuration from one server to another. It is also a means of upgrading the Application Lifecycle Service VM without having to install everything from the ground up.</p>
-  <p>Please see the <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-controller-migration" >Best Practices</xref> documentation for details on how to <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-migration-export" >export</xref> and <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-migration-import" type="section" scope="external"  >import</xref> your data.</p>
+  <p>Please see the <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-migration"
+          >Best Practices</xref> documentation for details on how to <xref
+          href="../best-practices/1.2index.dita#topic16169/bestpractices-migration">export</xref>
+        and <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-migration-import"
+          type="section" scope="external">import</xref> your data.</p>
 </section>
 </body>
 </topic>
-

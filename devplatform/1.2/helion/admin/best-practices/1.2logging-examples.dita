@@ -70,10 +70,8 @@ software or services.</p>
       <p>
         <note>Papertrail requires systail log lines to have <codeph>&lt;13&gt;l</codeph> at the
           beginning of each line. Make sure the drain you are forwarding is formatted this way (see
-          example in <xref
-            href="../../../../../devplatform/1.2/helion/admin/server/1.2logging.dita#logging-drains-save-format">
-            <i>Saving Custom Log Formats</i>
-          </xref>).</note>
+          example in <i><xref href="../server/1.2logging.dita#topic11928/saving-custom-log-formats"
+              >Saving Custom Log Formats</xref></i> ).</note>
       </p>
     </section>
 <section id="logging-examples-splunk"> <title>Splunk</title>
