@@ -741,13 +741,6 @@ https://region-b.geo-1.network.hpcloudsvc.com</p>
 </row>
 <row>
 <entry align="left"/>
-  <entry align="left">
-<xref type="section" href="#topic127886/get_securityGroupRule">Get Security Group Rule</xref>
-</entry>
-  <entry align="left">GET</entry>
-  <entry align="left">/security-group-rules/{id}</entry>
-  <entry align="left">Y/Y</entry>
-</row>
 <row>
 <entry align="left"/>
   <entry align="left">
