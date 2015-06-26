@@ -47,12 +47,13 @@
 <xref type="section" href="#topic3977/misc">Miscellaneous Commands</xref>
 </li>
 </ul>
-<section id="help"> <title>Help Commands<!--Removed anchor point help--><!-- id="help" --></title>
+<section id="help-commands"> <title>Help Commands<!--Removed anchor point help--><!-- id="help" --></title>
 </section>
 <section id="help"> <title>Help</title>
 <p>You can display the help of this program or one of its sub-programs</p>
-<codeblock><codeph># ringos help
-</codeph></codeblock>
+<codeblock>
+# ringos help
+</codeblock>
 </section>
 <section id="help-subcommand"> <title>Help subcommand</title>
 <p>You get two sets of arguments- Positional and Optional.</p>
