@@ -1084,8 +1084,8 @@ the last item in the previous list. Items are sorted by create time in descendin
 <row>
 <entry align="left"/>
   <entry align="left">
-<xref type="section" href="#topic74526/cg_post">Create configuration group</xref>
-</entry>
+                <xref href="#topic74526/cg_create" format="dita">Create configuration group</xref>
+              </entry>
   <entry align="left">POST</entry>
   <entry align="left">/configurations</entry>
   <entry align="left">Y</entry>

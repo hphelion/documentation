@@ -108,9 +108,11 @@ variable (current user) are available via EJS, but plain HTML will work
 for simple use cases.</p>
 </section>
 <section id="support-page"> <title>Support Page</title>
-<p>The HTML/EJS to show on the Support page. The <xref type="section" href="#topic5029/customize-settings-vars">
-<i>settings-variables</i>
-</xref> and <codeph>support_email</codeph> variable (see Settings &gt; Controller) are available.</p>
+<p>The HTML/EJS to show on the Support page. The  <xref type="section"
+          href="#topic5029/customize-settings-vars">
+          <i>settings-variables</i>
+        </xref> and <codeph>support_email</codeph> variable (see Settings &gt; Controller) are
+        available.</p>
 </section>
 <section id="eula-content"> <title>Eula Content</title>
 <p>The HTML/EJS to show in the EULA overlay. The <xref type="section" href="#topic5029/customize-settings-vars">

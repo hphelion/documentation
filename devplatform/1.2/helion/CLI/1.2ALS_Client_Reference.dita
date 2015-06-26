@@ -26,27 +26,25 @@
 <li>
 <xref type="section" href="#topic13234/global">Global Options</xref>
 </li>
+      <li><xref href="#topic13234/update-the-cf-mgmt-tool" format="dita"/></li>
 <li>
-<xref type="section" href="#topic13234/update">Update the cf-mgmt Tool</xref>
-</li>
-<li>
-<xref type="section" href="#topic13234/commands">Cluster Commands</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic13234/create">Create a Cluster</xref>
-</li>
-<li>
-<xref type="section" href="#topic13234/delete">Delete a Cluster</xref>
-</li>
-<li>
-<xref type="section" href="#topic13234/addrole">Add a Role to an Existing Cluster</xref>
-</li>
-<li>
-<xref type="section" href="#topic13234/addservice">Add a Service to an Existing Cluster</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic13234/commands">Cluster Commands</xref>
+        <ul id="ul_j43_nzl_ms">
+          <li>
+            <xref type="section" href="#topic13234/create">Create a Cluster</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13234/delete">Delete a Cluster</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13234/addrole">Add a Role to an Existing Cluster</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13234/addservice">Add a Service to an Existing
+              Cluster</xref>
+          </li>
+        </ul>
+      </li>
 </ul>
 <section id="configuration-values"> <title>Configuration Values</title>
 <p>There are three ways to pass configuration values into ALS:</p>

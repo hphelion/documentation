@@ -351,7 +351,10 @@ The maximum length of the file path is limited to 255 bytes.</p>
 <p>Image snapshots are copies of the (virtual) disk partition containing the root file system that can be created from a running VM using <xref type="section" href="#topic310608/createImage">Create Image</xref>. A snapshot is linked to the same kernel and ramdisk as the image which was originally booted on the VM.  In the listing above, foo100-snap and foo-snap are snapshots created by the user.</p>
 </section>
 <section id="ImageMetadata"> <title>2.1.6.2 Image Metadata</title>
-<p>Images can have metadata in the form of key/value pairs. This metadata can be queried and modified using operations of the <xref type="section" href="#topic310608/ImageMetadata">Image Metadata</xref> and <xref type="section" href="#topic310608/ImageMetadataItem">Image Metadata Item</xref> resources.</p>
+<p>Images can have metadata in the form of key/value pairs. This metadata can be queried and
+        modified using operations of the <xref type="section" href="#topic310608/ImageMetadata"
+          >Image Metadata</xref> and  <xref type="section" href="#topic310608/ImageMetadataItem"
+          >Image Metadata Item</xref> resources.</p>
 </section>
 <section id="Section2_2"> <title>2.2 Volumes</title>
 <p>Nova volumes are persistent disks that can be attached to servers. When attached to a server, the volume appears as a disk block device on which a filesystem can be created. The Volumes extension to the Compute API is described in a separate document.</p>
@@ -1910,8 +1913,8 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com</p>
 <b>os-volume-types</b>
 </entry>
   <entry align="left">
-<xref type="section" href="#topic310608/listVolumeTypes">List Volume Types</xref>
-</entry>
+                <xref href="#topic310608/listVolumes" format="dita">List Volume Types</xref>
+              </entry>
   <entry align="left">Get</entry>
   <entry align="left">/v2/{project_id}/os-volume-types</entry>
   <entry align="left">Y/Y</entry>
@@ -1919,9 +1922,8 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com</p>
 </row>
 <row>
 <entry align="left"/>
-  <entry align="left">
-<xref type="section" href="#topic310608/listVolumeTypes">Show Volume Type</xref>
-</entry>
+  <entry align="left"><xref href="#topic310608/showVolume" format="dita">Show Volume Type</xref>
+              </entry>
   <entry align="left">Get</entry>
   <entry align="left">/v2/{project_id}/os-volume-types/{type_id}</entry>
   <entry align="left">Y/Y</entry>
@@ -2134,8 +2136,8 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com</p>
 <b>Server Action</b>
 </entry>
   <entry align="left">
-<xref type="section" href="#topic310608/getVNCConcole">Get VNC Console</xref>
-</entry>
+                <xref href="#topic310608/getVNCConsole" format="dita">Get VNC Console</xref>
+              </entry>
   <entry align="left">POST</entry>
   <entry align="left">/v2/{project_id}/servers/{server_id}/action</entry>
   <entry align="left">Y/Y</entry>
@@ -2222,8 +2224,8 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com</p>
 <b>Flavors</b>
 </entry>
   <entry align="left">
-<xref type="section" href="#topic310608/listFlavorsSwap">List Flavors Swap </xref>
-</entry>
+                <xref href="#topic310608/listVolumes20" format="dita">List Flavors Swap </xref>
+              </entry>
   <entry align="left">GET</entry>
   <entry align="left">/v2/{project_id}/flavors/detail</entry>
   <entry align="left">Y/Y</entry>

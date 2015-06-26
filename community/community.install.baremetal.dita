@@ -478,7 +478,9 @@ export BM_NETWORK_SEED_RANGE_END=192.168.10.20`
 </codeph>
 </codeblock>
 
-<p>This IP address range must be on the same subnet as the Seed VM, as configured in <xref type="section" href="#topic16854/NetworkInt">Changing the Default Network Interface</xref>.</p>
+<p>This IP address range must be on the same subnet as the Seed VM, as configured in  <xref
+                  type="section" href="#topic16854/NetworkInt">Changing the Default Network
+                  Interface</xref>.</p>
 </li>
 <li>
 <p>
@@ -547,7 +549,7 @@ export BM_NETWORK_UNDERCLOUD_RANGE_END=192.168.10.20`
 <section id="next-step"> <title>Next Step</title>
 <p>Verify that the installation completed successfully by connecting to the demo VM, Horizon dashboard and the monitoring interface. See <xref href="../community/community.verify.dita" >Verifying your installation</xref>.</p>
 <p>
-  <xref type="section" href="#topic16854/top">Return to Top </xref>
+  <xref type="section" href="#topic16854">Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
