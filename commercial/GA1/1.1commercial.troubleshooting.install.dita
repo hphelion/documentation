@@ -1039,10 +1039,6 @@ A a node being controlled by the seed or undercloud cannot be controlled either 
 <li>Ensure that every interface is defined in its on ifcfg-
 <ph> file within <codeph>/etc/sysconfig/network-scripts/</codeph>
 </ph>
-<!-- <<<<<<< HEAD
-=======
-
->>>>>>> --> 694c34338fe00feb609967f18e592f354a2223a1
 </li>
 </ul>
 <!-- ===================== horizontal rule ===================== -->
