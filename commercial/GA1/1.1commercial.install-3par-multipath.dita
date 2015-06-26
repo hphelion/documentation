@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2366">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Configuring Multipath for 3PAR</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Configuring Multipath for 3PAR</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Configuring Multipath for 3PAR</searchtitle>
 </titlealts>
@@ -21,14 +21,14 @@
  <!--./commercial/GA1/1.1commercial.install-3par-multipath.md-->
  <!--permalink: /helion/openstack/1.1/install/3par/multipath/--></p>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
 <!-- Copied overview information from http://www.vmware.com/files/pdf/partners/hp/vmware-vsphere-hp-3par-storeserv-so.pdf -->
 <p>Multi-pathing considerations
 To maintain a constant connection between an ESXi host and its storage, ESXi supports multi-pathing. To take advantage of this support, virtual volumes should be exported to multiple paths to the host server. To do this, create a host definition on the HP 3PAR StoreServ Storage system that includes the World Wide Names (WWNs) of multiple HBA ports on the host server and then export the VLUNs to that host definition. For an ESXi cluster, the VLUNs must be exported to all of the host definitions for the cluster nodes, or a host set may be created containing all of the servers and the VLUNs can be exported to the host set.</p>
 <p>VMware ESXi 5 includes active/active multipath support to maintain a constant connection between the ESXi host and the HP 3PAR StoreServ Storage array. Three path policies are available: <b>Fixed</b>, <b>Most Recently Used</b> and <b>Round Robin</b>. For HP 3PAR StoreServ storage, Round Robin is the recommended policy for best performance and load balancing; however, it may not be enabled by default.</p>
-<p>The path policies can be viewed and modified from the vSphere Web Client on a per datastore basis as follows:</p>
+<p>The path policies can be viewed and modified from the <tm tmtype="reg">vSphere</tm> Web Client on a per datastore basis as follows:</p>
 <!-- Copied steps from http://www.vmware.com/files/pdf/partners/hp/vmware-vsphere-hp-3par-storeserv-so.pdf -->
 <ol>
 <li>In the vSphere Web Client, select the datastore.</li>

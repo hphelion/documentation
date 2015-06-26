@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic774">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Getting Started</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Getting Started</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -20,15 +20,15 @@
  <!--permalink: /helion/openstack/1.1/landing/start/--></p>
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.faq.dita" >Frequently Asked Questions</xref>
-<!--A BR tag was used here in the original source.-->Commonly asked queries that you might have while working with HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<!--A BR tag was used here in the original source.-->Commonly asked queries that you might have while working with HP Helion OpenStack</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.technical-overview.ga.dita" >Technical overview</xref>
-<!--A BR tag was used here in the original source.-->Learn about HP <tm tmtype="reg">Helion OpenStack</tm> an enterprise-grade distribution of the <tm tmtype="reg">OpenStack</tm> cloud operating system.</p>
+<!--A BR tag was used here in the original source.-->Learn about HP Helion OpenStack an enterprise-grade distribution of the OpenStack cloud operating system.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support matrix</xref>
-<!--A BR tag was used here in the original source.-->Learn about the hardware and software that is supported for HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<!--A BR tag was used here in the original source.-->Learn about the hardware and software that is supported for HP Helion OpenStack</p>
 <!-- ===================== horizontal rule ===================== -->
 </body>
 </topic>

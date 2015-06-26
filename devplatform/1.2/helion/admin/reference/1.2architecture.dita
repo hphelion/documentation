@@ -95,7 +95,7 @@ in the cluster.</p>
 </section>
 <section id="architecture-droplet-execution-agents"> <title>Droplet Execution Agents</title>
 <p>The Droplet Execution Agent (DEA) role in Application Lifecycle Service is responsible for
-staging applications and running application instances within Linux
+staging applications and running application instances within <tm tmtype="reg">Linux</tm>
 containers. In an Application Lifecycle Service cluster, there will typically be a number of
 nodes running the DEA role, which in turn each host multiple user
 application instances.</p>

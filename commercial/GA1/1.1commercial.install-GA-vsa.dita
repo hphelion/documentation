@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic14809">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Installation: Deploy and Configure HP StoreVirtual VSA</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Installation: Deploy and Configure HP StoreVirtual VSA</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Installation: Deploy and Configure HP StoreVirtual VSA</searchtitle>
 </titlealts>
@@ -22,16 +22,16 @@
  <!--permalink: /helion/openstack/1.1/install/vsa/--></p>
 <p/>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
 <p>This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend. It covers the following topics:</p>
 <ul>
 <li>
 <xref type="section" href="#topic14809/high-level-view">Deployment and Configuration Procedure Overview</xref>
 </li>
 <li>
-<xref type="section" href="#topic14809/install-hp-storevirtual-cmc">Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux</xref>
+<xref type="section" href="#topic14809/install-hp-storevirtual-cmc">Installing HP StoreVirtual VSA Centralized Management Console (CMC) on <tm tmtype="reg">Linux</tm></xref>
 
 <ul>
 <li>
@@ -73,7 +73,7 @@
 </p>
 <!--1 - **Install CMC**
      
-   [Install CMC](#install-hp-storevirtual-cmc) on the seed node where the seed cloud is running. The CMC binary comes with the HP <tm tmtype="reg">Helion OpenStack</tm> installer and is present in the **Tripleo** directory. 
+   [Install CMC](#install-hp-storevirtual-cmc) on the seed node where the seed cloud is running. The CMC binary comes with the HP Helion OpenStack installer and is present in the **Tripleo** directory. 
 
 2 - **Add VSA Baremetal nodes to ironic database**
     
@@ -130,15 +130,15 @@
    * Execute [update cloud script](/helion/openstack/1.1/undercloud/oc/config/storevirtual/) from seed cloud. -->
 </section>
 <section id="install-hp-storevirtual-cmc"> <title>Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux</title>
-<p>In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP <tm tmtype="reg">Helion OpenStack</tm> management network.</p>
+<p>In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP Helion OpenStack management network.</p>
 </section>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
 <li>
-<p>You must be running the X Windows System to install the CMC.</p>
+<p>You must be running the X <tm tmtype="reg">Windows</tm> System to install the CMC.</p>
 </li>
 <li>
-<p>We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP <tm tmtype="reg">Helion OpenStack</tm> management network.</p>
+<p>We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack management network.</p>
 </li>
 </ul>
 <p>
@@ -160,7 +160,7 @@
 <section id="installation"> <title>Installation</title>
 <ol>
 <li>
-<p>Verify if the CMC installer file inside <codeph>tripleo</codeph> directory (packaged with the HP <tm tmtype="reg">Helion OpenStack</tm> installer) has executable permission. If not, execute the following command:</p>
+<p>Verify if the CMC installer file inside <codeph>tripleo</codeph> directory (packaged with the HP Helion OpenStack installer) has executable permission. If not, execute the following command:</p>
 
 <codeblock>
 <codeph># chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
@@ -277,10 +277,10 @@ java -jar UI.jar
 <p>Seed Cloud is installed and is running.</p>
 </li>
 </ul>
-<p>The license for the StoreVirtual VSA license is bundled with HP <tm tmtype="reg">Helion OpenStack</tm> and has a maximum limit of 50 TB per node. Hence the total amount of the configured storage on an individual StoreVirtual node should not exceed 50 TB. To extend the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16 nodes, which means configured storage on a VSA cluster can be as much as 800 TB.</p>
+<p>The license for the StoreVirtual VSA license is bundled with HP Helion OpenStack and has a maximum limit of 50 TB per node. Hence the total amount of the configured storage on an individual StoreVirtual node should not exceed 50 TB. To extend the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16 nodes, which means configured storage on a VSA cluster can be as much as 800 TB.</p>
 <p>
 <!--
-**Note**: Use of StoreVirtual VSA is included with your <tm tmtype="reg">Helion OpenStack</tm> license.  When installing StoreVirtual VSA under the <tm tmtype="reg">Helion OpenStack</tm> license, the CMC may display a message that some features are not licensed. This message displays in error and can be ignored if you have licensed the physical server with a <tm tmtype="reg">Helion OpenStack</tm> license. 
+**Note**: Use of StoreVirtual VSA is included with your Helion OpenStack license.  When installing StoreVirtual VSA under the Helion OpenStack license, the CMC may display a message that some features are not licensed. This message displays in error and can be ignored if you have licensed the physical server with a Helion OpenStack license. 
 -->
 <!--<img src="/media/storevirtual-cluster-network-diagram1.png"/>--></p>
 </section>

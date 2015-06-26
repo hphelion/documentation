@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10341">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Ceph Automated Installation</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Ceph Automated Installation</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Ceph Automated Installation</searchtitle>
 </titlealts>
@@ -27,7 +27,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commercial.ceph-automated-install.md-->
  <!--permalink: /helion/openstack/1.1/commercial.ceph-automated-install/--></p>
-<p>The installation workflow of HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 or 1.1.1 is shown in the following diagram.</p>
+<p>The installation workflow of HP Helion OpenStack 1.1 or 1.1.1 is shown in the following diagram.</p>
 <p>
   <image href="../../../media/ceph-installation-flow.png"/>
 </p>
@@ -156,7 +156,7 @@ The `cephsetup.tar` file is bundled with the following packages:-->
 <p>To view the contents of the <codeph>/helion-ceph/images</codeph> directory from the seed VM, enter (for example):</p>
 
 <codeblock>
-<codeph>root@hLinux:~/helion-ceph/cephsetup/images# ls
+<codeph>root@h<tm tmtype="reg">Linux</tm>:~/helion-ceph/cephsetup/images# ls
 bm-deploy-kernel
 bm-deploy-ramdisk
 overcloud-ceph-admin-initrd
@@ -196,7 +196,7 @@ orchestration.py
 </codeblock>
 </li>
 <li>
-<p>Modify <codeph>/server/server.json</codeph> to include <tm tmtype="reg">OpenStack</tm> credentials from the Undercloud (<codeph>stackrc</codeph>), network, and keypair that you want to use. The following is a sample of <codeph>server.json</codeph>:</p>
+<p>Modify <codeph>/server/server.json</codeph> to include OpenStack credentials from the Undercloud (<codeph>stackrc</codeph>), network, and keypair that you want to use. The following is a sample of <codeph>server.json</codeph>:</p>
 
 <codeblock>
 <codeph>root@hLinux:~/helion-ceph/node-provisioner/server# cat server.json
@@ -223,7 +223,7 @@ orchestration.py
 <p>
 <b>PORT</b> is 8085 which can be used as a service port.</p>
 <p>
-<b>OS_VERSION</b> is the <tm tmtype="reg">OpenStack</tm> API version. Should be set to <b>2</b>.</p>
+<b>OS_VERSION</b> is the OpenStack API version. Should be set to <b>2</b>.</p>
 <p>
 <b>OS_USER</b> is supplied from the Undercloud <codeph>stackrc</codeph> file. For example: <b>admin</b>.</p>
 <p>

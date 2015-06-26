@@ -335,7 +335,7 @@ block volumes.</p>
 </section>
 <section id="enabling-filesystem-quotas"> <title>Enabling Filesystem Quotas</title>
 <p>The Application Lifecycle Service filesystem quotas cannot be enforced by the system unless
-they are mounted on partitions which support Linux quotas. This may need
+they are mounted on partitions which support <tm tmtype="reg">Linux</tm> quotas. This may need
 to be specified explicitly when running the <codeph>mount</codeph>
 command. The <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-relocate" type="section" scope="external"  >
 <i>kato

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1922">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: EON Service Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: EON Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -23,7 +23,7 @@
 <p>
 
 </p>
-<p>ESX integration in HP <tm tmtype="reg">Helion OpenStack</tm> enables administrators to connect their cloud to an existing VMware vCenter installation. The VMware vCenter driver connects to ESXi clusters in a vCenter through Compute proxy nodes. The Nova scheduler sees the ESXi clusters as compute nodes and uses that information for scheduling a new instance.</p>
+<p>ESX integration in HP Helion OpenStack enables administrators to connect their cloud to an existing VMware vCenter installation. The VMware vCenter driver connects to ESXi clusters in a vCenter through Compute proxy nodes. The Nova scheduler sees the ESXi clusters as compute nodes and uses that information for scheduling a new instance.</p>
 <p>The ESX on border (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. This information is used for deployment and configuration of ESX Proxy Compute nodes. The EON service is deployed in the undercloud controller node.</p>
 <p>EON, a new service sub component, captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters managed by ESX Proxy Compute node. The ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK.</p>
 <p>
@@ -37,7 +37,7 @@
 * The message bus is used to communicate between eon-api and eon-conductor.
 --></p>
 <section id="eon-architecture"> <title>EON Architecture</title>
-<p>The following diagram depicts the EON architecture of HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>The following diagram depicts the EON architecture of HP Helion OpenStack</p>
 <p>
   <xref format="html" href="javascript:window.open('/media//eon-architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >EON Architecture(opens in a new window)</xref>
 </p>
@@ -48,7 +48,7 @@
 <p>To perform tasks using the EON service, you can use the dashboard or CLI.</p>
 </section>
 <section id="UI"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
-<p>You can use the <xref href="../../commercial/GA1/1.1commercial.undercloud-resource-esx.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Dashboard</xref> to work with the EON service.</p>
+<p>You can use the <xref href="../../commercial/GA1/1.1commercial.undercloud-resource-esx.dita" >HP Helion OpenStack Dashboard</xref> to work with the EON service.</p>
 </section>
 <section id="cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
 <p>You can use the command-line interface software to access HP EON service. See <xref href="../../commercial/GA1/1.1commercial.undercloud-eon-cli.dita" >Command Line Interface-EON</xref>

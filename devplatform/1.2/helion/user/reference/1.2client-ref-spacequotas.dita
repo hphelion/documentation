@@ -21,7 +21,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/reference/1.2client-ref-spacequotas.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/reference/client-ref/spacequotas/--></p>
-<p>These commands are new in in HP <tm tmtype="reg">Helion OpenStack</tm> Development Platform 1.1.</p>
+<p>These commands are new in in HP Helion <tm tmtype="reg">OpenStack</tm> Development Platform 1.1.</p>
 <ul>
 <li>
 <xref type="section" href="#topic7566/command-create-space-quota">helion create-space-quota</xref>: Create a new space quota. </li>

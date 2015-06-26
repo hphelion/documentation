@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8594">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Installation and Configuration for ESX Hypervisor</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Installation and Configuration for ESX Hypervisor</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,8 +15,8 @@
 <p>
 
 </p>
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. This document provides installation instructions for HP <tm tmtype="reg">Helion OpenStack</tm> on a suitably specified and prepared system.</p>
-<section id="installing-hp-helion-openstack"> <title>Installing HP <tm tmtype="reg">Helion OpenStack</tm><!--Removed anchor point install--><!-- id="install" --></title>
+<p>HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.</p>
+<section id="installing-hp-helion-openstack"> <title>Installing HP Helion OpenStack<!--Removed anchor point install--><!-- id="install" --></title>
 <p>The installation and configuration process for ESX consists of the following general steps:</p>
 <ul>
 <li>Preparing for installation
@@ -31,7 +31,7 @@
 </ul>
 </li>
 <li>Download and extracting the installation packages</li>
-<li>Installing HP <tm tmtype="reg">Helion OpenStack</tm>
+<li>Installing HP Helion OpenStack
 
 <ul>
 <li>Configure proxy information</li>
@@ -52,7 +52,7 @@
 <section id="deploy-arch"> <title>Review the ESX deployment architecture</title>
 <p>The following diagram depicts the required network topology for a ESX installation.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP <tm tmtype="reg">Helion OpenStack</tm> architecture diagram for ESX (opens in a new window)</xref>
+  <xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack architecture diagram for ESX (opens in a new window)</xref>
 </p>
 <p>For detailed network requirements, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#network_prepare" type="section" scope="external"  >Installation: Prerequisites</xref>.</p>
 </section>
@@ -62,18 +62,18 @@
 </section>
 <section id="csv"> <title>Prepare baremetal.csv file</title>
 <p>Before installing, make sure you have created the <codeph>baremetal.csv</codeph> file that is required for installation.</p>
-<p>For more information, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv" type="section" scope="external"  >Creating the baremetal.csv file</xref> in <i>HP <tm tmtype="reg">Helion OpenStack</tm> Installation: Prerequisites</i>.</p>
+<p>For more information, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#csv" type="section" scope="external"  >Creating the baremetal.csv file</xref> in <i>HP Helion OpenStack Installation: Prerequisites</i>.</p>
 </section>
 <section id="name-resolution"> <title>Set DNS servers</title>
-<p>To set a default DNS name server for your HP <tm tmtype="reg">Helion OpenStack</tm> Commercial cloud, refer to <xref href="../../commercial/GA1/1.0commercial.name-resolution.dita" >Enabling Name Resolution from Tenant VMs in the Overcloud</xref> before installation.</p>
+<p>To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to <xref href="../../commercial/GA1/1.0commercial.name-resolution.dita" >Enabling Name Resolution from Tenant VMs in the Overcloud</xref> before installation.</p>
 </section>
 <section id="prepseed"> <title>Prepare the seed cloud host to create the seed VM</title>
 <p>On the server identified to run the seed VM, called the seed cloud host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#ubuntu" type="section" scope="external"  >Installation: Prerequisites</xref>.</p>
 </section>
 <section id="getinstall"> <title>Downloading and extracting the installation packages</title>
-<p>Before you begin, you must have downloaded and extracted the required HP <tm tmtype="reg">Helion OpenStack</tm> installation packages. See <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >Installation: Prerequisites</xref>.</p>
+<p>Before you begin, you must have downloaded and extracted the required HP Helion OpenStack installation packages. See <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >Installation: Prerequisites</xref>.</p>
 </section>
-<section id="install"> <title>Installing HP <tm tmtype="reg">Helion OpenStack</tm></title>
+<section id="install"> <title>Installing HP Helion OpenStack</title>
 <p>Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed cloud host:</p>
 <ul>
 <li>
@@ -171,7 +171,7 @@ provider_Network is your ESX management network
 <li>
 <p>When prompted for host authentication, type <codeph>yes</codeph> to allow the SSH connection to proceed.</p>
 
-<p>The prompt will change to <codeph>root@hLinux</codeph>.</p>
+<p>The prompt will change to <codeph>root@h<tm tmtype="reg">Linux</tm></codeph>.</p>
 </li>
 <li>
 <p>Make sure the information in the <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#req-info" type="section" scope="external"  >
@@ -242,7 +242,7 @@ provider_Network is your ESX management network
 <p>If possible, leave this console display open as you will need the passwords to verify the installation.</p>
 </section>
 <section id="verifying-your-installation"> <title>Verify your installation</title>
-<p>To verify that the installation is successful, connect to the HP <tm tmtype="reg">Helion OpenStack</tm> dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.0commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
+<p>To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as shown in <xref href="../../commercial/GA1/1.0commercial.install-GA-verify.dita" >Verifying your installation</xref>.</p>
 <!-- Hiding until I determine if linked doc will work
 ### Connect to the undercloud Horizon console {#monitoring}
 
@@ -315,7 +315,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 <p>Deploy vCenter ESX Compute Proxy <b>(REQUIRED)</b>
 </p>
 
-<p>The HP <tm tmtype="reg">Helion OpenStack</tm> vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP <tm tmtype="reg">Helion OpenStack</tm> Compute service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.</p>
+<p>The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.</p>
 
 <p>See <xref href="../../commercial/GA1/1.0commercial.install-GA-ESX-Proxy.dita" >Deploy vCenter ESX compute proxy</xref>.</p>
 </li>

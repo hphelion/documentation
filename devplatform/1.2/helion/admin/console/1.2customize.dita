@@ -174,7 +174,7 @@ format:</p>
 </section>
 <section id="renaming-the-client"> <title>Renaming the Client</title>
 <p>The Helion client is distributed as a single
-file executable for Windows, OS X and Linux (x86 and x86_64). Zip files
+file executable for <tm tmtype="reg">Windows</tm>, OS X and <tm tmtype="reg">Linux</tm> (x86 and x86_64). Zip files
 containing executables for each platform can be found in the
 <codeph>~/helion/static</codeph> directory.</p>
 <p>Some customers may wish to repackage and rename these CLI executables to match their own branding. To do so:</p>

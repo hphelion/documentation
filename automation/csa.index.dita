@@ -28,7 +28,7 @@
 <b>Advanced service modeling tools</b>
 </p>
 
-<p>Build sophisticated services for the entire stack (IaaS, PaaS, SaaS) or simplified topology-based infrastructure services with HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>Build sophisticated services for the entire stack (IaaS, PaaS, SaaS) or simplified topology-based infrastructure services with HP Helion <tm tmtype="reg">OpenStack</tm></p>
 </li>
 <li>
 <p>
@@ -68,12 +68,12 @@
 </li>
 <li>
 <p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061715/binary/CSA_410_Linux_Configuration_Guide.pdf" scope="external" format="pdf">Configuration Guide for Linux</xref>
+<xref href="http://support.openview.hp.com/selfsolve/document/KM01061715/binary/CSA_410_<tm tmtype="reg">Linux</tm>_Configuration_Guide.pdf" scope="external" format="pdf">Configuration Guide for Linux</xref>
 </p>
 </li>
 <li>
 <p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01061716/binary/CSA_410_Win_Configuration_Guide.pdf" scope="external" format="pdf">Configuration Guide for Windows</xref>
+<xref href="http://support.openview.hp.com/selfsolve/document/KM01061716/binary/CSA_410_Win_Configuration_Guide.pdf" scope="external" format="pdf">Configuration Guide for <tm tmtype="reg">Windows</tm></xref>
 </p>
 </li>
 <li>
@@ -93,7 +93,7 @@
 </li>
 <li>
 <p>
-<xref href="http://support.openview.hp.com/selfsolve/document/KM01082360/binary/CSA_410_Configuring_Intelligent_Resource_Management.pdf" scope="external" format="pdf">Configuring Intelligent Resource Management</xref>
+<xref href="http://support.openview.hp.com/selfsolve/document/KM01082360/binary/CSA_410_Configuring_<tm tmtype="reg">Intel</tm>ligent_Resource_Management.pdf" scope="external" format="pdf">Configuring Intelligent Resource Management</xref>
 </p>
 </li>
 <li>

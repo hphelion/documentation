@@ -34,7 +34,7 @@
                         <b>Create the Sandbox Environment</b></p><p>4. <xref
                             href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
                             Cluster</xref></p><p>5. <xref
-                            href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add Windows
+                            href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add <tm tmtype="reg">Windows</tm>
                             DEA and SQL Server (Optional Step)</xref></p><p>6. <xref
                             href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Explore
                             Sample Applications</xref></p></stentry>
@@ -57,7 +57,7 @@
               cluster. This RC file has been pre-configured for this sandbox project. <ol>
                 <li>Click <b>Access &amp; Security</b> and then click the <b>API Access</b>
                   tab.</li>
-                <li> Click <b>Download OpenStack RC file</b>.<image
+                <li> Click <b>Download <tm tmtype="reg">OpenStack</tm> RC file</b>.<image
                     href="../../media/quickstartC11.png" placement="break"/></li>
               </ol>
             </li>

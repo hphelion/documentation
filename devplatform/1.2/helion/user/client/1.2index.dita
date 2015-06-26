@@ -48,7 +48,7 @@ available at the command line via the <i>helion help</i> command.</p>
 </ul>
 <section id="helion-client-setup"> <title>Application Lifecycle Service Client Installation</title>
 <p>
-        <note>Using the Windows Helion client with <xref href="http://www.cygwin.com/"
+        <note>Using the <tm tmtype="reg">Windows</tm> Helion client with <xref href="http://www.cygwin.com/"
             scope="external" format="html">Cygwin</xref> is not supported.</note>
       </p>
 </section>
@@ -68,12 +68,12 @@ available at the command line via the <i>helion help</i> command.</p>
             <li>
               <b>Windows</b>: path = %path%; (where path is the path to the Helion client)</li>
             <li>
-              <b>Linux</b>, <b>OS X</b>: moving it to a directory in your
+              <b><tm tmtype="reg">Linux</tm></b>, <b>OS X</b>: moving it to a directory in your
               <codeph>\$PATH</codeph>,</li>
             <li>creating a symlink from a directory in your <codeph>\$PATH</codeph>, or</li>
             <li>creating a shell alias for the executable.</li>
           </ul></li>
-<li> For Linux or Mac OS X: Make sure the file is set as
+<li> For Linux or <tm tmtype="reg">Mac OS X</tm>: Make sure the file is set as
           executable<codeblock>chmod +x helion</codeblock></li>
 <li> On some systems read access is also necessary.<codeblock>chmod 755 helion</codeblock></li>
 <li> Confirm that the client is installed correctly by launching it and running <i>helion
@@ -94,7 +94,7 @@ available at the command line via the <i>helion help</i> command.</p>
 </section>
 <section id="http-proxies"> <title>Configure HTTP Proxies</title>
 <p>
-        <note>This configuration step should not be necessary on the <tm tmtype="reg">Windows</tm>
+        <note>This configuration step should not be necessary on the Windows
           operating system, as the client queries the Internet Settings values.</note>
       </p>
 <p>If there is an HTTP/HTTPS proxy on your network between your client and

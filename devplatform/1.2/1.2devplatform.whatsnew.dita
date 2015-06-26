@@ -22,7 +22,7 @@
  <!--./devplatform/1.2/1.2devplatform.whatsnew.md-->
  <!--permalink: /helion/devplatform/1.2/whatsnew/--></p>
 <ul>
-<li>What's New in <tm tmtype="reg">Helion OpenStack</tm> x.x.x</li>
+<li>What's New in Helion <tm tmtype="reg">OpenStack</tm> x.x.x</li>
 <li>
 <xref href="../../devplatform/1.2/1.2devplatform.release-notes.dita" >Release Notes and Known Issues</xref>
 </li>
@@ -34,7 +34,7 @@
 </section>
 <section id="new-features"> <title>New Features</title>
 <p>
-  <b>.NET and Windows support</b>
+  <b>.NET and <tm tmtype="reg">Windows</tm> support</b>
 </p>
 <p>Helion Development Platform version 1.2 includes a full end-to-end solution for creating and
         deploying .NET applications. Windows developers can now leverage their knowledge and use the
@@ -43,7 +43,7 @@
           href="windows/windows_overview.dita#topic24073_2">Windows Overview.</xref></p>
 <p>
 <b>Updated Command Line Client</b> <!--A BR tag was used here in the original source.-->
-The <xref href="../../devplatform/1.2/helion/CLI/1.2ALS_Client_Reference.dita" >ALS command line client</xref> (cfmgmt.exe) has been updated to provide options for creating and managing <tm tmtype="reg">Windows</tm> DEA clusters.</p>
+The <xref href="../../devplatform/1.2/helion/CLI/1.2ALS_Client_Reference.dita" >ALS command line client</xref> (cfmgmt.exe) has been updated to provide options for creating and managing Windows DEA clusters.</p>
 </section>
 </body>
 </topic>

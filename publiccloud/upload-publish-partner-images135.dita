@@ -26,7 +26,7 @@
 </ul>
 <p>All other regions do not support the Image API.</p>
 <section id="why-upload-an-image-and-make-it-public"> <title>Why upload an image and make it public</title>
-<p>HP Helion Public Cloud offers several public images for you to use; however, we might not have the exact image you require. With that in mind, HP Helion Public Cloud allows you to upload your own images and make them publicly available. For example, you might want a version of a Linux distribution that we do not currently offer. Or, you might want to create a customized golden master image to import into HP Helion Public Cloud. Whatever the scenario, if you require a specific customized, public image that we do not currently offer, uploading your own image and optionally making it public may be the right option for you.</p>
+<p>HP Helion Public Cloud offers several public images for you to use; however, we might not have the exact image you require. With that in mind, HP Helion Public Cloud allows you to upload your own images and make them publicly available. For example, you might want a version of a <tm tmtype="reg">Linux</tm> distribution that we do not currently offer. Or, you might want to create a customized golden master image to import into HP Helion Public Cloud. Whatever the scenario, if you require a specific customized, public image that we do not currently offer, uploading your own image and optionally making it public may be the right option for you.</p>
 </section>
 <section id="image-types"> <title>Image types</title>
 <p>You can create either a public or private image to upload to HP Helion Public Cloud. Anyone can see and use a public image. If you upload a private image, it is listed in the image catalog for your Project and only visible to you.</p>
@@ -48,7 +48,7 @@
 <xref type="section" href="#topic26477/getting-started">Getting started</xref>
 </li>
 <li>
-<xref type="section" href="#topic26477/publishWindowsSnap">Creating an image from a snapshot</xref>
+<xref type="section" href="#topic26477/publish<tm tmtype="reg">Windows</tm>Snap">Creating an image from a snapshot</xref>
 </li>
 <li>
 <xref type="section" href="#topic26477/publishManageGlance">Uploading and managing images</xref>
@@ -111,7 +111,7 @@
 <p>To interact with the HP Helion Public Cloud Image API, you need to install the Nova and Glance client tools. If your platform does not support the Glance client, you can use the curl command.</p>
 </section>
 <section id="publishInstallGlance"> <title>The Nova and Glance client tools<!--Removed anchor point publishInstallGlance--><!-- id="publishInstallGlance" --></title>
-<p><tm tmtype="reg">OpenStack</tm> Nova client tool provides API access to the Nova service. <tm tmtype="reg">OpenStack</tm> Glance client tool provides the <codeph>glance</codeph> command, which is the preferred method for interacting with the HP Helion Public Cloud Image API. Refer to <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> documentation</xref> or <xref href="https://community.hpcloud.com/article/cloud-135-cli-installation-instructions" scope="external" format="html" >Cloud 13.5 CLI Installation Instructions</xref> for information on installing the Nova and Glance client tools.</p>
+<p>OpenStack Nova client tool provides API access to the Nova service. OpenStack Glance client tool provides the <codeph>glance</codeph> command, which is the preferred method for interacting with the HP Helion Public Cloud Image API. Refer to <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >OpenStack documentation</xref> or <xref href="https://community.hpcloud.com/article/cloud-135-cli-installation-instructions" scope="external" format="html" >Cloud 13.5 CLI Installation Instructions</xref> for information on installing the Nova and Glance client tools.</p>
 <p>If the Glance client is not available for your platform, see the alternate instructions below for <xref type="section" href="#topic26477/installCurl">installing curl</xref>.</p>
 </section>
 <section id="installCurl"> <title>The curl command<!--Removed anchor point installCurl--><!-- id="installCurl" --></title>
@@ -481,7 +481,7 @@ Boot an HP-provided instance and note the instance ID.</li>
 </ul>
 <p>There is also a section on the most <xref type="section" href="#topic26477/publishGlanceErrors">common HTTP errors</xref> that might occur when using the Glance client tool.</p>
 <p>
-<b>Important:</b> For more information, see <tm tmtype="reg">OpenStack</tm> documentation on <xref href="http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html" scope="external" format="html" >managing images using the Glance client</xref> and the <xref href="http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html" scope="external" format="html" >glance command reference</xref>.</p>
+<b>Important:</b> For more information, see OpenStack documentation on <xref href="http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html" scope="external" format="html" >managing images using the Glance client</xref> and the <xref href="http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html" scope="external" format="html" >glance command reference</xref>.</p>
 </section>
 <section id="publishGlanceList"> <title>Listing images<!--Removed anchor point publishGlanceList--><!-- id="publishGlanceList" --></title>
 <p>To see a list of available images, follow the instructions below.</p>
@@ -723,7 +723,7 @@ curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID"  -H 'X-Image-Meta-Property-com.hp__1_
 <xref href="https://docs.hpcloud.com/publiccloud/api/image/" scope="external" format="html" >HP Helion Public Cloud Image Service API documentation</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/user-guide/content/ch_cli.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> documentation</xref>
+<xref href="http://docs.openstack.org/user-guide/content/ch_cli.html" scope="external" format="html" >OpenStack documentation</xref>
 </li>
 <li>
 <xref href="https://community.hpcloud.com/article/cloud-135-cli-installation-instructions" scope="external" format="html" >Public Cloud CLI Installation Instructions</xref>

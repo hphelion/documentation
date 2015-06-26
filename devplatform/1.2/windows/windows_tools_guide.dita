@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic_w5z_kcw_js">
- <title>HP Helion 1.2 Development Platform: Windows and .NET Applications Tools Guide</title>
+ <title>HP Helion 1.2 Development Platform: <tm tmtype="reg">Windows</tm> and .NET Applications Tools Guide</title>
  <prolog>
   <metadata>
    <othermeta name="layout" content="default-devplatform"/>
@@ -20,7 +20,7 @@
    </metadata>
  </prolog>
 <body>
- <section><title>HP Helion 1.2 Development Platform: <tm tmtype="reg">Windows</tm> and .NET Tools
+ <section><title>HP Helion 1.2 Development Platform: Windows and .NET Tools
     Guide</title>
    <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
      Microsoft Corporation in the United States and/or other countries.</i></ph>
@@ -221,7 +221,7 @@
 
  <section id="als"><title>ALS Cluster Management Tool (cf-mgmt)</title>
 
-  <p>This tool is used to add services to new ALS clusters. The same tool is used for Linux and Windows instances.</p>
+  <p>This tool is used to add services to new ALS clusters. The same tool is used for <tm tmtype="reg">Linux</tm> and Windows instances.</p>
 
   <p>To add a DEA role to a Windows instance, use the following syntax:</p>
 
@@ -255,7 +255,7 @@
   <p>The Helion client tool can be downloaded from the following locations: </p>
 
 <ul>
- <li><xref format="html" scope="external" href="http://clients.als.hpcloud.com/helion-1.2.0-win32-ix86.zip"> <tm tmtype="reg">Windows</tm></xref></li>
+ <li><xref format="html" scope="external" href="http://clients.als.hpcloud.com/helion-1.2.0-win32-ix86.zip"> Windows</xref></li>
  <li><xref format="html" scope="external" href="http://clients.als.hpcloud.com/helion-1.2.0-linux-glibc2.3-x86_64.zip"> Linux x64</xref></li>
  <li><xref format="html" scope="external" href="http://clients.als.hpcloud.com/helion-1.2.0-macosx10.5-i386-x86_64.zip"> <tm tmtype="reg">Mac OS X</tm></xref></li>
 </ul>
@@ -265,7 +265,7 @@
 
  <section id="glazier"><title>Glazier</title>
 
-  <p>Glazier is the tool used to create <tm tmtype="reg">Windows</tm> images for deployment to Helion OpenStack (HOS) Application Lifecycle Service (ALS) clusters. </p>
+  <p>Glazier is the tool used to create Windows images for deployment to Helion <tm tmtype="reg">OpenStack</tm> (HOS) Application Lifecycle Service (ALS) clusters. </p>
 
   <p>Glazier can be downloaded from the following location: <xref format="html" scope="external" href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</xref>. </p>
 

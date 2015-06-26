@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1655">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Sirius Service Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Sirius Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,14 +26,14 @@
 <p>
 
 </p>
-<p>The HP <tm tmtype="reg">Helion OpenStack</tm> Sirius Service is a REST-based web service for storage device  management. It is used to configure of storage services such as Cinder and Swift that run in the overcloud and manage various storage devices. It also provides REST-based automated deployment and management of certain sets of storage devices such as HP StoreServ FC, HP StoreServ iSCSI, and HP StoreVirtual.</p>
-<p>The Cloud Administrator is the primary user. Like the other HP <tm tmtype="reg">Helion OpenStack</tm> services, the HP <tm tmtype="reg">Helion OpenStack</tm> Sirius Service is compliant with the Keystone authentication service.</p>
+<p>The HP Helion OpenStack Sirius Service is a REST-based web service for storage device  management. It is used to configure of storage services such as Cinder and Swift that run in the overcloud and manage various storage devices. It also provides REST-based automated deployment and management of certain sets of storage devices such as HP StoreServ FC, HP StoreServ iSCSI, and HP StoreVirtual.</p>
+<p>The Cloud Administrator is the primary user. Like the other HP Helion OpenStack services, the HP Helion OpenStack Sirius Service is compliant with the Keystone authentication service.</p>
 <p>All the devices managed by Sirius are consumed by the overcloud to realize a cloud storage offered to cloud users. The service runs in the undercloud to realize all its operation.</p>
 <section id="working-with-the-sirius-service"> <title>Working with the Sirius Service</title>
 <p>To perform tasks using the Sirius service, you can use the Horizon dashboards or CLI.</p>
 </section>
 <section id="using-the-dashboards"> <title>Using the dashboards<!--Removed anchor point UI""--><!-- id="UI&quot;&quot;" --></title>
-<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Dashboard</xref> to work with the Sirius service.</p>
+<p>You can use the <xref href="../../commercial/GA1/1.0commercial.dashboard.how-works.dita" >HP Helion OpenStack Dashboard</xref> to work with the Sirius service.</p>
 </section>
 <section id="cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
 <p>You can use the command-line interface to access HP Sirius service. See <xref href="../../commercial/GA1/1.0commercial.sirius-cli.dita" >Configuring Your Storage Using Sirius</xref>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic11470">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Metering Service (Ceilometer): Best Practices and Optimization</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Metering Service (Ceilometer): Best Practices and Optimization</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -145,7 +145,7 @@ service nova-conductor restart
 service nova-novncproxy restart
 </codeph>
 </codeblock>
-<p>For a more in-depth look at how information is sent over <i>openstack.common.rpc</i>, refer to the <xref href="http://docs.openstack.org/developer/ceilometer/measurements.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Ceilometer documentation</xref>.</p>
+<p>For a more in-depth look at how information is sent over <i>openstack.common.rpc</i>, refer to the <xref href="http://docs.openstack.org/developer/ceilometer/measurements.html" scope="external" format="html" >OpenStack Ceilometer documentation</xref>.</p>
 <p>
 <b>Validation</b>
 After the Nova service is re-started, the notification daemons using the namespace <i>ceilometer.notification</i> should receive some traffic. Each plugin can listen to any topic(s), but by default it will listen to <i>notifications.info</i>.</p>
@@ -262,7 +262,7 @@ Ceilometer data collection is configured by modifying the <i>pipeline.yml</i> fi
                     href="1.1commerical.services-reporting-components.dita#topic4362/collector"/>.
                 If more meters are desired, please refer to the <xref
                     href="http://docs.openstack.org/developer/ceilometer/measurements.html#measurements"
-                    type="section" scope="external" format="html"><tm tmtype="reg">OpenStack</tm>
+                    type="section" scope="external" format="html">OpenStack
                     Ceilometer documentation</xref>.</p>
 <codeblock>
   <codeph>---

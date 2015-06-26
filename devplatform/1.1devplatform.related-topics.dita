@@ -28,13 +28,13 @@
 <p>
 
 </p>
-  <p>The HP Helion Development Platform is based on <tm tmtype="tm">Cloud Foundry</tm> and <tm tmtype="reg">OpenStack</tm>) technology along with an HP-configured Linux operating system.</p>
+  <p>The HP Helion Development Platform is based on <tm tmtype="tm">Cloud Foundry</tm> and <tm tmtype="reg">OpenStack</tm>) technology along with an HP-configured <tm tmtype="reg">Linux</tm> operating system.</p>
 <p>You can find related information on the following sites:</p>
 <ul>
 <li>
   <xref href="http://docs.cloudfoundry.org/" scope="external" format="html" ><tm tmtype="tm">Cloud Foundry</tm></xref>
 </li>
-  <li><tm tmtype="reg">OpenStack</tm> <xref href="https://wiki.openstack.org/wiki/Trove" scope="external" format="html" >Trove</xref>
+  <li>OpenStack <xref href="https://wiki.openstack.org/wiki/Trove" scope="external" format="html" >Trove</xref>
 </li>
 </ul>
 <!-- ===================== horizontal rule ===================== -->

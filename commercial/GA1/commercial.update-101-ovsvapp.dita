@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3118">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Updating OVSvApp on ESX hosts</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Updating OVSvApp on ESX hosts</title>
 <titlealts>
 <searchtitle>HP Helion Openstack Installation and Configuration</searchtitle>
 </titlealts>
@@ -23,7 +23,7 @@
 <li>
 <p>Make sure that DRS is enabled on the cluster on which 1.01 version of OVSvApp will be installed:</p>
 
-<p>a. In the vSphere client, select the cluster in the vSphere Client inventory.</p>
+<p>a. In the <tm tmtype="reg">vSphere</tm> client, select the cluster in the vSphere Client inventory.</p>
 
 <p>b. Right-click and select <b>Edit Settings</b>.</p>
 

@@ -31,9 +31,9 @@ applications, and a number of other application management operations.</p>
 <p>The <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-ref-client" type="section" scope="external"  >Command Reference</xref> has full descriptions of all client commands and options. These details are also available at the command line via the <i>helion help</i> command.</p>
 <section id="helion-client-setup"> <title>Application Lifecycle Service Client Setup</title>
 <p>
-<b>Note</b>: Using the Windows Helion client with
+<b>Note</b>: Using the <tm tmtype="reg">Windows</tm> Helion client with
 <xref href="http://www.cygwin.com/" scope="external" format="html" >Cygwin</xref> is not supported.</p>
-<p>Download the client for your platform (Windows, OS X, Linux x86,
+<p>Download the client for your platform (Windows, OS X, <tm tmtype="reg">Linux</tm> x86,
     Linux x64) by following these instructions.</p>
 <ol>
 <li>From the ALS cluster management console, find and click on the "Download the Client" button.</li>
@@ -48,7 +48,7 @@ applications, and a number of other application management operations.</p>
 <li>creating a symlink from a directory in your \$PATH, or</li>
 <li>creating a shell alias for the executable.</li>
 </ul>
-<p>For Linux or Mac OS X: Make sure the file is set as executable</p>
+<p>For Linux or <tm tmtype="reg">Mac OS X</tm>: Make sure the file is set as executable</p>
 
 <ul>
 <li>(<codeph>chmod +x helion</codeph>) or</li>

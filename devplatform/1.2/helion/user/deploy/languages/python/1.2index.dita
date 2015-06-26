@@ -22,7 +22,7 @@
  <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/python/--></p>
 <p>Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry
       based Platform as a Service (PaaS), or writing applications that take advantage of HP <tm
-        tmtype="reg">Helion OpenStack</tm> to manage infrastructure or software services, tools to
+        tmtype="reg">Helion <tm tmtype="reg">OpenStack</tm></tm> to manage infrastructure or software services, tools to
       enable successful development are available in Python.</p>
 <section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
 <p>Application Lifecycle Services (ALS), a Cloud Foundry-based Platform as a Service, provides a
@@ -97,7 +97,7 @@ def posted(self, username, password, project, url, region, name):
                          env=os.environ, stdout=subprocess.PIPE)
     result = p.communicate()[0]
     return "&lt;title&gt;Volume %s&lt;/title&gt;\n&lt;pre&gt;%s&lt;/pre&gt;" % (name, result)</codeblock>
-<p>That example used the unified <tm tmtype="reg">OpenStack</tm> CLI.  A similar thing would work for
+<p>That example used the unified OpenStack CLI.  A similar thing would work for
 the network or object store clients.</p>
 <p>By default, Application Lifecycle Service uses the built-in Python
 <xref href="../../1.2buildpack.dita" >

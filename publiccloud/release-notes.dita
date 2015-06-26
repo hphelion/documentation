@@ -39,12 +39,12 @@
 <p>
 <b>More object storage options</b> - HP Helion Public Cloud Console users can now setup and control object storage container synchronization across multiple regions. Cross-region replication contributes to a more achievable business continuity plan for disaster recovery options which are often at the forefront of most enterprise organizations priorities.  Public Cloud Console users also have the ability to store duplicate versions of content within these storage containers, to restore from unintended failures or deletions, or for the purpose of data archiving, among others.</p>
 <p>
-<b>Larger file size transfers via the CLI</b> - You can now use the Windows CLI to transfer files up to 700MB for downloads and 5GB for uploads, a significant increase in the file size ceiling for transfers via the Windows CLI.</p>
+<b>Larger file size transfers via the CLI</b> - You can now use the <tm tmtype="reg">Windows</tm> CLI to transfer files up to 700MB for downloads and 5GB for uploads, a significant increase in the file size ceiling for transfers via the Windows CLI.</p>
 <p>
 <b>Enhanced identity management</b> - Particularly attractive for administrators in the enterprise, this release provides more flexibility and options when managing roles, domains, users and groups in the new Horizon-based public cloud console. Specifically, roles can now be assigned to groups of users, or domain administrators can be defined for managing domains and respective users.   In addition, you can assign roles around the latest platform services, such as the HP Helion Public Cloud <xref href="../publiccloud/dbaas.dita" >Relational Database</xref> service.</p>
 <p>As a domain admin, you can manage each user's projects, roles, and groups.  You can manage the membership of each group, and manage the user assignment within each role.</p>
 <p>
-<b>Hybrid cloud focus</b> - In response to significant feedback received from our rapidly growing open source developer community, and the notably modest usage of the AWS EC2 API in the open HP Helion Public Cloud environment, support for the AWS EC2 API and Eucalyptus API have been discontinued at this time.</p>
+<b>Hybrid cloud focus</b> - In response to significant feedback received from our rapidly growing open source developer community, and the notably modest usage of the AWS EC2 API in the open HP Helion Public Cloud environment, support for the AWS EC2 API and <tm tmtype="reg">Eucalyptus</tm> API have been discontinued at this time.</p>
 <p>
 <b>User roles</b> - The following user roles are available with this release (new user roles <i>italicized</i>):</p>
 <ul>
@@ -96,7 +96,7 @@
 <ul>
 <li>To ensure full external node access, HP recommends that you do not delete  egress rules and allow those rules to remain part of their security groups.</li>
 <li>To get the most timely and accurate results for your quota checks, use the <xref href="../publiccloud/hpcloudconsole.dita#ManageHPPublicCloud" scope="external"  type="section">Neutron networking interface</xref>.</li>
-<li>To ensure that your Linux instance is able to resolve its own hostname, add an entry to the <codeph>/etc/hosts</codeph> file that matches the hostname.  This can be accomplished by running the command:
+<li>To ensure that your <tm tmtype="reg">Linux</tm> instance is able to resolve its own hostname, add an entry to the <codeph>/etc/hosts</codeph> file that matches the hostname.  This can be accomplished by running the command:
 echo "<codeph>-l</codeph> <codeph>hostname</codeph>" | sudo tee -a /etc/hosts</li>
 </ul>
 </section>

@@ -168,7 +168,7 @@ connection to the LDAP server</p>
 <p>An additional 'name_proc' option in the 'ldap' block allows users to
 enter email addresses instead of LDAP user names, matching the user name
 entered with the format of the uid attributes. For example, value of
-'sAMAccountName' in AD contains only the Windows user name. If your
+'sAMAccountName' in AD contains only the <tm tmtype="reg">Windows</tm> user name. If your
 users prefer using email to login, the following 'name_proc' value will
 trim the email string down to just the Windows login name:</p>
 <codeblock>

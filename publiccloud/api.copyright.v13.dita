@@ -22,10 +22,10 @@
 </section>
 <section id="object-storage"> <title>Object Storage (Swift)</title>
 <p>Modifications Copyright (C) 2013 Hewlett-Packard Development Company, L.P.</p>
-<p>Copyright (C) 2010-2013 <tm tmtype="reg">OpenStack</tm> Foundation.   All rights reserved.</p>
-<p>This reference is for software developers who develop applications by using the <tm tmtype="reg">OpenStack</tm> Object Storage Application Programming Interface (API) v1.</p>
+<p>Copyright (C) 2010-2013 OpenStack Foundation.   All rights reserved.</p>
+<p>This reference is for software developers who develop applications by using the OpenStack Object Storage Application Programming Interface (API) v1.</p>
 <p>
-  <b><tm tmtype="reg">OpenStack</tm> Object Storage API v1 Reference</b>
+  <b>OpenStack Object Storage API v1 Reference</b>
 </p>
 <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
   <xref href="http://www.apache.org/licenses/LICENSE-2.0" scope="external" format="html" >http://www.apache.org/licenses/LICENSE-2.0</xref>
@@ -39,9 +39,9 @@
 </section>
 <section id="compute"> <title>Compute (Nova)</title>
 <p>Modifications Copyright (C) 2013 Hewlett-Packard Development Company, L.P.</p>
-<p>Copyright (C) 2009-2013 <tm tmtype="reg">OpenStack</tm> Foundation.  All rights reserved.</p>
+<p>Copyright (C) 2009-2013 OpenStack Foundation.  All rights reserved.</p>
 <p>
-  <b><tm tmtype="reg">OpenStack</tm> Compute API v2 and Extensions Reference</b>
+  <b>OpenStack Compute API v2 and Extensions Reference</b>
 </p>
 <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
   <xref href="http://www.apache.org/licenses/LICENSE-2.0" scope="external" format="html" >http://www.apache.org/licenses/LICENSE-2.0</xref>
@@ -50,7 +50,7 @@
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="image"> <title>Image (Glance)</title>
-<p>Copyright (C) 2010-2011 <tm tmtype="reg">OpenStack</tm> Foundation. All Rights Reserved.</p>
+<p>Copyright (C) 2010-2011 OpenStack Foundation. All Rights Reserved.</p>
 <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
   <xref href="http://www.apache.org/licenses/LICENSE-2.0" scope="external" format="html" >http://www.apache.org/licenses/LICENSE-2.0</xref>
 </p>
@@ -59,7 +59,7 @@
 </section>
 <section id="block-storage"> <title>Block Storage (Cinder)</title>
 <p>Copyright (C) 2013 Hewlett-Packard Development Company, L.P.</p>
-<p>Copyright (C) 2013 <tm tmtype="reg">OpenStack</tm> Foundation</p>
+<p>Copyright (C) 2013 OpenStack Foundation</p>
 <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
   <xref href="http://www.apache.org/licenses/LICENSE-2.0" scope="external" format="html" >http://www.apache.org/licenses/LICENSE-2.0</xref>
 </p>
@@ -67,9 +67,9 @@
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="networking"> <title>Networking (Neutron)</title>
-<p>Copyright (C) 2013 <tm tmtype="reg">OpenStack</tm> Foundation</p>
+<p>Copyright (C) 2013 OpenStack Foundation</p>
 <p>
-  <b><tm tmtype="reg">OpenStack</tm> Networking API v2.0 Reference</b>
+  <b>OpenStack Networking API v2.0 Reference</b>
 </p>
 <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
   <xref href="http://www.apache.org/licenses/LICENSE-2.0" scope="external" format="html" >http://www.apache.org/licenses/LICENSE-2.0</xref>

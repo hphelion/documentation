@@ -28,15 +28,15 @@
 <p>Click the download link that is appropriate for your operating system.</p>
 <ul>
 <li>
-<xref href="http://clients.als.hpcloud.com/helion-1.1.0-win32-ix86.zip" scope="external" format="html" >Windows</xref> </li>
+<xref href="http://clients.als.hpcloud.com/helion-1.1.0-win32-ix86.zip" scope="external" format="html" ><tm tmtype="reg">Windows</tm></xref> </li>
 <li>
-<xref href="http://clients.als.hpcloud.com/helion-1.1.0-linux-glibc2.3-ix86.zip" scope="external" format="html" >Linux x86</xref>
+<xref href="http://clients.als.hpcloud.com/helion-1.1.0-linux-glibc2.3-ix86.zip" scope="external" format="html" ><tm tmtype="reg">Linux</tm> x86</xref>
 </li>
 <li>
 <xref href="http://clients.als.hpcloud.com/helion-1.1.0-linux-glibc2.3-x86_64.zip" scope="external" format="html" >Linux x64</xref>
 </li>
 <li>
-<xref href="http://clients.als.hpcloud.com/helion-1.1.0-macosx10.5-i386-x86_64.zip" scope="external" format="html" >Mac OS X</xref> </li>
+<xref href="http://clients.als.hpcloud.com/helion-1.1.0-macosx10.5-i386-x86_64.zip" scope="external" format="html" ><tm tmtype="reg">Mac OS X</tm></xref> </li>
 </ul>
 <p>Full Application Lifecycle Service (ALS) Client <xref href="../../../devplatform/helion/user/reference/1.1client-ref.dita" >command reference</xref>
 </p>

@@ -47,7 +47,7 @@ the Helion <xref href="../client/1.0index.dita#topic2972/helion-client-setup" ty
 applications to Application Lifecycle Service and interacting with the system from the
 command line.</p>
 <ol>
-<li>Download the client for your platform (Windows, OS X, Linux x86,
+<li>Download the client for your platform (<tm tmtype="reg">Windows</tm>, OS X, <tm tmtype="reg">Linux</tm> x86,
 Linux x64)</li>
 <li>Unzip the archive in a convenient directory.</li>
 <li>Add the executable to your system/shell \$PATH by:

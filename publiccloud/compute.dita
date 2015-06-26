@@ -44,7 +44,7 @@
 <p>Check out the following pages for more information on using HP Helion Public Cloud compute services:</p>
 <ul>
 <li>
-<xref href="../publiccloud/cli.windows.2.compute.dita" >Windows PowerShell CLI compute examples</xref>
+<xref href="../publiccloud/cli.windows.2.compute.dita" ><tm tmtype="reg">Windows</tm> PowerShell CLI compute examples</xref>
 </li>
 </ul>
 </section>

@@ -16,7 +16,7 @@
 <p>Here's what we have for you:</p>
 <ul>
 <li>
-<xref type="section" href="#topic1790/WinCLIInstall">Windows CLI</xref>
+<xref type="section" href="#topic1790/WinCLIInstall"><tm tmtype="reg">Windows</tm> CLI</xref>
 </li>
 <li>
 <xref type="section" href="#topic1790/OpenstackCLI"><tm tmtype="reg">OpenStack</tm> CLI Tools</xref>
@@ -51,7 +51,7 @@
 </li>
 </ul>
 </section>
-<section id="OpenstackCLI"> <title><tm tmtype="reg">OpenStack</tm> CLI Tools</title>
+<section id="OpenstackCLI"> <title>OpenStack CLI Tools</title>
 <ul>
 <li>
 <xref href="../publiccloud/cli.openstack.dita" >Overview page</xref>

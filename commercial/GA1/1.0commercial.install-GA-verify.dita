@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4481">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Verifying your installation</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Verifying your installation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -20,7 +20,7 @@
 <p>
 
 </p>
-<p>Once your installation is complete, you should make sure you can connect to your HP <tm tmtype="reg">Helion OpenStack</tm> cloud. You can accomplish this in any of the following ways:</p>
+<p>Once your installation is complete, you should make sure you can connect to your HP Helion OpenStack cloud. You can accomplish this in any of the following ways:</p>
 <ul>
 <li>
 <xref type="section" href="#topic4481/connectunder">Connecting to the undercloud Horizon console</xref>
@@ -141,7 +141,7 @@ b. Note the public IP address of the <b>demo</b> instance, starting with <codeph
 </ol>
 </section>
 <section id="connectmonitor"> <title>Connecting to the monitoring and logging interfaces</title>
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> includes monitoring logging. The monitoring service uses <xref href="../../community/community.services-icinga.dita" >Icinga</xref> interface and the logging service uses the Kibana interface.</p>
+<p>HP Helion OpenStack includes monitoring logging. The monitoring service uses <xref href="../../community/community.services-icinga.dita" >Icinga</xref> interface and the logging service uses the Kibana interface.</p>
 <p>You can access these services with the following steps:</p>
 <ol>
 <li>
@@ -207,7 +207,7 @@ sudo su -
 </section>
 <section id="next-step"> <title>Next Step</title>
 <ul>
-<li>Review <xref href="../../community/community.related-topics.dita" ><tm tmtype="reg">OpenStack</tm> documentation</xref> </li>
+<li>Review <xref href="../../community/community.related-topics.dita" >OpenStack documentation</xref> </li>
 <li>
 <p>See how to <xref href="../../community/community.dashboard.how-works.dita" >use the Horizon dashboard</xref>.</p>
 

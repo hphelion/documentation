@@ -38,7 +38,7 @@
                             >Create the Sandbox Environment</xref></p><p>4. <image
                             href="../../media/star.gif" scale="50" id="image_zft_5cb_ms"/>
                         <b>Create a Cluster</b></p><p>5. <xref
-                            href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add Windows
+                            href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add <tm tmtype="reg">Windows</tm>
                             DEA and SQL Server (Optional Step)</xref></p><p>6. <xref
                             href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Explore
                             Sample Applications</xref></p></stentry>
@@ -61,7 +61,7 @@
                                 <note> It may take about 15 minutes to deploy each cluster image in
                                     this and the following step. </note>
                             </p><ul>
-                                <li>For <tm tmtype="reg">Windows</tm>: Open the RC file you
+                                <li>For Windows: Open the RC file you
                                     downloaded earlier in a text editor, as you will need to enter
                                     values from that file.
                                     <codeblock>cf-mgmt.exe ^

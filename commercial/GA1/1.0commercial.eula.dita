@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic16065">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Software License Terms</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Software License Terms</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -28,9 +28,9 @@
 </ul>
 <section id="eula"> <title>Part 1: HP End User License Agreement</title>
 <p>
-<b>1. Applicability.</b> This end user license agreement (the "Agreement") governs the use of accompanying HP <tm tmtype="reg">Helion OpenStack</tm> Software ("Software"), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this Agreement.</p>
+<b>1. Applicability.</b> This end user license agreement (the "Agreement") governs the use of accompanying HP Helion OpenStack Software ("Software"), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this Agreement.</p>
 <p>
-  <b>2. Terms.</b> This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at: <xref href="1.03rd-party-license-agreements.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Open Source and Third-Party Software License Agreements</xref>.</p>
+  <b>2. Terms.</b> This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at: <xref href="1.03rd-party-license-agreements.dita" >HP Helion OpenStack Open Source and Third-Party Software License Agreements</xref>.</p>
 <p>
 <b>3. Authorization</b>. If you agree to this Agreement on behalf of another person or entity, you warrant you have authority to do so.</p>
 <p>
@@ -59,7 +59,7 @@ Your use is subject to the following restrictions, unless specifically allowed i
 <b>10. 90-day Limited Warranty for HP Software.</b>  HP-branded software is free of malware at the time of delivery; if you notify HP within 90 days of delivery of non-conformance to this warranty, HP will replace your copy. This Agreement states all remedies for warranty claims.</p>
 <p>HP does not warrant that the operation of software will be uninterrupted or error free, or that software will operate in hardware and software combinations other than as authorized by HP in Supporting Material. To the extent permitted by law, HP disclaims all other warranties.</p>
 <p>
-<b>11. Intellectual Property Rights Infringement.</b> Subject to Section 14(e) of this Part 1, HP will defend and/or settle any claims against you that allege that HP-branded software as supplied under this Agreement infringes the intellectual property rights of a third party. HP will rely on your prompt notification of the claim and cooperation with our defense. HP may modify the software so as to be non-infringing and materially equivalent, or we may procure a license. If these options are not available, we will refund to you the amount paid for the affected product in the first year or the depreciated value thereafter. HP is not responsible for claims resulting from any unauthorized use of the software.</p>
+<b>11. <tm tmtype="reg">Intel</tm>lectual Property Rights Infringement.</b> Subject to Section 14(e) of this Part 1, HP will defend and/or settle any claims against you that allege that HP-branded software as supplied under this Agreement infringes the intellectual property rights of a third party. HP will rely on your prompt notification of the claim and cooperation with our defense. HP may modify the software so as to be non-infringing and materially equivalent, or we may procure a license. If these options are not available, we will refund to you the amount paid for the affected product in the first year or the depreciated value thereafter. HP is not responsible for claims resulting from any unauthorized use of the software.</p>
 <p>
 <b>12. Limitation of Liability.</b> HP's liability to you under this Agreement is limited to the amount actually paid by you to HP for the relevant software, except for amounts in Section 11 ("Intellectual Property Rights Infringement"). Neither you nor HP will be liable for lost revenues or profits, downtime costs, loss or damage to data or indirect, special or consequential costs or damages. This provision does not limit either party's liability for: unauthorized use of intellectual property, death or bodily injury caused by their negligence; acts of fraud; willful repudiation of the Agreement; or any liability that may not be excluded or limited by applicable law.</p>
 <p>
@@ -95,7 +95,7 @@ in the governing Agreement.</p>
 <p>
 <b>Internal Use</b> - Use of the Software for purposes of supporting Customer's internal business operations or functions.</p>
 <p>
-<b>Management Software</b> - An HP <tm tmtype="reg">Helion OpenStack</tm> management software running on a Physical Server for the sole purpose of deploying or managing a Cloud Fabric.</p>
+<b>Management Software</b> - An HP Helion OpenStack management software running on a Physical Server for the sole purpose of deploying or managing a Cloud Fabric.</p>
 <p>
 <b>Physical Server</b> - A single, physical hardware server or other computer but is not a Virtual Machine.</p>
 <p>
@@ -138,13 +138,13 @@ Subject to Customer's compliance with the terms and conditions of this Agreement
 <p>
 <b>l. Updates and Supplements:</b>  We may update or supplement the Software. If so, you may use that update or supplement with the Software, subject to any additional terms that accompany the update or supplement.</p>
 <p>
-<b>m.</b> The <tm tmtype="reg">OpenStack</tm> word mark and the Square O Design, together or apart, are trademarks or registered trademarks of <tm tmtype="reg">OpenStack</tm> Foundation in the United States and other countries, and are used with the <tm tmtype="reg">OpenStack</tm> Foundation's permission.</p>
+<b>m.</b> The OpenStack word mark and the Square O Design, together or apart, are trademarks or registered trademarks of OpenStack Foundation in the United States and other countries, and are used with the OpenStack Foundation's permission.</p>
 <p>
   <xref href="#topic16065"> Return to Top </xref>
 </p>
 </section>
 <section id="ancilliary"> <title>Part 3: Ancillary and Open Source Software for Software</title>
-  <p>Additional license authorizations related to ancillary, third party and open source software components are available at: <xref href="1.03rd-party-license-agreements.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Open Source and Third-Party Software License Agreements</xref>.</p>
+  <p>Additional license authorizations related to ancillary, third party and open source software components are available at: <xref href="1.03rd-party-license-agreements.dita" >HP Helion OpenStack Open Source and Third-Party Software License Agreements</xref>.</p>
 <p>
   <xref href="#topic16065"> Return to Top </xref>
 </p>

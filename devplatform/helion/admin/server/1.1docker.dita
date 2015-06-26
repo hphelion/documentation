@@ -26,7 +26,7 @@
 <p>
 
 </p>
-<p>Application Lifecycle Service's <xref href="../../../../devplatform/helion/admin/reference/1.1architecture.dita#architecture-dea" type="section" scope="external"  >DEA role</xref> runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the <i>fence</i> process, which in turn uses
+<p>Application Lifecycle Service's <xref href="../../../../devplatform/helion/admin/reference/1.1architecture.dita#architecture-dea" type="section" scope="external"  >DEA role</xref> runs <tm tmtype="reg">Linux</tm> containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the <i>fence</i> process, which in turn uses
 <xref href="http://docs.docker.io/en/latest/" scope="external" format="html" >Docker</xref> to create and destroy Linux
 containers on demand.</p>
 <p>Typically, admins will not have to work directly with Docker, but it is

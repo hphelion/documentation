@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8887">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Deploy vCenter ESX compute proxy</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Deploy vCenter ESX compute proxy</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Deploy vCenter ESX compute proxy</searchtitle>
 </titlealts>
@@ -23,10 +23,10 @@
 <p> <xref href="../../commercial/GA1/1.1commercial.install-GA-post-esx.dita" >▲ Post-Installation for ESX Hypervisor | </xref>
 <xref href="../../commercial/GA1/1.1commercial.install-GA-ovsvapp.dita" >Deploy the Open vSwitch vApp ▶ </xref> </p>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
-<p>The HP <tm tmtype="reg">Helion OpenStack</tm> vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server managing one or more ESX hosts. The HP <tm tmtype="reg">Helion OpenStack</tm> Compute Service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
+<p>The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server managing one or more ESX hosts. The HP Helion OpenStack Compute Service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.</p>
 <p>The general process for deploying the vCenter ESX compute proxy involves the following:</p>
 <ul>
 <li>Verify prerequisites</li>
@@ -56,7 +56,7 @@
 <section id="create-a-new-vm"> <title>Create a new VM</title>
 <ol>
 <li>
-<p>Import the <codeph>overcloud_vcenter_compute_proxy_1.0.1.ova</codeph> into the vCenter using the vSphere client.</p>
+<p>Import the <codeph>overcloud_vcenter_compute_proxy_1.0.1.ova</codeph> into the vCenter using the <tm tmtype="reg">vSphere</tm> client.</p>
 </li>
 <li>
 <p>In the vSphere Client, click <b>File</b> and then click <b>Deploy OVF Template</b>.</p>
@@ -301,7 +301,7 @@ Use the following steps to configure SSL between vCenter and the ESX computer pr
 
 <p>If you have not deployed the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp), see the <xref href="../../commercial/GA1/1.1commercial.install-GA-ovsvapp.dita" >Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts</xref> document for complete instructions.</p>
 
-<p>OVSvApp must be installed for HP <tm tmtype="reg">Helion OpenStack</tm> environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).</p>
+<p>OVSvApp must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).</p>
 </li>
 </ul>
 <p>

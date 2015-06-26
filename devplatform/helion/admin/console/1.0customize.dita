@@ -165,8 +165,8 @@
     </section>
     <section id="renaming-the-client">
       <title>Renaming the Client</title>
-      <p>The <codeph>helion</codeph> client is distributed as a single file executable for Windows,
-        OS X and Linux (x86 and x86_64). Zip files containing executables for each platform can be
+      <p>The <codeph>helion</codeph> client is distributed as a single file executable for <tm tmtype="reg">Windows</tm>,
+        OS X and <tm tmtype="reg">Linux</tm> (x86 and x86_64). Zip files containing executables for each platform can be
         found in the <codeph>~/helion/static</codeph> directory.</p>
       <p>After renaming the executable, you can re-package them in .zip files and modify the
           <i>\~/helion/code/console/js/views/client/templates/client.html</i> template to point to

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6108">
-<title>What's New in HP <tm tmtype="reg">Helion OpenStack</tm> and Development Platform in 1.1</title>
+<title>What's New in HP Helion <tm tmtype="reg">OpenStack</tm> and Development Platform in 1.1</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,12 +18,12 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.whatsnew.md-->
  <!--permalink: /helion/openstack/1.1/whatsnew/--></p>
-<section id="hp-helion-openstack"> <title>HP <tm tmtype="reg">Helion OpenStack</tm></title>
-<p>The following features have been added to HP <tm tmtype="reg">Helion OpenStack</tm> 1.1:</p>
+<section id="hp-helion-openstack"> <title>HP Helion OpenStack</title>
+<p>The following features have been added to HP Helion OpenStack 1.1:</p>
 <p>
-<b><tm tmtype="reg">OpenStack</tm> Juno support</b> <!--A BR tag was used here in the original source.-->All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#OpenStack" type="section" scope="external"  >HP Helion Openstack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Juno</xref>.</p>
+<b>OpenStack Juno support</b> <!--A BR tag was used here in the original source.-->All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#OpenStack" type="section" scope="external"  >HP Helion Openstack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack Juno</xref>.</p>
 <p>
-<b>HP <tm tmtype="reg">Helion OpenStack</tm> Metering services</b> <!--A BR tag was used here in the original source.-->The <xref href="../../commercial/GA1/1.1commerical.services-reporting-overview.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Telemetry and Reporting service</xref> leverages the <tm tmtype="reg">OpenStack</tm> Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. The service employs filters to avoid high loads of inessential data on shared resources. <!--HPM24--></p>
+<b>HP Helion OpenStack Metering services</b> <!--A BR tag was used here in the original source.-->The <xref href="../../commercial/GA1/1.1commerical.services-reporting-overview.dita" >HP Helion OpenStack Telemetry and Reporting service</xref> leverages the OpenStack Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. The service employs filters to avoid high loads of inessential data on shared resources. <!--HPM24--></p>
 <p>
 <b>AppArmor profiles enabled for Compute nodes</b> <!--A BR tag was used here in the original source.-->AppArmor proactively protects the operating system and applications from external or internal threats, including zero-day attacks, by enforcing good behavior and preventing even unknown application flaws from being exploited. <!--HPM27--></p>
 <p>
@@ -34,33 +34,33 @@
 <li>Keepalived </li>
 </ul>
 <p>
-<b>Windows Validation as a Guest O/S on KVM</b> <!--A BR tag was used here in the original source.-->HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 has achieved <xref href="http://www.windowsservercatalog.com/svvp/" scope="external" format="html" >Microsoft Server Virtualization Validation Program</xref> (SVVP) approval.  As such, HP <tm tmtype="reg">Helion OpenStack</tm> is a validated and supported virtual environment for Windows Server 2012 R2, 2012, 2008 R2, and 2008.  <!--HPM-29--> For information on the SVVP program, see Windows Server Catalog <xref href="http://www.windowsservercatalog.com/svvp/" scope="external" format="html" >Server Virtualization Validation Program</xref>.</p>
-<p>For information on creating and deploying a Microsoft Windows Server that is Microsoft SVVP compliant on HP <tm tmtype="reg">Helion OpenStack</tm> as a Nova compute VM, see <xref href="../../commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita" >How to Build a Microsoft Windows Server Guest Image for HP <tm tmtype="reg">Helion OpenStack</tm></xref>.  <!--DOCS-917--> Microsoft can provide technical support to customers with licensed Windows Server Operating Systems that are deployed as Nova compute VMs.</p>
+<b><tm tmtype="reg">Windows</tm> Validation as a Guest O/S on KVM</b> <!--A BR tag was used here in the original source.-->HP Helion OpenStack 1.1 has achieved <xref href="http://www.windowsservercatalog.com/svvp/" scope="external" format="html" >Microsoft Server Virtualization Validation Program</xref> (SVVP) approval.  As such, HP Helion OpenStack is a validated and supported virtual environment for Windows Server 2012 R2, 2012, 2008 R2, and 2008.  <!--HPM-29--> For information on the SVVP program, see Windows Server Catalog <xref href="http://www.windowsservercatalog.com/svvp/" scope="external" format="html" >Server Virtualization Validation Program</xref>.</p>
+<p>For information on creating and deploying a Microsoft Windows Server that is Microsoft SVVP compliant on HP Helion OpenStack as a Nova compute VM, see <xref href="../../commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita" >How to Build a Microsoft Windows Server Guest Image for HP Helion OpenStack</xref>.  <!--DOCS-917--> Microsoft can provide technical support to customers with licensed Windows Server Operating Systems that are deployed as Nova compute VMs.</p>
 <p>
 <b>Swift diagnostic checks</b> <!--A BR tag was used here in the original source.-->New diagnostics checks have been implemented for <xref href="../../commercial/GA1/1.1commerical.services-object-overview.dita" >Swift clusters</xref>. Diagnostic messages are sent to the <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-monitor-replica-swift-status.dita" >Icinga</xref> service. <!--HPM15--></p>
 <p>
 <b>Improved recovery time</b>
 <!--A BR tag was used here in the original source.--> When a virtual IP is moved from one to another overcloud controller in the system, the new controller will become available in approximately one minute. <!--HPM121--></p>
 <p>
-<b>Ceph Firefly Storage Solution Integration</b> <!--A BR tag was used here in the original source.--> Ceph provides a unified, scalable and stable storage solution for the management of <tm tmtype="reg">Helion OpenStack</tm> Image service (Glance), Compute (Nova Boot Volumes) service, and Volume Storage (Cinder persistent Volumes) service. It also supports user backup and archive workloads to the Object (Swift) API service writing to the same unified Ceph storage platform. <!--hpm30--></p>
+<b>Ceph Firefly Storage Solution Integration</b> <!--A BR tag was used here in the original source.--> Ceph provides a unified, scalable and stable storage solution for the management of Helion OpenStack Image service (Glance), Compute (Nova Boot Volumes) service, and Volume Storage (Cinder persistent Volumes) service. It also supports user backup and archive workloads to the Object (Swift) API service writing to the same unified Ceph storage platform. <!--hpm30--></p>
 <p>
 <b>Multipath Support for 3PAR</b>
-<!--A BR tag was used here in the original source.--> HP <tm tmtype="reg">Helion OpenStack</tm> now supports multipathing for network redundancy. Multipathing helps maintain a constant connection between an ESXi host and its storage. See <xref href="../../commercial/GA1/1.1commercial.install-3par-multipath.dita" >Configuring Multipath for 3PAR</xref>.<!--HPM121--></p>
+<!--A BR tag was used here in the original source.--> HP Helion OpenStack now supports multipathing for network redundancy. Multipathing helps maintain a constant connection between an ESXi host and its storage. See <xref href="../../commercial/GA1/1.1commercial.install-3par-multipath.dita" >Configuring Multipath for 3PAR</xref>.<!--HPM121--></p>
 <p>
-<b>Transport Layer Security (TLS) support</b> <!--A BR tag was used here in the original source.-->HP <tm tmtype="reg">Helion OpenStack</tm> now supports TLS protocols to protect internal traffic for Overcloud <tm tmtype="reg">OpenStack</tm> API and endpoints. <!--HPM16--></p>
+<b>Transport Layer Security (TLS) support</b> <!--A BR tag was used here in the original source.-->HP Helion OpenStack now supports TLS protocols to protect internal traffic for Overcloud OpenStack API and endpoints. <!--HPM16--></p>
 <p>
-<b>HP <tm tmtype="reg">Helion OpenStack</tm> Identity service</b> <!--A BR tag was used here in the original source.-->The Identity service, based on <tm tmtype="reg">OpenStack</tm> Keystone V3 provides one-stop authentication, including Identity, Token, Catalog and Policy services. See <xref href="../../commercial/GA1/1.1commerical.services-identity-overview.dita" >Identity Service Overview</xref>. While Keystone elements have been upgraded to v3, Keystone V2 is still supported.<!--hpm31--></p>
+<b>HP Helion OpenStack Identity service</b> <!--A BR tag was used here in the original source.-->The Identity service, based on OpenStack Keystone V3 provides one-stop authentication, including Identity, Token, Catalog and Policy services. See <xref href="../../commercial/GA1/1.1commerical.services-identity-overview.dita" >Identity Service Overview</xref>. While Keystone elements have been upgraded to v3, Keystone V2 is still supported.<!--hpm31--></p>
 <p>
-<b>Fibre Channel Zone Manager support</b> <!--A BR tag was used here in the original source.-->The <tm tmtype="reg">OpenStack</tm> Fibre Channel Zone Manager creates the necessary Fibre Channel zones during an attach of a Block Storage (Cinder) volume. Brocade Fibre Channel Zone Driver performs zoning operations via SSH. See <xref href="../../commercial/GA1/1.1commercial.services-volume-fibre.dita" >Configuring Fibre Channel Zone Manager</xref>.<!--HMP32--></p>
+<b>Fibre Channel Zone Manager support</b> <!--A BR tag was used here in the original source.-->The OpenStack Fibre Channel Zone Manager creates the necessary Fibre Channel zones during an attach of a Block Storage (Cinder) volume. Brocade Fibre Channel Zone Driver performs zoning operations via SSH. See <xref href="../../commercial/GA1/1.1commercial.services-volume-fibre.dita" >Configuring Fibre Channel Zone Manager</xref>.<!--HMP32--></p>
 <p>
 <b>Enable Unified Extensible Firmware Interface (UEFI) support for Gen8 and Gen9 HP Servers</b> - UEFI is industry standard set of interfaces between the system firmware, the operating system, and between various components of the system firmware delivers enhanced security benefits for the HP ProLiant Gen8 and Gen9 Server family. UEFI is meant to replace the Basic Input/Output System (BIOS) firmware interface. For more information, see <xref href="http://www8.hp.com/us/en/products/server-software/product-detail.html?oid=6935826" scope="external" format="html" >HP Unified Extensible Firmware Interface</xref>.<!--HPM12--></p>
 <p>
-<b>New Horizon Dashboard functionality</b> - The <xref href="../../commercial/GA1/1.1commercial.install-GA-DNSaaS.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> DNSaaS service</xref> functionality is now accessible through the <xref href="../../commercial/GA1/1.1commerical.services-horizon-overview.dita" >Horizon dashboard</xref>.</p>
+<b>New Horizon Dashboard functionality</b> - The <xref href="../../commercial/GA1/1.1commercial.install-GA-DNSaaS.dita" >HP Helion OpenStack DNSaaS service</xref> functionality is now accessible through the <xref href="../../commercial/GA1/1.1commerical.services-horizon-overview.dita" >Horizon dashboard</xref>.</p>
 <p>
 <b>Flexible control plane implemented</b> <!--A BR tag was used here in the original source.-->
-Allows an HP <tm tmtype="reg">Helion OpenStack</tm> installation on a mix of VMs and physical nodes, support for multiple KVM hosts, and a mechanism for specifying which host a VMs is created on. All HA scenarios are still supported. Note that the flexible control plane has been implemented in this release for evaluation and feedback purposes only and is not supported as part of a production environment. <!--hpm441--></p>
+Allows an HP Helion OpenStack installation on a mix of VMs and physical nodes, support for multiple KVM hosts, and a mechanism for specifying which host a VMs is created on. All HA scenarios are still supported. Note that the flexible control plane has been implemented in this release for evaluation and feedback purposes only and is not supported as part of a production environment. <!--hpm441--></p>
 <p>
-<b>Compute Service Configuration Drive</b> - The HP <tm tmtype="reg">Helion OpenStack</tm> compute service can be configured to <xref href="../../commercial/GA1/1.1commerical.services-compute-configDrive.dita" >write metadata to a special configuration drive</xref> that contains information normally available through the metadata service.</p>
+<b>Compute Service Configuration Drive</b> - The HP Helion OpenStack compute service can be configured to <xref href="../../commercial/GA1/1.1commerical.services-compute-configDrive.dita" >write metadata to a special configuration drive</xref> that contains information normally available through the metadata service.</p>
 </section>
 <section id="hp-helion-development-platform"> <title>HP Helion Development Platform</title>
 <p>
@@ -84,7 +84,7 @@ More <xref href="../../devplatform/helion/user/reference/1.1client-ref.dita" >co
 <xref href="../../devplatform/helion/user/reference/1.1client-ref-spacequotas.dita" >Space Quotas</xref> </li>
 </ul>
 <p>
-<b>Ruby CLI No Longer Supported</b> <!--A BR tag was used here in the original source.-->The Ruby CLI (unix_cli) is no longer supported. Users are advised to consider the <tm tmtype="reg">OpenStack</tm> Python CLI as an alternative.</p>
+<b>Ruby CLI No Longer Supported</b> <!--A BR tag was used here in the original source.-->The Ruby CLI (unix_cli) is no longer supported. Users are advised to consider the OpenStack Python CLI as an alternative.</p>
 </section>
 </body>
 </topic>

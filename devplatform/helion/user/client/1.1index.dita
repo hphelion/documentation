@@ -51,7 +51,7 @@ available at the command line via the <i>helion help</i> command.</p>
 </ul>
 <section id="helion-client-setup"> <title>Application Lifecycle Service Client Installation</title>
 <p>
-<b>Note</b>: Using the Windows Helion client with
+<b>Note</b>: Using the <tm tmtype="reg">Windows</tm> Helion client with
 <xref href="http://www.cygwin.com/" scope="external" format="html" >Cygwin</xref> is not supported.</p>
 </section>
 <section id="download"> <title>Download</title>
@@ -73,13 +73,13 @@ available at the command line via the <i>helion help</i> command.</p>
 <li>
 <b>Windows</b>: path = %path%; (where path is the path to the Helion client)</li>
 <li>
-<b>Linux</b>, <b>OS X</b>: moving it to a directory in your <codeph>\$PATH</codeph>,</li>
+<b><tm tmtype="reg">Linux</tm></b>, <b>OS X</b>: moving it to a directory in your <codeph>\$PATH</codeph>,</li>
 <li>creating a symlink from a directory in your <codeph>\$PATH</codeph>, or</li>
 <li>creating a shell alias for the executable.</li>
 </ul>
 </li>
 <li>
-<p>For Linux or Mac OS X: Make sure the file is set as executable</p>
+<p>For Linux or <tm tmtype="reg">Mac OS X</tm>: Make sure the file is set as executable</p>
 
 <codeblock>
 <codeph>chmod +x helion 

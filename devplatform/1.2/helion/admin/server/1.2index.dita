@@ -64,7 +64,7 @@ helion ssh api
 </ul>
 <p>
 <b>Note</b>
-<!-- For ssh access on Windows, we recommend [MSYS](http://sourceforge.net/apps/trac/mingw-w64/wiki/MSYS).--></p>
+<!-- For ssh access on <tm tmtype="reg">Windows</tm>, we recommend [MSYS](http://sourceforge.net/apps/trac/mingw-w64/wiki/MSYS).--></p>
 <p>On the server, the control command for Application Lifecycle Service is called
 <codeph>kato</codeph>. It is used for configuration and node
 management procedures such as start, stop, role specialization, and

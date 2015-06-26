@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6434">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> Community Network Architecture and Configuration - Baremetal Installations Only</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Community Network Architecture and Configuration - Baremetal Installations Only</title>
 <titlealts>
 <searchtitle>HP Helion Openstack Community Network Architecture and Configuration -- Baremetal Installations Only</searchtitle>
 </titlealts>
@@ -16,7 +16,7 @@
  <!--./community/community.network-requirements.md-->
  <!--permalink: /helion/community/network-requirements/--></p>
 <p>This page provides an overview of important information on the network configuration required for a baremetal HP Helion OpenCloud Community edition installation.</p>
-<p>For virtual installations, the installation simulates the deployment of <tm tmtype="reg">OpenStack</tm> by creating and configuring a set of virtual machines (VMs) on a single system. As such, no manual network configuration is required.</p>
+<p>For virtual installations, the installation simulates the deployment of OpenStack by creating and configuring a set of virtual machines (VMs) on a single system. As such, no manual network configuration is required.</p>
 <ul>
 <li>
 <xref type="section" href="#topic6434/physical-network-architecture">Physical network architecture</xref>
@@ -87,7 +87,7 @@ For detailed information, see the [Reference architecture](/helion/community/ref
 <row>
 <entry> Undercloud management </entry>
 <entry> <ul>
-<li>Traffic for undercloud internal <tm tmtype="reg">OpenStack</tm> calls, Glance image downloads, etc.</li>
+<li>Traffic for undercloud internal OpenStack calls, Glance image downloads, etc.</li>
 <li>Provides access to undercloud API endpoints</li>
 <li>Used to PXE boot overcloud servers</li>
 </ul>
@@ -98,7 +98,7 @@ For detailed information, see the [Reference architecture](/helion/community/ref
 </row>
 <row>
 <entry> Overcloud management </entry>
-<entry> Traffic for overcloud internal <tm tmtype="reg">OpenStack</tm> calls, glance image downloads, etc. </entry>
+<entry> Traffic for overcloud internal OpenStack calls, glance image downloads, etc. </entry>
 <entry> Tagged </entry>
 <entry> eth0</entry>
 

@@ -25,12 +25,12 @@
 <p>Click the download link that is appropriate for your operating system.</p>
 <ul>
 <li>
-<xref href="http://clients.als.hpcloud.com/helion-1.2.0-win32-ix86.zip" scope="external" format="html" >Windows</xref> </li>
+<xref href="http://clients.als.hpcloud.com/helion-1.2.0-win32-ix86.zip" scope="external" format="html" ><tm tmtype="reg">Windows</tm></xref> </li>
 <li>
-<xref href="http://clients.als.hpcloud.com/helion-1.2.0-linux-glibc2.3-x86_64.zip" scope="external" format="html" >Linux x64</xref>
+<xref href="http://clients.als.hpcloud.com/helion-1.2.0-linux-glibc2.3-x86_64.zip" scope="external" format="html" ><tm tmtype="reg">Linux</tm> x64</xref>
 </li>
 <li>
-<xref href="http://clients.als.hpcloud.com/helion-1.2.0-macosx10.5-i386-x86_64.zip" scope="external" format="html" >Mac OS X</xref> </li>
+<xref href="http://clients.als.hpcloud.com/helion-1.2.0-macosx10.5-i386-x86_64.zip" scope="external" format="html" ><tm tmtype="reg">Mac OS X</tm></xref> </li>
 </ul>
 <p>For more information, see the full Application Lifecycle Service (ALS) Client <xref href="../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >command reference</xref>.</p>
 </section>

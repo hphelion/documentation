@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4054">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Ceph Firefly 0.80.7 Storage Solution: Prerequisites</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Ceph Firefly 0.80.7 Storage Solution: Prerequisites</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Ceph Firefly 0.80.7 Storage Solution: Prerequisites</searchtitle>
 </titlealts>
@@ -33,7 +33,7 @@
 <xref type="section" href="#topic4054/hardware-requirement">Hardware Requirement for Ceph Cluster</xref>
 </li>
 <li>
-<xref type="section" href="#topic4054/kvm">HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Installation and Configuration for KVM Hypervisor</xref>
+<xref type="section" href="#topic4054/kvm">HP Helion OpenStack 1.1: Installation and Configuration for KVM Hypervisor</xref>
 </li>
 </ul>
 <section id="hardware-requirement"> <title>Hardware Requirement for Ceph Cluster</title>
@@ -202,7 +202,7 @@
 <colspec colname="col3"/>
 <thead>
 <row>
-<entry> HP <tm tmtype="reg">Helion OpenStack</tm></entry>
+<entry> HP Helion OpenStack</entry>
     <entry>CEPH Monitor/GateWays </entry>
     <entry>OSDs (6x15 SL4540)</entry>
 </row>
@@ -214,7 +214,7 @@
 <entry>6 x HP 3xSL4540 Gen8 with 16 cores each</entry>
 </row>
 <row>
-<entry>2 x E5-2667 (Intel Xeon 2.9GHz 15M Cache)</entry>
+<entry>2 x E5-2667 (<tm tmtype="reg">Intel</tm> <tm tmtype="reg">Xeon</tm> 2.9GHz 15M Cache)</entry>
 <entry>2 x E5-2667 (Intel Xeon 2.9GHz 15M Cache)</entry>
 <entry>2 x E5-2470 (Intel Xeon 2.3GHz 20M Cache) </entry>
 </row>
@@ -256,22 +256,22 @@
 <p>For more examples on Ceph Production Clusters, refer to: <xref href="http://www8.hp.com/h20195/v2/GetPDF.aspx/4AA5-2799ENW.pdf" scope="external" format="pdf">http://www8.hp.com/h20195/v2/GetPDF.aspx/4AA5-2799ENW.pdf</xref>
 </p>
 </section>
-<section id="kvm"> <title>Installation and Configuration HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1 for KVM Hypervisor</title>
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 or 1.1.1 should be successfully installed in the KVM hypervisor before installing Ceph.</p>
-  <p>For more information on the HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 or 1.1.1 for KVM hypervisor, refer to <xref href="../1.1commercial.install-GA-kvm.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.x Installation Manual</xref>.</p>
+<section id="kvm"> <title>Installation and Configuration HP Helion OpenStack 1.1 and 1.1.1 for KVM Hypervisor</title>
+<p>HP Helion OpenStack 1.1 or 1.1.1 should be successfully installed in the KVM hypervisor before installing Ceph.</p>
+  <p>For more information on the HP Helion OpenStack 1.1 or 1.1.1 for KVM hypervisor, refer to <xref href="../1.1commercial.install-GA-kvm.dita" >HP Helion OpenStack 1.x Installation Manual</xref>.</p>
 <!-- this is not there in the present cookbook
 ###Download and Access to the Solution Files and Documents {#Download-and-access}
 
-[HDN](https://helion.hpwsportal.com) is a remote web catalog containing a repository of software that HP <tm tmtype="reg">OpenStack</tm> Enterprise Customers can purchase.
+[HDN](https://helion.hpwsportal.com) is a remote web catalog containing a repository of software that HP OpenStack Enterprise Customers can purchase.
 
-To purchase software, register yourself (if this is your first time) to the HDN portal and then log in to download the required <tm tmtype="reg">Helion OpenStack</tm> Ceph Storage Solution packages.
+To purchase software, register yourself (if this is your first time) to the HDN portal and then log in to download the required Helion OpenStack Ceph Storage Solution packages.
 
 If you have any access issues with HDN, contact the HP sales team. -->
-<!--Once you have the necessary permissions, log in with your credentials. Select the Category **Workloads**, and the Sub-Category **Storage** to find the HP <tm tmtype="reg">Helion OpenStack</tm> Ceph Storage solution.
+<!--Once you have the necessary permissions, log in with your credentials. Select the Category **Workloads**, and the Sub-Category **Storage** to find the HP Helion OpenStack Ceph Storage solution.
 
 Each Ceph-related file is identified with the following description:
 
-* <tm tmtype="reg">Helion OpenStack</tm> Commercial integration with InkTank Ceph for Glance, Nova, and Cinder storage.
+* Helion OpenStack Commercial integration with InkTank Ceph for Glance, Nova, and Cinder storage.
 -->
 </section>
 <section id="HDN"> <title>

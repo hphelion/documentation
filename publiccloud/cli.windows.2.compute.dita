@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13345">
-<title>HP Helion Public Cloud CLI Software for Windows PowerShell Compute Examples</title>
+<title>HP Helion Public Cloud CLI Software for <tm tmtype="reg">Windows</tm> PowerShell Compute Examples</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -276,7 +276,7 @@ PS HPCS:\Servers\2111&gt; Connect-Server
 </codeblock>
 </section>
 <section id="QuickConnectNonWin"> <title>Quick-Connect to a Non-Windows Instance</title>
-<p>To connect to a non-Windows instance, such as Linux, follow these steps:</p>
+<p>To connect to a non-Windows instance, such as <tm tmtype="reg">Linux</tm>, follow these steps:</p>
 <ol>
 <li>Download the latest version of <xref href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" scope="external" format="html" >putty.exe</xref> and <xref href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" scope="external" format="html" >puttygen.exe</xref> for Windows.</li>
 <li>Make note of the location of your <i>putty.exe</i> and <i>puttygen.exe</i> files downloaded in step 1.</li>

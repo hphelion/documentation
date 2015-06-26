@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic6223">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: TLS Support</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: TLS Support</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -27,11 +27,11 @@
  <!--permalink: /helion/openstack/1.1/tls/--></p>
 <!-- IMPORTANT!!! The HW support Matrix should be approved by:
 * Gavin Brebner for Helion QA support
-* Lynne Christofanelli  for HW Support qualified with hLinux
+* Lynne Christofanelli  for HW Support qualified with h<tm tmtype="reg">Linux</tm>
 * Marty Duey for third party HW support (IHV Support)
 -->
-<p>The Transport Layer Security (TLS) protocol, successor of SSL, provides the mechanisms to ensure authentication, non-repudiation, confidentiality, and integrity of user communications to the HP <tm tmtype="reg">Helion OpenStack</tm> services and between the HP <tm tmtype="reg">Helion OpenStack</tm> services themselves.</p>
-<p><tm tmtype="reg">OpenStack</tm> endpoints are HTTP services providing APIs to other <tm tmtype="reg">OpenStack</tm> services on the management network. All traffic to <tm tmtype="reg">OpenStack</tm> services, both internal and external, are secured using  TLS connections.</p>
+<p>The Transport Layer Security (TLS) protocol, successor of SSL, provides the mechanisms to ensure authentication, non-repudiation, confidentiality, and integrity of user communications to the HP Helion OpenStack services and between the HP Helion OpenStack services themselves.</p>
+<p>OpenStack endpoints are HTTP services providing APIs to other OpenStack services on the management network. All traffic to OpenStack services, both internal and external, are secured using  TLS connections.</p>
 <p>The following secure service endpoints and their associated ports use TLS:</p>
 <codeblock>
 <codeph>ceilometer          8777
@@ -52,7 +52,7 @@ sherpa              21131
 swift-proxy         8080
 </codeph>
 </codeblock>
-<p>The TLS connections are facilitated by providing each node with a signed certificate from an internal certificate authority server (Ephemeral CA server) that is built into HP <tm tmtype="reg">Helion OpenStack</tm> and installed on the Overcloud Controller nodes. These certificates are regenerated frequently - typically at least every 12 hours. The Helion Ephemeral certificate authority (CA) server uses a private key to sign these certificates provided to the <tm tmtype="reg">OpenStack</tm> services, and an associated public certificate can be used to validate these newly signed certs. This key/cert pair can either be generated at installation time or be provided by the installer as an input to the installation process.  If you would like to use certificates from your own CA, please see <xref href="../../commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita">Configuring support for customer-provided certificates</xref>.</p>
+<p>The TLS connections are facilitated by providing each node with a signed certificate from an internal certificate authority server (Ephemeral CA server) that is built into HP Helion OpenStack and installed on the Overcloud Controller nodes. These certificates are regenerated frequently - typically at least every 12 hours. The Helion Ephemeral certificate authority (CA) server uses a private key to sign these certificates provided to the OpenStack services, and an associated public certificate can be used to validate these newly signed certs. This key/cert pair can either be generated at installation time or be provided by the installer as an input to the installation process.  If you would like to use certificates from your own CA, please see <xref href="../../commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita">Configuring support for customer-provided certificates</xref>.</p>
 <p>If the deployer does not wish to generate the key/cert pair, the installer software will generate this pair and place the generated key and certificate at /root/eca.key and /root/eca.crt, respectively, on the seed.</p>
 <p>If the deployer wishes to provide an intermediary CA cert/key pair, they should be placed on the seed before deployment at /root/eca.key and /root/eca.crt by running the following copy commands:</p>
 <codeblock>
@@ -74,13 +74,13 @@ export EPHEMERAL_CA_KEY_FILE=/root/&lt;company-cacert.key&gt;
 export EPHEMERAL_CA_CERT_FILE=/root/&lt;company-cacert.crt&gt;
 </codeph>
 </codeblock>
-<p>If the deployer has not provided a key/cert pair, the self-signed certificate created during the installation process must be retrieved from the seed at /root/eca.crt after deployment. This certificate can then be used to authenticate the TLS connection when connecting to any of the overcloud <tm tmtype="reg">OpenStack</tm> services in the <tm tmtype="reg">Helion OpenStack</tm> cloud. This can be retrieved using the following command:</p>
+<p>If the deployer has not provided a key/cert pair, the self-signed certificate created during the installation process must be retrieved from the seed at /root/eca.crt after deployment. This certificate can then be used to authenticate the TLS connection when connecting to any of the overcloud OpenStack services in the Helion OpenStack cloud. This can be retrieved using the following command:</p>
 <codeblock>
 <codeph>scp root@&lt;seed ip&gt;:/root/eca.crt ephemeralca.crt
 </codeph>
 </codeblock>
-<p>If a self-signed certificate was created during the <tm tmtype="reg">Helion OpenStack</tm> installation, you must install the generated certificate in your browser as a trusted CA to prevent messages about insecure connections when connecting to the Horizon IP address. This can be done by importing the eca.crt file from the seed VM as a trusted CA into your browser software.</p>
-<p>Each client must use this certificate to authenticate the connection. How you achieve this will depend on the client you are using. Below are some ways you can achieve this with the <tm tmtype="reg">OpenStack</tm> command line tools using the 'nova list' command as an example. The easiest way to make sure the clients use this certificate is to set the environmental variable OS_CACERT to point to the EPHEMERAL_CA_CERT_FILE that was copied off the seed.</p>
+<p>If a self-signed certificate was created during the Helion OpenStack installation, you must install the generated certificate in your browser as a trusted CA to prevent messages about insecure connections when connecting to the Horizon IP address. This can be done by importing the eca.crt file from the seed VM as a trusted CA into your browser software.</p>
+<p>Each client must use this certificate to authenticate the connection. How you achieve this will depend on the client you are using. Below are some ways you can achieve this with the OpenStack command line tools using the 'nova list' command as an example. The easiest way to make sure the clients use this certificate is to set the environmental variable OS_CACERT to point to the EPHEMERAL_CA_CERT_FILE that was copied off the seed.</p>
 <codeblock>
 <codeph>export OS_CACERT=&lt;/path/to/ephemeralca.crt&gt;
 </codeph>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3017">
-  <title>Quick Start Developer Trial Step 5: Windows (optional)</title>
+  <title>Quick Start Developer Trial Step 5: <tm tmtype="reg">Windows</tm> (optional)</title>
 <titlealts>
 <searchtitle>Quick Start Developer Trial Step 5: Windows (optional)</searchtitle>
 </titlealts>
@@ -49,7 +49,7 @@
               fails, refer to the <xref
                 href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita#topic2598"
                 >Troubleshooting tips</xref>. <ol>
-                <li>For <tm tmtype="reg">Windows</tm>: <ul>
+                <li>For Windows: <ul>
                     <li>Add the Windows DEA Role
                       <codeblock>cf-mgmt.exe ^
  --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^

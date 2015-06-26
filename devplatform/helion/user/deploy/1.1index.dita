@@ -274,7 +274,7 @@ with services created in other orgs and spaces.</li>
 </ul>
 </section>
 <section id="application-containers"> <title>Application Containers</title>
-<p>ALS stages and runs applications within Linux containers on one or more "DEA" (Droplet Execution Agent) hosts. These containers (managed by Docker) are all copies of a single base image which are modified during staging to add application dependencies.</p>
+<p>ALS stages and runs applications within <tm tmtype="reg">Linux</tm> containers on one or more "DEA" (Droplet Execution Agent) hosts. These containers (managed by Docker) are all copies of a single base image which are modified during staging to add application dependencies.</p>
 <p>To inspect this base image to determine what software is pre-installed, or otherwise experiment with the application container, <xref href="https://github.com/Stackato-Apps/null" scope="external" format="html" >deploy the Null application</xref>.</p>
 <p>Once the app has been deployed, use the client to open an SSH session to the container:</p>
 <codeblock>

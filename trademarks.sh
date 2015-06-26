@@ -7,7 +7,7 @@ sed -i 's|OpenStack(R)|OpenStack|g' $i
 sed -i '0,/OpenStack/{s/OpenStack/\<tm tmtype=\"reg\"\>OpenStack\<\/tm\>/}' $i
 sed -i '0,/Eucalyptus/{s/Eucalyptus/\<tm tmtype=\"reg\"\>Eucalyptus\<\/tm\>/}' $i 
 sed -i '0,/Intel/{s/Intel/\<tm tmtype=\"reg\"\>Intel\<\/tm\>/}' $i 
-sed -i '0,/Linux/{s/Linux/\<tm tmtype=\"reg\"\>Linux\<\/tm\>/}'$i 
+sed -i '0,/Linux/{s/Linux/\<tm tmtype=\"reg\"\>Linux\<\/tm\>/}' $i 
 sed -i '0,/Mac OS X/{s/Mac OS X/\<tm tmtype=\"reg\"\>Mac OS X\<\/tm\>/}' $i 
 sed -i '0,/Windows/{s/Windows/\<tm tmtype=\"reg\"\>Windows\<\/tm\>/}' $i 
 sed -i '0,/Xeon/{s/Xeon/\<tm tmtype=\"reg\"\>Xeon\<\/tm\>/}' $i 

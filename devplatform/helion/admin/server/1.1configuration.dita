@@ -431,7 +431,7 @@ authorization email, and verify the zone transfer before proceeding.</p>
 </section>
 <section id="alternate-dns-techniques-alternate-dns-techniques"> <title>Alternate DNS Techniques {#alternate-dns-techniques)</title>
 <p>For situations where mDNS will not work (e.g. running in a cloud hosting
-environment or connecting from a Windows system without mDNS support)
+environment or connecting from a <tm tmtype="reg">Windows</tm> system without mDNS support)
 but which do not merit the effort of manually configuring a DNS record
 (e.g. a test server) alternative methods are available.</p>
 </section>

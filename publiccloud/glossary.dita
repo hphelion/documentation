@@ -376,7 +376,7 @@ A model layer can also include particular kinds of objects, and expose those obj
 
 <dlentry>
 <dt>PowerShell</dt>
-<dd>A Microsoft Windows command-line shell task automation framework which includes an interactive prompt and a scripting environment that can be used independently or in combination.  PowerShell is built on top of the .NET Framework common language runtime (CLR) and the .NET Framework, and accepts and returns .NET Framework objects.</dd>
+<dd>A Microsoft <tm tmtype="reg">Windows</tm> command-line shell task automation framework which includes an interactive prompt and a scripting environment that can be used independently or in combination.  PowerShell is built on top of the .NET Framework common language runtime (CLR) and the .NET Framework, and accepts and returns .NET Framework objects.</dd>
 </dlentry>
 
 <dlentry>
@@ -481,7 +481,7 @@ A model layer can also include particular kinds of objects, and expose those obj
 
 <dlentry>
 <dt>strongSwan</dt>
-<dd>strongSwan is an open source IPsec implementation for Linux 2.6 and 3.x kernels. The focus of the project is on strong authentication mechanisms using X.509 public key certificates and optional secure storage of private keys on smartcards through a standardized PKCS#11 interface.</dd>
+<dd>strongSwan is an open source IPsec implementation for <tm tmtype="reg">Linux</tm> 2.6 and 3.x kernels. The focus of the project is on strong authentication mechanisms using X.509 public key certificates and optional secure storage of private keys on smartcards through a standardized PKCS#11 interface.</dd>
 </dlentry>
 
 </dl>
