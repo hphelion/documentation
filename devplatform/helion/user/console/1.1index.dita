@@ -192,15 +192,17 @@
 </ul>
 </li>
 <li>
-<b>Services</b>: A list of services bound to applications in the Space. Clicking a service name in either section opens an <xref type="section" href="#topic8908/user-console-service">administrative view of that service</xref>.
-
-<ul>
-<li>
-<b>Managed</b>: A list of managed services bound to applications in the Space.</li>
-<li>
-<b>User Provided</b>: A list of user provided services bound to applications in the Space. New user provided services can be created by clicking the <b>Create User Provided Service</b> button.</li>
-</ul>
-</li>
+          <b>Services</b>: A list of services bound to applications in the Space. Clicking a service
+          name in either section opens an  <xref type="section"
+            href="#topic8908/user-console-service">administrative view of that service</xref>. <ul>
+            <li>
+              <b>Managed</b>: A list of managed services bound to applications in the Space.</li>
+            <li>
+              <b>User Provided</b>: A list of user provided services bound to applications in the
+              Space. New user provided services can be created by clicking the <b>Create User
+                Provided Service</b> button.</li>
+          </ul>
+        </li>
 <li>
 <b>Managers</b>: Managers can invite/manage users, enable features for a given space.</li>
 <li>

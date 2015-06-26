@@ -208,12 +208,15 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <p>Available patches for the system, new releases, and the latest news are also displayed on this page.</p>
 <p>Green buttons expose Admin-only functionality:</p>
 <ul>
-<li>Configure Available Services: Opens the <xref type="section" href="#topic13884/console-cluster-nodes">Cluster Nodes</xref> view showing which roles are running on which nodes. From this view you can add or remove Service roles on the various nodes in the cluster (or on 127.0.0.1 for micro clouds).</li>
-<li>Manage Organizations: Opens the <xref type="section" href="#topic13884/console-organizations">Organizations</xref> view.</li>
-<li>Manage Users: Opens the <xref type="section" href="#topic13884/console-users">Users</xref> view.</li>
+<li>Configure Available Services: Opens the <xref href="#topic13884/cluster-nodes" format="dita"/>
+          view showing which roles are running on which nodes. From this view you can add or remove
+          Service roles on the various nodes in the cluster (or on 127.0.0.1 for micro clouds).</li>
+<li>Manage Organizations: Opens the <xref href="#topic13884/organizations" format="dita"/>
+          view.</li>
+<li>Manage Users: Opens the <xref href="#topic13884/users" format="dita"/> view.</li>
 <li>View All Deployed Applications: Opens the <xref type="section" href="#topic13884/applications">Console Applications</xref> view.</li>
 <li>View Cloud Events: Opens the <xref type="section" href="#topic13884/cloud-events">Cloud Events</xref> view.</li>
-<li>View Dashboard: Opens the <xref type="section" href="#topic13884/dashboard">Dashboard</xref>.</li>
+<li>View Dashboard: Opens the <xref href="#topic13884/dashboards" format="dita"/>.</li>
 </ul>
 </section>
 <section id="applications"> <title>Applications</title>
@@ -253,7 +256,11 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <p>Displays a list of available patches for the current cluster.</p>
 </section>
 <section id="app-org"> <title>Applications &amp; Organizations</title>
-<p>Links to the <xref href="../../../../devplatform/helion/user/console/1.1index.dita#application-view" >Applications</xref> and <xref href="../../../../devplatform/helion/user/deploy/1.1orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >Organizations</xref> lists.</p>
+<p>Links to the <xref
+          href="../../../../devplatform/helion/user/console/1.1index.dita#application-view"
+          >Applications</xref> and <xref
+          href="../../../../devplatform/helion/user/deploy/1.1orgs-spaces.dita#orgs-spaces"
+          type="section" scope="external">Organizations</xref> lists.</p>
 </section>
 <section id="domains"> <title>Domains</title>
 <p>A filterable list of all domains configured on the system, showing whether they are <xref href="../../../../devplatform/helion/user/deploy/1.1orgs-spaces.dita#orgs-spaces-domains" type="section" scope="external"  >Shared or Owned domains</xref>.</p>
@@ -301,8 +308,7 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <p>Memory usage statistics and a usage bar graph for all configured <xref type="section" href="#topic13884/dea-zones-placement">Placement Zones</xref>.</p>
 </section>
 <section id="avail-zone-usage"> <title>Availability Zone Usage</title>
-<p>Memory usage statistics and a usage bar graph for all configured <xref type="section" href="#topic13884/dea-zones-availability">Availability Zones</xref>
-</p>
+<p>Memory usage statistics and a usage bar graph for all configured Availability Zones .</p>
 </section>
 <section id="router-stats"> <title>Router Stats</title>
 <p>Shows realtime results for incoming requests (connections per second), routing errors (errors per second), and an overview of the cumulative requests to the system.</p>
