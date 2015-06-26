@@ -112,7 +112,7 @@
 <section id="2-compute-service"> <title>2. Compute Service</title>
 <p>The Compute service provides a scalable, on-demand compute infrastructure on which users can run applications.</p>
 </section>
-<section id="Server"> <title>2.1 Servers</title>
+<section id="Servers"> <title>2.1 Servers</title>
 <p>A Server (also referred to as an <i>Instance</i>) is the fundamental resource provided by Compute. A Server is a virtual machine (VM) capable of running a variety of operating system <i>image</i>s. The Compute API provided operations that allow users to control the life cycle of a server. The current status of a server is reported by the API as its <i>state</i>.  Characteristics of the server, such memory, amount of disk space, and number of CPUs, are determined by the server's <i>flavor</i> which is specified at the time the server is created. A server is referred to by its <i>name</i>. Metadata can be associated with a server and accessed in a number of ways as described in the section <xref type="section" href="#topic310608/Personalizing">Personalizing a server</xref>. These concepts are described further in the sections below.</p>
 </section>
 <section id="211-server-operations"> <title>2.1.1 Server Operations</title>
@@ -2117,7 +2117,7 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com</p>
 <b>Server Action</b>
 </entry>
   <entry align="left">
-<xref type="section" href="#topic310608/getVNCConcole">Get VNC Console</xref>
+    <xref type="section" href="#topic310608/getVNCConsole">Get VNC Console</xref>
 </entry>
   <entry align="left">POST</entry>
   <entry align="left">/v2/{project_id}/servers/{server_id}/action</entry>
@@ -6620,7 +6620,7 @@ If an error occurs, the response body contains a description of the error.</p>
 </ul>
 <p>
 <b>URL Parameters</b>
-Users can control which attributes should be returned by using the fields query parameter. See <xref type="section" href="#topic310608/filtering">Filtering and Column Selection</xref> for more information. Filtering is supported on all top level attributes of an API entity. For example:</p>
+  Users can control which attributes should be returned by using the fields query parameter. See <xref type="section" href="#topic310608/Pagination">Filtering and Column Selection</xref> for more information. Filtering is supported on all top level attributes of an API entity. For example:</p>
 <codeblock>
   <codeph>GET /v2/{project_id}/flavors?name={name}
 </codeph>
@@ -6749,7 +6749,7 @@ If an error occurs, the response body contains a description of the error.</p>
 </ul>
 <p>
 <b>URL Parameters</b>
-Users can control which attributes should be returned by using the fields query parameter. See <xref type="section" href="#topic310608/filtering">Filtering and Column Selection</xref> for more information. Filtering is supported on all top level attributes of an API entity. For example:</p>
+  Users can control which attributes should be returned by using the fields query parameter. See <xref type="section" href="#topic310608/Pagination">Filtering and Column Selection</xref> for more information. Filtering is supported on all top level attributes of an API entity. For example:</p>
 <codeblock>
   <codeph>GET /v2/{project_id}/flavors?name={name}
 </codeph>
@@ -11669,7 +11669,7 @@ Naws/HNm7BwTeXRI+XgnFaIB+yxVMmzmh0/qRVEPEC/P
 </section>
 <section id="4418-flavor-swap"> <title>4.4.18 Flavor Swap</title>
 </section>
-<section id="listVolumes20"> <title>4.4.18.1 List Flavors Swap</title>
+<section id="listFlavorsSwap"> <title>4.4.18.1 List Flavors Swap</title>
 </section>
 <section id="get-v2project-idflavorsdetail21"> <title>GET /v2/{project_id}/flavors/detail</title>
 <p>Extends the flavor operation <xref type="section" href="#topic310608/listDetailFlavors">List Flavors Detail</xref> by adding the swap attribute defining swap space.</p>
@@ -12196,7 +12196,7 @@ Naws/HNm7BwTeXRI+XgnFaIB+yxVMmzmh0/qRVEPEC/P
 <section id="addFloatingIpWithFixed"> <title>4.4.22.1 Add Floating IP with Fixed</title>
 </section>
 <section id="post-v2project-idserversserver-idaction27"> <title>POST /v2/{project_id}/servers/{server_id}/action</title>
-<p>Extends the <xref type="section" href="#topic310608/addFloatingIP">Add Floating IP</xref> operation to allow the user to specify a Fixed IP address.</p>
+  <p>Extends the <xref type="section" href="#topic310608/addFloatingIp">Add Floating IP</xref> operation to allow the user to specify a Fixed IP address.</p>
 <p>
   <b>Request Parameters</b>
 </p>
@@ -12944,7 +12944,7 @@ Naws/HNm7BwTeXRI+XgnFaIB+yxVMmzmh0/qRVEPEC/P
 </section>
 <section id="7-glossary"> <title>7. Glossary</title>
 <p>
-<b>Server:</b> A server is a irtual machine instance within Compute. See <xref type="section" href="#topic310608/Servers">Servers</xref>.</p>
+<b>Server:</b> A server is a virtual machine instance within Compute. See <xref type="section" href="#topic310608/Servers">Servers</xref>.</p>
 <p>
 <b>Flavor:</b> A set of attributes which describe the resources available to a server. See <xref type="section" href="#topic310608/Flavors">Flavors</xref>.</p>
 <p>
