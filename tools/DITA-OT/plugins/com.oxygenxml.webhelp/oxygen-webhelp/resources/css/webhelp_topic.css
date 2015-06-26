@@ -22,10 +22,11 @@ p {
 }
 /* Changing topic background to $hp-gray-5: #f2f2f2 PFletcher 6/11/15 */
 /* Reverted back to white per Dionysia's request 6/17/15 - JSB */
+/* Remove font tag PFletcher 6/26/2015 */
 body {
   background-color:white;
   /*background-color:#f2f2f2;*/
-  font-family: arial, helvetica, sans-serif;
+  /* font-family: arial, helvetica, sans-serif; */
   line-height:18px;
   font-size:12px;
 }
