@@ -369,8 +369,8 @@
     <!--set to toc=no later  removed site index. not needed-->
     <topicref href="commercial/GA1/1.1commercial.glossary.dita"/> 
     <!-- Files in MD repo Under Revision not in DITA -->      
-    <topicref href="commercial/GA1/1.1commercial.install-GA-OpenStackClient.dita" /><!--set to toc=no later-->
-    <topicref href="commercial/GA1/1.1commercial.install-ip-addresses.dita" /><!--set to toc=no later-->
+ 
+
  
  
  
