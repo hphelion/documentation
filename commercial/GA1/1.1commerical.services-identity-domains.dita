@@ -20,7 +20,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commerical.services-identity-domains.md-->
  <!--permalink: /helion/openstack/1.1/services/identity/domains/--></p>
-<p>A domain is a high-level container for <xref href="../../community/community.services-identity-overview.dita#project" >projects</xref>, <xref href="../../community/community.services-identity-overview.dita#user" >users</xref> and <xref href="../../community/community.services-identity-overview.dita#group" type="section" scope="external"  >groups</xref>, each of which is <i>owned</i> by exactly one domain. Users, however, can be <i>associated</i> with multiple projects by granting project roles, even if that project is owned by a different domain.</p>
+  <p>A domain is a high-level container for <xref href="../../community/community.services-identity-overview.dita#project" >projects</xref>, <xref href="../../community/community.services-identity-overview.dita#user" >users</xref> and <xref href="../../community/community.services-identity-overview.dita#topic8501/group" type="section">groups</xref>, each of which is <i>owned</i> by exactly one domain. Users, however, can be <i>associated</i> with multiple projects by granting project roles, even if that project is owned by a different domain.</p>
 <ul>
 <li>
 <xref type="section" href="#topic2759/horizon">Horizon UI Not Available</xref>
