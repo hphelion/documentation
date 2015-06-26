@@ -261,7 +261,7 @@ Performing backups and creating bootable volumes will then work.-->   <!--CORE-2
 </codeph>
 </codeblock>
 
-  <p>For more information on how to restart the singleton Cinder volume  service, see <xref href="1.0commerical.high-availability.dita#topic20228/cinder-volume" type="section">HP Helion OpenStack(R) 1.1: High Availability</xref>.</p>
+  <p>For more information on how to restart the singleton Cinder volume  service, see <xref href="1.0commerical.high-availability.dita#topic21283/cinder-volume" type="section">HP Helion OpenStack(R) 1.1: High Availability</xref>.</p>
 </li>
 <li>
 <p>
