@@ -26,7 +26,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/admin/server/1.2docker.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/server/docker/--></p>
-<p>Application Lifecycle Service's <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2architecture.dita#architecture-dea" type="section" scope="external"  >DEA role</xref> runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the <i>fence</i> process, which in turn uses
+  <p>Application Lifecycle Service's <xref href="#topic4407/architecture-droplet-execution-agents" type="section">DEA role</xref> runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the <i>fence</i> process, which in turn uses
 <xref href="http://docs.docker.io/en/latest/" scope="external" format="html" >Docker</xref> to create and destroy Linux
 containers on demand.</p>
 <p>Typically, admins will not have to work directly with Docker, but it is
@@ -47,7 +47,9 @@ accessible if needed to customize or create new container images.</p>
 </ul>
 <section id="modifying-or-updating-the-container-image"> <title>Modifying or Updating the Container Image</title>
 <p>Application containers are created from a base Docker image (a template used to create Linux containers). Admins can create new images to add specific software required by applications or update operating system packages.</p>
-<p>See also the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#upgrade-docker" type="section" scope="external"  >Upgrade the Docker Image</xref> section in the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita" >Best Practices</xref> reference, which shows how to modify the Docker base image <b>without</b> changing <i>kato config</i>.</p>
+<p>See also <xref
+  href="../best-practices/1.2index.dita#topic16169/upgrade-docker" type="section">Upgrade the Docker Image</xref> to modify the Docker base
+        image <b>without</b> changing <i>kato config</i>.</p>
 <p>To create a new base image for Application Lifecycle Service to use for application containers, perform the following steps <b>on all nodes running the DEA role</b>:</p>
 <ol>
 <li> Start with an empty working directory:<codeblock>mkdir ~/newimg
@@ -56,21 +58,21 @@ cd ~/newimg</codeblock></li>
           template:<codeblock>kato config get fence docker/images
 helion/stack/alsek</codeblock></li>
 <li> Create a <xref href="http://docs.docker.io/en/latest/use/builder/" scope="external"
-            format="html">Dockerfile</xref> which inherits the current Docker image, then runs an
+            format="html">Dockerfile</xref> which inherits the current Docker image and then runs an
           update or installation command. For example:<codeblock>FROM helion/stack-alsek:kato-patched
 RUN apt-get -y install libgraphite2-dev</codeblock><ul>
             <li>
-              <xref href="http://docs.docker.io/en/latest/use/builder#from" type="section" scope="external"
-                format="html">FROM</xref>: inherits the environment and installed software from the
-              latest patched version of the app image.</li>
+              <xref href="http://docs.docker.io/en/latest/use/builder#from" type="section"
+                scope="external" format="html">FROM</xref>: inherits the environment and installed
+              software from the latest patched version of the app image.</li>
             <li>
-              <xref href="http://docs.docker.io/en/latest/use/builder#run" type="section" scope="external"
-                format="html">RUN</xref>: specifies arbitrary commands to run before saving the
-              image.</li>
+              <xref href="http://docs.docker.io/en/latest/use/builder#run" type="section"
+                scope="external" format="html">RUN</xref>: specifies arbitrary commands to run
+              before saving the image.</li>
             <li>
-              <xref href="http://docs.docker.io/en/latest/use/builder#add" type="section" scope="external"
-                format="html">ADD</xref>: could be used to copy files into the image.
-              <!--A BR tag was used here in the original source.--></li>
+              <xref href="http://docs.docker.io/en/latest/use/builder#add" type="section"
+                scope="external" format="html">ADD</xref>: could be used to copy files into the
+              image. </li>
           </ul></li>
 <li> Build the image. Set the maintainer's name and an image
           name:<codeblock>sudo docker build -rm -t exampleco/newimg .</codeblock></li>
@@ -87,7 +89,7 @@ exampleco/newimg</codeblock></li>
 containers, global admin hooks can be set to run immediately after
 corresponding user-specified deployment hooks (pre-staging,
 post-staging, pre-running) set in application 
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >manifest.yml</xref> files.</p>
+<xref href="../../user/deploy/1.2manifestyml.dita" >manifest.yml</xref> files.</p>
 <p>These hooks must be:</p>
 <ul>
 <li>plain bash scripts with the executable bit set (<codeph>chmod +x</codeph>)</li>
@@ -106,13 +108,10 @@ fi
 export HELION_HOOK_ENV=PRE_RUN_DATE,EXAMPLECO_KEY
 sudo /usr/sbin/nrsysmond-config --set license_key=$NEW_RELIC_LICENSE_KEY
 sudo /etc/init.d/newrelic-sysmond start</codeblock>
-<p>
-        <note>The <codeph>HELION_HOOK_ENV</codeph> environment variable is needed to expose the
-          specified variables in <codeph>helion ssh</codeph> sessions, the application container's
-          crontab, and PHP applications using the Legacy buildpack. This requirement may change in
-          subsequent releases.</note>
-      </p>
-<p>The Dockerfile for creating the image (see <xref type="section" href="#topic7767/docker-modify-container">Modifying or Updating the
+      <note> The <codeph>HELION_HOOK_ENV</codeph> environment variable is needed to expose the
+        specified variables in <codeph>helion ssh</codeph> sessions, in the application container's
+        crontab, and in PHP applications using the Legacy buildpack. </note>
+  <p>The Dockerfile for creating the image (see <xref type="section" href="#topic7767/modifying-or-updating-the-container-image">Modifying or Updating the
 Container Image</xref> ) would use the ADD
 directive to put a local <i>hooks</i> directory in the Docker image's
 <i>/etc/helion/</i> directory:</p>
@@ -157,31 +156,33 @@ f39d1b3f6fedc50e77875526352bd5a0f650a998dc1d7ca4e39c4a1eb8349e42</codeblock><p>T
             returned by the command above. For
             example:</p><codeblock>api.paas.example.com:49156</codeblock><p>This registry location
             will be used to pull the images you create to your DEA nodes.</p></li>
-<li> Go through steps 1 - 3 <xref type="section" href="#topic7767/docker-modify-container">
+  <li> Go through steps 1 - 3 <xref type="section" href="#topic7767/modifying-or-updating-the-container-image">
             <i>above</i>
           </xref> to create a Docker image file. When building the image, substitute the registry
           location for the organization name used in step 4. For
             example:<codeblock>sudo docker build -rm -t api.paas.example.com:49156/exampleco/newimg .</codeblock><p>If
             the new image is simply an updated version of the default base image, you can tag the
             image <b>helion/stack-alsek:latest</b> (as described in the <xref
-              href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#bestpractices-ubuntu-security"
-              >Ubuntu Security Updates</xref> and skip the following step.</p></li>
+              href="../best-practices/1.2index.dita#topic16169/bestpractices-ubuntu-security"
+              type="section">Ubuntu Security Updates</xref> and skip the following
+            step.</p></li>
 <li> Push the newly built Docker image to the registry:<codeblock>sudo docker push api.paas.example.com:49156/exampleco/newimg</codeblock><p>
             <note>The <i>helion/stack/alsek</i> and <i>helion/base images</i> (approximately 1.9GB)
               are pushed to the registry in addition to the new image. Make sure you have sufficient
               disk space available on the VM.</note>
           </p></li>
-<li>
-          <b>On all DEA nodes</b>, pull the new image from the
+<li> On <b>each</b> DEA node, pull the new image from the
           registry:<codeblock>sudo docker pull api.paas.example.com:49156/exampleco/newimg</codeblock></li>
-<li> Configure Application Lifecycle Service to use the new
-            image:<codeblock>kato config set fence docker/images api.paas.example.com:49156/exampleco/newimg
+<li> Configure Application Lifecycle Service to use the new image. This step only needs to be done
+          once, as the configuration change is shared with all
+          nodes.<codeblock>kato config set fence docker/images api.paas.example.com:49156/exampleco/newimg
 WARNING: Assumed type string
-api.paas.example.com:49156/exampleco/newimg</codeblock><p>This
-            step only needs to be done once, as the configuration change is shared with all
-            nodes.</p></li>
+api.paas.example.com:49156/exampleco/newimg</codeblock></li>
 </ol>
-<p>The <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#upgrade-docker" type="section" scope="external"  >Upgrade the Docker Image</xref> section in the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita" >Best Practices</xref> documentation explains how to modify the Docker base image without changing <i>kato config</i>.</p>
+<p>The <xref
+  href="../best-practices/1.2index.dita#topic16169/upgrade-docker"
+          type="section" scope="external">Upgrade the Docker Image</xref> documentation explains how
+        to modify the Docker base image without changing <i>kato config</i>.</p>
 </section>
 <section id="docker-privileged-containers"> <title>Privileged Containers</title>
 <p>ALS runs "unprivileged" Docker containers by default. The containers do not have access to any devices on the (virtual) host.</p>

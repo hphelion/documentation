@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic1693">
-  <title>HP Helion 1.2 Development Platform: Application Lifecycle Service User Guide</title>
-  <prolog>
-    <metadata>
-      <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Development Platform"/>
-      <othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
-      <othermeta name="role" content="Application Developer"/>
-      <othermeta name="role" content="ISV Developer"/>
-      <othermeta name="role" content="Service Developer"/>
-      <othermeta name="role" content="Systems Administrator"/>
-      <othermeta name="role" content="Jayme P"/>
-      <othermeta name="product-version1" content="HP Helion Development Platform"/>
-      <othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
-    </metadata>
-  </prolog>
-  <body>
-    <p>
-      <!--PUBLISHED-->
-      <!--./devplatform/1.2/helion/user/1.2index.md-->
-      <!--permalink: /helion/devplatform/1.2/als/user/--></p>
-    <p>The Application Lifecycle Service is a polyglot Platform-as-a-Service (PaaS). You can easily
+<title>HP Helion 1.2 Development Platform: Application Lifecycle Service User Guide</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/1.2/helion/user/1.2index.md-->
+ <!--permalink: /helion/devplatform/1.2/als/user/--></p>
+<p>The Application Lifecycle Service is a polyglot Platform-as-a-Service (PaaS). You can easily
       deploy applications written in a wide range of languages and web frameworks using a variety of
       data services simply by pushing your source code to the system.</p>
-    <p>Application Lifecycle Service handles the automatic configuration of the language runtime,
-      web server, application dependencies, databases, and other services.</p>
-    <section id="quick-start"> <title>Quick Start</title>
-      <ul>
-        <li>
+<p>Application Lifecycle Service handles the automatic configuration of the language runtime,
+web server, application dependencies, databases, and other services.</p>
+<section id="quick-start"> <title>Quick Start</title>
+<ul>
+<li>
           <xref href="../../../1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952" type="section" scope="external" >Quick
             Start</xref>
         </li>
-        <li>
+<li>
           <xref href="../quick-start/1.2index.dita#topic4745/management-console" type="section" scope="external" >Management Console
           </xref></li>
-        <li>
+<li>
           <xref
-            href="../client/1.2index.dita#topic3165/helion-client-setup">Application Lifecycle
-            Service Client</xref>
+              href="../client/1.2index.dita#topic3165/helion-client-setup">Application Lifecycle
+              Service Client</xref>
         </li>
-        <li>
+<li>
           <xref href="../quick-start/1.2index.dita#topic4745/setting-organization-and-space" type="section" scope="external" >Setting
             Organization and Space</xref>
         </li>
-        <li>
+<li>
           <xref href="../quick-start/1.2index.dita#topic4745/deploying-apps" type="section" scope="external" >Deploying Apps</xref>
         </li>
-      </ul>
-    </section>
-    <section id="helion-client"> <title>Application Lifecycle Service Client</title>
-      <ul>
-        <li>
+</ul>
+</section>
+<section id="helion-client"> <title>Application Lifecycle Service Client</title>
+<ul>
+<li>
           <xref href="../reference/1.2client-ref.dita#topic13355/getting-started" type="section" scope="external" >Application
             Lifecycle Service Client Command Reference</xref>
         </li>
-        <li>
+<li>
           <xref href="../client/1.2index.dita#topic3165" type="section" scope="external" >Application Lifecycle Service Client</xref>
           <ul>
             <li>
@@ -76,118 +76,118 @@
                 Client</xref>
             </li>
           </ul></li>
-      </ul>
-    </section>
-    <section id="deploying-applications"><title>Deploying Applications</title>
-      <ul>
-        <li>
+</ul>
+</section>
+<section id="deploying-applications"><title>Deploying Applications</title>
+<ul>
+<li>
           <xref href="1.2manifestyml.dita#topic20922/applications" type="section" scope="external" >Manifest.yml Options</xref>
         </li>
-        <li>
+<li>
           <xref href="1.2app-debug.dita#topic1398" type="section" scope="external" >Remote Debugging</xref>
         </li>
-        <li>
+<li>
           Frameworks &amp; Languages
           <ul>
             <li>Frameworks <ul>
-              <li>
-                <xref href="1.2orgs-spaces.dita#topic2729" type="section" scope="local" >Organizations &amp; Spaces</xref>
-              </li>
-              <li>
-                <xref href="1.2buildpack.dita#topic3370" type="section" scope="local" >Buildpacks</xref>
-              </li>
-              <li>
-                <xref href="1.2other-frameworks.dita#topic2413" type="section" scope="local" format="dita" >Generic &amp; Standalone Frameworks</xref>
-              </li>
-            </ul></li>
+                <li>
+                  <xref href="1.2orgs-spaces.dita#topic2729" type="section" scope="local" >Organizations &amp; Spaces</xref>
+                </li>
+                <li>
+                  <xref href="1.2buildpack.dita#topic3370" type="section" scope="local" >Buildpacks</xref>
+                </li>
+                <li>
+                  <xref href="1.2other-frameworks.dita#topic2413" type="section" scope="local" format="dita" >Generic &amp; Standalone Frameworks</xref>
+                </li>
+              </ul></li>
             <li>Languages <ul>
-              <li>
-                <xref href="languages/1.2java.dita#topic2811" type="section" scope="local" >Java</xref>
-              </li>
-              <li>
-                <xref href="languages/1.2node.dita#topic3629/node-npm" type="section" scope="local" >Node.js</xref>
-              </li>
-              <li>
-                <xref href="languages/1.2php.dita#topic5845" type="section" scope="local" >PHP</xref>
-              </li>
-            </ul></li>
+                <li>
+                  <xref href="languages/1.2java.dita#topic2811" type="section" scope="local" >Java</xref>
+                </li>
+                <li>
+                  <xref href="languages/1.2node.dita#topic3629/node-npm" type="section" scope="local" >Node.js</xref>
+                </li>
+                <li>
+                  <xref href="languages/1.2php.dita#topic5845" type="section" scope="local" >PHP</xref>
+                </li>
+              </ul></li>
           </ul></li>
-      </ul>
-    </section>
-    <section id="services"> <title>Services</title>
-      <ul>
-        <li>
+</ul>
+</section>
+<section id="services"> <title>Services</title>
+<ul>
+<li>
           <xref href="../services/1.2data-services.dita#topic19772" type="section" scope="external" >Data Services</xref>
         </li>
-        <li>
+<li>
           <xref href="../services/1.2filesystem.dita#topic4410" type="section" scope="external" >Persistent File System</xref>
         </li>
-        <li>
+<li>
           <xref href="../services/1.2memcached.dita#topic2514" type="section" scope="external" >Memcached Service</xref>
         </li>
-        <li>
+<li>
           <xref href="../services/1.2port-service.dita#topic7511/requesting-a-port" type="section" scope="external" >Port
             Service</xref>
         </li>
-        <li>
+<li>
           <xref href="../services/1.2user-provided.dita#topic4060/creating" type="section" scope="external" >User-Provided
             Services</xref>
         </li>
-      </ul>
-    </section>
-    <section id="logging-monitoring"> <title>Logging &amp; Monitoring</title>
-      <ul>
-        <li>
+</ul>
+</section>
+<section id="logging-monitoring"> <title>Logging &amp; Monitoring</title>
+<ul>
+<li>
           <xref href="1.2app-logs.dita#topic5165" type="section" scope="external" >Application Logs</xref>
         </li>
-        <li>
+<li>
           <xref href="1.2newrelic.dita#topic5392" type="section" scope="external" >New Relic Monitoring</xref>
         </li>
-      </ul>
-    </section>
-    <section id="management-console"> <title>Management Console</title>
-      <ul>
-        <li>
+</ul>
+</section>
+<section id="management-console"> <title>Management Console</title>
+<ul>
+<li>
           <xref href="../../admin/console/1.2customize.dita#topic5029" type="section" scope="external" >Customize the Management
             Console</xref>
         </li>
-        <li>
+<li>
           <xref href="../../admin/console/1.2customize.dita#topic5029/welcome-page" type="section" scope="external" >Welcome</xref>
         </li>
-        <li>
+<li>
           <xref href="../console/1.2index.dita#topic8844/organization-view" type="section" scope="external" >Organization View</xref>
         </li>
-        <li>
+<li>
           <xref href="../console/1.2index.dita#topic8844/space-view" type="section" scope="external" >Space View</xref>
         </li>
-        <li>
+<li>
           <xref href="../console/1.2index.dita#topic8844/application-view" type="section" scope="external" >Application View</xref>
         </li>
-        <li>
+<li>
           <xref href="../console/1.2index.dita#topic8844/service-instance-view" type="section" scope="external" >Service Instance
             View</xref>
         </li>
-        <li>
+<li>
           <xref href="../../admin/console/1.2app-store.dita#topic5271" type="section" scope="local" >Sample Applications</xref>
         </li>
-      </ul>
-    </section>
-    <section id="reference"> <title>Reference</title>
-      <ul>
-        <li>
+</ul>
+</section>
+<section id="reference"> <title>Reference</title>
+<ul>
+<li>
           <xref href="../reference/1.2environment.dita#topic7631" type="section" scope="external" >Environment Variables</xref>
         </li>
-        <li>
+<li>
           <xref href="../reference/1.2glossary.dita#topic6187" type="section" scope="external" >Glossary</xref>
         </li>
-        <li>
+<li>
           <xref href="../reference/1.2troubleshoot.dita#topic2774" type="section" scope="external" >Troubleshooting</xref>
         </li>
-        <li>
+<li>
           <xref href="../reference/1.2api.dita#topic455/related-documentation" type="section" scope="external" >Application Lifecycle
             Service Client API</xref>
         </li>
-      </ul>
-    </section>
-  </body>
+</ul>
+</section>
+</body>
 </topic>

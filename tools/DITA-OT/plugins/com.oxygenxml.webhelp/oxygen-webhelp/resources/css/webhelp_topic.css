@@ -17,12 +17,16 @@ available in the base directory of this Oxygen Webhelp plugin.
 body {
     font-family: HPSimplified !important;
 }
+p {
+    font-family: HPSimplified !important;
+}
 /* Changing topic background to $hp-gray-5: #f2f2f2 PFletcher 6/11/15 */
 /* Reverted back to white per Dionysia's request 6/17/15 - JSB */
+/* Remove font tag PFletcher 6/26/2015 */
 body {
   background-color:white;
   /*background-color:#f2f2f2;*/
-  font-family: arial, helvetica, sans-serif;
+  /* font-family: arial, helvetica, sans-serif; */
   line-height:18px;
   font-size:12px;
 }
@@ -40,15 +44,21 @@ a.link {
     text-decoration: none;
 	/* Added by P Fletcher 6/11: Links are $hp-accessible-blue: #007dba */
 	color: #007dba;
+	/* Added by P Fletcher 6/26: Use HPSimplified for whole site */
+	font-family: HPSimplified !important;
 }
 
 a:visited{
-  color:#660066;        
+  color:#660066; 
+  /* Added by P Fletcher 6/26: Use HPSimplified for whole site */
+	font-family: HPSimplified !important;
 }
 a:hover{
 	/* Changed by P Fletcher 6/11: Link hover color is $hp-hover-blue: #006699 */
   /*color:red;*/
   color:#006699;
+  /* Added by P Fletcher 6/26: Use HPSimplified for whole site */
+	font-family: HPSimplified !important;
 }
 /* End Anchors */
 
