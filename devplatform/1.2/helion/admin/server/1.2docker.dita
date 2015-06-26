@@ -26,7 +26,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/admin/server/1.2docker.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/server/docker/--></p>
-  <p>Application Lifecycle Service's <xref href="../reference/1.2architecture.dita#topic4407/architecture-dea" type="section">DEA role</xref> runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the <i>fence</i> process, which in turn uses
+  <p>Application Lifecycle Service's <xref href="#topic4407/architecture-droplet-execution-agents" type="section">DEA role</xref> runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the <i>fence</i> process, which in turn uses
 <xref href="http://docs.docker.io/en/latest/" scope="external" format="html" >Docker</xref> to create and destroy Linux
 containers on demand.</p>
 <p>Typically, admins will not have to work directly with Docker, but it is
@@ -111,7 +111,7 @@ sudo /etc/init.d/newrelic-sysmond start</codeblock>
       <note> The <codeph>HELION_HOOK_ENV</codeph> environment variable is needed to expose the
         specified variables in <codeph>helion ssh</codeph> sessions, in the application container's
         crontab, and in PHP applications using the Legacy buildpack. </note>
-<p>The Dockerfile for creating the image (see <xref type="section" href="#topic7767/docker-modify-container">Modifying or Updating the
+  <p>The Dockerfile for creating the image (see <xref type="section" href="#topic7767/modifying-or-updating-the-container-image">Modifying or Updating the
 Container Image</xref> ) would use the ADD
 directive to put a local <i>hooks</i> directory in the Docker image's
 <i>/etc/helion/</i> directory:</p>
@@ -156,7 +156,7 @@ f39d1b3f6fedc50e77875526352bd5a0f650a998dc1d7ca4e39c4a1eb8349e42</codeblock><p>T
             returned by the command above. For
             example:</p><codeblock>api.paas.example.com:49156</codeblock><p>This registry location
             will be used to pull the images you create to your DEA nodes.</p></li>
-<li> Go through steps 1 - 3 <xref type="section" href="#topic7767/docker-modify-container">
+  <li> Go through steps 1 - 3 <xref type="section" href="#topic7767/modifying-or-updating-the-container-image">
             <i>above</i>
           </xref> to create a Docker image file. When building the image, substitute the registry
           location for the organization name used in step 4. For
