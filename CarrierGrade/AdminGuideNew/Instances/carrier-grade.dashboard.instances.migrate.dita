@@ -16,8 +16,8 @@
 <p>Migration enables an administrator to move a virtual-machine instance from one compute host to another. This feature is useful when a compute host requires maintenance. Migration can also be useful to redistribute the load when many VM instances are running on a specific physical machine.</p>
 <p>Live migration requires almost no downtime and is useful when the instances must be kept running during the migration. For more information, see <xref href="../Instances/carrier-grade.dashboard.instances.live.migrate.dita" >Live Migration of Virtual Machines</xref>.</p>
 <p>If you do not need to live migrate an instance, you can <xref href="../Instances/carrier-grade.dashboard.instances.cold.migrate.dita" >cold migrate</xref> the instance instead.</p>
-<section id="migrate-an-instance-on-an-hlinux-server"> <title>Migrate an instance on an hLinux server</title>
-<p>Instances on hLinux servers can be migrated to another instance as follows.</p>
+<section id="migrate-an-instance-on-an-Non-KVM-server"> <title>Migrate an instance on an Non-KVM server</title>
+<p>Instances on Non-KVM servers can be migrated to another instance as follows.</p>
 <p>To migrate an instance:</p>
 <ol>
 <li>
@@ -58,8 +58,8 @@
 </li>
 </ol>
 </section>
-<section id="migrate-an-instance-on-a-wind-river-linux-server"> <title>Migrate an instance on a Wind River Linux server</title>
-<p>Instances on Wind River Linux servers can be migrated to a specific instance.</p>
+<section id="migrate-an-instance-on-a-wind-river-linux-server"> <title>Migrate an instance on a KVM server</title>
+<p>Instances on KVM servers can be migrated to a specific instance.</p>
 <p>To migrate an instance:</p>
 <ol>
 <li>

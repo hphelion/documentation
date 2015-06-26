@@ -24,12 +24,12 @@
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>You can define and monitor performance thresholds for metrics such as memory usage or CPU activity, and then add or remove resources when the thresholds are crossed. This allows you to make efficient use of the hardware in the cluster, by allocating resources only when they are needed, and assigning them where they are most required.</p>
-<p>Wind River Linux supports two types of scaling:</p>
+<p>KVM supports two types of scaling:</p>
 <ul>
 <li>In/Out - This type of scaling (also known as horizontal scaling) adds or removes instances as needed.</li>
 <li>Up/Down - This type of scaling (also known as vertical scaling) increases or decreases resources (for example, vCPUs) for individual instances as needed. For more about up/down scaling, see <xref href="../Instances/carrier-grade.dashboard.instances.scaling.dita" >Scaling Virtual Machine Resources</xref>.</li>
 </ul>
-<p>Performance metrics can be collected and reported from the Wind River Linux servers, or by the guests using guest
+<p>Performance metrics can be collected and reported from the KVM servers, or by the guests using guest
 metrics. For more information about guest metrics, see Reporting a Guest Metric](/helion/commercial/carrier/dashboard/managing/instances/guest/).</p>
 <p>
   <xref type="section" href="#topic1567"> Return to Top </xref>

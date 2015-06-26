@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8886">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1:Support Matrix for the <tm tmtype="reg">Wind River</tm> Linux Region</title>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic8886">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1:Support Matrix for the KVM
+        Region</title>
 <titlealts>
 <searchtitle>HP Helion Openstack Carrier Grade: Support Matrix</searchtitle>
 </titlealts>
@@ -20,12 +20,15 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-support-matrix-wr.md-->
  <!--permalink: /helion/openstack/carrier/support-matrix/wr/--></p>
-<p> <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >▲ HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Support Matrix</xref>  </p>
+<p> <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita">▲ HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Support Matrix</xref>  </p>
 <!-- Taken from Titanium Server Software Installation Guide, 15.x -->
-<p>To ensure the performance and stability of the systems running Wind River Linux in the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade environment, it is very important to meet the requirements and conform to the following recommendations.</p>
+<p>To ensure the performance and stability of the systems running in the KVM region of the HP Helion
+                <tm tmtype="reg">OpenStack</tm> Carrier Grade environment, it is very important to
+            meet the requirements and conform to the following recommendations.</p>
 <section id="hard"> <title>Hardware Requirements</title>
 <p>For successful software installation and operation, the server hardware platform must meet specific requirements.</p>
-<p>The servers running Wind River Linux consist of a set of hosts connected to internal and external networks:</p>
+<p>The servers running in the KVM region consist of a set of hosts connected to internal and
+                external networks:</p>
 <ul>
 <li>Two controller nodes are required.</li>
 </ul>
@@ -61,8 +64,9 @@
 <p>The actual memory requirement for production environments depends on the expected load. In particular, for compute nodes, the memory requirement depends on the expected number of virtual machines and the types of application running on them.</p>
 </section>
 <section id="storage-requirements"> <title>Storage Requirements</title>
-<p>The storage requirements for the Titanium Server depend on the system scale.</p>
-<p>All hosts require one system disk where the Titanium Server system software is installed. System disks are automatically partitioned by the server installer program.</p>
+<p>The storage requirements for the servers depend on the system scale.</p>
+<p>All hosts require one system disk where the server system software is installed. System disks are
+                automatically partitioned by the server installer program.</p>
 <p>Controller nodes require an additional physical disk for volume storage. Storage nodes require an additional physical disk for OSD storage.</p>
 <p>The following minimum hard drive capacities are suggested for the hosts.</p>
 <table>
@@ -125,26 +129,22 @@ A two-disk RAID is suggested. </entry>
 <row>
     <entry>
 Controller Node</entry>
-    <entry>* One 1G on-board interface (Internal management network)
-<!--A BR tag was used here in the original source.-->* One 1G interface (OAM)
-<!--A BR tag was used here in the original source.-->* One optional 1G or 10G interface (Infrastructure network)</entry>
-    <entry>
-* Two 1G on-board interfaces (Internal
-management network)
-<!--A BR tag was used here in the original source.-->* Two 1G interfaces (OAM)
-<!--A BR tag was used here in the original source.-->* Two optional 1G or 10G interfaces (Infrastructure network)
-NOTE: The controller-0 and controller-1 port configurations
-must be identical.</entry>
+    <entry> <ul><li> One 1G on-board interface (Internal management network)</li> 
+        <li>One 1G interface (OAM)</li>
+        <li>One optional 1G or 10G interface (Infrastructure network)</li></ul></entry>
+    <entry><ul><li>Two 1G on-board interfaces (Internalmanagement network)</li>
+        <li>Two 1G interfaces (OAM)</li>
+        <li>Two optional 1G or 10G interfaces (Infrastructure network)
+            NOTE: The controller-0 and controller-1 port configurations must be identical.</li></ul></entry>
     <entry>
 </entry>
   </row>
 <row>
     <entry>Compute Node</entry>
-    <entry>* One 1G on-board interface (Internal management network)
-<!--A BR tag was used here in the original source.-->* One 1G (Intel i350) or 10G (Intel 82599) interface per additional Provider Network</entry>
-    <entry>
-* Two 1G on-board interfaces (Internal management network)
-<!--A BR tag was used here in the original source.-->* Two 1G (Intel i350) or 10G (Intel 82599) interfaces per additional Provider Network</entry>
+    <entry><ul><li>One 1G on-board interface (Internal management network)</li>
+        <li>One 1G (Intel i350) or 10G (Intel 82599) interface per additional Provider Network</li></ul></entry>
+    <entry><ul><li>Two 1G on-board interfaces (Internal management network)</li>
+        <li>Two 1G (Intel i350) or 10G (Intel 82599) interfaces per additional Provider Network</li></ul></entry>
   </row>
 </tbody>
 </tgroup>
@@ -169,8 +169,14 @@ must be identical.</entry>
 <p>Operational requirements for each network are described in the following sections.</p>
 </section>
 <section id="internal-management-network"> <title>Internal Management Network</title>
-<p>The internal management network must be implemented as a single, dedicated, Layer 2 broadcast domain for the exclusive use of each Titanium Server cluster. Sharing of this network by more than one Titanium Server cluster is not a supported configuration.</p>
-<p>During the Titanium Server software installation process, several network services such as BOOTP, DHCP, and PXE, are expected to run over the internal management network. These services are used to bring up the different hosts to an operational state. Therefore, it is mandatory that this network be operational and available in advance, to ensure a successful installation.</p>
+<p>The internal management network must be implemented as a single, dedicated, Layer 2 broadcast
+                domain for the exclusive use of each server cluster. Sharing of this network by more
+                than one server cluster is not a supported configuration.</p>
+<p>During the server software installation process, several network services such as BOOTP, DHCP,
+                and PXE, are expected to run over the internal management network. These services
+                are used to bring up the different hosts to an operational state. Therefore, it is
+                mandatory that this network be operational and available in advance, to ensure a
+                successful installation.</p>
 <p>On each host, the internal management network can be implemented using a 1Gb or 10 Gb Ethernet port. In either
 case, requirements for this port are:</p>
 <ul>
@@ -180,8 +186,10 @@ case, requirements for this port are:</p>
 </section>
 <section id="infrastructure-network"> <title>Infrastructure Network</title>
 <p>This is an optional network.</p>
-<p>As with the internal management network, the infrastructure network must be implemented as a single, dedicated, Layer 2 broadcast domain for the exclusive use of each Titanium Server cluster.</p>
-<p>Sharing of this network by more than one Titanium Server cluster is not a supported configuration.</p>
+<p>As with the internal management network, the infrastructure network must be implemented as a
+                single, dedicated, Layer 2 broadcast domain for the exclusive use of each server
+                cluster.</p>
+<p>Sharing of this network by more than one server cluster is not a supported configuration.</p>
 <p>The infrastructure network can be implemented as a 1Gb or 10 Gb Ethernet network. In its absence, all infrastructure traffic is carried over the internal management network.</p>
 </section>
 <section id="oam-network"> <title>OAM Network</title>
@@ -190,14 +198,20 @@ case, requirements for this port are:</p>
 <li>
 <p>DNS Service - Needed to facilitate the name resolution of servers reachable on the OAM Network.</p>
 
-<p>The Titanium Server can operate without a configured DNS service. However, a DNS service should be in place to ensure that links to external references in the current and future versions of the web administration interface work as expected.</p>
+<p>The server can operate without a configured DNS service. However, a DNS service should be in
+                        place to ensure that links to external references in the current and future
+                        versions of the web administration interface work as expected.</p>
 </li>
 <li>
-<p>NTP Service - The Network Time Protocol (NTP) can be optionally used by the Titanium Server controller nodes to synchronize their local clocks with a reliable external time reference. However, it is strongly suggested that this service be available, among other things, to ensure that system-wide log reports present a unified view of the day-to-day
-operations.</p>
+<p>NTP Service - The Network Time Protocol (NTP) can be optionally used by the server controller
+                        nodes to synchronize their local clocks with a reliable external time
+                        reference. However, it is strongly suggested that this service be available,
+                        among other things, to ensure that system-wide log reports present a unified
+                        view of the day-to-day operations.</p>
 </li>
 </ul>
-<p>The Titanium Server compute nodes always use the controller nodes as the de-facto time server for the entire Titanium Server cluster.</p>
+<p>The server compute nodes always use the controller nodes as the de-facto time server for the
+                entire cluster.</p>
 </section>
 <section id="provider-network"> <title>Provider Network</title>
 <p>There are no specific requirements for network services to be available on the provider network. However, you must ensure that all network services required by the guests running in the compute nodes are available. For configuration purposes, the compute nodes themselves are entirely served by the services provided by the controller nodes over the internal management network.</p>

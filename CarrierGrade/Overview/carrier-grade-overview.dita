@@ -10,7 +10,7 @@
 <body>
     <p><!--UNDER REVISION--><!--./CarrierGrade/Overview/carrier-grade-overview.md--><!--permalink: /helion/openstack/carrier/overview/--></p>
     <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
-    <p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade integrates Wind River Linux with HP
+    <p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade integrates KVM with HP
       Helion <tm tmtype="reg">OpenStack</tm> to enable carrier grade network functions
       virtualization (NFV) capabilities.</p>
     <p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade is based on <xref

@@ -37,7 +37,7 @@
           <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
             <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.<ul>
             <li>Use the IP address for the appropriate region where you want to make the change,
-              either: the hLinux region or the Wind River Linux region.</li>
+              either: the Non-KVM region or the KVM region.</li>
           </ul><p>The <b>System Configuration</b> pane is available from the System Panel section of
             the Admin menu.</p></li>
 <li>Select the <b>NTP</b> tab.<p>The <b>NTP</b> page appears, showing the currently defined NTP

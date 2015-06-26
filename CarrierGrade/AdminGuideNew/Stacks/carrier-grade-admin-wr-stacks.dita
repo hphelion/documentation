@@ -96,7 +96,7 @@ first line:
 Both formats support and <tm tmtype="reg">OpenStack</tm> resources, in any combination.</p>
 </li>
 </ul>
-<p>The Wind River Linux servers include sample CFN and HOT service templates for demonstration purposes. The templates are expressed using YAML, which is the recommended notation for HOT. Heat templates may also be expressed using
+<p>The KVM servers include sample CFN and HOT service templates for demonstration purposes. The templates are expressed using YAML, which is the recommended notation for HOT. Heat templates may also be expressed using
 JSON, which is the usual notation for CFN.</p>
 <p>You can specify parameters for a service, such as authentication, storage, networking, and so on, when you invoke a template.</p>
 <p>You can supply parameter values by:</p>
@@ -131,8 +131,8 @@ existing values in the environment file or the template.</li>
 </li>
 </ul>
 </section>
-<section id="wind-river-linux-extensions-to-heat"> <title>Wind River Linux Extensions to Heat</title>
-<p>Several extensions to Heat are included with Wind River Linux. For more information, see <xref href="../Stacks/carrier-grade-admin-wr-stacks-wr.dita" >Extensions to Heat</xref>.</p>
+<section id="wind-river-linux-extensions-to-heat"> <title>KVM Extensions to Heat</title>
+<p>Several extensions to Heat are included with KVM. For more information, see <xref href="../Stacks/carrier-grade-admin-wr-stacks-wr.dita" >Extensions to Heat</xref>.</p>
 <p>
   <xref type="section" href="#topic5192"> Return to Top </xref>
 </p>
