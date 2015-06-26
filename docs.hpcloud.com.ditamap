@@ -585,7 +585,6 @@
       <topicref href="community/community.install.baremetal.dita">
         <topicref href="community/community.network-requirements.dita"/>
       </topicref>
-      <topicref href="community/community.install.virtual.dita"/>
       <topicref href="community/community.verify.dita"/>
      </topichead> 
          
