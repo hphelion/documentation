@@ -81,7 +81,7 @@
 <li>List the project, group, and roles associated with a specified user.</li>
 </ul>
 </section>
-<section id="adminusers"> <title>Working with groups</title>
+<section id="adminusers-groups"> <title>Working with groups</title>
 <ul>
 <li>Add a group to a domain.</li>
 <li>View information on the groups associated with a domain, including names, descriptions, and policy links.</li>

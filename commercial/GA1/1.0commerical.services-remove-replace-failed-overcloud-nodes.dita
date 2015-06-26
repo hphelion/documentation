@@ -274,7 +274,7 @@ check_mk --list-hosts
 </li>
 </ol>
 </section>
-<section id="removecontroller1"> <title>Remove the failed controller1 node</title>
+<section id="removecontroller1-node"> <title>Remove the failed controller1 node</title>
 <ol>
 <li>
 <p>Login to seed as root.</p>

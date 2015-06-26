@@ -69,7 +69,7 @@ tls_req_cert = demand
 <related-links>
 <linklist>
 <title>Collected links</title>
-  <link href="1.1commerical.services-identity-integrate-ldap.html" format="html">
+  <link href="../GA1/1.1commerical.services-identity-integrate-ldap.dita" format="html">
 <linktext>LDAP connection settings</linktext>
 </link>
 </linklist>

@@ -173,7 +173,7 @@ See also <xref type="section" href="#topic16517/ImagePriv">Private image</xref> 
 <section id="ImageFile"> <title>Image file<!--Removed anchor point ImageFile--><!-- id="ImageFile" --></title>
 <p>A virtual disk <xref type="section" href="#topic16517/Image">image</xref> file that the Compute service can load up to create a virtual machine.</p>
 </section>
-<section id="Image"> <title>Image Management<!--Removed anchor point Image--><!-- id="Image" --></title>
+<section id="ImageManagement"> <title>Image Management<!--Removed anchor point Image--><!-- id="Image" --></title>
 <p>The HP <tm tmtype="reg">OpenStack</tm> service that discovers, registers, and retrieves virtual machine (VM) images. Also known as Glance.</p>
 </section>
 <section id="ImageMeta"> <title>Image metadata<!--Removed anchor point ImageMeta--><!-- id="ImageMeta" --></title>
@@ -282,7 +282,7 @@ used to manage the cloud that you created.
 <section id="public-network"> <title>Public network</title>
 <p>Used for connecting devices that are external to the cloud infrastructure.</p>
 </section>
-<section id="pxe"> <title>PXE</title>
+<section id="pxe-boot"> <title>PXE</title>
 <p>
 <i>See</i> <xref type="section" href="#topic16517/pxe">Preboot Execution Environment</xref>.</p>
 </section>

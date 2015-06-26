@@ -33,8 +33,8 @@
 <xref type="section" href="#topic19956/network">Network Topology</xref>
 </li>
 <li>
-<xref type="section" href="#topic19956/perimeter">Securing the Perimeter</xref>
-</li>
+        <xref href="#topic19956/securing-the-perimeter" format="dita">Securing the Perimeter</xref>
+      </li>
 <li>
 <xref type="section" href="#topic19956/back-end">Securing the Object Operations (Swift) back-end network connections</xref>
 </li>
@@ -65,9 +65,8 @@
 </p>
 <p>When securing the perimeter, consider:</p>
 <ul>
-<li>
-<xref type="section" href="#topic19956/vlan">VLAN configuration recommendations</xref>
-</li>
+<li><xref href="#topic19956/vlan-configuration-recommendationsvlan" format="dita">VLAN configuration recommendations</xref>
+        </li>
 <li>
 <xref type="section" href="#topic19956/ipaddressing">IP addressing recommendations</xref>
 </li>

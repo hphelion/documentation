@@ -37,7 +37,7 @@
 <xref type="section" href="#topic5839/required-arguments">Required Commands</xref>
 </li>
 </ul>
-<section id="help"> <title>Help Commands<!--Removed anchor point help--><!-- id="help" --></title>
+<section id="help-command"> <title>Help Commands<!--Removed anchor point help--><!-- id="help" --></title>
 </section>
 <section id="help"> <title>Help</title>
 <p>You can display help for this program or one of its sub-programs.</p>
