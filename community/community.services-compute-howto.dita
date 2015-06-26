@@ -24,7 +24,7 @@
 <xref href="http://docs.openstack.org/cli-reference/content/novaclient_commands.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Command Line Interface Reference</xref>
 </li>
 </ul>
-<p>Depending upon your user type, <xref type="section" href="#topic5402/user">user</xref> or <xref type="section" href="#topic5402/admin">administrator</xref>, you can perform the following tasks.</p>
+<p>Depending upon your user type,user or administrator, you can perform the following tasks.</p>
 <section id="tasks-performed-by-users"> <title>Tasks performed by users</title>
 <p>The following Compute service tasks are usually performed by someone with the <i>user</i> role.</p>
 </section>

@@ -31,9 +31,6 @@ If the Readme.txt does not list any overcloud nodes, the update is complete. -->
 <xref type="section" href="#topic14215/update">Update the overcloud</xref>
 </li>
 <li>
-<xref type="section" href="#topic14215/validate">Validate the update</xref>
-</li>
-<li>
 <xref type="section" href="#topic14215/devplatstart">Restart the HP Helion Development Platform</xref>
 </li>
 <li>

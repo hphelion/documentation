@@ -748,11 +748,10 @@ processes:
 </codeph>
 </codeblock>
 <p>A 'command:' value must be present for worker applications.</p>
-<p>If the application exists solely to run commands via
-<xref type="section" href="#topic20805/yml-cron">
-<i>cron</i>
-</xref>, a dummy command such as '<i>sleep 365d</i>'
-should be specified.</p>
+<p>If the application exists solely to run commands via  <xref type="section"
+          href="#topic20805/yml-cron">
+          <i>cron</i>
+        </xref>, a dummy command such as '<i>sleep 365d</i>' should be specified.</p>
 <p>The <codeph>$PROCESSES_WEB</codeph> and <codeph>$HELION_UWSGI</codeph> variables can also be used with <codeph>processes: web:</codeph>.</p>
 <p>
 <codeph>$PROCESSES_WEB</codeph> contains the command that is used

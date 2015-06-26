@@ -325,17 +325,20 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 <section id="reconfigure-update"> <title>Reconfigure and update cloud</title>
 <ol>
 <li>
-<xref type="section" href="#topic20505/generate-storevirtual-config">Generate StoreVirtual backend configuration JSON</xref>
-</li>
+          <xref
+            href="#topic20505/generate-storevirtual-backend-configuration-json-generate-storevirtual-config"
+            format="dita">Generate
+            StoreVirtual backend configuration JSON</xref>
+        </li>
 <li>
-<xref type="section" href="#topic20505/generate-storeserv-config">Generate StoreServ backend configuration JSON</xref>
-</li>
-<li>
-<xref type="section" href="#topic20505/update-overcloud-json">Update Overcloud configuration JSON</xref>
-</li>
-<li>
-<xref type="section" href="#topic20505/load-config-export">Load the configuration and export required environment variables to prepare for updating cloud</xref>
-</li>
+          <xref type="section" href="#topic20505/generate-storeserv-config">Generate StoreServ
+            backend configuration JSON</xref></li>
+        <li><xref href="#topic20505/update-overcloud-json" format="dita"/></li>
+        <li><xref
+            href="#topic20505/load-the-configuration-and-export-required-environment-variables-to-prepare-for-updating-cloudload-config-export"
+            format="dita">Load the configuration and
+            export required environment variables to prepare for updating cloud</xref>
+        </li>
 <li>
 <xref type="section" href="#topic20505/update-overcloud">Update Overcloud</xref> </li>
 </ol>

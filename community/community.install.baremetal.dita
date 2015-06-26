@@ -327,7 +327,9 @@ export BM_NETWORK_CIDR=192.168.0.0/16
 <p>Manually power off each baremetal system specified in the <codeph>baremetal.csv</codeph> file before proceeding with the installation.</p>
 
 <p>
-<b>IMPORTANT:</b> Ensure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting. Refer to the <xref type="section" href="#topic16854/additional-hardware-configuration">Network configuration</xref> section.</p>
+            <b>IMPORTANT:</b> Ensure that each system is configured in the BIOS to stay powered off
+            in the event of being shutdown rather than automatically restarting. Refer to the <xref
+              href="#topic16854/network" format="dita"/> section.</p>
 </li>
 <li>
 <p>Set the IP address of an NTP server accessible on the public interface for overcloud and undercloud hosts using the following commands</p>
@@ -476,7 +478,9 @@ export BM_NETWORK_SEED_RANGE_END=192.168.10.20`
 </codeph>
 </codeblock>
 
-<p>This IP address range must be on the same subnet as the Seed VM, as configured in <xref type="section" href="#topic16854/NetworkInt">Changing the Default Network Interface</xref>.</p>
+<p>This IP address range must be on the same subnet as the Seed VM, as configured in  <xref
+                  type="section" href="#topic16854/NetworkInt">Changing the Default Network
+                  Interface</xref>.</p>
 </li>
 <li>
 <p>
@@ -545,7 +549,7 @@ export BM_NETWORK_UNDERCLOUD_RANGE_END=192.168.10.20`
 <section id="next-step"> <title>Next Step</title>
 <p>Verify that the installation completed successfully by connecting to the demo VM, Horizon dashboard and the monitoring interface. See <xref href="../community/community.verify.dita" >Verifying your installation</xref>.</p>
 <p>
-  <xref type="section" href="#topic16854/top">Return to Top </xref>
+  <xref type="section" href="#topic16854">Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

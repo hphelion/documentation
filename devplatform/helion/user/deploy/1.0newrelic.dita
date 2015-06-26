@@ -47,17 +47,13 @@ site</xref>.</p>
 Application Lifecycle Service as well as for server monitoring. The languages it can
 currently be used with are:</p>
 <ol>
-<li>
-<xref type="section" href="#topic5456/newrelic-ruby">Ruby</xref>
+            <li><xref href="#topic5456/new-relic-for-ruby" format="dita">Ruby</xref>
 </li>
-<li>
-<xref type="section" href="#topic5456/newrelic-python">Python</xref>
+            <li><xref href="#topic5456/new-relic-for-python" format="dita">Python</xref>
 </li>
-<li>
-<xref type="section" href="#topic5456/newrelic-java">Java</xref>
+            <li><xref href="#topic5456/new-relic-for-java" format="dita">Java</xref>
 </li>
-<li>
-<xref type="section" href="#topic5456/newrelic-php">PHP</xref>
+            <li><xref href="#topic5456/new-relic-for-php" format="dita">PHP</xref>
 </li>
 </ol>
 <p>In order to use New Relic, you need a <xref href="http://newrelic.com/" scope="external" format="html" >New Relic

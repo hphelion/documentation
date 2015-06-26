@@ -18,9 +18,7 @@
 <li>
 <xref type="section" href="#topic5696/service">Service User Accounts</xref>
 </li>
-<li>
-  <xref type="section" href="#topic5696/OpenStac">OpenStack Services</xref>
-</li>
+      <li><xref href="#topic5696/OpenStack" format="dita"/></li>
 <li>
 <xref type="section" href="#topic5696/Dashboard">Dashboard Services</xref>
 </li>

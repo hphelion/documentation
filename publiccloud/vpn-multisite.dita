@@ -105,7 +105,7 @@ IPsec Dead Peer Detection (DPD) will be enabled on the AWS Endpoint. We recommen
 - DPD Retries              : 3
 </codeph>
 </codeblock>
-<p>back to the <xref type="section" href="#topic13796/top">top</xref>
+<p>back to the <xref type="section" href="#topic13796">top</xref>
 </p>
 </section>
 <section id="configvpn"> <title>Configure the VPN for the IKE and IPsec proposals</title>
@@ -378,7 +378,7 @@ conn Site-C
 10.2.79.21 209.65.244.240 172.168.1.50 : PSK &amp;#8220; sitec&amp;#8221;
 </codeph>
 </codeblock>
-<p>back to the <xref type="section" href="#topic13796/top">top</xref>
+<p>back to the <xref type="section" href="#topic13796">top</xref>
 </p>
 </section>
 <section id="connect"> <title>Establish a connection with your HP Helion Public Cloud VPN</title>

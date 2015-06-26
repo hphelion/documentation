@@ -44,7 +44,13 @@
 </codeblock>
 </section>
 <section id="kato-data-users-exportimport-broken"> <title>Kato data users export/import broken</title>
-<p>The <b>kato data users export</b> and <b>kato data users import</b> commands, which save and load lists of users to and from CSV files, are non-functional in the current release. The <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-import" >kato data import</xref> and <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-export" type="section" scope="external"  >kato data export</xref> commands are still available for migrating users from one ALS installation to another.</p>
+<p>The <b>kato data users export</b> and <b>kato data users import</b> commands, which save and load
+        lists of users to and from CSV files, are non-functional in the current release. The  <xref
+          href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-import"
+          >kato data import</xref> and <xref
+          href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-export"
+          type="section" scope="external">kato data export</xref> commands are still available for
+        migrating users from one ALS installation to another.</p>
 </section>
 <section id="kato-node-reset-factory-with-nopasswd"> <title>Kato node reset factory with NOPASSWD</title>
 <p>The kato <b>node reset factory</b> command will not work if <b>NOPASSWD</b> has been set for the admin account in <i>/etc/sudoers</i>. To work around this, revert the change to <i>/etc/sudoers</i> before resetting or start over with a new ALS VM.</p>

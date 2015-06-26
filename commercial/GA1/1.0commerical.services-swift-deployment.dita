@@ -42,9 +42,7 @@
 <xref type="section" href="#topic13581/deploying-scale-out-Swift-object-nodes">Deploy the Scale-out Object Nodes</xref>
 </li>
       <li><xref href="#topic13581/verifying-deployed-Swift-nodes" format="dita"/></li>
-<li>
-<xref type="section" href="#topic13581/preparing-disks-on-Swift-nodes">Prepare the Disks on the Deployed Nodes</xref>
-</li>
+      <li><xref href="#topic13581/preparing-disks-on-swift-nodes" format="dita"/></li>
 <li>
 <xref type="section" href="#topic13581/creating-scale-out-object-ring">Create a New Scale-out Object Ring</xref>
 </li>
