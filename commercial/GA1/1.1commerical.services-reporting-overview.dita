@@ -65,7 +65,7 @@
 <xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-APIExtensions.dita" >API Extensions: HP Health Check API</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita#ceilandnova" type="section" scope="external"  >Managing Notifications from the Nova Service</xref>
+  <xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita#topic11470/ceilandnova" type="section">Managing Notifications from the Nova Service</xref>
 </li>
 <li>
 <xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita" >Best Practices and Performance Optimization</xref>
