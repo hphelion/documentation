@@ -46,7 +46,7 @@ If the Readme.txt does not list any overcloud nodes, the update is complete. -->
 </p>
 </li>
 <li>
-<p>Make sure a current backup of the management controller, controller0, and controller1 nodes exists, as described in <xref href="../../commercial/GA1/1.0commercial.backup-restore-GA.dita#overcloud" type="section" scope="external"  >Back Up and Restore</xref>.</p>
+  <p>Make sure a current backup of the management controller, controller0, and controller1 nodes exists, as described in <xref href="../../commercial/GA1/1.0commercial.backup-restore-GA.dita#topic18277/over" type="section">Back Up and Restore</xref>.</p>
 </li>
 <li>
 <p>Review the <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita" >update prerequisites</xref> and make sure all necessary tasks have been performed, including <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita#extract" type="section" scope="external"  >extracting the update scripts</xref>.</p>
