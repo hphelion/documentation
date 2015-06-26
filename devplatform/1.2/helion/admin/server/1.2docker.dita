@@ -26,7 +26,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/admin/server/1.2docker.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/server/docker/--></p>
-<p>Application Lifecycle Service's <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2architecture.dita#architecture-dea" type="section" scope="external"  >DEA role</xref> runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the <i>fence</i> process, which in turn uses
+  <p>Application Lifecycle Service's <xref href="../reference/1.2architecture.dita#topic4407/architecture-dea" type="section">DEA role</xref> runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the <i>fence</i> process, which in turn uses
 <xref href="http://docs.docker.io/en/latest/" scope="external" format="html" >Docker</xref> to create and destroy Linux
 containers on demand.</p>
 <p>Typically, admins will not have to work directly with Docker, but it is
@@ -47,71 +47,41 @@ accessible if needed to customize or create new container images.</p>
 </ul>
 <section id="modifying-or-updating-the-container-image"> <title>Modifying or Updating the Container Image</title>
 <p>Application containers are created from a base Docker image (a template used to create Linux containers). Admins can create new images to add specific software required by applications or update operating system packages.</p>
-<p>See also the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#upgrade-docker" type="section" scope="external"  >Upgrade the Docker Image</xref> section in the <xref href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita" >Best Practices</xref> reference, which shows how to modify the Docker base image <b>without</b> changing <i>kato config</i>.</p>
+<p>See also <xref
+  href="../best-practices/1.2index.dita#topic16169/upgrade-docker" type="section">Upgrade the Docker Image</xref> to modify the Docker base
+        image <b>without</b> changing <i>kato config</i>.</p>
 <p>To create a new base image for Application Lifecycle Service to use for application containers, perform the following steps <b>on all nodes running the DEA role</b>:</p>
 <ol>
-<li>
-<p>Start with an empty working directory:</p>
-
-<codeblock>
-<codeph>mkdir ~/newimg
-cd ~/newimg
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Check which image Application Lifecycle Service is currently using as an app container
-template:</p>
-
-<codeblock>
-<codeph>kato config get fence docker/images
-helion/stack/alsek
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create a <xref href="http://docs.docker.io/en/latest/use/builder/" scope="external" format="html" >Dockerfile</xref> which inherits the current Docker image, then runs an update or installation command. For example:</p>
-
-<codeblock>
-<codeph>FROM helion/stack-alsek:kato-patched
-RUN apt-get -y install libgraphite2-dev
-</codeph>
-</codeblock>
-
-<ul>
-<li>
-<xref href="http://docs.docker.io/en/latest/use/builder#from" type="section" scope="external" format="html" >FROM</xref>:
-inherits the environment and installed software from the latest patched version of the app image.</li>
-<li>
-<xref href="http://docs.docker.io/en/latest/use/builder#run" type="section" scope="external" format="html" >RUN</xref>:
-specifies arbitrary commands to run before saving the image.</li>
-<li>
-<xref href="http://docs.docker.io/en/latest/use/builder#add" type="section" scope="external" format="html" >ADD</xref>: could
-be used to copy files into the image.
-<!--A BR tag was used here in the original source.--></li>
-</ul>
-</li>
-<li>
-<p>Build the image. Set the maintainer's name and an image name:</p>
-
-<codeblock>
-<codeph>sudo docker build -rm -t exampleco/newimg .
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Configure Application Lifecycle Service to use the new image:</p>
-
-<p>
-<b>Note</b>: This step only needs to be done once, as the configuration change is shared with all nodes:</p>
-
-<codeblock>
-<codeph>kato config set fence docker/images exampleco/newimg
+<li> Start with an empty working directory:<codeblock>mkdir ~/newimg
+cd ~/newimg</codeblock></li>
+<li> Check which image Application Lifecycle Service is currently using as an app container
+          template:<codeblock>kato config get fence docker/images
+helion/stack/alsek</codeblock></li>
+<li> Create a <xref href="http://docs.docker.io/en/latest/use/builder/" scope="external"
+            format="html">Dockerfile</xref> which inherits the current Docker image and then runs an
+          update or installation command. For example:<codeblock>FROM helion/stack-alsek:kato-patched
+RUN apt-get -y install libgraphite2-dev</codeblock><ul>
+            <li>
+              <xref href="http://docs.docker.io/en/latest/use/builder#from" type="section"
+                scope="external" format="html">FROM</xref>: inherits the environment and installed
+              software from the latest patched version of the app image.</li>
+            <li>
+              <xref href="http://docs.docker.io/en/latest/use/builder#run" type="section"
+                scope="external" format="html">RUN</xref>: specifies arbitrary commands to run
+              before saving the image.</li>
+            <li>
+              <xref href="http://docs.docker.io/en/latest/use/builder#add" type="section"
+                scope="external" format="html">ADD</xref>: could be used to copy files into the
+              image. </li>
+          </ul></li>
+<li> Build the image. Set the maintainer's name and an image
+          name:<codeblock>sudo docker build -rm -t exampleco/newimg .</codeblock></li>
+<li> Configure Application Lifecycle Service to use the new image:<p>
+            <note>This step only needs to be done once, as the configuration change is shared with
+              all nodes:</note>
+          </p><codeblock>kato config set fence docker/images exampleco/newimg
 WARNING: Assumed type string
-exampleco/newimg
-</codeph>
-</codeblock>
-</li>
+exampleco/newimg</codeblock></li>
 </ol>
 </section>
 <section id="admin-hooks"> <title>Admin Hooks</title>
@@ -119,7 +89,7 @@ exampleco/newimg
 containers, global admin hooks can be set to run immediately after
 corresponding user-specified deployment hooks (pre-staging,
 post-staging, pre-running) set in application 
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >manifest.yml</xref> files.</p>
+<xref href="../../user/deploy/1.2manifestyml.dita" >manifest.yml</xref> files.</p>
 <p>These hooks must be:</p>
 <ul>
 <li>plain bash scripts with the executable bit set (<codeph>chmod +x</codeph>)</li>
@@ -193,8 +163,8 @@ f39d1b3f6fedc50e77875526352bd5a0f650a998dc1d7ca4e39c4a1eb8349e42</codeblock><p>T
             example:<codeblock>sudo docker build -rm -t api.paas.example.com:49156/exampleco/newimg .</codeblock><p>If
             the new image is simply an updated version of the default base image, you can tag the
             image <b>helion/stack-alsek:latest</b> (as described in the <xref
-              href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#bestpractices-ubuntu-security"
-              type="section" scope="external">Ubuntu Security Updates</xref> and skip the following
+              href="../best-practices/1.2index.dita#topic16169/bestpractices-ubuntu-security"
+              type="section">Ubuntu Security Updates</xref> and skip the following
             step.</p></li>
 <li> Push the newly built Docker image to the registry:<codeblock>sudo docker push api.paas.example.com:49156/exampleco/newimg</codeblock><p>
             <note>The <i>helion/stack/alsek</i> and <i>helion/base images</i> (approximately 1.9GB)
@@ -210,7 +180,7 @@ WARNING: Assumed type string
 api.paas.example.com:49156/exampleco/newimg</codeblock></li>
 </ol>
 <p>The <xref
-          href="../../../../../devplatform/1.2/helion/admin/best-practices/1.2index.dita#upgrade-docker"
+  href="../best-practices/1.2index.dita#topic16169/upgrade-docker"
           type="section" scope="external">Upgrade the Docker Image</xref> documentation explains how
         to modify the Docker base image without changing <i>kato config</i>.</p>
 </section>
