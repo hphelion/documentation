@@ -290,7 +290,7 @@ Servers which are created with the Public Cloud Console are automatically assign
 <p>A number of mechanisms exist which allow a user to retrieve information about a server and to associate meta-data with the server.</p>
 </section>
 <section id="ServerMetadata"> <title>2.1.5.1 Server Metadata</title>
-  <p>A server can have metadata in the form of key/value pairs. The initial value of a servers metadata is provided as a parameter to <xref type="section" href="#topic310608/createServer">Create Server</xref>. On Linux servers metadata provided when the server is created is available as a json object in the server's root filesystem at /meta.js. If the server has a <xref type="section" href="#topic310608/ConfigurationDrive">Configuration Drive</xref>, the metadata will be in the file /meta.js at the root of the file system on the configuration drive. A server's metadata can also be retrieved and updated using the <xref type="section" href="#topic310608/ServerMetadata">Server Metadata</xref> and <xref type="section" href="#topic310608/getMetadataItem">Server Metadata Item</xref> resources. Updates to a server's metadata are only available using subsequent calls to <xref type="section" href="#topic310608/ServerMetadata_listMetadata">Server List Metadata</xref> and <xref type="section" href="#topic310608/ServerMetadataItem">Server Get Metadata Item</xref>.</p>
+  <p>A server can have metadata in the form of key/value pairs. The initial value of a servers metadata is provided as a parameter to <xref type="section" href="#topic310608/createServer">Create Server</xref>. On Linux servers metadata provided when the server is created is available as a json object in the server's root filesystem at /meta.js. If the server has a <xref type="section" href="#topic310608/ConfigurationDrive">Configuration Drive</xref>, the metadata will be in the file /meta.js at the root of the file system on the configuration drive. A server's metadata can also be retrieved and updated using the <xref type="section" href="#topic310608/ServerMetadata">Server Metadata</xref> and <xref type="section" href="#topic310608/getMetadataItem">Server Metadata Item</xref> resources. Updates to a server's metadata are only available using subsequent calls to <xref type="section" href="#topic310608/ServerMetadata_listMetadata">Server List Metadata</xref> and <xref type="section" href="#topic310608/getMetadataItem">Server Get Metadata Item</xref>.</p>
 </section>
 <section id="Section2_1_5_3"> <title>2.1.5.3 CloudInit</title>
 <p>
@@ -938,7 +938,7 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com</p>
 <b>Server Metadata Item</b>
 </entry>
   <entry align="left">
-<xref type="section" href="#topic310608/ServerMetadataItem">Get Metadata Item</xref>
+    <xref type="section" href="#topic310608/getMetadataItem">Get Metadata Item</xref>
 </entry>
   <entry align="left">GET</entry>
   <entry align="left">/v2/{project_id}/servers/{server_id}/metadata/{key}</entry>
@@ -1085,7 +1085,7 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com</p>
 <b>Image Metadata Item</b>
 </entry>
   <entry align="left">
-<xref type="section" href="#topic310608/ImageMetadataItem">Get Metadata Item</xref>
+    <xref type="section" href="#topic310608/getImageMetadataItem">Get Image Metadata Item</xref>
 </entry>
   <entry align="left">GET</entry>
   <entry align="left">/v2/{project_id}/images/{image_id}/metadata/{key}</entry>
@@ -6346,7 +6346,7 @@ If an error occurs, the response body contains a description of the error.</p>
 </codeph>
 </codeblock>
 </section>
-<section id="getMetadataItem"> <title>4.4.1.29 Get Metadata Item</title>
+<section id="getImageMetadataItem"> <title>4.4.1.29 Get Image Metadata Item</title>
 </section>
 <section id="get-v2project-idimagesimage-idmetadatakey"> <title>GET /v2/{project_id}/images/{image_id}/metadata/{key}</title>
 <p>Retrieves a single metadata item by key.</p>
