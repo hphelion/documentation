@@ -83,7 +83,7 @@
 <p>A notation for structured text data, acronym for <xref href="http://en.wikipedia.org/wiki/JSON" scope="external" format="html" >JavaScript Object Notation</xref>.</p>
 </section>
 <section id="term-MBUS"> <title>MBUS</title>
-<p>Application Lifecycle Service's implementation of an <xref href="http://tools.ietf.org/html/rfc3259" scope="external" format="html" >RFC 3259</xref> message queue used  for interprocess communication. See also: <xref type="section" href="#topic6187/term-nats">NATS</xref>.</p>
+<p>Application Lifecycle Service's implementation of an <xref href="http://tools.ietf.org/html/rfc3259" scope="external" format="html" >RFC 3259</xref> message queue used  for interprocess communication. See also: <xref type="section" href="#topic6187/term-NATS">NATS</xref>.</p>
 </section>
 <section id="term-memcached"> <title>memcached</title>
 <p>Free &amp; open source, high-performance, distributed memory object
