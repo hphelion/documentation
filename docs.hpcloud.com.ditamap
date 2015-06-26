@@ -1866,9 +1866,11 @@
       <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting-overcloud.dita"
       />
     </topicref>
+    <!--commenting out to prevent broken link errors
     <topichead navtitle="HP Helion OpenStack Carrier Grade Administrator Guide">
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
     </topichead>
+    commenting out to prevent broken link errors -->
     <topichead
       navtitle="HP Helion OpenStack Carrier Grade (Beta): Reference Deployment Scenarios Guide">
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
