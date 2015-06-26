@@ -306,7 +306,7 @@
 </ol>
 <p>Follow the steps described in the installation instructions to deploy the overcloud nodes.</p>
 <p>
-  <xref href="1.1commercial.install-GA-kvm.dita#startseed" type="section" scope="external" >HP <tm tmtype="reg">Helion OpenStack</tm> Installation and Configuration for KVM Hypervisor</xref>
+    <xref href="1.1commercial.install-GA-kvm.dita#topic7417/startseed" type="section">HP <tm tmtype="reg">Helion OpenStack</tm> Installation and Configuration for KVM Hypervisor</xref>
 </p>
 <p>
   <xref href="1.1commercial.install-GA-esx.dita#startseed" type="section" scope="external" >HP <tm tmtype="reg">Helion OpenStack</tm> Installation and Configuration for ESX Hypervisor</xref>
