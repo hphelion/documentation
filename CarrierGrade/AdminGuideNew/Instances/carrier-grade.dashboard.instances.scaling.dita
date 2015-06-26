@@ -56,11 +56,11 @@ range) for the resource.</li>
 <li>
 <p>Launch the Horizon Dashboard.</p>
 
-<p>Specify the URL for the appropriate server environment, either the hLinux servers or Wind River Linux servers:</p>
+<p>Specify the URL for the appropriate server environment, either the Non-KVM servers or KVM servers:</p>
 
 <codeblock>
-<codeph>hLinux: &lt;IP_address&gt;/horizon/auth/login/
-Wind River Linux: &lt;IP_address&gt;/auth/login/
+<codeph>Non-KVM: &lt;IP_address&gt;/horizon/auth/login/
+KVM: &lt;IP_address&gt;/auth/login/
 </codeph>
 </codeblock>
 </li>
@@ -79,7 +79,7 @@ Wind River Linux: &lt;IP_address&gt;/auth/login/
 </ol>
 </section>
 <section id="set-the-maximum-vcpu-using-horizon"> <title>Set the maximum scaling range using Horizon</title>
-<p>For flavors on Wind River Linux servers, you can set the minimum number of vCPUs.</p>
+<p>For flavors on KVM servers, you can set the minimum number of vCPUs.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>

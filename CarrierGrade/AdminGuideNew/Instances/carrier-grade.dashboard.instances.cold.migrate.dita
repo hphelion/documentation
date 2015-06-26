@@ -18,8 +18,8 @@
 <ul>
 <li>Live migration. Almost no downtime. Useful when the instances must be kept running during the migration. For more information, see <xref href="../Instances/carrier-grade.dashboard.instances.live.migrate.dita" >Live Migration of Virtual Machines</xref>.</li>
 </ul>
-<section id="migrate-an-instance-on-an-hlinux-server"> <title>Migrate an instance on an hLinux server</title>
-<p>Instances on hLinux servers can be migrated</p>
+<section id="migrate-an-instance-on-an-Non-KVM-server"> <title>Migrate an instance on an Non-KVM server</title>
+<p>Instances on Non-KVM servers can be migrated</p>
 <p>To migrate an instance:</p>
 <ol>
 <li>
@@ -37,8 +37,8 @@
 </li>
 </ol>
 </section>
-<section id="migrate-an-instance-on-a-wind-river-linux-server"> <title>Migrate an instance on a Wind River Linux server</title>
-<p>Instances on Wind River Linux servers can be migrated</p>
+<section id="migrate-an-instance-on-a-wind-river-linux-server"> <title>Migrate an instance on a KVM server</title>
+<p>Instances on KVM servers can be migrated</p>
 <p>To migrate an instance:</p>
 <ol>
 <li>

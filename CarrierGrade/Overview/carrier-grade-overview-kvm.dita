@@ -19,7 +19,7 @@
  <!--./CarrierGrade/Overview/carrier-grade-overview-wr.md-->
  <!--permalink: /helion/openstack/carrier/wr/overview/--></p>
 <!-- Taken from http://www.windriver.com/products/titanium-server/ -->
-<p>The HP Helion OpenStack Carrier Grade KVM environment is based on Wind River Linux.  The KVM
+<p>The HP Helion OpenStack Carrier Grade KVM environment is based on KVM.  The KVM
       environment is a high-performance, high-availability, cloud operating system that enables
       telecommunications operators to use Commercial-off-the-shelf (COTS) hardware to manage
       Virtualized Network Functions (VNF) within a carrier grade Network Function Virtualization

@@ -18,12 +18,12 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-wr.md-->
  <!--permalink: /helion/openstack/carrier/admin/stacks/wr/--></p>
-<p>Several extensions to Heat are included with  Wind River Linux.</p>
+<p>Several extensions to Heat are included with  KVM.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>The  Wind River Linux Extensions are compatible with both HOT format and CFN format:</p>
+<p>The  KVM Extensions are compatible with both HOT format and CFN format:</p>
 <ul>
 <li>
 <xref type="section" href="#topic9186/nic">Multiple NIC Support</xref>
@@ -257,10 +257,10 @@ LaunchConfig:
 <b>Note:</b> This example uses AWS autoscaling resources and CFN format, but autoscaling is not limited to CFN templates. You can use AWS resources and OS (<tm tmtype="reg">OpenStack</tm> resources in any combination in either CFN or HOT templates.</p>
 </section>
 <section id="metrics"> <title>Improved Metrics Communication</title>
-<p>Wind River Linux addresses reliability issues with the <tm tmtype="reg">OpenStack</tm> Havana implementation of cfn-push-stats, ensuring that guest instances can successfully pass Ceilometer metrics to the Controller.</p>
+<p>KVM addresses reliability issues with the <tm tmtype="reg">OpenStack</tm> Havana implementation of cfn-push-stats, ensuring that guest instances can successfully pass Ceilometer metrics to the Controller.</p>
 </section>
 <section id="pass"> <title>Relaxed Requirements for Passing User Data</title>
-<p>The property <codeph>UserDataType</codeph> is a Wind River Linux template extension that you can
+<p>The property <codeph>UserDataType</codeph> is a KVM template extension that you can
                 use to pass user data to an instance even if the instance does not have
                     <codeph>cloud-init</codeph> installed. For more information, see <xref
                     href="carrier-grade-admin-wr-stacks-user-data.dita">Customizing Guest Images

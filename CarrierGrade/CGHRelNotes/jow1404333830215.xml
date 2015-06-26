@@ -141,10 +141,10 @@
             <p>The following Guest OSs are supported by HP Helion OpenStack Carrier Grade:</p>
             <ul>
                 <li>
-                    <p>Wind River Linux 6.0</p>
+                    <p>KVM 6.0</p>
                 </li>
                 <li>
-                    <p>Wind River Linux 5.0</p>
+                    <p>KVM 5.0</p>
                 </li>
                 <li>
                     <p>CentOS 6.4</p>

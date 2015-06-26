@@ -144,17 +144,17 @@
             <row>
               <entry>Resource Usage</entry>
               <entry> Tools for performing Ceilometer database queries using real-time or collected
-                data, to support detailed performance analysis. *Wind River Linux servers only*
+                data, to support detailed performance analysis. *KVM servers only*
               </entry>
             </row>
             <row>
               <entry>Inventory</entry>
               <entry>Controls for managing systems, hosts, and standardized CPU, port, or storage
-                profiles that can be applied to hosts. *Wind River Linux servers only* </entry>
+                profiles that can be applied to hosts. *KVM servers only* </entry>
             </row>
             <row>
               <entry>Host Aggregates</entry>
-              <entry>Charts for monitoring hypervisor resource usage on compute nodes. *hLinux
+              <entry>Charts for monitoring hypervisor resource usage on compute nodes. *Non-KVM
                 servers only* </entry>
             </row>
             <row>
@@ -168,7 +168,7 @@
             <row>
               <entry>Server Groups</entry>
               <entry>Controls for managing server groups across all tenants. Server groups are
-                collections of instances sharing common attributes. *Wind River Linux servers only*
+                collections of instances sharing common attributes. *KVM servers only*
               </entry>
             </row>
             <row>
@@ -205,11 +205,11 @@
             </row>
             <row>
               <entry>Fault Management</entry>
-              <entry>System alarms. *Wind River Linux servers only* </entry>
+              <entry>System alarms. *KVM servers only* </entry>
             </row>
             <row>
               <entry>System Configuration</entry>
-              <entry>System configuration updates. *Wind River Linux servers only* </entry>
+              <entry>System configuration updates. *KVM servers only* </entry>
             </row>
             <row>
               <entry>System Info</entry>

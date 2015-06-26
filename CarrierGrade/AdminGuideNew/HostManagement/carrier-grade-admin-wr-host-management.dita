@@ -64,7 +64,7 @@
 <xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
 
 <ul>
-<li>Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.</li>
+<li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>
 </ul>
 </li>
 <li>
