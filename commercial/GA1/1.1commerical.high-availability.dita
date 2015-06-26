@@ -91,9 +91,8 @@
 <xref type="section" href="#topic21283/compute-with-kvm">Compute with KVM</xref>
 
 <ul>
-<li>
-<xref type="section" href="#topic21283/nova-availability-zones">Nova availability zones</xref>
-</li>
+<li><xref href="1.1.1commerical.high-availability.dita#topic21822/nova-availability-zone"/>
+              </li>
 </ul>
 </li>
 <li>

@@ -330,9 +330,11 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 </section>
 <section id="reconfigure-update"> <title>Reconfigure and update cloud</title>
 <ol>
-<li>
-<xref type="section" href="#topic21033/generate-storevirtual-config">Generate StoreVirtual backend configuration JSON</xref>
-</li>
+<li><xref
+            href="#topic21033/generate-storevirtual-backend-configuration-json-generate-storevirtual-config"
+            format="dita">Generate StoreVirtual
+            backend configuration JSON</xref>
+        </li>
 <li>
 <xref type="section" href="#topic21033/generate-storeserv-config">Generate StoreServ backend configuration JSON</xref>
 </li>

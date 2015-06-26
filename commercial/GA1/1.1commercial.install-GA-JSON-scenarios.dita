@@ -36,7 +36,13 @@
 </ul>
 <section id="kvm"> <title>Configuration variables file for a KVM install</title>
 <p>Identify the configuration variables required for the installation based on the deployment scenario.</p>
-<p>If you plan to use custom IP addresses in your HP <tm tmtype="reg">Helion OpenStack</tm> deployment, open the JSON file in the installation package named <codeph>kvm-custom-ips.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic9174/env">Definition of Environment variables used during install</xref>.</p>
+<p>If you plan to use custom IP addresses in your HP <tm tmtype="reg">Helion OpenStack</tm>
+                deployment, open the JSON file in the installation package named
+                    <codeph>kvm-custom-ips.json</codeph> and edit the following environment
+                variables. Save the file on the seed cloud host (installation system). The variables
+                are defined in <xref
+                    href="1.1commercial.install-GA-JSON.dita#topic20151/definition-of-environment-variables"
+                />  used during install</p>
 <p>All VLAN ID's &amp; IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.</p>
 <ol>
 <li>
@@ -143,7 +149,13 @@
 </ul>
 </section>
 <section id="esxone"> <title>Deployment Scenario 1: HP <tm tmtype="reg">Helion OpenStack</tm> Deployment with custom IP addresses</title>
-<p>If you plan to use custom IP addresses in your HP <tm tmtype="reg">Helion OpenStack</tm> deployment, open the JSON file in the installation package named <codeph>esx-custom-ips.json</codeph> and edit the following configuration variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic9174/env">Definition of Environment variables used during install</xref>.</p>
+<p>If you plan to use custom IP addresses in your HP <tm tmtype="reg">Helion OpenStack</tm>
+                deployment, open the JSON file in the installation package named
+                    <codeph>esx-custom-ips.json</codeph> and edit the following configuration
+                variables. Save the file on the seed cloud host (installation system). The variables
+                are defined in <xref
+                    href="1.1commercial.install-GA-JSON.dita#topic20151/definition-of-environment-variables"
+                /> used during install.</p>
 <p>All VLAN ID's &amp; IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.</p>
 <ol>
 <li>
@@ -209,7 +221,13 @@
 </ol>
 </section>
 <section id="esxtwo"> <title>Deployment Scenario 2: HP <tm tmtype="reg">Helion OpenStack</tm> Deployment with custom IP addresses and a VLAN provider Network for external access</title>
-<p>If you intend to use custom IP addresses and a VLAN provider network for external access in your HP <tm tmtype="reg">Helion OpenStack</tm> deployment, open the JSON file in the installation package named <codeph>esx-custom-ips-vlan.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic9174/env">Definition of Environment variables used during install</xref>.</p>
+<p>If you intend to use custom IP addresses and a VLAN provider network for external access in your
+                HP <tm tmtype="reg">Helion OpenStack</tm> deployment, open the JSON file in the
+                installation package named <codeph>esx-custom-ips-vlan.json</codeph> and edit the
+                following environment variables. Save the file on the seed cloud host (installation
+                system). The variables are defined in  <xref
+                    href="1.1commercial.install-GA-JSON.dita#topic20151/definition-of-environment-variables"
+                /> used during install.</p>
 <p>All VLAN ID's &amp; IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.</p>
 <ol>
 <li>

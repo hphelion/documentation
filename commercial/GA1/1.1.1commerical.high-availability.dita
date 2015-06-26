@@ -75,7 +75,8 @@
 <li>
 <xref type="section" href="#topic21822/sherpa">Sherpa</xref> </li>
 <li>
-<xref type="section" href="#topic21822/nova-console-auth">nova-consoleauth</xref> </li>
+                <xref href="#topic21822/nova-consoleauth" format="dita">nova-consoleauth</xref>
+              </li>
 </ul>
 </li>
 <li>
@@ -95,8 +96,8 @@
 
 <ul>
 <li>
-<xref type="section" href="#topic21822/nova-availability-zones">Nova availability zones</xref>
-</li>
+                <xref href="#topic21822/nova-availability-zone" format="dita"/>
+              </li>
 </ul>
 </li>
 <li>
@@ -353,8 +354,9 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 <xref type="section" href="#topic21822/compute-with-kvm">Compute with KVM</xref>
 </li>
 <li>
-<xref type="section" href="#topic21822/nova-availability-zones">Nova availability zones</xref>
-</li>
+          <xref href="#topic21822/nova-availability-zone" format="dita">Nova availability
+            zones</xref>
+        </li>
 <li>
 <xref type="section" href="#topic21822/compute-with-esx">Compute with ESX</xref>
 </li>
@@ -366,9 +368,6 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 </li>
 <li>
 <xref type="section" href="#topic21822/object-storage">Object Storage with Swift</xref>
-</li>
-<li>
-<xref type="section" href="#topic21822/networking">Networking</xref>
 </li>
 </ul>
 </section>

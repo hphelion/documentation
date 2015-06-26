@@ -158,7 +158,11 @@ sudo poweroff
 </section>
 <section id="deploy-the-proxy"> <title>Deploy the proxy</title>
 <p>Use the following steps to instantiate and run a copy of the VM template on each server.</p>
-<p>Perform the following steps on the undercloud node using the <xref type="section" href="#topic8887/deploy_cli">EON CLI</xref> or the <xref type="section" href="#topic8887/deploy_ui">Horizon dashboard</xref>.</p>
+<p>Perform the following steps on the undercloud node using the <xref
+          href="#topic8887/deploy-the-proxy-using-the-eon-cli-" format="dita">EON CLI</xref> or the
+          <xref href="#topic8887/deploy-the-proxy-using-the-undercloud-horizon-dashboard-"
+          format="dita">Horizon
+        dashboard</xref>.</p>
 </section>
 <section id="deploy-the-proxy-using-the-undercloud-horizon-dashboard-"> <title>Deploy the proxy using the undercloud Horizon dashboard <!--Removed anchor point deploy_ui--><!-- id="deploy_ui" --></title>
 <p>To deploy the ESX compute proxy using the undercloud Horizon dashboard, see the <xref href="../../commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita#register-vcenter" type="section" scope="external"  >Register vCenter section</xref> of the Virtual Environments document.</p>

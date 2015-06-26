@@ -41,11 +41,9 @@
 <xref type="section" href="#topic7061/vcenter-commands">vCenter Commands</xref>
 </li>
 <li>
-<xref type="section" href="#topic7061/cluster-commands">Cluster Commands</xref>
-</li>
-<li>
-<xref type="section" href="#topic7061/proxy-command">Compute Proxy Commands</xref>
-</li>
+        <xref href="#topic7061/cluster-command" format="dita">Cluster Commands</xref>
+      </li>
+<li><xref href="#topic7061/proxy-command" format="dita"/></li>
 <li>
 <xref type="section" href="#topic7061/required-arguments">Required Commands</xref>
 </li>

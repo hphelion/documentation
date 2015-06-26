@@ -37,9 +37,6 @@
 <xref type="section" href="#topic7915/configure-neutron-agents">Configure Neutron agents</xref>
 </li>
 <li>
-<xref type="section" href="#topic7915/ha-nic">HA / NIC bonding features</xref>
-</li>
-<li>
 <xref type="section" href="#topic7915/tracking-masked-ip">Tracking masked IP addresses</xref>
 </li>
 <li>

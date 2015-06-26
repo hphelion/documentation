@@ -53,29 +53,32 @@
 <xref type="section" href="#topic29241/dynamic-dns">Dynamic DNS</xref>
 </li>
 <li>
-<xref type="section" href="#topic29241/alternate-dns-techniques">Alternate DNS Techniques</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic29241/xip-io">xip.io</xref>
-</li>
-<li>
-<xref type="section" href="#topic29241/dnsmasq">dnsmasq</xref>
-</li>
-<li>
-<xref type="section" href="#topic29241/adding-dns-nameservers">Adding DNS Nameservers</xref>
-</li>
-<li>
-<xref type="section" href="#topic29241/tcp-udp-port-configuration">TCP/UDP Port Configuration</xref>
-</li>
-<li>
-<xref type="section" href="#topic29241/http-proxy">HTTP Proxy</xref>
-</li>
-<li>
-<xref type="section" href="#topic29241/staging-cache-app-http-proxy">Staging Cache &amp; App HTTP Proxy</xref>
-</li>
-</ul>
-</li>
+            <xref href="#topic29241/alternate-dns-techniques-alternate-dns-techniques" format="dita"
+              >Alternate DNS Techniques</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic29241/xip-io">xip.io</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic29241/dnsmasq">dnsmasq</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic29241/adding-dns-nameservers">Adding DNS
+                  Nameservers</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic29241/tcp-udp-port-configuration">TCP/UDP Port
+                  Configuration</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic29241/http-proxy">HTTP Proxy</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic29241/staging-cache-app-http-proxy">Staging Cache
+                  &amp; App HTTP Proxy</xref>
+              </li>
+            </ul>
+          </li>
 <li>
 <xref type="section" href="#topic29241/vm-filesystem-setup">VM Filesystem Setup</xref>
 </li>
@@ -222,13 +225,11 @@ internal servers. If you follow this convention, your Application Lifecycle Serv
 will obtain an appropriate IP address automatically. DNS at your site
 may establish a similar convention, which you will want to follow when
 making any name or address changes within the cluster.</p>
-<p>Having determined the hostnames of cluster nodes to be managed by
-<xref type="section" href="#topic29241/server-config-dns">
-<i>DNS</i>
-</xref>, the hostname on the primary node should be
-set using <xref type="section" href="#topic29241/server-config-hostname">
-<i>kato node rename</i>
-</xref>.</p>
+<p>Having determined the hostnames of cluster nodes to be managed by <xref href="#topic29241/dns"
+          format="dita"/> , the hostname on the primary node should be set using <xref
+          type="section" href="#topic29241/server-config-hostname">
+          <i>kato node rename</i>
+        </xref>.</p>
 <p>Finally, if you must set a static IP on any cluster node, be sure to
 test it before making the change permanent, otherwise you may not be
 able to reach the node once it reboots. Assuming that the primary

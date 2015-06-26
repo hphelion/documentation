@@ -292,8 +292,9 @@ When you experience a crash, always check for corrupted data. Before you restart
 <xref type="section" href="#topic39140/ephemeral-fail-unmount">Ephemeral partition fails to unmount</xref>
 </li>
 <li>
-<xref type="section" href="#topic39140/BIOS-clocks-are-not-set-to-correct-date">BIOS clocks are not set to correct date and time across all nodes</xref>
-</li>
+          <xref href="#topic39140/bios-clocks-are-not-set-to-correct-date" format="dita">BIOS clocks
+            are not set to correct date and time across all nodes</xref>
+        </li>
 <li>
 <xref type="section" href="#topic39140/ilo-console">iLO console shows hLinux daemon.err tgtd while PXE booting</xref>
 </li>

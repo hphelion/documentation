@@ -321,8 +321,9 @@ Any one of the controller servers can be shut down for a short duration for main
 <xref type="section" href="#topic21968/compute-with-kvm">Compute with KVM</xref>
 </li>
 <li>
-<xref type="section" href="#topic21968/nova-availability-zones">Nova availability zones</xref>
-</li>
+          <xref href="#topic21968/nova-availability-zone" format="dita">Nova availability
+            zones</xref>
+        </li>
 <li>
 <xref type="section" href="#topic21968/compute-with-esx">Compute with ESX</xref>
 </li>
@@ -334,9 +335,6 @@ Any one of the controller servers can be shut down for a short duration for main
 </li>
 <li>
 <xref type="section" href="#topic21968/object-storage">Object Storage with Swift</xref>
-</li>
-<li>
-<xref type="section" href="#topic21968/networking">Networking</xref>
 </li>
 </ul>
 </section>
