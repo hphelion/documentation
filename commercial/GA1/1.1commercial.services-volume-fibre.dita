@@ -232,7 +232,7 @@
 </codeblock>
 </li>
 </ul>
-<p>You can also configure <xref type="section" href="#topic8246/configure-hp-3par-brocade">HP 3PAR Storeserv</xref> as storage backend with Brocade Zone Manager.</p>
+<p>You can also configure <xref type="section" href="#topic8246/steps">HP 3PAR Storeserv</xref> as storage backend with Brocade Zone Manager.</p>
 </section>
 <section id="configure-hp-3par-storeserv-as-a-storage-backend-with-brocade-zone-manager"> <title>Configure HP 3PAR Storeserv as a storage backend with Brocade Zone Manager</title>
 <p>This section explains the configuration of HP 3PAR Storeserv as a storage backend with Brocade Zone Manager.</p>

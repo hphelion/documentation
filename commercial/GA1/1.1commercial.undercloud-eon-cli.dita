@@ -158,7 +158,7 @@
 </codeph>
 </codeblock>
 </section>
-<section id="cluster-command"> <title>Cluster Commands<!--Removed anchor point cluster-command--><!-- id="cluster-command" --></title>
+<section id="cluster-commands"> <title>Cluster Commands<!--Removed anchor point cluster-command--><!-- id="cluster-command" --></title>
 </section>
 <section id="list-clusters"> <title>List clusters<!--Removed anchor point list-clusters--><!-- id="list-clusters" --></title>
 <p>You can view the list of clusters available for the given vCenter.</p>

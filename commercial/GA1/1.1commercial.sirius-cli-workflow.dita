@@ -331,7 +331,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 <section id="reconfigure-update"> <title>Reconfigure and update cloud</title>
 <ol>
 <li>
-<xref type="section" href="#topic21033/generate-storevirtual-config">Generate StoreVirtual backend configuration JSON</xref>
+  <xref type="section" href="#topic21033/generate-storevirtual-backend-configuration-json">Generate StoreVirtual backend configuration JSON</xref>
 </li>
 <li>
 <xref type="section" href="#topic21033/generate-storeserv-config">Generate StoreServ backend configuration JSON</xref>
@@ -347,7 +347,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 </ol>
 <p>The backends configured in the undercloud Sirius database will not be effective until the overcloud Cinder configuration is updated.</p>
 </section>
-<section id="generate-storevirtual-backend-configuration-json-generate-storevirtual-config"> <title>Generate StoreVirtual backend configuration JSON {generate-storevirtual-config}</title>
+<section id="generate-storevirtual-backend-configuration-json"> <title>Generate StoreVirtual backend configuration JSON</title>
 <p>You can download the Cinder configuration relevant to HP StoreVirtual for your cloud once you create the backend.</p>
 <p>To generate StoreVirtual backend configuration JSON, enter the following command</p>
 <codeblock>
