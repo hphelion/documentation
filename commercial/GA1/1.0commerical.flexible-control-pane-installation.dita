@@ -35,7 +35,7 @@ As you read in the <xref href="../../commercial/GA1/1.0commerical.flexible-contr
 <p>Before you can install the Flexible Control Plane, you will need to:</p>
 <ul>
 <li>
-<xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita#prereq" type="section" scope="external"  >Review prerequisites and configure the infrastructure</xref> accordingly</li>
+  <xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita#topic9437/prereq" type="section">Review prerequisites and configure the infrastructure</xref> accordingly</li>
 <li>
 <xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita#configfiles" type="section" scope="external"  >Create configuration files</xref>
 </li>
