@@ -1762,6 +1762,8 @@
   
   <!-- Carrier Grade -->
   
+  <!-- G.Larsen Commenting our Carrier Grade to prevent broken build errors
+  
   <topicref href="CarrierGrade/carrier-grade-index.dita">
     <topichead navtitle="HP Helion Carrier Grade 1.1: KVM Region Release Notes">
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333830215.xml"/>
@@ -1866,13 +1868,15 @@
       <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting-overcloud.dita"
       />
     </topicref>
+    <!- -commenting out to prevent broken link errors
     <topichead navtitle="HP Helion OpenStack Carrier Grade Administrator Guide">
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
     </topichead>
+    commenting out to prevent broken link errors - ->
     <topichead
       navtitle="HP Helion OpenStack Carrier Grade (Beta): Reference Deployment Scenarios Guide">
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
-        <!-- topicref href="jow1410639575680.xml"/  Pktgen Scenario removed 2014-09-19 -->
+        <!- - topicref href="jow1410639575680.xml"/  Pktgen Scenario removed 2014-09-19 - ->
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638776646.xml"/>
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638924240.xml"/>
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1411430962060.xml"/>
@@ -1885,9 +1889,9 @@
           <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333723047.xml"/>
           <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333728991.xml"/>
           <topicref href="CarrierGrade/DeploymentScenarios3/jow1424192677556.xml"/>
-          <!-- Removing from map until needed for GA release
+          <!- - Removing from map until needed for GA release
                   <topicref href="rst1433175643400.xml"/>
-            </topicref>-->
+            </topicref>- ->
           <topicref href="CarrierGrade/DeploymentScenarios3/rst1432665605712.xml"/>
           <topicref href="CarrierGrade/DeploymentScenarios3/jow1410637938926.xml"/>
           <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333714134.xml"/>
@@ -1920,4 +1924,6 @@
       </topicref>
     </topichead>
   </topicref> 
+  
+  G.Larsen Commenting our Carrier Grade to prevent broken build errors -->
 </map>
