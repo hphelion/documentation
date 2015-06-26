@@ -24,7 +24,7 @@
                 provided. You can use them in different combinations to evaluate the effect on
                 latency and throughput.</p>
             <note id="note_N1026A_N1023A_N101F8_N101C8_N101A0_N100E4_N10024_N10001" ixia_locid="198">
-                For a Layer-2 DPDK bridge, the bridged ports must be configured for AVP. For a Linux bridge, they can be configured for virtio or AVP.
+                <p>For a Layer-2 DPDK bridge, the bridged ports must be configured for AVP. For a Linux bridge, they can be configured for virtio or AVP.</p>
             </note>
         </context>
         <prereq id="prereq_N10074_N10029_N10001" ixia_locid="226">
