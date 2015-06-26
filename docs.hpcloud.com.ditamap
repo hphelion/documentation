@@ -158,7 +158,7 @@
           href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita"/>
       </topicref>
       <!--Ceph stuff-->
-      <topicref href="commercial/GA1/1.1commercial.ceph-overview.dita">
+      <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita">
         <topicref href="commercial/GA1/ceph/1.1commerical.services-ceph-archref.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-pre-requisite.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita"/>
@@ -187,7 +187,7 @@
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-related-topics.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"/>
         <topicref
-          href="commercial/GA1/1.1commenrcial.ceph-configuration-recovery-and-backup-procedure-helion-nodes.dita"
+          href="commercial/GA1/ceph/1.1commenrcial.ceph-configuration-recovery-and-backup-procedure-helion-nodes.dita"
           navtitle="Ceph Backup and Recovery" locktitle="yes"/>
       </topicref>
         

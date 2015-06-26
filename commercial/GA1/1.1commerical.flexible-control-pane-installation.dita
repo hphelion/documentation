@@ -323,7 +323,7 @@ bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh \
 </ul>
 </section>
 <section id="addnodes"> <title>Adding Additional Overcloud Compute Nodes</title>
-<p>For more information, see: <xref href="1.1commercial.technical-overview.ga.dita#add-remove-replace-nodes" type="section" scope="external" >Add, remove and replace nodes</xref>.</p>
+  <p>For more information, see: <xref href="1.1commerical.flexible-control-pane-overview.dita#add-remove-replace-nodes" type="section" scope="external" >Add, remove and replace nodes</xref>.</p>
 </section>
 <section id="knownissues"> <title>Known Issues and Resolutions</title>
 </section>
