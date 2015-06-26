@@ -9,6 +9,14 @@ available in the base directory of this Oxygen Webhelp plugin.
 
 @import "print.css";
 
+/* Changing font to HP Siplified PFletcher 6/26/2015 */
+@font-face {
+    font-family: HPSimplified;
+    src: url(HPSimplified-Rg.ttf);
+}
+body {
+    font-family: HPSimplified !important;
+}
 /* Changing topic background to $hp-gray-5: #f2f2f2 PFletcher 6/11/15 */
 /* Reverted back to white per Dionysia's request 6/17/15 - JSB */
 body {
