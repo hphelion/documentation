@@ -52,11 +52,8 @@ When using the ESX hypervisor, the only supported hypervisor is VMware Vsphere. 
 </p>
 
 <ul>
-<li>
-<xref type="section" href="#topic10334/unimport-a-cluster">Unimport a Single Cluster</xref> </li>
-<li>
-<xref type="section" href="#topic10334/unimport-multiple-clusters">Unimport Multiple Clusters</xref>
-</li>
+<li> Unimport a Single Cluster </li>
+<li> Unimport Multiple Clusters </li>
 </ul>
 </li>
 <li>
@@ -171,14 +168,10 @@ The following information is displayed:</p>
 <p>With a help of single command you can unregister a single or multiple vCenter(s).</p>
 <ul>
 <li>
-<p>
-<xref type="section" href="#topic10334/unregister-a-vCenter">Unregister a Single vCenter</xref>
-</p>
+<p>Unregister a Single vCenter </p>
 </li>
 <li>
-<p>
-<xref type="section" href="#topic10334/unregister-multiple-vCenter">Unregister Multiple vCenters</xref>
-</p>
+<p>Unregister Multiple vCenters </p>
 </li>
 </ul>
 <p>
@@ -308,14 +301,10 @@ OR</p>
 <p>You can unimport multiple clusters or a single cluster with a single command.</p>
 <ul>
 <li>
-<p>
-<xref type="section" href="#topic10334/unimport-a-cluster">Unimport a single cluster</xref>
-</p>
+<p> Unimport a single cluster </p>
 </li>
 <li>
-<p>
-<xref type="section" href="#topic10334/unimport-multiple-clusters">Unimport multiple clusters</xref>
-</p>
+<p> Unimport multiple clusters </p>
 </li>
 </ul>
 <p>
