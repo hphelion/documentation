@@ -29,9 +29,10 @@
 <li>
 <xref type="section" href="#topic9275/config">Generate configuration files</xref>
 </li>
-<li>
-<xref type="section" href="#topic9275/install">Include the configuration files in the installation</xref>
-</li>
+            <li><xref href="#topic9275/connect" format="dita"/></li>
+            <li><xref href="#topic9275/keystone" format="dita"/></li>
+            <li><xref href="#topic9275/per-domain-ldap-backend-configuration-post-installation"
+                    format="dita"/></li>
 </ul>
 <section id="pre"> <title>Prerequisites</title>
 <p>Before starting the integration, make sure your environment meets the following prerequisite:</p>
