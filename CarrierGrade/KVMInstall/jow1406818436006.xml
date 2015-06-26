@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE referable-content PUBLIC "-//IXIA//DTD DITA Referable-Content//EN" "../../system/dtd/ixia/referable-content.dtd">
+<referable-content id="jow1406818436006" xml:lang="en-us">
+<title ixia_locid="55">Conref step: Open the Hosts list</title>
+<rcbody>
+        <step id="step_N1002A_N10027_N1001B_N10001" ixia_locid="54">
+            <cmd id="open-hosts-lists-cmd" ixia_locid="41">Open the <uicontrol ixia_locid="42">Hosts</uicontrol> list.</cmd>
+            <info ixia_locid="43">
+                <p ixia_locid="44">On the <uicontrol ixia_locid="45">Admin</uicontrol> tab, in the
+                        <uicontrol ixia_locid="46">System Panel</uicontrol> section, click
+                        <uicontrol ixia_locid="47">Inventory</uicontrol>, and then select the
+                        <uicontrol ixia_locid="48">Hosts</uicontrol> tab.</p>
+            </info>
+        </step>
+    </rcbody>
+</referable-content>

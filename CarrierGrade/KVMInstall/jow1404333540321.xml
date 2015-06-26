@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr ditaarch:DITAArchVersion="1.2" id="jow1404333540321" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Initializing and Configuring Storage Nodes</title>
+    <shortdesc ixia_locid="2">You can assign a new host as a storage node to provide object
+        storage.</shortdesc>
+    <prolog>
+        <author ixia_locid="4">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N10022_N1001F_N10001" ixia_locid="81">
+            <note id="note_N10026_N10022_N1001F_N10001" ixia_locid="82">
+                <p ixia_locid="83">Storage nodes are required only if the system is configured to
+                    use Ceph storage. For more information, see <xref href="jow1419267663457.xml#jow1419267663457/section_N10032_N1001C_N10001" ixia_locid="98">Storage Requirements</xref>.</p>
+            </note>
+        </context>
+        <prereq conref="jow1404333506062.xml#jow1404333506062/prerequisites" id="prereq_N10023_N10020_N10001" ixia_locid="5"/>
+        <steps id="steps_nvd_tz5_k4">
+            <step id="step_N1003B_N10037_N1002E_N10001" ixia_locid="101">
+                <cmd ixia_locid="103">Power on the node to be configured as a storage host.</cmd>
+                <info ixia_locid="37">
+                    <note id="note_N10045_N10042_N1003B_N10037_N1002E_N10001" ixia_locid="38">
+                        <p ixia_locid="39">To ensure you can correctly identify hosts as you install
+                            them, power on and configure each new node one at a time.</p>
+                    </note>
+                </info>
+            </step>
+            <step id="step_N10056_N10049_N10020_N10001" ixia_locid="16">
+                <cmd ixia_locid="17">Using the web administration interface, assign the node as a
+                    storage host.</cmd>
+                <substeps id="substeps_ids_zz5_k4">
+                    <substep ixia_locid="18">
+                        <cmd conref="jow1404333506062.xml#jow1404333506062/open-hosts-lists-cmd" ixia_locid="19"/>
+                        <info ixia_locid="20">
+                            <p conref="jow1404333506062.xml#jow1404333506062/open-hosts-lists-new-node" ixia_locid="21"/>
+                            <fig id="fig_N1006E_N10067_N10060_N1005C_N10055_N10049_N10020_N10001" ixia_locid="22">
+                                <image alt="Hosts list" href="jow1404333537007.image" id="image_iwr_pxp_l4" ixia_locid="23" width="6in"/>
+                            </fig>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="54">
+                        <cmd conref="jow1404333506062.xml#jow1404333506062/cmd_assign_personality" ixia_locid="55"/>
+                        <info ixia_locid="56">
+                            <p conref="jow1404333506062.xml#jow1404333506062/p_click_edit_host" ixia_locid="57"/>
+                            <fig id="fig_N100A3_N1009C_N10095_N1006F_N10065_N10056_N10024_N10001" ixia_locid="58">
+                                <image href="jow1404848586688.image" id="image_h3g_dyv_r4" ixia_locid="59" width="4in"/>
+                            </fig>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="26">
+                        <cmd ixia_locid="27">Select <menucascade ixia_locid="28">
+                                <uicontrol ixia_locid="29">Personality</uicontrol>
+                                <uicontrol ixia_locid="30">Storage</uicontrol>
+                            </menucascade>.</cmd>
+                    </substep>
+                    <substep conref="jow1404333506062.xml#jow1404333506062/specify-location" ixia_locid="31">
+                        <cmd ixia_locid="32"/>
+                    </substep>
+                    <substep ixia_locid="86">
+                        <cmd conref="jow1404333506062.xml#jow1404333506062/cmd-save-personality" ixia_locid="87"/>
+                        <stepresult ixia_locid="88">
+                            <p conref="jow1404333506062.xml#jow1404333506062/p-save-personality" ixia_locid="89"/>
+                            <fig id="fig_kwg_kry_4p" ixia_locid="90">
+                                <image href="jow1412193187808.image" id="image_xsh_v1q_pp" ixia_locid="91" width="3.5in">
+                                    <alt ixia_locid="92">HP Helion OpenStack Carrier Grade Storage Node Install</alt>
+                                </image>
+                            </fig>
+                        </stepresult>
+                    </substep>
+                    <substep conref="jow1404333506062.xml#jow1404333506062/select-display-device" ixia_locid="102">
+                        <cmd ixia_locid="104"/>
+                    </substep>
+                    <substep conref="jow1404333506062.xml#jow1404333506062/wait_for_login_prompt" ixia_locid="99">
+                        <cmd ixia_locid="100"/>
+                    </substep>
+                </substeps>
+                <stepresult ixia_locid="68">
+                    <p ixia_locid="40">The new host is initialized with an operating system,
+                        rebooted, and configured as a storage node. It is automatically assigned the
+                        next available consecutive name (<nameliteral ixia_locid="79">storage-0</nameliteral> or <nameliteral ixia_locid="80">storage-1</nameliteral>).</p>
+                    <p ixia_locid="44">After a few minutes, the host is shown as <uicontrol ixia_locid="45">Locked</uicontrol>, <uicontrol ixia_locid="46">Disabled</uicontrol>, and <uicontrol ixia_locid="47">Online</uicontrol>
+                        in the <uicontrol ixia_locid="48">Hosts</uicontrol> list.</p>
+                    <fig id="fig_N100E0_N100B8_N10020_N10001" ixia_locid="49">
+                        <image alt="Hosts list" href="jow1404333538664.image" id="image_zxk_v5m_jjn" ixia_locid="50" width="5.5in"/>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N10134_N10056_N10024_N10001" ixia_locid="69">
+                <cmd ixia_locid="70">Configure the host so that it can be unlocked.</cmd>
+                <info ixia_locid="71">
+                    <p ixia_locid="72">Before you can unlock a storage node, you must do the
+                        following:</p>
+                </info>
+                <substeps id="substeps_afc_j2s_v4">
+                    <substep ixia_locid="73">
+                        <cmd ixia_locid="74">Create storage volumes. For details, see <xref href="jow1404333546500.xml" ixia_locid="75"/>.</cmd>
+                    </substep>
+                    <substep ixia_locid="93">
+                        <cmd ixia_locid="94">If using LAG to attach to the management network,
+                            change the <uicontrol ixia_locid="95">Interface Type</uicontrol> for the
+                            management network interface to <nameliteral ixia_locid="96">aggregated
+                                ethernet</nameliteral><!--, and add a second interface.--> For more
+                            information, see <xref href="jow1414000462559.xml" ixia_locid="97"/>.</cmd>
+                    </substep>
+                    <substep ixia_locid="76">
+                        <cmd ixia_locid="77">Configure the interface to the infrastructure network.
+                            For details, see <xref href="jow1426948577755.xml" ixia_locid="108"/>.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step conref="jow1404333506827.xml#jow1404333506827/unlock-node" id="step_N10133_N10030_N1001C_N10001" ixia_locid="66">
+                <cmd ixia_locid="67"/>
+            </step>
+        </steps>
+        <postreq id="postreq_N101C9_N1001F_N10001" ixia_locid="105">
+            <note id="note_N101CD_N101C9_N1001F_N10001" ixia_locid="106">
+                <p ixia_locid="107">Ensure that you install two storage nodes, as required by the HP Helion OpenStack Carrier Grade
+                    architecture.</p>
+            </note>
+        </postreq>
+    </taskbody>
+</task-wr>

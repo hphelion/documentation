@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1406832339204" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="10">Configuring a Host for Board Management Using the CLI</title>
+    <shortdesc ixia_locid="11">To use board management on a host, you must provision the host with
+        information about the attached board management module. If you prefer, you can do this from
+        the command-line interface.</shortdesc>
+    <prolog>
+        <author ixia_locid="12">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="13">
+            <p ixia_locid="6">For more information about using board management, see the <cite
+                    ixia_locid="7">HP Helion OpenStack Carrier Grade Administration Guide: The Board
+                    Management Network</cite>.</p>
+        </context>
+        <prereq id="prereq_N10031_N1001C_N10001" ixia_locid="8">
+            <p ixia_locid="9">To complete this task, you need the board type (ilo3 or ilo4), MAC
+                address, username, and password of the board management module. The module must also
+                be configured to use DHCP for a board management network that uses internal access,
+                or static IP addressing for a network that uses external access.  For more
+                information, consult the user documentation for the module.</p>
+            <p ixia_locid="456">If the board management is configured for external access,  you also
+                need an IP address to assign to the module. For this information, consult your
+                configuration plan.</p>
+        </prereq>
+        <steps>
+            <step id="step_N1003C_N10039_N1001C_N10001" ixia_locid="14">
+                <cmd ixia_locid="15">Provision the host with the MAC address and module type of the
+                    attached iLO module.</cmd>
+                <info ixia_locid="16">
+                    <codeblock ixia_locid="34"><systemoutput ixia_locid="39">~(keystone_admin)$ </systemoutput><userinput ixia_locid="18">system host-update <varname ixia_locid="19">hostname</varname> bm_mac=<varname ixia_locid="20">MAC_address</varname> bm_type=<varname ixia_locid="21">module_type</varname></userinput></codeblock>
+                </info>
+                <stepxmp ixia_locid="22">
+                    <p ixia_locid="23">For example:</p>
+                    <codeblock ixia_locid="36"><systemoutput ixia_locid="40">~(keystone_admin)$ </systemoutput><userinput ixia_locid="25">system host-update compute-0 bm_mac=b4:b5:2f:ee:ae:90 bm_type=ilo4</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N10068_N10039_N1001C_N10001" ixia_locid="26">
+                <cmd ixia_locid="27">Provision the host with the username and password of the iLO
+                    module.</cmd>
+                <info ixia_locid="457">
+                    <codeblock ixia_locid="459"><systemoutput ixia_locid="461">~(keystone_admin)$ </systemoutput><userinput ixia_locid="463">system host-update <varname ixia_locid="465">hostname</varname> bm_username=<varname ixia_locid="467">user_name</varname> \
+bm_password=<varname ixia_locid="33">password</varname></userinput></codeblock>
+                </info>
+            </step>
+            <step id="step_N100AF_N10042_N1001F_N10001" ixia_locid="469">
+                <cmd ixia_locid="470">If the board management network is configured for external access, provision
+                    the host with the IP address of the iLO module.</cmd>
+                <info ixia_locid="458">
+                    <codeblock ixia_locid="460"><systemoutput ixia_locid="462">~(keystone_admin)$ </systemoutput><userinput ixia_locid="464">system host-update <varname ixia_locid="466">hostname</varname> bm_ip=<varname ixia_locid="468">ip_address</varname> \
+</userinput></codeblock>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

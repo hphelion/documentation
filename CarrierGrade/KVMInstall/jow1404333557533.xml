@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333557533" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Initializing and Configuring Storage Nodes Using the CLI</title>
+    <shortdesc ixia_locid="2">You can use the <nameliteral ixia_locid="3">controller-0</nameliteral>
+        command-line interface to set up storage nodes to provide object storage.</shortdesc>
+    <prolog>
+        <author ixia_locid="4">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N10023_N10020_N10001" ixia_locid="5">
+            <p ixia_locid="6">Installing the HP Helion OpenStack Carrier Grade software on the storage nodes is
+                similar to installing the software on the <nameliteral ixia_locid="7">controller-1</nameliteral> host, described in detail in <xref href="jow1404333554625.xml" ixia_locid="8"/>. The differences are as
+                follows:</p>
+            <ul id="ul_uq5_5mv_3n">
+                <li ixia_locid="9">
+                    <p ixia_locid="10">assigning the personality and name of the host</p>
+                </li>
+                <li ixia_locid="11">
+                    <p ixia_locid="12">configuring the infrastructure interface</p>
+                </li>
+            </ul>
+            <p ixia_locid="13">This section uses the <nameliteral ixia_locid="14">storage-0</nameliteral> host as the installation target. Except where noted,
+                all commands must be executed from the console of <nameliteral ixia_locid="15">controller-0</nameliteral>.</p>
+        </context>
+        <prereq id="prereq_N10055_N10020_N10001" ixia_locid="16">
+            <p ixia_locid="17">This procedure requires <nameliteral ixia_locid="18">controller-0</nameliteral> and <nameliteral ixia_locid="19">controller-1</nameliteral> to be already operational, as described in <xref href="jow1404333484592.xml" ixia_locid="175"/> and <xref href="jow1404333554625.xml" ixia_locid="21"/>.</p>
+        </prereq>
+        <steps id="steps_jnz_vzt_m4">
+            <step conref="jow1404333506062.xml#jow1404333506062/boot-node" id="step_N10072_N1006E_N10020_N10001" ixia_locid="22">
+                <cmd ixia_locid="23"/>
+            </step>
+            <step conref="jow1404766496848.xml#jow1404766496848/source-nova-openrc" id="step_N10092_N10083_N10024_N10001" ixia_locid="172"><cmd ixia_locid="173"/></step>
+            
+            <step id="step_N10084_N1006E_N10020_N10001" ixia_locid="26">
+                <cmd ixia_locid="27">Verify the status of the host.</cmd>
+                <stepxmp ixia_locid="28">
+                    <codeblock ixia_locid="29"><systemoutput ixia_locid="199">~(keystone_admin)$ </systemoutput><userinput ixia_locid="31">system host-list</userinput>
++----+--------------+-------------+----------------+-------------+--------------+
+| id | hostname     | personality | administrative | operational | availability |
++----+--------------+-------------+----------------+-------------+--------------+
+| 1  | controller-0 | controller  | unlocked       | enabled     | available    |
+| 2  | controller-1 | controller  | unlocked       | enabled     | available    |
+| 3  | compute-0    | compute     | unlocked       | enabled     | available    |
+| 4  | None         | None        | locked         | disabled    | offline      |
++----+--------------+-------------+----------------+-------------+--------------+ </codeblock>
+                </stepxmp>
+                <info ixia_locid="32">
+                    <p ixia_locid="33">The host is reported as host number 4, operating offline,
+                        with no host name or personality.</p>
+                </info>
+            </step>
+            <step id="step_N100A3_N1006E_N10020_N10001" ixia_locid="34">
+                <cmd ixia_locid="35">Set up the host to have the host name <nameliteral ixia_locid="36">storage-0</nameliteral>, and the personality of a storage
+                    node.</cmd>
+                <stepxmp ixia_locid="37">
+                    <codeblock ixia_locid="38"><systemoutput ixia_locid="200">~(keystone_admin)$ </systemoutput><userinput ixia_locid="40">system host-update 4 hostname=storage-0 personality=storage</userinput>
+<systemoutput ixia_locid="201">+----------------+--------------------------------------+
+| Property       | Value                                |
++----------------+--------------------------------------+
+| administrative | locked                               |
+| availability   | offline                              |
+| created_at     | 2014-06-19T18:22:09.561079+00:00     |
+| hostname       | storage-0                            |
+| id             | 4                                    |
+| invProvision   | None                                 |
+| location       | {}                                   |
+| mgmt_ip        | 192.168.204.5                        |
+| mgmt_mac       | 08:00:27:dc:b8:4b                    |
+| operational    | disabled                             |
+| personality    | storage                              |
+| serialId       | None                                 |
+| updated_at     | None                                 |
+| uuid           | eb9fffd7-c859-419e-951b-30950dd8505c |
++----------------+--------------------------------------+</systemoutput>
+</codeblock>
+                </stepxmp>
+                <stepresult ixia_locid="42">
+                    <p ixia_locid="43"><nameliteral ixia_locid="44">Controller-0</nameliteral> configures the required parameters
+                        for <nameliteral ixia_locid="45">storage-0</nameliteral> and displays them as illustrated
+                        above. Note that <nameliteral ixia_locid="46">storage-0</nameliteral> is still offline since
+                        the HP Helion OpenStack Carrier Grade software has yet to be installed in its hard drive.</p>
+                    <p ixia_locid="47">Additionally, <nameliteral ixia_locid="48">controller-0</nameliteral> automatically pushes the HP Helion OpenStack Carrier Grade
+                        installer image over the internal management network for the host to
+                        boot.</p>
+                </stepresult>
+            </step>
+            <step id="step_N100DD_N1006E_N10020_N10001" ixia_locid="49">
+                <cmd ixia_locid="50">On the <nameliteral ixia_locid="51">storage-0</nameliteral> console, select the installation
+                    mode.</cmd>
+                <info ixia_locid="178">
+                    <dl conref="jow1404333506062.xml#jow1404333506062/display-device-choices">
+                        <dlentry ixia_locid="179">
+                            <dt ixia_locid="180"/>
+                            <dd ixia_locid="181"/>
+                        </dlentry>
+                    </dl>
+                </info>
+                <stepresult ixia_locid="53">
+                    <p ixia_locid="54">The installer initializes the target hard drive with the HP Helion OpenStack Carrier Grade
+                        image. This step may take several minutes.</p>
+                </stepresult>
+            </step>
+            <step id="step_N100F6_N1006E_N10020_N10001" ixia_locid="55">
+                <cmd ixia_locid="56">Wait for <nameliteral ixia_locid="57">storage-0</nameliteral> to reboot.</cmd>
+                <info ixia_locid="58">
+                    <note id="manual-reboot" ixia_locid="59">
+                        <p ixia_locid="60">It may be necessary to reconfigure the system's BIOS or
+                            UEFI manually to force the host to boot from the hard drive.</p>
+                    </note>
+                </info>
+                <stepresult ixia_locid="61">
+                    <p ixia_locid="62">The host boots from the hard drive into the HP Helion OpenStack Carrier Grade
+                        image and displays the GNU GRUB welcome screen.</p>
+                    <p ixia_locid="63">After a brief delay, the system boots automatically into the
+                        HP Helion OpenStack Carrier Grade image, providing you with a login prompt.</p>
+                </stepresult>
+            </step>
+            <step id="step_N1011C_N1006E_N10020_N10001" ixia_locid="64">
+                <cmd ixia_locid="65">Verify the status of the host.</cmd>
+                <stepxmp ixia_locid="66">
+                    <codeblock ixia_locid="67"><systemoutput ixia_locid="202">~(keystone_admin)$ </systemoutput><userinput ixia_locid="69">system host-list</userinput>
+<systemoutput ixia_locid="203">+----+--------------+-------------+----------------+-------------+--------------+
+| id | hostname     | personality | administrative | operational | availability |
++----+--------------+-------------+----------------+-------------+--------------+
+| 1  | controller-0 | controller  | unlocked       | enabled     | available    |
+| 2  | controller-1 | controller  | unlocked       | enabled     | available    |
+| 3  | compute-0    | compute     | unlocked       | enabled     | available    |
+| 3  | storage-0    | storage     | locked         | disabled    | offline      |
++----+--------------+-------------+----------------+-------------+--------------+</systemoutput></codeblock>
+                </stepxmp>
+                <stepresult ixia_locid="71">
+                    <p ixia_locid="72">The host is still offline, but it is now reported as a
+                        storage node with name <nameliteral ixia_locid="73">storage-0</nameliteral>,
+                        in the <nameliteral ixia_locid="74">locked</nameliteral> administrative
+                        state.</p>
+                </stepresult>
+            </step>
+            <step id="step_N101A0_N10083_N10024_N10001" ixia_locid="221">
+                <cmd ixia_locid="222">Attach the infrastructure interface.</cmd>
+                <info ixia_locid="223">
+                    <p ixia_locid="224">For more information, see <xref href="jow1427029415968.xml" ixia_locid="225"/>.</p>
+                </info>
+            </step>
+            <step id="step_N10244_N1006E_N10020_N10001" ixia_locid="142">
+                <cmd ixia_locid="143">Unlock the <nameliteral ixia_locid="144">storage-0</nameliteral> host.</cmd>
+                <stepxmp ixia_locid="145">
+                    <codeblock ixia_locid="146"><systemoutput ixia_locid="217">~(keystone_admin)$ </systemoutput><userinput ixia_locid="148">system host-unlock storage-0</userinput>
+<systemoutput ixia_locid="218">+----------------+--------------------------------------+
+| Property       | Value                                |
++----------------+--------------------------------------+
+| administrative | unlocked                             |
+| availability   | offline                              |
+| created_at     | 2014-06-19T18:22:09.561079+00:00     |
+| hostname       | storage-0                            |
+| id             | 4                                    |
+| invProvision   | provisioned                          |
+| location       | {}                                   |
+| mgmt_ip        | 192.168.204.5                        |
+| mgmt_mac       | 08:00:27:dc:b8:4b                    |
+| operational    | disabled                             |
+| personality    | storage                              |
+| serialId       | None                                 |
+| updated_at     | 2014-06-19T19:10:21.622719+00:00     |
+| uuid           | eb9fffd7-c859-419e-951b-30950dd8505c |
++----------------+--------------------------------------+</systemoutput>
+</codeblock>
+                </stepxmp>
+                <stepresult ixia_locid="150">
+                    <p ixia_locid="151">The unlocking operation moves <nameliteral ixia_locid="152">storage-0</nameliteral> into the
+                        intermediate <nameliteral ixia_locid="153">in-test</nameliteral> availability state first,
+                        and then into the final <nameliteral ixia_locid="154">available</nameliteral> state.</p>
+                    <note id="note_N1026A_N10257_N1023A_N1006E_N10020_N10001" ixia_locid="155">
+                        <p ixia_locid="156">The unlock operation will fail if the storage volumes (and the
+                            infrastructure interface, if an infrastructure network is present) have
+                            not been configured beforehand.</p>
+                    </note>
+                </stepresult>
+            </step>
+            <step id="step_N10280_N1006E_N10020_N10001" ixia_locid="157">
+                <cmd ixia_locid="158">Verify that the <nameliteral ixia_locid="159">storage-0</nameliteral> host is operational.</cmd>
+                <stepxmp ixia_locid="160">
+                    <codeblock ixia_locid="161"><systemoutput ixia_locid="219">~(keystone_admin)$ </systemoutput><userinput ixia_locid="163">system host-list</userinput>
+<systemoutput ixia_locid="220">+----+--------------+-------------+----------------+-------------+--------------+
+| id | hostname     | personality | administrative | operational | availability |
++----+--------------+-------------+----------------+-------------+--------------+
+| 1  | controller-0 | controller  | unlocked       | enabled     | available    |
+| 2  | controller-1 | controller  | unlocked       | enabled     | available    |
+| 3  | compute-0    | compute     | unlocked       | enabled     | available    |
+| 4  | storage-0    | compute     | unlocked       | enabled     | available    |
++----+--------------+-------------+----------------+-------------+--------------+</systemoutput></codeblock>
+                </stepxmp>
+                <info ixia_locid="165">
+                    <p ixia_locid="166"><nameliteral ixia_locid="167">Storage-0</nameliteral> moves into the
+                            <nameliteral ixia_locid="168">available</nameliteral> state within a few minutes
+                        following the unlock command.</p>
+                </info>
+            </step>
+        </steps>
+        <result id="result_N1029F_N10020_N10001" ixia_locid="169">
+            <p ixia_locid="170"><nameliteral ixia_locid="171">Storage-0</nameliteral> is now operational.</p>
+        </result>
+    </taskbody>
+</task-wr>

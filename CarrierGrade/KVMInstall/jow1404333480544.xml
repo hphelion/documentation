@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333480544" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+
+ -->
+    <title ixia_locid="1">Overview</title>
+    <shortdesc ixia_locid="2">The HP Helion OpenStack Carrier Grade is a high-performance,
+        high-availability, cloud operating system that enables telecommunications operators to use
+        off-the-shelf (COTS) hardware to manage Virtualized Network Functions (VNF) within a carrier
+        grade Network Function Virtualization (NFV) architecture.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+        <author ixia_locid="4">Pedro Sanchez</author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="72">Installing the HP Helion OpenStack Carrier Grade involves loading and configuring the
+            software on the controller nodes, and then using the controller nodes to initialize
+            compute and storage nodes. For details, see <xref href="jow1404333484592.xml" ixia_locid="73"/>.</p>
+        <p ixia_locid="77">Before installation, ensure that you are familiar with the HP Helion
+            OpenStack Carrier Grade  architecture, and that your hardware meets the minimum
+            requirements. For architecture details, refer to the <cite ixia_locid="15">HP Helion
+                OpenStack Carrier Grade Administration Guide</cite>. For minimum hardware
+            requirements, see <xref href="jow1419267663457.xml" ixia_locid="92"/>.</p>
+        <p ixia_locid="85">Review the <cite ixia_locid="86">HP Helion OpenStack Carrier Grade Release
+                Notes</cite> for any additional information pertaining to installation.</p>
+        <p ixia_locid="78">During installation, have ready the following items:</p>
+        <ul id="ul_bgn_frw_g4">
+            <li ixia_locid="8">
+                <p ixia_locid="9">the HP Helion OpenStack Carrier Grade ISO image on bootable media.</p>
+            </li>
+            <li ixia_locid="12">
+                <p ixia_locid="13">a configuration plan for use during the installation process</p>
+            </li>
+            <li ixia_locid="90">
+                <p ixia_locid="91">a license file</p>
+            </li>
+            <li ixia_locid="93">
+                <p ixia_locid="94">(optional) a CA-signed certificate, if  secure HTTPS access is required for REST
+                    API applications</p>
+            </li>
+        </ul>
+        <p ixia_locid="80"> For help creating a bootable USB drive, see <xref href="jow1404840003558.xml" ixia_locid="81"/>.</p>
+        <p ixia_locid="56">You should be familiar with the following terms used in this guide: </p>
+        <dl>
+            <dlentry ixia_locid="57">
+                <dt ixia_locid="58"><term ixia_locid="87">host</term></dt>
+                <dd ixia_locid="59">
+                    <p ixia_locid="60">A unit of computing hardware in the rack. Hosts can be
+                        assigned or <term ixia_locid="75">commissioned</term> as controller,
+                        compute, or storage nodes. </p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="61">
+                <dt ixia_locid="62"><term ixia_locid="88">personality</term></dt>
+                <dd ixia_locid="63">
+                    <p ixia_locid="64">The role assigned to a host when it is commissioned.
+                        Available personalities include <term ixia_locid="82">controller</term>,
+                            <term ixia_locid="83">compute</term>, and <term ixia_locid="84">storage</term>.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="68">
+                <dt ixia_locid="69"><term ixia_locid="89">HP Helion OpenStack Carrier Grade Cluster</term></dt>
+                <dd ixia_locid="70">
+                    <p ixia_locid="71">An ensemble of HP Helion OpenStack Carrier Grade hosts. A HP Helion OpenStack Carrier Grade
+                        cluster consists of compute nodes and optionally two storage nodes managed
+                        by a pair of controller nodes.</p>
+                </dd>
+            </dlentry>
+        </dl>
+    </conbody>
+</concept-wr>

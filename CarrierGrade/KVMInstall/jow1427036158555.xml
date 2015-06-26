@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1427036158555" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="1">System Provisioning</title>
+ <shortdesc ixia_locid="2">Before you can unlock the nodes and use HP Helion OpenStack Carrier Grade, you must perform basic system
+  provisioning.</shortdesc>
+ <prolog>
+  <author ixia_locid="3">Jim Owens</author>
+ </prolog>
+ <conbody>
+  <ul id="ul_t3j_yzr_lr">
+   <li ixia_locid="6">
+    <p ixia_locid="7">You must provision data interfaces for the compute nodes.  Before you can do
+     this, you must create provider networks to which the interfaces can be attached.</p>
+   </li>
+   <li ixia_locid="11">
+    <p ixia_locid="8">If an infrastructure network is installed, you must provision the compute
+     nodes and storage nodes to attach to the infrastructure network.</p>
+   </li>
+   <li ixia_locid="9">
+    <p ixia_locid="10">If using storage nodes, you must provision storage volumes for the storage
+     nodes.</p>
+   </li>
+   <li ixia_locid="12">
+    <p ixia_locid="5">If a board management network is installed, you must provision the hosts  to
+     use it. </p>
+   </li>
+  </ul>
+ </conbody>
+</concept-wr>

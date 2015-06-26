@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1427036687478" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="1">Storage Node Provisioning</title>
+ <shortdesc ixia_locid="2">Storage nodes require initial provisioning to assign storage volumes.</shortdesc>
+ <prolog>
+  <author ixia_locid="3">Jim Owens</author>
+ </prolog>
+</concept-wr>

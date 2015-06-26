@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333551914" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Creating a Storage Profile</title>
+    <shortdesc ixia_locid="2">You can save the storage configuration for a storage node as a <term ixia_locid="3">profile</term>,
+        and apply the profile to other storage nodes. </shortdesc>
+    <prolog>
+        <author ixia_locid="4">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <steps id="steps_qgk_msn_m4">
+            <step id="named-interface-profile" ixia_locid="5">
+                <cmd ixia_locid="6">Open the <wintitle ixia_locid="7">Create Storage Profile</wintitle> dialog box.</cmd>
+                <info ixia_locid="8">
+                    <p ixia_locid="9">On the <uicontrol ixia_locid="10">Storage</uicontrol> tab of the
+                            <uicontrol ixia_locid="11">Inventory</uicontrol> page, click <uicontrol ixia_locid="12">Create Storage
+                            Profile</uicontrol>.</p>
+                </info>
+                <stepresult ixia_locid="13">
+                    <p ixia_locid="14"> The <wintitle ixia_locid="15">Create Storage Profile</wintitle> dialog box appears.</p>
+                    <fig id="fig_N10052_N10047_N10027_N10023_N10020_N10001" ixia_locid="16">
+                        <image alt="Create Storage Profile dialog" href="jow1404333547184.image" id="image_qrm_hwz_jn" ixia_locid="17" width="4in"/>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N10060_N10023_N10020_N10001" ixia_locid="18">
+                <cmd ixia_locid="19">Create the storage profile.</cmd>
+                <info ixia_locid="20">
+                    <p ixia_locid="21">Enter a storage profile name, and then click <uicontrol ixia_locid="22">Create Storage
+                            Profile</uicontrol>.</p>
+                </info>
+                <stepresult ixia_locid="23">
+                    <p ixia_locid="24">The storage profile is created. To view it, select <menucascade ixia_locid="25"><uicontrol ixia_locid="26">System Panel</uicontrol><uicontrol ixia_locid="27">Inventory</uicontrol></menucascade> on the <uicontrol ixia_locid="28">Admin</uicontrol> pane, and then select the
+                            <uicontrol ixia_locid="29">Storage Profiles</uicontrol> tab. </p>
+                    <fig id="fig_N1008B_N10073_N10060_N10023_N10020_N10001" ixia_locid="30">
+                        <image alt="Storage Profiles list" href="jow1404333548840.image" id="image_ncm_brr_l4" ixia_locid="31" width="5.5in"/>
+                    </fig>
+                    <p ixia_locid="32">You can use this storage profile when installing additional
+                        storage nodes. For example, when assigning the node <nameliteral ixia_locid="33">storage-1</nameliteral>, you can select a profile from
+                        the <uicontrol ixia_locid="34">Storage Profile</uicontrol> drop-down
+                        list.</p>
+                    <fig id="fig_N100A3_N10073_N10060_N10023_N10020_N10001" ixia_locid="35">
+                        <image alt="Edit Host dialog" href="jow1404333550335.image" id="image_ocm_brr_l4" ixia_locid="36" width="4in"/>
+                    </fig>
+                    <note id="note_N100AF_N10073_N10060_N10023_N10020_N10001" ixia_locid="37">
+                        <p ixia_locid="38">To list existing storage profiles, select the <uicontrol ixia_locid="39">Storage
+                                Profiles</uicontrol> tab on the <uicontrol ixia_locid="40">Inventory</uicontrol>
+                            page.</p>
+                    </note>
+                </stepresult>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>
