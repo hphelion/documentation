@@ -352,7 +352,7 @@
     <!-- backup -->
     <!-- Update -->
     <!-- FCP -->
-    <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-overview.dita">
+    <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-overview.dita" navtitle="HP Helion 1.0: Flexible Control Plane" locktitle="yes">
      
       <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-installation.dita"/>
     </topicref>
