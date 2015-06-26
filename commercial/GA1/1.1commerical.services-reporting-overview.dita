@@ -54,7 +54,7 @@
 
 <ul>
 <li>
-<xref href="../../commercial/GA1/ceilometer/1.1commercial.services-reporting-troubleshoot.dita#logging" type="section" scope="external"  >Logging</xref>
+  <xref href="../../commercial/GA1/ceilometer/1.1commercial.services-reporting-troubleshoot.dita#topic1976/logging" type="section">Logging</xref>
 </li>
 <li>
 <xref href="../../commercial/GA1/ceilometer/1.1commercial.services-reporting-troubleshoot.dita#qerrors" type="section" scope="external"  >Messaging and Queuing Errors</xref>
