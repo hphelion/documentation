@@ -104,10 +104,8 @@ nodes (dmesg, dea.log, auth.log, etc.)</li>
 Events in the Management Console)</li>
 </ul>
 <p>A <b>message</b> is a single log line or event in a stream.</p>
-<p>Each message has a <b>key</b> which identifies <i>which</i> stream it belongs to
-(see <xref type="section" href="#topic11928/logging-keys">
-<i>Keys</i>
-</xref> below).</p>
+<p>Each message has a <b>key</b> which identifies <i>which</i> stream it belongs to (see <i><xref
+          href="#topic11928/keys" format="dita">Keys</xref></i> below).</p>
 <section id="logyard"> <title>Logyard</title>
 <p>Log streams are handled by three processes which run on all Application Lifecycle Service
 nodes:</p>
@@ -146,7 +144,7 @@ command. For example:</p>
 <p>This creates a UDP drain that receives messages from <b>kato.log</b> (on
 all nodes in the cluster) and forwards them to
 <xref href="https://papertrailapp.com/" scope="external" format="html" >Papertrail</xref> on port 12345.</p>
-<p>The <codeph>--prefix</codeph> flag takes a <xref type="section" href="#topic11928/logging-keys">
+  <p>The <codeph>--prefix</codeph> flag takes a <xref href="#topic11928/keys" format="dita">
 <i>key</i>
 </xref>
 prefix as its argument.</p>
@@ -180,7 +178,7 @@ and message:</p>
 period. The spaces, hyphen, and colon here are functioning as
 delimiters. The resulting entry might look like this:</p>
 <codeblock>2013-01-22T16:01:14-08:00 - myenv: Application 'myenv' is now running on DEA 27da51</codeblock>
-<p>Different JSON keys are available in different <xref type="section" href="#topic11928/logging-keys">
+  <p>Different JSON keys are available in different <xref href="#topic11928/keys" format="dita">
 <i>log
 streams</i>
 </xref>:</p>
@@ -281,10 +279,8 @@ appdrain.1.mydrain      192.168.68.5    RETRYING[75]  invalid port 3424252
 builtin.apptail         192.168.68.5    RUNNING[3]
 builtin.cloudevents     192.168.68.5    RUNNING[3]
 builtin.katohistory     192.168.68.5    RUNNING[3]</codeblock>
-<p>If the RETRYING drain hits a <xref type="section" href="#topic11928/logging-drains-timeouts">
-<i>drain
-timeout</i>
-</xref>, its status will change to FATAL.</p>
+<p>If the RETRYING drain hits a <xref href="#topic11928/drain-timeouts" format="dita"><i>drain
+            timeout</i></xref> , its status will change to FATAL.</p>
 </section>
 <section id="keys"> <title>Keys</title>
 <p>Each message in a log stream is prefixed with a key, identifying what
@@ -294,9 +290,8 @@ keys are available for use in defining drains using the
 <i>kato log drain
 add</i>
 </xref>).</p>
-<p>Systail keys are <xref type="section" href="#topic11928/logging-systail-manage">
-<i>configurable</i>
-</xref>.</p>
+<p>Systail keys are <xref href="#topic11928/managing-the-systail-stream" format="dita"
+            ><i>configurable</i></xref> .</p>
 </section>
 <section id="apptail"> <title>apptail</title>
 <codeblock>apptail.\&lt;app.id\&gt;</codeblock>
@@ -400,9 +395,8 @@ source for an existing key.</p>
 removing log files:</p>
 <codeblock>kato process restart systail</codeblock>
       <note> Do not remove the default Application Lifecycle Service log stream keys (i.e. anything
-        in the <xref type="section" href="#topic11928/logging-keys-systail">
-          <i>systail</i>
-        </xref> list above) as this would affect the output of <codeph>kato tail</codeph>.</note>
+        in the <i><xref href="#topic11928/systail" format="dita">systail</xref></i> list above) as
+        this would affect the output of <codeph>kato tail</codeph>.</note>
 </section>
 <section id="configuration"> <title>Configuration</title>
 <p>Application Lifecycle Service has a number of configurable limits on application log drains
