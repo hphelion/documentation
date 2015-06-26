@@ -106,7 +106,8 @@ export UNDERCLOUD_CODN_HTTPS_PROXY=http://&lt;proxy.server.ip&gt;
 </ol>
 </section>
 <section id="seed"> <title>Back up and restore the seed VM</title>
-<p>The following sections describe how and when to <xref type="section" href="#topic18277/backseed">back up</xref> and <xref type="section" href="#topic18277/seedrest">restore</xref> the seed VM.</p>
+<p>The following sections describe how and when to <xref href="#topic18277/seedback" format="dita">back up</xref> and <xref type="section"
+          href="#topic18277/seedrest">restore</xref> the seed VM.</p>
 </section>
 <section id="seedback"> <title>Backing up the seed VM</title>
 <p>You should create a backup from the seed VM when any of the following events happen:</p>
@@ -375,7 +376,10 @@ Backup procedure completed.
 </section>
 <section id="over"> <title>Back up and restore the overcloud</title>
 <p>The following sections describe how and when to back up and restore the overcloud.</p>
-<p>You can <xref type="section" href="#topic18277/sherpaback">back up</xref> and <xref type="section" href="#topic18277/sherparest">restore</xref> an overcloud server or <xref type="section" href="#topic18277/databack">back up</xref> and <xref type="section" href="#topic18277/datarest">restore</xref> the overcloud database.</p>
+<p>You can <xref type="section" href="#topic18277/sherpaback">back up</xref> and <xref
+          type="section" href="#topic18277/sherparest">restore</xref> an overcloud server or <xref
+          href="#topic18277/sherpaback2" format="dita">back up</xref> and  <xref
+          href="#topic18277/sherparest2" format="dita">restore</xref> the overcloud database.</p>
 </section>
 <section id="sherpaback"> <title>Backing up an overcloud server</title>
 <p>You should create a backup of the overcloud servers when any Update and Extension is download to the system.</p>

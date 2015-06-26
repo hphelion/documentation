@@ -31,17 +31,7 @@
 </ul>
 </li>
 <li>
-<xref type="section" href="#topic23276/vsa">VSA</xref>
-</li>
-<li>
-<xref type="section" href="#topic23276/failnew">Failure of newly added compute or VSA node during Scale-out</xref>
-</li>
-<li>
-<xref type="section" href="#topic23276/refreshfails">Scale-out nodes : os-refresh-configuration fails on Controller Node</xref>
-</li>
-<li>
-<xref type="section" href="#topic23276/config_dnas">Configuring the dnsmasq_dns_servers list for the undercloud and overcloud</xref>
-</li>
+        <xref type="section" href="#topic23276/vsa">VSA</xref></li>
 <li>
 <xref type="section" href="#topic23276/logging">Logging</xref>
 </li>
@@ -66,12 +56,11 @@
 <li>
 <xref type="section" href="#topic23276/PXE-boot-on-target">PXE boot on target node keeps switching between interfaces</xref>
 </li>
+        <li><xref href="#topic23276/bios-blocks-are-not-set-to-correct-date" format="dita"/></li>
 <li>
-<xref type="section" href="#topic23276/BIOS-blocks-are-not-set-to-correct-date">BIOS blocks are not set to correct date and time across all nodes</xref>
-</li>
-<li>
-<xref type="section" href="#topic23276/ilo-console">iLO console shows hLinux daemon.err tgtd while PXE booting</xref>
-</li>
+          <xref type="section" href="#topic23276/ilo-console">iLO console shows hLinux daemon.err
+            tgtd while PXE booting</xref>
+        </li>
 <li>
 <xref type="section" href="#topic23276/ilo-show-null">iLO console shows null waiting for notice of completion while PXE booting</xref>
 </li>
@@ -658,9 +647,6 @@ heat_watch_server_url = http://192.0.202.2:8003
 </li>
 <li>
 <xref type="section" href="#topic23276/unable-update-json">Unable to update the default input json file </xref>
-</li>
-<li>
-<xref type="section" href="#topic23276/fail-virtual-bridge">Virtual bridge creation failed for interface &lt;NIC&gt;</xref>
 </li>
 <li>
 <xref type="section" href="#topic23276/storage-pool-fail">Creation of storage pool failed</xref>

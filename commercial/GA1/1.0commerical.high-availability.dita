@@ -308,9 +308,7 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 <li>
 <xref type="section" href="#topic20228/compute-with-kvm">Compute with KVM</xref>
 </li>
-<li>
-<xref type="section" href="#topic20228/nova-availability-zones">Nova availability zones</xref>
-</li>
+        <li><xref href="#topic20228/nova-availability-zone" format="dita"/></li>
 <li>
 <xref type="section" href="#topic20228/compute-with-esx">Compute with ESX</xref>
 </li>
@@ -322,9 +320,6 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 </li>
 <li>
 <xref type="section" href="#topic20228/object-storage">Object Storage with Swift</xref>
-</li>
-<li>
-<xref type="section" href="#topic20228/networking">Networking</xref>
 </li>
 </ul>
 </section>
