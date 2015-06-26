@@ -745,10 +745,10 @@
         navtitle="Windows Overview"/>
       <topicref href="devplatform/1.2/windows/windows_firstapp.dita" locktitle="yes"
         navtitle="Deploying your first .NET Application"/>
-      <topicref href="devplatform/1.2/windows/windows_adding_services.dita" locktitle="yes"
-        navtitle="Adding Services to Windows Applications"/>
       <topicref href="devplatform/1.2/windows/windows_tools_guide.dita" locktitle="yes"
         navtitle="Windows and .NET Applications Tools Guide"/>
+      <topicref href="devplatform/1.2/windows/windows_adding_services.dita" locktitle="yes"
+        navtitle="Adding Services to Windows Applications"/>
       <topicref href="devplatform/1.2/windows/windows_custom_buildpacks.dita" locktitle="yes"
         navtitle="Deploying Windows Applications with the IIS Buildpack"/>
       <topicref href="devplatform/1.2/windows/windows_building_and_deploying.dita" locktitle="yes"
