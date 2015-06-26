@@ -183,7 +183,7 @@ See also <xref type="section" href="#topic17421/ImagePriv">Private image</xref> 
 <section id="ImageFile"> <title>Image file<!--Removed anchor point ImageFile--><!-- id="ImageFile" --></title>
 <p>A virtual disk <xref type="section" href="#topic17421/Image">image</xref> file that the Compute service can load up to create a virtual machine.</p>
 </section>
-<section id="Image"> <title>Image Management<!--Removed anchor point Image--><!-- id="Image" --></title>
+<section id="ImageManagement"> <title>Image Management<!--Removed anchor point Image--><!-- id="Image" --></title>
 <p>The HP <tm tmtype="reg">OpenStack</tm> service that discovers, registers, and retrieves virtual machine (VM) images. Also known as Glance.</p>
 </section>
 <section id="ImageMeta"> <title>Image metadata<!--Removed anchor point ImageMeta--><!-- id="ImageMeta" --></title>
@@ -274,8 +274,8 @@ used to manage the cloud that you created.
 </section>
 <section id="p"> <title>P</title>
 </section>
-<section id="pxe"> <title>Preboot Execution Environment (PXE) Booting<!--Removed anchor point pxe--><!-- id="pxe" --></title>
-<p>One of the components of <xref type="section" href="#topic17421/http://www.intel.com/design/archives/wfm/">Intel's Wired for Management</xref> specification. PXE allows a machine to boot from a machine on a network prior to booting the operating system on the local hard drive. For more, start on this <xref type="section" href="#topic17421/http://en.wikipedia.org/wiki/Preboot_Execution_Environment">Wikipedia.org page</xref>.</p>
+<section id="preboot"> <title>Preboot Execution Environment (PXE) Booting<!--Removed anchor point pxe--><!-- id="pxe" --></title>
+  <p>One of the components of <xref href="http://www.intel.com/design/archives/wfm" format="html" scope="external">Intel's Wired for Management</xref> specification. PXE allows a machine to boot from a machine on a network prior to booting the operating system on the local hard drive. For more, start on this <xref href="http://en.wikipedia.org/wiki/Preboot_Execution_Environment" format="html" scope="external">Wikipedia.org page</xref>.</p>
 </section>
 <section id="private-cloud"> <title>Private cloud</title>
 <p>A cloud infrastructure that is provisioned for exclusive use by a single organization comprising multiple consumers, such as business units.  The private cloud may be owned, managed and operated by the organization, a third party. or some combination, and it may exist on or off the owner's premises.</p>
@@ -300,7 +300,7 @@ used to manage the cloud that you created.
 </section>
 <section id="pxe"> <title>PXE</title>
 <p>
-<i>See</i> <xref type="section" href="#topic17421/pxe">Preboot Execution Environment</xref>.</p>
+<i>See</i> <xref type="section" href="#topic17421/preboot">Preboot Execution Environment</xref>.</p>
 </section>
 <section id="q"> <title>Q</title>
 </section>

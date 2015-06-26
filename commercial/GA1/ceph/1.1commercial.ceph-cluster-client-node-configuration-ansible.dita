@@ -40,7 +40,7 @@
 <xref type="section" href="#topic64701/add-monitor">Add Monitor</xref>
 </li>
 <li>
-<xref type="section" href="#topic64701/dd-osd">Add OSD</xref>
+  <xref type="section" href="#topic64701/add-osd">Add OSD</xref>
 </li>
 </ol>
 </li>
@@ -99,16 +99,12 @@
 <p>
 <b>cephcluster.csv:</b>
 </p>
-
 <codeblock>
-<codeph>&lt;ip-address&gt;, &lt;ceph-identifier&gt;, &lt;type&gt;, 
+&lt;ip-address&gt;, &lt;ceph-identifier&gt;, &lt;type&gt;, 
 &lt;user&gt;,&lt;osd-partition-type [osd nodes only]&gt;, &lt;osd-disk-path [osd nodes only]&gt;, &lt;journal-partition-type[osd nodes only]&gt;, &lt;journal-disk-path [osd nodes only]&gt;
 ip-address
-</codeph>
 </codeblock>
-
 <p>where:</p>
-
 <p>
 <b>node ip</b>: is the address used by configuration process to set up <codeph>ceph-cluster</codeph>. This can either be a PXE, management or some other network.</p>
 

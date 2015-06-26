@@ -89,7 +89,7 @@
 
 <ul>
 <li>
-<xref type="section" href="#topic21968/nova-availability-zones">Nova availability zones</xref>
+<xref type="section" href="#topic21968/nova-availability-zone">Nova availability zones</xref>
 </li>
 </ul>
 </li>
@@ -322,7 +322,7 @@ Any one of the controller servers can be shut down for a short duration for main
 <xref type="section" href="#topic21968/compute-with-kvm">Compute with KVM</xref>
 </li>
 <li>
-<xref type="section" href="#topic21968/nova-availability-zones">Nova availability zones</xref>
+<xref type="section" href="#topic21968/nova-availability-zone">Nova availability zones</xref>
 </li>
 <li>
 <xref type="section" href="#topic21968/compute-with-esx">Compute with ESX</xref>
@@ -336,9 +336,11 @@ Any one of the controller servers can be shut down for a short duration for main
 <li>
 <xref type="section" href="#topic21968/object-storage">Object Storage with Swift</xref>
 </li>
-<li>
+  <!--
+  <li>
 <xref type="section" href="#topic21968/networking">Networking</xref>
 </li>
+ -->
 </ul>
 </section>
 <section id="availability-zones"> <title>Availability zones</title>

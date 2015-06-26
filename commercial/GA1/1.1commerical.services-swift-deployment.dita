@@ -44,10 +44,10 @@
 <xref type="section" href="#topic14660/deploying-scale-out-Swift-object-nodes">Deploy the Scale-out Object Nodes</xref>
 </li>
 <li>
-<xref type="section" href="#topic14660/verifying-deployed-swift-nodes">Verify the Deployed Nodes</xref>
+  <xref type="section" href="#topic14660/verifying-deployed-Swift-nodes">Verify the Deployed Nodes</xref>
 </li>
 <li>
-<xref type="section" href="#topic14660/preparing-disks-on-Swift-nodes">Prepare the Disks on the Deployed Nodes</xref>
+  <xref type="section" href="#topic14660/preparing-disks-on-swift-nodes">Prepare the Disks on the Deployed Nodes</xref>
 </li>
 <li>
 <xref type="section" href="#topic14660/creating-scale-out-object-ring">Create a New Scale-out Object Ring</xref>
@@ -198,9 +198,10 @@ Perform the following steps to deploy scale-out Object nodes:</p>
             Swift in <codeph>baremetal.csv</codeph> file.</p></li>
 <li> Enter the following command to source the environment variables file for the new
             values.<codeblock><codeph># source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/&lt;environment variables file name&gt;
-</codeph></codeblock><p>For
-            example:</p><codeblock><codeph># source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-custom-ips.json
-</codeph></codeblock><!--
+</codeph></codeblock>
+  <p>For example:</p>
+<codeblock># source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-custom-ips.json</codeblock>
+  <!--
 3. Enter the following command to source the `kvm-default.json`  for the new values.
 
         # source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json

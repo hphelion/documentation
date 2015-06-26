@@ -34,7 +34,7 @@
 <xref type="section" href="#topic3873/misc">Miscellaneous Commands</xref>
 </li>
 </ul>
-<section id="help"> <title>Help Commands<!--Removed anchor point help--><!-- id="help" --></title>
+<section id="help-commands"> <title>Help Commands<!--Removed anchor point help--><!-- id="help" --></title>
 </section>
 <section id="help"> <title>Help</title>
 <p>You can display the help of this program or one of its sub-programs</p>

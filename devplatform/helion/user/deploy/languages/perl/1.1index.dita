@@ -28,10 +28,8 @@ example, in the
 sample application:</p>
 <codeblock>$ENV{MOJO_MODE} = 'production';
 require 'app.pl';</codeblock>
-    <note>
-      <p>Both Dancer and Mojolicious scripts automatically use the PSGI protocol, so there is no
-        need to create a separate app.psgi for them.</p>
-    </note>
+    <note>Both Dancer and Mojolicious scripts automatically use the PSGI protocol, so there is no
+        need to create a separate app.psgi for them.    </note>
 <p>The script is a pointer to the actual application,
 <xref href="https://github.com/Stackato-Apps/mojo-helloworld/blob/master/app.pl" scope="external" format="html" >app.pl</xref>. You
 could rename <codeph>app.pl</codeph> to <codeph>app.psgi</codeph> instead, but using the approach above
@@ -107,10 +105,10 @@ else {
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-  <xref type="section" href="../../../deploy/1.1manifestyml.dita#topic20986/command" type="section" scope="external"  >
+  <xref type="section" href="../../../deploy/1.1manifestyml.dita#topic20986/command" scope="external"  >
 <i>command</i>
 </xref> key and set the
-  <xref type="section" href="../../../deploy/1.1manifestyml.dita#topic20986/web" type="section" scope="external"  >
+  <xref type="section" href="../../../deploy/1.1manifestyml.dita#topic20986/web" scope="external"  >
 <i>processes:
 web</i>
 </xref> key to

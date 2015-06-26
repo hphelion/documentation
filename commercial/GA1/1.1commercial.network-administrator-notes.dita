@@ -44,61 +44,60 @@
 <p>To help you perform your administrative roles in these areas, this guide includes information on:</p>
 <ul>
 <li>
-<xref type="section" href="#topic5798/Managing-the-Identity-service">Managing the Identity service</xref>
+  <xref type="section" href="#topic5798/managing-the-identity-service">Managing the Identity service</xref>
 </li>
 <li>
-<xref type="section" href="#topic5798/Managing-the-Dashboard">Managing  the Dashboard</xref>
+  <xref type="section" href="#topic5798/managing-the-dashboard">Managing  the Dashboard</xref>
 </li>
 <li>
-<xref type="section" href="#topic5798/Managing-the-Compute-service">Managing the Compute service</xref>
+  <xref type="section" href="#topic5798/managing-the-compute-service">Managing the Compute service</xref>
 </li>
 <li>
-<xref type="section" href="#topic5798/Managing-Object-Storage">Managing Object Storage</xref>
+  <xref type="section" href="#topic5798/managing-object-storage">Managing Object Storage</xref>
 </li>
 <li>
-<xref type="section" href="#topic5798/Managing-Block-Storage">Managing Block Storage</xref>
+  <xref type="section" href="#topic5798/managing-block-storage">Managing Block Storage</xref>
 </li>
 <li>
-<xref type="section" href="#topic5798/Managing-the-Network-service">Managing the Network service</xref>
+  <xref type="section" href="#topic5798/managing-the-network-service">Managing the Network service</xref>
 </li>
+  <li>
+    <xref type="section" href="#topic5798/managing-metering">Managing Metering</xref>
+  </li>
 <li>
-<xref type="section" href="#topic5798/Managing-the-Database">Managing the Database</xref>
+  <xref type="section" href="#topic5798/managing-the-database">Managing the Database</xref>
 </li>
 </ul>
-<section id="managing-the-identity-service-managing-the-identity-service"> <title>Managing the Identity service (#Managing-the-Identity-service)</title>
+<section id="managing-the-identity-service"> <title>Managing the Identity service</title>
 <p><tm tmtype="reg">OpenStack</tm> Identity, code-named keystone, is the default identity management system for <tm tmtype="reg">OpenStack</tm> Configuring the <tm tmtype="reg">OpenStack</tm> Identity service is sufficient for Helion administrators. No additional work is required to support HP Helion <tm tmtype="reg">OpenStack</tm></p>
 </section>
-<section id="managing-the-dashboard-managing-the-dashboard"> <title>Managing the Dashboard (Managing-the-Dashboard)</title>
+<section id="managing-the-dashboard"> <title>Managing the Dashboard</title>
 <p>The <tm tmtype="reg">OpenStack</tm> dashboard, code named Horizon, is a Web-based interface that allows you to manage <tm tmtype="reg">OpenStack</tm> resources and services. The dashboard allows you to interact with the <tm tmtype="reg">OpenStack</tm> Compute cloud controller using the <tm tmtype="reg">OpenStack</tm> APIs. 
 In the Helion environment, HP uses HP Badge and the Helion undercloud dashboard in addition to Horizon.</p>
 </section>
-<section id="managing-the-compute-service-managing-the-compute-service"> <title>Managing the Compute service (Managing-the-Compute-service)</title>
+<section id="managing-the-compute-service"> <title>Managing the Compute service</title>
 <p>The <tm tmtype="reg">OpenStack</tm> Compute service (code named Nova) allows you to control an Infrastructure-as-a-Service (IaaS) cloud computing platform. It gives you control over instances and networks, and allows you to manage access to the cloud through users and projects.
 Configuring the <tm tmtype="reg">OpenStack</tm> Compute service is sufficient for Helion administrators. No additional work is required.</p>
 </section>
-<section id="managing-object-storage-managing-object-storage"> <title>Managing Object Storage (Managing-Object-Storage</title>
+<section id="managing-object-storage"> <title>Managing Object Storage</title>
 <p><tm tmtype="reg">OpenStack</tm> Object Storage (code-named swift) is open source software for creating redundant, scalable data storage using clusters of standardized storage servers. Configuring the <tm tmtype="reg">OpenStack</tm> Object Storage service is sufficient for Helion administrators. No additional work is required.</p>
 </section>
-<section id="managing-block-storage-managing-block-storage"> <title>Managing Block Storage (Managing-Block-Storage)</title>
+<section id="managing-block-storage"> <title>Managing Block Storage</title>
 <p>The <tm tmtype="reg">OpenStack</tm> Block Storage service (code name Cinder) works through the interaction of a series of daemon processes named cinder-* that reside persistently on the host machine or machines.  For Helion, you have the option to configure backend support for:</p>
 <ul>
 <li>VSA</li>
 <li>3PAR</li>
 </ul>
 </section>
-<section id="managing-the-network-service-managing-the-network-service"> <title>Managing the Network service (Managing-the-Network-service)</title>
+<section id="managing-the-network-service"> <title>Managing the Network service</title>
 <p>The Networking service, code-named Neutron, provides an API that lets you define network connectivity and addressing in the cloud.  Configuring the <tm tmtype="reg">OpenStack</tm> Network service is largely sufficient for Helion administrators.</p>
 <p>For details on configuring Helion Neutron, see <xref href="../../commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita" >Neutron Prerequisites</xref>.</p>
 </section>
-<section id="managing-metering-managing-the-database"> <title>Managing Metering  (Managing-the-Database)</title>
+<section id="managing-metering"> <title>Managing Metering</title>
 <p>Metering (code named Ceilometer) supports billing systems for <tm tmtype="reg">OpenStack</tm> cloud resources.  As the list of meters expands, metering data can be analyzed for different purposes other than billing.  Configuring the <tm tmtype="reg">OpenStack</tm> Metering service is sufficient for Helion administrators. No additional work is required.</p>
 </section>
 <section id="managing-the-database"> <title>Managing the Database</title>
 <p>The Database service provides scalable and reliable cloud provisioning functionality for both relational and non-relational database engines. Helion supports the <tm tmtype="reg">OpenStack</tm></p>
-<p>
-  <xref type="section" href="#topic5798"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

@@ -31,7 +31,7 @@
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 <p>The HP Helion <tm tmtype="reg">OpenStack</tm> Orchestration service leverages <tm tmtype="reg">OpenStack</tm> Heat to provide template-based orchestration for describing a cloud application. It executes <tm tmtype="reg">OpenStack</tm> API calls to generate running cloud applications.</p>
 <section id="working-with-the-orchestration-service"> <title>Working with the Orchestration Service</title>
-<p>To <xref type="section" href="#topic2557/howto">perform tasks using the Orchestration service</xref>, you can use the dashboard, API or CLI.</p>
+<p>To perform tasks using the Orchestration service, you can use the dashboard, API or CLI.</p>
 </section>
 <section id="UI"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
 <p>You can use the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Dashboard</xref> to work with the Orchestration service.</p>

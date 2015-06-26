@@ -681,9 +681,7 @@ The physical cluster network can be shared by a number of logical networks, each
                                 cloud services in the overcloud, used by end users, include Compute,
                                 Networking, Block Storage, Object Operations, Horizon, Image
                                 Operations, Identity Operations, and Orchestration as described in
-                                the <xref
-                                    href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita#Helion-services"
-                                    > Functional Overview </xref>section above.
+                                the <xref href="#topic24808/Helion-services" type="section"> Functional Overview </xref>section above.
                                 <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->These
                                 services are deployed in a highly available cluster across the three
                                 Controller nodes.

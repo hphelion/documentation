@@ -631,7 +631,7 @@ Once restarted, re-run the overcloud ansible playbook and not the <codeph>update
 </ol>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="bios-clocks-are-not-set-to-correct-date"> <title>BIOS clocks are not set to correct date and time across all nodes</title>
+  <section id="BIOS-clocks-are-not-set-to-correct-date"> <title>BIOS clocks are not set to correct date and time across all nodes</title>
 <p>
   <b>System Behavior/Message</b>
 </p>
