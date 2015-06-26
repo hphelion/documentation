@@ -807,6 +807,8 @@
           navtitle="Management Console (User View)" locktitle="yes"/>
         <topicref href="devplatform/1.2/helion/admin/console/1.2customize.dita" locktitle="yes"
           navtitle="Management Console Customization"/>
+        <topicref href="devplatform/1.2/helion/admin/console/1.2app-store.dita" locktitle="yes"
+          navtitle="Sample Applications"/>
       </topichead>
       <topichead navtitle="ALS Command Line Clients">
         <topicref href="devplatform/1.2/helion/CLI/1.2ALS_Client_Downloads.dita"
@@ -874,64 +876,68 @@
       <topicref href="devplatform/1.2/helion/admin/1.2index.dita" locktitle="yes"
         navtitle="ALS Admin Guide">
         <!--permalink: /helion/devplatform/1.2/als/admin/best-practices/-->
-        <topicref href="devplatform/1.2/helion/admin/reference/1.2architecture.dita" locktitle="yes"
-          navtitle="Architectural Design"/>
+        <topicref href="devplatform/1.2/helion/user/deploy/1.2adding-buildpack.dita"
+          navtitle="Adding Buildpacks" locktitle="yes"/>
         <topicref href="devplatform/1.2/helion/admin/best-practices/1.2index.dita" locktitle="yes"
           navtitle="Best Practices"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/best-practices/logging-examples/-->
-        <topicref href="devplatform/1.2/helion/admin/best-practices/1.2logging-examples.dita"
-          locktitle="yes" navtitle="Log Drain Examples"/>
-        <topicref href="devplatform/1.2/helion/admin/server/1.2logging.dita" locktitle="yes"
-          navtitle="Log Streams"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/cluster/-->
         <topicref href="devplatform/1.2/helion/admin/cluster/1.2index.dita" locktitle="yes"
-          navtitle="Cluster Setup"/>
-        <topicref href="devplatform/1.2/helion/admin/server/1.2upgrade.dita" locktitle="yes"
-          navtitle="In-Place Upgrades of ALS Nodes and Clusters"/>
+          navtitle="Cluster Setup">
+          <topicref href="devplatform/1.2/helion/admin/cluster/1.2cloud-init.dita" locktitle="yes"
+            navtitle="Using the cloud-init Package"/>
+          <topicref href="devplatform/1.2/helion/admin/server/1.2upgrade.dita" locktitle="yes"
+            navtitle="In-Place Upgrades of ALS Nodes and Clusters"/>
+        </topicref>
         <!--permalink: /helion/devplatform/1.2/als/admin/cluster/cloud-init/-->
-        <topicref href="devplatform/1.2/helion/admin/cluster/1.2cloud-init.dita" locktitle="yes"
-          navtitle="Using the cloud-init Package"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/cluster/external-db/-->
         <!--permalink: /helion/devplatform/1.2/als/admin/cluster/harbor/-->
         <!--permalink: /helion/devplatform/1.2/als/admin/console/-->
         <!--permalink: /helion/devplatform/1.2/als/admin/console/app-store/-->
-        <topicref href="devplatform/1.2/helion/admin/console/1.2app-store.dita" locktitle="yes"
-          navtitle="Sample Applications"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/console/customize/-->
         <!--permalink: /helion/devplatform/1.2/als/admin/reference/add-service/-->
-        <topicref href="devplatform/1.2/helion/admin/reference/1.2add-service.dita" locktitle="yes"
-          navtitle="Adding System Services"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/reference/architecture/-->
         <!--permalink: /helion/devplatform/1.2/als/admin/reference/groups/-->
-        <topicref href="devplatform/1.2/helion/admin/reference/1.2groups.dita" locktitle="yes"
-          navtitle="Managing Groups, Users and Limits (DEPRECATED)"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/reference/kato-ref/-->
         <!--permalink: /helion/devplatform/1.2/als/admin/reference/known-issues/-->
-        <topicref href="devplatform/1.2/helion/admin/reference/1.2known-issues.dita" locktitle="yes"
-          navtitle="Known Issues"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/reference/troubleshoot/-->
-        <topicref href="devplatform/1.2/helion/admin/reference/1.2troubleshoot.dita" locktitle="yes"
-          navtitle="Troubleshooting"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/server/-->
         <topicref href="devplatform/1.2/helion/admin/server/1.2index.dita" locktitle="yes"
-          navtitle="Server Configuration"/>
+          navtitle="Server Configuration">
+          <topicref href="devplatform/1.2/helion/admin/server/1.2operations.dita" locktitle="yes"
+            navtitle="Common Server Operations"/>
+          <topicref href="devplatform/1.2/helion/admin/server/1.2configuration.dita" locktitle="yes"
+            navtitle="Detailed Configuration"/>
+          <topicref href="devplatform/1.2/helion/admin/server/1.2aok.dita" locktitle="yes"
+            navtitle="AOK Authentication Server"/>
+          <topicref href="devplatform/1.2/helion/admin/server/1.2docker.dita" locktitle="yes"
+            navtitle="Docker and Fence"/>
+          <topicref href="devplatform/1.2/helion/admin/best-practices/1.2logging-examples.dita"
+            locktitle="yes" navtitle="Log Drain Examples"/>
+          <topicref href="devplatform/1.2/helion/admin/server/1.2logging.dita" locktitle="yes"
+            navtitle="Log Streams"/>
+          <topicref href="devplatform/1.2/helion/admin/server/1.2router.dita" locktitle="yes"
+            navtitle="ALS Router"/>
+        </topicref>
         <!--permalink: /helion/devplatform/1.2/als/admin/server/aok/-->
-        <topicref href="devplatform/1.2/helion/admin/server/1.2aok.dita" locktitle="yes"
-          navtitle="AOK Authentication Server"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/server/configuration/-->
-        <topicref href="devplatform/1.2/helion/admin/server/1.2configuration.dita" locktitle="yes"
-          navtitle="Detailed Configuration"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/server/docker/-->
-        <topicref href="devplatform/1.2/helion/admin/server/1.2docker.dita" locktitle="yes"
-          navtitle="Docker and Fence"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/server/logging/-->
         <!--permalink: /helion/devplatform/1.2/als/admin/server/operations/-->
-        <topicref href="devplatform/1.2/helion/admin/server/1.2operations.dita" locktitle="yes"
-          navtitle="Common Server Operations"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/server/router/-->
-        <topicref href="devplatform/1.2/helion/admin/server/1.2router.dita" locktitle="yes"
-          navtitle="ALS Router"/>
         <!--permalink: /helion/devplatform/1.2/als/admin/server/upgrade/-->
+        <topichead navtitle="Reference">
+          <topicref href="devplatform/1.2/helion/admin/reference/1.2groups.dita" locktitle="yes"
+            navtitle="Managing Groups, Users and Limits (DEPRECATED)"/>
+          <topicref href="devplatform/1.2/helion/admin/reference/1.2known-issues.dita"
+            locktitle="yes" navtitle="Known Issues"/>
+          <topicref href="devplatform/1.2/helion/admin/reference/1.2architecture.dita"
+            locktitle="yes" navtitle="Architectural Design"/>
+          <topicref href="devplatform/1.2/helion/admin/reference/1.2add-service.dita"
+            locktitle="yes" navtitle="Adding System Services"/>
+          <topicref href="devplatform/1.2/helion/admin/reference/1.2troubleshoot.dita"
+            locktitle="yes" navtitle="Troubleshooting"/>
+        </topichead>
       </topicref>
       <!--permalink: /helion/devplatform/1.2/als/user/-->
       <topicref href="devplatform/1.2/helion/user/1.2index.dita" locktitle="yes"
@@ -952,8 +958,6 @@
           <!--permalink: /helion/devplatform/1.2/als/user/deploy/buildpack/-->
           <topicref href="devplatform/1.2/helion/user/deploy/1.2buildpack.dita" locktitle="yes"
             navtitle="Buildpacks">
-            <topicref href="devplatform/1.2/helion/user/deploy/1.2adding-buildpack.dita"
-              navtitle="Adding Buildpacks" locktitle="yes"/>
             <topicref href="devplatform/1.2/helion/user/deploy/1.2other-frameworks.dita"
               locktitle="yes" navtitle="Generic and Standalone Frameworks"/>
             <topicref href="devplatform/1.2/helion/user/deploy/languages/1.2clojure.dita"
