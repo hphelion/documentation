@@ -29,7 +29,7 @@
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
 <li>
-<xref href="../../commercial/GA1/1.0commercial.install-GA-esx.dita#verifying-your-installation" type="section" scope="external"  >Verify your cloud installation</xref>.</li>
+  <xref href="../../commercial/GA1/1.0commercial.install-GA-esx.dita#topic8594/verifying-your-installation" type="section">Verify your cloud installation</xref>.</li>
 <li>Set up the management port-group in DVS. Make sure  that there is a proper network connection between the overcloud controller and the port-group.</li>
 <li>Verify the network connection between the overcloud controller and the proxy.</li>
 <li>Ping the gateway of the ESX Network or log in to the server where you will deploy the ESX Compute proxy.</li>
