@@ -35,98 +35,108 @@ option is useful in this scenario).</p>
 <xref type="section" href="#topic31232/changing-the-password">Changing the Password</xref>
 </li>
 <li>
-<xref type="section" href="#topic31232/network-setup">Network Setup</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic31232/changing-the-hostname">Changing the Hostname</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/changing-ip-addresses">Changing IP Addresses</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/setting-a-static-ip">Setting a Static IP</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/modifying-etc-hosts">Modifying the hosts file</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/server-config-dns">DNS</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/dynamic-dns">Dynamic DNS</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/alternate-dns-techniques">Alternate DNS Techniques</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic31232/xip-io">xip.io</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/dnsmasq">dnsmasq</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/adding-dns-nameservers">Adding DNS Nameservers</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/tcp-udp-port-configuration">TCP/UDP Port Configuration</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/http-proxy">Upstream HTTP Proxy Settings</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/staging-cache-app-http-proxy">Staging Cache &amp; App HTTP Proxy</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic31232/vm-filesystem-setup">VM Filesystem Setup</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/helion-data-services-vs-high-availability-databases">Application Lifecycle Service Data Services vs. High Availability Databases</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/https-ssl">HTTPS &amp; SSL</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic31232/using-your-own-ssl-certificate">Using your own SSL certificate</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/adding-custom-ssl-certs-sni">Adding More SSL Certificates (SNI)</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/ca-certificate-chaining">CA Certificate Chaining</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/cipher">Customizing the Cipher Suites</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/generating-a-self-signed-ssl-certificate">Generating a self-signed SSL certificate</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/using-your-own-ssl-certificate">Replacing the Default SSL Certificate</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic31232/quota-definitions">Quota Definitions</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic31232/sudo">sudo</xref>
-</li>
-<li>
-<xref type="section" href="#topic31232/allowed-repositories">Allowed Repositories</xref>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic31232/network-setup">Network Setup</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic31232/changing-the-hostname">Changing the
+              Hostname</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic31232/changing-ip-addresses">Changing IP
+              Addresses</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic31232/setting-a-static-ip">Setting a Static IP</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic31232/modifying-etc-hosts">Modifying the hosts
+              file</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic31232/server-config-dns">DNS</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic31232/dynamic-dns">Dynamic DNS</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic31232/alternate-dns-techniques">Alternate DNS
+              Techniques</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic31232/xip-io">xip.io</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic31232/dnsmasq">dnsmasq</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic31232/adding-dns-nameservers">Adding DNS
+                  Nameservers</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic31232/tcp-udp-port-configuration">TCP/UDP Port
+                  Configuration</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic31232/http-proxy">Upstream HTTP Proxy
+                  Settings</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic31232/staging-cache-app-http-proxy">Staging Cache
+                  &amp; App HTTP Proxy</xref>
+              </li>
+            </ul></li>
+          <li>
+            <xref type="section" href="#topic31232/vm-filesystem-setup">VM Filesystem Setup</xref>
+          </li>
+          <li>
+            <xref type="section"
+              href="#topic31232/helion-data-services-vs-high-availability-databases">Application
+              Lifecycle Service Data Services vs. High Availability Databases</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic31232/https-ssl">HTTPS &amp; SSL</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic31232/using-your-own-ssl-certificate">Using your
+                  own SSL certificate</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic31232/adding-custom-ssl-certs-sni">Adding More SSL
+                  Certificates (SNI)</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic31232/ca-certificate-chaining">CA Certificate
+                  Chaining</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic31232/cipher">Customizing the Cipher Suites</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic31232/generating-a-self-signed-ssl-certificate"
+                  >Generating a self-signed SSL certificate</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic31232/using-your-own-ssl-certificate">Replacing the
+                  Default SSL Certificate</xref>
+              </li>
+            </ul></li>
+          <li>
+            <xref type="section" href="#topic31232/quota-definitions">Quota Definitions</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic31232/sudo">sudo</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic31232/allowed-repositories">Allowed
+                  Repositories</xref>
+              </li>
+            </ul></li>
+        </ul></li>
 </ul>
 <section id="changing-the-password"> <title>Changing the Password</title>
-<p>The default password for the Helion system user is <b>helion</b>.  In clusters created by Helion Orchestration tools (the Horizon Management Console and Installer CLI VM), access after cluster setup is only available by SSH key pair.</p>
+<p>The default password for the Helion system user is <i>stackato</i>. In clusters created by Helion
+        Orchestration tools (the Horizon Management Console and Installer CLI VM), access after
+        cluster setup is only available by SSH key pair.</p>
 <p>This password is changed to match the one set for the first administrative user created in the Management Console. Once you've set up the primary Application Lifecycle Service admin account, use that account's password when logging in to the VM at the command line.</p>
 <p>In an Application Lifecycle Service cluster, this change only happens on the node serving the Management Console pages (which could be one of <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#cluster-multi-controllers" type="section" scope="external"  >multiple Controller nodes</xref>). In this case, it's best to log in to each node in the cluster to change the password
 manually with the <i>passwd</i> command.</p>
