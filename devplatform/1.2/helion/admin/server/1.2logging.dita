@@ -104,10 +104,8 @@ nodes (dmesg, dea.log, auth.log, etc.)</li>
 Events in the Management Console)</li>
 </ul>
 <p>A <b>message</b> is a single log line or event in a stream.</p>
-<p>Each message has a <b>key</b> which identifies <i>which</i> stream it belongs to
-(see <xref type="section" href="#topic11928/logging-keys">
-<i>Keys</i>
-</xref> below).</p>
+<p>Each message has a <b>key</b> which identifies <i>which</i> stream it belongs to (see <i><xref
+          href="#topic11928/keys" format="dita">Keys</xref></i> below).</p>
 <section id="logyard"> <title>Logyard</title>
 <p>Log streams are handled by three processes which run on all Application Lifecycle Service
 nodes:</p>
@@ -142,22 +140,16 @@ application-specific events from the <b>logyard_sieve</b> stream.</p>
 with the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-log-drain-add" type="section" scope="external"  >kato log
 drain</xref>
 command. For example:</p>
-<codeblock>
-  <codeph>kato log drain add --prefix systail.kato mydrain udp://logs.papertrailapp.com:12345
-</codeph>
-</codeblock>
+<codeblock>kato log drain add --prefix systail.kato mydrain udp://logs.papertrailapp.com:12345</codeblock>
 <p>This creates a UDP drain that receives messages from <b>kato.log</b> (on
 all nodes in the cluster) and forwards them to
 <xref href="https://papertrailapp.com/" scope="external" format="html" >Papertrail</xref> on port 12345.</p>
-<p>The <codeph>--prefix</codeph> flag takes a <xref type="section" href="#topic11928/logging-keys">
+  <p>The <codeph>--prefix</codeph> flag takes a <xref href="#topic11928/keys" format="dita">
 <i>key</i>
 </xref>
 prefix as its argument.</p>
 <p>To delete the drain:</p>
-<codeblock>
-  <codeph>kato log drain delete mydrain
-</codeph>
-</codeblock>
+<codeblock>kato log drain delete mydrain</codeblock>
 <p>The <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-history" type="section" scope="external"  >
 <i>kato
 history</i>
@@ -166,10 +158,7 @@ uses a built-in drain which forwards to a Redis server on the Primary
 node.</p>
 <p>The 'file' drain type will append to a local file. To overwrite the file
 instead, add the 'overwrite=1' option:</p>
-<codeblock>
-  <codeph>kato log drain add debug file:///s/logs/debug-1.log overwrite=1
-</codeph>
-</codeblock>
+<codeblock>kato log drain add debug file:///s/logs/debug-1.log overwrite=1</codeblock>
 </section>
 <section id="log-format"> <title>Log Format</title>
 <p>Log drains can emit entries in a variety of formats:</p>
@@ -183,19 +172,13 @@ format.</li>
 </ul>
 <p>For example, to add a drain with just the timestamp, application name
 and message:</p>
-<codeblock>
-  <codeph>kato log drain add -p apptail -f ' - : ' \
-&gt; all-apps file:///s/logs/apptail-short.log
-</codeph>
-</codeblock>
+<codeblock>kato log drain add -p apptail -f ' - : ' \
+&gt; all-apps file:///s/logs/apptail-short.log</codeblock>
 <p>JSON keys are enclosed in double curly braces and prefixed with a
 period. The spaces, hyphen, and colon here are functioning as
 delimiters. The resulting entry might look like this:</p>
-<codeblock>
-  <codeph>2013-01-22T16:01:14-08:00 - myenv: Application 'myenv' is now running on DEA 27da51
-</codeph>
-</codeblock>
-<p>Different JSON keys are available in different <xref type="section" href="#topic11928/logging-keys">
+<codeblock>2013-01-22T16:01:14-08:00 - myenv: Application 'myenv' is now running on DEA 27da51</codeblock>
+  <p>Different JSON keys are available in different <xref href="#topic11928/keys" format="dita">
 <i>log
 streams</i>
 </xref>:</p>
@@ -244,14 +227,11 @@ streams</i>
 <i>kato config
 get</i>
 </xref>:</p>
-<codeblock>
-  <codeph>kato config get logyard drainformats
+<codeblock>kato config get logyard drainformats
 apptail: ! ' .: '
 event: ! '@:  -- via '
 systail: ! '@: '
-[...]
-</codeph>
-</codeblock>
+[...]</codeblock>
 <p>These default log formats are used when the corresponding prefix is used
 and no format options ("-f") are specified. For example
 <codeph>kato drain add -p systail.dea ...</codeph> would format the
@@ -262,26 +242,14 @@ drain using the <i>systail</i> drain format.</p>
 configuration. To do this, add the formatting string to a new key in
 logyard/drainformats. For example, to save the log format used in the
 **all-apps **drain example above:</p>
-<codeblock>
-  <codeph>kato config set logyard drainformats/simplefmt " - : "
-</codeph>
-</codeblock>
+<codeblock>kato config set logyard drainformats/simplefmt " - : "</codeblock>
 <p>You can use this named format when setting up new drains. For example, a
 shorter command for creating the <b>all-apps</b> drain would be:</p>
-<codeblock>
-  <codeph>kato log drain add -p apptail -f simplefmt all-apps file:///s/logs/apptail-short.log
-</codeph>
-</codeblock>
+<codeblock>kato log drain add -p apptail -f simplefmt all-apps file:///s/logs/apptail-short.log</codeblock>
 <p>A custom <i>systail</i> log stream might look like this:</p>
-<codeblock>
-  <codeph>kato config set logyard drainformats/systail-papertrail ' - @ -- '
-</codeph>
-</codeblock>
+<codeblock>kato config set logyard drainformats/systail-papertrail ' - @ -- '</codeblock>
 <p>This could be forwarded to the Papertrail log analysis service:</p>
-<codeblock>
-  <codeph>kato log drain add papertrail udp://logs.papertrailapp.com:45678 -f systail-papertrail
-</codeph>
-</codeblock>
+<codeblock>kato log drain add papertrail udp://logs.papertrailapp.com:45678 -f systail-papertrail</codeblock>
 <p>You can also change the default apptail, event, and systail drain
 formats to modify the output of any drains using these prefixes (e.g.
 <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-drain-add" type="section" scope="external"  >helion drain</xref>, Cloud
@@ -305,19 +273,14 @@ Guide</xref>
 <section id="drain-status"> <title>Drain Status</title>
 <p>You can check the status of all drains on Application Lifecycle Service with the
 <codeph>kato log drain status</codeph> subcommand. For example:</p>
-<codeblock>
-  <codeph>kato log drain status
+<codeblock>kato log drain status
 appdrain.1.mine         192.168.68.5    RUNNING[53]
 appdrain.1.mydrain      192.168.68.5    RETRYING[75]  invalid port 3424252
 builtin.apptail         192.168.68.5    RUNNING[3]
 builtin.cloudevents     192.168.68.5    RUNNING[3]
-builtin.katohistory     192.168.68.5    RUNNING[3]
-</codeph>
-</codeblock>
-<p>If the RETRYING drain hits a <xref type="section" href="#topic11928/logging-drains-timeouts">
-<i>drain
-timeout</i>
-</xref>, its status will change to FATAL.</p>
+builtin.katohistory     192.168.68.5    RUNNING[3]</codeblock>
+<p>If the RETRYING drain hits a <xref href="#topic11928/drain-timeouts" format="dita"><i>drain
+            timeout</i></xref> , its status will change to FATAL.</p>
 </section>
 <section id="keys"> <title>Keys</title>
 <p>Each message in a log stream is prefixed with a key, identifying what
@@ -327,90 +290,80 @@ keys are available for use in defining drains using the
 <i>kato log drain
 add</i>
 </xref>).</p>
-<p>Systail keys are <xref type="section" href="#topic11928/logging-systail-manage">
-<i>configurable</i>
-</xref>.</p>
+<p>Systail keys are <xref href="#topic11928/managing-the-systail-stream" format="dita"
+            ><i>configurable</i></xref> .</p>
 </section>
 <section id="apptail"> <title>apptail</title>
-<codeblock>
-  <codeph>apptail.\&lt;app.id\&gt;
-</codeph>
-</codeblock>
+<codeblock>apptail.\&lt;app.id\&gt;</codeblock>
 </section>
 <section id="event"> <title>event</title>
 <ul>
-<li>event.\&lt;eventname&gt;
-
-<ul>
-<li>process_stop</li>
-<li>process_exit</li>
-<li>kato_action</li>
-<li>timeline</li>
-<li>nginx_error</li>
-<li>vcap_error</li>
-<li>vcap_warning</li>
-<li>service_provision</li>
-</ul>
-</li>
+<li>event.\&lt;eventname&gt; <ul>
+            <li>process_stop</li>
+            <li>process_exit</li>
+            <li>kato_action</li>
+            <li>timeline</li>
+            <li>nginx_error</li>
+            <li>vcap_error</li>
+            <li>vcap_warning</li>
+            <li>service_provision</li>
+          </ul></li>
 </ul>
 </section>
 <section id="systail"> <title>systail</title>
 <ul>
 <li>systail.\&lt;processname&gt;</li>
-<li>systail.\&lt;processname&gt;.\&lt;nodeip&gt;
-
-<ul>
-<li>auth</li>
-<li>dmesg</li>
-<li>dpkg</li>
-<li>kato</li>
-<li>kernel</li>
-<li>nginx_error</li>
-<li>supervisord</li>
-<li>cc_nginx_error</li>
-<li>app_mdns</li>
-<li>app_store</li>
-<li>applog_redis</li>
-<li>apptail</li>
-<li>avahi_publisher</li>
-<li>cc_nginx</li>
-<li>cloud_controller_ng</li>
-<li>logyard_sieve</li>
-<li>dea_ng</li>
-<li>dockerd</li>
-<li>aok</li>
-<li>filesystem_gateway</li>
-<li>filesystem_node</li>
-<li>harbor_gateway</li>
-<li>harbor_node</li>
-<li>harbor_proxy_connector</li>
-<li>harbor_redis</li>
-<li>health_manager</li>
-<li>logyard</li>
-<li>memcached_gateway</li>
-<li>memcached_node</li>
-<li>mongodb_gateway</li>
-<li>mongodb_node</li>
-<li>mysql</li>
-<li>mysql_gateway</li>
-<li>mysql_node</li>
-<li>nats_server</li>
-<li>nginx</li>
-<li>postgresql</li>
-<li>postgresql_gateway</li>
-<li>postgresql_node</li>
-<li>prealloc</li>
-<li>rabbit_gateway</li>
-<li>rabbit_node</li>
-<li>redis_gateway</li>
-<li>redis_node</li>
-<li>redis_server</li>
-<li>router</li>
-<li>router2g</li>
-<li>stager</li>
-<li>systail</li>
-</ul>
-</li>
+<li>systail.\&lt;processname&gt;.\&lt;nodeip&gt; <ul>
+            <li>auth</li>
+            <li>dmesg</li>
+            <li>dpkg</li>
+            <li>kato</li>
+            <li>kernel</li>
+            <li>nginx_error</li>
+            <li>supervisord</li>
+            <li>cc_nginx_error</li>
+            <li>app_mdns</li>
+            <li>app_store</li>
+            <li>applog_redis</li>
+            <li>apptail</li>
+            <li>avahi_publisher</li>
+            <li>cc_nginx</li>
+            <li>cloud_controller_ng</li>
+            <li>logyard_sieve</li>
+            <li>dea_ng</li>
+            <li>dockerd</li>
+            <li>aok</li>
+            <li>filesystem_gateway</li>
+            <li>filesystem_node</li>
+            <li>harbor_gateway</li>
+            <li>harbor_node</li>
+            <li>harbor_proxy_connector</li>
+            <li>harbor_redis</li>
+            <li>health_manager</li>
+            <li>logyard</li>
+            <li>memcached_gateway</li>
+            <li>memcached_node</li>
+            <li>mongodb_gateway</li>
+            <li>mongodb_node</li>
+            <li>mysql</li>
+            <li>mysql_gateway</li>
+            <li>mysql_node</li>
+            <li>nats_server</li>
+            <li>nginx</li>
+            <li>postgresql</li>
+            <li>postgresql_gateway</li>
+            <li>postgresql_node</li>
+            <li>prealloc</li>
+            <li>rabbit_gateway</li>
+            <li>rabbit_node</li>
+            <li>redis_gateway</li>
+            <li>redis_node</li>
+            <li>redis_server</li>
+            <li>router</li>
+            <li>router2g</li>
+            <li>stager</li>
+            <li>systail</li>
+          </ul></li>
 </ul>
 </section>
 <section id="managing-the-systail-stream"> <title>Managing the systail stream</title>
@@ -425,42 +378,25 @@ source for an existing key.</p>
 <li>
 <p>To retrieve the current list of log files being streamed:</p>
 
-<codeblock>
-<codeph>kato config get systail log_files
-</codeph>
-</codeblock>
+<codeblock>kato config get systail log_files</codeblock>
 </li>
 <li>
 <p>To remove a log file from the stream:</p>
 
-<codeblock>
-<codeph>kato config del systail log_files/dpkg
-</codeph>
-</codeblock>
+<codeblock>kato config del systail log_files/dpkg</codeblock>
 </li>
 <li>
 <p>To add a new log file to the stream:</p>
 
-<codeblock>
-<codeph>kato config set systail log_files/dpkg /var/log/dpkg.log
-</codeph>
-</codeblock>
+<codeblock>kato config set systail log_files/dpkg /var/log/dpkg.log</codeblock>
 </li>
 </ul>
 <p>Restart the <codeph>systail</codeph> process after adding or
 removing log files:</p>
-<codeblock>
-  <codeph>kato process restart systail
-</codeph>
-</codeblock>
-<p>
-  <b>Note</b>
-</p>
-<p>Do not remove the default Application Lifecycle Service log stream keys (i.e. anything in the
-<xref type="section" href="#topic11928/logging-keys-systail">
-<i>systail</i>
-</xref> list above) as this would affect the
-output of <codeph>kato tail</codeph>.</p>
+<codeblock>kato process restart systail</codeblock>
+      <note> Do not remove the default Application Lifecycle Service log stream keys (i.e. anything
+        in the <i><xref href="#topic11928/systail" format="dita">systail</xref></i> list above) as
+        this would affect the output of <codeph>kato tail</codeph>.</note>
 </section>
 <section id="configuration"> <title>Configuration</title>
 <p>Application Lifecycle Service has a number of configurable limits on application log drains
@@ -499,12 +435,9 @@ get</i>
 </xref>. For
 example:</p>
 
-<codeblock>
-<codeph>kato config get logyard retrylimits
+<codeblock>kato config get logyard retrylimits
 appdrain.: 24h
-tmp.: 25m
-</codeph>
-</codeblock>
+tmp.: 25m</codeblock>
 
 <p>To set a time-out (minimum 21m), use <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" type="section" scope="external"  >
 <i>kato config
@@ -513,10 +446,7 @@ set</i>
 example, to set the timeout limit to 10 hours on all drains named
 with the prefix "papertrail":</p>
 
-<codeblock>
-<codeph>kato config set logyard retrylimits/papertrail 10h
-</codeph>
-</codeblock>
+<codeblock>kato config set logyard retrylimits/papertrail 10h</codeblock>
 
 <p>These limits will take effect on new drains, deleted/re-created
 drains, or for all matching drains after
@@ -534,19 +464,13 @@ limits the number of drains an application can have. Once this limit
 is reached, users will see the following notification when trying to
 add a new drain:</p>
 
-<codeblock>
-<codeph>Adding drain [fail] ... Error 123: Per-app drain limit (2) reached.
-</codeph>
-</codeblock>
+<codeblock>Adding drain [fail] ... Error 123: Per-app drain limit (2) reached.</codeblock>
 
 <p>To change the limit, set <codeph>max_drains_per_app</codeph> in
 the cloud_controller_ng configuration. For example, to change this
 limit to 5 drains:</p>
 
-<codeblock>
-<codeph>kato config set cloud_controller_ng max_drains_per_app 5
-</codeph>
-</codeblock>
+<codeblock>kato config set cloud_controller_ng max_drains_per_app 5</codeblock>
 </li>
 </ul>
 </section>
@@ -564,10 +488,7 @@ if the log file sources have grown extremely large.</p>
 appear in both the Cloud Events stream and the application's log
 stream:</p>
 
-<codeblock>
-<codeph>WARN -- [exampleapp] Skipping much of a large log file (stderr); size (26122040 bytes) &gt; read_limit (15728640 bytes)
-</codeph>
-</codeblock>
+<codeblock>WARN -- [exampleapp] Skipping much of a large log file (stderr); size (26122040 bytes) &gt; read_limit (15728640 bytes)</codeblock>
 
 <p>To change the read_limit to 100MB:</p>
 
@@ -584,10 +505,7 @@ missing data.</p>
 
 <p>To change the rate_limit to 300 lines:</p>
 
-<codeblock>
-<codeph>kato config set apptail rate_limit 300
-</codeph>
-</codeblock>
+<codeblock>kato config set apptail rate_limit 300</codeblock>
 </li>
 </ul>
 </section>
