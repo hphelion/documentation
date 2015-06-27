@@ -68,7 +68,7 @@
           <b>Contact Support</b>: Link to the <xref href="#topic8844/support" format="dita"
             >Support</xref> page.</li>
 <li>
-<b>Download the Client</b>: Link to the locally hosted <xref href="../../../../../devplatform/1.2/helion/user/client/1.2index.dita#client" type="section" scope="external"  >CLI client</xref> download.</li>
+<b>Download the Client</b>: Link to the locally hosted <xref href="../../../../../devplatform/1.2/helion/user/client/1.2index.dita#client" type="section"   >CLI client</xref> download.</li>
 <li>
           <b>Deploy Sample Applications</b>: Link to the <xref href="#topic8844/sample-apps"
             format="dita">Sample Applications</xref>.</li>
@@ -136,17 +136,17 @@
 </ul>
 </section>
 <section id="organization-list"> <title>Organizations List</title>
-<p>The Organizations list is accessible from the top menu. It shows all <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >Organizations</xref> which the current user is a member of. The list is searchable by name.</p>
+<p>The Organizations list is accessible from the top menu. It shows all <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" type="section"   >Organizations</xref> which the current user is a member of. The list is searchable by name.</p>
 <p>Clicking on any Organization name opens the Organization view.</p>
 </section>
 <section id="organization-view"> <title>Organization View</title>
-<p>The Organizations page shows a list of all <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >Organizations</xref> that the current user is a member of. Depending on how ALS has been set up, it is possible be a member of only a single Organization.</p>
+<p>The Organizations page shows a list of all <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" type="section"   >Organizations</xref> that the current user is a member of. Depending on how ALS has been set up, it is possible be a member of only a single Organization.</p>
 <p>Clicking on the Organization's name opens a view of that organization, including the following tabs:</p>
 <ul>
 <li>
 <b>Spaces</b>: A list of Spaces that belong to the Organization, showing the current number of applications and services deployed to that space. Clicking on a Space in the list opens a <xref type="section" href="#topic8844/space-view">view of that Space</xref>.</li>
 <li>
-<b>Users</b>: A list of Users who are members of the Organization, showing the Email address and Organization <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces-roles" type="section" scope="external"  >Roles</xref> of each.
+<b>Users</b>: A list of Users who are members of the Organization, showing the Email address and Organization <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces-roles" type="section"   >Roles</xref> of each.
 
 <ul>
 <li>
@@ -168,7 +168,7 @@
 </ul>
 </li>
 <li>
-<b>Domains</b>: Domains belonging to the Organization that can be used by applications deployed to <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" type="section" scope="external"  >Spaces</xref> in the Organization. Typically, these will be a subdomain of the Application Lifecycle Service system itself. For example, an Organization called <i>acme</i> on a PaaS with the address <i>api.example.org</i> might have the domain <i>*.acme.example.org</i>.</li>
+<b>Domains</b>: Domains belonging to the Organization that can be used by applications deployed to <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" type="section"   >Spaces</xref> in the Organization. Typically, these will be a subdomain of the Application Lifecycle Service system itself. For example, an Organization called <i>acme</i> on a PaaS with the address <i>api.example.org</i> might have the domain <i>*.acme.example.org</i>.</li>
 </ul>
 <p>
 <b>Note</b>: There is currently no interface in the Management Console for Managers, Auditors, or Billing Managers to view or adjust billing/payment info and spending limits.</p>
@@ -221,7 +221,7 @@
 <li>the service instance name (not the canonical database name)</li>
 <li>its current state</li>
 </ul>
-<p>For more information on a service instance, such as its credentials, use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-services.dita#command-service" type="section" scope="external"  >helion service</xref> command.</p>
+<p>For more information on a service instance, such as its credentials, use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-services.dita#command-service" type="section"   >helion service</xref> command.</p>
 <p>
   <b>Credentials</b>
 </p>
@@ -230,7 +230,7 @@ If a the service is a User Provided Service, new credentials can be added and ex
 <p>
   <b>App Bindings</b>
 </p>
-<p>A list of applications that have bindings to this service instance. Clicking an app name opens an <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita#applications" type="section" scope="external"  >administrative view of that application</xref>.</p>
+<p>A list of applications that have bindings to this service instance. Clicking an app name opens an <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita#applications" type="section"   >administrative view of that application</xref>.</p>
 </section>
 <section id="sample-apps"> <title>Sample Applications</title>
 <p>The Sample Apps are collection of ready-to-run applications which can be deployed to Application Lifecycle Service by fetching the source code from the repository.</p>

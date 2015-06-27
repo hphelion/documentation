@@ -51,7 +51,7 @@
                 >Accessing Server via the Command Line</xref>
             </li>
             <li>
-              <xref href="server/1.2index.dita#topic3007/common-operations" type="section">Common Operations</xref>
+              <xref href="server/1.2index.dita#topic3007/common-operations" type="section"  >Common Operations</xref>
             </li>
             <li>
               <xref href="server/1.2index.dita#topic3007/detailed-configuration" type="section"  >Detailed
@@ -62,10 +62,10 @@
           <xref href="server/1.2router.dita">Router</xref>
           <ul>
             <li>
-              <xref href="server/1.2router.dita#topic3030/settings" type="section" >Settings</xref>
+              <xref href="server/1.2router.dita#topic3030/settings" type="section"  >Settings</xref>
             </li>
             <li>
-              <xref href="server/1.2router.dita#topic3030/websockets" type="section" >WebSockets</xref>
+              <xref href="server/1.2router.dita#topic3030/websockets" type="section"  >WebSockets</xref>
             </li>
             <li>
               <xref href="server/1.2router.dita#topic3030/router-spdy" type="section"  >SPDY</xref>

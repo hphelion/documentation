@@ -110,7 +110,7 @@ afterwards.</p>
 <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#Disable_Password_Authentication" type="section" scope="external" format="html" >disable password authentication</xref> if desired.</p>
 </section>
 <section id="applying-updates"> <title>Applying Updates</title>
-<p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#upgrade" type="section"   >
+<p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#upgrade" type="section" >
 <i>kato node
 upgrade</i>
 </xref> or a <xref type="section" href="#topic16169/bestpractices-migration">
@@ -252,7 +252,7 @@ backup routine is left to the discretion of the Application Lifecycle Service ad
 at 3AM as <codeph>root</codeph> using the <codeph>helion</codeph> user's login environment (required) and saves a .tgz file to a
 mounted external filesystem.</p>
 <p>Scheduled (non-interactive) backups using the <codeph>kato export</codeph> command will need to be run by <codeph>root</codeph> as
-some shell operations performed in the export require <codeph>sudo</codeph> when run interactively. For clusters, password authentication will have to be <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication" type="section" scope="external" format="html" >disabled</xref> between the Core node and all other nodes. The command should be run on the node hosting the <i>filesystem</i> role, as some shell commands need to be run locally for that service.</p>
+some shell operations performed in the export require <codeph>sudo</codeph> when run interactively. For clusters, password authentication will have to be <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication" type="section"  format="html" >disabled</xref> between the Core node and all other nodes. The command should be run on the node hosting the <i>filesystem</i> role, as some shell commands need to be run locally for that service.</p>
 </section>
 <section id="importing-the-server-data"> <title>Importing the server data</title>
 <p>To import Application Lifecycle Service data, transfer the exported .tgz file to the target VM or note the hostname of the old VM / Core node.</p>
@@ -349,7 +349,7 @@ Documentation</xref>
 <ul>
 <li>mount the filesystem and/or block storage service on the instance (with <xref type="section" href="#topic16169/enabling-filesystem-quotas">quotas enabled</xref>)</li>
 <li>create directories for the items you wish to move,</li>
-<li>run the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-relocate" type="section" scope="external"  >
+<li>run the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-relocate" type="section"   >
 <i>kato
 relocate</i>
 </xref>
@@ -372,7 +372,7 @@ kato relocate containers /mnt/containers
 <p>The Application Lifecycle Service filesystem quotas cannot be enforced by the system unless
 they are mounted on partitions which support Linux quotas. This may need
 to be specified explicitly when running the <codeph>mount</codeph>
-command. The <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-relocate" type="section" scope="external"  >
+command. The <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-relocate" type="section"   >
 <i>kato relocate</i>
 </xref> command
 will warn if this is necessary.</p>

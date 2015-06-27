@@ -23,7 +23,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/admin/server/1.2upgrade.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/server/upgrade/--></p>
-<p>Application Lifecycle Service provides the ability to upgrade a node or cluster in place via <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-upgrade" type="section" scope="external"  >kato node upgrade</xref> without the need to rebuild the entire cluster. This section covers how the upgrade process works.</p>
+<p>Application Lifecycle Service provides the ability to upgrade a node or cluster in place via <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-upgrade" type="section"   >kato node upgrade</xref> without the need to rebuild the entire cluster. This section covers how the upgrade process works.</p>
 <ul>
 <li>
 <xref type="section" href="#topic13180/before-an-upgrade">Before an upgrade</xref>
@@ -127,7 +127,7 @@ public URIs:</p>
 <codeblock>export http_proxy=http://intproxy.example.com: </codeblock>
 </section>
 <section id="rsa-keys"> <title>Passwordless SSH</title>
-<p>For cluster upgrades, you should set up SSH keys <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication" type="section" scope="external" format="html" >and disable password authentication</xref>
+<p>For cluster upgrades, you should set up SSH keys <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication" type="section"  format="html" >and disable password authentication</xref>
 between the Core node and all other cluster nodes. Without this configuration, you will be prompted for the system user password multiple times for each node.</p>
 </section>
 <section id="pwless-sudo"> <title>Passwordless sudo</title>
@@ -138,7 +138,7 @@ sudo chmod 0440 /etc/sudoers.d/nopasswd</codeblock>
 <p>With passwordless sudo in effect on all nodes, <i>kato node upgrade</i> should run without intervention. Obviously, this change has security implications, and is left to the discretion of the admin. Enable it only for the duration of the upgrade.</p>
 </section>
 <section id="extraDEA"> <title>Extra DEA Nodes</title>
-  <p>While the upgrade is in progress, DEAs will be <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" >retired</xref> one at a time and the hosted applications will be moved to other DEAs. If the system is operating at or close to capacity (all DEAs are fully populated) it will be necessary to add at least one <xref href="../cluster/1.2index.dita#topic18326/dea-nodes" type="section" scope="external"  >DEA node</xref> to the cluster before proceeding. Customers are typically permitted to exceed their node/memory license allocation during an upgrade.</p>
+  <p>While the upgrade is in progress, DEAs will be <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" >retired</xref> one at a time and the hosted applications will be moved to other DEAs. If the system is operating at or close to capacity (all DEAs are fully populated) it will be necessary to add at least one <xref href="../cluster/1.2index.dita#topic18326/dea-nodes" type="section"   >DEA node</xref> to the cluster before proceeding. Customers are typically permitted to exceed their node/memory license allocation during an upgrade.</p>
 </section>
 <section id="executing-the-upgrade"> <title>Executing the upgrade</title>
 </section>
@@ -176,7 +176,7 @@ sudo chmod 0440 /etc/sudoers.d/nopasswd</codeblock>
 <li>other</li>
 </ol>
 <p>Nodes are matched to this ordering by the roles they have enabled. Any nodes that don't match (e.g. data service nodes) are added to the end to be upgraded last.</p>
-  <p>The order can be overridden with the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-upgrade" type="section" scope="external"  >--role-order</xref>
+  <p>The order can be overridden with the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-upgrade" type="section"   >--role-order</xref>
 option.</p>
 </section>
 <section id="node-upgrade-process"> <title>Node Upgrade Process</title>
@@ -199,7 +199,7 @@ option.</p>
 <p>A pre-upgrade validation check is performed on the node to check that it is in working order before any upgrade actions are performed. If this validation fails then the upgrade process is stopped. These validation steps can be displayed to the user as errors while still continuing the upgrade process by using the <i>--ignore-inspect-failures</i> option.</p>
 <p>
 <b>Warning</b>: Use this option only if you get failures running <i>kato node inspect</i> that are known to be caused by systems outside of the control of Application Lifecycle Service, or if directed by HP Application Lifecycle Service Support.</p>
-  <p>Next, the upgrade packages are downloaded and a validation check is performed on the files to make sure everything required for an upgrade is available. If the node is a DEA node it is then <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-retire" type="section" scope="external"  >retired</xref> to ensure any applications running on the node are evacuated before the upgrade takes place.</p>
+  <p>Next, the upgrade packages are downloaded and a validation check is performed on the files to make sure everything required for an upgrade is available. If the node is a DEA node it is then <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-retire" type="section"   >retired</xref> to ensure any applications running on the node are evacuated before the upgrade takes place.</p>
 <p>After the components have been upgraded, the node is restarted and then post-upgrade validation takes place. If any failures occur, the upgrade process is stopped and you will be given the option to roll back the upgrade. As with the pre-upgrade validation, this can be skipped using the <i>--ignore-inspect-failures</i> option (see warning above).</p>
 <p>When <i>kato node upgrade</i> completes successfully, the node is restarted running the latest version of Application Lifecycle Service.</p>
 <p>Remember to take the node out of maintenance mode after the upgrade.</p>
@@ -212,7 +212,7 @@ option.</p>
 </ul>
 <p>The cluster must have the following redundant roles:</p>
 <ul>
-  <li>At least two Routers <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-setup-load_balancer" type="section" scope="external"  >(behind a Load Balancer)</xref>
+  <li>At least two Routers <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-setup-load_balancer" type="section"   >(behind a Load Balancer)</xref>
 </li>
 <li>At least two DEA nodes</li>
 </ul>
@@ -245,7 +245,7 @@ stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$ </codeblock></li>
       </p>
 </section>
 <section id="app-store-proxy-settings"> <title>App Store Proxy Settings</title>
-  <p>Proxy settings for the App Store may be lost during an upgrade. If the App Store cannot fetch data after an upgrade, and your system is behind an HTTP(S) proxy, <xref href="../server/1.2configuration.dita#topic31232/http-proxy" type="section" scope="external"  >reset the proxy information</xref> for your network.</p>
+  <p>Proxy settings for the App Store may be lost during an upgrade. If the App Store cannot fetch data after an upgrade, and your system is behind an HTTP(S) proxy, <xref href="../server/1.2configuration.dita#topic31232/http-proxy" type="section"   >reset the proxy information</xref> for your network.</p>
 </section>
 <section id="upgrading-with-customizations"> <title>Upgrading with Customizations</title>
 <p>Many files and directories in the ALS VM are overwritten during an upgrade. The <xref href="../console/1.2customize.dita" >Customization instructions</xref> document best practices which are safe for upgrades, but some customers may have modified the system further.</p>
@@ -283,7 +283,7 @@ stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$ </codeblock></li>
 <section id="custom-buildpacks"> <title>Custom Buildpacks</title>
 <p>
 <b>Warning</b>: Any custom buildpacks added to the system prior to the upgrade will be lost.
-  Custom buildpacks must be <xref href="../../user/deploy/1.2buildpack.dita#topic3370/custom-buildpacks" type="section" scope="external"  >restored</xref> to the system after an upgrade.</p>
+  Custom buildpacks must be <xref href="../../user/deploy/1.2buildpack.dita#topic3370/custom-buildpacks" type="section"   >restored</xref> to the system after an upgrade.</p>
 </section>
 <section id="clearing-the-browser-cache"> <title>Clearing the Browser Cache</title>
 <p>After an upgrade, certain Management Console JavaScript and CSS files may persist in the browser. For example, Firefox users may see the following error in the Applications view:</p>
@@ -294,7 +294,7 @@ stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$ </codeblock></li>
 <p>When migrating applications from <tm tmtype="reg">Helion OpenStack</tm> 1.0 to 1.1, applications with broken 
 support for <codeph>https_proxy</codeph> may fail during staging (or pre-running 
 hooks) because <codeph>https_proxy</codeph> is now always defined during these 
-  stages, even when there is no upstream proxy behind the <xref href="../server/1.2configuration.dita#topic31232/staging-cache-app-http-proxy" type="section" scope="external"  >builtin 
+  stages, even when there is no upstream proxy behind the <xref href="../server/1.2configuration.dita#topic31232/staging-cache-app-http-proxy" type="section"   >builtin 
 proxy</xref>.</p>
 </section>
 <section id="missing-kato"> <title>Missing Kato Utility</title>
