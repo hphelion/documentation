@@ -28,7 +28,7 @@
 </title>
 <ul>
 <li>
-          <xref href="1.2client-ref-getting-started.dita#topic2439/command-login" type="section" scope="external" >helion
+          <xref href="1.2client-ref-getting-started.dita#topic2439/command-login" type="section"  >helion
             login</xref>: Logs in to the current or specified target with the named user.</li>
 <li>
   <xref href="1.2client-ref-getting-started.dita#topic2439/command-logout" type="section">helion logout</xref>: Logs the current user out of the current, specified, or all targets.</li>
@@ -41,7 +41,7 @@
 </title>
 <ul>
 <li>
-          <xref href="1.2client-ref-administration.dita#topic11202/command-admin-grant" type="section" scope="external" >helion admin
+          <xref href="1.2client-ref-administration.dita#topic11202/command-admin-grant" type="section"  >helion admin
             grant</xref>: Grant the named user administrator privileges for the current or specified
           target.</li>
 <li>

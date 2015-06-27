@@ -152,7 +152,7 @@ directory of the application and make some modifications to
 <ul>
 <li>
 <p>Add a <codeph>newrelic.ini</codeph> file in
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#term-home" type="section" scope="external"  >
+<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#term-home" type="section" >
 <i>HOME</i>
 </xref> directory
 containing the following:</p>

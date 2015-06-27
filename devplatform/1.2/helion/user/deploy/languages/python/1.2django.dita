@@ -47,7 +47,7 @@ mysql-python
 </codeph>
 </codeblock>
 <section id="configuring-database"> <title>Configuring the Database</title>
-<p>See <xref href="../../../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#database-accessing" type="section" scope="external"  >Using Configured Database Services</xref> for more information on connecting with database services.</p>
+<p>See <xref href="../../../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#database-accessing" type="section">Using Configured Database Services</xref> for more information on connecting with database services.</p>
 <ol>
 <li>
 <p>You must modify the <codeph>DATABASES</codeph> variable of your project's <i>settings.py</i> as shown below to detect the database service provisioned by Helion:</p>
@@ -81,13 +81,14 @@ else:
 </codeblock>
 
 <p>
-<note>In the future, this may be automatically written to <i>local_settings.py</i> (similar to ep.io and others)</note></p>
+<b>Note</b>: In the future, this may be automatically written to <i>local_settings.py</i> (similar to ep.io and others)</p>
 </li>
 <li>
 <p>Then add a new dependency to <i>requirements.txt</i>:</p>
 
 <codeblock>
-echo 'mysql-python' &gt;&gt; requirements.txt
+<codeph>echo 'mysql-python' &gt;&gt; requirements.txt
+</codeph>
 </codeblock>
 </li>
 </ol>

@@ -35,40 +35,45 @@ to run applications.</p>
 <p>To use the Legacy buildpack: specify the <b>framework</b> type for your application (e.g. php,
 play, rails3, sinatra, java_web, java_ee, etc.). You can optionally
 set a specific <b>runtime</b> as well. For example:</p>
-<codeblock>name: bottle-py3
+<codeblock>
+  <codeph>name: bottle-py3
 framework:
   type: python
-  runtime: python32</codeblock>
+  runtime: python32
+</codeph>
+</codeblock>
 <p>
-        <note>When using the Legacy Buildpack, config-defined environment variable values can only
-          be updated by re-pushing the application with new settings (see <xref
-            href="../../../../../devplatform/1.2/helion/admin/reference/1.2known-issues.dita#known-issues-legacy-env"
-            >Legacy Buildpack and Environment Variables</xref>).</note>
-      </p>
+<b>Note</b>: When using the Legacy Buildpack, config-defined environment variable values can only be updated by re-pushing the application with new settings (see <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2known-issues.dita#known-issues-legacy-env" type="section">Legacy Buildpack and Environment Variables</xref>).</p>
 </section>
 <section id="custom-buildpacks"> <title>Custom Buildpacks</title>
 <p>To specify the exact buildpack to use for deploying your application,
 set a top-level <codeph>buildpack:</codeph> key in <i>manifest.yml</i> to the URL of the buildpack's Git repository. For example:</p>
-<codeblock>name: myrubyapp
+<codeblock>
+  <codeph>name: myrubyapp
 mem: 256MB
-buildpack: https://github.com/ActiveState/stackato-buildpack-ruby.git</codeblock>
+buildpack: https://github.com/ActiveState/stackato-buildpack-ruby.git
+</codeph>
+</codeblock>
 <p>You can use a specific branch by specifying it at the end of the URL using the following format:</p>
-<codeblock>buildpack: https://github.com/ActiveState/stackato-buildpack-ruby.git#branchname</codeblock>
+<codeblock>
+  <codeph>buildpack: https://github.com/ActiveState/stackato-buildpack-ruby.git#branchname
+</codeph>
+</codeblock>
 <p>There are hundreds of buildpacks available on Github. Searching Github for the term "buildpack" and the name of the language or framework you wish to deploy may provide you with a working solution, or at least the starting point for your own custom buildpack.</p>
-      <note>
-        <p>Not all Heroku buildpacks work with ALS due to environmental differences such as relying
-          on the presence of certain executables or libraries in Heroku-specific locations. Examine
-          and test any buildpack carefully before using it in production deployments.</p>
-        <p>Using <i>config_vars</i> in a buildpack's <i>bin/release</i> to set environment variables
-          has been deprecated. Use a shell script in <i>$HOME/.profile.d</i> instead.</p>
-      </note>
+<p>
+<b>Note</b>:  Not all Heroku buildpacks work with ALS due to environmental differences such as relying on the presence of certain executables or libraries in Heroku-specific locations. Examine and test any buildpack carefully before using it in production deployments.</p>
+<p>
+<b>Note</b>: Using <i>config_vars</i> in a buildpack's <i>bin/release</i> to set environment variables has been deprecated. Use a shell script in <i>$HOME/.profile.d</i> instead.</p>
 </section>
 <section id="procfile"> <title>Procfile</title>
 <p>Buildpacks will usually contain a <b>default_process_type</b> setting with the command used to start the application process. If your application needs a custom command to start the process, create a Procfile in the base directory of your application.</p>
 <p>The Procfile should contain a single line defining the <b>web:</b> <b>
 <i>process</i>
 </b> for the application defined. For example:</p>
-<codeblock>web: bundle exec rails server -p $PORT</codeblock>
+<codeblock>
+  <codeph>web: bundle exec rails server -p $PORT
+</codeph>
+</codeblock>
 <p>ALS does not support multiple process types in the Procfile. To launch a <i>worker</i> process, create a separate app with an empty URL ( <b>url: [ ]</b> ) in <i>manifest.yml</i>.</p>
 </section>
 </body>

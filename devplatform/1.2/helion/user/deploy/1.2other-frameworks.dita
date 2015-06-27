@@ -33,13 +33,13 @@ interface.</li>
 </ul>
 <p>These two frameworks make no assumptions about the application type and
 can be customized to run a wide variety of non-standard applications.</p>
-<p>Any language <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#runtime" type="section" scope="external"  >
+<p>Any language <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#runtime" type="section"   >
 <i>runtime</i>
 </xref>
 available on the server can be specified in the config file. If a
 runtime is not specified, Python 2.7 is made available by default.</p>
 <section id="generic"> <title>Generic</title>
-<p>The Generic framework requires a custom <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#processes" type="section" scope="external"  >
+<p>The Generic framework requires a custom <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#processes" type="section"   >
 <i>processes:
 web:</i>
 </xref> setting in
@@ -48,12 +48,15 @@ custom web server).</p>
 <p>The example below shows a web process that serves static files from the
 application directory using Python's
 <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2index.dita" >SimpleHTTPServer</xref>:</p>
-<codeblock>framework:
+<codeblock>
+  <codeph>framework:
     type: generic
 processes:
-    web: python -m SimpleHTTPServer $PORT</codeblock>
+    web: python -m SimpleHTTPServer $PORT
+</codeph>
+</codeblock>
 <p>If you wish to run an application <i>without</i> a web interface (i.e. a
-background "worker" process), <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#processes-web-null" type="section" scope="external"  >
+background "worker" process), <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#processes-web-null" type="section"   >
 <i>set 'processes: web:' to
 Null</i>
 </xref> or use the
@@ -61,17 +64,20 @@ Standalone framework instead.</p>
 </section>
 <section id="standalone"> <title>Standalone</title>
 <p>The Standalone framework uses a custom command specified in the
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#command" type="section" scope="external"  >
+<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#command" type="section"   >
 <i>command:</i>
 </xref> key to start a
 background worker process.</p>
 <p>The example below shows <i>manifest.yml</i> configuration for an application
 running a simple Python worker script.</p>
-<codeblock>name: worker
+<codeblock>
+  <codeph>name: worker
 framework:
   type: standalone
   runtime: python27
-command: python main.py</codeblock>
+command: python main.py
+</codeph>
+</codeblock>
 <p>The <codeph>command</codeph> must start a long-running child
 process. If this process exits for any reason, the Health Manager will
 restart the application instance.</p>
@@ -81,11 +87,14 @@ framework, as it is intended for background worker processes. The
 automatically suppress URL mapping for applications using this
 framework.</p>
 <p>
-        <note>If the application does not serve web requests, it may appear in the Management
-          Console or <codeph>helion apps</codeph> command as not running. To verify a non-web
-          application is actually running, use <codeph>helion logs</codeph> or <codeph>helion
-            ssh</codeph>.</note>
-      </p>
+  <b>Note</b>
+</p>
+<p>If the application does not serve web requests, it may appear in the
+Management Console or <codeph>helion apps</codeph> command as not
+running. To verify a non-web application is actually running, use
+<codeph>helion logs</codeph> or <codeph>helion ssh</codeph>.</p>
+<!--See the
+[helion-worker](https://github.com/stackato-apps/stackato-worker/tree/master)sample for a simple working example. -->
 </section>
 </body>
 </topic>
