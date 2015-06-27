@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5402">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Community How To's with the Compute Service</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Community How To's with the Compute Service</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -13,15 +13,15 @@
  <!--./community/community.services-compute-howto.md-->
  <!--permalink: /cloudos/community/services/compute/howto/--></p>
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
-<p>Leveraging <tm tmtype="reg">OpenStack</tm> Compute, the HP <tm tmtype="reg">Helion OpenStack</tm> Community Compute provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.</p>
-  <p>The following lists of tasks can be performed by a user or administrator through the <xref href="community.dashboard.how-works.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Community Dashboard</xref>, the <tm tmtype="reg">OpenStack</tm> CLI or <tm tmtype="reg">OpenStack</tm> API.</p>
-<p>For details on performing these tasks using the API or CLI, see the following <tm tmtype="reg">OpenStack</tm> documentation:</p>
+<p>Leveraging OpenStack Compute, the HP Helion OpenStack Community Compute provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.</p>
+  <p>The following lists of tasks can be performed by a user or administrator through the <xref href="community.dashboard.how-works.dita" >HP Helion OpenStack Community Dashboard</xref>, the OpenStack CLI or OpenStack API.</p>
+<p>For details on performing these tasks using the API or CLI, see the following OpenStack documentation:</p>
 <ul>
 <li>
-<xref href="http://api.openstack.org/api-ref-compute-v2.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Compute API v2.0 Reference</xref>
+<xref href="http://api.openstack.org/api-ref-compute-v2.html" scope="external" format="html" >OpenStack Compute API v2.0 Reference</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/cli-reference/content/novaclient_commands.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Command Line Interface Reference</xref>
+<xref href="http://docs.openstack.org/cli-reference/content/novaclient_commands.html" scope="external" format="html" >OpenStack Command Line Interface Reference</xref>
 </li>
 </ul>
 <p>Depending upon your user type,user or administrator, you can perform the following tasks.</p>
@@ -34,7 +34,7 @@
 <section id="launching-a-virtual-machine"> <title>Launching a virtual machine</title>
 <p>Use the Compute service to create a new virtual machine.</p>
 <ol>
-<li>Launch the HP <tm tmtype="reg">Helion OpenStack</tm> interface.</li>
+<li>Launch the HP Helion OpenStack interface.</li>
 <li>On the Project dashboard, click <b>Compute</b> &gt; <b>Instance</b>.</li>
 </ol>
 </section>
@@ -107,7 +107,7 @@
 <p>When you suspend an instance, its VM state is stored on disk, all memory is written to disk, and the virtual machine is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available.</p>
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref> The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together. However, the HP <tm tmtype="reg">Helion OpenStack</tm> Community edition takes care of these details for you. The <i>Operations</i> contains information on how to manage the system.</p>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack Operations Guide</xref> The <i>Architecture</i> section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack Community edition takes care of these details for you. The <i>Operations</i> contains information on how to manage the system.</p>
 <p>
   <xref href="#topic5402"> Return to Top </xref>
 </p>

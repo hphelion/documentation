@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3683">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Post-Installation for KVM Hypervisor</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Post-Installation for KVM Hypervisor</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Post-Installation for KVM Hypervisor</searchtitle>
 </titlealts>
@@ -21,16 +21,16 @@
  <!--./commercial/GA1/1.1commercial.install-GA-post-kvm.md-->
  <!--permalink: /helion/openstack/1.1/install/post-kvm/--></p>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
-<p>After you have completed and verified the HP <tm tmtype="reg">Helion OpenStack</tm> installation, perform the following tasks as appropriate.</p>
-<section id="configure-hp-helion-openstack-tenant-networks-to-use-vlan-provider-network"> <title>Configure HP <tm tmtype="reg">Helion OpenStack</tm> tenant networks to use VLAN Provider Network.</title>
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. You can configure VLAN on HP <tm tmtype="reg">Helion OpenStack</tm> to enable communication with tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX.</p>
-<p>For instructions, see <xref href="../../commercial/GA1/1.1commercial.vlan-providernetwork.dita" >Enabling VLAN Provider Network in HP <tm tmtype="reg">Helion OpenStack</tm></xref>.</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
+<p>After you have completed and verified the HP Helion OpenStack installation, perform the following tasks as appropriate.</p>
+<section id="configure-hp-helion-openstack-tenant-networks-to-use-vlan-provider-network"> <title>Configure HP Helion OpenStack tenant networks to use VLAN Provider Network.</title>
+<p>HP Helion OpenStack defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. You can configure VLAN on HP Helion OpenStack to enable communication with tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX.</p>
+<p>For instructions, see <xref href="../../commercial/GA1/1.1commercial.vlan-providernetwork.dita" >Enabling VLAN Provider Network in HP Helion OpenStack</xref>.</p>
 </section>
 <section id="configure-block-storage-by-either-deploying-vsa-or-using-hp-3par-array"> <title>Configure Block Storage by either deploying VSA or using HP 3Par Array</title>
-<p>Use one of the following methods to add block storage to your HP <tm tmtype="reg">Helion OpenStack</tm> cloud:</p>
+<p>Use one of the following methods to add block storage to your HP Helion OpenStack cloud:</p>
 <ul>
 <li>
 <p>Configure HP StoreVirtual VSA</p>
@@ -44,7 +44,7 @@
 
 <p>An optional HP 3Par storage array that can be used to provide high performance Cinder block storage</p>
 
-<p>For instructions, see the <xref href="../../commercial/GA1/1.1commercial.install-3par.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> HP StoreServ (3PAR) Support</xref> document.</p>
+<p>For instructions, see the <xref href="../../commercial/GA1/1.1commercial.install-3par.dita" >HP Helion OpenStack HP StoreServ (3PAR) Support</xref> document.</p>
 </li>
 </ul>
 </section>
@@ -55,12 +55,12 @@
 </section>
 <section id="install-dns-as-a-service-dnsaas-optional"> <title>Install DNS as a service (DNSaaS) <b>(Optional)</b>.</title>
 <p>If you have not installed DNSaaS, see <xref href="../../commercial/GA1/1.1commercial.install-GA-DNSaaS.dita" >DNSaaS Installation and Configuration</xref>.</p>
-<p>DNSaaS is our managed DNS service, based on the <tm tmtype="reg">OpenStack</tm> Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
+<p>DNSaaS is our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
 </section>
 <section id="create-and-deploy-microsoft-svvp-server-microsoft-as-a-compute-nova-vm-optional"> <title>Create and deploy Microsoft SVVP server Microsoft as a Compute (Nova) VM. <b>(Optional)</b>
 </title>
-<p>You can create and deploy a Microsoft Windows Server that is Microsoft SVVP (Server Virtualization Validation Program) compliant on HP <tm tmtype="reg">Helion OpenStack</tm> as a Nova compute VM.</p>
-<p>See <xref href="../../commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita" >How to build a Microsoft Windows Server guest image for HP <tm tmtype="reg">Helion OpenStack</tm></xref>.</p>
+<p>You can create and deploy a Microsoft Windows Server that is Microsoft SVVP (Server Virtualization Validation Program) compliant on HP Helion OpenStack as a Nova compute VM.</p>
+<p>See <xref href="../../commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita" >How to build a Microsoft Windows Server guest image for HP Helion OpenStack</xref>.</p>
 </section>
 <section id="add-and-remove-nodes-on-kvm-hypervisors"> <title>Add and Remove  Nodes on KVM Hypervisors</title>
 <p>For more information, see <xref href="../../commercial/GA1/1.1commercial.install-add-nodes.dita" >Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</xref>.</p>

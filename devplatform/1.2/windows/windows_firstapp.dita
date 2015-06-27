@@ -25,7 +25,7 @@
       <ph><i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of
           Microsoft Corporation in the United States and/or other countries.</i></ph>
       <p>This tutorial demonstrates how to deploy an application to a Windows Server instance
-        running in an HP Helion OpenStack environment using the toolset provided. For the purposes
+        running in an HP Helion <tm tmtype="reg">OpenStack</tm> environment using the toolset provided. For the purposes
         of this tutorial, you'll deploy Microsoft's Contoso University sample
       application.</p></section>
 <section><title>System requirements</title>

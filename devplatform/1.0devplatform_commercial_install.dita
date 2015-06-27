@@ -43,7 +43,7 @@
 </li>
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>The HP Helion Development Platform is installed in the overcloud of HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>The HP Helion Development Platform is installed in the overcloud of HP Helion <tm tmtype="reg">OpenStack</tm></p>
 <p>The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements herein.</p>
 <p>The installer requires the following packages. If they are not found, it will prompt you to install them.</p>
 <ul>
@@ -57,7 +57,7 @@
 <section id="installing-the-hp-helion-development-platform"> <title>Installing the HP Helion Development Platform</title>
 </section>
 <section id="downloading-and-unpacking-the-installation-file"> <title>Downloading and unpacking the installation file</title>
-<p>The installation of the HP Helion Development Platform for the HP <tm tmtype="reg">Helion OpenStack</tm> Commercial Edition is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.</p>
+<p>The installation of the HP Helion Development Platform for the HP Helion OpenStack Commercial Edition is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.</p>
 <p>
 <b>Note</b>: Should you need more assistance during installation, the install script also has a help feature.</p>
 <codeblock>
@@ -219,7 +219,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 </ol>
 </section>
 <section id="quotas"> <title>Quotas</title>
-<p>The <b>Database Service</b> will be installed into the admin tenant of the <tm tmtype="reg">Helion OpenStack</tm> overcloud and the admin tenant must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+<p>The <b>Database Service</b> will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <p>If you are not configuring the Database Service to be highly available you must have the following quota available:</p>
 <table>
 <tgroup cols="2">
@@ -338,7 +338,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <b>Key Pair (Required)</b> - Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.</p>
 
 <p>
-<b>External Network (Required)</b> - Network Name for the network that has external network access. For HP <tm tmtype="reg">Helion OpenStack</tm> Commercial Edition this network is named 'ext-net'</p>
+<b>External Network (Required)</b> - Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition this network is named 'ext-net'</p>
 
 <p>
 <b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have outbound access to the internet.</p>
@@ -356,7 +356,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <b>Enable HA</b> - Specify if the database service is to be setup in an HA configuration. If selected, each component of the service will have three instances created and active at all times.</p>
 
 <p>
-<b>RabbitMQ IP Address (Required)</b> - Specify the IP address of the central <tm tmtype="reg">Helion OpenStack</tm> Logstash server.</p>
+<b>RabbitMQ IP Address (Required)</b> - Specify the IP address of the central Helion OpenStack Logstash server.</p>
 </li>
 <li>
 <p>After all configuration options have been provided, select the <b>Configure</b> button to complete the configuration step. Wait for the configuration step to complete and the status to change to <b>Configured</b>.</p>
@@ -373,10 +373,10 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 </codeph>
 </codeblock>
 
-<p>You should have as many API servers (and IPs) as you have AZs in your <tm tmtype="reg">Helion OpenStack</tm> install.</p>
+<p>You should have as many API servers (and IPs) as you have AZs in your Helion OpenStack install.</p>
 </li>
 <li>
-<p>Identify the Virtual IP used by the controller nodes to be able to load balance the Helion   <tm tmtype="reg">OpenStack</tm> services:</p>
+<p>Identify the Virtual IP used by the controller nodes to be able to load balance the Helion   OpenStack services:</p>
 
 <codeblock>
 <codeph>keystone endpoint-list | awk '/8779/{ print $6}' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
@@ -384,7 +384,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 </codeblock>
 </li>
 <li>
-<p>Update configuration on each of the <tm tmtype="reg">Helion OpenStack</tm> controller nodes by connecting to the controller and doing the following:</p>
+<p>Update configuration on each of the Helion OpenStack controller nodes by connecting to the controller and doing the following:</p>
 
 <p>a. Edit the /etc/haproxy/manual/paas.cfg and add the following lines. The last line should be repeated once for each API server identified in step 1.</p>
 
@@ -427,7 +427,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <p>This section provides details on installing the Marketplace service from the Development Platform.</p>
 </section>
 <section id="marketplace-quota"> <title>Prerequisites</title>
-<p>The <b>Marketplace Service</b> will be installed into the admin tenant of the <tm tmtype="reg">Helion OpenStack</tm> overcloud and the admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+<p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>
@@ -489,7 +489,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3
 <b>Key Pair (Required)</b> - Key Pair to install on all instances created as part of the marketplace service. The public key can be used by an admin to get SSH access to all instances.</p>
 
 <p>
-<b>External Network (Required)</b> - Network Name for the network that has external network access. For HP <tm tmtype="reg">Helion OpenStack</tm> Commercial Edition this network is named 'ext-net'</p>
+<b>External Network (Required)</b> - Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition this network is named 'ext-net'</p>
 
 <p>
 <b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have outbound access to the internet.</p>

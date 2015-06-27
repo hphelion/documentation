@@ -48,7 +48,7 @@
 <xref type="section" href="#topic6253/uninstall-vertica">Uninstall Vertica</xref>
 </li>
 </ul>
-<p>The HP Helion Development Platform is installed in the overcloud of HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>The HP Helion Development Platform is installed in the overcloud of HP Helion <tm tmtype="reg">OpenStack</tm></p>
 <section id="uninstall-devplatform"> <title>Uninstall the HP Helion Development Platform</title>
 <ol>
 <li>Log in to the Helion seed node.</li>

@@ -76,7 +76,7 @@
 <p>See <xref href="https://community.hpcloud.com/article/hp-helion-public-cloud-quick-start-guide" scope="external" format="html" >HP Helion Public Cloud - Quick Start Guide</xref>.</p>
 </li>
 <li>
-<p>If you're a developer, you'll want to look at the <xref href="https://wiki.openstack.org/wiki/SDKs" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> software development kit (SDK) information</xref>.</p>
+<p>If you're a developer, you'll want to look at the <xref href="https://wiki.openstack.org/wiki/SDKs" scope="external" format="html" >OpenStack software development kit (SDK) information</xref>.</p>
 </li>
 <li>
 <p>See also a <xref href="../publiccloud/site-overview.dita" >site overview</xref> that includes pointers to key pages that you might find helpful.</p>

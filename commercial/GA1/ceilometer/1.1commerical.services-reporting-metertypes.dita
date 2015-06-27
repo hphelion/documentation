@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3051">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Metering Service (Ceilometer): Available Meter Types</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Metering Service (Ceilometer): Available Meter Types</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -38,8 +38,8 @@ Samples are populated by <i>counter</i> objects.</p>
 </ul>
 <p>
   <b>Note</b>: The metering service shares the same High-availability proxy, messaging, and database clusters with the other Information services. To avoid unnecessarily high loads, <xref href="../../../commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita#topic11470/meterlist" type="section">non-essential meters can be disabled</xref>.</p>
-<section id="helion-openstack-default-meters"> <title><tm tmtype="reg">Helion OpenStack</tm> Default Meters</title>
-<p>These meters are installed and enabled by default during an HP <tm tmtype="reg">Helion OpenStack</tm> installation.</p>
+<section id="helion-openstack-default-meters"> <title>Helion OpenStack Default Meters</title>
+<p>These meters are installed and enabled by default during an HP Helion OpenStack installation.</p>
 <p>Detailed information on the Ceilometer API can be found at: http://docs.openstack.org/developer/ceilometer/webapi/v2.html.</p>
 </section>
 <section id="compute-nova"> <title>Compute (Nova)</title>

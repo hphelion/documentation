@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8041">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Ceph RADOS Gateway- Keystone Authentication</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Ceph RADOS Gateway- Keystone Authentication</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Ceph RADOS Gateway- Keystone Authentication</searchtitle>
 </titlealts>
@@ -27,9 +27,9 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commercia.ceph-high-availability-RADOSGW-authentication.md-->
  <!--permalink: /helion/openstack/1.1/ceph-rados-gateway-keystone-authentication/--></p>
-<p>Integrating the RADOS Gateway with the <tm tmtype="reg">Helion OpenStack</tm> identity service (Keystone) sets up the Gateway to authorize and accept Keystone users automatically. Users are created in RADOS pools provided they have valid Keystone token. For more details see, <xref href="http://ceph.com/docs/master/radosgw/keystone/" scope="external" format="html" >Ceph <tm tmtype="reg">OpenStack</tm> documentation</xref>
+<p>Integrating the RADOS Gateway with the Helion OpenStack identity service (Keystone) sets up the Gateway to authorize and accept Keystone users automatically. Users are created in RADOS pools provided they have valid Keystone token. For more details see, <xref href="http://ceph.com/docs/master/radosgw/keystone/" scope="external" format="html" >Ceph OpenStack documentation</xref>
 </p>
-<p><tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1 HAProxy can be used to enable high availability and load balancing for RADOS Gateway nodes. With HAProxy, Swift requests are load balanced between two gateway nodes. If one of them goes down, then all requests are processed by the remaining live node. Once the failed node recovers, load balancing is re-enabled. Load balancing is done using the round robin algorithm so that each node is used in turn, and load balancing is fair.</p>
+<p>Helion OpenStack 1.1 and 1.1.1 HAProxy can be used to enable high availability and load balancing for RADOS Gateway nodes. With HAProxy, Swift requests are load balanced between two gateway nodes. If one of them goes down, then all requests are processed by the remaining live node. Once the failed node recovers, load balancing is re-enabled. Load balancing is done using the round robin algorithm so that each node is used in turn, and load balancing is fair.</p>
 <section id="assumptions"> <title>Assumptions</title>
 <p>The following assumptions apply to this configuration:</p>
 <ul>
@@ -43,7 +43,7 @@
 </ul>
 </section>
 <section id="steps"> <title>Steps</title>
-<p>The steps to achieve integration of <tm tmtype="reg">Helion OpenStack</tm> HAProxy, Keystone, and RADOSGW are:</p>
+<p>The steps to achieve integration of Helion OpenStack HAProxy, Keystone, and RADOSGW are:</p>
 </section>
 <section id="ceph-admin-node"> <title>Ceph Admin Node</title>
 <ul>

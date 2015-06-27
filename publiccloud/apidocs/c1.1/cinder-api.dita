@@ -167,8 +167,8 @@ do so.</p>
 </section>
 <section id="31-accounts"> <title>3.1 Accounts</title>
 <p>An account is created when a user first signs up with HP Helion Public Cloud. A <i>project</i> (with an associated <i>project_id</i>) is also created on first signing up with the cloud. All calls to the Block Storage APIs include the users
-<i>project_id</i> as part of the call. HP Helion and the <tm tmtype="reg">OpenStack</tm> community previously used the term <i>tenant</i> to refer to the what is now known as a <i>project</i>. The terms can be used interchangeably when reviewing HP Helion documentation (this document uses the term <i>project</i>).</p>
-<p>Similarly, the references to <i>tenant_id</i> can be read as <i>project_id</i>. For upstream <tm tmtype="reg">OpenStack</tm> tools and libraries (including <i>python-cinderclient</i> which can be used to interact with the Block Storage API), you can provide your <i>project_name</i> anywhere <i>tenant_name</i> is requested and your <i>project_id</i> anywhere <i>tenant_id</i> is requested. Similarly, where APIs return <i>tenant_id</i> or <i>tenantId</i>, this is equivalent to your <i>project_id</i>.</p>
+<i>project_id</i> as part of the call. HP Helion and the OpenStack community previously used the term <i>tenant</i> to refer to the what is now known as a <i>project</i>. The terms can be used interchangeably when reviewing HP Helion documentation (this document uses the term <i>project</i>).</p>
+<p>Similarly, the references to <i>tenant_id</i> can be read as <i>project_id</i>. For upstream OpenStack tools and libraries (including <i>python-cinderclient</i> which can be used to interact with the Block Storage API), you can provide your <i>project_name</i> anywhere <i>tenant_name</i> is requested and your <i>project_id</i> anywhere <i>tenant_id</i> is requested. Similarly, where APIs return <i>tenant_id</i> or <i>tenantId</i>, this is equivalent to your <i>project_id</i>.</p>
 <p>For additional details on accounts, tenants and projects please refer to the
   <xref href="keystone-api.dita" >Identity Service Overview</xref>.</p>
 </section>

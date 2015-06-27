@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3399">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Installing Overcloud Controllers on Virtual Machines</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Installing Overcloud Controllers on Virtual Machines</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Installing Overcloud Controllers on Virtual Machines</searchtitle>
 </titlealts>
@@ -21,9 +21,9 @@
  <!--./commercial/GA1/1.1commercial.install-GA-virtual-control.md-->
  <!--permalink: /helion/openstack/1.1/install/hybrid/--></p>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
 <p>In our 1.01 patch release, we've added a new deployment option that will allow a user to deploy various nodes of the Control Plane as Virtual Machines instead of Baremetal Machines, while still allowing user to add Compute Nodes or Storage Nodes as Baremetal. This is referred to as "Hybrid Control Plane deployment" and is being released in the 1.01 as an experimental feature only suitable for Proof Of Concept situations.</p>
 <section id="installation"> <title>Installation</title>
 <ol>

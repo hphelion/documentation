@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5926">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Create the baremetal.csv File for Installation</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Create the baremetal.csv File for Installation</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Create the baremetal.csv File for Installation</searchtitle>
 </titlealts>
@@ -21,9 +21,9 @@
  <!--./commercial/GA1/1.1commercial.install-GA-CSV.md-->
  <!--permalink: /helion/openstack/1.1/install/csv/--></p>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
 <p>During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called <codeph>baremetal.csv</codeph>. Before you begin the installation process, you must create this file and upload the file to the installer system (called the seed cloud host) at the appropriate installation step.</p>
 <p>The baremetal.csv file informs the installer of the size of the Computer that each node will be installed into.</p>
 <p>Specify the MAC address, CPU, memory, local disk size, IPMI address, and IPMI password values for each baremetal system you intend to install.</p>
@@ -149,7 +149,7 @@ nodes default to 3 and 2 respectively.</li>
 </table>
 </li>
 <li>
-<p>power_management maps to <tm tmtype="reg">OpenStack</tm> Ironic power drivers as
+<p>power_management maps to OpenStack Ironic power drivers as
 follows:</p>
 
 <ul>
@@ -162,7 +162,7 @@ follows:</p>
 <p>
 <b>Important</b>: Make sure that the information specified is correct. If any node fails to install, you must restart the installation from the beginning.</p>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section" scope="external"  >Return to HP <tm tmtype="reg">Helion OpenStack</tm> Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section" scope="external"  >Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
 </body>
 </topic>

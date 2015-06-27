@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6912">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> Community Issues and troubleshooting</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Community Issues and troubleshooting</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,10 +12,10 @@
 <!--PUBLISHED-->
  <!--./community/community.troubleshoot.md-->
  <!--permalink: /helion/community/troubleshooting/--></p>
-<p>If you encounter any issues when installing HP <tm tmtype="reg">Helion OpenStack</tm> Community, refer to the following troubleshooting tips.</p>
+<p>If you encounter any issues when installing HP Helion OpenStack Community, refer to the following troubleshooting tips.</p>
 <ul>
 <li>
-<p>If the overcloud controller is rebooted (power issue, hardware upgrade, etc.), <tm tmtype="reg">OpenStack</tm> compute tools such as <codeph>nova-list</codeph> report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:</p>
+<p>If the overcloud controller is rebooted (power issue, hardware upgrade, etc.), OpenStack compute tools such as <codeph>nova-list</codeph> report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:</p>
 
 <ol>
 <li>
@@ -67,7 +67,7 @@ sudo service nova-conductor restart
 </ol>
 </li>
 <li>
-<p>On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP <tm tmtype="reg">Helion OpenStack</tm> Community, the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root:</p>
+<p>On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion OpenStack Community, the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root:</p>
 
 <codeblock>
 <codeph>ip addr add 192.168.185.131/16 dev eth0 scope global

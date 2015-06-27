@@ -29,8 +29,7 @@
       developers build great cloud-native applications across private and public clouds. Based on
         <xref href="http://cloudfoundry.org/index.html" scope="external" format="html"><tm
           tmtype="tm">Cloud Foundry</tm></xref> and fully integrated with <xref
-        href="../../commercial/GA1/1.1commercial.index.dita#topic2448"><tm tmtype="reg">HP Helion
-          OpenStack</tm></xref>, the HP Helion Development Platform is open and interoperable,
+        href="../../commercial/GA1/1.1commercial.index.dita#topic2448">HP Helion <tm tmtype="reg">OpenStack</tm></xref>, the HP Helion Development Platform is open and interoperable,
       ensuring that developers can focus on building the right app for any environment.</p>
 <section id="platform-overview"> <title>Platform Overview</title>
 <p>The Helion Development Platform is a Cloud Foundry-based, managed runtime environment for applications.</p>
@@ -55,7 +54,7 @@
 <section id="database-as-a-service"> <title>Database as a Service</title>
 <p>The <xref href="1.2devplatform.database-instance.dita" >Database as a Service (DBaaS)</xref> provides lifecycle services for MySQL database instances. Lifecycle services includes provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard.</p>
 <ul>
-<li>An implementation of <xref href="https://wiki.openstack.org/wiki/Trove" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Trove</xref>, <xref href="1.2devplatform.database-instance.dita" >Database as a Service</xref> provides scalable and reliable cloud database provisioning functionality for both relational and non-relational databases.  </li>
+<li>An implementation of <xref href="https://wiki.openstack.org/wiki/Trove" scope="external" format="html" >OpenStack Trove</xref>, <xref href="1.2devplatform.database-instance.dita" >Database as a Service</xref> provides scalable and reliable cloud database provisioning functionality for both relational and non-relational databases.  </li>
 <li>The Database service provides a simple and easy way to access and utilize features in a database without the overhead of administration.  </li>
 </ul>
   <p>The <xref href="../../devplatform/1.2/1.2devplatform.database-ALS.dita" >Database as a Service</xref> is optionally <xref href="1.2devplatform_commercial_install.dita#topic24073/install-database" type="section" >installed and configured</xref> as part of the Helion Development Platform. If not installed as part of the platform, you can install it and then configure it for <xref href="1.2devplatform.database-ALS.dita" >use from within the Application Lifecycle Service</xref>.</p>

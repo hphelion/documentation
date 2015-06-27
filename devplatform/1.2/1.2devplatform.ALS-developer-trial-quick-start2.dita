@@ -58,7 +58,7 @@
             at any time to check for and install the most recent version. </note><p>
             <b>Download the ALS Client</b>
           </p><p>Use the ALS client to push application code up to the server, start and stop
-            applications, link <tm tmtype="reg">Helion OpenStack</tm> services to applications, and
+            applications, link Helion <tm tmtype="reg">OpenStack</tm> services to applications, and
             perform other application management operations. Download this tool if you intend to
             push applications to your quick-start trial environment. </p>Click the download link
           that is appropriate for your operating system. <ul>

@@ -87,37 +87,37 @@
   </row>
 <row>
     <entry>--os-username</entry>
-    <entry><tm tmtype="reg">OpenStack</tm> user name</entry>
+    <entry>OpenStack user name</entry>
     <entry>$OS_USERNAME</entry>
   </row>
 <row>
     <entry>--os-password</entry>
-    <entry><tm tmtype="reg">OpenStack</tm> password</entry>
+    <entry>OpenStack password</entry>
     <entry>$OS_PASSWORD</entry>
   </row>
 <row>
     <entry>--os-auth-url</entry>
-    <entry><tm tmtype="reg">OpenStack</tm> authentication URL</entry>
+    <entry>OpenStack authentication URL</entry>
     <entry>$OS_AUTH_URL</entry>
   </row>
 <row>
     <entry>--os-tenant-id</entry>
-    <entry><tm tmtype="reg">OpenStack</tm> tenant ID</entry>
+    <entry>OpenStack tenant ID</entry>
     <entry>$OS_TENANT_ID</entry>
   </row>
 <row>
     <entry>--os-tenant-name</entry>
-    <entry><tm tmtype="reg">OpenStack</tm> tenant name</entry>
+    <entry>OpenStack tenant name</entry>
     <entry>$OS_TENANT_NAME</entry>
   </row>
 <row>
     <entry>--os-region-name</entry>
-    <entry><tm tmtype="reg">OpenStack</tm> region</entry>
+    <entry>OpenStack region</entry>
     <entry>$OS_REGION_NAME</entry>
   </row>
 <row>
     <entry>--os-cacert</entry>
-    <entry><tm tmtype="reg">OpenStack</tm> CA certificate</entry>
+    <entry>OpenStack CA certificate</entry>
     <entry>$OS_CACERT</entry>
   </row>
 <row>

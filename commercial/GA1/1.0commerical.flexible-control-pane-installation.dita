@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic15783">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Flexible Control Plane Installation</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Flexible Control Plane Installation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -14,7 +14,7 @@
  <!--permalink: /helion/openstack/flexiblecontrol/install/--></p>
 <p>
 
-As you read in the <xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita" >overview</xref>, HP <tm tmtype="reg">Helion OpenStack</tm> Flexible Control Plane allows you to deploy the control plane in a virtual environment, reducing the control plane footprint to just three servers for proof of concept, evaluation, and exploration of HP <tm tmtype="reg">Helion OpenStack</tm> features.</p>
+As you read in the <xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita" >overview</xref>, HP Helion OpenStack Flexible Control Plane allows you to deploy the control plane in a virtual environment, reducing the control plane footprint to just three servers for proof of concept, evaluation, and exploration of HP Helion OpenStack features.</p>
 <p>The overview covered the <xref href="../../commercial/GA1/1.0commerical.flexible-control-pane-overview.dita" >prerequisites</xref>. Now we will walk through the installation.</p>
 <p>This topic contains:</p>
 <ul>

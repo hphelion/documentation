@@ -43,7 +43,7 @@
 Networking is currently in General Availability.</p>
 <p>
 <b>Version API Status</b>:<!--A BR tag was used here in the original source.-->
-The Networking service is based upon <tm tmtype="reg">OpenStack</tm> Neutron v2.0 API.</p>
+The Networking service is based upon OpenStack Neutron v2.0 API.</p>
 </section>
 <section id="12-document-revision-history"> <title>1.2 Document Revision History</title>
 <table>
@@ -279,7 +279,7 @@ D - Attribute value can be deleted</p>
 <li>IPv6 is currently not supported</li>
 <li>Multi-NIC on a single instance is not supported</li>
 </ul>
-<p>Networking does not support all <tm tmtype="reg">OpenStack</tm> Networking APIs and extensions as documented in the <tm tmtype="reg">OpenStack</tm> Networking API Guide.  Operations not supported for customer use include:</p>
+<p>Networking does not support all OpenStack Networking APIs and extensions as documented in the OpenStack Networking API Guide.  Operations not supported for customer use include:</p>
 <ul>
 <li>Bulk Create Networks  </li>
 <li>Bulk Create Subnets  </li>

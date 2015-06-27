@@ -263,7 +263,7 @@
 
  <section id="glazier"><title>Glazier</title>
 
-  <p>Glazier is the tool used to create <tm tmtype="reg">Windows</tm> images for deployment to Helion OpenStack (HOS) Application Lifecycle Service (ALS) clusters. </p>
+  <p>Glazier is the tool used to create <tm tmtype="reg">Windows</tm> images for deployment to Helion <tm tmtype="reg">OpenStack</tm> (HOS) Application Lifecycle Service (ALS) clusters. </p>
 
   <p>Glazier can be downloaded from the following location: <xref format="html" scope="external" href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</xref>. </p>
 

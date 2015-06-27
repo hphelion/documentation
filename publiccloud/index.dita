@@ -17,20 +17,18 @@
 <simpletable relcolwidth="1.0* 5.06*">
       <strow>
         <stentry>
-          <xref href="../commercial/GA1/1.1commercial.index.dita">HP Helion <tm tmtype="reg"
-              >OpenStack</tm></xref>
+          <xref href="../commercial/GA1/1.1commercial.index.dita">HP Helion <tm tmtype="reg">OpenStack</tm></xref>
         </stentry>
         <stentry>A commercial grade software solution that enables customers to deploy private,
-          managed, hybrid, and public cloud services based on <tm tmtype="reg">OpenStack</tm> HP
-          Helion <tm tmtype="reg">OpenStack</tm> reduces complexity of cloud deployments, and is the
+          managed, hybrid, and public cloud services based on OpenStack HP
+          Helion OpenStack reduces complexity of cloud deployments, and is the
           underlying platform for the Helion Development Platform.</stentry>
       </strow>
       <strow>
         <stentry>
-          <xref href="../community/community.index.dita#topic2348" type="section" scope="external" >HP Helion <tm tmtype="reg"
-              >OpenStack</tm> Community</xref>
+          <xref href="../community/community.index.dita#topic2348" type="section" scope="external" >HP Helion OpenStack Community</xref>
         </stentry>
-        <stentry>Pure and free-to-license distribution of <tm tmtype="reg">OpenStack</tm> technology
+        <stentry>Pure and free-to-license distribution of OpenStack technology
           for small scale open cloud environments. </stentry>
       </strow>
       <strow>
@@ -38,8 +36,7 @@
           <xref href="../devplatform/1.2/1.2devplatform.index.dita">HP Helion Development
             Platform</xref>
         </stentry>
-        <stentry>Based on <tm tmtype="reg">Cloud Foundry</tm>, this add-on for Helion <tm
-            tmtype="reg">OpenStack</tm> empowers developers and IT professionals with an open
+        <stentry>Based on <tm tmtype="reg">Cloud Foundry</tm>, this add-on for Helion OpenStack empowers developers and IT professionals with an open
           development platform designed for agility. </stentry>
       </strow>
       <strow>
@@ -55,8 +52,7 @@
         <stentry>
           <xref href="../publiccloud/publiccloud-overview.dita">HP Helion Public Cloud</xref>
         </stentry>
-        <stentry>Provides a transparent, enterprise-grade public cloud based on <tm tmtype="reg"
-            >OpenStack</tm> technology with on-demand, pay-as-you-go cloud services for computing
+        <stentry>Provides a transparent, enterprise-grade public cloud based on OpenStack technology with on-demand, pay-as-you-go cloud services for computing
           and storage infrastructure as well as platform services. </stentry>
       </strow>
       <strow>
@@ -95,7 +91,7 @@
           <xref href="../helion.rack.solution.dita">HP Helion Cloud Solutions </xref>
         </stentry>
         <stentry>Built, tested, and validated by HP cloud experts, our optimized cloud solutions are
-          based on HP Helion <tm tmtype="reg">OpenStack</tm> industry-leading HP ProLiant servers
+          based on HP Helion OpenStack industry-leading HP ProLiant servers
           and supporting HP Helion product and service offerings. Solutions like HP Helion Content
           Depot and HP Helion Rack include everything you need to be successful when facing a
           demanding cloud use case. </stentry>

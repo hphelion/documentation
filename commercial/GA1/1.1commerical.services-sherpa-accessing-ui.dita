@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1326">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Accessing the Sherpa UI</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Accessing the Sherpa UI</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -27,7 +27,7 @@
 <p>
 
 </p>
-<p>The <xref href="../../commercial/GA1/1.1commerical.services-sherpa-overview.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Sherpa Service</xref> provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment.</p>
+<p>The <xref href="../../commercial/GA1/1.1commerical.services-sherpa-overview.dita" >HP Helion OpenStack Sherpa Service</xref> provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment.</p>
 <p>You can make purchases using a self-service account on the public web server. Once a purchase is made, you can use the Sherpa UI and back-end service to download the content.</p>
 <p>To access the Sherpa UI:</p>
 <ol>

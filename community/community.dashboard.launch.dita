@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1509">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> Community: Logging into the Dashboards</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Community: Logging into the Dashboards</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./community/community.dashboard.launch.md-->
  <!--permalink: /helion/community/dashboard/login/--></p>
-<p>The <xref href="../community/community.dashboard.how-works.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Community dashboards</xref> are browser-based user interfaces that allow you to interact with the HP <tm tmtype="reg">Helion OpenStack</tm> Commercial overcloud.</p>
+<p>The <xref href="../community/community.dashboard.how-works.dita" >HP Helion OpenStack Community dashboards</xref> are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Commercial overcloud.</p>
 <p>To log into the Helion dashboard:</p>
 <ol>
 <li>

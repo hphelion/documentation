@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3365">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Services</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Services</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,8 +18,8 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/Landing/1.1commercial.landing.services.md-->
  <!--permalink: /helion/openstack/1.1/landing/services/--></p>
-<section id="OpenStack"> <title><tm tmtype="reg">OpenStack</tm> Services</title>
-<p>The following services are foundation technologies used by the HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<section id="OpenStack"> <title>OpenStack Services</title>
+<p>The following services are foundation technologies used by the HP Helion OpenStack</p>
 <p>
 <xref href="../../../commercial/GA1/1.1commerical.services-compute-overview.dita" >Compute Operations</xref>
 <!--A BR tag was used here in the original source.-->Learn about the Compute (Nova) service manages the hypervisors and virtual machines in your environment.</p>
@@ -59,7 +59,7 @@
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="hp"> <title>HP Services</title>
-<p>The following services have been developed by HP for use with the HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>The following services have been developed by HP for use with the HP Helion OpenStack</p>
 <p>
 <xref href="../../../commercial/GA1/1.1commerical.services-sirius-overview.dita" >Sirius</xref>
 <!--A BR tag was used here in the original source.-->Learn about the Sirius service for the configuration of storage services.</p>
@@ -74,10 +74,10 @@
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="dash"> <title>Dashboard services</title>
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> uses the following services or software to present user interfaces to aspects of HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>HP Helion OpenStack uses the following services or software to present user interfaces to aspects of HP Helion OpenStack</p>
 <p>
 <xref href="../../../commercial/GA1/1.1commerical.services-horizon-overview.dita" >Horizon</xref>
-<!--A BR tag was used here in the original source.-->Learn about the Horizon dashboard to create and manage HP <tm tmtype="reg">Helion OpenStack</tm> resources.</p>
+<!--A BR tag was used here in the original source.-->Learn about the Horizon dashboard to create and manage HP Helion OpenStack resources.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.services-icinga.dita" >Icinga</xref>
@@ -85,13 +85,13 @@
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.services-kibana.dita" >Kibana</xref>
-<!--A BR tag was used here in the original source.-->Learn about the Kibana service to view logging data across the HP <tm tmtype="reg">Helion OpenStack</tm> cloud.</p>
+<!--A BR tag was used here in the original source.-->Learn about the Kibana service to view logging data across the HP Helion OpenStack cloud.</p>
 </section>
 <section id="install"> <title>Installation services</title>
-<p>The following services are used only during the HP <tm tmtype="reg">Helion OpenStack</tm> installation:</p>
+<p>The following services are used only during the HP Helion OpenStack installation:</p>
 <p>
 <xref href="../../../commercial/GA1/1.1commerical.services-tripleo-overview.dita" >TripleO</xref>
-Leanr about TripleO to facilitate the installation of an <tm tmtype="reg">OpenStack</tm> cloud.</p>
+Leanr about TripleO to facilitate the installation of an OpenStack cloud.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commerical.services-ironic-overview.dita" >Ironic</xref>
@@ -99,14 +99,14 @@ Leanr about TripleO to facilitate the installation of an <tm tmtype="reg">OpenSt
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="Other"> <title>Other services and features</title>
-<p>The following services and features can be used with HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>The following services and features can be used with HP Helion OpenStack</p>
 <p>
 <xref href="../../../commercial/GA1/1.1commerical.services-logging-overview.dita" >Centralized Logging</xref>
 <!--A BR tag was used here in the original source.-->Learn about the Centralized Logging service to collect logs throughout the cloud into a central system.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.install-GA-DNSaaS.dita" >DNSaaS</xref>
-<!--A BR tag was used here in the original source.-->Learn about the HP <tm tmtype="reg">Helion OpenStack</tm> DNSaaS (Domain Name System as a Service)to display, create, modify, and delete DNS records on the assigned DNS server network.</p>
+<!--A BR tag was used here in the original source.-->Learn about the HP Helion OpenStack DNSaaS (Domain Name System as a Service)to display, create, modify, and delete DNS records on the assigned DNS server network.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
