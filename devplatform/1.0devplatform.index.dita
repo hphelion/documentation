@@ -32,7 +32,7 @@
 <section id="platform-overview"> <title>Platform Overview</title>
 <p>The <xref href="../devplatform/helion/1.0index.dita" >Application Lifecycle Service (ALS)</xref> is a Cloud Foundry-based, managed runtime environment for applications.</p>
 <ul>
-<li>It supports <xref href="../devplatform/1.0devplatform.appdev.dita#java" >Java</xref>, <xref href="../devplatform/1.0devplatform.appdev.dita#node" >Node</xref>, <xref href="../devplatform/1.0devplatform.appdev.dita#PHP" type="section" scope="external"  >PHP</xref>, and other language runtimes.</li>
+<li>It supports <xref href="../devplatform/1.0devplatform.appdev.dita#java" >Java</xref>, <xref href="../devplatform/1.0devplatform.appdev.dita#node" >Node</xref>, <xref href="../devplatform/1.0devplatform.appdev.dita#PHP" type="section">PHP</xref>, and other language runtimes.</li>
 <li>It provides easy access to services like MySQL, PostgreSQL, RabbitMQ, and Memcache.</li>
 <li>It allows Disk, Memory and Placement Zone constraints to be set per application.</li>
 <li>It provides auto-scaling and application log drains.</li>
@@ -48,7 +48,7 @@
 <li>An implementation of <xref href="https://wiki.openstack.org/wiki/Trove" scope="external" format="html" >OpenStack Trove</xref>, <xref href="../devplatform/1.0devplatform.database-instance.dita" >Database as a Service</xref> provides scalable and reliable cloud database provisioning functionality for both relational and non-relational databases.  </li>
 <li>The Database service provides a simple and easy way to access and utilize features in a database without the overhead of administration.  </li>
 </ul>
-<p>The <xref href="../devplatform/1.0devplatform.database-ALS.dita" >Database as a Service</xref> is optionally <xref href="../devplatform/1.0devplatform_commercial_install.dita#install-database" type="section" scope="external"  >installed and configured</xref> as part of the Helion Development Platform. If not installed as part of the platform, you can install it and then configure it for <xref href="../devplatform/1.0devplatform.database-ALS.dita" >use from within the Application Lifecycle Service</xref>.</p>
+<p>The <xref href="../devplatform/1.0devplatform.database-ALS.dita" >Database as a Service</xref> is optionally <xref href="../devplatform/1.0devplatform_commercial_install.dita#install-database" type="section">installed and configured</xref> as part of the Helion Development Platform. If not installed as part of the platform, you can install it and then configure it for <xref href="../devplatform/1.0devplatform.database-ALS.dita" >use from within the Application Lifecycle Service</xref>.</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>
@@ -56,7 +56,7 @@
 <tbody>
 <row>
     <entry>
-      <xref href="1.0devplatform_commercial_install.dita#install-database" type="section" scope="external"  >Install</xref>
+      <xref href="1.0devplatform_commercial_install.dita#install-database" type="section">Install</xref>
       <!--A BR tag was used here in the original source.-->
     </entry>
     <entry>
@@ -75,7 +75,7 @@
 <li>The Messaging Service integrates with <xref href="../commercial/GA1/1.0commerical.services-identity-overview.dita" >Keystone</xref> to remove the need to create separate credentials for RabbitMQ access. </li>
 <li>The Messaging Service allows developers to focus on building their apps without worrying about installing, configuring, and troubleshooting RabbitMQ.</li>
 </ul>
-<p>The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can <xref href="../devplatform/1.0devplatform_commercial_install.dita#install-messaging" type="section" scope="external"  >install</xref> it and then <xref href="../devplatform/1.0devplatform.using-the-messaging-service.dita" >configure</xref> it for <xref href="../devplatform/1.0devplatform.using-messaging-service-with-ALS.dita" >use from within the Application Lifecycle Service</xref>.</p>
+<p>The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can <xref href="../devplatform/1.0devplatform_commercial_install.dita#install-messaging" type="section">install</xref> it and then <xref href="../devplatform/1.0devplatform.using-the-messaging-service.dita" >configure</xref> it for <xref href="../devplatform/1.0devplatform.using-messaging-service-with-ALS.dita" >use from within the Application Lifecycle Service</xref>.</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>
@@ -83,7 +83,7 @@
 <tbody>
 <row>
     <entry>
-      <xref href="1.0devplatform_commercial_install.dita#install-messaging/" type="section" scope="external"  >Install</xref>
+      <xref href="1.0devplatform_commercial_install.dita#install-messaging/" type="section">Install</xref>
       <!--A BR tag was used here in the original source.-->
     </entry>
     <entry>
@@ -102,7 +102,7 @@
 <li>It automates installation and enabling supported applications and services.</li>
 <li>The Beta version allows you to install an instance of Vertica Community Edition.</li>
 </ul>
-<p>The Marketplace is optionally installed as part of the Helion Development Platform, you can <xref href="../devplatform/1.0devplatform_commercial_install.dita#install-marketplace" type="section" scope="external"  >install</xref> and <xref href="../devplatform/1.0devplatform.marketplace.install.dita" >use</xref> it to easily install applications and services to accelerate your development efforts.</p>
+<p>The Marketplace is optionally installed as part of the Helion Development Platform, you can <xref href="../devplatform/1.0devplatform_commercial_install.dita#install-marketplace" type="section">install</xref> and <xref href="../devplatform/1.0devplatform.marketplace.install.dita" >use</xref> it to easily install applications and services to accelerate your development efforts.</p>
 <table>
 <tgroup cols="2">
 <colspec colname="col1"/>
@@ -110,7 +110,7 @@
 <tbody>
 <row>
     <entry>
-      <xref href="1.0devplatform_commercial_install.dita#install-marketplace" type="section" scope="external"  >Install</xref>
+      <xref href="1.0devplatform_commercial_install.dita#install-marketplace" type="section">Install</xref>
       <!--A BR tag was used here in the original source.-->
     </entry>
     <entry>
@@ -127,7 +127,7 @@
   <b>Helion Command-Line Interface (CLI)</b>
   <!--A BR tag was used here in the original source.-->
 </p>
-<p>Use the Helion CLI to deploy your app to the development platform through the command line. <xref href="../devplatform/helion/user/client/1.0index.dita#helion-client-setup" type="section" scope="external"  >Setup</xref> instructions are available for here both <tm tmtype="reg">Windows</tm> and Unix/Mac operating systems.</p>
+<p>Use the Helion CLI to deploy your app to the development platform through the command line. <xref href="../devplatform/helion/user/client/1.0index.dita#helion-client-setup" type="section">Setup</xref> instructions are available for here both <tm tmtype="reg">Windows</tm> and Unix/Mac operating systems.</p>
 <p>
 <b>Eclipse Plugin</b>
 <!--A BR tag was used here in the original source.-->

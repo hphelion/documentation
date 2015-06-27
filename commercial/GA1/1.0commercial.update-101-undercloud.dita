@@ -212,7 +212,7 @@ mkdir -p /var/log/ansible
 <section id="upgrademanual"> <title>Update the undercloud manually</title>
 <p>The manual method generally gives you more control of the update.</p>
 <p>There are three images that you need to place into the seed glance for the Undercloud. These images will be delivered in a file called <codeph>undercloud.tar</codeph> and are located in the undercloud local filesystem after you <xref href="../../commercial/GA1/1.0commercial.update-101-obtaining.dita" >obtain and extract the update package</xref>.</p>
-<p>Please refer to <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita#extract" type="section" scope="external"  >Extract the required scripts and libraries</xref> in <i>Update Prerequisites</i> for instructions on locating the directory the undercloud.tar.</p>
+<p>Please refer to <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita#extract" type="section">Extract the required scripts and libraries</xref> in <i>Update Prerequisites</i> for instructions on locating the directory the undercloud.tar.</p>
 <p>To update a node, the patch image needs to be loaded into the seed VM Image Operations service (Glance).  A <codeph>qcow2</codeph> image used for image update has dependencies on <codeph>vmlinuz</codeph> and <codeph>initrd</codeph> images.</p>
 <p>Use the following steps to load upload an image and its dependencies:</p>
 <ol>

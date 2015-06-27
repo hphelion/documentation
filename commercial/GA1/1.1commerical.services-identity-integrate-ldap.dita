@@ -17,7 +17,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commerical.services-identity-integrate-ldap.md-->
  <!--permalink: /helion/openstack/1.1/services/identity/integrate-ldap/--></p>
-    <p> <xref href="1.1commercial.install-GA-prereqs.dita#topic9786/ldap" type="section" scope="external" >▲ Prerequisites</xref> </p>
+    <p> <xref href="1.1commercial.install-GA-prereqs.dita#topic9786/ldap" type="section">▲ Prerequisites</xref> </p>
 <!-- Based on https://wiki.hpcloud.net/display/csbu/Integrating+Keystone+with+LDAP+in+Helion+1.1 -->
 <p>The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes.     LDAP integration can be performed during the HP Helion OpenStack installation process.</p>
 <p>Multiple authentication backends are supported, using the Keystone Domain-Specific Configuration feature. Separate authentication domains can be created to authenticate users on single LDAP server with different filters, or on different LDAP servers.</p>
@@ -309,7 +309,7 @@
     <xref href="1.1commercial.install-GA-kvm.dita#topic5847/startseed" type="section">HP Helion OpenStack Installation and Configuration for KVM Hypervisor</xref>
 </p>
 <p>
-  <xref href="1.1commercial.install-GA-esx.dita#startseed" type="section" scope="external" >HP Helion OpenStack Installation and Configuration for ESX Hypervisor</xref>
+  <xref href="1.1commercial.install-GA-esx.dita#startseed" type="section">HP Helion OpenStack Installation and Configuration for ESX Hypervisor</xref>
 </p>
 </section>
 <section id="per-domain-ldap-backend-configuration-post-installation"> <title>Per-domain LDAP Backend Configuration Post-installation</title>

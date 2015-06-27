@@ -47,7 +47,7 @@
 </ul>
 </section>
 <section id="administration"> <title>Administration</title>
-<p>Access control is role-based, with each role granting permissions in either an organization or an application space. To create users and manage user roles, use the ALS  <xref href="../devplatform/helion/user/reference/1.0client-ref.dita" >Command Line Interface (CLI)</xref>. For more information, see <xref href="../devplatform/helion/user/reference/1.0client-ref.dita#organizations" type="section" scope="external"  >Organizations</xref>.</p>
+<p>Access control is role-based, with each role granting permissions in either an organization or an application space. To create users and manage user roles, use the ALS  <xref href="../devplatform/helion/user/reference/1.0client-ref.dita" >Command Line Interface (CLI)</xref>. For more information, see <xref href="../devplatform/helion/user/reference/1.0client-ref.dita#organizations" type="section">Organizations</xref>.</p>
 <ul>
 <li>
 <xref href="../devplatform/helion/admin/1.0index.dita" >Application Lifecycle Service (ALS) Administrators Guide</xref>

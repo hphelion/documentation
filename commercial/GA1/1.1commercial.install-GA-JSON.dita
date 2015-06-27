@@ -93,7 +93,7 @@ After you modify a JSON file, you might want to validate the structure by runnin
 </li>
 <li>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section" scope="external"  >Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section">Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
 </li>
 </ol>
 </section>
@@ -444,7 +444,7 @@ If this is the same value as <codeph>neutron/overcloud_public_interface</codeph>
 </codeph>
 </codeblock>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#envars" type="section" scope="external"  >Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#envars" type="section">Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

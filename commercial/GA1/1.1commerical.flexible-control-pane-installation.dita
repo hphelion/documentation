@@ -54,10 +54,10 @@
 <li>
   <xref href="1.1commerical.flexible-control-pane-overview.dita#topic6925/prereq" type="section">Review prerequisites and configure the infrastructure</xref> accordingly</li>
 <li>
-<xref href="1.1commerical.flexible-control-pane-overview.dita#configfiles" type="section" scope="external" >Create configuration files</xref>
+<xref href="1.1commerical.flexible-control-pane-overview.dita#configfiles" type="section">Create configuration files</xref>
 </li>
 <li>
-<xref href="1.1commerical.flexible-control-pane-overview.dita#kvmsetup" type="section" scope="external" >Set up KVM hosts</xref>
+<xref href="1.1commerical.flexible-control-pane-overview.dita#kvmsetup" type="section">Set up KVM hosts</xref>
 </li>
 <li>Deploy an HP Helion cloud</li>
 </ul>
@@ -323,7 +323,7 @@ bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh \
 </ul>
 </section>
 <section id="addnodes"> <title>Adding Additional Overcloud Compute Nodes</title>
-  <p>For more information, see: <xref href="1.1commerical.flexible-control-pane-overview.dita#add-remove-replace-nodes" type="section" scope="external" >Add, remove and replace nodes</xref>.</p>
+  <p>For more information, see: <xref href="1.1commerical.flexible-control-pane-overview.dita#add-remove-replace-nodes" type="section">Add, remove and replace nodes</xref>.</p>
 </section>
 <section id="knownissues"> <title>Known Issues and Resolutions</title>
 </section>
