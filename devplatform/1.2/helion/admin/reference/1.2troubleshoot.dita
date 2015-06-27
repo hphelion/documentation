@@ -125,7 +125,7 @@ the Application Lifecycle Service client reported incorrectly.</p>
 Address. To investigate and resolve, try the following:</p>
 <ul>
 <li>
-<p>Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-tty-console" type="section" scope="external"  >tty console</xref>:</p>
+<p>Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-tty-console" type="section">tty console</xref>:</p>
 
 <codeblock>
 <codeph>arp -n
