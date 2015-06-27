@@ -168,7 +168,7 @@ web server, application dependencies, databases, and other services.</p>
             View</xref>
         </li>
 <li>
-          <xref href="../../admin/console/1.2app-store.dita#topic5271" type="section">Sample Applications</xref>
+          <xref href="../../admin/console/1.2app-store.dita#topic5271" type="section" scope="local" >Sample Applications</xref>
         </li>
 </ul>
 </section>

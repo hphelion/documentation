@@ -266,7 +266,7 @@ service. Target version 2.8+ only.</entry>
 </tgroup>
 </table>
 </section>
-<section id="helion-dbshell-application-service"> <title>helion dbshell &lt;<i>application</i>&gt; &lt;<i>service</i>&gt;</title>
+<section id="command-dbshell"> <title>helion dbshell &lt;<i>application</i>&gt; &lt;<i>service</i>&gt;</title>
 <p>Invoke interactive db shell for a bound service.</p>
 <table>
 <tgroup cols="2">
