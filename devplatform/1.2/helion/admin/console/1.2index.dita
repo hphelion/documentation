@@ -391,7 +391,7 @@ Console, but some maintenance and configuration tasks may need to be done at the
 </section>
 <section id="logyard"> <title>Logyard</title>
 <p>Lists current log <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2logging.dita#logging-drains-system" type="section"   >Drains</xref> and the log
-  drain retry limits. Drains and limits cannot be changed in this interface; use the <xref href="../../../../../devplatform/1.2/helion/admin/reference/topic39432/1.2kato-ref.dita#kato-command-ref-log-drain-add" type="section"   >
+  drain retry limits. Drains and limits cannot be changed in this interface; use the <xref href="../../../../../devplatform/1.2/helion/admin/reference/topic39432/1.2kato-ref.dita#topic39432kato-command-ref-log-drain-add" type="section"   >
 <i>kato log drain</i>
 </xref>
   commands and <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
@@ -399,7 +399,7 @@ Console, but some maintenance and configuration tasks may need to be done at the
 </xref> commands.</p>
 </section>
 <section id="console-settings-quota-definitions"> <title>Quota Plans</title>
-<p>Lists the Quota Plans available to apply to Organizations on the system. To edit a definition, click the edit button on the right. To create a new definition, use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-quota-create" type="section"   >
+  <p>Lists the Quota Plans available to apply to Organizations on the system. To edit a definition, click the edit button on the right. To create a new definition, use the <xref href="../../user/reference/1.2client-ref-quotas.dita#topic5727/command-quota-create" type="section"   >
 <i>quota create</i>
 </xref> command.</p>
 <p>The following fields can be modified:</p>

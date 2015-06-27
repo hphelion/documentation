@@ -28,10 +28,8 @@
     Framework HTTP-based applications. This document describes how to install and use these tools.
    </p> This document contains the following sections:  <p><b>.NET tools:</b></p><ul
     id="ul_dmq_khw_js">
-    <li><xref type="section"  href="#topic_w5z_kcw_js/cloudfoundryextensions"
-      format="dita">Cloud Foundry Extensions</xref></li>
-    <li><xref type="section"  href="#topic_w5z_kcw_js/msbuild">Cloud Foundry MSBuild
-      Tasks</xref></li>
+    <li><xref type="section"  href="#topic_w5z_kcw_js/cloudfoundryextensions" >Cloud Foundry Extensions</xref></li>
+    <li><xref type="section"  href="#topic_w5z_kcw_js/msbuild">Cloud Foundry MSBuild Tasks</xref></li>
     <li><xref type="section"  href="#topic_w5z_kcw_js/sdk">Cloud Foundry .NET
       SDK</xref></li>
    </ul>
