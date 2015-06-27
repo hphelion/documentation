@@ -270,27 +270,27 @@ provide a name. The name can also be specified on the command line (eg.
 </section>
 <section id="buildpack"> <title>buildpack:</title>
 <p>The Git repository URL for the specific
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks" type="section" scope="external"  >buildpack</xref> used to deploy the application.
+<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks" type="section"   >buildpack</xref> used to deploy the application.
 For example:</p>
 <codeblock>  name: java-app
 mem: 512M
 buildpack: https://github.com/heroku/heroku-buildpack-java.git</codeblock>
 <p>If unset, Application Lifecycle Service will check to see if the application triggers the
-<codeph>detect</codeph> scripts in any of its <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-built-in" type="section" scope="external"  >built-in
+<codeph>detect</codeph> scripts in any of its <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-built-in" type="section"   >built-in
 buildpacks</xref>.</p>
 </section>
 <section id="framework"> <title>framework:</title>
 <p>Allows the app to specify a framework and runtime to be used. Specifying
 a value for the <codeph>framework</codeph> key triggers the use of
-the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy" type="section" scope="external"  >Legacy Buildpack</xref>.</p>
+the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy" type="section"   >Legacy Buildpack</xref>.</p>
 <p>The keys in the <codeph>framework</codeph> section are used with the <xref
           href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy"
-          type="section" scope="external">Legacy Buildpack</xref> only. Applications using language
+          type="section" >Legacy Buildpack</xref> only. Applications using language
         or framework-specific buildpacks do not require these values, and should instead specify the
           <xref href="#topic20922/buildpack" format="dita">buildpack</xref> or rely on the detection
         scripts of the <xref
           href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-built-in"
-          type="section" scope="external">built-in buildpacks</xref>.</p>
+          type="section" >built-in buildpacks</xref>.</p>
 </section>
 <section id="type"> <title>type:</title>
 <p>The framework to use. Check <codeph>helion frameworks</codeph>
@@ -337,10 +337,10 @@ Application Lifecycle Service. For example:</p>
 <codeblock>  framework:
   start-file: temp.py</codeblock>
 <p>This value will be used by the
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#term-processes-web" type="section" scope="external"  >PROCESSES_WEB</xref> and
+<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#term-processes-web" type="section"   >PROCESSES_WEB</xref> and
 HELION_START_FILE environment variables. Any changes to
 HELION_START_FILE at runtime will not change the value of
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#term-processes-web" type="section" scope="external"  >PROCESSES_WEB</xref> as
+<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#term-processes-web" type="section"   >PROCESSES_WEB</xref> as
 the macro is expanded before the pre-running hooks are run.</p>
 </section>
 <section id="app-dir"> <title>app-dir</title>
@@ -359,7 +359,7 @@ app-dir: target</codeblock>
           >framework</xref> section to specify a sub-directory of the application \$HOME to be used
         as the document root.</p>
 <p>To launch multiple applications from multiple sub-directories use a
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#manifest-yml" type="section" scope="external"  >
+<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#manifest-yml" type="section"   >
 <i>manifest.yml</i>
 </xref> file.</p>
 </section>

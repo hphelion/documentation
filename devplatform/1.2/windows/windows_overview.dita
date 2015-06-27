@@ -80,8 +80,8 @@
 </ul>
         <p>Helion Development Platform treats deployment of .NET applications in the same way as
                 Linux applications (such as Java or PHP appplications). .NET applications require a
-                    <xref href="windows_custom_buildpacks.dita#topic2394" type="section" scope="external" >buildpack</xref> to
-                specify the dependencies and <xref href="windows_adding_services.dita#topic3869" type="section" scope="external" 
+                    <xref href="windows_custom_buildpacks.dita#topic2394" type="section"  >buildpack</xref> to
+                specify the dependencies and <xref href="windows_adding_services.dita#topic3869" type="section"  
                     >services</xref> that can be bound to the application. .NET applications are
                 deployed into a sandbox environment similar to Warden in Cloud Foundry. </p>
         </section>

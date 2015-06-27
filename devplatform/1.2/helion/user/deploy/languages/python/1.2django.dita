@@ -47,7 +47,7 @@ mysql-python
 </codeph>
 </codeblock>
 <section id="configuring-database"> <title>Configuring the Database</title>
-<p>See <xref href="../../../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#database-accessing" type="section" scope="external"  >Using Configured Database Services</xref> for more information on connecting with database services.</p>
+<p>See <xref href="../../../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#database-accessing" type="section">Using Configured Database Services</xref> for more information on connecting with database services.</p>
 <ol>
 <li>
 <p>You must modify the <codeph>DATABASES</codeph> variable of your project's <i>settings.py</i> as shown below to detect the database service provisioned by Helion:</p>
