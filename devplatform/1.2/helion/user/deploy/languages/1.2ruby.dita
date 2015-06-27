@@ -22,7 +22,7 @@
  <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/ruby/--></p>
 <p>Whether you're deploying an application to the HP Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
-advantage of HP <tm tmtype="reg">Helion OpenStack</tm> to manage infrastructure or software services, tools
+advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software services, tools
 to enable successful development are available in Ruby.</p>
 <section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
 <p>Application Lifecycle Services (ALS), a cloud foundry based Platform as a Service,
@@ -91,7 +91,7 @@ file.content_type # =&gt; text/plain
 </codeph>
 </codeblock>
 <p>
-<b>Note</b>: See <xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks" type="section" scope="external"  >Buildpacks</xref> for an alternative way to deploy Ruby on Rails applications.</p>
+  <b>Note</b>: See <xref href="../1.2buildpack.dita">Buildpacks</xref> for an alternative way to deploy Ruby on Rails applications.</p>
 </section>
 <section id="using-ruby-2-0"> <title>Using Ruby 2.0</title>
 <p>The <i>manifest.yml</i> file must specify the Ruby runtime version and Rails as the
@@ -175,10 +175,10 @@ applications.</p>
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-<xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#command" type="section" scope="external"  >
+  <xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/command" type="section" >
 <i>command</i>
 </xref> key and set the
-<xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#web" type="section" scope="external"  >
+  <xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/web" type="section"   >
 <i>processes: web</i>
 </xref>
 key to Null ("\~").</p>
@@ -198,7 +198,7 @@ processes:
 <section id="general-guidelines"> <title>General Guidelines</title>
 </section>
 <section id="app-web-servers"> <title>App/Web Servers</title>
-<p>For the best performance, <xref href="https://devcenter.heroku.com/articles/ruby#webserver" type="section" scope="external" format="html" >using the Thin Ruby webserver</xref> is recommended.
+<p>For the best performance, <xref href="https://devcenter.heroku.com/articles/ruby#webserver" type="section"  format="html" >using the Thin Ruby webserver</xref> is recommended.
 Include <codeph>gem 'thin'</codeph> in your <i>Gemfile</i>.</p>
 </section>
 <section id="bundler"> <title>Bundler</title>
@@ -216,7 +216,7 @@ via:</p>
   <codeph>helion run *appname* bundle exec rake stats
 </codeph>
 </codeblock>
-<p>See the <xref href="../../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" type="section" scope="external"  >ALS Command Reference</xref> for details on the use of <codeph>helion run</codeph>.</p>
+  <p>See the <xref href="../../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita">ALS Command Reference</xref> for details on the use of <codeph>helion run</codeph>.</p>
 </section>
 <section id="references"> <title>References</title>
 <ul>

@@ -47,7 +47,7 @@ booted.</li>
 <codeph>extname</codeph> when supplied with a fully qualified
 domain name will run <codeph>kato rename &lt;extname&gt;</codeph> on
 the instance first boot.</li>
-  <li>Roles takes a list of <xref href="1.2index.dita#topic18326/roles" type="section" scope="external"  >roles</xref> to configure the node with.</li>
+  <li>Roles takes a list of <xref href="1.2index.dita#topic18326/roles" type="section">roles</xref> to configure the node with.</li>
 </ul>
 <section id="securing-the-new-node"> <title>Securing the new node</title>
 <p>To lock down and secure this new node, you could use standard cloud-config directives for adding any SSH keys, randomizing passwords, and/or disabling password based authentication entirely. An example that creates a data services node, enables passwordless sudo for the admin group, and disables password based authentication:</p>

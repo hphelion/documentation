@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic9766">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Cinder Block Storage Using HP StoreVirtual VSA</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Cinder Block Storage Using HP StoreVirtual VSA</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,7 +15,7 @@
 <p>
 
 </p>
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> bundles and facilitates deployment of HP StoreVirtual VSA which can be configured as backend for <tm tmtype="reg">OpenStack</tm> Cinder Block Storage.</p>
+<p>HP Helion OpenStack bundles and facilitates deployment of HP StoreVirtual VSA which can be configured as backend for OpenStack Cinder Block Storage.</p>
 <p>This page provides detailed information on using HP StoreVirtual VSA for realizing cloud storage.</p>
 <ul>
 <li>
@@ -52,8 +52,8 @@ associated with dedicated storage. HP StoreVirtual VSA uses scale-out, distribut
 protecting volumes with network RAID. A logical grouping of clusters is done in order to form a unit and is called a management group. Each cluster can be treated as storage node by hypervisor and is accessed using VIP (virtual IP).</p>
 <p>With Network RAID, blocks of data are striped and mirrored across multiple StoreVirtual systems, allowing volumes and applications to stay online in the event of disk, storage subsystem or server failure. iSCSI connectivity on HP StoreVirtual VSA, support the use of the storage pools by cloud instances.
 A single management group can contain up to 32 StoreVirtual nodes - grouped into clusters. A single cluster comprises 1 to 16 StoreVirtual nodes. Each management group can optimally manage a maximum of 1500 volumes.</p>
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> supports multiple clusters. For minimal deployment, you can create a management group with one cluster and with a single StoreVirtual node on it.</p>
-<p>HP StoreVirtual VSA enables the following features in HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>HP Helion OpenStack supports multiple clusters. For minimal deployment, you can create a management group with one cluster and with a single StoreVirtual node on it.</p>
+<p>HP StoreVirtual VSA enables the following features in HP Helion OpenStack</p>
 <ul>
 <li>
 <p>
@@ -77,20 +77,20 @@ A single management group can contain up to 32 StoreVirtual nodes - grouped into
 </li>
 </ul>
 </section>
-<section id="hp-storevirtual-dep-platform"> <title>HP StoreVirtual Deployment Models supported in HP <tm tmtype="reg">Helion OpenStack</tm></title>
-<p>The following diagram displays the different development platforms supported in HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<section id="hp-storevirtual-dep-platform"> <title>HP StoreVirtual Deployment Models supported in HP Helion OpenStack</title>
+<p>The following diagram displays the different development platforms supported in HP Helion OpenStack</p>
 <p>
   <image href="../../media/storevitual-development-platform.png"/>
 </p>
-<p>There are three supported models for deploying StoreVirtual in HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>There are three supported models for deploying StoreVirtual in HP Helion OpenStack</p>
 <ol>
-<li>You can deploy and configure dedicated HP StoreVirtual VSA Storage nodes using the HP <tm tmtype="reg">Helion OpenStack</tm> TripleO/Heat-based Installer. Licenses for these VSA nodes are included for use from HP <tm tmtype="reg">Helion OpenStack</tm> Compute Cloud Nodes only.</li>
-<li>User deploys and configures StoreVirtual VSA in VMware ESX platform, and maps these to Cinder backends. Licenses for these must be separately procured and are not included with HP <tm tmtype="reg">Helion OpenStack</tm></li>
-<li>User installs StoreVirtual P4000 devices rather than using StoreVirtual VSA. These devices must be separately procured and are not included with HP <tm tmtype="reg">Helion OpenStack</tm></li>
+<li>You can deploy and configure dedicated HP StoreVirtual VSA Storage nodes using the HP Helion OpenStack TripleO/Heat-based Installer. Licenses for these VSA nodes are included for use from HP Helion OpenStack Compute Cloud Nodes only.</li>
+<li>User deploys and configures StoreVirtual VSA in VMware ESX platform, and maps these to Cinder backends. Licenses for these must be separately procured and are not included with HP Helion OpenStack</li>
+<li>User installs StoreVirtual P4000 devices rather than using StoreVirtual VSA. These devices must be separately procured and are not included with HP Helion OpenStack</li>
 </ol>
 </section>
 <section id="cinder-architecture"> <title>Cinder architecture</title>
-<p>Cinder is the block-based storage component of the HP  <tm tmtype="reg">Helion OpenStack</tm> platform for cloud computing. It facilitates the provisioning of storage in the form of block devices known as Cinder volumes. In the most common scenario, the Cinder volumes provide persistent storage to guest virtual machines (known as instances) that are managed by <tm tmtype="reg">OpenStack</tm> Compute software. Cinder is based on the distributed architecture which can scale horizontally and serve concurrent volume management requests.</p>
+<p>Cinder is the block-based storage component of the HP  Helion OpenStack platform for cloud computing. It facilitates the provisioning of storage in the form of block devices known as Cinder volumes. In the most common scenario, the Cinder volumes provide persistent storage to guest virtual machines (known as instances) that are managed by OpenStack Compute software. Cinder is based on the distributed architecture which can scale horizontally and serve concurrent volume management requests.</p>
 <p>Cinder consists of three basic services:</p>
 <ul>
 <li>
@@ -144,7 +144,7 @@ For more details on the Lefthand driver, refer to <xref href="http://docs.openst
 <p>When you configure multiple StoreVirtual backends, one cinder-volume is launched for each back-end storage or back-end storage pool. Each backend instance maps to an instance of a StoreVirtual cluster. Each cluster listens at an assigned VIP that is configured in the Cinder backend entry in <i>cinder.conf</i>.</p>
 </section>
 <section id="differentiated-storage-offerings"> <title>Differentiated Storage Offerings</title>
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that storage controller runs as a virtual appliance and helps realize Software Defined Block Storage.</p>
+<p>HP Helion OpenStack uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that storage controller runs as a virtual appliance and helps realize Software Defined Block Storage.</p>
 <p>Cinder provides the concept of volume types to represent differentiated storage offerings based on various performance outputs, quality of service and backend devices that are used to realize cloud storage. Essentially, a volume type is mapped to one or more backends of similar capabilities as illustrated in figure below:</p>
 <p>
   <image href="../../media/storevirtual-volume-mapping-new.png"/>
@@ -157,7 +157,7 @@ For more details on the Lefthand driver, refer to <xref href="http://docs.openst
 <p>
 <b>3. High Cost, High Performance, Low Capacity Storage</b> (Gold)</p>
 <p>Then, as the cloud administrator, you need to create three volume types – bronze, silver and gold – and configure Cinder with three different backends. Each backend needs to be mapped to bronze, silver and gold, respectively.</p>
-<p>Differentiated storage offerings based on performance and quality can be realized in HP <tm tmtype="reg">Helion OpenStack</tm> by creating clusters of different capabilities, configuring clusters as backends and mapping these backends to different volume types as suggested above.</p>
+<p>Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack by creating clusters of different capabilities, configuring clusters as backends and mapping these backends to different volume types as suggested above.</p>
 </section>
 <section id="scale-out-vsa"> <title>Scale Out Cinder Block Storage with StoreVirtual VSA</title>
 <p>The following diagram displays a reference design that is used as a starting point for scale out Cinder Block Storage with HP StoreVirtual VSA.</p>

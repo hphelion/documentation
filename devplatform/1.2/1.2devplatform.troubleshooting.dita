@@ -63,7 +63,7 @@
 </ul>
 </li>
 <li>
-<xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita#commandline" type="section" scope="external"  >Run the install command</xref> again with all command line options.</li>
+  <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita#topic24073/install-commandline" type="section">Run the install command</xref> again with all command line options.</li>
 </ol>
 </section>
 <section id="download"> <title>Download</title>
@@ -120,7 +120,7 @@
 <section id="dbaas"> <title>DBaaS</title>
 </section>
 <section id="dbaas-configuration-fails"> <title>DbaaS configuration fails</title>
-<p>Resolution: Make sure that you can create a volume and attach it to instances. HP <tm tmtype="reg">Helion OpenStack</tm> supports VSA and 3PAR, but not LVM. Make sure your installation is configured to use either VSA or 3PAR.</p>
+<p>Resolution: Make sure that you can create a volume and attach it to instances. HP Helion <tm tmtype="reg">OpenStack</tm> supports VSA and 3PAR, but not LVM. Make sure your installation is configured to use either VSA or 3PAR.</p>
 </section>
 <section id="dbaas-instance-fails-to-start"> <title>DbaaS instance fails to start</title>
 <p>Resolution: Check if you can create and start a Nova instance with the same flavor and verify you can attach a volume to that Nova instance. Verify that the Nova flavors have not been updated to invalid values. Verify that the flavor's ID is correct, as flavor updates cause the flavor IDs to change.</p>

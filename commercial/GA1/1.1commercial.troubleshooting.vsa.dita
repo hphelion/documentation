@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8339">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Troubleshooting VSA</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Troubleshooting VSA</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.vsa.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/vsa/--></p>
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP Helion OpenStack is an OpenStack technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <p>Troubleshooting issues related to HP StoreVirtual VSA environments.</p>
 <ul>
 <li>
@@ -432,7 +432,7 @@ When there are less than two drives in the machine, the script will fail to exec
 <p>
   <b>System Behavior/Message</b>
 </p>
-<p>As of <tm tmtype="reg">Helion OpenStack</tm> 1.1,  when you install <tm tmtype="reg">Helion OpenStack</tm> if you do not specify the public interface for VSA (with the <codeph>VSA_PUBLIC_INTERFACE</codeph> parameter), then updates will not take this parameter into account.</p>
+<p>As of Helion OpenStack 1.1,  when you install Helion OpenStack if you do not specify the public interface for VSA (with the <codeph>VSA_PUBLIC_INTERFACE</codeph> parameter), then updates will not take this parameter into account.</p>
 <p>
   <b>Resolution</b>
 </p>

@@ -45,7 +45,7 @@
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="quota-configure"> <title>helion quota configure &lt;<i>name</i>&gt;</title>
+<section id="command-quota-configure"> <title>helion quota configure &lt;<i>name</i>&gt;</title>
 <p>Reconfigure the named quota definition.</p>
 <table>
 <tgroup cols="2">
@@ -66,7 +66,7 @@
 </row>
 <row>
     <entry>--droplets</entry>
-    <entry> Limit for the number of droplets per application that are stored (older droplets that exceed this quota are removed and their associated versions can no longer be restored). This option is new in <tm tmtype="reg">Helion OpenStack</tm> 1.1</entry>
+    <entry> Limit for the number of droplets per application that are stored (older droplets that exceed this quota are removed and their associated versions can no longer be restored). This option is new in Helion <tm tmtype="reg">OpenStack</tm> 1.1</entry>
   </row>
 <row>
 <entry>--mem</entry>
@@ -82,7 +82,7 @@
 </row>
 <row>
 <entry>--no-trial-db-allowed</entry>
-<entry>Complementary alias of --trial-db-allowed. Applies to <tm tmtype="reg">Helion OpenStack</tm> 1.0 only.</entry>
+<entry>Complementary alias of --trial-db-allowed. Applies to Helion OpenStack 1.0 only.</entry>
 </row>
 <row>
 <entry>--paid-services-allowed</entry>
@@ -112,13 +112,13 @@ authorization tokens.</entry>
 </row>
 <row>
 <entry>--trial-db-allowed</entry>
-<entry>Applications can use trial databases. Applies to <tm tmtype="reg">Helion OpenStack</tm> 1.0 only.</entry>
+<entry>Applications can use trial databases. Applies to Helion OpenStack 1.0 only.</entry>
 </row>
 </tbody>
 </tgroup>
 </table>
 </section>
-<section id="quota-create"> <title>helion quota create &lt;<i>name</i>&gt;</title>
+<section id="command-quota-create"> <title>helion quota create &lt;<i>name</i>&gt;</title>
 <p>Create a new quota definition.</p>
 <table>
 <tgroup cols="2">
@@ -139,7 +139,7 @@ authorization tokens.</entry>
 </row>
 <row>
     <entry>--droplets</entry>
-    <entry> Limit for the number of droplets per application that are stored (older droplets that exceed this quota are removed and their associated versions can no longer be restored). This option is new in <tm tmtype="reg">Helion OpenStack</tm> 1.1</entry>
+    <entry> Limit for the number of droplets per application that are stored (older droplets that exceed this quota are removed and their associated versions can no longer be restored). This option is new in Helion OpenStack 1.1</entry>
   </row>
 <row>
 <entry>--mem</entry>
@@ -155,7 +155,7 @@ authorization tokens.</entry>
 </row>
 <row>
 <entry>--no-trial-db-allowed</entry>
-<entry>Complementary alias of --trial-db-allowed. Applies to <tm tmtype="reg">Helion OpenStack</tm> 1.0 only.</entry>
+<entry>Complementary alias of --trial-db-allowed. Applies to Helion OpenStack 1.0 only.</entry>
 </row>
 <row>
 <entry>--paid-services-allowed</entry>
@@ -185,7 +185,7 @@ authorization tokens.</entry>
 </row>
 <row>
 <entry>--trial-db-allowed</entry>
-<entry>Applications can use trial databases. Applies to <tm tmtype="reg">Helion OpenStack</tm> 1.0 only.</entry>
+<entry>Applications can use trial databases. Applies to Helion OpenStack 1.0 only.</entry>
 </row>
 </tbody>
 </tgroup>

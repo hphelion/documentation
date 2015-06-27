@@ -43,7 +43,7 @@
 <section id="DPnotes"> <title>Release Notes</title>
 <p>The following features have been changed in the HP Helion Development Platform:</p>
 <p>
-<b><tm tmtype="reg">OpenStack</tm> Juno support</b> <!--A BR tag was used here in the original source.-->All of the <xref href="../commercial/GA1/1.1commerical.services-overview.dita#Openstack" type="section" scope="external"  >HP <tm tmtype="reg">Helion OpenStack</tm> services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Juno</xref>.</p>
+<b><tm tmtype="reg">OpenStack</tm> Juno support</b> <!--A BR tag was used here in the original source.-->All of the <xref href="../commercial/GA1/1.1commerical.services-overview.dita#Openstack" type="section" scope="external"  >HP Helion OpenStack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack Juno</xref>.</p>
 <p>
 <b>Updated Command Line Client</b> <!--A BR tag was used here in the original source.-->
 The <xref href="../devplatform/helion/CLI/1.1ALS_Client_Reference.dita" >ALS Cluster Management Tool</xref> (cfmgmt.exe). has been updated to provide more options for managing clusters from the command line.</p>

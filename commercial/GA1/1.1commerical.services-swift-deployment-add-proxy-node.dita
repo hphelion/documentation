@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2814">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Add New Scale-out Proxy Node</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Add New Scale-out Proxy Node</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -43,7 +43,7 @@
 </ol>
 <section id="prer"> <title>Prerequisite</title>
 <ul>
-<li>HP <tm tmtype="reg">Helion OpenStack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Sotrage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
+<li>HP Helion OpenStack cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Sotrage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
 </li>
 <li>(Optional) Scale-out object-ring:1 is deployed.</li>
 </ul>

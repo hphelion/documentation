@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1469">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Related <tm tmtype="reg">OpenStack</tm> Documentation</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Related OpenStack Documentation</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -21,31 +21,31 @@
 <p>
 
 </p>
-<p>This topic provides you links to <tm tmtype="reg">OpenStack</tm> documentation that you might find helpful when working with HP <tm tmtype="reg">Helion OpenStack</tm></p>
-<section id="openstack-links"> <title><tm tmtype="reg">OpenStack</tm> Links</title>
-<p>The HP <tm tmtype="reg">Helion OpenStack</tm> product contains <tm tmtype="reg">OpenStack</tm> technology coupled with a <tm tmtype="reg">Linux</tm> operating system.</p>
-<p>For more information, refer to the official open source <tm tmtype="reg">OpenStack</tm> documentation site:</p>
+<p>This topic provides you links to OpenStack documentation that you might find helpful when working with HP Helion OpenStack</p>
+<section id="openstack-links"> <title>OpenStack Links</title>
+<p>The HP Helion OpenStack product contains OpenStack technology coupled with a <tm tmtype="reg">Linux</tm> operating system.</p>
+<p>For more information, refer to the official open source OpenStack documentation site:</p>
 <ul>
 <li>
-<xref href="http://docs.openstack.org/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> documentation home page</xref>
+<xref href="http://docs.openstack.org/" scope="external" format="html" >OpenStack documentation home page</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/glossary/content/glossary.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Glossary</xref>
+<xref href="http://docs.openstack.org/glossary/content/glossary.html" scope="external" format="html" >OpenStack Glossary</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/user-guide/content/index.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> End User Guide</xref>
+<xref href="http://docs.openstack.org/user-guide/content/index.html" scope="external" format="html" >OpenStack End User Guide</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Cloud Administrator Guide</xref>
+<xref href="http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html" scope="external" format="html" >OpenStack Cloud Administrator Guide</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Administrator Guide for Networking</xref>
+<xref href="http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html" scope="external" format="html" >OpenStack Administrator Guide for Networking</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/trunk/openstack-ops/content/index.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>
+<xref href="http://docs.openstack.org/trunk/openstack-ops/content/index.html" scope="external" format="html" >OpenStack Operations Guide</xref>
 </li>
 <li>
-<xref href="http://docs.openstack.org/api/quick-start/content/index.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> API Quick Start</xref>
+<xref href="http://docs.openstack.org/api/quick-start/content/index.html" scope="external" format="html" >OpenStack API Quick Start</xref>
   <!-- #Compute_API_Quick_Start --> </li>
 <li>
 <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >OpenStack Command-line Clients</xref>

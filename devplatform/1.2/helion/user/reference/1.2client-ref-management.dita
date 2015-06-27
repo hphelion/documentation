@@ -266,7 +266,7 @@ service. Target version 2.8+ only.</entry>
 </tgroup>
 </table>
 </section>
-<section id="helion-dbshell-application-service"> <title>helion dbshell &lt;<i>application</i>&gt; &lt;<i>service</i>&gt;</title>
+<section id="command-dbshell"> <title>helion dbshell &lt;<i>application</i>&gt; &lt;<i>service</i>&gt;</title>
 <p>Invoke interactive db shell for a bound service.</p>
 <table>
 <tgroup cols="2">
@@ -1580,7 +1580,7 @@ command to print the saved trace to stdout.</entry>
 </table>
 </section>
 <section id="command-rollback"> <title>helion rollback  &lt;<i>application</i>&gt; &lt;<i>appversion</i>&gt;</title>
-<p>Switch to a different version of the application. This command is new in <tm tmtype="reg">Helion OpenStack</tm> 1.1</p>
+<p>Switch to a different version of the application. This command is new in Helion <tm tmtype="reg">OpenStack</tm> 1.1</p>
 <p>--code-only</p>
 <p>hen specified the rollback reactivates only the old
 roplet of the specified version while retaining the
@@ -2488,7 +2488,7 @@ command to print the saved trace to stdout.</entry>
 </table>
 </section>
 <section id="command-switch-version"> <title>helion switch-version &lt;<i>application</i>&gt; &lt;<i>appversion</i>&gt;</title>
-<p>Switch to a different version of the application. This command is new in <tm tmtype="reg">Helion OpenStack</tm> 1.1.</p>
+<p>Switch to a different version of the application. This command is new in Helion OpenStack 1.1.</p>
 <p>--code-only</p>
 <p>hen specified the rollback reactivates only the old
 roplet of the specified version while retaining the

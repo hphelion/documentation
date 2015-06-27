@@ -42,7 +42,7 @@ could rename <codeph>app.pl</codeph> to <codeph>app.psgi</codeph> instead, but u
 allows you to set PSGI-specific configurations in a separate file.</p>
 <p>It is possible to <xref href="#topic8895/serving-static-files-with-uwsgi" format="dita">serve
         static files with uWSGI</xref>.</p>
-<p>The <xref href="../../../../../../../devplatform/1.2/helion/user/deploy/languages/perl/1.2perlcgi.dita#perlcgi" type="section" scope="external"  >
+<p>The <xref href="../../../../../../../devplatform/1.2/helion/user/deploy/languages/perl/1.2perlcgi.dita#perlcgi" type="section"   >
 <i>perlcgi</i>
 </xref> framework is also available for
 running traditional Perl CGI applications without PSGI.</p>
@@ -118,10 +118,10 @@ else {
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#command" type="section" scope="external"  >
+  <xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/command" type="section"   >
 <i>command</i>
 </xref> key and set the
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#web" type="section" scope="external"  >
+  <xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/web" type="section"   >
 <i>processes:
 web</i>
 </xref> key to

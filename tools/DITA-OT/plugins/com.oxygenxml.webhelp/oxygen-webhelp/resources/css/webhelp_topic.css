@@ -9,12 +9,23 @@ available in the base directory of this Oxygen Webhelp plugin.
 
 @import "print.css";
 
+/* Changing font to HP Siplified PFletcher 6/26/2015 */
+@font-face {
+    font-family: HPSimplified;
+    src: url(HPSimplified-Rg.ttf)  format('truetype');
+}
+
+p {
+    font-family: HPSimplified !important;
+}
 /* Changing topic background to $hp-gray-5: #f2f2f2 PFletcher 6/11/15 */
 /* Reverted back to white per Dionysia's request 6/17/15 - JSB */
+/* Remove font tag PFletcher 6/26/2015 */
 body {
   background-color:white;
   /*background-color:#f2f2f2;*/
-  font-family: arial, helvetica, sans-serif;
+  /* font-family: arial, helvetica, sans-serif; */
+  font-family: HPSimplified !important;
   line-height:18px;
   font-size:12px;
 }
@@ -32,16 +43,121 @@ a.link {
     text-decoration: none;
 	/* Added by P Fletcher 6/11: Links are $hp-accessible-blue: #007dba */
 	color: #007dba;
+	/* Added by P Fletcher 6/26: Use HPSimplified for whole site */
+	font-family: HPSimplified !important;
 }
 
 a:visited{
-  color:#660066;        
+  color:#660066; 
+  /* Added by P Fletcher 6/26: Use HPSimplified for whole site */
+	font-family: HPSimplified !important;
 }
 a:hover{
 	/* Changed by P Fletcher 6/11: Link hover color is $hp-hover-blue: #006699 */
   /*color:red;*/
   color:#006699;
+  /* Added by P Fletcher 6/26: Use HPSimplified for whole site */
+	font-family: HPSimplified !important;
 }
+/* End Anchors */
+
+/* Tables: Copied from previous site P Fletcher 6/19/15 */
+
+
+table {
+    border-collapse: separate;
+    width: 100%;
+    margin: 0;
+    border: 1px solid #d9d9d9;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    background: whitesmoke;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+thead {
+    font-size: 16px;
+    font-weight: normal;
+    padding: 10px 20px;
+    margin: 0;
+    background: #d9d9d9;
+    background-image: -webkit-gradient(linear,50% 100%,50% 0,color-stop(0%,#d9d9d9),color-stop(100%,#f1f1f1));
+    background-image: -webkit-linear-gradient(bottom,#d9d9d9,#f1f1f1);
+    background-image: -moz-linear-gradient(bottom,#d9d9d9,#f1f1f1);
+    background-image: -o-linear-gradient(bottom,#d9d9d9,#f1f1f1);
+    background-image: linear-gradient(bottom,#d9d9d9,#f1f1f1);
+}
+
+table thead :first-child td:first-child {
+    -moz-border-radius-topleft: 10px;
+    -webkit-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+table thead :first-child td:last-child {
+    -moz-border-radius-topright: 10px;
+    -webkit-border-top-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+table thead tr:last-child td,table thead tr:last-child th {
+    border-bottom: 1px solid white;
+}
+
+table thead tr th:first-child,table thead tr td:first-child,table tbody tr th:first-child,table tbody tr td:first-child {
+    border-left: none;
+}
+
+table thead tr th:last-child,table thead tr td:last-child,table tbody tr th:last-child,table tbody tr td:last-child {
+    border-right: 0;
+}
+
+table thead tr:first-child th,table thead tr:first-child td,table tbody tr:first-child th,table tbody tr:first-child td {
+    border-top: 0;
+}
+
+table tbody tr:last-child th,table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+td,th {
+    vertical-align: top;
+    padding: 10px 15px;
+    border: 1px solid #d9d9d9;
+    border-top-color: white;
+    border-left-color: white;
+}
+
+html.ie6 table,html.ie7 table,html.ie8 table {
+    border-collapse: collapse;
+    border: 0;
+}
+
+html.ie6 table thead tr th:first-child,html.ie6 table thead tr td:first-child,html.ie6 table tbody tr th:first-child,html.ie6 table tbody tr td:first-child,html.ie7 table thead tr th:first-child,html.ie7 table thead tr td:first-child,html.ie7 table tbody tr th:first-child,html.ie7 table tbody tr td:first-child,html.ie8 table thead tr th:first-child,html.ie8 table thead tr td:first-child,html.ie8 table tbody tr th:first-child,html.ie8 table tbody tr td:first-child {
+    border: 1px solid #d9d9d9;
+}
+
+html.ie6 table thead tr th:last-child,html.ie6 table thead tr td:last-child,html.ie6 table tbody tr th:last-child,html.ie6 table tbody tr td:last-child,html.ie7 table thead tr th:last-child,html.ie7 table thead tr td:last-child,html.ie7 table tbody tr th:last-child,html.ie7 table tbody tr td:last-child,html.ie8 table thead tr th:last-child,html.ie8 table thead tr td:last-child,html.ie8 table tbody tr th:last-child,html.ie8 table tbody tr td:last-child {
+    border: 1px solid #d9d9d9;
+}
+
+html.ie6 table thead tr:first-child th,html.ie6 table thead tr:first-child td,html.ie6 table tbody tr:first-child th,html.ie6 table tbody tr:first-child td,html.ie7 table thead tr:first-child th,html.ie7 table thead tr:first-child td,html.ie7 table tbody tr:first-child th,html.ie7 table tbody tr:first-child td,html.ie8 table thead tr:first-child th,html.ie8 table thead tr:first-child td,html.ie8 table tbody tr:first-child th,html.ie8 table tbody tr:first-child td {
+    border: 1px solid #d9d9d9;
+}
+
+html.ie6 table thead tr:last-child th,html.ie6 table thead tr:last-child td,html.ie6 table tbody tr:last-child th,html.ie6 table tbody tr:last-child td,html.ie7 table thead tr:last-child th,html.ie7 table thead tr:last-child td,html.ie7 table tbody tr:last-child th,html.ie7 table tbody tr:last-child td,html.ie8 table thead tr:last-child th,html.ie8 table thead tr:last-child td,html.ie8 table tbody tr:last-child th,html.ie8 table tbody tr:last-child td {
+    border: 1px solid #d9d9d9;
+}
+
+html.ie6 td,html.ie6 th,html.ie7 td,html.ie7 th,html.ie8 td,html.ie8 th {
+    border: 1px solid #d9d9d9;
+}
+
+/* End Tables */
 
 .navheader{
     min-width: 326px;

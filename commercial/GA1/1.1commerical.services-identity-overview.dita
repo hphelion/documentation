@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7556">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1: Identity Service (Keystone) Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Identity Service (Keystone) Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -26,25 +26,25 @@
 <p>The Identity service validates that incoming requests are being made by the user who claims to be making the call.</p>
 <p>Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a project (or, tenant) which then limits where and how their tokens can be used to interact with services. User roles, which are sets of rights and privileges, can be assigned to control access to projects.</p>
 <p>
-<b>NOTE:</b> Users can have different roles per project. Actual user role functionality is defined by each separate <tm tmtype="reg">OpenStack</tm> service outside of the Identity service. Refer to the policy.json file for each service in the <codeph>/etc/&lt;SERVICENAME&gt;/policy.json</codeph> file.</p>
+<b>NOTE:</b> Users can have different roles per project. Actual user role functionality is defined by each separate OpenStack service outside of the Identity service. Refer to the policy.json file for each service in the <codeph>/etc/&lt;SERVICENAME&gt;/policy.json</codeph> file.</p>
 <p>The Identity service confirms that incoming request are being made by the user who claims to be making the call by validating a set of claims that the user is making. These claims are initially in the form of a set of credentials (username and password, or user access keys). After initial confirmation, the Identity service will issue a token that the user can provide to demonstrate that their identity has been authenticated when making subsequent requests.</p>
 <p>
 <b>User Authentication</b> - The Identity service can be configured during initial installation to use either a local, user authentication system (users and passwords are all created and managed by Keystone) or via an external user management system like LDAP or Microsoft Active Directory. It is recommended that an external user management system be used for production deployments. The local user management system is intended to support only limited trials and proof of concept deployments and does not offer the advanced user management functions often required for production deployments.</p>
 <p>
-<b>User Management</b> - The HP <tm tmtype="reg">Helion OpenStack</tm> Identity Service tracks users and their permissions. The main components of user management include:</p>
+<b>User Management</b> - The HP Helion OpenStack Identity Service tracks users and their permissions. The main components of user management include:</p>
 <ul>
 <li>Users</li>
 <li>Projects</li>
 <li>Roles</li>
 </ul>
 <p>
-<b>Service management</b> - The HP <tm tmtype="reg">Helion OpenStack</tm> Identity Service provides a catalog of available services with their API endpoints.</p>
+<b>Service management</b> - The HP Helion OpenStack Identity Service provides a catalog of available services with their API endpoints.</p>
 <p>
-<b>Group management</b> -  The HP <tm tmtype="reg">Helion OpenStack</tm> Identity Service allows administrators to create groups and add users to groups. Then, rather than assign a role to each user individually, the admin can assign a role to the group. Every group is in a <xref type="section" href="#topic7556/domain">domain</xref>.</p>
+<b>Group management</b> -  The HP Helion OpenStack Identity Service allows administrators to create groups and add users to groups. Then, rather than assign a role to each user individually, the admin can assign a role to the group. Every group is in a <xref type="section" href="#topic7556/domain">domain</xref>.</p>
 <p>
 <b>
 <xref href="../../commercial/GA1/1.1commerical.services-identity-domains.dita" >Domain management</xref>
-</b> - The HP <tm tmtype="reg">Helion OpenStack</tm> Identity Service allows administrators to create tenants, users, and groups within a <xref type="section" href="#topic7556/domain">domain</xref> and assign roles to users and groups.</p>
+</b> - The HP Helion OpenStack Identity Service allows administrators to create tenants, users, and groups within a <xref type="section" href="#topic7556/domain">domain</xref> and assign roles to users and groups.</p>
 <p>Administrators can create multiple <xref type="section" href="#topic7556/domain">domains</xref>, which allow for the isolation of projects and users. The admin can assign users, groups, and projects right to a specific domain, but restrict rights in other domains. Domain admins manage resources in their own domains.</p>
 <section id="key-components"> <title>Key Components</title>
 <p>The Identity service primarily works on the following key concepts:</p>
@@ -56,7 +56,7 @@
 <b>Note:</b> Regardless of the backend used (LDAP or MySQL), <xref href="../../commercial/GA1/1.1commerical.services-identity-domains.dita" >domain management</xref> is not available using the Horizon dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments.</p>
 </section>
 <section id="admins"> <title>Administrators</title>
-<p>The HP <tm tmtype="reg">Helion OpenStack</tm> Identity service features three types of administrator users:</p>
+<p>The HP Helion OpenStack Identity service features three types of administrator users:</p>
 <ul>
 <li>Cloud Admins are super admins. This role needs a domain-scope token.</li>
 <li>Domain admins manage users, user groups, and projects in their own domain. This role needs a domain-scope token</li>
@@ -67,7 +67,7 @@
 <p>A project is a collection of users, groups, and/or resources (such as Compute or Object Storage). Also known as a <codeph>tenant</codeph>. Each project name must be unique in an associated domain.</p>
 </section>
 <section id="user"> <title>Users</title>
-<p>A user is a person, system, or service who requests access to <tm tmtype="reg">Helion OpenStack</tm> Users are associated with projects and are assigned roles a project.</p>
+<p>A user is a person, system, or service who requests access to Helion OpenStack Users are associated with projects and are assigned roles a project.</p>
 <p>The Identity authentication service validates incoming requests made by users using the login information provided by the user either through a local Keystone login or an external authentication system. Users are provided tokens to access resources through a service catalog. Each user name must be unique in the associated domain.</p>
 </section>
 <section id="group"> <title>Group</title>
@@ -75,7 +75,7 @@
 </section>
 <section id="role"> <title>Role</title>
 <p>A role defines set of rights and privileges that can be assigned to a user at the domain or project level. A user assuming that role inherits those rights and privileges. A role is also called a <i>personality</i>. Each user name must be unique across all of your domains.</p>
-<p>Roles are created and assigned by the Identity service to either specific UserIDs or Groups. The function of the role itself is defined by each separate <tm tmtype="reg">OpenStack</tm> service. More information on Roles can be found in the <xref href="http://docs.openstack.org/admin-guide-cloud/content/keystone-user-management.html" scope="external" format="html" >User management section</xref> of the <tm tmtype="reg">OpenStack</tm> Cloud Administrator Guide.</p>
+<p>Roles are created and assigned by the Identity service to either specific UserIDs or Groups. The function of the role itself is defined by each separate OpenStack service. More information on Roles can be found in the <xref href="http://docs.openstack.org/admin-guide-cloud/content/keystone-user-management.html" scope="external" format="html" >User management section</xref> of the OpenStack Cloud Administrator Guide.</p>
 </section>
 <section id="policy"> <title>Policies</title>
 <p>A policy is a centralized repository for policy engine rule sets.</p>
@@ -94,7 +94,7 @@
 <p>A token is a random string that is used to access resources. Each token has a scope that describes which resources are accessible with it.</p>
 </section>
 <section id="service"> <title>Service</title>
-<p>An <tm tmtype="reg">OpenStack</tm> service, such as Compute (Nova), Object Storage (Swift), or Image Service (Glance). Provides one or more endpoints through which users can access resources and perform operations.</p>
+<p>An OpenStack service, such as Compute (Nova), Object Storage (Swift), or Image Service (Glance). Provides one or more endpoints through which users can access resources and perform operations.</p>
 </section>
 <section id="endpoint"> <title>Endpoint</title>
 <p>A network-accessible address, usually described by a URL, where a service may be accessed.</p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3091">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Object Storage Service Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Object Storage Service Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -27,9 +27,9 @@
 
 </p>
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
-<p>HP <tm tmtype="reg">Helion OpenStack</tm> introduces integral, built-in support for <xref href="../../commercial/GA1/1.0commerical.services-scale-out-swift.dita" >Scale-out Swift</xref> to the cloud.
-The HP <tm tmtype="reg">Helion OpenStack</tm> cloud deployment includes automatic creation of a Swift cluster and starter nodes.</p>
-<p>Based on <tm tmtype="reg">OpenStack</tm> Swift, the HP <tm tmtype="reg">Helion OpenStack</tm> object storage service provides a highly available, resilient, and scalable storage pool for unstructured data.</p>
+<p>HP Helion OpenStack introduces integral, built-in support for <xref href="../../commercial/GA1/1.0commerical.services-scale-out-swift.dita" >Scale-out Swift</xref> to the cloud.
+The HP Helion OpenStack cloud deployment includes automatic creation of a Swift cluster and starter nodes.</p>
+<p>Based on OpenStack Swift, the HP Helion OpenStack object storage service provides a highly available, resilient, and scalable storage pool for unstructured data.</p>
 <section id="architecture-overview"> <title>Architecture Overview</title>
 <p>At its core, Swift is built from a set of software services and data constructs hosted on a cluster of servers.</p>
 <!--
@@ -43,7 +43,7 @@ A Swift cluster is software defined storage (SDS) architecture layered on top of
 <i>storage</i>
 </b> services.</p>
 <ul>
-<li>The <i>access</i> services group is made up of the Swift Proxy Servers, which run Swift-Proxy, Account and Container Services, HTTP/HTTPS load balancers, and <tm tmtype="reg">OpenStack</tm> Keystone authentication service.</li>
+<li>The <i>access</i> services group is made up of the Swift Proxy Servers, which run Swift-Proxy, Account and Container Services, HTTP/HTTPS load balancers, and OpenStack Keystone authentication service.</li>
 <li>The <i>storage</i> services group is composed of Swift Object Servers and various background services such as replicators.  </li>
 </ul>
 <p>Each service group can be scaled <b>
@@ -51,10 +51,10 @@ A Swift cluster is software defined storage (SDS) architecture layered on top of
 </b> to meet workload and redundancy requirements. The storage service can be scaled up as necessary (<xref href="../../commercial/GA1/1.0commerical.services-scale-out-swift.dita" >scale-out Swift</xref>). It can also be horizontally scalable to handle an increased number of simultaneous connections as well as large number of objects.</p>
 </section>
 <section id="expanding-the-swift-deployment"> <title>Expanding the Swift Deployment</title>
-<p>Note that the initial installation of <tm tmtype="reg">Helion OpenStack</tm> cloud includes the creation and configuration of a basic two-node Starter All-in-one Swift deployment. Any additional rings, nodes or servers are expansions of this basic installation.</p>
+<p>Note that the initial installation of Helion OpenStack cloud includes the creation and configuration of a basic two-node Starter All-in-one Swift deployment. Any additional rings, nodes or servers are expansions of this basic installation.</p>
 <p>For more information and in-depth diagrams, see <xref href="../../commercial/GA1/1.0commerical.services-scale-out-swift.dita" >About Scale-Out Swift</xref>.</p>
 <ol>
-<li>Deploy Starter Swift<!--A BR tag was used here in the original source.--><i>(completed as part of the HP <tm tmtype="reg">Helion OpenStack</tm> cloud deployment)</i>
+<li>Deploy Starter Swift<!--A BR tag was used here in the original source.--><i>(completed as part of the HP Helion OpenStack cloud deployment)</i>
 </li>
 <li>Scale up or expand 
 

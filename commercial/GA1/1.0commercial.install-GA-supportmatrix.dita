@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic7297">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.0: Support Matrix</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Support Matrix</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -15,8 +15,8 @@
 <p>
 
 </p>
-<p>To ensure the performance and stability of the HP <tm tmtype="reg">Helion OpenStack</tm> environment, it is very important to meet the requirements and conform to the recommendations.</p>
-<p>This page provides an overview of the hardware and software that is supported for HP <tm tmtype="reg">Helion OpenStack</tm> including setup and configuration information.</p>
+<p>To ensure the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the recommendations.</p>
+<p>This page provides an overview of the hardware and software that is supported for HP Helion OpenStack including setup and configuration information.</p>
 <ul>
 <li>
 <xref type="section" href="#topic7297/supportedhw">Supported Hardware</xref>
@@ -44,13 +44,13 @@
 <p>The following diagrams depict simplified deployment scenarios:</p>
 <ul>
 <li>
-<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >KVM deployment of HP <tm tmtype="reg">Helion OpenStack</tm></xref> (opens in a new window)</li>
+<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >KVM deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
 <li>
-<xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >ESX deployment of HP <tm tmtype="reg">Helion OpenStack</tm></xref> (opens in a new window)</li>
+<xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >ESX deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
 </ul>
 </section>
 <section id="supportedhw"> <title>Supported Hardware</title>
-<p>The following hardware has been tested and verified to work with HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>The following hardware has been tested and verified to work with HP Helion OpenStack</p>
 </section>
 <section id="hp-proliant-bladesystem"> <title>HP Proliant BladeSystem</title>
 <ul>
@@ -115,7 +115,7 @@
 </ul>
 </section>
 <section id="supportedconfigurations"> <title>Supported Configurations</title>
-<p>HP supports the following configurations for HP <tm tmtype="reg">Helion OpenStack</tm> deployment:</p>
+<p>HP supports the following configurations for HP Helion OpenStack deployment:</p>
 <ul>
 <li>
 <p>Host Interconnects/Protocols:</p>
@@ -365,8 +365,8 @@ or
 <p>Our Guest OS support is based on the hypervisor vendor.</p>
 <p>For ESX, refer to the <xref href="http://www.vmware.com/resources/compatibility/search.php?action=search&amp;deviceCategory=software&amp;advancedORbasic=advanced&amp;maxDisplayRows=50&amp;key=&amp;productId=4&amp;gos_vmw_product_release%5B%5D=90&amp;datePosted=-1&amp;partnerId%5B%5D=-1&amp;os_bits=-1&amp;os_use%5B%5D=-1&amp;os_family%5B%5D=-1&amp;os_type%5B%5D=-1&amp;rorre=0" scope="external" format="html" >VMware Compatibility Guide</xref>.</p>
 <p>For KVM refer to the following table:</p>
-<p>A <b>Verified</b> Guest OS has been tested by HP and appears to function properly as a Nova compute VM on HP <tm tmtype="reg">Helion OpenStack</tm></p>
-<p>A <b>Certified</b> Guest OS has been officially tested by the OS vendor, or by HP under the vendor's authorized program, and will be supported by the OS vendor as a Nova compute VM on HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>A <b>Verified</b> Guest OS has been tested by HP and appears to function properly as a Nova compute VM on HP Helion OpenStack</p>
+<p>A <b>Certified</b> Guest OS has been officially tested by the OS vendor, or by HP under the vendor's authorized program, and will be supported by the OS vendor as a Nova compute VM on HP Helion OpenStack</p>
 <table>
 <tgroup cols="3">
 <colspec colname="col1"/>
@@ -463,8 +463,8 @@ or
 </ul>
 </section>
 <section id="next"> <title>Next Steps</title>
-<p>Review the <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Technical Overview</xref>.</p>
-<p>Prepare your environment for the installation, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> Installation: Prerequisites</xref>.</p>
+<p>Review the <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita" >HP Helion OpenStack Technical Overview</xref>.</p>
+<p>Prepare your environment for the installation, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >HP Helion OpenStack Installation: Prerequisites</xref>.</p>
 <p>
   <xref href="#topic7297"> Return to Top </xref>
 </p>

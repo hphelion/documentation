@@ -24,7 +24,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/admin/server/1.2aok.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/server/aok/--></p>
-<p>AOK is Application Lifecycle Service's authentication management service (replacing Cloud Foundry's UAA Server). It issues tokens via OAuth2 for client applications such as the <b>helion</b> client and the ALS Console. AOK can connect to other back-end SSO services such as LDAP by using different <xref type="section" href="#topic8359/aok-strategies">Strategies</xref>.</p>
+<p>AOK is Application Lifecycle Service's authentication management service (replacing Cloud Foundry's UAA Server). It issues tokens via OAuth2 for client applications such as the <b>helion</b> client and the ALS Console. AOK can connect to other back-end SSO services such as LDAP by using different <xref type="section" href="#topic8359/strategies">Strategies</xref>.</p>
 <ul>
 <li>
 <xref type="section" href="#topic8359/web">End User Login: Web</xref>
@@ -58,7 +58,7 @@
 <p>If the strategy has been changed to something other than <b>builtin</b> (see
 <xref type="section" href="#topic8359/strategies">Strategies</xref>) then users connecting with the <xref href="../../../../../devplatform/1.2/helion/user/client/1.2index.dita" >ALS command-line client</xref> should be aware that:</p>
 <ul>
-<li>The user must enter identifiers in the format expected by the <xref type="section" href="#topic8359/aok-strategies">strategy</xref> used by AOK (e.g. username or email
+<li>The user must enter identifiers in the format expected by the <xref type="section" href="#topic8359/strategies">strategy</xref> used by AOK (e.g. username or email
 address).</li>
 <li>When using an existing authentication token to log in as a second user (for example, an admin connecting as another user), use the second user's username, <b>not</b> the identifier used by AOK's strategy.</li>
 </ul>
@@ -76,7 +76,7 @@ users and passwords to authenticate.</p>
 <li>
 <p>
 <b>ldap</b>: The ldap strategy authenticates using the LDAP server
-specified in <xref type="section" href="#topic8359/aok-configuration">
+specified in <xref type="section" href="#topic8359/configuration">
 <i>kato config</i>
 </xref>. Any user that can
 successfully authenticate with the LDAP server will be allowed to
@@ -92,7 +92,7 @@ use. This value must correspond exactly to one of the supported strategy
 names.</p>
 </section>
 <section id="configuration"> <title>Configuration</title>
-<p>To configure AOK, set the following keys in the AOK config using the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" type="section" scope="external"  >kato
+  <p>To configure AOK, set the following keys in the AOK config using the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section" >kato
 config set</xref> commands:</p>
 <ul>
 <li>
@@ -310,7 +310,7 @@ is configured.</p>
 <ol>
 <li>Log in to the micro cloud VM or Core node as the 'helion' user (with the password set previously)</li>
 <li>
-<xref type="section" href="#topic8359/aok-configuration">Configure AOK</xref> to use LDAP</li>
+<xref type="section" href="#topic8359/configuration">Configure AOK</xref> to use LDAP</li>
 <li>
 <p>Set the <codeph>admin_user</codeph> key with the desired LDAP admin username:</p>
 

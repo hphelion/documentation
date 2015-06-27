@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/admin/console/1.2customize.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/console/customize/--></p>
-<p>The Management Console can be extensively customized and themed. Administrators can add or remove runtimes, frameworks and services from the system, and change the look and content of the <xref href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita#management-console" type="section" scope="external"  >Management Console</xref> interface.</p>
+<p>The Management Console can be extensively customized and themed. Administrators can add or remove runtimes, frameworks and services from the system, and change the look and content of the <xref href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita#management-console" type="section">Management Console</xref> interface.</p>
 <ul>
 <li>
 <xref type="section" href="#topic5029/console-settings">Console Settings</xref>
@@ -101,7 +101,7 @@ above but height is about 40px before distortion occurs.</li>
 </ul>
 </section>
 <section id="welcome-page"> <title>Welcome Page</title>
-<p>The HTML/EJS to show on the Welcome page. The <xref type="section" href="#topic5029/customize-settings-vars">
+  <p>The HTML/EJS to show on the Welcome page. The <xref type="section" href="#topic5029/settings-variables">
 <i>settings-variables</i>
 </xref> and <codeph>username</codeph>
 variable (current user) are available via EJS, but plain HTML will work
@@ -109,13 +109,13 @@ for simple use cases.</p>
 </section>
 <section id="support-page"> <title>Support Page</title>
 <p>The HTML/EJS to show on the Support page. The  <xref type="section"
-          href="#topic5029/customize-settings-vars">
+  href="#topic5029/settings-variables">
           <i>settings-variables</i>
         </xref> and <codeph>support_email</codeph> variable (see Settings &gt; Controller) are
         available.</p>
 </section>
 <section id="eula-content"> <title>Eula Content</title>
-<p>The HTML/EJS to show in the EULA overlay. The <xref type="section" href="#topic5029/customize-settings-vars">
+  <p>The HTML/EJS to show in the EULA overlay. The <xref type="section" href="#topic5029/settings-variables">
 <i>settings-variables</i>
 </xref> are available.</p>
 </section>

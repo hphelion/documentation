@@ -20,12 +20,13 @@
 <body>
 <p>
 <!--UNDER REVISION-->
+  <!-- this version of the file should be posted on the website as just a one liner topic, per Jayme. Paul -->
  <!--./commercial/GA1/1.1commerical.troubleshooting.compute.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/compute/--></p>
 <section id="configdrive"> <title>Storing Metadata on a Configuration Drive</title>
 <p>
 <!--DOCS-950-->
-The HP Helion <tm tmtype="reg">OpenStack</tm> compute service can be configured to <xref href="../../commercial/GA1/1.1commerical.services-compute-configDrive.dita" >write metadata to a special configuration drive</xref> that contains information normally available through the metadata service.</p>
+The HP Helion OpenStack compute service can be configured to <xref href="../../commercial/GA1/1.1commerical.services-compute-configDrive.dita" >write metadata to a special configuration drive</xref> that contains information normally available through the metadata service.</p>
 </section>
   <!--DOCS-1183 <section id="cleanup"> <title>Compute Databases Become Less Performant Over Time</title>
 <p>

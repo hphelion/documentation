@@ -20,8 +20,8 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/deploy/languages/1.2java.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/java/--></p>
-<p>Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry-based Platform as a Service (PaaS), or writing applications that take advantage of HP <tm tmtype="reg">Helion OpenStack</tm> to manage infrastructure or software services, tools to enable successful development are available in Java.</p>
-<p>Deployable <xref href="../../../../../../devplatform/1.2/1.2devplatform.appdev.dita#java" type="section" scope="external"  >sample applications</xref> are available in this language.</p>
+<p>Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry-based Platform as a Service (PaaS), or writing applications that take advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software services, tools to enable successful development are available in Java.</p>
+  <p>Deployable <xref href="../../../../../../devplatform/1.2/1.2devplatform.appdev.dita#topic2457/java" type="section">sample applications</xref> are available in this language.</p>
 <section id="using-jdbc"> <title>Using JDBC</title>
 <p>It is possible to access the database services using the standard JDBC
 API:</p>

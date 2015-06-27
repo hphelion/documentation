@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2235">
-<title>HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and 1.1.1: Managing Moonshot Servers</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Managing Moonshot Servers</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Managing Moonshot Server</searchtitle>
 </titlealts>
@@ -21,15 +21,15 @@
  <!--./commercial/GA1/1.1commercial.install-GA-Moonshot.md-->
  <!--permalink: /helion/openstack/1.1/install/moonshot/--></p>
 <p>
-  <b>This document describes the installation process for HP <tm tmtype="reg">Helion OpenStack</tm> 1.1 and HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update <tm tmtype="reg">Helion OpenStack</tm> from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP <tm tmtype="reg">Helion OpenStack</tm> 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
 <p>The HP Moonshot Servers</p>
 <ul>
 <li>HP ProLiant m710 Server Cartridge </li>
 <li>HP ProLiant m300 Server Cartridge</li>
 </ul>
-<p>are now supported as tested and verified hardware to run HP <tm tmtype="reg">Helion OpenStack</tm></p>
+<p>are now supported as tested and verified hardware to run HP Helion OpenStack</p>
 <p>To manage HP Moonshot servers you must know the cartridge address and the node
 address (these are also known as the <b>transit_address</b> and the <b>target_address</b>
 respectively).</p>
