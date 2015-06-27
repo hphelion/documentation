@@ -52,7 +52,7 @@
 <xref href="../../../commercial/GA1/1.1commerical.services-reporting-overview.dita" >Metering</xref>.
 <!--A BR tag was used here in the original source.-->Learn about the Metering (Ceilometer) service to collect measurements throughout your cloud environment.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p><xref href="../1.1commercial.ceph-overview.dita#topic7563" type="section" scope="external" >Ceph</xref>
+<p><xref href="../1.1commercial.ceph-overview.dita#topic7563" type="section" >Ceph</xref>
         <!--A BR tag was used here in the original source.-->Learn about Ceph, an Open Source,
         scalable, software defined storage running on HP Servers which provides block and object
         storage with unified management.</p>

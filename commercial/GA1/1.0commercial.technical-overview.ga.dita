@@ -303,7 +303,7 @@
 </ul>
 </li>
 </ul>
-<p>For detailed information, see the <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#network" type="section" scope="external" >Preparing the network</xref> section of the <i>Prerequisites</i>.</p>
+<p>For detailed information, see the <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#network" type="section" >Preparing the network</xref> section of the <i>Prerequisites</i>.</p>
 <table>
 <tgroup cols="4">
 <colspec colname="col1"/>
@@ -565,7 +565,7 @@ The physical cluster network can be shared by a number of logical networks, each
 </b>
 </entry>
     <entry>The overcloud is the functional cloud available to end users for running guest virtual machines and workloads. The overcloud comprises OpenStack Cloud Services deployed on controller nodes, and a number of compute nodes and storage nodes. 
-    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->The cloud services in the overcloud, used by end users, include Compute, Networking, Block Storage, Object Operations, Horizon, Image Operations, Identity Operations, and Orchestration as described in the <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita#Helion-services" type="section" scope="external" > Functional Overview </xref>section above. 
+    <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->The cloud services in the overcloud, used by end users, include Compute, Networking, Block Storage, Object Operations, Horizon, Image Operations, Identity Operations, and Orchestration as described in the <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita#Helion-services" type="section" > Functional Overview </xref>section above. 
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->These services are deployed in a highly available cluster across the three Controller nodes.
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->For KVM based Hypervisor environments, the overcloud also comprises Nova Compute nodes running the KVM hypervisor, and Block Storage nodes running the StoreVirtual VSA.
 </entry>

@@ -125,7 +125,7 @@
 <p>Yes. It includes an integrated <tm tmtype="reg">Linux</tm> host OS hardened and tested for this distribution. All supported hardware and software configurations are laid out in the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>
 </section>
 <section id="releaseversion"> <title>Which OpenStack release does this distribution include?</title>
-<p>All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#Openstack" type="section" scope="external"  >HP Helion OpenStack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack Juno</xref>. <xref href="http://www.hpcloud.com/learning-center" scope="external" format="html" >Learn more</xref> about HP's commitment to OpenStack and how we're making it even better.</p>
+<p>All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#Openstack" type="section"  >HP Helion OpenStack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack Juno</xref>. <xref href="http://www.hpcloud.com/learning-center" scope="external" format="html" >Learn more</xref> about HP's commitment to OpenStack and how we're making it even better.</p>
 </section>
 <section id="nonhphardware"> <title>Can HP Helion OpenStack run on non-HP hardware?</title>
 <p>HP Helion OpenStack does not require HP-branded hardware. All supported hardware and software configurations are laid out in the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>

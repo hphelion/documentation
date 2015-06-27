@@ -43,7 +43,7 @@
 router in Application Lifecycle Service is designed for HTTP(S) traffic only, if user
 applications require other protocols, consider setting up Harbor.</p>
 <p>Information on using the Harbor port service with deployed applications
-is in the <xref href="../../../../devplatform/helion/user/services/1.1port-service.dita#port-service" type="section" scope="external"  >Port Service (Harbor) documentation</xref>.</p>
+is in the <xref href="../../../../devplatform/helion/user/services/1.1port-service.dita#port-service" type="section"  >Port Service (Harbor) documentation</xref>.</p>
 <section id="architecture"> <title>Architecture</title>
 <p>A Harbor node is designed to sit on the edge of the cluster network
 (i.e. with a publicly routable network interface) in a similar fashion
@@ -59,7 +59,7 @@ drop that instance from its list of backends available for the
 externally facing port.</p>
 </section>
 <section id="requirements-setup"> <title>Requirements &amp; Setup</title>
-<p>An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other <xref href="../../../../devplatform/helion/admin/cluster/1.1index.dita#data-services-nodes" type="section" scope="external"  >data service roles</xref>.
+<p>An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other <xref href="../../../../devplatform/helion/admin/cluster/1.1index.dita#data-services-nodes" type="section"  >data service roles</xref>.
 For example:</p>
 <codeblock>
   <codeph>kato node attach -e harbor CORE_IP
@@ -77,7 +77,7 @@ view the current port range on the Harbor node by entering:</p>
 </codeblock>
 <p>For each new service provisioned, Harbor will chose a random unassigned
 port from this range. This range can be set in the Management Console's
-<xref href="../../../../devplatform/helion/admin/console/1.1customize.dita#console-settings" type="section" scope="external"  >Settings</xref> section, or by
+<xref href="../../../../devplatform/helion/admin/console/1.1customize.dita#console-settings" type="section"  >Settings</xref> section, or by
 using the <codeph>kato config set ...</codeph> command.</p>
 <p>A Harbor node can run standalone, or on the same node as your router. This may be the preferred option if you wish to use the same DNS name for Harbor and Router services. Otherwise, create a new DNS entry for the Harbor node so that consumers of the port do not have to address it by its external IP.</p>
 <p>If you are setting a different IP / DNS name for this port you should

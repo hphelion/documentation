@@ -94,7 +94,7 @@
 </codeblock>
 </li>
 <li>
-<p>Once the nodes are provisioned (for more information on nodes provisioning, refer <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita#running-provision-tool" type="section" scope="external"  >Running the Provisioning Tool</xref>), create the following configuration files under <codeph>/helion-ceph/cephconfigureation/ansible-playbooks/</codeph> on the <codeph>ceph-admin</codeph> node</p>
+<p>Once the nodes are provisioned (for more information on nodes provisioning, refer <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita#running-provision-tool" type="section"  >Running the Provisioning Tool</xref>), create the following configuration files under <codeph>/helion-ceph/cephconfigureation/ansible-playbooks/</codeph> on the <codeph>ceph-admin</codeph> node</p>
 
 <p>
 <b>cephcluster.csv:</b>

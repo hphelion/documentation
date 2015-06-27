@@ -66,9 +66,9 @@
 </codeblock>
 <p>This will list all the roles configured to run on the VM, and whether
 they are running, stopped, or starting.</p>
-<p>Roles are logical groups of processes (see <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-role-info" >kato role info</xref>) which can be inspected individually with <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-process-list" type="section" scope="external"  >kato process
+<p>Roles are logical groups of processes (see <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-role-info" >kato role info</xref>) which can be inspected individually with <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-process-list" type="section"  >kato process
 ...</xref> commands.</p>
-<p>In particular, the <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-process-ready" >kato process ready</xref> command is useful for determining if the system is in a state to receive <xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#server-configuration" type="section" scope="external"  >configuration commands</xref>. For example, to check that all processes for the configured roles are ready:</p>
+<p>In particular, the <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-process-ready" >kato process ready</xref> command is useful for determining if the system is in a state to receive <xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#server-configuration" type="section"  >configuration commands</xref>. For example, to check that all processes for the configured roles are ready:</p>
 <codeblock>
   <codeph>kato process ready all
 </codeph>
@@ -109,7 +109,7 @@ appropriate time zone string for your location.</p>
 </section>
 <section id="resetting-the-vm"> <title>Resetting the VM</title>
 <p>If you would like to return an Application Lifecycle Service VM to its original
-"out-of-the-box" configuration, use the <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-node-attach" type="section" scope="external"  >
+"out-of-the-box" configuration, use the <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-node-attach" type="section"  >
 <i>kato node reset</i>
 </xref> command. This command has two options:</p>
 <ul>
@@ -126,7 +126,7 @@ stale data/configuration.</p>
 <p>
 <codeph>kato node reset soft</codeph>: Resets only
 configuration and data, but leaves first boot (naming) or other
-state info. You would normally run this together with the <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-node-attach" type="section" scope="external"  >
+state info. You would normally run this together with the <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-node-attach" type="section"  >
 <i>kato
 node
 setup</i>
@@ -144,19 +144,19 @@ kato node setup micro
 <section id="monitoring-the-application-lifecycle-service-server"> <title>Monitoring The Application Lifecycle Service Server</title>
 </section>
 <section id="management-console"> <title>Management Console</title>
-<p>The <xref href="../../../../devplatform/helion/user/console/1.1index.dita#management-console" type="section" scope="external"  >
+<p>The <xref href="../../../../devplatform/helion/user/console/1.1index.dita#management-console" type="section"  >
 <i>Management Console</i>
 </xref> has a Settings page that allows an administrator to monitor the server component and services, and restart or stop services as necessary.</p>
 </section>
 <section id="new-relic"> <title>New Relic</title>
-<p>Please see <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#bestpractices-nrsysmond" type="section" scope="external"  >
+<p>Please see <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#bestpractices-nrsysmond" type="section"  >
 <i>New Relic Server Monitoring</i>
-</xref>. New Relic can also be used to <xref href="../../../../devplatform/helion/user/deploy/1.1newrelic.dita#newrelic" type="section" scope="external"  >monitor apps</xref>.</p>
+</xref>. New Relic can also be used to <xref href="../../../../devplatform/helion/user/deploy/1.1newrelic.dita#newrelic" type="section"  >monitor apps</xref>.</p>
 </section>
 <section id="creating-an-admin-user"> <title>Creating an Admin User</title>
 <p>The easiest way to add admin users to Application Lifecycle Service is via the Management
-Console under <xref href="../../../../devplatform/helion/admin/console/1.1customize.dita#console-users" type="section" scope="external"  >Users</xref>. The Management Console will prompt to create the initial admin user the first time you use it.</p>
-<p>If you do not have access to the Management Console, create a user by logging in to the micro cloud or Core node controller via SSH or through the VM <xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-tty-console" type="section" scope="external"  >tty console</xref> as the <i>helion</i> user and run <i>helion register</i>:</p>
+Console under <xref href="../../../../devplatform/helion/admin/console/1.1customize.dita#console-users" type="section"  >Users</xref>. The Management Console will prompt to create the initial admin user the first time you use it.</p>
+<p>If you do not have access to the Management Console, create a user by logging in to the micro cloud or Core node controller via SSH or through the VM <xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-tty-console" type="section"  >tty console</xref> as the <i>helion</i> user and run <i>helion register</i>:</p>
 <codeblock>
   <codeph>helion target api.helion-xxxx.local
 helion register superuser@example.net
@@ -171,12 +171,12 @@ helion register superuser@example.net
 </section>
 <section id="system-monitoring-with-nagios"> <title>System Monitoring with Nagios</title>
 <p>If Nagios is installed on your server nodes, you can use it to monitor
-and report resource utilization. See the <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#bestpractices-nagios" type="section" scope="external"  >Best Practices</xref> documentation for details.</p>
+and report resource utilization. See the <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#bestpractices-nagios" type="section"  >Best Practices</xref> documentation for details.</p>
 </section>
 <section id="server-backup-import-and-export"> <title>Server Backup, Import, and Export</title>
 <p>The import and export functionality can be used to do regular backups,
 or to move the Application Lifecycle Service configuration from one server to another. It is also a means of upgrading the Application Lifecycle Service VM without having to install everything from the ground up.</p>
-<p>Please see the <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#bestpractices-controller-migration" >Best Practices</xref> documentation for details on how to <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#bestpractices-migration-export" >export</xref> and <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#bestpractices-migration-import" type="section" scope="external"  >import</xref> your data.</p>
+<p>Please see the <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#bestpractices-controller-migration" >Best Practices</xref> documentation for details on how to <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#bestpractices-migration-export" >export</xref> and <xref href="../../../../devplatform/helion/admin/best-practices/1.1index.dita#bestpractices-migration-import" type="section"  >import</xref> your data.</p>
 </section>
 </body>
 </topic>

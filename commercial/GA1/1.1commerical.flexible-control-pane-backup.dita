@@ -1176,7 +1176,7 @@ Successfully pivoted
 
 <p>On the seed cloud host, the OpenSSH server must be running and the firewall configuration should allow access to the SSH ports.</p>
 
-<p>After Linux installation, additional software needs to be installed as defined in the <b>Software Requirements</b> section of the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita#software-requirements" type="section" scope="external"  >Support Matrix</xref>.</p>
+<p>After Linux installation, additional software needs to be installed as defined in the <b>Software Requirements</b> section of the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita#software-requirements" type="section"  >Support Matrix</xref>.</p>
 </li>
 </ul>
 </section>

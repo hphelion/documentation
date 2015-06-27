@@ -91,7 +91,7 @@
 <p>On the <b>Access &amp; Security</b> tab, perform the following tasks:.</p>
 
 <ul>
-<li>From the <b>Keypair</b> list, select the <b>keypair</b> to use with the instance. If there is no key pair, click the <b>+</b> button to <xref href="../Security/carrier-grade.dashboard.security.keypairs.dita#importKeypairs" type="section" scope="external"  >import a key pair</xref>.</li>
+<li>From the <b>Keypair</b> list, select the <b>keypair</b> to use with the instance. If there is no key pair, click the <b>+</b> button to <xref href="../Security/carrier-grade.dashboard.security.keypairs.dita#importKeypairs" type="section"  >import a key pair</xref>.</li>
 <li>Select the security group to use with the instance.</li>
 </ul>
 <p>

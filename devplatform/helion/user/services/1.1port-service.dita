@@ -24,7 +24,7 @@
 <p>
 
 </p>
-<p>HTTP and HTTPS ports and routing are provided automatically for all web applications deployed to Application Lifecycle Service (unless <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#web" type="section" scope="external"  >processes:
+<p>HTTP and HTTPS ports and routing are provided automatically for all web applications deployed to Application Lifecycle Service (unless <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#web" type="section"  >processes:
 web:</xref> is set to
 "\~").</p>
 <p>If your application requires additional TCP or UDP ports, use the Harbor service to allocate them.</p>
@@ -57,7 +57,7 @@ web:</xref> is set to
   <codeph>helion create-service harbor debug-port
 </codeph>
 </codeblock>
-<p>To request a port from Harbor in the <b>manifest.yml</b> file, add it in the <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#services" type="section" scope="external"  >
+<p>To request a port from Harbor in the <b>manifest.yml</b> file, add it in the <xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#services" type="section"  >
 <b>services</b>
 </xref> block.
 For example:</p>
@@ -125,7 +125,7 @@ port.</li>
   <b>Note</b>
 </p>
 <p>To remotely check the settings and credentials of any Application Lifecycle Service service,
-use the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref.dita#command-services" type="section" scope="external"  >
+use the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref.dita#command-services" type="section"  >
 <b>helion
 service</b>
 </xref> command.</p>
@@ -168,7 +168,7 @@ UDP_SERVICE_PORT=${!UDP_SERVICE_NAME}
   <b>Note</b>
 </p>
 <p>To use declarations like these in
-<xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#hooks" type="section" scope="external"  >
+<xref href="../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#hooks" type="section"  >
 <i>hooks</i>
 </xref>, put them in a
 separate bash script. Brace expansion and grouping cannot be used directly in YAML files.</p>

@@ -35,7 +35,7 @@ require 'app.pl';</codeblock>
 could rename <codeph>app.pl</codeph> to <codeph>app.psgi</codeph> instead, but using the approach above
 allows you to set PSGI-specific configurations in a separate file.</p>
 <p>It is possible to <xref type="section" href="#topic8895/uwsgi-perl-static-files">serve static files with uWSGI</xref>.</p>
-  <p>The <xref href="1.1perlcgi.dita#topic751/perlcgi" type="section" scope="external"  >
+  <p>The <xref href="1.1perlcgi.dita#topic751/perlcgi" type="section"  >
 <i>perlcgi</i>
 </xref> framework is also available for
 running traditional Perl CGI applications without PSGI.</p>

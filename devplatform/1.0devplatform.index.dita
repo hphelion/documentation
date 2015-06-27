@@ -32,7 +32,7 @@
 <section id="platform-overview"> <title>Platform Overview</title>
 <p>The <xref href="helion/1.0index.dita">Application Lifecycle Service (ALS)</xref> is a Cloud Foundry-based, managed runtime environment for applications.</p>
 <ul>
-  <li>It supports <xref href="1.0devplatform.appdev.dita#topic2368/java" >Java</xref>, <xref href="1.0devplatform.appdev.dita#topic2368/node" >Node</xref>, <xref href="1.0devplatform.appdev.dita#topic2368/PHP" type="section" scope="external"  >PHP</xref>, and other language runtimes.</li>
+  <li>It supports <xref href="1.0devplatform.appdev.dita#topic2368/java" >Java</xref>, <xref href="1.0devplatform.appdev.dita#topic2368/node" >Node</xref>, <xref href="1.0devplatform.appdev.dita#topic2368/PHP" type="section"  >PHP</xref>, and other language runtimes.</li>
 <li>It provides easy access to services like MySQL, PostgreSQL, RabbitMQ, and Memcache.</li>
 <li>It allows Disk, Memory and Placement Zone constraints to be set per application.</li>
 <li>It provides auto-scaling and application log drains.</li>
@@ -67,7 +67,7 @@
 <simpletable>
 <strow>
     <stentry>
-            <xref href="1.0devplatform_commercial_install.dita#topic15281/install-database" type="section" scope="external" 
+            <xref href="1.0devplatform_commercial_install.dita#topic15281/install-database" type="section" 
               >Install</xref>
           </stentry>
     <stentry>
@@ -93,7 +93,7 @@
 <simpletable>
 <strow>
     <stentry>
-      <xref href="1.0devplatform_commercial_install.dita#topic15281/install-messaging" type="section" scope="external" >Install</xref>
+      <xref href="1.0devplatform_commercial_install.dita#topic15281/install-messaging" type="section" >Install</xref>
     </stentry>
     <stentry>
       <xref href="1.0devplatform.using-the-messaging-service.dita">Provision</xref>
@@ -109,11 +109,11 @@
 <li>It automates installation and enabling supported applications and services.</li>
 <li>The Beta version allows you to install an instance of Vertica Community Edition.</li>
 </ul>
-  <p>The Marketplace is optionally installed as part of the Helion Development Platform. You can <xref href="1.0devplatform_commercial_install.dita#topic15281/install-marketplace" type="section" scope="external" >install</xref> and <xref href="1.0devplatform.marketplace.install.dita" >use</xref> it to easily install applications and services to accelerate your development efforts.</p>
+  <p>The Marketplace is optionally installed as part of the Helion Development Platform. You can <xref href="1.0devplatform_commercial_install.dita#topic15281/install-marketplace" type="section" >install</xref> and <xref href="1.0devplatform.marketplace.install.dita" >use</xref> it to easily install applications and services to accelerate your development efforts.</p>
 <simpletable>
 <strow>
     <stentry>
-      <xref href="1.0devplatform_commercial_install.dita#topic15281/install-marketplace" type="section" scope="external" >Install</xref>
+      <xref href="1.0devplatform_commercial_install.dita#topic15281/install-marketplace" type="section" >Install</xref>
       </stentry>
     <stentry>
       <xref href="1.0devplatform.marketplace.install.dita">Provision</xref>
@@ -125,7 +125,7 @@
 <p>The Helion Development Platform is accessible via the following tools:</p>
 <p>
         <b>Helion Command-Line Interface (CLI)</b></p>
-  <p>Use the Helion CLI to deploy your app to the development platform through the command line. <xref href="helion/user/client/1.0index.dita#topic2972/helion-client-setup" type="section" scope="external"  >Setup</xref> instructions are available for here both <tm tmtype="reg">Windows</tm> and Unix/Mac operating systems.</p>
+  <p>Use the Helion CLI to deploy your app to the development platform through the command line. <xref href="helion/user/client/1.0index.dita#topic2972/helion-client-setup" type="section"  >Setup</xref> instructions are available for here both <tm tmtype="reg">Windows</tm> and Unix/Mac operating systems.</p>
 <p>
         <b>Eclipse Plugin</b>
       </p>

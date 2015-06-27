@@ -43,7 +43,7 @@
 <section id="DPnotes"> <title>Release Notes</title>
 <p>The following features have been changed in the HP Helion Development Platform:</p>
 <p>
-<b><tm tmtype="reg">OpenStack</tm> Juno support</b> <!--A BR tag was used here in the original source.-->All of the <xref href="../commercial/GA1/1.1commerical.services-overview.dita#Openstack" type="section" scope="external"  >HP Helion OpenStack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack Juno</xref>.</p>
+<b><tm tmtype="reg">OpenStack</tm> Juno support</b> <!--A BR tag was used here in the original source.-->All of the <xref href="../commercial/GA1/1.1commerical.services-overview.dita#Openstack" type="section"  >HP Helion OpenStack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack Juno</xref>.</p>
 <p>
 <b>Updated Command Line Client</b> <!--A BR tag was used here in the original source.-->
 The <xref href="../devplatform/helion/CLI/1.1ALS_Client_Reference.dita" >ALS Cluster Management Tool</xref> (cfmgmt.exe). has been updated to provide more options for managing clusters from the command line.</p>
@@ -285,7 +285,7 @@ v3.4.2</p>
 <ol>
 <li>
 <p>
-<b>ALS Cluster Create via UI does not provide a way to input proxy settings.</b> Either use <xref href="../devplatform/helion/admin/server/1.1configuration.dita#http-proxy" type="section" scope="external"  >the workaround</xref> to input proxy settings or create the cluster with the <xref href="../devplatform/helion/CLI/1.1ALS_Client_Reference.dita" >ALS Cluster Management Tool</xref>.</p>
+<b>ALS Cluster Create via UI does not provide a way to input proxy settings.</b> Either use <xref href="../devplatform/helion/admin/server/1.1configuration.dita#http-proxy" type="section"  >the workaround</xref> to input proxy settings or create the cluster with the <xref href="../devplatform/helion/CLI/1.1ALS_Client_Reference.dita" >ALS Cluster Management Tool</xref>.</p>
 </li>
 <li>
 <p>
@@ -321,7 +321,7 @@ v3.4.2</p>
 </li>
 <li>
 <p>
-<b>Running <i>kato patch install</i> fails to install patches on non-core nodes in ALS 1.1 clusters.</b> This issue only applies to ALS clusters created using an installer image older than version 1.1.0.19. <xref href="../devplatform/1.1devplatform.troubleshooting.dita#katopatch" type="section" scope="external"  >Update the cluster</xref> with the <i>cf-fix-kato-patch</i> command line tool.</p>
+<b>Running <i>kato patch install</i> fails to install patches on non-core nodes in ALS 1.1 clusters.</b> This issue only applies to ALS clusters created using an installer image older than version 1.1.0.19. <xref href="../devplatform/1.1devplatform.troubleshooting.dita#katopatch" type="section"  >Update the cluster</xref> with the <i>cf-fix-kato-patch</i> command line tool.</p>
 </li>
 </ol>
 </section>

@@ -40,7 +40,7 @@
 <li>
 <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-shared.dita" >Configuring Shared (VLAN) Ethernet Interfaces</xref>
 </li>
-<li><xref href="carrier-grade-admin-wr-config-planning-ethernet-mtu.dita#topic5626" type="section" scope="external" >Configuring Ethernet MTU</xref>
+<li><xref href="carrier-grade-admin-wr-config-planning-ethernet-mtu.dita#topic5626" type="section" >Configuring Ethernet MTU</xref>
  </li>
 <li>
 <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-address-filtering.dita" >Filtering MAC Addresses on Virtual Interfaces</xref>

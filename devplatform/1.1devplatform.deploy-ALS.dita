@@ -37,7 +37,7 @@ This document explains the process to configure and deploy an Application Lifecy
 </li>
 </ul>
 <section id="prereq"> <title>Prerequisites</title>
-<p>You need to <xref href="../devplatform/1.1devplatform_commercial_install.dita" >install</xref> the Helion Development Platform and the <xref href="../devplatform/1.1devplatform_commercial_install.dita#install-als" type="section" scope="external"  >Application Lifecycle Service</xref>.</p>
+<p>You need to <xref href="../devplatform/1.1devplatform_commercial_install.dita" >install</xref> the Helion Development Platform and the <xref href="../devplatform/1.1devplatform_commercial_install.dita#install-als" type="section"  >Application Lifecycle Service</xref>.</p>
 </section>
 <section id="configure"> <title>Configuring an ALS Cluster</title>
 <ol>

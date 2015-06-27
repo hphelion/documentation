@@ -17,9 +17,9 @@
 </p>
 <p>The Application Lifecycle Service includes a number of data services which can be bound to the
 applications you deploy. These include several databases (PostgreSQL,
-MySQL, Redis), the RabbitMQ messaging service, a <xref href="../../../../devplatform/helion/user/services/1.0filesystem.dita#persistent-file-system" type="section" scope="external"  >persistent
+MySQL, Redis), the RabbitMQ messaging service, a <xref href="../../../../devplatform/helion/user/services/1.0filesystem.dita#persistent-file-system" type="section"  >persistent
 file system</xref> service and
-<xref href="../../../../devplatform/helion/user/services/1.0memcached.dita#memcached" type="section" scope="external"  >Memcached</xref>.</p>
+<xref href="../../../../devplatform/helion/user/services/1.0memcached.dita#memcached" type="section"  >Memcached</xref>.</p>
 <p>For detailed information on using an <b>external</b> database system, see <xref type="section" href="#topic19439/database-external">Using External Database Services</xref>.</p>
 <ul>
 <li>
@@ -129,22 +129,22 @@ services:
 <p>Possible service types are:</p>
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-filesystem" type="section" scope="external"  >filesystem</xref>
+<xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-filesystem" type="section"  >filesystem</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-memcached" type="section" scope="external"  >memcached</xref>
+<xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-memcached" type="section"  >memcached</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-mysql" type="section" scope="external"  >mysql</xref>
+<xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-mysql" type="section"  >mysql</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-postgresql" type="section" scope="external"  >postgresql</xref>
+<xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-postgresql" type="section"  >postgresql</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-rabbitmq" type="section" scope="external"  >rabbitmq</xref>
+<xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-rabbitmq" type="section"  >rabbitmq</xref>
 </li>
 <li>
-<xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-redis" type="section" scope="external"  >redis</xref>
+<xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-redis" type="section"  >redis</xref>
 </li>
 </ul>
 <p>To access the database services after they've been created, see <xref type="section" href="#topic19439/database-accessing">Accessing
@@ -243,17 +243,17 @@ $ helion apps
 </li>
 </ol>
 <p>For further information on the commands for managing services, or to remotely check the settings and credentials of any ALS service, please see
-the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-services" type="section" scope="external"  >Helion services</xref> command reference.</p>
+the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-services" type="section"  >Helion services</xref> command reference.</p>
 </section>
 <section id="using-database-services"> <title>Using Database Service Environment Variables</title>
 <p>When you bind a database service to an application running as an Application Lifecycle Service,
-<xref href="../../../../devplatform/helion/user/reference/1.0environment.dita#environment-variables" type="section" scope="external"  >environment
+<xref href="../../../../devplatform/helion/user/reference/1.0environment.dita#environment-variables" type="section"  >environment
 variables</xref>
 containing that service's host, port, and credentials are added to the
 application container. You can use these environment variables in your
 code to connect to the service, rather than having to discover and then hard-code in such details.</p>
 <p>Examples of how to parse and use these variables can be found in the
-<xref href="../../../../devplatform/helion/user/deploy/1.0index.dita#language-specific-deploy" type="section" scope="external"  >Language-Specific Deployment</xref> section.</p>
+<xref href="../../../../devplatform/helion/user/deploy/1.0index.dita#language-specific-deploy" type="section"  >Language-Specific Deployment</xref> section.</p>
 </section>
 <section id="database-url"> <title>DATABASE_URL<!--Removed anchor point database-url--><!-- id="database-url" --></title>
 <p>
@@ -631,7 +631,7 @@ variable. See <xref type="section" href="#topic19439/database-accessing">
 general information and the following language-specific documentation:</p>
 <ul>
 <li>
-<xref href="../../../../devplatform/helion/user/deploy/languages/1.0php.dita#php-data-services" type="section" scope="external"  >PHP Data Services</xref>
+<xref href="../../../../devplatform/helion/user/deploy/languages/1.0php.dita#php-data-services" type="section"  >PHP Data Services</xref>
 </li>
 </ul>
 <p>The following changes to sample applications show this modification:</p>
@@ -648,7 +648,7 @@ general information and the following language-specific documentation:</p>
 </ul>
 </section>
 <section id="sqlite"> <title>SQLite</title>
-<p>Applications can use an <xref href="http://www.sqlite.org/" scope="external" format="html" >SQLite database</xref> as an alternative to Application Lifecycle Service database services. However, since the filesystem of an application container is ephemeral -- destroyed when an application is stopped, restarted, or updated -- <b>always</b> store the SQLite file on a <xref href="../../../../devplatform/helion/user/services/1.0filesystem.dita#persistent-file-system" type="section" scope="external"  >Persistent File System</xref> mount point to avoid losing data.</p>
+<p>Applications can use an <xref href="http://www.sqlite.org/" scope="external" format="html" >SQLite database</xref> as an alternative to Application Lifecycle Service database services. However, since the filesystem of an application container is ephemeral -- destroyed when an application is stopped, restarted, or updated -- <b>always</b> store the SQLite file on a <xref href="../../../../devplatform/helion/user/services/1.0filesystem.dita#persistent-file-system" type="section"  >Persistent File System</xref> mount point to avoid losing data.</p>
 </section>
 </body>
 </topic>

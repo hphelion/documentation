@@ -56,7 +56,7 @@
 <xref type="section" href="#topic4025/role-groups">Role Groups</xref>
 </li>
 </ul>
-<p>The Application Lifecycle Service VM is a stand-alone <xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-micro-cloud" type="section" scope="external"  >
+<p>The Application Lifecycle Service VM is a stand-alone <xref href="../../../../devplatform/helion/user/reference/1.0glossary.dita#term-micro-cloud" type="section"  >
 <i>micro
 cloud</i>
 </xref> virtual
@@ -93,13 +93,13 @@ hosts the Management Console, provides the API endpoint for client
 access, manages the cloud_controller_ng process, provisions services,
 dispatches applications for staging and deployment, and (with the Health
 Manager) tracks the availability of DEA nodes.</p>
-<p>In a cluster setup, the Controller role must run on the <xref href="../../../../devplatform/helion/admin/cluster/1.0index.dita#server-cluster-core-node" type="section" scope="external"  >
+<p>In a cluster setup, the Controller role must run on the <xref href="../../../../devplatform/helion/admin/cluster/1.0index.dita#server-cluster-core-node" type="section"  >
 <i>Core
 node</i>
 </xref> that all other
 VM's in the cluster connect to.</p>
 <p>A single Controller is sufficient for small and mid-sized clusters, but
-<xref href="../../../../devplatform/helion/admin/cluster/1.0index.dita#cluster-multi-controllers" type="section" scope="external"  >
+<xref href="../../../../devplatform/helion/admin/cluster/1.0index.dita#cluster-multi-controllers" type="section"  >
 <i>multiple
 Controllers</i>
 </xref> can be
@@ -111,7 +111,7 @@ application.</p>
 <p>For smaller configurations, the router can be run on the same Application Lifecycle Service
 VM as the other components.</p>
 <p>When additional DEAs are in use and traffic increases, additional
-routers can be added to handle the load. This will require a <xref href="../../../../devplatform/helion/admin/cluster/1.0index.dita#cluster-load-balancer" type="section" scope="external"  >
+routers can be added to handle the load. This will require a <xref href="../../../../devplatform/helion/admin/cluster/1.0index.dita#cluster-load-balancer" type="section"  >
 <i>load
 balancer</i>
 </xref> to be available

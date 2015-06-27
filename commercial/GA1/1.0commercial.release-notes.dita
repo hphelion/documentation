@@ -104,7 +104,7 @@
         </tgroup>
 </table>
 <p>
-<b>Other Services</b> <xref href="1.0commerical.services-overview.dita#Openstack" type="section" scope="external"  >Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
+<b>Other Services</b> <xref href="1.0commerical.services-overview.dita#Openstack" type="section"  >Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
 <p>
 <b>LogStash/ElasticSearch</b> - This service provides enhanced security and supportability of the cloud by offering centralized logging.</p>
 <p>
@@ -199,7 +199,7 @@ $ sudo service neutron-openvswitch-agent restart
 <p>When you resize an instance of Nova, it produces an error <!--(NOV-6664) -->.</p>
 </li>
 <li>
-<p>After updating the undercloud to HP Helion OpenStack 1.01, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can <xref href="1.0commercial.undercloud-storage-storevirtual.dita#register-cluster" type="section" scope="external"  >manually register a new cluster</xref> with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) --></p>
+<p>After updating the undercloud to HP Helion OpenStack 1.01, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can <xref href="1.0commercial.undercloud-storage-storevirtual.dita#register-cluster" type="section"  >manually register a new cluster</xref> with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) --></p>
 </li>
 <li>
 <p>A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack <!-- (EE-21) --></p>
