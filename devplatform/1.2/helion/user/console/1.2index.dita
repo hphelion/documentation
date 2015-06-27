@@ -230,7 +230,7 @@ If a the service is a User Provided Service, new credentials can be added and ex
 <p>
   <b>App Bindings</b>
 </p>
-<p>A list of applications that have bindings to this service instance. Clicking an app name opens an <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita#applications" type="section"   >administrative view of that application</xref>.</p>
+  <p>A list of applications that have bindings to this service instance. Clicking an app name opens an <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita#topic13823/applications" type="section"   >administrative view of that application</xref>.</p>
 </section>
 <section id="sample-apps"> <title>Sample Applications</title>
 <p>The Sample Apps are collection of ready-to-run applications which can be deployed to Application Lifecycle Service by fetching the source code from the repository.</p>

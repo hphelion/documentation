@@ -91,7 +91,7 @@ file.content_type # =&gt; text/plain
 </codeph>
 </codeblock>
 <p>
-<b>Note</b>: See <xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks" type="section"   >Buildpacks</xref> for an alternative way to deploy Ruby on Rails applications.</p>
+  <b>Note</b>: See <xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#topic3370/buildpacks" type="section"   >Buildpacks</xref> for an alternative way to deploy Ruby on Rails applications.</p>
 </section>
 <section id="using-ruby-2-0"> <title>Using Ruby 2.0</title>
 <p>The <i>manifest.yml</i> file must specify the Ruby runtime version and Rails as the
@@ -216,7 +216,7 @@ via:</p>
   <codeph>helion run *appname* bundle exec rake stats
 </codeph>
 </codeblock>
-<p>See the <xref href="../../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" type="section"   >ALS Command Reference</xref> for details on the use of <codeph>helion run</codeph>.</p>
+  <p>See the <xref href="../../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita">ALS Command Reference</xref> for details on the use of <codeph>helion run</codeph>.</p>
 </section>
 <section id="references"> <title>References</title>
 <ul>

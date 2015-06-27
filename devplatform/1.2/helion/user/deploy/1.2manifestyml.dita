@@ -270,26 +270,25 @@ provide a name. The name can also be specified on the command line (eg.
 </section>
 <section id="buildpack"> <title>buildpack:</title>
 <p>The Git repository URL for the specific
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks" type="section"   >buildpack</xref> used to deploy the application.
+  <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#topic3370/buildpacks" type="section"   >buildpack</xref> used to deploy the application.
 For example:</p>
 <codeblock>  name: java-app
 mem: 512M
 buildpack: https://github.com/heroku/heroku-buildpack-java.git</codeblock>
 <p>If unset, Application Lifecycle Service will check to see if the application triggers the
-<codeph>detect</codeph> scripts in any of its <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-built-in" type="section"   >built-in
+  <codeph>detect</codeph> scripts in any of its <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks" type="section"   >built-in
 buildpacks</xref>.</p>
 </section>
 <section id="framework"> <title>framework:</title>
 <p>Allows the app to specify a framework and runtime to be used. Specifying
 a value for the <codeph>framework</codeph> key triggers the use of
-the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy" type="section"   >Legacy Buildpack</xref>.</p>
+  the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#topic3370/legacy-buildpacks" type="section"   >Legacy Buildpack</xref>.</p>
 <p>The keys in the <codeph>framework</codeph> section are used with the <xref
-          href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy"
-          type="section" >Legacy Buildpack</xref> only. Applications using language
+  href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks"  type="section" >Legacy Buildpack</xref> only. Applications using language
         or framework-specific buildpacks do not require these values, and should instead specify the
           <xref href="#topic20922/buildpack" format="dita">buildpack</xref> or rely on the detection
         scripts of the <xref
-          href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-built-in"
+          href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks"
           type="section" >built-in buildpacks</xref>.</p>
 </section>
 <section id="type"> <title>type:</title>

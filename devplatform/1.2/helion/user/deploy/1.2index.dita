@@ -28,8 +28,7 @@ web server, application dependencies, databases, and other services.</p>
 <section id="quick-start"> <title>Quick Start</title>
 <ul>
 <li>
-          <xref href="../../../1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952" type="section"  >Quick
-            Start</xref>
+          <xref href="../quick-start/1.2index.dita">ALS Quick Start Guide</xref> [Not the same as the <xref href="../../../1.2devplatform.ALS-developer-trial-quick-start.dita">Developer Trial Quick Start</xref>].
         </li>
 <li>
           <xref href="../quick-start/1.2index.dita#topic4745/management-console" type="section"  >Management Console
@@ -81,7 +80,7 @@ web server, application dependencies, databases, and other services.</p>
 <section id="deploying-applications"><title>Deploying Applications</title>
 <ul>
 <li>
-          <xref href="1.2manifestyml.dita#topic20922/applications" type="section"  >Manifest.yml Options</xref>
+  <xref href="1.2manifestyml.dita#topic20922/applications" type="section"  >Manifest.yml Options</xref>
         </li>
 <li>
           <xref href="1.2app-debug.dita#topic1398" type="section"  >Remote Debugging</xref>
