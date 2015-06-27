@@ -22,7 +22,7 @@
 <dl>
 <dlentry>
 <dt>
-<xref href="../publiccloud/glossary.dita#User" type="section" scope="external"  >
+<xref href="../publiccloud/glossary.dita#User" type="section" >
 <b>User</b>
 </xref>
 </dt>
@@ -32,7 +32,7 @@
 
 <dlentry>
 <dt>
-<xref href="../publiccloud/glossary.dita#Credentials" type="section" scope="external"  >
+<xref href="../publiccloud/glossary.dita#Credentials" type="section"  >
 <b>Credentials</b>
 </xref>
 </dt>
@@ -42,7 +42,7 @@
 
 <dlentry>
 <dt>
-<xref href="../publiccloud/glossary.dita#Authentication" type="section" scope="external"  >
+<xref href="../publiccloud/glossary.dita#Authentication" type="section"   >
 <b>Authentication</b>
 </xref>
 </dt>
@@ -52,7 +52,7 @@
 
 <dlentry>
 <dt>
-<xref href="../publiccloud/glossary.dita#Token" type="section" scope="external"  >
+<xref href="../publiccloud/glossary.dita#Token" type="section" >
 <b>Token</b>
 </xref>
 </dt>
@@ -62,7 +62,7 @@
 
 <dlentry>
 <dt>
-<xref href="../publiccloud/glossary.dita#Tenant" type="section" scope="external"  >
+<xref href="../publiccloud/glossary.dita#Tenant" type="section"  >
 <b>Tenant</b>
 </xref>
 </dt>
@@ -72,7 +72,7 @@
 
 <dlentry>
 <dt>
-<xref href="../publiccloud/glossary.dita#Endpoint" type="section" scope="external"  >
+<xref href="../publiccloud/glossary.dita#Endpoint" type="section"   >
 <b>Endpoint</b>
 </xref>
 </dt>
@@ -82,7 +82,7 @@
 
 <dlentry>
 <dt>
-<xref href="../publiccloud/glossary.dita#Role" type="section" scope="external"  >
+<xref href="../publiccloud/glossary.dita#Role" type="section"  >
 <b>Role</b>
 </xref>
 </dt>

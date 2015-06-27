@@ -2384,7 +2384,7 @@ volume_id="e5185058-943a-4cb4-96d9-72c184c337d6" /&gt;
 </codeblock>
 </section>
 <section id="455-servers"> <title>4.5.5 Servers</title>
-  <p>See <xref href="../../../publiccloud/apidocs/c1.1/nova-api.dita#Server" type="section" scope="external"  >Compute Service Servers</xref> for details of
+  <p>See <xref href="../../../publiccloud/apidocs/c1.1/nova-api. "  >Compute Service Servers</xref> for details of
 the Server resource. From the Block Storage Service perspective,
 a server is system to which a <xref type="section" href="#topic65119/volume_resource">volume</xref> can be attached.
 When a volume is attached to a server, the server can mount the volume
