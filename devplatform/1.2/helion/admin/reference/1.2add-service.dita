@@ -35,7 +35,7 @@
 <b>User-Provided Service Instances</b>
 </xref>: Credentials and connection information for <i>external</i> services.</li>
 </ul>
-<p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-services" type="section" scope="external"  >helion services</xref> command will show a list of all System Services available on the current target. This command will also display a list of Provisioned Services allocated to the currently authenticated user.</p>
+<p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-services" type="section"   >helion services</xref> command will show a list of all System Services available on the current target. This command will also display a list of Provisioned Services allocated to the currently authenticated user.</p>
 <p>Administrators can configure external data services to work in the same way that core System Services do, providing users and applications with access to existing software and infrastructure.</p>
 <section id="service-brokers"> <title>Service Brokers</title>
 <p>Service brokers are RESTful web services which connect Helion to services that the hosted apps can consume.</p>
@@ -67,15 +67,19 @@
 <xref href="http://docs.cloudfoundry.org/services/catalog-metadata.html" scope="external" format="html" >Catalog Metadata</xref>
 </li>
 </ul>
-<p>Once the echo-service application has been deployed, an admin can add the service broker with the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-add-service-broker" type="section" scope="external"  >add-service-broker</xref> command.</p>
-<codeblock>helion add-service-broker
+<p>Once the echo-service application has been deployed, an admin can add the service broker with the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-add-service-broker" type="section"   >add-service-broker</xref> command.</p>
+<codeblock>
+  <codeph>helion add-service-broker
 Enter name: echo-broker
 Enter url: http://echo-service-broker.example.com
 Enter username: admin
 Enter password: mypasswd
-Creating new service broker [echo-broker] ... OK</codeblock>
+Creating new service broker [echo-broker] ... OK
+</codeph>
+</codeblock>
 <p>Once the service broker has been added to the system, the services it provides will become available to users:</p>
-<codeblock>helion services
+<codeblock>
+  <codeph>helion services
 ============== Service Plans ================
 
 +----+-------------+-------------------------------+----------+---------+-----------+----------------------------+------+
@@ -86,9 +90,14 @@ Creating new service broker [echo-broker] ... OK</codeblock>
 | FP | filesystem  | Persistent filesystem service | core     | 1.0     | free      | free                       |      |
 | FP | mysql       | MySQL database service        | core     | 5.5     | free      | free                       |      |
 | FP | postgresql  | PostgreSQL database service   | core     | 9.1     | free      | free                       |      |
-+----+-------------+-------------------------------+----------+---------+-----------+----------------------------+------+</codeblock>
++----+-------------+-------------------------------+----------+---------+-----------+----------------------------+------+
+</codeph>
+</codeblock>
 <p>By default, service plans are created as private (the "P" in the leftmost column above). To make the plan available to your Organization, run the following command:</p>
-<codeblock>helion update-service-plan --public echoservice</codeblock>
+<codeblock>
+  <codeph>helion update-service-plan --public echoservice
+</codeph>
+</codeblock>
 </section>
 </body>
 </topic>

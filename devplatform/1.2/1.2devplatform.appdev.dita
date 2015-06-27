@@ -18,7 +18,7 @@
 </prolog>
 <body>
 <p>
-<!--PUBLISHED-->
+<!--PUBLISHED-->scope="external"
  <!--./devplatform/1.2/1.2devplatform.appdev.md-->
  <!--permalink: /helion/devplatform/1.2/appdev/--></p>
 <p>HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.</p>
@@ -26,14 +26,15 @@
 <section id="prerequisites-before-you-begin"> <title>Prerequisites - Before you begin</title>
 <p>In order to download and deploy these sample applications, you must have the necessary framework installed and configured.</p>
 <ul>
-  <li>HP Helion <tm tmtype="reg">OpenStack</tm><xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >cloud deployed</xref>. Note that the Helion Development Platform version 1.2 will only run on Helion OpenStack version 1.1.1.</li>
-<li>Application Lifecycle Service <xref href="../../devplatform/1.2/1.2devplatform.deploy-ALS.dita"
-            >Cluster</xref> available with MySQL and RabbitMQ enabled. <ul>
-            <li>You can also quickly set up a micro-cluster in the free and publicly available
-              Helion cloud as part of the <xref
-                href="../../devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.dita"
-                >Quick Start Developer Trial</xref>: </li>
-          </ul></li>
+<li>HP <tm tmtype="reg">Helion OpenStack</tm> <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >cloud deployed</xref>. Note that the Helion Development Platform version 1.2 will only run on <tm tmtype="reg">Helion OpenStack</tm> version 1.1.1.</li>
+<li>Application Lifecycle Service <xref href="../../devplatform/1.2/1.2devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
+
+<ul>
+<li>You can also quickly setup a cluster in the free and publicly available Helion cloud as part of
+              the <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952" type="section"  >Quick
+                Start Developer Trial</xref>: </li>
+</ul>
+</li>
 <li>Logon and password credentials for the cluster.</li>
 <li>Access to the <xref href="../../devplatform/1.2/helion/user/client/1.2index.dita" >Helion command-line interface (CLI)</xref>
 </li>
@@ -46,60 +47,61 @@
 <section id="java"> <title>Java</title>
 <ol>
 <li>
-          <xref href="../../devplatform/1.2/workbook/helloworld/1.2helloworld.java.dita">Hello
-            World</xref>
-           The Hello World sample is as simple
-          as it gets: Hello World!</li>
+<p>
+<xref href="../../devplatform/1.2/workbook/helloworld/1.2helloworld.java.dita" >Hello World</xref> <!--A BR tag was used here in the original source.-->
+The Hello World sample is as simple as it gets: Hello World!</p>
+</li>
 <li>
-          <xref href="../../devplatform/1.2/workbook/database/1.2database.java.dita">Working with
-            Databases</xref>
-           Create a database and execute a
-          query against it. </li>
+<p>
+<xref href="../../devplatform/1.2/workbook/database/1.2database.java.dita" >Working with Databases</xref> <!--A BR tag was used here in the original source.-->
+Create a database and execute a query against it. </p>
+</li>
 <li>
-          <xref href="../../devplatform/1.2/workbook/messaging/1.2messaging.java.dita">Working with
-            Messaging</xref>
-           Enter, send, and display a brief
-          message.</li>
+<p>
+<xref href="../../devplatform/1.2/workbook/messaging/1.2messaging.java.dita" >Working with Messaging</xref>
+<!--A BR tag was used here in the original source.--> Enter, send, and display a brief message.</p>
+</li>
 </ol>
 <p>More Helion <xref href="../../devplatform/1.2/helion/user/deploy/languages/1.2java.dita" >Java</xref> references.</p>
 </section>
 <section id="node"> <title>Node</title>
 <ol>
 <li>
-          <xref href="../../devplatform/1.2/workbook/helloworld/1.2helloworld.node.dita">Hello
-            World</xref>
-           The Hello World sample is as simple
-          as it gets: Hello World!</li>
+<p>
+<xref href="../../devplatform/1.2/workbook/helloworld/1.2helloworld.node.dita" >Hello World</xref>
+<!--A BR tag was used here in the original source.-->
+The Hello World sample is as simple as it gets: Hello World!</p>
+</li>
 <li>
-          <xref href="../../devplatform/1.2/workbook/database/1.2database.node.dita">Working with
-            Databases</xref>
-           Create a database and execute a
-          query against it.</li>
+<p>
+<xref href="../../devplatform/1.2/workbook/database/1.2database.node.dita" >Working with Databases</xref> <!--A BR tag was used here in the original source.-->
+Create a database and execute a query against it.</p>
+</li>
 <li>
-          <xref href="../../devplatform/1.2/workbook/messaging/1.2messaging.node.dita">Working with
-            Messaging</xref>
-           Enter, send, and display a brief
-          message.</li>
+<p>
+<xref href="../../devplatform/1.2/workbook/messaging/1.2messaging.node.dita" >Working with Messaging</xref>
+<!--A BR tag was used here in the original source.--> Enter, send, and display a brief message.</p>
+</li>
 </ol>
 <p>More Helion <xref href="../../devplatform/1.2/helion/user/deploy/languages/1.2node.dita" >Node</xref> references.</p>
 </section>
 <section id="PHP"> <title>PHP</title>
 <ol>
 <li>
-          <xref href="../../devplatform/1.2/workbook/helloworld/1.2helloworld.php.dita">Hello
-            World</xref>
-           The Hello World sample is as simple
-          as it gets: Hello World!</li>
+<p>
+<xref href="../../devplatform/1.2/workbook/helloworld/1.2helloworld.php.dita" >Hello World</xref> <!--A BR tag was used here in the original source.-->
+The Hello World sample is as simple as it gets: Hello World!</p>
+</li>
 <li>
-          <xref href="../../devplatform/1.2/workbook/database/1.2database.php.dita">Working with
-            Databases</xref>
-           Create a database and execute a
-          query against it.</li>
+<p>
+<xref href="../../devplatform/1.2/workbook/database/1.2database.php.dita" >Working with Databases</xref> <!--A BR tag was used here in the original source.-->
+Create a database and execute a query against it.</p>
+</li>
 <li>
-          <xref href="../../devplatform/1.2/workbook/messaging/1.2messaging.php.dita">Working with
-            Messaging</xref>
-          Enter, send, and display a brief
-          message.</li>
+<p>
+<xref href="../../devplatform/1.2/workbook/messaging/1.2messaging.php.dita" >Working with Messaging</xref>
+<!--A BR tag was used here in the original source.--> Enter, send, and display a brief message.</p>
+</li>
 </ol>
 <p>More Helion <xref href="../../devplatform/1.2/helion/user/deploy/languages/1.2php.dita" >PHP</xref> references.</p>
 </section>
@@ -109,7 +111,7 @@
 <xref href="../../devplatform/1.2/1.2devplatform.marketplace.install.dita" >Installing the Marketplace</xref>
 </li>
 <li>
-<xref href="../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" type="section" scope="external"  >ALS command-line interface (CLI) reference</xref>
+<xref href="../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" type="section" >ALS command-line interface (CLI) reference</xref>
 </li>
 <li>
 <xref href="../../devplatform/1.2/helion/user/1.2index.dita" >Application Lifecycle Service (ALS) User's Guide</xref>
@@ -134,6 +136,7 @@
   <xref href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html" scope="external" format="html" >Tips from <tm tmtype="tm">Cloud Foundry</tm></xref>
 </li>
 </ul>
+<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

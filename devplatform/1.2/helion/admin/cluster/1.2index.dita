@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/admin/cluster/1.2index.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/cluster/--></p>
-  <p>This process begins with an installed <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud" >micro cloud</xref>, which must then be cloned across several <xref href="../../user/reference/1.2glossary.dita#topic6187/term-node" >nodes</xref>. You connect to each node in turn and tell it which <xref href="../../user/reference/1.2glossary.dita#topic6187/term-role" type="section" scope="external"  >role</xref>s it is to serve, thereby distributing the processing load for maximum performance.</p>
+  <p>This process begins with an installed <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud" >micro cloud</xref>, which must then be cloned across several <xref href="../../user/reference/1.2glossary.dita#topic6187/term-node" >nodes</xref>. You connect to each node in turn and tell it which <xref href="../../user/reference/1.2glossary.dita#topic6187/term-role" type="section"   >role</xref>s it is to serve, thereby distributing the processing load for maximum performance.</p>
 <p>In HP Helion, the Clusters Panel in the <xref href="../../user/console/1.2index.dita" >ALS management console</xref> makes these tasks much easier to accomplish. If you prefer to use the command line, you can also use the <xref href="../../CLI/1.2ALS_Client_Reference.dita" >Cluster Configuration tool</xref> or <xref href="../reference/1.2kato-ref.dita" >
 <i>kato</i>
 </xref> commands.</p>
@@ -125,36 +125,36 @@
         </ul></li>
 </ul>
 <section id="roles"> <title>Node Roles</title>
-  <p>An Application Lifecycle Service <xref href="../../user/reference/1.2glossary.dita#topic6187/term-node" type="section" scope="external"  >node</xref> can
+  <p>An Application Lifecycle Service <xref href="../../user/reference/1.2glossary.dita#topic6187/term-node" type="section"   >node</xref> can
 take on one or more of the following roles:</p>
 <ul>
 <li>
-<xref href="../reference/1.2architecture.dita#architecture-primary" type="section" scope="external"  >primary</xref>
+<xref href="../reference/1.2architecture.dita#architecture-primary" type="section"   >primary</xref>
 </li>
 <li>
-<xref href="../reference/1.2architecture.dita#architecture-cloud-controller" type="section" scope="external"  >controller</xref>
+<xref href="../reference/1.2architecture.dita#architecture-cloud-controller" type="section"   >controller</xref>
 </li>
 <li>
-<xref href="../reference/1.2architecture.dita#architecture-router" type="section" scope="external"  >router</xref>
+<xref href="../reference/1.2architecture.dita#architecture-router" type="section"   >router</xref>
 </li>
 <li>
-<xref href="../reference/1.2architecture.dita#architecture-droplet-execution-agents" type="section" scope="external"  >dea</xref>
+<xref href="../reference/1.2architecture.dita#architecture-droplet-execution-agents" type="section"   >dea</xref>
 </li>
 <li>mdns (intended for micro clouds)</li>
 <li>
-<xref href="../../user/services/1.2filesystem.dita#creating-a-persistent-file-system" type="section" scope="external"  >filesystem</xref>
+<xref href="../../user/services/1.2filesystem.dita#creating-a-persistent-file-system" type="section"   >filesystem</xref>
 </li>
 <li>
-  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-mysql" type="section" scope="external"  >mysql</xref>
+  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-mysql" type="section"   >mysql</xref>
 </li>
 <li>
-  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-postgresql" type="section" scope="external"  >postgresql</xref>
+  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-postgresql" type="section"   >postgresql</xref>
 </li>
 <li>
-  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-RabbitMQ" type="section" scope="external"  >rabbit</xref>
+  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-RabbitMQ" type="section"   >rabbit</xref>
 </li>
 <li>
-  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-Redis" type="section" scope="external"  >redis</xref>
+  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-Redis" type="section"   >redis</xref>
 </li>
 <li>
 <xref href="../../user/services/1.2memcached.dita" >memcached</xref>
@@ -163,13 +163,13 @@ take on one or more of the following roles:</p>
 <xref href="../cluster/1.2harbor.dita" >Harbor</xref> (TCP/UDP port service)</li>
 </ul>
 <p>The command line tool used to configure Application Lifecycle Service servers is called
-  <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref" type="section" scope="external"  >kato</xref>. You can see a
+  <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref" type="section"   >kato</xref>. You can see a
 list of the available roles at the command line by running the <xref href="../reference/1.2kato-ref.dita" >kato
 info</xref> command.</p>
-  <p>Setup of cluster nodes is done using the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section" scope="external"  >kato
+  <p>Setup of cluster nodes is done using the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato
 node</xref> setup,
 add, attach, and remove sub-commands.</p>
-  <p>The <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-info" type="section" scope="external"  >kato info</xref>
+  <p>The <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-info" type="section"   >kato info</xref>
 command will show:</p>
 <ul>
 <li>
@@ -183,29 +183,29 @@ command will show:</p>
 <section id="preparing-the-core-node"> <title>Preparing the Core Node</title>
 <p>In an Application Lifecycle Service cluster, one node is dedicated as the Core node. This node
 will have a
-  <xref href="../reference/1.2architecture.dita#topic4407/architecture-cloud-controller" type="section" scope="external"  >controller</xref>,
-  <xref href="../reference/1.2architecture.dita#topic4407/architecture-primary" type="section" scope="external"  >primary</xref>,
-  <xref href="../reference/1.2architecture.dita#topic4407/architecture-base" type="section" scope="external"  >base</xref>, and
-  <xref href="../reference/1.2architecture.dita#topic4407/architecture-router" type="section" scope="external"  >router</xref> role but
+  <xref href="../reference/1.2architecture.dita#topic4407/architecture-cloud-controller" type="section"   >controller</xref>,
+  <xref href="../reference/1.2architecture.dita#topic4407/architecture-primary" type="section"   >primary</xref>,
+  <xref href="../reference/1.2architecture.dita#topic4407/architecture-base" type="section"   >base</xref>, and
+  <xref href="../reference/1.2architecture.dita#topic4407/architecture-router" type="section"   >router</xref> role but
 can also include additional roles.</p>
 <p>Boot an Application Lifecycle Service VM and set up the Core node as described below, then add
 the other nodes and assign roles.</p>
 </section>
 <section id="core-ip"> <title>CORE_IP</title>
-<p>A <xref href="../server/1.2configuration.dita#setting-a-static-ip" type="section" scope="external"  >static IP address</xref> is
+<p>A <xref href="../server/1.2configuration.dita#setting-a-static-ip" type="section"   >static IP address</xref> is
 necessary to provide a consistent network interface for other nodes to connect to. This address is called the MBUS IP. If your IaaS or cloud orchestration software provides IP addresses which persist indefinitely and are not reset on reboot you may not have to set this explicitly.</p>
 <p>Take note of the internal IP address of the Core node. It will be required in the following steps to configure additional nodes to attach to the Core node.</p>
 <p>Make sure that the IP address of its <codeph>eth0</codeph> interface is registering the correct address, which may not be the case if you have set a static IP and not yet rebooted or restarted
 networking. To check the IP address, run:</p>
 <codeblock>ifconfig eth0</codeblock>
-  <p>If necessary, use the kato <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-op-static_ip" type="section" scope="external"  >
+  <p>If necessary, use the kato <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-op-static_ip" type="section"   >
 <i>op static_ip</i>
 </xref> command to set the static IP address:</p>
 <codeblock>kato op static_ip</codeblock>
-  <note>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-migrate" >kato node migrate</xref> on the Core node, then <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section" scope="external"  >kato node attach</xref> on all other cluster nodes.</note>
+  <note>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-migrate" >kato node migrate</xref> on the Core node, then <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato node attach</xref> on all other cluster nodes.</note>
 </section>
 <section id="hostname"> <title>Hostname</title>
-  <p>Next, set the <b>fully qualified hostname</b> of the Core node. This is required so that Application Lifecycle Service's internal configuration matches the <xref href="../server/1.2configuration.dita#topic31232/server-config-dns" type="section" scope="external"  >DNS record</xref> created for
+  <p>Next, set the <b>fully qualified hostname</b> of the Core node. This is required so that Application Lifecycle Service's internal configuration matches the <xref href="../server/1.2configuration.dita#topic31232/server-config-dns" type="section"   >DNS record</xref> created for
 this system.</p>
 <p>To set the hostname, run:</p>
 <codeblock>kato node rename hostname.example.com --no-restart</codeblock>
@@ -219,7 +219,7 @@ used by clients (e.g. "https://api.hostname.example.com").</p>
 <section id="wildcard-dns"> <title>Wildcard DNS</title>
 <p>A wildcard DNS record is necessary to resolve not only the API endpoint,
 but all applications which will subsequently be deployed on the PaaS.
-  <xref href="../server/1.2configuration.dita#topic31232/server-config-dns" type="section" scope="external"  >Create a wildcard DNS record</xref> for the <xref type="section" href="#topic18326/core-node">Core node</xref> or <xref type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer/Router</xref>.</p>
+  <xref href="../server/1.2configuration.dita#topic31232/server-config-dns" type="section"   >Create a wildcard DNS record</xref> for the <xref type="section" href="#topic18326/core-node">Core node</xref> or <xref type="section" href="#topic18326/load-balancer-and-multiple-routers">Load Balancer/Router</xref>.</p>
 </section>
 <section id="core-node"> <title>Core Node</title>
 <p>On the Core node, execute the following command:</p>
@@ -237,11 +237,11 @@ node and assigning their particular roles.</p>
 </section>
 <section id="attaching-nodes-and-enabling-roles"> <title>Attaching Nodes and Enabling Roles</title>
 <p>Adding nodes to the cluster involves attaching the new VMs to the Core
-  node's IP address using the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section" scope="external"  >kato node attach</xref>
+  node's IP address using the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato node attach</xref>
 command. This command will check that the new node has a version number
 compatible with the Core node before attaching it.</p>
 <p>Roles can be added (or removed) on the new node after attaching using
-  the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-role-add" type="section" scope="external"  >kato role</xref>
+  the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-role-add" type="section"   >kato role</xref>
 command, but it is generally preferable to enable roles during the
 <codeph>kato attach</codeph> step using the <codeph>-e</codeph> (enable) option as described below for each of the node types.</p>
 </section>
@@ -265,7 +265,7 @@ run the following command on the data services node:</p>
       </p>
 </section>
 <section id="dea-nodes"> <title>DEA Nodes</title>
-  <p>Nodes which stage application code and run application containers are called Droplet Execution Agents (DEAs). Once the controller node is running, you can begin to add some of these nodes with the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section" scope="external"  >kato node attach</xref> command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the Core node:</p>
+  <p>Nodes which stage application code and run application containers are called Droplet Execution Agents (DEAs). Once the controller node is running, you can begin to add some of these nodes with the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato node attach</xref> command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the Core node:</p>
 <codeblock>kato node attach -e dea CORE_IP</codeblock>
 <p>Continue this process until you have added all the desired DEA nodes.</p>
 </section>
@@ -275,14 +275,14 @@ following command on the Core node:</p>
 <codeblock>kato status --all</codeblock>
 </section>
 <section id="removing-nodes"> <title>Removing Nodes</title>
-  <p>Use the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-detach" type="section" scope="external" >kato
+  <p>Use the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-detach" type="section"  >kato
           node detach</xref> to remove a node from the cluster. Run the following command on the
         core node.</p>
 <codeblock>kato node remove NODE_IP</codeblock>
 </section>
 <section id="role-configuration-using-the-management-console"> <title>Role Configuration using the Management Console</title>
 <p>Once cluster nodes are connected to the Core node, roles can be enabled
-  or disabled using the <xref href="../1.2index.dita#topic2276/cluster-configuration" type="section" scope="external"  >manual cluster configuration</xref> options in the Management
+  or disabled using the <xref href="../1.2index.dita#topic2276/cluster-configuration" type="section"   >manual cluster configuration</xref> options in the Management
 Console.</p>
 </section>
 <section id="example-clusters"> <title>Example Clusters</title>
@@ -373,11 +373,11 @@ and easy snapshotting. Nodes with the following roles should have their
 data is stored on disk, so backing them with a persistent filesystem is
 recommended.</p>
   <p>In clusters with multiple Cloud Controllers, the nodes <b>must</b> share a common <i>/home/helion/helion/data</i> mount point as described <xref type="section" href="#topic18326/multiple-controllers">below</xref> in order to work together properly.</p>
-  <p>See the <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-persistent-storage" type="section" scope="external"  >Persistent Storage</xref> documentation for instructions on relocating service data, application
+  <p>See the <xref href="../best-practices/1.2index.dita#topic16169/bestpractices-persistent-storage" type="section"   >Persistent Storage</xref> documentation for instructions on relocating service data, application
 droplets, and containers.</p>
 </section>
 <section id="port-configuration"> <title>Port Configuration</title>
-  <p>The Application Lifecycle Service <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud" type="section" scope="external"  >micro cloud</xref> runs with the following ports exposed:</p>
+  <p>The Application Lifecycle Service <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud" type="section"   >micro cloud</xref> runs with the following ports exposed:</p>
 <table>
 <tgroup cols="3">
           <colspec colname="col1" colwidth="99.75pt"/>
@@ -472,16 +472,16 @@ port.</p>
           </tbody>
         </tgroup>
 </table>
-  <p>More information about <xref href="../../user/reference/1.2glossary.dita#topic6187/term-NATS" type="section" scope="external"  >NATS</xref> is available in the Glossary.</p>
+  <p>More information about <xref href="../../user/reference/1.2glossary.dita#topic6187/term-NATS" type="section"   >NATS</xref> is available in the Glossary.</p>
 <p>Each node can be internally firewalled using
-<xref href="http://manpages.ubuntu.com/manpages/utopic/en/man8/iptables.8.html" scope="external" format="html" >iptables</xref> to
+  <xref href="http://manpages.ubuntu.com/manpages/utopic/en/man8/iptables.8.html" scope="external" format="html" >iptables</xref> to
 apply the above rules.</p>
 <p>
 <b>Comments</b>:</p>
 <ul>
 <li>Ports 80 and 443 need only be open to the world on router nodes.</li>
 <li>Port 4222 should be open on all nodes for
-  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-NATS" type="section" scope="external"  >NATS</xref> communication
+  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-NATS" type="section"   >NATS</xref> communication
 with the MBUS IP (core Cloud Controller)</li>
 <li>Port 9022 should be open to allow transfer of droplets to and from
 the DEAs, and Cloud Controllers.</li>
@@ -508,7 +508,7 @@ nodes (via SSHFS).</li>
 set up on a node with a public network interface if you wish to enable
 port forwarding for user applications. The security group or firewall
 settings for this node should make the configured port range accessible
-publicly. See <xref href="1.2harbor.dita#topic4009/requirements-setup" type="section" scope="external"  >Harbor Setup</xref> for full
+publicly. See <xref href="1.2harbor.dita#topic4009/requirements-setup" type="section"   >Harbor Setup</xref> for full
 configuration instructions.</p>
 </section>
 <section id="multiple-controllers"> <title>Multiple Controllers</title>
@@ -545,7 +545,7 @@ balancer must be configured to distribute connections between the
 Routers. Though most users will prefer to use a hardware load balancer
 or elastic load balancing service provided by the cloud hosting
 provider, an Application Lifecycle Service VM can be configured to take on this role.</p>
-  <p>The <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-setup-load_balancer" type="section" scope="external"  >kato node setup load_balancer</xref>
+  <p>The <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-setup-load_balancer" type="section"   >kato node setup load_balancer</xref>
 command retrieves IP addresses of every router in the cluster and
 configures an nginx process to distribute load (via round-robin) among a
 pool of Routers and handle SSL termination.</p>
@@ -555,7 +555,7 @@ multiple Routers:</p>
 <section id="rename-the-load-balancer"> <title>Rename the Load Balancer</title>
 <p>The Load Balancer is the primary point of entry to the cluster. It must
 have a public-facing IP address and take on the primary hostname for the
-system as <xref href="../server/1.2configuration.dita#topic31232/server-config-dns" type="section" scope="external"  >configured in DNS</xref>. Run the following on Load Balancer node:</p>
+system as <xref href="../server/1.2configuration.dita#topic31232/server-config-dns" type="section"   >configured in DNS</xref>. Run the following on Load Balancer node:</p>
 <codeblock>kato node rename *hostname.example.com*</codeblock>
 </section>
 <section id="set-up-the-core-node"> <title>Set up the Core Node</title>
@@ -598,7 +598,7 @@ Router nodes. For example:</p>
 <section id="load-balancer-ssl-certificates"> <title>Load Balancer SSL Certificates</title>
 <p>The load balancer terminates SSL connections, so SSL certificates must
 be set up and maintained on this node.</p>
-  <p>See the <xref href="../server/1.2configuration.dita#topic31232/using-your-own-ssl-certificate" >Using your own SSL certificate</xref> and <xref href="../server/1.2configuration.dita#topic31232/ca-certificate-chaining" type="section" scope="external"  >CA Certificate Chaining</xref> sections for Application Lifecycle Service Load Balancer instructions.</p>
+  <p>See the <xref href="../server/1.2configuration.dita#topic31232/using-your-own-ssl-certificate" >Using your own SSL certificate</xref> and <xref href="../server/1.2configuration.dita#topic31232/ca-certificate-chaining" type="section"   >CA Certificate Chaining</xref> sections for Application Lifecycle Service Load Balancer instructions.</p>
 <p>For other load balancers, consult the documentation for your device or service on uploading/updating server certificates.</p>
 </section>
 </body>

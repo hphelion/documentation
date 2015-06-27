@@ -110,7 +110,7 @@ afterwards.</p>
 <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#Disable_Password_Authentication" type="section" scope="external" format="html" >disable password authentication</xref> if desired.</p>
 </section>
 <section id="applying-updates"> <title>Applying Updates</title>
-<p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#upgrade" type="section" scope="external"  >
+<p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#upgrade" type="section"   >
 <i>kato node
 upgrade</i>
 </xref> or a <xref type="section" href="#topic16169/bestpractices-migration">
@@ -118,7 +118,7 @@ upgrade</i>
 or cluster</i>
 </xref>, but patch releases (normally
 minor fixes to particular components) can be applied in place using the
-<xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-patch" type="section" scope="external"  >
+<xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-patch" type="section"   >
 <i>kato patch</i>
 </xref>
 command.</p>
@@ -202,7 +202,7 @@ may have to be reset, redeployed, or reconfigured. This is especially
 important when migrating to a new cluster.</p>
 </section>
 <section id="custom-services"> <title>Custom Services</title>
-<p>Application Lifecycle Service can export and import data from built-in data services running on Application Lifecycle Service nodes, but it has no mechanism to handle data in <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2external-db.dita#external-db" type="section" scope="external"  >external databases</xref> unless
+<p>Application Lifecycle Service can export and import data from built-in data services running on Application Lifecycle Service nodes, but it has no mechanism to handle data in <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2external-db.dita#external-db" type="section"   >external databases</xref> unless
 <i>kato export|import</i> has also been modified to recognize the custom service.</p>
 <p>Backing up or moving such databases should be handled separately from databases implemented as an Application Lifecycle Service data service. User applications should be reconfigured and/or redeployed after the update to ensure they connect properly to the new database host.</p>
 </section>
@@ -216,7 +216,7 @@ containing staged applications) are re-deployed to new DEA nodes from
 the Controller.</p>
 </section>
 <section id="dea-exporting-the-server-data"> <title>Exporting the server data</title>
-<p>Data export is done with the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-export" type="section" scope="external"  >
+<p>Data export is done with the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-export" type="section"   >
 <i>kato data
 export</i>
 </xref>
@@ -279,7 +279,7 @@ some shell operations performed in the export require <codeph>sudo</codeph> when
 </section>
 <section id="upgrade"> <title>Upgrading</title>
 <p>The <i>kato node upgrade</i> command was added in this version to allow upgrading Application Lifecycle Service clusters in place. See
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#upgrade" type="section" scope="external"  >Upgrading Application Lifecycle Service</xref> for full
+<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#upgrade" type="section"   >Upgrading Application Lifecycle Service</xref> for full
 instructions.</p>
 <p>The <i>kato data import</i> command automatically detects if you are upgrading from version 2.x to 3.x and does some special processing to account for differences in the two versions:</p>
 <ul>
