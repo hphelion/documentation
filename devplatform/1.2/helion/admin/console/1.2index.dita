@@ -168,7 +168,7 @@ administration and management of the Application Lifecycle Service Server. Many 
 </li>
 </ul>
 <section id="setup"> <title>Management Console Setup and Access</title>
-<p>Your hypervisor provides <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-tty-console" type="section"   >tty console</xref> access to each of its virtual machines. After startup, an Application Lifecycle Service VM displays:</p>
+  <p>Your hypervisor provides <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#topic6187/term-tty-console" type="section"   >tty console</xref> access to each of its virtual machines. After startup, an Application Lifecycle Service VM displays:</p>
 <codeblock>
   <codeph>Application Lifecycle Service Management Console at
 https://helion-xxxx.local
@@ -343,7 +343,7 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <li>
 <b>Sample App URLs</b>: URIs for URIs for JSON files which populate the <xref href="../console/1.2index.dita#app-store" type="section"   >Sample Applications</xref> The URIs need not be public, but must be accessible from the controller node.</li>
 <li>
-<b>Allowed Repos</b>: Debian package repositories allowed in application containers. End users can install additional packages (e.g. with  apt-get  or  aptitude) only from these repositories. When adding new repositories, GPG keys for each new repo must also be added to the Docker base container See <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#allowed-repositories" type="section"   >Allowed Repositories</xref>.</li>
+  <b>Allowed Repos</b>: Debian package repositories allowed in application containers. End users can install additional packages (e.g. with  apt-get  or  aptitude) only from these repositories. When adding new repositories, GPG keys for each new repo must also be added to the Docker base container See <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#topic31232/allowed-repositories" type="section"   >Allowed Repositories</xref>.</li>
 </ul>
 </section>
 <section id="console-settings-applications"> <title>Applications</title>

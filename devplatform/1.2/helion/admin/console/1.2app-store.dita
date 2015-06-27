@@ -51,7 +51,7 @@ config</xref>.</p>
 </section>
 <section id="app-store-definition"> <title>Sample Applications Definition File</title>
 <p>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-YAML" type="section"   >YAML</xref> files describe the settings for each set of apps, including the container and a link to the source  repository for
+  <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#topic6187/term-YAML" type="section"   >YAML</xref> files describe the settings for each set of apps, including the container and a link to the source  repository for
 each app. For example:</p>
 <codeblock>
   <codeph>store:
@@ -140,7 +140,7 @@ and <b>apps</b>.</p>
 <dt>
 <b>framework</b>
 </dt>
-<dd>The framework the app uses, if the app is deployed using the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy" type="section"   >Legacy Buildpack</xref>(e.g. perl, python, node, rails3).</dd>
+  <dd>The framework the app uses, if the app is deployed using the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks" type="section"   >Legacy Buildpack</xref>(e.g. perl, python, node, rails3).</dd>
 </dlentry>
 
 
@@ -183,7 +183,7 @@ URL, <b>default</b>, or other variable value.</dd>
 <dt>
 <b>runtime</b>
 </dt>
-<dd>The runtime, if the app is deployed using the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#buildpacks-legacy" type="section"   >Legacy Buildpack</xref> (e.g. java, python32, ruby19, php, perl518).
+  <dd>The runtime, if the app is deployed using the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks" type="section"   >Legacy Buildpack</xref> (e.g. java, python32, ruby19, php, perl518).
 <b>services</b>
 </dd>
 <dd>Data services required by the app.</dd>

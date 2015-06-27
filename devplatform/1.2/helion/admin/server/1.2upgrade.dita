@@ -23,7 +23,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/admin/server/1.2upgrade.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/server/upgrade/--></p>
-<p>Application Lifecycle Service provides the ability to upgrade a node or cluster in place via <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-upgrade" type="section"   >kato node upgrade</xref> without the need to rebuild the entire cluster. This section covers how the upgrade process works.</p>
+  <p>Application Lifecycle Service provides the ability to upgrade a node or cluster in place via <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-upgrade">kato node upgrade</xref> without the need to rebuild the entire cluster. This section covers how the upgrade process works.</p>
 <ul>
 <li>
 <xref type="section" href="#topic13180/before-an-upgrade">Before an upgrade</xref>
