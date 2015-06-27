@@ -22,7 +22,7 @@
  <!--./devplatform/1.2/helion/user/services/1.2data-services.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/services/data-services/--></p>
 <p>The Application Lifecycle Service includes a number of data services which can be bound to the
-applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="../../../../../devplatform/1.2/helion/user/services/1.2filesystem.dita#persistent-file-system" >persistent file system</xref> service and <xref href="../../../../../devplatform/1.2/helion/user/services/1.2memcached.dita#memcached" type="section" scope="external"  >Memcached</xref>.</p>
+  applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="1.2filesystem.dita#topic4410/creating-a-persistent-file-system" >persistent file system</xref> service and <xref href="../../../../../devplatform/1.2/helion/user/services/1.2memcached.dita#memcached" type="section" scope="external"  >Memcached</xref>.</p>
 <p>For detailed information on using an <b>external</b> database system, see <xref type="section" href="#topic19772/using-external-databases">Using External Database Services</xref>.</p>
 <ul>
 <li>
