@@ -25,7 +25,7 @@
 
 </p>
 <section id="ssh-to-failed-containers"> <title>SSH to Failed Containers</title>
-<p>For troubleshooting and diagnostic purposes, it is possible to use helion ssh to access a <xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-container" type="section" scope="external"  >container</xref> that has recently failed or did not start correctly. Containers are kept for one hour before being reclaimed. See the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref.dita" >Command Reference</xref> for details on the <codeph>helion ssh</codeph> command.</p>
+<p>For troubleshooting and diagnostic purposes, it is possible to use helion ssh to access a <xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-container" type="section"  >container</xref> that has recently failed or did not start correctly. Containers are kept for one hour before being reclaimed. See the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref.dita" >Command Reference</xref> for details on the <codeph>helion ssh</codeph> command.</p>
 </section>
 <section id="checking-the-logs"> <title>Checking the Logs</title>
 <p>Most Application Lifecycle Service users will not have administrative access to the server. If you need to troubleshoot an application deployment or runtime failure, you can use the helion client to view the <codeph>stderr</codeph> and <codeph>stdout</codeph> log files. For example, if an application called <codeph>myapp</codeph> did not deploy correctly, run the command:</p>
@@ -70,7 +70,7 @@ Starting Application: OK
 <p>This error is reported when the Application Lifecycle Service server does not have an IP Address. To investigate and resolve, try the following:</p>
 <ul>
 <li>
-<p>Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its <xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-tty-console" type="section" scope="external"  >tty console</xref>:</p>
+<p>Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its <xref href="../../../../devplatform/helion/user/reference/1.1glossary.dita#term-tty-console" type="section"  >tty console</xref>:</p>
 
 <codeblock>
 <codeph>arp -n

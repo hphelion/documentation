@@ -29,7 +29,7 @@ applications and frameworks. It is available in Application Lifecycle Service as
 which can be shared by application instances.</p>
 </section>
 <section id="using-the-service"> <title>Using the Service</title>
-<p>As with other <xref href="../../../../devplatform/helion/user/services/1.0data-services.dita#data-services" type="section" scope="external"  >
+<p>As with other <xref href="../../../../devplatform/helion/user/services/1.0data-services.dita#data-services" type="section"  >
 <i>data services</i>
 </xref>, the
 location and port of the memcached service is exposed to the application
@@ -50,7 +50,7 @@ administrator can run the following commands on the Cloud Controller:</p>
 $ kato restart memcached_node
 </codeph>
 </codeblock>
-<p>With SASL enabled, applications must parse the<xref href="../../../../devplatform/helion/user/services/1.0data-services.dita#database-services-vcap-services" type="section" scope="external"  >
+<p>With SASL enabled, applications must parse the<xref href="../../../../devplatform/helion/user/services/1.0data-services.dita#database-services-vcap-services" type="section"  >
 <i>VCAP_SERVICES</i>
 </xref>
 environment variables to extract the <codeph>name</codeph>, <codeph>user</codeph>, and <codeph>password</codeph>

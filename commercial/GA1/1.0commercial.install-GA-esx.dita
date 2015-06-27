@@ -174,7 +174,7 @@ provider_Network is your ESX management network
 <p>The prompt will change to <codeph>root@hLinux</codeph>.</p>
 </li>
 <li>
-<p>Make sure the information in the <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#req-info" type="section" scope="external"  >
+<p>Make sure the information in the <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#req-info" type="section"  >
 <codeph>baremetal.csv</codeph> configuration file</xref> file is correct and upload the file to <codeph>/root</codeph>.</p>
 
 <p>

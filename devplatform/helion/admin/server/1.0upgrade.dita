@@ -27,7 +27,7 @@
 
 </p>
 <p>Application Lifecycle Service 1.0 provides the ability to upgrade a node or cluster in place
-via <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-upgrade" type="section" scope="external"  >
+via <xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-upgrade" type="section"  >
 <i>kato node
 upgrade</i>
 </xref>
@@ -72,7 +72,7 @@ the upgrade process works.</p>
 </section>
 <section id="maintenance-mode"> <title>Maintenance Mode</title>
 <p>Before beginning an upgrade, put Application Lifecycle Service in maintenance mode in the
-<xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#console-settings-maintenance-mode" type="section" scope="external"  >
+<xref href="../../../../devplatform/helion/admin/console/1.0customize.dita#console-settings-maintenance-mode" type="section"  >
 <i>Cloud Controller
 Settings</i>
 </xref> or
@@ -140,7 +140,7 @@ have enabled. This order is then followed when upgrading nodes.</p>
 nodes that don't match (e.g. data service nodes) are added to the end to
 be upgraded last.</p>
 <p>The order can be overridden with the
-<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-upgrade" type="section" scope="external"  >
+<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-upgrade" type="section"  >
 <i>--role-order</i>
 </xref>
 option.</p>
@@ -181,7 +181,7 @@ HP Application Lifecycle Service Support.</p>
 <p>Next, the upgrade packages are downloaded and a validation check is
 performed on the files to make sure everything required for an upgrade
 is available. If the node is a DEA it is then
-<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-retire" type="section" scope="external"  >
+<xref href="../../../../devplatform/helion/admin/reference/1.0kato-ref.dita#kato-command-ref-node-retire" type="section"  >
 <i>retired</i>
 </xref> to
 make sure any applications running on the node are evacuated before the
