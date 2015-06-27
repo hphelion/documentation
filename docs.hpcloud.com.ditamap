@@ -1716,8 +1716,11 @@
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
+  
+  <!-- CGH -->
+  
   <topicref href="CarrierGrade/carrier-grade-index.dita">
-    <topichead navtitle="HP Helion Carrier Grade 1.1: KVM Region Release Notes">
+    <topichead navtitle="KVM Region Release Notes">
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333830215.xml"/>
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333830815.xml"/>
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333831397.xml"/>
@@ -1820,11 +1823,11 @@
       <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting-overcloud.dita"
       />
     </topicref>
-    <topichead navtitle="HP Helion OpenStack Carrier Grade Administrator Guide">
+    <topichead navtitle="Administrator Guide">
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
     </topichead>
     <topichead
-      navtitle="HP Helion OpenStack Carrier Grade (Beta): Reference Deployment Scenarios Guide">
+      navtitle="Reference Deployment Scenarios Guide">
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
         <!-- topicref href="jow1410639575680.xml"/  Pktgen Scenario removed 2014-09-19 -->
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638776646.xml"/>
