@@ -46,7 +46,7 @@ filesystem.</p>
 <p>The Sample Applications interface exposes multiple "stores" which specify the
 available applications. These stores are sourced from definition files
 specified in the main <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita#settings" type="section"   >Settings</xref> page of
-the Management Console or set using <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" type="section"   >kato
+  the Management Console or set using <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >kato
 config</xref>.</p>
 </section>
 <section id="app-store-definition"> <title>Sample Applications Definition File</title>
@@ -212,7 +212,7 @@ your store definition YAML file then click <b>Add Sample Applications URL</b>.</
 </ol>
 <p>To confirm the Sample Applications are loading correctly, select <b>Sample Applications</b> in the menu and view the list of applications displayed. A <b>CC Catalog Manager</b> error appears in the Event Log if a Sample Applications URL fails to load.</p>
 <p>Sample Applications URLs can also be viewed, added, deleted, enabled, and disabled
-with <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" type="section"   >kato config</xref>. For
+  with <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >kato config</xref>. For
 example:</p>
 <codeblock>
   <codeph>kato config get cloud_controller_ng app_store

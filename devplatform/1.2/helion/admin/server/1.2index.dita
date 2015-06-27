@@ -78,57 +78,57 @@ status checks. For a complete list of options, see the <xref href="../../../../.
 
 <ul>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#server-status" type="section"   >Server Status</xref>
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/server-status" type="section"   >Server Status</xref>
 
 <ul>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#starting-and-stopping-roles" type="section"   >Starting and Stopping
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/starting-and-stopping-roles" type="section"   >Starting and Stopping
 Roles</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#system-shutdown" type="section"   >System Shutdown</xref>
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/system-shutdown" type="section"   >System Shutdown</xref>
 </li>
 </ul>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#setting-the-time-zone" type="section"   >Setting the Time Zone</xref>
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/setting-the-time-zone" type="section"   >Setting the Time Zone</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#resetting-the-vm" type="section"   >Resetting the VM</xref>
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/resetting-the-vm" type="section"   >Resetting the VM</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#monitoring-the-helion-server" type="section"   >Monitoring The Application Lifecycle Service
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/monitoring-the-helion-server" type="section"   >Monitoring The Application Lifecycle Service
 Server</xref>
 
 <ul>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#management-console" type="section"   >Management Console</xref>
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/management-console" type="section"   >Management Console</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#new-relic" type="section"   >New Relic</xref>
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/new-relic" type="section"   >New Relic</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#creating-an-admin-user" type="section"   >Creating an Admin User</xref>
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/creating-an-admin-user" type="section"   >Creating an Admin User</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#system-monitoring-with-nagios" type="section"   >System Monitoring with Nagios</xref>
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/system-monitoring-with-nagios" type="section"   >System Monitoring with Nagios</xref>
 </li>
 </ul>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#server-backup-import-and-export" type="section"   >Server Backup, Import, and Export</xref>
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/server-backup-import-and-export" type="section"   >Server Backup, Import, and Export</xref>
 </li>
 </ul>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita" >Upgrading Application Lifecycle Service</xref>
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita" >Upgrading Application Lifecycle Service</xref>
 
 <ul>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#before-an-upgrade" type="section"   >Before an upgrade</xref>
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#topic13180/before-an-upgrade" type="section"   >Before an upgrade</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#executing-the-upgrade" type="section"   >Executing the upgrade</xref>
+  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#topic13180/executing-the-upgrade" type="section"   >Executing the upgrade</xref>
 </li>
 </ul>
 </li>

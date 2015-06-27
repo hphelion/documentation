@@ -32,8 +32,7 @@
           node migrate</xref> or <xref
           href="1.2kato-ref.dita#topic39432/kato-command-ref-op-static_ip">kato op static ip</xref>
         on the Core node, then <xref
-          href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-node-attach"
-          type="section" >kato node attach</xref> on all other cluster nodes to set
+          href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section" >kato node attach</xref> on all other cluster nodes to set
         the new MBUS IP.</p>
 </section>
 <section id="adding-new-relic-repositories"> <title>Adding New Relic Repositories</title>
@@ -60,7 +59,7 @@
         lists of users to and from CSV files, are non-functional in the current release. The <xref
           href="1.2kato-ref.dita#topic39432/kato-command-ref-data-import">kato data import</xref>
         and <xref
-          href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-export"
+          href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-data-export"
           type="section" >kato data export</xref> commands are still available for
         migrating users from one ALS installation to another.</p>
 </section>

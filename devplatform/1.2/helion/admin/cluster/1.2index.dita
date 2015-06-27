@@ -129,20 +129,20 @@
 take on one or more of the following roles:</p>
 <ul>
 <li>
-<xref href="../reference/1.2architecture.dita#architecture-primary" type="section"   >primary</xref>
+  <xref href="../reference/1.2architecture.dita#topic4407/architecture-primary" type="section"   >primary</xref>
 </li>
 <li>
-<xref href="../reference/1.2architecture.dita#architecture-cloud-controller" type="section"   >controller</xref>
+  <xref href="../reference/1.2architecture.dita#topic4407/architecture-cloud-controller" type="section"   >controller</xref>
 </li>
 <li>
-<xref href="../reference/1.2architecture.dita#architecture-router" type="section"   >router</xref>
+  <xref href="../reference/1.2architecture.dita#topic4407/architecture-router" type="section"   >router</xref>
 </li>
 <li>
-<xref href="../reference/1.2architecture.dita#architecture-droplet-execution-agents" type="section"   >dea</xref>
+  <xref href="../reference/1.2architecture.dita#topic4407/architecture-droplet-execution-agents" type="section"   >dea</xref>
 </li>
 <li>mdns (intended for micro clouds)</li>
 <li>
-<xref href="../../user/services/1.2filesystem.dita#creating-a-persistent-file-system" type="section"   >filesystem</xref>
+  <xref href="../../user/services/1.2filesystem.dita#topic4410/creating-a-persistent-file-system" type="section"   >filesystem</xref>
 </li>
 <li>
   <xref href="../../user/reference/1.2glossary.dita#topic6187/term-mysql" type="section"   >mysql</xref>
