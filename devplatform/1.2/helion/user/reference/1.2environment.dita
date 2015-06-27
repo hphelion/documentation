@@ -38,7 +38,7 @@ command.</li>
 </p>
 <p>To see a complete list of environment variables in an Application Lifecycle Service application container, deploy the <xref href="https://github.com/Stackato-Apps/node-env" scope="external" format="html" >node-env</xref> sample.</p>
 <section id="database-url"> <title>DATABASE_URL</title>
-<p>Contains an access URL for a database service. If more than one type of database is present, <codeph>DATABASE_URL</codeph> will not be available. Instead, use the <xref href="../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#database-specific-url" type="section"   >Database-Specific URL</xref> variables.</p>
+  <p>Contains an access URL for a database service. If more than one type of database is present, <codeph>DATABASE_URL</codeph> will not be available. Instead, use the <xref href="../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#topic19772/database-specific-url" type="section"   >Database-Specific URL</xref> variables.</p>
 <p>Example:</p>
 <codeblock>
   <codeph>mysql://u93Mm8XmGXQ9R:p8LwNeQXMrNzi@192.168.0.112:3306/d0a60c0be931f4982bbef153f993237bc
@@ -115,9 +115,7 @@ For example:</p>
 <p>Contains the same value as HELION_APP_NAME transformed to uppercase, with dashes replaced by underscores. For example if HELION_APP_NAME is "php-info", then HELION_APP_NAME_UPCASE will be "PHP_INFO".</p>
   <p>This makes it possible to access the environment variables for <xref href="../services/1.2port-service.dita#topic7511/port-service-env-vars" type="section"   >
 <i>harbor</i>
-  </xref> and <xref href="../services/1.2filesystem.dita#topic4410/file-system-usage" type="section"   >
-<i>filesystem</i>
-</xref> services.</p>
+  </xref> and <xref href="../services/1.2filesystem.dita"><i>filesystem</i></xref> services.</p>
 </section>
 <section id="helion-app-root"> <title>HELION_APP_ROOT</title>
 <p>This is the "root" directory from the Application Lifecycle Service point of view. It contains app specific HOME directory (app/), the log file directory (logs/) and various scripts.</p>
@@ -162,7 +160,7 @@ For example:</p>
 <p>This variable contains all relevant application details for the Application Lifecycle Service Application. (Instance ID, App Name, App Uris, Users/Groups etc.)</p>
 </section>
 <section id="vcap-services"> <title>VCAP_SERVICES</title>
-<p>Contains connection details, credentials, and meta data for services bound to the application. See <xref href="../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#database-services-vcap-services" type="section"   >VCAP_SERVICES</xref>.</p>
+  <p>Contains connection details, credentials, and meta data for services bound to the application. See <xref href="../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#topic19772/database-services-vcap-services" type="section"   >VCAP_SERVICES</xref>.</p>
 </section>
 <section id="staging"> <title>Staging Variables</title>
 <p>The following environment variables are available during application staging and can be used in buildpacks or staging hooks:</p>

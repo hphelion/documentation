@@ -391,7 +391,7 @@ Console, but some maintenance and configuration tasks may need to be done at the
 </section>
 <section id="logyard"> <title>Logyard</title>
 <p>Lists current log <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2logging.dita#logging-drains-system" type="section"   >Drains</xref> and the log
-  drain retry limits. Drains and limits cannot be changed in this interface; use the <xref href="../../../../../devplatform/1.2/helion/admin/reference/topic39432/1.2kato-ref.dita#topic39432kato-command-ref-log-drain-add" type="section"   >
+  drain retry limits. Drains and limits cannot be changed in this interface; use the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-log-drain-add" type="section"   >
 <i>kato log drain</i>
 </xref>
   commands and <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
