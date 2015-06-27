@@ -499,7 +499,7 @@ OVERCLOUD_SWIFT_PASSWORD=&lt;password&gt;
 </codeph>
 </codeblock>
     <p>Return to the <xref href="../../commercial/GA1/1.0commercial.install-GA-kvm.dita#topic10604/startseed" type="section">KVM installation</xref>.</p>
-<p>Return to the <xref href="../../commercial/GA1/1.0commercial.install-GA-esx.dita#startseed" type="section" scope="external"  >ESX installation</xref>.</p>
+<p>Return to the <xref href="../../commercial/GA1/1.0commercial.install-GA-esx.dita#startseed" type="section">ESX installation</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

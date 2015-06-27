@@ -72,16 +72,16 @@
 
 <ul>
 <li>
-<xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita#webserverapi" type="section" scope="external"  >Configuring the Web Server for API Performance</xref>
+<xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita#webserverapi" type="section">Configuring the Web Server for API Performance</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita#meterlist" type="section" scope="external"  >Modifying the List of Active Meters</xref>
+<xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita#meterlist" type="section">Modifying the List of Active Meters</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita#pollinterval" type="section" scope="external"  >Modifying Polling Intervals</xref>
+<xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita#pollinterval" type="section">Modifying Polling Intervals</xref>
 </li>
 <li>
-<xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita#swift" type="section" scope="external"  >Swift Service Considerations</xref>
+<xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita#swift" type="section">Swift Service Considerations</xref>
 </li>
 </ul>
 </li>
