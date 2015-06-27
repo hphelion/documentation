@@ -46,10 +46,7 @@ neutron-plugin-openvswitch-agent
 <li>Save and close the file.</li>
 </ol>
 </section>
-<section id="next-step"> <title>Next Step</title>
-<p>
-  <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.dita" >Deploying the HLM and DCN Clouds</xref>
-</p>
+<section id="next-step">
 <p>
   <xref type="section" href="#topic1644"> Return to Top </xref>
 </p>
