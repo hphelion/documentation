@@ -179,9 +179,9 @@ https://helion-xxxx.local
           href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-multicast-dns"
           type="section" >multicast DNS</xref>, the hostname will be
           <codeph>helion-xxxx.local</codeph>. If you have configured the <xref
-          href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#server-config-hostname"
+            href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#topic31232/server-config-hostname"
           type="section" >hostname</xref> and <xref
-          href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#server-config-dns"
+            href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#topic31232/server-config-dns"
           type="section" >DNS</xref> of the Application Lifecycle Service server
         manually, or are connecting to a server administered by someone else, supply the assigned
         hostname instead (ex: <i>api.helion-test.example.com</i>).</p>
@@ -193,14 +193,14 @@ https://helion-xxxx.local
 </ul>
 <p>Using a browser which fully support WebSockets is recommended.</p>
 <p>
-<b>Note</b>:  The SSL certificate for the Application Lifecycle Service Management Console is self-signed. You will need to manually accept this certificate in your browser. See the <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#server-config-https" type="section"   >HTTPS section</xref>
+  <b>Note</b>:  The SSL certificate for the Application Lifecycle Service Management Console is self-signed. You will need to manually accept this certificate in your browser. See the <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#topic31232/server-config-https" type="section"   >HTTPS section</xref>
 for information on using your own certificate.</p>
 <p>When you first access the Management Console, you will be prompted to create a primary administrative user for ALS. Enter an email address as the username, set a secure password, and then review and accept the license agreement.</p>
 <p>
 <b>Note: The password you choose here becomes the login password for the <i>helion</i> user on the VM for SSH access.</b> This is critical since all login is done as the <i>helion</i> user, not as <i>root</i>.</p>
 <p>Once you've logged in, you can begin to add other users and admins, enable and disable services, and generally set up the system to your requirements.</p>
 <p>Basic Application Lifecycle Service administration can be done through the Management
-Console, but some maintenance and configuration tasks may need to be done at the command line using the <i>kato</i> command. See the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref" type="section"   >Kato Command Reference</xref> for a full list of options.</p>
+Console, but some maintenance and configuration tasks may need to be done at the command line using the <i>kato</i> command. See the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita">Kato Command Reference</xref> for a full list of options.</p>
 <p>The Application Lifecycle Service Management Console will periodically send non-identifying pingbacks (Application Lifecycle Service version number and UUID) to HP servers to help improve the web console experience. You can disable this option by setting</p>
 <codeblock>
   <codeph>theme_settings['pingback_allowed'] = false;
@@ -341,7 +341,7 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <li>
 <b>Support Email</b>: The email address displayed to end users when errors are encountered. Use an address which is monitored by administrators.</li>
 <li>
-<b>Sample App URLs</b>: URIs for URIs for JSON files which populate the <xref href="../console/1.2index.dita#app-store" type="section"   >Sample Applications</xref> The URIs need not be public, but must be accessible from the controller node.</li>
+<b>Sample App URLs</b>: URIs for URIs for JSON files which populate the <xref href="1.2app-store.dita">Sample Applications</xref> The URIs need not be public, but must be accessible from the controller node.</li>
 <li>
   <b>Allowed Repos</b>: Debian package repositories allowed in application containers. End users can install additional packages (e.g. with  apt-get  or  aptitude) only from these repositories. When adding new repositories, GPG keys for each new repo must also be added to the Docker base container See <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#topic31232/allowed-repositories" type="section"   >Allowed Repositories</xref>.</li>
 </ul>
@@ -391,10 +391,10 @@ Console, but some maintenance and configuration tasks may need to be done at the
 </section>
 <section id="logyard"> <title>Logyard</title>
 <p>Lists current log <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2logging.dita#logging-drains-system" type="section"   >Drains</xref> and the log
-drain retry limits. Drains and limits cannot be changed in this interface; use the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-log-drain-add" type="section"   >
+  drain retry limits. Drains and limits cannot be changed in this interface; use the <xref href="../../../../../devplatform/1.2/helion/admin/reference/topic39432/1.2kato-ref.dita#kato-command-ref-log-drain-add" type="section"   >
 <i>kato log drain</i>
 </xref>
-commands and <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-config" type="section"   >
+  commands and <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
 <i>kato config</i>
 </xref> commands.</p>
 </section>

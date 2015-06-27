@@ -136,17 +136,17 @@
 </ul>
 </section>
 <section id="organization-list"> <title>Organizations List</title>
-<p>The Organizations list is accessible from the top menu. It shows all <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" type="section"   >Organizations</xref> which the current user is a member of. The list is searchable by name.</p>
+  <p>The Organizations list is accessible from the top menu. It shows all <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#topic2729/orgs-spaces" type="section"   >Organizations</xref> which the current user is a member of. The list is searchable by name.</p>
 <p>Clicking on any Organization name opens the Organization view.</p>
 </section>
 <section id="organization-view"> <title>Organization View</title>
-<p>The Organizations page shows a list of all <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces" type="section"   >Organizations</xref> that the current user is a member of. Depending on how ALS has been set up, it is possible be a member of only a single Organization.</p>
+  <p>The Organizations page shows a list of all <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#topic2729/orgs-spaces" type="section"   >Organizations</xref> that the current user is a member of. Depending on how ALS has been set up, it is possible be a member of only a single Organization.</p>
 <p>Clicking on the Organization's name opens a view of that organization, including the following tabs:</p>
 <ul>
 <li>
 <b>Spaces</b>: A list of Spaces that belong to the Organization, showing the current number of applications and services deployed to that space. Clicking on a Space in the list opens a <xref type="section" href="#topic8844/space-view">view of that Space</xref>.</li>
 <li>
-<b>Users</b>: A list of Users who are members of the Organization, showing the Email address and Organization <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#orgs-spaces-roles" type="section"   >Roles</xref> of each.
+  <b>Users</b>: A list of Users who are members of the Organization, showing the Email address and Organization <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#topic2729/orgs-spaces-roles" type="section"   >Roles</xref> of each.
 
 <ul>
 <li>

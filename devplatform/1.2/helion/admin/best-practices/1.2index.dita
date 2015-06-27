@@ -118,7 +118,7 @@ upgrade</i>
 or cluster</i>
 </xref>, but patch releases (normally
 minor fixes to particular components) can be applied in place using the
-<xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-patch" type="section"   >
+  <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-patch" type="section"   >
 <i>kato patch</i>
 </xref>
 command.</p>
@@ -216,7 +216,7 @@ containing staged applications) are re-deployed to new DEA nodes from
 the Controller.</p>
 </section>
 <section id="dea-exporting-the-server-data"> <title>Exporting the server data</title>
-<p>Data export is done with the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-data-export" type="section"   >
+  <p>Data export is done with the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-data-export" type="section"   >
 <i>kato data
 export</i>
 </xref>
@@ -349,7 +349,7 @@ Documentation</xref>
 <ul>
 <li>mount the filesystem and/or block storage service on the instance (with <xref type="section" href="#topic16169/enabling-filesystem-quotas">quotas enabled</xref>)</li>
 <li>create directories for the items you wish to move,</li>
-<li>run the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-relocate" type="section"   >
+  <li>run the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-relocate" type="section"   >
 <i>kato
 relocate</i>
 </xref>
@@ -372,7 +372,7 @@ kato relocate containers /mnt/containers
 <p>The Application Lifecycle Service filesystem quotas cannot be enforced by the system unless
 they are mounted on partitions which support Linux quotas. This may need
 to be specified explicitly when running the <codeph>mount</codeph>
-command. The <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-relocate" type="section"   >
+  command. The <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-relocate" type="section"   >
 <i>kato relocate</i>
 </xref> command
 will warn if this is necessary.</p>
