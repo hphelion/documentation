@@ -67,7 +67,7 @@
 <xref href="http://docs.cloudfoundry.org/services/catalog-metadata.html" scope="external" format="html" >Catalog Metadata</xref>
 </li>
 </ul>
-<p>Once the echo-service application has been deployed, an admin can add the service broker with the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-add-service-broker" type="section" >add-service-broker</xref> command.</p>
+  <p>Once the echo-service application has been deployed, an admin can add the service broker with the <xref href="../../user/reference/1.2client-ref-brokers.dita#topic5507/command-add-service-broker" type="section" >add-service-broker</xref> command.</p>
 <codeblock>
   <codeph>helion add-service-broker
 Enter name: echo-broker

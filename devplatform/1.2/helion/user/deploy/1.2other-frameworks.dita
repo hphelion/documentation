@@ -64,7 +64,7 @@ Standalone framework instead.</p>
 </section>
 <section id="standalone"> <title>Standalone</title>
 <p>The Standalone framework uses a custom command specified in the
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#command" type="section"   >
+  <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/command" type="section"   >
 <i>command:</i>
 </xref> key to start a
 background worker process.</p>

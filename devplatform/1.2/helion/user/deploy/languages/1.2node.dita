@@ -62,7 +62,7 @@ var host = process.env.VCAP_APP_HOST || "127.0.0.1";
 </section>
 <section id="using-data-services"> <title>Using Data Services</title>
 <p>Data services need to be configured with values from VCAP_SERVICES, DATABASE_URL, or a database-specific environment
-  variable (see also <xref href="../../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita##topic19772/database-accessing" type="section"   >Using Configured Database
+  variable (see also <xref href="../../../../../../devplatform/1.2/helion/user/services/1.2data-services.dita#topic19772/database-accessing" type="section"   >Using Configured Database
 Services</xref>).</p>
 <p>If the database module you use supports URL-formatted connection
 strings, using the

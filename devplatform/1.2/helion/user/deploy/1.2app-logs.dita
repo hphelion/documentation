@@ -133,7 +133,7 @@ each log line, and can be used for filtering the stream.</p>
 <p>Paths can be fully specified or specified relative to \$HELION_APP_ROOT.</p>
 </section>
 <section id="helion-drain"> <title>helion drain</title>
-<p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-drain-add" type="section"   >
+  <p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#topic50918/command-drain-add" type="section"   >
 <i>helion drain add</i>
 </xref> command is used to create a log drain which forwards application logs to external log aggregation services, log analysis tools, or Redis databases. For example:</p>
 <codeblock>
