@@ -84,7 +84,7 @@ $admin = $appinfo_json['uris'][0];
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-<xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#command" type="section"   >
+  <xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/command" type="section"   >
 <i>command</i>
 </xref> key and set the
   <xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/web" type="section"   >

@@ -68,7 +68,7 @@
           <b>Contact Support</b>: Link to the <xref href="#topic8844/support" format="dita"
             >Support</xref> page.</li>
 <li>
-<b>Download the Client</b>: Link to the locally hosted <xref href="../../../../../devplatform/1.2/helion/user/client/1.2index.dita#client" type="section"   >CLI client</xref> download.</li>
+  <b>Download the Client</b>: Link to the locally hosted <xref href="../../../../../devplatform/1.2/helion/user/client/1.2index.dita#topic3165/client" type="section"   >CLI client</xref> download.</li>
 <li>
           <b>Deploy Sample Applications</b>: Link to the <xref href="#topic8844/sample-apps"
             format="dita">Sample Applications</xref>.</li>

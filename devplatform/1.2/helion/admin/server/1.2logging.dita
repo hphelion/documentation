@@ -252,7 +252,7 @@ shorter command for creating the <b>all-apps</b> drain would be:</p>
 <codeblock>kato log drain add papertrail udp://logs.papertrailapp.com:45678 -f systail-papertrail</codeblock>
 <p>You can also change the default apptail, event, and systail drain
 formats to modify the output of any drains using these prefixes (e.g.
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-drain-add" type="section"   >helion drain</xref>, Cloud
+  <xref href="../../user/reference/1.2client-ref-management.dita#topic50918/command-drain-add" type="section"   >helion drain</xref>, Cloud
   Events in the Management Console, and <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-log-tail" type="section">kato log tail</xref>
 respectively).</p>
 </section>
@@ -266,9 +266,9 @@ Guide</xref>
 </section>
 <section id="application-drains"> <title>Application Drains</title>
 <p>Drains for application log streams can be added by end users with the
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-drain-add" type="section"   >
+  <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#topic50918/command-drain-add" type="section"   >
 <i>helion drain add</i>
-</xref> command. See the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2app-logs.dita#application-logs" type="section"   >Application Logs</xref> section of the documentation for an example.</p>
+</xref> command. See the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2app-logs.dita#topic5165/application-logs" type="section"   >Application Logs</xref> section of the documentation for an example.</p>
 </section>
 <section id="drain-status"> <title>Drain Status</title>
 <p>You can check the status of all drains on Application Lifecycle Service with the
