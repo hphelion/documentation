@@ -367,7 +367,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="helion-switch-org-name-command-switch-org"> <title>helion switch-org &lt;<i>name</i>&gt; {command-switch-org}</title>
+<section id="command-switch-org"> <title>helion switch-org &lt;<i>name</i>&gt; {command-switch-org}</title>
 <p>Switch the current organization to the named organization. This invalidates the current space.</p>
 <table>
 <tgroup cols="2">
