@@ -22,7 +22,7 @@
  <!--./devplatform/1.2/helion/user/services/1.2data-services.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/services/data-services/--></p>
 <p>The Application Lifecycle Service includes a number of data services which can be bound to the
-applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="../../../../../devplatform/1.2/helion/user/services/1.2filesystem.dita#persistent-file-system" >persistent file system</xref> service and <xref href="../../../../../devplatform/1.2/helion/user/services/1.2memcached.dita#memcached" type="section" scope="external"  >Memcached</xref>.</p>
+  applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="1.2filesystem.dita#topic4410/creating-a-persistent-file-system" >persistent file system</xref> service and <xref href="../../../../../devplatform/1.2/helion/user/services/1.2memcached.dita#memcached" type="section" scope="external"  >Memcached</xref>.</p>
 <p>For detailed information on using an <b>external</b> database system, see <xref type="section" href="#topic19772/using-external-databases">Using External Database Services</xref>.</p>
 <ul>
 <li>
@@ -352,7 +352,7 @@ grouped by service type. VCAP_SERVICES variables use non-versioned service names
 </section>
 <section id="using-dbshell"> <title>Via <i>dbshell</i>
 </title>
-  <p>The <xref href="../eference/1.2client-ref-management.dita#topic50918/command-dbshell" type="section" >helion dbshell</xref> command creates an SSH tunnel to database services. To open an interactive shell to a service:</p>
+  <p>The <xref href="../reference/1.2client-ref-management.dita#topic50918/command-dbshell" type="section" >helion dbshell</xref> command creates an SSH tunnel to database services. To open an interactive shell to a service:</p>
 <codeblock>  helion dbshell &lt;application_name&gt; &lt;service_name&gt;</codeblock>
 <p>The command automatically opens the appropriate database client for
 the database you're connecting to, provided that client is installed on
