@@ -29,10 +29,7 @@
  <!--./devplatform/1.2/1.2devplatform_commercial_install.md-->
  <!--permalink: /helion/devplatform/1.2/install/--></p>
 <p>HP Helion Development Platform version 1.2 currently contains the Application Lifecycle Service, Database, Marketplace, and Messaging services.</p>
-<p>The following topics explain how to install and configure a new deployment of the HP Helion
-      Development Platform version 1.2. There is also <xref
-        href="1.2devplatform.troubleshooting.dita">Troubleshooting</xref> documentation to handle
-      issues that may occur.</p>
+<p>The following topics explain how to install and configure a new deployment of the HP Helion Development Platform version 1.2. There is also <xref href="1.2devplatform.troubleshooting.dita" >Troubleshooting</xref> documentation to handle issues that may occur.</p>
 <ul>
 <li>
 <xref type="section" href="#topic24073/prerequisites">Prerequisites</xref>
@@ -256,46 +253,46 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
 <p>If you are not configuring the Database Service to be highly available you must have the following quota available:</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1" colwidth="300" align="left"/>
-<colspec colname="col2" colwidth="300" align="left"/>
+<colspec colname="col1"/>
+<colspec colname="col2"/>
 <thead>
 <row>
 <entry>Resource</entry>
-  <entry >Usage</entry>
+  <entry align="right">Usage</entry>
 </row>
 </thead>
 <tbody>
 <row>
 <entry>Floating IPs</entry>
-  <entry >6</entry>
+  <entry align="right">6</entry>
 </row>
 <row>
 <entry>Instances</entry>
-  <entry >6</entry>
+  <entry align="right">6</entry>
 </row>
 <row>
 <entry>Networks</entry>
-  <entry >2</entry>
+  <entry align="right">2</entry>
 </row>
 <row>
 <entry>RAM (GB)</entry>
-  <entry>24</entry>
+  <entry align="right">24</entry>
 </row>
 <row>
 <entry>Routers</entry>
-  <entry >2</entry>
+  <entry align="right">2</entry>
 </row>
 <row>
 <entry>Security Groups</entry>
-  <entry >6</entry>
+  <entry align="right">6</entry>
 </row>
 <row>
 <entry>Volumes</entry>
-  <entry >4</entry>
+  <entry align="right">4</entry>
 </row>
 <row>
 <entry>Volume Storage (GB)</entry>
-  <entry >160</entry>
+  <entry align="right">160</entry>
 </row>
 </tbody>
 </tgroup>
@@ -303,46 +300,46 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
 <p>If you have set up Availability Zones and plan to install the Database Service in a highly-available configuration you must have the following quota available:</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1" colwidth="300"/>
-<colspec colname="col2" colwidth="300"/>
+<colspec colname="col1"/>
+<colspec colname="col2"/>
 <thead>
 <row>
 <entry>Resource</entry>
-  <entry >Usage</entry>
+  <entry align="right">Usage</entry>
 </row>
 </thead>
 <tbody>
 <row>
 <entry>Floating IPs</entry>
-  <entry >16</entry>
+  <entry align="right">16</entry>
 </row>
 <row>
 <entry>Instances</entry>
-  <entry >16</entry>
+  <entry align="right">16</entry>
 </row>
 <row>
 <entry>Networks</entry>
-  <entry >2</entry>
+  <entry align="right">2</entry>
 </row>
 <row>
 <entry>RAM (GB)</entry>
-  <entry >64</entry>
+  <entry align="right">64</entry>
 </row>
 <row>
 <entry>Routers</entry>
-  <entry >2</entry>
+  <entry align="right">2</entry>
 </row>
 <row>
 <entry>Security Groups</entry>
-  <entry >6</entry>
+  <entry align="right">6</entry>
 </row>
 <row>
 <entry>Volumes</entry>
-  <entry >4</entry>
+  <entry align="right">4</entry>
 </row>
 <row>
 <entry>Volume Storage (GB)</entry>
-  <entry >160</entry>
+  <entry align="right">160</entry>
 </row>
 </tbody>
 </tgroup>
@@ -458,38 +455,38 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 <p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1" colwidth="300"/>
-<colspec colname="col2" colwidth="300"/>
+<colspec colname="col1"/>
+<colspec colname="col2"/>
 <thead>
 <row>
 <entry>Resource</entry>
-  <entry >Usage</entry>
+  <entry align="right">Usage</entry>
 </row>
 </thead>
 <tbody>
 <row>
 <entry>Floating IPs</entry>
-  <entry >16</entry>
+  <entry align="right">16</entry>
 </row>
 <row>
 <entry>Instances</entry>
-  <entry >4</entry>
+  <entry align="right">4</entry>
 </row>
 <row>
 <entry>Networks</entry>
-  <entry >1</entry>
+  <entry align="right">1</entry>
 </row>
 <row>
 <entry>RAM (GB)</entry>
-  <entry >8</entry>
+  <entry align="right">8</entry>
 </row>
 <row>
 <entry>Routers</entry>
-  <entry >2</entry>
+  <entry align="right">2</entry>
 </row>
 <row>
 <entry>Security Groups</entry>
-  <entry >4</entry>
+  <entry align="right">4</entry>
 </row>
 </tbody>
 </tgroup>
@@ -502,38 +499,38 @@ server trove-trove&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
 <p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack overcloud. The admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1" colwidth="300"/>
-<colspec colname="col2" colwidth="300"/>
+<colspec colname="col1"/>
+<colspec colname="col2"/>
 <thead>
 <row>
 <entry>Resource</entry>
-  <entry >Usage</entry>
+  <entry align="right">Usage</entry>
 </row>
 </thead>
 <tbody>
 <row>
 <entry>Floating IPs</entry>
-  <entry >16</entry>
+  <entry align="right">16</entry>
 </row>
 <row>
 <entry>Instances</entry>
-  <entry >4</entry>
+  <entry align="right">4</entry>
 </row>
 <row>
 <entry>Networks</entry>
-  <entry >1</entry>
+  <entry align="right">1</entry>
 </row>
 <row>
 <entry>RAM (GB)</entry>
-  <entry >8</entry>
+  <entry align="right">8</entry>
 </row>
 <row>
 <entry>Routers</entry>
-  <entry >2</entry>
+  <entry align="right">2</entry>
 </row>
 <row>
 <entry>Security Groups</entry>
-  <entry >4</entry>
+  <entry align="right">4</entry>
 </row>
 </tbody>
 </tgroup>
@@ -657,7 +654,8 @@ server marketplace&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
             packages</xref>.</li>
 </ol>
 <p>Your installation is now complete. If you encounter problems, refer to the <xref
-          href="1.2devplatform.troubleshooting.dita">Troubleshooting</xref> documentation.</p>
+          href="1.2devplatform.troubleshooting.dita#topic4855">Troubleshooting</xref>
+        documentation.</p>
 </section>
 </body>
 </topic>
