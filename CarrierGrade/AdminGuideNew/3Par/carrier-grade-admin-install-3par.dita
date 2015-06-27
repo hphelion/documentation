@@ -22,7 +22,7 @@
 <p>HP Helion OpenStack Carrier Grade provides a utility service called Sirius which can be used to
       configure 3PAR StoreServ arrays to realize block storage within the cloud.</p>
 <p>
-<b>Note:</b> 3PAR support applies only to HP Helion <tm tmtype="reg">OpenStack</tm> with KVM hypervisor support.</p>
+<b>Note:</b> 3PAR support applies only to HP Helion OpenStack with KVM hypervisor support.</p>
 <!---The Cinder integration drivers run as Python libraries in the Cinder service to facilitate communication between Cinder and StoreServ arrays.-->
 <!---Devices can be connected to Cinder using Fibre Channel (FC) or using the iSCSI protocol.-->
 <section id="high-level-overview-of-hp-3par-storeserv-integration"> <title>High-level overview of HP 3PAR StoreServ Integration</title>
@@ -59,19 +59,19 @@
 </codeblock>
 <p>Restart the multipath daemon <codeph>service multipath-tools restart</codeph> on all compute and controller nodes. The <codeph>multipath -ll</codeph> command  lists the devices and path.</p>
 <p>
-<b>Note</b>: With HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 release, 3PAR native multipath is enabled by default.</p>
+<b>Note</b>: With HP Helion OpenStack 1.1 release, 3PAR native multipath is enabled by default.</p>
 </section>
 <section id="working-with-hp-storeserv"> <title>Working with HP StoreServ</title>
 <p>HP 3PAR StoreServ can be configured for the cloud using the Horizon dashboard or using HP Sirius CLI</p>
 </section>
 <section id="using-the-dashboards"> <title>Using the dashboards</title>
 <p>You can use the <xref href="../Dashboard/carrier-grade.dashboard.how-works.dita">HP Helion
-          <tm tmtype="reg">OpenStack</tm> Dashboard</xref> to configure HP StoreServ.(Recommended)</p>
+          OpenStack Dashboard</xref> to configure HP StoreServ.(Recommended)</p>
 </section>
 <section id="using-the-cli"> <title>Using the CLI</title>
   <p>You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See <xref href="../../../CarrierGrade/AdminGuideNew/3Par/carrier-grade-admin-sirius-cli-workflow.dita" >Configuring Storage Using Sirius</xref>
 </p>
-<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">OpenStack</tm> command-line clients</xref>.</p>
+<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack command-line clients</xref>.</p>
 <p>
   <xref type="section" href="#topic3689"> Return to Top </xref>
 </p>

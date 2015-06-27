@@ -26,12 +26,12 @@
  <!--./CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-snmp-traps.md-->
  <!--permalink: /helion/openstack/carrier/admin/alarms/snmp/traps/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>SNMP trap destinations are hosts configured in the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade to receive unsolicited SNMP notifications.</p>
+<p>SNMP trap destinations are hosts configured in the HP Helion OpenStack Carrier Grade to receive unsolicited SNMP notifications.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>Destination hosts are specified by IP address, or by host name if it can be properly resolved by the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade.</p>
+<p>Destination hosts are specified by IP address, or by host name if it can be properly resolved by the HP Helion OpenStack Carrier Grade.</p>
 <p>Notifications are sent to the hosts using a designated community string so that they can be validated.</p>
 <ol>
 <li>

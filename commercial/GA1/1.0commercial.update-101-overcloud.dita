@@ -370,7 +370,7 @@ msql
 </codeblock>
 </li>
 <li>
-<p>Migrating hosts is outside the scope of this document, however using the list and availability zone info a user can use techniques. See <tm tmtype="reg">OpenStack</tm> documentation for <xref href="http://docs.openstack.org/admin-guide-cloud/content/section_live-migration-usage.html" scope="external" format="html" >Migrate instances</xref> and <xref href="http://docs.openstack.org/admin-guide-cloud/content/section_configuring-compute-migrations.html" scope="external" format="html" >Configure migrations</xref> to migrate workloads to a specific node.</p>
+<p>Migrating hosts is outside the scope of this document, however using the list and availability zone info a user can use techniques. See OpenStack documentation for <xref href="http://docs.openstack.org/admin-guide-cloud/content/section_live-migration-usage.html" scope="external" format="html" >Migrate instances</xref> and <xref href="http://docs.openstack.org/admin-guide-cloud/content/section_configuring-compute-migrations.html" scope="external" format="html" >Configure migrations</xref> to migrate workloads to a specific node.</p>
 </li>
 <li>
 <p>If this update affects several maintenance cycles, you can run the progress script to see where they are in the update process.</p>
@@ -475,7 +475,7 @@ To manage the VMs launched using the older Compute proxy, use the same hostname 
 <p>After the update is complete, you can execute a script to restart the service. See <xref href="../../commercial/GA1/1.0commercial.update-101-devplat.stopstart.dita" >Stopping and Starting the Development Platform Services</xref>.</p>
 </section>
 <section id="next-steps"> <title>Next Steps</title>
-<p>If your cloud uses the optional HP Helion <tm tmtype="reg">OpenStack</tm> DNSaaS (Domain Name Server as a Service), upgrade DNSaaS.</p>
+<p>If your cloud uses the optional HP Helion OpenStack DNSaaS (Domain Name Server as a Service), upgrade DNSaaS.</p>
 <p>For installation instructions, see <xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" >DNSaaS Installation and Configuration</xref>.</p>
 <p>
   <xref type="section" href="#topic14215"> Return to Top </xref>

@@ -52,7 +52,7 @@
     <section id="overview"><title>Overview</title>
 
 
-        <p>Helion Development Platform version 1.2 adds tools for creating instances of Windows Server 2012 R2 to a Helion OpenStack environment, and Visual 
+        <p>Helion Development Platform version 1.2 adds tools for creating instances of Windows Server 2012 R2 to a Helion <tm tmtype="reg">OpenStack</tm> environment, and Visual 
             Studio components for deploying .NET HTTP-based 
             applications to those server instances. Benefits of Windows/.NET support include:</p>
 <ul>

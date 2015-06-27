@@ -21,17 +21,15 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Overview/carrier-grade-overview-helion.md-->
  <!--permalink: /helion/openstack/carrier/helion/overview/--></p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade is a carrier-grade distribution of <tm
-        tmtype="reg">OpenStack</tm> the leading open source cloud computing platform. This
+<p>HP Helion OpenStack Carrier Grade is a carrier-grade distribution of OpenStack the leading open source cloud computing platform. This
       distribution, backed by HP, enables customers to more easily build, manage, and use
-      open-source based hybrid cloud in a resilient, maintainable platform. HP Helion <tm
-        tmtype="reg">OpenStack</tm> enables cost-effective scalability of IT services and business
+      open-source based hybrid cloud in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business
       agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud
       products, services, and professional support.</p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> offers many services based on the different <tm tmtype="reg">OpenStack</tm> projects to provide the functionality you need. Visit the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Services Overview page</xref> for a complete list of services.</p>
+<p>HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >HP Helion OpenStack Services Overview page</xref> for a complete list of services.</p>
     <!-- From http://wiki.hpcloud.net/display/core/Helion+Lifecycle+Management+Root -->
     <p>The Non-KVM environment includes a full installation of HP Helion Lifecycle Management (HLM).
-      HLM is an application that is used to deploy HP Helion <tm tmtype="reg">OpenStack</tm> Carrier
+      HLM is an application that is used to deploy HP Helion OpenStack Carrier
       Grade and can be used for ongoing operations and maintenance of the system.</p>
     <ul id="ul_bhj_clv_ls">
       <li>
@@ -62,7 +60,7 @@
       <li>
         <p>
           <b>Helion Operation &amp; Maintenance.</b> HLM is responsible for the deploy, upgrade and
-          maintenance lifecycle of the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade
+          maintenance lifecycle of the HP Helion OpenStack Carrier Grade
           system. See <xref href="carrier-grade-overview-hlm.dita#topic1771" type="section" scope="external" />.</p>
       </li>
     </ul>

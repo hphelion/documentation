@@ -94,11 +94,11 @@ Your use is subject to the following restrictions, unless specifically allowed i
 <p>
 <b>Commercial Service Provider</b> means a Customer acting as a third party service provider contracted by an end user to provide commercial services to that end user.</p>
 <p>
-<b>Development Platform</b>    means a collection of services that run on top of an HP <tm tmtype="reg">Helion OpenStack</tm> Cloud Fabric that are configured and operated to create a development and application runtime environment.</p>
+<b>Development Platform</b>    means a collection of services that run on top of an HP Helion <tm tmtype="reg">OpenStack</tm> Cloud Fabric that are configured and operated to create a development and application runtime environment.</p>
 <p>
-<b>HP <tm tmtype="reg">Helion OpenStack</tm>  Cloud Fabric</b>   means a collection of physical and virtual operating system environments using HP <tm tmtype="reg">Helion OpenStack</tm> Software that are configured and operated as a unit to provide virtualization, networking, website, storage and file services.</p>
+<b>HP Helion OpenStack  Cloud Fabric</b>   means a collection of physical and virtual operating system environments using HP Helion OpenStack Software that are configured and operated as a unit to provide virtualization, networking, website, storage and file services.</p>
 <p>
-<b>HP <tm tmtype="reg">Helion OpenStack</tm> Software</b>  means an HP <tm tmtype="reg">Helion OpenStack</tm> software product used for building, managing and consuming cloud services</p>
+<b>HP Helion OpenStack Software</b>  means an HP Helion OpenStack software product used for building, managing and consuming cloud services</p>
 <p>
 <b>Internal Use</b>    means use of the Software for purposes of supporting Customer's internal business operations or functions.</p>
 <p>
@@ -112,7 +112,7 @@ Your use is subject to the following restrictions, unless specifically allowed i
 <b>1.    Software:</b> 
 Subject to Customer's compliance with the terms and conditions of this Agreement, HP grants to Customer a non-exclusive, limited, non-sublicenseable, non-transferable, revocable license to Use Software to create, configure and operate a development and application runtime environment on a per Physical Server basis for the term as specified in the purchase agreement.</p>
 <ul>
-<li>Per Server License: Following purchase, this per-server license is to be assigned to a Physical Server that is properly licensed to Use HP <tm tmtype="reg">Helion OpenStack</tm> Software.  After assigning this license, you may Use the Software on these Physical Servers in order to create your Development Platform on top of your HP <tm tmtype="reg">Helion OpenStack</tm> Cloud Fabric</li>
+<li>Per Server License: Following purchase, this per-server license is to be assigned to a Physical Server that is properly licensed to Use HP Helion OpenStack Software.  After assigning this license, you may Use the Software on these Physical Servers in order to create your Development Platform on top of your HP Helion OpenStack Cloud Fabric</li>
 </ul>
 <p>
   <b>2. Other Terms:</b>
@@ -120,7 +120,7 @@ Subject to Customer's compliance with the terms and conditions of this Agreement
 <p>
 <b>a. Trademarks.</b>  Notwithstanding anything to the contrary in this Section, you may not distribute the Software or components of the Software using HP trademarks unless permitted to do so under a separate written agreement with HP.</p>
 <p>
-<b>b. Assigning Licenses:</b>  Before you can Use the Software to deploy your Development Platform, you must assign the per-Physical Server license to a Physical Server that is already validly licensed to run the HP <tm tmtype="reg">Helion OpenStack</tm> Cloud Fabric. Each Physical Server to which you assign a license is a licensed host server.</p>
+<b>b. Assigning Licenses:</b>  Before you can Use the Software to deploy your Development Platform, you must assign the per-Physical Server license to a Physical Server that is already validly licensed to run the HP Helion OpenStack Cloud Fabric. Each Physical Server to which you assign a license is a licensed host server.</p>
 <p>
 <b>c. Commercial Service Providers:</b> You must have an active HP Partner One agreement, Cloud Agile Service Provider agreement, Helion Network agreement or other HP resale or service provider agreement in order to resell Software or provide commercial services using the Software.  If you do not have an active reseller or service provider agreement you may only use the Software for Internal Use purposes.</p>
 <p>
@@ -142,7 +142,7 @@ Subject to Customer's compliance with the terms and conditions of this Agreement
 <p>
 <b>l. Updates and Supplements:</b>  We may update or supplement the Software. If so, you may use that update or supplement with the Software, subject to any additional terms that accompany the update or supplement.</p>
 <p>
-<b>m.</b> The <tm tmtype="reg">OpenStack</tm> word mark and the Square O Design, together or apart, are trademarks or registered trademarks of <tm tmtype="reg">OpenStack</tm> Foundation in the United States and other countries, and are used with the <tm tmtype="reg">OpenStack</tm> Foundation's permission.</p>
+<b>m.</b> The OpenStack word mark and the Square O Design, together or apart, are trademarks or registered trademarks of OpenStack Foundation in the United States and other countries, and are used with the OpenStack Foundation's permission.</p>
 <p>
   <xref type="section" href="#topic16699"> Return to Top </xref>
 </p>

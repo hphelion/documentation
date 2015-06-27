@@ -26,7 +26,7 @@
  <!--./CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms.md-->
  <!--permalink: /helion/openstack/carrier/admin/alarms/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade can generate system alarms when operational conditions change on any of the hosts in the cluster.</p>
+<p>HP Helion OpenStack Carrier Grade can generate system alarms when operational conditions change on any of the hosts in the cluster.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>

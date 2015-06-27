@@ -34,7 +34,7 @@
 <li>Recovery</li>
 <li>Copy-on-write Clones from Glance images to Cinder volumes</li>
 </ul>
-<p>For Glance-Ceph integration, the Helion <tm tmtype="reg">OpenStack</tm> Ceph Configuration service performs the following steps. For more details about the process of integrating a Ceph storage cluster with Glance, refer to  <xref href="http://ceph.com/docs/master/rbd/rbd-openstack/?highlight=openstack%20glance" scope="external" format="html" >Ceph documentation</xref>
+<p>For Glance-Ceph integration, the Helion OpenStack Ceph Configuration service performs the following steps. For more details about the process of integrating a Ceph storage cluster with Glance, refer to  <xref href="http://ceph.com/docs/master/rbd/rbd-openstack/?highlight=openstack%20glance" scope="external" format="html" >Ceph documentation</xref>
 </p>
 <p>The following steps are automatically performed when you download and execute <codeph>Ceph_client</codeph> script from the controller and compute nodes as per the readme file in the tar file.</p>
 <ol>

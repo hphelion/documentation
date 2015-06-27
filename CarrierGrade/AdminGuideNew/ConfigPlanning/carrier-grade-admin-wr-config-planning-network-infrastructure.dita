@@ -33,7 +33,7 @@
 <!-- ===================== horizontal rule ===================== -->
 <p>Ihe infrastructure network shares the design considerations applicable to the internal management network. It can be implemented using either a 1 Gb or 10 Gb Ethernet interface. Unlike the management network, it can be VLAN-tagged, enabling it to share an interface with the management or OAM network.</p>
 <p>The decision whether to implement an infrastructure network depends on the infrastructure traffic levels expected.</p>
-<p>The following table provides general guidelines on when to implement the infrastructure network, using the number of compute nodes in the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade cluster as an indication of expected traffic levels:</p>
+<p>The following table provides general guidelines on when to implement the infrastructure network, using the number of compute nodes in the HP Helion OpenStack Carrier Grade cluster as an indication of expected traffic levels:</p>
 <ul>
 <li>
 <b>2 to 4 nodes</b> - No infrastructure network required. All infrastructure traffic is carried over the internal management network.</li>

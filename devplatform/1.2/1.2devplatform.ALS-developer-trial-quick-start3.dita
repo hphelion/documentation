@@ -57,7 +57,7 @@
               cluster. This RC file has been pre-configured for this sandbox project. <ol>
                 <li>Click <b>Access &amp; Security</b> and then click the <b>API Access</b>
                   tab.</li>
-                <li> Click <b>Download OpenStack RC file</b>.<image
+                <li> Click <b>Download <tm tmtype="reg">OpenStack</tm> RC file</b>.<image
                     href="../../media/quickstartC11.png" placement="break"/></li>
               </ol>
             </li>

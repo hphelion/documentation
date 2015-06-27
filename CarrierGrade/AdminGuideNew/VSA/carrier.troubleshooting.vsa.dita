@@ -25,7 +25,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/VSA/carrier.troubleshooting.vsa.md-->
  <!--permalink: /helion/openstack/carrier/services/troubleshooting/vsa/--></p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP Helion OpenStack is an OpenStack technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <p>Troubleshooting issues related to HP StoreVirtual VSA environments.</p>
 <ul>
 <li>
@@ -429,7 +429,7 @@ When there are less than two drives in the machine, the script will fail to exec
 <p>
   <b>System Behavior/Message</b>
 </p>
-<p>As of Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1:,  when you install Helion <tm tmtype="reg">OpenStack</tm> if you do not specify the public interface for VSA (with the <codeph>VSA_PUBLIC_INTERFACE</codeph> parameter), then updates will not take this parameter into account.</p>
+<p>As of Helion OpenStack Carrier Grade 1.1:,  when you install Helion OpenStack if you do not specify the public interface for VSA (with the <codeph>VSA_PUBLIC_INTERFACE</codeph> parameter), then updates will not take this parameter into account.</p>
 <p>
   <b>Resolution</b>
 </p>

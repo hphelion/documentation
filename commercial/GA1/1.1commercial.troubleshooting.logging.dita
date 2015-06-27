@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.logging.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/logging/--></p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP Helion OpenStack is an OpenStack technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <section id="logging-best-practices"> <title>Logging Best Practices</title>
 <p>By default a full backup includes all logs. Logs can  be large,  which can slow down the backup process. During this time, the control plane is offline.</p>
 <p>To balance having useful logs with optimizing system performance, you should routinely clean up logs from <codeph>logstash</codeph> to only keep logs of interest. You should only do a full backup if you need to preserve logs. In  most cases, the exclude option is appropriate.</p>

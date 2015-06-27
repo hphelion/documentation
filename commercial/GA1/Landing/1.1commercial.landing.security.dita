@@ -20,7 +20,7 @@
  <!--permalink: /helion/openstack/1.1/landing/security/--></p>
 <p>
 <xref href="../../../commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita" >Configuring Your Network Securely</xref>
-<!--A BR tag was used here in the original source.-->Learn about how to configure your HP Helion <tm tmtype="reg">OpenStack</tm> network securely.</p>
+<!--A BR tag was used here in the original source.-->Learn about how to configure your HP Helion OpenStack network securely.</p>
 <!-- ===================== horizontal rule ===================== -->
 </body>
 </topic>

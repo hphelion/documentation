@@ -20,7 +20,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.install-GA-ovsvapp.update.md-->
  <!--permalink: /helion/openstack/1.1/install/ovsvapp/update/--></p>
-<p>HP Virtual Cloud Networking (VCN) is an enhanced Networking Operations (Neutron) service module of HP Helion <tm tmtype="reg">OpenStack</tm> that delivers network virtualization to orchestrate your data center infrastructure.</p>
+<p>HP Virtual Cloud Networking (VCN) is an enhanced Networking Operations (Neutron) service module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.</p>
 <section id="update"> <title>Update OVSvApp from version 1.01 to version 1.1</title>
 <p>Use the following steps to update the OVSvApp.</p>
 <p>Peform the update from the system where OVSvApp passwordless authentication is enabled. That is, from the system where <codeph>id_rsa</codeph> key is present for the public key (<codeph>id_rsa.pub</codeph>) that was used during OVSvApp 1.0 installation.</p>

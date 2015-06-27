@@ -13,7 +13,7 @@
  <!--./CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.live.migrate.md-->
  <!--permalink: /helion/commercial/carrier/dashboard/managing/instances/live/migrate/--></p>
 <p>Live migration occurs when a virtual machine is transferred to execute on a different compute node with minimal disruption of the guest applications. This can happen automatically, or upon request by the system administrator.</p>
-<p>While executing a live migration operation, HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade manages the state of each virtual machine in such a way that it appears unmodified on the migrated instance. This includes:</p>
+<p>While executing a live migration operation, HP Helion OpenStack Carrier Grade manages the state of each virtual machine in such a way that it appears unmodified on the migrated instance. This includes:</p>
 <ul>
 <li>system memory, both kernel and user space</li>
 <li>access to all non-local storage resources, including LVM/iSCSI and Cinder</li>

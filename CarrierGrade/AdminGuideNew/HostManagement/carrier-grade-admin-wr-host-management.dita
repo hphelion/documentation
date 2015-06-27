@@ -26,7 +26,7 @@
  <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.md-->
  <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/host/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>The <b>Hosts</b> tab on the <b>System Inventory</b> page provides an overview of the current state of all hosts in the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade cluster. From this tab, you can obtain detailed information about the hosts, and execute maintenance operations.</p>
+<p>The <b>Hosts</b> tab on the <b>System Inventory</b> page provides an overview of the current state of all hosts in the HP Helion OpenStack Carrier Grade cluster. From this tab, you can obtain detailed information about the hosts, and execute maintenance operations.</p>
 <ul>
 <li>
 <xref type="section" href="#topic11233/view">Viewing information on Hosts</xref>
@@ -61,7 +61,7 @@
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>
@@ -106,7 +106,7 @@ columns:</p>
 
 <ul>
 <li>
-<b>Offline</b> - The host is known to the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade, but is not reachable for maintenance purposes.</li>
+<b>Offline</b> - The host is known to the HP Helion OpenStack Carrier Grade, but is not reachable for maintenance purposes.</li>
 <li>
 <b>Online</b> -  The host is reachable and ready to be unlocked.</li>
 <li>
@@ -116,7 +116,7 @@ columns:</p>
 <li>
 <b>Degraded</b> - The host is experiencing compromised operational conditions, such as low memory, but is still providing the expected services. Details about the compromised conditions are available through the alarms subsystem. See System Alarms on page 139 for details.</li>
 <li>
-<b>Failed</b> -  A major fault has occurred and the host is no longer providing any services. The HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade maintenance system automatically tries to recover hosts in this state.</li>
+<b>Failed</b> -  A major fault has occurred and the host is no longer providing any services. The HP Helion OpenStack Carrier Grade maintenance system automatically tries to recover hosts in this state.</li>
 <li>
 <b>Power-off</b> -  The host is known to have been powered off by a previous maintenance action.</li>
 </ul>
@@ -140,7 +140,7 @@ columns:</p>
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
@@ -164,7 +164,7 @@ Where &lt;hostname&gt; is the name of the system.
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
@@ -187,7 +187,7 @@ Where &lt;hostname&gt; is the name of the system.
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
@@ -208,12 +208,12 @@ Where &lt;hostname&gt; is the name of the system.
 </codeblock>
 </section>
 <section id="reinstall"> <title>Reinstall a Host</title>
-<p>Forces a full re-installation of the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade software on the host. The host's hard drive is erased, and the installation process is started afresh.</p>
+<p>Forces a full re-installation of the HP Helion OpenStack Carrier Grade software on the host. The host's hard drive is erased, and the installation process is started afresh.</p>
 <p>To reinstall a host:</p>
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
@@ -229,7 +229,7 @@ Where &lt;hostname&gt; is the name of the system.
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
@@ -254,7 +254,7 @@ Use this option when you need to lock the currently active controller, or do any
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Hosts</b> tab.</p>
@@ -272,14 +272,14 @@ Where &lt;hostname&gt; is the name of the system.
 </codeblock>
 </section>
 <section id="life"> <title>The life cycle of a host</title>
-<p>The life cycle of a host is the set of state transitions the host goes through as its current state changes. The host states in the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade are based on the ITU X.731 State Management Function Specification for Open Systems.</p>
+<p>The life cycle of a host is the set of state transitions the host goes through as its current state changes. The host states in the HP Helion OpenStack Carrier Grade are based on the ITU X.731 State Management Function Specification for Open Systems.</p>
 <p>The current state of a host is determined by the allowed combinations of the administrative, operational, and availability states at any given time.</p>
 <p>The life cycle of a new host starts when it is discovered by the active controller on the internal management network.</p>
 <p>A new host is initially reported as <codeph>Offline</codeph>. As an exception, the first controller, controller-0, is automatically set to available during initial commissioning.</p>
 <p>The following are the available transitions:</p>
 <ul>
 <li>
-<b>Offline to Online</b> - This transition takes place once the administrator configures the host name and personality of the host. During the transition, the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade software is installed and the host reboots. The transition concludes when the controller establishes maintenance and inventory connectivity with the new host.</li>
+<b>Offline to Online</b> - This transition takes place once the administrator configures the host name and personality of the host. During the transition, the HP Helion OpenStack Carrier Grade software is installed and the host reboots. The transition concludes when the controller establishes maintenance and inventory connectivity with the new host.</li>
 <li>
 <b>Online to InTest</b> - This transition takes place when the administrator requests to move the host from the locked to the unlocked administrative states. The host reboots first. After it finishes booting, it establishes maintenance communication and enters the transient InTest state. While in this state, the configuration is applied, and a set of hardware and software tests are executed to ensure the integrity of the host.</li>
 <li>

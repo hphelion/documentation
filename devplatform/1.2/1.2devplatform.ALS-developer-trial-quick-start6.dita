@@ -22,7 +22,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start6.md-->
  <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/6/--></p>
-<p>We have provided several sample applications in multiple programming languages. Exploring and deploying these simple apps will help you understand how the push process works and how applications can be connected to the other HP <tm tmtype="reg">Helion OpenStack</tm> services.</p>
+<p>We have provided several sample applications in multiple programming languages. Exploring and deploying these simple apps will help you understand how the push process works and how applications can be connected to the other HP Helion <tm tmtype="reg">OpenStack</tm> services.</p>
 <simpletable>
 <strow>
                         <stentry>1. <xref href="ALS-developer-trial-quick-start">Register for your
@@ -48,8 +48,7 @@
                                                 applications </xref>in multiple programming
                                         languages for you to examine and deploy. These very simple
                                         applications provide insight on how to push applications and
-                                        connect those applications to HP Helion <tm tmtype="reg"
-                                                >OpenStack</tm> services. <p>If you are interested
+                                        connect those applications to HP Helion OpenStack services. <p>If you are interested
                                                 in exploring the new functionality, you can jump
                                                 right into <xref
                                                   href="windows/windows_firstapp.dita#topic_amr_q3w_js"

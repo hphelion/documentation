@@ -29,19 +29,19 @@
 
 </p>
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
-<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Orchestration service leverages <tm tmtype="reg">OpenStack</tm> Heat to provide template-based orchestration for describing a cloud application. It executes <tm tmtype="reg">OpenStack</tm> API calls to generate running cloud applications.</p>
+<p>The HP Helion OpenStack Orchestration service leverages OpenStack Heat to provide template-based orchestration for describing a cloud application. It executes OpenStack API calls to generate running cloud applications.</p>
 <section id="working-with-the-orchestration-service"> <title>Working with the Orchestration Service</title>
 <p>To <xref type="section" href="#topic2585/howto">perform tasks using the Orchestration service</xref>, you can use the dashboard, API or CLI.</p>
 </section>
 <section id="UI"> <title>Using the dashboards<!--Removed anchor point UI--><!-- id="UI" --></title>
-<p>You can use the <xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Dashboard</xref> to work with the Compute service.</p>
+<p>You can use the <xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita" >HP Helion OpenStack Dashboard</xref> to work with the Compute service.</p>
 </section>
 <section id="API"> <title>Using the API<!--Removed anchor point API--><!-- id="API" --></title>
-<p>You can use a low-level, raw REST API access to the Orchestration service. See the <xref href="http://developer.openstack.org/api-ref-orchestration-v1.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Orchestration API v1 Reference</xref>.</p>
+<p>You can use a low-level, raw REST API access to the Orchestration service. See the <xref href="http://developer.openstack.org/api-ref-orchestration-v1.html" scope="external" format="html" >OpenStack Orchestration API v1 Reference</xref>.</p>
 </section>
 <section id="cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
-<p>You can use any of several command-line interface software to access the Orchestration service. See the <xref href="http://docs.openstack.org/cli-reference/content/heatclient_commands.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Command Line Interface Reference</xref>.</p>
-<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the <tm tmtype="reg">OpenStack</tm> command-line clients</xref>.</p>
+<p>You can use any of several command-line interface software to access the Orchestration service. See the <xref href="http://docs.openstack.org/cli-reference/content/heatclient_commands.html" scope="external" format="html" >OpenStack Command Line Interface Reference</xref>.</p>
+<p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack command-line clients</xref>.</p>
 </section>
 <section id="maintaining-heat-templates"> <title>Maintaining Heat templates</title>
 <p>Because you can modify Heat templates, any updates to <codeph>openstack/tripleo-heat-templates</codeph> by design do not automatically overwrite existing templates. If you are using a modified heat template, then update the new templates provided with the installer to reflect your modifications in your previous deployment.</p>
@@ -51,7 +51,7 @@
 
 Taken from http://docs.openstack.org/user-guide/content/heatclient_commands.html 
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion <tm tmtype="reg">OpenStack</tm> Dashboard](/helion/openstack/1.1/dashboard/how-works/), the <tm tmtype="reg">OpenStack</tm> [CLI](http://docs.openstack.org/cli-reference/content/heatclient_commands.html) or <tm tmtype="reg">OpenStack</tm> [API](http://developer.openstack.org/api-ref-orchestration-v1.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/heatclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-orchestration-v1.html).
 
 ### Working with stacks ###
 
@@ -72,7 +72,7 @@ The Orchestration service allows users to work with stacks, which are a mechanis
 -->
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together. However, the HP Helion <tm tmtype="reg">OpenStack</tm> takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
+<p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The <i>Operations</i> section contains information on how to manage the system.</p>
 <p>
   <xref type="section" href="#topic2585"> Return to Top </xref>
 </p>

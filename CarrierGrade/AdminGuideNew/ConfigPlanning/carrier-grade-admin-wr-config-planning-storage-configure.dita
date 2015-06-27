@@ -43,7 +43,7 @@
 <ol>
 <li>
         <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
-          <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</li>
+          OpenStack Horizon Dashboard</xref>.</li>
 <li>Click <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then
         selecting the <b>Hosts</b> tab.</li>
 <li>

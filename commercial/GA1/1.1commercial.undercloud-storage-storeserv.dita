@@ -411,7 +411,7 @@
 </ol>
 </section>
 <section id="view-cpg"> <title>View CPG configuration</title>
-<p>Use this option to view the CPG configuration (as defined in <tm tmtype="reg">OpenStack</tm> Configuration Manual for HP 3PAR Cinder Block Storage Volume Driver).</p>
+<p>Use this option to view the CPG configuration (as defined in OpenStack Configuration Manual for HP 3PAR Cinder Block Storage Volume Driver).</p>
 <ol>
 <li>
 <p>Log in to the undercloud Horizon dashboard.</p>

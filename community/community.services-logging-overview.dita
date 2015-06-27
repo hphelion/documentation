@@ -12,10 +12,10 @@
 <!--PUBLISHED-->
  <!--./community/community.services-logging-overview.md-->
  <!--permalink: /helion/community/services/logging/overview/--></p>
-<p>Because a typical HP Helion <tm tmtype="reg">OpenStack</tm> cloud consists of multiple servers, locating a specific log from a specific server can be difficult.</p>
-<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Centralized Logging feature collects logs on a central system, rather than leaving the logs scattered across the network. The administrator can use a single graphic interface to view log information in charts, graphs, tables, histograms, and other forms.</p>
-<p>Centralized logging helps the administrator triage and troubleshoot the distributed HP Helion <tm tmtype="reg">OpenStack</tm> cloud deployment from a single location. The admin is not required to access the several remote servers (SSH) to view the individual log files.</p>
-<p>In addition to each of the <xref href="../community/community.services-overview.dita" >HP Helion services</xref>, Centralized Logging also processed logs for the following HP Helion <tm tmtype="reg">OpenStack</tm> features:</p>
+<p>Because a typical HP Helion OpenStack cloud consists of multiple servers, locating a specific log from a specific server can be difficult.</p>
+<p>The HP Helion OpenStack Centralized Logging feature collects logs on a central system, rather than leaving the logs scattered across the network. The administrator can use a single graphic interface to view log information in charts, graphs, tables, histograms, and other forms.</p>
+<p>Centralized logging helps the administrator triage and troubleshoot the distributed HP Helion OpenStack cloud deployment from a single location. The admin is not required to access the several remote servers (SSH) to view the individual log files.</p>
+<p>In addition to each of the <xref href="../community/community.services-overview.dita" >HP Helion services</xref>, Centralized Logging also processed logs for the following HP Helion OpenStack features:</p>
 <ul>
 <li>HAProxy</li>
 <li>syslog</li>
@@ -46,7 +46,7 @@
 </li>
 </ul>
 <section id="install"> <title>Installation</title>
-<p>The Centralized Logging feature is automatically installed in the undercloud as part of the HP Helion <tm tmtype="reg">OpenStack</tm> installation.</p>
+<p>The Centralized Logging feature is automatically installed in the undercloud as part of the HP Helion OpenStack installation.</p>
 <p>No specific configuration is required to use Centralized Logging. However, you can tune or configure the individual components as needed for your environment. Tuning and configuring these components is outside the scope of this document.</p>
 </section>
 <section id="components"> <title>Centralized Logging components</title>

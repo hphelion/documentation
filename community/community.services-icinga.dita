@@ -15,7 +15,7 @@
 <p>The <b>
 <i>Icinga</i>
 </b> service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s).</p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> allows you to monitor Swift cluster in any of the followings ways:</p>
+<p>HP Helion OpenStack allows you to monitor Swift cluster in any of the followings ways:</p>
 <ul>
 <li>
 <xref type="section" href="#topic6490/diskuse">Monitor Disk Usage</xref>
@@ -29,7 +29,7 @@
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
-<li>HP Helion <tm tmtype="reg">OpenStack</tm> cloud is successfully deployed. </li>
+<li>HP Helion OpenStack cloud is successfully deployed. </li>
 <li>All nodes are functional by default as they are part of cloud deployment</li>
 <li>The Icinga service is active and running in the undercloud</li>
 </ul>
@@ -102,7 +102,7 @@
                             <entry>WARNING </entry>
                             <entry>Disk space low</entry>
                             <entry>The percentage used space of one of the disk drives exceeds the
-                                user defined threshold(Default set to 85% for HP Helion <tm tmtype="reg">OpenStack</tm>
+                                user defined threshold(Default set to 85% for HP Helion OpenStack
                                 1.0). It is important to prevent Swift devices becoming full because
                                 it is difficult to recover if this happens. To resolve, add more
                                 devices to the rings or ask your users to delete objects.</entry>

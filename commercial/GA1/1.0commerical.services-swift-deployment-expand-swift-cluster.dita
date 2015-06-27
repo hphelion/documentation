@@ -29,7 +29,7 @@
 <p>
 
 </p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> allows you to expand Object Storage (Swift) clusters in any of the followings ways:</p>
+<p>HP Helion OpenStack allows you to expand Object Storage (Swift) clusters in any of the followings ways:</p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment-add-disk-storage-node.dita" >Add a New Scale-out Object Node</xref> </li>

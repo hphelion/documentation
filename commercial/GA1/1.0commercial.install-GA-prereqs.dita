@@ -82,7 +82,7 @@
 <!--[Downloading installation packages](#install-pkg)--></li>
 </ul>
 <section id="hardware"> <title>Hardware and software requirements</title>
-<p>For supported hardware and hardware requirements, and software requirements, see the <xref href="../../commercial/GA1/1.0commercial.install-GA-supportmatrix.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Support Matrix</xref>.</p>
+<p>For supported hardware and hardware requirements, and software requirements, see the <xref href="../../commercial/GA1/1.0commercial.install-GA-supportmatrix.dita" >HP Helion OpenStack Support Matrix</xref>.</p>
 </section>
 <section id="required"> <title>Required tasks</title>
 <p>Make sure the following required tasks are completed before you begin the installation.</p>
@@ -137,7 +137,7 @@
 </ul>
 </section>
 <section id="network_prepare"> <title>Preparing the network</title>
-<p>Before installing HP Helion <tm tmtype="reg">OpenStack</tm> you are responsible for preparing the network for all installations. You must also prepare the network based on the type of hypervisor you are installing, KVM or ESX.</p>
+<p>Before installing HP Helion OpenStack you are responsible for preparing the network for all installations. You must also prepare the network based on the type of hypervisor you are installing, KVM or ESX.</p>
 <p>The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the Management network as described in this section.</p>
 </section>
 <section id="network"> <title>Preparing all networks</title>
@@ -150,7 +150,7 @@
 <p>Nodes on this management network must be able to reach the ILOS of the baremetal systems to enable host reboots as part of the install process.</p>
 </li>
 <li>
-<p>The Helion <tm tmtype="reg">OpenStack</tm> architecture required that the IPMI network is a separate network and a route exists from management network to the IPMI network for ILO access as explained above.</p>
+<p>The Helion OpenStack architecture required that the IPMI network is a separate network and a route exists from management network to the IPMI network for ILO access as explained above.</p>
 </li>
 <li>
 <p>Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.</p>
@@ -162,26 +162,26 @@
 <p>The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.</p>
 </li>
 </ul>
-<p>In addition to preparing all HP Helion <tm tmtype="reg">OpenStack</tm> cloud networks, you need perform additional  tasks based on which hypervisor you are using: <xref type="section" href="#topic14044/network_KVM">KVM</xref> or <xref type="section" href="#topic14044/network_ESX">ESX</xref>.</p>
+<p>In addition to preparing all HP Helion OpenStack cloud networks, you need perform additional  tasks based on which hypervisor you are using: <xref type="section" href="#topic14044/network_KVM">KVM</xref> or <xref type="section" href="#topic14044/network_ESX">ESX</xref>.</p>
 </section>
 <section id="network_KVM"> <title>Preparing the network for a KVM installation</title>
-<p>If you are installing HP Helion <tm tmtype="reg">OpenStack</tm> with KVM hypervisor support, you must configure your network as shown in the following diagram.</p>
+<p>If you are installing HP Helion OpenStack with KVM hypervisor support, you must configure your network as shown in the following diagram.</p>
 <p>
-<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion <tm tmtype="reg">OpenStack</tm> architecture diagram for KVM network architecture.</xref>(opens in a new window)</p>
+<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack architecture diagram for KVM network architecture.</xref>(opens in a new window)</p>
 <p>You are responsible for providing the internal and external customer router and making sure the external, IPMI, and service networks are routed to and from the management network.</p>
 <p>
   <b>Notes:</b>
 </p>
 <ul>
 <li>Distributed Virtual Routing (DVR) is used to route traffic between VMs and outside the cloud. As such, every Compute Node has a connection to the external network.</li>
-<li>Access to <tm tmtype="reg">OpenStack</tm> service APIs is from the management network.</li>
+<li>Access to OpenStack service APIs is from the management network.</li>
 <li>The network path for platform service log messages is from the VM, to the service network (installed as a second vNIC), to the Customer Router, to  the management network, to the undercloud RabbitMQ, to LogStash.</li>
 </ul>
 </section>
 <section id="network_ESX"> <title>Preparing the network for an ESX installation</title>
-<p>If you are installing HP Helion <tm tmtype="reg">OpenStack</tm> for ESX hypervisor support, you must configure your network as shown in the following diagram.</p>
+<p>If you are installing HP Helion OpenStack for ESX hypervisor support, you must configure your network as shown in the following diagram.</p>
 <p>
-<xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion <tm tmtype="reg">OpenStack</tm> architecture diagram for ESX network architecture.</xref>(opens in a new window)</p>
+<xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack architecture diagram for ESX network architecture.</xref>(opens in a new window)</p>
 </section>
 <section id="install_network_ESX"> <title>Installing networks for ESX</title>
 <p>For ESX deployments, you must install and configure two specific networks:</p>
@@ -210,7 +210,7 @@
 -->
 </section>
 <section id="other_network_ESX"> <title>Other customer responsibilities and requirements for ESX</title>
-<p>You are responsible for the following before beginning the HP Helion <tm tmtype="reg">OpenStack</tm> installation:</p>
+<p>You are responsible for the following before beginning the HP Helion OpenStack installation:</p>
 <ul>
 <li>
 <p>installing and configuring VMWare vSphere version 5.5;</p>
@@ -278,7 +278,7 @@
 </ul>
 </section>
 <section id="ubuntu"> <title>Install Ubuntu 14.04 LTS</title>
-<p>The seed cloud host must have Ubuntu 14.04 LTS installed before performing the HP Helion <tm tmtype="reg">OpenStack</tm> installation.</p>
+<p>The seed cloud host must have Ubuntu 14.04 LTS installed before performing the HP Helion OpenStack installation.</p>
 </section>
 <section id="ssh"> <title>Configure SSH</title>
 <p>On the seed cloud host, the OpenSSH server must be running and the firewall
@@ -322,13 +322,13 @@
 <section id="ntp"> <title>Install and configure NTP</title>
 <p>NTP is a networking protocol for clock synchronization between computer systems.</p>
 <p>Before you start the installation, you must install NTP on the seed cloud host (installation system) and configure it as a NTP server. You will configure the undercloud and overcloud systems as NTP clients during the installation process.</p>
-<p>For information on installing NTP on the seed cloud host, see HP Helion <xref href="../../commercial/GA1/1.0commercial.install-GA-NTP.dita" ><tm tmtype="reg">OpenStack</tm> Installation: NTP Server</xref>.</p>
+<p>For information on installing NTP on the seed cloud host, see HP Helion <xref href="../../commercial/GA1/1.0commercial.install-GA-NTP.dita" >OpenStack Installation: NTP Server</xref>.</p>
 </section>
 <section id="getinstall"> <title>Download and unpack the installation package</title>
-<p>Before you begin, you must download the required HP Helion <tm tmtype="reg">OpenStack</tm> installation package(s):</p>
+<p>Before you begin, you must download the required HP Helion OpenStack installation package(s):</p>
 <ol>
 <li>
-<p>Register and then log in to download the required installation package(s) from <xref href="https://helion.hpwsportal.com#/Product/%7B%22productId%22%3A%221247%22%7D/Show" type="section" scope="external" format="html" >HP Helion <tm tmtype="reg">OpenStack</tm> product installation</xref>.</p>
+<p>Register and then log in to download the required installation package(s) from <xref href="https://helion.hpwsportal.com#/Product/%7B%22productId%22%3A%221247%22%7D/Show" type="section" scope="external" format="html" >HP Helion OpenStack product installation</xref>.</p>
 
 <ul>
 <li>
@@ -350,8 +350,8 @@
 </entry>
 </row>
 <row>
-<entry>HP Helion <tm tmtype="reg">OpenStack</tm></entry>
-<entry>HP_Helion_<tm tmtype="reg">OpenStack</tm></entry>
+<entry>HP Helion OpenStack</entry>
+<entry>HP_Helion_OpenStack</entry>
 </row>
 </tbody>
 </tgroup>
@@ -376,11 +376,11 @@
 </entry>
 </row>
 <row>
-<entry>HP Helion <tm tmtype="reg">OpenStack</tm></entry>
-<entry>HP_Helion_<tm tmtype="reg">OpenStack</tm></entry>
+<entry>HP Helion OpenStack</entry>
+<entry>HP_Helion_OpenStack</entry>
 </row>
 <row>
-<entry>HP Helion <tm tmtype="reg">OpenStack</tm> vCenter Proxy Appliance</entry>
+<entry>HP Helion OpenStack vCenter Proxy Appliance</entry>
 <entry>overcloud_vcenter_compute_proxy_1.0.1.ova</entry>
 </row>
 </tbody>
@@ -401,7 +401,7 @@
 <p>Copy the installation package to the seed cloud host.</p>
 </li>
 <li>
-<p>Extract the HP Helion <tm tmtype="reg">OpenStack</tm> installation package to the <codeph>root</codeph> directory:</p>
+<p>Extract the HP Helion OpenStack installation package to the <codeph>root</codeph> directory:</p>
 
 <codeblock>
 <codeph>tar zxvf /root/HP_Helion_Openstack
@@ -413,7 +413,7 @@
 </ol>
 </section>
 <section id="envars"> <title>Editing the JSON Environment Variables File for Installation</title>
-<p>To make the HP Helion <tm tmtype="reg">OpenStack</tm> installation process easier, you can enter all of the environment variables required by the installer into a JSON file that will be executed automatically. A JSON file is included in the installation package that you can modify with your environment variables.</p>
+<p>To make the HP Helion OpenStack installation process easier, you can enter all of the environment variables required by the installer into a JSON file that will be executed automatically. A JSON file is included in the installation package that you can modify with your environment variables.</p>
 <p>For information on editing the JSON environment variables file, see <xref href="../../commercial/GA1/1.0commercial.install-GA-JSON.dita" >Editing the JSON Environment Variables File for Installation</xref>.</p>
 </section>
 <section id="csv"> <title>Create the baremetal.csv file</title>
@@ -463,8 +463,8 @@
 </section>
 <section id="ldap"> <title>Integrating LDAP (Lightweight Directory Access Protocol)</title>
 <p>
-<b>OPTIONAL</b> The HP Helion <tm tmtype="reg">OpenStack</tm> Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion <tm tmtype="reg">OpenStack</tm> installation process.</p>
-<p>For information on integrating LDAP, see <xref href="../../commercial/GA1/1.0commercial.install-GA-LDAP.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Integrating LDAP</xref>.</p>
+<b>OPTIONAL</b> The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.</p>
+<p>For information on integrating LDAP, see <xref href="../../commercial/GA1/1.0commercial.install-GA-LDAP.dita" >HP Helion OpenStack Integrating LDAP</xref>.</p>
 </section>
 <section id="nextstep"> <title>Next steps</title>
 <ul>
@@ -477,7 +477,7 @@
 </ul>
 </section>
 <section id="moreinfo"> <title>For more information</title>
-<p>For more information on HP Helion <tm tmtype="reg">OpenStack</tm> see:</p>
+<p>For more information on HP Helion OpenStack see:</p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.0commercial.install-GA-supportmatrix.dita" >Support matrix</xref> </li>

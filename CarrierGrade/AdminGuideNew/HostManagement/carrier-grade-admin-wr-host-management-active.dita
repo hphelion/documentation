@@ -26,7 +26,7 @@
  <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active.md-->
  <!--permalink: /helion/openstack/carrier/admin/host/management/active/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>You can add or remove hosts and change disks without interrupting the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade.</p>
+<p>You can add or remove hosts and change disks without interrupting the HP Helion OpenStack Carrier Grade.</p>
 <p>To make changes to a host, you must lock it. Locking a host automatically and seamlessly redirects activity to other available hosts. While the host is locked, you can safely power it down and make disk changes, or remove the host and insert a new one.</p>
 <p>After making the required configuration changes, you can unlock the host and begin using it.</p>
 <ul>
@@ -50,7 +50,7 @@
 </li>
 </ul>
 <p>Managing Compute Nodes
-The compute nodes in HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade form a resource pool for hosting guest instances. You can
+The compute nodes in HP Helion OpenStack Carrier Grade form a resource pool for hosting guest instances. You can
 manage this pool by managing the hosts.
 You can change the resource pool in several ways:
 * You can add or remove hosts to increase or decrease the size of the pool.
@@ -60,8 +60,8 @@ You can change the resource pool in several ways:
 Caution:
 When replacing or adjusting a host, ensure that the overall resource pool still meets the requirements for your
 system.
-HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1 Administration Guide | Managing Hardware Resources | 99
-Complete instructions for adding a compute node are provided in the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade Software
+HP Helion OpenStack Carrier Grade 1.1 Administration Guide | Managing Hardware Resources | 99
+Complete instructions for adding a compute node are provided in the HP Helion OpenStack Carrier Grade Software
 Installation Guide: Initializing and Configuring Compute Nodes.
 Removing Compute Nodes
 You can remove a compute node from the pool of available resources.
@@ -75,7 +75,7 @@ Open the Hosts list by clicking Inventory on the System Panel section of the Adm
 the Hosts tab.
 Click More &gt; Lock Host for the host.
 Wait for the procedure to be completed.
-2. Delete the host from the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade system.
+2. Delete the host from the HP Helion OpenStack Carrier Grade system.
 Click More &gt; Delete Host for the host.
 3. Power down the host and remove the hardware from the cluster.
 Adjusting Resources on a Compute Node

@@ -12,7 +12,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
-<p>Helion Lifecycle Management (HLM) consists of the ongoing operations/maintenance as well as the initial deployment of the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade system.</p>
+<p>Helion Lifecycle Management (HLM) consists of the ongoing operations/maintenance as well as the initial deployment of the HP Helion OpenStack Carrier Grade system.</p>
 <p>HLM consists of initial HLM node deployment followed by Helion cloud nodes deployment.</p>
 <section id="logging"> <title>Logging</title>
 <p>For all scripts that are executed (including <codeph>hlm-build</codeph> and <codeph>h*</codeph> scripts below), separate log files are generated on <codeph>/var/log/hlm/</codeph> folder.</p>

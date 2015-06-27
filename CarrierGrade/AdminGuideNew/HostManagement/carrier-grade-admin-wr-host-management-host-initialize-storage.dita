@@ -49,7 +49,7 @@
 </li>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>System Inventory</b> link.</p>
@@ -115,7 +115,7 @@ The personality (Controller, Compute, or Storage) is confirmed in the menu. If y
 <p>The node is rebooted, and its Availability State is reported as In-Test. After a few minutes, it is reported as <codeph>Unlocked</codeph>, <codeph>Enabled</codeph>, and <codeph>Available</codeph>.</p>
 
 <p>
-<b>Note:</b> Ensure that you install two storage nodes, as required by the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade architecture.</p>
+<b>Note:</b> Ensure that you install two storage nodes, as required by the HP Helion OpenStack Carrier Grade architecture.</p>
 </li>
 </ol>
 <p>

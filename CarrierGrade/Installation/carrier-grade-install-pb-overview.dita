@@ -15,21 +15,21 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-overview.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/overview/--></p>
-<p>This document describes the process for installing HP Helion <tm tmtype="reg">OpenStack</tm>
+<p>This document describes the process for installing HP Helion OpenStack
       Carrier Grade in a baremetal environment in the Non-KVM region.</p>
 <section id="about-the-installation"> <title>About the installation</title>
-<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade installation installs HP Helion Lifecycle Management, creates a base HP Helion <tm tmtype="reg">OpenStack</tm> cloud, and configures network virtualization through HP Distributed Cloud Networking. Using a separate installation, you integrate KVM servers into the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade environment.</p>
-<p>After installation, you can interact with the HP Helion <tm tmtype="reg">OpenStack</tm> cloud using the <xref
+<p>The HP Helion OpenStack Carrier Grade installation installs HP Helion Lifecycle Management, creates a base HP Helion OpenStack cloud, and configures network virtualization through HP Distributed Cloud Networking. Using a separate installation, you integrate KVM servers into the HP Helion OpenStack Carrier Grade environment.</p>
+<p>After installation, you can interact with the HP Helion OpenStack cloud using the <xref
           href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
           >Horizon graphical interface</xref> or using the CLIs of the respective <xref
           href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita"
         >services</xref>.</p>
 </section>
 <section id="installation-process"> <title>Installation process</title>
-<p>Use the following process to install HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade in a baremetal environment.</p>
+<p>Use the following process to install HP Helion OpenStack Carrier Grade in a baremetal environment.</p>
 <ol>
 <li>Review the <xref href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita"
-            >Technical Overview</xref> for information on the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade
+            >Technical Overview</xref> for information on the HP Helion OpenStack Carrier Grade
           environment.</li>
 <li>Review the <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita"
             >Support Matrix</xref> to make sure your environment meets the minimum

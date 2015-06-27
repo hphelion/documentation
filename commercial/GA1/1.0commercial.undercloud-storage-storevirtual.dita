@@ -215,7 +215,7 @@
 </ol>
 </section>
 <section id="view-configuration"> <title>View configuration</title>
-<p>Use this option to view the cluster configuration (as defined in the HP Helion <tm tmtype="reg">OpenStack</tm> Configuration Manual for HP LeftHand/StoreVirtual Block Storage Volume Driver).</p>
+<p>Use this option to view the cluster configuration (as defined in the HP Helion OpenStack Configuration Manual for HP LeftHand/StoreVirtual Block Storage Volume Driver).</p>
 <ol>
 <li>
 <p>Log in to the Horizon undercloud dashboard.</p>

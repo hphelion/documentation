@@ -33,7 +33,7 @@
 <li>
 <p>Edit the file as follows:</p>
 
-<p>a. Set the <tm tmtype="reg">OpenStack</tm> API version to version 3:</p>
+<p>a. Set the OpenStack API version to version 3:</p>
 
 <codeblock>
 <codeph>OPENSTACK_API_VERSIONS = {

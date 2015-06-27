@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic8003">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Enabling VLAN Provider Network in HP Helion <tm tmtype="reg">OpenStack</tm></title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Enabling VLAN Provider Network in HP Helion OpenStack</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -31,8 +31,8 @@
 
 </p>
 <p>This page provides a detailed description to enable VLAN Provider Network in KVM Cloud Type.</p>
-<!---HP Helion &#174;<tm tmtype="reg">OpenStack</tm> can be deployed in multiple ways to fulfill certain requirements using an installer. Installers depend on Virtual Extensible Local Area Network (VxLAN) or Generic Routing Encapsulation (GRE) to isolate tenants which is an important requirement.  These two latest networking technologies have become de-facto standards for installers because they ease infrastructure readiness requirements while providing tenant isolation, independent of any hardware (Switch/Router) configuration.-->
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. <!---However, we need to deploy Helion Cloud to customers desiring to migrate gradually from legacy VLAN to VxLAN, a non-default install feature. This whitepaper walks through a way to configure Helion <tm tmtype="reg">OpenStack</tm> tenant networks to use VLAN Provider Network.--> The deployment of HP Helion <tm tmtype="reg">OpenStack</tm> enables  tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX to communicate to a virtual machine running in HP Helion <tm tmtype="reg">OpenStack</tm> <!---Typically, a Hybrid Application Deployment across two or more Infrastructure Providers (one being Helion <tm tmtype="reg">OpenStack</tm>--></p>
+<!---HP Helion &#174;OpenStack can be deployed in multiple ways to fulfill certain requirements using an installer. Installers depend on Virtual Extensible Local Area Network (VxLAN) or Generic Routing Encapsulation (GRE) to isolate tenants which is an important requirement.  These two latest networking technologies have become de-facto standards for installers because they ease infrastructure readiness requirements while providing tenant isolation, independent of any hardware (Switch/Router) configuration.-->
+<p>HP Helion OpenStack defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. <!---However, we need to deploy Helion Cloud to customers desiring to migrate gradually from legacy VLAN to VxLAN, a non-default install feature. This whitepaper walks through a way to configure Helion OpenStack tenant networks to use VLAN Provider Network.--> The deployment of HP Helion OpenStack enables  tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX to communicate to a virtual machine running in HP Helion OpenStack <!---Typically, a Hybrid Application Deployment across two or more Infrastructure Providers (one being Helion OpenStack--></p>
 <section id="deployment-diagram"> <title>Deployment Diagram</title>
 <p>The following deployment diagrams are based on the assumption that the network infrastructure is carved out in such a way that it allows a range of tagged VLANs through the switches and their subnets are routed to the right destination.</p>
 <p>

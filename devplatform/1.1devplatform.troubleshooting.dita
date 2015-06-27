@@ -122,7 +122,7 @@
 <section id="dbaas"> <title>DBaaS</title>
 </section>
 <section id="dbaas-configuration-fails"> <title>DbaaS configuration fails</title>
-<p>Resolution: Make sure that you can create a volume and attach it to instances. HP <tm tmtype="reg">Helion OpenStack</tm> supports VSA and 3PAR, but not LVM. Make sure your installation is configured to use either VSA or 3PAR.</p>
+<p>Resolution: Make sure that you can create a volume and attach it to instances. HP Helion <tm tmtype="reg">OpenStack</tm> supports VSA and 3PAR, but not LVM. Make sure your installation is configured to use either VSA or 3PAR.</p>
 </section>
 <section id="dbaas-instance-fails-to-start"> <title>DbaaS instance fails to start</title>
 <p>Resolution: Check if you can create and start a Nova instance with the same flavor and verify you can attach a volume to that Nova instance. Verify that the Nova flavors have not been updated to invalid values. Verify that the flavor's ID is correct, as flavor updates cause the flavor IDs to change.</p>
@@ -147,7 +147,7 @@
 <b>Resolution</b>: Update the cluster with the <i>cf-fix-kato-patch</i> command line tool.</p>
 <ol>
 <li>
-<p>Set the standard <tm tmtype="reg">OpenStack</tm> environment variables. <!--A BR tag was used here in the original source.-->The <tm tmtype="reg">OpenStack</tm> <i>ca-certificate</i> is found in the <tm tmtype="reg">Helion OpenStack</tm> Seed VM at:  <i>/usr/local/share/ca-certificates/ephemeralca-cacert.crt</i>
+<p>Set the standard OpenStack environment variables. <!--A BR tag was used here in the original source.-->The OpenStack <i>ca-certificate</i> is found in the Helion OpenStack Seed VM at:  <i>/usr/local/share/ca-certificates/ephemeralca-cacert.crt</i>
 </p>
 
 <codeblock>

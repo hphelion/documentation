@@ -25,11 +25,11 @@
 <p>
 
 </p>
-<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Compute Service leverages the <tm tmtype="reg">OpenStack</tm> Nova compute service to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.</p>
+<p>The HP Helion OpenStack Compute Service leverages the OpenStack Nova compute service to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.</p>
 <p>Compute allows you to work with <b>flavors</b>, which are unique combinations of disk space, memory capacity, and CPU; <b>images</b>, which are collections of files used as a base installation, typically operating systems; and <b>servers</b>, which are virtual instances created by combining a flavor and an image.</p>
-<p>The variety of flavors and images supported by HP Helion <tm tmtype="reg">OpenStack</tm> provide a wide range of options for building your instances.</p>
+<p>The variety of flavors and images supported by HP Helion OpenStack provide a wide range of options for building your instances.</p>
 <section id="working-with-the-compute-service"> <title>Working with the Compute Service</title>
-<p>The easiest way to perform Compute service tasks is through the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Dashboard</xref>. The Dashboard provides a graphical interface for managing your instances.</p>
+<p>The easiest way to perform Compute service tasks is through the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HP Helion OpenStack Dashboard</xref>. The Dashboard provides a graphical interface for managing your instances.</p>
 <!--Verified at from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud and on the horizon console-->
 <p>The following list represents typical Compute service tasks for Users. Administrators will be able to perform additional management tasks.</p>
 <ul>
@@ -48,14 +48,14 @@
 <li>Access the instance console</li>
 <li>Associate/disassociate floating IP addresses</li>
 </ul>
-<p>You can also access the HP Compute service through the <xref href="http://docs.openstack.org/cli-reference/content/novaclient_commands.html" scope="external" format="html" >command-line client</xref> or use a low-level, raw <xref href="http://api.openstack.org/api-ref-compute-v2.html" scope="external" format="html" >REST API</xref>. Refer to the <tm tmtype="reg">OpenStack</tm> guide for client <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >installation instructions</xref>.</p>
+<p>You can also access the HP Compute service through the <xref href="http://docs.openstack.org/cli-reference/content/novaclient_commands.html" scope="external" format="html" >command-line client</xref> or use a low-level, raw <xref href="http://api.openstack.org/api-ref-compute-v2.html" scope="external" format="html" >REST API</xref>. Refer to the OpenStack guide for client <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >installation instructions</xref>.</p>
 </section>
 <section id="for-more-information"> <title>For more information</title>
 <ul>
 <li>
-<xref href="../../commercial/GA1/1.1commerical.troubleshooting.compute.dita" >Troubleshooting</xref> the HP Helion <tm tmtype="reg">OpenStack</tm> Compute Service</li>
+<xref href="../../commercial/GA1/1.1commerical.troubleshooting.compute.dita" >Troubleshooting</xref> the HP Helion OpenStack Compute Service</li>
 <li>
-<p>The <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>. The <i>Operations</i> section contains valuable management information. While the <i>Architecture</i> section contains interesting information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together, HP Helion <tm tmtype="reg">OpenStack</tm> takes care of these details for you.</p>
+<p>The <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack Operations Guide</xref>. The <i>Operations</i> section contains valuable management information. While the <i>Architecture</i> section contains interesting information about how an OpenStack Cloud is put together, HP Helion OpenStack takes care of these details for you.</p>
 
 <p>
 <xref type="section" href="#topic2396"> Return to Top </xref>

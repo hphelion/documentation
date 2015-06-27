@@ -41,7 +41,7 @@ specific provider networks when required.</p>
 <p>For example, a tenant may be interested in creating a new tenant network with access to a specific network access device in the data center, such as an access point for a wireless transport. In this case, the system administrator must create a new tenant network on behalf of the tenant, using a VLAN ID in the provider network's segmentation range that provides connectivity to the said network access point.</p>
 </li>
 <li>
-<p>Consider how different offerings of bandwidth, throughput commitments, and class-of-service, can be used by your users. Having different provider network offerings available to your tenants enables end users to diversify their own portfolio of services. This in turn gives the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade administration an opportunity to put different revenue models in place.</p>
+<p>Consider how different offerings of bandwidth, throughput commitments, and class-of-service, can be used by your users. Having different provider network offerings available to your tenants enables end users to diversify their own portfolio of services. This in turn gives the HP Helion OpenStack Carrier Grade administration an opportunity to put different revenue models in place.</p>
 </li>
 <li>
 <p>For the IPv4 address plan, consider the following:</p>

@@ -20,7 +20,7 @@
  <!--permalink: /helion/openstack/1.1/landing/install/--></p>
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.install-GA-overview.dita" >Installation overview</xref>
-<!--A BR tag was used here in the original source.--> Learn about the installation process for HP Helion <tm tmtype="reg">OpenStack</tm> 1.1</p>
+<!--A BR tag was used here in the original source.--> Learn about the installation process for HP Helion OpenStack 1.1</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.install-GA-prereqs.dita" >Prerequisites</xref>
@@ -28,7 +28,7 @@
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.install-GA-kvm.dita" >Installation and Configuration for KVM Hypervisor</xref>
-<!--A BR tag was used here in the original source.-->Install HP Helion <tm tmtype="reg">OpenStack</tm> with KVM support.</p>
+<!--A BR tag was used here in the original source.-->Install HP Helion OpenStack with KVM support.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.install-GA-post-kvm.dita" >Post-Installation Tasks for KVM</xref> 
@@ -36,7 +36,7 @@
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.install-GA-esx.dita" >Installation and Configuration for ESX Hypervisor</xref>
-<!--A BR tag was used here in the original source.-->Install HP Helion <tm tmtype="reg">OpenStack</tm> with ESX support.</p>
+<!--A BR tag was used here in the original source.-->Install HP Helion OpenStack with ESX support.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.install-GA-post-esx.dita" >Post-Installation Tasks for ESX</xref>

@@ -188,7 +188,7 @@ There are two ways to attach a Cinder volume to a Nova instance.
 
 **Attaching a Cinder volume from Horizon overcloud dashboard**
 
-To attach a Cinder volume to Nova instance [<tm tmtype="reg">OpenStack</tm> User Guide](http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html)
+To attach a Cinder volume to Nova instance [OpenStack User Guide](http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html)
 -->
 <!--
 1. In the Horizon Dashboard, click the **Project** Tab.  

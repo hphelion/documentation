@@ -48,7 +48,7 @@
 </li>
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack</p>
+<p>The HP Helion Development Platform is installed in the overcloud of HP Helion <tm tmtype="reg">OpenStack</tm></p>
 <p>Before you begin installation:</p>
 <ul>
 <li>
@@ -357,11 +357,11 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
               instances.</li>
             <li>
               <b>External Network</b> (Required) - Network Name for the network that has external
-              network access. For HP Helion <tm tmtype="reg">OpenStack</tm> Commercial Edition this
+              network access. For HP Helion OpenStack Commercial Edition this
               network is named <b>ext-net</b> .</li>
             <li>
               <b>Provider Network</b> (Required) - Network Name for the network that has network
-              access to cloud infrastructure services. For HP Helion <tm tmtype="reg">OpenStack</tm>
+              access to cloud infrastructure services. For HP Helion OpenStack
               Commercial Edition this network is named <b>SVC</b>.</li>
             <li>
               <b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have

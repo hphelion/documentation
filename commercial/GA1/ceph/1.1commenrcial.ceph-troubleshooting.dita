@@ -39,7 +39,7 @@
 <p>If a <codeph>Decrypt error</codeph> occurs from any of the Helion nodes with glance, cinder, or nova, make sure that all the Ceph cluster nodes are in same time zone. HP recommends that you configure a NTP server in the <codeph>/etc/ntp.conf</codeph> file on all Ceph cluster nodes.  After making changes, restart NTP [<codeph>/etc/init.d/ntp restart</codeph>]. Install the <codeph>ntp</codeph> package, if it is not there.</p>
 </li>
 <li>
-<p>Make sure the Ceph cluster uses the same IP range as the Helion <tm tmtype="reg">OpenStack</tm> overcloud nodes. Also, make sure the IP range for the Ceph cluster does not conflict with those used by Helion setup.</p>
+<p>Make sure the Ceph cluster uses the same IP range as the Helion OpenStack overcloud nodes. Also, make sure the IP range for the Ceph cluster does not conflict with those used by Helion setup.</p>
 </li>
 <li>
 <p>Be sure to check the log files in <codeph>/var/log/ceph/</codeph> for each node. Any errors or exceptions are useful for troubleshooting.</p>

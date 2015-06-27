@@ -18,7 +18,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Backup/carrier-grade-admin-wr-backup.md-->
  <!--permalink: /helion/openstack/carrier/admin/backup/--></p>
-<p>A system data backup captures core system information needed to restore a fully operational HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade cluster.</p>
+<p>A system data backup captures core system information needed to restore a fully operational HP Helion OpenStack Carrier Grade cluster.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>

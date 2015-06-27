@@ -15,18 +15,18 @@
 <p>
 
 </p>
-<p>TripleO (<tm tmtype="reg">OpenStack</tm>-On-<tm tmtype="reg">OpenStack</tm> is a service that handles installing, upgrading and operating <tm tmtype="reg">OpenStack</tm> clouds using <tm tmtype="reg">OpenStack</tm> cloud facilities as the foundation. TripleO builds on the <xref href="../../commercial/GA1/1.0commerical.services-compute-overview.dita" >Compute</xref>, <xref href="../../commercial/GA1/1.0commerical.services-networking-overview.dita" >Networking</xref> and <xref href="../../commercial/GA1/1.0commerical.services-orchestration-overview.dita" >Orchestration</xref> services to automate fleet management for as few as two machines or a full data center.</p>
-<p>The <xref href="../../commercial/GA1/1.0commercial.install-GA-overview.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> installation</xref> follows the standard TripleO deployment model, creating a seed, an undercloud and an overcloud.</p>
+<p>TripleO (OpenStack-On-OpenStack is a service that handles installing, upgrading and operating OpenStack clouds using OpenStack cloud facilities as the foundation. TripleO builds on the <xref href="../../commercial/GA1/1.0commerical.services-compute-overview.dita" >Compute</xref>, <xref href="../../commercial/GA1/1.0commerical.services-networking-overview.dita" >Networking</xref> and <xref href="../../commercial/GA1/1.0commerical.services-orchestration-overview.dita" >Orchestration</xref> services to automate fleet management for as few as two machines or a full data center.</p>
+<p>The <xref href="../../commercial/GA1/1.0commercial.install-GA-overview.dita" >HP Helion OpenStack installation</xref> follows the standard TripleO deployment model, creating a seed, an undercloud and an overcloud.</p>
 <section id="key-terms"> <title>Key Terms</title>
 <p>Key terms include:</p>
 <ul>
 <li>
 <p>
-<b>seed</b> - The seed cloud is a bootable image that is deployed in a VM instance. This image, which is provided as part of HP Helion <tm tmtype="reg">OpenStack</tm> contains the minimum services required for <tm tmtype="reg">OpenStack</tm> to function and to provision physical hardware to deploy the undercloud.</p>
+<b>seed</b> - The seed cloud is a bootable image that is deployed in a VM instance. This image, which is provided as part of HP Helion OpenStack contains the minimum services required for OpenStack to function and to provision physical hardware to deploy the undercloud.</p>
 </li>
 <li>
 <p>
-<b>undercloud</b> - The undercloud server is a basic single-node <tm tmtype="reg">OpenStack</tm> installation running on a single physical server used to deploy, test, manage, and update the overcloud servers. There is no HA configuration for the undercloud. It contains a strictly limited sub-set of <tm tmtype="reg">OpenStack</tm> services; just enough to  permit interaction with the overcloud.</p>
+<b>undercloud</b> - The undercloud server is a basic single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the overcloud servers. There is no HA configuration for the undercloud. It contains a strictly limited sub-set of OpenStack services; just enough to  permit interaction with the overcloud.</p>
 </li>
 <li>
 <p>
@@ -35,8 +35,8 @@
 </ul>
 </section>
 <section id="for-more-information"> <title>For more information</title>
-<p>For information on TripleO, see the official <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> TripleO wiki</xref>.</p>
-<p>For more information on the HP Helion <tm tmtype="reg">OpenStack</tm> deployment model, see <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Technical Overview</xref>.</p>
+<p>For information on TripleO, see the official <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" >OpenStack TripleO wiki</xref>.</p>
+<p>For more information on the HP Helion OpenStack deployment model, see <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita" >HP Helion OpenStack Technical Overview</xref>.</p>
 <p>
   <xref type="section" href="#topic2181"> Return to Top </xref>
 </p>

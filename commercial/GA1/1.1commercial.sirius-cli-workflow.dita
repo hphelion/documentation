@@ -324,8 +324,8 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 </p>
 </section>
 <section id="config-brocade"> <title>Configure HP 3PAR Storeserv as a storage backend with Brocade Zone Manager</title>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 supports Brocade FC Zone Manager. You can add the Brocade Zone Manager to <codeph>cinder.conf</codeph> to enable Fibre Channel Zone Manager. Also, you can configure HP 3PAR as storage backend with Brocade Zone Manager.</p>
-<p>For more information, see  <xref href="../../commercial/GA1/1.1commercial.services-volume-fibre.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 Block Storage (Cinder): Auto-zoning - Brocade Fibre Channel Zone Manager</xref>
+<p>HP Helion OpenStack 1.1 supports Brocade FC Zone Manager. You can add the Brocade Zone Manager to <codeph>cinder.conf</codeph> to enable Fibre Channel Zone Manager. Also, you can configure HP 3PAR as storage backend with Brocade Zone Manager.</p>
+<p>For more information, see  <xref href="../../commercial/GA1/1.1commercial.services-volume-fibre.dita" >HP Helion OpenStack 1.1 Block Storage (Cinder): Auto-zoning - Brocade Fibre Channel Zone Manager</xref>
 </p>
 </section>
 <section id="reconfigure-update"> <title>Reconfigure and update cloud</title>

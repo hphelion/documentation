@@ -48,7 +48,7 @@
 <ol>
 <li>
         <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
-          <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</li>
+          OpenStack Horizon Dashboard</xref>.</li>
 <li>Clicking <b>Projects</b> on the <b>Identity</b> menu.</li>
 <li>Select <b>Source MAC Filtering</b>.</li>
 <li>Click <b>Save</b>.</li>

@@ -26,12 +26,12 @@
  <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory.cluster.md-->
  <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/cluster/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade cluster is represented internally by a unique object referred to as the <i>system</i>.</p>
+<p>The HP Helion OpenStack Carrier Grade cluster is represented internally by a unique object referred to as the <i>system</i>.</p>
 <p>Information about this object is available from the <b>Systems</b> tab on the <b>System Inventory</b> page.</p>
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>

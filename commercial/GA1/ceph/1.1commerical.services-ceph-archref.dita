@@ -29,7 +29,7 @@
  <!--permalink: /helion/openstack/1.1/services/object/ceph/archref-1.1/--></p>
 <p>At the minimum, a Ceph cluster includes one Admin node, one Monitor node (MON) and 3 Object Storage Daemons (OSDs). The Monitor node can also coexist on the same Host as one of the OSDs. Administrative and control operations are typically issued from Admin node. Note that there is also a Metadata server node (MDS) which stores metadata on behalf of the Ceph Filesystem (that is, Ceph Block Devices and Ceph Object Storage do not use MDS). There is no need for a MDS node at this time as HP does not support the Ceph Filesystem interface.</p>
 <p>
-  <b>HP Helion <tm tmtype="reg">OpenStack</tm></b>
+  <b>HP Helion OpenStack</b>
   <!--A BR tag was used here in the original source.-->
 </p>
 <p>
@@ -39,7 +39,7 @@
   <xref format="html" href="javascript:window.open('/media/helion-openstack.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
 </p>
 <p>
-  <b>Communication Diagram from Helion <tm tmtype="reg">OpenStack</tm> to Ceph Cluster</b>
+  <b>Communication Diagram from Helion OpenStack to Ceph Cluster</b>
   <!--A BR tag was used here in the original source.-->
 </p>
 <p>
@@ -57,7 +57,7 @@
   <xref format="html" href="javascript:window.open('/media/cephlogicalarch.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
 </p>
 <p>
-  <b>Helion <tm tmtype="reg">OpenStack</tm> with Ceph Cluster Deployment Example</b>
+  <b>Helion OpenStack with Ceph Cluster Deployment Example</b>
 </p>
 <p>
   <image href="../../../media/cephdeploy50.png" placement="break"/>

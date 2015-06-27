@@ -15,8 +15,8 @@
 <p>
 
 </p>
-<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion <tm tmtype="reg">OpenStack</tm> Commercial overcloud. The overcloud is the end-user <tm tmtype="reg">OpenStack</tm> cloud.</p>
-<p>The interface, based on <tm tmtype="reg">OpenStack</tm> Horizon, is grouped into dashboards, including <xref type="section" href="#topic2121/DashProject">Project</xref>, <xref type="section" href="#topic2121/DashAdmin">Admin</xref> and <xref type="section" href="#topic2121/DashSettings">Settings</xref>. Tabs on the left side of the interface expand and contract to show available commands grouped into <b>panels</b>.</p>
+<p>The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Commercial overcloud. The overcloud is the end-user OpenStack cloud.</p>
+<p>The interface, based on OpenStack Horizon, is grouped into dashboards, including <xref type="section" href="#topic2121/DashProject">Project</xref>, <xref type="section" href="#topic2121/DashAdmin">Admin</xref> and <xref type="section" href="#topic2121/DashSettings">Settings</xref>. Tabs on the left side of the interface expand and contract to show available commands grouped into <b>panels</b>.</p>
 <!-- Need new
 <img src="/media/HorizonCommunity.png" alt="" width="600" />
 -->

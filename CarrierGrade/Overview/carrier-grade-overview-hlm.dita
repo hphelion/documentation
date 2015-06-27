@@ -13,7 +13,7 @@
  <!--./CarrierGrade/Overview/carrier-grade-overview-hlm.md-->
  <!--permalink: /helion/openstack/carrier/hlm/overview/--></p>
 <!-- From http://wiki.hpcloud.net/display/core/Helion+Lifecycle+Management+Root -->
-<p>Helion Lifecycle Management (HLM) is an application that is used to deploy HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade and can be used for ongoing operations and maintenance of the system.</p>
+<p>Helion Lifecycle Management (HLM) is an application that is used to deploy HP Helion OpenStack Carrier Grade and can be used for ongoing operations and maintenance of the system.</p>
 <ul>
 <li>
 <p>
@@ -33,7 +33,7 @@
 </li>
 <li>
 <p>
-<b>Helion Operation &amp; Maintenance.</b> HLM is responsible for the deploy, upgrade and maintenance lifecycle of the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade system.</p>
+<b>Helion Operation &amp; Maintenance.</b> HLM is responsible for the deploy, upgrade and maintenance lifecycle of the HP Helion OpenStack Carrier Grade system.</p>
 </li>
 </ul>
 <p>

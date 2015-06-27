@@ -12,7 +12,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/network/prepare/--></p>
-<p>Before installing HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade, you are responsible for preparing the network for all installations.</p>
+<p>Before installing HP Helion OpenStack Carrier Grade, you are responsible for preparing the network for all installations.</p>
 <section id="configure-vlan-networking-on-the-kvm-host"> <title>Configure VLAN networking on the KVM host</title>
 <ol>
 <li>Edit <codeph>/etc/network/interfaces</codeph> file to provide network details on the each interface:<codeblock><codeph>auto lo

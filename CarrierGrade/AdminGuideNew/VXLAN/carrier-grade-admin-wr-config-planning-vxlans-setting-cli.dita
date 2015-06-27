@@ -83,7 +83,7 @@ command line interface. For information about using the Horizon interface, see <
 <codeph>udp_port</codeph> - The destination UDP port for packets sent on the VXLAN. You can select either:</p>
 
 <ul>
-<li>the IANA standard 4789 to use this range with the <tm tmtype="reg">OpenStack</tm> Neutron service</li>
+<li>the IANA standard 4789 to use this range with the OpenStack Neutron service</li>
 <li>the legacy standard 8472 for use with some commercial switch equipment.</li>
 </ul>
 </li>

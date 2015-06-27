@@ -12,24 +12,24 @@
 <!--PUBLISHED-->
  <!--./community/community.index.md-->
  <!--permalink: /helion/community/--></p>
-<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Community edition is <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP designed for administrators and developers who want to quickly stand up an <tm tmtype="reg">OpenStack</tm> cloud. The Community edition is a pure and free-to-license distribution that speeds deployment and simplifies the management of small scale open cloud environments and infrastructure services. It supports up to 30 physical nodes and 600 virtual nodes making it ideal for small-scale and proof of concept deployments.
+<p>The HP Helion OpenStack Community edition is OpenStack technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP designed for administrators and developers who want to quickly stand up an OpenStack cloud. The Community edition is a pure and free-to-license distribution that speeds deployment and simplifies the management of small scale open cloud environments and infrastructure services. It supports up to 30 physical nodes and 600 virtual nodes making it ideal for small-scale and proof of concept deployments.
 <!-- Next 2 graphs, text from Jim Gardner email 4/24
-HP Helion <tm tmtype="reg">OpenStack</tm> Community Edition is a pure and free-to-license distribution that speeds deployment and simplifies the management of small scale open cloud environments and infrastructure services. 
+HP Helion OpenStack Community Edition is a pure and free-to-license distribution that speeds deployment and simplifies the management of small scale open cloud environments and infrastructure services. 
 
-HP Helion <tm tmtype="reg">OpenStack</tm> is a hardened enterprise-grade product set that speeds deployment and simplifies management of private, public or hybrid clouds and infrastructure services for developers, enterprises and service providers.
+HP Helion OpenStack is a hardened enterprise-grade product set that speeds deployment and simplifies management of private, public or hybrid clouds and infrastructure services for developers, enterprises and service providers.
 
 This page covers the following topics:
 
 * [Available Services](#services)
-* [Starting to work with HP Helion <tm tmtype="reg">OpenStack</tm> Community](#start)
+* [Starting to work with HP Helion OpenStack Community](#start)
 * [REST API information](#api)
 * [For further information](#furtherinfo)
 
 ## Available Services ## {#services}
 
-HP Helion <tm tmtype="reg">OpenStack</tm> Community Edition consists of many services based on the different <tm tmtype="reg">OpenStack</tm> projects to provide the functionality you need. Visit the [HP <tm tmtype="reg">OpenStack</tm> Community Edition Services Overview page](/helion/community/services/overview/) for a complete list of services. --></p>
-<section id="start"> <title>Starting to work with HP Helion <tm tmtype="reg">OpenStack</tm> Community</title>
-<p>Use the following links to get started with HP Helion <tm tmtype="reg">OpenStack</tm> Community edition:</p>
+HP Helion OpenStack Community Edition consists of many services based on the different OpenStack projects to provide the functionality you need. Visit the [HP OpenStack Community Edition Services Overview page](/helion/community/services/overview/) for a complete list of services. --></p>
+<section id="start"> <title>Starting to work with HP Helion OpenStack Community</title>
+<p>Use the following links to get started with HP Helion OpenStack Community edition:</p>
 <ul>
 <li>
 <xref href="../community/community.release-notes.dita" >Release notes</xref>
@@ -55,7 +55,7 @@ HP Helion <tm tmtype="reg">OpenStack</tm> Community Edition consists of many ser
 
 ## REST API information ## {#api}
 
-For detailed REST API information, see the [<tm tmtype="reg">OpenStack</tm> API Complete Reference](http://api.openstack.org/api-ref.html). -->
+For detailed REST API information, see the [OpenStack API Complete Reference](http://api.openstack.org/api-ref.html). -->
 </section>
 <section id="furtherinfo"> <title>For further information</title>
 <p>There's a lot of information out there to help you get going with your cloud. We recommend you take a look at the list below:</p>
@@ -64,21 +64,21 @@ For detailed REST API information, see the [<tm tmtype="reg">OpenStack</tm> API 
 <p>The documentation <xref href="../community/community.site-index.dita" >site index</xref> gives you a full list of the technical content pages available on the site.</p>
 </li>
 <li>
-<p>For detailed REST API information, see the <xref href="http://api.openstack.org/api-ref.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> API Complete Reference</xref>.</p>
+<p>For detailed REST API information, see the <xref href="http://api.openstack.org/api-ref.html" scope="external" format="html" >OpenStack API Complete Reference</xref>.</p>
 </li>
 <li>
-<p>For information on how to operate and manage your cloud, we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an <tm tmtype="reg">OpenStack</tm> Cloud is put together. However, the HP Helion <tm tmtype="reg">OpenStack</tm> Community takes care of these details for you!</p>
+<p>For information on how to operate and manage your cloud, we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack Operations Guide</xref>. The <i>Architecture</i> section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack Community takes care of these details for you!</p>
 </li>
 <li>
-<p>For information on the <tm tmtype="reg">OpenStack</tm> on <tm tmtype="reg">OpenStack</tm> deployment project, see the <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" >TripleO documentation</xref>
+<p>For information on the OpenStack on OpenStack deployment project, see the <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" >TripleO documentation</xref>
 </p>
 </li>
 <li>
-<p>Visit our <xref href="https://ask.openstack.org" scope="external" format="html" >HP Helion <tm tmtype="reg">OpenStack</tm> Support Forum</xref> (Tag your questions with HPHelion)</p>
+<p>Visit our <xref href="https://ask.openstack.org" scope="external" format="html" >HP Helion OpenStack Support Forum</xref> (Tag your questions with HPHelion)</p>
 </li>
 </ul>
 <p>
-<!--* See [HP Helion <tm tmtype="reg">OpenStack</tm> Community Edition Glossary](/helion/community/glossary/) for definitions of important terms.-->
+<!--* See [HP Helion OpenStack Community Edition Glossary](/helion/community/glossary/) for definitions of important terms.-->
 If you have a question, feel free to <xref href="https://connect.hpcloud.com/" scope="external" format="html" >post something over on our forums</xref>. We'd love to help.</p>
 <p>
   <xref type="section" href="#topic2348"> Return to Top </xref>

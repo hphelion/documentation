@@ -25,7 +25,7 @@
 <!--UNDER REVISION-->
  <!--./commercial/GA1/2.0commercial.services-monasca.md-->
  <!--permalink: /helion/commercial/2.0/services/monasca/--></p>
-<p>Monasca is a multi-tenant, scalable, fault-tolerant monitoring-as-a-service, HTTP-based solution. It is open-source and integrates with <tm tmtype="reg">OpenStack</tm>. It uses a REST API for high-speed metrics processing and querying, and has a streaming alarm and notification engine. The name "Monasca" is short for "monitoring at scale".</p>
+<p>Monasca is a multi-tenant, scalable, fault-tolerant monitoring-as-a-service, HTTP-based solution. It is open-source and integrates with OpenStack. It uses a REST API for high-speed metrics processing and querying, and has a streaming alarm and notification engine. The name "Monasca" is short for "monitoring at scale".</p>
 <p>Monasca components consist of those that are part of the monitor server cluster and those that
       interact only with the Monasca API.</p>
 <p>The Monasca agent is highly configurable and can collect measurements from many sources (unlike
@@ -106,13 +106,13 @@
 <p>Config Database: A third-party component that stores a lot of the configuration and other information in the system. Currently, MySQL is supported.</p>
 </li>
 <li>
-<p>Monitoring Client (python-monascaclient): A Python command line client and library that communicates and controls the Monitoring API. The Monitoring Client was written using the <tm tmtype="reg">OpenStack</tm> Heat Python client as a framework. The Monitoring Client also has a Python library, "monascaclient" similar to the other <tm tmtype="reg">OpenStack</tm> clients, that can be used to quickly build additional capabilities. The Monitoring Client library is used by the Monitoring UI, Ceilometer publisher, and other components.</p>
+<p>Monitoring Client (python-monascaclient): A Python command line client and library that communicates and controls the Monitoring API. The Monitoring Client was written using the OpenStack Heat Python client as a framework. The Monitoring Client also has a Python library, "monascaclient" similar to the other OpenStack clients, that can be used to quickly build additional capabilities. The Monitoring Client library is used by the Monitoring UI, Ceilometer publisher, and other components.</p>
 </li>
 <li>
 <p>Alarm Configuration Manager: A Python process that will detect new metrics and configure alarms based on the configuration. It uses the monitoring client library that communicates with the Monitoring API. The Alarm Configuration Manager is a Python Daemon that runs on a configurable interval and detects new metrics that need to be alarmed and creates the alarms.</p>
 </li>
 <li>
-<p>Monitoring UI: A Horizon dashboard for visualizing the overall health and status of an <tm tmtype="reg">OpenStack</tm> cloud.</p>
+<p>Monitoring UI: A Horizon dashboard for visualizing the overall health and status of an OpenStack cloud.</p>
 </li>
 <li>
 <p>Ceilometer publisher: A multi-publisher plugin for Ceilometer, not shown, that converts and publishes samples to the Monitoring API.</p>

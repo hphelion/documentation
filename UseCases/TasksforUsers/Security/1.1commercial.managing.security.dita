@@ -12,7 +12,7 @@
 <!--UNDER REVISION-->
  <!--./UseCases/TasksforUsers/Security/1.1commercial.managing.security.md-->
  <!--permalink: /helion/commercial/1.1/dashboard/managing/security/--></p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> uses security groups and security rules to control access to instances in your cloud.</p>
+<p>HP Helion OpenStack uses security groups and security rules to control access to instances in your cloud.</p>
 <p>You can use the dashboards to create, delete and configure security groups and security group rules to control access to your instance</p>
 <p>How you interact with your network environment depends upon your user type, either an administrative user (admin) or a non-administrative user (user).</p>
 <p>

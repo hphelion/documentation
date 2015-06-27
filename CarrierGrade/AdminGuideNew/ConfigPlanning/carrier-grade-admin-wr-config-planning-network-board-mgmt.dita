@@ -32,12 +32,12 @@
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>The board management network provides for out-of-band reset, power-up, and power-down operations on HP hosts.</p>
-<p>Support for this network is selected during controller configuration; for details, see the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade Software Installation Guide: The Controller Configuration Script. To support this feature, compute and storage nodes must be equipped with iLO3 or iLO4 (Integrated Lights Out) board management modules.</p>
+<p>Support for this network is selected during controller configuration; for details, see the HP Helion OpenStack Carrier Grade Software Installation Guide: The Controller Configuration Script. To support this feature, compute and storage nodes must be equipped with iLO3 or iLO4 (Integrated Lights Out) board management modules.</p>
 <p>Compute and storage nodes connect using iLO modules, while controller nodes use the management port in tagged mode. The controller nodes can optionally attach using their own iLO modules, if available.</p>
 <p>To use a board management network, you must do the following:</p>
 <ul>
 <li>
-<p>On the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade:</p>
+<p>On the HP Helion OpenStack Carrier Grade:</p>
 
 <ul>
 <li>Designate a VLAN ID for use by the board management network.</li>
@@ -46,7 +46,7 @@
 </ul>
 </li>
 <li>
-<p>On the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade internal L2 switch:</p>
+<p>On the HP Helion OpenStack Carrier Grade internal L2 switch:</p>
 
 <ul>
 <li>Configure a VLAN using the designated VLAN ID for the board management network.</li>

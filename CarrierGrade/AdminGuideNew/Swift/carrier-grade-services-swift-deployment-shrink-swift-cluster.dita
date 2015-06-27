@@ -23,7 +23,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-swift-cluster.md-->
  <!--permalink: /helion/openstack/carrier/services/object/swift/shrink-cluster/--></p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> allows you to remove Swift cluster in any of the followings ways:</p>
+<p>HP Helion OpenStack allows you to remove Swift cluster in any of the followings ways:</p>
 <ul>
 <li>
 <xref href="../../../CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-shrink-remove-exisitng-disk.dita" >Remove an existing Disk from Object Nodes</xref>

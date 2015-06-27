@@ -26,7 +26,7 @@
  <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-clusters.md-->
  <!--permalink: /helion/openstack/carrier/admin/host/management/inventory/clusters/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade cluster is represented internally by a unique object referred to as the system.</p>
+<p>The HP Helion OpenStack Carrier Grade cluster is represented internally by a unique object referred to as the system.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -34,7 +34,7 @@
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 </li>
 <li>
 <p>Clicking <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the <b>Systems</b> tab.</p>

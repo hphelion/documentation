@@ -29,9 +29,9 @@
  <!--./commercial/GA1/1.1commercial.install-laptop-demo.md-->
  <!--permalink: /helion/openstack/1.1/install/laptop/demo/--></p>
 <p>
-  <b>This document describes the installation process for HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and HP Helion OpenStack 1.1.1.</b>
 </p>
-<p>The purpose of this document is to provide a quick guide on how to setup Helion <tm tmtype="reg">OpenStack</tm> Enterprise Edition 1.1 into a virtual environment running on a laptop suitable to demonstrate the basic usage of product.</p>
+<p>The purpose of this document is to provide a quick guide on how to setup Helion OpenStack Enterprise Edition 1.1 into a virtual environment running on a laptop suitable to demonstrate the basic usage of product.</p>
 <p>This page covers the following topics:</p>
 <ul>
 <li>
@@ -44,7 +44,7 @@
 <xref type="section" href="#topic12988/laptop-install">Laptop installation</xref>
 </li>
 <li>
-<xref type="section" href="#topic12988/helion-virtual-install">Helion <tm tmtype="reg">OpenStack</tm> virtual installation</xref>
+<xref type="section" href="#topic12988/helion-virtual-install">Helion OpenStack virtual installation</xref>
 </li>
 <li>
 <xref type="section" href="#topic12988/system-access">Accessing the system</xref>
@@ -59,7 +59,7 @@
 <li>Linux server installation process</li>
 <li>Linux command line interface</li>
 <li>Basic Linux networking </li>
-<li>Helion <tm tmtype="reg">OpenStack</tm> </li>
+<li>Helion OpenStack </li>
 </ol>
 </section>
 <section id="arch-demo"> <title>Architecture for the demo</title>
@@ -78,7 +78,7 @@
 <li>1 Overcloud Swift VM</li>
 </ul>
 <p>
-<b>Note</b>: This special configuration is for demonstration purposes and some Helion <tm tmtype="reg">OpenStack</tm> operations may not function correctly.</p>
+<b>Note</b>: This special configuration is for demonstration purposes and some Helion OpenStack operations may not function correctly.</p>
 <p>The recommended setup for the demo:</p>
 <ol>
 <li>A laptop running the cloud virtual installation</li>
@@ -181,9 +181,9 @@ ntpq -p
 </li>
 </ol>
 </section>
-<section id="helion-virtual-install"> <title>Helion <tm tmtype="reg">OpenStack</tm> virtual installation</title>
+<section id="helion-virtual-install"> <title>Helion OpenStack virtual installation</title>
 </section>
-<section id="install-the-seed-vm-first-stage-of-the-helion-openstack-installation"> <title>Install the Seed VM: first stage of the Helion <tm tmtype="reg">OpenStack</tm> installation</title>
+<section id="install-the-seed-vm-first-stage-of-the-helion-openstack-installation"> <title>Install the Seed VM: first stage of the Helion OpenStack installation</title>
 <ol>
 <li>
 <p>Log in to the laptop, and then elevate to root:</p>
@@ -202,7 +202,7 @@ ntpq -p
 </codeblock>
 </li>
 <li>
-<p>Download the Helion <tm tmtype="reg">OpenStack</tm> Enterprise Edition from the official site.</p>
+<p>Download the Helion OpenStack Enterprise Edition from the official site.</p>
 </li>
 <li>
 <p>Extract the bits to <codeph>/root/work</codeph> folder:</p>
@@ -299,7 +299,7 @@ Wed Feb 18 14:56:46 GMT 2015 --- completed setup seed
 </li>
 </ol>
 </section>
-<section id="second"> <title>Second stage of the Helion <tm tmtype="reg">OpenStack</tm> install: Seed cloud configuration and Under/Overcloud installation)</title>
+<section id="second"> <title>Second stage of the Helion OpenStack install: Seed cloud configuration and Under/Overcloud installation)</title>
 <p>The second stage is the part of the installation process that create and configure under and overclouds using the seed machine.</p>
 <ol>
 <li>
@@ -361,7 +361,7 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </codeblock>
 </li>
 <li>
-<p>You can start this stage of the Helion <tm tmtype="reg">OpenStack</tm> installation by running the following command:</p>
+<p>You can start this stage of the Helion OpenStack installation by running the following command:</p>
 
 <codeblock>
 <codeph>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh  2&gt;&amp;1|tee stackinstall.log
@@ -376,7 +376,7 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </ol>
 </section>
 <section id="system-access"> <title>Accessing the system</title>
-<p>The best way to view the Horizon dashboard is to connect from a remote computer other than the laptop that is running HP Helion <tm tmtype="reg">OpenStack</tm></p>
+<p>The best way to view the Horizon dashboard is to connect from a remote computer other than the laptop that is running HP Helion OpenStack</p>
 <p>
   <b>Accessing Service Endpoints in your undercloud and overcloud</b>
 </p>
@@ -472,10 +472,10 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </p>
 </section>
 <section id="shutdown-recovery"> <title>Shutdown and recovery</title>
-<p>The following content describes how to shutdown the laptop and recover HP <tm tmtype="reg">OpenStack</tm> installation when the laptop restarts.</p>
+<p>The following content describes how to shutdown the laptop and recover HP OpenStack installation when the laptop restarts.</p>
 </section>
-<section id="shutdown-sequence-for-the-helion-openstack-control-plane"> <title>Shutdown sequence for the Helion <tm tmtype="reg">OpenStack</tm> control plane</title>
-<p>Before you shut down the laptop and if you would like to preserve the Helion <tm tmtype="reg">OpenStack</tm> installation, you can use the host manager script to save the status of the virtual machines. To do this, follow these steps:</p>
+<section id="shutdown-sequence-for-the-helion-openstack-control-plane"> <title>Shutdown sequence for the Helion OpenStack control plane</title>
+<p>Before you shut down the laptop and if you would like to preserve the Helion OpenStack installation, you can use the host manager script to save the status of the virtual machines. To do this, follow these steps:</p>
 <ol>
 <li>
 <p>On the laptop, close the existing ssh connection that you initiated in step 5 in the  section <xref type="section" href="#topic12988/horizon-access">Horizon access</xref> by running the following command:</p>
@@ -498,8 +498,8 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </li>
 </ol>
 </section>
-<section id="recover-the-helion-openstack-setup-after-restarting-the-laptop"> <title>Recover the Helion <tm tmtype="reg">OpenStack</tm> setup after restarting the laptop</title>
-<p>To recover the HP Helion <tm tmtype="reg">OpenStack</tm> setup after the laptop is powered up, follow these steps:</p>
+<section id="recover-the-helion-openstack-setup-after-restarting-the-laptop"> <title>Recover the Helion OpenStack setup after restarting the laptop</title>
+<p>To recover the HP Helion OpenStack setup after the laptop is powered up, follow these steps:</p>
 <ol>
 <li>
 <p>Log on to the laptop and elevate to root:</p>

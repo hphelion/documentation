@@ -27,7 +27,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commercial.ceph-glossary.md-->
  <!--permalink: /helion/openstack/1.1/ceph-glossary/--></p>
-<p>The following terms are common to Ceph. Ceph is a technology that integrates object, block, and file storage. It is integrated into Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1 cloud environments.</p>
+<p>The following terms are common to Ceph. Ceph is a technology that integrates object, block, and file storage. It is integrated into Helion OpenStack 1.1 and 1.1.1 cloud environments.</p>
 <ul>
 <li>
 <p>Cephx - The Ceph authentication protocol. Cephx operates like Kerberos, and it has no single point of failure.</p>

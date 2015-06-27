@@ -28,9 +28,9 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/1.2devplatform_upgrade.md-->
  <!--permalink: /helion/devplatform/1.2/upgrade/--></p>
-<p>If Helion Development Platform 1.1 is installed on <tm tmtype="reg">Helion OpenStack</tm> 1.1, and the <tm tmtype="reg">Helion OpenStack</tm> environment is updated to version 1.1.1, the Helion Developer Platform services must be stopped, and the control plane VMs must be restarted to complete the upgrade.</p>
-<p>If <tm tmtype="reg">Helion OpenStack</tm> version 1.1 is upgraded to version 1.1.1 without Helion Development Platform installed, no upgrade is necessary, and Helion Development Platform 1.2 can be installed normally. See <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HP Helion 1.2 Development Platform: Installation and Configuration</xref> for instructions for a new installation.</p>
-<p>When <tm tmtype="reg">Helion OpenStack</tm> is updated from 1.1. to 1.1.1, the Marketplace, Messaging, and Database services will automatically be updated to version 1.2. To update the Application Lifecycle Service, version 1.2 of the service must be downloaded and installed.</p>
+<p>If Helion Development Platform 1.1 is installed on Helion <tm tmtype="reg">OpenStack</tm> 1.1, and the Helion OpenStack environment is updated to version 1.1.1, the Helion Developer Platform services must be stopped, and the control plane VMs must be restarted to complete the upgrade.</p>
+<p>If Helion OpenStack version 1.1 is upgraded to version 1.1.1 without Helion Development Platform installed, no upgrade is necessary, and Helion Development Platform 1.2 can be installed normally. See <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HP Helion 1.2 Development Platform: Installation and Configuration</xref> for instructions for a new installation.</p>
+<p>When Helion OpenStack is updated from 1.1. to 1.1.1, the Marketplace, Messaging, and Database services will automatically be updated to version 1.2. To update the Application Lifecycle Service, version 1.2 of the service must be downloaded and installed.</p>
 <ul>
 <li>
 <xref type="section" href="#topic3949/HDPstop">Stopping Helion Development Platform services</xref>

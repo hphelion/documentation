@@ -64,7 +64,7 @@ sudo -i
 <!--removing as per JIRA 
 ### Extract the required scripts and libraries ### {#extract}
 
-As mentioned in the [Update Overview](/helion/openstack/update/overview/101/), a HP Helion <tm tmtype="reg">OpenStack</tm> patch update is composed of multiple major components.  
+As mentioned in the [Update Overview](/helion/openstack/update/overview/101/), a HP Helion OpenStack patch update is composed of multiple major components.  
 
 The Overcloud node images can be one of the components. If you have [downloaded the patch update using Sherpa](/helion/openstack/update/download/101/), at this stage the overcloud node images are located in the undercloud image repository. 
 

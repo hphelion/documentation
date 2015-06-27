@@ -33,7 +33,7 @@ Release Notes</xref>.</p>
 <section id="require"> <title>HP DCN Infrastructure Requirements and Recommendations</title>
 <!-- Taken from HP Distributed Cloud Networking 3.0.R2
 Installation Guide -->
-<p>In order to make use of the HP DCN, the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade environment must meet some key requirements as described in the following sections.</p>
+<p>In order to make use of the HP DCN, the HP Helion OpenStack Carrier Grade environment must meet some key requirements as described in the following sections.</p>
 </section>
 <section id="ntp-infrastructure"> <title>NTP Infrastructure</title>
 <p>Because HP VSP is a distributed system, it is important that the different elements have a reliable reference clock to ensure the messages exchanged between the elements have meaningful timestamps. HP VSP relies on each of the elements having clocks synchronized with

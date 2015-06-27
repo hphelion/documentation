@@ -43,7 +43,7 @@
 </ol>
 <section id="prer"> <title>Prerequisite</title>
 <ul>
-<li>HP Helion <tm tmtype="reg">OpenStack</tm> cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Sotrage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
+<li>HP Helion OpenStack cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Sotrage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
 </li>
 <li>(Optional) Scale-out object-ring:1 is deployed.</li>
 </ul>

@@ -32,7 +32,7 @@
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>A VXLAN is a Layer 2 overlay network scheme on a Layer 3 network infrastructure. Packets originating from VMs and destined for other VMs are encapsulated with IP, UDP, and VXLAN headers and sent as Layer 3 packets. The IP addresses of the source and destination compute nodes are included in the headers.</p>
-<p>You can configure VXLANs on HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade using the following workflow.</p>
+<p>You can configure VXLANs on HP Helion OpenStack Carrier Grade using the following workflow.</p>
 <ol>
 <li>
 <p>Set up a provider network of the VXLAN type. See:</p>

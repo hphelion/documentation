@@ -125,7 +125,7 @@
 </ul>
 <section id="concepts-overview"> <title>High Availability Concepts Overview</title>
 <p>Highly Available Cloud Services ensures that at least a minimum of cloud resources are always available on request, which results in uninterrupted operations for users.</p>
-<p>Cloud users are able to provision and manage the compute, storage, and network infrastructure resources at any given point in time and the Horizon Dashboard and the <tm tmtype="reg">OpenStack</tm> APIs must be reachable and be able to fulfill user requests.</p>
+<p>Cloud users are able to provision and manage the compute, storage, and network infrastructure resources at any given point in time and the Horizon Dashboard and the OpenStack APIs must be reachable and be able to fulfill user requests.</p>
 <p>
   <xref format="html" href="javascript:window.open('/media/Ha-resilient-cloud-infrastructure.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Resilient Cloud Infrastructure (opens in a new window)</xref>
 </p>
@@ -150,7 +150,7 @@
 <p>The infrastructure that provides these features is called a <b>Highly Available Cloud Infrastructure</b>.</p>
 </section>
 <section id="highly-available-cloud-aware-tenant-workloads"> <title>Highly Available Cloud-Aware Tenant Workloads</title>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> Compute hypervisors do not support transparent high availability for user applications; as such, the project application provider is responsible for deploying their applications in a redundant and highly available manner, using multiple VMs spread appropriately across availability zones, routed through the load balancers and made highly available through clustering.</p>
+<p>HP Helion OpenStack Compute hypervisors do not support transparent high availability for user applications; as such, the project application provider is responsible for deploying their applications in a redundant and highly available manner, using multiple VMs spread appropriately across availability zones, routed through the load balancers and made highly available through clustering.</p>
 <p>These are known as <b>Highly Available Cloud-Aware Tenant Workloads</b>.</p>
 </section>
 <section id="scope-ha"> <title>Scope of High Availability: Protection against Single Points of Failure(SPOF)</title>
@@ -166,11 +166,11 @@
 <b>Software SPOFs</b>: Server processes can crash due to software defects, out-of-memory conditions, operating system kernel panic, and so forth.</p>
 </li>
 </ol>
-<p>By design, HP Helion <tm tmtype="reg">OpenStack</tm> strives to create a system architecture resilient to SPOFs, and does not attempt to automatically protect the system against multiple cascading levels of failures; such cascading failures will result in an unpredictable state.</p>
+<p>By design, HP Helion OpenStack strives to create a system architecture resilient to SPOFs, and does not attempt to automatically protect the system against multiple cascading levels of failures; such cascading failures will result in an unpredictable state.</p>
 <p>Hence, the cloud operator is encouraged to recover and restore any failed component, as soon as the first level of failure occurs.</p>
 </section>
 <section id="ha-helion"> <title>Highly Available cloud services</title>
-<p>The HP Helion <tm tmtype="reg">OpenStack</tm> installer deploys highly available configurations of <tm tmtype="reg">OpenStack</tm> cloud services, resilient against single points of failure.</p>
+<p>The HP Helion OpenStack installer deploys highly available configurations of OpenStack cloud services, resilient against single points of failure.</p>
 </section>
 <section id="ha-overcloud-controller"> <title>High Availability of Overcloud Controllers</title>
 <p>The high availability of the overcloud controller components comes in two main forms.</p>
@@ -190,7 +190,7 @@
 </li>
 </ol>
 <p>The above diagram  illustrates the HA architecture with the focus on VIP management and load balancing. It only shows a subset of active-active API instances and does not show examples of other services such as nova-scheduler, cinder-scheduler, etc.</p>
-<p>In the above diagram, requests from an <tm tmtype="reg">OpenStack</tm> client to the overcloud API services are sent to VIP and port combination; for example, 192.0.2.26:8774 for a Nova request. The load balancer listens for requests on that VIP and port. When it receives a request, it selects one of the controller nodes configured for handling Nova requests, in this particular case, and then forwards the request to the IP of the selected controller node on the same port.</p>
+<p>In the above diagram, requests from an OpenStack client to the overcloud API services are sent to VIP and port combination; for example, 192.0.2.26:8774 for a Nova request. The load balancer listens for requests on that VIP and port. When it receives a request, it selects one of the controller nodes configured for handling Nova requests, in this particular case, and then forwards the request to the IP of the selected controller node on the same port.</p>
 <p>The nova-api service list, which is listening for requests on the IP of its host machine, then receives the request and deals with it accordingly. The database service is also accessed through the load balancer <!---(TODO: Section discussing database lockup issue with concurrent writes - this could require HA proxy always selecting a single node for access or just for writes, if possible)-->. RabbitMQ, on the other hand, is not currently accessed through VIP/HA proxy as the clients are configured with the set of nodes in the RabbitMQ cluster and failover between cluster nodes is automatically handled by the clients.</p>
 <p>The sections below cover the following topics in detail:</p>
 <ul>
@@ -298,7 +298,7 @@ If the controller fails, Sherpa becomes unavailable until you rebuild or restore
 <p>If the controller fails, the Nova consoleauth service will become unavailable and users will not be able to connect to their VM consoles via VNC. The service will be restored once you restore the  controller.</p>
 </section>
 <section id="replace-rebuild"> <title>Rebuilding or Replacing failed Controller Nodes</title>
-<p>As described above, the three node controller cluster provides a robust, highly available control plane of <tm tmtype="reg">OpenStack</tm> services. 
+<p>As described above, the three node controller cluster provides a robust, highly available control plane of OpenStack services. 
 Either OvercloudController1 or OvercloudController2 servers can be shut down for a short duration for maintenance activities without impacting cloud service availability. (OvercloudController0 cannot be shut down without affecting cloud service availability.)</p>
 <p>
 <b>Note</b>: The HA design is only robust against single points of failure and may not protect you against multiple levels of failure. As soon as first-level failure occurs, you must try to fix the symptom/root cause and recover from the failure, as soon as possible.</p>
@@ -337,8 +337,8 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 <p>
   <xref format="html" href="javascript:window.open('/media/ha-availability-zone.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Availability Zones (opens in a new window)</xref>
 </p>
-<p>While planning your <tm tmtype="reg">OpenStack</tm> deployment, you should decide on how to zone various types of nodes - such as compute, block storage, and object storage. For example, you may decide to place all servers in the same rack in the same zone. For larger deployments, you may plan more elaborate redundancy schemes for redundant power, network ISP connection, and even physical firewalling between zones (<i>this aspect is outside the scope of this document</i>).</p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> offers APIs, CLIs and Horizon UIs for the administrator to define and user to consume, availability zones for each of Nova, Cinder and Swift services. This section outlines the process to deploy specific types of nodes to specific physical servers, and makes a statement of available support for these types of availability zones in the current release.</p>
+<p>While planning your OpenStack deployment, you should decide on how to zone various types of nodes - such as compute, block storage, and object storage. For example, you may decide to place all servers in the same rack in the same zone. For larger deployments, you may plan more elaborate redundancy schemes for redundant power, network ISP connection, and even physical firewalling between zones (<i>this aspect is outside the scope of this document</i>).</p>
+<p>HP Helion OpenStack offers APIs, CLIs and Horizon UIs for the administrator to define and user to consume, availability zones for each of Nova, Cinder and Swift services. This section outlines the process to deploy specific types of nodes to specific physical servers, and makes a statement of available support for these types of availability zones in the current release.</p>
 </section>
 <section id="compute-with-kvm"> <title>Compute with KVM</title>
 <p>You can deploy your KVM Nova-Compute nodes either during initial installation, or by adding compute nodes post initial installation.</p>
@@ -347,7 +347,7 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 </section>
 <section id="nova-availability-zone"> <title>Nova Availability Zones</title>
 <p>Nova host aggregates and availability zones are not supported for general consumption in the current release.</p>
-<p>However, Nova availability zones will be supported for the narrow use of the HP Helion <tm tmtype="reg">OpenStack</tm> Platform Services deployed on HP Helion <tm tmtype="reg">OpenStack</tm> Please refer to the Platform Service documentation for further information.</p>
+<p>However, Nova availability zones will be supported for the narrow use of the HP Helion OpenStack Platform Services deployed on HP Helion OpenStack Please refer to the Platform Service documentation for further information.</p>
 </section>
 <section id="compute-with-esx"> <title>Compute with ESX Hypervisor</title>
 <p>Compute nodes deployed on ESX Hypervisor can be made highly available using the HA feature of VMware ESX Clusters. For more information on VMware HA, please refer to your VMware ESX documentation.</p>
@@ -399,7 +399,7 @@ Neutron Netwoking in HA covers the following:
 <ul>
 <li>
 <p>
-<b><tm tmtype="reg">OpenStack</tm> Service APIs</b>: invocations can fail - you should carefully evaluate the response of each invocation, and retry in case of failures.</p>
+<b>OpenStack Service APIs</b>: invocations can fail - you should carefully evaluate the response of each invocation, and retry in case of failures.</p>
 </li>
 <li>
 <p>
@@ -424,7 +424,7 @@ Neutron Netwoking in HA covers the following:
 
 <ul>
 <li>
-<p>Replicate VMs containing stateless services such as Web application tier or Web service API tier and put them behind load balancers (you must implement your own HA Proxy type load balancer in your application VMs until HP Helion <tm tmtype="reg">OpenStack</tm> delivers the LBaaS service).</p>
+<p>Replicate VMs containing stateless services such as Web application tier or Web service API tier and put them behind load balancers (you must implement your own HA Proxy type load balancer in your application VMs until HP Helion OpenStack delivers the LBaaS service).</p>
 </li>
 <li>
 <p>Boot the replicated VMs into different Nova availability zones.</p>
@@ -446,7 +446,7 @@ Neutron Netwoking in HA covers the following:
 </ul>
 </li>
 <li>
-<p>Instead of rolling your own highly available stateful services, use readily available HP Helion <tm tmtype="reg">OpenStack</tm> platform services such as:</p>
+<p>Instead of rolling your own highly available stateful services, use readily available HP Helion OpenStack platform services such as:</p>
 
 <ul>
 <li>Database as a Service (DBaaS)</li>
@@ -492,7 +492,7 @@ Neutron Netwoking in HA covers the following:
 <section id="more-info"> <title>More information</title>
 <ul>
 <li>
-<xref href="http://docs.openstack.org/high-availability-guide/content/ch-intro.html" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> High-availability Guide</xref>
+<xref href="http://docs.openstack.org/high-availability-guide/content/ch-intro.html" scope="external" format="html" >OpenStack High-availability Guide</xref>
 </li>
 </ul>
 <!-- http://www.ibm.com/developerworks/cloud/library/cl-cloudappdevelop/ **pretty sure we can't link HP's website to IBM's** -->

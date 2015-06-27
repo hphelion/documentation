@@ -25,7 +25,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.controllers.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/controllers/--></p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> is an <tm tmtype="reg">OpenStack</tm> technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
+<p>HP Helion OpenStack is an OpenStack technology coupled with a version of <tm tmtype="reg">Linux</tm> provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.</p>
 <ul>
 <li>
 <xref type="section" href="#topic2919/foreverupdate">Heat Stack Updates Take 30+ Minutes</xref>
@@ -109,7 +109,7 @@ sudo os-refresh-config
 </ol>
 <!-- ## After Updating, Cinder Create and Backups Fail {#failcinder}
 
-After updating to HP Helion <tm tmtype="reg">OpenStack</tm> 1.1, Cinder [backup](#backupfail) and Cinder [create volume from image](#volumefail) (bootable volume) fail. 
+After updating to HP Helion OpenStack 1.1, Cinder [backup](#backupfail) and Cinder [create volume from image](#volumefail) (bootable volume) fail. 
 
 This indicates that ISCSI authentication is failing on controller0. The work-around is to migrate the cinder-volume service to another node and then stop the Cinder Backup service on controller0.
 

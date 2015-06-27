@@ -25,9 +25,9 @@
 </ul>
 <section id="eula"> <title>Part 1: HP End User License Agreement</title>
 <p>
-<b>1. Applicability.</b> This end user license agreement (the "Agreement") governs the use of accompanying HP Helion <tm tmtype="reg">OpenStack</tm> Software ("Software"), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this Agreement.</p>
+<b>1. Applicability.</b> This end user license agreement (the "Agreement") governs the use of accompanying HP Helion OpenStack Software ("Software"), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this Agreement.</p>
 <p>
-  <b>2. Terms.</b> This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at: <xref href="community.3rd-party-license-agreements.dita"  >HP Helion <tm tmtype="reg">OpenStack</tm> Open Source and Third-Party Software License Agreements</xref>.</p>
+  <b>2. Terms.</b> This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at: <xref href="community.3rd-party-license-agreements.dita"  >HP Helion OpenStack Open Source and Third-Party Software License Agreements</xref>.</p>
 <p>
 <b>3. Authorization</b>. If you agree to this Agreement on behalf of another person or entity, you warrant you have authority to do so.</p>
 <p>
@@ -92,7 +92,7 @@ in the governing Agreement.</p>
 <p>
 <b>Internal Use</b> - Use of the Software for purposes of supporting Customer's internal business operations or functions.</p>
 <p>
-<b>Management Software</b> - An HP Helion <tm tmtype="reg">OpenStack</tm> management software running on a Physical Server for the sole purpose of deploying or managing a Cloud Fabric.</p>
+<b>Management Software</b> - An HP Helion OpenStack management software running on a Physical Server for the sole purpose of deploying or managing a Cloud Fabric.</p>
 <p>
 <b>Physical Server</b> - A single, physical hardware server or other computer but is not a Virtual Machine.</p>
 <p>
@@ -135,13 +135,13 @@ Subject to Customer's compliance with the terms and conditions of this Agreement
 <p>
 <b>l. Updates and Supplements:</b>  We may update or supplement the Software. If so, you may use that update or supplement with the Software, subject to any additional terms that accompany the update or supplement.</p>
 <p>
-<b>m.</b> The <tm tmtype="reg">OpenStack</tm> word mark and the Square O Design, together or apart, are trademarks or registered trademarks of <tm tmtype="reg">OpenStack</tm> Foundation in the United States and other countries, and are used with the <tm tmtype="reg">OpenStack</tm> Foundation's permission.</p>
+<b>m.</b> The OpenStack word mark and the Square O Design, together or apart, are trademarks or registered trademarks of OpenStack Foundation in the United States and other countries, and are used with the OpenStack Foundation's permission.</p>
 <p>
   <xref type="section" href="#topic15995"> Return to Top </xref>
 </p>
 </section>
 <section id="ancilliary"> <title>Part 3: Ancillary and Open Source Software for Software</title>
-  <p>Additional license authorizations related to ancillary, third party and open source software components are available at: <xref href="community.3rd-party-license-agreements.dita"   >HP Helion <tm tmtype="reg">OpenStack</tm> Open Source and Third-Party Software License Agreements</xref>.</p>
+  <p>Additional license authorizations related to ancillary, third party and open source software components are available at: <xref href="community.3rd-party-license-agreements.dita"   >HP Helion OpenStack Open Source and Third-Party Software License Agreements</xref>.</p>
 <p>
   <xref type="section" href="#topic15995"> Return to Top </xref>
 </p>

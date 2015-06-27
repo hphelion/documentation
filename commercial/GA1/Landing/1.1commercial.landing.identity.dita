@@ -29,7 +29,7 @@
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" >Integrate the Identity Service (Keystone) with LDAP/AD</xref>
-<!--A BR tag was used here in the original source.-->Learn about how to configure the HP Helion <tm tmtype="reg">OpenStack</tm> Identity service to integrate your organization's existing to use Lightweight Directory Access Protocol (LDAP) service.</p>
+<!--A BR tag was used here in the original source.-->Learn about how to configure the HP Helion OpenStack Identity service to integrate your organization's existing to use Lightweight Directory Access Protocol (LDAP) service.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commerical.services-identity-configure-v3.dita" >Configuring Horizon for Keystone v3</xref>

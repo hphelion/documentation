@@ -23,7 +23,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.md-->
  <!--permalink: /helion/openstack/1.1/services/neutron/pre/installation/hardware-software/--></p>
-<p>This page provides an overview of the hardware configuration and software requirement that the is supported for HP Helion <tm tmtype="reg">OpenStack</tm></p>
+<p>This page provides an overview of the hardware configuration and software requirement that the is supported for HP Helion OpenStack</p>
 <ul>
 <li>
 <xref type="section" href="#topic6824/hardware-req">Meet hardware configuration requirements</xref> </li>
@@ -302,7 +302,7 @@
 </p>
 </section>
 <section id="software-req"> <title>Meet software requirements</title>
-<p>This section explains the Helion <tm tmtype="reg">OpenStack</tm> software requirements. The software requirement for the Seed Cloud Host is Ubuntu 14.04 with the following packages.</p>
+<p>This section explains the Helion OpenStack software requirements. The software requirement for the Seed Cloud Host is Ubuntu 14.04 with the following packages.</p>
 <ul>
 <li>xrdp </li>
 <li>xfce4 </li>
@@ -321,7 +321,7 @@
 <p>Our Guest OS support is based on the hypervisor vendor.</p>
 <p>For ESX, refer to the <xref href="http://www.vmware.com/resources/compatibility/search.php?action=search&amp;deviceCategory=software&amp;advancedORbasic=advanced&amp;maxDisplayRows=50&amp;key=&amp;productId=4&amp;gos_vmw_product_release%5B%5D=90&amp;datePosted=-1&amp;partnerId%5B%5D=-1&amp;os_bits=-1&amp;os_use%5B%5D=-1&amp;os_family%5B%5D=-1&amp;os_type%5B%5D=-1&amp;rorre=0" scope="external" format="html" >VMware Compatibility Guide</xref>.</p>
 <p>For KVM refer to the following table:</p>
-<p>A <b>Qualified</b> Guest OS has been tested and will support the Guest OS running on HP Helion <tm tmtype="reg">OpenStack</tm></p>
+<p>A <b>Qualified</b> Guest OS has been tested and will support the Guest OS running on HP Helion OpenStack</p>
 <p>A <b>Certified</b> Guest OS has been officially certified with the appropriate vendor of the OS.</p>
 <table>
 <tgroup cols="3">
@@ -434,7 +434,7 @@
 </section>
 <section id="next-step"> <title>Next Steps</title>
 <p>
-  <xref href="../../../commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> High Availability for Cloud Networking</xref>
+  <xref href="../../../commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita" >HP Helion OpenStack High Availability for Cloud Networking</xref>
 </p>
 <p>
   <xref type="section" href="#topic6824"> Return to Top </xref>

@@ -26,19 +26,19 @@
  <!--./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-mtu.md-->
  <!--permalink: /helion/openstack/carrier/configuration/plan/ethernet/mtu/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>The Maximum Transmission Unit (MTU) of an Ethernet frame is a configurable attribute in the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade. Changing its default size must be done in coordination with other network elements on the Ethernet link.</p>
+<p>The Maximum Transmission Unit (MTU) of an Ethernet frame is a configurable attribute in the HP Helion OpenStack Carrier Grade. Changing its default size must be done in coordination with other network elements on the Ethernet link.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>In HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade, the Maximum Transmission Unit (MTU) refers to the largest possible payload on the Ethernet frame on a particular network link. The payload is enclosed by the Ethernet header (14 bytes) and the CRC (4 bytes), resulting in an Ethernet frame that is 18 bytes longer than the MTU size.</p>
+<p>In HP Helion OpenStack Carrier Grade, the Maximum Transmission Unit (MTU) refers to the largest possible payload on the Ethernet frame on a particular network link. The payload is enclosed by the Ethernet header (14 bytes) and the CRC (4 bytes), resulting in an Ethernet frame that is 18 bytes longer than the MTU size.</p>
 <p>The original IEEE 802.3 specification defines a valid standard Ethernet frame size to be from 64 to 1518 bytes, accommodating payloads ranging in size from 46 to 1500 bytes. Ethernet frames with a payload larger than 1500 bytes are considered to be jumbo frames.</p>
 <p>For a VLAN network, the frame also includes a 4-byte VLAN ID header, resulting in a frame size 22 bytes longer than the MTU size.</p>
 <p>For a VXLAN network, the frame is either 54 or 74 bytes longer, depending on whether IPv4 or IPv6 protocol is used. This is because, in addition to the Ethernet header and CRC, the payload is enclosed by an IP header (20 bytes for Ipv4 or 40 bytes for IPv6), a UDP header (8 bytes), and a VXLAN header (8 bytes).</p>
-<p>In the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade, you can configure the MTU size for the following interfaces and networks:</p>
+<p>In the HP Helion OpenStack Carrier Grade, you can configure the MTU size for the following interfaces and networks:</p>
 <ul>
 <li>
-<p>The management, OAM, and infrastructure network interfaces on the controller. The MTU size for these interfaces is set during initial installation; for more information, see the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade Software Installation Guide: The Controller Configuration Script. You can update the infrastructure interface MTU for the controller from the web administration interface or the CLI.</p>
+<p>The management, OAM, and infrastructure network interfaces on the controller. The MTU size for these interfaces is set during initial installation; for more information, see the HP Helion OpenStack Carrier Grade Software Installation Guide: The Controller Configuration Script. You can update the infrastructure interface MTU for the controller from the web administration interface or the CLI.</p>
 </li>
 <li>
 <p>Data interfaces on compute nodes. For more information, see the Compute Node entry in Reference Logical Architecture.</p>

@@ -15,7 +15,7 @@
 <p>To assess the progress of HP Helion Cloud update, the progress utility provides an overview of the update status.</p>
 <p>This provides an option to get a snapshot of the current state or to monitor the update progress.</p>
 <section id="view-the-current-status"> <title>View the current status</title>
-<p>To get a snapshot of current status of HP Helion <tm tmtype="reg">OpenStack</tm> update:</p>
+<p>To get a snapshot of current status of HP Helion OpenStack update:</p>
 <ol>
 <li>
 <p>Log in the seed VM host.</p>

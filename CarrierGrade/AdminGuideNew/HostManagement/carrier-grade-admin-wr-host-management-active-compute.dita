@@ -26,7 +26,7 @@
  <!--./CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-active-compute.md-->
  <!--permalink: /helion/openstack/carrier/admin/host/management/active/compute/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>The compute nodes in HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade form a resource pool for hosting guest instances. You can manage this pool by managing the hosts.</p>
+<p>The compute nodes in HP Helion OpenStack Carrier Grade form a resource pool for hosting guest instances. You can manage this pool by managing the hosts.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -56,7 +56,7 @@
 <ol>
 <li>
 <p>
-<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>
@@ -76,7 +76,7 @@
 </li>
 <li>
 <p>
-  <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita" >Delete the host</xref> from the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade system. Click <b>More</b> then <b>Delete Host</b> for the host.</p>
+  <xref href="../../../CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management.dita" >Delete the host</xref> from the HP Helion OpenStack Carrier Grade system. Click <b>More</b> then <b>Delete Host</b> for the host.</p>
 </li>
 <li>
 <p>Power down the host and remove the hardware from the cluster.</p>
@@ -89,7 +89,7 @@
 <ol>
 <li>
 <p>
-<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
 
 <ul>
 <li>Use the IP address for the appropriate region where you want to make the change, either: the Non-KVM region or the KVM region.</li>

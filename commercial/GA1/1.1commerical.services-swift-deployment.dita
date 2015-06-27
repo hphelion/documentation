@@ -26,7 +26,7 @@
  <!--permalink: /helion/openstack/1.1/services/swift/deployment-scale-out/--></p>
 <p>
       <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment.dita">See the Helion
-        <tm tmtype="reg">OpenStack</tm>1.0 version of this page</xref>
+        OpenStack1.0 version of this page</xref>
     </p>
 <p>The scale-out object storage is realized by defining a new storage policy - storage-policy:1. Object-1 ring is associated with storage-policy:1. This ring is used to store end user data. Once the storage-policy:1 is created, it is the default policy and all of the containers would be on this policy unless otherwise specified. We recommend you to use at least <b>two</b> nodes to implement storage-policy:1. Also, you can extend the object storage by adding one or more nodes to object-ring:1 as per your requirement.</p>
 <p>Perform the following steps to deploy scale-out object-ring:1</p>
@@ -59,7 +59,7 @@
 <xref type="section" href="#topic14660/update-storage-scaleout-swift">Update the Storage Policy</xref> </li>
 </ol>
 <section id="preq"> <title>Prerequisites</title>
-<p>A HP Helion <tm tmtype="reg">OpenStack</tm>cloud must be deployed. Functional Swift starter nodes are created as an
+<p>A HP Helion OpenStackcloud must be deployed. Functional Swift starter nodes are created as an
         integral part of cloud deployment.</p>
 </section>
 <section id="define-object-ring:1"> <title>Define the Ring Attributes of Object Ring-1</title>
@@ -287,7 +287,7 @@ For more details, see the <xref href="../../commercial/GA1/1.1commerical.service
 <section id="creating-scale-out-object-ring"> <title>Create a New Scale-out Object Ring</title>
 <p>Once the disk is formatted you can create a scale-out object ring. This ring is created for the
         scale-out Swift which is an extension of the Starter Swift nodes which are installed by
-        default during HP Helion <tm tmtype="reg">OpenStack</tm>cloud deployment.</p>
+        default during HP Helion OpenStackcloud deployment.</p>
 <ol>
 <li> Create a directory named
           <codeph>ring-building</codeph>.<codeblock><codeph># mkdir -p /root/ring-building

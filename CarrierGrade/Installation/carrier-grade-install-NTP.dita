@@ -17,9 +17,9 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-NTP.md-->
  <!--permalink: /helion/openstack/carrier/install/ntp/--></p>
-<p>This page provides detailed information on <xref type="section" href="#topic4740/client">configuring HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade nodes</xref> for Network Time Protocol (NTP) and <xref type="section" href="#topic4740/server">instlling an NTP server on the seed cloud host</xref>.</p>
+<p>This page provides detailed information on <xref type="section" href="#topic4740/client">configuring HP Helion OpenStack Carrier Grade nodes</xref> for Network Time Protocol (NTP) and <xref type="section" href="#topic4740/server">instlling an NTP server on the seed cloud host</xref>.</p>
 <p>NTP is a networking protocol for clock synchronization between computer systems. The undercloud and overcloud systems are configured as NTP clients during the installation process.</p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade requires that all nodes point to the same NTP server. You can use an external NTP server or configure the seed cloud host as a server.</p>
+<p>HP Helion OpenStack Carrier Grade requires that all nodes point to the same NTP server. You can use an external NTP server or configure the seed cloud host as a server.</p>
 <p>
   <b>Notes:</b>
 </p>
@@ -95,7 +95,7 @@ ntp0001.use 123 10.22.170.17    2365    4   4   1d0 1000    384
 <section id="fudge"> <title>Fudging a stratum lower than 10</title>
 <p>NTP uses a hierarchical, semi-layered system of time sources. Each level of this hierarchy is termed a <i>stratum</i> and is assigned a number starting with zero at the top. The number represents the distance from the reference clock and is used to prevent cyclical dependencies in the hierarchy.</p>
 <p>The numerically lower the stratum value, the higher priority that clock has.</p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> uses stratum 10. Using a numerically high stratum ensures that this is only used if all external clocks fail. This will mitigate skew until external clocks return to service.</p>
+<p>HP Helion OpenStack uses stratum 10. Using a numerically high stratum ensures that this is only used if all external clocks fail. This will mitigate skew until external clocks return to service.</p>
 <p>If your NTP stratum is numerically less than 10, set up your host as the time source by fudging a stratum 10.</p>
 <ol>
 <li>Configure host as a time source.</li>

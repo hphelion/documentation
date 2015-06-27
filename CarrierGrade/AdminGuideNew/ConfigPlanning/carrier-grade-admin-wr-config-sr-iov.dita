@@ -38,13 +38,13 @@
 <li>Scales up more easily in a virtualized environment by providing multiple VFs that can be attached to multiple virtual machine interfaces.</li>
 <li>Shares the same limitations, including the lack of support for LAG, QoS, ACS, and live migration.</li>
 <li>Has the same requirements regarding the VLAN configuration of the access switches.</li>
-<li>Provides a similar configuration workflow when used on HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade.</li>
+<li>Provides a similar configuration workflow when used on HP Helion OpenStack Carrier Grade.</li>
 </ul>
 <p>To configure the access switch:</p>
 <ol>
 <li>
         <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
-          <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref> as the admin user.</li>
+          OpenStack Horizon Dashboard</xref> as the admin user.</li>
 <li>
         <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Lock
           the compute node</xref> you want to configure.</li>

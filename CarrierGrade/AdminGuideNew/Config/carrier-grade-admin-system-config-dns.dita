@@ -32,7 +32,7 @@
 <ol>
 <li>
           <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
-            <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.<ul>
+            OpenStack Horizon Dashboard</xref>.<ul>
             <li>Use the IP address for the appropriate region where you want to make the change,
               either: the non-KVM region or the KVM region.</li>
           </ul><p>The <b>System Configuration</b> pane is available from the System Panel section of

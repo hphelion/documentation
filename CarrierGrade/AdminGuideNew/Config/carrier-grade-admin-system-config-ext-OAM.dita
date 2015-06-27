@@ -26,7 +26,7 @@
  <!--./CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-ext-OAM.md-->
  <!--permalink: /helion/openstack/carrier/admin/system/config/ext/--></p>
 <!-- modeled after Wind River Admin Guide -->
-<p>You can change the External network (ext) subnet, floating IP address, controller addresses, and default gateway at any time after installation of HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade.</p>
+<p>You can change the External network (ext) subnet, floating IP address, controller addresses, and default gateway at any time after installation of HP Helion OpenStack Carrier Grade.</p>
 <section id="cli"> <title>Change external network IP using the CLI</title>
 <p>You can change these addresses using the web administration interface or the CLI.</p>
 <p>

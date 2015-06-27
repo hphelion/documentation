@@ -204,7 +204,7 @@
 </section>
 <section id="container-format"> <title>Container Format</title>
 <p>The container format refers to whether the virtual machine image is in a file format that also contains metadata about the actual virtual machine.</p>
-<p>Note that the container format string is not currently used by the Image service or other <tm tmtype="reg">OpenStack</tm> components, so it is safe to simply specify bare as the container format if you are unsure.</p>
+<p>Note that the container format string is not currently used by the Image service or other OpenStack components, so it is safe to simply specify bare as the container format if you are unsure.</p>
 <p>You can set your image's container format to one of the following:</p>
 <ul>
 <li>

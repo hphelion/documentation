@@ -15,7 +15,7 @@
 <p>
 
 </p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm>includes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).</p>
+<p>HP Helion OpenStackincludes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).</p>
 <p>It is recommended to use these Starter servers as host for the following Swift services for scaled out Swift cluster:</p>
 <ol>
 <li>Swift Proxy </li>
@@ -27,14 +27,14 @@
 <!--
 We recommend you use these Starter servers as Swift Proxy Servers for the scaled out Swift cluster. To do this, you can use the *ringos* utility to add additional drives on that server to the Swift Account and Container rings. 
 -->
-- <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment.dita" >Step by step instructions for deploying additional Scale-out Swift Nodes with HP Helion <tm tmtype="reg">OpenStack</tm></xref>
+- <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment.dita" >Step by step instructions for deploying additional Scale-out Swift Nodes with HP Helion OpenStack</xref>
 </p>
 <section id="diagrams"> <title>Diagrams</title>
-<p>The HP Helion <tm tmtype="reg">OpenStack</tm>scale-out Swift architecture.</p>
+<p>The HP Helion OpenStackscale-out Swift architecture.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion <tm tmtype="reg">OpenStack</tm>Scale-out (opens in a new window)</xref>
+  <xref format="html" href="javascript:window.open('/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStackScale-out (opens in a new window)</xref>
 </p>
-<p>The HP Helion <tm tmtype="reg">OpenStack</tm>life-cycle diagram.</p>
+<p>The HP Helion OpenStacklife-cycle diagram.</p>
 <p>
   <xref format="html" href="javascript:window.open('/media/swift-cluster-lifecycle.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Swift cluster lifecycle(opens in a new window) </xref>
 </p>
@@ -47,7 +47,7 @@ We recommend you use these Starter servers as Swift Proxy Servers for the scaled
         policy and objects associated to those containers are stored in the ring with policy-1. For
         more details on storage policy, see <xref
           href="http://docs.openstack.org/developer/swift/overview_policies.html" scope="external"
-          format="html"><tm tmtype="reg">OpenStack</tm>Swift overview policies</xref>.</p>
+          format="html">OpenStackSwift overview policies</xref>.</p>
 <!--
 All containers must have a storage policy. If a policy is not explicitly specified, the default policy is applied.
 

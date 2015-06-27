@@ -54,7 +54,7 @@
 </ol>
 <section id="prer"> <title>Prerequisites</title>
 <ul>
-<li>HP Helion <tm tmtype="reg">OpenStack</tm>cloud is successfully
+<li>HP Helion OpenStackcloud is successfully
             deployed.<!--A BR tag was used here in the original source.--><i>(Starter Swift nodes
             are functional by default as they are part of cloud deployment.)</i>
         </li>

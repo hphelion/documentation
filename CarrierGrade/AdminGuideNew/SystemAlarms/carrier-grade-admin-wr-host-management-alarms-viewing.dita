@@ -26,7 +26,7 @@
  <!--./CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-viewing.md-->
  <!--permalink: /helion/openstack/carrier/admin/alarms/viewing/--></p>
 <!-- From the Titanium Server Admin Guide -->
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade can generate system alarms when operational conditions change on any of the hosts in the cluster.</p>
+<p>HP Helion OpenStack Carrier Grade can generate system alarms when operational conditions change on any of the hosts in the cluster.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
@@ -127,7 +127,7 @@ support for VIEWS
 </ul>
 </section>
 <section id="enterprise"> <title>Enterprise MIBs</title>
-<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade supports the Enterprise Registration and Alarm MIBs.</p>
+<p>The HP Helion OpenStack Carrier Grade supports the Enterprise Registration and Alarm MIBs.</p>
 <ul>
 <li>
 <p>

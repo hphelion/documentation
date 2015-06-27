@@ -29,10 +29,10 @@
 <p>You can change the allotments for controller-based storage at any time after installation. This includes the space allotted for database, image, and backup storage, and for clusters using an LVM backend, the space allotted for Cinder volume storage.</p>
 <p>
 <b>Note:</b> For clusters using a Ceph backend, Cinder volume storage is allotted on storage nodes, not on the controller node. To change the Cinder volume storage for a Ceph backend, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-storage.dita" >Replacing Active Storage Nodes</xref>.</p>
-<p>During software installation, the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade is configured with the following storage allotments:</p>
+<p>During software installation, the HP Helion OpenStack Carrier Grade is configured with the following storage allotments:</p>
 <ul>
 <li>
-<b>Database storage</b> - The storage allotment for the <tm tmtype="reg">OpenStack</tm> database.</li>
+<b>Database storage</b> - The storage allotment for the OpenStack database.</li>
 <li>
 <b>Image storage</b> - The size of the partition to use for image storage.</li>
 <li>
@@ -47,7 +47,7 @@
 <p>To pass the disk-space checks, any replacement disks must be installed before the allotments are changed.</p>
 <p>
 <b>Caution:</b> The configurations for controller-0 and controller-1 must be identical. If you make changes to one, you must make the same changes to the other.</p>
-<p>Changes to the storage allotments require a reinstallation of the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade host software on the controllers, even if the primary disk is not replaced.</p>
+<p>Changes to the storage allotments require a reinstallation of the HP Helion OpenStack Carrier Grade host software on the controllers, even if the primary disk is not replaced.</p>
 <p>You can change the storage allotment using the <xref type="section" href="#topic7921/horizon">Horizon dashboard</xref> or <xref type="section" href="#topic7921/cli">the CLI</xref>.</p>
 <p>Before changing storage allotments, prepare as follows:</p>
 <ul>
@@ -69,7 +69,7 @@
               down the standby controller</xref>.</p><p>c. Make any required hardware
             changes.</p><p>d. <xref
               href="../HostManagement/carrier-grade-admin-wr-host-management.dita#poweroff">Power up
-              the standby controller</xref>.</p><p>e. Reinstall the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier
+              the standby controller</xref>.</p><p>e. Reinstall the HP Helion OpenStack Carrier
             Grade software on the standby controller.</p><p>f. <xref
               href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Unlock
               the standby controller</xref>.</p><p>g. [Swact the
@@ -77,7 +77,7 @@
             Repeat these steps for the new standby controller.</p></li>
 <li>Edit the disk storage allotments.<p>a. <xref
               href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
-              <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref>.</p><p>b. Click the <b>Admin</b> dashboard, then
+              OpenStack Horizon Dashboard</xref>.</p><p>b. Click the <b>Admin</b> dashboard, then
             the <b>System</b> panel, then the <b>System Inventory</b> link.</p><p>c. Select the
             Controller Filesystem tab.</p><p>The Controller Filesystem page appears, showing the
             currently defined storage allotments.</p><p>d. Click Edit Filesystem.</p><p>The Edit
@@ -91,9 +91,9 @@
 <li>
           <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Lock
             the standby controller</xref>.</li>
-<li>Reinstall the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade software on the standby controller.</li>
+<li>Reinstall the HP Helion OpenStack Carrier Grade software on the standby controller.</li>
 </ol>
-<p>This step is required to update the system configuration, even if you have already reinstalled the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade software as part of the disk replacement procedure.</p>
+<p>This step is required to update the system configuration, even if you have already reinstalled the HP Helion OpenStack Carrier Grade software as part of the disk replacement procedure.</p>
 <ol>
 <li>
           <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"
@@ -104,7 +104,7 @@
 <li>
           <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Lock
             the new standby controller</xref>.</li>
-<li>Reinstall the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade software on the controller.</li>
+<li>Reinstall the HP Helion OpenStack Carrier Grade software on the controller.</li>
 <li>
           <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"
             >Unlock the controller</xref>.</li>
@@ -118,7 +118,7 @@
 </codeph></codeblock>
 <p>Before you can change storage allotments, you must have enough disk space, including additional headroom required to complete the operation. If there is not enough disk space, changes to the storage allotment are disallowed.</p>
 <p>You can replace the disks in the controllers to provide more space. For more information, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-storage.dita" >Replacing Active Storage Nodes</xref>.</p>
-<p>To support storage changes, you must reinstall the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade software on each controller during the disk replacement procedure. This is required even if the primary disk is not directly affected by the change. To reinstall the software, you can use the following command:</p>
+<p>To support storage changes, you must reinstall the HP Helion OpenStack Carrier Grade software on each controller during the disk replacement procedure. This is required even if the primary disk is not directly affected by the change. To reinstall the software, you can use the following command:</p>
 <codeblock><codeph>system host-reinstall controller_name
 </codeph></codeblock>
 <p>To change the database, image, or backup storage allotment, or the Cinder volume storage allotment on a system with an LVM storage backend, use the following command syntax, where the allotments are in GiB.</p>
@@ -133,7 +133,7 @@ action=apply
 <codeblock><codeph>system controllerfs-modify \
 database_gib=10 image_gib=13 backup_gib=22 action=apply
 </codeph></codeblock>
-<p>After changing the controller storage configuration, you must lock each controller and reinstall the HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade software, even if you have already done so as part of changing the controller disks. You can use the following command:</p>
+<p>After changing the controller storage configuration, you must lock each controller and reinstall the HP Helion OpenStack Carrier Grade software, even if you have already done so as part of changing the controller disks. You can use the following command:</p>
 <codeblock><codeph>system host-reinstall controller_name
 </codeph></codeblock>
 <p>Then you can unlock the controller to clear any Configuration out-of-date alarms. A controller swact is required to update both controllers.</p>

@@ -20,15 +20,15 @@
  <!--permalink: /helion/openstack/1.1/landing/start/--></p>
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.faq.dita" >Frequently Asked Questions</xref>
-<!--A BR tag was used here in the original source.-->Commonly asked queries that you might have while working with HP Helion <tm tmtype="reg">OpenStack</tm></p>
+<!--A BR tag was used here in the original source.-->Commonly asked queries that you might have while working with HP Helion OpenStack</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.technical-overview.ga.dita" >Technical overview</xref>
-<!--A BR tag was used here in the original source.-->Learn about HP Helion <tm tmtype="reg">OpenStack</tm> an enterprise-grade distribution of the <tm tmtype="reg">OpenStack</tm> cloud operating system.</p>
+<!--A BR tag was used here in the original source.-->Learn about HP Helion OpenStack an enterprise-grade distribution of the OpenStack cloud operating system.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support matrix</xref>
-<!--A BR tag was used here in the original source.-->Learn about the hardware and software that is supported for HP Helion <tm tmtype="reg">OpenStack</tm></p>
+<!--A BR tag was used here in the original source.-->Learn about the hardware and software that is supported for HP Helion OpenStack</p>
 <!-- ===================== horizontal rule ===================== -->
 </body>
 </topic>

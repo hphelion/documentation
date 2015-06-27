@@ -44,7 +44,7 @@
 <ol>
 <li>
         <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
-          <tm tmtype="reg">OpenStack</tm> Horizon Dashboard</xref> as the admin user.</li>
+          OpenStack Horizon Dashboard</xref> as the admin user.</li>
 <li>
         <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Lock
           the compute node</xref> you want to configure.</li>

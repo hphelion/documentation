@@ -113,7 +113,7 @@ export SWIFT_AUTHVERSION=2
 <p>Perform the following steps:</p>
 <ul>
 <li>
-<p>Create Ceph pool, Ceph user as in the previous section for backup &lt;<b>placeholder of the backup</b>&gt;. Note: for large deployments where hundreds of discrete users and pools will be created, managed, and audited, consider integrating the HP Helion <tm tmtype="reg">OpenStack</tm> Tenant Project user, Keystone, and the Ceph user and associated pool(s).</p>
+<p>Create Ceph pool, Ceph user as in the previous section for backup &lt;<b>placeholder of the backup</b>&gt;. Note: for large deployments where hundreds of discrete users and pools will be created, managed, and audited, consider integrating the HP Helion OpenStack Tenant Project user, Keystone, and the Ceph user and associated pool(s).</p>
 </li>
 <li>
 <p>Install the Swift client (and other components as specified in the Ceph RADOSGW Client section) on the user client Virtual Machine.</p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2040">
-  <title> <tm tmtype="reg">HP Helion OpenStack</tm> Community: How to use the Helion Dashboards</title>
+  <title> HP Helion <tm tmtype="reg">OpenStack</tm> Community: How to use the Helion Dashboards</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,8 +12,8 @@
 <!--PUBLISHED-->
  <!--./community/community.dashboard.how-works.md-->
  <!--permalink: /helion/community/dashboard/how-works/--></p>
-  <p><tm tmtype="reg">The HP Helion OpenStack</tm>Community dashboards are browser-based user interfaces that allow you to interact with the <tm tmtype="reg">HP Helion OpenStack</tm> Commercial overcloud. The overcloud is the end-user <tm tmtype="reg">OpenStack</tm> cloud.</p>
-  <p>The interface, based on <tm tmtype="reg">OpenStack</tm> Horizon, is grouped into dashboards,
+  <p>The HP Helion OpenStack Community dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Commercial overcloud. The overcloud is the end-user OpenStack cloud.</p>
+  <p>The interface, based on OpenStack Horizon, is grouped into dashboards,
       including <xref href="#topic2040/project-dashboard" format="dita"/>, <xref
         href="#topic2040/admin-dashboard" format="dita"/>,  and <xref
         href="#topic2040/settings-dashboard" format="dita"/> Tabs on the left side of the interface

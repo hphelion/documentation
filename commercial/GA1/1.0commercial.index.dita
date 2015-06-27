@@ -15,11 +15,11 @@
 <p>
 
 </p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> is a commercial-grade distribution of <tm tmtype="reg">OpenStack</tm> the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion <tm tmtype="reg">OpenStack</tm> enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> offers many services based on the different <tm tmtype="reg">OpenStack</tm> projects to provide the functionality you need. Visit the <xref href="../../commercial/GA1/1.0commerical.services-overview.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Services Overview page</xref> for a complete list of services.</p>
+<p>HP Helion OpenStack is a commercial-grade distribution of OpenStack the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
+<p>HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the <xref href="../../commercial/GA1/1.0commerical.services-overview.dita" >HP Helion OpenStack Services Overview page</xref> for a complete list of services.</p>
   
-<section id="get-started-with-hp-helion-openstack"> <title>Get Started with HP Helion <tm tmtype="reg">OpenStack</tm></title>
-<p>Use the following links and tools to begin working with HP Helion <tm tmtype="reg">OpenStack</tm></p>
+<section id="get-started-with-hp-helion-openstack"> <title>Get Started with HP Helion OpenStack</title>
+<p>Use the following links and tools to begin working with HP Helion OpenStack</p>
 <ul>
 <li>
 <xref href="../../commercial/GA1/1.0commercial.install-GA-overview.dita" >Installation</xref>
@@ -40,13 +40,13 @@
 <xref href="../../commercial/GA1/1.0commercial.install-GA-supportmatrix.dita" >Support matrix</xref>
 </li>
 
-<li>For definitions of key terms, see the <xref href="../../commercial/GA1/1.0commercial.glossary.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Glossary</xref>
+<li>For definitions of key terms, see the <xref href="../../commercial/GA1/1.0commercial.glossary.dita" >HP Helion OpenStack Glossary</xref>
 </li>
 <li>For detailed REST API information, <xref href="../../commercial/GA1/1.0commerical.services-overview.dita" >use the links on the Services Overview page</xref>. </li>
 </ul>
 
 <p>
-<b>Note:</b> HP <tm tmtype="reg">OpenStack</tm> Helion does not support an update utility to update from Helion 1.0 or Helion 1.01 to Helion 1.1. For help with updating from your current release to a newer release, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref>.</p>
+<b>Note:</b> HP OpenStack Helion does not support an update utility to update from Helion 1.0 or Helion 1.01 to Helion 1.1. For help with updating from your current release to a newer release, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref>.</p>
 <p>
   <xref type="section" href="#topic2374"> Return to Top </xref>
 </p>

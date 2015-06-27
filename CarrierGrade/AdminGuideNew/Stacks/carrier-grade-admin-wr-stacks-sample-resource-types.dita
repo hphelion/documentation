@@ -18,12 +18,12 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-sample-resource-types.md-->
  <!--permalink: /helion/openstack/carrier/admin/stacks/resource-types/--></p>
-<p>The HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade implementation of Heat has been tested with most commonly-used resource types.</p>
+<p>The HP Helion OpenStack Carrier Grade implementation of Heat has been tested with most commonly-used resource types.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <b>Note:</b> This feature applies only to servers in the VNF Region.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>The following resource types have been tested for use with HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade.</p>
+<p>The following resource types have been tested for use with HP Helion OpenStack Carrier Grade.</p>
 <ul>
 <li>AWS::AutoScaling::AutoScalingGroup</li>
 <li>AWS::AutoScaling::LaunchConfiguration</li>

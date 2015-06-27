@@ -37,7 +37,7 @@ By default, HP Helion Openstack cloud deploys a two node (termed as start-up swi
 <section id="pre"> <title>Prerequisites</title>
 <p>Before you begin, ensure the following:</p>
 <ul>
-<li>The seed VM, undercloud and overcloud are installed using the HP Helion <tm tmtype="reg">OpenStack</tm> installer.</li>
+<li>The seed VM, undercloud and overcloud are installed using the HP Helion OpenStack installer.</li>
 </ul>
 </section>
 <section id="add"> <title>Add compute nodes</title>

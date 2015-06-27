@@ -10,26 +10,25 @@
 <body>
     <p><!--UNDER REVISION--><!--./CarrierGrade/Overview/carrier-grade-overview.md--><!--permalink: /helion/openstack/carrier/overview/--></p>
     <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
-    <p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade integrates KVM with HP
-      Helion <tm tmtype="reg">OpenStack</tm> to enable carrier grade network functions
+    <p>HP Helion OpenStack Carrier Grade integrates KVM with HP
+      Helion OpenStack to enable carrier grade network functions
       virtualization (NFV) capabilities.</p>
-    <p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade is based on <xref
+    <p>HP Helion OpenStack Carrier Grade is based on <xref
         href="../../commercial/GA1/1.1commercial.index.dita">HP Helion Openstack 1.1</xref> but with
       significantly enhanced and optimized functionality, availability, scale and performance to
       meet the needs of NFV cloud deployments.</p>
-    <p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade uses multi-core HP Proliant
+    <p>HP Helion OpenStack Carrier Grade uses multi-core HP Proliant
       rack-mounted servers with storage and networking along with the <xref
         href="http://www.windriver.com/products/titanium-server/" scope="external" format="html"
         >Wind River Titanium Server</xref>, <xref
         href="http://www8.hp.com/us/en/products/networking-switches/product-detail.html?oid=7268885"
         scope="external" format="html">HP Distributed Cloud Networking</xref>, Kernel-based Virtual
       Machine (KVM), and virtual switch software for reliable and accelerated data plane.</p>
-    <p>HP will contribute enhancements and optimizations made to HP Helion <tm tmtype="reg"
-        >OpenStack</tm> Carrier Grade for NFV to upstream Openstack.</p>
-    <p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade is sold, and supported as a separate
+    <p>HP will contribute enhancements and optimizations made to HP Helion OpenStack Carrier Grade for NFV to upstream Openstack.</p>
+    <p>HP Helion OpenStack Carrier Grade is sold, and supported as a separate
       software entity from HP Helion Openstack.</p>
     <section id="focus-areas-for-hp-helion-openstack-carrier-grade">
-      <title>Focus areas for HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade</title>
+      <title>Focus areas for HP Helion OpenStack Carrier Grade</title>
       <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
       <ul>
         <li>Central control plane but resources are distributed across geography interconnected by
@@ -44,13 +43,13 @@
       </ul>
     </section>
     <section id="major-components-in-hp-helion-openstack-carrier-grade">
-      <title>Major Components in HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade</title>
-      <p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade incorporates a number of proven
+      <title>Major Components in HP Helion OpenStack Carrier Grade</title>
+      <p>HP Helion OpenStack Carrier Grade incorporates a number of proven
         technologies into a single environment.</p>
     </section>
-    <section><b>Helion <tm tmtype="reg">OpenStack</tm></b>
-      <b>(Non-KVM)</b><p>HP Helion <tm tmtype="reg">OpenStack</tm> is a commercial-grade
-        distribution of <tm tmtype="reg">OpenStack</tm> the leading open source cloud computing
+    <section><b>Helion OpenStack</b>
+      <b>(Non-KVM)</b><p>HP Helion OpenStack is a commercial-grade
+        distribution of OpenStack the leading open source cloud computing
         platform. This disrtibution backed by HP, enables customers to more easily build, manage,
         and use open-source based hybrid cloud. In the HP Helion OpenStack Carrier Grade
         documentation, this environment is referred to as Non_KVM.</p><p>For more information, see
@@ -62,7 +61,7 @@
         Grade documentation, this environment is referred to as KVM.</p><p>For more information, see
           <xref href="carrier-grade-overview-kvm.dita">KVM Environment
       Overview</xref>.</p></section>
-  <section><title>Service Overview</title><p>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade is comprised
+  <section><title>Service Overview</title><p>HP Helion OpenStack Carrier Grade is comprised
         of a number of services, including several OpenStack and HP Helion OpenStack
         services.</p><p>For more information, see <xref href="carrier-grade.services-overview.dita"
           >Services Overview</xref>.</p></section>
@@ -71,7 +70,7 @@
   <section id="distributed-cloud-networking-dcn"> <title>Distributed Cloud Networking (DCN)</title>
 <p>Distributed Cloud Networking (DCN) is a Software-Defined Networking (SDN) solution that provides data center (DC) network virtualization and automatically establishes connectivity between compute resources upon their creation.</p>
 <p>For more information, see <xref href="../../CarrierGrade/Overview/carrier-grade-overview-dcn.dita" >Distributed Cloud Networking Overview</xref>.</p>
-<p>HP Helion <tm tmtype="reg">OpenStack</tm> offers many services based on the different <tm tmtype="reg">OpenStack</tm> projects to provide the functionality you need. Visit the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >HP Helion <tm tmtype="reg">OpenStack</tm> Services Overview page</xref> for a complete list of services.</p>
+<p>HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >HP Helion OpenStack Services Overview page</xref> for a complete list of services.</p>
 <p>
   <xref type="section" href="#topic4010"> Return to Top </xref>
 </p>

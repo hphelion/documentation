@@ -33,7 +33,7 @@
 <section id="method-1"> <title>Method 1</title>
 <ol>
 <li>
-<p>Log in to the HP Helion <tm tmtype="reg">OpenStack</tm> Commercial dashboard as cloud admin.</p>
+<p>Log in to the HP Helion OpenStack Commercial dashboard as cloud admin.</p>
 </li>
 <li>
 <p>Select the project you want to work with.</p>
