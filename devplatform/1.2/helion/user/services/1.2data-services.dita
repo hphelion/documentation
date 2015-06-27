@@ -352,7 +352,7 @@ grouped by service type. VCAP_SERVICES variables use non-versioned service names
 </section>
 <section id="using-dbshell"> <title>Via <i>dbshell</i>
 </title>
-  <p>The <xref href="../eference/1.2client-ref-management.dita#topic50918/command-dbshell" type="section" >helion dbshell</xref> command creates an SSH tunnel to database services. To open an interactive shell to a service:</p>
+  <p>The <xref href="../reference/1.2client-ref-management.dita#topic50918/command-dbshell" type="section" >helion dbshell</xref> command creates an SSH tunnel to database services. To open an interactive shell to a service:</p>
 <codeblock>  helion dbshell &lt;application_name&gt; &lt;service_name&gt;</codeblock>
 <p>The command automatically opens the appropriate database client for
 the database you're connecting to, provided that client is installed on
