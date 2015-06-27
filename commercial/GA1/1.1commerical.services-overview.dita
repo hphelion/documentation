@@ -98,7 +98,7 @@
 <p>See <xref href="../../commercial/GA1/1.1commerical.services-reporting-overview.dita">Overview of the Metering Service</xref>.</p>
 <p>
 <b>Ceph</b>. Ceph is an Open Source, scalable, software defined storage running on HP Servers which provides block and object storage with unified management.</p>
-<p>See <xref href="1.1commercial.ceph-overview.dita#topic7563" type="section" scope="external" >Overview of the Ceph Service</xref>
+<p>See <xref href="1.1commercial.ceph-overview.dita#topic7563" type="section" >Overview of the Ceph Service</xref>
       </p>
 <!-- Not in Commerical
 **Loom**. The Loom service facilitates the comprehension and manipulation of complex systems using the Unity dashboard.

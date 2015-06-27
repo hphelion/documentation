@@ -45,7 +45,7 @@
 <ol>
 <li>Install the <xref href="../devplatform/1.0devplatform_commercial_install.dita" >HP Helion Development Platform</xref>. </li>
 <li>
-<xref href="../devplatform/1.0devplatform_commercial_install.dita#install-database" type="section" scope="external"  >Configure</xref> the services.</li>
+<xref href="../devplatform/1.0devplatform_commercial_install.dita#install-database" type="section"  >Configure</xref> the services.</li>
 </ol>
 </section>
 <section id="create"> <title>Creating a RabbitMQ Cluster</title>

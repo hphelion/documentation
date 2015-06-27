@@ -65,7 +65,7 @@
 <ul>
 <li>Support for temporary URLs via new attributes for the cmdlet <codeph>get-uri</codeph>.</li>
 <li>Support for wild cards for Object-Storage with the commands, <codeph>ls, del, copy</codeph>.</li>
-<li>Support for <xref href="../publiccloud/cli.windows.2.compute.dita#CreateanImageofaServer" type="section" scope="external"  >Windows images</xref>
+<li>Support for <xref href="../publiccloud/cli.windows.2.compute.dita#CreateanImageofaServer" type="section"  >Windows images</xref>
 </li>
 <li>Added cmdlet <codeph>connect-server</codeph> to quick-connect to Windows Instances</li>
 <li>Added cmdlet <codeph>get-limits</codeph> to show Compute quota information</li>

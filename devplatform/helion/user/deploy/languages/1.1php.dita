@@ -27,7 +27,7 @@
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
 advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software services, tools
 to enable successful development are available in PHP.</p>
-<p>Deployable <xref href="../../../../../devplatform/1.1devplatform.appdev.dita#php" type="section" scope="external"  >sample applications</xref> are available in this language.</p>
+<p>Deployable <xref href="../../../../../devplatform/1.1devplatform.appdev.dita#php" type="section"  >sample applications</xref> are available in this language.</p>
 <section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
 <p>Application Lifecycle Service (ALS) provides a means to execute PHP applications on a managed platform, controlling application lifecycle through a PaaS tier. Deploying
 applications to this platform is as easy as adding details to a YAML configuration file and using
@@ -87,10 +87,10 @@ $admin = $appinfo_json['uris'][0];
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.</p>
 <p>To deploy worker applications, you need to use the
-<xref href="../../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#command" type="section" scope="external"  >
+<xref href="../../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#command" type="section"  >
 <i>command</i>
 </xref> key and set the
-<xref href="../../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#web" type="section" scope="external"  >
+<xref href="../../../../../devplatform/helion/user/deploy/1.1manifestyml.dita#web" type="section"  >
 <i>processes: web</i>
 </xref>
 key to Null ("\~").</p>
@@ -194,7 +194,7 @@ directives to correct the server name or port in URLs.</p>
 <section id="persistent-sessions-php"> <title>Persistent Sessions (PHP)</title>
 <p>One of the issues with managing a PHP application running multiple
 instances is dealing with user sessions.</p>
-<p>If your application uses a <xref href="../../../../../devplatform/helion/user/services/1.1filesystem.dita#persistent-file-system" type="section" scope="external"  >
+<p>If your application uses a <xref href="../../../../../devplatform/helion/user/services/1.1filesystem.dita#persistent-file-system" type="section"  >
 <i>shared filesystem
 service</i>
 </xref>, you
@@ -211,7 +211,7 @@ hooks:
   - echo "session.save_path = $HELION_FILESYSTEM/sessions" &gt; "$HELION_APP_ROOT"/apache/php/sessions.ini
 </codeph>
 </codeblock>
-<p>For better performance, use a <xref href="../../../../../devplatform/helion/user/services/1.1memcached.dita#memcached" type="section" scope="external"  >
+<p>For better performance, use a <xref href="../../../../../devplatform/helion/user/services/1.1memcached.dita#memcached" type="section"  >
 <i>Memcached</i>
 </xref> service for
 session storage instead:</p>

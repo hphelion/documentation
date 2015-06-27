@@ -274,19 +274,19 @@ For example:</p>
 mem: 512M
 buildpack: https://github.com/heroku/heroku-buildpack-java.git</codeblock>
 <p>If unset, Application Lifecycle Service will check to see if the application triggers the
-<codeph>detect</codeph> scripts in any of its <xref href="1.1buildpack.dita#buildpacks-built-in" type="section" scope="external"  >built-in
+<codeph>detect</codeph> scripts in any of its <xref href="1.1buildpack.dita#buildpacks-built-in" type="section"  >built-in
 buildpacks</xref>.</p>
 </section>
 <section id="framework"> <title>framework:</title>
 <p>Allows the app to specify a framework and runtime to be used. Specifying
 a value for the <codeph>framework</codeph> key triggers the use of
-  the <xref href="1.1buildpack.dita#topic3434/legacy-buildpack" type="section" scope="external"  >Legacy Buildpack</xref>.</p>
+  the <xref href="1.1buildpack.dita#topic3434/legacy-buildpack" type="section"  >Legacy Buildpack</xref>.</p>
 <p>The keys in the <codeph>framework</codeph> section are used with
-  the <xref href="1.1buildpack.dita#topic3434/legacy-buildpack" type="section" scope="external"  >Legacy Buildpack</xref> only.
+  the <xref href="1.1buildpack.dita#topic3434/legacy-buildpack" type="section"  >Legacy Buildpack</xref> only.
 Applications using language or framework-specific buildpacks do not
 require these values, and should instead specify the
 <xref type="section" href="#topic20922/yml-buildpack">buildpack</xref> or rely on the detection scripts
-  of the <xref href="1.1buildpack.dita#topic3434/built-in-buildpacks" type="section" scope="external"  >built-in buildpacks</xref>.</p>
+  of the <xref href="1.1buildpack.dita#topic3434/built-in-buildpacks" type="section"  >built-in buildpacks</xref>.</p>
 </section>
 <section id="type"> <title>type:</title>
 <p>The framework to use. Check <codeph>helion frameworks</codeph>
@@ -333,10 +333,10 @@ Application Lifecycle Service. For example:</p>
 <codeblock>  framework:
   start-file: temp.py</codeblock>
 <p>This value will be used by the
-  <xref href="../reference/1.1environment.dita#topic7695/processes-web" type="section" scope="external" >PROCESSES_WEB</xref> and
+  <xref href="../reference/1.1environment.dita#topic7695/processes-web" type="section" >PROCESSES_WEB</xref> and
 HELION_START_FILE environment variables. Any changes to
 HELION_START_FILE at runtime will not change the value of
-  <xref href="../reference/1.1environment.dita#topic7695/processes-web" type="section" scope="external" >PROCESSES_WEB</xref> as
+  <xref href="../reference/1.1environment.dita#topic7695/processes-web" type="section" >PROCESSES_WEB</xref> as
 the macro is expanded before the pre-running hooks are run.</p>
 </section>
 <section id="app-dir"> <title>app-dir</title>
@@ -730,7 +730,7 @@ is not needed and can be included on the same line:</p>
 </section>
 <section id="drain"> <title>drain:</title>
 <p>
-  <xref href="1.1app-logs.dita#topic5165/application-logs-drain" type="section" scope="external"  >Application log drains</xref> can be
+  <xref href="1.1app-logs.dita#topic5165/application-logs-drain" type="section"  >Application log drains</xref> can be
 added to an application when it is deployed by describing them in a
 <codeph>drain:</codeph> block with a drain name and URL:</p>
 <codeblock>  drain:

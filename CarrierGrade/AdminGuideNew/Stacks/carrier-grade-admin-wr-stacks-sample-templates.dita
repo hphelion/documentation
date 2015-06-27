@@ -136,7 +136,7 @@
                 <b>Launch2NamedVMs.yaml</b> - Creates a static service containing two virtual
                 machines attached to the same network. This template illustrates the HP Helion
                 OpenStack Carrier Grade extension for simplified VM instance naming, as described in
-                    <xref href="carrier-grade-admin-wr-stacks-wr.dita#topic9186" type="section" scope="external" />. The template is
+                    <xref href="carrier-grade-admin-wr-stacks-wr.dita#topic9186" type="section" />. The template is
                 used as an example in Creating a Static Resource.</li>
             <li>
                 <b>LabSetup.yaml</b> - Similar to Provisioning.yaml, but also creates IP subnets on

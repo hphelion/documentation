@@ -51,7 +51,7 @@
 <section id="110"> <title>Features in HP Helion OpenStack 1.1</title>
 <p>The following features have been added to HP Helion OpenStack 1.1:</p>
 <p>
-<b>OpenStack Juno support</b> All of the <xref href="1.1commerical.services-overview.dita#OpenStack" type="section" scope="external" >HP Helion Openstack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html">OpenStack Juno</xref>.</p>
+<b>OpenStack Juno support</b> All of the <xref href="1.1commerical.services-overview.dita#OpenStack" type="section" >HP Helion Openstack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html">OpenStack Juno</xref>.</p>
 <p>
 <b>HP Helion OpenStack Metering services</b> The <xref href="1.1commerical.services-reporting-overview.dita">HP Helion OpenStack Telemetry and Reporting service</xref> leverages the OpenStack Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls.</p>
 <p>
@@ -253,7 +253,7 @@ Performing backups and creating bootable volumes will then work.-->   <!--CORE-2
 </codeph>
 </codeblock>
 
-<p>For more information on how to restart the singleton Cinder volume  service, see <xref href="1.0commerical.high-availability.dita#cinder-volume" type="section" scope="external" >HP Helion OpenStack 1.1: High Availability</xref>.</p>
+<p>For more information on how to restart the singleton Cinder volume  service, see <xref href="1.0commerical.high-availability.dita#cinder-volume" type="section" >HP Helion OpenStack 1.1: High Availability</xref>.</p>
 </li>
 <li>
 <p>
@@ -275,7 +275,7 @@ Performing backups and creating bootable volumes will then work.-->   <!--CORE-2
 
 <ul>
 <li>
-<p>migrate the cinder-volume service to another node, for example, controller1 (refer to <xref href="1.0commerical.high-availability.dita#cinder-volume" type="section" scope="external" >HP Helion OpenStack 1.1: High Availability</xref>)</p>
+<p>migrate the cinder-volume service to another node, for example, controller1 (refer to <xref href="1.0commerical.high-availability.dita#cinder-volume" type="section" >HP Helion OpenStack 1.1: High Availability</xref>)</p>
 </li>
 <li>
 <p>stop the cinder-backup service on controller0 using</p>

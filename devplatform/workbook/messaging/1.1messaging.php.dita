@@ -29,7 +29,7 @@
       Development Platform.</p>
 <section id="prereq"> <title>Prerequisites</title>
 <ul>
-<li>An installation of the <xref href="../../1.1devplatform_commercial_install.dita#topic240731" type="section" scope="external" >HP
+<li>An installation of the <xref href="../../1.1devplatform_commercial_install.dita#topic240731" type="section" >HP
             Helion Development Platform.</xref></li>
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/1.1index.dita" >Cluster</xref>
 </li>

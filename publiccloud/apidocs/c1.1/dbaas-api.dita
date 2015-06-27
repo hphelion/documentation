@@ -445,7 +445,7 @@ the last item in the previous list. Items are sorted by create time in descendin
 * JSON (application/json)</p>
 </section>
 <section id="x_auth_token_request"> <title>4.2.2 X-Auth-Token</title>
-  <p>When specified, this identifies the user making the request. In addition, if this token is being used by a user with Admin privilege level, the token must be scoped to the project associated with the account. If no token is specified, the request will fail unless you have been granted access to the resource by some other mechanism such as ACLs. For more information, see <xref href="keystone-api.dita#3.4.3Tokens" type="section" scope="external"  >Using Authentication Tokens</xref>.</p>
+  <p>When specified, this identifies the user making the request. In addition, if this token is being used by a user with Admin privilege level, the token must be scoped to the project associated with the account. If no token is specified, the request will fail unless you have been granted access to the resource by some other mechanism such as ACLs. For more information, see <xref href="keystone-api.dita#3.4.3Tokens" type="section"  >Using Authentication Tokens</xref>.</p>
 </section>
 <section id="43-common-response-headers"> <title>4.3 Common Response Headers</title>
 </section>
@@ -1392,7 +1392,7 @@ This call does not require a request body</p>
 <p>
 <b>URL Parameters</b>
 <!--A BR tag was used here in the original source.-->
-  You can utilize pagination to filter your response.  <i>See: <xref href="dbaas-api.dita#4.1.4Pagination" type="section" scope="external"  >Pagination</xref> for more details</i>
+  You can utilize pagination to filter your response.  <i>See: <xref href="dbaas-api.dita#4.1.4Pagination" type="section"  >Pagination</xref> for more details</i>
 </p>
 <p>
   <b>Success Response</b>
@@ -1804,7 +1804,7 @@ flavorRef is provided. It restarts MySQL in the process.</p>
 <section id="database_list"> <title>4.5.4.2 List Databases</title>
 </section>
 <section id="get-instancesinstance-iddatabases"> <title>GET /instances/{instance_id}/databases</title>
-  <p>Lists all databases within the specified instance.  The response will be limited to twenty (20) results.  <i>See: <xref href="dbaas-api.dita#4.1.4Pagination" type="section" scope="external"  >Pagination</xref> for more details</i>
+  <p>Lists all databases within the specified instance.  The response will be limited to twenty (20) results.  <i>See: <xref href="dbaas-api.dita#4.1.4Pagination" type="section"  >Pagination</xref> for more details</i>
 </p>
 <p>
 <b>Request Data</b>
@@ -1813,7 +1813,7 @@ This call does not require a request body.</p>
 <p>
 <b>URL Parameters</b>
 <!--A BR tag was used here in the original source.-->
-  You can utilize pagination to filter your response.  <i>See: <xref href="dbaas-api.dita#4.1.4Pagination" type="section" scope="external"   >Pagination</xref> for more details</i>
+  You can utilize pagination to filter your response.  <i>See: <xref href="dbaas-api.dita#4.1.4Pagination" type="section"   >Pagination</xref> for more details</i>
 </p>
 <p>
   <b>Success Response</b>

@@ -34,7 +34,7 @@
 <p>An organization is a top-level group of users, spaces, and domains. Only
 Application Lifecycle Service admins (accounts with global superuser privileges) can manage
 Organizations.</p>
-<p>Each organization is assigned a <xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#server-config-quota-definitions" type="section" scope="external"  >Quota Definition</xref>, a set of limits on memory, applications, and service instances which is shares between all members of the organization.</p>
+<p>Each organization is assigned a <xref href="../../../../devplatform/helion/admin/server/1.1configuration.dita#server-config-quota-definitions" type="section"  >Quota Definition</xref>, a set of limits on memory, applications, and service instances which is shares between all members of the organization.</p>
 </section>
 <section id="spaces"> <title>Spaces</title>
 <p>An organization can contain multiple spaces (e.g. <b>development</b>,

@@ -22,7 +22,7 @@
  <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/perl/perlcgi/--></p>
 <p>The <i>perlcgi</i> framework can be used to run <i>any</i> CGI script, but, like the <xref
         href="1.2index.dita#topic8895">perl</xref> framework, it provides ActivePerl in the default
-  PATH and supports module installation via <xref href="1.2index.dita#topic8895/cpan-modules-via-ppm" type="section" scope="external" >PPM</xref> and <xref
+  PATH and supports module installation via <xref href="1.2index.dita#topic8895/cpan-modules-via-ppm" type="section" >PPM</xref> and <xref
     href="1.2index.dita#topic8895/cpan-modules-via-cpanm">
         <i>cpanm</i>
       </xref>.</p>

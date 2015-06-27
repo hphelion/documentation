@@ -30,7 +30,7 @@
 <p>User-provided service instances allow you connect applications running
 on Application Lifecycle Service to specified external data services, without hard coding the
 credentials into the application. The service instance provides the
-connection information to the application via the VCAP_SERVICES environment variables, just like the <xref href="../../../../devplatform/helion/user/services/1.1data-services.dita#data-services" type="section" scope="external"  >built-in data services</xref>.</p>
+connection information to the application via the VCAP_SERVICES environment variables, just like the <xref href="../../../../devplatform/helion/user/services/1.1data-services.dita#data-services" type="section"  >built-in data services</xref>.</p>
 <p>Think of user-provided services as a credentials database for your Application Lifecycle Service application space. You provide the connection information and ALS stores it in a <xref type="section" href="#topic4125/using">
 <i>JSON object</i>
 </xref> which can then be bound any applications in the space.</p>
@@ -88,7 +88,7 @@ prod-db-int
 +--------------+------------------------------+
 </codeph>
 </codeblock>
-<p>The <xref href="../../../../devplatform/helion/user/services/1.1data-services.dita#database-services-vcap-services" type="section" scope="external"  >
+<p>The <xref href="../../../../devplatform/helion/user/services/1.1data-services.dita#database-services-vcap-services" type="section"  >
 <i>VCAP_SERVICES</i>
 </xref>
 variables will expose the connection information within the application
@@ -108,13 +108,13 @@ object:</p>
 }
 </codeph>
 </codeblock>
-<p>To have your application use this information, parse the variable in your application code to extract the credentials at runtime. See the <xref href="../../../../devplatform/helion/user/deploy/1.1index.dita#language-specific-deployment" type="section" scope="external"  >Language Specific Deployment</xref> documentation for examples.</p>
+<p>To have your application use this information, parse the variable in your application code to extract the credentials at runtime. See the <xref href="../../../../devplatform/helion/user/deploy/1.1index.dita#language-specific-deployment" type="section"  >Language Specific Deployment</xref> documentation for examples.</p>
 <p>Buildpacks that auto-configure applications for system-provided services can also do so for user-provided services. For example, the <xref href="https://github.com/cloudfoundry/java-buildpack" scope="external" format="html" >java buildpack</xref> will configure applications to connect to a database if the service has a name or tag with <i>postgres</i>, <i>mariadb</i>, or <i>mysql</i> in it. Check the buildpack's documentation or code to see exactly what it supports.</p>
 </section>
 <section id="user-provided-URL-env"> <title>Other Environment Variables</title>
 <p>User-provided service instances do not set <b>DATABASE_URL</b> or 
 database-specific URL environment variables.</p>
-<p>If your application uses variables in URL format, you can add them manually to the application with the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-management.dita#command-set-env" type="section" scope="external"  >
+<p>If your application uses variables in URL format, you can add them manually to the application with the <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-management.dita#command-set-env" type="section"  >
 <i>set-env</i>
 </xref> command. For example:</p>
 <codeblock>
