@@ -53,8 +53,8 @@
 <li>Defined in an environment variable</li>
 <li>Recorded in a <xref type="section" href="#topic13234/downloadfile">configuration file</xref>
 </li>
-</ul>
-<p>ALS maintains separate configuration files.</p>
+</ul></section>
+<section id="downloadfile"><title>Configuration Files</title><p>ALS maintains separate configuration files.</p>
 <p>One configuration file contains the values for the global variables. The global configuration file is located in the home directory and is named <i>cf-mgmt.yml</i>. <!--A BR tag was used here in the original source.-->Global level <b>commands</b> create, delete, and add clusters. <!--A BR tag was used here in the original source.-->
  Global level <b>configurations</b> manage tenants, users, versions, and other system information.</p>
 <p>The other configuration files, specified by the <b>--load</b> option, includes the values that should be passed to arguments for a specific command. Values must be included in the appropriate file for correct scoping; putting a command-specific value in the global file, for example, will not function as desired.</p>
@@ -631,7 +631,9 @@
 </table>
 </section>
 <section id="subcommand-options"> <title>Subcommand Options</title>
-<p>Each subcommand in the Add-Service command has these following options available. The <varname>mysql</varname> subcommand has <xref type="section" href="#topic13234/mysqlcommand">additional options</xref>.</p>
+<p>Each subcommand in the Add-Service command has these following options available. The
+          <varname>mysql</varname> subcommand has <xref href="#topic13234/mysqlcommand"
+          format="dita">additional options</xref>.</p>
 <codeblock>cf-mgmt [global options] add-service [subcommand] <b>[subcommand options]</b> [arguments..]</codeblock>
 <table>
 <tgroup cols="2">
@@ -715,8 +717,8 @@
 </tbody>
 </tgroup>
 </table>
-<p>The <varname>mysql</varname> subcommand has additional options.<!--Removed anchor point mysqlcommand--><!-- id="mysqlcommand" --></p>
-<table>
+<p>The <varname>mysql</varname> subcommand has additional options.</p>
+<table id="mysqlcommand">
 <tgroup cols="2">
 <colspec colname="col1"/>
 <colspec colname="col2"/>

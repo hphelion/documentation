@@ -182,7 +182,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="helion-drain-command-drain"> <title>helion drain {command-drain}</title>
+<section id="command-drain"> <title>helion drain {command-drain}</title>
 <p>Commands for the management of drains attached to applications.</p>
 <table>
 <tgroup cols="1">

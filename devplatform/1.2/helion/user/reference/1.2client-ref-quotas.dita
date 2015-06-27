@@ -45,7 +45,7 @@
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-<section id="quota-configure"> <title>helion quota configure &lt;<i>name</i>&gt;</title>
+<section id="command-quota-configure"> <title>helion quota configure &lt;<i>name</i>&gt;</title>
 <p>Reconfigure the named quota definition.</p>
 <table>
 <tgroup cols="2">
@@ -118,7 +118,7 @@ authorization tokens.</entry>
 </tgroup>
 </table>
 </section>
-<section id="quota-create"> <title>helion quota create &lt;<i>name</i>&gt;</title>
+<section id="command-quota-create"> <title>helion quota create &lt;<i>name</i>&gt;</title>
 <p>Create a new quota definition.</p>
 <table>
 <tgroup cols="2">
