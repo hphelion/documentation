@@ -18,7 +18,7 @@
 </prolog>
 <body>
 <p>
-<!--PUBLISHED-->
+<!--PUBLISHED-->scope="external"
  <!--./devplatform/1.2/1.2devplatform.appdev.md-->
  <!--permalink: /helion/devplatform/1.2/appdev/--></p>
 <p>HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.</p>
@@ -31,7 +31,7 @@
 
 <ul>
 <li>You can also quickly setup a cluster in the free and publicly available Helion cloud as part of
-              the <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952" type="section" scope="external" >Quick
+              the <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952" type="section"  >Quick
                 Start Developer Trial</xref>: </li>
 </ul>
 </li>
@@ -111,7 +111,7 @@ Create a database and execute a query against it.</p>
 <xref href="../../devplatform/1.2/1.2devplatform.marketplace.install.dita" >Installing the Marketplace</xref>
 </li>
 <li>
-<xref href="../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" type="section" scope="external"  >ALS command-line interface (CLI) reference</xref>
+<xref href="../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" type="section" >ALS command-line interface (CLI) reference</xref>
 </li>
 <li>
 <xref href="../../devplatform/1.2/helion/user/1.2index.dita" >Application Lifecycle Service (ALS) User's Guide</xref>
