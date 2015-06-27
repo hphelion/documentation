@@ -28,20 +28,20 @@
     Framework HTTP-based applications. This document describes how to install and use these tools.
    </p> This document contains the following sections:  <p><b>.NET tools:</b></p><ul
     id="ul_dmq_khw_js">
-    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/cloudfoundryextensions"
+    <li><xref type="section"  href="#topic_w5z_kcw_js/cloudfoundryextensions"
       format="dita">Cloud Foundry Extensions</xref></li>
-    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/msbuild">Cloud Foundry MSBuild
+    <li><xref type="section"  href="#topic_w5z_kcw_js/msbuild">Cloud Foundry MSBuild
       Tasks</xref></li>
-    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/sdk">Cloud Foundry .NET
+    <li><xref type="section"  href="#topic_w5z_kcw_js/sdk">Cloud Foundry .NET
       SDK</xref></li>
    </ul>
    <b>Setup tools</b><ul id="ul_jgl_fhw_js">
-    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/als">ALS Cluster Management (cf-mgmt)</xref></li>
-    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/helion">Helion client
+    <li><xref type="section"  href="#topic_w5z_kcw_js/als">ALS Cluster Management (cf-mgmt)</xref></li>
+    <li><xref type="section"  href="#topic_w5z_kcw_js/helion">Helion client
       (helion)</xref></li>
    </ul>
    <b>Windows Image Tool</b><ul id="ul_nrc_3hw_js">
-    <li><xref type="section" scope="local" href="#topic_w5z_kcw_js/glazier">Glazier</xref></li>
+    <li><xref type="section"  href="#topic_w5z_kcw_js/glazier">Glazier</xref></li>
    </ul></section>
  <section id="cloudfoundryextensions"><title>Cloud Foundry Extensions</title> <p>This Visual Studio 2013 extension
     is used to deploy and manage .NET applications. The extension can be used in any edition of VS
@@ -180,7 +180,7 @@
    </table></section>
  <section><title>Deploying an application</title>
   <p>For an example of how to deploy an application from Visual Studio, see <xref
-     href="windows_firstapp.dita#topic_amr_q3w_js" scope="local" format="dita">Deploying your first .NET Application</xref>.</p>
+     href="windows_firstapp.dita#topic_amr_q3w_js"  format="dita">Deploying your first .NET Application</xref>.</p>
 
   <p><note>Currently, only Web Application Projects can be deployed from Cloud Foundry Explorer; Web Site Projects are not supported. Web Site Projects can still be deployed from the command line.</note></p>
 
@@ -232,11 +232,11 @@
   <codeblock>cf-mgmt add-service mssql2014 --load &lt;filename>.yml</codeblock>
 
   <p>For more information on the ALS cluster management tool, see <xref
-     href="../helion/CLI/1.2ALS_Client_Reference.dita#topic13234" scope="local" format="dita">Helion ALS Cluster Management Tool
+     href="../helion/CLI/1.2ALS_Client_Reference.dita#topic13234"  format="dita">Helion ALS Cluster Management Tool
      Reference</xref>.</p>
 
   <p>The ALS cluster management tool can be downloaded from the following location: <xref
-     href="../helion/CLI/1.2ALS_Client_Downloads.dita#topic843" format="dita" scope="local">Download</xref>.</p>
+     href="../helion/CLI/1.2ALS_Client_Downloads.dita#topic843" format="dita" >Download</xref>.</p>
 
  </section>
  <section id="helion"><title>Helion Client</title>
@@ -250,7 +250,7 @@
 		helion login
 		helion push --stack win2012r2 </codeblock>
 
-  <p>For more information on the Helion client, see <xref format="dita" scope="local" href="../helion/user/reference/1.2client-ref.dita#topic13355" type="section">HP Helion 1.2 Development Platform: Application Lifecycle Service Client Command Reference</xref></p>
+  <p>For more information on the Helion client, see <xref format="dita"  href="../helion/user/reference/1.2client-ref.dita#topic13355" type="section">HP Helion 1.2 Development Platform: Application Lifecycle Service Client Command Reference</xref></p>
 
   <p>The Helion client tool can be downloaded from the following locations: </p>
 
@@ -269,7 +269,7 @@
 
   <p>Glazier can be downloaded from the following location: <xref format="html" scope="external" href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</xref>. </p>
 
-For information on Glazier, see <xref scope="local" format="dita" href="windows_glazier_reference_guide.dita">Glazier Reference Guide</xref>.
+For information on Glazier, see <xref  format="dita" href="windows_glazier_reference_guide.dita">Glazier Reference Guide</xref>.
 </section>
 </body>
 </topic>
