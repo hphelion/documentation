@@ -44,7 +44,7 @@ The database service provides lifecycle services for MySQL database instances. L
 <ol>
 <li>Install the <xref href="../devplatform/1.1devplatform_commercial_install.dita" >HP Helion Development Platform</xref>. </li>
 <li>
-<xref href="../devplatform/1.1devplatform_commercial_install.dita#install-database" type="section" scope="external"  >Configure</xref> the database service.</li>
+<xref href="../devplatform/1.1devplatform_commercial_install.dita#install-database" type="section" >Configure</xref> the database service.</li>
 </ol>
 </section>
 <section id="create"> <title>Creating a Database Instance</title>

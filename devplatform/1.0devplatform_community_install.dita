@@ -186,7 +186,7 @@ If you are installing the HP Helion Development Platform <b>Commercial</b> editi
 </section>
 <section id="als-pre"> <title>Prerequisites</title>
 <p>For the Application Lifecycle service to install dependencies for deployed applications, you must provide Application Lifecycle service with outbound Internet connectivity.</p>
-<p>This process is documented in Step 7 of <xref href="../community/community.install.baremetal.dita#startseed" >"Starting the seed and building your cloud"</xref> in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the <xref href="../devplatform/helion/admin/server/1.0configuration.dita#http-proxy" type="section" scope="external"  >Administration Guide</xref>.</p>
+<p>This process is documented in Step 7 of <xref href="../community/community.install.baremetal.dita#startseed" >"Starting the seed and building your cloud"</xref> in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the <xref href="../devplatform/helion/admin/server/1.0configuration.dita#http-proxy" type="section">Administration Guide</xref>.</p>
 </section>
 <section id="als-connect"> <title>Connect to the Download Service</title>
 <ol>
@@ -512,7 +512,7 @@ If you are installing the HP Helion Development Platform <b>Commercial</b> editi
 <p>Do not attempt to install any Marketplace packages yet. Log out from the Horizon dashboard.</p>
 </li>
 <li>
-<p>Log back into the Horizon dashboard and click on the <b>Marketplace</b> panel under the current Project to begin using the Marketplace Service. You may now install <xref href="../devplatform/1.0devplatform.marketplace.install.dita#install" type="section" scope="external"  >Marketplace packages</xref>.</p>
+<p>Log back into the Horizon dashboard and click on the <b>Marketplace</b> panel under the current Project to begin using the Marketplace Service. You may now install <xref href="../devplatform/1.0devplatform.marketplace.install.dita#install" type="section">Marketplace packages</xref>.</p>
 </li>
 </ol>
 </section>
