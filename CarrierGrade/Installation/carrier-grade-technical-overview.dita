@@ -48,7 +48,7 @@
 <p>The following diagram depicts a simplified deployment scenario using KVM.</p>
 <!-- This image is for beta release only. Replace for beta -->
 <p>
-<xref format="html" href="javascript:window.open('/media/CGH-architecture-beta-5.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
+<xref format="html" href="javascript:window.open('/media/CGH-architecture-rc0.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
 <image href="../../media/CGH-architecture-rc0.png"/>
 </xref>
 <!--A BR tag was used here in the original source.-->Click to view larger image; click <b>Back</b> to return.</p>
@@ -194,6 +194,115 @@
 <p>
   <xref type="section" href="#topic3485"> Return to Top </xref>
 </p>
+
+  <section id="ethernet-interfaces"> <title>Ethernet Interfaces</title>
+    <p>All hosts in the server server connect to at least the internal management network using an Ethernet interface. The ports used for this connection must support network booting and must be configured to be used as the primary booting device for normal operations.</p>
+    <p>Typically this means that they must be on-board ports, since in most BIOS/UEFI implementations only on-board ports can be configured for network booting. You can use ports on a 10 GB NIC instead, if these ports fulfill these requirements.</p>
+    <p>The following table illustrates the number and type of Ethernet ports required in two different installation scenarios. It assumes that the ports used to connect to the internal management network are on-board 1 GB ports.</p>
+    <p>
+      <b>NOTE:</b> The following table assumes that each interface is connected to a single network. An Ethernet interface can be shared by more than one network.</p>
+    <table>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry>Personality</entry>
+            <entry>Basic Scenario</entry>
+            <entry>LAG Scenario</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              Controller Node</entry>
+            <entry> <ul><li> One 1G on-board interface (Internal management network)</li> 
+              <li>One 1G interface (OAM)</li>
+              <li>One optional 1G or 10G interface (Infrastructure network)</li></ul></entry>
+            <entry><ul><li>Two 1G on-board interfaces (Internalmanagement network)</li>
+              <li>Two 1G interfaces (OAM)</li>
+              <li>Two optional 1G or 10G interfaces (Infrastructure network)
+                NOTE: The controller-0 and controller-1 port configurations must be identical.</li></ul></entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>Compute Node</entry>
+            <entry><ul><li>One 1G on-board interface (Internal management network)</li>
+              <li>One 1G (Intel i350) or 10G (Intel 82599) interface per additional Provider Network</li></ul></entry>
+            <entry><ul><li>Two 1G on-board interfaces (Internal management network)</li>
+              <li>Two 1G (Intel i350) or 10G (Intel 82599) interfaces per additional Provider Network</li></ul></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <p>In the basic scenario, a single Ethernet port is used to attach the host to each of the networks. In the LAG scenario, two Ethernet ports are used for each connection.</p>
+  </section>
+  <section id="board-management-modules"> <title>Board Management Modules</title>
+    <p>For out-of-band reset and power-on/power-off capabilities, HP360 or HP380 servers equipped with HP iLO (Integrated Lights Out) board management modules are required. Each module must be connected using port-based VLAN to a switch that has access to the internal management network.</p>
+  </section>
+  <section id="usb-interface"> <title>USB Interface</title>
+    <p>For the controller, a USB interface is required for backup and restore operations, and for software installation if a DVD is not available.</p>
+  </section>
+  <section id="net"> <title>Network Requirements</title>
+    <p>The networking environment of the Titanium Server incorporates up to five types of network:</p>
+    <ul>
+      <li>the internal management network</li>
+      <li>the OAM network</li>
+      <li>one or more provider networks</li>
+      <li>an optional infrastructure network</li>
+      <li>an optional board management network. </li>
+    </ul>
+    <p>Operational requirements for each network are described in the following sections.</p>
+  </section>
+  <section id="internal-management-network"> <title>Internal Management Network</title>
+    <p>The internal management network must be implemented as a single, dedicated, Layer 2 broadcast
+      domain for the exclusive use of each server cluster. Sharing of this network by more
+      than one server cluster is not a supported configuration.</p>
+    <p>During the server software installation process, several network services such as BOOTP, DHCP,
+      and PXE, are expected to run over the internal management network. These services
+      are used to bring up the different hosts to an operational state. Therefore, it is
+      mandatory that this network be operational and available in advance, to ensure a
+      successful installation.</p>
+    <p>On each host, the internal management network can be implemented using a 1Gb or 10 Gb Ethernet port. In either
+      case, requirements for this port are:</p>
+    <ul>
+      <li>must be capable of PXE-booting</li>
+      <li>can be used by the motherboard as a primary boot device</li>
+    </ul>
+  </section>
+  <section id="infrastructure-network"> <title>Infrastructure Network</title>
+    <p>This is an optional network.</p>
+    <p>As with the internal management network, the infrastructure network must be implemented as a
+      single, dedicated, Layer 2 broadcast domain for the exclusive use of each server
+      cluster.</p>
+    <p>Sharing of this network by more than one server cluster is not a supported configuration.</p>
+    <p>The infrastructure network can be implemented as a 1Gb or 10 Gb Ethernet network. In its absence, all infrastructure traffic is carried over the internal management network.</p>
+  </section>
+  <section id="oam-network"> <title>OAM Network</title>
+    <p>You should ensure that the following services are available on the OAM Network:</p>
+    <ul>
+      <li>
+        <p>DNS Service - Needed to facilitate the name resolution of servers reachable on the OAM Network.</p>
+        
+        <p>The server can operate without a configured DNS service. However, a DNS service should be in
+          place to ensure that links to external references in the current and future
+          versions of the web administration interface work as expected.</p>
+      </li>
+      <li>
+        <p>NTP Service - The Network Time Protocol (NTP) can be optionally used by the server controller
+          nodes to synchronize their local clocks with a reliable external time
+          reference. However, it is strongly suggested that this service be available,
+          among other things, to ensure that system-wide log reports present a unified
+          view of the day-to-day operations.</p>
+      </li>
+    </ul>
+    <p>The server compute nodes always use the controller nodes as the de-facto time server for the
+      entire cluster.</p>
+  </section>
+  <section id="provider-network"> <title>Provider Network</title>
+    <p>There are no specific requirements for network services to be available on the provider network. However, you must ensure that all network services required by the guests running in the compute nodes are available. For configuration purposes, the compute nodes themselves are entirely served by the services provided by the controller nodes over the internal management network.</p>
+  </section>
+  
+
 <!--
 ### Backup and Restore nodes {#backup-restore-nodes}
 

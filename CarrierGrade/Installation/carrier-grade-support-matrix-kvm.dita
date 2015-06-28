@@ -21,201 +21,161 @@
  <!--./CarrierGrade/Installation/carrier-grade-support-matrix-wr.md-->
  <!--permalink: /helion/openstack/carrier/support-matrix/wr/--></p>
 <p> <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita">▲ HP Helion OpenStack Carrier Grade 1.1: Support Matrix</xref>  </p>
-<!-- Taken from Titanium Server Software Installation Guide, 15.x -->
-<p>To ensure the performance and stability of the systems running in the KVM region of the HP Helion
-                OpenStack Carrier Grade environment, it is very important to
-            meet the requirements and conform to the following recommendations.</p>
-<section id="hard"> <title>Hardware Requirements</title>
-<p>For successful software installation and operation, the server hardware platform must meet specific requirements.</p>
-<p>The servers running in the KVM region consist of a set of hosts connected to internal and
-                external networks:</p>
-<ul>
-<li>Two controller nodes are required.</li>
-</ul>
-<p>The server runs on all x86-64 processors that support Intel Virtualization Technology (VT) VT-x/VT-d extensions. However, the kernel has been optimized specifically for the Intel Xeon-core family of processors.</p>
-</section>
-<section id="system-bios-requirements"> <title>System / BIOS Requirements</title>
-<p>The BIOS on each host must support PXE booting for initial installation of the server software.</p>
-</section>
-<section id="memory-requirements"> <title>Memory Requirements</title>
-<p>The following are the minimum RAM resources suggested for the hosts.</p>
-<table>
-<tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<thead>
-<row>
-    <entry>Host Type</entry>
-    <entry>RAM Size</entry>
-  </row>
-</thead>
-<tbody>
-<row>
-    <entry>Controller</entry>
-    <entry>32 GB</entry>
-  </row>
-<row>
-    <entry>Compute</entry>
-    <entry>32 GB</entry>
-  </row>
-</tbody>
-</tgroup>
-</table>
-<p>The actual memory requirement for production environments depends on the expected load. In particular, for compute nodes, the memory requirement depends on the expected number of virtual machines and the types of application running on them.</p>
-</section>
-<section id="storage-requirements"> <title>Storage Requirements</title>
-<p>The storage requirements for the servers depend on the system scale.</p>
-<p>All hosts require one system disk where the server system software is installed. System disks are
-                automatically partitioned by the server installer program.</p>
-<p>Controller nodes require an additional physical disk for volume storage. Storage nodes require an additional physical disk for OSD storage.</p>
-<p>The following minimum hard drive capacities are suggested for the hosts.</p>
-<table>
-<tgroup cols="3">
-<thead>
-<row>
-    <entry>Host</entry>
-    <entry>Type</entry>
-    <entry>Drive Capacity</entry>
-  </row>
-</thead>
-<tbody>
-<row>
-    <entry>Controller</entry>
-    <entry>Primary disk</entry>
-    <entry>500 GB. A two-disk RAID-1 is suggested.</entry>
-  </row>
-<row>
-    <entry>Controller</entry>
-    <entry>Secondary disk</entry>
-    <entry>500 GB. Solid-state drive recommended.
-A two-disk RAID is suggested. </entry>
-  </row>
-<row>
-    <entry>Compute</entry>
-    <entry>Primary disk</entry>
-    <entry>120 GB
-
-</entry>
-  </row>
-</tbody>
-</tgroup>
-</table>
-<p>
-<b>NOTE:</b> The storage configurations for controller-0 and controller-1 must be identical.</p>
-<p>On the controller nodes, the disk space is used to accommodate a variety of content, including Titanium Server and guest images, the OpenStack configuration database, Cinder volumes, and Ceilometer CSV files.</p>
-<p>For controller nodes, the suggested storage hardware includes the following:</p>
-<ul>
-<li>solid state drives (SSD) to improve overall performance</li>
-<li>hardware RAID array for transparent failover and fallback operations</li>
-</ul>
-<p>The server uses distributed replicated block device (DRDB) technology to automatically synchronize the hard drives across the two controller nodes.</p>
-</section>
-<section id="ethernet-interfaces"> <title>Ethernet Interfaces</title>
-<p>All hosts in the server server connect to at least the internal management network using an Ethernet interface. The ports used for this connection must support network booting and must be configured to be used as the primary booting device for normal operations.</p>
-<p>Typically this means that they must be on-board ports, since in most BIOS/UEFI implementations only on-board ports can be configured for network booting. You can use ports on a 10 GB NIC instead, if these ports fulfill these requirements.</p>
-<p>The following table illustrates the number and type of Ethernet ports required in two different installation scenarios. It assumes that the ports used to connect to the internal management network are on-board 1 GB ports.</p>
-<p>
-<b>NOTE:</b> The following table assumes that each interface is connected to a single network. An Ethernet interface can be shared by more than one network.</p>
-<table>
-<tgroup cols="3">
-<thead>
-<row>
-    <entry>Personality</entry>
-    <entry>Basic Scenario</entry>
-    <entry>LAG Scenario</entry>
-  </row>
-</thead>
-<tbody>
-<row>
-    <entry>
-Controller Node</entry>
-    <entry> <ul><li> One 1G on-board interface (Internal management network)</li> 
-        <li>One 1G interface (OAM)</li>
-        <li>One optional 1G or 10G interface (Infrastructure network)</li></ul></entry>
-    <entry><ul><li>Two 1G on-board interfaces (Internalmanagement network)</li>
-        <li>Two 1G interfaces (OAM)</li>
-        <li>Two optional 1G or 10G interfaces (Infrastructure network)
-            NOTE: The controller-0 and controller-1 port configurations must be identical.</li></ul></entry>
-    <entry>
-</entry>
-  </row>
-<row>
-    <entry>Compute Node</entry>
-    <entry><ul><li>One 1G on-board interface (Internal management network)</li>
-        <li>One 1G (Intel i350) or 10G (Intel 82599) interface per additional Provider Network</li></ul></entry>
-    <entry><ul><li>Two 1G on-board interfaces (Internal management network)</li>
-        <li>Two 1G (Intel i350) or 10G (Intel 82599) interfaces per additional Provider Network</li></ul></entry>
-  </row>
-</tbody>
-</tgroup>
-</table>
-<p>In the basic scenario, a single Ethernet port is used to attach the host to each of the networks. In the LAG scenario, two Ethernet ports are used for each connection.</p>
-</section>
-<section id="board-management-modules"> <title>Board Management Modules</title>
-<p>For out-of-band reset and power-on/power-off capabilities, HP360 or HP380 servers equipped with HP iLO (Integrated Lights Out) board management modules are required. Each module must be connected using port-based VLAN to a switch that has access to the internal management network.</p>
-</section>
-<section id="usb-interface"> <title>USB Interface</title>
-<p>For the controller, a USB interface is required for backup and restore operations, and for software installation if a DVD is not available.</p>
-</section>
-<section id="net"> <title>Network Requirements</title>
-<p>The networking environment of the Titanium Server incorporates up to five types of network:</p>
-<ul>
-<li>the internal management network</li>
-<li>the OAM network</li>
-<li>one or more provider networks</li>
-<li>an optional infrastructure network</li>
-<li>an optional board management network. </li>
-</ul>
-<p>Operational requirements for each network are described in the following sections.</p>
-</section>
-<section id="internal-management-network"> <title>Internal Management Network</title>
-<p>The internal management network must be implemented as a single, dedicated, Layer 2 broadcast
-                domain for the exclusive use of each server cluster. Sharing of this network by more
-                than one server cluster is not a supported configuration.</p>
-<p>During the server software installation process, several network services such as BOOTP, DHCP,
-                and PXE, are expected to run over the internal management network. These services
-                are used to bring up the different hosts to an operational state. Therefore, it is
-                mandatory that this network be operational and available in advance, to ensure a
-                successful installation.</p>
-<p>On each host, the internal management network can be implemented using a 1Gb or 10 Gb Ethernet port. In either
-case, requirements for this port are:</p>
-<ul>
-<li>must be capable of PXE-booting</li>
-<li>can be used by the motherboard as a primary boot device</li>
-</ul>
-</section>
-<section id="infrastructure-network"> <title>Infrastructure Network</title>
-<p>This is an optional network.</p>
-<p>As with the internal management network, the infrastructure network must be implemented as a
-                single, dedicated, Layer 2 broadcast domain for the exclusive use of each server
-                cluster.</p>
-<p>Sharing of this network by more than one server cluster is not a supported configuration.</p>
-<p>The infrastructure network can be implemented as a 1Gb or 10 Gb Ethernet network. In its absence, all infrastructure traffic is carried over the internal management network.</p>
-</section>
-<section id="oam-network"> <title>OAM Network</title>
-<p>You should ensure that the following services are available on the OAM Network:</p>
-<ul>
-<li>
-<p>DNS Service - Needed to facilitate the name resolution of servers reachable on the OAM Network.</p>
-
-<p>The server can operate without a configured DNS service. However, a DNS service should be in
-                        place to ensure that links to external references in the current and future
-                        versions of the web administration interface work as expected.</p>
-</li>
-<li>
-<p>NTP Service - The Network Time Protocol (NTP) can be optionally used by the server controller
-                        nodes to synchronize their local clocks with a reliable external time
-                        reference. However, it is strongly suggested that this service be available,
-                        among other things, to ensure that system-wide log reports present a unified
-                        view of the day-to-day operations.</p>
-</li>
-</ul>
-<p>The server compute nodes always use the controller nodes as the de-facto time server for the
-                entire cluster.</p>
-</section>
-<section id="provider-network"> <title>Provider Network</title>
-<p>There are no specific requirements for network services to be available on the provider network. However, you must ensure that all network services required by the guests running in the compute nodes are available. For configuration purposes, the compute nodes themselves are entirely served by the services provided by the controller nodes over the internal management network.</p>
-</section>
+<!-- Taken from Titanium Server Software Release Notes, 15.05 -->
+<p>To ensure the performance and stability of the systems running in the KVM region of the HP Helion OpenStack Carrier Grade environment, it is very important to
+ meet the requirements and conform to the following recommendations.</p>
+    <section>
+        <title>Supported Hardware Platforms</title>
+        <p>The following is the list of certified platforms for running HP Helion OpenStack Carrier Grade in the KVM region:</p>
+        <table frame="all" id="table_kp4_l3b_ln">
+            <title>HP Helion OpenStack Carrier Grade Certified Hardware Platforms</title>
+            <tgroup cols="2">
+                <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+                <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+                <thead>
+                    <row>
+                        <entry>
+                            <p>Manufacturer</p>
+                        </entry>
+                        <entry>
+                            <p>Platform</p>
+                        </entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry morerows="3">
+                            <p>Hewlett-Packard</p>
+                        </entry>
+                        <entry>
+                            <p>HP360 Proliant DL360P Gen8 Server</p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <p>HP360 Proliant DL360P Gen9 Server</p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <p>HP380 Proliant DL380P Gen8 Server</p>
+                        </entry>
+                    </row>
+                    <row>
+                        <entry>
+                            <p>HP380 Proliant DL380P Gen9 Server</p>
+                        </entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+        <p>The following NICs have been verified for PXE booting:</p>
+        <ul>
+            <li>
+                <p>Broadcom 1G</p>
+            </li>
+            <li>
+                <p>Broadcom 10G</p>
+            </li>
+            <li>
+                <p>Emulex 10G</p>
+            </li>
+            <li>
+                <p>Intel 82599</p>
+            </li>
+            <li>
+                <p>Intel i350</p>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <title>Supported Hardware Configuration</title>
+        <p>HP Helion OpenStack Carrier Grade has been verified to work using the following
+            hardware configuration:</p>
+        <ul>
+            <li>
+                <p>The required number of controller nodes is two.</p>
+            </li>
+            <li>
+                <p>The required number of storage nodes is two. Storage nodes
+                    are optional, depending on storage needs.</p>
+            </li>
+            <li>
+                <p>The verified number of compute nodes is 20.</p>
+            </li>
+            <li>
+                <p>For predictable performance, it is recommended to disable hyper-threading in
+                    the BIOS of all nodes in the cluster.</p>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <title>Supported System Configuration</title>
+        <p>HP Helion OpenStack Carrier Grade has been verified to work using the following system
+            configuration:</p>
+        <ul>
+            <li>
+                <p>two controllers</p>
+            </li>
+            <li>
+                <p>two storage nodes</p>
+            </li>
+            <li>
+                <p>20 compute nodes with dual Intel(R) Xeon(R) CPU E5-2670 v2
+                    and E5-2640v3</p>
+            </li>
+            <li>
+                <p>200 virtual machine instances</p>
+            </li>
+            <li>
+                <p>up to four physical ports per compute node</p>
+            </li>
+            <li>
+                <p>maximum eight AVP vNICs per guest</p>
+            </li>
+            <li>
+                <p>maximum eight SR-IOV vNICs per guest</p>
+            </li>
+            <li>
+                <p>maximum 32 VFs per NIC</p>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <title>Supported Guest OSs</title>
+        <p>The following Guest OSs are supported by HP Helion OpenStack Carrier Grade:</p>
+        <ul>
+            <li>
+                <p>KVM 6.0</p>
+            </li>
+            <li>
+                <p>KVM 5.0</p>
+            </li>
+            <li>
+                <p>CentOS 6.4</p>
+            </li>
+            <li>
+                <p>Fedora 19</p>
+            </li>
+            <li>
+                <p>RHEL 6.5</p>
+            </li>
+            <li>
+                <p>OpenSUSE 12.3</p>
+            </li>
+        </ul>
+        <p>Requirements for specific guest OSs are included in the SDK README files.</p>
+    </section>
+    <section>
+        <title>Performance Considerations</title>
+        <p>The nature of the guest applications, their processing and storage
+            demands, and other configuration factors can affect the overall performance of the
+            HP Helion OpenStack Carrier Grade cluster.</p>
+    </section>
+    
+    
+    
+    
 <section id="board-management-network"> <title>Board Management Network</title>
 <p>The board management network is implemented on the internal L2 switch using a dedicated VLAN. Refer to Reference Logical Architecture on page 12 for further information on the internal L2 switch, and to The Board Management Network on page 38 for network planning details.</p>
 <p>
