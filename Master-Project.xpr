@@ -17,7 +17,7 @@
             </serialized>
         </options>
     </meta>
-    <projectTree name="master-project.xpr">
+    <projectTree name="Master-Project.xpr">
         <folder path="automation/"/>
         <folder path="CarrierGrade/"/>
         <folder path="CloudGraphics/"/>
@@ -26,7 +26,9 @@
         <folder path="community/"/>
         <folder path="devplatform/"/>
         <folder path="euca/"/>
+        <folder path="file/"/>
         <folder path="media/"/>
+        <folder path="PDF/"/>
         <folder path="pdf_sources/"/>
         <folder path="publiccloud/"/>
         <folder path="unusedgraphics/"/>
