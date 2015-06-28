@@ -49,7 +49,7 @@
 <!-- This image is for beta release only. Replace for beta -->
 <p>
 <xref format="html" href="javascript:window.open('/media/CGH-architecture-beta-5.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
-<image href="../../media/CGH-architecture-beta-5.png"/>
+<image href="../../media/CGH-architecture-rc0.png"/>
 </xref>
 <!--A BR tag was used here in the original source.-->Click to view larger image; click <b>Back</b> to return.</p>
 </section>
@@ -79,10 +79,6 @@
 <entry> Consumer Access Network (shared with WR - OAM)</entry>
 </row>
 <row>
-<entry> EXT </entry>
-<entry> External network (FIP network for DCN region); can be on a separate interface (`intf*`)</entry>
-</row>
-<row>
 <entry> CTL </entry>
 <entry> IPMI/iLO network (shared with WR) </entry>
 </row>
@@ -93,10 +89,6 @@
 <row>
 <entry> DCM </entry>
 <entry>Data Center Management network (accessible to WR region) and route across multi-DC </entry>
-</row>
-<row>
-<entry> TUL (Swift) </entry>
-<entry> Tenant Underlay Network(s); routed across multi-DC for VxLAN 12 extension  </entry>
 </row>
 <row>
 <entry> WR-TUL/SR-IOV (Swift) </entry>
@@ -110,13 +102,26 @@
 <entry> WR-EXT </entry>
 <entry> External network (FIP network for WR region) </entry>
 </row>
+</tbody>
+</tgroup>
+</table>
+
+  <!-- <row>
 <row>
 <entry> WR-BLS </entry>
 <entry> WR Cloud BLock Storage Network; can be on a separate interface (intf*) </entry>
 </row>
-</tbody>
-</tgroup>
-</table>
+
+<row>
+    <entry> EXT </entry>
+    <entry> External network (FIP network for DCN region); can be on a separate interface (`intf*`)</entry>
+  </row>
+  
+  <entry> TUL (Swift) </entry>
+<entry> Tenant Underlay Network(s); routed across multi-DC for VxLAN 12 extension  </entry>
+</row>
+-->
+
 </section>
 <section id="interfaces"> <title>Interfaces</title>
 <p>The following are the interfaces being used, based on the technical architecture diagram. You can use more than two interfaces and specific networks to physical networks.</p>
@@ -151,7 +156,11 @@
 <entry> CTL </entry>
 <entry> Access iLO network for managing the lifecycle of the node </entry>
 </row>
-<row>
+</tbody>
+</tgroup>
+</table>
+
+  <!-- <row>
 <entry> CLM </entry>
 <entry> EXT </entry>
 <entry> Access external networks, for example to download patches </entry>
@@ -176,10 +185,9 @@
 <entry> DCM2 </entry>
 <entry> Inter DC communication (VPN tunnel, BGP, MPLS) </entry>
 </row>
-</tbody>
-</tgroup>
-</table>
-<p>CLM, PXE, OBS, BLS, WR-PXE, WR-INFRA, WR-TUL will use RFC 1918 non-routable IPs to prevent access to the CLM network from DCM, CLT, or EXT.</p>
+ -->
+  
+  <p>CLM, PXE, OBS, BLS, WR-PXE, WR-INFRA, WR-TUL will use RFC 1918 non-routable IPs to prevent access to the CLM network from DCM, CLT, or EXT.</p>
 </section>
 <section id="next"> <title>Next step</title>
 <p>For more information of Hardware configurations see the <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >Support Matrix</xref>.</p>
