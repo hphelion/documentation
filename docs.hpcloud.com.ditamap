@@ -1826,16 +1826,13 @@
     <topichead navtitle="Administrator Guide">
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
     </topichead>
-    <topichead
-      navtitle="Reference Deployment Scenarios Guide">
-      <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
-        <!-- topicref href="jow1410639575680.xml"/  Pktgen Scenario removed 2014-09-19 -->
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638776646.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638924240.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411430962060.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411435660602.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411482049845.xml"/>
-      </topicref>
+    <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
+      <!-- topicref href="jow1410639575680.xml"/  Pktgen Scenario removed 2014-09-19 -->
+      <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638776646.xml"/>
+      <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638924240.xml"/>
+      <topicref href="CarrierGrade/DeploymentScenarios3/jow1411430962060.xml"/>
+      <topicref href="CarrierGrade/DeploymentScenarios3/jow1411435660602.xml"/>
+      <topicref href="CarrierGrade/DeploymentScenarios3/jow1411482049845.xml"/>
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1410636108227.xml">
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1411497294920.xml"/>
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333821651.xml">
@@ -1875,7 +1872,7 @@
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827217.xml"/>
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827838.xml"/>
       </topicref>
-    </topichead>
+    </topicref>
   </topicref>
   
 </map>
