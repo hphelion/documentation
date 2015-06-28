@@ -62,7 +62,7 @@ hp3par_debug=False
 hp3par_iscsi_chap_enabled=false
 hp3par_snapshot_retention=48
 hp3par_snapshot_expiration=72
-          
+         
           
 -- LR1 3PAR details (ip address not in same block causing deployment issues)
 hp3par_api_url=https://10.1.64.55:8080/api/v1 

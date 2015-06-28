@@ -1745,7 +1745,7 @@
     <topichead navtitle="Installing the Non-KVM Region">
       <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix.dita">
         <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-non-kvm.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-wr.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-kvm.dita"/>
       </topicref>
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"/>
       <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-overview.dita">
@@ -1818,14 +1818,14 @@
         href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-diagnosis-disk-health-hpssacli.dita"/>
       <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting.swift.dita"/>
       <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting-overcloud.dita"
-      />
-    </topicref> -->
+      /> -->
+    </topicref>
     <topichead navtitle="Administrator Guide">
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
       <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin.pdf" format="pdf"/>
     </topichead>
-    <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
-      <!-- topicref href="jow1410639575680.xml"/  Pktgen Scenario removed 2014-09-19 -->
+
+  <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638776646.xml"/>
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638924240.xml"/>
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1411430962060.xml"/>
@@ -1871,6 +1871,5 @@
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827838.xml"/>
       </topicref>
     </topicref>
-  </topicref>
   
 </map>
