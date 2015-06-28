@@ -17,20 +17,18 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-support-matrix.md-->
  <!--permalink: /helion/openstack/carrier/support-matrix/--></p>
-<p>To ensure the performance and stability of the HP Helion OpenStack Carrier Grade environment, it is very important to meet the requirements and conform to the recommendations.</p>
-<section id="support-matrix-for-the-kvm-host"> <title>Support Matrix for the Non-KVM Region</title>
 <p>To ensure the performance and stability of the HP Lifecycle Management environment, it is very important to meet the requirements and conform to the recommendations listed in <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-hlm.dita" >Support Matrix for the KVM Host</xref>.</p>
-</section>
-<section id="support-matrix-for-hp-helion-openstack-servers"> <title>Support Matrix for HP Helion OpenStack servers</title>
-  <p>To ensure the performance and stability of the Non-KVM servers running the HP Lifecycle Management environment and HP Helion OpenStack it is important to meet the requirements and conform to the recommendations listed in <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-helion.dita" >Support Matrix for HP Helion OpenStack</xref>.</p>
+  <section id="support-matrix-for-hp-helion-openstack-servers"> <title>Support Matrix for the Non-KVM Region Region</title>
+  <p>To ensure the performance and stability of the Non-KVM servers running the HP Lifecycle Management environment and HP Helion OpenStack it is important to meet the requirements and conform to the recommendations listed in <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-non-kvm.dita" >Support Matrix for the Non-KVM Region</xref>.</p>
 </section>
 <!-- 
   <section id="support-matrix-for-hp-distributed-cloud-networking-dcn-host"> <title>Support Matrix for HP Distributed Cloud Networking (DCN) host</title>
 <p>For key requirements needed HP Distributed Cloud Networking (DCN), see <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-dcn.dita" >Support Matrix for HP Distributed Cloud Networking</xref>.</p>
 </section>  -->
-<section id="support-matrix-for-the-wind-river-linux-servers"> <title>Support Matrix for the KVM region</title>
-<p>To ensure the performance and stability of the systems running KVM region of the HP Helion OpenStack Carrier Grade environment, it is very important to meet the requirements and conform to the recommendations listed in [Support Matrix for the Wind River Region](/helion/openstack/carrier/support-matrix/wr/).</p>p>
-</section>
+<section id="support-matrix-for-the-wind-river-linux-servers">
+      <title>Support Matrix for the KVM Region</title>
+      <p>To ensure the performance and stability of the systems running KVM region of the HP Helion OpenStack Carrier Grade environment, it is very important to meet the requirements and conform to the recommendations listed in <xref href="carrier-grade-support-matrix-kvm.dita"
+>Support Matrix for the Non-KVM Region</xref>.</p> </section>
 
   <section id="next-step"> <title>Next Step</title>
 <p>
