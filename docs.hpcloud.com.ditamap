@@ -1826,7 +1826,6 @@
     <topichead navtitle="Administrator Guide">
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
     </topichead>
-    <topichead navtitle="Reference Deployment Scenarios"/>
     <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
       <!-- topicref href="jow1410639575680.xml"/  Pktgen Scenario removed 2014-09-19 -->
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638776646.xml"/>
