@@ -1826,53 +1826,55 @@
     <topichead navtitle="Administrator Guide">
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
     </topichead>
-    <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
-      <!-- topicref href="jow1410639575680.xml"/  Pktgen Scenario removed 2014-09-19 -->
-      <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638776646.xml"/>
-      <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638924240.xml"/>
-      <topicref href="CarrierGrade/DeploymentScenarios3/jow1411430962060.xml"/>
-      <topicref href="CarrierGrade/DeploymentScenarios3/jow1411435660602.xml"/>
-      <topicref href="CarrierGrade/DeploymentScenarios3/jow1411482049845.xml"/>
-      <topicref href="CarrierGrade/DeploymentScenarios3/jow1410636108227.xml">
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411497294920.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333821651.xml">
-          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333723047.xml"/>
-          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333728991.xml"/>
-          <topicref href="CarrierGrade/DeploymentScenarios3/jow1424192677556.xml"/>
-          <!-- Removing from map until needed for GA release
+    <topichead navtitle="Reference Deployment Scenarios">
+      <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
+        <!-- topicref href="jow1410639575680.xml"/  Pktgen Scenario removed 2014-09-19 -->
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638776646.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638924240.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411430962060.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411435660602.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411482049845.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1410636108227.xml">
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1411497294920.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333821651.xml">
+            <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333723047.xml"/>
+            <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333728991.xml"/>
+            <topicref href="CarrierGrade/DeploymentScenarios3/jow1424192677556.xml"/>
+            <!-- Removing from map until needed for GA release
                   <topicref href="rst1433175643400.xml"/>
             </topicref>-->
-          <topicref href="CarrierGrade/DeploymentScenarios3/rst1432665605712.xml"/>
-          <topicref href="CarrierGrade/DeploymentScenarios3/jow1410637938926.xml"/>
-          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333714134.xml"/>
-          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333668441.xml"/>
-          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333673732.xml"/>
+            <topicref href="CarrierGrade/DeploymentScenarios3/rst1432665605712.xml"/>
+            <topicref href="CarrierGrade/DeploymentScenarios3/jow1410637938926.xml"/>
+            <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333714134.xml"/>
+            <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333668441.xml"/>
+            <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333673732.xml"/>
+          </topicref>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333809139.xml">
+            <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333586935.xml"/>
+            <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333594789.xml"/>
+            <topicref href="CarrierGrade/DeploymentScenarios3/rec1433352802888.xml"/>
+            <topicref href="CarrierGrade/DeploymentScenarios3/jow1410804489611.xml"/>
+            <topicref href="CarrierGrade/DeploymentScenarios3/jow1408735356648.xml"/>
+          </topicref>
         </topicref>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333809139.xml">
-          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333586935.xml"/>
-          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333594789.xml"/>
-          <topicref href="CarrierGrade/DeploymentScenarios3/rec1433352802888.xml"/>
-          <topicref href="CarrierGrade/DeploymentScenarios3/jow1410804489611.xml"/>
-          <topicref href="CarrierGrade/DeploymentScenarios3/jow1408735356648.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411149829129.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411149875790.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411677830752.xml"/>
+        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333819947.xml">
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333822865.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333823466.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1424188329479.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/rst1432757329786.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1411739340460.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333587606.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333825310.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333825972.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333826563.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827217.xml"/>
+          <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827838.xml"/>
         </topicref>
       </topicref>
-      <topicref href="CarrierGrade/DeploymentScenarios3/jow1411149829129.xml"/>
-      <topicref href="CarrierGrade/DeploymentScenarios3/jow1411149875790.xml"/>
-      <topicref href="CarrierGrade/DeploymentScenarios3/jow1411677830752.xml"/>
-      <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333819947.xml">
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333822865.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333823466.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1424188329479.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/rst1432757329786.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1411739340460.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333587606.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333825310.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333825972.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333826563.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827217.xml"/>
-        <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827838.xml"/>
-      </topicref>
-    </topicref>
+    </topichead>
   </topicref>
   
 </map>
