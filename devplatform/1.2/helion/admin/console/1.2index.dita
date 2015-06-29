@@ -206,10 +206,14 @@ Console, but some maintenance and configuration tasks may need to be done at the
   <codeph>theme_settings['pingback_allowed'] = false;
 </codeph>
 </codeblock>
-<p>in the <i>settings.js</i> file as described in the <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita#customize" type="section"   >Customization</xref> documentation.</p>
+<p>in the <i>settings.js</i> file as described in the <xref href="1.2customize.dita#topic5029"
+          >Customization</xref> documentation.</p>
 </section>
 <section id="welcome"> <title>Welcome Page</title>
-<p>The top-level page of the Management Console displays quick links to the most used resources and views. The blue buttons are for features also available to regular end users. See <xref href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita#user-console-welcome" type="section"   >Management Console (User View)</xref>.</p>
+<p>The top-level page of the Management Console displays quick links to the most used resources and
+        views. The blue buttons are for features also available to regular end users. See <xref
+          href="../../user/console/1.2index.dita#topic8844/welcome">Management Console</xref> (User
+        View).</p>
 <p>Available patches for the system, new releases, and the latest news are also displayed on this page.</p>
 <p>Green buttons expose Admin-only functionality:</p>
 <ul>
@@ -227,15 +231,14 @@ Console, but some maintenance and configuration tasks may need to be done at the
 </ul>
 </section>
 <section id="applications"> <title>Applications</title>
-<p>The Applications section displays a list of all apps on the server. Click anywhere on the line for an app to view its details. Admins have the same permissions in the <xref href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita#user-console-app" type="section"   >Application View</xref> as a Developer of the space it was deployed to.</p>
+<p>The Applications section displays a list of all apps on the server. Click anywhere on the line for an app to view its details. Admins have the same permissions in the Application View as a Developer of the space it was deployed to.</p>
 </section>
 <section id="organizations"> <title>Organizations</title>
 <p>The top level Organizations page allows Admins to add and delete <xref
           href="#topic13823/organizations" format="dita">Organizations</xref>. Clicking on an
         organization name opens its details. This view is the same as a regular user's <xref
-          href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita#user-console-organizations"
-          type="section" >Organizations view</xref>, but admin users can also edit
-        quotas and add/remove domains, spaces, and users.</p>
+          href="../../user/console/1.2index.dita#topic8844/organization-view">Organizations</xref>
+        view, but admin users can also edit quotas and add/remove domains, spaces, and users.</p>
 </section>
 <section id="support"> <title>Support</title>
 <p>The Support menu includes the same options as the regular user's menu.</p>
@@ -362,7 +365,8 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <li>Eula Content: End User License Agreement. Change this only if you are an OEM customer exposing Helion to end users under your own specific licensing terms.</li>
 <li>Custom Stylesheet: A single CSS file used to override any existing styling in the Management Console. Inspect the Console with browser tools such as Firebug or Chrome Developer Tools to see the class names and IDs.</li>
 </ul>
-<p>Detailed instructions for customizing the Console can be found in the <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita#customize" type="section"   >Customization</xref> documentation.</p>
+<p>Detailed instructions for customizing the Console can be found in the <xref
+          href="1.2customize.dita#topic5029">Customization</xref> documentation.</p>
 </section>
 <section id="dea"> <title>DEA</title>
 </section>
@@ -430,10 +434,8 @@ Console, but some maintenance and configuration tasks may need to be done at the
 </section>
 <section id="harbor"> <title>Harbor</title>
 <p>Settings for the <xref href="../cluster/1.2harbor.dita#topic4009">Harbor </xref>TCP/UDP port
-        service. See <xref
-          href="../../../../../devplatform/1.2/helion/admin/cluster/1.2harbor.dita#harbor-setup"
-          type="section" >Harbor: Requirements &amp; Setup</xref> for more
-        information.</p>
+        service. See <xref href="../cluster/1.2harbor.dita#topic4009/requirements-setup">Harbor:
+          Requirements</xref> &amp; Setup for more information.</p>
 <ul>
 <li>
 <b>External Host</b>: The public IP (if configured) for the Harbor node.</li>
