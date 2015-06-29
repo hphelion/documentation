@@ -40,6 +40,7 @@
   
       <li>In the <codeph>~/ssh/config</codeph> file, set the following value to disable strict host key vhecking:
  
+ 
         <codeblock>StrictHostKeyChecking no</codeblock></li>
   
   <li>Restart SSH service.</li>
