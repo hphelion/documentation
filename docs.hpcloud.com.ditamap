@@ -1742,7 +1742,7 @@
         </topicref>
       </topicref>
     </topicref>
-    <topichead navtitle="Installing the Non-KVM Region">
+    <topichead navtitle="Installing HP Helion OpenStack Carrier Grade">
       <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix.dita">
         <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-non-kvm.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-kvm.dita"/>
