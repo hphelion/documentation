@@ -87,15 +87,9 @@ For example:</p>
 <p>Note that <codeph>PROCESSES_WEB</codeph> may be undefined when Application Lifecycle Service can't determine the default command. This may occur because the app uses a non-standard main application file.</p>
 </section>
 <section id="pypm-opts"> <title>PYPM_OPTS</title>
-<<<<<<< HEAD
   <p>Custom/alternate <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#topic6187/term-pypm" type="section"   >PyPM</xref> repo location. Repo mirroring is an undocumented feature. Example:</p>
   <p>Custom/alternate <xref href="1.2glossary.dita#topic6187/term-pypm">PyPM</xref> repo location.
         Repo mirroring is an undocumented feature. Example:</p>
->>>>>>> d5093c454db123bf99d5e697aba55af22488ee5f
-=======
-  <p>Custom/alternate <xref href="1.2glossary.dita#topic6187/term-pypm">PyPM</xref> repo location.
-        Repo mirroring is an undocumented feature. Example:</p>
->>>>>>> a5e4a9e009dfa54df6316b2510558321afe03b7a
 <codeblock>env:
     PYPM_OPTS: "-R http://pypm-free.activestate.com/2.7/linux-x86_64/"</codeblock>
 </section>
