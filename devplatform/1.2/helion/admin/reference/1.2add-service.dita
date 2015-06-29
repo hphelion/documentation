@@ -35,7 +35,7 @@
 <b>User-Provided Service Instances</b>
 </xref>: Credentials and connection information for <i>external</i> services.</li>
 </ul>
-  <p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#topic6187/command-services" type="section" >helion services</xref> command will show a list of all System Services available on the current target. This command will also display a list of Provisioned Services allocated to the currently authenticated user.</p>
+  <p>The <xref href="../../user/reference/1.2client-ref-services.dita" >helion services</xref> command will show a list of all System Services available on the current target. This command will also display a list of Provisioned Services allocated to the currently authenticated user.</p>
 <p>Administrators can configure external data services to work in the same way that core System Services do, providing users and applications with access to existing software and infrastructure.</p>
 <section id="service-brokers"> <title>Service Brokers</title>
 <p>Service brokers are RESTful web services which connect Helion to services that the hosted apps can consume.</p>
