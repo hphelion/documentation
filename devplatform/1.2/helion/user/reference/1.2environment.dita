@@ -91,7 +91,6 @@ For example:</p>
   <p>Custom/alternate <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#topic6187/term-pypm" type="section"   >PyPM</xref> repo location. Repo mirroring is an undocumented feature. Example:</p>
   <p>Custom/alternate <xref href="1.2glossary.dita#topic6187/term-pypm">PyPM</xref> repo location.
         Repo mirroring is an undocumented feature. Example:</p>
->>>>>>> d5093c454db123bf99d5e697aba55af22488ee5f
 <codeblock>env:
     PYPM_OPTS: "-R http://pypm-free.activestate.com/2.7/linux-x86_64/"</codeblock>
 </section>
