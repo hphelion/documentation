@@ -1754,14 +1754,12 @@
           <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.dita"/>
           <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"/>
         </topicref>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-non-kvm.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-verify.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-troubleshoot.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-rc0.dita"/>
       </topicref>
-    </topichead>
-    <topichead navtitle="Installing the KVM Region (PDF)">
-      <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-rc0.dita"/>
     </topichead>
     <!-- hiding for RC0
     <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita">
