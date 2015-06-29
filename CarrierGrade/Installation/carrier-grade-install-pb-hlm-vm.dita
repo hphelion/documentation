@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Creating the HLM Virtual Machine</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the Non-KVM
+    Cloud</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,9 +13,10 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
-<p>Helion Lifecycle Management (HLM) consists of the ongoing operations/maintenance as well as the initial deployment of the HP Helion OpenStack Carrier Grade system.</p>
-<p>HLM consists of initial HLM node deployment followed by Helion cloud nodes deployment.</p>
-<section id="logging"> <title>Logging</title>
+  <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a virtual machine for the Helion Lifecycle Management (HLM) and then deploying the HP Helion Openstack cloud.</p>
+  <p>HLM consists of the ongoing operations/maintenance as well as the initial deployment of the HP Helion OpenStack Carrier Grade system.</p>
+
+<section id="logging"> <title>About Installation Logging</title>
 <p>For all scripts that are executed (including <codeph>hlm-build</codeph> and <codeph>h*</codeph> scripts below), separate log files are generated on <codeph>/var/log/hlm/</codeph> folder.</p>
 <p>For example, if you run the <codeph>hprovsion</codeph> command, all command line output will also be logged in <codeph>/var/log/hlm/hprovision.log</codeph> file.</p>
 <p>The following is the list of scripts for which logging is implemented:</p>
@@ -30,71 +32,65 @@
 </ul>
 </section>
 <section id="prepare"> <title>Prepare the system for deployment</title>
-<p>Use the following steps to prepare the KVM host to deploy the VMs.</p>
+<p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM host):</p>
 <ol>
-<li>Copy the installer files and Ansible playbooks to KVM host.<p>a. Copy the
-              <codeph>cg-hlm.qcow2</codeph> file to <codeph>/home/images</codeph>.</p><p>b. Copy the
-              <codeph>cg-hos-dcn-vsd.tar.gz.gpg</codeph> to the <codeph>/home/images</codeph>
-            directory.</p><p>c. Decrypt and untar the PGP file using password
-              <codeph>cghelion</codeph> when
-            prompted.</p><codeblock><codeph>gpg -d cg-hos-dcn.tar.gz.gpg | tar -xzvf
-</codeph></codeblock><p>d.
-            Copy the <codeph>infra-ansible-playbooks</codeph> file to <codeph>/root</codeph>. e.
-            Decrypt and untar the file using password <codeph>cghelion</codeph> when
-            prompted.</p><p>f. Copy the <codeph>cg-hos.tar.gz.gpg</codeph> file to
-              <codeph>/root/cg</codeph>. Create the directory if it does not exist.</p><p>g. Copy
-            the <codeph>cg-hos-dcn-vsc.tar.gz.gpg</codeph> file to
-            <codeph>/root/cg</codeph>.</p><p>h. Copy the files from the
-              <codeph>Patches/build-33</codeph>
-            folder</p><codeblock><codeph>hnewcloud.sh
+<li>Download and copy the installer files and Ansible playbooks to KVM host.<ol id="ol_lnw_nn2_ns">
+            <li>Copy the <codeph>cg-hlm.qcow2</codeph> file to <codeph>/home/images</codeph>.</li>
+            <li>Copy the <codeph>cg-hos-dcn-vsd.tar.gz.gpg</codeph> to the
+                <codeph>/home/images</codeph> directory.</li>
+          
+      <li>Decrypt and untar the PGP file using password <codeph>cghelion</codeph> when prompted.  
+        <codeblock>gpg -d cg-hos-dcn.tar.gz.gpg | tar -xzvf</codeblock></li>
+      <li>Copy the <codeph>infra-ansible-playbooks</codeph> file to <codeph>/root</codeph>.</li> 
+      <li>Decrypt and untar the file using password <codeph>cghelion</codeph> when prompted.</li>
+      <li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> file to <codeph>/root/cg</codeph>. Create the directory if it does not exist.</li>
+      <li>Copy the <codeph>cg-hos-dcn-vsc.tar.gz.gpg</codeph> file to <codeph>/root/cg</codeph>.</li>
+        <li>Copy the following files from the <codeph>Patches/build-33</codeph> folder<codeblock>
+      hnewcloud.sh
 ansible.cfg
 ilopxebootonce.py
 venom-patch.tar.gz
-</codeph></codeblock><p>i.
-            Extract the <codeph>venom-patch.tar.gz</codeph> and follow the readme file.</p><p>The
-              <codeph>cg-hlm.qcow2</codeph> and <codeph>VSD-3.0.0_HP_r3.0_16.qcow2</codeph> are in
-            the <codeph>/home/images</codeph> folder. Refer to the <codeph>group_vars/all</codeph>
-            file on the KVM host if you need the location of the <codeph>/home/images</codeph>
-            file.</p></li>
-<li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for you environment.
-          Comments added in the file explain each variable.</li>
+</codeblock></li>
+  <li>Extract the <codeph>venom-patch.tar.gz</codeph> and follow the readme file. The <codeph>cg-hlm.qcow2</codeph> and <codeph>VSD-3.0.0_HP_r3.0_16.qcow2</codeph> are in the <codeph>/home/images</codeph> folder. Refer to the <codeph>group_vars/all</codeph> file on the HLM host if you need the location of the <codeph>/home/images</codeph> file.</li></ol></li>
+
+  <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your environment.
+          For information on each variable, refer to the comments in the file with each variable.</li>
 <li>Check the hosts file <codeph>/root/infra-ansible-playbooks/hosts</codeph> file and make sure it
           appears similar to the following. Make sure the VSD IP (DCM network) is
-          correct.<codeblock><codeph>Update the vsd CLM IP in this file
-[vsd]
-10.200.50.21 ansible_ssh_user=root ansible_ssh_pass=Alcateldc
-
-[hlm]
-
-[hlm_kvm_host]
-192.168.122.1 
-</codeph></codeblock></li>
+          correct. Also, update the vsd CLM IP in this file.</li>
 </ol>
+<codeblock>  
+        [vsd]
+        10.200.50.21 ansible_ssh_user=root ansible_ssh_pass=Alcateldc
+
+        [hlm]
+
+        [hlm_kvm_host]
+        192.168.122.1 
+</codeblock>
 </section>
-<section id="deploy-the-hlm-and-vsd-vm"> <title>Deploy the HLM and VSD VM</title>
-<p>The steps provided below will get you to use ansible playbook and bring up HLM and VSD VM up on the HLM KVM Host.</p>
+<section id="deploy-the-hlm-and-vsd-vm"> <title>Deploy the HLM Cloud and VSD VM</title>
+  <p>Use the following steps to bring up the HLM cloud and create a VM for the HP Virtualized Services Directory (VSD) on the HLM Host using Ansible playbooks.</p>
 <ol>
 <li>Make sure the Ansible playbook file is not in executable mode.</li>
-<li>Execute the following
-            command:<codeblock><codeph>ansible-playbook -i hosts setup_hlm_onBM.yml
-</codeph></codeblock><p>The
-            above command will do the following
-            :</p><codeblock><codeph>a. Copy both installation files (tar balls) to your HLM, decrypt, and extract the files.
-b. Execute the `updatepackages` command.
-c. Execute the `prepareenv` command.
-d. Execute the `Init cobbler` command.
-e. Execute the `Importiso` command.
-</codeph></codeblock><p>You
-            will see similar message when the playbook is run successful.</p><p>
-            <image href="../../media/CGH-Install-Ansible.png"/>
-          </p></li>
+<li>Execute the following command:<codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock>
+  The command will do the following:<ul>
+    <li>Copy both installation files (tar balls) to your HLM server, decrypt, and extract the files.</li>
+    <li>Execute the <codeph>updatepackages</codeph> command.</li>
+    <li>Execute the <codeph>prepareenv</codeph> command.</li>
+    <li>Execute the <codeph>Init cobbler</codeph> command.</li>
+    <li>Execute the <codeph>Importiso</codeph> command.</li></ul>
+
+You will see similar message when the playbook is run successful.</li>
 </ol>
+<p><image href="../../media/CGH-Install-Ansible.png"/></p>
 </section>
+
 <section id="apply-the-patch-to-fix-qemu-venom-vulnerability"> <title>Apply the patch to fix QEMU Venom vulnerability</title>
 <p>There is a <xref href="https://bugs.launchpad.net/openstack-ansible/+bug/1454677" scope="external" format="html" >known vulnerability</xref> in <xref href="http://wiki.qemu.org/Main_Page" scope="external" format="html" >QEMU</xref>.</p>
 <p>Use the following steps to patch the vulnerability:</p>
 <ol>
-<li>Copy <codeph>venom-patch.tar.gz</codeph> to the HLM VM and extract the files. Follow
+<li>Copy the <codeph>venom-patch.tar.gz</codeph> file to the HLM VM and extract the files. Follow
           instructions in Readme.txt file that is in the extracted files.</li>
 <li>Copy the <codeph>packages-patch.tar.gz.gpg</codeph> to <codeph>/root</codeph> directory on HLM
           VM.</li>
@@ -115,12 +111,14 @@ dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz
 </codeph></codeblock></li>
 </ol>
 </section>
-<section id="logging-into-vsd-node-creating-user-and-applying-license"> <title>Logging into VSD node, creating user and applying License</title>
-<p>VSD node provisioning happens as part of Infrastructure Ansible playbook run.</p>
-<p>You can SSH to the VSD VM from HLM KVM host using the DCM IP.</p>
-<codeblock><codeph> virsh console vsd
-</codeph></codeblock>
-<p>If everything is installed correctly, you should see the status as below from VSD VM.</p>
+  
+<section> <title>Coniguring the VSD node, creating user and applying License</title>
+  <p>During the <i>Deploy the HLM Cloud and VSD VM</i> section, a vritual machine is created to host VSD. </p>
+<p>You need to log into the VSD node (using SSH), then create a default user and apply the required license.</p>
+  
+<p>After logging into the VDS node, execute the following command to launch a console window:</p>
+<codeblock>virsh console vsd</codeblock>
+<p>You should see the status as below from VSD VM.</p>
 <p>
   <image href="../../media/CGH-install-virsh-vsd.png"/>
 </p>
@@ -128,10 +126,9 @@ dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz
 <section id="vsd-performance-workaround"> <title>VSD Performance workaround</title>
 <p>By default VSD has only 8G memory. For better performance behavior, you can update the VSD memory to 16G.</p>
 <ol>
-<li>From KVM host,use the following command to bring down the VSD
-          VM:<codeblock><codeph>virsh destroy vsd
-</codeph></codeblock></li>
-<li>Use the following command to edit the memory setting in the VSD XML
+<li>From HLM host, execute the following command to power down the VSD node:
+          VM:<codeblock>virsh destroy vsd</codeblock></li>
+<li>Execute the following command to edit the memory setting in the VSD XML
           file:<codeblock><codeph>virsh edit vsd 
 
 Current value 
@@ -146,14 +143,14 @@ Change to
 </codeph></codeblock></li>
 <li>Use the following command to start the
             VM:<codeblock><codeph>virsh start vsd
-</codeph></codeblock><p>It might take 15 min or
+</codeph></codeblock><p>It can take 15 minutes or
             more to sync with NTP and to get all the other VSD services up.</p></li>
 </ol>
 </section>
 <section id="launch-vsd-dashboard"> <title>Launch VSD Dashboard</title>
-<p>As VSD VM has DCM interface to HLM KVM host, you should be able to XRDP from jump server to the HLM KVM host and can launch the dash board.</p>
+<p>On the HLM host:</p>
 <ol>
-<li>Using an internet browser such as Chrome or FireFox, navigate to the DCM IP of VSD.</li>
+<li>Using an browser such as Chrome or FireFox, navigate to the DCM IP of VSD.</li>
 <li>In the log in page, enter the default
           credentials:<codeblock><codeph>User Name: Csproot 
 Password: csproot 
@@ -182,13 +179,12 @@ VSD Server : auto
 </ol>
 </section>
 <section id="configure-a-json-file-for-installation"> <title>Configure a JSON file for installation</title>
-<p>The HLM VM deployment requires a JSON file. Use the following steps to install and edit the file.</p>
+<p>The HP Helion OpenStack VM deployment requires a JSON file. Use the following steps to install and edit the file.</p>
 <ol>
-<li>On the KVM host, change to the home directory.<codeblock><codeph>cd ~
-</codeph></codeblock></li>
-<li>Provision and configure your HLM
-            VM.<codeblock><codeph>hnewcloud  &lt;cloudname&gt; &lt;cloud_template&gt;
-</codeph></codeblock><p>Where:</p><ul>
+<li>On the HLM host, change to the home directory.<codeblock>cd ~
+</codeblock></li>
+<li>Provision and configure your HP Helion OpenStack VM.<codeblock>hnewcloud  &lt;cloudname&gt; &lt;cloud_template&gt;
+</codeblock><p>Where:</p><ul>
             <li>cloudname is the name of the cloud to create</li>
             <li>cloud_template is the name of the template to use.</li>
           </ul><p>The command creates the <codeph>&lt;cloudname&gt;</codeph> directory, which will
@@ -208,16 +204,16 @@ VSD Server : auto
               <tbody>
                 <row>
                   <entry>name</entry>
-                  <entry>Name of the system you want to add in cobbler</entry>
+                  <entry>Name of the system you want to add</entry>
                 </row>
                 <row>
                   <entry>Pxe-mac-address</entry>
-                  <entry>MAC address of the interface you want to pxe boot onto. This is not same as
+                  <entry>MAC address of the interface you want to PXE boot onto. This is not same as
                     iLO MAC address,</entry>
                 </row>
                 <row>
                   <entry>Pxe-interface</entry>
-                  <entry>nterface name on which pxe boot should occur. For example: `eth0`</entry>
+                  <entry>The name of the interface on which PXE boot should occur. For example: <codeph>eth0</codeph></entry>
                 </row>
                 <row>
                   <entry>pm_type</entry>
@@ -225,34 +221,33 @@ VSD Server : auto
                 </row>
                 <row>
                   <entry>pm_ip</entry>
-                  <entry>Power management IP:ilo ip</entry>
+                  <entry>Power management IP (ilo ip)</entry>
                 </row>
                 <row>
                   <entry>pm_user</entry>
-                  <entry>Power management user: ilo username</entry>
+                  <entry>Power management user (ilo username)</entry>
                 </row>
                 <row>
                   <entry>pm_pass</entry>
-                  <entry>Power management password: ilo password</entry>
+                  <entry>Power management password (ilo password)</entry>
                 </row>
                 <row>
                   <entry>node_group</entry>
-                  <entry>For now, this should have the same value as `node-type` in the `nodes.json`
-                    file. For example: `CCN-001-001`.</entry>
+                  <entry>Enter the same value as <codeph>node-type</codeph> in the <codeph>nodes.json</codeph>
+                    file used during cloud deployment. For example: `CCN-001-001`.</entry>
                 </row>
                 <row>
                   <entry>failure_zone, vendor, model, os_partition_size, data_partition_size</entry>
-                  <entry>These fields have same significance as they have in the `nodes.json` used
+                  <entry>Enter the same value as for these fields an in the <codeph>nodes.json</codeph> file used
                     during cloud deployment</entry>
                 </row>
               </tbody>
             </tgroup>
           </table><p>To see a sample <codeph>node-provision.json</codeph> file, see <xref
-              href="../../CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.dita"
-              >Create the HLM Virtual Machine</xref>.</p></li>
+              href="../../CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.dita">Create the HLM Virtual Machine</xref>.</p></li>
 </ol>
 </section>
-<section id="create-new-cloud-template-and-bring-the-cloud-nodes-up"> <title>Create new cloud template and bring the cloud nodes up</title>
+<section id="pxe-boot"> <title>Configure PXE boot</title>
 <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE boot on cloud nodes to set the correct boot order. Execute the following on the HLM VM</p>
 <ol>
 <li>Use the following command to install the <codeph>python-hpilo</codeph> module on HLM VM:<codeblock><codeph>pip install python-hpilo
@@ -278,41 +273,39 @@ VSD Server : auto
               <codeph>node-provision.json</codeph> file. The script alsos track the PXE boot
             completion process and will create the <codeph>nodes.json</codeph> file in the
             directory. </p></li>
-<li>Update the <codeph>node-provision.json</codeph> files used in the previous step.<p>a. Change to
+  <li>Update the <codeph>node-provision.json</codeph> file used in the <xref type="section" href="#topic10581/pxe-boot">previous step</xref>.<p>a. Change to
             the <codeph>&lt;cloudname&gt;</codeph>
             directory:</p><codeblock><codeph>cd ~/&lt;cloudname&gt;
 </codeph></codeblock><p>b.
-            Verify that the each PXE-booted nodes has an IP address that matches the IP address
+            Verify that the each PXE-booted node has an IP address that matches the IP address
             specified in the <codeph>node-provision.json</codeph> file.</p></li>
 <li>Modify the <codeph>environment.json</codeph> file to configure the VLANs and network addresses
-          that need to be configured for respective cloud nodes.<codeblock><codeph>"cidr": 
-"start-address": 
-</codeph></codeblock><ul>
-            <li>
-              <p>The three controller nodes should have CLM, CAN, EXT, BLS on eth0 and TUL on
-                eth1.</p>
-            </li>
-            <li>
+          as appropriate for your environment.<codeblock>"cidr": "start-address": </codeblock>
+            
+         The three controller nodes should have CLM, CAN, EXT, BLS on eth0 and TUL on
+                eth1.
+           <!--Hiding for RC0 
               <p>The two compute nodes should have CLM, EXT, BLS on eth0 and TUL on eth1.</p>
-            </li>
-          </ul><p>
+           -->
+          <p>
             <b>Example:</b>
-          </p><codeblock><codeph>"cidr": "192.168.101.0/24",
+          </p><codeblock>"cidr": "192.168.101.0/24",
 "start-address": "192.168.101.100"
-</codeph></codeblock><p>
+</codeblock><p>
             <b>NOTE:</b> The Helion Configuration Processor assigns the first address of the CLM
             address range to itself for serving python and debian repositories. Make sure that you
             set the first IP address of the CLM range for the eth2 (CLM) address of the HLM
             node.</p></li>
-<li>Modify the <codeph>definition.json</codeph>
-          file:<codeblock><codeph>a. Set the number of compute systems to 2.
+<li>Modify the <codeph>definition.json</codeph> file:
+  
+  <ol><li>Set the number of compute systems to 2.
 
-    "count": 2, //number of computes in the resource pool.
+    <codeblock><codeph>"count": 2, //number of computes in the resource pool</codeph></codeblock>.</li>
 
-b. Update `ansible-vars` section with all the information based on your setup.
+    <li>Update `ansible-vars` section with all the information based on your setup.</li>
 
-c. Make sure you have two NTP entries at the end of this `definition.json` file as seen in the snapshot. If you have only one NTP server in your environment, specify the same NTP server twice.
-</codeph></codeblock></li>
+    <li>ake sure you have two NTP entries at the end of this `definition.json` file as seen in the snapshot. If you have only one NTP server in your environment, specify the same NTP server twice.</li></ol>
+</li>
 <li>Once you have correctly edited all the json "Cloud Model" files, run the Helion Configuration
           Processor on
             these<codeblock><codeph>cd /usr/local/bin
