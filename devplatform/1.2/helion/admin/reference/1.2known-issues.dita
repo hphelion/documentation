@@ -113,16 +113,17 @@
 set environment variables. This mechanism is fully supported by the Application Lifecycle Service and is used by all of the built-in buildpacks.</p>
 </section>
 <section id="legacy-buildpack-and-environment-variables"> <title>Legacy Buildpack and Environment Variables</title>
-  <p>When using the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#topic3370/buildpacks" type="section"   >Legacy Buildpack</xref>, environment variable values defined in <i>manifest.yml</i> cannot be updated without re-pushing the application with new settings. Changes to variables made in the Management Console will be
-overwritten by the original ones defined at push when the application is restarted.</p>
+  <p>When using the <xref href="../../user/deploy/1.2buildpack.dita#topic3370/legacy-buildpack"
+          >Legacy Buildpack</xref>, environment variable values defined in <i>manifest.yml</i>
+        cannot be updated without re-pushing the application with new settings. Changes to variables
+        made in the Management Console will be overwritten by the original ones defined at push when
+        the application is restarted.</p>
 <p>To modify custom environment variables, re-push the application after changing the values in <i>manifest.yml</i>.</p>
 </section>
 <section id="service-gateway-log-errors-in-maintenance-mode"> <title>Service Gateway Log Errors in Maintenance Mode</title>
-<p>With Application Lifecycle Service set in <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita#console-settings" type="section"   >
-<i>Maintenance
-Mode</i>
-</xref>, all "_gateway"
-processes will report the following error once per minute:</p>
+<p>With Application Lifecycle Service set in <xref
+          href="../console/1.2index.dita#topic13823/settings"><i>Maintenance Mode</i></xref> , all
+        "_gateway" processes will report the following error once per minute:</p>
 <codeblock>
   <codeph>Failed registering with cloud controller, status=503
 </codeph>
@@ -147,9 +148,11 @@ these addresses wherever possible, as these addresses are subject to
 change with cluster configuration.</p>
 <p>If the VM instance can locally resolve a hostname rather than an IP
 address, it's generally best practice to use the hostname.</p>
-<p>If not, Application Lifecycle Service provides various <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita#environment-variables" type="section"   >environment variables</xref>
-so that applications do not need to hardcode them at install time. Some
-examples are <codeph>VCAP_SERVICES</codeph> and <codeph>DATABASE_URL</codeph>. We strongly encourage their use.</p>
+<p>If not, Application Lifecycle Service provides various <xref
+          href="../../user/reference/1.2environment.dita#topic7631">environment</xref> variables so
+        that applications do not need to hardcode them at install time. Some examples are
+          <codeph>VCAP_SERVICES</codeph> and <codeph>DATABASE_URL</codeph>. We strongly encourage
+        their use.</p>
 <p>A known issue is that some applications have install procedures that
 can't be configured to make use of these variables. If the server that's
 providing the app's database (mysql_gateway/node for example) gets
