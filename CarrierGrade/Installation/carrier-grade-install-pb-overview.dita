@@ -41,27 +41,36 @@
           <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"
             >Preparing the Network for Installation</xref>
         </li>
-<li> Install the non-KVM region controller-0 and configure a temporary IP address on an accessible
-          interface, preferably PXE</li>
+<li> Install the <xref href="carrier-grade-install-non-kvm.dita#topic10581">Non-KVM
+          region</xref>.</li>
+        <li>Install the <xref href="carrier-grade-install-kvm-cloud-rc0.dita#topic1107">KVM
+            region</xref>.</li>
 <li>
           <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita">HLM
             Post-Installation Tasks</xref>
         </li>
 <li>
-          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.dita"
-            >Deploying the HLM and DCN Clouds</xref>
-        </li>
-<li>
           <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-verify.dita"
             >Verifying the HLM and DCN Installation</xref>
         </li>
-<li>
-          <xref
-            href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Software_Install.pdf"
-            format="pdf" scope="external">Install HP Helion Openstack Carrier Grade</xref>
-        </li>
 </ol>
 </section>
+  <section id="logging"> <title>About Installation Logging</title>
+    <p>For all scripts that are executed (including <codeph>hlm-build</codeph> and <codeph>h*</codeph> scripts below), separate log files are generated on <codeph>/var/log/hlm/</codeph> folder.</p>
+    <p>For example, if you run the <codeph>hprovsion</codeph> command, all command line output will also be logged in <codeph>/var/log/hlm/hprovision.log</codeph> file.</p>
+    <p>The following is the list of scripts for which logging is implemented:</p>
+    <ul>
+      <li>hlm_updatepackages.sh</li>
+      <li>hlm_initcobbler.sh</li>
+      <li>hlm_importiso.sh</li>
+      <li>hlm_prepareenv.sh</li>
+      <li>hnewcloud</li>
+      <li>hprovision</li>
+      <li>hcfgproc</li>
+      <li>hnetinit</li>
+    </ul>
+  </section>
+  
 <section id="first-step"> <title>First Step</title>
 <p>Before you start, make sure your environment meets the hardware and software requirements. See the <xref href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita" >Technical Overview</xref>.</p>
 <p>

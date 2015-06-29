@@ -63,7 +63,7 @@ venom-patch.tar.gz</codeblock></li>
   192.168.122.1 </codeblock>
 </section>
   <section><title>Configure SSH on HLM host</title>
-    for ansible-playbook to provision HLM VM: <ol>
+    Use the following steps to configure SSH on the HLM host: <ol>
       <li>In the <codeph>/etc/ssh/sshd_config</codeph> file, set the following value to enable
         root login: <codeblock>PermitRootLogin yes</codeblock></li>
       <li>In the <codeph>~/ssh/config</codeph> file, set the following value to disable strict
@@ -82,7 +82,7 @@ venom-patch.tar.gz</codeblock></li>
         the HLM VM, copy and decrypt the <codeph>cg-hos.tar.gz.gpg</codeph> from the HLM host to
         the HLM VM, sync packages on to HLM static IP and finally sets up PXE booting of
         controller and compute nodes.
-        <codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock></li></ol>ol>
+        <codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock></li></ol>
     
   </section>
 <section id="deploy-the-hlm-and-vsd-vm"> <title>Deploy the HLM Virtual Machine</title>
