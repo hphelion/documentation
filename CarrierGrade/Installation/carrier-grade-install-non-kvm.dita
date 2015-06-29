@@ -337,8 +337,8 @@ VSD Server : auto
 </section>
 <section id="next-step"> <title>Next Step</title>
 <p>
-  <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita" >HLM Post-Installation Tasks</xref>
-</p>
+        <xref href="carrier-grade-install-kvm-cloud-rc0.dita">Deploying the KVM Region</xref>
+      </p>
 <p>
   <xref type="section" href="#topic10581"> Return to Top </xref>
 </p>

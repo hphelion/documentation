@@ -1750,8 +1750,8 @@
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"/>
       <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-overview.dita">
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita">
-          <topicref href="CarrierGrade/Installation/carrier-grade-install-NTP.dita"/>
           <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"/>
+          <topicref href="CarrierGrade/Installation/carrier-grade-install-NTP.dita"/>
         </topicref>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-non-kvm.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-rc0.dita"/>
