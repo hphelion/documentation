@@ -101,27 +101,27 @@
               />
             </topicref>
           </topichead>
-          <topichead navtitle="Monitor">
+          <!--<topichead navtitle="Monitoring an Object Storage Cluster">-->
             <topicref
-              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-cluster.dita">
+              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-cluster.dita" navtitle="Monitoring an Object Storage Cluster" locktitle="yes">
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-disk.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-disk.dita" navtitle="Monitoring Disk Usage" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-replica-swift-status.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-replica-swift-status.dita" navtitle="Monitoring Node Replication with Icinga" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-check.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-check.dita" navtitle="Swift Health Monitoring with Icinga" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-swift-services.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-swift-services.dita" navtitle="Swift Health Monitoring with Icinga Pasrt 2" locktitle="yes"/> <!--combine or not-->
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-proxy-health-checks.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-proxy-health-checks.dita" navtitle="Monitoring Swift Proxy Health" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-interface.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-interface.dita" navtitle="Monitoring NIC Speed" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-mount-points.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-mount-points.dita" navtitle="Monitoring Mount Points" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-disk-drive(s).dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-disk-drive(s).dita" navtitle="Monitoring Disk Drives" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-access-ping.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-access-ping.dita" navtitle="Monitoring Network Access" locktitle="yes"/>
               <topicref
                 href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-drive-audit.dita"/>
               <topicref
@@ -130,7 +130,7 @@
                 href="commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.dita"
               />
             </topicref>
-          </topichead>
+          <!--</topichead>-->
           <topicref href="commercial/GA1/1.1commerical.services-object-pyringos.dita">
             <topicref href="commercial/GA1/1.1commerical.services-swift-deployment-part-power.dita"
             />
