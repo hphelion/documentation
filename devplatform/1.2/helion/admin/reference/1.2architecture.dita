@@ -65,7 +65,7 @@
 <xref type="section" href="#topic4407/architecture-role-groups">Role Groups</xref>
 </li>
 </ul>
-<p>The Application Lifecycle Service VM is a stand-alone <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-micro-cloud" type="section"   >micro cloud</xref> virtual machine with all the components necessary for running a test environment in one instance. For use on a larger scale, the VM can be cloned and assigned specific roles: Router, Cloud Controller, Droplet Execution
+  <p>The Application Lifecycle Service VM is a stand-alone <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#topic6187/term-micro-cloud" type="section"   >micro cloud</xref> virtual machine with all the components necessary for running a test environment in one instance. For use on a larger scale, the VM can be cloned and assigned specific roles: Router, Cloud Controller, Droplet Execution
 Agents (DEAs, or worker nodes), or specific database services.</p>
 <p>
   <image href="../../../../../media/helion-architecture-diagram.png"/>
@@ -83,14 +83,14 @@ Agents (DEAs, or worker nodes), or specific database services.</p>
 </section>
 <section id="architecture-cloud-controller"> <title>Cloud Controller</title>
 <p>The Controller manages most of the operations of an Application Lifecycle Service system. It hosts the Management Console, provides the API endpoint for client access, manages the cloud_controller_ng process, provisions services, dispatches applications for staging and deployment, and (with the Health Manager) tracks the availability of DEA nodes. The Cloud Controller allocates instances of an application across available DEA nodes, prioritizing eligible nodes that are running the fewest instances of that app already. This maintains an even distribution of instances of an app across the pool.</p>
-<p>In a cluster setup, the Controller role must run on the <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#server-cluster-core-node" type="section"   >Core node</xref> that all other VM's in the cluster connect to.</p>
-  <p>A single Controller is sufficient for small and mid-sized clusters, but <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#topic18326/cluster-multi-controllers" type="section"   >multiple Controllers</xref> can be configured if necessary for larger implementations.</p>
+  <p>In a cluster setup, the Controller role must run on the <xref href="../cluster/1.2index.dita#topic18326/set-up-the-core-node" type="section"   >Core node</xref> that all other VM's in the cluster connect to.</p>
+  <p>A single Controller is sufficient for small and mid-sized clusters, but <xref href="../cluster/1.2index.dita#topic18326/multiple-controllers" type="section"   >multiple Controllers</xref> can be configured if necessary for larger implementations.</p>
 </section>
 <section id="architecture-router"> <title>Router</title>
 <p>The router directs incoming network traffic to the appropriate
 application.</p>
 <p>For smaller configurations, the router can be run on the same Application Lifecycle Service VM as the other components.</p>
-  <p>When additional DEAs are in use and traffic increases, additional routers can be added to handle the load. This will require a <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita#topic18326/cluster-load-balancer" type="section"   >load balancer</xref> to be available
+  <p>When additional DEAs are in use and traffic increases, additional routers can be added to handle the load. This will require a <xref href="../cluster/1.2index.dita#topic18326/load-balancer-and-multiple-routers" type="section"   >load balancer</xref> to be available
 in the cluster.</p>
 </section>
 <section id="architecture-droplet-execution-agents"> <title>Droplet Execution Agents</title>

@@ -118,15 +118,12 @@ overwritten by the original ones defined at push when the application is restart
 <p>To modify custom environment variables, re-push the application after changing the values in <i>manifest.yml</i>.</p>
 </section>
 <section id="service-gateway-log-errors-in-maintenance-mode"> <title>Service Gateway Log Errors in Maintenance Mode</title>
-<p>With Application Lifecycle Service set in <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita#console-settings" type="section"   >
+  <p>With Application Lifecycle Service set in <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita#topic5029/console-settings" type="section"   >
 <i>Maintenance
 Mode</i>
 </xref>, all "_gateway"
 processes will report the following error once per minute:</p>
-<codeblock>
-  <codeph>Failed registering with cloud controller, status=503
-</codeph>
-</codeblock>
+<codeblock>Failed registering with cloud controller, status=503</codeblock>
 <p>This is normal, and can be safely ignored. The service nodes will
 reconnect once the Controller is taken out of Maintenance Mode.</p>
 </section>
