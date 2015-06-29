@@ -16,31 +16,19 @@
   <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a virtual machine for the Helion Lifecycle Management (HLM) and then deploying the HP Helion Openstack cloud.</p>
   <p>HLM consists of the ongoing operations/maintenance as well as the initial deployment of the HP Helion OpenStack Carrier Grade system.</p>
 
-<section id="logging"> <title>About Installation Logging</title>
-<p>For all scripts that are executed (including <codeph>hlm-build</codeph> and <codeph>h*</codeph> scripts below), separate log files are generated on <codeph>/var/log/hlm/</codeph> folder.</p>
-<p>For example, if you run the <codeph>hprovsion</codeph> command, all command line output will also be logged in <codeph>/var/log/hlm/hprovision.log</codeph> file.</p>
-<p>The following is the list of scripts for which logging is implemented:</p>
-<ul>
-<li>hlm_updatepackages.sh</li>
-<li>hlm_initcobbler.sh</li>
-<li>hlm_importiso.sh</li>
-<li>hlm_prepareenv.sh</li>
-<li>hnewcloud</li>
-<li>hprovision</li>
-<li>hcfgproc</li>
-<li>hnetinit</li>
-</ul>
-</section>
 <section id="prepare"> <title>Prepare the system for deployment</title>
 <p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM host):</p>
 <ol>
 <li>Download and copy the installer files and Ansible playbooks to the HLM host.<ol
             id="ol_lnw_nn2_ns">
+  <li>Install the <codeph>ansible</codeph> and <codeph>sshpass</codeph> packages required to run
+              anible-playbooks
+    <codeblock>sudo su -l -c "apt-get install -y ansible sshpass"</codeblock></li>
             <li>Copy the <codeph>cg-hlm.qcow2</codeph> file to <codeph>/home/images</codeph>.</li>
             <li>Copy the <codeph>cg-hos-dcn-vsd.tar.gz.gpg</codeph> to the
                 <codeph>/home/images</codeph> directory.</li>
             <li>Decrypt and untar the PGP file using password <codeph>cghelion</codeph> when
-              prompted. <codeblock>gpg -d cg-hos-dcn.tar.gz.gpg | tar -xzvf</codeblock></li>
+              prompted. <codeblock>gpg -d cg-infra-playbooks.tar.gz.gpg | tar -xzvf</codeblock></li>
             <li>Copy the <codeph>infra-ansible-playbooks</codeph> file to
               <codeph>/root</codeph>.</li>
             <li>Decrypt and untar the file using password <codeph>cghelion</codeph> when
@@ -61,8 +49,9 @@ venom-patch.tar.gz</codeblock></li>
               file.</li>
           </ol></li>
 
-  <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your environment.
-          For information on each variable, refer to the comments in the file with each variable.</li>
+  <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
+          environment. For information on each variable, refer to the comments in the file with each
+          variable. Make sure the <codeph>hlm_kvm_host</codeph> value is configured properly.</li>
 <li>Check the hosts file <codeph>/root/infra-ansible-playbooks/hosts</codeph> file and make sure it
           appears similar to the following. Make sure the DCM network details are correct. Also,
           verify the CLM IP address in this file.</li>
@@ -73,6 +62,29 @@ venom-patch.tar.gz</codeblock></li>
   [hlm_kvm_host]
   192.168.122.1 </codeblock>
 </section>
+  <section><title>Configure SSH on HLM host</title>
+    Use the following steps to configure SSH on the HLM host: <ol>
+      <li>In the <codeph>/etc/ssh/sshd_config</codeph> file, set the following value to enable
+        root login: <codeblock>PermitRootLogin yes</codeblock></li>
+      <li>In the <codeph>~/ssh/config</codeph> file, set the following value to disable strict
+        host key vhecking: <codeblock>StrictHostKeyChecking no</codeblock></li>
+      <li>Restart SSH service.</li>
+      <li>Configure Public key and passwordless ssh access to itself.
+        <codeblock>ssh-keygen -t rsa</codeblock> (Use all default values)</li>
+      <li>Press enter to use default path (/root/.ssh/id_rsa).</li>
+      <li>Press enter for passphrase.</li>
+      <li>Press enter again to confirm the empty passphrase.</li>
+      <li>Use the following command to log into the HLM host.
+        <codeblock>ssh-copy-id &lt;IP_address></codeblock> Where &lt;IP_address> is the the
+        default networks gateway on the HLM host. If you get a permission denied error here - make
+        sure you are logged in as root (root password must be set). </li>
+      <li>Execute the following command from <codeph>/root/infra-playbooks/</codeph>, to provision
+        the HLM VM, copy and decrypt the <codeph>cg-hos.tar.gz.gpg</codeph> from the HLM host to
+        the HLM VM, sync packages on to HLM static IP and finally sets up PXE booting of
+        controller and compute nodes.
+        <codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock></li></ol>
+    
+  </section>
 <section id="deploy-the-hlm-and-vsd-vm"> <title>Deploy the HLM Virtual Machine</title>
   <p>Use the following steps to deploy the HLM VM on the HLM Host using Ansible playbooks.</p>
 <ol>
