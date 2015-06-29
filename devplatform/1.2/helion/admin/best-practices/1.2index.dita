@@ -110,7 +110,7 @@ afterwards.</p>
 <xref href="https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#Disable_Password_Authentication" type="section" scope="external" format="html" >disable password authentication</xref> if desired.</p>
 </section>
 <section id="applying-updates"> <title>Applying Updates</title>
-  <p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../reference/1.2kato-ref.dita/#topic39432/kato-command-ref-node-upgrade">
+  <p>Major version upgrades of Application Lifecycle Service can be done using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-upgrade">
 <i>kato node
 upgrade</i>
 </xref> or a <xref type="section" href="#topic16169/bestpractices-migration">
