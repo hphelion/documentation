@@ -25,12 +25,12 @@
 <p>Some environment variables are also available during application <xref type="section" href="#topic7631/staging">staging</xref>.</p>
 <p>You can set your own environment variables:</p>
 <ul>
-<li>in an <codeph>env:</codeph> block in <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#env" type="section"   >
+<li>in an <codeph>env:</codeph> block in <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita">
 <i>manifest.yml</i>
 </xref>,</li>
-<li>via the application's Details page in the <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita#management-console" type="section"   >Management
+<li>via the application's Details page in the <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita">Management
 Console</xref>, or</li>
-<li>using the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#command-env-add" type="section"   >env-add</xref>
+  <li>using the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#topic17778/command-env-add" type="section"   >env-add</xref>
 command.</li>
 </ul>
     <note>To see a complete list of environment variables in an Application Lifecycle Service
@@ -69,7 +69,7 @@ command.</li>
 <p>A list of directories, separated by ":", which are to be searched for the names of executable files to be interpreted as commands.</p>
 </section>
 <section id="pip-opts"> <title>PIP_OPTS</title>
-<p>Custom/alternate <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-pip" type="section"   >PIP</xref> repo location.</p>
+  <p>Custom/alternate <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#topic6187/term-pip" type="section"   >PIP</xref> repo location.</p>
 <p>Example:</p>
 <codeblock>env:
       PIP_OPTS: "--extra-index-url=http://company.com/inhouse-pypi-mirror"</codeblock>

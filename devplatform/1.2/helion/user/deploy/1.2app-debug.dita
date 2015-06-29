@@ -32,7 +32,7 @@ debugging session automatically.</p>
 <section id="helion-debug-command"> <title>HELION_DEBUG_COMMAND</title>
 <p>The command-line client can automatically start a local debugger client or IDE instance with connection information for a newly pushed application.</p>
 <p>When the <codeph>-d</codeph> debugging option is given to
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-push" type="section"   >
+  <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#topic50918/command-push" type="section"   >
 <i>push</i>
 </xref> command,
 the client looks for a HELION_DEBUG_COMMAND environment variable. If

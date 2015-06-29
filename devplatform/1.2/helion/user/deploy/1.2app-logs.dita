@@ -23,11 +23,11 @@
  <!--permalink: /helion/devplatform/1.2/als/user/deploy/app-logs/--></p>
 <p>Logs for applications running on Application Lifecycle Service are aggregated into streams so that data from multiple instances can be viewed together and filtered. Application log streams can be accessed via:</p>
 <ul>
-<li>the <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita#management-console" type="section"   >
+<li>the <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita">
 <i>Management Console</i>
 </xref>
 using the <b>View Logs</b> button on the application Details page, or</li>
-<li>the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-logs" type="section"   >
+  <li>the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-information.dita#topic17778/command-files" type="section"   >
 <i>helion logs</i>
 </xref>
 command</li>
@@ -36,11 +36,11 @@ command</li>
 </ul>
 <p>Log streams are tailed output from actual log files in each application
 container, which are generally found in the <i>/home/helion/logs/</i> directory.
-These files can be accessed with the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-files" type="section"   >
+  These files can be accessed with the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#topic17778/command-files" type="section"   >
 <i>helion
 files</i>
 </xref> command or from the
-Application details page of the <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita#management-console" type="section"   >
+Application details page of the <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2customize.dita">
 <i>Management
 Console</i>
 </xref>.</p>
@@ -51,7 +51,7 @@ Console</i>
       should <xref href="#topic5165/rotating-application-log-files" format="dita"><i>rotate
         them</i></xref> to avoid filling up the application container's filesystem.</p>
 <section id="helion-logs"> <title>helion logs</title>
-<p>To view an application log stream, use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-logs" type="section"   >
+  <p>To view an application log stream, use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#topic17778/command-logs" type="section"   >
 <i>helion
 logs</i>
 </xref> command:</p>
@@ -92,7 +92,7 @@ line as a JSON object.</p>
 <p>
         <codeph>helion logs</codeph> buffers only 400 lines of the log stream history (i.e. lines
         generated prior to it being run). If you need earlier log lines, use the <xref
-          href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-files"
+          href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#topic17778/command-files"
           type="section">
           <i>helion files</i>
         </xref> command to fetch the relevant log file from the <i>logs/</i> directory or create a
@@ -105,9 +105,9 @@ line as a JSON object.</p>
 (while running).</p>
 <p>You can add up to five additional files to the log stream by modifying
 the <b>HELION_LOG_FILES</b> environment variable in the
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#env" type="section"   >
+<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita">
 <i>manifest.yml</i>
-</xref> file or using <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-set-env" type="section"   >
+</xref> file or using <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#topic17778/command-set-env" type="section"   >
 <i>helion set-env</i>
 </xref>.</p>
 <p>The variable should contain a list of named files separated with ":" in
