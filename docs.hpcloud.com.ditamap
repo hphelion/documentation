@@ -1755,10 +1755,10 @@
           <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"/>
         </topicref>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-non-kvm.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-rc0.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-verify.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-troubleshoot.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-rc0.dita"/>
       </topicref>
     </topichead>
     <!-- hiding for RC0
@@ -1817,13 +1817,11 @@
       <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting.swift.dita"/>
       <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting-overcloud.dita"
       /> -->
-    </topicref>
     <topichead navtitle="Administrator Guide">
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>
       <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin.pdf" format="pdf"/>
     </topichead>
-
-  <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
+    <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638776646.xml"/>
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638924240.xml"/>
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1411430962060.xml"/>
@@ -1868,6 +1866,7 @@
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827217.xml"/>
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827838.xml"/>
       </topicref>
+    </topicref>
     </topicref>
   
 </map>
