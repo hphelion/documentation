@@ -190,10 +190,10 @@ Endpoint</xref>
 <xref href="../../../devplatform/helion/user/reference/1.1environment.dita" >Environment Variables</xref>
 </li>
 <li>
-<xref href="reference/glossary" >Glossary</xref>
+<xref href="reference/1.1glossary.dita" >Glossary</xref>
 </li>
 <li>
-<xref href="reference/troubleshoot" >Troubleshooting</xref>
+<xref href="reference/1.1troubleshoot.dita" >Troubleshooting</xref>
 </li>
 <li>
 <xref href="../../../devplatform/helion/user/reference/1.1api.dita" >Application Lifecycle Service Client API</xref>
