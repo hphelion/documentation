@@ -30,7 +30,7 @@ web server, application dependencies, databases, and other services.</p>
 <li>
   <xref href="quick-start/1.2index.dita">ALS Quick Start </xref>(Not to be confused with the <xref href="../../1.2devplatform.ALS-developer-trial-quick-start.dita">Developer Quick Start Trial</xref>.</li>
 <li>
-  <xref href="quick-start/1.2index.dita../user/quick-start/1.2index.dita#topic4745/management-console" type="section"  >Management Console</xref>
+  <xref href="quick-start/1.2index.dita#topic4745/management-console" type="section"  >Management Console</xref>
 </li>
 <li>
   <xref href="quick-start/1.2index.dita#topic4745/helion-client" type="section"  >Application Lifecycle Service Client</xref>
