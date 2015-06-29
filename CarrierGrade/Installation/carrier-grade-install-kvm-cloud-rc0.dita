@@ -91,7 +91,7 @@ hp3par_snapshot_expiration=72</codeblock></li>
     
       <li>Follow the install wizard. Select the Graphics mode for the controller only. Do not select <codeph>Controller+Compute</codeph>.</li>
       <li>After the reboot, log in as user name <codeph>wrsroot</codeph> and password  <codeph>wrsroot</codeph>. Make sure you change the password.</li>
-      <li>Temporarily assign an IP address to the PXE NIC - eth0. Use the IP you have reserved for WR-PXE.
+      <li>Temporarily assign an IP address to the PXE NIC - eth0. Use the IP you have reserved for the KVM PXE.
         <codeblock>ip addr add &lt;CIDR> dev eth0
 ifconfig eth0 up</codeblock></li>
       <li> Set the default gateway to the PXE network gateway
@@ -123,7 +123,7 @@ ifconfig eth0 up</codeblock></li>
           <codeblock>system host-add --hostname controller-1 --personality controller --mgmt_mac 6C:3B:E5:A3:BB:90 --bm_mac 38:63:bb:2d:78:b0 --bm_ip 10.1.68.162 --bm_type ilo4 --bm_username helioncsel --bm_password admblabla
 system host-add --hostname &lt;unique-compute-name> --personality compute --mgmt_mac d0:bf:9c:f1:b0:80 --mgmt_ip 192.168.204.124 --bm_mac 38:63:bb:2d:78:b0 --bm_ip 128.224.150.227 --bm_type ilo4 --bm_username Administrator --bm_password CTE69HAU</codeblock></li>
         <li>While registering compute nodes, make sure you specify the <codeph>mgmt_ip</codeph>.
-          This IP should from the WR CLM range (refer to the region_config file) and must not
+          This IP should from the KVM CLM range (refer to the <codeph>region_config</codeph> file) and must not
           overlap controller IPs. It is save to start after a block of 10 IPs.</li> 
         <li>Set the controller-1 and compute-0 to <codeph>One-time PXE boot from network</codeph>.</li>
 
