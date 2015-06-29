@@ -68,12 +68,12 @@
   <p>You can use a low-level, raw REST API access to DNSaaS. See the <xref href="../../publiccloud/apidocs/c1.1/dns-api.dita" >HP Helion Public Cloud DNS API Specifications</xref>.</p>
 </section>
 <section id="cli"> <title>Using the CLI<!--Removed anchor point cli--><!-- id="cli" --></title>
-<p>You can use the <i>python-designateclient</i> command line tool to access DNSaaS. See <xref href="http://python-designateclient.readthedocs.org/en/latest/shell.html" scope="external" format="html" >Install the client from PyPI</xref>.</p>
+  <p>You can use the <i>python-designateclient</i> command line tool to access DNSaaS. See <xref href="http://python-designateclient.readthedocs.org/en/latest/shell.html" scope="external" format="html">Install the client from PyPI</xref>.</p>
 <p>For more information on installing the CLI, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >Install the OpenStack command-line clients</xref>.</p>
 </section>
 <section id="howto"> <title>How To's with the HP Helion DNSaaS<!--Removed anchor point howto--><!-- id="howto" --></title>
 <p>The HP DNSaaS provides a way to display, create, modify, and delete DNS records.</p>
-  <p>The following lists of tasks can be performed by a user or administrator through the <xref href="../../publiccloud/apidocs/c1.1/dns-api.dita" >API</xref>, or <xref href="http://python-designateclient.readthedocs.org/en/latest/shell.html" scope="external" format="html" >CLI</xref>.</p>
+  <p>The following lists of tasks can be performed by a user or administrator through the <xref href="../../publiccloud/apidocs/c1.1/dns-api.dita" >API</xref>, or <xref href="http://python-designateclient.readthedocs.org/en/latest/shell.html" scope="external" format="html">CLI</xref>.</p>
 </section>
 <section id="domain-operations"> <title>Domain Operations</title>
 <p>You can perform the following operations for the DNS domain:</p>
