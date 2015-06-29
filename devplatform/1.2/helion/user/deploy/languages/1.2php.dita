@@ -24,7 +24,8 @@
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
 advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software services, tools
 to enable successful development are available in PHP.</p>
-  <p>Deployable <xref href="../../../../../../devplatform/1.2/1.2devplatform.appdev.dita#topic2457/php" type="section"   >sample applications</xref> are available in this language.</p>
+  <p>Deployable <xref href="../../../../1.2devplatform.appdev.dita#topic2457/PHP">sample
+        applications</xref> are available in this language.</p>
 <section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
 <p>Application Lifecycle Service (ALS) provides a means to execute PHP applications on a managed platform, controlling application lifecycle through a PaaS tier. Deploying
 applications to this platform is as easy as adding details to a YAML configuration file and using
@@ -190,14 +191,10 @@ directives to correct the server name or port in URLs.</p>
 <section id="persistent-sessions-php"> <title>Persistent Sessions (PHP)</title>
 <p>One of the issues with managing a PHP application running multiple
 instances is dealing with user sessions.</p>
-  <p>If your application uses a <xref href="../../../../../../devplatform/1.2/helion/user/services/1.2filesystem.dita#topic4410/persistent-file-system" type="section"   >
-<i>shared filesystem
-service</i>
-</xref>, you
-can store user sessions there. The following <i>manifest.yml</i> snippet
-creates a persistent filesystem service, creates a directory for
-sessions, and writes a PHP config file to set the path to the session
-directory:</p>
+  <p>If your application uses a <xref href="../../services/1.2filesystem.dita#topic4410"><i>shared
+            filesystem service</i></xref> , you can store user sessions there. The following
+          <i>manifest.yml</i> snippet creates a persistent filesystem service, creates a directory
+        for sessions, and writes a PHP config file to set the path to the session directory:</p>
 <codeblock>
   <codeph>services:
   ${name}-fs: filesystem
