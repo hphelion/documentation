@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1107">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the KVM
-    Cloud</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Deploying the KVM Region</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,70 +17,69 @@
 
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-cloud.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-cloud/-->
-<p>After the HLM VM is up and running, use the following steps to deploy a cloud in the KVM region.</p>
-  <section><title>Deploy the cloud</title>
-<p>To deploy the cloud:</p>
-<ol>
-  <li>Make sure the <codeph>ansible</codeph> and <codeph>sshpass</codeph> packages are installed on the HLM host by executing the following command .
-    <codeblock>sudo su -l -c "apt-get install -y  ansible sshpass</codeblock></li>
-  <li>>Copy the <codeph>cg-hlm.qcow2</codeph> file to the images folder on your HLM host. For example: <codeph>/var/lib/libvirt/images</codeph>.</li>
-  <li>Decrypt and extract the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> on to your HLM host root user home directory (/root).</li>
-  <li>Create the <codeph>cg</codeph> directory under <codeph>root</codeph> on the HLM host</li>
-  <li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> file to the <codeph>cg</codeph> directory.</li> 
-  <li>Update the the <codeph>/root/infra-ansible-playbooks/group_vars/all file</codeph> directory for your environment. Refer to the comments added in the file will explain what each variable is meant for and what value to be set.</li>
-  <li>Modify the the <codeph>hosts</codeph> file in <codeph>/root/infra-ansible-playbooks/</codeph> to include:
-  <codeblock>[hlm_kvm_host]
-    192.168.122.1</codeblock></li></ol>
-  
-  Follow the below set of instructions to configure SSH on KVM host for ansible-playbook to provision HLM VM:
-  
-    <ol><li>In the <codeph>/etc/ssh/sshd_config</codeph> file, set the following value to enable root login:
-      <codeblock>PermitRootLogin yes</codeblock></li>
-  
-      <li>In the <codeph>~/ssh/config</codeph> file, set the following value to disable strict host key vhecking:
- 
- 
-        <codeblock>StrictHostKeyChecking no</codeblock></li>
-  
-  <li>Restart SSH service.</li>
-     
-  <li>Configure Public key and passwordless ssh access to itself.
-  
-    <codeblock>ssh-keygen -t rsa</codeblock> (Use all default values)</li>
-      <li>Press enter  to use default path (/root/.ssh/id_rsa).</li>
-      <li>Press enter for passphrase.</li>
-      <li>Press enter again to confirm the empty passphrase.</li>
-      <li>Use the following command to log into the HLM host.
-        <codeblock>ssh-copy-id &lt;IP_address></codeblock> 
-       Where &lt;IP_address> is the the default networks gateway on the HLM host.
-  If you get a permission denied error here - make sure you are logged in as root (root password must be set). </li>
-      <li>Execute the following command from <codeph>/root/infra-playbooks/</codeph>, to provision the HLM VM, 
-        copy and decrypt the <codeph>cg-hos.tar.gz.gpg</codeph> from the HLM host to the HLM VM, 
-        sync packages on to HLM static IP and finally sets up PXE booting of controller and compute nodes.
-    
-        <codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock></li>
-      <li>Login to HLM VM.</li>
-        
-  <li>Change to the <codeph>cg-hlm/hlm-build</codeph> directory.</li>
-  <li>Execute the following command: 
-    <codeblock>./hlm_prepare-env.sh</codeblock></li>
-      <li>Change to the <codeph>cg-hlm/hlm-build</codeph>.</li> 
-      <li>Execute the following command
-        ./hlm_prepare-env.sh</li>
-  <li>Deploy and configure the cloud services using the following command: <codeblock>cd
-hnewcloud HCGCloud &lt;cloudname&gt; </codeblock>
-        This process might approximatley three hours to
-          install all four nodes in a baremetal setup.</li>
-  <li> Change to the cloud directory, based on the name you entered above.
-    <codeblock>cd &lt;cloudname&gt; </codeblock>
-    Where &lt;cloudname&gt; is the name you assigned to the cloud.</li>
-  <li>Provision the controller nodes by providing necessary values in the <codeph>node-provision.json</codeph>
-        file using the following command: <codeblock>hprovision &lt;cloudname&gt;</codeblock> Where
-        &lt;cloudname&gt; is the name you assigned to the cloud. 
-      Please take a note of interface when shows up for the interfaces. You might need this information later in the installation. </li>
-  <li>After the nodes are provisioned, make sure sure the <codeph>nodes.json</codeph> file was generated and password-less SSH connection can be established to these nodes from HLM VM</li>
-</ol>
-  </section>
+<p>After the HLM VM is up and running and HP Helion OpenStack is installed, use the following steps
+      to deploy the KVM region.</p>
+  <section><title>Deploy the KVM region</title><p>To deploy the KVM:</p><ol>
+        <li>Make sure the <codeph>ansible</codeph> and <codeph>sshpass</codeph> packages are
+          installed on the HLM host by executing the following command
+          <codeblock>sudo su -l -c "apt-get install -y  ansible sshpass</codeblock></li>
+        <li>Copy the <codeph>cg-hlm.qcow2</codeph> file to the images folder on your HLM host. For
+          example: <codeph>/var/lib/libvirt/images</codeph>.</li>
+        <li>Decrypt and extract the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> on to your HLM
+          host root user home directory (/root).</li>
+        <li>Create the <codeph>cg</codeph> directory under <codeph>root</codeph> on the HLM
+          host</li>
+        <li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> file to the <codeph>cg</codeph>
+          directory.</li>
+        <li>Update the the <codeph>/root/infra-ansible-playbooks/group_vars/all file</codeph>
+          directory for your environment. Refer to the comments added in the file will explain what
+          each variable is meant for and what value to be set.</li>
+        <li>Modify the the <codeph>hosts</codeph> file in
+            <codeph>/root/infra-ansible-playbooks/</codeph> to include:
+          <codeblock>[hlm_kvm_host]
+    192.168.122.1</codeblock></li>
+      </ol> Configure SSH on HLM host for ansible-playbook to provision HLM VM: <ol>
+        <li>In the <codeph>/etc/ssh/sshd_config</codeph> file, set the following value to enable
+          root login: <codeblock>PermitRootLogin yes</codeblock></li>
+        <li>In the <codeph>~/ssh/config</codeph> file, set the following value to disable strict
+          host key vhecking: <codeblock>StrictHostKeyChecking no</codeblock></li>
+        <li>Restart SSH service.</li>
+        <li>Configure Public key and passwordless ssh access to itself.
+          <codeblock>ssh-keygen -t rsa</codeblock> (Use all default values)</li>
+        <li>Press enter to use default path (/root/.ssh/id_rsa).</li>
+        <li>Press enter for passphrase.</li>
+        <li>Press enter again to confirm the empty passphrase.</li>
+        <li>Use the following command to log into the HLM host.
+          <codeblock>ssh-copy-id &lt;IP_address></codeblock> Where &lt;IP_address> is the the
+          default networks gateway on the HLM host. If you get a permission denied error here - make
+          sure you are logged in as root (root password must be set). </li>
+        <li>Execute the following command from <codeph>/root/infra-playbooks/</codeph>, to provision
+          the HLM VM, copy and decrypt the <codeph>cg-hos.tar.gz.gpg</codeph> from the HLM host to
+          the HLM VM, sync packages on to HLM static IP and finally sets up PXE booting of
+          controller and compute nodes.
+          <codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock></li>
+        <li>Login to HLM VM.</li>
+        <li>Change to the <codeph>cg-hlm/hlm-build</codeph> directory.</li>
+        <li>Execute the following command: <codeblock>./hlm_prepare-env.sh</codeblock></li>
+        <li>Change to the <codeph>cg-hlm/hlm-build</codeph>.</li>
+        <li>Execute the following command ./hlm_prepare-env.sh</li>
+        <li>Deploy and configure the cloud services using the following command:
+          <codeblock>cd
+hnewcloud HCGCloud &lt;cloudname&gt; </codeblock> This process might
+          approximatley three hours to install all four nodes in a baremetal setup.</li>
+        <li> Change to the cloud directory, based on the name you entered above.
+          <codeblock>cd &lt;cloudname&gt; </codeblock> Where &lt;cloudname&gt; is the name you
+          assigned to the cloud.</li>
+        <li>Provision the controller nodes by providing necessary values in the
+            <codeph>node-provision.json</codeph> file using the following command:
+          <codeblock>hprovision &lt;cloudname&gt;</codeblock> Where &lt;cloudname&gt; is the name
+          you assigned to the cloud. Please take a note of interface when shows up for the
+          interfaces. You might need this information later in the installation. </li>
+        <li>After the nodes are provisioned, make sure sure the <codeph>nodes.json</codeph> file was
+          generated and password-less SSH connection can be established to these nodes from HLM
+          VM</li>
+      </ol>
+    </section>
   <section><title>Edit JSON Files</title>
   <p>The following json files need to be updated as required for your networking infrastructure.</p>   
     <ul><li>environment.json</li>
@@ -94,7 +92,7 @@ hnewcloud HCGCloud &lt;cloudname&gt; </codeblock>
         Where &lt;cloudname&gt; is the name you assigned to the cloud.</li>
         <li>Copy the <codeph>cinder_conf_default.hp3parSample</codeph> file to <codeph>cinder_conf_default</codeph> file and edit the file to configure to
           3PAR settings. For example:
-          <codeblock>--LR4 3PAR details (connectivity is still being worked upon ETA 06/22/2015. 
+          <codeblock>--3PAR details (connectivity is still being worked upon ETA 06/22/2015. 
 hp3par_api_url=https://10.1.2.18:8080/api/v1
 hp3par_username=cghelion
 hp3par_password=cghelion#
@@ -105,22 +103,6 @@ san_password=cghelion#
 hp3par_iscsi_ips=172.16.0.11,172.16.0.12,172.16.0.13,172.16.0.14
 volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
 hp3par_debug=False
-hp3par_iscsi_chap_enabled=false
-hp3par_snapshot_retention=48
-hp3par_snapshot_expiration=72
-         
-          
--- LR1 3PAR details (ip address not in same block causing deployment issues)
-hp3par_api_url=https://10.1.64.55:8080/api/v1 
-hp3par_username=cgadmin 
-hp3par_password=cgh123cgh 
-hp3par_cpg=CGH_CPG 
-san_ip=172.16.64.201
-san_login=cgadmin 
-san_password=cgh123cgh 
-volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver 
-hp3par_iscsi_ips=172.16.64.201,172.16.64.202,172.16.64.203,172.16.64.204
-hp3par_debug=False 
 hp3par_iscsi_chap_enabled=false
 hp3par_snapshot_retention=48
 hp3par_snapshot_expiration=72</codeblock></li>
@@ -136,12 +118,14 @@ hp3par_snapshot_expiration=72</codeblock></li>
     </section>
   <section><title>Bring Up Controller-0 in the KVM Region</title> 
     <ol><li>Make sure other nodes to be used in KVM region are shutdown.</li>
-      <li>Attach the <codeph>wr-iso</codeph> to designated controller node:<ol id="ol_i3q_hmg_ms">
-            <li> LR1: uploaded to
+      <li>Attach the <codeph>wr-iso</codeph> to designated controller node:
+        <!-- hide, internal only? Vinod
+          <ol id="ol_i3q_hmg_ms">
+        <li> LR1: uploaded to
               <codeblock>15.204.209.7 C:\WR-Drops\2015-06-05-Drop3\2015-06-05-Drop3\Titanium-Server-host-installer-15.05-b10.iso</codeblock></li>
         <li>LR4: uploaded to
-              <codeblock>15.215.66.56 E:\Builds\WR-Drop-3\2015-06-05-Drop3\Titanium-Server-host-installer-15.05-b10.iso</codeblock></li>
-          </ol></li>
+              <codeblock>15.215.66.56 E:\Builds\WR-Drop-3\2015-06-05-Drop3\Titanium-Server-host-installer-15.05-b10.iso</codeblock></li></ol> -->
+          </li>
     
       <li>Follow the install wizard. Select the Graphics mode for the controller only. Do not select <codeph>Controller+Compute</codeph>.</li>
       <li>After the reboot, log in as user name <codeph>wrsroot</codeph> and password  <codeph>wrsroot</codeph>. Make sure you change the password.</li>
@@ -151,11 +135,12 @@ ifconfig eth0 up</codeblock></li>
       <li> Set the default gateway to the PXE network gateway
         <codeblock>route add default gw 192.168.101.1</codeblock></li>
       <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the controller-0:
-        <codeblock>TS_15.05_PATCH_0001.patch  # E:\Builds\WR-2015-06-05-Drop3\patches\official
-          region_config # HLM VM ~/&lt;cloud_name>/clouds/build40/001/stage/windriver-config
-          cakey.pem    # HLM VM ~&lt;cloud_name>/clouds/build40/001/stage/windriver-config
-              license.lic # LR4: E:\Builds\WR-2015-06-05-Drop3
-              helion_branding-v1.2.tgz # LR4: E:\Builds\WR-2015-06-05-Drop3</codeblock></li>
+        <codeblock>TS_15.05_PATCH_0001.patch  
+          \Builds\WR-2015-06-05-Drop3\patches\official\region_config 
+          HLM VM ~/&lt;cloud_name>/clouds/build40/001/stage/windriver-config/cakey.pem    
+          HLM VM ~&lt;cloud_name>/clouds/build40/001/stage/windriver-config/license.lic 
+          \Builds\WR-2015-06-05-Drop3\helion_branding-v1.2.tgz 
+          \Builds\WR-2015-06-05-Drop3</codeblock></li>
      
       <li>Move the <codeph>helion_branding-v1.1.tgz</codeph> to <codeph>/opt/branding</codeph> on the controller-0 </li>
    
