@@ -137,7 +137,7 @@
 <p>Most of the Helion Development Platform documentation assumes that you've already provisioned an environment where you can deploy your apps. There are two ways to deploy Development Platform technology:</p>
 <ul>
 <li>
-<b>Quick Start Developer Trial</b>: The fastest way to set up a functional Helion Development Platform environment is the <xref href="../devplatform/1.0devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> (sandbox) on the public cloud.</li>
+<b>Quick Start Developer Trial</b>: The fastest way to set up a functional Helion Development Platform environment is the <xref href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> (sandbox) on the public cloud.</li>
 <li>
 <b>Standard Installation</b>: Install a <xref href="../commercial/GA1/1.0commercial.install-GA-overview.dita" >Commercial HP Helion OpenStack</xref> cloud and then <xref href="../devplatform/1.0devplatform_commercial_install.dita" >install</xref> the Helion Development Platform.  </li>
 </ul>
