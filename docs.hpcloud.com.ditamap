@@ -169,8 +169,8 @@
         <!-- All Things Swift-->
         <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita" navtitle="About Scale-out Object Storage" locktitle="yes">
           <topicref
-            href="commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.dita" navtitle="Deploying Additional Scale-out Nodes" locktitle="yes"/>
-          <topicref href="commercial/GA1/1.1commerical.services-swift-deployment.dita"/>
+            href="commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.dita" navtitle="Provisioning Object/Proxy Node(s)" locktitle="yes"/>
+          <topicref href="commercial/GA1/1.1commerical.services-swift-deployment.dita" navtitle="Deploying Additional Scale-out Nodes" locktitle="yes"/>
           <topichead navtitle="Swift Object Storage: Scale Up or Expand">
             <topicref
               href="commercial/GA1/1.1commerical.services-swift-deployment-expand-swift-cluster.dita" navtitle="Expand an Object Storage Cluster" locktitle="yes">
@@ -223,34 +223,34 @@
               <topicref
                 href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-drive-audit.dita" navtitle="Monitoring the Drive Audit" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-file-ownership.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-file-ownership.dita" navtitle="Monitoring File Ownership" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.dita"
+                href="commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.dita" navtitle="Monitoring Disk Drives in Object Storage Using hpssacli" locktitle="yes"
               />
             </topicref>
           <!--</topichead>-->
-          <topicref href="commercial/GA1/1.1commerical.services-object-pyringos.dita">
+          <topicref href="commercial/GA1/1.1commerical.services-object-pyringos.dita" navtitle="Using Ringos with Swift Clusters" locktitle="yes">
             <topicref href="commercial/GA1/1.1commerical.services-swift-deployment-part-power.dita"
             />
           </topicref>
         </topicref>
         <!--permalink: /helion/openstack/1.1/GA1/services/object/pyringos/-->
       </topicref>
-      <topicref href="commercial/GA1/1.1commerical.services-orchestration-overview.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.services-volume-overview.dita">
-        <topicref href="commercial/GA1/1.1commercial.services-volume-fibre.dita"/>
+      <topicref href="commercial/GA1/1.1commerical.services-orchestration-overview.dita" navtitle="Orchestration Service (Heat) Overview" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commerical.services-volume-overview.dita" navtitle="Cinder: Block Storage Volume Operations" locktitle="yes">
+        <topicref href="commercial/GA1/1.1commercial.services-volume-fibre.dita" navtitle="Cinder Auto Zoning with Brocade Fibre Channel Zone Manager" locktitle="yes"/>
       </topicref>
       <!-- reprting = metering = ceilomter -->
-      <topicref href="commercial/GA1/1.1commerical.services-reporting-overview.dita">
-        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-components.dita"/>
-        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-metertypes.dita"/>
-        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-RBAC.dita"/>
+      <topicref href="commercial/GA1/1.1commerical.services-reporting-overview.dita" navtitle="Metering with Ceilometer" locktitle="yes">
+        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-components.dita" navtitle="Ceilometer Metering Service Components" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-metertypes.dita" navtitle="Available Meter Types" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceilometer/1.1commerical.services-reporting-RBAC.dita" navtitle="Role-based Access Control" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/ceilometer/1.1commercial.services-reporting-troubleshoot.dita"/>
+          href="commercial/GA1/ceilometer/1.1commercial.services-reporting-troubleshoot.dita" navtitle="Troubleshootig the Ceilometer Metering Service" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/ceilometer/1.1commerical.services-reporting-APIExtensions.dita"/>
+          href="commercial/GA1/ceilometer/1.1commerical.services-reporting-APIExtensions.dita" navtitle="Ceilometer API Extensions" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita"/>
+          href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita" navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
       </topicref>
       <!--Ceph stuff-->
       <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita">
