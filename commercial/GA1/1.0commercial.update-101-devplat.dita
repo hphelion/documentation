@@ -46,11 +46,7 @@
 <section id="update-messaging"> <title>Update the Messaging Service</title>
 <p>This section provides details on updating the Messaging Service for Helion OpenStack Development Platform. This assumes that the Messaging Service is installed in your cloud.</p>
 <p>
-        <b>Note:</b> If the Message Service is not installed, see the <xref
-            href="../../devplatform/1.1devplatform_commercial_install.dita#topic24073_1/install-messaging"
-          >Helion OpenStack</xref><xref
-          href="../../devplatform/1.1devplatform_commercial_install.dita#topic24073_1/install-messaging"
-          > Development Platform Install Guide</xref>.</p>
+        <b>Note:</b> If the Message Service is not installed, see the <xref href="../../devplatform/1.1devplatform_commercial_install.dita">Helion OpenStack</xref></p>
 </section>
 <section id="download"> <title>Download the Messaging Service</title>
 <ol>
@@ -71,7 +67,7 @@
 <section id="update-als"> <title>Update the Application Lifecycle Service (ALS)</title>
 <p>This section provides details on updating the Application Lifestyle service (ALS) for Helion OpenStack Development Platform. This assumes that (ALS) is installed in your cloud.</p>
 <p>
-  <b>Note:</b> If the Message Service is not installed, see the <xref href="../../devplatform/1.0devplatform_commercial_install.dita" type="section">Helion OpenStack Development Platform Install Guide</xref>.</p>
+  <b>Note:</b> If the Message Service is not installed, see the <xref href="../../devplatform/1.0devplatform_commercial_install.dita">Helion OpenStack Development Platform Install Guide</xref>.</p>
 <p>The process for updating ALS requires you to remove then have asked that you remove the current version then installing ALS 1.01.</p>
 </section>
 <section id="remove-als"> <title>Remove Application Lifecycle Service 1.0</title>
@@ -106,9 +102,7 @@
 <section id="update-database"> <title>Update the Database Service</title>
 <p>This section provides details on updating the Database Service for Helion OpenStack Development Platform. This assumes that the Database service is installed in your cloud.</p>
 <p>
-        <b>Note:</b> If the Database service is not installed, see the  <xref
-          href="../../devplatform/1.0devplatform_commercial_install.dita#topic15281/install-database"
-        />
+        <b>Note:</b> If the Database service is not installed, see the  <xref href="../../devplatform/1.0devplatform_commercial_install.dita#topic15281/install-database"/>
       </p>
 </section>
 <section id="download-db"> <title>Download the Database Service</title>
@@ -125,7 +119,7 @@
 <section id="update-marketplace"> <title>Update the Marketplace Service</title>
 <p>This section provides details on updating the Marketplace service for the Helion OpenStack Development Platform. This assumes that the Marketplace service is installed in your cloud.</p>
 <p>
-  <b>Note:</b> If the Marketplace service is not installed, see the <xref href="../../devplatform/1.0devplatform_commercial_install.dita" scope="external" format="html" >Helion OpenStack Development Platform Install Guide</xref>.</p>
+  <b>Note:</b> If the Marketplace service is not installed, see the <xref href="../../devplatform/1.0devplatform_commercial_install.dita">Helion OpenStack Development Platform Install Guide</xref>.</p>
 </section>
 <section id="update-marketplace2"> <title>Download the Marketplace Service</title>
 <ol>   
