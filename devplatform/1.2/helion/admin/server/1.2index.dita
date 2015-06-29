@@ -45,7 +45,7 @@ virtualization host.</p>
 <p>Over the hypervisor's <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-tty-console" type="section"   >tty console</xref>.</p>
 </li>
 <li>
-<p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" type="section"   >Application Lifecycle Service Client</xref> command, which in addition to specialized functions can provide remote shell access to the server:</p>
+  <p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#topic6187/command-ref-client" type="section"   >Application Lifecycle Service Client</xref> command, which in addition to specialized functions can provide remote shell access to the server:</p>
 
 <codeblock>
 <codeph>helion target helion@helion-xxxx.local

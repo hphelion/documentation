@@ -23,7 +23,7 @@
  <!--permalink: /helion/devplatform/1.2/als/user/client/--></p>
 <p>The Helion ALS client is the command-line interface for the Application Lifecycle Service. You can use it to push application code up to the server, start and stop applications, create data services and link them to
 applications, and a number of other application management operations.</p>
-<p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" type="section"   >Command Reference</xref> has full
+  <p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#topic6187/command-ref-client" type="section"   >Command Reference</xref> has full
 descriptions of all client commands and options. These details are also
 available at the command line via the <i>helion help</i> command.</p>
 <ul>
@@ -43,7 +43,7 @@ available at the command line via the <i>helion help</i> command.</p>
 <xref type="section" href="#topic3165/getting-help">Getting Help from Within the Client</xref>
 </li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" type="section"   >Full Command Reference</xref>
+  <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#topic6187/command-ref-client" type="section"   >Full Command Reference</xref>
 </li>
 </ul>
 <section id="helion-client-setup"> <title>Application Lifecycle Service Client Installation</title>
@@ -113,7 +113,7 @@ the Application Lifecycle Service API endpoint, set the following environment va
 <section id="getting-help"> <title>Getting Help</title>
 <p>To get a list of available commands or help on a particular command, enter:</p>
 <codeblock>helion help [COMMAND]</codeblock>
-<p>See also the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-ref-client" type="section"   >Command Reference</xref> for a full
+  <p>See also the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#topic6187/command-ref-client" type="section"   >Command Reference</xref> for a full
 list of commands.</p>
 </section>
 </body>
