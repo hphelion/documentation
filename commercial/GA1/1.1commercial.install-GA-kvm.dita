@@ -20,6 +20,11 @@
 <p>
 
 </p>
+  <p>
+    <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
+  </p>
+  <p>(If you already have 1.1 installed, you can update HP Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
+  <p>After you have completed and verified the HP Helion OpenStack installation, perform the following tasks as appropriate.</p>
 <p>HP Helion OpenStack allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.</p>
 <section id="installing-hp-helion-openstack"> <title>Installing HP Helion OpenStack</title>
 <p>The installation and configuration process for KVM consists of the following general steps:</p>
