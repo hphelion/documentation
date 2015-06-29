@@ -100,12 +100,9 @@ mkdir ${!FOO}/myapp
 <p>
   <b>Note</b>
 </p>
-<p>To use declarations like these in
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#hooks" type="section"   >
-<i>hooks</i>
-</xref>, put them in a
-separate bash script. Brace expansion and grouping cannot be used
-directly in YAML files.</p>
+<p>To use declarations like these in <xref href="../deploy/1.2manifestyml.dita#topic20922/hooks"
+            ><i>hooks</i></xref> , put them in a separate bash script. Brace expansion and grouping
+        cannot be used directly in YAML files.</p>
 <p>
 <!-- Does this also apply for VCAP services? if so should be rewritten perhaps. 
 Alternatively, `STACKAT0_SERVICES` contains
