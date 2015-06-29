@@ -173,7 +173,7 @@ administration and management of the Application Lifecycle Service Server. Many 
 https://helion-xxxx.local</codeblock>
 <p>On a <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud">micro
           cloud</xref> VM where the local network supports <xref
-          href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#term-multicast-dns"
+            href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#topic6187/term-multicast-dns"
           type="section" >multicast DNS</xref>, the hostname will be
           <codeph>helion-xxxx.local</codeph>. If you have configured the <xref
             href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#topic31232/server-config-hostname"
@@ -276,7 +276,7 @@ Console, but some maintenance and configuration tasks may need to be done at the
   <p>Links to the <xref href="../../user/console/1.2index.dita#topic8844/application-view" >Applications</xref> and <xref href="../../user/deploy/1.2orgs-spaces.dita" type="section"   >Organizations</xref> lists.</p>
 </section>
 <section id="domains"> <title>Domains</title>
-  <p>A filterable list of all domains configured on the system, showing whether they are <xref href="../../user/deploy/1.2orgs-spaces.dita#topic2729/orgs-spaces-domains" type="section"   >Shared or Owned domains</xref>.</p>
+  <p>A filterable list of all domains configured on the system, showing whether they are <xref href="../../user/deploy/1.2orgs-spaces.dita#topic2729/domains" type="section"   >Shared or Owned domains</xref>.</p>
 </section>
 <section id="routes"> <title>Routes</title>
 <p>A filterable list of routes in the system.</p>
@@ -396,7 +396,7 @@ Console, but some maintenance and configuration tasks may need to be done at the
 </ul>
 </section>
 <section id="logyard"> <title>Logyard</title>
-<p>Lists current log <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2logging.dita#logging-drains-system" type="section"   >Drains</xref> and the log
+  <p>Lists current log <xref href="../server/1.2logging.dita#topic11928/drains" type="section"   >Drains</xref> and the log
   drain retry limits. Drains and limits cannot be changed in this interface; use the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-log-drain-add" type="section"   >
 <i>kato log drain</i>
 </xref>
