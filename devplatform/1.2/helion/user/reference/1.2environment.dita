@@ -30,7 +30,6 @@
 </xref>,</li>
 <li>via the application's Details page in the <xref href="../../admin/console/1.2customize.dita">Management
 Console</xref>, or</li>
-<<<<<<< HEAD
   <li>using the <xref href="../reference/1.2client-ref-management.dita#topic50918/command-env-add" type="section"   >env-add</xref>
 command.</li>
 
@@ -89,9 +88,7 @@ For example:</p>
 <p>Note that <codeph>PROCESSES_WEB</codeph> may be undefined when Application Lifecycle Service can't determine the default command. This may occur because the app uses a non-standard main application file.</p>
 </section>
 <section id="pypm-opts"> <title>PYPM_OPTS</title>
-<<<<<<< HEAD
   <p>Custom/alternate <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#topic6187/term-pypm" type="section"   >PyPM</xref> repo location. Repo mirroring is an undocumented feature. Example:</p>
-=======
   <p>Custom/alternate <xref href="1.2glossary.dita#topic6187/term-pypm">PyPM</xref> repo location.
         Repo mirroring is an undocumented feature. Example:</p>
 >>>>>>> d5093c454db123bf99d5e697aba55af22488ee5f
