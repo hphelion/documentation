@@ -39,7 +39,8 @@
 <li>
 <xref type="section" href="#topic6634/command-rename-org">helion rename-org</xref>: Rename the named organization.</li>
 <li>
-<xref type="section" href="#topic6634/command-switch-org">helion switch-org</xref>: Switch the current organization to the named organization.</li>
+                <xref href="#topic6634/command-switch-org" format="dita">helion switch-org</xref>:
+                Switch the current organization to the named organization.</li>
 <li>
 <xref type="section" href="#topic6634/command-unlink-user-org">helion unlink-user-org</xref>: Remove the specified user from the named organization, in various roles.</li>
 <li>
