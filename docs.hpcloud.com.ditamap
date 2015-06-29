@@ -1816,7 +1816,7 @@
       <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting-overcloud.dita"
       /> -->
     <topichead navtitle="Administrator Guide">
-      <!-- Hiding. Using PDF for RC0 
+      <!-- Hiding. Using PDF for RC0  
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>-->
       <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin.pdf" format="pdf"/>
     </topichead>
