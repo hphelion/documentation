@@ -265,10 +265,12 @@ Guide</xref>
 </p>
 </section>
 <section id="application-drains"> <title>Application Drains</title>
-<p>Drains for application log streams can be added by end users with the
-  <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#topic50918/command-drain-add" type="section"   >
-<i>helion drain add</i>
-</xref> command. See the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2app-logs.dita#topic5165/application-logs" type="section"   >Application Logs</xref> section of the documentation for an example.</p>
+<p>Drains for application log streams can be added by end users with the <xref
+          href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-management.dita#topic50918/command-drain-add"
+          type="section">
+          <i>helion drain add</i>
+        </xref> command. See the <xref href="../../user/deploy/1.2app-logs.dita#topic5165"
+          >Application Logs</xref> section of the documentation for an example.</p>
 </section>
 <section id="drain-status"> <title>Drain Status</title>
 <p>You can check the status of all drains on Application Lifecycle Service with the
@@ -283,13 +285,11 @@ builtin.katohistory     192.168.68.5    RUNNING[3]</codeblock>
             timeout</i></xref> , its status will change to FATAL.</p>
 </section>
 <section id="keys"> <title>Keys</title>
-<p>Each message in a log stream is prefixed with a key, identifying what
-type of message it is or to which log stream it belongs. The following
-keys are available for use in defining drains using the
-<codeph>--prefix</codeph> flag for <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#kato-command-ref-log-drain-add" type="section"   >
-<i>kato log drain
-add</i>
-</xref>).</p>
+<p>Each message in a log stream is prefixed with a key, identifying what type of message it is or to
+        which log stream it belongs. The following keys are available for use in defining drains
+        using the <codeph>--prefix</codeph> flag for <xref
+          href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-log-drain-add"><i>kato log
+            drain add</i></xref> ).</p>
 <p>Systail keys are <xref href="#topic11928/managing-the-systail-stream" format="dita"
             ><i>configurable</i></xref> .</p>
 </section>
