@@ -156,19 +156,19 @@ web server, application dependencies, databases, and other services.</p>
           <xref href="../admin/console/1.2index.dita#topic13823/welcome">Welcome</xref>
         </li>
 <li>
-  <xref href="../admin/console/1.2customize.dita#topic5029/space-view" type="section"  >Space View</xref>
+  <xref href="console/1.2index.dita#topic8844/space-view" type="section">Space View</xref>
 </li>
 <li>
-  <xref href="../admin/console/1.2customize.dita#topic5029/application-view" type="section"  >Application View</xref>
+  <xref href="console/1.2index.dita#topic8844/application-view" type="section"  >Application View</xref>
 </li>
 <li>
-  <xref href="../admin/console/1.2customize.dita#topic5029/service-instance-view" type="section"  >Service Instance View</xref>
+  <xref href="console/1.2index.dita#topic8844/service-instance-view" type="section"  >Service Instance View</xref>
 </li>
 <li>
-  <xref href="../admin/console/1.2customize.dita#topic5029/app-store" type="section"  >Sample Applications</xref>
+  <xref href="console/1.2index.dita#topic8844/sample-apps">Sample Applications</xref>
 </li>
 <li>
-  <xref href="../admin/console/1.2customize.dita#topic5029/support" type="section"  >Support</xref>
+  <xref href="console/1.2index.dita#topic8844/support" type="section"  >Support</xref>
 </li>
 </ul>
 </section>
