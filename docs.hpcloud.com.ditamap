@@ -19,7 +19,7 @@
   <topicref href="publiccloud/index.dita"/>
   <topicref href="commercial/GA1/1.1commercial.index.dita"
     navtitle="HP Helion OpenStack 1.1.1 and 1.1" locktitle="yes">
-    <topicref href="commercial/GA1/1.1commercial.whatsnew.dita" navtitle="What's New in 1.1"
+    <topicref href="commercial/GA1/1.1commercial.whatsnew.dita" navtitle="What's New"
       locktitle="yes"/>
     <topicref href="commercial/GA1/1.1.1commercial.helion-update.dita"
       navtitle="Update to HP Helion OpenStack 1.1.1" locktitle="yes"/>
@@ -46,11 +46,14 @@
         <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"/>
         <!--set to toc=no later-->
       </topicref>
-      <topicref href="commercial/GA1/1.1commerical.install.HPLinux.dita">
-        <topicref href="commercial/GA1/1.1commercial.linux.arch.dita"/>
+      <topicref href="commercial/GA1/1.1commerical.install.HPLinux.dita"
+        navtitle="Installing HP Linux for HP Helion OpenStack" locktitle="yes">
+        <topicref href="commercial/GA1/1.1commercial.linux.arch.dita"
+          navtitle="Host Linux Architecture" locktitle="yes"/>
       </topicref>
       <!-- Prereqs -->
-      <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs.dita">
+      <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs.dita" locktitle="yes"
+        navtitle="Installation Prerequisites">
         <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs-network.dita"/>
         <topicref href="commercial/GA1/1.1commercial.install-GA-NTP.dita"/>
         <topicref href="commercial/GA1/1.1commercial.install-GA-JSON.dita">
@@ -64,11 +67,14 @@
         </topicref>
         <topicref href="commercial/GA1/1.1commercial.install-GA-Moonshot.dita"/>
       </topicref>
-      <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita">
-        <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"/>
+      <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita" locktitle="yes"
+        navtitle="Network Security">
+        <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"
+          navtitle="Configuring Your Network Securely" locktitle="yes"/>
       </topicref>
       <!-- Install KVM -->
-      <topicref href="commercial/GA1/1.1commercial.install-GA-kvm.dita">
+      <topicref href="commercial/GA1/1.1commercial.install-GA-kvm.dita"
+        navtitle="Install and Configure on KVM" locktitle="yes">
         <topicref href="commercial/GA1/1.1commercial.install-GA-post-kvm.dita">
           <topicref href="commercial/GA1/1.1commercial.vlan-providernetwork.dita"/>
           <topicref href="commercial/GA1/1.1commercial.-vsa-overview.dita">
@@ -84,7 +90,8 @@
         </topicref>
       </topicref>
       <!-- Install ESK -->
-      <topicref href="commercial/GA1/1.1commercial.install-GA-esx.dita">
+      <topicref href="commercial/GA1/1.1commercial.install-GA-esx.dita"
+        navtitle="Install and Configure on ESX" locktitle="yes">
         <topicref href="commercial/GA1/1.1commercial.install-GA-post-esx.dita">
           <topicref href="commercial/GA1/1.1commercial.install-GA-ESX-Proxy.dita"/>
           <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.dita">
@@ -99,23 +106,27 @@
       </topicref>
       <!-- Post Install -->
       <!-- Hight Avail -->
-      <topicref href="commercial/GA1/1.1commercial.install-GA-verify.dita">
+      <topicref href="commercial/GA1/1.1commercial.install-GA-verify.dita"
+        navtitle="Verify Your Installation" locktitle="yes">
         <topicref href="commercial/GA1/1.1commercial.install-GA-tempest-tests.dita"/>
       </topicref>
       <topichead navtitle="Installing on a Laptop">
         <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"/>
       </topichead>
     </topicref>
-    <topichead navtitle="HP Helion Openstack(R) 1.1: Post-Installation Tasks">
+    <topichead navtitle="Post-Installation Tasks">
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"/>
       <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
     </topichead>
     <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita">
       <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
     </topicref>
-    <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita">
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"/>
+    <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita" navtitle="Troubleshooting"
+      locktitle="yes">
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"
+        navtitle="Installation Troubleshooting" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"
+        navtitle="MySQL Troubleshooting" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"/>
       <!--set to toc=no later-->
       <!--not on site-->
