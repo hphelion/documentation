@@ -123,7 +123,7 @@
               <topicref
                 href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-access-ping.dita" navtitle="Monitoring Network Access" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-drive-audit.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-drive-audit.dita" navtitle="Monitoring the Drive Audit" locktitle="yes"/>
               <topicref
                 href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-file-ownership.dita"/>
               <topicref
