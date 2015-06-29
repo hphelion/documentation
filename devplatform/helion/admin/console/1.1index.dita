@@ -223,7 +223,7 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <p>The Applications section displays a list of all apps on the server. Click anywhere on the line for an app to view its details. Admins have the same permissions in the <xref href="../../../../devplatform/helion/user/console/1.1index.dita#user-console-app" type="section"  >Application View</xref> as a Developer of the space it was deployed to.</p>
 </section>
 <section id="organizations"> <title>Organizations</title>
-  <p>The top level Organizations page allows Admins to add and delete <xref href="../../user/deploy/1.1orgs-spaces.dita#topic2793/organizations" >Organizations</xref>. Clicking on an organization name opens its details. This view is the same as a regular user's <xref href="../../../../devplatform/helion/user/console/1.1index.dita#user-console-organizations" type="section"  >Organizations view</xref>, but admin users can also edit quotas and add/remove domains, spaces, and users.</p>
+  <p>The top level Organizations page allows Admins to add and delete <xref href="../../user/deploy/1.1orgs-spaces.dita" >Organizations</xref>. Clicking on an organization name opens its details. This view is the same as a regular user's <xref href="../../../../devplatform/helion/user/console/1.1index.dita#user-console-organizations" type="section"  >Organizations view</xref>, but admin users can also edit quotas and add/remove domains, spaces, and users.</p>
 </section>
 <section id="support"> <title>Support</title>
 <p>The Support menu includes the same options as the regular user's menu.</p>
@@ -259,11 +259,11 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <p>Links to the <xref
           href="../../../../devplatform/helion/user/console/1.1index.dita#application-view"
           >Applications</xref> and <xref
-            href="../../user/deploy/1.1orgs-spaces.dita#topic2793/organizations"
+            href="../../user/deploy/1.1orgs-spaces.dita"
           type="section" scope="external">Organizations</xref> lists.</p>
 </section>
 <section id="domains"> <title>Domains</title>
-  <p>A filterable list of all domains configured on the system, showing whether they are <xref href="../../../../devplatform/helion/user/deploy/1.1orgs-spaces.dita#topic2793/domains" type="section"  >Shared or Owned domains</xref>.</p>
+  <p>A filterable list of all domains configured on the system, showing whether they are <xref href="../../../../devplatform/helion/user/deploy/1.1orgs-spaces.dita">Shared or Owned domains</xref>.</p>
 </section>
 <section id="routes"> <title>Routes</title>
 <p>A filterable list of routes in the system.</p>
