@@ -34,6 +34,104 @@
       <topicref href="commercial/GA1/under_the_hood.dita" toc="no"/>
       <!--set to toc=no later-->
     </topicref>
+    <topicref href="commercial/GA1/Landing/1.1commercial.landing.install.dita">
+      <topicref href="commercial/GA1/1.1commercial.install-GA-overview.dita">
+        <topicref href="commercial/GA1/1.1commercial.roll.dita"/>
+        <topicref href="commercial/GA1/1.1commercial.install-GA-virtual-control.dita"/>
+        <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita"/>
+        <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"/>
+        <!--set to toc=no later-->
+        <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"/>
+        <!--set to toc=no later-->
+      </topicref>
+      <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita">
+        <topicref href="commercial/GA1/1.1commerical.install.HPLinux.dita">
+          <topicref href="commercial/GA1/1.1commercial.linux.arch.dita"/>
+        </topicref>
+      </topicref>
+      <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"/>
+      <!-- Prereqs -->
+      <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs.dita">
+        <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs-network.dita"/>
+        <topicref href="commercial/GA1/1.1commercial.install-GA-NTP.dita"/>
+        <topicref href="commercial/GA1/1.1commercial.install-GA-JSON.dita">
+          <topicref href="commercial/GA1/1.1commercial.install-GA-JSON-scenarios.dita"/>
+          <!--set to toc=no later-->
+        </topicref>
+        <topicref href="commercial/GA1/1.1commercial.install-GA-CSV.dita"/>
+        <topicref href="commercial/GA1/1.1commercial.name-resolution.dita"/>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita">
+          <topicref href="commercial/GA1/1.1commerical.services-identity-ldap-JSON.dita"/>
+        </topicref>
+        <topicref href="commercial/GA1/1.1commercial.install-GA-Moonshot.dita"/>
+      </topicref>
+      <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita">
+        <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"/>
+      </topicref>
+      <!-- Install KVM -->
+      <topicref href="commercial/GA1/1.1commercial.install-GA-kvm.dita">
+        <topicref href="commercial/GA1/1.1commercial.install-GA-post-kvm.dita">
+          <topicref href="commercial/GA1/1.1commercial.vlan-providernetwork.dita"/>
+          <topicref href="commercial/GA1/1.1commercial.-vsa-overview.dita">
+            <topicref href="commercial/GA1/1.1commercial.install-GA-vsa.dita"/>
+          </topicref>
+          <topicref href="commercial/GA1/1.1commercial.install-3par.dita"/>
+          <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita">
+            <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"/>
+            <topicref href="commercial/GA1/1.1commercial.install-add-nodes.dita"/>
+            <topicref href="commercial/GA1/1.1commercial.install-GA-apparmor.dita"/>
+          </topicref>
+          <topicref href="commercial/GA1/1.1commercial.install-3par-multipath.dita"/>
+        </topicref>
+      </topicref>
+      <!-- Install ESK -->
+      <topicref href="commercial/GA1/1.1commercial.install-GA-esx.dita">
+        <topicref href="commercial/GA1/1.1commercial.install-GA-post-esx.dita">
+          <topicref href="commercial/GA1/1.1commercial.install-GA-ESX-Proxy.dita"/>
+          <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.dita">
+            <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.sample.dita"/>
+            <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.update.dita"/>
+          </topicref>
+          <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"/>
+          <topicref
+            href="commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita"
+          />
+        </topicref>
+      </topicref>
+      <!-- Post Install -->
+      <!-- Hight Avail -->
+      <topicref href="commercial/GA1/1.1commercial.install-GA-verify.dita">
+        <topicref href="commercial/GA1/1.1commercial.install-GA-tempest-tests.dita"/>
+      </topicref>
+      <topichead navtitle="Installing on a Laptop">
+        <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"/>
+      </topichead>
+    </topicref>
+    <topichead navtitle="HP Helion Openstack(R) 1.1: Post-Installation Tasks">
+      <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
+    </topichead>
+    <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita">
+      <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
+    </topicref>
+    <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita">
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"/>
+      <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"/>
+      <!--set to toc=no later-->
+      <!--not on site-->
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.controllers.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.dns.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.esx.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.logging.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ntp.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.overcloud.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ovsvapp.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.swift.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.vsa.dita"/>
+      <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"/>
+    </topicref>
     
     <!-- Services -->
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.services.dita" navtitle="HP Helion OpenStack Services" locktitle="yes">
@@ -73,64 +171,64 @@
           <topicref
             href="commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.dita" navtitle="Deploying Additional Scale-out Nodes" locktitle="yes"/>
           <topicref href="commercial/GA1/1.1commerical.services-swift-deployment.dita"/>
-          <topichead navtitle="Scale Up or Expand">
+          <topichead navtitle="Swift Object Storage: Scale Up or Expand">
             <topicref
-              href="commercial/GA1/1.1commerical.services-swift-deployment-expand-swift-cluster.dita">
+              href="commercial/GA1/1.1commerical.services-swift-deployment-expand-swift-cluster.dita" navtitle="Expand an Object Storage Cluster" locktitle="yes">
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-storage-node.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-storage-node.dita" navtitle="Add New Scale-out Object Node" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-proxy-node.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-proxy-node.dita" navtitle="Add New Scale-out Proxy Node" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-account-container.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-account-container.dita" navtitle="Add Disks to Account or Container Rings" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita" navtitle="Add a Disk to a Scale-out Object Ring" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-starter-object-ring.dita"
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-starter-object-ring.dita" navtitle="Add a Disk to a Starter Object Ring" locktitle="yes"
               />
             </topicref>
           </topichead>
-          <topichead navtitle="Shrink or Scale Down">
+          <topichead navtitle="Swift: Shrink or Scale Down">
             <topicref
-              href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-swift-cluster.dita">
+              href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-swift-cluster.dita" navtitle="Shrink Swift Object Storage Cluster" locktitle="yes">
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita" navtitle="Remove Existing Disk from Object Nodes" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-proxy-node.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-proxy-node.dita" navtitle="Remove a Proxy Node" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"
+                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita" navtitle="Remove a Scale-out Object Storage Node" locktitle="yes"
               />
             </topicref>
           </topichead>
-          <topichead navtitle="Monitor">
+          <!--<topichead navtitle="Monitoring an Object Storage Cluster">-->
             <topicref
-              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-cluster.dita">
+              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-cluster.dita" navtitle="Monitoring an Object Storage Cluster" locktitle="yes">
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-disk.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-disk.dita" navtitle="Monitoring Disk Usage" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-replica-swift-status.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-replica-swift-status.dita" navtitle="Monitoring Node Replication with Icinga" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-check.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-check.dita" navtitle="Swift Health Monitoring with Icinga" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-swift-services.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-swift-services.dita" navtitle="Swift Health Monitoring with Icinga Pasrt 2" locktitle="yes"/> <!--combine or not-->
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-proxy-health-checks.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-proxy-health-checks.dita" navtitle="Monitoring Swift Proxy Health" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-interface.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-interface.dita" navtitle="Monitoring NIC Speed" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-mount-points.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-mount-points.dita" navtitle="Monitoring Mount Points" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-disk-drive(s).dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-disk-drive(s).dita" navtitle="Monitoring Disk Drives" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-access-ping.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-access-ping.dita" navtitle="Monitoring Network Access" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-drive-audit.dita"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-drive-audit.dita" navtitle="Monitoring the Drive Audit" locktitle="yes"/>
               <topicref
                 href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-file-ownership.dita"/>
               <topicref
                 href="commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.dita"
               />
             </topicref>
-          </topichead>
+          <!--</topichead>-->
           <topicref href="commercial/GA1/1.1commerical.services-object-pyringos.dita">
             <topicref href="commercial/GA1/1.1commerical.services-swift-deployment-part-power.dita"
             />
@@ -215,82 +313,6 @@
       <topicref href="commercial/GA1/1.1commercial.map.volumetype.dita"/>
       <!-- Installation -->
     </topicref>
-    <topicref href="commercial/GA1/Landing/1.1commercial.landing.install.dita">
-      <topicref href="commercial/GA1/1.1commercial.install-GA-overview.dita">
-        <topicref href="commercial/GA1/1.1commercial.roll.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.install-GA-virtual-control.dita"/>
-        <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita"/>
-        <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"/>
-        <!--set to toc=no later-->
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"/>
-        <!--set to toc=no later-->
-      </topicref>
-      <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita">
-        <topicref href="commercial/GA1/1.1commerical.install.HPLinux.dita">
-          <topicref href="commercial/GA1/1.1commercial.linux.arch.dita"/>
-        </topicref>
-      </topicref>
-      <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"/>
-      <!-- Prereqs -->
-      <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs.dita">
-        <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs-network.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.install-GA-NTP.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.install-GA-JSON.dita">
-         <topicref href="commercial/GA1/1.1commercial.install-GA-JSON-scenarios.dita"/><!--set to toc=no later-->
-        </topicref>
-        <topicref href="commercial/GA1/1.1commercial.install-GA-CSV.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.name-resolution.dita"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita">
-          <topicref href="commercial/GA1/1.1commerical.services-identity-ldap-JSON.dita"/>
-        </topicref>
-        <topicref href="commercial/GA1/1.1commercial.install-GA-Moonshot.dita"/>
-      </topicref>
-      <!-- Install KVM -->
-      <topicref href="commercial/GA1/1.1commercial.install-GA-kvm.dita">
-        <topicref href="commercial/GA1/1.1commercial.install-GA-post-kvm.dita">
-          <topicref href="commercial/GA1/1.1commercial.vlan-providernetwork.dita"/>
-          <topicref href="commercial/GA1/1.1commercial.-vsa-overview.dita">
-            <topicref href="commercial/GA1/1.1commercial.install-GA-vsa.dita"/>
-          </topicref>
-          <topicref href="commercial/GA1/1.1commercial.install-3par.dita"/>
-          <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita">
-            <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"/>
-            <topicref href="commercial/GA1/1.1commercial.install-add-nodes.dita"/>
-            <topicref href="commercial/GA1/1.1commercial.install-GA-apparmor.dita"/>
-          </topicref>
-          <topicref href="commercial/GA1/1.1commercial.install-3par-multipath.dita"/>
-        </topicref>
-      </topicref>
-      <!-- Install ESK -->
-      <topicref href="commercial/GA1/1.1commercial.install-GA-esx.dita">
-        <topicref href="commercial/GA1/1.1commercial.install-GA-post-esx.dita">
-          <topicref href="commercial/GA1/1.1commercial.install-GA-ESX-Proxy.dita"/>
-          <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.dita">
-            <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.sample.dita"/>
-            <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.update.dita"/>
-          </topicref>
-          <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"/>
-          <topicref
-            href="commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita"
-          />
-        </topicref>
-      </topicref>
-      <!-- Post Install -->
-      <!-- Hight Avail -->
-      <topicref href="commercial/GA1/1.1commercial.install-GA-verify.dita">
-        <topicref href="commercial/GA1/1.1commercial.install-GA-tempest-tests.dita"/>
-      </topicref>
-      <topichead navtitle="Installing on a Laptop">
-        <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"/>
-      </topichead>
-    </topicref>
-    <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita">
-      <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
-    </topicref>
-    <topichead navtitle="HP Helion Openstack(R) 1.1: Post-Installation Tasks">
-      <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
-    </topichead>
     <topichead navtitle="HP Helion Openstack(R) 1.1: Undercloud Operations">
       <topicref href="commercial/GA1/1.1commercial.using.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-admin-settings.dita"/>
@@ -311,28 +333,7 @@
       <topicref href="commercial/GA1/1.1commerical.high-availability-restore.dita"/>
       <topicref href="commercial/GA1/1.1commercial.disaster-recovery.dita"/>
     </topichead>
-    <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita">
-      <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"/>
-    </topicref>
     <!-- Troubleshooting -->
-    <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita">
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"/>
-      <!--set to toc=no later-->
-      <!--not on site-->
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.controllers.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.dns.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.esx.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.logging.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ntp.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.overcloud.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ovsvapp.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.swift.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.vsa.dita"/>
-      <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"/>
-    </topicref>
     <topicref href="commercial/GA1/1.1commercial.related-topics.dita"/>
     <topicref href="commercial/GA1/1.1commerical.services-logging-overview.dita"/>
     <!-- backup -->

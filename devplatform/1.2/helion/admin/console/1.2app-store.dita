@@ -41,20 +41,19 @@ filesystem.</p>
 <xref type="section" href="#topic5271/adding-the-app-store-to-helion">Adding the Sample Applications to the Application Lifecycle Service</xref>
 </li>
 </ul>
-<p>Users have access to the main Sample Applications interface (see the <xref href="../../../../../devplatform/1.2/helion/user/1.2index.dita" >Application Lifecycle Service User Guide</xref>, but do not have access to add new applications or add/modify the definition file.</p>
+<p>Users have access to the main Sample Applications interface (see the <xref href="../../user/1.2index.dita" >Application Lifecycle Service User Guide</xref>, but do not have access to add new applications or add/modify the definition file.</p>
 <section id="creating-an-app-store"> <title>Creating Sample Applications</title>
 <p>The Sample Applications interface exposes multiple "stores" which specify the
 available applications. These stores are sourced from definition files
-specified in the main <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita#settings" type="section"   >Settings</xref> page of
-  the Management Console or set using <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >kato
+specified in the main <xref href="1.2index.dita#topic13823/settings" type="section"   >Settings</xref> page of
+  the Management Console or set using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >kato
 config</xref>.</p>
 </section>
 <section id="app-store-definition"> <title>Sample Applications Definition File</title>
 <p>
   <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#topic6187/term-YAML" type="section"   >YAML</xref> files describe the settings for each set of apps, including the container and a link to the source  repository for
 each app. For example:</p>
-<codeblock>
-  <codeph>store:
+<codeblock>store:
   title: Third Party Apps for Application Lifecycle Service Development Platform
   contact: Application Lifecycle Service Development Platform Support 
   icon: http://static.als.hpcloud.com/hp.ico
@@ -97,7 +96,7 @@ apps:
   license: MIT
   src: https://github.com/Helion-Apps/node-chat.git
   info: https://github.com/Helion-Apps/node-chat.git#readme
-</codeph>
+
 </codeblock>
 <p>The YAML string requires two top-level keys: <b>store</b>
 and <b>apps</b>.</p>
@@ -204,7 +203,7 @@ any web server at a URL accessible from the Cloud Controller.</p>
 </section>
 <section id="adding-the-app-store-to-helion"> <title>Adding the Sample Applications to Application Lifecycle Service</title>
 <ol>
-<li>Log into the <xref href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita#management-console" type="section"   >Management
+<li>Log into the <xref href="../../../../../devplatform/1.2/helion/user/console/1.2index.dita">Management
 Console</xref>,</li>
 <li>Select <b>Settings &gt; Cloud Controller</b> from the menu.</li>
 <li>In the <b>Sample Applications URLs</b> section, enter a name and content URL for
