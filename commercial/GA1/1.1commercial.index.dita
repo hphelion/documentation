@@ -22,7 +22,7 @@
  <!--./commercial/GA1/1.1commercial.index.md-->
  <!--permalink: /helion/openstack/1.1/--></p>
 <p>
-  <b>This documentation is valid for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
+  <b>All topics contained in this documentation are valid for both HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1, unless specified otherwise.</b>
 </p>
 <p>HP Helion OpenStack is a commercial-grade distribution of OpenStack the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
 <!--See [What's New in HP Helion OpenStack and Development Platform in 1.1](/helion/openstack/1.1/whatsnew/).-->
