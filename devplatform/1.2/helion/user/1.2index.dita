@@ -153,8 +153,8 @@ web server, application dependencies, databases, and other services.</p>
   <xref href="../admin/console/1.2customize.dita">Customize the Management Console</xref>
 </li>
 <li>
-  <xref href="../admin/console/1.2customize.dita#topic5029/welcome" type="section"  >Welcome</xref>
-</li>
+          <xref href="../admin/console/1.2index.dita#topic13823/welcome">Welcome</xref>
+        </li>
 <li>
   <xref href="../admin/console/1.2customize.dita#topic5029/space-view" type="section"  >Space View</xref>
 </li>
