@@ -244,11 +244,11 @@ adding nodes to the cluster.</p>
 </section>
 <section id="organizations"> <title>Organizations</title>
 <p>The top level Organizations page allows Admins to add and delete
-<xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#orgs-spaces" type="section"  >
+  <xref href="../../../../devplatform/helion/user/deploy/1.0orgs-spaces.dita#topic2792/organizations" type="section"  >
 <i>Organizations</i>
 </xref>.
 Clicking on an organization name opens its details. This view is the
-same as a regular <xref href="../../../../devplatform/helion/user/console/1.0index.dita#user-console-organizations" type="section"  >
+same as a regular <xref href="../../user/deploy/1.0orgs-spaces.dita#topic8908/user-console-organizations" type="section"  >
 <i>user's Organizations
 view</i>
 </xref>, but
@@ -265,7 +265,7 @@ change the password.</li>
 <section id="applications"> <title>Applications</title>
 <p>The Applications section displays a list of all apps on the server. Click anywhere on the line
         for an app to view its details. Admins have the same permissions in the <xref
-          href="../../../../devplatform/helion/user/console/1.0index.dita#user-console-app">
+          href="../../user/console/1.0index.dita#topic6037/user-console-app">
           <i>Application View</i>
         </xref> as a Developer of the space it was deployed to. It also lists the <b>Reserved</b>
         URIs; these cannot be used for end user applications.</p>
@@ -325,7 +325,7 @@ class names and IDs.</li>
 system.</p>
 <ul>
 <li>To edit a definition, click the edit button on the right.</li>
-<li>To create a new definition use the <xref href="../../../../devplatform/helion/user/reference/1.0client-ref.dita#command-quota-create" type="section"  >
+  <li>To create a new definition use the <xref href="../../user/reference/1.0client-ref.dita#topic203269/helion-quota-create-name" type="section"  >
 <i>helion quota
 create</i>
 </xref>
@@ -348,7 +348,7 @@ with the exception of this toggle (to bring it back online).</li>
 errors are encountered. Use an address which is monitored by
 Application Lifecycle Service administrators.</li>
 <li>
-<b>Sample Applications URLs</b>: URIs for JSON files which populate the <xref href="../../../../devplatform/helion/admin/console/1.0app-store.dita#app-store" type="section"  >
+<b>Sample Applications URLs</b>: URIs for JSON files which populate the <xref href="1.0app-store.dita"  >
 <i>App
 Store</i>
 </xref>. The URIs need not be public, but
@@ -359,19 +359,20 @@ application containers. End users can install additional packages
 (e.g. with <codeph>apt-get</codeph> or <codeph>aptitude</codeph>) only from these repositories.</li>
 </ul>
 </section>
-<section>
-      <title>DEA</title>
-      <ul id="ul_dds_tb4_js">
-        <li>
-          <b>Max Memory Percentage</b>: The percentage of physical memory each DEA node can use for
-          hosted applications. The 80% default setting leaves enough memory for the OS and DEA
-          processes on a node with 4GB of RAM. This can be increased on nodes with more memory
-          available (e.g. to 90% on a node with 8GB of RAM). Do not exceed 100% unless the system
-          correctly supports swap space and has it enabled. Restart all DEA roles/nodes to apply the
-          change.</li>
-        <li>
-          <b>Max Staging Duration</b>: The maximum time allowed for application staging.</li>
-      </ul>
+<section id="dea"> <title>DEA</title>
+<ul>
+<li>
+<b>Max Memory Percentage</b>: The percentage of physical memory each
+DEA node can use for hosted applications. The 80% default setting
+leaves enough memory for the OS and DEA processes on a node with 4GB
+of RAM. This can be increased on nodes with more memory available
+(e.g. to 90% on a node with 8GB of RAM). Do not exceed 100% unless
+the system correctly supports swap space and has it enabled. Restart
+all DEA roles/nodes to apply the change.</li>
+<li>
+<b>Max Staging Duration</b>: The maximum time allowed for application
+staging.</li>
+</ul>
 </section>
 <section id="logyard"> <title>Logyard</title>
 <p>Lists current log
