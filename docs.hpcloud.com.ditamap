@@ -50,7 +50,9 @@
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-imaging-overview.dita" navtitle="Glance Image Operations Overview" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commerical.services-networking-overview.dita" navtitle="Neutron Networking Service Overview" locktitle="yes">
-        
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.dita" navtitle="Networking Hardware Configuration and Software Requirements" locktitle="yes"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita" navtitle="Networking Operation (Neutron) Administrator: Preinstallation Requirements" locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita" navtitle="Tracking Masked IPs When Using NAT" locktitle="yes"/>
           <topicref href="commercial/GA1/neutron/1.1commercial_neutron-post-installation.dita" navtitle="Neutron Networking Post-installation" locktitle="yes"/>
         <topicref
@@ -59,9 +61,7 @@
           href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita" navtitle="Configuring Your Network Securely" locktitle="yes"/>
         <topicref
           href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-neutron-integration.dita" navtitle="Neutron Networking Integration" locktitle="yes"/>
-        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita"/>
-        <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.dita"/>
+       
         <topicref
           href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita"/>
         <topicref href="commercial/GA1/neutron/1.1commercial_neutron-intro.dita"/>
