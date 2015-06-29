@@ -37,12 +37,11 @@
 </li>
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>The following guide outlines the steps to update Helion Development Platform from version 1.0 to 1.01. Before executing these steps, ensure you have upgraded HP Helion OpenStack to 1.01 as described in the <xref href="../../commercial/GA1/1.0commercial.update-101-overview.dita" >HP Helion OpenStack Update Overview</xref>.</p>
+<p>The following guide outlines the steps to update HP Helion Development Platform from version 1.0 to 1.01. Before executing these steps, ensure you have upgraded HP Helion OpenStack to 1.01 as described in the <xref href="../../commercial/GA1/1.0commercial.update-101-overview.dita" >HP Helion OpenStack Update Overview</xref>.</p>
 <p>
         <b>Note:</b> If you created a new installation of 1.01, bypassing 1.0, you need to install
         HP Helion OpenStack Development Platform Services, and not update. See
-          <xref href="../../devplatform/1.0devplatform_community_install.dita#topic15079" type="section"
-          >Development Platform Install Guide</xref>.</p>
+          <xref href="../../devplatform/1.0devplatform_community_install.dita" type="section">Development Platform Install Guide</xref>.</p>
 </section>
 <section id="update-messaging"> <title>Update the Messaging Service</title>
 <p>This section provides details on updating the Messaging Service for Helion OpenStack Development Platform. This assumes that the Messaging Service is installed in your cloud.</p>
