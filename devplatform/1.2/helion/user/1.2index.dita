@@ -28,19 +28,18 @@ web server, application dependencies, databases, and other services.</p>
 <section id="quick-start"> <title>Quick Start</title>
 <ul>
 <li>
-          <xref href="../../1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952" type="section"  >Quick
-            Start </xref></li>
+  <xref href="quick-start/1.2index.dita">ALS Quick Start </xref>(Not to be confused with the <xref href="../../1.2devplatform.ALS-developer-trial-quick-start.dita">Developer Quick Start Trial</xref>.</li>
 <li>
-  <xref href="../user/quick-start/1.2index.dita#topic4730/management-console" type="section"  >Management Console</xref>
+  <xref href="quick-start/1.2index.dita../user/quick-start/1.2index.dita#topic4745/management-console" type="section"  >Management Console</xref>
 </li>
 <li>
-  <xref href="../user/quick-start/1.2index.dita#topic4730/helion-client" type="section"  >Application Lifecycle Service Client</xref>
+  <xref href="quick-start/1.2index.dita#topic4745/helion-client" type="section"  >Application Lifecycle Service Client</xref>
 </li>
 <li>
-  <xref href="../user/quick-start/1.2index.dita#topic4730/setting-organization-and-space" type="section"  >Setting Organization and Space</xref>
+  <xref href="quick-start/1.2index.dita#topic4745/setting-organization-and-space" type="section"  >Setting Organization and Space</xref>
 </li>
 <li>
-  <xref href="../user/quick-start/1.2index.dita#topic4730/deploying-apps" type="section"  >Deploying Apps</xref>
+  <xref href="quick-start/1.2index.dita#topic4745/deploying-apps" type="section"  >Deploying Apps</xref>
 </li>
 </ul>
 </section>

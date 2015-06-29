@@ -101,7 +101,7 @@ mkdir ${!FOO}/myapp
   <b>Note</b>
 </p>
 <p>To use declarations like these in
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#hooks" type="section"   >
+  <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/hooks" type="section"   >
 <i>hooks</i>
 </xref>, put them in a
 separate bash script. Brace expansion and grouping cannot be used
