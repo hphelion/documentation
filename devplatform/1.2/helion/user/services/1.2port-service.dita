@@ -54,10 +54,9 @@ web:</xref> is set to
   <codeph>helion create-service harbor debug-port
 </codeph>
 </codeblock>
-<p>To request a port from Harbor in the <b>manifest.yml</b> file, add it in the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#services" type="section"   >
-<b>services</b>
-</xref> block.
-For example:</p>
+<p>To request a port from Harbor in the <b>manifest.yml</b> file, add it in the <xref
+          href="../deploy/1.2manifestyml.dita#topic20922/services"><b>services</b></xref> block. For
+        example:</p>
 <codeblock>
   <codeph>name: port-test
 mem: 256
@@ -164,11 +163,9 @@ UDP_SERVICE_PORT=${!UDP_SERVICE_NAME}
 <p>
   <b>Note</b>
 </p>
-<p>To use declarations like these in
-<xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#hooks" type="section"   >
-<i>hooks</i>
-</xref>, put them in a
-separate bash script. Brace expansion and grouping cannot be used directly in YAML files.</p>
+<p>To use declarations like these in <xref href="../deploy/1.2manifestyml.dita#topic20922/hooks"
+            ><i>hooks</i></xref> , put them in a separate bash script. Brace expansion and grouping
+        cannot be used directly in YAML files.</p>
 </section>
 <section id="setting-the-port-protocols"> <title>Setting the Port Protocols</title>
 <p>Harbor supports both the TCP and UDP protocols. When you provision a service with Harbor it will create a TCP enabled port by default. If you want to have a UDP port provisioned instead, you simply prefix your
