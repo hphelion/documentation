@@ -31,25 +31,24 @@
       <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita" navtitle="Technical Overview" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" navtitle="Support Matrix" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.network-administrator-notes.dita" navtitle="Network Administrator Notes" locktitle="yes"/>
-      <topicref href="commercial/GA1/under_the_hood.dita" toc="no"/>
       <!--set to toc=no later-->
     </topicref>
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.install.dita" navtitle="Installation" locktitle="yes">
-      <topicref href="commercial/GA1/1.1commercial.install-GA-overview.dita" navtitle="Instsallation Overview" locktitle="yes">
-        <topicref href="commercial/GA1/1.1commercial.roll.dita" navtitle="Roll Your Own Installation Guide" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commercial.install-GA-virtual-control.dita" navtitle="Installing Overcloud Contollers on VMs" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.install-GA-overview.dita"
+        navtitle="Installation Overview" locktitle="yes">
+        <topicref href="commercial/GA1/1.1commercial.roll.dita"
+          navtitle="Roll Your Own Installation Guide" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commercial.install-GA-virtual-control.dita"
+          navtitle="Installing Overcloud Contollers on VMs" locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita"/>
         <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"/>
         <!--set to toc=no later-->
         <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"/>
         <!--set to toc=no later-->
       </topicref>
-      <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita">
-        <topicref href="commercial/GA1/1.1commerical.install.HPLinux.dita">
-          <topicref href="commercial/GA1/1.1commercial.linux.arch.dita"/>
-        </topicref>
+      <topicref href="commercial/GA1/1.1commerical.install.HPLinux.dita">
+        <topicref href="commercial/GA1/1.1commercial.linux.arch.dita"/>
       </topicref>
-      <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"/>
       <!-- Prereqs -->
       <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs.dita">
         <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs-network.dita"/>
