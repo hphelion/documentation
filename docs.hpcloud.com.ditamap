@@ -1751,12 +1751,10 @@
       <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-overview.dita">
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita">
           <topicref href="CarrierGrade/Installation/carrier-grade-install-NTP.dita"/>
-          <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.dita"/>
           <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"/>
         </topicref>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-non-kvm.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-rc0.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-verify.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-troubleshoot.dita"/>
       </topicref>
