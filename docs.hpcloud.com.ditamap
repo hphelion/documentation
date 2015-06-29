@@ -45,12 +45,12 @@
         <topicref href="commercial/GA1/1.1commerical.services-identity-overview.dita" navtitle="Identity Service (Keystone) Overview" locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commerical.services-identity-domains.dita" navtitle="Domain Management" locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commerical.services-identity-using.dita" navtitle="Using the Identity Service" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" navtitle="Integrating the Keystone Identity Service with LDAP" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-configure-v3.dita"/>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" navtitle="Integrating the Keystone Identity Service with LDAP/AD" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-configure-v3.dita" navtitle="Configuring Horizon for Keystone V3" locktitle="yes"/>
       </topicref>
-      <topicref href="commercial/GA1/1.1commerical.services-imaging-overview.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.services-networking-overview.dita">
-        <topicref href="commercial/GA1/1.1commercial.services-mapNeutron.dita"/>
+      <topicref href="commercial/GA1/1.1commerical.services-imaging-overview.dita" navtitle="Glance Image Operations Overview" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commerical.services-networking-overview.dita" navtitle="Neutron Networking Service Overview" locktitle="yes">
+        
         <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
         <topicref href="commercial/GA1/neutron/1.1commercial_neutron-post-installation.dita"/>
         <topicref
