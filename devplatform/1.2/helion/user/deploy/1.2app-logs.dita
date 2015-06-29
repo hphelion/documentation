@@ -31,10 +31,8 @@ using the <b>View Logs</b> button on the application Details page, or</li>
 <i>helion logs</i>
 </xref>
 command</li>
-  <li>application log <xref type="section" href="#topic5165/helion-drain">
-<i>drains</i>
-</xref>
-</li>
+  <li>application log <xref href="#topic5165/helion-drain" format="dita"><i>drains</i>
+        </xref></li>
 </ul>
 <p>Log streams are tailed output from actual log files in each application
 container, which are generally found in the <i>/home/helion/logs/</i> directory.
@@ -49,11 +47,9 @@ Console</i>
 <p>
   <b>Note</b>
 </p>
-<p>These files are not automatically rotated. For long-running applications
-  or verbose logs, you should <xref type="section" href="#topic5165/rotating-application-log-files">
-<i>rotate them</i>
-</xref> to
-avoid filling up the application container's filesystem.</p>
+<p>These files are not automatically rotated. For long-running applications or verbose logs, you
+      should <xref href="#topic5165/rotating-application-log-files" format="dita"><i>rotate
+        them</i></xref> to avoid filling up the application container's filesystem.</p>
 <section id="helion-logs"> <title>helion logs</title>
 <p>To view an application log stream, use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-logs" type="section"   >
 <i>helion
@@ -94,16 +90,14 @@ line as a JSON object.</p>
   <b>Note</b>
 </p>
 <p>
-<codeph>helion logs</codeph> buffers only 400 lines of the log
-stream history (i.e. lines generated prior to it being run). If you need
-earlier log lines, use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-files" type="section"   >
-<i>helion
-files</i>
-</xref> command to fetch the
-relevant log file from the <i>logs/</i> directory or create a log
-  <xref type="section" href="#topic5165/helion-drain">
-<i>drain</i>
-</xref> preemptively (where possible).</p>
+        <codeph>helion logs</codeph> buffers only 400 lines of the log stream history (i.e. lines
+        generated prior to it being run). If you need earlier log lines, use the <xref
+          href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita#command-files"
+          type="section">
+          <i>helion files</i>
+        </xref> command to fetch the relevant log file from the <i>logs/</i> directory or create a
+        log <xref href="#topic5165/helion-drain" format="dita"><i>drain</i></xref> preemptively
+        (where possible).</p>
 </section>
 <section id="adding-files-to-the-stream"> <title>Adding Files to the Stream</title>
 <p>By default, <codeph>helion logs</codeph> streams log data from

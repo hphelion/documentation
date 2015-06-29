@@ -51,8 +51,8 @@
 <ul>
 <li>Direct entry into the command-line interface</li>
 <li>Defined in an environment variable</li>
-<li>Recorded in a <xref type="section" href="#topic13234/downloadfile">configuration file</xref>
-</li>
+<li>Recorded in a <xref href="#topic13234/downloadfile" format="dita">configuration file</xref>
+        </li>
 </ul></section>
 <section id="downloadfile"><title>Configuration Files</title><p>ALS maintains separate configuration files.</p>
 <p>One configuration file contains the values for the global variables. The global configuration file is located in the home directory and is named <i>cf-mgmt.yml</i>. <!--A BR tag was used here in the original source.-->Global level <b>commands</b> create, delete, and add clusters. <!--A BR tag was used here in the original source.-->
@@ -632,7 +632,7 @@
 </section>
 <section id="subcommand-options"> <title>Subcommand Options</title>
 <p>Each subcommand in the Add-Service command has these following options available. The
-          <varname>mysql</varname> subcommand has <xref href="#topic13234/mysqlcommand"
+          <varname>mysql</varname> subcommand has <xref href="#topic13234/subcommand-options"
           format="dita">additional options</xref>.</p>
 <codeblock>cf-mgmt [global options] add-service [subcommand] <b>[subcommand options]</b> [arguments..]</codeblock>
 <table>

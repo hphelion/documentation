@@ -23,9 +23,11 @@
  <!--permalink: /helion/devplatform/1.2/als/user/reference/client-ref/quotas/--></p>
 <ul>
 <li>
-<xref type="section" href="#topic5727/command-quota-configure">helion quota configure</xref>: Reconfigure the named quota plan.</li>
+        <xref href="#topic5727/command-quota-configure" format="dita">helion quota configure</xref>:
+        Reconfigure the named quota plan.</li>
 <li>
-<xref type="section" href="#topic5727/command-quota-create">helion quota create</xref>: Create a new quota plan.</li>
+        <xref href="#topic5727/command-quota-create" format="dita">helion quota create</xref>:
+        Create a new quota plan.</li>
 <li>
 <xref type="section" href="#topic5727/command-quota-delete">helion quota delete</xref>: Delete the named quota plan</li>
 <li>
