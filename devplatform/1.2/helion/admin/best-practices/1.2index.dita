@@ -202,8 +202,10 @@ may have to be reset, redeployed, or reconfigured. This is especially
 important when migrating to a new cluster.</p>
 </section>
 <section id="custom-services"> <title>Custom Services</title>
-  <p>Application Lifecycle Service can export and import data from built-in data services running on Application Lifecycle Service nodes, but it has no mechanism to handle data in <xref href="../../../../../devplatform/1.2/helion/admin/cluster/1.2external-db.dita#topic4533/external-db" type="section"   >external databases</xref> unless
-<i>kato export|import</i> has also been modified to recognize the custom service.</p>
+  <p>Application Lifecycle Service can export and import data from built-in data services running on
+        Application Lifecycle Service nodes, but it has no mechanism to handle data in <xref
+          href="../cluster/1.2external-db.dita#topic4533">external databases</xref> unless <i>kato
+          export|import</i> has also been modified to recognize the custom service.</p>
 <p>Backing up or moving such databases should be handled separately from databases implemented as an Application Lifecycle Service data service. User applications should be reconfigured and/or redeployed after the update to ensure they connect properly to the new database host.</p>
 </section>
 <section id="hard-coded-database-connection-info"> <title>Hard-coded Database Connection Info</title>
