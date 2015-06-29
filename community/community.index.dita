@@ -57,9 +57,7 @@ For detailed REST API information, see the [OpenStack API Complete Reference](ht
 <section id="furtherinfo"> <title>For further information</title>
 <p>There's a lot of information out there to help you get going with your cloud. We recommend you take a look at the list below:</p>
 <ul>
-<li>
-<p>The documentation <xref href="../community/community.site-index.dita" >site index</xref> gives you a full list of the technical content pages available on the site.</p>
-</li>
+
 <li>
 <p>For detailed REST API information, see the <xref href="http://api.openstack.org/api-ref.html" scope="external" format="html" >OpenStack API Complete Reference</xref>.</p>
 </li>
