@@ -26,19 +26,19 @@
     <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
     <topicref href="commercial/GA1/1.1commercial.release-notes.dita"/>
     <!--set to toc=no later-->
-    <topicref href="commercial/GA1/Landing/1.1commercial.landing.start.dita">
-      <topicref href="commercial/GA1/1.1commercial.faq.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.network-administrator-notes.dita"/>
+    <topicref href="commercial/GA1/Landing/1.1commercial.landing.start.dita" navtitle="Getting Started" locktitle="yes">
+      <topicref href="commercial/GA1/1.1commercial.faq.dita" navtitle="FAQ" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita" navtitle="Technical Overview" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" navtitle="Support Matrix" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.network-administrator-notes.dita" navtitle="Network Administrator Notes" locktitle="yes"/>
       <topicref href="commercial/GA1/under_the_hood.dita" toc="no"/>
       <!--set to toc=no later-->
     </topicref>
-    <topicref href="commercial/GA1/1.1commercial.faq.dita"/>
+    
     <!-- Services -->
-    <topicref href="commercial/GA1/Landing/1.1commercial.landing.services.dita">
-      <topicref href="commercial/GA1/1.1commerical.services-overview.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.services-compute-overview.dita">
+    <topicref href="commercial/GA1/Landing/1.1commercial.landing.services.dita" navtitle="HP Helion OpenStack Services" locktitle="yes">
+      <topicref href="commercial/GA1/1.1commerical.services-overview.dita" navtitle="Services Overview" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commerical.services-compute-overview.dita" navtitle="Compute Service Overview" locktitle="yes">
         <topicref href="commercial/GA1/1.1commerical.services-compute-configDrive.dita"/>
       </topicref>
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.identity.dita">
