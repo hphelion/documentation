@@ -259,8 +259,7 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <p>Links to the <xref
           href="../../../../devplatform/helion/user/console/1.1index.dita#application-view"
           >Applications</xref> and <xref
-            href="../../user/deploy/1.1orgs-spaces.dita"
-          type="section" scope="external">Organizations</xref> lists.</p>
+            href="../../user/deploy/1.1orgs-spaces.dita">Organizations</xref> lists.</p>
 </section>
 <section id="domains"> <title>Domains</title>
   <p>A filterable list of all domains configured on the system, showing whether they are <xref href="../../../../devplatform/helion/user/deploy/1.1orgs-spaces.dita">Shared or Owned domains</xref>.</p>
