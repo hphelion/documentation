@@ -29,7 +29,12 @@
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.start.dita" navtitle="Getting Started" locktitle="yes">
       <topicref href="commercial/GA1/1.1commercial.faq.dita" navtitle="FAQ" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita" navtitle="Technical Overview" locktitle="yes"/>
-      <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" navtitle="Support Matrix" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita"
+        navtitle="Support Matrix" locktitle="yes">
+        <topicref
+          href="commercial/GA1/1.1commercial.install-GA-supportmatrix_supportedIHVhardware.dita"
+          navtitle="Supported IHV Hardware" locktitle="yes"/>
+      </topicref>
       <topicref href="commercial/GA1/1.1commercial.network-administrator-notes.dita" navtitle="Network Administrator Notes" locktitle="yes"/>
       <!--set to toc=no later-->
     </topicref>
