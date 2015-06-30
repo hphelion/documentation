@@ -144,10 +144,10 @@ $TENANT_ID = the id of the tenant<!--A BR tag was used here in the original sour
 $PORT_ID1 = id of port 1 (vm-gateway)<!--A BR tag was used here in the original source.-->
 $PORT_ID2 = id of port 2 (vm-test)<!--A BR tag was used here in the original source.-->
 $VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)</p>
-<p>For more details on the Nova and Neutron commands please see the <xref href="https://docs.hpcloud.com/publiccloud/api/networking/" scope="external" format="html" >HP Helion Public Cloud Networking</xref> and <xref href="https://docs.hpcloud.com/publiccloud/api/compute/" scope="external" format="html" >Compute</xref> API specifications.</p>
+  <p>For more details on the Nova and Neutron commands please see the <xref href="apidocs/c1.1/neutron-api.dita" >HP Helion Public Cloud Networking</xref> and <xref href="apidocs/c1.1/nova-api.dita" >Compute</xref> API specifications.</p>
 </section>
 <section id="compute"> <title>Activate the Compute service in HP Helion Public Cloud</title>
-  <p>If you have not previously created an account and activated the Compute service please sign up at <xref href="http://hpcloud.com" scope="external" format="html" >http://hpcloud.com</xref>.  Once you activate the Compute service, you need to install the <xref href="https://docs.hpcloud.com/publiccloud/api/compute/" scope="external" format="html" >compute</xref> and <xref href="https://docs.hpcloud.com/publiccloud/api/networking/" scope="external" format="html" >networking</xref> clients or the <xref href="cli.openstack.dita" >CLI</xref>. Make sure you activate a Compute service instance to access the networking and VPN capabilities.</p>
+  <p>If you have not previously created an account and activated the Compute service please sign up at <xref href="http://hpcloud.com" scope="external" format="html" >http://hpcloud.com</xref>.  Once you activate the Compute service, you need to install the <xref href="apidocs/c1.1/nova-api.dita" >compute</xref> and <xref href="apidocs/c1.1/neutron-api.dita" >networking</xref> clients or the <xref href="cli.openstack.dita" >CLI</xref>. Make sure you activate a Compute service instance to access the networking and VPN capabilities.</p>
 </section>
 <section id="create-a-new-ubuntu-server-instance"> <title>Create a new Ubuntu server instance</title>
 <p>Set up a new Ubuntu server instance—separate from your other VPC gateway machines and using the command line. Test the setup of this new server.</p>

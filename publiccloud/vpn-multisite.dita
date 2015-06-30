@@ -73,7 +73,7 @@
 <b>Note:</b> Each location can have different IKE and IPsec proposals. Adjust the configuration at the VPC end (Left side) to adopt all the proposals as needed.</p>
 <p>For simplicity, assume that all routers you will connect use the IKE and IPsec proposals defined below.</p>
 <codeblock>
-Virtual Private Cloud
+  <codeph>Virtual Private Cloud
 
 VPN Connection Configuration
 A VPN Connection consists of a pair of Security Associations (SAs).
@@ -103,12 +103,15 @@ Configure the IPsec SA as follows:
 IPsec Dead Peer Detection (DPD) will be enabled on the AWS Endpoint. We recommend configuring DPD on your endpoint as follows:
 - DPD Interval             : 10
 - DPD Retries              : 3
+</codeph>
 </codeblock>
+<p>back to the <xref type="section" href="#topic13796">top</xref>
+</p>
 </section>
 <section id="configvpn"> <title>Configure the VPN for the IKE and IPsec proposals</title>
 <p>This section uses strongSwan to configure the IKE and IPsec proposals from the previous section.</p>
 <p>
-  <b>Note:</b> Make sure you have configured your VPN Gateway instance according to the <xref href="vpn-quickstart.dita"  >"VPN Quick Start Guide"</xref>.</p>
+  <b>Note:</b> Make sure you have configured your VPN Gateway instance according to the <xref href="vpn-quickstart.dita" >"VPN Quick Start Guide"</xref>.</p>
 </section>
 <section id="strongswan-configuration-files"> <title>strongSwan configuration files</title>
 <ol>
@@ -375,6 +378,8 @@ conn Site-C
 10.2.79.21 209.65.244.240 172.168.1.50 : PSK &amp;#8220; sitec&amp;#8221;
 </codeph>
 </codeblock>
+<p>back to the <xref type="section" href="#topic13796">top</xref>
+</p>
 </section>
 <section id="connect"> <title>Establish a connection with your HP Helion Public Cloud VPN</title>
 <p>You can establish a connection with the remote router in two ways:</p>
@@ -396,7 +401,7 @@ conn Site-C
 </ul>
 </section>
 <section id="trouble"> <title>Troubleshoot and verify connections</title>
-  <p>See the "<xref href="vpn-quickstart.dita" >VPN Quick Start Guide</xref>" for instructions on how to troubleshoot and verify connections.</p>
+  <p>See the "<xref href="vpn-quickstart.dita">VPN Quick Start Guide</xref>" for instructions on how to troubleshoot and verify connections.</p>
 </section>
 <section id="info"> <title>For further information</title>
 <ul>
@@ -406,6 +411,8 @@ conn Site-C
 <li>HP Networking MSR 20-40 Router Security Configuration Guide: <xref href="http://www.h3c.com/portal/download.do?id=1223846" scope="external" format="html" >http://www.h3c.com/portal/download.do?id=1223846</xref>
 </li>
 </ul>
+<p>back to the <xref type="section" href="#topic13796">top</xref>
+</p>
 </section>
 </body>
 </topic>

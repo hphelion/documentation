@@ -125,7 +125,10 @@
 <p>Its value should be the name of the image. Note that the name of an image is not unique as it would be unrealistic to expect users to know all the unique names of all other user's images.</p>
 </section>
 <section id="2222-identifier"> <title>2.2.2.2 Identifier</title>
-  <p>Each image has an identifier, which is guaranteed to be unique to a Region. For Regions please refer to <xref type="section" href="#topic35632/32-regions">section 3.2</xref>. Images identifiers are UUIDs, commonly represented in hexadecimal string notation.</p>
+<p>Each image has an identifier, which is guaranteed to be unique to a Region. For Regions please
+        refer to <xref href="#topic35632/32-regions" format="dita">section
+        3.2</xref>. Images identifiers are UUIDs, commonly represented in hexadecimal string
+        notation.</p>
 </section>
 <section id="2223-status"> <title>2.2.2.3 Status</title>
 <p>Images in the Image service can be in one the following statuses:</p>

@@ -29,9 +29,7 @@
       <li>
         <xref type="section" href="#topic6516/NavigatetotheCommandLine">Navigate to the command line</xref>
       </li>
-      <li>
-        <xref type="section" href="#topic6516/LoadingtheShellandModuleRegistration">Load the shell and register the module</xref>
-      </li>
+      <li><xref href="#topic6516/LoadingtheShellandModuleRegistration" format="dita"/></li>
       <li>
         <xref type="section" href="#topic6516/Upgrading">#Upgrade to a new version</xref>
       </li>
