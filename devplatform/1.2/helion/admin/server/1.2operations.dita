@@ -59,10 +59,7 @@
 </ul>
 <section id="server-status"> <title>Server Status</title>
 <p>To check the status of Application Lifecycle Service:</p>
-<codeblock>
-  <codeph>kato status
-</codeph>
-</codeblock>
+<codeblock>kato status</codeblock>
 <p>This will list all the roles configured to run on the VM, and whether
 they are running, stopped, or starting.</p>
   <p>Roles are logical groups of processes (see <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-role-info" >kato role info</xref>) which can be inspected individually with <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-process-list" type="section"   >kato process
@@ -72,41 +69,26 @@ they are running, stopped, or starting.</p>
           process ready</xref> command is useful for determining if the system is in a state to
         receive <xref href="1.2configuration.dita#topic31232">configuration commands</xref>. For
         example, to check that all processes for the configured roles are ready:</p>
-<codeblock>
-  <codeph>kato process ready all
-</codeph>
-</codeblock>
+<codeblock>kato process ready all</codeblock>
 </section>
 <section id="starting-and-stopping-roles"> <title>Starting and Stopping Roles</title>
-<p>To control the Application Lifecycle Service roles, use the <i>kato</i> start,
-stop and restart commands:</p>
-<codeblock>
-  <codeph>kato stop
-</codeph>
-</codeblock>
-<p>Without any further options the operation applies to all Application Lifecycle Service roles.
-To start, stop or restart individual roles, specify them after the
-desired command:</p>
-<codeblock>
-  <codeph>kato stop mysql
-</codeph>
-</codeblock>
+<p>To control the Application Lifecycle Service roles, use the <i>kato</i> start, stop and restart
+        commands.</p>
+      <p>Without any further options specified, the operation applies to all Application Lifecycle
+        Service roles.</p>
+<codeblock>kato stop</codeblock>
+<p> To start, stop or restart individual roles, specify them after the desired command:</p>
+<codeblock>kato stop mysql</codeblock>
 </section>
 <section id="system-shutdown"> <title>System Shutdown</title>
 <p>To safely shut down the VM, run the <i>shutdown</i> command as root:</p>
-<codeblock>
-  <codeph>sudo shutdown -h now
-</codeph>
-</codeblock>
+<codeblock>sudo shutdown -h now</codeblock>
 </section>
 <section id="setting-the-time-zone"> <title>Setting the Time Zone</title>
 <p>At first boot, the time zone of the Application Lifecycle Service VM is set to UTC. To set this to your local time zone, use the <codeph>kato op set_timezone</codeph> command. When run without arguments, the command will prompt
 for time zone selection, but the time zone can be set non-interactively
 with the <codeph>--timezone</codeph> option. For example:</p>
-<codeblock>
-  <codeph>kato op set_timezone --timezone America/Chicago
-</codeph>
-</codeblock>
+<codeblock>kato op set_timezone --timezone America/Chicago</codeblock>
 <p>You can also use the <codeph>tzselect</codeph> command to find the
 appropriate time zone string for your location.</p>
 </section>
@@ -136,11 +118,8 @@ setup</i>
 </xref>
 command. For example:</p>
 
-<codeblock>
-<codeph>kato node reset soft
-kato node setup micro
-</codeph>
-</codeblock>
+<codeblock>kato node reset soft
+kato node setup micro</codeblock>
 </li>
 </ul>
 </section>
@@ -161,16 +140,10 @@ kato node setup micro
         under <xref href="../console/1.2index.dita#topic13823/users">Users</xref>. The Management
         Console will prompt to create the initial admin user the first time you use it.</p>
   <p>If you do not have access to the Management Console, create a user by logging in to the micro cloud or Core node controller via SSH or through the VM <xref href="../../user/reference/1.2glossary.dita#topic6187/term-tty-console" type="section"   >tty console</xref> as the <i>helion</i> user and run <i>helion register</i>:</p>
-<codeblock>
-  <codeph>helion target api.helion-xxxx.local
-helion register superuser@example.net
-</codeph>
-</codeblock>
+<codeblock>helion target api.helion-xxxx.local
+helion register superuser@example.net</codeblock>
 <p>Grant administrative privileges using <i>kato config</i>:</p>
-<codeblock>
-  <codeph>kato config push cloud_controller_ng admins superuser@example.net
-</codeph>
-</codeblock>
+<codeblock>kato config push cloud_controller_ng admins superuser@example.net</codeblock>
 <p>Subsequent new users can be added remotely with the Helion client by an admin user.</p>
 </section>
 <section id="system-monitoring-with-nagios"> <title>System Monitoring with Nagios</title>

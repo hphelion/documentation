@@ -163,45 +163,28 @@ connection to the LDAP server</p>
 </ul>
 </li>
 </ul>
-<p>
-  <b>Note</b>
-</p>
+</section><section><title>Replace Usernames with Email Addresses</title>
 <p>An additional 'name_proc' option in the 'ldap' block allows users to
 enter email addresses instead of LDAP user names, matching the user name
 entered with the format of the uid attributes. For example, value of
 'sAMAccountName' in AD contains only the Windows user name. If your
 users prefer using email to login, the following 'name_proc' value will
 trim the email string down to just the Windows login name:</p>
-<codeblock>
-  <codeph>Proc.new {|name| name.gsub(/@.*$/,'')}
-</codeph>
-</codeblock>
+<codeblock>Proc.new {|name| name.gsub(/@.*$/,'')}</codeblock>
 <p>Value must be valid Ruby code. Since the provided code will be accepting
 arbitrary user input, administrators are urged to use this setting only
 when absolutely necessary, and to check the code thoroughly for possible
 security implications.</p>
 <p>To see the default AOK configuration (default settings) run the
 command:</p>
-<codeblock>
-  <codeph>kato config get aok
-</codeph>
-</codeblock>
+<codeblock>kato config get aok</codeblock>
 <p>Settings are nested as per the option list above. To set an option,
 specify the full config path to that option. For example:</p>
-<codeblock>
-  <codeph>kato config set aok strategy/ldap/base 'dc=yourdomain, dc=com'
-</codeph>
-</codeblock>
+<codeblock>kato config set aok strategy/ldap/base 'dc=yourdomain, dc=com'</codeblock>
 <p>To add an attribute to the 'email' array:</p>
-<codeblock>
-  <codeph>kato config push aok strategy/ldap/email "ADMailAcct"
-</codeph>
-</codeblock>
+<codeblock>kato config push aok strategy/ldap/email "ADMailAcct"</codeblock>
 <p>To set the entire array in one step, use the <codeph>--json</codeph> option:</p>
-<codeblock>
-  <codeph>kato config set --json aok strategy/ldap/email '["mail","ADMailAcct", "email"]'
-</codeph>
-</codeblock>
+<codeblock>kato config set --json aok strategy/ldap/email '["mail","ADMailAcct", "email"]'</codeblock>
 <!-- not supported in ALS
 ##LDAP Groups {#ldap}
 
@@ -255,8 +238,7 @@ Members of certain LDAP groups can be granted admin accounts for ALS. This requi
 <li>
 <p>gives an admin account to each member of the 'admins' group</p>
 
-<codeblock>
-<codeph>use: ldap
+<codeblock>use: ldap
 ldap:
   host: directory.example.com
   port: 389
@@ -275,9 +257,7 @@ ldap:
   - developers
   - admins
   admin_groups:
-  - admins
-</codeph>
-</codeblock>
+  - admins</codeblock>
 </li>
 </ul>
 <p>See also <xref href="http://msdn.microsoft.com/en-us/library/aa746468%28v=vs.85%29.aspx" scope="external" format="html" >Searching Active Directory</xref> (Microsoft Developer Network) and <xref href="https://www.google.com/support/enterprise/static/gapps/docs/admin/en/gads/admin/ldap.5.4.html" scope="external" format="html" >Common LDAP Queries</xref> (Google Apps Directory Sync Administration Guide) for more information on creating <i>group_query</i>.</p>
@@ -315,16 +295,9 @@ is configured.</p>
 <li>Log in to the micro cloud VM or Core node as the 'helion' user (with the password set previously)</li>
 <li>
           <xref href="#topic8359/configuration" format="dita">Configure AOK</xref> to use LDAP</li>
-<li>
-<p>Set the <codeph>admin_user</codeph> key with the desired LDAP admin username:</p>
-
-<codeblock>
-<codeph>kato config set aok strategy/ldap/admin_user &lt;username&gt;
-</codeph>
-</codeblock>
-
-<p>This user will be granted admin privileges when logging in for the first time.</p>
-</li>
+<li> Set the <codeph>admin_user</codeph> key with the desired LDAP admin
+            username:<codeblock>kato config set aok strategy/ldap/admin_user &lt;username&gt;</codeblock><p>This
+            user will be granted admin privileges when logging in for the first time.</p></li>
 <li>If you created a temporary admin user, delete it at this point.</li>
 </ol>
 </section>
