@@ -70,7 +70,7 @@
 <p>The HLM host must have Ubuntu Server 14.04.2 LTS installed before performing the HP Helion
         OpenStack Carrier Grade installation.</p>
 </section>
-<section id="pub-key"> <title>Obtain a public key</title>
+<!--<section id="pub-key"> <title>Obtain a public key</title>
 <p>On the HLM host, the user <codeph>root</codeph> must have a public key.</p>
 <ol>
 <li>Launch a terminal and log in to your HLM host as root:<p>sudo su -</p></li>
@@ -82,7 +82,7 @@
             IP address of the default network gateway on the HLM host.</p></li>
 </ol>
 </section>
-<section id="proxy"> <title>Configure proxy information</title>
+--><section id="proxy"> <title>Configure proxy information</title>
 <p>Before you begin your installation on the HLM host, if necessary configure the proxy information
         for your environment using the following steps:</p>
 <ol>
@@ -95,9 +95,7 @@
 export http_proxy=http://&lt;web_proxy_IP&gt;/
 export https_proxy=http://&lt;web_proxy_IP&gt;/
 export no_proxy=localhost,127.0.0.1,&lt;your 10.x IP address&gt;,&lt;provider_network&gt;
-</codeph></codeblock><p>Where:</p><codeblock><codeph>web_proxy_IP is your web proxy IP address.
-provider_network is your ESX management network
-</codeph></codeblock></li>
+</codeph></codeblock><p>Where:</p><codeblock><codeph>web_proxy_IP is your web proxy IP address.</codeph></codeblock></li>
 <li>Source the <codeph>environments</codeph>
           file:<codeblock><codeph>source /etc/environment
 </codeph></codeblock></li>
@@ -162,17 +160,12 @@ fi
 <p>Before you begin, you must download the required HP Helion OpenStack installation package(s):</p>
 <ol>
 <li>Download and extract the <codeph>cg-hlm.qcow2</codeph> and <codeph>VSD qcow2</codeph> files to
-          the images folder.</li>
+  the images folder:  <codeph>/var/lib/libvirt/images</codeph>.</li>
 <li>Download and extract the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file to the
-            <codeph>/root</codeph>
-            directory.<codeblock><codeph>cd /root
-tar xjf /tmp/cg-infra-playbooks.tar.gz.gpg
-</codeph></codeblock><p>This
-            will create the <codeph>/root/cg</codeph> directory and extract the contents into the
-            directory.</p></li>
-<li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> and <codeph>cg-hos-dcn.tar.gz.gpg</codeph> to the
-            <codeph>/root/cg/</codeph> directory.<p>The password to decrypt the files is
-              <codeph>cghelion</codeph>.</p></li>
+            <codeph>/root</codeph> directory.</li>
+  <li>Decrypt and untar the PGP file using password cghelion when prompted.
+          <codeblock> gpg -d cg-infra-playbooks.tar.gz.gpg | tar -xzvf </codeblock></li>
+<li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> to the <codeph>/root/cg/</codeph> directory.</li>
 </ol>
 </section>
 <section id="ssh"> <title>Configure SSH</title>

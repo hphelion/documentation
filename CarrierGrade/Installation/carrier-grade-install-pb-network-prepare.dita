@@ -38,10 +38,10 @@ auto br-clm
 allow-ovs br-clm
 iface br-clm inet manual
 ovs_type OVSBridge
-ovs_ports em1.1551
+ovs_ports <systemoutput>em1.&lt;CLM_VLAN_ID&gt;</systemoutput>
 
-allow-br-clm em1.1551
-iface em1.1551 inet manual
+allow-br-clm <systemoutput>em1.&lt;CLM_VLAN_ID&gt;</systemoutput>
+iface <systemoutput>em1.&lt;CLM_VLAN_ID&gt;</systemoutput> inet manual
 ovs_bridge br-clm
 ovs_type OVSPort
 
@@ -49,10 +49,10 @@ auto br-bls
 allow-osv br-bls
 iface br-bls inet manual
 ovs_type OVSBridge
-ovs_ports em1.1554
+ovs_ports <systemoutput>em1.&lt;BLS_VLAN_ID&gt;</systemoutput>
 
-allow-br-bls em1.1554
-iface em1.1554 inet manual
+allow-br-bls <systemoutput>em1.&lt;BLS_VLAN_ID&gt;</systemoutput>
+iface <systemoutput>em1.&lt;BLS_VLAN_ID&gt;</systemoutput> inet manual
 ovs_bridge br-bls
 ovs_type OVSPort
 
@@ -146,7 +146,7 @@ ovs_type OVSPort
                         Execute the following commands to create and start the network, and
                         configure the network to
                     auto-start</p><codeblock>
-<codeph>virsh net-define br-ctm.xml
+<codeph>virsh net-define <systemoutput>br-clm.xml</systemoutput>
 virsh net-start br-clm
 virsh net-autostart br-clm
 </codeph>
@@ -215,17 +215,17 @@ default     active      yes             yes
 </codeph></codeblock><p>Run
                         following command if the <codeph>br-pxe</codeph> does not indicate the IP
                         address has been
-                    assigned.</p><codeblock><codeph>Ifdown br-pxe
-Ifdown &lt;interface&gt;
-Ifup br-pxe
-Ifup &lt;yourinterface&gt;
+                    assigned.</p><codeblock><codeph>ifdown br-pxe
+ifdown &lt;interface&gt;
+ifup br-pxe
+ifup &lt;yourinterface&gt;
 </codeph></codeblock></li>
 <li>Execute the following command to make sure the <codeph>br-pxe</codeph> network was assigned the
                     IP address of the primary
                     interface.<codeblock><codeph>ifconfig | more
 </codeph></codeblock></li>
 <li>Reboot the setup.</li>
-<li>xecute the following command to make sure the primary interface does not have IP address and
+<li>Execute the following command to make sure the primary interface does not have IP address and
                     confirm the IP address of the <codeph>br-pxe</codeph>
                     network:<codeblock><codeph>ifconfig | more
 </codeph></codeblock></li>
