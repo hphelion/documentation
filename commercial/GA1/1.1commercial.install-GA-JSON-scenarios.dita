@@ -132,9 +132,8 @@
 <p>Save the file on the seed cloud host.</p>
 </li>
 <li>
-<p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section">Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
-</li>
+                    <xref href="1.1commercial.install-GA-prereqs.dita#topic9786/csv">Return to HP Helion OpenStack Installation
+                            Prerequisites</xref>.</li>
 </ol>
 </section>
 <section id="esx"> <title>Configuration variables file for an ESX cloud type</title>
@@ -215,9 +214,8 @@
 <p>Save the file on the seed cloud host.</p>
 </li>
 <li>
-<p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section">Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
-</li>
+                    <xref href="1.1commercial.install-GA-prereqs.dita#topic9786/csv">Return to HP Helion OpenStack Installation
+                            Prerequisites</xref>.</li>
 </ol>
 </section>
 <section id="esxtwo"> <title>Deployment Scenario 2: HP Helion OpenStack Deployment with custom IP addresses and a VLAN provider Network for external access</title>
@@ -294,9 +292,10 @@
 <p>Save the file on the seed cloud host.</p>
 </li>
 <li>
-<p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section">Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
-</li>
+    <p><xref href="1.1commercial.install-GA-prereqs.dita#topic9786">Return to HP Helion OpenStack Installation
+        Prerequisites</xref>
+                       .</p>
+                </li>
 </ol>
 <p>
 <xref href="../../commercial/GA1/1.1commercial.install-GA-JSON.dita" >Return to HP Helion OpenStack Editing the JSON Environment Variables File for Installation</xref>.</p>
