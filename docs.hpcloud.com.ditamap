@@ -354,15 +354,21 @@
         navtitle="Working with StoreServ Back Ends" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storevirtual.dita"
         navtitle="Working with StoreVirtual Back Ends" locktitle="yes"/>
-      <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.undercloud-admin-updates-and-extensions.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita"
+        navtitle="Working with Virtual Environments" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-admin-updates-and-extensions.dita"
+        navtitle="HP Helion OpenStack Updates and Extensions" locktitle="yes"/>
     </topichead>
-    <topichead navtitle="HP Helion Openstack(R) 1.1: System Restore and Recovery">
-      <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"/>
+    <topichead navtitle="System Restore and Recovery">
+      <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"
+        navtitle="Backup and Restore" locktitle="yes"/>
       <topicref
-        href="commercial/GA1/1.1commerical.services-remove-replace-failed-overcloud-nodes.dita"/>
-      <topicref href="commercial/GA1/1.1commerical.high-availability-restore.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.disaster-recovery.dita"/>
+        href="commercial/GA1/1.1commerical.services-remove-replace-failed-overcloud-nodes.dita"
+        navtitle="Remove or Replace a Failed Overcloud Controller" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commerical.high-availability-restore.dita"
+        navtitle="Recovering after a Power Outage" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.disaster-recovery.dita"
+        navtitle="Disaster Recovery" locktitle="yes"/>
     </topichead>
     <!-- Troubleshooting -->
     <topicref href="commercial/GA1/1.1commercial.related-topics.dita"/>
