@@ -26,53 +26,50 @@
   <p>Application Lifecycle Service provides the ability to upgrade a node or cluster in place via <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-upgrade">kato node upgrade</xref> without the need to rebuild the entire cluster. This section covers how the upgrade process works.</p>
 <ul>
 <li>
-<xref type="section" href="#topic13180/before-an-upgrade">Before an upgrade</xref>
-
-<ul>
+        <xref type="section" href="#topic13180/before-an-upgrade">Before an upgrade</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic13180/maintenance-mode">Maintenance Mode</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13180/backup-snapshot">Backups or Snapshots</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13180/proxy-settings">Proxy settings</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13180/rsa-keys">Passwordless SSH</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13180/pwless-sudo">Passwordless sudo</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13180/extraDEA">Extra DEA Nodes</xref>
+          </li>
+        </ul></li>
 <li>
-<xref type="section" href="#topic13180/maintenance-mode">Maintenance Mode</xref>
-</li>
-<li>
-<xref type="section" href="#topic13180/backup-snapshot">Backups or Snapshots</xref>
-</li>
-<li>
-<xref type="section" href="#topic13180/proxy-settings">Proxy settings</xref>
-</li>
-<li>
-<xref type="section" href="#topic13180/rsa-keys">Passwordless SSH</xref>
-</li>
-<li>
-<xref type="section" href="#topic13180/pwless-sudo">Passwordless sudo</xref>
-</li>
-<li>
-<xref type="section" href="#topic13180/extraDEA">Extra DEA Nodes</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic13180/executing-the-upgrade">Executing the upgrade</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic13180/upgrading-an-individual-node">Upgrading an individual node</xref>
-</li>
-<li>
-<xref type="section" href="#topic13180/upgrading-a-cluster">Upgrading a cluster</xref>
-</li>
-<li>
-<xref type="section" href="#topic13180/download-only">Download Only Option</xref>
-</li>
-<li>
-<xref type="section" href="#topic13180/node-upgrade-ordering">Node Upgrade Order</xref>
-</li>
-<li>
-<xref type="section" href="#topic13180/node-upgrade-process">Node Upgrade Process</xref>
-</li>
-<li>
-<xref type="section" href="#topic13180/zero">Zero-downtime Upgrades</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic13180/executing-the-upgrade">Executing the upgrade</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic13180/upgrading-an-individual-node">Upgrading an
+              individual node</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13180/upgrading-a-cluster">Upgrading a cluster</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13180/download-only">Download Only Option</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13180/node-upgrade-ordering">Node Upgrade Order</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13180/node-upgrade-process">Node Upgrade Process</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13180/zero">Zero-downtime Upgrades</xref>
+          </li>
+        </ul></li>
 <li>
 <xref type="section" href="#topic13180/upgrade-node-upgrade-offline">Offline Upgrade Process</xref>
 </li>
@@ -193,12 +190,11 @@ option.</p>
 </ol>
 <p>Before any upgrade actions are performed, <i>kato node upgrade</i> performs a self-update check to make sure it is running the latest code available. After this base check, the version of Application Lifecycle Service running on the node is checked against the latest version available. If a newer version of Application Lifecycle Service is available (or if the <codeph>--force</codeph> option was used) the upgrade process begins.</p>
 <p>
-        <note>Using the <codeph>--force</codeph> option is not recommended unless you have been
+        <note type="caution">Using the <codeph>--force</codeph> option is not recommended unless you have been
           directed to do so by HP Application Lifecycle Service Support.</note>
       </p>
 <p>A pre-upgrade validation check is performed on the node to check that it is in working order before any upgrade actions are performed. If this validation fails then the upgrade process is stopped. These validation steps can be displayed to the user as errors while still continuing the upgrade process by using the <i>--ignore-inspect-failures</i> option.</p>
-<p>
-<b>Warning</b>: Use this option only if you get failures running <i>kato node inspect</i> that are known to be caused by systems outside of the control of Application Lifecycle Service, or if directed by HP Application Lifecycle Service Support.</p>
+<note type="caution"> Use this option only if you get failures running <i>kato node inspect</i> that are known to be caused by systems outside of the control of Application Lifecycle Service, or if directed by HP Application Lifecycle Service Support.</note>
   <p>Next, the upgrade packages are downloaded and a validation check is performed on the files to make sure everything required for an upgrade is available. If the node is a DEA node it is then <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-retire" type="section"   >retired</xref> to ensure any applications running on the node are evacuated before the upgrade takes place.</p>
 <p>After the components have been upgraded, the node is restarted and then post-upgrade validation takes place. If any failures occur, the upgrade process is stopped and you will be given the option to roll back the upgrade. As with the pre-upgrade validation, this can be skipped using the <i>--ignore-inspect-failures</i> option (see warning above).</p>
 <p>When <i>kato node upgrade</i> completes successfully, the node is restarted running the latest version of Application Lifecycle Service.</p>

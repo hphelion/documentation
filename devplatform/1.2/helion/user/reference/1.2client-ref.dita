@@ -435,7 +435,7 @@
 <li>
 <xref href="1.2client-ref-services.dita#topic3675/command-marketplace" type="section">helion marketplace</xref>: List the supported service plans of the target for the current or specified space. </li>
 <li>
-<xref href="1.2client-ref-services.dita#topic3675/command-purge-service-offerings" type="section">helion purge-service-offerings</xref>: Purge all offerings of the service type from the system. <b>Warning</b> use with caution.</li>
+<xref href="1.2client-ref-services.dita#topic3675/command-purge-service-offerings" type="section">helion purge-service-offerings</xref>: Purge all offerings of the service type from the system. <note type="warning">Purges ALL offerings. Use with caution.</note></li>
 <li>
 <xref href="1.2client-ref-services.dita#topic3675/command-service" type="section">helion service</xref>: Show information about the named service.</li>
 <li>

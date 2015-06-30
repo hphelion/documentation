@@ -29,7 +29,10 @@
 </xref>
 option is useful in this scenario).</p>
 <p>
-<b>Warning</b>: All  <i>kato</i>  commands should be run as the 'helion' system user, <b>not as root</b>. Kato will prompt for the 'helion' user password if sudo permissions are required for a specific operation.</p>
+      <note type="important"> All <i>kato</i> commands should be run as the 'helion' system user, <b>not as root</b>.
+        Kato will prompt for the 'helion' user password if sudo permissions are required for a
+        specific operation.</note>
+    </p>
 <ul>
 <li>
 <xref type="section" href="#topic31232/changing-the-password">Changing the Password</xref>
@@ -618,8 +621,8 @@ within all subsequently created application containers.</p>
 <section id="vm-filesystem-setup"> <title>VM Filesystem Setup {#vm-filesystem-setup)</title>
 <p>The Application Lifecycle Service VM is distributed with a simple default partitioning scheme
 (i.e. everything but "/boot" mounted on "/").</p>
-<p><b>Warning: </b>When setting up a production cluster, additional filesystem configuration is
-        necessary to prevent certain nodes from running out of disk space.</p>
+<note type="warning">When setting up a production cluster, additional filesystem configuration is
+        necessary to prevent certain nodes from running out of disk space.</note>
 <p>Some nodes in a production cluster may require additional mount points
 on external block storage for:</p>
 <ul>
@@ -805,8 +808,10 @@ list</i>
 <codeblock>RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -</codeblock>
 </section>
 <section id="container_NFS"> <title>Container NFS Mounts</title>
-<p>
-  <b>Warning</b>: Reconfiguring ALS to allow user applications to mount NFS partitions has serious security implications. See the <xref href="../server/1.2docker.dita#topic7767/docker-privileged-containers" type="section" >Privileged Containers</xref> section for details.</p>
+      <note type="warning">Reconfiguring ALS to allow user applications to mount NFS partitions has serious
+        security implications. See the <xref
+          href="../server/1.2docker.dita#topic7767/docker-privileged-containers" type="section"
+          >Privileged Containers</xref> section for details.</note>
 <p>By default, application containers are unable to mount external filesystems (other than the built-in <xref href="../../user/services/1.2filesystem.dita" >Filesystem Service</xref> via network protocols such as NFS.</p>
   <p>If the system has been configured to use <xref href="../server/1.2docker.dita#topic7767/docker-privileged-containers" type="section" >privileged containers</xref> and <i>sudo</i> permissions have been explicitly allowed in the quota, NFS partitions can be mounted in application containers using application configuration similar to the following manifest.yml excerpt:
 requirements:</p>
