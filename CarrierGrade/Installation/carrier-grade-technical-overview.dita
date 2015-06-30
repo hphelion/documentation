@@ -23,8 +23,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-technical-overview.md-->
  <!--permalink: /helion/openstack/carrier/technical-overview/--></p>
-  <p> <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-overview.dita" >▲ Installation Overview</xref> | <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >Support Matrix ▶</xref>
-</p>
+  
 <p>This page introduces you to HP Helion OpenStack Carrier Grade, a carrier-grade distribution of OpenStack the leading open source cloud computing platform.</p>
 <ul>
 <li>
@@ -47,11 +46,13 @@
 <p>You can deploy HP Helion OpenStack Carrier Grade on a <xref href="http://www.linux-kvm.org/page/Main_Page" scope="external" format="html" >KVM hypervisor</xref>.</p>
 <p>The following diagram depicts a simplified deployment scenario using KVM.</p>
 <!-- This image is for beta release only. Replace for beta -->
-<p>
-<xref format="html" href="javascript:window.open('/media/CGH-architecture-rc0.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
-<image href="../../media/CGH-architecture-rc0.png"/>
-</xref>
-<!--A BR tag was used here in the original source.-->Click to view larger image; click <b>Back</b> to return.</p>
+
+<!--  
+  <p><xref format="html" href="javascript:window.open('/media/CGH-architecture-rc0.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" > </xref>
+  Click to view larger image; click <b>Back</b> to return.</p> -->
+  <p>  <image href="../../media/CGH-architecture-rc0.png"/></p>
+
+
 </section>
 <section id="networkarch"> <title>Network architecture</title>
 <p>The following information describes the network configuration for the <xref type="section" href="#topic3485/physical">physical networks</xref> and <xref type="section" href="#topic3485/virtual">virtual networks</xref>, which must be configured by the network administrator.</p>
