@@ -27,10 +27,11 @@
           <li>PowerEdge R620</li>
         </ul>
       </section>
-    <section>
-      <title>Stand Up Adapters:</title>    
+    <section><title>Stand Up Adapters:</title>
       <u>NIC</u>
-      <ul><li>Dell: Broadcom Corporation NetXtreme II BCM57810 10 Gigabit Ethernet (rev 10)</li></ul>
+      <ul>
+        <li>Dell: Broadcom Corporation NetXtreme II BCM57810 10 Gigabit Ethernet (rev 10)</li>
+      </ul>
     </section>
   </body>
 </topic>
