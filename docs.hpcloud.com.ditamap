@@ -282,12 +282,17 @@
           href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita" navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
       </topicref>
       <!--Ceph stuff-->
-      <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita">
-        <topicref href="commercial/GA1/ceph/1.1commerical.services-ceph-archref.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-pre-requisite.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita"/>
+      <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita"
+        navtitle="Ceph Firefly 0.80.7 Storage Solution" locktitle="yes">
+        <topicref href="commercial/GA1/ceph/1.1commerical.services-ceph-archref.dita"
+          navtitle="Ceph Storage Architecture Reference" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-pre-requisite.dita"
+          navtitle="Prerequisites" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita"
+          navtitle="Ceph Automated Installation" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/ceph/1.1commercial.ceph-cluster-client-node-configuration-ansible.dita"/>
+          href="commercial/GA1/ceph/1.1commercial.ceph-cluster-client-node-configuration-ansible.dita"
+          navtitle="Configuring Ceph Cluster and Client Nodes Using Ansible" locktitle="yes"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-monitoring.dita"/>
         <topicref
           href="commercial/GA1/ceph/1.1commercial.ceph-helion-openstack-ceph-storage-administration.dita"/>
