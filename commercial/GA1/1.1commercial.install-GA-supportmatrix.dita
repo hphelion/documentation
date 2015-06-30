@@ -68,7 +68,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </li>
 </ul>
 <section id="os"> <title>OpenStack version information</title>
-<p>All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#HP" type="section">Helion Openstack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack Juno</xref>.</p>
+<p>All of the <xref href="../../commercial/GA1/1.1commerical.services-overview.dita#Openstack" type="section"  >HP Helion OpenStack services</xref> have been updated to <xref href="http://www.openstack.org/software/juno/" scope="external" format="html" >OpenStack Juno</xref>.</p>
 </section>
 <section id="deploy-arch"> <title>Deployment Architecture</title>
 <p>The following diagrams depict simplified deployment scenarios:</p>
@@ -85,7 +85,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <section id="hp-proliant-bladesystem"> <title>HP ProLiant BladeSystem</title>
 <ul>
 <li>BL460c Gen8</li>
-<li>BL460c Gen9</li>
+  <li>BL460c Gen9</li>
 <li>BL660c Gen8</li>
 </ul>
 </section>
@@ -122,16 +122,12 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <li>XL250a Gen9</li>
 </ul>
 </section>
-<section id="ibm-systems"> <title>IBM Systems</title>
-<ul>
-<li>System x3550 M4</li>
-</ul>
+<section>
+  <p>For more information about the supported independent servers, see <xref
+          href="1.1commercial.install-GA-supportmatrix_supportedIHVhardware.dita" type="section">HP
+          Helion OpenStack 1.1 and 1.1.1: Supported IHV Hardware</xref>.</p>
 </section>
-<section id="dell-systems"> <title>Dell Systems</title>
-<ul>
-<li>PowerEdge R720xd</li>
-<li>PowerEdge R620</li>
-</ul>
+  <section>
 <p>The following input/output (I/O) cards are supported:</p>
 </section>
 <section id="stand-up-adapters"> <title>Stand Up Adapters:</title>
@@ -148,13 +144,17 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="nic"> <title>NIC</title>
 <ul>
-<li>Dell: Broadcom Corporation NetXtreme II BCM57810 10 Gigabit Ethernet (rev 10)</li>
 <li>HP Ethernet 10Gb 2-port 530SFP+ Adapter</li>
 <li>HP Ethernet 10Gb 2-port 530T Adapter</li>
 <li>HP NC552SFP 10Gb 2-port Ethernet Server Adapter</li>
 <li>HP Ethernet 10Gb 2-port 560SFP+ Adapter </li>
 </ul>
 </section>
+  <section>
+    <p> For more information about the supported independent stand up adapters, see <xref
+          href="1.1commercial.install-GA-supportmatrix_supportedIHVhardware.dita" type="section">HP
+          Helion OpenStack 1.1 and 1.1.1: Supported IHV Hardware.</xref></p>
+  </section>
 <section id="sas"> <title>SAS</title>
 <ul>
 <li>HP Smart Array P222/512 FBWC 6Gb 1-port Int/1-port Ext SAS Controller</li>
@@ -189,16 +189,16 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="mezzanine-adapters"> <title>Mezzanine Adapters:</title>
 </section>
-<section id="flexible-lom"> <title>FlexibleLOM</title>
+<section id="hpflexiblelom"> <title>FlexibleLOM</title>
 <ul>
 <li>HP Flex-10 10Gb 2-port 530FLB Adapter</li>
 <li>HP Flex Fabric 10Gb 2-port 534FLB Adapter</li>
 <li>HP FlexFabric 10Gb 2-port 554FLB Adapter</li>
-<li>HP Ethernet 10Gb 2-port 560FLB Adapter</li>
+<li>HP Ethernet 10Gb 2-port 560FLB Adapter (not supported with HP Virtual Connect)</li>
 <li>HP FlexFabric 20Gb 2-port 650FLB Adapter </li>
 </ul>
 </section>
-<section id="nic-flex"> <title>NIC</title>
+<section id="hpnic"> <title>NIC</title>
 <ul>
 <li>HP Flex-10 10Gb 2-port 530M Adapter</li>
 <li>HP FlexFabric 10Gb 2-port 534M Adapter</li>
@@ -208,14 +208,14 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <li>HP FlexFabric 20Gb 2-port 650M Adapter </li>
 </ul>
 </section>
-<section id="sas-smartarray"> <title>SAS</title>
+<section id="hpsas"> <title>SAS</title>
 <ul>
 <li>HP Smart Array P244br/ 1GB FBWC 12 Gb 2-ports Int SAS Controller</li>
 <li>HP Smart Array P721m/2GB FBWC 6Gb 4-ports Ext Mezzanine SAS Controller</li>
 <li>HP Smart Array P731m/2GB FBWC 6Gb 4-ports Ext Mezzanine SAS Controller </li>
 </ul>
 </section>
-<section id="fibrechannel"> <title>FC</title>
+<section id="hpfc"> <title>FC</title>
 <ul>
 <li>HP LPe1205A 8Gb Fibre Channel Host Bus Adapter for BladeSystem c-Class</li>
 <li>HP LPe1605 16Gb Fibre Channel HBA for BladeSystem c-Class</li>
@@ -282,202 +282,198 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <p>The following table lists the minimum requirements required for installation of each type of node.</p>
 <table>
 <tgroup cols="5">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<colspec colname="col5"/>
-<thead>
-<row>
-<entry>Node Type</entry>
-<entry>Role Name</entry>
-<entry>Required Number</entry>
-<entry>Server Hardware</entry>
-<entry>Minimum Requirements and Recommendations</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry morerows="3"> Seed Cloud Host </entry>
-<entry morerows="3">N/A</entry>
-<entry morerows="3">1</entry>
-<entry>Disk </entry>
-<entry> 1TB - This host will store the downloaded images as well as act as a host where backup data is preserved.</entry>
-</row>
-<row>
-<entry> Memory </entry>
-<entry>16GB</entry>
-</row>
-<row>
-<entry>Network </entry>
-<entry> 1 x 10Gb NIC</entry>
-</row>
-<row>
-<entry>CPU </entry>
-<entry>4 CPU (64-bit) cores total (can be Intel or AMD)</entry>
-</row>
-<row>
-<entry morerows="3"> Undercloud Controller</entry>
-<entry morerows="3">Undercloud</entry>
-<entry morerows="3">1</entry>
-<entry>Disk </entry>
-<entry>512GB</entry>
-</row>
-<row>
-<entry>Memory </entry>
-<entry> 32GB </entry>
-</row>
-<row>
-<entry>Network </entry>
-<entry> 1 x 10Gb NIC with PXE support</entry>
-</row>
-<row>
-<entry>CPU </entry>
-<entry>8 CPU (64-bit) cores total (can be Intel or AMD) </entry>
-</row>
-<row>
-<entry morerows="3"> Overcloud Controller </entry>
-<entry morerows="3">OvercloudControl</entry>
-<entry morerows="3">3</entry>
-<entry>Disk </entry>
-<entry> 512GB
- </entry>
-</row>
-<row>
-<entry>Memory </entry>
-<entry>32GB </entry>
-</row>
-<row>
-<entry>Network </entry>
-<entry> 1 x 10Gb NIC with PXE support</entry>
-</row>
-<row>
-<entry>CPU </entry>
-<entry>8 CPU (64-bit) cores total (can be Intel or AMD) </entry>
-</row>
-<row>
-<entry morerows="3"> Overcloud Compute Server </entry>
-<entry morerows="3">OvercloudCompute</entry>
-<entry morerows="3">1-100</entry>
-<entry>Disk </entry>
-<entry> 512GB. 100GB is required for HP Moonshot Servers.</entry>
-
-</row>
-<row>
-<entry>Memory </entry>
-<entry>32GB - Memory must be sized based on the VM instances hosted by the Compute node.</entry>
-</row>
-<row>
-<entry>Network </entry>
-<entry> 1 x 10Gb NIC with PXE support</entry>
-</row>
-<row>
-<entry>CPU </entry>
-<entry>8 CPU (64-bit) cores total (can be Intel or AMD) with hardware virtualization support. The CPU cores must be sized based on the VM instances hosted by the Compute node. </entry>
-</row>
-<row>
-<entry morerows="3"> Overcloud Swift Server </entry>
-<entry morerows="3">OvercloudSwiftStorage</entry>
-<entry morerows="3">2</entry>
-<entry>Disk </entry>
-<entry> 512GB
-</entry>
-</row>
-<row>
-<entry>Memory </entry>
-<entry>32GB </entry>
-</row>
-<row>
-<entry>Network </entry>
-<entry> 1 x 10 Gb NIC with PXE support</entry>
-</row>
-<row>
-<entry>CPU </entry>
-<entry> 8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
-</row>
-<row>
-<entry morerows="3"> Overcloud VSA Server </entry>
-<entry morerows="3">OvercloudVSAStorage</entry>
-<entry morerows="3">2</entry>
-<entry>Disk </entry>
-<entry> 512GB
-</entry>
-</row>
-<row>
-<entry>Memory </entry>
-<entry>32GB </entry>
-</row>
-<row>
-<entry>Network </entry>
-<entry> 1 x 10 Gb NIC with PXE support</entry>
-</row>
-<row>
-<entry>CPU </entry>
-<entry> 6 CPU (64-bit) cores total (can be Intel or AMD)</entry>
-
-</row>
-<row>
-<entry morerows="3">Overcloud StoreVirtual VSA Server</entry>
-<entry morerows="3">OvercloudVSAAOStorage</entry>
-<entry morerows="3">3</entry>
-<entry>Disk </entry>
-<entry> 512GB
-</entry>
-</row>
-<row>
-<entry>Memory </entry>
-<entry>32GB </entry>
-</row>
-<row>
-<entry>Network </entry>
-<entry> 1 x 10 Gb NIC with PXE support</entry>
-</row>
-<row>
-<entry>CPU </entry>
-<entry> 8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
-</row>
-<row>
-<entry morerows="3">Scaleout Swift Storage</entry>
-<entry morerows="3">OvercloudSOSwiftStorage</entry>
-<entry morerows="3">0</entry>
-<entry>Disk </entry>
-<entry> 512GB
-</entry>
-</row>
-<row>
-<entry>Memory </entry>
-<entry>32GB </entry>
-</row>
-<row>
-<entry>Network </entry>
-<entry> 1 x 10 Gb NIC with PXE support</entry>
-</row>
-<row>
-<entry>CPU </entry>
-<entry> 8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
-</row>
-<row>
-<entry morerows="3">Scaleout Swift Proxy</entry>
-<entry morerows="3">OvercloudSOSwiftProxy</entry>
-<entry morerows="3">0</entry>
-<entry>Disk </entry>
-<entry> 512GB
-</entry>
-</row>
-<row>
-<entry>Memory </entry>
-<entry>32GB </entry>
-</row>
-<row>
-<entry>Network </entry>
-<entry> 1 x 10 Gb NIC with PXE support</entry>
-</row>
-<row>
-<entry>CPU </entry>
-<entry> 8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <colspec colname="col4" colsep="1" rowsep="1"/>
+          <colspec colname="col5" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry>Node Type</entry>
+              <entry>Role Name</entry>
+              <entry>Required Number</entry>
+              <entry>Server Hardware</entry>
+              <entry>Minimum Requirements and Recommendations</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry morerows="3"> Seed Cloud Host </entry>
+              <entry morerows="3">N/A</entry>
+              <entry morerows="3">1</entry>
+              <entry>Disk </entry>
+              <entry> 1TB - This host will store the downloaded images as well as act as a host
+                where backup data is preserved.</entry>
+            </row>
+            <row>
+              <entry> Memory </entry>
+              <entry>16GB</entry>
+            </row>
+            <row>
+              <entry>Network </entry>
+              <entry> 1 x 10Gb NIC</entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry>4 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+            </row>
+            <row>
+              <entry morerows="3"> Undercloud Controller</entry>
+              <entry morerows="3">Undercloud</entry>
+              <entry morerows="3">1</entry>
+              <entry>Disk </entry>
+              <entry>512GB</entry>
+            </row>
+            <row>
+              <entry>Memory </entry>
+              <entry> 32GB </entry>
+            </row>
+            <row>
+              <entry>Network </entry>
+              <entry> 1 x 10Gb NIC with PXE support</entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry>8 CPU (64-bit) cores total (can be Intel or AMD) </entry>
+            </row>
+            <row>
+              <entry morerows="3"> Overcloud Controller </entry>
+              <entry morerows="3">OvercloudControl</entry>
+              <entry morerows="3">3</entry>
+              <entry>Disk </entry>
+              <entry> 512GB </entry>
+            </row>
+            <row>
+              <entry>Memory </entry>
+              <entry>32GB </entry>
+            </row>
+            <row>
+              <entry>Network </entry>
+              <entry> 1 x 10Gb NIC with PXE support</entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry>8 CPU (64-bit) cores total (can be Intel or AMD) </entry>
+            </row>
+            <row>
+              <entry morerows="3"> Overcloud Compute Server </entry>
+              <entry morerows="3">OvercloudCompute</entry>
+              <entry morerows="3">1-100</entry>
+              <entry>Disk </entry>
+              <entry> 512GB. 100GB is required for HP Moonshot Servers.</entry>
+            </row>
+            <row>
+              <entry>Memory </entry>
+              <entry>32GB - Memory must be sized based on the VM instances hosted by the Compute
+                node.</entry>
+            </row>
+            <row>
+              <entry>Network </entry>
+              <entry> 1 x 10Gb NIC with PXE support</entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry>8 CPU (64-bit) cores total (can be Intel or AMD) with hardware virtualization
+                support. The CPU cores must be sized based on the VM instances hosted by the Compute
+                node. </entry>
+            </row>
+            <row>
+              <entry morerows="3"> Overcloud Swift Server </entry>
+              <entry morerows="3">OvercloudSwiftStorage</entry>
+              <entry morerows="3">2</entry>
+              <entry>Disk </entry>
+              <entry> 512GB </entry>
+            </row>
+            <row>
+              <entry>Memory </entry>
+              <entry>32GB </entry>
+            </row>
+            <row>
+              <entry>Network </entry>
+              <entry> 1 x 10 Gb NIC with PXE support</entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry> 8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+            </row>
+            <row>
+              <entry morerows="3"> Overcloud VSA Server </entry>
+              <entry morerows="3">OvercloudVSAStorage</entry>
+              <entry morerows="3">0</entry>
+              <entry>Disk </entry>
+              <entry> 512GB </entry>
+            </row>
+            <row>
+              <entry>Memory </entry>
+              <entry>32GB </entry>
+            </row>
+            <row>
+              <entry>Network </entry>
+              <entry> 1 x 10 Gb NIC with PXE support</entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry> 6 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+            </row>
+            <row>
+              <entry morerows="3">Overcloud StoreVirtual VSA Server</entry>
+              <entry morerows="3">OvercloudVSAAOStorage</entry>
+              <entry morerows="3">0</entry>
+              <entry>Disk </entry>
+              <entry> 512GB </entry>
+            </row>
+            <row>
+              <entry>Memory </entry>
+              <entry>32GB </entry>
+            </row>
+            <row>
+              <entry>Network </entry>
+              <entry> 1 x 10 Gb NIC with PXE support</entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry> 8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+            </row>
+            <row>
+              <entry morerows="3">Scaleout Swift Storage</entry>
+              <entry morerows="3">OvercloudSOSwiftStorage</entry>
+              <entry morerows="3">0</entry>
+              <entry>Disk </entry>
+              <entry> 512GB </entry>
+            </row>
+            <row>
+              <entry>Memory </entry>
+              <entry>32GB </entry>
+            </row>
+            <row>
+              <entry>Network </entry>
+              <entry> 1 x 10 Gb NIC with PXE support</entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry> 8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+            </row>
+            <row>
+              <entry morerows="3">Scaleout Swift Proxy</entry>
+              <entry morerows="3">OvercloudSOSwiftProxy</entry>
+              <entry morerows="3">0</entry>
+              <entry>Disk </entry>
+              <entry> 512GB </entry>
+            </row>
+            <row>
+              <entry>Memory </entry>
+              <entry>32GB </entry>
+            </row>
+            <row>
+              <entry>Network </entry>
+              <entry> 1 x 10 Gb NIC with PXE support</entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry> 8 CPU (64-bit) cores total (can be Intel or AMD)</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 <p>
   <b>Notes:</b>
@@ -554,15 +550,23 @@ or
 <p>In addition to above you would need the below softwares.</p>
 <table>
 <tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<tbody>
-<row>
-<entry>Software </entry>
-<entry>Version</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <tbody>
+            <row>
+              <entry>Software </entry>
+              <entry>Version</entry>
+            </row>
+            <row>
+              <entry>V Center Server</entry>
+              <entry> Version 5.1 or higher. Enterprise Plus license is required </entry>
+            </row>
+            <row>
+              <entry>ESXi</entry>
+              <entry>Version 5.1 higher</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 <p>
 <b>Note</b>: VCenter server version 6.0 is not qualified with this release.</p>
@@ -578,100 +582,88 @@ or
 <p>A <b>Certified</b> Guest OS has been officially tested by the OS vendor, or by HP under the vendor's authorized program, and will be supported by the OS vendor as a Nova compute VM on HP Helion OpenStack</p>
 <table>
 <tgroup cols="3">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<tbody>
-<row>
-<entry>OS</entry>
-<entry>Verified</entry>
-<entry>Certified</entry>
-</row>
-<row>
-<entry>Windows Server 2012
-</entry>
-<entry>-</entry>
-<entry>Yes</entry>
-</row>
-<row>
-<entry>Windows Server 2008 R2
-</entry>
-<entry>-</entry>
-<entry>Yes</entry>
-</row>
-<row>
-<entry>Windows Server 2008
-</entry>
-<entry>-</entry>
-<entry>Yes</entry>
-</row>
-<row>
-<entry> Ubuntu 14.10 
-</entry>
-<entry>Yes</entry>
-<entry>No</entry>
-</row>
-<row>
-<entry> Ubuntu 14.04 LTS
- </entry>
-<entry>Yes</entry>
-<entry>No</entry>
-</row>
-<row>
-<entry>Debian 8 (Jessie Beta 2)
-</entry>
-<entry>Yes</entry>
-<entry>N/A</entry>
-</row>
-<row>
-<entry>Debian 7.6
-</entry>
-<entry>Yes</entry>
-<entry>N/A</entry>
-</row>
-<row>
-<entry>CentOS 7</entry>
-<entry>Yes</entry>
-<entry>N/A</entry>
-</row>
-<row>
-<entry> CentOS 6.5
-</entry>
-<entry>Yes</entry>
-<entry>N/A</entry>
-</row>
-<row>
-<entry>RHEL 7.0</entry>
-<entry>Yes</entry>
-<entry>No</entry>
-</row>
-<row>
-<entry> 
- RHEL 6.6
- </entry>
-<entry>Yes</entry>
-<entry>No</entry>
-</row>
-<row>
-<entry>
- Fedora
- </entry>
-<entry>No</entry>
-<entry>-</entry>
-</row>
-<row>
-<entry>SLES</entry>
-<entry>No</entry>
-<entry>-</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <tbody>
+            <row>
+              <entry>OS</entry>
+              <entry>Verified</entry>
+              <entry>Certified</entry>
+            </row>
+            <row>
+              <entry>Windows Server 2012 </entry>
+              <entry>-</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>Windows Server 2008 R2 </entry>
+              <entry>-</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry>Windows Server 2008 </entry>
+              <entry>-</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry> Ubuntu 14.10 </entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry> Ubuntu 14.04 LTS </entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry>Debian 8 (Jessie Beta 2) </entry>
+              <entry>Yes</entry>
+              <entry>N/A</entry>
+            </row>
+            <row>
+              <entry>Debian 7.6 </entry>
+              <entry>Yes</entry>
+              <entry>N/A</entry>
+            </row>
+            <row>
+              <entry>CentOS 7</entry>
+              <entry>Yes</entry>
+              <entry>N/A</entry>
+            </row>
+            <row>
+              <entry> CentOS 6.5 </entry>
+              <entry>Yes</entry>
+              <entry>N/A</entry>
+            </row>
+            <row>
+              <entry>RHEL 7.0</entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry> RHEL 6.6 </entry>
+              <entry>Yes</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry> Fedora </entry>
+              <entry>No</entry>
+              <entry>-</entry>
+            </row>
+            <row>
+              <entry>SLES</entry>
+              <entry>No</entry>
+              <entry>-</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="next"> <title>Next Step</title>
 <p>Review the <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita" >Technical Overview</xref>.</p>
 <p>
-  <xref href="#topic12282"> Return to Top </xref>
+  <xref type="section" href="#topic12282"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

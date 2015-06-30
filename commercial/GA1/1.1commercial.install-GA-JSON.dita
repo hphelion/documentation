@@ -92,10 +92,8 @@ After you modify a JSON file, you might want to validate the structure by runnin
 <p>Save the file on the seed cloud host.</p>
 </li>
 <li>
-<p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section">Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
-</li>
-</ol>
+  <xref href="1.1commercial.install-GA-prereqs.dita#topic9786/csv">Return to HP Helion OpenStack Installation Prerequisites</xref></li>
+     </ol>
 </section>
 <section id="definition-of-environment-variables"> <title>Definition of Environment variables</title>
 <p>The following is a list of the values that can be specified in the JSON environment variables file.</p>
@@ -444,7 +442,7 @@ If this is the same value as <codeph>neutron/overcloud_public_interface</codeph>
 </codeph>
 </codeblock>
 <p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#envars" type="section">Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
+  <xref href="1.1commercial.install-GA-prereqs.dita#topic9786/envars">Return to HP Helion OpenStack Installation Prerequisites</xref></p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

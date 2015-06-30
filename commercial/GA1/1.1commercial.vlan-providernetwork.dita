@@ -88,9 +88,7 @@
 <li>
 <p>Create a file <codeph>envfile</codeph> with the following export variables. Modify the IPs based on your specifications.</p>
 
-<codeblock>
-
-    export BRIDGE_INTERFACE=em2
+<codeblock>    export BRIDGE_INTERFACE=em2
     export BM_NETWORK_SEED_IP=192.168.200.2
     export BM_NETWORK_CIDR=192.168.200.0/24
     export BM_NETWORK_GATEWAY=192.168.200.1
@@ -118,9 +116,7 @@
     export UNDERCLOUD_CODN_HTTPS_PROXY=http://16.85.88.10:8080
     export OVERCLOUD_CODN_HTTP_PROXY=http://16.85.88.10:8080
     export OVERCLOUD_CODN_HTTPS_PROXY=http://16.85.88.10:8080
-    export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
-
-</codeblock>
+    export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24</codeblock>
 </li>
 <li>
 <p>Modify the <codeph>dhcp_agent.ini</codeph> configuration.</p>
@@ -130,8 +126,7 @@
 <p>
 <b>Overcloud</b> - Edit the <codeph>tripleo/hp_passthrough/overcloud_neutron_dhcp_agent.json</codeph> file to add the parameter settings as defined in the following example and change the DNS servers specific to your environment.</p>
 
-<codeblock>
-<codeph>{"dhcp_agent":
+<codeblock><codeph>{"dhcp_agent":
   {"config":
     [
       {"section":"DEFAULT",
@@ -145,15 +140,13 @@
     ]
   }
 }
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </li>
 <li>
 <p>
 <b>Undercloud</b> - Edit the <codeph>tripleo/hp_passthrough/undercloud_neutron_dhcp_agent.json</codeph> file to add the parameter settings as defined in the following example and change the DNS servers specific to your environment.</p>
 
-<codeblock>
-<codeph>{"dhcp_agent":
+<codeblock><codeph>{"dhcp_agent":
   {"config":
     [
       {"section":"DEFAULT",
@@ -166,16 +159,14 @@
     ]
   }
 }
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </li>
 </ul>
 </li>
 <li>
 <p>To update ml2.conf, edit <codeph>tripleo/hp_passthrough/overcloud_neutron_ml2_conf.json</codeph> and add network_vlan_ranges specific to your environment. An example is given below:</p>
 
-<codeblock>
-<codeph>{
+<codeblock><codeph>{
    "ml2": {
         "config": [
             {
@@ -190,7 +181,7 @@
                 "values": [
                     {
                         "option": "tenant_network_types",
-                        "value": "vlan"
+                        "value": "vxlan"
                     }
                 ]
                 "section": "ml2_type_vlan",
@@ -201,34 +192,26 @@
                     }
                 ]
             },
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </li>
 <li>
 <p>To create the Seed VM, do the following:</p>
 
-<codeblock>
-<codeph># source envfile
+<codeblock><codeph># source envfile
 # bash -x tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed | tee  create-seed.log
-
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </li>
 <li>
 <p>Copy environment file (created in step 2) to Seed and do the following from within the Seed:</p>
 
-<codeblock>
-<codeph># ssh into the Seed VM &lt;IP Address&gt;  
-</codeph>
-</codeblock>
+<codeblock><codeph># ssh into the Seed VM &lt;IP Address&gt;  
+</codeph></codeblock>
 
 <p>For example <codeph>&lt;192.168.200.2&gt;</codeph>
 </p>
 
-<codeblock>
-<codeph># source envfile
-</codeph>
-</codeblock>
+<codeblock><codeph># source envfile
+</codeph></codeblock>
 </li>
 <li>
 <p>Create the <codeph>baremetal.csv</codeph> file with the required number of nodes.</p>
@@ -250,70 +233,78 @@ Where `<mac_address>` is the MAC address of the network interface from which to 
 <li>
 <p>To install and configure the Undercloud and Overcloud, run the following command from /root.</p>
 
-<codeblock>
-<codeph># bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-demo | tee installer.log
-</codeph>
-</codeblock>
+<codeblock><codeph># bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-demo | tee installer.log
+</codeph></codeblock>
 </li>
 </ol>
 <!--resolve DOCS-1203 here -->
 </section>
 <section id="verifying-the-installation"> <title>Verifying the installation</title>
-<ol>
-<li>
-<p>Log into the Horizon dashboard and create two projects (Tenant A and Tenant B) and also the users for these projects.</p>
-</li>
-<li>
-<p>Run the neutron command as administrator.</p>
-</li>
-<li>
-<p>Check that the default Helion tenant network is VxLAN by entering:</p>
+<ol id="ol_m2j_11m_ns">
+        <li>
+          <p>Log into the Horizon dashboard and create two projects (Tenant A and Tenant B) and also
+            the users for these projects.</p>
+        </li>
+        <li>
+          <p>Run the neutron command as administrator.</p>
+        </li>
+        <li>
+          <p>Check that the default networks (<codeph>default-net</codeph> and
+              <codeph>ext-net</codeph>) created during installation exist by entering:</p>
+          <codeblock><codeph>neutron net-show default-net
+ neutron net-show ext-net
+</codeph></codeblock>
+        </li>
+        <li>
+          <p>If these two networks exist, they have consumed VLAN IDs 300 and 301. Delete these two
+            networks as you do not need them by entering:</p>
+          <codeblock>neutron delete default-net
+neutron delete ext-net</codeblock>
+        </li>
+        <li>
+          <p>As administrator, create two Provider networks by entering:</p>
+          <codeblock>neutron net-create --provider:physical_network=physnet1 --provider:network_type=vlan --provider:segmentation_id=300  vlan300 
+neutron subnet-create vlan300 192.168.100.0/24 &amp;#45;gateway 192.168.100.1
 
-<codeblock>
-<codeph>neutron net-show default-net
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>As administrator, create two Provider networks by entering:</p>
-
-<codeblock>
-<codeph># neutron net-create --provider:physical_network=physnet1 --provider:network_type=vlan --provider:segmentation_id=300  vlan300 
-# neutron subnet-create vlan300 192.168.100.0/24 &amp;#45;gateway 192.168.100.1
-
-# neutron net-create --provider:physical_network=physnet1 --provider:network_type=vlan --provider:segmentation_id=301  vlan301  
-# neutron subnet-create vlan301 192.168.101.0/24 &amp;#45;gateway 192.168.101.1
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Launch two instances in the <codeph>vlan300</codeph> network and two in the <codeph>vlan301</codeph> network.</p>
-</li>
-<li>
-<p>Validate that the VMs in the same network are able to ping one another but unable to ping other instances in the other network.</p>
-</li>
-<li>
-<p>Validate if you can ping the VMs from the KVM host.</p>
-</li>
-<li>
-<p>Delete the four instances created by entering:</p>
-
-<codeblock>
-<codeph>nova delete 
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>As administrator, remove the two provider VLAN networks by entering:</p>
-
-<codeblock>
-<codeph>neutron net-delete
-</codeph>
-</codeblock>
-</li>
-</ol>
+neutron net-create --provider:physical_network=physnet1 --provider:network_type=vlan --provider:segmentation_id=301  vlan301  
+neutron subnet-create vlan301 192.168.101.0/24 &amp;#45;gateway 192.168.101.1</codeblock>
+        </li>
+      </ol>
+      <ol id="ol_jjj_11m_ns">
+        <li>
+          <p>Launch two instances in the <codeph>vlan300</codeph> network and two in the
+              <codeph>vlan301</codeph> network.</p>
+        </li>
+        <li>
+          <p>Validate that the VMs in the same network are able to ping one another but unable to
+            ping other instances in the other network.</p>
+        </li>
+        <li>
+          <p>Validate if you can ping the VMs from the KVM host.</p>
+        </li>
+        <li>
+          <p>Delete the four instances created by entering:</p>
+          <codeblock><codeph>nova delete 
+</codeph></codeblock>
+        </li>
+        <li>
+          <p>As administrator, remove the two provider VLAN networks by entering:</p>
+          <codeblock>neutron net-delete vlan300
+neutron net-delete vlan301</codeblock>
+        </li>
+      </ol>
+      <p><b>Note</b>: As administrator, you can create a VLAN network outside of your defined VLAN
+        by entering:
+        <codeblock>neutron net-create --provider:physical_network=physnet1 --provider:network_type=vlan --provider:segmentation_id=900 vlan900</codeblock></p> 
 <p>
-<b>Note</b>: The tenant network type is Vxlan. The <codeph>default-net</codeph> and <codeph>ext-net</codeph> should be Vxlan tenant networks, and do not conflict with the provider VLAN network.</p>
+        <b>Note</b>: By default, Helion OpenStack 1.01, 1.1, and 1.1.1 Helion OpenStack creates a
+          <codeph>default-net</codeph> and <codeph>ext-net</codeph> which take the first two VLAN
+        IDs from  your defined VLAN range. If you only define two VLANs for your Helion OpenStack
+        installation, you will not be able to create your provider network because
+          <codeph>default-net</codeph> and <codeph>ext-net</codeph> have already consumed these two
+        VLAN IDs. This is why you must first delete the <codeph>default-net</codeph> and
+          <codeph>ext-net</codeph> to release the two VLAN IDs so you can create your provider
+        network. </p>
 <p>
   <xref href="#topic8003"> Return to Top </xref>
 </p>

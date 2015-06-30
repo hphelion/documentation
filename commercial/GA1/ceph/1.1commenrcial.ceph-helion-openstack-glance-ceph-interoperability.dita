@@ -38,28 +38,15 @@
 </p>
 <p>The following steps are automatically performed when you download and execute <codeph>Ceph_client</codeph> script from the controller and compute nodes as per the readme file in the tar file.</p>
 <ol>
-<li>
-<p>Create a new Ceph pool to store Glance images.</p>
-
-<codeblock>
-<codeph>ceph osd pool create &lt;glance pool name&gt; &lt;pg-num&gt;
-</codeph>
-</codeblock>
-
-<p>Example:</p>
-
-<codeblock>
-<codeph>ceph osd pool create helion-ceph-glance 100
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Change <codeph>glance-api.conf</codeph> to reference the Ceph rbd storage only on overcloud controller nodes.</p>
-
-<p>The following sample displays the <codeph>glance-api.conf</codeph> references to the Ceph rbd storage only on overcloud controller nodes.</p>
-
-<codeblock>
-<codeph># For ceph integration
+<li>Create a new Ceph pool to store Glance
+                    images.<codeblock><codeph>ceph osd pool create &lt;glance pool name&gt; &lt;pg-num&gt;
+</codeph></codeblock><p>Example:</p><codeblock><codeph>ceph osd pool create helion-ceph-glance 100
+</codeph></codeblock></li>
+<li>Change <codeph>glance-api.conf</codeph> to reference the Ceph rbd storage only on overcloud
+                controller nodes.<p>The following sample displays the
+                        <codeph>glance-api.conf</codeph> references to the Ceph rbd storage only on
+                    overcloud controller
+                nodes.</p><codeblock><codeph># For ceph integration
 
 default_store = rbd
 rbd_store_user = glance
@@ -70,98 +57,59 @@ known_stores = glance.store.filesystem.Store, glance.store.swift.Store, glance.s
 #Enable debug for troubleshooting only
 #debug = True
 #verbose = True
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create symbolic or softlinks to the relevant files on overcloud controller nodes.</p>
-
-<codeblock>
-<codeph>ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
+</codeph></codeblock></li>
+<li>Create symbolic or softlinks to the relevant files on overcloud controller
+                nodes.<codeblock><codeph>ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
 ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Restart Glance services on all the overcloud controller nodes.</p>
-
-<codeblock>
-<codeph>service glance-api restart
+</codeph></codeblock></li>
+<li>Restart Glance services on all the overcloud controller
+                nodes.<codeblock><codeph>service glance-api restart
 service glance-reg restart
 glance-manage db_sync
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create a sample Glance RAW image on any controller nodes.</p>
-
-<codeblock>
-<codeph>glance image-create --name RImg --is-public=true --disk-format=raw --container-format=bare --file cirros-0.3.2-x86_64-disk.raw
-</codeph>
-</codeblock>
-
-<p>Raw data format is used with RBD for instant image snapshots and protection. For more details, refer to <xref href="http://ceph.com/docs/master/rbd/qemu-rbd/?highlight=raw" scope="external" format="html" >ceph documentation</xref>
-</p>
-
-<p>For the image conversion, use a conversion tool like qemu-img to convert one image format to another.</p>
-
-<p>For example:</p>
-
-<codeblock>
-<codeph>qemu-img convert -f {source-format} -O {output-format} {source-filename} {output-filename}
+</codeph></codeblock></li>
+<li>Create a sample Glance RAW image on any controller
+                    nodes.<codeblock><codeph>glance image-create --name RImg --is-public=true --disk-format=raw --container-format=bare --file cirros-0.3.2-x86_64-disk.raw
+</codeph></codeblock><p>Raw
+                    data format is used with RBD for instant image snapshots and protection. For
+                    more details, refer to <xref
+                        href="http://ceph.com/docs/master/rbd/qemu-rbd/?highlight=raw"
+                        scope="external" format="html">ceph documentation</xref>
+                </p><p>For the image conversion, use a conversion tool like qemu-img to convert one
+                    image format to another.</p><p>For
+                example:</p><codeblock><codeph>qemu-img convert -f {source-format} -O {output-format} {source-filename} {output-filename}
 
 qemu-img convert -f qcow2 -O raw cirros-0.3.2-x86_64-disk.img cirros-0.3.2-x86_64-disk.raw
 
 glance image-create --name RImg --is-public=true --disk-format=raw --container-format=bare --file cirros-0.3.2-x86_64-disk.raw
 </codeph>
-</codeblock>
-</li>
-<li>
-<p>Ensure that the uploaded Glance image is available in the Dashboard (Horizon) UI and correctly stored in the appropriate pool in Ceph.</p>
-
-<codeblock>
-<codeph>rbd ls -l &lt;glance pool name&gt;
+</codeblock></li>
+<li>Ensure that the uploaded Glance image is available in the Dashboard (Horizon) UI and correctly
+                stored in the appropriate pool in
+                    Ceph.<codeblock><codeph>rbd ls -l &lt;glance pool name&gt;
 
 glance image-list
-</codeph>
-</codeblock>
-
-<p>You can also login to Horzion UI and view the changes.</p>
-</li>
-<li>
-<p>If problem occur in any of the above steps, do the following:</p>
-
-<ul>
-<li>Enable logging in <codeph>glance-api.conf</codeph>  </li>
-<li>Restart Glance services and re-run the problem step. </li>
-<li>Collect Glance debug logs in the  <codeph>/var/log/glance</codeph> directory </li>
-<li>Contact HP support team for inputs. </li>
-</ul>
-</li>
+</codeph></codeblock><p>You
+                    can also login to Horzion UI and view the changes.</p></li>
+<li>If problem occur in any of the above steps, do the following:<ul>
+                    <li>Enable logging in <codeph>glance-api.conf</codeph>
+                    </li>
+                    <li>Restart Glance services and re-run the problem step. </li>
+                    <li>Collect Glance debug logs in the <codeph>/var/log/glance</codeph> directory </li>
+                    <li>Contact HP support team for inputs. </li>
+                </ul></li>
 </ol>
 <section id="ceph-glance-clone-copy-on-write"> <title>Ceph Glance Clone Copy on Write</title>
 <p>To clone an image quickly and easily, Ceph implements Clone Copy on Write from the Protected Snapshot. During the image import in Glance, images are snapshotted and protected, clones are quickly created from the snapshot and a volume is created from an image. For more details, see <xref href="http://ceph.com/docs/master/dev/rbd-layering/?highlight=rbd%20layering" scope="external" format="html" >http://ceph.com/docs/master/dev/rbd-layering/?highlight=rbd%20layering</xref>.</p>
 <p>The following steps are automatically performed when you download and execute <codeph>Ceph_client</codeph> script from the controller and compute nodes as per the readme file in the tar file.</p>
 <ol>
-<li>
-<p>Edit the <codeph>cinder.conf</codeph> file on all overcloud controller nodes.</p>
-
-<codeblock>
-<codeph>glance_api_version=2
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Restart the Cinder services on all overcloud controller nodes.</p>
-
-<codeblock>
-<codeph>service cinder-volume restart
+<li>Edit the <codeph>cinder.conf</codeph> file on all overcloud controller
+                    nodes.<codeblock><codeph>glance_api_version=2
+</codeph></codeblock></li>
+<li>Restart the Cinder services on all overcloud controller
+                    nodes.<codeblock><codeph>service cinder-volume restart
 service cinder-scheduler restart
 service cinder-api restart
-</codeph>
-</codeblock>
-
-<!--
+</codeph></codeblock><!--
 3. To create Glance image, enter:
 
     glance image-create
@@ -192,16 +140,15 @@ For example:
 
     rbd children <glance pool name>/<glance-image id>@<snap name>
 --></li>
-<li>
-<p>If you have any problems in any of the above steps, do the following:</p>
-
-<ul>
-<li>Enable logging in <codeph>glance-api.conf</codeph> and <codeph>cinder.conf</codeph>. </li>
-<li>Restart Glance and Cinder services and re-run problem step. </li>
-<li>Collect Glance debug logs in <codeph>/var/log/glance</codeph> directory and Cinder debug logs in <codeph>/var/log/upstart</codeph> directory.</li>
-<li>Contact HP support team for inputs.</li>
-</ul>
-</li>
+<li>If you have any problems in any of the above steps, do the following:<ul>
+                        <li>Enable logging in <codeph>glance-api.conf</codeph> and
+                                <codeph>cinder.conf</codeph>. </li>
+                        <li>Restart Glance and Cinder services and re-run problem step. </li>
+                        <li>Collect Glance debug logs in <codeph>/var/log/glance</codeph> directory
+                            and Cinder debug logs in <codeph>/var/log/upstart</codeph>
+                            directory.</li>
+                        <li>Contact HP support team for inputs.</li>
+                    </ul></li>
 </ol>
 </section>
 <section id="next-steps"> <title>Next Steps</title>
