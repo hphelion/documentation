@@ -120,8 +120,10 @@
       </topichead>
     </topicref>
     <topichead navtitle="Post-Installation Tasks">
-      <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"/>
+      <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"
+        navtitle="Storage Options" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"
+        navtitle="Tracking Masked IPs when Using NAT" locktitle="yes"/>
     </topichead>
     <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita">
       <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
