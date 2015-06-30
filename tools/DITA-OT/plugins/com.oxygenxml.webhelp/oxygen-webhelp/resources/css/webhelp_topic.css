@@ -33,7 +33,7 @@ available in the base directory of this Oxygen Webhelp plugin.
     font-style:normal}
 
 p {
-    font-family: HPSimplified !important;
+    font-family: HPSimplified, sans-serif !important;
 }
 /* Changing topic background to $hp-gray-5: #f2f2f2 PFletcher 6/11/15 */
 /* Reverted back to white per Dionysia's request 6/17/15 - JSB */
@@ -42,7 +42,7 @@ body {
   background-color:white;
   /*background-color:#f2f2f2;*/
   /* font-family: arial, helvetica, sans-serif; */
-  font-family: HPSimplified !important;
+  font-family: HPSimplified, sans-serif !important;
   line-height:18px;
   font-size:12px;
 }
@@ -61,20 +61,20 @@ a.link {
 	/* Added by P Fletcher 6/11: Links are $hp-accessible-blue: #007dba */
 	color: #007dba;
 	/* Added by P Fletcher 6/26: Use HPSimplified for whole site */
-	font-family: HPSimplified !important;
+	font-family: HPSimplified, sans-serif !important;
 }
 
 a:visited{
   color:#660066; 
   /* Added by P Fletcher 6/26: Use HPSimplified for whole site */
-	font-family: HPSimplified !important;
+	font-family: HPSimplified, sans-serif !important;
 }
 a:hover{
 	/* Changed by P Fletcher 6/11: Link hover color is $hp-hover-blue: #006699 */
   /*color:red;*/
   color:#006699;
   /* Added by P Fletcher 6/26: Use HPSimplified for whole site */
-	font-family: HPSimplified !important;
+	font-family: HPSimplified, sans-serif !important;
 }
 /* End Anchors */
 
