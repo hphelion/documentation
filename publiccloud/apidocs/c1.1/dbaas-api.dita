@@ -1804,8 +1804,7 @@ flavorRef is provided. It restarts MySQL in the process.</p>
 <section id="database_list"> <title>4.5.4.2 List Databases</title>
 </section>
 <section id="get-instancesinstance-iddatabases"> <title>GET /instances/{instance_id}/databases</title>
-  <p>Lists all databases within the specified instance.  The response will be limited to twenty (20) results.  <xref href="nova-api.dita#topic310608/Pagination" type="section" >Pagination</xref> for more details</i>
-</p>
+<p>Lists all databases within the specified instance.  The response will be limited to twenty (20) results.  <i>See <xref href="nova-api.dita#topic310608/Pagination" type="section" >Pagination</xref> for more details</i></p>
 <p>
 <b>Request Data</b>
 <!--A BR tag was used here in the original source.-->
@@ -1813,7 +1812,7 @@ This call does not require a request body.</p>
 <p>
 <b>URL Parameters</b>
 <!--A BR tag was used here in the original source.-->
-  You can utilize pagination to filter your response.  <xref href="nova-api.dita#topic310608/Pagination" type="section" >Pagination</xref> for more details</i>
+  You can utilize pagination to filter your response.  <i>See <xref href="nova-api.dita#topic310608/Pagination" type="section" >Pagination</xref> for more details</i>
 </p>
 <p>
   <b>Success Response</b>
