@@ -133,9 +133,10 @@
       <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"
         navtitle="Tracking Masked IPs when Using NAT" locktitle="yes"/>
     </topichead>
-    <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita">
+    <topichead navtitle="High Availibility">
+      <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita"/>
       <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
-    </topicref>
+    </topichead>
     <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita" navtitle="Troubleshooting"
       locktitle="yes">
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"
