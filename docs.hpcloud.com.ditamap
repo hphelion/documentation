@@ -301,38 +301,59 @@
         <topicref
           href="commercial/GA1/ceph/1.1commercial.ceph-cluster-client-node-configuration-ansible.dita"
           navtitle="Configuring Ceph Cluster and Client Nodes Using Ansible" locktitle="yes"/>
-        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-monitoring.dita"/>
+        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-monitoring.dita"
+          navtitle="Ceph Monitoring" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/ceph/1.1commercial.ceph-helion-openstack-ceph-storage-administration.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-dmz-ha-proxy.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-client.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-manual-install.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-authentication.dita"/>
+          href="commercial/GA1/ceph/1.1commercial.ceph-helion-openstack-ceph-storage-administration.dita"
+          navtitle="Ceph Administration Services" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-dmz-ha-proxy.dita"
+          navtitle="Ceph RADOS Gateway - DMZ HAProxy" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-client.dita"
+          navtitle="Ceph RADOS Gateway - Client" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-manual-install.dita"
+          navtitle="Manually Bringing up Your Ceph Cluster" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-authentication.dita"
+          navtitle="CEPHX Authentication" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/ceph/1.1commercial-ceph-hp-helion-openstack-ceph-configuration.dita"/>
+          href="commercial/GA1/ceph/1.1commercial-ceph-hp-helion-openstack-ceph-configuration.dita"
+          navtitle="Ceph Configuration" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/ceph/1.1commenrcial.ceph-helion-openstack-glance-ceph-interoperability.dita"/>
+          href="commercial/GA1/ceph/1.1commenrcial.ceph-helion-openstack-glance-ceph-interoperability.dita"
+          navtitle="Glance-Ceph Interoperability" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/ceph/1.1commenrcial.ceph-helion-openstack-ceph-hp-helion-openstack-cinder-storage.dita"/>
+          href="commercial/GA1/ceph/1.1commenrcial.ceph-helion-openstack-ceph-hp-helion-openstack-cinder-storage.dita"
+          navtitle="Cinder Ceph Storage" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/ceph/1.1commercial-ceph-helion-openstack-nova-ceph-Storage.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-pools.dita"/>
+          href="commercial/GA1/ceph/1.1commercial-ceph-helion-openstack-nova-ceph-Storage.dita"
+          navtitle="Ceph Nova Storage" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway.dita"
+          navtitle="Ceph RADOS Gateway" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-pools.dita"
+          navtitle="Gateway Pools, Users, Access and Keys" locktitle="yes"/>
         <topicref
-          href="commercial/GA1/ceph/1.1commercia.ceph-high-availability-RADOSGW-authentication.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-glossary.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-related-topics.dita"/>
-        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"/>
+          href="commercial/GA1/ceph/1.1commercia.ceph-high-availability-RADOSGW-authentication.dita"
+          navtitle="Ceph RADOS Gateway - Keystone Authentication" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceph/1.1commercial.ceph-glossary.dita"
+          navtitle="Ceph Glossary" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-related-topics.dita"
+          navtitle="Ceph Related Topics" locktitle="yes"/>
+        <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"
+          navtitle="Ceph Troubleshooting" locktitle="yes"/>
         <topicref
           href="commercial/GA1/ceph/1.1commenrcial.ceph-configuration-recovery-and-backup-procedure-helion-nodes.dita"
           navtitle="Ceph Backup and Recovery" locktitle="yes"/>
       </topicref>
-      <topicref href="commercial/GA1/1.1commerical.services-sirius-overview.dita">
-        <topicref href="commercial/GA1/1.1commercial.sirius-cli.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.sirius-cli-workflow.dita"/>
+      <topicref href="commercial/GA1/1.1commerical.services-sirius-overview.dita"
+        navtitle="Sirius Service - Overview" locktitle="yes">
+        <topicref href="commercial/GA1/1.1commercial.sirius-cli.dita"
+          navtitle="Configuring Storage Using Sirius" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commercial.sirius-cli-workflow.dita" locktitle="yes"
+          navtitle="Sirius CLI Workflow"/>
       </topicref>
-      <topicref href="commercial/GA1/1.1commerical.services-eon-overview.dita">
-        <topicref href="commercial/GA1/1.1commercial.undercloud-eon-cli.dita"/>
+      <topicref href="commercial/GA1/1.1commerical.services-eon-overview.dita"
+        navtitle="EON Service - Overview" locktitle="yes">
+        <topicref href="commercial/GA1/1.1commercial.undercloud-eon-cli.dita"
+          navtitle="EON Command-line Interface" locktitle="yes"/>
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-sherpa-accessing-ui.dita">
         <topicref href="commercial/GA1/1.1commerical.services-sherpa-overview.dita"/>
