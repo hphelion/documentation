@@ -41,14 +41,15 @@
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.install.dita" navtitle="Installation" locktitle="yes">
       <topicref href="commercial/GA1/1.1commercial.install-GA-overview.dita"
         navtitle="Installation Overview" locktitle="yes">
-        <topicref href="commercial/GA1/1.1commercial.roll.dita"
-          navtitle="Roll Your Own Installation Guide" locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commercial.install-GA-virtual-control.dita"
           navtitle="Installing Overcloud Contollers on VMs" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita"/>
-        <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"/>
+        <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita" navtitle="TLS Support"
+          locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"
+          navtitle="Configuring Support for Customer-provided Certs" locktitle="yes"/>
         <!--set to toc=no later-->
-        <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"/>
+        <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"
+          navtitle="Installation Troubleshooting" locktitle="yes"/>
         <!--set to toc=no later-->
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.install.HPLinux.dita"
@@ -77,6 +78,8 @@
         </topicref>
         <topicref href="commercial/GA1/1.1commercial.install-GA-Moonshot.dita"/>
       </topicref>
+      <topicref href="commercial/GA1/1.1commercial.roll.dita"
+        navtitle="Roll Your Own Installation Guide" locktitle="yes"/>
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita" locktitle="yes"
         navtitle="Network Security">
         <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"
