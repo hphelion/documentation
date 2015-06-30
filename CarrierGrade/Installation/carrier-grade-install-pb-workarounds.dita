@@ -46,7 +46,14 @@ neutron-plugin-openvswitch-agent
 <li>Save and close the file.</li>
 </ol>
 </section>
-<section id="next-step">
+  <section id="next-step"> <title>Next Step</title>
+    <p>
+        <xref href="carrier-grade-install-pb-hlm-troubleshoot.dita">Installation Troubleshooting</xref>
+      </p>
+  </section>
+  
+  
+<section>
 <p>
   <xref type="section" href="#topic1644"> Return to Top </xref>
 </p>

@@ -85,7 +85,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <section id="hp-proliant-bladesystem"> <title>HP ProLiant BladeSystem</title>
 <ul>
 <li>BL460c Gen8</li>
-<li>BL460c Gen9</li>
+  <li>BL460c Gen9</li>
 <li>BL660c Gen8</li>
 </ul>
 </section>
@@ -122,16 +122,12 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <li>XL250a Gen9</li>
 </ul>
 </section>
-<section id="ibm-systems"> <title>IBM Systems</title>
-<ul>
-<li>System x3550 M4</li>
-</ul>
+<section>
+  <p>For more information about the supported independent servers, see <xref
+          href="1.1commercial.install-GA-supportmatrix_supportedIHVhardware.dita" type="section">HP
+          Helion OpenStack 1.1 and 1.1.1: Supported IHV Hardware</xref>.</p>
 </section>
-<section id="dell-systems"> <title>Dell Systems</title>
-<ul>
-<li>PowerEdge R720xd</li>
-<li>PowerEdge R620</li>
-</ul>
+  <section>
 <p>The following input/output (I/O) cards are supported:</p>
 </section>
 <section id="stand-up-adapters"> <title>Stand Up Adapters:</title>
@@ -148,13 +144,17 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="nic"> <title>NIC</title>
 <ul>
-<li>Dell: Broadcom Corporation NetXtreme II BCM57810 10 Gigabit Ethernet (rev 10)</li>
 <li>HP Ethernet 10Gb 2-port 530SFP+ Adapter</li>
 <li>HP Ethernet 10Gb 2-port 530T Adapter</li>
 <li>HP NC552SFP 10Gb 2-port Ethernet Server Adapter</li>
 <li>HP Ethernet 10Gb 2-port 560SFP+ Adapter </li>
 </ul>
 </section>
+  <section>
+    <p> For more information about the supported independent stand up adapters, see <xref
+          href="1.1commercial.install-GA-supportmatrix_supportedIHVhardware.dita" type="section">HP
+          Helion OpenStack 1.1 and 1.1.1: Supported IHV Hardware.</xref></p>
+  </section>
 <section id="sas"> <title>SAS</title>
 <ul>
 <li>HP Smart Array P222/512 FBWC 6Gb 1-port Int/1-port Ext SAS Controller</li>
@@ -194,7 +194,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <li>HP Flex-10 10Gb 2-port 530FLB Adapter</li>
 <li>HP Flex Fabric 10Gb 2-port 534FLB Adapter</li>
 <li>HP FlexFabric 10Gb 2-port 554FLB Adapter</li>
-<li>HP Ethernet 10Gb 2-port 560FLB Adapter</li>
+<li>HP Ethernet 10Gb 2-port 560FLB Adapter (not supported with HP Virtual Connect)</li>
 <li>HP FlexFabric 20Gb 2-port 650FLB Adapter </li>
 </ul>
 </section>
@@ -399,7 +399,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
             <row>
               <entry morerows="3"> Overcloud VSA Server </entry>
               <entry morerows="3">OvercloudVSAStorage</entry>
-              <entry morerows="3">2</entry>
+              <entry morerows="3">0</entry>
               <entry>Disk </entry>
               <entry> 512GB </entry>
             </row>
@@ -418,7 +418,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
             <row>
               <entry morerows="3">Overcloud StoreVirtual VSA Server</entry>
               <entry morerows="3">OvercloudVSAAOStorage</entry>
-              <entry morerows="3">3</entry>
+              <entry morerows="3">0</entry>
               <entry>Disk </entry>
               <entry> 512GB </entry>
             </row>
