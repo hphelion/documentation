@@ -14,7 +14,7 @@ a.xref {
   color:#007dba;
   font-weight: 400;
   /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
-  font-family: HPSimplified  !important;
+  font-family: HPSimplified, sans-serif  !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   text-decoration:none;
@@ -25,7 +25,7 @@ a.xref:visited {
   color: rgb(0, 0, 238);
   font-weight: 400;
     /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
-  font-family: HPSimplified !important;
+  font-family: HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   text-decoration:none;
@@ -37,7 +37,7 @@ a.xref:hover {
   color:#006699;
   font-weight: 400;
     /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
-  font-family: HPSimplified !important;
+  font-family: HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   text-decoration:none;
@@ -47,7 +47,7 @@ a.xref:active {
   color: rgb(0, 0, 238);
   font-weight: 400;
     /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
-  font-family: HPSimplified !important;
+  font-family: HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   text-decoration:none;
@@ -74,7 +74,7 @@ a {
   color: rgb(9, 65, 91);
   /*font-family: 'Trebuchet MS'; */
   /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
-  font-family: HPSimplified !important;
+  font-family: HPSimplified, sans-serif !important;
   font-size: 13.3333330154419px;
   font-weight: bold;
   font-style: normal;
@@ -95,7 +95,7 @@ a {
   font-weight: bold;
   /*font-family: arial, helvetica, tahoma, sans-serif;*/
   /* Change font to HPSimplified for whole site PFletcher 6/26/2015*/
-  font-family: HPSimplified !important;
+  font-family: HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
@@ -126,7 +126,7 @@ a {
   font-weight: bold;
   /* Change font to HPSimplified */
   /* font-family: "HP Simplified",Arial,Helvetica,sans-serif;*/
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-style: inherit;
   font-size: 30px;
   font-variant: normal;
@@ -156,7 +156,7 @@ a {
   color: rgb(255, 255, 255);
   /* Change font to HPSimplified */
   
-  font-family:HPSimplified !important;*/
+  font-family:HPSimplified, sans-serif !important;*/
   /*font-family: 'Trebuchet MS';*/
   font-size: 13.3333330154419px;
   font-weight: 400;
@@ -189,7 +189,7 @@ a {
   color: rgb(255, 255, 255);
   /* font-family: 'Trebuchet MS';*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-size: 13.3333330154419px;
   font-weight: 400;
   font-style: normal;
@@ -203,7 +203,7 @@ a {
   font-weight: 400;
   /* font-family: 'Trebuchet MS';*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   font-variant: normal;
@@ -213,7 +213,7 @@ a {
   font-weight: 400;
   /* font-family: 'Trebuchet MS';*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   text-align: start;
@@ -236,7 +236,7 @@ a {
   font-weight: 400;
   /* font-family: arial, helvetica, tahoma, sans-serif;*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
   text-align: left;
@@ -279,7 +279,7 @@ a {
   color: rgb(19, 19, 20);
   
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   /*font-family: "HP Simplified",Arial,Helvetica,sans-serif;*/
   margin-bottom: 30px;
   font-size: 25px;
@@ -300,21 +300,21 @@ a {
   box-shadow: 3px 0px 0px rgba(0, 0, 0, 0);
   
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   /* font-family: "HP Simplified",Arial,Helvetica,sans-serif;*/
 }
 .title.topictitle2 {
   background-color: rgb(236, 236, 236);
   /*font-family: "HP Simplified",Arial,Helvetica,sans-serif;*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
 }
 .shortdesc {
   color: rgb(0, 0, 0);
   font-weight: 400;
   /*font-family: arial, helvetica, sans-serif;*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
@@ -323,7 +323,7 @@ a {
   font-weight: 400;
   /*font-family: arial, helvetica, sans-serif;*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
@@ -332,7 +332,7 @@ a {
   font-weight: 400;
   /*font-family: arial, helvetica, sans-serif;*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
@@ -341,7 +341,7 @@ a {
   font-weight: 400;
   /*font-family: arial, helvetica, sans-serif;*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
@@ -350,7 +350,7 @@ a {
   font-weight: bold;
   /*font-family: arial, helvetica, sans-serif;*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
@@ -373,7 +373,7 @@ a {
   font-weight: 400;
   /*font-family: arial, helvetica, sans-serif;*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
@@ -382,7 +382,7 @@ span.uicontrol {
   font-weight: bold;
   /*font-family: arial, helvetica, sans-serif;*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
@@ -391,7 +391,7 @@ span.wintitle {
   font-weight: 400;
   /*font-family: arial, helvetica, sans-serif;*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 13.3333330154419px;
 }
@@ -400,7 +400,7 @@ span.wintitle {
   font-weight: 400;
   /*font-family: arial, helvetica, sans-serif;*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif !important;
   font-style: normal;
   font-size: 10.8000001907349px;
 }
@@ -495,12 +495,12 @@ input.searchButton {
     margin-right: 100px;
     /*font-family: "HP Simplified",Arial,Helvetica,sans-serif;*/
       /* Change font to HPSimplified */
-    font-family:HPSimplified !important;
+    font-family:HPSimplified, sans-serif!important;
   }
 #mainRight p {
  /*font-family:"HP Simplified",arial, helvetica, sans-serif;*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif!important;
 
 }
   #frontTable {
@@ -558,7 +558,7 @@ input.searchButton {
   margin-top: 40px;
   /*font-family:"HP Simplified",arial, helvetica, sans-serif;*/
   /* Change font to HPSimplified */
-  font-family:HPSimplified !important;
+  font-family:HPSimplified, sans-serif!important;
   width: 700px;
   margin-left: 50px;
 }

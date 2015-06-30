@@ -313,7 +313,7 @@ If a request is invalid (doesn't present the required headers or credentials), t
 <p>
   <b>Request Data</b>
 </p>
-<p>This API supports pagination. See Pagination for more details.</p>
+<p>This API supports pagination. <i>See <xref href="nova-api.dita#topic310608/Pagination" type="section" >Pagination</xref> for more details</i></p>
 <p>This API also supports an optional <i>name</i> filter for get-by-name. Pagination and <i>name</i> filter are mutually exclusive.</p>
 <p>
   <b>URL Parameters</b>
@@ -544,7 +544,7 @@ Date: Thu, 25 Aug 2011 23:33:19 GMT
   <b>Additional Notes</b>
 </p>
 </section>
-<section id="342-tokens"> <title>3.4.2 Tokens</title>
+<section id="3.4.2Tokens"> <title>3.4.2 Tokens</title>
 <p>An unique identifier which is used to identify the privilege of the user.</p>
 <p>
   <b>Status Lifecycle</b>

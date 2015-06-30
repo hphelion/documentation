@@ -112,7 +112,7 @@
 <section id="2-compute-service"> <title>2. Compute Service</title>
 <p>The Compute service provides a scalable, on-demand compute infrastructure on which users can run applications.</p>
 </section>
-<section id="Servers"> <title>2.1 Servers</title>
+<section id="Server"> <title>2.1 Servers</title>
 <p>A Server (also referred to as an <i>Instance</i>) is the fundamental resource provided by Compute. A Server is a virtual machine (VM) capable of running a variety of operating system <i>image</i>s. The Compute API provided operations that allow users to control the life cycle of a server. The current status of a server is reported by the API as its <i>state</i>.  Characteristics of the server, such memory, amount of disk space, and number of CPUs, are determined by the server's <i>flavor</i> which is specified at the time the server is created. A server is referred to by its <i>name</i>. Metadata can be associated with a server and accessed in a number of ways as described in the section <xref type="section" href="#topic310608/Personalizing">Personalizing a server</xref>. These concepts are described further in the sections below.</p>
 </section>
 <section id="211-server-operations"> <title>2.1.1 Server Operations</title>
@@ -290,7 +290,7 @@ Servers which are created with the Public Cloud Console are automatically assign
 <p>A number of mechanisms exist which allow a user to retrieve information about a server and to associate meta-data with the server.</p>
 </section>
 <section id="ServerMetadata"> <title>2.1.5.1 Server Metadata</title>
-  <p>A server can have metadata in the form of key/value pairs. The initial value of a servers metadata is provided as a parameter to <xref type="section" href="#topic310608/createServer">Create Server</xref>. On Linux servers metadata provided when the server is created is available as a json object in the server's root filesystem at /meta.js. If the server has a <xref type="section" href="#topic310608/ConfigurationDrive">Configuration Drive</xref>, the metadata will be in the file /meta.js at the root of the file system on the configuration drive. A server's metadata can also be retrieved and updated using the Server Metadata and Server Metadata Item resources. Updates to a server's metadata are only available using subsequent calls to <xref type="section" href="#topic310608/ServerMetadata_listMetadata">Server List Metadata</xref> and <xref type="section" href="#topic310608/ServerMetadataItem_getMetadataItem">Server Get Metadata Item</xref>.</p>
+  <p>A server can have metadata in the form of key/value pairs. The initial value of a servers metadata is provided as a parameter to <xref type="section" href="#topic310608/createServer">Create Server</xref>. On Linux servers metadata provided when the server is created is available as a json object in the server's root filesystem at /meta.js. If the server has a <xref type="section" href="#topic310608/ConfigurationDrive">Configuration Drive</xref>, the metadata will be in the file /meta.js at the root of the file system on the configuration drive. A server's metadata can also be retrieved and updated using the <xref type="section" href="#topic310608/ServerMetadata">Server Metadata</xref> and <xref type="section" href="#topic310608/getMetadataItem">Server Metadata Item</xref> resources. Updates to a server's metadata are only available using subsequent calls to <xref type="section" href="#topic310608/ServerMetadata_listMetadata">Server List Metadata</xref> and <xref type="section" href="#topic310608/getMetadataItem">Server Get Metadata Item</xref>.</p>
 </section>
 <section id="Section2_1_5_3"> <title>2.1.5.3 CloudInit</title>
 <p>
@@ -351,7 +351,10 @@ The maximum length of the file path is limited to 255 bytes.</p>
 <p>Image snapshots are copies of the (virtual) disk partition containing the root file system that can be created from a running VM using <xref type="section" href="#topic310608/createImage">Create Image</xref>. A snapshot is linked to the same kernel and ramdisk as the image which was originally booted on the VM.  In the listing above, foo100-snap and foo-snap are snapshots created by the user.</p>
 </section>
 <section id="ImageMetadata"> <title>2.1.6.2 Image Metadata</title>
-<p>Images can have metadata in the form of key/value pairs. This metadata can be queried and modified using operations of the Image Metadata and Image Metadata Item resources.</p>
+<p>Images can have metadata in the form of key/value pairs. This metadata can be queried and
+        modified using operations of the <xref type="section" href="#topic310608/ImageMetadata"
+          >Image Metadata</xref> and  <xref type="section" href="#topic310608/getMetadataItem"
+          >Image Metadata Item</xref> resources.</p>
 </section>
 <section id="Section2_2"> <title>2.2 Volumes</title>
 <p>Nova volumes are persistent disks that can be attached to servers. When attached to a server, the volume appears as a disk block device on which a filesystem can be created. The Volumes extension to the Compute API is described in a separate document.</p>
@@ -935,7 +938,7 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com</p>
 <b>Server Metadata Item</b>
 </entry>
   <entry align="left">
-<xref type="section" href="#topic310608/ServerMetadataItem_getMetadataItem">Get Metadata Item</xref>
+    <xref type="section" href="#topic310608/getMetadataItem">Get Metadata Item</xref>
 </entry>
   <entry align="left">GET</entry>
   <entry align="left">/v2/{project_id}/servers/{server_id}/metadata/{key}</entry>
@@ -1082,7 +1085,7 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com</p>
 <b>Image Metadata Item</b>
 </entry>
   <entry align="left">
-<xref type="section" href="#topic310608/ImageMetadataItem_getMetadataItem">Get Metadata Item</xref>
+    <xref type="section" href="#topic310608/getImageMetadataItem">Get Image Metadata Item</xref>
 </entry>
   <entry align="left">GET</entry>
   <entry align="left">/v2/{project_id}/images/{image_id}/metadata/{key}</entry>
@@ -1909,6 +1912,22 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com</p>
 <entry align="left">
 <b>os-volume-types</b>
 </entry>
+  <entry align="left">
+                <xref href="#topic310608/listVolumes" format="dita">List Volume Types</xref>
+              </entry>
+  <entry align="left">Get</entry>
+  <entry align="left">/v2/{project_id}/os-volume-types</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="center"/>
+</row>
+<row>
+<entry align="left"/>
+  <entry align="left"><xref href="#topic310608/showVolume" format="dita">Show Volume Type</xref>
+              </entry>
+  <entry align="left">Get</entry>
+  <entry align="left">/v2/{project_id}/os-volume-types/{type_id}</entry>
+  <entry align="left">Y/Y</entry>
+  <entry align="center"/>
 </row>
 <row>
 <entry align="left">
@@ -2117,8 +2136,8 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com</p>
 <b>Server Action</b>
 </entry>
   <entry align="left">
-    <xref type="section" href="#topic310608/getVNCConsole">Get VNC Console</xref>
-</entry>
+                <xref href="#topic310608/getVNCConsole" format="dita">Get VNC Console</xref>
+              </entry>
   <entry align="left">POST</entry>
   <entry align="left">/v2/{project_id}/servers/{server_id}/action</entry>
   <entry align="left">Y/Y</entry>
@@ -2205,8 +2224,8 @@ US East - https://region-b.geo-1.compute.hpcloudsvc.com</p>
 <b>Flavors</b>
 </entry>
   <entry align="left">
-<xref type="section" href="#topic310608/listFlavorsSwap">List Flavors Swap </xref>
-</entry>
+                <xref href="#topic310608/listVolumes20" format="dita">List Flavors Swap </xref>
+              </entry>
   <entry align="left">GET</entry>
   <entry align="left">/v2/{project_id}/flavors/detail</entry>
   <entry align="left">Y/Y</entry>
@@ -4512,7 +4531,7 @@ If an error occurs, the response body contains a description of the error.</p>
 </codeph>
 </codeblock>
 </section>
-<section id="ServerMetadataItem_getMetadataItem"> <title>4.4.1.14 Get Metadata Item</title>
+<section id="getMetadataItem"> <title>4.4.1.14 Get Metadata Item</title>
 </section>
 <section id="get-v2project-idserversserver-idmetadatakey"> <title>GET /v2/{project_id}/servers/{server_id}/metadata/{key}</title>
 <p>Retrieves a single metadata item by key.</p>
@@ -6327,7 +6346,7 @@ If an error occurs, the response body contains a description of the error.</p>
 </codeph>
 </codeblock>
 </section>
-<section id="ImageMetadataItem_getMetadataItem"> <title>4.4.1.29 Get Metadata Item</title>
+<section id="getImageMetadataItem"> <title>4.4.1.29 Get Image Metadata Item</title>
 </section>
 <section id="get-v2project-idimagesimage-idmetadatakey"> <title>GET /v2/{project_id}/images/{image_id}/metadata/{key}</title>
 <p>Retrieves a single metadata item by key.</p>
@@ -6620,10 +6639,9 @@ If an error occurs, the response body contains a description of the error.</p>
 </ul>
 <p>
 <b>URL Parameters</b>
-  Users can control which attributes should be returned by using the fields query parameter. See <xref type="section" href="#topic310608/Pagination">Filtering and Column Selection</xref> for more information. Filtering is supported on all top level attributes of an API entity. For example:</p>
+Users can control which attributes should be returned by using the fields query parameter. Filtering is supported on all top level attributes of an API entity. For example:</p>
 <codeblock>
-  <codeph>GET /v2/{project_id}/flavors?name={name}
-</codeph>
+GET /v2/{project_id}/flavors?name={name}
 </codeblock>
 <p>
 <b>Data Parameters</b>
@@ -6749,10 +6767,9 @@ If an error occurs, the response body contains a description of the error.</p>
 </ul>
 <p>
 <b>URL Parameters</b>
-  Users can control which attributes should be returned by using the fields query parameter. See <xref type="section" href="#topic310608/Pagination">Filtering and Column Selection</xref> for more information. Filtering is supported on all top level attributes of an API entity. For example:</p>
+Users can control which attributes should be returned by using the fields query parameter. Filtering is supported on all top level attributes of an API entity. For example:</p>
 <codeblock>
-  <codeph>GET /v2/{project_id}/flavors?name={name}
-</codeph>
+GET /v2/{project_id}/flavors?name={name}
 </codeblock>
 <p>
 <b>Data Parameters</b>
@@ -11669,7 +11686,7 @@ Naws/HNm7BwTeXRI+XgnFaIB+yxVMmzmh0/qRVEPEC/P
 </section>
 <section id="4418-flavor-swap"> <title>4.4.18 Flavor Swap</title>
 </section>
-<section id="listFlavorsSwap"> <title>4.4.18.1 List Flavors Swap</title>
+<section id="listVolumes20"> <title>4.4.18.1 List Flavors Swap</title>
 </section>
 <section id="get-v2project-idflavorsdetail21"> <title>GET /v2/{project_id}/flavors/detail</title>
 <p>Extends the flavor operation <xref type="section" href="#topic310608/listDetailFlavors">List Flavors Detail</xref> by adding the swap attribute defining swap space.</p>
@@ -12196,7 +12213,8 @@ Naws/HNm7BwTeXRI+XgnFaIB+yxVMmzmh0/qRVEPEC/P
 <section id="addFloatingIpWithFixed"> <title>4.4.22.1 Add Floating IP with Fixed</title>
 </section>
 <section id="post-v2project-idserversserver-idaction27"> <title>POST /v2/{project_id}/servers/{server_id}/action</title>
-  <p>Extends the <xref type="section" href="#topic310608/addFloatingIp">Add Floating IP</xref> operation to allow the user to specify a Fixed IP address.</p>
+<p>Extends the <xref href="#topic310608/addFloatingIp" format="dita">Add Floating IP</xref> operation to
+        allow the user to specify a Fixed IP address.</p>
 <p>
   <b>Request Parameters</b>
 </p>
@@ -12944,7 +12962,8 @@ Naws/HNm7BwTeXRI+XgnFaIB+yxVMmzmh0/qRVEPEC/P
 </section>
 <section id="7-glossary"> <title>7. Glossary</title>
 <p>
-<b>Server:</b> A server is a virtual machine instance within Compute. See <xref type="section" href="#topic310608/Servers">Servers</xref>.</p>
+        <b>Server:</b> A server is a irtual machine instance within Compute. See <xref
+          href="#topic310608/Server" format="dita">Servers</xref>.</p>
 <p>
 <b>Flavor:</b> A set of attributes which describe the resources available to a server. See <xref type="section" href="#topic310608/Flavors">Flavors</xref>.</p>
 <p>
