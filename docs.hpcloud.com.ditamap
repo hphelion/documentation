@@ -145,10 +145,14 @@
         navtitle="NTP Troubleshooting" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.overcloud.dita"
         navtitle="Overcloud Node Removal Issues" locktitle="yes"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ovsvapp.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.swift.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.vsa.dita"/>
-      <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ovsvapp.dita"
+        navtitle="OVSvApp Troubleshooting" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.swift.dita"
+        navtitle="Troubleshooting Scale-out Swift" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.vsa.dita"
+        navtitle="Troubleshooting VSA" locktitle="yes"/>
+      <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"
+        navtitle="Ceph Troubleshooting" locktitle="yes"/>
     </topicref>
     
     <!-- Services -->
@@ -331,18 +335,27 @@
       <topicref href="commercial/GA1/1.1commercial.map.volumetype.dita"/>
       <!-- Installation -->
     </topicref>
-    <topichead navtitle="HP Helion Openstack(R) 1.1: Undercloud Operations">
-      <topicref href="commercial/GA1/1.1commercial.using.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.undercloud-admin-settings.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.undercloud-resources-overview.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.undercloud-resources-storage.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-esx.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storeserv.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storevirtual.dita"/>
+    <topichead navtitle="Undercloud Operations">
+      <topicref href="commercial/GA1/1.1commercial.using.dita" navtitle="Using the Dashboards"
+        locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-horizon-overview.dita"
+        navtitle="Undercloud Horizon Overview" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-admin-settings.dita"
+        navtitle="The Settings Tab" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-resources-overview.dita"
+        navtitle="Managing Resources" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-resources-storage.dita"
+        navtitle="Working with Storage" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config.dita"
+        navtitle="Managing Overcloud Configuration" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-esx.dita"
+        navtitle="Working with ESX Clusters" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storeserv.dita"
+        navtitle="Working with StoreServ Back Ends" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.undercloud-oc-config-storevirtual.dita"
+        navtitle="Working with StoreVirtual Back Ends" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita"/>
       <topicref href="commercial/GA1/1.1commercial.undercloud-admin-updates-and-extensions.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.undercloud-horizon-overview.dita"/>
     </topichead>
     <topichead navtitle="HP Helion Openstack(R) 1.1: System Restore and Recovery">
       <topicref href="commercial/GA1/1.1commercial.backup-restore-GA.dita"/>
