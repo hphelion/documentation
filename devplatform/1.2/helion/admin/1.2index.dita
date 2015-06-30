@@ -111,10 +111,10 @@
           <xref href="server/1.2aok.dita">AOK Authentication Server</xref>
           <ul>
             <li>
-              <xref href="server/1.2aok.dita#topic8359/end-user-login" type="section"  >End User Login</xref>
+              <xref href="server/1.2aok.dita#topic8359/web" type="section"  >End User Login</xref>
             </li>
             <li>
-              <xref href="server/1.2aok.dita#topic8359strategies" type="section"  >Strategies</xref>
+              <xref href="server/1.2aok.dita#topic8359/strategies" type="section"  >Strategies</xref>
             </li>
             <li>
               <xref href="server/1.2aok.dita#topic8359/configuration" type="section"  >Configuration</xref>
@@ -248,7 +248,7 @@
               <xref href="best-practices/1.2index.dita#topic16169/upgrade" type="section"  >Upgrading</xref>
             </li>
             <li>
-              <xref href="best-practices/1.2index.dita#topic16169/storage" type="section"  >Persistent Storage</xref>
+              <xref href="best-practices/1.2index.dita#topic16169/bestpractices-persistent-storage" type="section"  >Persistent Storage</xref>
             </li>
           </ul></li>
 </ul>

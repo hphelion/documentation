@@ -33,7 +33,8 @@
 <li>
 <xref type="section" href="#topic3989/command-curl">helion curl</xref>: Run a raw REST request against the chosen target.</li>
 <li>
-<xref type="section" href="#topic3989/command-drain">helion drain</xref>: Commands for the management of drains attached to applications.</li>
+        <xref href="#topic3989/command-drain" format="dita">helion drain</xref>: Commands for the
+        management of drains attached to applications.</li>
 <li>
 <xref type="section" href="#topic3989/command-guid">helion guid</xref>: Map the specified name into a GUID given the type.</li>
 <li>

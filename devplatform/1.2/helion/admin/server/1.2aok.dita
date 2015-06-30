@@ -24,7 +24,11 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/admin/server/1.2aok.md-->
  <!--permalink: /helion/devplatform/1.2/als/admin/server/aok/--></p>
-<p>AOK is Application Lifecycle Service's authentication management service (replacing Cloud Foundry's UAA Server). It issues tokens via OAuth2 for client applications such as the <b>helion</b> client and the ALS Console. AOK can connect to other back-end SSO services such as LDAP by using different <xref type="section" href="#topic8359/strategies">Strategies</xref>.</p>
+<p>AOK is Application Lifecycle Service's authentication management service (replacing Cloud
+      Foundry's UAA Server). It issues tokens via OAuth2 for client applications such as the
+        <b>helion</b> client and the ALS Console. AOK can connect to other back-end SSO services
+      such as LDAP by using different <xref href="#topic8359/strategies" format="dita"
+        >Strategies</xref>.</p>
 <ul>
 <li>
 <xref type="section" href="#topic8359/web">End User Login: Web</xref>
@@ -55,8 +59,10 @@
 <p>Users log in to the web-based ALS Management Console as they would with any other web application. The ALS Console checks with the AOK endpoint (e.g. https://aok.helion.example.com) in the background.</p>
 </section>
 <section id="client"> <title>End User Login: Client</title>
-<p>If the strategy has been changed to something other than <b>builtin</b> (see
-<xref type="section" href="#topic8359/strategies">Strategies</xref>) then users connecting with the <xref href="../../../../../devplatform/1.2/helion/user/client/1.2index.dita" >ALS command-line client</xref> should be aware that:</p>
+<p>If the strategy has been changed to something other than <b>builtin</b> (see <xref
+          href="#topic8359/strategies" format="dita">Strategies</xref>) then users connecting with
+        the <xref href="../../../../../devplatform/1.2/helion/user/client/1.2index.dita">ALS
+          command-line client</xref> should be aware that:</p>
 <ul>
 <li>The user must enter identifiers in the format expected by the <xref type="section" href="#topic8359/strategies">strategy</xref> used by AOK (e.g. username or email
 address).</li>
@@ -75,15 +81,13 @@ users and passwords to authenticate.</p>
 </li>
 <li>
 <p>
-<b>ldap</b>: The ldap strategy authenticates using the LDAP server
-specified in <xref type="section" href="#topic8359/configuration">
-<i>kato config</i>
-</xref>. Any user that can
-successfully authenticate with the LDAP server will be allowed to
-use Application Lifecycle Service and will have a (non-admin) user account created for
-them automatically. The LDAP server must return an email address for
-the user to allow them to log in to Application Lifecycle Service. AOK will look for the
-email address under the <b>mail</b>, <b>email</b>, and <b>userPrincipalName</b> attributes.</p>
+            <b>ldap</b>: The ldap strategy authenticates using the LDAP server specified in <xref
+              href="#topic8359/configuration" format="dita"><i>kato config</i></xref> . Any user
+            that can successfully authenticate with the LDAP server will be allowed to use
+            Application Lifecycle Service and will have a (non-admin) user account created for them
+            automatically. The LDAP server must return an email address for the user to allow them
+            to log in to Application Lifecycle Service. AOK will look for the email address under
+            the <b>mail</b>, <b>email</b>, and <b>userPrincipalName</b> attributes.</p>
 </li>
 </ul>
 <p>LDAP groups are not currently supported as a visible construct in the Application Lifecycle Service.</p>
@@ -310,7 +314,7 @@ is configured.</p>
 <ol>
 <li>Log in to the micro cloud VM or Core node as the 'helion' user (with the password set previously)</li>
 <li>
-<xref type="section" href="#topic8359/configuration">Configure AOK</xref> to use LDAP</li>
+          <xref href="#topic8359/configuration" format="dita">Configure AOK</xref> to use LDAP</li>
 <li>
 <p>Set the <codeph>admin_user</codeph> key with the desired LDAP admin username:</p>
 

@@ -163,7 +163,7 @@ take on one or more of the following roles:</p>
 <xref href="../cluster/1.2harbor.dita" >Harbor</xref> (TCP/UDP port service)</li>
 </ul>
 <p>The command line tool used to configure Application Lifecycle Service servers is called
-  <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref" type="section"   >kato</xref>. You can see a
+  <xref href="../reference/1.2kato-ref.dita">kato</xref>. You can see a
 list of the available roles at the command line by running the <xref href="../reference/1.2kato-ref.dita" >kato
 info</xref> command.</p>
   <p>Setup of cluster nodes is done using the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section"   >kato
@@ -192,7 +192,7 @@ can also include additional roles.</p>
 the other nodes and assign roles.</p>
 </section>
 <section id="core-ip"> <title>CORE_IP</title>
-<p>A <xref href="../server/1.2configuration.dita#setting-a-static-ip" type="section"   >static IP address</xref> is
+  <p>A <xref href="../server/1.2configuration.dita#topic31232/setting-a-static-ip" type="section"   >static IP address</xref> is
 necessary to provide a consistent network interface for other nodes to connect to. This address is called the MBUS IP. If your IaaS or cloud orchestration software provides IP addresses which persist indefinitely and are not reset on reboot you may not have to set this explicitly.</p>
 <p>Take note of the internal IP address of the Core node. It will be required in the following steps to configure additional nodes to attach to the Core node.</p>
 <p>Make sure that the IP address of its <codeph>eth0</codeph> interface is registering the correct address, which may not be the case if you have set a static IP and not yet rebooted or restarted
