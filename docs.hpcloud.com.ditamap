@@ -1730,7 +1730,7 @@
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
   <topicref href="CarrierGrade/carrier-grade-index.dita">
-    <topichead navtitle="KVM Region Release Notes">
+    <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1: Release Notes">
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333830215.xml"/>
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333830815.xml"/>
       <topicref href="CarrierGrade/CGHRelNotes/jow1404333831397.xml"/>

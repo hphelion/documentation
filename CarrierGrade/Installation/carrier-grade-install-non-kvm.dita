@@ -52,12 +52,13 @@ venom-patch.tar.gz</codeblock></li>
   <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
           environment. For information on each variable, refer to the comments in the file with each
           variable. Make sure the <codeph>hlm_kvm_host</codeph> value is configured properly.</li>
-  <li id="hosts">Check the hosts file <codeph>/root/infra-ansible-playbooks/hosts</codeph> file and make sure it
-          appears similar to the following. Make sure the DCM network details are correct. Also,
-          verify the CLM IP address in this file.</li>
+  <li id="hosts">Check the hosts file <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to
+    enter the IP address of the vibr0 interface in the <codeph>hlm_kvm_host</codeph> field, as shown in the following example. Make sure the DCM network
+          details are correct. Also, verify the CLM IP address in this file.</li>
 </ol>
 <codeblock>  [hlm_kvm_host]
   192.168.122.1 </codeblock>
+  <p>Where <codeph>IP_address</codeph> is the the IP address of the vibr0 interface.</p>
 </section>
   <section><title>Configure SSH on HLM host</title> Use the following steps to configure SSH on the
       HLM host: <ol>
@@ -288,18 +289,14 @@ VSD Server : auto
             Verify that the each PXE-booted node has an IP address that matches the IP address
             specified in the <codeph>node-provision.json</codeph> file.</p></li>
 <li>Modify the <codeph>environment.json</codeph> file to configure the VLANs and network addresses
-          as appropriate for your environment.<codeblock>"cidr": "start-address": </codeblock>
-            
-         The three controller nodes should have CLM, CAN, EXT, BLS on eth0 and TUL on
-                eth1.
-           <!--Hiding for RC0 
+          as appropriate for your environment.<codeblock>"cidr": "start-address": </codeblock> The
+          three controller nodes should have CLM, CAN, EXT, BLS on eth0 and TUL on eth1. <!--Hiding for RC0 
               <p>The two compute nodes should have CLM, EXT, BLS on eth0 and TUL on eth1.</p>
            -->
           <p>
             <b>Example:</b>
           </p><codeblock>"cidr": "192.168.101.0/24",
-"start-address": "192.168.101.100"
-</codeblock><p>
+"start-address": "192.168.101.100"</codeblock><p>
             <b>NOTE:</b> The Helion Configuration Processor assigns the first address of the CLM
             address range to itself for serving python and debian repositories. Make sure that you
             set the first IP address of the CLM range for the eth2 (CLM) address of the HLM
