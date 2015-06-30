@@ -126,7 +126,8 @@
     <topichead navtitle="Post-Installation Tasks">
       <topicref href="commercial/GA1/1.1commercial.install-GA-verify.dita"
         navtitle="Verify Your Installation" locktitle="yes">
-        <topicref href="commercial/GA1/1.1commercial.install-GA-tempest-tests.dita"/>
+        <topicref href="commercial/GA1/1.1commercial.install-GA-tempest-tests.dita"
+          navtitle="Verification Using Embedded Tests" locktitle="yes"/>
       </topicref>
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"
         navtitle="Storage Options" locktitle="yes"/>
@@ -141,8 +142,6 @@
       locktitle="yes">
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"
         navtitle="Installation Troubleshooting" locktitle="yes"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"
-        navtitle="MySQL Troubleshooting" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"
         navtitle="Compute Service Troubleshooting" locktitle="yes"/>
       <!--set to toc=no later-->
@@ -151,12 +150,14 @@
         navtitle="Controller Nodes Troubleshooting" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.dns.dita"
         navtitle="DNS Issues with Neutron" locktitle="yes"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.dita"
-        navtitle="Troubleshooting Ephemeral Partitions" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.esx.dita"
         navtitle="ESX and OVSvApp Troubleshooting" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.dita"
+        navtitle="Ephemeral Partitions Troubleshooting" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.logging.dita"
         navtitle="Logging Troubleshooting" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"
+        navtitle="MySQL Troubleshooting" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.ntp.dita"
         navtitle="NTP Troubleshooting" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.overcloud.dita"
@@ -176,7 +177,8 @@
       <topicref href="commercial/GA1/1.1commerical.services-overview.dita" navtitle="Services Overview" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commerical.services-compute-overview.dita"
         navtitle="Nova Compute Service Overview" locktitle="yes">
-        <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx.dita"/>
+        <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx.dita"
+          navtitle="Compute Service Details" locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commerical.services-compute-configDrive.dita"
           navtitle="Compute Service: Storing Metadata on a Configuration Drive" locktitle="yes"/>
       </topicref>
@@ -387,7 +389,8 @@
         navtitle="Focus Service Overview" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commerical.services-dns-overview.dita"
         navtitle="DNS as a Service (DNSaaS)" locktitle="yes">
-        <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"/>
+        <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"
+          navtitle="DNSaaS Installation and Configuration" locktitle="yes"/>
       </topicref>
       <!-- Using HOS -->
       <topicref href="commercial/GA1/1.1commercial.undercloud-storage-storeserv.dita"
@@ -446,7 +449,7 @@
       <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-installation.dita"
         navtitle="Flexible Control Plane Installation" locktitle="yes"/>
     </topicref>
-    <topichead navtitle="HP Helion Openstack(R) 1.1: License Files">
+    <topichead navtitle="HP Helion Openstack 1.1.1 and 1.1: License Files">
       <topicref href="commercial/GA1/1.1.13rd-party-license-agreements.dita"/>
       <topicref href="commercial/GA1/1.13rd-party-license-agreements.dita"/>
       <topicref href="commercial/GA1/1.1commercial.eula.dita"/>
