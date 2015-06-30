@@ -313,7 +313,7 @@ If a request is invalid (doesn't present the required headers or credentials), t
 <p>
   <b>Request Data</b>
 </p>
-  <p>This API supports pagination. <i>See: <xref href="nova-api.dita#Pagination" type="section" >Pagination</xref> for more details</i></p>
+  <p>This API supports pagination. <xref href="nova-api.dita#topic310608/Pagination" type="section" >Pagination</xref> for more details</i>
 <p>This API also supports an optional <i>name</i> filter for get-by-name. Pagination and <i>name</i> filter are mutually exclusive.</p>
 <p>
   <b>URL Parameters</b>

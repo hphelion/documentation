@@ -95,7 +95,7 @@
 <section id="cloud-networking"> <title>Cloud Networking</title>
 <ul>
 <li>To ensure full external node access, HP recommends that you do not delete  egress rules and allow those rules to remain part of their security groups.</li>
-<li>To get the most timely and accurate results for your quota checks, use the <xref href="../publiccloud/hpcloudconsole.dita#ManageHPPublicCloud"   type="section">Neutron networking interface</xref>.</li>
+  <li>To get the most timely and accurate results for your quota checks, use the <xref href="../publiccloud/hpcloudconsole.dita#topic21330/ManageHPPublicCloud"   type="section">Neutron networking interface</xref>.</li>
 <li>To ensure that your Linux instance is able to resolve its own hostname, add an entry to the <codeph>/etc/hosts</codeph> file that matches the hostname.  This can be accomplished by running the command:
 echo "<codeph>-l</codeph> <codeph>hostname</codeph>" | sudo tee -a /etc/hosts</li>
 </ul>
