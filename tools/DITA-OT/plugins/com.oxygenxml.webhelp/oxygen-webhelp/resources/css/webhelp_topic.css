@@ -9,11 +9,28 @@ available in the base directory of this Oxygen Webhelp plugin.
 
 @import "print.css";
 
-/* Changing font to HP Siplified PFletcher 6/26/2015 */
-@font-face {
+/* Changing font to HP Simplified PFletcher 6/26/2015 */
+/* Attempt to get the font from HP's site, and fail over to sans*/
+/*@font-face {
     font-family: HPSimplified;
     src: url(HPSimplified-Rg.ttf)  format('truetype');
-}
+}*/
+
+@font-face{
+    font-family:'HPSimplified';
+    src:url(http://www.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-regular-eot.eot); 
+    src:url(http://www.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-regular-eot.eot?#iefix) format('embedded-opentype'),  
+        url('http://www.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-regular-woff.woff') format('woff'), 
+        url('http://www.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-regular-ttf.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal}
+@font-face{font-family:'HPSimplified';
+    src:url(http://www.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-bold-eot.eot); 
+    src:url(http://www.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-bold-eot.eot?#iefix) format('embedded-opentype'),  
+        url('http://www.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-bold-woff.woff') format('woff'), 
+        url('http://www.hp.com/us/en/images/fonts/v2-0/hps-euro-w01-bold-ttf.ttf') format('truetype');
+    font-weight:bold;
+    font-style:normal}
 
 p {
     font-family: HPSimplified !important;
