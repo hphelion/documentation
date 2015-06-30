@@ -54,14 +54,19 @@
       <!-- Prereqs -->
       <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs.dita" locktitle="yes"
         navtitle="Installation Prerequisites">
-        <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs-network.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.install-GA-NTP.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.install-GA-JSON.dita">
+        <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs-network.dita"
+          navtitle="Preparing the Network" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commercial.install-GA-NTP.dita" navtitle="Configuring NTP"
+          locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commercial.install-GA-JSON.dita"
+          navtitle="Editing the JSON Configuration File" locktitle="yes">
           <topicref href="commercial/GA1/1.1commercial.install-GA-JSON-scenarios.dita"/>
           <!--set to toc=no later-->
         </topicref>
-        <topicref href="commercial/GA1/1.1commercial.install-GA-CSV.dita"/>
-        <topicref href="commercial/GA1/1.1commercial.name-resolution.dita"/>
+        <topicref href="commercial/GA1/1.1commercial.install-GA-CSV.dita"
+          navtitle="Creating the baremetal.csv" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commercial.name-resolution.dita"
+          navtitle="Enabling Name Resolution from Tenant VMs" locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita">
           <topicref href="commercial/GA1/1.1commerical.services-identity-ldap-JSON.dita"/>
         </topicref>
