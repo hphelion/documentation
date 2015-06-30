@@ -127,16 +127,24 @@
         navtitle="Installation Troubleshooting" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"
         navtitle="MySQL Troubleshooting" locktitle="yes"/>
-      <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"/>
+      <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"
+        navtitle="Compute Service Troubleshooting" locktitle="yes"/>
       <!--set to toc=no later-->
       <!--not on site-->
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.controllers.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.dns.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.esx.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.logging.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ntp.dita"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.overcloud.dita"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.controllers.dita"
+        navtitle="Controller Nodes Troubleshooting" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.dns.dita"
+        navtitle="DNS Issues with Neutron" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ephemeral_partitions.dita"
+        navtitle="Troubleshooting Ephemeral Partitions" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.esx.dita"
+        navtitle="ESX and OVSvApp Troubleshooting" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.logging.dita"
+        navtitle="Logging Troubleshooting" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.ntp.dita"
+        navtitle="NTP Troubleshooting" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.overcloud.dita"
+        navtitle="Overcloud Node Removal Issues" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.ovsvapp.dita"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.swift.dita"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.vsa.dita"/>
