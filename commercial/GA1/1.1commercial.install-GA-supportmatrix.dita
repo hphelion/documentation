@@ -398,7 +398,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <row>
 <entry morerows="3"> Overcloud VSA Server </entry>
 <entry morerows="3">OvercloudVSAStorage</entry>
-<entry morerows="3">2</entry>
+<entry morerows="3">0</entry>
 <entry>Disk </entry>
 <entry> 512GB
 </entry>
@@ -419,7 +419,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <row>
 <entry morerows="3">Overcloud StoreVirtual VSA Server</entry>
 <entry morerows="3">OvercloudVSAAOStorage</entry>
-<entry morerows="3">3</entry>
+<entry morerows="3">0</entry>
 <entry>Disk </entry>
 <entry> 512GB
 </entry>
