@@ -124,49 +124,54 @@ The following diagram depicts simplified deployment scenarios:
 <section> <title>Supported Hardware</title>
 <p>The following hardware has been tested and verified to work with HP Helion OpenStack</p>
 </section>
-<section id="hp-helion-openstack-region"> <title>HP Helion OpenStack Region</title>
-<p>For the HP Helion OpenStack Region, the following servers are supported for the current release.</p>
-<p>
-  <b>HP ProLiant BladeSystem</b>
-</p>
-<ul>
-<li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949" scope="external" format="html" >BL460c Gen8</xref>
-</li>
-<li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271227" scope="external" format="html" >BL460c Gen9</xref>
-</li>
-<li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287" scope="external" format="html" >BL660c Gen8</xref>
-</li>
-</ul>
-<p>
-  <b>HP ProLiant Rack Servers</b>
-</p>
-<ul>
-<li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836" scope="external" format="html" >DL360 Gen9</xref>
-</li>
-<li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241" scope="external" format="html" >DL380 Gen9</xref>
-</li>
-<li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527" scope="external" format="html" >DL320 Gen8</xref>
-</li>
-<li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249570" scope="external" format="html" >DL360 Gen8</xref>
-</li>
-<li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957" scope="external" format="html" >DL380 Gen8</xref>
-</li>
-<li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290" scope="external" format="html" >DL560 Gen8</xref>
-</li>
-<li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957" scope="external" format="html" >DL580 Gen8</xref>
-</li>
-</ul>
-<!-- Hiding until confirmation
+<section id="hp-helion-openstack-region">
+      <title>HP Helion OpenStack Region</title>
+      <p>For the HP Helion OpenStack Region, the following servers are supported for the current
+        release.</p>
+      <p>
+        <b>HP ProLiant BladeSystem</b>
+      </p>
+      <ul>
+        <li>
+          <xref
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949"
+            scope="external" format="html">BL460c Gen8</xref>
+        </li>
+        <li>
+          <xref
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271227"
+            scope="external" format="html">BL460c Gen9</xref>
+        </li>
+      </ul>
+      <p>
+        <b>HP ProLiant Rack Servers</b>
+      </p>
+      <ul>
+        <li>
+          <xref
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836"
+            scope="external" format="html">DL360 Gen9</xref>
+        </li>
+        <li>
+          <xref
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241"
+            scope="external" format="html">DL380 Gen9</xref>
+        </li>
+        <li>
+          <xref
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249570"
+            scope="external" format="html">DL360 Gen8</xref>
+        </li>
+        <li>
+          <xref
+            href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957"
+            scope="external" format="html">DL380 Gen8</xref>
+        </li>
+      </ul>
+      <p>Gen 8 or Gen 9 versions of DL360’s or DL380s are required for the nodes that make up the
+        control plane (including non-KVM region related control plan). </p>
+      <p>For compute nodes the either Gen 8 or Gen9 : DL360’s BL460’s are required. </p>
+      <!-- Hiding until confirmation
 **HP Moonshot Servers**
 
 - [m710 Server Cartridge](http://www8.hp.com/in/en/products/proliant-servers/product-detail.html?oid=7398911)
@@ -174,7 +179,7 @@ The following diagram depicts simplified deployment scenarios:
 
 For more information, see [Managing Moonshot Servers](/helion/openstack/1.1/install/moonshot/).
 
--->
+
 <p>
   <b>HP ProLiant Scalable Systems</b>
 </p>
@@ -208,7 +213,8 @@ For more information, see [Managing Moonshot Servers](/helion/openstack/1.1/inst
 <xref href="http://www.dell.com/us/business/p/poweredge-r620/pd" scope="external" format="html" >Power Edge R620</xref>
 </li>
 </ul>
-<!--
+-->
+      <!--
 ## Supported Configurations {#supportedconfigurations}
 
 HP supports the following configurations for HP Helion OpenStack deployment:
@@ -229,7 +235,7 @@ HP supports the following configurations for HP Helion OpenStack deployment:
 
     * HP StoreVirtual 4000 series: driver 11.5.01.0079.0 (Helion Embedded)
 -->
-</section>
+    </section>
 <section id="baremetal"> <title>Hardware Requirements for the Non-KVM Region</title>
 <p>You must have the following hardware configuration:</p>
 <ul>
@@ -237,7 +243,8 @@ HP supports the following configurations for HP Helion OpenStack deployment:
 <p>3 baremetal systems meeting the requirements as listed below.</p>
 </li>
 <li>
-<p>For systems with multiple NICs, only one NIC may be active or connected.</p>
+<p>For systems with multiple NICs, only one NIC may be active or connected. Compute nodes need to
+            have Intel 82599 10G NICs</p>
 </li>
 <li>
 <p>Capable of hosting VMs</p>
@@ -249,11 +256,6 @@ HP supports the following configurations for HP Helion OpenStack deployment:
 <b>Important:</b> Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.</p>
 
 <p>On the controller and compute nodes, make sure the RAID array is configured to reflect a total size of less than 4TB.</p>
-</li>
-<li>
-<p>The <xref href="http://h18013.www1.hp.com/products/servers/proliantstorage/arraycontrollers/dynamicsmartarray/index.html?jumpid=reg_r1002_usen_c-001_title_r0001" scope="external" format="html" >HP Dynamic Smart Array (B120i and B320i) controllers</xref> use a proprietary driver that is not included in Helion OpenStack HP recommends the use of the full featured <xref href="http://www8.hp.com/us/en/products/iss-controllers/index.html" scope="external" format="html" >Smart Array adapters</xref> (such as p220, p440, etc.) in order to achive the best set of features and performance.</p>
-
-<p>To use the Dynamic Smart Array adapter, enter the system ROM-Based Setup Utility (RBSU) and set the adapter to <codeph>Enable SATA AHCI Support</codeph> to allow the use of the adapter in non-RAID mode. However, for reliability this is not recommended.</p>
 </li>
 </ul>
 <p>The following table lists the minimum requirements required for installation of each type of node. See the <xref href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita" >Technical Overview</xref> for an architecture diagram.</p>
@@ -437,110 +439,11 @@ or
 <p>There are no software requirements for the servers where the HP Helion OpenStack region will be installed because all required software is contained within the images deployed on the system.</p>
 <p>The servers should be baremetal before installation.</p>
 </section>
-<section id="guestOS"> <title>Guest OS Support Matrix</title>
-<p>HP Helion OpenStack Guest OS support is based on the hypervisor vendor.</p>
-<p>For ESX, refer to the <xref href="http://www.vmware.com/resources/compatibility/search.php?action=search&amp;deviceCategory=software&amp;advancedORbasic=advanced&amp;maxDisplayRows=50&amp;key=&amp;productId=4&amp;gos_vmw_product_release%5B%5D=90&amp;datePosted=-1&amp;partnerId%5B%5D=-1&amp;os_bits=-1&amp;os_use%5B%5D=-1&amp;os_family%5B%5D=-1&amp;os_type%5B%5D=-1&amp;rorre=0" scope="external" format="html" >VMware Compatibility Guide</xref>.</p>
-<p>For KVM refer to the following table:</p>
-<p>A <b>Verified</b> Guest OS has been tested by HP and appears to function properly as a Nova compute VM on HP Helion OpenStack</p>
-<p>A <b>Certified</b> Guest OS has been officially tested by the OS vendor, or by HP under the vendor's authorized program, and will be supported by the OS vendor as a Nova compute VM on HP Helion OpenStack</p>
-<table>
-<tgroup cols="3">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<tbody>
-<row>
-<entry>OS</entry>
-<entry>Verified</entry>
-<entry>Certified</entry>
-</row>
-<row>
-<entry>Windows Server 2012
-</entry>
-<entry>-</entry>
-<entry>Yes</entry>
-</row>
-<row>
-<entry>Windows Server 2008 R2
-</entry>
-<entry>-</entry>
-<entry>Yes</entry>
-</row>
-<row>
-<entry>Windows Server 2008
-</entry>
-<entry>-</entry>
-<entry>Yes</entry>
-</row>
-<row>
-<entry> Ubuntu 14.10 
-</entry>
-<entry>Yes</entry>
-<entry>No</entry>
-</row>
-<row>
-<entry> Ubuntu 14.04 LTS
- </entry>
-<entry>Yes</entry>
-<entry>No</entry>
-</row>
-<row>
-<entry>Debian 8 (Jessie Beta 2)
-</entry>
-<entry>Yes</entry>
-<entry>N/A</entry>
-</row>
-<row>
-<entry>Debian 7.6
-</entry>
-<entry>Yes</entry>
-<entry>N/A</entry>
-</row>
-<row>
-<entry>CentOS 7</entry>
-<entry>Yes</entry>
-<entry>N/A</entry>
-</row>
-<row>
-<entry> CentOS 6.5
-</entry>
-<entry>Yes</entry>
-<entry>N/A</entry>
-</row>
-<row>
-<entry>RHEL 7.0</entry>
-<entry>Yes</entry>
-<entry>No</entry>
-</row>
-<row>
-<entry> 
- RHEL 6.6
- </entry>
-<entry>Yes</entry>
-<entry>No</entry>
-</row>
-<row>
-<entry>
- Fedora
- </entry>
-<entry>No</entry>
-<entry>-</entry>
-</row>
-<row>
-<entry>SLES</entry>
-<entry>No</entry>
-<entry>-</entry>
-</row>
-</tbody>
-</tgroup>
-</table>
-</section>
-<section id="next"> <title>Next Step</title>
-<p>Review the <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita" >Technical Overview</xref>.</p>
-<p>
-  <xref type="section" href="#topic5769"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
-</section>
+<section id="guestOS"><title>Guest OS Support Matrix</title><p>For HP Helion OpenStack Guest OS
+        supportm see <xref href="carrier-grade-support-matrix-kvm.dita#topic8886/guest"/>.</p>Next
+        Step<p>Review the <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita"
+          >Technical Overview</xref>.</p><p>
+        <xref type="section" href="#topic5769"> Return to Top </xref>
+      </p><!-- ===================== horizontal rule ===================== --></section>
 </body>
 </topic>

@@ -23,7 +23,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-technical-overview.md-->
  <!--permalink: /helion/openstack/carrier/technical-overview/--></p>
-<p> <xref href="../../CarrierGrade/Installation/carrier-grade-install-playbook-overview.dita" >▲ Installation Overview</xref> | <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >Support Matrix ▶</xref>
+  <p> <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-overview.dita" >▲ Installation Overview</xref> | <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >Support Matrix ▶</xref>
 </p>
 <p>This page introduces you to HP Helion OpenStack Carrier Grade, a carrier-grade distribution of OpenStack the leading open source cloud computing platform.</p>
 <ul>
@@ -189,12 +189,6 @@
   
   <p>CLM, PXE, OBS, BLS, WR-PXE, WR-INFRA, WR-TUL will use RFC 1918 non-routable IPs to prevent access to the CLM network from DCM, CLT, or EXT.</p>
 </section>
-<section id="next"> <title>Next step</title>
-<p>For more information of Hardware configurations see the <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >Support Matrix</xref>.</p>
-<p>
-  <xref type="section" href="#topic3485"> Return to Top </xref>
-</p>
-
   <section id="ethernet-interfaces"> <title>Ethernet Interfaces</title>
     <p>All hosts in the server server connect to at least the internal management network using an Ethernet interface. The ports used for this connection must support network booting and must be configured to be used as the primary booting device for normal operations.</p>
     <p>Typically this means that they must be on-board ports, since in most BIOS/UEFI implementations only on-board ports can be configured for network booting. You can use ports on a 10 GB NIC instead, if these ports fulfill these requirements.</p>
@@ -301,6 +295,13 @@
   <section id="provider-network"> <title>Provider Network</title>
     <p>There are no specific requirements for network services to be available on the provider network. However, you must ensure that all network services required by the guests running in the compute nodes are available. For configuration purposes, the compute nodes themselves are entirely served by the services provided by the controller nodes over the internal management network.</p>
   </section>
+
+  <section id="next"> <title>Next step</title>
+    <p>For more information of Hardware configurations see the <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >Support Matrix</xref>.</p>
+    <p>
+      <xref type="section" href="#topic3485"> Return to Top </xref>
+    </p>
+  </section>
   
 
 <!--
@@ -315,6 +316,6 @@ For more information see [HP Helion OpenStack Back Up and Restore](/helion/opens
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top </a>
 -->
 <!-- ===================== horizontal rule ===================== -->
-</section>
+
 </body>
 </topic>

@@ -33,18 +33,13 @@ interface.</li>
 </ul>
 <p>These two frameworks make no assumptions about the application type and
 can be customized to run a wide variety of non-standard applications.</p>
-<p>Any language <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#runtime" type="section"   >
-<i>runtime</i>
-</xref>
-available on the server can be specified in the config file. If a
-runtime is not specified, Python 2.7 is made available by default.</p>
+<p>Any language <xref href="1.2manifestyml.dita#topic20922/runtime"><i>runtime</i></xref> available
+      on the server can be specified in the config file. If a runtime is not specified, Python 2.7
+      is made available by default.</p>
 <section id="generic"> <title>Generic</title>
-<p>The Generic framework requires a custom <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#processes" type="section"   >
-<i>processes:
-web:</i>
-</xref> setting in
-<i>manifest.yml</i> specifying a command to start the web process (e.g. a
-custom web server).</p>
+<p>The Generic framework requires a custom <xref href="1.2manifestyml.dita#topic20922/processes"
+            ><i>processes: web:</i></xref> setting in <i>manifest.yml</i> specifying a command to
+        start the web process (e.g. a custom web server).</p>
 <p>The example below shows a web process that serves static files from the
 application directory using Python's
 <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2index.dita" >SimpleHTTPServer</xref>:</p>
@@ -55,12 +50,10 @@ processes:
     web: python -m SimpleHTTPServer $PORT
 </codeph>
 </codeblock>
-<p>If you wish to run an application <i>without</i> a web interface (i.e. a
-background "worker" process), <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#processes-web-null" type="section"   >
-<i>set 'processes: web:' to
-Null</i>
-</xref> or use the
-Standalone framework instead.</p>
+<p>If you wish to run an application <i>without</i> a web interface (i.e. a background "worker"
+        process), <xref href="1.2manifestyml.dita#topic20922/processes"><i>set 'processes: web:' to
+            Null</i>
+        </xref>or use the Standalone framework instead.</p>
 </section>
 <section id="standalone"> <title>Standalone</title>
 <p>The Standalone framework uses a custom command specified in the

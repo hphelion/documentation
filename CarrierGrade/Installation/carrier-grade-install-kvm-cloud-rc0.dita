@@ -23,12 +23,9 @@
         <ol><li>Login to HLM VM.</li>
         <li>Change to the <codeph>cg-hlm/hlm-build</codeph> directory.</li>
         <li>Execute the following command: <codeblock>./hlm_prepare-env.sh</codeblock></li>
-        <li>Change to the <codeph>cg-hlm/hlm-build</codeph>.</li>
-        <li>Execute the following command ./hlm_prepare-env.sh</li>
         <li>Deploy and configure the cloud services using the following command:
           <codeblock>cd
-hnewcloud HCGCloud &lt;cloudname&gt; </codeblock> This process might
-          approximatley three hours to install all four nodes in a baremetal setup.</li>
+<b>hnewcloud &lt;cloud_name&gt; Denver</b> </codeblock></li>
         <li> Change to the cloud directory, based on the name you entered above.
           <codeblock>cd &lt;cloudname&gt; </codeblock> Where &lt;cloudname&gt; is the name you
           assigned to the cloud.</li>
@@ -52,17 +49,18 @@ hnewcloud HCGCloud &lt;cloudname&gt; </codeblock> This process might
       <ol><li>Change to the <parmname>cinder/blocks</parmname> directory for your cloud:
         <codeblock>cd ~/&lt;cloudname&gt;/services/cinder/blocks</codeblock>
         Where &lt;cloudname&gt; is the name you assigned to the cloud.</li>
-        <li>Copy the <codeph>cinder_conf_default.hp3parSample</codeph> file to <codeph>cinder_conf_default</codeph> file and edit the file to configure to
-          3PAR settings. For example:
+        <li>Copy the <codeph>cinder_conf_default.hp3parSample</codeph> file to
+            <codeph>cinder_conf_default</codeph> file and edit the file to configure to 3PAR
+          settings. For example:
           <codeblock>--3PAR details (connectivity is still being worked upon ETA 06/22/2015. 
-hp3par_api_url=https://10.1.2.18:8080/api/v1
-hp3par_username=cghelion
-hp3par_password=cghelion#
+hp3par_api_url=https://&lt;hp3par_ip&gt;:8080/api/v1
+hp3par_username=&lt;hp3par_user&gt;
+hp3par_password=&lt;hp3par_user_password
 hp3par_cpg=bronze
-san_ip=172.16.0.11
-san_login=cghelion
-san_password=cghelion#
-hp3par_iscsi_ips=172.16.0.11,172.16.0.12,172.16.0.13,172.16.0.14
+san_ip=&lt;san_ip>
+san_login=&lt;san_user>
+san_password=&lt;san_password>
+hp3par_iscsi_ips=&lt;iscsi_ip1&gt;,&lt;iscsi_ip2&gt;,&lt;iscsi_ip3&gt;,&lt;iscsi_ip4&gt;
 volume_driver=cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver
 hp3par_debug=False
 hp3par_iscsi_chap_enabled=false
@@ -91,39 +89,34 @@ hp3par_snapshot_expiration=72</codeblock></li>
     
       <li>Follow the install wizard. Select the Graphics mode for the controller only. Do not select <codeph>Controller+Compute</codeph>.</li>
       <li>After the reboot, log in as user name <codeph>wrsroot</codeph> and password  <codeph>wrsroot</codeph>. Make sure you change the password.</li>
-      <li>Temporarily assign an IP address to the PXE NIC - eth0. Use the IP you have reserved for WR-PXE.
+      <li>Temporarily assign an IP address to the PXE NIC - eth0. Use the IP you have reserved for the KVM PXE.
         <codeblock>ip addr add &lt;CIDR> dev eth0
 ifconfig eth0 up</codeblock></li>
       <li> Set the default gateway to the PXE network gateway
         <codeblock>route add default gw 192.168.101.1</codeblock></li>
-      <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the controller-0:
-        <codeblock>TS_15.05_PATCH_0001.patch  
-          \Builds\WR-2015-06-05-Drop3\patches\official\region_config 
-          HLM VM ~/&lt;cloud_name>/clouds/build40/001/stage/windriver-config/cakey.pem    
-          HLM VM ~&lt;cloud_name>/clouds/build40/001/stage/windriver-config/license.lic 
-          \Builds\WR-2015-06-05-Drop3\helion_branding-v1.2.tgz 
-          \Builds\WR-2015-06-05-Drop3</codeblock></li>
+      <li>Copy the following files to the <codeph>/home/wrsroot/</codeph> directory of the
+          controller-0:
+          <pre>TS_15.05_PATCH_0001.patch  # HLM VM /root/cg-hlm/windriver-files</pre><pre>region_config              # HLM VM ~/&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</pre><pre>cakey.pem                  # HLM VM ~&lt;cloud_name&gt;/clouds/build40/001/stage/windriver-config</pre><pre>license.lic                # LR4: E:\Builds\WR-2015-06-05-Drop3 License file received/procured</pre><pre>helion_branding-v1.2.tgz   # HLM VM /root/cg-hlm/windriver-files</pre></li>
      
-      <li>Move the <codeph>helion_branding-v1.1.tgz</codeph> to <codeph>/opt/branding</codeph> on the controller-0 </li>
+      <li>Move the <codeph>helion_branding-v1.2.tgz</codeph> to <codeph>/opt/branding</codeph> on
+          the controller-0 </li>
    
-      <li>Apply the requried patches on controller-0: 
-      <codeph>
-        sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0001.patch
-        sudo wrs-patch apply TS_15.05_PATCH_0001
-        sudo wrs-patch install-local
-        sudo reboot      </codeph></li>
+      <li>Apply the requried patches on controller-0:
+          <codeblock>sudo wrs-patch upload /home/wrsroot/TS_15.05_PATCH_0001.patch
+sudo wrs-patch apply TS_15.05_PATCH_0001
+sudo wrs-patch install-local
+sudo reboot       </codeblock></li>
    
    <li>Install the KVM region coud:
      <codeblock>sudo config_region</codeblock>
      Ignore the message which displays during <codeph>Config_region</codeph> process.
       <codeblock>Step 9 of 29 [####  ]dm-6 WRITE SAME failed. Manually seroing.</codeblock></li>
 
-      <li>After <codeph>controller-0</codeph> is deployed, deploy the remaining nodes as <codeph>controller-1</codeph> and
-        <codeph>compute-'n'</codeph>. 
-          <codeblock>system host-add --hostname controller-1 --personality controller --mgmt_mac 6C:3B:E5:A3:BB:90 --bm_mac 38:63:bb:2d:78:b0 --bm_ip 10.1.68.162 --bm_type ilo4 --bm_username helioncsel --bm_password admblabla
-system host-add --hostname &lt;unique-compute-name> --personality compute --mgmt_mac d0:bf:9c:f1:b0:80 --mgmt_ip 192.168.204.124 --bm_mac 38:63:bb:2d:78:b0 --bm_ip 128.224.150.227 --bm_type ilo4 --bm_username Administrator --bm_password CTE69HAU</codeblock></li>
+      <li>After <codeph>controller-0</codeph> is deployed, deploy the remaining nodes as
+            <codeph>controller-1</codeph> and <codeph>compute-'n'</codeph>.
+          <pre>system host-add --hostname controller-1 --personality controller --mgmt_mac &lt;mgmt_mac&gt; --bm_mac &lt;bm_mac&gt; --bm_ip &lt;ilo_ip&gt; --bm_type ilo4 --bm_username &lt;ilo_user&gt; --bm_password &lt;ilo_password&gt;</pre><pre>system host-add --hostname &lt;unique-compute-name&gt; --personality compute --mgmt_mac &lt;mgmt_mac&gt; --mgmt_ip &lt;mgmt_ip&gt; --bm_mac &lt;ilo_mac&gt; --bm_ip &lt;ilo_ip&gt; --bm_type ilo4 --bm_username &lt;ilo_user&gt;  --bm_password &lt;ilo_password&gt;</pre></li>
         <li>While registering compute nodes, make sure you specify the <codeph>mgmt_ip</codeph>.
-          This IP should from the WR CLM range (refer to the region_config file) and must not
+          This IP should from the KVM CLM range (refer to the <codeph>region_config</codeph> file) and must not
           overlap controller IPs. It is save to start after a block of 10 IPs.</li> 
         <li>Set the controller-1 and compute-0 to <codeph>One-time PXE boot from network</codeph>.</li>
 
@@ -166,6 +159,12 @@ echo 0 > /proc/sys/net/ipv4/conf/eth0.&lt;CLM_VLAN_ID&gt;/rp_filter
 echo 1 > /proc/sys/net/ipv4/ip_forward </codeblock></li>
     </ol>
   </section>
+  <section id="next-step"> <title>Next Step</title>
+    <p>
+        <xref href="carrier-grade-install-pb-workarounds.dita">Post-Installation Tasks</xref>
+      </p>
+  </section>
+  
   <section>
 <p>
   <xref type="section" href="#topic1107"> Return to Top </xref>

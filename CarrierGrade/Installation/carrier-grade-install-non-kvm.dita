@@ -52,39 +52,31 @@ venom-patch.tar.gz</codeblock></li>
   <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
           environment. For information on each variable, refer to the comments in the file with each
           variable. Make sure the <codeph>hlm_kvm_host</codeph> value is configured properly.</li>
-<li>Check the hosts file <codeph>/root/infra-ansible-playbooks/hosts</codeph> file and make sure it
+  <li id="hosts">Check the hosts file <codeph>/root/infra-ansible-playbooks/hosts</codeph> file and make sure it
           appears similar to the following. Make sure the DCM network details are correct. Also,
           verify the CLM IP address in this file.</li>
 </ol>
-<codeblock>  [vsd]
-  10.200.50.21 ansible_ssh_user=root ansible_ssh_pass=Alcateldc
-  [hlm]
-  [hlm_kvm_host]
+<codeblock>  [hlm_kvm_host]
   192.168.122.1 </codeblock>
 </section>
-  <section><title>Configure SSH on HLM host</title>
-    Use the following steps to configure SSH on the HLM host: <ol>
-      <li>In the <codeph>/etc/ssh/sshd_config</codeph> file, set the following value to enable
-        root login: <codeblock>PermitRootLogin yes</codeblock></li>
-      <li>In the <codeph>~/ssh/config</codeph> file, set the following value to disable strict
-        host key vhecking: <codeblock>StrictHostKeyChecking no</codeblock></li>
-      <li>Restart SSH service.</li>
-      <li>Configure Public key and passwordless ssh access to itself.
-        <codeblock>ssh-keygen -t rsa</codeblock> (Use all default values)</li>
-      <li>Press enter to use default path (/root/.ssh/id_rsa).</li>
-      <li>Press enter for passphrase.</li>
-      <li>Press enter again to confirm the empty passphrase.</li>
-      <li>Use the following command to log into the HLM host.
-        <codeblock>ssh-copy-id &lt;IP_address></codeblock> Where &lt;IP_address> is the the
-        default networks gateway on the HLM host. If you get a permission denied error here - make
-        sure you are logged in as root (root password must be set). </li>
-      <li>Execute the following command from <codeph>/root/infra-playbooks/</codeph>, to provision
-        the HLM VM, copy and decrypt the <codeph>cg-hos.tar.gz.gpg</codeph> from the HLM host to
-        the HLM VM, sync packages on to HLM static IP and finally sets up PXE booting of
-        controller and compute nodes.
-        <codeblock>ansible-playbook -i hosts setup_hlm_onBM.yml</codeblock></li></ol>
-    
-  </section>
+  <section><title>Configure SSH on HLM host</title> Use the following steps to configure SSH on the
+      HLM host: <ol>
+        <li>In the <codeph>/etc/ssh/sshd_config</codeph> file, set the following value to enable
+          root login: <codeblock>PermitRootLogin yes</codeblock></li>
+        <li>In the <codeph>~/ssh/config</codeph> file, set the following value to disable strict
+          host key vhecking: <codeblock>StrictHostKeyChecking no</codeblock></li>
+        <li>Restart SSH service.</li>
+        <li>Configure Public key and passwordless ssh access to itself.
+          <codeblock>ssh-keygen -t rsa</codeblock> (Use all default values)</li>
+        <li>Press enter to use default path (/root/.ssh/id_rsa).</li>
+        <li>Press enter for passphrase.</li>
+        <li>Press enter again to confirm the empty passphrase.</li>
+        <li>Use the following command to log into the HLM host.
+          <codeblock>ssh-copy-id &lt;IP_address></codeblock>Where <codeph>&lt;IP_address></codeph>
+          is the the IP address of the vibr0 interface (the same as specified in <xref
+            href="#topic10581/hosts" format="dita">Step 7</xref> above. If you get a permission
+          denied error here - make sure you are logged in as root (root password must be set). </li>
+      </ol></section>
 <section id="deploy-the-hlm-and-vsd-vm"> <title>Deploy the HLM Virtual Machine</title>
   <p>Use the following steps to deploy the HLM VM on the HLM Host using Ansible playbooks.</p>
 <ol>
@@ -337,8 +329,8 @@ VSD Server : auto
 </section>
 <section id="next-step"> <title>Next Step</title>
 <p>
-  <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita" >HLM Post-Installation Tasks</xref>
-</p>
+        <xref href="carrier-grade-install-kvm-cloud-rc0.dita">Deploying the KVM Region</xref>
+      </p>
 <p>
   <xref type="section" href="#topic10581"> Return to Top </xref>
 </p>

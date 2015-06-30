@@ -139,9 +139,9 @@
 </title>
 <ul>
 <li>
-<xref href="1.2client-ref-buildpacks.dita#topic3247/command-migrate" type="section">helion migrate</xref>: Move the application to a different space. </li>
+  <xref href="1.2client-ref-control.dita#topic3247/command-migrate" type="section">helion migrate</xref>: Move the application to a different space. </li>
 <li>
-<xref href="1.2client-ref-buildpacks.dita#topic3247/command-restage" type="section">helion restage</xref>: Restage an application and regenerate its droplet.</li>
+  <xref href="1.2client-ref-control.dita#topic3247/command-restage" type="section">helion restage</xref>: Restage an application and regenerate its droplet.</li>
 </ul>
 </section>
 <section id="domains"> <title>

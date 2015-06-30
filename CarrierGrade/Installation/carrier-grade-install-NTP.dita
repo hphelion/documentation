@@ -30,7 +30,7 @@
 <section id="server"> <title>Install an NTP server on the seed</title>
 <p>To configure an NTP server, follow these steps:</p>
 <ol>
-<li>Log in to the KVM host.<codeblock><codeph>sudo su -
+<li>Log in to the HLM host.<codeblock><codeph>sudo su -
 </codeph></codeblock></li>
 <li>Install the NTP package using the following
           command:<codeblock><codeph>sudo apt-get install ntp
@@ -114,7 +114,16 @@ fudge 127.127.1.0 stratum 10
 
 If your client (including your NTP server) has trouble syncing time, see [Troubleshooting NTP](/helion/openstack/1.1/services/troubleshooting/ntp#synch).
 -->
-<p>
+</section>
+  <section id="next-step"> <title>Next Step</title>
+    <p>
+      <xref href="carrier-grade-install-non-kvm.dita">Deploying the Non-KVM
+        Region</xref>
+    </p>
+  </section>
+  
+  <section>
+  <p>
   <xref type="section" href="#topic4740"> Return to Top </xref>
 </p>
 </section>

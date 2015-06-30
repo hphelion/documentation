@@ -142,7 +142,7 @@
         </ul>
     </section>
     <section>
-        <title>Supported Guest OSs</title>
+        <title id="guest">Supported Guest OSs</title>
         <p>The following Guest OSs are supported by HP Helion OpenStack Carrier Grade:</p>
         <ul>
             <li>

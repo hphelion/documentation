@@ -25,7 +25,8 @@
 <li>
 <xref type="section" href="#topic50918/command-create-app">helion create-app</xref>: Create an empty application with the specified configuration.</li>
 <li>
-<xref type="section" href="#topic50918/command-dbshell">helion dbshell</xref>: Invoke interactive db shell for a bound service.</li>
+        <xref href="#topic50918/command-dbshell" format="dita">helion dbshell</xref>: Invoke
+        interactive db shell for a bound service.</li>
 <li>
 <xref type="section" href="#topic50918/command-delete">helion delete</xref>: Delete the specified application(s).</li>
 <li>

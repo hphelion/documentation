@@ -354,9 +354,11 @@ ifup br-dcm
 </section>
 <section id="next-step"> <title>Next Step</title>
 <p>
-  <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.dita" >Create the HLM Virtual Machine</xref>
-</p>
-<p>
+    <xref href="carrier-grade-install-NTP.dita">Configuring NTP</xref>
+            </p>
+</section>
+    <section>
+    <p>
   <xref type="section" href="#topic7646"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->

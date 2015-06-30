@@ -15,7 +15,8 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-prereqs.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/prereqs/--></p>
-<p>This document describes the prerequisite steps and one time setup on your KVM host required to install HP Helion OpenStack Carrier Grade in a baremetal environment.</p>
+<p>This document describes the prerequisite steps and one time setup on your HLM host required to
+      install HP Helion OpenStack Carrier Grade in a baremetal environment.</p>
 <section id="hardware"> <title>Hardware and software requirements</title>
 <p>Before you start, if you have not done so already, make sure your environment meets the hardware and software requirements. See the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >HP Helion OpenStack Support Matrix</xref>.</p>
 </section>
@@ -35,7 +36,7 @@
 
 <ul>
 <li>to the correct date and time</li>
-<li>KVM host configured in UTC (Coordinated Universal Time)</li>
+<li>HLM host configured in UTC (Coordinated Universal Time)</li>
 <li>with only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled</li>
 <li>to stay powered off in the event of being shutdown rather than automatically restarting</li>
 </ul>
@@ -45,8 +46,9 @@
 </li>
 </ul>
 </section>
-<section id="kvm"> <title>Preparing the KVM host</title>
-<p>The following tasks need to be performed on the KVM host, the system where the you will launch the HP Helion OpenStack Carrier Grade installation.</p>
+<section id="kvm"> <title>Preparing the HLM host</title>
+<p>The following tasks need to be performed on the HLM host, the system where the you will launch
+        the HP Helion OpenStack Carrier Grade installation.</p>
 <ul>
 <li>Install Ubuntu Server 14.04.2 LTS</li>
 <li>Configure SSH</li>
@@ -65,24 +67,26 @@
 </ul>
 </section>
 <section id="ubuntu"> <title>Install Ubuntu Server 14.04.2 LTS</title>
-<p>The KVM host must have Ubuntu Server 14.04.2 LTS installed before performing the HP Helion OpenStack Carrier Grade installation.</p>
+<p>The HLM host must have Ubuntu Server 14.04.2 LTS installed before performing the HP Helion
+        OpenStack Carrier Grade installation.</p>
 </section>
 <section id="pub-key"> <title>Obtain a public key</title>
-<p>On the KVM host, the user <codeph>root</codeph> must have a public key.</p>
+<p>On the HLM host, the user <codeph>root</codeph> must have a public key.</p>
 <ol>
-<li>Launch a terminal and log in to your KVM host as root:<p>sudo su -</p></li>
+<li>Launch a terminal and log in to your HLM host as root:<p>sudo su -</p></li>
 <li>Use the following command to create the key. Accept the default
           values.<p>/root/.ssh/id_rsa</p></li>
-<li>install the public key into the authorized keys on the KVM
+<li>Install the public key into the authorized keys on the HLM
             host:<codeblock><codeph>ssh-copy-id &lt;IP_address&gt;
 </codeph></codeblock><p>Enter the
-            IP address of the default network gateway on the KVM.</p></li>
+            IP address of the default network gateway on the HLM host.</p></li>
 </ol>
 </section>
 <section id="proxy"> <title>Configure proxy information</title>
-<p>Before you begin your installation on the KVM host, if necessary configure the proxy information for your environment using the following steps:</p>
+<p>Before you begin your installation on the HLM host, if necessary configure the proxy information
+        for your environment using the following steps:</p>
 <ol>
-<li>Launch a terminal and log in to your KVM host as
+<li>Launch a terminal and log in to your HLM host as
           root:<codeblock><codeph>sudo su -
 </codeph></codeblock></li>
 <li>Edit the <codeph>/etc/environment</codeph> file to add the following lines, using values
@@ -110,7 +114,7 @@ provider_network is your ESX management network
           network.<codeblock><codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
 </codeph></codeblock></li>
 <li>Reboot the server</li>
-<li>Log out and re-login to the KVM host to activate the proxy configuration.</li>
+<li>Log out and re-login to the HLM host to activate the proxy configuration.</li>
 </ol>
 </section>
 <section id="configure-the-xrdp-remote-desktop-display"> <title>Configure the XRDP remote desktop display</title>
@@ -123,7 +127,7 @@ provider_network is your ESX management network
 </codeph>
 </codeblock><p>c.
             Save and close the file.</p></li>
-<li>Restart the xrdp service:<p>sudo /etc/init.d/xrdp restart</p></li>
+<li>Restart the XDRP service:<p>sudo /etc/init.d/xrdp restart</p></li>
 </ol>
 <p>If the XDRP display does not work as expected, (you see a gray screen), update the <codeph>startwm.sh</codeph> file:</p>
 <codeblock><codeph>vi /etc/xrdp/startwm.sh
@@ -146,8 +150,13 @@ fi
 <section id="ntp"> <title>Install and configure NTP</title>
 <p>NTP is a networking protocol for clock synchronization between computer systems.</p>
 <p>The HP Helion OpenStack cloud nodes must be configured as NTP clients and point to the same NTP server.</p>
-<p>You can install NTP on the KVM host and configure it as an NTP server. Or, you can use a pre-existing NTP server that is reachable from the management network.  You will also need to configure the undercloud and overcloud systems as NTP clients pointing to the NTP server you have chosen to use during the installation process.</p>
-<p>For information on installing NTP on the KVM host, see <xref href="../../CarrierGrade/Installation/carrier-grade-install-NTP.dita" >Installing an NTP Server</xref>.</p>
+<p>You can install NTP on the HLM host and configure it as an NTP server. Or, you can use a
+        pre-existing NTP server that is reachable from the management network. You will also need to
+        configure the undercloud and overcloud systems as NTP clients pointing to the NTP server you
+        have chosen to use during the installation process.</p>
+<p>For information on installing NTP on the HLM host, see <xref
+          href="../../CarrierGrade/Installation/carrier-grade-install-NTP.dita">Installing an NTP
+          Server</xref>.</p>
 </section>
 <section id="getinstall"> <title>Download and unpack the installation packages</title>
 <p>Before you begin, you must download the required HP Helion OpenStack installation package(s):</p>
@@ -167,7 +176,8 @@ tar xjf /tmp/cg-infra-playbooks.tar.gz.gpg
 </ol>
 </section>
 <section id="ssh"> <title>Configure SSH</title>
-<p>On the KVM host, the OpenSSH server must be running and the firewall configuration should allow access to the SSH ports.</p>
+<p>On the HLM host, the OpenSSH server must be running and the firewall configuration should allow
+        access to the SSH ports.</p>
 <ol>
 <li>Enable root login in the
           <codeph>/etc/ssh/sshd_config</codeph>:<codeblock><codeph>PermitRootLogin yes

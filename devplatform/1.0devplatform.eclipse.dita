@@ -19,13 +19,15 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.0devplatform.eclipse.md-->
+ <!--./devplatform/1.0devplatform.eclipse.md--> 
  <!--permalink: /helion/devplatform/eclipse/--></p>
-<p> If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app
-            directly to HP Helion Development Platform.</p>
+<p>
+
+</p>
+<p>If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to HP Helion Development Platform.</p>
 <p>Follow the steps outlined in this document to get the plugin up and running and to deploy one of the sample apps.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>If you'd like to deploy the provided <xref href="../devplatform/1.0devplatform.appdev.dita#java" type="section"  >Java samples</xref>, you will need to install the following prerequisites. If necessary, locate the version appropriate for your environment and install it before continuing.</p>
+<p>If you'd like to deploy the provided <xref href="../devplatform/1.0devplatform.appdev.dita#java" type="section">Java samples</xref>, you will need to install the following prerequisites. If necessary, locate the version appropriate for your environment and install it before continuing.</p>
 <ul>
 <li>The Java <xref href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" scope="external" format="html" >Runtime Environment</xref> </li>
 <li>The <xref href="https://www.eclipse.org/downloads/packages" scope="external" format="html" >Eclipse IDE for Java EE developers</xref> </li>
@@ -53,14 +55,8 @@
 <li>Select <b>HP Helion Development Platform</b> from the tree view and click <b>Next</b>.<!--A BR tag was used here in the original source.--><image href="../media/eclipse5.png" placement="break"/>
 <image href="../media/eclipse6.png"/>
 </li>
-<li>Add a new Cloud URL by hitting the Manage Cloud button. Enter the URL of your ALS cluster and
-                    give it a name. If you don't have an ALS cluster set up, the fastest way to
-                    create one is to use the <xref
-                        href="1.2/1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952"
-                        >Quick Start Developer Trial</xref> in the public
-                        cloud.<image
-                        href="../media/eclipse7.png" placement="break"/>
-                </li>
+<li>Add a new Cloud URL by hitting the Manage Cloud button.  Enter the URL of your ALS cluster and give it a name. <image href="../media/eclipse7.png" placement="break"/>
+</li>
 </ol>
 <p>- <b>Note</b>: You may receive a warning that the peer is not authenticated, this is expected behavior as ALS images use a self-signed certificate. Select Yes when prompted with this error message.
     <image href="../media/eclipse8.png"/>

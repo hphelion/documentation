@@ -49,7 +49,7 @@ option is useful in this scenario).</p>
             <xref type="section" href="#topic31232/setting-a-static-ip">Setting a Static IP</xref>
           </li>
           <li>
-            <xref type="section" href="#topic31232/server-config-etc-hosts">Modifying the hosts
+            <xref href="#topic31232/server-config-etc-hosts" format="dita">Modifying the hosts
               file</xref>
           </li>
           <li>
@@ -59,7 +59,7 @@ option is useful in this scenario).</p>
             <xref type="section" href="#topic31232/dynamic-dns">Dynamic DNS</xref>
           </li>
           <li>
-            <xref type="section" href="#topic31232/alternate-dns-techniques">Alternate DNS
+            <xref href="#topic31232/alternate-dns-techniques" format="dita">Alternate DNS
               Techniques</xref>
             <ul>
               <li>
@@ -159,9 +159,11 @@ VM a canonical hostname on an existing network, <xref type="section" href="#topi
           </xref>.</p></note>
 </section>
 <section id="changing-ip-addresses"> <title>Changing IP Addresses</title>
-  <p>The Application Lifecycle Service <i>micro cloud</i> server is initially set up for <xref href="../../user/reference/1.2glossary.dita#topic6187/term-DHCP" >DHCP</xref> and <xref href="../../user/reference/1.2glossary.dita#topic6187/term-multicast-dns" type="section" >multicast DNS</xref>. This is
-often sufficient for local testing, but in this configuration has only a
-single node and can only be privately routed.</p>
+  <p>The Application Lifecycle Service <i>micro cloud</i> server is initially set up for <xref
+          href="../../user/reference/1.2glossary.dita#topic6187/term-DHCP">DHCP</xref> and <xref
+          href="../../user/reference/1.2glossary.dita#topic6187/term-multicast-dns" type="section"
+          >multicast DNS</xref>. This is often sufficient for local testing, but in this
+        configuration has only a single node and can only be privately routed.</p>
 <p>As you move toward production use of the server, further configuration
 of IP addresses and hostnames will therefore be required. A production
 Application Lifecycle Service server will most likely be a
@@ -194,13 +196,12 @@ internal servers. If you follow this convention, your Application Lifecycle Serv
 will obtain an appropriate IP address automatically. DNS at your site
 may establish a similar convention, which you will want to follow when
 making any name or address changes within the cluster.</p>
-<p>Having determined the hostnames of cluster nodes to be managed by
-<xref type="section" href="#topic31232/server-config-dns">
-<i>DNS</i>
-</xref>, the hostname on the primary node should be
-set using <xref type="section" href="#topic31232/server-config-hostname">
-<i>kato node rename</i>
-</xref>.</p>
+<p>Having determined the hostnames of cluster nodes to be managed by <xref type="section"
+          href="#topic31232/server-config-dns">
+          <i>DNS</i>
+        </xref>, the hostname on the primary node should be set using <xref
+          href="#topic31232/server-config-hostname" format="dita"><i>kato node rename</i></xref>
+        .</p>
 <p>Finally, if you must set a static IP on any cluster node, be sure to
 test it before making the change permanent, otherwise you may not be
 able to reach the node once it reboots. Assuming that the primary
@@ -294,10 +295,9 @@ being used by dnsmasq by checking the file
           (<xref href="http://tools.ietf.org/html/rfc1918" scope="external" format="html">RFC
           1918</xref>) for the controller so that the other nodes can be assured of routing directly
         to it. See your network administrator for advice on which addresses and subnets are
-        permissible. Once you have this secondary address set up, see the <xref type="section"
-          href="#topic31232/server-config-etc-hosts">
-          <i>/etc/hosts</i>
-        </xref> section for final configuration of the server.</note>
+        permissible. Once you have this secondary address set up, see the <xref
+          href="#topic31232/server-config-etc-hosts" format="dita"><i>/etc/hosts</i></xref> section
+        for final configuration of the server.</note>
 </section>
 <section id="server-config-etc-hosts"> <title>Modifying /etc/hosts</title>
 <p>The <codeph>/etc/hosts</codeph> file is used to resolve certain
@@ -412,10 +412,10 @@ but which do not merit the effort of manually configuring a DNS record
 <p>The quickest way to get wildcard DNS resolution is to use the
 <xref href="http://xip.io/" scope="external" format="html" >xip.io</xref> service.  This is the approach taken on clusters created with the Horizon Management Console panel or Application Lifecycle Service Installer CLI, and is done as part of the setup process.</p>
 <p>
-<xref type="section" href="#topic31232/server-config-hostname">Change your hostname</xref> using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section" >kato node
-rename</xref> to
-match the external IP address with the 'xip.io' domain appended. For
-example:</p>
+        <xref href="#topic31232/server-config-hostname" format="dita">Change your hostname</xref>
+        using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach"
+          type="section">kato node rename</xref> to match the external IP address with the 'xip.io'
+        domain appended. For example:</p>
 <codeblock>kato node rename 10.9.8.7.xip.io</codeblock>
 <p>This will change the system hostname and reconfigure some internal
 Application Lifecycle Service settings. The xip.io DNS servers will resolve the domain
@@ -796,7 +796,11 @@ list</i>
     - deb mirror://mirrors.ubuntu.com/mirrors.txt precise-updates main restricted universe multiverse 
     - deb http://security.ubuntu.com/ubuntu precise-security main universe 
     - deb http://apt.newrelic.com/debian/ newrelic non-free </codeblock>
-  <p>Once a repository has been added to the list, <b>the GPG key must also be added</b> to the <xref href="../server/1.2docker.dita#topic7767/modifying-or-updating-the-container-image" >Docker base image</xref> on each DEA (or the <xref href="../server/1.2docker.dita#topic7767/creating-a-docker-registry" type="section" >Docker registry</xref> server if configured).</p>
+  <p>Once a repository has been added to the list, <b>the GPG key must also be added</b> to the
+          <xref href="1.2docker.dita#topic7767/modifying-or-updating-the-container-image">Docker
+          base image</xref> on each DEA (or the <xref
+          href="../server/1.2docker.dita#topic7767/creating-a-docker-registry" type="section">Docker
+          registry</xref> server if configured).</p>
 <p>For example, to trust the GPG for the New Relic repository, add the following line to the <i>Dockerfile</i> for the base image:</p>
 <codeblock>RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -</codeblock>
 </section>
