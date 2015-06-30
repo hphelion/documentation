@@ -555,8 +555,12 @@ or
 <p>There are no software requirements for the servers where the HP Helion OpenStack region will be installed because all required software is contained within the images deployed on the system.</p>
 <p>The servers should be baremetal before installation.</p>
 </section>
-<section id="guestOS"><title>Guest OS Support Matrix</title><p>For HP Helion OpenStack Guest OS
-        supportm see <xref href="carrier-grade-support-matrix-kvm.dita#topic8886/guest"/>.</p>Next
+<section id="guestOS"><title>Guest OS Support Matrix</title><p>For HP Helion OpenStack Guest OS. See <xref
+          href="carrier-grade-support-matrix-kvm.dita#topic8886/guest">Support Matrix for the KVM
+            region</xref>.</p>
+</section>
+<section>  
+  Next
         Step<p>Review the <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita"
           >Technical Overview</xref>.</p><p>
         <xref type="section" href="#topic5769"> Return to Top </xref>
