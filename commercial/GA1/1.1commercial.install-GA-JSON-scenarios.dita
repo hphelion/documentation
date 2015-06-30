@@ -153,8 +153,8 @@
                     <codeph>esx-custom-ips.json</codeph> and edit the following configuration
                 variables. Save the file on the seed cloud host (installation system). The variables
                 are defined in <xref
-                    href="1.1commercial.install-GA-JSON.dita"
-                /> used during install.</p>
+                    href="1.1commercial.install-GA-JSON.dita" 
+                /> Editing the Installation Configuration JSON File used during install.</p>
 <p>All VLAN ID's &amp; IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.</p>
 <ol>
 <li>
