@@ -355,9 +355,10 @@
         <topicref href="commercial/GA1/1.1commercial.undercloud-eon-cli.dita"
           navtitle="EON Command-line Interface" locktitle="yes"/>
       </topicref>
-      <topicref href="commercial/GA1/1.1commerical.services-sherpa-accessing-ui.dita">
-        <topicref href="commercial/GA1/1.1commerical.services-sherpa-overview.dita"/>
-      </topicref>
+      
+        <topicref href="commercial/GA1/1.1commerical.services-sherpa-overview.dita">
+      <topicref href="commercial/GA1/1.1commerical.services-sherpa-accessing-ui.dita"/>
+        </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-horizon-overview.dita">
         <topicref href="commercial/GA1/1.1commercial.dashboard.launch.dita"/>
         <topicref href="commercial/GA1/1.1commercial.dashboard.how-works.dita"/>
@@ -1782,7 +1783,7 @@
       locktitle="yes"/>
     <topicref href="publiccloud/hz.whatsnewjan.2014.dita"/>
     <topicref href="publiccloud/upload-publish-partner-images135.dita"
-      navtitle="Uploading and Publishing Partner Images" locktitle="yes" /><!--set to toc=no later-->
+      navtitle="Uploading and Publishing Partner Images" locktitle="yes" toc="no"/><!--set to toc=no later-->
     <topicref href="publiccloud/vpn-multisite.dita" navtitle="VPN Multi-Site Configuration Guide"
       locktitle="yes" /><!--set to toc=no later-->
     <topicref href="publiccloud/vpn-quickstart.dita" navtitle="VPN Setup Quick Start Guide"
