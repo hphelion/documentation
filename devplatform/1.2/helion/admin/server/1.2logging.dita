@@ -31,62 +31,58 @@
 <xref type="section" href="#topic11928/debugging-logyard">Debugging Logyard</xref>
 </li>
 <li>
-<xref type="section" href="#topic11928/drains">Drains</xref>
-
-<ul>
+        <xref type="section" href="#topic11928/drains">Drains</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic11928/system-drains">System Drains</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/log-format">Log Format</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/saving-custom-log-formats">Saving Custom Log
+              Formats</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/custom-drains">Custom Drains</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/application-drains">Application Drains</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/drain-status">Drain Status</xref>
+          </li>
+        </ul></li>
 <li>
-<xref type="section" href="#topic11928/system-drains">System Drains</xref>
-</li>
+        <xref type="section" href="#topic11928/keys">Keys</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic11928/apptail">apptail</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/event">event</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/systail">systail</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/managing-the-systail-stream">Managing the systail
+              stream</xref>
+          </li>
+        </ul></li>
 <li>
-<xref type="section" href="#topic11928/log-format">Log Format</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/saving-custom-log-formats">Saving Custom Log Formats</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/custom-drains">Custom Drains</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/application-drains">Application Drains</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/drain-status">Drain Status</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic11928/keys">Keys</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic11928/apptail">apptail</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/event">event</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/systail">systail</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/managing-the-systail-stream">Managing the systail stream</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic11928/configuration">Configuration</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic11928/drain-timeouts">Drain Timeouts</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/user-drain-limit">User Drain Limit</xref>
-</li>
-<li>
-<xref type="section" href="#topic11928/apptail-limits">Apptail Limits</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic11928/configuration">Configuration</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic11928/drain-timeouts">Drain Timeouts</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/user-drain-limit">User Drain Limit</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic11928/apptail-limits">Apptail Limits</xref>
+          </li>
+        </ul></li>
 </ul>
 <p>Application and system logs in Application Lifecycle Service are aggregated into streams
 which can be viewed, tailed, filtered, and/or sent via drains to other
@@ -394,7 +390,7 @@ source for an existing key.</p>
 <p>Restart the <codeph>systail</codeph> process after adding or
 removing log files:</p>
 <codeblock>kato process restart systail</codeblock>
-      <note> Do not remove the default Application Lifecycle Service log stream keys (i.e. anything
+      <note type="caution"> Do not remove the default Application Lifecycle Service log stream keys (i.e. anything
         in the <i><xref href="#topic11928/systail" format="dita">systail</xref></i> list above) as
         this would affect the output of <codeph>kato tail</codeph>.</note>
 </section>

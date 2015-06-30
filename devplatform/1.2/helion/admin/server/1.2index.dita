@@ -34,11 +34,13 @@ virtualization host.</p>
 </ul>
 <p>Unless you've already created a primary admin user in the Management Console. If so, the password of the default Helion account is changed to match that of the first user created in the Management Console, and you'll need to use that password instead.</p>
 <p>
-<b>Security Note</b>: If the Application Lifecycle Service server is running on a publicly routable network, the password should be changed as soon as possible.</p>
+        <note type="warning">If the Application Lifecycle Service server is running on a publicly-routable network, the password should be changed as soon as possible.</note>
+      </p>
 <p>
-  <b>Note</b>
-</p>
-<p>If the cluster was created using the Horizon Management Console Panel or Application Lifecycle Service Installer CLI, you must log in with your SSH key you selected during cluster creation.</p>
+        <note type="tip">If the cluster was created using the Horizon Management Console Panel or Application
+          Lifecycle Service Installer CLI, you must log in with your SSH key you selected during
+          cluster creation.</note>
+      </p>
 <p>Command access to the Application Lifecycle Service server is available in several ways:</p>
 <ul>
 <li>
@@ -47,24 +49,15 @@ virtualization host.</p>
 <li>
   <p>The <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita">Application Lifecycle Service Client</xref> command, which in addition to specialized functions can provide remote shell access to the server:</p>
 
-<codeblock>
-<codeph>helion target helion@helion-xxxx.local
-helion ssh api
-</codeph>
-</codeblock>
+<codeblock>helion target helion@helion-xxxx.local
+helion ssh api</codeblock>
 </li>
 <li>
 <p>The familiar <codeph>ssh</codeph> command:</p>
 
-<codeblock>
-<codeph>ssh helion@helion-xxxx.local
-</codeph>
-</codeblock>
+<codeblock>ssh helion@helion-xxxx.local</codeblock>
 </li>
 </ul>
-<p>
-<b>Note</b>
-<!-- For ssh access on Windows, we recommend [MSYS](http://sourceforge.net/apps/trac/mingw-w64/wiki/MSYS).--></p>
 <p>On the server, the control command for Application Lifecycle Service is called
 <codeph>kato</codeph>. It is used for configuration and node
 management procedures such as start, stop, role specialization, and
@@ -74,64 +67,82 @@ status checks. For a complete list of options, see the <xref href="../../../../.
 <p>Instructions for common operations on the Application Lifecycle Service VM can be found here:</p>
 <ul>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita" >Common Server Operations</xref>
-
-<ul>
+          <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita">Common
+            Server Operations</xref>
+          <ul>
+            <li>
+              <xref
+                href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/server-status"
+                type="section">Server Status</xref>
+              <ul>
+                <li>
+                  <xref
+                    href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/starting-and-stopping-roles"
+                    type="section">Starting and Stopping Roles</xref>
+                </li>
+                <li>
+                  <xref
+                    href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/system-shutdown"
+                    type="section">System Shutdown</xref>
+                </li>
+              </ul></li>
+            <li>
+              <xref
+                href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/setting-the-time-zone"
+                type="section">Setting the Time Zone</xref>
+            </li>
+            <li>
+              <xref
+                href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/resetting-the-vm"
+                type="section">Resetting the VM</xref>
+            </li>
+            <li>
+              <xref
+                href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/monitoring-the-application-lifecycle-service-server"
+                type="section">Monitoring The Application Lifecycle Service Server</xref>
+              <ul>
+                <li>
+                  <xref
+                    href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/management-console"
+                    type="section">Management Console</xref>
+                </li>
+                <li>
+                  <xref
+                    href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/new-relic"
+                    type="section">New Relic</xref>
+                </li>
+                <li>
+                  <xref
+                    href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/creating-an-admin-user"
+                    type="section">Creating an Admin User</xref>
+                </li>
+                <li>
+                  <xref
+                    href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/system-monitoring-with-nagios"
+                    type="section">System Monitoring with Nagios</xref>
+                </li>
+              </ul></li>
+            <li>
+              <xref
+                href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/server-backup-import-and-export"
+                type="section">Server Backup, Import, and Export</xref>
+            </li>
+          </ul></li>
 <li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/server-status" type="section"   >Server Status</xref>
-
-<ul>
-<li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/starting-and-stopping-roles" type="section"   >Starting and Stopping
-Roles</xref>
-</li>
-<li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/system-shutdown" type="section"   >System Shutdown</xref>
-</li>
-</ul>
-</li>
-<li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/setting-the-time-zone" type="section"   >Setting the Time Zone</xref>
-</li>
-<li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/resetting-the-vm" type="section"   >Resetting the VM</xref>
-</li>
-<li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/monitoring-the-application-lifecycle-service-server" type="section"   >Monitoring The Application Lifecycle Service
-Server</xref>
-
-<ul>
-<li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/management-console" type="section"   >Management Console</xref>
-</li>
-<li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/new-relic" type="section"   >New Relic</xref>
-</li>
-<li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/creating-an-admin-user" type="section"   >Creating an Admin User</xref>
-</li>
-<li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/system-monitoring-with-nagios" type="section"   >System Monitoring with Nagios</xref>
-</li>
-</ul>
-</li>
-<li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2operations.dita#topic4410/server-backup-import-and-export" type="section"   >Server Backup, Import, and Export</xref>
-</li>
-</ul>
-</li>
-<li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita" >Upgrading Application Lifecycle Service</xref>
-
-<ul>
-<li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#topic13180/before-an-upgrade" type="section"   >Before an upgrade</xref>
-</li>
-<li>
-  <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#topic13180/executing-the-upgrade" type="section"   >Executing the upgrade</xref>
-</li>
-</ul>
-</li>
+          <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita">Upgrading
+            Application Lifecycle Service</xref>
+          <ul>
+            <li>
+              <xref
+                href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#topic13180/before-an-upgrade"
+                type="section">Before an upgrade</xref>
+            </li>
+            <li>
+              <xref
+                href="../../../../../devplatform/1.2/helion/admin/server/1.2upgrade.dita#topic13180/executing-the-upgrade"
+                type="section">Executing the upgrade</xref>
+            </li>
+          </ul></li>
 </ul>
 </section>
 <section id="detailed-configuration"> <title>Detailed Configuration</title>
