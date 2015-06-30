@@ -378,8 +378,10 @@
         navtitle="Disaster Recovery" locktitle="yes"/>
     </topichead>
     <!-- Troubleshooting -->
-    <topicref href="commercial/GA1/1.1commercial.related-topics.dita"/>
-    <topicref href="commercial/GA1/1.1commerical.services-logging-overview.dita"/>
+    <topicref href="commercial/GA1/1.1commercial.related-topics.dita"
+      navtitle="Related OpenStack Documentation" locktitle="yes"/>
+    <topicref href="commercial/GA1/1.1commerical.services-logging-overview.dita"
+      navtitle="Centralized Logging Overview" locktitle="yes"/>
     <!-- backup -->
     <!-- Update -->
     <!-- FCP -->
@@ -394,12 +396,14 @@
     </topichead>
     <!-- Glossary -->
     <!-- Not in 1.1.1 -->
-    <topicref href="commercial/GA1/1.1commerical.services-eve-overview.dita"/>
+    <topicref href="commercial/GA1/1.1commerical.services-eve-overview.dita"
+      navtitle="Eve Service Overview" locktitle="yes"/>
     <!--set to toc=no later-->
-    <topicref href="commercial/GA1/1.1commerical.services-focus-overview.dita"/>
+    <topicref href="commercial/GA1/1.1commerical.services-focus-overview.dita"
+      navtitle="Focus Service Overview" locktitle="yes"/>
     <!--set to toc=no later-->
     <!--set to toc=no later  removed site index. not needed-->
-    <topicref href="commercial/GA1/1.1commercial.glossary.dita"/>
+    <topicref href="commercial/GA1/1.1commercial.glossary.dita" navtitle="Glossary" locktitle="yes"/>
     <!-- Files in MD repo Under Revision not in DITA -->
     <!-- 1.0 -->
   </topicref>
