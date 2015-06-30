@@ -194,7 +194,7 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <li>HP Flex-10 10Gb 2-port 530FLB Adapter</li>
 <li>HP Flex Fabric 10Gb 2-port 534FLB Adapter</li>
 <li>HP FlexFabric 10Gb 2-port 554FLB Adapter</li>
-<li>HP Ethernet 10Gb 2-port 560FLB Adapter</li>
+<li>HP Ethernet 10Gb 2-port 560FLB Adapter (not supported with HP Virtual Connect)</li>
 <li>HP FlexFabric 20Gb 2-port 650FLB Adapter </li>
 </ul>
 </section>
