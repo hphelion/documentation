@@ -24,19 +24,13 @@
 <i>requirements.txt</i> file.</p>
 <p>In the <i>requirements.txt</i> file, list any module requirements, with at
 least:</p>
-<codeblock>
-  <codeph>Dancer
+<codeblock>Dancer
 Plack::Request
-YAML
-</codeph>
-</codeblock>
+YAML</codeblock>
 <p>In the <i>app.psgi</i> file, for a simple implementation:</p>
-<codeblock>
-  <codeph>use Dancer;
+<codeblock>use Dancer;
 get '/' =&gt; sub { "hello world!" };
-dance;
-</codeph>
-</codeblock>
+dance;</codeblock>
 <section id="examples"> <title>Examples</title>
 <ul>
 <li>

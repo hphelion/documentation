@@ -41,16 +41,12 @@ documentation, or in our <xref href="https://github.com/Stackato-Apps/mason-hell
 app</xref>.</p>
 <p>In the <i>requirements.txt</i> file, list any module requirements, with at
 least:</p>
-<codeblock>
-  <codeph>Mason
+<codeblock>Mason
 Plack::Builder
 Mason::Plugin::PSGIHandler
-Plack::Middleware::ReverseProxy
-</codeph>
-</codeblock>
+Plack::Middleware::ReverseProxy</codeblock>
 <p>In the <i>app.psgi</i> file:</p>
-<codeblock>
-  <codeph>#!/usr/bin/perl
+<codeblock>#!/usr/bin/perl
 use Cwd qw(realpath);
 use File::Basename;
 use Mason;
@@ -80,9 +76,7 @@ builder {
         enable "Plack::Middleware::ContentLength";
         enable "Plack::Middleware::ReverseProxy";
         $app;
-};
-</codeph>
-</codeblock>
+};</codeblock>
 <p>The <i>manifest.yml</i> file contains deployment instructions for Application Lifecycle Service. See complete details for this file in the <xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >
 <i>Configuration With manifest.yml</i>
 </xref> section.</p>

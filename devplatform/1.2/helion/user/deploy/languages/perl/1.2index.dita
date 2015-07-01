@@ -26,16 +26,12 @@ started from a top-level script which must be called <codeph>app.psgi</codeph>. 
 example, in the
 <xref href="https://github.com/Stackato-Apps/mojo-helloworld" scope="external" format="html" >mojo-helloworld</xref>
 sample application:</p>
-<codeblock>
-  <codeph>$ENV{MOJO_MODE} = 'production';
-require 'app.pl';
-</codeph>
-</codeblock>
+<codeblock>$ENV{MOJO_MODE} = 'production';
+require 'app.pl';</codeblock>
 <p>
-  <b>Note</b>
-</p>
-<p>Both Dancer and Mojolicious scripts automatically use the PSGI protocol,
-so there is no need to create a separate app.psgi for them.</p>
+      <note> Both Dancer and Mojolicious scripts automatically use the PSGI protocol, so there is no
+        need to create a separate app.psgi for them.</note>
+    </p>
 <p>The script is a pointer to the actual application,
 <xref href="https://github.com/Stackato-Apps/mojo-helloworld" scope="external" format="html" >app.pl</xref>. You
 could rename <codeph>app.pl</codeph> to <codeph>app.psgi</codeph> instead, but using the approach above
@@ -76,20 +72,16 @@ found in the <codeph>$ENV</codeph> variable, under
 <codeph>DATABASE_URL</codeph> or <codeph>VCAP_SERVICES</codeph>. Here is an example of getting the correct credentials.</p>
 </section>
 <section id="mysql-url"> <title>MYSQL_URL</title>
-<codeblock>
-  <codeph>my($user,$password,$host,$port,$name) = $ENV{MYSQL_URL} =~ m{mysql://(.+?):(.+)\@(.+?):(\d+)/(.*)}
+<codeblock>my($user,$password,$host,$port,$name) = $ENV{MYSQL_URL} =~ m{mysql://(.+?):(.+)\@(.+?):(\d+)/(.*)}
     or die "MySQL service not configured";
 print $host;
 print $name;
 print $password;
 print $port;
-print $user;
-</codeph>
-</codeblock>
+print $user;</codeblock>
 </section>
 <section id="vcap-services"> <title>VCAP_SERVICES</title>
-<codeblock>
-  <codeph>use DBI;
+<codeblock>use DBI;
 use DBD::mysql;
 use JSON "decode_json";
 
@@ -110,9 +102,7 @@ else {
     my $dbh = DBI-&gt;connect("DBI:mysql:database=mydb;hostname=127.0.0.1;port=3306;",
                            "username", "password")
         or die "Unable to connect: $DBI::errstr\n";
-}
-</codeph>
-</codeblock>
+}</codeblock>
 </section>
 <section id="worker-applications"> <title>Worker Applications</title>
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
@@ -128,14 +118,11 @@ web</i>
 Null ("\~").</p>
 </section>
 <section id="example"> <title>Example</title>
-<codeblock>
-  <codeph>name: perl-app
+<codeblock>name: perl-app
 framework: perl
 command: perl worker.pl
 processes:
-  web: ~
-</codeph>
-</codeblock>
+  web: ~</codeblock>
 </section>
 <section id="installing-module-dependencies"> <title>Installing module dependencies</title>
 <p>If the modules your app needs are available via PPM or CPAN, let
@@ -154,8 +141,7 @@ versions of most CPAN modules and frameworks are available.</p>
 <xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >
 <i>manifest.yml</i>
 </xref> file. For example:</p>
-<codeblock>
-  <codeph>requirements:
+<codeblock>requirements:
   ppm:
     - CGI::Application::PSGI
     - Plack::Builder
@@ -163,31 +149,22 @@ versions of most CPAN modules and frameworks are available.</p>
     - JSON
     - JSON::Parse
     - DBI
-    - DBD::mysql
-</codeph>
-</codeblock>
+    - DBD::mysql</codeblock>
 <p>
-<b>Note</b>: If you want to use <i>cpan</i> to download the modules, change <codeph>ppm:</codeph> to <codeph>cpan:</codeph>.</p>
+        <note> If you want to use <i>cpan</i> to download the modules, change <codeph>ppm:</codeph>
+          to <codeph>cpan:</codeph>.</note>
+      </p>
 <p>Alternatively, include a top-level <i>requirements.txt</i> file. The requirements.txt for a minimal Mojolicious app would be just:</p>
-<codeblock>
-  <codeph>Mojolicious
-</codeph>
-</codeblock>
+<codeblock>Mojolicious</codeblock>
 <p>Prerequisite modules for the framework are installed automatically.</p>
 <p>For a simple Dancer application:</p>
-<codeblock>
-  <codeph>Dancer
+<codeblock>Dancer
 YAML
-Plack::Request
-</codeph>
-</codeblock>
+Plack::Request</codeblock>
 <p>Custom modules that are included within the project can be used in the
 normal method:</p>
-<codeblock>
-  <codeph>use lib "lib";
-use MyCustomPM;
-</codeph>
-</codeblock>
+<codeblock>use lib "lib";
+use MyCustomPM;</codeblock>
 <p>Any non-core dependencies required by these custom modules should be
 specified explicitly in <i>requirements.txt</i>, <i>manifest.yml</i> or
 <i>Makefile.PL</i> (see below) otherwise those dependencies will not be
@@ -207,14 +184,11 @@ by including them in one of the following files:</p>
 <p>Add a <codeph>cpan:</codeph> section to <i>manifest.yml</i> that
 specifies version conditions, requests a module via HTTP URL, or fetches
 a branch from a git repo. For example:</p>
-<codeblock>
-  <codeph>requirements:
+<codeblock>requirements:
   cpan:
     - Mojolicious~"&gt;=3.0, &lt;3.50"
     - git://github.com/doy/try-tiny.git@Try-Tiny-0.09
-    - http://www.cpan.org/authors/id/G/GA/GAAS/Data-Dump-1.20.tar.gz
-</codeph>
-</codeblock>
+    - http://www.cpan.org/authors/id/G/GA/GAAS/Data-Dump-1.20.tar.gz</codeblock>
 <p>This example installs a version of Mojolicious equal or later than 3.0,
 but prior to 3.50. Since no such version exists on CPAN, it is fetched
 from the BackPAN archive. It then installs the Try-Tiny-0.09 tag from
@@ -256,50 +230,34 @@ large test suites.</p>
 to '--notest' in <xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >
 <i>manifest.yml</i>
 </xref>:</p>
-<codeblock>
-  <codeph>name: myapp
+<codeblock>name: myapp
 env:
-  PERL_CPANM_OPT: --notest
-</codeph>
-</codeblock>
+  PERL_CPANM_OPT: --notest</codeblock>
 </section>
 <section id="custom-cpan-mirror"> <title>Custom CPAN Mirror</title>
 <p>To make cpanminus use a specific CPAN repository (e.g. a local mirror or
 private repo), instead of the default public ones, set the
 <codeph>--mirror</codeph> and <codeph>--mirror-only</codeph>
 options in PERL_CPANM_OPT:</p>
-<codeblock>
-  <codeph>env:
-  PERL_CPANM_OPT: --mirror http://cpan.example.com --mirror-only
-</codeph>
-</codeblock>
+<codeblock>env:
+  PERL_CPANM_OPT: --mirror http://cpan.example.com --mirror-only</codeblock>
 </section>
 <section id="serving-static-files-with-uwsgi"> <title>Serving Static Files with uWSGI</title>
-<p>It is possible to serve static files with uWSGI using
-<codeph>processes: web:</codeph> in the
-<xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >
-<i>manifest.yml</i>
-</xref> file to specify
-folders that will be served statically and not by the app.</p>
+<p><note type="restriction">Serving static files via uWSGI is only available for Perl and Python frameworks.</note>It
+        is possible to serve static files with uWSGI using <codeph>processes: web:</codeph> in the
+          <xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita">
+          <i>manifest.yml</i>
+        </xref> file to specify folders that will be served statically and not by the app.</p>
 <p>To make a single folder serve statically, use <codeph>--check-static</codeph>:</p>
-<codeblock>
-  <codeph>processes:
-    web: $HELION_UWSGI --check-static $HOME/&lt;folder&gt;
-</codeph>
-</codeblock>
+<codeblock>processes:
+    web: $HELION_UWSGI --check-static $HOME/&lt;folder&gt;</codeblock>
 <p>To specify multiple folders with static files that do not share a common
 root, use <codeph>--static-map</codeph>:</p>
-<codeblock>
-  <codeph>processes:
-    web: $HELION_UWSGI --static-map /foo=$HOME/static --static-map /bar=$HOME/sub
-</codeph>
-</codeblock>
+<codeblock>processes:
+    web: $HELION_UWSGI --static-map /foo=$HOME/static --static-map /bar=$HOME/sub</codeblock>
 <p>In this case <i>/foo/index.html</i> would serve <i>\$HOME/static/index.html</i>,
 and <i>/bar/index.html</i> would serve <i>\$HOME/sub/index.html</i>. If the file
 doesn't exist, then uWSGI will forward the request to the app.</p>
-<p>
-<b>Note</b>: Serving static files via uWSGI is only available for Perl and Python
-frameworks.</p>
 </section>
 <section id="runtime"> <title>Runtime</title>
 <p>Application Lifecycle Service deploys Perl applications with <xref href="http://docs.activestate.com/activeperl/5.14/" scope="external" format="html" >ActivePerl
@@ -313,21 +271,16 @@ helion logs command to check the stdout and stderr logs.</p>
 <p>If there are no helpful messages in those files, there are two
 additional log files (staging.log and ppm4.log) which can be accessed
 with the helion files command:</p>
-<codeblock>
-  <codeph>helion files myapp logs/staging.log
-helion files myapp logs/ppm4.log
-</codeph>
-</codeblock>
+<codeblock>helion files myapp logs/staging.log
+helion files myapp logs/ppm4.log</codeblock>
 </section>
 <section id="other-issues"> <title>Other Issues</title>
 <dl>
 <dlentry>
-<dt>
-<b>Problem</b>
-</dt>
-<dd>Application installs but the result is an empty window.
-<b>Possible Resolutions</b>
-</dd>
+<dt>Problem </dt>
+<dd>Application installs but the result is an empty window.</dd>
+  </dlentry> <dlentry>
+  <dt>Possible Resolutions</dt>
 <dd>
 <p>Perl apps require the Content-Length header to be set in order for
 pages to display correctly. Some frameworks handle this already,
@@ -336,8 +289,7 @@ while for others it needs to be done specifically.</p>
 <p>If you are using CGI::Application::PSGI, add the following to your
 app.psgi file:</p>
 
-<codeblock>
-<codeph>use Plack::Builder;
+<codeblock>use Plack::Builder;
 
 ...
 
@@ -345,16 +297,10 @@ builder {
         ...
         enable 'Plack::Middleware::ContentLength';
         ...
-};
-</codeph>
-</codeblock>
+};</codeblock>
 </dd>
 </dlentry>
-
-
-
-</dl>
-</section>
+</dl></section>
 <section id="examples"> <title>Examples</title>
 <p>Several Perl samples are available in
 <xref href="https://github.com/Stackato-Apps" scope="external" format="html" >Application Lifecycle Service-Apps</xref> on GitHub.</p>

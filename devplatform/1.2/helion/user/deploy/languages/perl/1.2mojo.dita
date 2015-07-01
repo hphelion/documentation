@@ -39,19 +39,12 @@ easy to build and run on Application Lifecycle Service.</p>
 </ol>
 <p>In the <i>requirements.txt</i> file, list any module requirements, with at
 least:</p>
-<codeblock>
-  <codeph>Mojolicious
-</codeph>
-</codeblock>
+<codeblock>Mojolicious</codeblock>
 <p>In the <i>app.psgi</i> file, for a simple implementation:</p>
-<codeblock>
-  <codeph>$ENV{MOJO_MODE} = 'production';
-require 'app.pl';
-</codeph>
-</codeblock>
+<codeblock>$ENV{MOJO_MODE} = 'production';
+require 'app.pl';</codeblock>
 <p>The <i>app.pl</i> file contains the core functionality:</p>
-<codeblock>
-  <codeph>use Mojolicious::Lite;
+<codeblock>use Mojolicious::Lite;
 
 # Simple response to display Environment Variables.
 get '/' =&gt; sub {
@@ -59,9 +52,7 @@ get '/' =&gt; sub {
         $self-&gt;render_text(join("&lt;br /&gt;", map "$_=$ENV{$_}", sort keys %ENV));
 };
 
-app-&gt;start;
-</codeph>
-</codeblock>
+app-&gt;start;</codeblock>
 <p>The <i>manifest.yml</i> file contains deployment instructions for Application Lifecycle Service.
 See complete details for this file in the <xref href="../../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >Configuration With
 manifest.yml</xref> section.</p>
