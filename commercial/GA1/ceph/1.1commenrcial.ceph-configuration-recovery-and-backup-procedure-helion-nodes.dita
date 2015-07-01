@@ -54,27 +54,29 @@ The following steps ensure the recovery of the lost configuration.
 
     <thead> 
       <row>
-        <entry>Helion Node</entry>
-        <entry> Service/File name</entry>    
-        <entry>File Attachment</entry>
+        <entry colsep="1" rowsep="1">Helion Node</entry>
+        <entry colsep="1" rowsep="1"> Service/File name</entry>    
+        <entry colsep="1" rowsep="1">File Attachment</entry>
        </row>
     </thead>
 <tbody>
 <row>
-  <entry> Controller node</entry>
-  <entry> /etc/glance/glance-api.conf /etc/cinder/cinder.conf /etc/nova/nova.conf</entry>
+  <entry colsep="1" rowsep="1"> Controller node</entry>
+  <entry colsep="1" rowsep="1"> /etc/glance/glance-api.conf /etc/cinder/cinder.conf
+              /etc/nova/nova.conf</entry>
 
-  <entry> 1. Log in to the <xref href ="https://helion.hpwsportal.com" format="html"> HDN</xref>.  
-  2. Click the workloads category on the left side.  
-  3. Click the storage subcategory to find all the Ceph related files.  <b>Filename</b>  
-  </entry>
+  <entry colsep="1" rowsep="1"> 1. Log in to the <xref href="https://helion.hpwsportal.com"
+                format="html"> HDN</xref>. 2. Click the workloads category on the left side. 3.
+              Click the storage subcategory to find all the Ceph related files. <b>Filename</b>
+            </entry>
 </row>
   <row>
-    <entry>Compute Node</entry>
-    <entry>/etc/nova/nova.conf</entry>
-    <entry>1. Log in to the <xref href="https://helion.hpwsportal.com" format="html"> HDN</xref> 2.
-              Click the workloads category on the left side.  3. Click the storage subcategory to
-              find all the Ceph related files. <!-- <br /> Filename need ?-->
+    <entry colsep="1" rowsep="1">Compute Node</entry>
+    <entry colsep="1" rowsep="1">/etc/nova/nova.conf</entry>
+    <entry colsep="1" rowsep="1">1. Log in to the <xref href="https://helion.hpwsportal.com"
+                format="html"> HDN</xref> 2. Click the workloads category on the left side. 3. Click
+              the storage subcategory to find all the Ceph related files.
+              <!-- <br /> Filename need ?-->
             </entry>
   </row>
 </tbody>

@@ -55,21 +55,17 @@
 
 <p>To do this, edit <codeph>glance-api.conf</codeph>, <codeph>cinder.conf</codeph> and <codeph>nova.conf</codeph> files with the following in the default section.</p>
 
-<codeblock>
-<codeph>debug = True
+<codeblock><codeph>debug = True
 verbose = True
-</codeph>
-</codeblock>
+</codeph></codeblock>
 
 <p>Restart Glance, Cinder, and Nova services respectively.</p>
 
 <p>On HP Helion Commercial, the logs for Glance and Cinder are stored by default in the following directories:</p>
 
-<codeblock>
-<codeph>Glance - /var/log/glance
+<codeblock><codeph>Glance - /var/log/glance
 Cinder - /var/log/upstart
-</codeph>
-</codeblock>
+</codeph></codeblock>
 
 <p>Gather these logs and contact HP support team.</p>
 </li>
@@ -89,12 +85,10 @@ Cinder - /var/log/upstart
 <p>Where pool size is either the number of replicas for replicated pools or the K+M sum for erasure coded pools (as returned by <codeph>ceph osd erasure-code-profile get</codeph>).
 Round up the results to the nearest power of two. Rounding up is optional, but recommended for CRUSH to evenly balance the number of objects among PGs.</p>
 <p>For example, for a cluster with 200 OSDs and a pool size of 3 replicas, estimate the number of PGs as follows:</p>
-<codeblock>
-  <codeph>(200 * 100)
+<codeblock>  <codeph>(200 * 100)
 ----------- = 6667. Nearest power of 2: 8192
  3
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="ceph-osd-cleanup"> <title>Ceph OSD cleanup</title>
 <p>To do a Ceph OSD cleanup:</p>
