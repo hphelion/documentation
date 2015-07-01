@@ -28,25 +28,19 @@ to enable successful development are available in Ruby.</p>
 <p>Application Lifecycle Services (ALS), a cloud foundry based Platform as a Service,
 provides a means to execute ruby applications on a managed platform. Deploying applications to the platform is as simple as adding configuration to a YAML configuration file and using a console application to push the application to ALS.
 At its simplest form the configuration file, <i>manifest.yml</i>, at the root of a project would look like:</p>
-<codeblock>
-  <codeph>name: ruby-web-app
+<codeblock>name: ruby-web-app
 framework:
-    type: ruby20&lt;/pre&gt;
-</codeph>
-</codeblock>
+    type: ruby20&lt;/pre&gt;</codeblock>
 <p>This will tell ALS to have a Ruby web application.
 To create a worker non-http application set the web process to null (~) and specify
 the command to run. For example,</p>
-<codeblock>
-  <codeph>name: ruby-app
+<codeblock>name: ruby-app
 framework:
   type: rails3
   runtime: ruby19
 command: ruby worker.rb
 processes:
-  web: ~
-</codeph>
-</codeblock>
+  web: ~</codeblock>
 <p>Management of the deployed application and its services happens through a web application or a console application.
 To learn more see:</p>
 <ul>
@@ -59,8 +53,7 @@ To learn more see:</p>
 <section id="hp-helion-sdk"> <title>HP Helion SDK</title>
 <p>Ruby applications can communicate directly with the <xref href="../../../../../../publiccloud/api.dita" >Helion APIs</xref> through a REST client or use the SDK. The SDK is designed to have a simple well documented API to simplify working with the services.
 To understand how it works, here is an example of writing and reading from object storage:</p>
-<codeblock>
-  <codeph>def credentials_hash
+<codeblock>def credentials_hash
   {
     :provider =&gt; :openstack,
     :openstack_auth_url =&gt; ENV['OS_AUTH_URL'],
@@ -87,20 +80,17 @@ dir.files.create(:key =&gt; "sample.txt", :body =&gt; File.open("/path/to/sample
 dir = conn.directories.get("Example")
 file = dir.files.get("sample.txt")
 file.key   # =&gt; sample.txt
-file.content_type # =&gt; text/plain
-</codeph>
-</codeblock>
+file.content_type # =&gt; text/plain</codeblock>
 <p>
-  <b>Note</b>: See <xref href="../1.2buildpack.dita">Buildpacks</xref> for an alternative way to deploy Ruby on Rails applications.</p>
+        <note> See <xref href="../1.2buildpack.dita">Buildpacks</xref> for an alternative way to
+          deploy Ruby on Rails applications.</note>
+      </p>
 </section>
 <section id="using-ruby-2-0"> <title>Using Ruby 2.0</title>
 <p>The <i>manifest.yml</i> file must specify the Ruby runtime version and Rails as the
 framework type:</p>
-<codeblock>
-  <codeph>framework:
-  runtime: ruby20
-</codeph>
-</codeblock>
+<codeblock>framework:
+  runtime: ruby20</codeblock>
 <p>Default Ruby version is Ruby 1.9</p>
 </section>
 <section id="known-issues"> <title>Known Issues</title>
@@ -111,10 +101,7 @@ framework type:</p>
 <li>
 <p>PostgreSQL Gem (pg) version must be pinned to 0.12.2 (if used):</p>
 
-<codeblock>
-<codeph>gem 'pg', '0.12.2'
-</codeph>
-</codeblock>
+<codeblock>gem 'pg', '0.12.2'</codeblock>
 </li>
 <li>
 <p>Must specify Rake Gem immediately before the line loading rails.
@@ -122,38 +109,26 @@ This happens because when Rails loads, it finds version 0.9.2 of
 Rake, and that becomes the only version of Rake in the process.
 Later code wants version 0.9.2.2, and fails:</p>
 
-<codeblock>
-<codeph>gem 'rake', '0.9.2.2'
-gem 'rails'
-</codeph>
-</codeblock>
+<codeblock>gem 'rake', '0.9.2.2'
+gem 'rails'</codeblock>
 </li>
 <li>
 <p>For Ruby 1.9, Cloud Foundry requires a tweak to the jquery-rails gem.</p>
 
-<codeblock>
-<codeph>gem 'cloudfoundry-jquery-rails'
-</codeph>
-</codeblock>
+<codeblock>gem 'cloudfoundry-jquery-rails'</codeblock>
 </li>
 </ul>
 </section>
 <section id="ruby-on-rails-3-1"> <title>Ruby on Rails 3.1+</title>
 <p>To get the asset pipeline working on Application Lifecycle Service, precompile your assets in
 your development environment, which compiles them into public/assets:</p>
-<codeblock>
-  <codeph>bundle exec rake assets:precompile
-</codeph>
-</codeblock>
+<codeblock>bundle exec rake assets:precompile</codeblock>
 </section>
 <section id="gems-and-libraries"> <title>Gems and Libraries</title>
 <p>A <i>Gemfile</i> must be included in your app that lists all required gems.
 Run:</p>
-<codeblock>
-  <codeph>bundle install
-bundle package
-</codeph>
-</codeblock>
+<codeblock>bundle install
+bundle package</codeblock>
 <p>any time you modify the <i>Gemfile</i> and prior to pushing an app to
 Application Lifecycle Service.</p>
 <p>If VCAP sees a Gemfile.lock in the application, it will ensure the
@@ -184,16 +159,13 @@ the Health Manager.</p>
 key to Null ("\~").</p>
 </section>
 <section id="example"> <title>Example</title>
-<codeblock>
-  <codeph>name: ruby-app
+<codeblock>name: ruby-app
 framework:
   type: rails3
   runtime: ruby19
 command: ruby worker.rb
 processes:
-  web: ~
-</codeph>
-</codeblock>
+  web: ~</codeblock>
 </section>
 <section id="general-guidelines"> <title>General Guidelines</title>
 </section>
@@ -202,20 +174,13 @@ processes:
 Include <codeph>gem 'thin'</codeph> in your <i>Gemfile</i>.</p>
 </section>
 <section id="bundler"> <title>Bundler</title>
-<p>You need bundler and rails installed locally. This can be done
-via:</p>
-<codeblock>
-  <codeph>sudo gem install rails bundler --no-ri --no-rdoc
-</codeph>
-</codeblock>
+<p>You need Bundler and Rails installed locally. This can be done via:</p>
+<codeblock>sudo gem install rails bundler --no-ri --no-rdoc</codeblock>
 </section>
 <section id="running-rake-commands"> <title>Running rake commands</title>
 <p>Generally, <codeph>bundle exec</codeph> must be used when running any commands that are installed through Gemfile/bundler.</p>
 <p>To run <codeph>rake stats</codeph>, for instance, use the <codeph>helion run</codeph> command:</p>
-<codeblock>
-  <codeph>helion run *appname* bundle exec rake stats
-</codeph>
-</codeblock>
+<codeblock>helion run *appname* bundle exec rake stats</codeblock>
   <p>See the <xref href="../../../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita">ALS Command Reference</xref> for details on the use of <codeph>helion run</codeph>.</p>
 </section>
 <section id="references"> <title>References</title>
