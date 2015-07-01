@@ -84,10 +84,10 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="hp-proliant-bladesystem"> <title>HP ProLiant BladeSystem</title>
 <ul>
-<li>BL460c Gen9</li>
-        <li>BL420c Gen8 (supported with P-series Smart Array only)</li>
-        <li>BL460c Gen8</li>
-<li>BL660c Gen8</li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271227" format="html" scope="external">BL460c Gen9</xref></li>
+<li>BL420c Gen8 (supported with P-series Smart Array only)</li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949" format="html" scope="external">BL460c Gen8</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287" format="html" scope="external">BL660c Gen8</xref></li>
 </ul>
 </section>
 <section id="hp-proliant-rack-servers"> <title>HP ProLiant Rack Servers</title>
