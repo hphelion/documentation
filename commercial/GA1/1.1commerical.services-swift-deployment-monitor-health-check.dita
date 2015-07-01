@@ -52,22 +52,16 @@
                         page navigates to the <b>Host Status Details for all Hosts</b>.<image
                             href="../../media/swift_icinga_view-details.png" id="image_o53_t2v_ns"
                         /></p></li>
-                <li> In the <b>Host</b> column,  click the icon next to the host IP when the tooltip
-                    displays as "<i>View Service Details For This Host</i>" (as shown in the above
-                    image). </li>
-<li>
-                    <p>In the <b>Host</b> column, <xref format="html"
-                            href="javascript:window.open('/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">
-                            <b>click the icon<!-- </b> (opens in a new window)--></b>
-                        </xref> next to the host IP when the tooltip displays as "View Service
-                        Details For This Host".
-                        <!--A BR tag was used here in the original source.--> The page navigates to
-                        Service Status Details For Host &lt;Swift node IP address &gt;and displays
-                        the <xref format="html"
-                            href="javascript:window.open('/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-                            >health status <!--(opens in a new window)--></xref> of the selected
-                        Swift node.</p>
-                </li>
+                <li> In the <b>Host</b> column, <xref format="html"
+                        href="javascript:window.open('/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">
+                        <b>click the icon<!-- </b> (opens in a new window)--></b>
+                    </xref> next to the host IP when the tooltip displays as "View Service Details
+                    For This Host". <!--A BR tag was used here in the original source.--> The page
+                    navigates to Service Status Details For Host &lt;Swift node IP address &gt;and
+                    displays the <xref format="html"
+                        href="javascript:window.open('/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
+                        >health status <!--(opens in a new window)--></xref> of the selected Swift
+                    node.</li>
 </ol>
 <!--
 
