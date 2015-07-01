@@ -39,28 +39,35 @@
 <section id="monitoring-the-health-of-swift-services"> <title>Monitoring the Health of Swift Services</title>
 <p>You can monitor the health status of the swift-proxy, swift-account, swift-container and swift-object services by following these steps:</p>
 <ol>
+<li> In the undercloud Horizon dashboard, log in to the <b>Icinga Dashboard</b>
+                    <b><i>(http://&lt;Undercloud_IP&gt;/icinga/</i></b>). The default login
+                    credentials are as follows:<ul>
+                        <li>Username: <i>icingaadmin</i>
+                        </li>
+                        <li>Password: <i>icingaadmin</i>
+                        </li>
+                    </ul></li>
+                <li>Click <b>Status</b> on the left panel and click  <b>Host Details</b>.<image
+                        href="../../media/icinga_host-details.png" id="image_etd_hdv_ns"/><p>The
+                        page navigates to the <b>Host Status Details for all Hosts</b>.<image
+                            href="../../media/swift_icinga_view-details.png" id="image_o53_t2v_ns"
+                        /></p></li>
+                <li> In the <b>Host</b> column,  click the icon next to the host IP when the tooltip
+                    displays as "<i>View Service Details For This Host</i>" (as shown in the above
+                    image). </li>
 <li>
-<p>In the undercloud Horizon dashboard, log in to the <b>Icinga Dashboard</b> (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:</p>
-
-<ul>
-<li>Username: <i>icingaadmin</i>
-</li>
-<li>Password: <i>icingaadmin</i>  </li>
-</ul>
-</li>
-<li>
-<p>Click <b>Status</b> on the left panel and then click <xref format="html" href="javascript:window.open('/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
-<b>
-<varname>Host Detail</varname> </b>
-<!--(opens in a new window)-->
-</xref>.</p>
-</li>
-<li>
-<p>In the <b>Host</b> column,  <xref format="html" href="javascript:window.open('/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
-<b>click the icon<!-- </b> (opens in a new window)--></b>
-</xref> next to the host IP when the tooltip displays as "View Service Details For This Host". <!--A BR tag was used here in the original source.--> 
-The page navigates to Service Status Details For Host &lt;Swift node IP address &gt;and displays the   <xref format="html" href="javascript:window.open('/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >health status <!--(opens in a new window)--></xref> of the selected Swift node.</p>
-</li>
+                    <p>In the <b>Host</b> column, <xref format="html"
+                            href="javascript:window.open('/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">
+                            <b>click the icon<!-- </b> (opens in a new window)--></b>
+                        </xref> next to the host IP when the tooltip displays as "View Service
+                        Details For This Host".
+                        <!--A BR tag was used here in the original source.--> The page navigates to
+                        Service Status Details For Host &lt;Swift node IP address &gt;and displays
+                        the <xref format="html"
+                            href="javascript:window.open('/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
+                            >health status <!--(opens in a new window)--></xref> of the selected
+                        Swift node.</p>
+                </li>
 </ol>
 <!--
 
