@@ -63,8 +63,7 @@
 <p>Make sure you are logged into the seed cloud host as root. If not:</p>
 
 <codeblock>
-<codeph>sudo su -
-</codeph>
+<codeph>sudo -i</codeph>
 </codeblock>
 </li>
 <li>
