@@ -200,9 +200,7 @@ helion apps
 | Application | # | Health      | URLS                      | Services       |
 +-------------+---+-------------+---------------------------+----------------+
 | myapp       | 1 | RUNNING     | myapp.helion-xxxx.local | ordersdb       |
-+-------------+---+-------------+---------------------------+----------------+
-
-</codeblock></li>
++-------------+---+-------------+---------------------------+----------------+</codeblock></li>
 <li> Pass all parameters in separate commands.<p>These two commands (<xref
   href="../reference/1.2client-ref-service-management.dita#topic10567/command-create-service"
               >helion create-service</xref> and <xref
