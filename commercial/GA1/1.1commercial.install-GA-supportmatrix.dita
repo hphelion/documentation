@@ -84,11 +84,11 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="hp-proliant-bladesystem"> <title>HP ProLiant BladeSystem</title>
 <ul>
-<li>BL460c Gen9</li>
         <li>BL460c Gen9</li>
+        <li>BL420c Gen8 (supported with P-series Smart Array only)</li>
         <li>BL460c Gen8</li>
-<li>BL660c Gen8</li>
-</ul>
+        <li>BL660c Gen8</li>
+      </ul>
 </section>
 <section id="hp-proliant-rack-servers"> <title>HP ProLiant Rack Servers</title>
 <ul>
