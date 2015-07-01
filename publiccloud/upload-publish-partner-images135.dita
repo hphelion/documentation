@@ -751,7 +751,6 @@ curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID"  -H 'X-Image-Meta-Property-com.hp__1_
 <li>
 <xref href="mailto:support@hpcloud.com" format="html" >Email support@hpcloud.com</xref>
 </li>
-<li>Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.</li>
 </ul>
 </section>
 </body>

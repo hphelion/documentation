@@ -190,8 +190,7 @@ via NFS, so an option exists to change Docker container creation to "privileged"
 <codeblock>kato config set dea_ng docker/privileged true </codeblock>
 <p>This <xref href="https://docs.docker.com/reference/run#runtime-privilege-and-lxc-configuration" type="section" scope="external" format="html" >container privilege elevation</xref> would normally be used in conjunction with <i>sudo</i> container access in the quota:</p>
 <codeblock>helion quota configure --allow-sudo </codeblock>
-<p>
-<b>Warning:</b>  <b>Every application running under this configuration has the potential to become root on the host.</b> These changes should only be made when all users of the system are completely trusted (i.e. with admin privileges) as they compromise the isolation between application containers and host.</p>
+<note type="warning">Every application running under this configuration has the potential to become root on the host. These changes should only be made when all users of the system are completely trusted (i.e. with admin privileges) as they compromise the isolation between application containers and host.</note>
 </section>
 </body>
 </topic>

@@ -44,128 +44,124 @@ administration and management of the Application Lifecycle Service Server. Many 
 <xref type="section" href="#topic13823/support">Support</xref>
 </li>
 <li>
-<xref type="section" href="#topic13823/admin">Admin</xref>
-
-<ul>
+        <xref type="section" href="#topic13823/admin">Admin</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic13823/clustermanagement">Cluster Management</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic13823/clustersummary">Summary</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/cluster-nodes">Cluster Nodes</xref>
+              </li>
+            </ul></li>
+          <li>
+            <xref type="section" href="#topic13823/patches">Available Patches</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/app-org">Applications &amp; Organizations</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/domains">Domains</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/routes">Routes</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/services">Services</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic13823/managed-services">Managed Services
+                  Instances</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/user-services">User-provided Service
+                  Instances</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/avail-services">Available Services</xref>
+              </li>
+            </ul></li>
+          <li>
+            <xref type="section" href="#topic13823/users">Users</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/dashboards">Dashboards</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic13823/memory-summary">Memory Summary</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/dea-usage">DEA Usage</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/zone-usage">Placement Zone Usage</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/avail-zone-usage">Availability Zone
+                  Usage</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/router-stats">Router Stats</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/primary-node-status-graphs">Primary Node
+                  Status Graphs</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/cloud-events">Cloud Events</xref>
+              </li>
+            </ul></li>
+        </ul></li>
 <li>
-<xref type="section" href="#topic13823/clustermanagement">Cluster Management</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic13823/clustersummary">Summary</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/cluster-nodes">Cluster Nodes</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic13823/patches">Available Patches</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/app-org">Applications &amp; Organizations</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/domains">Domains</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/routes">Routes</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/services">Services</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic13823/managed-services">Managed Services Instances</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/user-services">User-provided Service Instances</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/avail-services">Available Services</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic13823/users">Users</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/dashboards">Dashboards</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic13823/memory-summary">Memory Summary</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/dea-usage">DEA Usage</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/zone-usage">Placement Zone Usage</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/avail-zone-usage">Availability Zone Usage</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/router-stats">Router Stats</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/primary-node-status-graphs">Primary Node Status Graphs</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/cloud-events">Cloud Events</xref>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic13823/settings">Settings</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic13823/cloud-controller">Cloud Controller</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/console-settings-applications">Applications</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/console">Console</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/dea">DEA</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic13823/console-settings-dea">DEA Settings</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/dea-zones-placement">DEA Placement Zones</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/dea-zones-available">Availability Zones</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/feature-flags">Feature Flags</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic13823/logyard">Logyard</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/console-settings-quota-definitions">Quota Plans</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/file-system">File System</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/harbor">Harbor</xref>
-</li>
-<li>
-<xref type="section" href="#topic13823/data-services">Data Services</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic13823/settings">Settings</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic13823/cloud-controller">Cloud Controller</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/console-settings-applications"
+              >Applications</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/console">Console</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/dea">DEA</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic13823/console-settings-dea">DEA Settings</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/dea-zones-placement">DEA Placement
+                  Zones</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/dea-zones-available">Availability
+                  Zones</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/feature-flags">Feature Flags</xref>
+              </li>
+            </ul></li>
+          <li>
+            <xref type="section" href="#topic13823/logyard">Logyard</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/console-settings-quota-definitions">Quota
+              Plans</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/file-system">File System</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/harbor">Harbor</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/data-services">Data Services</xref>
+          </li>
+        </ul></li>
 </ul>
 <section id="setup"> <title>Management Console Setup and Access</title>
   <p>Your hypervisor provides <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#topic6187/term-tty-console" type="section"   >tty console</xref> access to each of its virtual machines. After startup, an Application Lifecycle Service VM displays:</p>
@@ -198,16 +194,14 @@ https://helion-xxxx.local</codeblock>
           certificate.</note>
       </p>
 <p>When you first access the Management Console, you will be prompted to create a primary administrative user for ALS. Enter an email address as the username, set a secure password, and then review and accept the license agreement.</p>
-<p>
-<b>Note: The password you choose here becomes the login password for the <i>helion</i> user on the VM for SSH access.</b> This is critical since all login is done as the <i>helion</i> user, not as <i>root</i>.</p>
+      <note> The password you choose here becomes the login password for the <i>helion</i> user on
+        the VM for SSH access. This is critical since all login is done as the <i>helion</i> user,
+        not as <i>root</i>.</note>
 <p>Once you've logged in, you can begin to add other users and admins, enable and disable services, and generally set up the system to your requirements.</p>
 <p>Basic Application Lifecycle Service administration can be done through the Management
 Console, but some maintenance and configuration tasks may need to be done at the command line using the <i>kato</i> command. See the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita">Kato Command Reference</xref> for a full list of options.</p>
 <p>The Application Lifecycle Service Management Console will periodically send non-identifying pingbacks (Application Lifecycle Service version number and UUID) to HP servers to help improve the web console experience. You can disable this option by setting</p>
-<codeblock>
-  <codeph>theme_settings['pingback_allowed'] = false;
-</codeph>
-</codeblock>
+<codeblock>theme_settings['pingback_allowed'] = false;</codeblock>
 <p>in the <i>settings.js</i> file as described in the <xref href="1.2customize.dita#topic5029"
           >Customization</xref> documentation.</p>
 </section>

@@ -29,38 +29,37 @@
  <!--permalink: /helion/devplatform/1.2/als/admin/reference/architecture/--></p>
 <ul>
 <li>
-<xref type="section" href="#topic4407/architecture-roles">Roles</xref>
-
-<ul>
+        <xref type="section" href="#topic4407/architecture-roles">Roles</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic4407/architecture-base">Base</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic4407/architecture-primary">Primary</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic4407/architecture-cloud-controller">Cloud
+              Controller</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic4407/architecture-router">Router</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic4407/architecture-droplet-execution-agents">Droplet
+              Execution Agents</xref>
+          </li>
+        </ul></li>
 <li>
-<xref type="section" href="#topic4407/architecture-base">Base</xref>
-</li>
-<li>
-<xref type="section" href="#topic4407/architecture-primary">Primary</xref>
-</li>
-<li>
-<xref type="section" href="#topic4407/architecture-cloud-controller">Cloud Controller</xref>
-</li>
-<li>
-<xref type="section" href="#topic4407/architecture-router">Router</xref>
-</li>
-<li>
-<xref type="section" href="#topic4407/architecture-droplet-execution-agents">Droplet Execution Agents</xref>
-</li>
-</ul>
-</li>
-<li>
-<xref type="section" href="#topic4407/architecture-service-roles">Service Roles</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic4407/architecture-databases">Databases</xref>
-</li>
-<li>
-<xref type="section" href="#topic4407/architecture-other-data-services">Other data services</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic4407/architecture-service-roles">Service Roles</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic4407/architecture-databases">Databases</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic4407/architecture-other-data-services">Other data
+              services</xref>
+          </li>
+        </ul></li>
 <li>
 <xref type="section" href="#topic4407/architecture-role-groups">Role Groups</xref>
 </li>
@@ -129,10 +128,7 @@ application instances.</p>
 <section id="architecture-role-groups"> <title>Role Groups</title>
 <p>Role groups represent a set of roles. For example the <b>data-services</b>
 group provides all databases plus RabbitMQ and the filesystem service:</p>
-<codeblock>
-  <codeph>kato role add data-services
-</codeph>
-</codeblock>
+<codeblock>kato role add data-services</codeblock>
 <p>Additional groups can be defined by administrators in
 <i>/s/etc/kato/role_groups.yml</i>.</p>
 </section>

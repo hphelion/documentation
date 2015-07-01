@@ -51,8 +51,7 @@ kato restart memcached_node
                 strings from the memcached <codeph>credentials</codeph> list. Using SASL with
                 Memcached requires client libraries/modules in the application which support
                 authentication via SASL.</p>
-<p>
-<b>Warning:</b> Running Memcached <b>without</b> SASL enabled is insecure and should only be done if all system users are trusted. Any Application Lifecycle Service user can connect to the provisioned service instance if the IP address and port is discovered.</p>
+<note type="warning">Running Memcached <b>without</b> SASL enabled is insecure and should only be done if all system users are trusted. Any Application Lifecycle Service user can connect to the provisioned service instance if the IP address and port is discovered.</note>
 </section>
 <section id="django-example-using-memcached"> <title>Django Example using Memcached</title>
 <p>The <xref href="https://github.com/Stackato-Apps/django-gtd" scope="external" format="html" >Django GTD</xref> sample

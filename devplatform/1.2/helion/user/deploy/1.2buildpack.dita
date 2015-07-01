@@ -40,10 +40,10 @@ framework:
   type: python
   runtime: python32</codeblock>
 <p>
-        <note> When using the Legacy Buildpack, config-defined environment variable values can only
-          be updated by re-pushing the application with new settings (see <xref
-            href="../../../../../devplatform/1.2/helion/admin/reference/1.2known-issues.dita#topic6051/legacy-buildpack-and-environment-variables"
-            type="section">Legacy Buildpack and Environment Variables</xref>).</note>
+  <note type="restriction"> When using the <xref
+    href="../../../../../devplatform/1.2/helion/admin/reference/1.2known-issues.dita#topic6051/legacy-buildpack-and-environment-variables"
+    type="section">Legacy buildpack</xref>, config-defined environment variable values can only
+          be updated by re-pushing the entire application with the new settings.</note>
       </p>
 </section>
 <section id="custom-buildpacks"> <title>Custom Buildpacks</title>
@@ -56,9 +56,12 @@ buildpack: https://github.com/ActiveState/stackato-buildpack-ruby.git</codeblock
 <codeblock>buildpack: https://github.com/ActiveState/stackato-buildpack-ruby.git#branchname</codeblock>
 <p>There are hundreds of buildpacks available on Github. Searching Github for the term "buildpack" and the name of the language or framework you wish to deploy may provide you with a working solution, or at least the starting point for your own custom buildpack.</p>
 <p>
-<b>Note</b>:  Not all Heroku buildpacks work with ALS due to environmental differences such as relying on the presence of certain executables or libraries in Heroku-specific locations. Examine and test any buildpack carefully before using it in production deployments.</p>
-<p>
-<b>Note</b>: Using <i>config_vars</i> in a buildpack's <i>bin/release</i> to set environment variables has been deprecated. Use a shell script in <i>$HOME/.profile.d</i> instead.</p>
+        <note type="caution">Not all Heroku buildpacks work with ALS due to environmental differences such as
+          relying on the presence of certain executables or libraries in Heroku-specific locations.
+          Examine and test any buildpack carefully before using it in production deployments.</note>
+      </p>
+      <note type="notice">Using <i>config_vars</i> in a buildpack's <i>bin/release</i> to set environment
+        variables has been deprecated. Use a shell script in <i>$HOME/.profile.d</i> instead.</note>
 </section>
 <section id="procfile"> <title>Procfile</title>
 <p>Buildpacks will usually contain a <b>default_process_type</b> setting with the command used to start the application process. If your application needs a custom command to start the process, create a Procfile in the base directory of your application.</p>

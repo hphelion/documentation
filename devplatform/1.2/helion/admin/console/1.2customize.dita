@@ -28,38 +28,36 @@
 <p>The Management Console can be extensively customized and themed. Administrators can add or remove runtimes, frameworks and services from the system, and change the look and content of the <xref href="1.2index.dita">Management Console</xref> interface.</p>
 <ul>
 <li>
-<xref type="section" href="#topic5029/console-settings">Console Settings</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic5029/product">Product</xref>
-</li>
-<li>
-<xref type="section" href="#topic5029/look-and-feel">Look and Feel</xref>
-</li>
-<li>
-<xref type="section" href="#topic5029/welcome-page">Welcome Page</xref>
-</li>
-<li>
-<xref type="section" href="#topic5029/support-page">Support Page</xref>
-</li>
-<li>
-<xref type="section" href="#topic5029/eula-content">Eula Content</xref>
-</li>
-<li>
-<xref type="section" href="#topic5029/custom_error">Error Pages</xref>
-</li>
-<li>
-<xref type="section" href="#topic5029/custom-stylesheet">Custom Stylesheet</xref>
-</li>
-<li>
-<xref type="section" href="#topic5029/settings-variables">Settings Variables</xref>
-</li>
-<li>
-<xref type="section" href="#topic5029/restoring-values">Restoring values</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic5029/console-settings">Console Settings</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic5029/product">Product</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/look-and-feel">Look and Feel</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/welcome-page">Welcome Page</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/support-page">Support Page</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/eula-content">Eula Content</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/custom_error">Error Pages</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/custom-stylesheet">Custom Stylesheet</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/settings-variables">Settings Variables</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic5029/restoring-values">Restoring values</xref>
+          </li>
+        </ul></li>
 <li>
 <xref type="section" href="#topic5029/renaming-the-client">Renaming the Client</xref>
 </li>
@@ -168,10 +166,7 @@ customizations and loads defaults for all settings.</p>
 <p>As a failsafe for when style changes have obscured the interface, admins
 can also reset specific settings by loading a URL with the following
 format:</p>
-<codeblock>
-  <codeph>https://&lt;helion-url&gt;#settings/console/reset/setting_name
-</codeph>
-</codeblock>
+<codeblock>https://&lt;helion-url&gt;#settings/console/reset/setting_name</codeblock>
 <p>Replace <b>setting_name</b> with one of the variables above and that value will be reset to the default.</p>
 </section>
 <section id="renaming-the-client"> <title>Renaming the Client</title>

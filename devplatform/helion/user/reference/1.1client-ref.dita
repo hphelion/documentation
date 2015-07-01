@@ -429,7 +429,7 @@
 <li>
 <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-services.dita#command-marketplace" type="section"  >helion marketplace</xref>: List the supported service plans of the target for the current or specified space. This command is new in HP Helion OpenStack Development Platform 1.1. </li>
 <li>
-<xref href="../../../../devplatform/helion/user/reference/1.1client-ref-services.dita#command-purge-service-offerings" type="section"  >helion purge-service-offerings</xref>: Purge all offerings of the service type from the system. <b>Warning</b> use with caution.  This command is new in HP Helion OpenStack Development Platform 1.1. </li>
+  <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-services.dita#command-purge-service-offerings" type="section"  >helion purge-service-offerings</xref>: Purge all offerings of the service type from the system. <note type="warning">Purges ALL offerings. Use with caution.</note>  This command is new in HP Helion OpenStack Development Platform 1.1. </li>
 <li>
 <xref href="../../../../devplatform/helion/user/reference/1.1client-ref-services.dita#command-service" type="section"  >helion service</xref>: Show information about the named service.</li>
 <li>

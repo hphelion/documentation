@@ -225,8 +225,7 @@ option.</p>
 <p>
 <b>Note</b>: Using the <codeph>--force</codeph> option is not recommended unless you have been directed to do so by HP Application Lifecycle Service Support.</p>
 <p>A pre-upgrade validation check is performed on the node to check that it is in working order before any upgrade actions are performed. If this validation fails then the upgrade process is stopped. These validation steps can be displayed to the user as errors while still continuing the upgrade process by using the <i>--ignore-inspect-failures</i> option.</p>
-<p>
-<b>Warning</b>: Use this option only if you get failures running <i>kato node inspect</i> that are known to be caused by systems outside of the control of Application Lifecycle Service, or if directed by HP Application Lifecycle Service Support.</p>
+  <note type="warning">Use this option only if you get failures running <i>kato node inspect</i> that are known to be caused by systems outside of the control of Application Lifecycle Service, or if directed by HP Application Lifecycle Service Support.</note>
 <p>Next, the upgrade packages are downloaded and a validation check is performed on the files to make sure everything required for an upgrade is available. If the node is a DEA node it is then <xref href="../../../../devplatform/helion/admin/reference/1.1kato-ref.dita#kato-command-ref-node-retire" type="section"  >retired</xref> to ensure any applications running on the node are evacuated before the upgrade takes place.</p>
 <p>After the components have been upgraded, the node is restarted and then post-upgrade validation takes place. If any failures occur, the upgrade process is stopped and you will be given the option to roll back the upgrade. As with the pre-upgrade validation, this can be skipped using the <i>--ignore-inspect-failures</i> option (see warning above).</p>
 <p>When <i>kato node upgrade</i> completes successfully, the node is restarted running the latest version of Application Lifecycle Service.</p>
@@ -326,9 +325,8 @@ stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$
 <p>If you have made customizations in these places or in other areas not described in the customization instructions, save the new or modified files elsewhere, run upgrade on a non-production system, then copy or merge the files into the upgraded test system.</p>
 </section>
 <section id="custom-buildpacks"> <title>Custom Buildpacks</title>
-<p>
-<b>Warning</b>: Any custom buildpacks added to the system prior to the upgrade will be lost.
-Custom buildpacks must be <xref href="../../../../devplatform/helion/user/deploy/1.1buildpack.dita#custom-buildpacks" type="section"  >restored</xref> to the system after an upgrade.</p>
+  <note type="warning">Any custom buildpacks added to the system prior to the upgrade will be lost.
+Custom buildpacks must be <xref href="../../../../devplatform/helion/user/deploy/1.1buildpack.dita#custom-buildpacks" type="section"  >restored</xref> to the system after an upgrade.</note>
 </section>
 <section id="clearing-the-browser-cache"> <title>Clearing the Browser Cache</title>
 <p>After an upgrade, certain Management Console JavaScript and CSS files may persist in the browser. For example, Firefox users may see the following error in the Applications view:</p>
