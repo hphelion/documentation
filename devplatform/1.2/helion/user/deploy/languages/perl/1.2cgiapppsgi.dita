@@ -24,14 +24,10 @@
 and <i>requirements.txt</i> file.</p>
 <p>In the <i>requirements.txt</i> file, list any module requirements, with at
 least:</p>
-<codeblock>
-  <codeph>CGI::Application::PSGI
-Plack::Builder
-</codeph>
-</codeblock>
+<codeblock>CGI::Application::PSGI
+Plack::Builder</codeblock>
 <p>In the <i>app.psgi</i> file, the basic code will be something like:</p>
-<codeblock>
-  <codeph>#perl
+<codeblock>#perl
 
 use lib "lib";
 
@@ -49,19 +45,15 @@ my $handler = sub {
 builder {
   enable 'Plack::Middleware::ContentLength';
   $handler;
-};
-</codeph>
-</codeblock>
+};</codeblock>
 <p>In the above example, AppCore.pm is located in the local lib folder and
 handles processing of the data and the response as per the
 <xref href="http://search.cpan.org/~markstos/CGI-Application-4.50/lib/CGI/Application.pm" scope="external" format="html" >CGI::Application</xref>
 documentation.</p>
 <p>
-  <b>Note</b>
-</p>
-<p>The <codeph>Plack::Middleware::ContentLength</codeph> code adds the
-Content-Length header which is currently required for Perl apps under
-Application Lifecycle Service.</p>
+      <note>The <codeph>Plack::Middleware::ContentLength</codeph> code adds the Content-Length
+        header which is currently required for Perl apps under Application Lifecycle Service.</note>
+    </p>
 <section id="examples"> <title>Examples</title>
 <ul>
 <li>
