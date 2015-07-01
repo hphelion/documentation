@@ -29,10 +29,7 @@
 <xref type="section" href="#topic3247/command-restage">helion restage</xref>: Restage an application and regenerate its droplet.</li>
 </ul>
 <section id="syntax"> <title>Syntax</title>
-<codeblock>
-  <codeph>helion [options] command [arguments] [command-options]
-</codeph>
-</codeblock>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

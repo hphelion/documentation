@@ -30,7 +30,7 @@
 <xref type="section" href="#topic2439/command-target">helion target</xref> Set the target API endpoint for the client or report the current target.</li>
 </ul>
 <section id="syntax"> <title>Syntax</title>
-<codeblock>helion [options] command [arguments] [command-options]</codeblock>
+<codeblock>helion [options] command [arguments] [command-options] </codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
