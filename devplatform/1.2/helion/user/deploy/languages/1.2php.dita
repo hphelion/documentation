@@ -34,29 +34,15 @@ At its simplest form, the configuration file <i>manifest.yml</i>, which is locat
 would look like:</p>
 <codeblock>name: php-web-app
 framework:
-    type: php
-</codeblock>
+    type: php</codeblock>
 <p>This will set the ALS framework type for a PHP web application.</p>
 <p>To create a worker non-http application set the web process to <b>null</b> (~) and specify
 the command to <b>run</b>. For example:</p>
-<codeblock>
-<!--Original: <span @class=l-Scalar-Plain>-->
-<ph outputclass="l-Scalar-Plain">name</ph>
-<!--Original: <span @class=p-Indicator>-->
-<ph outputclass="p-Indicator">:</ph> <!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">php-app</ph>
-<!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">framework</ph>
-<!--Original: <span @class=p-Indicator>-->
-<ph outputclass="p-Indicator">:</ph> <!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">php</ph>
-<!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">command</ph>
-<!--Original: <span @class=p-Indicator>-->
-<ph outputclass="p-Indicator">:</ph> <!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">php worker.php</ph>
-<!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">processes</ph>
-<!--Original: <span @class=p-Indicator>-->
-<ph outputclass="p-Indicator">:</ph>
-    <!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">web</ph>
-<!--Original: <span @class=p-Indicator>-->
-<ph outputclass="p-Indicator">:</ph> <!--Original: <span @class=l-Scalar-Plain>--><ph outputclass="l-Scalar-Plain">~</ph>
-</codeblock>
+<codeblock>name: php-app
+framework: php
+command:php worker.php
+processes: 
+   web: ~</codeblock>
 <p>Management of the deployed application and its services happens through a web application or
 a console application. To learn more see the <xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >manifest.yml</xref> reference.</p>
 </section>
@@ -64,22 +50,16 @@ a console application. To learn more see the <xref href="../../../../../../devpl
 <p>You will need at least two files to deploy a PHP app on Application Lifecycle Service:
 <i>index.php</i>, and <i>manifest.yml</i>.</p>
 <p>The <i>manifest.yml</i> must specify <b>php</b> as the framework type:</p>
-<codeblock>
-  <codeph>framework:
-        type: php
-</codeph>
-</codeblock>
+<codeblock>framework:
+type: php</codeblock>
 <p>For more information, see the <xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >manifest.yml</xref> reference.</p>
 </section>
 <section id="application-url"> <title>Application URL</title>
 <p>Some applications require the user to specify the APP_URL. Below is an
 example on how to obtain the correct urls:</p>
-<codeblock>
-  <codeph>$appinfo = getenv("VCAP_APPLICATION");
+<codeblock>$appinfo = getenv("VCAP_APPLICATION");
 $appinfo_json = json_decode($appinfo,true);
-$admin = $appinfo_json['uris'][0];
-</codeph>
-</codeblock>
+$admin = $appinfo_json['uris'][0];</codeblock>
 </section>
 <section id="worker-applications"> <title>Worker Applications</title>
 <p>Non-HTTP apps that run as an Application Lifecycle Service application under the control of
@@ -94,14 +74,11 @@ the Health Manager.</p>
 key to Null ("\~").</p>
 </section>
 <section id="example"> <title>Example</title>
-<codeblock>
-  <codeph>name: php-app
+<codeblock>name: php-app
 framework: php
 command: php worker.php
 processes:
-  web: ~
-</codeph>
-</codeblock>
+  web: ~</codeblock>
 </section>
 <section id="database-services"> <title>Database Services</title>
 </section>
@@ -111,8 +88,7 @@ processes:
 <p>Authentication details for your configured database services can be
 found in the <b>$_SERVER</b> variable, under 
 <b>DATABASE_URL</b>. Here is a sample for retrieving the correct credentials:</p>
-<codeblock>
-  <codeph>&lt;?php
+<codeblock>  &lt;?php
     $url_parts = parse_url($_SERVER['DATABASE_URL']);
     $db_name = substr( $url_parts['path'], 1 );
     $db_connection_string = $url_parts['host'] . ':' . $url_parts['port'];
@@ -123,15 +99,12 @@ found in the <b>$_SERVER</b> variable, under
     echo $url_parts['pass'];
     echo $url_parts['host'];
     echo $url_parts['port'];
-?&gt;
-</codeph>
-</codeblock>
+?&gt;</codeblock>
 </section>
 <section id="vcap-services"> <title>
   VCAP_SERVICES
 </title>
-<codeblock>
-  <codeph>&lt;?php
+<codeblock>  &lt;?php
     $services = getenv("VCAP_SERVICES");
     $services_json = json_decode($services,true);
     $mysql_config = $services_json["mysql"][0]["credentials"];
@@ -143,9 +116,7 @@ found in the <b>$_SERVER</b> variable, under
     echo $mysql_config["hostname"];
     echo $mysql_config["port"];
     );
-?&gt;
-</codeph>
-</codeblock>
+?&gt;</codeblock>
 </section>
 <section id="php-ini"> <title>PHP.ini</title>
 <p>Additional PHP ini files will be loaded from the <codeph>$HELION_APP_ROOT/apache/php/</codeph> directory.</p>
@@ -156,21 +127,15 @@ main application directory, the information stored in
 <i>manifest.yml</i> is exposed to the browser.</p>
 <p>To prevent exposing this information, you can use an <i>.htaccess</i> file in
 the document root directory with the following rule:</p>
-<codeblock>
-  <codeph>&lt;filesmatch "^(manifest)\.yml$"&gt;
+<codeblock>&lt;filesmatch "^(manifest)\.yml$"&gt;
   order allow,deny
   deny from all
-&lt;/filesmatch&gt;
-</codeph>
-</codeblock>
+&lt;/filesmatch&gt;</codeblock>
 <p>Alternatively, move your application into a subdirectory (e.g. move
 <i>index.php</i> to <i>www/index.php</i>) and explicitly set your document-root in
 <i>manifest.yml</i>:</p>
-<codeblock>
-  <codeph>framework:
-  document-root: www
-</codeph>
-</codeblock>
+<codeblock>framework:
+document-root: www</codeblock>
 <p>Using the <i>.htaccess</i> file will generate an "HTTP 403 Forbidden" error
 if a user tries to access the denied files. Changing the document-root
 will generate an "HTTP 404 Not Found" error instead.</p>
@@ -195,28 +160,22 @@ instances is dealing with user sessions.</p>
             filesystem service</i></xref> , you can store user sessions there. The following
           <i>manifest.yml</i> snippet creates a persistent filesystem service, creates a directory
         for sessions, and writes a PHP config file to set the path to the session directory:</p>
-<codeblock>
-  <codeph>services:
+<codeblock>  services:
   ${name}-fs: filesystem
 hooks:
   post-staging:
   - mkdir -p "$HELION_FILESYSTEM"/sessions
-  - echo "session.save_path = $HELION_FILESYSTEM/sessions" &gt; "$HELION_APP_ROOT"/apache/php/sessions.ini
-</codeph>
-</codeblock>
+  - echo "session.save_path = $HELION_FILESYSTEM/sessions" &gt; "$HELION_APP_ROOT"/apache/php/sessions.ini</codeblock>
 <p>For better performance, use a <xref href="../../../../../../devplatform/1.2/helion/user/services/1.2memcached.dita">
 <i>Memcached</i>
 </xref> service for
 session storage instead:</p>
-<codeblock>
-  <codeph>services:
+<codeblock>  services:
   ${name}-cache: memcached
 hooks:
   post-staging:
   - echo "session.save_handler = memcached" &gt; "$HELION_APP_ROOT"/apache/php/sessions.ini
-  - echo "session.save_path = $MEMCACHE_URL" &gt;&gt; "HELIONO_APP_ROOT"/apache/php/sessions.ini
-</codeph>
-</codeblock>
+  - echo "session.save_path = $MEMCACHE_URL" &gt;&gt; "HELIONO_APP_ROOT"/apache/php/sessions.ini</codeblock>
 </section>
 </body>
 </topic>
