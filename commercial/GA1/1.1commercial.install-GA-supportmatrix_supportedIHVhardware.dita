@@ -18,6 +18,7 @@
         <title>IBM Systems</title>
         <ul>
           <li>System x3550 M4</li>
+          <li>System x3650 M5</li>
         </ul>
       </section>
     <section id="dell-systems">
@@ -31,6 +32,7 @@
       <u>NIC</u>
       <ul>
         <li>Dell: Broadcom Corporation NetXtreme II BCM57810 10 Gigabit Ethernet (rev 10)</li>
+        <li>IBM: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)</li>
       </ul>
     </section>
   </body>
