@@ -84,26 +84,26 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="hp-proliant-bladesystem"> <title>HP ProLiant BladeSystem</title>
 <ul>
-        <li>BL460c Gen9</li>
-        <li>BL420c Gen8 (supported with P-series Smart Array only)</li>
-        <li>BL460c Gen8</li>
-        <li>BL660c Gen8</li>
-      </ul>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271227" scope="external" format="html">BL460c Gen9</xref></li>
+<li>BL420c Gen8 (supported with P-series Smart Array only)</li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949" scope="external" format="html">BL460c Gen8</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287" format="html" scope="external">BL660c Gen8</xref></li>
+</ul>
 </section>
 <section id="hp-proliant-rack-servers"> <title>HP ProLiant Rack Servers</title>
 <ul>
-<li>DL360 Gen9</li>
-<li>DL380 Gen9</li>
-<li>DL320 Gen8</li>
-<li>DL360 Gen8</li>
-<li>DL380 Gen8</li>
-<li>DL560 Gen8</li>
-<li>DL580 Gen8</li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836" scope="external" format="html">DL360 Gen9</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241" format="html" scope="external">DL380 Gen9</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527" scope="external" format="html">DL320 Gen8</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249570" format="html" scope="external">DL360 Gen8</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957" scope="external" format="html">DL380 Gen8</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290" format="html" scope="external">DL560 Gen8</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6636692" scope="external" format="html">DL580 Gen8</xref></li>
 </ul>
 </section>
 <section id="hp-moonshot-servers"> <title>HP Moonshot Servers</title>
 <ul>
-<li>m300 Server Cartridges (compute node only)</li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6488204" format="html" scope="external">m300 Server Cartridges (compute node only)</xref></li>
 <li>m710 Server Cartridges (compute node only)</li>
 </ul>
 <p>For more information, see <xref href="../../commercial/GA1/1.1commercial.install-GA-Moonshot.dita" >Managing Moonshot Servers</xref>.</p>
@@ -112,16 +112,16 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <ul>
 <li>SL230s Gen8</li>
 <li>SL250s Gen8</li>
-<li>SL270s Gen8</li>
-<li>SL2500 Gen8</li>
-<li>SL4540 Gen8</li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5409960" format="html" scope="external">SL270s Gen8</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6667379" scope="external" format="html">SL2500 Gen8</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7611044" format="html" scope="external">SL4540 Gen8</xref></li>
 </ul>
 </section>
 <section id="hp-proliant-xl-servers"> <title>HP ProLiant XL Servers</title>
 <ul>
-<li>XL230a Gen9</li>
-<li>XL250a Gen9</li>
-        <li>Apollo 6000</li>
+<li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7307066" scope="external" format="html">XL230a Gen9</xref></li>
+<li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7307070" format="html" scope="external">XL250a Gen9</xref></li>
+  <li><xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7152918" format="html" scope="external">Apollo 6000</xref></li>
 </ul>
 </section>
 <section>
