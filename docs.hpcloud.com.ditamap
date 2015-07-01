@@ -24,7 +24,7 @@
     <topicref href="commercial/GA1/1.1.1commercial.helion-update.dita"
       navtitle="Update to HP Helion OpenStack 1.1.1" locktitle="yes"/>
     <topicref href="commercial/GA1/1.1.1commercial.release-notes.dita"/>
-    <topicref href="commercial/GA1/1.1commercial.release-notes.dita"/>
+    <topicref href="commercial/GA1/1.1commercial.release-notes.dita" toc="no"/>
     <!--set to toc=no later-->
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.start.dita" navtitle="Getting Started" locktitle="yes">
       <topicref href="commercial/GA1/1.1commercial.faq.dita" navtitle="FAQ" locktitle="yes"/>
@@ -54,7 +54,7 @@
           locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commercial.install-GA-JSON.dita"
           navtitle="Editing the JSON Configuration File" locktitle="yes">
-          <topicref href="commercial/GA1/1.1commercial.install-GA-JSON-scenarios.dita"/>
+          <topicref href="commercial/GA1/1.1commercial.install-GA-JSON-scenarios.dita" toc="no"/>
           <!--set to toc=no later-->
         </topicref>
         <topicref href="commercial/GA1/1.1commercial.install-GA-CSV.dita"
@@ -105,7 +105,7 @@
       <topicref href="commercial/GA1/1.1commercial.roll.dita"
         navtitle="Roll Your Own Installation Guide" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"
-        navtitle="Installation Troubleshooting" locktitle="yes"/>
+        navtitle="Installation Troubleshooting" locktitle="yes" toc="no"/>
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita" locktitle="yes"
         navtitle="Network Security">
         <topicref href="commercial/GA1/1.1commercial.install-GA-security.dita"
@@ -113,7 +113,7 @@
         <topicref href="commercial/GA1/1.1commcerical.install-TLS.dita" navtitle="TLS Support"
           locktitle="yes"/>
         <topicref href="commercial/GA1/1.1.1commerical.services-customer-provided-certificates.dita"
-          navtitle="Configuring Support for Customer-provided Certs" locktitle="yes"/>
+          navtitle="Configuring Support for Customer-provided Certs" locktitle="yes" toc="no"/>
       </topicref>
       <!-- Install KVM -->
       <!-- Install ESK -->
@@ -143,7 +143,7 @@
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"
         navtitle="Installation Troubleshooting" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"
-        navtitle="Compute Service Troubleshooting" locktitle="yes"/>
+        navtitle="Compute Service Troubleshooting" locktitle="yes" toc="no"/>
       <!--set to toc=no later-->
       <!--not on site-->
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.controllers.dita"
@@ -384,9 +384,9 @@
       <topicref href="commercial/GA1/1.1commerical.services-ironic-overview.dita"
         navtitle="Ironic - Overview" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commerical.services-eve-overview.dita"
-        navtitle="Eve Service Overview" locktitle="yes"/>
+        navtitle="Eve Service Overview" locktitle="yes" toc="no"/>
       <topicref href="commercial/GA1/1.1commerical.services-focus-overview.dita"
-        navtitle="Focus Service Overview" locktitle="yes"/>
+        navtitle="Focus Service Overview" locktitle="yes" toc="no"/>
       <topicref href="commercial/GA1/1.1commerical.services-dns-overview.dita"
         navtitle="DNS as a Service (DNSaaS)" locktitle="yes">
         <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"
@@ -459,7 +459,7 @@
     <!--set to toc=no later-->
     <!--set to toc=no later-->
     <!--set to toc=no later  removed site index. not needed-->
-    <topicref href="commercial/GA1/1.1commercial.glossary.dita" navtitle="Glossary" locktitle="yes"/>
+    <topicref href="commercial/GA1/1.1commercial.glossary.dita" navtitle="Glossary" locktitle="yes" toc="no"/>
     <!-- Files in MD repo Under Revision not in DITA -->
     <!-- 1.0 -->
   </topicref>
@@ -1620,11 +1620,11 @@
         <topicref href="commercial/GA1/1.0commerical.services-ironic-overview.dita"/>
         <topicref href="commercial/GA1/1.0commerical.services-dvr-overview.dita"/>
         <!-- Not in 1.0 -->
-        <topicref href="commercial/GA1/1.0commerical.services-eve-overview.dita"/>
+        <topicref href="commercial/GA1/1.0commerical.services-eve-overview.dita" toc="no"/>
         <!--set to toc=no later-->
-        <topicref href="commercial/GA1/1.0commerical.services-focus-overview.dita"/>
+        <topicref href="commercial/GA1/1.0commerical.services-focus-overview.dita" toc="no"/>
         <!--set to toc=no later-->
-        <topicref href="commercial/GA1/1.0commerical.services-reporting-overview.dita"/>
+        <topicref href="commercial/GA1/1.0commerical.services-reporting-overview.dita" toc="no"/>
         <!--set to toc=no later-->
       </topicref>
       <topicref href="commercial/GA1/1.0commercial.troubleshooting.dita"/>
@@ -1702,7 +1702,7 @@
         <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-overview.dita"/>
         <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-installation.dita"/>
       </topichead>
-      <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita"/>
+      <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita" toc="no"/>
       <!--set to toc=no later-->
       <topicref href="commercial/GA1/1.0commercial.related-topics.dita"/>
       <topichead navtitle="HP Helion Openstack(R) 1.0: License Files">
