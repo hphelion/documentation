@@ -1,71 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
-<task-wr id="jow1430312565268" xml:lang="en-us">
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6108">
+
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Applying Customer-specific Branding (optional)</title>
-    <shortdesc ixia_locid="2">You can optionally apply customer-specific branding by including a
+    <title>Applying Customer-specific Branding (optional)</title>
+    <shortdesc>You can optionally apply customer-specific branding by including a
         branding tarball.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Jim Owens</author>
+        <author>Jim Owens</author>
     </prolog>
-    <taskbody>
-        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
-            <p ixia_locid="5">For more information on creating the branding tarball, see the
-                instructions in the <filepath ixia_locid="39">wrs-branding-1.0.0.tgz</filepath> in
+    <body>
+        
+            <p>For more information on creating the branding tarball, see the
+                instructions in the <filepath>wrs-branding-1.0.0.tgz</filepath> in
                 the HP Helion OpenStack Carrier Grade SDK tarball.</p>
-            <p ixia_locid="40">The branding tarball can be applied at various stages. The steps for each stage are
+            <p>The branding tarball can be applied at various stages. The steps for each stage are
                 described below.</p>
-            <note id="note_N1002B_N1001F_N1001C_N10001" ixia_locid="7">
-                <p ixia_locid="8">The recommended method is to install the tarball before running the controller
+            <note id="note_N1002B_N1001F_N1001C_N10001">
+                <p>The recommended method is to install the tarball before running the controller
                     configuration script.</p>
             </note>
-        </context>
-        <steps>
-            <step id="step_N10038_N10035_N1001C_N10001" ixia_locid="9">
-                <cmd ixia_locid="10">Log into the active controller using the CLI.</cmd>
-            </step>
-            <step id="step_N10041_N10035_N1001C_N10001" ixia_locid="11">
-                <cmd ixia_locid="12">Delete any previous tarball from the <filepath ixia_locid="13">/opt/branding</filepath>
-                    directory.</cmd>
-            </step>
-            <step id="step_N1004E_N10035_N1001C_N10001" ixia_locid="14">
-                <cmd ixia_locid="15">Copy the new branding tarball to the <filepath ixia_locid="16">/opt/branding</filepath>
-                    directory. </cmd>
-            </step>
-            <step id="step_N1005B_N10035_N1001C_N10001" ixia_locid="17">
-                <cmd ixia_locid="18">Install the branding. </cmd>
-                <info ixia_locid="19">
-                    <p ixia_locid="20">To install the branding as part of initial system configuration, run the
+        
+        <ol>
+            <li>Log into the active controller using the CLI.</li>
+
+            <li>Delete any previous tarball from the <filepath>/opt/branding</filepath>
+                    directory.</li>
+            
+            <li>Copy the new branding tarball to the <filepath>/opt/branding</filepath>
+                    directory. </li>
+            
+            <li>Install the branding. 
+                
+                    <p>To install the branding as part of initial system configuration, run the
                         configuration controller script. </p>
-                    <p ixia_locid="21">If you have already run the controller configuration script, you can install
+                    <p>If you have already run the controller configuration script, you can install
                         the branding as follows:</p>
-                </info>
-                <substeps id="substeps_lxb_djh_wr">
-                    <substep ixia_locid="22">
-                        <cmd ixia_locid="23">Ensure that any previous tarballs are deleted from  the
-                                <filepath ixia_locid="24">/opt/branding</filepath> directory.</cmd>
-                    </substep>
-                    <substep ixia_locid="25">
-                        <cmd ixia_locid="26">Ensure that the new branding tarball is copied to the
-                                <filepath ixia_locid="27">/opt/branding</filepath> directory.</cmd>
-                    </substep>
-                    <substep ixia_locid="28">
-                        <cmd ixia_locid="29">Execute the following command:</cmd>
-                        <info ixia_locid="30">
-                            <codeblock ixia_locid="31"><systemoutput ixia_locid="32">$ </systemoutput><userinput ixia_locid="33">sudo service horizon restart</userinput></codeblock>
-                            <p ixia_locid="38">This processes the branding files on the active controller.</p>
-                        </info>
-                    </substep>
-                    <substep ixia_locid="34">
-                        <cmd ixia_locid="35">Lock the inactive controller.</cmd>
-                    </substep>
-                    <substep ixia_locid="36">
-                        <cmd ixia_locid="37">Unlock the inactive controller.</cmd>
-                    </substep>
-                </substeps>
-            </step>
-        </steps>
-    </taskbody>
-</task-wr>
+                
+                <ol>
+                    <li>Ensure that any previous tarballs are deleted from  the
+                                <filepath>/opt/branding</filepath> directory.</li>
+                    
+                    <li>Ensure that the new branding tarball is copied to the
+                                <filepath>/opt/branding</filepath> directory.</li>
+                    
+                    <li>Execute the following command:
+                        
+                        <codeblock>sudo service horizon restart</codeblock>
+                        
+                            <p>This processes the branding files on the active controller.</p>
+                        </li>
+                    
+                    <li>Lock the inactive controller.</li>
+                    
+                    <li>Unlock the inactive controller.</li>
+                </ol></li></ol>
+                
+    </body>
+</topic>
