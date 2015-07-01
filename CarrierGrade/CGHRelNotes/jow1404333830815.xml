@@ -94,8 +94,8 @@
                             </simpletable>
                         </li>
                         <li>
-                            <p>Wind River-specific options are identified using the string
-                                    <b>wrs</b>:</p>
+                            <p>HP Helion OpenStack Carrier Grade-specific options are identified
+                                using the string <b>wrs</b>:</p>
                             <ul>
                                 <li>
                                     <p>hw:wrs:min_vcpus</p>
