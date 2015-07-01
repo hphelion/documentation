@@ -19,7 +19,7 @@
         <p>Cloud admins can use the <b>
                 <i>Icinga</i>
             </b> service running in the undercloud to monitor the health status of the Object
-            Storage (Swift) services.</p>
+            Storage (Swift) services and the health status of the selected Swift node .</p>
         <section id="prerequisites">
             <title>Prerequisites</title>
             <ul>
@@ -30,9 +30,10 @@
                 <li>The Icinga service is active and running in the undercloud.</li>
             </ul>
         </section>
-        <section id="monitoring-the-health-of-object-storage-swift-services"><title>Monitoring the
-                Health of Object Storage (Swift) Services</title><p>You can monitor the health
-                status of the following Swift services:</p><ul>
+        <section id="monitoring-the-health-of-object-storage-swift-services">
+            <title>Monitoring the Health of Object Storage (Swift) Services</title>
+            <p>You can monitor the health status of the following Swift services:</p>
+            <ul>
                 <li>account-auditor</li>
                 <li>container-replicator</li>
                 <li>object-replicator</li>
@@ -46,31 +47,33 @@
                 <li>container-auditor</li>
                 <li>object-auditor</li>
                 <li>proxy-server</li>
-            </ul><p>Perform the following steps to monitor the health of Swift services:</p><p>You
-                can monitor the health status of the above listed Swift services by following these
-                steps:</p><ol>
+            </ul>
+            <p>Perform the following steps to monitor the health of Swift services:</p>
+            <p>You can monitor the health status of the above listed Swift services by following
+                these steps:</p>
+            <ol id="ol_kzl_n3w_ns">
                 <li> In the undercloud Horizon dashboard, log in to the <b>Icinga Dashboard</b>
                     <b><i>(http://&lt;Undercloud_IP&gt;/icinga/</i></b>). The default login
-                    credentials are as follows:<ul>
+                    credentials are as follows:<ul id="ul_hbm_n3w_ns">
                         <li>Username: <i>icingaadmin</i>
                         </li>
                         <li>Password: <i>icingaadmin</i>
                         </li>
                     </ul></li>
-                <li>Click <b>Status</b> on the left panel and click  <b>Host Details</b>.<image
+                <li>Click <b>Status</b> on the left panel and click <b>Host Details</b>.<image
                         href="../../media/icinga_host-details.png" id="image_etd_hdv_ns"/><p>The
                         page navigates to the <b>Host Status Details for all Hosts</b>.<image
                             href="../../media/swift_icinga_view-details.png" id="image_o53_t2v_ns"
                         /></p></li>
-                <li> In the <b>Host</b> column, click the icon  next to the host IP when the tooltip
-                    displays as "<i>View Service Details For This Host</i>". The page navigates to
-                    Service Status Details For Host &lt;<b>Swift node IP address</b>> and displays
-                    the <b>health status of the Swift </b>services.</li>
-            </ol><image href="../../media/swift_icinga-swift-services.png" id="image_n1x_kbw_ns"
-            /></section>
-        <section id="status-messages">
+                <li> In the <b>Host</b> column, click the icon next to the host IP when the tooltip
+                    displays as "<i><b>View Service Details For This Host</b></i>". The page
+                    navigates to Service Status Details For Host &lt;<b>Swift node IP address</b>>
+                    and displays the <b>health status of the Swift </b>services. <image
+                        href="../../media/swift_icinga-swift-services.png" id="image_n1x_kbw_ns"
+                    /></li>
+            </ol>
             <title>Status Messages</title>
-            <table>
+            <table id="table_efm_n3w_ns">
                 <tgroup cols="3">
                     <colspec colname="col1"/>
                     <colspec colname="col2"/>
@@ -101,6 +104,8 @@
                     </tbody>
                 </tgroup>
             </table>
+        </section>
+        <section id="status-messages">
             <p>
                 <xref href="#topic2006"> Return to Top </xref>
             </p>
