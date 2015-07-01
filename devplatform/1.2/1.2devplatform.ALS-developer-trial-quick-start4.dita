@@ -29,14 +29,10 @@
             management console.</p>
 <simpletable>
                  <strow>
-                        <stentry>1. <xref href="ALS-developer-trial-quick-start">Register for your
-                        Helion Public Cloud Account</xref>
-                    <p>2. <xref
-                            href="1.2devplatform.ALS-developer-trial-quick-start2.dita#topic1743"
-                            >Download Tools</xref>
-                    </p><p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita"
-                            >Create the Sandbox Environment</xref></p><p>4. <image
-                            href="../../media/star.gif" scale="50" id="image_zft_5cb_ms"/>
+                        <stentry>1.  <p>2.  </p><p>3. <xref
+                            href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the
+                            Sandbox Environment</xref></p><p>4. <image href="../../media/star.gif"
+                            scale="50" id="image_zft_5cb_ms"/>
                         <b>Create a Cluster</b></p><p>5. <xref
                             href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add Windows
                             DEA and SQL Server (Optional Step)</xref></p><p>6. <xref

@@ -244,7 +244,7 @@ VSD Server : auto
               </tbody>
             </tgroup>
           </table><p>To see a sample <codeph>node-provision.json</codeph> file, see <xref
-              href="../../CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.dita">Create the HLM Virtual Machine</xref>.</p></li>
+              href="carrier-grade-install-pb-hlm-vm-json.dita">Create the HLM Virtual Machine</xref>.</p></li>
 </ol>
 </section>
 <section id="pxe-boot"> <title>Configure PXE boot</title>
@@ -327,8 +327,8 @@ hcfgproc -d definition.json
 </section>
 <section id="next-step"> <title>Next Step</title>
 <p>
-  <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita" >HLM Post-Installation Tasks</xref>
-</p>
+        <xref href="../carrier-grade-install-pb-workarounds.dita">HLM Post-Installation Tasks</xref>
+      </p>
 <p>
   <xref type="section" href="#topic10581"> Return to Top </xref>
 </p>

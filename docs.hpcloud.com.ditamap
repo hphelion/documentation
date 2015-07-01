@@ -1758,14 +1758,14 @@
         <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-kvm.dita"/>
       </topicref>
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"/>
-      <topicref href="CarrierGrade/Installation/carrier-grade-install-non-kvm.dita"/>
-      <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-rc0.dita"/>
-      <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita"/>
-      <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-troubleshoot.dita"/>
       <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita">
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-NTP.dita"/>
       </topicref>
+      <topicref href="CarrierGrade/Installation/carrier-grade-install-non-kvm.dita"/>
+      <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-rc0.dita"/>
+      <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita"/>
+      <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-troubleshoot.dita"/>
     </topicref>
     <!-- hiding for RC0
     <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita">
@@ -1826,7 +1826,7 @@
     <topichead navtitle="Administrator Guide">
       <!-- Hiding. Using PDF for RC0  
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>-->
-      <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin.pdf" format="pdf"/>
+      <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf"/>
     </topichead>
     <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638776646.xml"/>

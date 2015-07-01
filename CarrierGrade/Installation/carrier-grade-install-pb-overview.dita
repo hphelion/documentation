@@ -50,10 +50,6 @@
           <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita">HLM
             Post-Installation Tasks</xref>
         </li>
-<li>
-          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-verify.dita"
-            >Verifying the HLM and DCN Installation</xref>
-        </li>
 </ol>
 </section>
   <section id="logging"> <title>About Installation Logging</title>
