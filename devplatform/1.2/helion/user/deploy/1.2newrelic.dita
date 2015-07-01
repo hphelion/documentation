@@ -45,26 +45,26 @@ currently be used with are:</p>
 <p>In order to use New Relic, you need a <xref href="http://newrelic.com/" scope="external" format="html" >New Relic
 account</xref>.</p>
 <p>
-            <note>For security reasons, avoid committing your license key to source control.</note>
+            <note type="warning">For security reasons, avoid committing your license key to source control.</note>
         </p>
 <section id="new-relic-for-ruby"> <title>New Relic for Ruby</title>
 </section>
 <section id="the-ruby-gem"> <title>The Ruby Gem</title>
 <p>New Relic recommends installing the New Relic Ruby gem available on
 gemcutter as <codeph>newrelic_rpm</codeph>:</p>
-<codeblock>$ sudo gem install newrelic_rpm</codeblock>
+<codeblock>sudo gem install newrelic_rpm</codeblock>
 <p>Update the Ruby Gem at any time by running:</p>
-<codeblock>$ sudo gem update newrelic_rpm</codeblock>
+<codeblock> sudo gem update newrelic_rpm</codeblock>
 <p>Once the Ruby Gem is installed, add this line to your <i>Gemfile</i>:</p>
-<codeblock>$ gem 'newrelic_rpm'</codeblock>
+<codeblock> gem 'newrelic_rpm'</codeblock>
 </section>
 <section id="installing-the-ruby-agent-with-the-bundler-gem"> <title>Installing the Ruby agent with the Bundler Gem</title>
 <p>Add the gem specification to your <i>Gemfile</i>. It's best to place the New
 Relic gem as low in the list as possible, allowing the frameworks above
 it to be instrumented when the gem initializes:</p>
-<codeblock>$ gem 'newrelic_rpm'</codeblock>
+<codeblock> gem 'newrelic_rpm'</codeblock>
 <p>In the same folder as the <i>Gemfile</i>, run:</p>
-<codeblock>$ bundle install</codeblock>
+<codeblock> bundle install</codeblock>
 </section>
 <section id="configuration-file"> <title>Configuration File</title>
 <p>After installing the agent, copy the newrelic.yml file into the config

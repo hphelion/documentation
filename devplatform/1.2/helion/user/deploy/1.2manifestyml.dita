@@ -310,7 +310,7 @@ the command line option --runtime, -f (eg.
 </section>
 <section id="document-root"> <title>document-root:</title>
 <p>Overrides the default document-root setting (\$HOME) for the web server.</p>
-      <note> Applies to Node.js, Perl, PHP, and Python frameworks only.</note>
+      <note type="restriction"> Applies to Node.js, Perl, PHP, and Python frameworks only.</note>
 <p>Setting a deeper document root directory avoids the problem of exposing
 supporting files (e.g. <i>manifest.yml</i>) over HTTP.</p>
 <p>Example:</p>
@@ -323,7 +323,7 @@ supporting files (e.g. <i>manifest.yml</i>) over HTTP.</p>
 <section id="start-file"> <title>start-file:</title>
 <p>Set the main application filename.</p>
 <p>
-        <note>Applies to Perl and Python frameworks only.</note>
+        <note type="restriction">Applies to Perl and Python frameworks only.</note>
       </p>
 <p>If your application does not use a conventional filename (e.g. app.psgi
 for Perl, wsgi.py for Python) using this option, possibly in conjunction
