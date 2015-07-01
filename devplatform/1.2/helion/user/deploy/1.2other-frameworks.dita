@@ -43,51 +43,41 @@ can be customized to run a wide variety of non-standard applications.</p>
 <p>The example below shows a web process that serves static files from the
 application directory using Python's
 <xref href="../../../../../devplatform/1.2/helion/admin/server/1.2index.dita" >SimpleHTTPServer</xref>:</p>
-<codeblock>
-  <codeph>framework:
+<codeblock>framework:
     type: generic
 processes:
-    web: python -m SimpleHTTPServer $PORT
-</codeph>
-</codeblock>
+    web: python -m SimpleHTTPServer $PORT</codeblock>
 <p>If you wish to run an application <i>without</i> a web interface (i.e. a background "worker"
         process), <xref href="1.2manifestyml.dita#topic20922/processes"><i>set 'processes: web:' to
             Null</i>
         </xref>or use the Standalone framework instead.</p>
 </section>
-<section id="standalone"> <title>Standalone</title>
-<p>The Standalone framework uses a custom command specified in the
-  <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/command" type="section"   >
-<i>command:</i>
-</xref> key to start a
-background worker process.</p>
-<p>The example below shows <i>manifest.yml</i> configuration for an application
-running a simple Python worker script.</p>
-<codeblock>
-  <codeph>name: worker
+<section id="standalone">
+      <title>Standalone</title>
+      <p>The Standalone framework uses a custom command specified in the <xref
+          href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/command"
+          type="section">
+          <i>command:</i>
+        </xref> key to start a background worker process.</p>
+      <p>The example below shows <i>manifest.yml</i> configuration for an application running a
+        simple Python worker script.</p>
+      <codeblock>name: worker
 framework:
   type: standalone
   runtime: python27
-command: python main.py
-</codeph>
-</codeblock>
-<p>The <codeph>command</codeph> must start a long-running child
-process. If this process exits for any reason, the Health Manager will
-restart the application instance.</p>
-<p>Application Lifecycle Service will not assign URLs to apps deployed with the standalone
-framework, as it is intended for background worker processes. The
-<codeph>helion</codeph> client includes a heuristic that will
-automatically suppress URL mapping for applications using this
-framework.</p>
-<p>
-  <b>Note</b>
-</p>
-<p>If the application does not serve web requests, it may appear in the
-Management Console or <codeph>helion apps</codeph> command as not
-running. To verify a non-web application is actually running, use
-<codeph>helion logs</codeph> or <codeph>helion ssh</codeph>.</p>
-<!--See the
-[helion-worker](https://github.com/stackato-apps/stackato-worker/tree/master)sample for a simple working example. -->
-</section>
+command: python main.py</codeblock>
+      <p>The <codeph>command</codeph> must start a long-running child process. If this process exits
+        for any reason, the Health Manager will restart the application instance.</p>
+      <p>Application Lifecycle Service will not assign URLs to apps deployed with the standalone
+        framework, as it is intended for background worker processes. The <codeph>helion</codeph>
+        client includes a heuristic that will automatically suppress URL mapping for applications
+        using this framework.</p>
+      <p>
+        <note>If the application does not serve web requests, it may appear in the Management
+          Console or <codeph>helion apps</codeph> command as not running. To verify a non-web
+          application is actually running, use <codeph>helion logs</codeph> or <codeph>helion
+            ssh</codeph>.</note>
+      </p>
+    </section>
 </body>
 </topic>
