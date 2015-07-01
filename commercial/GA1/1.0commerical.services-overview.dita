@@ -41,7 +41,7 @@
 </b> add these service user accounts to any project because this could allow project users to access services they should not have permission to access.</p>
 <p>The service user accounts include, but are not limited to, the following:</p>
 <ul>
-<li>Swift</li>
+<li>Object Storage (Swift)</li>
 <li>Nova</li>
 <li>Neutron</li>
 <li>Sherpa</li>
