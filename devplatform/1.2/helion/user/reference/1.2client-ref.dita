@@ -509,7 +509,8 @@
 <li>
 <xref href="1.2client-ref-user-management.dita#topic7058/command-unregister" type="section">helion unregister</xref>: Delete the named user and the user's applications and services from the current or specified target. Requires admin privileges.</li>
 <li>
-<xref href="1.2client-ref-user-management.dita#topic7058/command-users" type="section">helion users</xref>: Show the list of users known to the current or specified target.</li>
+          <xref href="1.2client-ref-user-management.dita#topic7058/command-users" type="section"
+            >helion users</xref>: Show the list of users known to the current or specified target. </li>
 </ul>
 </section>
 </body>
