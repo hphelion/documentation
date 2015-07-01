@@ -20,10 +20,11 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/deploy/languages/python/1.2index.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/python/--></p>
-<p>Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry
-      based Platform as a Service (PaaS), or writing applications that take advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software services, tools to
-      enable successful development are available in Python.</p>
-<section id="application-lifecycle-services"> <title>Application Lifecycle Services</title>
+<p>Whether you're deploying an application to the HP Helion Development Platform, a <tm tmtype="tm"
+        >Cloud Foundry</tm>-based Platform as a Service (PaaS), or writing applications that take
+      advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software
+      services, tools to enable successful development are available in Python.</p>
+<section id="application-lifecycle-services"> <title>Application Lifecycle Services </title>
 <p>Application Lifecycle Services (ALS), a Cloud Foundry-based Platform as a Service, provides a
         means to execute Python applications on a managed platform. Deploying Python applications to
         the platform is normally done using a built-in <xref

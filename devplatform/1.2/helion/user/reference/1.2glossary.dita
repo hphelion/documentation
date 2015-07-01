@@ -169,7 +169,7 @@
 <p>The hypervisor window which provides serial console access to one of
     its virtual machines.</p>
 </section>
-<section id="term-YAML"> <title>YAML</title>
+<section id="term-YAML"> <title>YAML </title>
 <p>A notation for structured text data, acronym for <xref href="http://en.wikipedia.org/wiki/YAML" scope="external" format="html" >YAML Ain't Markup Language</xref>, used in <i>manifest.yml</i> configuration files.</p>
 </section>
 </body>

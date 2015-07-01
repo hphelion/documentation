@@ -16,22 +16,19 @@
 </metadata>
 </prolog>
 <body>
-<p>
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/deploy/languages/perl/1.2perlcgi.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/perl/perlcgi/--></p>
-<p>The <i>perlcgi</i> framework can be used to run <i>any</i> CGI script, but, like the <xref
+ <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/perl/perlcgi/-->
+<p>The <i>perlcgi</i> framework can be used to run any CGI script. Like the <xref
         href="1.2index.dita#topic8895">perl</xref> framework, it provides ActivePerl in the default
-  PATH and supports module installation via <xref href="1.2index.dita#topic8895/cpan-modules-via-ppm" type="section" >PPM</xref> and <xref
-    href="1.2index.dita#topic8895/cpan-modules-via-cpanm">
-        <i>cpanm</i>
-      </xref>.</p>
-  <p>Unlike the perl framework, setting the <xref type="section" href="../../../deploy/1.2manifestyml.dita#topic20922/start-file">
-<i>start-file</i>
-</xref> option
-has no effect, as there is no permanently running application. A new
-instance of a CGI script is started for each request.</p>
-<p>Perl scripts deployed with this framework should begin with:</p>
+      PATH and supports module installation via <xref type="section"
+        href="1.2index.dita#topic8895/cpan-modules-via-ppm">PPM</xref> and <xref type="section"
+        href="1.2index.dita#topic8895/cpan-modules-via-cpanm">cpanm</xref>. </p>
+    <p>Unlike the perl framework, setting the <xref type="section"
+        href="../../../deploy/1.2manifestyml.dita#topic20922/start-file"><i>start-file</i></xref>
+      option has no effect, as there is no permanently running application. A new instance of a CGI
+      script is started for each request.</p>
+<p>Perl scripts deployed with this framework should begin with: </p>
 <codeblock>#!/usr/bin/env perl</codeblock>
 <section id="example"> <title>Example</title>
 <ul>

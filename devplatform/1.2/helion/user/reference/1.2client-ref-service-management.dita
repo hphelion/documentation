@@ -40,10 +40,7 @@
 <xref type="section" href="#topic10567/command-update-user-provided-service">helion update-user-provided-service</xref>: Update the credentials of a user provided service.</li>
 </ul>
 <section id="syntax"> <title>Syntax</title>
-<codeblock>
-  <codeph>helion [options] command [arguments] [command-options]
-</codeph>
-</codeblock>
+<codeblock>helion [options] command [arguments] [command-options]</codeblock>
 <p>For more information, use the <b>helion help</b> or <b>helion help [<i>command</i>]</b> commands.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
