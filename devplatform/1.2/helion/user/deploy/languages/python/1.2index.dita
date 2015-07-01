@@ -20,7 +20,7 @@
 <!--PUBLISHED-->
  <!--./devplatform/1.2/helion/user/deploy/languages/python/1.2index.md-->
  <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/python/--></p>
-<p>Whether you're deploying an application to the HP Helion Development Platform, a <tm tmtype=""
+<p>Whether you're deploying an application to the HP Helion Development Platform, a <tm tmtype="tm"
         >Cloud Foundry</tm>-based Platform as a Service (PaaS), or writing applications that take
       advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software
       services, tools to enable successful development are available in Python.</p>
