@@ -96,6 +96,16 @@ table {  ///////////////////////////////nancy 7-1
     position: relative;
 }
 
+.strow {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+   border-radius: 10px;
+
+
+}
+
 thead {
     font-size: 16px;
     font-weight: normal;
