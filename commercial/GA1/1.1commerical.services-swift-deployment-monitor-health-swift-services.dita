@@ -50,7 +50,9 @@
 <p>You can monitor the health status of the above listed  Swift services by following these steps:</p>
 <ol>
 <li>
-<p>In the undercloud Horizon dashboard, log in to the <b>Icinga Dashboard</b> (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:</p>
+<p>In the undercloud Horizon dashboard, log in to the <b>Icinga Dashboard</b>
+                        <b><i>(http://&lt;Undercloud_IP&gt;/icinga/</i></b>).. The default login
+                        credentials are as follows:</p>
 
 <ul>
 <li>Username: <i>icingaadmin</i>
@@ -84,15 +86,13 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 <colspec colname="col3"/>
 <thead>
 <row>
-<entry>Status</entry>
-    <entry>
-<ph>Message</ph>
-
-</entry>
-    <entry>
-<ph>Cause/Resolution</ph>
-
-</entry>
+<entry colsep="1" rowsep="1">Status</entry>
+    <entry colsep="1" rowsep="1">
+                                <ph>Message</ph>
+                            </entry>
+    <entry colsep="1" rowsep="1">
+                                <ph>Cause/Resolution</ph>
+                            </entry>
 </row>
 </thead>
 <tbody>
