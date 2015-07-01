@@ -81,19 +81,29 @@ a:hover{
 /* Tables: Copied from previous site P Fletcher 6/19/15 */
 
 
-table {
+
+table {  ///////////////////////////////nancy 7-1
     border-collapse: separate;
     width: 100%;
     margin: 0;
     border: 1px solid #d9d9d9;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    border-radius: 10px;
+    //-webkit-border-radius: 10px;
+    //-moz-border-radius: 10px;
+    //-ms-border-radius: 10px;
+   // -o-border-radius: 10px;
+   //border-radius: 10px;
     background: whitesmoke;
     margin-bottom: 1em;
     position: relative;
+}
+
+.simpletable {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+   border-radius: 10px;
+
 }
 
 thead {
