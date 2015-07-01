@@ -26,14 +26,15 @@
 <p>High Availability for OpenStack cloud networking has dependencies on Nova, Cinder, and Swift. You need to work with the system administrators responsible for these services.</p>
 <ul>
 <li>
-<xref type="section" href="#topic21968/concepts-overview">High Availability( HA) concepts overview</xref> 
-
-<ul>
-<li>
-<xref type="section" href="#topic21968/scope-ha">Scope of High Availability: Protection against Single Points of Failure (SPOF)</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic21968/concepts-overview">High Availability (HA) concepts
+          overview</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic21968/scope-ha">Scope of High Availability: Protection
+              against Single Points of Failure (SPOF)</xref>
+          </li>
+        </ul>
+      </li>
 <li>
 <xref type="section" href="#topic21968/ha-helion">Highly Available cloud services</xref>
 
