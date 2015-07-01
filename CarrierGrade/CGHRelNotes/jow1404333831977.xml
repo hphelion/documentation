@@ -10,25 +10,21 @@
     </prolog>
     <body>
         <section>
-            <title>Cinder Block Storage snapshot feature not working</title>
-        <p>For HP Helion OpenStack Carrier Grade cloud using 3PAR iSCSI configured as the Cinder block storage service.
-            The Cinder volume snapshot feature might not function properly if following entries are enabled in the <codeph>/etc/cinder/cinder.conf</codeph> file.</p>p>
-         <codeblock>   
-            #hp3par_snapshot_retention=48
-            #hp3par_snapshot_expiration=72
-         </codeblock>
-     
-           <p> To correct this issue, edit the <codeph>/etc/cinder/cinder.conf</codeph> file to disable these entries, as follows:</p>
-            
-            <codeblock>   
-                #hp3par_snapshot_retention=48
-                #hp3par_snapshot_expiration=72
-            </codeblock>
-            
-       <p>The <codeph>hp3par_snapshot_retention</codeph> entry is the time in hours to retain a snapshot.</p>
-       <p>The <codeph>hp3par_snapshot_expiration</codeph> entry is the time in hours when a snapshot expires  and is deleted.
-        </p>
-        
+            <title>Cinder Block Storage snapshot feature not working </title>
+            <p>For HP Helion OpenStack Carrier Grade cloud using 3PAR iSCSI configured as the Cinder
+                block storage service. The Cinder volume snapshot feature might not function
+                properly if following entries are enabled in the
+                    <codeph>/etc/cinder/cinder.conf</codeph> file. </p>
+            <codeblock>#hp3par_snapshot_retention=48
+#hp3par_snapshot_expiration=72</codeblock>
+            <p> To correct this issue, edit the <codeph>/etc/cinder/cinder.conf</codeph> file to
+                disable these entries, as follows:</p>
+            <codeblock>#hp3par_snapshot_retention=48
+#hp3par_snapshot_expiration=72           </codeblock>
+            <p>The <codeph>hp3par_snapshot_retention</codeph> entry is the time in hours to retain a
+                snapshot.</p>
+            <p>The <codeph>hp3par_snapshot_expiration</codeph> entry is the time in hours when a
+                snapshot expires and is deleted. </p>
         </section>
         
         <section>
