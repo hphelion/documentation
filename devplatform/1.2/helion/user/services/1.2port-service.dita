@@ -50,27 +50,20 @@ web:</xref> is set to
 </ul>
 <section id="requesting-a-port"> <title>Requesting a Port</title>
 <p>Additional ports are provisioned like any other data service. To request a port with the Helion command-line client:</p>
-<codeblock>
-  <codeph>helion create-service harbor debug-port
-</codeph>
-</codeblock>
+<codeblock>helion create-service harbor debug-port</codeblock>
 <p>To request a port from Harbor in the <b>manifest.yml</b> file, add it in the <xref
           href="../deploy/1.2manifestyml.dita#topic20922/services"><b>services</b></xref> block. For
         example:</p>
-<codeblock>
-  <codeph>name: port-test
+<codeblock>name: port-test
 mem: 256
 services:
-  my-port: harbor
-</codeph>
-</codeblock>
+  my-port: harbor</codeblock>
 <p>This creates a TCP port tunnel which the application can access on the
 host and port specified in the \$HELION_SERVICES environment
 variable.</p>
 <p>The example above might create the following "my-port" object in
 \$HELION_SERVICES:</p>
-<codeblock>
-  <codeph>{
+<codeblock>{
   "my-port": {
     "hostname": "192.168.68.111",
     "host": "192.168.68.111",
@@ -81,9 +74,7 @@ variable.</p>
     "ext_hostname": "ports.example.com",
     "ext_host": "15.185.104.122"
   }
-}
-</codeph>
-</codeblock>
+}</codeblock>
 <p>This provides the following information:</p>
 <ul>
 <li>
@@ -118,13 +109,12 @@ port.</li>
 <b>ext_host</b>: The public IP address exposing the port.</li>
 </ul>
 <p>
-  <b>Note</b>
-</p>
-<p>To remotely check the settings and credentials of any Application Lifecycle Service service,
-  use the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-services.dita">
-<b>helion
-service</b>
-</xref> command.</p>
+        <note type="tip">To remotely check the settings and credentials of any Application Lifecycle Service
+          service, use the <xref
+            href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-services.dita">
+            <b>helion service</b>
+          </xref> command.</note>
+      </p>
 </section>
 <section id="port-service-env-vars"> <title>Harbor Environment Variables</title>
 <p>If there is only one Harbor service, the <b>HELION_HARBOR</b> environment variable can be used to get the internal port
@@ -135,51 +125,36 @@ variable will be created for each harbor service (service name
 upper-cased with hyphens replaced by underscores).</p>
 <p>For example, if your <i>manifest.yml</i> file configures the following
 services:</p>
-<codeblock>
-  <codeph>services:
+<codeblock>services:
   udp-port: harbor
-  tcp-port: harbor
-</codeph>
-</codeblock>
+  tcp-port: harbor</codeblock>
 <p>Two environment variables would be created:
 <codeph>HELION_HARBOR_UDP_PORT</codeph> and
 <codeph>HELION_HARBOR_TCP_PORT</codeph>.</p>
 <p>This naming scheme can be used in conjunction with the
 <b>HELION_APP_NAME_UPCASE</b> environment variable. For
 example, in an app with the following harbor services defined:</p>
-<codeblock>
-  <codeph>services:
+<codeblock>services:
   udp-${name}: harbor
-  tcp-${name}: harbor
-</codeph>
-</codeblock>
+  tcp-${name}: harbor</codeblock>
 <p>The Harbor port number for the UDP service could be accessed within the
 container with a construct such as:</p>
-<codeblock>
-  <codeph>UDP_SERVICE_NAME=HELION_HARBOR_UDP_${HELION_APP_NAME_UPCASE}
-UDP_SERVICE_PORT=${!UDP_SERVICE_NAME}
-</codeph>
-</codeblock>
+<codeblock>UDP_SERVICE_NAME=HELION_HARBOR_UDP_${HELION_APP_NAME_UPCASE}
+UDP_SERVICE_PORT=${!UDP_SERVICE_NAME}</codeblock>
 <p>
-  <b>Note</b>
-</p>
-<p>To use declarations like these in <xref href="../deploy/1.2manifestyml.dita#topic20922/hooks"
-            ><i>hooks</i></xref> , put them in a separate bash script. Brace expansion and grouping
-        cannot be used directly in YAML files.</p>
+        <note>To use declarations like these in <xref
+            href="../deploy/1.2manifestyml.dita#topic20922/hooks"><i>hooks</i></xref> , put them in
+          a separate bash script. Brace expansion and grouping cannot be used directly in YAML
+          files.</note>
+      </p>
 </section>
 <section id="setting-the-port-protocols"> <title>Setting the Port Protocols</title>
 <p>Harbor supports both the TCP and UDP protocols. When you provision a service with Harbor it will create a TCP enabled port by default. If you want to have a UDP port provisioned instead, you simply prefix your
 service name with udp, for example:</p>
-<codeblock>
-  <codeph>helion create-service harbor udp-debug-port
-</codeph>
-</codeblock>
+<codeblock>helion create-service harbor udp-debug-port</codeblock>
 <p>If you have an application that requires both TCP <b>and</b> UDP, you can prefix your service name with either <i>multi-</i> or <i>both-</i> .
 For example:</p>
-<codeblock>
-  <codeph>helion create-service harbor both-debug-port
-</codeph>
-</codeblock>
+<codeblock>helion create-service harbor both-debug-port</codeblock>
 <p>Harbor will then create UDP and TCP proxies for your application so that applications like DNS can use both protocols on the same provisioned port.</p>
 </section>
 <section id="multiple-application-instances"> <title>Multiple Application Instances</title>
@@ -203,14 +178,17 @@ happens at the Router.</p>
 </p>
 <p>You can set up aliases to this URL using DNS, but the explicit port
 specification must always be added.</p>
-<p>
-  <b>Notes:</b>
-</p>
-<ul>
-<li>When using this approach, the hostname / IP address of the app will be the one provided by the Harbor node the client will connect using the Harbor-assigned port number, <b>not</b> 443.</li>
-<li>Using Harbor in this way does <b>not</b> take advantage of any load balancing set up for regular web traffic through the Routers and Load Balancer.</li>
-<li>If you have multiple instances of your app routing through a Harbor TCP port, connections will be distributed via round-robin.</li>
-</ul>
+      <note>
+        <ul id="ul_fv1_n1z_ns">
+          <li>When using this approach, the hostname / IP address of the app will be the one
+            provided by the Harbor node the client will connect using the Harbor-assigned port
+            number, <b>not</b> 443.</li>
+          <li>Using Harbor in this way does <b>not</b> take advantage of any load balancing set up
+            for regular web traffic through the Routers and Load Balancer.</li>
+          <li>If you have multiple instances of your app routing through a Harbor TCP port,
+            connections will be distributed via round-robin.</li>
+        </ul>
+      </note>
 </section>
 <section id="https-container-proxy"> <title>HTTPS Container Proxy</title>
 <p>If you are using a framework such as Python or Perl which sets up uWSGI
@@ -218,24 +196,17 @@ specification must always be added.</p>
 Harbor can provision an HTTPS server in the app container that forwards
 HTTPS requests to the framework's HTTP server. To do this, add the
 suffix <b>https</b> to the name of your Harbor service. For example:</p>
-<codeblock>
-  <codeph>name: harbor-test-app
-
+<codeblock>name: harbor-test-app
 services:
-  custom-cert-https: harbor
-</codeph>
-</codeblock>
+  custom-cert-https: harbor</codeblock>
 <p>Put your server certificate and key (named <i>harbor.crt</i> and <i>harbor.key</i>
 respectively) in a folder called <i>certs</i> in the application's root
 directory. For example:</p>
-<codeblock>
-  <codeph>app_root
+<codeblock>app_root
     certs
     harbor.crt
     harbor.key
-    ...
-</codeph>
-</codeblock>
+    ...</codeblock>
 <p>Alternatively, use a standalone or buildpack setup which provisions its
 own intermediate web server instead.</p>
 </section>
@@ -249,14 +220,11 @@ naming scheme:</p>
 <i>harbor service name</i>.crt</li>
 </ul>
 <p>For example:</p>
-<codeblock>
-  <codeph>app_root
+<codeblock>app_root
     certs
         harbor-https-custom-1.crt
         harbor-https-custom-2.key
-    ...
-</codeph>
-</codeblock>
+    ...</codeblock>
 <p>The proxy will look for these certs before reverting to <codeph>harbor.crt</codeph> and <codeph>harbor.key</codeph>.</p>
 </section>
 </body>

@@ -33,15 +33,11 @@ and even between applications deployed to the same space.</p>
 </ul>
 <section id="creating-a-persistent-file-system"> <title>Creating A Persistent File System</title>
 <p>A filesystem service can be configured in your <i>manifest.yml</i> file:</p>
-<codeblock>
-  <codeph>services:
-    mydata: filesystem
-</codeph>
-</codeblock>
+<codeblock>services:
+    mydata: filesystem</codeblock>
 <p>You can also use the <codeph>helion create-service</codeph>
 command:</p>
-<codeblock>
-  <codeph>helion create-service filesystem mydata
+<codeblock>helion create-service filesystem mydata
     Creating Service: OK
 
     helion services
@@ -52,14 +48,13 @@ command:</p>
     | Name           | Service    |
     +----------------+------------+
     | mydata         | filesystem |
-    +----------------+------------+
-</codeph>
-</codeblock>
+    +----------------+------------+</codeblock>
 </section>
 <section id="using-a-persistent-file-system"> <title>Using A Persistent File System</title>
 <p>
-<b>Note</b>: File system service is available during pre-staging and shouldn't need
-to be reconfigured when the application starts.</p>
+        <note> File system service is available during pre-staging and shouldn't need to be
+          reconfigured when the application starts.</note>
+      </p>
 <p>The filesystem service creates a path which your app can use to store
 and read files.</p>
 <p>If there is only one filesystem service, the
@@ -72,40 +67,30 @@ will be created based on the name of each filesystem service (with
 hyphens replaced by underscores).</p>
 <p>For example, if your <i>manifest.yml</i> file configures the following
 services:</p>
-<codeblock>
-  <codeph>services:
+<codeblock>services:
     my-data: filesystem
-    plugins: filesystem
-</codeph>
-</codeblock>
+    plugins: filesystem</codeblock>
 <p>Two environment variables would be created:
 <codeph>HELION_FILESYSTEM_MY_DATA</codeph> and
 <codeph>HELION_FILESYSTEM_PLUGINS</codeph>.</p>
 <p>This naming scheme can be used in conjunction with the
 <codeph>HELION_APP_NAME_UPCASE</codeph> environment variable. For
 example, in an app with the following filesystem service defined:</p>
-<codeblock>
-  <codeph>services:
+<codeblock>services:
   ${name}-foo: filesystem
-  ${name}-bar: filesystem
-</codeph>
-</codeblock>
+  ${name}-bar: filesystem</codeblock>
 <p>The filesystem mount point for the "foo" filesystem service can be
 accessed within the container using constructs such as:</p>
-<codeblock>
-  <codeph>FOO=HELION_FILESYSTEM_${HELION_APP_NAME_UPCASE}_FOO
-mkdir ${!FOO}/myapp
-</codeph>
-</codeblock>
+<codeblock>FOO=HELION_FILESYSTEM_${HELION_APP_NAME_UPCASE}_FOO
+mkdir ${!FOO}/myapp</codeblock>
 <p>
-  <b>Note</b>
-</p>
-<p>To use declarations like these in
-  <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/hooks" type="section"   >
-<i>hooks</i>
-</xref>, put them in a
-separate bash script. Brace expansion and grouping cannot be used
-directly in YAML files.</p>
+        <note>To use declarations like these in <xref
+            href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/hooks"
+            type="section">
+            <i>hooks</i>
+          </xref>, put them in a separate bash script. Brace expansion and grouping cannot be used
+          directly in YAML files.</note>
+      </p>
 <p>
 <!-- Does this also apply for VCAP services? if so should be rewritten perhaps. 
 Alternatively, `STACKAT0_SERVICES` contains
@@ -142,8 +127,9 @@ app. (see example below)</p>
 </section>
 <section id="example-of-using-a-persistent-file-system"> <title>Example of Using A Persistent File System</title>
 <p>
-<b>Note</b>: When linking the file system service to the application, using <i>symlinks</i>
-is strongly recommended.</p>
+        <note> When linking the file system service to the application, using <i>symlinks</i> is
+          strongly recommended.</note>
+      </p>
 <p>We will go through how we customized our WordPress installation to use
 the persistent file system. Before you begin, find out where all the
 user generated contents are saved. You may have to make modifications to
@@ -151,8 +137,7 @@ this general approach if your application stores user generated content
 in more than one location. In WordPress, they are stored in wp-content
 folder.</p>
 <p>We need to add the following to our manifest.yml:</p>
-<codeblock>
-  <codeph>services:
+<codeblock>services:
     fs-wp: filesystem
 hooks:
     post-staging:
@@ -166,16 +151,12 @@ hooks:
     - rm -rf wp-content
 
     # link to wp-content folder in the shared filesystem
-    - ln -s "$HELION_FILESYSTEM"/wp-content wp-content
-</codeph>
-</codeblock>
-<p>
-<b>Note</b>: When moving files onto the mounted filesystem with a <codeph>mv</codeph> hook, you may see an error message similar to:</p>
-<codeblock>
-  <codeph>mv: failed to preserve ownership for... Permission denied
-</codeph>
-</codeblock>
-<p>This is a misleading warning, as the files <b>will</b> actually be moved with the correct permissions and ownership.</p>
+    - ln -s "$HELION_FILESYSTEM"/wp-content wp-content</codeblock>
+      <note> When moving files onto the mounted filesystem with a <codeph>mv</codeph> hook, you may
+        see an error message similar
+          to:<codeblock>mv: failed to preserve ownership for... Permission denied</codeblock><p>This
+          is a misleading warning, as the files <b>will</b> actually be moved with the correct
+          permissions and ownership.</p></note>
 </section>
 </body>
 </topic>

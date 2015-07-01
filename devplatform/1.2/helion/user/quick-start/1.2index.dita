@@ -118,19 +118,13 @@ README.md file showing how to deploy it on Application Lifecycle Service.</p>
 </xref> configuration
 file, so you can skip the interactive prompts by using the
 <codeph>-n</codeph> option.</p>
-<codeblock>
-  <codeph>helion push -n [appname]
-</codeph>
-</codeblock>
+<codeblock>helion push -n [appname]</codeblock>
 </section>
 <section id="test-the-application"> <title>Test the Application</title>
 <p>The output of <codeph>helion push</codeph> will show the URL of
 the running application. Paste this URL into a web browser to try the
 application or run:</p>
-<codeblock>
-  <codeph>helion open [appname]
-</codeph>
-</codeblock>
+<codeblock>helion open [appname]</codeblock>
 <p>Documentation on configuring applications in specific languages and
 frameworks is available in the <xref href="../deploy/1.2index.dita" >
 <i>Deploying Apps</i>
