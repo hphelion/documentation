@@ -32,6 +32,7 @@
 Console</xref>, or</li>
   <li>using the <xref href="../reference/1.2client-ref-management.dita#topic50918/command-env-add" type="section"   >env-add</xref>
 command.</li>
+
 </ul>
     <note>To see a complete list of environment variables in an Application Lifecycle Service
       application container, deploy the <xref href="https://github.com/Stackato-Apps/node-env"
@@ -94,8 +95,10 @@ For example:</p>
     PYPM_OPTS: "-R http://pypm-free.activestate.com/2.7/linux-x86_64/"</codeblock>
 </section>
 <section id="helion-app-env"> <title>HELION_APP_ENV</title>
-<p>Note: Internal use, subject to change.
-  Contains a list of all environment variables set with <xref href="1.2client-ref-management.dita#topic50918/command-env-add" >env-add</xref> or through the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita">manifest.yml</xref> file.</p>
+<p><note>Subject to change.</note> Contains a list of all environment variables set with <xref
+          href="1.2client-ref-management.dita#topic50918/command-env-add">env-add</xref> or through
+        the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita"
+          >manifest.yml</xref> file.</p>
 </section>
 <section id="helion-app-name"> <title>HELION_APP_NAME</title>
 <p>Contains the application name as specified during application push (or in <i>manifest.yml</i>). Available during staging as well as in the application instance.</p>
