@@ -49,6 +49,7 @@ html, body {
 }
 .framesLink img{
   padding: 0 3px 0 3px;
+  display: none; ////hide as other frames css is broken
 }
 .framesLink a{
  text-decoration:none;
