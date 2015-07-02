@@ -1827,7 +1827,7 @@
     <topichead navtitle="Administrator Guide">
       <!-- Hiding. Using PDF for RC0  
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>-->
-      <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf"
+      <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin.pdf" format="pdf"
         navtitle="Administrator Guide (PDF)"/>
     </topichead>
     <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
