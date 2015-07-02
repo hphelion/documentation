@@ -39,6 +39,20 @@ html, body {
 #productTitle h1 {
     float: left;
 }
+#productTitle img
+{
+    display: none;
+}
+div.productTitle {
+	content:url("http://www8.hp.com/hpnext/sites/default/files/content/documents/HP%20Helion%20Logo_Cloud_Martin%20Fink_New%20Style%20of%20IT_Hewlett-Packard.PNG");
+	height: 42px;
+	padding-top: 5px;
+}
+
+#header #productTitle H1 {
+  margin: 0 !important;
+  display: none;
+}
 
 /* Link to webhelp with frames */
 .framesLink{
