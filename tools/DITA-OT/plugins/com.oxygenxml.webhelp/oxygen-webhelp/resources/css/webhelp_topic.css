@@ -619,6 +619,14 @@ div.fignone img {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+#productTitle img
+{
+    display: none;
+}
+#productTitle {
+	background-image: url ("http://www8.hp.com/hpnext/sites/default/files/content/documents/HP%20Helion%20Logo_Cloud_Martin%20Fink_New%20Style%20of%20IT_Hewlett-Packard.PNG");
+}
 /* OXYGEN PATCH END EXM-17248 */
 
 /* IE6 & IE7 style */
