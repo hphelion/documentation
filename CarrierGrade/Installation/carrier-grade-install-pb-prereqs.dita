@@ -94,7 +94,7 @@
             environment:<codeblock><codeph>PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export http_proxy=http://&lt;web_proxy_IP&gt;/
 export https_proxy=http://&lt;web_proxy_IP&gt;/
-export no_proxy=localhost,127.0.0.1,&lt;your 10.x IP address&gt;,&lt;provider_network&gt;
+export no_proxy=localhost,127.0.0.1,&lt;Ubuntu IP_address&gt;,&lt;provider_network&gt;
 </codeph></codeblock><p>Where:</p><codeblock><codeph>web_proxy_IP is your web proxy IP address.</codeph></codeblock></li>
 <li>Source the <codeph>environments</codeph>
           file:<codeblock><codeph>source /etc/environment
@@ -159,8 +159,8 @@ fi
 <section id="getinstall"> <title>Download and unpack the installation packages</title>
 <p>Before you begin, you must download the required HP Helion OpenStack installation package(s):</p>
 <ol>
-<li>Download and extract the <codeph>cg-hlm.qcow2</codeph> and <codeph>VSD qcow2</codeph> files to
-  the images folder:  <codeph>/var/lib/libvirt/images</codeph>.</li>
+<li>Download and extract the <codeph>cg-hlm.qcow2</codeph> file to the images folder:
+            <codeph>/var/lib/libvirt/images</codeph>.</li>
 <li>Download and extract the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file to the
             <codeph>/root</codeph> directory.</li>
   <li>Decrypt and untar the PGP file using password cghelion when prompted.

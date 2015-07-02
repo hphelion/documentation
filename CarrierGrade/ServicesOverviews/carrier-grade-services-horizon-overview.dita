@@ -31,19 +31,22 @@
 <section id="for-more-information"> <title>For more information</title>
 <p>For information on using the dashboards, see <xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita" >HP Helion OpenStack Dashboard</xref>.</p>
 </section>
-<section id="horizon-dashboard-examples"> <title>Horizon Dashboard Examples</title>
-<!-- note please do not edit the javascript below -->
+<!-- 
+  <section id="horizon-dashboard-examples"> <title>Horizon Dashboard Examples</title>
+<! note please do not edit the javascript below >
 <p>Click the descriptions below to view some of the services you can manage in the Horizon dashboard. There is both an overcloud Horizon dashboard and an undercloud dashboard, both of which are accessible via your URL in a browser.
-<!--Removed anchor point images--><!-- id="images" --></p>
+<!Removed anchor point images id="images" ></p>
 <p>System Info    
 Quotas    
 Routers     
 Availability Zones     
-Hypervisors     <!--A BR tag was used here in the original source.-->DNS Record    
+Hypervisors     DNS Record    
 Manage Services    
 Stacks   
 Create Domain    </p>
 <p>.</p>
+  -->
+  <section>
 <p>
   <xref type="section" href="#topic1518"> Return to Top </xref>
 </p>

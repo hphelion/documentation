@@ -65,7 +65,17 @@ sudo reboot       </codeblock></li>
         <li><xref href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita#topic1160"
             >Log in to the Horizon interface</xref> and monitor the status of nodes being PXE
           booted. After succesful PXE boot, Operational State as Disabled and Availability State as
-          Online in the Admin &gt; Inventory page</li>
+          Online in the <b>Admin &gt; Inventory</b> page. <p><b>Note:</b>The Horizon Dashboard will
+            be running on the first IP address of the CLM network range (refer to the
+              <codeph>ip_start_address</codeph> value provided for the CLM network in the
+              <codeph>definition.json</codeph> during the <xref
+              href="carrier-grade-install-non-kvm.dita#topic10581"><xref
+                href="carrier-grade-install-non-kvm.dita#topic10581">non-KVM Region
+                deployment</xref></xref>). </p><p>The log-in credentials for Horizon are as follows:
+            <codeblock>username: admin 
+password:  admin</codeblock></p><p>Change the password on
+            first login.</p>
+        </li>
         <li>For each compute node in the inventory, do the following<ol id="ul_gss_srg_ms">
             <li>Create Infra interface. See <xref
                 href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"

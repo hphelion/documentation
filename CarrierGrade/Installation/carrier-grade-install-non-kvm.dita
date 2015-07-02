@@ -29,7 +29,6 @@
 </ol>
 <codeblock>  [hlm_kvm_host]
   192.168.122.1 </codeblock>
-  <p>Where <codeph>IP_address</codeph> is the the IP address of the vibr0 interface.</p>
 </section>
 <section id="deploy-the-hlm-and-vsd-vm">
       <title>Deploy the HLM Virtual Machine</title>
@@ -194,7 +193,8 @@ VSD Server : auto
 <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE boot
         on cloud nodes to set the correct boot order. Execute the following on the HLM VM:</p>
 <ol>
-<li>Use the following command to install the <codeph>python-hpilo</codeph> module on HLM VM:<codeph>pip install python-hpilo</codeph><p>
+<li>Use the following command to install the <codeph>python-hpilo</codeph> module on HLM
+  VM:<codeblock>pip install python-hpilo</codeblock><p>
             <codeph>python-hpilo</codeph> is a python library and command-line tool for
           iLO.</p></li>
 <li>Copy the <codeph>ilopxebootonce.py</codeph> from the
@@ -215,11 +215,13 @@ VSD Server : auto
               <codeph>node-provision.json</codeph> file. The script also tracks the PXE boot
             completion process and will create the <codeph>nodes.json</codeph> file in the
             directory. </p></li>
-  <li>Update the <codeph>node-provision.json</codeph> file used in the <xref type="section" href="#topic10581/pxe-boot">previous step</xref>.<p>a. Change to
-            the <codeph>&lt;cloudname&gt;</codeph>
-            directory:</p><codeblock>cd ~/&lt;cloudname&gt;</codeblock><p>b.
-            Verify that the each PXE-booted node has an IP address that matches the IP address
-            specified in the <codeph>node-provision.json</codeph> file.</p></li>
+  <li>Update the <codeph>node-provision.json</codeph> file used in the <xref type="section"
+            href="#topic10581/pxe-boot">previous step</xref>.<p>a. Change to the
+              <codeph>&lt;cloudname&gt;</codeph>
+            directory:</p><codeblock>cd ~/&lt;cloudname&gt;</codeblock><p>b. Once the baremetal
+            nodes are provisioned, make sure the <codeph>nodes.json</codeph>  file is generated and
+            that you can establish a password-less SSH connection to these nodes from HLM
+          VM.</p></li>
 <li>Modify the <codeph>environment.json</codeph> file to configure the VLANs and network addresses
           as appropriate for your environment.<codeblock>"cidr": "start-address": </codeblock> The
           three controller nodes should have CLM, CAN, EXT, BLS on eth0 and TUL on eth1. <!--Hiding for RC0 
@@ -265,25 +267,22 @@ hp3par_snapshot_retention=48
 hp3par_snapshot_expiration=72
 </codeblock></li></ul></li>            
 <li>Once you have correctly edited all the json Cloud Model files, run the HP Helion OpenStack
-          Configuration Processor:
-  <codeblock>hcfgproc -d definition.json</codeblock>
-  <p>The <codeph>hcfgproc</codeph> script gets installed in
-              <codeph>/usr/local/bin</codeph> by the <codeph>prepare-env</codeph> script. The script
-            generates a <codeph>clouds/</codeph> directory within the directory. </p></li>
+          Configuration Processor: <codeblock>hcfgproc -d definition.json</codeblock><p>The
+              <codeph>hcfgproc</codeph> script gets installed in <codeph>/usr/local/bin</codeph> by
+            the <codeph>prepare-env</codeph> script. The script generates a <codeph>clouds/</codeph>
+            directory within the directory. </p></li>
 <li>Review the CloudDiagram, <codeph>hosts.hf</codeph>, and
             <codeph>net/interfaces.d/eth.cfg</codeph> files to make sure the network settings are
           correct.</li>
-<li>Initialize network interfaces on all the cloud nodes using the following
-            command:
-  <codeblock><codeph>hnetinit &lt;cloudname&gt;</codeph>></codeblock><p>You can
-            run this command from any directory.</p>
+<li>Initialize network interfaces on all the cloud nodes using the following command:
+            <codeblock><codeph>hnetinit &lt;cloudname&gt;</codeph></codeblock><p>You can run this
+            command from any directory.</p><p>After this command completes, all cloud nodes and CLM
+            network interfaces should be set correctly.</p></li>
 
-  <p>After this command completes, all cloud nodes and CLM network interfaces should be set correctly.</p></li>
-
-<li>Use the following command to eploy the cloud: 
-  <codeblock>hdeploy HCGCloud</codeblock>
-
-  <p>Once cloud deployment is successfully complete, 2 controller nodes in the KVM region.</p></li>
+<li>Use the following command to eploy the cloud:
+            <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>Once cloud
+            deployment is successfully complete, there will be 3 controller nodes in the non-KVM
+            region.</p></li>
 
 </ol>
 
