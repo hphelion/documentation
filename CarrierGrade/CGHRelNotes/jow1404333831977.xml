@@ -29,20 +29,55 @@
         <section>
             <title>LDAP conflict causing error with templates</title>
             <p>When deploying templates, such as <codeph>VMAutoScaling.yaml</codeph> you might
-                receive a n error similar to the following: <codeph>Error: Can’t find role
-                    heat_stack_user</codeph>.</p>
+                receive a n error similar to the following:
+                <codeblock>Error: Can’t find role heat_stack_user</codeblock></p>
             <p>The problem is due to an inconsistency in the HP Helion OpenStack Carrier Grade LDAP
-                implementation. To fix this problem, you should disable LDAP in Keystone. </p>
+                implementation. To fix this problem, you should disable LDAP in Keystone and create
+                few roles as mentioned below.</p>
+            <p>How you fix the problem depends upon whether your he HP Helion OpenStack Carrier
+                Grade cloud is currently deployd.</p>
+            <b>Cloud is not deployed</b> 
             <ol>
-                <li>Before deploying HP Helion OpenStack Carrier Grade, edit the definition.json as
-                    the following flag is set to 0. <codeblock>"ldap_enabled": 1,</codeblock></li>
-                <li>After deploying HP Helion OpenStack Carrier Grade, on each controller, modify
-                    the <codeph>/etc/keystone/keystone.conf</codeph> to comment-out the LDAP entry
-                    and uncomment SQL driver, as shown:
-                    <codeblock>[identity]
-driver = keystone.identity.backends.sql.Identity
-#driver = keystone.identity.backends.ldap.Identity</codeblock></li>
+                <li>If the HP Helion OpenStack Carrier Grade cloud is not deployed, before deploying edit the
+                        <codeph>definition.json</codeph> file to set <codeph>ldap_enabled</codeph>
+                    to 0. <codeblock>"ldap_enabled": 0,</codeblock><p>This setting causes the cloud
+                        to deploy with SQL as Keystone backend instead of LDAP.</p></li>
+                <li>After you deploy the cloud, create the following roles in the Keystone by logging on to one of the controller nodes:
+                    <ol>
+                    <li>Source the stackrc file: <codeblock>source stackrc</codeblock></li>
+                    <li>Execute the following command to create the heat_stack_owner role: 
+                        <codeblock>keystone role-create --name heat_stack_owner</codeblock> </li>
+                        <li>Execute the following command to create the heat_stack_owner role:
+                            <codeblock>keystone role-create --name heat_stack_user</codeblock></li></ol></li>
             </ol>
+                
+            <b>Cloud is currently deployed</b>
+                <ol>
+                <li>After the cloud is deployed, on each controller, modify the
+                        <codeph>/etc/keystone/keystone.conf</codeph> to comment-out the LDAP entry
+                    and uncomment SQL driver, as shown:
+                    <codeblock>    [identity]
+    driver = keystone.identity.backends.sql.Identity
+    #driver = keystone.identity.backends.ldap.Identity</codeblock></li>
+            
+            <li>Create the following roles in the Keystone by logging on to one of the controller nodes:
+                <ol>
+                    <li>Source the stackrc file: <codeblock>source stackrc</codeblock></li>
+                    <li>Execute the following command to create the heat_stack_owner role: 
+                        <codeblock>keystone role-create --name heat_stack_owner</codeblock> </li>
+                    <li>Execute the following command to create the heat_stack_owner role:
+                        <codeblock>keystone role-create --name heat_stack_user</codeblock></li></ol></li>
+                        </ol>
+        </section>
+        <section><title>Floating IP not working when SNAT is enabled</title>
+            
+            <p>When router is configured either centralized (server default) or distributed , it is seen that Floating IP is not working.</p>
+            <p>To fix this issue, execute the following command to disable SNAT on the router:
+            
+                <codeblock>neutron router-update &lt;router-name> --external_gateway_info type=dict network_id=&lt;network-id>,enable_snat=False</codeblock>
+            </p>        
+            
+            
         </section>
         <section>
             <title>SR-IOV limitations</title>
