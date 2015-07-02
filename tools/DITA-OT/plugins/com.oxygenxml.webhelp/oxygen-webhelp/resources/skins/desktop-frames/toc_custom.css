@@ -45,3 +45,8 @@ h1.topictitle1 {
 #bck_toc #searchBlock,#bck_toc #indexBlock, #bck_toc #contentBlock{
     border-top:1px solid #ccc;
 }
+
+#productTitle img
+{
+    display: none;
+}
