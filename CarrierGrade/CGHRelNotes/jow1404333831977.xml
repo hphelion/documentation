@@ -73,12 +73,14 @@
             
             <p>When router is configured either centralized (server default) or distributed , it is seen that Floating IP is not working.</p>
             <p>To fix this issue, execute the following command to disable SNAT on the router:
-            
-                <codeblock>neutron router-update &lt;router-name> --external_gateway_info type=dict network_id=&lt;network-id>,enable_snat=False</codeblock>
-            </p>        
-            
-            
+                <codeblock>neutron router-update &lt;router-name> --external_gateway_info type=dict network_id=&lt;network-id>,enable_snat=False</codeblock></p>        
         </section>
+
+        <section><title>Cinder Volume Backup is not working upon cloud deployment</title>
+            <p>Cinder Volume Backup is not working upon installation of HP Helion OpenStack Carrier Grade 1.1 
+                The  <codeph>cinder.backup.driver</codeph> file is not present in /etc/cinder/cinder.conf.</p>
+       </section>
+
         <section>
             <title>SR-IOV limitations</title>
             <ul>
