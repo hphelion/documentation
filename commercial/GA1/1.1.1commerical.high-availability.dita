@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic21822">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1: High Availability(HA)</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1.1: High Availability (HA)</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -45,26 +45,27 @@
 
 <ul>
 <li>
-<xref type="section" href="#topic21822/ha-overcloud-controller">High Availability of Overcloud Controllers</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic21822/api-msg-flow">API Request Message Flow</xref>
-</li>
-<li>
-<xref type="section" href="#topic21822/handling-node-failure">Handling Node Failure</xref>
-</li>
-<li>
-<xref type="section" href="#topic21822/handling-network-partition">Handling Network Partitions</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic21822/mysql-galera">MySQL Galera Cluster</xref>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+            <xref type="section" href="#topic21822/ha-overcloud-controller">High Availability of
+              overcloud controllers</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic21822/api-msg-flow">API Request Message Flow</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic21822/handling-node-failure">Handling Node
+                  Failure</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic21822/handling-network-partition">Handling Network
+                  Partitions</xref>
+                <ul>
+                  <li>
+                    <xref type="section" href="#topic21822/mysql-galera">MySQL Galera Cluster</xref>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
 <li>
 <xref type="section" href="#topic21822/singleton-services">Singleton Services</xref>
 
@@ -126,7 +127,7 @@
 <xref type="section" href="#topic21822/more-info">More information</xref>
 </li>
 </ul>
-<section id="concepts-overview"> <title>High Availability Concepts Overview</title>
+<section id="concepts-overview"> <title>High Availability concepts overview</title>
 <p>Highly Available Cloud Services ensures that at least a minimum of cloud resources are always available on request, which results in uninterrupted operations for users.</p>
 <p>Cloud users are able to provision and manage the compute, storage, and network infrastructure resources at any given point in time and the Horizon Dashboard and the OpenStack APIs must be reachable and be able to fulfill user requests.</p>
 <p>
@@ -144,7 +145,8 @@
 <p>Data stored in Block Storage service volumes is always available and volumes are rarely lost by the service provider.</p>
 </li>
 <li>
-<p>Data stored by the Object service is always available and is rarely lost by the cloud service provider.</p>
+<p>Data stored by the Object Operation service is always available and is rarely lost by the cloud
+            service provider.</p>
 </li>
 <li>
 <p>Network resources such as routers, subnets, and floating IP addresses provisioned by the Networking Operation service are rarely lost by the cloud service provider and will continue to provide a network path to the Compute VMs.</p>
@@ -152,11 +154,11 @@
 </ul>
 <p>The infrastructure that provides these features is called a <b>Highly Available Cloud Infrastructure</b>.</p>
 </section>
-<section id="highly-available-cloud-aware-tenant-workloads"> <title>Highly Available Cloud-Aware Tenant Workloads</title>
+<section id="highly-available-cloud-aware-tenant-workloads"> <title>Highly Available cloud-aware tenant workloads</title>
 <p>HP Helion OpenStack Compute hypervisors do not support transparent high availability for user applications; as such, the project application provider is responsible for deploying their applications in a redundant and highly available manner, using multiple VMs spread appropriately across availability zones, routed through the load balancers and made highly available through clustering.</p>
 <p>These are known as <b>Highly Available Cloud-Aware Tenant Workloads</b>.</p>
 </section>
-<section id="scope-ha"> <title>Scope of High Availability: Protection against Single Points of Failure(SPOF)</title>
+<section id="scope-ha"> <title>Scope of High Availability: Protection against single points of failure (SPOF)</title>
 <p>In order to achieve this high availability of services, infrastructure and workloads, we define the scope of HA to be limited to protecting these only against single points of failure (SPOF).</p>
 <p>Single points of failure include:</p>
 <ol>
@@ -175,7 +177,7 @@
 <section id="ha-helion"> <title>Highly Available cloud services</title>
 <p>The HP Helion OpenStack installer deploys highly available configurations of OpenStack cloud services, resilient against single points of failure.</p>
 </section>
-<section id="ha-overcloud-controller"> <title>High Availability of Overcloud Controllers</title>
+<section id="ha-overcloud-controller"> <title>High Availability of overcloud controllers</title>
 <p>The high availability of the overcloud controller components comes in two main forms.</p>
 <ol>
 <li>
@@ -211,11 +213,13 @@
 </li>
 </ul>
 </section>
-<section id="api-msg-flow"> <title>API Request Message Flow</title>
+<section id="api-msg-flow"> <title>API Request message flow</title>
 <p>The diagram below shows the flow for an API request in an overcloud HA deployment. All API requests (internal and external) are sent through the VIP.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/Ha-api-request-flow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA API Message Flow(opens in a new window)</xref>
-</p>
+        <xref format="html"
+          href="javascript:window.open('/media/Ha-api-request-flow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
+          >HA API Message Flow (opens in a new window)</xref>
+      </p>
 <p>The flow of a sample API request is explained below:</p>
 <ol>
 <li>
@@ -228,14 +232,11 @@
 <p>nova-api on Controller0 receives the request and determines that a database change is required. It connects to the database using VIP:</p>
 </li>
 <li>
-<p>.</p>
-</li>
-<li>
 <p>HA proxy (listening on VIP:3306) receives the database connection request and selects Controller1 from the list of available nodes (Controller0, Controller1, Controller2). The connection request is forwarded to Controller1IP:3306</p>
 </li>
 </ol>
 </section>
-<section id="handling-node-failure"> <title>Handling Node Failure</title>
+<section id="handling-node-failure"> <title>Handling node failure</title>
 <p>With the above overcloud HA set up, loss of a controller node is handled as follows:</p>
 <p>Assume that the Controller0, which is currently in control of the VIP, is lost, as shown in the diagram below:</p>
 <p>
@@ -252,25 +253,37 @@
   <xref format="html" href="javascript:window.open('/media/ha-nodefailure-3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Node Failure- Fig 3(opens in a new window)</xref>
 </p>
 </section>
-<section id="handling-network-partition"> <title>Handling Network Partitions</title>
+<section id="handling-network-partition"> <title>Handling network partitions</title>
 <p>It is important for the overcloud HA setup to tolerate network failures, specifically those that result in a partition of the cluster, whereby one of the three nodes in the overcloud control plane cannot communicate with the remaining two nodes of the cluster. The description of network partition handling is separated into the main HA components of the overcloud.<!---**sentence seems to be incomplete. Please validate** ??--></p>
 </section>
-<section id="mysql-galera"> <title>MySQL Galera Cluster</title>
+<section id="mysql-galera"> <title>MySQL Galera cluster</title>
 <p>The handling of network partitions is illustrated in the diagram below. Galera has a quorum mechanism so when there is a partition in the cluster, the primary or quorate partition can continue to operate as normal, whereas the non-primary/minority partition cannot commit any requests. In the example below, Controller0 is partitioned from the rest of the control plane. As a result, requests can only be satisfied on Controller1 or Controller2. Controller0 will continue to attempt to rejoin the cluster:</p>
 <p>
   <xref format="html" href="javascript:window.open('/media/mysql-galera-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >MySQL Galera Cluster Diagram(opens in a new window)</xref>
 </p>
 <p>When HA proxy detects the errors against the mysql instance on Controller0, it removes that node from its pool for future database requests.</p>
 </section>
-<section id="singleton-services"> <title>Singleton Services</title>
+<section id="singleton-services"> <title>Singleton services on management controller</title>
+      <p>The following three services run as singletons in the control plane for the current
+        release:</p>
+  <p>
+    <ul>
+      <li>Cinder Volume</li>
+      <li>Sherpa</li>
+      <li>nona-consoleauth</li>
+    </ul>
+  </p>
 <p>HP Helion OpenStack defines three Controllers:</p>
 <ol>
 <li>OvercloudController0 </li>
 <li>OvercloudController1</li>
 <li>OvercloudController2</li>
 </ol>
+  <p>
+    The above services are deployed and activated on one of these Controllers. AutAutomated failover for these singleton services is not provided and in the event of irrecoverable failure of the management controller server, you must resort to de-commissioning the failed server from the control plane and deploying the management controller on a new server using instructions provided in the <xref href="../../../commercial/GA1/1.1commercial.backup-restore-GA.dita" >Backup and Restore</xref> document.
+  </p>
 </section>
-<section id="cinder-volume"> <title>Cinder-Volume</title>
+<section id="cinder-volume"> <title>Cinder-volume</title>
 <p>Due to the single threading required in both cinder-volume and the drivers, the Cinder volume service is run as a singleton in the control plane.</p>
 <p>
   <xref format="html" href="javascript:window.open('/media/ha-cinder-volume.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Cinder Volume Diagram(opens in a new window)</xref>
@@ -324,8 +337,7 @@ overcloud-controller1-px7gyh74dccx
 <b>Note:</b> Following a system update, the volume manager may attempt to start before the storage nodes have been properly initialized, and so the volume manager must be restarted after the automatic start procedure has completed.</p>
 <p>To restart the Cinder-volume service,
 on the overcloud controller node where the Cinder-volume singleton service is being run, the Cinder-volume service can be restarted using</p>
-<codeblock>
-  <codeph>service cinder-volume restart
+<codeblock><codeph>service cinder-volume restart
 </codeph>
 </codeblock>
 </section>
@@ -336,14 +348,14 @@ If the controller fails, Sherpa becomes unavailable until you rebuild or restore
 <section id="nova-consoleauth"> <title>Nova consoleauth</title>
 <p>If the controller fails, the Nova consoleauth service will become unavailable and users will not be able to connect to their VM consoles via VNC. The service will be restored once you restore the  controller.</p>
 </section>
-<section id="replace-rebuild"> <title>Rebuilding or Replacing failed Controller Nodes</title>
+<section id="replace-rebuild"> <title>Rebuilding or replacing failed controller nodes</title>
 <p>As described above, the three node controller cluster provides a robust, highly available control plane of OpenStack services. 
 Either OvercloudController1 or OvercloudController2 servers can be shut down for a short duration for maintenance activities without impacting cloud service availability. (OvercloudController0 cannot be shut down without affecting cloud service availability.)</p>
 <p>
 <b>Note</b>: The HA design is only robust against single points of failure and may not protect you against multiple levels of failure. As soon as first-level failure occurs, you must try to fix the symptom/root cause and recover from the failure, as soon as possible.</p>
 <p>In the unlikely event that one of the controller servers suffers an irreparable hardware failure, you can decommission and delete it from the cluster. You can then deploy the failed controller on a new server and connect it back into the original three node controller cluster. Learn more about <xref href="../../commercial/GA1/1.1commerical.services-remove-replace-failed-overcloud-nodes.dita" >Replacing/Rebuilding Controller Nodes</xref>.</p>
 </section>
-<section id="ha-cloud-infra"> <title>Highly Available Cloud Infrastructure</title>
+<section id="ha-cloud-infra"> <title>Highly Available cloud infrastructure</title>
 <p>The highly available cloud infrastructure consists of the following:</p>
 <ul>
 <li>
@@ -372,7 +384,7 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 </li>
 </ul>
 </section>
-<section id="availability-zones"> <title>Availability Zones</title>
+<section id="availability-zones"> <title>Availability zones</title>
 <p>
   <xref format="html" href="javascript:window.open('/media/ha-availability-zone.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Availability Zones (opens in a new window)</xref>
 </p>
@@ -386,11 +398,11 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 <p>While adding compute nodes post initial installation, you can specify the target physical servers for deploying the compute nodes.</p>
 <p>Learn more about <xref href="../../commercial/GA1/1.1commercial.install-add-nodes.dita" >Adding Compute Nodes after Initial Installation</xref>.</p>
 </section>
-<section id="nova-availability-zone"> <title>Nova Availability Zones</title>
+<section id="nova-availability-zone"> <title>Nova availability zones</title>
 <p>Nova host aggregates and availability zones are not supported for general consumption in the current release.</p>
 <p>However, Nova availability zones will be supported for the narrow use of the HP Helion OpenStack Platform Services deployed on HP Helion OpenStack Please refer to the Platform Service documentation for further information.</p>
 </section>
-<section id="compute-with-esx"> <title>Compute with ESX Hypervisor</title>
+<section id="compute-with-esx"> <title>Compute with ESX hypervisor</title>
 <p>Compute nodes deployed on ESX Hypervisor can be made highly available using the HA feature of VMware ESX Clusters. For more information on VMware HA, please refer to your VMware ESX documentation.</p>
 </section>
 <section id="block-storage"> <title>Block Storage with StoreVirtual VSA</title>
@@ -407,10 +419,10 @@ For more information on how to deploy VSA nodes on desired target servers, refer
 <p>The 3PAR StoreServ device family has several layers of redundancy built in through its hardware architecture. For more information, refer to the 3PAR StoreServ documentation.</p>
 <p>You will typically connect the 3PAR StoreServ devices to the compute servers using two redundant SAN fabrics. The Cinder 3PAR driver supports multipath connectivity between the compute servers and the 3PAR devices, ensuring that the data I/O path remains available in the event of any single point of failure in the hardware path spanning - server HBA, port, switches, and the ports of the 3PAR devices.</p>
 </section>
-<section id="cinder-avail"> <title>Cinder Availability Zones</title>
+<section id="cinder-avail"> <title>Cinder availability zones</title>
 <p>Cinder availability zones are not supported for general consumption in the current release.</p>
 </section>
-<section id="object-storage"> <title>Object Storage with Swift</title>
+<section id="object-storage"> <title>Object storage with Swift</title>
 <p>You can configure your Swift Rings by specifying a target zone for each drive that is added to the ring. Learn more about configuring zones for various drives using the Ringos tool here. Please refer to the <xref href="../../commercial/GA1/1.1commerical.services-object-pyringos.dita" >Ringos</xref> document.</p>
 <p>
   <xref format="html" href="javascript:window.open('/media/ha-swift.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA Swift  (opens in a new window)</xref>
@@ -430,7 +442,7 @@ Neutron Netwoking in HA covers the following:
 4. SNAT services still run on one of the central Cloud controller - should a cloud controller running SNAT services fail, your VMs will lose SNAT ability and will not be able to reach services on external networks. You can work around this by attaching a floating IP to your VM, which will allow it to reach to external networks without going through the central SNAT. 
  -->
 </section>
-<section id="ha-workloads"> <title>Highly Available Cloud Applications and Workloads</title>
+<section id="ha-workloads"> <title>Highly Available cloud applications and workloads</title>
 <p>Projects writing applications to be deployed in the cloud must be aware of the cloud architecture and potential points of failure and architect their applications accordingly for high availability.</p>
 <p>Some guidelines for consideration:</p>
 <ol>
