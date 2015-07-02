@@ -48,7 +48,7 @@
                             href="../../media/swift_icinga_view-details.png" id="image_o53_t2v_ns"
                         /></p></li>
                 <li>In the <b>Host</b> column, <b>click the icon</b> next to the host IP when the
-                    tooltip displays as <i>View Service Details For This Host</i>. The page
+                    tooltip displays as "<i><b>View Service Details For This Host</b></i>". The page
                     navigates to Service Status Details For Host &lt;<b>Swift node IP address</b>>
                     and displays the <b> status of the Swift proxy</b> of the selected Swift node.
                         <image href="../../media/swift_icinga-swift-proxy-healthcheck.png"
@@ -85,7 +85,7 @@
 </row>
 <row>
 <entry colsep="1" rowsep="1">CRITICAL </entry>
-    <entry colsep="1" rowsep="1">Unexpected response &lt;status and HTTP response&gt;</entry>
+    <entry colsep="1" rowsep="1">Unexpected response &lt;status and HTTP response></entry>
     <entry colsep="1" rowsep="1">Based on the status code.</entry>
 </row>
 </tbody>

@@ -34,7 +34,7 @@
 <li>HP Helion OpenStack cloud is successfully deployed. <p><i>(Starter Object Storage (Swift) nodes
                             are functional by default as they are part of cloud deployment)</i>
                     </p></li>
-<li>The Icinga service is active and running in the undercloud</li>
+<li>The Icinga service is active and running in the undercloud.</li>
 </ul>
 </section>
 <section id="monitoring-disk-usage-of-object-storage-swift"> <title>Monitoring Disk Usage of Object Storage (Swift)</title>
@@ -60,11 +60,11 @@
                             href="../../media/swift_icinga_view-details.png" id="image_o53_t2v_ns"
                         /></p></li>
 <li> In the <b>Host</b> column, click the icon next to the host IP when the tooltip displays as
-                        "<i>View Service Details For This Host</i>" (as shown in the above image).
-                    The page navigates to Service Status Details For Host &lt;<b><i>Swift node IP
-                            address</i></b> &gt; and displays the <b>disk usage</b> of the selected
-                    Swift node.<image href="../../media/swift_icinga-disk-usage.png"
-                        id="image_zbn_kfv_ns"/></li>
+                            "<i><b>View Service Details For This Host</b></i>" (as shown in the
+                    above image). The page navigates to Service Status Details For Host
+                            &lt;<b><i>Swift node IP address</i></b> &gt; and displays the <b>disk
+                        usage</b> of the selected Swift node.<image
+                        href="../../media/swift_icinga-disk-usage.png" id="image_zbn_kfv_ns"/></li>
 </ol>
 </section>
 <section id="status-messages"> <title>Status Messages</title>

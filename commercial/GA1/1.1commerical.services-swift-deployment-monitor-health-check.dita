@@ -31,8 +31,9 @@
 </b> service running in the undercloud to monitor the health status of Account, Container, Proxy, and Object services.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
-<li>HP Helion OpenStack cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Swift nodes are functional by default as they are part of cloud deployment.)</i>
-</li>
+<li>HP Helion OpenStack cloud is successfully deployed.<p><i>(Starter Swift nodes are functional by
+                            default as they are part of cloud deployment.)</i>
+                    </p></li>
 <li>The Icinga service is active and running in the undercloud.</li>
 </ul>
 </section>

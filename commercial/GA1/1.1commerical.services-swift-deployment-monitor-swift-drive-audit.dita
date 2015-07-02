@@ -27,7 +27,7 @@
 <li>HP Helion OpenStack cloud is successfully deployed. <p><i>(Starter Object Storage (Swift) nodes
                             are functional by default as they are part of cloud deployment)</i>
                     </p></li>
-<li>The Icinga service is active and running in the undercloud</li>
+<li>The Icinga service is active and running in the undercloud.</li>
 </ul>
 </section>
 <section id="monitor-drive-audit"> <title>Monitor Drive Audit</title>
