@@ -26,11 +26,7 @@ h1.topictitle1 {
 h1.topictitle1 {
     background-color:#eee;
 }
-div.productTitle {
-	content:url("http://www8.hp.com/hpnext/sites/default/files/content/documents/HP%20Helion%20Logo_Cloud_Martin%20Fink_New%20Style%20of%20IT_Hewlett-Packard.PNG");
-	height: 42px;
-	padding-top: 5px;
-}
+
 /*Left pane TABs*/
 #tocMenu{
   min-width:250px;
@@ -48,12 +44,4 @@ div.productTitle {
 }
 #bck_toc #searchBlock,#bck_toc #indexBlock, #bck_toc #contentBlock{
     border-top:1px solid #ccc;
-}
-
-#productTitle img
-{
-    display: none;
-}
-#productTitle {
-	background-image: url ("http://www8.hp.com/hpnext/sites/default/files/content/documents/HP%20Helion%20Logo_Cloud_Martin%20Fink_New%20Style%20of%20IT_Hewlett-Packard.PNG");
 }
