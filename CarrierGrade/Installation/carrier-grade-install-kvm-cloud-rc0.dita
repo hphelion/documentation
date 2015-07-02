@@ -23,13 +23,9 @@
       <title>Bring Up Controller-0 in the KVM Region</title>
       <ol>
         <li>Make sure other nodes to be used in KVM region are shutdown.</li>
-        <li>Attach the <codeph>wr-iso</codeph> to designated controller node:
-          <!-- hide, internal only? Vinod
-          <ol id="ol_i3q_hmg_ms">
-        <li> LR1: uploaded to
-              <codeblock>15.204.209.7 C:\WR-Drops\2015-06-05-Drop3\2015-06-05-Drop3\Titanium-Server-host-installer-15.05-b10.iso</codeblock></li>
-        <li>LR4: uploaded to
-              <codeblock>15.215.66.56 E:\Builds\WR-Drop-3\2015-06-05-Drop3\Titanium-Server-host-installer-15.05-b10.iso</codeblock></li></ol> -->
+        <li>Attach the <codeph>HP-HCG-Server-host-installer-15.05-b10.iso</codeph> to designated controller
+          node.
+         
         </li>
         <li>Follow the install wizard. Select the Graphics mode for the controller only. Do not
           select <codeph>Controller+Compute</codeph>.</li>
@@ -69,9 +65,8 @@ sudo reboot       </codeblock></li>
             be running on the first IP address of the CLM network range (refer to the
               <codeph>ip_start_address</codeph> value provided for the CLM network in the
               <codeph>definition.json</codeph> during the <xref
-              href="carrier-grade-install-non-kvm.dita#topic10581"><xref
-                href="carrier-grade-install-non-kvm.dita#topic10581">non-KVM Region
-                deployment</xref></xref>). </p><p>The log-in credentials for Horizon are as follows:
+              href="carrier-grade-install-non-kvm.dita#topic10581">non-KVM Region
+                deployment</xref>). </p><p>The log-in credentials for Horizon are as follows:
             <codeblock>username: admin 
 password:  admin</codeblock></p><p>Change the password on
             first login.</p>

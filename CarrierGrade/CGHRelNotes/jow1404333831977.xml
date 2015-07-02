@@ -11,14 +11,15 @@
     <body>
         <section>
             <title>Cinder Block Storage snapshot feature not working </title>
+            <!-- CG-1043 -->
             <p>For HP Helion OpenStack Carrier Grade cloud using 3PAR iSCSI configured as the Cinder
                 block storage service. The Cinder volume snapshot feature might not function
                 properly if following entries are enabled in the
                     <codeph>/etc/cinder/cinder.conf</codeph> file. </p>
-            <codeblock>#hp3par_snapshot_retention=48
-#hp3par_snapshot_expiration=72</codeblock>
+            <codeblock>hp3par_snapshot_retention=48
+hp3par_snapshot_expiration=72</codeblock>
             <p> To correct this issue, edit the <codeph>/etc/cinder/cinder.conf</codeph> file to
-                disable these entries, as follows:</p>
+                disable these entries by commenting-out the entries, as follows:</p>
             <codeblock>#hp3par_snapshot_retention=48
 #hp3par_snapshot_expiration=72           </codeblock>
             <p>The <codeph>hp3par_snapshot_retention</codeph> entry is the time in hours to retain a
@@ -49,7 +50,7 @@
                         <codeblock>keystone role-create --name heat_stack_owner</codeblock> </li>
                         <li>Execute the following command to create the heat_stack_owner role:
                             <codeblock>keystone role-create --name heat_stack_user</codeblock></li></ol></li>
-            </ol>
+                            </ol>
                 
             <b>Cloud is currently deployed</b>
                 <ol>
@@ -70,13 +71,28 @@
                         </ol>
         </section>
         <section><title>Floating IP not working when SNAT is enabled</title>
-            
+            <!-- CG-1012 -->
             <p>When router is configured either centralized (server default) or distributed , it is seen that Floating IP is not working.</p>
             <p>To fix this issue, execute the following command to disable SNAT on the router:
                 <codeblock>neutron router-update &lt;router-name> --external_gateway_info type=dict network_id=&lt;network-id>,enable_snat=False</codeblock></p>        
         </section>
 
+        <section><title>Unable to create new users through the Horizon UI</title>
+            
+            <p>After logging into the Horizon interface as an <codeph>admin</codeph> user, an error occurs when you
+                click <b>Create User</b> under the <b>Idenity</b> section.</p> 
+            
+            <p>You can create users with the OpenStack Keystone CLI commands. For axample:</p>
+            <codeblock>keystone user-create --name &lt;user-name> [--tenant &lt;tenant>][--pass [&lt;pass>]] [--email &lt;email>][--enabled &lt;true|false>]</codeblock>
+            
+            <p>For more information, see <xref
+                    href="http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html"
+                    format="html" scope="external">OpenStack Command-Line Interface Reference</xref>.</p>
+            
+        </section>
+
         <section><title>Cinder Volume Backup is not working upon cloud deployment</title>
+            <!-- CG-410 -->
             <p>Cinder Volume Backup is not working upon installation of HP Helion OpenStack Carrier Grade 1.1 
                 The  <codeph>cinder.backup.driver</codeph> file is not present in /etc/cinder/cinder.conf.</p>
        </section>
@@ -146,12 +162,13 @@
             <p>HP Helion OpenStack Carrier Grade in the KVM region can be installed on disks greater than 2 TB, but only 2 TB of the
                 disk is useable.</p>
         </section>
+        <!-- Remove per Hrushi email 7-2
         <section>
             <title>Cannot create Cinder LVM volumes using disks greater than two
                 terabytes</title>
             <p>Using a disk greater than 2 TB for Cinder LVM results in a
                     <filepath>config_controller</filepath> failure.</p>
-        </section>
+        </section>  -->
         <section>
             <title>Guest heartbeat and notification features are not fully
                 validated.</title>
