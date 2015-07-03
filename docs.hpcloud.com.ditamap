@@ -1826,12 +1826,14 @@
     <topichead navtitle="Administrator Guide">
       <!-- Hiding. Using PDF for RC0  
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>-->
-      <topicref href="helion-dita-build/PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
-        format="pdf" navtitle="Administrator Guide (PDF)"/>
+      <topicref
+        href="http://docs-staging.hpcloud.com:8080/job/helion-dita-build/ws/PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
+        format="pdf" navtitle="Administrator Guide (PDF)" scope="external"/>
     </topichead>
     <topichead navtitle="Software Development Kit">
-      <topicref href="helion-dita-build/PDF/HP-Helion-OpenStack-Carrier-Grade-SDK-1.1.pdf"
-        format="pdf" navtitle="Software Development Kit (SDK)"/>
+      <topicref
+        href="http://docs-staging.hpcloud.com:8080/job/helion-dita-build/ws/PDF/HP-Helion-OpenStack-Carrier-Grade-SDK-1.1.pdf"
+        format="pdf" navtitle="Software Development Kit (SDK)" scope="external"/>
     </topichead>
     <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638776646.xml"/>
