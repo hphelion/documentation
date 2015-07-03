@@ -630,6 +630,15 @@ The physical cluster network can be shared by a number of logical networks, each
                     <tbody>
                         <row>
                             <entry>
+                                <b>Component</b>
+                            </entry>
+                            <entry>
+                                <b>Description</b>
+                            </entry>
+                            
+                        </row>
+                        <row>
+                            <entry>
                                 <b>Seed VM</b>
                             </entry>
                             <entry>The Seed cloud is deployed as a VM instance. This image contains
