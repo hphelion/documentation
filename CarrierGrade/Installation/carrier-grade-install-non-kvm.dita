@@ -124,7 +124,7 @@ VSD Server : auto
   <codeblock>ssh &lt;HLM_VM_IP>
     HLM_VM_IP is the IP (hlm_clmstaticip) configured in the /root/infra-ansible-playbooks/group_vars/all file of the HLM host</codeblock></li>
     
-<li>On the HLM host, change to the home directory.<codeblock>cd ~</codeblock></li>
+<li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
 <li>Provision and configure your HP Helion OpenStack
             VM.<codeblock>hnewcloud  &lt;cloudname&gt; &lt;cloud_template&gt;</codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
@@ -279,7 +279,7 @@ hp3par_snapshot_expiration=72
             command from any directory.</p><p>After this command completes, all cloud nodes and CLM
             network interfaces should be set correctly.</p></li>
 
-<li>Use the following command to eploy the cloud:
+<li>Use the following command to deploy the cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>Once cloud
             deployment is successfully complete, there will be 3 controller nodes in the non-KVM
             region.</p></li>

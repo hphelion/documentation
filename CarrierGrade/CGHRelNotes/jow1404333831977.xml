@@ -27,53 +27,51 @@ hp3par_snapshot_expiration=72</codeblock>
             <p>The <codeph>hp3par_snapshot_expiration</codeph> entry is the time in hours when a
                 snapshot expires and is deleted. </p>
         </section>
-        <section>
-            <title>LDAP conflict causing error with templates</title>
-            <p>When deploying templates, such as <codeph>VMAutoScaling.yaml</codeph> you might
-                receive a n error similar to the following:
-                <codeblock>Error: Can’t find role heat_stack_user</codeblock></p>
-            <p>The problem is due to an inconsistency in the HP Helion OpenStack Carrier Grade LDAP
+        <section> LDAP conflict causing error with templates <p>When deploying templates, such as
+                    <codeph>VMAutoScaling.yaml</codeph> you might receive a n error similar to the
+                following: <codeblock>Error: Can’t find role heat_stack_user </codeblock></p><p>The
+                problem is due to an inconsistency in the HP Helion OpenStack Carrier Grade LDAP
                 implementation. To fix this problem, you should disable LDAP in Keystone and create
-                few roles as mentioned below.</p>
-            <p>How you fix the problem depends upon whether your he HP Helion OpenStack Carrier
-                Grade cloud is currently deployd.</p>
-            <b>Cloud is not deployed</b> 
+                few roles as mentioned below. </p><p>How you fix the problem depends upon whether
+                your he HP Helion OpenStack Carrier Grade cloud is currently deployd.</p>
+            <b>Cloud is not deployed</b>
             <ol>
-                <li>If the HP Helion OpenStack Carrier Grade cloud is not deployed, before deploying edit the
-                        <codeph>definition.json</codeph> file to set <codeph>ldap_enabled</codeph>
-                    to 0. <codeblock>"ldap_enabled": 0,</codeblock><p>This setting causes the cloud
-                        to deploy with SQL as Keystone backend instead of LDAP.</p></li>
-                <li>After you deploy the cloud, create the following roles in the Keystone by logging on to one of the controller nodes:
-                    <ol>
-                    <li>Source the stackrc file: <codeblock>source stackrc</codeblock></li>
-                    <li>Execute the following command to create the heat_stack_owner role: 
-                        <codeblock>keystone role-create --name heat_stack_owner</codeblock> </li>
+                <li>If the HP Helion OpenStack Carrier Grade cloud is not deployed, before deploying
+                    edit the <codeph>definition.json</codeph> file to set
+                        <codeph>ldap_enabled</codeph> to 0.
+                        <codeblock>"ldap_enabled": 0,</codeblock><p>This setting causes the cloud to
+                        deploy with SQL as Keystone backend instead of LDAP.</p></li>
+                <li>After you deploy the cloud, create the following roles in the Keystone by
+                    logging on to one of the controller nodes: <ol>
+                        <li>Source the stackrc file: <codeblock>source stackrc</codeblock></li>
                         <li>Execute the following command to create the heat_stack_owner role:
-                            <codeblock>keystone role-create --name heat_stack_user</codeblock></li></ol></li>
-                            </ol>
-                
+                            <codeblock>keystone role-create --name heat_stack_owner </codeblock></li>
+                        <li>Execute the following command to create the heat_stack_owner role:
+                            <codeblock>keystone role-create --name heat_stack_user</codeblock></li>
+                    </ol></li>
+            </ol>
             <b>Cloud is currently deployed</b>
-                <ol>
+            <ol>
                 <li>After the cloud is deployed, on each controller, modify the
                         <codeph>/etc/keystone/keystone.conf</codeph> to comment-out the LDAP entry
                     and uncomment SQL driver, as shown:
                     <codeblock>    [identity]
     driver = keystone.identity.backends.sql.Identity
     #driver = keystone.identity.backends.ldap.Identity</codeblock></li>
-            
-            <li>Create the following roles in the Keystone by logging on to one of the controller nodes:
-                <ol>
-                    <li>Source the stackrc file: <codeblock>source stackrc</codeblock></li>
-                    <li>Execute the following command to create the heat_stack_owner role: 
-                        <codeblock>keystone role-create --name heat_stack_owner</codeblock> </li>
-                    <li>Execute the following command to create the heat_stack_owner role:
-                        <codeblock>keystone role-create --name heat_stack_user</codeblock></li></ol></li>
-                        </ol>
-        </section>
+                <li>Create the following roles in the Keystone by logging on to one of the
+                    controller nodes: <ol>
+                        <li>Source the stackrc file: <codeblock>source stackrc</codeblock></li>
+                        <li>Execute the following command to create the heat_stack_owner role:
+                            <codeblock>keystone role-create --name heat_stack_owner </codeblock></li>
+                        <li>Execute the following command to create the heat_stack_owner role:
+                            <codeblock>keystone role-create --name heat_stack_user </codeblock></li>
+                    </ol></li>
+            </ol></section>
         <section><title>Floating IP not working when SNAT is enabled</title>
             <!-- CG-1012 -->
             <p>When router is configured either centralized (server default) or distributed , it is seen that Floating IP is not working.</p>
-            <p>To fix this issue, execute the following command to disable SNAT on the router:
+            <p>To fix this issue, log onto <codeph>controller-0</codeph> for the KVM region and execute the following
+                command to disable SNAT on the router:
                 <codeblock>neutron router-update &lt;router-name> --external_gateway_info type=dict network_id=&lt;network-id>,enable_snat=False</codeblock></p>        
         </section>
 
@@ -88,8 +86,24 @@ hp3par_snapshot_expiration=72</codeblock>
             <p>For more information, see <xref
                     href="http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html"
                     format="html" scope="external">OpenStack Command-Line Interface Reference</xref>.</p>
+        </section>
+
+        <section><title>Unable to create new project through the Horizon Identity UI</title>
+            <!-- CG-1041 -->
+            <p>After logging into the Horizon interface as an <codeph>admin</codeph> user, an error occurs when you
+                click <b>Create Project</b> under the <b>Idenity</b> section.</p> 
+            
+            <p>You can create projects with the OpenStack Keystone CLI commands. For axample:</p>
+            <codeblock>keystone tenant-create --name &lt;tenant-name>
+                [--description &lt;tenant-description>]
+                [--enabled &lt;true|false>]</codeblock>
+            
+            <p>For more information, see <xref
+                href="http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html"
+                format="html" scope="external">OpenStack Command-Line Interface Reference</xref>.</p>
             
         </section>
+        
 
         <section><title>Cinder Volume Backup is not working upon cloud deployment</title>
             <!-- CG-410 -->
