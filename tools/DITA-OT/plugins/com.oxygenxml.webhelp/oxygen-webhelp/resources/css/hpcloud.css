@@ -197,6 +197,9 @@ a {
 }
 #header #tocMenu {
   background-color: rgba(0, 0, 0, 0);
+  padding-bottom: 2px;
+  padding-top: 3px; //NM added some space
+  
 }
 #header .navheader_parent_path {
   color: rgb(255, 255, 255);
