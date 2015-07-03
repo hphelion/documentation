@@ -149,8 +149,6 @@
       </topicref>
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.storage.dita"
         navtitle="Storage Options" locktitle="yes"/>
-      <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"
-        navtitle="Tracking Masked IPs when Using NAT" locktitle="yes"/>
     </topichead>
     <topichead navtitle="High Availibility">
       <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita"/>
@@ -182,6 +180,8 @@
         navtitle="Overcloud Node Removal Issues" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.ovsvapp.dita"
         navtitle="OVSvApp Troubleshooting" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita"
+        navtitle="Tracking Masked IPs when Using NAT" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.swift.dita"
         navtitle="Troubleshooting Scale-out Swift" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.vsa.dita"
