@@ -78,7 +78,7 @@ hp3par_snapshot_expiration=72</codeblock>
         </section>
 
         <section><title>Unable to create new users through the Horizon UI</title>
-            
+            <!-- CG-1042 -->
             <p>After logging into the Horizon interface as an <codeph>admin</codeph> user, an error occurs when you
                 click <b>Create User</b> under the <b>Idenity</b> section.</p> 
             
