@@ -79,8 +79,9 @@
 <li>Re-balance the ring.<codeblock><codeph># ringos rebalance-ring -f account.builder
 # ringos rebalance-ring -f container.builder
 </codeph></codeblock><p>
-            <b>Note</b>: You must wait for the time specified by <codeph>min_part_hours</codeph>
-            before another re-balance succeeds.</p></li>
+            <note>You must wait for the time specified by <codeph>min_part_hours</codeph> before
+              another re-balance succeeds.</note>
+          </p></li>
 <li>List all the Swift
           nodes.<codeblock><codeph># ringos list-swift-nodes -t all
 </codeph></codeblock></li>
@@ -143,8 +144,9 @@
   bind 192.0.2.21:8080
   server &lt;Proxy node hostname&gt; &lt;Proxy nodes IP address of &gt;:8080 check inter 2000 rise 2 fall 5 
 </codeph></codeblock><p>
-            <b>Note</b>:You will have the number of "server" lines equal to number of Swift proxies
-            you have setup.</p></li>
+            <note>You will have the number of "server" lines equal to number of Swift proxies you
+              have setup.</note>
+          </p></li>
 <li>Restart HA proxy service on all these
           nodes.<codeblock><codeph># service haproxy restart
 </codeph></codeblock></li>
@@ -188,7 +190,8 @@
             delete the node change the role of OvercloudSOSwiftProxy in the baremetal.csv file as
             follows:</p><codeblock><codeph>E8:39:35:2B:FA:30,administrator,password,10.1.192.46,12,73728,70,OvercloudSOSwiftProxy:deleted,IPMI
 </codeph></codeblock><p>
-            <b>Note:</b> Do not delete the line.</p></li>
+            <note> Do not delete the line.</note>
+          </p></li>
 <li>Run the installer
           script.<codeblock><codeph>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2&gt;&amp;1 | tee update.log
 </codeph></codeblock></li>

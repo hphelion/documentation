@@ -76,8 +76,9 @@ sudo -i</codeph></codeblock></li>
 </codeph></codeblock></li>
 <li>Re-balance the ring.<codeblock><codeph>ringos rebalance-ring -f /root/ring-building/object-1.builder
 </codeph></codeblock><p>
-            <b>Note</b>: You must wait for the time specified by <codeph>min_part_hours</codeph>
-            before another re-balance succeeds.</p></li>
+            <note> You must wait for the time specified by <codeph>min_part_hours</codeph> before
+              another re-balance succeeds.</note>
+          </p></li>
 <li>List all the Swift
           nodes.<codeblock><codeph>ringos list-swift-nodes -t all
 </codeph></codeblock></li>
@@ -92,8 +93,9 @@ sudo -i</codeph></codeblock></li>
             this step for each disk of the specific node.</p></li>
 <li>Re-balance the ring.<codeblock><codeph>ringos rebalance-ring -f /root/ring-building/object-1.builder
 </codeph></codeblock><p>
-            <b>Note</b>: You must wait for the time specified by <codeph>min_part_hours</codeph>
-            before another re-balance succeeds.</p></li>
+            <note>You must wait for the time specified by <codeph>min_part_hours</codeph> before
+              another re-balance succeeds.</note>
+          </p></li>
 <li>List all the Swift
           nodes.<codeblock><codeph># ringos list-swift-nodes -t all
 </codeph></codeblock></li>
@@ -142,7 +144,8 @@ sudo -i</codeph></codeblock></li>
             delete the node change the role of overcloudsoswiftstorage in the
               <codeph>baremetal.csv</codeph> file as follows:</p><codeblock><codeph>9C:B6:54:AD:55:A8,administrator,gone2far,10.1.192.50,12,73728,70,overcloudsoswiftstorage:deleted,IPMI
 </codeph></codeblock><p>
-            <b>Note:</b> Do not delete the line.</p></li>
+            <note>Do not delete the line.</note>
+          </p></li>
 <li>Run the installer
           script.<codeblock><codeph>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2&gt;&amp;1 | tee update.log
 </codeph></codeblock></li>

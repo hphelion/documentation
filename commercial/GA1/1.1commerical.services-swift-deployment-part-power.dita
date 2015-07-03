@@ -38,144 +38,136 @@ To use, given number of zones and the maximum number of disk drives anticipated 
 <colspec colname="col4"/>
 <thead>
 <row>
-<entry>Number of Zones</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Minimum Number of Drives</ph>
-</required-cleanup>
-</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Maximum Number of Drives</ph>
-</required-cleanup>
-</entry>
-    <entry>
-<required-cleanup remap="center">
-<ph>Ring Power</ph>
-</required-cleanup>
-</entry>
+<entry colsep="1" rowsep="1">Number of Zones</entry>
+    <entry colsep="1" rowsep="1"><ph>Minimum Number of Drives</ph>
+                        </entry>
+    <entry colsep="1" rowsep="1">
+                            <ph>Maximum Number of Drives</ph>
+                        </entry>
+    <entry colsep="1" rowsep="1"><ph>Ring Power</ph>
+                        </entry>
 </row>
 </thead>
 <tbody>
 <row>
-<entry>3</entry>
-    <entry>13</entry>
-    <entry>3,932 </entry>
-    <entry>17 </entry>
+<entry colsep="1" rowsep="1">3</entry>
+    <entry colsep="1" rowsep="1">13</entry>
+    <entry colsep="1" rowsep="1">3,932 </entry>
+    <entry colsep="1" rowsep="1">17 </entry>
 </row>
 <row>
-<entry>3</entry>
-    <entry>26</entry>
-    <entry>7,864</entry>
-    <entry>18 </entry>
+<entry colsep="1" rowsep="1">3</entry>
+    <entry colsep="1" rowsep="1">26</entry>
+    <entry colsep="1" rowsep="1">7,864</entry>
+    <entry colsep="1" rowsep="1">18 </entry>
 </row>
 <row>
-<entry>3</entry>
-    <entry>52</entry>
-    <entry>15,728 </entry>
-    <entry>19 </entry>
+<entry colsep="1" rowsep="1">3</entry>
+    <entry colsep="1" rowsep="1">52</entry>
+    <entry colsep="1" rowsep="1">15,728 </entry>
+    <entry colsep="1" rowsep="1">19 </entry>
 </row>
 <row>
-<entry>3</entry>
-    <entry>104</entry>
-    <entry>31,457</entry>
-    <entry>20</entry>
+<entry colsep="1" rowsep="1">3</entry>
+    <entry colsep="1" rowsep="1">104</entry>
+    <entry colsep="1" rowsep="1">31,457</entry>
+    <entry colsep="1" rowsep="1">20</entry>
 </row>
 <row>
-<entry>3</entry>
-    <entry>209</entry>
-    <entry>62,914 </entry>
-    <entry>21 </entry>
+<entry colsep="1" rowsep="1">3</entry>
+    <entry colsep="1" rowsep="1">209</entry>
+    <entry colsep="1" rowsep="1">62,914 </entry>
+    <entry colsep="1" rowsep="1">21 </entry>
 </row>
 <row>
-<entry>3</entry>
-    <entry>419</entry>
-    <entry>125,829</entry>
-    <entry>22</entry>
+<entry colsep="1" rowsep="1">3</entry>
+    <entry colsep="1" rowsep="1">419</entry>
+    <entry colsep="1" rowsep="1">125,829</entry>
+    <entry colsep="1" rowsep="1">22</entry>
 </row>
 <row>
-<entry>3</entry>
-    <entry>838</entry>
-    <entry>251,658</entry>
-    <entry>23</entry>
+<entry colsep="1" rowsep="1">3</entry>
+    <entry colsep="1" rowsep="1">838</entry>
+    <entry colsep="1" rowsep="1">251,658</entry>
+    <entry colsep="1" rowsep="1">23</entry>
 </row>
 <row>
-<entry>3</entry>
-    <entry>1677</entry>
-    <entry>503,316</entry>
-    <entry>24 </entry>
+<entry colsep="1" rowsep="1">3</entry>
+    <entry colsep="1" rowsep="1">1677</entry>
+    <entry colsep="1" rowsep="1">503,316</entry>
+    <entry colsep="1" rowsep="1">24 </entry>
 </row>
 <row>
-<entry>3</entry>
-    <entry>3355</entry>
-    <entry>1,006,632</entry>
-    <entry>25</entry>
+<entry colsep="1" rowsep="1">3</entry>
+    <entry colsep="1" rowsep="1">3355</entry>
+    <entry colsep="1" rowsep="1">1,006,632</entry>
+    <entry colsep="1" rowsep="1">25</entry>
 </row>
 <row>
-<entry>3</entry>
-    <entry>6710</entry>
-    <entry>2,013,265</entry>
-    <entry>26</entry>
+<entry colsep="1" rowsep="1">3</entry>
+    <entry colsep="1" rowsep="1">6710</entry>
+    <entry colsep="1" rowsep="1">2,013,265</entry>
+    <entry colsep="1" rowsep="1">26</entry>
 </row>
 <row>
-<entry>4</entry>
-    <entry>17</entry>
-    <entry> 5,242</entry>
-    <entry>17 </entry>
+<entry colsep="1" rowsep="1">4</entry>
+    <entry colsep="1" rowsep="1">17</entry>
+    <entry colsep="1" rowsep="1"> 5,242</entry>
+    <entry colsep="1" rowsep="1">17 </entry>
 </row>
 <row>
-<entry>4</entry>
-    <entry>34</entry>
-    <entry>10,485 </entry>
-    <entry>18 </entry>
+<entry colsep="1" rowsep="1">4</entry>
+    <entry colsep="1" rowsep="1">34</entry>
+    <entry colsep="1" rowsep="1">10,485 </entry>
+    <entry colsep="1" rowsep="1">18 </entry>
 </row>
 <row>
-<entry>4</entry>
-    <entry>69</entry>
-    <entry>20,971</entry>
-    <entry>19 </entry>
+<entry colsep="1" rowsep="1">4</entry>
+    <entry colsep="1" rowsep="1">69</entry>
+    <entry colsep="1" rowsep="1">20,971</entry>
+    <entry colsep="1" rowsep="1">19 </entry>
 </row>
 <row>
-<entry>4</entry>
-    <entry>139</entry>
-    <entry>41,943</entry>
-    <entry>20 </entry>
+<entry colsep="1" rowsep="1">4</entry>
+    <entry colsep="1" rowsep="1">139</entry>
+    <entry colsep="1" rowsep="1">41,943</entry>
+    <entry colsep="1" rowsep="1">20 </entry>
 </row>
 <row>
-<entry>4</entry>
-    <entry>279</entry>
-    <entry>83,886</entry>
-    <entry>21 </entry>
+<entry colsep="1" rowsep="1">4</entry>
+    <entry colsep="1" rowsep="1">279</entry>
+    <entry colsep="1" rowsep="1">83,886</entry>
+    <entry colsep="1" rowsep="1">21 </entry>
 </row>
 <row>
-<entry>4</entry>
-    <entry>559</entry>
-    <entry>16,7772</entry>
-    <entry>22 </entry>
+<entry colsep="1" rowsep="1">4</entry>
+    <entry colsep="1" rowsep="1">559</entry>
+    <entry colsep="1" rowsep="1">16,7772</entry>
+    <entry colsep="1" rowsep="1">22 </entry>
 </row>
 <row>
-<entry>4</entry>
-    <entry>1118</entry>
-    <entry> 335,544</entry>
-    <entry>23 </entry>
+<entry colsep="1" rowsep="1">4</entry>
+    <entry colsep="1" rowsep="1">1118</entry>
+    <entry colsep="1" rowsep="1"> 335,544</entry>
+    <entry colsep="1" rowsep="1">23 </entry>
 </row>
 <row>
-<entry>4</entry>
-    <entry>2236</entry>
-    <entry> 671,088</entry>
-    <entry>24 </entry>
+<entry colsep="1" rowsep="1">4</entry>
+    <entry colsep="1" rowsep="1">2236</entry>
+    <entry colsep="1" rowsep="1"> 671,088</entry>
+    <entry colsep="1" rowsep="1">24 </entry>
 </row>
 <row>
-<entry>4</entry>
-    <entry>4473</entry>
-    <entry>1,342,177</entry>
-    <entry>25 </entry>
+<entry colsep="1" rowsep="1">4</entry>
+    <entry colsep="1" rowsep="1">4473</entry>
+    <entry colsep="1" rowsep="1">1,342,177</entry>
+    <entry colsep="1" rowsep="1">25 </entry>
 </row>
 <row>
-<entry>4</entry>
-    <entry>8947</entry>
-    <entry>2,684,354 </entry>
-    <entry>26</entry>
+<entry colsep="1" rowsep="1">4</entry>
+    <entry colsep="1" rowsep="1">8947</entry>
+    <entry colsep="1" rowsep="1">2,684,354 </entry>
+    <entry colsep="1" rowsep="1">26</entry>
 </row>
 </tbody>
 </tgroup>

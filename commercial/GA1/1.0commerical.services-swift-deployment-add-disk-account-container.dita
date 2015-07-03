@@ -76,7 +76,8 @@
 | /dev/sdb | y         | y       | /mnt/state/srv/node/b1410063336 | b1410063336 | 1073741824 |
 +----------+-----------+---------+---------------------------------+-------------+------------+
 </codeph></codeblock><p>
-            <b>Note</b>: You can format all the disks with a single command (-d --all).</p></li>
+            <note>You can format all the disks with a single command (-d --all).</note>
+          </p></li>
 <li>List the file in the ring building directory. Identify <codeph>account.builder</codeph> and
             <codeph>container.builder</codeph> files.</li>
 <li>(Optional)If the builder file does not exit in the undercloud, copy the builder files using the
@@ -87,7 +88,8 @@ rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP addre
 <li>Add the formatted disk to account and container ring(s).<codeblock><codeph># ringos add-disk-to-ring -f /root/ring-building/account.builder -i &lt;Proxy nodes IP address&gt; -p &lt;port&gt; -d &lt;disk label&gt; -w &lt;weight&gt; -r &lt;region&gt; -z &lt;zone&gt;
 # ringos add-disk-to-ring -f /root/ring-building/container.builder -i &lt;Proxy nodes IP address&gt; -p &lt;port&gt; -d &lt;disk label&gt; -w &lt;weight&gt; -r &lt;region&gt; -z &lt;zone&gt;
 </codeph></codeblock><p>
-            <b>Note</b>:</p><ul>
+            <note/>
+          </p><ul>
             <li>Choose the zone and region information appropriately.</li>
             <li>The disk label is derived from step 5.</li>
             <li>The port for the container ring is <codeph>6001</codeph> and account ring is
