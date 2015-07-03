@@ -113,9 +113,9 @@ hp3par_snapshot_expiration=72</codeblock>
         
         <section><title>Bonding on the control interface is not supported</title>
             <!-- CG-1052 -->
-            <p>Due to an issue in config_region script, bonding on the control interface (hosts PXE, CLM, BLS, CAN networks) is not supported. 
-                A patch to support this feature is actively being worked upon. 
-                Data interface on the compute node does support balanced-xor and Active/Standby modes. </p>     
+            <p>Due to an issue in <codeph>config_region</codeph> script, bonding on the control interface (hosts PXE, CLM, BLS, CAN networks) is not supported. 
+                A patch to support this feature is actively being worked upon. </p>
+                <p>Because of this issue, the data interface on the compute node does support balanced-xor bonding mode and Active/Standby modes. </p>     
         </section>
 
         <section>
