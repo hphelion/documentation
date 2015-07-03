@@ -61,10 +61,13 @@
           navtitle="Creating the baremetal.csv" locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commercial.name-resolution.dita"
           navtitle="Enabling Name Resolution from Tenant VMs" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita">
-          <topicref href="commercial/GA1/1.1commerical.services-identity-ldap-JSON.dita"/>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita"
+          navtitle="LDAP/AD Integration wit Keystone" locktitle="yes">
+          <topicref href="commercial/GA1/1.1commerical.services-identity-ldap-JSON.dita"
+            navtitle="Sample LDAP Connection Settings" locktitle="yes"/>
         </topicref>
-        <topicref href="commercial/GA1/1.1commercial.install-GA-Moonshot.dita"/>
+        <topicref href="commercial/GA1/1.1commercial.install-GA-Moonshot.dita"
+          navtitle="Managing Moonshot Servers" locktitle="yes"/>
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.install.HPLinux.dita"
         navtitle="Installing HP Linux for HP Helion OpenStack" locktitle="yes">
@@ -74,7 +77,8 @@
       <!-- Prereqs -->
       <topicref href="commercial/GA1/1.1commercial.install-GA-kvm.dita"
         navtitle="Install and Configure on KVM" locktitle="yes">
-        <topicref href="commercial/GA1/1.1commercial.install-GA-post-kvm.dita">
+        <topicref href="commercial/GA1/1.1commercial.install-GA-post-kvm.dita"
+          navtitle="Post-installation - KVM" locktitle="yes">
           <topicref href="commercial/GA1/1.1commercial.vlan-providernetwork.dita"/>
           <topicref href="commercial/GA1/1.1commercial.-vsa-overview.dita">
             <topicref href="commercial/GA1/1.1commercial.install-GA-vsa.dita"/>
@@ -90,7 +94,8 @@
       </topicref>
       <topicref href="commercial/GA1/1.1commercial.install-GA-esx.dita"
         navtitle="Install and Configure on ESX" locktitle="yes">
-        <topicref href="commercial/GA1/1.1commercial.install-GA-post-esx.dita">
+        <topicref href="commercial/GA1/1.1commercial.install-GA-post-esx.dita"
+          navtitle="Post-installation - ESX" locktitle="yes">
           <topicref href="commercial/GA1/1.1commercial.install-GA-ESX-Proxy.dita"/>
           <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.dita">
             <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.sample.dita"/>
@@ -120,7 +125,8 @@
       <!-- Post Install -->
       <!-- Hight Avail -->
       <topichead navtitle="Installing on a Laptop">
-        <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"/>
+        <topicref href="commercial/GA1/1.1commercial.install-laptop-demo.dita"
+          navtitle="Virtual Demo Installation" locktitle="yes"/>
       </topichead>
     </topicref>
     <topichead navtitle="Post-Installation Tasks">
