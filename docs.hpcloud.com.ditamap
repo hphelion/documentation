@@ -35,7 +35,6 @@
           href="commercial/GA1/1.1commercial.install-GA-supportmatrix_supportedIHVhardware.dita"
           navtitle="Supported IHV Hardware" locktitle="yes"/>
       </topicref>
-      <topicref href="commercial/GA1/1.1commercial.network-administrator-notes.dita" navtitle="Network Administrator Notes" locktitle="yes"/>
       <!--set to toc=no later-->
     </topicref>
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.install.dita" navtitle="Installation" locktitle="yes">
@@ -194,6 +193,8 @@
     <!-- Services -->
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.services.dita" navtitle="HP Helion OpenStack Services" locktitle="yes">
       <topicref href="commercial/GA1/1.1commerical.services-overview.dita" navtitle="Services Overview" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.network-administrator-notes.dita"
+        navtitle="Network Administrator Notes" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commerical.services-compute-overview.dita"
         navtitle="Nova Compute Service Overview" locktitle="yes">
         <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx.dita"
