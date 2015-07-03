@@ -68,7 +68,7 @@
                 <li> In the <b>Host</b> column, click the icon next to the host IP when the tooltip
                     displays as "<i><b>View Service Details For This Host</b></i>". The page
                     navigates to Service Status Details For Host &lt;<b>Swift node IP address</b>>
-                    and displays the <b>health status of the Swift </b>services. <image
+                    and displays the health status of all the  <b>Swift services</b>. <image
                         href="../../media/swift_icinga-swift-services.png" id="image_n1x_kbw_ns"
                     /></li>
             </ol>
@@ -97,7 +97,7 @@
                         </row>
                         <row>
                             <entry colsep="1" rowsep="1">FAIL </entry>
-                            <entry colsep="1" rowsep="1">List of services &lt;%&gt; are dead. </entry>
+                            <entry colsep="1" rowsep="1">List of services  &lt;%> are dead. </entry>
                             <entry colsep="1" rowsep="1"> Check whether all the Swift services are
                                 running.</entry>
                         </row>

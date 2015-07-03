@@ -37,8 +37,9 @@
 </ol>
 <section id="prer"> <title>Prerequisite</title>
 <ul>
-<li>HP Helion OpenStack cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
-</li>
+<li>HP Helion OpenStack cloud is successfully deployed.<p><i>(Starter Object Storage (Swift) nodes
+              are functional by default as they are part of cloud deployment)</i>
+          </p></li>
 <li>Scale-out object-ring:1 is deployed.</li>
 <li>All of the rings generated <b>must</b> be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.</li>
 <li>Take a backup of the rings before any operation.</li>
