@@ -106,15 +106,20 @@
         navtitle="Install and Configure on ESX" locktitle="yes">
         <topicref href="commercial/GA1/1.1commercial.install-GA-post-esx.dita"
           navtitle="Post-installation - ESX" locktitle="yes">
-          <topicref href="commercial/GA1/1.1commercial.install-GA-ESX-Proxy.dita"/>
-          <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.dita">
-            <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.sample.dita"/>
-            <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.update.dita"/>
+          <topicref href="commercial/GA1/1.1commercial.install-GA-ESX-Proxy.dita"
+            navtitle="Deploy vCenter ESX Compute Proxy" locktitle="yes"/>
+          <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.dita"
+            navtitle="Configure and Deploy OVSvApp on ESX" locktitle="yes">
+            <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.sample.dita"
+              navtitle="ovs_vapp.ini Sample FIle" locktitle="yes"/>
+            <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.update.dita"
+              navtitle="Updating OVSvApp on ESX" locktitle="yes"/>
           </topicref>
-          <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"/>
+          <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"
+            navtitle="DNSaaS Configuration and Installation" locktitle="yes"/>
           <topicref
             href="commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita"
-          />
+            navtitle="Building Windows Server Guest Images" locktitle="yes"/>
         </topicref>
       </topicref>
       <topicref href="commercial/GA1/1.1commercial.roll.dita"
