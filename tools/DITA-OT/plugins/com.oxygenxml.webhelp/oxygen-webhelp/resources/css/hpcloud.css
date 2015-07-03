@@ -457,6 +457,7 @@ pre {
 
 #contentBlock a, #contentBlock a:hover, #contentBlock a:after, #contentBlock a:active, a.link, a.navheader_parent_path {
   color: rgb(21, 113, 161) !important;
+  font-family: HPSimplified, sans-serif !important;
   }
 
 a.foundResult {
