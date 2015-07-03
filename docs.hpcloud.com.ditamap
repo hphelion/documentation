@@ -1826,8 +1826,9 @@
     <topichead navtitle="Administrator Guide">
       <!-- Hiding. Using PDF for RC0  
       <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>-->
-      <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf"
-        navtitle="Administrator Guide (PDF)"/>
+      <topicref
+        href="ftp://16.78.71.141/uploads/hp-hcg-RC0/documentation/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
+        format="pdf" navtitle="Administrator Guide (PDF)" scope="external"/>
     </topichead>
     <topichead navtitle="Software Development Kit">
       <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-SDK-1.1.pdf" format="pdf"
