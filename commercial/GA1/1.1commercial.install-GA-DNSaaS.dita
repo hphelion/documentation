@@ -32,7 +32,8 @@
 <p>
 <b>Note</b>: These installation instructions assume that the associated project currently contains no instances (VMs). If this is not the case, see the instructions for <xref type="section" href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space before you begin.</p>
 <p>
-<b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on Helion OpenStack 1.1 Do <b>not</b> attempt to install DNSaaS on any previous versions. </p>
+      <b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on Helion OpenStack 1.1 and 1.1.1. Do
+        <b>not</b> attempt to install DNSaaS on any previous versions. </p>
 <ul>
 <li>
 <xref type="section" href="#topic20357/preq">Prerequisites</xref>

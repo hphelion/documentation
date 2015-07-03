@@ -62,8 +62,10 @@
           navtitle="Creating the baremetal.csv" locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commercial.name-resolution.dita"
           navtitle="Enabling Name Resolution from Tenant VMs" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"
+          navtitle="DNSaaS Installation and Configuration" locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita"
-          navtitle="LDAP/AD Integration wit Keystone" locktitle="yes">
+          navtitle="LDAP/AD Integration with Keystone" locktitle="yes">
           <topicref href="commercial/GA1/1.1commerical.services-identity-ldap-JSON.dita"
             navtitle="Sample LDAP Connection Settings" locktitle="yes"/>
         </topicref>
@@ -91,8 +93,6 @@
             navtitle="HP StoreServ (3PAR) Support" locktitle="yes"/>
           <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita"
             navtitle="Scale-out Object Storage with Swift" locktitle="yes">
-            <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"
-              navtitle="DNSaaS Installation and Configuration" locktitle="yes"/>
             <topicref href="commercial/GA1/1.1commercial.install-add-nodes.dita"
               navtitle="Add or Remove Swift Nodes - KVM" locktitle="yes"/>
             <topicref href="commercial/GA1/1.1commercial.install-GA-apparmor.dita"
