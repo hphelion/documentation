@@ -115,8 +115,6 @@
             <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.update.dita"
               navtitle="Updating OVSvApp on ESX" locktitle="yes"/>
           </topicref>
-          <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"
-            navtitle="DNSaaS Configuration and Installation" locktitle="yes"/>
           <topicref
             href="commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita"
             navtitle="Building Windows Server Guest Images" locktitle="yes"/>
