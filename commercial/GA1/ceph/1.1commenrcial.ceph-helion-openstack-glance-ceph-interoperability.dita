@@ -81,8 +81,7 @@ glance-manage db_sync
 qemu-img convert -f qcow2 -O raw cirros-0.3.2-x86_64-disk.img cirros-0.3.2-x86_64-disk.raw
 
 glance image-create --name RImg --is-public=true --disk-format=raw --container-format=bare --file cirros-0.3.2-x86_64-disk.raw
-</codeph>
-</codeblock></li>
+</codeph></codeblock></li>
 <li>Ensure that the uploaded Glance image is available in the Dashboard (Horizon) UI and correctly
                 stored in the appropriate pool in
                     Ceph.<codeblock><codeph>rbd ls -l &lt;glance pool name&gt;

@@ -29,25 +29,26 @@
  <!--permalink: /helion/openstack/1.1/ceph-configuration-recovery-and-backup-procedure-HP-Helion-nodes/  -->
 
 <!-- # HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Ceph Configuring Backup and Recovery for HP Helion Nodes-->
-<p>
-The following steps ensure the recovery of the lost configuration.
-
-1. Run the  ceph_client_setup script available at  <xref href ="https://helion.hpwsportal.com" format="html"> HDN</xref> on each of the controller/compute nodes. (For information on what files need to be copied from  the Ceph cluster node to their respective directories, refer to the script's README file.)
-2. To confirm ceph health, run:
-
-     ceph health
-
-3. If you reboot your controller and compute node after running the ceph_client_setup script, the patch update for glance-api.conf, nova.conf, cinder.conf might default to the original state. In this case, from each controller and compute node, go to:
-
-
-        /home/ceph_client_setup/setup_scripts
-
-    1. Execute sh patch_config_files.sh
-
-    2. Execute sh helion_service_restarts.sh
-
-</p>
-<p>Sample files</p>
+<p> The following steps ensure the recovery of the lost configuration. </p>
+    <p>
+      <ol id="ol_csb_fgk_4s">
+        <li>Run the <codeph>ceph_client_setup</codeph> script available at <xref
+            href="https://helion.hpwsportal.com" format="html"> HDN</xref> on each of the
+          controller/compute nodes. (For information on what files need to be copied from the Ceph
+          cluster node to their respective directories, refer to the script's README file.) </li>
+        <li>To confirm ceph health, run: ceph health. </li>
+        <li>If you reboot your controller and compute node after running the
+            <codeph>ceph_client_setup</codeph> script, the patch update for glance-api.conf,
+          nova.conf, cinder.conf might default to the original state. <p>In this case, from each
+            controller and compute node, go to:
+              <codeph>/home/ceph_client_setup/setup_scripts</codeph>
+            <ol id="ol_hnw_jgk_4s">
+              <li>Execute <codeph>sh patch_config_files.sh </codeph></li>
+              <li>Execute <codeph>sh helion_service_restarts.sh </codeph></li>
+            </ol></p></li>
+      </ol>
+    </p>
+    <p>Sample files</p>
 
 <table>
   <tgroup cols="3">
@@ -62,21 +63,32 @@ The following steps ensure the recovery of the lost configuration.
 <tbody>
 <row>
   <entry colsep="1" rowsep="1"> Controller node</entry>
-  <entry colsep="1" rowsep="1"> /etc/glance/glance-api.conf /etc/cinder/cinder.conf
-              /etc/nova/nova.conf</entry>
+  <entry colsep="1" rowsep="1">
+              <codeph>/etc/glance/glance-api.conf </codeph><codeph>/etc/cinder/cinder.conf</codeph>
+              <codeph>/etc/nova/nova.conf</codeph></entry>
 
-  <entry colsep="1" rowsep="1"> 1. Log in to the <xref href="https://helion.hpwsportal.com"
-                format="html"> HDN</xref>. 2. Click the workloads category on the left side. 3.
-              Click the storage subcategory to find all the Ceph related files. <b>Filename</b>
+  <entry colsep="1" rowsep="1">
+              <ol id="ol_fgl_3hk_4s">
+                <li>Log in to the <xref href="https://helion.hpwsportal.com" format="html">
+                    HDN</xref></li>
+                <li>Click the workloads category on the left side. 3. Click the storage subcategory
+                  to find all the Ceph related files. <b>Filename</b>
+                </li>
+              </ol>
             </entry>
 </row>
   <row>
     <entry colsep="1" rowsep="1">Compute Node</entry>
-    <entry colsep="1" rowsep="1">/etc/nova/nova.conf</entry>
-    <entry colsep="1" rowsep="1">1. Log in to the <xref href="https://helion.hpwsportal.com"
-                format="html"> HDN</xref> 2. Click the workloads category on the left side. 3. Click
-              the storage subcategory to find all the Ceph related files.
-              <!-- <br /> Filename need ?-->
+    <entry colsep="1" rowsep="1"><codeph>/etc/nova/nova.conf</codeph></entry>
+    <entry colsep="1" rowsep="1">
+              <ol id="ol_qql_khk_4s">
+                <li>Log in to the <xref href="https://helion.hpwsportal.com" format="html">
+                    HDN</xref>
+                </li>
+                <li>Click the workloads category on the left side. 3. Click the storage subcategory
+                  to find all the Ceph related files. <!-- <br /> Filename need ?-->
+                </li>
+              </ol>
             </entry>
   </row>
 </tbody>
@@ -114,21 +126,17 @@ The following steps ensure the recovery of the lost configuration.
 
 <p>To do this, edit <codeph>glance-api.conf</codeph>, <codeph>cinder.conf</codeph> and <codeph>nova.conf</codeph> files with the following in the default section.</p>
 
-<codeblock>
-<codeph>debug = True
+<codeblock><codeph>debug = True
 verbose = True
-</codeph>
-</codeblock>
+</codeph></codeblock>
 
 <p>Restart Glance, Cinder, and Nova services respectively.</p>
 
 <p>On HP Helion Commercial, the logs for Glance and Cinder are stored by default in the following directories:</p>
 
-<codeblock>
-<codeph>Glance - /var/log/glance
+<codeblock><codeph>Glance - /var/log/glance
 Cinder - /var/log/upstart
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </li>
 </ul>
 <p>Gather these logs and contact HP support team.</p>
@@ -149,12 +157,10 @@ Cinder - /var/log/upstart
 <p>Where pool size is either the number of replicas for replicated pools or the K+M sum for erasure coded pools (as returned by <codeph>ceph osd erasure-code-profile get</codeph>).
 Round up the results to the nearest power of two. Rounding up is optional, but recommended for CRUSH to evenly balance the number of objects among PGs.</p>
 <p>For example, for a cluster with 200 OSDs and a pool size of 3 replicas, estimate the number of PGs as follows:</p>
-<codeblock>
-  <codeph>(200 * 100)
+<codeblock><codeph>(200 * 100)
 ----------- = 6667. Nearest power of 2: 8192
        3
-</codeph>
-</codeblock>
+</codeph></codeblock>
 
 </section>
  
