@@ -110,6 +110,13 @@ hp3par_snapshot_expiration=72</codeblock>
             <p>Cinder Volume Backup is not working upon installation of HP Helion OpenStack Carrier Grade 1.1 
                 The  <codeph>cinder.backup.driver</codeph> file is not present in /etc/cinder/cinder.conf.</p>
        </section>
+        
+        <section><title>Bonding on the control interface is not supported</title>
+            <!-- CG-1052 -->
+            <p>Due to an issue in config_region script, bonding on the control interface (hosts PXE, CLM, BLS, CAN networks) is not supported. 
+                A patch to support this feature is actively being worked upon. 
+                Data interface on the compute node does support balanced-xor and Active/Standby modes. </p>     
+        </section>
 
         <section>
             <title>SR-IOV limitations</title>
