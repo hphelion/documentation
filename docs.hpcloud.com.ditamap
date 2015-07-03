@@ -54,7 +54,8 @@
           locktitle="yes"/>
         <topicref href="commercial/GA1/1.1commercial.install-GA-JSON.dita"
           navtitle="Editing the JSON Configuration File" locktitle="yes">
-          <topicref href="commercial/GA1/1.1commercial.install-GA-JSON-scenarios.dita" toc="no"/>
+          <topicref href="commercial/GA1/1.1commercial.install-GA-JSON-scenarios.dita" toc="no"
+            navtitle="Sample Configuration Files" locktitle="yes"/>
           <!--set to toc=no later-->
         </topicref>
         <topicref href="commercial/GA1/1.1commercial.install-GA-CSV.dita"
@@ -79,17 +80,26 @@
         navtitle="Install and Configure on KVM" locktitle="yes">
         <topicref href="commercial/GA1/1.1commercial.install-GA-post-kvm.dita"
           navtitle="Post-installation - KVM" locktitle="yes">
-          <topicref href="commercial/GA1/1.1commercial.vlan-providernetwork.dita"/>
-          <topicref href="commercial/GA1/1.1commercial.-vsa-overview.dita">
-            <topicref href="commercial/GA1/1.1commercial.install-GA-vsa.dita"/>
+          <topicref href="commercial/GA1/1.1commercial.vlan-providernetwork.dita" locktitle="yes"
+            navtitle="Enabling VLAN Provider Network"/>
+          <topicref href="commercial/GA1/1.1commercial.-vsa-overview.dita"
+            navtitle="Cinder Block Storage Using HP StoreVirtual VSA" locktitle="yes">
+            <topicref href="commercial/GA1/1.1commercial.install-GA-vsa.dita"
+              navtitle="Deploy and Configure HP StoreVirtual VSA" locktitle="yes"/>
           </topicref>
-          <topicref href="commercial/GA1/1.1commercial.install-3par.dita"/>
-          <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita">
-            <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"/>
-            <topicref href="commercial/GA1/1.1commercial.install-add-nodes.dita"/>
-            <topicref href="commercial/GA1/1.1commercial.install-GA-apparmor.dita"/>
+          <topicref href="commercial/GA1/1.1commercial.install-3par.dita"
+            navtitle="HP StoreServ (3PAR) Support" locktitle="yes"/>
+          <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita"
+            navtitle="Scale-out Object Storage with Swift" locktitle="yes">
+            <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"
+              navtitle="DNSaaS Installation and Configuration" locktitle="yes"/>
+            <topicref href="commercial/GA1/1.1commercial.install-add-nodes.dita"
+              navtitle="Add or Remove Swift Nodes - KVM" locktitle="yes"/>
+            <topicref href="commercial/GA1/1.1commercial.install-GA-apparmor.dita"
+              navtitle="AppArmor Overview" locktitle="yes"/>
           </topicref>
-          <topicref href="commercial/GA1/1.1commercial.install-3par-multipath.dita"/>
+          <topicref href="commercial/GA1/1.1commercial.install-3par-multipath.dita"
+            navtitle="Configuring Multipath fro 3PAR" locktitle="yes"/>
         </topicref>
       </topicref>
       <topicref href="commercial/GA1/1.1commercial.install-GA-esx.dita"
