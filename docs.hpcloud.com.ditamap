@@ -596,6 +596,9 @@
       <topicref href="devplatform/1.2/1.2devplatform.related-topics.dita" locktitle="yes"
         navtitle="Related Documentation "/>
       <!--permalink: /helion/devplatform/1.2/release-notes/-->
+      <anchorref
+        href="devplatform/1.2/1.2devplatform_commercial_install.dita#topic24073/install-als"
+        navtitle="Install the Application Lifecycle Service" locktitle="yes"/>
     </topicref>
     <topicref href="devplatform/1.2/1.2devplatform.appdev.dita" locktitle="yes"
       navtitle="Resources for Application Developers ">
