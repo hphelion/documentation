@@ -28,8 +28,13 @@
 <p>
 
 </p>
-<p>
-<b>Note</b>: The deployment of the Helion OpenStack v1.1 Metering service is considered experimental and targeted at developers investigating integration of external software applications with the Ceilometer API for showback, chargeback, and billing applications only. Only a limited set of metrics are available in the Helion OpenStack v1.1 release. Developers interested in monitoring use cases should refer to the <xref href="https://wiki.openstack.org/wiki/Monasca" scope="external" format="html" >OpenStack Monasca service</xref> which is targeted to be deployed in a future Helion OpenStack release.</p>
+    <note>The deployment of the Helion OpenStack v1.1 Metering service is considered experimental
+      and targeted at developers investigating integration of external software applications with
+      the Ceilometer API for showback, chargeback, and billing applications only. Only a limited set
+      of metrics are available in the Helion OpenStack v1.1 release. Developers interested in
+      monitoring use cases should refer to the <xref href="https://wiki.openstack.org/wiki/Monasca"
+        scope="external" format="html">OpenStack Monasca service</xref> which is targeted to be
+      deployed in a future Helion OpenStack release.</note>
 <p>The HP Helion OpenStack Metering service leverages the OpenStack Ceilometer service. A metering service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. No matter what purpose the data is used for, this service provides a reliable, consistent method for data collection.</p>
 <section id="installation"> <title>Installation</title>
 <p>The metering service is automatically installed as part of the Helion OpenStack installation process. It may be necessary to install the command-line interface (<xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >CLI</xref>) separately to perform various administrative tasks.</p>

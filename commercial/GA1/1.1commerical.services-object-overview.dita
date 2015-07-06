@@ -35,8 +35,9 @@ The HP Helion OpenStack cloud deployment includes automatic creation of a Swift 
 <!--
 A Swift cluster is software defined storage (SDS) architecture layered on top of industry standard servers using standard storage drives. -->
 <p>A Object Storage (Swift) cluster is Software Defined Storage (SDS) architecture, layered on top of industry standard servers, using native storage devices which are typically disk drives.</p>
-<p>
-<b>Note</b>: It is not recommended to run Swift on top of other systems (hardware or software) that hide the failure domains or native storage devices like using RAID group on top of drives.</p>
+      <note>It is not recommended to run Swift on top of other systems (hardware or software) that
+        hide the failure domains or native storage devices like using RAID group on top of
+        drives.</note>
 <p>The services in the Swift cluster are either <b>
 <i>access</i>
 </b> services or <b>
