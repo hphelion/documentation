@@ -45,6 +45,7 @@
 <li>Set DNS servers name-resolution</li>
 <li>Integrating LDAP (Lightweight Directory Access Protocol)</li>
 <li>Disabling SR-IOV</li>
+  <li>Understandng Cinder driver support</li>
 </ul>
 </li>
 </ul>
@@ -267,6 +268,9 @@ provider_network is your ESX management network
 <p>In the HP Helion OpenStack 1.1 release, there is a performance issue with hardware that is configured to support Single Root I/O Virtualization (SR-IOV) on undercloud nodes.</p>
 <p>The problem appears as overcloud performance delays for certain operations, like attempting to SSH into a compute node. The problem is related to DNS performance. The DNS service for the overcloud is the dnsmasq process. Occasionally the openvswitch on the undercloud drops packets which are destined for the dnsmasq tap device. The reason the openvswitch occasionally has problems is due to it seeing the tap device MAC address as a source MAC address on eth0. This source MAC address can flap between the tap device and eth0. Properly, the source address should only be the tap device. Because SR-IOV is enabled, a broadcast from the tap device MAC address as source is being sent back by the NIC through eth0. To fix this problem, HP recommends that you disable SR-IOV in the NIC BIOS (not just in the kernel) on undercloud nodes.</p>
 </section>
+<section id="Cinder-driver-support"> <title>Understandng Cinder driver support</title>
+  <p>Helion OpenStack does not support the Cinder driver LVM., However, LVM is the default if you do not configure VSA or 3 PAR during installation. To address this limitation, HP recommends that you deploy Helion OpenStack with either 3PAR or VSA.</p>
+  </section>
 <section id="nextstep"> <title>Next step</title>
 <p>Depending upon your environment, click the appropriate link for the next step in the installation.</p>
 <ul>
