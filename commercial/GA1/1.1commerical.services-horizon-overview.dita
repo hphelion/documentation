@@ -34,23 +34,53 @@
 <section id="for-more-information"> <title>For more information</title>
 <p>For information on using the dashboards, see <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HP Helion OpenStack Dashboard</xref>.</p>
 </section>
-<section id="horizon-dashboard-examples"> <title>Horizon Dashboard Examples</title>
-<!-- note please do not edit the javascript below -->
-<p>Click the descriptions below to view some of the services you can manage in the Horizon dashboard. There is both an overcloud Horizon dashboard and an undercloud dashboard, both of which are accessible via your URL in a browser.
-<!--Removed anchor point images--><!-- id="images" --></p>
-<p>System Info    
-Quotas    
-Routers     
-Availability Zones     
-Hypervisors     <!--A BR tag was used here in the original source.-->DNS Record    
-Manage Services    
-Stacks   
-Create Domain    </p>
-<p>.</p>
-<p>
-  <xref href="#topic1564"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
-</section>
+<section id="horizon-dashboard-examples">
+      <title>Horizon Dashboard Examples</title>
+      <!-- note please do not edit the javascript below -->
+      <p>Click the descriptions below to view some of the services you can manage in the Horizon
+        dashboard. There is both an overcloud Horizon dashboard and an undercloud dashboard, both of
+        which are accessible via your URL in a browser.
+        <!--Removed anchor point images--><!-- id="images" --></p>
+      <p><b>System Info</b></p>
+      <image placement="break" href="../../media/sysinfo.png" id="image_avw_nb3_ps"/>
+      <p>    <b> Quotas </b>  </p>
+      <p>
+        <image placement="break" href="../../media/quotas2.png" id="image_lnv_rb3_ps"/>
+      </p>
+      <p>  <b>Routers </b>   </p>
+      <p>
+        <image placement="break" href="../../media/routers.png" id="image_kl5_5b3_ps"/>
+      </p>
+      <p>
+        <b>Availability Zones</b>  </p>
+      <p>
+        <image placement="break" href="../../media/AZ.png" id="image_slz_wb3_ps"/>
+      </p>
+      <p>   <b>Hypervisors</b></p>
+      <p>
+        <image placement="break" href="../../media/hypervisors.png" id="image_jt2_zb3_ps"/>
+      </p>
+      <p>     <b>DNS Record </b> </p>
+      <p>
+        <image placement="break" href="../../media/create_a_record.png" id="image_zfd_cc3_ps"/>
+      </p>
+      <p>  <b>Manage Services </b>   </p>
+      <p>
+        <image placement="break" href="../../media/services.png" id="image_d5m_2c3_ps"/>
+      </p>
+      <p><b>Stacks </b>   </p>
+      <p>
+        <image placement="break" href="../../media/stacks.png" id="image_lgf_gc3_ps"/>
+      </p>
+      <p><b>Create Domain</b>    </p>
+      <p>
+        <image placement="break" href="../../media/create_domain.png" id="image_pdf_3c3_ps"/>
+      </p>
+      <p>.</p>
+      <p>
+        <xref href="#topic1564"> Return to Top </xref>
+      </p>
+      <!-- ===================== horizontal rule ===================== -->
+    </section>
 </body>
 </topic>
