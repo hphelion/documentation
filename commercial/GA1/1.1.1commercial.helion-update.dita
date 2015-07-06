@@ -44,8 +44,8 @@ For details on the HP Helion Development Platform update to v1.2, see [Updating 
 <p>The process of updating HP Helion OpenStack v1.1 to HP Helion OpenStack v1.1.1 consists of three procedures:</p>
 <ol>
 <li>
-<xref type="section" href="#topic51655/seed-update-process">Update the seed host</xref>
-</li>
+        <xref type="section" href="#topic51655/seed-update-process">Update the seed</xref>
+      </li>
 <li>
 <xref type="section" href="#topic51655/uc-update-process">Update the undercloud</xref>
 </li>
@@ -53,7 +53,9 @@ For details on the HP Helion Development Platform update to v1.2, see [Updating 
 <xref type="section" href="#topic51655/oc-update-process">Update the overcloud</xref>
 </li>
 </ol>
-<p>These procedures are described in the following sections. You must perform each of these three procedures in the order presented: first the seed host, then the undercloud, and finally, the overcloud.</p>
+<p>These procedures are described in the following sections. You must perform each of these three
+      procedures in the order presented: first the seed, then the undercloud, and finally, the
+      overcloud.</p>
 <p>Allow a full day for the  HP Helion OpenStack v1.1.1 update to complete. During the update process, affected systems will be offline.</p>
     <p><b>Important</b>: Before starting your update: </p>
     <ol id="ol_hqm_fw1_ms">
@@ -111,10 +113,12 @@ nova show &lt;instance id&gt;
 <codeblock><codeph>HP Helion Openstack 1.1 Build 81
 </codeph></codeblock>
 </section>
-<section id="seed-update-process"> <title>Helion v1.1 to v1.1.1 seed host update process</title>
-<p>The procedure will guide you through updating to Helion v1.1.1 from the seed host using <codeph>update_sd.sh</codeph>.</p>
+<section id="seed-update-process"> <title>Helion v1.1 to v1.1.1 seed update process</title>
+<p>The procedure will guide you through updating to Helion v1.1.1 from the seed using
+          <codeph>update_sd.sh</codeph>.</p>
 <p>
-<b>Note</b>: You must have the <codeph>jq</codeph> package for your version of Ubuntu installed on the seed host. If you need to install this package, enter:</p>
+        <b>Note</b>: You must have the <codeph>jq</codeph> package for your version of Ubuntu
+        installed on the seed. If you need to install this package, enter:</p>
 <codeblock><codeph>apt-get install jq
 </codeph></codeblock>
 <!--
@@ -146,7 +150,7 @@ cd helion-update-1.1-to-1.1.1
 <li>
 <p>Extract the update kit by entering:</p>
 
-<codeblock><codeph>tar -xvzf `HP_Helion_OpenStack 
+<codeblock><codeph>tar -xvzf HP_Helion_OpenStack 
 </codeph></codeblock>
 </li>
 <li>
@@ -182,7 +186,8 @@ cd helion-update-1.1-to-1.1.1
 <p>If you need to free up space, you can safely remove the <codeph>HP_Helion_>OpenStack</codeph> update kit that you just extracted</p>
 </li>
 <li>
-<p>To prepare the seed host for starting the update, verify that the following files exist in the seed VM.</p>
+<p>To prepare the seed for starting the update, verify that the following files exist in the seed
+            VM.</p>
 
 <ul>
 <li>/root/eca.key</li>
@@ -192,8 +197,8 @@ cd helion-update-1.1-to-1.1.1
 
 <p>If you do not have these files, you may be able to regenerate them from the installer data using the following commands:</p>
 
-<p>echo -e $(jq '.parameters.EphemeralCaKey' ../tripleo/overcloud-env.json | sed 's/\"//g') &gt; /root/eca.key
-echo -e $(jq '.parameters.EphemeralCaCert' ../tripleo/overcloud-env.json | sed 's/\"//g') &gt; /root/eca.crt</p>
+<p><codeblock>echo -e $(jq '.parameters.EphemeralCaKey' ../tripleo/overcloud-env.json | sed 's/\"//g') &gt; /root/eca.key
+echo -e $(jq '.parameters.EphemeralCaCert' ../tripleo/overcloud-env.json | sed 's/\"//g') &gt; /root/eca.crt</codeblock></p>
 </li>
 <li>
 <p>If you generated these files from the installer data, you  need to verify that the files are well formed by entering:</p>
@@ -209,9 +214,8 @@ openssl x509 -noout -in /root/eca.crt
 </codeph></codeblock>
 </li>
 <li>
-<p>From <codeph>/root</codeph> on the seed host, create the
-              <codeph>helion-update-1.1-to-1.1.1</codeph> directory then change to this directory by
-            entering:</p>
+<p>From <codeph>/root</codeph> on the seed, create the <codeph>helion-update-1.1-to-1.1.1</codeph>
+            directory then change to this directory by entering:</p>
 
 <codeblock><codeph>cd /root
 mkdir helion-update-1.1-to-1.1.1
@@ -219,15 +223,22 @@ cd helion-update-1.1-to-1.1.1
 </codeph></codeblock>
 </li>
 <li>
-<p>Copy the seed update script from the downloaded update kit on the seed VM to the seed host by entering:</p>
+<p>Copy the seed update script from the downloaded update kit on the seed VM to the seed by
+            entering:</p>
 
 <codeblock><codeph>scp root@&lt;seed-vm-ip&gt;:/root/helion-update-1.1-to-1.1.1/tripleo/helion-update/seed_update/update_sd.sh .
 </codeph></codeblock>
 </li>
 <li>
-<p>Run the seed update script <codeph>update_sd.sh</codeph> from the seed host. Make sure you run
-              <codeph>update_sd.sh</codeph> from the update directory you created:
-              <codeph>/root/helion-update-1.1-to-1.1.1)</codeph> using the seed host's
+<p>Source the <codeph>kvm-custom-ips.json</codeph> file and run the seed update script
+              <codeph>update_sd.sh</codeph> from the seed by entering:</p>
+          <p>
+            <codeblock><codeph>source ~/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh ~/tripleo/configs/kvm-custom-ips.json
+./update_sd.sh &lt;host_tripleo_root_directory&gt; &lt;remote_update_tripleo_root_directory&gt; | tee seed_update.log
+</codeph></codeblock>
+          </p>
+          <p>Make sure you run <codeph>update_sd.sh</codeph> from the update directory you created:
+              <codeph>/root/helion-update-1.1-to-1.1.1)</codeph> using the seed's
               <codeph>tripleo</codeph> root directory (<codeph>/root/tripleo</codeph>) and remote
             update root (extracted updated kit directory on the seed VM) as arguments.</p>
 
@@ -236,32 +247,26 @@ cd helion-update-1.1-to-1.1.1
 <codeblock><codeph>host_tripleo_root_directory = /root/tripleo
 remote_update_tripleo_root_directory = /root/helion-update-1.1-to-1.1.1
 </codeph></codeblock>
+  <p><b>NOTE:</b> If you used any custom variables for the initial installation of the seed, you will need to export them again prior to executing the <codeph>update_sd.sh</codeph> script.</p>
+  
+  <p>Once the update is completed, the <codeph>ssh host_key</codeph> of the seed will have changed.</p>
 </li>
+
+
 <li>
-<p>To source the <codeph>kvm-custom-ips.json</codeph> file and run the update script enter:</p>
-
-<codeblock><codeph>source ~/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh ~/tripleo/configs/kvm-custom-ips.json
-./update_sd.sh &lt;host_tripleo_root_directory&gt; &lt;remote_update_tripleo_root_directory&gt; | tee seed_update.log
-</codeph></codeblock>
-
-<p>
-<b>NOTE:</b> If you used any custom variables for the initial installation of the seed, you will need to export them again prior to executing the <codeph>update_sd.sh</codeph> script.</p>
-
-<p>Once the update is completed, the <codeph>ssh host_key</codeph> of the seed will have changed.</p>
-</li>
-<li>
-<p>To purge the known_hosts entries on the seed host machine, enter:</p>
+<p>To purge the known_hosts entries on the seed machine, enter:</p>
 
 <codeblock><codeph>ssh-keygen -R &lt;seed_ip_address&gt;
 </codeph></codeblock>
 
-<p>You will be prompted to re-add the seed host to your known_hosts file when you SSH into the seed to update the undercloud and overcloud.</p>
+<p>You will be prompted to re-add the seed to your known_hosts file when you SSH into the seed to
+            update the undercloud and overcloud.</p>
 </li>
 </ol>
 </section>
 <section id="uc-update-process"> <title>HP Helion OpenStack 1.1 to 1.1.X undercloud update process</title>
 <p>The procedure will guide you through updating the undercloud by running the <codeph>update_uc.sh</codeph> shell script.</p>
-<!-- copy note from seed host for devplat users -->
+<!-- copy note from seed for devplat users -->
 <p>
 <b>Important</b>:
 If you are updating to a release that includes new Orchestration (Heat) templates, you must apply these new templates to your system before you attempt to update it.</p>
@@ -306,7 +311,7 @@ chmod 775 /mnt/state/var/eon/data
 </section>
 <section id="oc-update-process"> <title>Helion v1.1 to v1.1.1 overcloud update process</title>
 <p>This procedure explains how to update the overcloud using <codeph>update_oc.sh</codeph>.</p>
-<!-- add note from seed host about devplat users not destroying their install -->
+<!-- add note from seed about devplat users not destroying their install -->
 <!--
 **Note for Helion Development Platform users**: The Helion Development Platform must be shut down before updating the overcloud. For instructions on shutting down the Development Platform, see [Updating Helion Development Platform](/helion/devplatform/1.2/upgrade/).
 -->
@@ -700,8 +705,11 @@ After running update on the overcloud, the VMs running on the Compute hosts are 
 <p>This section explains how you should validate your update.</p>
 </section>
 <section id="validating-the-overcloud-controller-update"> <title>Validating the overcloud controller update</title>
-<p>After the update, the overcloud controller should be back online without any errors. You should be able to  SSH to the Nova compute node from the seed host.<!--A BR tag was used here in the original source.-->
-You should be able to open the Horizon dashboard as well as execute lifecycle operations with any instance already deployed in the overcloud.</p>
+<p>After the update, the overcloud controller should be back online without any errors. You should
+        be able to SSH to the Nova compute node from the
+        seed.<!--A BR tag was used here in the original source.--> You should be able to open the
+        Horizon dashboard as well as execute lifecycle operations with any instance already deployed
+        in the overcloud.</p>
 <p>The node should re-join the MySQL Cluster,<!--A BR tag was used here in the original source.-->
 HAProxy should show the servers as online, the<!--A BR tag was used here in the original source.-->
 instances deployed before the update should still be up and accessible. It should be possible to deploy new instances and ping them and SSH to them.</p>
@@ -734,8 +742,9 @@ instances deployed before the update should still be up and accessible. It shoul
 </ol>
 </section>
 <section id="validating-the-compute-node"> <title>Validating the compute node</title>
-<p>After an update, verify that instances deployed before  the update are still up and accessible.
-You should be able to SSH to the Nova Compute node from  the seed host. You should be able to ping and SSH to  new instances.</p>
+<p>After an update, verify that instances deployed before the update are still up and accessible.
+        You should be able to SSH to the Nova Compute node from the seed. You should be able to ping
+        and SSH to new instances.</p>
 <p>The <codeph>os-refresh-config</codeph> command needs to be working  after  an update.</p>
 <p>Use <codeph>ifconfig</codeph> to check that all your networks still exist after the update.<!--A BR tag was used here in the original source.-->
 Use <codeph>ovs-vsctl show</codeph> to check that all bridges and ports still exist after the update.</p>
@@ -744,7 +753,7 @@ Use <codeph>ovs-vsctl show</codeph> to check that all bridges and ports still ex
 <p>After the update:</p>
 <ul>
 <li>Check that the images are still there.</li>
-<li>Confirm that you can SSH to the Nova compute node from seed host.</li>
+<li>Confirm that you can SSH to the Nova compute node from seed.</li>
 <li>Verify that you can load new images.</li>
 <li>Check that you can deploy new instances with a new image.</li>
 </ul>
@@ -754,7 +763,7 @@ Use <codeph>ovs-vsctl show</codeph> to check that all bridges and ports still ex
 <p>After an update:</p>
 <ul>
 <li>Check if the node can join the cluster (CMC).</li>
-<li>Verify that you can SSH to the Nova compute node from  the seed host.</li>
+<li>Verify that you can SSH to the Nova compute node from the seed.</li>
 <li>Check that the volumes are still present.</li>
 <li>Verify that you can create new volumes.</li>
 <li>Verify that you can delete old volumes.</li>
@@ -793,8 +802,10 @@ cd helion-update-1.1-to-1.1.1/tripleo/helion-update/seed_update
 ./seed_recover.sh
 </codeph></codeblock>
 </section>
-<section id="backup-failed-due-to-seed-host-running-out-of-disk-space"> <title>Backup failed due to seed host running out of disk space</title>
-<p>If your backup fails because the disk lacks sufficient space you will note that the backup sequence froze or failed. You will also see that the disk space utilization check of the seed host returns 100%. You can check disk utilization by entering:</p>
+<section id="backup-failed-due-to-seed-host-running-out-of-disk-space"> <title>Backup failed due to seed running out of disk space</title>
+<p>If your backup fails because the disk lacks sufficient space you will note that the backup
+        sequence froze or failed. You will also see that the disk space utilization check of the
+        seed returns 100%. You can check disk utilization by entering:</p>
 <codeblock><codeph>df -h /
 </codeph></codeblock>
 <p>To fix this problem:</p>
@@ -832,8 +843,9 @@ service rabbitmq-server stop
 </li>
 </ol>
 </section>
-<section id="seed-host-update-fails-noting-unable-to-ping-192021"> <title>Seed host update fails noting unable to ping 192.0.2.1</title>
-<p>If your seed host update fails, your deployment will NOT utilize the 192.0.2.0/24 demo IP network range. You will see in your log:</p>
+<section id="seed-host-update-fails-noting-unable-to-ping-192021"> <title>Seed update fails noting unable to ping 192.0.2.1</title>
+<p>If your seed update fails, your deployment will NOT utilize the 192.0.2.0/24 demo IP network
+        range. You will see in your log:</p>
 <codeblock><codeph>"Waiting for seed host to configure"
 </codeph></codeblock>
 <p>Pings to host 192.0.2.1 will time out with the following message:</p>
@@ -841,14 +853,17 @@ service rabbitmq-server stop
 COMMAND=ping -c 1 192.0.2.1
 OUTPUT=PING 192.0.2.1 (192.0.2.1) 56(84) bytes of data.
 </codeph></codeblock>
-<p>The likely reason for this failure is the installer update of the seed host image has failed as the configuration that was used during the install was not available or passed on to the installer to perform the seed host update operation.  As a result, the installer has indicated that it has failed, although the seed host has likely rebooted without issue.</p>
+<p>The likely reason for this failure is the installer update of the seed image has failed as the
+        configuration that was used during the install was not available or passed on to the
+        installer to perform the seed update operation. As a result, the installer has indicated
+        that it has failed, although the seed has likely rebooted without issue.</p>
 <p>To fix this problem:</p>
 <ol>
 <li>
 <p>Identify the following:</p>
 
 <ul>
-<li>Expected IP address of the seed host.</li>
+<li>Expected IP address of the seed.</li>
 <li>Location of the backup folder. It should be at
                 <codeph>/root/helion-update-1.1-to-1.1.1/backup*</codeph>. For
                 example:<codeph>/root/helion-update-1.1-to-1.1.74/backup-0/</codeph>
@@ -856,7 +871,7 @@ OUTPUT=PING 192.0.2.1 (192.0.2.1) 56(84) bytes of data.
 </ul>
 </li>
 <li>
-<p>Verify that you can ping the IP address of the seed host by entering:</p>
+<p>Verify that you can ping the IP address of the seed by entering:</p>
 
 <codeblock><codeph>ping -c 1 &lt;seed IP address&gt;
 </codeph></codeblock>
@@ -873,7 +888,8 @@ OUTPUT=PING 192.0.2.1 (192.0.2.1) 56(84) bytes of data.
 </codeph></codeblock>
 </li>
 <li>
-<p>The restoration command will take some time, but once completed you should be able to log in to the seed host.  To verify that the node is in working status, enter:</p>
+<p>The restoration command will take some time, but once completed you should be able to log in to
+            the seed. To verify that the node is in working status, enter:</p>
 
 <codeblock><codeph>source /root/stackrc &amp;&amp;
 nova list &amp;&amp;
@@ -1321,7 +1337,8 @@ should have information to help troubleshoot this issue.
 </section>
 <section id="online-upgrade-fails-with-message-saying-glanceclient-is-not-found"> <title>Online upgrade fails with message saying glanceclient is not found</title>
 <p>This problem occurs when you attempt to perform an online upgrade, However the playbook execution failed when you attempted to download the new image from Glance. You get a message that <codeph>glanceclient</codeph> was not found.</p>
-<p>If you are attempting to execute the Ansible playbook on the seed host or undercloud node, source the Ansible virtual environment by entering:</p>
+<p>If you are attempting to execute the Ansible playbook on the seed or undercloud node, source the
+        Ansible virtual environment by entering:</p>
 <codeblock><codeph>source /opt/stack/venvs/ansible/bin/activate
 </codeph></codeblock>
 <p>Once the Ansible virtual environment has been sourced, on the node from which you are attempting to execute Ansible, enter:</p>
