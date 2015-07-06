@@ -374,7 +374,7 @@ rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/object.buil
 rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/account.builder /root/ring-building/
 rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/container.builder /root/ring-building/
 </codeph></codeblock><p>
-            <note>The ring files are identical on both the starter swift nodes. You can copy
+            <note>The ring files are identical on both the starter Swift nodes. You can copy
                 <b>.gz</b> files in either of the starter nodes as they are identical.</note>
           </p></li>
 <li>List all the Swift
@@ -401,7 +401,7 @@ Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
               present in the Swift nodes.</note>
           </p></li>
 </ol>
-<p>You can also copy the ring or builder files to all the swift nodes:</p>
+<p>You can also copy the ring or builder files to all the Swift nodes:</p>
 <codeblock><codeph># ringos copy-ring -s /root/ring-building/\*.ring.gz -n all
 
 # ringos copy-ring -s /root/ring-building/\*.builder -n all 
