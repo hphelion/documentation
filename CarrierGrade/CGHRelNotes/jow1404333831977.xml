@@ -119,8 +119,9 @@ hp3par_snapshot_expiration=72</codeblock>
         </section>
         <section><title>LAG for the KVM region control plane does not work</title>
     
-            <p>Link aggregation groups (LAG) are not supported in the the KVM region control plane.  A LAG is a mechanism that allows multiple parallel Ethernet network connections between two hosts to be used as a
-                single logical connection..</p>
+            <p>Link aggregation groups (LAG) are not supported in the the KVM region control plane. This is a known limitation that is scheduled to 
+                be corrected with the HP Helion OpenStack Carrier Grade GA release. A LAG is a mechanism that allows multiple parallel Ethernet network connections between two hosts to be used as a
+                single logical connection.</p>
     
         </section>
         <section>

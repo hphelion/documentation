@@ -170,7 +170,8 @@ The following diagram depicts simplified deployment scenarios:
         </li>
       </ul>
       <p>Gen 8 or Gen 9 versions of DL360’s or DL380s are required for the nodes that make up the
-        control plane (including non-KVM region related control plan). </p>
+        control plane (including non-KVM region related control plan).  If you are using Gen9
+        systens, you must update the Snap3 firmware.</p>
       <p>For compute nodes the either Gen 8 or Gen9 : DL360’s BL460’s are required. </p>
       <!-- Hiding until confirmation
 **HP Moonshot Servers**

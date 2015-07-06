@@ -43,6 +43,8 @@
 </li>
 <li>
 <p>Update to the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so forth.</p>
+                                        <p><b>Note:</b> If you are using ProLiant Gen9 blades or
+                                                rack servers, you must update the Snap3 formware. </p>
 </li>
 </ul>
 </section>
