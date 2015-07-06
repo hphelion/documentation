@@ -287,8 +287,9 @@ cd tripleo/helion-update/undercloud_update
 <li>
 <p>Confirm that update was successful by examining the
             <codeph>/var/log/ansible/ansible.log</codeph>. This report should not list any
-            unreachable or failed nodes. That is <codeph>unreachable=0</codeph> and
-              <codeph>failed=0</codeph> as shown in the example output below:</p>
+            unreachable or failed nodes.  That is <codeph>unreachable</codeph> and
+              <codeph>failed</codeph> must always equal 0. An example of a successful update is
+            shown in the output below:</p>
 
 <codeblock><codeph>PLAY RECAP ********************************************************************
 10.23.67.141   : ok=122  changed=74   unreachable=0failed=0
