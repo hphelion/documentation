@@ -39,27 +39,21 @@
         shots illustrate some of the services you can manage in the Horizon dashboard. There is both
         an overcloud Horizon dashboard and an undercloud dashboard, both of which are accessible via
         your URL in a browser.
-          <!--Removed anchor point images--><!-- id="images" --></p><b>Viewing System
-        Info</b><image placement="break" href="../../media/sysinfo.png" id="image_avw_nb3_ps"
-        /> <p><b>Managing Quotas </b></p>  
-        <image placement="break" href="../../media/quotas2.png" id="image_lnv_rb3_ps"/>
-      <p><b>Managing Routers </b>   </p>
-        <image placement="break" href="../../media/routers.png" id="image_kl5_5b3_ps"/>
-      <p><b>Managing Availability Zones</b>  </p>
-        <image placement="break" href="../../media/AZ.png" id="image_slz_wb3_ps"/>
-      <p><b>Getting Hypervisor Status</b></p>
-        <image placement="break" href="../../media/hypervisors.png" id="image_jt2_zb3_ps"/>
-      <p><b>Creating a DNS Record </b> </p>
-        <image placement="break" href="../../media/create_a_record.png" id="image_zfd_cc3_ps"/>
-      <p><b>Managing Services </b>   </p>
-        <image placement="break" href="../../media/services.png" id="image_d5m_2c3_ps"/>
-      <p><b>Viewing Stacks </b>   </p>
-        <image placement="break" href="../../media/stacks.png" id="image_lgf_gc3_ps"/>
-      <p><b>Creating a Domain</b>    </p>
-        <image placement="break" href="../../media/create_domain.png" id="image_pdf_3c3_ps"/>
-      <p><b>Viewing network Topology</b>
-        </p><image
-          href="../../media/HelionDashboardMenusnew1.png" id="image_xdh_gf3_ps"/><p>
+          <!--Removed anchor point images--><!-- id="images" --></p><p><b>Viewing System
+        Info</b></p><image placement="break" href="../../media/sysinfo.png" id="image_avw_nb3_ps"
+          /><p><b>Managing Quotas </b></p><image placement="break" href="../../media/quotas2.png"
+        id="image_lnv_rb3_ps"/><p><b>Managing Routers </b>   </p><image placement="break"
+        href="../../media/routers.png" id="image_kl5_5b3_ps"/><p><b>Managing Availability Zones</b>
+         </p><image placement="break" href="../../media/AZ.png" id="image_slz_wb3_ps"/><p><b>Getting
+          Hypervisor Status</b></p><image placement="break" href="../../media/hypervisors.png"
+        id="image_jt2_zb3_ps"/><p><b>Creating a DNS Record </b> </p><image placement="break"
+        href="../../media/create_a_record.png" id="image_zfd_cc3_ps"/><p><b>Managing Services </b>  
+        </p><image placement="break" href="../../media/services.png" id="image_d5m_2c3_ps"
+          /><p><b>Viewing Stacks </b>   </p><image placement="break" href="../../media/stacks.png"
+        id="image_lgf_gc3_ps"/><p><b>Creating a Domain</b>    </p><image placement="break"
+        href="../../media/create_domain.png" id="image_pdf_3c3_ps"/><p><b>Viewing Network
+          Topology</b>
+      </p><image href="../../media/HelionDashboardMenusnew1.png" id="image_xdh_gf3_ps"/><p>
         <xref href="#topic1564"> Return to Top </xref>
       </p><!-- ===================== horizontal rule ===================== --></section>
 </body>
