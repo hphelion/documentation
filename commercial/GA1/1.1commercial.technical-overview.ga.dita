@@ -163,9 +163,9 @@
                                 Storage, and configure drivers for StoreVirtual and StoreServ 3PAR
                                 using the Sirius service.
                                 <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
-                                Administrsators can create volume types and associate quality of
-                                service with volume types, and map StoreServ and StoreVirtual
-                                backends to the volume types.</entry>
+                                Administrators can create volume types and associate quality of
+                                service with volume types, and map StoreServ and StoreVirtual back
+                                ends to the volume types.</entry>
                         </row>
                         <row>
                             <entry>
@@ -192,9 +192,9 @@
                             <entry>
                                 <b>Network Operations (Neutron) </b>
                             </entry>
-                            <entry>The HP <tm tmtype="reg">Helion Openstack</tm> Network
-                                Operations service provides network connectivity and IP addressing
-                                for virtual machines managed by Compute
+                            <entry>The HP <tm tmtype="reg">Helion OpenStack</tm> Network Operations
+                                service provides network connectivity and IP addressing for virtual
+                                machines managed by Compute
                                 service.<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
                                 User can create and configure virtual networks and routers, subnets,
                                 floating IP addresses, security groups, load balancers and
@@ -276,7 +276,7 @@
                             </entry>
                             <entry>The HP Helion ESX onboarding (EON) service is an inventory which
                                 interacts with the VMware vCenter server and collects the
-                                information available at the datacenters and clusters. The
+                                information available at the data centers and clusters. The
                                 information is used for deployment and configuration of ESX Proxy
                                 Compute node. EON service is deployed in undercloud controller node.
                                     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.--><xref
@@ -301,7 +301,7 @@
                                 service.</entry>
                             <entry>Administrators can maintain an inventory of used 3PAR devices and
                                 CPGs, and StoreVirtual devices and VSAs and configure Cinder 3PAR
-                                and StoreVirtual backends.</entry>
+                                and StoreVirtual back ends.</entry>
                         </row>
                         <row>
                             <entry>
@@ -379,7 +379,7 @@
 
 <ul>
 <li>One IPMI port</li>
-<li>One physical ethernet port (for example, eth0) for the hypervisor/OS</li>
+<li>One physical Ethernet port (for example, eth0) for the hypervisor/OS</li>
 </ul>
 </li>
 <li>
