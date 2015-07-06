@@ -125,10 +125,19 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </ul>
 </section>
 <section>
-  <p>For more information about the supported independent servers, see <xref
-          href="1.1commercial.install-GA-supportmatrix_supportedIHVhardware.dita" type="section">HP
-          Helion OpenStack 1.1 and 1.1.1: Supported IHV Hardware</xref>.</p>
+  <title>IBM Systems</title>
+<ul>
+  <li>System x3550 M4</li>
+  <li>System x3650 M5</li>
+</ul>
 </section>
+ <section>
+   <title>Dell Systems</title>
+<ul>
+  <li>PowerEdge R720xd</li>
+  <li>PowerEdge R620</li>
+</ul>
+ </section>
   <section>
 <p>The following input/output (I/O) cards are supported:</p>
 </section>
@@ -146,17 +155,14 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 </section>
 <section id="nic"> <title>NIC</title>
 <ul>
+<li>Dell: Broadcom Corporation NetXtreme II BCM57810 10 Gigabit Ethernet (rev 10)</li>
 <li>HP Ethernet 10Gb 2-port 530SFP+ Adapter</li>
 <li>HP Ethernet 10Gb 2-port 530T Adapter</li>
 <li>HP NC552SFP 10Gb 2-port Ethernet Server Adapter</li>
 <li>HP Ethernet 10Gb 2-port 560SFP+ Adapter </li>
+<li>IBM: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)</li>
 </ul>
 </section>
-  <section>
-    <p> For more information about the supported independent stand up adapters, see <xref
-          href="1.1commercial.install-GA-supportmatrix_supportedIHVhardware.dita" type="section">HP
-          Helion OpenStack 1.1 and 1.1.1: Supported IHV Hardware.</xref></p>
-  </section>
 <section id="sas"> <title>SAS</title>
 <ul>
 <li>HP Smart Array P222/512 FBWC 6Gb 1-port Int/1-port Ext SAS Controller</li>
