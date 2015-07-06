@@ -117,7 +117,12 @@ hp3par_snapshot_expiration=72</codeblock>
                 A patch to support this feature is actively being worked upon. </p>
                 <p>Because of this issue, the data interface on the compute node does support balanced-xor bonding mode and Active/Standby modes. </p>     
         </section>
-
+        <section><title>LAG for the KVM region control plane does not work</title>
+    
+            <p>Link aggregation groups (LAG) are not supported in the the KVM region control plane.  LAGs allows multiple links to be bundled together 
+                for trunking and eliminating redundancy.</p>
+    
+        </section>
         <section>
             <title>SR-IOV limitations</title>
             <ul>
