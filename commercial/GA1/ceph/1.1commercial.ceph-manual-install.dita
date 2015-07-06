@@ -55,25 +55,14 @@
 <section id="setting-up-monitor-nodes"> <title>Setting up the monitor node</title>
 <p>Bootstrap the initial monitor(s) to deploying a Ceph Storage cluster by performing the following steps:</p>
 <ol>
-<li>
-<p>Log into monitor node as a root.</p>
-</li>
-<li>
-<p>Execute <codeph>apt-get install ceph</codeph>.</p>
-</li>
-<li>
-<p>To generate a unique <b>fsid</b>, enter:</p>
-
-<p>
-<codeph>uuidgen</codeph>
-</p>
-</li>
-<li>
-<p>Create the  <codeph>ceph.conf</codeph> file in the <codeph>/etc/ceph</codeph> directory as shown in the following example:
-    [global]</p>
-
-<codeblock>
-<codeph>fsid = 498afec5-57f0-4e48-9cf7-c8a5b89c1c80
+<li>Log into monitor node as a root.</li>
+<li>Execute <codeph>apt-get install ceph</codeph>.</li>
+<li>To generate a unique <b>fsid</b>, enter:<p>
+            <codeph>uuidgen</codeph>
+          </p></li>
+<li>Create the <codeph>ceph.conf</codeph> file in the <codeph>/etc/ceph</codeph> directory as shown
+          in the following example:
+          [global]<codeblock><codeph>fsid = 498afec5-57f0-4e48-9cf7-c8a5b89c1c80
 
 mon_initial_members = ceph-mon1 - monitor host name
 
@@ -88,128 +77,64 @@ auth_client_required = cephx
 filestore_xattr_use_omap = true
 
 osd journal size = 1024
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create a keyring for the cluster and generate a secret key for the monitor by entering.</p>
-
-<codeblock>
-<codeph>ceph-authtool --create-keyring /tmp/ceph.mon.keyring --gen-key -n mon. --cap mon 'allow *'
+</codeph></codeblock></li>
+<li>Create a keyring for the cluster and generate a secret key for the monitor by
+          entering.<codeblock><codeph>ceph-authtool --create-keyring /tmp/ceph.mon.keyring --gen-key -n mon. --cap mon 'allow *'
 
 ceph-authtool --create-keyring /tmp/ceph.mon.keyring --gen-key -n mon. --cap mon 'allow *'
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create an admin keyring, an admin user, and add the user to the keyring by entering.</p>
-
-<codeblock>
-<codeph>ceph-authtool --create-keyring /etc/ceph/ceph.client.admin.keyring --gen-key -n client.admin --set-uid=0 --cap mon 'allow *' --cap osd 'allow *' --cap mds 'allow'
+</codeph></codeblock></li>
+<li>Create an admin keyring, an admin user, and add the user to the keyring by
+          entering.<codeblock><codeph>ceph-authtool --create-keyring /etc/ceph/ceph.client.admin.keyring --gen-key -n client.admin --set-uid=0 --cap mon 'allow *' --cap osd 'allow *' --cap mds 'allow'
 
 ceph-authtool --create-keyring /etc/ceph/ceph.client.admin.keyring --gen-key -n client.admin --set-uid=0 --cap mon 'allow *' --cap osd 'allow *' --cap mds 'allow'
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Add the <codeph>cleint.admin</codeph> key to the <codeph>ceph.mon.keyring</codeph> by entering:</p>
-
-<codeblock>
-<codeph>ceph-authtool /tmp/ceph.mon.keyring --import-keyring /etc/ceph/ceph.client.admin.keyring
+</codeph></codeblock></li>
+<li>Add the <codeph>cleint.admin</codeph> key to the <codeph>ceph.mon.keyring</codeph> by
+          entering:<codeblock><codeph>ceph-authtool /tmp/ceph.mon.keyring --import-keyring /etc/ceph/ceph.client.admin.keyring
 
 ceph-authtool /tmp/ceph.mon.keyring --import-keyring /etc/ceph/ceph.client.admin.keyring
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Generate a monitor map using the monitor hostname, IP and fsid and save it as <codeph>/tmp/monmap</codeph> by entering:</p>
-
-<codeblock>
-<codeph>monmaptool --create --add {hostname} {ip-address} --fsid {uuid} /tmp/monmap
+</codeph></codeblock></li>
+<li>Generate a monitor map using the monitor hostname, IP and fsid and save it as
+            <codeph>/tmp/monmap</codeph> by
+          entering:<codeblock><codeph>monmaptool --create --add {hostname} {ip-address} --fsid {uuid} /tmp/monmap
 monmaptool --create --add ceph-mon1 192.x.x.x --fsid 498afec5-57f0-4e48-9cf7-c8a5b89c1c80 /tmp/monmap
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create a default data directory by entering:</p>
-
-<codeblock>
-<codeph>sudo mkdir /var/lib/ceph/mon/{cluster-name}-{hostname}
+</codeph></codeblock></li>
+<li>Create a default data directory by
+          entering:<codeblock><codeph>sudo mkdir /var/lib/ceph/mon/{cluster-name}-{hostname}
 mkdir /var/lib/ceph/mon/ceph-ceph-mon1
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Populate the monitor daemon with the monitor map and keyring by entering.</p>
-
-<codeblock>
-<codeph>ceph-mon --mkfs -i {hostname} --monmap /tmp/monmap --keyring /tmp/ceph.mon.keyring
+</codeph></codeblock></li>
+<li>Populate the monitor daemon with the monitor map and keyring by
+          entering.<codeblock><codeph>ceph-mon --mkfs -i {hostname} --monmap /tmp/monmap --keyring /tmp/ceph.mon.keyring
 ceph-mon --mkfs -i mon1 --monmap /tmp/monmap --keyring /tmp/ceph.mon.keyring
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Touch the completed file by entering.</p>
-
-<codeblock>
-<codeph>sudo touch /var/lib/ceph/mon/{cluster-name}-{hostname}/upstart
+</codeph></codeblock></li>
+<li>Touch the completed file by
+          entering.<codeblock><codeph>sudo touch /var/lib/ceph/mon/{cluster-name}-{hostname}/upstart
 
 touch /var/lib/ceph/mon/ceph-ceph-mon1/done
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Verify that the monitor daemon is running and verifying output by entering:</p>
-
-<codeblock>
-<codeph>ps aux | grep ceph
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Update the <codeph>ceph.conf</codeph> file as shown below:</p>
-
-<codeblock>
-<codeph>[mon.ceph-mon1]
+</codeph></codeblock></li>
+<li>Verify that the monitor daemon is running and verifying output by
+          entering:<codeblock><codeph>ps aux | grep ceph
+</codeph></codeblock></li>
+<li>Update the <codeph>ceph.conf</codeph> file as shown
+          below:<codeblock><codeph>[mon.ceph-mon1]
 
 host = ceph-mon1
 
 mon addr = 192.x.x.x
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Start monitor daemon by entering:</p>
-
-<codeblock>
-<codeph>sudo /etc/init.d/ceph start mon.node1
+</codeph></codeblock></li>
+<li>Start monitor daemon by
+          entering:<codeblock><codeph>sudo /etc/init.d/ceph start mon.node1
 
 /etc/init.d/ceph start mon.ceph-mon1
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Restart the monitor daemon by entering:</p>
-
-<codeblock>
-<codeph>/etc/init.d/ceph restart mon.ceph-mon1
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Verify that the Ceph default pools are created as shown below:</p>
-
-<codeblock>
-<codeph>ceph osd lspools
+</codeph></codeblock></li>
+<li>Restart the monitor daemon by
+          entering:<codeblock><codeph>/etc/init.d/ceph restart mon.ceph-mon1
+</codeph></codeblock></li>
+<li>Verify that the Ceph default pools are created as shown
+          below:<codeblock><codeph>ceph osd lspools
 0 data, 1 metadata, 2rbd,
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Verify that the monitor is running by entering:</p>
-
-<codeblock>
-<codeph>ceph -s
+</codeph></codeblock></li>
+<li>Verify that the monitor is running by
+          entering:<codeblock><codeph>ceph -s
 
 root@ceph-mon1gw1:/var/lib/ceph/mon# ceph -s
 cluster e0f2ad6b-588f-432c-99c1-d81f0f71cb77
@@ -220,9 +145,7 @@ osdmap e1: 0 osds: 0 up, 0 in
 pgmap v2: 192 pgs, 3 pools, 0 bytes data, 0 objects
     0 kB used, 0 kB / 0 kB avail
     192 creating
-</codeph>
-</codeblock>
-</li>
+</codeph></codeblock></li>
 </ol>
 </section>
 <section id="adding-osd"> <title>Adding Object Storage Daemons (OSDs)</title>
@@ -248,10 +171,8 @@ pgmap v2: 192 pgs, 3 pools, 0 bytes data, 0 objects
 <li>
 <p>SSH to OSD node</p>
 
-<codeblock>
-<codeph>ssh [node-name]
-</codeph>
-</codeblock>
+<codeblock><codeph>ssh [node-name]
+</codeph></codeblock>
 </li>
 </ul>
 <p>
@@ -266,11 +187,8 @@ pgmap v2: 192 pgs, 3 pools, 0 bytes data, 0 objects
 <p>200 [size of the disk]/13 [no of osd drives]= 15753 MB (approx) per disk. It is close to 15750M for each disk.</p>
 <ol>
 <li>Log in to OSD as root user.</li>
-<li>
-<p>Change the directory to <codeph>/etc/ceph</codeph> and enter:</p>
-
-<codeblock>
-<codeph>#fdisk /dev/sda
+<li>Change the directory to <codeph>/etc/ceph</codeph> and
+          enter:<codeblock><codeph>#fdisk /dev/sda
 
 Command (m for help): p
 Disk /dev/sda: 200.0 GB, 199992852480 bytes
@@ -304,14 +222,9 @@ Disk identifier: 0x000007d0
 Device Boot   Start   End    Blocks     Id  System
 
 /dev/sda1     2048 390611039 195304496 5 Extended
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>To create the second partition on the same disk, enter:</p>
-
-<codeblock>
-<codeph>Command (m for help): n
+</codeph></codeblock></li>
+<li>To create the second partition on the same disk,
+          enter:<codeblock><codeph>Command (m for help): n
 Partition type:
 p primary (0 primary, 1 extended, 3 free)
 l logical (numbered from 5)
@@ -335,14 +248,9 @@ Device Boot    Start    End   Blocks Id   System
 /dev/sda1      2048 390611039 195304496 5 Extended
 
 /dev/sda5      4096 32260095 16128000 83 Linux
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>To create the third partition on the same disk, enter:</p>
-
-<codeblock>
-<codeph>Command (m for help): n
+</codeph></codeblock></li>
+<li>To create the third partition on the same disk,
+          enter:<codeblock><codeph>Command (m for help): n
 Partition type:
 p primary (0 primary, 1 extended, 3 free)
 l logical (numbered from 5)
@@ -367,12 +275,8 @@ Device Boot    Start   End   Blocks  Id  System
 /dev/sda5      409632260095 16128000 83 Linux
 
 /dev/sda6      32262144 64518143 16128000 83 Linux
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Repeat this command for rest of the partition.</p>
-</li>
+</codeph></codeblock></li>
+<li>Repeat this command for rest of the partition.</li>
 </ol>
 <p>
   <b>Running fdisk on OSD data disk</b>
@@ -382,11 +286,8 @@ Device Boot    Start   End   Blocks  Id  System
 <b>Example</b>: <codeph>fdisk</codeph> runs on <codeph>/dev/sdc</codeph> that is 300G in size.</p>
 <ol>
 <li>Log in to OSD as root user.</li>
-<li>
-<p>Change the directory to <codeph>/etc/ceph</codeph> and enter:</p>
-
-<codeblock>
-<codeph>#fdisk /dev/sdc
+<li>Change the directory to <codeph>/etc/ceph</codeph> and
+          enter:<codeblock><codeph>#fdisk /dev/sdc
 
 Welcome to fdisk (util-linux 2.25.2).
 Changes will remain in memory only, until you decide to write them.
@@ -422,52 +323,29 @@ Command (m for help): w
 The partition table has been altered.
 Calling ioctl() to re-read partition table.
 Syncing disks.
-</codeph>
-</codeblock>
-</li>
+</codeph></codeblock></li>
 </ol>
 <p>
   <b>Setting up the OSD Node</b>
 </p>
 <p>To create an OSD and add it to cluster and CRUSH map, perform the following steps:</p>
 <ol>
-<li>
-<p>Log in to OSD host as root user. Connect to the OSD node.</p>
-
-<codeblock>
-<codeph>ssh [node-name]
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create the OSD and note the OSD number.</p>
-
-<codeblock>
-<codeph>ceph osd create
-</codeph>
-</codeblock>
-
-<p>For multiple physical drives, execute the  <codeph>ceph OSD create</codeph> command as many times as the number of OSDs.</p>
-</li>
-<li>
-<p>Consider the output of the OSD number from the above step to create a default directory by entering:</p>
-
-<codeblock>
-<codeph>mkdir /var/lib/ceph/osd/ceph-{osd-number}
-</codeph>
-</codeblock>
-
-<p>For example:</p>
-
-<codeblock>
-<codeph>`mkdir /var/lib/ceph/osd/ceph-0`
-</codeph>
-</codeblock>
-
-<p>The following example displays the commands ran in the script to create 13 directory matching the OSD daemon.</p>
-
-<codeblock>
-<codeph>#!/bin/bash
+<li>Log in to OSD host as root user. Connect to the OSD
+          node.<codeblock><codeph>ssh [node-name]
+</codeph></codeblock></li>
+<li>Create the OSD and note the OSD
+            number.<codeblock><codeph>ceph osd create
+</codeph></codeblock><p>For multiple physical
+            drives, execute the <codeph>ceph OSD create</codeph> command as many times as the number
+            of OSDs.</p></li>
+<li>Consider the output of the OSD number from the above step to create a default directory by
+            entering:<codeblock><codeph>mkdir /var/lib/ceph/osd/ceph-{osd-number}
+</codeph></codeblock><p>For
+            example:</p><codeblock><codeph>`mkdir /var/lib/ceph/osd/ceph-0`
+</codeph></codeblock><p>The
+            following example displays the commands ran in the script to create 13 directory
+            matching the OSD
+          daemon.</p><codeblock><codeph>#!/bin/bash
 
 mkdir /var/lib/ceph/osd/ceph-0
 mkdir /var/lib/ceph/osd/ceph-1
@@ -482,25 +360,18 @@ mkdir /var/lib/ceph/osd/ceph-9
 mkdir /var/lib/ceph/osd/ceph-10
 mkdir /var/lib/ceph/osd/ceph-11
 mkdir /var/lib/ceph/osd/ceph-12
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>If the OSD is for a drive other than the OS drive, prepare it for use with Ceph, and mount it to the directory you just created:</p>
-
-<codeblock>
-<codeph>mkfs -t {fstype} /dev/{hdd}
+</codeph></codeblock></li>
+<li>If the OSD is for a drive other than the OS drive, prepare it for use with Ceph, and mount it to
+          the directory you just
+          created:<codeblock><codeph>mkfs -t {fstype} /dev/{hdd}
 [fs-type can be {ext4|xfs|btrfs}]
-</codeph>
-</codeblock>
-</li>
+</codeph></codeblock></li>
 </ol>
 <p>Use <b>xfs</b> for better performance.</p>
 </section>
 <section id="script-to-create-xfs-file-system-on-partitioned-disks"> <title>Script to create xfs file system on partitioned disks</title>
 <p>The following example uses 13 drives in the system to create xfs file system.</p>
-<codeblock>
-  <codeph>#!/bin/bash
+<codeblock><codeph>#!/bin/bash
 mkfs.xfs -l logdev=/dev/sda5,size=2136997888 -f -i size=2048 /dev/sdb1
 mkfs.xfs -l logdev=/dev/sda6,size=2136997888 -f -i size=2048 /dev/sdc1
 mkfs.xfs -l logdev=/dev/sda7,size=2136997888 -f -i size=2048 /dev/sdd1
@@ -515,17 +386,14 @@ mkfs.xfs -l logdev=/dev/sda15,size=2136997888 -f -i size=2048 /dev/sdl1
 mkfs.xfs -l logdev=/dev/sda16,size=2136997888 -f -i size=2048 /dev/sdm1
 mkfs.xfs -l logdev=/dev/sda17,size=2136997888 -f -i size=2048 /dev/sdn1
 mount -o user_xattr /dev/{hdd} /var/lib/ceph/osd/ceph-{osd-number}
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Use the following command to mount</p>
-<codeblock>
-  <codeph>mount -o user_xattr /dev/{hdd} /var/lib/ceph/osd/ceph-{osd-number}
-</codeph>
-</codeblock>
-<p>
-<b>Note</b>: Save the following commands to a file and save as <codeph>mount.sh</codeph>. Make changes to the partitions as per your configuration and run <codeph>chmod +x mount.sh</codeph> and <codeph>./mount.sh</codeph>.</p>
-<codeblock>
-  <codeph>The following example mounts 13 drives to journal partitions.
+<codeblock><codeph>mount -o user_xattr /dev/{hdd} /var/lib/ceph/osd/ceph-{osd-number}
+</codeph></codeblock>
+      <note>Save the following commands to a file and save as <codeph>mount.sh</codeph>. Make
+        changes to the partitions as per your configuration and run <codeph>chmod +x
+          mount.sh</codeph> and <codeph>./mount.sh</codeph>.</note>
+<codeblock><codeph>The following example mounts 13 drives to journal partitions.
 
 #!/bin/bash
 mount -t xfs -o logdev=/dev/sda5 /dev/sdb1 /var/lib/ceph/osd/ceph-0/
@@ -541,17 +409,15 @@ mount -t xfs -o logdev=/dev/sda14 /dev/sdk1 /var/lib/ceph/osd/ceph-9/
 mount -t xfs -o logdev=/dev/sda15 /dev/sdl1 /var/lib/ceph/osd/ceph-10/
 mount -t xfs -o logdev=/dev/sda16 /dev/sdm1 /var/lib/ceph/osd/ceph-11/
 mount -t xfs -o logdev=/dev/sda17 /dev/sdn1 /var/lib/ceph/osd/ceph-12/
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <b>Initialize the OSD data directory</b>
 </p>
-<p>
-<b>Note</b>: Save the following commands to a file and save as <codeph>initialize.sh</codeph>. Make changes to the OSD number as per your configuration and  run <codeph>chmod +x initialize.sh</codeph> and <codeph>./initialize.sh</codeph>.</p>
+      <note>Save the following commands to a file and save as <codeph>initialize.sh</codeph>. Make
+        changes to the OSD number as per your configuration and run <codeph>chmod +x
+          initialize.sh</codeph> and <codeph>./initialize.sh</codeph>.</note>
 <p>To initialize the OSD data directory, enter:</p>
-<codeblock>
-  <codeph>ceph-osd -i {osd-num} --mkfs -mkkey
-
+<codeblock><codeph>ceph-osd -i {osd-num} --mkfs -mkkey
 
 The following example initializes 13 data directories.
 
@@ -569,21 +435,18 @@ ceph-osd -i 9 --mkfs --mkkey
 ceph-osd -i 10 --mkfs --mkkey
 ceph-osd -i 11 --mkfs --mkkey
 ceph-osd -i 12 --mkfs --mkkey
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <b>Register OSD authentication key</b>
 </p>
 <p>To register the OSD authentication key, enter:</p>
-<codeblock>
-  <codeph>    ceph auth add osd.{osd-num} osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-{osd-num}/keyring
-</codeph>
-</codeblock>
+<codeblock><codeph>ceph auth add osd.{osd-num} osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-{osd-num}/keyring
+</codeph></codeblock>
 <p>The following example registers 13 OSD authentication keys.</p>
-<p>
-<b>Note</b>: Save the following commands to a file and save as <codeph>auth.sh</codeph>.Update the entries based on your OSDs and run <codeph>chmod +x auth.sh</codeph> and <codeph>./auth.sh</codeph>.</p>
-<codeblock>
-  <codeph>#!/bin/bash
+      <note>Save the following commands to a file and save as <codeph>auth.sh</codeph>.Update the
+        entries based on your OSDs and run <codeph>chmod +x auth.sh</codeph> and
+          <codeph>./auth.sh</codeph>.</note>
+<codeblock><codeph>#!/bin/bash
 
 ceph auth add osd.0 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-0/keyring
 ceph auth add osd.1 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-1/keyring
@@ -598,50 +461,39 @@ ceph auth add osd.9 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/c
 ceph auth add osd.10 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-10/keyring
 ceph auth add osd.11 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-11/keyring
 ceph auth add osd.12 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-12/keyring
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <b>Add OSD node to CRUSH map</b>
 </p>
 <p>Add OSD node to CRUSH map by entering:</p>
-<codeblock>
-  <codeph>    ceph osd crush add-bucket {hostname} host
-</codeph>
-</codeblock>
+<codeblock><codeph>ceph osd crush add-bucket {hostname} host
+</codeph></codeblock>
 <p>The following example is the sample output of adding OSD node to CRUSH map:</p>
-<codeblock>
-  <codeph>    root@ftcceph1-osd1:/home/ceph# ceph osd crush add-bucket ftcceph1-osd1 host
-    added bucket ftcceph1-osd1 type host to crush map
-</codeph>
-</codeblock>
+<codeblock><codeph>root@ftcceph1-osd1:/home/ceph# ceph osd crush add-bucket ftcceph1-osd1 host
+ added bucket ftcceph1-osd1 type host to crush map
+</codeph></codeblock>
 <p>
   <b>Place OSD node under root default</b>
 </p>
 <p>Place the OSD node under root by default by entering:</p>
-<codeblock>
-  <codeph>ceph osd crush move {hostname} root=default
-</codeph>
-</codeblock>
+<codeblock><codeph>ceph osd crush move {hostname} root=default
+</codeph></codeblock>
 <p>The following example is the sample output of placing OSD node under root default:</p>
-<codeblock>
-  <codeph>root@ftcceph1-osd1:/home/ceph# ceph osd crush move ftcceph1-osd1 root=default
+<codeblock><codeph>root@ftcceph1-osd1:/home/ceph# ceph osd crush move ftcceph1-osd1 root=default
 moved item id -2 name 'ftcceph1-osd1' to location {root=default} in crush map
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <b>Add OSD node to CRUSH map for receiving data</b>
 </p>
 <p>Add the OSD node to the CRUSH map for receiving data by entering:</p>
-<codeblock>
-  <codeph>ceph osd crush add {id-or-name} {weight} [{bucket-type}={bucket-name} ...]
+<codeblock><codeph>ceph osd crush add {id-or-name} {weight} [{bucket-type}={bucket-name} ...]
 ceph osd crush add osd.0 1.0 host=ceph-osd1
-</codeph>
-</codeblock>
-<p>
-<b>Note</b>: Save the following commands to a file and save as <codeph>crush.sh</codeph>. Update the hostname after <codeph>host=</codeph> and run <codeph>chmod +x crush.sh</codeph> and <codeph>./crush.sh</codeph>.</p>
+</codeph></codeblock>
+      <note>Save the following commands to a file and save as <codeph>crush.sh</codeph>. Update the
+        hostname after <codeph>host=</codeph> and run <codeph>chmod +x crush.sh</codeph> and
+          <codeph>./crush.sh</codeph>.</note>
 <p>The following example adds 13 OSDs to the CRUSH map.</p>
-<codeblock>
-  <codeph>#!/bin/bash
+<codeblock><codeph>#!/bin/bash
 
 ceph osd crush add osd.0 1.0 host=ceph-osd1
 ceph osd crush add osd.1 1.0 host=ceph-osd1
@@ -656,23 +508,19 @@ ceph osd crush add osd.9 1.0 host=ceph-osd1
 ceph osd crush add osd.10 1.0 host=ceph-osd1
 ceph osd crush add osd.11 1.0 host=ceph-osd1
 ceph osd crush add osd.12 1.0 host=ceph-osd1
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>The following example is a sample output after executing the script:</p>
-<codeblock>
-  <codeph>root@ftcceph1-osd1:/home/ceph# ./crush.sh
+<codeblock><codeph>root@ftcceph1-osd1:/home/ceph# ./crush.sh
 add item id 0 name 'osd.0' weight 1 at location {host=ftcceph1-osd1} to crush map
 add item id 1 name 'osd.1' weight 1 at location {host=ftcceph1-osd1} to crush map
 add item id 2 name 'osd.2' weight 1 at location {host=ftcceph1-osd1} to crush map
 add item id 3 name 'osd.3' weight 1 at location {host=ftcceph1-osd1} to crush map
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <b>Updating ceph.conf file for each of the OSD nodes</b>
 </p>
 <p>Update the <codeph>ceph.conf</codeph> file as shown below for each of the OSD nodes. Also add the [global] section in <codeph>ceph.conf</codeph> files with file parameter <codeph>tunable</codeph> as listed in the <xref type="section" href="#topic42821/ceph-tunning">tunable</xref>.</p>
-<codeblock>
-  <codeph>[osd.0]
+<codeblock><codeph>[osd.0]
 host = ceph-osd1
 
 [osd.1]
@@ -680,34 +528,26 @@ host = ceph-osd1
 
 [osd.2]
 host = ceph-osd1
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Copy the new <codeph>ceph.conf</codeph> file to all the other nodes in the Ceph cluster.</p>
 <p>
   <b>Start OSD daemon</b>
 </p>
 <p>Start the OSD daemon by entering:</p>
-<codeblock>
-  <codeph>/etc/init.d/ceph start osd.0
-</codeph>
-</codeblock>
+<codeblock><codeph>/etc/init.d/ceph start osd.0
+</codeph></codeblock>
 <p>The above command must be started for each OSD daemon.</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>/etc/init.d/ceph start osd.1
+<codeblock><codeph>/etc/init.d/ceph start osd.1
 /etc/init.d/ceph start osd.2
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Ensure OSD created is up and in by verifying output of following:</p>
-<codeblock>
-  <codeph>ceph -w
-</codeph>
-</codeblock>
+<codeblock><codeph>ceph -w
+</codeph></codeblock>
 </section>
 <section id="setting-up-additional-osd-nodes"> <title>Setting up additional OSD nodes</title>
 <p>A healthy Ceph cluster needs at least 3 OSD nodes. (Follow steps similar to previous section to add additional nodes to form the quorum.) Update the <codeph>ceph.conf</codeph> file like that shown below before proceeding.</p>
-<codeblock>
-  <codeph>[osd.0]
+<codeblock><codeph>[osd.0]
 host = ceph-osd1
 [osd.1]
 host = ceph-osd1
@@ -720,11 +560,9 @@ host = ceph-osd3
 host = ceph-osd4
 
 ..
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Ensure Ceph health and status is <b>OK</b> by entering:</p>
-<codeblock>
-  <codeph>ceph health
+<codeblock><codeph>ceph health
 HEALTH_OK
 
 
@@ -738,8 +576,7 @@ root@ceph-mon1:/home/ceph# ceph -s
  pgmap v106607: 11456 pgs, 17 pools, 7878 MB data, 1319 kobjects
    83315 MB used, 99199 GB / 99280 GB avail
     11456 active+clean
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Repeat the above steps for each OSD node.</p>
 </section>
 <section id="osd-nodes-without-journal-partitions"> <title>OSD Nodes without journal partitions</title>
@@ -751,11 +588,8 @@ root@ceph-mon1:/home/ceph# ceph -s
 <p>For example: Execute <codeph>fdisk</codeph> on <codeph>/dev/sdc</codeph>, that is, 300 G in size.</p>
 <ol>
 <li>Log in to OSD as root user.</li>
-<li>
-<p>Change the directory to <codeph>/etc/ceph</codeph> and enter:</p>
-
-<codeblock>
-<codeph>#fdisk /dev/sdc
+<li>Change the directory to <codeph>/etc/ceph</codeph> and
+          enter:<codeblock><codeph>#fdisk /dev/sdc
 
 Welcome to fdisk (util-linux 2.25.2).
 Changes will remain in memory only, until you decide to write them.
@@ -791,52 +625,29 @@ The partition table has been altered
 
 Calling ioctl() to re-read partition table.
 Syncing disks.
-</codeph>
-</codeblock>
-</li>
+</codeph></codeblock></li>
 </ol>
 <p>
   <b>Setting up the OSD Node</b>
 </p>
 <p>To create an OSD and add it to cluster and CRUSH map, perform the following steps:</p>
 <ol>
-<li>
-<p>Log in to OSD host as root user. Connect to the OSD node.</p>
-
-<codeblock>
-<codeph>ssh [node-name]
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create the OSD and note the OSD number.</p>
-
-<codeblock>
-<codeph>ceph osd create
-</codeph>
-</codeblock>
-
-<p>For multiple physical drives, execute the  <codeph>ceph OSD create</codeph> command as many times as the number of OSDs.</p>
-</li>
-<li>
-<p>Consider the output of the OSD number from the above step to create a default directory by entering:</p>
-
-<codeblock>
-<codeph>mkdir /var/lib/ceph/osd/ceph-{osd-number}
-</codeph>
-</codeblock>
-
-<p>For example:</p>
-
-<codeblock>
-<codeph>mkdir /var/lib/ceph/osd/ceph-0
-</codeph>
-</codeblock>
-
-<p>The following example displays the commands ran in the script to create 13 directory matching the OSD daemon.</p>
-
-<codeblock>
-<codeph>#!/bin/bash
+<li>Log in to OSD host as root user. Connect to the OSD
+          node.<codeblock><codeph>ssh [node-name]
+</codeph></codeblock></li>
+<li>Create the OSD and note the OSD
+            number.<codeblock><codeph>ceph osd create
+</codeph></codeblock><p>For multiple physical
+            drives, execute the <codeph>ceph OSD create</codeph> command as many times as the number
+            of OSDs.</p></li>
+<li>Consider the output of the OSD number from the above step to create a default directory by
+            entering:<codeblock><codeph>mkdir /var/lib/ceph/osd/ceph-{osd-number}
+</codeph></codeblock><p>For
+            example:</p><codeblock><codeph>mkdir /var/lib/ceph/osd/ceph-0
+</codeph></codeblock><p>The
+            following example displays the commands ran in the script to create 13 directory
+            matching the OSD
+          daemon.</p><codeblock><codeph>#!/bin/bash
 
 mkdir /var/lib/ceph/osd/ceph-0
 mkdir /var/lib/ceph/osd/ceph-1
@@ -851,25 +662,18 @@ mkdir /var/lib/ceph/osd/ceph-9
 mkdir /var/lib/ceph/osd/ceph-10
 mkdir /var/lib/ceph/osd/ceph-11
 mkdir /var/lib/ceph/osd/ceph-12
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>If the OSD is for a drive other than the OS drive, prepare it for use with Ceph, and mount it to the directory you just created:</p>
-
-<codeblock>
-<codeph>mkfs -t {fstype} /dev/{hdd}
+</codeph></codeblock></li>
+<li>If the OSD is for a drive other than the OS drive, prepare it for use with Ceph, and mount it to
+          the directory you just
+          created:<codeblock><codeph>mkfs -t {fstype} /dev/{hdd}
 [fs-type can be {ext4|xfs|btrfs}]
-</codeph>
-</codeblock>
-</li>
+</codeph></codeblock></li>
 </ol>
 <p>Use <b>xfs</b> for better performance.</p>
 </section>
 <section id="script-to-create-xfs-file-system-on-partitioned-disks2"> <title>Script to create xfs file system on partitioned disks</title>
 <p>The following example uses 13 drives in the system to create xfs file system.</p>
-<codeblock>
-  <codeph>#!/bin/bash
+<codeblock><codeph>#!/bin/bash
 mkfs.xfs -l logdev=/dev/sda5,size=2136997888 -f -i size=2048 /dev/sdb1
 mkfs.xfs -l logdev=/dev/sda6,size=2136997888 -f -i size=2048 /dev/sdc1
 mkfs.xfs -l logdev=/dev/sda7,size=2136997888 -f -i size=2048 /dev/sdd1
@@ -884,16 +688,12 @@ mkfs.xfs -l logdev=/dev/sda15,size=2136997888 -f -i size=2048 /dev/sdl1
 mkfs.xfs -l logdev=/dev/sda16,size=2136997888 -f -i size=2048 /dev/sdm1
 mkfs.xfs -l logdev=/dev/sda17,size=2136997888 -f -i size=2048 /dev/sdn1
 mount -o user_xattr /dev/{hdd} /var/lib/ceph/osd/ceph-{osd-number}
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Use the following command to mount</p>
-<codeblock>
-  <codeph>mount -o user_xattr /dev/{hdd} /var/lib/ceph/osd/ceph-{osd-number}
-</codeph>
-</codeblock>
+<codeblock><codeph>mount -o user_xattr /dev/{hdd} /var/lib/ceph/osd/ceph-{osd-number}
+</codeph></codeblock>
 <p>The following example mounts 13 drives to journal partitions.</p>
-<codeblock>
-  <codeph>#!/bin/bash
+<codeblock><codeph>#!/bin/bash
 mount -t xfs -o logdev=/dev/sda5 /dev/sdb1 /var/lib/ceph/osd/ceph-0/
 mount -t xfs -o logdev=/dev/sda6 /dev/sdc1 /var/lib/ceph/osd/ceph-1/
 mount -t xfs -o logdev=/dev/sda7 /dev/sdd1 /var/lib/ceph/osd/ceph-2/
@@ -907,16 +707,15 @@ mount -t xfs -o logdev=/dev/sda14 /dev/sdk1 /var/lib/ceph/osd/ceph-9/
 mount -t xfs -o logdev=/dev/sda15 /dev/sdl1 /var/lib/ceph/osd/ceph-10/
 mount -t xfs -o logdev=/dev/sda16 /dev/sdm1 /var/lib/ceph/osd/ceph-11/
 mount -t xfs -o logdev=/dev/sda17 /dev/sdn1 /var/lib/ceph/osd/ceph-12/
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <b>Initialize the OSD data directory</b>
 </p>
-<p>
-<b>Note</b>: Save the following commands to a file and save as <codeph>initialize.sh</codeph>. Make changes to the OSD number as per your configuration and  run <codeph>chmod +x initialize.sh</codeph> and <codeph>./initialize.sh</codeph>.</p>
+      <note>Save the following commands to a file and save as <codeph>initialize.sh</codeph>. Make
+        changes to the OSD number as per your configuration and run <codeph>chmod +x
+          initialize.sh</codeph> and <codeph>./initialize.sh</codeph>.</note>
 <p>To initialize the OSD data directory, enter:</p>
-<codeblock>
-  <codeph>ceph-osd -i {osd-num} --mkfs -mkkey
+<codeblock><codeph>ceph-osd -i {osd-num} --mkfs -mkkey
 
 
 The following example initializes 13 data directories.
@@ -935,21 +734,18 @@ ceph-osd -i 9 --mkfs --mkkey
 ceph-osd -i 10 --mkfs --mkkey
 ceph-osd -i 11 --mkfs --mkkey
 ceph-osd -i 12 --mkfs --mkkey
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <b>Register OSD authentication key</b>
 </p>
 <p>To register the OSD authentication key, enter:</p>
-<codeblock>
-  <codeph>    ceph auth add osd.{osd-num} osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-{osd-num}/keyring
-</codeph>
-</codeblock>
+<codeblock><codeph>ceph auth add osd.{osd-num} osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-{osd-num}/keyring
+</codeph></codeblock>
 <p>The following example registers 13 OSD authentication keys.</p>
-<p>
-<b>Note</b>: Save the following commands to a file and save as <codeph>auth.sh</codeph>.Update the entries based on your OSDs and run <codeph>chmod +x auth.sh</codeph> and <codeph>./auth.sh</codeph>.</p>
-<codeblock>
-  <codeph>#!/bin/bash
+      <note>Save the following commands to a file and save as <codeph>auth.sh</codeph>.Update the
+        entries based on your OSDs and run <codeph>chmod +x auth.sh</codeph> and
+          <codeph>./auth.sh</codeph>.</note>
+<codeblock><codeph>#!/bin/bash
 
 ceph auth add osd.0 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-0/keyring
 ceph auth add osd.1 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-1/keyring
@@ -964,50 +760,39 @@ ceph auth add osd.9 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/c
 ceph auth add osd.10 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-10/keyring
 ceph auth add osd.11 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-11/keyring
 ceph auth add osd.12 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-12/keyring
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <b>Add OSD node to CRUSH map</b>
 </p>
 <p>Add OSD node to CRUSH map by entering:</p>
-<codeblock>
-  <codeph>    ceph osd crush add-bucket {hostname} host
-</codeph>
-</codeblock>
+<codeblock><codeph>ceph osd crush add-bucket {hostname} host
+</codeph></codeblock>
 <p>The following example is the sample output of adding OSD node to CRUSH map:</p>
-<codeblock>
-  <codeph>    root@ftcceph1-osd1:/home/ceph# ceph osd crush add-bucket ftcceph1-osd1 host
+<codeblock><codeph>root@ftcceph1-osd1:/home/ceph# ceph osd crush add-bucket ftcceph1-osd1 host
     added bucket ftcceph1-osd1 type host to crush map
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <b>Place OSD node under root default</b>
 </p>
 <p>Place the OSD node under root by default by entering:</p>
-<codeblock>
-  <codeph>ceph osd crush move {hostname} root=default
-</codeph>
-</codeblock>
+<codeblock><codeph>ceph osd crush move {hostname} root=default
+</codeph></codeblock>
 <p>The following example is the sample output of placing OSD node under root default:</p>
-<codeblock>
-  <codeph>root@ftcceph1-osd1:/home/ceph# ceph osd crush move ftcceph1-osd1 root=default
+<codeblock><codeph>root@ftcceph1-osd1:/home/ceph# ceph osd crush move ftcceph1-osd1 root=default
 moved item id -2 name 'ftcceph1-osd1' to location {root=default} in crush map
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <b>Add OSD node to CRUSH map for receiving data</b>
 </p>
 <p>Add the OSD node to the CRUSH map for receiving data by entering:</p>
-<codeblock>
-  <codeph>ceph osd crush add {id-or-name} {weight} [{bucket-type}={bucket-name} ...]
+<codeblock><codeph>ceph osd crush add {id-or-name} {weight} [{bucket-type}={bucket-name} ...]
 ceph osd crush add osd.0 1.0 host=ceph-osd1
-</codeph>
-</codeblock>
-<p>
-<b>Note</b>: Save the following commands to a file and save as <codeph>crush.sh</codeph>. Update the hostname after <codeph>host=</codeph> and run <codeph>chmod +x crush.sh</codeph> and <codeph>./crush.sh</codeph>.</p>
+</codeph></codeblock>
+      <note>Save the following commands to a file and save as <codeph>crush.sh</codeph>. Update the
+        hostname after <codeph>host=</codeph> and run <codeph>chmod +x crush.sh</codeph> and
+          <codeph>./crush.sh</codeph>.</note>
 <p>The following example adds 13 OSDs to the CRUSH map.</p>
-<codeblock>
-  <codeph>#!/bin/bash
+<codeblock><codeph>#!/bin/bash
 
 ceph osd crush add osd.0 1.0 host=ceph-osd1
 ceph osd crush add osd.1 1.0 host=ceph-osd1
@@ -1022,23 +807,19 @@ ceph osd crush add osd.9 1.0 host=ceph-osd1
 ceph osd crush add osd.10 1.0 host=ceph-osd1
 ceph osd crush add osd.11 1.0 host=ceph-osd1
 ceph osd crush add osd.12 1.0 host=ceph-osd1
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>The following example is a sample output after executing the script:</p>
-<codeblock>
-  <codeph>root@ftcceph1-osd1:/home/ceph# ./crush.sh
+<codeblock><codeph>root@ftcceph1-osd1:/home/ceph# ./crush.sh
 add item id 0 name 'osd.0' weight 1 at location {host=ftcceph1-osd1} to crush map
 add item id 1 name 'osd.1' weight 1 at location {host=ftcceph1-osd1} to crush map
 add item id 2 name 'osd.2' weight 1 at location {host=ftcceph1-osd1} to crush map
 add item id 3 name 'osd.3' weight 1 at location {host=ftcceph1-osd1} to crush map
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <b>Updating ceph.conf file for each of the OSD nodes</b>
 </p>
 <p>Update the <codeph>ceph.conf</codeph> file as shown below for each of the OSD nodes. Also add the [global] section in <codeph>ceph.conf</codeph> files with file parameter <codeph>tunable</codeph> as listed in the <xref type="section" href="#topic42821/ceph-tunning">tunable</xref>.</p>
-<codeblock>
-  <codeph>[osd.0]
+<codeblock><codeph>[osd.0]
 host = ceph-osd1
 
 [osd.1]
@@ -1046,34 +827,26 @@ host = ceph-osd1
 
 [osd.2]
 host = ceph-osd1
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Copy the new <codeph>ceph.conf</codeph> file to all the other nodes in the Ceph cluster.</p>
 <p>
   <b>Start OSD daemon</b>
 </p>
 <p>Start the OSD daemon by entering:</p>
-<codeblock>
-  <codeph>/etc/init.d/ceph start osd.0
-</codeph>
-</codeblock>
+<codeblock><codeph>/etc/init.d/ceph start osd.0
+</codeph></codeblock>
 <p>The above command must be started for each OSD daemon.</p>
 <p>Example:</p>
-<codeblock>
-  <codeph>/etc/init.d/ceph start osd.1
+<codeblock><codeph>/etc/init.d/ceph start osd.1
 /etc/init.d/ceph start osd.2
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Ensure OSD created is up and in by verifying output of following:</p>
-<codeblock>
-  <codeph>ceph -w
-</codeph>
-</codeblock>
+<codeblock><codeph>ceph -w
+</codeph></codeblock>
 </section>
 <section id="setting-up-additional-osd-nodes2"> <title>Setting up additional OSD nodes</title>
 <p>A healthy Ceph cluster needs at least 3 OSD nodes. (Follow steps similar to previous section to add additional nodes to form the quorum.) Update the <codeph>ceph.conf</codeph> file like that shown below before proceeding.</p>
-<codeblock>
-  <codeph>[osd.0]
+<codeblock><codeph>[osd.0]
 host = ceph-osd1
 [osd.1]
 host = ceph-osd1
@@ -1086,11 +859,9 @@ host = ceph-osd3
 host = ceph-osd4
 
 ..
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Ensure Ceph health and status is OK by entering:</p>
-<codeblock>
-  <codeph>ceph health
+<codeblock><codeph>ceph health
 HEALTH_OK
 
 
@@ -1104,14 +875,12 @@ root@ceph-mon1:/home/ceph# ceph -s
  pgmap v106607: 11456 pgs, 17 pools, 7878 MB data, 1319 kobjects
    83315 MB used, 99199 GB / 99280 GB avail
     11456 active+clean
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="file-system-tunning"> <title>File system tuning</title>
 <p>XFS Journal Partitions best reside on SSDs, with a discrete path and a Controller Cache. Additionally, specify One partition per data, and JBOD for the SSDs, with a ratio of one SSD to every four Data Partitions. Each XFS Data partition should be configured with rw, noatime, attr2, inode64, noquota. Additionally, you should also consider: nobarrier, logbsize=256k, logbufs=8, allocsize=4m.</p>
 <p>For long running Ceph Clusters, XFS fragmentation is useful to monitor and correct.</p>
-<codeblock>
-  <codeph>Fragmentation on /dev/sdb1 - osd3
+<codeblock><codeph>Fragmentation on /dev/sdb1 - osd3
 actual 22722, ideal 22557, fragmentation factor 0.73%
 Example - checks the fragmentation on 13 osd daemons.
 
@@ -1142,14 +911,12 @@ echo "Fragmentation on /dev/sdm1 - osd1"
 xfs_db -c frag -r /dev/sdm1
 echo "Fragmentation on /dev/sdn1 - osd1"
 xfs_db -c frag -r /dev/sdn1
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="ceph-tunning"> <title>Ceph tuning</title>
 <p>Ceph configuration file is shown below:</p>
 <p>Add the below file tunable parameters to support OSD in the <b>[global]</b> section on <codeph>ceph.conf</codeph> file.</p>
-<codeblock>
-  <codeph>[global]
+<codeblock><codeph>[global]
 
 fsid = xxxxxxxxxx
 
@@ -1221,14 +988,12 @@ host = ceph-osd1
 ...osd.4-37...
 [osd.38]
 host = ceph-osd3
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>
   <b>Relevant tuning parameters</b>
 </p>
 <p>Following are the relevant tuning parameters:</p>
-<codeblock>
-  <codeph>osd op threads = 8
+<codeblock><codeph>osd op threads = 8
 osd max backfills = 1
 osd recovery max active = 1
 filestore max sync interval = 100
@@ -1237,8 +1002,7 @@ filestore queue max ops = 2000
 filestore queue max bytes = 536870912
 filestore queue committing max ops = 2000
 filestore queue committing max bytes = 536870912
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="setting-up-additional-nodes"> <title>Setting up additional monitor nodes</title>
 <p>Ceph monitors are light-weight processes that maintains a master copy of the cluster map. For production clusters, we recommend at least 3 monitors and always advisable to run with odd number of monitors. And odd-number of monitors has a higher resiliency to failures than the even number monitors.</p>
@@ -1249,150 +1013,61 @@ filestore queue committing max bytes = 536870912
 <section id="adding-a-monitor-manual"> <title>Adding a monitor (manual)</title>
 <p>The following steps create a <codeph>ceph-mon</codeph> data directory, retrieves the monitor keyring and monmap, and adds a <codeph>ceph-mon</codeph> daemon to your cluster. You can add more monitors by repeating these steps to achieve a quorum.</p>
 <ol>
-<li>
-<p>Create a default directory on the second monitor machine</p>
-
-<codeblock>
-<codeph>ssh {new-mon-host}
+<li>Create a default directory on the second monitor
+            machine<codeblock><codeph>ssh {new-mon-host}
 sudo mkdir /var/lib/ceph/mon/ceph-{mon-id}
-</codeph>
-</codeblock>
-
-<p>For example:</p>
-
-<codeblock>
-<codeph># mkdir /var/lib/ceph/mon/ceph-ftcceph1-mon2
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create a temporary directory {temp} to keep files need during the process. This directory is different from the monitor's default directory.</p>
-
-<codeblock>
-<codeph>mkdir {tmp}
-</codeph>
-</codeblock>
-
-<p>For example:</p>
-
-<codeblock>
-<codeph>mkdir tmp
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Retrieve the keyring for your monitor.</p>
-
-<codeblock>
-<codeph>ceph auth get mon. -o {tmp}/{key-filename}
+</codeph></codeblock><p>For
+            example:</p><codeblock><codeph># mkdir /var/lib/ceph/mon/ceph-ftcceph1-mon2
+</codeph></codeblock></li>
+<li>Create a temporary directory {temp} to keep files need during the process. This directory is
+          different from the monitor's default
+            directory.<codeblock><codeph>mkdir {tmp}
+</codeph></codeblock><p>For
+          example:</p><codeblock><codeph>mkdir tmp
+</codeph></codeblock></li>
+<li>Retrieve the keyring for your
+            monitor.<codeblock><codeph>ceph auth get mon. -o {tmp}/{key-filename}
 {tmp} -&gt;is the path to the keyring
 {key-filename} is the name of the file that has monitor key.
-</codeph>
-</codeblock>
-
-<p>For example:</p>
-
-<codeblock>
-<codeph>ceph auth get mon. -o tmp/mon2keyring
-</codeph>
-</codeblock>
-
-<p>Expected output</p>
-
-<codeblock>
-<codeph>exported keyring for mon.
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Retrieve the monitor map. 
-    ceph mon getmap -o {tmp}/{map-filename}
-    {tmp} is the path to the monitor map
-    {map-filename} is the name of the file containing the monitor map
-For example: 
-    ceph mon getmap -o tmp/mon2monmap</p>
-
-<p>Expected output</p>
-
-<codeblock>
-<codeph>got monmap epoch 1
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Prepare the monitor's data directory created earlier.</p>
-
-<codeblock>
-<codeph>sudo ceph-mon -i {mon-id} --mkfs --monmap {tmp}/{map-filename} --keyring {tmp}/{key-filename}
-</codeph>
-</codeblock>
-
-<p>For example:</p>
-
-<codeblock>
-<codeph>ceph-mon -i ftcceph1-mon2 --mkfs --monmap tmp/mon2monmap --keyring tmp/mon2keyring
-</codeph>
-</codeblock>
-
-<p>Expected output</p>
-
-<codeblock>
-<codeph>ceph-mon: set fsid to 328d1702-67e7-4dfa-a0a9-77f0b96be57f
+</codeph></codeblock><p>For
+            example:</p><codeblock><codeph>ceph auth get mon. -o tmp/mon2keyring
+</codeph></codeblock><p>Expected
+            output</p><codeblock><codeph>exported keyring for mon.
+</codeph></codeblock></li>
+<li>Retrieve the monitor map. ceph mon getmap -o {tmp}/{map-filename} {tmp} is the path to the
+          monitor map {map-filename} is the name of the file containing the monitor map For example:
+          ceph mon getmap -o tmp/mon2monmap<p>Expected
+          output</p><codeblock><codeph>got monmap epoch 1
+</codeph></codeblock></li>
+<li>Prepare the monitor's data directory created
+            earlier.<codeblock><codeph>sudo ceph-mon -i {mon-id} --mkfs --monmap {tmp}/{map-filename} --keyring {tmp}/{key-filename}
+</codeph></codeblock><p>For
+            example:</p><codeblock><codeph>ceph-mon -i ftcceph1-mon2 --mkfs --monmap tmp/mon2monmap --keyring tmp/mon2keyring
+</codeph></codeblock><p>Expected
+            output</p><codeblock><codeph>ceph-mon: set fsid to 328d1702-67e7-4dfa-a0a9-77f0b96be57f
 ceph-mon: created monfs at /var/lib/ceph/mon/ceph-ftcceph1-mon2 for mon.ftcceph1-mon2
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Update <codeph>/etc/ceph/ceph.conf</codeph> file with the new monitor node details and push the updated <codeph>ceph.conf</codeph> file to all the nodes in the Ceph cluster.
-    [mon.mon-id]
-    host = new-mon-host
-    addr = ip-addr:6789</p>
-
-<p>Sample</p>
-
-<codeblock>
-<codeph>[mon.ftcceph1-mon2]
+</codeph></codeblock></li>
+<li>Update <codeph>/etc/ceph/ceph.conf</codeph> file with the new monitor node details and push the
+          updated <codeph>ceph.conf</codeph> file to all the nodes in the Ceph cluster. [mon.mon-id]
+          host = new-mon-host addr =
+          ip-addr:6789<p>Sample</p><codeblock><codeph>[mon.ftcceph1-mon2]
 host = ftcceph1-mon2
 mon addr = 192.168.51.52:6789
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Add the new monitor to the list of monitors and this will enable other nodes to use this monitor during start up. This command is run from the new added monitor.</p>
-
-<codeblock>
-<codeph>ceph mon add &lt;mon-id&gt; &lt;ip&gt;[:&lt;port&gt;]
-</codeph>
-</codeblock>
-
-<p>sample</p>
-
-<codeblock>
-<codeph>ceph mon add ftcceph1-mon2 192.168.51.52:6789
+</codeph></codeblock></li>
+<li>Add the new monitor to the list of monitors and this will enable other nodes to use this monitor
+          during start up. This command is run from the new added
+            monitor.<codeblock><codeph>ceph mon add &lt;mon-id&gt; &lt;ip&gt;[:&lt;port&gt;]
+</codeph></codeblock><p>sample</p><codeblock><codeph>ceph mon add ftcceph1-mon2 192.168.51.52:6789
 added mon.ftcceph1-mon2 at 192.168.51.52:6789/0
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Start the new monitor so it will automatically join the cluster.</p>
-
-<codeblock>
-<codeph>ceph-mon -i {mon-id} --public-addr {ip:port}
-</codeph>
-</codeblock>
-
-<p>sample</p>
-
-<codeblock>
-<codeph> ceph-mon -i ftcceph1-mon2 --public-addr 192.168.51.52:6789
-</codeph>
-</codeblock>
-</li>
+</codeph></codeblock></li>
+<li>Start the new monitor so it will automatically join the
+            cluster.<codeblock><codeph>ceph-mon -i {mon-id} --public-addr {ip:port}
+</codeph></codeblock><p>sample</p><codeblock><codeph> ceph-mon -i ftcceph1-mon2 --public-addr 192.168.51.52:6789
+</codeph></codeblock></li>
 </ol>
 <p>Follow the above steps for the 3rd monitor. Once the 3rd monitor is added to the cluster, run <codeph>ceph-w</codeph> and check the status of health state as "OK". A <codeph>HEALTH_WARN</codeph> clock skew message appears if the time is not in sync across all the Ceph cluster. It is always good to set NTP setup on all the ceph nodes so that the time is in sync.</p>
 <p>The following is the sample output of <codeph>HEALTH_WARN</codeph> clock skew warns</p>
-<codeblock>
-  <codeph>root@ftcceph1-mon3:/home/ceph# ceph -w
+<codeblock><codeph>root@ftcceph1-mon3:/home/ceph# ceph -w
  cluster 328d1702-67e7-4dfa-a0a9-77f0b96be57f
  health HEALTH_WARN clock skew detected on mon.ftcceph1-mon2, mon.ftcceph1-mon3
  monmap e3: 3 mons at {ftcceph1-mon1=192.168.51.51:6789/0,ftcceph1-mon2=192.168.51.52:6789/0,ftcceph1-mon3=192.168.51.53:6789/0}, election epoch 6, quorum 0,1,2 ftcceph1-mon1,ftcceph1-mon2,ftcceph1-mon3
@@ -1400,8 +1075,7 @@ osdmap e122: 21 osds: 21 up, 21 in
 pgmap v2845: 3256 pgs, 17 pools, 3783 bytes data, 69 objects
   22389 MB used, 5844 GB / 5866 GB avail
    3256 active+clean
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="steps-to-setup-ntp-server"> <title>Steps to setup NTP server</title>
 <ol>
@@ -1409,22 +1083,17 @@ pgmap v2845: 3256 pgs, 17 pools, 3783 bytes data, 69 objects
 <li>Update <codeph>/etc/ntp.conf</codeph> file with your local NTP server across all the nodes in the Ceph cluster.</li>
 <li>Once <codeph>ntp.conf</codeph> file is updated, restart ntp service by running <codeph>/etc/init.d/ntp restart6</codeph>
 </li>
-<li>
-<p>Run <codeph>ntpq -p</codeph> to see the ntp server is listed.</p>
-
-<codeblock>
-<codeph>ntpq -p
+<li>Run <codeph>ntpq -p</codeph> to see the ntp server is
+          listed.<codeblock><codeph>ntpq -p
 remote refid st t when poll reach delay offset jitter
 =================================================
 192.168.51.21 .INIT. 16 u - 64 0 0.000 0.000 0.000
-</codeph>
-</codeblock>
-</li>
+</codeph></codeblock></li>
 </ol>
 <p>Sample <codeph>ntp.conf</codeph> file</p>
-<p>Note: Commented out server and added local ntp server and restrict under cryptographically authenticated section.</p>
-<codeblock>
-  <codeph>==========================================
+      <note>Commented out server and added local ntp server and restrict under cryptographically
+        authenticated section.</note>
+<codeblock><codeph>==========================================
 # /etc/ntp.conf, configuration for ntpd; see ntp.conf(5) for help
 driftfile /var/lib/ntp/ntp.drift
 
@@ -1476,11 +1145,9 @@ restrict 192.168.51.0 mask 255.255.255.0 notrust
 # If you want to listen to time broadcasts on your local subnet, de-comment the
 # next lines. Please do this only if you trust everybody on the network!
 ==========================================================
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Once the ntp server is configured and after the time is in sync across all the servers, the Ceph health will be in "OK" state.</p>
-<codeblock>
-  <codeph>ceph -w
+<codeblock><codeph>ceph -w
  cluster 328d1702-67e7-4dfa-a0a9-77f0b96be57f
  health HEALTH_OK
  monmap e3: 3 mons at {ftcceph1-mon1=192.168.51.51:6789/0,ftcceph1-mon2=192.168.51.52:6789/0,ftcceph1-mon3=192.168.51.53:6789/0}, election epoch 12, quorum 0,1,2 ftcceph1-mon1,ftcceph1-mon2,ftcceph1-mon3
@@ -1488,8 +1155,7 @@ restrict 192.168.51.0 mask 255.255.255.0 notrust
  pgmap v3238: 3256 pgs, 17 pools, 3783 bytes data, 69 objects
    22384 MB used, 5844 GB / 5866 GB avail
     3256 active+clean
-</codeph>
-</codeblock>
+</codeph></codeblock>
 </section>
 <section id="next-steps"> <title>Next Steps</title>
 <p>

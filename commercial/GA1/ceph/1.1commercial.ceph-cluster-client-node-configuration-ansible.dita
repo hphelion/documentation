@@ -72,8 +72,9 @@
 <xref type="section" href="#topic64701/volume-snapshot">Volume Snapshots</xref>
 </li>
 <li>
-<xref type="section" href="#topic64701/gateway-validation">Ceph RADOS gateway validation</xref>
-</li>
+        <xref type="section" href="#topic64701/gateway-validation">Ceph RADOS Gateway
+          Validation</xref>
+      </li>
 </ol>
 <section id="installing-ceph-solution"> <title>Installing the Ceph Solution</title>
 <p>To install the Ceph solution:</p>
@@ -342,9 +343,8 @@ controller2 ansible_ssh_private_key_file=seed-id_rsa.private
 <li>
 <codeph>seed-id_rsa.public</codeph> key is copied from the seed to the <codeph>ansible-playbooks</codeph> folder.</li>
 </ul>
-<p>
-<b>Note</b>: All three key ring permissions should be set to <b>sudo chmod 600 &lt;key&gt;</b>
-</p>
+      <note> All three key ring permissions should be set to <b>sudo chmod 600 &lt;key&gt;</b>
+      </note>
 <codeblock><codeph>4 -rw------- 1 hlinux hlinux 1676 Feb 24 07:46 cephadmin.pem 
 4 -rw------- 1 hlinux hlinux 1675 Feb 24 07:45 seed-id_rsa.private
 4 -rw------- 1 hlinux hlinux 393 Feb 24 07:45 seed-id_rsa.public
@@ -760,8 +760,8 @@ rbd children &lt;glance pool name&gt;/&lt;glance-image id&gt;@&lt;snap name&gt;
 <p>The Command Line Interface (CLI)</p>
 </li>
 </ul>
-<p>
-<b>Note</b>: For Cinder backup, the Cinder volume to be  backed up must be in a detached state. The volume should not be attached to any of the instances or Virtual Machines.</p>
+      <note>For Cinder backup, the Cinder volume to be backed up must be in a detached state. The
+        volume should not be attached to any of the instances or Virtual Machines.</note>
 </section>
 <section id="using-the-horizon-overcloud-dashboard2"> <title>Using the Horizon overcloud dashboard</title>
 <p>Create a volume backup  see <xref href="http://docs.openstack.org/user-guide/content/dashboard_manage_volumes.html" scope="external" format="html" >OpenStack User Guide</xref>
@@ -1094,8 +1094,8 @@ tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
 <p>The Command Line Interface (CLI)</p>
 </li>
 </ul>
-<p>
-<b>Note</b>: For Cinder backups, the Cinder volume to be backed up must be in a detached state. The volume should not be attached to any of the instances or Virtual Machines.</p>
+      <note>For Cinder backups, the Cinder volume to be backed up must be in a detached state. The
+        volume should not be attached to any of the instances or Virtual Machines.</note>
 </section>
 <section id="using-the-horizon-overcloud-dashboard4"> <title>Using the Horizon Overcloud dashboard</title>
 <ol>

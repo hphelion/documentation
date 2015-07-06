@@ -206,10 +206,11 @@ orchestration.py
 <p>
 <b>OS    _AUTH_URL</b> is the Undercloud IP. For example: <b>http://192.168.51.23:5000/v2.0</b>.</p>
 <p>
-<b>keypair</b> for "cephadmin". You generate this from the Undercloud node using <b>nova keypair-add cephadmin &gt; cephadmin.pem</b>
-</p>
-<p>
-<b>Note</b>: To enable login to other nodes, provide 600 permission to the <codeph>cephadmin.pem</codeph> key. Execute <codeph>chmod 600 cephadmin.pem</codeph> command to update the permission.</p>
+        <b>keypair</b> for "cephadmin". You generate this from the Undercloud node using <b>nova
+          keypair-add cephadmin &gt; cephadmin.pem</b>
+        <note>To enable login to other nodes, provide 600 permission to the
+            <codeph>cephadmin.pem</codeph> key. Execute <codeph>chmod 600 cephadmin.pem</codeph>
+          command to update the permission.</note></p>
 <p>
 <b>netid</b>: Execute <codeph>nova network-list</codeph> from the Undercloud to get the <codeph>netid</codeph>. For example: <b>823ad730-6c69-42e6-b455-8a8173ceae81</b>.</p>
 <p>You can verify that the <codeph>pem</codeph> file is present in Undercloud node by:</p>
@@ -227,11 +228,12 @@ total 12
 </codeph></codeblock></li>
 </ol>
 </section>
-<section id="running-provision-tool"> <title>Running the Provisioning Tool</title>
-<p>To start the provisioning tool:</p>
-<ol>
-<li>Open a new terminal.</li>
-<li>Log into the seed VM and launch a server from the
+<section id="running-provision-tool">
+      <title>Running the Provisioning Tool</title>
+      <p>To start the provisioning tool:</p>
+      <ol>
+        <li>Open a new terminal.</li>
+        <li>Log into the seed VM and launch a server from the
             <codeph>/helion-ceph/node-provisioner/server/</codeph> directory using the
             <codeph>./server.py</codeph> script.<p>When you start the server, the following
             information is
@@ -240,27 +242,30 @@ Bottle v0.13-dev server starting up (using WSGIRefServer())...
 Listening on http://192.168.51.22:8085/
 Hit Ctrl-C to quit.
 </codeph></codeblock></li>
-<li>Open another seed terminal window and modify the <codeph>orchestration.json</codeph> file in
-            <codeph>/helion-ceph/node-provisioner/client/orchestration.json</codeph>
-          <p>Your <codeph>baremetal.csv</codeph> inputs should match the flavor list. For example
-            you need to specify the right RAM, vCPUs, disk size in "GB" and version number.</p></li>
-</ol>
-<ul>
-<li>
-<p>Update the  <codeph>"ws_url"</codeph> with the URL of the seed node VM where  the server is running by entering:</p>
-
-<codeblock><codeph>"ws_url": "http://192.168.51.22:8085/"
+        <li>Open another seed terminal window and modify the <codeph>orchestration.json</codeph>
+          file in <codeph>/helion-ceph/node-provisioner/client/orchestration.json</codeph>
+          <p>
+            <ol id="ol_yl1_vjg_ps">
+              <li>
+                <p>Your <codeph>baremetal.csv</codeph> inputs should match the flavor list. For
+                  example you need to specify the right RAM, vCPUs, disk size in "GB" and version
+                  number.</p>
+              </li>
+            </ol>
+            <ul id="ul_nm1_vjg_ps">
+              <li>
+                <p>Update the <codeph>"ws_url"</codeph> with the URL of the seed node VM where the
+                  server is running by entering:</p>
+                <codeblock><codeph>"ws_url": "http://192.168.51.22:8085/"
 </codeph></codeblock>
-</li>
-<li>
-<p>Modify <codeph>imagepath</codeph> to include the path to images (deploy images + qcow + ramdisk + kernel) by entering:</p>
-
-<codeblock><codeph>"imagepath": "/helion-ceph/images/"
+              </li>
+              <li>
+                <p>Modify <codeph>imagepath</codeph> to include the path to images (deploy images +
+                  qcow + ramdisk + kernel) by entering:</p>
+                <codeblock><codeph>"imagepath": "/helion-ceph/images/"
 </codeph></codeblock>
-
-<p>For example, make changes to the following based on your setup.</p>
-
-<codeblock><codeph>{
+                <p>For example, make changes to the following based on your
+                  setup.<codeblock><codeph>{
 "authentication": {
        "ws_url": "http://192.168.51.22:8085/"
     },
@@ -294,14 +299,14 @@ Hit Ctrl-C to quit.
                "version" : "001"
            }
     }
-</codeph></codeblock>
-</li>
-</ul>
-<ol>
+</codeph></codeblock></p>
+              </li>
+            </ul>
+          </p></li>
         <li>Modify the <codeph>baremetal.csv</codeph> file in
             <codeph>/helion-ceph/node-provisioner/client/</codeph> to include the details of the
-          node. The following is an
-            example:<codeblock><codeph>f0:92:1c:05:57:30,helioncsel,m0ng00s3,10.1.67.123,2,16384,200,overcloud-ceph-cluster,c1mon1,002
+          node. The following is an example:
+            <codeblock><codeph>f0:92:1c:05:57:30,helioncsel,m0ng00s3,10.1.67.123,2,16384,200,overcloud-ceph-cluster,c1mon1,002
 f0:92:1c:05:bb:b0,helioncsel,m0ng00s3,10.1.67.124,2,16384,200,overcloud-ceph-cluster,c1mon2,002
 f0:92:1c:05:4c:10,helioncsel,m0ng00s3,10.1.67.125,2,16384,200,overcloud-ceph-cluster,c1mon3,002
 f0:92:1c:05:6c:78,helioncsel,m0ng00s3,10.1.67.126,2,16384,200,overcloud-ceph-cluster,c1gw1,002
@@ -315,15 +320,15 @@ f0:92:1c:05:7c:58,helioncsel,m0ng00s3,10.1.67.130,2,16384,200,overcloud-ceph-clu
               <codeph>baremetal.csv</codeph> file should match the flavor defined in
               <codeph>orchestration.json</codeph>. (The version number is set to 001 for all
             nodes.)</p></li>
-<li>Open another seed terminal window and from the seed node VM directory
+        <li>Open another seed terminal window and from the seed node VM directory
             <codeph>/helion-ceph/node-provisioner/client/</codeph>, launch the client by
           entering:<codeblock><codeph>python orchestration.py
 </codeph></codeblock></li>
-<li>To monitor this process, open a new terminal seed window and
+        <li> To monitor this process, open a new terminal seed window and
           run<codeblock><codeph>tail -f -50 /helion-ceph/node-provisioner/client/orchestration.log
 </codeph></codeblock></li>
-</ol>
-</section>
+      </ol>
+    </section>
 <section id="verify-instance"> <title>Verifying your Instance</title>
 <p>The provisioning tool takes about 10-15 minutes to provision a single baremetal node.</p>
 <p>Check the <codeph>nova list</codeph> to see if the instance goes from spawning  to active state. You should be able to SSH to the instance after 12 minutes once you run the script.</p>
@@ -356,8 +361,8 @@ hlinux@admin-overcloud-ceph-admin:~$
 </section>
 <section id="provisioning-additional-ceph-nodes"> <title>Provisioning Additional Ceph Nodes</title>
 <p>To add new nodes, create new <codeph>baremetal.csv</codeph> entries and follow the above provisioning steps.</p>
-<p>
-<b>Note</b>:  Do not append new entries to existing entries in  the <codeph>baremetal.csv</codeph> file or else the existing nodes will be reprovisioned.</p>
+      <note>Do not append new entries to existing entries in the <codeph>baremetal.csv</codeph> file
+        or else the existing nodes will be reprovisioned.</note>
 </section>
 <section id="next-steps"> <title>Next Steps</title>
 <p>
