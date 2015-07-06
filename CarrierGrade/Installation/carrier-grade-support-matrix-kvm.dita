@@ -160,9 +160,11 @@
     
     
     
-    
+<!--     
 <section id="board-management-network"> <title>Board Management Network</title>
 <p>The board management network is implemented on the internal L2 switch using a dedicated VLAN. Refer to Reference Logical Architecture on page 12 for further information on the internal L2 switch, and to The Board Management Network on page 38 for network planning details.</p>
+ -->
+    <section>
 <p>
   <xref type="section" href="#topic8886"> Return to Top </xref>
 </p>
