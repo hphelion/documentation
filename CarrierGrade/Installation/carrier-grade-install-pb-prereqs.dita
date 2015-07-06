@@ -96,9 +96,9 @@
                                                 environment:<codeblock><codeph>PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export http_proxy=http://&lt;web_proxy_IP&gt;/
 export https_proxy=http://&lt;web_proxy_IP&gt;/
-export no_proxy=localhost,127.0.0.1,&lt;Ubuntu IP_address&gt;,&lt;provider_network&gt;
+export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address&gt;,&lt;provider_network&gt;
 </codeph></codeblock><p>Where:</p><codeblock>&lt;web_proxy_IP> is your web proxy IP address.
-&lt;Ubuntu IP_address&gt; is the IP address of the HLM Host</codeblock></li>
+&lt;HLM_host_IP_address is the IP address of the HLM Host</codeblock></li>
 <li>Source the <codeph>environments</codeph>
           file:<codeblock><codeph>source /etc/environment
 </codeph></codeblock></li>

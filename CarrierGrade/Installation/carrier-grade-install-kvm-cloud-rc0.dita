@@ -23,10 +23,8 @@
       <title>Bring Up Controller-0 in the KVM Region</title>
       <ol>
         <li>Make sure other nodes to be used in KVM region are shutdown.</li>
-        <li>Attach the <codeph>HP-HCG-Server-host-installer-15.05-b10.iso</codeph> to designated controller
-          node.
-         
-        </li>
+        <li>Use the <codeph>HP-HCG-Server-host-installer-15.05-b10.iso</codeph> to boot the controller node
+          <codeblock>mount HP-HCG-Server-host-installer-15.05-b10.iso</codeblock></li>
         <li>Follow the install wizard. Select the Graphics mode for the controller only. Do not
           select <codeph>Controller+Compute</codeph>.</li>
         <li>After the reboot, log in as user name <codeph>wrsroot</codeph> and password
