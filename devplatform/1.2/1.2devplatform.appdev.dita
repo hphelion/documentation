@@ -18,7 +18,6 @@
 </prolog>
 <body>
 <p>
-<!--PUBLISHED-->scope="external"
  <!--./devplatform/1.2/1.2devplatform.appdev.md-->
  <!--permalink: /helion/devplatform/1.2/appdev/--></p>
 <p>HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.</p>
@@ -28,16 +27,12 @@
 <ul>
 <li>HP Helion <tm tmtype="reg">OpenStack</tm> <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >cloud deployed</xref>. Note that the Helion Development Platform version 1.2 will only run on Helion OpenStack version 1.1.1.</li>
 <li>Application Lifecycle Service <xref href="../../devplatform/1.2/1.2devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
-
 <ul>
-<li>You can also quickly setup a cluster in the free and publicly available Helion cloud as part of
-              the <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952" type="section"  >Quick
-                Start Developer Trial</xref>: </li>
+<li>You can also quickly setup a cluster in the free and publicly available Helion cloud as part of the <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita#topic1952" type="section"  >Quick Start Developer Trial</xref>: </li>
 </ul>
 </li>
 <li>Logon and password credentials for the cluster.</li>
-<li>Access to the <xref href="../../devplatform/1.2/helion/user/client/1.2index.dita" >Helion command-line interface (CLI)</xref>
-</li>
+<li>Access to the <xref href="../../devplatform/1.2/helion/user/client/1.2index.dita" >Helion command-line interface (CLI)</xref></li>
 <li>(Optional) Access to the <xref href="../../devplatform/1.2/1.2devplatform.eclipse.dita" >Eclipse</xref> deployment plugin for JAVA applications.</li>
 </ul>
 </section>
