@@ -587,7 +587,7 @@
       <topicref href="devplatform/1.2/1.2devplatform.troubleshooting.dita" locktitle="yes"
         navtitle="Installation Troubleshooting"/>
       <topicref href="devplatform/1.2/1.2devplatform_uninstall.dita" locktitle="yes"
-        navtitle="Uninstallation"/>
+        navtitle="Uninstallation"/></topicref>
       <!--permalink: /helion/devplatform/1.2/upgrade/-->
       <!--permalink: /helion/devplatform/1.2/install/troubleshooting/-->
       <!--permalink: /helion/devplatform/1.2/marketplace/-->
