@@ -30,11 +30,7 @@
       <topicref href="commercial/GA1/1.1commercial.faq.dita" navtitle="FAQ" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.technical-overview.ga.dita" navtitle="Technical Overview" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.install-GA-supportmatrix.dita"
-        navtitle="Support Matrix" locktitle="yes">
-        <topicref
-          href="commercial/GA1/1.1commercial.install-GA-supportmatrix_supportedIHVhardware.dita"
-          navtitle="Supported IHV Hardware" locktitle="yes"/>
-      </topicref>
+        navtitle="Support Matrix" locktitle="yes"/>
       <!--set to toc=no later-->
     </topicref>
     <topicref href="commercial/GA1/Landing/1.1commercial.landing.install.dita" navtitle="Installation" locktitle="yes">
