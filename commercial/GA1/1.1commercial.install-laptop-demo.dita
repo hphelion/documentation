@@ -208,7 +208,7 @@ ntpq -p
 <p>Extract the bits to <codeph>/root/work</codeph> folder:</p>
 
 <codeblock>
-<codeph>tar -xzvf ee_installer-VER.tgz -C /root/work
+<codeph>tar -xzvf ee_installer-VER.tgz -C /root
 </codeph>
 </codeblock>
 </li>
@@ -267,13 +267,13 @@ If your system is limited to 32 GB of memory you should create /root/vm_plan.csv
 <p>Run the following script to create the seed VM:</p>
 
 <p>
-<codeph>bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed 2&gt;&amp;1|tee seedvminstall.log</codeph>
+<codeph>bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed 2>&gt;&amp;1|tee seedvminstall.log</codeph>
 </p>
 
 <p>Alternatively, if you have specified your own vm_plan.csv:</p>
 
 <p>
-<codeph>bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed --vm-plan /root/vm_plan.csv 2&gt;&amp;1|tee seedvminstall.log</codeph>
+<codeph>bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed 2>&gt;&amp;1|tee seedvminstall.log</codeph>
 </p>
 
 <p>Successful seed creation will resemble the following example:</p>
