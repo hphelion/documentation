@@ -708,7 +708,10 @@ The physical cluster network can be shared by a number of logical networks, each
                 </tgroup>
 </table>
 <p>
-<b>Note:</b> You cannot build or rebuild the images. Direct editing of the Orchestration (Heat) templates is possible, but not supported. Configuration is limited to those items supported by the configuration tool and Horizon.</p>
+                <note>You cannot build or rebuild the images. Direct editing of the Orchestration
+                    (Heat) templates is possible, but not supported. Configuration is limited to
+                    those items supported by the configuration tool and Horizon.</note>
+            </p>
 <p>
 <xref href="../../commercial/GA1/1.1commercial.install-GA-overview.dita" >Learn more</xref> about installing and configuring HP Helion OpenStack</p>
 </section>
@@ -724,10 +727,11 @@ The physical cluster network can be shared by a number of logical networks, each
 <p>HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. VSA eliminates the need for external shared storage required to implement Block Storage features. VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.</p>
 <p>HP Helion OpenStack architecture diagram for Store Virtual volume type mapping</p>
 <p>
-  <image href="../../media/reference-architecture-StoreVirtual-volume-type-mapping.png"/>
-</p>
-<p>
-<b>Note:</b> Your HP Helion OpenStack installation can be configured <xref href="../../commercial/GA1/1.1commercial.install-3par.dita" >to use 3Par for block storage</xref>.</p>
+                <image
+                    href="../../media/reference-architecture-StoreVirtual-volume-type-mapping.png"
+                    /><note>Your HP Helion OpenStack installation can be configured <xref
+                        href="../../commercial/GA1/1.1commercial.install-3par.dita">to use 3Par for
+                        block storage</xref>.</note></p>
 </section>
 <section id="esx-hypervisor"> <title>ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support</title>
 <p>HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Compute node scheduler sees each cluster as compute and uses the same for scheduling a new instances.</p>
@@ -786,8 +790,8 @@ For more details on Ceph integration, refer to [HP Helion OpenStack Enterprise E
 <section id="centralized-logging"> <title>Centralized Logging</title>
 <p>Centralized logging is based on <xref href="http://logstash.net/" scope="external" format="html" >Logstash</xref>, <xref href="http://www.elasticsearch.org/" scope="external" format="html" >Elasticsearch</xref>, and <xref href="http://www.elasticsearch.org/guide/en/kibana/current/_dashboard_schema.html" scope="external" format="html" >Kibana Dashboard</xref> which is deployed in the undercloud server.</p>
 <p>Centralized logging helps the administrator triage and troubleshoot the distributed cloud deployment from the undercloud. The user is not required to access the several remote servers to view the individual log files.</p>
-<p>
-<b>Note:</b> Logging requires 4GB of disk space to make sure that all logging messages are retained. <!-- CORE-1964 --></p>
+            <note> Logging requires 4GB of disk space to make sure that all logging messages are
+                retained. <!-- CORE-1964 --></note>
 </section>
 <section id="monitoring"> <title>Monitoring</title>
 <p>The monitor that is bundled with Helion is the Icinga service, which runs in the undercloud and helps cloud administrators monitor the disk usage of Swift storage node(s).</p>

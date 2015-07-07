@@ -176,8 +176,8 @@
 </section>
 <section id="delete-backend"> <title>Delete backend</title>
 <p>This option removes the backend from the cloud.</p>
-<p>
-<b>Note</b>: Before you delete a backend, detach the volumes from the VM instance, as this backend will not be available once it is deleted.</p>
+      <note>Before you delete a backend, detach the volumes from the VM instance, as this backend
+        will not be available once it is deleted.</note>
 <ol>
 <li>
 <p>In the Configure Cloud page, click <b>StoreVirtual Backends</b> Tab to activate it.<!--A BR tag was used here in the original source.--> The page displays a list of backends.</p>

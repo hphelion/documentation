@@ -67,8 +67,9 @@
 </li>
 </ul>
 <section id="add-backend"> <title>Add backend</title>
-<p>
-<b>Note</b>: Ensure that you allocate only those CPGs that will be used by this cloud. Changing any attributes of the CPG after allocation, may disrupt cloud functionality if the corresponding change is not updated in Sirius.</p>
+            <note>Ensure that you allocate only those CPGs that will be used by this cloud. Changing
+                any attributes of the CPG after allocation, may disrupt cloud functionality if the
+                corresponding change is not updated in Sirius.</note>
 <ol>
 <li>
 <p>In the Configure Cloud page, click <b>StoreServ Backends</b> Tab to activate it.</p>

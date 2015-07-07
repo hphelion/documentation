@@ -77,8 +77,8 @@
 <li>1 Overcloud Controller VM </li>
 <li>1 Overcloud Swift VM</li>
 </ul>
-<p>
-<b>Note</b>: This special configuration is for demonstration purposes and some Helion OpenStack operations may not function correctly.</p>
+      <note>This special configuration is for demonstration purposes and some Helion OpenStack
+        operations may not function correctly.</note>
 <p>The recommended setup for the demo:</p>
 <ol>
 <li>A laptop running the cloud virtual installation</li>
@@ -94,8 +94,8 @@
 <li>
 <b>Diskspace</b>: Each VM has a <i>virtual disk</i> size of 512 GB. However, each VM may occupy from 16 GB to 27 GB, or more of real disk space on the host system. Diskspace usage grows over time. For this reason, you should ensure your system has enough free diskspace for the demo. </li>
 </ul>
-<p>
-<b>Note</b>: the steps outlined for a laptop with less memory have been tested on a laptop with Intel Core i7 processor, 32 GB of memory and a 512 GB disk.</p>
+      <note>The steps outlined for a laptop with less memory have been tested on a laptop with Intel
+        Core i7 processor, 32 GB of memory and a 512 GB disk.</note>
 </section>
 <section id="laptop-install"> <title>Laptop installation</title>
 <p>The following sections describe the basic steps required to install Ubuntu on a laptop computer. Ubuntu must be installed on a physical laptop and not on a virtual machine.</p>

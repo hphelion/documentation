@@ -39,8 +39,9 @@
 <li>Support for PowerDNS in the current version</li>
 </ul>
 <p>For example, if a user wants to access <i>mytestdomain.com</i> in a web browser, DNS provides the mechanism the browser uses to locate the server's IP address (for example, <codeph>1.2.3.4</codeph>).</p>
-<p>
-<b>Note:</b> Installing HP Helion OpenStack DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion OpenStack and verified that it is  correctly configured and operational.</p>
+    <note> Installing HP Helion OpenStack DNSaaS is optional. Before you attempt the DNSaaS
+      installation, you must have already installed HP Helion OpenStack and verified that it is
+      correctly configured and operational.</note>
 <p>Learn how to <xref href="../../commercial/GA1/1.1commercial.install-GA-DNSaaS.dita" >install DNS as a service</xref>.</p>
 <section id="key-terms"> <title>Key Terms</title>
 <p>Key terms include:</p>

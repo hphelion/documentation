@@ -29,8 +29,11 @@
 <p>The following lists of tasks can be performed by a user or administrator through the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HP Helion OpenStack Dashboard</xref>, the <xref href="http://api.openstack.org/api-ref-identity-v3.html" scope="external" format="html" >API</xref> or <xref href="http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html" scope="external" format="html" >CLI</xref>.</p>
 <section id="UI"> <title>Using the dashboards</title>
 <p>You can use the <xref href="../../commercial/GA1/1.1commercial.dashboard.how-works.dita" >HP Helion OpenStack Dashboard</xref> to work with the Identity service.</p>
-<p>
-<b>Note:</b> <xref href="../../commercial/GA1/1.1commerical.services-identity-domains.dita" >Domain management</xref> is not available using the Helion OpenStack Dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments.</p>
+      <note>
+        <xref href="../../commercial/GA1/1.1commerical.services-identity-domains.dita">Domain
+          management</xref> is not available using the Helion OpenStack Dashboard. This initial
+        implementation is targeted at sysadmins and developers interested in creating and deploying
+        Domains for initial proof of concept deployments.</note>
 <p>To use Keystone v3 in Horizon, manually change the settings. See <xref href="../../commercial/GA1/1.1commerical.services-identity-configure-v3.dita" >Configuring Horizon for Keystone v3</xref> for instructions and important restrictions.</p>
 <p>Depending upon your user type, <xref type="section" href="#topic5601/user">user</xref> or <xref type="section" href="#topic5601/admin">administrator</xref>, you can perform the following tasks.</p>
 </section>

@@ -121,7 +121,9 @@ After successful registration the vCenter server is displayed in the ESX vCenter
 <li>In <b>Gateway</b> box, enter the network gateway IP address.</li>
 </ul>
 </li>
-<li>Click <b>Done</b>. A message is displayed when the update is successful.<!--A BR tag was used here in the original source.--><b>Note</b>: The above information can be modified when no cluster exists in an activate state.</li>
+<li>Click <b>Done</b>. A message is displayed when the update is
+                successful.<!--A BR tag was used here in the original source.--><note>The above
+                information can be modified when no cluster exists in an activate state.</note></li>
 </ul>
 </li>
 </ol>

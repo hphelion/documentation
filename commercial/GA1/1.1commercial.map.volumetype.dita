@@ -157,8 +157,7 @@ volume_backend_name MyVolumeBackend
 <p>Click <b>Create</b> to create the extra volume type specs.</p>
 </li>
 </ol>
-<p>
-<b>Note</b>: Once the volume type is mapped to the backend, you can create volumes.</p>
+      <note>Once the volume type is mapped to the backend, you can create volumes.</note>
 <p>
   <xref href="#topic3936"> Return to Top </xref>
 </p>

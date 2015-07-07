@@ -110,9 +110,7 @@
 <ul>
 <li>
 <p>In the <b>Cluster Name</b> box, enter the StoreVirtual cluster name.</p>
-
-<p>
-<b>Note</b>: The cluster name is case sensitive</p>
+              <note>The cluster name is case sensitive</note>
 </li>
 <li>
 <p>In the <b>IP Address</b> box, enter the virtual IP address of the cluster.</p>
@@ -144,8 +142,9 @@
 </p>
 </section>
 <section id="edit-cluster"> <title>Edit a StoreVirtual cluster</title>
-<p>
-<b>Note</b>: Ensure that you edit the StoreVirtual cluster only if there are any updates made through the CMC for the selected cluster. After editing the details, the backend data should also be updated so that the Cinder configuration file has the updated cluster information.</p>
+      <note>Ensure that you edit the StoreVirtual cluster only if there are any updates made through
+        the CMC for the selected cluster. After editing the details, the backend data should also be
+        updated so that the Cinder configuration file has the updated cluster information.</note>
 <p>To edit a cluster, do the following:</p>
 <ol>
 <li>
@@ -174,8 +173,11 @@
 </section>
 <section id="unregister-cluster"> <title>Unregister a StoreVirtual cluster</title>
 <p>Unregistering a cluster will remove it from the cloud inventory.</p>
-<p>
-<b>Note</b>: When you unregister a cluster,the volumes from this cluster backend will no longer be available through Cinder. Ensure that you detach all relevant volumes and remove the backend associated with the cluster before unregistering. After unregistering the cluster, the backend data should also be updated so that the Cinder configuration file has the updated cluster information.</p>
+      <note>When you unregister a cluster,the volumes from this cluster backend will no longer be
+        available through Cinder. Ensure that you detach all relevant volumes and remove the backend
+        associated with the cluster before unregistering. After unregistering the cluster, the
+        backend data should also be updated so that the Cinder configuration file has the updated
+        cluster information.</note>
 <p>To unregister a cluster, do the following:</p>
 <ol>
 <li>
@@ -203,8 +205,8 @@
 </p>
 </section>
 <section id="unregister-multiple-clusters"> <title>Unregister multiple clusters</title>
-<p>
-<b>Note</b>: After unregistering the cluster, the backend data should also be updated so that the Cinder configuration file has the updated cluster information.</p>
+      <note>After unregistering the cluster, the backend data should also be updated so that the
+        Cinder configuration file has the updated cluster information.</note>
 <p>Use this option to unregister multiple clusters using a single command.</p>
 <ol>
 <li>

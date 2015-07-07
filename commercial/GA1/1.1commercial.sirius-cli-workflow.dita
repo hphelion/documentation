@@ -223,8 +223,8 @@ hplefthand_username=shausy
 +--------------+--------------------------------------+
 </codeph>
 </codeblock>
-<p>
-<b>Note</b>: For more than one iSCSI IP addresses, use a comma separated list . The ports can also be specified along with the IP addresses (separated by colon), if required.</p>
+      <note>For more than one iSCSI IP addresses, use a comma separated list . The ports can also be
+        specified along with the IP addresses (separated by colon), if required.</note>
 <p>
   <i>Example:</i>
 </p>

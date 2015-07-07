@@ -108,10 +108,11 @@ Confirm the root password. Press Enter.
 </li>
 
 
-<li>On the Finish the installation screen, select Continue and press Enter to reboot to the newly-installed HP Linux for HP Helion system. 
-Note: It may be necessary to remove or unmount the removable media before rebooting.
-  <image href="../../media/finishInstall.png" placement="break"/>
-</li>
+<li>On the Finish the installation screen, select Continue and press Enter to reboot to the
+        newly-installed HP Linux for HP Helion system. <note>It may be necessary to remove or
+          unmount the removable media before rebooting. </note><image
+          href="../../media/finishInstall.png" placement="break"/>
+      </li>
 
 <li>You now have a new HP Linux for HP Helion system. Logon with the username and password combination you created during install, or as 'root' with the password set during the install process. 
   <image href="../../media/done.jpg" placement="break"/>

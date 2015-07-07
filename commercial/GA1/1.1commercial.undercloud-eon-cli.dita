@@ -95,8 +95,7 @@
   <codeph># eon vcenter-add --name &lt;VCENTER_NAME&gt; --ip-address &lt;VCENTER_IP&gt; --username &lt;VCENTER_USERNAME&gt; --password &lt;VCENTER_PASSWORD&gt; --port &lt;VCENTER_PORT&gt;
 </codeph>
 </codeblock>
-<p>
-<b>Note</b>: HP Helion OpenStack supports three vCenters.</p>
+      <note> HP Helion OpenStack supports three vCenters.</note>
 <ul>
 <li>
 <p>--name &lt;VCENTER_NAME&gt;: Name of the vCenter [Required].</p>

@@ -293,18 +293,17 @@ neutron subnet-create vlan301 192.168.101.0/24 &amp;#45;gateway 192.168.101.1</c
 neutron net-delete vlan301</codeblock>
         </li>
       </ol>
-      <p><b>Note</b>: As administrator, you can create a VLAN network outside of your defined VLAN
-        by entering:
-        <codeblock>neutron net-create --provider:physical_network=physnet1 --provider:network_type=vlan --provider:segmentation_id=900 vlan900</codeblock></p> 
-<p>
-        <b>Note</b>: By default, Helion OpenStack 1.01, 1.1, and 1.1.1 Helion OpenStack creates a
+      <note>As administrator, you can create a VLAN network outside of your defined VLAN by
+        entering:
+        <codeblock>neutron net-create --provider:physical_network=physnet1 --provider:network_type=vlan --provider:segmentation_id=900 vlan900</codeblock></note>
+      <note>By default, Helion OpenStack 1.01, 1.1, and 1.1.1 Helion OpenStack creates a
           <codeph>default-net</codeph> and <codeph>ext-net</codeph> which take the first two VLAN
-        IDs from  your defined VLAN range. If you only define two VLANs for your Helion OpenStack
+        IDs from your defined VLAN range. If you only define two VLANs for your Helion OpenStack
         installation, you will not be able to create your provider network because
           <codeph>default-net</codeph> and <codeph>ext-net</codeph> have already consumed these two
         VLAN IDs. This is why you must first delete the <codeph>default-net</codeph> and
           <codeph>ext-net</codeph> to release the two VLAN IDs so you can create your provider
-        network. </p>
+        network. </note>
 <p>
   <xref href="#topic8003"> Return to Top </xref>
 </p>

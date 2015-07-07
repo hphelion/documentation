@@ -44,8 +44,11 @@
 <xref type="section" href="#topic6842/vm">Connect to the VMs</xref>
 </li>
 </ul>
-<p>
-<b>Note:</b> Several of the procedures in this document use the <codeph>nova start</codeph> command. If <codeph>nova start</codeph> fails with a message such as <i>ERROR (Conflict): Instance 9769893e in task_state powering-off. Cannot start while the instance is in this state. (HTTP 409)</i>, power on the node manually using the iLO console.</p>
+        <note>Several of the procedures in this document use the <codeph>nova start</codeph>
+            command. If <codeph>nova start</codeph> fails with a message such as <i>ERROR
+                (Conflict): Instance 9769893e in task_state powering-off. Cannot start while the
+                instance is in this state. (HTTP 409)</i>, power on the node manually using the iLO
+            console.</note>
 <section id="seed"> <title>Recover the seed</title>
 <ol>
 <li>

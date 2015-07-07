@@ -118,7 +118,10 @@ The page navigates to the HP Helion Product Catalog. Then, do the following:</p>
 <p>Click <b>Import</b> in the top-right corner of the page. An import dialog box is displayed.</p>
 </li>
 <li>
-<p>Click <b>Browse</b> to select and import the <b>.csu</b> file.<!--A BR tag was used here in the original source.-->The imported file is displayed in the Import dialog box.<!--A BR tag was used here in the original source.--><b>Note</b>: Only CSU files are supported.</p>
+<p>Click <b>Browse</b> to select and import the <b>.csu</b>
+            file.<!--A BR tag was used here in the original source.-->The imported file is displayed
+            in the Import dialog box.<!--A BR tag was used here in the original source.-->
+            <note>Only CSU files are supported.</note></p>
 </li>
 <li>
 <p>Click <b>Import</b>.<!--A BR tag was used here in the original source.-->The file is imported to your local cloud and displayed in the Updates and Extensions page.</p>

@@ -166,8 +166,7 @@ eth2,root,,10.22.170.28,6,32768,,OvercloudSwiftStorage,
 <li>The content of /root/.ssh</li>
 </ul>
 <p>When these components are backed up, make a compressed and encrypted tgz and send it in stream to the backup node.</p>
-<p>
-<b>Note:</b> Make sure there is sufficient disk space (at least 150GB) for the backup.</p>
+      <note>Make sure there is sufficient disk space (at least 150GB) for the backup.</note>
 <p>To back up these components:</p>
 <ol>
 <li>
@@ -551,8 +550,7 @@ Successfully pivoted
 </li>
 </ul>
 <p>When these components are backed up, make a compressed and encrypted TGZ file and copy the file to the backup node.</p>
-<p>
-<b>Note:</b> Make sure there is sufficient disk space (at least 150GB) for the backup.</p>
+      <note> Make sure there is sufficient disk space (at least 150GB) for the backup.</note>
 <p>To back up these components:</p>
 <ol>
 <li>
@@ -1151,8 +1149,9 @@ Successfully pivoted
 <xref type="section" href="#topic33045/oc2-rest">Restore Overcloud-2 and Swift Storage VMs</xref>
 </li>
 </ul>
-<p>
-<b>Note:</b> Some of the following steps are specific to the physical node where the seed VM runs. Do not use the following steps to install baremetal for nodes where the seed VM will not be running.</p>
+      <note>Some of the following steps are specific to the physical node where the seed VM runs. Do
+        not use the following steps to install baremetal for nodes where the seed VM will not be
+        running.</note>
 </section>
 <section id="pre"> <title>Prerequisites</title>
 <p>Before starting the restore process, make sure the system you are using meets the following requirements:</p>
@@ -1372,8 +1371,7 @@ BM_NETWORK_CIDR=&lt;Netmask&gt;
 <section id="oc1-rest"> <title>Restore Overcloud Controller-1 and Swift Storage-0</title>
 <p>Use the following steps to restore the physical KVM host where Overcloud Controller-1 and Swift Storage-0 VM will run.</p>
 <p>Make sure the system you are restoring to meets the <xref type="section" href="#topic33045/pre">Prerequisites</xref> and <xref type="section" href="#topic33045/hard">Hardware and software requirements</xref> before you start.</p>
-<p>
-<b>Note:</b> The restore will take approximately 4 hours.</p>
+      <note>The restore will take approximately 4 hours.</note>
 <ol>
 <li>
 <p>Log in as root to the system where you want to restore</p>
@@ -1504,8 +1502,7 @@ BM_NETWORK_CIDR=&lt;Netmask&gt;
 <section id="oc2-rest"> <title>Restore the overcloud controller-2 and Swift storage-1</title>
 <p>Use the following steps to restore the physical KVM host where overcloud Controller-2 and Swift Storage-1 VM will run.</p>
 <p>Make sure the system you are restoring to meets the <xref type="section" href="#topic33045/pre">Prerequisites</xref> and <xref type="section" href="#topic33045/hard">Hardware and software requirements</xref> before you start.</p>
-<p>
-<b>Note:</b> The restore will take approximately 3 hours.</p>
+      <note>The restore will take approximately 3 hours.</note>
 <ol>
 <li>
 <p>Log in as root to the system where you want to restore.</p>

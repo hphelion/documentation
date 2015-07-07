@@ -166,7 +166,11 @@
 <p>From the <b>Device Type</b> drop-down list, select the device type. For example: FC, iSCSI. <!--A BR tag was used here in the original source.--> By default, the device type is <b>FC</b>.</p>
 
 <p>
-<b>Note</b>: If the device type is selected as iSCSI and more than one iSCSI IP addresses need to be specified,  use a comma separated list for the same. You can also specify the ports alongwith the IP addresses (separated by colon), if required.</p>
+                <note> If the device type is selected as iSCSI and more than one iSCSI IP addresses
+                  need to be specified, use a comma separated list for the same. You can also
+                  specify the ports alongwith the IP addresses (separated by colon), if
+                  required.</note>
+              </p>
 
 <p>
 <i>For example:</i>
@@ -215,8 +219,9 @@
 </ol>
 </section>
 <section id="unregister-storeserv"> <title>Unregister a 3PAR StoreServ</title>
-<p>
-<b>Note</b>: Before you unregister the StoreServ, you need to unregister the CPG and remove the backend. Once the 3PAR is unregistered, neither the CPGs nor the volumes from these CPGs are accessible from the cloud.</p>
+      <note>Before you unregister the StoreServ, you need to unregister the CPG and remove the
+        backend. Once the 3PAR is unregistered, neither the CPGs nor the volumes from these CPGs are
+        accessible from the cloud.</note>
 <p>Use this option to unregister a StoreServ.</p>
 <ol>
 <li>
@@ -269,7 +274,8 @@
 <section id="registering-cpg"> <title>Register 3PAR StoreServ Common Provisioning Groups (CPGs)</title>
 <p>Once you register the 3PAR device, choose the CPGs for your cloud. CPG (Common Provisioning Group) is a fundamental unit that can be configured as a Cinder backend. A single HP 3PAR StoreServ may have multiple CPGs. You can choose and allocate them to the cloud as a per your requirement. <!---First register the CPG in Sirius and then configure the CPG as backend for overcloud Cinder service. You can register a few CPGs and allocate them as and when required. The Cinder configuration file is updated only during the allocation, the registeration of the CPG just updates the Sirius database.--></p>
 <p>
-<b>Note</b>: Only registered CPG(s) can be configured as a storage backend for Cinder.</p>
+        <note>Only registered CPG(s) can be configured as a storage backend for Cinder.</note>
+      </p>
 <p>To register the CPGs, do the following:</p>
 <ol>
 <li>
@@ -329,8 +335,8 @@
 </ol>
 </section>
 <section id="edit-cpg"> <title>Edit a CPG</title>
-<p>
-<b>Note</b>: You cannot edit a CPG that is in <i>'Reserved'</i> state. Ensure that you enter a CPG name that already exists on the 3PAR device when you edit the CPG details.</p>
+      <note>You cannot edit a CPG that is in <i>'Reserved'</i> state. Ensure that you enter a CPG
+        name that already exists on the 3PAR device when you edit the CPG details.</note>
 <p>To edit a CPG, do the following:</p>
 <ol>
 <li>

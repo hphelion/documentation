@@ -104,9 +104,7 @@
 &lt;&lt;&lt;&lt;&lt;
 </codeph>
 </codeblock>
-
-<p>
-<b>Note:</b> Replace &lt;flavor_name&gt; with the flavor created in Step 3</p>
+                    <note>Replace &lt;flavor_name&gt; with the flavor created in Step 3</note>
 </li>
 <li>
 <p>Complete the installation</p>

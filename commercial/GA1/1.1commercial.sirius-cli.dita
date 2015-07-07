@@ -170,9 +170,7 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
   <codeph># sirius storeserv-show [--cpg-list &lt;CPG_LIST_FLAG&gt;] &lt;STORESERV_ID&gt;
 </codeph>
 </codeblock>
-<p>
-  <b>Note:</b>
-</p>
+      <note/>
 <p>
 <i>Optional argument</i> --cpg-list &lt;true/false&gt; [Setting this to 'true' displays the available CPGs for the given StoreServ]</p>
 </section>
@@ -183,8 +181,8 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
 </codeph>
 </codeblock>
 <p>
-  <b>Note:</b>
-</p>
+        <note/>
+      </p>
 <p>
 <i>Additional arguments</i>: --iscsi-ip &lt;ISCSI_IP&gt; [required for iSCSI type devices]</p>
 <p>For more than one iSCSI IP addresses, use a comma separated list . The ports can also be specified along with the IP addresses (separated by colon), if required.</p>
@@ -199,16 +197,16 @@ Once you complete the undercloud and overcloud installation, you can use the Sir
   <codeph># sirius update-storeserv &lt;STORESERV_ID&gt;
 </codeph>
 </codeblock>
-<p>
-  <b>Note:</b>
-</p>
+      <note/>
 <p>
 <i>Optional Arguments</i>:   --name &lt;STORESERV_NAME&gt; --hostname &lt;STORESERV_IP&gt; --username &lt;USERNAME&gt; --password &lt;PASSWORD&gt; --port &lt;SSH_PORT&gt; --san-ip &lt;SAN_IP&gt; --san-username &lt;SAN_USERNAME&gt; --san-password &lt;SAN_PASSWORD&gt; --device-type &lt;DEVICE_TYPE&gt;</p>
 <p>
 <i>Additional arguments</i>: --iscsi-ip &lt;ISCSI_IP&gt; [<i>required for iSCSI type devices]</i>
 </p>
 <p>
-<b>Note</b>: Currently, CLI does not support the change of Device Type from <b>FC</b> to <b>ISCSI</b>.</p>
+        <note> Currently, CLI does not support the change of Device Type from <b>FC</b> to
+            <b>ISCSI</b>.</note>
+      </p>
 </section>
 <section id="delete-storeserv"> <title>Delete StoreServ</title>
 <p>You can unregister the StoreServ from Sirius.</p>
