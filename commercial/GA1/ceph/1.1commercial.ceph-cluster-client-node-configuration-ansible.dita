@@ -516,7 +516,7 @@ f0:92:1c:05:33:12,helioncsel,m0ng00s3,10.1.67.123,179,163840,200,overcloud-ceph-
 <li>
 <p>Run the Ansible playbook to add the new OSD nodes by entering:</p>
 
-<codeblock><codeph> ansible-playbook -i hosts osd_mon_setup.yml
+<codeblock><codeph> ansible-playbook -i hosts osd_mon_setup.yml --tags "add-osd"
 </codeph></codeblock>
 </li>
 <li>
