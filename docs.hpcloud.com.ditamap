@@ -1692,7 +1692,7 @@
           navtitle="PowerShell CLI Object Storage Examples" locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.folder-operations.dita"
           navtitle="PowerShell CLI Folder Operations" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.help.dita" navtitle="PowerShell CLI Help"
+        <topicref href="publiccloud/cli.windows.2.help.dita" navtitle="PowerShell CLI Getting Help"
           locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.misc.dita" navtitle="PowerShell CLI Misc Features"
           locktitle="yes"/>
