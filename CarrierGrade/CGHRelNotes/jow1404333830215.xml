@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6108">
-    <title>HP Helion OpenStack Carrier Grade 1.1: Release Notes</title>
+    <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Release Notes</title>
     <shortdesc>HP Helion OpenStack Carrier Grade is a high-performance, high-availability, cloud
         operating system that enables telecommunications operators to use Commercial-off-the-shelf
         (COTS) hardware to manage Virtualized Network Functions (VNF) within a carrier grade Network
@@ -25,7 +25,7 @@
         <ul><li><xref href="jow1404333830815.xml#topic6108"/></li>
                 <li><xref href="jow1404333831397.xml#topic6108"/></li>
                 <li><xref href="jow1404333831977.xml#topic6108"/></li>
-                <li><xref href="jow1430312565268.xml#jow1430312565268"/></li>
+            <li><xref href="jow1430312565268.xml#topic6108"/></li>
             
         </ul></p>
         
@@ -121,9 +121,6 @@
             <ul>
                 <li>
                     <p>two controllers</p>
-                </li>
-                <li>
-                    <p>two storage nodes</p>
                 </li>
                 <li>
                     <p>20 compute nodes with dual Intel(R) Xeon(R) CPU E5-2670 v2

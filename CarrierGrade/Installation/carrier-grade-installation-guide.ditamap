@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE bookmap-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River BookMap//EN" "bookmap-wr.dtd">
-<bookmap-wr domains="(map bookmap bookmap-wr)                          (topic delay-d)                          (map mapgroup-d)                          (topic indexing-d)                           (topic xnal-d)                          (topic hi-d)                           (topic pr-d)                           (topic sw-d)                          (topic ui-d)                          (topic wr-sw-d)                          (topic xml-d)                          a(loc  ixia_locid)                         " id="jow1404333828882" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
-    <!-- Modification History
- -->
-    <booktitle ixia_locid="1">
-        <mainbooktitle ixia_locid="114">Installing HP Helion OpenStack Carrier Grade</mainbooktitle>
-    </booktitle>
-    <bookmeta>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+    
+    <title> HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installation Guide</title>
+    <topicmeta>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>HP Helion</copyrholder>
+        </copyright>
         <prodinfo>
-            <prodname ixia_locid="28">HP Helion OpenStack Carrier Grade</prodname>
+            <prodname >HP Helion OpenStack Carrier Grade</prodname>
             <vrmlist>
                 <vrm release="1.1" version=""/>
             </vrmlist>
@@ -16,18 +16,15 @@
         <!-- bookid ixia_locid="133">
             <edition ixia_locid="134">Patch 0003</edition>
         </bookid -->
-    </bookmeta>
-    <chapter href="carrier-grade-install-pb-overview.dita" ixia_locid="57">
-        <topicmeta>
-            <navtitle ixia_locid="61">Installing HP Helion OpenStack Carrier Grade</navtitle>
-        </topicmeta>
-        
-        <topicref href="carrier-grade-install-pb-overview.dita">
+    </topicmeta>
+    <topicref href="carrier-grade-install-pb-overview.dita">
+     
+        <topicref href="carrier-grade-install-pb-overview.dita"/>
+        <topicref href="carrier-grade-technical-overview.dita"/>
         <topicref href="carrier-grade-support-matrix.dita">
             <topicref href="carrier-grade-support-matrix-non-kvm.dita"/>
             <topicref href="carrier-grade-support-matrix-kvm.dita"/>
         </topicref>
-        <topicref href="carrier-grade-technical-overview.dita"/>
         <topicref href="carrier-grade-install-pb-prereqs.dita">
             <topicref href="carrier-grade-install-pb-network-prepare.dita"/>
             <topicref href="carrier-grade-install-NTP.dita"/>
@@ -35,5 +32,4 @@
         <topicref href="carrier-grade-install-non-kvm.dita"/>
         <topicref href="carrier-grade-install-kvm-cloud-rc0.dita"/>
         <topicref href="carrier-grade-install-pb-workarounds.dita"/>
-        <topicref href="carrier-grade-install-pb-hlm-troubleshoot.dita"/>
-    </topicref></chapter></bookmap-wr>
+    </topicref></map>

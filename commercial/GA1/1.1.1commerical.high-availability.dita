@@ -280,7 +280,7 @@
 <li>OvercloudController2</li>
 </ol>
   <p>
-    The above services are deployed and activated on one of these Controllers. AutAutomated failover for these singleton services is not provided and in the event of irrecoverable failure of the management controller server, you must resort to de-commissioning the failed server from the control plane and deploying the management controller on a new server using instructions provided in the <xref href="../../../commercial/GA1/1.1commercial.backup-restore-GA.dita" >Backup and Restore</xref> document.
+    The above services are deployed and activated on one of these Controllers. AutAutomated failover for these singleton services is not provided and in the event of irrecoverable failure of the management controller server, you must resort to de-commissioning the failed server from the control plane and deploying the management controller on a new server using instructions provided in the <xref href="../../commercial/GA1/1.1commercial.backup-restore-GA.dita" >Backup and Restore</xref> document.
   </p>
 </section>
 <section id="cinder-volume"> <title>Cinder-volume</title>

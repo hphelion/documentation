@@ -54,7 +54,7 @@
 <!--  
   <p><xref format="html" href="javascript:window.open('/media/CGH-architecture-rc0.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" > </xref>
   Click to view larger image; click <b>Back</b> to return.</p> -->
-  <p>  <image href="../../media/CGH-architecture-rc0.png"/></p>
+  <p>  <image href="../../media/CGH-architecture-rc0.png" width="800"/></p>
 
 
 </section>
@@ -220,8 +220,7 @@
               <li>Two 1G interfaces (OAM)</li>
               <li>Two optional 1G or 10G interfaces (Infrastructure network)
                 NOTE: The controller-0 and controller-1 port configurations must be identical.</li></ul></entry>
-            <entry>
-            </entry>
+            
           </row>
           <row>
             <entry>Compute Node</entry>
@@ -316,7 +315,7 @@ Backup and restore scripts and procedures are provided for the seed VM, underclo
 
 Backup and Restore of VM instances/snapshots and volumes/snapshots for workloads in the cloud is supported using the Object Storage service.
 
-For more information see [HP Helion OpenStack Back Up and Restore](/helion/openstack/1.1/backup.restore/)
+For more information see [HP Helion OpenStack Back Up and Restore]
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top </a>
 -->
