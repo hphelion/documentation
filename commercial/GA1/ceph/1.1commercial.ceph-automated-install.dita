@@ -63,20 +63,9 @@
 <codeph>heartbeat-tool.tar</codeph>
 </li>
 </ul>
-<p>The ceph-automation tools are bundled into two tarball files:</p>
-<ul>
-<li>
-<codeph>cephsetup.tar</codeph>
-</li>
-<li>
-<codeph>cephconfiguration.tar</codeph>
-</li>
-</ul>
 </section>
 <section id="the-cephsetuptar-file"> <title>The cephsetup.tar file</title>
-<p>Download and copy the <codeph>cephsetup.tar</codeph> file to the Helion seed VM. Unzip the<!--A BR tag was used here in the original source.--><codeph>cephsetup.tar</codeph> file. This populates <codeph>cephsetup</codeph> folder which contains the following packages:</p>
-<!--
-The `cephsetup.tar` file is bundled with the following packages:-->
+<p>The <codeph>cephsetup.tar</codeph> file contains the following packages:</p>
 <ul>
 <li>
 <codeph>images</codeph>
@@ -93,17 +82,21 @@ The `cephsetup.tar` file is bundled with the following packages:-->
 <p>Ceph-automation provides two types of images:</p>
 <ul>
 <li>
-<codeph>ceph-admin-image</codeph> includes all the packages required to run configuration scripts. This image are used on Ceph admin node.</li>
+          <codeph>ceph-admin-image</codeph> includes all the packages required to run configuration
+          scripts. This image is used on the Ceph admin node.</li>
 <li>
 <p>
-<codeph>ceph-cluster-image</codeph> includes all the packages for setting up <codeph>ceph-monitor</codeph>, <codeph>ceph-osd</codeph> and <codeph>overcloud-ceph-rados</codeph> Gateway.</p>
+            <codeph>ceph-cluster-image</codeph> includes all the packages for setting up the
+              <codeph>ceph-monitor</codeph>,  the <codeph>ceph-osd</codeph> and  the
+              <codeph>overcloud-ceph-rados</codeph> Gateway.</p>
 
-<p>Except for the Ceph admin node, the <codeph>ceph-cluster-image</codeph> is shared across all the nodes participating in cluster.</p>
+<p>The <codeph>ceph-cluster-image</codeph> is shared across all the nodes participating in cluster
+            with the exception of the Ceph admin node.</p>
 </li>
 </ul>
 </section>
 <section id="helion-patch-package"> <title>helion-patch package</title>
-<p>The <codeph>helion-patch</codeph> includes:</p>
+<p>The <codeph>helion-patch</codeph> package includes:</p>
 <ul>
 <li>
 <codeph>hp_ced_check_deployed_images</codeph>
@@ -116,26 +109,32 @@ The `cephsetup.tar` file is bundled with the following packages:-->
 </ul>
 </section>
 <section id="node-provisioner-package"> <title>node-provisioner package</title>
+  <p>The <codeph>node-provisioner</codeph> package includes:</p>
+  <ul>
+    <li>
+      <codeph>client</codeph>
+    </li>
+    <li>
+      <codeph>server</codeph> </li>
+  </ul>
 <p>To deploy these images using the provisioning tool that runs from the seed VM:</p>
 <ol>
-        <li>Download the tar file from <xref href="https://helion.hpwsportal.com" scope="external"
-            format="html">https://helion.hpwsportal.com</xref>.</li>
         <li>Log into the Helion seed
           VM.<codeblock><codeph>ssh root @ &lt;seed IP address&gt;
 </codeph></codeblock></li>
         <li>Create a directory on any
-          location<codeblock><codeph>mkdir /helion-ceph
+          location.<codeblock><codeph>mkdir /helion-ceph
 </codeph></codeblock></li>
-        <li>Untar and copy the downloaded file to the <codeph>/helion-ceph</codeph> folder on the
-          seed VM. Untarring this file results in the follow directory structure:<ul>
+        <li>Untar and copy the downloaded <codeph>cephsetup.tar</codeph> file  to the
+            <codeph>/helion-ceph</codeph> folder on the seed VM. Untarring this file results in the
+          follow directory structure:<ul>
             <li>
               <codeph>images</codeph>
             </li>
             <li>
-              <codeph>node-provisioner</codeph>
-            </li>
-            <li>
               <codeph>helion-patch</codeph>
+            </li>
+            <li><codeph>node-provisioner</codeph>
             </li>
           </ul></li>
         <li>To view the contents of the <codeph>/helion-ceph/images</codeph> directory from the seed
@@ -172,7 +171,7 @@ orchestration.json
 orchestration.py
 </codeph></codeblock></li>
         <li>Modify <codeph>/server/server.json</codeph> to include OpenStack credentials from the
-          Undercloud (<codeph>stackrc</codeph>), network, and keypair that you want to use. The
+          Undercloud (<codeph>stackrc</codeph>), network, and the keypair that you want to use. The
           following is a sample of
           <codeph>server.json</codeph>:<codeblock><codeph>root@hLinux:~/helion-ceph/node-provisioner/server# cat server.json
 {
@@ -218,7 +217,7 @@ orchestration.py
 <li>Logging to the
           Undercloud.<codeblock><codeph># ssh heat-admin@&lt;undercloud IP address&gt;
 </codeph></codeblock></li>
-<li>Then enter.<codeblock><codeph>ls -ls
+<li>Then entering.<codeblock><codeph>ls -ls
 </codeph></codeblock><p>For
           example:</p><codeblock><codeph>root@undercloud-undercloud-zyjo2vylo3tb:~# ls -ls
 total 12
@@ -229,15 +228,15 @@ total 12
 </ol>
 </section>
 <section id="running-provision-tool">
-      <title>Running the Provisioning Tool</title>
+      <title>Running the provisioning tool</title>
       <p>To start the provisioning tool:</p>
       <ol>
         <li>Open a new terminal.</li>
         <li>Log into the seed VM and launch a server from the
             <codeph>/helion-ceph/node-provisioner/server/</codeph> directory using the
             <codeph>./server.py</codeph> script.<p>When you start the server, the following
-            information is
-          displayed.</p><codeblock><codeph>root@hLinux:~/helion-ceph/node-provisioner/server# ./server.py
+            information
+          displays:</p><codeblock><codeph>root@hLinux:~/helion-ceph/node-provisioner/server# ./server.py
 Bottle v0.13-dev server starting up (using WSGIRefServer())...
 Listening on http://192.168.51.22:8085/
 Hit Ctrl-C to quit.
@@ -254,8 +253,8 @@ Hit Ctrl-C to quit.
             </ol>
             <ul id="ul_nm1_vjg_ps">
               <li>
-                <p>Update the <codeph>"ws_url"</codeph> with the URL of the seed node VM where the
-                  server is running by entering:</p>
+                <p>Update the <codeph>"ws_url"</codeph> file with the URL of the seed node VM where
+                  the server is running by entering:</p>
                 <codeblock><codeph>"ws_url": "http://192.168.51.22:8085/"
 </codeph></codeblock>
               </li>
@@ -305,7 +304,7 @@ Hit Ctrl-C to quit.
           </p></li>
         <li>Modify the <codeph>baremetal.csv</codeph> file in
             <codeph>/helion-ceph/node-provisioner/client/</codeph> to include the details of the
-          node. The following is an example:
+          node. For example:
             <codeblock><codeph>f0:92:1c:05:57:30,helioncsel,m0ng00s3,10.1.67.123,2,16384,200,overcloud-ceph-cluster,c1mon1,002
 f0:92:1c:05:bb:b0,helioncsel,m0ng00s3,10.1.67.124,2,16384,200,overcloud-ceph-cluster,c1mon2,002
 f0:92:1c:05:4c:10,helioncsel,m0ng00s3,10.1.67.125,2,16384,200,overcloud-ceph-cluster,c1mon3,002

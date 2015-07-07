@@ -669,7 +669,7 @@
         navtitle="Using the Database Service"/>
       <!--permalink: /helion/devplatform/1.2/messageservice/-->
       <topicref href="devplatform/1.2/1.2devplatform.using-the-messaging-service.dita"
-        locktitle="yes" navtitle="Using the RabbitMQ Messaging Service"/>
+        locktitle="yes" navtitle="Using the Messaging Service"/>
       <!--permalink: /helion/devplatform/1.2/msgaas/als/-->
       <topicref href="devplatform/1.2/1.2devplatform.using-messaging-service-with-ALS.dita"
         locktitle="yes" navtitle="Using the Messaging Service with ALS"/>
@@ -1802,7 +1802,7 @@
           navtitle="PowerShell CLI Object Storage Examples" locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.folder-operations.dita"
           navtitle="PowerShell CLI Folder Operations" locktitle="yes"/>
-        <topicref href="publiccloud/cli.windows.2.help.dita" navtitle="PowerShell CLI Help"
+        <topicref href="publiccloud/cli.windows.2.help.dita" navtitle="PowerShell CLI Getting Help"
           locktitle="yes"/>
         <topicref href="publiccloud/cli.windows.2.misc.dita" navtitle="PowerShell CLI Misc Features"
           locktitle="yes"/>

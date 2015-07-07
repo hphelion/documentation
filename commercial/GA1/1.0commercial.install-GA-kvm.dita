@@ -54,7 +54,7 @@
 <xref type="section" href="#topic10604/proxy">Configure proxy information</xref>
 </li>
 <li>
-<xref type="section" href="#topic10604/startseed">Install the seed VM and building your cloud</xref>
+<xref type="section" href="#topic10604/startseed">Install the seed VM and build your cloud</xref>
 </li>
 </ul>
 </li>
@@ -109,7 +109,7 @@
 <xref type="section" href="#topic10604/proxy">Configure proxy information</xref>
 </li>
 <li>
-<xref type="section" href="#topic10604/startseed">Install the seed VM and building your cloud</xref>
+<xref type="section" href="#topic10604/startseed">Install the seed VM and build your cloud</xref>
 </li>
 </ul>
 </section>
@@ -147,7 +147,7 @@ export no_proxy=localhost,127.0.0.1,&lt;your 10.x IP address&gt;
 <p>Make sure you are logged into the seed VM host as root. If not:</p>
 
 <codeblock>
-<codeph>sudo su -
+<codeph>sudo -i
 </codeph>
 </codeblock>
 </li>

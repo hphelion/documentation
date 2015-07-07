@@ -1,70 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6516">
-  <title>HP Helion Public Cloud CLI Software for Windows PowerShell Installation</title>
-  <prolog>
-    <metadata>
-      <othermeta name="layout" content="default"/>
-    </metadata>
-  </prolog>
-  <body>
-    <p>
-      <!--PUBLISHED-->
-      <!--./publiccloud/cli.windows.2.installation.md-->
-      <!--permalink: /publiccloud/cli/windows/installation/--></p>
-    <p>To get the HP Helion Public Cloud CLI Software for Windows PowerShell installed and running properly you must complete the following tasks:</p>
-    <ul>
-      <li>
-        <xref type="section" href="#topic6516/InstallationPrerequisites">Installation prerequisites</xref>
-      </li>
-      <li>
-        <xref type="section" href="#topic6516/RuntheInstallerPackage">Run the installer package</xref>
-      </li>
-      <li>
-        <xref type="section" href="#topic6516/ChooseExecutable">Choose the appropriate Windows PowerShell executable</xref>
-      </li>
-      <li>
-        <xref type="section" href="#topic6516/SupplyyourCredentials">Supply your credentials</xref>
-      </li>
-      <li>
-        <xref type="section" href="#topic6516/NavigatetotheCommandLine">Navigate to the command line</xref>
-      </li>
-      <li><xref href="#topic6516/LoadingtheShellandModuleRegistration" format="dita"/></li>
-      <li>
-        <xref type="section" href="#topic6516/Upgrading">#Upgrade to a new version</xref>
-      </li>
-    </ul>
-    <p>This page also describes how to <xref type="section" href="#topic6516/Upgrading">upgrade to a new version</xref> of the Windows CLI software.</p>
-    <p>
-      <xref href="../file/WinCLI-2.1.1.2.zip" scope="external" format="html" >Please download the latest version of the HP Helion Public Cloud CLI software package for Windows PowerShell here (Version 2.1.1.2)</xref>!</p>
-    <section id="InstallationPrerequisites"> <title>Installation prerequisites</title>
-      <p>The following are prerequisites for installing and running the HP Helion Public Cloud CLI Software for Windows PowerShell.</p>
-    </section>
-    <section id="install-the-microsoft-net-framework"> <title>Install the Microsoft .NET framework</title>
-      <p>This product requires the full (not client profile) 4.0 or higher version of the Microsoft .NET Framework to install properly which can be downloaded <xref href="http://www.microsoft.com/net/" scope="external" format="html" >at the Microsoft web site</xref>.</p>
-    </section>
-    <section id="SettingtheRequiredExecutionPolicy"> <title>Set the required execution policy</title>
-      <p>To use the HP Helion Public Cloud CLI Software for Windows PowerShell, you must make sure that your Powershell environment is capable of executing 3rd party modules.</p>
-      <p>
-        <b>Note</b>: If you are performing a re-installation of the software package, you can skip this step.  This step is applicable only for a fresh installation.</p>
-      <p>Open a PowerShell window as the administrator and issue the command <codeph>set-executionpolicy -ExecutionPolicy Unrestricted</codeph>:</p>
-      <codeblock>
-        <codeph>PS C:\Projects\Outgoing\HP&gt; set-executionpolicy -ExecutionPolicy Unrestricted
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6516">
+<title>HP Helion Public Cloud CLI Software for Windows PowerShell Installation</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+<!--./publiccloud/cli.windows.2.installation.md-->
+<!--permalink: /publiccloud/cli/windows/installation/--></p>
+<p>To get the HP Helion Public Cloud CLI Software for Windows PowerShell installed and running properly you must complete the following tasks:</p>
+<ul>
+<li><xref type="section" href="#topic6516/InstallationPrerequisites">Installation prerequisites</xref></li>
+<li><xref type="section" href="#topic6516/RuntheInstallerPackage">Run the installer package</xref></li>
+<li><xref type="section" href="#topic6516/ChooseExecutable">Choose the appropriate Windows PowerShell executable</xref></li>
+<li><xref type="section" href="#topic6516/SupplyyourCredentials">Supply your credentials</xref></li>
+<li><xref type="section" href="#topic6516/NavigatetotheCommandLine">Navigate to the command line</xref></li>
+<li><xref href="#topic6516/LoadingtheShellandModuleRegistration" format="dita"/></li>
+<li><xref type="section" href="#topic6516/Upgrading">Upgrade to a new version</xref></li>
+</ul>
+<p>This page also describes how to <xref type="section" href="#topic6516/Upgrading">upgrade to a new version</xref> of the Windows CLI software.</p>
+<p>
+<xref href="../file/WinCLI-2.1.1.2.zip" scope="external" format="html" >Please download the latest version of the HP Helion Public Cloud CLI software package for Windows PowerShell here (Version 2.1.1.2)</xref>!</p>
+<section id="InstallationPrerequisites"> <title>Installation prerequisites</title>
+<p>The following are prerequisites for installing and running the HP Helion Public Cloud CLI Software for Windows PowerShell.</p>
+</section>
+<section id="install-the-microsoft-net-framework"> <title>Install the Microsoft .NET framework</title>
+<p>This product requires the full (not client profile) 4.0 or higher version of the Microsoft .NET Framework to install properly which can be downloaded <xref href="http://www.microsoft.com/net/" scope="external" format="html" >at the Microsoft web site</xref>.</p>
+</section>
+<section id="SettingtheRequiredExecutionPolicy"> <title>Set the required execution policy</title>
+<p>To use the HP Helion Public Cloud CLI Software for Windows PowerShell, you must make sure that your Powershell environment is capable of executing 3rd party modules.</p>
+<p><b>Note</b>: If you are performing a re-installation of the software package, you can skip this step.  This step is applicable only for a fresh installation.</p>
+<p>Open a PowerShell window as the administrator and issue the command <codeph>set-executionpolicy -ExecutionPolicy Unrestricted</codeph>:</p>
+<codeblock>
+PS C:\Projects\Outgoing\HP&gt; set-executionpolicy -ExecutionPolicy Unrestricted
           
-          Execution policy change
-          The execution policy helps protect you from scripts that you do not trust. Changing the execution policy
-          might expose you to the security risks described in the about_Execution_Policies help topic. Do you want to
-          change the execution policy?
-          [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
-          PS C:\Projects\Outgoing\HP&gt; 
-        </codeph>
-      </codeblock>
-      <!--<img src="/media/LicenseDialo.png" width="580" height="179" alt="" />-->
-      <p>Close the Powershell window and reopen as administrator for the policy changes to take effect.</p>
-    </section>
-    <section id="RuntheInstallerPackage"> <title>Run the installer package</title>
-      <p>Download the latest HP Helion Public Cloud CLI software package for Windows PowerShell.  (See the <xref href="../publiccloud/cli.windows.2.release-notes.dita" >Release Notes</xref> for details on the current release.)</p>
-      <p>Launching the Windows installer package loads the following wizard.</p>
+Execution policy change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy
+might expose you to the security risks described in the about_Execution_Policies help topic. Do you want to
+change the execution policy?
+[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
+PS C:\Projects\Outgoing\HP&gt; 
+</codeblock>
+<p>Close the Powershell window and reopen as Administrator for the policy changes to take effect.</p>
+</section>
+<section id="RuntheInstallerPackage"> <title>Run the installer package</title>
+<p>Download the latest HP Helion Public Cloud CLI software package for Windows PowerShell <xref href="../file/WinCLI-2.1.1.2.zip" scope="external" format="html" >here</xref>.</p>
+<p>Launching the Windows installer package loads the following wizard.</p>
       <p>
         <image href="../media/WizardP1.jpg">
           <alt/>
@@ -100,64 +84,62 @@
         </image>
       </p>
     </section>
-    <section id="ChooseExecutable"> <title>Choose the appropriate Windows PowerShell Executable</title>
-      <p>Always use the <codeph>powershell.exe</codeph> appropriate for your OS. From the Windows command line, for 64-bit systems, use <codeph>\SysWOW64\powershell.exe</codeph>; for 32-bit systems, use <codeph>\System32\powershell.exe</codeph>.  From the Windows <codeph>Start</codeph> menu, make sure you select the appropriate PowerShell program.</p>
-    </section>
-    <section id="SupplyyourCredentials"> <title>Supply your credentials</title>
-      <p>The first time that you run the shell you must supply your Username, Password, and Tenant Name (referred to as Project Name in the console) that you setup during the registration process. You can find your Project Name through the <xref href="https://horizon.hpcloud.com/control_services/projects" scope="external" format="html" >HP Helion Public Cloud Console</xref>. Click the Projects heading under the Identity menu.</p>
-      <p>
-        <image href="../media/projects-2.png"/>
-      </p>
-      <p>The shell detects that this is your first time logging in and prompts you for these items.</p>
-      <codeblock>
-        <codeph>========================================================================================
-          Welcome to the HP Cloud Services Powershell Environment.
-          ========================================================================================
-          
-          ==&gt; Registering Providers...
-          
-          =======================================================================================================
-          We've noticed that you haven't supplied any credentials yet. To continue we need to get your Username,
-          Password, and the Tenant Id provided to you during the sign up process. If you haven't signed up
-          for any services yet, just go to https://console.hpcloud.com for details on how to get started today!
-          =======================================================================================================
-          
-          Please enter your User Name  :
-          USERNAME
-          
-          Please enter your Password   :
-          ******************************
-          
-          Please enter your Tenant Name :
-          PROJECT_NAME
-          
-          ==&gt; Verifying and Storing Credentials..
-          ==&gt; Applying Command Aliases...
-          ==&gt; Registering Views...
-          
-          Ready..
-          
-          PS C:\Program Files (x86)\HP\HPCS-Powershell&gt;
-        </codeph>
-      </codeblock>
-      <p>You only need to enter these credentials the first time you run the shell.  After the system verifies your credentials, they are stored and re-used the next time you open the shell.</p>
-      <p>
-        <b>Note</b>: If you see errors at this point, double-check that you are using the <xref type="section" href="#topic6516/ChooseExecutable">correct powershell executable</xref>, as mentioned earlier. For additional errors that you may encounter, take a look at our Knowledge Base article on <xref href="https://community.hpcloud.com/article/common-errors-using-windows-powershell-cli" scope="external" format="html" >Common Errors Using Windows Powershell CLI</xref>.</p>
-      <!--<img src="/media/PromptCred.jpg" width="580" height="228" alt="" />-->
-    </section>
-    <section id="NavigatetotheCommandLine"> <title>Navigate to the command line</title>
-      <p>To issue HP Helion Public Cloud CLI Windows PowerShell commands (also sometimes called <i>cmdlets</i>), you need to first navigate to a container or the HP Helion Public Cloud Services (HPCS) provider, which you can do by issuing the following command:</p>
-      <codeblock>
-        <codeph>cd HPCS:
-        </codeph>
-      </codeblock>
-    </section>
-    <section id="LoadingtheShellandModuleRegistration"> <title>Load the shell and module registration</title>
-      <p>If you have installed the software through the installer package, registration happens automatically through a supplied Powershell Profile. If the profile was not used, you must move to the install folder specified while in the setup wizard. From there you can register the module with Import-Module .\Climanifest.psd1. Note that this only last for the duration of the Powershell session and it's recommended to add this command to your Profile for best results.</p>
-    </section>
-    <section id="Upgrading"> <title>Upgrade to a new version</title>
-      <p>When you upgrade to a new version of the HP Helion Public Cloud environment CLI software for Windows PowerShell, you must first de-install the previous version of the software.  You can do this using the Windows <codeph>Add/Remove Programs</codeph> or <codeph>Programs and Features</codeph> utility (depending on the version of Windows you're using).  Search through the listing of programs for "HPCS-Powershell" and uninstall it.</p>
-      <p>Once you have uninstalled the previous revision, simply follow the instructions above to install the latest version, and you're be good to go!</p>
-    </section>
-  </body>
+<section id="ChooseExecutable"> <title>Choose the appropriate Windows PowerShell Executable</title>
+<p>Always use the <codeph>powershell.exe</codeph> appropriate for your OS. From the Windows command line, for 64-bit systems, use <codeph>\SysWOW64\powershell.exe</codeph>; for 32-bit systems, use <codeph>\System32\powershell.exe</codeph>.  From the Windows <codeph>Start</codeph> menu, make sure you select the appropriate PowerShell program.</p>
+</section>
+<section id="SupplyyourCredentials"> <title>Supply your credentials</title>
+<p>The first time that you run the shell you must supply the Identity Services URL, Username, Password, and Tenant Name (also referred to as Project Name) that you setup during the registration process. You can find your Project Name through the <xref href="https://horizon.hpcloud.com/control_services/projects" scope="external" format="html" >HP Helion Public Cloud Console</xref>. Click the Projects heading under the Identity menu.</p>
+<p><image href="../media/projects-2.png"/></p>
+<p>The shell detects that this is your first time logging in and prompts you for these items.</p>
+<codeblock>
+========================================================================================
+Welcome to the HP Helion Powershell Environment.
+========================================================================================
+
+==> Registering Providers...
+
+=======================================================================================================
+We've noticed that you haven't supplied any credentials yet. To continue we need to get your Username,
+Password, and the Tenant Id provided to you during the sign up process. If you haven't signed up
+for any services yet, just go to http://horizon.hpcloud.com for details on how to get started today!
+=======================================================================================================
+
+Please enter your Identity Services Url :
+https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/tokens
+
+Please enter your User Name             :
+[ENTER USERNAME HERE]
+
+Please enter your Password              :
+[ENTER PASSWORD HERE]
+
+
+Please enter your Tenant Name           :
+[ENTER PROJECT NAME HERE]
+
+==> Verifying and Storing Credentials..
+==> Applying Command Aliases...
+==> Registering Views...
+
+Ready..
+
+PS HPCS:\>
+</codeblock>
+<p>You only need to enter these credentials the first time you run the shell.  After the system verifies your credentials, they are stored and re-used the next time you open the shell.</p>
+  <p><b>Note</b>: If you see errors at this point, double-check that you are using the <xref type="section" href="#topic6516/ChooseExecutable">correct powershell executable</xref>, as mentioned earlier. For additional errors that you may encounter, take a look at our Knowledge Base article on <xref href="https://community.hpcloud.com/article/common-errors-using-windows-powershell-cli" scope="external" format="html" >Common Errors Using Windows Powershell CLI</xref>.</p>
+</section>
+<section id="NavigatetotheCommandLine"> <title>Navigate to the command line</title>
+<p>To issue HP Helion Public Cloud CLI Windows PowerShell commands (also sometimes called <i>cmdlets</i>), you need to first navigate to a container or the HP Helion Public Cloud Services (HPCS) provider, which you can do by issuing the following command:</p>
+<codeblock>
+cd HPCS:
+</codeblock>
+</section>
+<section id="LoadingtheShellandModuleRegistration"> <title>Load the shell and module registration</title>
+<p>If you have installed the software through the installer package, registration happens automatically through a supplied Powershell Profile. If the profile was not used, you must move to the install folder specified while in the setup wizard. From there you can register the module with Import-Module .\Climanifest.psd1. Note that this only last for the duration of the Powershell session and it's recommended to add this command to your Profile for best results.</p>
+</section>
+<section id="Upgrading"> <title>Upgrade to a new version</title>
+<p>When you upgrade to a new version of the HP Helion Public Cloud environment CLI software for Windows PowerShell, you must first uninstall the previous version of the software.  You can do this using the Windows <codeph>Add/Remove Programs</codeph> or <codeph>Programs and Features</codeph> utility (depending on the version of Windows you're using).  Search through the listing of programs for "HPCS-Powershell" and uninstall it.</p>
+<p>Once you have uninstalled the previous revision, simply follow the instructions above to install the latest version, and you're be good to go!</p>
+</section>
+</body>
 </topic>

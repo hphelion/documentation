@@ -24,50 +24,37 @@
 <p>The Messaging Service provides on-demand RabbitMQ clusters and enables automatic access to the RabbitMQ management console. RabbitMQ is also available within ALS as a single-instance, unmanaged service. If your application relies on high message throughput or if you want to move an application from dev/test into production, you should strongly consider using the Messaging Service instead of the RabbitMQ service embedded with ALS.</p>
 <p>If the Helion <tm tmtype="reg">OpenStack</tm> cloud was configured with three availability zones, the Messaging Service will automatically deploy the cluster across all three so that the cluster is resilient to server, VM, or availability zone failures.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>To use the Messaging Service ALS, you need to:</p>
+<p>To use the Messaging Service with ALS, you need to:</p>
 <ol>
 <li>
   <xref href="1.2devplatform.using-the-messaging-service.dita#topic3880/create" type="section">Create a RabbitMQ cluster</xref> from the OpenStack Dashboard if a cluster does not already exist. </li>
 <li>Once a cluster has been created, you can connect an application deployed to ALS with the Messaging Service.</li>
-<li>
-<p>To connect, you must create an environment variable in the <i>manifest.yml</i> file of the application you wish to connect to the Messaging Service. This will tell your application how to connect to the cluster using AMQP. The environment variable can be named anything you prefer. We will use <b>MQ_URL</b> in this example.</p>
-
-<ol>
-<li>
-<p>The connection string and MQ_URL value will look something like:</p>
-
-<codeblock>
-<codeph>amqps://username:password@ipaddress:5671/%2f
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>The username and password for a RabbitMQ cluster are the same credentials used to create the cluster.</p>
-
-<ul>
-<li>Alternately, you can add other accounts to the cluster using the RabbitMQ management console. The RabbitMQ management console is accessible from the  Horizon Management Console.</li>
-</ul>
-</li>
-<li>
-<p>The new environment variable can then be inserted into a block within your <i>manifest.yml</i> file like so:</p>
-
-<codeblock>
-<codeph>env: 
-  MQ_URL: amqps://username:password@ipaddress:5671/%2f
-</codeph>
-</codeblock>
-</li>
-</ol>
-</li>
-<li>
-<p>You can then connect your application to the cluster by choosing from a long list of <xref href="http://www.rabbitmq.com/devtools.html" scope="external" format="html" >available AMQP client libraries</xref>. Your app will reference and parse the <b>MQ_URL</b> variable to connect to the cluster.</p>
-</li>
+<li> To connect, you must create an environment variable in the <i>manifest.yml</i> file of the
+          application you wish to connect to the Messaging Service. This will tell your application
+          how to connect to the cluster using AMQP. The environment variable can be named anything
+          you prefer. We will use <b>MQ_URL</b> in this example.<ol>
+            <li> The connection string and MQ_URL value will look something
+              like:<codeblock>amqps://username:password@ipaddress:5671/%2f</codeblock></li>
+            <li> The username and password for a RabbitMQ cluster are the same credentials used to
+              create the cluster.<ul>
+                <li>Alternately, you can add other accounts to the cluster using the RabbitMQ
+                  management console. The RabbitMQ management console is accessible from the Horizon
+                  Management Console.</li>
+              </ul></li>
+            <li> The new environment variable can then be inserted into a block within your
+                <i>manifest.yml</i> file like
+              so:<codeblock>env: 
+  MQ_URL: amqps://username:password@ipaddress:5671/%2f</codeblock></li>
+          </ol></li>
+<li> You can then connect your application to the cluster by choosing from a long list of <xref
+            href="http://www.rabbitmq.com/devtools.html" scope="external" format="html">available
+            AMQP client libraries</xref>. Your app will reference and parse the <b>MQ_URL</b>
+          variable to connect to the cluster.</li>
 </ol>
 </section>
 <section id="connecting-to-the-messaging-service-with-php"> <title>Connecting to the Messaging Service with PHP</title>
 <p>This code section shows how to retrieve the connection information for the RabbitMQ cluster from the application's environment variable, <b>MQ_URL</b>. The code then creates a queue, an exchange, posts the message to the queue, reads the message from the queue, and then writes it back out to the user.</p>
-<codeblock>
-  <codeph>$url = parse_url(getenv('MQ_URL'));
+<codeblock>$url = parse_url(getenv('MQ_URL'));
 $conn = new AMQPConnection($url['host'], $url['port'], $url['user'], $url['pass'], substr($url['path'], 1));
 $ch = $conn-&gt;channel();
 
@@ -92,11 +79,8 @@ echo $msgContents;
 $ch-&gt;basic_ack($retrived_msg-&gt;delivery_info['delivery_tag']);
 
 $ch-&gt;close();
-$conn-&gt;close();
-</codeph>
-</codeblock>
+$conn-&gt;close();</codeblock>
 <p>If you're using the Messaging Service instead of the embedded unmanaged RabbitMQ service, you do not need to specify anything other than the environment variables in your <i>manifest.yml</i> file. If you are using the unmanaged RabbitMQ service, you <b>must</b> specify this dependency under <b>Services:</b> in the <i>manifest.yml</i> file.</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>
