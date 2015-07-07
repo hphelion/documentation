@@ -71,13 +71,11 @@
       <p>Before you begin installation:</p>
       <ul>
         <li>
-          <p>The Cinder block storage service must be configured with either <xref
-              href="../../commercial/GA1/1.1commercial.-vsa-overview.dita">VSA</xref> or <xref
-              href="../../commercial/GA1/1.1commercial.install-3par.dita">3Par</xref>.</p>
-        </li>
-        <li>
-          <p>If you installed HP Helion OpenStack with <b>KVM</b> hypervisor support, configure HP
-            StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.</p>
+          <p>The Cinder block storage service must be configured with <xref
+              href="../../commercial/GA1/1.1commercial.-vsa-overview.dita">VSA</xref>, <xref
+              href="../../commercial/GA1/1.1commercial.install-3par.dita">3Par</xref>, or <xref
+              href="../../commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita">Ceph</xref>
+            storage.</p>
         </li>
         <li>
           <p>The system running the installer needs to have Python 2.7. Most modern operating
