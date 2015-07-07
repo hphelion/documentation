@@ -89,46 +89,44 @@ PS C:\Projects\Outgoing\HP&gt;
 </section>
 <section id="SupplyyourCredentials"> <title>Supply your credentials</title>
 <p>The first time that you run the shell you must supply the Identity Services URL, Username, Password, and Tenant Name (also referred to as Project Name) that you setup during the registration process. You can find your Project Name through the <xref href="https://horizon.hpcloud.com/control_services/projects" scope="external" format="html" >HP Helion Public Cloud Console</xref>. Click the Projects heading under the Identity menu.</p>
-      <p>
-        <image href="../media/projects-2.png"/>
-      </p>
-      <p>The shell detects that this is your first time logging in and prompts you for these items.</p>
+<p><image href="../media/projects-2.png"/></p>
+<p>The shell detects that this is your first time logging in and prompts you for these items.</p>
 <codeblock>
-  ========================================================================================
-  Welcome to the HP Helion Powershell Environment.
-  ========================================================================================
-  
-  ==> Registering Providers...
-  
-  =======================================================================================================
-  We've noticed that you haven't supplied any credentials yet. To continue we need to get your Username,
-  Password, and the Tenant Id provided to you during the sign up process. If you haven't signed up
-  for any services yet, just go to http://horizon.hpcloud.com for details on how to get started today!
-  =======================================================================================================
-  
-  Please enter your Identity Services Url :
-  https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/tokens
-  
-  Please enter your User Name             :
-  [ENTER USERNAME HERE]
-  
-  Please enter your Password              :
-  [ENTER PASSWORD HERE]
-  
-  
-  Please enter your Tenant Name           :
-  [ENTER PROJECT NAME HERE]
-  
-  ==> Verifying and Storing Credentials..
-  ==> Applying Command Aliases...
-  ==> Registering Views...
-  
-  Ready..
-  
-  PS HPCS:\>
+========================================================================================
+Welcome to the HP Helion Powershell Environment.
+========================================================================================
+
+==> Registering Providers...
+
+=======================================================================================================
+We've noticed that you haven't supplied any credentials yet. To continue we need to get your Username,
+Password, and the Tenant Id provided to you during the sign up process. If you haven't signed up
+for any services yet, just go to http://horizon.hpcloud.com for details on how to get started today!
+=======================================================================================================
+
+Please enter your Identity Services Url :
+https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/tokens
+
+Please enter your User Name             :
+[ENTER USERNAME HERE]
+
+Please enter your Password              :
+[ENTER PASSWORD HERE]
+
+
+Please enter your Tenant Name           :
+[ENTER PROJECT NAME HERE]
+
+==> Verifying and Storing Credentials..
+==> Applying Command Aliases...
+==> Registering Views...
+
+Ready..
+
+PS HPCS:\>
 </codeblock>
 <p>You only need to enter these credentials the first time you run the shell.  After the system verifies your credentials, they are stored and re-used the next time you open the shell.</p>
-<p><b>Note</b>: If you see errors at this point, double-check that you are using the <xref type="section" href="#topic6516/ChooseExecutable">correct powershell executable</xref>, as mentioned earlier. For additional errors that you may encounter, take a look at our Knowledge Base article on <xref href="https://community.hpcloud.com/article/common-errors-using-windows-powershell-cli" scope="external" format="html" >Common Errors Using Windows Powershell CLI</xref>.</p>
+  <p><b>Note</b>: If you see errors at this point, double-check that you are using the <xref type="section" href="#topic6516/ChooseExecutable">correct powershell executable</xref>, as mentioned earlier. For additional errors that you may encounter, take a look at our Knowledge Base article on <xref href="https://community.hpcloud.com/article/common-errors-using-windows-powershell-cli" scope="external" format="html" >Common Errors Using Windows Powershell CLI</xref>.</p>
 </section>
 <section id="NavigatetotheCommandLine"> <title>Navigate to the command line</title>
 <p>To issue HP Helion Public Cloud CLI Windows PowerShell commands (also sometimes called <i>cmdlets</i>), you need to first navigate to a container or the HP Helion Public Cloud Services (HPCS) provider, which you can do by issuing the following command:</p>
