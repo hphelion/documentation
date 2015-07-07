@@ -430,9 +430,10 @@ controller2 ansible_ssh_private_key_file=seed-id_rsa.private
 </section>
 <section id="scaling-ceph-cluster"> <title>Scaling Ceph cluster</title>
 </section>
-<section id="add-monitor"> <title>Add Monitor</title>
+<section id="add-monitor"> <title>Add monitor</title>
 <ul>
-<li>Provision the new node with the <codeph>ceph-cluster</codeph> image using the node-provisioning tool (as mentioned above)from the seed host. You need to have three monitor nodes.</li>
+<li>Provision the new node with the <codeph>ceph-cluster</codeph> image using the node-provisioning
+          tool (as mentioned above) from the seed host. You need to have three monitor nodes.</li>
 </ul>
 <p>
   <b>Sample Baremetal.csv</b>
@@ -783,7 +784,8 @@ rbd children &lt;glance pool name&gt;/&lt;glance-image id&gt;@&lt;snap name&gt;
 
 cinder backup-create --display-name cindervol_backup ff8d13a5-3083-424b-a626-0b75cbe8cf66
 </codeph></codeblock><p>
-            <b>Output</b>:</p><codeblock><codeph>+-----------+--------------------------------------+
+            <b>Output</b>:</p><codeblock><codeph>
++-----------+--------------------------------------+
 |  Property |                Value                 |
 +-----------+--------------------------------------+
 |     id    | 60764712-c456-465a-828b-5f45d3a14ff5 |
@@ -812,7 +814,8 @@ cinder backup-create --display-name cindervol_backup ff8d13a5-3083-424b-a626-0b7
 </li>
 <li>To view details of a selected volume, enter:<codeblock><codeph>cinder backup-show 60764712-c456-465a-828b-5f45d3a14ff5
 </codeph></codeblock><p>
-            <b>Output</b>:</p><codeblock><codeph>+-------------------+--------------------------------------+
+            <b>Output</b>:</p><codeblock><codeph>
++-------------------+--------------------------------------+
 |      Property     |                Value                 |
 +-------------------+--------------------------------------+
 | availability_zone |                 None                 |
