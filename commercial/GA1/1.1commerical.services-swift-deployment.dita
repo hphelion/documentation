@@ -358,7 +358,8 @@ Devices:id  region  zone  ip address  port  replication ip  replication port  na
 | 192.0.2.24    |
 +---------------+
 </codeph></codeblock></li>
-<li>Get all the rings and builder files from either of the starter
+<li>Get all the rings (first three files in the sample below) and builder files (last three files)
+          from either of the starter
             nodes.<codeblock><codeph>rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP address&gt;:/etc/swift/object.ring.gz /root/ring-building/
 rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP address&gt;:/etc/swift/account.ring.gz /root/ring-building/
 rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP address&gt;:/etc/swift/container.ring.gz /root/ring-building/
@@ -366,7 +367,7 @@ rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP addre
 rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP address&gt;:/etc/swift/account.builder /root/ring-building/
 rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP address&gt;:/etc/swift/container.builder /root/ring-building/
 </codeph></codeblock><p>The
-            following sample displays all the rings and builder files from <b>19.0.2.22</b>
+            following sample displays all three rings and three builder files from <b>19.0.2.22</b>
           </p><codeblock><codeph>rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/object.ring.gz /root/ring-building/
 rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/account.ring.gz /root/ring-building/
 rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/container.ring.gz /root/ring-building/
