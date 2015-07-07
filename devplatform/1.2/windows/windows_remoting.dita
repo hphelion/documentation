@@ -3,7 +3,7 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1035">
 <title>HP Helion 1.2 Development Platform: Providing Remote Desktop Access to Windows DEA and Windows SQL Server Instances</title>
 <titlealts>
-<searchtitle>HP Helion 1.2 Development Platform: Deploying your first .NET Application</searchtitle>
+  <searchtitle>HP Helion 1.2 Development Platform: Providing Remote Desktop Access to Windows DEA and Windows SQL Server Instances</searchtitle>
 </titlealts>
 <prolog>
 <metadata>
@@ -25,7 +25,7 @@
 </prolog>
 <body>
 <p>
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
  <!--./devplatform/1.2/windows/windows_remoting.md-->
  <!--permalink: /helion/devplatform/1.2/windows/remoting/--></p>
 <p>
@@ -33,7 +33,8 @@
     <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
   </ph>
 </p>
-<p>This tutorial demonstrates how to set up Remote Desktop access to new Windows instances running in HP Helion <tm tmtype="reg">OpenStack</tm> Since the instances are running full versions of Windows, you must connect to them using Remote Desktop rather than SSH.</p>
+<p>This tutorial demonstrates how to set up Remote Desktop access to new Windows instances running in HP Helion <tm tmtype="reg">OpenStack</tm> 
+  Since the instances are running full versions of Windows, you must connect to them using Remote Desktop rather than SSH.</p>
 <p>The steps needed to do this are as follows:</p>
 <ul>
 <li>
@@ -50,6 +51,16 @@
 </li>
 </ul>
 <section id="create_security"> <title>Create an RDP Security Group</title>
+  <ol>
+    <li>In the Horizon console, select <b>Project</b>, <b>Access &amp; Security</b>.
+    <image placement="break" href="../../../media/windows_remoting_access.PNG"></image></li>
+    <li>Select <b>Security Groups</b> if it is not already selected.
+    <image placement="break" href="../../../media/windows_remoting_security.PNG"></image></li>
+    <li>Click <b>+ Create Security Group</b>.
+    <image placement="break" href="../../../media/windows_remoting_create_security.PNG"></image></li>
+    <li>Give the security group an appropriate name (such as <b>cluster1-rdp</b>), and an appropriate description (sucn as <b>Remote Desktop Access</b>).
+    <image placement="break" href="../../../media/windows_remoting_create_security_2.PNG"></image></li>
+  </ol>
 </section>
   <section id="add_security"><title>Add the RDP security group to the instance</title>
   </section>
