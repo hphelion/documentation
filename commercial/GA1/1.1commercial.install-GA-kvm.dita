@@ -68,9 +68,8 @@
 </li>
 <li>
 <p>Execute the <codeph>kvm-custom-ips.json</codeph> file for the undercloud and overcloud nodes using the <codeph>source</codeph> command. The <codeph>source</codeph> command sets the environment variables in the JSON file within the current shell.</p>
-
-<p>
-<b>Note</b>: You must use the source command to add variables to your existing deployment.</p>
+          <note> You must use the source command to add variables to your existing
+            deployment.</note>
 
 <codeblock>
 <codeph>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
@@ -84,9 +83,8 @@
 <codeph>bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed |&amp; tee seedinstall.log
 </codeph>
 </codeblock>
-
-<p>
-<b>Note</b>:The installation process takes approximately 10 minutes to complete. The output will be recorded in a file named <i>seedinstall.log</i>.</p>
+          <note>The installation process takes approximately 10 minutes to complete. The output will
+            be recorded in a file named <i>seedinstall.log</i>.</note>
 
 <p>When the seed VM startup is complete, you should see a message similar to the following:</p>
 
@@ -94,17 +92,15 @@
 <codeph>"Wed Oct 23 11:25:10 IST 2014 --- completed setup seed" 
 </codeph>
 </codeblock>
-
-<p>
-<b>Note:</b> If <codeph>hp_ced_host_manager.sh</codeph> fails to start the seed, restart the installation (step 1) and then follow the rest of the steps.</p>
+          <note>If <codeph>hp_ced_host_manager.sh</codeph> fails to start the seed, restart the
+            installation (step 1) and then follow the rest of the steps.</note>
 </li>
 <li>
 <p>Make sure the information in the <xref href="../../commercial/GA1/1.1commercial.install-GA-CSV.dita" >
 <codeph>baremetal.csv</codeph> configuration file</xref> file is correct and upload the file to <codeph>/root</codeph>.</p>
-
-<p>
-            <b>Note:</b> For more information on creating this file, refer to <xref
-              href="1.1commercial.install-GA-prereqs.dita#topic9786/csv">Creating the baremetal.csv file</xref> on the <i>Prerequisites</i> page.</p>
+          <note>For more information on creating this file, refer to <xref
+              href="1.1commercial.install-GA-prereqs.dita#topic9786/csv">Creating the baremetal.csv
+              file</xref> on the <i>Prerequisites</i> page.</note>
 </li>
 <li>
 <p>If you are integrating LDAP into your environment, copy the configuration files, as described in <xref href="../../commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" >Integrating LDAP</xref>, to the seed cloud host.</p>
@@ -131,9 +127,7 @@ chmod 0600 $/root/tripleo/overcloud-env.json
 <codeph>ssh root@&lt;seed_VM_IP_address&gt;
 </codeph>
 </codeblock>
-
-<p>
-<b>Note</b>: It might take a few moments for the seed VM to become reachable.</p>
+          <note>It might take a few moments for the seed VM to become reachable.</note>
 </li>
 <li>
 <p>When prompted for host authentication, type <codeph>yes</codeph> to allow the SSH connection to proceed.</p>
@@ -219,9 +213,9 @@ The overcloud nodes are registered with the undercloud's ironic service.</p>
 <codeph>"HP - completed - Tue Oct 23 16:20:20 UTC 2014"
 </codeph>
 </codeblock>
-
-<p>
-<b>Note:</b> If the installation does not complete properly, refer to the <xref href="../../commercial/GA1/1.1commercial.troubleshooting.dita" >Troubleshooting</xref> document.</p>
+          <note>If the installation does not complete properly, refer to the <xref
+              href="../../commercial/GA1/1.1commercial.troubleshooting.dita">Troubleshooting</xref>
+            document.</note>
 </li>
 </ol>
 </section>

@@ -65,21 +65,17 @@ When creating this file, keep the following in mind :</p>
 <li>The systems specified in this file must meet the Hardware Requirements detailed above.</li>
 <li>The IPMI user and password must have ADMINISTRATOR privilege (it is not sufficient to have OPERATOR privilege).</li>
 <li>The <codeph>diskspace_GiB</codeph> specified should never exceed the physical disk size and is in units of GiB (2^30)</li>
-<li>The <codeph>role</codeph> can have these values (roles are case-insensitive):
-
-<ul>
-<li>Undercloud, </li>
-<li>OvercloudControl, </li>
-<li>OvercloudSwiftStorage, </li>
-<li>OvercloudCompute</li>
-<li>OvercloudVSAStorage, </li>
-<li>OvercloudVSAAOStorage, </li>
-<li>OvercloudSOSwiftProxy,</li>
-<li>OvercloudSOSwiftStorage</li>
+<li>The <codeph>role</codeph> can have these values (roles are case-insensitive): <ul>
+          <li>Undercloud, </li>
+          <li>OvercloudControl, </li>
+          <li>OvercloudSwiftStorage, </li>
+          <li>OvercloudCompute</li>
+          <li>OvercloudVSAStorage, </li>
+          <li>OvercloudVSAAOStorage, </li>
+          <li>OvercloudSOSwiftProxy,</li>
+          <li>OvercloudSOSwiftStorage</li>
+        </ul></li>
 </ul>
-</li>
-</ul>
-<p/>
 <ul>
 <li>
 <p>
@@ -117,28 +113,28 @@ nodes default to 3 and 2 respectively.</li>
 <colspec colname="col2"/>
 <thead>
 <row>
-<entry>Value</entry>  <entry>Description</entry> </row>
+<entry colsep="1" rowsep="1">Value</entry>  <entry colsep="1" rowsep="1">Description</entry> </row>
 </thead>
 <tbody>
 <row>
-<entry>VM</entry>   <entry>This is for virtual machines and is set automatically for a
-             virtual install.</entry> </row>
+<entry colsep="1" rowsep="1">VM</entry>   <entry colsep="1" rowsep="1">This is for virtual machines and is set automatically for a virtual
+                  install.</entry> </row>
 <row>
-<entry>IPMI</entry>  <entry>This is for all systems that can be accessed using IPMI. If no power_management is specified, a default of IPMI is assumed.</entry> </row>
+<entry colsep="1" rowsep="1">IPMI</entry>  <entry colsep="1" rowsep="1">This is for all systems that can be accessed using IPMI. If no
+                  power_management is specified, a default of IPMI is assumed.</entry> </row>
 <row>
-<entry>HP_Moonshot</entry>  <entry>This is for HP Moonshot hardware only. If this
-             is specified it *requires* two colon-separated extra arguments
-             as follows: 
-<b>&lt;transit_address&gt;:&lt;target_address&gt;</b>
-<!--A BR tag was used here in the original source.-->
-<!--A BR tag was used here in the original source.-->
-                 &lt;transit_address&gt; is also known as 'Cartridge Address'
-
-                 &lt;target_address&gt; is also known as 'Node Address'
-             For example: HP_Moonshot:0x84:0x72<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
-
-             HP Moonshot hardware will use ipmitool as its power manager.
-             See the additional notes in the <xref href="../../commercial/GA1/1.1commercial.install-GA-Moonshot.dita" >HP Moonshot document</xref>.</entry> </row>
+<entry colsep="1" rowsep="1">HP_Moonshot</entry>  <entry colsep="1" rowsep="1">This is for HP Moonshot hardware only. If this is specified it
+                  *requires* two colon-separated extra arguments as follows:
+                    <b>&lt;transit_address&gt;:&lt;target_address&gt;</b>
+                  <!--A BR tag was used here in the original source.-->
+                  <!--A BR tag was used here in the original source.--> &lt;transit_address&gt; is
+                  also known as 'Cartridge Address' &lt;target_address&gt; is also known as 'Node
+                  Address' For example:
+                  HP_Moonshot:0x84:0x72<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
+                  HP Moonshot hardware will use ipmitool as its power manager. See the additional
+                  notes in the <xref
+                    href="../../commercial/GA1/1.1commercial.install-GA-Moonshot.dita">HP Moonshot
+                    document</xref>.</entry> </row>
 <row>
 <entry>HP_iLO4</entry>  <entry>Boot HP iLO4 Gen9 systems in UEFI mode.
              Specify IPMI to boot such nodes in BIOS mode (you must manually

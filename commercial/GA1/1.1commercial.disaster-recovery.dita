@@ -80,8 +80,9 @@ The procedures in this section explain how to recover your cloud after a disaste
 <p>Data in the database was not updated at all since Compute could not have anticipated the crash.</p>
 </li>
 </ul>
-<p>
-<b>Note</b>: Instances won't be lost, because no <codeph>destroy</codeph> or <codeph>terminate</codeph> command was invoked, so the files for the instances remain on the compute node.</p>
+      <note>Instances won't be lost, because no <codeph>destroy</codeph> or
+          <codeph>terminate</codeph> command was invoked, so the files for the instances remain on
+        the compute node.</note>
 <p>To recover from this disaster, perform these tasks in the following order:</p>
 </section>
 <section id="to-perform-disaster-recovery"> <title>To perform disaster recovery</title>

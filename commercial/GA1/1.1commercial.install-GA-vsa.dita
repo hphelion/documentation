@@ -20,7 +20,6 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.install-GA-vsa.md-->
  <!--permalink: /helion/openstack/1.1/install/vsa/--></p>
-<p/>
 <p>
   <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
 </p>
@@ -291,7 +290,7 @@ java -jar UI.jar
         <!--**Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out Object storage nodes.-->
         <!--   **Note**: While deploying a scale-out **proxy** node ensure that the value of `vsa_scale` is unchanged. While deploying a scale-out **object** node ensure that the value of `vsa_ao_scale` is unchanged.-->
         <!--NOTE: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/VM other than the storage systems in the SAN.-->
-        <note> The minimum requirement of nodes for HP StoreViratual VSA cluster is 3 nodes.</note>
+        <note> Minimum 3 nodes are required for HP StoreViratual VSA cluster.</note>
       </p>
 <p>
   <xref href="#topic14809"> Return to Top </xref>

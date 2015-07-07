@@ -29,8 +29,10 @@
 <p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
 <p>Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
 <p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack</p>
-<p>
-<b>Note</b>: These installation instructions assume that the associated project currently contains no instances (VMs). If this is not the case, see the instructions for <xref type="section" href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space before you begin.</p>
+    <note>These installation instructions assume that the associated project currently contains no
+      instances (VMs). If this is not the case, see the instructions for <xref type="section"
+        href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space
+      before you begin.</note>
 <p>
       <b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on Helion OpenStack 1.1 and 1.1.1. Do
         <b>not</b> attempt to install DNSaaS on any previous versions. </p>
@@ -72,8 +74,10 @@
 <section id="preq"> <title>Prerequisites</title>
 <p>
 <b>Caution</b>: DNSaaS 1.1 will <b>only</b> install on Helion OpenStack 1.1 Do <b>not</b> attempt to install DNSaaS on any previous versions. </p>
-<p>
-<b>Note</b>: These installation instructions assume that the associated project currently contains no instances (VMs). If this is not the case, see the instructions for <xref type="section" href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space before you begin.</p>
+      <note> These installation instructions assume that the associated project currently contains
+        no instances (VMs). If this is not the case, see the instructions for <xref type="section"
+          href="#topic20357/increasequotas">increasing quotas</xref> to ensure you have enough space
+        before you begin.</note>
 <ul>
 <li>HP Helion OpenStack is successfully installed</li>
 <li>Download <xref type="section" href="#topic20357/publication">DNSaaS Installer Image</xref> </li>
@@ -357,9 +361,9 @@ A Launch Instance dialog box displays with five tabs: Details Tab, Access &amp; 
 
 <!--
 $ ssh debian@<Floating IP Address associated with the Installer Instance above> -->
-
-<p>
-<b>Note</b>: Before you begin the installation, you must create a configuration file. You can do this by modifying the sample configuration file included with the DNSaaS installer files.</p>
+          <note>Before you begin the installation, you must create a configuration file. You can do
+            this by modifying the sample configuration file included with the DNSaaS installer
+            files.</note>
 </li>
 <li>
 <p>Create the SSH Public Key which is used by the Service VMs.</p>
@@ -657,8 +661,7 @@ sudo -i
 </codeblock>
 </li>
 </ol>
-<p>
-<b>Note</b>: Installer VM can also be deleted, if it is not deleted already.</p>
+      <note>Installer VM can also be deleted, if it is not deleted already.</note>
 <p>The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the <xref href="http://docs.openstack.org/developer/keystone/" scope="external" format="html" >Keystone documentation</xref>.</p>
 </section>
 <section id="increasequotas"> <title>Troubleshooting: Increasing Quotas</title>
@@ -690,8 +693,7 @@ sudo -i
 <xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for OpenStack</xref>
 </li>
 </ul>
-<p>
-<b>Note</b>: Public Cloud API and HP Helion Openstack API details are similar.</p>
+      <note>Public Cloud API and HP Helion Openstack API details are similar.</note>
 <p>
   <xref href="#topic20357"> Return to Top </xref>
 </p>

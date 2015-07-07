@@ -35,8 +35,8 @@
 <li>Deploy the proxy appliance.</li>
 <li>Enable SSL by importing the vCenter certificate into the ESX Compute proxy.</li>
 </ul>
-<p>
-<b>Note:</b> Your VMWare vCenter server should be configured for high availability using the instructions provided by VMWare.</p>
+    <note>Your VMWare vCenter server should be configured for high availability using the
+      instructions provided by VMWare.</note>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
 <li>

@@ -163,7 +163,9 @@
 <li>External url - <codeph>https://horizon.fqdn.com/</codeph>
 </li>
 <li>Internal url (VIP) - <codeph>https://&lt;HelionOpenStack</codeph>
-Note: all access to overcloud services now happens over a TLS connection. Read more about this change in <xref href="../../commercial/GA1/1.1commcerical.install-TLS.dita" >HP Helion OpenStack TLS Support</xref> HP Helion OpenStack TLS Support</li>
+          <note>All access to overcloud services now happens over a TLS connection. Read more about
+            this change in <xref href="../../commercial/GA1/1.1commcerical.install-TLS.dita">HP
+              Helion OpenStack TLS Support</xref> HP Helion OpenStack TLS Support</note></li>
 </ul>
 <table>
 <tgroup cols="3">
@@ -217,7 +219,12 @@ Note: all access to overcloud services now happens over a TLS connection. Read m
         </tgroup>
 </table>
 <p>
-<b>Note:</b>  These mapping are not an integral part of the Keystone service catalog. When a Keystone catalog is requested, it will always return the management IP. The Cloud administrator needs to publish the equivalent public endpoint for each service that needs to be externalized. Consider other endpoints to consider, such as the VNC console and so forth.</p>
+        <note>These mapping are not an integral part of the Keystone service catalog. When a
+          Keystone catalog is requested, it will always return the management IP. The Cloud
+          administrator needs to publish the equivalent public endpoint for each service that needs
+          to be externalized. Consider other endpoints to consider, such as the VNC console and so
+          forth.</note>
+      </p>
 <p>To protect against external attacks on Helion services, your firewall should be configured with a rule to block any requests originating from outside the network that attempts to reach any of the HP Helion OpenStack nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the HP Helion OpenStack installation, other than those indicated this table:</p>
 <table>
 <tgroup cols="4">
@@ -505,57 +512,59 @@ Note: all access to overcloud services now happens over a TLS connection. Read m
 <tgroup cols="5">
 <thead>
 <row>
-<entry>Interface</entry>
-<entry>Description</entry>
-<entry>Initiating node (from)</entry>
-<entry>Receiving node (to)</entry>
-<entry>Port</entry>
+<entry colsep="1" rowsep="1">Interface</entry>
+<entry colsep="1" rowsep="1">Description</entry>
+<entry colsep="1" rowsep="1">Initiating node (from)</entry>
+<entry colsep="1" rowsep="1">Receiving node (to)</entry>
+<entry colsep="1" rowsep="1">Port</entry>
 </row>
 </thead>
 <tbody>
 <row>
-<entry>1</entry>
-<entry>Compute node iSCSI</entry>
-<entry>Compute node</entry>
-<entry>VIP for StoreVirtual cluster</entry>
-<entry>3260</entry>
+<entry colsep="1" rowsep="1">1</entry>
+<entry colsep="1" rowsep="1">Compute node iSCSI</entry>
+<entry colsep="1" rowsep="1">Compute node</entry>
+<entry colsep="1" rowsep="1">VIP for StoreVirtual cluster</entry>
+<entry colsep="1" rowsep="1">3260</entry>
 </row>
 <row>
-<entry>2</entry>
-<entry>Cinder Volume Backup iSCSI</entry>
-<entry>Cloud Controller (Cinder host)</entry>
-<entry>VIP for StoreVirtual cluster</entry>
-<entry>3260</entry>
+<entry colsep="1" rowsep="1">2</entry>
+<entry colsep="1" rowsep="1">Cinder Volume Backup iSCSI</entry>
+<entry colsep="1" rowsep="1">Cloud Controller (Cinder host)</entry>
+<entry colsep="1" rowsep="1">VIP for StoreVirtual cluster</entry>
+<entry colsep="1" rowsep="1">3260</entry>
 </row>
 <row>
-<entry>3</entry>
-<entry>StoreVirtual REST API (mgmt. interface)</entry>
-<entry>Cloud Controller (Cinder host)</entry>
-<entry>VIP for StoreVirtual cluster</entry>
-<entry>22</entry>
+<entry colsep="1" rowsep="1">3</entry>
+<entry colsep="1" rowsep="1">StoreVirtual REST API (mgmt. interface)</entry>
+<entry colsep="1" rowsep="1">Cloud Controller (Cinder host)</entry>
+<entry colsep="1" rowsep="1">VIP for StoreVirtual cluster</entry>
+<entry colsep="1" rowsep="1">22</entry>
 </row>
 <row>
-<entry>4</entry>
-<entry>Sirius Service for Cinder backend configuration</entry>
-<entry>UnderCloud Controller</entry>
-<entry>VIP for StoreVirtual Management Group</entry>
-<entry>22</entry>
+<entry colsep="1" rowsep="1">4</entry>
+<entry colsep="1" rowsep="1">Sirius Service for Cinder backend configuration</entry>
+<entry colsep="1" rowsep="1">UnderCloud Controller</entry>
+<entry colsep="1" rowsep="1">VIP for StoreVirtual Management Group</entry>
+<entry colsep="1" rowsep="1">22</entry>
 </row>
 <row>
-<entry>5</entry>
-<entry>StoreVirtual inter-cluster traffic</entry>
-<entry>StoreVirtual</entry>
-<entry>StoreVirtual</entry>
-<entry>See Reference 2 below</entry>
+<entry colsep="1" rowsep="1">5</entry>
+<entry colsep="1" rowsep="1">StoreVirtual inter-cluster traffic</entry>
+<entry colsep="1" rowsep="1">StoreVirtual</entry>
+<entry colsep="1" rowsep="1">StoreVirtual</entry>
+<entry colsep="1" rowsep="1">See Reference 2 below</entry>
 </row>
   
   
 <row>
-<entry>6</entry>
-<entry>CMC to StoreVirtual <!--A BR tag was used here in the original source.-->Recommended to install on the seed cloud host</entry>
-<entry>CMC</entry>
-<entry>StoreVirtual</entry>
-<entry>See Reference 2 below</entry>
+<entry colsep="1" rowsep="1">6</entry>
+<entry colsep="1" rowsep="1">CMC to StoreVirtual
+                <!--A BR tag was used here in the original source.-->Recommended to install on the
+                seed cloud host</entry>
+<entry colsep="1" rowsep="1">CMC</entry>
+<entry colsep="1" rowsep="1">StoreVirtual</entry>
+<entry colsep="1" rowsep="1">See Reference 2 below</entry>
 </row>
 </tbody>
 </tgroup>
@@ -583,8 +592,8 @@ Note: all access to overcloud services now happens over a TLS connection. Read m
   <image href="../../media/Helion_Security7.png"/>
 </p>
 <p>The following table describes the data flow between the Helion nodes and StoreServ systems:</p>
-<p>
-<b>Note:</b> In the following table, the Volume Operation host refers to the overcloud controller that hosts the Volume Operations (Cinder) service.</p>
+      <note>In the following table, the Volume Operation host refers to the overcloud controller
+        that hosts the Volume Operations (Cinder) service.</note>
 <table>
 <tgroup cols="5">
 <thead>
@@ -768,8 +777,9 @@ See Reference 6 below </entry>
 </section>
 <section id="service"> <title>Service network</title>
 <p>The Service Network (SVC) is created by the Network Operation service.  SVC provides a path from the Development Platform services (such as Database as a Service) running in Compute Operations VMs to the Centralized Logging Service running in the undercloud.   A route needs to exist from service subnet in the overcloud to the RabbitMQ on the undercloud controller.</p>
-<p>
-<b>Note:</b> The Service Network is intended for granting privileged access to the baremetal network, to privileged in-cloud services and workloads. As such, this network must remain configured with its default configuration of <b>shared=False, external=False</b>.</p>
+      <note>The Service Network is intended for granting privileged access to the baremetal network,
+        to privileged in-cloud services and workloads. As such, this network must remain configured
+        with its default configuration of <b>shared=False, external=False</b>.</note>
 <p>Do not set either of these values to True; that will result in giving all cloud tenants privileged access to the baremetal network.</p>
 <table>
 <tgroup cols="4">

@@ -94,17 +94,24 @@
 
 <p>
 <b>VDS1</b>: This switch has no uplink ports configured and has a portgroup of type <b>VLAN</b> with <b>Trunking enabled</b>. The portgroup must contain the list of VLAN tags that are used by overcloud Networking Operations (Neutron) service. The <b>Promiscuous Mode</b> and <b>Forged Transmits</b> options must be set to <b>Accept</b> under the <b>Security</b> tab for the <b>Portgroup</b>.</p>
-
-<p>
-<b>Note</b>: The name of VLAN trunk portgroup must be associated with <codeph>trunk_port_name</codeph> parameter in the <codeph>ovs_vapp.ini</codeph>. You will create the INI file in <xref type="section" href="#topic19352/modify">Modify and execute the installer</xref>.</p>
+                            <note> The name of VLAN trunk portgroup must be associated with
+                                    <codeph>trunk_port_name</codeph> parameter in the
+                                    <codeph>ovs_vapp.ini</codeph>. You will create the INI file in
+                                    <xref type="section" href="#topic19352/modify">Modify and
+                                    execute the installer</xref>.</note>
 
 <p>
 <b>VDS2</b>: This switch should have an uplink port connecting to the overcloud baremetal network. Two portgroups should be available for this switch - management, data.  Management portgroup handles the management traffic and may or may not be not configured for VLAN.</p>
 
 <p>The data portgroup should be of type VLAN with <codeph>Trunking enabled</codeph>. It should contain the list of VLAN tags that are used by overcloud Networking Operations service. The <b>Promiscuous Mode</b> and <b>Forged Transmits</b> options should be set to <b>Accept</b> under the <b>Security</b> tab for the data portgroup.</p>
-
-<p>
-<b>Note</b>: You will need this information for a configuration file, <codeph>ovs_vapp.ini</codeph>. The management portgroup must be associated with <codeph>mgmt_port_name</codeph> parameter and the data portgroup must be associated with <codeph>data_port_name</codeph> parameter in the <codeph>ovs_vapp.ini</codeph>. You will create the INI file in <xref type="section" href="#topic19352/modify">Modify and execute the installer</xref>.</p>
+                            <note>You will need this information for a configuration file,
+                                    <codeph>ovs_vapp.ini</codeph>. The management portgroup must be
+                                associated with <codeph>mgmt_port_name</codeph> parameter and the
+                                data portgroup must be associated with
+                                    <codeph>data_port_name</codeph> parameter in the
+                                    <codeph>ovs_vapp.ini</codeph>. You will create the INI file in
+                                    <xref type="section" href="#topic19352/modify">Modify and
+                                    execute the installer</xref>.</note>
 </li>
 </ul>
 <p>Example:</p>
@@ -160,31 +167,45 @@ mgmt_port_name=mgmt
 </li>
 </ul>
 </section>
-<section id="deploytemplate"> <title>Deploy the OVSvApp</title>
-<p>You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VMs provisioned from HP Helion OpenStack environment. You must then configure the settings in the configuration file. The file can be used to clone and deploy OVSvApp on each host being managed by the controller.</p>
-<p>The deploy process installs the OVSvApp as a virtual machine, which is referred to as <i>OVSvApp VM</i> in this document.</p>
-<p>
-  <b>Notes</b>
-</p>
-<ul>
-<li>The OVSvApp VMs must be installed on each ESX hypervisor. </li>
-<li>IP address are assigned to the OVSvApp VMs manually. The Administrator must keep a separate pool of IP addresses from the management VLAN to be assigned to the OVSvApp VMs. These IP addresses must be assigned to the Ethernet interfaces connecting to the management port group.</li>
-<li>If <codeph>auto_dvs</codeph> is set to <codeph>True</codeph>, the OVSvApp VM management port group must be different than the Compute proxy management port group.</li>
-<li>Specify distributed virtual switch (VDS) ports in the <codeph>ovs_vapp.ini</codeph>. Make sure the VDS ports are attached with the proper hosts.</li>
-</ul>
-<p>The deploy process installs the OVSvApp as a virtual machine, which is referred to as <i>OVSvApp VM</i> in this document.</p>
-<ul>
-<li>
-<xref type="section" href="#topic19352/createtemp">Create a VM template in vCenter</xref>
-</li>
-<li>
-<xref type="section" href="#topic19352/python">Install the prerequisite python libraries</xref>
-</li>
-<li>
-<xref type="section" href="#topic19352/modify">Modify and execute the installer</xref>
-</li>
-</ul>
-</section>
+<section id="deploytemplate">
+            <title>Deploy the OVSvApp</title>
+            <p>You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VMs
+                provisioned from HP Helion OpenStack environment. You must then configure the
+                settings in the configuration file. The file can be used to clone and deploy OVSvApp
+                on each host being managed by the controller.</p>
+            <p>The deploy process installs the OVSvApp as a virtual machine, which is referred to as
+                    <i>OVSvApp VM</i> in this document.</p>
+            <note/>
+            <ul>
+                <li>The OVSvApp VMs must be installed on each ESX hypervisor. </li>
+                <li>IP address are assigned to the OVSvApp VMs manually. The Administrator must keep
+                    a separate pool of IP addresses from the management VLAN to be assigned to the
+                    OVSvApp VMs. These IP addresses must be assigned to the Ethernet interfaces
+                    connecting to the management port group.</li>
+                <li>If <codeph>auto_dvs</codeph> is set to <codeph>True</codeph>, the OVSvApp VM
+                    management port group must be different than the Compute proxy management port
+                    group.</li>
+                <li>Specify distributed virtual switch (VDS) ports in the
+                        <codeph>ovs_vapp.ini</codeph>. Make sure the VDS ports are attached with the
+                    proper hosts.</li>
+            </ul>
+            <p>The deploy process installs the OVSvApp as a virtual machine, which is referred to as
+                    <i>OVSvApp VM</i> in this document.</p>
+            <ul>
+                <li>
+                    <xref type="section" href="#topic19352/createtemp">Create a VM template in
+                        vCenter</xref>
+                </li>
+                <li>
+                    <xref type="section" href="#topic19352/python">Install the prerequisite python
+                        libraries</xref>
+                </li>
+                <li>
+                    <xref type="section" href="#topic19352/modify">Modify and execute the
+                        installer</xref>
+                </li>
+            </ul>
+        </section>
 <section id="createtemp"> <title>Create a VM template in vCenter</title>
 <p>The first step in deploying the OVSvApp is to create a VM template that will make it easier to deploy the OVSvApp on each ESX hypervisor.</p>
 <p>To deploy the OVSvApp:</p>
@@ -372,12 +393,12 @@ netmask=
 gateway_ip=
 </codeph>
 </codeblock>
+                    <note/>
 
-<p>
-<b>Notes</b>:</p>
+<p> The start IP address and the end IP address is the block of IPs that was reserved from the
+                        Management Network for OVSvApp deployment.</p>
 
 <ul>
-<li>The start IP address and the end IP address is the block of IPs that was reserved from the Management Network for OVSvApp deployment.</li>
 <li>The <codeph>trunk_port_name</codeph> must be the VLAN trunk portgroup, as described in the <xref type="section" href="#topic19352/prereqs">prerequisites</xref>. </li>
 <li>The <codeph>data_port_name</codeph> must be the second portgroup, as described in the <xref type="section" href="#topic19352/prereqs">prerequisites</xref>.</li>
 </ul>
@@ -391,9 +412,9 @@ template_name=
 </codeblock>
 
 <p>d. Specify a name, the number of CPUs, and the amount of RAM  for the deployed OVSvApp.</p>
-
-<p>
-<b>Note</b>: During deployment, the <codeph>ovs_vm_name</codeph> setting is appended with each VM host name and IP address to appear as <codeph>&#60;ovs_vm_name&#62;_&#60;IP&#62;</codeph>.</p>
+                    <note>During deployment, the <codeph>ovs_vm_name</codeph> setting is appended
+                        with each VM host name and IP address to appear as
+                            <codeph>&#60;ovs_vm_name&#62;_&#60;IP&#62;</codeph>.</note>
 
 <codeblock>
 <codeph>[vmconfig]
@@ -436,9 +457,8 @@ ntp_server=
 esx_maintenance_mode=
 </codeph>
 </codeblock>
-
-<p>
-<b>Note:</b> The agent monitoring module monitors the OVSvApp agent and takes the following action when OVSvApp VM's kernel panic occurs.</p>
+                    <note>The agent monitoring module monitors the OVSvApp agent and takes the
+                        following action when OVSvApp VM's kernel panic occurs.</note>
 
 <ul>
 <li>If set to true, OVSvApp VM is powered off and the ESX host is put in Maintenance mode.</li>
@@ -563,8 +583,8 @@ sudo service hpvcn-neutron-agent start
 </li>
 <li>
 <p>Modify the <codeph>ovs_vapp.ini</codeph> file by entering only the connection details in the [vmware] section.</p>
-
-<p>Note: You do not need to specify the <codeph>Clusters on which OVSvApp will be hosted</codeph> value.</p>
+                    <note>You do not need to specify the <codeph>Clusters on which OVSvApp will be
+                            hosted</codeph> value.</note>
 </li>
 <li>
 <p>Run the following commands and follow the instructions:</p>
@@ -587,13 +607,13 @@ python cleanup.py
 4. Delete a single or a comma separated list of OVSvApp
 </codeph>
 </codeblock>
-
-<p>
-<b>Notes</b>
--For all the options, you have to fill the connection details which is the [vmware] section(Except clusters) of ovs_vapp.ini 
--For option 2, along with connection details you have to provide the uplink and trunk VDS/DVS name in [network] section of ovs_vapp.ini 
--For option 3 you have to fill the clusters field in the [vmware] section of ovs_vapp.ini 
--For option 4 you have to provide a single OVSvApp name or a comma separated list of names</p>
+                    <note>For all the options, you have to fill the connection details which is the
+                        [vmware] section(Except clusters) of ovs_vapp.ini -For option 2, along with
+                        connection details you have to provide the uplink and trunk VDS/DVS name in
+                        [network] section of ovs_vapp.ini -For option 3 you have to fill the
+                        clusters field in the [vmware] section of ovs_vapp.ini -For option 4 you
+                        have to provide a single OVSvApp name or a comma separated list of
+                        names</note>
 </li>
 </ol>
 </section>
@@ -679,9 +699,9 @@ seed_ip=
 cd /hp-ovsvapp/src/update #python updater.py
 </codeph>
 </codeblock>
-
-<p>
-<b>Note:</b> If you see the following error while updating the OVSvApp, it means that the system from where update is launched does not have the passwordless authentication enabled for OVSvApp.</p>
+                    <note>If you see the following error while updating the OVSvApp, it means that
+                        the system from where update is launched does not have the passwordless
+                        authentication enabled for OVSvApp.</note>
 
 <codeblock>
 <codeph>Fatal error: Needed to prompt for a connection or sudo password (host: &#60;ovs-vapp-ip&#62;), but input would be ambiguous in parallel mode

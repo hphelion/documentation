@@ -32,9 +32,10 @@
 <p>
 <b>Note to Helion Development Platform users</b>: 
 The HP Helion Development Platform requires HP Helion OpenStack v1.1.1. However, HP Helion OpenStack v1.1.1 does not currently support updating the HP Helion Development Platform from v1.1 to v1.2.</p>
-<p>
-<b>Note</b>: You can also deploy the HP Helion OpenStack v1.1.1 release from scratch. For those instructions, please see <xref href="../../commercial/GA1/1.1commercial.install-GA-overview.dita" >Installing Helion OpenStack</xref>.
-<!--verify link--></p>
+    <note> You can also deploy the HP Helion OpenStack v1.1.1 release from scratch. For those
+      instructions, please see <xref
+        href="../../commercial/GA1/1.1commercial.install-GA-overview.dita">Installing Helion
+        OpenStack</xref>. <!--verify link--></note>
 <!-- Helion OpenStack v1.1.1 update scripts update HP Helion OpenStack v1.1 to version v1.1.1 and starts the update process of Helion Development Platform v1.1 to v1.2. To complete the HP Helion Development Platform update to v1.2, refer to the HP Helion Development Platform documentation listed in [Updating Helion Development Platform](/helion/devplatform/1.2/upgrade/). -->
 <!--
 **Note for Helion Development Platform version v1.1 users**: This Helion OpenStack version v1.1.1 update procedure supports Helion Development Platform version v1.2, (and only Helion Development Platform version v1.2). For users who have installed Helion OpenStack v1.1 and Helion Development Platform v1.1, when you update to Helion OpenStack v1.1.1, you also need to update to Helion Development Platform v1.2.  
@@ -71,43 +72,34 @@ For details on the HP Helion Development Platform update to v1.2, see [Updating 
           this update, a node fails, the update will likely fail. You will have to correct the node
           failure and start over. </p></li>
 </ul>
-  <p><b>Note</b>: This document describes <codeph>/root/tripleo</codeph> as the installation directory for the
-    current (1.1) version. You can install this update whereever you want but if you use a directory other than <codeph>/root/tripleo</codeph>, you will need to modify the commands shown.</p>
+    <note> This document describes <codeph>/root/tripleo</codeph> as the installation directory for
+      the current (1.1) version. You can install this update whereever you want but if you use a
+      directory other than <codeph>/root/tripleo</codeph>, you will need to modify the commands
+      shown.</note>
 <section id="deployment-considerations"> <title>Deployment considerations</title>
 <p>Check that the deployed nodes (all seed VM, undercloud, and overcloud nodes) are accessible (SSH) and pingable. Note the network and bridge configurations on all nodes using the <codeph>ifconfig</codeph> and <codeph>ovs-vsctl show</codeph> commands.</p>
 <p>Check the version of the Glance images that were used to deploy each of the overcloud nodes before the update. To check the Glance image versions:</p>
 <ol>
 <li>SSH to the undercloud node.</li>
-<li>
-<p>Enter:</p>
-
-<codeblock><codeph>source stackrc
+<li>Enter:<codeblock><codeph>source stackrc
 glance image-list
 nova list
 nova show &lt;instance id&gt;
-</codeph></codeblock>
-</li>
-<li>
-<p>Compare the Image ID returned from the <codeph>glance image-list</codeph> command  to that returned from the <codeph>nova show</codeph> command.</p>
-</li>
-<li>
-<p>Make sure the following commands are working before you start the update:</p>
-
-<ul>
-<li>keystone user-list</li>
-<li>nova list</li>
-<li>neutron net-list</li>
-<li>glance image-list</li>
-<li>os-refresh-config</li>
-<li>os-collect-config</li>
-</ul>
-</li>
-<li>
-<p>If you are unsure of the version of Helion you are running, from any Helion node (seed VM, undercloud, or overcloud node), enter:</p>
-
-<codeblock><codeph># cat /etc/HP_Helion_version
-</codeph></codeblock>
-</li>
+</codeph></codeblock></li>
+<li>Compare the Image ID returned from the <codeph>glance image-list</codeph> command to that
+          returned from the <codeph>nova show</codeph> command.</li>
+<li>Make sure the following commands are working before you start the update:<ul>
+            <li>keystone user-list</li>
+            <li>nova list</li>
+            <li>neutron net-list</li>
+            <li>glance image-list</li>
+            <li>os-refresh-config</li>
+            <li>os-collect-config</li>
+          </ul></li>
+<li>If you are unsure of the version of Helion you are running, from any Helion node (seed VM,
+          undercloud, or overcloud node),
+          enter:<codeblock><codeph># cat /etc/HP_Helion_version
+</codeph></codeblock></li>
 </ol>
 <p>A sample of the output is:</p>
 <codeblock><codeph>HP Helion Openstack 1.1 Build 81
@@ -116,9 +108,8 @@ nova show &lt;instance id&gt;
 <section id="seed-update-process"> <title>Helion v1.1 to v1.1.1 seed update process</title>
 <p>The procedure will guide you through updating to Helion v1.1.1 from the seed using
           <codeph>update_sd.sh</codeph>.</p>
-<p>
-        <b>Note</b>: You must have the <codeph>jq</codeph> package for your version of Ubuntu
-        installed on the seed. If you need to install this package, enter:</p>
+      <note> You must have the <codeph>jq</codeph> package for your version of Ubuntu installed on
+        the seed. If you need to install this package, enter:</note>
 <codeblock><codeph>apt-get install jq
 </codeph></codeblock>
 <!--
@@ -126,142 +117,95 @@ nova show &lt;instance id&gt;
 -->
 <p>To prepare the seed VM:</p>
 <ol>
-<li>
-<p>Log into the seed VM by entering:</p>
-
-<codeblock><codeph>ssh root@&lt;seed-ip&gt;
-</codeph></codeblock>
-</li>
-<li>
-<p>Remove any update folders and content from previous update attempts in the <codeph>/root</codeph> folder using the <codeph>rm</codeph> command.</p>
-</li>
-<li>
-<p>From <codeph>/root</codeph>, create the <codeph>helion-update-1.1-to-1.1.1</codeph> directory
-            then change to this directory by entering:</p>
-
-<codeblock><codeph>cd /root
+<li>Log into the seed VM by
+          entering:<codeblock><codeph>ssh root@&lt;seed-ip&gt;
+</codeph></codeblock></li>
+<li>Remove any update folders and content from previous update attempts in the
+            <codeph>/root</codeph> folder using the <codeph>rm</codeph> command.</li>
+<li>From <codeph>/root</codeph>, create the <codeph>helion-update-1.1-to-1.1.1</codeph> directory
+          then change to this directory by
+          entering:<codeblock><codeph>cd /root
 mkdir helion-update-1.1-to-1.1.1
 cd helion-update-1.1-to-1.1.1
-</codeph></codeblock>
-</li>
-<li>
-<p>Download the update kit <codeph>HP_Helion OpenStack </codeph> to the <codeph>helion-update</codeph> directory on the seed VM.</p>
-</li>
-<li>
-<p>Extract the update kit by entering:</p>
-
-<codeblock><codeph>tar -xvzf HP_Helion_OpenStack 
-</codeph></codeblock>
-</li>
-<li>
-<p>Copy the <codeph>kvm-custom-ips.json</codeph> file to the new directory by entering:</p>
-
-<codeblock><codeph>cp ~/tripleo/configs/kvm-custom-ips.json ~/helion-update-1.1-to-1.1.1/tripleo/configs/kvm-custom-ips.json
-</codeph></codeblock>
-</li>
-<li>
-<p>Verify that there is enough free space on the system to carry out the update. The  space you need must support a copy of the following folders:</p>
-
-<ul>
-<li>/root/tripleo </li>
-<li>/mnt/state </li>
-<li>/root/helion-update/helion-update-1.1-to-1.1.1</li>
-<li>/tftpboot</li>
-</ul>
-</li>
-<li>
-<p>To see the amount of space these folders require, enter:</p>
-
-<codeblock><codeph>du -hcs /root/tripleo /mnt/state /root/helion-update* /tftpboot
-</codeph></codeblock>
-</li>
-<li>
-<p>Check the free space on the system by entering:</p>
-
-<codeblock><codeph>df -h /
-</codeph></codeblock>
-
-<p>The space required cannot exceed the space available (that is, the output from the <codeph>du -hcs</codeph> command).</p>
-
-<p>If you need to free up space, you can safely remove the <codeph>HP_Helion_>OpenStack</codeph> update kit that you just extracted</p>
-</li>
-<li>
-<p>To prepare the seed for starting the update, verify that the following files exist in the seed
-            VM.</p>
-
-<ul>
-<li>/root/eca.key</li>
-<li>/root/eca.crt</li>
-</ul>
-<p>If you specified the ephemeral CA key and certificate from a different directory using environment variables <codeph>EPHEMERAL_CA_KEY_FILE</codeph> and <codeph>EPHEMERAL_CA_CERT_FILE</codeph>, you must copy them to the seed VM <codeph>/root</codeph> directory. Then rename them to <codeph>eca.crt</codeph> and <codeph>eca.key</codeph>.</p>
-
-<p>If you do not have these files, you may be able to regenerate them from the installer data using the following commands:</p>
-
-<p><codeblock>echo -e $(jq '.parameters.EphemeralCaKey' ../tripleo/overcloud-env.json | sed 's/\"//g') &gt; /root/eca.key
-echo -e $(jq '.parameters.EphemeralCaCert' ../tripleo/overcloud-env.json | sed 's/\"//g') &gt; /root/eca.crt</codeblock></p>
-</li>
-<li>
-<p>If you generated these files from the installer data, you  need to verify that the files are well formed by entering:</p>
-
-<codeblock><codeph>openssl rsa -noout -in /root/eca.key
+</codeph></codeblock></li>
+<li>Download the update kit <codeph>HP_Helion OpenStack </codeph> to the
+            <codeph>helion-update</codeph> directory on the seed VM.</li>
+<li>Extract the update kit by
+          entering:<codeblock><codeph>tar -xvzf HP_Helion_OpenStack 
+</codeph></codeblock></li>
+<li>Copy the <codeph>kvm-custom-ips.json</codeph> file to the new directory by
+          entering:<codeblock><codeph>cp ~/tripleo/configs/kvm-custom-ips.json ~/helion-update-1.1-to-1.1.1/tripleo/configs/kvm-custom-ips.json
+</codeph></codeblock></li>
+<li>Verify that there is enough free space on the system to carry out the update. The space you need
+          must support a copy of the following folders:<ul>
+            <li>/root/tripleo </li>
+            <li>/mnt/state </li>
+            <li>/root/helion-update/helion-update-1.1-to-1.1.1</li>
+            <li>/tftpboot</li>
+          </ul></li>
+<li>To see the amount of space these folders require,
+          enter:<codeblock><codeph>du -hcs /root/tripleo /mnt/state /root/helion-update* /tftpboot
+</codeph></codeblock></li>
+<li>Check the free space on the system by
+            entering:<codeblock><codeph>df -h /
+</codeph></codeblock><p>The space required cannot
+            exceed the space available (that is, the output from the <codeph>du -hcs</codeph>
+            command).</p><p>If you need to free up space, you can safely remove the
+              <codeph>HP_Helion_>OpenStack</codeph> update kit that you just extracted</p></li>
+<li>To prepare the seed for starting the update, verify that the following files exist in the seed VM.<ul>
+            <li>/root/eca.key</li>
+            <li>/root/eca.crt</li>
+          </ul><p>If you specified the ephemeral CA key and certificate from a different directory
+            using environment variables <codeph>EPHEMERAL_CA_KEY_FILE</codeph> and
+              <codeph>EPHEMERAL_CA_CERT_FILE</codeph>, you must copy them to the seed VM
+              <codeph>/root</codeph> directory. Then rename them to <codeph>eca.crt</codeph> and
+              <codeph>eca.key</codeph>.</p><p>If you do not have these files, you may be able to
+            regenerate them from the installer data using the following commands:</p><p>
+            <codeblock>echo -e $(jq '.parameters.EphemeralCaKey' ../tripleo/overcloud-env.json | sed 's/\"//g') &gt; /root/eca.key
+echo -e $(jq '.parameters.EphemeralCaCert' ../tripleo/overcloud-env.json | sed 's/\"//g') &gt; /root/eca.crt</codeblock>
+          </p></li>
+<li>If you generated these files from the installer data, you need to verify that the files are well
+          formed by
+            entering:<codeblock><codeph>openssl rsa -noout -in /root/eca.key
 openssl x509 -noout -in /root/eca.crt
-</codeph></codeblock>
-
-<p>If nothing displays, it means the file is readable and at least reasonably well formatted. Otherwise, a message similar to this one displays:</p>
-
-<codeblock><codeph>unable to load certificate
+</codeph></codeblock><p>If
+            nothing displays, it means the file is readable and at least reasonably well formatted.
+            Otherwise, a message similar to this one
+          displays:</p><codeblock><codeph>unable to load certificate
 140170817259168:error:0906D06C:PEM routines:PEM_read_bio:no start line:pem_lib.c:703:Expecting: TRUSTED CERTIFICATE".
-</codeph></codeblock>
-</li>
-<li>
-<p>From <codeph>/root</codeph> on the seed, create the <codeph>helion-update-1.1-to-1.1.1</codeph>
-            directory then change to this directory by entering:</p>
-
-<codeblock><codeph>cd /root
+</codeph></codeblock></li>
+<li>From <codeph>/root</codeph> on the seed, create the <codeph>helion-update-1.1-to-1.1.1</codeph>
+          directory then change to this directory by
+          entering:<codeblock><codeph>cd /root
 mkdir helion-update-1.1-to-1.1.1
 cd helion-update-1.1-to-1.1.1 
-</codeph></codeblock>
-</li>
-<li>
-<p>Copy the seed update script from the downloaded update kit on the seed VM to the seed by
-            entering:</p>
-
-<codeblock><codeph>scp root@&lt;seed-vm-ip&gt;:/root/helion-update-1.1-to-1.1.1/tripleo/helion-update/seed_update/update_sd.sh .
-</codeph></codeblock>
-</li>
-<li>
-<p>Source the <codeph>kvm-custom-ips.json</codeph> file and run the seed update script
-              <codeph>update_sd.sh</codeph> from the seed by entering:</p>
-          <p>
+</codeph></codeblock></li>
+<li>Copy the seed update script from the downloaded update kit on the seed VM to the seed by
+          entering:<codeblock><codeph>scp root@&lt;seed-vm-ip&gt;:/root/helion-update-1.1-to-1.1.1/tripleo/helion-update/seed_update/update_sd.sh .
+</codeph></codeblock></li>
+<li>Source the <codeph>kvm-custom-ips.json</codeph> file and run the seed update script
+            <codeph>update_sd.sh</codeph> from the seed by entering:<p>
             <codeblock><codeph>source ~/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh ~/tripleo/configs/kvm-custom-ips.json
 ./update_sd.sh &lt;host_tripleo_root_directory&gt; &lt;remote_update_tripleo_root_directory&gt; | tee seed_update.log
 </codeph></codeblock>
-          </p>
-          <p>Make sure you run <codeph>update_sd.sh</codeph> from the update directory you created:
-              <codeph>/root/helion-update-1.1-to-1.1.1)</codeph> using the seed's
+          </p><p>Make sure you run <codeph>update_sd.sh</codeph> from the update directory you
+            created: <codeph>/root/helion-update-1.1-to-1.1.1)</codeph> using the seed's
               <codeph>tripleo</codeph> root directory (<codeph>/root/tripleo</codeph>) and remote
-            update root (extracted updated kit directory on the seed VM) as arguments.</p>
-
-<p>For example:</p>
-
-<codeblock><codeph>host_tripleo_root_directory = /root/tripleo
+            update root (extracted updated kit directory on the seed VM) as arguments.</p><p>For
+            example:</p><codeblock><codeph>host_tripleo_root_directory = /root/tripleo
 remote_update_tripleo_root_directory = /root/helion-update-1.1-to-1.1.1
-</codeph></codeblock>
-  <p><b>NOTE:</b> If you used any custom variables for the initial installation of the seed, you will need to export them again prior to executing the <codeph>update_sd.sh</codeph> script.</p>
-  
-  <p>Once the update is completed, the <codeph>ssh host_key</codeph> of the seed will have changed.</p>
-</li>
+</codeph></codeblock><note>If
+            you used any custom variables for the initial installation of the seed, you will need to
+            export them again prior to executing the <codeph>update_sd.sh</codeph>
+            script.</note><p>Once the update is completed, the <codeph>ssh host_key</codeph> of the
+            seed will have changed.</p></li>
 
 
-<li>
-<p>To purge the known_hosts entries on the seed machine, enter:</p>
-
-<codeblock><codeph>ssh-keygen -R &lt;seed_ip_address&gt;
-</codeph></codeblock>
-
-<p>You will be prompted to re-add the seed to your known_hosts file when you SSH into the seed to
-            update the undercloud and overcloud.</p>
-</li>
+<li>To purge the known_hosts entries on the seed machine,
+            enter:<codeblock><codeph>ssh-keygen -R &lt;seed_ip_address&gt;
+</codeph></codeblock><p>You
+            will be prompted to re-add the seed to your known_hosts file when you SSH into the seed
+            to update the undercloud and overcloud.</p></li>
 </ol>
 </section>
 <section id="uc-update-process"> <title>HP Helion OpenStack 1.1 to 1.1.X undercloud update process</title>
@@ -277,21 +221,16 @@ If you are updating to a release that includes new Orchestration (Heat) template
 <p>To update your HP Helion OpenStack undercloud from v1.1 to v1.1.1, from the
         seed VM:</p>
 <ol>
-<li>
-  <p>Source the <codeph>kvm-custom-ips.json</codeph> file and run the update script by entering:</p>
-
-<codeblock>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+<li>Source the <codeph>kvm-custom-ips.json</codeph> file and run the update script by
+          entering:<codeblock>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 cd tripleo/helion-update/undercloud_update
-./update_uc.sh ~/helion-update-1.1-to-1.1.1/tripleo</codeblock>
-</li>
-<li>
-<p>Confirm that update was successful by examining the
+./update_uc.sh ~/helion-update-1.1-to-1.1.1/tripleo</codeblock></li>
+<li>Confirm that update was successful by examining the
             <codeph>/var/log/ansible/ansible.log</codeph>. This report should not list any
-            unreachable or failed nodes.  That is <codeph>unreachable</codeph> and
-              <codeph>failed</codeph> must always equal 0. An example of a successful update is
-            shown in the output below:</p>
-
-<codeblock><codeph>PLAY RECAP ********************************************************************
+          unreachable or failed nodes. That is <codeph>unreachable</codeph> and
+            <codeph>failed</codeph> must always equal 0. An example of a successful update is shown
+          in the output
+          below:<codeblock><codeph>PLAY RECAP ********************************************************************
 10.23.67.141   : ok=122  changed=74   unreachable=0failed=0
 10.23.67.143   : ok=37   changed=22   unreachable=0failed=0
 10.23.67.144   : ok=122  changed=74   unreachable=0failed=0
@@ -299,15 +238,11 @@ cd tripleo/helion-update/undercloud_update
 10.23.67.146   : ok=37   changed=22   unreachable=0failed=0
 10.23.67.147   : ok=60   changed=30   unreachable=0failed=0
 10.23.67.148   : ok=60   changed=30   unreachable=0failed=0
-</codeph></codeblock>
-</li>
-<li>
-<p>Change file permissions by entering:</p>
-
-<codeblock><codeph>chmod 775 /mnt/state/var/eon
+</codeph></codeblock></li>
+<li>Change file permissions by
+          entering:<codeblock><codeph>chmod 775 /mnt/state/var/eon
 chmod 775 /mnt/state/var/eon/data
-</codeph></codeblock>
-</li>
+</codeph></codeblock></li>
 </ol>
 </section>
 <section id="oc-update-process"> <title>Helion v1.1 to v1.1.1 overcloud update process</title>
@@ -318,25 +253,19 @@ chmod 775 /mnt/state/var/eon/data
 -->
 <p>The v1.1.1 release includes new Orchestration (Heat) templates and new passthrough files. To apply these new templates to your system before updating the overcloud:</p>
 <ol id="ol_z5h_d1h_ms">
-        <li>
-          <p>Log on to the seed VM.</p>
-          <codeblock><codeph>ssh root@&lt;seed-ip&gt;
-</codeph></codeblock>
-        </li>
-        <li>
-          <p>Copy the new installation scripts, passthrough files and heat templates to their
-            respective original <codeph>/root/tripleo/</codeph> directories. If you made
-            modifications to the passthrough files or heat templates, you will need to reapply these
-            changes to the newly copied files. In this case it is advisable to back up the existing
-            files for your own reference before proceeding:</p>
-          <codeblock>cp -r /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-incubator/scripts /root/tripleo/tripleo-incubator/
+        <li>Log on to the seed
+          VM.<codeblock><codeph>ssh root@&lt;seed-ip&gt;
+</codeph></codeblock></li>
+        <li>Copy the new installation scripts, passthrough files and heat templates to their
+          respective original <codeph>/root/tripleo/</codeph> directories. If you made modifications
+          to the passthrough files or heat templates, you will need to reapply these changes to the
+          newly copied files. In this case it is advisable to back up the existing files for your
+          own reference before
+          proceeding:<codeblock>cp -r /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-incubator/scripts /root/tripleo/tripleo-incubator/
 cp -r /root/helion-update-1.1-to-1.1.1/tripleo/hp_passthrough /root/tripleo/
-cp -r /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-heat-templates /root/tripleo/</codeblock>
-        </li>
-        <li>
-          <p>Create the new <codeph>from-heat.conf</codeph> file on the seed using the following
-            command:</p>
-          <codeblock><codeph>root@hLinux:~# cat &gt; from-heat.conf &lt;&lt;EOF
+cp -r /root/helion-update-1.1-to-1.1.1/tripleo/tripleo-heat-templates /root/tripleo/</codeblock></li>
+        <li>Create the new <codeph>from-heat.conf</codeph> file on the seed using the following
+          command:<codeblock><codeph>root@hLinux:~# cat &gt; from-heat.conf &lt;&lt;EOF
 {{#stunnel}}
 {{#connect_host}}
 pid = /var/run/stunnel4/from-heat.pid
@@ -372,12 +301,10 @@ ciphers = {{{.}}}
 {{/connect_host}}
 {{/stunnel}}
 EOF
-</codeph></codeblock>
-        </li>
-        <li>
-          <p>Copy the new <codeph>my.cnf</codeph> and <codeph>stunnel/from-heat.conf</codeph> files to each of the overcloud
-            controller nodes:  To do this, enter:</p>
-          <codeblock><codeph>TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
+</codeph></codeblock></li>
+        <li>Copy the new <codeph>my.cnf</codeph> and <codeph>stunnel/from-heat.conf</codeph> files
+          to each of the overcloud controller nodes: To do this,
+          enter:<codeblock><codeph>TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
 for ip in `nova list | grep controller[0-2] | awk '{print $12}' | sed -e "s/.*=\\([0-9.]*\\).*/\1/"`; do
 echo $ip;
 scp from-heat.conf heat-admin@$ip:~ 
@@ -385,70 +312,56 @@ scp /usr/libexec/os-apply-config/templates/mnt/state/etc/mysql/my.cnf heat-admin
 ssh heat-admin@$ip "sudo cp ~heat-admin/my.cnf /usr/libexec/os-apply-config/templates/mnt/state/etc/mysql/" 
 ssh heat-admin@$ip "sudo cp ~heat-admin/from-heat.conf /usr/libexec/os-apply-config/templates/etc/stunnel/" 
 ssh heat-admin@$ip "sudo /usr/local/bin/os-apply-config  --validate" 
-done</codeph></codeblock>
-        </li>
-        <li>
-          <p>Load the custom-ips json file, along with any custom variables that were defined for
-            the initial installation of the overcloud. Then as root user, run
-              <codeph>update-overcloud</codeph> to apply the new templates and passthrough files
-            from the <codeph>/root</codeph> directory on the seed. For example:</p>
-          <codeblock><codeph>cd /root
+done</codeph></codeblock></li>
+        <li>Load the custom-ips json file, along with any custom variables that were defined for the
+          initial installation of the overcloud. Then as root user, run
+            <codeph>update-overcloud</codeph> to apply the new templates and passthrough files from
+          the <codeph>/root</codeph> directory on the seed. For
+            example:<codeblock><codeph>cd /root
 source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 OVERCLOUD_COMPUTESCALE=5
 OVERCLOUD_NEUTRON_DVR=True
 OVERCLOUD_NTP_SERVER=10.22.33.44 
 ./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud
-</codeph></codeblock>
-          <p>Because the images have not yet been updated, the above command should return  the
-            message:</p>
-          <codeblock><codeph>++ wait_for 30 10 nova service-list --binary nova-compute '2&gt;/dev/null' '|' grep 'enabled.*\ up\ '
+</codeph></codeblock><p>Because
+            the images have not yet been updated, the above command should return the
+            message:</p><codeblock><codeph>++ wait_for 30 10 nova service-list --binary nova-compute '2&gt;/dev/null' '|' grep 'enabled.*\ up\ '
 Timing out after 300 seconds:
 COMMAND=nova service-list --binary nova-compute 2&gt;/dev/null | grep enabled.*\ up\
 OUTPUT=
-</codeph></codeblock>
-          <p>This is expected behavior for KVM-based systems.</p>
-        </li>
-        <li>
-          <p>Restart MySQL and stunnel on the overcloud controller nodes by entering:</p>
-          <codeblock>for ip in `nova list | grep controller[0-2] | awk '{print $12}
+</codeph></codeblock><p>This
+            is expected behavior for KVM-based systems.</p></li>
+        <li>Restart MySQL and stunnel on the overcloud controller nodes by
+              entering:<codeblock>for ip in `nova list | grep controller[0-2] | awk '{print $12}
  ' | sed -e "s/.=\\([0-9.]\\).*/\1/"`; do 
 echo $ip; 
 ssh heat-admin@$ip "sudo service mysql restart; sudo service mysql status”
 ssh heat-admin@$ip "sudo service stunnel4 restart; sudo service stunnel4 status”
 ssh heat-admin@$ip "sudo netstat -napd | grep 3307 | grep LIST"
-done</codeblock>
-          <p><b>Warning</b>: Do not proceed with the following steps unless the
-              <codeph>netstat</codeph> command shows MySQL listening on port 3307. To verify that
-            MySQL is now listening on port 3307 enter:</p>
-          <codeblock><codeph>netstat -napd | grep 3307 | grep LIST
+done</codeblock><p><b>Warning</b>:
+            Do not proceed with the following steps unless the <codeph>netstat</codeph> command
+            shows MySQL listening on port 3307. To verify that MySQL is now listening on port 3307
+            enter:</p><codeblock><codeph>netstat -napd | grep 3307 | grep LIST
 tcp        0      0 127.0.0.1:3307          0.0.0.0:*               LISTEN      32049/mysqld    
-</codeph></codeblock>
-          <p> .</p>
-          <p>
-            <b>Note</b>: Nova's <codeph>service-list</codeph> will report that overcloud services are 'down'. At this
+</codeph></codeblock><note>Nova's
+              <codeph>service-list</codeph> will report that overcloud services are 'down'. At this
             stage, this is expected behavior. (You may need to wait for approximately 10 minutes to
             allow <codeph>os-apply-config</codeph> to complete running on each controller node
-            before <codeph>nova service-list</codeph> returns this information.)</p>
-        </li>
-        <li>
-          <p>Apply the following edit to the pre-flight_check.yml file:</p>
-          <codeblock><codeph>sed -i 's/status=started/state=started/g' ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/pre-flight_check.yml
-</codeph></codeblock>
-        </li>
-        <li>
-          <p>Add the 61-sleep playbook by creating the 61-sleep file as follows:</p>
-          <codeblock><codeph>cat &gt; ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/files/61-sleep &lt;&lt;EOF
+            before <codeph>nova service-list</codeph> returns this information.)</note></li>
+        <li>Apply the following edit to the pre-flight_check.yml
+          file:<codeblock><codeph>sed -i 's/status=started/state=started/g' ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/pre-flight_check.yml
+</codeph></codeblock></li>
+        <li>Add the 61-sleep playbook by creating the 61-sleep file as
+          follows:<codeblock><codeph>cat &gt; ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/files/61-sleep &lt;&lt;EOF
 #!/bin/bash
 set -x
 echo 'Short sleep'
 sleep 20
 date
 EOF
-</codeph></codeblock>
-        </li>
-        <li>
-          <p>Update the <codeph>step_run_occ</codeph> playbook by entering:</p>
-          <codeblock>cp -p ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml ~/helion-update-1.1-to-/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml.orig
+</codeph></codeblock></li>
+        <li>Update the <codeph>step_run_occ</codeph> playbook by
+          entering:<codeblock>cp -p ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml ~/helion-update-1.1-to-/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml.orig
 cat &gt; ~/helion-update-1.1-to-/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml &lt;&lt; EOF
     # Copyright (C) 2014 Hewlett-Packard Development Company, L.P.
     #
@@ -488,29 +401,23 @@ cat &gt; ~/helion-update-1.1-to-/tripleo/helion-update/tripleo-ansible/playbooks
     - name: "Execute os-collect-config"
       command: os-collect-config --force --one
       when: test_bypass_os_collect_config != true
-EOF</codeblock>
-        </li>
-        <li>
-          <p>To verify that the new file is correct,  run:</p>
-          <codeblock><codeph>python -c 'import yaml; f=open("/root/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml", "r"); yaml.safe_load(f);'
+EOF</codeblock></li>
+        <li>To verify that the new file is correct,
+          run:<codeblock><codeph>python -c 'import yaml; f=open("/root/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml", "r"); yaml.safe_load(f);'
 echo $?
 0
-</codeph></codeblock>
-        </li>
-        <li>
-          <p>Run the update script:</p>
-          <codeblock><codeph>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+</codeph></codeblock></li>
+        <li>Run the update
+            script:<codeblock><codeph>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 cd helion-update-1.1-to-1.1.1/tripleo/helion-update/overcloud_update
 ./update_oc.sh ~/helion-update-1.1-to-1.1.1/tripleo |&amp; tee update_oc.log
-</codeph></codeblock>
-          <p>Your HP Helion OpenStack overcloud is now updated.</p>
-        </li>
-        <li>
-          <p>Confirm that update was successful by examining the
-              <codeph>/var/log/ansible/ansible.log</codeph>. This report should not list any
-            unreachable or failed nodes. That is <codeph>unreachable=0</codeph> and
-              <codeph>failed=0</codeph> as shown in the example output below:</p>
-          <codeblock><codeph>PLAY RECAP ********************************************************************
+</codeph></codeblock><p>Your
+            HP Helion OpenStack overcloud is now updated.</p></li>
+        <li>Confirm that update was successful by examining the
+            <codeph>/var/log/ansible/ansible.log</codeph>. This report should not list any
+          unreachable or failed nodes. That is <codeph>unreachable=0</codeph> and
+            <codeph>failed=0</codeph> as shown in the example output
+          below:<codeblock><codeph>PLAY RECAP ********************************************************************
 10.23.67.141   : ok=122  changed=74   unreachable=0failed=0
 10.23.67.143   : ok=37   changed=22   unreachable=0failed=0
 10.23.67.144   : ok=122  changed=74   unreachable=0failed=0
@@ -518,45 +425,28 @@ cd helion-update-1.1-to-1.1.1/tripleo/helion-update/overcloud_update
 10.23.67.146   : ok=37   changed=22   unreachable=0failed=0
 10.23.67.147   : ok=60   changed=30   unreachable=0failed=0
 10.23.67.148   : ok=60   changed=30   unreachable=0failed=0
-</codeph></codeblock>
-        </li>
+</codeph></codeblock></li>
       </ol>
 </section>
 <section id="post-update-cleanup"> <title>Post update cleanup</title>
 <p>After you have successfully updated the overcloud, there are some files that you should delete. Perform the following steps on all nodes in the overcloud (including controller nodes, Swift nodes, Nova compute nodes, etc.) To find and delete these files:</p>
 <ol>
-<li>
-<p>Stop the <codeph>os-collect-config</codeph> service by entering:</p>
-
-<codeblock><codeph>service os-collect-config stop
-</codeph></codeblock>
-</li>
-<li>
-<p>Find the files named <codeph>host_metadata.js*</codeph> by entering:</p>
-
-<codeblock><codeph>find / -name host_metadata.json* -ls
-</codeph></codeblock>
-</li>
-<li>
-<p>Delete the files by entering:</p>
-
-<codeblock><codeph>find / -name host_metadata.json* -delete
-</codeph></codeblock>
-</li>
-<li>
-<p>Verify that the files are all gone by entering:</p>
-
-<codeblock><codeph>find / -name host_metadata.json* -ls
-</codeph></codeblock>
-
-<p>There should be no files found.</p>
-</li>
-<li>
-<p>Restart the service by entering:</p>
-
-<codeblock><codeph>service os-collect-config start
-</codeph></codeblock>
-</li>
+<li>Stop the <codeph>os-collect-config</codeph> service by
+          entering:<codeblock><codeph>service os-collect-config stop
+</codeph></codeblock></li>
+<li>Find the files named <codeph>host_metadata.js*</codeph> by
+          entering:<codeblock><codeph>find / -name host_metadata.json* -ls
+</codeph></codeblock></li>
+<li>Delete the files by
+          entering:<codeblock><codeph>find / -name host_metadata.json* -delete
+</codeph></codeblock></li>
+<li>Verify that the files are all gone by
+            entering:<codeblock><codeph>find / -name host_metadata.json* -ls
+</codeph></codeblock><p>There
+            should be no files found.</p></li>
+<li>Restart the service by
+          entering:<codeblock><codeph>service os-collect-config start
+</codeph></codeblock></li>
 </ol>
 <!--
 **Note**: Restart the Helion Development Platform VMs after updating the overcloud. For instructions on restarting Development Platform VMS, go to [Restarting Helion Development Platform control plane VMs](#HDPstart).
@@ -724,21 +614,15 @@ instances deployed before the update should still be up and accessible. It shoul
 <li>Edit the file <codeph>/etc/haproxy/haproxy.cfg</codeph> to add at the end of the file <codeph>mode http</codeph>. (Make this edit in the listen <codeph>haproxy.stats</codeph>:1993 section.)</li>
 <li>Restart HAProxy (<codeph>service haproxy restart</codeph>).</li>
 <li>Open the status page and check all the services. <!-- ([http://managementcontroller](http://managementcontroller.ip:1993).) --></li>
-<li>
-<p>Make sure that the following commands are working after the update:</p>
-
-<ul>
-<li>keystone user-list</li>
-<li>nova list   </li>
-<li>neutron net-list </li>
-<li>glance image-list  </li>
-<li>os-refresh-config</li>
-<li>os-collect-config  </li>
-</ul>
-</li>
-<li>
-<p>Use <codeph>ifconfig</codeph> to check that all your networks still exist after the update.</p>
-</li>
+<li>Make sure that the following commands are working after the update:<ul>
+            <li>keystone user-list</li>
+            <li>nova list </li>
+            <li>neutron net-list </li>
+            <li>glance image-list </li>
+            <li>os-refresh-config</li>
+            <li>os-collect-config </li>
+          </ul></li>
+<li>Use <codeph>ifconfig</codeph> to check that all your networks still exist after the update.</li>
 <li>Use <codeph>ovs-vsctl show</codeph> to check that all bridges and ports still exist after the update.   </li>
 </ol>
 </section>
@@ -770,20 +654,17 @@ Use <codeph>ovs-vsctl show</codeph> to check that all bridges and ports still ex
 <li>Verify that you can delete old volumes.</li>
 <li>Verify that you can  attach/detach volumes.</li>
 <li>Check that the </li>
-<li>version of the Glance image used to update is the same by SSHing to the undercloud node and run:
-
-<ul>
-<li>
-<codeph>glance image-list</codeph>
-</li>
-<li>
-<codeph>nova list</codeph>
-</li>
-<li>
-<codeph>nova show &lt;instance id&gt;</codeph>
-</li>
-</ul>
-</li>
+<li>version of the Glance image used to update is the same by SSHing to the undercloud node and run: <ul>
+            <li>
+              <codeph>glance image-list</codeph>
+            </li>
+            <li>
+              <codeph>nova list</codeph>
+            </li>
+            <li>
+              <codeph>nova show &lt;instance id&gt;</codeph>
+            </li>
+          </ul></li>
 </ul>
 <p>Compare the Image ID from <codeph>glance image-list</codeph> with 
 <codeph>nova show</codeph>.</p>
@@ -811,37 +692,27 @@ cd helion-update-1.1-to-1.1.1/tripleo/helion-update/seed_update
 </codeph></codeblock>
 <p>To fix this problem:</p>
 <ol>
-<li>
-<p>Remove the failed backup from the <codeph>/tmp</codeph> folder by entering:</p>
-
-<codeblock><codeph>rm -r -f /tmp/backp_root
-</codeph></codeblock>
-</li>
-<li>
-<p>Restart MySQL and RabbitMQ by entering:</p>
-
-<codeblock><codeph>service mysql restart
+<li>Remove the failed backup from the <codeph>/tmp</codeph> folder by
+          entering:<codeblock><codeph>rm -r -f /tmp/backp_root
+</codeph></codeblock></li>
+<li>Restart MySQL and RabbitMQ by
+          entering:<codeblock><codeph>service mysql restart
 service rabbitmq-server restart
-</codeph></codeblock>
-</li>
-<li>
-<p>Run <codeph>os-collect-config</codeph> by entering:</p>
-
-<codeblock><codeph>servie os-collect-config stop
+</codeph></codeblock></li>
+<li>Run <codeph>os-collect-config</codeph> by
+            entering:<codeblock><codeph>servie os-collect-config stop
 os-collect-config --force
 service os-collect-config start
-</codeph></codeblock>
-
-<p>If this command returns an error, RabbitMQ may be in a bad state as a result of running out of disk space. If executing <codeph>os-collect-config</codeph> errors with RabbitMQ, enter:</p>
-
-<codeblock><codeph>rabbitmqctl stop_app
+</codeph></codeblock><p>If
+            this command returns an error, RabbitMQ may be in a bad state as a result of running out
+            of disk space. If executing <codeph>os-collect-config</codeph> errors with RabbitMQ,
+            enter:</p><codeblock><codeph>rabbitmqctl stop_app
 rabbitmqctl reset
 service rabbitmq-server stop
-</codeph></codeblock>
-</li>
-<li>
-<p>Once RabbitMQ has been reset, re-attempt step 3 which will re-configure RabbitMQ and restart services.  If the <codeph>rabbitmqctl reset</codeph> command does not work, use the <codeph>rabbitmqctl force_reset</codeph> command.</p>
-</li>
+</codeph></codeblock></li>
+<li>Once RabbitMQ has been reset, re-attempt step 3 which will re-configure RabbitMQ and restart
+          services. If the <codeph>rabbitmqctl reset</codeph> command does not work, use the
+            <codeph>rabbitmqctl force_reset</codeph> command.</li>
 </ol>
 </section>
 <section id="seed-host-update-fails-noting-unable-to-ping-192021"> <title>Seed update fails noting unable to ping 192.0.2.1</title>
@@ -860,45 +731,29 @@ OUTPUT=PING 192.0.2.1 (192.0.2.1) 56(84) bytes of data.
         that it has failed, although the seed has likely rebooted without issue.</p>
 <p>To fix this problem:</p>
 <ol>
-<li>
-<p>Identify the following:</p>
-
-<ul>
-<li>Expected IP address of the seed.</li>
-<li>Location of the backup folder. It should be at
+<li>Identify the following:<ul>
+            <li>Expected IP address of the seed.</li>
+            <li>Location of the backup folder. It should be at
                 <codeph>/root/helion-update-1.1-to-1.1.1/backup*</codeph>. For
                 example:<codeph>/root/helion-update-1.1-to-1.1.74/backup-0/</codeph>
             </li>
-</ul>
-</li>
-<li>
-<p>Verify that you can ping the IP address of the seed by entering:</p>
-
-<codeblock><codeph>ping -c 1 &lt;seed IP address&gt;
-</codeph></codeblock>
-</li>
-<li>
-<p>Run the restore script directly by entering:</p>
-
-<codeblock><codeph>/root/helion-update-1.1-to-1.1.1/helion-update/seed_update/seed_update.sh --restore-seed &lt;backup directory&gt; --ip-address &lt;seed IP address&gt;
-</codeph></codeblock>
-
-<p>For example:</p>
-
-<codeblock><codeph>/root/helion-update-1.1-to-1.1.1/helion-update/seed_update/seed_update.sh --restore-seed /root/helion-update-1.1-to-1.1.1/backup-0/ --ip-address 192.2.0.1
-</codeph></codeblock>
-</li>
-<li>
-<p>The restoration command will take some time, but once completed you should be able to log in to
-            the seed. To verify that the node is in working status, enter:</p>
-
-<codeblock><codeph>source /root/stackrc &amp;&amp;
+          </ul></li>
+<li>Verify that you can ping the IP address of the seed by
+          entering:<codeblock><codeph>ping -c 1 &lt;seed IP address&gt;
+</codeph></codeblock></li>
+<li>Run the restore script directly by
+            entering:<codeblock><codeph>/root/helion-update-1.1-to-1.1.1/helion-update/seed_update/seed_update.sh --restore-seed &lt;backup directory&gt; --ip-address &lt;seed IP address&gt;
+</codeph></codeblock><p>For
+            example:</p><codeblock><codeph>/root/helion-update-1.1-to-1.1.1/helion-update/seed_update/seed_update.sh --restore-seed /root/helion-update-1.1-to-1.1.1/backup-0/ --ip-address 192.2.0.1
+</codeph></codeblock></li>
+<li>The restoration command will take some time, but once completed you should be able to log in to
+          the seed. To verify that the node is in working status,
+          enter:<codeblock><codeph>source /root/stackrc &amp;&amp;
 nova list &amp;&amp;
 glance image-list &amp;&amp;
 heat stack-list &amp;&amp;
 neutron net-list
-</codeph></codeblock>
-</li>
+</codeph></codeblock></li>
 </ol>
 </section>
 <section id="retrying-failed-actions"> <title>Retrying failed actions</title>
@@ -966,18 +821,12 @@ and the host has failed to reboot. When this happens, you will get this error Me
 <p>If that file does not exist, or is empty, you have two options.</p>
 
 <ol>
-<li>
-<p>Add the following to your MySQL CLI command line:</p>
-
-<codeblock><codeph>--defaults-extra-file=/mnt/state/root/metadata.my.cnf
-</codeph></codeblock>
-</li>
-<li>
-<p>Or copy the configuration from the state drive by entering:</p>
-
-<codeblock><codeph>sudo cp -f /mnt/state/root/metadata.my.cnf /root/.my.cnf
-</codeph></codeblock>
-</li>
+<li>Add the following to your MySQL CLI command
+              line:<codeblock><codeph>--defaults-extra-file=/mnt/state/root/metadata.my.cnf
+</codeph></codeblock></li>
+<li>Or copy the configuration from the state drive by
+              entering:<codeblock><codeph>sudo cp -f /mnt/state/root/metadata.my.cnf /root/.my.cnf
+</codeph></codeblock></li>
 </ol>
 </li>
 </ul>

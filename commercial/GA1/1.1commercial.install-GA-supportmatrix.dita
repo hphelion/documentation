@@ -484,8 +484,8 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
         </tgroup>
 </table>
 <p>
-  <b>Notes:</b>
-</p>
+        <note/>
+      </p>
 <ul>
 <li>Additional storage on the Swift server can be used as object storage.</li>
 <li>For installations with KVM hypervisor support, one or more additional nodes are required for VSA block storage.</li>
@@ -577,7 +577,8 @@ or
         </tgroup>
 </table>
 <p>
-<b>Note</b>: VCenter server version 6.0 is not qualified with this release.</p>
+        <note>VCenter server version 6.0 is not qualified with this release.</note>
+      </p>
 </section>
 <section id="seed-ucoc"> <title>Software requirements for the undercloud and overcloud</title>
 <p>There are no software requirements for the undercloud and overcloud servers because all required software is contained within the images deployed on the system.</p>

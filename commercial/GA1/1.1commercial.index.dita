@@ -54,9 +54,10 @@
 </li>
 <li>For detailed REST API information, <xref href="../../commercial/GA1/1.1commerical.services-overview.dita" >use the links on the Services Overview page</xref>. </li>
 </ul>
-
-<p>
-<b>Note:</b> HP OpenStack Helion does not support an update utility to update from Helion 1.0 or Helion 1.01 to Helion 1.1. For help with updating from your current release to a newer release, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref>.</p>
+      <note> HP OpenStack Helion does not support an update utility to update from Helion 1.0 or
+        Helion 1.01 to Helion 1.1. For help with updating from your current release to a newer
+        release, contact <xref href="http://www.hpcloud.com/about/contact" scope="external"
+          format="html">HP Customer Support</xref>.</note>
 <p>
   <xref href="#topic2448"> Return to Top </xref>
 </p>

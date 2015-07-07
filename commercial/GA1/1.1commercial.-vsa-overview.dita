@@ -71,8 +71,7 @@ protecting volumes with network RAID. A logical grouping of clusters is done in 
 <p>With Network RAID, blocks of data are striped and mirrored across multiple StoreVirtual systems, allowing volumes and applications to stay online in the event of disk, storage subsystem or server failure. iSCSI connectivity on HP StoreVirtual VSA, support the use of the storage pools by cloud instances.
 A single management group can contain up to 32 StoreVirtual nodes - grouped into clusters. A single cluster comprises 1 to 16 StoreVirtual nodes. Each management group can optimally manage a maximum of 1500 volumes.</p>
 <p>HP Helion OpenStack supports multiple clusters. For minimal deployment, you can create a management group with one cluster and with a single StoreVirtual node on it.</p>
-<p>
-<b>Note</b>: SSL is automatically enabled in VSA nodes to secure the data transmission.</p>
+      <note>SSL is automatically enabled in VSA nodes to secure the data transmission.</note>
 <p>HP StoreVirtual VSA enables the following features in HP Helion OpenStack</p>
 <ul>
 <li>
@@ -158,9 +157,12 @@ A single management group can contain up to 32 StoreVirtual nodes - grouped into
 <section id="cinder-volume"> <title>Cinder Volume and LeftHand driver</title>
 <p>Once the Scheduler determines the backend to be used, the Cinder volume performs the actual operations against the backend.</p>
 <p>The Cinder volume service hosts the LeftHand Driver to communicate with the backend representing the StoreVirtual cluster, using the LeftHand REST API.</p>
-<p>
-<b>Note:</b> The HPLeftHandISCSIDriver is based on the Block Storage service (Cinder) plug-in architecture. Volume operations are run by communicating with the HP LeftHand/StoreVirtual system over HTTPS, or SSH connections. 
-For more details on the Lefthand driver, refer to <xref href="http://docs.openstack.org/trunk/config-reference/content/HP-LeftHand-StoreVirtual-driver.html" scope="external" format="html" >HP LeftHand/StoreVirtual driver</xref>.</p>
+      <note>The HPLeftHandISCSIDriver is based on the Block Storage service (Cinder) plug-in
+        architecture. Volume operations are run by communicating with the HP LeftHand/StoreVirtual
+        system over HTTPS, or SSH connections. For more details on the Lefthand driver, refer to
+          <xref
+          href="http://docs.openstack.org/trunk/config-reference/content/HP-LeftHand-StoreVirtual-driver.html"
+          scope="external" format="html">HP LeftHand/StoreVirtual driver</xref>.</note>
 <p>When you configure multiple StoreVirtual backends, one cinder-volume is launched for each back-end storage or back-end storage pool. Each backend instance maps to an instance of a StoreVirtual cluster. Each cluster listens at an assigned VIP that is configured in the Cinder backend entry in <i>cinder.conf</i>.</p>
 </section>
 <section id="differentiated-storage-offerings"> <title>Differentiated Storage Offerings</title>

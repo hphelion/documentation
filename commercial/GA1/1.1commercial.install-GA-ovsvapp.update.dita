@@ -73,9 +73,9 @@
 cd /hp-ovsvapp/src/update #python updater.py
 </codeph>
 </codeblock>
-
-<p>
-<b>Note:</b> If you see the following error while updating the OVSvApp, it means that the system from where update is launched does not have the passwordless authentication enabled for OVSvApp.</p>
+                    <note>If you see the following error while updating the OVSvApp, it means that
+                        the system from where update is launched does not have the passwordless
+                        authentication enabled for OVSvApp.</note>
 
 <codeblock>
 <codeph>Fatal error: Needed to prompt for a connection or sudo password (host: &lt;ovs-vapp-ip&gt;), but input would be ambiguous in parallel mode
@@ -160,9 +160,9 @@ seed_ip=
 cd /hp-ovsvapp/src/update #python updater.py
 </codeph>
 </codeblock>
-
-<p>
-<b>Note:</b> If you see the following error while updating the OVSvApp, it means that the system from where update is launched does not have the passwordless authentication enabled for OVSvApp.</p>
+                    <note>If you see the following error while updating the OVSvApp, it means that
+                        the system from where update is launched does not have the passwordless
+                        authentication enabled for OVSvApp.</note>
 
 <codeblock>
 <codeph>Fatal error: Needed to prompt for a connection or sudo password (host: &lt;ovs-vapp-ip&gt;), but input would be ambiguous in parallel mode

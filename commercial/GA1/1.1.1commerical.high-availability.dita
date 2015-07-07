@@ -217,21 +217,17 @@
             the HA proxy load balancer whereas the internal services (nova-scheduler,
             cinder-scheduler, etc.), are accessed through the message broker. These services use the
             database cluster to persist any data.</p>
-          <p>
-            <b>Note:</b> The HA proxy load balancer is also run in active-active mode and keepalived
-            (used for Virtual IP (VIP) Management) is run in active-active mode, with only one
-            keepalived instance holding the VIP at any one point in time.</p>
+          <note>The HA proxy load balancer is also run in active-active mode and keepalived (used
+            for Virtual IP (VIP) Management) is run in active-active mode, with only one keepalived
+            instance holding the VIP at any one point in time.</note>
         </li>
-        <li>
-          <p>HA of the message queue service and the database service is achieved by running these
-            in a clustered mode across the three nodes of the overcloud control plane: RabbitMQ
-            cluster with Mirrored Queues and Percona MySQL Galera cluster.</p>
-          <p>
+        <li>HA of the message queue service and the database service is achieved by running these in
+          a clustered mode across the three nodes of the overcloud control plane: RabbitMQ cluster
+          with Mirrored Queues and Percona MySQL Galera cluster.<p>
             <xref format="html"
               href="javascript:window.open('/media/ha-architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
               >HA Architecture (opens in a new window)</xref>
-          </p>
-        </li>
+          </p></li>
       </ol>
       <p>The above diagram illustrates the HA architecture with the focus on VIP management and load
         balancing. It only shows a subset of active-active API instances and does not show examples
@@ -309,9 +305,8 @@
       </p>
       <p>When this occurs, keepalived immediately moves the VIP on to the Controller1 and can now
         receive API requests, which is load-balanced by HA proxy, as stated earlier.</p>
-      <p>
-        <b>Note:</b> Although MySQL and RabbitMQ clusters have lost a node, they still continue to
-        be operational:</p>
+      <note>Although MySQL and RabbitMQ clusters have lost a node, they still continue to be
+        operational:</note>
       <p>
         <xref format="html"
           href="javascript:window.open('/media/ha-nodefailure-2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
@@ -433,9 +428,10 @@ overcloud-controller1-px7gyh74dccx
     
     os-svc-enable-upstart cinder-volume disable
 -->
-        <b>Note:</b> Following a system update, the volume manager may attempt to start before the
-        storage nodes have been properly initialized, and so the volume manager must be restarted
-        after the automatic start procedure has completed.</p>
+      </p>
+      <note> Following a system update, the volume manager may attempt to start before the storage
+        nodes have been properly initialized, and so the volume manager must be restarted after the
+        automatic start procedure has completed.</note>
       <p>To restart the Cinder-volume service, on the overcloud controller node where the
         Cinder-volume singleton service is being run, the Cinder-volume service can be restarted
         using</p>
@@ -463,11 +459,9 @@ overcloud-controller1-px7gyh74dccx
         servers can be shut down for a short duration for maintenance activities without impacting
         cloud service availability. (OvercloudController0 cannot be shut down without affecting
         cloud service availability.)</p>
-      <p>
-        <b>Note</b>: The HA design is only robust against single points of failure and may not
-        protect you against multiple levels of failure. As soon as first-level failure occurs, you
-        must try to fix the symptom/root cause and recover from the failure, as soon as
-        possible.</p>
+      <note>The HA design is only robust against single points of failure and may not protect you
+        against multiple levels of failure. As soon as first-level failure occurs, you must try to
+        fix the symptom/root cause and recover from the failure, as soon as possible.</note>
       <p>In the unlikely event that one of the controller servers suffers an irreparable hardware
         failure, you can decommission and delete it from the cluster. You can then deploy the failed
         controller on a new server and connect it back into the original three node controller
@@ -526,12 +520,11 @@ overcloud-controller1-px7gyh74dccx
         section outlines the process to deploy specific types of nodes to specific physical servers,
         and makes a statement of available support for these types of availability zones in the
         current release.</p>
-      <p>
-        <b>Note:</b> By default, HP Helion OpenStack is deployed in a single availability zone upon
+      <note>By default, HP Helion OpenStack is deployed in a single availability zone upon
         installation. Multiple availability zones can be configured by an administrator
         post-install, if required. Refer to the [Chapter 5:
         Scaling]](http://docs.openstack.org/openstack-ops/content/scaling.html) in the <i>OpenStack
-          Operations Guide</i> for more information.</p>
+          Operations Guide</i> for more information.</note>
     </section>
     <section>
       <title>Compute with KVM</title>
@@ -625,9 +618,7 @@ Neutron Netwoking in HA covers the following:
         for high availability.</p>
       <p>Some guidelines for consideration:</p>
       <ol id="ol_osv_cs1_4s">
-        <li>
-          <p>Assume intermittent failures and plan for retries</p>
-          <ul id="ul_lxv_cs1_4s">
+        <li>Assume intermittent failures and plan for retries<ul id="ul_lxv_cs1_4s">
             <li>
               <p>
                 <b>OpenStack Service APIs</b>: invocations can fail - you should carefully evaluate
@@ -645,11 +636,8 @@ Neutron Netwoking in HA covers the following:
               <p>
                 <b>Storage</b>: Storage connection can hiccup - retry should be successful</p>
             </li>
-          </ul>
-        </li>
-        <li>
-          <p>Build redundancy into your application tiers</p>
-          <ul id="ul_ayv_cs1_4s">
+          </ul></li>
+        <li>Build redundancy into your application tiers<ul id="ul_ayv_cs1_4s">
             <li>
               <p>Servers running your VM instances can die.</p>
               <ul id="ul_qyv_cs1_4s">
@@ -680,17 +668,13 @@ Neutron Netwoking in HA covers the following:
                 </li>
               </ul>
             </li>
-          </ul>
-        </li>
-        <li>
-          <p>Instead of rolling your own highly available stateful services, use readily available
-            HP Helion OpenStack platform services such as:</p>
-          <ul id="ul_xyv_cs1_4s">
+          </ul></li>
+        <li>Instead of rolling your own highly available stateful services, use readily available HP
+          Helion OpenStack platform services such as:<ul id="ul_xyv_cs1_4s">
             <li>Database as a Service (DBaaS)</li>
             <li>DNS as a Service(DNSaaS)</li>
             <li>Messaging as a Service (MSGaaS)</li>
-          </ul>
-        </li>
+          </ul></li>
       </ol>
     </section>
     <section>

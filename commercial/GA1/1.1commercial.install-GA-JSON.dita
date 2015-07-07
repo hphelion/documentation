@@ -146,8 +146,8 @@ After you modify a JSON file, you might want to validate the structure by runnin
 </codeblock>
 <p>
 <codeph>cloud_type</codeph> - Use this variable to specify whether the HP Helion OpenStack will be installed with KVM or ESX hypervisor support.</p>
-<p>
-<b>Note:</b> If set to <codeph>ESX</codeph>, the <codeph>compute_scale</codeph> variable and DVR variables are not required.</p>
+      <note> If set to <codeph>ESX</codeph>, the <codeph>compute_scale</codeph> variable and DVR
+        variables are not required.</note>
 <p>
 <codeph>swift_scale</codeph> - (optional) Override the number of swift storage nodes. Note this is a different scale factor from the <codeph>scale out swift</codeph> factors.</p>
 <p>
@@ -198,8 +198,8 @@ After you modify a JSON file, you might want to validate the structure by runnin
   <b>NTP</b>
 </p>
 <p>The following values appear under <codeph>ntp</codeph>  for configuring the DNS name or IP address of your NTP servers. These values are required:</p>
-<p>
-<b>Note:</b> If you do not have a DNS server, specify only an IP address; if you specify a DNS name you MUST specify valid DNS servers in the dns section.</p>
+      <note>If you do not have a DNS server, specify only an IP address; if you specify a DNS name
+        you MUST specify valid DNS servers in the dns section.</note>
 <p>
 <codeph>seed_server</codeph> - Use this variable to set the DNS name or IP address of an NTP server accessible on the public interface for undercloud hosts. This is required.</p>
 <p>
@@ -236,8 +236,7 @@ The following example sets the NTP server addresses. Do not copy this address.
 <codeph>public_interface_raw_device</codeph> - See <xref type="section" href="#topic20151/second">Configure a second network</xref>.</p>
 <p>
 <codeph>overcloud_dvr</codeph> - Use this variable if you are not using Distributed Virtual Routers (DVR). By default, the overcloud is configured for DVR  If this behaviour is not desirable, then set <codeph>overcloud_dvr</codeph>  to 'False'.</p>
-<p>
-<b>Note</b> For ESX hypervisors, set this to False.</p>
+      <note>For ESX hypervisors, set this to False.</note>
 <codeblock>
   <codeph>**Example:**
 
@@ -255,8 +254,7 @@ The following example sets the NTP server addresses. Do not copy this address.
 </p>
 <p>The following values appear under <codeph>svc</codeph>.</p>
 <p>These variables configure the required Service network. See <xref type="section" href="#topic20151/service">Configure the Service network</xref> at the end of this page.</p>
-<p>
-<b>Note:</b> These variables are optional for the ESX cloud type.</p>
+      <note>These variables are optional for the ESX cloud type.</note>
 <p>
 <codeph>interface</codeph> - Use this variable to specify the name of the VLAN that will be created for the SVN network.</p>
 <p>
@@ -365,12 +363,14 @@ If this is the same value as <codeph>neutron/overcloud_public_interface</codeph>
 <codeph>network_gateway</codeph> - Use this variable to specify a host other than the seed cloud host as the gateway, for example 192.168.130.1. Typically this IP will be the physical gateway of the network.</p>
 <p>
 <codeph>network_seed_range_start</codeph>, <codeph>network_seed_range_end</codeph> - Use these variables to specify an IP address range for the seed cloud host to administrate/manage the undercloud node(s), for example 192.168.130.4-192.168.130.22.</p>
-<p>
-<b>Note:</b> The <codeph>network_seed_range</codeph>  addresses must be on the subnet defined by the <codeph>network_seed_ip</codeph> and <codeph>network_cidr</codeph> values. All addresses must be on a common subnet.</p>
+      <note>The <codeph>network_seed_range</codeph> addresses must be on the subnet defined by the
+          <codeph>network_seed_ip</codeph> and <codeph>network_cidr</codeph> values. All addresses
+        must be on a common subnet.</note>
 <p>
 <codeph>network_undercloud_range_start</codeph>, <codeph>network_undercloud_range_end</codeph> - Use the variables to specify an IP address range for the undercloud to administrate/manage the overcloud node(s). The IPs assigned by this variable are for the undercloud to distribute among the overcloud nodes. Make sure you assign at least one IP address for each baremetal server in your environment and an additional IP used as a virtual IP for HA.</p>
-<p>
-<b>Note:</b> The <codeph>network_undercloud_range</codeph> addresses must be on the subnet defined by the <codeph>network_seed_ip</codeph> and <codeph>network_cidr</codeph> values. All addresses must be on a common subnet.</p>
+      <note> The <codeph>network_undercloud_range</codeph> addresses must be on the subnet defined by
+        the <codeph>network_seed_ip</codeph> and <codeph>network_cidr</codeph> values. All addresses
+        must be on a common subnet.</note>
 <codeblock>
   <codeph>"baremetal": {
     "network_seed_ip": "192.168.130.3",
@@ -397,8 +397,10 @@ If this is the same value as <codeph>neutron/overcloud_public_interface</codeph>
 },
 </codeph>
 </codeblock>
-<p>
-<b>Note:</b> The range defined by the variables <codeph>start</codeph>, <codeph>end</codeph>, and <codeph>cidr</codeph> to be in conflict with the address range of the default private network. By default the range of the default private network is between 10.0.0.1 and 10.255.255.254 (CIDR 10.0.0.0/8).</p>
+      <note> The range defined by the variables <codeph>start</codeph>, <codeph>end</codeph>, and
+          <codeph>cidr</codeph> to be in conflict with the address range of the default private
+        network. By default the range of the default private network is between 10.0.0.1 and
+        10.255.255.254 (CIDR 10.0.0.0/8).</note>
 <p>Then the <codeph>start</codeph>, <codeph>end</codeph>, and <codeph>cidr</codeph> cannot be anything in the form of 10.x.y.z.  The address range of the default private network is defined by the variable <codeph>fixed_range_cidr</codeph>.</p>
 </section>
 <section id="second"> <title>Configure a second network</title>
@@ -419,14 +421,13 @@ If this is the same value as <codeph>neutron/overcloud_public_interface</codeph>
 "virtual_interface": "eth0",
 </codeph>
 </codeblock>
-<p>
-<b>Note:</b> The overcloud neutron external network (ext-net) assumes the gateway IP is the lowest non-zero host IP address in the <codeph>cidr</codeph> range.</p>
+      <note>The overcloud neutron external network (ext-net) assumes the gateway IP is the lowest
+        non-zero host IP address in the <codeph>cidr</codeph> range.</note>
 </section>
 <section id="service"> <title>Configure the Service network</title>
 <p>Helion OpenStack requires a third VLAN network called as Service Network which connects trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The purpose is to aggregate logs of PaaS components running on the VMs in the overcloud to the undercloud via this network.</p>
 <p>This third network can be configured for the platform service guest instances to connect to undercloud controller by setting <codeph>NeutronSVCInterface</codeph> to a physically configured VLAN. The VLAN name used as the <codeph>NeutronSVCInterface</codeph> is expected to be of the form <codeph>vlan</codeph> followed by the VLAN id ( ex. vlan102 ).</p>
-<p>
-<b>Note:</b> These variables are optional for the ESX cloud type.</p>
+      <note> These variables are optional for the ESX cloud type.</note>
 <p>For example:</p>
 <codeblock>
   <codeph>"svc": {
