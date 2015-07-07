@@ -276,8 +276,25 @@ network-name: {network name}
 </ol>
 </section>
 <section id="activating-windows-images"> <title>Activating Windows Images</title>
-<p>When a Windows DEA or SQL Server image node added to an ALS server, these instances need to be activated to be compliant with <xref href="https://www.microsoft.com/licensing/" scope="external" format="html" >Microsoft licensing</xref>. You can activate by either connecting to them with Remote Desktop and activating Windows manually, or by using KVM.</p>
+<p>When a Windows DEA or SQL Server image node added to an ALS server, these instances need to be activated to be compliant with 
+  <xref href="https://www.microsoft.com/licensing/" scope="external" format="html" >Microsoft licensing</xref>. 
+  You can activate by either connecting to them with Remote Desktop and activating Windows manually, or by using KVM.</p>
 
 </section>
+  <section id="setting-windows-administrator-password"><title>Setting the Windows Administrator Password</title>
+  <p>When the new image is created, the administrator password must be set. Follow these steps to set the administrator password for the image:</p>
+  <ol>
+    <li>Log into the Horizon console</li>
+    <li>Select Project</li>
+    <li>Select Compute</li>
+    <li>Select Instances</li>
+    <li>Select the desired instance for which to set   the password</li>
+    <li>Select <b>Console</b> </li>
+    <li>Select <b>Click here to show only console</b></li>
+    <li>Click on the screen, and then click <b>Send CtrlAltDel</b></li>
+    <li>Select <b>Administrator</b></li>
+    <li>Set the new password</li>
+    <li>Log out of the console</li>
+  </ol></section>
 </body>
 </topic>
