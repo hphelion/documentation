@@ -37,7 +37,7 @@
 <li><xref href="../publiccloud/cli.windows.2.release-notes.dita" >Release Notes</xref></li>
 </ul>
 </section>
-<section id="OpenstackCLI"> <title>OpenStack CLI Tools</title>
+  <section id="OpenstackCLI"> <title><tm tmtype="reg">OpenStack</tm> CLI Tools</title>
 <ul>
 <li>
 <xref href="../publiccloud/cli.openstack.dita" >Overview page</xref>
