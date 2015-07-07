@@ -205,7 +205,7 @@ ntpq -p
 <p>Download the Helion OpenStack Enterprise Edition from the official site.</p>
 </li>
 <li>
-<p>Extract the bits to <codeph>/root/work</codeph> folder:</p>
+<p>Extract the bits to <codeph>/root/</codeph> folder:</p>
 
 <codeblock>
 <codeph>tar -xzvf ee_installer-VER.tgz -C /root
