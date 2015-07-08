@@ -345,15 +345,13 @@ java -jar UI.jar
 <ol>
 <li>Open CMC.<p>By default, the CMC is configured to discover the StoreVirtual nodes in the subnet
             in which it is installed. You can manually add the nodes also.</p><p>
-            <xref format="html"
-              href="javascript:window.open('/media/storevirtual-cmc1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-              >CMC Main Page 
+              <image href="../../media/storevirtual-cmc1.png" placement="break"/>
+              CMC Main Page 
           </p></li>
 <li>In the CMC UI, click <b>Find</b> and then click <b>Find Systems</b> from the left
           panel.<!--A BR tag was used here in the original source.--> Find Systems dialogue box is displayed.<p>
-            <xref format="html"
-              href="javascript:window.open('/media/storevirtual-cmc2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-              >Find Systems option 
+            <image href="../../media/storevirtual-cmc2.png" placement="break"/>
+              Find Systems option 
           </p></li>
 <li>You can choose <b>Add</b> or <b>Find</b> option to search the system.
           <!--A BR tag was used here in the original source.-->Find option starts searching for the
@@ -362,13 +360,10 @@ java -jar UI.jar
             VSA IP, log in to StoreVirtual system and check
               <codeph>/mnt/state/vsa/vsa_network_config.json</codeph> file and select the second
             option, which is listed under "vsa network".</note><p>
-            <xref format="html"
-              href="javascript:window.open('/media/storevirtual-cmc3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-              >Add option 
+              <image href="../../media/storevirtual-cmc3.png" placement="break"/>Add option 
           </p><p>
-            <xref format="html"
-              href="javascript:window.open('/media/storevirtual-cmc4.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-              >Find option 
+            <image href="../../media/storevirtual-cmc4.png" placement="break"/>
+              Find option 
           </p></li>
 <li>Click <b>OK</b> to proceed, or click <b>Cancel</b> to cancel the
           process.<!--A BR tag was used here in the original source.-->The node is discovered and
@@ -380,16 +375,14 @@ java -jar UI.jar
 <li>Click <b>Close</b> to return to the Home
           page.<!--A BR tag was used here in the original source.--> The discovered nodes are
           displayed under <b>Available Systems</b> option in the left panel.<p>
-            <xref format="html"
-              href="javascript:window.open('/media/storevirtual-cmc5.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-              >Discovered Nodes Under Available Systems 
+            <image href="../../media/storevirtual-cmc5.png" placement="break"/>
+              Discovered Nodes Under Available Systems 
           </p></li>
 <li>To add the node to a management group, right-click the node to display a menu and select <b>Add
             to a New Management Group</b>.<!--A BR tag was used here in the original source.-->
           Management Groups, Clusters, And Volumes wizard is displayed.<p>
-            <xref format="html"
-              href="javascript:window.open('/media/storevirtual-cmc6.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-              >Create Management Page 
+            <image href="../../media/storevirtual-cmc6.png" placement="break"/>
+              Create Management Page 
           </p></li>
 <li>In the <b>Management Group Name</b> box, enter a name for the management group and click
             <b>Next</b> to display the Add Administrative User page.</li>
@@ -412,9 +405,8 @@ java -jar UI.jar
 <li>(Optional) Click the checkbox displayed against <b>Skip Volume Creation</b>.</li>
 <li>Click <b>Next</b>.<!--A BR tag was used here in the original source.-->The Management Group and
           Cluster is created and displays in the Home page of CMC.<p>
-            <xref format="html"
-              href="javascript:window.open('/media/storevirtual-cmc7.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-              >CMC Main Page with the Cluster 
+            <image href="../../media/storevirtual-cmc7.png" placement="break"/>
+              CMC Main Page with the Cluster 
           </p></li>
 </ol>
 <p>
