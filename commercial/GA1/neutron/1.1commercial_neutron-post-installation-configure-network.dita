@@ -668,7 +668,7 @@ See Reference 6 below </entry>
   <image href="../../../media/Helion_Security9_50.png" placement="break"/>
 </p>
 <p>
-  <image href="../../media/Helion_Security9.png" placement="break"/>
+  <image href="../../../media/Helion_Security9.png" placement="break"/>
 </p>
 <p>The following table describes the data flow between HP Helion OpenStack nodes and ESX nodes:</p>
 <table>
