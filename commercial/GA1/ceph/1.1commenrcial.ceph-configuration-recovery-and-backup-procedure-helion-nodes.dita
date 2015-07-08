@@ -71,8 +71,9 @@
               <ol id="ol_fgl_3hk_4s">
                 <li>Log in to the <xref href="https://helion.hpwsportal.com" format="html">
                     HDN</xref></li>
-                <li>Click the workloads category on the left side. 3. Click the storage subcategory
-                  to find all the Ceph related files. <b>Filename</b>
+                <li>Click the workloads category on the left side.</li>
+                <li>Click the storage subcategory to find all the Ceph related files.
+                    <b>Filename</b>
                 </li>
               </ol>
             </entry>
@@ -85,8 +86,9 @@
                 <li>Log in to the <xref href="https://helion.hpwsportal.com" format="html">
                     HDN</xref>
                 </li>
-                <li>Click the workloads category on the left side. 3. Click the storage subcategory
-                  to find all the Ceph related files. <!-- <br /> Filename need ?-->
+                <li>Click the workloads category on the left side.</li>
+                <li>Click the storage subcategory to find all the Ceph related files.
+                  <!-- <br /> Filename need ?-->
                 </li>
               </ol>
             </entry>

@@ -213,8 +213,7 @@ step is in wrong order. here it wipes existing
             each node in this
             file.</p><codeblock><codeph>&lt;ipaddress&gt;, &lt;ceph-identifier&gt;, &lt;node-type&gt;,&lt;user&gt;,&lt;osd-partition-type&gt;, &lt;osd-disk-path&gt;, &lt;journal-partition-type&gt;, &lt;journal-disk-path&gt;&lt;partition no&gt;,
 </codeph></codeblock><p>The
-            following is sample
-              output:</p><codeblock><codeph>192.168.51.90,mon-master-1,mon-master,hlinux
+            following is sample output:</p><codeblock><codeph>192.168.51.90,mon-master-1,mon-master,hlinux
 192.168.51.98,admin-1,admin,hlinux
 192.168.51.93,rados-1,radosgw-master,hlinux
 192.168.51.94,rados-2,radosgw,hlinux
@@ -244,10 +243,11 @@ step is in wrong order. here it wipes existing
 192.168.51.87,controller0,controllers
 192.168.51.86,controller1,controllers
 192.168.51.85,controller2,controllers
-</codeph></codeblock><p><note>Before
-              running this script, make sure that no partition numbers are associated with
-              &lt;journal-disk-path&gt;</note> in the <codeph>cephcluster.csv</codeph> file. This
-            script will append the partition numbers once it is executed successfully.</p></li>
+</codeph></codeblock><p>
+            <note>Before running this script, make sure that no partition numbers are associated
+              with &lt;journal-disk-path>  in the <codeph>cephcluster.csv</codeph> file. This script
+              will append the partition numbers once it is executed successfully.</note>
+          </p></li>
 <li>Execute the following
             command.<codeblock><codeph>sudo ./bootstrap.sh &lt;cephadmin keypair&gt;
 </codeph></codeblock><p>This
@@ -457,7 +457,7 @@ f0:92:1c:05:35:58,helioncsel,m0ng00s3,10.1.67.123,169,163840,200,overcloud-ceph-
 <li>
 <p>Verify, if you are seeing three monitors by entering:</p>
 
-<codeblock><codeph>`sudo ceph -w` 
+<codeblock><codeph>sudo ceph -w 
 </codeph></codeblock>
 </li>
 <li>For NTP-related warnings, check the following section on how to sync all the servers in the Ceph cluser with the NTP server.</li>
@@ -550,8 +550,8 @@ heartbeat-tool/src/nodeaccess.py
 <ol>
 <li>Verify Ceph default pools by
             entering:<codeblock><codeph>ceph osd lspools
-</codeph></codeblock><p>0 data, 1 metadata,
-            2rbd,</p></li>
+</codeph></codeblock><p>For
+            example:<codeblock>0 data, 1 metadata, 2rbd</codeblock></p></li>
 <li>Verify that the monitor is running by
             entering:<codeblock><codeph>ceph -s
 </codeph></codeblock><p>For

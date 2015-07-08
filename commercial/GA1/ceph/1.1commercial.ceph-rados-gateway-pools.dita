@@ -42,10 +42,8 @@
 <section id="pools"> <title>Pools</title>
 <p>Ceph Object Gateways require Ceph Storage Cluster pools to store specific gateway data. If user created has permissions, gateway automatically creates pools.
 To list available pools, enter:</p>
-<codeblock>
-  <codeph>rados lspools
-</codeph>
-</codeblock>
+<codeblock><codeph>rados lspools
+</codeph></codeblock>
 <p>Verify that the .<codeph>rgw.buckets</codeph> and <codeph>.rgw.buckets.index</codeph> pools are created by default. If not, create these pools using <codeph>ceph osd pool create</codeph> command. For more details, refer to <xref href="http://https://ceph.com/docs/master/radosgw/config-ref#pools" type="section" scope="external" format="html" >http://https://ceph.com/docs/master/radosgw/config-ref#pools</xref>
 </p>
 </section>
@@ -55,10 +53,8 @@ To list available pools, enter:</p>
 <li>
 <p>To create a User and a Sub-user, enter:</p>
 
-<codeblock>
-<codeph>radosgw-admin user create --subuser=s3User:swiftUser --display-name="First User " --key-type=swift --access=full
-</codeph>
-</codeblock>
+<codeblock><codeph>radosgw-admin user create --subuser=s3User:swiftUser --display-name="First User " --key-type=swift --access=full
+</codeph></codeblock>
 </li>
 <li>
 <p>Ensure that the user (<b>s3User</b>) and subuser (<b>s3User:swiftUser</b>) are stored in respective <codeph>.users.uid</codeph> and <codeph>.users.swift</codeph> pools.</p>
@@ -67,16 +63,12 @@ To list available pools, enter:</p>
 </section>
 <section id="access-and-secret-key"> <title>Access and Secret Keys</title>
 <p>S3 users and Swift users must have access and secret keys to enable end users and to interact with a gateway instance. S3 user access and its secret key are created by entering:</p>
-<codeblock>
-  <codeph>radosgw-admin key create --uid=s3User --key-type=s3 --gen-access-key --gen-secret
-</codeph>
-</codeblock>
+<codeblock><codeph>radosgw-admin key create --uid=s3User --key-type=s3 --gen-access-key --gen-secret
+</codeph></codeblock>
 <p>The key generated must be free of JSON escape () characters.</p>
 <p>If the user or application writes more than 1k containers, then modify the <codeph>max_buckets</codeph> variable. Also, right-sizing of Placement Groups per Pool is required. Ensure <codeph>max_buckets</codeph> is set to unlimited size by setting the value to 0. To do this, enter:</p>
-<codeblock>
-  <codeph>radosgw-admin user modify --uid=s3User --max-buckets=0
-</codeph>
-</codeblock>
+<codeblock><codeph>radosgw-admin user modify --uid=s3User --max-buckets=0
+</codeph></codeblock>
 </section>
 <section id="next-steps"> <title>Next Steps</title>
 <p>

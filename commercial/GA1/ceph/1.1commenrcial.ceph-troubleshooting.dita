@@ -108,10 +108,7 @@ Round up the results to the nearest power of two. Rounding up is optional, but r
 <li>Verify that <codeph>osd</codeph> was removed by executing: <codeph>- sudo ceph ?w</codeph> </li>
 </ol>
 </section>
-<section id="next-steps"> <title>Next Steps</title>
-<p>
-  <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-manual-install.dita" >Ceph Manual Installation</xref>
-</p>
+<section id="next-steps">
 <p>
   <xref href="#topic3651"> Return to Top </xref>
 </p>
