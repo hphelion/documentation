@@ -85,9 +85,7 @@
 </section>
 <section id="servicearch"> <title>Service Architecture</title>
 <p>The following diagram represents the Host Linux service architecture.</p>
-<p>
-  <image href="../../media/LinuxServiceArch_resize2.png" placement="break"/>
-</p>
+<p/>
 <p>
 <image href="../../media/LinuxServiceArch_resize1.png" placement="break"/>View larger image</p>
 <p>
@@ -315,9 +313,7 @@ d. Timing: Packages are requested as needed.</p>
   <b>Chain of Custody</b>
 </p>
 <p>The following diagram represents the Host Linux chain of custody.</p>
-<p>
-  <image href="../../media/LinuxCustodyChain.png" placement="break"/>
-</p>
+<p/>
 <p>
 <image href="../../media/LinuxCustodyChain75.png" placement="break"/>View larger image</p>
 <p>
@@ -329,9 +325,7 @@ d. Timing: Packages are requested as needed.</p>
   <b>The Implementation architecture diagram</b>
 </p>
 <p>The following diagram represents the Host Linux implementation architecture.</p>
-<p>
-  <image href="../../media/LinuxImplementArch50.png" placement="break"/>
-</p>
+<p/>
 <p>
 <image href="../../media/LinuxImplementArch.png" placement="break"/>View larger image</p>
 <p>All hardware is identical:</p>
