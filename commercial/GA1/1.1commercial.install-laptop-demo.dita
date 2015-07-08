@@ -168,7 +168,7 @@ fudge 127.127.1.0 stratum 10
 </p>
 
 <p>
-<image href="../../media/commercial-install-laptop-successful-ntp-output.png"/>
+<image href="../../media/commercial-install-laptop-successful-ntp-output.png" placement="break"/>
 </p>
 
 <p>f. If you run <codeph>ntpq -p</codeph> and you receive a 'No association ID's returned' message, then you may have to reinstall the <codeph>ntp</codeph> package, To do this, run the following commands:</p>
@@ -428,7 +428,7 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </p>
 
 <p>
-<image href="../../media/commercial-horizon-password-file.png"/>
+<image href="../../media/commercial-horizon-password-file.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -468,7 +468,7 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </ul>
 <p>When you successfully log in to the Horizon dashboard, you will see a web page that is similar to the following example:</p>
 <p>
-  <image href="../../media/horizon-dashboard.png"/>
+  <image href="../../media/horizon-dashboard.png" placement="break"/>
 </p>
 </section>
 <section id="shutdown-recovery"> <title>Shutdown and recovery</title>

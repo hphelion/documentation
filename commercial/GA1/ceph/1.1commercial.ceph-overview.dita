@@ -65,7 +65,7 @@
 to store data from Ceph block device clients or from Ceph file system clients. Ceph maintains its own user authentication and allows for extension to HP Helion OpenStack Keystone Authentication. For User Archive and Backup workloads originating from HP Helion OpenStack Tenant Project Virtual Machines, HP recommends integrating through Keystone as a consistent authentication model.</p>
 <p>The following diagram shows Helion OpenStack Virtual Machine Access to Ceph Storage</p>
 <p>
-  <image href="../../../media/helion_virtual_machine_access_ceph_storage.png"/>
+  <image href="../../../media/helion_virtual_machine_access_ceph_storage.png" placement="break"/>
 </p>
 </section>
 

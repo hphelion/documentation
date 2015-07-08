@@ -360,7 +360,7 @@ Node Failure- Fig 2
       <p>Due to the single threading required in both cinder-volume and the drivers, the Cinder
         volume service is run as a singleton in the control plane.</p>
       <p>
-        <image href="../../media/ha-cinder-volume.png"
+        <image placement="break" href="../../media/ha-cinder-volume.png"
           />Cinder Volume Diagram
       </p>
       <p>Cinder-volume is deployed on all three controller nodes, but kept active on only one node

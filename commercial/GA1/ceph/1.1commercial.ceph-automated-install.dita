@@ -29,11 +29,11 @@
  <!--permalink: /helion/openstack/1.1/commercial.ceph-automated-install/--></p>
 <p>The installation workflow of HP Helion OpenStack 1.1 or 1.1.1 is shown in the following diagram.</p>
 <p>
-  <image href="../../../media/ceph-installation-flow.png"/>
+  <image href="../../../media/ceph-installation-flow.png" placement="break"/>
 </p>
 <p>The next diagram shows the logical architecture of Ceph.</p>
 <p>
-  <image href="../../../media/ceph-logical-architecture.png"/>
+  <image href="../../../media/ceph-logical-architecture.png" placement="break"/>
 </p>
 <p>This section covers the following topics:</p>
 <ol>

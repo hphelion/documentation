@@ -403,7 +403,7 @@ bash -x ~root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --boot-se
 </ol>
 <p>After the system is running again, the output of the <codeph>nova list</codeph> command on the undercloud might appear similar to the following image:</p>
 <p>
-  <image href="../../media/Restore-Nova-List.png"/>
+  <image href="../../media/Restore-Nova-List.png" placement="break"/>
 </p>
 <!-- hiding
 ### Start the seed cloud host

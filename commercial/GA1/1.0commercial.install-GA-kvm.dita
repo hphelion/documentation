@@ -81,7 +81,7 @@
 <section id="deploy-arch"> <title>Review the KVM deployment architecture</title>
 <p>The following diagram depicts the required network topology for a KVM installation.</p>
 <p>
-  <image href="../../media/topology_kvm.png"/>KVM deployment of HP Helion OpenStack 
+  <image href="../../media/topology_kvm.png" placement="break"/>KVM deployment of HP Helion OpenStack 
 </p>
 <p>For detailed network requirements, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita#network_prepare" type="section">Installation: Prerequisites</xref>.</p>
 </section>

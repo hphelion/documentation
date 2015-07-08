@@ -71,7 +71,7 @@
 <p>Click <b>Create Volume Type</b> to display a dialog box.</p>
 
 <p>
-<image href="../../media/create-volumetype2.png"/>Create Volume Type Dialog Box 
+<image href="../../media/create-volumetype2.png" placement="break"/>Create Volume Type Dialog Box 
 </p>
 </li>
 <li>
@@ -137,11 +137,11 @@ volume_backend_name MyVolumeBackend
 <p>Click <b>View Extra Specs</b> displayed against the volume type which you want to associate to the backend.<!--A BR tag was used here in the original source.--> The <b>Create Volume Type Extra Specs</b> dialog box displays.</p>
 
 <p>
-<image href="../../media/view-extra-specs-hos-1.1.png"/>View Extra Specs Option 
+<image href="../../media/view-extra-specs-hos-1.1.png" placement="break"/>View Extra Specs Option 
 </p>
 
 <p>
-<image href="../../media/volume-extra-specs.png"/> Create Volume Type Extra Specs Dialog Box 
+<image href="../../media/volume-extra-specs.png" placement="break"/> Create Volume Type Extra Specs Dialog Box 
 </p>
 </li>
 </ol>

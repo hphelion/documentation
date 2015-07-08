@@ -55,14 +55,14 @@
 <p>From the left panel, click the <b>Admin</b> Tab and then click <b>Volumes</b> to display the Volumes page.</p>
 
 <p>
-<image href="../../media/create-volumetype.png"/>Create Volume Type Option 
+<image href="../../media/create-volumetype.png" placement="break"/>Create Volume Type Option 
 </p>
 </li>
 <li>
 <p>Click <b>Create Volume Type</b> to display a dialog box.</p>
 
 <p>
-<image href="../../media/create-volumetype1.png"/>Create Volume Type Dialog Box 
+<image href="../../media/create-volumetype1.png" placement="break"/>Create Volume Type Dialog Box 
 </p>
 </li>
 <li>
@@ -86,11 +86,11 @@
 <p>Click <b>View Extra Specs</b> displayed against the volume type which you want to associate to the backend.<!--A BR tag was used here in the original source.--> Create Volume Type Extra Specs dialog box is displayed.</p>
 
 <p>
-<image href="../../media/view-extra-specs.png"/>View Extra Specs Option 
+<image href="../../media/view-extra-specs.png" placement="break"/>View Extra Specs Option 
 </p>
 
 <p>
-<image href="../../media/view-extra-specs1.png"/> Create Volume Type Extra Specs Dialog Box 
+<image href="../../media/view-extra-specs1.png" placement="break"/> Create Volume Type Extra Specs Dialog Box 
 </p>
 </li>
 <li>

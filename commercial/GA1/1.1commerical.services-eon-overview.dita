@@ -39,7 +39,7 @@
 <section id="eon-architecture"> <title>EON Architecture</title>
 <p>The following diagram depicts the EON architecture of HP Helion OpenStack</p>
 <p>
-  <image href="../../media//eon-architecture.png"/>EON Architecture
+  <image href="../../media//eon-architecture.png" placement="break"/>EON Architecture
 </p>
 <!--
 <img src="/media/eon-architecture.png" /> -->

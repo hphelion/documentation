@@ -27,10 +27,10 @@
   <b>Volume Operations: High-level component interactions with the FC Zone Manager</b>
 </p>
 <p>
-  <image href="../../media/commercial_cinder-fc-zone-50.png"/>
+  <image href="../../media/commercial_cinder-fc-zone-50.png" placement="break"/>
 </p>
 <p>
-  <image href="../../media/commercial_cinder-fc-zone.png"/>
+  <image href="../../media/commercial_cinder-fc-zone.png" placement="break"/>
 </p>
 <section id="prerequisite"> <title>Prerequisite</title>
 <ul>

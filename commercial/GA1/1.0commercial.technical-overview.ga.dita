@@ -221,12 +221,12 @@
 <section id="KVM-env"> <title>KVM environment</title>
 <p>The following diagram depicts a simplified deployment scenario using KVM.</p>
 <p>
-  <image href="../../media/topology_kvm.png"/>
+  <image href="../../media/topology_kvm.png" placement="break"/>
 </p>
 </section>
 <section id="esx-env"> <title>ESX environment</title>
 <p>The following diagram depicts a simplified deployment scenario using ESX.
-<image href="../../media/topology_esx.png"/>
+<image href="../../media/topology_esx.png" placement="break"/>
 </p>
 <p>
   <xref type="section" href="#topic25331"> Return to Top </xref>
@@ -580,7 +580,7 @@ The physical cluster network can be shared by a number of logical networks, each
 <p>HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. VSA eliminates the need for external shared storage required to implement Block Storage features. VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.</p>
 <p>HP Helion OpenStack architecture diagram for Store Virtual volume type mapping</p>
 <p>
-  <image href="../../media/reference-architecture-StoreVirtual-volume-type-mapping.png"/>
+  <image href="../../media/reference-architecture-StoreVirtual-volume-type-mapping.png" placement="break"/>
 </p>
 <p>
 <b>Note:</b> Your HP Helion OpenStack installation can be configured <xref href="../../commercial/GA1/1.0commercial.install-3par.dita" >to use 3Par for block storage</xref>.</p>
@@ -592,7 +592,7 @@ The physical cluster network can be shared by a number of logical networks, each
 <p>
 <xref type="section" href="#topic25331/esx-env">HP Helion OpenStack architecture diagram for ESX</xref>
 <!--redundant diagram
-<img src="/media/commercial_esx_network_architecture.png"/> --></p>
+<img src="/media/commercial_esx_network_architecture.png" placement="break"/> --></p>
 <p>The HP Virtual Cloud Networking (VCN) application is an enhanced Networking Operations (Neutron) module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.</p>
 <p>HP VCN enables you to build a robust, multi-tenant networking infrastructure that delivers ready-to-use compute, storage, and networking by providing;</p>
 <ul>

@@ -124,14 +124,14 @@
 <p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreServ page is displayed.</p>
 
 <p>
-<image href="../../media/undercloud-storeserv-main-page.png"/>HP 3PAR StoreServ Main Page 
+<image href="../../media/undercloud-storeserv-main-page.png" placement="break"/>HP 3PAR StoreServ Main Page 
 </p>
 </li>
 <li>
 <p>Click <b>Register StoreServ</b> displayed on the top right corner of the page to display the Register 3PAR StoreServ dialog box.</p>
 
 <p>
-<image href="../../media/undercloud-storeserv-register-storeserv.png"/>Register StoreServ Dialog Box 
+<image href="../../media/undercloud-storeserv-register-storeserv.png" placement="break"/>Register StoreServ Dialog Box 
 </p>
 </li>
 <li>
@@ -187,7 +187,7 @@
 <p>On successful registration, the 3PAR device is added and is listed as the <b>registered</b> StoreServ.</p>
 
 <p>
-<image href="../../media/undercloud-storeserv-registered-storeserv.png"/>Registered StoreServ in the HP StoreServ Main Page 
+<image href="../../media/undercloud-storeserv-registered-storeserv.png" placement="break"/>Registered StoreServ in the HP StoreServ Main Page 
 </p>
 </li>
 </ol>
@@ -234,7 +234,7 @@
 <p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreServ page is displayed.</p>
 
 <p>
-<image href="../../media/undercloud-storeserv-unregister-storeserv.png"/>UnRegister a StoreServ Option 
+<image href="../../media/undercloud-storeserv-unregister-storeserv.png" placement="break"/>UnRegister a StoreServ Option 
 </p>
 </li>
 <li>
@@ -288,7 +288,7 @@
 <p>Select the <b>StoreServ</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreServ page is displayed with the list of StoreServs.</p>
 
 <p>
-<image href="../../media/undercloud-storeserv-register-cpg.png"/>Register CPG Option 
+<image href="../../media/undercloud-storeserv-register-cpg.png" placement="break"/>Register CPG Option 
 </p>
 </li>
 <li>
@@ -307,7 +307,7 @@
 </li>
 </ul>
 <p>
-<image href="../../media/undercloud-storeserv-register-cpgpage.png"/>Register CPG Page 
+<image href="../../media/undercloud-storeserv-register-cpgpage.png" placement="break"/>Register CPG Page 
 </p>
 </li>
 <li>
@@ -329,7 +329,7 @@
 <p>To check the status of CPG registration, in the HP StoreServ page, click the device name to display the Common Provisioning Groups page. The selected CPG displays as <b>registered</b>.</p>
 
 <p>
-<image href="../../media/undercloud-storeserv-registered-cpg.png"/>Registered CPG Displays in the Common Provisioning Groups Page 
+<image href="../../media/undercloud-storeserv-registered-cpg.png" placement="break"/>Registered CPG Displays in the Common Provisioning Groups Page 
 </p>
 </li>
 </ol>

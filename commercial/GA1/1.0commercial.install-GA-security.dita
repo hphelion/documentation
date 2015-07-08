@@ -42,10 +42,10 @@
 </section>
 <section id="fig1"> <title>Figure 1: Typical HP Helion OpenStack network topology</title>
 <p>
-  <image href="../../media/Helion_Security1_50.png"/>
+  <image href="../../media/Helion_Security1_50.png" placement="break"/>
 </p>
 <p>
-  <image href="../../media/Helion_Security1.png"/>
+  <image href="../../media/Helion_Security1.png" placement="break"/>
 </p>
 <p>In <xref type="section" href="#topic19933/fig1">Figure 1</xref>, the Border Router and the Aggregation Router are customer devices that perform routing at the perimeter of the environment. The Load Balancer is a recommended customer device to provide TLS termination. The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack includes IPtable rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.</p>
 </section>
@@ -155,7 +155,7 @@
 </section>
 <section id="fig2"> <title>Figure 2: SSL offload</title>
 <p>
-  <image href="../../media/Helion_Security2.png"/>
+  <image href="../../media/Helion_Security2.png" placement="break"/>
 </p>
 <p>All traffic encryption/decryption between the client and server is handled by the Load Balancer. The Load Balancer decrypts all the SSL traffic from client. Once the data has been decrypted it is sent to the backend server in plain text HTTP. Similarly, plain HTTP traffic from the backend server is encrypted back to HTTPS by the Load Balancer before sending it to client.</p>
 </section>
@@ -265,7 +265,7 @@ http://&lt;internalVIP&gt;:5000/v2.0</entry>
 </section>
 <section id="fig3"> <title>Figure 3: Object Operations in a flat deployment</title>
 <p>
-  <image href="../../media/Helion_Security3.png"/>
+  <image href="../../media/Helion_Security3.png" placement="break"/>
 </p>
 <p>You can choose to configure rules in your network devices to apply additional security controls to protect against attacks, insider abuse or mistakes.  For example, your router could block any requests directly to the Object Operations nodes nodes from Compute nodes.  Valid user requests from the Compute nodes will be passed through the HA proxy on the Controller nodes.</p>
 <p>You can block requests from the external network to the Object Operations nodes, as already mentioned for the firewall configuration. When adding rules to your router, take care not to introduce rules that will prevent authorized network traffic between nodes.</p>
@@ -422,7 +422,7 @@ http://&lt;internalVIP&gt;:5000/v2.0</entry>
 </section>
 <section id="fig4"> <title>Figure 4: Object Operations in a logical deployment</title>
 <p>
-  <image href="../../media/Helion_Security4.png"/>
+  <image href="../../media/Helion_Security4.png" placement="break"/>
 </p>
 </section>
 <section id="blockstorage"> <title>Securing Block Storage network connections</title>
@@ -450,7 +450,7 @@ http://&lt;internalVIP&gt;:5000/v2.0</entry>
 </section>
 <section id="fig5"> <title>Figure 5: StoreVirtual in a flat deployment</title>
 <p>
-  <image href="../../media/Helion_Security5.png"/>
+  <image href="../../media/Helion_Security5.png" placement="break"/>
 </p>
 <p>The following table describes the data flow between Helion nodes and StoreVirtual systems:</p>
 <table>
@@ -516,7 +516,7 @@ http://&lt;internalVIP&gt;:5000/v2.0</entry>
 </section>
 <section id="fig6"> <title>Figure 6: StoreVirtual in a logical deployment</title>
 <p>
-  <image href="../../media/Helion_Security6.png"/>
+  <image href="../../media/Helion_Security6.png" placement="break"/>
 </p>
 <p>Note that there are additional traffic flows necessary for StoreVirtual operation in addition to the interaction with Helion nodes described above. This includes CMC management console access, StoreVirtual inter-cluster communication and access to network services such as NTP.</p>
 <p>StoreVirtual port usage is described in <xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03983799-2.pdf#page=263" type="section" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> in PDF.</p>
@@ -530,7 +530,7 @@ http://&lt;internalVIP&gt;:5000/v2.0</entry>
 </section>
 <section id="fig7"> <title>Figure 7: 3Par StoreServ in a flat deployment</title>
 <p>
-  <image href="../../media/Helion_Security7.png"/>
+  <image href="../../media/Helion_Security7.png" placement="break"/>
 </p>
 <p>The following table describes the data flow between the Helion nodes and StoreServ systems:</p>
 <p>
@@ -614,7 +614,7 @@ See Reference 6 below </entry>
 </section>
 <section id="fig8"> <title>Figure 8: 3Par StoreServ in a logical deployment</title>
 <p>
-  <image href="../../media/Helion_Security8.png"/>
+  <image href="../../media/Helion_Security8.png" placement="break"/>
 </p>
 <p>Note that there are additional traffic flows necessary for StoreServ operation in addition to the interaction with the Helion nodes described in this section. This includes SSMC console access and Service Processor communication.</p>
 <p>StoreServ port usage is described on page 65 of the <xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf" scope="external" format="pdf">HP 3PAR StoreServ 10000 Storage Physical Planning Manual</xref> in PDF.</p>
@@ -668,10 +668,10 @@ See Reference 6 below </entry>
 </section>
 <section id="fig9"> <title>Figure 9: ESX Integration in a logical deployment</title>
 <p>
-  <image href="../../media/Helion_Security9_50.png"/>
+  <image href="../../media/Helion_Security9_50.png" placement="break"/>
 </p>
 <p>
-  <image href="../../media/Helion_Security9.png"/>
+  <image href="../../media/Helion_Security9.png" placement="break"/>
 </p>
 <p>The following table describes the data flow between HP Helion OpenStack nodes and ESX nodes:</p>
 <table>

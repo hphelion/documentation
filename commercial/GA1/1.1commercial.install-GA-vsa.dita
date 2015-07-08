@@ -68,7 +68,7 @@
 <section id="high-level-view"> <title>Deployment and Configuration Procedure Overview</title>
 <p>The following diagram gives an overview of the steps involved in deploying, configuring and integrating StoreVirtual nodes into your cloud. The subsequent sections provide the detailed instructions on integration workflow.</p>
 <p>
-  <image href="../../media/storevirtual-integration.png"/>HP StoreVirtual VSA Deployment and Configuration Procedure 
+  <image href="../../media/storevirtual-integration.png" placement="break"/>HP StoreVirtual VSA Deployment and Configuration Procedure 
 </p>
 <!--1 - **Install CMC**
      
@@ -246,7 +246,7 @@ java -jar UI.jar
 <!--
 **Note**: Use of StoreVirtual VSA is included with your Helion OpenStack license.  When installing StoreVirtual VSA under the Helion OpenStack license, the CMC may display a message that some features are not licensed. This message displays in error and can be ignored if you have licensed the physical server with a Helion OpenStack license. 
 -->
-<!--<img src="/media/storevirtual-cluster-network-diagram1.png"/>--></p>
+<!--<img src="/media/storevirtual-cluster-network-diagram1.png" placement="break"/>--></p>
 </section>
 <section id="enroll-new-baremetal-server"> <title>Enrolling the New Baremetal Server</title>
 <p>The following steps to deploy HP StoreVirtual VSA are optional if you have not already added VSA in your initial installation:</p>

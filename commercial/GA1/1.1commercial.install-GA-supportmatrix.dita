@@ -74,9 +74,9 @@ Christofanelli, Lynne Daryl <lynne.christofanelli@hp.com>; Duey, Marty <marty.du
 <p>The following diagrams depict simplified deployment scenarios:</p>
 <ul>
 <li>
-<image href="../../media/topology_kvm.png"/>KVM deployment of HP Helion OpenStack</li>
+<image href="../../media/topology_kvm.png" placement="break"/>KVM deployment of HP Helion OpenStack</li>
 <li>
-<image href="../../media/topology_esx.png"/>ESX deployment of HP Helion OpenStack</li>
+<image href="../../media/topology_esx.png" placement="break"/>ESX deployment of HP Helion OpenStack</li>
 </ul>
 </section>
 <section id="supportedhw"> <title>Supported Hardware</title>
