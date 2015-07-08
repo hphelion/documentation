@@ -219,8 +219,12 @@ If you are updating to a release that includes new Orchestration (Heat) template
 <codeblock><codeph>./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-undercloud 
 </codeph></codeblock>
 <p>To update your HP Helion OpenStack undercloud from v1.1 to v1.1.1, from the
-        seed VM:</p>
+        seed VM:</p>  
 <ol>
+  <li> <p>Log into the seed VM by
+    entering:<codeblock><codeph>ssh root@&lt;seed-ip&gt;
+</codeph></codeblock></p>
+  </li>
 <li>Source the <codeph>kvm-custom-ips.json</codeph> file and run the update script by
           entering:<codeblock>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 cd tripleo/helion-update/undercloud_update
