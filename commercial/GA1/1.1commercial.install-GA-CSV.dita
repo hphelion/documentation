@@ -29,10 +29,8 @@
 <p>Specify the MAC address, CPU, memory, local disk size, IPMI address, and IPMI password values for each baremetal system you intend to install.</p>
 <p>There must be one entry in this file for each baremetal system you intend to install.</p>
 <p>Use the following format in the <codeph>baremetal.csv</codeph> file.</p>
-<codeblock>
-  <codeph>&lt;mac_address&gt;, &lt;user&gt;, &lt;password&gt;, &lt;ip_address&gt;, &lt;no_of_cpus&gt;, &lt;memory_MB&gt;, &lt;diskspace_GiB&gt;, &lt;role&gt;, &lt;power_management&gt;
-</codeph>
-</codeblock>
+<codeblock><codeph>&lt;mac_address&gt;, &lt;user&gt;, &lt;password&gt;, &lt;ip_address&gt;, &lt;no_of_cpus&gt;, &lt;memory_MB&gt;, &lt;diskspace_GiB&gt;, &lt;role&gt;, &lt;power_management&gt;
+</codeph></codeblock>
 <p>Where <codeph>&lt;mac_address&gt;</codeph> is the MAC address of the network interface from which to boot. <b>Do not use the iLO NIC interface.</b>
 </p>
 <p>
@@ -43,8 +41,7 @@
   <b>Example:</b>
 </p>
 <p>The following is a sample file:</p>
-<codeblock>
-  <codeph>78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,2048,Undercloud,IPMI
+<codeblock><codeph>78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,2048,Undercloud,IPMI
 78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048,OvercloudControl,IPMI
 78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048,OvercloudControl,IPMI
 78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048,OvercloudControl,IPMI
@@ -91,59 +88,62 @@ When creating this file, keep the following in mind :</p>
 </ul>
 </li>
 </ul>
-<p>
-  <b>Note also:</b>
-</p>
+    <note>
+      <ul id="ul_s5s_b35_ps">
+        <li>The required numbers of OvercloudControl and OvercloudSwiftStorage nodes default to 3
+          and 2 respectively.</li>
+        <li><codeph>power_management</codeph> can have these values:<ul id="ul_vbl_c35_ps">
+            <li>VM</li>
+            <li>IPMI </li>
+            <li>HP_Moonshot </li>
+            <li>HP_iLO4</li>
+          </ul><table id="table_bdl_c35_ps">
+            <tgroup cols="2">
+              <colspec colname="col1"/>
+              <colspec colname="col2"/>
+              <thead>
+                <row>
+                  <entry colsep="1" rowsep="1">Value</entry>
+                  <entry colsep="1" rowsep="1">Description</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry colsep="1" rowsep="1">VM</entry>
+                  <entry colsep="1" rowsep="1">This is for virtual machines and is set automatically
+                    for a virtual install.</entry>
+                </row>
+                <row>
+                  <entry colsep="1" rowsep="1">IPMI</entry>
+                  <entry colsep="1" rowsep="1">This is for all systems that can be accessed using
+                    IPMI. If no power_management is specified, a default of IPMI is assumed.</entry>
+                </row>
+                <row>
+                  <entry colsep="1" rowsep="1">HP_Moonshot</entry>
+                  <entry colsep="1" rowsep="1">This is for HP Moonshot hardware only. If this is
+                    specified it *requires* two colon-separated extra arguments as follows:
+                      <b>&lt;transit_address&gt;:&lt;target_address&gt;</b>
+                    <!--A BR tag was used here in the original source.-->
+                    <!--A BR tag was used here in the original source.--> &lt;transit_address&gt; is
+                    also known as 'Cartridge Address' &lt;target_address&gt; is also known as 'Node
+                    Address' For example:
+                    HP_Moonshot:0x84:0x72<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
+                    HP Moonshot hardware will use ipmitool as its power manager. See the additional
+                    notes in the <xref
+                      href="../../commercial/GA1/1.1commercial.install-GA-Moonshot.dita">HP Moonshot
+                      document</xref>.</entry>
+                </row>
+                <row>
+                  <entry>HP_iLO4</entry>
+                  <entry>Boot HP iLO4 Gen9 systems in UEFI mode. Specify IPMI to boot such nodes in
+                    BIOS mode (you must manually set the pending boot mode to BIOS mode). </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table></li>
+      </ul>
+    </note>
 <ul>
-<li>The required numbers of OvercloudControl and OvercloudSwiftStorage
-nodes default to 3 and 2 respectively.</li>
-<li>
-<p>
-<codeph>power_management</codeph> can have these values:</p>
-
-<ul>
-<li>VM</li>
-<li>IPMI </li>
-<li>HP_Moonshot </li>
-<li>HP_iLO4</li>
-</ul>
-<table>
-<tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<thead>
-<row>
-<entry colsep="1" rowsep="1">Value</entry>  <entry colsep="1" rowsep="1">Description</entry> </row>
-</thead>
-<tbody>
-<row>
-<entry colsep="1" rowsep="1">VM</entry>   <entry colsep="1" rowsep="1">This is for virtual machines and is set automatically for a virtual
-                  install.</entry> </row>
-<row>
-<entry colsep="1" rowsep="1">IPMI</entry>  <entry colsep="1" rowsep="1">This is for all systems that can be accessed using IPMI. If no
-                  power_management is specified, a default of IPMI is assumed.</entry> </row>
-<row>
-<entry colsep="1" rowsep="1">HP_Moonshot</entry>  <entry colsep="1" rowsep="1">This is for HP Moonshot hardware only. If this is specified it
-                  *requires* two colon-separated extra arguments as follows:
-                    <b>&lt;transit_address&gt;:&lt;target_address&gt;</b>
-                  <!--A BR tag was used here in the original source.-->
-                  <!--A BR tag was used here in the original source.--> &lt;transit_address&gt; is
-                  also known as 'Cartridge Address' &lt;target_address&gt; is also known as 'Node
-                  Address' For example:
-                  HP_Moonshot:0x84:0x72<!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->
-                  HP Moonshot hardware will use ipmitool as its power manager. See the additional
-                  notes in the <xref
-                    href="../../commercial/GA1/1.1commercial.install-GA-Moonshot.dita">HP Moonshot
-                    document</xref>.</entry> </row>
-<row>
-<entry>HP_iLO4</entry>  <entry>Boot HP iLO4 Gen9 systems in UEFI mode.
-             Specify IPMI to boot such nodes in BIOS mode (you must manually
-             set the pending boot mode to BIOS mode).
-</entry> </row>
-</tbody>
-</tgroup>
-</table>
-</li>
 <li>
 <p>power_management maps to OpenStack Ironic power drivers as
 follows:</p>
