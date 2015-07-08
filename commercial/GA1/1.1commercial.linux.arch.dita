@@ -85,11 +85,9 @@
 </section>
 <section id="servicearch"> <title>Service Architecture</title>
 <p>The following diagram represents the Host Linux service architecture.</p>
+<p> </p>
 <p>
-  <image href="../../media/LinuxServiceArch_resize2.png"/>
-</p>
-<p>
-<image href="../../media/LinuxServiceArch_resize1.png"/>View larger image</p>
+        <image href="../../media/LinuxServiceArch_resize1.png"/></p>
 <p>
   <xref href="#topic8765"> Return to Top </xref>
 </p>
@@ -315,11 +313,9 @@ d. Timing: Packages are requested as needed.</p>
   <b>Chain of Custody</b>
 </p>
 <p>The following diagram represents the Host Linux chain of custody.</p>
+<p> </p>
 <p>
-  <image href="../../media/LinuxCustodyChain.png"/>
-</p>
-<p>
-<image href="../../media/LinuxCustodyChain75.png"/>View larger image</p>
+        <image href="../../media/LinuxCustodyChain75.png"/></p>
 <p>
   <xref href="#topic8765"> Return to Top </xref>
 </p>
@@ -329,11 +325,10 @@ d. Timing: Packages are requested as needed.</p>
   <b>The Implementation architecture diagram</b>
 </p>
 <p>The following diagram represents the Host Linux implementation architecture.</p>
+<p> </p>
 <p>
-  <image href="../../media/LinuxImplementArch50.png"/>
-</p>
-<p>
-<image href="../../media/LinuxImplementArch.png"/>View larger image</p>
+        <image href="../../media/LinuxImplementArch.png" placement="break"/>
+      </p>
 <p>All hardware is identical:</p>
 <p>
   <b>HP DL360 Gen8</b>
