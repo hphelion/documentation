@@ -242,15 +242,9 @@ Listening on http://192.168.51.22:8085/
 Hit Ctrl-C to quit.
 </codeph></codeblock></li>
         <li>Open another seed terminal window and modify the <codeph>orchestration.json</codeph>
-          file in <codeph>/helion-ceph/node-provisioner/client/orchestration.json</codeph>
-          <p>
-            <ol id="ol_yl1_vjg_ps">
-              <li>
-                <p>Your <codeph>baremetal.csv</codeph> inputs should match the flavor list. For
-                  example you need to specify the right RAM, vCPUs, disk size in "GB" and version
-                  number.</p>
-              </li>
-            </ol>
+          file in <codeph>/helion-ceph/node-provisioner/client/orchestration.json</codeph><p>Your
+              <codeph>baremetal.csv</codeph> inputs should match the flavor list. For example you
+            need to specify the right RAM, vCPUs, disk size in "GB" and version number.</p><p>
             <ul id="ul_nm1_vjg_ps">
               <li>
                 <p>Update the <codeph>"ws_url"</codeph> file with the URL of the seed node VM where
