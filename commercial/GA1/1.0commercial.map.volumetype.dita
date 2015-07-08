@@ -85,12 +85,10 @@
 <li>
 <p>Click <b>View Extra Specs</b> displayed against the volume type which you want to associate to the backend.<!--A BR tag was used here in the original source.--> Create Volume Type Extra Specs dialog box is displayed.</p>
 
-<p>
-<image href="../../media/view-extra-specs.png" placement="break"/>View Extra Specs Option 
-</p>
+
 
 <p>
-<image href="../../media/view-extra-specs1.png" placement="break"/> Create Volume Type Extra Specs Dialog Box 
+  <image href="../../media/view-extra-specs-hos-1.1.png" placement="break"/> Create Volume Type Extra Specs Dialog Box 
 </p>
 </li>
 <li>
