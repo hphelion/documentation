@@ -5,8 +5,8 @@
 ./1.0commercial.install-GA-prereqs.dita:<image href="../../media/topology_esx.png"/>HP Helion OpenStack architecture diagram for ESX network architecture.</p>
 ./1.0commercial.install-GA-security.dita:  <image href="../../media/Helion_Security1.png"/>
 ./1.0commercial.install-GA-security.dita:  <image href="../../media/Helion_Security9.png"/>
-./1.0commercial.install-GA-supportmatrix.dita:<image href="../../media/topology_kvm.png"/>KVM deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
-./1.0commercial.install-GA-supportmatrix.dita:<image href="../../media/topology_esx.png"/>ESX deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
+./1.0commercial.install-GA-supportmatrix.dita:<image href="../../media/topology_kvm.png"/>KVM deployment of HP Helion OpenStack</li>
+./1.0commercial.install-GA-supportmatrix.dita:<image href="../../media/topology_esx.png"/>ESX deployment of HP Helion OpenStack</li>
 ./1.0commercial.install-GA-vsa.dita:  <image href="../../media/storevirtual-integration.png"/>HP StoreVirtual VSA Deployment and Configuration Procedure 
 ./1.0commercial.install-GA-vsa.dita:<image href="../../media/storevirtual-cmc1.png"/>CMC Main Page 
 ./1.0commercial.install-GA-vsa.dita:<image href="../../media/storevirtual-cmc2.png"/>Find Systems option 
@@ -84,8 +84,8 @@
 ./1.1commercial.install-GA-prereqs-network.dita:<image href="../../media/topology_esxnew.png"/>HP Helion OpenStack architecture diagram for ESX network architecture.</p>
 ./1.1commercial.install-GA-security.dita:  <image href="../../media/Helion_Security1.png"/>
 ./1.1commercial.install-GA-security.dita:  <image href="../../media/Helion_Security9.png"/>
-./1.1commercial.install-GA-supportmatrix.dita:<image href="../../media/topology_kvm.png"/>KVM deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
-./1.1commercial.install-GA-supportmatrix.dita:<image href="../../media/topology_esx.png"/>ESX deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
+./1.1commercial.install-GA-supportmatrix.dita:<image href="../../media/topology_kvm.png"/>KVM deployment of HP Helion OpenStack</li>
+./1.1commercial.install-GA-supportmatrix.dita:<image href="../../media/topology_esx.png"/>ESX deployment of HP Helion OpenStack</li>
 ./1.1commercial.install-GA-vsa.dita:  <image href="../../media/storevirtual-integration.png"/>HP StoreVirtual VSA Deployment and Configuration Procedure 
 ./1.1commercial.install-GA-vsa.dita:              >CMC Main Page 
 ./1.1commercial.install-GA-vsa.dita:              >Find Systems option 
@@ -94,9 +94,9 @@
 ./1.1commercial.install-GA-vsa.dita:              >Discovered Nodes Under Available Systems 
 ./1.1commercial.install-GA-vsa.dita:              >Create Management Page 
 ./1.1commercial.install-GA-vsa.dita:              >CMC Main Page with the Cluster 
-./1.1commercial.linux.arch.dita:<image href="../../media/LinuxServiceArch_resize1.png"/>View larger image</xref> (opens in a new window)</p>
-./1.1commercial.linux.arch.dita:<image href="../../media/LinuxCustodyChain75.png"/>View larger image</xref> (opens in a new window)</p>
-./1.1commercial.linux.arch.dita:<image href="../../media/LinuxImplementArch.png"/>View larger image</xref> (opens in a new window)</p>
+./1.1commercial.linux.arch.dita:<image href="../../media/LinuxServiceArch_resize1.png"/>View larger image</p>
+./1.1commercial.linux.arch.dita:<image href="../../media/LinuxCustodyChain75.png"/>View larger image</p>
+./1.1commercial.linux.arch.dita:<image href="../../media/LinuxImplementArch.png"/>View larger image</p>
 ./1.1commercial.map.volumetype.dita:<image href="../../media/create-volumetype2.png"/>Create Volume Type Dialog Box 
 ./1.1commercial.map.volumetype.dita:<image href="../../media/view-extra-specs-hos-1.1.png"/>View Extra Specs Option 
 ./1.1commercial.map.volumetype.dita:<image href="../../media/volume-extra-specs.png"/> Create Volume Type Extra Specs Dialog Box 
