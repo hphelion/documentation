@@ -33,9 +33,10 @@
       <ul id="ul_scl_svw_ps">
         <li>Transform Engine</li>
         <li>Events Engine </li>
-        <li>Anomaly and Prediction Engine<p/>For details on OpenStack Monasca, see   <xref
-            href="https://wiki.openstack.org/wiki/Monasca" format="html" scope="external"
-            >https://wiki.openstack.org/wiki/Monasca</xref></li>
+        <li>Anomaly and Prediction Engine<p>Icinga, which was the supported monitor service in
+            previous releases of Helion OpenStack, is not supported in Helion OpenStack 2.0.</p>For
+          details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca"
+            format="html" scope="external">https://wiki.openstack.org/wiki/Monasca</xref></li>
       </ul>
     </p>
     <section id="technologies"
