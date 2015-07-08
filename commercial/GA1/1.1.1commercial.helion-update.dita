@@ -219,8 +219,12 @@ If you are updating to a release that includes new Orchestration (Heat) template
 <codeblock><codeph>./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-undercloud 
 </codeph></codeblock>
 <p>To update your HP Helion OpenStack undercloud from v1.1 to v1.1.1, from the
-        seed VM:</p>
+        seed VM:</p>  
 <ol>
+  <li> <p>Log into the seed VM by
+    entering:<codeblock><codeph>ssh root@&lt;seed-ip&gt;
+</codeph></codeblock></p>
+  </li>
 <li>Source the <codeph>kvm-custom-ips.json</codeph> file and run the update script by
           entering:<codeblock>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 cd tripleo/helion-update/undercloud_update
@@ -1054,21 +1058,24 @@ EPHEMERAL_CA_CERT_FILE=/root/eca.crt
  <codeph>os-collect-config --force --one</codeph>
 </li>
 <li>
-<p>Return to the controller node that you were logged into previously, and using the instancce IDs obtained previously, take the following steps:</p>
-
-<ol>
-<li>Execute <codeph>nova reset-state --active &lt;instance-id&gt;</codeph>
-</li>
-<li>Execute <codeph>nova stop &lt;instance-id&gt;</codeph>
-</li>
-<li>Execute <codeph>nova start &lt;instance-id&gt;</codeph>
-</li>
-</ol>
-</li>
+          <p>Return to the controller node that you were logged into previously, and using the
+            instancce IDs obtained previously, take the following steps:</p>
+          <p>
+            <ol id="ol_bzk_t25_ps">
+              <li>Execute <codeph>nova reset-state --active &lt;instance-id&gt;</codeph>
+              </li>
+              <li>Execute <codeph>nova stop &lt;instance-id&gt;</codeph>
+              </li>
+              <li>Execute <codeph>nova start &lt;instance-id&gt;</codeph>
+              </li>
+            </ol>
+          </p>
+        </li>
+        <li>
+          <p>Once the above steps have been taken in order, you should see the instance status
+            return to ACTIVE and the instance become accessible via the network.</p>
+        </li>
 </ul>
-<ol>
-<li>Once the above steps have been taken in order, you should see the instance status return to ACTIVE and the instance become accessible via the network.</li>
-</ol>
 </section>
 <section id="state-drive-mnt-is-not-mounted"> <title>State drive <codeph>/mnt</codeph> is not mounted</title>
 <p>In the rare event that an error occurred between the state drive being unmounted and the rebuild command being triggered, the <codeph>/mnt</codeph> volume on the instance upon which the rebuild command was executed will be in an unmounted state.</p>

@@ -85,7 +85,7 @@ Devices:    id  region  zone      ip address  port  replication ip  replication 
             following sample displays the output of the above
             command:<codeblock><codeph> d7r1z3-192.0.2.31:6000R192.0.2.31:6000/b1410063386_"" weight set to 75.0
 </codeph></codeblock></p></li>
-        <li>.Re-balance the
+        <li>Re-balance the
             ring.<codeblock><codeph># ringos rebalance-ring -f /root/ring-building/object-1.builder</codeph></codeblock><note>You
             must wait for <codeph>min_part_hours</codeph> before another re-balance
           succeeds.</note></li>
@@ -103,10 +103,10 @@ Devices:    id  region  zone      ip address  port  replication ip  replication 
             following sample displays the output of the above
             command:<codeblock><codeph>Removed disk(s) matching d7 from ring object-1.builder
 </codeph></codeblock></p></li>
-        <li>12.Re-balance the
+        <li>Re-balance the
             ring.<codeblock><codeph># ringos rebalance-ring -f /root/ring-building/object-1.builder</codeph></codeblock><note>You
             must wait for min_part_hours before another re-balance succeeds.</note></li>
-        <li>13.List all the Swift
+        <li>List all the Swift
           nodes.<codeblock><codeph># ringos list-swift-nodes -t all
 </codeph></codeblock></li>
         <li>Copy the <codeph>object-1.ring.gz</codeph> file to all
@@ -116,16 +116,6 @@ Devices:    id  region  zone      ip address  port  replication ip  replication 
       <p>
         <xref href="#topic4147"> Return to Top </xref>
       </p>
-      <p>
-        <b>Related topics</b>
-      </p>
-      <ul>
-        <li>
-          <xref
-            href="../../commercial/GA1/1.1commerical.services-swift-deployment-shrink-swift-cluster.dita"
-            >Shrink Object Storage (Swift) Cluster</xref>
-        </li>
-      </ul>
     </section>
 </body>
 </topic>

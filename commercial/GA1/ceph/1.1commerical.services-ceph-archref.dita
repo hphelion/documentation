@@ -33,19 +33,19 @@
   <!--A BR tag was used here in the original source.-->
 </p>
 <p>
-  <image href="../../../media/helion-openstack50.png"/>
+  <image href="../../../media/helion-openstack50.png" placement="break"/>
 </p>
 <p>
       <b>Communication Diagram from Helion OpenStack to Ceph Cluster</b>
       <!--A BR tag was used here in the original source.-->
     </p>
 <p>
-  <image href="../../../media/cephcomm50.png"/>
+  <image href="../../../media/cephcomm50.png" placement="break"/>
 </p>
 <p>
 <b>Logical Reference Architecture Diagram for Ceph Cluster</b> </p>
 <p>
-  <image href="../../../media/cephlogicalarch50.png"/>
+  <image href="../../../media/cephlogicalarch50.png" placement="break"/>
 </p>
 <p>
   <b>Helion OpenStack with Ceph Cluster Deployment Example</b>
@@ -55,12 +55,10 @@
   <!--A BR tag was used here in the original source.-->
 </p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/cephdeployment.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
-</p>
-<p>
-  <image href="../../../media/ceph-deployment-example.png" placement="break"/>
-  <!--A BR tag was used here in the original source.-->
-</p>
+      <image href="../../../media/ceph-deployment-example.png" placement="break"
+        id="image_t2w_qx5_ps"/>
+      <!--A BR tag was used here in the original source.-->
+    </p>
 <section id="for-more-information"> <title>For more information</title>
 <p>
   <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-overview.dita" >Ceph Integration Overview</xref>

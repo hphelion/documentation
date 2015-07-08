@@ -304,9 +304,10 @@ Performing backups and creating bootable volumes will then work.-->   <!--CORE-2
 <!-- (DOCS-839) -->
 <ul>
 <li>
-<p>When you resize an instance of Nova (in the Horizon portal under <i>Project &gt; Instances</i> and select <i>Resize Instance</i> from the drop-down list), the system produces the following error:
-‘‘Error: Unable to resize instance [instance name]�(TM)�(TM).
-<!--(NOV-6664) (NOV-6664) --></p>
+<p>When you resize an instance of Nova (in the Horizon portal under <i>Project &gt; Instances</i>
+            and select <i>Resize Instance</i> from the drop-down list), the system produces the
+            following error: ‘‘Error: Unable to resize instance [instance name]".
+            <!--(NOV-6664) (NOV-6664) --></p>
 </li>
 <li>
 <p>A Kernel Panic error occurs on DL 360 G7 systems when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack If this occurs, update the kernel to the latest version. <!-- (EE-21) --></p>
@@ -349,7 +350,7 @@ to update the HEAT templates.
 </section>
 <section id="legal-notices-disclaimer"> <title>Legal Notices and Disclaimer</title>
 <!--See the [HP Helion OpenStack Open Source and Third-Party Software License Agreements](/helion/openstack/1.1/commercial-3rd-party-license-agreements/).-->
-<p>Linux�(R) is the registered trademark of Linus Torvalds in the U.S. and other countries.</p>
+  <p> <tm tmtype="reg">Linux</tm> is the registered trademark of Linus Torvalds in the U.S. and other countries.</p>
 <p>The OpenStack Word Mark is either a registered trademark/service mark or trademark/service mark of the OpenStack Foundation, in the United States and other countries and is used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.</p>
 <p>
 <b>HP Helion OpenStack Warranty</b>: 

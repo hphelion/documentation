@@ -205,7 +205,7 @@ When locating the update files, use the directory set in `/etc/sherpa/sherpa.con
 <p>The output appears silimar to the following:</p>
 
 <p>
-<image href="../../media/Update_UC_Image_ID.png"/>
+<image href="../../media/Update_UC_Image_ID.png" placement="break"/>
 </p>
 
 <p>The ID is to the left of the image name you are looking for. For exaple, the undercloud main image is <codeph>undercloud</codeph> and it has image id <codeph>94763220-a2f1-edfd686</codeph>.</p>
@@ -253,7 +253,7 @@ source ./stackrc
 <p>The output appears silimar to the following (node names and full IP addresses have been removed for this image):</p>
 
 <p>
-<image href="../../media/Update_OC_IP.png"/>
+<image href="../../media/Update_OC_IP.png" placement="break"/>
 </p>
 </li>
 </ol>
@@ -295,7 +295,7 @@ source ./stackrc
 <p>The output appears silimar to the following (the full iamge IDs have been removed for this image):</p>
 
 <p>
-<image href="../../media/Update_OC_Image_ID.png"/>
+<image href="../../media/Update_OC_Image_ID.png" placement="break"/>
 </p>
 
 <p>The ID is to the left of the image name you are looking for.  For example, the <codeph>controllerMgmt</codeph> main image is <codeph>overcloud-control-mgmt</codeph> and it has image id <codeph>8b015088-edf1-4a8c-a798</codeph>

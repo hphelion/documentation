@@ -213,8 +213,7 @@ step is in wrong order. here it wipes existing
             each node in this
             file.</p><codeblock><codeph>&lt;ipaddress&gt;, &lt;ceph-identifier&gt;, &lt;node-type&gt;,&lt;user&gt;,&lt;osd-partition-type&gt;, &lt;osd-disk-path&gt;, &lt;journal-partition-type&gt;, &lt;journal-disk-path&gt;&lt;partition no&gt;,
 </codeph></codeblock><p>The
-            following is sample
-              output:</p><codeblock><codeph>192.168.51.90,mon-master-1,mon-master,hlinux
+            following is sample output:</p><codeblock><codeph>192.168.51.90,mon-master-1,mon-master,hlinux
 192.168.51.98,admin-1,admin,hlinux
 192.168.51.93,rados-1,radosgw-master,hlinux
 192.168.51.94,rados-2,radosgw,hlinux
@@ -244,10 +243,11 @@ step is in wrong order. here it wipes existing
 192.168.51.87,controller0,controllers
 192.168.51.86,controller1,controllers
 192.168.51.85,controller2,controllers
-</codeph></codeblock><p><note>Before
-              running this script, make sure that no partition numbers are associated with
-              &lt;journal-disk-path&gt;</note> in the <codeph>cephcluster.csv</codeph> file. This
-            script will append the partition numbers once it is executed successfully.</p></li>
+</codeph></codeblock><p>
+            <note>Before running this script, make sure that no partition numbers are associated
+              with &lt;journal-disk-path>  in the <codeph>cephcluster.csv</codeph> file. This script
+              will append the partition numbers once it is executed successfully.</note>
+          </p></li>
 <li>Execute the following
             command.<codeblock><codeph>sudo ./bootstrap.sh &lt;cephadmin keypair&gt;
 </codeph></codeblock><p>This
@@ -457,7 +457,7 @@ f0:92:1c:05:35:58,helioncsel,m0ng00s3,10.1.67.123,169,163840,200,overcloud-ceph-
 <li>
 <p>Verify, if you are seeing three monitors by entering:</p>
 
-<codeblock><codeph>`sudo ceph -w` 
+<codeblock><codeph>sudo ceph -w 
 </codeph></codeblock>
 </li>
 <li>For NTP-related warnings, check the following section on how to sync all the servers in the Ceph cluser with the NTP server.</li>
@@ -550,8 +550,8 @@ heartbeat-tool/src/nodeaccess.py
 <ol>
 <li>Verify Ceph default pools by
             entering:<codeblock><codeph>ceph osd lspools
-</codeph></codeblock><p>0 data, 1 metadata,
-            2rbd,</p></li>
+</codeph></codeblock><p>For
+            example:<codeblock>0 data, 1 metadata, 2rbd</codeblock></p></li>
 <li>Verify that the monitor is running by
             entering:<codeblock><codeph>ceph -s
 </codeph></codeblock><p>For
@@ -643,7 +643,7 @@ glance image-create --name RImg --is-public=true --disk-format=raw --container-f
 </li>
 </ul>
 <p>
-  <image href="../../../media/ceph-ansible-playbooks-glance1.png"/>
+  <image href="../../../media/ceph-ansible-playbooks-glance1.png" placement="break"/>
 </p>
 <ul>
 <li>
@@ -655,7 +655,7 @@ glance image-list
 </li>
 </ul>
 <p>
-  <image href="../../../media/ceph-ansible-playbooks-glance-horizon.png"/>
+  <image href="../../../media/ceph-ansible-playbooks-glance-horizon.png" placement="break"/>
 </p>
 <ul>
 <li>Enable logging in <codeph>glance-api.conf</codeph>. If you encounter a problem in any of the above steps, restart Glance services and re-run the problem step. If the problem persists, ather Glance debug logs in the <codeph>/var/log/glance</codeph> directory and contact the HP support team for help.</li>
@@ -679,7 +679,7 @@ glance image-create --name RImg --is-public=true --disk-format=raw --container-f
 </codeph></codeblock>
 
 <p>
-<image href="../../../media/ceph-ansible-playbooks-glance-clone1.png"/>
+<image href="../../../media/ceph-ansible-playbooks-glance-clone1.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -690,7 +690,7 @@ cinder list
 </codeph></codeblock>
 
 <p>
-<image href="../../../media/ceph-ansible-playbooks-glance-clone2.png"/>
+<image href="../../../media/ceph-ansible-playbooks-glance-clone2.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -702,7 +702,7 @@ rbd children &lt;glance pool name&gt;/&lt;glance-image id&gt;@&lt;snap name&gt;
 </codeph></codeblock>
 
 <p>
-<image href="../../../media/ceph-ansible-playbooks-glance-clone3.png"/>
+<image href="../../../media/ceph-ansible-playbooks-glance-clone3.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -1114,11 +1114,11 @@ tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
 <ol>
 <li>List all of the Nova instances<codeblock><codeph>nova list
 </codeph></codeblock><p>
-            <image href="../../../media/ceph-ansible-nova-list.png"/>
+            <image href="../../../media/ceph-ansible-nova-list.png" placement="break"/>
           </p></li>
 <li>Verify instance status by entering:<codeblock><codeph>sudo ceph -w
 </codeph></codeblock><p>
-            <image href="../../../media/ceph-ansible-nova-list1.png"/>
+            <image href="../../../media/ceph-ansible-nova-list1.png" placement="break"/>
           </p></li>
 </ol>
 </section>
@@ -1252,7 +1252,7 @@ tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
 <p>Make sure that user <codeph>s3User</codeph> and subuser <codeph>s3User:swiftUser</codeph> are stored in respective <codeph>.users.uid</codeph>and <codeph>.users.swift pool</codeph>.</p>
 
 <p>
-<image href="../../../media/ceph-ansible-create-user2.png"/>
+<image href="../../../media/ceph-ansible-create-user2.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -1262,7 +1262,7 @@ tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
 </codeph></codeblock>
 
 <p>
-<image href="../../../media/ceph-ansible-create-user3.png"/>
+<image href="../../../media/ceph-ansible-create-user3.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -1310,7 +1310,7 @@ export ST_KEY= abd
 </codeph></codeblock>
 
 <p>
-<image href="../../../media/ceph-ansible-swift-list.png"/>
+<image href="../../../media/ceph-ansible-swift-list.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -1320,7 +1320,7 @@ export ST_KEY= abd
 </codeph></codeblock>
 
 <p>
-<image href="../../../media/ceph-ansible-swift-stat.png"/>
+<image href="../../../media/ceph-ansible-swift-stat.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -1330,7 +1330,7 @@ export ST_KEY= abd
 </codeph></codeblock>
 
 <p>
-<image href="../../../media/ceph-ansible-swift-upload.png"/>
+<image href="../../../media/ceph-ansible-swift-upload.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -1340,7 +1340,7 @@ export ST_KEY= abd
 </codeph></codeblock>
 
 <p>
-<image href="../../../media/ceph-ansible-swift-stat-verify.png"/>
+<image href="../../../media/ceph-ansible-swift-stat-verify.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -1350,7 +1350,7 @@ export ST_KEY= abd
 </codeph></codeblock>
 
 <p>
-<image href="../../../media/ceph-ansible-rgw.png"/>
+<image href="../../../media/ceph-ansible-rgw.png" placement="break"/>
 </p>
 </li>
 </ul>
