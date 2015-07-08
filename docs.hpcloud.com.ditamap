@@ -657,7 +657,7 @@
         navtitle="Deploying Windows Applications with the IIS Buildpack"/>
       <topicref href="devplatform/1.2/windows/windows_glazier_reference_guide.dita" locktitle="yes"
         navtitle="Glazier Reference Guide"/>
-      <topicref href="devplatform/1.2/windows/windows.remoting.dita" toc="no"/>
+      <topicref href="devplatform/1.2/windows/windows_remoting.dita" toc="no"/>
     </topichead>
     <!--permalink: /helion/devplatform/1.2/als/-->
     <topicref href="devplatform/1.2/1.2devplatform.sysadmin.dita" locktitle="yes"
