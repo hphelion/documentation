@@ -54,7 +54,7 @@
 <section id="network_KVM"> <title>Preparing the network for a KVM installation</title>
 <p>If you are installing HP Helion OpenStack with KVM hypervisor support, you must configure your network as shown in the following diagram.</p>
 <p>
-<image href="../../media/topology_kvm.png"/>HP Helion OpenStack architecture diagram for KVM network architecture.</xref>(opens in a new window)</p>
+<image href="../../media/topology_kvm.png"/>HP Helion OpenStack architecture diagram for KVM network architecture.</p>
 <p>You are responsible for providing the internal and external customer router and making sure the external, IPMI, and service networks are routed to and from the management network.</p>
       <note> </note>
 <ul>
@@ -66,7 +66,7 @@
 <section id="network_ESX"> <title>Preparing the network for an ESX installation</title>
 <p>If you are installing HP Helion OpenStack for ESX hypervisor support, you must configure your network as shown in the following diagram.</p>
 <p>
-<image href="../../media/topology_esxnew.png"/>HP Helion OpenStack architecture diagram for ESX network architecture.</xref>(opens in a new window)</p>
+<image href="../../media/topology_esxnew.png"/>HP Helion OpenStack architecture diagram for ESX network architecture.</p>
 <p>
         <note/>
       </p>
