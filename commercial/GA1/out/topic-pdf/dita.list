@@ -1,9 +1,9 @@
-#Mon Jun 22 10:55:22 PDT 2015
+#Wed Jul 08 08:56:15 PDT 2015
 relflagimagelist=
-user.input.dir=C\:\\Users\\farleyp\\git\\documentation
+user.input.dir=C\:\\Users\\farleyp\\git\\documentation\\commercial\\GA1
 copytotarget2sourcemaplist=
-uplevels=..\\..\\
-user.input.file=commercial\\GA1\\2.0commercial.services-monasca.dita
+uplevels=
+user.input.file=2.0commercial.services-monasca.dita
 user.input.file.listfile=usr.input.file.list
-tempdirToinputmapdir.relative.value=commercial[\\\\|/]GA1[\\\\|/]
+tempdirToinputmapdir.relative.value=
 relflagimagefile=relflagimage.list
