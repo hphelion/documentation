@@ -136,7 +136,7 @@
       <p>
         <xref format="html"
           href="javascript:window.open('/media/Ha-resilient-cloud-infrastructure.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-          >Resilient Cloud Infrastructure (opens in a new window)</xref>
+          >Resilient Cloud Infrastructure 
       </p>
       <p>Once the Compute, Storage, and Network resources are deployed, users expect these resources
         to be reliable in the following ways:</p>
@@ -226,7 +226,7 @@
           with Mirrored Queues and Percona MySQL Galera cluster.<p>
             <xref format="html"
               href="javascript:window.open('/media/ha-architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-              >HA Architecture (opens in a new window)</xref>
+              >HA Architecture 
           </p></li>
       </ol>
       <p>The above diagram illustrates the HA architecture with the focus on VIP management and load
@@ -269,7 +269,7 @@
       <p>
         <xref format="html"
           href="javascript:window.open('/media/Ha-api-request-flow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-          >HA API Message Flow (opens in a new window)</xref>
+          >HA API Message Flow 
       </p>
       <p>The flow of a sample API request is explained below:</p>
       <ol id="ol_cz5_cs1_4s">
@@ -301,7 +301,7 @@
       <p>
         <xref format="html"
           href="javascript:window.open('/media/ha-nodefailure-1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-          >Node Failure- Fig 1(opens in a new window)</xref>
+          >Node Failure- Fig 1
       </p>
       <p>When this occurs, keepalived immediately moves the VIP on to the Controller1 and can now
         receive API requests, which is load-balanced by HA proxy, as stated earlier.</p>
@@ -310,7 +310,7 @@
       <p>
         <xref format="html"
           href="javascript:window.open('/media/ha-nodefailure-2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-          >Node Failure- Fig 2(opens in a new window)</xref>
+          >Node Failure- Fig 2
       </p>
       <p>Finally, when Controller0 comes back online, keepalived and HA proxy will resume in
         standby/slave mode and be ready to take over, should there be a failure of Controller1. The
@@ -318,7 +318,7 @@
       <p>
         <xref format="html"
           href="javascript:window.open('/media/ha-nodefailure-3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-          >Node Failure- Fig 3(opens in a new window)</xref>
+          >Node Failure- Fig 3
       </p>
     </section>
     <section>
@@ -338,7 +338,7 @@
       <p>
         <xref format="html"
           href="javascript:window.open('/media/mysql-galera-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-          >MySQL Galera Cluster Diagram(opens in a new window)</xref>
+          >MySQL Galera Cluster Diagram
       </p>
       <p>When HA proxy detects the errors against the mysql instance on Controller0, it removes that
         node from its pool for future database requests.</p>
@@ -374,7 +374,7 @@
       <p>
         <xref format="html"
           href="javascript:window.open('/media/ha-cinder-volume.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-          >Cinder Volume Diagram(opens in a new window)</xref>
+          >Cinder Volume Diagram
       </p>
       <p>Cinder-volume is deployed on all three controller nodes, but kept active on only one node
         at a time. By default, Cinder-volume is kept active on the overcloud controller0 node. If
@@ -507,7 +507,7 @@ overcloud-controller1-px7gyh74dccx
       <p>
         <xref format="html"
           href="javascript:window.open('/media/ha-availability-zone.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-          >Availability Zones (opens in a new window)</xref>
+          >Availability Zones 
       </p>
       <p>While planning your OpenStack deployment, you should decide on how to zone various types of
         nodes - such as compute, block storage, and object storage. For example, you may decide to
@@ -566,7 +566,7 @@ overcloud-controller1-px7gyh74dccx
       <p>
         <xref format="html"
           href="javascript:window.open('/media/ha-block-storage.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-          >HA Block Storage (opens in a new window)</xref>
+          >HA Block Storage 
       </p>
     </section>
     <section>
@@ -594,7 +594,7 @@ overcloud-controller1-px7gyh74dccx
       <p>
         <xref format="html"
           href="javascript:window.open('/media/ha-swift.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-          >HA Swift (opens in a new window)</xref>
+          >HA Swift 
       </p>
       <!--
 Neutron Networking {#networking}

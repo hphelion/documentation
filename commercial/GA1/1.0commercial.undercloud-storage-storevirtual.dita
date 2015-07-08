@@ -81,14 +81,14 @@
 <p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual  VSA page is displayed.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-register.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreVirtual VSA Page (opens in a new window)</xref>
+<image href="../../media/undercloud-storevirtual-register.png"/>HP StoreVirtual VSA Page 
 </p>
 </li>
 <li>
 <p>Click <b>Register Cluster</b> in the top-right corner of the page to display the Register Cluster dialog box.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-register-page.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Register Cluster Dialog Box (opens in a new window)</xref>
+<image href="../../media/undercloud-storevirtual-register-page.png"/>Register Cluster Dialog Box 
 </p>
 </li>
 <li>
@@ -122,7 +122,7 @@
 <p>On successful registration, the cluster is added and is listed as <i>Registered</i>.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-registered-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Registered Cluster Displays in the HP StoreVirtual VSA Page (opens in a new window)</xref>
+<image href="../../media/undercloud-storevirtual-registered-cluster.png"/>Registered Cluster Displays in the HP StoreVirtual VSA Page 
 </p>
 </li>
 </ol>
@@ -148,7 +148,7 @@
 <p>Click <b>Edit Cluster</b> to display the Edit StoreVirtual Cluster dialog box.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-edit-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Edit Cluster Dialog Box (opens in a new window)</xref>
+<image href="../../media/undercloud-storevirtual-edit-cluster.png"/>Edit Cluster Dialog Box 
 </p>
 </li>
 <li>
@@ -178,7 +178,7 @@
 <p>Click the <b>More</b> drop-down list next to the cluster you want to unregister and select <b>Unregister Cluster</b>.<!--A BR tag was used here in the original source.--> A confirmation box is displayed.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-more-options.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >More Option (opens in a new window)</xref>
+<image href="../../media/undercloud-storevirtual-more-options.png"/>More Option 
 </p>
 </li>
 <li>

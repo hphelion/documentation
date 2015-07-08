@@ -36,10 +36,10 @@
 <section id="deployment-diagram"> <title>Deployment Diagram</title>
 <p>The following deployment diagrams are based on the assumption that the network infrastructure is carved out in such a way that it allows a range of tagged VLANs through the switches and their subnets are routed to the right destination.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/vlan.provider.network.logical.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Deployment diagram depicting VLAN Provider Network with VSA nodes as Block storage backend. (Opens in a new window)</xref>
+  <image href="../../media/vlan.provider.network.logical.png"/>Deployment diagram depicting VLAN Provider Network with VSA nodes as Block storage backend. 
 </p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/vlan.network.layout.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Network Layout. (Opens in a new window)</xref>
+  <image href="../../media/vlan.network.layout.png"/>Network Layout. 
 </p>
 </section>
 <section id="install-steps"> <title>Install Steps</title>

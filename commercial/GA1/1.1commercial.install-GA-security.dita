@@ -54,7 +54,7 @@
   <image href="../../media/Helion_Security1_50.png"/>
 </p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/Helion_Security1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
+  <image href="../../media/Helion_Security1.png"/>
 </p>
 <p>In <xref type="section" href="#topic20483/fig1">Figure 1</xref>, the Border Router and the Aggregation Router are customer devices that perform routing at the perimeter of the environment. The Load Balancer is a recommended customer device to provide TLS termination. The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack includes IPtable rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.</p>
 </section>
@@ -730,7 +730,7 @@ See Reference 6 below </entry>
   <image href="../../media/Helion_Security9_50.png"/>
 </p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/Helion_Security9.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
+  <image href="../../media/Helion_Security9.png"/>
 </p>
 <p>The following table describes the data flow between HP Helion OpenStack nodes and ESX nodes:</p>
 <table>

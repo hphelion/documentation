@@ -1,152 +1,152 @@
-./1.0commercial.install-3par.dita:  <xref format="html" href="javascript:window.open('/media/storeserv-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreServ Integration diagram (opens in a new window)</xref>
-./1.0commercial.install-GA-esx.dita:  <xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack architecture diagram for ESX (opens in a new window)</xref>
-./1.0commercial.install-GA-kvm.dita:  <xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >KVM deployment of HP Helion OpenStack (opens in a new window)</xref>
-./1.0commercial.install-GA-prereqs.dita:<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack architecture diagram for KVM network architecture.</xref>(opens in a new window)</p>
-./1.0commercial.install-GA-prereqs.dita:<xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack architecture diagram for ESX network architecture.</xref>(opens in a new window)</p>
-./1.0commercial.install-GA-security.dita:  <xref format="html" href="javascript:window.open('/media/Helion_Security1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
-./1.0commercial.install-GA-security.dita:  <xref format="html" href="javascript:window.open('/media/Helion_Security9.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
-./1.0commercial.install-GA-supportmatrix.dita:<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >KVM deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
-./1.0commercial.install-GA-supportmatrix.dita:<xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >ESX deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
-./1.0commercial.install-GA-vsa.dita:  <xref format="html" href="javascript:window.open('/media/storevirtual-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreVirtual VSA Deployment and Configuration Procedure (opens in a new window)</xref>
-./1.0commercial.install-GA-vsa.dita:<xref format="html" href="javascript:window.open('/media/storevirtual-cmc1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >CMC Main Page (opens in a new window)</xref>
-./1.0commercial.install-GA-vsa.dita:<xref format="html" href="javascript:window.open('/media/storevirtual-cmc2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Find Systems option (opens in a new window)</xref>
-./1.0commercial.install-GA-vsa.dita:<xref format="html" href="javascript:window.open('/media/storevirtual-cmc3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Add option (opens in a new window)</xref>
-./1.0commercial.install-GA-vsa.dita:<xref format="html" href="javascript:window.open('/media/storevirtual-cmc4.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Find option (opens in a new window)</xref>
-./1.0commercial.install-GA-vsa.dita:<xref format="html" href="javascript:window.open('/media/storevirtual-cmc5.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Discovered Nodes Under Available Systems (opens in a new window)</xref>
-./1.0commercial.install-GA-vsa.dita:<xref format="html" href="javascript:window.open('/media/storevirtual-cmc6.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Create Management Page (opens in a new window)</xref>
-./1.0commercial.install-GA-vsa.dita:<xref format="html" href="javascript:window.open('/media/storevirtual-cmc7.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >CMC Main Page with the Cluster (opens in a new window)</xref>
-./1.0commercial.map.volumetype.dita:<xref format="html" href="javascript:window.open('/media/create-volumetype.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Create Volume Type Option (opens in a new window)</xref>
-./1.0commercial.map.volumetype.dita:<xref format="html" href="javascript:window.open('/media/create-volumetype1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Create Volume Type Dialog Box (opens in a new window)</xref>
-./1.0commercial.map.volumetype.dita:<xref format="html" href="javascript:window.open('/media/view-extra-specs.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View Extra Specs Option (opens in a new window)</xref>
-./1.0commercial.map.volumetype.dita:<xref format="html" href="javascript:window.open('/media/view-extra-specs1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" > Create Volume Type Extra Specs Dialog Box (opens in a new window)</xref>
-./1.0commercial.sirius-cli-workflow.dita:  <xref format="html" href="javascript:window.open('/media/sirius-cli-processflow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Process Flow Diagram (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Configure Cloud StoreServ Option (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-add-backendoption.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >StoreServ Volume Backend Page (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Backend Mapping Page (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Common Provisioning Groups Page with the Reserved CPG (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-expand-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expand Backend Option (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-expand-backend1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expand StoreServ Volume Backend Page (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-expand-backend2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expanded Backend in the Backend Mapping Table(opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-shrink-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Shrink Backend Option(opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-shrink-backend1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Shrink Backend Option(opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-shrink-backend2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Backend Mapping Table with Reduced Number of Backends(opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-generate-config.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Generate Configuration Page (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Configure Cloud Page (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-add-backendoption.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >StoreVirtual Volume Backend Page (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-add-backendoption3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Backend Displays in the Configure Cloud Page (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-expand-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expand Backend Option (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-expand-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expand Backend Page with Update Option(opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storevirtual.dita:<p>Click <b>Update</b>.<!--A BR tag was used here in the original source.-->On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.<!---<a href="javascript:window.open('/media/undercloud-storevirtual-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expand Backend Page with Update Option (opens in a new window)</a>--></p>
-./1.0commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-shrink-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Shrink Backend Option (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-shrink-backend1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Shrink Backend Page with Update Option (opens in a new window)</xref>
-./1.0commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-generate-config.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Generate Configuration Option (opens in a new window)</xref>
-./1.0commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-main-page.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP 3PAR StoreServ Main Page (opens in a new window)</xref>
-./1.0commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-register-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Register StoreServ Dialog Box (opens in a new window)</xref>
-./1.0commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-registered-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Registered StoreServ in the HP StoreServ Main Page (opens in a new window)</xref>
-./1.0commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-unregister-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >UnRegister a StoreServ Option (opens in a new window)</xref>
-./1.0commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-register-cpg.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Register CPG Option (opens in a new window)</xref>
-./1.0commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-register-cpgpage.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Register CPG Page (opens in a new window)</xref>
-./1.0commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-registered-cpg.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Registered CPG Displays in the Common Provisioning Groups Page (opens in a new window)</xref>
-./1.0commercial.undercloud-storage-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-register.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreVirtual VSA Page (opens in a new window)</xref>
-./1.0commercial.undercloud-storage-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-register-page.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Register Cluster Dialog Box (opens in a new window)</xref>
-./1.0commercial.undercloud-storage-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-registered-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Registered Cluster Displays in the HP StoreVirtual VSA Page (opens in a new window)</xref>
-./1.0commercial.undercloud-storage-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-edit-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Edit Cluster Dialog Box (opens in a new window)</xref>
-./1.0commercial.undercloud-storage-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-more-options.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >More Option (opens in a new window)</xref>
-./1.0commercial.vlan-providernetwork.dita:  <xref format="html" href="javascript:window.open('/media/vlan.provider.network.logical.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Deployment diagram depicting VLAN Provider Network with VSA nodes as Block storage backend. (Opens in a new window)</xref>
-./1.0commercial.vlan-providernetwork.dita:  <xref format="html" href="javascript:window.open('/media/vlan.network.layout.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Network Layout. (Opens in a new window)</xref>
-./1.0commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/Ha-resilient-cloud-infrastructure.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Resilient Cloud Infrastructure (opens in a new window)</xref>
-./1.0commerical.high-availability.dita:<xref format="html" href="javascript:window.open('/media/ha-architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA Architecture (opens in a new window)</xref>
-./1.0commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/Ha-api-request-flow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA API Message Flow(opens in a new window)</xref>
-./1.0commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-nodefailure-1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Node Failure- Fig 1(opens in a new window)</xref>
-./1.0commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-nodefailure-2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Node Failure- Fig 2(opens in a new window)</xref>
-./1.0commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-nodefailure-3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Node Failure- Fig 3(opens in a new window)</xref>
-./1.0commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/mysql-galera-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >MySQL Galera Cluster Diagram(opens in a new window)</xref>
-./1.0commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-cinder-volume.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Cinder Volume Diagram(opens in a new window)</xref>
-./1.0commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-availability-zone.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Availability Zones (opens in a new window)</xref>
-./1.0commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-block-storage.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA Block Storage (opens in a new window)</xref>
-./1.0commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-swift.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA Swift  (opens in a new window)</xref>
-./1.0commerical.services-eon-overview.dita:  <xref format="html" href="javascript:window.open('/media//eon-architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >EON Architecture(opens in a new window)</xref>
-./1.0commerical.services-scale-out-swift.dita:  <xref format="html" href="javascript:window.open('/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack Scale-out (opens in a new window)</xref>
-./1.0commerical.services-scale-out-swift.dita:  <xref format="html" href="javascript:window.open('/media/swift-cluster-lifecycle.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Swift cluster lifecycle(opens in a new window) </xref>
-./1.1.1commerical.high-availability.dita:          >Resilient Cloud Infrastructure (opens in a new window)</xref>
-./1.1.1commerical.high-availability.dita:              >HA Architecture (opens in a new window)</xref>
-./1.1.1commerical.high-availability.dita:          >HA API Message Flow (opens in a new window)</xref>
-./1.1.1commerical.high-availability.dita:          >Node Failure- Fig 1(opens in a new window)</xref>
-./1.1.1commerical.high-availability.dita:          >Node Failure- Fig 2(opens in a new window)</xref>
-./1.1.1commerical.high-availability.dita:          >Node Failure- Fig 3(opens in a new window)</xref>
-./1.1.1commerical.high-availability.dita:          >MySQL Galera Cluster Diagram(opens in a new window)</xref>
-./1.1.1commerical.high-availability.dita:          >Cinder Volume Diagram(opens in a new window)</xref>
-./1.1.1commerical.high-availability.dita:          >Availability Zones (opens in a new window)</xref>
-./1.1.1commerical.high-availability.dita:          >HA Block Storage (opens in a new window)</xref>
-./1.1.1commerical.high-availability.dita:          >HA Swift (opens in a new window)</xref>
-./1.1commercial.install-3par.dita:  <xref format="html" href="javascript:window.open('/media/storeserv-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreServ Integration diagram (opens in a new window)</xref>
-./1.1commercial.install-GA-prereqs-network.dita:<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack architecture diagram for KVM network architecture.</xref>(opens in a new window)</p>
-./1.1commercial.install-GA-prereqs-network.dita:<xref format="html" href="javascript:window.open('/media/topology_esxnew.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack architecture diagram for ESX network architecture.</xref>(opens in a new window)</p>
-./1.1commercial.install-GA-security.dita:  <xref format="html" href="javascript:window.open('/media/Helion_Security1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
-./1.1commercial.install-GA-security.dita:  <xref format="html" href="javascript:window.open('/media/Helion_Security9.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
-./1.1commercial.install-GA-supportmatrix.dita:<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >KVM deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
-./1.1commercial.install-GA-supportmatrix.dita:<xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >ESX deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
-./1.1commercial.install-GA-vsa.dita:  <xref format="html" href="javascript:window.open('/media/storevirtual-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreVirtual VSA Deployment and Configuration Procedure (opens in a new window)</xref>
-./1.1commercial.install-GA-vsa.dita:              >CMC Main Page (opens in a new window)</xref>
-./1.1commercial.install-GA-vsa.dita:              >Find Systems option (opens in a new window)</xref>
-./1.1commercial.install-GA-vsa.dita:              >Add option (opens in a new window)</xref>
-./1.1commercial.install-GA-vsa.dita:              >Find option (opens in a new window)</xref>
-./1.1commercial.install-GA-vsa.dita:              >Discovered Nodes Under Available Systems (opens in a new window)</xref>
-./1.1commercial.install-GA-vsa.dita:              >Create Management Page (opens in a new window)</xref>
-./1.1commercial.install-GA-vsa.dita:              >CMC Main Page with the Cluster (opens in a new window)</xref>
-./1.1commercial.linux.arch.dita:<xref format="html" href="javascript:window.open('/media/LinuxServiceArch_resize1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image</xref> (opens in a new window)</p>
-./1.1commercial.linux.arch.dita:<xref format="html" href="javascript:window.open('/media/LinuxCustodyChain75.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image</xref> (opens in a new window)</p>
-./1.1commercial.linux.arch.dita:<xref format="html" href="javascript:window.open('/media/LinuxImplementArch.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image</xref> (opens in a new window)</p>
-./1.1commercial.map.volumetype.dita:<xref format="html" href="javascript:window.open('/media/create-volumetype2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Create Volume Type Dialog Box (opens in a new window)</xref>
-./1.1commercial.map.volumetype.dita:<xref format="html" href="javascript:window.open('/media/view-extra-specs-hos-1.1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View Extra Specs Option (opens in a new window)</xref>
-./1.1commercial.map.volumetype.dita:<xref format="html" href="javascript:window.open('/media/volume-extra-specs.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" > Create Volume Type Extra Specs Dialog Box (opens in a new window)</xref>
-./1.1commercial.services-volume-fibre.dita:  <xref format="html" href="javascript:window.open('/media/commercial_cinder-fc-zone.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
-./1.1commercial.sirius-cli-workflow.dita:  <xref format="html" href="javascript:window.open('/media/sirius-cli-processflow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Process Flow Diagram (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Configure Cloud StoreServ Option (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-add-backendoption.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >StoreServ Volume Backend Page (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Backend Mapping Page (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Common Provisioning Groups Page with the Reserved CPG (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-expand-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expand Backend Option (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-expand-backend1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expand StoreServ Volume Backend Page (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-expand-backend2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expanded Backend in the Backend Mapping Table(opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-shrink-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Shrink Backend Option(opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-shrink-backend1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Shrink Backend Option(opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-shrink-backend2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Backend Mapping Table with Reduced Number of Backends(opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-generate-config.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Generate Configuration Page (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Configure Cloud Page (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-add-backendoption.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >StoreVirtual Volume Backend Page (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-add-backendoption3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Backend Displays in the Configure Cloud Page (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-expand-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expand Backend Option (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-expand-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expand Backend Page with Update Option(opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storevirtual.dita:<p>Click <b>Update</b>.<!--A BR tag was used here in the original source.-->On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.<!---<a href="javascript:window.open('/media/undercloud-storevirtual-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expand Backend Page with Update Option (opens in a new window)</a>--></p>
-./1.1commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-shrink-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Shrink Backend Option (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-shrink-backend1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Shrink Backend Page with Update Option (opens in a new window)</xref>
-./1.1commercial.undercloud-oc-config-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-generate-config.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Generate Configuration Option (opens in a new window)</xref>
-./1.1commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-main-page.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP 3PAR StoreServ Main Page (opens in a new window)</xref>
-./1.1commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-register-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Register StoreServ Dialog Box (opens in a new window)</xref>
-./1.1commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-registered-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Registered StoreServ in the HP StoreServ Main Page (opens in a new window)</xref>
-./1.1commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-unregister-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >UnRegister a StoreServ Option (opens in a new window)</xref>
-./1.1commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-register-cpg.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Register CPG Option (opens in a new window)</xref>
-./1.1commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-register-cpgpage.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Register CPG Page (opens in a new window)</xref>
-./1.1commercial.undercloud-storage-storeserv.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-registered-cpg.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Registered CPG Displays in the Common Provisioning Groups Page (opens in a new window)</xref>
-./1.1commercial.undercloud-storage-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-register.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreVirtual VSA Page (opens in a new window)</xref>
-./1.1commercial.undercloud-storage-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-register-page.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Register Cluster Dialog Box (opens in a new window)</xref>
-./1.1commercial.undercloud-storage-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-registered-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Registered Cluster Displays in the HP StoreVirtual VSA Page (opens in a new window)</xref>
-./1.1commercial.undercloud-storage-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-edit-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Edit Cluster Dialog Box (opens in a new window)</xref>
-./1.1commercial.undercloud-storage-storevirtual.dita:<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-more-options.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >More Option (opens in a new window)</xref>
-./1.1commercial.vlan-providernetwork.dita:  <xref format="html" href="javascript:window.open('/media/vlan.provider.network.logical.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Deployment diagram depicting VLAN Provider Network with VSA nodes as Block storage backend. (Opens in a new window)</xref>
-./1.1commercial.vlan-providernetwork.dita:  <xref format="html" href="javascript:window.open('/media/vlan.network.layout.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Network Layout. (Opens in a new window)</xref>
-./1.1commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/Ha-resilient-cloud-infrastructure.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Resilient Cloud Infrastructure (opens in a new window)</xref>
-./1.1commerical.high-availability.dita:<xref format="html" href="javascript:window.open('/media/ha-architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA Architecture (opens in a new window)</xref>
-./1.1commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/Ha-api-request-flow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA API Message Flow(opens in a new window)</xref>
-./1.1commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-nodefailure-1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Node Failure- Fig 1(opens in a new window)</xref>
-./1.1commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-nodefailure-2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Node Failure- Fig 2(opens in a new window)</xref>
-./1.1commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-nodefailure-3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Node Failure- Fig 3(opens in a new window)</xref>
-./1.1commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/mysql-galera-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >MySQL Galera Cluster Diagram(opens in a new window)</xref>
-./1.1commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-cinder-volume.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Cinder Volume Diagram(opens in a new window)</xref>
-./1.1commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-availability-zone.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Availability Zones (opens in a new window)</xref>
-./1.1commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-block-storage.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA Block Storage (opens in a new window)</xref>
-./1.1commerical.high-availability.dita:  <xref format="html" href="javascript:window.open('/media/ha-swift.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA Swift  (opens in a new window)</xref>
-./1.1commerical.services-eon-overview.dita:  <xref format="html" href="javascript:window.open('/media//eon-architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >EON Architecture(opens in a new window)</xref>
-./neutron/1.1commercial_neutron-intro.dita:  <xref format="html" href="javascript:window.open('/media/commercial_cloud-network-integration-openstack-services.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
-./neutron/1.1commercial_neutron-post-installation-configure-network.dita:  <xref format="html" href="javascript:window.open('/media/Helion_Security9.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
+./1.0commercial.install-3par.dita:  <image href="../../media/storeserv-integration.png"/>HP StoreServ Integration diagram 
+./1.0commercial.install-GA-esx.dita:  <image href="../../media/topology_esx.png"/>HP Helion OpenStack architecture diagram for ESX 
+./1.0commercial.install-GA-kvm.dita:  <image href="../../media/topology_kvm.png"/>KVM deployment of HP Helion OpenStack 
+./1.0commercial.install-GA-prereqs.dita:<image href="../../media/topology_kvm.png"/>HP Helion OpenStack architecture diagram for KVM network architecture.</xref>(opens in a new window)</p>
+./1.0commercial.install-GA-prereqs.dita:<image href="../../media/topology_esx.png"/>HP Helion OpenStack architecture diagram for ESX network architecture.</xref>(opens in a new window)</p>
+./1.0commercial.install-GA-security.dita:  <image href="../../media/Helion_Security1.png"/>
+./1.0commercial.install-GA-security.dita:  <image href="../../media/Helion_Security9.png"/>
+./1.0commercial.install-GA-supportmatrix.dita:<image href="../../media/topology_kvm.png"/>KVM deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
+./1.0commercial.install-GA-supportmatrix.dita:<image href="../../media/topology_esx.png"/>ESX deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
+./1.0commercial.install-GA-vsa.dita:  <image href="../../media/storevirtual-integration.png"/>HP StoreVirtual VSA Deployment and Configuration Procedure 
+./1.0commercial.install-GA-vsa.dita:<image href="../../media/storevirtual-cmc1.png"/>CMC Main Page 
+./1.0commercial.install-GA-vsa.dita:<image href="../../media/storevirtual-cmc2.png"/>Find Systems option 
+./1.0commercial.install-GA-vsa.dita:<image href="../../media/storevirtual-cmc3.png"/>Add option 
+./1.0commercial.install-GA-vsa.dita:<image href="../../media/storevirtual-cmc4.png"/>Find option 
+./1.0commercial.install-GA-vsa.dita:<image href="../../media/storevirtual-cmc5.png"/>Discovered Nodes Under Available Systems 
+./1.0commercial.install-GA-vsa.dita:<image href="../../media/storevirtual-cmc6.png"/>Create Management Page 
+./1.0commercial.install-GA-vsa.dita:<image href="../../media/storevirtual-cmc7.png"/>CMC Main Page with the Cluster 
+./1.0commercial.map.volumetype.dita:<image href="../../media/create-volumetype.png"/>Create Volume Type Option 
+./1.0commercial.map.volumetype.dita:<image href="../../media/create-volumetype1.png"/>Create Volume Type Dialog Box 
+./1.0commercial.map.volumetype.dita:<image href="../../media/view-extra-specs.png"/>View Extra Specs Option 
+./1.0commercial.map.volumetype.dita:<image href="../../media/view-extra-specs1.png"/> Create Volume Type Extra Specs Dialog Box 
+./1.0commercial.sirius-cli-workflow.dita:  <image href="../../media/sirius-cli-processflow.png"/>Process Flow Diagram 
+./1.0commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-add-backend.png"/>Configure Cloud StoreServ Option 
+./1.0commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-add-backendoption.png"/>StoreServ Volume Backend Page 
+./1.0commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-add-backendoption1.png"/>Backend Mapping Page 
+./1.0commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-add-backendoption2.png"/>Common Provisioning Groups Page with the Reserved CPG 
+./1.0commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-expand-backend.png"/>Expand Backend Option 
+./1.0commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-expand-backend1.png"/>Expand StoreServ Volume Backend Page 
+./1.0commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-expand-backend2.png"/>Expanded Backend in the Backend Mapping Table
+./1.0commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-shrink-backend.png"/>Shrink Backend Option
+./1.0commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-shrink-backend1.png"/>Shrink Backend Option
+./1.0commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-shrink-backend2.png"/>Backend Mapping Table with Reduced Number of Backends
+./1.0commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-generate-config.png"/>Generate Configuration Page 
+./1.0commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-add-backend.png"/>Configure Cloud Page 
+./1.0commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-add-backendoption.png"/>StoreVirtual Volume Backend Page 
+./1.0commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-add-backendoption3.png"/>Backend Displays in the Configure Cloud Page 
+./1.0commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-expand-backend.png"/>Expand Backend Option 
+./1.0commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-expand-backendoption1.png"/>Expand Backend Page with Update Option
+./1.0commercial.undercloud-oc-config-storevirtual.dita:<p>Click <b>Update</b>.<!--A BR tag was used here in the original source.-->On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.<!---<a href="javascript:window.open('/media/undercloud-storevirtual-add-backendoption1.png"/>Expand Backend Page with Update Option (opens in a new window)</a>--></p>
+./1.0commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-shrink-backend.png"/>Shrink Backend Option 
+./1.0commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-shrink-backend1.png"/>Shrink Backend Page with Update Option 
+./1.0commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-generate-config.png"/>Generate Configuration Option 
+./1.0commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-main-page.png"/>HP 3PAR StoreServ Main Page 
+./1.0commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-register-storeserv.png"/>Register StoreServ Dialog Box 
+./1.0commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-registered-storeserv.png"/>Registered StoreServ in the HP StoreServ Main Page 
+./1.0commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-unregister-storeserv.png"/>UnRegister a StoreServ Option 
+./1.0commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-register-cpg.png"/>Register CPG Option 
+./1.0commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-register-cpgpage.png"/>Register CPG Page 
+./1.0commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-registered-cpg.png"/>Registered CPG Displays in the Common Provisioning Groups Page 
+./1.0commercial.undercloud-storage-storevirtual.dita:<image href="../../media/undercloud-storevirtual-register.png"/>HP StoreVirtual VSA Page 
+./1.0commercial.undercloud-storage-storevirtual.dita:<image href="../../media/undercloud-storevirtual-register-page.png"/>Register Cluster Dialog Box 
+./1.0commercial.undercloud-storage-storevirtual.dita:<image href="../../media/undercloud-storevirtual-registered-cluster.png"/>Registered Cluster Displays in the HP StoreVirtual VSA Page 
+./1.0commercial.undercloud-storage-storevirtual.dita:<image href="../../media/undercloud-storevirtual-edit-cluster.png"/>Edit Cluster Dialog Box 
+./1.0commercial.undercloud-storage-storevirtual.dita:<image href="../../media/undercloud-storevirtual-more-options.png"/>More Option 
+./1.0commercial.vlan-providernetwork.dita:  <image href="../../media/vlan.provider.network.logical.png"/>Deployment diagram depicting VLAN Provider Network with VSA nodes as Block storage backend. 
+./1.0commercial.vlan-providernetwork.dita:  <image href="../../media/vlan.network.layout.png"/>Network Layout. 
+./1.0commerical.high-availability.dita:  <image href="../../media/Ha-resilient-cloud-infrastructure.png"/>Resilient Cloud Infrastructure 
+./1.0commerical.high-availability.dita:<image href="../../media/ha-architecture.png"/>HA Architecture 
+./1.0commerical.high-availability.dita:  <image href="../../media/Ha-api-request-flow.png"/>HA API Message Flow
+./1.0commerical.high-availability.dita:  <image href="../../media/ha-nodefailure-1.png"/>Node Failure- Fig 1
+./1.0commerical.high-availability.dita:  <image href="../../media/ha-nodefailure-2.png"/>Node Failure- Fig 2
+./1.0commerical.high-availability.dita:  <image href="../../media/ha-nodefailure-3.png"/>Node Failure- Fig 3
+./1.0commerical.high-availability.dita:  <image href="../../media/mysql-galera-cluster.png"/>MySQL Galera Cluster Diagram
+./1.0commerical.high-availability.dita:  <image href="../../media/ha-cinder-volume.png"/>Cinder Volume Diagram
+./1.0commerical.high-availability.dita:  <image href="../../media/ha-availability-zone.png"/>Availability Zones 
+./1.0commerical.high-availability.dita:  <image href="../../media/ha-block-storage.png"/>HA Block Storage 
+./1.0commerical.high-availability.dita:  <image href="../../media/ha-swift.png"/>HA Swift  
+./1.0commerical.services-eon-overview.dita:  <image href="../../media//eon-architecture.png"/>EON Architecture
+./1.0commerical.services-scale-out-swift.dita:  <image href="../../media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png"/>HP Helion OpenStack Scale-out 
+./1.0commerical.services-scale-out-swift.dita:  <image href="../../media/swift-cluster-lifecycle.png"/>Swift cluster lifecycle
+./1.1.1commerical.high-availability.dita:          >Resilient Cloud Infrastructure 
+./1.1.1commerical.high-availability.dita:              >HA Architecture 
+./1.1.1commerical.high-availability.dita:          >HA API Message Flow 
+./1.1.1commerical.high-availability.dita:          >Node Failure- Fig 1
+./1.1.1commerical.high-availability.dita:          >Node Failure- Fig 2
+./1.1.1commerical.high-availability.dita:          >Node Failure- Fig 3
+./1.1.1commerical.high-availability.dita:          >MySQL Galera Cluster Diagram
+./1.1.1commerical.high-availability.dita:          >Cinder Volume Diagram
+./1.1.1commerical.high-availability.dita:          >Availability Zones 
+./1.1.1commerical.high-availability.dita:          >HA Block Storage 
+./1.1.1commerical.high-availability.dita:          >HA Swift 
+./1.1commercial.install-3par.dita:  <image href="../../media/storeserv-integration.png"/>HP StoreServ Integration diagram 
+./1.1commercial.install-GA-prereqs-network.dita:<image href="../../media/topology_kvm.png"/>HP Helion OpenStack architecture diagram for KVM network architecture.</xref>(opens in a new window)</p>
+./1.1commercial.install-GA-prereqs-network.dita:<image href="../../media/topology_esxnew.png"/>HP Helion OpenStack architecture diagram for ESX network architecture.</xref>(opens in a new window)</p>
+./1.1commercial.install-GA-security.dita:  <image href="../../media/Helion_Security1.png"/>
+./1.1commercial.install-GA-security.dita:  <image href="../../media/Helion_Security9.png"/>
+./1.1commercial.install-GA-supportmatrix.dita:<image href="../../media/topology_kvm.png"/>KVM deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
+./1.1commercial.install-GA-supportmatrix.dita:<image href="../../media/topology_esx.png"/>ESX deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
+./1.1commercial.install-GA-vsa.dita:  <image href="../../media/storevirtual-integration.png"/>HP StoreVirtual VSA Deployment and Configuration Procedure 
+./1.1commercial.install-GA-vsa.dita:              >CMC Main Page 
+./1.1commercial.install-GA-vsa.dita:              >Find Systems option 
+./1.1commercial.install-GA-vsa.dita:              >Add option 
+./1.1commercial.install-GA-vsa.dita:              >Find option 
+./1.1commercial.install-GA-vsa.dita:              >Discovered Nodes Under Available Systems 
+./1.1commercial.install-GA-vsa.dita:              >Create Management Page 
+./1.1commercial.install-GA-vsa.dita:              >CMC Main Page with the Cluster 
+./1.1commercial.linux.arch.dita:<image href="../../media/LinuxServiceArch_resize1.png"/>View larger image</xref> (opens in a new window)</p>
+./1.1commercial.linux.arch.dita:<image href="../../media/LinuxCustodyChain75.png"/>View larger image</xref> (opens in a new window)</p>
+./1.1commercial.linux.arch.dita:<image href="../../media/LinuxImplementArch.png"/>View larger image</xref> (opens in a new window)</p>
+./1.1commercial.map.volumetype.dita:<image href="../../media/create-volumetype2.png"/>Create Volume Type Dialog Box 
+./1.1commercial.map.volumetype.dita:<image href="../../media/view-extra-specs-hos-1.1.png"/>View Extra Specs Option 
+./1.1commercial.map.volumetype.dita:<image href="../../media/volume-extra-specs.png"/> Create Volume Type Extra Specs Dialog Box 
+./1.1commercial.services-volume-fibre.dita:  <image href="../../media/commercial_cinder-fc-zone.png"/>
+./1.1commercial.sirius-cli-workflow.dita:  <image href="../../media/sirius-cli-processflow.png"/>Process Flow Diagram 
+./1.1commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-add-backend.png"/>Configure Cloud StoreServ Option 
+./1.1commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-add-backendoption.png"/>StoreServ Volume Backend Page 
+./1.1commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-add-backendoption1.png"/>Backend Mapping Page 
+./1.1commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-add-backendoption2.png"/>Common Provisioning Groups Page with the Reserved CPG 
+./1.1commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-expand-backend.png"/>Expand Backend Option 
+./1.1commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-expand-backend1.png"/>Expand StoreServ Volume Backend Page 
+./1.1commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-expand-backend2.png"/>Expanded Backend in the Backend Mapping Table
+./1.1commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-shrink-backend.png"/>Shrink Backend Option
+./1.1commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-shrink-backend1.png"/>Shrink Backend Option
+./1.1commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-shrink-backend2.png"/>Backend Mapping Table with Reduced Number of Backends
+./1.1commercial.undercloud-oc-config-storeserv.dita:<image href="../../media/undercloud-storeserv-generate-config.png"/>Generate Configuration Page 
+./1.1commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-add-backend.png"/>Configure Cloud Page 
+./1.1commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-add-backendoption.png"/>StoreVirtual Volume Backend Page 
+./1.1commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-add-backendoption3.png"/>Backend Displays in the Configure Cloud Page 
+./1.1commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-expand-backend.png"/>Expand Backend Option 
+./1.1commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-expand-backendoption1.png"/>Expand Backend Page with Update Option
+./1.1commercial.undercloud-oc-config-storevirtual.dita:<p>Click <b>Update</b>.<!--A BR tag was used here in the original source.-->On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.<!---<a href="javascript:window.open('/media/undercloud-storevirtual-add-backendoption1.png"/>Expand Backend Page with Update Option (opens in a new window)</a>--></p>
+./1.1commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-shrink-backend.png"/>Shrink Backend Option 
+./1.1commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-shrink-backend1.png"/>Shrink Backend Page with Update Option 
+./1.1commercial.undercloud-oc-config-storevirtual.dita:<image href="../../media/undercloud-storevirtual-generate-config.png"/>Generate Configuration Option 
+./1.1commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-main-page.png"/>HP 3PAR StoreServ Main Page 
+./1.1commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-register-storeserv.png"/>Register StoreServ Dialog Box 
+./1.1commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-registered-storeserv.png"/>Registered StoreServ in the HP StoreServ Main Page 
+./1.1commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-unregister-storeserv.png"/>UnRegister a StoreServ Option 
+./1.1commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-register-cpg.png"/>Register CPG Option 
+./1.1commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-register-cpgpage.png"/>Register CPG Page 
+./1.1commercial.undercloud-storage-storeserv.dita:<image href="../../media/undercloud-storeserv-registered-cpg.png"/>Registered CPG Displays in the Common Provisioning Groups Page 
+./1.1commercial.undercloud-storage-storevirtual.dita:<image href="../../media/undercloud-storevirtual-register.png"/>HP StoreVirtual VSA Page 
+./1.1commercial.undercloud-storage-storevirtual.dita:<image href="../../media/undercloud-storevirtual-register-page.png"/>Register Cluster Dialog Box 
+./1.1commercial.undercloud-storage-storevirtual.dita:<image href="../../media/undercloud-storevirtual-registered-cluster.png"/>Registered Cluster Displays in the HP StoreVirtual VSA Page 
+./1.1commercial.undercloud-storage-storevirtual.dita:<image href="../../media/undercloud-storevirtual-edit-cluster.png"/>Edit Cluster Dialog Box 
+./1.1commercial.undercloud-storage-storevirtual.dita:<image href="../../media/undercloud-storevirtual-more-options.png"/>More Option 
+./1.1commercial.vlan-providernetwork.dita:  <image href="../../media/vlan.provider.network.logical.png"/>Deployment diagram depicting VLAN Provider Network with VSA nodes as Block storage backend. 
+./1.1commercial.vlan-providernetwork.dita:  <image href="../../media/vlan.network.layout.png"/>Network Layout. 
+./1.1commerical.high-availability.dita:  <image href="../../media/Ha-resilient-cloud-infrastructure.png"/>Resilient Cloud Infrastructure 
+./1.1commerical.high-availability.dita:<image href="../../media/ha-architecture.png"/>HA Architecture 
+./1.1commerical.high-availability.dita:  <image href="../../media/Ha-api-request-flow.png"/>HA API Message Flow
+./1.1commerical.high-availability.dita:  <image href="../../media/ha-nodefailure-1.png"/>Node Failure- Fig 1
+./1.1commerical.high-availability.dita:  <image href="../../media/ha-nodefailure-2.png"/>Node Failure- Fig 2
+./1.1commerical.high-availability.dita:  <image href="../../media/ha-nodefailure-3.png"/>Node Failure- Fig 3
+./1.1commerical.high-availability.dita:  <image href="../../media/mysql-galera-cluster.png"/>MySQL Galera Cluster Diagram
+./1.1commerical.high-availability.dita:  <image href="../../media/ha-cinder-volume.png"/>Cinder Volume Diagram
+./1.1commerical.high-availability.dita:  <image href="../../media/ha-availability-zone.png"/>Availability Zones 
+./1.1commerical.high-availability.dita:  <image href="../../media/ha-block-storage.png"/>HA Block Storage 
+./1.1commerical.high-availability.dita:  <image href="../../media/ha-swift.png"/>HA Swift  
+./1.1commerical.services-eon-overview.dita:  <image href="../../media//eon-architecture.png"/>EON Architecture
+./neutron/1.1commercial_neutron-intro.dita:  <image href="../../media/commercial_cloud-network-integration-openstack-services.png"/>
+./neutron/1.1commercial_neutron-post-installation-configure-network.dita:  <image href="../../media/Helion_Security9.png"/>

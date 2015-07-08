@@ -44,9 +44,9 @@
 <p>The following diagrams depict simplified deployment scenarios:</p>
 <ul>
 <li>
-<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >KVM deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
+<image href="../../media/topology_kvm.png"/>KVM deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
 <li>
-<xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >ESX deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
+<image href="../../media/topology_esx.png"/>ESX deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
 </ul>
 </section>
 <section id="supportedhw"> <title>Supported Hardware</title>

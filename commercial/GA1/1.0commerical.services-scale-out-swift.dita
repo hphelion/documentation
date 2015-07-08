@@ -32,11 +32,11 @@ We recommend you use these Starter servers as Swift Proxy Servers for the scaled
 <section id="diagrams"> <title>Diagrams</title>
 <p>The HP Helion OpenStack scale-out Swift architecture.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP Helion OpenStack Scale-out (opens in a new window)</xref>
+  <image href="../../media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png"/>HP Helion OpenStack Scale-out 
 </p>
 <p>The HP Helion OpenStack life-cycle diagram.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/swift-cluster-lifecycle.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Swift cluster lifecycle(opens in a new window) </xref>
+  <image href="../../media/swift-cluster-lifecycle.png"/>Swift cluster lifecycle
 </p>
 </section>
 <section id="storage-policies-and-policy-zero"> <title>Storage Policies and Policy Zero</title>

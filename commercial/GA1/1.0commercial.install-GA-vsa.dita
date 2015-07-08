@@ -59,7 +59,7 @@
 <section id="high-level-view"> <title>Deployment and Configuration Procedure Overview</title>
 <p>The following diagram gives an overview of the steps involved in deploying, configuring and integrating StoreVirtual nodes into your cloud. The subsequent sections provide the detailed instructions on integration workflow.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/storevirtual-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreVirtual VSA Deployment and Configuration Procedure (opens in a new window)</xref>
+  <image href="../../media/storevirtual-integration.png"/>HP StoreVirtual VSA Deployment and Configuration Procedure 
 </p>
 <!--1 - **Install CMC**
      
@@ -397,14 +397,14 @@ from the above steps.</p>
 <p>By default, the CMC is configured to discover the StoreVirtual nodes in the subnet in which it is installed. You can manually add the nodes also.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >CMC Main Page (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc1.png"/>CMC Main Page 
 </p>
 </li>
 <li>
 <p>In the CMC UI, click <b>Find</b> and then click <b>Find Systems</b> from the left panel.<!--A BR tag was used here in the original source.--> Find Systems dialogue box is displayed.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Find Systems option (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc2.png"/>Find Systems option 
 </p>
 </li>
 <li>
@@ -414,11 +414,11 @@ from the above steps.</p>
 <b>Note:</b>To get the details of the HP StoreVirtual VSA IP, log in to StoreVirtual system and check <codeph>/etc/vsa/vsa_network_config.json</codeph> file.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Add option (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc3.png"/>Add option 
 </p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc4.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Find option (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc4.png"/>Find option 
 </p>
 </li>
 <li>
@@ -437,14 +437,14 @@ from the above steps.</p>
 <p>Click <b>Close</b> to return to the Home page.<!--A BR tag was used here in the original source.--> The discovered nodes are displayed under <b>Available Systems</b> option in the left panel.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc5.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Discovered Nodes Under Available Systems (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc5.png"/>Discovered Nodes Under Available Systems 
 </p>
 </li>
 <li>
 <p>To add the node to a management group, right-click the node to display a menu and select <b>Add to a New Management Group</b>.<!--A BR tag was used here in the original source.--> Management Groups, Clusters, And Volumes wizard is displayed.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc6.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Create Management Page (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc6.png"/>Create Management Page 
 </p>
 </li>
 <li>
@@ -487,7 +487,7 @@ from the above steps.</p>
 <p>Click <b>Next</b>.<!--A BR tag was used here in the original source.-->The Management Group and Cluster is created and displays in the Home page of CMC.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/storevirtual-cmc7.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >CMC Main Page with the Cluster (opens in a new window)</xref>
+<image href="../../media/storevirtual-cmc7.png"/>CMC Main Page with the Cluster 
 </p>
 </li>
 </ol>

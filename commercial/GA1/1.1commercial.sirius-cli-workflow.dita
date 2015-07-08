@@ -60,7 +60,7 @@
 - reconfiguring and updating the cloud.</p>
 <p>The following diagram provides a high level view of the process flow.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/sirius-cli-processflow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Process Flow Diagram (opens in a new window)</xref>
+  <image href="../../media/sirius-cli-processflow.png"/>Process Flow Diagram 
 </p>
 <p>
   <xref href="#topic21033"> Return to Top </xref>

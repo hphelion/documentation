@@ -28,7 +28,7 @@
   <image href="../../../media/commercial_cloud-network-integration-openstack-services-50.png"/>
 </p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/commercial_cloud-network-integration-openstack-services.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
+  <image href="../../media/commercial_cloud-network-integration-openstack-services.png"/>
 </p>
 <p>To accomplish these tasks in the most efficient order, this guide organizes the tasks that the network administrator must complete (or verify that are complete) before installing Helion OpenStack and those tasks that must be accounted for after the Helion OpenStack installation.</p>
 <ul>
