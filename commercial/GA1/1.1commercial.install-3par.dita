@@ -34,9 +34,8 @@
 <!---Devices can be connected to Cinder using Fibre Channel (FC) or using the iSCSI protocol.-->
 <section id="high-level-overview-of-hp-3par-storeserv-integration"> <title>High-level overview of HP 3PAR StoreServ Integration</title>
 <p>The following diagram gives an overview of the steps involved in integrating HP 3PAR StoreServ with your cloud.</p>
-<p>
-  <xref format="html" href="http://docs-staging.hpcloud.com/bundle-2015-may-current/media/storeserv-integration.png">HP StoreServ Integration diagram (opens in a new window)</xref>
-</p>
+<p> HP StoreServ Integration diagram <image href="../../media/storeserv-integration.png" width="800" />
+      </p>
 </section>
 <section id="prerequisites"> <title>Prerequisites</title>
 <p>The following prerequisites need to be performed before configuring 3PAR StoreServ to use in the cloud.</p>
