@@ -304,9 +304,10 @@ Performing backups and creating bootable volumes will then work.-->   <!--CORE-2
 <!-- (DOCS-839) -->
 <ul>
 <li>
-<p>When you resize an instance of Nova (in the Horizon portal under <i>Project &gt; Instances</i> and select <i>Resize Instance</i> from the drop-down list), the system produces the following error:
-‘‘Error: Unable to resize instance [instance name]�(TM)�(TM).
-<!--(NOV-6664) (NOV-6664) --></p>
+<p>When you resize an instance of Nova (in the Horizon portal under <i>Project &gt; Instances</i>
+            and select <i>Resize Instance</i> from the drop-down list), the system produces the
+            following error: ‘‘Error: Unable to resize instance [instance name]".
+            <!--(NOV-6664) (NOV-6664) --></p>
 </li>
 <li>
 <p>A Kernel Panic error occurs on DL 360 G7 systems when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack If this occurs, update the kernel to the latest version. <!-- (EE-21) --></p>
