@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1426949897008" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="1">Attaching to Networks Using an Ethernet Interface</title>
+    <shortdesc ixia_locid="2">You can attach an Ethernet interface to a network by editing the
+        interface.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+    </prolog>
+    <taskbody conref="rst1432664776488.xml#rst1432664776488/body"/>
+</task-wr>

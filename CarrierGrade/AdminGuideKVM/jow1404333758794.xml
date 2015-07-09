@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333758794" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">Inventory Detail</title>
+    <shortdesc ixia_locid="2">From the <wintitle ixia_locid="3">Inventory Detail</wintitle> page you
+        can see detailed information about a host, and use it to define hardware profiles that can
+        be used across the cluster.</shortdesc>
+    <prolog>
+        <author ixia_locid="4">Pedro Sanchez</author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="5">You access the <wintitle ixia_locid="6">Inventory Detail</wintitle> page
+            by clicking the host name on the <uicontrol ixia_locid="7">Hosts</uicontrol> tab of the
+                <wintitle ixia_locid="8">Systems Inventory</wintitle> page, as described in <xref href="jow1404333646078.xml" ixia_locid="9"/>. The inventory detail for a host
+            consists of multiple tabs, each addressing a different aspect of the host. They
+            include:</p>
+        <ul id="ul_ayq_s3z_l4">
+            <li ixia_locid="10">
+                <p ixia_locid="11">overview</p>
+            </li>
+            <li ixia_locid="12">
+                <p ixia_locid="13">processor</p>
+            </li>
+            <li ixia_locid="14">
+                <p ixia_locid="15">memory</p>
+            </li>
+            <li ixia_locid="16">
+                <p ixia_locid="17">storage</p>
+            </li>
+            <li ixia_locid="18">
+                <p ixia_locid="19">ports</p>
+            </li>
+            <li ixia_locid="20">
+                <p ixia_locid="21">interfaces</p>
+            </li>
+        </ul>
+    </conbody>
+</concept-wr>
