@@ -29,9 +29,6 @@
 <p>
   <image href="../../media/commercial_cinder-fc-zone-50.png" placement="break"/>
 </p>
-<p>
-  <image href="../../media/commercial_cinder-fc-zone.png" placement="break"/>
-</p>
 <section id="prerequisite"> <title>Prerequisite</title>
 <ul>
 <li>HP Helion OpenStack cloud is successfully deployed.</li>
@@ -59,48 +56,25 @@
 <section id="steps-for-configuration"> <title>Steps for configuration</title>
 <p>Perform the following steps to configure Brocade Zone Manager.</p>
 <ol>
-<li>
-<p>SSH to seed VM as root</p>
-
-<codeblock>
-<codeph>ssh root@&lt;seed IP address&gt;
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Change the directory</p>
-
-<codeblock>
-<codeph>cd /tripleo/hp_passthrough/
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create a JSON file with prefix <b>overcloud</b>. <!--A BR tag was used here in the original source.--> For example:</p>
-
-<codeblock>
-<codeph>touch overcloud_brocade_config.json
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Edit the JSON file with the following details:</p>
-
-<p>a.   Create the initial structure as follows:</p>
-
-<codeblock>
-<codeph>{
+<li>SSH to seed VM as
+                    root<codeblock><codeph>ssh root@&lt;seed IP address&gt;
+</codeph></codeblock></li>
+<li>Change the directory<codeblock><codeph>cd /tripleo/hp_passthrough/
+</codeph></codeblock></li>
+<li>Create a JSON file with prefix <b>overcloud</b>.
+                    <!--A BR tag was used here in the original source.--> For
+                    example:<codeblock><codeph>touch overcloud_brocade_config.json
+</codeph></codeblock></li>
+<li>Edit the JSON file with the following details:<p>a. Create the initial structure as
+                        follows:</p><codeblock><codeph>{
      "cinder": {
          "config": [
         ]
 }
-</codeph>
-</codeblock>
-
-<p>b.  Add the following parameters in the brocade cinder configuration under <b>config</b> for each section.</p>
-
-<codeblock>
-<codeph>{
+</codeph></codeblock><p>b.
+                        Add the following parameters in the brocade cinder configuration under
+                            <b>config</b> for each
+                        section.</p><codeblock><codeph>{
       "section": "&lt;SECTION_NAME&gt;",
       "values": [
           {
@@ -116,13 +90,10 @@
             .
         ]
 }
-</codeph>
-</codeblock>
-
-<p>After creating initial structure and adding parameters under <b>config</b> section, the JSON file should appears as shown in the sample below:</p>
-
-<codeblock>
-<codeph>{
+</codeph></codeblock><p>After
+                        creating initial structure and adding parameters under <b>config</b>
+                        section, the JSON file should appears as shown in the sample
+                    below:</p><codeblock><codeph>{
     "cinder": {
     "config": [
             {
@@ -216,9 +187,7 @@
          ]
      }
 }
-</codeph>
-</codeblock>
-</li>
+</codeph></codeblock></li>
 </ol>
 </section>
 <section id="update-cloud"> <title>Update cloud</title>
@@ -226,10 +195,8 @@
 <li>
 <p>Run the installer script to update the overcloud.</p>
 
-<codeblock>
-<codeph>bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh  --update-overcloud |&amp; tee install_update.log
-</codeph>
-</codeblock>
+<codeblock><codeph>bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh  --update-overcloud |&amp; tee install_update.log
+</codeph></codeblock>
 </li>
 </ul>
 <p>You can also configure HP 3PAR Storeservas storage backend with Brocade Zone Manager.</p>
