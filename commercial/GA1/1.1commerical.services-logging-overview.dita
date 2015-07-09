@@ -89,7 +89,7 @@
 <p>These components are configured to work out-of-the-box and the admin should be able to view log data using the default configurations.</p>
 <p>At a high level, the Helion services forward logs to Beaver. Then, Beaver forwards JSON messages to RabbitMQ on the controller0 (management controller) node. Logstash connects to RabbitMQ to read queued messages and process the messages according to the Logstash configuration file. Logstash then forwards the processed log files in Elasticsearch. Users can use the Kibana interface to view and analyze the information, as shown in the following figure:</p>
 <p>
-  <image href="../../media/centrallogging75.png"/>
+  <image href="../../media/centrallogging75.png" placement="break"/>
 </p>
       <note>Logging requires 4GB of disk space to make sure that all logging messages are
         retained.</note>

@@ -61,14 +61,14 @@
 <p>In the Configure Cloud page, click <b>StoreServ Backends</b> Tab to activate it.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Configure Cloud StoreServ Option (opens in a new window)</xref>
+<image href="../../media/undercloud-storeserv-add-backend.png" placement="break"/>Configure Cloud StoreServ Option 
 </p>
 </li>
 <li>
 <p>Click <b>Add Backend</b> displayed at the top to open the StoreServ Volume Backend page.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-add-backendoption.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >StoreServ Volume Backend Page (opens in a new window)</xref>
+<image href="../../media/undercloud-storeserv-add-backendoption.png" placement="break"/>StoreServ Volume Backend Page 
 </p>
 </li>
 <li>
@@ -90,13 +90,13 @@
 <p>Click <b>Add</b>.<!--A BR tag was used here in the original source.-->On successful addition of backend, the backend displays in the Backend Mapping table in the Configure Cloud page.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Backend Mapping Page (opens in a new window)</xref>
+<image href="../../media/undercloud-storeserv-add-backendoption1.png" placement="break"/>Backend Mapping Page 
 </p>
 
 <p>The status of the selected CPG is displayed as <i>Reserved</i> in the StoreServ page under the <b>Resources</b> Tab.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Common Provisioning Groups Page with the Reserved CPG (opens in a new window)</xref>
+<image href="../../media/undercloud-storeserv-add-backendoption2.png" placement="break"/>Common Provisioning Groups Page with the Reserved CPG 
 </p>
 </li>
 </ol>
@@ -112,14 +112,14 @@
 <p>In the Configure Cloud page, click <b>StoreServ Backends</b> Tab to activate it.<!--A BR tag was used here in the original source.--> The page displays a list of backends.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-expand-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expand Backend Option (opens in a new window)</xref>
+<image href="../../media/undercloud-storeserv-expand-backend.png" placement="break"/>Expand Backend Option 
 </p>
 </li>
 <li>
 <p>Click <b>Expand Backend</b> against the backend that you want to expand.<!--A BR tag was used here in the original source.--> Expand StoreServ Volume Backend page is displayed.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-expand-backend1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expand StoreServ Volume Backend Page (opens in a new window)</xref>
+<image href="../../media/undercloud-storeserv-expand-backend1.png" placement="break"/>Expand StoreServ Volume Backend Page 
 </p>
 </li>
 <li>
@@ -138,7 +138,7 @@
 <p>Click <b>Update</b>.<!--A BR tag was used here in the original source.-->On successful update, the number of CPGs mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-expand-backend2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expanded Backend in the Backend Mapping Table(opens in a new window)</xref>
+<image href="../../media/undercloud-storeserv-expand-backend2.png" placement="break"/>Expanded Backend in the Backend Mapping Table
 </p>
 </li>
 </ol>
@@ -150,7 +150,7 @@
 <p>In the Configure Cloud page, click <b>StoreServ Backends</b> Tab to activate it.<!--A BR tag was used here in the original source.--> The page displays a list of backends.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-shrink-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Shrink Backend Option(opens in a new window)</xref>
+<image href="../../media/undercloud-storeserv-shrink-backend.png" placement="break"/>Shrink Backend Option
 </p>
 </li>
 <li>
@@ -172,14 +172,14 @@
 <p>Click <b>Update</b>.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-shrink-backend1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Shrink Backend Option(opens in a new window)</xref>
+<image href="../../media/undercloud-storeserv-shrink-backend1.png" placement="break"/>Shrink Backend Option
 </p>
 
 <p>
 <!--A BR tag was used here in the original source.-->On successful update, the number of CPGs mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-shrink-backend2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Backend Mapping Table with Reduced Number of Backends(opens in a new window)</xref>
+<image href="../../media/undercloud-storeserv-shrink-backend2.png" placement="break"/>Backend Mapping Table with Reduced Number of Backends
 </p>
 </li>
 </ol>
@@ -210,7 +210,7 @@
 <p>In the Configure Cloud page, click <b>StoreServ Backends</b> Tab to activate it.<!--A BR tag was used here in the original source.--> The page displays a list of backends.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storeserv-generate-config.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Generate Configuration Page (opens in a new window)</xref>
+<image href="../../media/undercloud-storeserv-generate-config.png" placement="break"/>Generate Configuration Page 
 </p>
 </li>
 <li>

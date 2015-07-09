@@ -28,7 +28,7 @@
 <p>The HP Helion OpenStack cloud networking platform is based on the OpenStack standard. OpenStack defines an architecture and compliant vendors (of which HP is one) create the implementations. HP Helion is one of these OpenStack implementations.</p>
 <p>The OpenStack Cloud Administrator Notes describe the common administrator tasks required to enable and maintain the primary OpenStack services. These primary services are shown below.</p>
 <p>
-  <image href="../../media/commercial_openstack-services.png"/>
+  <image href="../../media/commercial_openstack-services.png" placement="break"/>
 </p>
 <p>As a Helion administrator, you should follow the OpenStack Cloud Administrator Guide (available at <xref href="http://docs.openstack.org/" scope="external" format="html" >http://docs.openstack.org/</xref>) to enable and maintain each of these OpenStack services. Then refer to this guide for additional information to enable and maintain Helion OpenStack This guide will explain what you have to do in addition to, or instead of, what is in the OpenStack guide.</p>
 <p>To simplify the interaction between the <b>
@@ -38,7 +38,7 @@
 </b>. To manage Neutron for example, refer to the OpenStack guide on Neutron (Chapter 7, Networking), then refer to Managing the Network service in this guide to determine if Helion OpenStack requires configuration steps.</p>
 <p>Because OpenStack defines a platform with multiple services, administrators need to understand how these services interact and interdepend. The following illustration explains these relationships.</p>
 <p>
-  <image href="../../media/commercial.network-administrator.png"/>
+  <image href="../../media/commercial.network-administrator.png" placement="break"/>
 </p>
 <p>The OpenStack Cloud Administrator Guide is available on the OpenStack website http://docs.openstack.org/admin-guide-cloud/content/index.html</p>
 <p>To help you perform your administrative roles in these areas, this guide includes information on:</p>

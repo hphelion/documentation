@@ -129,6 +129,7 @@
         always available on request, which results in uninterrupted operations for users.</p>
       <p>Cloud users are able to provision and manage the compute, storage, and network
         infrastructure resources at any given point in time and the Horizon Dashboard and the
+
         OpenStack APIs must be reachable and be able to fulfill user requests.<image
           href="../../media/Ha-resilient-cloud-infrastructure.png" id="image_c3m_hkv_ps"/></p>
       <p>Once the Compute, Storage, and Network resources are deployed, users expect these resources
@@ -178,16 +179,12 @@
       <p>Single points of failure include:</p>
       <ol id="ol_rk5_cs1_4s">
         <li>
-          <p>
-            <b>Hardware SPOFs</b>: Hardware failures can take the form of servers failing, memory
-            going bad, power failing, hypervisors crashing, hard disks dying, NIC cards breaking,
-            switch ports failing, network cables loosening, and so forth.</p>
-        </li>
+          <b>Hardware SPOFs</b>: Hardware failures can take the form of servers failing, memory
+          going bad, power failing, hypervisors crashing, hard disks dying, NIC cards breaking,
+          switch ports failing, network cables loosening, and so forth.</li>
         <li>
-          <p>
-            <b>Software SPOFs</b>: Server processes can crash due to software defects, out-of-memory
-            conditions, operating system kernel panic, and so forth.</p>
-        </li>
+          <b>Software SPOFs</b>: Server processes can crash due to software defects, out-of-memory
+          conditions, operating system kernel panic, and so forth.</li>
       </ol>
       <p>By design, HP Helion OpenStack strives to create a system architecture resilient to SPOFs,
         and does not attempt to automatically protect the system against multiple cascading levels
@@ -204,18 +201,16 @@
       <title>High Availability of overcloud controllers</title>
       <p>The high availability of the overcloud controller components comes in two main forms.</p>
       <ol id="ol_jp5_cs1_4s">
-        <li>
-          <p>Many services are stateless and multiple instances are run across the control plane in
-            active-active mode. The API services (nova-api, cinder-api, etc.) are accessed through
-            the HA proxy load balancer whereas the internal services (nova-scheduler,
-            cinder-scheduler, etc.), are accessed through the message broker. These services use the
-            database cluster to persist any data.</p>
-          <note>The HA proxy load balancer is also run in active-active mode and keepalived (used
-            for Virtual IP (VIP) Management) is run in active-active mode, with only one keepalived
-            instance holding the VIP at any one point in time.</note>
-        </li>
+        <li>Many services are stateless and multiple instances are run across the control plane in
+          active-active mode. The API services (nova-api, cinder-api, etc.) are accessed through the
+          HA proxy load balancer whereas the internal services (nova-scheduler, cinder-scheduler,
+          etc.), are accessed through the message broker. These services use the database cluster to
+          persist any data.<note>The HA proxy load balancer is also run in active-active mode and
+            keepalived (used for Virtual IP (VIP) Management) is run in active-active mode, with
+            only one keepalived instance holding the VIP at any one point in time.</note></li>
         <li>HA of the message queue service and the database service is achieved by running these in
           a clustered mode across the three nodes of the overcloud control plane: RabbitMQ cluster
+
           with Mirrored Queues and Percona MySQL Galera cluster.<image
             href="../../media/ha-architecture.png" id="image_y5b_4kv_ps"/><p> The above diagram
             illustrates the HA architecture with the focus on VIP management and load balancing. It
@@ -252,6 +247,7 @@
         </li>
       </ul>
     </section>
+
     <section><title>API Request message flow</title><p>The diagram below shows the flow for an API
         request in an overcloud HA deployment. All API requests (internal and external) are sent
         through the VIP.</p><image href="../../media/Ha-api-request-flow.png" id="image_f4k_skv_ps"
@@ -279,6 +275,7 @@
       <title>Handling node failure</title>
       <p>With the above overcloud HA set up, loss of a controller node is handled as follows:</p>
       <p>Assume that the Controller0, which is currently in control of the VIP, is lost, as shown in
+
         the diagram below:<image href="../../media/ha-nodefailure-1.png" id="image_sgy_zzv_ps"/></p>
       <p>When this occurs, keepalived immediately moves the VIP on to the Controller1 and can now
         receive API requests, which is load-balanced by HA proxy, as stated earlier.</p>
@@ -302,6 +299,7 @@
         continue to operate as normal, whereas the non-primary/minority partition cannot commit any
         requests. In the example below, Controller0 is partitioned from the rest of the control
         plane. As a result, requests can only be satisfied on Controller1 or Controller2.
+
         Controller0 will continue to attempt to rejoin the cluster:<image
           href="../../media/mysql-galera-cluster.png" id="image_ecc_y1w_ps"/></p>
       <p>When HA proxy detects the errors against the mysql instance on Controller0, it removes that
@@ -334,6 +332,7 @@
     <section>
       <title>Cinder-volume</title>
       <p>Due to the single threading required in both cinder-volume and the drivers, the Cinder
+
         volume service is run as a singleton in the control plane. <image
           href="../../media/ha-cinder-volume.png" id="image_tvz_bbw_ps"/></p>
       <p>Cinder-volume is deployed on all three controller nodes, but kept active on only one node
@@ -450,6 +449,7 @@ overcloud-controller1-px7gyh74dccx
     </section>
     <section>
       <title>Availability zones</title>
+
       <p><image href="../../media/ha-availability-zone.png" id="image_oks_bcw_ps"/></p>
       <p>While planning your OpenStack deployment, you should decide on how to zone various types of
         nodes - such as compute, block storage, and object storage. For example, you may decide to
@@ -504,6 +504,7 @@ overcloud-controller1-px7gyh74dccx
         deployed in different zones of your data center for maximum redundancy and resiliency. For
         more information on how to deploy VSA nodes on desired target servers, refer to the<xref
           href="../../commercial/GA1/1.1commercial.install-GA-vsa.dita"> Deploy VSA</xref>
+
         document.</p><image href="../../media/ha-block-storage.png" id="image_vy2_3cw_ps"
       /></section>
     <section>
@@ -525,8 +526,10 @@ overcloud-controller1-px7gyh74dccx
         specifying a target zone for each drive that is added to the ring. Learn more about
         configuring zones for various drives using the Ringos tool here. Please refer to the <xref
           href="../../commercial/GA1/1.1commerical.services-object-pyringos.dita">Ringos</xref>
+
         document.</p><image href="../../media/ha-swift.png" id="image_dkk_mcw_ps"
       /><!--
+
 Neutron Networking {#networking}
  
 Neutron Netwoking in HA covers the following:

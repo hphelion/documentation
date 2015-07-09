@@ -68,14 +68,14 @@
 <p>In the Configure Cloud page, click the <b>StoreVitual Backends</b> Tab.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Configure Cloud Page (opens in a new window)</xref>
+<image href="../../media/undercloud-storevirtual-add-backend.png" placement="break"/>Configure Cloud Page 
 </p>
 </li>
 <li>
 <p>Click <b>Add Backend</b> at the top to open the StoreVirtual Volume Backend page.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-add-backendoption.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >StoreVirtual Volume Backend Page (opens in a new window)</xref>
+<image href="../../media/undercloud-storevirtual-add-backendoption.png" placement="break"/>StoreVirtual Volume Backend Page 
 </p>
 </li>
 <li>
@@ -97,7 +97,7 @@
 <p>Click <b>Add</b>.<!--A BR tag was used here in the original source.-->On successful addition of backend, the backend displays in the Backend Mapping table in the Configure Cloud page.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-add-backendoption3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Backend Displays in the Configure Cloud Page (opens in a new window)</xref>
+<image href="../../media/undercloud-storevirtual-add-backendoption3.png" placement="break"/>Backend Displays in the Configure Cloud Page 
 </p>
 </li>
 </ol>
@@ -110,14 +110,14 @@
 <p>In the Configure Cloud page, click <b>StoreVirtual Backends</b> Tab to activate it.<!--A BR tag was used here in the original source.--> The page displays a list of backends.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-expand-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expand Backend Option (opens in a new window)</xref>
+<image href="../../media/undercloud-storevirtual-expand-backend.png" placement="break"/>Expand Backend Option 
 </p>
 </li>
 <li>
 <p>Click <b>Expand Backend</b> against the backend that you want to expand.<!--A BR tag was used here in the original source.--> Expand StoreVirtual Volume Backend page is displayed.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-expand-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Expand Backend Page with Update Option(opens in a new window)</xref>
+<image href="../../media/undercloud-storevirtual-expand-backendoption1.png" placement="break"/>Expand Backend Page with Update Option
 </p>
 </li>
 <li>
@@ -133,7 +133,7 @@
 <p>(Optional) Click <b>Remove All</b> displayed below the <b>Selected StoreVirtual Cluster Choices</b> box or select the cluster(s) and click ←to move the clusters back to <b>Available StoreVirtual Cluster Choices</b> box. .</p>
 </li>
 <li>
-<p>Click <b>Update</b>.<!--A BR tag was used here in the original source.-->On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.<!---<a href="javascript:window.open('/media/undercloud-storevirtual-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expand Backend Page with Update Option (opens in a new window)</a>--></p>
+<p>Click <b>Update</b>.<!--A BR tag was used here in the original source.-->On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.<!---<a href="javascript:window.open('/media/undercloud-storevirtual-add-backendoption1.png" placement="break"/>Expand Backend Page with Update Option (opens in a new window)</a>--></p>
 </li>
 </ol>
 <p>
@@ -150,7 +150,7 @@
 <p>Click <b>More</b> drop-down list against the Volume Backend for which you want to reduce the cluster(s) and select <b>Shrink Backend</b>.<!--A BR tag was used here in the original source.--> Configure StoreVirtual Backend page is displayed.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-shrink-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Shrink Backend Option (opens in a new window)</xref>
+<image href="../../media/undercloud-storevirtual-shrink-backend.png" placement="break"/>Shrink Backend Option 
 </p>
 </li>
 <li>
@@ -169,7 +169,7 @@
 <p>Click <b>Update</b>.<!--A BR tag was used here in the original source.-->On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-shrink-backend1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Shrink Backend Page with Update Option (opens in a new window)</xref>
+<image href="../../media/undercloud-storevirtual-shrink-backend1.png" placement="break"/>Shrink Backend Page with Update Option 
 </p>
 </li>
 </ol>
@@ -201,7 +201,7 @@
 <p>In the Configure Cloud page, click <b>StoreVirtual Backends</b> Tab to activate it.<!--A BR tag was used here in the original source.--> The page displays a list of backends.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-generate-config.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Generate Configuration Option (opens in a new window)</xref>
+<image href="../../media/undercloud-storevirtual-generate-config.png" placement="break"/>Generate Configuration Option 
 </p>
 </li>
 <li>

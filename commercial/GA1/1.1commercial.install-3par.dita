@@ -32,6 +32,7 @@
     <note>3PAR support applies only to HP Helion OpenStack with KVM hypervisor support.</note>
 <!---The Cinder integration drivers run as Python libraries in the Cinder service to facilitate communication between Cinder and StoreServ arrays.-->
 <!---Devices can be connected to Cinder using Fibre Channel (FC) or using the iSCSI protocol.-->
+
 <section id="high-level-overview-of-hp-3par-storeserv-integration"><title>High-level overview of HP
         3PAR StoreServ Integration</title><p>The following diagram gives an overview of the steps
         involved in integrating HP 3PAR StoreServ with your cloud.</p><image

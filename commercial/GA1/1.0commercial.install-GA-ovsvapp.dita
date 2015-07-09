@@ -117,7 +117,7 @@ trunk_interface={'vmxnet3':'vlan_trunk'}
 </codeblock>
 
 <p>Use the following diagram for reference:
-<image href="../../media/ESXi_hypervisor_networking.png"/>
+<image href="../../media/ESXi_hypervisor_networking.png" placement="break"/>
 </p>
 </li>
 </ul>
@@ -140,7 +140,7 @@ trunk_interface={'vmxnet3':'vlan_trunk'}
 <p>Use the vShpere client to select <b>Disable: Allow VM power on operations that violate availability constraints</b> as a part of cluster settings, as shaown. If not, ESX host might hang at 2% during transition to maintenance mode.</p>
 
 <p>
-<image href="../../media/OVSvApp_all_vm_power.png"/>
+<image href="../../media/OVSvApp_all_vm_power.png" placement="break"/>
 </p>
 </li>
 <li>

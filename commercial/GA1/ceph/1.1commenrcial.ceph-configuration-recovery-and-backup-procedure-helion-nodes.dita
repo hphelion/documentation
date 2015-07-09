@@ -154,7 +154,7 @@ Cinder - /var/log/upstart
 <section id="choosing-the-number-of-the-placement-group"> <title>Choosing the number of the placement group</title>
 <p>If there are more than 50 OSDs, we recommend approximately 50-100 PGs per OSD to balance resource usage, data durability and distribution. To get a baseline for a single pool of objects, use the following formula:</p>
 <p>
-  <image href="../../../media/commercial-ceph-formula-placement-group.png"/>
+  <image href="../../../media/commercial-ceph-formula-placement-group.png" placement="break"/>
 </p>
 <p>Where pool size is either the number of replicas for replicated pools or the K+M sum for erasure coded pools (as returned by <codeph>ceph osd erasure-code-profile get</codeph>).
 Round up the results to the nearest power of two. Rounding up is optional, but recommended for CRUSH to evenly balance the number of objects among PGs.</p>

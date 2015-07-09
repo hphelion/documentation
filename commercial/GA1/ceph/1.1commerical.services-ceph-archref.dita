@@ -33,19 +33,19 @@
   <!--A BR tag was used here in the original source.-->
 </p>
 <p>
-  <image href="../../../media/helion-openstack50.png"/>
+  <image href="../../../media/helion-openstack50.png" placement="break"/>
 </p>
 <p>
       <b>Communication Diagram from Helion OpenStack to Ceph Cluster</b>
       <!--A BR tag was used here in the original source.-->
     </p>
 <p>
-  <image href="../../../media/cephcomm50.png"/>
+  <image href="../../../media/cephcomm50.png" placement="break"/>
 </p>
 <p>
 <b>Logical Reference Architecture Diagram for Ceph Cluster</b> </p>
 <p>
-  <image href="../../../media/cephlogicalarch50.png"/>
+  <image href="../../../media/cephlogicalarch50.png" placement="break"/>
 </p>
 <p>
   <b>Helion OpenStack with Ceph Cluster Deployment Example</b>

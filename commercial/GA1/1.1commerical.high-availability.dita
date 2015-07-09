@@ -23,9 +23,6 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commerical.high-availability.md-->
  <!--permalink: /helion/openstack/1.1/high-availability/--></p>
-<p>
-
-</p>
 <p>This page covers the following topics:</p>
 <ul>
 <li>
@@ -71,7 +68,7 @@
 </li>
 <li>
 <xref type="section" href="#topic21283/sherpa">Sherpa</xref> </li>
-              <li><xref href="#topic21283/nova-consoleauth" format="dita"/></li>
+  <li><xref href="#topic21283/nova-consoleauth" format="dita">Nova consoleauth</xref></li>
 </ul>
 </li>
 <li>
@@ -87,13 +84,10 @@
 <xref type="section" href="#topic21283/availability-zones">Availability Zones</xref>
 </li>
 <li>
-<xref type="section" href="#topic21283/compute-with-kvm">Compute with KVM</xref>
-
-<ul>
-<li><xref href="1.1.1commerical.high-availability.dita#topic21822/nova-availability-zone"/>
-              </li>
-</ul>
-</li>
+            <xref type="section" href="#topic21283/compute-with-kvm">Compute with KVM</xref>
+          </li>
+          <li><xref href="#topic21283/nova-availability-zone" format="dita"/>
+          </li>
 <li>
 <xref type="section" href="#topic21283/compute-with-esx">Compute with ESX</xref>
 </li>
@@ -173,6 +167,7 @@
 <section id="ha-overcloud-controller"> <title>High Availability of Overcloud Controllers</title>
 <p>The high availability of the overcloud controller components comes in two main forms.</p>
 <ol>
+
 <li>Many services are stateless and multiple instances are run across the control plane in
           active-active mode. The API services (nova-api, cinder-api, etc.) are accessed through the
           HA proxy load balancer whereas the internal services (nova-scheduler, cinder-scheduler,
@@ -224,7 +219,7 @@
 <p>Assume that the Controller0, which is currently in control of the VIP, is lost, as shown in the
         diagram below:<image href="../../media/ha-nodefailure-1.png" id="image_sgy_zzv_ps"/></p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/ha-nodefailure-1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Node Failure- Fig 1(opens in a new window)</xref>
+  <image href="../../media/ha-nodefailure-1.png" placement="break"/>Node Failure- Fig 1
 </p>
 <p>When this occurs, keepalived immediately moves the VIP on to the Controller1 and can now receive API requests, which is load-balanced by HA proxy, as stated earlier.</p>
       <note>Although MySQL and RabbitMQ clusters have lost a node, they still continue to be
@@ -369,6 +364,7 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 <p>Cinder availability zones are not supported for general consumption in the current release.</p>
 </section>
 <section id="object-storage"> <title>Object Storage with Swift</title>
+
 <p>You can configure your Swift Rings by specifying a target zone for each drive that is added to
         the ring. Learn more about configuring zones for various drives using the Ringos tool here.
         Please refer to the <xref

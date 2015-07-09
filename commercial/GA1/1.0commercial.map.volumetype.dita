@@ -55,14 +55,14 @@
 <p>From the left panel, click the <b>Admin</b> Tab and then click <b>Volumes</b> to display the Volumes page.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/create-volumetype.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Create Volume Type Option (opens in a new window)</xref>
+<image href="../../media/create-volumetype.png" placement="break"/>Create Volume Type Option 
 </p>
 </li>
 <li>
 <p>Click <b>Create Volume Type</b> to display a dialog box.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/create-volumetype1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Create Volume Type Dialog Box (opens in a new window)</xref>
+<image href="../../media/create-volumetype1.png" placement="break"/>Create Volume Type Dialog Box 
 </p>
 </li>
 <li>
@@ -85,12 +85,10 @@
 <li>
 <p>Click <b>View Extra Specs</b> displayed against the volume type which you want to associate to the backend.<!--A BR tag was used here in the original source.--> Create Volume Type Extra Specs dialog box is displayed.</p>
 
-<p>
-<xref format="html" href="javascript:window.open('/media/view-extra-specs.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View Extra Specs Option (opens in a new window)</xref>
-</p>
+
 
 <p>
-<xref format="html" href="javascript:window.open('/media/view-extra-specs1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" > Create Volume Type Extra Specs Dialog Box (opens in a new window)</xref>
+  <image href="../../media/view-extra-specs-hos-1.1.png" placement="break"/> Create Volume Type Extra Specs Dialog Box 
 </p>
 </li>
 <li>

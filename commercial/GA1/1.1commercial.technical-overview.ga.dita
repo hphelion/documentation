@@ -350,13 +350,13 @@
 <section id="KVM-env"> <title>KVM environment</title>
 <p>The following diagram depicts a simplified deployment scenario using KVM.</p>
 <p>
-  <image href="../../media/topology_kvm.png"/>
+  <image href="../../media/topology_kvm.png" placement="break"/>
 </p>
 </section>
 <section id="esx-env"> <title>ESX environment</title>
 <p>The following diagram depicts a simplified deployment scenario using ESX.</p>
 <p>
-  <image href="../../media/topology_esxnew.png"/>
+  <image href="../../media/topology_esxnew.png" placement="break"/>
 </p>
 <p>
   <xref type="section" href="#topic24808"> Return to Top </xref>
@@ -740,7 +740,7 @@ The physical cluster network can be shared by a number of logical networks, each
 <p>
 <xref type="section" href="#topic24808/esx-env">HP Helion OpenStack architecture diagram for ESX</xref>
 <!--redundant diagram
-<img src="/media/commercial_esx_network_architecture.png"/> --></p>
+<img src="/media/commercial_esx_network_architecture.png" placement="break"/> --></p>
 <p>The HP Virtual Cloud Networking (VCN) application is an enhanced Networking Operations (Neutron) module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.</p>
 <p>HP VCN enables you to build a robust, multi-tenant networking infrastructure that delivers ready-to-use compute, storage, and networking by providing;</p>
 <ul>

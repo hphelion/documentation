@@ -31,7 +31,7 @@ onLoad="window.refresh"
 <section id="high-level-overview-of-hp-3par-storeserv-integration"> <title>High-level overview of HP 3PAR StoreServ Integration</title>
 <p>The following diagram gives an overview of the steps involved in integrating HP 3PAR StoreServ with your cloud.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/storeserv-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreServ Integration diagram (opens in a new window)</xref>
+  <image href="../../media/storeserv-integration.png" placement="break"/>HP StoreServ Integration diagram 
 </p>
 </section>
 <section id="prerequisites"> <title>Prerequisites</title>
