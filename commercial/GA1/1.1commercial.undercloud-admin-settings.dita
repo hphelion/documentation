@@ -43,21 +43,19 @@
 <section id="user-settings"> <title>User settings<!--Removed anchor point user-settings--><!-- id="user-settings" --></title>
 <p>This option allows you to change the user settings. To change the settings, do the following:</p>
 <ol>
-<li>
-<p>From the top panel, click <b>Admin</b> and then select <b>Settings</b>.<!--A BR tag was used here in the original source.--> The Settings Tab is displayed in the left panel with two options <b>User Settings</b> and <b>Change Password</b>.<!--A BR tag was used here in the original source.-->The default is User Settings.</p>
-</li>
-<li>
-<p>In the User Settings page, select English (en) from the <b>Language</b> drop-down list. </p>
-</li>
-<li>
-<p>From the <b>Timezone</b> drop-down list, select the time zone. <!--A BR tag was used here in the original source.--> The default is UTC (Universal Coordinated Time). </p>
-</li>
-<li>
-<p>From <b>Items per Page</b> drop-down list, select the number of lines that you want to display per page.<!--A BR tag was used here in the original source.--> The default is 20 lines per page.</p>
-</li>
-<li>
-<p>Click <b>Save</b> to save the changes.</p>
-</li>
+<li>From the top panel, click <b>Admin</b> and then select
+          <b>Settings</b>.<!--A BR tag was used here in the original source.--> The Settings Tab is
+          displayed in the left panel with two options <b>User Settings</b> and <b>Change
+            Password</b>.<!--A BR tag was used here in the original source.-->The default is User
+          Settings.</li>
+<li>In the User Settings page, select English (en) from the <b>Language</b> drop-down list. </li>
+<li>From the <b>Timezone</b> drop-down list, select the time zone.
+          <!--A BR tag was used here in the original source.--> The default is UTC (Universal
+          Coordinated Time). </li>
+<li>From <b>Items per Page</b> drop-down list, select the number of lines that you want to display
+          per page.<!--A BR tag was used here in the original source.--> The default is 20 lines per
+          page.</li>
+<li>Click <b>Save</b> to save the changes.</li>
 </ol>
 <p>
   <xref href="#topic1934"> Return to Top </xref>
@@ -66,24 +64,15 @@
 <section id="change-password"> <title>Change Password<!--Removed anchor point change-password--><!-- id="change-password" --></title>
 <p>This option allows you to the change the password. Do the following:</p>
 <ol>
-<li>
-<p>From the top panel, click <b>Admin</b> and then select <b>Settings</b>.<!--A BR tag was used here in the original source.--> The Settings Tab is displayed in the left panel with two options <b>User Settings</b> and <b>Change Password</b>.</p>
-</li>
-<li>
-<p>Click <b>Change Password</b> to display the Change Password page.</p>
-</li>
-<li>
-<p>In the <b>Current Password</b> box, enter your current password.</p>
-</li>
-<li>
-<p>In the <b>New Password</b> box, enter the new password.</p>
-</li>
-<li>
-<p>In the <b>Confirm Password</b> box, re-enter your new password to confirm.</p>
-</li>
-<li>
-<p>Click <b>Change</b> to save the changes.</p>
-</li>
+<li>From the top panel, click <b>Admin</b> and then select
+          <b>Settings</b>.<!--A BR tag was used here in the original source.--> The Settings Tab is
+          displayed in the left panel with two options <b>User Settings</b> and <b>Change
+            Password</b>.</li>
+<li>Click <b>Change Password</b> to display the Change Password page.</li>
+<li>In the <b>Current Password</b> box, enter your current password.</li>
+<li>In the <b>New Password</b> box, enter the new password.</li>
+<li>In the <b>Confirm Password</b> box, re-enter your new password to confirm.</li>
+<li>Click <b>Change</b> to save the changes.</li>
 </ol>
 <p>
   <xref href="#topic1934"> Return to Top </xref>

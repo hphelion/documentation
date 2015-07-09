@@ -25,23 +25,17 @@
 <p>We have provided several sample applications in multiple programming languages. Exploring and deploying these simple apps will help you understand how the push process works and how applications can be connected to the other HP Helion <tm tmtype="reg">OpenStack</tm> services.</p>
 <simpletable>
 <strow>
-                        <stentry>1. <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita">Register for your
-                                                Helion Public Cloud Account</xref>
-                                        <p>2. <xref
-                                                  href="1.2devplatform.ALS-developer-trial-quick-start2.dita#topic1743"
-                                                  >Download Tools</xref>
-                                        </p><p>3. <xref
-                                                  href="1.2devplatform.ALS-developer-trial-quick-start3.dita"
-                                                  >Create the Sandbox Environment</xref></p><p>4.
-                                                  <xref
-                                                  href="1.2devplatform.ALS-developer-trial-quick-start4.dita"
-                                                  >Create a Cluster</xref></p><p>5. <xref
-                                                  href="1.2devplatform.ALS-developer-trial-quick-start5.dita"
-                                                  >Add Windows DEA and SQL Server (Optional
-                                                  Step)</xref></p><p>6. <image
-                                                  href="../../media/star.gif" scale="50"
-                                                  id="image_zft_5cb_ms"/>
-                                                <b>Explore Sample Applications</b></p></stentry>
+                        <stentry>1. <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita"
+            >Register for your Helion Public Cloud Account</xref>
+          <p>2. <xref href="1.2devplatform.ALS-developer-trial-quick-start2.dita#topic1743">Download
+              Tools</xref>
+          </p><p>3. <xref href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the
+              Sandbox Environment</xref></p><p>4. <xref
+              href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
+            Cluster</xref></p><p>5. <xref
+              href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add Windows DEA and SQL
+              Server (Optional Step)</xref></p><p>6. <b>Explore Sample
+          Applications</b></p></stentry>
                         <stentry>Congratulations! You are now ready to begin deploying apps to your
                                         new micro-cloud environment. We have provided some <xref
                                                 href="1.2devplatform.appdev.dita#topic2457">sample
