@@ -26,10 +26,9 @@
 </p>
 <simpletable>
           <strow>
-            <stentry>1. <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita">Register for your Helion Public
-            Cloud Account</xref>
-          <p>2. <image href="../../media/star.gif" id="image_s3z_zdp_js" scale="50"/>
-            <b>Download Tools</b></p><p>3. <xref
+            <stentry>1. <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita">Register
+            for your Helion Public Cloud Account</xref>
+          <p>2. <b>Download Tools</b></p><p>3. <xref
               href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the Sandbox
               Environment</xref></p><p>4. <xref
               href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
