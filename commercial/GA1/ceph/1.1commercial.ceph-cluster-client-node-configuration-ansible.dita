@@ -470,7 +470,7 @@ f0:92:1c:05:35:58,helioncsel,m0ng00s3,192.168.51.106,163840,200,overcloud-ceph-c
 <ul>
 <li>Run <codeph>bootstrap.sh</codeph> from <codeph>ansible-playbook</codeph> folder as mentioned above.</li>
 <li>
-<p>Run Ansible playbook to add the new monitors</p>
+<p>Run Ansible playbook to add the new monitors.</p>
 
 <codeblock><codeph> ansible-playbook -i  hosts osd_mon_setup.yml
 </codeph></codeblock>
