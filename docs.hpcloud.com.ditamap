@@ -225,74 +225,97 @@
           href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita" navtitle="Neutron Networking High Availability" locktitle="yes"/> <!--necessary or no-->
         <topicref href="commercial/GA1/1.1commerical.services-dvr-overview.dita" navtitle="Distributed Virtual Routing Overview" locktitle="yes"/>
       </topicref>
-      <topicref href="commercial/GA1/1.1commerical.services-object-overview.dita" navtitle="Swift Object Storage Overview" locktitle="yes">
+      <topicref href="commercial/GA1/1.1commerical.services-object-overview.dita"
+        navtitle=" Object Storage (Swift) Overview" locktitle="yes">
         <!-- All Things Swift-->
-        <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita" navtitle="About Scale-out Object Storage" locktitle="yes">
+        <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita"
+          navtitle="About Scale-out Object Storage" locktitle="yes">
           <topicref
-            href="commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.dita" navtitle="Provisioning Object/Proxy Node(s)" locktitle="yes"/>
-          <topicref href="commercial/GA1/1.1commerical.services-swift-deployment.dita" navtitle="Deploying Additional Scale-out Nodes" locktitle="yes"/>
-          <topichead navtitle="Swift Object Storage: Scale Up or Expand">
+            href="commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.dita"
+            navtitle="Provisioning Object/Proxy Node(s)" locktitle="yes"/>
+          <topicref href="commercial/GA1/1.1commerical.services-swift-deployment.dita"
+            navtitle="Deploying Additional Scale-out Nodes" locktitle="yes"/>
+          <topichead navtitle="Object Storage (Swift): Scale Up or Expand">
             <topicref
-              href="commercial/GA1/1.1commerical.services-swift-deployment-expand-swift-cluster.dita" navtitle="Expand an Object Storage Cluster" locktitle="yes">
+              href="commercial/GA1/1.1commerical.services-swift-deployment-expand-swift-cluster.dita"
+              navtitle="Expand an Object Storage Cluster" locktitle="yes">
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-storage-node.dita" navtitle="Add New Scale-out Object Node" locktitle="yes"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-storage-node.dita"
+                navtitle="Add New Scale-out Object Node" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-proxy-node.dita" navtitle="Add New Scale-out Proxy Node" locktitle="yes"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-proxy-node.dita"
+                navtitle="Add New Scale-out Proxy Node" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-account-container.dita" navtitle="Add Disks to Account or Container Rings" locktitle="yes"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-account-container.dita"
+                navtitle="Add Disks to Account or Container Rings" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita" navtitle="Add a Disk to a Scale-out Object Ring" locktitle="yes"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"
+                navtitle="Add a Disk to a Scale-out Object Ring" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-starter-object-ring.dita" navtitle="Add a Disk to a Starter Object Ring" locktitle="yes"
-              />
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-starter-object-ring.dita"
+                navtitle="Add a Disk to a Starter Object Ring" locktitle="yes"/>
             </topicref>
           </topichead>
-          <topichead navtitle="Swift: Shrink or Scale Down">
+          <topichead navtitle="Object Storage (Swift): Shrink or Scale Down">
             <topicref
-              href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-swift-cluster.dita" navtitle="Shrink Swift Object Storage Cluster" locktitle="yes">
+              href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-swift-cluster.dita"
+              navtitle="Shrink Swift Object Storage Cluster" locktitle="yes">
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita" navtitle="Remove Existing Disk from Object Nodes" locktitle="yes"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"
+                navtitle="Remove Existing Disk from Object Nodes" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-proxy-node.dita" navtitle="Remove a Proxy Node" locktitle="yes"/>
+                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-proxy-node.dita"
+                navtitle="Remove a Proxy Node" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita" navtitle="Remove a Scale-out Object Storage Node" locktitle="yes"
-              />
+                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"
+                navtitle="Remove a Scale-out Object Storage Node" locktitle="yes"/>
             </topicref>
           </topichead>
           <!--<topichead navtitle="Monitoring an Object Storage Cluster">-->
+          <topicref
+            href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-cluster.dita"
+            navtitle="Monitoring an Object Storage (Swift) Cluster" locktitle="yes">
             <topicref
-              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-cluster.dita" navtitle="Monitoring an Object Storage Cluster" locktitle="yes">
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-disk.dita" navtitle="Monitoring Disk Usage" locktitle="yes"/>
-              <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-disk.dita"
+              navtitle="Monitoring Disk Usage" locktitle="yes"/>
+            <topicref
               href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-replica-swift-status.dita"
               navtitle="Monitoring Node Replication" locktitle="yes"/>
-              <topicref
+            <topicref
               href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-check.dita"
               navtitle="Monitoring Health Check of Swift Node" locktitle="yes"/>
-              <topicref
+            <topicref
               href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-health-swift-services.dita"
-              navtitle=" Monitoring Health of Swift Services" locktitle="yes"/> <!--combine or not-->
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-proxy-health-checks.dita" navtitle="Monitoring Swift Proxy Health" locktitle="yes"/>
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-interface.dita" navtitle="Monitoring NIC Speed" locktitle="yes"/>
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-mount-points.dita" navtitle="Monitoring Mount Points" locktitle="yes"/>
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-disk-drive(s).dita" navtitle="Monitoring Disk Drives" locktitle="yes"/>
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-access-ping.dita" navtitle="Monitoring Network Access" locktitle="yes"/>
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-drive-audit.dita" navtitle="Monitoring the Drive Audit" locktitle="yes"/>
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-file-ownership.dita" navtitle="Monitoring File Ownership" locktitle="yes"/>
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.dita" navtitle="Monitoring Disk Drives in Object Storage Using hpssacli" locktitle="yes"
-              />
-            </topicref>
+              navtitle=" Monitoring Health of Swift Services" locktitle="yes"/>
+            <!--combine or not-->
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-proxy-health-checks.dita"
+              navtitle="Monitoring Swift Proxy Health" locktitle="yes"/>
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-interface.dita"
+              navtitle="Monitoring NIC Speed" locktitle="yes"/>
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-mount-points.dita"
+              navtitle="Monitoring Mount Points" locktitle="yes"/>
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-disk-drive(s).dita"
+              navtitle="Monitoring Disk Drives" locktitle="yes"/>
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-network-access-ping.dita"
+              navtitle="Monitoring Network Access" locktitle="yes"/>
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-drive-audit.dita"
+              navtitle="Monitoring the Drive Audit" locktitle="yes"/>
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-file-ownership.dita"
+              navtitle="Monitoring File Ownership" locktitle="yes"/>
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-diagnosis-disk-health-hpssacli.dita"
+              navtitle="Monitoring Disk Drives in Object Storage Using hpssacli" locktitle="yes"/>
+          </topicref>
           <!--</topichead>-->
-          <topicref href="commercial/GA1/1.1commerical.services-object-pyringos.dita" navtitle="Using Ringos with Swift Clusters" locktitle="yes">
+          <topicref href="commercial/GA1/1.1commerical.services-object-pyringos.dita"
+            navtitle="Using Ringos with Object Storage (Swift) Clusters" locktitle="yes">
             <topicref href="commercial/GA1/1.1commerical.services-swift-deployment-part-power.dita"
             />
           </topicref>
