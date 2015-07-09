@@ -31,7 +31,7 @@
   <li><xref href="#topic1773/guestOS" format="dita">Guest OS Support Matrix</xref></li>
   
 </ul></p>
-    <section id="hardware"><title><u>Supported Hardware</u></title>
+    <section id="hardware"><title>Supported Hardware</title>
     <p>The following servers are supported for the <xref href="#topic1773/controllers" format="dita"
           >controllers</xref> and <xref href="#topic1773/compute" format="dita">compute
           servers</xref>.</p>
@@ -115,7 +115,7 @@
     </section>
 
   <section id="hardware-config">
-      <title><u>Required Hardware Configuration </u></title><p>The following hardware, configured as
+      <title>Required Hardware Configuration </title><p>The following hardware, configured as
         listed, is required for the <xref href="#topic1773/hlm-config" format="dita">HLM host</xref>, the
         <xref href="#topic1773/non-kvm-config" format="dita">Non-KVM region</xref>, 
         and <xref href="#topic1773/kvm-config" format="dita">KVM region</xref>.</p>
@@ -206,7 +206,7 @@
       </ul></section>
   
   <section id="typical">
-    <title><u>Typical Configurations</u></title>
+    <title>Typical Configurations</title>
       <p>The following tables list the hardware required for a complete HP Helion OpenStack Carrier
         Grade installation using GEN9 servers in a <xref href="#topic1773/rack" format="dita"
           >rackmount installation</xref> or an <xref href="#topic1773/enclosure" format="dita"
@@ -382,7 +382,7 @@
   </section>
   
 <section id="software">  
-  <title><u>Software Requirements</u></title>
+  <title>Software Requirements</title>
       <p>There are no software requirements for the servers where the HP Helion OpenStack region
         will be installed because all required software is contained within the images deployed on
         the system.</p>
@@ -390,7 +390,7 @@
     </section>
  
   <section id="guestOS">
-      <title><u>Guest OS Support Matrix</u></title> The following Guest Operating Systems are
+      <title>Guest OS Support Matrix</title> The following Guest Operating Systems are
       supported for the HP Helion OpenStack Carrier Grade servers. <b>Non-KVM region</b>
       <p>There are no supported Guest OSs for the servers in the Non-KVM region:</p>
       <b>KVM region</b>
