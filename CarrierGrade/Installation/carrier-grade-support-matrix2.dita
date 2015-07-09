@@ -195,8 +195,179 @@
         </li>
       </ul></section>
   
+  <section id="typical"><title>Typical Configurations</title>
+      <p>The following tables list the hardware required for a complete HP Helion OpenStack Carrier
+        Grade installation using GEN9 servers in a <xref href="#topic1773/rack" format="dita"
+          >rackmount installation</xref> or an <xref href="#topic1773/enclosure" format="dita"
+          >enclosure</xref>.</p> 
+        <p id="rack"><b>GEN9 Rackmount Base</b></p>
+      <table id="table_tgx_5k2_qs">
+        <tgroup cols="3">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <colspec colname="newCol3" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Component</entry>
+              <entry>Description</entry>
+              <entry/>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>16 x DL360 G9 (Compute)</entry>
+              <entry>
+                <ul id="ul_ugx_5k2_qs">
+                  <li>2 x Intel Xeon® E5-2680v3</li>
+                  <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                  <li>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                  <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP</li>
+                  <li>1 x Smart Array P440ar/2G FIO Controller</li>
+                  <li>2 x Ethernet 10Gb 2P 560SFP</li>
+                </ul>
+              </entry>
+              <entry morerows="2"><image href="../../media/CGH-hardware-rack.png"
+                  id="image_tjx_ph2_qs"/></entry>
+            </row>
+            <row>
+              <entry>6 x DL360 G9(Control)</entry>
+              <entry>
+                <ul id="ul_vgx_5k2_qs">
+                  <li>2 x Intel Xeon® E5-2640v3</li>
+                  <li>8 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                  <li>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                  <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP</li>
+                  <li>1 x Smart Array P440ar/2G FIO Controller</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>TOR Switches</entry>
+              <entry>
+                <ul id="ul_wgx_5k2_qs">
+                  <li>6 x 5920AF-24XG Switch</li>
+                  <li>2 x FF 5930-32QSFP+ Switch</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>Storage</entry>
+              <entry>
+                <p> 1 x 3PAR 7400 </p>
+              </entry>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
 
-  <section id="software-requirements">
+    <p id="enclosure"><b>GEN9 Enclosure Based</b></p>
+      <table id="table_xyv_xcs_ns">
+        <tgroup cols="3">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <colspec colname="newCol3" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Component</entry>
+              <entry>Description</entry>
+              <entry/>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <p>2 x C7000 Enclosure (Compute)</p>
+              </entry>
+              <entry>
+                <ul id="ul_q2d_bns_ns">
+                  <li>2 x Virtual Connect FlexFabric-20/40 F8 Module</li>
+                  <li>4 x 6125XLG Blade Switch</li>
+                </ul>
+              </entry>
+              <entry morerows="4"><image href="../../media/CGH-hardware-enclosure.png"
+                  id="image_o12_mh2_qs"/></entry>
+            </row>
+            <row>
+              <entry>
+                <p>16 x BL460 G9 (Compute) </p>
+              </entry>
+              <entry>
+                <ul id="ul_cps_bns_ns">
+                  <li>2 x Intel® Xeon® E5-2680v3</li>
+                </ul>
+                <p>
+                  <ul id="ul_hfd_cns_ns">
+                    <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                  </ul>
+                </p>
+                <p>
+                  <ul id="ul_o1m_cns_ns">
+                    <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                  </ul>
+                </p>
+                <p>
+                  <ul id="ul_kws_cns_ns">
+                    <li>1 x Smart Array P244br/1GB FBWC</li>
+                  </ul>
+                </p>
+                <p>
+                  <ul id="ul_sbz_cns_ns">
+                    <li>1 x FlexFabric 20Gb 2-port 650FLB</li>
+                  </ul>
+                </p>
+                <p>
+                  <ul id="ul_c2f_dns_ns">
+                    <li>2 x Ethernet 10Gb 2P 560M</li>
+                  </ul>
+                </p>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>6 x DL360 G9 (Control)</p>
+              </entry>
+              <entry>
+                <ul id="ul_rlm_dns_ns">
+                  <li>2 x Intel Xeon® E5-2640v3</li>
+                  <li>8 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                </ul>
+                <ul id="ul_xgx_5k2_qs">
+                  <li>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                  <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP</li>
+                  <li>1 x Smart Array P440ar/2G FIO Controller</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>TOR Switches</entry>
+              <entry>
+                <ul id="ul_ygx_5k2_qs">
+                  <li>6 x 5920AF-24XG Switch</li>
+                  <li>2 x FF 5930-32QSFP+ Switch</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>Storage</entry>
+              <entry>
+                <p>
+                  <ul id="ul_ilg_fns_ns">
+                    <li>1 x 3PAR 7400 </li>
+                  </ul>
+                </p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p> Notes: </p>
+      <ul id="ul_zgx_5k2_qs">
+        <li>For installations with HLM hypervisor support, one or more additional nodes are required
+          for VSA block storage.</li>
+        <li>After the installation is complete, you can use the Block Storage and Object Operation
+          services to add further storage capacity as allowed by your hardware.</li>
+      </ul>
       <title>Software Requirements</title>
       <p>There are no software requirements for the servers where the HP Helion OpenStack region
         will be installed because all required software is contained within the images deployed on
