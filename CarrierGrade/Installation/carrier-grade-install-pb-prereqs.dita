@@ -18,7 +18,10 @@
 <p>This document describes the prerequisite steps and one time setup on your HLM host required to
       install HP Helion OpenStack Carrier Grade in a baremetal environment.</p>
 <section id="hardware"> <title>Hardware and software requirements</title>
-<p>Before you start, if you have not done so already, make sure your environment meets the hardware and software requirements. See the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >HP Helion OpenStack Support Matrix</xref>.</p>
+<p>Before you start, if you have not done so already, make sure your environment meets the hardware
+                                and software requirements. See the <xref
+                                        href="carrier-grade-support-matrix.dita">HP Helion OpenStack
+                                        Support Matrix</xref>.</p>
 </section>
 <section id="prepbare"> <title>Preparing the baremetal systems</title>
 <p>Perform the following tasks on each baremetal system before starting the install:</p>

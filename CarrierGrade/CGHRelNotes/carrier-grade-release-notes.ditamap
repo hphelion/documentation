@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE bookmap-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River BookMap//EN" "bookmap-wr.dtd">
-<bookmap-wr domains="(map bookmap bookmap-wr)                          (topic delay-d)                          (map mapgroup-d)                          (topic indexing-d)                           (topic xnal-d)                          (topic hi-d)                           (topic pr-d)                           (topic sw-d)                          (topic ui-d)                          (topic wr-sw-d)                          (topic xml-d)                          a(loc  ixia_locid)                         " id="jow1404333828882" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
-    <!-- Modification History
- -->
-    <booktitle ixia_locid="1">
-        <mainbooktitle ixia_locid="114">Installing HP Helion OpenStack Carrier Grade</mainbooktitle>
-    </booktitle>
-    <bookmeta>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+    
+    <title> HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Release Notes</title>
+    <topicmeta>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>HP Helion</copyrholder>
+        </copyright>
         <prodinfo>
-            <prodname ixia_locid="28">HP Helion OpenStack Carrier Grade</prodname>
+            <prodname >HP Helion OpenStack Carrier Grade</prodname>
             <vrmlist>
                 <vrm release="1.1" version=""/>
             </vrmlist>
         </prodinfo>
-        <!-- bookid ixia_locid="133">
-            <edition ixia_locid="134">Patch 0003</edition>
-        </bookid -->
-    </bookmeta>
-    <chapter href="jow1404333830215.xml"/>
-    <chapter href="jow1404333830815.xml"/>
-    <chapter href="jow1404333831397.xml"/>
-    <chapter href="jow1404333831977.xml"/>
-    <chapter href="jow1430312565268.xml"/></bookmap-wr>
+        </topicmeta>
+        
+    <topicref href="jow1404333830215.xml"/>
+    <topicref href="jow1404333830815.xml"/>
+    <topicref href="jow1404333831397.xml"/>
+    <topicref href="jow1404333831977.xml"/>
+    <topicref href="jow1430312565268.xml"/>
+
+</map>

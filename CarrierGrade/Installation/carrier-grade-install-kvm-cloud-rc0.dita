@@ -45,7 +45,7 @@ sudo wrs-patch apply TS_15.05_PATCH_0001
 sudo wrs-patch install-local
 sudo reboot       </codeblock></li>
         <li>Install the KVM region coud: <codeblock>sudo config_region</codeblock> Ignore the
-          message which displays during <codeph>Config_region</codeph> process.
+          message which displays during <codeph>config_region</codeph> process.
           <codeblock>Step 9 of 29 [####  ]dm-6 WRITE SAME failed. Manually zeroing.</codeblock></li>
         <li>After <codeph>controller-0</codeph> is deployed, deploy the remaining nodes as
             <codeph>controller-1</codeph> and <codeph>compute-'n'</codeph>.
@@ -64,11 +64,10 @@ sudo reboot       </codeblock></li>
               <codeph>ip_start_address</codeph> value provided for the CLM network in the
               <codeph>definition.json</codeph> during the <xref
               href="carrier-grade-install-non-kvm.dita#topic10581">non-KVM Region
-                deployment</xref>). </p><p>The log-in credentials for Horizon are as follows:
+            deployment</xref>). </p><p>The log-in credentials for Horizon are as follows:
             <codeblock>username: admin 
 password:  admin</codeblock></p><p>Change the password on
-            first login.</p>
-        </li>
+            first login.</p></li>
         <li>For each compute node in the inventory, do the following<ol id="ul_gss_srg_ms">
             <li>Create Infra interface. See <xref
                 href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"

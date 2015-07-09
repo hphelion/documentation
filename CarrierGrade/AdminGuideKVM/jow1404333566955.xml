@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333566955" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+
+ -->
+    <title ixia_locid="1">Dashboard Controls</title>
+    <shortdesc ixia_locid="2">The HP Helion OpenStack Carrier Grade web administration interface provides a dashboard for managing all
+  aspects of the system.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+        <author ixia_locid="19">Pedro Sanchez</author>
+    </prolog>
+    <conbody>
+        <fig id="fig_N1001F_N1001C_N10001" ixia_locid="4">
+            <image href="Fig_1_page_17.JPG" id="image_bh1_fwd_44" ixia_locid="5" width="6in"/>
+        </fig>
+        <p ixia_locid="6">The dashboard consists of a left-hand pane containing menus, and a right-hand pane containing
+   information for the currently selected menu item. It also shows the current user, the current
+   tenant (project), the system ID, and the system time, and includes options for setting user
+   preferences, viewing help, and signing out. </p>
+        <p ixia_locid="7">The menu pane contains tabs for different menus. The selection depends on the current user.</p>
+        <ul id="ul_pp5_3gf_44">
+            <li ixia_locid="8">
+                <p ixia_locid="9">The <uicontrol ixia_locid="10">Project</uicontrol> (tenant) tab is
+                    available for users assigned to one or more tenants as a <nameliteral ixia_locid="11">member</nameliteral>. </p>
+            </li>
+            <li ixia_locid="12">
+                <p ixia_locid="13"> The <uicontrol ixia_locid="14">Admin</uicontrol> tab is available for users assigned as
+      <nameliteral ixia_locid="15">admin</nameliteral> for the HP Helion OpenStack Carrier Grade.</p>
+            </li>
+        </ul>
+    </conbody>
+</concept-wr>

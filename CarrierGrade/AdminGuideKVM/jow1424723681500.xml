@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1424723681500" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="51">Specifying a Page Size for a VM </title>
+    <shortdesc ixia_locid="52">You can request a specific page size for a VM by using a flavor with the required
+        extra spec when you launch the VM, or by defining an image with the required metadata
+        property.</shortdesc>
+    <prolog>
+        <author ixia_locid="53">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <prereq id="prereq_N10022_N1001F_N10001" ixia_locid="61">
+            <p ixia_locid="62">Before you can request huge pages for a VM, you must define the
+                available page sizes on the hosts in the cluster. For details, see <xref href="jow1423087781001.xml" ixia_locid="63"/>.</p>
+        </prereq>
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="54">
+            <p ixia_locid="14">Memory required by a guest is allocated as one or more pages of the
+                requested size. Once allocated, the memory is unavailable for use by other guests
+                until the instance is terminated.</p>
+            <p ixia_locid="17">To add this extra spec to a flavor using the web administration
+                interface, use the <uicontrol ixia_locid="78">Memory Page Size</uicontrol> selection
+                in the <uicontrol ixia_locid="79">Create Flavor Extra Spec</uicontrol> drop-down
+                menu. To access this menu, see <xref href="jow1429538642910.xml" ixia_locid="80"/>.</p>
+            <p ixia_locid="18">You can also specify the extra spec from the CLI by setting the
+                following parameter for a flavor:</p>
+            <codeblock ixia_locid="20"><userinput ixia_locid="22">hw:mem_page_size=<varname ixia_locid="23">pagesize</varname></userinput></codeblock>
+            <p ixia_locid="24">where <varname ixia_locid="25">pagesize</varname> is one of the
+                following:</p>
+            <dl>
+                <dlentry ixia_locid="26">
+                    <dt ixia_locid="27">small</dt>
+                    <dd ixia_locid="28">
+                        <p ixia_locid="29">Requests the smallest available size on the compute
+                            node.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="30">
+                    <dt ixia_locid="31">large</dt>
+                    <dd ixia_locid="32">
+                        <p ixia_locid="33">Requests the largest available huge page size (1GiB, then
+                            2MiB). <i ixia_locid="70">This setting is not recommended</i> (see note).</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="34">
+                    <dt ixia_locid="35">any</dt>
+                    <dd ixia_locid="36">
+                        <p ixia_locid="37">Requests any available size, including smaller pages. The
+                            actual size used depends on the compute driver implementation. For
+                            HP Helion OpenStack Carrier Grade, the largest available size is used (1 GiB, then 2MiB,
+                            then 4KiB). <i ixia_locid="71">This setting is not recommended</i> (see note). </p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="38">
+                    <dt ixia_locid="39">2048</dt>
+                    <dd ixia_locid="40">
+                        <p ixia_locid="41">Requests a 2MiB page.</p>
+                    </dd>
+                </dlentry>
+                 <dlentry ixia_locid="42">
+                    <dt ixia_locid="43">1048576</dt>
+                    <dd ixia_locid="44">
+                        <p ixia_locid="45">requests a 1GiB page.</p>
+                    </dd>
+                </dlentry> 
+            </dl>
+            <p ixia_locid="64">If no page size is specified, small pages are used by default.</p>
+            <note id="note_N100BD_N10032_N1001F_N10001" ixia_locid="65">
+                <p ixia_locid="13">The use of <nameliteral ixia_locid="72">large</nameliteral> or
+                        <nameliteral ixia_locid="73">any</nameliteral> is not recommended. These settings can cause
+                    migration issues if the largest available size varies from host to host. For
+                    reliable results, use <nameliteral ixia_locid="74">small</nameliteral> <!-- for VMs that use shared
+                    host memory resources,-->or a specific page size<!--for VMs that use dedicated host
+                    resources-->.</p>
+            </note>
+            <p ixia_locid="69"> </p>
+            <p ixia_locid="56">For example, to set a 2MiB page size on a flavor that has already
+                been created, use the following command:</p>
+            <codeblock ixia_locid="57"><systemoutput ixia_locid="58">~(keystone)admin)$ </systemoutput><userinput ixia_locid="60">nova flavor-key hw:mem_page_size=2048</userinput></codeblock>
+            <p ixia_locid="15">You can also define an image with the required property by including
+                the <parmname ixia_locid="46">hw_mem_page_size</parmname> parameter, as in the
+                following example:</p>
+            <codeblock ixia_locid="21"><systemoutput ixia_locid="59">~(keystone)admin)$ </systemoutput><userinput ixia_locid="48">nova image-meta <varname ixia_locid="49">image</varname> hw_mem_page_size=<varname ixia_locid="50">pagesize</varname></userinput></codeblock>
+            <p ixia_locid="55">Note that if you use image metadata to request a page size, the image
+                is unable to access a <nameliteral ixia_locid="75">large</nameliteral> page unless the setting for
+                the flavor is also <nameliteral ixia_locid="76">large</nameliteral> or
+                    <nameliteral ixia_locid="77">any</nameliteral>.</p>
+        </context>
+    </taskbody>
+</task-wr>

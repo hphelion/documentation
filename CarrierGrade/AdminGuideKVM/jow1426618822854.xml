@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1426618822854" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="227">Designating Shared Physical CPUs on a Compute Host</title>
+    <shortdesc ixia_locid="228">You can designate one shared physical CPU per physical processor on a
+        compute host to run low-load or non-real-time tasks for multiple VMs, freeing other cores on
+        the host for dedicated high-load tasks.</shortdesc>
+    <prolog>
+        <author ixia_locid="229">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="230">
+            <p ixia_locid="231">You can use the web administration interface or the CLI to set up shared physical CPUs.</p>
+            <p ixia_locid="232">To add or remove a shared physical CPU from the CLI, use a command of the following form:</p>
+            <codeblock ixia_locid="233"><systemoutput ixia_locid="235">~(keystone_admin)$ </systemoutput><userinput ixia_locid="237">system host-cpu-modify -f shared -p<varname ixia_locid="239">processor</varname> <varname ixia_locid="240">use_shared</varname> <varname ixia_locid="241">hostname</varname></userinput></codeblock>
+            <p ixia_locid="242">where</p>
+            <parml>
+                <plentry ixia_locid="243">
+                    <pt ixia_locid="244">processor</pt>
+                    <pd ixia_locid="245">
+                        <p ixia_locid="246">is the number of the physical processor (0 or 1)</p>
+                    </pd>
+                </plentry>
+                <plentry ixia_locid="247">
+                    <pt ixia_locid="248">use_shared</pt>
+                    <pd ixia_locid="249">
+                        <p ixia_locid="250">specifies whether to use a shared physical CPU (0 for no, 1 for yes)</p>
+                    </pd>
+                </plentry>
+                <plentry ixia_locid="251">
+                    <pt ixia_locid="252">hostname</pt>
+                    <pd ixia_locid="253">
+                        <p ixia_locid="254">is the name of the compute host</p>
+                    </pd>
+                </plentry>
+            </parml>
+            <p ixia_locid="255">For example, to set up a shared physical CPU on processor <nameliteral ixia_locid="256">0</nameliteral> of
+                    <nameliteral ixia_locid="257">compute-0</nameliteral>:</p>
+            <codeblock ixia_locid="234"><systemoutput ixia_locid="236">~(keystone_admin)$ </systemoutput><userinput ixia_locid="238">system host-cpu-modify -f shared -p0 1 compute-0</userinput></codeblock>
+        </context>
+        <steps>
+            <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N10096_N10093_N1001C_N10001" ixia_locid="258">
+                <cmd ixia_locid="259"/>
+            </step>
+            <step conref="jow1426453628262.xml#jow1426453628262/open_details_locked_host" id="step_N1009F_N10093_N1001C_N10001" ixia_locid="260">
+                <cmd ixia_locid="261"/>
+            </step>
+            <step id="step_N100A8_N10093_N1001C_N10001" ixia_locid="262">
+                <cmd ixia_locid="263">Select the <uicontrol ixia_locid="264">Processor</uicontrol> tab.</cmd>
+            </step>
+            <step id="step_N100B5_N10093_N1001C_N10001" ixia_locid="265">
+                <cmd ixia_locid="266">Click <uicontrol ixia_locid="267">Edit CPU Assignments</uicontrol>.</cmd>
+                <info ixia_locid="268">
+                    <p ixia_locid="269">This control is available only if the host is locked.</p>
+                </info>
+            </step>
+            <step id="step_N100CA_N10093_N1001C_N10001" ixia_locid="270">
+                <cmd ixia_locid="271">In the <wintitle ixia_locid="272">Edit CPU
+                        Assignments</wintitle> dialog box, use the <uicontrol ixia_locid="286">Shared</uicontrol>
+                    Function section to enable shared physical CPUs.</cmd>
+                <info ixia_locid="274">
+                    <fig id="fig_gb4_h53_kr" ixia_locid="275">
+                        <image href="jow1426626160742.image" id="image_cs5_h53_kr" ixia_locid="276" width="3in">
+                            <alt ixia_locid="277">Edit CPU Assignments: Function Shared</alt>
+                        </image>
+                    </fig>
+                    <p ixia_locid="278">You can designate one core on each physical processor for
+                        use as a shared physical CPU. The actual core is assigned from the pool of
+                        available cores for the processor.</p>
+                    <p ixia_locid="279">For example, to use a core on processor 0 as a shared physical CPU,
+                        set the <uicontrol ixia_locid="280"># of Shared Physical Cores on Processor
+                            0</uicontrol> to 1. Valid values are <nameliteral ixia_locid="281">1</nameliteral> (to assign a core as a shared physical CPU) or <nameliteral ixia_locid="282">0</nameliteral> (if a shared physical CPU is not required on
+                        the processor.) </p>
+                </info>
+            </step>
+        </steps>
+        <postreq id="postreq_N10100_N1001C_N10001" ixia_locid="283">
+            <p ixia_locid="284">To configure a VM to use a shared physical CPU, see <xref href="jow1426625051841.xml" ixia_locid="285"/>.</p>
+        </postreq>
+    </taskbody>
+</task-wr>

@@ -37,28 +37,29 @@
           placement</li>
         <li>VNF Orchestration - Policy based Auto-scaling</li>
         <li>Integrated Physical and Virtual resource monitoring and self-healing</li>
-        <li>Highly Resilient and hitless upgrades</li>
+        <li>Highly Resilient and hit-less upgrades</li>
         <li>High performance data plane </li>
-        <li>Integration with Opensource SDN controllers and service chaining</li>
+        <li>Integration with Open Source SDN controllers and service chaining</li>
       </ul>
     </section>
     <section id="major-components-in-hp-helion-openstack-carrier-grade">
       <title>Major Components in HP Helion OpenStack Carrier Grade</title>
-      <p>HP Helion OpenStack Carrier Grade incorporates a number of proven
-        technologies into a single environment.</p>
+      <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
+        or conceptual <i>regions</i>: Non-KVM and KVM. See the <xref
+          href="../Installation/carrier-grade-technical-overview.dita#topic3485/deploy-arch"
+          >Deployment Architecture diagram</xref> in the Technical Overview for an illustration of
+        these two zones.  </p>
     </section>
-    <section><b>Helion OpenStack</b>
-      <b>(Non-KVM)</b><p>HP Helion OpenStack is a commercial-grade
-        distribution of OpenStack the leading open source cloud computing
-        platform. This disrtibution backed by HP, enables customers to more easily build, manage,
-        and use open-source based hybrid cloud. In the HP Helion OpenStack Carrier Grade
-        documentation, this environment is referred to as Non_KVM.</p><p>For more information, see
-          <xref href="carrier-grade-overview-non-kvm.dita">Non-KVM Environment
+    <section><b>Non-KVM</b>
+      <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and
+        maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
+        distribution of OpenStack. The Non-KVM region consists of a host system for HLM and three HP
+        Helion OpenStack controllers.</p><p>For more information, see <xref
+          href="carrier-grade-overview-non-kvm.dita">Non-KVM Environment
       Overview</xref>.</p></section>
-    <section><b>Wind River (KVM)</b><p><tm tmtype="reg">Wind River</tm> Linux is a Network Functions
-        Virtualization (NFV) software platform, providing ultra-reliability and exceptional
-        performance efficiencies for telecommunications networks. In the HP Helion OpenStack Carrier
-        Grade documentation, this environment is referred to as KVM.</p><p>For more information, see
+    <section><b>KVM</b><p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM
+        region consists of a software platform, providing ultra-reliability and exceptional
+        performance efficiencies for telecommunications networks. </p><p>For more information, see
           <xref href="carrier-grade-overview-kvm.dita">KVM Environment
       Overview</xref>.</p></section>
   <section><title>Service Overview</title><p>HP Helion OpenStack Carrier Grade is comprised
