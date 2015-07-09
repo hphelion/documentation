@@ -204,6 +204,26 @@
           <p>maximum 32 VFs per NIC</p>
         </li>
       </ul></section>
+    <section>
+      <p>The following NICs have been verified for PXE booting of KVM region servers:</p>
+      <ul id="ul_sdq_q1f_qs">
+        <li>
+          <p>Broadcom 1G</p>
+        </li>
+        <li>
+          <p>Broadcom 10G</p>
+        </li>
+        <li>
+          <p>Emulex 10G</p>
+        </li>
+        <li>
+          <p>Intel 82599</p>
+        </li>
+        <li>
+          <p>Intel i350</p>
+        </li>
+      </ul>
+    </section>
   
   <section id="typical">
     <title>Typical Configurations</title>
@@ -381,20 +401,16 @@
       </ul>
   </section>
   
-<section id="software">  
-  <title>Software Requirements</title>
-      <p>There are no software requirements for the servers where the HP Helion OpenStack region
-        will be installed because all required software is contained within the images deployed on
-        the system.</p>
-      <p>The servers should be baremetal before installation.</p>
+<section id="software">
+      <title>Software Requirements</title>
+      <p>Required operating systems, operating system packages, and other software is itemized
+        during the installation. The servers should be baremetal before installation.</p>
     </section>
  
   <section id="guestOS">
-      <title>Guest OS Support Matrix</title> The following Guest Operating Systems are
-      supported for the HP Helion OpenStack Carrier Grade servers. 
-    <p><b>Non-KVM region</b></p>
-      <p>There are no supported Guest OSs for the servers in the Non-KVM region:</p>
-      <b>KVM region</b>
+      <title>Guest OS Support Matrix</title> The following Guest Operating Systems are supported for
+      the HP Helion OpenStack Carrier Grade servers. <p><b>Non-KVM region</b></p>There are no
+      supported Guest OSs for the servers in the Non-KVM region: <b>KVM region</b>
       <p>The following Guest OSs are supported for the servers in the KVM region: </p><ul
         id="ul_sty_hd2_qs">
         <li>
