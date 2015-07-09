@@ -21,8 +21,6 @@
  <!--./CarrierGrade/Installation/carrier-grade-support-matrix-helion.md-->
  <!--permalink: /helion/openstack/carrier/support-matrix/helion/--></p>
   <section><title>Support Matrix for the HLM Host</title>
-    <p>
-      <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >▲ HP Helion OpenStack Carrier Grade 1.1: Support Matrix</xref> |  <xref href="carrier-grade-support-matrix-kvm.dita" > Support Matrix for the KVM Region ▶ </xref> </p>
     <p>To ensure the performance and stability of the HP Lifecycle Management, it is very important to meet the requirements and conform to the following recommendations.</p>
   </section>
     <section> <title>Software Requirements</title>
@@ -594,10 +592,33 @@ or
 <p>There are no software requirements for the servers where the HP Helion OpenStack region will be installed because all required software is contained within the images deployed on the system.</p>
 <p>The servers should be baremetal before installation.</p>
 </section>
-<section id="guestOS"><title>Guest OS Support Matrix</title><p>For HP Helion OpenStack Guest OS. See <xref
-          href="carrier-grade-support-matrix-kvm.dita#topic8886/guest">Support Matrix for the KVM
-            region</xref>.</p>
-</section>
+<section id="guestOS"><title>Guest OS Support Matrix </title><p>The following Guest Operating
+        Systems are supported for the HP Helion OpenStack Carrier Grade servers.</p>
+      <b>Non-KVM region</b>
+      <p>There are no supported Guest OSs for the servers in the Non-KVM region:</p>
+      <b>KVM region</b>
+      <p>The following Guest OSs are supported for the servers in the KVM region: </p><ul
+        id="ul_sty_hd2_qs">
+        <li>
+          <p>KVM 6.0</p>
+        </li>
+        <li>
+          <p>KVM 5.0</p>
+        </li>
+        <li>
+          <p>CentOS 6.4</p>
+        </li>
+        <li>
+          <p>Fedora 19</p>
+        </li>
+        <li>
+          <p>RHEL 6.5</p>
+        </li>
+        <li>
+          <p>OpenSUSE 12.3 </p>
+        </li>
+      </ul><p>Requirements for specific guest OSs are included in the SDK README files.</p>
+    </section>
 <section>  
   Next
         Step<p>Review the <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita"
