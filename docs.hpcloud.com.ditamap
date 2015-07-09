@@ -564,9 +564,27 @@
     navtitle="HP Helion Development Platform 1.2" locktitle="yes">
     <!--//OASIS//DTD DITA Topic//EN"-->
     <!--permalink: /helion/devplatform/1.2/3rd-party-license-agreements/-->
+    <topicref href="devplatform/1.2/1.2devplatform_commercial_install.dita" locktitle="yes"
+      navtitle="Installation and Configuration">
+      <!--permalink: /helion/devplatform/1.2/uninstall/-->
+      <topicref href="devplatform/1.2/1.2devplatform.marketplace.install.dita" locktitle="yes"
+        navtitle="Installing The Marketplace"/>
+      <topicref href="devplatform/1.2/1.2devplatform.horizonui.install.dita" locktitle="yes"
+        navtitle="Installing the Horizon UI Elements"/>
+      <topicref href="devplatform/1.2/1.2devplatform.troubleshooting.dita" locktitle="yes"
+        navtitle="Installation Troubleshooting"/>
+      <topicref href="devplatform/1.2/windows/windows_building_and_deploying.dita" locktitle="yes"
+        navtitle="Windows: Build and Deploy DEA and SQL Server Express Images"/>
+      <topicref href="devplatform/1.2/windows/windows_glazier_reference_guide.dita" locktitle="yes"
+        navtitle="Windows: Glazier Reference Guide"/>
+      <topicref href="devplatform/1.2/1.2devplatform_uninstall.dita" locktitle="yes"
+        navtitle="Uninstallation"/>
+    </topicref>
     <topicref href="devplatform/1.2/1.2devplatform.thirdparty.licensing.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
     <!--permalink: /helion/devplatform/1.2/eula/-->
+    <topicref href="devplatform/1.2/windows/windows_overview.dita" locktitle="yes"
+      navtitle="Windows Overview"/>
     <topicref href="devplatform/1.2/1.2devplatform.eula.dita" navtitle="Software License Terms"
       locktitle="yes"/>
     <!--permalink: /helion/devplatform/1.2/whatsnew/-->
@@ -574,6 +592,8 @@
       navtitle="What's New"/>
     <topicref href="devplatform/1.2/1.2devplatform.release-notes.dita" locktitle="yes"
       navtitle="Release Notes"/>
+    <topicref href="devplatform/1.2/1.2devplatform.related-topics.dita" locktitle="yes"
+      navtitle="Related Documentation "/>
     <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/-->
     <topichead navtitle="Developer Quick Start Trial Guide">
       <topicref href="devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.dita"
@@ -597,31 +617,26 @@
         locktitle="yes" navtitle="Quick Start Troubleshooting"/>
     </topichead>
     <!--permalink: /helion/devplatform/1.2/appdev/-->
-    <topicref href="devplatform/1.2/1.2devplatform_commercial_install.dita" locktitle="yes"
-      navtitle="Installation and Configuration">
-      <!--permalink: /helion/devplatform/1.2/uninstall/-->
-      <topicref href="devplatform/1.2/1.2devplatform.marketplace.install.dita" locktitle="yes"
-        navtitle="Installing The Marketplace"/>
-      <topicref href="devplatform/1.2/1.2devplatform.horizonui.install.dita" locktitle="yes"
-        navtitle="Installing the Horizon UI Elements"/>
-      <topicref href="devplatform/1.2/1.2devplatform.troubleshooting.dita" locktitle="yes"
-        navtitle="Installation Troubleshooting"/>
-      <topicref href="devplatform/1.2/1.2devplatform_uninstall.dita" locktitle="yes"
-        navtitle="Uninstallation"/></topicref>
       <!--permalink: /helion/devplatform/1.2/upgrade/-->
       <!--permalink: /helion/devplatform/1.2/install/troubleshooting/-->
       <!--permalink: /helion/devplatform/1.2/marketplace/-->
       <!--permalink: /helion/devplatform/1.2/horizonuiinstallation/-->
       <!--permalink: /helion/devplatform/1.2/related-topics/-->
-      <topicref href="devplatform/1.2/1.2devplatform.related-topics.dita" locktitle="yes"
-        navtitle="Related Documentation "/>
       <!--permalink: /helion/devplatform/1.2/release-notes/-->
          <topicref href="devplatform/1.2/1.2devplatform.appdev.dita" locktitle="yes"
       navtitle="Resources for Application Developers ">
       <!--permalink: /helion/devplatform/1.2/deploy/-->
       <topicref href="devplatform/1.2/1.2devplatform.deploy-ALS.dita" locktitle="yes"
         navtitle="Configuring and Deploying an Application Lifecycle Service Cluster"/>
+      <topicref href="devplatform/1.2/windows/windows_firstapp.dita" locktitle="yes"
+        navtitle="Windows: Deploying your first .NET Application"/>
+      <topicref href="devplatform/1.2/windows/windows_tools_guide.dita" locktitle="yes"
+        navtitle="Windows:  .NET Applications Tools Guide"/>
+      <topicref href="devplatform/1.2/windows/windows_adding_services.dita" locktitle="yes"
+        navtitle="Windows: Adding Services to Applications"/>
       <!--permalink: /helion/devplatform/1.2/eclipse/-->
+      <topicref href="devplatform/1.2/windows/windows_custom_buildpacks.dita" locktitle="yes"
+        navtitle="Windows: Deploying .NET Applications with the IIS Buildpack"/>
       <topicref href="devplatform/1.2/1.2devplatform.eclipse.dita" locktitle="yes"
         navtitle="Eclipse Deployment Plugin"/>
       <!--permalink: /helion/devplatform/1.2/workbook/database/java/-->
@@ -660,29 +675,14 @@
     </topicref>
     <!--permalink: /helion/devplatform/1.2/install/-->
     <!--permalink: /helion/devplatform/1.2/sysadmin/-->
-    <topichead navtitle="Windows Reference">
-      <topicref href="devplatform/1.2/windows/windows_overview.dita" locktitle="yes"
-        navtitle="Windows Overview"/>
-      <topicref href="devplatform/1.2/windows/windows_firstapp.dita" locktitle="yes"
-        navtitle="Deploying your first .NET Application"/>
-      <topicref href="devplatform/1.2/windows/windows_adding_services.dita" locktitle="yes"
-        navtitle="Adding Services to Windows Applications"/>
-      <topicref href="devplatform/1.2/windows/windows_building_and_deploying.dita" locktitle="yes"
-        navtitle="Building and Deploying Windows DEA and SQL Server Express Images"/>
-      <topicref href="devplatform/1.2/windows/windows_growcluster.dita"
-        navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
-      <topicref href="devplatform/1.2/windows/windows_tools_guide.dita" locktitle="yes"
-        navtitle="Windows and .NET Applications Tools Guide"/>
-      <topicref href="devplatform/1.2/windows/windows_custom_buildpacks.dita" locktitle="yes"
-        navtitle="Deploying Windows Applications with the IIS Buildpack"/>
-      <topicref href="devplatform/1.2/windows/windows_glazier_reference_guide.dita" locktitle="yes"
-        navtitle="Glazier Reference Guide"/>
-      <topicref href="devplatform/1.2/windows/windows_remoting.dita" toc="no"/>
-    </topichead>
     <!--permalink: /helion/devplatform/1.2/als/-->
     <topicref href="devplatform/1.2/1.2devplatform.sysadmin.dita" locktitle="yes"
       navtitle="Resources for IT Ops">
       <!--permalink: /helion/devplatform/1.2/connectdatabase/-->
+      <topicref href="devplatform/1.2/windows/windows_growcluster.dita"
+        navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
+      <topicref href="devplatform/1.2/windows/windows_remoting.dita" toc="no"
+        navtitle="Remote Desktop Access to Windows DEA and SQL Server Instances" locktitle="yes"/>
       <topicref href="devplatform/1.2/1.2devplatform.database-ALS.dita" locktitle="yes"
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
       <!--permalink: /helion/devplatform/1.2/databaseservice/-->
@@ -805,6 +805,8 @@
         <!--permalink: /helion/devplatform/1.2/als/admin/cluster/-->
         <topicref href="devplatform/1.2/helion/admin/cluster/1.2index.dita" locktitle="yes"
           navtitle="Cluster Setup">
+          <topicref href="devplatform/1.2/windows/windows_growcluster.dita"
+            navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
           <topicref href="devplatform/1.2/helion/admin/cluster/1.2cloud-init.dita" locktitle="yes"
             navtitle="Using the cloud-init Package"/>
           <topicref href="devplatform/1.2/helion/admin/server/1.2upgrade.dita" locktitle="yes"
