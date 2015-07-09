@@ -68,7 +68,7 @@
 <p>In the Configure Cloud page, click the <b>StoreVitual Backends</b> Tab.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Configure Cloud Page (opens in a new window)</xref>
+<xref format="html" href="javascript:window.open('../../media/undercloud-storevirtual-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Configure Cloud Page (opens in a new window)</xref>
 </p>
 </li>
 <li>
