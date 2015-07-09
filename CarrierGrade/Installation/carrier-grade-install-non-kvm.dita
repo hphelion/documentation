@@ -121,14 +121,17 @@ VSD Server : auto
         edit the file.</p>
 <ol>
 <li>Login to HLM VM.
-  <codeblock>ssh &lt;HLM_VM_IP>
-    HLM_VM_IP is the IP (hlm_clmstaticip) configured in the /root/infra-ansible-playbooks/group_vars/all file of the HLM host</codeblock></li>
+            <codeblock>ssh &lt;HLM_VM_IP>
+    HLM_VM_IP is the IP (hlm_clmstaticip) configured in the /root/infra-ansible-playbooks/group_vars/all file of the HLM host </codeblock><p>Use
+            the default credentials:
+          <codeblock>User Name: root
+Password: cghelion</codeblock></p></li>
     
 <li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
 <li>Provision and configure your HP Helion OpenStack
-            VM.<codeblock>hnewcloud  &lt;cloudname&gt; &lt;cloud_template&gt;</codeblock><p>Where:</p><ul>
+            VM.<codeblock>hnewcloud  &lt;cloudname&gt; &lt;denver&gt;</codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
-              <li><codeph>&lt;cloud_template&gt;</codeph> is the name of the template to use.</li>
+              <li><codeph>&lt;denver&gt;</codeph> is the name of the template to use. The installation kit includes the fully-tested <codeph>&lt;denver&gt;</codeph> template.</li>
           </ul><p>The command creates the <codeph>&lt;cloudname&gt;</codeph> directory, which will
             contain a JSON template file <codeph>node-provision.json</codeph>. This template
             supplies input values to the <codeph>hprovision</codeph> script, later in the

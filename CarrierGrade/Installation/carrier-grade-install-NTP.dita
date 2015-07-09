@@ -17,9 +17,10 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-NTP.md-->
  <!--permalink: /helion/openstack/carrier/install/ntp/--></p>
-<p>This page provides detailed information on <xref type="section" href="#topic4740/client">configuring HP Helion OpenStack Carrier Grade nodes</xref> for Network Time Protocol (NTP) and <xref type="section" href="#topic4740/server">instlling an NTP server on the seed cloud host</xref>.</p>
+<p>This page provides detailed information on <xref type="section" href="#topic4740/client">configuring HP Helion OpenStack Carrier Grade nodes</xref> for Network Time Protocol (NTP) and <xref type="section" href="#topic4740/server">instlling an NTP server on the HLM host</xref>.</p>
 <p>NTP is a networking protocol for clock synchronization between computer systems. The undercloud and overcloud systems are configured as NTP clients during the installation process.</p>
-<p>HP Helion OpenStack Carrier Grade requires that all nodes point to the same NTP server. You can use an external NTP server or configure the seed cloud host as a server.</p>
+<p>HP Helion OpenStack Carrier Grade requires that all nodes point to the same NTP server. You can
+      use an external NTP server or configure the HLM host as a server.</p>
 <p>
   <b>Notes:</b>
 </p>
@@ -27,7 +28,7 @@
 <li>NTP clients should use only stratum 2 and higher servers (meaning stratum 1 or stratum 0).</li>
 <li>All the Helion servers use UTC as a time zone.</li>
 </ul>
-<section id="server"> <title>Install an NTP server on the seed</title>
+<section id="server"> <title>Install an NTP server on the HLM host</title>
 <p>To configure an NTP server, follow these steps:</p>
 <ol>
 <li>Log in to the HLM host.<codeblock><codeph>sudo su -

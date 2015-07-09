@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1743">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: KVM Environment
-    Overview</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: KVM Region Overview</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -19,12 +18,14 @@
  <!--./CarrierGrade/Overview/carrier-grade-overview-wr.md-->
  <!--permalink: /helion/openstack/carrier/wr/overview/--></p>
 <!-- Taken from http://www.windriver.com/products/titanium-server/ -->
-<p>The HP Helion OpenStack Carrier Grade KVM environment is based on KVM.  The KVM
-      environment is a high-performance, high-availability, cloud operating system that enables
-      telecommunications operators to use Commercial-off-the-shelf (COTS) hardware to manage
-      Virtualized Network Functions (VNF) within a carrier grade Network Function Virtualization
-      (NFV) architecture.</p>
-<p>THe KVM environment includes the critical run-time components and lifecycle development tools,
+    <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
+      or conceptual <i>regions</i>: Non-KVM and KVM.</p>
+    <p><b>Note:</b> These regions do not function as OpenStack regions. </p>
+<p>The HP Helion OpenStack Carrier Grade KVM region is a high-performance, high-availability, cloud
+      operating system that enables telecommunications operators to use Commercial-off-the-shelf
+      (COTS) hardware to manage Virtualized Network Functions (VNF) within a carrier grade Network
+      Function Virtualization (NFV) architecture.</p>
+<p>The KVM region includes the critical run-time components and lifecycle development tools,
       services, and developer support needed to successfully build and deploy a virtualized network
       running multiple VMs.</p>
 <ul>
