@@ -235,7 +235,8 @@
             navtitle="Provisioning Object/Proxy Node(s)" locktitle="yes"/>
           <topicref href="commercial/GA1/1.1commerical.services-swift-deployment.dita"
             navtitle="Deploying Additional Scale-out Nodes" locktitle="yes"/>
-          <topichead navtitle="Object Storage (Swift): Scale Up or Expand">
+         
+            
             <topicref
               href="commercial/GA1/1.1commerical.services-swift-deployment-expand-swift-cluster.dita"
               navtitle="Expand an Object Storage Cluster" locktitle="yes">
@@ -255,8 +256,8 @@
                 href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-starter-object-ring.dita"
                 navtitle="Add a Disk to a Starter Object Ring" locktitle="yes"/>
             </topicref>
-          </topichead>
-          <topichead navtitle="Object Storage (Swift): Shrink or Scale Down">
+          
+         
             <topicref
               href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-swift-cluster.dita"
               navtitle="Shrink Swift Object Storage Cluster" locktitle="yes">
@@ -270,7 +271,7 @@
                 href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"
                 navtitle="Remove a Scale-out Object Storage Node" locktitle="yes"/>
             </topicref>
-          </topichead>
+          
           <!--<topichead navtitle="Monitoring an Object Storage Cluster">-->
           <topicref
             href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-cluster.dita"
