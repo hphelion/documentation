@@ -16,7 +16,7 @@
   </topicmeta>
   <!--permalink: -->
   <!--permalink: /-->
-  <topicref href="index.dita"/>
+  <topicref href="publiccloud/index.dita"/>
   <topicref href="commercial/GA1/1.1commercial.index.dita"
     navtitle="HP Helion OpenStack 1.1.1 and 1.1" locktitle="yes">
     <topicref href="commercial/GA1/1.1commercial.whatsnew.dita" navtitle="What's New"
