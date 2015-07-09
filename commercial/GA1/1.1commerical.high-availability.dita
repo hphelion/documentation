@@ -119,8 +119,8 @@
 <p>Highly Available Cloud Services ensures that at least a minimum of cloud resources are always available on request, which results in uninterrupted operations for users.</p>
 <p>Cloud users are able to provision and manage the compute, storage, and network infrastructure
         resources at any given point in time and the Horizon Dashboard and the OpenStack APIs must
-        be reachable and be able to fulfill user requests.<image
-          href="../../media/Ha-resilient-cloud-infrastructure.png" id="image_nqj_jkv_ps"/></p>
+        be reachable and be able to fulfill user requests.</p>
+      <p><image href="../../media/Ha-resilient-cloud-infrastructure.png" id="image_nqj_jkv_ps"/></p>
 <p> Once the Compute, Storage, and Network resources are deployed, users expect these resources to
         be reliable in the following ways:</p>
 <ul>
@@ -177,7 +177,7 @@
             only one keepalived instance holding the VIP at any one point in time.</note></li>
 <li>HA of the message queue service and the database service is achieved by running these in a
           clustered mode across the three nodes of the overcloud control plane: RabbitMQ cluster
-          with Mirrored Queues and Percona MySQL Galera cluster. <image
+          with Mirrored Queues and Percona MySQL Galera cluster. <p/><image
             href="../../media/ha-architecture.png" id="image_y5b_4kv_ps"/></li>
 </ol>
 <p>The above diagram  illustrates the HA architecture with the focus on VIP management and load balancing. It only shows a subset of active-active API instances and does not show examples of other services such as nova-scheduler, cinder-scheduler, etc.</p>
@@ -218,16 +218,14 @@
 <p>With the above overcloud HA set up, loss of a controller node is handled as follows:</p>
 <p>Assume that the Controller0, which is currently in control of the VIP, is lost, as shown in the
         diagram below:<image href="../../media/ha-nodefailure-1.png" id="image_sgy_zzv_ps"/></p>
-<p>
-  <image href="../../media/ha-nodefailure-1.png" placement="break"/>Node Failure- Fig 1
-</p>
 <p>When this occurs, keepalived immediately moves the VIP on to the Controller1 and can now receive API requests, which is load-balanced by HA proxy, as stated earlier.</p>
       <note>Although MySQL and RabbitMQ clusters have lost a node, they still continue to be
         operational: <image href="../../media/ha-nodefailure-2.png" id="image_i5y_j1w_ps"/></note>
 <p>Finally, when Controller0 comes back online, keepalived and HA proxy will resume in standby/slave
         mode and be ready to take over, should there be a failure of Controller1. The Controller0
-        rejoins the MySQL and RabbitMQ clusters as shown in the figure below: <image
-          href="../../media/ha-nodefailure-3.png" id="image_yhl_s1w_ps"/></p>
+        rejoins the MySQL and RabbitMQ clusters as shown in the figure below: </p>
+      <p/>
+      <p><image href="../../media/ha-nodefailure-3.png" id="image_yhl_s1w_ps"/></p>
 </section>
 <section id="handling-network-partition"> <title>Handling Network Partitions</title>
 <p>It is important for the overcloud HA setup to tolerate network failures, specifically those that result in a partition of the cluster, whereby one of the three nodes in the overcloud control plane cannot communicate with the remaining two nodes of the cluster. The description of network partition handling is separated into the main HA components of the overcloud.<!---**sentence seems to be incomplete. Please validate** ??--></p>
@@ -353,8 +351,10 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 <p>Furthermore, each of the VSA nodes of the cluster can be strategically deployed in different
         zones of your data center for maximum redundancy and resiliency. For more information on how
         to deploy VSA nodes on desired target servers, refer to the<xref
-          href="../../commercial/GA1/1.1commercial.install-GA-vsa.dita"> Deploy VSA</xref> document.
-          <image href="../../media/ha-block-storage.png" id="image_vy2_3cw_ps"/></p>
+          href="../../commercial/GA1/1.1commercial.install-GA-vsa.dita"> Deploy VSA</xref>
+        document.</p>
+      <p>
+        <image href="../../media/ha-block-storage.png" id="image_vy2_3cw_ps"/></p>
 </section>
 <section id="block-storeserv"> <title>Block Storage with 3PAR StoreServ</title>
 <p>The 3PAR StoreServ device family has several layers of redundancy built in through its hardware architecture. For more information, refer to the 3PAR StoreServ documentation.</p>

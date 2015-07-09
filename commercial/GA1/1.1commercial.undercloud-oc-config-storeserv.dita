@@ -71,13 +71,9 @@
                 any attributes of the CPG after allocation, may disrupt cloud functionality if the
                 corresponding change is not updated in Sirius.</note>
 <ol>
-<li>
-<p>In the Configure Cloud page, click <b>StoreServ Backends</b> Tab to activate it.</p>
-
-<p>
-<image href="../../media/undercloud-storeserv-add-backend.png" placement="break"/>Configure Cloud StoreServ Option 
-</p>
-</li>
+<li>In the Configure Cloud page, click <b>StoreServ Backends</b> Tab to activate it.<p>
+                        <image href="../../media/undercloud-storeserv-add-backend.png"
+                            placement="break"/>Configure Cloud StoreServ Option </p></li>
 <li>
 <p>Click <b>Add Backend</b> displayed at the top to open the StoreServ Volume Backend page.</p>
 
