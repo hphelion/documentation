@@ -190,43 +190,8 @@
       <topicref href="commercial/GA1/1.1commerical.services-overview.dita" navtitle="Services Overview" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.network-administrator-notes.dita"
         navtitle="Network Administrator Notes" locktitle="yes"/>
-      <topicref href="commercial/GA1/1.1commerical.services-compute-overview.dita"
-        navtitle="Nova Compute Service Overview" locktitle="yes">
-        <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx.dita"
-          navtitle="Compute Service Details" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commerical.services-compute-configDrive.dita"
-          navtitle="Compute Service: Storing Metadata on a Configuration Drive" locktitle="yes"/>
-      </topicref>
-      <topicref href="commercial/GA1/Landing/1.1commercial.landing.identity.dita" navtitle="Identity Management" locktitle="yes">
-        <topicref href="commercial/GA1/1.1commerical.services-identity-overview.dita" navtitle="Identity Service (Keystone) Overview" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-domains.dita" navtitle="Domain Management" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-using.dita" navtitle="Using the Identity Service" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" navtitle="Integrating the Keystone Identity Service with LDAP/AD" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commerical.services-identity-configure-v3.dita" navtitle="Configuring Horizon for Keystone V3" locktitle="yes"/>
-      </topicref>
-      <topicref href="commercial/GA1/1.1commerical.services-orchestration-overview.dita"
-        navtitle="Orchestration Service (Heat) Overview" locktitle="yes"/>
-      <topicref href="commercial/GA1/1.1commerical.services-imaging-overview.dita" navtitle="Glance Image Operations Overview" locktitle="yes"/>
-      <topicref href="commercial/GA1/1.1commerical.services-networking-overview.dita" navtitle="Neutron Networking Service Overview" locktitle="yes">
-        <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.dita" navtitle="Networking Hardware Configuration and Software Requirements" locktitle="yes"/>
-        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-intro.dita" navtitle="Neutron Networking Pre and Post Install" locktitle="yes"/>
-        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita" navtitle="Networking Operation (Neutron) Administrator: Preinstallation Requirements" locktitle="yes"/>
-        <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita" navtitle="Tracking Masked IPs When Using NAT" locktitle="yes"/>
-          <topicref href="commercial/GA1/neutron/1.1commercial_neutron-post-installation.dita" navtitle="Neutron Networking Post-installation" locktitle="yes"/>
-        <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-DNaaS.dita" navtitle="DNSaaS Installation and Configuration" locktitle="yes"/>
-        <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita" navtitle="Configuring Your Network Securely" locktitle="yes"/>
-        <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-neutron-integration.dita" navtitle="Neutron Networking Integration" locktitle="yes"/>
-       
-        <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita" navtitle="Neutron Networking High Availability" locktitle="yes"/> <!--necessary or no-->
-        <topicref href="commercial/GA1/1.1commerical.services-dvr-overview.dita" navtitle="Distributed Virtual Routing Overview" locktitle="yes"/>
-      </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-object-overview.dita"
-        navtitle=" Object Storage (Swift) Overview" locktitle="yes">
+        navtitle="Swift Object Storage Overview" locktitle="yes">
         <!-- All Things Swift-->
         <topicref href="commercial/GA1/1.1commerical.services-scale-out-swift.dita"
           navtitle="About Scale-out Object Storage" locktitle="yes">
@@ -235,43 +200,38 @@
             navtitle="Provisioning Object/Proxy Node(s)" locktitle="yes"/>
           <topicref href="commercial/GA1/1.1commerical.services-swift-deployment.dita"
             navtitle="Deploying Additional Scale-out Nodes" locktitle="yes"/>
-         
-            
+          <topicref
+            href="commercial/GA1/1.1commerical.services-swift-deployment-expand-swift-cluster.dita"
+            navtitle="Expand an Object Storage Cluster" locktitle="yes">
             <topicref
-              href="commercial/GA1/1.1commerical.services-swift-deployment-expand-swift-cluster.dita"
-              navtitle="Expand an Object Storage Cluster" locktitle="yes">
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-storage-node.dita"
-                navtitle="Add New Scale-out Object Node" locktitle="yes"/>
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-proxy-node.dita"
-                navtitle="Add New Scale-out Proxy Node" locktitle="yes"/>
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-account-container.dita"
-                navtitle="Add Disks to Account or Container Rings" locktitle="yes"/>
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"
-                navtitle="Add a Disk to a Scale-out Object Ring" locktitle="yes"/>
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-starter-object-ring.dita"
-                navtitle="Add a Disk to a Starter Object Ring" locktitle="yes"/>
-            </topicref>
-          
-         
+              href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-storage-node.dita"
+              navtitle="Add New Scale-out Object Node" locktitle="yes"/>
             <topicref
-              href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-swift-cluster.dita"
-              navtitle="Shrink Swift Object Storage Cluster" locktitle="yes">
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"
-                navtitle="Remove Existing Disk from Object Nodes" locktitle="yes"/>
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-proxy-node.dita"
-                navtitle="Remove a Proxy Node" locktitle="yes"/>
-              <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"
-                navtitle="Remove a Scale-out Object Storage Node" locktitle="yes"/>
-            </topicref>
-          
+              href="commercial/GA1/1.1commerical.services-swift-deployment-add-proxy-node.dita"
+              navtitle="Add New Scale-out Proxy Node" locktitle="yes"/>
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-account-container.dita"
+              navtitle="Add Disks to Account or Container Rings" locktitle="yes"/>
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita"
+              navtitle="Add a Disk to a Scale-out Object Ring" locktitle="yes"/>
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-starter-object-ring.dita"
+              navtitle="Add a Disk to a Starter Object Ring" locktitle="yes"/>
+          </topicref>
+          <topicref
+            href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-swift-cluster.dita"
+            navtitle="Shrink Swift Object Storage Cluster" locktitle="yes">
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-exisitng-disk.dita"
+              navtitle="Remove Existing Disk from Object Nodes" locktitle="yes"/>
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-proxy-node.dita"
+              navtitle="Remove a Proxy Node" locktitle="yes"/>
+            <topicref
+              href="commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.dita"
+              navtitle="Remove a Scale-out Object Storage Node" locktitle="yes"/>
+          </topicref>
           <!--<topichead navtitle="Monitoring an Object Storage Cluster">-->
           <topicref
             href="commercial/GA1/1.1commerical.services-swift-deployment-monitor-swift-cluster.dita"
@@ -322,6 +282,42 @@
           </topicref>
         </topicref>
         <!--permalink: /helion/openstack/1.1/GA1/services/object/pyringos/-->
+      </topicref>
+      <topicref href="commercial/GA1/1.1commerical.services-compute-overview.dita"
+        navtitle="Nova Compute Service Overview" locktitle="yes">
+        <topicref href="commercial/GA1/1.1commercial.undercloud-resource-esx.dita"
+          navtitle="Compute Service Details" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commerical.services-compute-configDrive.dita"
+          navtitle="Compute Service: Storing Metadata on a Configuration Drive" locktitle="yes"/>
+      </topicref>
+      <topicref href="commercial/GA1/1.1commerical.services-imaging-overview.dita"
+        navtitle="Glance Image Operations Overview" locktitle="yes"/>
+      <topicref href="commercial/GA1/Landing/1.1commercial.landing.identity.dita" navtitle="Identity Management" locktitle="yes">
+        <topicref href="commercial/GA1/1.1commerical.services-identity-overview.dita" navtitle="Identity Service (Keystone) Overview" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-domains.dita" navtitle="Domain Management" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-using.dita" navtitle="Using the Identity Service" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-integrate-ldap.dita" navtitle="Integrating the Keystone Identity Service with LDAP/AD" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commerical.services-identity-configure-v3.dita" navtitle="Configuring Horizon for Keystone V3" locktitle="yes"/>
+      </topicref>
+      <topicref href="commercial/GA1/1.1commerical.services-orchestration-overview.dita"
+        navtitle="Orchestration Service (Heat) Overview" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commerical.services-networking-overview.dita" navtitle="Neutron Networking Service Overview" locktitle="yes">
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-hardware-software.dita" navtitle="Networking Hardware Configuration and Software Requirements" locktitle="yes"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-intro.dita" navtitle="Neutron Networking Pre and Post Install" locktitle="yes"/>
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation.dita" navtitle="Networking Operation (Neutron) Administrator: Preinstallation Requirements" locktitle="yes"/>
+        <topicref href="commercial/GA1/1.1commercial.networking-maskedIP.dita" navtitle="Tracking Masked IPs When Using NAT" locktitle="yes"/>
+          <topicref href="commercial/GA1/neutron/1.1commercial_neutron-post-installation.dita" navtitle="Neutron Networking Post-installation" locktitle="yes"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-DNaaS.dita" navtitle="DNSaaS Installation and Configuration" locktitle="yes"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita" navtitle="Configuring Your Network Securely" locktitle="yes"/>
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-neutron-integration.dita" navtitle="Neutron Networking Integration" locktitle="yes"/>
+       
+        <topicref
+          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita" navtitle="Neutron Networking High Availability" locktitle="yes"/> <!--necessary or no-->
+        <topicref href="commercial/GA1/1.1commerical.services-dvr-overview.dita" navtitle="Distributed Virtual Routing Overview" locktitle="yes"/>
       </topicref>
       <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita"
         navtitle="Ceph Firefly 0.80.7 Storage Solution" locktitle="yes">
