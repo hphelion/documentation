@@ -158,9 +158,9 @@ available in the base directory of this Oxygen Webhelp plugin.
                       </xsl:call-template>  &#169;  -->
                   	    			<p class="p">The OpenStack&#174; Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation 
                   	    			  in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation 
-                  	    			  or the OpenStack community.</p>
-                              <p align="right">&#169; 2015 Hewlett-Packard Development Company, L.P.</p>
-                              <p><a href="http://www.hpcloud.com/legal-documents">HP Cloud legal documents and privacy policy</a></p>
+                  	    			  or the OpenStack community.<image placement="break" href="/media/linebreak.png"></image>
+                  	    			  &#169; 2015 Hewlett-Packard Development Company, L.P.<image placement="break" href="/media/linebreak.png"></image>
+                  	    			  <a href="http://www.hpcloud.com/legal-documents">HP Cloud legal documents and privacy policy</a></p>
                       <!--<a href="http://www.oxygenxml.com" target="_blank">
                           <span class="oXygenLogo"><img src="{$PATH2PROJ}oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen" /></span>
                           <span class="xmlauthor">XML Author</span>
