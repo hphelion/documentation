@@ -433,18 +433,21 @@ controller2 ansible_ssh_private_key_file=seed-id_rsa.private
 <section id="add-monitor"> <title>Add monitor</title>
 <ul>
 <li>Provision the new node with the <codeph>ceph-cluster</codeph> image using the node-provisioning
-          tool (as mentioned above) from the seed host. You need to have three monitor nodes.</li>
+          tool (as mentioned above) from the seed host. You need to have three monitor nodes. This
+          example shows adding two additional monitor nodes.</li>
 </ul>
 <p>
   <b>Sample Baremetal.csv</b>
 </p>
-<codeblock><codeph>f0:92:1c:05:47:21,helioncsel,m0ng00s3,10.1.67.123,150,163840,200,overcloud-ceph-cluster,c1mon2,002 
-f0:92:1c:05:35:58,helioncsel,m0ng00s3,10.1.67.123,169,163840,200,overcloud-ceph-cluster,c1mon3,002
+<codeblock><codeph>f0:92:1c:05:47:21,helioncsel,m0ng00s3,10.1.67.123,150,163840,200,overcloud-ceph-cluster,c1mon24,002 
+f0:92:1c:05:35:58,helioncsel,m0ng00s3,10.1.67.123,169,163840,200,overcloud-ceph-cluster,c1mon5,002
 </codeph></codeblock>
 <p>Once the node is up, from the admin node modify <codeph>/helion-ceph/ansible-playbooks/cephcluster.csv</codeph> with the new <codeph>mon</codeph> node.</p>
 <codeblock><codeph>192.168.51.90,mon-master-1,mon-master,hlinux
 192.168.51.100,mon2,mon,hlinux
 192.168.51.102,mon3,mon,hlinux
+192.168.51.104,mon4,mon,hlinux
+192.168.51.106,mon5,mon,hlinux
 </codeph></codeblock>
 <ul>
 <li>Run <codeph>bootstrap.sh</codeph> from <codeph>ansible-playbook</codeph> folder as mentioned above.</li>
@@ -455,7 +458,7 @@ f0:92:1c:05:35:58,helioncsel,m0ng00s3,10.1.67.123,169,163840,200,overcloud-ceph-
 </codeph></codeblock>
 </li>
 <li>
-<p>Verify, if you are seeing three monitors by entering:</p>
+<p>Verify, if you are seeing all five monitors by entering:</p>
 
 <codeblock><codeph>sudo ceph -w 
 </codeph></codeblock>
