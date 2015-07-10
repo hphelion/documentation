@@ -1741,6 +1741,7 @@
       <topichead navtitle="HP Helion Openstack(R) 1.0: Flexible Control Pane">
         <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-overview.dita"/>
         <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-installation.dita"/>
+        <topicref href="commercial/GA1/1.1commerical.flexible-control-plane-backup.dita" toc="no"/>
       </topichead>
       <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita" toc="no"/>
       <!--set to toc=no later-->
