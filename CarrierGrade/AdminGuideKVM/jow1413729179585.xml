@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1413729179585" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="1">System Configuration Management Using the CLI</title>
+ <shortdesc ixia_locid="2">You can use the CLI to make changes to the system configuration after
+  installation.</shortdesc>
+ <prolog>
+  <author ixia_locid="3">Jim Owens</author>
+ </prolog>
+ <conbody>
+  <p ixia_locid="4">For information about the types of configuration changes you can make, and
+   guidelines for implementing them on an operational system, see <xref href="jow1413726521641.xml" ixia_locid="5"/>. During some configuration changes, system alarms are raised; for help viewing
+   them from the CLI, see <xref href="psa1419970253127.xml" ixia_locid="117"/>.</p>
+  <p ixia_locid="136">To make configuration changes using the CLI, you must log in as user
+    <nameliteral ixia_locid="177">wrsroot</nameliteral> to the active controller and source the
+   script <filepath ixia_locid="179">/etc/nova/openrc</filepath> to obtain Keystone administrative
+   privileges. See <xref href="jow1404333563834.xml" ixia_locid="181"/> for details.</p>
+  <p ixia_locid="102">With the exception of the DNS Server Configuration, the configuration changes
+   described in this section require that you lock and unlock the indicated hosts after the
+   configuration change is made. For more information about locking and unlocking hosts, see <xref href="jow1404333790046.xml" ixia_locid="103"/>.</p>
+  <section id="section_N100C8_N1001F_N10001" ixia_locid="71">
+   <title ixia_locid="72">OAM IP Configuration</title>
+   <p ixia_locid="22">To view the existing OAM IP configuration, use the following command.</p>
+   <codeblock ixia_locid="25"><systemoutput ixia_locid="183">~(keystone_admin)$ </systemoutput><userinput ixia_locid="33">system oam-show</userinput>
+<systemoutput ixia_locid="184">+-----------------+--------------------------------------+
+| Property        | Value                                |
++-----------------+--------------------------------------+
+| uuid            | bacf5c9d-47a1-43df-845a-f38a88e1dcd4 |
+| istate          | applied                              |
+| oam_lag_ifc     | False                                |
+| oam_ifcs        | eth0                                 |
+| oam_mtu         | 1500                                 |
+| oam_subnet      | 10.10.10.0/24                        |
+| oam_gateway_ip  | 10.10.10.1                           |
+| oam_floating_ip | 10.10.10.2                           |
+| oam_c0_ip       | 10.10.10.3                           |
+| oam_c1_ip       | 10.10.10.4                           |
+| isystem_uuid    | 1bbd29be-c6a2-4e9b-93ce-a8dac3ce8e5c |
+| recordtype      | reconfig                             |
+| created_at      | 2014-12-23T21:15:34.097509+00:00     |
+| updated_at      | 2014-12-31T19:41:43.787097+00:00     |
++-----------------+--------------------------------------+
+</systemoutput></codeblock>
+   <p ixia_locid="37">To change the OAM IP subnet, floating IP address, gateway IP address, or
+    controller IP addresses, use the following command syntax. </p>
+   <codeblock ixia_locid="44"><systemoutput ixia_locid="185">~(keystone_admin)$ </systemoutput><userinput ixia_locid="60">system oam-modify oam_subnet=<varname ixia_locid="73">subnet</varname>/<varname ixia_locid="74">netmask</varname> \
+oam_gateway_ip=<varname ixia_locid="75">gateway_ip_address</varname> \
+oam_floating_ip=<varname ixia_locid="76">floating_IP_address</varname> \
+oam_c0_ip=<varname ixia_locid="77">controller-0_IP_address</varname> \
+oam_c1_ip=<varname ixia_locid="78">controller-1_ip_address</varname> \
+action=apply</userinput></codeblock>
+   <p ixia_locid="79">For example:</p>
+   <codeblock ixia_locid="45"><systemoutput ixia_locid="186">~(keystone_admin)$ </systemoutput><userinput ixia_locid="61">system oam-modify oam_subnet=10.10.10.0/24 \
+oam_gateway_ip=10.10.10.1 \
+oam_floating_ip=10.10.10.2 \
+oam_c0_ip=10.10.10.3 \
+oam_c1_ip=10.10.10.4 \
+action=apply</userinput></codeblock>
+   <p ixia_locid="80">After changing the OAM server configuration, you must lock and unlock the
+    controllers. This process requires a swact on the controllers. Then you must lock and unlock the
+    compute nodes one at a time, ensuring that sufficient resources are available to migrate any
+    running instances.</p>
+  </section>
+  <section id="section_N1002F_N1001C_N10001" ixia_locid="8">
+   <title ixia_locid="9">DNS Server Configuration</title>
+   <p ixia_locid="20">To view the existing DNS server configuration, use the following command.</p>
+   <codeblock ixia_locid="178"><systemoutput ixia_locid="187">~(keystone_admin)$ </systemoutput><userinput ixia_locid="31">system dns-show</userinput>
+<systemoutput ixia_locid="188">+--------------+--------------------------------------+
+| Property     | Value                                |
++--------------+--------------------------------------+
+| uuid         | cd2d645f-d8ca-4344-995b-aab480b1951d |
+| recordtype   | reconfig                             |
+| istate       | applied                              |
+| nameservers  | 8.8.8.8,8.8.4.4                      |
+| isystem_uuid | 1bbd29be-c6a2-4e9b-93ce-a8dac3ce8e5c |
+| created_at   | 2014-12-23T21:15:34.127239+00:00     |
+| updated_at   | 2014-12-31T19:41:43.806842+00:00     |
++--------------+--------------------------------------+</systemoutput></codeblock>
+   <p ixia_locid="35">To change the DNS server IP addresses, use the following command syntax. The
+     <option ixia_locid="38">nameservers</option> option takes a comma-delimited list of DNS server
+    IP addresses. </p>
+   <codeblock ixia_locid="40"><systemoutput ixia_locid="189">~(keystone_admin)$ </systemoutput><userinput ixia_locid="56">system dns-modify \
+nameservers=<varname ixia_locid="64">IP_address_1[,IP_address_2][,IP_address_3]</varname> action=apply</userinput></codeblock>
+   <p ixia_locid="65">For example:</p>
+   <codeblock ixia_locid="41"><systemoutput ixia_locid="190">~(keystone_admin)$ </systemoutput><userinput ixia_locid="57">system dns-modify \
+nameservers=8.8.8.8,8.8.4.4 action=apply</userinput></codeblock>
+  </section>
+  <section id="section_N10080_N1001F_N10001" ixia_locid="66">
+   <title ixia_locid="67">NTP Server Configuration</title>
+   <p ixia_locid="21">To view the existing NTP server configuration, use the following command.</p>
+   <codeblock ixia_locid="24"><systemoutput ixia_locid="191">~(keystone_admin)$ </systemoutput><userinput ixia_locid="32">system ntp-show</userinput>
+<systemoutput ixia_locid="192">+--------------+----------------------------------------------+
+| Property     | Value                                        |
++--------------+----------------------------------------------+
+| uuid         | 33bf8ad6-9426-4e10-b5b2-0be1b23a22c9         |
+| recordtype   | reconfig                                     |
+| istate       | applied                                      |
+| ntpservers   | 0.pool.ntp.org,2.pool.ntp.org,1.pool.ntp.org |
+| isystem_uuid | 1bbd29be-c6a2-4e9b-93ce-a8dac3ce8e5c         |
+| created_at   | 2014-12-23T21:15:34.145488+00:00             |
+| updated_at   | 2014-12-31T19:53:44.343981+00:00             |
++--------------+----------------------------------------------+</systemoutput></codeblock>
+   <p ixia_locid="36">To change the NTP server IP addresses, use the following command syntax. The
+     <option ixia_locid="39">ntpservers</option> option takes a comma-delimited list of NTP server
+    names.</p>
+   <codeblock ixia_locid="42"><systemoutput ixia_locid="193">~(keystone_admin)$ </systemoutput><userinput ixia_locid="58">system ntp-modify \
+ntpservers=<varname ixia_locid="68">server_1[,server_2][,server_3]</varname> action=apply</userinput></codeblock>
+   <p ixia_locid="69">For example:</p>
+   <codeblock ixia_locid="43"><systemoutput ixia_locid="194">~(keystone_admin)$ </systemoutput><userinput ixia_locid="59">system ntp-modify \
+ntpservers=0.north-america.pool.ntp.org,\
+0.north-america.pool.ntp.org,0.north-america.pool.ntp.org \
+action=apply</userinput></codeblock>
+   <p ixia_locid="70">After changing the NTP server configuration, you must lock and unlock both
+    controllers. This process requires a swact on the controllers.</p>
+  </section>
+  <section id="section_N1011F_N1001F_N10001" ixia_locid="81">
+   <title ixia_locid="82">Controller Storage Configuration</title>
+   <p ixia_locid="83">To view the existing storage configuration, use the following command.</p>
+   <codeblock ixia_locid="163"><systemoutput ixia_locid="195">~(keystone_admin)$ </systemoutput><userinput ixia_locid="170">system controllerfs-show</userinput>
+<systemoutput ixia_locid="196">+--------------+--------------------------------------+
+| Property     | Value                                |
++--------------+--------------------------------------+
+| uuid         | b1242c7f-7cb1-4878-a088-aac02c3f424b |
+| recordtype   | reconfig                             |
+| istate       | applied                              |
+| database_gib | 5                                    |
+| image_gib    | 8                                    |
+| backup_gib   | 27                                   |
+| cinder_gib   | 39                                   |
+| isystem_uuid | 1bbd29be-c6a2-4e9b-93ce-a8dac3ce8e5c |
+| created_at   | 2014-12-23T21:15:33.970585+00:00     |
+| updated_at   | 2014-12-31T19:54:44.321612+00:00     |
++--------------+--------------------------------------+</systemoutput></codeblock>
+   <p ixia_locid="104">Before you can change storage allotments, you must have enough disk space, including
+    additional headroom required to complete the operation. If there is not enough disk space,
+    changes to the storage allotment are disallowed. For more information, see <xref href="jow1413727075983.xml" ixia_locid="105"/>. </p>
+   <p ixia_locid="106">You can replace the disks in the controllers to provide more space. For more
+    information, see <xref href="jow1414074190480.xml" ixia_locid="107"/>. To support storage
+    changes, you must reinstall the HP Helion OpenStack Carrier Grade software on each controller during the disk
+    replacement procedure. This is required even if the primary disk is not directly affected by the
+    change. To reinstall the software, you can use the following command:</p>
+   <codeblock ixia_locid="108"><systemoutput ixia_locid="197">~(keystone_admin)$ </systemoutput>system host-reinstall <varname ixia_locid="112">controller_name</varname></codeblock>
+    <note conref="rst1432737677834.xml#rst1432737677834/note_N10195_N10154_N1001F_N10001" id="note_N10195_N10154_N1001F_N10001" ixia_locid="201"/>
+   <p ixia_locid="84">To change the database, image, or backup storage allotment, or the Cinder
+    volume storage allotment on a system with an LVM storage backend, use the following command
+    syntax, where the allotments are in GiB.</p>
+   <codeblock ixia_locid="91"><systemoutput ixia_locid="198">~(keystone_admin)$ </systemoutput><userinput ixia_locid="180">system controllerfs-modify \
+database_gib=<varname ixia_locid="95">database_allotment</varname> \
+image_gib=<varname ixia_locid="86">image_allotment</varname> \
+backup_gib=<varname ixia_locid="87">backup_allotment</varname> \
+cinder_gib=<varname ixia_locid="88">cinder_volume_allotment</varname> \
+action=apply</userinput></codeblock>
+   <p ixia_locid="139">For example:</p>
+   <codeblock ixia_locid="47"><systemoutput ixia_locid="199">~(keystone_admin)$ </systemoutput><userinput ixia_locid="182">system controllerfs-modify \
+database_gib=10 image_gib=13 backup_gib=22 action=apply</userinput></codeblock>
+   <p ixia_locid="114">After changing the controller storage configuration, you must lock each
+    controller and reinstall the HP Helion OpenStack Carrier Grade software, even if you have already done so as part
+    of changing the controller disks. You can use the following command:</p>
+   <codeblock ixia_locid="109"><systemoutput ixia_locid="200">~(keystone_admin)]$ </systemoutput>system host-reinstall <varname ixia_locid="113">controller_name</varname></codeblock>
+   <p ixia_locid="115">Then you can unlock the controller to clear any <nameliteral ixia_locid="116">Configuration
+     out-of-date </nameliteral>alarms. A controller swact is required to update both
+    controllers.</p>
+  </section>
+ </conbody>
+</concept-wr>

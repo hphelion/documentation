@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1426181291481" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="1">Managing Local Volume Groups</title>
+    <shortdesc ixia_locid="2">You can add, delete, and review local volume groups on a compute
+        host.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
+            <p ixia_locid="8">Local volume groups are used to designate physical volumes on a
+                compute host as local storage for use by VMs. You can use the web administration or
+                the CLI to manage them. For web administration interface instructions, see <xref href="jow1426183480976.xml" ixia_locid="34"/>.</p>
+        </context>
+        <prereq id="prereq_N1002D_N1001F_N10001" ixia_locid="10">
+            <p ixia_locid="11">Before you can modify the settings for a host, you must lock the host: </p>
+            <codeblock ixia_locid="12"><systemoutput ixia_locid="13">~(keystone_admin)$ </systemoutput><userinput ixia_locid="14">host-lock <varname ixia_locid="15">hostname</varname></userinput></codeblock>
+        </prereq>
+        <context id="context_N10042_N1001F_N10001" ixia_locid="16">
+            <p ixia_locid="35">To configure a compute host to provide local storage for use by VMs,
+                add a local volume group with the name <nameliteral ixia_locid="36">nova-local</nameliteral>.</p>
+            <p ixia_locid="17">The following CLI commands are available for managing local volume groups.</p>
+            <codeblock ixia_locid="18"><systemoutput ixia_locid="19">~(keystone_admin)$ </systemoutput><userinput ixia_locid="20">host-lvg-add <varname ixia_locid="21">hostname</varname> <varname ixia_locid="37">groupname</varname></userinput></codeblock>
+            <note id="note_N1006E_N10048_N1001F_N10001" ixia_locid="38">
+                <p ixia_locid="39">The only valid <nameliteral ixia_locid="40">groupname</nameliteral> is
+                        <nameliteral ixia_locid="41">nova-local</nameliteral>.</p>
+            </note>
+            <codeblock ixia_locid="22"><systemoutput ixia_locid="23">~(keystone_admin)$ </systemoutput><userinput ixia_locid="24">host-lvg-delete <varname ixia_locid="25">hostname</varname> <varname ixia_locid="42">nova-local</varname></userinput></codeblock>
+            <codeblock ixia_locid="26"><systemoutput ixia_locid="27">~(keystone_admin)$ </systemoutput><userinput ixia_locid="28">host-lvg-list <varname ixia_locid="29">hostname</varname></userinput></codeblock>
+            <codeblock ixia_locid="30"><systemoutput ixia_locid="31">~(keystone_admin)$ </systemoutput><userinput ixia_locid="32">host-lvg-show <varname ixia_locid="33">hostname</varname></userinput></codeblock>
+        </context>
+        <postreq id="postreq_N100BD_N1001F_N10001" ixia_locid="43">
+            <p ixia_locid="44">To complete the configuration of a compute host for local storage,
+                you must also add physical volumes to the <nameliteral ixia_locid="45">nova-local</nameliteral> local volume group. For more information, see <xref href="jow1426182435441.xml" ixia_locid="46"/>.</p>
+        </postreq>
+    </taskbody>
+</task-wr>

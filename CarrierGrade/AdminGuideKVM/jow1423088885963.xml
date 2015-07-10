@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1423088885963" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="1">Provisioning Huge Pages </title>
+    <shortdesc ixia_locid="2">You can edit the huge page attributes for a NUMA node from the web admin interface
+        using the <wintitle ixia_locid="3">Memory</wintitle> tab on the <wintitle ixia_locid="4">Inventory</wintitle>
+        pane.</shortdesc>
+    <prolog>
+        <author ixia_locid="5">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <prereq id="prereq_N1002C_N10029_N10001" ixia_locid="10">
+            <p ixia_locid="11">Before requesting huge pages on a host, ensure that the host has enough available
+                memory. For details, see <xref href="jow1423087781001.xml" ixia_locid="12"/>.</p>
+        </prereq>
+        <steps>
+            <step id="step_N10033_N10030_N10024_N10001" ixia_locid="8">
+                <cmd ixia_locid="9">On the <uicontrol ixia_locid="13">Inventory</uicontrol> pane, lock the host you
+                    want to edit.</cmd>
+            </step>
+            <step id="step_N1004B_N10039_N10029_N10001" ixia_locid="14">
+                <cmd ixia_locid="15">Click the <uicontrol ixia_locid="16">Host Name</uicontrol> to
+                    open the settings for the host.</cmd>
+            </step>
+            <step id="step_N10058_N10039_N10029_N10001" ixia_locid="17">
+                <cmd ixia_locid="18">On the <uicontrol ixia_locid="19">Memory</uicontrol> tab, click
+                        <uicontrol ixia_locid="20">Update Hugepage
+                    Memory</uicontrol>.</cmd>
+                <info ixia_locid="55">
+                    <fig id="fig_gcz_rdf_2r" ixia_locid="56">
+                        <image href="jow1424729372811.image" id="image_kg3_sdf_2r" ixia_locid="57" width="5in">
+                            <alt ixia_locid="58">i-ccs-hugepage-memory-button</alt>
+                        </image>
+                    </fig>
+                </info>
+            </step>
+            <step id="step_N1006A_N10039_N10029_N10001" ixia_locid="21">
+                <cmd ixia_locid="22">Use the <wintitle ixia_locid="23">Update Hugepage Memory</wintitle> dialog box to set the
+                    desired huge pages for each NUMA node.
+                </cmd>
+                <info ixia_locid="24">
+                    <p ixia_locid="62">For each available NUMA node, two fields are supplied, as
+                        illustrated in the following example screen for two NUMA nodes.</p>
+                    <fig id="fig_u13_tdf_2r" ixia_locid="59">
+                        <image href="jow1424729464258.image" id="image_tcp_tdf_2r" ixia_locid="60" width="5in">
+                            <alt ixia_locid="61">tis-hugepage-memory-dialog</alt>
+                        </image>
+                    </fig>
+                    <dl>
+                        <dlentry ixia_locid="28">
+                            <dt ixia_locid="29"># of VM 2M Hugepages Node <i ixia_locid="65">n</i></dt>
+                            <dd ixia_locid="30">
+                                <p ixia_locid="31">The number of 2MiB pages to reserve for VM use on
+                                    the NUMA Node. If no 2MiB pages are required, type 0.</p>
+                            </dd>
+                        </dlentry>
+                        <dlentry ixia_locid="32">
+                            <dt ixia_locid="33"># of VM 1G Hugepages Node <i ixia_locid="66">n</i></dt>
+                            <dd ixia_locid="34">
+                                <p ixia_locid="35">The number of 1GiB pages to reserve for VM use on
+                                    the NUMA Node. If no 1GiB pages are required, type 0.</p>
+                            </dd>
+                        </dlentry>
+                    </dl>
+                    <p ixia_locid="67">To see how many pages of a given size you can successfully
+                        request on a node (assuming that pages of another size are not also
+                        requested), hover over the Information icon next to the field.</p>
+                    <fig id="fig_zdt_vzd_cs" ixia_locid="69">
+                        <image href="jow1432129731308.image" id="image_blt_xzd_cs" ixia_locid="70" width="2.5in">
+                            <alt ixia_locid="71">TiS Update Hugepage Memory: Maximum Pages info</alt>
+                        </image>
+                    </fig>
+                    <p ixia_locid="72">Any unused memory is automatically allocated as 4K pages.</p>
+                </info>
+            </step>
+            <step id="step_N100D6_N10039_N10029_N10001" ixia_locid="47">
+                <cmd ixia_locid="48">Click <uicontrol ixia_locid="49">Save</uicontrol>.</cmd>
+            </step>
+            <step id="step_N100EB_N10039_N10029_N10001" ixia_locid="52">
+                <cmd ixia_locid="53">Unlock the host and wait for it to be reported as
+                        <nameliteral ixia_locid="54">Available</nameliteral>.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

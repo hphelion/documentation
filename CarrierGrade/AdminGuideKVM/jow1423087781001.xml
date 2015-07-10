@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1423087781001" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="1">Huge Page Provisioning</title>
+ <shortdesc ixia_locid="2">You can adjust the number and size of pages to allocate on a host for use
+  as VM memory. For individual VMs, you can specify the page size to use.</shortdesc>
+ <prolog>
+  <author ixia_locid="3">Jim Owens</author>
+ </prolog>
+ <conbody>
+  <p ixia_locid="4">In each NUMA node on a host, a fixed amount of memory is reserved for use by
+   VMs. By default, this memory is managed using 2 MiB huge pages. You can change this for
+   individual NUMA nodes to use a combination of 2 MiB and 1 GiB huge pages. Using larger pages can
+   reduce page management overhead and improve system performance for systems with large amounts of
+   virtual memory and many running processes.</p>
+  <p ixia_locid="5">You can use the <cmdname ixia_locid="6">system host-memory-list</cmdname> and
+    <cmdname ixia_locid="7">system host-memory-show</cmdname> commands to see how much memory is
+   available for VMs. This information is also shown on the <uicontrol ixia_locid="14">Memory</uicontrol> tab of the <wintitle ixia_locid="15">Host Inventory</wintitle> page (see
+    <xref href="jow1404333795559.xml" ixia_locid="16"/>). To see how many pages of a given size you
+   can successfully request on a node (assuming that pages of another size are not also requested),
+   click the Information icon next to each field on the <wintitle ixia_locid="17">Update Hugepage
+    Memory</wintitle> dialog box.</p>
+  <fig id="fig_zdt_vzd_cs" ixia_locid="18">
+   <image href="jow1432129731308.image" id="image_blt_xzd_cs" ixia_locid="19" width="2.5in">
+    <alt ixia_locid="20">TiS Update Hugepage Memory: Maximum Pages info</alt>
+   </image>
+  </fig>
+  <p ixia_locid="8">If the huge page request cannot be allocated from the available memory, an
+   informative message is displayed. If the available memory is greater than the amount required by
+   the huge page request, unallocated memory is automatically assigned as 4K pages.</p>
+  <p ixia_locid="11">After setting the memory allocations for a compute node, you can save them as a <term ixia_locid="12">memory
+    profile</term>, and then apply the profile to other compute nodes. For more information, see
+    <xref href="jow1429811350849.xml" ixia_locid="13"/>.</p>
+  <p ixia_locid="9">To specify the page size to use for a VM, see <xref href="jow1424723681500.xml" ixia_locid="10"/>.</p>
+ </conbody>
+</concept-wr>

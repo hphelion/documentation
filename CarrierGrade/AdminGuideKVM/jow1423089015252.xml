@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1423089015252" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="1">Provisioning Huge Pages Using the CLI</title>
+    <shortdesc ixia_locid="2">You can edit the huge page attributes for a NUMA node from the
+        CLI.</shortdesc>
+    <prolog>
+        <author ixia_locid="4">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <steps id="steps_brf_p33_dr">
+            <step id="step_N10031_N1002D_N1001F_N10001" ixia_locid="206">
+                <cmd ixia_locid="207">Lock the affected host.</cmd>
+                <info ixia_locid="208">
+                    <codeblock ixia_locid="209"><systemoutput ixia_locid="211">(keystone_admin)$ </systemoutput><userinput ixia_locid="213">system host-lock <varname ixia_locid="217">hostname</varname></userinput></codeblock>
+                </info>
+            </step>
+            <step id="step_N1004D_N1002D_N1001F_N10001" ixia_locid="218">
+                <cmd ixia_locid="219">Use the following command to set the huge page
+                    attributes.</cmd>
+                <info ixia_locid="220">
+                    <codeblock ixia_locid="221"><systemoutput ixia_locid="224">(keystone_admin)$ </systemoutput><userinput ixia_locid="9">system host-hugepage-update <varname ixia_locid="10">hostname</varname> <varname ixia_locid="11">processor</varname> -2M <varname ixia_locid="12">2Mpages</varname> -1G <varname ixia_locid="13">1Gpages</varname></userinput></codeblock>
+                    <p ixia_locid="14">where</p>
+                    <parml>
+                        <plentry ixia_locid="15">
+                            <pt ixia_locid="16">hostname</pt>
+                            <pd ixia_locid="17">
+                                <p ixia_locid="18">is the hostname or id of the compute node</p>
+                            </pd>
+                        </plentry>
+                        <plentry ixia_locid="19">
+                            <pt ixia_locid="20">processor</pt>
+                            <pd ixia_locid="21">
+                                <p ixia_locid="22">is the NUMA node of the compute node (0 or 1)</p>
+                            </pd>
+                        </plentry>
+                        <plentry ixia_locid="23">
+                            <pt ixia_locid="24">2Mpages</pt>
+                            <pd ixia_locid="25">
+                                <p ixia_locid="26">(if the optional <option ixia_locid="239">-2M</option> argument is
+                                    included) the number of 2MiB huge pages to make available (if
+                                    none, use 0).</p>
+                            </pd>
+                        </plentry>
+                        <plentry ixia_locid="27">
+                            <pt ixia_locid="28">1Gpages</pt>
+                            <pd ixia_locid="29">
+                                <p ixia_locid="30">(if the optional <option ixia_locid="240">-1G</option> argument is
+                                    included) number of 1GiB huge pages to make available (if none,
+                                    use 0)</p>
+                            </pd>
+                        </plentry>
+                    </parml>
+                </info>
+                <stepxmp ixia_locid="236">
+                    <p ixia_locid="31">For example, to allocate four 2 MiB huge pages for use by VMs
+                        on NUMA node 1 of compute node <nameliteral ixia_locid="32">compute-0</nameliteral> :</p>
+                    <codeblock ixia_locid="210"><systemoutput ixia_locid="212">(keystone_admin)$ </systemoutput><userinput ixia_locid="214">system host-hugepage-update compute-0 1 -2M 4</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N100E8_N1002D_N1001F_N10001" ixia_locid="227">
+                <cmd ixia_locid="228">Unlock the host.</cmd>
+                <stepxmp ixia_locid="237">
+                    <codeblock ixia_locid="222"><systemoutput ixia_locid="225">(keystone_admin)$ </systemoutput><userinput ixia_locid="215">system host-unlock <varname ixia_locid="230">hostname</varname></userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N10104_N1002D_N1001F_N10001" ixia_locid="231">
+                <cmd ixia_locid="232">Wait for the host to be reported as <nameliteral ixia_locid="233">available</nameliteral>. </cmd>
+                <stepxmp ixia_locid="238">
+                    <codeblock ixia_locid="223"><systemoutput ixia_locid="226">(keystone_admin)$ </systemoutput><userinput ixia_locid="216">system host-list <varname ixia_locid="235">hostname</varname></userinput>
+<systemoutput ixia_locid="205">+----+--------------+-------------+----------------+-------------+--------------+
+| id | hostname     | personality | administrative | operational | availability |
++----+--------------+-------------+----------------+-------------+--------------+
+| 1  | controller-0 | controller  | unlocked       | enabled     | available    |
+| 2  | controller-1 | controller  | unlocked       | enabled     | available    |
+| 3  | compute-0    | compute     | unlocked       | enabledd    | available      |
++----+--------------+-------------+----------------+-------------+--------------+</systemoutput></codeblock>
+                </stepxmp>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

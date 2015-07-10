@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333640333" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">Cluster Overview</title>
+    <shortdesc ixia_locid="2">The <wintitle ixia_locid="3">Overview</wintitle> page appears when you
+        log into the HP Helion OpenStack Carrier Grade web management interface as the administrator. It presents a
+        dashboard providing a quick health-check overview of the cluster.</shortdesc>
+    <prolog>
+        <author ixia_locid="4">Pedro Sanchez</author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="5">The <wintitle ixia_locid="6">Overview</wintitle> page is an enhanced
+            version of its OpenStack counterpart. It includes the following features:</p>
+        <ul id="ul_rff_dwh_34">
+            <li ixia_locid="7">
+                <p ixia_locid="8">dynamically updated, relocatable resource charts. Click the top of
+                    any chart, and drag it to the desired location to customize the presentation as
+                    desired. The layout changes are persistent across logins.</p>
+            </li>
+            <li ixia_locid="9">
+                <p ixia_locid="10">dynamically updated, relocatable Host Server Status summary
+                    table. Presents the total number of hosts currently in one of the following
+                    states:</p>
+                <ul id="ul_t4l_vwh_34">
+                    <li ixia_locid="15">
+                        <p ixia_locid="16">locked</p>
+                    </li>
+                    <li ixia_locid="17">
+                        <p ixia_locid="18">unlocked</p>
+                    </li>
+                    <li ixia_locid="11">
+                        <p ixia_locid="12">available</p>
+                    </li>
+                    <li ixia_locid="131">
+                        <p ixia_locid="133">unavailable</p>
+                    </li>
+                    <li ixia_locid="132">
+                        <p ixia_locid="134">degraded</p>
+                    </li>
+                </ul>
+            </li>
+            <li ixia_locid="129">
+                <p ixia_locid="130">dynamically updated, relocatable Alarms summary table. Lists the
+                    current count of critical, major, minor, and warning alarms.</p>
+            </li>
+        </ul>
+        <p ixia_locid="19">Common attributes of the resource pages are:</p>
+        <ul id="ul_hns_wm3_34">
+            <li ixia_locid="20">
+                <p ixia_locid="21">All resource charts display resource information in real-time, spanning over a
+          time-window of ten minutes.</p>
+            </li>
+            <li ixia_locid="22">
+                <p ixia_locid="23">Labels along the X-axis present the number of minutes elapsed since the last full-time
+          hour of the system clock.</p>
+            </li>
+            <li ixia_locid="24">
+                <p ixia_locid="25">Hovering the mouse over the charts overlays information windows with detailed values.</p>
+            </li>
+            <li ixia_locid="26">
+                <p ixia_locid="27">History information is lost when the <wintitle ixia_locid="28">Overview</wintitle> page is no longer
+          displayed.</p>
+            </li>
+        </ul>
+        <p ixia_locid="29">The following charts are available:</p>
+        <dl>
+            <dlentry ixia_locid="30">
+                <dt ixia_locid="31">Compute vCPU Usage</dt>
+                <dd ixia_locid="32">
+                    <fig id="fig_N100A3_N100A0_N10099_N10096_N10020_N10001" ixia_locid="33">
+                        <image href="jow1404333631568.image" id="image_k1s_h13_34" ixia_locid="34" width="2.25in"/>
+                    </fig>
+                    <p ixia_locid="35">Presents information about the number of virtual CPUs across the entire cluster,
+            available and allocated to virtual machines, and their average level of utilization.
+            Elements in this chart are as follows:</p>
+                    <ul id="ul_rbj_jm3_34">
+                        <li ixia_locid="36">
+                            <p ixia_locid="37">Y-axis is in units vCPUs.</p>
+                        </li>
+                        <li ixia_locid="38">
+                            <p ixia_locid="39">A solid black line tracking the number of available vCPUs. This line settles at a
+                constant value at the top of the chart, unless the number of compute nodes changes
+                over time.</p>
+                        </li>
+                        <li ixia_locid="40">
+                            <p ixia_locid="41">Light blue bars indicating the number of allocated vCPUs, that is, the number of
+                vCPUs in use by virtual machines (one in the example). </p>
+                        </li>
+                        <li ixia_locid="42">
+                            <p ixia_locid="43">Dark blue bars indicating the average level of utilization of the allocated vCPUs
+                (varies from 30 to 83% in the example), presented as a relative height with respect
+                to the light blue bars.</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="51">
+                <dt ixia_locid="52">Instance CPU Utilization</dt>
+                <dd ixia_locid="53">
+                    <fig id="fig_N10107_N10104_N100FD_N10096_N10020_N10001" ixia_locid="54">
+                        <image href="jow1404333633038.image" id="image_yf5_2p3_34" ixia_locid="55" width="2.25in"/>
+                    </fig>
+                    <p ixia_locid="56">Presents information about virtual CPU utilization levels on virtual machines, across
+            the entire cluster or for individual instances. Elements in this chart are as
+            follows:</p>
+                    <ul id="ul_yq3_mp3_34">
+                        <li ixia_locid="57">
+                            <p ixia_locid="58">Y-axis displays the virtual CPU utilization level, from 0 to 100%.</p>
+                        </li>
+                        <li ixia_locid="59">
+                            <p ixia_locid="60">A solid black line tracking the maximum utilization level.</p>
+                        </li>
+                        <li ixia_locid="61">
+                            <p ixia_locid="62">Dark blue bars indicating the average utilization level.</p>
+                        </li>
+                        <li ixia_locid="63">
+                            <p ixia_locid="64">A gray line tracking the minimum utilization level.</p>
+                        </li>
+                        <li ixia_locid="65">
+                            <p ixia_locid="66">A filter drop-down menu to select the virtual machines on which to report
+                utilization levels. The default value for this filter is "All Instances," and
+                therefore it reports the same utilization levels indicated by the dark blue bars in
+                the Compute vCPU Usage chart.</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="67">
+                <dt ixia_locid="68">Compute Memory Usage</dt>
+                <dd ixia_locid="69">
+                    <fig id="fig_N10150_N1014D_N10146_N10096_N10020_N10001" ixia_locid="70">
+                        <image href="jow1404333634455.image" id="image_u2h_gv3_34" ixia_locid="71" width="2.25in"/>
+                    </fig>
+                    <p ixia_locid="72">Presents information about memory usage levels on the compute nodes across the entire
+            cluster. Elements in this chart are as follows:</p>
+                    <ul id="ul_zzm_xv3_34">
+                        <li ixia_locid="73">
+                            <p ixia_locid="74">Y-axis is in units of bytes.</p>
+                        </li>
+                        <li ixia_locid="75">
+                            <p ixia_locid="76">A solid black line tracking the available aggregated compute memory. This line
+                usually settles as a constant value at the top of the chart, unless the number of
+                compute nodes changes over time.</p>
+                        </li>
+                        <li ixia_locid="77">
+                            <p ixia_locid="78">Dark blue bars indicating the amount of memory allocated to virtual machines (less
+                than 1 GB in the example).</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="83">
+                <dt ixia_locid="84">Compute Disk Usage</dt>
+                <dd ixia_locid="85">
+                    <fig id="fig_N1019D_N1019A_N10193_N10096_N10020_N10001" ixia_locid="86">
+                        <image href="jow1404333635945.image" id="image_a35_lv3_34" ixia_locid="87" width="2.25in"/>
+                    </fig>
+                    <p ixia_locid="88">Presents information about disk usage levels on the compute nodes across the entire
+            cluster. Elements in this chart are as follows:</p>
+                    <ul id="ul_qws_xv3_34">
+                        <li ixia_locid="89">
+                            <p ixia_locid="90">Y-axis is in units of bytes.</p>
+                        </li>
+                        <li ixia_locid="91">
+                            <p ixia_locid="92">A solid black line tracking the available aggregated
+                                storage capacity. This line usually settles as a constant value at
+                                the top of the chart.</p>
+                        </li>
+                        <li ixia_locid="93">
+                            <p ixia_locid="94">Dark blue bars indicating the amount of disk space allocated to virtual machines
+                (about 1 GB in the example).</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="95">
+                <dt ixia_locid="96">AVS CPU Utilization</dt>
+                <dd ixia_locid="97">
+                    <fig id="fig_N101D6_N101D3_N101CC_N10096_N10020_N10001" ixia_locid="98">
+                        <image href="jow1404333637433.image" id="image_ms4_3v3_34" ixia_locid="99" width="2.25in"/>
+                    </fig>
+                    <p ixia_locid="100">Presents information about AVS CPU utilization levels on the
+                        compute nodes across the entire cluster. Elements in this chart are as
+                        follows:</p>
+                    <ul id="ul_csz_xv3_34">
+                        <li ixia_locid="101">
+                            <p ixia_locid="102">Y-axis displays the AVS CPU utilization level, from
+                                0 to 100%.</p>
+                        </li>
+                        <li ixia_locid="103">
+                            <p ixia_locid="104">A solid black line tracking the maximum utilization level.</p>
+                        </li>
+                        <li ixia_locid="105">
+                            <p ixia_locid="106">Dark blue bars indicating the average utilization level.</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="115">
+                <dt ixia_locid="116">Provider Network Port Utilization</dt>
+                <dd ixia_locid="117">
+                    <fig id="fig_N10237_N10234_N1022D_N10096_N10020_N10001" ixia_locid="118">
+                        <image href="jow1404333638899.image" id="image_zcq_4v3_34" ixia_locid="119" width="2.25in"/>
+                    </fig>
+                    <p ixia_locid="120">Presents information about network traffic levels on provider networks across the
+            entire cluster. Elements in this chart are as follows:</p>
+                    <ul id="ul_t5r_yv3_34">
+                        <li ixia_locid="121">
+                            <p ixia_locid="122">Y-axis displays the port utilization level, from 0 to 100%.</p>
+                        </li>
+                        <li ixia_locid="123">
+                            <p ixia_locid="124">A solid black line tracking the maximum utilization level.</p>
+                        </li>
+                        <li ixia_locid="125">
+                            <p ixia_locid="126">Pairs of dark blue and dark green bars indicating the average utilization level,
+                egress and ingress (Tx and Rx) traffic respectively.</p>
+                        </li>
+                        <li ixia_locid="127">
+                            <p ixia_locid="128">A gray line tracking the minimum utilization level.</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dlentry>
+        </dl>
+    </conbody>
+</concept-wr>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr id="jow1426951757970" xml:lang="en-us">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="128">Attaching to Networks Using a VLAN Interface</title>
+    <shortdesc ixia_locid="129">You can attach an interface to multiple networks using VLAN
+        tagging.</shortdesc>
+    <prolog>
+        <author ixia_locid="130">Jim Owens</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N10022_N1001F_N10001" ixia_locid="192">
+            <p ixia_locid="193">If the cluster is configured with VLAN-tagged networks, you can
+                share an Ethernet interface by attaching it to one or more VLAN-tagged networks.
+                You can do this using the web administration interface or the CLI.  For CLI
+                instructions, see <xref href="jow1427029415968.xml" ixia_locid="194"/>.</p>
+            <note id="note_N10134_N10131_N10122_N1003C_N1001F_N10001" ixia_locid="208">
+                <p ixia_locid="209">When attaching to a data network using a VLAN interface, you can
+                    select a flat or VXLAN provider network. However, you cannot connect to a VLAN
+                    provider network (stacked VLANs are not supported). As an alternative that
+                    supports VLAN provider networks, you can edit a management or infrastructure
+                    interface to attach to a data network. For more information, see <xref href="jow1414000462559.xml" ixia_locid="210"/>.</p>
+            </note>
+            <p ixia_locid="195">For more information about shared interfaces, see the <cite ixia_locid="196">HP Helion OpenStack Carrier Grade Administration Guide: Shared (VLAN) Ethernet
+                    Interfaces</cite>.</p>
+        </context>
+        <steps>
+            <step conref="jow1426453628262.xml#jow1426453628262/step_N1002B_N10028_N1001C_N10001" id="step_N1002B_N10028_N1001C_N10001" ixia_locid="133">
+                <cmd ixia_locid="134"/>
+            </step>
+            <step id="step_N10034_N10028_N1001C_N10001" ixia_locid="135">
+                <cmd ixia_locid="136">Select the <uicontrol ixia_locid="137">Interfaces</uicontrol> tab.</cmd>
+                <stepresult ixia_locid="138">
+                    <fig id="fig_ypk_blk_lr" ixia_locid="139">
+                        <image href="jow1426954731455.image" id="image_onc_hlk_lr" ixia_locid="140" width="6in">
+                            <alt ixia_locid="141">Compute node default interfaces</alt>
+                        </image>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N10056_N10028_N1001C_N10001" ixia_locid="142">
+                <cmd ixia_locid="143">Click <uicontrol ixia_locid="144">Create Interface</uicontrol>.</cmd>
+                <stepresult ixia_locid="145">
+                    <fig id="fig_N100B5_N10092_N10087_N1003B_N10033_N10030_N1001C_N10001" ixia_locid="96">
+                        <image href="jow1426798023770.image" id="image_jf3_mgx_kr" ixia_locid="126" placement="inline" width="4in">
+                            <alt ixia_locid="127">Create Interface</alt>
+                        </image>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N1007B_N10028_N1001C_N10001" ixia_locid="146">
+                <cmd ixia_locid="147">Select the type of network for the interface.</cmd>
+                <info ixia_locid="148">
+                    <p ixia_locid="197">For details, see <xref href="jow1426955886080.xml" ixia_locid="198"/>.</p>
+                </info>
+            </step>
+            <step id="step_N100E4_N10028_N1001C_N10001" ixia_locid="171">
+                <cmd ixia_locid="172">Open the <uicontrol ixia_locid="173">Interface Type</uicontrol> drop-down menu, and select
+                        <nameliteral ixia_locid="174">vlan</nameliteral>.</cmd>
+                <info ixia_locid="199">
+                    <p ixia_locid="200">The <uicontrol ixia_locid="201">Interface Type</uicontrol> control appears when the
+                            <uicontrol ixia_locid="202">Network Type</uicontrol> is set to
+                            <uicontrol ixia_locid="203">mgmt</uicontrol>, <uicontrol ixia_locid="204">oam</uicontrol>,
+                            <uicontrol ixia_locid="205">data</uicontrol>, or <uicontrol ixia_locid="206">infra</uicontrol>.</p>
+                </info>
+            </step>
+            <step id="step_N100F5_N10028_N1001C_N10001" ixia_locid="175">
+                <cmd ixia_locid="176">In the <uicontrol ixia_locid="177">Vlan ID</uicontrol> field, type a unique VLAN identifier for
+                    the network.</cmd>
+            </step>
+            <step id="step_N10102_N10028_N1001C_N10001" ixia_locid="178">
+                <cmd ixia_locid="179">From the <uicontrol ixia_locid="180">Interfaces</uicontrol> list, select the Ethernet interfaces
+                    used to attach this interface to the network. </cmd>
+                <info ixia_locid="181">
+                    <p ixia_locid="182">The Ethernet interfaces correspond to ports on the node. For more
+                        information, see <xref href="jow1426948577755.xml" ixia_locid="183"/>.</p>
+                </info>
+            </step>
+            <step id="step_N1011B_N10028_N1001C_N10001" ixia_locid="184">
+                <cmd ixia_locid="185">Complete any other settings required for the Network Type. For more
+                    information, see <xref href="jow1426955886080.xml" ixia_locid="186"/>.</cmd>
+            </step>
+            <step id="step_N10128_N10028_N1001C_N10001" ixia_locid="187">
+                <cmd ixia_locid="188">Click <uicontrol ixia_locid="189">Create Interface</uicontrol> to save your changes and close
+                    the dialog box. </cmd>
+            </step>
+        </steps>
+        <result id="result_N1012D_N1001C_N10001" ixia_locid="190">
+            <p ixia_locid="191">The interface is created and attached to the network.</p>
+        </result>
+    </taskbody>
+</task-wr>
