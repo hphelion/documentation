@@ -3,12 +3,12 @@
 <concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333751142" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
     <!-- Modification History
    -->
-    <title ixia_locid="1">Managing Hardware Resources</title>
-    <shortdesc ixia_locid="2">The HP Helion OpenStack Carrier Grade reports status information about the hosts in the
+    <title id="1">Managing Hardware Resources</title>
+    <shortdesc id="2">The HP Helion OpenStack Carrier Grade reports status information about the hosts in the
         cluster, and provides a set of tools to operate on them to execute commands, configure
         parameters, and monitor status.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Pedro Sanchez</author>
+        <author id="3">Pedro Sanchez</author>
     </prolog>
     <conbody/>
 </concept-wr>

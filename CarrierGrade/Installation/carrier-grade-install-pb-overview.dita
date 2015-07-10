@@ -28,12 +28,13 @@
 <section id="installation-process"> <title>Installation process</title>
 <p>Use the following process to install HP Helion OpenStack Carrier Grade in a baremetal environment.</p>
 <ol>
-<li>Review the <xref href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita"
-            >Technical Overview</xref> for information on the HP Helion OpenStack Carrier Grade
-          environment.</li>
 <li>Review the <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita"
             >Support Matrix</xref> to make sure your environment meets the minimum
           requirements.</li>
+        <li>Review the <xref
+            href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita">Technical
+            Overview</xref> for information on the HP Helion OpenStack Carrier Grade
+          environment.</li>
 <li> Perform any required or optional <xref
             href="../../CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita"
             >Installation Prerequisites</xref>. </li>
@@ -45,10 +46,6 @@
           region</xref>.</li>
         <li>Install the <xref href="carrier-grade-install-kvm-cloud-rc0.dita#topic1107">KVM
             region</xref>.</li>
-<li>
-          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita">HLM
-            Post-Installation Tasks</xref>
-        </li>
 </ol>
 </section>
   <section id="logging"> <title>About Installation Logging</title>

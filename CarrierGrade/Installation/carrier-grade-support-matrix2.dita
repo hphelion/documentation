@@ -402,11 +402,13 @@
 <p>For key requirements needed HP Distributed Cloud Networking (DCN), see <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-dcn.dita" >Support Matrix for HP Distributed Cloud Networking</xref>.</p>
 </section>  -->
 
-  <section id="next-step">
-<p>
-  <xref type="section" href="#topic1773"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
-</section>
+  <section id="next"> <title>Next step</title>
+    <p>Review the <xref href="carrier-grade-technical-overview.dita#topic3485">Technical Overview</xref>.</p>
+    <p>
+      <xref type="section" href="#topic3485"> Return to Top </xref>
+    </p>
+  </section>
+  <!-- ===================== horizontal rule ===================== -->
+
 </body>
 </topic>

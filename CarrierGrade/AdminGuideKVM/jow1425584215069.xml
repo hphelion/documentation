@@ -4,63 +4,63 @@
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Adding and Maintaining Routes for a VXLAN Network</title>
-    <shortdesc ixia_locid="2">You can add or delete routing table entries for hosts on a VXLAN
+    <title id="1">Adding and Maintaining Routes for a VXLAN Network</title>
+    <shortdesc id="2">You can add or delete routing table entries for hosts on a VXLAN
         network using the CLI.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Jim Owens</author>
+        <author id="3">Jim Owens</author>
     </prolog>
     <taskbody>
-        <prereq id="prereq_N1001F_N1001C_N10001" ixia_locid="4">
-            <p ixia_locid="5">The compute node must be locked.</p>
+        <prereq id="prereq_N1001F_N1001C_N10001" id="4">
+            <p id="5">The compute node must be locked.</p>
         </prereq>
-        <context id="context_N1002D_N1001F_N10001" ixia_locid="68">
-            <p ixia_locid="69">To add routes, use the following command.</p>
-            <codeblock ixia_locid="70"><systemoutput ixia_locid="73">~(keystone_admin)$ </systemoutput><userinput ixia_locid="76">system host-route-add <varname ixia_locid="79">node</varname> <varname ixia_locid="81">ifname</varname> <varname ixia_locid="83">network</varname> <varname ixia_locid="85">prefix</varname> <varname ixia_locid="86">gateway</varname> <varname ixia_locid="87">metric</varname></userinput></codeblock>
-            <p ixia_locid="51">where</p>
+        <context id="context_N1002D_N1001F_N10001" id="68">
+            <p id="69">To add routes, use the following command.</p>
+            <codeblock id="70"><systemoutput id="73">~(keystone_admin)$ </systemoutput><userinput id="76">system host-route-add <varname id="79">node</varname> <varname id="81">ifname</varname> <varname id="83">network</varname> <varname id="85">prefix</varname> <varname id="86">gateway</varname> <varname id="87">metric</varname></userinput></codeblock>
+            <p id="51">where</p>
             <parml>
-                <plentry ixia_locid="52">
-                    <pt ixia_locid="53">node</pt>
-                    <pd ixia_locid="54">
-                        <p ixia_locid="55">is the name or UUID of the compute node</p>
+                <plentry id="52">
+                    <pt id="53">node</pt>
+                    <pd id="54">
+                        <p id="55">is the name or UUID of the compute node</p>
                     </pd>
                 </plentry>
-                <plentry ixia_locid="56">
-                    <pt ixia_locid="57">ifname</pt>
-                    <pd ixia_locid="58">
-                        <p ixia_locid="59">is the name of the interface</p>
+                <plentry id="56">
+                    <pt id="57">ifname</pt>
+                    <pd id="58">
+                        <p id="59">is the name of the interface</p>
                     </pd>
                 </plentry>
-                <plentry ixia_locid="60">
-                    <pt ixia_locid="61">network</pt>
-                    <pd ixia_locid="62">
-                        <p ixia_locid="63">is an IPv4 or IPv6 network address</p>
+                <plentry id="60">
+                    <pt id="61">network</pt>
+                    <pd id="62">
+                        <p id="63">is an IPv4 or IPv6 network address</p>
                     </pd>
                 </plentry>
-                <plentry ixia_locid="91">
-                    <pt ixia_locid="94">prefix</pt>
-                    <pd ixia_locid="97">
-                        <p ixia_locid="100">is the netmask length for the network address</p>
+                <plentry id="91">
+                    <pt id="94">prefix</pt>
+                    <pd id="97">
+                        <p id="100">is the netmask length for the network address</p>
                     </pd>
                 </plentry>
-                <plentry ixia_locid="92">
-                    <pt ixia_locid="95">gateway</pt>
-                    <pd ixia_locid="98">
-                        <p ixia_locid="101">is the default gateway</p>
+                <plentry id="92">
+                    <pt id="95">gateway</pt>
+                    <pd id="98">
+                        <p id="101">is the default gateway</p>
                     </pd>
                 </plentry>
-                <plentry ixia_locid="93">
-                    <pt ixia_locid="96">metric</pt>
-                    <pd ixia_locid="99">
-                        <p ixia_locid="102">is the cost of the route (the number of hops)</p>
+                <plentry id="93">
+                    <pt id="96">metric</pt>
+                    <pd id="99">
+                        <p id="102">is the cost of the route (the number of hops)</p>
                     </pd>
                 </plentry>
             </parml>
-            <p ixia_locid="103">To delete routes, use the following command.</p>
-            <codeblock ixia_locid="71"><systemoutput ixia_locid="74">~(keystone_admin)$ </systemoutput><userinput ixia_locid="77">system host-route-delete <varname ixia_locid="80">uuid</varname> <varname ixia_locid="82">ifname</varname> <varname ixia_locid="84">network</varname> <varname ixia_locid="88">prefix</varname> <varname ixia_locid="89">gateway</varname> <varname ixia_locid="90">metric</varname></userinput></codeblock>
-            <p ixia_locid="104">where <nameliteral ixia_locid="105">uuid</nameliteral> is the UUID of the route to be deleted.</p>
-            <p ixia_locid="106">To list existing routes, including their UUIDs, use the following command.</p>
-            <codeblock ixia_locid="72"><systemoutput ixia_locid="75">~(keystone_admin)$ </systemoutput><userinput ixia_locid="78">system host-route-list compute-0</userinput></codeblock>
+            <p id="103">To delete routes, use the following command.</p>
+            <codeblock id="71"><systemoutput id="74">~(keystone_admin)$ </systemoutput><userinput id="77">system host-route-delete <varname id="80">uuid</varname> <varname id="82">ifname</varname> <varname id="84">network</varname> <varname id="88">prefix</varname> <varname id="89">gateway</varname> <varname id="90">metric</varname></userinput></codeblock>
+            <p id="104">where <nameliteral id="105">uuid</nameliteral> is the UUID of the route to be deleted.</p>
+            <p id="106">To list existing routes, including their UUIDs, use the following command.</p>
+            <codeblock id="72"><systemoutput id="75">~(keystone_admin)$ </systemoutput><userinput id="78">system host-route-list compute-0</userinput></codeblock>
         </context>
     </taskbody>
 </task-wr>

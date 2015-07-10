@@ -4,46 +4,46 @@
 <!-- Modification History
 
  -->
- <title ixia_locid="1">Virtual Routers</title>
- <shortdesc ixia_locid="2">Virtual routers provide internal and external network connectivity for
+ <title id="1">Virtual Routers</title>
+ <shortdesc id="2">Virtual routers provide internal and external network connectivity for
   tenants.</shortdesc>
  <prolog>
-  <author ixia_locid="3">Jim Owens</author>
+  <author id="3">Jim Owens</author>
  </prolog>
  <conbody>
-  <p ixia_locid="4"> The user associated with a tenant can add a designated number of virtual
+  <p id="4"> The user associated with a tenant can add a designated number of virtual
    routers (Neutron routers) to the tenant. The maximum number is specified in the quotas for the
    tenant. </p>
-  <p ixia_locid="5">The virtual router automatically provides a connection to system services
+  <p id="5">The virtual router automatically provides a connection to system services
    required by the tenant, such as the metadata service that supplies instances with user data. You
    can configure the virtual routers with interfaces to tenant networks to provide internal and
    external connectivity.</p>
-  <p ixia_locid="6">A virtual router can be implemented as a centralized router, or a distributed
+  <p id="6">A virtual router can be implemented as a centralized router, or a distributed
    virtual router (DVR).</p>
-  <note id="note_N10031_N1001F_N10001" ixia_locid="48">
-   <p ixia_locid="47">Only the <nameliteral ixia_locid="49">admin</nameliteral> user can specify a distributed
+  <note id="note_N10031_N1001F_N10001" id="48">
+   <p id="47">Only the <nameliteral id="49">admin</nameliteral> user can specify a distributed
     router. For other tenants, this choice is not available, and a centralized router is implemented
-    by default. The <nameliteral ixia_locid="50">admin</nameliteral> user can change a centralized router to a
-    distributed router on behalf of other tenants (see <xref href="jow1429637676342.xml" ixia_locid="51"/>).</p>
-   <p ixia_locid="52">A distributed router cannot be converted to a centralized router.</p>
+    by default. The <nameliteral id="50">admin</nameliteral> user can change a centralized router to a
+    distributed router on behalf of other tenants (see <xref href="jow1429637676342.xml" id="51"/>).</p>
+   <p id="52">A distributed router cannot be converted to a centralized router.</p>
   </note>
   <dl>
-   <dlentry ixia_locid="7">
-    <dt ixia_locid="8">Centralized</dt>
-    <dd ixia_locid="9">
-     <p ixia_locid="10">A centralized virtual router is instantiated on a single compute node. All traffic using the
+   <dlentry id="7">
+    <dt id="8">Centralized</dt>
+    <dd id="9">
+     <p id="10">A centralized virtual router is instantiated on a single compute node. All traffic using the
       router must pass through the compute node.</p>
     </dd>
    </dlentry>
-   <dlentry ixia_locid="11">
-    <dt ixia_locid="12">Distributed</dt>
-    <dd ixia_locid="13">
-     <p ixia_locid="14">A distributed virtual router is instantiated in a distributed manner across
+   <dlentry id="11">
+    <dt id="12">Distributed</dt>
+    <dd id="13">
+     <p id="14">A distributed virtual router is instantiated in a distributed manner across
       multiple hosts. Distributed virtual routers provide more efficient routing than standard
       virtual routers for east-west (tenant-to-tenant) or floating IP address traffic. Local traffic
       is routed within the local host, while external L3 traffic is routed directly between the
       local host and the gateway router.</p>
-     <p ixia_locid="16">To implement the distributed model, a centralized-portion of the router is
+     <p id="16">To implement the distributed model, a centralized-portion of the router is
       still deployed on one host. The centralized portion manages north-south (external network)
       traffic and source network address translation (SNAT) traffic, as well as agents deployed on
       other hosts. The agents offload the centralized router for east-west (tenant-to-tenant)
@@ -51,8 +51,8 @@
     </dd>
    </dlentry>
   </dl>
-  <p ixia_locid="20">To add a virtual router, see <xref href="jow1429629394435.xml" ixia_locid="18"/>. To create interfaces, see <xref href="jow1429631834947.xml" ixia_locid="19"/>.</p>
-  <p ixia_locid="21"/>
+  <p id="20">To add a virtual router, see <xref href="jow1429629394435.xml" id="18"/>. To create interfaces, see <xref href="jow1429631834947.xml" id="19"/>.</p>
+  <p id="21"/>
   <!-- "I wouldn't talk about Accelerated DVR until we do it" - Greg -->
   <!--  <p>An Accelerated DVR (to be made available in a later release) is implemented adjacent to the AVS
    switch on each host to provide DPDK-accelerated east-west andL3 forwarding. North-South L3

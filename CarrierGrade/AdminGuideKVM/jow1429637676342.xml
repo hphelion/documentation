@@ -4,54 +4,54 @@
 <!-- Modification History
 
  -->
- <title ixia_locid="1">Virtual Router Administration</title>
- <shortdesc ixia_locid="2">Users with administrative privileges can review and edit router information for all
+ <title id="1">Virtual Router Administration</title>
+ <shortdesc id="2">Users with administrative privileges can review and edit router information for all
   tenants.</shortdesc>
  <prolog>
-  <author ixia_locid="3">Jim Owens</author>
+  <author id="3">Jim Owens</author>
  </prolog>
  <conbody>
-  <p ixia_locid="4">The <wintitle ixia_locid="5">Routers</wintitle> page accessed from <menucascade ixia_locid="6">
-    <uicontrol ixia_locid="7">Admin</uicontrol>
-    <uicontrol ixia_locid="8">System</uicontrol>
-    <uicontrol ixia_locid="9">Routers</uicontrol>
+  <p id="4">The <wintitle id="5">Routers</wintitle> page accessed from <menucascade id="6">
+    <uicontrol id="7">Admin</uicontrol>
+    <uicontrol id="8">System</uicontrol>
+    <uicontrol id="9">Routers</uicontrol>
    </menucascade> provides central control of all virtual routers. From this page, you can edit
-   router names, change router types, change the status of routers (<nameliteral ixia_locid="10">Up</nameliteral> or
-    <nameliteral ixia_locid="11">Down</nameliteral>), and delete routers. </p>
-  <p ixia_locid="12">Only users with administrative privileges can convert a centralized router to a distributed
+   router names, change router types, change the status of routers (<nameliteral id="10">Up</nameliteral> or
+    <nameliteral id="11">Down</nameliteral>), and delete routers. </p>
+  <p id="12">Only users with administrative privileges can convert a centralized router to a distributed
    router.</p>
-  <note id="note_N10043_N1001C_N10001" ixia_locid="13">
-   <p ixia_locid="14">A distributed router cannot be converted to a centralized router.</p>
+  <note id="note_N10043_N1001C_N10001" id="13">
+   <p id="14">A distributed router cannot be converted to a centralized router.</p>
   </note>
-  <p ixia_locid="15">An administrative user can delete routers on any tenant. A non-administrative user can delete
+  <p id="15">An administrative user can delete routers on any tenant. A non-administrative user can delete
    routers on the tenant associated with the
    user.<!-- You can also change the router type for other tenants to Distributed, an option that is not available when you define the router type as a non-admin tenant. I don't understand this. Greg had some specualtions, but pointed out that this is just how OpenStack does it. --></p>
-  <p ixia_locid="16">As an alternative to the web administration interface, you can use the CLI.  The following
-   examples assume you have become the <nameliteral ixia_locid="17">admin</nameliteral> user.</p>
+  <p id="16">As an alternative to the web administration interface, you can use the CLI.  The following
+   examples assume you have become the <nameliteral id="17">admin</nameliteral> user.</p>
   <ul id="ul_en4_bbd_5r">
-   <li ixia_locid="40">
-    <p ixia_locid="42">To list routers:</p>
-    <codeblock ixia_locid="44">
-<systemoutput ixia_locid="46">~(keystone_admin)$ </systemoutput><userinput ixia_locid="48">neutron router-list</userinput></codeblock>
+   <li id="40">
+    <p id="42">To list routers:</p>
+    <codeblock id="44">
+<systemoutput id="46">~(keystone_admin)$ </systemoutput><userinput id="48">neutron router-list</userinput></codeblock>
    </li>
-   <li ixia_locid="41">
-    <p ixia_locid="43">To show details for a router:</p>
-    <codeblock ixia_locid="45">
-<systemoutput ixia_locid="47">~(keystone_admin)$ </systemoutput><userinput ixia_locid="49">neutron router-show <varname ixia_locid="50">router_id</varname></userinput></codeblock>
-    <p ixia_locid="52">where <varname ixia_locid="54">router_id</varname> is the name or UUID of the
+   <li id="41">
+    <p id="43">To show details for a router:</p>
+    <codeblock id="45">
+<systemoutput id="47">~(keystone_admin)$ </systemoutput><userinput id="49">neutron router-show <varname id="50">router_id</varname></userinput></codeblock>
+    <p id="52">where <varname id="54">router_id</varname> is the name or UUID of the
      router.</p>
    </li>
-   <li ixia_locid="18">
-    <p ixia_locid="19">To update a router:</p>
-    <codeblock ixia_locid="35">
-<systemoutput ixia_locid="37">~(keystone_admin)$ </systemoutput><userinput ixia_locid="39">neutron router-update <varname ixia_locid="51">router_id</varname> --distributed=True</userinput></codeblock>
-    <p ixia_locid="53">where <varname ixia_locid="55">router_id</varname> is the name or UUID of the router. This example updates a
+   <li id="18">
+    <p id="19">To update a router:</p>
+    <codeblock id="35">
+<systemoutput id="37">~(keystone_admin)$ </systemoutput><userinput id="39">neutron router-update <varname id="51">router_id</varname> --distributed=True</userinput></codeblock>
+    <p id="53">where <varname id="55">router_id</varname> is the name or UUID of the router. This example updates a
      router to make it a distributed virtual router. </p>
    </li>
-   <li ixia_locid="26">
-    <p ixia_locid="27">To delete a router:</p>
-    <codeblock ixia_locid="28">
-<systemoutput ixia_locid="29">~(keystone_admin)$ </systemoutput><userinput ixia_locid="30">neutron router-delete <varname ixia_locid="31">router_id</varname></userinput></codeblock>
+   <li id="26">
+    <p id="27">To delete a router:</p>
+    <codeblock id="28">
+<systemoutput id="29">~(keystone_admin)$ </systemoutput><userinput id="30">neutron router-delete <varname id="31">router_id</varname></userinput></codeblock>
    </li>
   </ul>
  </conbody>
