@@ -26,7 +26,10 @@
  <!--./commercial/GA1/1.1commerical.flexible-control-pane-backup.md-->
  <!--permalink: /helion/openstack/1.1/fcp/backup.restore/--></p>
 <!-- taken from http://wiki.hpcloud.net/display/core/Helion+1.1+FCP+KVM+Hosts+backup+and+recovery+procedure -->
-<p>This document describes how to back up an HP Helion OpenStack Flexible Control Plane (FCP) configuration and how to restore the FCP configuration from the backed-up nodes.</p>
+    <p><b>This document is valid for HP Helion OpenStack Flexible Control Plane (FCP) in 1.1.1 only.
+      </b></p>
+    <p>This document describes how to back up an HP Helion OpenStack Flexible Control Plane (FCP)
+      configuration and how to restore the FCP configuration from the backed-up nodes.</p>
 <p>The HP Helion OpenStack FCP architectural configuration enables you to deploy the control plane in a virtual environment. This configuration reduces the control plane footprint to just three servers from the current seven servers. For more information, see <xref href="../../commercial/GA1/1.1commerical.flexible-control-pane-overview.dita" >Flexible Control Plane Overview</xref>.</p>
 <p>The backup and restore process involves running commands on each of the three servers that host the HP Helion OpenStack components. The backup process requires an additional server to store backed-up files.</p>
 <p>This document contains the following topics:</p>
