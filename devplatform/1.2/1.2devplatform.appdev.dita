@@ -33,7 +33,7 @@
 </li>
 <li>Logon and password credentials for the cluster.</li>
 <li>Access to the <xref href="../../devplatform/1.2/helion/user/client/1.2index.dita" >Helion command-line interface (CLI)</xref></li>
-<li>(Optional) Access to the <xref href="../../devplatform/1.2/1.2devplatform.eclipse.dita" >Eclipse</xref> deployment plugin for JAVA applications.</li>
+<li>(Optional) Access to the <xref href="../../devplatform/1.2/1.2devplatform.eclipse.dita" >Eclipse</xref> deployment plugin for Java applications.</li>
 </ul>
 </section>
 <section id="sample"> <title>Sample code</title>

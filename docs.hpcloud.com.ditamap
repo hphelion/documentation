@@ -639,7 +639,7 @@
       <topicref href="devplatform/1.2/1.2devplatform.eclipse.dita" locktitle="yes"
         navtitle="Eclipse Deployment Plugin"/>
       <!--permalink: /helion/devplatform/1.2/workbook/database/java/-->
-      <topichead navtitle="JAVA Code Samples">
+      <topichead navtitle="Java Code Samples">
         <topicref href="devplatform/1.2/workbook/helloworld/1.2helloworld.java.dita" locktitle="yes"
           navtitle="Java Hello World Sample"/>
         <topicref href="devplatform/1.2/workbook/database/1.2database.java.dita" locktitle="yes"
@@ -986,7 +986,7 @@
         <topicref href="devplatform/1.1devplatform.eclipse.dita" locktitle="yes"
           navtitle="Eclipse Deployment Plugin "/>
         <!--permalink: /helion/devplatform/1.1/workbook/database/java/-->
-        <topichead navtitle="JAVA Samples">
+        <topichead navtitle="Java Samples">
           <topicref href="devplatform/workbook/helloworld/1.1helloworld.java.dita" locktitle="yes"
             navtitle="Java Hello World Sample "/>
           <topicref href="devplatform/workbook/database/1.1database.java.dita" locktitle="yes"
