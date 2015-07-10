@@ -486,6 +486,7 @@
       navtitle="Flexible Control Plane" locktitle="yes">
       <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-installation.dita"
         navtitle="Flexible Control Plane Installation" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commerical.flexible-control-plane-backup.dita" toc="no"/>
     </topicref>
     <topichead navtitle="HP Helion Openstack 1.1.1 and 1.1: License Files">
       <topicref href="commercial/GA1/1.1.13rd-party-license-agreements.dita"/>
