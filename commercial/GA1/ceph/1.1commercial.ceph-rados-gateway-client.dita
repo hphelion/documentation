@@ -92,13 +92,11 @@
 </ol>
 </section>
 <section id="example"> <title>Example:</title>
-<codeblock>
-  <codeph>export SWIFT_USERNAME=admin:admin
+<codeblock><codeph>export SWIFT_USERNAME=admin:admin
 export SWIFT_PASSWORD=c6ad5fa953d9e6b4e0593beea1bc9360c6ce3154
 export SWIFT_AUTHURL=http://192.168.51.31:5000/v2.0
 export SWIFT_AUTHVERSION=2
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Make sure you also have the Swift or Rados Gateway credentials sourced on the Duplicity host system.</p>
 </section>
 <section id="mysql-archive-to-swift-api-use-case"> <title>MySQL Archive to Swift API use case</title>

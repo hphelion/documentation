@@ -29,12 +29,13 @@
  <!--permalink: /helion/openstack/1.1/ceph-hp-helion-openstack-ceph-configuration/--></p>
 <p>This section describes the integration of HP Helion OpenStack 1.1 or 1.1.1, and Ceph Firefly 0.80.7 on a hLinux3.14.29.4 kernel.</p>
 <p>Before configuring Helion OpenStack Ceph make sure that HP Helion OpenStack 1.1 or 1.1.1 is installed successfully.</p>
-<p>
-<b>Note</b>: The Ceph client script is only run on the Helion controller and compute nodes during a manual deployment of the Ceph cluster. If you are using Ansible to configure your Helion nodes and Ceph cluster, you can ignore the manual section.</p>
+    <note>The Ceph client script is only run on the Helion controller and compute nodes during a
+      manual deployment of the Ceph cluster. If you are using Ansible to configure your Helion nodes
+      and Ceph cluster, you can ignore the manual section.</note>
 <section id="ceph-client-install"> <title>Ceph Client Install</title>
 <p>The Helion Overcloud Controller and compute nodes are consumers of the storage services provided by the Ceph cluster. To enable them to act as Ceph clients, perform the following steps (either the automated or manual process).</p>
-<p>
-<b>Note</b>: See note above. If you are using Ansible to configure your Helion nodes and Ceph cluster, you can ignore the manual section.</p>
+      <note>See note above. If you are using Ansible to configure your Helion nodes and Ceph
+        cluster, you can ignore the manual section.</note>
 </section>
 <section id="automated-install"> <title>Automated Install</title>
 <p>The <codeph>ceph_client_setup.tar</codeph> contains Debian packages, Helion OpenStack Ceph configuration scripts, and the patch file to make the required alterations to the Nova, Glance, and Cinder configuration files. These Debian packages must be installed while installing the Ceph firefly 0.80.7 client packages on the HP Helion overcloud controller and compute nodes. The script present in the tar file helps to automate the installation process.</p>
