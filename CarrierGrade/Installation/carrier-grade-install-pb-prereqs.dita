@@ -208,8 +208,7 @@ StrictModes no
 </section>
 <section id="next-step"> <title>Next Step</title>
 <p>
-  <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita" >Preparing the Network for Installation</xref>
-</p>
+<xref href="carrier-grade-install-non-kvm.dita#topic10581">Deploying the Non-KVM Region</xref></p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

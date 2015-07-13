@@ -4,11 +4,11 @@
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Attaching to Networks Using an Ethernet Interface</title>
-    <shortdesc ixia_locid="2">You can attach an Ethernet interface to a network by editing the
+    <title id="1">Attaching to Networks Using an Ethernet Interface</title>
+    <shortdesc id="2">You can attach an Ethernet interface to a network by editing the
         interface.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Jim Owens</author>
+        <author id="3">Jim Owens</author>
     </prolog>
     <taskbody conref="rst1432664776488.xml#rst1432664776488/body"/>
 </task-wr>

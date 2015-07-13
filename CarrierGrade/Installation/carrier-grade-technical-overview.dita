@@ -301,7 +301,7 @@
   </section>
 
   <section id="next"> <title>Next step</title>
-    <p>For more information of Hardware configurations see the <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >Support Matrix</xref>.</p>
+    <p><xref href="carrier-grade-install-pb-prereqs.dita#topic7148">Installation Prerequisites</xref></p>
     <p>
       <xref type="section" href="#topic3485"> Return to Top </xref>
     </p>

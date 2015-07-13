@@ -4,131 +4,131 @@
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Setting the CPU Scaling Range</title>
-    <shortdesc ixia_locid="2">You can define the maximum and minimum CPU resources available to an instance by
+    <title id="1">Setting the CPU Scaling Range</title>
+    <shortdesc id="2">You can define the maximum and minimum CPU resources available to an instance by
         using a flavor.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Jim Owens</author>
+        <author id="3">Jim Owens</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
+        <context id="context_N1001F_N1001C_N10001" id="4">
             <ul id="ul_vsn_b2w_3q">
-                <li ixia_locid="37">
-                    <p ixia_locid="38">To set the maximum number of VCPUs for an instance, define a
+                <li id="37">
+                    <p id="38">To set the maximum number of VCPUs for an instance, define a
                         flavor with the required number of vCPUs.</p>
                 </li>
-                <li ixia_locid="40">
-                    <p ixia_locid="39">To set the minimum number of vCPUs, edit the flavor to
+                <li id="40">
+                    <p id="39">To set the minimum number of vCPUs, edit the flavor to
                         include an Extra Spec. The minimum cannot be less than one.</p>
                 </li>
             </ul>
-            <p ixia_locid="101">You can use the web administration interface or the CLI to edit the flavor. The CLI
+            <p id="101">You can use the web administration interface or the CLI to edit the flavor. The CLI
                 parameter for setting the minimum number of CPUs is as follows:</p>
-            <codeblock ixia_locid="102">hw:wrs:min_vcpus=<varname ixia_locid="103">min</varname></codeblock>
-            <p ixia_locid="104">where <nameliteral ixia_locid="105">min</nameliteral> is the minimum number of CPUs.</p>
-            <p ixia_locid="313">For example:</p>
-            <codeblock ixia_locid="320"><systemoutput ixia_locid="327">~(keystone_admin)$ </systemoutput><userinput ixia_locid="334">nova flavor-key <varname ixia_locid="345">flavor_name</varname> set hw:wrs:min_vcpus=<varname ixia_locid="352">integer_value</varname></userinput></codeblock>
-            <p ixia_locid="8">For complete information about working with flavors, see <xref href="jow1404333663095.xml" ixia_locid="10"/>.</p>
+            <codeblock id="102">hw:wrs:min_vcpus=<varname id="103">min</varname></codeblock>
+            <p id="104">where <nameliteral id="105">min</nameliteral> is the minimum number of CPUs.</p>
+            <p id="313">For example:</p>
+            <codeblock id="320"><systemoutput id="327">~(keystone_admin)$ </systemoutput><userinput id="334">nova flavor-key <varname id="345">flavor_name</varname> set hw:wrs:min_vcpus=<varname id="352">integer_value</varname></userinput></codeblock>
+            <p id="8">For complete information about working with flavors, see <xref href="jow1404333663095.xml" id="10"/>.</p>
         </context>
         <steps>
-            <step id="step_N10039_N10036_N1001F_N10001" ixia_locid="11">
-                <cmd ixia_locid="12">Display the <wintitle ixia_locid="13">Flavors</wintitle>
+            <step id="step_N10039_N10036_N1001F_N10001" id="11">
+                <cmd id="12">Display the <wintitle id="13">Flavors</wintitle>
                     list.</cmd>
-                <info ixia_locid="14">
-                    <p ixia_locid="41">Select the <uicontrol ixia_locid="16">Admin</uicontrol> menu in the web
-                        administration interface, and then in the <uicontrol ixia_locid="18">System
-                            Panel</uicontrol> section of the menu, click <uicontrol ixia_locid="19">Flavors</uicontrol>. </p>
-                    <fig id="fig_j2j_plw_3q" ixia_locid="42">
-                        <image href="jow1404333666903.image" id="image_ars_plw_3q" ixia_locid="43" width="580px">
-                            <alt ixia_locid="44">i-ccs-setup-flavors-3.png</alt>
+                <info id="14">
+                    <p id="41">Select the <uicontrol id="16">Admin</uicontrol> menu in the web
+                        administration interface, and then in the <uicontrol id="18">System
+                            Panel</uicontrol> section of the menu, click <uicontrol id="19">Flavors</uicontrol>. </p>
+                    <fig id="fig_j2j_plw_3q" id="42">
+                        <image href="jow1404333666903.image" id="image_ars_plw_3q" id="43" width="580px">
+                            <alt id="44">i-ccs-setup-flavors-3.png</alt>
                         </image>
                     </fig>
                 </info>
             </step>
-            <step id="step_N1008C_N10049_N1001F_N10001" importance="optional" ixia_locid="47">
-                <cmd ixia_locid="48">If necessary, create a new flavor. </cmd>
-                <info ixia_locid="49">
-                    <p ixia_locid="50">If a suitable flavor already exists, you can edit it to
+            <step id="step_N1008C_N10049_N1001F_N10001" importance="optional" id="47">
+                <cmd id="48">If necessary, create a new flavor. </cmd>
+                <info id="49">
+                    <p id="50">If a suitable flavor already exists, you can edit it to
                         specify the maximum and minimum vCPUs.</p>
-                    <p ixia_locid="53"> If no suitable flavor exists, you can create a new flavor by
-                        clicking <uicontrol ixia_locid="22">Create Flavor</uicontrol> in the list to
-                        open the <wintitle ixia_locid="54">Create Flavor</wintitle> dialog box.</p>
-                    <fig id="fig_sqf_5lw_3q" ixia_locid="55">
-                        <image href="jow1404333665262.image" id="image_nnv_5lw_3q" ixia_locid="56" width="392px">
-                            <alt ixia_locid="57">i-ccs-setup-flavors-2.png</alt>
+                    <p id="53"> If no suitable flavor exists, you can create a new flavor by
+                        clicking <uicontrol id="22">Create Flavor</uicontrol> in the list to
+                        open the <wintitle id="54">Create Flavor</wintitle> dialog box.</p>
+                    <fig id="fig_sqf_5lw_3q" id="55">
+                        <image href="jow1404333665262.image" id="image_nnv_5lw_3q" id="56" width="392px">
+                            <alt id="57">i-ccs-setup-flavors-2.png</alt>
                         </image>
                     </fig>
-                    <p ixia_locid="58">Assign a <uicontrol ixia_locid="59">Name</uicontrol> for the flavor, and then save the flavor
-                        by clicking <uicontrol ixia_locid="60">Create Flavor</uicontrol> in the dialog box.</p>
+                    <p id="58">Assign a <uicontrol id="59">Name</uicontrol> for the flavor, and then save the flavor
+                        by clicking <uicontrol id="60">Create Flavor</uicontrol> in the dialog box.</p>
                 </info>
             </step>
-            <step id="step_N1002B_N10028_N1001C_N10001" ixia_locid="6">
-                <cmd ixia_locid="7">Specify the maximum number of vCPUs for the instance.</cmd>
-                <info ixia_locid="23">
-                    <p ixia_locid="61">In the <wintitle ixia_locid="63">Flavors</wintitle> list, locate the flavor,
-                        and then click <uicontrol ixia_locid="64">Edit</uicontrol> to open the <wintitle ixia_locid="65">Edit
+            <step id="step_N1002B_N10028_N1001C_N10001" id="6">
+                <cmd id="7">Specify the maximum number of vCPUs for the instance.</cmd>
+                <info id="23">
+                    <p id="61">In the <wintitle id="63">Flavors</wintitle> list, locate the flavor,
+                        and then click <uicontrol id="64">Edit</uicontrol> to open the <wintitle id="65">Edit
                             Flavor</wintitle> dialog box. </p>
-                    <p ixia_locid="62">In the <uicontrol ixia_locid="26">vCPU</uicontrol> field,
+                    <p id="62">In the <uicontrol id="26">vCPU</uicontrol> field,
                         enter the maximum number of vCPUs.</p>
-                    <p ixia_locid="66">When you are finished editing, click <uicontrol ixia_locid="67">Save</uicontrol> to return to
-                        the <wintitle ixia_locid="68">Flavors</wintitle> list.</p>
+                    <p id="66">When you are finished editing, click <uicontrol id="67">Save</uicontrol> to return to
+                        the <wintitle id="68">Flavors</wintitle> list.</p>
                 </info>
             </step>
-            <step id="step_N10085_N10036_N1001F_N10001" ixia_locid="27">
-                <cmd ixia_locid="28">Specify the minimum number of vCPUs for the instance.</cmd>
-                <info ixia_locid="29">
-                    <p ixia_locid="31">You can specify the minimum number of vCPUs by adding an
+            <step id="step_N10085_N10036_N1001F_N10001" id="27">
+                <cmd id="28">Specify the minimum number of vCPUs for the instance.</cmd>
+                <info id="29">
+                    <p id="31">You can specify the minimum number of vCPUs by adding an
                         Extra Spec for the flavor.</p>
                 </info>
                 <substeps id="substeps_wpt_x3w_3q">
-                    <substep ixia_locid="69">
-                        <cmd ixia_locid="70">In the <wintitle ixia_locid="71">Flavors</wintitle> list, click the <uicontrol ixia_locid="72">Flavor
-                                Name</uicontrol> for the flavor to open the <wintitle ixia_locid="73">Flavor
+                    <substep id="69">
+                        <cmd id="70">In the <wintitle id="71">Flavors</wintitle> list, click the <uicontrol id="72">Flavor
+                                Name</uicontrol> for the flavor to open the <wintitle id="73">Flavor
                                 Details</wintitle> dialog box.</cmd>
-                        <info ixia_locid="74">
-                            <fig id="fig_ir3_znw_3q" ixia_locid="75">
-                                <image href="jow1418139926596.image" id="image_u4r_znw_3q" ixia_locid="76" width="324px">
-                                    <alt ixia_locid="77">HP Helion OpenStack Carrier Grade Flavor Details with 4
+                        <info id="74">
+                            <fig id="fig_ir3_znw_3q" id="75">
+                                <image href="jow1418139926596.image" id="image_u4r_znw_3q" id="76" width="324px">
+                                    <alt id="77">HP Helion OpenStack Carrier Grade Flavor Details with 4
                                         CPUs</alt>
                                 </image>
                             </fig>
                         </info>
                     </substep>
-                    <substep ixia_locid="78">
-                        <cmd ixia_locid="79">On the <uicontrol ixia_locid="32">Extra Specs</uicontrol> tab, click
-                                <uicontrol ixia_locid="33">Create</uicontrol>.</cmd>
-                        <info ixia_locid="80">
-                            <fig id="fig_fvn_npw_3q" ixia_locid="81">
-                                <image href="psa1413822186171.image" id="image_tjf_4pw_3q" ixia_locid="82" width="352px">
-                                    <alt ixia_locid="83">VM Flavor Extra Specs Tab</alt>
+                    <substep id="78">
+                        <cmd id="79">On the <uicontrol id="32">Extra Specs</uicontrol> tab, click
+                                <uicontrol id="33">Create</uicontrol>.</cmd>
+                        <info id="80">
+                            <fig id="fig_fvn_npw_3q" id="81">
+                                <image href="psa1413822186171.image" id="image_tjf_4pw_3q" id="82" width="352px">
+                                    <alt id="83">VM Flavor Extra Specs Tab</alt>
                                 </image>
                             </fig>
                         </info>
                     </substep>
-                    <substep ixia_locid="84">
-                        <cmd ixia_locid="85">In the <uicontrol ixia_locid="35">Create Flavor Extra
-                                Spec</uicontrol> dialog, select <uicontrol ixia_locid="86">Minimum
-                                Number of CPUs</uicontrol> from the <uicontrol ixia_locid="87">Extra
+                    <substep id="84">
+                        <cmd id="85">In the <uicontrol id="35">Create Flavor Extra
+                                Spec</uicontrol> dialog, select <uicontrol id="86">Minimum
+                                Number of CPUs</uicontrol> from the <uicontrol id="87">Extra
                                 Spec</uicontrol> drop-down menu.</cmd>
-                        <info ixia_locid="88">
-                            <fig id="fig_j4n_fqw_3q" ixia_locid="89">
-                                <image href="jow1418140984681.image" id="image_wrh_gqw_3q" ixia_locid="90" width="393px">
-                                    <alt ixia_locid="91">HP Helion OpenStack Carrier Grade Create Flavor Extra Spec
+                        <info id="88">
+                            <fig id="fig_j4n_fqw_3q" id="89">
+                                <image href="jow1418140984681.image" id="image_wrh_gqw_3q" id="90" width="393px">
+                                    <alt id="91">HP Helion OpenStack Carrier Grade Create Flavor Extra Spec
                                         dialog</alt>
                                 </image>
                             </fig>
                         </info>
                     </substep>
-                    <substep ixia_locid="353">
-                        <cmd ixia_locid="354">In the <uicontrol ixia_locid="355">Key</uicontrol> field, enter
-                                <keyword ixia_locid="356">wrs:min_vcpus</keyword>.</cmd>
+                    <substep id="353">
+                        <cmd id="354">In the <uicontrol id="355">Key</uicontrol> field, enter
+                                <keyword id="356">wrs:min_vcpus</keyword>.</cmd>
                     </substep>
-                    <substep ixia_locid="95">
-                        <cmd ixia_locid="96">In the <uicontrol ixia_locid="97">Value</uicontrol> field, enter the minimum allowed
+                    <substep id="95">
+                        <cmd id="96">In the <uicontrol id="97">Value</uicontrol> field, enter the minimum allowed
                             number of vCPUs for the flavor.</cmd>
                     </substep>
-                    <substep ixia_locid="98">
-                        <cmd ixia_locid="99">Click <uicontrol ixia_locid="100">Create</uicontrol>.</cmd>
+                    <substep id="98">
+                        <cmd id="99">Click <uicontrol id="100">Create</uicontrol>.</cmd>
                     </substep>
                 </substeps>
             </step>

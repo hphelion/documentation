@@ -98,11 +98,6 @@ echo 0 > /proc/sys/net/ipv4/conf/eth0.&lt;CLM_VLAN_ID&gt;/rp_filter
 echo 1 > /proc/sys/net/ipv4/ip_forward </codeblock></li>
       </ol>
     </section>
-  <section id="next-step"> <title>Next Step</title>
-    <p>
-        <xref href="carrier-grade-install-pb-workarounds.dita">Post-Installation Tasks</xref>
-      </p>
-  </section>
   
   <section>
 <p>

@@ -4,41 +4,41 @@
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Restore Procedure</title>
-    <shortdesc ixia_locid="2">You can restore a HP Helion OpenStack Carrier Grade cluster from
+    <title id="1">Restore Procedure</title>
+    <shortdesc id="2">You can restore a HP Helion OpenStack Carrier Grade cluster from
         available system data backup files to bring it back to the operational state it was when the
         backup procedure took place.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Pedro Sanchez</author>
+        <author id="3">Pedro Sanchez</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
-            <p ixia_locid="5">Restoring a HP Helion OpenStack Carrier Grade cluster from a set of
+        <context id="context_N1001F_N1001C_N10001" id="4">
+            <p id="5">Restoring a HP Helion OpenStack Carrier Grade cluster from a set of
                 backup files is done by restoring one host at a time, starting with the controllers,
                 then  the compute nodes.</p>
         </context>
-        <prereq id="prereq_N1002D_N1001F_N10001" ixia_locid="8">
-            <p ixia_locid="9">Before you start the restore procedure you must ensure the following conditions are
+        <prereq id="prereq_N1002D_N1001F_N10001" id="8">
+            <p id="9">Before you start the restore procedure you must ensure the following conditions are
                 in place:</p>
             <ul id="ul_rfq_qfg_mp">
-                <li ixia_locid="10">
-                    <p ixia_locid="11">All cluster hosts must be powered down, just as if they were
+                <li id="10">
+                    <p id="11">All cluster hosts must be powered down, just as if they were
                         going to be initialized anew.</p>
                 </li>
-                <li ixia_locid="12">
-                    <p ixia_locid="13">All backup files are accessible from a USB flash drive
+                <li id="12">
+                    <p id="13">All backup files are accessible from a USB flash drive
                         locally attached to the controller where the restore operation takes place
-                            (<nameliteral ixia_locid="172">controller-0</nameliteral>).</p>
+                            (<nameliteral id="172">controller-0</nameliteral>).</p>
                 </li>
-                <li ixia_locid="14">
-                    <p ixia_locid="132">You have the HP Helion OpenStack Carrier Grade installation image available on
+                <li id="14">
+                    <p id="132">You have the HP Helion OpenStack Carrier Grade installation image available on
                         a USB flash drive, just as when the software was installed the first time.
                         It is mandatory that you use the exact same version of the software used
                         during the original installation, otherwise the restore procedure will
                         fail.</p>
                 </li>
-                <li ixia_locid="134">
-                    <p ixia_locid="136">The restore procedure requires all hosts but <nameliteral ixia_locid="138">controller-0</nameliteral> to boot over the internal
+                <li id="134">
+                    <p id="136">The restore procedure requires all hosts but <nameliteral id="138">controller-0</nameliteral> to boot over the internal
                         management network using the PXE protocol, just as it was done during the
                         initial software installation. Ideally, you cleaned up all hard drives in
                         the cluster, and the old boot images are no longer present; the hosts then
@@ -49,80 +49,80 @@
             </ul>
         </prereq>
         <steps>
-            <step id="step_N1002B_N10028_N1001C_N10001" ixia_locid="6">
-                <cmd ixia_locid="7">Install the HP Helion OpenStack Carrier Grade software on
-                        <nameliteral ixia_locid="140">controller-0</nameliteral> from the USB flash drive.</cmd>
-                <info ixia_locid="20">
-                    <p ixia_locid="21">Refer to the <cite ixia_locid="241">HP Helion OpenStack Carrier Grade Software Installation Guide</cite> for
+            <step id="step_N1002B_N10028_N1001C_N10001" id="6">
+                <cmd id="7">Install the HP Helion OpenStack Carrier Grade software on
+                        <nameliteral id="140">controller-0</nameliteral> from the USB flash drive.</cmd>
+                <info id="20">
+                    <p id="21">Refer to the <cite id="241">HP Helion OpenStack Carrier Grade Software Installation Guide</cite> for
                         details.</p>
                 </info>
-                <stepresult ixia_locid="23">
-                    <p ixia_locid="24">When the software installation is complete, you should be
+                <stepresult id="23">
+                    <p id="24">When the software installation is complete, you should be
                         able to log in using the host's console and the web administration
                         interface.</p>
                 </stepresult>
             </step>
-            <step id="step_N10085_N1005F_N1001F_N10001" ixia_locid="25">
-                <cmd ixia_locid="26">Log in to the console as user <nameliteral ixia_locid="27">wrsroot</nameliteral> with password
-                        <nameliteral ixia_locid="28">wrsroot</nameliteral>.</cmd>
+            <step id="step_N10085_N1005F_N1001F_N10001" id="25">
+                <cmd id="26">Log in to the console as user <nameliteral id="27">wrsroot</nameliteral> with password
+                        <nameliteral id="28">wrsroot</nameliteral>.</cmd>
             </step>
-            <step id="step_N10096_N1005F_N1001F_N10001" ixia_locid="29">
-                <cmd ixia_locid="30">Ensure the backup files are available to the controller.</cmd>
-                <info ixia_locid="31">
-                    <p ixia_locid="32">Plug the USB flash drive containing the backup files into the
+            <step id="step_N10096_N1005F_N1001F_N10001" id="29">
+                <cmd id="30">Ensure the backup files are available to the controller.</cmd>
+                <info id="31">
+                    <p id="32">Plug the USB flash drive containing the backup files into the
                         system. The USB flash drive is mounted automatically. Use the command
-                            <cmdname ixia_locid="33">df</cmdname> to list the mount points.</p>
-                    <p ixia_locid="40">The following steps assume that the backup files are
-                        available from a USB flash drive mounted in <filepath ixia_locid="41">/media/wrsroot</filepath> in the directory <filepath ixia_locid="42">backups</filepath>.</p>
+                            <cmdname id="33">df</cmdname> to list the mount points.</p>
+                    <p id="40">The following steps assume that the backup files are
+                        available from a USB flash drive mounted in <filepath id="41">/media/wrsroot</filepath> in the directory <filepath id="42">backups</filepath>.</p>
                 </info>
             </step>
-            <step id="step_N100CB_N1005F_N1001F_N10001" ixia_locid="43">
-                <cmd ixia_locid="44">Update the controller's software to the previous patching
+            <step id="step_N100CB_N1005F_N1001F_N10001" id="43">
+                <cmd id="44">Update the controller's software to the previous patching
                     level.</cmd>
-                <info ixia_locid="173">
-                    <p ixia_locid="174">When restoring the system configuration, the current
+                <info id="173">
+                    <p id="174">When restoring the system configuration, the current
                         software version on the controller, at this time, the original software
                         version from the ISO image, is compared against the version available in the
                         backup files. They differ if the latter includes patches applied to the
                         controller's software at the time the backup files were created. If
                         different, the restore process automatically applies the patches and forces
                         an additional reboot of the controller to make them effective.</p>
-                    <p ixia_locid="175">The following is the command output if patching is
+                    <p id="175">The following is the command output if patching is
                         necessary:</p>
                 </info>
-                <stepxmp ixia_locid="176">
-                    <codeblock ixia_locid="178"><systemoutput ixia_locid="250">$ </systemoutput><userinput ixia_locid="182">sudo config_controller --restore-system \
+                <stepxmp id="176">
+                    <codeblock id="178"><systemoutput id="250">$ </systemoutput><userinput id="182">sudo config_controller --restore-system \
 /media/wrsroot/backups/backup_20140918_system.tgz</userinput>
-<systemoutput ixia_locid="251">Restoring system (this will take several minutes):
+<systemoutput id="251">Restoring system (this will take several minutes):
 Step  4 of 19 [#########                                    ] [21%]
 This controller has been patched. A reboot is required.
 After the reboot is complete, re-execute the restore command.
 Enter 'reboot' to reboot controller:</systemoutput></codeblock>
-                    <p ixia_locid="185">You must enter <nameliteral ixia_locid="186">reboot</nameliteral> at the prompt as requested. Once the controller is
-                        back, log in as user <nameliteral ixia_locid="187">wrsroot</nameliteral> as
+                    <p id="185">You must enter <nameliteral id="186">reboot</nameliteral> at the prompt as requested. Once the controller is
+                        back, log in as user <nameliteral id="187">wrsroot</nameliteral> as
                         before to continue.</p>
                 </stepxmp>
-                <stepresult ixia_locid="188">
-                    <p ixia_locid="189">After the reboot, you can verify that the patches were applied, as
+                <stepresult id="188">
+                    <p id="189">After the reboot, you can verify that the patches were applied, as
                         illustrated in the following example:</p>
-                    <codeblock ixia_locid="190"><systemoutput ixia_locid="252">$ </systemoutput><userinput ixia_locid="192">sudo wrs-patch query</userinput>
-<systemoutput ixia_locid="253">        Patch ID          Repo State  Patch State
+                    <codeblock id="190"><systemoutput id="252">$ </systemoutput><userinput id="192">sudo wrs-patch query</userinput>
+<systemoutput id="253">        Patch ID          Repo State  Patch State
 ========================  ==========  ===========
 COMPUTECONFIG             Available       n/a
 LIBCUNIT_CONTROLLER_ONLY   Applied        n/a</systemoutput></codeblock>
                 </stepresult>
             </step>
-            <step id="step_N10125_N1006E_N1001F_N10001" ixia_locid="194">
-                <cmd ixia_locid="195">Restore the system configuration.</cmd>
-                <info ixia_locid="196">
-                    <p ixia_locid="197">The controller's software is up to date now, at the same
+            <step id="step_N10125_N1006E_N1001F_N10001" id="194">
+                <cmd id="195">Restore the system configuration.</cmd>
+                <info id="196">
+                    <p id="197">The controller's software is up to date now, at the same
                         stage it was when the backup operation was executed. The restore procedure
                         can be invoked again, and should run without interruptions.</p>
                 </info>
-                <stepxmp ixia_locid="177">
-                    <codeblock ixia_locid="179"><systemoutput ixia_locid="254">$ </systemoutput><userinput ixia_locid="183">sudo config_controller --restore-system \
+                <stepxmp id="177">
+                    <codeblock id="179"><systemoutput id="254">$ </systemoutput><userinput id="183">sudo config_controller --restore-system \
 /media/wrsroot/backups/backup_20140918_system.tgz</userinput>
-<systemoutput ixia_locid="255">Restoring system (this will take several minutes):
+<systemoutput id="255">Restoring system (this will take several minutes):
 Step 19 of 19 [##########################] [100%]
 Restoring node states (this will take several minutes):
 
@@ -133,40 +133,40 @@ Step 10 of 10 [#############################################] [100%]
 System restore complete </systemoutput></codeblock>
                 </stepxmp>
             </step>
-            <step id="step_N100ED_N1005F_N1001F_N10001" ixia_locid="52">
-                <cmd ixia_locid="53">Authenticate to the system as Keystone user <nameliteral ixia_locid="54">admin</nameliteral>.</cmd>
-                <info ixia_locid="55">
-                    <p ixia_locid="56">Source the <nameliteral ixia_locid="57">admin</nameliteral>
+            <step id="step_N100ED_N1005F_N1001F_N10001" id="52">
+                <cmd id="53">Authenticate to the system as Keystone user <nameliteral id="54">admin</nameliteral>.</cmd>
+                <info id="55">
+                    <p id="56">Source the <nameliteral id="57">admin</nameliteral>
                         user environment as follows:</p>
                 </info>
-                <stepxmp ixia_locid="58">
-                    <codeblock ixia_locid="59"><systemoutput ixia_locid="256">$ </systemoutput><userinput ixia_locid="61">cd; source /etc/nova/openrc</userinput></codeblock>
+                <stepxmp id="58">
+                    <codeblock id="59"><systemoutput id="256">$ </systemoutput><userinput id="61">cd; source /etc/nova/openrc</userinput></codeblock>
                 </stepxmp>
             </step>
-            <step id="step_N10113_N1005F_N1001F_N10001" ixia_locid="62">
-                <cmd ixia_locid="63">Restore the system images.</cmd>
-                <stepxmp ixia_locid="64">
-                    <codeblock ixia_locid="65"><systemoutput ixia_locid="257">~(keystone_admin)$ </systemoutput><userinput ixia_locid="67">sudo config_controller --restore-images \
+            <step id="step_N10113_N1005F_N1001F_N10001" id="62">
+                <cmd id="63">Restore the system images.</cmd>
+                <stepxmp id="64">
+                    <codeblock id="65"><systemoutput id="257">~(keystone_admin)$ </systemoutput><userinput id="67">sudo config_controller --restore-images \
 /media/wrsroot/backups/backup_20140918_images.tgz</userinput>
-<systemoutput ixia_locid="258">Step 2 of 2 [#############################################] [100%]
+<systemoutput id="258">Step 2 of 2 [#############################################] [100%]
 
 Images restore complete</systemoutput></codeblock>
                 </stepxmp>
-                <info ixia_locid="69">
-                    <p ixia_locid="70">This step assumes that the backup file resides on the
+                <info id="69">
+                    <p id="70">This step assumes that the backup file resides on the
                         attached USB drive. If instead you copied the image backup file to the
-                            <filepath ixia_locid="199">/opt/backups</filepath> directory, for example using the
-                            <cmdname ixia_locid="200">scp</cmdname> command, you can remove it now.</p>
+                            <filepath id="199">/opt/backups</filepath> directory, for example using the
+                            <cmdname id="200">scp</cmdname> command, you can remove it now.</p>
                 </info>
             </step>
-            <step id="step_N10135_N1005F_N1001F_N10001" ixia_locid="71">
-                <cmd ixia_locid="72">Restore <nameliteral ixia_locid="73">controller-1</nameliteral>.</cmd>
+            <step id="step_N10135_N1005F_N1001F_N10001" id="71">
+                <cmd id="72">Restore <nameliteral id="73">controller-1</nameliteral>.</cmd>
                 <substeps id="substeps_wt4_5dh_mp">
-                    <substep ixia_locid="74">
-                        <cmd ixia_locid="75">List the current state of the hosts.</cmd>
-                        <stepxmp ixia_locid="76">
-                            <codeblock ixia_locid="77"><systemoutput ixia_locid="259">~(keystone_admin)$ </systemoutput><userinput ixia_locid="79">system host-list</userinput>
-<systemoutput ixia_locid="260">+----+--------------+-------------+----------------+-------------+--------------+
+                    <substep id="74">
+                        <cmd id="75">List the current state of the hosts.</cmd>
+                        <stepxmp id="76">
+                            <codeblock id="77"><systemoutput id="259">~(keystone_admin)$ </systemoutput><userinput id="79">system host-list</userinput>
+<systemoutput id="260">+----+--------------+-------------+----------------+-------------+--------------+
 | id | hostname     | personality | administrative | operational | availability |
 +----+--------------+-------------+----------------+-------------+--------------+
 | 1  | controller-0 | controller  | unlocked       | enabled     | available    |
@@ -175,19 +175,19 @@ Images restore complete</systemoutput></codeblock>
 +----+--------------+-------------+----------------+-------------+--------------+</systemoutput></codeblock>
                         </stepxmp>
                     </substep>
-                    <substep ixia_locid="81">
-                        <cmd ixia_locid="82">Power on the host.</cmd>
-                        <info ixia_locid="83">
-                            <p ixia_locid="84">Remember to ensure that the host boots from the
+                    <substep id="81">
+                        <cmd id="82">Power on the host.</cmd>
+                        <info id="83">
+                            <p id="84">Remember to ensure that the host boots from the
                                 network and not from an old disk image that might still be present
                                 on its hard drive.</p>
                         </info>
                     </substep>
-                    <substep ixia_locid="85">
-                        <cmd ixia_locid="86">Unlock the host.</cmd>
-                        <stepxmp ixia_locid="87">
-                            <codeblock ixia_locid="88"><systemoutput ixia_locid="261">~(keystone_admin)$ </systemoutput><userinput ixia_locid="90">system host-unlock 2</userinput>
-<systemoutput ixia_locid="262">+-----------------+--------------------------------------+
+                    <substep id="85">
+                        <cmd id="86">Unlock the host.</cmd>
+                        <stepxmp id="87">
+                            <codeblock id="88"><systemoutput id="261">~(keystone_admin)$ </systemoutput><userinput id="90">system host-unlock 2</userinput>
+<systemoutput id="262">+-----------------+--------------------------------------+
 | Property        | Value                                |
 +-----------------+--------------------------------------+
 | action          | none                                 |
@@ -198,11 +198,11 @@ Images restore complete</systemoutput></codeblock>
 +-----------------+--------------------------------------+</systemoutput></codeblock>
                         </stepxmp>
                     </substep>
-                    <substep ixia_locid="92">
-                        <cmd ixia_locid="93">Verify the new state of the hosts.</cmd>
-                        <stepxmp ixia_locid="94">
-                            <codeblock ixia_locid="95"><systemoutput ixia_locid="263">~(keystone_admin)$ </systemoutput><userinput ixia_locid="97">system host-list</userinput>
-<systemoutput ixia_locid="264">+----+--------------+-------------+----------------+-------------+--------------+
+                    <substep id="92">
+                        <cmd id="93">Verify the new state of the hosts.</cmd>
+                        <stepxmp id="94">
+                            <codeblock id="95"><systemoutput id="263">~(keystone_admin)$ </systemoutput><userinput id="97">system host-list</userinput>
+<systemoutput id="264">+----+--------------+-------------+----------------+-------------+--------------+
 | id | hostname     | personality | administrative | operational | availability |
 +----+--------------+-------------+----------------+-------------+--------------+
 | 1  | controller-0 | controller  | unlocked       | enabled     | available    |
@@ -212,43 +212,43 @@ Images restore complete</systemoutput></codeblock>
                         </stepxmp>
                     </substep>
                 </substeps>
-                <stepresult ixia_locid="99">
-                    <p ixia_locid="100">The unlocking operation forces a reboot of the host, which
+                <stepresult id="99">
+                    <p id="100">The unlocking operation forces a reboot of the host, which
                         is then initialized with the corresponding image available from the system
                         backup.</p>
-                    <p ixia_locid="201">You must wait for the host to become enabled and available
+                    <p id="201">You must wait for the host to become enabled and available
                         before proceeding to the next step.</p>
                 </stepresult>
             </step>
-            <step id="step_N101ED_N1005F_N1001F_N10001" ixia_locid="118">
-                <cmd ixia_locid="119">Restore the compute nodes, one at a time.</cmd>
-                <info ixia_locid="120">
-                    <p ixia_locid="121">You restore these hosts following the same procedure used to
-                        restore <nameliteral ixia_locid="122">controller-1</nameliteral>.</p>
+            <step id="step_N101ED_N1005F_N1001F_N10001" id="118">
+                <cmd id="119">Restore the compute nodes, one at a time.</cmd>
+                <info id="120">
+                    <p id="121">You restore these hosts following the same procedure used to
+                        restore <nameliteral id="122">controller-1</nameliteral>.</p>
                 </info>
-                <stepresult ixia_locid="123">
-                    <p ixia_locid="124">The state of the hosts when the restore operation is
+                <stepresult id="123">
+                    <p id="124">The state of the hosts when the restore operation is
                         complete is as follows:</p>
-                    <codeblock ixia_locid="125"><systemoutput ixia_locid="276">~(keystone_admin)$ </systemoutput><userinput ixia_locid="127">system host-list</userinput>
-<systemoutput ixia_locid="277">+----+--------------+-------------+----------------+-------------+--------------+
+                    <codeblock id="125"><systemoutput id="276">~(keystone_admin)$ </systemoutput><userinput id="127">system host-list</userinput>
+<systemoutput id="277">+----+--------------+-------------+----------------+-------------+--------------+
 | id | hostname     | personality | administrative | operational | availability |
 +----+--------------+-------------+----------------+-------------+--------------+
 | 1  | controller-0 | controller  | unlocked       | enabled     | available    |
 | 2  | controller-1 | controller  | unlocked       | enabled     | available    |
 | 3  | compute-0    | compute     | unlocked       | enabledd    | available    |
 +----+--------------+-------------+----------------+-------------+--------------+</systemoutput></codeblock>
-                    <p ixia_locid="129">As each compute node is restored, the original instances at the time the
+                    <p id="129">As each compute node is restored, the original instances at the time the
                         backups were done are started automatically.</p>
                 </stepresult>
             </step>
         </steps>
-        <result id="result_N10213_N1001F_N10001" ixia_locid="130">
-            <p ixia_locid="131">The system is fully restored. The state of the system, including
+        <result id="result_N10213_N1001F_N10001" id="130">
+            <p id="131">The system is fully restored. The state of the system, including
                 virtual machines, is identical to the state the cluster was in when the backup
                 procedure took place.</p>
-            <p ixia_locid="171">Remember however, that passwords for local user accounts must be
+            <p id="171">Remember however, that passwords for local user accounts must be
                 restored manually since they are not included as part of the backup and restore
-                procedures. See <xref href="jow1404333563834.xml" ixia_locid="242"/> for additional
+                procedures. See <xref href="jow1404333563834.xml" id="242"/> for additional
                 information.</p>
         </result>
     </taskbody>

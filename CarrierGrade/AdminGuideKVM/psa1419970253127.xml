@@ -4,28 +4,28 @@
 <!-- Modification History
     
 -->
-  <title ixia_locid="111">System Alarms CLI Commands</title>
-  <shortdesc ixia_locid="112">You can use the CLI to find information about currently active and previously triggered
+  <title id="111">System Alarms CLI Commands</title>
+  <shortdesc id="112">You can use the CLI to find information about currently active and previously triggered
     system alarms.</shortdesc>
   <prolog>
-    <author ixia_locid="113">Pedro Sanchez</author>
+    <author id="113">Pedro Sanchez</author>
   </prolog>
   <refbody>
-    <section id="section_N1001F_N1001C_N10001" ixia_locid="114">
-      <p ixia_locid="115">The following commands are used to interact with the alarms subsystem: <cmdname ixia_locid="116">system
-          alarm-list</cmdname>, <cmdname ixia_locid="117">system alarm-show</cmdname>, <cmdname ixia_locid="118">system
-          alarm-delete</cmdname>, and <cmdname ixia_locid="119">system alarm-history-list</cmdname>. Before using the
+    <section id="section_N1001F_N1001C_N10001" id="114">
+      <p id="115">The following commands are used to interact with the alarms subsystem: <cmdname id="116">system
+          alarm-list</cmdname>, <cmdname id="117">system alarm-show</cmdname>, <cmdname id="118">system
+          alarm-delete</cmdname>, and <cmdname id="119">system alarm-history-list</cmdname>. Before using the
         commands you must log in to the active controller as the Keystone
-          <nameliteral ixia_locid="120">admin</nameliteral> user. See <xref href="jow1404333563834.xml" ixia_locid="121"/> for
+          <nameliteral id="120">admin</nameliteral> user. See <xref href="jow1404333563834.xml" id="121"/> for
         details.</p>
     </section>
-    <section id="section_N10040_N1001C_N10001" ixia_locid="122">
-      <title ixia_locid="123">system alarm-list</title>
-      <p ixia_locid="6">The command <cmdname ixia_locid="99">system alarm-list</cmdname> lists
+    <section id="section_N10040_N1001C_N10001" id="122">
+      <title id="123">system alarm-list</title>
+      <p id="6">The command <cmdname id="99">system alarm-list</cmdname> lists
         currently active alarms, as illustrated below (the output is split in two pieces for
         presentation purposes only):</p>
-      <codeblock ixia_locid="8"><systemoutput ixia_locid="201">~(keystone_admin)$ </systemoutput><userinput ixia_locid="45">system alarm-list</userinput>
-<systemoutput ixia_locid="202">
+      <codeblock id="8"><systemoutput id="201">~(keystone_admin)$ </systemoutput><userinput id="45">system alarm-list</userinput>
+<systemoutput id="202">
 +--------------+----------+--------------------+----------+---------------
 | UUID         | Alarm ID | Entity Instance ID | Severity |  Time Stamp   
 +--------------+----------+--------------------+----------+---------------
@@ -38,91 +38,91 @@
   | /dev/sda3 severity critical threshold set (0.00 MB left) |
 --+----------------------------------------------------------+
 </systemoutput></codeblock>
-      <p ixia_locid="12">This example lists a single critical alarm on host <nameliteral ixia_locid="13">controller-0</nameliteral> regarding running out of space on disk unit
-          <filepath ixia_locid="14">/dev/sda3</filepath>. Each alarm object is listed with a unique
+      <p id="12">This example lists a single critical alarm on host <nameliteral id="13">controller-0</nameliteral> regarding running out of space on disk unit
+          <filepath id="14">/dev/sda3</filepath>. Each alarm object is listed with a unique
         UUID which you can use to obtain additional information.</p>
-      <p ixia_locid="124">Specific subsets of alarms, or a particular alarm, can be listed using one
-        of the following <option ixia_locid="126">--query</option> command filters:</p>
+      <p id="124">Specific subsets of alarms, or a particular alarm, can be listed using one
+        of the following <option id="126">--query</option> command filters:</p>
       <simpletable frame="all" id="simpletable_zc2_253_bp" relcolwidth="0.6* 1.0*">
         <sthead>
-          <stentry ixia_locid="128">
-            <p ixia_locid="130">Query Filter</p>
+          <stentry id="128">
+            <p id="130">Query Filter</p>
           </stentry>
-          <stentry ixia_locid="132">
-            <p ixia_locid="134">Comment</p>
+          <stentry id="132">
+            <p id="134">Comment</p>
           </stentry>
         </sthead>
         <strow>
-          <stentry ixia_locid="136">
-            <p ixia_locid="138"><cmdname ixia_locid="140">uuid=&lt;uuid&gt;</cmdname></p>
+          <stentry id="136">
+            <p id="138"><cmdname id="140">uuid=&lt;uuid&gt;</cmdname></p>
           </stentry>
-          <stentry ixia_locid="142">
-            <p ixia_locid="144">Query alarm by UUID, for example:</p>
-            <codeblock ixia_locid="146"><systemoutput ixia_locid="203">$ </systemoutput><userinput ixia_locid="150">system alarm-list --query uuid=4ab5698a-19cb...</userinput></codeblock>
-          </stentry>
-        </strow>
-        <strow>
-          <stentry ixia_locid="152">
-            <p ixia_locid="154"><cmdname ixia_locid="156">alarm_id=&lt;alarm id&gt;</cmdname></p>
-          </stentry>
-          <stentry ixia_locid="158">
-            <p ixia_locid="160">Query alarms by alarm ID, for example:</p>
-            <codeblock ixia_locid="162"><systemoutput ixia_locid="204">$ </systemoutput><userinput ixia_locid="166">system alarm-list --query alarm_id=100.104</userinput></codeblock>
+          <stentry id="142">
+            <p id="144">Query alarm by UUID, for example:</p>
+            <codeblock id="146"><systemoutput id="203">$ </systemoutput><userinput id="150">system alarm-list --query uuid=4ab5698a-19cb...</userinput></codeblock>
           </stentry>
         </strow>
         <strow>
-          <stentry ixia_locid="70">
-            <p ixia_locid="71"><cmdname ixia_locid="72">alarm_type=&lt;type&gt;</cmdname></p>
+          <stentry id="152">
+            <p id="154"><cmdname id="156">alarm_id=&lt;alarm id&gt;</cmdname></p>
           </stentry>
-          <stentry ixia_locid="73">
-            <p ixia_locid="74">Query alarms by type, for example:</p>
-            <codeblock ixia_locid="75"><systemoutput ixia_locid="205">$ </systemoutput><userinput ixia_locid="48">system alarm-list --query \
+          <stentry id="158">
+            <p id="160">Query alarms by alarm ID, for example:</p>
+            <codeblock id="162"><systemoutput id="204">$ </systemoutput><userinput id="166">system alarm-list --query alarm_id=100.104</userinput></codeblock>
+          </stentry>
+        </strow>
+        <strow>
+          <stentry id="70">
+            <p id="71"><cmdname id="72">alarm_type=&lt;type&gt;</cmdname></p>
+          </stentry>
+          <stentry id="73">
+            <p id="74">Query alarms by type, for example:</p>
+            <codeblock id="75"><systemoutput id="205">$ </systemoutput><userinput id="48">system alarm-list --query \
 alarm_type=operational-violation</userinput></codeblock>
           </stentry>
         </strow>
         <strow>
-          <stentry ixia_locid="76">
-            <p ixia_locid="77"><cmdname ixia_locid="78">entity_type_id=&lt;type id&gt;</cmdname></p>
+          <stentry id="76">
+            <p id="77"><cmdname id="78">entity_type_id=&lt;type id&gt;</cmdname></p>
           </stentry>
-          <stentry ixia_locid="79">
-            <p ixia_locid="80">Query alarms by entity type ID, for example:</p>
-            <codeblock ixia_locid="81"><systemoutput ixia_locid="206">$ </systemoutput><userinput ixia_locid="49">system alarm-list --query \
+          <stentry id="79">
+            <p id="80">Query alarms by entity type ID, for example:</p>
+            <codeblock id="81"><systemoutput id="206">$ </systemoutput><userinput id="49">system alarm-list --query \
 entity_type_id=system.host </userinput></codeblock>
           </stentry>
         </strow>
         <strow>
-          <stentry ixia_locid="82">
-            <p ixia_locid="83"><cmdname ixia_locid="84">entity_instance_id=&lt;instance
+          <stentry id="82">
+            <p id="83"><cmdname id="84">entity_instance_id=&lt;instance
                 id&gt;</cmdname></p>
           </stentry>
-          <stentry ixia_locid="85">
-            <p ixia_locid="86">Query alarms by entity instance id, for example:</p>
-            <codeblock ixia_locid="87"><systemoutput ixia_locid="207">$ </systemoutput><userinput ixia_locid="50">system alarm-list --query \
+          <stentry id="85">
+            <p id="86">Query alarms by entity instance id, for example:</p>
+            <codeblock id="87"><systemoutput id="207">$ </systemoutput><userinput id="50">system alarm-list --query \
 entity_instance_id=host=compute-0</userinput></codeblock>
           </stentry>
         </strow>
         <strow>
-          <stentry ixia_locid="88">
-            <p ixia_locid="89"><cmdname ixia_locid="90">severity=&lt;severity&gt;</cmdname></p>
+          <stentry id="88">
+            <p id="89"><cmdname id="90">severity=&lt;severity&gt;</cmdname></p>
           </stentry>
-          <stentry ixia_locid="91">
-            <p ixia_locid="92">Query alarms by severity type, for example:</p>
-            <codeblock ixia_locid="93"><systemoutput ixia_locid="208">$ </systemoutput><userinput ixia_locid="51">system alarm-list --query severity=warning</userinput></codeblock>
-            <p ixia_locid="94">The valid severity types are <term ixia_locid="95">critical</term>,
-                <term ixia_locid="96">major</term>, <term ixia_locid="97">minor</term>, and <term ixia_locid="98">warning</term>.</p>
+          <stentry id="91">
+            <p id="92">Query alarms by severity type, for example:</p>
+            <codeblock id="93"><systemoutput id="208">$ </systemoutput><userinput id="51">system alarm-list --query severity=warning</userinput></codeblock>
+            <p id="94">The valid severity types are <term id="95">critical</term>,
+                <term id="96">major</term>, <term id="97">minor</term>, and <term id="98">warning</term>.</p>
           </stentry>
         </strow>
       </simpletable>
-      <p ixia_locid="168">Query command filters can be combined into a single expression separated by semicolons, as
+      <p id="168">Query command filters can be combined into a single expression separated by semicolons, as
         illustrated in the following example:</p>
-      <codeblock ixia_locid="169"><systemoutput ixia_locid="209">$ </systemoutput><userinput ixia_locid="171">system alarm-list -q 'alarm_id=400.002;entity_instance_id=service_domain=controller.service_group=directory-services'</userinput></codeblock>
+      <codeblock id="169"><systemoutput id="209">$ </systemoutput><userinput id="171">system alarm-list -q 'alarm_id=400.002;entity_instance_id=service_domain=controller.service_group=directory-services'</userinput></codeblock>
     </section>
-    <section id="section_N101AC_N1001C_N10001" ixia_locid="172">
-      <title ixia_locid="173">system alarm-show</title>
-      <p ixia_locid="16">The command <cmdname ixia_locid="100">system alarm-show</cmdname> presents
+    <section id="section_N101AC_N1001C_N10001" id="172">
+      <title id="173">system alarm-show</title>
+      <p id="16">The command <cmdname id="100">system alarm-show</cmdname> presents
         additional information about a currently active alarm, as illustrated below:</p>
-      <codeblock ixia_locid="101"><systemoutput ixia_locid="210">~(keystone_admin)$ </systemoutput><userinput ixia_locid="105">system alarm-show 4ab5698a-19cb-4c17-bd63-302173fef62c </userinput>
-<systemoutput ixia_locid="211">
+      <codeblock id="101"><systemoutput id="210">~(keystone_admin)$ </systemoutput><userinput id="105">system alarm-show 4ab5698a-19cb-4c17-bd63-302173fef62c </userinput>
+<systemoutput id="211">
 +------------------------+-------------------------------------------------+
 | Property               | Value                                           |
 +------------------------+-------------------------------------------------+
@@ -140,21 +140,21 @@ entity_instance_id=host=compute-0</userinput></codeblock>
 | timestamp              | 2014-06-25T16:58:57.324613                      |
 | uuid                   | 4ab5698a-19cb-4c17-bd63-302173fef62c            |
 +------------------------+-------------------------------------------------+</systemoutput></codeblock>
-      <p ixia_locid="107">The pair of attributes <nameliteral ixia_locid="23">(alarm_id,
+      <p id="107">The pair of attributes <nameliteral id="23">(alarm_id,
           entity_instance_id)</nameliteral> uniquely identifies an active alarm:</p>
       <dl>
-        <dlentry ixia_locid="24">
-          <dt ixia_locid="25"><nameliteral ixia_locid="26">alarm_id</nameliteral></dt>
-          <dd ixia_locid="27">
-            <p ixia_locid="28">An ID identifying the particular alarm condition. Note that there are
-              some alarm conditions, such as <i ixia_locid="29">administratively locked</i> , that
+        <dlentry id="24">
+          <dt id="25"><nameliteral id="26">alarm_id</nameliteral></dt>
+          <dd id="27">
+            <p id="28">An ID identifying the particular alarm condition. Note that there are
+              some alarm conditions, such as <i id="29">administratively locked</i> , that
               can be raised by more than one entity-instance-id.</p>
           </dd>
         </dlentry>
-        <dlentry ixia_locid="30">
-          <dt ixia_locid="31"><nameliteral ixia_locid="32">entity_instance_id</nameliteral></dt>
-          <dd ixia_locid="33">
-            <p ixia_locid="34">Type and instance information of the object raising the alarm.  A
+        <dlentry id="30">
+          <dt id="31"><nameliteral id="32">entity_instance_id</nameliteral></dt>
+          <dd id="33">
+            <p id="34">Type and instance information of the object raising the alarm.  A
               period-separated list of (key, value) pairs, representing the containment structure of
               the overall entity instance. This structure is used for processing hierarchical
               clearing of alarms.</p>
@@ -162,74 +162,74 @@ entity_instance_id=host=compute-0</userinput></codeblock>
         </dlentry>
       </dl>
     </section>
-    <section id="section_N10211_N1001C_N10001" ixia_locid="174">
-      <title ixia_locid="175">system alarm-delete</title>
-      <p ixia_locid="109">The command <cmdname ixia_locid="110">system alarm-delete</cmdname> is
+    <section id="section_N10211_N1001C_N10001" id="174">
+      <title id="175">system alarm-delete</title>
+      <p id="109">The command <cmdname id="110">system alarm-delete</cmdname> is
         used to manually delete an alarm that remains active for no apparent reason, which may
         happen in rare conditions. Alarms usually clear automatically when the trigger condition is
         corrected. Use this command as illustrated below:</p>
-      <codeblock ixia_locid="102"><systemoutput ixia_locid="212">~(keystone_admin)$ </systemoutput><userinput ixia_locid="106">system alarm-delete 4ab5698a-19cb-4c17-bd63-302173fef62c</userinput></codeblock>
-      <p ixia_locid="108">Manually deleting an alarm should not be done unless it is absolutely
+      <codeblock id="102"><systemoutput id="212">~(keystone_admin)$ </systemoutput><userinput id="106">system alarm-delete 4ab5698a-19cb-4c17-bd63-302173fef62c</userinput></codeblock>
+      <p id="108">Manually deleting an alarm should not be done unless it is absolutely
         clear that there is no reason for the alarm to be active.</p>
     </section>
-    <section id="section_N10235_N1001C_N10001" ixia_locid="176">
-      <title ixia_locid="177">system alarm-history-list</title>
-      <p ixia_locid="178">The command <cmdname ixia_locid="179">system alarm-history-list</cmdname>
+    <section id="section_N10235_N1001C_N10001" id="176">
+      <title id="177">system alarm-history-list</title>
+      <p id="178">The command <cmdname id="179">system alarm-history-list</cmdname>
         is used to query the historical alarm table. It operates on an alarm ring buffer of up to
         2000 entries used by the alarms subsystem to sequentially store active alarm change events.
         In its simplest form, without any parameters, the command returns a list of the 20 most
         recent change events in reverse chronological order, the most recent event first. Use the
-          <option ixia_locid="180">-l</option> option to specify the size of the list. The following
+          <option id="180">-l</option> option to specify the size of the list. The following
         command lists the 30 more recent change events:</p>
-      <codeblock ixia_locid="181"><systemoutput ixia_locid="213">~(keystone_admin)$ </systemoutput><userinput ixia_locid="183">system alarm-history-list -l 30</userinput></codeblock>
-      <p ixia_locid="198">The console output is automatically paginated when the list size is greater than 20. Press
-        the <userinput ixia_locid="199">Enter</userinput> key to go the next page, or press <userinput ixia_locid="200">q</userinput>
+      <codeblock id="181"><systemoutput id="213">~(keystone_admin)$ </systemoutput><userinput id="183">system alarm-history-list -l 30</userinput></codeblock>
+      <p id="198">The console output is automatically paginated when the list size is greater than 20. Press
+        the <userinput id="199">Enter</userinput> key to go the next page, or press <userinput id="200">q</userinput>
         to quit.</p>
-      <p ixia_locid="125">Specific alarms, or alarm subsets, in the ring buffer can be listed using
-        the <option ixia_locid="127">--query</option> command filters accepted by the <cmdname ixia_locid="184">system alarms-list</cmdname> command. For example, use the following
+      <p id="125">Specific alarms, or alarm subsets, in the ring buffer can be listed using
+        the <option id="127">--query</option> command filters accepted by the <cmdname id="184">system alarms-list</cmdname> command. For example, use the following
         command to query alarm events in the ring buffer by type ID:</p>
-      <codeblock ixia_locid="185"><systemoutput ixia_locid="214">~(keystone_admin)$ </systemoutput><userinput ixia_locid="187">system alarm-history-list --query alarm_id=100.104</userinput></codeblock>
-      <p ixia_locid="188">Two additional command filters are available to restrict the command
+      <codeblock id="185"><systemoutput id="214">~(keystone_admin)$ </systemoutput><userinput id="187">system alarm-history-list --query alarm_id=100.104</userinput></codeblock>
+      <p id="188">Two additional command filters are available to restrict the command
         output to change events in a particular time slot, as follows:</p>
       <simpletable frame="all" id="simpletable_zwj_nw5_4q" relcolwidth="0.6* 1.0*">
         <sthead>
-          <stentry ixia_locid="129">
-            <p ixia_locid="131">Query Filter</p>
+          <stentry id="129">
+            <p id="131">Query Filter</p>
           </stentry>
-          <stentry ixia_locid="133">
-            <p ixia_locid="135">Comment</p>
+          <stentry id="133">
+            <p id="135">Comment</p>
           </stentry>
         </sthead>
         <strow>
-          <stentry ixia_locid="137">
-            <p ixia_locid="139"><cmdname ixia_locid="141">start=&lt;time_stamp&gt;</cmdname></p>
+          <stentry id="137">
+            <p id="139"><cmdname id="141">start=&lt;time_stamp&gt;</cmdname></p>
           </stentry>
-          <stentry ixia_locid="143">
-            <p ixia_locid="145">Query change events that occurred at or after a particular time, for
+          <stentry id="143">
+            <p id="145">Query change events that occurred at or after a particular time, for
               example:</p>
-            <codeblock ixia_locid="147"><systemoutput ixia_locid="215">$ </systemoutput><userinput ixia_locid="151">system alarm-history-list --query \
+            <codeblock id="147"><systemoutput id="215">$ </systemoutput><userinput id="151">system alarm-history-list --query \
 start=2014-11-26T18:58:53</userinput></codeblock>
           </stentry>
         </strow>
         <strow>
-          <stentry ixia_locid="153">
-            <p ixia_locid="155"><cmdname ixia_locid="157">end=&lt;time_stamp&gt;</cmdname></p>
+          <stentry id="153">
+            <p id="155"><cmdname id="157">end=&lt;time_stamp&gt;</cmdname></p>
           </stentry>
-          <stentry ixia_locid="159">
-            <p ixia_locid="161">Query change events that occurred at or before a particular time,
+          <stentry id="159">
+            <p id="161">Query change events that occurred at or before a particular time,
               for example:</p>
-            <codeblock ixia_locid="163"><systemoutput ixia_locid="216">$ </systemoutput><userinput ixia_locid="167">system alarm-history-list --query \
+            <codeblock id="163"><systemoutput id="216">$ </systemoutput><userinput id="167">system alarm-history-list --query \
 end=   2014-11-26T18:59:53</userinput></codeblock>
           </stentry>
         </strow>
       </simpletable>
-      <p ixia_locid="189">Time stamps must be entered in a suitable ISO 8601 date and time format. Some examples are:
-          <userinput ixia_locid="190">2014</userinput>, <userinput ixia_locid="191">2014-11-26</userinput>,
-          <userinput ixia_locid="192">2014-11-28T16:39</userinput>, and
-          <userinput ixia_locid="193">2014-11-28T16:42:35.647157</userinput>.</p>
-      <p ixia_locid="194">Query command filters can be combined into a single expression separated by semicolons, as
+      <p id="189">Time stamps must be entered in a suitable ISO 8601 date and time format. Some examples are:
+          <userinput id="190">2014</userinput>, <userinput id="191">2014-11-26</userinput>,
+          <userinput id="192">2014-11-28T16:39</userinput>, and
+          <userinput id="193">2014-11-28T16:42:35.647157</userinput>.</p>
+      <p id="194">Query command filters can be combined into a single expression separated by semicolons, as
         illustrated in the following example:</p>
-      <codeblock ixia_locid="195"><systemoutput ixia_locid="217">~(keystone_admin)$ </systemoutput><userinput ixia_locid="197">system alarm-history-list -l 10 \
+      <codeblock id="195"><systemoutput id="217">~(keystone_admin)$ </systemoutput><userinput id="197">system alarm-history-list -l 10 \
 -q 'start=2014-11-26T18:58:53;end=2014-11-26T18:59:53'</userinput></codeblock>
     </section>
   </refbody>
