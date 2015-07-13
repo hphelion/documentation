@@ -37,10 +37,11 @@
     <li><xref type="section"  href="#topic_w5z_kcw_js/als">ALS Cluster Management (cf-mgmt)</xref></li>
     <li><xref type="section"  href="#topic_w5z_kcw_js/helion">Helion client
       (helion)</xref></li>
-   </ul>
+   </ul><!--
    <b>Windows Image Tool</b><ul id="ul_nrc_3hw_js">
     <li><xref type="section"  href="#topic_w5z_kcw_js/glazier">Glazier</xref></li>
-   </ul></section>
+   </ul>-->
+ </section>
  <section id="cloudfoundryextensions"><title>Cloud Foundry Extensions</title> <p>This Visual Studio 2013 extension
     is used to deploy and manage .NET applications. The extension can be used in any edition of VS
     2013, including the Community (free) edition.</p></section>
@@ -259,7 +260,7 @@
 </ul>
 
  </section>
- <section><title>Windows Image Tool</title></section>
+ <!--<section><title>Windows Image Tool</title></section>
 
  <section id="glazier"><title>Glazier</title>
 
@@ -268,7 +269,7 @@
   <p>Glazier can be downloaded from the following location: <xref format="html" scope="external" href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip">Download</xref>. </p>
 
 For information on Glazier, see <xref  format="dita" href="windows_glazier_reference_guide.dita">Glazier Reference Guide</xref>.
-</section>
+</section>-->
 </body>
 </topic>
 
