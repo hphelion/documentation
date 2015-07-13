@@ -42,17 +42,18 @@
 </ul>
 </li>
 <li>
-<xref type="section" href="#topic14809/deploy-vsa">Deploying HP StoreVirtual VSA storage sytems</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic14809/prerequisites-vsa">Prerequisites</xref>
-</li>
-<li>
-<xref type="section" href="#topic14809/enroll-new-baremetal-server">Enrolling the new Baremetal server</xref>
-</li>
-</ul>
-</li>
+        <xref type="section" href="#topic14809/deploy-vsa">Deploying HP StoreVirtual VSA storage
+          system</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic14809/prerequisites-vsa">Prerequisites</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic14809/enroll-new-baremetal-server">Enrolling the new
+              Baremetal server</xref>
+          </li>
+        </ul>
+      </li>
 <li>
 <xref type="section" href="#topic14809/verify-install">Verifying the StoreVirtual installation status</xref>
 </li>
@@ -290,7 +291,7 @@ java -jar UI.jar
         <!--**Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out Object storage nodes.-->
         <!--   **Note**: While deploying a scale-out **proxy** node ensure that the value of `vsa_scale` is unchanged. While deploying a scale-out **object** node ensure that the value of `vsa_ao_scale` is unchanged.-->
         <!--NOTE: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/VM other than the storage systems in the SAN.-->
-        <note> Minimum 3 nodes are required for HP StoreViratual VSA cluster.</note>
+        <note> Minimum 3 nodes are required for HP StoreVirtual VSA cluster.</note>
       </p>
 <p>
   <xref href="#topic14809"> Return to Top </xref>

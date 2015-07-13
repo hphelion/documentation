@@ -85,7 +85,7 @@ Cinder - /var/log/upstart
 <p>Where pool size is either the number of replicas for replicated pools or the K+M sum for erasure coded pools (as returned by <codeph>ceph osd erasure-code-profile get</codeph>).
 Round up the results to the nearest power of two. Rounding up is optional, but recommended for CRUSH to evenly balance the number of objects among PGs.</p>
 <p>For example, for a cluster with 200 OSDs and a pool size of 3 replicas, estimate the number of PGs as follows:</p>
-<codeblock>  <codeph>(200 * 100)
+<codeblock><codeph>(200 * 100)
 ----------- = 6667. Nearest power of 2: 8192
  3
 </codeph></codeblock>

@@ -486,6 +486,7 @@
       navtitle="Flexible Control Plane" locktitle="yes">
       <topicref href="commercial/GA1/1.1commerical.flexible-control-pane-installation.dita"
         navtitle="Flexible Control Plane Installation" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commerical.flexible-control-plane-backup.dita" toc="no"/>
     </topicref>
     <topichead navtitle="HP Helion Openstack 1.1.1 and 1.1: License Files">
       <topicref href="commercial/GA1/1.1.13rd-party-license-agreements.dita"/>
@@ -638,7 +639,7 @@
       <topicref href="devplatform/1.2/1.2devplatform.eclipse.dita" locktitle="yes"
         navtitle="Eclipse Deployment Plugin"/>
       <!--permalink: /helion/devplatform/1.2/workbook/database/java/-->
-      <topichead navtitle="JAVA Code Samples">
+      <topichead navtitle="Java Code Samples">
         <topicref href="devplatform/1.2/workbook/helloworld/1.2helloworld.java.dita" locktitle="yes"
           navtitle="Java Hello World Sample"/>
         <topicref href="devplatform/1.2/workbook/database/1.2database.java.dita" locktitle="yes"
@@ -985,7 +986,7 @@
         <topicref href="devplatform/1.1devplatform.eclipse.dita" locktitle="yes"
           navtitle="Eclipse Deployment Plugin "/>
         <!--permalink: /helion/devplatform/1.1/workbook/database/java/-->
-        <topichead navtitle="JAVA Samples">
+        <topichead navtitle="Java Samples">
           <topicref href="devplatform/workbook/helloworld/1.1helloworld.java.dita" locktitle="yes"
             navtitle="Java Hello World Sample "/>
           <topicref href="devplatform/workbook/database/1.1database.java.dita" locktitle="yes"
@@ -1740,6 +1741,7 @@
       <topichead navtitle="HP Helion Openstack(R) 1.0: Flexible Control Pane">
         <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-overview.dita"/>
         <topicref href="commercial/GA1/1.0commerical.flexible-control-pane-installation.dita"/>
+        <topicref href="commercial/GA1/1.1commerical.flexible-control-plane-backup.dita" toc="no"/>
       </topichead>
       <topicref href="commercial/GA1/1.0commercial.map.volumetype.dita" toc="no"/>
       <!--set to toc=no later-->

@@ -247,8 +247,7 @@ bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh \
 <p>c. Load the configuration file</p>
 
 <codeblock>
-<codeph>source /root/tripleo/triple-incubator/scripts/hp_ced_load_config.json overcloud-config.json
-</codeph>
+<codeph>source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh overcloud-config.json</codeph>
 </codeblock>
 
 <p>d. Run the second stage, that is, configure under and overclouds. Export all relevant environment variables,</p>

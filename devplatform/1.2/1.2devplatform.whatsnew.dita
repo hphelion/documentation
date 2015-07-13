@@ -22,10 +22,11 @@
  <!--./devplatform/1.2/1.2devplatform.whatsnew.md-->
  <!--permalink: /helion/devplatform/1.2/whatsnew/--></p>
 <ul>
-<li>What's New in Helion <tm tmtype="reg">OpenStack</tm> x.x.x</li>
-<li>
-<xref href="../../devplatform/1.2/1.2devplatform.release-notes.dita" >Release Notes and Known Issues</xref>
-</li>
+  <li><xref href="../../commercial/GA1/1.1.1commercial.release-notes.dita#topic18834/111">What's
+    New in Helion <tm tmtype="reg">OpenStack</tm> 1.1.1</xref></li>
+<li><xref href="../../devplatform/1.2/1.2devplatform.release-notes.dita">Release Notes and Known
+          Issues</xref>
+      </li>
 </ul>
 <p>These features and functionality are new in the HP Helion Development Platform 1.2</p>
 <section id="updates"> <title>Updates</title>

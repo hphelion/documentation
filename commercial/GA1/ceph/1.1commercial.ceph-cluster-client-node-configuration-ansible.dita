@@ -88,7 +88,7 @@
 <li>Ensure the client setup scripts tar ball (also containing the Ceph Debian distribution for
           installing on Helion nodes) has been copied under
             <codeph>/helion-ceph/cephconfigureation/ansible-playbooks/roles/ceph-client/files</codeph>.<p>For
-            example:</p><codeblock><codeph>`/helion-ceph/cephconfigureation/ansible-playbooks/roles/ceph-client/files/ceph_client_setup-0.80.7_h1.1.fix6_newdebs.tar`
+            example:</p><codeblock><codeph>/helion-ceph/cephconfigureation/ansible-playbooks/roles/ceph-client/files/ceph_client_setup-0.80.7_h1.1.fix6_newdebs.tar
 </codeph></codeblock></li>
 <li>Once the nodes are provisioned (for more information on nodes provisioning, refer <xref
             href="../../../commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita#topic10341/running-provision-tool"
@@ -196,9 +196,9 @@ step is in wrong order. here it wipes existing
 <li>Copy the public key of heat-admin to enable SSH from the <codeph>ceph-admin</codeph> node to
           Helion nodes by entering:<p>a. Start from the KVM host after the helion and Ceph nodes are
             up.</p><p>b. From the root shell on the KVM host, SSH to the seed node, by
-            entering:</p><codeblock><codeph>`ssh &lt;IP of seed&gt;`
-</codeph></codeblock><p>c.
-            Enter: <codeph>scp -i &lt;keypair&gt; /root/.ssh/id_rsa hlinux@&lt;IP of
+            entering:</p><codeblock><codeph>ssh &lt;IP of seed&gt;
+</codeph></codeblock><p>c. Enter:
+              <codeph>scp -i &lt;keypair&gt; /root/.ssh/id_rsa hlinux@&lt;IP of
               ceph-admin&gt;:/home/hlinux/seed-id_rsa.private</codeph>
           </p><p>d. Enter: <codeph>scp -i &lt;keypair&gt; /root/.ssh/id_rsa.pub hlinux@&lt;IP of
               ceph-admin&gt;:/home/hlinux/seed-id_rsa.public</codeph>
