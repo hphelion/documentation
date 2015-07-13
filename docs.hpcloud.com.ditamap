@@ -1767,7 +1767,6 @@
       </topicref>
       <topicref href="CarrierGrade/Installation/carrier-grade-install-non-kvm.dita"/>
       <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-rc0.dita"/>
-      <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-workarounds.dita"/>
     </topicref>
     <topicref href="CarrierGrade/AdminGuideKVM/carrier-grade-admin-guide.ditamap" format="ditamap"/>
     <!-- hiding for RC0

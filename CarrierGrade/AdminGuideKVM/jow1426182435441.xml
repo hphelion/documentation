@@ -4,44 +4,44 @@
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Managing Physical Volumes</title>
-    <shortdesc ixia_locid="2">You can add, delete, and review physical volumes on a compute
+    <title id="1">Managing Physical Volumes</title>
+    <shortdesc id="2">You can add, delete, and review physical volumes on a compute
         host.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Jim Owens</author>
+        <author id="3">Jim Owens</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
-            <p ixia_locid="6">Physical volumes provide storage using local disks. You can use the
+        <context id="context_N1001F_N1001C_N10001" id="4">
+            <p id="6">Physical volumes provide storage using local disks. You can use the
                 web administration or the CLI to manage them. For web administration interface
-                instructions, see <xref href="jow1426183480976.xml" ixia_locid="34"/>.</p>
-            <p ixia_locid="45">As each physical volume is created, it is added to an existing local volume
+                instructions, see <xref href="jow1426183480976.xml" id="34"/>.</p>
+            <p id="45">As each physical volume is created, it is added to an existing local volume
                 group.</p>
         </context>
-        <prereq id="prereq_N1002D_N1001F_N10001" ixia_locid="8">
-            <p ixia_locid="9">Before you can modify the settings for a host, you must lock the host: </p>
-            <codeblock ixia_locid="10"><systemoutput ixia_locid="11">~(keystone_admin)$ </systemoutput><userinput ixia_locid="12">host-lock <varname ixia_locid="13">hostname</varname></userinput></codeblock>
-            <p ixia_locid="35">Before you can add a physical volume, a local volume group must exist on the host. To
-                create one, see <xref href="jow1426181291481.xml" ixia_locid="36"/></p>
+        <prereq id="prereq_N1002D_N1001F_N10001" id="8">
+            <p id="9">Before you can modify the settings for a host, you must lock the host: </p>
+            <codeblock id="10"><systemoutput id="11">~(keystone_admin)$ </systemoutput><userinput id="12">host-lock <varname id="13">hostname</varname></userinput></codeblock>
+            <p id="35">Before you can add a physical volume, a local volume group must exist on the host. To
+                create one, see <xref href="jow1426181291481.xml" id="36"/></p>
         </prereq>
-        <context id="context_N10042_N1001F_N10001" ixia_locid="14">
-            <p ixia_locid="15">The following CLI commands are available for managing physical volumes.</p>
-            <codeblock ixia_locid="16"><systemoutput ixia_locid="17">~(keystone_admin)$ </systemoutput><userinput ixia_locid="18">host-pv-add <varname ixia_locid="19">hostname</varname> <varname ixia_locid="37">groupname</varname> <varname ixia_locid="20">disk_uuid</varname></userinput></codeblock>
-            <p ixia_locid="38">where <nameliteral ixia_locid="39">groupname</nameliteral> is the name of the local volume group to
+        <context id="context_N10042_N1001F_N10001" id="14">
+            <p id="15">The following CLI commands are available for managing physical volumes.</p>
+            <codeblock id="16"><systemoutput id="17">~(keystone_admin)$ </systemoutput><userinput id="18">host-pv-add <varname id="19">hostname</varname> <varname id="37">groupname</varname> <varname id="20">disk_uuid</varname></userinput></codeblock>
+            <p id="38">where <nameliteral id="39">groupname</nameliteral> is the name of the local volume group to
                 which the physical volume is added.</p>
-            <note id="note_N1007A_N1004F_N1001F_N10001" ixia_locid="40">
-                <p ixia_locid="41">The only valid <nameliteral ixia_locid="42">groupname</nameliteral> is
-                        <nameliteral ixia_locid="43">nova-local</nameliteral>.</p>
+            <note id="note_N1007A_N1004F_N1001F_N10001" id="40">
+                <p id="41">The only valid <nameliteral id="42">groupname</nameliteral> is
+                        <nameliteral id="43">nova-local</nameliteral>.</p>
             </note>
-            <p ixia_locid="46">When <nameliteral ixia_locid="47">disk_uuid</nameliteral> indicates
+            <p id="46">When <nameliteral id="47">disk_uuid</nameliteral> indicates
                 the root disk, the physical volume uses a system-designated partition on the root
                 disk. For any other disk, the physical volume uses the entire disk.</p>
-            <codeblock ixia_locid="21"><systemoutput ixia_locid="22">~(keystone_admin)$ </systemoutput><userinput ixia_locid="23">host-pv-delete <varname ixia_locid="24">hostname</varname> <varname ixia_locid="44">nova-local</varname> <varname ixia_locid="25">disk_uuid</varname></userinput></codeblock>
-            <codeblock ixia_locid="26"><systemoutput ixia_locid="27">~(keystone_admin)$ </systemoutput><userinput ixia_locid="28">host-pv-list <varname ixia_locid="29">hostname</varname></userinput></codeblock>
-            <codeblock ixia_locid="30"><systemoutput ixia_locid="31">~(keystone_admin)$ </systemoutput><userinput ixia_locid="32">host-pv-show <varname ixia_locid="33">hostname</varname></userinput></codeblock>
+            <codeblock id="21"><systemoutput id="22">~(keystone_admin)$ </systemoutput><userinput id="23">host-pv-delete <varname id="24">hostname</varname> <varname id="44">nova-local</varname> <varname id="25">disk_uuid</varname></userinput></codeblock>
+            <codeblock id="26"><systemoutput id="27">~(keystone_admin)$ </systemoutput><userinput id="28">host-pv-list <varname id="29">hostname</varname></userinput></codeblock>
+            <codeblock id="30"><systemoutput id="31">~(keystone_admin)$ </systemoutput><userinput id="32">host-pv-show <varname id="33">hostname</varname></userinput></codeblock>
         </context>
-        <postreq id="postreq_N100E8_N1001F_N10001" ixia_locid="49">
-            <p ixia_locid="50">To configure VMs to use local storage, see <xref href="jow1426181040008.xml" ixia_locid="51"/>.</p>
+        <postreq id="postreq_N100E8_N1001F_N10001" id="49">
+            <p id="50">To configure VMs to use local storage, see <xref href="jow1426181040008.xml" id="51"/>.</p>
         </postreq>
     </taskbody>
 </task-wr>

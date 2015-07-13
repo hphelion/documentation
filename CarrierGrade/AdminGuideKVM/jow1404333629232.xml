@@ -4,27 +4,27 @@
     <!-- Modification History
     
 -->
-    <title ixia_locid="1">The Project Menu</title>
-    <shortdesc ixia_locid="2">The <uicontrol ixia_locid="3">Project</uicontrol> menu contains selections for managing the currently
+    <title id="1">The Project Menu</title>
+    <shortdesc id="2">The <uicontrol id="3">Project</uicontrol> menu contains selections for managing the currently
     selected tenant (project).</shortdesc>
     <prolog>
-        <author ixia_locid="4">Jim Owens</author>
-        <author ixia_locid="95">Pedro Sanchez</author>
+        <author id="4">Jim Owens</author>
+        <author id="95">Pedro Sanchez</author>
     </prolog>
     <refbody>
-        <section id="section_N10023_N10020_N10001" ixia_locid="5">
-            <p ixia_locid="6">The <nameliteral ixia_locid="105">Current Tenant</nameliteral> is identified at the top
-                of the <wintitle ixia_locid="106">Information Pane</wintitle>. Users with membership in more than one
+        <section id="section_N10023_N10020_N10001" id="5">
+            <p id="6">The <nameliteral id="105">Current Tenant</nameliteral> is identified at the top
+                of the <wintitle id="106">Information Pane</wintitle>. Users with membership in more than one
                 tenant can select a different tenant using a drop-down list.</p>
-            <fig id="fig_N1002B_N10023_N10020_N10001" ixia_locid="7">
+            <fig id="fig_N1002B_N10023_N10020_N10001" id="7">
                 <image align="" href="Fig_1_page_18.JPG" />
                 <image align="" href="Fig_2_page_18.JPG" />
                 <image align="" href="Fig_3_page_18.JPG" /> 
             </fig>
-            <p ixia_locid="9">The menu is divided into three sections.</p>
+            <p id="9">The menu is divided into three sections.</p>
         </section>
-        <section id="section_N1003C_N10020_N10001" ixia_locid="10">
-            <title ixia_locid="11">Compute</title>
+        <section id="section_N1003C_N10020_N10001" id="10">
+            <title id="11">Compute</title>
             <table id="table_ipm_r3f_44">
                 <tgroup cols="3">
                     <colspec colname="col1" colwidth="14*"/>
@@ -32,90 +32,90 @@
                     <colspec colname="col3" colwidth="26*"/>
                     <thead>
                         <row>
-                            <entry colname="col1" ixia_locid="12">
-                                <p ixia_locid="13">Menu item</p>
+                            <entry colname="col1" id="12">
+                                <p id="13">Menu item</p>
                             </entry>
-                            <entry colname="col2" ixia_locid="14">
-                                <p ixia_locid="15">Description</p>
+                            <entry colname="col2" id="14">
+                                <p id="15">Description</p>
                             </entry>
-                            <entry colname="col3" ixia_locid="16">
-                                <p ixia_locid="17">Reference</p>
+                            <entry colname="col3" id="16">
+                                <p id="17">Reference</p>
                             </entry>
                         </row>
                     </thead>
                     <tbody>
                         <row>
-                            <entry ixia_locid="18">
-                                <p ixia_locid="19">Overview</p>
+                            <entry id="18">
+                                <p id="19">Overview</p>
                             </entry>
-                            <entry ixia_locid="20">
-                                <p ixia_locid="21">Charts and statistics for monitoring compute node
+                            <entry id="20">
+                                <p id="21">Charts and statistics for monitoring compute node
                                     resource usage for instances associated with the tenant
                                     (project).</p>
                             </entry>
-                            <entry ixia_locid="22"/>
+                            <entry id="22"/>
                         </row>
                         <row>
-                            <entry ixia_locid="23">
-                                <p ixia_locid="24">Instances</p>
+                            <entry id="23">
+                                <p id="24">Instances</p>
                             </entry>
-                            <entry ixia_locid="25">
-                                <p ixia_locid="26">Controls for managing instances associated with the tenant, including controls
+                            <entry id="25">
+                                <p id="26">Controls for managing instances associated with the tenant, including controls
                   for creating snapshots.</p>
                             </entry>
-                            <entry ixia_locid="27">
-                                <p ixia_locid="28"><xref href="jow1404333800036.xml" ixia_locid="96"/></p>
+                            <entry id="27">
+                                <p id="28"><xref href="jow1404333800036.xml" id="96"/></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="30">
-                                <p ixia_locid="31">Server Groups</p>
+                            <entry id="30">
+                                <p id="31">Server Groups</p>
                             </entry>
-                            <entry ixia_locid="32">
-                                <p ixia_locid="33">Controls for managing server groups associated with the tenant.</p>
+                            <entry id="32">
+                                <p id="33">Controls for managing server groups associated with the tenant.</p>
                             </entry>
-                            <entry ixia_locid="34">
-                                <p ixia_locid="97"><xref href="jow1404333660893.xml" ixia_locid="98"/></p>
+                            <entry id="34">
+                                <p id="97"><xref href="jow1404333660893.xml" id="98"/></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="35">
-                                <p ixia_locid="36">Volumes</p>
+                            <entry id="35">
+                                <p id="36">Volumes</p>
                             </entry>
-                            <entry ixia_locid="37">
-                                <p ixia_locid="38">Controls for managing virtual disk volumes associated with the tenant's
+                            <entry id="37">
+                                <p id="38">Controls for managing virtual disk volumes associated with the tenant's
                   instances.</p>
                             </entry>
-                            <entry ixia_locid="39">
-                                <p ixia_locid="99"><xref href="jow1404333749994.xml" ixia_locid="100"/></p>
+                            <entry id="39">
+                                <p id="99"><xref href="jow1404333749994.xml" id="100"/></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="40">
-                                <p ixia_locid="41">Images</p>
+                            <entry id="40">
+                                <p id="41">Images</p>
                             </entry>
-                            <entry ixia_locid="42">
-                                <p ixia_locid="43">Controls for managing and launching images, and
+                            <entry id="42">
+                                <p id="43">Controls for managing and launching images, and
                                     creating volumes for images. </p>
                             </entry>
-                            <entry ixia_locid="44"/>
+                            <entry id="44"/>
                         </row>
                         <row>
-                            <entry ixia_locid="45">
-                                <p ixia_locid="46">Access &amp; Security</p>
+                            <entry id="45">
+                                <p id="46">Access &amp; Security</p>
                             </entry>
-                            <entry ixia_locid="47">
-                                <p ixia_locid="48">Controls for network protocol and port security, SSH-based access to virtual
+                            <entry id="47">
+                                <p id="48">Controls for network protocol and port security, SSH-based access to virtual
                   machines, API access to services, and floating IP address allocations. </p>
                             </entry>
-                            <entry ixia_locid="49"/>
+                            <entry id="49"/>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
         </section>
-        <section id="section_N1011D_N10020_N10001" ixia_locid="52">
-            <title ixia_locid="53">Network</title>
+        <section id="section_N1011D_N10020_N10001" id="52">
+            <title id="53">Network</title>
             <table id="table_u3h_gmf_44">
                 <tgroup cols="3">
                     <colspec colname="col1" colwidth="14*"/>
@@ -123,59 +123,59 @@
                     <colspec colname="col3" colwidth="26*"/>
                     <thead>
                         <row>
-                            <entry colname="col1" ixia_locid="54">
-                                <p ixia_locid="55">Menu item</p>
+                            <entry colname="col1" id="54">
+                                <p id="55">Menu item</p>
                             </entry>
-                            <entry colname="col2" ixia_locid="56">
-                                <p ixia_locid="57">Description</p>
+                            <entry colname="col2" id="56">
+                                <p id="57">Description</p>
                             </entry>
-                            <entry colname="col3" ixia_locid="58">
-                                <p ixia_locid="59">Reference</p>
+                            <entry colname="col3" id="58">
+                                <p id="59">Reference</p>
                             </entry>
                         </row>
                     </thead>
                     <tbody>
                         <row>
-                            <entry ixia_locid="60">
-                                <p ixia_locid="61">Network Topology</p>
+                            <entry id="60">
+                                <p id="61">Network Topology</p>
                             </entry>
-                            <entry ixia_locid="62">
-                                <p ixia_locid="63">Configuration charts depicting system networks, instances, and network
+                            <entry id="62">
+                                <p id="63">Configuration charts depicting system networks, instances, and network
                   connections between instances.</p>
                             </entry>
-                            <entry ixia_locid="64"/>
+                            <entry id="64"/>
                         </row>
                         <row>
-                            <entry ixia_locid="65">
-                                <p ixia_locid="66">Networks</p>
+                            <entry id="65">
+                                <p id="66">Networks</p>
                             </entry>
-                            <entry ixia_locid="67">
-                                <p ixia_locid="68">Controls for managing networks for the current tenant, and viewing QoS (Quality
+                            <entry id="67">
+                                <p id="68">Controls for managing networks for the current tenant, and viewing QoS (Quality
                   of Service) policies or weightings for tenants of which the user is a member.</p>
                             </entry>
-                            <entry ixia_locid="69">
-                                <p ixia_locid="72"><xref href="jow1404333674324.xml" ixia_locid="101"/></p>
+                            <entry id="69">
+                                <p id="72"><xref href="jow1404333674324.xml" id="101"/></p>
                             </entry>
                         </row>
                         <row>
-                            <entry ixia_locid="74">
-                                <p ixia_locid="75">Routers</p>
+                            <entry id="74">
+                                <p id="75">Routers</p>
                             </entry>
-                            <entry ixia_locid="76">
-                                <p ixia_locid="77">Controls for managing virtual routers. Tenant members can create and delete
+                            <entry id="76">
+                                <p id="77">Controls for managing virtual routers. Tenant members can create and delete
                   virtual routers, view router details and delete interfaces, and clear
                   gateways.</p>
                             </entry>
-                            <entry ixia_locid="78">
-                                <p ixia_locid="79"><xref href="jow1429628777191.xml" ixia_locid="104"/></p>
+                            <entry id="78">
+                                <p id="79"><xref href="jow1429628777191.xml" id="104"/></p>
                             </entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
         </section>
-        <section id="section_N101BF_N10020_N10001" ixia_locid="81">
-            <title ixia_locid="82">Orchestration</title>
+        <section id="section_N101BF_N10020_N10001" id="81">
+            <title id="82">Orchestration</title>
             <table id="table_ecs_dnf_44">
                 <tgroup cols="3">
                     <colspec colname="col1" colwidth="14*"/>
@@ -183,29 +183,29 @@
                     <colspec colname="col3" colwidth="26*"/>
                     <thead>
                         <row>
-                            <entry colname="col1" ixia_locid="83">
-                                <p ixia_locid="84">Menu item</p>
+                            <entry colname="col1" id="83">
+                                <p id="84">Menu item</p>
                             </entry>
-                            <entry colname="col2" ixia_locid="85">
-                                <p ixia_locid="86">Description</p>
+                            <entry colname="col2" id="85">
+                                <p id="86">Description</p>
                             </entry>
-                            <entry colname="col3" ixia_locid="87">
-                                <p ixia_locid="88">Reference</p>
+                            <entry colname="col3" id="87">
+                                <p id="88">Reference</p>
                             </entry>
                         </row>
                     </thead>
                     <tbody>
                         <row>
-                            <entry ixia_locid="89">
-                                <p ixia_locid="90">Stacks</p>
+                            <entry id="89">
+                                <p id="90">Stacks</p>
                             </entry>
-                            <entry ixia_locid="91">
-                                <p ixia_locid="92">Details for existing services (stacks), and controls for creating new services
+                            <entry id="91">
+                                <p id="92">Details for existing services (stacks), and controls for creating new services
                   (launching stacks). Service details include topologies, resource allocations, and
                   event histories.</p>
                             </entry>
-                            <entry ixia_locid="93">
-                                <p ixia_locid="94"><xref href="jow1404333804266.xml" ixia_locid="103"/></p>
+                            <entry id="93">
+                                <p id="94"><xref href="jow1404333804266.xml" id="103"/></p>
                             </entry>
                         </row>
                     </tbody>

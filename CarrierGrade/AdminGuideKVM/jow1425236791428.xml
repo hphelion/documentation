@@ -4,17 +4,17 @@
 <!-- Modification History
         
 -->
-    <title ixia_locid="1">Viewing the NUMA Node Configuration for a VM</title>
-    <shortdesc ixia_locid="2">You can use the CLI <!-- or the GUI -->to display the NUMA node
+    <title id="1">Viewing the NUMA Node Configuration for a VM</title>
+    <shortdesc id="2">You can use the CLI <!-- or the GUI -->to display the NUMA node
         configuration for a VM.</shortdesc>
     <prolog>
-        <author ixia_locid="3">Jim Owens</author>
+        <author id="3">Jim Owens</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
-            <p ixia_locid="5">Use the following command:</p>
-            <codeblock ixia_locid="8"><systemoutput ixia_locid="9">~(keystone_admin)$ </systemoutput>nova show <varname ixia_locid="10">instance</varname></codeblock>
-            <p ixia_locid="11">where <nameliteral ixia_locid="12">instance</nameliteral> is the name or UUID of the instance.</p>
+        <context id="context_N1001F_N1001C_N10001" id="4">
+            <p id="5">Use the following command:</p>
+            <codeblock id="8"><systemoutput id="9">~(keystone_admin)$ </systemoutput>nova show <varname id="10">instance</varname></codeblock>
+            <p id="11">where <nameliteral id="12">instance</nameliteral> is the name or UUID of the instance.</p>
             <!-- need sample output, plus an explanation of it -->
         </context>
     </taskbody>

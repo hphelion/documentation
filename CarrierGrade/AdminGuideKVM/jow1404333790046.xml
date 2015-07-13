@@ -3,406 +3,406 @@
 <concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333790046" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
     <!-- Modification History
    -->
-    <title ixia_locid="1">Host Inventory</title>
-    <shortdesc ixia_locid="2">The <uicontrol ixia_locid="3">Hosts</uicontrol> tab on the <wintitle ixia_locid="4">System Inventory</wintitle> page provides an overview of the current
+    <title id="1">Host Inventory</title>
+    <shortdesc id="2">The <uicontrol id="3">Hosts</uicontrol> tab on the <wintitle id="4">System Inventory</wintitle> page provides an overview of the current
         state of all hosts in the HP Helion OpenStack Carrier Grade cluster. From this tab, you can obtain detailed
         information about the hosts, and execute maintenance operations.</shortdesc>
     <prolog>
-        <author ixia_locid="5">Pedro Sanchez</author>
+        <author id="5">Pedro Sanchez</author>
     </prolog>
     <conbody>
-        <p ixia_locid="6">A sample hosts tab is illustrated below:</p>
-        <fig id="fig_N1002B_N10024_N10001" ixia_locid="7">
-            <image href="Fig_1_page_86.JPG" id="image_fkn_nbs_l4" ixia_locid="8" placement="inline" width="6in"/>
+        <p id="6">A sample hosts tab is illustrated below:</p>
+        <fig id="fig_N1002B_N10024_N10001" id="7">
+            <image href="Fig_1_page_86.JPG" id="image_fkn_nbs_l4" id="8" placement="inline" width="6in"/>
         </fig>
-        <p ixia_locid="9">The information is refreshed periodically to reflect the ongoing changes
+        <p id="9">The information is refreshed periodically to reflect the ongoing changes
             on the cluster. It consists of the following columns:</p>
         <dl>
-            <dlentry ixia_locid="10">
-                <dt ixia_locid="11">Host Name</dt>
-                <dd ixia_locid="12">
-                    <p ixia_locid="13">The name assigned to the host. This is an active link
-                        pointing to the detailed inventory page for the host. See <xref href="jow1404333758794.xml" ixia_locid="14"/> for details.</p>
+            <dlentry id="10">
+                <dt id="11">Host Name</dt>
+                <dd id="12">
+                    <p id="13">The name assigned to the host. This is an active link
+                        pointing to the detailed inventory page for the host. See <xref href="jow1404333758794.xml" id="14"/> for details.</p>
                 </dd>
             </dlentry>
-            <dlentry ixia_locid="15">
-                <dt ixia_locid="16">Personality</dt>
-                <dd ixia_locid="17">
-                    <p ixia_locid="18">The personality of the host (controller, compute, or
+            <dlentry id="15">
+                <dt id="16">Personality</dt>
+                <dd id="17">
+                    <p id="18">The personality of the host (controller, compute, or
                         storage).</p>
                 </dd>
             </dlentry>
-            <dlentry ixia_locid="23">
-                <dt ixia_locid="24">Admin State</dt>
-                <dd ixia_locid="25">
-                    <p ixia_locid="26">The administrative state of the host. It can be in one of two
+            <dlentry id="23">
+                <dt id="24">Admin State</dt>
+                <dd id="25">
+                    <p id="26">The administrative state of the host. It can be in one of two
                         states:</p>
                     <dl>
-                        <dlentry ixia_locid="27">
-                            <dt ixia_locid="28">Locked</dt>
-                            <dd ixia_locid="29">
-                                <p ixia_locid="30">The host is administratively prohibited from
+                        <dlentry id="27">
+                            <dt id="28">Locked</dt>
+                            <dd id="29">
+                                <p id="30">The host is administratively prohibited from
                                     performing services. This is the initial state for hosts
                                     auto-discovered in the cluster.</p>
-                                <p ixia_locid="31">A controller node in this state is not functioning in HA mode, and it is not
+                                <p id="31">A controller node in this state is not functioning in HA mode, and it is not
                   running any active controller services.</p>
-                                <p ixia_locid="32">Compute nodes in this state do not provide any
+                                <p id="32">Compute nodes in this state do not provide any
                                     service. In particular, a locked compute node is not running any
                                     virtual machine instances, and no new ones will be scheduled to
                                     run on it.</p>
                             </dd>
                         </dlentry>
-                        <dlentry ixia_locid="33">
-                            <dt ixia_locid="34">Unlocked</dt>
-                            <dd ixia_locid="35">
-                                <p ixia_locid="36">The host is administratively in service.</p>
-                                <p ixia_locid="37">A controller node in this state, and not in the
+                        <dlentry id="33">
+                            <dt id="34">Unlocked</dt>
+                            <dd id="35">
+                                <p id="36">The host is administratively in service.</p>
+                                <p id="37">A controller node in this state, and not in the
                                     failed state, is active in its HA role, and is running the
                                     assigned controller services.</p>
-                                <p ixia_locid="38">A compute node in this state, and not in the
+                                <p id="38">A compute node in this state, and not in the
                                     failed state, is eligible for regular scheduling and maintenance
                                     operations on virtual machines.</p>
-                                <p ixia_locid="276">A storage node in this state, and not in the failed state,
+                                <p id="276">A storage node in this state, and not in the failed state,
                                     provides storage services.</p>
                             </dd>
                         </dlentry>
                     </dl>
                 </dd>
             </dlentry>
-            <dlentry ixia_locid="39">
-                <dt ixia_locid="40">Operational State</dt>
-                <dd ixia_locid="41">
-                    <p ixia_locid="42">The operational state of the host. It can be in one of two
+            <dlentry id="39">
+                <dt id="40">Operational State</dt>
+                <dd id="41">
+                    <p id="42">The operational state of the host. It can be in one of two
                         states:</p>
                     <dl>
-                        <dlentry ixia_locid="43">
-                            <dt ixia_locid="44">Disabled</dt>
-                            <dd ixia_locid="45">
-                                <p ixia_locid="46">Indicates that the host is not providing the
+                        <dlentry id="43">
+                            <dt id="44">Disabled</dt>
+                            <dd id="45">
+                                <p id="46">Indicates that the host is not providing the
                                     expected services. This may be due to the fact that it is in the
                                     process of being unlocked, a failure has occurred, or it is
                                     being automatically recovered due to a failure.</p>
                             </dd>
                         </dlentry>
-                        <dlentry ixia_locid="47">
-                            <dt ixia_locid="48">Enabled</dt>
-                            <dd ixia_locid="49">
-                                <p ixia_locid="50">Indicates that the host is providing the expected
+                        <dlentry id="47">
+                            <dt id="48">Enabled</dt>
+                            <dd id="49">
+                                <p id="50">Indicates that the host is providing the expected
                                     services, even if its operational environment is compromised. In
-                                    the latter case, the host is reported to be in the <i ixia_locid="51">degraded</i> availability state, in which
+                                    the latter case, the host is reported to be in the <i id="51">degraded</i> availability state, in which
                                     case, state maintenance is constantly trying to recover the host
-                                    to fully <i ixia_locid="52">available</i> state through
+                                    to fully <i id="52">available</i> state through
                                     in-service testing.</p>
                             </dd>
                         </dlentry>
                     </dl>
                 </dd>
             </dlentry>
-            <dlentry ixia_locid="53">
-                <dt ixia_locid="54">Availability State</dt>
-                <dd ixia_locid="55">
-                    <p ixia_locid="56">The availability state of the host. It can be in one of the
+            <dlentry id="53">
+                <dt id="54">Availability State</dt>
+                <dd id="55">
+                    <p id="56">The availability state of the host. It can be in one of the
                         following states:</p>
                     <dl>
-                        <dlentry ixia_locid="57">
-                            <dt ixia_locid="58">Offline</dt>
-                            <dd ixia_locid="59">
-                                <p ixia_locid="60">The host is known to the HP Helion OpenStack Carrier Grade, but is
+                        <dlentry id="57">
+                            <dt id="58">Offline</dt>
+                            <dd id="59">
+                                <p id="60">The host is known to the HP Helion OpenStack Carrier Grade, but is
                                     not reachable for maintenance purposes.</p>
                             </dd>
                         </dlentry>
-                        <dlentry ixia_locid="61">
-                            <dt ixia_locid="62">Online</dt>
-                            <dd ixia_locid="63">
-                                <p ixia_locid="64">The host is reachable and ready to be
+                        <dlentry id="61">
+                            <dt id="62">Online</dt>
+                            <dd id="63">
+                                <p id="64">The host is reachable and ready to be
                                     unlocked.</p>
                             </dd>
                         </dlentry>
-                        <dlentry ixia_locid="65">
-                            <dt ixia_locid="66">InTest</dt>
-                            <dd ixia_locid="67">
-                                <p ixia_locid="68">A transient state that occurs when transitioning
-                                    from locked, or from a <i ixia_locid="69">failed</i> operational
+                        <dlentry id="65">
+                            <dt id="66">InTest</dt>
+                            <dd id="67">
+                                <p id="68">A transient state that occurs when transitioning
+                                    from locked, or from a <i id="69">failed</i> operational
                                     state, to unlocked states. While in this state, the host is
                                     executing a series of tests to validate its hardware and
                                     software integrity.</p>
                             </dd>
                         </dlentry>
-                        <dlentry ixia_locid="72">
-                            <dt ixia_locid="73">Available</dt>
-                            <dd ixia_locid="74">
-                                <p ixia_locid="75">The host is fully operational and providing
+                        <dlentry id="72">
+                            <dt id="73">Available</dt>
+                            <dd id="74">
+                                <p id="75">The host is fully operational and providing
                                     services.</p>
                             </dd>
                         </dlentry>
-                        <dlentry ixia_locid="76">
-                            <dt ixia_locid="77">Degraded</dt>
-                            <dd ixia_locid="78">
-                                <p ixia_locid="79">The host is experiencing compromised operational
+                        <dlentry id="76">
+                            <dt id="77">Degraded</dt>
+                            <dd id="78">
+                                <p id="79">The host is experiencing compromised operational
                                     conditions, such as low memory, but is still providing the
                                     expected services. Details about the compromised conditions are
-                                    available through the alarms subsystem. See <xref href="jow1404333759364.xml" ixia_locid="80"/> for
+                                    available through the alarms subsystem. See <xref href="jow1404333759364.xml" id="80"/> for
                                     details.</p>
                             </dd>
                         </dlentry>
-                        <dlentry ixia_locid="81">
-                            <dt ixia_locid="82">Failed</dt>
-                            <dd ixia_locid="83">
-                                <p ixia_locid="84">A major fault has occurred and the host is no
+                        <dlentry id="81">
+                            <dt id="82">Failed</dt>
+                            <dd id="83">
+                                <p id="84">A major fault has occurred and the host is no
                                     longer providing any services. The HP Helion OpenStack Carrier Grade maintenance
                                     system automatically tries to recover hosts in this state.</p>
-                                <p ixia_locid="85">In the case of a compute node, any virtual
+                                <p id="85">In the case of a compute node, any virtual
                                     machines that were running before are immediately evacuated to
                                     another enabled compute node with sufficient available
                                     resources.</p>
                             </dd>
                         </dlentry>
-                        <dlentry ixia_locid="313">
-                            <dt ixia_locid="314">Power-off</dt>
-                            <dd ixia_locid="315">
-                                <p ixia_locid="316">The host is known to have been powered off by a
+                        <dlentry id="313">
+                            <dt id="314">Power-off</dt>
+                            <dd id="315">
+                                <p id="316">The host is known to have been powered off by a
                                     previous maintenance action. </p>
                             </dd>
                         </dlentry>
                     </dl>
                 </dd>
             </dlentry>
-            <dlentry ixia_locid="86">
-                <dt ixia_locid="87">Uptime</dt>
-                <dd ixia_locid="88">
-                    <p ixia_locid="89">The uptime of the host, as reported by the system maintenance
+            <dlentry id="86">
+                <dt id="87">Uptime</dt>
+                <dd id="88">
+                    <p id="89">The uptime of the host, as reported by the system maintenance
                         service.</p>
                 </dd>
             </dlentry>
-            <dlentry ixia_locid="90">
-                <dt ixia_locid="91">Status</dt>
-                <dd ixia_locid="92">
-                    <p ixia_locid="93">An indicator of the immediate activity occurring on the host.
+            <dlentry id="90">
+                <dt id="91">Status</dt>
+                <dd id="92">
+                    <p id="93">An indicator of the immediate activity occurring on the host.
                         It reports transitory steps such as booting, initializing, configuration out
                         of date, and in-test, which a host goes through as it transitions from one
                         administrative or availability state to another.</p>
                 </dd>
             </dlentry>
-            <dlentry ixia_locid="94">
-                <dt ixia_locid="95">Actions</dt>
-                <dd ixia_locid="96">
-                    <p ixia_locid="97">The actions columns presents two buttons, as follows:</p>
+            <dlentry id="94">
+                <dt id="95">Actions</dt>
+                <dd id="96">
+                    <p id="97">The actions columns presents two buttons, as follows:</p>
                     <dl>
-                        <dlentry ixia_locid="98">
-                            <dt ixia_locid="99"><uicontrol ixia_locid="100">Edit Host</uicontrol></dt>
-                            <dd ixia_locid="101">
-                                <p ixia_locid="102">Clicking this button displays the <wintitle ixia_locid="103">Edit Host</wintitle> window as
+                        <dlentry id="98">
+                            <dt id="99"><uicontrol id="100">Edit Host</uicontrol></dt>
+                            <dd id="101">
+                                <p id="102">Clicking this button displays the <wintitle id="103">Edit Host</wintitle> window as
                   illustrated below for a compute node:</p>
-                                <fig id="fig_N101C5_N101BA_N101B1_N101AE_N101A7_N101A0_N1003B_N10024_N10001" ixia_locid="104">
-                                    <image href="jow1404333759894.image" id="image_bnc_dty_l4" ixia_locid="105" placement="inline" width="4in"/>
+                                <fig id="fig_N101C5_N101BA_N101B1_N101AE_N101A7_N101A0_N1003B_N10024_N10001" id="104">
+                                    <image href="jow1404333759894.image" id="image_bnc_dty_l4" id="105" placement="inline" width="4in"/>
                                 </fig>
-                                <p ixia_locid="106">From this window you can modify the host name
+                                <p id="106">From this window you can modify the host name
                                     (compute nodes only), and apply profiles as needed.
-                                    For more about profiles, see <xref href="jow1404333787693.xml" ixia_locid="107"/>.</p>
-                                <p ixia_locid="229">The <uicontrol ixia_locid="230">Board
+                                    For more about profiles, see <xref href="jow1404333787693.xml" id="107"/>.</p>
+                                <p id="229">The <uicontrol id="230">Board
                                         Management</uicontrol> tab gives you access to the
                                     configuration of the management board, if available on the host.
-                                    See <xref href="jow1406727863674.xml" ixia_locid="277"/> for details.</p>
-                                <p ixia_locid="108">Note that this is the same window you use to
+                                    See <xref href="jow1406727863674.xml" id="277"/> for details.</p>
+                                <p id="108">Note that this is the same window you use to
                                     assign the host's personality when installing HP Helion
                                     OpenStack on the host.</p>
                             </dd>
                         </dlentry>
-                        <dlentry ixia_locid="109">
-                            <dt ixia_locid="305"><uicontrol ixia_locid="307">More</uicontrol> (when
+                        <dlentry id="109">
+                            <dt id="305"><uicontrol id="307">More</uicontrol> (when
                                 host is locked)</dt>
-                            <dd ixia_locid="112">
-                                <p ixia_locid="309">This button gives you access to the list of
+                            <dd id="112">
+                                <p id="309">This button gives you access to the list of
                                     maintenance operations that can be initiated on the host. The
                                     list is context sensitive whereby only permissible command
                                     operations are displayed.</p>
                                 <dl>
-                                    <dlentry ixia_locid="115">
-                                        <dt ixia_locid="116">Unlock Host</dt>
-                                        <dd ixia_locid="117">
-                                            <p ixia_locid="118">Used to bring a host into service.
+                                    <dlentry id="115">
+                                        <dt id="116">Unlock Host</dt>
+                                        <dd id="117">
+                                            <p id="118">Used to bring a host into service.
                                                 The first step is to reset the target host to ensure
                                                 that it starts from a well-known state. The host is
                                                 automatically configured, and any required software
                                                 patches are applied.</p>
-                                            <p ixia_locid="119">The state transition only succeeds
+                                            <p id="119">The state transition only succeeds
                                                 if all the necessary configuration components for
                                                 the host are already in place. For example, the
                                                 state transition is rejected on a compute node for
                                                 which no data interfaces are defined.</p>
-                                            <p ixia_locid="246">You can unlock a host from the
+                                            <p id="246">You can unlock a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock ixia_locid="249"><systemoutput ixia_locid="334">~(keystone_admin)$ </systemoutput> <userinput ixia_locid="255">system host-unlock <varname ixia_locid="258">hostname</varname></userinput></codeblock>
+                                            <codeblock id="249"><systemoutput id="334">~(keystone_admin)$ </systemoutput> <userinput id="255">system host-unlock <varname id="258">hostname</varname></userinput></codeblock>
                                         </dd>
                                     </dlentry>
-                                    <dlentry ixia_locid="120">
-                                        <dt ixia_locid="121">Power Off Host</dt>
-                                        <dd ixia_locid="122">
-                                            <p ixia_locid="123">Gracefully powers off the host,
+                                    <dlentry id="120">
+                                        <dt id="121">Power Off Host</dt>
+                                        <dd id="122">
+                                            <p id="123">Gracefully powers off the host,
                                                 ensuring that all system processes are properly shut
                                                 off first. This selection is available if board
                                                 management is configured on the system, the host is
                                                 equipped with an iLO module, and the host is in a
                                                 powered-on state. </p>
-                                            <p ixia_locid="247">You can power off a host from the
+                                            <p id="247">You can power off a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock ixia_locid="250"><systemoutput ixia_locid="335">~(keystone_admin)$ </systemoutput> <userinput ixia_locid="256">system host-power-off <varname ixia_locid="259">hostname</varname></userinput></codeblock>
+                                            <codeblock id="250"><systemoutput id="335">~(keystone_admin)$ </systemoutput> <userinput id="256">system host-power-off <varname id="259">hostname</varname></userinput></codeblock>
                                         </dd>
                                     </dlentry>
-                                    <dlentry ixia_locid="218">
-                                        <dt ixia_locid="219">Power On Host</dt>
-                                        <dd ixia_locid="220">
-                                            <p ixia_locid="221">Powers on the host. This selection
+                                    <dlentry id="218">
+                                        <dt id="219">Power On Host</dt>
+                                        <dd id="220">
+                                            <p id="221">Powers on the host. This selection
                                                 is available if board management is configured on
                                                 the system, the host is equipped with an iLO module,
                                                 and the host is in a powered-off state.</p>
-                                            <p ixia_locid="236">You can power on a host from the
+                                            <p id="236">You can power on a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock ixia_locid="237"><systemoutput ixia_locid="336">~(keystone_admin)$ </systemoutput> <userinput ixia_locid="239">system host-power-on <varname ixia_locid="240">hostname</varname></userinput></codeblock>
+                                            <codeblock id="237"><systemoutput id="336">~(keystone_admin)$ </systemoutput> <userinput id="239">system host-power-on <varname id="240">hostname</varname></userinput></codeblock>
                                         </dd>
                                     </dlentry>
-                                    <dlentry ixia_locid="124">
-                                        <dt ixia_locid="125">Reboot Host</dt>
-                                        <dd ixia_locid="126">
-                                            <p ixia_locid="127">Gracefully shuts down the host,
+                                    <dlentry id="124">
+                                        <dt id="125">Reboot Host</dt>
+                                        <dd id="126">
+                                            <p id="127">Gracefully shuts down the host,
                                                 ensuring that all system processes are properly shut
                                                 off first. The host then reboots automatically.</p>
-                                            <p ixia_locid="278">You can reboot a host from the
+                                            <p id="278">You can reboot a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock ixia_locid="281"><systemoutput ixia_locid="337">~(keystone_admin)$ </systemoutput> <userinput ixia_locid="287">system host-reboot <varname ixia_locid="290">hostname</varname></userinput></codeblock>
+                                            <codeblock id="281"><systemoutput id="337">~(keystone_admin)$ </systemoutput> <userinput id="287">system host-reboot <varname id="290">hostname</varname></userinput></codeblock>
                                         </dd>
                                     </dlentry>
-                                    <dlentry ixia_locid="222">
-                                        <dt ixia_locid="223">Reset Host</dt>
-                                        <dd ixia_locid="224">
-                                            <p ixia_locid="226">Use this selection only if
-                                                  <uicontrol ixia_locid="228">Reboot Host</uicontrol> fails.  It
+                                    <dlentry id="222">
+                                        <dt id="223">Reset Host</dt>
+                                        <dd id="224">
+                                            <p id="226">Use this selection only if
+                                                  <uicontrol id="228">Reboot Host</uicontrol> fails.  It
                                                 performs an out-of-band reset, stopping and
                                                 restarting the host without ensuring that all system
                                                 processes are shut off first.</p>
-                                            <p ixia_locid="227">This selection is available if board
+                                            <p id="227">This selection is available if board
                                                 management is configured on the system, the host is
                                                 equipped with an iLO module, and the host is in a
                                                 powered-on state. </p>
-                                            <p ixia_locid="279">You can reset a host from the
+                                            <p id="279">You can reset a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock ixia_locid="282"><systemoutput ixia_locid="338">~(keystone_admin)$ </systemoutput> <userinput ixia_locid="288">system host-reset <varname ixia_locid="291">hostname</varname></userinput></codeblock>
+                                            <codeblock id="282"><systemoutput id="338">~(keystone_admin)$ </systemoutput> <userinput id="288">system host-reset <varname id="291">hostname</varname></userinput></codeblock>
                                         </dd>
                                     </dlentry>
-                                    <dlentry ixia_locid="128">
-                                        <dt ixia_locid="129">Reinstall Host</dt>
-                                        <dd ixia_locid="130">
-                                            <p ixia_locid="131">Forces a full re-installation of the
+                                    <dlentry id="128">
+                                        <dt id="129">Reinstall Host</dt>
+                                        <dd id="130">
+                                            <p id="131">Forces a full re-installation of the
                                                 HP Helion OpenStack Carrier Grade software on the host. The host's
                                                 hard drive is erased, and the installation process
                                                 is started afresh.</p>
-                                            <note conref="rst1432737677834.xml#rst1432737677834/note_N10195_N10154_N1001F_N10001" id="note_N10195_N10154_N1001F_N10001" ixia_locid="345"/>                                            
+                                            <note conref="rst1432737677834.xml#rst1432737677834/note_N10195_N10154_N1001F_N10001" id="note_N10195_N10154_N1001F_N10001" id="345"/>                                            
                                         </dd>
                                     </dlentry>
-                                    <dlentry ixia_locid="132">
-                                        <dt ixia_locid="133">Delete Host</dt>
-                                        <dd ixia_locid="134">
-                                            <p ixia_locid="135">Removes the host from the inventory database, and its hard drive is
+                                    <dlentry id="132">
+                                        <dt id="133">Delete Host</dt>
+                                        <dd id="134">
+                                            <p id="135">Removes the host from the inventory database, and its hard drive is
                         erased.</p>
-                                            <p ixia_locid="280">You can delete a host from the
+                                            <p id="280">You can delete a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock ixia_locid="283"><systemoutput ixia_locid="339">~(keystone_admin)$ </systemoutput> <userinput ixia_locid="289">system host-delete <varname ixia_locid="292">hostname</varname></userinput></codeblock>
+                                            <codeblock id="283"><systemoutput id="339">~(keystone_admin)$ </systemoutput> <userinput id="289">system host-delete <varname id="292">hostname</varname></userinput></codeblock>
                                         </dd>
                                     </dlentry>
-                                    <dlentry ixia_locid="322">
-                                        <dt ixia_locid="323">Install Patches</dt>
-                                        <dd ixia_locid="324">
-                                            <p ixia_locid="325">Initiates any pending patching operations. Once
+                                    <dlentry id="322">
+                                        <dt id="323">Install Patches</dt>
+                                        <dd id="324">
+                                            <p id="325">Initiates any pending patching operations. Once
                                                 successfully executed, the host returns back to the
-                                                locked state. See <xref href="psa1410446455735.xml" ixia_locid="326"/> for details.</p>
-                                            <p ixia_locid="327">This option is only available if there are patching
+                                                locked state. See <xref href="psa1410446455735.xml" id="326"/> for details.</p>
+                                            <p id="327">This option is only available if there are patching
                                                 operations pending for the host.</p>
                                         </dd>
                                     </dlentry>
                                 </dl>
                             </dd>
                         </dlentry>
-                        <dlentry ixia_locid="311">
-                            <dt ixia_locid="306"><uicontrol ixia_locid="308">More</uicontrol> (when
+                        <dlentry id="311">
+                            <dt id="306"><uicontrol id="308">More</uicontrol> (when
                                 host is unlocked)</dt>
-                            <dd ixia_locid="312">
-                                <p ixia_locid="310">This button gives you access to the list of
+                            <dd id="312">
+                                <p id="310">This button gives you access to the list of
                                     maintenance operations that can be initiated on the host. The
                                     list is context sensitive whereby only permissible command
                                     operations are displayed.</p>
                                 <dl>
-                                    <dlentry ixia_locid="137">
-                                        <dt ixia_locid="138">Lock Host</dt>
-                                        <dd ixia_locid="139">
-                                            <p ixia_locid="140">Attempts to bring the host out of
+                                    <dlentry id="137">
+                                        <dt id="138">Lock Host</dt>
+                                        <dd id="139">
+                                            <p id="140">Attempts to bring the host out of
                                                 service.</p>
-                                            <p ixia_locid="141">On a controller node, the state
+                                            <p id="141">On a controller node, the state
                                                 transition only succeeds if there are no services
                                                 running in active mode on the host.</p>
-                                            <p ixia_locid="143">On a compute node, the state
+                                            <p id="143">On a compute node, the state
                                                 transition only succeeds if all currently running
                                                 instances on the host can be migrated to alternative
                                                 compute nodes. Migration of the virtual machine
                                                 instances is initiated automatically as soon as the
                                                 state transition is requested.</p>
-                                            <note id="note_N103DD_N103CA_N103C1_N103BE_N103B5_N103A8_N10204_N101FB_N101F2_N10044_N10029_N10001" ixia_locid="343">
-                                                <p conref="jow1426942555025.xml#jow1426942555025/local-storage-cold-migration" ixia_locid="344"/>
+                                            <note id="note_N103DD_N103CA_N103C1_N103BE_N103B5_N103A8_N10204_N101FB_N101F2_N10044_N10029_N10001" id="343">
+                                                <p conref="jow1426942555025.xml#jow1426942555025/local-storage-cold-migration" id="344"/>
                                             </note>
-                                            <p ixia_locid="261">You can lock a host from the
+                                            <p id="261">You can lock a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock ixia_locid="263"><systemoutput ixia_locid="340">~(keystone_admin)$ </systemoutput> <userinput ixia_locid="267">system host-lock <varname ixia_locid="269">hostname</varname></userinput></codeblock>
+                                            <codeblock id="263"><systemoutput id="340">~(keystone_admin)$ </systemoutput> <userinput id="267">system host-lock <varname id="269">hostname</varname></userinput></codeblock>
                                         </dd>
                                     </dlentry>
-                                    <dlentry ixia_locid="271">
-                                        <dt ixia_locid="272">Forced Lock Host</dt>
-                                        <dd ixia_locid="273">
-                                            <p ixia_locid="320">Forces the host to be out of
+                                    <dlentry id="271">
+                                        <dt id="272">Forced Lock Host</dt>
+                                        <dd id="273">
+                                            <p id="320">Forces the host to be out of
                                                 service. Use this option only if for some reason you
                                                 cannot bring the host out of service using the
-                                                  <option ixia_locid="275">Lock Host</option>
+                                                  <option id="275">Lock Host</option>
                                                 option. When selected, the system displays a warning
                                                 message appropriate to the personality of the host.
                                                 Use this option with caution.</p>
-                                            <p ixia_locid="293">You can force lock a host from the
+                                            <p id="293">You can force lock a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock ixia_locid="295"><systemoutput ixia_locid="341">~(keystone_admin)$ </systemoutput> <userinput ixia_locid="299">system host-lock --force <varname ixia_locid="301">hostname</varname></userinput></codeblock>
-                                            <p ixia_locid="321">Note that a force lock operation on a
+                                            <codeblock id="295"><systemoutput id="341">~(keystone_admin)$ </systemoutput> <userinput id="299">system host-lock --force <varname id="301">hostname</varname></userinput></codeblock>
+                                            <p id="321">Note that a force lock operation on a
                                                 compute node causes an immediate service outage on
                                                 all hosted virtual machines.</p>
                                         </dd>
                                     </dlentry>
-                                    <dlentry ixia_locid="144">
-                                        <dt ixia_locid="145">Swact Host</dt>
-                                        <dd ixia_locid="146">
-                                            <p ixia_locid="147">This operation is available on
+                                    <dlentry id="144">
+                                        <dt id="145">Swact Host</dt>
+                                        <dd id="146">
+                                            <p id="147">This operation is available on
                                                 controller nodes only, and should be run on the
                                                 active controller to initiate a switch of the
                                                 active/standby roles.</p>
-                                            <p ixia_locid="303"><nameliteral ixia_locid="149">Swact</nameliteral> is an abbreviated form of the
-                                                term <nameliteral ixia_locid="150">Switch
+                                            <p id="303"><nameliteral id="149">Swact</nameliteral> is an abbreviated form of the
+                                                term <nameliteral id="150">Switch
                                                   Active</nameliteral> (host). When selected, this
                                                 option forces the other controller to become the
                                                 active one in the HA cluster. This means that all
                                                 active system services on this controller move to
                                                 standby operation, and that the corresponding
                                                 services on the other controller become active.</p>
-                                            <p ixia_locid="304">Use this option when you need to
+                                            <p id="304">Use this option when you need to
                                                 lock the currently active controller, or do any kind
                                                 of maintenance procedures, for example, when
                                                 updating hardware or replacing faulty
                                                 components.</p>
-                                            <p ixia_locid="294">You can swact a host from the
+                                            <p id="294">You can swact a host from the
                                                 controller's command line, as follows:</p>
-                                            <codeblock ixia_locid="296"><systemoutput ixia_locid="342">~(keystone_admin)$ </systemoutput> <userinput ixia_locid="300">system host-swact --force <varname ixia_locid="302">hostname</varname></userinput></codeblock>
+                                            <codeblock id="296"><systemoutput id="342">~(keystone_admin)$ </systemoutput> <userinput id="300">system host-swact --force <varname id="302">hostname</varname></userinput></codeblock>
                                         </dd>
                                     </dlentry>
-                                    <dlentry ixia_locid="328">
-                                        <dt ixia_locid="329">Install Patches</dt>
-                                        <dd ixia_locid="330">
-                                            <p ixia_locid="331">Initiates any pending patching operations. Once
+                                    <dlentry id="328">
+                                        <dt id="329">Install Patches</dt>
+                                        <dd id="330">
+                                            <p id="331">Initiates any pending patching operations. Once
                                                 successfully executed, the host returns back to the
-                                                unlocked state. See <xref href="psa1410446455735.xml" ixia_locid="332"/> for details.</p>
-                                            <p ixia_locid="333">This option is only available if there are patching
+                                                unlocked state. See <xref href="psa1410446455735.xml" id="332"/> for details.</p>
+                                            <p id="333">This option is only available if there are patching
                                                 operations pending for the host.</p>
                                         </dd>
                                     </dlentry>
@@ -413,120 +413,120 @@
                 </dd>
             </dlentry>
         </dl>
-        <section id="section_N1028E_N10024_N10001" ixia_locid="151">
-            <title ixia_locid="152">The Life Cycle of a host</title>
-            <p ixia_locid="317">The life cycle of a host is the set of state transitions the host
+        <section id="section_N1028E_N10024_N10001" id="151">
+            <title id="152">The Life Cycle of a host</title>
+            <p id="317">The life cycle of a host is the set of state transitions the host
                 goes through as its current state changes. The host states in the HP Helion OpenStack Carrier Grade
-                are based on the <cite ixia_locid="319">ITU X.731 State Management Function
+                are based on the <cite id="319">ITU X.731 State Management Function
                     Specification for Open Systems</cite>.</p>
-            <p ixia_locid="318">The current state of a host is determined by the allowed
+            <p id="318">The current state of a host is determined by the allowed
                 combinations of the administrative, operational, and availability states at any
                 given time. The following figure illustrates the life cycle of a host.</p>
-            <fig id="fig_N1029C_N10290_N10024_N10001" ixia_locid="154">
-                <title ixia_locid="155">The Life Cycle of a Host</title>
-                <image href="jow1404333788253.image" id="image_szm_1lq_n4" ixia_locid="156" placement="inline" width="4in"/>
+            <fig id="fig_N1029C_N10290_N10024_N10001" id="154">
+                <title id="155">The Life Cycle of a Host</title>
+                <image href="jow1404333788253.image" id="image_szm_1lq_n4" id="156" placement="inline" width="4in"/>
             </fig>
-            <p ixia_locid="157">In this figure:</p>
+            <p id="157">In this figure:</p>
             <ul id="ul_opf_4lq_n4">
-                <li ixia_locid="158">
-                    <p ixia_locid="159">the administrative states, locked and unlocked, are presented in two columns</p>
+                <li id="158">
+                    <p id="159">the administrative states, locked and unlocked, are presented in two columns</p>
                 </li>
-                <li ixia_locid="160">
-                    <p ixia_locid="161">the operational states, disabled and enabled, are presented in two rows</p>
+                <li id="160">
+                    <p id="161">the operational states, disabled and enabled, are presented in two rows</p>
                 </li>
-                <li ixia_locid="162">
-                    <p ixia_locid="163">the availability states are presented as elements inside the administrative/operational
+                <li id="162">
+                    <p id="163">the availability states are presented as elements inside the administrative/operational
             matrix</p>
                 </li>
             </ul>
-            <p ixia_locid="164">The description that follows uses the availability states only, since for each state the
+            <p id="164">The description that follows uses the availability states only, since for each state the
         corresponding administrative and operational states can be read directly from the
         figure.</p>
-            <p ixia_locid="165">The life cycle of a new host starts when it is discovered by the
+            <p id="165">The life cycle of a new host starts when it is discovered by the
                 active controller on the internal management network. A new host is initially
-                reported as <i ixia_locid="166">Offline</i>. As an exception, the first controller,
-                    <nameliteral ixia_locid="167">controller-0</nameliteral>, is  automatically set
-                to <i ixia_locid="168">available</i> during initial commissioning. The following are
+                reported as <i id="166">Offline</i>. As an exception, the first controller,
+                    <nameliteral id="167">controller-0</nameliteral>, is  automatically set
+                to <i id="168">available</i> during initial commissioning. The following are
                 the available transitions. Numbers are attached to them for easier reference:</p>
             <dl>
-                <dlentry ixia_locid="169">
-                    <dt ixia_locid="170">(1) 
-                        <i ixia_locid="171">Offline</i> to 
-                        <i ixia_locid="172">Online</i>
+                <dlentry id="169">
+                    <dt id="170">(1) 
+                        <i id="171">Offline</i> to 
+                        <i id="172">Online</i>
                     </dt>
-                    <dd ixia_locid="173">
-                        <p ixia_locid="174">This transition takes place once the administrator
+                    <dd id="173">
+                        <p id="174">This transition takes place once the administrator
                             configures the host name and personality of the host. During the
                             transition, the HP Helion OpenStack Carrier Grade software is installed and the host
                             reboots. The transition concludes when the controller establishes
                             maintenance and inventory connectivity with the new host.</p>
                     </dd>
                 </dlentry>
-                <dlentry ixia_locid="175">
-                    <dt ixia_locid="176">(2) 
-                        <i ixia_locid="177">Online</i> to 
-                        <i ixia_locid="178">InTest</i>
+                <dlentry id="175">
+                    <dt id="176">(2) 
+                        <i id="177">Online</i> to 
+                        <i id="178">InTest</i>
                     </dt>
-                    <dd ixia_locid="179">
-                        <p ixia_locid="180">This transition takes place when the administrator
+                    <dd id="179">
+                        <p id="180">This transition takes place when the administrator
                             requests to move the host from the locked to the unlocked administrative
                             states. The host reboots first. After it finishes booting, it
                             establishes maintenance communication and enters the transient
-                                <nameliteral ixia_locid="181">InTest</nameliteral> state. While in
+                                <nameliteral id="181">InTest</nameliteral> state. While in
                             this state, the configuration is applied, and a set of hardware and
                             software tests are executed to ensure the integrity of the host.</p>
                     </dd>
                 </dlentry>
-                <dlentry ixia_locid="182">
-                    <dt ixia_locid="183">(3) 
-                        <i ixia_locid="184">InTest</i> to 
-                        <i ixia_locid="185">Available</i>, 
-                        <i ixia_locid="186">Degraded</i>, or 
-                        <i ixia_locid="187">Failed</i>
+                <dlentry id="182">
+                    <dt id="183">(3) 
+                        <i id="184">InTest</i> to 
+                        <i id="185">Available</i>, 
+                        <i id="186">Degraded</i>, or 
+                        <i id="187">Failed</i>
                     </dt>
-                    <dd ixia_locid="188">
-                        <p ixia_locid="189">The transition is initiated automatically after the
-                            activities in the transient state <nameliteral ixia_locid="190">inTest</nameliteral> are complete. Depending on the outcome, the
+                    <dd id="188">
+                        <p id="189">The transition is initiated automatically after the
+                            activities in the transient state <nameliteral id="190">inTest</nameliteral> are complete. Depending on the outcome, the
                             host goes into one the three states.</p>
                     </dd>
                 </dlentry>
-                <dlentry ixia_locid="191">
-                    <dt ixia_locid="192">(4) 
-                        <i ixia_locid="193">Failed</i> to 
-                        <i ixia_locid="194">InTest</i>
+                <dlentry id="191">
+                    <dt id="192">(4) 
+                        <i id="193">Failed</i> to 
+                        <i id="194">InTest</i>
                     </dt>
-                    <dd ixia_locid="195">
-                        <p ixia_locid="196">This is a value-added maintenance transition that the HA
+                    <dd id="195">
+                        <p id="196">This is a value-added maintenance transition that the HA
                             framework executes automatically to recover failed hosts.</p>
                     </dd>
                 </dlentry>
-                <dlentry ixia_locid="197">
-                    <dt ixia_locid="198">(5) 
-                        <i ixia_locid="199">Available</i> to/from 
-                        <i ixia_locid="200">Degraded</i>, 
-                        <i ixia_locid="346">Available</i> to 
-                        <i ixia_locid="202">Failed</i>, and
+                <dlentry id="197">
+                    <dt id="198">(5) 
+                        <i id="199">Available</i> to/from 
+                        <i id="200">Degraded</i>, 
+                        <i id="346">Available</i> to 
+                        <i id="202">Failed</i>, and
               
-                        <i ixia_locid="203">Degraded</i> to 
-                        <i ixia_locid="204">Failed</i>
+                        <i id="203">Degraded</i> to 
+                        <i id="204">Failed</i>
                     </dt>
-                    <dd ixia_locid="205">
-                        <p ixia_locid="206">These are transitions that may occur at any time due to
+                    <dd id="205">
+                        <p id="206">These are transitions that may occur at any time due to
                             changes on the operational state and faults on unlocked hosts.</p>
                     </dd>
                 </dlentry>
-                <dlentry ixia_locid="207">
-                    <dt ixia_locid="208">(6) 
-                        <i ixia_locid="209">Available</i>, 
-                        <i ixia_locid="210">Degraded</i>, or 
-                        <i ixia_locid="211">Failed</i>, to 
-                        <i ixia_locid="212">Offline</i>
+                <dlentry id="207">
+                    <dt id="208">(6) 
+                        <i id="209">Available</i>, 
+                        <i id="210">Degraded</i>, or 
+                        <i id="211">Failed</i>, to 
+                        <i id="212">Offline</i>
                     </dt>
-                    <dd ixia_locid="213">
-                        <p ixia_locid="214">These are maintenance transitions that take place
+                    <dd id="213">
+                        <p id="214">These are maintenance transitions that take place
                             automatically to reflect the operational state of a host.</p>
-                        <p ixia_locid="215">On a compute node in <i ixia_locid="216">Available</i>
-                            or <i ixia_locid="217">Degraded</i> state, the transition triggers the
+                        <p id="215">On a compute node in <i id="216">Available</i>
+                            or <i id="217">Degraded</i> state, the transition triggers the
                             migration of the active instances to another available compute node.</p>
                     </dd>
                 </dlentry>

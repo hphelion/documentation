@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en" linking="none" locktitle="no">
     
@@ -13,8 +14,8 @@
                 <vrm release="1.1" version=""/>
             </vrmlist>
         </prodinfo>
-        <!-- bookid ixia_locid="133">
-            <edition ixia_locid="134">Patch 0003</edition>
+        <!-- bookid id="133">
+            <edition id="134">Patch 0003</edition>
         </bookid -->
     </topicmeta>    
     <topicref href="jow1404333560080.xml">
@@ -115,7 +116,7 @@
         <!--<topicref href="jow1404333653614.xml"/> CGTS-1564 -->
         <topicref href="jow1404333798721.xml"/>
         <topicref href="jow1426182913166.xml"
-            ><!-- Managing Host Aggregates --><!-- topicref href="jow1426182838839.xml" ixia_locid="160"/ --></topicref>
+            ><!-- Managing Host Aggregates --><!-- topicref href="jow1426182838839.xml" id="160"/ --></topicref>
     </topicref>
     <topicref href="jow1404333800036.xml">
         <topicref href="jow1404333663095.xml"/>

@@ -1,187 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River BookMap//EN" "bookmap-wr.dtd">
-<bookmap-wr domains="(map bookmap bookmap-wr)                          (topic delay-d)                          (map mapgroup-d)                          (topic indexing-d)                           (topic xnal-d)                          (topic hi-d)                           (topic pr-d)                           (topic sw-d)                          (topic ui-d)                          (topic wr-sw-d)                          (topic xml-d)                          a(loc  ixia_locid)                         " id="jow1404333828882" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<bookmap-wr domains="(map bookmap bookmap-wr)                          (topic delay-d)                          (map mapgroup-d)                          (topic indexing-d)                           (topic xnal-d)                          (topic hi-d)                           (topic pr-d)                           (topic sw-d)                          (topic ui-d)                          (topic wr-sw-d)                          (topic xml-d)                          a(loc  id)                         " id="jow1404333828882" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
     <!-- Modification History
  -->
-    <booktitle ixia_locid="1">
-        <mainbooktitle ixia_locid="114">HP Helion OpenStack Carrier Grade 1.1: Administrator
+    <booktitle id="1">
+        <mainbooktitle id="114">HP Helion OpenStack Carrier Grade 1.1: Administrator
             Guide</mainbooktitle>
     </booktitle>
     <bookmeta>
         <prodinfo>
-            <prodname ixia_locid="28">HP Helion OpenStack Carrier Grade</prodname>
+            <prodname id="28">HP Helion OpenStack Carrier Grade</prodname>
             <vrmlist>
                 <vrm release="1.1" version=""/>
             </vrmlist>
         </prodinfo>
-        <!-- bookid ixia_locid="133">
-            <edition ixia_locid="134">Patch 0003</edition>
+        <!-- bookid id="133">
+            <edition id="134">Patch 0003</edition>
         </bookid -->
     </bookmeta>
-    <chapter href="jow1404333560080.xml" ixia_locid="57">
+    <chapter href="jow1404333560080.xml" id="57">
         <topicmeta>
-            <navtitle ixia_locid="61">HP Helion OpenStack Carrier Grade 1.1: Administrator Guide</navtitle>
+            <navtitle id="61">HP Helion OpenStack Carrier Grade 1.1: Administrator Guide</navtitle>
         </topicmeta>
-        <topicref href="jow1404333563170.xml" ixia_locid="34"/>
-        <topicref href="jow1404333563834.xml" ixia_locid="40"/>
-        <topicref href="jow1404333564380.xml" ixia_locid="46"/>
-        <topicref href="jow1404333566955.xml" ixia_locid="52">
+        <topicref href="jow1404333563170.xml" id="34"/>
+        <topicref href="jow1404333563834.xml" id="40"/>
+        <topicref href="jow1404333564380.xml" id="46"/>
+        <topicref href="jow1404333566955.xml" id="52">
             
-            <topicref href="jow1404333629232.xml" ixia_locid="58"/>
-            <topicref href="jow1404333729535.xml" ixia_locid="62"/>
-        <topicref href="jow1432757989702.xml" ixia_locid="184"/></topicref>
+            <topicref href="jow1404333629232.xml" id="58"/>
+            <topicref href="jow1404333729535.xml" id="62"/>
+        <topicref href="jow1432757989702.xml" id="184"/></topicref>
     </chapter>
-    <chapter href="jow1404333731418.xml" ixia_locid="121">
+    <chapter href="jow1404333731418.xml" id="121">
         <topicmeta>
-            <navtitle ixia_locid="72">Configuration Planning</navtitle>
+            <navtitle id="72">Configuration Planning</navtitle>
         </topicmeta>
-        <topicref collection-type="family" href="jow1404333731990.xml" ixia_locid="29">
-            <topicref href="jow1423169316542.xml" ixia_locid="143"/><topicref href="jow1423173019489.xml" ixia_locid="144"/><topicref href="jow1404333732592.xml" ixia_locid="35"/>
-            <topicref href="jow1404333736207.xml" ixia_locid="41"/>
-        <topicref href="psa1413402160578.xml" ixia_locid="113"/><topicref href="psa1428687672712.xml" ixia_locid="166"/></topicref>
-        <topicref collection-type="unordered" href="jow1404333674324.xml" ixia_locid="47">
-            <topicref href="jow1404333738594.xml" ixia_locid="66"/>
+        <topicref collection-type="family" href="jow1404333731990.xml" id="29">
+            <topicref href="jow1423169316542.xml" id="143"/><topicref href="jow1423173019489.xml" id="144"/><topicref href="jow1404333732592.xml" id="35"/>
+            <topicref href="jow1404333736207.xml" id="41"/>
+        <topicref href="psa1413402160578.xml" id="113"/><topicref href="psa1428687672712.xml" id="166"/></topicref>
+        <topicref collection-type="unordered" href="jow1404333674324.xml" id="47">
+            <topicref href="jow1404333738594.xml" id="66"/>
             <!-- Tenant Networks -->
-            <topicref href="jow1404333739174.xml" ixia_locid="69">                
+            <topicref href="jow1404333739174.xml" id="69">                
                 
             </topicref>
-            <topicref href="jow1429628777191.xml" ixia_locid="172"><topicref href="jow1429629394435.xml" ixia_locid="173"/><topicref href="jow1429631834947.xml" ixia_locid="174"/><topicref href="jow1429637676342.xml" ixia_locid="175"/></topicref><topicref href="psa1412702861873.xml" ixia_locid="112"/><topicref href="psa1428328539397.xml" ixia_locid="165"/><topicref href="jow1404333739778.xml" ixia_locid="123"/>
-            <topicref href="jow1404333745550.xml" ixia_locid="79"/>
-            <topicref href="jow1404333744498.xml" ixia_locid="82"/>
-            <topicref href="jow1404333749374.xml" ixia_locid="86"/>
+            <topicref href="jow1429628777191.xml" id="172"><topicref href="jow1429629394435.xml" id="173"/><topicref href="jow1429631834947.xml" id="174"/><topicref href="jow1429637676342.xml" id="175"/></topicref><topicref href="psa1412702861873.xml" id="112"/><topicref href="psa1428328539397.xml" id="165"/><topicref href="jow1404333739778.xml" id="123"/>
+            <topicref href="jow1404333745550.xml" id="79"/>
+            <topicref href="jow1404333744498.xml" id="82"/>
+            <topicref href="jow1404333749374.xml" id="86"/>
         </topicref>
-        <topicref href="jow1432395626956.xml" ixia_locid="183"/><topicref href="jow1404333749994.xml" ixia_locid="90">
+        <topicref href="jow1432395626956.xml" id="183"/><topicref href="jow1404333749994.xml" id="90">
             <!-- Local Storage for VMs -->
-            <!-- topicref href="jow1426183574960.xml" ixia_locid="155"/ -->
-            <topicref href="jow1426183480976.xml" ixia_locid="156"/>
+            <!-- topicref href="jow1426183574960.xml" id="155"/ -->
+            <topicref href="jow1426183480976.xml" id="156"/>
         </topicref>
-    <mapref format="ditamap" href="jow1425584355871.ditamap" ixia_locid="152"/></chapter>
+    <mapref format="ditamap" href="jow1425584355871.ditamap" id="152"/></chapter>
 
-    <chapter href="jow1413726521641.xml" ixia_locid="122">
+    <chapter href="jow1413726521641.xml" id="122">
         <topicmeta>
-            <navtitle ixia_locid="124">System Configuration Management</navtitle>
+            <navtitle id="124">System Configuration Management</navtitle>
         </topicmeta>
-        <topicref href="jow1413726817770.xml" ixia_locid="4"/>
-        <topicref href="jow1413726916641.xml" ixia_locid="6"/>
-        <topicref href="jow1413727006955.xml" ixia_locid="7"/>
-        <topicref href="jow1413727043334.xml" ixia_locid="8"/>
-        <topicref href="jow1413727075983.xml" ixia_locid="154"/>
-        <topicref href="jow1413729179585.xml" ixia_locid="10">
+        <topicref href="jow1413726817770.xml" id="4"/>
+        <topicref href="jow1413726916641.xml" id="6"/>
+        <topicref href="jow1413727006955.xml" id="7"/>
+        <topicref href="jow1413727043334.xml" id="8"/>
+        <topicref href="jow1413727075983.xml" id="154"/>
+        <topicref href="jow1413729179585.xml" id="10">
             <!-- Adding an Infrastructure Network Using the CLI : ToC entry suppressed -->
-            <topicref href="jow1420473404578.xml" ixia_locid="136" toc="no"/></topicref>
+            <topicref href="jow1420473404578.xml" id="136" toc="no"/></topicref>
     </chapter>
 
-    <chapter href="jow1404333751142.xml" ixia_locid="83">
+    <chapter href="jow1404333751142.xml" id="83">
         <topicmeta>
-            <navtitle ixia_locid="87">Managing Hardware Resources</navtitle>
+            <navtitle id="87">Managing Hardware Resources</navtitle>
         </topicmeta>
-        <topicref href="jow1404333640333.xml" ixia_locid="30"/>
-        <topicref href="jow1404333645456.xml" ixia_locid="36"/>
-        <topicref collection-type="family" href="jow1404333646078.xml" ixia_locid="42">
-            <topicref href="jow1404333756314.xml" ixia_locid="48"/>
-            <topicref href="jow1404333790046.xml" ixia_locid="54"/>
-            <topicref href="jow1404333787693.xml" ixia_locid="60"/>
+        <topicref href="jow1404333640333.xml" id="30"/>
+        <topicref href="jow1404333645456.xml" id="36"/>
+        <topicref collection-type="family" href="jow1404333646078.xml" id="42">
+            <topicref href="jow1404333756314.xml" id="48"/>
+            <topicref href="jow1404333790046.xml" id="54"/>
+            <topicref href="jow1404333787693.xml" id="60"/>
         </topicref>
-        <topicref href="jow1409782480559.xml" ixia_locid="94">
-            <topicref href="jow1414074190480.xml" ixia_locid="117"/>
-            <topicref href="jow1418931203210.xml" ixia_locid="132">
-                <topicref href="jow1414074167395.xml" ixia_locid="119"/>
-                <topicref href="jow1418924302353.xml" ixia_locid="131"/>
+        <topicref href="jow1409782480559.xml" id="94">
+            <topicref href="jow1414074190480.xml" id="117"/>
+            <topicref href="jow1418931203210.xml" id="132">
+                <topicref href="jow1414074167395.xml" id="119"/>
+                <topicref href="jow1418924302353.xml" id="131"/>
             </topicref>
         </topicref>
-        <topicref collection-type="family" href="jow1404333758794.xml" ixia_locid="64">
-            <topicref href="jow1404333793412.xml" ixia_locid="67"/>
+        <topicref collection-type="family" href="jow1404333758794.xml" id="64">
+            <topicref href="jow1404333793412.xml" id="67"/>
             <!-- Viewing NUMA Node Resources on a Host -->            
                         
-            <topicref href="jow1404333768530.xml" ixia_locid="70"><topicref href="jow1425236831500.xml" ixia_locid="147"/><topicref href="jow1426618822854.xml" ixia_locid="162"/></topicref>
+            <topicref href="jow1404333768530.xml" id="70"><topicref href="jow1425236831500.xml" id="147"/><topicref href="jow1426618822854.xml" id="162"/></topicref>
             <!-- Huge Page Provisioning -->
-            <topicref href="jow1404333795559.xml" ixia_locid="74">
-                <topicref href="jow1423087781001.xml" ixia_locid="140">                    
+            <topicref href="jow1404333795559.xml" id="74">
+                <topicref href="jow1423087781001.xml" id="140">                    
                 <!-- Provisioning Huge Pages in Horizon -->
-                <topicref href="jow1423088885963.xml" ixia_locid="141"/>
-                <topicref href="jow1423089015252.xml" ixia_locid="142"/>
+                <topicref href="jow1423088885963.xml" id="141"/>
+                <topicref href="jow1423089015252.xml" id="142"/>
                 
-            <topicref href="jow1429811350849.xml" ixia_locid="176"/></topicref>
+            <topicref href="jow1429811350849.xml" id="176"/></topicref>
             </topicref>
-            <topicref href="jow1404333787180.xml" ixia_locid="80"><topicref href="jow1426181291481.xml" ixia_locid="158"/><topicref href="jow1426182435441.xml" ixia_locid="157"/></topicref>
-            <topicref href="jow1404333798087.xml" ixia_locid="84"/>
-            <topicref href="jow1404333777760.xml" ixia_locid="88"/>
+            <topicref href="jow1404333787180.xml" id="80"><topicref href="jow1426181291481.xml" id="158"/><topicref href="jow1426182435441.xml" id="157"/></topicref>
+            <topicref href="jow1404333798087.xml" id="84"/>
+            <topicref href="jow1404333777760.xml" id="88"/>
         </topicref>
-        <!--<topicref href="jow1404333653614.xml" ixia_locid="91"/> CGTS-1564 -->
-        <topicref href="jow1404333798721.xml" ixia_locid="77"/>
-    <topicref href="jow1426182913166.xml" ixia_locid="159">
+        <!--<topicref href="jow1404333653614.xml" id="91"/> CGTS-1564 -->
+        <topicref href="jow1404333798721.xml" id="77"/>
+    <topicref href="jow1426182913166.xml" id="159">
         <!-- Managing Host Aggregates -->
-        <!-- topicref href="jow1426182838839.xml" ixia_locid="160"/ -->
+        <!-- topicref href="jow1426182838839.xml" id="160"/ -->
     </topicref>
     </chapter>
-    <chapter href="jow1404333800036.xml" ixia_locid="78">
+    <chapter href="jow1404333800036.xml" id="78">
         <topicmeta>
-            <navtitle ixia_locid="18">Managing Virtual Machines</navtitle>
+            <navtitle id="18">Managing Virtual Machines</navtitle>
         </topicmeta>
-        <topicref href="jow1404333663095.xml" ixia_locid="31">
+        <topicref href="jow1404333663095.xml" id="31">
             
             
             
         </topicref>
-        <topicref href="jow1429538642910.xml" ixia_locid="167"><topicref href="jow1429544114897.xml" ixia_locid="168"/><topicref href="jow1429544935360.xml" ixia_locid="169"/><topicref href="jow1425236666266.xml" ixia_locid="150">
+        <topicref href="jow1429538642910.xml" id="167"><topicref href="jow1429544114897.xml" id="168"/><topicref href="jow1429544935360.xml" id="169"/><topicref href="jow1425236666266.xml" id="150">
                 <!-- Viewing the NUMA Node Configuration for a VM -->
-                <topicref href="jow1425236791428.xml" ixia_locid="149" toc="no"/>
-            </topicref><topicref href="jow1425236723556.xml" ixia_locid="151"/><topicref href="jow1426625051841.xml" ixia_locid="163"/><topicref href="jow1424723681500.xml" ixia_locid="145"/><topicref href="jow1429546712705.xml" ixia_locid="170"/><topicref href="jow1429547742880.xml" ixia_locid="171"/><topicref href="jow1432240580490.xml" ixia_locid="182"/><topicref href="jow1426181040008.xml" ixia_locid="161"/></topicref><topicref href="jow1404333660893.xml" ixia_locid="43"/>
-        <topicref href="jow1404333800588.xml" ixia_locid="37"/>
-        <topicref href="jow1404333655771.xml" ixia_locid="49"/>
-        <topicref href="jow1417813748326.xml" ixia_locid="125">
-            <topicref href="jow1418073771294.xml" ixia_locid="129"/>
-            <topicref href="jow1417817887208.xml" ixia_locid="126">
-            <topicref href="jow1417817540528.xml" ixia_locid="127"/>
+                <topicref href="jow1425236791428.xml" id="149" toc="no"/>
+            </topicref><topicref href="jow1425236723556.xml" id="151"/><topicref href="jow1426625051841.xml" id="163"/><topicref href="jow1424723681500.xml" id="145"/><topicref href="jow1429546712705.xml" id="170"/><topicref href="jow1429547742880.xml" id="171"/><topicref href="jow1432240580490.xml" id="182"/><topicref href="jow1426181040008.xml" id="161"/></topicref><topicref href="jow1404333660893.xml" id="43"/>
+        <topicref href="jow1404333800588.xml" id="37"/>
+        <topicref href="jow1404333655771.xml" id="49"/>
+        <topicref href="jow1417813748326.xml" id="125">
+            <topicref href="jow1418073771294.xml" id="129"/>
+            <topicref href="jow1417817887208.xml" id="126">
+            <topicref href="jow1417817540528.xml" id="127"/>
         </topicref></topicref>
-        <topicref href="jow1404333802962.xml" ixia_locid="55"/>
+        <topicref href="jow1404333802962.xml" id="55"/>
     </chapter>
     
-    <chapter href="jow1432045490465.xml" ixia_locid="95">
+    <chapter href="jow1432045490465.xml" id="95">
         <topicmeta>
-            <navtitle ixia_locid="98">Fault Management</navtitle>
+            <navtitle id="98">Fault Management</navtitle>
         </topicmeta>
-        <topicref href="jow1404333759364.xml" ixia_locid="177"><!-- System Alarms -->
-            <topicref href="psa1408039460152.xml" ixia_locid="104"/>
-            <topicref href="psa1408040130437.xml" ixia_locid="106"/>
-            <topicref href="psa1419970253127.xml" ixia_locid="135"/>
-            <topicref href="psa1413927942547.xml" ixia_locid="116"/>
+        <topicref href="jow1404333759364.xml" id="177"><!-- System Alarms -->
+            <topicref href="psa1408039460152.xml" id="104"/>
+            <topicref href="psa1408040130437.xml" id="106"/>
+            <topicref href="psa1419970253127.xml" id="135"/>
+            <topicref href="psa1413927942547.xml" id="116"/>
         </topicref>
-        <topicref href="jow1432045388521.xml" ixia_locid="178">
-            <topicref href="jow1432045421799.xml" ixia_locid="179"/>
+        <topicref href="jow1432045388521.xml" id="178">
+            <topicref href="jow1432045421799.xml" id="179"/>
             
-            <topicref href="jow1432045469285.xml" ixia_locid="181"/>
+            <topicref href="jow1432045469285.xml" id="181"/>
         </topicref>
     </chapter>
-    <chapter href="psa1410446455735.xml" ixia_locid="96">
+    <chapter href="psa1410446455735.xml" id="96">
         <topicmeta>
-            <navtitle ixia_locid="99">Managing Software Patches</navtitle>
+            <navtitle id="99">Managing Software Patches</navtitle>
         </topicmeta>
-        <topicref href="psa1410446807133.xml" ixia_locid="102"/>
-        <topicref href="psa1410446976545.xml" ixia_locid="105"/>
-        <topicref href="psa1414084582159.xml" ixia_locid="120"/><topicref href="psa1410446902796.xml" ixia_locid="107"/>
-    <topicref href="psa1420733173602.xml" ixia_locid="137"/></chapter>
-    <chapter href="psa1410807758201.xml" ixia_locid="97">
+        <topicref href="psa1410446807133.xml" id="102"/>
+        <topicref href="psa1410446976545.xml" id="105"/>
+        <topicref href="psa1414084582159.xml" id="120"/><topicref href="psa1410446902796.xml" id="107"/>
+    <topicref href="psa1420733173602.xml" id="137"/></chapter>
+    <chapter href="psa1410807758201.xml" id="97">
         <topicmeta>
-            <navtitle ixia_locid="100">System Backups</navtitle>
+            <navtitle id="100">System Backups</navtitle>
         </topicmeta>
-        <topicref href="psa1410807811981.xml" ixia_locid="103"/>
-        <topicref href="psa1410807838150.xml" ixia_locid="111"/>
+        <topicref href="psa1410807811981.xml" id="103"/>
+        <topicref href="psa1410807838150.xml" id="111"/>
     </chapter>
-<chapter href="jow1404333804266.xml" ixia_locid="20">
+<chapter href="jow1404333804266.xml" id="20">
         <topicmeta>
-            <navtitle ixia_locid="21">Managing Stacks</navtitle>
+            <navtitle id="21">Managing Stacks</navtitle>
         </topicmeta>
-        <topicref href="jow1404333804837.xml" ixia_locid="32"/>
-        <topicref href="jow1404333806049.xml" ixia_locid="38"/>
-        <topicref href="jow1404333806620.xml" ixia_locid="44"/>
-        <topicref href="jow1404333807231.xml" ixia_locid="50"/>
-        <topicref href="jow1404333628570.xml" ixia_locid="56"/>
+        <topicref href="jow1404333804837.xml" id="32"/>
+        <topicref href="jow1404333806049.xml" id="38"/>
+        <topicref href="jow1404333806620.xml" id="44"/>
+        <topicref href="jow1404333807231.xml" id="50"/>
+        <topicref href="jow1404333628570.xml" id="56"/>
         
-        <topicref href="jow1409240700100.xml" ixia_locid="92"/><topicref href="jow1417818508589.xml" ixia_locid="128"/><topicref href="jow1404916152577.xml" ixia_locid="89"/>
-        <topicref href="jow1404915566084.xml" ixia_locid="85">
-            <topicref href="jow1404333810324.xml" ixia_locid="71"/>
-            <topicref href="jow1404333812899.xml" ixia_locid="75"/>
-        <topicref href="jow1418228891859.xml" ixia_locid="130"/></topicref>
-        <topicref href="jow1409777224536.xml" ixia_locid="93"/><topicref href="jow1404333813579.xml" ixia_locid="81"/>
+        <topicref href="jow1409240700100.xml" id="92"/><topicref href="jow1417818508589.xml" id="128"/><topicref href="jow1404916152577.xml" id="89"/>
+        <topicref href="jow1404915566084.xml" id="85">
+            <topicref href="jow1404333810324.xml" id="71"/>
+            <topicref href="jow1404333812899.xml" id="75"/>
+        <topicref href="jow1418228891859.xml" id="130"/></topicref>
+        <topicref href="jow1409777224536.xml" id="93"/><topicref href="jow1404333813579.xml" id="81"/>
     </chapter></bookmap-wr>

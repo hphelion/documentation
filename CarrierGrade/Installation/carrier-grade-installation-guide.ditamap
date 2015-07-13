@@ -21,6 +21,7 @@
      
         <topicref href="carrier-grade-install-pb-overview.dita"/>
         <topicref href="carrier-grade-technical-overview.dita"/>
+        <topicref href="carrier-grade-support-matrix2.dita"/>
         <topicref href="carrier-grade-support-matrix.dita">
             <topicref href="carrier-grade-support-matrix-non-kvm.dita"/>
             <topicref href="carrier-grade-support-matrix-kvm.dita"/>
@@ -31,5 +32,4 @@
         </topicref>
         <topicref href="carrier-grade-install-non-kvm.dita"/>
         <topicref href="carrier-grade-install-kvm-cloud-rc0.dita"/>
-        <topicref href="carrier-grade-install-pb-workarounds.dita"/>
     </topicref></map>
