@@ -9,6 +9,9 @@
         <author>Pedro Sanchez</author>
     </prolog>
     <body>
+        <section><title>VXLAN not certified</title>
+            The VXLAN feature has not been certified for HP Helion OpenStack Carrier Grade.
+        </section>
         <section>
             <title>Cinder Block Storage snapshot feature not working </title>
             <!-- CG-1043 -->
