@@ -87,31 +87,27 @@ nova list
 nova show &lt;instance id&gt;
 </codeph></codeblock></li>
 <li>Compare the Image ID returned from the <codeph>glance image-list</codeph> command to that
-          returned from the <codeph>nova show</codeph> command.</li>
-<li>Make sure the following commands are working before you start the update:<ul>
+          returned from the <codeph>nova show</codeph> command. <p/>Make sure the following commands
+          are working before you start the update:<ul id="ul_wvj_wzm_rs">
             <li>keystone user-list</li>
             <li>nova list</li>
             <li>neutron net-list</li>
             <li>glance image-list</li>
             <li>os-refresh-config</li>
             <li>os-collect-config</li>
-          </ul></li>
-<li>If you are unsure of the version of Helion you are running, from any Helion node (seed VM,
-          undercloud, or overcloud node),
-          enter:<codeblock><codeph># cat /etc/HP_Helion_version
-</codeph></codeblock></li>
+          </ul>If you are unsure of the version of Helion you are running, from any Helion node
+          (seed VM, undercloud, or overcloud node),
+          enter:<codeblock><codeph># cat /etc/HP_Helion_version</codeph></codeblock></li>
 </ol>
 <p>A sample of the output is:</p>
-<codeblock><codeph>HP Helion Openstack 1.1 Build 81
-</codeph></codeblock>
+<codeblock><codeph>HP Helion Openstack 1.1 Build 81</codeph></codeblock>
 </section>
 <section id="seed-update-process"> <title>Helion v1.1 to v1.1.1 seed update process</title>
 <p>The procedure will guide you through updating to Helion v1.1.1 from the seed host using
           <codeph>update_sd.sh</codeph>.</p>
       <note> You must have the <codeph>jq</codeph> package for your version of Ubuntu installed on
         the seed. If you need to install this package, enter:</note>
-<codeblock><codeph>apt-get install jq
-</codeph></codeblock>
+<codeblock><codeph>apt-get install jq</codeph></codeblock>
 <!--
 **Warning for HP Helion Development Platform users**: Failure to source your `kvm-custom-ips.json` file could result in damage to your HP Helion Development Platform installation. For more information see [Environment Variables being ignored](#envvarsignored).
 -->
