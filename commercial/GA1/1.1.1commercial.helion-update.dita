@@ -185,8 +185,8 @@ cd helion-update-1.1-to-1.1.1
             <codeblock><codeph>source ~/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh ~/tripleo/configs/kvm-custom-ips.json</codeph></codeblock>
           </p>Any additional custom variables that were used for the initial seed installation must
           be exported again. <p>Run the update script from the helion update directory created in
-            Step 12, above.</p><codeph>./update_sd.sh /root/tripleo /root/helion-update-1.1-to-1.1.1
-            |&amp; tee seed_update.log</codeph></li>
+            Step 12, above.</p><codeblock><codeph>./update_sd.sh /root/tripleo /root/helion-update-1.1-to-1.1.1
+            |&amp; tee seed_update.log</codeph></codeblock></li>
 
 <li>To purge the known_hosts entries on the seed machine,
             enter:<codeblock><codeph>ssh-keygen -R &lt;seed_ip_address&gt;
