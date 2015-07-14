@@ -208,7 +208,7 @@ remote_update_tripleo_root_directory = /root/helion-update-1.1-to-1.1.1
             to update the undercloud and overcloud.</p></li>
 </ol>
 </section>
-<section id="uc-update-process"> <title>HP Helion OpenStack 1.1 to 1.1.X undercloud update process</title>
+  <section id="uc-update-process"> <title>Helion v1.1 to v1.1.1 undercloud update process</title>
 <p>The procedure will guide you through updating the undercloud by running the <codeph>update_uc.sh</codeph> shell script.</p>
 <!-- copy note from seed for devplat users -->
 <p>
