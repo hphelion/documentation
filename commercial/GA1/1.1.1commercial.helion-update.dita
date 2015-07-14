@@ -95,10 +95,10 @@ nova show &lt;instance id&gt;
             <li>glance image-list</li>
             <li>os-refresh-config</li>
             <li>os-collect-config</li>
-          </ul>If you are unsure of the version of Helion you are running, from any Helion node
-          (seed VM, undercloud, or overcloud node),
-          enter:<codeblock><codeph># cat /etc/HP_Helion_version</codeph></codeblock></li>
-</ol>
+          </ul><p>If you are unsure of the version of Helion you are running, from any Helion node
+            (seed VM, undercloud, or overcloud node),
+          enter:</p><codeblock><codeph># cat /etc/HP_Helion_version</codeph></codeblock></li>
+          </ol>
 <p>A sample of the output is:</p>
 <codeblock><codeph>HP Helion Openstack 1.1 Build 81</codeph></codeblock>
 </section>
