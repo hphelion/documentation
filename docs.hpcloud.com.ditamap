@@ -1755,11 +1755,6 @@
     </topicref>
     <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-overview.dita">
       <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix2.dita"/>
-      <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix.dita"
-        navtitle="HP Helion OpenStack Carrier Grade 1.1: Support Matrix - OLD">
-        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-non-kvm.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix-kvm.dita"/>
-      </topicref>
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"/>
       <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita">
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"/>

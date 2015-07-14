@@ -24,7 +24,8 @@
  <!--./CarrierGrade/Installation/carrier-grade-technical-overview.md-->
  <!--permalink: /helion/openstack/carrier/technical-overview/--></p>
   
-<p>This page introduces you to HP Helion OpenStack Carrier Grade, a carrier-grade distribution of OpenStack the leading open source cloud computing platform.</p>
+<p>This page introduces you to the technical aspects of  the HP Helion OpenStack Carrier Grade
+      environment that you will be installing..</p>
 <ul>
 <li>
 <xref type="section" href="#topic3485/Helion-services">HP Helion OpenStack services</xref>
@@ -35,26 +36,26 @@
 <li>
 <xref type="section" href="#topic3485/networkarch">Network architecture</xref>
 </li>
-<li>
-<xref type="section" href="#topic3485/next">Hardware requirement</xref>
-</li>
 </ul>
   <p>For more information on the HP Helion OpenStack Carrier Grade environment, also see the
       Reference Logical Architecture section in the <xref
         href="http://docs-staging.hpcloud.com/DRAFT/PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
         format="pdf" scope="external">HP Helion OpenStack Carrier Grade 1.1: Administrator Guide</xref>.</p>
   <section id="Helion-services"> <title>HP Helion OpenStack Carrier Grade services- functional overview</title>
-<p>The following table outlines the functionality of HP Helion OpenStack  Carrier Grade services based on the type of users - Users and Administrators. For a complete description of these services, see the <xref href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita" >Services Overview</xref> page.</p>
+<p>HP Helion OpenStack Carrier Grade  is comprised of several integrated OpenStack services. Each
+        service works through an API (application programming interface) that allows services to
+        work together and allows users to interact with the services. For a complete description of
+        these services, see the <xref
+          href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">Services
+          Overview</xref> page.</p>
 </section>
 <section id="deploy-arch"> <title>Deployment architecture</title>
-<p>You can deploy HP Helion OpenStack Carrier Grade on a <xref href="http://www.linux-kvm.org/page/Main_Page" scope="external" format="html" >KVM hypervisor</xref>.</p>
-<p>The following diagram depicts a simplified deployment scenario using KVM.</p>
-<!-- This image is for beta release only. Replace for beta -->
-
-<!--  
-  <p><xref format="html" href="javascript:window.open('/media/CGH-architecture-rc0.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" > </xref>
-  Click to view larger image; click <b>Back</b> to return.</p> -->
-  <p>  <image href="../../media/CGH-architecture-rc0.png" width="800"/></p>
+<p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack Carrier
+        Grade.</p>
+<!-- This image is for RC0 release only. Replace for GA -->
+  <p>
+        <image href="../../media/CGH-architecture-rc0.png" width="800"/>The following sections
+        describe essential aspects of this diagram.</p>
 
 
 </section>
@@ -72,40 +73,37 @@
 </thead>
 <tbody>
 <row>
-<entry> CLM / OBS</entry>
-<entry> Cloud Management and Object Store Network -- Untagged (Private)</entry>
+    <entry> PXE-1 and  PXE-2</entry>
+    <entry>Boot/initial configuration network. Untagged </entry>
+  </row>  
+<row>
+<entry> CLM / MGMT</entry>
+<entry>Cloud Management Network. Shared between the Non-KVM and KVM regions.</entry>
 </row>
 <row>
-<entry> PXE </entry>
-<entry> Boot/initial configuration network. Untagged </entry>
-</row>
-<row>
-<entry> CAN </entry>
-<entry> Consumer Access Network (shared with WR - OAM)</entry>
+<entry> CAN / OAM</entry>
+<entry>Consumer Access Network Shared between the Non-KVM and KVM regions.</entry>
 </row>
 <row>
 <entry> CTL </entry>
-<entry> IPMI/iLO network (shared with WR) </entry>
+<entry>IPMI/iLO network. Shared between the Non-KVM and KVM regions.</entry>
 </row>
 <row>
-<entry> BLS </entry>
-<entry>Block Storage Network; can be on a separate interface (`intf*`) </entry>
+<entry> BLS / INFRA</entry>
+<entry>Block Storage Network; can be on a separate interface (`intf*`). Shared between the Non-KVM
+                and KVM regions.</entry>
 </row>
 <row>
 <entry> DCM </entry>
-<entry>Data Center Management network (accessible to WR region) and route across multi-DC </entry>
+<entry>Data Center Management network (accessible to KVM region) and route across multi-DC. </entry>
 </row>
 <row>
-<entry> WR-TUL/SR-IOV (Swift) </entry>
-<entry> Tenant Underlay Network from WR region </entry>
+<entry> TUL/SR-IOV  </entry>
+<entry>Tenant Underlay Network from the KVM region </entry>
 </row>
 <row>
-<entry> WR-PXE </entry>
-<entry> Boot/Cloud Management network for WR Cloud/Region -- Untagged</entry>
-</row>
-<row>
-<entry> WR-EXT </entry>
-<entry> External network (FIP network for WR region) </entry>
+<entry> EXT </entry>
+<entry> Provider VLAN as an External network (provides that FIP pool for the KVM region). </entry>
 </row>
 </tbody>
 </tgroup>
@@ -195,7 +193,9 @@
   <p>CLM, PXE, OBS, BLS, WR-PXE, WR-INFRA, WR-TUL will use RFC 1918 non-routable IPs to prevent access to the CLM network from DCM, CLT, or EXT.</p>
 </section>
   <section id="ethernet-interfaces"> <title>Ethernet Interfaces</title>
-    <p>All hosts in the server server connect to at least the internal management network using an Ethernet interface. The ports used for this connection must support network booting and must be configured to be used as the primary booting device for normal operations.</p>
+    <p>All hosts in the server connect to at least the internal management network using an Ethernet
+        interface. The ports used for this connection must support network booting and must be
+        configured to be used as the primary booting device for normal operations.</p>
     <p>Typically this means that they must be on-board ports, since in most BIOS/UEFI implementations only on-board ports can be configured for network booting. You can use ports on a 10 GB NIC instead, if these ports fulfill these requirements.</p>
     <p>The following table illustrates the number and type of Ethernet ports required in two different installation scenarios. It assumes that the ports used to connect to the internal management network are on-board 1 GB ports.</p>
     <p>
@@ -214,10 +214,10 @@
             <entry>
               Controller Node</entry>
             <entry> <ul><li> One 1G on-board interface (Internal management network)</li> 
-              <li>One 1G interface (OAM)</li>
+              <li>One 1G interface (CAN/OAM)</li>
               <li>One optional 1G or 10G interface (Infrastructure network)</li></ul></entry>
             <entry><ul><li>Two 1G on-board interfaces (Internalmanagement network)</li>
-              <li>Two 1G interfaces (OAM)</li>
+              <li>Two 1G interfaces (CAN/OAM)</li>
               <li>Two optional 1G or 10G interfaces (Infrastructure network)
                 NOTE: The controller-0 and controller-1 port configurations must be identical.</li></ul></entry>
             
@@ -241,65 +241,66 @@
     <p>For the controller, a USB interface is required for backup and restore operations, and for software installation if a DVD is not available.</p>
   </section>
   <section id="net"> <title>Network Requirements</title>
-    <p>The networking environment of the Titanium Server incorporates up to five types of network:</p>
+    <p>The KVM regions networking environment incorporates up to five types of network:</p>
     <ul>
-      <li>the internal management network</li>
-      <li>the OAM network</li>
-      <li>one or more provider networks</li>
-      <li>an optional infrastructure network</li>
+      <li><xref href="#topic3485/internal-management-network" format="dita">the internal management
+            network</xref></li>
+      <li><xref href="#topic3485/oam-network" format="dita">the OAM network</xref></li>
+      <li><xref href="#topic3485/provider-network" format="dita">one or more provider
+            networks</xref></li>
+      <li><xref href="#topic3485/infrastructure-network" format="dita">an optional infrastructure
+            network</xref></li>
       <li>an optional board management network. </li>
     </ul>
     <p>Operational requirements for each network are described in the following sections.</p>
   </section>
-  <section id="internal-management-network"> <title>Internal Management Network</title>
-    <p>The internal management network must be implemented as a single, dedicated, Layer 2 broadcast
-      domain for the exclusive use of each server cluster. Sharing of this network by more
-      than one server cluster is not a supported configuration.</p>
-    <p>During the server software installation process, several network services such as BOOTP, DHCP,
-      and PXE, are expected to run over the internal management network. These services
-      are used to bring up the different hosts to an operational state. Therefore, it is
-      mandatory that this network be operational and available in advance, to ensure a
-      successful installation.</p>
-    <p>On each host, the internal management network can be implemented using a 1Gb or 10 Gb Ethernet port. In either
-      case, requirements for this port are:</p>
-    <ul>
-      <li>must be capable of PXE-booting</li>
-      <li>can be used by the motherboard as a primary boot device</li>
-    </ul>
-  </section>
-  <section id="infrastructure-network"> <title>Infrastructure Network</title>
-    <p>This is an optional network.</p>
-    <p>As with the internal management network, the infrastructure network must be implemented as a
-      single, dedicated, Layer 2 broadcast domain for the exclusive use of each server
-      cluster.</p>
-    <p>Sharing of this network by more than one server cluster is not a supported configuration.</p>
-    <p>The infrastructure network can be implemented as a 1Gb or 10 Gb Ethernet network. In its absence, all infrastructure traffic is carried over the internal management network.</p>
-  </section>
-  <section id="oam-network"> <title>OAM Network</title>
-    <p>You should ensure that the following services are available on the OAM Network:</p>
-    <ul>
-      <li>
-        <p>DNS Service - Needed to facilitate the name resolution of servers reachable on the OAM Network.</p>
-        
-        <p>The server can operate without a configured DNS service. However, a DNS service should be in
-          place to ensure that links to external references in the current and future
-          versions of the web administration interface work as expected.</p>
-      </li>
-      <li>
-        <p>NTP Service - The Network Time Protocol (NTP) can be optionally used by the server controller
-          nodes to synchronize their local clocks with a reliable external time
-          reference. However, it is strongly suggested that this service be available,
-          among other things, to ensure that system-wide log reports present a unified
-          view of the day-to-day operations.</p>
-      </li>
-    </ul>
-    <p>The server compute nodes always use the controller nodes as the de-facto time server for the
-      entire cluster.</p>
-  </section>
-  <section id="provider-network"> <title>Provider Network</title>
-    <p>There are no specific requirements for network services to be available on the provider network. However, you must ensure that all network services required by the guests running in the compute nodes are available. For configuration purposes, the compute nodes themselves are entirely served by the services provided by the controller nodes over the internal management network.</p>
-  </section>
-
+  <section id="internal-management-network"><b>Internal Management Network</b>
+      <p>The internal management network must be implemented as a single, dedicated, Layer 2
+        broadcast domain for the exclusive use of each server cluster. Sharing of this network by
+        more than one server cluster is not a supported configuration.</p><p>During the server
+        software installation process, several network services such as BOOTP, DHCP, and PXE, are
+        expected to run over the internal management network. These services are used to bring up
+        the different hosts to an operational state. Therefore, it is mandatory that this network be
+        operational and available in advance, to ensure a successful installation.</p><p>On each
+        host, the internal management network can be implemented using a 1Gb or 10 Gb Ethernet port.
+        In either case, requirements for this port are:</p><ul>
+        <li>must be capable of PXE-booting</li>
+        <li>can be used by the motherboard as a primary boot device</li>
+      </ul></section>
+  <section id="oam-network"><b>CAN/OAM Network</b>
+      <p>You should ensure that the following services are available on the CAN/OAM Network:</p><ul>
+        <li>
+          <p>DNS Service - Needed to facilitate the name resolution of servers reachable on the
+            CAN/OAM Network.</p>
+          <p>The server can operate without a configured DNS service. However, a DNS service should
+            be in place to ensure that links to external references in the current and future
+            versions of the web administration interface work as expected.</p>
+        </li>
+        <li>
+          <p>NTP Service - The Network Time Protocol (NTP) can be optionally used by the server
+            controller nodes to synchronize their local clocks with a reliable external time
+            reference. However, it is strongly suggested that this service be available, among other
+            things, to ensure that system-wide log reports present a unified view of the day-to-day
+            operations.</p>
+        </li>
+      </ul><p>The server compute nodes always use the controller nodes as the time server for the
+        entire cluster.</p>
+    </section>
+  <section id="provider-network"><b>Provider Network</b>
+      <p>There are no specific requirements for network services to be available on the provider
+        network. However, you must ensure that all network services required by the guests running
+        in the compute nodes are available. For configuration purposes, the compute nodes themselves
+        are entirely served by the services provided by the controller nodes over the internal
+        management network.</p></section>
+  
+  <section id="infrastructure-network"><b>Infrastructure Network</b>
+      <p>This is an optional network.</p><p>As with the internal management network, the
+        infrastructure network must be implemented as a single, dedicated, Layer 2 broadcast domain
+        for the exclusive use of each server cluster.</p><p>Sharing of this network by more than one
+        server cluster is not a supported configuration.</p><p>The infrastructure network can be
+        implemented as a 1Gb or 10 Gb Ethernet network. In its absence, all infrastructure traffic
+        is carried over the internal management network.</p></section>
+  
   <section id="next"> <title>Next step</title>
     <p><xref href="carrier-grade-install-pb-prereqs.dita#topic7148">Installation Prerequisites</xref></p>
     <p>

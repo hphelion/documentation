@@ -27,14 +27,53 @@
         <li><xref href="#topic1773/guestOS" format="dita">Guest OS Support Matrix</xref></li>
       </ul></p>
     <section id="hardware"><title>Supported Hardware</title>
-    <p>The following servers are supported for the <xref href="#topic1773/controllers" format="dita"
+      <p>The following servers are supported for the <xref href="#topic1773/hlm" format="dita">HLM
+          host</xref>, and for the <xref href="#topic1773/controllers" format="dita"
           >controllers</xref> and <xref href="#topic1773/compute" format="dita">compute
           servers</xref>.</p>
-    
-      <p id="controllers"><b>Controllers</b></p>
-      <p>The following servers are supported for the controllers in both the <xref
+      <b id="hlm">HLM Host</b>
+      <p>The following servers are supported for use as the HLM host in the current release.</p><table>
+        <tgroup cols="5">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <colspec colname="col3"/>
+          <colspec colname="col4"/>
+          <colspec colname="col5"/>
+          <thead>
+            <row>
+              <entry>Node Type</entry>
+              <entry>Role</entry>
+              <entry>Required Number</entry>
+              <entry>Server Hardware</entry>
+              <entry>Minimum Requirements and Recommendations</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry morerows="3"> HLM Host</entry>
+              <entry morerows="3">Installation/Management</entry>
+              <entry morerows="3">1</entry>
+              <entry>Disk </entry>
+              <entry> 20 GB </entry>
+            </row>
+            <row>
+              <entry>Memory </entry>
+              <entry>4,096 MB</entry>
+            </row>
+            <row>
+              <entry>Network </entry>
+              <entry> </entry>
+            </row>
+            <row>
+              <entry>CPU </entry>
+              <entry> </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table><p id="controllers"><b>Controllers</b></p><p>The following servers are supported for
+        the controllers  in both the <xref
           href="../Overview/carrier-grade-overview-non-kvm.dita#topic1495">Non-KVM region</xref> and
-        <xref href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>.</p>
+          <xref href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>.</p>
       <p>
         <b>HP ProLiant Rack Servers</b>
       </p>
@@ -61,11 +100,9 @@
         </li>
       </ul>
       <p><b>Note:</b> If you are using Gen9 systens, you must update the Snap3 firmware.</p>
-
       <p id="compute"><b>Compute servers</b></p>
-      <p>The following servers are supported for the compute servers in both the <xref
-        href="../Overview/carrier-grade-overview-non-kvm.dita#topic1495">Non-KVM region</xref> and
-        <xref href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>.</p>
+      <p>The following servers are supported for the compute servers  in the <xref
+          href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>.</p>
       <p>
         <b>HP ProLiant BladeSystem</b>
       </p>
@@ -116,7 +153,8 @@
         and <xref href="#topic1773/kvm-config" format="dita">KVM region</xref>.</p>
     
     <p id="hlm-config"><b>HLM Host</b></p>
-    <p>You must have the following hardware configuration for the HLM host.</p>
+    <p>You must have the following hardware configuration for the HLM host. See the <xref
+          href="#topic1773/hlm" format="dita">list of supported servers</xref> for the HLM host.</p>
     <p>
         <ul id="ul_ztp_ljf_qs">
           <li>One baremetal server with a 20GB Disk and 4,096 MB Memory </li>
@@ -126,14 +164,16 @@
           <p id="non-kvm-config"><b>Non-KVM Region</b></p>
       <p>You must have the following hardware configuration for the Non-KVM region:</p><ul>
         <li>
-          <p>3 baremetal systems meeting the requirements as listed below.</p>
+          <p>3 baremetal systems for controllers that meeting the following requirements; see the
+              <xref href="#topic1773/controllers" format="dita">list of supported servers for use as
+              controllers</xref>. </p>
           <ul id="ul_s1h_432_qs">
             <li>For systems with multiple NICs, only one NIC may be active or connected. Compute
               nodes need to have Intel 82599 10G NICs</li>
             <li>Capable of hosting VMs</li>
-            <li>For Compute nodes, Intel or AMD hardware virtualization support required. The CPU
+            <!--Remove for RC0 <li>For Compute nodes, Intel or AMD hardware virtualization support required. The CPU
               cores and memory requirements must be sized based on the VM instances hosted by the
-              Compute node.</li>
+              Compute node.</li>-->
           </ul>
           <p>
             <b>Important:</b> Since the installer currently uses only the first available disk, all
@@ -147,25 +187,28 @@
     <p id="kvm-config"><b>KVM Region</b></p>
     <p>You must have the following hardware configuration for the KVM region:</p><ul>
         <li>
-          <p>two controllers</p>
+          <p>2 baremetal controllers; see the <xref href="#topic1773/controllers" format="dita">list
+              of supported servers for use as controllers</xref>;</p>
         </li>
         <li>
-          <p>16 compute nodes with dual Intel(R) Xeon(R) CPU E5-2670 v2 and E5-2640v3</p>
+          <p>16 compute nodes with dual Intel(R) Xeon(R) CPU E5-2670 v2 and E5-2640v3. See the  and
+              <xref href="#topic1773/compute" format="dita">list of supported servers for use as
+              compute servers</xref> ;</p>
         </li>
         <li>
-          <p>160 virtual machine instances</p>
+          <p>160 virtual machine instances can be configured;</p>
         </li>
         <li>
-          <p>up to four physical ports per compute node</p>
+          <p>up to four physical ports per compute node;</p>
         </li>
         <li>
-          <p>maximum eight AVP vNICs per guest</p>
+          <p>maximum eight AVP vNICs per guest;</p>
         </li>
         <li>
-          <p>maximum eight SR-IOV vNICs per guest</p>
+          <p>maximum eight SR-IOV vNICs per guest;</p>
         </li>
         <li>
-          <p>maximum 32 VFs per NIC</p>
+          <p>maximum 32 VFs per NIC;</p>
         </li>
       </ul></section>
     <section>
@@ -367,10 +410,17 @@
   
 <section id="software">
       <title>Software Requirements</title>
-      <p>Required operating systems, operating system packages, and other software is itemized
-        during the installation. The servers should be baremetal before installation.</p>
-    </section>
- 
+      <p>The following software is required on the servers in HP Helion OpenStack Carrier Grade.</p>
+      <b>HLM Host</b>
+      <p>The HLM Host requires the Ubuntu Server 14.04.2 LTS operating system. You will install
+        Ubuntu during the installation. The required operating system packages, and other software
+        is itemized during the installation.</p>
+      <b>Non-KVM and KVM regions</b>
+      <p>The servers in the non-KVM and KVM regions require the Ubuntu Server 14.04.2 LTS operating
+        system. You will install Ubuntu during the installation. The required operating system
+        packages, and other software is itemized during the installation. The servers should be
+        baremetal before installation.</p></section>
+  
   <section id="guestOS">
       <title>Guest OS Support Matrix</title> The following Guest Operating Systems are supported for
       the HP Helion OpenStack Carrier Grade servers. <p><b>Non-KVM region</b></p>There are no

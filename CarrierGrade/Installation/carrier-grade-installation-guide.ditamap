@@ -18,18 +18,14 @@
         </bookid -->
     </topicmeta>
     <topicref href="carrier-grade-install-pb-overview.dita">
-     
-        <topicref href="carrier-grade-install-pb-overview.dita"/>
         <topicref href="carrier-grade-technical-overview.dita"/>
         <topicref href="carrier-grade-support-matrix2.dita"/>
-        <topicref href="carrier-grade-support-matrix.dita">
-            <topicref href="carrier-grade-support-matrix-non-kvm.dita"/>
-            <topicref href="carrier-grade-support-matrix-kvm.dita"/>
-        </topicref>
         <topicref href="carrier-grade-install-pb-prereqs.dita">
             <topicref href="carrier-grade-install-pb-network-prepare.dita"/>
             <topicref href="carrier-grade-install-NTP.dita"/>
         </topicref>
         <topicref href="carrier-grade-install-non-kvm.dita"/>
-        <topicref href="carrier-grade-install-kvm-cloud-rc0.dita"/>
+        <topicref href="carrier-grade-install-kvm-cloud-rc0.dita">
+            <topicref href="carrier-grade-install-kvm-network-interface.dita"/>
+        </topicref>
     </topicref></map>

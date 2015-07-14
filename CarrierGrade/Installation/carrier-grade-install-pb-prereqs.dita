@@ -107,30 +107,60 @@ export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address&gt;,&lt;provider_net
 </codeph></codeblock></li>
 </ol>
 </section>
-<section id="packages"> <title>Install Ubuntu packages</title>
-<p>Before starting the installation, you must first install  Ubuntu.</p>
-<ol>
-<li>Run the following all in one command to install
-          packages:<codeblock><codeph>sudo su -l -c "apt-get install -y ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager xorg gnome-core gnome-system-tools gnome-app-install vlan sudo ansible"
+<section id="packages"><title>Install Ubuntu packages</title><p>Before starting the installation,
+                                you must install the following packages.</p><p><b>KVM
+                        host</b></p>The following packages are also required on the KVM host:<ul
+                                id="ul_szw_sh4_rs">
+                                <li>ntp </li>
+                                <li>firefox </li>
+                                <li>gedit </li>
+                                <li>xrdp </li>
+                                <li>xfce4 </li>
+                                <li>qemu-kvm </li>
+                                <li>libvirt-bin </li>
+                                <li>openvswitch-switch </li>
+                                <li>openvswitch-common </li>
+                                <li>python-libvirt </li>
+                                <li>qemu-system-x86 </li>
+                                <li>libssl-dev </li>
+                                <li>libffi-dev </li>
+                                <li>git </li>
+                                <li>python-virtualenv </li>
+                                <li>python-dev virt-manager</li>
+                        </ul><p><b>Non-KVM and KVM servers</b></p><p>In addition to the packages for
+                                the KVM host, you must also install:</p><ul id="ul_sdp_vh4_rs">
+                                <li>xorg </li>
+                                <li>gnome-core </li>
+                                <li>gnome-system-tools </li>
+                                <li>gnome-app-install </li>
+                                <li>vlan </li>
+                                <li>sudo </li>
+                                <li>ansible </li>
+                        </ul><p>To install the packages:</p><ol>
+                                <li>On the KLM host, run the following all in one command to install
+                                        packages:
+                                        <codeblock><codeph>sudo su -l -c "apt-get install -y ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager"</codeph></codeblock></li>
+                                <li>On the other servers in the non-KVM region and all KVM region
+                                        servers, run the following all in one command to install
+                                        packages:<codeblock><codeph>sudo su -l -c "apt-get install -y ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager xorg gnome-core gnome-system-tools gnome-app-install vlan sudo ansible"
 </codeph></codeblock></li>
-<li>Add the 802.1q module to the kernel on boot. The 802.1q standard supports VLAN tagging on an
-          ethernet
-          network.<codeblock><codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
+                                <li>Add the 802.1q module to the kernel on boot. The 802.1q standard
+                                        supports VLAN tagging on an ethernet
+                                        network.<codeblock><codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
 </codeph></codeblock></li>
-<li>Reboot the server</li>
-<li>Log out and re-login to the HLM host to activate the proxy configuration.</li>
-</ol>
-</section>
+                                <li>Reboot the server</li>
+                                <li>Log out and re-login to the HLM host to activate the proxy
+                                        configuration.</li>
+                        </ol></section>
 <section id="configure-the-xrdp-remote-desktop-display"> <title>Configure the XRDP remote desktop display</title>
 <p>Configure XRDP for the remote desktop connection to access the server remotely as follows.</p>
 <ol>
 <li>Edit the <codeph>sesman.ini</codeph> file:<p>vi /etc/xrdp/sesman.ini</p><p>a. Update the
-              <codeph>MaxSessions=1</codeph> to <codeph>MaxSessions=50</codeph>.</p><p>b. Configure
-            the system to use
-            XRDP:</p><codeblock><codeph>echo "xfce4-session" &gt; ~/.xinitrc
-</codeph>
-</codeblock><p>c.
-            Save and close the file.</p></li>
+                                                  <codeph>MaxSessions=1</codeph> to
+                                                  <codeph>MaxSessions=50</codeph>.</p><p>b. Save and
+                                                close the file.</p><p>c. Configure the system to use
+                                                XRDP:</p><codeblock><codeph>echo "xfce4-session" &gt; ~/.xinitrc
+</codeph></codeblock></li>
 <li>Restart the XDRP service:<p>sudo /etc/init.d/xrdp restart</p></li>
 </ol>
 <p>If the XDRP display does not work as expected, (you see a gray screen), update the <codeph>startwm.sh</codeph> file:</p>
@@ -161,38 +191,31 @@ fi
 <p>For information on installing NTP on the HLM host, see <xref
           href="../../CarrierGrade/Installation/carrier-grade-install-NTP.dita">Installing an NTP
           Server</xref>.</p>
-</section>
-<section id="getinstall"> <title>Download and unpack the installation packages</title>
-<p>Before you begin, you must download the required HP Helion OpenStack installation package(s):</p>
-<ol>
-<li>Download and extract the <codeph>cg-hlm.qcow2</codeph> file to the images folder:
-            <codeph>/var/lib/libvirt/images</codeph>.</li>
-<li>Download and extract the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file to the
-            <codeph>/root</codeph> directory.</li>
-  <li>Decrypt and untar the PGP file using password cghelion when prompted.
-          <codeblock> gpg -d cg-infra-playbooks.tar.gz.gpg | tar -xzvf </codeblock></li>
-<li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> to the <codeph>/root/cg/</codeph> directory.</li>
-</ol>
-</section>
-<section id="ssh"> <title>Configure SSH</title>
+</section><section id="ssh"> <title>Configure SSH</title>
 <p>On the HLM host, the OpenSSH server must be running and the firewall configuration should allow
         access to the SSH ports.</p>
 <ol>
-<li>Enable root login in the
-          <codeph>/etc/ssh/sshd_config</codeph>:<codeblock><codeph>PermitRootLogin yes
-</codeph></codeblock></li>
-<li>In the <codeph>sshd_config</codeph> file, set the following
+<li>Enable root login in the <codeph>/etc/ssh/sshd_config</codeph>  by setting the following values
+                                        and save the file:
+                                        <codeblock># Authentication:
+LoginGraceTime 120
+#PermitRootLogin without-password
+PermitRootLogin yes
+#StrictModes yes
+StrictModes no
+PermitRootLogin yes
+</codeblock></li>
+<!--<li>In the <codeph>sshd_config</codeph> file, set the following
           variables:<codeblock><codeph># Authentication:
 LoginGraceTime 120
 #PermitRootLogin without-password
 StrictModes no
 </codeph></codeblock></li>
-<li>Disable strict host key checking:<p>a. Navigate to the <codeph>config</codeph>
-            file:</p><codeblock><codeph>cd ~/.ssh/config
-</codeph></codeblock><p>b. Set the
-              <codeph>StrictHostKeyChecking</codeph> variable to
-          No:</p><codeblock><codeph>StrictHostKeyChecking no
-</codeph></codeblock></li>
+--><li>Disable strict host key checking: in the <codeph>~/.ssh/config</codeph> file (create the file if
+                                        it does not exist) add following lines and save the file:
+                                        <codeblock>Host *
+StrictHostKeyChecking no </codeblock></li>
+        
 <li>Restart SSH service<codeblock><codeph>service ssh restart
 </codeph></codeblock></li>
 <li>Configure the public key and passwordless SSH access.<p>a. Enter the following
@@ -206,6 +229,20 @@ StrictModes no
             you get a permission denied error, make sure you are logged in as root.</p></li>
 </ol>
 </section>
+<section id="getinstall"> <title>Download and unpack the installation packages</title>
+<p>Before you begin, you must download the required HP Helion OpenStack installation package(s):</p>
+<ol>
+<li> Download and extract the <codeph>cg-hlm.qcow2</codeph> file to the images folder:
+                                                <codeph>/var/lib/libvirt/images</codeph>.</li>
+<li> Download and extract the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file to the
+                                                <codeph>/root</codeph> directory.</li>
+        <li> Decrypt and untar the PGP file using password <codeph>cghelion</codeph> when prompted.
+                                        <codeblock> gpg -d cg-infra-playbooks.tar.gz.gpg | tar -xzvf </codeblock></li>
+        <li> Create the <codeph>/root/cg/</codeph> directory</li>
+<li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> to the <codeph>/root/cg/</codeph> directory.</li>
+</ol>
+</section>
+        
 <section id="next-step"> <title>Next Step</title>
 <p>
 <xref href="carrier-grade-install-non-kvm.dita#topic10581">Deploying the Non-KVM Region</xref></p>

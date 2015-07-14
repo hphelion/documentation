@@ -79,10 +79,9 @@ password:  admin</codeblock></p><p>Change the password on
                 Range</b> option. See <xref
                 href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita#topic2171"
               />.</li>
-            <li>Create data interface. Due to latest networking changes, ensure you create data
-              interface either of the following AE mode is tied to each interface:
-              <codeblock>eth2 and eth3 - Active/Standby
-eth4 and eth5 - Balanced XOR / Layer 2</codeblock></li>
+            <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107">Create data
+                interface.</xref>
+            </li>
           </ol></li>
         <li><xref
             href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241"
