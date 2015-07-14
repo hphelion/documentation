@@ -230,7 +230,9 @@ StrictHostKeyChecking no </codeblock></li>
 </ol>
 </section>
 <section id="getinstall"> <title>Download and unpack the installation packages</title>
-<p>Before you begin, you must download the required HP Helion OpenStack installation package(s):</p>
+<p>Before you begin, you must download the required HP Helion OpenStack installation package(s).</p>
+                        <p>Note: When downloading installation files, always download and verify the
+                                signature file before installing.  </p>
 <ol>
 <li> Download and extract the <codeph>cg-hlm.qcow2</codeph> file to the images folder:
                                                 <codeph>/var/lib/libvirt/images</codeph>.</li>
