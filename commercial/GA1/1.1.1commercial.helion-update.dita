@@ -106,7 +106,7 @@ nova show &lt;instance id&gt;
 </codeph></codeblock>
 </section>
 <section id="seed-update-process"> <title>Helion v1.1 to v1.1.1 seed update process</title>
-<p>The procedure will guide you through updating to Helion v1.1.1 from the seed using
+<p>The procedure will guide you through updating to Helion v1.1.1 from the seed host using
           <codeph>update_sd.sh</codeph>.</p>
       <note> You must have the <codeph>jq</codeph> package for your version of Ubuntu installed on
         the seed. If you need to install this package, enter:</note>
@@ -115,7 +115,7 @@ nova show &lt;instance id&gt;
 <!--
 **Warning for HP Helion Development Platform users**: Failure to source your `kvm-custom-ips.json` file could result in damage to your HP Helion Development Platform installation. For more information see [Environment Variables being ignored](#envvarsignored).
 -->
-<p>To prepare the seed VM:</p>
+<p>To prepare and update the seed VM:</p>
 <ol>
 <li>Log into the seed VM by
           entering:<codeblock><codeph>ssh root@&lt;seed-ip&gt;
@@ -128,14 +128,12 @@ nova show &lt;instance id&gt;
 mkdir helion-update-1.1-to-1.1.1
 cd helion-update-1.1-to-1.1.1
 </codeph></codeblock></li>
-<li>Download the update kit <codeph>HP_Helion OpenStack </codeph> to the
+  <li>Download the update kit <codeph>HP_Helion_OpenStack_1.1.1.tgz</codeph> to the
             <codeph>helion-update</codeph> directory on the seed VM.</li>
 <li>Extract the update kit by
-          entering:<codeblock><codeph>tar -xvzf HP_Helion_OpenStack 
-</codeph></codeblock></li>
+          entering:<codeblock><codeph>tar -xvzf HP_Helion_OpenStack_1.1.1.tgz</codeph></codeblock></li>
 <li>Copy the <codeph>kvm-custom-ips.json</codeph> file to the new directory by
-          entering:<codeblock><codeph>cp ~/tripleo/configs/kvm-custom-ips.json ~/helion-update-1.1-to-1.1.1/tripleo/configs/kvm-custom-ips.json
-</codeph></codeblock></li>
+          entering:<codeblock><codeph>cp ~/tripleo/configs/kvm-custom-ips.json ~/helion-update-1.1-to-1.1.1/tripleo/configs/kvm-custom-ips.json</codeph></codeblock></li>
 <li>Verify that there is enough free space on the system to carry out the update. The space you need
           must support a copy of the following folders:<ul>
             <li>/root/tripleo </li>
@@ -144,15 +142,14 @@ cd helion-update-1.1-to-1.1.1
             <li>/tftpboot</li>
           </ul></li>
 <li>To see the amount of space these folders require,
-          enter:<codeblock><codeph>du -hcs /root/tripleo /mnt/state /root/helion-update* /tftpboot
-</codeph></codeblock></li>
+          enter:<codeblock><codeph>du -hcs /root/tripleo /mnt/state /root/helion-update* /tftpboot</codeph></codeblock></li>
 <li>Check the free space on the system by
-            entering:<codeblock><codeph>df -h /
-</codeph></codeblock><p>The space required cannot
+            entering:<codeblock><codeph>df -h /</codeph></codeblock><p>The space required cannot
             exceed the space available (that is, the output from the <codeph>du -hcs</codeph>
             command).</p><p>If you need to free up space, you can safely remove the
-              <codeph>HP_Helion_>OpenStack</codeph> update kit that you just extracted</p></li>
-<li>To prepare the seed for starting the update, verify that the following files exist in the seed VM.<ul>
+              <codeph>HP_Helion_OpenStack_1.1.1.tgz</codeph> update kit that you just
+          extracted.</p></li>
+<li>To prepare the seed for starting the update, verify that the following files exist in the seed VM:<ul>
             <li>/root/eca.key</li>
             <li>/root/eca.crt</li>
           </ul><p>If you specified the ephemeral CA key and certificate from a different directory
@@ -174,8 +171,9 @@ openssl x509 -noout -in /root/eca.crt
           displays:</p><codeblock><codeph>unable to load certificate
 140170817259168:error:0906D06C:PEM routines:PEM_read_bio:no start line:pem_lib.c:703:Expecting: TRUSTED CERTIFICATE".
 </codeph></codeblock></li>
-<li>From <codeph>/root</codeph> on the seed, create the <codeph>helion-update-1.1-to-1.1.1</codeph>
-          directory then change to this directory by
+<li><note>Log out of the seed VM. The remaining commands in this section are all executed from the seed
+  host.</note> From <codeph>/root</codeph> on the seed, create the
+            <codeph>helion-update-1.1-to-1.1.1</codeph> directory then change to this directory by
           entering:<codeblock><codeph>cd /root
 mkdir helion-update-1.1-to-1.1.1
 cd helion-update-1.1-to-1.1.1 
@@ -183,23 +181,12 @@ cd helion-update-1.1-to-1.1.1
 <li>Copy the seed update script from the downloaded update kit on the seed VM to the seed by
           entering:<codeblock><codeph>scp root@&lt;seed-vm-ip&gt;:/root/helion-update-1.1-to-1.1.1/tripleo/helion-update/seed_update/update_sd.sh .
 </codeph></codeblock></li>
-<li>Source the <codeph>kvm-custom-ips.json</codeph> file and run the seed update script
-            <codeph>update_sd.sh</codeph> from the seed by entering:<p>
-            <codeblock><codeph>source ~/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh ~/tripleo/configs/kvm-custom-ips.json
-./update_sd.sh &lt;host_tripleo_root_directory&gt; &lt;remote_update_tripleo_root_directory&gt; | tee seed_update.log
-</codeph></codeblock>
-          </p><p>Make sure you run <codeph>update_sd.sh</codeph> from the update directory you
-            created: <codeph>/root/helion-update-1.1-to-1.1.1)</codeph> using the seed's
-              <codeph>tripleo</codeph> root directory (<codeph>/root/tripleo</codeph>) and remote
-            update root (extracted updated kit directory on the seed VM) as arguments.</p><p>For
-            example:</p><codeblock><codeph>host_tripleo_root_directory = /root/tripleo
-remote_update_tripleo_root_directory = /root/helion-update-1.1-to-1.1.1
-</codeph></codeblock><note>If
-            you used any custom variables for the initial installation of the seed, you will need to
-            export them again prior to executing the <codeph>update_sd.sh</codeph>
-            script.</note><p>Once the update is completed, the <codeph>ssh host_key</codeph> of the
-            seed will have changed.</p></li>
-
+  <li>Source the <codeph>kvm-custom-ips.json file</codeph>: <p>
+            <codeblock><codeph>source ~/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh ~/tripleo/configs/kvm-custom-ips.json</codeph></codeblock>
+          </p>Any additional custom variables that were used for the initial seed installation must
+          be exported again. <p>Run the update script from the helion update directory created in
+            Step 12, above.</p><codeph>./update_sd.sh /root/tripleo /root/helion-update-1.1-to-1.1.1
+            |&amp; tee seed_update.log</codeph></li>
 
 <li>To purge the known_hosts entries on the seed machine,
             enter:<codeblock><codeph>ssh-keygen -R &lt;seed_ip_address&gt;
