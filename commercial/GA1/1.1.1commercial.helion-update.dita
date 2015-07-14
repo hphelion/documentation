@@ -145,7 +145,7 @@ cd helion-update-1.1-to-1.1.1
             command).</p><p>If you need to free up space, you can safely remove the
               <codeph>HP_Helion_OpenStack_1.1.1.tgz</codeph> update kit that you just
           extracted.</p></li>
-<li>To prepare the seed for starting the update, verify that the following files exist in the seed VM:<ul>
+<li>Verify that the following files exist in the seed VM:<ul>
             <li>/root/eca.key</li>
             <li>/root/eca.crt</li>
           </ul><p>If you specified the ephemeral CA key and certificate from a different directory
