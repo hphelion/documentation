@@ -76,32 +76,36 @@ For details on the HP Helion Development Platform update to v1.2, see [Updating 
       the current (1.1) version. You can install this update whereever you want but if you use a
       directory other than <codeph>/root/tripleo</codeph>, you will need to modify the commands
       shown.</note>
-<section id="deployment-considerations"> <title>Deployment considerations</title>
-<p>Check that the deployed nodes (all seed VM, undercloud, and overcloud nodes) are accessible (SSH) and pingable. Note the network and bridge configurations on all nodes using the <codeph>ifconfig</codeph> and <codeph>ovs-vsctl show</codeph> commands.</p>
-<p>Check the version of the Glance images that were used to deploy each of the overcloud nodes before the update. To check the Glance image versions:</p>
-<ol>
-<li>SSH to the undercloud node.</li>
-<li>Enter:<codeblock><codeph>source stackrc
+<section id="deployment-considerations">
+      <title>Deployment considerations</title>
+      <p>Check that the deployed nodes (all seed VM, undercloud, and overcloud nodes) are accessible
+        (SSH) and pingable. Note the network and bridge configurations on all nodes using the
+          <codeph>ifconfig</codeph> and <codeph>ovs-vsctl show</codeph> commands.</p>
+      <p>Check the version of the Glance images that were used to deploy each of the overcloud nodes
+        before the update. To check the Glance image versions:</p>
+      <ol>
+        <li>SSH to the undercloud node.</li>
+        <li>Enter:<codeblock><codeph>source stackrc
 glance image-list
 nova list
 nova show &lt;instance id&gt;
 </codeph></codeblock></li>
-<li>Compare the Image ID returned from the <codeph>glance image-list</codeph> command to that
-          returned from the <codeph>nova show</codeph> command. <p/>Make sure the following commands
-          are working before you start the update:<ul id="ul_wvj_wzm_rs">
-            <li>keystone user-list</li>
-            <li>nova list</li>
-            <li>neutron net-list</li>
-            <li>glance image-list</li>
-            <li>os-refresh-config</li>
-            <li>os-collect-config</li>
-          </ul><p>If you are unsure of the version of Helion you are running, from any Helion node
-            (seed VM, undercloud, or overcloud node),
-          enter:</p><codeblock><codeph># cat /etc/HP_Helion_version</codeph></codeblock></li>
-          </ol>
-<p>A sample of the output is:</p>
-<codeblock><codeph>HP Helion Openstack 1.1 Build 81</codeph></codeblock>
-</section>
+        <li>Compare the Image ID returned from the <codeph>glance image-list</codeph> command to
+          that returned from the <codeph>nova show</codeph> command.</li>
+      </ol>
+      <p/>Make sure the following commands are working before you start the update:<ul
+        id="ul_wvj_wzm_rs">
+        <li>keystone user-list</li>
+        <li>nova list</li>
+        <li>neutron net-list</li>
+        <li>glance image-list</li>
+        <li>os-refresh-config</li>
+        <li>os-collect-config</li>
+      </ul><p>If you are unsure of the version of Helion you are running, from any Helion node (seed
+        VM, undercloud, or overcloud node),
+        enter:</p><codeblock><codeph># cat /etc/HP_Helion_version</codeph></codeblock><p>A sample of
+        the output is:</p><codeblock><codeph>HP Helion Openstack 1.1 Build 81</codeph></codeblock>
+    </section>
 <section id="seed-update-process"> <title>Helion v1.1 to v1.1.1 seed update process</title>
 <p>The procedure will guide you through updating to Helion v1.1.1 from the seed host using
           <codeph>update_sd.sh</codeph>.</p>
