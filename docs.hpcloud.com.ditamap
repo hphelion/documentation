@@ -67,6 +67,8 @@
         <topicref href="commercial/GA1/1.1commercial.install-GA-Moonshot.dita"
           navtitle="Managing Moonshot Servers" locktitle="yes"/>
       </topicref>
+      <topicref href="commercial/GA1/1.1commercial.roll.dita"
+        navtitle="Roll Your Own Installation Guide" locktitle="yes"/>
      
        
       <!-- Prereqs -->
@@ -112,8 +114,6 @@
             navtitle="Building Windows Server Guest Images" locktitle="yes"/>
         </topicref>
       </topicref>
-      <topicref href="commercial/GA1/1.1commercial.roll.dita"
-        navtitle="Roll Your Own Installation Guide" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"
         navtitle="Installation Troubleshooting" locktitle="yes" toc="no"/>
       <topicref href="commercial/GA1/Landing/1.1commercial.landing.security.dita" locktitle="yes"
