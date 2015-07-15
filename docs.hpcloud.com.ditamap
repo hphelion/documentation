@@ -1754,8 +1754,8 @@
       </topicref>
     </topicref>
     <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-overview.dita">
-      <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix2.dita"/>
       <topicref href="CarrierGrade/Installation/carrier-grade-technical-overview.dita"/>
+      <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix2.dita"/>
       <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita">
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-NTP.dita"/>
@@ -1821,8 +1821,6 @@
       <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-troubleshooting-overcloud.dita"
       /> -->
     <topichead navtitle="Administrator Guide">
-      <!-- Hiding. Using PDF for RC0  
-      <mapref href="CarrierGrade/AdminGuideNew/carrier-grade-admin-guide.ditamap"/>-->
       <topicref
         href="ftp://16.78.71.141/uploads/hp-hcg-RC0/documentation/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
         format="pdf" navtitle="Administrator Guide (PDF)" scope="external"/>
