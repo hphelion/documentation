@@ -17,9 +17,11 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-install-NTP.md-->
  <!--permalink: /helion/openstack/carrier/install/ntp/--></p>
-<p>This page provides detailed information on <xref type="section" href="#topic4740/client">configuring HP Helion OpenStack Carrier Grade nodes</xref> for Network Time Protocol (NTP) and <xref type="section" href="#topic4740/server">instlling an NTP server on the HLM host</xref>.</p>
-<p>NTP is a networking protocol for clock synchronization between computer systems. The undercloud and overcloud systems are configured as NTP clients during the installation process.</p>
-<p>HP Helion OpenStack Carrier Grade requires that all nodes point to the same NTP server. You can
+<p>This page provides detailed information on <xref type="section" href="#topic4740/client"
+        >configuring HP Helion OpenStack Carrier Grade servers</xref> for Network Time Protocol
+      (NTP) and <xref type="section" href="#topic4740/server">instlling an NTP server on the HLM
+        host</xref>.</p>
+<p>HP Helion OpenStack Carrier Grade requires that all servers point to the same NTP server. You can
       use an external NTP server or configure the HLM host as a server.</p>
 <p>
   <b>Notes:</b>
@@ -44,7 +46,7 @@ server 127.127.1.0
             stratum 8, etc.) in order to use as a source. If one is not available, you may be able
             to <xref type="section" href="#topic4740/fudge">fudge one</xref>.</p></li>
 <li>Configure system time zone using the <codeph>tzselect</codeph> command.<p>a. Change to the
-            /usr/bin/` directory.</p><p>b. Execute the <codeph>tzselect</codeph> command. The
+  <codeph>/usr/bin/</codeph> directory.</p><p>b. Execute the <codeph>tzselect</codeph> command. The
             available time zones are listed.</p><p>c. Select from the listed time zones by entering
             a number at the promnpt.</p><p>The output should be placed in
               <codeph>/etc/profile</codeph> and executed on the command
@@ -61,7 +63,7 @@ LOCAL(0)    .LOCL.  10  l   76h 64  0   0.000   0.000   0.000
             can now point clients to your NTP server</p></li>
 </ol>
 </section>
-<section id="client"> <title>Configure all other nodes as NTP clients</title>
+<section id="client"> <title>Configure all other servers as NTP clients</title>
 <ol>
 <li>SSH to the node you want to configure.</li>
 <li>Add your NTP server IP to the clients <codeph>/etc/ntp.conf</codeph> file.</li>
@@ -96,7 +98,9 @@ ntp0001.use 123 10.22.170.17    2365    4   4   1d0 1000    384
 <section id="fudge"> <title>Fudging a stratum lower than 10</title>
 <p>NTP uses a hierarchical, semi-layered system of time sources. Each level of this hierarchy is termed a <i>stratum</i> and is assigned a number starting with zero at the top. The number represents the distance from the reference clock and is used to prevent cyclical dependencies in the hierarchy.</p>
 <p>The numerically lower the stratum value, the higher priority that clock has.</p>
-<p>HP Helion OpenStack uses stratum 10. Using a numerically high stratum ensures that this is only used if all external clocks fail. This will mitigate skew until external clocks return to service.</p>
+<p>HP Helion OpenStack Carrier Grade uses stratum 10. Using a numerically high stratum ensures that
+        this is only used if all external clocks fail. This will mitigate skew until external clocks
+        return to service.</p>
 <p>If your NTP stratum is numerically less than 10, set up your host as the time source by fudging a stratum 10.</p>
 <ol>
 <li>Configure host as a time source.</li>

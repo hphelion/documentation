@@ -14,7 +14,6 @@
  <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
  <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
   <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a virtual machine for the Helion Lifecycle Management (HLM) and then deploying the HP Helion Openstack cloud.</p>
-  <p>HLM consists of the ongoing operations/maintenance as well as the initial deployment of the HP Helion OpenStack Carrier Grade system.</p>
 
 <section id="prepare"> <title>Prepare the system for deployment</title>
 <p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM host):</p>
@@ -43,11 +42,15 @@
             <li>Execute the <codeph>updatepackages</codeph> command.</li>
             <li>Execute the <codeph>prepareenv</codeph> command.</li>
             <li>Execute the <codeph>Init cobbler</codeph> command.</li>
-            <li>Execute the <codeph>Importiso</codeph> command.</li>
-          </ul> You will see similar message when the playbook is run successful.</li>
-      </ol>
-      <p><image href="../../media/CGH-Install-Ansible.png"/></p>
-    </section>
+            <li>Execute the <codeph>Importiso</codeph> command.<p>You will see similar message when
+                the playbook is run successful:</p></li>
+          </ul>
+          <image href="../../media/CGH-Install-Ansible.png" id="image_jmr_dds_rs"/></li>
+        <li>Locate the IP address for the HLM VM in the
+            <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the HLM host under
+          <codeph>hlm_clmstaticip</codeph> field.</li> 
+      </ol>    
+</section>
   
 <!--<section> <title>Configuring the VSD node, creating user and applying License</title>
   <p>During the <i>Deploy the HLM Cloud and VSD VM</i> section, a vritual machine is created to host VSD. </p>
@@ -122,7 +125,7 @@ VSD Server : auto
 <ol>
 <li>Login to HLM VM.
             <codeblock>ssh &lt;HLM_VM_IP>
-    HLM_VM_IP is the IP (hlm_clmstaticip) configured in the /root/infra-ansible-playbooks/group_vars/all file of the HLM host </codeblock><p>Use
+where: HLM_VM_IP is the IP of the HLM VM. </codeblock><p>Use
             the default credentials:
           <codeblock>User Name: root
 Password: cghelion</codeblock></p></li>
@@ -167,15 +170,15 @@ Password: cghelion</codeblock></p></li>
                 </row>
                 <row>
                   <entry>pm_ip</entry>
-                  <entry>Power management IP (ilo ip)</entry>
+                  <entry>Power management IP (iLO ip)</entry>
                 </row>
                 <row>
                   <entry>pm_user</entry>
-                  <entry>Power management user (ilo username)</entry>
+                  <entry>Power management user (iLO username)</entry>
                 </row>
                 <row>
                   <entry>pm_pass</entry>
-                  <entry>Power management password (ilo password)</entry>
+                  <entry>Power management password (iLO password)</entry>
                 </row>
                 <row>
                   <entry>node_group</entry>
@@ -195,7 +198,7 @@ Password: cghelion</codeblock></p></li>
 </section>
 <section id="pxe-boot"> <title>Configure PXE boot</title>
 <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE boot
-        on cloud nodes to set the correct boot order. Execute the following on the HLM VM:</p>
+        on the servers set the correct boot order. Execute the following on the HLM VM:</p>
 <ol>
 <li>Use the following command to install the <codeph>python-hpilo</codeph> module on HLM
   VM:<codeblock>pip install python-hpilo</codeblock><p>
@@ -211,8 +214,8 @@ Password: cghelion</codeblock></p></li>
 </section>
 <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up"> <title>Create new cloud template and bring the cloud nodes up</title>
 <ol>
-<li>Use the following script to start the provisioning of the HLM VM:<p>hprovision
-              <codeph>&lt;cloudname&gt;</codeph>
+<li>Use the following script to start the provisioning of the HP Helion OpenStack
+            cloud:<p>hprovision <codeph>&lt;cloudname&gt;</codeph>
           </p><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
           </ul><p>This script will PXE boot the nodes specified in
@@ -228,8 +231,10 @@ Password: cghelion</codeblock></p></li>
             that you can establish a password-less SSH connection to these nodes from HLM
           VM.</p></li>
 <li>Modify the <codeph>environment.json</codeph> file to configure the VLANs and network addresses
-          as appropriate for your environment.<codeblock>"cidr": "start-address": </codeblock> The
-          three controller nodes should have CLM, CAN, EXT, BLS on eth0 and TUL on eth1. <!--Hiding for RC0 
+          as appropriate for your environment. Set the following for the CLM, CAN, and BLS
+          network:<codeblock>"cidr": 
+"start-address": </codeblock> The three controller nodes
+          should have CLM, CAN, EXT, BLS on eth0 and TUL on eth1. <!--Hiding for RC0 
               <p>The two compute nodes should have CLM, EXT, BLS on eth0 and TUL on eth1.</p>
            -->
           <p>
@@ -244,11 +249,10 @@ Password: cghelion</codeblock></p></li>
               <codeblock>"count": 2, //number of computes in the resource pool</codeblock></li>
   <li>Update the <codeph>ansible-vars</codeph> section with all the information based on your
               setup.</li>
-  <li>Make sure you have two NTP entries at the end of this <codeph>definition.json</codeph> file as seen
-              in the snapshot. If you have only one NTP server in your environment, specify the same
-              NTP server twice.
-              Example:          
-  <codeblock>
+  <li>Make sure you have two NTP entries at the end of this <codeph>definition.json</codeph> file as
+              seen in the following example. If you have only one NTP server in your environment,
+              specify the same NTP server twice. Example:
+              <codeblock>
      
 {
     "product": {
