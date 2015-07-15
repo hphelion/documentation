@@ -54,8 +54,9 @@
         Grade.</p>
 <!-- This image is for RC0 release only. Replace for GA -->
   <p>
-        <image href="../../media/CGH-architecture-rc0.png" width="800"/>The following sections
-        describe essential aspects of this diagram.</p>
+        <image href="../../media/CGH-architecture-rc0.png" width="800"/></p>
+  <p>The following sections
+    describe essential aspects of this diagram.</p>
 
 
 </section>

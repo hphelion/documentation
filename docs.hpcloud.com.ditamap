@@ -1831,7 +1831,7 @@
       <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-SDK-1.1.pdf" format="pdf"
         navtitle="Software Development Kit (SDK)"/>
     </topichead>
-    <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
+<!--    <topicref href="CarrierGrade/DeploymentScenarios3/jow1410640041471.xml">
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638776646.xml"/>
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1410638924240.xml"/>
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1411430962060.xml"/>
@@ -1843,9 +1843,8 @@
           <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333723047.xml"/>
           <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333728991.xml"/>
           <topicref href="CarrierGrade/DeploymentScenarios3/jow1424192677556.xml"/>
-          <!-- Removing from map until needed for GA release
                   <topicref href="rst1433175643400.xml"/>
-            </topicref>-->
+            </topicref>
           <topicref href="CarrierGrade/DeploymentScenarios3/rst1432665605712.xml"/>
           <topicref href="CarrierGrade/DeploymentScenarios3/jow1410637938926.xml"/>
           <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333714134.xml"/>
@@ -1859,8 +1858,8 @@
           <topicref href="CarrierGrade/DeploymentScenarios3/jow1410804489611.xml"/>
           <topicref href="CarrierGrade/DeploymentScenarios3/jow1408735356648.xml"/>
         </topicref>
-      </topicref>
-      <topicref href="CarrierGrade/DeploymentScenarios3/jow1411149829129.xml"/>
+      </topicref> 
+     <topicref href="CarrierGrade/DeploymentScenarios3/jow1411149829129.xml"/>
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1411149875790.xml"/>
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1411677830752.xml"/>
       <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333819947.xml">
@@ -1876,7 +1875,7 @@
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827217.xml"/>
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827838.xml"/>
       </topicref>
-    </topicref>
+    </topicref>  -->
   </topicref>
   
 </map>
