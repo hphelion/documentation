@@ -237,7 +237,7 @@ Password: cghelion</codeblock></p></li>
           should have CLM, CAN, EXT, BLS on eth0 and TUL on eth1. <!--Hiding for RC0 
               <p>The two compute nodes should have CLM, EXT, BLS on eth0 and TUL on eth1.</p>
            -->
-          <p>
+  <p>  <xref href="environment.json">Deploying the KVM Region</xref>Click here for a sample environment.json file
             <b>Example:</b>
           </p><pre>{</pre><pre>    "product": {</pre><pre>        "version": 1</pre><pre>    },</pre><pre> </pre><pre>    "node-type": [</pre><pre>        {</pre><pre>            "name": "CCN",</pre><pre>            "interface-map": [</pre><pre>                {</pre><pre>                    "name": "INTF0",</pre><pre>                    "ethernet-port-map": {</pre><pre>                        "interface-ports": [ "eth0" ]</pre><pre>                    },</pre><pre>                    "logical-network-map": [</pre><pre>                        {</pre><pre>                            "name": "CLM",</pre><pre>                            "type": "vlan",</pre><pre>                            "segment-id": "502",</pre><pre>                            "network-address": {</pre><pre>                                "cidr": "10.50.2.0/24",</pre><pre>                                "start-address": "10.50.2.10",</pre><pre>                                "gateway": "10.50.2.1"</pre><pre>                            }</pre><pre>                        },</pre><pre>                        {</pre><pre>                            "name": "CAN",</pre><pre>                            "type": "vlan",</pre><pre>                            "segment-id": "504",</pre><pre>                            "network-address": {</pre><pre>                                "cidr": "10.50.4.0/24",</pre><pre>                                "start-address": "10.50.4.10"</pre><pre>                            }</pre><pre>                        },</pre><pre>                        {</pre><pre>                            "name": "BLS",</pre><pre>                            "type": "vlan",</pre><pre>                            "segment-id": "76",</pre><pre>                            "network-address": {</pre><pre>                                "cidr": "172.16.76.0/19",</pre><pre>                                "start-address": "172.16.76.10"</pre><pre>                            }</pre><pre>                        }</pre><pre>                    ]</pre><pre>                }</pre><pre>            ]</pre><pre>        }</pre><pre>    ]</pre><pre>}</pre><p>
             <b>NOTE:</b> The Helion Configuration Processor assigns the first address of the CLM
@@ -249,12 +249,10 @@ Password: cghelion</codeblock></p></li>
               <codeblock>"count": 2, //number of computes in the resource pool</codeblock></li>
   <li>Update the <codeph>ansible-vars</codeph> section with all the information based on your
               setup.</li>
-  <li>Make sure you have two NTP entries at the end of this <codeph>definition.json</codeph> file as
-              seen in the following example. If you have only one NTP server in your environment,
-              specify the same NTP server twice. Example:
-              <codeblock>
-     
-{
+  <li>Make sure you have two NTP entries in the <codeph>upstream_ntp_servers</codeph> fields in the
+                <codeph>definition.json</codeph> file as seen in the following example. If you have
+              only one NTP server in your environment, specify the same NTP server twice. Example:
+              <codeblock>{
     "product": {
       "version": 1
       },

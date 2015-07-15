@@ -19,98 +19,99 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/Installation/carrier-grade-technical-overview.md-->
- <!--permalink: /helion/openstack/carrier/technical-overview/--></p>
-  
-<p>This page introduces you to the technical aspects of  the HP Helion OpenStack Carrier Grade
+    <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
+    <p>This page introduces you to the technical aspects of the HP Helion OpenStack Carrier Grade
       environment that you will be installing..</p>
-<ul>
-<li>
-<xref type="section" href="#topic3485/Helion-services">HP Helion OpenStack services</xref>
-</li>
-<li>
-<xref type="section" href="#topic3485/deploy-arch">Deployment architecture</xref>
-</li>
-<li>
-<xref type="section" href="#topic3485/networkarch">Network architecture</xref>
-</li>
-</ul>
-  <p>For more information on the HP Helion OpenStack Carrier Grade environment, also see the
+    <ul>
+      <li>
+        <xref type="section" href="#topic3485/Helion-services">HP Helion OpenStack services</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic3485/deploy-arch">Deployment architecture</xref>
+      </li>
+      <li>
+        <xref type="section" href="#topic3485/networkarch">Network architecture</xref>
+      </li>
+    </ul>
+    <p>For more information on the HP Helion OpenStack Carrier Grade environment, also see the
       Reference Logical Architecture section in the <xref
         href="http://docs-staging.hpcloud.com/DRAFT/PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
-        format="pdf" scope="external">HP Helion OpenStack Carrier Grade 1.1: Administrator Guide</xref>.</p>
-  <section id="Helion-services"> <title>HP Helion OpenStack Carrier Grade services- functional overview</title>
-<p>HP Helion OpenStack Carrier Grade  is comprised of several integrated OpenStack services. Each
-        service works through an API (application programming interface) that allows services to
-        work together and allows users to interact with the services. For a complete description of
-        these services, see the <xref
+        format="pdf" scope="external">HP Helion OpenStack Carrier Grade 1.1: Administrator
+        Guide</xref>.</p>
+    <section id="Helion-services">
+      <title>HP Helion OpenStack Carrier Grade services- functional overview</title>
+      <p>HP Helion OpenStack Carrier Grade is comprised of several integrated OpenStack services.
+        Each service works through an API (application programming interface) that allows services
+        to work together and allows users to interact with the services. For a complete description
+        of these services, see the <xref
           href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">Services
           Overview</xref> page.</p>
-</section>
-<section id="deploy-arch"> <title>Deployment architecture</title>
-<p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack Carrier
-        Grade.</p>
-<!-- This image is for RC0 release only. Replace for GA -->
-  <p>
+    </section>
+    <section id="deploy-arch">
+      <title>Deployment architecture</title>
+      <p>The following diagram depicts a simplified deployment scenario of HP Helion OpenStack
+        Carrier Grade.</p>
+      <!-- This image is for RC0 release only. Replace for GA -->
+      <p>
         <image href="../../media/CGH-architecture-rc0.png" width="800"/></p>
-  <p>The following sections
-    describe essential aspects of this diagram.</p>
-
-
-</section>
-<section id="networkarch"> <title>Network architecture</title>
-<p>The following information describes the network configuration for the <xref type="section" href="#topic3485/physical">physical networks</xref> and <xref type="section" href="#topic3485/virtual">virtual networks</xref>, which must be configured by the network administrator.</p>
-<table>
-<tgroup cols="2">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<thead>
-<row>
-<entry> Network </entry>
-<entry> Description </entry>
-</row>
-</thead>
-<tbody>
-<row>
-    <entry> PXE-1 and  PXE-2</entry>
-    <entry>Boot/initial configuration network. Untagged </entry>
-  </row>  
-<row>
-<entry> CLM / MGMT</entry>
-<entry>Cloud Management Network. Shared between the Non-KVM and KVM regions.</entry>
-</row>
-<row>
-<entry> CAN / OAM</entry>
-<entry>Consumer Access Network Shared between the Non-KVM and KVM regions.</entry>
-</row>
-<row>
-<entry> CTL </entry>
-<entry>IPMI/iLO network. Shared between the Non-KVM and KVM regions.</entry>
-</row>
-<row>
-<entry> BLS / INFRA</entry>
-<entry>Block Storage Network; can be on a separate interface (`intf*`). Shared between the Non-KVM
-                and KVM regions.</entry>
-</row>
-<row>
-<entry> DCM </entry>
-<entry>Data Center Management network (accessible to KVM region) and route across multi-DC. </entry>
-</row>
-<row>
-<entry> TUL/SR-IOV  </entry>
-<entry>Tenant Underlay Network from the KVM region </entry>
-</row>
-<row>
-<entry> EXT </entry>
-<entry> Provider VLAN as an External network (provides that FIP pool for the KVM region). </entry>
-</row>
-</tbody>
-</tgroup>
-</table>
-
-  <!-- <row>
+      <p>The following sections describe essential aspects of this diagram.</p>
+    </section>
+    <section id="networkarch">
+      <title>Network architecture</title>
+      <p>The following information describes the network configuration for the <xref type="section"
+          href="#topic3485/physical">physical networks</xref> and <xref type="section"
+          href="#topic3485/virtual">virtual networks</xref>, which must be configured by the network
+        administrator.</p>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <thead>
+            <row>
+              <entry> Network </entry>
+              <entry> Description </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> PXE-1 and PXE-2</entry>
+              <entry>Boot/initial configuration network. Untagged </entry>
+            </row>
+            <row>
+              <entry> CLM / MGMT</entry>
+              <entry>Cloud Management Network. Shared between the Non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> CAN / OAM</entry>
+              <entry>Consumer Access Network Shared between the Non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> CTL </entry>
+              <entry>IPMI/iLO network. Shared between the Non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> BLS / INFRA</entry>
+              <entry>Block Storage Network; can be on a separate interface (`intf*`). Shared between
+                the Non-KVM and KVM regions.</entry>
+            </row>
+            <row>
+              <entry> DCM </entry>
+              <entry>Data Center Management network (accessible to KVM region) and route across
+                multi-DC. </entry>
+            </row>
+            <row>
+              <entry> TUL/SR-IOV </entry>
+              <entry>Tenant Underlay Network from the KVM region </entry>
+            </row>
+            <row>
+              <entry> EXT </entry>
+              <entry> Provider VLAN as an External network (provides that FIP pool for the KVM
+                region). </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <!-- <row>
 <row>
 <entry> WR-BLS </entry>
 <entry> WR Cloud BLock Storage Network; can be on a separate interface (intf*) </entry>
@@ -125,46 +126,47 @@
 <entry> Tenant Underlay Network(s); routed across multi-DC for VxLAN 12 extension  </entry>
 </row>
 -->
-
-</section>
-<section id="interfaces"> <title>Interfaces</title>
-<p>The following are the interfaces being used, based on the technical architecture diagram. You can use more than two interfaces and specific networks to physical networks.</p>
-<ul>
-<li>Intf0 is mapped to Port1/Bonded Pair</li>
-<li>Intf1 is mapped to Port2/Bonded Pair</li>
-<li>Intf<i>n</i> are Multiple Provider Networks or SR-IOV interfaces.</li>
-</ul>
-</section>
-<section id="routing-acls"> <title>Routing ACLs</title>
-<p>Configure the following routing access lists.</p>
-<table>
-<tgroup cols="3">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<thead>
-<row>
-<entry> From </entry>
-<entry> To </entry>
-<entry> Reason </entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry> CLM </entry>
-<entry> DCM </entry>
-<entry> Access NTP, DNS, LDAP, StoreVirtual APIs, and so forth </entry>
-</row>
-<row>
-<entry> CLM </entry>
-<entry> CTL </entry>
-<entry> Access iLO network for managing the lifecycle of the node </entry>
-</row>
-</tbody>
-</tgroup>
-</table>
-
-  <!-- <row>
+    </section>
+    <section id="interfaces">
+      <title>Interfaces</title>
+      <p>The following are the interfaces being used, based on the technical architecture diagram.
+        You can use more than two interfaces and specific networks to physical networks.</p>
+      <ul>
+        <li>Intf0 is mapped to Port1/Bonded Pair</li>
+        <li>Intf1 is mapped to Port2/Bonded Pair</li>
+        <li>Intf<i>n</i> are Multiple Provider Networks or SR-IOV interfaces.</li>
+      </ul>
+    </section>
+    <section id="routing-acls">
+      <title>Routing ACLs</title>
+      <p>Configure the following routing access lists.</p>
+      <table>
+        <tgroup cols="3">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <colspec colname="col3"/>
+          <thead>
+            <row>
+              <entry> From </entry>
+              <entry> To </entry>
+              <entry> Reason </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> CLM </entry>
+              <entry> DCM </entry>
+              <entry> Access NTP, DNS, LDAP, StoreVirtual APIs, and so forth </entry>
+            </row>
+            <row>
+              <entry> CLM </entry>
+              <entry> CTL </entry>
+              <entry> Access iLO network for managing the lifecycle of the node </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <!-- <row>
 <entry> CLM </entry>
 <entry> EXT </entry>
 <entry> Access external networks, for example to download patches </entry>
@@ -190,72 +192,102 @@
 <entry> Inter DC communication (VPN tunnel, BGP, MPLS) </entry>
 </row>
  -->
-  
-  <p>CLM, PXE, OBS, BLS, WR-PXE, WR-INFRA, WR-TUL will use RFC 1918 non-routable IPs to prevent access to the CLM network from DCM, CLT, or EXT.</p>
-</section>
-  <section id="ethernet-interfaces"> <title>Ethernet Interfaces</title>
-    <p>All hosts in the server connect to at least the internal management network using an Ethernet
-        interface. The ports used for this connection must support network booting and must be
-        configured to be used as the primary booting device for normal operations.</p>
-    <p>Typically this means that they must be on-board ports, since in most BIOS/UEFI implementations only on-board ports can be configured for network booting. You can use ports on a 10 GB NIC instead, if these ports fulfill these requirements.</p>
-    <p>The following table illustrates the number and type of Ethernet ports required in two different installation scenarios. It assumes that the ports used to connect to the internal management network are on-board 1 GB ports.</p>
-    <p>
-      <b>NOTE:</b> The following table assumes that each interface is connected to a single network. An Ethernet interface can be shared by more than one network.</p>
-    <table>
-      <tgroup cols="3">
-        <thead>
-          <row>
-            <entry>Personality</entry>
-            <entry>Basic Scenario</entry>
-            <entry>LAG Scenario</entry>
-          </row>
-        </thead>
-        <tbody>
-          <row>
-            <entry>
-              Controller Node</entry>
-            <entry> <ul><li> One 1G on-board interface (Internal management network)</li> 
-              <li>One 1G interface (CAN/OAM)</li>
-              <li>One optional 1G or 10G interface (Infrastructure network)</li></ul></entry>
-            <entry><ul><li>Two 1G on-board interfaces (Internalmanagement network)</li>
-              <li>Two 1G interfaces (CAN/OAM)</li>
-              <li>Two optional 1G or 10G interfaces (Infrastructure network)
-                NOTE: The controller-0 and controller-1 port configurations must be identical.</li></ul></entry>
-            
-          </row>
-          <row>
-            <entry>Compute Node</entry>
-            <entry><ul><li>One 1G on-board interface (Internal management network)</li>
-              <li>One 1G (Intel i350) or 10G (Intel 82599) interface per additional Provider Network</li></ul></entry>
-            <entry><ul><li>Two 1G on-board interfaces (Internal management network)</li>
-              <li>Two 1G (Intel i350) or 10G (Intel 82599) interfaces per additional Provider Network</li></ul></entry>
-          </row>
-        </tbody>
-      </tgroup>
-    </table>
-    <p>In the basic scenario, a single Ethernet port is used to attach the host to each of the networks. In the LAG scenario, two Ethernet ports are used for each connection.</p>
-  </section>
-  <section id="board-management-modules"> <title>Board Management Modules</title>
-    <p>For out-of-band reset and power-on/power-off capabilities, HP360 or HP380 servers equipped with HP iLO (Integrated Lights Out) board management modules are required. Each module must be connected using port-based VLAN to a switch that has access to the internal management network.</p>
-  </section>
-  <section id="usb-interface"> <title>USB Interface</title>
-    <p>For the controller, a USB interface is required for backup and restore operations, and for software installation if a DVD is not available.</p>
-  </section>
-  <section id="net"> <title>Network Requirements</title>
-    <p>The KVM regions networking environment incorporates up to five types of network:</p>
-    <ul>
-      <li><xref href="#topic3485/internal-management-network" format="dita">the internal management
-            network</xref></li>
-      <li><xref href="#topic3485/oam-network" format="dita">the OAM network</xref></li>
-      <li><xref href="#topic3485/provider-network" format="dita">one or more provider
+      <p>CLM, PXE, OBS, BLS, WR-PXE, WR-INFRA, WR-TUL will use RFC 1918 non-routable IPs to prevent
+        access to the CLM network from DCM, CLT, or EXT.</p>
+    </section>
+    <section id="ethernet-interfaces">
+      <title>Ethernet Interfaces</title>
+      <p>All hosts in the server connect to at least the internal management network using an
+        Ethernet interface. The ports used for this connection must support network booting and must
+        be configured to be used as the primary booting device for normal operations.</p>
+      <p>Typically this means that they must be on-board ports, since in most BIOS/UEFI
+        implementations only on-board ports can be configured for network booting. You can use ports
+        on a 10 GB NIC instead, if these ports fulfill these requirements.</p>
+      <p>The following table illustrates the number and type of Ethernet ports required in two
+        different installation scenarios. It assumes that the ports used to connect to the internal
+        management network are on-board 1 GB ports.</p>
+      <p>
+        <b>NOTE:</b> The following table assumes that each interface is connected to a single
+        network. An Ethernet interface can be shared by more than one network.</p>
+      <table>
+        <tgroup cols="3">
+          <thead>
+            <row>
+              <entry>Personality</entry>
+              <entry>Basic Scenario</entry>
+              <entry>LAG Scenario</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> Controller Node</entry>
+              <entry>
+                <ul>
+                  <li> One 1G on-board interface (Internal management network)</li>
+                  <li>One 1G interface (CAN/OAM)</li>
+                  <li>One optional 1G or 10G interface (Infrastructure network)</li>
+                </ul>
+              </entry>
+              <entry>
+                <ul>
+                  <li>Two 1G on-board interfaces (Internalmanagement network)</li>
+                  <li>Two 1G interfaces (CAN/OAM)</li>
+                  <li>Two optional 1G or 10G interfaces (Infrastructure network) NOTE: The
+                    controller-0 and controller-1 port configurations must be identical.</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>Compute Node</entry>
+              <entry>
+                <ul>
+                  <li>One 1G on-board interface (Internal management network)</li>
+                  <li>One 1G (Intel i350) or 10G (Intel 82599) interface per additional Provider
+                    Network</li>
+                </ul>
+              </entry>
+              <entry>
+                <ul>
+                  <li>Two 1G on-board interfaces (Internal management network)</li>
+                  <li>Two 1G (Intel i350) or 10G (Intel 82599) interfaces per additional Provider
+                    Network</li>
+                </ul>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>In the basic scenario, a single Ethernet port is used to attach the host to each of the
+        networks. In the LAG scenario, two Ethernet ports are used for each connection.</p>
+    </section>
+    <section id="board-management-modules">
+      <title>Board Management Modules</title>
+      <p>For out-of-band reset and power-on/power-off capabilities, HP360 or HP380 servers equipped
+        with HP iLO (Integrated Lights Out) board management modules are required. Each module must
+        be connected using port-based VLAN to a switch that has access to the internal management
+        network.</p>
+    </section>
+    <section id="usb-interface">
+      <title>USB Interface</title>
+      <p>For the controller, a USB interface is required for backup and restore operations, and for
+        software installation if a DVD is not available.</p>
+    </section>
+    <section id="net">
+      <title>Network Requirements</title>
+      <p>The KVM regions networking environment incorporates up to five types of network:</p>
+      <ul>
+        <li><xref href="#topic3485/internal-management-network" format="dita">the internal
+            management network</xref></li>
+        <li><xref href="#topic3485/oam-network" format="dita">the OAM network</xref></li>
+        <li><xref href="#topic3485/provider-network" format="dita">one or more provider
             networks</xref></li>
-      <li><xref href="#topic3485/infrastructure-network" format="dita">an optional infrastructure
+        <li><xref href="#topic3485/infrastructure-network" format="dita">an optional infrastructure
             network</xref></li>
-      <li>an optional board management network. </li>
-    </ul>
-    <p>Operational requirements for each network are described in the following sections.</p>
-  </section>
-  <section id="internal-management-network"><b>Internal Management Network</b>
+        <li><xref href="#topic3485/board-network" format="dita">an optional board management network.</xref> </li>
+      </ul>
+      <p>Operational requirements for each network are described in the following sections.</p>
+    </section>
+    <section id="internal-management-network"><b>Internal Management Network</b>
       <p>The internal management network must be implemented as a single, dedicated, Layer 2
         broadcast domain for the exclusive use of each server cluster. Sharing of this network by
         more than one server cluster is not a supported configuration.</p><p>During the server
@@ -268,7 +300,7 @@
         <li>must be capable of PXE-booting</li>
         <li>can be used by the motherboard as a primary boot device</li>
       </ul></section>
-  <section id="oam-network"><b>CAN/OAM Network</b>
+    <section id="oam-network"><b>CAN/OAM Network</b>
       <p>You should ensure that the following services are available on the CAN/OAM Network:</p><ul>
         <li>
           <p>DNS Service - Needed to facilitate the name resolution of servers reachable on the
@@ -287,30 +319,32 @@
       </ul><p>The server compute nodes always use the controller nodes as the time server for the
         entire cluster.</p>
     </section>
-  <section id="provider-network"><b>Provider Network</b>
+    <section id="provider-network"><b>Provider Network</b>
       <p>There are no specific requirements for network services to be available on the provider
         network. However, you must ensure that all network services required by the guests running
         in the compute nodes are available. For configuration purposes, the compute nodes themselves
         are entirely served by the services provided by the controller nodes over the internal
         management network.</p></section>
-  
-  <section id="infrastructure-network"><b>Infrastructure Network</b>
+    <section id="infrastructure-network"><b>Infrastructure Network</b>
       <p>This is an optional network.</p><p>As with the internal management network, the
         infrastructure network must be implemented as a single, dedicated, Layer 2 broadcast domain
         for the exclusive use of each server cluster.</p><p>Sharing of this network by more than one
         server cluster is not a supported configuration.</p><p>The infrastructure network can be
         implemented as a 1Gb or 10 Gb Ethernet network. In its absence, all infrastructure traffic
         is carried over the internal management network.</p></section>
-  
-  <section id="next"> <title>Next step</title>
-    <p><xref href="carrier-grade-install-pb-prereqs.dita#topic7148">Installation Prerequisites</xref></p>
-    <p>
-      <xref type="section" href="#topic3485"> Return to Top </xref>
-    </p>
-  </section>
-  
-
-<!--
+  <section id="board-network"><b>Board Management Network</b>
+      <p>Board Management CTL (IPMI Control) Network External access to the board management
+      network, the board management modules are assigned IP addresses accessible from the OAM
+      network, and the controller uses the OAM network to connect to them.</p></section>
+    <section id="next">
+      <title>Next step</title>
+      <p><xref href="carrier-grade-install-pb-prereqs.dita#topic7148">Installation
+          Prerequisites</xref></p>
+      <p>
+        <xref type="section" href="#topic3485"> Return to Top </xref>
+      </p>
+    </section>
+    <!--
 ### Backup and Restore nodes {#backup-restore-nodes}
 
 Backup and restore scripts and procedures are provided for the seed VM, undercloud, overcloud management controller (running singleton services like Sherpa), and the MySQL database deployed in the controller cluster. These scripts are to be used by administrators managing the OpenStack Cloud.
@@ -321,7 +355,6 @@ For more information see [HP Helion OpenStack Back Up and Restore]
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top </a>
 -->
-<!-- ===================== horizontal rule ===================== -->
-
-</body>
+    <!-- ===================== horizontal rule ===================== -->
+  </body>
 </topic>
