@@ -4,19 +4,19 @@
 <!-- Modification History
 
  -->
- <title id="1">Customer Logs</title>
- <shortdesc id="2">You can obtain information about transient events using Customer
+ <title ixia_locid="1">Customer Logs</title>
+ <shortdesc ixia_locid="2">You can obtain information about transient events using Customer
   Logs.</shortdesc>
  <prolog>
-  <author id="3">Jim Owens</author>
+  <author ixia_locid="3">Jim Owens</author>
  </prolog>
  <conbody>
-  <p id="8">Certain system events that do not result in node state changes and typically do not require
+  <p ixia_locid="8">Certain system events that do not result in node state changes and typically do not require
    immediate customer action, such as instance deletions or failed migration attempts, are recorded
    in Customer Logs. Each log describes a single event. The logs are held in a buffer, with older
    logs discarded as needed to release logging space.</p>
-  <p id="5">The logs are displayed in a list, along with summary information. For each
-   individual log, you can view detailed information. For more information, see <xref href="jow1432045421799.xml" id="6"/>.</p>
-  <p id="7"/>
+  <p ixia_locid="5">The logs are displayed in a list, along with summary information. For each
+   individual log, you can view detailed information. For more information, see <xref href="jow1432045421799.xml" ixia_locid="6"/>.</p>
+  <p ixia_locid="7"/>
  </conbody>
 </concept-wr>

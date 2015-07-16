@@ -4,128 +4,128 @@
 <!-- Modification History
         
 -->
-    <title id="50">Changing the NTP Server Configuration</title>
-    <shortdesc id="51">You can change the NTP server addresses defined for the  HP Helion
+    <title ixia_locid="50">Changing the NTP Server Configuration</title>
+    <shortdesc ixia_locid="51">You can change the NTP server addresses defined for the  HP Helion
         OpenStack Carrier Grade at any time after installation.</shortdesc>
     <prolog>
-        <author id="52"/>
+        <author ixia_locid="52"/>
     </prolog>
     <taskbody>
-        <context id="context_N1001F_N1001C_N10001" id="24">
-            <p id="25">During software installation, the HP Helion OpenStack Carrier Grade is configured with
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="24">
+            <p ixia_locid="25">During software installation, the HP Helion OpenStack Carrier Grade is configured with
                 up to three NTP server IP addresses. You change these addresses using the web
                 administration interface or the CLI.</p>
         </context>
-        <prereq id="prereq_N1002B_N1001D_N10001" id="65">
-            <p id="67">Before changing NTP server addresses, review the Fault Management
+        <prereq id="prereq_N1002B_N1001D_N10001" ixia_locid="65">
+            <p ixia_locid="67">Before changing NTP server addresses, review the Fault Management
                 page and ensure that any existing system alarms are cleared.</p>
-            <note id="note_N1002F_N1002B_N1001D_N10001" id="66" type="caution">
-                <p id="159">For the HP Helion OpenStack Carrier Grade system to use FQDN servers instead of
+            <note id="note_N1002F_N1002B_N1001D_N10001" ixia_locid="66" type="caution">
+                <p ixia_locid="159">For the HP Helion OpenStack Carrier Grade system to use FQDN servers instead of
                     IPv4 servers, at least one valid DNS server must be specified.</p>
             </note>
         </prereq>
         <steps id="steps_xfh_24z_5p">
-            <step id="step_N1002B_N10028_N1001C_N10001" id="26">
-                <cmd id="27">In the HP Helion OpenStack Carrier Grade web administration interface, open the
-                        <wintitle id="160">System Configuration</wintitle> pane.</cmd>
-                <info id="28">
-                    <p id="29">The <wintitle id="30">System Configuration</wintitle>
-                        pane is available from the <uicontrol id="19">System
-                            Panel</uicontrol> section of the <uicontrol id="20">Admin</uicontrol> menu. </p>
+            <step id="step_N1002B_N10028_N1001C_N10001" ixia_locid="26">
+                <cmd ixia_locid="27">In the HP Helion OpenStack Carrier Grade web administration interface, open the
+                        <wintitle ixia_locid="160">System Configuration</wintitle> pane.</cmd>
+                <info ixia_locid="28">
+                    <p ixia_locid="29">The <wintitle ixia_locid="30">System Configuration</wintitle>
+                        pane is available from the <uicontrol ixia_locid="19">System
+                            Panel</uicontrol> section of the <uicontrol ixia_locid="20">Admin</uicontrol> menu. </p>
                 </info>
             </step>
-            <step id="step_N1004A_N10028_N1001C_N10001" id="31">
-                <cmd id="32">Select the <wintitle id="33">NTP</wintitle> tab.</cmd>
-                <stepresult id="34">
-                    <p id="35">The <wintitle id="104">NTP</wintitle> page appears, showing the
+            <step id="step_N1004A_N10028_N1001C_N10001" ixia_locid="31">
+                <cmd ixia_locid="32">Select the <wintitle ixia_locid="33">NTP</wintitle> tab.</cmd>
+                <stepresult ixia_locid="34">
+                    <p ixia_locid="35">The <wintitle ixia_locid="104">NTP</wintitle> page appears, showing the
                         currently defined NTP servers and their IP addresses.</p>
-                    <fig id="fig_t3s_4mz_5p" id="36">
-                        <image href="jow1413850406811.image" id="image_kll_h4z_5p" id="53" width="6in">
-                            <alt id="54">NTP page</alt>
+                    <fig id="fig_t3s_4mz_5p" ixia_locid="36">
+                        <image href="jow1413850406811.image" id="image_kll_h4z_5p" ixia_locid="53" width="6in">
+                            <alt ixia_locid="54">NTP page</alt>
                         </image>
                     </fig>
                 </stepresult>
             </step>
-            <step id="step_N10070_N10028_N1001C_N10001" id="39">
-                <cmd id="40">Click <uicontrol id="41">Edit NTP</uicontrol>.</cmd>
-                <stepresult id="42">
-                    <p id="43">The <wintitle id="44">Edit NTP</wintitle> dialog box
+            <step id="step_N10070_N10028_N1001C_N10001" ixia_locid="39">
+                <cmd ixia_locid="40">Click <uicontrol ixia_locid="41">Edit NTP</uicontrol>.</cmd>
+                <stepresult ixia_locid="42">
+                    <p ixia_locid="43">The <wintitle ixia_locid="44">Edit NTP</wintitle> dialog box
                         appears.</p>
-                    <fig id="fig_tmw_qnz_5p" id="45">
-                        <image href="jow1413850437240.image" id="image_vcx_j4z_5p" id="55" width="4in">
-                            <alt id="56">Edit NTP dialog</alt>
+                    <fig id="fig_tmw_qnz_5p" ixia_locid="45">
+                        <image href="jow1413850437240.image" id="image_vcx_j4z_5p" ixia_locid="55" width="4in">
+                            <alt ixia_locid="56">Edit NTP dialog</alt>
                         </image>
                     </fig>
                 </stepresult>
             </step>
-            <step id="step_N1009A_N10028_N1001C_N10001" id="48">
-                <cmd id="49">Replace the NTP Server IP addresses or names with different
+            <step id="step_N1009A_N10028_N1001C_N10001" ixia_locid="48">
+                <cmd ixia_locid="49">Replace the NTP Server IP addresses or names with different
                     ones as required.</cmd>
-                <info id="161">
-                    <p id="162">If you specify the NTP servers using FQDNs you must have at
+                <info ixia_locid="161">
+                    <p ixia_locid="162">If you specify the NTP servers using FQDNs you must have at
                         least one valid DNS server defined on your system. You must use IP addresses
                         otherwise.</p>
                 </info>
             </step>
-            <step id="step_N100CE_N1003A_N1001D_N10001" id="68">
-                <cmd id="69">Click <uicontrol id="70">Save</uicontrol>.</cmd>
-                <info id="71">
-                    <p id="72">This raises major alarms against the controllers and
+            <step id="step_N100CE_N1003A_N1001D_N10001" ixia_locid="68">
+                <cmd ixia_locid="69">Click <uicontrol ixia_locid="70">Save</uicontrol>.</cmd>
+                <info ixia_locid="71">
+                    <p ixia_locid="72">This raises major alarms against the controllers and
                         services. You can view the alarms on the Fault Management page.</p>
                 </info>
             </step>
-            <step id="step_N100BF_N1002B_N1001D_N10001" id="57">
-                <cmd id="58">Lock and unlock the controllers to clear the alarms.</cmd>
-                <info id="76">
-                    <p id="77">Open the <wintitle id="143">Hosts</wintitle> list by
-                        clicking <uicontrol id="78">Inventory</uicontrol> on the<wintitle id="79"> System Panel</wintitle> section of the <wintitle id="80">Admin</wintitle> menu, and then selecting the <uicontrol id="81">Hosts</uicontrol> tab. Hosts requiring attention are
-                        shown with the status <nameliteral id="82">Config
+            <step id="step_N100BF_N1002B_N1001D_N10001" ixia_locid="57">
+                <cmd ixia_locid="58">Lock and unlock the controllers to clear the alarms.</cmd>
+                <info ixia_locid="76">
+                    <p ixia_locid="77">Open the <wintitle ixia_locid="143">Hosts</wintitle> list by
+                        clicking <uicontrol ixia_locid="78">Inventory</uicontrol> on the<wintitle ixia_locid="79"> System Panel</wintitle> section of the <wintitle ixia_locid="80">Admin</wintitle> menu, and then selecting the <uicontrol ixia_locid="81">Hosts</uicontrol> tab. Hosts requiring attention are
+                        shown with the status <nameliteral ixia_locid="82">Config
                             out-of-date</nameliteral>.</p>
-                    <p id="83"> To lock or unlock a host, click <uicontrol id="84">More</uicontrol> for the host and then use the menu selections.</p>
+                    <p ixia_locid="83"> To lock or unlock a host, click <uicontrol ixia_locid="84">More</uicontrol> for the host and then use the menu selections.</p>
                 </info>
                 <substeps id="substeps_zyf_rsz_5p">
-                    <substep id="85">
-                        <cmd id="86">Lock the standby controller. </cmd>
-                        <info id="87">
-                            <p id="88">Wait for the lock operation to be completed.</p>
+                    <substep ixia_locid="85">
+                        <cmd ixia_locid="86">Lock the standby controller. </cmd>
+                        <info ixia_locid="87">
+                            <p ixia_locid="88">Wait for the lock operation to be completed.</p>
                         </info>
                     </substep>
-                    <substep id="89">
-                        <cmd id="90">Unlock the standby controller.</cmd>
-                        <info id="59">
-                            <p id="60">Wait for the host to become available. It is updated
+                    <substep ixia_locid="89">
+                        <cmd ixia_locid="90">Unlock the standby controller.</cmd>
+                        <info ixia_locid="59">
+                            <p ixia_locid="60">Wait for the host to become available. It is updated
                                 with the new NTP server addresses, and its error message is
                                 cleared.</p>
                         </info>
                     </substep>
-                    <substep id="91">
-                        <cmd id="92">Perform a swact on the active controller.</cmd>
-                        <info id="93">
-                            <p id="94">Click <menucascade id="95">
-                                    <uicontrol id="96">More</uicontrol>
-                                    <uicontrol id="97">Swact Host</uicontrol>
-                                    <uicontrol id="98"> </uicontrol>
+                    <substep ixia_locid="91">
+                        <cmd ixia_locid="92">Perform a swact on the active controller.</cmd>
+                        <info ixia_locid="93">
+                            <p ixia_locid="94">Click <menucascade ixia_locid="95">
+                                    <uicontrol ixia_locid="96">More</uicontrol>
+                                    <uicontrol ixia_locid="97">Swact Host</uicontrol>
+                                    <uicontrol ixia_locid="98"> </uicontrol>
                                 </menucascade> for the active controller.</p>
                         </info>
                     </substep>
-                    <substep id="99">
-                        <cmd id="62">Lock the original controller (now in standby
+                    <substep ixia_locid="99">
+                        <cmd ixia_locid="62">Lock the original controller (now in standby
                             mode).</cmd>
-                        <info id="146">
-                            <p id="148">Wait for the lock operation to be completed.</p>
+                        <info ixia_locid="146">
+                            <p ixia_locid="148">Wait for the lock operation to be completed.</p>
                         </info>
                     </substep>
-                    <substep id="150">
-                        <cmd id="151">Unlock the original controller.</cmd>
-                        <info id="147">
-                            <p id="149">Wait for it to become available. It is updated with
+                    <substep ixia_locid="150">
+                        <cmd ixia_locid="151">Unlock the original controller.</cmd>
+                        <info ixia_locid="147">
+                            <p ixia_locid="149">Wait for it to become available. It is updated with
                                 the new NTP server addresses, and its error message is cleared.</p>
                         </info>
                     </substep>
                 </substeps>
             </step>
-            <step id="step_N1025E_N100B7_N1001F_N10001" id="156">
-                <cmd id="157">Ensure that the <nameliteral id="158">250.001
+            <step id="step_N1025E_N100B7_N1001F_N10001" ixia_locid="156">
+                <cmd ixia_locid="157">Ensure that the <nameliteral ixia_locid="158">250.001
                         Configuration out-of-date</nameliteral> alarms are cleared for both
                     controllers.</cmd>
             </step>

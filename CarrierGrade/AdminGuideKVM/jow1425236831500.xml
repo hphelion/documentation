@@ -4,27 +4,27 @@
 <!-- This topic is for possible use by theTiS Admin Guide. It has been placed in the map, but commented out. We need to confirm how you can examine the resources for a NUMA node. Also, some of the material depends on capabilities proposed in Sprint R2-S4, but not actually available yet (Configuring NUMA Node Allocations for a VM). The topics for those capabilities may also be commented out. Be aware that this could lead to map validation issues. 
         
 -->
-    <title id="1">Viewing NUMA Node Resources on a Host</title>
-    <shortdesc id="2">You can use the CLI <!-- or GUI --> to display the NUMA node resources for a
+    <title ixia_locid="1">Viewing NUMA Node Resources on a Host</title>
+    <shortdesc ixia_locid="2">You can use the CLI <!-- or GUI --> to display the NUMA node resources for a
         host.</shortdesc>
     <prolog>
-        <author id="3">Jim Owens</author>
+        <author ixia_locid="3">Jim Owens</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001F_N1001C_N10001" id="4">
-            <p id="8">Host NUMA nodes can be <term id="11">pinned</term>, or
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
+            <p ixia_locid="8">Host NUMA nodes can be <term ixia_locid="11">pinned</term>, or
                 assigned for use by VMs. For example, a VM can be configured to use NUMA node 0, so
                 that when the VM is launched or migrated, the virtual machine scheduler locates a
                 host node with an available NUMA node 0, and dedicates that NUMA node for use by the
-                VM. For more about pinning NUMA nodes, see <xref href="jow1425236723556.xml" id="14"/>.</p>
-            <p id="9">The resources of the pinned NUMA node, including the number of
+                VM. For more about pinning NUMA nodes, see <xref href="jow1425236723556.xml" ixia_locid="14"/>.</p>
+            <p ixia_locid="9">The resources of the pinned NUMA node, including the number of
                 available CPUS and the available memory, must be sufficient to meet the requirements
                 of the VM, which can be specified independently. (For more about specifying NUMA
-                node requirements for a VM, see <xref href="jow1425236666266.xml" id="12"/>.) To ensure that
+                node requirements for a VM, see <xref href="jow1425236666266.xml" ixia_locid="12"/>.) To ensure that
                 a given host NUMA node can support the VM requirements, you can review the CPU and
                 memory complements for host NUMA nodes.</p>
-            <p id="10">To view the CPU complement for a NUMA Node (that is, for a socketed
-                physical processor), use the vm-topology command. For details, see <xref href="jow1404333768530.xml" id="13"/>.<!-- But can a socketed processor contain multiple NUMA nodes?  If so, this is the wrong place to look.  Also, how can you view the available memory for a NUMA Node? -->
+            <p ixia_locid="10">To view the CPU complement for a NUMA Node (that is, for a socketed
+                physical processor), use the vm-topology command. For details, see <xref href="jow1404333768530.xml" ixia_locid="13"/>.<!-- But can a socketed processor contain multiple NUMA nodes?  If so, this is the wrong place to look.  Also, how can you view the available memory for a NUMA Node? -->
             </p>
         </context>
     </taskbody>

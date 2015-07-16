@@ -21,7 +21,7 @@
 <body>
     <p><!--UNDER REVISION--><!--./CarrierGrade/Installation/carrier-grade-technical-overview.md--><!--permalink: /helion/openstack/carrier/technical-overview/--></p>
     <p>This page introduces you to the technical aspects of the HP Helion OpenStack Carrier Grade
-      environment that you will be installing..</p>
+      environment that you will be installing.</p>
     <ul>
       <li>
         <xref type="section" href="#topic3485/Helion-services">HP Helion OpenStack services</xref>
@@ -204,8 +204,7 @@
         implementations only on-board ports can be configured for network booting. You can use ports
         on a 10 GB NIC instead, if these ports fulfill these requirements.</p>
       <p>The following table illustrates the number and type of Ethernet ports required in two
-        different installation scenarios. It assumes that the ports used to connect to the internal
-        management network are on-board 1 GB ports.</p>
+        different installation scenarios. </p>
       <p>
         <b>NOTE:</b> The following table assumes that each interface is connected to a single
         network. An Ethernet interface can be shared by more than one network.</p>
@@ -220,20 +219,15 @@
           </thead>
           <tbody>
             <row>
-              <entry> Controller Node</entry>
+              <entry>Controller Node</entry>
               <entry>
                 <ul>
-                  <li> One 1G on-board interface (Internal management network)</li>
-                  <li>One 1G interface (CAN/OAM)</li>
-                  <li>One optional 1G or 10G interface (Infrastructure network)</li>
+                  <li> One 10G on-board interface (Internal management network)</li>
                 </ul>
               </entry>
               <entry>
                 <ul>
-                  <li>Two 1G on-board interfaces (Internalmanagement network)</li>
-                  <li>Two 1G interfaces (CAN/OAM)</li>
-                  <li>Two optional 1G or 10G interfaces (Infrastructure network) NOTE: The
-                    controller-0 and controller-1 port configurations must be identical.</li>
+                  <li>Two 10G on-board interfaces (Internal management network)</li>
                 </ul>
               </entry>
             </row>

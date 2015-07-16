@@ -4,142 +4,142 @@
 <!-- Modification History
         
 -->
-    <title id="1">Configuring the NUMA Node Allocations for a VM</title>
-    <shortdesc id="2">You can use flavor extra specs or image properties to allocate virtual
+    <title ixia_locid="1">Configuring the NUMA Node Allocations for a VM</title>
+    <shortdesc ixia_locid="2">You can use flavor extra specs or image properties to allocate virtual
         memory and vCPU resources to virtual NUMA nodes.</shortdesc>
     <prolog>
-        <author id="3">Jim Owens</author>
+        <author ixia_locid="3">Jim Owens</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001F_N1001C_N10001" id="4">
-            <p id="5">By default, the memory and CPU resources defined for a flavor are
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
+            <p ixia_locid="5">By default, the memory and CPU resources defined for a flavor are
                 assigned to a single virtual NUMA node, which is mapped to an available host NUMA
                 node when an instance is launched or migrated. You can specify the use of multiple
                 NUMA nodes using either flavor extra specifications (which take the general form
-                    <nameliteral id="93">hw:specification</nameliteral>), or image properties (which take
-                the general form <nameliteral id="94">hw_specification</nameliteral>).</p>
-            <p id="6">By default, the available CPU and memory resources for the flavor are
+                    <nameliteral ixia_locid="93">hw:specification</nameliteral>), or image properties (which take
+                the general form <nameliteral ixia_locid="94">hw_specification</nameliteral>).</p>
+            <p ixia_locid="6">By default, the available CPU and memory resources for the flavor are
                 distributed equally among the NUMA nodes. You can customize the distribution of
                 resources. For example, given a flavor with two NUMA nodes, three vCPUs, and 1024 MB
                 of RAM, you can assign one vCPU and 512 MB to virtual NUMA node 0, and two VCPUs and
                 512 MB to virtual NUMA node 1. The ability to allocate resources is useful when
                 pinning virtual NUMA nodes to host NUMA nodes to optimize VM performance.</p>
-            <p id="77">By default, the memory required for a virtual NUMA node is pinned to a single host
+            <p ixia_locid="77">By default, the memory required for a virtual NUMA node is pinned to a single host
                 NUMA node to ensure high performance. For applications where this is not a concern,
                 you can relax the memory allocation requirements so that the memory for a virtual
                 NUMA node can be drawn from more than one host NUMA node if necessary.</p>
-            <p id="261">When deploying network guest images operating on the data path, it
+            <p ixia_locid="261">When deploying network guest images operating on the data path, it
                 is advisable to co-locate the virtual machines, the AVS switch, physical ports, and
                 all other networking elements on the same node.</p>
-            <p id="262">Use of this option should be limited to cases where fine-tuning of
+            <p ixia_locid="262">Use of this option should be limited to cases where fine-tuning of
                 the data path on guest applications is important.</p>
-            <note id="note_N10055_N10022_N1001F_N10001" id="264" type="caution">
-                <p id="265">If the virtual CPUs cannot be allocated to run on the specified node on any
+            <note id="note_N10055_N10022_N1001F_N10001" ixia_locid="264" type="caution">
+                <p ixia_locid="265">If the virtual CPUs cannot be allocated to run on the specified node on any
                     compute node, the virtual machine may fail to launch</p>
             </note>
         </context>
         <steps id="steps_q4v_blj_gr">
-            <step id="step_N10038_N10034_N1001F_N10001" id="8">
-                <cmd id="9">Declare the number of NUMA nodes to expose to the guest.</cmd>
-                <info id="10">
-                    <p id="11">The following extra specification sets the number of NUMA
+            <step id="step_N10038_N10034_N1001F_N10001" ixia_locid="8">
+                <cmd ixia_locid="9">Declare the number of NUMA nodes to expose to the guest.</cmd>
+                <info ixia_locid="10">
+                    <p ixia_locid="11">The following extra specification sets the number of NUMA
                         nodes:</p>
-                    <codeblock id="12">hw:numa_nodes=<varname id="13">n</varname></codeblock>
-                    <p id="14">where <varname id="15">n</varname> is the number of NUMA nodes to expose (1 or
+                    <codeblock ixia_locid="12">hw:numa_nodes=<varname ixia_locid="13">n</varname></codeblock>
+                    <p ixia_locid="14">where <varname ixia_locid="15">n</varname> is the number of NUMA nodes to expose (1 or
                         more).</p>
                 </info>
-                <stepxmp id="16">
-                    <p id="320">For example, given the flavor <nameliteral id="18">numa.pinned.asym</nameliteral>, use the following command to expose two
+                <stepxmp ixia_locid="16">
+                    <p ixia_locid="320">For example, given the flavor <nameliteral ixia_locid="18">numa.pinned.asym</nameliteral>, use the following command to expose two
                         NUMA nodes.</p>
-                    <codeblock id="95"><systemoutput id="97">~(keystone_admin)$ </systemoutput><userinput id="99">nova flavor-key numa.pinned.asym set hw:numa_nodes=2</userinput></codeblock>
+                    <codeblock ixia_locid="95"><systemoutput ixia_locid="97">~(keystone_admin)$ </systemoutput><userinput ixia_locid="99">nova flavor-key numa.pinned.asym set hw:numa_nodes=2</userinput></codeblock>
                 </stepxmp>
-                <info id="101">
-                    <p id="102">To set an image property instead, you can use the following command:</p>
-                    <codeblock id="96"><systemoutput id="98">~(keystone_admin)$ </systemoutput><userinput id="100">nova image-meta <varname id="103">image</varname> hw_numa_nodes=2</userinput></codeblock>
+                <info ixia_locid="101">
+                    <p ixia_locid="102">To set an image property instead, you can use the following command:</p>
+                    <codeblock ixia_locid="96"><systemoutput ixia_locid="98">~(keystone_admin)$ </systemoutput><userinput ixia_locid="100">nova image-meta <varname ixia_locid="103">image</varname> hw_numa_nodes=2</userinput></codeblock>
                 </info>
             </step>
-            <step id="step_N1006D_N10034_N1001F_N10001" importance="optional" id="22">
-                <cmd id="23">For each NUMA node, assign a list of CPUs.</cmd>
-                <info id="24">
-                    <p id="25">This step is optional. By default, available CPUs for the
+            <step id="step_N1006D_N10034_N1001F_N10001" importance="optional" ixia_locid="22">
+                <cmd ixia_locid="23">For each NUMA node, assign a list of CPUs.</cmd>
+                <info ixia_locid="24">
+                    <p ixia_locid="25">This step is optional. By default, available CPUs for the
                         flavor are distributed evenly across the available NUMA nodes.</p>
-                    <p id="26">The following extra specification assigns CPUs to a NUMA node:</p>
-                    <codeblock id="27">hw:numa_cpus.<varname id="28">vnode_id</varname>=<varname id="29">cpu_list</varname></codeblock>
-                    <p id="30">where</p>
+                    <p ixia_locid="26">The following extra specification assigns CPUs to a NUMA node:</p>
+                    <codeblock ixia_locid="27">hw:numa_cpus.<varname ixia_locid="28">vnode_id</varname>=<varname ixia_locid="29">cpu_list</varname></codeblock>
+                    <p ixia_locid="30">where</p>
                     <parml>
-                        <plentry id="31">
-                            <pt id="32"><parmname id="33">vnode_id</parmname></pt>
-                            <pd id="34">
-                                <p id="35">is the number used to identify the virtual NUMA
+                        <plentry ixia_locid="31">
+                            <pt ixia_locid="32"><parmname ixia_locid="33">vnode_id</parmname></pt>
+                            <pd ixia_locid="34">
+                                <p ixia_locid="35">is the number used to identify the virtual NUMA
                                     node (0 for the first node, 1 for the second, and so on).</p>
                             </pd>
                         </plentry>
-                        <plentry id="36">
-                            <pt id="37"><parmname id="38">cpu_list</parmname></pt>
-                            <pd id="39">
-                                <p id="40">is a comma-separated list of vCPUs to assign to the node. The
+                        <plentry ixia_locid="36">
+                            <pt ixia_locid="37"><parmname ixia_locid="38">cpu_list</parmname></pt>
+                            <pd ixia_locid="39">
+                                <p ixia_locid="40">is a comma-separated list of vCPUs to assign to the node. The
                                     vCPUs for the flavor are enumerated beginning with 0.</p>
                             </pd>
                         </plentry>
                     </parml>
                 </info>
-                <stepxmp id="41">
-                    <p id="263">For example, given flavor <nameliteral id="43">numa.pinned.asym</nameliteral>, use the following command to assign
+                <stepxmp ixia_locid="41">
+                    <p ixia_locid="263">For example, given flavor <nameliteral ixia_locid="43">numa.pinned.asym</nameliteral>, use the following command to assign
                         vCPU 0 to the first NUMA node, and vCPUs 1 and 2 to the second NUMA
                         node:</p>
-                    <codeblock id="44"><systemoutput id="45">~(keystone_admin)$ </systemoutput><userinput id="46">nova flavor-key numa.pinned.asym set hw:numa_cpus.0=0 \
+                    <codeblock ixia_locid="44"><systemoutput ixia_locid="45">~(keystone_admin)$ </systemoutput><userinput ixia_locid="46">nova flavor-key numa.pinned.asym set hw:numa_cpus.0=0 \
 hw:numa_cpus.1=1,2</userinput></codeblock>
                 </stepxmp>
             </step>
-            <step id="step_N100CF_N10034_N1001F_N10001" importance="optional" id="47">
-                <cmd id="48">For each NUMA node, assign an amount of memory.</cmd>
-                <info id="49">
-                    <p id="50">This step is optional. By default, available memory for the
+            <step id="step_N100CF_N10034_N1001F_N10001" importance="optional" ixia_locid="47">
+                <cmd ixia_locid="48">For each NUMA node, assign an amount of memory.</cmd>
+                <info ixia_locid="49">
+                    <p ixia_locid="50">This step is optional. By default, available memory for the
                         flavor is distributed evenly across the available NUMA nodes.</p>
-                    <p id="51">The following extra specification assigns memory to a NUMA node:</p>
-                    <codeblock id="78">hw:numa_mem.<varname id="80">vnode_id</varname>=<varname id="54">ram_size</varname></codeblock>
-                    <p id="55">where</p>
+                    <p ixia_locid="51">The following extra specification assigns memory to a NUMA node:</p>
+                    <codeblock ixia_locid="78">hw:numa_mem.<varname ixia_locid="80">vnode_id</varname>=<varname ixia_locid="54">ram_size</varname></codeblock>
+                    <p ixia_locid="55">where</p>
                     <parml>
-                        <plentry id="56">
-                            <pt id="57"><parmname id="58">vnode_id</parmname></pt>
-                            <pd id="59">
-                                <p id="60">is the number used to identify the virtual NUMA
+                        <plentry ixia_locid="56">
+                            <pt ixia_locid="57"><parmname ixia_locid="58">vnode_id</parmname></pt>
+                            <pd ixia_locid="59">
+                                <p ixia_locid="60">is the number used to identify the virtual NUMA
                                     node (0 for the first node, 1 for the second, and so on).</p>
                             </pd>
                         </plentry>
-                        <plentry id="61">
-                            <pt id="62"><parmname id="63">ram_size</parmname></pt>
-                            <pd id="64">
-                                <p id="65">is the amount of RAM in MB.</p>
+                        <plentry ixia_locid="61">
+                            <pt ixia_locid="62"><parmname ixia_locid="63">ram_size</parmname></pt>
+                            <pd ixia_locid="64">
+                                <p ixia_locid="65">is the amount of RAM in MB.</p>
                             </pd>
                         </plentry>
                     </parml>
                 </info>
-                <stepxmp id="66">
-                    <p id="67">For example, given flavor <nameliteral id="68">numa.pinned.asym</nameliteral>, use the following command to assign 512
+                <stepxmp ixia_locid="66">
+                    <p ixia_locid="67">For example, given flavor <nameliteral ixia_locid="68">numa.pinned.asym</nameliteral>, use the following command to assign 512
                         MB of RAM to each of two NUMA nodes:</p>
-                    <codeblock id="69"><systemoutput id="70">~(keystone_admin)$ </systemoutput><userinput id="71">nova flavor-key numa.pinned.asym set hw:numa_mem.0=512 \
+                    <codeblock ixia_locid="69"><systemoutput ixia_locid="70">~(keystone_admin)$ </systemoutput><userinput ixia_locid="71">nova flavor-key numa.pinned.asym set hw:numa_mem.0=512 \
 hw:numa_mem.1=512</userinput></codeblock>
                 </stepxmp>
             </step>
-            <step id="step_N10181_N10044_N1001F_N10001" importance="optional" id="82">
-                <cmd id="83">Specify whether memory for the flavor can be drawn from more than one NUMA node
+            <step id="step_N10181_N10044_N1001F_N10001" importance="optional" ixia_locid="82">
+                <cmd ixia_locid="83">Specify whether memory for the flavor can be drawn from more than one NUMA node
                     if necessary. </cmd>
-                <info id="84">
-                    <p id="90">This step is optional. By default, memory is allocated from the designated
+                <info ixia_locid="84">
+                    <p ixia_locid="90">This step is optional. By default, memory is allocated from the designated
                         host NUMA node only.</p>
-                    <p id="85">To control whether memory for the flavor can be drawn from more than one host
+                    <p ixia_locid="85">To control whether memory for the flavor can be drawn from more than one host
                         NUMA node, use the following extra specification:</p>
-                    <codeblock id="79">hw:numa_mempolicy=<varname id="81">policy</varname></codeblock>
-                    <p id="86">where <parmname id="87">policy</parmname> is either
-                            <nameliteral id="88">strict</nameliteral> (to use only memory
-                        from the designated host NUMA node) or <nameliteral id="89">preferred</nameliteral> (to permit memory from other host NUMA nodes to
+                    <codeblock ixia_locid="79">hw:numa_mempolicy=<varname ixia_locid="81">policy</varname></codeblock>
+                    <p ixia_locid="86">where <parmname ixia_locid="87">policy</parmname> is either
+                            <nameliteral ixia_locid="88">strict</nameliteral> (to use only memory
+                        from the designated host NUMA node) or <nameliteral ixia_locid="89">preferred</nameliteral> (to permit memory from other host NUMA nodes to
                         be used if necessary).</p>
                 </info>
             </step>
         </steps>
-        <postreq id="postreq_N1012F_N1001F_N10001" id="72">
-            <p id="73">To pin the virtual NUMA nodes to host NUMA nodes, see <xref href="jow1425236723556.xml" id="74"/>.</p>
+        <postreq id="postreq_N1012F_N1001F_N10001" ixia_locid="72">
+            <p ixia_locid="73">To pin the virtual NUMA nodes to host NUMA nodes, see <xref href="jow1425236723556.xml" ixia_locid="74"/>.</p>
         </postreq>
     </taskbody>
 </task-wr>

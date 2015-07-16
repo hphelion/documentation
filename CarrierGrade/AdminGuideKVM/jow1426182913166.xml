@@ -4,44 +4,44 @@
 <!-- Modification History
 
  -->
- <title id="1">Host Aggregates</title>
- <shortdesc id="2">Host aggregates are collections of hosts that share common attributes for
+ <title ixia_locid="1">Host Aggregates</title>
+ <shortdesc ixia_locid="2">Host aggregates are collections of hosts that share common attributes for
   the purposes of VM scheduling.</shortdesc>
  <prolog>
-  <author id="3">Jim Owens</author>
+  <author ixia_locid="3">Jim Owens</author>
  </prolog>
  <conbody>
-  <note id="note_N10022_N1001F_N10001" id="4">
-   <p id="5">The information in this topic is preliminary and subject to change.</p>
+  <note id="note_N10022_N1001F_N10001" ixia_locid="4">
+   <p ixia_locid="5">The information in this topic is preliminary and subject to change.</p>
   </note>
-  <p id="6">To view host aggregates, open the <wintitle id="7">Host Aggregates</wintitle> page from the
-    <uicontrol id="8">Admin</uicontrol> menu.</p>
-  <fig id="fig_fjl_2y1_kr" id="9">
-   <image href="jow1426532903039.image" id="image_k2w_2y1_kr" id="10" width="6in">
-    <alt id="11">Host Aggregates page</alt>
+  <p ixia_locid="6">To view host aggregates, open the <wintitle ixia_locid="7">Host Aggregates</wintitle> page from the
+    <uicontrol ixia_locid="8">Admin</uicontrol> menu.</p>
+  <fig id="fig_fjl_2y1_kr" ixia_locid="9">
+   <image href="jow1426532903039.image" id="image_k2w_2y1_kr" ixia_locid="10" width="6in">
+    <alt ixia_locid="11">Host Aggregates page</alt>
    </image>
   </fig>
-  <p id="12">When the Nova Scheduler selects a compute node to instantiate a VM, it can use
+  <p ixia_locid="12">When the Nova Scheduler selects a compute node to instantiate a VM, it can use
    host aggregates to narrow the selection. For example, if the VM requires local storage, the Nova
-   scheduler selects a host from the <nameliteral id="13">local_storage_hosts</nameliteral>
+   scheduler selects a host from the <nameliteral ixia_locid="13">local_storage_hosts</nameliteral>
    host aggregate. Alternatively, if the VM requires remote storage, the scheduler selects from the
-    <nameliteral id="14">remote_storage_hosts</nameliteral> host aggregate. This ensures
+    <nameliteral ixia_locid="14">remote_storage_hosts</nameliteral> host aggregate. This ensures
    that the instance is instantiated on a host that meets the requirements of the VM.</p>
-  <p id="15">The Nova scheduler does not always use host aggregates. For example, if a VM
+  <p ixia_locid="15">The Nova scheduler does not always use host aggregates. For example, if a VM
    does not specify either local or remote storage, the Nova scheduler can instantiate it on any
    resource.</p>
-  <p id="16">Some host aggregates are managed automatically by HP Helion OpenStack Carrier Grade. </p>
-  <note id="note_N1005C_N1001F_N10001" id="17" type="caution">
-   <p id="18">Do not make manual changes to host aggregates that are managed automatically.</p>
+  <p ixia_locid="16">Some host aggregates are managed automatically by HP Helion OpenStack Carrier Grade. </p>
+  <note id="note_N1005C_N1001F_N10001" ixia_locid="17" type="caution">
+   <p ixia_locid="18">Do not make manual changes to host aggregates that are managed automatically.</p>
   </note>
   <ul id="ul_jgc_yt1_kr">
-   <li id="19">
-    <p id="20">The <nameliteral id="21">local_storage_hosts</nameliteral> and
-      <nameliteral id="22">remote_storage_hosts</nameliteral> memberships are updated automatically whenever
-     a local volume group is added or removed on a compute host. For more information, see <xref href="jow1426183480976.xml" id="23"/>.</p>
+   <li ixia_locid="19">
+    <p ixia_locid="20">The <nameliteral ixia_locid="21">local_storage_hosts</nameliteral> and
+      <nameliteral ixia_locid="22">remote_storage_hosts</nameliteral> memberships are updated automatically whenever
+     a local volume group is added or removed on a compute host. For more information, see <xref href="jow1426183480976.xml" ixia_locid="23"/>.</p>
    </li>
   </ul>
-  <p id="24">You can use host aggregates to meet special requirements. For example, you can
+  <p ixia_locid="24">You can use host aggregates to meet special requirements. For example, you can
    create a pool of compute hosts to offer dedicated resources such as pinned NUMA nodes or specific
    huge page sizes, while grouping the remaining compute hosts to offer shared resources.
    </p>

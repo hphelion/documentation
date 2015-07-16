@@ -4,19 +4,19 @@
 <!-- Modification History
 
  -->
- <title id="1">The App Scale Helper Script</title>
- <shortdesc id="2">The App Scale Helper script supports resource scaling
+ <title ixia_locid="1">The App Scale Helper Script</title>
+ <shortdesc ixia_locid="2">The App Scale Helper script supports resource scaling
     customizations.</shortdesc>
  <prolog>
-  <author id="3">Jim Owens</author>
+  <author ixia_locid="3">Jim Owens</author>
  </prolog>
  <conbody>
-  <p id="9">This is an optional script running on the guest. If present, it can modify
+  <p ixia_locid="9">This is an optional script running on the guest. If present, it can modify
             aspects of scaling behavior. For example, it can control which CPU is taken offline
             during a scale-down operation, overriding the default selection. </p>
-        <p id="10">It can also call other scripts or programs. You can use this to coordinate
+        <p ixia_locid="10">It can also call other scripts or programs. You can use this to coordinate
             or manage processing work for the vCPUs as you scale them.</p>
-  <p id="8">For more about the App Scale Helper script, refer to the documentation for the
+  <p ixia_locid="8">For more about the App Scale Helper script, refer to the documentation for the
             HP Helion OpenStack Carrier Grade Software Development Kit.</p>
  </conbody>
 </concept-wr>

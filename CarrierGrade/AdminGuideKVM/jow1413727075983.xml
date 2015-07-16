@@ -4,84 +4,84 @@
 <!-- Modification History
         
 -->
-    <title id="100">Changing Storage Space Allotments on the Controller</title>
-    <shortdesc id="101">You can change the allotments for controller-based storage at any
+    <title ixia_locid="100">Changing Storage Space Allotments on the Controller</title>
+    <shortdesc ixia_locid="101">You can change the allotments for controller-based storage at any
         time after installation. This includes the space allotted for database, image, and backup
         storage, and for clusters using an LVM backend, the space allotted for Cinder volume
         storage.</shortdesc>
     <prolog>
-        <author id="102">Jim Owens</author>
+        <author ixia_locid="102">Jim Owens</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001F_N1001C_N10001" id="24">
-            <note id="note_N10096_N10022_N1001F_N10001" id="210">
-                <p id="119">Cinder volume storage is allotted using 3PAR, not on the
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="24">
+            <note id="note_N10096_N10022_N1001F_N10001" ixia_locid="210">
+                <p ixia_locid="119">Cinder volume storage is allotted using 3PAR, not on the
                     controller node. </p>
             </note>
-            <p id="25">During software installation, the HP Helion OpenStack Carrier Grade is configured with
+            <p ixia_locid="25">During software installation, the HP Helion OpenStack Carrier Grade is configured with
                 the following storage allotments.</p>
             <dl>
-                <dlentry id="224">
-                    <dt id="225">Database storage</dt>
-                    <dd id="226">
-                        <p id="108">The storage allotment for the OpenStack database.</p>
+                <dlentry ixia_locid="224">
+                    <dt ixia_locid="225">Database storage</dt>
+                    <dd ixia_locid="226">
+                        <p ixia_locid="108">The storage allotment for the OpenStack database.</p>
                     </dd>
                 </dlentry>
-                <dlentry id="227">
-                    <dt id="228">Image storage</dt>
-                    <dd id="229">
-                        <p id="112">The size of the partition to use for image storage.</p>
+                <dlentry ixia_locid="227">
+                    <dt ixia_locid="228">Image storage</dt>
+                    <dd ixia_locid="229">
+                        <p ixia_locid="112">The size of the partition to use for image storage.</p>
                     </dd>
                 </dlentry>
-                <dlentry id="230">
-                    <dt id="231">Backup storage</dt>
-                    <dd id="232">
-                        <p id="116">The storage allotment for backup operations.</p>
+                <dlentry ixia_locid="230">
+                    <dt ixia_locid="231">Backup storage</dt>
+                    <dd ixia_locid="232">
+                        <p ixia_locid="116">The storage allotment for backup operations.</p>
                     </dd>
                 </dlentry>
-                <dlentry id="233">
-                    <dt id="234">Volume storage</dt>
-                    <dd id="235">
-                        <p id="136">For a system using LVM storage, the storage allotment
+                <dlentry ixia_locid="233">
+                    <dt ixia_locid="234">Volume storage</dt>
+                    <dd ixia_locid="235">
+                        <p ixia_locid="136">For a system using LVM storage, the storage allotment
                             for all Cinder volumes used by guest instances.</p>
                     </dd>
                 </dlentry>
             </dl>
-            <p id="246">You can change these allotments using the <wintitle id="241">System Configuration</wintitle> controls in the web administration interface,
-                or using the CLI. For CLI instructions, see <xref href="jow1413729179585.xml" id="302"/>.</p>
-            <p id="247">To accommodate the changes, there must be enough disk space on the
+            <p ixia_locid="246">You can change these allotments using the <wintitle ixia_locid="241">System Configuration</wintitle> controls in the web administration interface,
+                or using the CLI. For CLI instructions, see <xref href="jow1413729179585.xml" ixia_locid="302"/>.</p>
+            <p ixia_locid="247">To accommodate the changes, there must be enough disk space on the
                 controller, including headroom needed to complete the operation. The headroom
                 required is 45 GiB on the primary disk for a cluster using an LVM backend. This is
                 in addition to the space required for the new allotments. The requested changes are
                 checked against available space on the affected disks; if there is not enough, the
                 changes are disallowed.</p>
-            <p id="303">To provide more space, you can replace the affected disk or disks.
+            <p ixia_locid="303">To provide more space, you can replace the affected disk or disks.
                 Database, image, and backup storage use space on the primary disk. Cinder volume
                 storage (on a cluster with an LVM backend) uses space on a disk selected by device
                 node number during controller configuration. The replacement disk must occupy the
                 same device node number. Changes to the Cinder volume storage may also affect the
                 primary disk because of the headroom requirement.</p>
-            <p id="304">To pass the disk-space checks, any replacement disks must be
+            <p ixia_locid="304">To pass the disk-space checks, any replacement disks must be
                 installed before the allotments are changed.</p>
-            <note id="note_N100A9_N10022_N1001F_N10001" id="208" type="caution">
-                <p id="209"> The configurations for <nameliteral id="236">controller-0</nameliteral> and <nameliteral id="237">controller-1</nameliteral> must be identical. If you make changes to one,
+            <note id="note_N100A9_N10022_N1001F_N10001" ixia_locid="208" type="caution">
+                <p ixia_locid="209"> The configurations for <nameliteral ixia_locid="236">controller-0</nameliteral> and <nameliteral ixia_locid="237">controller-1</nameliteral> must be identical. If you make changes to one,
                     you must make the same changes to the other.</p>
             </note>
-            <p id="160">Changes to the storage allotments require a reinstallation of the
+            <p ixia_locid="160">Changes to the storage allotments require a reinstallation of the
                 HP Helion OpenStack Carrier Grade host software on the controllers, even if the primary disk is not
                 replaced.</p>
-            <note conref="rst1432737677834.xml#rst1432737677834/note_N10195_N10154_N1001F_N10001" id="note_N10195_N10154_N1001F_N10001" id="345"/>                                            
+            <note conref="rst1432737677834.xml#rst1432737677834/note_N10195_N10154_N1001F_N10001" id="note_N10195_N10154_N1001F_N10001" ixia_locid="345"/>                                            
         </context>
-        <prereq id="prereq_N10022_N1001F_N10001" id="211">
-            <p id="212">Before changing storage allotments, prepare as follows:</p>
+        <prereq id="prereq_N10022_N1001F_N10001" ixia_locid="211">
+            <p ixia_locid="212">Before changing storage allotments, prepare as follows:</p>
             <ul id="ul_p3d_2h5_vp">
-                <li id="213">
-                    <p id="214">Calculate your system storage requirements using the <cite id="249">HP Helion OpenStack Carrier Grade System Engineering Guidelines</cite>.
+                <li ixia_locid="213">
+                    <p ixia_locid="214">Calculate your system storage requirements using the <cite ixia_locid="249">HP Helion OpenStack Carrier Grade System Engineering Guidelines</cite>.
                         Include the headroom required for changes to the storage space
                         allotments.</p>
                 </li>
-                <li id="216">
-                    <p id="217">Record the current configuration settings in case they need
+                <li ixia_locid="216">
+                    <p ixia_locid="217">Record the current configuration settings in case they need
                         to be restored (for example, because of an unexpected interruption during
                         changes to the system configuration). Consult the configuration plan for
                         your system.</p>
@@ -89,143 +89,143 @@
             </ul>
         </prereq>
         <steps>
-            <step id="step_N100F4_N100F1_N1001F_N10001" id="253">
-                <cmd id="254">If necessary, install replacement disks in the controllers.</cmd>
-                <info id="255">
-                    <p id="256">If you do not need to replace disks, you can skip this step.
+            <step id="step_N100F4_N100F1_N1001F_N10001" ixia_locid="253">
+                <cmd ixia_locid="254">If necessary, install replacement disks in the controllers.</cmd>
+                <info ixia_locid="255">
+                    <p ixia_locid="256">If you do not need to replace disks, you can skip this step.
                         To determine whether you need to replace disks, calculate your storage
-                        requirements using the <cite id="250">HP Helion OpenStack Carrier Grade System
+                        requirements using the <cite ixia_locid="250">HP Helion OpenStack Carrier Grade System
                             Engineering Guidelines</cite>. Be sure to include the headroom required
                         on the primary disk.</p>
-                    <p id="257">To replace disks in the controllers, follow these steps. For
-                        more details, see <xref href="jow1414074190480.xml" id="305"/>.</p>
+                    <p ixia_locid="257">To replace disks in the controllers, follow these steps. For
+                        more details, see <xref href="jow1414074190480.xml" ixia_locid="305"/>.</p>
                 </info>
                 <substeps id="substeps_wzh_2kt_4q">
-                    <substep id="258">
-                        <cmd id="58">Lock the standby controller.</cmd>
+                    <substep ixia_locid="258">
+                        <cmd ixia_locid="58">Lock the standby controller.</cmd>
                     </substep>
-                    <substep id="264">
-                        <cmd id="265">Power down the standby controller.</cmd>
+                    <substep ixia_locid="264">
+                        <cmd ixia_locid="265">Power down the standby controller.</cmd>
                     </substep>
-                    <substep id="266">
-                        <cmd id="267">Make any required hardware changes.</cmd>
+                    <substep ixia_locid="266">
+                        <cmd ixia_locid="267">Make any required hardware changes.</cmd>
                     </substep>
-                    <substep id="268">
-                        <cmd id="269">Power up the standby controller.</cmd>
+                    <substep ixia_locid="268">
+                        <cmd ixia_locid="269">Power up the standby controller.</cmd>
                     </substep>
-                    <substep id="276">
-                        <cmd id="277">Reinstall the HP Helion OpenStack Carrier Grade software on the standby controller.</cmd>
+                    <substep ixia_locid="276">
+                        <cmd ixia_locid="277">Reinstall the HP Helion OpenStack Carrier Grade software on the standby controller.</cmd>
                     </substep>
-                    <substep id="286">
-                        <cmd id="287">Unlock the standby controller.</cmd>
+                    <substep ixia_locid="286">
+                        <cmd ixia_locid="287">Unlock the standby controller.</cmd>
                     </substep>
-                    <substep id="289">
-                        <cmd id="92">Swact the controllers.</cmd>
+                    <substep ixia_locid="289">
+                        <cmd ixia_locid="92">Swact the controllers.</cmd>
                     </substep>
-                    <substep id="290">
-                        <cmd id="291">Repeat these steps for the new standby
+                    <substep ixia_locid="290">
+                        <cmd ixia_locid="291">Repeat these steps for the new standby
                             controller.</cmd>
                     </substep>
                 </substeps>
             </step>
-            <step id="step_N101EF_N100F1_N1001F_N10001" id="26">
-                <cmd id="27">Edit the disk storage allotments.</cmd>
+            <step id="step_N101EF_N100F1_N1001F_N10001" ixia_locid="26">
+                <cmd ixia_locid="27">Edit the disk storage allotments.</cmd>
                 <substeps id="substeps_kvh_bh5_4q">
-                    <substep id="306">
-                        <cmd id="307">In the HP Helion OpenStack Carrier Grade web administration interface, open the <wintitle id="137">System Configuration</wintitle> pane.</cmd>
-                        <info id="308">
-                            <p id="29"> The <wintitle id="30">System
-                                    Configuration</wintitle> pane is available from the <uicontrol id="19">System Panel</uicontrol> section of the
-                                    <uicontrol id="20">Admin</uicontrol> menu. </p>
+                    <substep ixia_locid="306">
+                        <cmd ixia_locid="307">In the HP Helion OpenStack Carrier Grade web administration interface, open the <wintitle ixia_locid="137">System Configuration</wintitle> pane.</cmd>
+                        <info ixia_locid="308">
+                            <p ixia_locid="29"> The <wintitle ixia_locid="30">System
+                                    Configuration</wintitle> pane is available from the <uicontrol ixia_locid="19">System Panel</uicontrol> section of the
+                                    <uicontrol ixia_locid="20">Admin</uicontrol> menu. </p>
                         </info>
                     </substep>
-                    <substep id="309">
-                        <cmd id="310">Select the <wintitle id="33">Controller Filesystem</wintitle>
+                    <substep ixia_locid="309">
+                        <cmd ixia_locid="310">Select the <wintitle ixia_locid="33">Controller Filesystem</wintitle>
                             tab.</cmd>
-                        <stepresult id="34">
-                            <p id="35">The <wintitle id="123">Controller
+                        <stepresult ixia_locid="34">
+                            <p ixia_locid="35">The <wintitle ixia_locid="123">Controller
                                     Filesystem</wintitle> page appears, showing the currently
                                 defined storage allotments.</p>
-                            <fig id="fig_t3s_4mz_5p" id="36">
-                                <image href="jow1413850529975.image" id="image_gtf_dwc_vp" id="124" width="6in">
-                                    <alt id="125">Controller filesystem page</alt>
+                            <fig id="fig_t3s_4mz_5p" ixia_locid="36">
+                                <image href="jow1413850529975.image" id="image_gtf_dwc_vp" ixia_locid="124" width="6in">
+                                    <alt ixia_locid="125">Controller filesystem page</alt>
                                 </image>
                             </fig>
                         </stepresult>
                     </substep>
-                    <substep id="311">
-                        <cmd id="40">Click <uicontrol id="41">Edit
+                    <substep ixia_locid="311">
+                        <cmd ixia_locid="40">Click <uicontrol ixia_locid="41">Edit
                                 Filesystem</uicontrol>.</cmd>
-                        <stepresult id="42">
-                            <p id="43">The <wintitle id="44">Edit Controller
+                        <stepresult ixia_locid="42">
+                            <p ixia_locid="43">The <wintitle ixia_locid="44">Edit Controller
                                     Filesystem</wintitle> dialog box appears.</p>
-                            <fig id="fig_tmw_qnz_5p" id="45">
-                                <image href="jow1413850558829.image" id="image_khj_nwc_vp" id="126" width="4in">
-                                    <alt id="127">Edit Controller Filesystem dialog</alt>
+                            <fig id="fig_tmw_qnz_5p" ixia_locid="45">
+                                <image href="jow1413850558829.image" id="image_khj_nwc_vp" ixia_locid="126" width="4in">
+                                    <alt ixia_locid="127">Edit Controller Filesystem dialog</alt>
                                 </image>
                             </fig>
-                            <note id="note_N10146_N10124_N10115_N100B7_N1001F_N10001" id="138">
-                                <p id="139">The <uicontrol id="245">Cinder storage
+                            <note id="note_N10146_N10124_N10115_N100B7_N1001F_N10001" ixia_locid="138">
+                                <p ixia_locid="139">The <uicontrol ixia_locid="245">Cinder storage
                                         (GiB)</uicontrol> field is present only for clusters using
                                     the LVM backend.</p>
                             </note>
                         </stepresult>
                     </substep>
-                    <substep id="312">
-                        <cmd id="49">Replace the storage allotments as required.</cmd>
+                    <substep ixia_locid="312">
+                        <cmd ixia_locid="49">Replace the storage allotments as required.</cmd>
                     </substep>
-                    <substep id="313">
-                        <cmd id="69">Click <uicontrol id="70">Save</uicontrol>.</cmd>
+                    <substep ixia_locid="313">
+                        <cmd ixia_locid="69">Click <uicontrol ixia_locid="70">Save</uicontrol>.</cmd>
                     </substep>
                 </substeps>
-                <info id="71">
-                    <p id="72">This raises major alarms against the controllers
-                            (<nameliteral id="314">250.001 Configuration
+                <info ixia_locid="71">
+                    <p ixia_locid="72">This raises major alarms against the controllers
+                            (<nameliteral ixia_locid="314">250.001 Configuration
                             out-of-date</nameliteral>). You can view the alarms on the Fault
-                        Management page. In addition, the status <nameliteral id="141">Config out-of-date</nameliteral> is shown for the controllers in the
-                            <wintitle id="142">Hosts</wintitle> list.</p>
+                        Management page. In addition, the status <nameliteral ixia_locid="141">Config out-of-date</nameliteral> is shown for the controllers in the
+                            <wintitle ixia_locid="142">Hosts</wintitle> list.</p>
                 </info>
             </step>
-            <step id="step_N100BF_N1002B_N1001D_N10001" id="57">
-                <cmd id="86">Lock the standby controller. </cmd>
+            <step id="step_N100BF_N1002B_N1001D_N10001" ixia_locid="57">
+                <cmd ixia_locid="86">Lock the standby controller. </cmd>
             </step>
-            <step id="step_N102CD_N100F1_N1001F_N10001" id="292">
-                <cmd id="293">Reinstall the HP Helion OpenStack Carrier Grade software on the standby
+            <step id="step_N102CD_N100F1_N1001F_N10001" ixia_locid="292">
+                <cmd ixia_locid="293">Reinstall the HP Helion OpenStack Carrier Grade software on the standby
                     controller.</cmd>
-                <info id="316">
-                    <p id="317">This step is required to update the system configuration, even if you have
+                <info ixia_locid="316">
+                    <p ixia_locid="317">This step is required to update the system configuration, even if you have
                         already reinstalled the HP Helion OpenStack Carrier Grade software as part of the disk
                         replacement procedure.</p>
                 </info>
             </step>
-            <step id="step_N102D6_N100F1_N1001F_N10001" id="294">
-                <cmd id="295">Unlock the standby controller.</cmd>
-                <info id="318">
-                    <p id="319">When the controller is unlocked, the <nameliteral id="315">250.001 Configuration out-of-date</nameliteral> alarms
+            <step id="step_N102D6_N100F1_N1001F_N10001" ixia_locid="294">
+                <cmd ixia_locid="295">Unlock the standby controller.</cmd>
+                <info ixia_locid="318">
+                    <p ixia_locid="319">When the controller is unlocked, the <nameliteral ixia_locid="315">250.001 Configuration out-of-date</nameliteral> alarms
                         against the controller are cleared.</p>
                 </info>
             </step>
-            <step id="step_N102DF_N100F1_N1001F_N10001" id="296">
-                <cmd id="297">Swact the controllers.</cmd>
+            <step id="step_N102DF_N100F1_N1001F_N10001" ixia_locid="296">
+                <cmd ixia_locid="297">Swact the controllers.</cmd>
             </step>
-            <step id="step_N10284_N100F2_N1001F_N10001" id="320">
-                <cmd id="321">Lock the new standby controller.</cmd>
+            <step id="step_N10284_N100F2_N1001F_N10001" ixia_locid="320">
+                <cmd ixia_locid="321">Lock the new standby controller.</cmd>
             </step>
-            <step id="step_N102E8_N100F1_N1001F_N10001" id="298">
-                <cmd id="299">Reinstall the HP Helion OpenStack Carrier Grade software on the
+            <step id="step_N102E8_N100F1_N1001F_N10001" ixia_locid="298">
+                <cmd ixia_locid="299">Reinstall the HP Helion OpenStack Carrier Grade software on the
                     controller.</cmd>
             </step>
-            <step id="step_N102F1_N100F1_N1001F_N10001" id="300">
-                <cmd id="301">Unlock the controller.</cmd>
+            <step id="step_N102F1_N100F1_N1001F_N10001" ixia_locid="300">
+                <cmd ixia_locid="301">Unlock the controller.</cmd>
             </step>
-            <step id="step_N1025E_N100B7_N1001F_N10001" id="156">
-                <cmd id="157">Confirm that the <nameliteral id="158">250.001
+            <step id="step_N1025E_N100B7_N1001F_N10001" ixia_locid="156">
+                <cmd ixia_locid="157">Confirm that the <nameliteral ixia_locid="158">250.001
                         Configuration out-of-date</nameliteral> alarms are cleared for both
                     controllers.</cmd>
             </step>
         </steps>
-        <postreq id="postreq_N10323_N1001F_N10001" id="243">
-            <p id="244">After making these changes, ensure that the configuration plan for
+        <postreq id="postreq_N10323_N1001F_N10001" ixia_locid="243">
+            <p ixia_locid="244">After making these changes, ensure that the configuration plan for
                 your system is updated with the new storage allotments and disk sizes.</p>
         </postreq>
     </taskbody>

@@ -4,12 +4,12 @@
     <!-- Modification History
 
  -->
-    <title id="1">Configuration Planning</title>
-    <shortdesc id="2">System configuration options are available when installing the
+    <title ixia_locid="1">Configuration Planning</title>
+    <shortdesc ixia_locid="2">System configuration options are available when installing the
         HP Helion OpenStack Carrier Grade software. You should prepare a set of selected values and features ready to
         use which are applicable to a specific deployment scenario.</shortdesc>
     <prolog>
-        <author id="3">Pedro Sanchez</author>
+        <author ixia_locid="3">Pedro Sanchez</author>
     </prolog>
     <conbody/>
 </concept-wr>

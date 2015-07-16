@@ -4,67 +4,67 @@
 <!-- Modification History
         
 -->
-    <title id="1">Setting Up a VXLAN Provider Network</title>
-    <shortdesc id="2">You can use the CLI or the web administration interface to set up a VXLAN provider
+    <title ixia_locid="1">Setting Up a VXLAN Provider Network</title>
+    <shortdesc ixia_locid="2">You can use the CLI or the web administration interface to set up a VXLAN provider
         network and add segmentation ranges.</shortdesc>
     <prolog>
-        <author id="3">Jim Owens</author>
+        <author ixia_locid="3">Jim Owens</author>
     </prolog>
     <taskbody>
-        <context id="context_N10022_N1001F_N10001" id="4">
-            <p id="5">VXLAN provider networks are an alternative to VLAN provider networks
+        <context id="context_N10022_N1001F_N10001" ixia_locid="4">
+            <p ixia_locid="5">VXLAN provider networks are an alternative to VLAN provider networks
                 when VM L2 connectivity is required across separate Layer 2 network segments
                 separated by one or more Layer 3 routers.</p>
-            <p id="288">The steps in this section describe how to set up a VXLAN provider
+            <p ixia_locid="288">The steps in this section describe how to set up a VXLAN provider
                 network and add segmentation ranges using the web administration interface. For
-                information about using CLI commands, see <xref href="jow1425677233816.xml" id="365"/>.</p>
+                information about using CLI commands, see <xref href="jow1425677233816.xml" ixia_locid="365"/>.</p>
         </context>
         <steps id="steps_rvq_zr2_hr">
-            <step conref="jow1424191621914.xml#jow1424191621914/step_N1003F_N1003C_N10024_N10001" id="step_N10031_N1002D_N1001F_N10001" id="6">
-                <cmd id="7"/>
+            <step conref="jow1424191621914.xml#jow1424191621914/step_N1003F_N1003C_N10024_N10001" id="step_N10031_N1002D_N1001F_N10001" ixia_locid="6">
+                <cmd ixia_locid="7"/>
             </step>
-            <step conref="jow1424191621914.xml#jow1424191621914/step_N10054_N1003C_N10024_N10001" id="step_N1003A_N1002D_N1001F_N10001" id="8">
-                <cmd id="9"/>
+            <step conref="jow1424191621914.xml#jow1424191621914/step_N10054_N1003C_N10024_N10001" id="step_N1003A_N1002D_N1001F_N10001" ixia_locid="8">
+                <cmd ixia_locid="9"/>
             </step>
-            <step id="step_N10043_N1002D_N1001F_N10001" id="10">
-                <cmd id="11">Create a  provider network.</cmd>
-                <info conref="jow1424191621914.xml#jow1424191621914/Provider_Network_dialog" id="12"/>
-                <info id="13">
-                    <fig id="fig_v3z_zsg_hr" id="359">
-                        <image href="jow1425675012586.image" id="image_jss_vsg_hr" id="360" width="5in">
-                            <alt id="361">i-ccs-create-provider-network-generic</alt>
+            <step id="step_N10043_N1002D_N1001F_N10001" ixia_locid="10">
+                <cmd ixia_locid="11">Create a  provider network.</cmd>
+                <info conref="jow1424191621914.xml#jow1424191621914/Provider_Network_dialog" ixia_locid="12"/>
+                <info ixia_locid="13">
+                    <fig id="fig_v3z_zsg_hr" ixia_locid="359">
+                        <image href="jow1425675012586.image" id="image_jss_vsg_hr" ixia_locid="360" width="5in">
+                            <alt ixia_locid="361">i-ccs-create-provider-network-generic</alt>
                         </image>
                     </fig>
-                    <p id="14">For the <nameliteral id="362">Type</nameliteral>, select <nameliteral id="15">VXLAN</nameliteral>.</p>
-                    <p id="363">For the MTU, set a maximum transmission unit that allows for the overhead
-                        required by VXLAN encapsulation. For more information, see <xref href="jow1404333732592.xml" id="364"/>.</p>
+                    <p ixia_locid="14">For the <nameliteral ixia_locid="362">Type</nameliteral>, select <nameliteral ixia_locid="15">VXLAN</nameliteral>.</p>
+                    <p ixia_locid="363">For the MTU, set a maximum transmission unit that allows for the overhead
+                        required by VXLAN encapsulation. For more information, see <xref href="jow1404333732592.xml" ixia_locid="364"/>.</p>
                 </info>
             </step>
-            <step conref="jow1424191621914.xml#jow1424191621914/step_N10127_N1003C_N10024_N10001" id="step_N1005D_N1002D_N1001F_N10001" id="16">
-                <cmd id="17"/>
+            <step conref="jow1424191621914.xml#jow1424191621914/step_N10127_N1003C_N10024_N10001" id="step_N1005D_N1002D_N1001F_N10001" ixia_locid="16">
+                <cmd ixia_locid="17"/>
             </step>
-            <step id="step_N10072_N1002D_N1001F_N10001" id="274">
-                <cmd id="273">Add one or more segmentation ranges.</cmd>
-                <info id="275">
-                    <p conref="jow1425657297895.xml#jow1425657297895/seg_range_definition" id="276"/>
+            <step id="step_N10072_N1002D_N1001F_N10001" ixia_locid="274">
+                <cmd ixia_locid="273">Add one or more segmentation ranges.</cmd>
+                <info ixia_locid="275">
+                    <p conref="jow1425657297895.xml#jow1425657297895/seg_range_definition" ixia_locid="276"/>
                 </info>
-                <info conref="jow1425657297895.xml#jow1425657297895/info_add_seg-range" id="277"/>
-                <info id="281">
+                <info conref="jow1425657297895.xml#jow1425657297895/info_add_seg-range" ixia_locid="277"/>
+                <info ixia_locid="281">
                     <dl conref="jow1425657297895.xml#jow1425657297895/dl_VxLAN_extras">
-                        <dlentry id="285">
-                            <dt id="286"/>
-                            <dd id="287"/>
+                        <dlentry ixia_locid="285">
+                            <dt ixia_locid="286"/>
+                            <dd ixia_locid="287"/>
                         </dlentry>
                     </dl>
-                    <fig id="fig_tlm_tfg_hr" id="282">
-                        <image href="jow1425669118942.image" id="image_o4n_cgg_hr" id="283" width="5in">
-                            <alt id="284">i-css-create-seg-range-vxlan</alt>
+                    <fig id="fig_tlm_tfg_hr" ixia_locid="282">
+                        <image href="jow1425669118942.image" id="image_o4n_cgg_hr" ixia_locid="283" width="5in">
+                            <alt ixia_locid="284">i-css-create-seg-range-vxlan</alt>
                         </image>
                     </fig>
                 </info>
             </step>
-            <step id="step_N10088_N1002D_N1001F_N10001" id="278">
-                <cmd conref="jow1425657297895.xml#jow1425657297895/cmd_commit_seg_range" id="279"/>
+            <step id="step_N10088_N1002D_N1001F_N10001" ixia_locid="278">
+                <cmd conref="jow1425657297895.xml#jow1425657297895/cmd_commit_seg_range" ixia_locid="279"/>
             </step>
         </steps>
     </taskbody>
