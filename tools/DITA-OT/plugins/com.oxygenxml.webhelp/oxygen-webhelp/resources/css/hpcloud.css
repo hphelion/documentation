@@ -479,10 +479,10 @@ input.searchButton {
   .footer {
     color: white !important;
   }
-
-  .footer a {
+/* Removing this so footer links aren't white on white - pfletcher 7/16*/
+/*  .footer a {
     color: white !important;
-  }
+  }*/
 
   #mainhome {
 
