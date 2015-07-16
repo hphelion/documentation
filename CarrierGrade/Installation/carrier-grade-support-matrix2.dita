@@ -35,137 +35,176 @@
         id="controllers"><b>Comtrollers and compute servers</b></p><p>The following servers are
         supported for the controllers and compute servers in both the <xref
           href="../Overview/carrier-grade-overview-non-kvm.dita#topic1495">Non-KVM region</xref> and
-          <xref href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM
-        region</xref>.</p><table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
-        <tgroup cols="3">
-          <colspec colname="c1" colnum="1" colwidth="1*"/>
-          <colspec colname="c2" colnum="2" colwidth="1.29*"/>
-          <colspec colname="c4" colnum="3" colwidth="4.18*"/>
-          <thead>
-            <row>
-              <entry>Server</entry>
-              <entry>Used for</entry>
-              <entry>Requirements</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry namest="c1" nameend="c4"><b>HP ProLiant Rack Servers</b></entry>
-            </row>
-            <row>
-              <entry>DL360 Gen9</entry>
-              <entry>
-                <ul>
-                  <li>Compute</li>
-                  <li>Controller</li>
-                </ul>
-              </entry>
-              <entry>
-                <ul>
-                  <li>2 x Intel® Xeon® E5-2680v3</li>
-                  <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
-                  <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                  <li>1 x Smart Array P244br/1GB FBWC</li>
-                  <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
-                  <li>1 x Ethernet 10Gb 2P 560M</li>
-                </ul>
-              </entry>
-            </row>
-            <row>
-              <entry>DL360 Gen8</entry>
-              <entry>
-                <ul>
-                  <li>Compute</li>
-                  <li>Controller</li>
-                </ul>
-              </entry>
-              <entry>
-                <ul id="ul_g1f_qyd_ss">
-                  <li>2 x Intel(R) Xeon(R) CPU E5-2650L v2 @ 1.70GHz </li>
-                  <li>256 GB DDR3 1600 MHz </li>
-                  <li>HP FlexFabric 10Gb 2port 534FLR-SFP+ Adapter </li>
-                  <li>HP FlexFabric 10Gb 2port 560FLR-SFP+ Adapter</li>
-                </ul>
-              </entry>
-            </row>
-            <row>
-              <entry>DL380 Gen9</entry>
-              <entry>
-                <ul>
-                  <li>Compute</li>
-                  <li>Controller</li>
-                </ul>
-              </entry>
-              <entry>
-                <ul>
-                  <li>2 x Intel® Xeon® E5-2680v3</li>
-                  <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
-                  <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                  <li>1 x Smart Array P244br/1GB FBWC</li>
-                  <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
-                  <li>1 x Ethernet 10Gb 2P 560M</li>
-                </ul>
-              </entry>
-            </row>
-            <row>
-              <entry>DL380 Gen8</entry>
-              <entry>
-                <ul>
-                  <li>Compute</li>
-                  <li>Controller</li>
-                </ul>
-              </entry>
-              <entry>
-                <ul>
-                  <li>2 x Intel(R) Xeon(R) CPU E5-2650L v2 @ 1.70GHz </li>
-                  <li>256 GB DDR3 1600 MHz </li>
-                  <li>HP FlexFabric 10Gb 2port 534FLR-SFP+ Adapter </li>
-                  <li>HP FlexFabric 10Gb 2port 560FLR-SFP+ Adapter</li>
-                </ul>
-              </entry>
-            </row>
-            <row>
-              <entry namest="c1" nameend="c4">
-                <b>HP ProLiant BladeSystem</b>
-              </entry>
-            </row>
-            <row>
-              <entry>BL460c Gen9</entry>
-              <entry>
-                <ul>
-                  <li>Compute</li>
-                </ul>
-              </entry>
-              <entry>
-                <ul>
-                  <li>2 x Intel® Xeon® E5-2680v3</li>
-                  <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
-                  <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                  <li>1 x Smart Array P244br/1GB FBWC</li>
-                  <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
-                  <li>1 x Ethernet 10Gb 2P 560M</li>
-                </ul>
-              </entry>
-            </row>
-            <row>
-              <entry>BL460c Gen8</entry>
-              <entry>
-                <ul>
-                  <li>Compute</li>
-                </ul>
-              </entry>
-              <entry>
-                <ul>
-                  <li>2 x Intel(R) Xeon(R) CPU E5-2650L v2 @ 1.70GHz </li>
-                  <li>256 GB DDR3 1600 MHz </li>
-                  <li>HP FlexFabric 10Gb 2port 534FLR-SFP+ Adapter </li>
-                  <li>HP FlexFabric 10Gb 2port 560FLR-SFP+ Adapter</li>
-                </ul>
-              </entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table><p><b>Notes:</b>
+          <xref href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>. The
+        servers must meet the specifications in the table below:</p><p><b>Controller:</b></p><ul>
+        <li>DL360</li>
+        <li>DL380</li>
+      </ul><p><b>Compute:</b></p><ul>
+        <li>DL360</li>
+        <li>DL380</li>
+        <li>BL460</li>
+      </ul><p>The following table lists the specifications for each type of server. Note that for
+        the GEN8 rack servers, the specifications are different if the server is used as a
+        controller or compute server.</p><p>
+        <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1" colwidth="1*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.29*"/>
+            <colspec colname="c4" colnum="3" colwidth="4.18*"/>
+            <thead>
+              <row>
+                <entry>Server</entry>
+                <entry>Used for</entry>
+                <entry>Requirements</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry namest="c1" nameend="c4"><b>HP ProLiant Rack Servers</b></entry>
+              </row>
+              <row>
+                <entry>DL360 Gen9</entry>
+                <entry>
+                  <ul>
+                    <li>Compute</li>
+                    <li>Controller</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul>
+                    <li>2 x Intel® Xeon® E5-2680v3</li>
+                    <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                    <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                    <li>1 x Smart Array P244br/1GB FBWC</li>
+                    <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
+                    <li>1 x Ethernet 10Gb 2P 560M</li>
+                  </ul>
+                </entry>
+              </row>
+              <row>
+                <entry morerows="1">DL360 Gen8</entry>
+                <entry>
+                  <ul>
+                    <li>Controller</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul id="ul_g1f_qyd_ss">
+                    <li>2 x Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.6GHz</li>
+                    <li>128 GB DDR3 1600 MHz</li>
+                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>OR</b></li>
+                    <li>HP FlexFabric 10Gb 2port 534FLR-SFP+ Adapter</li>
+                  </ul>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <ul id="ul_owp_vh2_ss">
+                    <li>Compute</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul>
+                    <li>2 x Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.8GHz </li>
+                    <li>256 GB DDR3 1600 MHz </li>
+                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>AND</b></li>
+                    <li>HP Ethernet 10Gb 2-port 560SFP+ Adapter </li>
+                  </ul>
+                </entry>
+              </row>
+              <row>
+                <entry>DL380 Gen9</entry>
+                <entry>
+                  <ul>
+                    <li>Compute</li>
+                    <li>Controller</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul>
+                    <li>2 x Intel® Xeon® E5-2680v3</li>
+                    <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                    <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                    <li>1 x Smart Array P244br/1GB FBWC</li>
+                    <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
+                    <li>1 x Ethernet 10Gb 2P 560M</li>
+                  </ul>
+                </entry>
+              </row>
+              <row>
+                <entry morerows="1">DL360 Gen8</entry>
+                <entry>
+                  <ul>
+                    <li>Controller</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul>
+                    <li>2 x Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.6GHz</li>
+                    <li>128 GB DDR3 1600 MHz</li>
+                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>OR</b></li>
+                    <li>HP FlexFabric 10Gb 2port 534FLR-SFP+ Adapter</li>
+                  </ul>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <ul>
+                    <li>Compute</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul>
+                    <li>2 x Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.8GHz </li>
+                    <li>256 GB DDR3 1600 MHz </li>
+                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>AND</b></li>
+                    <li>HP Ethernet 10Gb 2-port 560SFP+ Adapter </li>
+                  </ul>
+                </entry>
+              </row>
+              <row>
+                <entry namest="c1" nameend="c4">
+                  <b>HP ProLiant BladeSystem</b>
+                </entry>
+              </row>
+              <row>
+                <entry>BL460c Gen9</entry>
+                <entry>
+                  <ul>
+                    <li>Compute</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul>
+                    <li>2 x Intel® Xeon® E5-2680v3</li>
+                    <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                    <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                    <li>1 x Smart Array P244br/1GB FBWC</li>
+                    <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
+                    <li>1 x Ethernet 10Gb 2P 560M</li>
+                  </ul>
+                </entry>
+              </row>
+              <row>
+                <entry>BL460c Gen8</entry>
+                <entry>
+                  <ul>
+                    <li>Compute</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul>
+                    <li>2 x Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.8GHz</li>
+                    <li>256 GB DDR3 1600 MHz </li>
+                    <li>HP FlexFabric 10Gb 2port 554FLB-SFP+ Adapter <b>and</b></li>
+                    <li>HP Ethernet 10Gb 2-port 560M Adapter</li>
+                  </ul>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p><p><b>Notes:</b>
         <ul id="ul_mxb_gzd_ss">
           <li>If you are using Gen9 systens, you must update the firmware to HP Service Pack for
             ProLiant (SPP) Version 2015.06.0.</li>
