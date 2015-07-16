@@ -22,7 +22,7 @@
   <section>
       <title>Bring Up Controller-0 in the KVM Region</title>
       <ol>
-        <li>Make sure other nodes to be used in KVM region are shutdown.</li>
+        <li>Make sure other servers to be used in KVM region are shutdown.</li>
         <li>Use the <codeph>HP-HCG-Server-host-installer-15.05-b10.iso</codeph> to boot the controller node
           <codeblock>mount HP-HCG-Server-host-installer-15.05-b10.iso</codeblock></li>
         <li>Follow the install wizard. Select the Graphics mode for the controller only. Do not
@@ -52,7 +52,7 @@ sudo reboot       </codeblock></li>
           <pre>system host-add --hostname controller-1 --personality controller --mgmt_mac &lt;mgmt_mac&gt; --bm_mac &lt;bm_mac&gt; --bm_ip &lt;ilo_ip&gt; --bm_type ilo4 --bm_username &lt;ilo_user&gt; --bm_password &lt;ilo_password&gt;</pre><pre>system host-add --hostname &lt;unique-compute-name&gt; --personality compute --mgmt_mac &lt;mgmt_mac&gt; --mgmt_ip &lt;mgmt_ip&gt; --bm_mac &lt;ilo_mac&gt; --bm_ip &lt;ilo_ip&gt; --bm_type ilo4 --bm_username &lt;ilo_user&gt;  --bm_password &lt;ilo_password&gt;</pre></li>
         <li>While registering compute nodes, make sure you specify the <codeph>mgmt_ip</codeph>.
           This IP should from the KVM CLM range (refer to the <codeph>region_config</codeph> file)
-          and must not overlap controller IPs. It is save to start after a block of 10 IPs.</li>
+          and must not overlap controller IPs. It is safe to start after a block of 10 IPs.</li>
         <li>Set the controller-1 and compute-0 to <codeph>One-time PXE boot from
           network</codeph>.</li>
         <li>PXE boot all the registered nodes.</li>
@@ -88,7 +88,7 @@ password:  admin</codeblock></p><p>Change the password on
             >Unlock the compute nodes</xref>. Compute nodes will reboot. Keep polling the status on
           the inventory page to show <b>Available</b> and <b>Online</b>.</li>
         <li>Access the Horizon dashboard using the CAN network IP (HTTPS). By default, Horizon is
-          restricted to access the CAN network using the CLM network as the default gateway You can
+          restricted to access the CAN network using the CLM network as the default gateway. You can
           workaround this, use SSH to access each controller node and update the filters:
           <codeblock>echo 0 > /proc/sys/net/ipv4/conf/default/rp_filter
 echo 0 > /proc/sys/net/ipv4/conf/all/rp_filter
@@ -98,11 +98,6 @@ echo 1 > /proc/sys/net/ipv4/ip_forward </codeblock></li>
       </ol>
     </section>
   
-  <section>
-<p>
-  <xref type="section" href="#topic1107"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
-</section>
+  <section><!-- ===================== horizontal rule ===================== --></section>
 </body>
 </topic>
