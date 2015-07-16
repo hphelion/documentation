@@ -160,7 +160,7 @@ available in the base directory of this Oxygen Webhelp plugin.
                   	    			  in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation 
                   	    			  or the OpenStack community.</p>
                   	    			  <p>&#169; 2015 Hewlett-Packard Development Company, L.P.<br />
-                  	    			  <a href="http://www.hpcloud.com/legal-documents">HP Cloud legal documents and privacy policy</a></p> -->
+                  	    			  <a href="http://www.hpcloud.com/legal-documents">HP Cloud legal documents and privacy policy</a></p> 
                     <!--<table width="">
                       <tr><td colspan="2" align="center">The OpenStack&#174; Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation 
                         in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation 
