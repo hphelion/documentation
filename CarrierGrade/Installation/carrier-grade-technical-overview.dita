@@ -39,7 +39,7 @@
         format="pdf" scope="external">HP Helion OpenStack Carrier Grade 1.1: Administrator
         Guide</xref>.</p>
     <section id="Helion-services">
-      <title>HP Helion OpenStack Carrier Grade services- functional overview</title>
+      <title>Services overview</title>
       <p>HP Helion OpenStack Carrier Grade is comprised of several integrated OpenStack services.
         Each service works through an API (application programming interface) that allows services
         to work together and allows users to interact with the services. For a complete description
@@ -97,7 +97,7 @@
             <row>
               <entry> DCM </entry>
               <entry>Data Center Management network (accessible to KVM region) and route across
-                multi-DC. </entry>
+                multiple data centers. </entry>
             </row>
             <row>
               <entry> TUL/SR-IOV </entry>
@@ -192,8 +192,8 @@
 <entry> Inter DC communication (VPN tunnel, BGP, MPLS) </entry>
 </row>
  -->
-      <p>CLM, PXE, OBS, BLS, WR-PXE, WR-INFRA, WR-TUL will use RFC 1918 non-routable IPs to prevent
-        access to the CLM network from DCM, CLT, or EXT.</p>
+      <p>CLM/OBS, PXE-1, PXE-2, BLS/INFRA, TUL/SR-IOV should use RFC 1918 non-routable IPs to
+        prevent access to the CLM network from DCM, CTL, or EXT.</p>
     </section>
     <section id="ethernet-interfaces">
       <title>Ethernet Interfaces</title>
