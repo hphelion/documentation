@@ -46,11 +46,7 @@
         <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"/>
         <!--set to toc=no later-->
       </topicref>
-      <topicref href="commercial/GA1/1.1commerical.install.HPLinux.dita"
-        navtitle="Installing HP Linux for HP Helion OpenStack" locktitle="yes">
-        <topicref href="commercial/GA1/1.1commercial.linux.arch.dita"
-          navtitle="Host Linux Architecture" locktitle="yes"/>
-      </topicref>
+ 
       <!-- Prereqs -->
       <topicref href="commercial/GA1/1.1commercial.install-GA-prereqs.dita" locktitle="yes"
         navtitle="Installation Prerequisites">
