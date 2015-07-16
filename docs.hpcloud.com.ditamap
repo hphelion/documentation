@@ -1758,7 +1758,10 @@
         <topicref href="CarrierGrade/Installation/carrier-grade-install-NTP.dita"/>
       </topicref>
       <topicref href="CarrierGrade/Installation/carrier-grade-install-non-kvm.dita"/>
-      <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-rc0.dita"/>
+      <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-rc0.dita">
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-network-interface.dita"
+        />
+      </topicref>
     </topicref>
     <!-- hiding for RC0
     <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita">
