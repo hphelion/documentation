@@ -36,16 +36,26 @@
         supported for the controllers and compute servers in both the <xref
           href="../Overview/carrier-grade-overview-non-kvm.dita#topic1495">Non-KVM region</xref> and
           <xref href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>. The
-        servers must meet the specifications in the table below:</p><p><b>Controller:</b></p><ul>
-        <li>DL360</li>
-        <li>DL380</li>
+        servers must meet the specifications in <xref href="#topic1773/specs" format="dita">the
+          table below</xref>:</p>
+      <p><b>Controller:</b></p><ul>
+        <li>DL360 (Gen 9 or Gen 8)</li>
+        <li>DL380 (Gen 9 or Gen 8)</li>
       </ul><p><b>Compute:</b></p><ul>
-        <li>DL360</li>
-        <li>DL380</li>
-        <li>BL460</li>
-      </ul><p>The following table lists the specifications for each type of server. Note that for
-        the GEN8 rack servers, the specifications are different if the server is used as a
-        controller or compute server.</p><p>
+        <li>DL360 (Gen 9 or Gen 8)</li>
+        <li>DL380 (Gen 9 or Gen 8)</li>
+        <li>BL460 (Gen 9 or Gen 8)</li>
+      </ul><p><b>Notes:</b>
+        <ul id="ul_mxb_gzd_ss">
+          <li>If you are using Gen9 systens, you must update the firmware to HP Service Pack for
+            ProLiant (SPP) Version 2015.06.0.</li>
+          <li>If you are using Gen8 systems, you will experience reduced performance.</li>
+        </ul></p>
+      <p id="specs"><b>Required Specifications</b>
+      </p>
+      <p>The following table lists the specifications for each type of server. Note that for the
+        GEN8 rack servers, the specifications are different if the server is used as a controller or
+        compute server.</p><p>
         <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
           <tgroup cols="3">
             <colspec colname="c1" colnum="1" colwidth="1*"/>
@@ -204,12 +214,7 @@
             </tbody>
           </tgroup>
         </table>
-      </p><p><b>Notes:</b>
-        <ul id="ul_mxb_gzd_ss">
-          <li>If you are using Gen9 systens, you must update the firmware to HP Service Pack for
-            ProLiant (SPP) Version 2015.06.0.</li>
-          <li>If you are using Gen8 systems, you will experience reduced performance.</li>
-        </ul></p>
+      </p>
       <!--<p>
         <b>HP ProLiant Rack Servers</b>
       </p><ul>
