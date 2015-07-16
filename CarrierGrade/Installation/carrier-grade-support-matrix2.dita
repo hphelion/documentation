@@ -266,23 +266,19 @@
             servers must have RAID controllers pre-configured to present their storage as a single,
             logical disk. RAID across multiple physical discs is strongly recommended for both
             performance and resilience.</p>
-          <p>On the controller nodes, make sure the RAID array is configured to reflect a total size
-            of less than 4TB.</p>
-        </li>
-      </ul>
+          <p>Notes:</p>
+            <ul>
+              <li>On the controller nodes, make sure the RAID array is configured to reflect a total size
+            of less than 4TB.</li>
+              <li>The root volume cannot exceed 2TB</li>
+            </ul></li></ul>
     <p id="kvm-config"><b>KVM Region</b></p>
-    <p>You must have the following hardware configuration for the KVM region:</p><ul>
-        <li>
-          <p>2 <xref href="#topic1773/controllers" format="dita">baremetal systems</xref> for
-            controllers that meet the following requirements:</p>
-          <ul id="ul_krd_vhx_rs">
-            <li>For systems with multiple NICs, only one NIC may be active or connected. </li>
-          </ul>
-        </li>
-        <li>
-          <p>2 <xref href="#topic1773/compute" format="dita">compute nodes</xref>
-          </p>
-        </li>
+    <p>You must have the following hardware configuration for the KVM region:</p>
+          <ul>
+          <li>2 <xref href="#topic1773/controllers" format="dita">baremetal systems</xref> for
+            controllers that meet the following requirements:
+            <p>For systems with multiple NICs, only one NIC may be active or connected. </p></li>
+        <li>2 <xref href="#topic1773/compute" format="dita">compute nodes</xref></li>
       </ul></section>
     <section>
       <p>The following NICs have been verified for PXE booting of KVM region servers:</p>
@@ -318,29 +314,16 @@
           <tbody>
             <row>
               <entry>16 x DL360 G9 (Compute)</entry>
-              <entry>
-                <ul id="ul_ugx_5k2_qs">
-                  <li>2 x Intel Xeon® E5-2680v3</li>
-                  <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
-                  <li>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                  <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP</li>
-                  <li>1 x Smart Array P440ar/2G FIO Controller</li>
-                  <li>2 x Ethernet 10Gb 2P 560SFP</li>
-                </ul>
-              </entry>
+              <entry>See <xref href="#topic1773/specs" format="dita">Required
+                Specifications</xref>.</entry>
               <entry morerows="2"><image href="../../media/CGH-hardware-rack.png"
                   id="image_tjx_ph2_qs" width="225"/></entry>
             </row>
             <row>
               <entry>6 x DL360 G9(Control)</entry>
               <entry>
-                <ul id="ul_vgx_5k2_qs">
-                  <li>2 x Intel Xeon® E5-2640v3</li>
-                  <li>8 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
-                  <li>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                  <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP</li>
-                  <li>1 x Smart Array P440ar/2G FIO Controller</li>
-                </ul>
+                See <xref href="#topic1773/specs" format="dita">Required
+                  Specifications</xref>.
               </entry>
             </row>
             <row>
@@ -393,34 +376,8 @@
                 <p>16 x BL460 G9 (Compute) </p>
               </entry>
               <entry>
-                <ul id="ul_cps_bns_ns">
-                  <li>2 x Intel® Xeon® E5-2680v3</li>
-                </ul>
-                <p>
-                  <ul id="ul_hfd_cns_ns">
-                    <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
-                  </ul>
-                </p>
-                <p>
-                  <ul id="ul_o1m_cns_ns">
-                    <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                  </ul>
-                </p>
-                <p>
-                  <ul id="ul_kws_cns_ns">
-                    <li>1 x Smart Array P244br/1GB FBWC</li>
-                  </ul>
-                </p>
-                <p>
-                  <ul id="ul_sbz_cns_ns">
-                    <li>1 x FlexFabric 20Gb 2-port 650FLB</li>
-                  </ul>
-                </p>
-                <p>
-                  <ul id="ul_c2f_dns_ns">
-                    <li>2 x Ethernet 10Gb 2P 560M</li>
-                  </ul>
-                </p>
+                See <xref href="#topic1773/specs" format="dita">Required
+                  Specifications</xref>.
               </entry>
             </row>
             <row>
@@ -428,19 +385,12 @@
                 <p>6 x DL360 G9 (Control)</p>
               </entry>
               <entry>
-                <ul id="ul_rlm_dns_ns">
-                  <li>2 x Intel Xeon® E5-2640v3</li>
-                  <li>8 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
-                </ul>
-                <ul id="ul_xgx_5k2_qs">
-                  <li>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                  <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP</li>
-                  <li>1 x Smart Array P440ar/2G FIO Controller</li>
-                </ul>
+                See <xref href="#topic1773/specs" format="dita">Required
+                  Specifications</xref>.
               </entry>
             </row>
             <row>
-              <entry>TOR Switches</entry>
+              <entry>TOR Switches </entry>
               <entry>
                 <ul id="ul_ygx_5k2_qs">
                   <li>6 x 5920AF-24XG Switch</li>
