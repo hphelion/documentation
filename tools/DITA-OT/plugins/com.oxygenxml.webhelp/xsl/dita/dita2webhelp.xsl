@@ -161,13 +161,13 @@ available in the base directory of this Oxygen Webhelp plugin.
                   	    			  or the OpenStack community.
                   	    			  &#169; 2015 Hewlett-Packard Development Company, L.P.
                   	    			  <a href="http://www.hpcloud.com/legal-documents">HP Cloud legal documents and privacy policy</a></p> -->
-                    <simpletable>
-                      <strow><stentry colspan="2">The OpenStack&#174; Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation 
+                    <table>
+                      <tr><td colspan="2">The OpenStack&#174; Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation 
                         in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation 
-                        or the OpenStack community.</stentry></strow>
-                      <strow><stentry>&#169; 2015 Hewlett-Packard Development Company, L.P.</stentry>
-                        <stentry><a href="http://www.hpcloud.com/legal-documents">HP Cloud legal documents and privacy policy</a></stentry></strow>
-                    </simpletable>
+                        or the OpenStack community.</td></tr>
+                      <tr><td>&#169; 2015 Hewlett-Packard Development Company, L.P.</td>
+                        <td><a href="http://www.hpcloud.com/legal-documents">HP Cloud legal documents and privacy policy</a></td></tr>
+                    </table>
                       <!--<a href="http://www.oxygenxml.com" target="_blank">
                           <span class="oXygenLogo"><img src="{$PATH2PROJ}oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen" /></span>
                           <span class="xmlauthor">XML Author</span>
