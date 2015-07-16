@@ -73,26 +73,29 @@
                 <entry namest="c1" nameend="c4"><b>HP ProLiant Rack Servers</b></entry>
               </row>
               <row>
-                <entry>DL360 Gen9</entry>
+                <entry>DL360 Gen9<p>DL380 Gen9</p></entry>
                 <entry>
                   <ul>
                     <li>Compute</li>
                     <li>Controller</li>
                   </ul>
+                  <p>2 x Intel Xeon® E5-2640v3</p>
+                  <p>8 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</p>
+                  <p>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</p>
+                  <p>1 x FlexFabric 10Gb 2-port 556FLR-SFP</p>
+                  <p>1 x Smart Array P440ar/2G FIO Controller</p>
                 </entry>
                 <entry>
                   <ul>
-                    <li>2 x Intel® Xeon® E5-2680v3</li>
-                    <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
-                    <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                    <li>1 x Smart Array P244br/1GB FBWC</li>
-                    <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
-                    <li>1 x Ethernet 10Gb 2P 560M</li>
+                    <li>2 x Intel Xeon® E5-2680v3<p>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133
+                        memory</p><p>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</p><p>1 x FlexFabric
+                        10Gb 2-port 556FLR-SFP</p><p>1 x Smart Array P440ar/2G FIO
+                        Controller</p><p>2 x Ethernet 10Gb 2P 560SFP</p></li>
                   </ul>
                 </entry>
               </row>
               <row>
-                <entry morerows="1">DL360 Gen8</entry>
+                <entry morerows="1">DL360 Gen8<p>DL380 Gen8</p></entry>
                 <entry>
                   <ul>
                     <li>Controller</li>
@@ -110,56 +113,6 @@
               <row>
                 <entry>
                   <ul id="ul_owp_vh2_ss">
-                    <li>Compute</li>
-                  </ul>
-                </entry>
-                <entry>
-                  <ul>
-                    <li>2 x Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.8GHz </li>
-                    <li>256 GB DDR3 1600 MHz </li>
-                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>AND</b></li>
-                    <li>HP Ethernet 10Gb 2-port 560SFP+ Adapter </li>
-                  </ul>
-                </entry>
-              </row>
-              <row>
-                <entry>DL380 Gen9</entry>
-                <entry>
-                  <ul>
-                    <li>Compute</li>
-                    <li>Controller</li>
-                  </ul>
-                </entry>
-                <entry>
-                  <ul>
-                    <li>2 x Intel® Xeon® E5-2680v3</li>
-                    <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
-                    <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                    <li>1 x Smart Array P244br/1GB FBWC</li>
-                    <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
-                    <li>1 x Ethernet 10Gb 2P 560M</li>
-                  </ul>
-                </entry>
-              </row>
-              <row>
-                <entry morerows="1">DL360 Gen8</entry>
-                <entry>
-                  <ul>
-                    <li>Controller</li>
-                  </ul>
-                </entry>
-                <entry>
-                  <ul>
-                    <li>2 x Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.6GHz</li>
-                    <li>128 GB DDR3 1600 MHz</li>
-                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>OR</b></li>
-                    <li>HP FlexFabric 10Gb 2port 534FLR-SFP+ Adapter</li>
-                  </ul>
-                </entry>
-              </row>
-              <row>
-                <entry>
-                  <ul>
                     <li>Compute</li>
                   </ul>
                 </entry>
@@ -191,7 +144,7 @@
                     <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
                     <li>1 x Smart Array P244br/1GB FBWC</li>
                     <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
-                    <li>1 x Ethernet 10Gb 2P 560M</li>
+                    <li>1 x HP Ethernet 10Gb 2-port 560M Adapter</li>
                   </ul>
                 </entry>
               </row>
@@ -206,8 +159,9 @@
                   <ul>
                     <li>2 x Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.8GHz</li>
                     <li>256 GB DDR3 1600 MHz </li>
-                    <li>HP FlexFabric 10Gb 2port 554FLB-SFP+ Adapter <b>and</b></li>
-                    <li>HP Ethernet 10Gb 2-port 560M Adapter</li>
+                    <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                    <li>1 x HP FlexFabric 10Gb 2port 554FLB-SFP+ Adapter <b>and</b></li>
+                    <li>1 x HP Ethernet 10Gb 2-port 560M Adapter</li>
                   </ul>
                 </entry>
               </row>

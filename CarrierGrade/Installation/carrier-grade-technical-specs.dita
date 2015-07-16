@@ -40,7 +40,8 @@
         Guide</xref>.</p>
     <section id="Helion-services">
       <title>Dimensions and Limits</title>
-      <p>HP Helion OpenStack Carrier Grade has been verified to work up to the following maximum system configuration</p>
+      <p>HP Helion OpenStack Carrier Grade has been verified to work up to the following maximum
+        system configuration:</p>
       <ul>
         <li>up to 16 compute nodes</li>
         <li>up to 160 virtual machine instances* can be configured</li>
@@ -49,10 +50,7 @@
         <li>maximum eight SR-IOV vNICs per guest</li>
         <li>maximum 32 VFs per NIC</li>
       </ul>
-      <p>* Up to 10 VMs per compute node (no over-subscription); 20 core maximum</p>
-      <p>Andrew Scrivner: Posted in Lync 256 GB DDR3 1600 MHz 2 x Intel(R) Xeon(R) CPU E5-2650L v2 @
-        1.70GHz HP FlexFabric 10Gb 2port 534FLR-SFP+ Adapter HP FlexFabric 10Gb 2port 560FLR-SFP+
-        Adapter</p> 
+      <p>* Up to 10 VMs per compute node (no over-subscription); 20 core maximum</p> 
         
     </section>
     <!-- ===================== horizontal rule ===================== -->

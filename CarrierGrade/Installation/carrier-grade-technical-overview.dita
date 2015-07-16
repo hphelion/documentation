@@ -235,16 +235,14 @@
               <entry>Compute Node</entry>
               <entry>
                 <ul>
-                  <li>One 1G on-board interface (Internal management network)</li>
-                  <li>One 1G (Intel i350) or 10G (Intel 82599) interface per additional Provider
-                    Network</li>
+                  <li>One 10G on-board interface (Internal management network)</li>
+                  <li>Two 10G (Intel 82599) interfaces per Provider Network</li>
                 </ul>
               </entry>
               <entry>
                 <ul>
-                  <li>Two 1G on-board interfaces (Internal management network)</li>
-                  <li>Two 1G (Intel i350) or 10G (Intel 82599) interfaces per additional Provider
-                    Network</li>
+                  <li>Two 10G on-board interfaces (Internal management network)</li>
+                  <li>Two 10G (Intel 82599) interfaces per Provider Network</li>
                 </ul>
               </entry>
             </row>
@@ -256,7 +254,7 @@
     </section>
     <section id="board-management-modules">
       <title>Board Management Modules</title>
-      <p>For out-of-band reset and power-on/power-off capabilities, HP360 or HP380 servers equipped
+      <p>For out-of-band reset and power-on/power-off capabilities, DL360 or DL380 servers equipped
         with HP iLO (Integrated Lights Out) board management modules are required. Each module must
         be connected using port-based VLAN to a switch that has access to the internal management
         network.</p>
@@ -285,12 +283,12 @@
       <p>The internal management network must be implemented as a single, dedicated, Layer 2
         broadcast domain for the exclusive use of each server cluster. Sharing of this network by
         more than one server cluster is not a supported configuration.</p><p>During the server
-        software installation process, several network services such as BOOTP, DHCP, and PXE, are
-        expected to run over the internal management network. These services are used to bring up
-        the different hosts to an operational state. Therefore, it is mandatory that this network be
+        software installation process, several network services such as DHCP, and PXE, are expected
+        to run over the internal management network. These services are used to bring up the
+        different hosts to an operational state. Therefore, it is mandatory that this network be
         operational and available in advance, to ensure a successful installation.</p><p>On each
-        host, the internal management network can be implemented using a 1Gb or 10 Gb Ethernet port.
-        In either case, requirements for this port are:</p><ul>
+        host, the internal management network can be implemented using a 10 Gb Ethernet port. In
+        either case, requirements for this port are:</p><ul>
         <li>must be capable of PXE-booting</li>
         <li>can be used by the motherboard as a primary boot device</li>
       </ul></section>
@@ -324,8 +322,8 @@
         infrastructure network must be implemented as a single, dedicated, Layer 2 broadcast domain
         for the exclusive use of each server cluster.</p><p>Sharing of this network by more than one
         server cluster is not a supported configuration.</p><p>The infrastructure network can be
-        implemented as a 1Gb or 10 Gb Ethernet network. In its absence, all infrastructure traffic
-        is carried over the internal management network.</p></section>
+        implemented as a 10 Gb Ethernet network. In its absence, all infrastructure traffic is
+        carried over the internal management network.</p></section>
   <section id="board-network"><b>Board Management Network</b>
       <p>Board Management CTL (IPMI Control) Network External access to the board management
       network, the board management modules are assigned IP addresses accessible from the OAM
