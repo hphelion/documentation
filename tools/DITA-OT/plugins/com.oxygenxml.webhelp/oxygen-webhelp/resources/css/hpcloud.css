@@ -198,8 +198,7 @@ a {
 #header #tocMenu {
   background-color: rgba(0, 0, 0, 0);
   padding-bottom: 2px;
-  padding-top: 3px; //NM added some space
-  
+  padding-top: 3px; ////NM added little space
 }
 #header .navheader_parent_path {
   color: rgb(255, 255, 255);
@@ -480,10 +479,10 @@ input.searchButton {
   .footer {
     color: white !important;
   }
-
-  .footer a {
+/* Removing this so footer links aren't white on white - pfletcher 7/16*/
+/*  .footer a {
     color: white !important;
-  }
+  }*/
 
   #mainhome {
 
