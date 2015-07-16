@@ -4,57 +4,57 @@
 <!-- Modification History
         
 -->
-    <title id="21">Changing the DNS Server Configuration</title>
-    <shortdesc id="22">You can change the DNS servers defined for the HP Helion OpenStack Carrier Grade at any
+    <title ixia_locid="21">Changing the DNS Server Configuration</title>
+    <shortdesc ixia_locid="22">You can change the DNS servers defined for the HP Helion OpenStack Carrier Grade at any
         time after installation.</shortdesc>
     <prolog>
-        <author id="23">Jim Owens</author>
+        <author ixia_locid="23">Jim Owens</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001F_N1001C_N10001" id="24">
-            <p id="25">During software installation, the HP Helion OpenStack Carrier Grade is configured with
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="24">
+            <p ixia_locid="25">During software installation, the HP Helion OpenStack Carrier Grade is configured with
                 up to two DNS server IP addresses. You change these addresses using the web
                 administration interface or the CLI.</p>
         </context>
         <steps>
-            <step id="step_N1002B_N10028_N1001C_N10001" id="26">
-                <cmd id="27">In the HP Helion OpenStack Carrier Grade web administration interface, open the
-                        <wintitle id="54">System Configuration</wintitle> pane.</cmd>
-                <info id="28">
-                    <p id="29">The <wintitle id="30">System Configuration</wintitle> pane is available from the
-                            <uicontrol id="19">System Panel</uicontrol> section of the
-                            <uicontrol id="20">Admin</uicontrol> menu. </p>
+            <step id="step_N1002B_N10028_N1001C_N10001" ixia_locid="26">
+                <cmd ixia_locid="27">In the HP Helion OpenStack Carrier Grade web administration interface, open the
+                        <wintitle ixia_locid="54">System Configuration</wintitle> pane.</cmd>
+                <info ixia_locid="28">
+                    <p ixia_locid="29">The <wintitle ixia_locid="30">System Configuration</wintitle> pane is available from the
+                            <uicontrol ixia_locid="19">System Panel</uicontrol> section of the
+                            <uicontrol ixia_locid="20">Admin</uicontrol> menu. </p>
                 </info>
             </step>
-            <step id="step_N1004A_N10028_N1001C_N10001" id="31">
-                <cmd id="32">Select the <wintitle id="33">DNS</wintitle> tab.</cmd>
-                <stepresult id="34">
-                    <p id="35">The <wintitle id="50">DNS</wintitle> page appears, showing the
+            <step id="step_N1004A_N10028_N1001C_N10001" ixia_locid="31">
+                <cmd ixia_locid="32">Select the <wintitle ixia_locid="33">DNS</wintitle> tab.</cmd>
+                <stepresult ixia_locid="34">
+                    <p ixia_locid="35">The <wintitle ixia_locid="50">DNS</wintitle> page appears, showing the
                         currently defined DNS servers and their IP addresses.</p>
-                    <fig id="fig_t3s_4mz_5p" id="36">
-                        <image href="jow1413850250201.image" id="image_w35_jnz_5p" id="37" width="6in">
-                            <alt id="38">DNS page</alt>
+                    <fig id="fig_t3s_4mz_5p" ixia_locid="36">
+                        <image href="jow1413850250201.image" id="image_w35_jnz_5p" ixia_locid="37" width="6in">
+                            <alt ixia_locid="38">DNS page</alt>
                         </image>
                     </fig>
                 </stepresult>
             </step>
-            <step id="step_N10070_N10028_N1001C_N10001" id="39">
-                <cmd id="40">Click <uicontrol id="41">Edit DNS</uicontrol>.</cmd>
-                <stepresult id="42">
-                    <p id="43">The <wintitle id="44">Edit DNS</wintitle> dialog box appears.</p>
-                    <fig id="fig_tmw_qnz_5p" id="45">
-                        <image href="jow1413850386429.image" id="image_yq1_tnz_5p" id="46" width="4in">
-                            <alt id="47">Edit DNS dialog</alt>
+            <step id="step_N10070_N10028_N1001C_N10001" ixia_locid="39">
+                <cmd ixia_locid="40">Click <uicontrol ixia_locid="41">Edit DNS</uicontrol>.</cmd>
+                <stepresult ixia_locid="42">
+                    <p ixia_locid="43">The <wintitle ixia_locid="44">Edit DNS</wintitle> dialog box appears.</p>
+                    <fig id="fig_tmw_qnz_5p" ixia_locid="45">
+                        <image href="jow1413850386429.image" id="image_yq1_tnz_5p" ixia_locid="46" width="4in">
+                            <alt ixia_locid="47">Edit DNS dialog</alt>
                         </image>
                     </fig>
                 </stepresult>
             </step>
-            <step id="step_N1009A_N10028_N1001C_N10001" id="48">
-                <cmd id="49">Replace the DNS Server IP addresses with different ones as required.</cmd>
+            <step id="step_N1009A_N10028_N1001C_N10001" ixia_locid="48">
+                <cmd ixia_locid="49">Replace the DNS Server IP addresses with different ones as required.</cmd>
             </step>
         </steps>
-        <result id="result_N100C6_N1001F_N10001" id="51">
-            <p id="52">Upon completion of the DNS configuration change, a <nameliteral id="53">250.001 Configuration
+        <result id="result_N100C6_N1001F_N10001" ixia_locid="51">
+            <p ixia_locid="52">Upon completion of the DNS configuration change, a <nameliteral ixia_locid="53">250.001 Configuration
                     out-of-date</nameliteral> alarm is raised temporarily, and then cleared
                 automatically by the system.</p>
         </result>

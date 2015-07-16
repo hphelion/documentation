@@ -4,47 +4,47 @@
 <!-- Modification History
         
 -->
-    <title id="55">Editing Interface Settings</title>
-    <shortdesc id="56">You can change the settings for a host interface.</shortdesc>
+    <title ixia_locid="55">Editing Interface Settings</title>
+    <shortdesc ixia_locid="56">You can change the settings for a host interface.</shortdesc>
     <prolog>
-        <author id="57">Jim Owens</author>
+        <author ixia_locid="57">Jim Owens</author>
     </prolog>
     <taskbody>
-        <context id="context_N1001E_N1001B_N10001" id="58">
-            <p id="59">The ability to change the interface settings is especially useful for
+        <context id="context_N1001E_N1001B_N10001" ixia_locid="58">
+            <p ixia_locid="59">The ability to change the interface settings is especially useful for
                 updating the management interface. When a compute node is first created, its
                 management interface is automatically set up using the default
-                    <nameliteral id="70">Interface Type</nameliteral> (<nameliteral id="71">ethernet</nameliteral>).
+                    <nameliteral ixia_locid="70">Interface Type</nameliteral> (<nameliteral ixia_locid="71">ethernet</nameliteral>).
                 If you are using LAG on the management network, you must update this manually to
-                    <nameliteral id="72">aggregated ethernet</nameliteral>.</p>
-            <p id="82">You can also edit a management or infrastructure interface to attach
-                to a data network by selecting <uicontrol id="83">data</uicontrol> as an
+                    <nameliteral ixia_locid="72">aggregated ethernet</nameliteral>.</p>
+            <p ixia_locid="82">You can also edit a management or infrastructure interface to attach
+                to a data network by selecting <uicontrol ixia_locid="83">data</uicontrol> as an
                 additional Network Type for the interface, or using the CLI. For CLI instructions,
-                see <xref href="jow1427029415968.xml" id="86"/>.</p>
+                see <xref href="jow1427029415968.xml" ixia_locid="86"/>.</p>
         </context>
         <steps>
-            <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N1003F_N1003C_N1001F_N10001" id="73">
-                <cmd id="74"/>
+            <step conref="jow1426453628262.xml#jow1426453628262/lock_host" id="step_N1003F_N1003C_N1001F_N10001" ixia_locid="73">
+                <cmd ixia_locid="74"/>
             </step>
-            <step conref="jow1426453628262.xml#jow1426453628262/open_details_locked_host" id="step_N10048_N1003C_N1001F_N10001" id="75">
-                <cmd id="76"/>
+            <step conref="jow1426453628262.xml#jow1426453628262/open_details_locked_host" id="step_N10048_N1003C_N1001F_N10001" ixia_locid="75">
+                <cmd ixia_locid="76"/>
             </step>
-            <step id="step_N10069_N10028_N1001C_N10001" id="20">
-                <cmd id="21">Select the<uicontrol id="22"> Interfaces</uicontrol>
+            <step id="step_N10069_N10028_N1001C_N10001" ixia_locid="20">
+                <cmd ixia_locid="21">Select the<uicontrol ixia_locid="22"> Interfaces</uicontrol>
                     tab to display the existing interfaces.</cmd>
-                <info id="84">
-                    <fig id="fig_N1007E_N1007B_N10068_N10028_N1001C_N10001" id="26">
-                        <image alt="Interfaces list" href="jow1404333527705.image" id="image_i45_25z_jn" id="54" width="5.5in"/>
+                <info ixia_locid="84">
+                    <fig id="fig_N1007E_N1007B_N10068_N10028_N1001C_N10001" ixia_locid="26">
+                        <image alt="Interfaces list" href="jow1404333527705.image" id="image_i45_25z_jn" ixia_locid="54" width="5.5in"/>
                     </fig>
                 </info>
             </step>
-            <step id="step_N1009A_N10027_N1001B_N10001" id="60">
-                <cmd id="61">Click <uicontrol id="62">Edit Interface</uicontrol> for the interface you want to
+            <step id="step_N1009A_N10027_N1001B_N10001" ixia_locid="60">
+                <cmd ixia_locid="61">Click <uicontrol ixia_locid="62">Edit Interface</uicontrol> for the interface you want to
                     change.</cmd>
-                <info id="63">
-                    <fig id="fig_xfz_5fm_vp" id="64">
-                        <image href="jow1426954976474.image" id="image_w5l_tlk_lr" id="24" width="4in">
-                            <alt id="85">TiS Edit Interface</alt>
+                <info ixia_locid="63">
+                    <fig id="fig_xfz_5fm_vp" ixia_locid="64">
+                        <image href="jow1426954976474.image" id="image_w5l_tlk_lr" ixia_locid="24" width="4in">
+                            <alt ixia_locid="85">TiS Edit Interface</alt>
                         </image>
                     </fig>
                     <!-- p>If you are changing the <nameliteral>Interface Type</nameliteral> to
@@ -53,14 +53,14 @@
                     <!-- JO 2015-03-24 screenshot? sounds plausible, but I don't see a second port -->
                 </info>
             </step>
-            <step id="step_N100BB_N10027_N1001B_N10001" id="67">
-                <cmd id="68">Make the required changes, and then click <uicontrol id="69">Save</uicontrol>.</cmd>
-                <info id="79">
-                    <p id="80">For information about the available settings, see <xref href="jow1426955886080.xml" id="81"/>.</p>
+            <step id="step_N100BB_N10027_N1001B_N10001" ixia_locid="67">
+                <cmd ixia_locid="68">Make the required changes, and then click <uicontrol ixia_locid="69">Save</uicontrol>.</cmd>
+                <info ixia_locid="79">
+                    <p ixia_locid="80">For information about the available settings, see <xref href="jow1426955886080.xml" ixia_locid="81"/>.</p>
                 </info>
             </step>
-            <step id="step_N100B2_N1003C_N1001F_N10001" id="77">
-                <cmd id="78">Unlock the host.</cmd>
+            <step id="step_N100B2_N1003C_N1001F_N10001" ixia_locid="77">
+                <cmd ixia_locid="78">Unlock the host.</cmd>
             </step>
         </steps>
     </taskbody>

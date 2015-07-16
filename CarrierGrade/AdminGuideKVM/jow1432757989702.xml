@@ -4,25 +4,25 @@
     <!-- Modification History
     
 -->
-    <title id="1">The Identity Menu</title>
-    <shortdesc id="2"> The <uicontrol id="3">Identity</uicontrol> menu contains
-        selections for managing tenants (projects) and users. It is available when <uicontrol id="4">admin</uicontrol> is selected as the <nameliteral id="145">Current
+    <title ixia_locid="1">The Identity Menu</title>
+    <shortdesc ixia_locid="2"> The <uicontrol ixia_locid="3">Identity</uicontrol> menu contains
+        selections for managing tenants (projects) and users. It is available when <uicontrol ixia_locid="4">admin</uicontrol> is selected as the <nameliteral ixia_locid="145">Current
             Tenant</nameliteral>.</shortdesc>
     <prolog>
-        <author id="5">Jim Owens</author>
-        <author id="144">Pedro Sanchez</author>
+        <author ixia_locid="5">Jim Owens</author>
+        <author ixia_locid="144">Pedro Sanchez</author>
     </prolog>
     <refbody>
-        <section id="section_N10027_N10024_N10001" id="6">
-            <fig id="fig_N1002B_N10027_N10024_N10001" id="7">
-                <image href="Fig_1_page_20.JPG" id="image_zmy_jbf_2s" id="146">
-                    <alt id="147">HP Helion OpenStack Carrier Grade Menu Identity Panel</alt>
+        <section id="section_N10027_N10024_N10001" ixia_locid="6">
+            <fig id="fig_N1002B_N10027_N10024_N10001" ixia_locid="7">
+                <image href="Fig_1_page_20.JPG" id="image_zmy_jbf_2s" ixia_locid="146">
+                    <alt ixia_locid="147">HP Helion OpenStack Carrier Grade Menu Identity Panel</alt>
                 </image>
             </fig>
-            <p id="9">The menu contains one section.</p>
+            <p ixia_locid="9">The menu contains one section.</p>
         </section>
-        <section id="section_N1022F_N10024_N10001" id="119">
-            <title id="120">Identity</title>
+        <section id="section_N1022F_N10024_N10001" ixia_locid="119">
+            <title ixia_locid="120">Identity</title>
             <table id="table_ipm_r3f_44">
                 <tgroup cols="3">
                     <colspec colname="col1" colwidth="14*"/>
@@ -30,35 +30,35 @@
                     <colspec colname="col3" colwidth="26*"/>
                     <thead>
                         <row>
-                            <entry colname="col1" id="121">
-                                <p id="122">Menu item</p>
+                            <entry colname="col1" ixia_locid="121">
+                                <p ixia_locid="122">Menu item</p>
                             </entry>
-                            <entry colname="col2" id="123">
-                                <p id="124">Description</p>
+                            <entry colname="col2" ixia_locid="123">
+                                <p ixia_locid="124">Description</p>
                             </entry>
-                            <entry colname="col3" id="125">
-                                <p id="126">Reference</p>
+                            <entry colname="col3" ixia_locid="125">
+                                <p ixia_locid="126">Reference</p>
                             </entry>
                         </row>
                     </thead>
                     <tbody>
                         <row>
-                            <entry id="132">
-                                <p id="133">Projects</p>
+                            <entry ixia_locid="132">
+                                <p ixia_locid="133">Projects</p>
                             </entry>
-                            <entry id="134">
-                                <p id="135">Controls for managing tenants.</p>
+                            <entry ixia_locid="134">
+                                <p ixia_locid="135">Controls for managing tenants.</p>
                             </entry>
-                            <entry id="136"/>
+                            <entry ixia_locid="136"/>
                         </row>
                         <row>
-                            <entry id="139">
-                                <p id="140">Users</p>
+                            <entry ixia_locid="139">
+                                <p ixia_locid="140">Users</p>
                             </entry>
-                            <entry id="141">
-                                <p id="142">Controls for managing user accounts.</p>
+                            <entry ixia_locid="141">
+                                <p ixia_locid="142">Controls for managing user accounts.</p>
                             </entry>
-                            <entry id="143"/>
+                            <entry ixia_locid="143"/>
                         </row>
                     </tbody>
                 </tgroup>

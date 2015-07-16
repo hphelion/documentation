@@ -3,57 +3,57 @@
 <concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333768530" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
     <!-- Modification History
    -->
-    <title id="1">Processor</title>
-    <shortdesc id="2">The <uicontrol id="3">Processor</uicontrol> tab on the
-            <wintitle id="4">Inventory Detail</wintitle> page presents processor details for
+    <title ixia_locid="1">Processor</title>
+    <shortdesc ixia_locid="2">The <uicontrol ixia_locid="3">Processor</uicontrol> tab on the
+            <wintitle ixia_locid="4">Inventory Detail</wintitle> page presents processor details for
         a host, as illustrated below.</shortdesc>
     <prolog>
-        <author id="5">Pedro Sanchez</author>
+        <author ixia_locid="5">Pedro Sanchez</author>
     </prolog>
     <conbody>
-        <fig id="fig_N10027_N10024_N10001" id="6">
-            <image href="jow1404333763192.image" id="image_iqn_jlz_l4" id="7" width="6in"/>
+        <fig id="fig_N10027_N10024_N10001" ixia_locid="6">
+            <image href="jow1404333763192.image" id="image_iqn_jlz_l4" ixia_locid="7" width="6in"/>
         </fig>
-        <p id="8">The <uicontrol id="9">Processor</uicontrol> tab includes the following items:</p>
+        <p ixia_locid="8">The <uicontrol ixia_locid="9">Processor</uicontrol> tab includes the following items:</p>
         <ul id="ul_stv_nlz_l4">
-            <li id="10">
-                <p id="11">processor model, number of processors, number of cores per
+            <li ixia_locid="10">
+                <p ixia_locid="11">processor model, number of processors, number of cores per
                     processor, and Hyper-Threading status (enabled or disabled).</p>
             </li>
-            <li id="12">
-                <p id="13">the CPU assignments. See section <xref href="jow1404333787693.xml#jow1404333787693/cpu-profiles" id="14"/> for more details.</p>
+            <li ixia_locid="12">
+                <p ixia_locid="13">the CPU assignments. See section <xref href="jow1404333787693.xml#jow1404333787693/cpu-profiles" ixia_locid="14"/> for more details.</p>
             </li>
         </ul>
-        <p id="15">Two buttons are also available as follows:</p>
+        <p ixia_locid="15">Two buttons are also available as follows:</p>
         <dl>
-            <dlentry id="16">
-                <dt id="17"><uicontrol id="18">Create CPU Profile</uicontrol></dt>
-                <dd id="19">
-                    <p id="20">Clicking this button displays the <wintitle id="21">Create CPU Profile</wintitle> window, where
+            <dlentry ixia_locid="16">
+                <dt ixia_locid="17"><uicontrol ixia_locid="18">Create CPU Profile</uicontrol></dt>
+                <dd ixia_locid="19">
+                    <p ixia_locid="20">Clicking this button displays the <wintitle ixia_locid="21">Create CPU Profile</wintitle> window, where
             the current CPU assignment can be given a name, as illustrated below.</p>
-                    <fig id="fig_N1006F_N10064_N1005B_N10058_N10024_N10001" id="22">
-                        <image href="jow1404333764867.image" id="image_mj3_zmz_l4" id="23" width="4in"/>
+                    <fig id="fig_N1006F_N10064_N1005B_N10058_N10024_N10001" ixia_locid="22">
+                        <image href="jow1404333764867.image" id="image_mj3_zmz_l4" ixia_locid="23" width="4in"/>
                     </fig>
-                    <p id="24">In this example, you are about to create a CPU Profile named
-              <nameliteral id="25">HP-360-C1</nameliteral> out of the current CPU assignments found in a
+                    <p ixia_locid="24">In this example, you are about to create a CPU Profile named
+              <nameliteral ixia_locid="25">HP-360-C1</nameliteral> out of the current CPU assignments found in a
             compute node.</p>
                 </dd>
             </dlentry>
-            <dlentry id="26">
-                <dt id="27"><uicontrol id="28">Edit CPU Assignments</uicontrol></dt>
-                <dd id="29">
-                    <p id="30">This button is available only when the host is in the locked
+            <dlentry ixia_locid="26">
+                <dt ixia_locid="27"><uicontrol ixia_locid="28">Edit CPU Assignments</uicontrol></dt>
+                <dd ixia_locid="29">
+                    <p ixia_locid="30">This button is available only when the host is in the locked
                         state.</p>
-                    <p id="31">Clicking this button displays the <wintitle id="32">Edit CPU Assignments</wintitle> window,
+                    <p ixia_locid="31">Clicking this button displays the <wintitle ixia_locid="32">Edit CPU Assignments</wintitle> window,
             where the current CPU assignment can be changed, as illustrated below for a compute
             node.</p>
-                    <fig id="fig_N1009D_N1008E_N10085_N10058_N10024_N10001" id="33">
-                        <image href="jow1404333766847.image" id="image_khm_xsz_l4" id="34" width="5in"/>
+                    <fig id="fig_N1009D_N1008E_N10085_N10058_N10024_N10001" ixia_locid="33">
+                        <image href="jow1404333766847.image" id="image_khm_xsz_l4" ixia_locid="34" width="5in"/>
                     </fig>
-                    <p id="35">Currently, the number of platform cores is limited to one for
+                    <p ixia_locid="35">Currently, the number of platform cores is limited to one for
                         each host. In the example above, this is indicated by the read-only platform
                         fields that allocate one core from processor 0.</p>
-                    <p id="36">AVS cores can be configured for each processor independently.
+                    <p ixia_locid="36">AVS cores can be configured for each processor independently.
                         This means that the single logical vSwitch running on a compute node can
                         make use of cores in multiple processors, or NUMA nodes. Optimal data path
                         performance is achieved however, when all AVS cores, the physical ports, and
@@ -61,22 +61,22 @@
                         However, having AVS cores on all processors ensures that all virtual
                         machines, regardless of the core they run on, are efficiently serviced. The
                         example allocates two cores from processor 0 to the AVS threads.</p>
-                    <p id="54">One physical core per processor can be configured as a shared CPU, which can
+                    <p ixia_locid="54">One physical core per processor can be configured as a shared CPU, which can
                         be used by multiple VMs for low-load tasks.  To use the shared physical CPU,
                         each VM must be configured with a shared vCPU ID. For more information, see
-                            <xref href="jow1426625051841.xml" id="55"/>.</p>
-                    <p id="37">All other cores are automatically available for allocation to virtual machine
+                            <xref href="jow1426625051841.xml" ixia_locid="55"/>.</p>
+                    <p ixia_locid="37">All other cores are automatically available for allocation to virtual machine
             threads.</p>
                 </dd>
             </dlentry>
         </dl>
-<!--        <section id="section_N100DD_N10029_N10001" id="38">
-            <title id="39">CPU Topology From the CLI</title>
-            <p id="40">You can use the <cmdname id="41">vm-topology</cmdname>
+<!--        <section id="section_N100DD_N10029_N10001" ixia_locid="38">
+            <title ixia_locid="39">CPU Topology From the CLI</title>
+            <p ixia_locid="40">You can use the <cmdname ixia_locid="41">vm-topology</cmdname>
                 command from the CLI on the controller nodes to explore the enumeration of sockets,
                 cores, and logical processors on a compute node. The command can be executed without
                 root privileges or Keystone authentication. Here is an example:</p>
-            <codeblock id="42"><systemoutput id="43">$ </systemoutput><userinput id="44">vm-topology -s topology</userinput><systemoutput id="45">
+            <codeblock ixia_locid="42"><systemoutput ixia_locid="43">$ </systemoutput><userinput ixia_locid="44">vm-topology -s topology</userinput><systemoutput ixia_locid="45">
 compute-1:  Model:SandyBridge, Arch:x86_64, Vendor:Intel, Sockets=2, Cores/Socket=12, Threads/Core=1
 +-\-\-\-\-\-\-\-\-\-\-\-+-\-\-+-\-\-+-\-\-+... +-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+
 |     cpu_id | 0 | 1 | 2 |... | 11 | 12 | 13 | 14 |... | 23 |
@@ -96,13 +96,13 @@ compute-2:  Model:SandyBridge, Arch:x86_64, Vendor:Intel, Sockets=2, Cores/Socke
 |  thread_id |  0 |  0 |  0 |... |  0 |  0 |  0 |  0 |... |  1 |  1 |
 | sibling_id | 24 | 25 | 26 |... | 35 | 36 | 37 | 38 |... | 22 | 23 |
 +-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+-\-\-\-+-\-\-\-+-\-\-\-+... +-\-\-\-+-\-\-\-+</systemoutput></codeblock>
-            <p id="46">The example shows two compute nodes, <nameliteral id="47">compute-1</nameliteral> with two sockets, 12 cores per socket, and no
-                Hyper-Threading (Threads/Core=1), and <nameliteral id="48">compute-2</nameliteral> with two sockets, 12 cores per socket, and
+            <p ixia_locid="46">The example shows two compute nodes, <nameliteral ixia_locid="47">compute-1</nameliteral> with two sockets, 12 cores per socket, and no
+                Hyper-Threading (Threads/Core=1), and <nameliteral ixia_locid="48">compute-2</nameliteral> with two sockets, 12 cores per socket, and
                 Hyper-Threading enabled with two logical processors per core (Threads/Core=2). The
-                rows <nameliteral id="49">cpu_id</nameliteral> and <nameliteral id="50">sibling_id</nameliteral> on <nameliteral id="51">compute-2</nameliteral> node show the hyperthread sibling processors; cores in
+                rows <nameliteral ixia_locid="49">cpu_id</nameliteral> and <nameliteral ixia_locid="50">sibling_id</nameliteral> on <nameliteral ixia_locid="51">compute-2</nameliteral> node show the hyperthread sibling processors; cores in
                 this compute node can therefore be described by the sequence [0, 24] [1, 25] [2, 26]
                 ... [46, 22] [47, 23].</p>
-            <p id="52">Use the command <cmdname id="53">vm-topology -\-help</cmdname> to list other available options
+            <p ixia_locid="52">Use the command <cmdname ixia_locid="53">vm-topology -\-help</cmdname> to list other available options
                 to include information about virtual machine flavors, instances (servers), server
                 groups, and  migrations in progress.</p>
         </section>

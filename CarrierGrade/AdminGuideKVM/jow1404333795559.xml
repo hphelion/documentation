@@ -3,42 +3,42 @@
 <concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333795559" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
     <!-- Modification History
    -->
-    <title id="1">Memory</title>
-    <shortdesc id="2">The tab <uicontrol id="3">Memory</uicontrol> on the <wintitle id="4">Inventory Detail</wintitle> page presents memory details for a host, as
+    <title ixia_locid="1">Memory</title>
+    <shortdesc ixia_locid="2">The tab <uicontrol ixia_locid="3">Memory</uicontrol> on the <wintitle ixia_locid="4">Inventory Detail</wintitle> page presents memory details for a host, as
         illustrated below.</shortdesc>
     <prolog>
-        <author id="5">Pedro Sanchez</author>
+        <author ixia_locid="5">Pedro Sanchez</author>
     </prolog>
     <conbody>
-        <fig id="fig_N10027_N10024_N10001" id="6">
-            <image href="jow1404333794155.image" id="image_zbk_dwz_l4" id="7"/>
+        <fig id="fig_N10027_N10024_N10001" ixia_locid="6">
+            <image href="jow1404333794155.image" id="image_zbk_dwz_l4" ixia_locid="7"/>
         </fig>
-        <p id="8">The information is presented in three columns, as follows:</p>
+        <p ixia_locid="8">The information is presented in three columns, as follows:</p>
         <dl>
-            <dlentry id="9">
-                <dt id="10">Memory</dt>
-                <dd id="11">
-                    <p id="12">Overall memory on the host.</p>
-                    <p id="13">For a controller node it displays the total and available memory figures.</p>
-                    <p id="14">For a compute node, as in the example above, it displays the amount reserved for the
+            <dlentry ixia_locid="9">
+                <dt ixia_locid="10">Memory</dt>
+                <dd ixia_locid="11">
+                    <p ixia_locid="12">Overall memory on the host.</p>
+                    <p ixia_locid="13">For a controller node it displays the total and available memory figures.</p>
+                    <p ixia_locid="14">For a compute node, as in the example above, it displays the amount reserved for the
             platform (system software), and the total and available figures for use by virtual
             machines.</p>
                 </dd>
             </dlentry>
-            <dlentry id="15">
-                <dt id="16">VSwitch Huge Pages</dt>
-                <dd id="17">
-                    <p id="18">This column is relevant on compute nodes only.</p>
-                    <p id="19">The size of the huge pages, and the total and available huge page figures.</p>
+            <dlentry ixia_locid="15">
+                <dt ixia_locid="16">VSwitch Huge Pages</dt>
+                <dd ixia_locid="17">
+                    <p ixia_locid="18">This column is relevant on compute nodes only.</p>
+                    <p ixia_locid="19">The size of the huge pages, and the total and available huge page figures.</p>
                 </dd>
             </dlentry>
-            <dlentry id="20">
-                <dt id="21">VM Pages</dt>
-                <dd id="22">
-                    <p id="23">This column is relevant on compute nodes only.</p>
-                    <p id="24">The size of the pages, and the total and available page
+            <dlentry ixia_locid="20">
+                <dt ixia_locid="21">VM Pages</dt>
+                <dd ixia_locid="22">
+                    <p ixia_locid="23">This column is relevant on compute nodes only.</p>
+                    <p ixia_locid="24">The size of the pages, and the total and available page
                         figures. If changes to the huge page allocations have been requested for a
-                        locked host, they are shown as <nameliteral id="25">Pending</nameliteral>.</p>
+                        locked host, they are shown as <nameliteral ixia_locid="25">Pending</nameliteral>.</p>
                 </dd>
             </dlentry>
         </dl>

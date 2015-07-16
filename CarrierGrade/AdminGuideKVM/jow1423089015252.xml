@@ -4,74 +4,74 @@
 <!-- Modification History
         
 -->
-    <title id="1">Provisioning Huge Pages Using the CLI</title>
-    <shortdesc id="2">You can edit the huge page attributes for a NUMA node from the
+    <title ixia_locid="1">Provisioning Huge Pages Using the CLI</title>
+    <shortdesc ixia_locid="2">You can edit the huge page attributes for a NUMA node from the
         CLI.</shortdesc>
     <prolog>
-        <author id="4">Jim Owens</author>
+        <author ixia_locid="4">Jim Owens</author>
     </prolog>
     <taskbody>
         <steps id="steps_brf_p33_dr">
-            <step id="step_N10031_N1002D_N1001F_N10001" id="206">
-                <cmd id="207">Lock the affected host.</cmd>
-                <info id="208">
-                    <codeblock id="209"><systemoutput id="211">(keystone_admin)$ </systemoutput><userinput id="213">system host-lock <varname id="217">hostname</varname></userinput></codeblock>
+            <step id="step_N10031_N1002D_N1001F_N10001" ixia_locid="206">
+                <cmd ixia_locid="207">Lock the affected host.</cmd>
+                <info ixia_locid="208">
+                    <codeblock ixia_locid="209"><systemoutput ixia_locid="211">(keystone_admin)$ </systemoutput><userinput ixia_locid="213">system host-lock <varname ixia_locid="217">hostname</varname></userinput></codeblock>
                 </info>
             </step>
-            <step id="step_N1004D_N1002D_N1001F_N10001" id="218">
-                <cmd id="219">Use the following command to set the huge page
+            <step id="step_N1004D_N1002D_N1001F_N10001" ixia_locid="218">
+                <cmd ixia_locid="219">Use the following command to set the huge page
                     attributes.</cmd>
-                <info id="220">
-                    <codeblock id="221"><systemoutput id="224">(keystone_admin)$ </systemoutput><userinput id="9">system host-hugepage-update <varname id="10">hostname</varname> <varname id="11">processor</varname> -2M <varname id="12">2Mpages</varname> -1G <varname id="13">1Gpages</varname></userinput></codeblock>
-                    <p id="14">where</p>
+                <info ixia_locid="220">
+                    <codeblock ixia_locid="221"><systemoutput ixia_locid="224">(keystone_admin)$ </systemoutput><userinput ixia_locid="9">system host-hugepage-update <varname ixia_locid="10">hostname</varname> <varname ixia_locid="11">processor</varname> -2M <varname ixia_locid="12">2Mpages</varname> -1G <varname ixia_locid="13">1Gpages</varname></userinput></codeblock>
+                    <p ixia_locid="14">where</p>
                     <parml>
-                        <plentry id="15">
-                            <pt id="16">hostname</pt>
-                            <pd id="17">
-                                <p id="18">is the hostname or id of the compute node</p>
+                        <plentry ixia_locid="15">
+                            <pt ixia_locid="16">hostname</pt>
+                            <pd ixia_locid="17">
+                                <p ixia_locid="18">is the hostname or id of the compute node</p>
                             </pd>
                         </plentry>
-                        <plentry id="19">
-                            <pt id="20">processor</pt>
-                            <pd id="21">
-                                <p id="22">is the NUMA node of the compute node (0 or 1)</p>
+                        <plentry ixia_locid="19">
+                            <pt ixia_locid="20">processor</pt>
+                            <pd ixia_locid="21">
+                                <p ixia_locid="22">is the NUMA node of the compute node (0 or 1)</p>
                             </pd>
                         </plentry>
-                        <plentry id="23">
-                            <pt id="24">2Mpages</pt>
-                            <pd id="25">
-                                <p id="26">(if the optional <option id="239">-2M</option> argument is
+                        <plentry ixia_locid="23">
+                            <pt ixia_locid="24">2Mpages</pt>
+                            <pd ixia_locid="25">
+                                <p ixia_locid="26">(if the optional <option ixia_locid="239">-2M</option> argument is
                                     included) the number of 2MiB huge pages to make available (if
                                     none, use 0).</p>
                             </pd>
                         </plentry>
-                        <plentry id="27">
-                            <pt id="28">1Gpages</pt>
-                            <pd id="29">
-                                <p id="30">(if the optional <option id="240">-1G</option> argument is
+                        <plentry ixia_locid="27">
+                            <pt ixia_locid="28">1Gpages</pt>
+                            <pd ixia_locid="29">
+                                <p ixia_locid="30">(if the optional <option ixia_locid="240">-1G</option> argument is
                                     included) number of 1GiB huge pages to make available (if none,
                                     use 0)</p>
                             </pd>
                         </plentry>
                     </parml>
                 </info>
-                <stepxmp id="236">
-                    <p id="31">For example, to allocate four 2 MiB huge pages for use by VMs
-                        on NUMA node 1 of compute node <nameliteral id="32">compute-0</nameliteral> :</p>
-                    <codeblock id="210"><systemoutput id="212">(keystone_admin)$ </systemoutput><userinput id="214">system host-hugepage-update compute-0 1 -2M 4</userinput></codeblock>
+                <stepxmp ixia_locid="236">
+                    <p ixia_locid="31">For example, to allocate four 2 MiB huge pages for use by VMs
+                        on NUMA node 1 of compute node <nameliteral ixia_locid="32">compute-0</nameliteral> :</p>
+                    <codeblock ixia_locid="210"><systemoutput ixia_locid="212">(keystone_admin)$ </systemoutput><userinput ixia_locid="214">system host-hugepage-update compute-0 1 -2M 4</userinput></codeblock>
                 </stepxmp>
             </step>
-            <step id="step_N100E8_N1002D_N1001F_N10001" id="227">
-                <cmd id="228">Unlock the host.</cmd>
-                <stepxmp id="237">
-                    <codeblock id="222"><systemoutput id="225">(keystone_admin)$ </systemoutput><userinput id="215">system host-unlock <varname id="230">hostname</varname></userinput></codeblock>
+            <step id="step_N100E8_N1002D_N1001F_N10001" ixia_locid="227">
+                <cmd ixia_locid="228">Unlock the host.</cmd>
+                <stepxmp ixia_locid="237">
+                    <codeblock ixia_locid="222"><systemoutput ixia_locid="225">(keystone_admin)$ </systemoutput><userinput ixia_locid="215">system host-unlock <varname ixia_locid="230">hostname</varname></userinput></codeblock>
                 </stepxmp>
             </step>
-            <step id="step_N10104_N1002D_N1001F_N10001" id="231">
-                <cmd id="232">Wait for the host to be reported as <nameliteral id="233">available</nameliteral>. </cmd>
-                <stepxmp id="238">
-                    <codeblock id="223"><systemoutput id="226">(keystone_admin)$ </systemoutput><userinput id="216">system host-list <varname id="235">hostname</varname></userinput>
-<systemoutput id="205">+----+--------------+-------------+----------------+-------------+--------------+
+            <step id="step_N10104_N1002D_N1001F_N10001" ixia_locid="231">
+                <cmd ixia_locid="232">Wait for the host to be reported as <nameliteral ixia_locid="233">available</nameliteral>. </cmd>
+                <stepxmp ixia_locid="238">
+                    <codeblock ixia_locid="223"><systemoutput ixia_locid="226">(keystone_admin)$ </systemoutput><userinput ixia_locid="216">system host-list <varname ixia_locid="235">hostname</varname></userinput>
+<systemoutput ixia_locid="205">+----+--------------+-------------+----------------+-------------+--------------+
 | id | hostname     | personality | administrative | operational | availability |
 +----+--------------+-------------+----------------+-------------+--------------+
 | 1  | controller-0 | controller  | unlocked       | enabled     | available    |

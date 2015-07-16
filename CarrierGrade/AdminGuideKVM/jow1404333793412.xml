@@ -3,41 +3,41 @@
 <concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333793412" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
     <!-- Modification History
    -->
-    <title id="1">Overview</title>
-    <shortdesc id="2">The <uicontrol id="9">Overview</uicontrol> tab on the
-            <wintitle id="4">Inventory Detail</wintitle> page summarizes core details about
+    <title ixia_locid="1">Overview</title>
+    <shortdesc ixia_locid="2">The <uicontrol ixia_locid="9">Overview</uicontrol> tab on the
+            <wintitle ixia_locid="4">Inventory Detail</wintitle> page summarizes core details about
         a host object.</shortdesc>
     <prolog>
-        <author id="5">Pedro Sanchez</author>
+        <author ixia_locid="5">Pedro Sanchez</author>
     </prolog>
     <conbody>
-        <fig id="fig_N10027_N10024_N10001" id="6">
-            <image href="jow1404333790747.image" id="image_zdr_ljz_l4" id="7" width="4in"/>
+        <fig id="fig_N10027_N10024_N10001" ixia_locid="6">
+            <image href="jow1404333790747.image" id="image_zdr_ljz_l4" ixia_locid="7" width="4in"/>
         </fig>
-        <p id="8">The following items are included in the summary:</p>
+        <p ixia_locid="8">The following items are included in the summary:</p>
         <ul id="ul_mjj_fkz_l4">
-            <li id="10">
-                <p id="11">host name, personality, and the internal UUID and host ID reference numbers</p>
+            <li ixia_locid="10">
+                <p ixia_locid="11">host name, personality, and the internal UUID and host ID reference numbers</p>
             </li>
-            <li id="12">
-                <p id="13">MAC and IP addresses on the internal management network</p>
+            <li ixia_locid="12">
+                <p ixia_locid="13">MAC and IP addresses on the internal management network</p>
             </li>
-            <li id="14">
-                <p id="15">serial ID, if known. Use the command <cmdname id="26">system host-modify
+            <li ixia_locid="14">
+                <p ixia_locid="15">serial ID, if known. Use the command <cmdname ixia_locid="26">system host-modify
                         &lt;hostname&gt; serialid=xxx</cmdname> to update it.</p>
             </li>
-            <li id="16">
-                <p id="17">location, as entered by the operator using the <wintitle id="18">Edit Host</wintitle> window (see
-            <xref href="jow1404333790046.xml" id="19"/>)</p>
+            <li ixia_locid="16">
+                <p ixia_locid="17">location, as entered by the operator using the <wintitle ixia_locid="18">Edit Host</wintitle> window (see
+            <xref href="jow1404333790046.xml" ixia_locid="19"/>)</p>
             </li>
-            <li id="20">
-                <p id="21">time stamps of when the host was created and last updated</p>
+            <li ixia_locid="20">
+                <p ixia_locid="21">time stamps of when the host was created and last updated</p>
             </li>
-            <li id="22">
-                <p id="23">the host's state</p>
+            <li ixia_locid="22">
+                <p ixia_locid="23">the host's state</p>
             </li>
-            <li id="24">
-                <p id="25">board management (iLO) information, if available, including controller type, MAC
+            <li ixia_locid="24">
+                <p ixia_locid="25">board management (iLO) information, if available, including controller type, MAC
                     address, and IP address.</p>
             </li>
         </ul>

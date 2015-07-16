@@ -3,269 +3,269 @@
 <concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333787693" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
     <!-- Modification History
    -->
-    <title id="1">Hardware Profiles</title>
-    <shortdesc id="2">A hardware profile is a named object that captures a particular host
+    <title ixia_locid="1">Hardware Profiles</title>
+    <shortdesc ixia_locid="2">A hardware profile is a named object that captures a particular host
         configuration. The profile can be applied to any other host with a similar hardware
         configuration.</shortdesc>
     <prolog>
-        <author id="4">Pedro Sanchez</author>
+        <author ixia_locid="4">Pedro Sanchez</author>
     </prolog>
     <conbody>
-        <p id="5">The following types of hardware profiles are available from the <wintitle id="3">Systems Inventory</wintitle> page, each presented on a separate
+        <p ixia_locid="5">The following types of hardware profiles are available from the <wintitle ixia_locid="3">Systems Inventory</wintitle> page, each presented on a separate
             tab:</p>
         <ul id="ul_lrp_w4q_l4">
-            <li id="7">
-                <p id="8">CPU profiles</p>
+            <li ixia_locid="7">
+                <p ixia_locid="8">CPU profiles</p>
             </li>
-            <li id="9">
-                <p id="10">interface profiles</p>
+            <li ixia_locid="9">
+                <p ixia_locid="10">interface profiles</p>
             </li>
-            <li id="147">
-                <p id="149">storage profiles</p>
+            <li ixia_locid="147">
+                <p ixia_locid="149">storage profiles</p>
             </li>
-            <li id="148">
-                <p id="150">memory profiles</p>
+            <li ixia_locid="148">
+                <p ixia_locid="150">memory profiles</p>
             </li>
         </ul>
-        <p id="13">Once a hardware profile is defined, it can be applied to any host where it makes sense to be
+        <p ixia_locid="13">Once a hardware profile is defined, it can be applied to any host where it makes sense to be
       applied to change its configuration.</p>
-        <section id="cpu-profiles" id="14">
-            <title id="15">CPU Profiles</title>
-            <p id="16">A CPU profile is a named assignment of processors and cores to one or more of the following
+        <section id="cpu-profiles" ixia_locid="14">
+            <title ixia_locid="15">CPU Profiles</title>
+            <p ixia_locid="16">A CPU profile is a named assignment of processors and cores to one or more of the following
         types of processing threads:</p>
             <dl>
-                <dlentry id="17">
-                    <dt id="18">Platform</dt>
-                    <dd id="19">
-                        <p id="20">System threads handling the core hosting functionality of
+                <dlentry ixia_locid="17">
+                    <dt ixia_locid="18">Platform</dt>
+                    <dd ixia_locid="19">
+                        <p ixia_locid="20">System threads handling the core hosting functionality of
                             the host. Platform threads are always present on all types of hosts in
                             the cluster.</p>
                     </dd>
                 </dlentry>
-                <dlentry id="139">
-                    <dt id="141">vSwitch</dt>
-                    <dd id="143">
-                        <p id="145">AVS threads dedicated to handling network traffic and
+                <dlentry ixia_locid="139">
+                    <dt ixia_locid="141">vSwitch</dt>
+                    <dd ixia_locid="143">
+                        <p ixia_locid="145">AVS threads dedicated to handling network traffic and
                             packet processing tasks. They exists on the compute nodes only.</p>
                     </dd>
                 </dlentry>
-                <dlentry id="140">
-                    <dt id="142">Shared</dt>
-                    <dd id="144">
-                        <p id="146">Threads handling low-load or non-real-time virtual
+                <dlentry ixia_locid="140">
+                    <dt ixia_locid="142">Shared</dt>
+                    <dd ixia_locid="144">
+                        <p ixia_locid="146">Threads handling low-load or non-real-time virtual
                             machine tasks, implemented on a shared physical CPU in a compute
                             node.</p>
                     </dd>
                 </dlentry>
-                <dlentry id="25">
-                    <dt id="26">Virtual Machines</dt>
-                    <dd id="27">
-                        <p id="28">Threads handling virtual machines. They exists on the compute nodes only.</p>
+                <dlentry ixia_locid="25">
+                    <dt ixia_locid="26">Virtual Machines</dt>
+                    <dd ixia_locid="27">
+                        <p ixia_locid="28">Threads handling virtual machines. They exists on the compute nodes only.</p>
                     </dd>
                 </dlentry>
             </dl>
-            <p id="29">On controller nodes, all processors and cores are automatically
+            <p ixia_locid="29">On controller nodes, all processors and cores are automatically
                 assigned to platform threads, as they are the only ones available. On compute nodes,
                 which always run a number of threads of all types, a default CPU allocation is done
                 automatically when the system software is initially installed.</p>
-            <p id="30">A list of the currently defined CPU profiles is available from the <uicontrol id="31">CPU
-          Profiles</uicontrol> tab on the <wintitle id="32">System Inventory</wintitle> page, as illustrated
+            <p ixia_locid="30">A list of the currently defined CPU profiles is available from the <uicontrol ixia_locid="31">CPU
+          Profiles</uicontrol> tab on the <wintitle ixia_locid="32">System Inventory</wintitle> page, as illustrated
         below.</p>
-            <fig id="fig_N1009C_N1004C_N10020_N10001" id="33">
-                <image href="jow1404333761616.image" id="image_a1p_t2r_l4" id="34" width="6in"/>
+            <fig id="fig_N1009C_N1004C_N10020_N10001" ixia_locid="33">
+                <image href="jow1404333761616.image" id="image_a1p_t2r_l4" ixia_locid="34" width="6in"/>
             </fig>
-            <p id="35">This example lists one CPU profile, named <nameliteral id="36">HP-360-C1</nameliteral>, with the
+            <p ixia_locid="35">This example lists one CPU profile, named <nameliteral ixia_locid="36">HP-360-C1</nameliteral>, with the
         following processor and core allocation:</p>
             <table frame="all" id="table_s32_fdr_l4">
-                <title id="37">CPU Allocation Example</title>
+                <title ixia_locid="37">CPU Allocation Example</title>
                 <tgroup cols="2">
                     <colspec colname="c1" colnum="1" colwidth="1.0*"/>
                     <colspec colname="c2" colnum="2" colwidth="1.0*"/>
                     <thead>
                         <row>
-                            <entry id="38">
-                                <p id="39">Thread Type</p>
+                            <entry ixia_locid="38">
+                                <p ixia_locid="39">Thread Type</p>
                             </entry>
-                            <entry id="40">
-                                <p id="41">CPU Allocation</p>
+                            <entry ixia_locid="40">
+                                <p ixia_locid="41">CPU Allocation</p>
                             </entry>
                         </row>
                     </thead>
                     <tbody>
                         <row>
-                            <entry id="42">
-                                <p id="43">Platform</p>
+                            <entry ixia_locid="42">
+                                <p ixia_locid="43">Platform</p>
                             </entry>
-                            <entry id="44">
-                                <p id="45">Processor 0, core 0</p>
-                            </entry>
-                        </row>
-                        <row>
-                            <entry id="46">
-                                <p id="47">vSwitch</p>
-                            </entry>
-                            <entry id="48">
-                                <p id="49">Processor 0, cores 1 and 2</p>
+                            <entry ixia_locid="44">
+                                <p ixia_locid="45">Processor 0, core 0</p>
                             </entry>
                         </row>
                         <row>
-                            <entry id="50">
-                                <p id="51">Virtual Machines</p>
+                            <entry ixia_locid="46">
+                                <p ixia_locid="47">vSwitch</p>
                             </entry>
-                            <entry id="52">
-                                <p id="53">Processor 0, cores 3 to 7</p>
-                                <p id="54">Processor 1, cores 8 to 15</p>
+                            <entry ixia_locid="48">
+                                <p ixia_locid="49">Processor 0, cores 1 and 2</p>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry ixia_locid="50">
+                                <p ixia_locid="51">Virtual Machines</p>
+                            </entry>
+                            <entry ixia_locid="52">
+                                <p ixia_locid="53">Processor 0, cores 3 to 7</p>
+                                <p ixia_locid="54">Processor 1, cores 8 to 15</p>
                             </entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
-            <p id="55">CPU profiles can be deleted using the button <uicontrol id="56">Delete CPU Profiles</uicontrol> on this page. When clicked, it
+            <p ixia_locid="55">CPU profiles can be deleted using the button <uicontrol ixia_locid="56">Delete CPU Profiles</uicontrol> on this page. When clicked, it
                 deletes all check-marked profiles in the list. The delete operation does not affect
                 CPU profiles already applied.</p>
-            <p id="57">See <xref href="jow1404333768530.xml" id="58"/> for more information of how to change
+            <p ixia_locid="57">See <xref href="jow1404333768530.xml" ixia_locid="58"/> for more information of how to change
         the CPU allocation for a compute node, and on how to define  CPU profiles.</p>
         </section>
-        <section id="section_N10137_N10020_N10001" id="59">
-            <title id="60">Interface Profiles</title>
-            <p id="61">An interface profile is a named configuration of Ethernet ports and
+        <section id="section_N10137_N10020_N10001" ixia_locid="59">
+            <title ixia_locid="60">Interface Profiles</title>
+            <p ixia_locid="61">An interface profile is a named configuration of Ethernet ports and
                 interfaces on a host, as follows:</p>
             <dl>
-                <dlentry id="62">
-                    <dt id="63">Ethernet Ports</dt>
-                    <dd id="64">
-                        <p id="65">The list of physical Ethernet ports that have been allocated to connect to a
+                <dlentry ixia_locid="62">
+                    <dt ixia_locid="63">Ethernet Ports</dt>
+                    <dd ixia_locid="64">
+                        <p ixia_locid="65">The list of physical Ethernet ports that have been allocated to connect to a
               network.</p>
                     </dd>
                 </dlentry>
-                <dlentry id="66">
-                    <dt id="67">Interfaces</dt>
-                    <dd id="68">
-                        <p id="69">Logical L2 interfaces defined on top of physical Ethernet ports.</p>
+                <dlentry ixia_locid="66">
+                    <dt ixia_locid="67">Interfaces</dt>
+                    <dd ixia_locid="68">
+                        <p ixia_locid="69">Logical L2 interfaces defined on top of physical Ethernet ports.</p>
                     </dd>
                 </dlentry>
             </dl>
-            <p id="70">A list of the currently defined interface profiles is available from the
-          <uicontrol id="71">Interface Profiles</uicontrol> tab on the <wintitle id="72">System Inventory</wintitle>
+            <p ixia_locid="70">A list of the currently defined interface profiles is available from the
+          <uicontrol ixia_locid="71">Interface Profiles</uicontrol> tab on the <wintitle ixia_locid="72">System Inventory</wintitle>
         page, as illustrated below.</p>
-            <fig id="fig_N10174_N10138_N10020_N10001" id="73">
-                <image href="jow1404333769085.image" id="image_svc_jgr_l4" id="74" width="6in"/>
+            <fig id="fig_N10174_N10138_N10020_N10001" ixia_locid="73">
+                <image href="jow1404333769085.image" id="image_svc_jgr_l4" ixia_locid="74" width="6in"/>
             </fig>
-            <p id="75">This example lists two interface profiles, as follows:</p>
+            <p ixia_locid="75">This example lists two interface profiles, as follows:</p>
             <table frame="all" id="table_gxd_hmr_l4">
-                <title id="76">Interface Profiles</title>
+                <title ixia_locid="76">Interface Profiles</title>
                 <tgroup cols="3">
                     <colspec colname="c1" colnum="1" colwidth="1.0*"/>
                     <colspec colname="c2" colnum="2" colwidth="1.0*"/>
                     <colspec colname="c3" colnum="3" colwidth="1.0*"/>
                     <thead>
                         <row>
-                            <entry id="77">
-                                <p id="78">Profile Name</p>
+                            <entry ixia_locid="77">
+                                <p ixia_locid="78">Profile Name</p>
                             </entry>
-                            <entry id="79">
-                                <p id="80">Ports</p>
+                            <entry ixia_locid="79">
+                                <p ixia_locid="80">Ports</p>
                             </entry>
-                            <entry id="81">
-                                <p id="82">Interfaces</p>
+                            <entry ixia_locid="81">
+                                <p ixia_locid="82">Interfaces</p>
                             </entry>
                         </row>
                     </thead>
                     <tbody>
                         <row>
-                            <entry id="83">
-                                <p id="84">HP-360-cmpt-iface-profile</p>
+                            <entry ixia_locid="83">
+                                <p ixia_locid="84">HP-360-cmpt-iface-profile</p>
                             </entry>
-                            <entry id="85">
-                                <p id="86">eth1, eth4, eth6</p>
+                            <entry ixia_locid="85">
+                                <p ixia_locid="86">eth1, eth4, eth6</p>
                             </entry>
-                            <entry id="87">
-                                <p id="88">eth1 on internal management network</p>
-                                <p id="89">data0 (eth6 on physnet0)</p>
-                                <p id="90">data1 (eth4 on physnet1)</p>
+                            <entry ixia_locid="87">
+                                <p ixia_locid="88">eth1 on internal management network</p>
+                                <p ixia_locid="89">data0 (eth6 on physnet0)</p>
+                                <p ixia_locid="90">data1 (eth4 on physnet1)</p>
                             </entry>
                         </row>
                         <row>
-                            <entry id="91">
-                                <p id="92">HP-360-ctrl-iface-profile</p>
+                            <entry ixia_locid="91">
+                                <p ixia_locid="92">HP-360-ctrl-iface-profile</p>
                             </entry>
-                            <entry id="93">
-                                <p id="94">eth0, eth1</p>
+                            <entry ixia_locid="93">
+                                <p ixia_locid="94">eth0, eth1</p>
                             </entry>
-                            <entry id="95">
-                                <p id="96">eth0 on OAM network</p>
-                                <p id="97">eth1 on internal management network</p>
+                            <entry ixia_locid="95">
+                                <p ixia_locid="96">eth0 on OAM network</p>
+                                <p ixia_locid="97">eth1 on internal management network</p>
                             </entry>
                         </row>
                     </tbody>
                 </tgroup>
             </table>
-            <p id="98">The interface profile <nameliteral id="99">HP-360-cmpt-iface-profile</nameliteral> belongs to a
+            <p ixia_locid="98">The interface profile <nameliteral ixia_locid="99">HP-360-cmpt-iface-profile</nameliteral> belongs to a
         compute node. It lists three physical ports, eth1, eth4, and eth6, allocated to connect to a
         network. It also lists three logical L2 interfaces:</p>
             <ul id="ul_evb_d4r_l4">
-                <li id="100">
-                    <p id="101">eth1, allocated to connect to the internal management network</p>
+                <li ixia_locid="100">
+                    <p ixia_locid="101">eth1, allocated to connect to the internal management network</p>
                 </li>
-                <li id="102">
-                    <p id="103">data0, a data interface associating physical port eth6 with the provider network
+                <li ixia_locid="102">
+                    <p ixia_locid="103">data0, a data interface associating physical port eth6 with the provider network
             physnet0.</p>
                 </li>
-                <li id="104">
-                    <p id="105">data1, a data interface associating physical port eth4 with the provider network
+                <li ixia_locid="104">
+                    <p ixia_locid="105">data1, a data interface associating physical port eth4 with the provider network
             physnet1.</p>
                 </li>
             </ul>
-            <p id="106">The interface profile <nameliteral id="107">HP-360-ctrl-iface-profile</nameliteral> belongs to a
+            <p ixia_locid="106">The interface profile <nameliteral ixia_locid="107">HP-360-ctrl-iface-profile</nameliteral> belongs to a
         controller node. It lists two physical ports, eth0, and eth1, and two logical L2 interfaces
         connecting these ports to the OAM and internal management networks.</p>
-            <p id="108">Interface profiles can be deleted using the button <uicontrol id="109">Delete Interface Profiles</uicontrol> on this page. When
+            <p ixia_locid="108">Interface profiles can be deleted using the button <uicontrol ixia_locid="109">Delete Interface Profiles</uicontrol> on this page. When
                 clicked, it deletes all check-marked profiles in the list.  The delete operation
                 does not affect interface profiles already applied.</p>
-            <p id="110">See <xref href="jow1404333777760.xml" id="111"/> for more
+            <p ixia_locid="110">See <xref href="jow1404333777760.xml" ixia_locid="111"/> for more
                 information on how to create interface profiles.</p>
         </section>
-        <section id="section_N10249_N10020_N10001" id="112">
-            <title id="113">Storage Profiles</title>
-            <p id="114">A storage profile is a named configuration for a list of storage
+        <section id="section_N10249_N10020_N10001" ixia_locid="112">
+            <title ixia_locid="113">Storage Profiles</title>
+            <p ixia_locid="114">A storage profile is a named configuration for a list of storage
                 resources on a computing node. Each storage resource consists of the following
                 elements:</p>
             <dl>
-                <dlentry id="115">
-                    <dt id="116">Disks</dt>
-                    <dd id="117">
-                        <p id="118">A Linux block storage device, such as <filepath id="119">/dev/sdd</filepath>, identifying an
+                <dlentry ixia_locid="115">
+                    <dt ixia_locid="116">Disks</dt>
+                    <dd ixia_locid="117">
+                        <p ixia_locid="118">A Linux block storage device, such as <filepath ixia_locid="119">/dev/sdd</filepath>, identifying an
               entire hard drive.</p>
                     </dd>
                 </dlentry>
-                <dlentry id="120">
-                    <dt id="121">Storage Volumes</dt>
-                    <dd id="122">
-                        <p id="123">A storage volume consisting of a name and a storage
+                <dlentry ixia_locid="120">
+                    <dt ixia_locid="121">Storage Volumes</dt>
+                    <dd ixia_locid="122">
+                        <p ixia_locid="123">A storage volume consisting of a name and a storage
                             function. The name is used as a human-readable version of the native
                             storage device UUID. The storage function indicates the type of storage
-                            backend, such as <nameliteral id="124">OSD</nameliteral> for a
+                            backend, such as <nameliteral ixia_locid="124">OSD</nameliteral> for a
                             storage system.</p>
                     </dd>
                 </dlentry>
             </dl>
-            <p id="125">A list of the currently defined storage profiles is available from the <uicontrol id="126">Storage
-          Profiles</uicontrol> tab on the <wintitle id="127">System Inventory</wintitle> page, as illustrated
+            <p ixia_locid="125">A list of the currently defined storage profiles is available from the <uicontrol ixia_locid="126">Storage
+          Profiles</uicontrol> tab on the <wintitle ixia_locid="127">System Inventory</wintitle> page, as illustrated
         below.</p>
-            <fig id="fig_N1028F_N1024B_N10020_N10001" id="128">
-                <image href="jow1404333778322.image" id="image_bny_1vg_m4" id="129" width="6in"/>
+            <fig id="fig_N1028F_N1024B_N10020_N10001" ixia_locid="128">
+                <image href="jow1404333778322.image" id="image_bny_1vg_m4" ixia_locid="129" width="6in"/>
             </fig>
-            <p id="130">This example lists one storage profile named <nameliteral id="131">storprofile-1</nameliteral> with
-        three storage resources on the hard drives <filepath id="132">/dev/sdc</filepath>,
-          <filepath id="133">/dev/sdd</filepath>, and <filepath id="134">/dev/sde</filepath>. All storage resources
-        are of the <nameliteral id="135">OSD</nameliteral> type.</p>
-            <p id="136">See <xref href="jow1404333787180.xml" id="137"/> for more
+            <p ixia_locid="130">This example lists one storage profile named <nameliteral ixia_locid="131">storprofile-1</nameliteral> with
+        three storage resources on the hard drives <filepath ixia_locid="132">/dev/sdc</filepath>,
+          <filepath ixia_locid="133">/dev/sdd</filepath>, and <filepath ixia_locid="134">/dev/sde</filepath>. All storage resources
+        are of the <nameliteral ixia_locid="135">OSD</nameliteral> type.</p>
+            <p ixia_locid="136">See <xref href="jow1404333787180.xml" ixia_locid="137"/> for more
                 information on how to create storage profiles.</p>
         </section>
-        <section id="section_N10363_N1001F_N10001" id="151">
-            <title id="152">Memory Profiles</title>
-            <p id="153">A memory profile is a named assignment of huge pages for use as VM
-                memory. For more information, see <xref href="jow1429811350849.xml" id="154"/>.</p>
+        <section id="section_N10363_N1001F_N10001" ixia_locid="151">
+            <title ixia_locid="152">Memory Profiles</title>
+            <p ixia_locid="153">A memory profile is a named assignment of huge pages for use as VM
+                memory. For more information, see <xref href="jow1429811350849.xml" ixia_locid="154"/>.</p>
         </section>
     </conbody>
 </concept-wr>

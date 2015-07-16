@@ -4,37 +4,37 @@
     <!-- Modification History
 
  -->
-    <title id="1">Templates</title>
-    <shortdesc id="2">A template is a formal set of instructions for defining and configuring a service. </shortdesc>
+    <title ixia_locid="1">Templates</title>
+    <shortdesc ixia_locid="2">A template is a formal set of instructions for defining and configuring a service. </shortdesc>
     <prolog>
-        <author id="3">Jim Owens</author>
+        <author ixia_locid="3">Jim Owens</author>
     </prolog>
     <conbody>
-        <p id="4">Templates specify the resources to include in a service, and relationships between them.</p>
-        <p id="5">A template contains several sections, including:</p>
+        <p ixia_locid="4">Templates specify the resources to include in a service, and relationships between them.</p>
+        <p ixia_locid="5">A template contains several sections, including:</p>
         <dl>
-            <dlentry id="6">
-                <dt id="7">Description</dt>
-                <dd id="8">
-                    <p id="9">You can use this section to provide comments about the service, such as its purpose or any
+            <dlentry ixia_locid="6">
+                <dt ixia_locid="7">Description</dt>
+                <dd ixia_locid="8">
+                    <p ixia_locid="9">You can use this section to provide comments about the service, such as its purpose or any
       special considerations when using it.</p>
                 </dd>
             </dlentry>
-            <dlentry id="10">
-                <dt id="11">Parameters</dt>
-                <dd id="12">
-                    <p id="13">This section defines the parameters that you can pass to the service template. You can pass
+            <dlentry ixia_locid="10">
+                <dt ixia_locid="11">Parameters</dt>
+                <dd ixia_locid="12">
+                    <p ixia_locid="13">This section defines the parameters that you can pass to the service template. You can pass
       parameters using the command line, a web form, or an environment file.</p>
-                    <p id="14">You can include a default value for a parameter, and optionally pass a different value when
+                    <p ixia_locid="14">You can include a default value for a parameter, and optionally pass a different value when
       the template is deployed. If no default value is included, you must provide a value when the
-      template is deployed. Parameters without default values are called <term id="15">mandatory
+      template is deployed. Parameters without default values are called <term ixia_locid="15">mandatory
        parameters</term>.</p>
                 </dd>
             </dlentry>
-            <dlentry id="16">
-                <dt id="17">Resources</dt>
-                <dd id="18">
-                    <p id="19">This section defines the resources to be created. They can be specified in any order.</p>
+            <dlentry ixia_locid="16">
+                <dt ixia_locid="17">Resources</dt>
+                <dd ixia_locid="18">
+                    <p ixia_locid="19">This section defines the resources to be created. They can be specified in any order.</p>
                 </dd>
             </dlentry>
         
@@ -54,32 +54,32 @@
      </p>
     </dd>
    </dlentry --></dl>
-        <p id="20">There are two official formats for templates: CloudFormation (CFN) and
+        <p ixia_locid="20">There are two official formats for templates: CloudFormation (CFN) and
             Heat Orchestration Template (HOT).</p>
         <dl>
-            <dlentry id="21">
-                <dt id="22">CFN</dt>
-                <dd id="23">
-                    <p id="24">This format is associated with Amazon Web Services (AWS) technology. A CFN template is
+            <dlentry ixia_locid="21">
+                <dt ixia_locid="22">CFN</dt>
+                <dd ixia_locid="23">
+                    <p ixia_locid="24">This format is associated with Amazon Web Services (AWS) technology. A CFN template is
       indicated by the first line:</p>
-                    <codeblock id="25">HeatTemplateFormatVersion: '2012-12-12'</codeblock>
+                    <codeblock ixia_locid="25">HeatTemplateFormatVersion: '2012-12-12'</codeblock>
                 </dd>
             </dlentry>
-            <dlentry id="30">
-                <dt id="31">HOT</dt>
-                <dd id="32">
-                    <p id="33">This format is associated specifically with the OpenStack project. A HOT template is
+            <dlentry ixia_locid="30">
+                <dt ixia_locid="31">HOT</dt>
+                <dd ixia_locid="32">
+                    <p ixia_locid="33">This format is associated specifically with the OpenStack project. A HOT template is
       indicated by the first line: </p>
-                    <codeblock id="34">heat_template_version: 2013-05-23</codeblock>
-                    <p id="38">In HOT, some of the built-in functions are different, and lowercase is used for attribute
+                    <codeblock ixia_locid="34">heat_template_version: 2013-05-23</codeblock>
+                    <p ixia_locid="38">In HOT, some of the built-in functions are different, and lowercase is used for attribute
       names.</p>
                 </dd>
             </dlentry>
         </dl>
-        <p id="39">Both formats support Amazon Web Services (AWS) resources and OpenStack
+        <p ixia_locid="39">Both formats support Amazon Web Services (AWS) resources and OpenStack
             resources, in any combination.</p>
-        <p id="40">The HP Helion OpenStack Carrier Grade includes sample service templates for demonstration
-            purposes (see <xref href="jow1404915566084.xml" id="45"/>). Both CFN and HOT formats are
+        <p ixia_locid="40">The HP Helion OpenStack Carrier Grade includes sample service templates for demonstration
+            purposes (see <xref href="jow1404915566084.xml" ixia_locid="45"/>). Both CFN and HOT formats are
             represented in the samples. The templates are expressed using YAML, which is the
             recommended notation for HOT. Heat templates may also be expressed using JSON, which is
             the usual notation for CFN.</p>

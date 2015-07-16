@@ -4,122 +4,122 @@
 <!-- Modification History
         
 -->
-    <title id="51">Configuring Virtual Routers</title>
-    <shortdesc id="52">You can create router interfaces to tenant networks using the web
+    <title ixia_locid="51">Configuring Virtual Routers</title>
+    <shortdesc ixia_locid="52">You can create router interfaces to tenant networks using the web
         administration interface or the CLI.</shortdesc>
     <prolog>
-        <author id="53">Jim Owens</author>
+        <author ixia_locid="53">Jim Owens</author>
     </prolog>
     <taskbody>
-        <context id="context_N10022_N1001F_N10001" id="150">
-            <p id="55"> For more information about virtual routers, see <xref href="jow1429628777191.xml" id="56"/>.</p>
+        <context id="context_N10022_N1001F_N10001" ixia_locid="150">
+            <p ixia_locid="55"> For more information about virtual routers, see <xref href="jow1429628777191.xml" ixia_locid="56"/>.</p>
         </context>
-        <prereq id="prereq_N10022_N1001F_N10001" id="118">
-            <p id="96">Before you can create interfaces to tenant networks, you must create
-                the tenant networks and associated subnets. For examples, see the <cite id="99">HP Helion OpenStack Carrier Grade Reference Deployment Scenarios</cite>. For more
-                information about tenant networks and subnets, see <xref href="jow1404333739174.xml" id="97"/> and <xref href="psa1412702861873.xml" id="98"/>. </p>
+        <prereq id="prereq_N10022_N1001F_N10001" ixia_locid="118">
+            <p ixia_locid="96">Before you can create interfaces to tenant networks, you must create
+                the tenant networks and associated subnets. For examples, see the <cite ixia_locid="99">HP Helion OpenStack Carrier Grade Reference Deployment Scenarios</cite>. For more
+                information about tenant networks and subnets, see <xref href="jow1404333739174.xml" ixia_locid="97"/> and <xref href="psa1412702861873.xml" ixia_locid="98"/>. </p>
         </prereq>
-        <context id="context_N1001F_N1001C_N10001" id="54">
-            <p id="57">As an alternative to the web administration interface, you can use
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="54">
+            <p ixia_locid="57">As an alternative to the web administration interface, you can use
                 CLI commands to add router interfaces. First, become the appropriate keystone user
-                (this example sources the <nameliteral id="58">admin</nameliteral>
+                (this example sources the <nameliteral ixia_locid="58">admin</nameliteral>
                 user):</p>
-            <codeblock id="59"><systemoutput id="60">$ </systemoutput><userinput id="61">source etc/nova/openrc</userinput>
+            <codeblock ixia_locid="59"><systemoutput ixia_locid="60">$ </systemoutput><userinput ixia_locid="61">source etc/nova/openrc</userinput>
 </codeblock>
-            <p id="62">Then use the <cmdname id="63">neutron
+            <p ixia_locid="62">Then use the <cmdname ixia_locid="63">neutron
                     router-interface-add</cmdname> command to add interfaces. For example: </p>
-            <codeblock id="119">
-<systemoutput id="121">~(keystone_admin)$ </systemoutput><userinput id="123">neutron router-interface-add <varname id="125">router_id</varname> <varname id="127">subnet-id</varname></userinput></codeblock>
-            <p id="129">where <varname id="131">router_id</varname> is the name or
-                UUID of the router, and <varname id="133">subnet_id</varname> is the name or
+            <codeblock ixia_locid="119">
+<systemoutput ixia_locid="121">~(keystone_admin)$ </systemoutput><userinput ixia_locid="123">neutron router-interface-add <varname ixia_locid="125">router_id</varname> <varname ixia_locid="127">subnet-id</varname></userinput></codeblock>
+            <p ixia_locid="129">where <varname ixia_locid="131">router_id</varname> is the name or
+                UUID of the router, and <varname ixia_locid="133">subnet_id</varname> is the name or
                 UUID of the subnet to which you want to attach an interface. By default, the
                 interface is assigned the gateway address on the subnet.</p>
-            <p id="135">To add an interface to an external network:</p>
-            <codeblock id="120">
-<systemoutput id="122">~(keystone_admin)$ </systemoutput><userinput id="124">neutron router-gateway-set <varname id="126">router_id</varname> <varname id="128">externalnet-id</varname></userinput></codeblock>
-            <p id="130">where <varname id="132">router_id</varname> is the name or
-                UUID of the router, and <varname id="134">externalnet_id</varname> is the
+            <p ixia_locid="135">To add an interface to an external network:</p>
+            <codeblock ixia_locid="120">
+<systemoutput ixia_locid="122">~(keystone_admin)$ </systemoutput><userinput ixia_locid="124">neutron router-gateway-set <varname ixia_locid="126">router_id</varname> <varname ixia_locid="128">externalnet-id</varname></userinput></codeblock>
+            <p ixia_locid="130">where <varname ixia_locid="132">router_id</varname> is the name or
+                UUID of the router, and <varname ixia_locid="134">externalnet_id</varname> is the
                 name or UUID of a tenant network configured to provide external connections.</p>
         </context>
         <steps>
-            <step id="step_N10066_N10063_N1001C_N10001" id="72">
-                <cmd id="73">Log in as the user associated with the tenant.</cmd>
+            <step id="step_N10066_N10063_N1001C_N10001" ixia_locid="72">
+                <cmd ixia_locid="73">Log in as the user associated with the tenant.</cmd>
             </step>
-            <step id="step_N1006F_N10063_N1001C_N10001" id="136">
-                <cmd id="138">Select <menucascade id="76">
-                        <uicontrol id="77">Project</uicontrol>
-                        <uicontrol id="78">Network</uicontrol>
-                        <uicontrol id="79">Routers</uicontrol>
+            <step id="step_N1006F_N10063_N1001C_N10001" ixia_locid="136">
+                <cmd ixia_locid="138">Select <menucascade ixia_locid="76">
+                        <uicontrol ixia_locid="77">Project</uicontrol>
+                        <uicontrol ixia_locid="78">Network</uicontrol>
+                        <uicontrol ixia_locid="79">Routers</uicontrol>
                     </menucascade>.</cmd>
             </step>
-            <step id="step_N1008B_N10063_N1001C_N10001" id="81">
-                <cmd id="82">In the list of existing routers, click the name of the router to be
+            <step id="step_N1008B_N10063_N1001C_N10001" ixia_locid="81">
+                <cmd ixia_locid="82">In the list of existing routers, click the name of the router to be
                     configured.</cmd>
-                <info id="83">
-                    <p id="84">The <wintitle id="85">Router Overview</wintitle> page appears.</p>
-                    <fig id="fig_N100C4_N100B5_N100AE_N100AA_N100A3_N10034_N1001C_N10001" id="42">
-                        <image href="jow1404333604053.image" id="image_kr5_jz2_yn" id="43" placement="inline" width="5.5in"/>
+                <info ixia_locid="83">
+                    <p ixia_locid="84">The <wintitle ixia_locid="85">Router Overview</wintitle> page appears.</p>
+                    <fig id="fig_N100C4_N100B5_N100AE_N100AA_N100A3_N10034_N1001C_N10001" ixia_locid="42">
+                        <image href="jow1404333604053.image" id="image_kr5_jz2_yn" ixia_locid="43" placement="inline" width="5.5in"/>
                     </fig>
                 </info>
             </step>
-            <step id="step_N100AE_N10063_N1001C_N10001" id="86">
-                <cmd id="87">Click <uicontrol id="88">Add Interface</uicontrol>.</cmd>
-                <info id="89">
-                    <p id="140">The <wintitle id="142">Add Interface</wintitle> dialog box appears.</p>
-                    <fig id="fig_N100E4_N100D9_N100D2_N100AA_N100A3_N10034_N1001C_N10001" id="49">
-                        <image href="jow1404333605539.image" id="image_yrl_qbf_yn" id="50" placement="inline" width="4in"/>
+            <step id="step_N100AE_N10063_N1001C_N10001" ixia_locid="86">
+                <cmd ixia_locid="87">Click <uicontrol ixia_locid="88">Add Interface</uicontrol>.</cmd>
+                <info ixia_locid="89">
+                    <p ixia_locid="140">The <wintitle ixia_locid="142">Add Interface</wintitle> dialog box appears.</p>
+                    <fig id="fig_N100E4_N100D9_N100D2_N100AA_N100A3_N10034_N1001C_N10001" ixia_locid="49">
+                        <image href="jow1404333605539.image" id="image_yrl_qbf_yn" ixia_locid="50" placement="inline" width="4in"/>
                     </fig>
                     <dl>
-                        <dlentry id="92">
-                            <dt id="93">Subnet</dt>
-                            <dd id="94">
-                                <p id="95">Use the drop-down list to select from existing subnets defined
+                        <dlentry ixia_locid="92">
+                            <dt ixia_locid="93">Subnet</dt>
+                            <dd ixia_locid="94">
+                                <p ixia_locid="95">Use the drop-down list to select from existing subnets defined
                                     for the tenant. Each subnet is identified by a tenant network
                                     name, followed by a subnet address and mask created for the
                                     tenant network.</p>
                             </dd>
                         </dlentry>
-                        <dlentry id="100">
-                            <dt id="101">IP Address (optional)</dt>
-                            <dd id="102">
-                                <p id="103">You can optionally specify an IP address for the
+                        <dlentry ixia_locid="100">
+                            <dt ixia_locid="101">IP Address (optional)</dt>
+                            <dd ixia_locid="102">
+                                <p ixia_locid="103">You can optionally specify an IP address for the
                                     interface. By default, the gateway address for the subnet is
                                     used (for example, 192.168.102.1).</p>
                             </dd>
                         </dlentry>
-                        <dlentry id="104">
-                            <dt id="105">Router Name</dt>
-                            <dd id="106">
-                                <p id="107">This field is shown for information only.</p>
+                        <dlentry ixia_locid="104">
+                            <dt ixia_locid="105">Router Name</dt>
+                            <dd ixia_locid="106">
+                                <p ixia_locid="107">This field is shown for information only.</p>
                             </dd>
                         </dlentry>
-                        <dlentry id="108">
-                            <dt id="109">Router ID</dt>
-                            <dd id="110">
-                                <p id="111">This field is shown for information only.</p>
+                        <dlentry ixia_locid="108">
+                            <dt ixia_locid="109">Router ID</dt>
+                            <dd ixia_locid="110">
+                                <p ixia_locid="111">This field is shown for information only.</p>
                             </dd>
                         </dlentry>
                     </dl>
                 </info>
-                <stepresult id="144">
-                    <p id="116">The new interface is shown in the <wintitle id="117">Router Overview</wintitle>.</p>
+                <stepresult ixia_locid="144">
+                    <p ixia_locid="116">The new interface is shown in the <wintitle ixia_locid="117">Router Overview</wintitle>.</p>
                 </stepresult>
             </step>
-            <step id="step_N101A2_N100BA_N1001F_N10001" importance="optional" id="145">
-                <cmd id="146">To create an interface to a tenant network configured for external access,
-                    click <uicontrol id="147">Set Gateway</uicontrol> for the new interface.</cmd>
-                <info id="148">
-                    <p id="141">The <wintitle id="143">Set Gateway</wintitle> dialog
+            <step id="step_N101A2_N100BA_N1001F_N10001" importance="optional" ixia_locid="145">
+                <cmd ixia_locid="146">To create an interface to a tenant network configured for external access,
+                    click <uicontrol ixia_locid="147">Set Gateway</uicontrol> for the new interface.</cmd>
+                <info ixia_locid="148">
+                    <p ixia_locid="141">The <wintitle ixia_locid="143">Set Gateway</wintitle> dialog
                         box appears.</p>
-                    <fig id="fig_N10159_N1014A_N10143_N1011B_N10114_N10034_N1001C_N10001" id="137">
-                        <image href="jow1404333610032.image" id="image_mmw_z2f_yn" id="139" placement="inline" width="4in"/>
+                    <fig id="fig_N10159_N1014A_N10143_N1011B_N10114_N10034_N1001C_N10001" ixia_locid="137">
+                        <image href="jow1404333610032.image" id="image_mmw_z2f_yn" ixia_locid="139" placement="inline" width="4in"/>
                     </fig>
-                    <p id="149">From the <uicontrol id="151">External Network</uicontrol> drop-down
+                    <p ixia_locid="149">From the <uicontrol ixia_locid="151">External Network</uicontrol> drop-down
                         menu, select a tenant network configured to provide external access.</p>
                 </info>
             </step>
-            <step id="step_N10129_N10063_N1001C_N10001" id="112">
-                <cmd id="113">To save your settings and close the dialog box, click <uicontrol id="114">Add
+            <step id="step_N10129_N10063_N1001C_N10001" ixia_locid="112">
+                <cmd ixia_locid="113">To save your settings and close the dialog box, click <uicontrol ixia_locid="114">Add
                         Interface</uicontrol>.</cmd>
             </step>
         </steps>

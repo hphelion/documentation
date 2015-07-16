@@ -4,28 +4,28 @@
 <!-- Modification History
         
 -->
-    <title id="246">Adding an Infrastructure Network Using the CLI</title>
-    <shortdesc id="247">If an infrastructure network is not installed during initial
+    <title ixia_locid="246">Adding an Infrastructure Network Using the CLI</title>
+    <shortdesc ixia_locid="247">If an infrastructure network is not installed during initial
         configuration, you can add one later using the CLI.</shortdesc>
     <prolog>
-        <author id="248"/>
+        <author ixia_locid="248"/>
     </prolog>
     <taskbody>
-        <prereq id="prereq_N10021_N1001E_N10001" id="284">
-            <note id="note_N10025_N10021_N1001E_N10001" id="285">
-                <p id="286">On a cluster with an infrastructure network, each host must have an
+        <prereq id="prereq_N10021_N1001E_N10001" ixia_locid="284">
+            <note id="note_N10025_N10021_N1001E_N10001" ixia_locid="285">
+                <p ixia_locid="286">On a cluster with an infrastructure network, each host must have an
                     infrastructure interface before it can be unlocked. Ensure that all hosts have
                     the required hardware.</p>
             </note>
         </prereq>
-        <context id="context_N1001D_N1001A_N10001" id="249">
-            <p id="179">For a system with an LVM storage backend, the infrastructure network
+        <context id="context_N1001D_N1001A_N10001" ixia_locid="249">
+            <p ixia_locid="179">For a system with an LVM storage backend, the infrastructure network
                 is optional. It can be used to offload the internal management network on clusters
-                with many compute nodes. For more information, see <xref href="jow1404333674324.xml" id="180"/>.</p>
-            <p id="182">You can view the existing infrastructure network configuration
-                using the following command on the active controller (assumed to be <nameliteral id="194">controller-0</nameliteral> for this discussion).</p>
-            <codeblock id="164"><systemoutput id="299">~(keystone_admin)$ </systemoutput><userinput id="171">system infra-show</userinput></codeblock>
-            <codeblock id="165"><systemoutput id="300">
+                with many compute nodes. For more information, see <xref href="jow1404333674324.xml" ixia_locid="180"/>.</p>
+            <p ixia_locid="182">You can view the existing infrastructure network configuration
+                using the following command on the active controller (assumed to be <nameliteral ixia_locid="194">controller-0</nameliteral> for this discussion).</p>
+            <codeblock ixia_locid="164"><systemoutput ixia_locid="299">~(keystone_admin)$ </systemoutput><userinput ixia_locid="171">system infra-show</userinput></codeblock>
+            <codeblock ixia_locid="165"><systemoutput ixia_locid="300">
 +--------------+--------------------------------------+
 | Property     | Value                                |
 +--------------+--------------------------------------+
@@ -38,37 +38,37 @@
 | updated_at   | 2014-12-31T19:38:43.603320+00:00     |
 +--------------+--------------------------------------+
 </systemoutput></codeblock>
-            <p id="287">You can add an infrastructure network after initial installation.
+            <p ixia_locid="287">You can add an infrastructure network after initial installation.
                 For this operation, all nodes except the active controller must be locked. During
                 the change, the nodes cannot be unlocked until the new configuration is applied to
                 both controllers. In addition, before a node can be unlocked, an infrastructure
                 interface must be configured on the host.</p>
         </context>
         <steps>
-            <step id="step_N1017B_N10178_N1001A_N10001" id="250">
-                <cmd id="251">Lock all hosts except the active controller.</cmd>
-                <info id="252">
-                    <p id="184">For each host, use the following command.</p>
-                    <codeblock id="166"><systemoutput id="301">~(keystone_admin)$ </systemoutput><userinput id="172">system host-lock <varname id="185">hostname</varname></userinput></codeblock>
+            <step id="step_N1017B_N10178_N1001A_N10001" ixia_locid="250">
+                <cmd ixia_locid="251">Lock all hosts except the active controller.</cmd>
+                <info ixia_locid="252">
+                    <p ixia_locid="184">For each host, use the following command.</p>
+                    <codeblock ixia_locid="166"><systemoutput ixia_locid="301">~(keystone_admin)$ </systemoutput><userinput ixia_locid="172">system host-lock <varname ixia_locid="185">hostname</varname></userinput></codeblock>
                 </info>
             </step>
-            <step id="step_N10076_N1004F_N1001E_N10001" id="253">
-                <cmd id="254">Add an infrastructure interface on the standby controller.</cmd>
-                <info id="255">
-                    <p id="186">To add an infrastructure network to a dedicated interface,
+            <step id="step_N10076_N1004F_N1001E_N10001" ixia_locid="253">
+                <cmd ixia_locid="254">Add an infrastructure interface on the standby controller.</cmd>
+                <info ixia_locid="255">
+                    <p ixia_locid="186">To add an infrastructure network to a dedicated interface,
                         use the following command, specifying a name for the network and the port to
                         use for the network connection. To identify the port to use for an
                         infrastructure network, consult your configuration plan.</p>
-                    <note id="note_N100A0_N10097_N1008D_N10065_N1001E_N10001" id="296">
-                        <p id="297">You can also add an infrastructure network to a shared interface as a
-                            VLAN-tagged network. For more information, see <xref href="jow1423173019489.xml" id="298"/>.</p>
+                    <note id="note_N100A0_N10097_N1008D_N10065_N1001E_N10001" ixia_locid="296">
+                        <p ixia_locid="297">You can also add an infrastructure network to a shared interface as a
+                            VLAN-tagged network. For more information, see <xref href="jow1423173019489.xml" ixia_locid="298"/>.</p>
                     </note>
-                    <codeblock id="195"><systemoutput id="302">~(keystone_admin)$ </systemoutput><userinput id="199">system host-if-add -nt infra \
-<varname id="201">hostname</varname> <varname id="203">interfacename</varname> <varname id="205">port</varname></userinput></codeblock>
-                    <p id="190">For example:</p>
-                    <codeblock id="168"><systemoutput id="303">~(keystone_admin)$ </systemoutput><userinput id="174">system host-if-add -nt infra \
+                    <codeblock ixia_locid="195"><systemoutput ixia_locid="302">~(keystone_admin)$ </systemoutput><userinput ixia_locid="199">system host-if-add -nt infra \
+<varname ixia_locid="201">hostname</varname> <varname ixia_locid="203">interfacename</varname> <varname ixia_locid="205">port</varname></userinput></codeblock>
+                    <p ixia_locid="190">For example:</p>
+                    <codeblock ixia_locid="168"><systemoutput ixia_locid="303">~(keystone_admin)$ </systemoutput><userinput ixia_locid="174">system host-if-add -nt infra \
 controller-1 infra0 eth3</userinput>
-<systemoutput id="304">+------------------+--------------------------------------+
+<systemoutput ixia_locid="304">+------------------+--------------------------------------+
 | Property         | Value                                |
 +------------------+--------------------------------------+
 | ifname           | infra0                               |
@@ -92,13 +92,13 @@ controller-1 infra0 eth3</userinput>
 </systemoutput></codeblock>
                 </info>
             </step>
-            <step id="step_N100B8_N1004F_N1001E_N10001" id="256">
-                <cmd id="257">Add the same infrastructure network on the active controller.</cmd>
-                <info id="258">
-                    <p id="192"> For example:</p>
-                    <codeblock id="169"><systemoutput id="305">~(keystone_admin)$ </systemoutput><userinput id="175">system host-if-add -nt infra \
+            <step id="step_N100B8_N1004F_N1001E_N10001" ixia_locid="256">
+                <cmd ixia_locid="257">Add the same infrastructure network on the active controller.</cmd>
+                <info ixia_locid="258">
+                    <p ixia_locid="192"> For example:</p>
+                    <codeblock ixia_locid="169"><systemoutput ixia_locid="305">~(keystone_admin)$ </systemoutput><userinput ixia_locid="175">system host-if-add -nt infra \
 controller-0 infra0 eth3</userinput>
-<systemoutput id="306">+------------------+--------------------------------------+
+<systemoutput ixia_locid="306">+------------------+--------------------------------------+
 | Property         | Value                                |
 +------------------+--------------------------------------+
 | ifname           | infra0                               |
@@ -121,16 +121,16 @@ controller-0 infra0 eth3</userinput>
 +------------------+--------------------------------------+</systemoutput></codeblock>
                 </info>
             </step>
-            <step id="step_N100DB_N1004F_N1001E_N10001" id="259">
-                <cmd id="260">Specify the infrastructure subnet.</cmd>
-                <info id="261">
-                    <codeblock id="215"><systemoutput id="307">~(keystone_admin)$ </systemoutput><userinput id="216">system infra-modify \
-infra_subnet=<varname id="217">subnet/mask</varname> action=apply</userinput></codeblock>
-                    <p id="218">For example:</p>
-                    <codeblock id="219"><systemoutput id="308">~(keystone_admin)$ </systemoutput><userinput id="220">system infra-modify \
+            <step id="step_N100DB_N1004F_N1001E_N10001" ixia_locid="259">
+                <cmd ixia_locid="260">Specify the infrastructure subnet.</cmd>
+                <info ixia_locid="261">
+                    <codeblock ixia_locid="215"><systemoutput ixia_locid="307">~(keystone_admin)$ </systemoutput><userinput ixia_locid="216">system infra-modify \
+infra_subnet=<varname ixia_locid="217">subnet/mask</varname> action=apply</userinput></codeblock>
+                    <p ixia_locid="218">For example:</p>
+                    <codeblock ixia_locid="219"><systemoutput ixia_locid="308">~(keystone_admin)$ </systemoutput><userinput ixia_locid="220">system infra-modify \
 infra_subnet=192.168.205.0/24 action=apply</userinput>
 
-<systemoutput id="309">+--------------+--------------------------------------+
+<systemoutput ixia_locid="309">+--------------+--------------------------------------+
 | Property     | Value                                |
 +--------------+--------------------------------------+
 | uuid         | cc549ef3-5c81-4fbf-8c50-5163c89e5039 |
@@ -143,44 +143,44 @@ infra_subnet=192.168.205.0/24 action=apply</userinput>
 +--------------+--------------------------------------+</systemoutput></codeblock>
                 </info>
             </step>
-            <step id="step_N10114_N1004F_N1001E_N10001" id="262">
-                <cmd id="263">Reboot the standby controller.</cmd>
-                <info id="264">
-                    <codeblock id="225"><systemoutput id="310">~(keystone_admin)$ </systemoutput><userinput id="226">system host-reboot controller-1</userinput></codeblock>
-                    <p id="227">This updates its configuration.</p>
-                    <p id="231">Wait for the standby controller to reboot. To monitor its
+            <step id="step_N10114_N1004F_N1001E_N10001" ixia_locid="262">
+                <cmd ixia_locid="263">Reboot the standby controller.</cmd>
+                <info ixia_locid="264">
+                    <codeblock ixia_locid="225"><systemoutput ixia_locid="310">~(keystone_admin)$ </systemoutput><userinput ixia_locid="226">system host-reboot controller-1</userinput></codeblock>
+                    <p ixia_locid="227">This updates its configuration.</p>
+                    <p ixia_locid="231">Wait for the standby controller to reboot. To monitor its
                         status, use the following command.</p>
-                    <codeblock id="290"><systemoutput id="311">~(keystone_admin)$ </systemoutput><userinput id="291">watch -n 5 system host-list</userinput></codeblock>
-                    <p id="292">This displays a refreshed host list every five seconds.
-                        Monitor the output until the standby controller is shown as <nameliteral id="293">locked</nameliteral> and <nameliteral id="294">online</nameliteral>. To stop monitoring, enter <userinput id="295">CTRL-C</userinput>.</p>
-                    <note id="note_N10154_N10139_N1012F_N10065_N1001E_N10001" id="223" type="caution">
-                        <p id="224">To prevent potential service conflicts due to
+                    <codeblock ixia_locid="290"><systemoutput ixia_locid="311">~(keystone_admin)$ </systemoutput><userinput ixia_locid="291">watch -n 5 system host-list</userinput></codeblock>
+                    <p ixia_locid="292">This displays a refreshed host list every five seconds.
+                        Monitor the output until the standby controller is shown as <nameliteral ixia_locid="293">locked</nameliteral> and <nameliteral ixia_locid="294">online</nameliteral>. To stop monitoring, enter <userinput ixia_locid="295">CTRL-C</userinput>.</p>
+                    <note id="note_N10154_N10139_N1012F_N10065_N1001E_N10001" ixia_locid="223" type="caution">
+                        <p ixia_locid="224">To prevent potential service conflicts due to
                             inconsistent controller network configurations, do not unlock the
                             standby controller until the active controller is also rebooted.</p>
                     </note>
                 </info>
             </step>
-            <step id="step_N10149_N1004F_N1001E_N10001" id="265">
-                <cmd id="266">Reboot the active controller.</cmd>
-                <info id="267">
-                    <codeblock id="268"><systemoutput id="312">~(keystone_admin)$ </systemoutput><userinput id="272">sudo reboot</userinput>
-<systemoutput id="313">The system is going down for reboot NOW!</systemoutput></codeblock>
-                    <p id="236">Wait for the controller to reboot.</p>
+            <step id="step_N10149_N1004F_N1001E_N10001" ixia_locid="265">
+                <cmd ixia_locid="266">Reboot the active controller.</cmd>
+                <info ixia_locid="267">
+                    <codeblock ixia_locid="268"><systemoutput ixia_locid="312">~(keystone_admin)$ </systemoutput><userinput ixia_locid="272">sudo reboot</userinput>
+<systemoutput ixia_locid="313">The system is going down for reboot NOW!</systemoutput></codeblock>
+                    <p ixia_locid="236">Wait for the controller to reboot.</p>
                 </info>
             </step>
-            <step id="step_N10171_N1004F_N1001E_N10001" id="274">
-                <cmd id="275">Log in to the active controller and become the Keystone
-                        <nameliteral id="237">admin</nameliteral> user.</cmd>
-                <info id="276">
-                    <codeblock id="269"><systemoutput id="314">$ </systemoutput><userinput id="273">source /etc/nova/openrc</userinput>
+            <step id="step_N10171_N1004F_N1001E_N10001" ixia_locid="274">
+                <cmd ixia_locid="275">Log in to the active controller and become the Keystone
+                        <nameliteral ixia_locid="237">admin</nameliteral> user.</cmd>
+                <info ixia_locid="276">
+                    <codeblock ixia_locid="269"><systemoutput ixia_locid="314">$ </systemoutput><userinput ixia_locid="273">source /etc/nova/openrc</userinput>
 </codeblock>
                 </info>
             </step>
-            <step id="step_N10190_N1004F_N1001E_N10001" id="277">
-                <cmd id="278">Unlock the standby controller.</cmd>
-                <info id="279">
-                    <codeblock id="238"><systemoutput id="315">~(keystone_admin)$ </systemoutput><userinput id="239">system host-unlock controller-1</userinput>
-<systemoutput id="316">+-----------------+--------------------------------------+
+            <step id="step_N10190_N1004F_N1001E_N10001" ixia_locid="277">
+                <cmd ixia_locid="278">Unlock the standby controller.</cmd>
+                <info ixia_locid="279">
+                    <codeblock ixia_locid="238"><systemoutput ixia_locid="315">~(keystone_admin)$ </systemoutput><userinput ixia_locid="239">system host-unlock controller-1</userinput>
+<systemoutput ixia_locid="316">+-----------------+--------------------------------------+
 | Property        | Value                                |
 +-----------------+--------------------------------------+
 | action          | none                                 |
@@ -215,13 +215,13 @@ infra_subnet=192.168.205.0/24 action=apply</userinput>
 </codeblock>
                 </info>
             </step>
-            <step id="step_N101B3_N1004F_N1001E_N10001" id="281">
-                <cmd id="282">Add infrastructure interfaces to each compute node.</cmd>
-                <info id="283">
-                    <p id="241">For each node, use the following command.</p>
-                    <codeblock id="196"><systemoutput id="317">~(keystone_admin)$ </systemoutput><userinput id="200">system host-if-add -nt infra \
-<varname id="202">hostname</varname> <varname id="204">networkname</varname> <varname id="206">port</varname></userinput>
-<systemoutput id="318">+------------------+--------------------------------------+
+            <step id="step_N101B3_N1004F_N1001E_N10001" ixia_locid="281">
+                <cmd ixia_locid="282">Add infrastructure interfaces to each compute node.</cmd>
+                <info ixia_locid="283">
+                    <p ixia_locid="241">For each node, use the following command.</p>
+                    <codeblock ixia_locid="196"><systemoutput ixia_locid="317">~(keystone_admin)$ </systemoutput><userinput ixia_locid="200">system host-if-add -nt infra \
+<varname ixia_locid="202">hostname</varname> <varname ixia_locid="204">networkname</varname> <varname ixia_locid="206">port</varname></userinput>
+<systemoutput ixia_locid="318">+------------------+--------------------------------------+
 | Property         | Value                                |
 +------------------+--------------------------------------+
 | ifname           | infra0                               |
@@ -243,10 +243,10 @@ infra_subnet=192.168.205.0/24 action=apply</userinput>
 | updated_at       | None                                 |
 +------------------+--------------------------------------+
 </systemoutput></codeblock>
-                    <p id="243">You can now unlock the compute nodes. This clears any
-                            <nameliteral id="244">Configuration out-of-date</nameliteral>
+                    <p ixia_locid="243">You can now unlock the compute nodes. This clears any
+                            <nameliteral ixia_locid="244">Configuration out-of-date</nameliteral>
                         errors.</p>
-                    <p id="245"><!-- At this point system host-if-show controller-0 eth3 says there is no eth3. . . --></p>
+                    <p ixia_locid="245"><!-- At this point system host-if-show controller-0 eth3 says there is no eth3. . . --></p>
                 </info>
             </step>
         </steps>
