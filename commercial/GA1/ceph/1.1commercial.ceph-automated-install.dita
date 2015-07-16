@@ -125,9 +125,10 @@
         <li>Create a directory on any
           location.<codeblock><codeph>mkdir /helion-ceph
 </codeph></codeblock></li>
-        <li>Untar and copy the downloaded <codeph>cephsetup.tar</codeph> file  to the
-            <codeph>/helion-ceph</codeph> folder on the seed VM. Untarring this file results in the
-          follow directory structure:<ul>
+        <li>Untar and copy the downloaded <codeph>cephsetup.tar</codeph> file to the
+            <codeph>/helion-ceph</codeph> folder on the seed VM.
+          <codeblock>tar -xvf helion-ceph.tar</codeblock>Untarring this file results in the follow
+          directory structure:<ul>
             <li>
               <codeph>images</codeph>
             </li>
