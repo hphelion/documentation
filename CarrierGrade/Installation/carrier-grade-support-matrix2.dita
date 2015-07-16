@@ -61,12 +61,12 @@
               <entry>Yes</entry>
               <entry>
                 <ul>
-                  <li>2 x Intel Xeon® E5-2680v3</li>
-                  <li>16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
-                  <li>1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                  <li>HP FlexFabric 10Gb 2-port 556FLR-SFP</li>
-                  <li>Smart Array P440ar/2G FIO Controller</li>
-                  <li>Ethernet 10Gb 2P 560SFP</li>
+                    <li>2 x Intel® Xeon® E5-2680v3</li>
+                    <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                    <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                    <li>1 x Smart Array P244br/1GB FBWC</li>
+                    <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
+                    <li>1 x Ethernet 10Gb 2P 560M</li>
                 </ul>
               </entry>
             </row>
@@ -89,12 +89,12 @@
               <entry>Yes</entry>
               <entry>
                 <ul>
-                  <li>2 x Intel Xeon® E5-2680v3</li>
-                  <li>16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
-                  <li>1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                  <li>HP FlexFabric 10Gb 2-port 556FLR-SFP</li>
-                  <li>Smart Array P440ar/2G FIO Controller</li>
-                  <li>Ethernet 10Gb 2P 560SFP</li>
+                  <li>2 x Intel® Xeon® E5-2680v3</li>
+                  <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                  <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                  <li>1 x Smart Array P244br/1GB FBWC</li>
+                  <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
+                  <li>1 x Ethernet 10Gb 2P 560M</li>
                 </ul>
               </entry>
             </row>
@@ -121,34 +121,14 @@
               <entry>Yes</entry>
               <entry>No</entry>
               <entry>
-                <ul id="ul_kxf_cyd_ss">
+                <ul>
                   <li>2 x Intel® Xeon® E5-2680v3</li>
+                  <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                  <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                  <li>1 x Smart Array P244br/1GB FBWC</li>
+                  <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
+                  <li>1 x Ethernet 10Gb 2P 560M</li>
                 </ul>
-                <p>
-                  <ul id="ul_lxf_cyd_ss">
-                    <li>16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
-                  </ul>
-                </p>
-                <p>
-                  <ul id="ul_mxf_cyd_ss">
-                    <li>1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
-                  </ul>
-                </p>
-                <p>
-                  <ul id="ul_nxf_cyd_ss">
-                    <li>Smart Array P244br/1GB FBWC</li>
-                  </ul>
-                </p>
-                <p>
-                  <ul id="ul_oxf_cyd_ss">
-                    <li>HP FlexFabric 20Gb 2-port 650FLB</li>
-                  </ul>
-                </p>
-                <p>
-                  <ul id="ul_pxf_cyd_ss">
-                    <li>Ethernet 10Gb 2P 560M</li>
-                  </ul>
-                </p>
               </entry>
             </row>
             <row>
