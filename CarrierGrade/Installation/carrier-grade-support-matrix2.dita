@@ -73,26 +73,35 @@
                 <entry namest="c1" nameend="c4"><b>HP ProLiant Rack Servers</b></entry>
               </row>
               <row>
-                <entry>DL360 Gen9<p>DL380 Gen9</p></entry>
+                <entry morerows="1">DL360 Gen9<p>DL380 Gen9</p></entry>
                 <entry>
                   <ul>
-                    <li>Compute</li>
                     <li>Controller</li>
                   </ul>
-                  <p>2 x Intel Xeon® E5-2640v3</p>
-                  <p>8 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</p>
-                  <p>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</p>
-                  <p>1 x FlexFabric 10Gb 2-port 556FLR-SFP</p>
-                  <p>1 x Smart Array P440ar/2G FIO Controller</p>
                 </entry>
                 <entry>
                   <ul>
-                    <li>2 x Intel Xeon® E5-2680v3<p>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133
-                        memory</p><p>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</p><p>1 x FlexFabric
-                        10Gb 2-port 556FLR-SFP</p><p>1 x Smart Array P440ar/2G FIO
-                        Controller</p><p>2 x Ethernet 10Gb 2P 560SFP</p></li>
+                    <li>2 x Intel Xeon® E5-2640v3</li>
+                    <li>8 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                    <li>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                    <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP</li>
+                    <li>1 x Smart Array P440ar/2G FIO Controller</li>
                   </ul>
                 </entry>
+              </row>
+              <row>
+                <entry><ul>
+                  <li>Compute</li>
+                </ul>
+                </entry>
+                <entry>
+                  <ul>
+                    <li>2 x Intel Xeon® E5-2680v3</li>
+                    <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                    <li>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                    <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP</li>
+                    <li>1 x Smart Array P440ar/2G FIO Controller/2 x Ethernet 10Gb 2P 560SFP</li>
+                  </ul></entry>
               </row>
               <row>
                 <entry morerows="1">DL360 Gen8<p>DL380 Gen8</p></entry>
