@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6112">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Verifying the HLM and DCN Installation</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Michael B,"/>
+<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-install-pb-verify.md-->
+ <!--permalink: /helion/openstack/carrier/install/pb/verify/--></p>
+<p>Perform the following tasks to make sure the installation of the HLM VM, HLM Cloud and DCN Cloud has been successful.</p>
+<section id="ssh-to-the-vsc-node"> <title>SSH to the VSC node</title>
+<ol>
+<li>SSH to your VSC VM from the DCM KVM Host using the DCM
+                    IP.<codeblock><codeph>Login: admin
+Password: admin
+</codeph></codeblock></li>
+<li>Execute the following
+                        command:<codeblock><codeph>admin display-config
+</codeph></codeblock><p>The
+                        output appears, similar to the
+                    following:</p><codeblock><codeph>admin display-config
+TiMOS-DC-C-3.0.4-OEM-76 cpm/i386  VSC Copyright (C) 2000-2015
+All rights reserved. All use subject to applicable license agreements.
+Built on Thu Jan 15 21:32:52 PST 2015 [c4263c] by builder in /rel3.0-DC/oem/4-OEM-76/panos/main
+Generated FRI MAY 15 23:18:14 2015 UTC
+
+exit all
+
+configure
+--------------------------------------------------
+
+echo "System Configuration"
+--------------------------------------------------
+
+    system
+        name "vsc"
+        snmp
+        exit
+        time
+            ntp
+                server 10.1.64.20
+                server 16.110.135.123
+                no shutdown
+            exit
+            sntp
+                shutdown
+            exit
+            zone UTC
+        exit
+        thresholds
+            rmon
+            exit
+        exit
+    exit
+    --------------------------------------------------
+
+    echo "System Security Configuration"
+    --------------------------------------------------
+
+    system
+    exit
+    --------------------------------------------------
+
+    echo "Log Configuration"
+    --------------------------------------------------
+        log
+        exit
+    --------------------------------------------------
+
+    echo "System Security Cpm Hw Filters and PKI Configuration"
+    --------------------------------------------------
+
+        System
+            security
+            exit
+        exit
+    --------------------------------------------------
+
+    echo "QoS Policy Configuration"
+    --------------------------------------------------
+
+        qos
+        exit
+    --------------------------------------------------
+
+    echo "Card Configuration"
+    --------------------------------------------------
+    --------------------------------------------------
+
+    echo "Service Configuration"
+    --------------------------------------------------
+
+        service
+        exit
+    --------------------------------------------------
+
+    echo "Virtual Switch Controller Configuration"
+    --------------------------------------------------
+
+        vswitch-controller
+            xmpp-server "vsc1b2.password@vsd1.dcn-seven.helion.cg"
+            open-flow
+            exit
+            exit
+    --------------------------------------------------
+
+    echo "Management Router Configuration"
+    --------------------------------------------------
+
+        router management
+        exit
+    --------------------------------------------------
+
+    echo "Router (Network Side) Configuration"
+    --------------------------------------------------
+
+        router
+            interface "control"
+                address 10.200.184.31/24
+                no shutdown
+            exit
+                interface "system"
+                no shutdown
+            exit
+    --------------------------------------------------
+
+    echo "Web Portal Protocol Configuration"
+    --------------------------------------------------
+        exit
+    --------------------------------------------------
+
+    echo "Service Configuration"
+    --------------------------------------------------
+
+        service
+            customer 1 create
+                description "Default customer"
+            exit
+        exit
+    --------------------------------------------------
+
+    echo "Router (Service Side) Configuration"
+    --------------------------------------------------
+
+        router
+    --------------------------------------------------
+
+    echo "RADIUS Server Configuration"
+    --------------------------------------------------
+
+        exit
+    --------------------------------------------------
+
+    echo "System Time NTP Configuration"
+    --------------------------------------------------
+
+        System
+            time
+                ntp
+            exit
+        exit
+    exit
+exit all
+
+Finished FRI MAY 15 23:20:05 2015 UTC
+</codeph>
+</codeblock></li>
+</ol>
+</section>
+<section id="verify-the-vswitch"> <title>Verify the vSwitch</title>
+<p>Execute the below commands and check if the status is active</p>
+<codeblock><codeph> show vswitch-controller vsd
+    show vswitch-controller xmpp-server
+    ping router "management" &lt;vsd IP or domain name&gt;
+</codeph>
+</codeblock>
+</section>
+<section id="verify-the-vrs-g-node"><title>Verify the VRS-G Node</title><p>Verify that the VRS-G
+                Node is properly configured. VRS-G node provisioning happens as part of cloud
+                deployment.</p><p>From VSC Node, run this
+                command.</p><codeblock><codeph>show vswitch-controller vswitches
+
+**Note:** Depending on the number of computes, the list of entries will change
+</codeph>
+</codeblock><p>If
+                VRS-G node is not listed here, use the following steps:</p><ol>
+                <li>Make sure the <codeph>/etc/resolv.conf</codeph> on each cloud nodes contains the
+                    domain name and DNS server</li>
+                <li>Make sure the <codeph>/etc/resolv.conf</codeph> file contains the IP address of
+                    each DNS server on all the cloud nodes.<p><b>Example:</b>
+                    </p><p>
+                        <image href="../../media/CGH-install-verify-vrs.png" id="image_wxs_flf_ks"
+                        /></p></li>
+                <li>Access the Horizon
+                    dashboard.<codeblock><codeph>a. Obtain the IP address using one of the following methods:
+
+* Search in the ~clouds/dcnjunobuild33bed2new/001/stage/net/hosts.hf file for `VIP`.
+
+* Locate the CLM IP address in the /etc/keepalived/keepalive.conf file on any of the controller node
+
+
+b. Log into the dashboard using the default credentials:
+
+    http://&lt;vip&gt;/horizon
+
+    login: admin
+    password: admin
+</codeph></codeblock></li>
+                <li>Perform various tasks as a sanity check to make sure everything works as
+                    expected. For example:<ul id="ul_pxd_4lf_ks">
+                        <li>Upload an image </li>
+                        <li>Create a networks</li>
+                        <li>Launch an instance</li>
+                    </ul></li>
+            </ol>For information on using the Horizon dashboard, see <xref
+                href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita"
+                >Operator Guide to Managing Your Cloud</xref>.</section>
+<section id="next-step"> <title>Next Step</title>
+<p>
+<xref href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_Openstack" scope="external" format="html" >Install HP Helion Openstack Carrier Grade</xref> (Opens in PDF)</p>
+<p>
+  <xref type="section" href="#topic6112"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

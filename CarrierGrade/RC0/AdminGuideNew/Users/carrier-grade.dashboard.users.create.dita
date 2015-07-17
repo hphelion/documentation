@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1861">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Creating and Deleting Users</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.users.create.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/users/create/--></p>
+<p>As an admin, you can <xref type="section" href="#topic1861/createuser">create</xref> and <xref type="section" href="#topic1861/deleteuser">delete</xref> users.</p>
+<section id="createuser"> <title>Create a user</title>
+<p>To create a user:</p>
+<p>
+<b>Note:</b> At least <xref href="../Projects/carrier-grade.managing.projects.dita" >one project must exist</xref> before you can create users.</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Identity</b> dashboard, then the <b>Users</b> link.</p>
+</li>
+<li>
+<p>In the <b>Users</b> screen, click <b>Create User</b>.</p>
+</li>
+<li>
+<p>In the <b>Create User</b> screen, enter the following:</p>
+
+<ul>
+<li><b>User Name</b> - Enter a name for the user. The user will need this name to log in.</li>
+<li><b>Email</b> - Optionally, enter an email associated with this user.</li>
+<li><b>Password</b> - Enter a password for the user. The user will need the password to log in.</li>
+<li><b>Confirm Password</b> - Re-enter the password to confirm.</li>
+<li><b>Primary Project</b> - Select a primary project for the user. The primary project is simply
+              the first project the user is associated with.</li>
+<li><b>Role</b> - Select a role for the user. The role determines many of the tasks that the user
+              can perform.</li>
+</ul>
+</li>
+<li>
+<p>Click <b>Create User</b>.</p>
+
+<p>The user is created and appears in the user list.</p>
+</li>
+</ol>
+</section>
+<section id="deleteuser"> <title>Delete a user</title>
+<p>To delete a user:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Identity</b> dashboard, then the <b>Users</b> link.</p>
+</li>
+<li>
+<p>In the <b>Users</b> screen, for the user you want to delete, click the arrow icon in the <b>Actions</b> menu and select <b>Delete User</b>.</p>
+
+<p>To delete multiple users, click the check box next to name of each image to delete. Click <b>Delete Users</b>.</p>
+</li>
+<li>
+<p>In the confirmation dialog that appears, click <b>Delete User</b>.</p>
+
+<p>The user is removed and no longer available in the domain.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1861"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

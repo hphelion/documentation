@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1866">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Adding HP StoreVirtual VSA System to an Existing Management Group</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack Carrier Grade"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Michael B, Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack Carrier Grade"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/VSA/carrier.install-add-mgmt-group.md-->
+ <!--permalink: /helion/openstack/carrier/install/vsa/add-mgmt/--></p>
+<p/>
+<p>To add a StoreVirtual system to any existing Management Group, do the following:</p>
+<ol>
+<li>Open CMC.<p>By default, the CMC is configured to discover the HP StoreVirtual VSA systems in the
+          subnet on which it is installed. You can manually add the nodes also.</p></li>
+<li>In the CMC page, click <b>Find Systems</b> from the left
+        panel.<!--A BR tag was used here in the original source.--> Find Systems dialogue box is
+        displayed with an Enter IP pop-up box.</li>
+<li>You can choose <b>Add</b> or <b>Find</b> option to search the system.
+        <!--A BR tag was used here in the original source.-->Find option starts searching for the
+        nodes in the subnet. Add option displays an <b>Enter IP</b> pop-up box to enter the IP of
+        the StoreVirtual node.</li>
+<li>Click <b>OK</b> to proceed or click <b>Cancel</b> to cancel the
+        process.<!--A BR tag was used here in the original source.-->The node is discovered and the
+        details are displayed in a tabular format in the Find Systems dialogue box.</li>
+<li>(Optional) Click <b>Add</b> in the Find Systems dialogue box to add more nodes.</li>
+<li>(Optional) Click <b>Edit</b> in the Find Systems dialogue box to modify the details of the
+        selected node.</li>
+<li>(Optional) Click <b>Remove</b> in the Find Systems box to delete a node.</li>
+<li>Click <b>Close</b> to return to the Home
+        page.<!--A BR tag was used here in the original source.--> The discovered nodes are
+        displayed under <b>Available Systems</b> option in the left panel.</li>
+<li>Right-click the node to display a menu and select <b>Add to an Existing Management
+        Group</b>.</li>
+<li>Enter the name of the management group.</li>
+<li>Click <b>Add</b> to add the node to the group that you
+        specified.<!--A BR tag was used here in the original source.--> The node is added to the
+        management group.</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1866"> Return to Top </xref>
+</p>
+<section id="next-step"> <title>Next Step</title>
+<p>
+  <xref href="../../../commercial/GA1/1.1commercial.undercloud-storage-storevirtual.dita" >Working with HP StoreVirtual VSA</xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

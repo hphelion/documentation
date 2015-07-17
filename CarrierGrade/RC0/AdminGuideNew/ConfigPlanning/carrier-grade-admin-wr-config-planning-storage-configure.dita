@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3661">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Configuring a Compute Host to Provide Local Storage</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-storage-configure.md-->
+ <!--permalink: /helion/openstack/carrier/config/plan/storage/configure/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>You can configure a compute host to provide local storage for use by VMs.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>Local storage can be used to provide improved disk access performance for VMs instantiated on the host.</p>
+<p>
+<b>Caution:</b> Local storage is ephemeral.</p>
+<ul>
+<li>Unlike Cinder-based storage, local storage does not persist when the instance is terminated or if the compute node fails.</li>
+<li>Live migration for local storage is not currently supported. Only cold migration is supported for an instance using local storage, where a new initial volume is created for the instance.</li>
+</ul>
+<p>To provide local storage on a compute host, add a local volume group called <codeph>nova-local</codeph> to the host. This automatically includes the host in the local_storage_hosts host aggregate. The Nova scheduler draws from this host aggregate to instantiate VMs that require local storage.</p>
+<p>To populate the nova-local group with storage resources, you must also add physical volumes created on local disks:</p>
+<ol>
+<li>
+        <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
+          OpenStack Horizon Dashboard</xref>.</li>
+<li>Click <b>Inventory</b> on the <b>System Panel</b> section of the <b>Admin</b> menu, and then
+        selecting the <b>Hosts</b> tab.</li>
+<li>
+        <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Lock
+          the host to make changes</xref>.</li>
+<li>Click the host to make changes to open the <b>Inventory Detail</b> page for the locked
+        host.</li>
+<li>Click the <b>Storage</b> tab.<p>For a compute node, the <b>Storage</b> tab displays three
+          lists:</p><ul>
+          <li>
+            <b>Disks</b> - Physical disks installed in the compute node.</li>
+          <li>
+            <b>Local Volume Groups</b> - Groups of physical volumes designated for use as local
+            storage for VMs.</li>
+          <li>
+            <b>Physical Volumes</b> - Partitions that have been initialized for logical volume
+            management (LVM) and assigned to a local volume group.</li>
+        </ul></li>
+<li>If the <codeph>nova-local</codeph> group is not in the <b>Local Volume Groups</b> list, add the
+        group by clicking <b>Add Local Volume Group</b> and accepting the defaults in the dialog box
+        that appears.</li>
+<li>Add a physical volume to the nova-local group by clicking <b>Add Physical Volume</b>:<p>a. The
+            <b>Local Volume Group</b> menu is automatically set to <codeph>nova-local</codeph>, and
+          cannot be changed.</p><p>b. Select a disk to provide storage from the <b>Disks</b> menu to
+          select a disk to provide storage. For the root disk, a designated partition (local_pv) is
+          used.</p><p>You can add any number of physical volumes to the <codeph>nova-local</codeph>
+          group, limited only by the number of available disks.</p></li>
+<li>Click <b>Create Physical Volume</b>.</li>
+<li>
+        <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Unlock
+          the host</xref> to make the changes take effect.</li>
+</ol>
+<p>The compute host is ready to provide local storage for use by VMs. Because a nova-local local volume group has
+been added, the host is automatically included in the local_storage_hosts host aggregate.</p>
+<p>To return a host to the remote_storage_hosts host aggregate, so that it is used to instantiate VMs configured for remote Cinder-based storage, delete the nova-local local volume group.</p>
+<p>To configure a VM to use local storage or remote Cinder-based storage, or to be instantiated on any compute host
+regardless of storage type, see <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.vcpu.storage.dita" >Specifying Local Storage for a VM</xref>.</p>
+<p>To add disks to a compute node for extra local storage, see <xref href="../HostManagement/carrier-grade-admin-wr-host-management-active-compute.dita#adjust" type="section"  >Adjusting Resources on a Compute Node</xref>.</p>
+<section id="cli"> <title>Using the CLI</title>
+<p>As an alternative to the web administration interface, you can use the CLI to configure the host for local storage. For more information, see Managing Local Volume Groups and Managing Physical Volumes.</p>
+<p>
+  <xref type="section" href="#topic3661"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

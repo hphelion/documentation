@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1925">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installation Guide</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1 GA: Installation Guide</title>
 <titlealts>
 <searchtitle>HP Helion Openstack Carrier Grade 1.1: Installation Overivew</searchtitle>
 </titlealts>
@@ -56,15 +56,15 @@
         <li>Review the <xref href="carrier-grade-support-matrix2.dita#topic1773">Support
             Matrix</xref> to make sure your environment meets the minimum requirements.</li>
 <li> Perform any required or optional <xref
-            href="../../CarrierGrade/Installation/carrier-grade-install-pb-prereqs.dita"
+            href="../../CarrierGrade/Installation/carrier-grade-install-pb-prereqs-GA.dita"
             >installation prerequisites</xref>. </li>
 <li>
-          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-network-prepare.dita"
+          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-network-prepare-GA.dita"
             >Prepare the network for installation</xref>
         </li>
-  <li> Install the <xref href="carrier-grade-install-non-kvm.dita#topic10581">HLM and the HP Helion OpenStack environments</xref>. These components
+  <li> Install the <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">HLM and the HP Helion OpenStack environments</xref>. These components
   will be installed into what is called the <i>Non-KVM region</i>.</li>
-  <li>Install the <xref href="carrier-grade-install-kvm-cloud-rc0.dita#topic1107">carrier grade cloud</xref>. The carrier grade cloud is deployed into
+  <li>Install the <xref href="carrier-grade-install-kvm-cloud-GA.dita#topic1107">carrier grade cloud</xref>. The carrier grade cloud is deployed into
     what is called the <i>KVM region</i></li>
 </ol>
 </section>

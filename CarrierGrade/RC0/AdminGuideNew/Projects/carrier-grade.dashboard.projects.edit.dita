@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2121">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Modify Projects</title>
+<titlealts>
+<searchtitle>HP Helion Openstack Carrier Grade 1.1: Modifying Projects</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Projects/carrier-grade.dashboard.projects.edit.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/projects/edit/--></p>
+<p>As an admin, you can <xref type="section" href="#topic2121/projectcreate">create</xref> and <xref type="section" href="#topic2121/projectsdel">delete</xref> projects.</p>
+<section id="projectcreate"> <title>Create a project</title>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Identity</b> dashboard, then the <b>Projects</b> link.</p>
+</li>
+<li>
+<p>In the <b>Projects</b> panel, click <b>Create Project</b>.</p>
+</li>
+<li>
+<p>On the <b>Project Info</b> tab of the <b>Create Project</b> screen:</p>
+
+<p>a. Enter a unique name for the project. </p>
+          <p>b, Enter an identifying description for the project. </p>
+          <p>c. Leave <b>Enabled</b> selected to create an active project or clear the option to
+            create a</p>
+</li>
+<li>
+<p>Click the <b>Project Members</b> tab.</p>
+</li>
+<li>
+<p>On the <b>Project Members</b> tab select the users who can access the project by clicking the <b>+</b> icon for each user.</p>
+</li>
+<li>
+<p>Click the <b>Quotas</b> tab.</p>
+</li>
+<li>
+<p>Optionally, specify operational quotas for the project.</p>
+
+<ul>
+<li><b>Metadata Items</b> - Metadata items allowed for each instance.</li>
+<li><b>VCPUs</b> - Instance cores allowed for each project.</li>
+<li><b>Instances</b> - Instances allowed for each project.</li>
+<li><b>Injected Files</b> - Injected files allowed for each project.</li>
+<li><b>Injected File Content Bytes</b> - Content bytes allowed for each injected file.</li>
+<li><b>Volumes</b> - Volumes allowed for each project.</li>
+<li><b>Volume Snapshots</b> - Volume snapshots allowed for each project.</li>
+<li><b>Total Size of Volumes and Snapshots</b>- Enter the maximum total size for all volumes and
+              snapshots allowed for the project.</li>
+<li><b>RAM (MB)</b> - RAM megabytes allowed for each instance.</li>
+</ul>
+<p>
+<b>Note:</b> Default values are set on the <xref href="../../../CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade.dashboard.default.quotas.dita" >Default screen</xref>.</p>
+</li>
+<li>
+<p>Click <b>Create Project</b>.</p>
+</li>
+</ol>
+</section>
+<section id="projectdel"> <title>Delete a project</title>
+<p>As an admin, you can delete projects. Compute instances associated with a project will not be deleted.</p>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Identity</b> dashboard, then the <b>Projects</b> link.</p>
+</li>
+<li>
+<p>For the project you want to delete, click <b>More &gt; Delete Project</b>.</p>
+</li>
+<li>
+<p>In the confirmation screen, click <b>Delete Project</b>.</p>
+</li>
+</ol>
+<p>The project is no longer available. </p>
+      <p><xref type="section" href="#topic2121"> Return to Top </xref>
+      </p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

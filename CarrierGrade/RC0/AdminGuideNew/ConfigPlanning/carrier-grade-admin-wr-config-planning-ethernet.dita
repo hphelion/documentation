@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1830">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Working with Ethernet Interfaces</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet.md-->
+ <!--permalink: /helion/openstack/carrier/config/plan/ethernet/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>Ethernet interfaces, both physical and virtual, play a key role in the overall performance of the virtualized network.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>It is important to understand the available interface types, their configuration options, and their impact on network design.</p>
+<p>This section contains the following topics:</p>
+<ul>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-config.dita" >Configuring Ethernet Interfaces</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-shared.dita" >Configuring Shared (VLAN) Ethernet Interfaces</xref>
+</li>
+<li><xref href="carrier-grade-admin-wr-config-planning-ethernet-mtu.dita#topic5626" type="section" >Configuring Ethernet MTU</xref>
+ </li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-address-filtering.dita" >Filtering MAC Addresses on Virtual Interfaces</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-pci-pass.dita" >Configuring PCI Passthrough Ethernet Interfaces</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-sr-iov.dita" >SR-IOV Ethernet Interfaces</xref>
+</li>
+</ul>
+<p>On compute node data interfaces, the HP Helion OpenStack Carrier Grade supports Ethernet Network Interface Cards (NIC) based on the following chip sets:</p>
+<ul>
+<li>Intel 82599 (NIANTIC) 10 G</li>
+<li>Intel I350 (Powerville) 1G</li>
+<li>Mellanox Technologies MT27500 Family [ConnectX-3]</li>
+</ul>
+<p>The following is the list of supported virtual network interfaces:</p>
+<ul>
+<li>Accelerated Virtual Port (AVP)</li>
+<li>Intel e1000 emulation (e1000)</li>
+<li>NE2000 emulation (ne2k_pci)</li>
+<li>AMD PCNet/PCI Emulation (pcnet)</li>
+<li>Realtek 8139 emulation (rtl8139)</li>
+<li>VirtIO Network (virtio)</li>
+<li>PCI Passthrough Device</li>
+<li>SR-IOV</li>
+</ul>
+<section id="about-lagae-interfaces"> <title>About LAG/AE Interfaces</title>
+<p>Ethernet interfaces in a LAG group should be attached to the same L2 switch to provide link protection. For more information about the different LAG modes see the HP Helion OpenStack Carrier Grade Software Installation Guide.</p>
+<p>
+  <xref type="section" href="#topic1830"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

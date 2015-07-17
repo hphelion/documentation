@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic966">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Viewing Projects Usage</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Projects/carrier-grade.dashboard.projects.view.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/projects/viewing/--></p>
+<p>As an admin, you can view usage information, including memory and uptime information, on each project.</p>
+<section id="view-project-usage"> <title>View project usage</title>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Identity</b> dashboard, then the <b>Projects</b> link.</p>
+
+<p>A list of all projects in the current domain is displayed. You can see the name, ID and status (enabled or disabled).</p>
+</li>
+<li>
+<p>To view information on a project, click the arrow icon in the <b>Actions</b> menu and select <b>View Usage</b>.</p>
+
+<p>The instances associated with the project are listed, with memory and uptime information.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic966"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

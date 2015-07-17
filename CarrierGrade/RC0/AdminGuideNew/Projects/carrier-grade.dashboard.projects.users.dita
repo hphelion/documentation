@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1663">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Adding and Removing Users to a Project</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Projects/carrier-grade.dashboard.projects.users.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/projects/users/--></p>
+<p>As an admin, you can <xref type="section" href="#topic1663/useradd">add</xref> and <xref type="section" href="#topic1663/userdel">remove</xref> user access to each project.</p>
+<section id="useradd"> <title>Add a user to a project</title>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Identity</b> dashboard, then the <b>Projects</b> link.</p>
+</li>
+<li>
+<p>For the project you want to modify, click the <b>Modify Users</b> button.</p>
+
+<p>On the Project Members tab of the Edit Project screen that displays, the users in the <b>Project Members</b> column can access and work with the current project.</p>
+</li>
+<li>
+<p>Add a user to the project by clicking the <b>+</b> icon next to that user name in the <b>All Users</b> column.</p>
+
+<p>The user name is added to the <b>Project Members</b> column and can now access the project.</p>
+</li>
+<li>
+<p>Click <b>Save</b>.</p>
+</li>
+</ol>
+</section>
+<section id="userdel"> <title>Remove a user from a project</title>
+<ol>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Identity</b> dashboard, then the <b>Projects</b> link.</p>
+</li>
+<li>
+<p>For the project you want to modify, click the <b>Modify Users</b> button.</p>
+
+<p>On the <b>Project Members</b> tab of the <b>Edit Project</b> screen that displays, the users in
+            the <b>Project Members</b> column can access and work with the current project.</p>
+</li>
+<li>
+<p>To remove a user to the project, click the icon next to that user name in the <b>Project
+              Members</b> column.</p>
+
+<p>The user name is moved to the <b>All Users</b> column and can no longer access the project.</p>
+</li>
+<li>
+<p>Click <b>Save</b>.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1663"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

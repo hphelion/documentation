@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1051">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Working with System Alarms</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms.md-->
+ <!--permalink: /helion/openstack/carrier/admin/alarms/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>HP Helion OpenStack Carrier Grade can generate system alarms when operational conditions change on any of the hosts in the cluster.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>The supported interfaces to the alarms subsystem are the command line interface (see System Alarms CLI Commands on page 145), the web interface (click the Fault Management menu on the Admin tab), SNMP, and the system REST API.</p>
+<p>For more information, see the following topics:</p>
+<ul>
+<li>
+<xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-viewing.dita" >Viewing System Alarms</xref>
+</li>
+<li>
+<xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-community-strings.dita" >Adding an SNMP Community String</xref>
+</li>
+<li>
+<xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-snmp-traps.dita" >Configuring SNMP Trap Destinations</xref>
+</li>
+<li>
+<xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-cli-commands.dita" >Using System Alarms CLI Commands</xref>
+</li>
+<li>
+<xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-ref-table.dita" >Alarm Reference Table</xref>
+</li>
+</ul>
+<p>
+  <xref type="section" href="#topic1051"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

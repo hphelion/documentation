@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5112">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Configuring the NUMA Node Allocations for a VM</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.numa.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/flavors/extra/numa/--></p>
+<p>You can use flavor extra specs or image properties to allocate virtual memory and vCPU resources to virtual NUMA nodes.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>By default, the memory and CPU resources defined for a flavor are assigned to a single virtual NUMA node, which is mapped to an available host NUMA node when an instance is launched or migrated. You can specify the use of multiple NUMA nodes using either flavor extra specifications (which take the general form hw:specification), or image properties (which take the general form hw_specification).</p>
+<p>
+<b>Note:</b> Multiple NUMA nodes for VMs are not currently supported.</p>
+<p>By default, the available CPU and memory resources for the flavor are distributed equally among the NUMA nodes. You can customize the distribution of resources. For example, given a flavor with two NUMA nodes, three vCPUs, and 1024 MB of RAM, you can assign one vCPU and 512 MB to virtual NUMA node 0, and two VCPUs and 512 MB to virtual NUMA node 1. The ability to allocate resources is useful when pinning virtual NUMA nodes to host NUMA nodes to optimize VM performance.</p>
+<p>By default, the memory required for a virtual NUMA node is pinned to a single host NUMA node to ensure high performance. For applications where this is not a concern, you can relax the memory allocation requirements so that the memory for a virtual NUMA node can be drawn from more than one host NUMA node if necessary.</p>
+<p>When deploying network guest images operating on the data path, it is advisable to co-locate the virtual machines, the AVS switch, physical ports, and all other networking elements on the same node.</p>
+<p>Use of this option should be limited to cases where fine-tuning of the data path on guest applications is important.</p>
+<p>
+<b>Caution:</b> If the virtual CPUs cannot be allocated to run on the specified node on any compute node, the virtual machine may fail to launch</p>
+<ol>
+<li>
+<p>Declare the number of NUMA nodes to expose to the guest.</p>
+
+<p>The following extra specification sets the number of NUMA nodes:</p>
+
+<codeblock>
+<codeph>hw:numa_nodes=n
+</codeph>
+</codeblock>
+
+<p>where n is the number of NUMA nodes to expose (1 or more).</p>
+
+<p>For example, given the flavor numa.pinned.asym, use the following command to expose two NUMA nodes.</p>
+
+<p>nova flavor-key numa.pinned.asym set hw:numa_nodes=2</p>
+
+<p>To set an image property instead, you can use the following command:</p>
+
+<codeblock>
+<codeph>nova image-meta image hw_numa_nodes=2
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>
+<b>Optional:</b> For each NUMA node, assign a list of CPUs.</p>
+
+<p>This step is optional. By default, available CPUs for the flavor are distributed evenly across the available NUMA nodes.</p>
+
+<p>The following extra specification assigns CPUs to a NUMA node:</p>
+
+<codeblock>
+<codeph>hw:numa_cpus.vnode_id=cpu_list
+</codeph>
+</codeblock>
+
+<p>where:</p>
+
+<ul>
+<li>
+<codeph>vnode_id</codeph> is the number used to identify the virtual NUMA node (0 for the first node, 1 for the second, and so on).</li>
+<li>
+<codeph>cpu_list</codeph> is a comma-separated list of vCPUs to assign to the node. The vCPUs for the flavor are enumerated beginning with 0.</li>
+</ul>
+<p>
+<b>Example:</b>
+</p>
+
+<p>For flavor numa.pinned.asym, use the following command to assign vCPU 0 to the first NUMA node, and vCPUs 1 and 2 to the second NUMA node:</p>
+
+<codeblock>
+<codeph>nova flavor-key numa.pinned.asym set hw:numa_cpus.0=0  \ hw:numa_cpus.1=1,2
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>
+<b>Optional:</b> For each NUMA node, assign an amount of memory.</p>
+
+<p>This step is optional. By default, available memory for the flavor is distributed evenly across the available NUMA nodes.</p>
+
+<p>The following extra specification assigns memory to a NUMA node:</p>
+
+<codeblock>
+<codeph>hw:numa_mem.vnode_id=ram_size
+</codeph>
+</codeblock>
+
+<p>where:</p>
+
+<ul>
+<li>
+<codeph>vnode_id</codeph> is the number used to identify the virtual NUMA node (0 for the first node, 1 for the second, and so on).</li>
+<li>
+<codeph>ram_size</codeph> is the amount of RAM in MB.</li>
+</ul>
+<p>
+<b>Example</b>
+</p>
+
+<p>For flavor <codeph>numa.pinned.asym</codeph>, use the following command to assign 512 MB of RAM to each of two NUMA nodes:</p>
+
+<codeblock>
+<codeph>nova flavor-key numa.pinned.asym set hw:numa_mem.0=512 \ hw:numa_mem.1=512
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>
+<b>Optional:</b> Specify whether memory for the flavor can be drawn from more than one NUMA node if necessary.</p>
+
+<p>This step is optional. By default, memory is allocated from the designated host NUMA node only.</p>
+
+<p>To control whether memory for the flavor can be drawn from more than one host NUMA node, use the following extra specification:</p>
+
+<codeblock>
+<codeph>hw:numa_mempolicy=policy
+</codeph>
+</codeblock>
+
+<p>where <codeph>policy</codeph> is either strict (to use only memory from the designated host NUMA node) or preferred (to permit memory from other host NUMA nodes to be used if necessary).</p>
+
+<p>
+<b>Note:</b> Allocation of memory across NUMA node boundaries is not currently supported.</p>
+</li>
+</ol>
+<p>To pin the virtual NUMA nodes to host NUMA nodes, see <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.numa.pin.dita" >Pinning a Guest NUMA Node to a Host NUMA Node</xref>.</p>
+<section id="viewing"> <title>Viewing the NUMA Node Configuration for a VM</title>
+<p>You can use the CLI to display the NUMA node configuration for a VM.</p>
+<p>Use the following command:</p>
+<codeblock>
+  <codeph>    nova show instance
+</codeph>
+</codeblock>
+<p>where <codeph>instance</codeph> is the name or UUID of the instance.</p>
+<p>
+  <xref type="section" href="#topic5112"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

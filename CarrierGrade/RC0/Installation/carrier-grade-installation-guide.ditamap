@@ -1,0 +1,32 @@
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+    
+    <title> HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installation Guide</title>
+    <topicmeta>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>HP Helion</copyrholder>
+        </copyright>
+        <prodinfo>
+            <prodname >HP Helion OpenStack Carrier Grade</prodname>
+            <vrmlist>
+                <vrm release="1.1" version=""/>
+            </vrmlist>
+        </prodinfo>
+        <!-- bookid ixia_locid="133">
+            <edition ixia_locid="134">Patch 0003</edition>
+        </bookid -->
+    </topicmeta>
+    <topicref href="carrier-grade-install-pb-overview.dita">
+        <topicref href="carrier-grade-technical-overview.dita"/>
+        <topicref href="carrier-grade-technical-specs.dita"/>
+        <topicref href="carrier-grade-support-matrix2.dita"/>
+        <topicref href="carrier-grade-install-pb-prereqs.dita">
+            <topicref href="carrier-grade-install-pb-network-prepare.dita"/>
+            <topicref href="carrier-grade-install-NTP.dita"/>
+        </topicref>
+        <topicref href="carrier-grade-install-non-kvm.dita"/>
+        <topicref href="carrier-grade-install-kvm-cloud-rc0.dita">
+            <topicref href="carrier-grade-install-kvm-network-interface.dita"/>
+        </topicref>
+    </topicref></map>

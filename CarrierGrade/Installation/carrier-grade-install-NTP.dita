@@ -122,7 +122,7 @@ If your client (including your NTP server) has trouble syncing time, see [Troubl
 </section>
   <section id="next-step"> <title>Next Step</title>
     <p>
-      <xref href="carrier-grade-install-non-kvm.dita">Deploying the Non-KVM
+      <xref href="carrier-grade-install-non-kvm-GA.dita">Deploying the Non-KVM
         Region</xref>
     </p>
   </section>

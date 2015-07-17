@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3210">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Setting Up a VXLAN Provider Network Using the CLI</title>
+<titlealts>
+<searchtitle>HP Helion Openstack Carrier Grade 1.1: Setting Up a VXLAN Provider Network using the CLI</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting-cli.md-->
+ <!--permalink: /helion/openstack/carrier/config/plan/vxlans/setting-cli/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>You can use the command line interface to set up a VXLAN provider network and add segmentation ranges.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>VXLAN provider networks are an alternative to VLAN provider networks when VM L2 connectivity is required across separate Layer 2 network segments separated by one or more Layer 3 routers.</p>
+<p>The steps in this section describe how to set up a VXLAN provider network and add segmentation ranges using the
+command line interface. For information about using the Horizon interface, see <xref href="../VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting.dita" >Setting Up a VXLAN Provider Network using Horizon</xref>.</p>
+<p>To create a provider network using the CLI, use the following command:</p>
+<codeblock><codeph>neutron providernet-create name \
+--type=type --description=description mtu=mtu_size
+</codeph></codeblock>
+<p>where</p>
+<ul>
+<li>
+<codeph>name</codeph> is a name for the provider network</li>
+<li>
+<codeph>type</codeph> is the type of provider network (flat, vlan, or vxlan</li>
+<li>
+<codeph>description</codeph> is a brief description for reference purposes</li>
+<li>
+<codeph>mtu_size</codeph> is the maximum transmission unit size</li>
+</ul>
+<p>To add a segmentation range using the CLI, use the following command:</p>
+<codeblock><codeph>neutron providernet-range-create provider_network \
+--name=range_name --tenant_id=tenant \
+--description=description --range min-max \
+--group multicast_address --port=udp_port \
+--ttl=time_to_live
+</codeph></codeblock>
+<p>where</p>
+<ul>
+<li>
+<codeph>provider_network</codeph> is the name of the associated provider network</li>
+<li>
+<codeph>name</codeph> is a name for the segmentation range</li>
+<li>
+<codeph>tenant</codeph> is the name or UUID of the tenant associated with the range</li>
+<li>
+<codeph>description</codeph> is a brief description for reference purposes</li>
+<li>
+<codeph>min</codeph> is the lowest value in the range</li>
+<li>
+<codeph>max</codeph> is the highest value in the range</li>
+</ul>
+<p>The following additional values are used for segmentation ranges on VxLAN provider networks:</p>
+<ul>
+<li>
+<codeph>multicast_address</codeph> The IPv4 or IPv6 address for participation in a multicast group used to discover MAC addresses for destination VMs. You can use a different multicast group for each segmentation range to help organize and partition network traffic.</li>
+<li>
+<p>
+<codeph>udp_port</codeph> - The destination UDP port for packets sent on the VXLAN. You can select either:</p>
+
+<ul>
+<li>the IANA standard 4789 to use this range with the OpenStack Neutron service</li>
+<li>the legacy standard 8472 for use with some commercial switch equipment.</li>
+</ul>
+</li>
+<li>
+<p>
+<codeph>time_to_live</codeph> - The time-to-live, measured in hops, for packets sent on the VXLAN. The value is decremented at each hop; when it reaches zero, the packet expires. You can use this to limit the scope of the VXLAN. For example, to limit the packet to no more than three router hops, use a time-to-live value of 4.</p>
+</li>
+</ul>
+<p>For more about these parameters, see <xref href="../VXLAN/carrier-grade-admin-wr-config-planning-vxlans-setting.dita" >Setting Up a VXLAN Provider Network using Horizon</xref>.</p>
+<p>You can obtain information about provider networks and segmentation ranges using the following commands.</p>
+<codeblock><codeph>neutron net-list-on-providernet providernet
+neutron providernet-range-show providernet-range
+</codeph></codeblock>
+<p>
+  <xref type="section" href="#topic3210"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

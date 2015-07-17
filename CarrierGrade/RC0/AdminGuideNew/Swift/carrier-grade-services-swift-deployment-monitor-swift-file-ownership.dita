@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1981">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Monitor File Ownership</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Karthik P, Binamra S"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-swift-file-ownership.md-->
+ <!--permalink: /helion/openstack/carrier/services/object/swift/file-ownership/--></p>
+<p>The <b>
+<i>Icinga</i>
+</b> service, which runs in the undercloud, helps cloud admins monitor the  correct ownership of ring files stored at <codeph>/etc/swift</codeph>.</p>
+<section id="prerequisites"> <title>Prerequisites</title>
+<ul>
+<li>HP Helion OpenStack cloud is successfully deployed. <!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
+</li>
+<li>The Icinga service is active and running in the undercloud</li>
+</ul>
+</section>
+<section id="monitoring-the-file-ownership-of-object-storage-swift"> <title>Monitoring the File Ownership of Object Storage (Swift)</title>
+<p>The <codeph>/etc/swift/</codeph> has Swift user permission and the files inside the <codeph>/etc/swift/</codeph> has root permission. So, the Swift user has read permission on the files present inside the <codeph>/etc/swift/</codeph>. The script verifies the <codeph>/etc/swift/ -parent</codeph> folder for <b>swift:swift</b> ownership.</p>
+<p>Perform the following steps to monitor the file ownership of Swift disk:</p>
+<ol>
+<li>
+<p>In the undercloud Horizon dashboard, log in to the <b>Icinga Dashboard</b> (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:</p>
+
+<ul>
+<li>Username: <i>icingaadmin</i>
+</li>
+<li>Password: <i>icingaadmin</i> </li>
+</ul>
+</li>
+<li>
+<p>Click <b>Status</b> on the left panel and then click 
+<xref format="html" href="javascript:window.open('/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
+<b>
+<varname>Host Detail</varname>
+</b>
+</xref>.</p>
+</li>
+<li>
+<p>In the <b>Host</b> column, <xref format="html" href="javascript:window.open('/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
+<b>click the icon</b> </xref> next to the host IP when the tooltip displays as "View Service Details For This Host". <!--A BR tag was used here in the original source.-->
+The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the <xref format="html" href="javascript:window.open('/media/swift_icinga-file-ownership.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
+<b>file ownership details</b>
+</xref> of the selected Swift node.</p>
+</li>
+</ol>
+</section>
+<section id="status-messages"> <title>Status Messages</title>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry>Status</entry>
+    <entry>
+<ph>Message</ph>
+
+</entry>
+    <entry>
+<ph>Cause/Resolution</ph>
+
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>OK </entry>
+    <entry>File ownership check completed. Files are with Swift monitoring.
+</entry>
+    <entry> </entry>
+</row>
+<row>
+<entry>FAIL </entry>
+    <entry> <ul>
+<li>Error files with zero size. </li> <li>Error files without Swift ownership.</li>
+</ul>
+</entry>
+    <entry>Check for the ownership of <b>etc/swift</b> folder.
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <xref type="section" href="#topic1981"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2270">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Monitor Node Replication Status using Icinga</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Keshava HP, Binamra S"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-monitor-replica-swift-status.md-->
+ <!--permalink: /helion/openstack/carrier/services/object/swift/replica-status/--></p>
+<p>Cloud admins can use the <b>
+<i>icinga</i>
+</b> service running in the undercloud to monitor the replication status of nodes within the Object Storage (Swift) deployment.</p>
+<section id="prerequisites"> <title>Prerequisites</title>
+<ul>
+<li>HP Helion OpenStack cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment.)</i>
+</li>
+<li>The Icinga service is active and running in the undercloud.</li>
+</ul>
+</section>
+<section id="monitoring-object-storage-swift-replication-status"> <title>Monitoring Object Storage (Swift) Replication Status</title>
+<p>Perform the following steps to monitor the replication status:</p>
+<ol>
+<li>
+<p>In the undercloud, log in to the <b>Icinga Dashboard</b> (http://&lt;<varname>undercloud_IP</varname>&gt;/icinga/). The default login credentials are as follows:</p>
+
+<ul>
+<li>Username: <i>icingaadmin</i>
+</li>
+<li>Password: <i>icingaadmin</i> </li>
+</ul>
+</li>
+<li>
+<p>Click <b>Status</b> on the left panel and then click <xref format="html" href="javascript:window.open('/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
+<b>
+<varname>Host Detail</varname>
+</b>
+</xref>.</p>
+</li>
+<li>
+<p>In the <b>Host</b> column,  <xref format="html" href="javascript:window.open('/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
+<b>click the icon</b>
+</xref>  next to the host IP when the tooltip displays as "View Service Details For This Host". 
+<!--A BR tag was used here in the original source.--> The page navigates to  Service Status Details For Host &lt;Swift node IP address &gt; and displays the <xref format="html" href="javascript:window.open('/media/swift_icinga-replication-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >
+<b>replication status</b> </xref> of the selected Swift node.</p>
+</li>
+</ol>
+<!--
+
+4. Click the target Swift node IP address to open the <a href="javascript:window.open('/media/swift_icinga-replication-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Service Status Details For Host IP Address</i></b></a> to see the replication status of the selected Swift node. -->
+</section>
+<section id="status-messages"> <title>Status Messages</title>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry>Status</entry>
+    <entry>
+<ph>Message</ph>
+
+</entry>
+    <entry>
+<ph>Cause/Resolution</ph>
+
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>OK</entry>
+    <entry>Ok</entry>
+    <entry/>
+</row>
+<row>
+<entry>WARNING </entry>
+    <entry>Replication not progressing</entry>
+    <entry>An account, container or object replicator process has not finished a complete scan  within the defined threshold  (Default set to 24 hours (86400 seconds) for HP Helion OpenStack 1.0). Examine the account-replicator, container-replicator and object-replicator logs to see which process is "stuck". Usually, restarting the relevant process resolves the issue.</entry>
+</row>
+<row>
+<entry>FAIL </entry>
+    <entry>Replication never completed</entry>
+    <entry> The named replication process has never run on this node. Check that the replicator has been configured and started. Examine the log files to see if the replicator process has reported problems.</entry>
+</row>
+<row>
+<entry>UNKNOWN</entry>
+    <entry>Not Applicable</entry>
+    <entry>N/A</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <xref type="section" href="#topic2270"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

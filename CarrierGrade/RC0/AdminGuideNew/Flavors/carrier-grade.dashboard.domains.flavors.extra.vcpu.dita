@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1356">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Specifying the VCPU Model for a VM</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.vcpu.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/flavors/extra/vcpu/--></p>
+<p>You can select a particular VCPU model for a VM in order to leverage advanced CPU features such as SSE4.2, AES,or AVX on the compute nodes.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>When a virtual machine is launched, a Nova scheduler filter restricts the target compute nodes to those with available cores of the requested model, or better. If no such compute node is available, the error No valid host was found is reported.</p>
+<p>If no VCPU model is specified, the default QEMU virtual processor is used.</p>
+<p>The following selections are available:</p>
+<ul>
+<li>Intel Core i7 9xx (Nehalem Class Core i7)</li>
+<li>Intel Westmere E56xx/L56xx/X56xx (Nehalem-C)</li>
+<li>Intel Xeon E312xx (Sandy Bridge)</li>
+<li>Intel Core Processor (Haswell)</li>
+</ul>
+<p>
+<b>Note:</b> The Haswell model does not currently support transactional synchronization extensions (TSX).</p>
+<p>To add this extra spec to a flavor using the web administration interface, see <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Configuring Flavor Extra Specifications</xref>.</p>
+<p>
+  <xref type="section" href="#topic1356"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

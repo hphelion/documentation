@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1053">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Terminating Instances</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.terminate.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/instances/terminate/--></p>
+<p>You can terminate an instance, as needed.</p>
+<section id="terminate-an-instance"> <title>Terminate an instance</title>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Instances</b> link.</p>
+</li>
+<li>
+<p>In the <b>Instances</b> screen, for the instance you want to terminate, for the instance you want to delete, click the arrow icon in the <b>Actions</b> menu and select <b>Terminate Instance</b>.</p>
+
+<p>To delete multiple instances, click the check box next to name of each instance to delete. Click <b>Terminate Instances</b>.</p>
+</li>
+<li>
+<p>In the confirmation screen that appears, click <b>Terminate Instance</b>.</p>
+
+<p>The instance is terminated and no longer appears in the instance list.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1053"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

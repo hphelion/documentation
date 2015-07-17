@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1345">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Support Matrix for the KVM Host (HLM)</title>
+<titlealts>
+<searchtitle>HP Helion Openstack Carrier Grade: Support Matrix</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Michael B,"/>
+<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-support-matrix-hlm.md-->
+ <!--permalink: /helion/openstack/carrier/support-matrix/hlm/--></p>
+<p>
+<xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita" >▲ HP Helion OpenStack Carrier Grade 1.1: Support Matrix</xref> |  <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-helion.dita" > Support Matrix for HP Helion OpenStack ▶</xref> </p>
+<p>To ensure the performance and stability of the HP Lifecycle Management, it is very important to meet the requirements and conform to the following recommendations.</p>
+<section id="software-requirements"> <title>Software Requirements</title>
+<p>The KVM Host is a computer running Ubuntu Server 14.04.2 LTS. The following packages are also required:</p>
+<ul>
+<li>ntp </li>
+<li>firefox </li>
+<li>gedit </li>
+<li>xrdp </li>
+<li>xfce4 </li>
+<li>qemu-kvm </li>
+<li>libvirt-bin </li>
+<li>openvswitch-switch </li>
+<li>openvswitch-common </li>
+<li>python-libvirt </li>
+<li>qemu-system-x86 </li>
+<li>libssl-dev </li>
+<li>libffi-dev </li>
+<li>git </li>
+<li>python-virtualenv </li>
+<li>python-dev virt-manager</li>
+</ul>
+</section>
+<section id="supportedhw"> <title>Supported Hardware</title>
+<p>The following servers are supported for use as the KVM host in the current release.</p>
+<table>
+<tgroup cols="5">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<colspec colname="col4"/>
+<colspec colname="col5"/>
+<thead>
+<row>
+<entry>Node Type</entry>
+<entry>Role</entry>
+<entry>Required Number</entry>
+<entry>Server Hardware</entry>
+<entry>Minimum Requirements and Recommendations</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry morerows="3"> KVM Host</entry>
+<entry morerows="3">Installation/Management</entry>
+<entry morerows="3">1</entry>
+<entry>Disk </entry>
+<entry> 20 GB
+</entry>
+</row>
+<row>
+<entry>Memory </entry>
+<entry>4,096 MB</entry>
+</row>
+<row>
+<entry>Network </entry>
+<entry> </entry>
+</row>
+<row>
+<entry>CPU </entry>
+<entry> </entry>
+
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <xref type="section" href="#topic1345"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

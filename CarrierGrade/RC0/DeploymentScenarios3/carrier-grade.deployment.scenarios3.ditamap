@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River BookMap//EN" "bookmap-wr.dtd">
+<bookmap-wr domains="(map bookmap bookmap-wr)                          (topic delay-d)                          (map mapgroup-d)                          (topic indexing-d)                           (topic xnal-d)                          (topic hi-d)                           (topic pr-d)                           (topic sw-d)                          (topic ui-d)                          (topic wr-sw-d)                          (topic xml-d)                          a(loc  ixia_locid)                         " id="jow1410634925244" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+    
+-->
+    <booktitle ixia_locid="32">
+        <mainbooktitle ixia_locid="33">HP Helion OpenStack(R) Carrier Grade 1.1: Reference
+            Deployment Scenarios</mainbooktitle>
+    </booktitle><bookmeta>
+        <prodinfo>
+            <prodname ixia_locid="34">HP Helion OpenStack Carrier Grade</prodname>
+            <vrmlist>
+                <vrm release="15.05" version=""/>
+            </vrmlist>
+        </prodinfo>
+    </bookmeta>
+    <chapter href="jow1410640041471.xml" ixia_locid="42">
+        
+        <!-- topicref href="jow1410639575680.xml"/  Pktgen Scenario removed 2014-09-19 -->
+        <topicref href="jow1410638776646.xml"/>
+        <topicref href="jow1410638924240.xml" ixia_locid="45"/>
+        <topicref href="jow1411430962060.xml" ixia_locid="51"/>
+        <topicref href="jow1411435660602.xml" ixia_locid="52"/>
+        <topicref href="jow1411482049845.xml" ixia_locid="53"/>
+    </chapter>
+    <chapter href="jow1410636108227.xml" ixia_locid="39">
+        <topicref href="jow1411497294920.xml" ixia_locid="54"/>
+        <topicref href="jow1404333821651.xml" ixia_locid="5">
+            <topicref href="jow1404333723047.xml" ixia_locid="6"/>
+            <topicref href="jow1404333728991.xml" ixia_locid="7"/>
+            <topicref href="jow1424192677556.xml" ixia_locid="58"/>
+            <!-- Removing from map until needed for GA release
+                  <topicref href="rst1433175643400.xml" ixia_locid="61"/>
+            </topicref>-->
+            <topicref href="rst1432665605712.xml" ixia_locid="60"/>
+            <topicref href="jow1410637938926.xml" ixia_locid="41"/>
+            <topicref href="jow1404333714134.xml" ixia_locid="10"/>
+            <topicref href="jow1404333668441.xml" ixia_locid="12"/>
+            <topicref href="jow1404333673732.xml" ixia_locid="11"/>
+        </topicref>
+        <topicref href="jow1404333809139.xml" ixia_locid="13">
+            <topicref href="jow1404333586935.xml" ixia_locid="14"/>
+            <topicref href="jow1404333594789.xml" ixia_locid="15"/>
+            <topicref href="rec1433352802888.xml" ixia_locid="62"/>
+            <topicref href="jow1410804489611.xml" ixia_locid="46"/>
+            <topicref href="jow1408735356648.xml" ixia_locid="19"/>
+        </topicref>
+    </chapter>
+    <chapter href="jow1411149829129.xml" ixia_locid="49"/>
+    <chapter href="jow1411149875790.xml" ixia_locid="50"/>
+    <chapter href="jow1411677830752.xml" ixia_locid="55"/>
+    
+    <chapter href="jow1404333819947.xml" ixia_locid="56">
+        <topicref href="jow1404333822865.xml" ixia_locid="4"/>
+        <topicref href="jow1404333823466.xml" ixia_locid="5"/>
+        <topicref href="jow1424188329479.xml" ixia_locid="16"/>
+        <topicref href="rst1432757329786.xml" ixia_locid="17"/>
+        <topicref href="jow1411739340460.xml" ixia_locid="15"/>
+        <topicref href="jow1404333587606.xml" ixia_locid="8"/>
+        <topicref href="jow1404333825310.xml" ixia_locid="9"/>
+        <topicref href="jow1404333825972.xml" ixia_locid="10"/>
+        <topicref href="jow1404333826563.xml" ixia_locid="11"/>
+        <topicref href="jow1404333827217.xml" ixia_locid="12"/>
+        <topicref href="jow1404333827838.xml" ixia_locid="13"/>
+    </chapter>
+    
+    
+    
+    
+    <!-- appendix href="jow1411073933630.xml" ixia_locid="47"/ -->
+</bookmap-wr>

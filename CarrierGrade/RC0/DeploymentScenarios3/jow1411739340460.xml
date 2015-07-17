@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1411739340460" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+        
+-->
+    <title ixia_locid="232">Creating Segmentation Ranges Using the CLI</title>
+    <shortdesc ixia_locid="233">You can use the CLI to add segmentation ranges to provider networks.</shortdesc>
+    <prolog>
+        <author ixia_locid="234">Michael B</author>
+        <author ixia_locid="245">Pedro Sanchez</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="235">
+            <p ixia_locid="236">This task assumes that provider networks have already been created in order to unlock
+                the compute nodes and make the system operational. For more information about
+                creating provider networks, see the <cite ixia_locid="237">HP Helion OpenStack Carrier Grade Software Installation Guide</cite>. </p>
+            <p ixia_locid="231">The scenarios require two provider networks of the VLAN type.</p>
+        </context>
+        <steps id="steps_scn_pxd_4p">
+            <step id="step_N1003B_N10038_N10020_N10001" ixia_locid="10">
+                <cmd ixia_locid="11">Create segmentation ranges on provider network <nameliteral ixia_locid="12">provider-net-a</nameliteral>. </cmd>
+                <stepxmp ixia_locid="22">
+                    <codeblock ixia_locid="67"><systemoutput ixia_locid="246">~(keystone_admin)$ </systemoutput><userinput ixia_locid="71">neutron providernet-range-create provider-net-a \
+--name pnet-a-common --description "External network access" --range 10-10</userinput>
+<systemoutput ixia_locid="247">~(keystone_admin)$ </systemoutput><userinput ixia_locid="77">neutron providernet-range-create provider-net-a \
+--name pnet-a-tenant1 --tenant-id ${<varname ixia_locid="81">tenant1_UUID</varname>} --description "Shared internal network" \
+--range 623-642</userinput>
+<systemoutput ixia_locid="248">~(keystone_admin)$ </systemoutput><userinput ixia_locid="78">neutron providernet-range-create provider-net-a \
+--name pnet-a-tenant2 --tenant-id ${<varname ixia_locid="82">tenant2_UUID</varname>} --description "Shared internal network" \
+--range 664-680</userinput>
+
+</codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N10083_N10038_N10020_N10001" ixia_locid="28">
+                <cmd ixia_locid="29">Create segmentation ranges on  <nameliteral ixia_locid="30">provider-net-b</nameliteral>. </cmd>
+                <stepxmp ixia_locid="41">
+                    <codeblock ixia_locid="238"><systemoutput ixia_locid="249">~(keystone_admin)$ </systemoutput><userinput ixia_locid="244">neutron providernet-range-create provider-net-b \
+--name pnet-b-common --shared --description "External network access" --range 568-599</userinput></codeblock>                </stepxmp>
+            </step>
+        </steps>
+        <result id="result_N10107_N10020_N10001" ixia_locid="62">
+            <p ixia_locid="63">The segmentation ranges are set.</p>
+        </result>
+    </taskbody>
+</task-wr>

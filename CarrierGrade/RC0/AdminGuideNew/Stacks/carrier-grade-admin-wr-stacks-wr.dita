@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic9186">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Extensions to Heat</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="All"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Stacks/carrier-grade-admin-wr-stacks-wr.md-->
+ <!--permalink: /helion/openstack/carrier/admin/stacks/wr/--></p>
+<p>Several extensions to Heat are included with  KVM.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>The  KVM Extensions are compatible with both HOT format and CFN format:</p>
+<ul>
+<li>
+<xref type="section" href="#topic9186/nic">Multiple NIC Support</xref>
+</li>
+<li>
+<xref type="section" href="#topic9186/iface">Simplified Network Interface Configuration</xref>
+</li>
+<li>
+<xref type="section" href="#topic9186/naminmg">Simplified VM Instance Naming</xref>
+</li>
+<li>
+<xref type="section" href="#topic9186/support">Support for Server Groups</xref>
+</li>
+<li>
+<xref type="section" href="#topic9186/metrics">Improved Metrics Communication</xref>
+</li>
+<li>
+<xref type="section" href="#topic9186/pass">Relaxed Requirements for Passing User Data</xref>
+</li>
+<li>
+<xref type="section" href="#topic9186/access">Improved User Access to Stacks</xref>
+</li>
+<li>
+<xref type="section" href="#topic9186/control">Greater Control over Resource Allocations</xref>
+</li>
+<li>
+<xref type="section" href="#topic9186/add">Additional Heat Resources</xref>
+</li>
+</ul>
+<section id="nic"> <title>Multiple NIC Support</title>
+<p>When launching a VM instance initially or in an autoscaling stack, you can specify multiple network interfaces. The open-source version of Heat allows only a single network interface to be specified at launch.</p>
+<p>The syntax for the extension is as follows:
+    ...
+    LaunchConfig:
+        Type: AWS::AutoScaling::LaunchConfiguration
+        Properties
+            ...
+            NetworkInterfaces: [
+                {DeviceIndex: "0", vif-model: "virtio", NetworkId: { Ref:PublicNetId } },
+                {DeviceIndex: "1", vif-model: "avp", NetworkId: { Ref:InternalNetId } }</p>
+<p>As the example shows, this extension also adds the ability to specify a different <codeph>vif-model</codeph> for each interface. In
+addition, a new avp option is introduced, supporting the use of optimized AVP device drivers.</p>
+<p>The valid <codeph>vif-model</codeph> values are as follows:</p>
+<table>
+<tgroup cols="2">
+                    <colspec colname="col1" colsep="1" rowsep="1"/>
+                    <colspec colname="col2" colsep="1" rowsep="1"/>
+                    <tbody>
+                        <row>
+                            <entry>avp</entry>
+                            <entry>Accelerated Virtual Port</entry>
+                        </row>
+                        <row>
+                            <entry>e1000</entry>
+                            <entry>Intel e1000 Emulation</entry>
+                        </row>
+                        <row>
+                            <entry>ne2k_pci</entry>
+                            <entry>NE2000 Emulation</entry>
+                        </row>
+                        <row>
+                            <entry>pcnet</entry>
+                            <entry>AMD PCnet/PCI Emulation</entry>
+                        </row>
+                        <row>
+                            <entry>rtl8139</entry>
+                            <entry>Realtek 8139 Emulation</entry>
+                        </row>
+                        <row>
+                            <entry>virtio</entry>
+                            <entry>VirtIO Network</entry>
+                        </row>
+                        <row>
+                            <entry>pci-passthrough</entry>
+                            <entry>PCI Passthrough Device</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+</table>
+</section>
+<section id="iface"> <title>Simplified Network Interface Configuration</title>
+<p>You can specify a network interface for a server or instance resource directly, without the need to define and then
+reference an <codeph>AWS::EC2::NetworkInterface</codeph> resource. In addition, you can specify the network using <codeph>NetworkName</codeph>,
+<codeph>NetworkId</codeph>, <codeph>SubNetName</codeph>, or <codeph>SubNetId</codeph>.</p>
+<codeblock><codeph>PDN_Gateway-1:
+    Type: AWS::EC2::Instance
+    Properties:
+        ImageId: 'cirros'
+        InstanceType: 'm1.tiny'
+        NetworkInterfaces: [
+            { DeviceIndex: "0", NetworkName: 'public-net0' }
+
+PDN_Gateway-2:
+    Type: AWS::EC2::Instance
+    Properties:
+        ImageId: 'cirros'
+        InstanceType: 'm1.tiny'
+        NetworkInterfaces: [
+            { DeviceIndex: "0", NetworkId: '1d9a8765-a7e7-46b6-abd0-0e2f7985778a' }
+
+PDN_Gateway-3:
+    Type: AWS::EC2::Instance
+    Properties:
+    ImageId: 'cirros'
+    InstanceType: 'm1.tiny'
+    NetworkInterfaces: [
+        { DeviceIndex: "0", SubNetName: 'public-subnet0' }
+
+PDN_Gateway-4:
+    Type: AWS::EC2::Instance
+    Properties:
+    ImageId: 'cirros'
+    InstanceType: 'm1.tiny'
+        NetworkInterfaces: [
+            { DeviceIndex: "0", SubNetId: 'dfa64673-6a75-4f8a-9c74-1a7578113c31' }
+</codeph></codeblock>
+</section>
+<section id="naminmg"> <title>Simplified VM Instance Naming</title>
+<p>The Titanium Server introduces minor changes to the OpenStack VM naming convention to make Heat-generated names more user-friendly.</p>
+<p>
+<b>For a static resource</b>, launched VM instances are named using the name attribute of the <codeph>OS::Nova::Server</codeph> structure (without including the <codeph>&lt;StackTemplateName&gt;</codeph>).</p>
+<codeblock><codeph>Serving_Gateway:
+    Type: OS::Nova::Server
+    Properties:
+        name : 'Serving_Gateway'
+        image : 'cirros'
+        flavor: 'm1.tiny'
+
+heat stack-create -f &lt;file&gt; EPC
+nova list
+
++--------------------------------------+-----------------+--------+-...
+| ID | Name | Status | ...
++--------------------------------------+-----------------+--------+-...
+| 581b3495-3cf1-4410-9587-5cf04fccfed2 | Serving_Gateway | ACTIVE | ...
++--------------------------------------+-----------------+--------+-...
+</codeph></codeblock>
+<p>
+<b>For an autoscaling resource</b>, launched VM instances are named using the pattern: <codeph>&lt;StackTemplateName&gt;-&lt;AutoScalingGroupName&gt;-&lt;LaunchConfigName&gt;-&lt;ScalingInstanceNum&gt;</codeph>.</p>
+<codeblock><codeph>Scalable_GW:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    Properties:
+        AvailabilityZones: {'Fn::GetAZs': ''}
+        Name: 'Scaling_GW'
+        LaunchConfigurationName: {Ref: LaunchConfig}
+        MinSize: {Ref: VRC-MinClusterSize}
+        MaxSize: {Ref: VRC-MaxClusterSize}
+
+ServerScaleOutPolicy:
+...
+ServerScaleInPolicy:
+...
+ComputeAlarmHigh:
+...
+ComputeAlarmLow:
+...
+
+LaunchConfig:
+    Type: AWS::AutoScaling::LaunchConfiguration
+    Name: 'DP_Engine'
+    Properties:
+        ImageId: 'cirros'
+        InstanceType: 'm1.tiny'
+        ...
+
+heat stack-create -f &lt;file&gt; EPC
+nova list
++--------------------------------------+----------------------------
++--------+-...
+| ID | Name |
+Status | ...
++--------------------------------------+----------------------------
++--------+-...
+| 581b3495-3cf1-4410-9587-5cf04fccfed2 | EPC-Scaling_GW-DP_Engine-0 |
+ACTIVE | ...
+| 67df4321-ac22-498a-bff2-b376f2aa6d2b | EPC-Scaling_GW-DP_Engine-1 |
+ACTIVE | ...
++--------------------------------------+----------------------------
++--------+-...
+</codeph></codeblock>
+</section>
+<section id="support"> <title>Support for Server Groups</title>
+<p>You can create Server Groups and add VM Instances to them.
+The syntax for adding a Server Group Resource is as follows:
+    ...
+    resources:
+    ...
+    my_server_group:
+        type: OS::Nova::ServerGroup
+        properties:
+            policy: 'anti-affinity'
+            group_size: 4
+            best_effort: False...</p>
+<p>For a static resource, the syntax for specifying a Server Group in a <codeph>OS::Nova::Server</codeph> definition is as follows:</p>
+<codeblock><codeph>cirros_server1:
+    type: OS::Nova::Server
+    properties:
+        name: cirros1
+        image: 'cirros'
+        flavor: 'm1.tiny'
+        scheduler_hints:
+            group: {get_resource: my_server_group }
+</codeph></codeblock>
+<p>For a static resource, the syntax for specifying a Server Group in an <codeph>AWS::EC2::LaunchConfiguration</codeph> definition is
+as follows:</p>
+<codeblock><codeph>Cirros_Server1:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    Properties:
+        AvailabilityZones: {'Fn::GetAZs': ''}
+        LaunchConfigurationName: {Ref: LaunchConfig}
+        MinSize: {Ref: VRC-MinClusterSize}
+        MaxSize: {Ref: VRC-MaxClusterSize}
+
+ServerScaleOutPolicy:
+    ...
+ServerScaleInPolicy:
+    ...
+ComputeAlarmHigh:
+    ...
+ComputeAlarmLow:
+    ...
+LaunchConfig:
+    Type: AWS::AutoScaling::LaunchConfiguration
+    Properties:
+    ImageId: 'cirros'
+    InstanceType: 'm1.tiny'
+    NovaSchedulerHints: [{Key: 'group', Value: {Ref: my_server_group }}]
+    ...
+</codeph></codeblock>
+<p>
+<b>Note:</b> This example uses AWS autoscaling resources and CFN format, but autoscaling is not limited to CFN templates. You can use AWS resources and OS (OpenStack resources in any combination in either CFN or HOT templates.</p>
+</section>
+<section id="metrics"> <title>Improved Metrics Communication</title>
+<p>KVM addresses reliability issues with the OpenStack Havana implementation of cfn-push-stats, ensuring that guest instances can successfully pass Ceilometer metrics to the Controller.</p>
+</section>
+<section id="pass"> <title>Relaxed Requirements for Passing User Data</title>
+<p>The property <codeph>UserDataType</codeph> is a KVM template extension that you can
+                use to pass user data to an instance even if the instance does not have
+                    <codeph>cloud-init</codeph> installed. For more information, see <xref
+                    href="carrier-grade-admin-wr-stacks-user-data.dita">Customizing Guest Images
+                    with User Data</xref>.</p>
+</section>
+<section id="access"> <title>Improved User Access to Stacks</title>
+<p>Stacks can be created, modified, or deleted by admin or non-admin users.</p>
+</section>
+<section id="control"> <title>Greater Control over Resource Allocations</title>
+<p>When creating a network resource using OS::Neutron::Net, you can use a depends_on attribute to ensure that the
+requirements of other resources are given priority before the resource is created. The attribute takes another resource
+as an argument. In the following example, it is used to specify that the resource external_network must be created
+before internal_network is created.</p>
+<codeblock><codeph>internal_network:
+    type: OS::Neutron::Net
+    properties:
+        name: { get_param: INTERNALNET }
+        depends_on: { get_resource: external_network }
+        shared: false
+        tenant_id: {get_param: TENANT_ID}
+</codeph></codeblock>
+</section>
+<section id="add"> <title>Additional Heat Resources</title>
+<p>In addition to the standard OpenStack resources available for Heat templates, you can use the following resources:</p>
+<p>
+<codeph>OS::SysInv::HostInterface</codeph> - Defines a host L2 interface (ethernet or LAG), including the physical ports, network type (oam, mgmt, data, or infra), and connectivity to provider networks.</p>
+<p>
+<codeph>OS::Glance::Image</codeph> - Defines a virtual machine image registered with the Glance image service.</p>
+<p>
+<codeph>OS::Nova::Flavor</codeph> - Defines a set of resources (memory, vCPUs, and so on) for use when defining virtual machines.</p>
+<p>
+<codeph>OS::Nova::ServerGroup</codeph> - Defines a set of instances that share the same attributes (such as compute-node-affinity). For additional information, see Support for Server Groups on page 184.</p>
+<p>
+<codeph>OS::Neutron::ProviderNet</codeph> - Defines a provider network.</p>
+<p>
+<codeph>OS::Neutron::ProviderNetRange</codeph> - Defines a segmentation range for a provider network.</p>
+<p>
+<codeph>OS::Neutron::QoSPolicy</codeph> - Defines a packet scheduling weight that can be referenced by a tenant network (OS::Neutron::Net).</p>
+<p>
+  <xref type="section" href="#topic9186"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

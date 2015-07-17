@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1910">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Managing Instances</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Instances/carrier-grade.managing.instances.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/instances/overview/--></p>
+<p><!--| <xref href="../carrier-grade-admin-guide-new.dita">▲ Administrators Guide</xref> | <xref href="../Volumes/carrier-grade.managing.volumes.dita">Managing Volumes ▶</xref> --></p>
+<p>Instances are virtual machines that run inside the cloud.</p>
+<p>How you interact with instances depends upon your user type, either an administrative user (admin) or a non-administrative user (user).</p>
+<p>
+<b>Note:</b> The admin can perform all of the user tasks in addition to the admin tasks. For some tasks, the admin will need to use the <b>Project</b> &gt; <b>Compute</b> &gt; <b>Instances</b> panel.</p>
+<p>To work with instances <xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>. Then, Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Instances</b> link. The instances in the current project are listed.</p>
+<ul>
+<li>
+<xref type="section" href="#topic1910/user">Managing instances</xref>
+</li>
+<li>
+<xref type="section" href="#topic1910/admin">Managing instances as an admin</xref>
+</li>
+</ul>
+<p>The <b>Instances</b> panel looks similar to the following. Click the image to view in a new window:</p>
+<p>
+  <image href="../../../media/CGH-Helion-Instance.png"/>
+</p>
+<p>
+  <xref format="html" href="javascript:window.open('/media/CGH-Helion-Instance.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Click here to view a larger image in a new window.</xref>
+</p>
+<p>For details on an instance, click the image name.</p>
+<section id="user"> <title>Managing instances</title>
+<p>As an admin user or non-admin user, you can use the <b>Compute</b> panel on the <b>Project</b> dashboard to:</p>
+<ul>
+<li>
+<xref href="../Instances/carrier-grade.dashboard.instances.create.dita" >Create a new instance</xref>
+</li>
+<li>
+<xref href="../Instances/carrier-grade.dashboard.instances.terminate.dita" >Terminate an instance</xref>
+</li>
+<li>
+<xref href="../Instances/carrier-grade.dashboard.instances.reboot.dita" >Reboot an instance</xref>
+</li>
+<li>
+<xref href="../Instances/carrier-grade.dashboard.instances.rebuild.dita" >Rebuild an instance</xref>
+</li>
+<li>
+<xref href="../Instances/carrier-grade.dashboard.instances.resize.dita" >Resize an Instance</xref>
+</li>
+<li>
+<xref href="../Instances/carrier-grade.dashboard.instances.suspend.dita" >Suspend and resume an instance</xref>
+</li>
+<li>
+<xref href="../Instances/carrier-grade.dashboard.instances.pause.dita" >Pause and un-pause an instance</xref>
+</li>
+<li>
+<xref href="../Images/carrier-grade.dashboard.images.public.dita" >Create an instance snapshot</xref>
+</li>
+<li>
+<xref href="../Instances/carrier-grade.managing.instances.ipaddress.dita" >Associate, or assign, a floating IP address to an instance</xref> </li>
+<li>
+<xref href="../Instances/carrier-grade.dashboard.instances.console.dita" >Launch a console session to an instance</xref>
+</li>
+</ul>
+</section>
+<section id="admin"> <title>Managing instances as an admin</title>
+<p>As an admin user, you can work on all of the instance(s) in your domain, regardless of which project the instance is associated with.</p>
+<ul>
+<li>
+<xref href="../Instances/carrier-grade.dashboard.instances.migrate.dita" >Migrate or Live Migrate and instance</xref>
+</li>
+<li>
+<xref href="../Instances/carrier-grade.dashboard.instances.cold.migrate.dita" >Cold Migrate an Instance</xref>
+</li>
+</ul>
+<p>
+  <xref type="section" href="#topic1910"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

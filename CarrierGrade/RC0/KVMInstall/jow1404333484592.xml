@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333484592" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">KVM Software Installation</title>
+    <shortdesc ixia_locid="2">Installing the HP Helion OpenStack Carrier Grade involves initializing and configuring a
+        controller node, and then using the controller node to initialize and configure other
+        hosts.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+        <author ixia_locid="4">Pedro Sanchez</author>
+        <author ixia_locid="5">Tom Towle</author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="96">To start, you must <term ixia_locid="53">initialize</term> a single host
+            using an ISO image from an external source, such as a USB flash drive or a DVD.
+            Initialization installs an operating system on the host's disk drive, and automatically
+            boots the host from the drive.  </p>
+        <!-- p ixia_locid="97">During initialization, you can optionally select a minimal two-server
+            configuration, in which the controller and compute functions are combined on a single
+            host.</p -->
+        <p ixia_locid="49">Then you must <term ixia_locid="54">configure</term> the host as a
+            controller using a command-line script. The configured host becomes <nameliteral ixia_locid="55">controller-0</nameliteral>.</p>
+        <note id="note_N10042_N10029_N10001" ixia_locid="56">
+            <p ixia_locid="57">For the configuration to run successfully, the management interface on
+                    <nameliteral ixia_locid="58">controller-0</nameliteral> must be connected and operational.</p>
+        </note>
+        <p ixia_locid="50">You use <nameliteral ixia_locid="59">controller-0</nameliteral> to
+            initialize and configure the remaining hosts (compute and storage nodes, as well as the
+            second controller node). Both a web administration interface and a command-line
+            interface (CLI) are available for this purpose. The instructions in this section assume
+            you are using the web administration interface. For CLI instructions, see <xref href="jow1404333484092.xml" ixia_locid="18"/>.</p>
+        <p ixia_locid="98">Each host after the initial <nameliteral ixia_locid="63">controller-0</nameliteral> installation must be booted over the management network
+            to install an operating system, and then booted from the disk drive for further
+            configuration.</p>
+        <p ixia_locid="99">The following procedure is recommended:</p>
+        <ol id="ol_k4k_tjn_fs">
+            <li ixia_locid="74">
+                <p ixia_locid="78">Install the first controller node.</p>
+            </li>
+            <li ixia_locid="75">
+                <p ixia_locid="79">Install the second controller node.</p>
+            </li>
+            <li ixia_locid="82">
+                <p ixia_locid="67">Install the storage nodes (if the system is configured to use
+                    Ceph storage).</p>
+            </li>
+            <li ixia_locid="68">
+                <p ixia_locid="69">Install the compute nodes.</p>
+            </li>
+            <li ixia_locid="84">
+                <p ixia_locid="85">Configure provider networks (required in order to add data
+                    interfaces on the compute nodes).</p>
+            </li>
+            <li ixia_locid="86">
+                <p ixia_locid="87">Configure the compute nodes with data interfaces.</p>
+            </li>
+            <li ixia_locid="88">
+                <p ixia_locid="89">Configure the compute nodes and storage nodes with infrastructure
+                    interfaces (if the system is configured to use an infrastructure network.</p>
+            </li>
+        </ol>
+        <!-- ul id="ul_sn4_hhv_yr">
+            <li ixia_locid="100">
+                <p ixia_locid="99">For a cluster that uses separate hosts for the controller and
+                    compute functions, the following procedure is recommended:</p>
+                <ol id="ol_b4d_d1h_vp">
+                    <li ixia_locid="74">
+                        <p ixia_locid="78">Install the first controller node.</p>
+                    </li>
+                    <li ixia_locid="75">
+                        <p ixia_locid="79">Install the second controller node.</p>
+                    </li>
+                    <li ixia_locid="82">
+                        <p ixia_locid="67">Install the storage nodes (if the system is configured to
+                            use Ceph storage).</p>
+                    </li>
+                    <li ixia_locid="68">
+                        <p ixia_locid="69">Install the compute nodes.</p>
+                    </li>
+                    <li ixia_locid="84">
+                        <p ixia_locid="85">Configure provider networks (required in order to add
+                            data interfaces on the compute nodes).</p>
+                    </li>
+                    <li ixia_locid="86">
+                        <p ixia_locid="87">Configure the compute nodes with data interfaces.</p>
+                    </li>
+                    <li ixia_locid="88">
+                        <p ixia_locid="89">Configure the compute nodes and storage nodes with
+                            infrastructure interfaces (if the system is configured to use an
+                            infrastructure network.</p>
+                    </li>
+                </ol>
+            </li>
+            <li ixia_locid="101">
+                <p ixia_locid="90">For a minimal two-server cluster, where the controller and
+                    compute functions are implemented on a single host, the following procedure is
+                    recommended.</p>
+                <note id="note_N100D3_N100CB_N10073_N10029_N10001" ixia_locid="102">
+                    <p ixia_locid="103">This procedure assumes that the cluster does not use storage nodes, an
+                        infrastructure network, or additional compute nodes. You can expand a
+                        minimal cluster to include any of these using the procedures documented for
+                        a regular cluster.</p>
+                </note>
+                <ol id="ol_knr_pvg_yr">
+                    <li ixia_locid="76">
+                        <p ixia_locid="80">Install the first controller/compute node.</p>
+                    </li>
+                    <li ixia_locid="91">
+                        <p ixia_locid="92">Configure provider networks (required in order to add
+                            data interfaces for the compute function).</p>
+                    </li>
+                    <li ixia_locid="93">
+                        <p ixia_locid="94">Configure the first controller/compute node with data
+                            interfaces.</p>
+                    </li>
+                    <li ixia_locid="77">
+                        <p ixia_locid="81">Install the second controller/compute node.</p>
+                    </li>
+                    <li ixia_locid="83">
+                        <p ixia_locid="95">Configure the controller/compute node with data
+                            interfaces.</p>
+                    </li>
+                </ol>
+            </li>
+        </ul -->
+        <note id="note_N10069_N10029_N10001" ixia_locid="61">
+            <p ixia_locid="62">To ensure you can correctly identify hosts as you install them, power
+                on and configure each new host one at a time.</p>
+        </note>
+        <p ixia_locid="52">To prevent a host from repeatedly booting over the network, some means of
+            redirecting the boot device to the hard disk is needed. Normally you can arrange this by
+            setting the boot order for the host (see <xref href="jow1404333486758.xml" ixia_locid="60"/>). Terminal-server access to the hosts may be required to adjust
+            the BIOS or UEFI boot settings</p>
+        <p ixia_locid="36">After the hosts are configured, you can unlock them to make them
+            operational. <!-- 20140722 JO This could be the shortdesc of a separate topic --></p>
+        <p ixia_locid="37">To unlock a compute node, you must do the following, in order:</p>
+        <ol id="ol_ucc_jzr_v4">
+            <li ixia_locid="38">
+                <p ixia_locid="40">Define at least one provider network. You must do this before you
+                    can configure the compute node data interfaces. For details, see <xref href="jow1404333519516.xml" ixia_locid="31"/>.</p>
+            </li>
+            <li ixia_locid="32">
+                <p ixia_locid="33">Configure the data interfaces. For details, see <xref href="jow1426948577755.xml" ixia_locid="70"/>.</p>
+            </li>
+            <li ixia_locid="42">
+                <p ixia_locid="43">Optionally, configure the infrastructure interface. This is
+                    required only if an infrastructure network is defined. For details, see <xref href="jow1426948577755.xml" ixia_locid="72"/>.</p>
+            </li>
+        </ol>
+        <p ixia_locid="26">To unlock a storage node, you must do the following:</p>
+        <ol id="ol_br5_yhs_v4">
+            <li ixia_locid="39">
+                <p ixia_locid="41">Configure the storage volumes. For details, see <xref href="jow1404333546500.xml" ixia_locid="35"/>.</p>
+            </li>
+            <li ixia_locid="45">
+                <p ixia_locid="46">Optionally, configure the infrastructure interface. This is
+                    required only if an infrastructure network is defined. For details, see <xref href="jow1426948577755.xml" ixia_locid="73"/>.</p>
+            </li>
+        </ol>
+    </conbody>
+</concept-wr>

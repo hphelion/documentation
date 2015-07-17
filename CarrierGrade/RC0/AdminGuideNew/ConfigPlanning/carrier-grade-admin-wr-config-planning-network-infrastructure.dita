@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1895">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Planning the Infrastructure Network</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-infrastructure.md-->
+ <!--permalink: /helion/openstack/carrier/configuration/plan/network/infra/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>The infrastructure network is a private network visible only to the hosts in the cluster. It is optional unless storage nodes are part of the cluster.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>Ihe infrastructure network shares the design considerations applicable to the internal management network. It can be implemented using either a 1 Gb or 10 Gb Ethernet interface. Unlike the management network, it can be VLAN-tagged, enabling it to share an interface with the management or OAM network.</p>
+<p>The decision whether to implement an infrastructure network depends on the infrastructure traffic levels expected.</p>
+<p>The following table provides general guidelines on when to implement the infrastructure network, using the number of compute nodes in the HP Helion OpenStack Carrier Grade cluster as an indication of expected traffic levels:</p>
+<ul>
+<li>
+<b>2 to 4 nodes</b> - No infrastructure network required. All infrastructure traffic is carried over the internal management network.</li>
+<li>
+<b>5 to 8</b> - Use 1 Gb Ethernet </li>
+<li>
+<b>9 or more</b> - Use 10 Gb Ethernet</li>
+</ul>
+<p>In addition to the number of compute nodes, other factors must be taken into account when deciding the type of infrastructure network to use. For example, live migration of large, memory-intensive, guest applications is likely to require additional network resources that might not be available in the current configuration. It is always safe toimplement the fastest infrastructure network possible.</p>
+<p>
+  <xref type="section" href="#topic1895"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333523560" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Initializing and Configuring Compute Nodes</title>
+    <shortdesc ixia_locid="2">You can assign a new host as a compute node to support virtual
+        machines.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+        <author ixia_locid="4">Tom Towle</author>
+        <author ixia_locid="5">Pedro Sanchez</author>
+    </prolog>
+    <taskbody>
+        <prereq conref="jow1404333506062.xml#jow1404333506062/prerequisites" id="prereq_N10027_N10024_N10001" ixia_locid="6"/>
+        <steps id="steps_nvd_tz5_k4">
+            <step id="step_N1003B_N10037_N1002E_N10001" ixia_locid="35">
+                <cmd ixia_locid="100">Power on the node to be configured as a compute host.</cmd>
+                <info ixia_locid="102">
+                    <note id="note_N10045_N10042_N1003B_N10037_N1002E_N10001" ixia_locid="104">
+                        <p ixia_locid="106">To ensure you can correctly identify hosts as you install
+                            them, power on and configure each new node one at a time.</p>
+                    </note>
+                </info>
+            </step>
+            <step id="step_N10039_N1002C_N10024_N10001" ixia_locid="9">
+                <cmd ixia_locid="10">Using the web administration interface, assign the node as a
+                    compute host.</cmd>
+                <substeps id="substeps_ids_zz5_k4">
+                    <substep ixia_locid="11">
+                        <cmd conref="jow1404333506062.xml#jow1404333506062/open-hosts-lists-cmd" ixia_locid="12"/>
+                        <info ixia_locid="13">
+                            <p conref="jow1404333506062.xml#jow1404333506062/open-hosts-lists-new-node" ixia_locid="14"/>
+                            <fig id="fig_N10051_N1004A_N10043_N1003F_N10038_N1002C_N10024_N10001" ixia_locid="15">
+                                <image alt="Hosts list" href="jow1404333520308.image" id="image_iwr_pxp_l4" ixia_locid="16" width="5.5in"/>
+                            </fig>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="45">
+                        <cmd conref="jow1404333506062.xml#jow1404333506062/cmd_assign_personality" ixia_locid="46"/>
+                        <info ixia_locid="47">
+                            <p conref="jow1404333506062.xml#jow1404333506062/p_click_edit_host" ixia_locid="48"/>
+                            <fig id="fig_N1007F_N10078_N10071_N1004B_N10041_N10032_N10029_N10001" ixia_locid="49">
+                                <image href="jow1404848331343.image" id="image_cwh_xxv_r4" ixia_locid="50" width="4in"/>
+                            </fig>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="19">
+                        <cmd ixia_locid="20">Select <menucascade ixia_locid="21"><uicontrol ixia_locid="22">Personality</uicontrol><uicontrol ixia_locid="23">Compute</uicontrol></menucascade>.</cmd>
+                    </substep>
+                    <substep ixia_locid="82">
+                        <cmd ixia_locid="83">Provide a <uicontrol ixia_locid="84">Host Name</uicontrol> (for example,
+                                <nameliteral ixia_locid="85">compute-0</nameliteral>).</cmd>
+                    </substep>
+                    <substep conref="jow1404333506062.xml#jow1404333506062/specify-location" ixia_locid="24">
+                        <cmd ixia_locid="116"/>
+                    </substep>
+                    <substep ixia_locid="86">
+                        <cmd conref="jow1404333506062.xml#jow1404333506062/cmd-save-personality" ixia_locid="87"/>
+                        <stepresult ixia_locid="88">
+                            <p conref="jow1404333506062.xml#jow1404333506062/p-save-personality" ixia_locid="89"/>
+                            <fig id="fig_kwg_kry_4p" ixia_locid="90">
+                                <image href="jow1412193103738.image" id="image_wrm_p1q_pp" ixia_locid="91" width="4in">
+                                    <alt ixia_locid="92">HP Helion OpenStack Carrier Grade Compute Node Install</alt>
+                                </image>
+                            </fig>
+                        </stepresult>
+                    </substep>
+                    <substep conref="jow1404333506062.xml#jow1404333506062/select-display-device" ixia_locid="28">
+                        <cmd ixia_locid="29"/>
+                    </substep>
+                    <substep conref="jow1404333506062.xml#jow1404333506062/wait_for_login_prompt" ixia_locid="98">
+                        <cmd ixia_locid="99"/>
+                    </substep>
+                </substeps>
+                <stepresult ixia_locid="68">
+                    <p ixia_locid="33">The new host is initialized with an operating system,
+                        rebooted, and configured as a compute node.</p>
+                    <p ixia_locid="101">After a few minutes, the host is shown as <uicontrol ixia_locid="103">Locked</uicontrol>, <uicontrol ixia_locid="105">Disabled</uicontrol>, and <uicontrol ixia_locid="107">Online</uicontrol>
+                        in the <uicontrol ixia_locid="40">Hosts</uicontrol> list.</p>
+                    <fig id="fig_N100BF_N1009B_N10024_N10001" ixia_locid="41">
+                        <image alt="Hosts list" href="jow1404333521987.image" id="image_zxk_v5m_jjn" ixia_locid="42" width="5.5in"/>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N1010B_N10032_N10029_N10001" ixia_locid="69">
+            
+                        <cmd ixia_locid="70">Configure the host so that it can be unlocked.</cmd>
+                        <info ixia_locid="71">
+                            <p ixia_locid="72">Before you can unlock a compute node, you must do the following:</p>
+                        </info>
+                        <substeps id="substeps_afc_j2s_v4">
+                            <substep ixia_locid="73">
+                                <cmd ixia_locid="74">Configure provider networks. This is required
+                            in order to provision data interfaces on the compute node.</cmd>
+                            </substep>
+                            <substep ixia_locid="76">
+                                <cmd ixia_locid="77">Provision a data interface on the host.</cmd>
+                            </substep>
+                    <substep ixia_locid="93">
+                        <cmd ixia_locid="94">If using LAG to attach to the management network,
+                            change the <uicontrol ixia_locid="95">Interface Type</uicontrol> for the
+                            management network interface to <nameliteral ixia_locid="96">aggregated
+                                ethernet</nameliteral><!-- , and add a second interface.--></cmd>
+                    </substep>
+                            <substep ixia_locid="79">
+                                <cmd ixia_locid="80">If an infrastructure network is in use,
+                            provision an interface to the infrastructure network.</cmd>
+                            </substep>
+                        </substeps>
+            </step>
+            <step conref="jow1404333506827.xml#jow1404333506827/unlock-node" id="step_N10133_N10030_N1001C_N10001" ixia_locid="66">
+                <cmd ixia_locid="67"/>
+            </step>
+        </steps>
+    </taskbody>
+</task-wr>

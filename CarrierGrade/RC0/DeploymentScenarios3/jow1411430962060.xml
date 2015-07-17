@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1411430962060" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="185">Requirements for the Deployment Scenarios</title>
+ <shortdesc ixia_locid="186">The Deployment Scenarios are built on a prepared HP Helion OpenStack Carrier Grade cluster. </shortdesc>
+ <prolog>
+  <author ixia_locid="187">Michael B</author>
+  <author ixia_locid="188">Pedro Sanchez</author>
+ </prolog>
+ <conbody>
+  <p ixia_locid="136">The following resources are required for deployment:</p>
+  <ul id="ul_pr3_x5r_lp">
+   <li ixia_locid="137">
+    <p ixia_locid="146">A HP Helion OpenStack Carrier Grade cluster with two provider networks of the VLAN type. The
+     provider networks are used to realize tenant networks owned by the <nameliteral ixia_locid="148">admin</nameliteral>, <nameliteral ixia_locid="150">tenant1</nameliteral>, and
+      <nameliteral ixia_locid="152">tenant2</nameliteral> tenants.</p>
+    <p ixia_locid="147">In the scenarios, the provider networks are named <nameliteral ixia_locid="154">provider-net-a</nameliteral> and <nameliteral ixia_locid="155">provider-net-b</nameliteral>. You can use any two provider networks. For information on
+     provider network setup, see the <cite ixia_locid="156">HP Helion OpenStack Carrier Grade Software Installation
+      Guide</cite>.</p>
+   </li>
+   <li ixia_locid="158">
+    <p ixia_locid="159">At least one configured and unlocked compute node, connected to both
+     provider networks as shown in the following figure.</p>
+    <fig id="fig_wgh_jpg_mp" ixia_locid="163">
+     <image href="jow1411326088295.image" id="image_y4j_mzv_mp" ixia_locid="166" placement="inline" width="4in">
+      <alt ixia_locid="167">Compute node connection to provider networks</alt>
+     </image>
+    </fig>
+    <p ixia_locid="160">In the scenarios, a single compute node is used to host both VMs. In
+     practice, you could use different compute nodes, each connected to both provider networks. </p>
+    <p ixia_locid="161">For information on host configuration, see the <cite ixia_locid="157">HP Helion OpenStack Carrier Grade Software Installation Guide</cite>.</p>
+   </li>
+   <li ixia_locid="139">
+    <p ixia_locid="140">A HP Helion OpenStack Carrier Grade environment provisioned with tenant networks, users, VM
+     flavors, and a virtual router on each tenant network. For information on setting up this
+     environment, see <xref href="jow1410636108227.xml" ixia_locid="144"/>. </p>
+   </li>
+   <li ixia_locid="141">
+    <p ixia_locid="142">A sample guest disk image file, copied to a location on the active
+     controller. The guest image is available as part of the HP Helion OpenStack Carrier Grade product on WindShare or
+     on the product DVD.</p>
+   </li>
+  </ul>
+ </conbody>
+</concept-wr>

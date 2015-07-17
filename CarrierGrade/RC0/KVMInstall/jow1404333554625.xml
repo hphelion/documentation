@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333554625" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Initializing and Configuring Controller-1 Using the CLI</title>    
+    <shortdesc ixia_locid="2">You can initialize and configure a redundant controller
+            (<nameliteral ixia_locid="3">controller-1</nameliteral>) using the
+            <nameliteral ixia_locid="4">controller-0</nameliteral> command-line interface.</shortdesc>
+    <prolog>
+        <author ixia_locid="5">Jim Owens</author>
+        <author ixia_locid="6">Tom Towle</author>
+        <author ixia_locid="7">Pedro Sanchez</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1002F_N1002C_N10001" ixia_locid="8">
+            <p ixia_locid="9">Initialize and configuring  <nameliteral ixia_locid="10">controller-1</nameliteral> involves: </p>
+            <ul id="ol_b2g_34y_cn">
+                <li ixia_locid="11">
+                    <p ixia_locid="12">booting a new host over the internal management network using
+                        PXE</p>
+                </li>
+                <li ixia_locid="13">
+                    <p ixia_locid="14">configuring the host as a controller using <nameliteral ixia_locid="15">controller-0</nameliteral>, which prepares the host's
+                        hard drive and then reboots it automatically from the drive</p>
+                </li>
+                <!-- li ixia_locid="155">
+                    <p ixia_locid="156">for a minimal two-server configuration, configuring the compute function with
+                        data interfaces</p>
+                </li -->
+                <li ixia_locid="16">
+                    <p ixia_locid="17"> moving <nameliteral ixia_locid="18">controller-1</nameliteral> into an enabled operational
+                        state</p>
+                </li>
+            </ul>
+        </context>
+        <prereq conref="jow1404333506062.xml#jow1404333506062/prerequisites" id="prereq_N10061_N1002C_N10001" ixia_locid="19"/>
+        <steps>
+            <step id="step_N1007C_N10079_N1002E_N10001" ixia_locid="232" product="tis_region">
+                <cmd ixia_locid="233">Add the host to the system inventory.</cmd>
+                <info ixia_locid="234">
+                    <note id="note_N10086_N10083_N1007C_N10079_N1002E_N10001" ixia_locid="235">
+                        <p ixia_locid="236">The host must be added to the system inventory before it
+                            is powered on.</p>
+                    </note>
+                    <p ixia_locid="237">On <nameliteral ixia_locid="238">controller-0</nameliteral>,
+                        acquire Keystone administrative
+                        privileges:<!-- controller-0, double check twiki. Also this has to be conditionalized as region. . . --></p>
+                    <codeblock ixia_locid="239"><systemoutput ixia_locid="240">$</systemoutput><userinput ixia_locid="241">source /etc/nova/openrc</userinput></codeblock>
+                    <p ixia_locid="242">Use the system host-add command to add the host to the
+                        system inventory:</p>
+                    <codeblock ixia_locid="250"><systemoutput ixia_locid="252">~(keystone_admin)$ </systemoutput><userinput ixia_locid="254">system host-add -n <varname ixia_locid="246">hostname</varname> -p <varname ixia_locid="247">personality</varname> -m <varname ixia_locid="248">mgmt_mac</varname> \
+[-T <varname ixia_locid="309">bm_type</varname> -M <varname ixia_locid="310">bm_mac</varname> -I <varname ixia_locid="311">bm_ip</varname> -U <varname ixia_locid="312">bm_username</varname> -P <varname ixia_locid="313">bm_password</varname>]</userinput></codeblock>
+                    <p ixia_locid="256">where</p>
+                    <parml>
+                        <plentry ixia_locid="257">
+                            <pt ixia_locid="258"><varname ixia_locid="259">hostname</varname></pt>
+                            <pd ixia_locid="260">
+                                <p ixia_locid="261">is a name to assign to the host</p>
+                            </pd>
+                        </plentry>
+                        <plentry ixia_locid="262">
+                            <pt ixia_locid="263"><varname ixia_locid="264">personality</varname></pt>
+                            <pd ixia_locid="265">
+                                <p ixia_locid="266">is the host type (<option ixia_locid="267">controller</option> or <option ixia_locid="268">compute</option>)</p>
+                            </pd>
+                        </plentry>
+                        <plentry ixia_locid="269">
+                            <pt ixia_locid="270"><varname ixia_locid="271">mgmt_mac</varname></pt>
+                            <pd ixia_locid="272">
+                                <p ixia_locid="273">is the MAC address of the port connected to the
+                                    management network</p>
+                            </pd>
+                        </plentry>
+                        <plentry ixia_locid="315">
+                            <pt ixia_locid="321"><varname ixia_locid="327">bm_type</varname></pt>
+                            <pd ixia_locid="333">
+                                <p ixia_locid="339">is the board management controller type (<option ixia_locid="348">ilo3</option> or <option ixia_locid="353">ilo4</option>)</p>
+                            </pd>
+                        </plentry>
+                        <plentry ixia_locid="316">
+                            <pt ixia_locid="322"><varname ixia_locid="328">bm_mac</varname></pt>
+                            <pd ixia_locid="334">
+                                <p ixia_locid="340">is the board management controller MAC
+                                    address</p>
+                            </pd>
+                        </plentry>
+                        <plentry ixia_locid="317">
+                            <pt ixia_locid="323"><varname ixia_locid="329">bm_ip</varname></pt>
+                            <pd ixia_locid="335">
+                                <p ixia_locid="341">is the board management controller IP
+                                    address</p>
+                            </pd>
+                        </plentry>
+                        <plentry ixia_locid="318">
+                            <pt ixia_locid="324"><varname ixia_locid="330">bm_username</varname></pt>
+                            <pd ixia_locid="336">
+                                <p ixia_locid="342">is the username for board management controller
+                                    access</p>
+                            </pd>
+                        </plentry>
+                        <plentry ixia_locid="319">
+                            <pt ixia_locid="325"><varname ixia_locid="331">bm_username</varname></pt>
+                            <pd ixia_locid="337">
+                                <p ixia_locid="343">is the password for board management controller
+                                    access</p>
+                            </pd>
+                        </plentry>
+                    </parml>
+                </info>
+                <stepxmp ixia_locid="279">
+                    <p ixia_locid="280">For example:</p>
+                    <codeblock ixia_locid="251"><systemoutput ixia_locid="253">~(keystone_admin)$ </systemoutput><userinput ixia_locid="255">system host-add -n controller-1 -p controller -m 08:00:27:23:BD:18</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step conref="jow1404333506062.xml#jow1404333506062/boot-node" id="step_N10069_N10066_N1002C_N10001" ixia_locid="20">
+                <cmd ixia_locid="21"/>
+            </step>
+            <step conref="jow1404766496848.xml#jow1404766496848/source-nova-openrc" id="step_N10087_N10079_N10033_N10001" ixia_locid="135" product="tis_standard"><cmd ixia_locid="136"/></step>
+            
+            <step id="step_N1007B_N10066_N1002C_N10001" ixia_locid="24">
+                <cmd ixia_locid="162">On the <nameliteral ixia_locid="26">controller-0</nameliteral>
+                    console, verify the status of the host.</cmd>
+                <stepxmp ixia_locid="27">
+                    <codeblock ixia_locid="28"><systemoutput ixia_locid="141">~(keystone_admin)$ </systemoutput><userinput ixia_locid="30">system host-list</userinput>
+<systemoutput ixia_locid="142">+----+--------------+-------------+----------------+-------------+--------------+
+| id | hostname     | personality | administrative | operational | availability |
++----+--------------+-------------+----------------+-------------+--------------+
+| 1  | controller-0 | controller  | unlocked       | enabled     | available    |
+| 2  | None         | None        | locked         | disabled    | offline      |
++----+--------------+-------------+----------------+-------------+--------------+ </systemoutput></codeblock>
+                </stepxmp>
+                <info ixia_locid="32">
+                    <p ixia_locid="33">The host is reported as id <systemoutput ixia_locid="143">2</systemoutput>, availability <systemoutput ixia_locid="144">offline</systemoutput>, with no hostname or personality.</p>
+                </info>
+            </step>
+            <step id="step_N100B1_N10066_N1002C_N10001" ixia_locid="38" product="tis_standard">
+                <cmd ixia_locid="39">On the <nameliteral ixia_locid="40">controller-0</nameliteral>
+                    console, set the personality of the host to be a controller.</cmd>
+                <stepxmp ixia_locid="41">
+                    <codeblock ixia_locid="42"><systemoutput ixia_locid="145">~(keystone_admin)$ </systemoutput><userinput ixia_locid="44">system host-update 2 personality=controller</userinput>
+<systemoutput ixia_locid="146">+----------------+--------------------------------------+
+| Property       | Value                                |
++----------------+--------------------------------------+
+| administrative | locked                               |
+| availability   | offline                              |
+| created_at     | 2014-01-06T15:54:40.313688+00:00     |
+| hostname       | controller-1                         |
+| id             | 2                                    |
+| invProvision   | None                                 |
+| location       | {}                                   |
+| mgmt_ip        | 192.168.204.4                        |
+| mgmt_mac       | 08:00:27:1f:5e:e4                    |
+| operational    | disabled                             |
+| personality    | controller                           |
+| serialId       | None                                 |
+| updated_at     | None                                 |
+| uuid           | 4e83bc2f-57d4-4508-9550-564d74dc32d4 |
++----------------+--------------------------------------+</systemoutput></codeblock>
+                </stepxmp>
+                <stepresult ixia_locid="46">
+                    <p ixia_locid="47"><nameliteral ixia_locid="48">Controller-0</nameliteral> configures the required parameters
+                        for <nameliteral ixia_locid="49">controller-1</nameliteral> and displays them as illustrated
+                        above. <nameliteral ixia_locid="50">Controller-1</nameliteral> is still reported as offline,
+                        since the HP Helion OpenStack Carrier Grade software has yet to be installed in its hard
+                        drive.</p>
+                    <p ixia_locid="51"><nameliteral ixia_locid="52">Controller-0</nameliteral>
+                        automatically pushes the HP Helion OpenStack Carrier Grade installer image over the internal
+                        management network for the host to boot. The console of the host displays
+                        the HP Helion OpenStack Carrier Grade welcome screen.</p>
+                    <fig id="fig_N100E3_N100CA_N100AE_N10066_N1002C_N10001" ixia_locid="53">
+                        <image alt="PXE Installer Welcome Screen" href="jow1404333553289.image" id="image_qq1_l5c_dn" ixia_locid="54" placement="inline" width="3.5in"/>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N100F6_N10066_N1002C_N10001" importance="optional" ixia_locid="55">
+                <cmd ixia_locid="56">On the <nameliteral ixia_locid="57">controller-1</nameliteral> console, select the installation
+                    mode.</cmd>
+                <info ixia_locid="58">
+                    <dl conref="jow1404333506062.xml#jow1404333506062/display-device-choices">
+                        <dlentry ixia_locid="59">
+                            <dt ixia_locid="60"/>
+                            <dd ixia_locid="61"/>
+                        </dlentry>
+                    </dl>
+                    <note id="note_N10110_N100FE_N100F2_N10066_N1002C_N10001" ixia_locid="62">
+                        <p ixia_locid="63">If you do not change the selection, the default is applied automatically
+                            after a few seconds.</p>
+                    </note>
+                </info>
+                <stepresult ixia_locid="64">
+                    <p ixia_locid="65">The installer initializes the target hard drive with the
+                        HP Helion OpenStack Carrier Grade image. The time required to configure and reboot
+                            <nameliteral ixia_locid="139">controller-1</nameliteral> depends on the secondary disk
+                        partition size. Larger partitions require more time for synchronization with
+                            <nameliteral ixia_locid="140">controller-0</nameliteral>.</p>
+                </stepresult>
+            </step>
+            <step id="step_N10128_N10066_N1002C_N10001" ixia_locid="66">
+                <cmd ixia_locid="67">Wait for <nameliteral ixia_locid="68">controller-1</nameliteral> to reboot.</cmd>
+                <info ixia_locid="69">
+                    <note id="manual-reboot" ixia_locid="70">
+                        <p ixia_locid="71">It may be necessary to reconfigure the system's BIOS or
+                            UEFI manually to force the host to boot from the hard drive.</p>
+                    </note>
+                </info>
+                <stepresult ixia_locid="72">
+                    <p ixia_locid="73">The host boots from the hard drive into the HP Helion OpenStack Carrier Grade
+                        image and displays the GNU GRUB welcome screen.</p>
+                    <fig id="fig_N10141_N1013A_N10122_N10066_N1002C_N10001" ixia_locid="74">
+                        <image alt="GNU GRUB Welcome Screen" href="jow1404333488777.image" id="image_jb1_gfz_cn" ixia_locid="75" placement="inline" width="4in"/>
+                    </fig>
+                    <p ixia_locid="76">After a brief delay, the system boots automatically into the HP Helion OpenStack Carrier Grade
+                        image, providing you with a login prompt.</p>
+                </stepresult>
+            </step>
+            <step id="step_N1015B_N10066_N1002C_N10001" ixia_locid="77">
+                <cmd ixia_locid="78">On the <nameliteral ixia_locid="79">controller-0</nameliteral>
+                    console, verify the status of the host.</cmd>
+                <stepxmp ixia_locid="80">
+                    <codeblock ixia_locid="81"><systemoutput ixia_locid="147">~(keystone_admin)$ </systemoutput><userinput ixia_locid="83">system host-list</userinput>
+<systemoutput ixia_locid="148">+----+--------------+-------------+----------------+-------------+--------------+
+| id | hostname     | personality | administrative | operational | availability |
++----+--------------+-------------+----------------+-------------+--------------+
+| 1  | controller-0 | controller  | unlocked       | enabled     | available    |
+| 2  | controller-1 | controller  | locked         | disabled    | offline      |
++----+--------------+-------------+----------------+-------------+--------------+</systemoutput></codeblock>
+                </stepxmp>
+                <stepresult ixia_locid="85">
+                    <p ixia_locid="86">The host is still offline, but it is now reported as a
+                        controller node with name <nameliteral ixia_locid="87">controller-1</nameliteral>, in the <nameliteral ixia_locid="88">locked</nameliteral> administrative state.</p>
+                </stepresult>
+            </step>
+            <!-- step id="step_N101E7_N10081_N10033_N10001" ixia_locid="157">
+                <cmd ixia_locid="158">If you are installing a minimal two-server configuration,
+                    configure the compute portion.</cmd>
+                <info ixia_locid="159">
+                    <p ixia_locid="160">While the host is locked, you can provision the data interfaces to attach them to provider
+                        networks.</p>
+                </info>
+            </step -->
+            <step id="step_N10189_N10066_N1002C_N10001" ixia_locid="89">
+                <cmd ixia_locid="90">On the <nameliteral ixia_locid="91">controller-0</nameliteral>
+                    console, unlock <nameliteral ixia_locid="92">controller-1</nameliteral>.</cmd>
+                <stepxmp ixia_locid="93">
+                    <codeblock ixia_locid="94"><systemoutput ixia_locid="149">~(keystone_admin)$ </systemoutput><userinput ixia_locid="96">system host-unlock controller-1</userinput>
+<systemoutput ixia_locid="150">+----------------+--------------------------------------+
+| Property       | Value                                |
++----------------+--------------------------------------+
+| administrative | unlocked                             |
+| availability   | offline                              |
+| created_at     | 2014-01-06T15:54:40.313688+00:00     |
+| hostname       | controller-1                         |
+| id             | 2                                    |
+| invProvision   | provisioned                          |
+| location       | {}                                   |
+| mgmt_ip        | 192.168.204.4                        |
+| mgmt_mac       | 08:00:27:1f:5e:e4                    |
+| operational    | disabled                             |
+| personality    | controller                           |
+| serialId       | None                                 |
+| updated_at     | 2014-01-06T17:07:10.987257+00:00     |
+| uuid           | 4e83bc2f-57d4-4508-9550-564d74dc32d4 |
++----------------+--------------------------------------+</systemoutput></codeblock>
+                </stepxmp>
+                <info ixia_locid="98">
+                    <p ixia_locid="99"><nameliteral ixia_locid="100">controller-1</nameliteral> moves into the
+                            <nameliteral ixia_locid="101">intest</nameliteral> availability state, and then into the
+                            <nameliteral ixia_locid="102">available</nameliteral> state. This may take several
+                        minutes.</p>
+                </info>
+                <substeps id="substeps_o4y_zdz_l4">
+                    <substep ixia_locid="103">
+                        <cmd ixia_locid="104">On the <nameliteral ixia_locid="105">controller-0</nameliteral> console, verify that <nameliteral ixia_locid="106">controller-1</nameliteral> is in the <nameliteral ixia_locid="107">intest</nameliteral> availability state.</cmd>
+                        <stepxmp ixia_locid="108">
+                            <codeblock ixia_locid="109"><systemoutput ixia_locid="151">~(keystone_admin)$ </systemoutput><userinput ixia_locid="111">system host-list</userinput>
+<systemoutput ixia_locid="152">+----+--------------+-------------+----------------+-------------+--------------+
+| id | hostname     | personality | administrative | operational | availability |
++----+--------------+-------------+----------------+-------------+--------------+
+| 1  | controller-0 | controller  | unlocked       | enabled     | available    |
+| 2  | controller-1 | controller  | unlocked       | disabled    | intest       |
++----+--------------+-------------+----------------+-------------+--------------+</systemoutput></codeblock>
+                        </stepxmp>
+                        <info ixia_locid="113">
+                            <p ixia_locid="114"><nameliteral ixia_locid="164">Controller-1</nameliteral> moves into the <nameliteral ixia_locid="116">intest</nameliteral> availability state within
+                                30 seconds following the unlocking command.</p>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="117">
+                        <cmd ixia_locid="118">On the <nameliteral ixia_locid="119">controller-0</nameliteral> console, verify that <nameliteral ixia_locid="120">controller-1</nameliteral> moves to the
+                                <nameliteral ixia_locid="121">available</nameliteral> state.</cmd>
+                        <stepxmp ixia_locid="122">
+                            <codeblock ixia_locid="123"><systemoutput ixia_locid="153">~(keystone_admin)$ </systemoutput><userinput ixia_locid="125">system host-list</userinput>
+<systemoutput ixia_locid="154">+----+--------------+-------------+----------------+-------------+--------------+
+| id | hostname     | personality | administrative | operational | availability |
++----+--------------+-------------+----------------+-------------+--------------+
+| 1  | controller-0 | controller  | unlocked       | enabled     | available    |
+| 2  | controller-1 | controller  | unlocked       | enabled     | available    |
++----+--------------+-------------+----------------+-------------+--------------+</systemoutput></codeblock>
+                        </stepxmp>
+                        <info ixia_locid="127">
+                            <p ixia_locid="128"><nameliteral ixia_locid="129">Controller-1</nameliteral> moves into the <nameliteral ixia_locid="130">available</nameliteral> state within the 2 to 3
+                                minutes following the unlock command.</p>
+                        </info>
+                    </substep>
+                </substeps>
+            </step>
+        </steps>
+        <result id="result_N10221_N1002C_N10001" ixia_locid="131">
+            <p ixia_locid="132"><nameliteral ixia_locid="133">Controller-1</nameliteral> is enabled.
+                It works with <nameliteral ixia_locid="134">controller-0</nameliteral> to form a
+                single high-availability cluster.</p>
+        </result>
+    </taskbody>
+</task-wr>

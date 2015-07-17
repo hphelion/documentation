@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3188">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Configuring Shared (VLAN) Ethernet Interfaces</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet-shared.md-->
+ <!--permalink: /helion/openstack/carrier/configuration/plan/ethernet/shared/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>The management, OAM, infrastructure, and data networks can share Ethernet or aggregated Ethernet interfaces using VLAN tagging.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>The internal management network cannot use VLAN tagging.</p>
+<p>However, the OAM and infrastructure networks can use VLAN tagging, allowing them to share an Ethernet or aggregated Ethernet interface with other networks.</p>
+<p>
+<b>Note:</b> You cannot add a data network on an aggregated Ethernet interface.</p>
+<p>For a system using all three networks, the following arrangements are possible:</p>
+<ul>
+<li>One interface for the management network, another interface for the OAM network, and a third for the infrastructure network.</li>
+<li>One interface for the management network, and a second interface for either the OAM or infrastructure network, with the remaining network implemented using VLAN tagging on either interface.</li>
+<li>One interface for the management network, and a second carrying the OAM and infrastructure networks, both implemented using VLAN tagging.</li>
+<li>One interface for the management network, with the OAM and infrastructure networks also implemented on it using VLAN tagging.</li>
+</ul>
+<p>
+<b>Note:</b> You can configure a data network on a management or infrastructure interface by editing the interface and selecting both types of network, and then selecting the VLAN provider network. For more information,see the Network Type discussion in the HP Helion OpenStack Carrier Grade Installation Guide: Interface
+Settings.</p>
+<p>Options to share an interface using VLAN tagging are presented during the configuration controller script (see the <i>HP Helion OpenStack Carrier Grade Installation Guide: The Controller Configuration Script</i>).</p>
+<p>To attach an interface to other networks after configuration, you can edit the interface; for details, see the <i>HP Helion OpenStack Carrier Grade Installation Guide: Attaching to Networks Using a VLAN Interface</i>.</p>
+<p>You can also use the command line by logging into the active controller and becoming the Keystone admin user, and then using a command such as the following for each node:</p>
+<codeblock><codeph>system host-if-add -V 22 -n infra storage-0 infra0 vlan eth1
+</codeph></codeblock>
+<p>This example configures the eth1 interface on storage-0 to connect to the infrastructure network using VLAN ID 22.</p>
+<p>To display VLAN information as well as dependencies, use a command such as the following:</p>
+<codeblock><codeph>system host-if-list controller-0
+</codeph></codeblock>
+<p>The output lists all interfaces and associated networks. For each network that uses VLAN tagging, the vlan id is shown, as well as the shared interface used (in the uses i/f column). For shared interfaces, the names of the networks that use VLAN tagging on the interface are shown (in the used by i/f column).</p>
+<p>
+  <xref type="section" href="#topic3188"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

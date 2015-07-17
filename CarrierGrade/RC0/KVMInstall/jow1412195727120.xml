@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1412195727120" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="1">About Login Accounts</title>
+ <shortdesc ixia_locid="2">During HP Helion OpenStack Carrier Grade installation and administration, you must log in
+  with different accounts at different times.</shortdesc>
+ <prolog>
+  <author ixia_locid="3">Jim Owens</author>
+ </prolog>
+ <conbody>
+  <p ixia_locid="4">Two accounts are provided with HP Helion OpenStack Carrier Grade:</p>
+  <dl>
+   <dlentry ixia_locid="5">
+    <dt ixia_locid="6">wrsroot</dt>
+    <dd ixia_locid="7">
+     <p ixia_locid="8">A Linux account, used for initial access and for administration of Linux
+      resources. The default password is <nameliteral ixia_locid="22">wrsroot</nameliteral>. The
+      first time you log in, you are required to change the password.</p>
+     <p ixia_locid="156">You can use this account to perform actions as a regular Linux user, or as the
+       <nameliteral ixia_locid="157">root</nameliteral> user if elevated privileges are required. To run a command as
+      the <nameliteral ixia_locid="158">root</nameliteral> user, preface it with the <cmdname ixia_locid="159">sudo</cmdname> command;
+      for example:</p>
+     <codeblock ixia_locid="160"><systemoutput ixia_locid="181">$ </systemoutput><userinput ixia_locid="162">sudo config-controller</userinput></codeblock>
+     <p ixia_locid="163">If a password is requested for the <nameliteral ixia_locid="178">sudo</nameliteral> command,
+      provide the password for the <nameliteral ixia_locid="164">wrsroot</nameliteral> account.</p>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="9">
+    <dt ixia_locid="10">admin</dt>
+    <dd ixia_locid="11">
+     <p ixia_locid="12">An OpenStack Keystone account, used for administration of OpenStack
+      resources. The password for this account is set up at the end of the controller configuration
+      script during initial system configuration.</p>
+     <p ixia_locid="165">You can use this account to manage OpenStack resources from the web administration interface
+      or the command-line interface.</p>
+     <ul id="ul_lbj_nql_qq">
+      <li ixia_locid="166">
+       <p ixia_locid="167">To use the web administration interface, log in from a browser using the
+         <nameliteral ixia_locid="168">admin</nameliteral> account and password.</p>
+      </li>
+      <li ixia_locid="169">
+       <p ixia_locid="170"> To use the CLI, log in to the active controller as <nameliteral ixia_locid="171">wrsroot</nameliteral> and then use the <cmdname ixia_locid="172">source</cmdname> command, as follows:</p>
+       <codeblock ixia_locid="173"><systemoutput ixia_locid="182">$ </systemoutput><userinput ixia_locid="175">source /etc/nova/openrc</userinput>
+<systemoutput ixia_locid="183">~(keystone_admin)$ </systemoutput></codeblock>
+       <p ixia_locid="176">This sets up the environment for the Keystone <nameliteral ixia_locid="177">admin</nameliteral> user, including the username and password required for
+        authentication to OpenStack services.</p>
+      </li>
+     </ul>
+    </dd>
+   </dlentry>
+  </dl>
+  <p ixia_locid="179">For more information about Linux user accounts, see the <cite ixia_locid="180">HP Helion OpenStack Carrier Grade Administration Guide: Linux User Accounts</cite>. For more about OpenStack
+   accounts managed through the Keystone service, refer to the documentation for the OpenStack
+   project.</p>
+ </conbody>
+</concept-wr>

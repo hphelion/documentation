@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3899">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Planning for Virtual Routers</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network-vrs.md-->
+ <!--permalink: /helion/openstack/carrier/configuration/plan/network/vrs/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>Virtual routers provide internal and external network connectivity for tenants.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>The user associated with a tenant can add a designated number of virtual routers (Neutron routers) to the tenant. The maximum number is specified in the <xref href="../MiscTasks/carrier-grade.dashboard.default.quotas.dita" >quotas for the tenant</xref>.</p>
+<p>The virtual router automatically provides a connection to system services required by the tenant, such as the metadata service that supplies instances with user data. You can configure the virtual routers with interfaces to tenant networks to provide internal and external connectivity.</p>
+<p>A virtual router can be implemented as a centralized router, or a distributed virtual router (DVR).</p>
+<p>
+<b>Note:</b> Only the admin user can specify a distributed router. For other tenants, this choice is not available, and a centralized router is implemented by default. The admin user can change a centralized router to a distributed router on behalf of other tenants (see <xref type="section" href="#topic3899/admin">Virtual Router Administration</xref>.</p>
+<p>A distributed router cannot be converted to a centralized router.</p>
+<ul>
+<li>
+<b>Centralized</b> - A centralized virtual router is instantiated on a single compute node. All traffic using the router must pass through the compute node.</li>
+<li>
+<b>Distributed</b> - A distributed virtual router is instantiated in a distributed manner across multiple hosts. Distributed virtual routers provide more efficient routing than standard virtual routers for east-west (tenant-to-tenant) or floating IP address traffic. Local traffic is routed within the local host, while external L3 traffic is routed directly between the local host and the gateway router.</li>
+</ul>
+<p>To implement the distributed model, a centralized-portion of the router is still deployed on one host. The centralized portion manages north-south (external network) traffic and source network address translation (SNAT) traffic, as well as agents deployed on other hosts. The agents offload the centralized router for east-west (tenant-to-tenant) routing and floating IP network address translation.</p>
+<p>To add a virtual router, see <xref type="section" href="#topic3899/add">Adding Virtual Routers</xref>. 
+To create interfaces, see <xref type="section" href="#topic3899/config">Configuring Virtual Routers</xref>.</p>
+<section id="add"> <title>Adding Virtual Routers</title>
+<p>You can add virtual routers to a tenant using the web administration interface or the CLI.</p>
+<p>To add a router to a tenant, you must be logged in as the user associated with the tenant.</p>
+<p>For more information, see <xref href="../Routers/carrier-grade.dashboard.router.create.dita" >Creating a Router</xref>
+</p>
+<p>To attach router interfaces to tenant networks, see <xref type="section" href="#topic3899/config">Configuring Virtual Routers</xref>.</p>
+</section>
+<section id="config"> <title>Configuring Virtual Routers</title>
+<p>You can create router interfaces to tenant networks using the web administration interface or the CLI.</p>
+<p>Before you can create interfaces to tenant networks, you must <xref href="../Networks/carrier-grade.dashboard.network.create.dita" >create the tenant networks</xref> and <xref href="../Networks/carrier-grade.dashboard.network.subnet.dita" >associated subnets</xref>.</p>
+<p>For more information about tenant networks and subnets, see <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-tenant.dita" >Planning the Tenant Management Networks</xref> and <xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-subnets.dita" >Managed and Unmanaged Subnets</xref>.</p>
+</section>
+<section id="admin"> <title>Administering Virtual Routers</title>
+<p>Users with administrative privileges can review and edit router information for all tenants.</p>
+<p>The <xref href="../Routers/carrier-grade.managing.routers.dita" >Routers page</xref>, accessed from <b>Admin &gt; System &gt; Routers</b>, provides central control of all virtual routers. From this page, you can edit router names, change router types, change the status of routers (Up or Down), and delete routers.</p>
+<p>Only users with administrative privileges can convert a centralized router to a distributed router.</p>
+<p>
+<b>Note:</b> A distributed router cannot be converted to a centralized router.</p>
+<p>An administrative user can delete routers on any tenant. A non-administrative user can delete routers on the tenant associated with the user.</p>
+<p>
+  <xref type="section" href="#topic3899"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

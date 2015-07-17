@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic995">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Configuration Planning test</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning.md-->
+ <!--permalink: /helion/openstack/carrier/configuration/plan/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>System configuration options are available when installing the HP Helion OpenStack Carrier Grade software. You should prepare a set of selected values and features ready to use which are applicable to a specific deployment scenario.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>You should prepare a set of selected values and features ready to use which are applicable to a specific deployment scenario.</p>
+<p>This section contains the following information:</p>
+<ul>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-ethernet.dita" >Working with Ethernet Interfaces</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network.dita" >Planning the Network</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-storage.dita" >Planning the Storage</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-vxlan.dita" >Planning the VXLANs</xref>
+</li>
+</ul>
+<p>
+  <xref type="section" href="#topic995"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

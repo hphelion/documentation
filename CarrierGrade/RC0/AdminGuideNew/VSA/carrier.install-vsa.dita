@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4893">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing HP StoreVirtual VSA</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack Carrier Grade"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Michael B, Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack Carrier Grade"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa.md-->
+ <!--permalink:         --></p>
+<!-- From Installing HPStoreVirtual.docx at https://wiki.hpcloud.net/pages/viewpage.action?pageId=49097241 -->
+<p>This page provides detailed instructions on installing HP StoreVirtual VSA Centralized Management Console (CMC) and deploying HP StoreVirtual VSA Storage Nodes in your HP Helion OpenStack Carrier Grade cloud.</p>
+<section id="prerequisites"> <title>Prerequisites</title>
+<ul>
+<li>
+<p>KVM must be installed:</p>
+
+<codeblock>
+<codeph>sudo apt-get install qemu-kvm libvirt-bin bridge-utils virt-manager
+sudo apt-get install ubuntu-vm-builder
+sudo apt-get update
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Optionally install Virtual Manager</p>
+
+<codeblock>
+<codeph>sudo apt-get install virt-manager
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Verify that KVM was installed correctly</p>
+
+<codeblock>
+<codeph>virsh -c qemu:///system list
+virsh net-list --all
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>The X Windows System must be running to install the CMC.</p>
+</li>
+</ul>
+</section>
+<section id="install-hp-storevirtual-cmc"> <title>Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux</title>
+<p>In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP Helion OpenStack management network.</p>
+<p>We recommend that you install CMC on the same KVM host. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack management network.</p>
+<p>
+<b>Note</b>: These changes are required for 64-bit operating system only.</p>
+<ul>
+<li>
+<p>Execute the following commands:</p>
+
+<codeblock>
+<codeph># apt-get update
+# dpkg --add-architecture i386
+# apt-get install openjdk-7-jdk:i386
+</codeph>
+</codeblock>
+</li>
+</ul>
+<p>To install CMC:</p>
+<ol>
+<li>
+<p>Verify if the CMC installer file inside <codeph>tripleo</codeph> directory (packaged with the HP Helion OpenStack installer) has executable permission. If not, execute the following command:</p>
+
+<codeblock>
+<codeph># chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Launch the installer:</p>
+
+<codeblock>
+<codeph># ./CMC_11.5.01.0079.0_Installer_Linux.bin
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Follow the steps in the console-based installation wizard to complete the installation.</p>
+</li>
+<li>
+<p>To start the CMC, if you have direct GUI access:<!--A BR tag was used here in the original source.-->
+From the directory in which the files are installed, click the <b>HP Store Virtual Centralized Management Console</b> to launch CMC.</p>
+
+<p>
+<b>Note</b>: To launch the CMC from command line (CLI), navigate to the location where it is installed and enter:</p>
+
+<codeblock>
+<codeph># ./"HP Store Virtual Centralized Management Console".
+</codeph>
+</codeblock>
+</li>
+</ol>
+</section>
+<section id="deploying-hp-storevirtual-vsa"> <title>Deploying HP StoreVirtual VSA</title>
+<!-- From the StoreVirtual_VSA_for_HP_Helion_OpenStack-11.5.01.0079 readme -->
+<p>To install KVM VSA:</p>
+<ol>
+<li>
+<p>Create a Bridge Network</p>
+
+<codeblock>
+<codeph>sudo apt-get install qemu
+sudo apt-get install libcap2-bin
+sudo setcap cap_net_admin=ei /usr/bin/qemu-system-x86_64
+sudo vi /etc/security/capability.conf
+"cap_net_admin   &lt;username&gt;"
+
+sudo vi /etc/network/interfaces
+
+iface eth0 inet manual
+iface eth0 inet dhcp
+
+auto br0
+iface br0 inet dhcp
+    bridge_ports eth0
+    bridge_stp off
+    bridge_fd 0
+    bridge_maxwait 0
+
+sudo invoke-rc.d networking restart
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Download the installer binary (installer) and the KVM OS disk image <codeph>KVM-VSA-&lt;version&gt;.img.gz</codeph>.</p>
+</li>
+<li>
+<p>Create a JSON Input file by running the following commands:</p>
+
+<codeblock>
+<codeph>./installer -create-default-json" , or 
+./installer -create-default-json" -disks &lt;n&gt; -tiering
+</codeph>
+</codeblock>
+
+<p>This input file tells the installer how to configure the VM.</p>
+
+<p>
+<b>Example</b>
+</p>
+
+<p>The following is an example of the default-input.json:</p>
+
+<codeblock>
+<codeph>{
+    "HostName": "newHost", 
+    "OSImageStoragePool": "default",
+    "Personality": "VSA",
+    "SANiQ_Preferred": 0,
+    "Networks": [
+        {   
+            "DHCP": 1,
+            "IPAddress": "", 
+            "Subnet": "", 
+            "Gateway": "",
+            "NetworkInterface": "default"
+        }   
+    ],  
+    "Disks": [
+        {   
+            "Location": "default",
+            "Size": "500G"
+            "Tier": "Tier 0"
+        },  
+        {   
+            "Location": "/dev/sdc",
+            "Size": ""
+            "Tier": "Tier 1"
+        }   
+    ]   
+}
+</codeph>
+</codeblock>
+
+<p>
+<b>Notes:</b>
+</p>
+
+<ul>
+<li>
+<p>To assign static IP for the VM, DHCP needs to be 0 and IP address, Subnet mask and Default gateway fields must be filled in. Similarly, to have a dynamic IP DHCP needs to be 1 and the other fields need to be empty.</p>
+</li>
+<li>
+<p>
+<codeph>NetworkInterface</codeph> must match the fields available in <codeph>virsh net-list --all</codeph>.</p>
+</li>
+<li>
+<p>
+<codeph>SANiQ_Preferred</codeph> is the preferred NIC interface for SAN/iQ. Select 0 or 1.</p>
+</li>
+<li>
+<p>Disk Location can be a storage pool, as found in in <codeph>virsh pool-list</codeph>; Or can be a raw device.</p>
+</li>
+<li>
+<p>
+<codeph>OSImageStoragePool</codeph> is where the OS image will be located. This needs to be a valid storage pool.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Use the following command to install VSA on the KVM host:</p>
+
+<codeblock>
+<codeph>./installer [--no-prompt] [--debug] &lt;JSON Input File&gt; &lt;KVM-VSA-&lt;version&gt;.img.gz
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Use the following command to verify that the VM is running</p>
+
+<codeblock>
+<codeph>virsh -c qemu:///system list
+</codeph>
+</codeblock>
+</li>
+</ol>
+</section>
+<section id="next-steps"> <title>Next Step</title>
+<p>
+  <xref href="../VSA/carrier.install-vsa-add-new-mgmt-group.dita" >Creating a StoreVirtual Cluster and Adding to a Management Group</xref>
+</p>
+<p>
+  <xref type="section" href="#topic4893"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

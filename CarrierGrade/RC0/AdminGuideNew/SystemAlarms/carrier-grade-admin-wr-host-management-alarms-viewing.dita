@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6139">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Viewing System Alarms</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-viewing.md-->
+ <!--permalink: /helion/openstack/carrier/admin/alarms/viewing/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>HP Helion OpenStack Carrier Grade can generate system alarms when operational conditions change on any of the hosts in the cluster.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>The supported interfaces to the alarms subsystem are the command line interface (see System Alarms CLI Commands on page 145), the web interface (click the Fault Management menu on the Admin tab), SNMP, and the system REST API.</p>
+<p>This topic contains the following:</p>
+<ul>
+<li>
+<xref type="section" href="#topic6139/about">About SNMP Support</xref>
+</li>
+<li>
+<xref type="section" href="#topic6139/snmpv2">SNMPv2-MIB (RFC 3418)</xref>
+</li>
+<li>
+<xref type="section" href="#topic6139/enterprise">Enterprise MIBs</xref>
+</li>
+<li>
+<xref type="section" href="#topic6139/viewing">Viewing alarms</xref>
+</li>
+<li>
+<xref type="section" href="#topic6139/enabling">Enabling SNMP Support</xref>
+</li>
+</ul>
+<section id="about"> <title>About SNMP Support</title>
+<p>Support for SNMP is implemented as follows:
+* access is disabled by default, must be enabled manually from the
+command line interface
+* available using the controller's node floating OAM IP address, over the standard UDP port 161
+* supported version is SNMPv2c
+* access is read-only for all SNMP communities
+* all SNMP communities have access to the entire OID tree, there is not
+support for VIEWS
+* supported SNMP operations are GET, GETNEXT, GETBULK, and SNMPv2C-TRAP2
+* the SNMP SET operation is not supported</p>
+</section>
+<section id="snmpv2"> <title>SNMPv2-MIB (RFC 3418)</title>
+<p>Support for the basic standard MIB for SNMP entities is limited to the System and SNMP groups, as follows:</p>
+<ul>
+<li>System Group, .iso.org.dod.internet.mgmt.mib-2.system</li>
+<li>SNMP Group, .iso.org.dod.internet.mgmt.mib-2.snmp</li>
+<li>coldStart and warmStart Traps</li>
+</ul>
+<p>The following system attributes are used in support of the SNMP implementation. They can be displayed using the system show command.
+<!-- command descriptions from http://docstore.mik.ua/orelly/networking_2ndEd/snmp/ch07_01.htm --></p>
+<ul>
+<li>
+<p>
+<b>contact</b> - A read-write system attribute used to populate the sysContact attribute of the SNMP System group. The contact value can be set with the following command:</p>
+
+<codeblock>
+<codeph>system modify contact=&lt;contact&gt;
+</codeph>
+</codeblock>
+
+<p>where &lt;site-contact&gt; is a descriptive string containing the contact information of those who should be be notified of an alarm, for example: admin &lt;admin@email&gt;</p>
+</li>
+<li>
+<p>
+<b>location</b> - A read-write system attribute used to populate the sysLocation attribute of the SNMP System group. The location value can be set with the following command:</p>
+
+<codeblock>
+<codeph>system modify location=&lt;location&gt;
+</codeph>
+</codeblock>
+
+<p>where &lt;location&gt; is a descriptive string containing for the name of the device being monitored.</p>
+</li>
+<li>
+<p>
+<b>name</b> - A read-write system attribute used to populate the sysName attribute of the SNMP System group. The name value can be set with the following command:</p>
+
+<codeblock>
+<codeph>system modify name=&lt;name&gt;
+</codeph>
+</codeblock>
+
+<p>where &lt;name&gt; is the fully-qualified domain name (FQDN) of the device being monitored.</p>
+</li>
+<li>
+<p>
+<b>software_version</b> - A read-only system attribute set automatically by the system. Its value is used to populate the sysDescr attribute of the SNMP System group.</p>
+</li>
+</ul>
+<p>The following SNMP attributes are used as follows:</p>
+<ul>
+<li>
+<p>
+<b>sysObjectId</b> - Set to iso.org.dod.internet.private.enterprise.wrs.titanium (1.3.6.1.4.1.1.2).</p>
+</li>
+<li>
+<p>
+<b>sysUpTime</b> - Set to the up time of the active controller.</p>
+</li>
+<li>
+<p>
+<b>sysServices</b> - Set to the nominal value of 72 to indicate that the host provides services at layers 1 to 7.</p>
+</li>
+</ul>
+</section>
+<section id="enterprise"> <title>Enterprise MIBs</title>
+<p>The HP Helion OpenStack Carrier Grade supports the Enterprise Registration and Alarm MIBs.</p>
+<ul>
+<li>
+<p>
+<b>Enterprise Registration MIB, wrsEnterpriseReg.mib</b> - Defines the hierarchy underneath the iso(1).org(3).dod(6).internet(1).private(4).enterprise(1). This hierarchy is administered as follows:</p>
+
+<codeblock>
+<codeph>* .wrs(731), the IANA-registered enterprise code
+* .wrs(731).wrsCommon(1).wrs&lt;Module&gt;(1-...), defined in wrsCommon&lt;Module&gt;.mib.
+* .wrs(731).wrsProduct(2-...), defined in wrs&lt;Product&gt;.mib.
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>
+<b>Alarm MIB, wrsAlarmMib.mib</b> - Defines the common TRAP and ALARM MIBs. The definition includes
+textual conventions, an active alarm table, a historical alarm table, and traps.</p>
+</li>
+<li>
+<p>
+<b>Textual Conventions</b> - Semantic statements used to simplify definitions in the active alarm table and traps components of the MIB.</p>
+</li>
+<li>
+<p>
+<b>Active Alarm Table</b> - A list of all active or set alarms in the system. Each entry in the table includes the following variables:
+    * UUID
+    * AlarmID
+    * EntityInstanceID
+    * DateAndTime
+    * AlarmSeverity
+    * ReasonText
+    * EventType
+    * ProbableCause
+    * ProposedRepairAction
+    * ServiceAffecting
+    * SuppressionAllowed</p>
+</li>
+</ul>
+</section>
+<section id="viewing"> <title>Viewing alarms</title>
+<p>On the web interface, click the Fault Management menu on the
+Admin tab, and then select the Active Alarms tab.</p>
+<p>For more information on accessing the Fault Managemen tab, see <xref href="../Config/carrier-grade-admin-system-config-alarms.dita#viewing" type="section"  >Host Status and Alarms During System Configuration Changes</xref>.</p>
+<p>The Fault Management tab contains two tabs:</p>
+<ul>
+<li>
+<b>Historical Alarm Table</b> - A history of set and clear alarm operations in the system. The table includes the same variables as the active alarm table, plus the variable AlarmState used to indicate whether the table entry is a SET or a CLEAR operation.</li>
+</ul>
+<p>Traps Defines the following generic traps:</p>
+<ul>
+<li>wrsAlarmCritical</li>
+<li>wrsAlarmMajor</li>
+<li>wrsAlarmMinor</li>
+<li>wrsAlarmWarning</li>
+<li>wrsAlarmMessage</li>
+<li>wrsAlarmClear</li>
+<li>wrsAlarmHierarchicalClear</li>
+</ul>
+<p>For all alarms, the <b>Notification Type</b> is based on the severity of the trap or alarm. This is done to facilitate the interaction with most SNMP trap viewers which typically use the Notification Type to drive the coloring of traps, that is, red for critical, yellow for minor, and so on.</p>
+<p>For <b>Critical</b>, <b>Major</b>, <b>Minor</b>, <b>Warning</b>, and <b>Message</b> traps, all variables in the active alarm table are included as varbinds.</p>
+<p>For the <b>Clear</b> trap, <codeph>varbinds</codeph> include only the <codeph>AlarmID</codeph>, <codeph>EntityInstanceID</codeph>, <codeph>DateAndTime</codeph>, and <codeph>ReasonText</codeph> variables.</p>
+<p>For the <b>HierarchicalClear</b> trap, <codeph>varbinds</codeph> include only the <codeph>EntityInstanceID</codeph>, <codeph>DateAndTime</codeph>, and <codeph>ReasonText</codeph> variables.</p>
+</section>
+<section id="enabling"> <title>Enabling SNMP Support</title>
+<p>In order to have a workable SNMP configuration you must use the command
+line interface on the active controller to:</p>
+<ol>
+<li>Define at least one SNMP community string. See <xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-community-strings.dita" >Adding an SNMP Community String</xref>.</li>
+<li>Configure at least one SNMP trap destination so that alarms can be
+reported as they happen. See <xref href="../SystemAlarms/carrier-grade-admin-wr-host-management-alarms-snmp-traps.dita" >Configuring SNMP Trap Destinations</xref>.</li>
+</ol>
+<p>
+  <xref type="section" href="#topic6139"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

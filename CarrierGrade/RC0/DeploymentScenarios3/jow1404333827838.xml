@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333827838" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Launching Instances Using the CLI</title>
+    <shortdesc ixia_locid="2">You can use the CLI to launch virtual machine instances.</shortdesc>
+    <prolog>
+        <author ixia_locid="185">Michael B</author>
+        <author ixia_locid="5">Pedro Sanchez</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N10027_N10024_N10001" ixia_locid="6">
+            <p ixia_locid="7">To launch an instance, the end user must set up some required
+                resources. In this task, <nameliteral ixia_locid="10">user1</nameliteral> sets up
+                the resources and then launches an instance on
+                <nameliteral ixia_locid="204">tenant1</nameliteral>.<!-- we need to separate the tasks into new topics --></p>
+            <note id="note_N1003B_N10027_N10024_N10001" ixia_locid="11">
+                <p ixia_locid="12">You must repeat this exercise as <nameliteral ixia_locid="13">user2</nameliteral>, substituting appropriate names for the tenant networks
+                    and other components, to launch a similar instance on <nameliteral ixia_locid="205">tenant2</nameliteral>.</p>
+            </note>
+        </context>
+        <steps>
+            <step id="step_N1004C_N10049_N10024_N10001" ixia_locid="14">
+                <cmd ixia_locid="15">Identify yourself as user <nameliteral ixia_locid="16">user1</nameliteral> to the system.</cmd>
+                <stepxmp ixia_locid="17">
+                    <codeblock ixia_locid="18"><systemoutput ixia_locid="228">$ </systemoutput><userinput ixia_locid="20">source /etc/nova/openrc.user1</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N10066_N10049_N10024_N10001" ixia_locid="21">
+                <cmd ixia_locid="22">Register a public key for tenant <nameliteral ixia_locid="23">tenant1</nameliteral>.</cmd>
+                <stepxmp ixia_locid="24">
+                    <codeblock ixia_locid="25"><systemoutput ixia_locid="229">~(keystone_user1)$ </systemoutput><userinput ixia_locid="27">nova keypair-add --pub_key ~/.ssh/id_rsa.pub tenant1-`hostname`</userinput>
+</codeblock>
+                </stepxmp>
+                <stepresult ixia_locid="28">
+                    <p ixia_locid="29">This command injects the existing key-pair of the Linux root
+                        account into the Nova database with the name <nameliteral ixia_locid="153">tenant1-controller-0</nameliteral> (assuming that the name of the host
+                        is <nameliteral ixia_locid="155">controller-0</nameliteral>). This named
+                        key-pair can be used to provide SSH access to the virtual machines when they
+                        are launched. You can use other available key-pairs or create new ones as
+                        required.</p>
+                </stepresult>
+            </step>
+            <step id="step_N10091_N10049_N10024_N10001" ixia_locid="157">
+                <cmd ixia_locid="159">Create and configure the tenant network
+                    <nameliteral ixia_locid="161">tenant1-net</nameliteral>.</cmd>
+                <substeps id="substeps_ifk_sqn_mn">
+                    <substep ixia_locid="163">
+                        <cmd ixia_locid="165">Create the tenant network.</cmd>
+                        <stepxmp ixia_locid="37">
+                            <codeblock ixia_locid="38"><systemoutput ixia_locid="230">~(keystone_user1)$ </systemoutput><userinput ixia_locid="40">neutron net-create tenant1-net</userinput></codeblock>
+                        </stepxmp>
+                    </substep>
+                    <substep ixia_locid="41">
+                        <cmd ixia_locid="42">Define the IP subnet.</cmd>
+                        <stepxmp ixia_locid="43">
+                            <codeblock ixia_locid="44"><systemoutput ixia_locid="231">~(keystone_user1)$ </systemoutput><userinput ixia_locid="46">neutron subnet-create --name tenant1-subnet \
+--no-gateway tenant1-net 172.31.1.0/24</userinput></codeblock>
+                        </stepxmp>
+                    </substep>
+                    <substep ixia_locid="47">
+                        <cmd ixia_locid="48">Set up the UUID variable for the new tenant network.</cmd>
+                        <stepxmp ixia_locid="49">
+                            <codeblock ixia_locid="50"><systemoutput ixia_locid="232">~(keystone_user1)$ </systemoutput><userinput ixia_locid="52">export <varname ixia_locid="53">tenant1_net_UUID</varname>=`neutron net-list | grep tenant1-net | awk '{print $2}'`</userinput></codeblock>
+                        </stepxmp>
+                    </substep>
+                </substeps>
+            </step>
+            <step id="step_N100E6_N10049_N10024_N10001" ixia_locid="54">
+                <cmd ixia_locid="55">Configure the tenant network <nameliteral ixia_locid="56">tenant1-mgmt-net</nameliteral>.</cmd>
+                <stepxmp ixia_locid="57"/>
+                <substeps id="substeps_nvd_nqj_ln">
+                    <substep ixia_locid="58">
+                        <cmd ixia_locid="59">Create the management IP subnet.</cmd>
+                        <stepxmp ixia_locid="60">
+                            <codeblock ixia_locid="61"><systemoutput ixia_locid="233">~(keystone_user1)$ </systemoutput><userinput ixia_locid="63">neutron subnet-create --name tenant1-mgmt-subnet \
+tenant1-mgmt-net 192.168.102.0/24</userinput></codeblock>
+                        </stepxmp>
+                    </substep>
+                    <substep ixia_locid="64">
+                        <cmd ixia_locid="65">Create the virtual router
+                            <nameliteral ixia_locid="66">tenant1-router</nameliteral>.</cmd>
+                        <stepxmp ixia_locid="67">
+                            <codeblock ixia_locid="68"><systemoutput ixia_locid="234">~(keystone_user1)$ </systemoutput><userinput ixia_locid="70">neutron router-create tenant1-router</userinput></codeblock>
+                        </stepxmp>
+                    </substep>
+                    <substep ixia_locid="71">
+                        <cmd ixia_locid="72">Set up the UUID variable for the new virtual router.</cmd>
+                        <stepxmp ixia_locid="73">
+                            <codeblock ixia_locid="74"><systemoutput ixia_locid="235">~(keystone_user1)$ </systemoutput><userinput ixia_locid="167">export <varname ixia_locid="169">tenant1_router_UUID</varname>=`neutron router-list \
+| grep tenant1-router | awk '{print $2}'`</userinput></codeblock>
+                        </stepxmp>
+                    </substep>
+                    <substep ixia_locid="171">
+                        <cmd ixia_locid="173">Connect the virtual router to the management IP subnet.</cmd>
+                        <stepxmp ixia_locid="175">
+                            <codeblock ixia_locid="81"><systemoutput ixia_locid="236">~(keystone_user1)$ </systemoutput><userinput ixia_locid="83">neutron router-interface-add tenant1-router tenant1-mgmt-subnet</userinput></codeblock>
+                        </stepxmp>
+                    </substep>
+                    <substep ixia_locid="154">
+                        <cmd ixia_locid="156">Set up the UUID variable for the new tenant
+                            network.</cmd>
+                        <stepxmp ixia_locid="158">
+                            <codeblock ixia_locid="160"><systemoutput ixia_locid="237">~(keystone_user1)$ </systemoutput><userinput ixia_locid="164">export <varname ixia_locid="166">external_net_UUID</varname>=`neutron net-list \
+| grep external-net | awk '{print $2}'`</userinput></codeblock>
+                        </stepxmp>
+                    </substep>
+                    <substep ixia_locid="84">
+                        <cmd ixia_locid="85">Add a default gateway interface to the tenant network
+                                <nameliteral ixia_locid="86">external-net</nameliteral>.</cmd>
+                        <stepxmp ixia_locid="87">
+                            <codeblock ixia_locid="88"><systemoutput ixia_locid="238">~(keystone_user1)$ </systemoutput><userinput ixia_locid="90">neutron router-gateway-set ${<varname ixia_locid="91">tenant1_router_UUID</varname>} ${<varname ixia_locid="92">external_net_UUID</varname>}</userinput></codeblock>
+                        </stepxmp>
+                    </substep>
+                </substeps>
+            </step>
+            <step id="step_N10178_N10049_N10024_N10001" ixia_locid="93">
+                <cmd ixia_locid="94">Select the launch options.</cmd>
+                <substeps id="substeps_cwh_hwp_mn">
+                    <substep ixia_locid="181">
+                        <cmd ixia_locid="98">Select the type of virtual switching to use: Linux
+                            kernel bridging, DPDK-accelerated virtual switch, or Linux router.</cmd>
+                        <info ixia_locid="99">
+                            <p ixia_locid="100">The type of switching is specified in a user data
+                                file supplied as an argument to the <option ixia_locid="104">--user-data</option> option.  For more information, see <xref href="jow1404333825972.xml" ixia_locid="103"/>. </p>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="105">
+                        <cmd ixia_locid="106">Select the type of virtual interface, virtio or AVP,
+                            to connect to the tenant networks.</cmd>
+                        <info ixia_locid="107">
+                            <p ixia_locid="108">This is done by specifying the virtual interface model to be
+                                associated with each virtual NIC. Use the options
+                                    <option ixia_locid="109">vif-model=virtio</option>, and
+                                    <option ixia_locid="110">vif-model=avp</option>, for the virtio and AVP ports
+                                respectively.</p>
+                            <note id="note_N101BD_N101AE_N101A7_N10183_N10174_N10049_N10024_N10001" ixia_locid="111">
+                                <p ixia_locid="112">To change the interface type or the allocated
+                                    NIC order, you must restart the instance with a new port
+                                    assignment.</p>
+                            </note>
+                        </info>
+                    </substep>
+                    <substep ixia_locid="113">
+                        <cmd ixia_locid="114">Select the virtual machine flavor to use.</cmd>
+                        <info ixia_locid="115">
+                            <p ixia_locid="116">Use the option <option ixia_locid="118">--flavor</option> to specify the flavor.</p>
+                        </info>
+                    </substep>
+                </substeps>
+            </step>
+            <step id="step_N1027D_N10056_N10029_N10001" ixia_locid="183">
+                <cmd ixia_locid="184">Create UUID variables for the tenant networks.</cmd>
+                <stepxmp ixia_locid="188">
+                    <codeblock ixia_locid="190"><systemoutput ixia_locid="239">~(keystone_user1)$ </systemoutput><userinput ixia_locid="194">export <varname ixia_locid="196">tenant1_mgmt_net_UUID</varname>=`neutron net-list \
+| grep tenant1-mgmt-net | awk '{print $2}'`</userinput>
+<systemoutput ixia_locid="240">~(keystone_user1)$ </systemoutput><userinput ixia_locid="180">export <varname ixia_locid="182">tenant2_mgmt_net_UUID</varname>=`neutron net-list \
+| grep tenant2-mgmt-net | awk '{print $2}'`</userinput></codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N102A7_N10051_N10024_N10001" ixia_locid="198">
+                <cmd ixia_locid="199">Create a UUID variable for the <nameliteral ixia_locid="200">Cinder</nameliteral> volume.</cmd>
+                <stepxmp ixia_locid="189">
+                    <codeblock ixia_locid="191"><systemoutput ixia_locid="241">~(keystone_user1)$ </systemoutput><userinput ixia_locid="195">export <varname ixia_locid="197">vol_UUID</varname>=`cinder list | grep vol-example-guest \
+| awk '{print $2}'`</userinput>
+</codeblock>
+                </stepxmp>
+            </step>
+            <step id="step_N101E7_N10049_N10024_N10001" ixia_locid="119">
+                <cmd ixia_locid="120">Launch the instances on both tenants.</cmd>
+                <info ixia_locid="121">
+                    <p ixia_locid="122">The following example launches an instance named
+                            <nameliteral ixia_locid="123">tenant1-kernel-bridging</nameliteral>,
+                        using a Linux bridge.</p>
+                </info>
+                <stepxmp ixia_locid="124">
+                    <codeblock ixia_locid="125"><systemoutput ixia_locid="242">~(keystone_user1)$ </systemoutput><userinput ixia_locid="127">nova boot --poll --key_name=tenant1-controller-0 \
+--block_device_mapping vda=<varname ixia_locid="202">${vol_UUID}</varname>:::0 \
+--user-data=/usr/share/userdata/linux-bridge.txt \
+--flavor=100 \   
+--nic net-id=${<varname ixia_locid="128">tenant1_mgmt_net_UUID</varname>},vif-model=virtio \
+--nic net-id=${<varname ixia_locid="129">tenant1_net_UUID</varname>},vif-model=avp \
+--nic net-id=${<varname ixia_locid="130">internal_net_UUID</varname>},vif-model=avp  \
+tenant1-kernel-bridging</userinput></codeblock>
+                    <note id="note_N1020D_N101F5_N101E2_N10049_N10024_N10001" ixia_locid="131" type="caution">
+                        <p ixia_locid="132">The order in which the network interfaces are selected
+                            determines how they are enumerated for the instance. This example uses
+                            the following order: <nameliteral ixia_locid="133">eth0</nameliteral>
+                                (<nameliteral ixia_locid="134">tenant1-mgmt-net</nameliteral>) of
+                            the virtio type, and <nameliteral ixia_locid="135">eth1</nameliteral>
+                                (<nameliteral ixia_locid="136">tenant1-net</nameliteral>) and
+                                <nameliteral ixia_locid="137">eth2</nameliteral> (<nameliteral ixia_locid="138">internal-net</nameliteral>) of the avp type..</p>
+                    </note>
+                </stepxmp>
+                <info ixia_locid="206">
+                    <p ixia_locid="208">The following example launches an instance named
+                            <nameliteral ixia_locid="210">tenant1-dpdk-bridging</nameliteral>, using
+                        an AVP virtual network interface, and the DPDK-accelerated virtual
+                        switch.</p>
+                </info>
+                <stepxmp ixia_locid="212">
+                    <codeblock ixia_locid="214"><systemoutput ixia_locid="243">~(keystone_user1)$ </systemoutput><userinput ixia_locid="218">nova boot --poll --key_name=tenant1-controller-0 \
+--block_device_mapping vda=<varname ixia_locid="220">${vol_UUID}</varname>:::0 \
+--user-data=/usr/share/userdata/linux-dpdk-vswitch.txt \
+--flavor=101 \   
+--nic net-id=${<varname ixia_locid="222">tenant1_mgmt_net_UUID</varname>},vif-model=virtio \
+--nic net-id=${<varname ixia_locid="224">tenant1_net_UUID</varname>},vif-model=avp \
+--nic net-id=${<varname ixia_locid="226">internal_net_UUID</varname>},vif-model=avp  \
+tenant1-dpdk-bridging</userinput></codeblock>
+                </stepxmp>
+                <info ixia_locid="207">
+                    <p ixia_locid="209">The following example launches an instance named
+                            <nameliteral ixia_locid="211">tenant1-routing</nameliteral>, using AVP
+                        virtual network interfaces and a Linux router.</p>
+                </info>
+                <stepxmp ixia_locid="213">
+                    <codeblock ixia_locid="215"><systemoutput ixia_locid="244">~(keystone_user1)$ </systemoutput><userinput ixia_locid="219">nova boot --poll --key_name=tenant1-controller-0 \
+--block_device_mapping vda=<varname ixia_locid="221">${vol_UUID}</varname>:::0 \
+--user-data=/usr/share/userdata/tenant1-linux-router.txt \
+--flavor=101 \   
+--nic net-id=${<varname ixia_locid="223">tenant1_mgmt_net_UUID</varname>},vif-model=virtio \
+--nic net-id=${<varname ixia_locid="225">tenant1_net_UUID</varname>},vif-model=avp \
+--nic net-id=${<varname ixia_locid="227">internal_net_UUID</varname>},vif-model=avp  \
+tenant1-routing</userinput></codeblock>
+                </stepxmp>
+            </step>
+        </steps>
+        <result id="result_N10254_N10024_N10001" ixia_locid="149">
+            <p ixia_locid="150">The instances are now running. Each one establishes a bridge or
+                router between the last two interfaces in the command line, that is, between the
+                tenant networks <nameliteral ixia_locid="151">tenant1-net</nameliteral> and
+                    <nameliteral ixia_locid="152">internal-net</nameliteral>.</p>
+        </result>
+    </taskbody>
+</task-wr>

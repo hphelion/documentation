@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3434">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Live Migrate an Instance</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.migrate.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/instances/migrate/live/--></p>
+<p>Users can live migrate an instance as needed.</p>
+<p>Migration enables an administrator to move a virtual-machine instance from one compute host to another. This feature is useful when a compute host requires maintenance. Migration can also be useful to redistribute the load when many VM instances are running on a specific physical machine.</p>
+<p>Live migration requires almost no downtime and is useful when the instances must be kept running during the migration. For more information, see <xref href="../Instances/carrier-grade.dashboard.instances.live.migrate.dita" >Live Migration of Virtual Machines</xref>.</p>
+<p>If you do not need to live migrate an instance, you can <xref href="../Instances/carrier-grade.dashboard.instances.cold.migrate.dita" >cold migrate</xref> the instance instead.</p>
+<section id="migrate-an-instance-on-an-Non-KVM-server"> <title>Migrate an instance on an Non-KVM server</title>
+<p>Instances on Non-KVM servers can be migrated to another instance as follows.</p>
+<p>To migrate an instance:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Instances</b> link.</p>
+</li>
+<li>
+<p>In the <b>Instances</b> screen, for the instance you want to migrate, click the arrow icon in the <b>Actions</b> menu and select <b>Migrate Instance</b>.</p>
+</li>
+<li>
+<p>In the <b>Instances</b> screen, for the instance you want to migrate, click the arrow icon in the <b>Actions</b> menu and select <b>Live Migrate Instance</b>.</p>
+
+<p>Specify the target compute node for the migration. The default value is to auto-schedule the virtual machine following the current scheduling guidelines and constraints. Optionally, you can manually select the target compute node.</p>
+
+<p>Note that the set of available target compute nodes for the migration is still subject to the scheduler constraints from the virtual machine flavor and other systems options that might be in place.</p>
+</li>
+<li>
+<p>Select <b>Disk Over Commit</b> to use the Overcommit feature.</p>
+
+<p>Disk Overcommit allows you to overcommit CPU and RAM on compute nodes. This allows you to
+            increase the number of instances you can have running on your cloud, at the cost of
+            reducing the performance of the instances. The Compute service uses the following ratios
+            by default:</p>
+
+<ul>
+<li>CPU allocation ratio: 16:1</li>
+<li>RAM allocation ratio: 1.5:1 </li>
+</ul>
+</li>
+<li>
+<p>Select <b>Block Migration</b> to use the KVM live block migration feature where the instance is migrated over TCP and no local storage is required.</p>
+</li>
+<li>
+<p>Click <b>Live Migrate Instance</b>.</p>
+</li>
+</ol>
+</section>
+<section id="migrate-an-instance-on-a-wind-river-linux-server"> <title>Migrate an instance on a KVM server</title>
+<p>Instances on KVM servers can be migrated to a specific instance.</p>
+<p>To migrate an instance:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Instances</b> link.</p>
+</li>
+<li>
+<p>In the <b>Instances</b> screen, for the instance you want to migrate, click the arrow icon in the <b>Actions</b> menu and select <b>Live Migrate Instance</b>.</p>
+
+<p>Specify the target compute node for the migration. The default value is to auto-schedule the virtual machine following the current scheduling guidelines and constraints. Optionally, you can manually select the target compute node.</p>
+
+<p>Note that the set of available target compute nodes for the migration is still subject to the scheduler constraints from the virtual machine flavor and other systems options that might be in place.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic3434"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

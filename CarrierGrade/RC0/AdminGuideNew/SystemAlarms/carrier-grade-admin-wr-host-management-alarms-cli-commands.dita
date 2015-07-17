@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5203">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Using System Alarms CLI Commands</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/SystemAlarms/carrier-grade-admin-wr-host-management-alarms-cli-commands.md-->
+ <!--permalink: /helion/openstack/carrier/admin/alarms/cli/commands/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>You can use the CLI to find information about currently active and previously triggered system alarms.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>The following commands are used to interact with the alarms subsystem:</p>
+<ul>
+<li>system alarm-list</li>
+<li>system alarm-show</li>
+<li>system alarm-delete</li>
+<li>system alarm-history-list </li>
+</ul>
+<p>Before using the commands you must log in to the active controller as the Keystone admin user. For more information, see <xref href="../MiscTasks/carrier-grade-admin-wr-linux-users.dita" >Linux User Accounts</xref>.</p>
+<section id="list"> <title>Listing system alarms</title>
+<p>The <codeph>system alarm-list</codeph> command lists currently active alarms, as illustrated below</p>
+<p>Specific subsets of alarms, or a particular alarm, can be listed using one of the following --query command filters:</p>
+<ul>
+<li>
+<p>
+<codeph>uuid=&lt;uuid&gt;</codeph> - Query alarm by UUID, for example:</p>
+
+<codeblock>
+<codeph>system alarm-list --query uuid=4ab5698a-19cb...
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>
+<codeph>alarm_id=&lt;alarm id&gt;</codeph> - Query alarms by alarm ID, for example:</p>
+
+<codeblock>
+<codeph>system alarm-list --query alarm_id=100.104
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>
+<codeph>alarm_type=&lt;type&gt;</codeph> - Query alarms by type, for example:</p>
+
+<codeblock>
+<codeph>system alarm-list --query \
+alarm_type=operational-violation
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>
+<codeph>entity_type_id=&lt;type id&gt;</codeph> - Query alarms by entity type ID, for example:</p>
+
+<codeblock>
+<codeph>system alarm-list --query \
+entity_type_id=system.host
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>
+<codeph>entity_instance_id=&lt;instance-id&gt;</codeph> - Query alarms by entity instance id, for example:</p>
+
+<codeblock>
+<codeph>system alarm-list --query \
+entity_instance_id=host=compute-0
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>
+<codeph>severity=&lt;severity&gt;</codeph> - Query alarms by severity type, for example:</p>
+
+<codeblock>
+<codeph>system alarm-list --query severity=warning
+</codeph>
+</codeblock>
+
+<p>The valid severity types are critical, major, minor, and warning.</p>
+</li>
+</ul>
+<p>Query command filters can be combined into a single expression separated by semicolons, as illustrated in the following example:</p>
+<codeblock>
+  <codeph>system alarm-list -q
+'alarm_id=400.002;entity_instance_id=service_domain=controller.service_group=directoryservices'
+</codeph>
+</codeblock>
+</section>
+<section id="viewing-details-of-an-alarm"> <title>Viewing details of an alarm</title>
+<p>The <codeph>system alarm-show</codeph> command system alarm-show presents additional information about a currently active alarm.</p>
+<codeblock>
+  <codeph>system alarm-show 4ab5698a-19cb-4c17-bd63-302173fef62c
+</codeph>
+</codeblock>
+<p>The pair of attributes (alarm_id, entity_instance_id) uniquely identifies an active alarm:</p>
+<ul>
+<li>
+<p>
+<codeph>alarm_id</codeph> - An ID identifying the particular alarm condition. Note that there are some alarm conditions, such as administratively locked , that can be raised by more than one entity-instance-id.</p>
+</li>
+<li>
+<p>
+<codeph>entity_instance_id</codeph> - Type and instance information of the object raising the alarm. A period-separated list of (key, value) pairs, representing the containment structure of the overall entity instance.  This structure is used for processing hierarchical clearing of alarms.</p>
+</li>
+<li>
+<p>
+<codeph>system alarm-delete</codeph> - The command system alarm-delete is used to manually delete an alarm that remains active for no apparent reason, which may happen in rare conditions. Alarms usually clear automatically when the trigger condition is corrected. Use this command as illustrated below:</p>
+
+<codeblock>
+<codeph>system alarm-delete 4ab5698a-19cb-4c17-bd63-302173fef62c
+</codeph>
+</codeblock>
+
+<p>Manually deleting an alarm should not be done unless it is absolutely clear that there is no reason for the alarm to be active.</p>
+</li>
+<li>
+<p>
+<codeph>system alarm-history-list</codeph> - The command system alarm-history-list is used to query the historical alarm table. It operates on an alarm ring buffer of up to 2000 entries used by the alarms subsystem to sequentially store active alarm change events.</p>
+
+<p>In its simplest form, without any parameters, the command returns a list of the 20 most recent change events in reverse chronological order, the most recent event first. Use the -l option to specify the size of the list.</p>
+
+<p>The following command lists the 30 more recent change events:</p>
+
+<codeblock>
+<codeph>system alarm-history-list -l 30
+</codeph>
+</codeblock>
+
+<p>The console output is automatically paginated when the list size is greater than 20. Press the <b>Enter</b> key to go the next page, or press <codeph>q</codeph> to quit.</p>
+
+<p>Specific alarms, or alarm subsets, in the ring buffer can be listed using the --query command filters accepted by the <codeph>system alarms-list</codeph> command. For example, use the following command to query alarm events in the ring buffer by type ID:</p>
+
+<codeblock>
+<codeph>system alarm-history-list --query alarm_id=100.104
+</codeph>
+</codeblock>
+</li>
+</ul>
+<p>Two additional command filters are available to restrict the command output to change events in a particular time slot, as follows:</p>
+<ul>
+<li>
+<p>
+<codeph>start=&lt;time_stamp&gt;</codeph> - Query change events that occurred at or after a particular time, for example:</p>
+
+<codeblock>
+<codeph>system alarm-history-list --query \
+start=2014-11-26T18:58:53
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>
+<codeph>end=&lt;time_stamp&gt;</codeph> - Query change events that occurred at or before a particular time, for example:</p>
+
+<codeblock>
+<codeph>system alarm-history-list --query \
+end=2014-11-26T18:59:53
+</codeph>
+</codeblock>
+</li>
+</ul>
+<p>
+<b>Note:</b> Time stamps must be entered in a suitable ISO 8601 date and time format. Some examples are: 2014, 2014-11-26, 2014-11-28T16:39, and 2014-11-28T16:42:35.647157.</p>
+<p>Query command filters can be combined into a single expression separated by semicolons, as illustrated in the following example:</p>
+<codeblock>
+  <codeph>system alarm-history-list -l 10 \
+-q 'start=2014-11-26T18:58:53;end=2014-11-26T18:59:53'
+</codeph>
+</codeblock>
+<p>
+  <xref type="section" href="#topic5203"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333807231" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+
+ -->
+    <title ixia_locid="1">HP Helion OpenStack Carrier Grade Extensions to Heat</title>
+    <shortdesc ixia_locid="2">Several extensions to Heat are included with HP Helion OpenStack Carrier Grade.</shortdesc>
+    <prolog>
+        <author ixia_locid="3">Jim Owens</author>
+    </prolog>
+    <conbody>
+        <p ixia_locid="4">The HP Helion OpenStack Carrier Grade Extensions are compatible with both HOT format and CFN
+            format.</p>
+        <section id="section_N10027_N1001F_N10001" ixia_locid="51">
+            <title ixia_locid="52">Multiple NIC Support</title>
+            <p ixia_locid="8">When launching a VM instance initially or in an autoscaling stack, you
+                can specify multiple network interfaces. The open-source version of Heat allows only
+                a single network interface to be specified at launch.</p>
+            <p ixia_locid="9">The syntax for the extension is as follows:</p>
+            <codeblock ixia_locid="10">
+...
+LaunchConfig:
+    Type: AWS::AutoScaling::LaunchConfiguration
+    Properties
+        ...
+        NetworkInterfaces: [
+            {DeviceIndex: "0", vif-model: "virtio", NetworkId: { Ref: PublicNetId } },
+            {DeviceIndex: "1", vif-model: "avp", NetworkId: { Ref: InternalNetId } }</codeblock>
+            <p ixia_locid="115">As the example shows, this extension also adds the ability to specify a different
+                    <parmname ixia_locid="116">vif-model</parmname> for each interface. In addition, a new
+                    <option ixia_locid="117">avp</option> option is introduced, supporting the use of optimized AVP
+                device drivers.</p>
+            <p ixia_locid="118">The valid <parmname ixia_locid="119">vif-model</parmname> values are as follows:</p>
+            <simpletable id="simpletable_xnr_ndn_tp">
+                <strow>
+                    <stentry ixia_locid="129">
+                        <p ixia_locid="127"><option ixia_locid="128">avp</option></p>
+                    </stentry>
+                    <stentry ixia_locid="130">
+                        <p ixia_locid="131">Accelerated Virtual Port</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="132">
+                        <p ixia_locid="133"><option ixia_locid="122">e1000</option></p>
+                    </stentry>
+                    <stentry ixia_locid="134">
+                        <p ixia_locid="135">Intel e1000 Emulation</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="136">
+                        <p ixia_locid="137"><option ixia_locid="138">ne2k_pci</option></p>
+                    </stentry>
+                    <stentry ixia_locid="139">
+                        <p ixia_locid="140">NE2000 Emulation</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="141">
+                        <p ixia_locid="142"><option ixia_locid="143">pcnet</option></p>
+                    </stentry>
+                    <stentry ixia_locid="144">
+                        <p ixia_locid="145">AMD PCnet/PCI Emulation</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="146">
+                        <p ixia_locid="147"><option ixia_locid="148">rtl8139</option></p>
+                    </stentry>
+                    <stentry ixia_locid="149">
+                        <p ixia_locid="150">Realtek 8139 Emulation</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="151">
+                        <p ixia_locid="124"><option ixia_locid="125">virtio</option></p>
+                    </stentry>
+                    <stentry ixia_locid="152">
+                        <p ixia_locid="153">VirtIO Network</p>
+                    </stentry>
+                </strow>
+                <strow>
+                    <stentry ixia_locid="154">
+                        <p ixia_locid="155"><option ixia_locid="156">pci-passthrough</option></p>
+                    </stentry>
+                    <stentry ixia_locid="157">
+                        <p ixia_locid="158">PCI Passthrough Device</p>
+                    </stentry>
+                </strow>
+            </simpletable>
+        </section>
+        <section id="section_N1003F_N1001F_N10001" ixia_locid="53">
+            <title ixia_locid="54">Simplified Network Interface Configuration</title>
+            <p ixia_locid="14">You can specify a network interface for a server or instance resource
+                directly, without the need to define and then reference an <nameliteral ixia_locid="61">AWS::EC2::NetworkInterface</nameliteral> resource. In addition,
+                you can specify the network using <parmname ixia_locid="62">NetworkName</parmname>,
+                    <parmname ixia_locid="63">NetworkId</parmname>, <parmname ixia_locid="64">SubNetName</parmname>, or <parmname ixia_locid="65">SubNetId</parmname>.</p>
+            <codeblock ixia_locid="15">  PDN_Gateway-1:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: 'cirros'
+      InstanceType: 'm1.tiny'
+      NetworkInterfaces: [
+          { DeviceIndex: "0", NetworkName: 'public-net0' }
+
+  PDN_Gateway-2:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: 'cirros'
+      InstanceType: 'm1.tiny'
+      NetworkInterfaces: [
+          { DeviceIndex: "0", NetworkId: '1d9a8765-a7e7-46b6-abd0-0e2f7985778a' }
+
+  PDN_Gateway-3:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: 'cirros'
+      InstanceType: 'm1.tiny'
+      NetworkInterfaces: [
+          { DeviceIndex: "0", SubNetName: 'public-subnet0' }
+
+  PDN_Gateway-4:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: 'cirros'
+      InstanceType: 'm1.tiny'
+      NetworkInterfaces: [
+          { DeviceIndex: "0", SubNetId: 'dfa64673-6a75-4f8a-9c74-1a7578113c31' }
+</codeblock>
+        </section>
+        <section id="section_N10052_N1001F_N10001" ixia_locid="55">
+            <title ixia_locid="56">Simplified VM Instance Naming</title>
+            <p ixia_locid="19">The HP Helion OpenStack Carrier Grade introduces minor changes to the OpenStack VM
+                naming convention to make Heat-generated names more user-friendly.</p>
+            <ul id="ul_nq5_jl4_34">
+                <li ixia_locid="20">
+                    <p ixia_locid="21">For a static resource, launched VM instances are named using
+                            the<parmname ixia_locid="22"> name</parmname> attribute of the <parmname ixia_locid="23">OS::Nova::Server</parmname> structure (without including
+                        the <cmdname ixia_locid="24">&lt;StackTemplateName&gt;</cmdname>). </p>
+                    <codeblock ixia_locid="25">Serving_Gateway:
+    Type: OS::Nova::Server
+    Properties:
+      name  : ‘Serving_Gateway’
+      image : 'cirros'
+      flavor: 'm1.tiny'
+
+
+~(keystone_admin)$ heat stack-create –f &lt;file&gt; EPC
+~(keystone_admin)$ nova list
++--------------------------------------+-----------------+--------+-…
+| ID                                   | Name            | Status | …
++--------------------------------------+-----------------+--------+-…
+| 581b3495-3cf1-4410-9587-5cf04fccfed2 | Serving_Gateway | ACTIVE | …
++--------------------------------------+-----------------+--------+-…</codeblock>
+                </li>
+                <li ixia_locid="26">
+                    <p ixia_locid="27">For an autoscaling resource, launched VM instances are named
+                        using the pattern <cmdname ixia_locid="28">&lt;StackTemplateName&gt;-&lt;AutoScalingGroupName&gt;-&lt;LaunchConfigName&gt;-&lt;ScalingInstanceNum&gt;</cmdname>.</p>
+                    <codeblock ixia_locid="29">
+  
+  Scalable_GW:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    Properties:
+      AvailabilityZones: {'Fn::GetAZs': ''}
+      Name: 'Scaling_GW'
+      LaunchConfigurationName: {Ref: LaunchConfig}
+      MinSize: {Ref: VRC-MinClusterSize}
+      MaxSize: {Ref: VRC-MaxClusterSize}
+  ServerScaleOutPolicy:
+     …
+  ServerScaleInPolicy:
+     …
+  ComputeAlarmHigh:
+     …
+  ComputeAlarmLow:
+     …
+  LaunchConfig:
+    Type: AWS::AutoScaling::LaunchConfiguration
+    Name: 'DP_Engine'
+    Properties:
+      ImageId: 'cirros'
+      InstanceType: 'm1.tiny'
+      …
+
+~(keystone_admin)$ heat stack-create –f &lt;file&gt; EPC
+~(keystone_admin)$ nova list
++--------------------------------------+----------------------------+--------+-…
+| ID                                   | Name                       | Status | …
++--------------------------------------+----------------------------+--------+-…
+| 581b3495-3cf1-4410-9587-5cf04fccfed2 | EPC-Scaling_GW-DP_Engine-0 | ACTIVE | …
+| 67df4321-ac22-498a-bff2-b376f2aa6d2b | EPC-Scaling_GW-DP_Engine-1 | ACTIVE | …
++--------------------------------------+----------------------------+--------+-…
+
+</codeblock>
+                </li>
+            </ul>
+        </section>
+        <section id="section_N10097_N1001F_N10001" ixia_locid="57">
+            <title ixia_locid="58">Support for Server Groups</title>
+            <p ixia_locid="33">You can create Server Groups and add VM Instances to them.</p>
+            <p ixia_locid="34">The syntax for adding a Server Group Resource is as follows:</p>
+            <codeblock ixia_locid="35">...
+resources:
+    ...
+    my_server_group:
+        type: OS::Nova::ServerGroup
+        properties:
+            policy: 'anti-affinity'
+            group_size: 4
+            best_effort: False...
+</codeblock>
+            <p ixia_locid="36">For a static resource, the syntax for specifying a <nameliteral ixia_locid="37">Server Group</nameliteral> in a<parmname ixia_locid="38">
+                    OS::Nova::Server</parmname> definition is as follows:</p>
+            <codeblock ixia_locid="39">
+cirros_server1:
+    type: OS::Nova::Server
+    properties:
+        name: cirros1
+        image: 'cirros'
+        flavor: 'm1.tiny'
+        scheduler_hints:
+            group: {get_resource: my_server_group }</codeblock>
+            <p ixia_locid="40">For a static resource, the syntax for specifying a <nameliteral ixia_locid="41">Server Group</nameliteral> in an <parmname ixia_locid="42">AWS::EC2::LaunchConfiguration</parmname> definition is as follows:</p>
+            <codeblock ixia_locid="43">Cirros_Server1:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    Properties:
+        AvailabilityZones: {'Fn::GetAZs': ''}
+        LaunchConfigurationName: {Ref: LaunchConfig}
+        MinSize: {Ref: VRC-MinClusterSize}
+        MaxSize: {Ref: VRC-MaxClusterSize}
+  ServerScaleOutPolicy:
+     …
+  ServerScaleInPolicy:
+     …
+  ComputeAlarmHigh:
+     …
+  ComputeAlarmLow:
+     …
+  LaunchConfig:
+    Type: AWS::AutoScaling::LaunchConfiguration
+    Properties:
+        ImageId: 'cirros'
+        InstanceType: 'm1.tiny'
+        NovaSchedulerHints: [{Key: 'group', Value: {Ref: my_server_group }}]
+        …
+
+</codeblock>
+            <note id="note_N100C5_N10096_N1008F_N10023_N1001C_N10001" ixia_locid="44">
+                <p ixia_locid="45">This example uses AWS autoscaling resources and CFN format, but
+                    autoscaling is not limited to CFN templates. You can use AWS resources and OS
+                    (OpenStack) resources in any combination in either CFN or HOT templates.</p>
+            </note>
+        </section>
+        <section id="section_N100E2_N1001F_N10001" ixia_locid="59">
+            <title ixia_locid="60">Improved Metrics Communication</title>
+            <p ixia_locid="49">HP Helion OpenStack Carrier Grade addresses reliability issues with the OpenStack
+                Havana implementation of <libraryname ixia_locid="50">cfn-push-stats</libraryname>,
+                ensuring that guest instances can successfully pass Ceilometer metrics to the
+                Controller. </p>
+        </section>
+        <section id="section_N10117_N1001F_N10001" ixia_locid="66">
+            <title ixia_locid="67">Relaxed Requirements for Passing User Data</title>
+            <p ixia_locid="68">The property <parmname ixia_locid="69">UserDataType</parmname> is a
+                HP Helion OpenStack template extension that you can use to pass user data to an
+                instance even if the instance does not have <libraryname ixia_locid="70"
+                    >cloud-init</libraryname> installed. For more information, see <xref
+                    href="jow1409240700100.xml" ixia_locid="71"/>.</p>
+        </section>
+        <section id="section_N10136_N1001F_N10001" ixia_locid="72">
+            <title ixia_locid="73">Improved User Access to Stacks</title>
+            <p ixia_locid="74">Stacks can be created, modified, or deleted by admin or non-admin users.</p>
+        </section>
+        <section id="section_N10143_N1001F_N10001" ixia_locid="75">
+            <title ixia_locid="76">Greater Control over Resource Allocations</title>
+            <p ixia_locid="77">When creating a network resource using OS::Neutron::Net, you can use
+                a <nameliteral ixia_locid="111">depends_on</nameliteral> attribute to ensure that the requirements of
+                other resources are given priority before the resource is created. The attribute
+                takes another resource as an argument. In the following example, it is used to
+                specify that the resource <nameliteral ixia_locid="112">external_network </nameliteral>must be
+                created before <nameliteral ixia_locid="113">internal_network</nameliteral> is created.</p>
+            <codeblock ixia_locid="114">internal_network:
+      type: OS::Neutron::Net
+      properties:
+        name: { get_param: INTERNALNET }
+        depends_on: { get_resource: external_network }
+        shared: false
+        tenant_id: {get_param: TENANT_ID}</codeblock>
+        </section>
+        <section id="section_N10154_N1001F_N10001" ixia_locid="79">
+            <title ixia_locid="80">Additional Heat Resources</title>
+            <p ixia_locid="81">In addition to the standard OpenStack resources available for Heat templates, you can
+                use the following resources:</p>
+            <dl>
+                <dlentry ixia_locid="82">
+                    <dt ixia_locid="83">OS::SysInv::HostInterface</dt>
+                    <dd ixia_locid="84">
+                        <p ixia_locid="85">Defines a host L2 interface (ethernet or LAG), including
+                            the physical ports, network type (oam, mgmt, data, or infra), and
+                            connectivity to provider networks.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="86">
+                    <dt ixia_locid="87">OS::Glance::Image</dt>
+                    <dd ixia_locid="88">
+                        <p ixia_locid="89">Defines a virtual machine image registered with the
+                            Glance image service. </p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="90">
+                    <dt ixia_locid="91">OS::Nova::Flavor</dt>
+                    <dd ixia_locid="92">
+                        <p ixia_locid="93">Defines a set of resources (memory, vCPUs, and so on) for
+                            use when defining virtual machines.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="94">
+                    <dt ixia_locid="95">OS::Nova::ServerGroup</dt>
+                    <dd ixia_locid="96">
+                        <p ixia_locid="97">Defines a set of instances that share the same attributes
+                            (such as compute-node-affinity). For additional information, see <xref href="jow1404333807231.xml#jow1404333807231/section_N10097_N1001F_N10001" ixia_locid="98"/>. </p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="99">
+                    <dt ixia_locid="100">OS::Neutron::ProviderNet</dt>
+                    <dd ixia_locid="101">
+                        <p ixia_locid="102">Defines a provider network. </p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="103">
+                    <dt ixia_locid="104">OS::Neutron::ProviderNetRange</dt>
+                    <dd ixia_locid="105">
+                        <p ixia_locid="106">Defines a segmentation range for a provider network.</p>
+                    </dd>
+                </dlentry>
+                <dlentry ixia_locid="107">
+                    <dt ixia_locid="108">OS::Neutron::QoSPolicy</dt>
+                    <dd ixia_locid="109">
+                        <p ixia_locid="110">Defines a packet scheduling weight that can be
+                            referenced by a tenant network (OS::Neutron::Net). </p>
+                    </dd>
+                </dlentry>
+            </dl>
+        </section>
+    </conbody>
+</concept-wr>

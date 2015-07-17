@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr id="jow1429538642910" xml:lang="en-us">
+<!-- Modification History
+
+ -->
+ <title ixia_locid="374">Flavor Extra Specifications</title>
+ <shortdesc ixia_locid="375">You can edit an existing flavor to include additional attributes using
+   <term ixia_locid="377">extra specifications</term>.</shortdesc>
+ <prolog>
+  <author ixia_locid="376">Jim Owens</author>
+ </prolog>
+ <conbody>
+  <p ixia_locid="388">Extra specifications are key-value pairs you can add to an existing flavor to
+   be included when the flavor is used with a new virtual machine. The HP Helion OpenStack Carrier Grade <uicontrol ixia_locid="111">Extra Specs</uicontrol> tab for a flavor includes extensions specific to
+   HP Helion OpenStack Carrier Grade.</p>
+  <p ixia_locid="389">To access the extra specifications settings for a flavor, open the <wintitle ixia_locid="378">Flavors</wintitle> window and click the flavor name. For help accessing the
+   Flavors window, see <xref href="jow1404333663095.xml" ixia_locid="379"/>.</p>
+  <fig id="fig_z2v_2lw_5p" ixia_locid="112">
+   <title ixia_locid="113">Flavor extra specs</title>
+   <image href="psa1413822186171.image" id="image_o42_g2x_5p" ixia_locid="114" placement="inline" width="4in">
+    <alt ixia_locid="115">VM Flavor Extra Specs Tab</alt>
+   </image>
+  </fig>
+  <p ixia_locid="116">The <uicontrol ixia_locid="380">Extra Specs</uicontrol> tab lists extra
+   specifications that have been added for the flavor. To modify an existing entry, use the
+    <uicontrol ixia_locid="117">Edit</uicontrol> button. To remove a single entry, open the
+   drop-down menu associated with the extra spec, and select <uicontrol ixia_locid="118">Delete
+    extra spec</uicontrol> from the menu. You can also remove all extra specs at once using the
+    <uicontrol ixia_locid="381">Delete extra specs</uicontrol> button.</p>
+  <p ixia_locid="119">To add a new extra specification, click <uicontrol ixia_locid="120">Create</uicontrol>. This opens the <wintitle ixia_locid="121">Create Flavor Extra
+    Spec</wintitle> window, as illustrated below:</p>
+  <fig id="fig_wyg_ylw_5p" ixia_locid="122">
+   <title ixia_locid="123">Creating a flavor extra specification</title>
+   <image href="psa1413822561872.image" id="image_a2g_h2x_5p" ixia_locid="124" placement="inline">
+    <alt ixia_locid="125">Create VM Flavor Extra Spec</alt>
+   </image>
+  </fig>
+  <p ixia_locid="126">Use the <uicontrol ixia_locid="127">Extra Spec</uicontrol> drop-down list to
+   add specifications. The following options are available:</p>
+  <dl>
+   <dlentry ixia_locid="128">
+    <dt ixia_locid="129"><option ixia_locid="390">Custom Extra Spec</option></dt>
+    <dd ixia_locid="130">
+     <p ixia_locid="131">Available for internal use only.</p>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="73">
+    <dt ixia_locid="74"><option ixia_locid="391">VCPU Model</option></dt>
+    <dd ixia_locid="75">
+     <p ixia_locid="76">The CPU model to use with the virtual machine. For more information, see
+       <xref href="jow1429544114897.xml" ixia_locid="382"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="24">
+    <dt ixia_locid="25"><option ixia_locid="392">CPU Policy</option></dt>
+    <dd ixia_locid="247">
+     <p ixia_locid="383">The policy for assigning dedicated physical or logical CPU resources to the VM. For more
+      information, see <xref href="jow1429544935360.xml" ixia_locid="384"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="132">
+    <dt ixia_locid="133"><option ixia_locid="393">NUMA node</option></dt>
+    <dd ixia_locid="255">
+     <p ixia_locid="257">The NUMA node to use when launching a virtual machine. For more
+      information, see <xref href="jow1425236723556.xml" ixia_locid="400"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="43">
+    <dt ixia_locid="44"><option ixia_locid="394">Shared VCPU ID</option></dt>
+    <dd ixia_locid="291">
+     <p ixia_locid="292">The ID of a virtual CPU scheduled to run on a shared physical CPU in the
+      compute host. For more information, see <xref href="jow1426618822854.xml" ixia_locid="373"/>
+      and <xref href="jow1426625051841.xml" ixia_locid="299"/>.</p>
+     <note id="note_N102CA_N102BE_N102B5_N101CC_N10154_N1001F_N10001" ixia_locid="300">
+      <p ixia_locid="296">To use this extra specification, you must also set the <nameliteral ixia_locid="297">CPU Policy</nameliteral> extra specification for the flavor to <option ixia_locid="358">Dedicated</option>. This enables the VM to run a single house-keeping
+       virtual CPU on a shared physical core, while keeping all its high-performance virtual CPUs on
+       dedicated physical cores.</p>
+     </note>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="263">
+    <dt ixia_locid="266"><option ixia_locid="395">Memory Page Size</option></dt>
+    <dd ixia_locid="269">
+     <p ixia_locid="272">Sets the page size for VM memory. For more information, see <xref href="jow1424723681500.xml" ixia_locid="279"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="51">
+    <dt ixia_locid="52"><option ixia_locid="396">Guest Heartbeat</option></dt>
+    <dd ixia_locid="53">
+     <p ixia_locid="54">Enables the Heartbeat API for use by guests on the VM. For more information,
+      see <xref href="jow1429546712705.xml" ixia_locid="385"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="134">
+    <dt ixia_locid="135"><option ixia_locid="397">VCPU Scheduler Policy</option></dt>
+    <dd ixia_locid="136">
+     <p ixia_locid="386">Sets the scheduling priority for non-boot virtual CPUs. For more information, see <xref href="jow1429547742880.xml" ixia_locid="387"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="406">
+    <dt ixia_locid="408"><option ixia_locid="410">Minimum Number of CPUs</option></dt>
+    <dd ixia_locid="412">
+     <p ixia_locid="414">Sets the minimum number of virtual CPUs for the flavor. For more
+      information, see <xref href="jow1417817540528.xml" ixia_locid="197"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="407">
+    <dt ixia_locid="409"><option ixia_locid="411">Server Group Messaging</option></dt>
+    <dd ixia_locid="413">
+     <p ixia_locid="415">Enables the VM to communicate with other VMs in the same server group using
+      a messaging API. For more information, see <xref href="jow1432240580490.xml" ixia_locid="416"/>.</p>
+    </dd>
+   </dlentry>
+   <dlentry ixia_locid="265">
+    <dt ixia_locid="268"><option ixia_locid="399">Local Storage</option></dt>
+    <dd ixia_locid="271">
+     <p ixia_locid="274">Specifies whether to use local or remote ephemeral storage resources. For
+      more information, see <xref href="jow1426181040008.xml" ixia_locid="280"/>.</p>
+    </dd>
+   </dlentry>
+  </dl>
+  <note id="note_N101D4_N10024_N10001" ixia_locid="401">
+   <p ixia_locid="402">Some extra specifications are available using the command line only. For more information,
+    see:</p>
+   <ul id="ul_exl_mvd_cs">
+    <li ixia_locid="403">
+     <p ixia_locid="404"><xref href="jow1425236666266.xml" ixia_locid="405"/></p>
+    </li>
+   </ul>
+  </note>
+ </conbody>
+</concept-wr>

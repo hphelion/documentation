@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr ditaarch:DITAArchVersion="1.2" domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333555748" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Configuring Provider Networks Using the CLI</title>
+    <shortdesc ixia_locid="2">You can set up provider networks over physical networks using the
+            <nameliteral ixia_locid="3">controller-0</nameliteral> command-line interface. The provider networks
+        provide connectivity for tenant networks.</shortdesc>
+    <prolog>
+        <author ixia_locid="4">Jim Owens</author>
+        <author ixia_locid="5">Tom Towle</author>
+        <author ixia_locid="6">Pedro Sanchez</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1002B_N10028_N10001" ixia_locid="7">
+            <p ixia_locid="8">You must configure at least one provider network in order to assign
+                data interfaces to compute nodes and unlock the hosts. </p>
+        </context>
+        <context conref="jow1424191621914.xml#jow1424191621914/note_for_RDS_setup" id="context_N1003C_N1002E_N10001" ixia_locid="13"/>
+        <prereq id="prereq_N1003C_N10028_N10001" ixia_locid="11">
+            <p conref="jow1404333506062.xml#jow1404333506062/prereq-controller-0-ready" ixia_locid="12"/>
+        </prereq>
+        <context conref="jow1423853504951.xml#jow1423853504951/context_N1003B_N10037_N1000F_N10001" id="context_N1004C_N1002E_N10001" ixia_locid="14"/>
+        <context conref="jow1423853504951.xml#jow1423853504951/context_N101CB_N10037_N1000F_N10001" id="context_N10051_N1002E_N10001" ixia_locid="15"/>
+    </taskbody>
+    <related-links>
+        <link href="jow1404333496222.xml" ixia_locid="25"/>
+    </related-links>
+</task-wr>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River General Task//EN" "task-wr.dtd">
+<task-wr domains="(topic task task-wr)                            (topic hi-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333586935" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+        
+-->
+    <title ixia_locid="1">Adding a Keypair </title>
+    <shortdesc ixia_locid="2">Keypairs provide for secure login to guest images.</shortdesc>
+    <prolog>
+        <author ixia_locid="48">Michael B</author>
+        <author ixia_locid="3">PedroSanchez</author>
+    </prolog>
+    <taskbody>
+        <context id="context_N1001F_N1001C_N10001" ixia_locid="4">
+            <p ixia_locid="5">This exercise injects a keypair into the Nova database with the name
+                    <nameliteral ixia_locid="6">tenant1-controller-0</nameliteral>. This named
+                keypair can be used to provide automatically authenticated SSH access to the virtual
+                machines. You can use other available keypairs, or create new ones, as required.</p>
+            <note id="note_N10036_N10027_N10024_N10001" ixia_locid="54">
+                <p ixia_locid="55">For the scenarios, SSH access is not required, and the keypairs are not used.</p>
+            </note>
+        </context>
+        <steps>
+            <step id="step_N1002F_N1002C_N1001C_N10001" ixia_locid="7">
+                <cmd ixia_locid="8">List the keypairs available from the system.</cmd>
+                <info ixia_locid="9">
+                    <p ixia_locid="10">Select <uicontrol ixia_locid="11">Access &amp;
+                            Security</uicontrol> in the Manage Compute section of the <uicontrol ixia_locid="12">Projects</uicontrol> tab to open the <wintitle ixia_locid="13">Keypairs</wintitle> page.</p>
+                </info>
+                <stepresult ixia_locid="14">
+                    <p ixia_locid="15">Select the <uicontrol ixia_locid="16">keypairs</uicontrol>
+                        tab. Since no keypairs have been defined yet, an empty list is displayed as
+                        follows:</p>
+                    <fig id="fig_N10055_N1004A_N1002F_N1002C_N1001C_N10001" ixia_locid="17">
+                        <image href="jow1404333581113.image" id="image_ins_lfy_xn" ixia_locid="18" placement="inline" width="6in"/>
+                    </fig>
+                </stepresult>
+            </step>
+            <step id="step_N10064_N1002C_N1001C_N10001" ixia_locid="19">
+                <cmd ixia_locid="20">Create the keypair <nameliteral ixia_locid="21">tenant1-controller-0</nameliteral>.</cmd>
+                <info ixia_locid="22">
+                    <p ixia_locid="23">Click <uicontrol ixia_locid="24">Create Keypair</uicontrol>
+                        to open the <wintitle ixia_locid="25">Create Keypair</wintitle> window. Fill
+                        in the information as illustrated below:</p>
+                    <fig id="fig_N1007D_N1006E_N10063_N1002C_N1001C_N10001" ixia_locid="26">
+                        <image href="jow1404333582558.image" id="image_as2_fvy_xn" ixia_locid="27" placement="inline" width="4in"/>
+                    </fig>
+                    <p ixia_locid="28">Click <uicontrol ixia_locid="29">Create Keypair</uicontrol>
+                        to create the authentication keys.</p>
+                </info>
+                <stepresult ixia_locid="30">
+                    <p ixia_locid="31">The system gives you the opportunity to download the keypair
+                        to your workstation, as illustrated below:</p>
+                    <fig id="fig_N10099_N10092_N10063_N1002C_N1001C_N10001" ixia_locid="32">
+                        <image href="jow1404333584062.image" id="image_hz5_clb_yn" ixia_locid="33" placement="inline" width="5.5in"/>
+                    </fig>
+                    <p ixia_locid="40">Click on the download link to have a local copy of the
+                        authentication keypair. You use it as you would use any keypair for SSH
+                        authentication between two workstations.</p>
+                    <ul id="ol_vjl_lmm_t4">
+                        <li ixia_locid="44">
+                            <p ixia_locid="41">Transfer the keypair to the workstation you plan to
+                                use to access the virtual machine over SSH.</p>
+                        </li>
+                        <li ixia_locid="45">
+                            <p ixia_locid="42">Copy the public
+                                key to the virtual machine. You can use the command <cmdname ixia_locid="46">ssh-copy-id</cmdname> from a Linux workstation, or transfer the
+                                public key using a command such as <cmdname ixia_locid="47">scp</cmdname>.</p>
+                        </li>
+                    </ul>
+                    <p ixia_locid="43">Consult the openly available documentation on SSH for
+                        details.</p>
+                </stepresult>
+            </step>
+        </steps>
+        <result id="result_N100A9_N1001C_N10001" ixia_locid="35">
+            <p ixia_locid="36">The keypair <nameliteral ixia_locid="37">tenant1-controller-0</nameliteral> is available now. It is listed as
+                follows:</p>
+            <fig id="fig_N100B8_N100AC_N1001C_N10001" ixia_locid="38">
+                <image href="jow1404333585492.image" id="image_c3b_hpb_yn" ixia_locid="39" placement="inline" width="6in"/>
+            </fig>
+        </result>
+        <postreq id="postreq_N1011B_N10024_N10001" ixia_locid="49">
+            <note id="note_N1011F_N1011B_N10024_N10001" ixia_locid="50">
+                <p ixia_locid="51">To complete the deployment scenarios, this task must be repeated as<nameliteral ixia_locid="52">
+                        user2</nameliteral>, substituting appropriate names as described in <xref href="jow1404333809139.xml" ixia_locid="53"/>.</p>
+            </note>
+        </postreq>
+    </taskbody>
+</task-wr>

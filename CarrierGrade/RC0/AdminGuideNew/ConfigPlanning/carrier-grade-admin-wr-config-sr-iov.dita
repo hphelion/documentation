@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4210">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Configuring SR-IOV Ethernet Interfaces</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-sr-iov.md-->
+ <!--permalink: /helion/openstack/carrier/configuration/plan/sr-iov/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>A SR-IOV Ethernet interface is a physical PCI Ethernet NIC that implements hardware-based virtualization mechanisms to expose multiple virtual network interfaces that can be used by one or more virtual machines simultaneously.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>The PCI-SIG Single Root I/O Virtualization and Sharing (SR-IOV) specification defines a standardized mechanism to create individual virtual Ethernet devices from a single physical Ethernet interface. For each exposed virtual Ethernet device, formally referred to as a Virtual Function (VF), the SR-IOV interface provides separate management memory space, work queues, interrupts resources, and DMA streams, while utilizing common resources behind the host interface. Each VF therefore has direct access to the hardware and can be considered to be an independent Ethernet interface.</p>
+<p>When compared with a PCI Passthtrough Ethernet interface, a SR-IOV Ethernet interface:</p>
+<ul>
+<li>Provides benefits similar to those of a PCI Passthtrough Ethernet interface, including lower latency packet processing.</li>
+<li>Scales up more easily in a virtualized environment by providing multiple VFs that can be attached to multiple virtual machine interfaces.</li>
+<li>Shares the same limitations, including the lack of support for LAG, QoS, ACS, and live migration.</li>
+<li>Has the same requirements regarding the VLAN configuration of the access switches.</li>
+<li>Provides a similar configuration workflow when used on HP Helion OpenStack Carrier Grade.</li>
+</ul>
+<p>To configure the access switch:</p>
+<ol>
+<li>
+        <xref href="../Dashboard/carrier-grade.dashboard.launch.dita">Launch the HP Helion
+          OpenStack Horizon Dashboard</xref> as the admin user.</li>
+<li>
+        <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Lock
+          the compute node</xref> you want to configure.</li>
+<li>Configure the Ethernet interface to be used as a SR-IOV interface.<p>a. Click <b>Inventory</b>
+          on the <b>System Panel</b> section of the <b>Admin</b> menu, and then selecting the
+            <b>Hosts</b> tab.</p><p>b. In the <b>Hosts</b> list, click the name of the compute node
+          where the PCI interface is available.</p><p>c. Click the <b>Interfaces</b> tab, and
+          finally click the <b>Edit Interface</b> button associated with the interface you want to
+          configure.</p><p>d. Specify the interface to associtate.</p><p>e. Select
+            <codeph>pci-sriov</codeph> under <b>Network Type</b>.</p><p>f. Select the provider
+          network to connect with.</p><p>e. Click <b>Save</b>.</p><p>The Maximum number of VFs
+          displayed in this form is a read-only item which is auto-discovered by the system by
+          inspecting the specific NIC model. This value is reported as 0 when the selected interface
+          does not support SRIOV.</p></li>
+<li>Create the <codeph>tenant1-net1</codeph> tenant network.<p>a. Click <b>Create Network</b>
+        </p><p>b. In the <b>Select Network</b> screen, select a network that has access to the
+          tenant network.</p><p>c. Set the segmentation ID to <codeph>20</codeph>.</p><p>d. Click
+            <b>Create Network</b>.</p></li>
+<li>Configure the access switch.<p>Configure the physical port on the access switch used to connect
+          to Ethernet interface eth8 as an access port with default VLAN ID of 20.</p></li>
+<li>
+        <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita">Unlock
+          the compute node</xref>.</li>
+<li>Launch the virtual machine.<p>a. Log into Horizon as a non-admin user to the web management
+          interface.</p><p>b. Click <b>Instance</b> on the <b>Compute</b> section of the
+            <b>Pronect</b> menu.</p><p>c. Click <b>Launch Instance</b>.</p><p>d. In the <b>Launch
+            Instance</b> screen, configure the necessary options for the new virtual machine. In
+          particular, click the <b>Networking</b> tab and add an SR-IOV interface on the tenant
+          network. Add other network interfaces as needed.</p><p>e. Click the Launch button to
+          proceed.</p></li>
+</ol>
+<p>The interface can also be configured from the CLI as illustrated below:</p>
+<codeblock><codeph>system host-if-modify \
+-nt pci-sriov -N 4 -p group0-data0 compute-0 eth8
+</codeph></codeblock>
+<p>SR-IOV interfaces can be attached from the CLI when booting a new virtual machine, as illustrated below:</p>
+<codeblock><codeph>nova boot \
+--nic net-id=704e9f3b,vif-model=pci-sriov my-new-vm
+</codeph></codeblock>
+<p>The new virtual machine instance is up now. It has a SR-IOV VF connection to the tenant1-net1 tenant network identified with VLAN ID 20.</p>
+<p>
+  <xref type="section" href="#topic4210"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

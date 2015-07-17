@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1757">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Pausing and Un-pausing Instances</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Instances/carrier-grade.dashboard.instances.pause.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/instances/pause/--></p>
+<p>When a user <i>pauses</i> an instance, the instance  remains running, but, in a frozen state. The contents of the instance are stored in memory (RAM). Memory and vCPUs are not released.</p>
+<p>Users can suspend an instance, for example, in order to make a back up of an instance to prevent the instance  from being used during the process.</p>
+<p>
+<b>Note:</b> Pausing is different from <xref href="../Instances/carrier-grade.dashboard.instances.suspend.dita" >suspending an instance</xref>. Suspending stops the instance, stores the contents on the disk. the memory and vCPUs become available to create other instances.</p>
+<section id="pause-an-instance"> <title>Pause an instance</title>
+<p>To pause an instance:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Instances</b> link.</p>
+</li>
+<li>
+<p>In the <b>Instances</b> screen, for the instance you want to modify, click the arrow icon in the <b>Actions</b> menu and select <b>Pause Instance</b>.</p>
+
+<p>The status of the instance reports <i>Paused</i>.</p>
+</li>
+</ol>
+<p>
+<b>Note:</b> Many of the commands on the <b>More</b> menu are not available for a paused instance.</p>
+</section>
+<section id="un-pause-an-instance"> <title>Un-pause an instance</title>
+<p>To unpause an instance:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Instances</b> link.</p>
+</li>
+<li>
+<p>In the <b>Instances</b> screen, for the instance you want to modify, click the arrow icon in the <b>Actions</b> menu and select <b>Resume Instance</b>.</p>
+
+<p>The status of the instance reports <i>Active</i>.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1757"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

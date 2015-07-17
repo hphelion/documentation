@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic619">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Managing Users</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Users/carrier-grade.managing.users.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/users/--></p>
+<p>You can use HP Helion OpenStack to manage users.</p>
+<p>As an admin, you can use the dashboards to:</p>
+<ul>
+<li>
+<xref href="../Users/carrier-grade.dashboard.users.create.dita" >Create and delete users</xref>
+</li>
+<li>
+<xref href="../Users/carrier-grade.dashboard.users.enable.dita" >Disable and enable a user</xref>
+</li>
+<li>
+<xref href="../Users/carrier-grade.dashboard.users.password.dita" >Change a user password</xref>
+</li>
+<li>
+<xref href="../Users/carrier-grade.dashboard.projects.primary.dita" >Specify a primary project for a user</xref>
+</li>
+</ul>
+<p>
+  <xref type="section" href="#topic619"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

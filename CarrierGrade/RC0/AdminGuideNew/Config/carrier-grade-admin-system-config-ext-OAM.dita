@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1462">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Changing the External Network (OAM) IP Configuration</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Config/carrier-grade-admin-system-config-ext-OAM.md-->
+ <!--permalink: /helion/openstack/carrier/admin/system/config/ext/--></p>
+<!-- modeled after Wind River Admin Guide -->
+<p>You can change the External network (ext) subnet, floating IP address, controller addresses, and default gateway at any time after installation of HP Helion OpenStack Carrier Grade.</p>
+<section id="cli"> <title>Change external network IP using the CLI</title>
+<p>You can change these addresses using the web administration interface or the CLI.</p>
+<p>
+<b>Note:</b> Access to the OAM network is interrupted during this procedure.</p>
+<p>To change the external network configuration:</p>
+<p>To view the existing OAM IP configuration, use the following command.</p>
+<codeblock><codeph>system oam-show
+</codeph></codeblock>
+<p>To change the OAM IP subnet, floating IP address, gateway IP address, or controller IP addresses, use the following command syntax.</p>
+<codeblock><codeph>system oam-modify oam_subnet=subnet/netmask \
+</codeph></codeblock>
+<p>After changing the OAM server configuration, you must lock and unlock the controllers. This process requires a <xref href="../HostManagement/carrier-grade-admin-wr-host-management.dita#swact" type="section"  >swact on the controllers</xref>. Then you must <xref href="../HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita" >lock and unlock the compute nodes</xref> one at a time, ensuring that sufficient resources are available to migrate any running instances.</p>
+<p>
+  <xref type="section" href="#topic1462"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

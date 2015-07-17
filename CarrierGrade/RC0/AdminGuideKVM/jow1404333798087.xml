@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept-wr PUBLIC "-//WindRiver.com//DTD DITA 1.2 Wind River Concept//EN" "concept-wr.dtd">
+<concept-wr domains="(topic concept concept-wr)                            (topic hi-d)                            (topic indexing-d)                            (topic pr-d)                            (topic sw-d)                            (topic ui-d)                            (topic wr-sw-d)                            (topic xml-d)   " id="jow1404333798087" xml:lang="en-us" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+    <!-- Modification History
+   -->
+    <title ixia_locid="1">Ports</title>
+    <shortdesc ixia_locid="2">The tab <uicontrol ixia_locid="3">Ports</uicontrol> on the <wintitle ixia_locid="4">Inventory Detail</wintitle> page presents information about the physical
+        ports on a host, as illustrated below.</shortdesc>
+    <prolog>
+        <author ixia_locid="5">Pedro Sanchez</author>
+    </prolog>
+    <conbody>
+        <fig id="fig_N10027_N10024_N10001" ixia_locid="6">
+            <image href="jow1404333796281.image" id="image_vlm_zxz_l4" ixia_locid="7" width="6in"/>
+        </fig>
+        <p ixia_locid="8">Currently none of the port attributes is configurable; they are all read
+            directly from the hardware. Port information is presented in several columns, as
+            follows:</p>
+        <dl>
+            <dlentry ixia_locid="9">
+                <dt ixia_locid="10">Name</dt>
+                <dd ixia_locid="11">
+                    <p ixia_locid="12">The name of the physical port, as identified by the host's
+                        Linux kernel.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="13">
+                <dt ixia_locid="14">MAC Address</dt>
+                <dd ixia_locid="15">
+                    <p ixia_locid="16">The port's unique MAC address.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="17">
+                <dt ixia_locid="18">PCI Address</dt>
+                <dd ixia_locid="19">
+                    <p ixia_locid="20">The port's unique address on the PCI bus. Together with the
+                        MAC address, this field can be used to uniquely identify a port on the
+                        host's hardware platform.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="21">
+                <dt ixia_locid="22">Processor</dt>
+                <dd ixia_locid="23">
+                    <p ixia_locid="24">The processor node that the port's IO controller is connected to.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="25">
+                <dt ixia_locid="26">Auto Negotiation</dt>
+                <dd ixia_locid="27">
+                    <p ixia_locid="28">The status of the Ethernet auto-negotiation flag. Currently,
+                        auto-negotiation is always enabled.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="29">
+                <dt ixia_locid="30">Boot Interface</dt>
+                <dd ixia_locid="31">
+                    <p ixia_locid="32">The boot flag, whether or not PXE booting is enabled.</p>
+                </dd>
+            </dlentry>
+            <dlentry ixia_locid="33">
+                <dt ixia_locid="34">Device Type</dt>
+                <dd ixia_locid="35">
+                    <p ixia_locid="36">Hardware information about the port type, manufacturer, and model.</p>
+                </dd>
+            </dlentry>
+        </dl>
+    </conbody>
+</concept-wr>

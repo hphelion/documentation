@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2685">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1 GA</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -19,7 +19,7 @@
 <p>Use the following links to begin installing HP OpenStack Carrier Grade:</p>
 <ul>
 <li>
-<p><xref href="Installation/carrier-grade-install-playbook-overview.dita#topic5675" type="section" />
+  <p><xref href="Installation/carrier-grade-install-pb-overview.dita#topic1925"/>
           </p>
 
 <p>Start with this document for complete instructions on how to install your HP Helion OpenStack cloud, including system requirements, prerequisites.</p>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic749">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Extend Object Storage (Swift) Cluster</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Binamra S"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-expand-swift-cluster.md-->
+ <!--permalink: /helion/openstack/carrier/services/object/swift/expand-cluster/--></p>
+<p>HP Helion OpenStack allows you to extend Object Storage (Swift) cluster sin any of the followings ways:</p>
+<ul>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-storage-node.dita" >Add a New Scale-out Object Node</xref> </li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-proxy-node.dita" >Add a New Scale-out Proxy Node</xref>
+</li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-scale-out-object-ring.dita" >Add a Disk to a Scale-out Object Ring</xref>
+</li>
+<li>
+<xref href="../../../CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-account-container.dita" >Add a Disk to an Account and Container Ring</xref>
+</li>
+<li>
+<p>
+<xref href="../../../CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-swift-deployment-add-disk-starter-object-ring.dita" >Add a Disk to the Starter Object Ring</xref>
+</p>
+
+<p>
+<xref type="section" href="#topic749"> Return to Top </xref>
+</p>
+</li>
+</ul>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

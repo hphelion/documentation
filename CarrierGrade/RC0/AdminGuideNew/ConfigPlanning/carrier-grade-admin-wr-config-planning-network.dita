@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1221">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Planning the Network</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/ConfigPlanning/carrier-grade-admin-wr-config-planning-network.md-->
+ <!--permalink: /helion/openstack/carrier/config/plan/network/--></p>
+<!-- From the Titanium Server Admin Guide -->
+<p>When planning the deployment of the HP Helion OpenStack Carrier Grade, it is important to understand the available networking options and how to take advantage of them for the benefit of the end users. The sections that follow provide useful networking guidelines.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>This section contains the following topics:</p>
+<ul>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-management.dita" >Planning the Management Network</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-infrastructure.dita" >Planning the Infrastructure Network</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-board-mgmt.dita" >Planning the Board Management Network</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-oam.dita" >Planning the OAM Management Network</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-provider.dita" >Planning the Provider Management Networks</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-tenant.dita" >Planning the Tenant Management Networks</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-vrs.dita" >Planning for Virtual Routers</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-subnets.dita" >Planning for Subnets</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-guest-vlan.dita" >Planning for Guest VLANs</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-l2.dita" >Planning for L2 Access Switches</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-diff.dita" >Planning for DiffServ-Based Priority Queuing and Scheduling</xref>
+</li>
+<li>
+<xref href="../ConfigPlanning/carrier-grade-admin-wr-config-planning-network-qos.dita" >Planning for Quality of Service</xref>
+</li>
+</ul>
+<p>
+  <xref type="section" href="#topic1221"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

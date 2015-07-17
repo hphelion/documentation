@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1315">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Modifying Images</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Images/carrier-grade.dashboard.images.modify.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/images/modify/--></p>
+<p>You can modify images, as needed, to change the name and description of the image, or protect and un-protect the image.</p>
+<ul>
+<li>
+<xref type="section" href="#topic1315/edit">Modify an image</xref>
+</li>
+<li>
+<xref type="section" href="#topic1315/editmeta">Edit image metadata</xref>
+</li>
+</ul>
+<section id="edit"> <title>Modify an image</title>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Images</b> link.</p>
+</li>
+<li>
+<p>In the <b>Images</b> screen, click <b>Edit</b> next to the image you want to modify.</p>
+</li>
+<li>
+<p>Update the image information:</p>
+
+<ul>
+<li>Name - Enter a name for the image.</li>
+<li>Description - Optionally, enter a brief description of the image.</li>
+<li>Protected - Select this option to prevent the image from being deleted. Leave the option clear to allow the image to be deleted.</li>
+</ul>
+<p>
+<b>Note:</b> Fields that cannot be modified are shaded.</p>
+</li>
+</ol>
+<p>5, When complete, click <b>Update Image</b>.</p>
+</section>
+<section id="editmeta"> <title>Managing Metadata</title>
+<p>Compute uses a metadata service for virtual machine instances to retrieve instance-specific data.</p>
+<p>You can add and remove metadata for flavors, see <xref href="../MiscTasks/carrier-grade.dashboard.metadata.dita" >Managing Metadata</xref>.</p>
+<p>
+  <xref type="section" href="#topic1315"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

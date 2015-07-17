@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1469">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Enabling the Heartbeat API for a VM</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Flavors/carrier-grade.dashboard.domains.flavors.extra.api.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/flavors/extra/api/--></p>
+<p>You can accommodate the use of guest heartbeats on a VM using an extra specification.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>Select this option when you expect one or more of the guest applications running on the virtual machine to make use of the Titanium Server Heartbeat client API. For more information about the Heartbeat API, refer to the Titanium
+Server Software Development Kit. The controller node starts heartbeat application-level polling cycles on virtual machines launched using a flavor with this option selected.</p>
+<p>A guest application modified to use the Titanium Server Heartbeat client API can be more accurately monitored by
+internal messaging within the virtual machine.</p>
+<p>To add this extra spec to a flavor using the Horizon dashboard, use the VCPU Model selection in the <xref href="../Flavors/carrier-grade.dashboard.domains.flavors.extra.dita" >Create Flavor Extra Spec drop-down menu</xref>.</p>
+<p>To enable the heartbeat API using the CLI, use the following command:</p>
+<codeblock>
+  <codeph>    nova flavor-key flavor_name set
+    sw:wrs:guest:heartbeat=integer_value
+
+where integer_value is either 0 or 1.
+</codeph>
+</codeblock>
+<p>
+  <xref type="section" href="#topic1469"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

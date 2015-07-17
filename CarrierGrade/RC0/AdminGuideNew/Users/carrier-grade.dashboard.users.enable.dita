@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1270">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Disabling and Enabling Users</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Users/carrier-grade.dashboard.users.enable.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/users/enable/--></p>
+<p>Users can be disabled in the domain. After you disable a user, the user account remains in the domain, but cannot be used to log in.</p>
+<p>As an admin, you can <xref type="section" href="#topic1270/disableuser">disable</xref> and <xref type="section" href="#topic1270/enableuser">enable</xref> users, as needed.</p>
+<section id="disableuser"> <title>Disable a user</title>
+<p>To disable a user:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Identity</b> dashboard, then the <b>Users</b> link.</p>
+</li>
+<li>
+<p>In the <b>Users</b> screen, for the user you want to disable, click the arrow icon in the <b>Actions</b> menu and select <b>Disable User</b>.</p>
+
+<p>The user is disabled and cannot be used to log in.</p>
+</li>
+</ol>
+</section>
+<section id="enableuser"> <title>Enable a user</title>
+<p>To enable a user:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Identity</b> dashboard, then the <b>Users</b> link.</p>
+</li>
+<li>
+<p>In the <b>Users **screen, for the user you want to enable, click the arrow icon in the **Actions</b> menu and select <b>Enable User</b>.</p>
+
+<p>The user is enabled and can be used to log in.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1270"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

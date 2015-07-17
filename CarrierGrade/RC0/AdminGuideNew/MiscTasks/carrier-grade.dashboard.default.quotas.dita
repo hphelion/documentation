@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1382">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Managing Project Quotas</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/MiscTasks/carrier-grade.dashboard.default.quotas.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/quotas/--></p>
+<p>You can change the default values that appear for quotas when <xref href="../Projects/carrier-grade.dashboard.projects.create.dita" >creating a new project</xref>.</p>
+<p>To set default values:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Admin</b> dashboard, then the <b>System</b> panel, then the <b>Defaults</b> link.</p>
+</li>
+<li>
+<p>Edit any of the following values:</p>
+
+<ul>
+<li><b>Injected File Content Bytes</b> - Content bytes allowed for each injected file.</li>
+<li><b>Metadata Items</b> - Metadata items allowed for each instance.</li>
+<li><b>RAM (MB)</b> - RAM megabytes allowed for each instance.</li>
+<li><b>Keypairs</b> - Number of keypairs.</li>
+<li><b>Length of Injected File Path</b> - The length of the path to injected files.</li>
+<li><b>Instances</b> - Instances allowed for each project.</li>
+<li><b>Injected Files</b> - Injected files allowed for each project.</li>
+<li><b>VCPUs</b> - Instance cores allowed for each project.</li>
+<li><b>Total Size of Volumes and Snapshots</b> - Enter the maximum total size for all volumes and
+            snapshots allowed for the project.</li>
+<li><b>Snapshots</b> - Volume snapshots allowed for each project.</li>
+<li><b>Volumes</b> - Volumes allowed for each project.</li>
+</ul>
+</li>
+<li>
+<p>Click <b>Update Defaults</b>.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic1382"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

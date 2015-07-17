@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1693">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing HP StoreVirtual VSA</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack Carrier Grade"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Michael B, Paul F"/>
+<othermeta name="product-version1" content="HP Helion Openstack Carrier Grade"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa.old.md-->
+ <!--permalink: /helion/openstack/carrier/install/vsa/old/  --></p>
+<p>This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend. It covers the following topics:</p>
+<p>Use the following steps to install HP StoreVirtual VSA in your HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade cloud.</p>
+<ol>
+<li>
+<p>On the KVM host, change to the directory where your cloud is installed.</p>
+</li>
+<li>
+<p>Go to the folder where cloud is created.</p>
+</li>
+<li>
+<p>Change Directory to services/cinder/blocks/</p>
+
+<p>This folder contains a <codeph>cinder_conf_default.sample</codeph> file.</p>
+</li>
+<li>
+<p>Copy that file to <codeph>cinder_conf_default</codeph> using any standard method, such as the <codeph>cp</codeph> command:</p>
+
+<codeblock>
+<codeph>cp cinder_conf_default.sample cinder_conf_default
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Modify the <codeph>cinder_conf_default</codeph> with values based on your environment.</p>
+
+<p>The parameters in file are as follows. If required more parameters can be added to this file.</p>
+
+<codeblock>
+<codeph>hplefthand_username = &lt;username&gt;
+hplefthand_password = &lt;password&gt;
+hplefthand_clustername = &lt;Cluster Name&gt;
+hplefthand_api_url = https://&lt;Iscsi Virtual IP address&gt;/lhos
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Run the following command to copy the parameters in the <codeph>cinder_conf_default</codeph> to the <codeph>cinder.conf</codeph> file in the <codeph>CND-SVC</codeph> role.</p>
+
+<codeblock>
+<codeph>hcfgproc
+</codeph>
+</codeblock>
+</li>
+</ol>
+<p>The next time the <codeph>CND-SVC</codeph> role is implemented, the role will have the StoreVirtual Information.</p>
+<section id="next-steps"> <title>Next Step</title>
+<p>
+  <xref href="../../../CarrierGrade/AdminGuideNew/VSA/carrier.install-vsa-deploy.dita" >Deploying HP StoreVirtual VSA Storage Sytems</xref>
+</p>
+<p>
+  <xref type="section" href="#topic1693"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

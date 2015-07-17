@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4717">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Creating QOS Policies</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Networks/carrier-grade.dashboard.network.qos.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/network/qos/--></p>
+<p>Quality of Service (QoS) policies specify relative packet processing priorities applied by the AVS switch on each compute node to incoming tenant network's traffic during overload conditions.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>
+<b>Note:</b> This feature applies only to servers in the VNF Region.</p>
+<!-- ===================== horizontal rule ===================== -->
+<p>The QoS polices play no role under normal traffic loads, when no input traffic queues in the AVS are close to their
+overflow limits.</p>
+<p>QoS policies are created by the cluster administrator, and selected by the tenant users to apply on a per-tenant network basis.</p>
+<p>An admin user can create and delete QOS policies as needed.</p>
+<section id="create-a-qos-policy"> <title>Create a QOS policy</title>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Networks</b> link on the <b>Admin</b> dashboard <b>System</b> panel.</p>
+
+<p>The network(s) in the domain appear.</p>
+</li>
+<li>
+<p>On the <b>QOS Policies</b> tab, click the <b>Create QoS Policy</b> button:</p>
+
+<p>a. Enter a name for the policy.</p>
+
+<p>b. Enter a text description for the policy.</p>
+
+<p>c. Enter a sceduler weight.</p>
+
+<p>This is the relative weight the AVS traffic scheduler uses on overload conditions, as compared with the scheduler weight of all other QoS policies. See <xref type="section" href="#topic4717/weight">About scheduler weight</xref> below.</p>
+
+<p>d. Select a project.</p>
+
+<p>The new QoS policy is available to only the selected project. If no pronect is selected, it is available to all projects in the cluster.</p>
+
+<p>Project users can select available QoS policies when the tenant networks are created from the <xref href="../Networks/carrier-grade.dashboard.network.create.dita" >Create Network</xref> window and the Edit Network window.</p>
+
+<p>e. Enter a gateway IP address from the subnet or leave the <b>Gateway IP</b> field blank to use the default value for the gateway IP address; for example, 192.168.0.1 for 192.168.0.0/24.</p>
+
+<p>f. Leave <b>Disable Gateway</b> clear to enable the default gateway for this network, or select <b>Disable Gateway</b> to create the network with no default gateway.</p>
+</li>
+<li>
+<p>Click Next.</p>
+</li>
+<li>
+<p>On the Subnet Details tab:</p>
+
+<p>a Clear the <b>Enable DHCP</b> option, as needed, to not use the network as a DCHP. DHCP is enabled by default. If enabled, the subnet will serve as your DHCP server. Instances associated with the subnet will be assigned an IP address from this pool.</p>
+
+<p>b. Optionally, enter the starting and ending IP addresses you want for your DHCP allocation pool in the <b>Allocation Pools</b> field, in the format IP<i>ADDR,IP</i>ADDR. For example: 192.168.1.10,192.168.1.120. By deafult, the server has an application pool starting with 10.0.0.0/24.</p>
+
+<p>c. Optionally, enter the IP Address of your subnet in the <b>DNS Name Servers</b> field. If blank, your subnet will default to using HP's internal DNS which uses DNSMASQ.</p>
+
+<p>d. Optionally, enter the Destination CIDR and Next Hop for your subnet in the <b>Host Routes</b> field to create host routes.</p>
+</li>
+<li>
+<p>Click <b>Create</b>.</p>
+</li>
+</ol>
+</section>
+<section id="weight"> <title>About scheduler weight</title>
+<p>Scheduler weight is the relative weight the AVS traffic scheduler uses on overload conditions, as compared with the scheduler weight of all other QoS policies.</p>
+<p>The scheduler weight is a positive integer number associated with each QoS policy. On overload, the AVS schedules traffic processing for each tenant network according to its assigned QoS policy. By default, with no specific QoS policies defined, traffic from all tenant networks is processed in round-robin mode, one tenant network after another. Effectively, the default behavior is similar to assigning a scheduler weight of 1 to all tenant networks.</p>
+<p>When a specific QoS policy with a scheduler weight greater than 1 is applied to a tenant network, its traffic is scheduled with a relative higher frequency. For example, if the scheduler weight for tenant network A is 10, and the one for tenant network B is 100, then on overload, tenant network B will see its queued traffic processed 10 times as often as tenant network A.</p>
+<p>The handling of the scheduler weight is implemented as a per-packet token bucket for each tenant network. This means that each unit in the scheduler weight counts as one packet to be processed in sequence. In the previous example, the AVS processes 10 consecutive packets from tenant network A, followed by 100 packets from tenant network B. This implementation ensures a fair-share behavior that prevents any tenant network from running into total bandwidth starvation, even if its scheduler weight is relatively low.</p>
+<p>The range of values for the scheduler weight is arbitrary. You must however ensure that the values assigned to the different policies make sense for the intended applications.</p>
+<p>
+  <xref type="section" href="#topic4717"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

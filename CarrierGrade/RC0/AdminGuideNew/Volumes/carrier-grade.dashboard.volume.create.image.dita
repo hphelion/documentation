@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1501">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Creating a Image Using a Volume</title>
+<titlealts>
+<searchtitle>HP Helion Openstack Carrier Grade 1.1: Creating an Image from a Volume</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/AdminGuideNew/Volumes/carrier-grade.dashboard.volume.create.image.md-->
+ <!--permalink: /helion/commercial/carrier/dashboard/managing/volume/image/create/--></p>
+<p>You can use a volume to create a new virtual machine image.</p>
+<p>A <xref href="../Images/carrier-grade.managing.images.dita" >virtual machine image</xref> is a single file that contains a virtual disk with a bootable operating system installed on it. You can use images to create virtual machine instances within the cloud.</p>
+<p>To create a image:</p>
+<ol>
+<li>
+<p>
+<xref href="../Dashboard/carrier-grade.dashboard.launch.dita" >Launch the HP Helion OpenStack Horizon Dashboard</xref>.</p>
+</li>
+<li>
+<p>Click the <b>Project</b> dashboard, then the <b>System</b> panel, then the <b>Volumes</b> link.</p>
+</li>
+<li>
+<p>In the <b>Volumes</b> screen, for the volume you want for the image, click the arrow icon in the <b>Actions</b> menu and select <b>Upload to Image</b>.</p>
+</li>
+<li>
+<p>In the <b>Upload Volume to Image</b> dialog box, enter a name for the image and select a disk format.</p>
+
+<ul>
+<li>
+<b>raw</b> - An unstructured disk image format; if you have a file without an extension it is possibly a raw format.</li>
+<li>
+<b>qcow2</b> - Supported by the QEMU emulator that can expand dynamically and supports Copy on Write.</li>
+<li>
+<b>vdi</b> - Supported by VirtualBox virtual machine monitor and the QEMU emulator.</li>
+<li>
+<b>vmdk</b> - Common disk format supported by many common virtual machine monitors.</li>
+</ul>
+</li>
+<li>
+<p>Click <b>Upload</b>.</p>
+</li>
+</ol>
+<p>The image is created and is listed on the  <xref href="../Images/carrier-grade.managing.images.dita" >Images tab</xref>.</p>
+<p>
+  <xref type="section" href="#topic1501"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>
