@@ -43,12 +43,8 @@
 <li>
 <xref type="section" href="#topic1035/add_security">Add the RDP security group to the instance</xref>
 </li>
-<li>
-<xref type="section" href="#topic1035/get_pw_cloud">Retrieve the Windows instance password (Public Cloud)</xref>
-</li>
-<li>
-<xref type="section" href="#topic1035/get_pw_hos">Retrieve the Windows instance password (Helion OpenStack)</xref>
-</li>
+  <li><xref type="section" href="#topic1035/connect">Connect to the instance with Remote Desktop Connection</xref></li>
+
 </ul>
 <section id="create_security"> <title>Create an RDP Security Group</title>
   <ol>
@@ -70,18 +66,8 @@
         <image placement="break" href="../../../media/windows_remoting_add_security_2.png"></image></li>
     </ol>
   </section>
-  <section id="get_pw_cloud"><title>Retrieve the Windows instance password (Public Cloud)</title>
-    <ol>
-      <li>Select <b>Project</b>, <b>Instances</b>. In the Actions column for you instance, select <b>Retrieve Windows Password</b>.
-      <image placement="break" href="../../../media/windows_remoting_retrieve_password.PNG"></image></li>
-      <li>In the <b>Retrieve Windows Password</b> page, copy and paste the contents of your private key (pem) file. If you created the key with a password, provide the password as well. 
-      Click <b>Retrieve Windows Password</b>.
-        <image placement="break" href="../../../media/windows_remoting_retrieve_password_1.PNG"></image></li>
-      <li>The Windows password will be displayed.
-        <image placement="break" href="../../../media/windows_remoting_retrieve_password_2.PNG"></image></li>
-    </ol>
-  </section>
-  <section id="get_pw_hos"><title>Retrieve the Windows instance password (Helion OpenStack)</title>
-  </section>
+  <section id="connect"><title>Connect to the instance with Remote Desktop Connection</title></section>
+  To connect to the instance, enter the IP address, user name in the form <b></b>
+  
 </body>
 </topic>
