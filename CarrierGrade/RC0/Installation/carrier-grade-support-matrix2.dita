@@ -49,7 +49,7 @@
         <ul id="ul_mxb_gzd_ss">
           <li>If you are using Gen9 systens, you must update the firmware to HP Service Pack for
             ProLiant (SPP) Version 2015.06.0.</li>
-          <li>If you are using Gen8 systems, you will experience reduced performance. </li>
+          <li>If you are using Gen8 systems, you will experience reduced performance.</li>
         </ul></p>
       <p id="specs"><b>Required Specifications</b>
       </p>
@@ -259,7 +259,7 @@
       <p>The following tables list the hardware required for a complete HP Helion OpenStack Carrier
         Grade installation using GEN9 servers in a <xref href="#topic1773/rack" format="dita"
           >rackmount installation</xref> or an <xref href="#topic1773/enclosure" format="dita"
-          >enclosure</xref>. </p> 
+          >enclosure</xref>.</p> 
         <p id="rack"><b>GEN9 Rackmount Base</b></p>
       <table id="table_tgx_5k2_qs">
         <tgroup cols="2">
