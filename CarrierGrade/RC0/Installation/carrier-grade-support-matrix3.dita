@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1773">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1 RC0: Support Matrix</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Storage Architect"/>
+<othermeta name="role" content="Michael B,"/>
+<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-support-matrix.md-->
+ <!--permalink: /helion/openstack/carrier/support-matrix/--></p>
+<p>To ensure the performance and stability of the HP Helion OpenStack Carrier Grade, it is very
+      important to meet the requirements and conform to the recommendations listed in this document. <ul>
+        <li><xref href="#topic1773/hardware" format="dita">Supported Hardware</xref></li>
+        <li><xref href="#topic1773/hardware-config" format="dita">Required Hardware
+            Configuration</xref></li>
+        <li><xref href="#topic1773/typical" format="dita">Typical Configurations</xref></li>
+        <li><xref href="#topic1773/software" format="dita">Software Requirements</xref></li>
+        <li><xref href="#topic1773/guestOS" format="dita">Guest OS Support Matrix</xref></li>
+      </ul></p>
+    <section id="hardware"><title>Supported Hardware</title><p>The following servers are supported
+        for the <xref href="#topic1773/hlm" format="dita">HLM host</xref>, and for the <xref
+          href="#topic1773/controllers" format="dita">controllers</xref> and <xref
+          href="#topic1773/compute" format="dita">compute servers</xref>.</p>
+      <b id="hlm">HLM Host</b>
+      <p>The HLM host is a single server with at least a 20 GB disk size and 4,096 MB RAM.</p><p
+        id="controllers"><b>Comtrollers and compute servers</b></p><p>The following servers are
+        supported for the controllers and compute servers in both the <xref
+          href="../Overview/carrier-grade-overview-non-kvm.dita#topic1495">Non-KVM region</xref> and
+          <xref href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>. The
+        servers must meet the specifications in <xref href="#topic1773/specs" format="dita">the
+          Required Specifications table below</xref>:</p>
+      <p><b>Controller:</b></p><ul>
+        <li>DL360 (Gen 9 or Gen 8)</li>
+        <li>DL380 (Gen 9 or Gen 8)</li>
+      </ul><p><b>Compute:</b></p><ul>
+        <li>DL360 (Gen 9 or Gen 8)</li>
+        <li>DL380 (Gen 9 or Gen 8)</li>
+        <li>BL460 (Gen 9 or Gen 8)</li>
+      </ul><p><b>Notes:</b>
+        <ul id="ul_mxb_gzd_ss">
+          <li>If you are using Gen9 systens, you must update the firmware to HP Service Pack for
+            ProLiant (SPP) Version 2015.06.0.</li>
+          <li>If you are using Gen8 systems, you will experience reduced performance. </li>
+        </ul></p>
+      <p id="specs"><b>Required Specifications</b>
+      </p>
+      <p>The following table lists the specifications for each type of server. </p><p>
+        <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
+          <tgroup cols="3">
+            <colspec colname="c1" colnum="1" colwidth="1*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.29*"/>
+            <colspec colname="c4" colnum="3" colwidth="4.18*"/>
+            <thead>
+              <row>
+                <entry>Server</entry>
+                <entry>Used for</entry>
+                <entry>Requirements</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry namest="c1" nameend="c4"><b>HP ProLiant Rack Servers</b></entry>
+              </row>
+              <row>
+                <entry morerows="1">DL360 Gen9<p>DL380 Gen9</p></entry>
+                <entry>
+                  <ul>
+                    <li>Controller</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul>
+                    <li>2 x Intel Xeon® E5-2640v3</li>
+                    <li>8 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                    <li>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                    <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP</li>
+                    <li>1 x Smart Array P440ar/2G FIO Controller</li>
+                  </ul>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <ul>
+                    <li>Compute</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul>
+                    <li>2 x Intel Xeon® E5-2680v3</li>
+                    <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                    <li>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                    <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP</li>
+                    <li>1 x Smart Array P440ar/2G FIO Controller/2 x Ethernet 10Gb 2P 560SFP</li>
+                  </ul>
+                </entry>
+              </row>
+              <row>
+                <entry morerows="1">DL360 Gen8<p>DL380 Gen8</p></entry>
+                <entry>
+                  <ul>
+                    <li>Controller</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul id="ul_g1f_qyd_ss">
+                    <li>2 x Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.6GHz</li>
+                    <li>128 GB DDR3 1600 MHz</li>
+                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>OR</b></li>
+                    <li>HP FlexFabric 10Gb 2port 534FLR-SFP+ Adapter</li>
+                  </ul>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <ul id="ul_owp_vh2_ss">
+                    <li>Compute</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul>
+                    <li>2 x Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.8GHz </li>
+                    <li>256 GB DDR3 1600 MHz </li>
+                    <li>HP FlexFabric 10Gb 2port 554FLR-SFP+ Adapter <b>AND</b></li>
+                    <li>HP Ethernet 10Gb 2-port 560SFP+ Adapter </li>
+                  </ul>
+                </entry>
+              </row>
+              <row>
+                <entry namest="c1" nameend="c4">
+                  <b>HP ProLiant BladeSystem</b>
+                </entry>
+              </row>
+              <row>
+                <entry>BL460c Gen9</entry>
+                <entry>
+                  <ul>
+                    <li>Compute</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul>
+                    <li>2 x Intel® Xeon® E5-2680v3</li>
+                    <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
+                    <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                    <li>1 x Smart Array P244br/1GB FBWC</li>
+                    <li>1 x HP FlexFabric 20Gb 2-port 650FLB</li>
+                    <li>1 x HP Ethernet 10Gb 2-port 560M Adapter</li>
+                  </ul>
+                </entry>
+              </row>
+              <row>
+                <entry>BL460c Gen8</entry>
+                <entry>
+                  <ul>
+                    <li>Compute</li>
+                  </ul>
+                </entry>
+                <entry>
+                  <ul>
+                    <li>2 x Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.8GHz</li>
+                    <li>256 GB DDR3 1600 MHz </li>
+                    <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
+                    <li>1 x HP FlexFabric 10Gb 2port 554FLB-SFP+ Adapter <b>and</b></li>
+                    <li>1 x HP Ethernet 10Gb 2-port 560M Adapter</li>
+                  </ul>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </p>
+      <!--<p>
+        <b>HP ProLiant Rack Servers</b>
+      </p><ul>
+        <li>DL360 Gen9</li>
+        <li>DL380 Gen9</li>
+        <li>DL360 Gen8</li>
+        <li>DL380 Gen8 </li>
+      </ul><p><b>Note:</b> If you are using Gen9 systens, you must update the firmware to HP Service
+        Pack for ProLiant (SPP) Version 2015.06.0. </p><p id="compute"><b>Compute servers</b>
+      </p><p>The following servers are supported for the compute servers in the <xref
+          href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>. </p><p>
+        <b>HP ProLiant BladeSystem</b>
+      </p><ul id="ul_er1_sc2_qs">
+        <li>BL460c Gen8</li>
+        <li>BL460c Gen9 </li>
+      </ul><p>
+        <b>HP ProLiant Rack Servers</b>
+      </p><ul id="ul_l4s_pc2_qs">
+        <li>DL360 Gen9</li>
+        <li>DL380 Gen9</li>
+        <li>DL360 Gen8</li>
+        <li>DL380 Gen8</li>
+      </ul>
+      <p><b>Note:</b> If you are using Gen9 systems, you must update the firmware to HP Service Pack
+        for ProLiant (SPP) Version 2015.06.0. </p>
+--></section>
+  <section id="hardware-config">
+      <title>Required Hardware Configuration </title><p>The following hardware, configured as
+        listed, is required for the <xref href="#topic1773/hlm-config" format="dita">HLM host</xref>, the
+        <xref href="#topic1773/non-kvm-config" format="dita">Non-KVM region</xref>, 
+        and <xref href="#topic1773/kvm-config" format="dita">KVM region</xref>.</p>
+    
+    <p id="hlm-config"><b>HLM Host</b></p>
+    <p>You must have the a server with a 20GB Disk and 4,096 MB RAM for the HLM host.</p>
+            
+          <p id="non-kvm-config"><b>Non-KVM Region</b></p>
+      <p>You must have the following hardware configuration for the Non-KVM region:</p><ul>
+        <li>
+          <p>3 <xref href="#topic1773/controllers" format="dita">baremetal systems</xref> for controllers that meet the following requirements:</p>
+          <ul id="ul_s1h_432_qs">
+            <li>For systems with multiple NICs, only one NIC may be active or connected. </li>
+            <li>Capable of hosting VMs</li>
+            <!--Remove for RC0 <li>For Compute nodes, Intel or AMD hardware virtualization support required. The CPU
+              cores and memory requirements must be sized based on the VM instances hosted by the
+              Compute node.</li>-->
+          </ul>
+          <p>
+            <b>Important:</b> Since the installer currently uses only the first available disk, all
+            servers must have RAID controllers pre-configured to present their storage as a single,
+            logical disk. RAID across multiple physical discs is strongly recommended for both
+            performance and resilience.</p>
+          <p>Notes:</p>
+            <ul>
+              <li>On the controller nodes, make sure the RAID array is configured to reflect a total size
+            of less than 4TB.</li>
+              <li>The root volume cannot exceed 2TB</li>
+            </ul></li></ul>
+    <p id="kvm-config"><b>KVM Region</b></p>
+    <p>You must have the following hardware configuration for the KVM region:</p>
+          <ul>
+          <li>2 <xref href="#topic1773/controllers" format="dita">baremetal systems</xref>. <p>For
+            systems with multiple NICs, only one NIC may be active or connected. </p></li>
+        <li>2 <xref href="#topic1773/compute" format="dita">compute nodes</xref></li>
+      </ul></section>
+    <section>
+      <p>The following NICs have been verified for PXE booting of KVM region servers:</p>
+      <ul id="ul_sdq_q1f_qs">
+        <li>
+          <p>Emulex 10G</p>
+        </li>
+        <li>
+          <p>Intel 82599</p>
+        </li>
+      </ul>
+    </section>
+  
+  <section id="typical">
+    <title>Typical Configurations</title>
+      <p>The following tables list the hardware required for a complete HP Helion OpenStack Carrier
+        Grade installation using GEN9 servers in a <xref href="#topic1773/rack" format="dita"
+          >rackmount installation</xref> or an <xref href="#topic1773/enclosure" format="dita"
+          >enclosure</xref>. </p> 
+        <p id="rack"><b>GEN9 Rackmount Base</b></p>
+      <table id="table_tgx_5k2_qs">
+        <tgroup cols="2">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <thead>
+            <row>
+              <entry>Component</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>16 x DL360 G9 (Compute)</entry>
+              <entry>See <xref href="#topic1773/specs" format="dita">Required
+                Specifications</xref>.</entry>
+            </row>
+            <row>
+              <entry>6 x DL360 G9(Control)</entry>
+              <entry> See <xref href="#topic1773/specs" format="dita">Required
+                Specifications</xref>. </entry>
+            </row>
+            <row>
+              <entry>TOR Switches</entry>
+              <entry>
+                <ul id="ul_wgx_5k2_qs">
+                  <li>6 x 5920AF-24XG Switch</li>
+                  <li>2 x FF 5930-32QSFP+ Switch</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>Storage</entry>
+              <entry>
+                <p> 1 x 3PAR 7400 </p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    <p id="enclosure"><b>GEN9 Enclosure Based</b></p>
+      <table id="table_xyv_xcs_ns">
+        <tgroup cols="2">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <thead>
+            <row>
+              <entry>Component</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>2 x C7000 Enclosure (Compute) </entry>
+              <entry>
+                <ul id="ul_q2d_bns_ns">
+                  <li>2 x Virtual Connect FlexFabric-20/40 F8 Module</li>
+                  <li>4 x 6125XLG Blade Switch</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <p>16 x BL460 G9 (Compute) </p>
+              </entry>
+              <entry> See <xref href="#topic1773/specs" format="dita">Required
+                Specifications</xref>. </entry>
+            </row>
+            <row>
+              <entry>
+                <p>6 x DL360 G9 (Control)</p>
+              </entry>
+              <entry> See <xref href="#topic1773/specs" format="dita">Required
+                Specifications</xref>. </entry>
+            </row>
+            <row>
+              <entry>TOR Switches </entry>
+              <entry>
+                <ul id="ul_ygx_5k2_qs">
+                  <li>4 x 5920AF-24XG Switch</li>
+                  <li>2 x FF 5930-32QSFP+ Switch</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry>Storage</entry>
+              <entry>
+                <p>
+                  <ul id="ul_ilg_fns_ns">
+                    <li>1 x 3PAR 7400 </li>
+                  </ul>
+                </p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+  </section>
+  
+<section id="software">
+      <title>Software Requirements</title>
+      <p>The HLM host require the Ubuntu Server 14.04.2 LTS operating system.  </p></section>
+  
+  <section id="guestOS">
+      <title>Guest OS Support Matrix</title> The following guest operating systems are supported for
+      the HP Helion OpenStack Carrier Grade servers. <p><b>Non-KVM region</b></p>There are no
+      supported Guest OSs for the servers in the Non-KVM region. <p><b>KVM region</b></p><p>The
+        following Guest OSs are supported for the servers in the KVM region: </p><ul
+        id="ul_sty_hd2_qs">
+        <li>
+          <p>WindRiver Linux 6.0</p>
+        </li>
+        <li>
+          <p>WindRiver Linux 5.0</p>
+        </li>
+        <li>
+          <p>CentOS 6.4</p>
+        </li>
+        <li>
+          <p>Fedora 19</p>
+        </li>
+        <li>
+          <p>RHEL 6.5</p>
+        </li>
+        <li>
+          <p>OpenSUSE 12.3 </p>
+        </li>
+      </ul><p>Requirements for specific guest OSs are included in the SDK README
+      files.</p></section>
+<!-- 
+  <section id="support-matrix-for-hp-distributed-cloud-networking-dcn-host"> <title>Support Matrix for HP Distributed Cloud Networking (DCN) host</title>
+<p>For key requirements needed HP Distributed Cloud Networking (DCN), see <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-dcn.dita" >Support Matrix for HP Distributed Cloud Networking</xref>.</p>
+</section>  -->
+
+  <section id="next"> <title>Next step</title>
+    <p>Review the <xref href="carrier-grade-technical-overview.dita#topic3485">Technical Overview</xref>.</p>
+    <p>
+      <xref type="section" href="#topic3485"> Return to Top </xref>
+    </p>
+  </section>
+  <!-- ===================== horizontal rule ===================== -->
+
+</body>
+</topic>
