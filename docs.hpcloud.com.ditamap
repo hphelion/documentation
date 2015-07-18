@@ -1875,41 +1875,29 @@
     </topicref>  -->
   </topicref>
   <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1  RC0">
-    <topicref href="CarrierGrade/RC0/carrier-grade-index.dita">
-      <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333830215.xml">
-        <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333830815.xml"/>
-        <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333831397.xml"/>
-        <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333831977.xml"/>
-        <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1430312565268.xml"/>
-      </topicref>
-      <topicref href="CarrierGrade/RC0/Overview/carrier-grade-overview.dita">
-        <topicref href="CarrierGrade/RC0/Overview/carrier-grade-overview-non-kvm.dita"/>
-        <topicref href="CarrierGrade/RC0/Overview/carrier-grade-overview-kvm.dita"/>
-        <topicref href="CarrierGrade/RC0/Overview/carrier-grade.services-overview.dita"/>
-      </topicref>
-      <topicref href="CarrierGrade/RC0/Installation/carrier-grade-technical-overview.dita"/>
-      <topicref href="CarrierGrade/RC0/Installation/carrier-grade-technical-specs.dita"/>
-      <topicref href="CarrierGrade/RC0/Installation/carrier-grade-support-matrix2.dita"/>
-      <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-pb-overview.dita">
-        <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-pb-prereqs.dita">
-          <topicref
-            href="CarrierGrade/RC0/Installation/carrier-grade-install-pb-network-prepare.dita"/>
-          <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-NTP.dita"/>
-        </topicref>
-        <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-non-kvm.dita"/>
-        <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-kvm-cloud-rc0.dita">
-          <topicref
-            href="CarrierGrade/RC0/Installation/carrier-grade-install-kvm-network-interface.dita"/>
-        </topicref>
-      </topicref>
-      <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1 RC0: Administrator Guide">
-        <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf"/>
-      </topichead>
-      <topichead
-        navtitle="HP Helion OpenStack Carrier Grade 1.1 RC0: Software Development Kit Manual">
-        <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-SDK-1.1.pdf" format="pdf"/>
-      </topichead>
+    <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333830215.xml">
+      <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333830815.xml"/>
+      <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333831397.xml"/>
+      <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333831977.xml"/>
+      <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1430312565268.xml"/>
     </topicref>
+    <topicref href="CarrierGrade/RC0/Installation/carrier-grade-technical-overview.dita"/>
+    <topicref href="CarrierGrade/RC0/Installation/carrier-grade-technical-specs.dita"/>
+    <topicref href="CarrierGrade/RC0/Installation/carrier-grade-support-matrix2.dita"/>
+    <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-pb-overview.dita">
+      <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-pb-prereqs.dita">
+        <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-pb-network-prepare.dita"/>
+        <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-NTP.dita"/>
+      </topicref>
+      <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-non-kvm.dita"/>
+      <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-kvm-cloud-rc0.dita">
+        <topicref
+          href="CarrierGrade/RC0/Installation/carrier-grade-install-kvm-network-interface.dita"/>
+      </topicref>
+    </topicref>
+    <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1 RC0: Administrator Guide">
+      <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf"/>
+    </topichead>
   </topichead>
   
 </map>
