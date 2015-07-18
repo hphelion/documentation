@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3485">
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic3485">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1 RC0: Technical Overview</title>
 <prolog>
 <metadata>
@@ -34,17 +33,14 @@
       </li>
     </ul>
     <p>For more information on the HP Helion OpenStack Carrier Grade environment, also see the
-      Reference Logical Architecture section in the <xref
-        href="http://docs-staging.hpcloud.com/DRAFT/PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
-        format="pdf" scope="external">HP Helion OpenStack Carrier Grade 1.1: Administrator
+      Reference Logical Architecture section in the <xref href="http://docs-staging.hpcloud.com/DRAFT/PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf" scope="external">HP Helion OpenStack Carrier Grade 1.1: Administrator
         Guide</xref>.</p>
     <section id="Helion-services">
       <title>Services overview</title>
       <p>HP Helion OpenStack Carrier Grade is comprised of several integrated OpenStack services.
         Each service works through an API (application programming interface) that allows services
         to work together and allows users to interact with the services. For a complete description
-        of these services, see the <xref
-          href="../../../CarrierGrade/Overview/carrier-grade.services-overview.dita">Services
+        of these services, see the <xref href="../../../CarrierGrade/Overview/carrier-grade.services-overview.dita">Services
           Overview</xref> page.</p>
     </section>
     <section id="deploy-arch">
@@ -58,9 +54,7 @@
     </section>
     <section id="networkarch">
       <title>Network architecture</title>
-      <p>The following information describes the network configuration for the <xref type="section"
-          href="#topic3485/physical">physical networks</xref> and <xref type="section"
-          href="#topic3485/virtual">virtual networks</xref>, which must be configured by the network
+      <p>The following information describes the network configuration for the <xref type="section" href="#topic3485/physical">physical networks</xref> and <xref type="section" href="#topic3485/virtual">virtual networks</xref>, which must be configured by the network
         administrator.</p>
       <table>
         <tgroup cols="2">
@@ -330,8 +324,7 @@
       network, and the controller uses the OAM network to connect to them.</p></section>
     <section id="next">
       <title>Next step</title>
-      <p><xref href="carrier-grade-install-pb-prereqs.dita#topic7148">Installation
-          Prerequisites</xref></p>
+      <p><xref href="carrier-grade-technical-specs.dita#topic3485">Technical Specifications</xref></p>
       <p>
         <xref type="section" href="#topic3485"> Return to Top </xref>
       </p>
