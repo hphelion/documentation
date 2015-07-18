@@ -259,7 +259,7 @@
       <p>The following tables list the hardware required for a complete HP Helion OpenStack Carrier
         Grade installation using GEN9 servers in a <xref href="#topic1773/rack" format="dita"
           >rackmount installation</xref> or an <xref href="#topic1773/enclosure" format="dita"
-          >enclosure</xref>.</p> 
+          >enclosure</xref>. </p> 
         <p id="rack"><b>GEN9 Rackmount Base</b></p>
       <table id="table_tgx_5k2_qs">
         <tgroup cols="2">
