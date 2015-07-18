@@ -44,7 +44,7 @@
         Each service works through an API (application programming interface) that allows services
         to work together and allows users to interact with the services. For a complete description
         of these services, see the <xref
-          href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">Services
+          href="../../../CarrierGrade/Overview/carrier-grade.services-overview.dita">Services
           Overview</xref> page.</p>
     </section>
     <section id="deploy-arch">
@@ -53,7 +53,7 @@
         Carrier Grade.</p>
       <!-- This image is for RC0 release only. Replace for GA -->
       <p>
-        <image href="../../media/CGH-architecture-rc0.png" width="800"/></p>
+        <image href="../../../media/CGH-architecture-rc0.png" width="800"/></p>
       <p>The following sections describe essential aspects of this diagram.</p>
     </section>
     <section id="networkarch">
