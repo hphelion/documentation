@@ -18,7 +18,12 @@
   <!--permalink: /-->
   <topicref href="publiccloud/index.dita"/>
   <topichead navtitle="HP Helion OpenStack 2.0">
+    <topichead navtitle="HP Helion OpenStack Services">
+    <topichead navtitle="Monasca">
     <topicref href="commercial/GA2/Monasca/2.0commercial.services-monasca.dita"></topicref>
+    <topicref href="commercial/GA2/Monasca/2.0commercial.services-multidisk.dita></topicref>
+  </topichead>
+    </topichead>
   </topichead>
   <topicref href="commercial/GA1/1.1commercial.index.dita"
     navtitle="HP Helion OpenStack 1.1.1 and 1.1" locktitle="yes">
