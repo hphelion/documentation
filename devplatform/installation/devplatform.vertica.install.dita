@@ -58,7 +58,7 @@
 </ul>
 </section>
 <section id="prereq"> <title>Prerequisites</title>
-<p>Install the Marketplace component of the <xref scope="local" format="dita" href="1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref> during the Development Platform install process.</p>
+<p>Install the Marketplace component of the <xref scope="local" format="dita" href="installation/devplatform_commercial_install.dita" >HP Helion Development Platform</xref> during the Development Platform install process.</p>
 </section>
 <section id="install"> <title>Installing a Package</title>
 <p>In this example, the package being installed is the Vertica 7 Community Edition package.</p>

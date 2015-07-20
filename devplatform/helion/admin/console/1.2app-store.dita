@@ -51,7 +51,7 @@ config</xref>.</p>
 </section>
 <section id="app-store-definition"> <title>Sample Applications Definition File</title>
 <p>
-  <xref href="../../../../../devplatform/helion/user/reference/1.2glossary.dita#topic6187/term-YAML" type="section"   >YAML</xref> files describe the settings for each set of apps, including the container and a link to the source  repository for
+  <xref href="../../user/reference/1.2glossary.dita#topic6187/term-YAML" type="section"   >YAML</xref> files describe the settings for each set of apps, including the container and a link to the source  repository for
 each app. For example:</p>
 <codeblock>store:
   title: Third Party Apps for Application Lifecycle Service Development Platform
@@ -137,7 +137,7 @@ and <b>apps</b>.</p>
 <dt>
 <b>framework</b>
 </dt>
-  <dd>The framework the app uses, if the app is deployed using the <xref href="../../../../../devplatform/helion/user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks" type="section"   >Legacy Buildpack</xref>(e.g. perl, python, node, rails3).</dd>
+  <dd>The framework the app uses, if the app is deployed using the <xref href="../../user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks" type="section"   >Legacy Buildpack</xref>(e.g. perl, python, node, rails3).</dd>
 </dlentry>
 
 
@@ -180,7 +180,7 @@ URL, <b>default</b>, or other variable value.</dd>
 <dt>
 <b>runtime</b>
 </dt>
-  <dd>The runtime, if the app is deployed using the <xref href="../../../../../devplatform/helion/user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks" type="section"   >Legacy Buildpack</xref> (e.g. java, python32, ruby19, php, perl518).
+  <dd>The runtime, if the app is deployed using the <xref href="../../user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks" type="section"   >Legacy Buildpack</xref> (e.g. java, python32, ruby19, php, perl518).
 <b>services</b>
 </dd>
 <dd>Data services required by the app.</dd>
@@ -198,7 +198,7 @@ any web server at a URL accessible from the Cloud Controller.</p>
 </section>
 <section id="adding-the-app-store-to-helion"> <title>Adding the Sample Applications to Application Lifecycle Service</title>
 <ol>
-<li>Log into the <xref href="../../../../../devplatform/helion/user/console/1.2index.dita">Management
+<li>Log into the <xref href="1.2index.dita">Management
 Console</xref>,</li>
 <li>Select <b>Settings &gt; Cloud Controller</b> from the menu.</li>
 <li>In the <b>Sample Applications URLs</b> section, enter a name and content URL for
@@ -206,7 +206,7 @@ your store definition YAML file then click <b>Add Sample Applications URL</b>.</
 </ol>
 <p>To confirm the Sample Applications are loading correctly, select <b>Sample Applications</b> in the menu and view the list of applications displayed. A <b>CC Catalog Manager</b> error appears in the Event Log if a Sample Applications URL fails to load.</p>
 <p>Sample Applications URLs can also be viewed, added, deleted, enabled, and disabled
-  with <xref href="../../../../../devplatform/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >kato config</xref>. For
+  with <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >kato config</xref>. For
 example:</p>
 <codeblock>kato config get cloud_controller_ng app_store</codeblock>
 </section>

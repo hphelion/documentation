@@ -24,7 +24,7 @@
 <p>This very simple PHP web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS and interact with it. Use this sample to ensure that you have set up your environment correctly for connecting to and working with RabbitMQ on the Helion Development Platform.</p>
 <section id="prereq"> <title>Prerequisites</title>
 <ul>
-<li>An installation of the <xref href="../../../../devplatform/1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref>.</li>
+<li>An installation of the <xref href="../../../../devplatform/installation/devplatform_commercial_install.dita" >HP Helion Development Platform</xref>.</li>
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../../../devplatform/helion/admin/cluster/1.2index.dita" >Cluster</xref>
 </li>
 <li>Access to the <xref href="../../../../devplatform/helion/user/client/1.2index.dita" >Helion command-line client (CLI)</xref>.</li>

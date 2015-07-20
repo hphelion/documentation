@@ -116,7 +116,7 @@ number of ways:</p>
 <p>The manifest.yml file can define a lot of application-specific details
 that tell the Application Lifecycle Service Client what to do without having to enter them
 when you run <codeph>helion push</codeph>. For complete details
-for using the <i>manifest.yml</i> file, please see <xref href="../../../../../devplatform/helion/user/deploy/1.2manifestyml.dita" >Configuration With
+for using the <i>manifest.yml</i> file, please see <xref href="../deploy/1.2manifestyml.dita" >Configuration With
 <i>manifest.yml</i>
 </xref>.</p>
 <p>A simple example telling the Application Lifecycle Service Client to request a MySQL database named
