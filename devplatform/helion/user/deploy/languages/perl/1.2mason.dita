@@ -77,7 +77,7 @@ builder {
         enable "Plack::Middleware::ReverseProxy";
         $app;
 };</codeblock>
-<p>The <i>manifest.yml</i> file contains deployment instructions for Application Lifecycle Service. See complete details for this file in the <xref href="../../../../../../../devplatform/helion/user/deploy/1.2manifestyml.dita" >
+<p>The <i>manifest.yml</i> file contains deployment instructions for Application Lifecycle Service. See complete details for this file in the <xref href="../../1.2manifestyml.dita" >
 <i>Configuration With manifest.yml</i>
 </xref> section.</p>
 <section id="examples"> <title>Examples</title>

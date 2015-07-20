@@ -32,7 +32,7 @@
           node migrate</xref> or <xref
           href="1.2kato-ref.dita#topic39432/kato-command-ref-op-static_ip">kato op static ip</xref>
         on the Core node, then <xref
-          href="../../../../../devplatform/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section" >kato node attach</xref> on all other cluster nodes to set
+          href="1.2kato-ref.dita#topic39432/kato-command-ref-node-attach" type="section" >kato node attach</xref> on all other cluster nodes to set
         the new MBUS IP.</p>
 </section>
 <section id="adding-new-relic-repositories"> <title>Adding New Relic Repositories</title>
@@ -40,7 +40,7 @@
 <p>To allow end users to install these packages in the <xref
           href="../../user/deploy/1.2manifestyml.dita#topic20922/requirements">requirements</xref>
         section of their application config, admins should <xref
-          href="../../../../../devplatform/helion/admin/server/1.2configuration.dita#topic31232/allowed-repositories"
+          href="../server/1.2configuration.dita#topic31232/allowed-repositories"
           type="section" >add New Relic repository URLS and keys</xref> to the
         system configuration.</p>
 </section>

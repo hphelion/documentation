@@ -72,7 +72,7 @@
 </li>
 <li>The latest stable Virtio driver: <xref href="https://fedorapeople.org/groups/virt/virtio-win/deprecated-isos/stable/virtio-win-0.1-81.iso" scope="external" format="html" >Download</xref>
 </li>
-<li>Download and extract the Glazier tool: <xref href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip" scope="external" format="html" >Download</xref>. For more information about Glazier, see the <xref href="../../../devplatform/windows/windows_glazier_reference_guide.dita" >Glazier Reference Guide</xref>.</li>
+<li>Download and extract the Glazier tool: <xref href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip" scope="external" format="html" >Download</xref>. For more information about Glazier, see the <xref href="windows_glazier_reference_guide.dita" >Glazier Reference Guide</xref>.</li>
 </ul>
 </section>
 <section id="setup-information-needed"> <title>Setup Information Needed</title>
@@ -83,94 +83,58 @@
 <p>The certificate for the target Helion OpenStack environment. To retrieve this certificate, do the following:</p>
 
 <ol>
-<li>
-<p>Find the IP address for <codeph>controller0</codeph>:</p>
-
-<codeblock>
-<codeph>OVERCLOUD_CONTROLLER=$(ssh root@192.0.2.1 -C ' export TE_DATAFILE=~/tripleo/ce_env.json; source ~/tripleo/tripleo-incubator/undercloudrc; nova list |grep controller0 |cut -d= -f2 |cut -d" " -f1')
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Copy the CA Certificate locally:</p>
-
-<codeblock>
-<codeph>scp -o StrictHostKeyChecking=no $OVERCLOUD_CONTROLLER:/usr/local/share/ca-certificates/ephemeralca-cacert.crt /root/ephemeralca-cacert.crt. 
-</codeph>
-</codeblock>
-
-<p>The path to the certificate must be set in the OS_CACERT environment variable.</p>
-</li>
+<li>Find the IP address for
+              <codeph>controller0</codeph>:<codeblock>OVERCLOUD_CONTROLLER=$(ssh root@192.0.2.1 -C ' export TE_DATAFILE=~/tripleo/ce_env.json; source ~/tripleo/tripleo-incubator/undercloudrc; nova list |grep controller0 |cut -d= -f2 |cut -d" " -f1')</codeblock></li>
+<li> Copy the CA Certificate
+                locally:<codeblock>scp -o StrictHostKeyChecking=no $OVERCLOUD_CONTROLLER:/usr/local/share/ca-certificates/ephemeralca-cacert.crt /root/ephemeralca-cacert.crt. </codeblock><p>The
+                path to the certificate must be set in the OS_CACERT environment variable.</p></li>
 </ol>
 </li>
 </ul>
 </section>
 <section id="creating-and-uploading-images"> <title>Creating and uploading images</title>
 <p>
-<b>Note:</b> A Windows DEA and a SQL Server <b>cannot</b> both exist on the same image. You will need to create an image for each one.</p>
+        <note>A Windows DEA and a SQL Server <b>cannot</b> both exist on the same image. You will
+          need to create an image for each one.</note>
+      </p>
 </section>
 <section id="step-1-create-a-glazier-virtual-machine"> <title>Step 1: Create a Glazier Virtual Machine</title>
 <p>This VM is used to create the images for the guest OS.</p>
 <ol>
 <li>Open Terminal and change to the Glazier directory where you extracted the tool.</li>
-<li>
-<p>Run the <codeph>create-glazier</codeph> command (To verify your parameters before starting the tool, you can use the <codeph>--dry-run</codeph> command line switch.)</p>
-
-<codeblock>
-./create-glazier \
+<li> Run the <codeph>create-glazier</codeph> command (To verify your parameters before starting the
+          tool, you can use the <codeph>--dry-run</codeph> command line
+          switch.)<codeblock>./create-glazier \
     --windows-iso &lt;path to Windows Server 2012R2 iso&gt; \
     --virtio-iso &lt;path to VirtIO iso&gt; \
     --product-key &lt;Windows Product Key&gt; \
     --os-network-id &lt;os network ID; found in Horizon on the Network Detail page under Project -&gt; Network -&gt; Networks -&gt; (select network name) &gt; \
     --os-key-name &lt;os key pair name&gt; 
     --os-security-group &lt;os security group; e.g Default&gt; \
-    --os-flavor &lt;os flavor name: e.g. m1.small&gt; \
-</codeblock>
-</li>
+    --os-flavor &lt;os flavor name: e.g. m1.small&gt; \</codeblock></li>
 <li>When the tool finishes, you will see a command prompt open in a Virtual Box instance. </li>
 </ol>
 </section>
 <section id="step-2-create-and-initialize-the-os-windows-dea-image"> <title>Step 2: Create and Initialize the OS Windows DEA Image</title>
 <ol>
-<li>
-<p>In the Glazier VM command prompt that opens after the end of the previous step, run the following command:</p>
-
-<codeblock>
-<codeph>New-Image -name "windows2012r2-windea" -GlazierProfilePath "windea"
-</codeph>
-</codeblock>
-</li>
+<li> In the Glazier VM command prompt that opens after the end of the previous step, run the
+          following
+          command:<codeblock>New-Image -name "windows2012r2-windea" -GlazierProfilePath "windea"</codeblock></li>
 <li>Once the image gets created, the image will be initialized automatically.</li>
 </ol>
 </section>
 <section id="step-3-create-and-initialize-the-os-sql-server-express-2012-image-optional"> <title>Step 3: Create and Initialize the OS SQL Server Express 2012 Image (Optional)</title>
 <ol>
-<li>
-<p>In the Glazier VM command prompt, run the following command:</p>
-
-<codeblock>
-<codeph>New-Image -name "windows 2012r2-sql2012" -GlazierProfilePath "mssql2012"
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Once the image gets created, the image will be initialized automatically.</p>
-</li>
+<li> In the Glazier VM command prompt, run the following
+          command:<codeblock>New-Image -name "windows 2012r2-sql2012" -GlazierProfilePath "mssql2012"</codeblock></li>
+<li> Once the image gets created, the image will be initialized automatically.</li>
 </ol>
 </section>
 <section id="step-4-create-and-initialize-the-os-sql-server-express-2014-image-optional"> <title>Step 4: Create and Initialize the OS SQL Server Express 2014 Image (Optional)</title>
 <ol>
-<li>
-<p>In the Glazier VM command prompt, run the following command:</p>
-
-<codeblock>
-<codeph>New-Image -name "windows 2012r2-sql2014" -GlazierProfilePath "mssql2014"
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Once the image gets created, the image will be initialized automatically.</p>
-</li>
+<li> In the Glazier VM command prompt, run the following
+          command:<codeblock>New-Image -name "windows 2012r2-sql2014" -GlazierProfilePath "mssql2014"</codeblock></li>
+<li> Once the image gets created, the image will be initialized automatically.</li>
 </ol>
 </section>
 <section id="enabling"> <title>Enabling Windows and SQL Server in your ALS cluster</title>
@@ -178,11 +142,8 @@
 </section>
 <section id="add-windows-dea"> <title>Add Windows DEA</title>
 <ol>
-<li>
-<p>Create a yml file to add (e.g. <codeph>manifest.yml</codeph>)</p>
-
-<codeblock>
-<codeph>version: 1.2
+<li> Create a yml file to add (e.g.
+            <codeph>manifest.yml</codeph>)<codeblock>version: 1.2
 constructor-image-name: {?}
 seed-node-image-name: {Windows DEA Image Name}
 cluster-title: MyCluster
@@ -193,29 +154,16 @@ flavor: standard.medium
 keypair-name: {key name}
 stack: win2012r2
 max-cluster-wait-duration: 30m
-network-name: {network name}
-</codeph>
-</codeblock>
-
-<p>The <codeph>cluster-title</codeph> and <codeph>cluster-prefix</codeph> need to match the cluster you are deploying the image to.</p>
-</li>
-<li>
-<p>Run this command</p>
-
-<codeblock>
-<codeph>cf-mgmt add-role dea --load &lt;file name&gt;.yml
-</codeph>
-</codeblock>
-</li>
+network-name: {network name}</codeblock><p>The
+              <codeph>cluster-title</codeph> and <codeph>cluster-prefix</codeph> need to match the
+            cluster you are deploying the image to.</p></li>
+<li> Run this command<codeblock>cf-mgmt add-role dea --load &lt;file name&gt;.yml</codeblock></li>
 </ol>
 </section>
 <section id="add-sql-server-2012-service"> <title>Add SQL Server 2012 service</title>
 <ol>
-<li>
-<p>Create a yml file to add (e.g. <codeph>manifest.yml</codeph>)</p>
-
-<codeblock>
-<codeph>version: 1.2
+<li> Create a yml file to add (e.g.
+            <codeph>manifest.yml</codeph>)<codeblock>version: 1.2
 constructor-image-name: {?}
 seed-node-image-name: {SQL Image Image Name}
 cluster-title: MyCluster
@@ -226,29 +174,17 @@ flavor: standard.medium
 keypair-name: {key name}
 stack: mssql2012
 max-cluster-wait-duration: 30m
-network-name: {network name}
-</codeph>
-</codeblock>
-
-<p>The <codeph>cluster-title</codeph> and <codeph>cluster-prefix</codeph> need to match the cluster you are deploying the image to.</p>
-</li>
-<li>
-<p>Run this command for SQL Server 2012</p>
-
-<codeblock>
-<codeph>cf-mgmt add-service mssql2012 --load &lt;file name&gt;.yml
-</codeph>
-</codeblock>
-</li>
+network-name: {network name}</codeblock><p>The
+              <codeph>cluster-title</codeph> and <codeph>cluster-prefix</codeph> need to match the
+            cluster you are deploying the image to.</p></li>
+<li> Run this command for SQL Server
+          2012<codeblock>cf-mgmt add-service mssql2012 --load &lt;file name&gt;.yml</codeblock></li>
 </ol>
 </section>
 <section id="add-sql-server-2014-service"> <title>Add SQL Server 2014 service</title>
 <ol>
-<li>
-<p>Create a yml file to add (e.g. <codeph>manifest.yml</codeph>)</p>
-
-<codeblock>
-<codeph>version: 1.2
+<li> Create a yml file to add (e.g.
+            <codeph>manifest.yml</codeph>)<codeblock>version: 1.2
 constructor-image-name: {?}
 seed-node-image-name: {SQL Image Image Name}
 cluster-title: MyCluster
@@ -259,20 +195,11 @@ flavor: standard.medium
 keypair-name: {key name}
 stack: mssql2012
 max-cluster-wait-duration: 30m
-network-name: {network name}
-</codeph>
-</codeblock>
-
-<p>The <codeph>cluster-title</codeph> and <codeph>cluster-prefix</codeph> need to match the cluster you are deploying the image to</p>
-</li>
-<li>
-<p>Run this command for SQL Server 2014</p>
-
-<codeblock>
-<codeph>cf-mgmt add-service mssql2014 --load &lt;file name&gt;.yml
-</codeph>
-</codeblock>
-</li>
+network-name: {network name}</codeblock><p>The
+              <codeph>cluster-title</codeph> and <codeph>cluster-prefix</codeph> need to match the
+            cluster you are deploying the image to</p></li>
+<li> Run this command for SQL Server
+          2014<codeblock>cf-mgmt add-service mssql2014 --load &lt;file name&gt;.yml</codeblock></li>
 </ol>
 </section>
 <section id="activating-windows-images"> <title>Activating Windows Images</title>

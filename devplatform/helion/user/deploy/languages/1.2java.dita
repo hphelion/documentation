@@ -21,7 +21,7 @@
  <!--./devplatform/helion/user/deploy/languages/1.2java.md-->
  <!--permalink: /helion/devplatform/als/user/deploy/languages/java/--></p>
 <p>Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry-based Platform as a Service (PaaS), or writing applications that take advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software services, tools to enable successful development are available in Java.</p>
-  <p>Deployable <xref href="../../../../../../devplatform/1.2devplatform.appdev.dita#topic2457/java" type="section">sample applications</xref> are available in this language.</p>
+  <p>Deployable <xref href="../../../../1.2devplatform.appdev.dita#topic2457/java" type="section">sample applications</xref> are available in this language.</p>
 <section id="using-jdbc"> <title>Using JDBC</title>
 <p>It is possible to access the database services using the standard JDBC
 API:</p>
@@ -59,7 +59,7 @@ if (helion_services != null &amp;&amp; helion_services.length() &gt; 0) {
 }</codeblock>
 </section>
 <section id="example"> <title>Example</title>
-<p>The <xref href="../../../../../../devplatform/workbook/database/1.2database.java.dita" >Java database sample</xref> sample
+<p>The <xref href="../../../../workbook/database/1.2database.java.dita" >Java database sample</xref> sample
 demonstrates a simple Java application using a MySQL service.</p>
 </section>
 <section id="catalina-opts"> <title>CATALINA_OPTS</title>

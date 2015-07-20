@@ -7,7 +7,7 @@
                 <serializableOrderedMap>
                     <entry>
                         <String>keys.context</String>
-                        <String>${pdu}/docs.hpcloud.com.ditamap</String>
+                        <String>${pdu}/docs.hpcloud.com.HDP.ditamap</String>
                     </entry>
                     <entry>
                         <String>validation.scenarios</String>
@@ -33,7 +33,6 @@
         <folder path="publiccloud/"/>
         <folder path="unusedgraphics/"/>
         <folder path="UseCases/"/>
-        <file name="devplatform/1.2devplatform.thirdparty.licensing.dita"/>
-        <file name="devplatform/installation/devplatform.horizonui.install.dita"/>
+        <file name="devplatform/helion/admin/server/1.2configuration.dita"/>
     </projectTree>
 </project>

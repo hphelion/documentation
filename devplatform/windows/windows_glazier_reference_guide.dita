@@ -31,7 +31,7 @@
   </ph>
 </p>
 <p>Glazier is a collection of scripts used for building Windows images for deployment to a Helion <tm tmtype="reg">OpenStack</tm> environment. The image that the tool creates can be configured either by using command-line switches, or by using a Glazier profile.</p>
-<p>For an example on how to use Glazier to create a Windows image, see <xref href="../../../devplatform/windows/windows_building_and_deploying.dita" >Building and Deploying Windows DEA and SQL Server Express Images</xref>.</p>
+<p>For an example on how to use Glazier to create a Windows image, see <xref href="windows_building_and_deploying.dita" >Building and Deploying Windows DEA and SQL Server Express Images</xref>.</p>
 <ul>
 <li>
 <xref type="section" href="#topic6720/downloading">Downloading the Glazier Tool</xref>

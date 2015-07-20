@@ -42,7 +42,7 @@ can be customized to run a wide variety of non-standard applications.</p>
         start the web process (e.g. a custom web server).</p>
 <p>The example below shows a web process that serves static files from the
 application directory using Python's
-<xref href="../../../../../devplatform/helion/admin/server/1.2index.dita" >SimpleHTTPServer</xref>:</p>
+  <xref href="http://docs.python.org/2/library/simplehttpserver.html" format="html" scope="external">SimpleHTTPServer</xref>:</p>
 <codeblock>framework:
     type: generic
 processes:
@@ -55,7 +55,7 @@ processes:
 <section id="standalone">
       <title>Standalone</title>
       <p>The Standalone framework uses a custom command specified in the <xref
-          href="../../../../../devplatform/helion/user/deploy/1.2manifestyml.dita#topic20922/command"
+          href="1.2manifestyml.dita#topic20922/command"
           type="section">
           <i>command:</i>
         </xref> key to start a background worker process.</p>
