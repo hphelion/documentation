@@ -42,7 +42,8 @@
 <li>Click <b>Save</b>.</li>
 </ol>
 <p>
-<b>Note</b>: If a more durable or scalable MySQL database service is needed, configure your ALS cluster to use a database instance or master/slave pair provided by the Database Service. For more information, refer to <xref href="../../../../devplatform/1.2devplatform.database-instance.dita" >Using the Database Service</xref> and <xref href="../../../../devplatform/1.2devplatform.database-ALS.dita" >Connecting the Database Service with ALS</xref>.</p>
+<b>Note</b>: If a more durable or scalable MySQL database service is needed, configure your ALS cluster to use a database instance or master/slave pair provided by the Database Service. For more information, refer to <xref href="../../1.2devplatform.database-instance.dita" >Using the Database Service</xref>
+  and <xref href="../../1.2devplatform.database-ALS.dita" >Connecting the Database Service with ALS</xref>.</p>
 </section>
 <section id="download-the-application-files"> <title>Download the Application Files</title>
 <p>
@@ -171,10 +172,10 @@ applications:
 <ul>
 <li>You need to provide configuration information so that ALS can bind to a MySQL service. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>You need to retrieve connection information for MySQL from the application's environment variables, and parse the information into a JDBC compliant connection string.</li>
-<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../../../devplatform/helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
+<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
 </ul>
 <p>
-<xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../helloworld/1.2helloworld.node.dita" >Previous Sample</xref> | <xref href=".../messaging/1.2messaging.node.dita" >Next Sample</xref>
+<xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../helloworld/1.2helloworld.node.dita" >Previous Sample</xref> | <xref href="../messaging/1.2messaging.node.dita" >Next Sample</xref>
 </p>
 </section>
 </body>

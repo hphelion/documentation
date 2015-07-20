@@ -68,14 +68,15 @@
         <li>Save <codeph>web.config</codeph>.</li>
         <li>Build the project locally to verify that it builds correctly, and all NuGet packages
           successfully install. Once the project builds successfully, go to the next step. <image
-            href="../media/windows_build.png" placement="break"/></li>
+            href="../../media/windows_build.png" placement="break"/></li>
         <li>Right click the project and select <b>Publish to Cloud Foundry</b>. <image
-            href="../media/windows_deploy_contextmenu.png" placement="break"/>
+            href="../../media/windows_deploy_contextmenu.png" placement="break"/>
         </li>
         <li>In the <b>Login Wizard</b> dialog, enter the URL for the ALS cluster, and a user and
           password with sufficient privileges. Check the <b>Skip SSL Validation</b> checkbox if your
           Helion OpenStack installation uses self-signed certificates (as it does in HP Helion
-          Public Cloud): <image href="../media/windows_publish_credentials.png" placement="break"/>
+          Public Cloud): <image href="../../media/windows_publish_credentials.png" placement="break"
+          />
         </li>
         <li> In the <b>Cloud Foundry Publish Profile</b> dialog, enter the following values and
           click <b>Publish</b>: <ul>
@@ -102,14 +103,14 @@
               <b>Platform</b>: Set the target CPU platform (e.g. Any CPU). This is only available if
               the application is built on the server.</li>
           </ul>
-          <image href="../media/windows_deploy_cf.png" placement="break"/>
+          <image href="../../media/windows_deploy_cf.png" placement="break"/>
         </li>
         <li>Open or refresh Cloud Foundry Explorer. You can open Cloud Foundry Explorer under
             <b>View-&gt;Other Windows-&gt;Cloud Foundry Explorer</b>. <image
-              href="../media/windows_refresh.png" placement="break"/>
+            href="../../media/windows_refresh.png" placement="break"/>
         </li>
         <li>Right click the "Contoso" application and select <b>View in Browser</b>: <image
-          href="../media/windows_viewbrowser.png" placement="break"/>
+            href="../../media/windows_viewbrowser.png" placement="break"/>
         </li>
       </ol> That's it! You are ready to use your application. </section><section><title>Deploy the sample application from the command line</title>
 

@@ -154,8 +154,8 @@
 <section id="glazier-profile-directory-structure"> <title>Glazier profile directory structure</title>
 <p>The directory structure of the profile should match the following:</p>
 <p>
-  <image href="../media/windows_glazier_fileformat.png"/>
-</p>
+                <image href="../../media/windows_glazier_fileformat.png"/>
+            </p>
 </section>
 <section id="sample-featurescsv-file"> <title>Sample features.csv file</title>
 <p>The <codeph>features.csv</codeph> file should have the following format:</p>

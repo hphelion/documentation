@@ -24,7 +24,7 @@
 <p>This very simple PHP web app displays the text "Executed query "SELECT "Hello World!"".", and then the result of that query "Hello World!" This is a demonstration of the minimum requirements to build an application that can connect to a MySQL database provided by ALS and run queries against it. Use this sample to ensure that you have set up your environment for connecting to and working with MySQL on the Helion Development Platform.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
-<li>An installation of the <xref href=".../../installation/devplatform_commercial_install.dita" >HP Helion Development Platform</xref>.</li>
+<li>An installation of the <xref href="../../installation/devplatform_commercial_install.dita" >HP Helion Development Platform</xref>.</li>
 <li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/1.2index.dita" >Cluster</xref>
 </li>
 <li>Access to the <xref href="../../helion/user/client/1.2index.dita" >Helion command-line client (CLI)</xref>.</li>
@@ -181,7 +181,7 @@ applications:
 <li>ALS requires configuration information so that it can bind to a MySQL service. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>You will need to provide information about which build pack to use for PHP so that ALS can create an environment for your app. Configuration information is contained in the <i>manifest.yml</i> file.</li>
 <li>You will need to retrieve connection information for MySQL from the application's environment variables and then parse that information into a connection string that can be used by PHP.</li>
-<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../../../devplatform/helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
+<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
 </ul>
 <p>
 <xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../helloworld/1.2helloworld.php.dita" >Previous Sample</xref> | <xref href="../messaging/1.2messaging.php.dita" >Next Sample</xref>

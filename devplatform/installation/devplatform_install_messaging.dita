@@ -20,7 +20,7 @@
 <ol>
 <li> In the <b>Configure Services</b> panel locate the <b>Messaging</b> item in the Configure
           Services table and select <b>Download Service</b> and wait for the download to complete.<p>
-            <image href="../media/HDP_1.2_install_messaging.png"/>
+            <image href="../../media/HDP_1.2_install_messaging.png"/>
           </p><p>
             <note>Downloading multiple services simultaneously is not supported, and will leave the
               server in an error state.</note>

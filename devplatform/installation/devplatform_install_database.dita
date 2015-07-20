@@ -137,7 +137,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
 <ol>
 <li> In the <b>Configure Services</b> panel locate the Database Service item in the Configure
           Services table and select <b>Download Service</b> and wait for the download to complete.<p>
-            <image href="../media/HDP_1.2_install_database.png"/>
+            <image href="../../media/HDP_1.2_install_database.png"/>
           </p><p>
             <note> Downloading multiple services simultaneously is not supported, and will leave the
               server in an error state.</note>
@@ -190,7 +190,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
                 high-availability (HA) configuration. If selected, each component of the service
                 will have three instances created and active at all times. </p>
               <p>
-                <image href="../media/dev_install_database_new.png" placement="break"/>
+                <image href="../../media/dev_install_database_new.png" placement="break"/>
               </p>
             </li>
           </ul></li>

@@ -12,8 +12,8 @@
 <section id="preparation"> <title>Preparation</title>
 <p>Be sure that the <i>Admin</i> project is checked from the Project selector before you check for service updates. The Project selector is located at the top of the page to the right of the OpenStack logo. This process will fail if a tenant/project other than "Admin" is selected.</p>
 <p>
-  <image href="../media/DevPlatInstallAdminCheck.png"/>
-</p>
+        <image href="../../media/DevPlatInstallAdminCheck.png"/>
+      </p>
 </section>
 <section id="retrieve-the-update"> <title>Retrieve the Update</title>
 <p>Use the <b>Helion Development Platform UI</b> to check HDN for a new Service Update for ALS.</p>
@@ -22,8 +22,8 @@
 <section id="step-2-configure-the-service"> <title>Step 2: Configure the Service</title>
 <p>Return to the <b>Helion Development Platform UI</b> and click <i>Configure Services</i> to configure the service.</p>
 <p>
-  <image href="../media/devplat_configure_services.png"/>
-</p>
+        <image href="../../media/devplat_configure_services.png"/>
+      </p>
 </section>
 
   </body>

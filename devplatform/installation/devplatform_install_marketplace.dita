@@ -113,7 +113,7 @@
       <ol>
         <li> In the <b>Configure Services</b> panel, in the Configure Services table, locate the Marketplace
           Service item. Select <b>Download Service</b> and wait for the download to complete.<p>
-            <image href="../media/HDP_1.2_install_marketplace.png" placement="break"/>
+            <image href="../../media/HDP_1.2_install_marketplace.png" placement="break"/>
           </p><p>
             <note>Downloading multiple services simultaneously is not supported, and will leave the
               server in an error state.</note>
@@ -158,7 +158,7 @@
             <li>
               <b>Subnet range</b> (Required) - The subnet to use for Marketplace. </li>
           </ul><p>
-            <image href="../media/dev_install_marketplace.png" placement="break"/>
+            <image href="../../media/dev_install_marketplace.png" placement="break"/>
           </p></li>
         <li> Do not attempt to install any Marketplace packages yet. Log out from the Horizon console.</li>
         <li> The following steps will configure HAProxy to receive and forward HTTP requests to the VM that
@@ -193,13 +193,12 @@ server marketplace&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&g
           <ol><li>Open Horizon and log in as the "admin" user. Then click on
             the admin panel in Horizon and select the Development Platform Panel under Admin. Then
             click on the Configure Services sub-panel.</li>
-            <li>Select the "Vertica Trial Package
-              for Marketplace".
-              <image href="../media/HDP_1.2_install_vertica.png" placement="break"/></li>
-            <li> Select <b>Download Service</b>, and confirm the download.
-              <image href="../media/dev_install_vertica_confirm.png" placement="break"/></li>
+            <li>Select the "Vertica Trial Package for Marketplace". <image
+                href="../../media/HDP_1.2_install_vertica.png" placement="break"/></li>
+            <li> Select <b>Download Service</b>, and confirm the download. <image
+                href="../../media/dev_install_vertica_confirm.png" placement="break"/></li>
             <li>Wait for the service to finish downloading. <image
-              href="../media/dev_install_vertica_2.png" placement="break"/><note>Downloading
+                href="../../media/dev_install_vertica_2.png" placement="break"/><note>Downloading
                 multiple services simultaneously is not supported, and will leave the server in an
                 error state.</note></li>
           </ol></li>

@@ -30,19 +30,19 @@
               tmtype="reg">OpenStack</tm> Installation</xref>
         </li>
         <li>
-          <xref href="../../devplatform/installation/devplatform_commercial_install.dita">Development
+          <xref href="installation/devplatform_install_platform.dita">Development
             Platform Installation and Configuration</xref>
         </li>
         <li>
-          <xref href="../../devplatform/helion/1.2index.dita">Application Lifecycle Service
+          <xref href="installation/devplatform_install_ALS.dita">Application Lifecycle Service
             (ALS) Information</xref>
         </li>
         <li>
-          <xref href="../../devplatform/helion/user/client/1.2index.dita">Application Lifecycle
-            Service Client Installation</xref>
+          <xref href="helion/CLI/1.2ALS_Client_Downloads.dita">Application Lifecycle
+            Service Client installation</xref>
         </li>
         <li>
-          <xref href="../../devplatform/1.2devplatform.marketplace.install.dita">Installing the
+          <xref href="installation/devplatform_install_marketplace.dita">Installing the
             Marketplace</xref>
         </li>
       </ul>
@@ -51,20 +51,20 @@
       <title>Administration</title>
       <p>Access control is role-based, with each role granting permissions in either an organization
         or an application space. To create users and manage user roles, use the ALS <xref
-          href="../../devplatform/helion/user/reference/1.2client-ref.dita">Command Line
+          href="helion/user/reference/1.2client-ref.dita">Command Line
           Interface (CLI)</xref>. For more information, see <xref
           href="helion/user/reference/1.2client-ref-organizations.dita">Organizations</xref>.</p>
       <ul>
         <li>
-          <xref href="../../devplatform/helion/admin/1.2index.dita">Application Lifecycle
+          <xref href="helion/admin/1.2index.dita">Application Lifecycle
             Service (ALS) Administrators Guide</xref>
         </li>
         <li>
-          <xref href="../../devplatform/helion/user/console/1.2index.dita">Management
+          <xref href="helion/user/console/1.2index.dita">Management
             Console</xref>
         </li>
         <li>
-          <xref href="../../devplatform/helion/user/deploy/1.2app-logs.dita">Logs, Streams, and
+          <xref href="helion/user/deploy/1.2app-logs.dita">Logs, Streams, and
             Drains</xref>
         </li>
       </ul>
