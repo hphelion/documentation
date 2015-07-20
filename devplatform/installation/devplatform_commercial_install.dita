@@ -53,45 +53,7 @@
 <xref type="section" href="#topic24073/install-marketplace">Install the Marketplace Service</xref>
 </li>
 </ul>
-<section id="prerequisites"> <title>Prerequisites</title>
-<p>The HP Helion Development Platform is installed in the overcloud of HP Helion <tm tmtype="reg">OpenStack</tm></p>
-<note>Helion OpenStack version 1.1.1 is <b>required</b> for Helion Development Platform 1.2.
-        Installing Helion Development Platform 1.2 on Helion OpenStack versions 1.1 or 1.0 is not
-        supported. If you currently have Helion OpenStack version 1.1 with Helion Development
-        Platform 1.1 installed, you will need to perform a fresh <xref
-          href="../../commercial/GA1/Landing/1.1commercial.landing.install.dita">install</xref> of
-        Helion OpenStack version 1.1.1 and then install Helion Development Platform 1.2.</note>
-<p>Before you begin installation:</p>
-<ul>
-<li>
-<p>The Cinder block storage service must be configured with either <xref href="../../commercial/GA1/1.1commercial.-vsa-overview.dita" >VSA</xref> or <xref href="../../commercial/GA1/1.1commercial.install-3par.dita" >3Par</xref>.</p>
-</li>
-<li>
-<p>If you installed HP Helion OpenStack with <b>KVM</b> hypervisor support, configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.</p>
-</li>
-<li>
-<p>The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements.</p>
-</li>
-<li>
-<p>The HP Helion Development Platform installer (<codeph>DevelopmentPlatform_Enable.sh</codeph>) must be run on either the base or seed node of the Helion OpenStack environment. It is strongly recommended to run the installer  on the seed node. The seed node will already have the requisite key (/root/.ssh/id_rsa) for access to the overcloud; if the installation is run on the base node, this key will need to be provided to the installer (see below).</p>
-</li>
-<li>
-          <p>The installer requires the following packages. If they are not found, it will prompt
-            you to install them.</p>
-          <ul>
-            <li>python-dev </li>
-            <li>libffi-dev </li>
-            <li>libssl-dev </li>
-            <li>python-virtualenv</li>
-            <li>python-pip</li>
-          </ul>
-          <p>On the Base node, these packages can be installed using <codeph>apt-get</codeph> , but
-            on the Seed node, you 'll need to use <codeph>pip</codeph> to install the following
-            packages:</p>
-          <codeblock>pip install cffi enum34 pyasn1 virtualenv </codeblock>
-        </li>
-</ul>
-</section>
+
 <section id="installing-the-hp-helion-development-platform"> <title>Downloading, Installing, and Updating HP Helion Development Platform</title>
 </section>
 <section id="downloading-the-latest-version-of-hp-helion-development-platform"> <title>Downloading the Latest Version of HP Helion Development Platform</title>

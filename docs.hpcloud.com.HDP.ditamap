@@ -60,27 +60,47 @@
         href="devplatform/1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"
         locktitle="yes" navtitle="Quick Start Troubleshooting"/>
     </topichead>
-    <!--permalink: /helion/devplatform/appdev/-->
-    <topicref href="devplatform/1.2devplatform_commercial_install.dita" locktitle="yes"
-      navtitle="Installation and Configuration">
-      <!--permalink: /helion/devplatform/uninstall/-->
-      <topicref href="devplatform/1.2devplatform.marketplace.install.dita" locktitle="yes"
-        navtitle="Installing The Marketplace"/>
-      <topicref href="devplatform/1.2devplatform.horizonui.install.dita" locktitle="yes"
-        navtitle="Installing the Horizon UI Elements"/>
+    
+    <!--installation-->
+    
+     
+ <topichead navtitle="Installation">
+   <topicref href="devplatform/installation/devplatform_commercial_install.dita" navtitle="Full Installation - All Services" locktitle="yes" chunk="to-content">
+     <topicref href="devplatform/installation/devplatform_install_prereq.dita" toc="no"/>
+         
+        </topicref>
+      
       <topicref href="devplatform/1.2devplatform.troubleshooting.dita" locktitle="yes"
         navtitle="Installation Troubleshooting"/>
-      <topicref href="devplatform/1.2devplatform_uninstall.dita" locktitle="yes"
-        navtitle="Uninstallation"/>
-      <!--permalink: /helion/devplatform/upgrade/-->
-      <!--permalink: /helion/devplatform/install/troubleshooting/-->
-      <!--permalink: /helion/devplatform/marketplace/-->
-      <!--permalink: /helion/devplatform/horizonuiinstallation/-->
-      <!--permalink: /helion/devplatform/related-topics/-->
       <topicref href="devplatform/1.2devplatform.related-topics.dita" locktitle="yes"
         navtitle="Related Documentation "/>
-      <!--permalink: /helion/devplatform/release-notes/-->
-    </topicref>
+    </topichead>
+      
+ <!--uninstallation -->
+    <topichead navtitle="Uninstallation">
+    <topicref href="devplatform/uninstallation/devplatform_uninstall.dita" navtitle="Full Uninstallation - All Services" locktitle="yes" chunk="to-content">
+      <topicref href="devplatform/uninstallation/devplatform_uninstall_platform.dita" toc="no"/>
+      <topicref href="devplatform/uninstallation/devplatform_uninstall_ALS.dita" toc="no"/>
+      <topicref href="devplatform/uninstallation/devplatform_uninstall_database.dita" toc="no"/>
+      <topicref href="devplatform/uninstallation/devplatform_uninstall_messaging.dita" toc="no"/>
+      <topicref href="devplatform/uninstallation/devplatform_uninstall_marketplace.dita" toc="no"/>
+      <topicref href="devplatform/uninstallation/devplatform_uninstall_vertica.dita" toc="no"/>  
+   </topicref>
+    <topicref href="devplatform/uninstallation/devplatform_uninstall_ALS.dita" navtitle="Uninstall the Application Lifecycle Service" locktitle="yes" />
+    <topicref href="devplatform/uninstallation/devplatform_uninstall_database.dita" navtitle="Uninstall the Database Service" locktitle="yes"/>
+    <topicref href="devplatform/uninstallation/devplatform_uninstall_messaging.dita" navtitle="Uninstall the Messaging Service" locktitle="yes"/>
+    <topicref href="devplatform/uninstallation/devplatform_uninstall_marketplace.dita" navtitle="Uninstall the Marketplace Service" locktitle="yes"/>
+    <topicref href="devplatform/uninstallation/devplatform_uninstall_vertica.dita" navtitle="Uninstall the Vertica Application" locktitle="yes"/>  
+    
+  </topichead>
+    
+    
+    
+    
+    
+    
+    
+    
     <topicref href="devplatform/1.2devplatform.appdev.dita" locktitle="yes"
       navtitle="Resources for Application Developers ">
       <!--permalink: /helion/devplatform/deploy/-->

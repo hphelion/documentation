@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_blf_xdh_ts">
+  <title>Uninstall the HP Helion Development Platform</title>
+  <body>
+
+<p>The HP Helion Development Platform is installed in the overcloud of HP Helion <tm tmtype="reg">OpenStack</tm></p>
+<section id="uninstall-devplatform">
+<ol>
+<li>Log in to the Helion seed node.</li>
+<li>
+<p>Set environment variables.</p>
+
+<codeblock>
+<codeph>export TE_DATAFILE=/root/tripleo/ce_env.json
+export TRIPLEO_ROOT=/root/tripleo
+PATH=$PATH:$TRIPLEO_ROOT/tripleo-incubator/scripts/
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Source the overcloud administrator credentials.</p>
+
+<codeblock>
+<codeph>source $TRIPLEO_ROOT/tripleo-incubator/overcloudrc
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Remove the service from Keystone.</p>
+
+<codeblock>
+<codeph>SERVICE_SHORT_NAME="development-platform"
+SERVICE_ID=$(keystone service-list | grep $SERVICE_SHORT_NAME | cut -d" " -f2)
+keystone service-delete $SERVICE_ID
+</codeph>
+</codeblock>
+</li>
+</ol>
+</section>
+
+  </body>
+</topic>

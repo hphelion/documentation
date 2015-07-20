@@ -17,7 +17,7 @@
             </serialized>
         </options>
     </meta>
-    <projectTree name="Master-Project.xpr">
+    <projectTree name="master-project.xpr">
         <folder path="automation/"/>
         <folder path="CarrierGrade/"/>
         <folder path="CloudGraphics/"/>
@@ -33,5 +33,6 @@
         <folder path="publiccloud/"/>
         <folder path="unusedgraphics/"/>
         <folder path="UseCases/"/>
+        <file name="devplatform/installation/1.2devplatform.horizonui.install.dita"/>
     </projectTree>
 </project>

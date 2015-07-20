@@ -37,17 +37,19 @@
 <xref type="section" href="#topic6253/uninstall-als">Uninstall the Application Lifecycle Service</xref>
 </li>
 <li>
-<xref type="section" href="#topic6253/uninstall-messaging">Uninstall the Messaging Service</xref>
-</li>
+          <xref type="section" href="#topic6253/uninstall-database">Uninstall the Database
+            Service</xref>
+        </li>
+        <li><xref type="section" href="#topic6253/uninstall-messaging">Uninstall the Messaging
+            Service</xref></li>
 <li>
-<xref type="section" href="#topic6253/uninstall-database">Uninstall the Database Service</xref>
-</li>
+          <xref type="section" href="#topic6253/uninstall-marketplace">Uninstall the Marketplace
+            Service</xref>
+        </li>
 <li>
-<xref type="section" href="#topic6253/uninstall-marketplace">Uninstall the Marketplace Service</xref>
-</li>
-<li>
-<xref type="section" href="#topic6253/uninstall-vertica">Uninstall Vertica</xref>
-</li>
+          <xref type="section" href="#topic6253/uninstall-vertica">Uninstall the Vertica
+            Application</xref>
+        </li>
 </ul>
 </section>
 </body>
