@@ -21,8 +21,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/1.2index.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/--></p>
+ <!--./devplatform/helion/admin/1.2index.md-->
+ <!--permalink: /helion/devplatform/als/admin/--></p>
 <p>Application Lifecycle Service is our cloud application framework for creating a multi-language,
       secure and private Platform-as-a-Service (PaaS). This guide covers how to set it up and how to
       configure it for your end users.</p>

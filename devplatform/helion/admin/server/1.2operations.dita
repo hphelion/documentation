@@ -21,8 +21,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/server/1.2operations.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/server/operations/--></p>
+ <!--./devplatform/helion/admin/server/1.2operations.md-->
+ <!--permalink: /helion/devplatform/als/admin/server/operations/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic4410/server-status">Server Status</xref>

@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/CLI/1.2ALS_Client_Downloads.md-->
- <!--permalink: /helion/devplatform/1.2/als/client/download/--></p>
+ <!--./devplatform/helion/CLI/1.2ALS_Client_Downloads.md-->
+ <!--permalink: /helion/devplatform/als/client/download/--></p>
 <section id="hp-helion-application-lifecycle-service-als-client"> <title>HP Helion Application Lifecycle Service (ALS) Client</title>
 <p>Click the download link that is appropriate for your operating system.</p>
 <ul>
@@ -32,7 +32,7 @@
 <li>
   <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.1-osx-x86_64.zip" scope="external" format="html" >Mac OS X</xref> </li>
 </ul>
-<p>For more information, see the full Application Lifecycle Service (ALS) Client <xref href="../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >command reference</xref>.</p>
+<p>For more information, see the full Application Lifecycle Service (ALS) Client <xref href="1.2ALS_Client_Reference.dita" >command reference</xref>.</p>
 </section>
 <section id="hp-helion-als-cluster-management-tool-cf-mgmt"> <title>HP Helion ALS Cluster Management Tool (<i>cf-mgmt</i>)</title>
 <p>Click the download link that is appropriate for your operating system.</p>
@@ -46,17 +46,17 @@
 <li>
 <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.0-osx-x86_64.zip" scope="external" format="html" >Mac OS X</xref> </li>
 </ul>
-<p>For more information, see the full ALS Cluster Management Tool <xref href="../../../../devplatform/1.2/helion/CLI/1.2ALS_Client_Reference.dita" >command reference</xref>.</p>
+<p>For more information, see the full ALS Cluster Management Tool <xref href="1.2ALS_Client_Reference.dita" >command reference</xref>.</p>
 <p>Click to download a sample configuration file for use with the <i>cf-mgmt</i> tool.</p>
 <ul>
 <li>
-<xref href="http://clients.als.hpcloud.com/1.2/config/trial.yml" scope="external" format="html" >Create cluster</xref>
+<xref href="http://clients.als.hpcloud.com/config/trial.yml" scope="external" format="html" >Create cluster</xref>
 </li>
 <li>
-<xref href="http://clients.als.hpcloud.com/1.2/config/trial-windea.yml" scope="external" format="html" >Add a Windows DEA</xref>
+<xref href="http://clients.als.hpcloud.com/config/trial-windea.yml" scope="external" format="html" >Add a Windows DEA</xref>
 </li>
 <li>
-<xref href="http://clients.als.hpcloud.com/1.2/config/trial-mssql2014.yml" scope="external" format="html" >Add a SQL Server Service</xref>
+<xref href="http://clients.als.hpcloud.com/config/trial-mssql2014.yml" scope="external" format="html" >Add a SQL Server Service</xref>
 </li>
 </ul>
 </section>

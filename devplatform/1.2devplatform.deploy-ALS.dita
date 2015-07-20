@@ -22,8 +22,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/1.2devplatform.deploy-ALS.md-->
- <!--permalink: /helion/devplatform/1.2/deploy/--></p>
+ <!--./devplatform/1.2devplatform.deploy-ALS.md-->
+ <!--permalink: /helion/devplatform/deploy/--></p>
 <p>This document explains the process to configure and deploy an Application Lifecycle Service (ALS) cluster from the Horizon user interface.</p>
 <p>The document covers the following sections:</p>
 <ul>
@@ -45,10 +45,10 @@
 <li> In the Horizon UI, from the <b>Project</b> tab, open the <b>Application Lifecycle Service</b>
           tab, and select the <b>Clusters</b>
             sub-tab.<image
-            href="../../media/ALSConfig1.png" placement="break" id="image_a4v_mzc_ks"/>
+            href="../media/ALSConfig1.png" placement="break" id="image_a4v_mzc_ks"/>
         </li>
 <li> Click <b>Create Cluster</b> to bring up the <b>Create Cluster</b> dialog.<image
-            href="../../media/ALSConfig2.png" placement="break" id="image_csq_4zc_ks"/>
+            href="../media/ALSConfig2.png" placement="break" id="image_csq_4zc_ks"/>
         </li>
 <li> Fill out the required fields in the Details tab of the Create Cluster dialog, including<ul>
             <li>
@@ -79,30 +79,30 @@
               <b>Key Pair</b> - required for authentication.</li>
           </ul></li>
 <li> Click on the <b>Networking</b> tab of the Create Cluster dialog and drag an available network
-          to the <b>Selected Networks</b> area.<image href="../../media/ALSConfig3.png"
+          to the <b>Selected Networks</b> area.<image href="../media/ALSConfig3.png"
             placement="break" id="image_hwy_pzc_ks"/>
         </li>
 <li> Select the <b>Application Services</b> tab of the <b>Create Cluster</b> dialog. Select the
-          application services to enable in this cluster.<image href="../../media/ALSConfig4.png"
+          application services to enable in this cluster.<image href="../media/ALSConfig4.png"
             placement="break" id="image_htf_qzc_ks"/>
         </li>
 <li> Select the <b>Database</b> tab of the <b>Create</b>
           <b>Cluster</b> dialog, and choose the databases to enable in the cluster. Detailed notes
           on how to create or connect to a MySQL database can be found <xref
             href="1.2devplatform.database-ALS.dita">here</xref>. <image
-            href="../../media/ALSConfig5.png" placement="break" id="image_dwp_rzc_ks"/>
+            href="../media/ALSConfig5.png" placement="break" id="image_dwp_rzc_ks"/>
         </li>
 <li>Click on the <b>Proxies</b> tab of the Create Cluster dialog and enter the addresses of the
           proxy servers for your environment (if any). Be sure to use the correct protocol prefixes
-          and specify the correct port numbers. <image href="../../media/ALSConfig5_1.png"
+          and specify the correct port numbers. <image href="../media/ALSConfig5_1.png"
             placement="break" id="image_x1w_szc_ks"/>
         </li>
 <li> Click <b>Create</b>. You will see the cluster building as shown below.<image
-            href="../../media/ALSConfig6.png" placement="break" id="image_n3d_tzc_ks"/>
+            href="../media/ALSConfig6.png" placement="break" id="image_n3d_tzc_ks"/>
         </li>
 <li>Once the cluster has been built, you can access it by clicking on the URL of the created
           cluster, which can be reached in the <b>Clusters</b> view or by the <b>Cluster Details</b>
-          page. <image href="../../media/ALSConfig7.png" placement="break" id="image_hyv_tzc_ks"/>
+          page. <image href="../media/ALSConfig7.png" placement="break" id="image_hyv_tzc_ks"/>
         </li>
 <li>The <xref href="helion/1.2index.dita">Application Lifecycle Service
             Documentation </xref> provides an overview of how to administer and use the configured

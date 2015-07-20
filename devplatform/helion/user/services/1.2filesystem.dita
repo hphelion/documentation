@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/services/1.2filesystem.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/services/filesystem/--></p>
+ <!--./devplatform/helion/user/services/1.2filesystem.md-->
+ <!--permalink: /helion/devplatform/als/user/services/filesystem/--></p>
 <p>The file system of application containers are ephemeral. Any application
 data or files stored locally within these containers is lost when the
 instance is stopped or restarted. To solve this, Application Lifecycle Service provides a filesystem type of service that can be shared between application instances,
@@ -85,7 +85,7 @@ accessed within the container using constructs such as:</p>
 mkdir ${!FOO}/myapp</codeblock>
 <p>
         <note>To use declarations like these in <xref
-            href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/hooks"
+            href="../../../../../devplatform/helion/user/deploy/1.2manifestyml.dita#topic20922/hooks"
             type="section">
             <i>hooks</i>
           </xref>, put them in a separate bash script. Brace expansion and grouping cannot be used
@@ -114,12 +114,12 @@ information for all services:
                 }
         }
 -->
-Since the <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita">
+Since the <xref href="../../../../../devplatform/helion/user/reference/1.2environment.dita">
 <i>environment
 variables</i>
 </xref> are
 available during the staging process, it is possible to make use of them
-in the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >
+in the <xref href="../../../../../devplatform/helion/user/deploy/1.2manifestyml.dita" >
 <i>manifest.yml</i>
 </xref> file to
 configure a filesystem service and create a symlink to it for use by the

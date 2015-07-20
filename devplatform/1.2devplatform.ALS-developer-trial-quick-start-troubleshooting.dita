@@ -22,8 +22,8 @@
   <body>
     <p>
       <!--PUBLISHED-->
-      <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.md-->
-      <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/troubleshooting/--></p>
+      <!--./devplatform/1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.md-->
+      <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/troubleshooting/--></p>
     <p>Here are some tips for troubleshooting issues with the Quick Start Trial. If problems
       persist, the quickest solution is to just <xref
         href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita">terminate the
@@ -33,8 +33,7 @@
 <strow>
             <stentry><xref href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita"
             >Termination</xref>
-          <p><image href="../../media/star.gif" id="image_s3q_vt5_js" scale="50"/><b>
-              Troubleshooting</b>
+          <p><b>Troubleshooting</b>
           </p><p><xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Back to Quick
               Start</xref></p></stentry>
             <stentry>

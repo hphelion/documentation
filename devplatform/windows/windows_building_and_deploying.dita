@@ -23,8 +23,8 @@
 <body>
 <p>
 <!--UNDER REVISION-->
- <!--./devplatform/1.2/windows/windows_building_and_deploying.md-->
- <!--permalink: /helion/devplatform/1.2/windows/building_windows/--></p>
+ <!--./devplatform/windows/windows_building_and_deploying.md-->
+ <!--permalink: /helion/devplatform/windows/building_windows/--></p>
 <p>
   <!--Original: <span @class=>--><ph>
     <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
@@ -72,7 +72,7 @@
 </li>
 <li>The latest stable Virtio driver: <xref href="https://fedorapeople.org/groups/virt/virtio-win/deprecated-isos/stable/virtio-win-0.1-81.iso" scope="external" format="html" >Download</xref>
 </li>
-<li>Download and extract the Glazier tool: <xref href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip" scope="external" format="html" >Download</xref>. For more information about Glazier, see the <xref href="../../../devplatform/1.2/windows/windows_glazier_reference_guide.dita" >Glazier Reference Guide</xref>.</li>
+<li>Download and extract the Glazier tool: <xref href="http://clients.als.hpcloud.com/glazier-1.2.0-posix_x86_64.zip" scope="external" format="html" >Download</xref>. For more information about Glazier, see the <xref href="../../../devplatform/windows/windows_glazier_reference_guide.dita" >Glazier Reference Guide</xref>.</li>
 </ul>
 </section>
 <section id="setup-information-needed"> <title>Setup Information Needed</title>

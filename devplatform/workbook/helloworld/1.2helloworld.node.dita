@@ -19,16 +19,16 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/workbook/helloworld/1.2helloworld.node.md-->
- <!--permalink: /helion/devplatform/1.2/workbook/helloworld/node/--></p>
+ <!--./devplatform/workbook/helloworld/1.2helloworld.node.md-->
+ <!--permalink: /helion/devplatform/workbook/helloworld/node/--></p>
 <p>This very simple Node.js web app displays the text "Hello World!". This sample is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
-<p>If you are missing any of these items, you must <xref href="../../../../devplatform/1.2/1.2devplatform.appdev.dita" >install them</xref>.</p>
+<p>If you are missing any of these items, you must <xref href="../../../../devplatform/1.2devplatform.appdev.dita" >install them</xref>.</p>
 <ul>
-<li>Access to an Application Lifecycle Service (ALS) <xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita" >Cluster</xref>
+<li>Access to an Application Lifecycle Service (ALS) <xref href="../../../../devplatform/helion/admin/cluster/1.2index.dita" >Cluster</xref>
 </li>
-<li>The  <xref href="../../../../devplatform/1.2/helion/user/client/1.2index.dita" >Helion command-line interface (CLI)</xref> must be installed.</li>
-<li>Access to the web-based <xref href="../../../../devplatform/1.2/helion/user/console/1.2index.dita" >Helion Management Console</xref>.</li>
+<li>The  <xref href="../../../../devplatform/helion/user/client/1.2index.dita" >Helion command-line interface (CLI)</xref> must be installed.</li>
+<li>Access to the web-based <xref href="../../../../devplatform/helion/user/console/1.2index.dita" >Helion Management Console</xref>.</li>
 </ul>
 </section>
 <section id="download-the-application-files"> <title>Download the Application Files</title>
@@ -56,9 +56,9 @@
           href="../../helion/admin/server/1.2configuration.dita#topic31232/staging-cache-app-http-proxy"
           >made aware of the proxy</xref>. The sample applications require access to the Internet in
         order to download dependent packages.</p>
-<p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the <xref href="../../../../devplatform/1.2/1.2devplatform.eclipse.dita" >plugin</xref>.</p>
+<p>Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the <xref href="../../../../devplatform/1.2devplatform.eclipse.dita" >plugin</xref>.</p>
 <ol>
-<li>Open the <xref href="../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >Helion command-line interface (CLI)</xref>
+<li>Open the <xref href="../../../../devplatform/helion/user/reference/1.2client-ref.dita" >Helion command-line interface (CLI)</xref>
 </li>
 <li>
 <p>Ensure that you are targeting your desired environment.  <!--A BR tag was used here in the original source.--> If you are not, execute</p>
@@ -140,14 +140,14 @@ Note that <b>name</b> is always required while other fields are optional.</p>
 <section id="key-learnings"> <title>Key Learnings</title>
 <ul>
 <li>
-<p>You interact with and deploy your app using the <xref href="../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../../../devplatform/1.2/helion/user/console/1.2index.dita" >ALS Management Console</xref>.</p>
+<p>You interact with and deploy your app using the <xref href="../../../../devplatform/helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../../../devplatform/helion/user/console/1.2index.dita" >ALS Management Console</xref>.</p>
 </li>
 <li>
 <p>ALS requires configuration information to create an environment for your app. Configuration information is contained in the <i>manifest.yml</i> file.</p>
 </li>
 </ul>
 <p>
-<xref href="../../../../devplatform/1.2/1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../../../../devplatform/1.2/workbook/messaging/1.2messaging.node.dita" >Previous Sample</xref> | <xref href="../../../../devplatform/1.2/workbook/database/1.2database.node.dita" >Next Sample</xref>
+<xref href="../../../../devplatform/1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../../../../devplatform/workbook/messaging/1.2messaging.node.dita" >Previous Sample</xref> | <xref href="../../../../devplatform/workbook/database/1.2database.node.dita" >Next Sample</xref>
 </p>
 </section>
 </body>

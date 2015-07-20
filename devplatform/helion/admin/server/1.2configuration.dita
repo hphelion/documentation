@@ -21,8 +21,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/server/1.2configuration.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/server/configuration/--></p>
+ <!--./devplatform/helion/admin/server/1.2configuration.md-->
+ <!--permalink: /helion/devplatform/als/admin/server/configuration/--></p>
 <p>After booting the VM, run <i>kato process ready all</i> before starting the following configuration steps. This command returns <b>READY</b> when all configured system processes have started, and is particularly important when using <i>kato</i> commands in automated configuration scripts which run immediately after boot (the
 <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-process-ready" type="section" >
 <i>--block</i>

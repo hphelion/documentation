@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/reference/1.2client-ref-domains.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/reference/client-ref/domains/--></p>
+ <!--./devplatform/helion/user/reference/1.2client-ref-domains.md-->
+ <!--permalink: /helion/devplatform/als/user/reference/client-ref/domains/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic2161/command-create-domain">helion create-domain</xref>: Create a new domain.</li>

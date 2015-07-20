@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/1.2devplatform.database-instance.md-->
- <!--permalink: /helion/devplatform/1.2/databaseservice/--></p>
+ <!--./devplatform/1.2devplatform.database-instance.md-->
+ <!--permalink: /helion/devplatform/databaseservice/--></p>
 <p>The database service provides lifecycle services for MySQL database instances. Lifecycle services include provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard.</p>
 <p>These instances can then be utilized by your applications to provide standard datastore/back-end functionality.</p>
 <p>The following topics explain how to create and manage a database:</p>
@@ -41,7 +41,7 @@
 </ul>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ol>
-<li>Install the <xref href="../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref>. </li>
+<li>Install the <xref href="../../devplatform/1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref>. </li>
 <li>
           <xref href="1.2devplatform_commercial_install.dita#topic24073/install-database" type="section" >Configure
             the database service</xref>.</li>
@@ -51,7 +51,7 @@
 <ol>
 <li> Log into the Horizon console.<p>Under your project, open the Database panel and then click the
               <b>Instances</b> tab. <!--A BR tag was used here in the original source.--><image
-              href="../../media/createDBinstance1.png" placement="break" id="image_yb1_mlp_ms"
+              href="../media/createDBinstance1.png" placement="break" id="image_yb1_mlp_ms"
           /></p></li>
 <li> Click <b>Launch Instance</b>.</li>
 <li> In the <b>Details</b> tab, specify the following options:<ul>
@@ -59,7 +59,7 @@
               <b>Instance Name</b> - the name of the MySQL instance to create </li>
             <li>
               <b>Flavor</b> - the size of the instance to host the database on.<image
-                href="../../media/createDBinstance2.png" placement="break" scale="75"/></li>
+                href="../media/createDBinstance2.png" placement="break" scale="75"/></li>
             <li>
               <b>Volume Size</b> - the size of the volume to host the data on (in GB). Note: this
                 <b>cannot</b> be changed later.</li>
@@ -68,18 +68,18 @@
             <li>
               <b>Availability Zone</b> (optional) the availability zone that the database will be
               created in.<!--A BR tag was used here in the original source.--><image
-                href="../../media/createDBinstance1.png" placement="break"/></li>
+                href="../media/createDBinstance1.png" placement="break"/></li>
           </ul></li>
 <li> Under the <b>Networking</b> tab, specify the network to associate the database instance with.
           This is required and should be the same network that any application that accesses the
-          database is on. <image href="../../media/createDBinstance3.png" placement="break"
+          database is on. <image href="../media/createDBinstance3.png" placement="break"
             id="image_dbb_ylp_ms"/>
         </li>
 <li>Optional - Specify the initial database to create on the database instance. This option can be
           used to pre-populate the instance with a database and a user for that database. <image
-            href="../../media/createDBinstance4.png" placement="break" scale="75"/></li>
+            href="../media/createDBinstance4.png" placement="break" scale="75"/></li>
 <li>Click <b>Launch</b>.</li>
-<li>In the <b>Database</b> tab, open the <b>Instances</b> panel. This panel displays the status of the newly created database instance. <!--A BR tag was used here in the original source.--><image href="../../media/createDBinstance5.png" placement="break"/>
+<li>In the <b>Database</b> tab, open the <b>Instances</b> panel. This panel displays the status of the newly created database instance. <!--A BR tag was used here in the original source.--><image href="../media/createDBinstance5.png" placement="break"/>
 </li>
 <li>Once the database instance has reached <b>Active</b> status, the instance is ready to use.</li>
 </ol>
@@ -92,7 +92,7 @@
 <li>A list of active database instances will be displayed. Identify the database instance to back up
           and click <b>Create Backup</b> next to that
             instance.<!--A BR tag was used here in the original source.--><image
-            href="../../media/createDBinstance6.png" placement="break"/></li>
+            href="../media/createDBinstance6.png" placement="break"/></li>
 <li>In the <b>Backup Database</b> dialog, specify the following information:
 
 <ul>
@@ -106,7 +106,7 @@
               <b>Parent Backup</b> - if a previous backup of this database instance exists. it is
               possible to take an incremental backup. An incremental backup will process faster
               because it only stores the differences between the two. Select the previous backup if
-              an incremental backup is desired.<image href="../../media/createDBinstance7.png"
+              an incremental backup is desired.<image href="../media/createDBinstance7.png"
                 placement="break" scale="75"/></li>
 </ul>
 </li>
@@ -114,7 +114,7 @@
 <li>In the <b>Database</b> panel, click the <b>Backups</b> tab to view all existing backups,
           including the newly-created
             backup.<!--A BR tag was used here in the original source.--><image
-            href="../../media/createDBinstance8.png" placement="break"/></li>
+            href="../media/createDBinstance8.png" placement="break"/></li>
 </ol>
 </section>
 <section id="replicate"> <title>Replicating a Database</title>
@@ -127,7 +127,7 @@
 <ol>
 <li>Log in to the Horizon console.</li>
 <li>Under your project, open the <b>Database</b> panel and then click the <b>Instances</b>
-            tab.<image href="../../media/createDBinstance9.png" placement="break"/>
+            tab.<image href="../media/createDBinstance9.png" placement="break"/>
         </li>
 <li>Click <b>Launch Instance</b>.</li>
 <li>In the <b>Details</b> tab, specify the following options:
@@ -144,20 +144,20 @@
 <li>
               <b>Availability Zone</b> (optional) - the availability zone that the database will be
               created in. For replication, it is important for this to be in a different
-              availability zone than the master.<image href="../../media/createDBinstance10.png"
+              availability zone than the master.<image href="../media/createDBinstance10.png"
                 placement="break" scale="75"/></li>
 </ul>
 </li>
 <li>Under the <b>Networking</b> tab, specify the network to associate the database instance with.
           This is required and should be the same network that any application that accesses the
-          database is on.<image href="../../media/createDBinstance11.png" placement="break"
+          database is on.<image href="../media/createDBinstance11.png" placement="break"
             scale="75"/></li>
 <li>Click the <b>Advanced</b> tab and then use the <b>Replicate from Instance</b> drop-down to
           select the master instance to
             replicate.<!--A BR tag was used here in the original source.--><image
-            href="../../media/createDBinstance12.png" placement="break" scale="75"/>
+            href="../media/createDBinstance12.png" placement="break" scale="75"/>
         </li>
-<li>Click <b>Launch</b> to create the replica.<image href="../../media/createDBinstance13.png"
+<li>Click <b>Launch</b> to create the replica.<image href="../media/createDBinstance13.png"
             placement="break"/>
         </li>
 </ol>

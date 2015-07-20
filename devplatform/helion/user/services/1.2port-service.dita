@@ -19,9 +19,9 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/services/1.2port-service.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/services/port-service/--></p>
-  <p>HTTP and HTTPS ports and routing are provided automatically for all web applications deployed to Application Lifecycle Service (unless <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita#topic20922/web" type="section"   >processes:
+ <!--./devplatform/helion/user/services/1.2port-service.md-->
+ <!--permalink: /helion/devplatform/als/user/services/port-service/--></p>
+  <p>HTTP and HTTPS ports and routing are provided automatically for all web applications deployed to Application Lifecycle Service (unless <xref href="../../../../../devplatform/helion/user/deploy/1.2manifestyml.dita#topic20922/web" type="section"   >processes:
 web:</xref> is set to
 "\~").</p>
 <p>If your application requires additional TCP or UDP ports, use the Harbor service to allocate them.</p>
@@ -111,7 +111,7 @@ port.</li>
 <p>
         <note type="tip">To remotely check the settings and credentials of any Application Lifecycle Service
           service, use the <xref
-            href="../../../../../devplatform/1.2/helion/user/reference/1.2client-ref-services.dita">
+            href="../../../../../devplatform/helion/user/reference/1.2client-ref-services.dita">
             <b>helion service</b>
           </xref> command.</note>
       </p>

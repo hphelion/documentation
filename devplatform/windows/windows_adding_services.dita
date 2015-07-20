@@ -23,8 +23,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/windows/windows_adding_services.md-->
- <!--permalink: /helion/devplatform/1.2/windows/adding_services/--></p>
+ <!--./devplatform/windows/windows_adding_services.md-->
+ <!--permalink: /helion/devplatform/windows/adding_services/--></p>
 <p>
   <!--Original: <span @class=>--><ph>
     <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
@@ -41,7 +41,7 @@
             Explorer</xref>, in the deployment information window, enter the service information in
           the <b>Service</b> field in the format <codeph>Service Name, Service Type, Service
             Plan</codeph>:<p>
-            <image href="../../../media/windows_services.png"/>
+            <image href="../media/windows_services.png"/>
           </p></li>
 <li>Deploy your application.</li>
 <li>Once the application gets successfully created, your VCAP_SERVICES file will have a node such as
@@ -72,12 +72,12 @@
                 <b>Manage NuGet Packages</b> dialog (under <b>Tools-&gt;NuGet Package
                 Manager-&gt;Manage NuGet Packages for Solution...</b>), select the <b>Online</b>
               node, and search for <b>JSON.NET</b>. Click <b>Install</b>.<p>
-                <image href="../../../media/windows_nuget_json.png"/>
+                <image href="../media/windows_nuget_json.png"/>
               </p></li>
             <li> Add a Redis client. In this case, you'll install <b>StackExchange.Redis</b>. Open
               the <b>Manage NuGet Packages</b> dialog, , select the <b>Online</b> node, and search
               for <b>StackExchange.Redis</b>. Click <b>Install</b>.<p>
-                <image href="../../../media/windows_nuget_redis.png"/>
+                <image href="../media/windows_nuget_redis.png"/>
               </p></li>
           </ol></li>
 <li> To verify that the services are working, create a new MVC5 View (CSHTML) page with the
@@ -118,7 +118,7 @@
             <li>Displays the returned string</li>
           </ol></li>
 <li>Deploy and open the application. You will see the following result:<p>
-            <image href="../../../media/windows_redis_result.png"/>
+            <image href="../media/windows_redis_result.png"/>
           </p></li>
 </ol>
 </section>

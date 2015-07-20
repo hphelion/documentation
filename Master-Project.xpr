@@ -33,6 +33,7 @@
         <folder path="publiccloud/"/>
         <folder path="unusedgraphics/"/>
         <folder path="UseCases/"/>
-        <file name="devplatform/installation/1.2devplatform.horizonui.install.dita"/>
+        <file name="devplatform/1.2devplatform.thirdparty.licensing.dita"/>
+        <file name="devplatform/installation/devplatform.horizonui.install.dita"/>
     </projectTree>
 </project>

@@ -18,8 +18,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/1.2index.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/--></p>
+ <!--./devplatform/helion/user/1.2index.md-->
+ <!--permalink: /helion/devplatform/als/user/--></p>
 <p>The Application Lifecycle Service is a polyglot Platform-as-a-Service (PaaS). You can easily
       deploy applications written in a wide range of languages and web frameworks using a variety of
       data services simply by pushing your source code to the system.</p>

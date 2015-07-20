@@ -20,14 +20,13 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start-termination.md-->
- <!--permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/termination/--></p>
+ <!--./devplatform/1.2devplatform.ALS-developer-trial-quick-start-termination.md-->
+ <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/termination/--></p>
 <p>When you are done exploring your Developer Quick Start Trial, you can take the environment down just as easily.</p>
 <simpletable>
 <strow>
 <stentry>
-                    <image href="../../media/star.gif" id="image_s3q_vt5_js" scale="50"
-                        /><b>Termination</b>
+                    <b>Termination</b>
                     <p>
                         <xref
                             href="1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.dita"

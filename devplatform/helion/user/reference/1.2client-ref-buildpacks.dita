@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/reference/1.2client-ref-buildpacks.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/reference/client-ref/buildpacks/--></p>
+ <!--./devplatform/helion/user/reference/1.2client-ref-buildpacks.md-->
+ <!--permalink: /helion/devplatform/als/user/reference/client-ref/buildpacks/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic3572/command-buildpacks">helion buildpacks</xref>: Show all buildpacks known to the target in the order they are checked in during auto-detection.</li>

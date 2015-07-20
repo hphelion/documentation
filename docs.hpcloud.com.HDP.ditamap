@@ -66,13 +66,26 @@
      
  <topichead navtitle="Installation">
    <topicref href="devplatform/installation/devplatform_commercial_install.dita" navtitle="Full Installation - All Services" locktitle="yes" chunk="to-content">
-     <topicref href="devplatform/installation/devplatform_install_prereq.dita" toc="no"/>
-         
-        </topicref>
-      
-      <topicref href="devplatform/1.2devplatform.troubleshooting.dita" locktitle="yes"
+     <topicref href="devplatform/installation/devplatform.horizonui.install.dita" toc="no"></topicref>
+     <topicref href="devplatform/installation/devplatform_install_prereq.dita" toc="no"></topicref>
+     <topicref href="devplatform/installation/devplatform_install_platform.dita" toc="no"></topicref>
+     <topicref href="devplatform/installation/devplatform_install_ALS.dita" toc="no"></topicref>
+     <topicref href="devplatform/installation/devplatform_install_database.dita" toc="no"></topicref>
+     <topicref href="devplatform/installation/devplatform_install_messaging.dita"  toc="no"></topicref>
+     <topicref href="devplatform/installation/devplatform_install_marketplace.dita" toc="no"></topicref>
+     <topicref href="devplatform/installation/devplatform.vertica.install.dita" toc="no"></topicref>
+   </topicref>
+   <topicref href="devplatform/installation/devplatform.horizonui.install.dita" navtitle="Install the Horizon UI Panels" locktitle="yes" />
+   <topicref href="devplatform/installation/devplatform_install_prereq.dita" navtitle="Installation Prerequisites" locktitle="yes" />
+   <topicref href="devplatform/installation/devplatform_install_platform.dita" navtitle="Install the HP Helion Development Platform (no services)" locktitle="yes" />
+   <topicref href="devplatform/installation/devplatform_install_ALS.dita" navtitle="Install the Application Lifecycle Service" locktitle="yes" />
+   <topicref href="devplatform/installation/devplatform_install_database.dita" navtitle="Install the Database Service" locktitle="yes"/>
+   <topicref href="devplatform/installation/devplatform_install_messaging.dita" navtitle="Install the Messaging Service" locktitle="yes"/>
+   <topicref href="devplatform/installation/devplatform_install_marketplace.dita" navtitle="Install the Marketplace Service" locktitle="yes"/>
+   <topicref href="devplatform/installation/devplatform.vertica.install.dita" navtitle="Uninstall the Vertica Application" locktitle="yes"/> 
+      <topicref href="devplatform/devplatform.troubleshooting.dita" locktitle="yes"
         navtitle="Installation Troubleshooting"/>
-      <topicref href="devplatform/1.2devplatform.related-topics.dita" locktitle="yes"
+      <topicref href="devplatform/devplatform.related-topics.dita" locktitle="yes"
         navtitle="Related Documentation "/>
     </topichead>
       

@@ -132,7 +132,7 @@
       can install additional packages (e.g. with apt-get or aptitude) only from these repositories.
       When adding new repositories, GPG keys for each new repo must also be added to the Docker base
       container See <xref
-        href="../../../../../devplatform/1.2/helion/admin/server/1.2configuration.dita#topic31232/allowed-repositories"
+        href="../../../../../devplatform/helion/admin/server/1.2configuration.dita#topic31232/allowed-repositories"
         type="section">Allowed Repositories</xref>. </section>
     <section id="console-settings-applications"> <title>Applications</title>
       <ul>
@@ -183,7 +183,7 @@
         drain retry limits. Drains and limits cannot be changed in this interface; use the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-log-drain-add" type="section"   >
           <i>kato log drain</i>
         </xref>
-        commands and <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
+        commands and <xref href="../../../../../devplatform/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
           <i>kato config</i>
         </xref> commands.</p>
     </section>

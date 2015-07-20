@@ -18,12 +18,12 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/deploy/languages/1.2node.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/node/--></p>
+ <!--./devplatform/helion/user/deploy/languages/1.2node.md-->
+ <!--permalink: /helion/devplatform/als/user/deploy/languages/node/--></p>
 <p>Application Lifecycle Service has a built in Node framework with multiple versions of the
   <xref href="http://nodejs.org/" scope="external" format="html" >Node.js</xref> runtime. <xref href="https://npmjs.org/" scope="external" format="html" >NPM</xref> is used
 to install Node packages automatically.</p>
-  <p>Deployable <xref href="../../../../../../devplatform/1.2/1.2devplatform.appdev.dita#topic2457/node" type="section"   >sample applications</xref> are available in this language.</p>
+  <p>Deployable <xref href="../../../../../../devplatform/1.2devplatform.appdev.dita#topic2457/node" type="section"   >sample applications</xref> are available in this language.</p>
 <section id="node-npm"> <title>NPM</title>
 <p>Your application should list dependencies in a standard, top-level
 <xref href="https://docs.npmjs.com/getting-started/creating-node-modules" scope="external" format="html" >

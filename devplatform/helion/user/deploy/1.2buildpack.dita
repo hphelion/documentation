@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/deploy/1.2buildpack.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/deploy/buildpack/--></p>
+ <!--./devplatform/helion/user/deploy/1.2buildpack.md-->
+ <!--permalink: /helion/devplatform/als/user/deploy/buildpack/--></p>
 <p>
 <xref href="https://devcenter.heroku.com/articles/buildpacks" scope="external" format="html" >Buildpacks</xref> are
 bundles of detection and configuration scripts which set up containers
@@ -41,7 +41,7 @@ framework:
   runtime: python32</codeblock>
 <p>
   <note type="restriction"> When using the <xref
-    href="../../../../../devplatform/1.2/helion/admin/reference/1.2known-issues.dita#topic6051/legacy-buildpack-and-environment-variables"
+    href="../../../../../devplatform/helion/admin/reference/1.2known-issues.dita#topic6051/legacy-buildpack-and-environment-variables"
     type="section">Legacy buildpack</xref>, config-defined environment variable values can only
           be updated by re-pushing the entire application with the new settings.</note>
       </p>

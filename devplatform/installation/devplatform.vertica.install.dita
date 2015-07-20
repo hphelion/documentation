@@ -23,8 +23,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/1.2devplatform.marketplace.install.md-->
- <!--permalink: /helion/devplatform/1.2/marketplace/--></p>
+ <!--./devplatform/1.2devplatform.marketplace.install.md-->
+ <!--permalink: /helion/devplatform/marketplace/--></p>
 <p>The Marketplace, currently in beta, is a repository where teams can download the latest services they need to accelerate development of their applications. In its beta incarnation, the Marketplace has a single application: the Vertica 7 Community Edition.</p>
 <p>The following topics explain how to install and deploy an instance of Vertica 7 Community Edition:</p>
 <ul>
@@ -68,13 +68,13 @@
 <ol>
 <li> Log into Horizon and open the <b>Marketplace</b> panel under your Project. Click on
             <b>Application Catalog</b>, and then click on the Environments tab.<p>
-            <image href="../../media/marketplace1.png"/>
+            <image href="../media/marketplace1.png"/>
           </p></li>
 <li> Click <b>Create Environment</b>.<p>
-            <image href="../../media/marketplace2.png"/>
+            <image href="../media/marketplace2.png"/>
           </p></li>
 <li> After the environment has been created, your view should look like this:<p>
-            <image href="../../media/marketplace3.png"/>
+            <image href="../media/marketplace3.png"/>
           </p></li>
 </ol>
 </section>
@@ -84,13 +84,13 @@
 <li> Log in to the Horizon console and open the <b>Marketplace</b> panel under your Project. </li>
         <li> Click on <b>Application Catalog</b> and then click on the <b>Applications</b> tab. You
           will see the Vertica 7 Community Edition package.<p>
-            <image href="../../media/marketplace4.png" id="image_cxz_v3d_ks"/>
+            <image href="../media/marketplace4.png" id="image_cxz_v3d_ks"/>
           </p></li>
 <li> Click <b>Add to Env </b> from within the Vertica 7 Community Edition section. You will see an
             <b>Add Application to &lt;selected environment name&gt;</b> dialog. For this example,
           set the Environment Name to <b>Test1</b>. Agree to the Terms and Conditions, then scroll
           down to the bottom of the dialog and click <b>Next</b>.<p>
-            <image href="../../media/marketplace5.png"/>
+            <image href="../media/marketplace5.png"/>
           </p></li>
 <li>The <b>Add Application to &lt;selected environment&gt;</b> dialog will come up. Fill out<ul>
             <li>
@@ -117,27 +117,27 @@
                 scope="external" format="html">puTTYgen</xref>. Insert public key text and click the
                 <b>Import Key Pair</b> button.</li>
           </ol><p>
-            <image href="../../media/marketplace6.png"/>
+            <image href="../media/marketplace6.png"/>
           </p></li>
 <li> Supply a database name and a password, complying with the on-page instructions. Click
             <b>Next</b>.<p>
-            <image href="../../media/marketplace7new.png"/>
+            <image href="../media/marketplace7new.png"/>
           </p></li>
 <li> You will be prompted to add the Application you have created to the environment you selected.
           Click <b>Create</b> to continue.<p>
-            <image href="../../media/marketplace8.png"/>
+            <image href="../media/marketplace8.png"/>
           </p></li>
 <li> You will see that Vertica 7 Community Edition has been installed in the test1 environment. Note
           that the Environment has <b>not</b> been deployed yet. That is the next step.<p>
-            <image href="../../media/marketplace9.png"/>
+            <image href="../media/marketplace9.png"/>
           </p></li>
 <li> To deploy the environment, click <b>Deploy This Environment</b>. <note>Expect deployment to
             take between 5 and 10 minutes.</note><p>
-            <image href="../../media/marketplace10.png"/>
+            <image href="../media/marketplace10.png"/>
           </p></li>
 <li> When this process has completed, you will see that the Vertica 7 Community Edition is available
           for consumption. Connection information is given in the <b>last operation</b> column.<p>
-            <image href="../../media/marketplace11.png"/>
+            <image href="../media/marketplace11.png"/>
           </p></li>
 <li> You can also implement additional security by modifying the access rules for the security group
           associated with the environment that the Vertica instance was deployed into. In the

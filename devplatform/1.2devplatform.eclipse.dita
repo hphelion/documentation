@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/1.2devplatform.eclipse.md-->
- <!--permalink: /helion/devplatform/1.2/eclipse/--></p>
+ <!--./devplatform/1.2devplatform.eclipse.md-->
+ <!--permalink: /helion/devplatform/eclipse/--></p>
 <p>If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to HP Helion Development Platform.</p>
 <p>Follow the steps outlined in this document to get the plugin up and running and to deploy one of the sample apps.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
@@ -39,12 +39,12 @@
 <li>Open the Eclipse IDE and install the plugin through the <b>Eclipse Marketplace</b> dialog. You
                     can find this dialog by clicking on <b>Help</b> and then <b>Eclipse
                         Marketplace</b>.<image
-                        href="../../media/eclipseA.png" placement="break" scale="75"/>
+                        href="../media/eclipseA.png" placement="break" scale="75"/>
                 </li>
 <li>Type in the text <b>Helion</b> and hit <b>go</b> to find the Helion Eclipse plugin in the marketplace.</li>
-<li>Click on <b>Install</b> and follow the prompts to install the <b>HP Helion Development Platform Eclipse Plugin</b>.<image href="../../media/eclipse2.png" placement="break"/>
+<li>Click on <b>Install</b> and follow the prompts to install the <b>HP Helion Development Platform Eclipse Plugin</b>.<image href="../media/eclipse2.png" placement="break"/>
 </li>
-<li>Once the packages are discovered, ensure <b>HP Helion Development Platform</b> is checked and click <b>Confirm</b>.<image href="../../media/eclipse3.png" placement="break"/>
+<li>Once the packages are discovered, ensure <b>HP Helion Development Platform</b> is checked and click <b>Confirm</b>.<image href="../media/eclipse3.png" placement="break"/>
 </li>
 <li>Accept the license agreement and Finish the wizard.</li>
 <li>You will be prompted to restart Eclipse.  </li>
@@ -52,15 +52,15 @@
 </section>
 <section id="setupconfiguration"> <title>Setup/Configuration</title>
 <ol>
-<li>Once Eclipse has reloaded, open the Servers window by navigating to Window-&gt; Show View-&gt; Servers. Note that if you have a different version of Eclipse, you might need to go to Window -&gt; Show View -&gt; Other -&gt; Servers.<image href="../../media/eclipse4.png" placement="break"/>
+<li>Once Eclipse has reloaded, open the Servers window by navigating to Window-&gt; Show View-&gt; Servers. Note that if you have a different version of Eclipse, you might need to go to Window -&gt; Show View -&gt; Other -&gt; Servers.<image href="../media/eclipse4.png" placement="break"/>
 </li>
 <li>Launch the HP Helion Development Platform plugin by clicking on the <b>Add New Server</b> link in the Servers window.  </li>
-<li>Select <b>HP Helion Development Platform</b> from the tree view and click <b>Next</b>.<image href="../../media/eclipse5.png" placement="break"/>
-<image href="../../media/eclipse6.png" placement="break" />
+<li>Select <b>HP Helion Development Platform</b> from the tree view and click <b>Next</b>.<image href="../media/eclipse5.png" placement="break"/>
+<image href="../media/eclipse6.png" placement="break" />
 </li>
-<li>Add a new Cloud URL by hitting the Manage Cloud button.  Enter the URL of your ALS cluster and give it a name. If you don't have an ALS cluster set up, the fastest way to create one is to use the <xref href="../../devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> in the public cloud.<image href="../../media/eclipse7.png" placement="break"/>
+<li>Add a new Cloud URL by hitting the Manage Cloud button.  Enter the URL of your ALS cluster and give it a name. If you don't have an ALS cluster set up, the fastest way to create one is to use the <xref href="../../devplatform/1.2devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> in the public cloud.<image href="../media/eclipse7.png" placement="break"/>
 <b>Note</b>: You may receive a warning that the peer is not authenticated, this is expected behavior as ALS images use a self-signed certificate. Select Yes when prompted 
-    with this error message. <image href="../../media/eclipse8.png" id="image_oww_d1d_ks" placement="break"></image></li>
+    with this error message. <image href="../media/eclipse8.png" id="image_oww_d1d_ks" placement="break"></image></li>
 <li>Enter the credentials used to access your ALS cluster in the resulting dialog and then click
                         <b>Validate Account</b> to ensure that the plugin can access the URL.
                         <note>If you encounter issues validating the connection, ensure that your
@@ -69,7 +69,7 @@
                         network settings and trouble shooting. Note that you might get a warning
                         about the site using a <i>self-signed certificate</i>. This warning can be
                         safely ignored.</note>
-                    <image href="../../media/eclipse8.png" id="image_nyw_d1d_ks" placement="break"/>
+                    <image href="../media/eclipse8.png" id="image_nyw_d1d_ks" placement="break"/>
                 </li><li>Click <b>Next</b> to list your organizations
                 and spaces. Pick an organization and space to work with in this connection and click
                     <b>Yes</b> to import them into the IDE. Click <b>Finish</b>. If you do not have
@@ -83,44 +83,44 @@
 <section id="usage"> <title>Usage</title>
 <p>In order to demonstrate how the plugin works, we'll use a simple Java sample app that connects to a MySQL service.  If you'd like to follow along, <xref href="https://github.com/HelionDevPlatform/helion-mysql-java" scope="external" format="html" >download and install</xref> the sample on your development machine.  If not, please skip the following 5 steps.</p>
 <ol>
-<li>Start by adding a new project. Right-click on Project Explorer and select <b>New</b> &gt; <b>Dynamic Web Project</b>. Name the project <b>MySQLSample</b> and then click <b>Finish</b>.<image href="../../media/eclipse9.png" placement="break"/>
+<li>Start by adding a new project. Right-click on Project Explorer and select <b>New</b> &gt; <b>Dynamic Web Project</b>. Name the project <b>MySQLSample</b> and then click <b>Finish</b>.<image href="../media/eclipse9.png" placement="break"/>
 </li>
-<li>Right-click the new MySQLSample project and import the sample app by clicking on <b>Import</b> &gt; <b>Import</b>.<image href="../../media/eclipse10.png" placement="break"/>
+<li>Right-click the new MySQLSample project and import the sample app by clicking on <b>Import</b> &gt; <b>Import</b>.<image href="../media/eclipse10.png" placement="break"/>
 </li>
-<li>Then import the sample app through your preferred method.  In this case we'll import from a directory on the file system.  Make sure that you click on the checkbox to import all files in the directory. Then click <b>Finish</b>.<image href="../../media/eclipse11.png" placement="break"/>
+<li>Then import the sample app through your preferred method.  In this case we'll import from a directory on the file system.  Make sure that you click on the checkbox to import all files in the directory. Then click <b>Finish</b>.<image href="../media/eclipse11.png" placement="break"/>
 </li>
-<li>If you'd like to modify the sample and build it locally, ensure that all references can be resolved.  This sample uses javax.servlet and net.sourceforge.argo.  Note that they are declared in the POM.xml file.  To resolve these references, navigate to the files with reference warnings and click on the red squiggle.  Alternatively, if you have <xref href="http://www.eclipse.org/m2e" scope="external" format="html" >Maven installed</xref> in Eclipse, you can build with Maven to resolve the references.<image href="../../media/eclipse12.png" placement="break"/>
+<li>If you'd like to modify the sample and build it locally, ensure that all references can be resolved.  This sample uses javax.servlet and net.sourceforge.argo.  Note that they are declared in the POM.xml file.  To resolve these references, navigate to the files with reference warnings and click on the red squiggle.  Alternatively, if you have <xref href="http://www.eclipse.org/m2e" scope="external" format="html" >Maven installed</xref> in Eclipse, you can build with Maven to resolve the references.<image href="../media/eclipse12.png" placement="break"/>
 </li>
 <li>For this sample, you also need to import two external jar files. You can find the
                     javax.servlet.* modules in the Java EE SDK under the Glassfish directory. The
                     Argo modules can be downloaded <xref
                         href="http://argo.sourceforge.net/downloads.html" scope="external"
-                        format="html">here</xref>.<image href="../../media/eclipse13.png"
+                        format="html">here</xref>.<image href="../media/eclipse13.png"
                         placement="break"/></li>
 </ol>
 </section>
 <section id="deploy-sample"> <title>Deploy sample</title>
 <p>Now that our Sample app is set up, let's deploy it using the Helion Development Platform plugin.</p>
 <ol>
-<li>Right-click the project in Project Explorer and select Configure &gt; Enable as Cloud Foundry App.<image href="../../media/eclipse14.png" placement="break"/>
+<li>Right-click the project in Project Explorer and select Configure &gt; Enable as Cloud Foundry App.<image href="../media/eclipse14.png" placement="break"/>
 </li>
-<li>We'll deploy this app to the Helion Development Platform by right-clicking on the project and selecting <b>Run As</b> &gt; <b>Run on Server</b>.<image href="../../media/eclipse15.png" placement="break"/>
+<li>We'll deploy this app to the Helion Development Platform by right-clicking on the project and selecting <b>Run As</b> &gt; <b>Run on Server</b>.<image href="../media/eclipse15.png" placement="break"/>
 </li>
-<li>Select <b>Helion Development Platform</b> and click <b>Next</b>.  You can check the box to skip this step in future deployments.<image href="../../media/eclipse16.png" placement="break"/>
+<li>Select <b>Helion Development Platform</b> and click <b>Next</b>.  You can check the box to skip this step in future deployments.<image href="../media/eclipse16.png" placement="break"/>
 </li>
 <li>Next specify a name for your app and optionally pick a specific custom buildpack. You can save
                     these settings to your manifest if you'd deploy using the command-line tools in
                     the future. Since this is a standard Java applet, we'll stick with the default
                     buildpack that is built into Helion Development Platform.<image
-                        href="../../media/eclipse17.png" placement="break" scale="75"/>
+                        href="../media/eclipse17.png" placement="break" scale="75"/>
                 </li>
-<li>You can see the deployment progressing in the console.<image href="../../media/eclipse18.png" placement="break"/>
+<li>You can see the deployment progressing in the console.<image href="../media/eclipse18.png" placement="break"/>
 </li>
 </ol>
 <p>Once your app is deployed, you can use the plugin to interact with it directly from Eclipse. You
                 can select <b>Show Console</b> to bring up the ALS console. You can view the app in
                 the browser by selecting <b>Open Home Page</b> and you can also stop/restart/remove
-                    it.<image href="../../media/eclipse19.png" placement="break"/>
+                    it.<image href="../media/eclipse19.png" placement="break"/>
             </p>
 </section>
 </body>

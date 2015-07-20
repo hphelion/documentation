@@ -23,8 +23,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/1.2devplatform.related-topics.md-->
- <!--permalink: /helion/devplatform/1.2/related-topics/--></p>
+ <!--./devplatform/1.2devplatform.related-topics.md-->
+ <!--permalink: /helion/devplatform/related-topics/--></p>
   <p>The HP Helion Development Platform is based on <tm tmtype="tm">Cloud Foundry</tm> and <tm tmtype="reg">OpenStack</tm> technology along with an HP-configured Linux operating system.</p>
 <p>You can find related information on the following sites:</p>
 <ul>

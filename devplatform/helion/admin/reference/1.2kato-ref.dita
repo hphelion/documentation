@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/reference/1.2kato-ref.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/reference/kato-ref/--></p>
+ <!--./devplatform/helion/admin/reference/1.2kato-ref.md-->
+ <!--permalink: /helion/devplatform/als/admin/reference/kato-ref/--></p>
 <p>Kato is the Application Lifecycle Service command line administration utility.</p>
 <section id="usage"> <title>Syntax</title>
 <codeblock>kato <b>command</b> [--help] [arguments] [command-options]</codeblock>

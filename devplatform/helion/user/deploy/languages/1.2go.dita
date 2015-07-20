@@ -18,8 +18,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/deploy/languages/1.2go.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/go/--></p>
+ <!--./devplatform/helion/user/deploy/languages/1.2go.md-->
+ <!--permalink: /helion/devplatform/als/user/deploy/languages/go/--></p>
 <p>Go applications (<xref href="http://golang.org/" scope="external" format="html" >golang</xref>) are supported through a
 BuildPack framework and can be pushed using the Application Lifecycle Service.</p>
 <section id="local-install"> <title>Local Installation</title>
@@ -76,7 +76,7 @@ a file called .godir, in your project root, containing the path from
 <section id="manifest-yml"> <title>manifest.yml</title>
 <p>This file is optional, as the framework will automatically be detected
 by Application Lifecycle Service. However, it can still be used to set the app name,
-configure settings, create services, etc. See the <xref href="../../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >
+configure settings, create services, etc. See the <xref href="../../../../../../devplatform/helion/user/deploy/1.2manifestyml.dita" >
 <i>manifest.yml</i>
 </xref> documentation.</p>
 <codeblock>name:

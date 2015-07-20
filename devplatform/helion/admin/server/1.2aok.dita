@@ -22,8 +22,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/server/1.2aok.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/server/aok/--></p>
+ <!--./devplatform/helion/admin/server/1.2aok.md-->
+ <!--permalink: /helion/devplatform/als/admin/server/aok/--></p>
 <p>AOK is Application Lifecycle Service's authentication management service (replacing Cloud
       Foundry's UAA Server). It issues tokens via OAuth2 for client applications such as the
         <b>helion</b> client and the ALS Console. AOK can connect to other back-end SSO services
@@ -61,7 +61,7 @@
 <section id="client"> <title>End User Login: Client</title>
 <p>If the strategy has been changed to something other than <b>builtin</b> (see <xref
           href="#topic8359/strategies" format="dita">Strategies</xref>) then users connecting with
-        the <xref href="../../../../../devplatform/1.2/helion/user/client/1.2index.dita">ALS
+        the <xref href="../../user/client/1.2index.dita">ALS
           command-line client</xref> should be aware that:</p>
 <ul>
 <li>The user must enter identifiers in the format expected by the <xref type="section" href="#topic8359/strategies">strategy</xref> used by AOK (e.g. username or email
@@ -96,7 +96,7 @@ use. This value must correspond exactly to one of the supported strategy
 names.</p>
 </section>
 <section id="configuration"> <title>Configuration</title>
-  <p>To configure AOK, set the following keys in the AOK config using the <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section" >kato
+  <p>To configure AOK, set the following keys in the AOK config using the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section" >kato
 config set</xref> commands:</p>
 <ul>
 <li>

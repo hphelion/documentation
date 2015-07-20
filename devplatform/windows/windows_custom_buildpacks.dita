@@ -23,8 +23,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/windows/windows_custom_buildpacks.md-->
- <!--permalink: /helion/devplatform/1.2/windows/buildpack/--></p>
+ <!--./devplatform/windows/windows_custom_buildpacks.md-->
+ <!--permalink: /helion/devplatform/windows/buildpack/--></p>
 <p>
   <!--Original: <span @class=>--><ph>
     <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
@@ -36,7 +36,7 @@
 <li> You will be prompted for connection data (Endpoint, login, and password), and whether to ignore
         SSL errors. You should check "Ignore SSL errors" in the dialog if your deployment
         environment uses self-signed SSL certificates (such as HP Helion Public Cloud).<p>
-          <image href="../../../media/windows_publish_credentials.png" placement="break"/>
+          <image href="../media/windows_publish_credentials.png" placement="break"/>
         </p></li>
 <li>Application settings are collected from <codeph>manifest.yml</codeph>.</li>
 <li>If a local build is requested, projects in the solution directory are deployed to a temporary folder and compiled with <b>MSBuild</b>.</li>

@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/deploy/1.2manifestyml.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/deploy/manifestyml/--></p>
+ <!--./devplatform/helion/user/deploy/1.2manifestyml.md-->
+ <!--permalink: /helion/devplatform/als/user/deploy/manifestyml/--></p>
   <p>The <i>manifest.yml</i> file sets application configuration options which are then passed to
       ALS during the <xref href="../reference/1.2client-ref-management.dita#topic50918/command-push"
         >helion push</xref> command.</p>
@@ -275,7 +275,7 @@ provide a name. The name can also be specified on the command line (eg.
 mem: 512M
 buildpack: https://github.com/heroku/heroku-buildpack-java.git</codeblock>
 <p>If unset, Application Lifecycle Service will check to see if the application triggers the
-  <codeph>detect</codeph> scripts in any of its <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks" type="section"   >built-in
+  <codeph>detect</codeph> scripts in any of its <xref href="1.2buildpack.dita#topic3370/built-in-buildpacks" type="section"   >built-in
 buildpacks</xref>.</p>
 </section>
 <section id="framework"> <title>framework:</title>
@@ -283,11 +283,11 @@ buildpacks</xref>.</p>
           <codeph>framework</codeph> key triggers the use of the <xref
           href="1.2buildpack.dita#topic3370/legacy-buildpack">Legacy Buildpack</xref>.</p>
 <p>The keys in the <codeph>framework</codeph> section are used with the <xref
-  href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks"  type="section" >Legacy Buildpack</xref> only. Applications using language
+  href="1.2buildpack.dita#topic3370/built-in-buildpacks"  type="section" >Legacy Buildpack</xref> only. Applications using language
         or framework-specific buildpacks do not require these values, and should instead specify the
           <xref href="#topic20922/buildpack" format="dita">buildpack</xref> or rely on the detection
         scripts of the <xref
-          href="../../../../../devplatform/1.2/helion/user/deploy/1.2buildpack.dita#topic3370/built-in-buildpacks"
+          href="1.2buildpack.dita#topic3370/built-in-buildpacks"
           type="section" >built-in buildpacks</xref>.</p>
 </section>
 <section id="type"> <title>type:</title>

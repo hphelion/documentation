@@ -19,10 +19,10 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/console/1.2index.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/console/--></p>
+ <!--./devplatform/helion/user/console/1.2index.md-->
+ <!--permalink: /helion/devplatform/als/user/console/--></p>
 <p>The Management Console is a web interface for Application Lifecycle Service (ALS). Using the same API as the Helion CLI client, it provides access to a subset of features for deploying, scaling, and configuring applications as well as monitoring quota usage, and viewing logs.</p>
-<p>The interface differs for Admin and non-Admin users. The features described below are available and visible to end users. For information on the Management Console view for Admins, see the <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita" >Console Admin Guide</xref>.</p>
+<p>The interface differs for Admin and non-Admin users. The features described below are available and visible to end users. For information on the Management Console view for Admins, see the <xref href="../../../../../devplatform/helion/admin/console/1.2index.dita" >Console Admin Guide</xref>.</p>
 <ul>
 <li>
 <xref type="section" href="#topic8844/welcome">Welcome Page</xref>
@@ -58,7 +58,7 @@
 <p>The top-level page of the Management Console displays quick links to the most commonly used resources:</p>
 <ul>
 <li>
-<b>Read the Documentation</b>: By default, this links to the ALS documentation at <xref href="../../../../../devplatform/1.2/helion/1.2index.dita" >docs.hpcloud.com</xref>
+<b>Read the Documentation</b>: By default, this links to the ALS documentation at <xref href="../../../../../devplatform/helion/1.2index.dita" >docs.hpcloud.com</xref>
 </li>
 <li>
           <b>Contact Support</b>: Link to the <xref href="#topic8844/support" format="dita"
@@ -132,11 +132,11 @@
 </ul>
 </section>
 <section id="organization-list"> <title>Organizations List</title>
-  <p>The Organizations list is accessible from the top menu. It shows all <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#topic2729/organizations" type="section"   >Organizations</xref> which the current user is a member of. The list is searchable by name.</p>
+  <p>The Organizations list is accessible from the top menu. It shows all <xref href="../../../../../devplatform/helion/user/deploy/1.2orgs-spaces.dita#topic2729/organizations" type="section"   >Organizations</xref> which the current user is a member of. The list is searchable by name.</p>
 <p>Clicking on any Organization name opens the Organization view.</p>
 </section>
 <section id="organization-view"> <title>Organization View</title>
-  <p>The Organizations page shows a list of all <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#topic2729/organizations" type="section"   >Organizations</xref> that the current user is a member of. Depending on how ALS has been set up, it is possible be a member of only a single Organization.</p>
+  <p>The Organizations page shows a list of all <xref href="../../../../../devplatform/helion/user/deploy/1.2orgs-spaces.dita#topic2729/organizations" type="section"   >Organizations</xref> that the current user is a member of. Depending on how ALS has been set up, it is possible be a member of only a single Organization.</p>
 <p>Clicking on the Organization's name opens a view of that organization, including the following tabs:</p>
 <ul>
 <li>
@@ -144,7 +144,7 @@
 <li>
           <b>Users</b>: A list of Users who are members of the Organization, showing the Email
           address and Organization <xref
-            href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita#topic2729/org-roles"
+            href="../../../../../devplatform/helion/user/deploy/1.2orgs-spaces.dita#topic2729/org-roles"
             type="section">Roles</xref> of each. <ul>
             <li>
               <b>Users</b>: can view organization quotas, domains, spaces and users.</li>
@@ -224,7 +224,7 @@ If a the service is a User Provided Service, new credentials can be added and ex
 <p>
   <b>App Bindings</b>
 </p>
-  <p>A list of applications that have bindings to this service instance. Clicking an app name opens an <xref href="../../../../../devplatform/1.2/helion/admin/console/1.2index.dita#topic13823/applications" type="section"   >administrative view of that application</xref>.</p>
+  <p>A list of applications that have bindings to this service instance. Clicking an app name opens an <xref href="../../../../../devplatform/helion/admin/console/1.2index.dita#topic13823/applications" type="section"   >administrative view of that application</xref>.</p>
 </section>
 <section id="sample-apps"> <title>Sample Applications</title>
 <p>The Sample Apps are collection of ready-to-run applications which can be deployed to Application Lifecycle Service by fetching the source code from the repository.</p>

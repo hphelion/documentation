@@ -19,11 +19,11 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/reference/1.2groups.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/reference/groups/--></p>
+ <!--./devplatform/helion/admin/reference/1.2groups.md-->
+ <!--permalink: /helion/devplatform/als/admin/reference/groups/--></p>
 <section>
 <note type="notice">Application Lifecycle Service Groups have been deprecated. See  <xref
-    href="../../../../../devplatform/1.2/helion/user/deploy/1.2orgs-spaces.dita">Organizations and Spaces</xref></note>
+    href="../../../../../devplatform/helion/user/deploy/1.2orgs-spaces.dita">Organizations and Spaces</xref></note>
       
 </section>
 </body>
