@@ -27,20 +27,22 @@
                         <title>Preparing the HLM host</title>
                         <p>Perform the following tasks on the HLM host:</p>
                         <ul>
-                                <li><xref href="#topic7148/proxy" format="dita">Configure proxy
-                                                information </xref></li>
-                                <li><xref href="#topic7148/ubuntu" format="dita">Install Ubuntu
-                                                Server 14.04.2 LTS</xref></li>
-                                <li><xref href="#topic7148/ssh" format="dita">Configure
-                                        SSH</xref></li>
-                                <li>Obtain a public key</li>
-                                <li><xref href="#topic7148/packages" format="dita">Install Ubuntu
-                                                packages</xref></li>
                                 <li><xref
-                                                href="#topic7148/configure-the-xrdp-remote-desktop-display"
-                                                format="dita">Configure the xrdp display</xref></li>
-                                <li><xref href="#topic7148/ntp" format="dita">Install and configure
-                                                NTP</xref></li>
+                                                href="../RC0/Installation/carrier-grade-install-pb-prereqs.dita#topic7148/proxy"
+                                        /></li>
+                                <li><xref
+                                                href="../RC0/Installation/carrier-grade-install-pb-prereqs.dita#topic7148/packages"
+                                        /></li>
+                                <li><xref
+                                                href="../RC0/Installation/carrier-grade-install-pb-prereqs.dita#topic7148/ssh"
+                                        /></li>
+                                <li>Obtain a public key</li>
+                                <li><xref
+                                                href="../RC0/Installation/carrier-grade-install-pb-prereqs.dita#topic7148/configure-the-xrdp-remote-desktop-display"
+                                        /></li>
+                                <li><xref
+                                                href="../RC0/Installation/carrier-grade-install-pb-prereqs.dita#topic7148/ntp"
+                                        /></li>
                         </ul>
                         <title>Install Ubuntu Server 14.04.2 LTS</title>
                         <p>The HLM host must have Ubuntu Server 14.04.2 LTS installed before
@@ -153,7 +155,8 @@ fi
                                         href="carrier-grade-install-NTP.dita#topic4740/client"
                                 />.</p>
 <p>For information on installing NTP on the HLM host, see <xref
-                                        href="carrier-grade-install-NTP.dita#topic4740">Configuring NTP</xref>.</p>
+          href="../../CarrierGrade/Installation/carrier-grade-install-NTP.dita">Installing an NTP
+          Server</xref>.</p>
 </section><section id="ssh"> <title>Configure SSH</title>
 <p>On the HLM host, the OpenSSH server must be running and the firewall configuration should allow
         access to the SSH ports.</p>
@@ -299,8 +302,7 @@ StrictHostKeyChecking no </codeblock></li>
                                 />.</p></section>
         
 <section id="next-step"> <title>Next Step</title>
-<p>
-<xref href="carrier-grade-install-non-kvm.dita#topic10581">Deploying the Non-KVM Region</xref></p>
+                        <p><xref href="../RC0/Installation/carrier-grade-install-non-kvm.dita#topic10581">Deploying the Non-KVM Region</xref></p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

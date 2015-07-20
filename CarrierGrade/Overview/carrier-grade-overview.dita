@@ -8,25 +8,35 @@
 </metadata>
 </prolog>
 <body>
+  <section>
     <p><!--UNDER REVISION--><!--./CarrierGrade/Overview/carrier-grade-overview.md--><!--permalink: /helion/openstack/carrier/overview/--></p>
     <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
-    <p>HP Helion OpenStack Carrier Grade integrates KVM with HP
-      Helion OpenStack to enable carrier grade network functions
-      virtualization (NFV) capabilities.</p>
+    <p><b>HP Helion OpenStack Carrier Grade (HCG)</b> is a carrier grade OpenStack plus compute and
+      network virtualization offering for NFV that enable CSPs to deploy network functions
+      virtualization (NFV) applications on open source software platforms. </p>
+    <p>Some key examples include the host operating system (for example, Linux), server
+      virtualization (KVM), network virtualization (vSwitch and SDN controllers), an installer and
+      cloud lifecycle management framework, fault and performance management, and high-availability
+      framework for the OpenStack control plane and the NFVI layer.</p>
     <p>HP Helion OpenStack Carrier Grade is based on <xref
         href="../../commercial/GA1/1.1commercial.index.dita">HP Helion Openstack 1.1</xref> but with
       significantly enhanced and optimized functionality, availability, scale and performance to
       meet the needs of NFV cloud deployments.</p>
-    <p>HP Helion OpenStack Carrier Grade uses multi-core HP Proliant
-      rack-mounted servers with storage and networking along with the <xref
-        href="http://www.windriver.com/products/titanium-server/" scope="external" format="html"
-        >Wind River Titanium Server</xref>, <xref
-        href="http://www8.hp.com/us/en/products/networking-switches/product-detail.html?oid=7268885"
-        scope="external" format="html">HP Distributed Cloud Networking</xref>, Kernel-based Virtual
-      Machine (KVM), and virtual switch software for reliable and accelerated data plane.</p>
-    <p>HP will contribute enhancements and optimizations made to HP Helion OpenStack Carrier Grade for NFV to upstream Openstack.</p>
-    <p>HP Helion OpenStack Carrier Grade is sold, and supported as a separate
-      software entity from HP Helion Openstack.</p>
+  
+  <p>Helion OpenStack Carrier Grade includes following  key components:</p>
+  <ul><li>OpenStack—core services including Horizon, Nova, Neutron, Cinder, Glance, Swift, Keystone, Ceilometer, and Heat. Other services will be added as needed in the future.</li>
+  <li>Compute node software package that  includes:
+    <ul>
+      <li>Carrier-grade Linux (host operating system [OS] running on the compute nodes)</li>
+      <li>Carrier-grade KVM (for virtualization of the compute node)</li>
+      <li>Carrier-grade accelerated virtual switch (AVS), data plane development kit (DPDK)-enabled high-performance virtual switch</li></ul></li>
+  <li>Management and middleware—composed of high-availability (HA) management; operations, administration, and
+    maintenance (OAM); software image management; and fault and performance management</li>
+    <li>Guest software development kit (SDK) for inclusion in the guest OS of the VNF for performance acceleration and
+      improving the HA framework above and beyond standard VIMs</li>
+    <li>HP Helion Lifecycle Manager (HLM)—cloud installer and lifecycle manager</li>
+  </ul>
+  </section>
     <section id="focus-areas-for-hp-helion-openstack-carrier-grade">
       <title>Focus areas for HP Helion OpenStack Carrier Grade</title>
       <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
