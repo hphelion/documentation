@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic12031">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Monasca Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Joel B"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 2.0"/>
+</metadata>
+</prolog>
+<body>
+<p><!--UNDER REVISION--><!--./commercial/GA1/2.0commercial.services-monasca.md--><!--permalink: /helion/commercial/2.0/services/monasca/--></p>
+<p>Monasca is a multi-tenant, scalable, fault-tolerant monitoring-as-a-service, HTTP-based service. It is open-source and integrates with OpenStack. It uses a REST API for high-speed metrics processing and querying, and has a streaming alarm and notification engine. The name "Monasca" is short for "monitoring at scale".</p>
+  <p>Monasca components consist of those that are part of the server cluster and those that interact only with the Monasca API.</p>
+  <p>The Monasca agent is highly configurable and can collect measurements from many sources (unlike the previous monitor, Icinga, which monitored only the Swift cluster). Monasca can even monitor itself. This self-monitoring is known as Monitoring of Monasca or MoM.</p>
+  <p>Metrics are submitted and authenticated using Keystone and stored associated with a tenant ID.</p>
+  <p>Monasca checks for services such as MySQL, RabbitMQ, and many others, and also supports Nagios checks and StatsD.</p>
+<p>In the Helion OpenStack 2.0 release, the OpenStack monitoring standard, Monasca, is supported as the Helion OpenStack monitoring solution with the following exceptions (which are not implemented):</p>
+<ul id="ul_scl_svw_ps">
+<li>Transform Engine</li>
+<li>Events Engine </li>
+<li>Anomaly and Prediction Engine</li>
+</ul>   
+<p>Icinga, which was the supported monitor service in previous releases of Helion OpenStack, is not supported in Helion OpenStack 2.0.</p>
+<p>For details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca" format="html" scope="external">https://wiki.openstack.org/wiki/Monasca</xref></p>
+<section id="components"></section>
+<p>Monasca consists of:</p>
+   <ul>
+     <li><p>Monitoring Agent (monasca-agent): A modern Python based monitoring agent that consists of several sub-components and supports system metrics, such as cpu utilization and available memory, Nagios plugins, statsd and many built-in checks for services such as MySQL, RabbitMQ, and many others.</p></li>
+     <li><p>Monitoring API (monasca-api): A well-defined and documented RESTful API for monitoring that is primarily focused on the following concepts and areas:</p>
+        <ul> 
+           <li>Metrics: Store and query massive amounts of metrics in real-time.
+               <ul>
+                 <li>Statistics: Query statistics for metrics</li>
+               </ul>
+           </li>
+        </ul>
+        </li>
+        <li>Alarm Definitions: Create, update, query, and delete alarm definitions.</li>
+        <li>Alarms: Query and delete the alarm history.
+            <ul>
+               <li>Simple expressive grammar for creating compound alarms composed of alarm subexpressions and logical operators.</li>
+               <li>Alarm severeties can be associated with alarms.</li>
+               <li>The complete alarm state transition history is stored and queryable which allows for subsequent root cause analysis (RCA) or advanced analytics.</li>
+            </ul>
+         </li> 
+         <li>Notification Methods: Create and delete notification methods and associate them with alarms, such as email.  Supports the ability to notify users directly via email when an alarm state transitions occur.</li>
+     <li>Persister (monasca-persister): Consumes metrics and alarm state transitions from the MessageQ and stores them in the Metrics and Alarms database. We will look into converting the Persister to a Python component in the future.</li>
+     <li>Threshold Engine (monasca-thresh): Computes thresholds on metrics and publishes alarms to the MessageQ when exceeded. Based on Apache Storm a free and open distributed real-time computation system.</li>
+     <li>Notification Engine (monasca-notification): Consumes alarm state transition messages from the MessageQ and sends notifications, such as emails for alarms. The Notification Engine is Python based.</li>
+     <li>Message Queue: A third-party component that primarily receives published metrics from the Monitoring API and alarm state transition messages from the Threshold Engine that are consumed by other components, such as the Persister and Notification Engine. The Message Queue is also used to publish and consume other events in the system. Currently, a Kafka based MessageQ is supported. Kafka is a high performance, distributed, fault-tolerant, and scalable message queue with durability built-in. We will look at other alternatives, such as RabbitMQ and in-fact in our previous implementation RabbitMQ was supported, but due to performance, scale, durability and high-availability limitiations with RabbitMQ we have moved to Kafka.</li>
+     <li>Metrics and Alarms Database: A third-party component that primarily stores metrics and the alarm state history. Currently, Vertica and InfluxDB are supported.</li>
+     <li>Config Database: A third-party component that stores a lot of the configuration and other information in the system. Currently, MySQL is supported.</li>
+     <li>Monitoring Client (python-monascaclient): A Python command line client and library that communicates and controls the Monitoring API. The Monitoring Client was written using the OpenStack Heat Python client as a framework. The Monitoring Client also has a Python library, "monascaclient" similar to the other OpenStack clients, that can be used to quickly build additional capabilities. The Monitoring Client library is used by the Monitoring UI, Ceilometer publisher, and other components.</li>
+     <li>Alarm Configuration Manager: A Python process that will detect new metrics and configure alarms based on the configuration. It uses the monitoring client library that communicates with the Monitoring API. The Alarm Configuration Manager is a Python Daemon that runs on a configurable interval and detects new metrics that need to be alarmed and creates the alarms.</li>
+     <li>Monitoring UI: A Horizon dashboard for visualizing the overall health and status of an OpenStack cloud.</li>
+   </ul>
+</body>
+</topic>

@@ -99,7 +99,8 @@
                     <li>16 x 16GB (1x16GB) Dual Rank x4 DDR4-2133 memory</li>
                     <li>4 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
                     <li>1 x FlexFabric 10Gb 2-port 556FLR-SFP</li>
-                    <li>1 x Smart Array P440ar/2G FIO Controller/2 x Ethernet 10Gb 2P 560SFP</li>
+                    <li>1 x Smart Array P440ar/2G FIO Controller</li>
+                    <li>2 x Ethernet 10Gb 2P 560SFP</li>
                   </ul>
                 </entry>
               </row>
@@ -168,7 +169,6 @@
                   <ul>
                     <li>2 x Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.8GHz</li>
                     <li>256 GB DDR3 1600 MHz </li>
-                    <li>2 x 1.2TB 6G SAS 10K rpm SFF (2.5-inch)</li>
                     <li>1 x HP FlexFabric 10Gb 2port 554FLB-SFP+ Adapter <b>and</b></li>
                     <li>1 x HP Ethernet 10Gb 2-port 560M Adapter</li>
                   </ul>
