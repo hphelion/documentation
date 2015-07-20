@@ -46,7 +46,7 @@ app</xref>:</p>
   (let [port (Integer/parseInt (System/getenv "PORT"))
         srv  (parse-string (System/getenv "VCAP_SERVICES"))
         cred ((first (srv "mongodb-1.8")) "credentials")]
-    (assoc config 
+    (assoc config
       :jetty-port port
       :db-host    (cred "host")
       :db-port    (cred "port")
