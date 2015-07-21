@@ -155,9 +155,8 @@
 <section id="obtain-a-public-key"> <title>Obtain a public key</title>
 <p>On the seed cloud host, the user root must have a public key, for example:</p>
 <codeblock>
-  <codeph>  /root/.ssh/id_rsa
+/root/.ssh/id_rsa
 /root/.ssh/id_rsa.pub
-</codeph>
 </codeblock>
 <p>If user <codeph>root</codeph> does not have a public key, you can create one using the <codeph>ssh-keygen -t rsa -N ""</codeph> command.</p>
 </section>
@@ -178,13 +177,11 @@
 </ul>
 <p>Use the following command to install these packages:</p>
 <codeblock>
-  <codeph>sudo apt-get install -y xrdp xfce4 libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-kvm libssl-dev libffi-dev virt-manager chromium-browser
-</codeph>
+sudo apt-get install -y xrdp xfce4 libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-kvm libssl-dev libffi-dev virt-manager chromium-browser
 </codeblock>
 <p>After you install the <codeph>libvirt</codeph> packages, you must reboot or restart <codeph>libvirt</codeph>:</p>
 <codeblock>
-  <codeph> sudo /etc/init.d/libvirt-bin restart
-</codeph>
+sudo /etc/init.d/libvirt-bin restart
 </codeblock>
 </section>
 <section id="install-and-configure-ntp"> <title>Install and configure NTP</title>
@@ -261,8 +258,7 @@ Before you start the installation, you must install NTP on the seed cloud host (
 <p>Log in to your seed cloud host as root:</p>
 
 <codeblock>
-<codeph>sudo su -
-</codeph>
+sudo su -
 </codeblock>
 </li>
 <li>
@@ -272,8 +268,7 @@ Before you start the installation, you must install NTP on the seed cloud host (
 <p>Extract the HP Helion OpenStack installation package to the <codeph>root</codeph> directory:</p>
 
 <codeblock>
-<codeph>tar zxvf /root/HP_Helion_Openstack
-</codeph>
+tar zxvf /root/HP_Helion_Openstack
 </codeblock>
 
 <p>This creates and populates a <codeph>tripleo/</codeph> directory within the `root' directory.</p>
@@ -310,14 +305,13 @@ Before you start the installation, you must install NTP on the seed cloud host (
 </p>
 <p>Your file should look similar to the following:</p>
 <codeblock>
-  <codeph>78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,1900
+78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,1900
 78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,16384,800
 78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,1900
 78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,1900
 78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,1900
 78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,1900
 78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,16384,800
-</codeph>
 </codeblock>
 <p>When creating this file, keep in mind the following:</p>
 <ul>
