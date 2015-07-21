@@ -72,8 +72,37 @@
    </ul>
 </section>
   <section id="messaging">
+    <title>Messaging</title>
     <p>The Monasca Message Queue is a distributed, scalable, HA message queue for distributing metrics, alarms and events in the monitoring system. The message queue is based on Kafka.</p>
     <p>There are several messages that are published and consumed by various components in Monasca via the MessageQ. See <xref href="https://wiki.openstack.org/wiki/Monasca/Message_Schema" format="html" scope="external">Message Schema</xref>.</p>
+  </section>
+  <section id="metricsandalarmsdatabase">
+    <title>Metrics and Alarms Database</title>
+    <p>A high-performance analytics database that can store massive amounts of metrics and alarms in real-time and also support interactive queries. Currently Vertica and InfluxDB are supported.</p>
+    <p>The SQL schema that is used by Vertica is as follows:</p>
+    
+    MonMetrics.Measurements: Stores the actual measurements that are sent.
+    id: An integer ID for the measurement.
+    definition_dimensions_id: A reference to DefinitionDimensions.
+    time_stamp
+    value
+    
+    MonMetrics.DefinitionDimensions
+    id: A sha1 hash of (defintion_id, dimension_set_id)
+    definition_id: A reference to the Definitions.id
+    dimension_set_id: A reference to the Dimensions.dimension_set_id
+    
+    MonMetrics.Definitions
+    id: A sha1 hash of the (name, tenant_id, region)
+    name: Name of the metric.
+    tenant_id: The tenant_id that submitted the metric.
+    region: The region the metric was submitted under.
+    
+    MonMetric.Dimensions
+    dimension_set_id: A sha1 hash of the set of dimenions for a metric.
+    name: Name of dimension.
+    value: Value of dimension.
+    
   </section>
 </body>
 </topic>

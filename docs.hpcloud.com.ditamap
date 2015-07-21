@@ -19,10 +19,7 @@
   <topicref href="publiccloud/index.dita"/>
   <topichead navtitle="HP Helion OpenStack 2.0">
     <topichead navtitle="HP Helion OpenStack Services">
-    <topichead navtitle="Monasca">
-    <topicref href="commercial/GA2/Monasca/2.0commercial.services-monasca.dita"></topicref>
-      <topicref href="commercial/GA2/Monasca/2.0commercial.services-monasca-edit.dita"></topicref>
-  </topichead>
+     <topicref href="commercial/GA2/Monasca/2.0commercial.services-monasca.dita"></topicref>
     </topichead>
   </topichead>
   <topicref href="commercial/GA1/1.1commercial.index.dita"
@@ -103,9 +100,7 @@
             <topicref href="commercial/GA1/1.1commercial.install-GA-ovsvapp.update.dita"/>
           </topicref>
           <topicref href="commercial/GA1/1.1commercial.install-GA-DNSaaS.dita"/>
-          <topicref
-            href="commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita"
-          />
+          <topicref href="commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita"/>
         </topicref>
       </topicref>
       <!-- Post Install -->
@@ -125,12 +120,9 @@
     <topicref href="commercial/GA1/1.1.1commerical.high-availability.dita">
       <topicref href="commercial/GA1/1.1commerical.high-availability.dita"/>
     </topicref>
-    <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita" navtitle="Troubleshooting"
-      locktitle="yes">
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita"
-        navtitle="Installation Troubleshooting" locktitle="yes"/>
-      <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita"
-        navtitle="MySQL Troubleshooting" locktitle="yes"/>
+    <topicref href="commercial/GA1/1.1commercial.troubleshooting.dita" navtitle="Troubleshooting" locktitle="yes">
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.install.dita" navtitle="Installation Troubleshooting" locktitle="yes"/>
+      <topicref href="commercial/GA1/1.1commercial.troubleshooting.mysql.dita" navtitle="MySQL Troubleshooting" locktitle="yes"/>
       <topicref href="commercial/GA1/1.1commerical.troubleshooting.compute.dita"/>
       <!--set to toc=no later-->
       <!--not on site-->
@@ -174,9 +166,7 @@
           href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita" navtitle="Configuring Your Network Securely" locktitle="yes"/>
         <topicref
           href="commercial/GA1/neutron/1.1commercial_neutron-post-installation-neutron-integration.dita" navtitle="Neutron Networking Integration" locktitle="yes"/>
-       
-        <topicref
-          href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita" navtitle="Neutron Networking High Availability" locktitle="yes"/> <!--necessary or no-->
+        <topicref href="commercial/GA1/neutron/1.1commercial_neutron-pre-installation-high-availability-cloud-networking.dita" navtitle="Neutron Networking High Availability" locktitle="yes"/> <!--necessary or no-->
         <topicref href="commercial/GA1/1.1commerical.services-dvr-overview.dita" navtitle="Distributed Virtual Routing Overview" locktitle="yes"/>
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-object-overview.dita" navtitle="Swift Object Storage Overview" locktitle="yes">
@@ -197,8 +187,7 @@
               <topicref
                 href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-scale-out-object-ring.dita" navtitle="Add a Disk to a Scale-out Object Ring" locktitle="yes"/>
               <topicref
-                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-starter-object-ring.dita" navtitle="Add a Disk to a Starter Object Ring" locktitle="yes"
-              />
+                href="commercial/GA1/1.1commerical.services-swift-deployment-add-disk-starter-object-ring.dita" navtitle="Add a Disk to a Starter Object Ring" locktitle="yes"/>
             </topicref>
           </topichead>
           <topichead navtitle="Swift: Shrink or Scale Down">
@@ -267,7 +256,7 @@
           href="commercial/GA1/ceilometer/1.1commerical.services-reporting-bestpractice.dita" navtitle="Ceilometer Optimization and Best Practices" locktitle="yes"/>
       </topicref>
       <!--Ceph stuff-->
-      <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita">
+      <!-- commenting out <topicref href="commercial/GA1/ceph/1.1commercial.ceph-overview.dita"> -->
         <topicref href="commercial/GA1/ceph/1.1commerical.services-ceph-archref.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-pre-requisite.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-automated-install.dita"/>
@@ -295,9 +284,10 @@
         <topicref href="commercial/GA1/ceph/1.1commercial.ceph-glossary.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-related-topics.dita"/>
         <topicref href="commercial/GA1/ceph/1.1commenrcial.ceph-troubleshooting.dita"/>
-        <topicref
+        <!--commenting out
+          <topicref
           href="commercial/GA1/ceph/1.1commenrcial.ceph-configuration-recovery-and-backup-procedure-helion-nodes.dita"
-          navtitle="Ceph Backup and Recovery" locktitle="yes"/>
+          navtitle="Ceph Backup and Recovery" locktitle="yes"/> -->
       </topicref>
       <topicref href="commercial/GA1/1.1commerical.services-sirius-overview.dita">
         <topicref href="commercial/GA1/1.1commercial.sirius-cli.dita"/>
@@ -372,8 +362,7 @@
     <topicref href="commercial/GA1/1.1commercial.glossary.dita"/>
     <!-- Files in MD repo Under Revision not in DITA -->
     <!-- 1.0 -->
-  </topicref>
- 
+  
   <!-- Community -->
   
   <topicref href="community/community.index.dita" navtitle="HP Helion OpenStack Community Edition"
@@ -427,7 +416,6 @@
     </topichead>
   </topicref>
   
-  
   <!--Dev Plat-->  
   
   <topicref 
@@ -436,7 +424,7 @@
     navtitle="Helion Development Platform">
   </topicref>
  
-  
+ 
   <topichead navtitle="Previous Versions">
     <topicref href="commercial/GA1/1.0commercial.index.dita" navtitle="HP Helion OpenStack 1.0"
       locktitle="yes">
@@ -896,6 +884,5 @@
     <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1 RC0: Administrator Guide">
       <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf"/>
     </topichead>
-  </topichead>
-  
-</map>
+  </topichead>  
+ </map>
