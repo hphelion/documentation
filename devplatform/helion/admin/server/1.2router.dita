@@ -42,7 +42,7 @@ between multiple instances (containers) as required.</p>
 <xref href="http://www.websocket.org/aboutwebsocket.html" scope="external" format="html" >WebSocket</xref> (including
 "wss://" secure web sockets) and <xref href="http://www.chromium.org/spdy" scope="external" format="html" >SPDY</xref>.</p>
 <section id="settings"> <title>Settings</title>
-  <p>The Router is configured using <xref href="../../user/reference/1.2environment.dita#topic39432/kato-command-ref-config" type="section"  >
+  <p>The Router is configured using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"  >
 <i>kato config</i>
 </xref>. The following settings are configurable:</p>
 <p>
@@ -91,8 +91,7 @@ configuration. Disabled if empty (default). Valid values are:</p>
 </section>
 <section id="websockets"> <title>WebSockets</title>
 <p>Applications using web sockets must use the VCAP_APP_PORT or PORT
-<xref href="../../../../../devplatform/helion/user/reference/1.2environment.dita" type="section" >
-<i>environment variables</i>
+<xref href="../../user/reference/1.2environment.dita"><i>environment variables</i>
 </xref>
 to set the default listener port of the WebSocket server.</p>
 </section>

@@ -35,26 +35,28 @@
         issues that may occur.</p>
 <ul>
 <li>
-<xref type="section" href="#topic24073/prerequisites">Prerequisites</xref>
+  <xref type="section" href="devplatform_commercial_install.dita#topic_x54_njh_ts/prerequisites">Prerequisites</xref>
+</li>
+  <li> <xref type="section" href="devplatform_commercial_install.dita#topic4029">Install the Horizon UI Panels</xref>I</li>
+<li>
+  <xref type="section" href="devplatform_commercial_install.dita#topic_gly_xmh_ts/downloading-the-latest-version-of-hp-helion-development-platform">Install the HP Helion Development Platform</xref>
 </li>
 <li>
-<xref type="section" href="#topic24073/installing-the-hp-helion-development-platform">Downloading, Installing, and Updating the HP Helion Development Platform</xref>
+  <xref type="section" href="devplatform_commercial_install.dita#topic_txg_cnh_ts/install-als">Install the Application Lifecycle Service</xref>
 </li>
+  <li>
+    <xref type="section" href="devplatform_commercial_install.dita#topic_vsf_hnh_ts/install-database">Install the Database Service</xref>
+  </li>
+  <li>
+    <xref type="section" href="devplatform_commercial_install.dita#topic_t3w_fnh_ts/install-messaging">Install the Messaging Service</xref>
+</li>
+
 <li>
-<xref type="section" href="#topic24073/installing-services">Installing Services</xref>
+  <xref type="section" href="devplatform_commercial_install.dita#topic_z1r_3nh_ts/install-the-marketplace-service">Install the Marketplace Service</xref>
 </li>
-<li>
-<xref type="section" href="#topic24073/install-als">Install the Application Lifecycle Service</xref>
-</li>
-<li>
-<xref type="section" href="#topic24073/install-messaging">Install the Messaging Service</xref>
-</li>
-<li>
-<xref type="section" href="#topic24073/install-database">Install the Database Service</xref>
-</li>
-<li>
-<xref type="section" href="#topic24073/install-marketplace">Install the Marketplace Service</xref>
-</li>
+  <li>
+    <xref type="section" href="devplatform_commercial_install.dita#topic6367">Install the Vertica Application for the Marketplace</xref>
+  </li>
 </ul>
 </section>
 </body>

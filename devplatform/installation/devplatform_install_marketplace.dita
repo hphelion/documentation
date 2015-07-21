@@ -6,51 +6,6 @@
     <section id="install-the-marketplace-service">
       <p>This section provides details on installing the Marketplace service for the Development Platform.</p>
     </section>
-    <section id="marketplace-quota"> <title>Prerequisites</title>
-      <p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log-in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
-      <table>
-        <tgroup cols="2">
-          <colspec colname="col1"/>
-          <colspec colname="col2"/>
-          <thead>
-            <row>
-              <entry>Resource</entry>
-              <entry align="right">Usage</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry>Floating IPs</entry>
-              <entry align="right">16</entry>
-            </row>
-            <row>
-              <entry>Instances</entry>
-              <entry align="right">4</entry>
-            </row>
-            <row>
-              <entry>Networks</entry>
-              <entry align="right">1</entry>
-            </row>
-            <row>
-              <entry>RAM (GB)</entry>
-              <entry align="right">8</entry>
-            </row>
-            <row>
-              <entry>Routers</entry>
-              <entry align="right">2</entry>
-            </row>
-            <row>
-              <entry>Security Groups</entry>
-              <entry align="right">4</entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
-    </section>
-    <section id="install-marketplace">
-      <p>This section provides details on installing the Marketplace service for the Development
-        Platform.</p>
-    </section>
     <section id="marketplace-prerequisites"> <title>Prerequisites</title>
       <p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack overcloud. The admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
       <table>

@@ -8,34 +8,16 @@
 <section id="uninstall-devplatform">
 <ol>
 <li>Log in to the Helion seed node.</li>
-<li>
-<p>Set environment variables.</p>
-
-<codeblock>
-<codeph>export TE_DATAFILE=/root/tripleo/ce_env.json
+<li> Set environment
+          variables.<codeblock>export TE_DATAFILE=/root/tripleo/ce_env.json
 export TRIPLEO_ROOT=/root/tripleo
-PATH=$PATH:$TRIPLEO_ROOT/tripleo-incubator/scripts/
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Source the overcloud administrator credentials.</p>
-
-<codeblock>
-<codeph>source $TRIPLEO_ROOT/tripleo-incubator/overcloudrc
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Remove the service from Keystone.</p>
-
-<codeblock>
-<codeph>SERVICE_SHORT_NAME="development-platform"
+PATH=$PATH:$TRIPLEO_ROOT/tripleo-incubator/scripts/</codeblock></li>
+<li> Source the overcloud administrator
+          credentials.<codeblock>source $TRIPLEO_ROOT/tripleo-incubator/overcloudrc</codeblock></li>
+<li> Remove the service from
+          Keystone.<codeblock>SERVICE_SHORT_NAME="development-platform"
 SERVICE_ID=$(keystone service-list | grep $SERVICE_SHORT_NAME | cut -d" " -f2)
-keystone service-delete $SERVICE_ID
-</codeph>
-</codeblock>
-</li>
+keystone service-delete $SERVICE_ID</codeblock></li>
 </ol>
 </section>
 

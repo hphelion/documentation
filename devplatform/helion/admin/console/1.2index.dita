@@ -342,7 +342,7 @@ Console, but some maintenance and configuration tasks may need to be done at the
 <li>
 <b>Sample App URLs</b>: URIs for URIs for JSON files which populate the <xref href="1.2app-store.dita">Sample Applications</xref> The URIs need not be public, but must be accessible from the controller node.</li>
 <li>
-  <b>Allowed Repos</b>: Debian package repositories allowed in application containers. End users can install additional packages (e.g. with  apt-get  or  aptitude) only from these repositories. When adding new repositories, GPG keys for each new repo must also be added to the Docker base container See <xref href="1.2configuration.dita#topic31232/allowed-repositories" type="section"   >Allowed Repositories</xref>.</li>
+  <b>Allowed Repos</b>: Debian package repositories allowed in application containers. End users can install additional packages (e.g. with  apt-get  or  aptitude) only from these repositories. When adding new repositories, GPG keys for each new repo must also be added to the Docker base container See <xref href="../server/1.2configuration.dita#topic31232/allowed-repositories" type="section"   >Allowed Repositories</xref>.</li>
 </ul>
 </section>
 <section id="console-settings-applications"> <title>Applications</title>

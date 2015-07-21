@@ -58,7 +58,7 @@
 </section>
 <section id="controlling-hp-helion-with-your-application"> <title>Controlling HP Helion with your Application</title>
 <p>If your Python application is going to control HP Helion resources, it can communicate directly
-  with the <xref href="../../../../../../../publiccloud/api.dita" 
+  with the <xref href="../../../../../../publiccloud/api.dita" 
           outputclass="reference external">Helion REST APIs</xref> with a client or the Python SDK.
         Currently, the Python SDK is very limited in features, so you will probably be forced to use
         the CLIs. The unified Python Openstack Client has pretty good coverage of Openstack features

@@ -56,7 +56,7 @@
         lists of users to and from CSV files, are non-functional in the current release. The <xref
           href="1.2kato-ref.dita#topic39432/kato-command-ref-data-import">kato data import</xref>
         and <xref
-          href="../../../../../devplatform/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-data-export"
+          href="1.2kato-ref.dita#topic39432/kato-command-ref-data-export"
           type="section" >kato data export</xref> commands are still available for
         migrating users from one ALS installation to another.</p>
 </section>

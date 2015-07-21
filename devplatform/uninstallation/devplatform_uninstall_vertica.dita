@@ -5,7 +5,7 @@
  <shortdesc> Process for uninstalling the Vertica application from the Marketplace.</shortdesc>
  <conbody>  <note type="restriction">These services cannot be uninstalled from the Horizon console.</note><note type="notice">The uninstall instructions listed here do not delete existing database
   instances. Perform all backups as necessary and then delete your existing database instances
-  as applicable. </note>
+  as applicable. </note><section id="uninstall-vertica"> 
    <ol>
     <li>Log in to the Helion seed node.</li>
     <li> Set environmental
@@ -29,6 +29,6 @@ keystone service-delete $SERVICE_ID</codeblock></li>
     <li> Remove those images from the
      cache.<codeblock>swift delete sherpa-cache &lt;ITEM&gt;</codeblock></li>
    </ol>
-  
+  </section>
  </conbody>
 </concept>
