@@ -47,6 +47,11 @@
           <colspec colname="col2"/>
           <tbody>
             <row>
+              <entry> Feature </entry>
+              <entry> Description </entry>
+            </row>
+            
+            <row>
               <entry> Availability and reliability </entry>
               <entry> <ul>
                 <li>Advanced self-healing</li>
