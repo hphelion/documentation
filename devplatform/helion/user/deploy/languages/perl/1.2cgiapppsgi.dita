@@ -18,8 +18,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/deploy/languages/perl/1.2cgiapppsgi.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/perl/cgiapppsgi/--></p>
+ <!--./devplatform/helion/user/deploy/languages/perl/1.2cgiapppsgi.md-->
+ <!--permalink: /helion/devplatform/als/user/deploy/languages/perl/cgiapppsgi/--></p>
 <p>An app using the CGI::Application::PSGI framework needs an <i>app.psgi</i>
 and <i>requirements.txt</i> file.</p>
 <p>In the <i>requirements.txt</i> file, list any module requirements, with at

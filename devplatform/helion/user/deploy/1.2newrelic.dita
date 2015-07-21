@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/deploy/1.2newrelic.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/deploy/newrelic/--></p>
+ <!--./devplatform/helion/user/deploy/1.2newrelic.md-->
+ <!--permalink: /helion/devplatform/als/user/deploy/newrelic/--></p>
         <note>These instructions are for use with Application Lifecycle Service. For further
             details, please see the <xref
                 href="http://newrelic.com/docs/python/new-relic-for-python" scope="external"

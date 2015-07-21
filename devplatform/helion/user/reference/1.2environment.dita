@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/reference/1.2environment.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/reference/environment/--></p>
+ <!--./devplatform/helion/user/reference/1.2environment.md-->
+ <!--permalink: /helion/devplatform/als/user/reference/environment/--></p>
 <p>Application Lifecycle Service exposes a number of predefined <xref href="http://manpages.ubuntu.com/manpages/utopic/en/man7/environ.7.html" scope="external" format="html" >environment variables</xref> during runtime, including hook processing, cron jobs and ssh commands.</p>
 <p>Some environment variables are also available during application <xref type="section" href="#topic7631/staging">staging</xref>.</p>
 <p>You can set your own environment variables:</p>
@@ -70,7 +70,7 @@ command.</li>
 <p>A list of directories, separated by ":", which are to be searched for the names of executable files to be interpreted as commands.</p>
 </section>
 <section id="pip-opts"> <title>PIP_OPTS</title>
-  <p>Custom/alternate <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#topic6187/term-pip" type="section"   >PIP</xref> repo location.</p>
+  <p>Custom/alternate <xref href="1.2glossary.dita#topic6187/term-pip" type="section"   >PIP</xref> repo location.</p>
 <p>Example:</p>
 <codeblock>env:
       PIP_OPTS: "--extra-index-url=http://company.com/inhouse-pypi-mirror"</codeblock>
@@ -79,7 +79,7 @@ command.</li>
 <p>Application Lifecycle Service alternative for VCAP_APP_PORT.</p>
 </section>
 <section id="processes-web"> <title>PROCESSES_WEB</title>
-<p>This variable contains the default start command that would be used when <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >
+<p>This variable contains the default start command that would be used when <xref href="../deploy/1.2manifestyml.dita" >
 <i>manifest.yml</i>
 </xref> doesn't override it. It is provided so that users can specify a wrapper around the default command.
 For example:</p>
@@ -88,7 +88,7 @@ For example:</p>
 <p>Note that <codeph>PROCESSES_WEB</codeph> may be undefined when Application Lifecycle Service can't determine the default command. This may occur because the app uses a non-standard main application file.</p>
 </section>
 <section id="pypm-opts"> <title>PYPM_OPTS</title>
-  <p>Custom/alternate <xref href="../../../../../devplatform/1.2/helion/user/reference/1.2glossary.dita#topic6187/term-pypm" type="section"   >PyPM</xref> repo location. Repo mirroring is an undocumented feature. Example:</p>
+  <p>Custom/alternate <xref href="1.2glossary.dita#topic6187/term-pypm" type="section"   >PyPM</xref> repo location. Repo mirroring is an undocumented feature. Example:</p>
   <p>Custom/alternate <xref href="1.2glossary.dita#topic6187/term-pypm">PyPM</xref> repo location.
         Repo mirroring is an undocumented feature. Example:</p>
 <codeblock>env:
@@ -97,8 +97,7 @@ For example:</p>
 <section id="helion-app-env"> <title>HELION_APP_ENV</title>
 <p><note>Subject to change.</note> Contains a list of all environment variables set with <xref
           href="1.2client-ref-management.dita#topic50918/command-env-add">env-add</xref> or through
-        the <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita"
-          >manifest.yml</xref> file.</p>
+        the <xref href="../deploy/1.2manifestyml.dita">manifest.yml</xref> file.</p>
 </section>
 <section id="helion-app-name"> <title>HELION_APP_NAME</title>
 <p>Contains the application name as specified during application push (or in <i>manifest.yml</i>). Available during staging as well as in the application instance.</p>
@@ -130,7 +129,7 @@ For example:</p>
 <p>Can be set in the local shell to specify the API endpoint target for the <codeph>helion</codeph> client. When set, the <codeph>helion target</codeph> command is ignored until the variable is explicitly unset. Can be overridden with the <codeph>--target</codeph> option.</p>
 </section>
 <section id="helion-uwsgi"> <title>HELION_UWSGI</title>
-<p>Set by the Perl and Python frameworks only. It contains the default uswgi start command to run the application via uwsgi. It is provided in case the user wants to add additional uwsgi options in <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >
+<p>Set by the Perl and Python frameworks only. It contains the default uswgi start command to run the application via uwsgi. It is provided in case the user wants to add additional uwsgi options in <xref href="../deploy/1.2manifestyml.dita" >
 <i>manifest.yml</i>
 </xref>:</p>
 <codeblock>   processes:

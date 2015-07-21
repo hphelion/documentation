@@ -21,8 +21,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/best-practices/1.2logging-examples.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/best-practices/logging-examples/--></p>
+ <!--./devplatform/helion/admin/best-practices/1.2logging-examples.md-->
+ <!--permalink: /helion/devplatform/als/admin/best-practices/logging-examples/--></p>
 <p>Detailed instructions on how to use drains with third party log analysis
 software or services.</p>
 <ul>
@@ -51,16 +51,16 @@ software or services.</p>
             account for Papertrail</xref>
         </li>
         <li> In the Dashboard screen, click <i>Add Systems</i>. <image
-            href="../../../../../media/ppt1.png" id="image_gtf_x1c_ms" placement="break"/>
+            href="../../../../media/ppt1.png" id="image_gtf_x1c_ms" placement="break"/>
         </li>
         <li> In the Setup Systems screen under <i>Other log methods</i>, click <i>Alternatives</i>.
-            <image href="../../../../../media/ppt2.png" placement="break" id="image_ith_fbc_ms"/>
+            <image href="../../../../media/ppt2.png" placement="break" id="image_ith_fbc_ms"/>
         </li>
         <li> Choose option C: <i>My system's hostname changes</i> and give it a suitable name.
-            <image href="../../../../../media/ppt3.png" placement="break" id="image_xrc_fbc_ms"/>
+            <image href="../../../../media/ppt3.png" placement="break" id="image_xrc_fbc_ms"/>
         </li>
         <li> Note down the <b>port number</b>. You need this later on. <image
-            href="../../../../../media/ppt4.png" placement="break" id="image_urv_2bc_ms"/>
+            href="../../../../media/ppt4.png" placement="break" id="image_urv_2bc_ms"/>
         </li>
         <li> Enable system logging (via udp) by executing the following kato command:</li>
       </ol>
@@ -78,11 +78,11 @@ software or services.</p>
 <ol>
 <li>Set up a  <xref href="http://www.splunk.com/download" scope="external" format="html">Splunk
             Server</xref>.</li>
-<li>In the Welcome screen, click <b>Add data</b>.
-  <image href="../../../../../media/splunk1.png" placement="break"/>
-</li>
+<li>In the Welcome screen, click <b>Add data</b>. <image href="../../../../media/splunk1.png"
+            placement="break"/>
+        </li>
 <li> Under <b>Choose a Data Source</b>, click <b>From a TCP port</b> (or UDP)<image
-            href="../../../../../media/splunk2.png" placement="break" id="image_g11_dbc_ms"/>
+            href="../../../../media/splunk2.png" placement="break" id="image_g11_dbc_ms"/>
         </li>
 <li> In the <b>Add New Source</b> screen:<ul>
             <li>Select a TCP/UDP port greater than <b>9999</b>
@@ -91,7 +91,7 @@ software or services.</p>
             <li>Set sourcetype to <b>Manual</b>
             </li>
             <li>Leave Source Type <b>empty</b>
-              <image href="../../../../../media/splunk3.png" placement="break"/>
+              <image href="../../../../media/splunk3.png" placement="break"/>
             </li>
           </ul></li>
 <li> Enable system logging by executing <b>one</b> of the following kato

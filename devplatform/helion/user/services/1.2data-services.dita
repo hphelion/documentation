@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/services/1.2data-services.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/services/data-services/--></p>
+ <!--./devplatform/helion/user/services/1.2data-services.md-->
+ <!--permalink: /helion/devplatform/als/user/services/data-services/--></p>
 <p>The Application Lifecycle Service includes a number of data services which can be bound to the
   applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a <xref href="1.2filesystem.dita#topic4410/creating-a-persistent-file-system" >persistent file system</xref> service and 
   <xref href="1.2memcached.dita">Memcached</xref>.</p>
@@ -116,7 +116,7 @@ number of ways:</p>
 <p>The manifest.yml file can define a lot of application-specific details
 that tell the Application Lifecycle Service Client what to do without having to enter them
 when you run <codeph>helion push</codeph>. For complete details
-for using the <i>manifest.yml</i> file, please see <xref href="../../../../../devplatform/1.2/helion/user/deploy/1.2manifestyml.dita" >Configuration With
+for using the <i>manifest.yml</i> file, please see <xref href="../deploy/1.2manifestyml.dita" >Configuration With
 <i>manifest.yml</i>
 </xref>.</p>
 <p>A simple example telling the Application Lifecycle Service Client to request a MySQL database named

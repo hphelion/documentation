@@ -23,31 +23,33 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/1.2devplatform_uninstall.md-->
- <!--permalink: /helion/devplatform/1.2/uninstall/--></p>
+ <!--./devplatform/1.2devplatform_uninstall.md-->
+ <!--permalink: /helion/devplatform/uninstall/--></p>
 <!--DOCS1299 and HPES197-->
 <section><p>HP Helion Development Platform version 1.2 contains the Application Lifecycle Service, Database, Marketplace, and Messaging services.</p>
 <p>Each of these services can be uninstalled using the appropriate process.</p>
   <note type="restriction">These services cannot be uninstalled from the Horizon console.</note>
 <ul>
 <li>
-<xref type="section" href="#topic6253/uninstall-devplatform">Uninstall the HP Helion Development Platform</xref>
+  <xref type="section" href="devplatform_uninstall.dita#topic_blf_xdh_ts/uninstall-devplatform">Uninstall the HP Helion Development Platform</xref>
 </li>
 <li>
-<xref type="section" href="#topic6253/uninstall-als">Uninstall the Application Lifecycle Service</xref>
+  <xref type="section" href="devplatform_uninstall.dita#topic_yx2_fkh_ts/uninstall-als">Uninstall the Application Lifecycle Service</xref>
 </li>
 <li>
-<xref type="section" href="#topic6253/uninstall-messaging">Uninstall the Messaging Service</xref>
-</li>
+  <xref type="section" href="devplatform_uninstall.dita#concept_vrb_bgj_rs/uninstall-database">Uninstall the Database
+            Service</xref>
+        </li>
+  <li><xref type="section" href="devplatform_uninstall.dita#concept_iqy_2gj_rs/uninstall-messaging">Uninstall the Messaging
+            Service</xref></li>
 <li>
-<xref type="section" href="#topic6253/uninstall-database">Uninstall the Database Service</xref>
-</li>
+  <xref type="section" href="devplatform_uninstall.dita#concept_yqc_xfj_rs/uninstall-marketplace">Uninstall the Marketplace
+            Service</xref>
+        </li>
 <li>
-<xref type="section" href="#topic6253/uninstall-marketplace">Uninstall the Marketplace Service</xref>
-</li>
-<li>
-<xref type="section" href="#topic6253/uninstall-vertica">Uninstall Vertica</xref>
-</li>
+  <xref type="section" href="devplatform_uninstall.dita#concept_bsx_rfj_rs/uninstall-vertica">Uninstall the Vertica
+            Application</xref>
+        </li>
 </ul>
 </section>
 </body>

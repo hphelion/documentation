@@ -21,8 +21,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/reference/1.2troubleshoot.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/reference/troubleshoot/--></p>
+ <!--./devplatform/helion/admin/reference/1.2troubleshoot.md-->
+ <!--permalink: /helion/devplatform/als/admin/reference/troubleshoot/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic4317/server-log-files">Server Log Files</xref>

@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/reference/1.2client-ref-control.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/reference/client-ref/control/--></p>
+ <!--./devplatform/helion/user/reference/1.2client-ref-control.md-->
+ <!--permalink: /helion/devplatform/als/user/reference/client-ref/control/--></p>
 <p>These commands are new in Helion <tm tmtype="reg">OpenStack</tm> Development Platform 1.1</p>
 <ul>
 <li>

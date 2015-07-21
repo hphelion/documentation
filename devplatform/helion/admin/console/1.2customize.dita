@@ -23,8 +23,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/console/1.2customize.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/console/customize/--></p>
+ <!--./devplatform/helion/admin/console/1.2customize.md-->
+ <!--permalink: /helion/devplatform/als/admin/console/customize/--></p>
 <p>The Management Console can be extensively customized and themed. Administrators can add or remove runtimes, frameworks and services from the system, and change the look and content of the <xref href="1.2index.dita">Management Console</xref> interface.</p>
 <ul>
 <li>

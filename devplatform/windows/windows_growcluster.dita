@@ -21,7 +21,7 @@
         </metadata>
     </prolog>
     <body>
-        <p><!--PUBLISHED--><!--./devplatform/1.2/windows/windows_growcluster.md--><!--permalink: /helion/devplatform/1.2/growcluster--></p>
+        <p><!--PUBLISHED--><!--./devplatform/windows/windows_growcluster.md--><!--permalink: /helion/devplatform/growcluster--></p>
         <p>
             <ph>
                 <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks
@@ -35,31 +35,30 @@
             version 1.1.1 or later.</p>
         <p>Note that Windows DEA nodes and SQL Server services will not appear in the Horizon
             interface until you upload the appropriate images into Glance.</p>
-        <p>After <xref href="../1.2devplatform.deploy-ALS.dita#topic2870/prereq" type="section">creating a
-                cluster</xref>, go to the <b>Clusters</b> page. [<b>Project</b> tab &gt; expand
-                <b>Application Lifecycle Service</b> &gt; <b>Clusters</b>] Click on the
+        <p>After <xref href="../1.2devplatform.deploy-ALS.dita#topic2870/prereq" type="section"
+                >creating a cluster</xref>, go to the <b>Clusters</b> page. [<b>Project</b> tab &gt;
+            expand <b>Application Lifecycle Service</b> &gt; <b>Clusters</b>] Click on the
                 <b>Actions</b> down arrow to display the options and select the desired
-                option.<image href="../../../media/growcluster1.png" placement="break"/></p>
+                option.<image href="../../media/growcluster1.png" placement="break"/></p>
         <section>
             <title> To add DEAs</title>
             <p>Click on <b>Grow DEAs</b>, fill out the details, and then click <b>Grow</b>. This
                 will create the specified number of DEAs of the selected type and attach them to the
                     cluster.<!--A BR tag was used here in the original source.--><image
-                        href="../../../media/growcluster2.png" placement="break"/></p>
+                    href="../../media/growcluster2.png" placement="break"/></p>
         </section>
         <section>
             <title> To add more services</title>
             <p>Check the check box to select the services and then click <b>Grow Services</b>. This
                 will create the selected service nodes and attach them to the
                     cluster.<!--A BR tag was used here in the original source.--><image
-                        href="../../../media/growcluster3.png" placement="break"/></p>
+                    href="../../media/growcluster3.png" placement="break"/></p>
         </section>
         <section>
-            <b>To rename a cluster </b><p>Click <b>Rename Cluster</b>, enter the new name, and then
-                click <b>Rename</b>. Note that this renames the cluster title, but does not affect
-                the cluster prefix. <!--A BR tag was used here in the original source.--><image
-                    href="../../../media/growcluster4.png" placement="break"
-            /></p></section>
+            <b>To rename a cluster </b><p>Click <b>Rename Cluster</b>, enter the new name, and then click <b>Rename</b>. Note that this
+                renames the cluster title, but does not affect the cluster prefix.
+                    <!--A BR tag was used here in the original source.--><image
+                    href="../../media/growcluster4.png" placement="break"/></p></section>
     </body>
 
 </topic>

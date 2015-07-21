@@ -24,8 +24,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/server/1.2docker.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/server/docker/--></p>
+ <!--./devplatform/helion/admin/server/1.2docker.md-->
+ <!--permalink: /helion/devplatform/als/admin/server/docker/--></p>
   <p>Application Lifecycle Service's <xref href="../reference/1.2architecture.dita#topic4407/architecture-droplet-execution-agents" type="section">DEA role</xref> runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the <i>fence</i> process, which in turn uses
 <xref href="http://docs.docker.io/en/latest/" scope="external" format="html" >Docker</xref> to create and destroy Linux
 containers on demand.</p>

@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/reference/1.2client-ref-placement.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/reference/client-ref/placement/--></p>
+ <!--./devplatform/helion/user/reference/1.2client-ref-placement.md-->
+ <!--permalink: /helion/devplatform/als/user/reference/client-ref/placement/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic4565/command-placement-zone">helion placement-zone</xref>: Show the list of DEAs associated with the specified placement zone.</li>

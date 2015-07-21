@@ -23,8 +23,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/1.2devplatform.marketplace.install.md-->
- <!--permalink: /helion/devplatform/1.2/marketplace/--></p>
+ <!--./devplatform/1.2devplatform.marketplace.install.md-->
+ <!--permalink: /helion/devplatform/marketplace/--></p>
 <p>The Marketplace, currently in beta, is a repository where teams can download the latest services they need to accelerate development of their applications. In its beta incarnation, the Marketplace has a single application: the Vertica 7 Community Edition.</p>
 <p>The following topics explain how to install and deploy an instance of Vertica 7 Community Edition:</p>
 <ul>
@@ -58,7 +58,7 @@
 </ul>
 </section>
 <section id="prereq"> <title>Prerequisites</title>
-<p>Install the Marketplace component of the <xref scope="local" format="dita" href="1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref> during the Development Platform install process.</p>
+<p>Install the Marketplace component of the <xref href="devplatform_install_marketplace.dita" >HP Helion Development Platform</xref> during the Development Platform install process.</p>
 </section>
 <section id="install"> <title>Installing a Package</title>
 <p>In this example, the package being installed is the Vertica 7 Community Edition package.</p>
@@ -112,7 +112,8 @@
             <li>Add a keypair if you don't have one already, by selecting the <b>+</b> link. If you
               are adding a keypair, you will be prompted to supply a name and a public key. You can
               generate a public key in *nix using <xref href="http://linux.die.net/man/1/ssh-keygen"
-                scope="external" format="html">ssh-keygen</xref> or <tm tmtype="reg">Windows</tm> using <xref
+                scope="external" format="html">ssh-keygen</xref> or <tm tmtype="reg">Windows</tm>
+              using <xref
                 href="http://the.earth.li/~sgtatham/putty/0.63/htmldoc/Chapter8.html#pubkey-puttygen"
                 scope="external" format="html">puTTYgen</xref>. Insert public key text and click the
                 <b>Import Key Pair</b> button.</li>

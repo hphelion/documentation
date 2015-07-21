@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/quick-start/1.2index.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/quick-start/--></p>
+ <!--./devplatform/helion/user/quick-start/1.2index.md-->
+ <!--permalink: /helion/devplatform/als/user/quick-start/--></p>
 <p>This guide covers the basics of using the Application Lifecycle Service (ALS).</p>
 <p>To follow along,
 you will need:</p>

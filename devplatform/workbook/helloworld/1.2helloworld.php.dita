@@ -19,16 +19,16 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/workbook/helloworld/1.2helloworld.php.md-->
- <!--permalink: /helion/devplatform/1.2/workbook/helloworld/php/--></p>
+ <!--./devplatform/workbook/helloworld/1.2helloworld.php.md-->
+ <!--permalink: /helion/devplatform/workbook/helloworld/php/--></p>
 <p>This very simple PHP web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.</p>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
-<li>An installation of the <xref href="../../../../devplatform/1.2/1.2devplatform_commercial_install.dita" >HP Helion Development Platform</xref>.</li>
-<li>Access to an Application Lifecycle Service (ALS) <xref href="../../../../devplatform/1.2/helion/admin/cluster/1.2index.dita" >Cluster</xref>
+<li>An installation of the <xref href="../../installation/devplatform_commercial_install.dita" >HP Helion Development Platform</xref>.</li>
+<li>Access to an Application Lifecycle Service (ALS) <xref href="../../helion/admin/cluster/1.2index.dita" >Cluster</xref>
 </li>
-<li>Access to the <xref href="../../../../devplatform/1.2/helion/user/client/1.2index.dita" >Helion command-line client (CLI)</xref>.</li>
-<li>Access to the web-based <xref href="../../../../devplatform/1.2/helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
+<li>Access to the <xref href="../../helion/CLI/1.2ALS_Client_Downloads.dita" >Helion command-line client (CLI)</xref>.</li>
+<li>Access to the web-based <xref href="../../helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
 <li>Register for access to the <xref href="https://helion.hpwsportal.com/catalog.html#/Home/Show" type="section" scope="external" format="html" >HP Helion Development Platform</xref> (HDN).</li>
 </ul>
 <!--
@@ -56,9 +56,9 @@ instructions further down. But before you push the button, ensure that you have 
           href="../../helion/admin/server/1.2configuration.dita#topic31232/staging-cache-app-http-proxy"
           >made aware of the proxy</xref>. The sample applications require access to the Internet in
         order to download dependent packages.</p>
-<p>The Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally <xref href="../../../../devplatform/1.2/1.2devplatform.eclipse.dita" >use the plugin</xref> to deploy.</p>
+<p>Use the Helion client to deploy your app to Helion Development Platform.</p>
 <ol>
-<li>Open the <xref href="../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >Helion command-line interface (CLI)</xref>
+<li>Open the <xref href="../../helion/user/reference/1.2client-ref.dita" >Helion command-line interface (CLI)</xref>
 </li>
 <li>
 <p>Ensure that you are targeting your desired environment.  <!--A BR tag was used here in the original source.--> If you are not, execute</p>
@@ -126,10 +126,10 @@ applications:
 <section id="key-learnings"> <title>Key Learnings</title>
 <ol>
 <li>ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the <i>manifest.yml</i> file.</li>
-<li>You interact with and deploy your app using the <xref href="../../../../devplatform/1.2/helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../../../devplatform/1.2/helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
+<li>You interact with and deploy your app using the <xref href="../../helion/user/reference/1.2client-ref.dita" >ALS command line client</xref> or the web-based <xref href="../../helion/user/console/1.2index.dita" >ALS Management Console</xref>.</li>
 </ol>
 <p>
-<xref href="../../../../devplatform/1.2/1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../../../../devplatform/1.2/workbook/messaging/1.2messaging.php.dita" >Previous Sample</xref> | <xref href="../../../../devplatform/1.2/workbook/database/1.2database.php.dita" >Next Sample</xref>
+<xref href="../../1.2devplatform.appdev.dita" >Exit Samples</xref> | <xref href="../messaging/1.2messaging.php.dita" >Previous Sample</xref> | <xref href="../database/1.2database.php.dita" >Next Sample</xref>
 </p>
 </section>
 </body>

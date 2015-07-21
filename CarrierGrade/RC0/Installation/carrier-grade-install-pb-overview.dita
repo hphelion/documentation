@@ -20,53 +20,45 @@
 <section id="about-the-installation"> <title>About the installation</title>
 <p>The HP Helion OpenStack Carrier Grade installation installs HP Helion Lifecycle Management, creates a base HP Helion OpenStack cloud, <!--configures network virtualization through HP Distributed Cloud Networking (DCN),--> and deploys 
   a carrier grade cloud.</p>
-<p>After installation, you can interact with the HP Helion OpenStack cloud using the <xref
-  href="../ServicesOverviews/carrier-grade-services-horizon-overview.dita#topic1518">Horizon
-  graphical interface</xref> or
-        using the CLIs of the respective <xref
+<p>After installation, you can interact with the HP Helion OpenStack cloud using the 
+        <xref href="../ServicesOverviews/carrier-grade-services-horizon-overview.dita#topic1518"
+          >Horizon graphical interface</xref> or using the CLIs of the respective <xref
           href="../Overview/carrier-grade.services-overview.dita#topic4220">Services</xref>.</p>
 </section>
   <section id="install-option"> <title>Installation options</title>
     <p>HP Helion OpenStack is provided with two baremetal installation options depending on your system configuration.  It allows you to manage the KVM and ESX hypervisors and provision virtual machines.</p>
     <p>You can find more information on the hypervisor options in the Technical Overview.</p>
   </section>
-  <section id="kvm-Hypervisor"> <title>KVM Hypervisor</title>
-    <p>Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.</p>
-    <p>You can use your KVM cloud with either HP Storevirtual or HP StoreServ (3PAR) storage:</p>
-  <ul>
-   <li>With HP StoreVirtual VSA storage
-     <p>HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. VSA eliminates the need for external shared storage required to implement Block Storage features. VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.</p></li>
-  
-  <li>With HP StoreServ (3PAR) storage
-    <p>HP 3PAR StoreServ is a storage array that supports Fibre Channel (FC) as well as iSCSI protocol. HP 3PAR StoreServ is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver.</p></li>
-  </ul>
-  </section>
-  <section id="esx-hypervisor"> <title>ESX Hypervisor</title>
-    <p>HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Compute node scheduler sees each cluster as compute and uses the same for scheduling a new instances.</p>
-    <p>The ESX integration uses the OVSvApp application to connect the vCenter networking to the Network Operations controller to manage workload networks.</p>
-    <p>The HP Virtual Cloud Networking (VCN) application is an enhanced Networking Operations (Neutron) module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.</p>
-  </section>
-  
-<section id="installation-process"> <title>Installation process</title>
-<p>Use the following process to install HP Helion OpenStack Carrier Grade in a baremetal environment.</p>
-<ol>
-<li>Review the <xref href="carrier-grade-technical-overview.dita#topic3485">Technical OVerview</xref> for information on the
-          HP Helion OpenStack Carrier Grade environment.</li>
-        <li>Reviwe the <xref href="carrier-grade-technical-specs.dita#topic3485">Technical Specifications</xref></li>
-        <li>Review the <xref href="carrier-grade-support-matrix2.dita#topic1773">Support Matrix</xref> to make sure your
-          environment meets the minimum requirements.</li>
-<li> Perform any required or optional <xref href="carrier-grade-install-pb-prereqs.dita#topic7148"
-          >installation prerequisites</xref>. </li>
-<li>
-  <xref href="carrier-grade-install-pb-network-prepare.dita#topic7646">Prepare the network for installation</xref>
+  <section id="kvm-Hypervisor">
+      <title>KVM Hypervisor</title>
+      <p>Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Linux kernel,
+        which turns it into a hypervisor. KVM requires a processor with hardware virtualization
+        extension.</p>
+      <title>Installation process</title>
+      <p>Use the following process to install HP Helion OpenStack Carrier Grade in a baremetal
+        environment.</p>
+      <ol id="ol_nnt_bfh_ts">
+        <li>Review the
+          <xref href="carrier-grade-technical-overview.dita#topic3485">Technical Overview</xref> for
+          information on the HP Helion OpenStack Carrier Grade environment.</li>
+        <li>Reviwe the <xref href="carrier-grade-technical-specs.dita#topic3485">Technical
+            Specifications</xref></li>
+        <li>Review the <xref href="carrier-grade-support-matrix2.dita#topic1773">Support
+            Matrix</xref> to make sure your environment meets the minimum requirements.</li>
+        <li> Perform any required or optional <xref
+            href="carrier-grade-install-pb-prereqs.dita#topic7148">installation
+          prerequisites</xref>. </li>
+        <li>
+          <xref href="carrier-grade-install-pb-network-prepare.dita#topic7646">Prepare the network
+            for installation</xref>
         </li>
-  <li> Install the HLM and the HP Helion OpenStack environments. These components will be installed into what is called the <i>Non-KVM
-            region</i>.</li>
-  <li>Install the <xref href="carrier-grade-install-kvm-cloud-rc0.dita#topic1107">carrier grade
-    cloud</xref>. The carrier grade cloud is deployed into what is called the <i>KVM
+        <li> Install the HLM and the HP Helion OpenStack environments. These components will be
+          installed into what is called the <i>Non-KVM region</i>.</li>
+        <li>Install the <xref href="carrier-grade-install-kvm-cloud-rc0.dita#topic1107">carrier
+            grade cloud</xref>. The carrier grade cloud is deployed into what is called the <i>KVM
             region</i></li>
-</ol>
-</section>
+      </ol>
+    </section>
   
 <section id="first-step"> <title>First Step</title>
   <p>Before you start, learn about the HP Helion Carrier Grade environment. Review the <xref

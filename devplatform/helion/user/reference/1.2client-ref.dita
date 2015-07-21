@@ -19,8 +19,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/reference/1.2client-ref.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/reference/client-ref/--></p>
+ <!--./devplatform/helion/user/reference/1.2client-ref.md-->
+ <!--permalink: /helion/devplatform/als/user/reference/client-ref/--></p>
 <p>Many of the informational commands take a <b>--json</b> option if you wish to generate machine-parseable output. In some cases the json output reveals additional details.</p>
 <p>Note that Administrative user privileges are required for some commands.</p>
 <section id="getting-started"> <title>

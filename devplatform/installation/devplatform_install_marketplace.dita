@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_z1r_3nh_ts">
+  <title>Installing the Marketplace Service</title>
+  <body>
+    <section id="install-the-marketplace-service">
+      <p>This section provides details on installing the Marketplace service for the Development Platform.</p>
+    </section>
+    <section id="marketplace-prerequisites"> <title>Prerequisites</title>
+      <p>The <b>Marketplace Service</b> will be installed into the admin tenant of the Helion OpenStack overcloud. The admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log in to Horizon as the <b>admin</b> user and open the <b>Overview</b> panel under the <b>Compute</b> tab.</p>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <thead>
+            <row>
+              <entry>Resource</entry>
+              <entry align="right">Usage</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Floating IPs</entry>
+              <entry align="right">16</entry>
+            </row>
+            <row>
+              <entry>Instances</entry>
+              <entry align="right">4</entry>
+            </row>
+            <row>
+              <entry>Networks</entry>
+              <entry align="right">1</entry>
+            </row>
+            <row>
+              <entry>RAM (GB)</entry>
+              <entry align="right">8</entry>
+            </row>
+            <row>
+              <entry>Routers</entry>
+              <entry align="right">2</entry>
+            </row>
+            <row>
+              <entry>Security Groups</entry>
+              <entry align="right">4</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="ports"> <title>Ports</title>
+      <p>If <b>both</b> the Marketplace and the Database Service are running on a single tenant, the default quota limit for Ports (50) is insufficient and the installation will not complete.</p>
+      <p>The Ports quota cannot be set from the Horizon interface. 
+        Increase the Ports quota to at least 100 using the following command in the <xref href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" scope="external" format="html" >Networking command line client</xref>:</p>
+      <codeblock>neutron quota-update --port 100 --tenant-id &lt;tenant id&gt;"</codeblock>
+    </section>
+    <section id="marketplace-connect-to-the-download-service"> <title>Connect to the Download Service</title>
+      <ol>
+        <li>Open Horizon and login as the <b>admin</b> user. You must run the entire install logged in as
+          <b>admin</b>.</li>
+        <li> Click on the admin panel in Horizon and select the <b>Development Platform</b> Panel under
+          Admin. Then click on the <b>Configure Services</b> sub-panel.</li>
+        <li> Click the <b>Connect</b> button on the <b>Configure Services</b> panel and enter your username
+          and password for the HP Download Network (HDN). Select the Sign-up button if you do not
+          have an account.</li>
+      </ol>
+    </section>
+    <section id="download-the-marketplace-service"> <title>Download the Marketplace Service</title>
+      <ol>
+        <li> In the <b>Configure Services</b> panel, in the Configure Services table, locate the Marketplace
+          Service item. Select <b>Download Service</b> and wait for the download to complete.<p>
+            <image href="../../media/HDP_1.2_install_marketplace.png" placement="break"/>
+          </p><p>
+            <note>Downloading multiple services simultaneously is not supported, and will leave the
+              server in an error state.</note>
+          </p></li>
+      </ol>
+    </section>
+    <section id="configuring-the-marketplace-service"> <title>Configuring the Marketplace Service</title>
+      <ol>
+        <li> Once the download is complete, click the <b>Configure Service</b> button to begin configuration
+          of the service. In the configuration dialog, specify the following configuration options:<ul>
+            <li>
+              <b>Service User Password</b> (Required) - The password for the Admin user that is
+              currently logged in. This password MUST match the password used to log in to
+              Horizon.</li>
+            <li>
+              <b>Key Pair</b> (Required) - Key Pair to install on all instances created as part of
+              the database service. The public key can be used by an admin to get SSH access to all
+              instances.</li>
+            <li>
+              <b>External Network</b> (Required) - Network Name for the network that has external
+              network access. For HP Helion OpenStack Commercial Edition this network is named
+              <b>ext-net</b></li>
+            <li>
+              <b>Provider Network</b> (Required) - Network Name for the network that has network
+              access to cloud infrastructure services. For HP Helion OpenStack Commercial Edition
+              this network is named <b>SVC</b></li>
+            <li>
+              <b>NTP Server IP</b> - IP Address to an NTP server to use if instances will not have
+              outbound access to the internet.</li>
+            <li>
+              <b>Logstash RabbitMQ IP Address</b> (Required) - Specify the IP address of the
+              RabbitMQ Server publishing to the central Logstash server.</li>
+            <li>
+              <b>Logstash RabbitMQ Password</b> (Required) - Specify the password for the RabbitMQ
+              Server publishing to the central Logstash server.</li>
+            <li>
+              <b>Ephemeral CA Password</b> (Required) - Specify the password for the Ephemeral CA
+              server.</li>
+            <li>
+              <b>Ephemeral CA IP Address</b> (Required) - Specify the IP address of Ephemeral CA
+              server.</li>
+            <li>
+              <b>Subnet range</b> (Required) - The subnet to use for Marketplace. </li>
+          </ul><p>
+            <image href="../../media/dev_install_marketplace.png" placement="break"/>
+          </p></li>
+        <li> Do not attempt to install any Marketplace packages yet. Log out from the Horizon console.</li>
+        <li> The following steps will configure HAProxy to receive and forward HTTP requests to the VM that
+          hosts the REST API endpoint for Marketplace. To perform these steps you must be connected
+          to the overcloud node.<ol>
+            <li> Identify the API server IPs on the SVC
+              network:<codeblock>nova list | awk'/marketplace-api/{ print $14 }' | cut -d "=" -f 2</codeblock><p>Note
+                that you should have as many API servers (and IPs) as you have Availability Zones in
+                your Helion OpenStack install.</p></li>
+            <li> Identify the Virtual IP used by the controller nodes to be able to load balance the
+              Helion OpenStack
+              services:<codeblock>keystone endpoint-list | awk '/8082/{ print $6}' | egrep -o "[0-9].[0-9].[0-9].[0-9]"</codeblock></li>
+            <li> Update configuration on each of the Helion OpenStack controller nodes.  <b>For EACH
+              node:</b><ol>
+                <li>Connect to the controller.</li>
+                <li> Open the <i>/etc/haproxy/manual/paas.cfg</i> file and add the following
+                  lines.<note>The last line should be repeated once for <b>each</b> API server
+                    identified in step
+                    1.</note><codeblock>listen marketplace_api
+bind &lt;Virtual IP from step 2&gt;:8082
+option httpchk GET /
+server marketplace&lt;n&gt;_api-&lt;uniqueid&gt; &lt;API server n's IP Address&gt; check inter 2000 rise 2 fall 5 check-ssl ca-file /etc/ssl/certs/ca-certificates.crt </codeblock></li>
+                <li> Edit the /etc/iptables/rules.v4 file and add to the
+                  file:<codeblock>-I INPUT -p tcp --dport 8082 -j ACCEPT</codeblock></li>
+                <li> Run the following command as
+                  root:<codeblock>sudo iptables -I INPUT -p tcp --dport 8082 -j ACCEPT</codeblock></li>
+                <li>Reload the haproxy service
+                  configuration.<codeblock>sudo service haproxy reload</codeblock></li>
+              </ol></li>
+          </ol></li>
+        <li> Download the Vertica package.
+          <ol><li>Open Horizon and log in as the "admin" user. Then click on
+            the admin panel in Horizon and select the Development Platform Panel under Admin. Then
+            click on the Configure Services sub-panel.</li>
+            <li>Select the "Vertica Trial Package for Marketplace". <image
+                href="../../media/HDP_1.2_install_vertica.png" placement="break"/></li>
+            <li> Select <b>Download Service</b>, and confirm the download. <image
+                href="../../media/dev_install_vertica_confirm.png" placement="break"/></li>
+            <li>Wait for the service to finish downloading. <image
+                href="../../media/dev_install_vertica_2.png" placement="break"/><note>Downloading
+                multiple services simultaneously is not supported, and will leave the server in an
+                error state.</note></li>
+          </ol></li>
+        <li> The installation is complete. Log back into the Horizon console (You may use a non-Admin
+          account here.) Click on the <b>Marketplace</b> panel under the current Project to begin
+          using the Marketplace Service. You may now install <xref
+            href="devplatform_install_marketplace.dita">Marketplace
+            packages</xref>.</li>
+      </ol>
+      <p>Your installation is now complete. If you encounter problems, refer to the <xref
+        href="../devplatform.troubleshooting.dita">Troubleshooting</xref>
+        documentation.</p>
+    </section>
+  </body>
+</topic>

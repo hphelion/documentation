@@ -18,8 +18,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/deploy/languages/python/1.2index.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/python/--></p>
+ <!--./devplatform/helion/user/deploy/languages/python/1.2index.md-->
+ <!--permalink: /helion/devplatform/als/user/deploy/languages/python/--></p>
 <p>Whether you're deploying an application to the HP Helion Development Platform, a <tm tmtype="tm"
         >Cloud Foundry</tm>-based Platform as a Service (PaaS), or writing applications that take
       advantage of HP Helion <tm tmtype="reg">OpenStack</tm> to manage infrastructure or software
@@ -58,7 +58,7 @@
 </section>
 <section id="controlling-hp-helion-with-your-application"> <title>Controlling HP Helion with your Application</title>
 <p>If your Python application is going to control HP Helion resources, it can communicate directly
-  with the <xref href="../../../../../../../publiccloud/api.dita" 
+  with the <xref href="../../../../../../publiccloud/api.dita" 
           outputclass="reference external">Helion REST APIs</xref> with a client or the Python SDK.
         Currently, the Python SDK is very limited in features, so you will probably be forced to use
         the CLIs. The unified Python Openstack Client has pretty good coverage of Openstack features

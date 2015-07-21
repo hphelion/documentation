@@ -57,7 +57,8 @@
  <p>The explorer can be opened in Visual
   Studio under **View -&gt;Other Windows -&gt;Cloud Foundry Explorer**. </p>
  <p>The explorer window shows endpoints that you have successfully connected to:</p>
- <p><image placement="break" href="../../../media/windows_cf_explorer.PNG" id="image_fnz_g3w_js" align="left"/></p>
+ <p><image placement="break" href="../../media/windows_cf_explorer.PNG" id="image_fnz_g3w_js"
+     align="left"/></p>
  <p>The Cloud Foundry Explorer Window displays the following types of nodes: </p>
  <table>
     <tgroup cols="1">
@@ -191,10 +192,10 @@
 
   <p>The MSBuild tasks can be installed using NuGet:</p>
   <ol><li>Right-click the project in <b>Solution Explorer</b> and select <b>Manage NuGet Packages</b>
-   <image placement="break" href="../../../media/windows_manage_packages.png"/></li>
+     <image placement="break" href="../../media/windows_manage_packages.png"/></li>
  <li>Search for <b>Cloud Foundry MSBuild Tasks</b> in the <b>Online</b> section</li>
  <li>Click <b>Install</b>
-  <image placement="break" href="../../../media/windows_select_msbuild.png"/></li>
+     <image placement="break" href="../../media/windows_select_msbuild.png"/></li>
 </ol>
   <p>The MSBuild Tasks NuGet package can be found <xref format="html" scope="external" href="http://www.nuget.org/packages/cf-msbuild-tasks/">here</xref>.</p>
 

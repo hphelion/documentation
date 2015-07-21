@@ -16,8 +16,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/1.2devplatform.eula.md-->
- <!--permalink: /helion/devplatform/1.2/eula/--></p>
+ <!--./devplatform/1.2devplatform.eula.md-->
+ <!--permalink: /helion/devplatform/eula/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic16601/eula">Part 1: HP End User License Agreement</xref>
@@ -33,7 +33,7 @@
 <p>
 <b>1. Applicability.</b> This end user license agreement (the "Agreement") governs the use of accompanying HP Helion Development Platform Software ("Software"), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this Agreement.</p>
 <p>
-<b>2. Terms.</b> This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at <xref href="../../devplatform/1.2/1.2devplatform.thirdparty.licensing.dita" >HP Helion Development Platform Open Source and Third-Party Software License Agreements</xref>.</p>
+<b>2. Terms.</b> This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at <xref href="1.2devplatform.thirdparty.licensing.dita" >HP Helion Development Platform Open Source and Third-Party Software License Agreements</xref>.</p>
 <p>
 <b>3. Authorization</b>. If you agree to this Agreement on behalf of another person or entity, you warrant you have authority to do so.</p>
 <p>

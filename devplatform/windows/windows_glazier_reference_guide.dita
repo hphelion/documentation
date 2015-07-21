@@ -23,15 +23,15 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/windows/windows_glazier_reference_guide.md-->
- <!--permalink: /helion/devplatform/1.2/windows/glazier/--></p>
+ <!--./devplatform/windows/windows_glazier_reference_guide.md-->
+ <!--permalink: /helion/devplatform/windows/glazier/--></p>
 <p>
   <!--Original: <span @class=>--><ph>
     <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
   </ph>
 </p>
 <p>Glazier is a collection of scripts used for building Windows images for deployment to a Helion <tm tmtype="reg">OpenStack</tm> environment. The image that the tool creates can be configured either by using command-line switches, or by using a Glazier profile.</p>
-<p>For an example on how to use Glazier to create a Windows image, see <xref href="../../../devplatform/1.2/windows/windows_building_and_deploying.dita" >Building and Deploying Windows DEA and SQL Server Express Images</xref>.</p>
+<p>For an example on how to use Glazier to create a Windows image, see <xref href="windows_building_and_deploying.dita" >Building and Deploying Windows DEA and SQL Server Express Images</xref>.</p>
 <ul>
 <li>
 <xref type="section" href="#topic6720/downloading">Downloading the Glazier Tool</xref>
@@ -154,8 +154,8 @@
 <section id="glazier-profile-directory-structure"> <title>Glazier profile directory structure</title>
 <p>The directory structure of the profile should match the following:</p>
 <p>
-  <image href="../../../media/windows_glazier_fileformat.png"/>
-</p>
+                <image href="../../media/windows_glazier_fileformat.png"/>
+            </p>
 </section>
 <section id="sample-featurescsv-file"> <title>Sample features.csv file</title>
 <p>The <codeph>features.csv</codeph> file should have the following format:</p>

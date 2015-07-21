@@ -23,8 +23,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/cluster/1.2harbor.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/cluster/harbor/--></p>
+ <!--./devplatform/helion/admin/cluster/1.2harbor.md-->
+ <!--permalink: /helion/devplatform/als/admin/cluster/harbor/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic4009/architecture">Architecture</xref>

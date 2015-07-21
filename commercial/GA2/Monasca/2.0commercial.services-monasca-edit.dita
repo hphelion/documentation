@@ -35,37 +35,45 @@
 </ul>   
 <p>Icinga, which was the supported monitor service in previous releases of Helion OpenStack, is not supported in Helion OpenStack 2.0.</p>
 <p>For details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca" format="html" scope="external">https://wiki.openstack.org/wiki/Monasca</xref></p>
-<section id="components"></section>
+  
+  <image href="MonascaDiagram.png"/>
+  
+<section id="components">
 <p>Monasca consists of:</p>
    <ul>
      <li><p>Monitoring Agent (monasca-agent): A modern Python based monitoring agent that consists of several sub-components and supports system metrics, such as cpu utilization and available memory, Nagios plugins, statsd and many built-in checks for services such as MySQL, RabbitMQ, and many others.</p></li>
      <li><p>Monitoring API (monasca-api): A well-defined and documented RESTful API for monitoring that is primarily focused on the following concepts and areas:</p>
         <ul> 
-           <li>Metrics: Store and query massive amounts of metrics in real-time.
+          <li><p>Metrics: Store and query massive amounts of metrics in real-time.</p>
                <ul>
-                 <li>Statistics: Query statistics for metrics</li>
+                 <li><p>Statistics: Query statistics for metrics.</p></li>
                </ul>
            </li>
         </ul>
         </li>
-        <li>Alarm Definitions: Create, update, query, and delete alarm definitions.</li>
-        <li>Alarms: Query and delete the alarm history.
+     <li><p>Alarm Definitions: Create, update, query, and delete alarm definitions.</p></li>
+     <li><p>Alarms: Query and delete the alarm history.</p>
             <ul>
-               <li>Simple expressive grammar for creating compound alarms composed of alarm subexpressions and logical operators.</li>
-               <li>Alarm severeties can be associated with alarms.</li>
-               <li>The complete alarm state transition history is stored and queryable which allows for subsequent root cause analysis (RCA) or advanced analytics.</li>
+              <li><p>Simple expressive grammar for creating compound alarms composed of alarm subexpressions and logical operators.</p></li>
+              <li><p>Alarm severeties can be associated with alarms.</p></li>
+              <li><p>The complete alarm state transition history is stored and queryable which allows for subsequent root cause analysis (RCA) or advanced analytics.</p></li>
             </ul>
          </li> 
-         <li>Notification Methods: Create and delete notification methods and associate them with alarms, such as email.  Supports the ability to notify users directly via email when an alarm state transitions occur.</li>
-     <li>Persister (monasca-persister): Consumes metrics and alarm state transitions from the MessageQ and stores them in the Metrics and Alarms database. We will look into converting the Persister to a Python component in the future.</li>
-     <li>Threshold Engine (monasca-thresh): Computes thresholds on metrics and publishes alarms to the MessageQ when exceeded. Based on Apache Storm a free and open distributed real-time computation system.</li>
-     <li>Notification Engine (monasca-notification): Consumes alarm state transition messages from the MessageQ and sends notifications, such as emails for alarms. The Notification Engine is Python based.</li>
-     <li>Message Queue: A third-party component that primarily receives published metrics from the Monitoring API and alarm state transition messages from the Threshold Engine that are consumed by other components, such as the Persister and Notification Engine. The Message Queue is also used to publish and consume other events in the system. Currently, a Kafka based MessageQ is supported. Kafka is a high performance, distributed, fault-tolerant, and scalable message queue with durability built-in. We will look at other alternatives, such as RabbitMQ and in-fact in our previous implementation RabbitMQ was supported, but due to performance, scale, durability and high-availability limitiations with RabbitMQ we have moved to Kafka.</li>
-     <li>Metrics and Alarms Database: A third-party component that primarily stores metrics and the alarm state history. Currently, Vertica and InfluxDB are supported.</li>
-     <li>Config Database: A third-party component that stores a lot of the configuration and other information in the system. Currently, MySQL is supported.</li>
-     <li>Monitoring Client (python-monascaclient): A Python command line client and library that communicates and controls the Monitoring API. The Monitoring Client was written using the OpenStack Heat Python client as a framework. The Monitoring Client also has a Python library, "monascaclient" similar to the other OpenStack clients, that can be used to quickly build additional capabilities. The Monitoring Client library is used by the Monitoring UI, Ceilometer publisher, and other components.</li>
-     <li>Alarm Configuration Manager: A Python process that will detect new metrics and configure alarms based on the configuration. It uses the monitoring client library that communicates with the Monitoring API. The Alarm Configuration Manager is a Python Daemon that runs on a configurable interval and detects new metrics that need to be alarmed and creates the alarms.</li>
-     <li>Monitoring UI: A Horizon dashboard for visualizing the overall health and status of an OpenStack cloud.</li>
+     <li><p>Notification Methods: Create and delete notification methods and associate them with alarms, such as email.  Supports the ability to notify users directly via email when an alarm state transitions occur.</p></li>
+     <li><p>Persister (monasca-persister): Consumes metrics and alarm state transitions from the MessageQ and stores them in the Metrics and Alarms database. We will look into converting the Persister to a Python component in the future.</p></li>
+     <li><p>Threshold Engine (monasca-thresh): Computes thresholds on metrics and publishes alarms to the MessageQ when exceeded. Based on Apache Storm a free and open distributed real-time computation system.</p></li>
+     <li><p>Notification Engine (monasca-notification): Consumes alarm state transition messages from the MessageQ and sends notifications, such as emails for alarms. The Notification Engine is Python based.</p></li>
+     <li><p>Message Queue: A third-party component that primarily receives published metrics from the Monitoring API and alarm state transition messages from the Threshold Engine that are consumed by other components, such as the Persister and Notification Engine. The Message Queue is also used to publish and consume other events in the system. Currently, a Kafka based MessageQ is supported. Kafka is a high performance, distributed, fault-tolerant, and scalable message queue with durability built-in. We will look at other alternatives, such as RabbitMQ and in-fact in our previous implementation RabbitMQ was supported, but due to performance, scale, durability and high-availability limitiations with RabbitMQ we have moved to Kafka.</p></li>
+     <li><p>Metrics and Alarms Database: A third-party component that primarily stores metrics and the alarm state history. Currently, Vertica and InfluxDB are supported.</p></li>
+     <li><p>Config Database: A third-party component that stores a lot of the configuration and other information in the system. Currently, MySQL is supported.</p></li>
+     <li><p>Monitoring Client (python-monascaclient): A Python command line client and library that communicates and controls the Monitoring API. The Monitoring Client was written using the OpenStack Heat Python client as a framework. The Monitoring Client also has a Python library, "monascaclient" similar to the other OpenStack clients, that can be used to quickly build additional capabilities. The Monitoring Client library is used by the Monitoring UI, Ceilometer publisher, and other components.</p></li>
+     <li><p>Alarm Configuration Manager: A Python process that will detect new metrics and configure alarms based on the configuration. It uses the monitoring client library that communicates with the Monitoring API. The Alarm Configuration Manager is a Python Daemon that runs on a configurable interval and detects new metrics that need to be alarmed and creates the alarms.</p></li>
+     <li><p>Monitoring UI: A Horizon dashboard for visualizing the overall health and status of an OpenStack cloud.</p></li>
    </ul>
+</section>
+  <section id="messaging">
+    <p>The Monasca Message Queue is a distributed, scalable, HA message queue for distributing metrics, alarms and events in the monitoring system. The message queue is based on Kafka.</p>
+    <p>There are several messages that are published and consumed by various components in Monasca via the MessageQ. See <xref href="https://wiki.openstack.org/wiki/Monasca/Message_Schema" format="html" scope="external">Message Schema</xref>.</p>
+  </section>
 </body>
 </topic>

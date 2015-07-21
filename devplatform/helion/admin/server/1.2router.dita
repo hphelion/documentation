@@ -21,8 +21,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/server/1.2router.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/server/router/--></p>
+ <!--./devplatform/helion/admin/server/1.2router.md-->
+ <!--permalink: /helion/devplatform/als/admin/server/router/--></p>
 <p>The Application Lifecycle Service Router role manages HTTP and HTTPS traffic between web clients and application instances. In conjunction with the Cloud
 Controller, it maps application URLs to the corresponding application
 instances running in Linux containers on DEA nodes, distributing load
@@ -42,7 +42,7 @@ between multiple instances (containers) as required.</p>
 <xref href="http://www.websocket.org/aboutwebsocket.html" scope="external" format="html" >WebSocket</xref> (including
 "wss://" secure web sockets) and <xref href="http://www.chromium.org/spdy" scope="external" format="html" >SPDY</xref>.</p>
 <section id="settings"> <title>Settings</title>
-  <p>The Router is configured using <xref href="../../../../../devplatform/1.2/helion/admin/reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"  >
+  <p>The Router is configured using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"  >
 <i>kato config</i>
 </xref>. The following settings are configurable:</p>
 <p>
@@ -91,8 +91,7 @@ configuration. Disabled if empty (default). Valid values are:</p>
 </section>
 <section id="websockets"> <title>WebSockets</title>
 <p>Applications using web sockets must use the VCAP_APP_PORT or PORT
-<xref href="../../../../../devplatform/1.2/helion/user/reference/1.2environment.dita" type="section" >
-<i>environment variables</i>
+<xref href="../../user/reference/1.2environment.dita"><i>environment variables</i>
 </xref>
 to set the default listener port of the WebSocket server.</p>
 </section>

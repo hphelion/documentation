@@ -18,8 +18,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/user/deploy/languages/python/1.2django.md-->
- <!--permalink: /helion/devplatform/1.2/als/user/deploy/languages/python/django/--></p>
+ <!--./devplatform/helion/user/deploy/languages/python/1.2django.md-->
+ <!--permalink: /helion/devplatform/als/user/deploy/languages/python/django/--></p>
 <p>Your app needs a top-level <i>wsgi.py</i> file with a global variable named
 <codeph>application</codeph> that refers to your Django WSGI
 application. The file should already exist in the Django project,

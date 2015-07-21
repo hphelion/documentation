@@ -22,8 +22,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/1.2/helion/admin/reference/1.2add-service.md-->
- <!--permalink: /helion/devplatform/1.2/als/admin/reference/add-service/--></p>
+ <!--./devplatform/helion/admin/reference/1.2add-service.md-->
+ <!--permalink: /helion/devplatform/als/admin/reference/add-service/--></p>
 <p>The Application Lifecycle Service has three <i>Service</i> definitions:</p>
 <ul>
 <li>
@@ -31,7 +31,7 @@
 <li>
 <b>Provisioned Services</b>: <i>Instances</i> of the System Services created for use by end-user applications.</li>
 <li>
-<xref href="../../../../../devplatform/1.2/helion/user/services/1.2user-provided.dita" >
+<xref href="../../user/services/1.2user-provided.dita" >
 <b>User-Provided Service Instances</b>
 </xref>: Credentials and connection information for <i>external</i> services.</li>
 </ul>
