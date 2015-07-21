@@ -143,25 +143,30 @@ See [Overview of EON Service](/helion/openstack/carrier/services/eon/overview/)
 See [Overview of Sherpa Service](/helion/openstack/carrier/services/sherpa/overview/).
 -->
     </section>
-<section id="dash"><title>Dashboard services</title><p>HP Helion OpenStack
-        uses the following services or software to present user interfaces to aspects of HP Helion
-          OpenStack</p><p>
+<section id="dash">
+      <title>Dashboard services</title>
+      <p>HP Helion OpenStack uses the following services or software to present user interfaces to
+        aspects of HP Helion OpenStack</p>
+      <p>
         <b>Horizon</b> The Horizon service is the basis of the <xref
           href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"
-          >HP Helion OpenStack dashboards</xref> for creating and managing HP
-        Helion OpenStack resources. The Horizon dashboard is developed by HP
-        for use with HP Helion OpenStack</p><p>You can use the HP Helion OpenStack dashboard to view, allocate, and manage all virtual resources
-        within a cloud. See <xref
+          >HP Helion OpenStack dashboards</xref> for creating and managing HP Helion OpenStack
+        resources. The Horizon dashboard is developed by HP for use with HP Helion OpenStack</p>
+      <p>You can use the HP Helion OpenStack dashboard to view, allocate, and manage all virtual
+        resources within a cloud. See <xref
           href="../../commercial/GA1/1.1commerical.services-horizon-overview.dita">Overview of the
-          Horizon Service</xref>.</p><p><b>Icinga</b> The Icinga service, which runs in the
-        undercloud, helps cloud admins monitor the disk usage of Swift storage node(s). Icinga is an
-        open-source software project.</p>p> <p>See [Overview of the Icinga
-        Service](/helion/commercial/carrier/services/icinga/).</p><!-- Hiding for Alpha
+          Horizon Service</xref>.</p>
+  <!-- Hiding for Alpha    
+  <p><b>Icinga</b> The Icinga service, which runs in the undercloud, helps cloud admins monitor
+        the disk usage of Swift storage node(s). Icinga is an open-source software project. </p>
+      <p>See [Overview of the Icinga Service](/helion/commercial/carrier/services/icinga/).</p>
+      
 
 **Kibana**. The Kibana service, which runs in the undercloud, is the user interface into the [centralized logging service](/helion/openstack/carrier/services/logging/overview/) that helps view logging data across the HP Helion OpenStack cloud. Kibana is an open-source software project.
 
 See [Overview of the Icinga Service](/helion/commercial/carrier/services/kibana/).
---><!-- Hiding for Alpha
+-->
+      <!-- Hiding for Alpha
 ## Other services and features {#Other}
 
 The following services and features can be used with HP Helion OpenStack
@@ -173,7 +178,8 @@ See [Centralized Logging Overview](/helion/openstack/carrier/services/logging/ov
 **DNSaaS**. The HP Helion OpenStack DNSaaS (Domain Name System as a Service) provides a way to display, create, modify, and delete DNS records on the assigned DNS server network. 
 
 See [Overview of the DNS as a Service](/helion/openstack/carrier/install/dnsaas/).
---></section>
+-->
+    </section>
 <section id="info"> <title>For more information</title>
 <p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack Operations Guide</xref>. The <b>Architecture</b> section contains useful information about how an OpenStack Cloud is put together. However, HP Helion OpenStack takes care of these details for you. The <b>Operations</b> section contains information on how to manage the system.</p>
 <p>For more information on installing the command-line interface for interacting with services, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >installing the OpenStack command-line clients</xref>.</p>
