@@ -13,7 +13,7 @@
       <othermeta name="role" content="Systems Administrator"/>
       <othermeta name="role" content="System Engineer"/>
       <othermeta name="role" content="Cloud Administrator"/>
-      <othermeta name="role" content="Network Administrator"/>
+      <othermeta name="role" content="Network Administrator"/ >
       <othermeta name="role" content="Application Developer"/>
       <othermeta name="role" content="Application Developer"/>
       <othermeta name="role" content="ISV Developer"/>
@@ -36,7 +36,12 @@
     <section id="kato_upstream_proxies"><title>Upstream proxies are not set in DEAs added after cluster creation</title>
     <p>When DEAs are added to clusters after they have been created, upstream proxies are not automatically configured. To configure upstream proxies for these nodes, do the following:</p>
     <ol>
-      <li></li>
+      <li>Connect to each DEA node using SSH</li>
+      <li>Run the following commands:
+      <codeblock>
+kato op upstream_proxy set &lt;proxy server&gt;
+service polipo restart
+      </codeblock></li>
     </ol></section>
     <section id="kato_patch"><title>Kato tries to install patches on Windows nodes</title>
     <p>When <codeph>kato patch install</codeph> is run, the installer will attempt to add patches to Windows nodes. This installation will fail with the following errors:</p>
