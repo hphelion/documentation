@@ -23,8 +23,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/helion/admin/best-practices/1.2index.md-->
- <!--permalink: /helion/devplatform/als/admin/best-practices/--></p>
+ <!--./devplatform/1.2/helion/admin/best-practices/1.2index.md-->
+ <!--permalink: /helion/devplatform/1.2/als/admin/best-practices/--></p>
 <ul>
 <li>
 <xref type="section" href="#topic16169/passwordless">Passwordless SSH Authentication</xref>
@@ -167,7 +167,7 @@ ensure that all new kernels, modules, and libraries are loaded.</p>
           directory:<codeblock>mkdir ~/upgrade-alsek &amp;&amp; cd $_</codeblock></li>
 <li> Create a <i>Dockerfile</i> in the new directory. Create a file named <b>Dockerfile</b> and add
           the
-          following:<codeblock>FROM stackato/stack-alsek:kato-patched
+          following:<codeblock>FROM helion/stack-alsek:kato-patched
 RUN apt-get update
 RUN unattended-upgrades -d
 RUN apt-get clean &amp;&amp; apt-get autoremove </codeblock></li>
@@ -176,11 +176,11 @@ RUN apt-get clean &amp;&amp; apt-get autoremove </codeblock></li>
 <ol>
 <li> Build the docker image with the <b>--no-cache=true</b> option. Give the image a tag relevant to
           this particular upgrade (e.g.
-            upgrade-2014-09-19)<codeblock>sudo docker build --no-cache=true -rm -t stackato/stack-alsek:upgrade-2014-09-19 .</codeblock><p>The
+            upgrade-2014-09-19)<codeblock>sudo docker build --no-cache=true -rm -t helion/stack-alsek:upgrade-2014-09-19 .</codeblock><p>The
               <b>.</b> (dot) at the end is important! It specifies that the <i>Dockerfile</i> to use
             is the one in the current directory.</p></li>
 <li> Tag the Docker image as the <i>latest</i> stack-alsek
-          image:<codeblock>sudo docker tag stackato/stack-alsek:upgrade-2014-09-19 stackato/stack-alsek:latest</codeblock></li>
+          image:<codeblock>sudo docker tag helion/stack-alsek:upgrade-2014-09-19 helion/stack-alsek:latest</codeblock></li>
 <li> All running applications will need to be restarted by their owners or admins (using the Helion
           management console or the ALS client) in order for security upgrades to take effect within
           their application containers. You can check which image running apps are using by running
@@ -362,9 +362,11 @@ command(s).</li>
 ...
 kato relocate services /mnt/ebs/services
 ...
+kato relocate docker_registry /mnt/ebs/docker_registry
+...                              
 kato relocate droplets /mnt/ebs/droplets
 ...
-kato relocate containers /mnt/containers
+kato relocate containers /mnt/ebs/containers
 ...</codeblock>
 <p>
         <note>For performance reasons, containers should not be relocated to EBS volumes.</note>

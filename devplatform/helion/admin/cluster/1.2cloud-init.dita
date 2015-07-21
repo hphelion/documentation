@@ -23,8 +23,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/helion/admin/cluster/1.2cloud-init.md-->
- <!--permalink: /helion/devplatform/als/admin/cluster/cloud-init/--></p>
+ <!--./devplatform/1.2/helion/admin/cluster/1.2cloud-init.md-->
+ <!--permalink: /helion/devplatform/1.2/als/admin/cluster/cloud-init/--></p>
 <p>
 <xref href="https://help.ubuntu.com/community/CloudInit" scope="external" format="html" >cloud-init</xref> (the Ubuntu package for handling early initialization of cloud instances) can be used to provide additional flexibility when configuring Application Lifecycle Service cluster nodes, and can simplify joining a cluster and assigning roles.</p>
 <p>cloud-init can be configured at instance launch time by pasting YAML
