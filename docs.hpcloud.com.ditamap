@@ -684,6 +684,8 @@
         navtitle="Growing and Renaming Clusters using Horizon" locktitle="yes"/>
       <topicref href="devplatform/1.2/windows/windows_remoting.dita" toc="no"
         navtitle="Remote Desktop Access to Windows DEA and SQL Server Instances" locktitle="yes"/>
+        <topicref href="devplatform/1.2/windows/windows_password.dita" toc="no"
+        navtitle="Retrieving the Instance Admin Password" locktitle="yes"/>
       <topicref href="devplatform/1.2/1.2devplatform.database-ALS.dita" locktitle="yes"
         navtitle="Connecting the Database Service with the Application Lifecycle Service"/>
       <!--permalink: /helion/devplatform/1.2/databaseservice/-->
