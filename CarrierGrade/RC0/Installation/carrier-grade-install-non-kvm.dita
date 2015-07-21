@@ -45,7 +45,7 @@
             <li>Execute the <codeph>Importiso</codeph> command.<p>You will see similar message when
                 the playbook is run successful:</p></li>
           </ul>
-          <image href="../../media/CGH-Install-Ansible.png" id="image_jmr_dds_rs"/></li>
+          <image href="../../../media/CGH-Install-Ansible.png" id="image_jmr_dds_rs"/></li>
         <li>Locate the IP address for the HLM VM in the
             <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the HLM host under
           <codeph>hlm_clmstaticip</codeph> field.</li> 
@@ -162,7 +162,8 @@ Password: cghelion</codeblock></p></li>
                 </row>
                 <row>
                   <entry>Pxe-interface</entry>
-                  <entry>The name of the interface on which PXE boot should occur. For example: <codeph>eth0</codeph></entry>
+                  <entry>The name of the interface on which PXE boot should occur. For example:
+                      <codeph>eth0</codeph></entry>
                 </row>
                 <row>
                   <entry>pm_type</entry>
@@ -182,18 +183,19 @@ Password: cghelion</codeblock></p></li>
                 </row>
                 <row>
                   <entry>node_group</entry>
-                  <entry>Enter the same value as <codeph>node-type</codeph> in the <codeph>nodes.json</codeph>
-                    file used during cloud deployment. For example: `CCN-001-001`.</entry>
+                  <entry>Enter the same value as <codeph>node-type</codeph> in the
+                      <codeph>nodes.json</codeph> file used during cloud deployment. For example:
+                    `CCN-001-001`.</entry>
                 </row>
                 <row>
                   <entry>failure_zone, vendor, model, os_partition_size, data_partition_size</entry>
-                  <entry>Enter the same value as for these fields an in the <codeph>nodes.json</codeph> file used
-                    during cloud deployment</entry>
+                  <entry>Enter the same value as for these fields an in the
+                      <codeph>nodes.json</codeph> file used during cloud deployment</entry>
                 </row>
               </tbody>
             </tgroup>
-          </table><p>To see a sample <codeph>node-provision.json</codeph> file, see <xref
-              href="../../CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.dita">Create the HLM Virtual Machine</xref>.</p></li>
+          </table><p>To see a sample <codeph>node-provision.json</codeph> file, see<xref
+            href="carrier-grade-install-pb-hlm-vm-json.dita#topic4797">Sample JSON File for the HLM Virtual Machine Installation</xref>.</p></li>
 </ol>
 </section>
 <section id="pxe-boot"> <title>Configure PXE boot</title>

@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13823">
+<title>HP Helion 1.2 Development Platform: Management Console (Admin View)</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="product-version" content="HP Helion Development Platform 1.2"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Net Ops Engineer"/>
+<othermeta name="role" content="NOC Engineer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+<othermeta name="product-version2" content="HP Helion Development Platform 1.2"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/helion/admin/console/1.2index.md-->
+ <!--permalink: /helion/devplatform/als/admin/console/--></p>
+<p>The Application Lifecycle Service Management Console is a web interface that allows the
+administration and management of the Application Lifecycle Service Server. Many of the features described below are only available to Administrator users from the Admin view.</p>
+<ul>
+<li>
+<xref type="section" href="#topic13823/setup">Management Console Setup and Access</xref>
+</li>
+<li>
+<xref type="section" href="#topic13823/welcome">Welcome Page</xref>
+</li>
+<li>
+<xref type="section" href="#topic13823/applications">Applications</xref>
+</li>
+<li>
+<xref type="section" href="#topic13823/organizations">Organizations</xref>
+</li>
+<li>
+<xref type="section" href="#topic13823/support">Support</xref>
+</li>
+<li>
+        <xref type="section" href="#topic13823/admin">Admin</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic13823/clustermanagement">Cluster Management</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic13823/clustersummary">Summary</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/cluster-nodes">Cluster Nodes</xref>
+              </li>
+            </ul></li>
+          <li>
+            <xref type="section" href="#topic13823/patches">Available Patches</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/app-org">Applications &amp; Organizations</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/domains">Domains</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/routes">Routes</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/services">Services</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic13823/managed-services">Managed Services
+                  Instances</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/user-services">User-provided Service
+                  Instances</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/avail-services">Available Services</xref>
+              </li>
+            </ul></li>
+          <li>
+            <xref type="section" href="#topic13823/users">Users</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/dashboards">Dashboards</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic13823/memory-summary">Memory Summary</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/dea-usage">DEA Usage</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/zone-usage">Placement Zone Usage</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/avail-zone-usage">Availability Zone
+                  Usage</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/router-stats">Router Stats</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/primary-node-status-graphs">Primary Node
+                  Status Graphs</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/cloud-events">Cloud Events</xref>
+              </li>
+            </ul></li>
+        </ul></li>
+<li>
+        <xref type="section" href="#topic13823/settings">Settings</xref>
+        <ul>
+          <li>
+            <xref type="section" href="#topic13823/cloud-controller">Cloud Controller</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/console-settings-applications"
+              >Applications</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/console">Console</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/dea">DEA</xref>
+            <ul>
+              <li>
+                <xref type="section" href="#topic13823/console-settings-dea">DEA Settings</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/dea-zones-placement">DEA Placement
+                  Zones</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/dea-zones-available">Availability
+                  Zones</xref>
+              </li>
+              <li>
+                <xref type="section" href="#topic13823/feature-flags">Feature Flags</xref>
+              </li>
+            </ul></li>
+          <li>
+            <xref type="section" href="#topic13823/logyard">Logyard</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/console-settings-quota-definitions">Quota
+              Plans</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/file-system">File System</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/harbor">Harbor</xref>
+          </li>
+          <li>
+            <xref type="section" href="#topic13823/data-services">Data Services</xref>
+          </li>
+        </ul></li>
+</ul>
+<section id="setup"> <title>Management Console Setup and Access</title>
+  <p>Your hypervisor provides <xref href="../../user/reference/1.2glossary.dita#topic6187/term-tty-console" type="section"   >tty console</xref> access to each of its virtual machines. After startup, an Application Lifecycle Service VM displays:</p>
+<codeblock>Application Lifecycle Service Management Console at
+https://helion-xxxx.local</codeblock>
+<p>On a <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud">micro
+          cloud</xref> VM where the local network supports <xref
+            href="../../user/reference/1.2glossary.dita#topic6187/term-multicast-dns"
+          type="section" >multicast DNS</xref>, the hostname will be
+          <codeph>helion-xxxx.local</codeph>. If you have configured the <xref
+            href="../../admin/server/1.2configuration.dita#topic31232/server-config-hostname"
+          type="section" >hostname</xref> and <xref
+            href="../../admin/server/1.2configuration.dita#topic31232/server-config-dns"
+          type="section" >DNS</xref> of the Application Lifecycle Service server
+        manually, or are connecting to a server administered by someone else, supply the assigned
+        hostname instead (ex: <i>api.helion-test.example.com</i>).</p>
+<p>Enter the URL into your web browser and the Management Console will load. The Console is supported on the following browsers:</p>
+<ul>
+<li>Chrome 30+ (WebKit)</li>
+<li>Firefox 20+</li>
+<li>IE 10+</li>
+</ul>
+<p>Using a browser which fully support WebSockets is recommended.</p>
+<p>
+        <note> The SSL certificate for the Application Lifecycle Service Management Console is
+          self-signed. You will need to manually accept this certificate in your browser. See the
+            <xref
+            href="../../admin/server/1.2configuration.dita#topic31232/using-your-own-ssl-certificate"
+            >Using your own SSL certificate</xref> for information on using your own
+          certificate.</note>
+      </p>
+<p>When you first access the Management Console, you will be prompted to create a primary administrative user for ALS. Enter an email address as the username, set a secure password, and then review and accept the license agreement.</p>
+      <note> The password you choose here becomes the login password for the <i>helion</i> user on
+        the VM for SSH access. This is critical since all login is done as the <i>helion</i> user,
+        not as <i>root</i>.</note>
+<p>Once you've logged in, you can begin to add other users and admins, enable and disable services, and generally set up the system to your requirements.</p>
+<p>Basic Application Lifecycle Service administration can be done through the Management
+Console, but some maintenance and configuration tasks may need to be done at the command line using the <i>kato</i> command. See the <xref href="../../admin/reference/1.2kato-ref.dita">Kato Command Reference</xref> for a full list of options.</p>
+<p>The Application Lifecycle Service Management Console will periodically send non-identifying pingbacks (Application Lifecycle Service version number and UUID) to HP servers to help improve the web console experience. You can disable this option by setting</p>
+<codeblock>theme_settings['pingback_allowed'] = false;</codeblock>
+<p>in the <i>settings.js</i> file as described in the <xref href="1.2customize.dita#topic5029"
+          >Customization</xref> documentation.</p>
+</section>
+<section id="welcome"> <title>Welcome Page</title>
+<p>The top-level page of the Management Console displays quick links to the most used resources and
+        views. The blue buttons are for features also available to regular end users. See <xref
+          href="../../user/console/1.2index.dita#topic8844/welcome">Management Console</xref> (User
+        View).</p>
+<p>Available patches for the system, new releases, and the latest news are also displayed on this page.</p>
+<p>Green buttons expose Admin-only functionality:</p>
+<ul>
+<li>Configure Available Services: Opens the <xref href="#topic13823/cluster-nodes" format="dita"
+            >Cluster Nodes</xref> view showing which roles are running on which nodes. From this
+          view you can add or remove Service roles on the various nodes in the cluster (or on
+          127.0.0.1 for micro clouds).</li>
+<li>Manage Organizations: Opens the <xref href="#topic13823/organizations" format="dita"
+            >Organizations</xref> view.</li>
+<li>Manage Users: Opens the <xref href="#topic13823/users" format="dita">Users </xref>view.</li>
+<li>View All Deployed Applications: Opens the <xref type="section" href="#topic13823/applications">Console Applications</xref> view.</li>
+<li>View Cloud Events: Opens the <xref type="section" href="#topic13823/cloud-events">Cloud Events</xref> view.</li>
+<li>View Dashboard: Opens the <xref href="#topic13823/dashboards" format="dita"
+          >Dashboard</xref>.</li>
+</ul>
+</section>
+<section id="applications"> <title>Applications</title>
+<p>The Applications section displays a list of all apps on the server. Click anywhere on the line for an app to view its details. Admins have the same permissions in the Application View as a Developer of the space it was deployed to.</p>
+</section>
+<section id="organizations"> <title>Organizations</title>
+<p>The top level Organizations page allows Admins to add and delete <xref
+          href="#topic13823/organizations" format="dita">Organizations</xref>. Clicking on an
+        organization name opens its details. This view is the same as a regular user's <xref
+          href="../../user/console/1.2index.dita#topic8844/organization-view">Organizations</xref>
+        view, but admin users can also edit quotas and add/remove domains, spaces, and users.</p>
+</section>
+<section id="support"> <title>Support</title>
+<p>The Support menu includes the same options as the regular user's menu.</p>
+</section>
+<section id="admin"> <title>Admin</title>
+<p>Several views that are only available to administrators are in the Admin menu.</p>
+</section>
+<section id="clustermanagement"> <title>Cluster Management</title>
+<p>Commands for managing a cluster as a whole.</p>
+</section>
+<section id="clustersummary"> <title>Summary</title>
+<p>Displays a list of roles and their status in the system. Additionally, the following system information is displayed:</p>
+<ul>
+<li>
+<b>Number of nodes</b>: The number of nodes in the cluster.</li>
+<li>
+<b>Version</b>: Version (release) number of the system.</li>
+<li>
+<b>MBUS IP</b>: The IP address that hosts the primary node. Cluster nodes (if any) will connect via this IP address. In a micro cloud setting, it will be 127.0.0.1.</li>
+<li>
+<b>API Endpoint</b>: The URL for ALS clients to target. Normally also the URL for the Management Console.</li>
+</ul>
+</section>
+<section id="cluster-nodes"> <title>Cluster Nodes</title>
+<p>Displays a list of nodes in the current cluster, and what services are running on each node. In a micro cloud configuration, only the current local node (127.0.0.1) is shown.</p>
+<p>To enable or disable services on a node, click the Configure Roles button (cog icon) to see the Node Settings, showing a list of all available roles and checkboxes to enable or disable each one. Click Save to apply changes.</p>
+  <p>See also the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-role-add" >kato role</xref> and <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-info" >kato info</xref> command documentation for the CLI equivalents, and the <xref href="../cluster/1.2index.dita">Cluster Setup</xref> documentation for information on adding nodes to the cluster.</p>
+</section>
+<section id="patches"> <title>Available Patches</title>
+<p>Displays a list of available patches for the current cluster.</p>
+</section>
+<section id="app-org"> <title>Applications &amp; Organizations</title>
+  <p>Links to the <xref href="../../user/console/1.2index.dita#topic8844/application-view" >Applications</xref> and <xref href="../../user/deploy/1.2orgs-spaces.dita" type="section"   >Organizations</xref> lists.</p>
+</section>
+<section id="domains"> <title>Domains</title>
+  <p>A filterable list of all domains configured on the system, showing whether they are <xref href="../../user/deploy/1.2orgs-spaces.dita#topic2729/domains" type="section"   >Shared or Owned domains</xref>.</p>
+</section>
+<section id="routes"> <title>Routes</title>
+<p>A filterable list of routes in the system.</p>
+</section>
+<section id="services"> <title>Services</title>
+</section>
+<section id="managed-services"> <title>Managed Services Instances</title>
+<p>A filterable list of managed service instances on the system.</p>
+</section>
+<section id="user-services"> <title>User-provided Service Instances</title>
+<p>A filterable list of user provided service instances on the system.</p>
+</section>
+<section id="avail-services"> <title>Available Services</title>
+<p>A list of available service types (with their version).</p>
+</section>
+<section id="users"> <title>Users</title>
+<p>The Users section displays a list of users and admins.</p>
+<ul>
+<li>Click <b>+ Add User</b> to add users.</li>
+<li>Click on the user name or email address to view account details or change the password.</li>
+</ul>
+</section>
+<section id="dashboards"> <title>Dashboards</title>
+<p>A list of available dashboards and their functionality.</p>
+</section>
+<section id="memory-summary"> <title>Memory Summary</title>
+<p>Helion tracks the amount of memory used by applications across all DEA nodes and shows various reports. Available memory is calculated based on the system memory of the DEA nodes multiplied by the <xref type="section" href="#topic13823/console-settings-dea">Max Memory Percentage</xref>.</p>
+<p>Memory Summary shows how much memory:</p>
+<ul>
+<li>has been assigned to Organizations via <xref type="section" href="#topic13823/console-settings-quota-definitions">Quota Plans</xref>
+</li>
+<li>is available on DEA nodes</li>
+<li>remains unallocated</li>
+<li>has been allocated</li>
+<li>is currently in use</li>
+</ul>
+</section>
+<section id="dea-usage"> <title>DEA Usage</title>
+<p>Memory usage statistics and a usage bar graph for each DEA node in the pool.</p>
+</section>
+<section id="zone-usage"> <title>Placement Zone Usage</title>
+<p>Memory usage statistics and a usage bar graph for all configured <xref type="section" href="#topic13823/dea-zones-placement">Placement Zones</xref>.</p>
+</section>
+<section id="avail-zone-usage"> <title>Availability Zone Usage</title>
+<p>Memory usage statistics and a usage bar graph for all configured <xref
+          href="#topic13823/dea-zones-available" format="dita">Availability Zones</xref>
+      </p>
+</section>
+<section id="router-stats"> <title>Router Stats</title>
+<p>Shows realtime results for incoming requests (connections per second), routing errors (errors per second), and an overview of the cumulative requests to the system.</p>
+</section>
+<section id="primary-node-status-graphs"> <title>Primary Node Status Graphs</title>
+<p>Displays graphs for server statistics: CPU, Load, Memory, Disk Operations, Disk Space, Processes, and Swap (primary node or micro cloud only).</p>
+</section>
+<section id="cloud-events"> <title>Cloud Events</title>
+<p>The Cloud Events section displays a list of events (including errors and warnings) on the ALS server. The events can be filtered by Severity, Node ID, or Type, or by using a substring match in the Search field.</p>
+</section>
+<section id="settings"> <title>Settings</title>
+<p>The Settings menu provides access to the following Console and system settings:</p>
+</section>
+<section id="cloud-controller"> <title>Cloud Controller</title>
+<ul>
+<li>
+<b>Maintenance Mode</b>: Shuts down API requests but continues to serve web requests, useful when performing system operations such as importing and exporting data for upgrades. When the primary node enters maintenance mode, the Management Console becomes "read only" with the exception of this toggle (so that it can be brought back online).</li>
+<li>
+<b>Logging Level</b>: Changes the verbosity of logs from 'debug2' (most verbose) through 'off' (silent).</li>
+<li>
+<b>Support Email</b>: The email address displayed to end users when errors are encountered. Use an address which is monitored by administrators.</li>
+<li>
+<b>Sample App URLs</b>: URIs for URIs for JSON files which populate the <xref href="1.2app-store.dita">Sample Applications</xref> The URIs need not be public, but must be accessible from the controller node.</li>
+<li>
+  <b>Allowed Repos</b>: Debian package repositories allowed in application containers. End users can install additional packages (e.g. with  apt-get  or  aptitude) only from these repositories. When adding new repositories, GPG keys for each new repo must also be added to the Docker base container See <xref href="../server/1.2configuration.dita#topic31232/allowed-repositories" type="section"   >Allowed Repositories</xref>.</li>
+</ul>
+</section>
+<section id="console-settings-applications"> <title>Applications</title>
+<ul>
+<li>Reserved URIs: Virtual hostnames and URIs reserved for use by the system which cannot be used for end user applications. This prevents users from deploying applications on URIs which the system requires (ex: 'api'), or for cases where a particular DNS sub-domain record is not being resolved to the system.</li>
+</ul>
+</section>
+<section id="console"> <title>Console</title>
+<p>Various settings and templates to customize the look and feel of the Management Console. The settings are divided into the following categories:</p>
+<ul>
+<li>Product: Options to rename and reversion ALS for OEM deployments, change the default locale (currently only 'en' and 'de' available), choose a different URL for documentation, or disable console pingbacks.</li>
+<li>Client: A version number setting and alternative paths/URLs for alternative or renamed CLI clients.</li>
+<li>Look and Feel: Change the favicon, header, footer, or background color.</li>
+<li>Welcome Page: EJS templated HTML to display on the Welcome page (see above).</li>
+<li>Support Page: EJS templated HTML to display on the Support page. Change this if you are supporting your end users directly.</li>
+<li>Eula Content: End User License Agreement. Change this only if you are an OEM customer exposing Helion to end users under your own specific licensing terms.</li>
+<li>Custom Stylesheet: A single CSS file used to override any existing styling in the Management Console. Inspect the Console with browser tools such as Firebug or Chrome Developer Tools to see the class names and IDs.</li>
+</ul>
+<p>Detailed instructions for customizing the Console can be found in the <xref
+          href="1.2customize.dita#topic5029">Customization</xref> documentation.</p>
+</section>
+<section id="dea"> <title>DEA</title>
+</section>
+<section id="console-settings-dea"> <title>DEA Settings</title>
+<ul>
+<li>
+<b>Max Memory Percentage</b>: The percentage of physical memory each DEA node can use for hosted applications. The 80% default setting leaves enough memory for the OS and DEA processes on a node with 4GB of RAM. This can be increased on nodes with more memory available (e.g. to 90% on a node with 8GB of RAM). Do not exceed 100% unless the system correctly supports swap space and has it enabled. Restart all DEA roles/nodes to apply the change.</li>
+<li>
+<b>Max Staging Duration</b>: The maximum time allowed for application staging.</li>
+</ul>
+</section>
+<section id="dea-zones-placement"> <title>DEA Placement Zones</title>
+<p>A filterable list of DEA Placement Zones on the system.</p>
+</section>
+<section id="dea-zones-available"> <title>DEA Availability Zones</title>
+<p>A filterable list of Availability Zones on the system.</p>
+</section>
+<section id="feature-flags"> <title>Feature Flags</title>
+<ul>
+<li>
+<b>Enable User Organization Creation</b>: When enabled, any user can create an organization via the API. When disabled, only admin users can create organizations via the API. Default: <b>Disabled</b>.</li>
+<li>
+<b>Enable Private Domain Creation</b>: When enabled, an organization manager can create private domains for that organization. When disabled, only admin users can create private domains. Default: <b>Enabled</b>
+</li>
+</ul>
+</section>
+<section id="logyard"> <title>Logyard</title>
+  <p>Lists current log <xref href="../server/1.2logging.dita#topic11928/drains" type="section"   >Drains</xref> and the log
+  drain retry limits. Drains and limits cannot be changed in this interface; use the <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-log-drain-add" type="section"   >
+<i>kato log drain</i>
+</xref>
+  commands and <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >
+<i>kato config</i>
+</xref> commands.</p>
+</section>
+<section id="console-settings-quota-definitions"> <title>Quota Plans</title>
+  <p>Lists the Quota Plans available to apply to Organizations on the system. To edit a definition, click the edit button on the right. To create a new definition, use the <xref href="../../user/reference/1.2client-ref-quotas.dita#topic5727/command-quota-create" type="section"   >
+<i>quota create</i>
+</xref> command.</p>
+<p>The following fields can be modified:</p>
+<ul>
+<li>
+<b>Name</b>: The definition name. Do not change this without also changing the settings of any Organization using the definition.</li>
+<li>
+<b>Memory Usage Limit</b>: The total amount of application RAM (in MB) that can be allocated to user applications.</li>
+<li>
+<b>Total Services</b>: The total number of service instances that can be allocated.</li>
+<li>
+<b>Total Routes</b>: The total number of routes that can be created.</li>
+<li>
+<b>Droplets per App</b>: The number of droplets stored (per application) for versioning and rollback.</li>
+<li>
+<b>Allow Sudo</b>: Allow users in the Organization sudo privileges within their application containers.</li>
+</ul>
+</section>
+<section id="file-system"> <title>File System</title>
+<ul>
+<li>
+<b>Capacity</b>: Maximum number of service slots to allocate.</li>
+<li>
+<b>Max FS Size</b>: Maximum size on disk for filesystem services in MB.</li>
+<li>
+<b>Allow Over-provisioning</b>: Ignore the Capacity setting.</li>
+</ul>
+</section>
+<section id="harbor"> <title>Harbor</title>
+<p>Settings for the <xref href="../cluster/1.2harbor.dita#topic4009">Harbor </xref>TCP/UDP port
+        service. See <xref href="../cluster/1.2harbor.dita#topic4009/requirements-setup">Harbor:
+          Requirements</xref> &amp; Setup for more information.</p>
+<ul>
+<li>
+<b>External Host</b>: The public IP (if configured) for the Harbor node.</li>
+<li>
+<b>External Hostname</b>: The public hostname for the Harbor node.</li>
+<li>
+<b>Port Range Minimum</b>: Sets the minimum for the exposed port range (default: 35000).</li>
+<li>
+<b>Port Range Maximum</b>: Sets the maximum for the exposed port range (default: 40000).</li>
+</ul>
+</section>
+<section id="data-services"> <title>Data Services</title>
+<ul>
+<li>
+<b>Allow Over-provisioning</b>: Ignore the Capacity setting.</li>
+<li>
+<b>Capacity</b>: Maximum number of service slots to allocate.</li>
+<li>
+<b>Max DB size</b>: Maximum size on disk for database services.</li>
+<li>
+<b>Max Memory</b>: Maximum amount of physical memory to allocate the service.</li>
+<li>
+<b>Memcached Memory</b>: Maximum amount of physical memory to allocate for memcached instances.</li>
+<li>
+<b>Max FS Size</b>: Maximum size on disk for filesystem services.</li>
+</ul>
+</section>
+</body>
+</topic>

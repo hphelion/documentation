@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1743">
+<title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
+<titlealts>
+<searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial Step 2</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Development Platform"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Security Engineer"/>
+<othermeta name="role" content="ISV Developer"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Jayme P"/>
+<othermeta name="product-version1" content="HP Helion Development Platform"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./devplatform/1.2devplatform.ALS-developer-trial-quick-start2.md-->
+ <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/2/--></p>
+<p>During this step, you will download and install the configuration tool, named <varname>cf-mgmt</varname>. This tool provides a quick way to pass configuration parameters to the Helion Development Platform. <!--A BR tag was used here in the original source.-->The download links and instructions will open in a separate page so you don't lose your place.
+</p>
+<simpletable>
+          <strow>
+            <stentry>1. <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita">Register
+            for your Helion Public Cloud Account</xref>
+          <p>2. <b>Download Tools</b></p><p>3. <xref
+              href="1.2devplatform.ALS-developer-trial-quick-start3.dita">Create the Sandbox
+              Environment</xref></p><p>4. <xref
+              href="1.2devplatform.ALS-developer-trial-quick-start4.dita">Create a
+            Cluster</xref></p><p>5. <xref
+              href="1.2devplatform.ALS-developer-trial-quick-start5.dita">Add Windows DEA and SQL
+              Server (Optional Step)</xref></p><p>6. <xref
+              href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Explore Sample
+              Applications</xref></p></stentry>
+            <stentry><p><b>Download the Configuration Tool</b>
+          </p><p>Use the ALS management tool (<varname>cf-mgmt.exe</varname>) to construct, manage,
+            update, or delete ALS clusters. Click the download link that is appropriate for your
+            operating system. </p><ul>
+            <li>
+              <xref href="https://clients.als.hpcloud.com/cf-mgmt-1.2.1-windows-x86_64.zip"
+                scope="external" format="html"><tm tmtype="reg">Windows</tm></xref>
+            </li>
+            <li>
+              <xref href="https://clients.als.hpcloud.com/cf-mgmt-1.2.1-linux-x86_64.zip" scope="external" format="html">Linux x64</xref>
+            </li>
+            <li>
+              <xref href="http://clients.als.hpcloud.com/cf-mgmt-1.2.1-osx-x86_64.zip" scope="external" format="html"><tm tmtype="reg">Mac OS X</tm></xref>
+            </li>
+          </ul><note> After installation, you may run the <varname>cf-mgmt update</varname> command
+            at any time to check for and install the most recent version. </note><p>
+            <b>Download the ALS Client</b>
+          </p><p>Use the ALS client to push application code up to the server, start and stop
+            applications, link Helion <tm tmtype="reg">OpenStack</tm> services to applications, and
+            perform other application management operations. Download this tool if you intend to
+            push applications to your quick-start trial environment. </p>Click the download link
+          that is appropriate for your operating system. <ul>
+            <li>
+              <xref href="http://clients.als.hpcloud.com/helion-1.2.0-win32-ix86.zip"
+                scope="external" format="html"><tm tmtype="reg">Windows</tm></xref>
+            </li>
+            <li>
+              <xref href="http://clients.als.hpcloud.com/helion-1.2.0-linux-glibc2.3-x86_64.zip"
+                scope="external" format="html">Linux x64</xref>
+            </li>
+            <li>
+              <xref href="http://clients.als.hpcloud.com/helion-1.2.0-macosx10.5-i386-x86_64.zip"
+                scope="external" format="html"><tm tmtype="reg">Mac OS X</tm></xref>
+            </li>
+          </ul> The <xref href="helion/user/reference/1.2client-ref.dita">Command Reference</xref>
+          has full descriptions of all ALS Client commands and options. <xref
+            href="1.2devplatform.ALS-developer-trial-quick-start3.dita">
+            <image href="../media/NextButton.png" id="image_i4h_mjp_js" placement="break"/>
+          </xref></stentry></strow>
+</simpletable>
+</body>
+</topic>

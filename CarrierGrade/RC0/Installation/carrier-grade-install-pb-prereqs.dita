@@ -153,8 +153,7 @@ fi
                                         href="carrier-grade-install-NTP.dita#topic4740/client"
                                 />.</p>
 <p>For information on installing NTP on the HLM host, see <xref
-          href="../../CarrierGrade/Installation/carrier-grade-install-NTP.dita">Installing an NTP
-          Server</xref>.</p>
+                                        href="carrier-grade-install-NTP.dita#topic4740">Configuring NTP</xref>.</p>
 </section><section id="ssh"> <title>Configure SSH</title>
 <p>On the HLM host, the OpenSSH server must be running and the firewall configuration should allow
         access to the SSH ports.</p>

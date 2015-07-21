@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" >
+<topic xml:lang="en-us" id="topic2598">
+  <title>HP Helion 1.2 Development Platform: Quick Start Developer Trial</title>
+  <titlealts>
+    <searchtitle>HP Helion 1.2 Development Platform: Quick Start Developer Trial
+      Troubleshooting</searchtitle>
+  </titlealts>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Development Platform"/>
+      <othermeta name="role" content="Application Developer"/>
+      <othermeta name="role" content="Security Engineer"/>
+      <othermeta name="role" content="ISV Developer"/>
+      <othermeta name="role" content="Service Developer"/>
+      <othermeta name="role" content="Jayme P"/>
+      <othermeta name="product-version1" content="HP Helion Development Platform"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>
+      <!--PUBLISHED-->
+      <!--./devplatform/1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.md-->
+      <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/troubleshooting/--></p>
+    <p>Here are some tips for troubleshooting issues with the Quick Start Trial. If problems
+      persist, the quickest solution is to just <xref
+        href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita">terminate the
+        cluster</xref> and repeat the installation process. To ensure all resources are properly
+      released, terminate the cluster from the Horizon console.</p>
+    <simpletable>
+<strow>
+            <stentry><xref href="1.2devplatform.ALS-developer-trial-quick-start-termination.dita"
+            >Termination</xref>
+          <p><b>Troubleshooting</b>
+          </p><p><xref href="1.2devplatform.ALS-developer-trial-quick-start6.dita">Back to Quick
+              Start</xref></p></stentry>
+            <stentry>
+          <ul>
+            <li>Copy the provided commands into a text editor, change the values, and paste them
+              back into the command-line client.</li>
+            <li>If the cluster creation process displays errors, make sure all the variables have a
+              value and that the value is correct.</li>
+            <li>If you cannot connect to public cloud, ensure that your connection has no proxy
+              settings.</li>
+            <li>If you receive the following error, return to the Horizon console and <xref
+                href="https://community.hpcloud.com/article/how-create-or-delete-network#create"
+                scope="external" format="html">create a public-facing network</xref>.
+              <codeblock>Error has occurred creating the cluster:Parameter validation failed - No networks found. Please add a network and rerun the tool.</codeblock></li>
+            <li>If you receive a timeout error while deploying, first verify that you have <xref
+                href="https://community.hpcloud.com/article/how-create-or-delete-network#create"
+                scope="external" format="html">created a public-facing network</xref>. You may also
+              change the default timeout value using the <varname>wait time</varname> command in the
+                <varname>cf-mgmt</varname> tool. Example:
+              <codeblock>--max-corenode-wait-duration "10m"</codeblock></li>
+            <li>If you want to deploy more than one cluster, you need to manually edit the cluster
+              title and cluster prefix in the <varname>trial.yml</varname> file after you download
+              it.</li>
+            <li>If you have used this HP Public Cloud account previously, make sure that you have at
+              least 13 GB of quota space available for deploying the trial cluster.</li>
+            <li>Check to make sure that you have at least three security groups.In the <xref
+                href="https://horizon.hpcloud.com/" scope="external" format="html">Horizon
+                console</xref>, click the <b>Project</b> panel, select <b>Compute</b> and then
+              select <b>Access &amp; Security</b>. You should see groups named
+                <varname>cluster1-SSH</varname>, <varname>cluster1-Router</varname>, and
+                <varname>cluster1-Internal</varname>.</li>
+            <li>To ensure that all resources are properly released, terminate the cluster using the
+              Horizon console, not from the command line.</li>
+            <li>The <varname>--keypair-name</varname> value is case-sensitive. The value you enter
+              must exactly match the value that was specified.</li>
+            <li>The <varname>--admin-password</varname> value must be at least 4 and no more than 20
+              characters long.</li>
+            <li>When copying values from the .rc file, it is safest to include quotation marks <b>"
+                "</b> when they are present as part of the value. If present, do not copy the hash
+              character <b>#</b> at the end of the line; it is not part of the value. </li>
+          </ul>
+        </stentry>
+          </strow>
+    </simpletable>
+  </body>
+</topic>
