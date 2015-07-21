@@ -663,7 +663,7 @@ root@hLinux:~# echo $?
 <codeblock>
 <codeph>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 cd helion-update-1.1-to-&lt;version&gt;/tripleo/helion-update/overcloud_update
-./update_oc.sh ~/helion-update-1.1-to-&lt;version&gt;/tripleo &amp;| tee update_oc.log
+./update_oc.sh ~/helion-update-1.1-to-&lt;version&gt;/tripleo |&amp; tee update_oc.log
 </codeph>
 </codeblock>
 
