@@ -159,22 +159,19 @@ helion push --stack win2012r2 -n</codeblock></li>
           <li>In the Horizon interface, select <b>Project</b>, <b>Instances</b>. </li>
           <li>Select your Windows DEA instance from the Instances list. Select the <b>Console</b> tab to open the instance console.</li>
           <li>Click <b>Ctrl+Alt+Delete</b>. Select the <b>Administrator account.</b> Assign a new password.</li>
-          <li>From the command line, execute <codeph>taskmgr</codeph>.</li>
-          <li>Select <b>More Details...</b> Select <b>File</b>, <b>Run new task</b>. Enter <b>powershell</b> as the new task and click <b>OK</b>.</li>
-          <li>Run <b>cd c:\windea</b></li>
-          <li>Run <b>notepad dea.config</b></li>
-          <li>Verify that the value for <b>directoryserver v2port</b> is <b>5678</b>. Save and close the file.</li>
-          <li>Run <b>netsh advfirewall firewall add rule name="v2 DirectoryServer" protocol=TCP dir=in localport=5678 action=allow</b></li>
-          <li>Run <b>net stop windea</b></li>
-          <li>Run <b>net start windea</b></li>
-          <li>Sign out of the instance console.</li>
-          <li>Log into the instance's management console (e.g. https://api.15.126.136.34.xip.io/console/).</li>
-          <li>Select Applications.</li>
-          <li>Your deployed application will appear in the list of applications.</li>
-          
-          <li></li>
         </ol></li>
-        
+        <li>From the command line, execute <codeph>taskmgr</codeph>.</li>
+        <li>Select <b>More Details...</b> Select <b>File</b>, <b>Run new task</b>. Enter <b>powershell</b> as the new task and click <b>OK</b>.</li>
+        <li>Run <b>cd c:\windea</b></li>
+        <li>Run <b>notepad dea.config</b></li>
+        <li>Verify that the value for <b>directoryserver v2port</b> is <b>5678</b>. Save and close the file.</li>
+        <li>Run <b>netsh advfirewall firewall add rule name="v2 DirectoryServer" protocol=TCP dir=in localport=5678 action=allow</b></li>
+        <li>Run <b>net stop windea</b></li>
+        <li>Run <b>net start windea</b></li>
+        <li>Sign out of the instance console.</li>
+        <li>Log into the instance's management console (e.g. https://api.15.126.136.34.xip.io/console/).</li>
+        <li>Select Applications.</li>
+        <li>Your deployed application will appear in the list of applications.</li>
       </ol></section>
 </body>
 </topic>
