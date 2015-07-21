@@ -22,24 +22,7 @@
         <li>
           <p>The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements.</p>
         </li>
-        <li>
-          <p>The HP Helion Development Platform installer (<codeph>DevelopmentPlatform_Enable.sh</codeph>) must be run on either the base or seed node of the Helion OpenStack environment. It is strongly recommended to run the installer  on the seed node. The seed node will already have the requisite key (/root/.ssh/id_rsa) for access to the overcloud; if the installation is run on the base node, this key will need to be provided to the installer (see below).</p>
-        </li>
-        <li>
-          <p>The installer requires the following packages. If they are not found, it will prompt
-            you to install them.</p>
-          <ul>
-            <li>python-dev </li>
-            <li>libffi-dev </li>
-            <li>libssl-dev </li>
-            <li>python-virtualenv</li>
-            <li>python-pip</li>
-          </ul>
-          <p>On the Base node, these packages can be installed using <codeph>apt-get</codeph> , but
-            on the Seed node, you 'll need to use <codeph>pip</codeph> to install the following
-            packages:</p>
-          <codeblock>pip install cffi enum34 pyasn1 virtualenv </codeblock>
-        </li>
+        
       </ul>
     </section>
   </body>
