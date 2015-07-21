@@ -38,19 +38,51 @@
   </ul>
   </section>
     <section id="focus-areas-for-hp-helion-openstack-carrier-grade">
-      <title>Focus areas for HP Helion OpenStack Carrier Grade</title>
+      <title>Standard Features</title>
       <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
-      <ul>
-        <li>Central control plane but resources are distributed across geography interconnected by
-          WAN</li>
-        <li>VNF resource requirement definition, policy based resource scheduling &amp;
-          placement</li>
-        <li>VNF Orchestration - Policy based Auto-scaling</li>
-        <li>Integrated Physical and Virtual resource monitoring and self-healing</li>
-        <li>Highly Resilient and hit-less upgrades</li>
-        <li>High performance data plane </li>
-        <li>Integration with Open Source SDN controllers and service chaining</li>
-      </ul>
+      
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <tbody>
+            <row>
+              <entry> Availability and reliability </entry>
+              <entry> <ul>
+                <li>Advanced self-healing</li>
+                <li>No single point of failure</li>
+              </ul> </entry>
+            </row>
+            <row>
+              <entry> Platform for high performance VNFs </entry>
+              <entry> <ul>
+                <li>Near-line rate networking throughout for VNFs like vEPC, vBRAS, vIMS, vFW, vRouter etc.</li>
+                <li>Bare metal compute performance</li>
+              </ul> </entry>
+            </row>
+            <row>
+              <entry> Manageability </entry>
+              <entry> <ul>
+                <li>In-service upgrade capabilities</li>
+                  <li>Enhanced security</li>
+                  <li>Inventory management</li>
+                  <li>Advanced resource scheduling and orchestration capabilities</li>
+              </ul> </entry>              
+            </row>           
+            <row>
+              <entry>High Availability/ Disaster Recovery </entry>
+              <entry> <ul>
+                <li>NIC Bonding at the server level </li>
+                <li>HA for KVM instance</li>
+                <li>Compute Node failure detection and Auto-evacuation in kvm region</li>
+                <li>Live Migration in kvm region</li>
+              </ul> </entry>              
+            </row>
+            
+          </tbody>
+        </tgroup>
+      </table>
+      
     </section>
     <section id="major-components-in-hp-helion-openstack-carrier-grade">
       <title>Major Components in HP Helion OpenStack Carrier Grade</title>
@@ -59,15 +91,15 @@
           href="../Installation/carrier-grade-technical-overview.dita#topic3485/deploy-arch"
           >Deployment Architecture diagram</xref> in the Technical Overview for an illustration of
         these two zones.  </p>
-    </section>
-    <section><b>Non-KVM</b>
+<p><b>Non-KVM</b></p>
       <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and
         maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
         distribution of OpenStack. The Non-KVM region consists of a host system for HLM and three HP
         Helion OpenStack controllers.</p><p>For more information, see <xref
           href="carrier-grade-overview-non-kvm.dita">Non-KVM Environment
-      Overview</xref>.</p></section>
-    <section><b>KVM</b><p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM
+      Overview</xref>.</p>
+    <p><b>KVM</b></p>
+      <p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM
         region consists of a software platform, providing ultra-reliability and exceptional
         performance efficiencies for telecommunications networks. </p><p>For more information, see
           <xref href="carrier-grade-overview-kvm.dita">KVM Environment
@@ -76,7 +108,7 @@
         of a number of services, including several OpenStack and HP Helion OpenStack
         services.</p><p>For more information, see <xref href="carrier-grade.services-overview.dita"
           >Services Overview</xref>.</p></section>
-    <section/>
+    
     <!-- 
   <section id="distributed-cloud-networking-dcn"> <title>Distributed Cloud Networking (DCN)</title>
 <p>Distributed Cloud Networking (DCN) is a Software-Defined Networking (SDN) solution that provides data center (DC) network virtualization and automatically establishes connectivity between compute resources upon their creation.</p>
