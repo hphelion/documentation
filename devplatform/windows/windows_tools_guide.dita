@@ -181,9 +181,6 @@
  <section><title>Deploying an application</title>
   <p>For an example of how to deploy an application from Visual Studio, see <xref
      href="windows_firstapp.dita#topic_amr_q3w_js"  format="dita">Deploying your first .NET Application</xref>.</p>
-
-  <p><note>Currently, only Web Application Projects can be deployed from Cloud Foundry Explorer; Web Site Projects are not supported. Web Site Projects can still be deployed from the command line.</note></p>
-
  </section>
  
  <section id="msbuild"><title>Cloud Foundry MSBuild Tasks</title>
