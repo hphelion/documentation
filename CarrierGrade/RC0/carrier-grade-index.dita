@@ -19,7 +19,7 @@
 <p>Use the following links to begin installing HP OpenStack Carrier Grade:</p>
 <ul>
 <li>
-<p><xref href="Installation/carrier-grade-install-playbook-overview.dita#topic5675" type="section" />
+<p><xref href="../Installation/carrier-grade-install-pb-overview.dita#topic1925"/>
           </p>
 
 <p>Start with this document for complete instructions on how to install your HP Helion OpenStack cloud, including system requirements, prerequisites.</p>
@@ -35,7 +35,7 @@
 <li>
           <xref
             href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP_Helion_OpenStack_Carrier_Grade_Release_Notes.pdf"
-            format="pdf" scope="external">HP Helion Openstack Carrier Grade Release Notes</xref>
+            format="pdf" scope="external">HP Helion OpenStack Carrier Grade Release Notes</xref>
         </li>
 </ul>
 </section>
@@ -61,7 +61,7 @@ nodes, system software, licensing files, and backup and restore facilities</p>
 </li>
 <li>
 <p>
-<xref href="../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita" >Managing Your Cloud</xref>
+<xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita" >Managing Your Cloud</xref>
 </p>
 
 <p>These topics are functional descriptions of the Horizon dashboards. These topics are designed to guide you through the day-to-day administrative and functional tasks you can perform in the HP Helion OpenStack Carrier Grade cloud.</p>
