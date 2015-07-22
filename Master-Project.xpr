@@ -7,7 +7,7 @@
                 <serializableOrderedMap>
                     <entry>
                         <String>keys.context</String>
-                        <String>${pdu}/docs.hpcloud.com.ditamap</String>
+                        <String>${pdu}/docs.hpcloud.com.HDP.ditamap</String>
                     </entry>
                     <entry>
                         <String>validation.scenarios</String>

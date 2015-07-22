@@ -2,7 +2,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
  
 <map xml:lang="en" linking="none" locktitle="no">
-
+<title>HP Helion Development Platform</title>
   <topicref href="devplatform/1.2devplatform.index.dita"
     navtitle="HP Helion Development Platform" locktitle="yes">
     <topicref href="devplatform/1.2devplatform.thirdparty.licensing.dita"
