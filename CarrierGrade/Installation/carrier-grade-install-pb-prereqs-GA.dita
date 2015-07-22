@@ -80,32 +80,34 @@ export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address&gt;,&lt;provider_net
 </section>
 <section id="packages">
                         <title>Install Ubuntu packages</title>
-                        <p>Before starting the installation, you must install the following packages
-                                on the KVM host.</p>
-                        <ul id="ul_szw_sh4_rs">
-                                <li>ntp </li>
-                                <li>firefox </li>
-                                <li>gedit </li>
-                                <li>xrdp </li>
-                                <li>xfce4 </li>
-                                <li>qemu-kvm </li>
-                                <li>libvirt-bin </li>
-                                <li>openvswitch-switch </li>
-                                <li>openvswitch-common </li>
-                                <li>python-libvirt </li>
-                                <li>qemu-system-x86 </li>
-                                <li>libssl-dev </li>
-                                <li>libffi-dev </li>
-                                <li>git </li>
-                                <li>python-virtualenv </li>
-                                <li>python-dev virt-manager</li>
-                        </ul>
-                        <p>To install the packages on the KVM host:</p>
-                        <ol>
-                                <li>On the KLM host, run the following all in one command to install
-                                        packages:
-                                        <codeblock><codeph>sudo su -l -c "apt-get install -y ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager"</codeph></codeblock></li>
-                                <li>Add the 802.1q module to the kernel on boot. The 802.1q standard
+        <p>Before starting the installation, you must install the following packages
+                on the KVM host.</p>
+        <ul id="ul_szw_sh4_rs">
+                <li>ansible</li>
+                <li>ntp </li>
+                <li>firefox </li>
+                <li>gedit </li>
+                <li>xrdp </li>
+                <li>xfce4 </li>
+                <li>qemu-kvm </li>
+                <li>libvirt-bin </li>
+                <li>openvswitch-switch </li>
+                <li>openvswitch-common </li>
+                <li>python-libvirt </li>
+                <li>qemu-system-x86 </li>
+                <li>libssl-dev </li>
+                <li>libffi-dev </li>
+                <li>git </li>
+                <li>python-virtualenv </li>
+                <li>python-dev virt-manager</li>
+                <li>sshpass</li>
+        </ul>
+        <p>To install the packages on the KVM host:</p>
+        <ol>
+                <li>On the KLM host, run the following all in one command to install
+                        packages:
+                        <codeblock><codeph>sudo su -l -c "apt-get install -y ansible sshpass ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager"</codeph></codeblock></li>
+                <li>Add the 802.1q module to the kernel on boot. The 802.1q standard
                                         supports VLAN tagging on an ethernet
                                         network.<codeblock><codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
 </codeph></codeblock></li>
