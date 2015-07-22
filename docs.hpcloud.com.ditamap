@@ -21,7 +21,7 @@
 <!-- HoS 2.0 -->
 <topichead navtitle="HP Helion OpenStack 2.0">
 <topichead navtitle="HP Helion OpenStack Services">
-<topicref href="commercial/GA2/Monasca/2.0commercial.services-monasca.dita"></topicref>
+<topicref href="commercial/GA2/Monasca/2.0commercial.services-monasca.dita"/>
 </topichead>
 </topichead>
 <!--Dev Plat-->  
