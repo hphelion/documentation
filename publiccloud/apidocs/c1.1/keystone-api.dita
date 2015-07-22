@@ -1,0 +1,4894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic153004">
+<title>HP Helion Public Cloud Identity Services v3 API</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./content/api/c1.1/keystone-api.md-->
+ <!--permalink: /publiccloud/api/identity/--></p>
+<p>
+  <i>If you are using the v2 Identity Services API, click <xref href="../../../publiccloud/apidocs/c1.1/keystonev2-api.dita" >here for those API references</xref>.</i>
+</p>
+<p>Date: May 2014</p>
+<p>Document Revision: 1.9</p>
+<section id="1-overview"> <title>1. Overview</title>
+<p>The HP Helion Identity Service exposes the <tm tmtype="reg">OpenStack</tm> Keystone V3 API specification. Specifically, it supports token and credential based operations. A few things to note about the HP Identity Service are:</p>
+<ul>
+<li>Token created via v2 API can be validated via v3 API</li>
+<li>Token created via v3 API can be validated via v2 API.</li>
+<li>v3 token can be created via HP User access key pair.</li>
+<li>HP Helion Identity service will return a service catalog upon token response that only includes services and endpoints for which the token may be used.</li>
+<li>Support for request and response in xml format.</li>
+<li>Introduction of rate limiting.</li>
+</ul>
+<p>We will be referring to HP Helion Public Cloud Identity Services in this document as simply Identity or the Identity service.</p>
+</section>
+<section id="11-api-maturity-level"> <title>1.1 API Maturity Level</title>
+<p>
+<b>Maturity Level</b>: GA</p>
+<p>
+<b>Version API Status</b>: CURRENT</p>
+</section>
+<section id="12-document-revision-history"> <title>1.2 Document Revision History</title>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Document Version</entry>
+  <entry align="left">Date</entry>
+  <entry align="left">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">1.0</entry>
+  <entry align="left">February 2013</entry>
+  <entry align="left">Initial creation</entry>
+</row>
+<row>
+<entry align="left">1.1</entry>
+  <entry align="left">March 2013</entry>
+  <entry align="left">Submitted changes for Token, Project API documentation.</entry>
+</row>
+<row>
+<entry align="left">1.2</entry>
+  <entry align="left">April 2013</entry>
+  <entry align="left">Submitted changes for Version and updates for Token and Project API documentation.</entry>
+</row>
+<row>
+<entry align="left">1.3</entry>
+  <entry align="left">May 2013</entry>
+  <entry align="left">Submitted updates to Token, Version and Project API documentation.</entry>
+</row>
+<row>
+<entry align="left">1.4</entry>
+  <entry align="left">June 2013</entry>
+  <entry align="left">Credential API is made public.</entry>
+</row>
+<row>
+<entry align="left">1.5</entry>
+  <entry align="left">October 2013</entry>
+  <entry align="left">Submitted updates to Token API documentation.</entry>
+</row>
+<row>
+<entry align="left">1.6</entry>
+  <entry align="left">December 2013</entry>
+  <entry align="left">Submitted updates to Credential API documentation.</entry>
+</row>
+<row>
+<entry align="left">1.7</entry>
+  <entry align="left">February 2014</entry>
+  <entry align="left">Submitted updates to Project API documentation.</entry>
+</row>
+<row>
+<entry align="left">1.8</entry>
+  <entry align="left">April 2014</entry>
+  <entry align="left">Submitted updates for Token API documentation.</entry>
+</row>
+<row>
+<entry align="left">1.9</entry>
+  <entry align="left">May 2014</entry>
+  <entry align="left">HP Helion updates</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="2-account-level-view"> <title>2. Account-level View</title>
+</section>
+<section id="21-accounts"> <title>2.1 Accounts</title>
+<p>Each user has an account. Every user belongs to a single domain. Groups can be used to group users. Projects are resource collections and user is assoicated with one or more projects via roles. The terms 'project' and 'tenant' are used interchangeably.</p>
+</section>
+<section id="22-regions-and-availability-zones"> <title>2.2 Regions and Availability Zones</title>
+<p>The Identity Service is currently available in two regions which can be accessed via standard RESTful clients. As HP Helion Public Cloud accounts are global, either region can be used for conducting identity operations. Choose the region closest to you for improved performance.</p>
+<p>US-West: https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/</p>
+<p>US-East: https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/</p>
+<p>
+<b>Region(s)</b>: US-West(region-a.geo-1), US-East(region-b.geo-1)</p>
+</section>
+<section id="23-service-catalog"> <title>2.3 Service Catalog</title>
+<p>The service catalog provides the service information with its region specific endpoints. Returned service endpoint depends on token scoping and user roles associated with a project. The interface in endpoint data indicates if that endpoint is in public, beta or preview release state.</p>
+<p>The service catalog is returned as part of create and validate token operations. When an unscoped token is requested, the service catalog contains only global service endpoints ( e.g. identity). When a project scoped token is requested, the service catalog contains the services and endpoints for which the token may be used when interacting. If a service or endpoint is not present in the service catalog, it typically means that either the service has not been activated or the user does not have the appropriate roles defined that grant them access for the service on the given project</p>
+<codeblock>
+  <codeph>{
+"catalog":[
+     {
+        "type":"identity",
+        "id":"100",
+        "otherAttributes":{
+        },
+        "endpoints":[
+           {
+              "links":{
+                 "self":"https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/130_P"
+              },
+              "id":"130_P",
+              "interface":"public",
+              "region":"region-a.geo-1",
+              "url":"https://hostname:35357/v2.0/",
+              "service_Id":"100",
+              "otherAttributes":{
+              }
+           },
+           {
+              "links":{
+                 "self":"https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/131_P"
+              },
+              "id":"131_P",
+              "interface":"public",
+              "region":"region-a.geo-1",
+              "url":"https://hostname:35357/v3/",
+              "service_Id":"100",
+              "otherAttributes":{
+              }
+           }
+        ]
+     }
+]
+}
+</codeph>
+</codeblock>
+</section>
+<section id="3-rest-api-specifications"> <title>3. REST API Specifications</title>
+</section>
+<section id="31-service-api-operations"> <title>3.1 Service API Operations</title>
+<p>
+<b>Host</b>: https://region-a.geo-1.identity.hpcloudsvc.com:35357</p>
+<p>
+<b>BaseUri</b>: {Host}/v3</p>
+<p>
+<b>Admin URI</b>: N/A</p>
+<table>
+<tgroup cols="5">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<colspec colname="col4"/>
+<colspec colname="col5"/>
+<thead>
+<row>
+<entry align="left">Resource</entry>
+  <entry align="left">Operation</entry>
+  <entry align="left">HTTP Method</entry>
+  <entry align="left">Path</entry>
+  <entry align="left">JSON/XML Support?</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">Credentials</entry>
+  <entry align="left">
+<xref type="section" href="#topic153004/create_or_import_credential">Create Or Import Credential</xref>
+</entry>
+  <entry align="left">POST</entry>
+  <entry align="left">/credentials</entry>
+  <entry align="left">Y/Y</entry>
+</row>
+<row>
+<entry align="left">Credentials</entry>
+  <entry align="left">
+<xref type="section" href="#topic153004/list_credentials">List Credentials</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/credentials</entry>
+  <entry align="left">Y/Y</entry>
+</row>
+<row>
+<entry align="left">Credentials</entry>
+  <entry align="left">
+<xref type="section" href="#topic153004/delete_a_credential">Delete A Credential</xref>
+</entry>
+  <entry align="left">DELETE</entry>
+  <entry align="left">/credentials/{credential_id}</entry>
+  <entry align="left">Y/Y</entry>
+</row>
+<row>
+<entry align="left">Credentials</entry>
+  <entry align="left">
+<xref type="section" href="#topic153004/get_a_credential">Get A Credential</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/credentials/{credential_id}</entry>
+  <entry align="left">Y/Y</entry>
+</row>
+<row>
+<entry align="left">Credentials</entry>
+  <entry align="left">
+<xref type="section" href="#topic153004/update_a_credential">Update A Credential</xref>
+</entry>
+  <entry align="left">PATCH</entry>
+  <entry align="left">/credentials/{credential_id}</entry>
+  <entry align="left">Y/Y</entry>
+</row>
+<row>
+<entry align="left">Projects</entry>
+  <entry align="left">
+<xref type="section" href="#topic153004/list_user_projects">List User Projects</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/users/{user_id}/projects</entry>
+  <entry align="left">Y/Y</entry>
+</row>
+<row>
+<entry align="left">Projects</entry>
+  <entry align="left">
+<xref type="section" href="#topic153004/get_project">Get Project</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/projects/{project_id}</entry>
+  <entry align="left">Y/Y</entry>
+</row>
+<row>
+<entry align="left">Tokens</entry>
+  <entry align="left">
+<xref type="section" href="#topic153004/authenticate">Authenticate</xref>
+</entry>
+  <entry align="left">POST</entry>
+  <entry align="left">/v3/auth/tokens</entry>
+  <entry align="left">Y/Y</entry>
+</row>
+<row>
+<entry align="left">Tokens</entry>
+  <entry align="left">
+<xref type="section" href="#topic153004/rescope_token">Rescope Token</xref>
+</entry>
+  <entry align="left">POST</entry>
+  <entry align="left">/v3/auth/tokens</entry>
+  <entry align="left">Y/Y</entry>
+</row>
+<row>
+<entry align="left">Tokens</entry>
+  <entry align="left">
+<xref type="section" href="#topic153004/revoke_token">Revoke Token</xref>
+</entry>
+  <entry align="left">DELETE</entry>
+  <entry align="left">/v3/auth/tokens</entry>
+  <entry align="left">Y/Y</entry>
+</row>
+<row>
+<entry align="left">Versions</entry>
+  <entry align="left">
+<xref type="section" href="#topic153004/list_versions">List Versions</xref>
+</entry>
+  <entry align="left">GET</entry>
+  <entry align="left">/</entry>
+  <entry align="left">Y/Y</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="32-common-request-headers"> <title>3.2 Common Request Headers</title>
+<ol>
+<li>Content-Type : Denotes the request content type.  Supported Content-Types are  application/xml and application/json</li>
+<li>Accept : Denotes the response content type that the caller can understand.  Supported Content-Types are application/xml and application/json. Default type is application/json</li>
+<li>X-Auth-Token : Contains authentication token of the user who is invoking the REST API </li>
+<li>X-Subject-Token : This is used only in token operations. Token operations such as DELETE/HEAD/GET are done against the value in this header</li>
+</ol>
+</section>
+<section id="33-common-response-headers"> <title>3.3 Common Response Headers</title>
+<ol>
+<li>Content-Type : Denotes the response content type.  Supported Content-Types are application/xml and application/json.</li>
+<li>X-Subject-Token : This is used only in token operations. Users token is returned via this header</li>
+</ol>
+</section>
+<section id="34-service-api-operation-details"> <title>3.4 Service API Operation Details</title>
+</section>
+<section id="341-credentials"> <title>3.4.1 Credentials</title>
+<p>Credentials are user authentication credentials. A user may have up to three (3) active credentials at a time. An HTTP code 403 will be returned if an operation (i.e. create/import/update) will exceed the maximum number of active credentials.</p>
+<p>Credential consist of the following fields:</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Attribute</entry>
+  <entry align="left">Type</entry>
+  <entry align="left">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">id</entry>
+  <entry align="left">string</entry>
+  <entry align="left">credential ID</entry>
+</row>
+<row>
+<entry align="left">user_id</entry>
+  <entry align="left">string</entry>
+  <entry align="left">user ID of the user who ownes of the credential</entry>
+</row>
+<row>
+<entry align="left">type</entry>
+  <entry align="left">string</entry>
+  <entry align="left">credential type</entry>
+</row>
+<row>
+<entry align="left">blob</entry>
+  <entry align="left">string</entry>
+  <entry align="left">credential data</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>The Identity service supports credential type <codeph>HP-IDM:access-key</codeph>.</p>
+<p>
+<codeph>blob</codeph> is a string-encoded JavaScript Object Notation (JSON) object with the following members:</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Name</entry>
+  <entry align="left">Type</entry>
+  <entry align="left">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">access</entry>
+  <entry align="left">string</entry>
+  <entry align="left">access key ID</entry>
+</row>
+<row>
+<entry align="left">secret</entry>
+  <entry align="left">string</entry>
+  <entry align="left">secret key. Base64 encoded.</entry>
+</row>
+<row>
+<entry align="left">algorithm</entry>
+  <entry align="left">string</entry>
+  <entry align="left">key algorithm. Value is one of (HmacSHA1, HmacSHA224, HmacSHA256).</entry>
+</row>
+<row>
+<entry align="left">key_length</entry>
+  <entry align="left">integer</entry>
+  <entry align="left">key size, in bits, depending on the key algorithm. Minimum length is 64, and maximum length is 512. Default lenght is 240.</entry>
+</row>
+<row>
+<entry align="left">created_on</entry>
+  <entry align="left">string</entry>
+  <entry align="left">creation date. Format is ISO8601 date with micro second precision.</entry>
+</row>
+<row>
+<entry align="left">domain_id</entry>
+  <entry align="left">string</entry>
+  <entry align="left">domain ID</entry>
+</row>
+<row>
+<entry align="left">status</entry>
+  <entry align="left">string</entry>
+  <entry align="left">key status. Value is one of (active, inactive, expired, revoked, deleted, purged).</entry>
+</row>
+<row>
+<entry align="left">valid_from</entry>
+  <entry align="left">integer</entry>
+  <entry align="left">validity start date. Format is ISO8601 date with micro second precision.</entry>
+</row>
+<row>
+<entry align="left">valid_to</entry>
+  <entry align="left">integer</entry>
+  <entry align="left">validity end date. Format is ISO8601 date with micro second precision.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>For example,</p>
+<codeblock>
+  <codeph>{  
+    "credential": {  
+        "blob": "{\"access\":\"KAKH35XE76JSE196XE4R\",\"secret\":\"Yi2KML9ODCflkyLPfJ8fgITsjOsmTSC5fXMqmLca\",\"algorithm\":\"HmacSHA1\",\"key_length\":240,\"created_on\":\"2012-09-20T19:51:28.000278Z\",\"domain_id\":\"91641150119921\",\"status\":\"active\",\"valid_from\":\"2012-09-20T19:51:28.000000Z\",\"valid_to\":\"2022-09-18T19:51:28.000000Z\"}",   
+        "id": "KAKH35XE76JSE196XE4R",   
+        "links": {  
+            "self": "https://localhost:35357/v3/credentials/KAKH35XE76JSE196XE4R"  
+        },   
+        "otherAttributes": {},   
+        "type": "HP-IDM:access-key",   
+        "user_id": "36968991407691"  
+    }  
+}  
+</codeph>
+</codeblock>
+<p>The Identity service supports the following key status:</p>
+<table>
+<tgroup cols="2">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<thead>
+<row>
+<entry align="left">Key Status</entry>
+  <entry align="left">Meaning</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">active</entry>
+  <entry align="left">the give key is enabled and ready to use</entry>
+</row>
+<row>
+<entry align="left">inactive</entry>
+  <entry align="left">the given key is disabled. The status must be updated to active before it can be used.</entry>
+</row>
+<row>
+<entry align="left">expired</entry>
+  <entry align="left">the given key has expired and cannot be used again</entry>
+</row>
+<row>
+<entry align="left">revoked</entry>
+  <entry align="left">the given key has been revoked and cannot be used again</entry>
+</row>
+<row>
+<entry align="left">deleted</entry>
+  <entry align="left">the given key has been deleted and cannot be used again</entry>
+</row>
+<row>
+<entry align="left">purged</entry>
+  <entry align="left">the given key has been permanently deleted</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+<i>Note:</i>
+<!--A BR tag was used here in the original source.-->
+Status <codeph>expired</codeph>, <codeph>revoked</codeph>, <codeph>deleted</codeph>, and <codeph>purged</codeph> are generated by
+the system and therefore immutable. They cannot be updated by the client.</p>
+<p>By default, key validity is 10 years.</p>
+<p>
+  <b>Differences Between Identity service and OpenStack Keystone</b>
+</p>
+<p>The Identity service does not support credential type <codeph>ec2</codeph>. Instead, it supports credential type <codeph>HP-IDM:access-key</codeph> with additional functionalities. Identity service access keys can be used to perform EC2 operations.</p>
+<p>The Identity service allows maximum of three (3) active credentials at any given time. OpenStack Keystone has no limit on the number of credential a user can own. When listing credentials, you may use <codeph>status</codeph> query parameter to list the active credentials only. i.e. <codeph>status=active</codeph>. Otherwise, all credentials are returned. An HTTP code 403 will be returned if an operation (i.e. create/import/update) will exceed the maximum number of active credentials.</p>
+<p>OpenStack Keystone supports optionally scoping a credential to a project by providing an <codeph>project_id</codeph> field. The Identity service does not support project scoping. If <codeph>project_id</codeph> is present during credential creation/import, it will be ignored.</p>
+<p>The Identity service will enforce key length during import. If the given <codeph>secret</codeph> field is less than the minimum 64 bits or greater than the maximum of 512 bits, an HTTP code 400 will be returned.</p>
+<p>The Identity service supports both credential creation and credential import while OpenStack Keystone only supports credential import. Credential creation is a mechanism to have the system to generate the credential on behalf of the user.</p>
+<p>The Identity service supports self-service model for credential import and creation while OpenStack Keystone does not. For self-service model, <codeph>user_id</codeph> is optional. If absent, it will be default to the user ID associated with the caller`s token.</p>
+<p>
+  <b>Status Lifecycle</b>
+</p>
+<p>N/A</p>
+<p>
+  <b>Rate Limits</b>
+</p>
+<table>
+<tgroup cols="4">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<colspec colname="col4"/>
+<thead>
+<row>
+<entry align="left">Operation</entry>
+  <entry align="left">Rate Limit per second</entry>
+  <entry align="left">Rate Limited By</entry>
+  <entry align="left">Path</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">Create credential</entry>
+  <entry align="left">20</entry>
+  <entry align="left">X-Auth-Token in request header</entry>
+  <entry align="left">/v3/credentials</entry>
+</row>
+<row>
+<entry align="left">Delete a credential</entry>
+  <entry align="left">20</entry>
+  <entry align="left">X-Auth-Token in request header</entry>
+  <entry align="left">/v3/credentials/{credentialId}</entry>
+</row>
+<row>
+<entry align="left">Get a credential</entry>
+  <entry align="left">50</entry>
+  <entry align="left">X-Auth-Token in request header</entry>
+  <entry align="left">/v3/credentials/{credentialId}</entry>
+</row>
+<row>
+<entry align="left">Import credential</entry>
+  <entry align="left">20</entry>
+  <entry align="left">X-Auth-Token in request header</entry>
+  <entry align="left">/v3/credentials</entry>
+</row>
+<row>
+<entry align="left">Update credential status</entry>
+  <entry align="left">20</entry>
+  <entry align="left">X-Auth-Token in request header</entry>
+  <entry align="left">/v3/credentials/{credentialId}</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+<i>Note:</i>
+<!--A BR tag was used here in the original source.-->
+If a request is invalid (doesn't present the required headers or credentials), the request is rate limited by the source IP Address using same limits in the table above</p>
+<p>If the limit is exceeded, the request will be failed with following message:</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{  
+ "TooManyRequests":  
+  {  
+   "message": "This request was rate-limited",  
+   "code": 429,  
+   "details": "Exceeded the number of requests that can be made to {PATH} per SECOND"  
+  }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;TooManyRequests&gt;  
+     &lt;message&gt;This request was rate-limited&lt;/message&gt;  
+     &lt;code&gt;429&lt;/code&gt;  
+     &lt;details&gt;Exceeded the number of requests that can be made to {PATH} per SECOND&lt;/details&gt;  
+&lt;/TooManyRequests&gt;  
+</codeph>
+</codeblock>
+<p>In addition, a response header "RetryAfter" will be returned with value specifying the seconds after which a retry could be attempted</p>
+<p>
+  <b>Quota Limits</b>
+</p>
+<p>N/A</p>
+<p>
+  <b>Business Rules</b>
+</p>
+<p>None.</p>
+</section>
+<section id="create_or_import_credential"> <title>3.4.1.1 Create Or Import Credential</title>
+</section>
+<section id="post-credentials"> <title>POST /credentials</title>
+<p>This API can be utilized to either generate or import a credential for the user.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>Caller must specify <codeph>type</codeph>. Optionally, caller may specify the <codeph>secret</codeph> and its required members in the <codeph>blob</codeph> to import a credential. If <codeph>secret</codeph> is absent, the system will generate a credential for the given user.</p>
+<p>
+<codeph>user_id</codeph> is optional. If absent, it will be default to the user ID associated with the caller`s token.</p>
+<p>
+<codeph>secret</codeph> must be the base64 encoding of the secret key. Secret key must be at least 64 bits and cannot exceed 512 bits. Otherwise, an HTTP code 400 will be returned.</p>
+<p>if <codeph>blob</codeph> is absent, or it does not contain the <codeph>secret</codeph> member, a 240 bit secret will be generated and returned to the caller.</p>
+<p>
+<codeph>access</codeph> is optional for credential creation. If <codeph>access</codeph> member is absent, one will be generated and returned to the caller. For credential import, <codeph>access</codeph> is required. If absent, an HTTP code 400 will be returned.</p>
+<p>
+<codeph>domain_id</codeph>, <codeph>access</codeph>, <codeph>key_length</codeph>, <codeph>status</codeph>, <codeph>valid_from</codeph>, and <codeph>valid_to</codeph> are optional are optional for credential creation. However, <codeph>status</codeph> must be present whenever <codeph>blob</codeph> is present.</p>
+<p>
+<codeph>access</codeph>, <codeph>status</codeph>, <codeph>algorithm</codeph>, and <codeph>secret</codeph> are required for credential import.</p>
+<p>User may elect to have the system generate the key by supplying the key parameters, which are <codeph>algorithm</codeph> and <codeph>key_length</codeph>, in the <codeph>blob</codeph> field.</p>
+<p>Supported algorithms are <codeph>HmacSHA1</codeph>, <codeph>HmacSHA224</codeph>, and <codeph>HmacSHA256</codeph>.</p>
+<p>
+<codeph>key_length</codeph> must be at least 64 and no more than 512. If absent, it will be default to 240. On credential creation, if <codeph>key_length</codeph> is less than 64, credential will be generated with the default key length, which is 240.</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<p>There are no URL parameters for this operation.</p>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>See schema file for more details on the request and response data structure.</p>
+<ul>
+<li>
+<i>type</i> - String - credential type. Must be <codeph>HP-IDM:access-key</codeph>.</li>
+<li>
+<i>user_id</i> (optional) - String - user ID of the user who owns the credential. If absent, it will be default to the caller`s user ID.</li>
+<li>
+<i>blob</i> (Optional) - Blob - credential data</li>
+</ul>
+<p>A valid token must be present in the <i>X-Auth-Token</i> HTTP header. Otherwise, an HTTP code 401 will be returned.</p>
+<p>JSON</p>
+<p>To import a <codeph>HP-IDM:access-key</codeph> credential.</p>
+<codeblock>
+  <codeph>POST https://localhost:35357/v3/credentials HTTP/1.1  
+Accept: application/json  
+Content-Type: application/json  
+X-Auth-Token: HPAuth_4e7b748be4b0600fec3d2a24  
+
+{ "credential": {  
+    "user_id": "0000ABCDEFG",  
+    "type": "HP-IDM:access-key",  
+    "blob": "{  
+        \"access\": \"pXmYG556MjD\",  
+        \"secret\": \"pXmYG556MjDgSEVSer2SD67SGHhac798SVwSAT15\",  
+        \"algorithm\": \"HmacSHA1\",  
+        \"key_length\": 240,  
+        \"status\": \"active\"  
+    }"  
+}}  
+</codeph>
+</codeblock>
+<p>To create a <codeph>HP-IDM:access-key</codeph> credential.</p>
+<codeblock>
+  <codeph>POST https://localhost:35357/v3/credentials HTTP/1.1  
+Accept: application/json  
+Content-Type: application/json  
+X-Auth-Token: HPAuth_4e7b748be4b0600fec3d2a24  
+
+{ "credential": {  
+    "user_id": "0000ABCDEFG",  
+    "type": "HP-IDM:access-key"  
+}}  
+</codeph>
+</codeblock>
+<p>To create a <codeph>HP-IDM:access-key</codeph> credential with specific key length.</p>
+<codeblock>
+  <codeph>POST https://localhost:35357/v3/credentials HTTP/1.1  
+Accept: application/json  
+Content-Type: application/json  
+X-Auth-Token: HPAuth_4e7b748be4b0600fec3d2a24  
+
+{ "credential": {  
+    "user_id": "0000ABCDEFG",  
+    "type": "HP-IDM:access-key",  
+    "blob": "{  
+        \"algorithm\" : \"HmacSHA1\",  
+        \"keyLength\" : 400,  
+        \"status\" : \"active\"  
+    }"  
+}}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<p>To create a <codeph>HP-IDM:access-key</codeph> credential.</p>
+<codeblock>
+  <codeph>POST https://localhost:35357/v3/credentials HTTP/1.1  
+Accept: application/xml  
+Content-Type: application/xml  
+X-Auth-Token: HPAuth_4e7b748be4b0600fec3d2a24  
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;  
+&lt;ns2:credential xmlns="http://www.w3.org/2005/Atom" xmlns:ns2="http://docs.openstack.org/identity/api/v3" xmlns:ns3="http://docs.openstack.org/common/api/v1.0" id="KAKH35XE76JSE196XE4R" user_id="36968991407691" type="HP-IDM:access-key"&gt;   
+&lt;/ns2:credential&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>201 - Created</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>HTTP/1.1 201 Created  
+Content-Type: application/json  
+
+{  
+    "credential": {  
+        "blob": "{\"access\":\"KAKH35XE76JSE196XE4R\",\"secret\":\"Yi2KML9ODCflkyLPfJ8fgITsjOsmTSC5fXMqmLca\",\"algorithm\":\"HmacSHA1\",\"key_length\":240,\"created_on\":\"2012-09-20T19:51:28.000278Z\",\"domain_id\":\"91641150119921\",\"status\":\"active\",\"valid_from\":\"2012-09-20T19:51:28.000000Z\",\"valid_to\":\"2022-09-18T19:51:28.000000Z\"}",   
+        "id": "KAKH35XE76JSE196XE4R",   
+        "links": {  
+            "self": "https://localhost:35357/v3/credentials/KAKH35XE76JSE196XE4R"  
+        },   
+        "otherAttributes": {},   
+        "type": "HP-IDM:access-key",   
+        "user_id": "36968991407691"  
+    }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>HTTP/1.1 201 Created  
+Content-Type: application/xml  
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;  
+&lt;ns2:credential xmlns="http://www.w3.org/2005/Atom" xmlns:ns2="http://docs.openstack.org/identity/api/v3" xmlns:ns3="http://docs.openstack.org/common/api/v1.0" id="KAKH35XE76JSE196XE4R" user_id="36968991407691" type="HP-IDM:access-key" blob="{&amp;quot;access&amp;quot;:&amp;quot;KAKH35XE76JSE196XE4R&amp;quot;,&amp;quot;secret&amp;quot;:&amp;quot;Yi2KML9ODCflkyLPfJ8fgITsjOsmTSC5fXMqmLca&amp;quot;,&amp;quot;algorithm&amp;quot;:&amp;quot;HmacSHA1&amp;quot;,&amp;quot;key_length&amp;quot;:240,&amp;quot;created_on&amp;quot;:&amp;quot;2012-09-20T19:51:28.000278Z&amp;quot;,&amp;quot;domain_id&amp;quot;:&amp;quot;91641150119921&amp;quot;,&amp;quot;status&amp;quot;:&amp;quot;active&amp;quot;,&amp;quot;valid_from&amp;quot;:&amp;quot;2012-09-20T19:51:28.000000Z&amp;quot;,&amp;quot;valid_to&amp;quot;:&amp;quot;2022-09-18T19:51:28.000000Z&amp;quot;}"&gt;  
+  &lt;ns2:links&gt;  
+    &lt;link rel="self" href="https://localhost:35357/v3/credentials/KAKH35XE76JSE196XE4R"/&gt;  
+  &lt;/ns2:links&gt;  
+&lt;/ns2:credential&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Error Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Status Code</entry>
+  <entry align="left">Description</entry>
+  <entry align="left">Reasons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">400</entry>
+  <entry align="left">Bad Request</entry>
+  <entry align="left">Malformed request in URI or request body</entry>
+</row>
+<row>
+<entry align="left">401</entry>
+  <entry align="left">Unauthorized</entry>
+  <entry align="left">This status code is returned when either authentication has not been performed, the provided X-Auth-Token is invalid or authentication credentials are invalid (including the user, project or domain having been disabled).</entry>
+</row>
+<row>
+<entry align="left">403</entry>
+  <entry align="left">Forbidden</entry>
+  <entry align="left">The result of the operation will exceed the maximum number of active credentials. This status code is also returned when the request is successfully authenticated but not authorized to perform the requested action.</entry>
+</row>
+<row>
+<entry align="left">500</entry>
+  <entry align="left">Internal Server Error</entry>
+  <entry align="left">The server encountered a problem while processing the request</entry>
+</row>
+<row>
+<entry align="left">503</entry>
+  <entry align="left">Service Unavailable</entry>
+  <entry align="left">The server is unavailable to process the request</entry>
+</row>
+<row>
+<entry align="left">429</entry>
+  <entry align="left">TooManyRequests</entry>
+  <entry align="left">The request was rate limited. Please refer to the Rate Limits section for various limits</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{  
+  "unauthorized" : {  
+    "code" : 401,  
+    "details" : "Invalid credentials",  
+    "message" : "UNAUTHORIZED",  
+    "otherAttributes" : {  
+    }  
+  }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;unauthorized xmlns="http://docs.openstack.org/identity/api/v3" xmlns:ns2="http://www.hp.com/identity/api/ext/HP-IDM/v1.0" xmlns:ns3="http://docs.openstack.org/common/api/v1.0" xmlns:ns4="http://www.w3.org/2005/Atom" code="401"&gt;&lt;message&gt;UNAUTHORIZED&lt;/message&gt;&lt;details&gt;Invalid credentials&lt;/details&gt;&lt;/unauthorized&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<p>To generate a <codeph>HP-IDM:access-key</codeph> credential:</p>
+<codeblock>
+  <codeph>curl -k -X POST -H "X-Auth-Token: HPAuth_1661578e273d107d38b732849173e00d0a60d46d9bc279bee31565fd39be48a8" -H "Content-Type: application/json" -H "Accept: application/json" "https://localhost:8443/v3/credentials" -d '{  
+"credential": {  
+    "type": "HP-IDM:access-key"  
+}}'  
+</codeph>
+</codeblock>
+</section>
+<section id="list_credentials"> <title>3.4.1.2 List Credentials</title>
+</section>
+<section id="get-credentials"> <title>GET /credentials</title>
+<p>This API returns a list of selected user credentials.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>This API supports pagination. See Pagination for more details.</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<p>The following query parameters applicable to all credentials types:</p>
+<ul>
+<li>
+<i>page</i> (Optional) - integer - page number</li>
+<li>
+<i>per_page</i> (Optional) - integer - represents the maximum number of elements which will be returned in the request. Default is 100.</li>
+<li>
+<i>type</i> (Optiona) - string - credential type. Select credentials matching the given type for the given user. Default is <codeph>HP-IDM:access-key</codeph>.</li>
+<li>
+<i>user_id</i> (Optional) - string - user ID. Selects credentials with matching user ID. If not specified the user ID of the requester is used.</li>
+<li>
+<i>domain_id</i> (Optional) - string - domain ID. Select credentials scoped to the given domain ID.</li>
+<li>
+<i>status</i> (Optional) - string - Key status. Selects keys with matching status. Value is one of (active, inactive, expired, revoked, deleted, purged).</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>See schema file for more details on the request and response data structure.</p>
+<p>A valid token must be presented in the <i>X-Auth-Token</i> HTTP header. Otherwise, an HTTP code 401 will be returned.</p>
+<p>This call does not require a request body.</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>GET /v3/credentials HTTP/1.1  
+Accept: application/json  
+X-Auth-Token: HPAuth_4e56db8d2cdce58d662fb351  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>GET /v3/credentials HTTP/1.1  
+Accept: application/xml  
+X-Auth-Token: HPAuth_4e56db8d2cdce58d662fb351  
+</codeph>
+</codeblock>
+<p>Optional:</p>
+<p>JSON</p>
+<p>With pagination.</p>
+<codeblock>
+  <codeph>GET /v3/credentials?page=2&amp;per_page=10 HTTP/1.1  
+Accept: application/json  
+X-Auth-Token: HPAuth_4e56db8d2cdce58d662fb351  
+</codeph>
+</codeblock>
+<p>Filtered by User ID.</p>
+<codeblock>
+  <codeph>GET /v3/credentials?user_id=DX4SRWF12&amp;per_page=10 HTTP/1.1  
+Accept: application/json  
+X-Auth-Token: HPAuth_4e56db8d2cdce58d662fb351  
+</codeph>
+</codeblock>
+<p>XML</p>
+<p>With pagination.</p>
+<codeblock>
+  <codeph>GET /v3/credentials?page=2&amp;per_page=30 HTTP/1.1  
+Accept: application/xml  
+X-Auth-Token: HPAuth_4e56db8d2cdce58d662fb351  
+</codeph>
+</codeblock>
+<p>Filtered by User ID.</p>
+<codeblock>
+  <codeph>GET /v3/credentials?user_id=DX4SRWF12&amp;per_page=10 HTTP/1.1  
+Accept: application/xml  
+X-Auth-Token: HPAuth_4e56db8d2cdce58d662fb351  
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Content-Type: application/json  
+
+{  
+    "credentials": [  
+        {  
+            "blob": "{\"access\":\"KAKH35XE76JSE196XE4R\",\"secret\":\"Yi2KML9ODCflkyLPfJ8fgITsjOsmTSC5fXMqmLca\",\"algorithm\":\"HmacSHA1\",\"key_length\":240,\"created_on\":\"2012-09-20T19:51:28.000278Z\",\"domain_id\":\"91641150119921\",\"status\":\"active\",\"valid_from\":\"2012-09-20T19:51:28.000000Z\",\"valid_to\":\"2022-09-18T19:51:28.000000Z\"}",   
+            "id": "KAKH35XE76JSE196XE4R",   
+            "links": {  
+                "self": "https://localhost:35357/v3/credentials/KAKH35XE76JSE196XE4R"  
+            },   
+            "otherattributes": {},   
+            "type": "HP-IDM:access-key",   
+            "user_id": "36968991407691"  
+        },   
+        {  
+            "blob": "{\"access\":\"31890119180371:KAKH35XE76JSE116XE4T\",\"secret\":\"Yi2KML9ODCflkyLPfJ8fgITsjOsmTSC6fXMqmLcd\",\"algorithm\":\"HmacSHA1\",\"key_length\":240,\"created_on\":\"2012-10-01T23:39:50.000337Z\",\"domain_id\":\"91641150119921\",\"status\":\"active\",\"valid_from\":\"2012-09-20T19:51:28.000000Z\",\"valid_to\":\"2022-09-18T19:51:28.000000Z\"}",   
+            "id": "31890119180371:KAKH35XE76JSE116XE4T",   
+            "links": {  
+                "self": "https://localhost:35357/v3/credentials/31890119180371:KAKH35XE76JSE116XE4T"  
+            },   
+            "otherattributes": {},   
+            "type": "HP-IDM:access-key",   
+            "user_id": "36968991407691"  
+        }  
+    ],   
+    "links": {  
+        "first": "https://localhost:35357/v3/credentials?page=1&amp;per_page=30?user_id=36968991407691&amp;status=active",   
+        "last": "https://localhost:35357/v3/credentials?page=0&amp;per_page=30?user_id=36968991407691&amp;status=active",   
+        "self": "https://localhost:35357/v3/credentials?page=1&amp;per_page=30?user_id=36968991407691&amp;status=active"  
+    }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Content-Type: application/xml  
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;  
+&lt;ns2:credentials xmlns="http://www.w3.org/2005/Atom" xmlns:ns2="http://docs.openstack.org/identity/api/v3" xmlns:ns3="http://docs.openstack.org/common/api/v1.0"&gt;  
+  &lt;ns2:credential id="KAKH35XE76JSE196XE4R" user_id="36968991407691" type="HP-IDM:access-key" blob="{&amp;quot;access&amp;quot;:&amp;quot;KAKH35XE76JSE196XE4R&amp;quot;,&amp;quot;secret&amp;quot;:&amp;quot;Yi2KML9ODCflkyLPfJ8fgITsjOsmTSC5fXMqmLca&amp;quot;,&amp;quot;algorithm&amp;quot;:&amp;quot;HmacSHA1&amp;quot;,&amp;quot;key_length&amp;quot;:240,&amp;quot;created_on&amp;quot;:&amp;quot;2012-09-20T19:51:28.000278Z&amp;quot;,&amp;quot;domain_id&amp;quot;:&amp;quot;91641150119921&amp;quot;,&amp;quot;status&amp;quot;:&amp;quot;active&amp;quot;,&amp;quot;valid_from&amp;quot;:&amp;quot;2012-09-20T19:51:28.000000Z&amp;quot;,&amp;quot;valid_to&amp;quot;:&amp;quot;2022-09-18T19:51:28.000000Z&amp;quot;}"&gt;  
+    &lt;ns2:links&gt;  
+      &lt;link rel="self" href="https://localhost:35357/v3/credentials/KAKH35XE76JSE196XE4R"/&gt;  
+    &lt;/ns2:links&gt;  
+  &lt;/ns2:credential&gt;  
+  &lt;ns2:credential id="31890119180371:KAKH35XE76JSE116XE4T" user_id="36968991407691" type="HP-IDM:access-key" blob="{&amp;quot;access&amp;quot;:&amp;quot;31890119180371:KAKH35XE76JSE116XE4T&amp;quot;,&amp;quot;secret&amp;quot;:&amp;quot;Yi2KML9ODCflkyLPfJ8fgITsjOsmTSC6fXMqmLcd&amp;quot;,&amp;quot;algorithm&amp;quot;:&amp;quot;HmacSHA1&amp;quot;,&amp;quot;key_length&amp;quot;:240,&amp;quot;created_on&amp;quot;:&amp;quot;2012-10-01T23:39:50.000337Z&amp;quot;,&amp;quot;domain_id&amp;quot;:&amp;quot;91641150119921&amp;quot;,&amp;quot;status&amp;quot;:&amp;quot;active&amp;quot;,&amp;quot;valid_from&amp;quot;:&amp;quot;2012-09-20T19:51:28.000000Z&amp;quot;,&amp;quot;valid_to&amp;quot;:&amp;quot;2022-09-18T19:51:28.000000Z&amp;quot;}"&gt;  
+    &lt;ns2:links&gt;  
+      &lt;link rel="self" href="https://localhost:35357/v3/credentials/31890119180371:KAKH35XE76JSE116XE4T"/&gt;  
+    &lt;/ns2:links&gt;  
+  &lt;/ns2:credential&gt;  
+  &lt;ns2:links self="https://localhost:35357/v3/credentials?page=1&amp;amp;per_page=30?user_id=36968991407691&amp;amp;status=active" first="https://localhost:35357/v3/credentials?page=1&amp;amp;per_page=30?user_id=36968991407691&amp;amp;status=active" last="https://localhost:35357/v3/credentials?page=0&amp;amp;per_page=30?user_id=36968991407691&amp;amp;status=active"/&gt;  
+&lt;/ns2:credentials&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Error Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Status Code</entry>
+  <entry align="left">Description</entry>
+  <entry align="left">Reasons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">400</entry>
+  <entry align="left">Bad Request</entry>
+  <entry align="left">Malformed request in URI or request body.</entry>
+</row>
+<row>
+<entry align="left">401</entry>
+  <entry align="left">Unauthorized</entry>
+  <entry align="left">This status code is returned when either authentication has not been performed, the provided X-Auth-Token is invalid or authentication credentials are invalid (including the user, project or domain having been disabled).</entry>
+</row>
+<row>
+<entry align="left">403</entry>
+  <entry align="left">Forbidden</entry>
+  <entry align="left">The request is successfully authenticated but not authorized to perform the requested action.</entry>
+</row>
+<row>
+<entry align="left">500</entry>
+  <entry align="left">Internal Server Error</entry>
+  <entry align="left">The server encountered a problem while processing the request.</entry>
+</row>
+<row>
+<entry align="left">503</entry>
+  <entry align="left">Service Unavailable</entry>
+  <entry align="left">The server is unavailable to process the request.</entry>
+</row>
+<row>
+<entry align="left">429</entry>
+  <entry align="left">TooManyRequests</entry>
+  <entry align="left">The request was rate limited. Please refer to the Rate Limits section for various limits.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{  
+  "unauthorized" : {  
+    "code" : 401,  
+    "details" : "Invalid credentials",  
+    "message" : "UNAUTHORIZED",  
+    "otherAttributes" : {  
+    }  
+  }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;unauthorized xmlns="http://docs.openstack.org/identity/api/v2.0" xmlns:ns2="http://www.hp.com/identity/api/ext/HP-IDM/v1.0" xmlns:ns3="http://docs.openstack.org/common/api/v1.0" xmlns:ns4="http://www.w3.org/2005/Atom" code="401"&gt;&lt;message&gt;UNAUTHORIZED&lt;/message&gt;&lt;details&gt;Invalid credentials&lt;/details&gt;&lt;/unauthorized&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -k -H "X-Auth-Token: HPAuth_fd6f4f19c0bbf7bb0d500aac3bfe21b621073f22b8a92959cabfdc5c4b3f234c" -H "Accept: application/json" "https://localhost:35357/v3/credentials?per_page=5"  
+</codeph>
+</codeblock>
+</section>
+<section id="delete_a_credential"> <title>3.4.1.3 Delete A Credential</title>
+</section>
+<section id="delete-credentialscredential-id"> <title>DELETE /credentials/{credential_id}</title>
+<p>Delete a credential.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>The <codeph>credential_id</codeph> url path parameter is required. The <codeph>user_id</codeph> query parameter is only required to delete a credential for a user other than the requester.</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>credential_id</i> (Required) - string - credential ID</li>
+</ul>
+<p>The folowing query parameters are supported.</p>
+<ul>
+<li>
+<i>user_id</i> (Optional) - string - user ID of the credential owner. If not specified then defaults to user ID of the requester.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>A valid token must be present in the <i>X-Auth-Token</i> HTTP header. Otherwise, an HTTP code 401 will be returned.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>204 - No Content</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>This call does not return a response body on success.</p>
+<p>
+  <b>Error Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Status Code</entry>
+  <entry align="left">Description</entry>
+  <entry align="left">Reasons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">400</entry>
+  <entry align="left">Bad Request</entry>
+  <entry align="left">Malformed request in URI or request body</entry>
+</row>
+<row>
+<entry align="left">401</entry>
+  <entry align="left">Unauthorized</entry>
+  <entry align="left">This status code is returned when either authentication has not been performed, the provided X-Auth-Token is invalid or authentication credentials are invalid (including the user, project or domain having been disabled).</entry>
+</row>
+<row>
+<entry align="left">403</entry>
+  <entry align="left">Forbidden</entry>
+  <entry align="left">The request is successfully authenticated but not authorized to perform the requested action.</entry>
+</row>
+<row>
+<entry align="left">404</entry>
+  <entry align="left">Not Found</entry>
+  <entry align="left">Specified credential ID or user ID not found</entry>
+</row>
+<row>
+<entry align="left">500</entry>
+  <entry align="left">Internal Server Error</entry>
+  <entry align="left">The server encountered a problem while processing the request</entry>
+</row>
+<row>
+<entry align="left">503</entry>
+  <entry align="left">Service Unavailable</entry>
+  <entry align="left">The server is unavailable to process the request</entry>
+</row>
+<row>
+<entry align="left">429</entry>
+  <entry align="left">TooManyRequests</entry>
+  <entry align="left">The request was rate limited. Please refer to the Rate Limits section for various limits</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{  
+  "unauthorized" : {  
+    "code" : 401,  
+    "details" : "Invalid credentials",  
+    "message" : "UNAUTHORIZED",  
+    "otherAttributes" : {  
+    }  
+  }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;unauthorized xmlns="http://docs.openstack.org/identity/api/v2.0" xmlns:ns2="http://www.hp.com/identity/api/ext/HP-IDM/v1.0" xmlns:ns3="http://docs.openstack.org/common/api/v1.0" xmlns:ns4="http://www.w3.org/2005/Atom" code="401"&gt;&lt;message&gt;UNAUTHORIZED&lt;/message&gt;&lt;details&gt;Invalid credentials&lt;/details&gt;&lt;/unauthorized&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -k -XDELETE -H "X-Auth-Token: HPAuth_1661578e273d107d38b732849173e00d0a60d46d9bc279bee31565fd39be48a8" "https://localhost:35357/v3/credentials/ZNFNCA1JJL3T7XY12V2F"  
+</codeph>
+</codeblock>
+</section>
+<section id="get_a_credential"> <title>3.4.1.4 Get A Credential</title>
+</section>
+<section id="get-credentialscredential-id"> <title>GET /credentials/{credential_id}</title>
+<p>Gets a credential.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>The <codeph>credential_id</codeph> URL path parameter is required.</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>credential_id</i> (Required) - string - credential ID</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>A valid token must be present in the <i>X-Auth-Token</i> HTTP header. Otherwise, an HTTP code 401 will be returned.</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>GET https://localhost:35357/v3/credentials/V7TEGGSZZ4NJK9UR4UFE HTTP/1.1  
+X-Auth-Token: HPAuth_4e7bc0d2e4b0600fec3d2a4a  
+Accept: application/json  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>GET https://localhost:35357/v3/credentials/V7TEGGSZZ4NJK9UR4UFE HTTP/1.1  
+X-Auth-Token: HPAuth_4e7bc0d2e4b0600fec3d2a4a  
+Accept: application/xml  
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Content-Type: application/json  
+
+{  
+    "credential": {  
+        "blob": "{\"access\":\"KAKH35XE76JSE196XE4R\",\"secret\":\"Yi2KML9ODCflkyLPfJ8fgITsjOsmTSC5fXMqmLca\",\"algorithm\":\"HmacSHA1\",\"key_length\":240,\"created_on\":\"2012-09-20T19:51:28.000278Z\",\"domain_id\":\"91641150119921\",\"status\":\"active\",\"valid_from\":\"2012-09-20T19:51:28.000000Z\",\"valid_to\":\"2022-09-18T19:51:28.000000Z\"}",   
+        "id": "KAKH35XE76JSE196XE4R",   
+        "links": {  
+            "self": "https://localhost:35357/v3/credentials/KAKH35XE76JSE196XE4R"  
+        },   
+        "otherAttributes": {},   
+        "type": "HP-IDM:access-key",   
+        "user_id": "36968991407691"  
+    }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Content-Type: application/xml  
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;  
+&lt;ns2:credential xmlns="http://www.w3.org/2005/Atom" xmlns:ns2="http://docs.openstack.org/identity/api/v3" xmlns:ns3="http://docs.openstack.org/common/api/v1.0" id="KAKH35XE76JSE196XE4R" user_id="36968991407691" type="HP-IDM:access-key" blob="{&amp;quot;access&amp;quot;:&amp;quot;KAKH35XE76JSE196XE4R&amp;quot;,&amp;quot;secret&amp;quot;:&amp;quot;Yi2KML9ODCflkyLPfJ8fgITsjOsmTSC5fXMqmLca&amp;quot;,&amp;quot;algorithm&amp;quot;:&amp;quot;HmacSHA1&amp;quot;,&amp;quot;key_length&amp;quot;:240,&amp;quot;created_on&amp;quot;:&amp;quot;2012-09-20T19:51:28.000278Z&amp;quot;,&amp;quot;domain_id&amp;quot;:&amp;quot;91641150119921&amp;quot;,&amp;quot;status&amp;quot;:&amp;quot;active&amp;quot;,&amp;quot;valid_from&amp;quot;:&amp;quot;2012-09-20T19:51:28.000000Z&amp;quot;,&amp;quot;valid_to&amp;quot;:&amp;quot;2022-09-18T19:51:28.000000Z&amp;quot;}"&gt;  
+  &lt;ns2:links&gt;  
+    &lt;link rel="self" href="https://localhost:35357/v3/credentials/KAKH35XE76JSE196XE4R"/&gt;  
+  &lt;/ns2:links&gt;  
+&lt;/ns2:credential&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Error Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Status Code</entry>
+  <entry align="left">Description</entry>
+  <entry align="left">Reasons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">400</entry>
+  <entry align="left">Bad Request</entry>
+  <entry align="left">Malformed request in URI or request body</entry>
+</row>
+<row>
+<entry align="left">401</entry>
+  <entry align="left">Unauthorized</entry>
+  <entry align="left">This status code is returned when either authentication has not been performed, the provided X-Auth-Token is invalid or authentication credentials are invalid (including the user, project or domain having been disabled).</entry>
+</row>
+<row>
+<entry align="left">403</entry>
+  <entry align="left">Forbidden</entry>
+  <entry align="left">The request is successfully authenticated but not authorized to perform the requested action.</entry>
+</row>
+<row>
+<entry align="left">404</entry>
+  <entry align="left">Not Found</entry>
+  <entry align="left">Specified credential ID or user ID not found</entry>
+</row>
+<row>
+<entry align="left">500</entry>
+  <entry align="left">Internal Server Error</entry>
+  <entry align="left">The server encountered a problem while processing the request</entry>
+</row>
+<row>
+<entry align="left">503</entry>
+  <entry align="left">Service Unavailable</entry>
+  <entry align="left">The server is unavailable to process the request</entry>
+</row>
+<row>
+<entry align="left">429</entry>
+  <entry align="left">TooManyRequests</entry>
+  <entry align="left">The request was rate limited. Please refer to the Rate Limits section for various limits</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{  
+  "unauthorized" : {  
+    "code" : 401,  
+    "details" : "Invalid credentials",  
+    "message" : "UNAUTHORIZED",  
+    "otherAttributes" : {  
+    }  
+  }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;unauthorized xmlns="http://docs.openstack.org/identity/api/v2.0" xmlns:ns2="http://www.hp.com/identity/api/ext/HP-IDM/v1.0" xmlns:ns3="http://docs.openstack.org/common/api/v1.0" xmlns:ns4="http://www.w3.org/2005/Atom" code="401"&gt;&lt;message&gt;UNAUTHORIZED&lt;/message&gt;&lt;details&gt;Invalid credentials&lt;/details&gt;&lt;/unauthorized&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -k -H "X-Auth-Token: HPAuth_1661578e273d107d38b732849173e00d0a60d46d9bc279bee31565fd39be48a8" -H "Accept: application/json" "https://localhost:35357/v3/credentials/HAJ5LLHHTKHBXB6MK3TL"  
+</codeph>
+</codeblock>
+</section>
+<section id="update_a_credential"> <title>3.4.1.5 Update A Credential</title>
+</section>
+<section id="patch-credentialscredential-id"> <title>PATCH /credentials/{credential_id}</title>
+<p>Update a credential.</p>
+<p>Only the following fields are updatable:</p>
+<ul>
+<li>
+<codeph>status</codeph>
+</li>
+</ul>
+<p>
+<i>Note:</i>
+<!--A BR tag was used here in the original source.-->
+Status <codeph>expired</codeph>, <codeph>revoked</codeph>, <codeph>deleted</codeph>, and <codeph>purged</codeph> are generated by
+the system. They cannot be updated by the client.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>The <codeph>credential_id</codeph> url path parameter is required.</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>credential_id</i> (Required) - string - credential ID.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>See schema file for more details on the request and response data structure.</p>
+<ul>
+<li>
+<i>status</i> - string - credential status. One of the values (active, inactive).</li>
+</ul>
+<p>A valid token must be present in the <i>X-Auth-Token</i> HTTP header. Otherwise, an HTTP code 401 will be returned.</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>PATCH https://localhost:35357/v3/credentials/KAKH35XE76JSE196XE4R HTTP/1.1  
+Accept: application/json  
+Content-Type: application/json  
+X-Auth-Token: HPAuth_4e7bba89e4b0600fec3d2a3a  
+
+{"credential": {  
+    "blob" : "{\"status\" : \"inactive\"}"  
+}}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>PATCH https://localhost:35357/v3/credentials/KAKH35XE76JSE196XE4R HTTP/1.1  
+Accept: application/xml  
+Content-Type: application/xml  
+X-Auth-Token: HPAuth_4e7bba89e4b0600fec3d2a3a  
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;  
+&lt;ns2:credential xmlns="http://www.w3.org/2005/Atom" xmlns:ns2="http://docs.openstack.org/identity/api/v3" xmlns:ns3="http://docs.openstack.org/common/api/v1.0" blob="{&amp;quot;status&amp;quot;:&amp;quot;inactive&amp;quot;}"&gt;  
+&lt;/ns2:credential&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Content-Type: application/json  
+
+{  
+    "credential": {  
+        "blob": "{\"access\":\"KAKH35XE76JSE196XE4R\",\"secret\":\"Yi2KML9ODCflkyLPfJ8fgITsjOsmTSC5fXMqmLca\",\"algorithm\":\"HmacSHA1\",\"key_length\":240,\"created_on\":\"2012-09-20T19:51:28.000278Z\",\"domain_id\":\"91641150119921\",\"status\":\"inactive\",\"valid_from\":\"2012-09-20T19:51:28.000000Z\",\"valid_to\":\"2022-09-18T19:51:28.000000Z\"}",   
+        "id": "KAKH35XE76JSE196XE4R",   
+        "links": {  
+            "self": "https://localhost:35357/v3/credentials/KAKH35XE76JSE196XE4R"  
+        },   
+        "otherAttributes": {},   
+        "type": "HP-IDM:access-key",   
+        "user_id": "36968991407691"  
+    }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Content-Type: application/xml  
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;  
+&lt;ns2:credential xmlns="http://www.w3.org/2005/Atom" xmlns:ns2="http://docs.openstack.org/identity/api/v3" xmlns:ns3="http://docs.openstack.org/common/api/v1.0" id="KAKH35XE76JSE196XE4R" user_id="36968991407691" type="HP-IDM:access-key" blob="{&amp;quot;access&amp;quot;:&amp;quot;KAKH35XE76JSE196XE4R&amp;quot;,&amp;quot;secret&amp;quot;:&amp;quot;Yi2KML9ODCflkyLPfJ8fgITsjOsmTSC5fXMqmLca&amp;quot;,&amp;quot;algorithm&amp;quot;:&amp;quot;HmacSHA1&amp;quot;,&amp;quot;key_length&amp;quot;:240,&amp;quot;created_on&amp;quot;:&amp;quot;2012-09-20T19:51:28.000278Z&amp;quot;,&amp;quot;domain_id&amp;quot;:&amp;quot;91641150119921&amp;quot;,&amp;quot;status&amp;quot;:&amp;quot;inactive&amp;quot;,&amp;quot;valid_from&amp;quot;:&amp;quot;2012-09-20T19:51:28.000000Z&amp;quot;,&amp;quot;valid_to&amp;quot;:&amp;quot;2022-09-18T19:51:28.000000Z&amp;quot;}"&gt;  
+  &lt;ns2:links&gt;  
+    &lt;link rel="self" href="https://localhost:35357/v3/credentials/KAKH35XE76JSE196XE4R"/&gt;  
+  &lt;/ns2:links&gt;  
+&lt;/ns2:credential&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Error Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Status Code</entry>
+  <entry align="left">Description</entry>
+  <entry align="left">Reasons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">400</entry>
+  <entry align="left">Bad Request</entry>
+  <entry align="left">Malformed request in URI or request body</entry>
+</row>
+<row>
+<entry align="left">401</entry>
+  <entry align="left">Unauthorized</entry>
+  <entry align="left">This status code is returned when either authentication has not been performed, the provided X-Auth-Token is invalid or authentication credentials are invalid (including the user, project or domain having been disabled).</entry>
+</row>
+<row>
+<entry align="left">403</entry>
+  <entry align="left">Forbidden</entry>
+  <entry align="left">The result of the operation will exceed the maximum number of active credentials. This status code is also returned when the request is successfully authenticated but not authorized to perform the requested action.</entry>
+</row>
+<row>
+<entry align="left">404</entry>
+  <entry align="left">Not Found</entry>
+  <entry align="left">Specified credential ID or user ID not found</entry>
+</row>
+<row>
+<entry align="left">500</entry>
+  <entry align="left">Internal Server Error</entry>
+  <entry align="left">The server encountered a problem while processing the request</entry>
+</row>
+<row>
+<entry align="left">503</entry>
+  <entry align="left">Service Unavailable</entry>
+  <entry align="left">The server is unavailable to process the request</entry>
+</row>
+<row>
+<entry align="left">429</entry>
+  <entry align="left">TooManyRequests</entry>
+  <entry align="left">The request was rate limited. Please refer to the Rate Limits section for various limits</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{  
+  "unauthorized" : {  
+    "code" : 401,  
+    "details" : "Invalid credentials",  
+    "message" : "UNAUTHORIZED",  
+    "otherAttributes" : {  
+    }  
+  }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;unauthorized xmlns="http://docs.openstack.org/identity/api/v2.0" xmlns:ns2="http://www.hp.com/identity/api/ext/HP-IDM/v1.0" xmlns:ns3="http://docs.openstack.org/common/api/v1.0" xmlns:ns4="http://www.w3.org/2005/Atom" code="401"&gt;&lt;message&gt;UNAUTHORIZED&lt;/message&gt;&lt;details&gt;Invalid credentials&lt;/details&gt;&lt;/unauthorized&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -k -X PUT -H "X-Auth-Token: HPAuth_1661578e273d107d38b732849173e00d0a60d46d9bc279bee31565fd39be48a8" -H "Content-Type: application/json" -H "Accept: application/json" "https://localhost:35357/v3/credentials/V7TEGGSZZ4NJK9UR4998" -d '{"credential": {  
+    "blob" : "{\"status\" : \"inactive\"}"  
+}}'  
+</codeph>
+</codeblock>
+</section>
+<section id="342-projects"> <title>3.4.2 Projects</title>
+<p>Project is a collection of services, and associated with zero or more users who have access to these services via role references.</p>
+<p>
+  <b>Status Lifecycle</b>
+</p>
+<p>N/A</p>
+<p>
+  <b>Rate Limits</b>
+</p>
+<table>
+<tgroup cols="4">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<colspec colname="col4"/>
+<thead>
+<row>
+<entry align="left">Operation</entry>
+  <entry align="left">Rate Limit per second</entry>
+  <entry align="left">Rate Limited By</entry>
+  <entry align="left">Path</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">List User Projects</entry>
+  <entry align="left">50</entry>
+  <entry align="left">X-Auth-Token in request header</entry>
+  <entry align="left">/v3/users/{user_id}/projects</entry>
+</row>
+<row>
+<entry align="left">Get Project</entry>
+  <entry align="left">50</entry>
+  <entry align="left">X-Auth-Token in request header</entry>
+  <entry align="left">/v3/projects/{id}</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+<i>Note:</i>
+If a request is invalid (doesn't present the required headers or credentials), the request is rate limited by the source IP Address using same limits in the table above.</p>
+<p>If the limit is exceeded, the request will be failed with following message:</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{  
+ "TooManyRequests":  
+  {  
+   "message": "This request was rate-limited",  
+   "code": 429,  
+   "details": "Exceeded the number of requests that can be made to {PATH} per SECOND"  
+  }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;TooManyRequests&gt;  
+    &lt;message&gt;This request was rate-limited&lt;/message&gt;  
+    &lt;code&gt;429&lt;/code&gt;  
+    &lt;details&gt;Exceeded the number of requests that can be made to {PATH} per SECOND&lt;/details&gt;  
+&lt;/TooManyRequests&gt;  
+</codeph>
+</codeblock>
+<p>In addition, a response header "RetryAfter" will be returned with value specifying the seconds after which a retry could be attempted.</p>
+<p>
+  <b>Quota Limits</b>
+</p>
+<p>N/A</p>
+<p>
+  <b>Business Rules</b>
+</p>
+<p>None.</p>
+</section>
+<section id="list_user_projects"> <title>3.4.2.1 List User Projects</title>
+</section>
+<section id="get-usersuser-idprojects"> <title>GET /users/{user_id}/projects</title>
+<p>This API returns a listing of all projects for which the provided user has a role assignment. If the user is not valid, an error is returned.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>This API supports pagination. See Pagination for more details.</p>
+<p>This API also supports optional <i>name</i> and <i>enabled</i> filters.  Links returned for pagination will include whichever, if any, optional parameters were specified in the request.</p>
+<p>The <i>name</i> and <i>enabled</i> filters can be used in any combination.</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<ul>
+<li>
+<i>page</i> (Optional)} - integer - represents the page number within the overall response, valid values can be in the range from 1 to (total matched projects) / per_page. Maximum value can be 1000.</li>
+<li>
+<i>per_page</i> (Optional) - integer - represents the maximum number of project elements which will be returned in the response. Default value is 100 and maximum can be 1000.</li>
+<li>
+<i>name</i> (Optional) - string - name of the project to be returned.</li>
+<li>
+<i>enabled</i> (Optional) - boolean - default behavior returns all projects with any status; this option can filter results to just enabled projects or just non-enabled projects.</li>
+</ul>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>See schema file for more details on the request and response data structure.</p>
+<p>A valid token must be presented in the <i>X-Auth-Token</i> HTTP header. Otherwise, a 401 will be returned.</p>
+<p>This call does not require a request body.</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>GET /v3/users/10219525064128/projects HTTP/1.1  
+Accept: application/json  
+X-Auth-Token: HPAuth10_1aa07de4f94afd2cc8f236fdca256f2798cc360047c851e343e9aa60c2bacdb6  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>GET /v3/users/10219525064128/projects HTTP/1.1  
+Accept: application/xml  
+X-Auth-Token: HPAuth10_1aa07de4f94afd2cc8f236fdca256f2798cc360047c851e343e9aa60c2bacdb6  
+</codeph>
+</codeblock>
+<p>Optional:</p>
+<p>JSON</p>
+<p>With <i>name</i> filter.</p>
+<codeblock>
+  <codeph>GET /v3/users/10219525064128/projects?name=Test%20Project HTTP/1.1  
+Accept: application/json  
+X-Auth-Token: HPAuth10_1aa07de4f94afd2cc8f236fdca256f2798cc360047c851e343e9aa60c2bacdb6  
+</codeph>
+</codeblock>
+<p>With pagination.</p>
+<codeblock>
+  <codeph>GET /v3/users/10219525064128/projects?per_page=5&amp;page=2 HTTP/1.1  
+Accept: application/json  
+X-Auth-Token: HPAuth10_1aa07de4f94afd2cc8f236fdca256f2798cc360047c851e343e9aa60c2bacdb6  
+</codeph>
+</codeblock>
+<p>With the enabled flag to list enabled user's projects.</p>
+<codeblock>
+  <codeph>GET /v3/users/10219525064128/projects?enabled=true HTTP/1.1  
+Accept: application/json  
+X-Auth-Token: HPAuth10_1aa07de4f94afd2cc8f236fdca256f2798cc360047c851e343e9aa60c2bacdb6  
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>Returns list of matching projects as requested in 'Accept' header otherwise default response content type is 'application/json'</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<p>A list of projects in the specified format is returned.</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Vary: X-Auth-Token  
+Content-Type: application/json  
+Content-Length: 4435  
+Date: Wed, 04 Dec 2013 20:08:06 GMT  
+Connection: keep-alive  
+
+{  
+   "projects":    [  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10601739620253"},  
+         "enabled": true,  
+         "id": "10601739620253",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-12-03T18:04:41.612000",  
+            "createdOn": "2013-12-03T18:04:40.559000"  
+         },  
+         "domain_id": "10490535946101",  
+         "name": "tenantName_32119031220131004280251"  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10016404326594"},  
+         "enabled": true,  
+         "id": "10016404326594",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-12-03T23:47:08.902000",  
+            "createdOn": "2013-12-03T23:47:06.886000",  
+            "soldToAddress":             {  
+               "city": "sunnyvale",  
+               "zip": "94545",  
+               "country": "USA",  
+               "state": "CA",  
+               "addressLine2": "line 2",  
+               "addressLine1": "line 1"  
+            }  
+         },  
+         "domain_id": "10490535946101",  
+         "name": "tenantName_22239259181120131603570999"  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10544137001493"},  
+         "enabled": true,  
+         "id": "10544137001493",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-12-03T23:48:58.596000",  
+            "createdOn": "2013-12-03T23:48:56.891000",  
+            "soldToAddress":             {  
+               "city": "Sunnyvale",  
+               "zip": "94089",  
+               "country": "USA",  
+               "state": "CA",  
+               "addressLine2": "Building F",  
+               "addressLine1": "1140 Enterprise Way"  
+            }  
+         },  
+         "domain_id": "10490535946101",  
+         "name": "tenantName_2223925918112013160357"  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10612194815373"},  
+         "enabled": true,  
+         "id": "10612194815373",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-12-03T23:54:39.294000",  
+            "createdOn": "2013-12-03T23:54:36.908000",  
+            "soldToAddress":             {  
+               "city": "Sunnyvale",  
+               "zip": "94089",  
+               "country": "USA",  
+               "state": "CA",  
+               "addressLine2": "Building F",  
+               "addressLine1": "1140 Enterprise Way"  
+            }  
+         },  
+         "domain_id": "10490535946101",  
+         "name": "tenantName_2223925918112013160358"  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10879285799074"},  
+         "enabled": true,  
+         "id": "10879285799074",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-12-04T13:12:41.875000",  
+            "createdOn": "2013-12-04T13:12:40.086000",  
+            "soldToAddress":             {  
+               "city": "Sunnyvale",  
+               "zip": "94089",  
+               "country": "USA",  
+               "state": "CA",  
+               "addressLine2": "Building F",  
+               "addressLine1": "1140 Enterprise Way"  
+            }  
+         },  
+         "domain_id": "10490535946101",  
+         "name": "tenantName_22239259181120131603598"  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10059524459397"},  
+         "enabled": true,  
+         "id": "10059524459397",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-12-04T13:13:56.475000",  
+            "createdOn": "2013-12-04T13:13:55.075000",  
+            "soldToAddress":             {  
+               "city": "Sunnyvale",  
+               "zip": "94089",  
+               "country": "USA",  
+               "state": "CA",  
+               "addressLine2": "Building F",  
+               "addressLine1": "1140 Enterprise Way"  
+            }  
+         },  
+         "domain_id": "10490535946101",  
+         "name": "tenantName_22239259181120131603599"  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10261626063894"},  
+         "enabled": true,  
+         "id": "10261626063894",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-12-04T13:16:56.604000",  
+            "createdOn": "2013-12-04T13:16:55.099000",  
+            "soldToAddress":             {  
+               "city": "Sunnyvale",  
+               "zip": "94089",  
+               "country": "USA",  
+               "state": "CA",  
+               "addressLine2": "Building F",  
+               "addressLine1": "1140 Enterprise Way"  
+            }  
+         },  
+         "domain_id": "10490535946101",  
+         "name": "tenantName_222392591811201316035899"  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10546694787010"},  
+         "enabled": true,  
+         "id": "10546694787010",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-12-04T14:44:32.882000",  
+            "createdOn": "2013-12-04T14:44:30.427000",  
+            "soldToAddress":             {  
+               "city": "Sunnyvale",  
+               "zip": "94089",  
+               "country": "USA",  
+               "state": "CA",  
+               "addressLine2": "Building F",  
+               "addressLine1": "1140 Enterprise Way"  
+            }  
+         },  
+         "domain_id": "10490535946101",  
+         "name": "tenantName_222392591811201316035999"  
+      },  
+            {  
+         "description": "Compute2",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10249239463039"},  
+         "enabled": false,  
+         "id": "10249239463039",  
+         "HP-IDM":          {  
+            "status": "disabled",  
+            "lastModifiedOn": "2013-12-04T20:07:56.784000",  
+            "createdOn": "2013-12-04T16:41:55.896000",  
+            "soldToAddress":             {  
+               "city": "Sunnyvale",  
+               "zip": "94089",  
+               "country": "USA",  
+               "state": "CA",  
+               "addressLine2": "Building F",  
+               "addressLine1": "1140 Enterprise Way"  
+            }  
+         },  
+         "domain_id": "10490535946101",  
+         "name": "tenantName_222392591811201316035699"  
+      }  
+   ],  
+   "links":    {  
+      "self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10219525064128/projects",  
+      "next": null,  
+      "previous": null  
+   }  
+}  
+</codeph>
+</codeblock>
+<p>With <i>name</i> filter.</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Vary: X-Auth-Token  
+Content-Type: application/json  
+Content-Length: 657  
+Date: Wed, 27 Nov 2013 17:05:32 GMT  
+Connection: keep-alive  
+
+{  
+   "projects": [   {  
+      "description": "Compute19",  
+      "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10378853911529"},  
+      "enabled": true,  
+      "id": "10378853911529",  
+      "HP-IDM":       {  
+         "status": "enabled",  
+         "lastModifiedOn": "2013-11-26T21:45:23.260000",  
+         "createdOn": "2013-11-20T00:35:15.267000",  
+         "soldToAddress":          {  
+            "city": "sunnyvale",  
+            "zip": "94545",  
+            "country": "USA",  
+            "state": "CA",  
+            "addressLine2": "line 2",  
+            "addressLine1": "line 1"  
+         }  
+      },  
+      "domain_id": "10681062172200",  
+      "name": "tenantName_1139259181120131603570999"  
+   }],  
+   "links":    {  
+      "self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?name=tenantName_1139259181120131603570999",  
+      "next": null,  
+      "previous": null  
+   }  
+}  
+</codeph>
+</codeblock>
+<p>With pagination</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Vary: X-Auth-Token  
+Content-Type: application/json  
+Content-Length: 2076  
+Date: Wed, 27 Nov 2013 17:01:11 GMT  
+Connection: keep-alive  
+
+{  
+   "projects":    [  
+            {  
+         "description": "Compute19",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10378853911529"},  
+         "enabled": true,  
+         "id": "10378853911529",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-11-26T21:45:23.260000",  
+            "createdOn": "2013-11-20T00:35:15.267000",  
+            "soldToAddress":             {  
+               "city": "sunnyvale",  
+               "zip": "94545",  
+               "country": "USA",  
+               "state": "CA",  
+               "addressLine2": "line 2",  
+               "addressLine1": "line 1"  
+            }  
+         },  
+         "domain_id": "10681062172200",  
+         "name": "tenantName_1139259181120131603570999"  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10993096618252"},  
+         "enabled": true,  
+         "id": "10993096618252",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-11-20T00:56:16.585000",  
+            "createdOn": "2013-11-20T00:56:14.671000"  
+         },  
+         "domain_id": "10681062172200",  
+         "name": "tenantName_13259181120131603570999"  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10796622882163"},  
+         "enabled": true,  
+         "id": "10796622882163",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-11-20T01:16:16.690000",  
+            "createdOn": "2013-11-20T01:16:14.749000"  
+         },  
+         "domain_id": "10681062172200",  
+         "name": "tenantName_14259181120131603270999"  
+      },  
+            {  
+         "description": "Compute"",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10164012941837"},  
+         "enabled": true,  
+         "id": "10164012941837",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-11-20T16:04:14.769000",  
+            "createdOn": "2013-11-20T16:04:13.165000"  
+         },  
+         "domain_id": "10681062172200",  
+         "name": "tenantName_14259181120131603370999"  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10699650034584"},  
+         "enabled": true,  
+         "id": "10699650034584",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-11-20T16:08:19.653000",  
+            "createdOn": "2013-11-20T16:08:18.227000"  
+         },  
+         "domain_id": "10681062172200",  
+         "name": "tenantName_14259181120131603470999"  
+      }  
+   ],  
+   "links":    {  
+      "self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?per_page=5",  
+      "next": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?page=2&amp;per_page=5",  
+      "previous": null  
+   }  
+}  
+</codeph>
+</codeblock>
+<p>With filter for enabled projects</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Vary: X-Auth-Token  
+Content-Type: application/json  
+Content-Length: 1990  
+Date: Wed, 27 Nov 2013 16:41:26 GMT  
+Connection: keep-alive  
+
+{  
+   "projects":    [  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10514057891334"},  
+         "enabled": true,  
+         "id": "10514057891334",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-11-20T16:08:39.588000",  
+            "createdOn": "2013-11-20T16:08:38.201000"    
+         },  
+         "domain_id": "10681062172200",  
+         "name": "tenantName_16259181120131603570999"  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10332143098865"},  
+         "enabled": true,  
+         "id": "10332143098865",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-11-20T16:08:54.668000",  
+            "createdOn": "2013-11-20T16:08:53.194000"  
+         },  
+         "domain_id": "10681062172200",  
+         "name": "tenantName_17259181120131603570999"  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10914293668699"},  
+         "enabled": true,  
+         "id": "10914293668699",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-11-20T22:55:31.645000",  
+            "createdOn": "2013-11-20T22:55:29.686000"  
+         },  
+         "domain_id": "10681062172200",  
+         "name": "tenantName_28259181120131603570999"  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10100167304809"},  
+         "enabled": true,  
+         "id": "10100167304809",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-11-20T23:14:56.023000",  
+            "createdOn": "2013-11-20T23:14:49.770000"  
+         },  
+         "domain_id": "10681062172200",  
+         "name": "tenantName_229259181120131603570999",  
+      },  
+            {  
+         "description": "Compute",  
+         "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10646264998607"},  
+         "enabled": true,  
+         "id": "10646264998607",  
+         "HP-IDM":          {  
+            "status": "enabled",  
+            "lastModifiedOn": "2013-11-20T23:18:11.672000",  
+            "createdOn": "2013-11-20T23:18:09.794000"  
+         },  
+         "domain_id": "10681062172200",  
+         "name": "tenantName_239259181120131603570999",  
+      }  
+   ],  
+   "links":    {  
+      "self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?enabled=true&amp;page=2&amp;per_page=5",  
+      "next": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?enabled=true&amp;page=3&amp;per_page=5",  
+      "previous": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?enabled=true&amp;page=1&amp;per_page=5"  
+   }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<p>A list of projects in the specified format is returned.</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Vary: X-Auth-Token  
+Content-Type: application/xml  
+Content-Length: 2499  
+Date: Wed, 27 Nov 2013 17:12:25 GMT  
+Connection: keep-alive  
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;projects xmlns="http://docs.openstack.org/identity/api/v3"&gt;  
+  &lt;project name="tenantName_1139259181120131603570999" enabled="true" id="10378853911529" domain_id="10681062172200"&gt;  
+    &lt;description&gt;Compute19&lt;/description&gt;  
+    &lt;links&gt;  
+      &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10378853911529"/&gt;  
+    &lt;/links&gt;  
+    &lt;HP-IDM status="enabled" lastModifiedOn="2013-11-26T21:45:23.260000" createdOn="2013-11-20T00:35:15.267000"&gt;  
+      &lt;soldToAddress city="sunnyvale" zip="94545" country="USA" state="CA" addressLine2="line 2" addressLine1="line 1"/&gt;  
+    &lt;/HP-IDM&gt;  
+  &lt;/project&gt;  
+  &lt;project name="tenantName_13259181120131603570999" enabled="true" id="10993096618252" domain_id="10681062172200"&gt;  
+    &lt;description&gt;Compute&lt;/description&gt;  
+    &lt;links&gt;  
+      &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10993096618252"/&gt;  
+    &lt;/links&gt;  
+    &lt;HP-IDM status="enabled" lastModifiedOn="2013-11-20T00:56:16.585000" createdOn="2013-11-20T00:56:14.671000"/&gt;  
+  &lt;/project&gt;  
+  &lt;project name="tenantName_14259181120131603570999" enabled="true" id="10796622882163" domain_id="10681062172200"&gt;  
+    &lt;description&gt;Compute&lt;/description&gt;  
+    &lt;links&gt;  
+      &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10796622882163"/&gt;  
+    &lt;/links&gt;  
+    &lt;HP-IDM status="enabled" lastModifiedOn="2013-11-20T01:16:16.690000" createdOn="2013-11-20T01:16:14.749000"/&gt;  
+  &lt;/project&gt;  
+  &lt;project name="tenantName_15259181120131603570999" enabled="true" id="10164012941837" domain_id="10681062172200"&gt;  
+    &lt;description&gt;Compute&lt;/description&gt;  
+    &lt;links&gt;  
+      &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10164012941837"/&gt;  
+    &lt;/links&gt;  
+    &lt;HP-IDM status="enabled" lastModifiedOn="2013-11-20T16:04:14.769000" createdOn="2013-11-20T16:04:13.165000"/&gt;  
+  &lt;/project&gt;  
+  &lt;project name="tenantName_11259181120131603570999" enabled="true" id="10699650034584" domain_id="10681062172200"&gt;  
+    &lt;description&gt;Compute&lt;/description&gt;  
+    &lt;links&gt;  
+      &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10699650034584"/&gt;  
+    &lt;/links&gt;  
+    &lt;HP-IDM status="enabled" lastModifiedOn="2013-11-20T16:08:19.653000" createdOn="2013-11-20T16:08:18.227000"/&gt;  
+  &lt;/project&gt;  
+  &lt;links&gt;  
+    &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?per_page=5"/&gt;  
+    &lt;link rel="next" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?page=2&amp;amp;per_page=5"/&gt;  
+  &lt;/links&gt;  
+&lt;/projects&gt;  
+</codeph>
+</codeblock>
+<p>With <i>name</i> filter</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Vary: X-Auth-Token  
+Content-Type: application/xml  
+Content-Length: 798  
+Date: Wed, 27 Nov 2013 16:37:24 GMT  
+Connection: keep-alive  
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;projects xmlns="http://docs.openstack.org/identity/api/v3"&gt;  
+  &lt;project name="tenantName_1139259181120131603570999" enabled="true" id="10378853911529" domain_id="10681062172200"&gt;  
+    &lt;description&gt;Compute19&lt;/description&gt;  
+    &lt;links&gt;  
+      &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10378853911529"/&gt;  
+    &lt;/links&gt;  
+    &lt;HP-IDM status="enabled" lastModifiedOn="2013-11-26T21:45:23.260000" createdOn="2013-11-20T00:35:15.267000"&gt;  
+      &lt;soldToAddress city="sunnyvale" zip="94545" country="USA" state="CA" addressLine2="line 2" addressLine1="line 1"/&gt;  
+    &lt;/HP-IDM&gt;  
+  &lt;/project&gt;  
+  &lt;links&gt;  
+    &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?name=tenantName_1139259181120131603570999"/&gt;  
+  &lt;/links&gt;  
+&lt;/projects&gt;  
+</codeph>
+</codeblock>
+<p>With pagination.</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Vary: X-Auth-Token  
+Content-Type: application/xml  
+Content-Length: 2507  
+Date: Wed, 27 Nov 2013 17:19:05 GMT  
+Connection: keep-alive  
+
+&lt;projects xmlns="http://docs.openstack.org/identity/api/v3"&gt;  
+   &lt;project name="tenantName_16259181120131603570999" enabled="true" id="10514057891334" domain_id="10681062172200"&gt;  
+      &lt;description&gt;Compute&lt;/description&gt;  
+      &lt;links&gt;  
+         &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10514057891334"/&gt;  
+      &lt;/links&gt;  
+      &lt;HP-IDM status="enabled" lastModifiedOn="2013-11-20T16:08:39.588000" createdOn="2013-11-20T16:08:38.201000"/&gt;  
+   &lt;/project&gt;  
+   &lt;project name="tenantName_17259181120131603570999" enabled="true" id="10332143098865" domain_id="10681062172200"&gt;  
+      &lt;description&gt;Compute&lt;/description&gt;  
+      &lt;links&gt;  
+         &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10332143098865"/&gt;  
+      &lt;/links&gt;  
+      &lt;HP-IDM status="enabled" lastModifiedOn="2013-11-20T16:08:54.668000" createdOn="2013-11-20T16:08:53.194000"/&gt;  
+   &lt;/project&gt;  
+   &lt;project name="tenantName_28259181120131603570999" enabled="true" id="10914293668699" domain_id="10681062172200"&gt;  
+      &lt;description&gt;Compute&lt;/description&gt;  
+      &lt;links&gt;  
+         &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10914293668699"/&gt;  
+      &lt;/links&gt;  
+      &lt;HP-IDM status="enabled" lastModifiedOn="2013-11-20T22:55:31.645000" createdOn="2013-11-20T22:55:29.686000"/&gt;  
+   &lt;/project&gt;  
+   &lt;project name="tenantName_229259181120131603570999" enabled="true" id="10100167304809" domain_id="10681062172200"&gt;  
+      &lt;description&gt;Compute&lt;/description&gt;  
+      &lt;links&gt;  
+         &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10100167304809"/&gt;  
+      &lt;/links&gt;  
+      &lt;HP-IDM status="enabled" lastModifiedOn="2013-11-20T23:14:56.023000" createdOn="2013-11-20T23:14:49.770000"/&gt;  
+   &lt;/project&gt;  
+   &lt;project name="tenantName_239259181120131603570999" enabled="true" id="10646264998607" domain_id="10681062172200"&gt;  
+      &lt;description&gt;Compute&lt;/description&gt;  
+      &lt;links&gt;  
+         &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10646264998607"/&gt;  
+      &lt;/links&gt;  
+      &lt;HP-IDM status="enabled" lastModifiedOn="2013-11-20T23:18:11.672000" createdOn="2013-11-20T23:18:09.794000"/&gt;  
+   &lt;/project&gt;  
+   &lt;links&gt;  
+      &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?page=2&amp;amp;per_page=5"/&gt;  
+      &lt;link rel="previous" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?page=1&amp;amp;per_page=5"/&gt;  
+      &lt;link rel="next" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?page=3&amp;amp;per_page=5"/&gt;  
+   &lt;/links&gt;  
+&lt;/projects&gt;  
+</codeph>
+</codeblock>
+<p>With 'enabled' filter.</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Vary: X-Auth-Token  
+Content-Type: application/xml  
+Content-Length: 1257  
+Date: Wed, 27 Nov 2013 17:22:07 GMT  
+Connection: keep-alive  
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;projects xmlns="http://docs.openstack.org/identity/api/v3"&gt;  
+  &lt;project name="tenantName_11259181120131603570999" enabled="true" id="10699650034584" domain_id="10681062172200"&gt;  
+    &lt;description&gt;Compute&lt;/description&gt;  
+    &lt;links&gt;  
+      &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10699650034584"/&gt;  
+    &lt;/links&gt;  
+    &lt;HP-IDM status="enabled" lastModifiedOn="2013-11-20T16:08:19.653000" createdOn="2013-11-20T16:08:18.227000"/&gt;  
+  &lt;/project&gt;  
+  &lt;project name="tenantName_16259181120131603570999" enabled="true" id="10514057891334" domain_id="10681062172200"&gt;  
+    &lt;description&gt;Compute&lt;/description&gt;  
+    &lt;links&gt;  
+      &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10514057891334"/&gt;  
+    &lt;/links&gt;  
+    &lt;HP-IDM status="enabled" lastModifiedOn="2013-11-20T16:08:39.588000" createdOn="2013-11-20T16:08:38.201000"/&gt;  
+  &lt;/project&gt;  
+  &lt;links&gt;  
+    &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?enabled=true&amp;amp;page=3&amp;amp;per_page=2"/&gt;  
+    &lt;link rel="previous" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?enabled=true&amp;amp;page=2&amp;amp;per_page=2"/&gt;  
+    &lt;link rel="next" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?enabled=true&amp;amp;page=4&amp;amp;per_page=2"/&gt;  
+  &lt;/links&gt;  
+&lt;/projects&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Error Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Status Code</entry>
+  <entry align="left">Description</entry>
+  <entry align="left">Reasons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">400</entry>
+  <entry align="left">Bad Request</entry>
+  <entry align="left">Malformed request in URI or request body.</entry>
+</row>
+<row>
+<entry align="left">401</entry>
+  <entry align="left">Unauthorized</entry>
+  <entry align="left">Missing required authentication data i.e. X-Auth-Token header</entry>
+</row>
+<row>
+<entry align="left">401</entry>
+  <entry align="left">Unauthorized</entry>
+  <entry align="left">Disabled or suspended user making the request.</entry>
+</row>
+<row>
+<entry align="left">403</entry>
+  <entry align="left">Forbidden</entry>
+  <entry align="left">The caller does not have the privilege required to perform the operation.</entry>
+</row>
+<row>
+<entry align="left">404</entry>
+  <entry align="left">Not Found</entry>
+  <entry align="left">When input user is not found in system.</entry>
+</row>
+<row>
+<entry align="left">500</entry>
+  <entry align="left">Internal Server Error</entry>
+  <entry align="left">The server encountered a problem while processing the request.</entry>
+</row>
+<row>
+<entry align="left">503</entry>
+  <entry align="left">Service Unavailable</entry>
+  <entry align="left">The server is unavailable to process the request.</entry>
+</row>
+<row>
+<entry align="left">429</entry>
+  <entry align="left">TooManyRequests</entry>
+  <entry align="left">The request was rate limited. Please refer to the Rate Limits section for various limits.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{"error": {  
+   "message": "The request you have made requires authentication.",  
+   "code": 401,  
+   "title": "Unauthorized"  
+}}  
+
+{"error": {  
+   "message": "Could not find user, 101548092342500.",  
+   "code": 404,  
+   "title": "Not Found"  
+}}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;error message="The request you have made requires authentication." code="401" title="Unauthorized" xmlns="http://docs.openstack.org/identity/api/v3"/&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<p>
+  <b>
+    <i>List Projects</i>
+  </b>
+</p>
+<codeblock>
+  <codeph>curl -k -H "X-Auth-Token: HPAuth_fd6f4f19c0bbf7bb0d500aac3bfe21b621073f22b8a92959cabfdc5c4b3f234c" -H "Accept: application/json" "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects"  
+</codeph>
+</codeblock>
+<p>
+  <b>
+    <i>Get Project By Name</i>
+  </b>
+</p>
+<codeblock>
+  <codeph>curl -k -H "X-Auth-Token: HPAuth_fd6f4f19c0bbf7bb0d500aac3bfe21b621073f22b8a92959cabfdc5c4b3f234c" -H "Accept: application/json" "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?name=MyProject"  
+</codeph>
+</codeblock>
+<p>
+  <b>
+    <i>Get Projects By enabled</i>
+  </b>
+</p>
+<codeblock>
+  <codeph>curl -k -H "X-Auth-Token: HPAuth_fd6f4f19c0bbf7bb0d500aac3bfe21b621073f22b8a92959cabfdc5c4b3f234c" -H "Accept: application/json" "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?enabled=true"  
+</codeph>
+</codeblock>
+<p>
+  <b>
+    <i>Get Projects paginated</i>
+  </b>
+</p>
+<codeblock>
+  <codeph>curl -k -H "X-Auth-Token: HPAuth_fd6f4f19c0bbf7bb0d500aac3bfe21b621073f22b8a92959cabfdc5c4b3f234c" -H "Accept: application/json" "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/10154809234250/projects?page=2&amp;per_page=3"  
+</codeph>
+</codeblock>
+</section>
+<section id="get_project"> <title>3.4.2.2 Get Project</title>
+</section>
+<section id="get-projectsproject-id"> <title>GET /projects/{project_id}</title>
+<p>This API returns a project for given project id. If id is not valid, an error is returned.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>Project id is specified in URI.</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>See schema file for more details on the request and response data structure.</p>
+<p>A valid token must be presented in the <i>X-Auth-Token</i> HTTP header. Otherwise, a 401 will be returned.</p>
+<p>This call does not require a request body.</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>GET https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10059524459397 HTTP/1.1  
+Accept: application/json  
+X-Auth-Token: HPAuth10_5b566ac7b191c1a38c7cd9fa3e90f4f983fe7225a0aab1845d2d62ac25977dc1  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>GET https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10059524459397 HTTP/1.1  
+Accept: application/xml  
+X-Auth-Token: HPAuth10_5b566ac7b191c1a38c7cd9fa3e90f4f983fe7225a0aab1845d2d62ac25977dc1  
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>Returns project data as requested in 'Accept' header otherwise default response content type is 'application/json'</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<p>A project in the specified format is returned.</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Vary: X-Auth-Token  
+Content-Type: application/json  
+Content-Length: 353  
+Date: Tue, 03 Dec 2013 19:27:57 GMT  
+Connection: keep-alive  
+
+{"project": {  
+   "description": "Compute",  
+   "links": {"self": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10059524459397"},  
+   "enabled": true,  
+   "id": "10059524459397",  
+   "HP-IDM":    {  
+      "status": "enabled",  
+      "lastModifiedOn": "2013-12-04T13:13:56.475000",  
+      "createdOn": "2013-12-04T13:13:55.075000",  
+      "soldToAddress":       {  
+         "city": "Sunnyvale",  
+         "zip": "94089",  
+         "country": "USA",  
+         "state": "CA",  
+         "addressLine2": "Building F",  
+         "addressLine1": "1140 Enterprise Way"  
+      }  
+   },  
+   "domain_id": "10490535946101",  
+   "name": "tenantName_22239259181120131603599"  
+}}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<p>A project in the specified format is returned.</p>
+<codeblock>
+  <codeph>HTTP/1.1 200 OK  
+Vary: X-Auth-Token  
+Content-Type: application/xml  
+Content-Length: 477  
+Date: Tue, 03 Dec 2013 19:33:56 GMT  
+Connection: keep-alive  
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;project enabled="true" id="10059524459397" domain_id="10490535946101" name="tenantName_22239259181120131603599" xmlns="http://docs.openstack.org/identity/api/v3"&gt;  
+   &lt;description&gt;Compute&lt;/description&gt;  
+   &lt;links&gt;  
+      &lt;link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10059524459397"/&gt;  
+   &lt;/links&gt;  
+   &lt;HP-IDM status="enabled" lastModifiedOn="2013-12-04T13:13:56.475000" createdOn="2013-12-04T13:13:55.075000"&gt;  
+      &lt;soldToAddress city="Sunnyvale" zip="94089" country="USA" state="CA" addressLine2="Building F" addressLine1="1140 Enterprise Way"/&gt;  
+   &lt;/HP-IDM&gt;  
+&lt;/project&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Error Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Status Code</entry>
+  <entry align="left">Description</entry>
+  <entry align="left">Reasons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">401</entry>
+  <entry align="left">Unauthorized</entry>
+  <entry align="left">Missing required authentication data i.e. X-Auth-Token header</entry>
+</row>
+<row>
+<entry align="left">401</entry>
+  <entry align="left">Unauthorized</entry>
+  <entry align="left">Disabled or suspended user making the request.</entry>
+</row>
+<row>
+<entry align="left">403</entry>
+  <entry align="left">Forbidden</entry>
+  <entry align="left">The caller does not have the privilege required to perform the operation.</entry>
+</row>
+<row>
+<entry align="left">404</entry>
+  <entry align="left">Not Found</entry>
+  <entry align="left">When input project id is not found in the system.</entry>
+</row>
+<row>
+<entry align="left">500</entry>
+  <entry align="left">Internal Server Error</entry>
+  <entry align="left">The server encountered a problem while processing the request.</entry>
+</row>
+<row>
+<entry align="left">503</entry>
+  <entry align="left">Service Unavailable</entry>
+  <entry align="left">The server is unavailable to process the request.</entry>
+</row>
+<row>
+<entry align="left">429</entry>
+  <entry align="left">TooManyRequests</entry>
+  <entry align="left">The request was rate limited. Please refer to the Rate Limits section for various limits.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{"error": {  
+   "message": "The request you have made requires authentication.",  
+   "code": 401,  
+   "title": "Unauthorized"  
+}}  
+
+{"error": {  
+   "message": "Could not find project, 10601739620254.",  
+   "code": 404,  
+   "title": "Not Found"  
+}}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;error message="The request you have made requires authentication." code="401" title="Unauthorized" xmlns="http://docs.openstack.org/identity/api/v3"/&gt;  
+
+&lt;error message="Could not find project, 10601739620254." code="404" title="Not Found" xmlns="http://docs.openstack.org/identity/api/v3"/&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<p>
+  <b>
+    <i>Get Project</i>
+  </b>
+</p>
+<codeblock>
+  <codeph>curl -k -H "X-Auth-Token: HPAuth10_5b566ac7b191c1a38c7cd9fa3e90f4f983fe7225a0aab1845d2d62ac25977dc1" -H "Accept: application/json" "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/10601739620253"  
+</codeph>
+</codeblock>
+</section>
+<section id="343-tokens"> <title>3.4.3 Tokens</title>
+<p>Tokens are used to represent user's authenticated identity with a time-based validity. Tokens data contain authorization information via roles related to a project or domain. A token is used to gain access to a HP Helion Public Cloud Service offering. Tokens can be scoped to a project, domain or can be requested as unscoped. Unscoped token means that the token is essentially scoped to user's domain.</p>
+<p>Tokens are generated by identity service after successful authentication. Token can be validated, re-scoped to another project or domain and/or can be revoked before its expiration.</p>
+<p>Tokens can be requested by sending credentials as part of the request. The Identity service currently supports username/password and user acessskey credentials for v3.</p>
+<p>AccessKey credentials are the preferred credentials for programmatic access for the following reasons:</p>
+<ol>
+<li>If the user changes password for username/password credential, accessKey credentials won't be affected   </li>
+<li>Client can have multiple acesss keys   </li>
+<li>Access keys can be managed. (ie) They can have different life span</li>
+</ol>
+<p>
+  <b>Status Lifecycle</b>
+</p>
+<p>N/A</p>
+<p>
+  <b>Rate Limits</b>
+</p>
+<table>
+<tgroup cols="4">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<colspec colname="col4"/>
+<thead>
+<row>
+<entry align="left">Operation</entry>
+  <entry align="left">Rate Limit per second</entry>
+  <entry align="left">Rate Limited By</entry>
+  <entry align="left">Path</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">Authenticate</entry>
+  <entry align="left">50</entry>
+  <entry align="left">username/user ID/tenant ID/tenant Name/accesskey</entry>
+  <entry align="left">/v3/auth/tokens</entry>
+</row>
+<row>
+<entry align="left">Rescope Token</entry>
+  <entry align="left">50</entry>
+  <entry align="left">X-Auth-Token in request header</entry>
+  <entry align="left">/v3/auth/tokens</entry>
+</row>
+<row>
+<entry align="left">Revoke Token</entry>
+  <entry align="left">1</entry>
+  <entry align="left">X-Auth-Token in request header</entry>
+  <entry align="left">/v3/auth/tokens</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+<i>Note:</i>
+If a request is invalid (doesn't present the required headers or credentials), the request is rate limited by the source IP Address using same limits in the table above</p>
+<p>If the limit is exceeded, the request will be failed with following message:</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{  
+ "TooManyRequests":  
+  {  
+   "message": "This request was rate-limited",  
+   "code": 429,  
+   "details": "Exceeded the number of requests that can be made to {PATH} per SECOND"  
+  }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;TooManyRequests&gt;  
+&lt;message&gt;This request was rate-limited&lt;/message&gt;  
+&lt;code&gt;429&lt;/code&gt;  
+&lt;details&gt;Exceeded the number of requests that can be made to {PATH} per SECOND&lt;/details&gt;  
+&lt;/TooManyRequests&gt;  
+</codeph>
+</codeblock>
+<p>In addition, a response header "RetryAfter" will be returned with value specifying the seconds after which a retry could be attempted</p>
+<p>
+  <b>Quota Limits</b>
+</p>
+<p>N/A</p>
+<p>
+  <b>Business Rules</b>
+</p>
+<p>None.</p>
+</section>
+<section id="authenticate"> <title>3.4.3.1 Authenticate</title>
+</section>
+<section id="post-v3authtokens"> <title>POST /v3/auth/tokens</title>
+<p>This API is used to authenticate a user to be able to use a service. The result of a successful authentication is a token to be used with service requests. A credential is used to obtain a token. The Identity service currently supports username/password and user access key credentials. If authentication succeeds, the response will include an authentication token and service catalog ( list of available services for that user ). Tokens are valid for 12 hours. Issued tokens can become invalid in following cases:</p>
+<ol>
+<li>The token has expired.</li>
+<li>The token has been revoked.</li>
+<li>Either user or user's domain is disabled.</li>
+<li>In case of scoped token, either scoped project or scoped project's domain is disabled.</li>
+<li>If a user or domain is disabled, the token for the user or the users in the domain become invalid.</li>
+</ol>
+<p>Besides using a username and password, another way to authenticate is using symmetric keys. Symmetric keys are user access key and secret key pairs provisioned for the user account. In this type of credential data, request body is expected to contain an access key and a secret key information belonging to the user. Once those keys are verified, a new token is created. In this type of authentication, the only change is in expected request body data (please see related example below). There is no difference in response format/content whether authentication is done using password credential data or access key credential data.</p>
+</section>
+<section id="service-catalog"> <title>Service Catalog:</title>
+<p>In case of un-scoped token request, the service catalog is going to include global active  endpoints in its data. In case of scoped token request, the service catalog is going to include project specific endpoints as well as global active endpoints.</p>
+</section>
+<section id="scoped-tokens"> <title>Scoped Tokens:</title>
+<p>A token can be scoped either to a domain or to a project.  ProjectId or DomainId/DomainName can be used to scope the token to project or domain respectively. ProjectName can also be used, in that case caller need to qualify the project using domain information, since project name is not globally unique. Project name is unique only in its domain</p>
+<p>A project scoped token will also return service endpoints for other services associated with the project in question. An unscoped token will likely not contain service endpoints instead it will contain endpoints for global services such as Identity Service, Billing Service etc. Note that if project information is unknown, an unscoped token can be obtained and then a list of projects obtained. Project information can also be found in the Management Console.</p>
+</section>
+<section id="default-project-scoping"> <title>Default Project Scoping:</title>
+<p>In case a user has a defined default project defined on their account, scoping to that project is attempted if there is no scoping data provided in request. This scoping to default project is done provided project is in valid state and user has project specific role assignments. In the case a default project scoping cannot be achieved, then instead of returning errror, unscoped token is returned.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>See examples below. If input data format is not correct in request body, then bad request error is returned with http status code 400.</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<p>None</p>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>See schema file for more details on the request and response data structure.</p>
+<p>JSON</p>
+<p>Authenticate using userid/password credential for an unscoped token. Also for this request/response no default project is defined for that userId</p>
+<codeblock>
+  <codeph>Accept-Encoding: gzip,deflate  
+Accept: application/json  
+Content-Type: application/json  
+Content-Length: 171  
+
+{  
+"auth": {  
+    "identity": {  
+        "methods": ["password"],  
+        "password": {  
+            "user": {  
+                "id": "21243386194835",  
+                "password": "secrete"  
+            }  
+        }  
+    }  
+}  
+</codeph>
+</codeblock>
+<p>Authenticate using username/password credential for an unscoped token.  User is qualified using domain name.</p>
+<codeblock>
+  <codeph>Accept-Encoding: gzip,deflate  
+Accept: application/json  
+Content-Type: application/json  
+Content-Length: 171  
+
+{  
+"auth": {  
+    "identity": {  
+        "methods": ["password"],  
+        "password": {  
+            "user": {  
+                "id": "21243386194835",  
+                "password": "secrete",  
+           "domain" : {  
+                   "name" : "HPCSDemoDomain"  
+                 }  
+            }  
+        }  
+    }  
+}  
+</codeph>
+</codeblock>
+<p>Authenticate using username/password credential for an unscoped token.  User is qualified using domain id.</p>
+<codeblock>
+  <codeph>Accept-Encoding: gzip,deflate  
+Accept: application/json  
+Content-Type: application/json  
+Content-Length: 171  
+
+{  
+"auth": {  
+    "identity": {  
+        "methods": ["password"],  
+        "password": {  
+            "user": {  
+                "name": "HPCSDemoDomain_User1",  
+                "password": "secrete",  
+               "domain" : {  
+          "id" : "94710780204290"  
+            }  
+            }  
+        }  
+    }  
+}  
+</codeph>
+</codeblock>
+<p>Authenticate using username/password credential scoped to a project using Project ID.</p>
+<codeblock>
+  <codeph>Accept: application/json  
+Content-Type: application/json  
+
+{  
+"auth": {  
+  "identity": {  
+    "methods": ["password"],  
+    "password": {  
+      "user": {  
+      "name": "{username}",  
+      "password": "{password}"  
+      }  
+    }  
+},  
+"scope": {  
+    "project": {  
+        "id": "{project_id}"  
+      }  
+    }  
+  }  
+}
+</codeph>
+</codeblock>
+<p>Authenticate using password credential, scoped to a project using project name.  Project name is qualified using domain id.</p>
+<codeblock>
+  <codeph>Accept-Encoding: gzip,deflate  
+Accept: application/json  
+Content-Type: application/json  
+Content-Length: 171  
+
+{  
+"auth": {  
+    "identity": {  
+        "methods": ["password"],  
+        "password": {  
+            "user": {  
+                "id": "453453453545",  
+                "password": "secrete"  
+            }  
+        }  
+    },  
+    "scope": {  
+        "project": {  
+            "name": "HPCSDemoDomain_dev_project",  
+            "domain" : {  
+          "id" : "94710780204290"  
+         }  
+        }  
+    }  
+   }  
+}  
+</codeph>
+</codeblock>
+<p>Authenticate using password credential, scoped to a domain using domain name.</p>
+<codeblock>
+  <codeph>Accept-Encoding: gzip,deflate  
+Accept: application/json  
+Content-Type: application/json  
+Content-Length: 171  
+
+{  
+"auth": {  
+    "identity": {  
+        "methods": ["password"],  
+        "password": {  
+            "user": {  
+                "id": "453453453545",  
+                "password": "secrete"  
+            }  
+        }  
+    },  
+    "scope": {  
+        "domain" : {  
+      "name" : "HPCSDemoDomain"  
+         }  
+     }  
+    }  
+   }  
+}  
+</codeph>
+</codeblock>
+<p>Authenticate using password credential, scoped to a doamin using domain id.</p>
+<codeblock>
+  <codeph>Accept-Encoding: gzip,deflate  
+Accept: application/json  
+Content-Type: application/json  
+Content-Length: 171  
+
+{  
+"auth": {  
+    "identity": {  
+        "methods": ["password"],  
+        "password": {  
+            "user": {  
+                "id": "453453453545",  
+                "password": "secrete"  
+            }  
+        }  
+    },  
+    "scope": {  
+        "domain" : {  
+      "id" : "94710780204290"  
+         }  
+     }  
+    }  
+   }  
+}  
+</codeph>
+</codeblock>
+<p>Authenticate using Access Key credential scoped to a project using Project ID.</p>
+<codeblock>
+  <codeph>Accept: application/json  
+Content-Type: application/json  
+
+{ 
+"auth" : {
+  "identity" : {
+    "methods" : [
+    "accessKey"
+    ],
+      "accessKey" : {
+        "accessKey" : "{access_key}",
+        "secretKey" : "{secret_key}"
+        }
+      },
+    "scope": {
+    "project": {
+      "id" : "{project_id}"
+      }
+    }
+  }
+}
+</codeph>
+</codeblock>
+<p>XML</p>
+<p>Authenticate using password credential for a unscoped token.</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;auth xmlns="http://docs.openstack.org/identity/api/v3" xmlns:ns2="http://www.w3.org/2005/Atom"&gt;  
+    &lt;identity&gt;  
+         &lt;methods&gt;  
+             &lt;method&gt;password&lt;/method&gt;  
+         &lt;/methods&gt;  
+        &lt;password&gt;  
+            &lt;user name="haneeftest" password="haneeftest"/&gt;  
+        &lt;/password&gt;  
+    &lt;/identity&gt;    
+&lt;/auth&gt;  
+</codeph>
+</codeblock>
+<p>Authenticate using password credential for a project unscoped token.</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;auth xmlns="http://docs.openstack.org/identity/api/v3" xmlns:ns2="http://www.w3.org/2005/Atom"&gt;  
+    &lt;identity&gt;  
+         &lt;methods&gt;  
+             &lt;method&gt;password&lt;/method&gt;  
+         &lt;/methods&gt;  
+        &lt;password&gt;  
+            &lt;user name="haneeftest" password="haneeftest"/&gt;  
+        &lt;/password&gt;  
+    &lt;/identity&gt;    
+    &lt;scope&gt;  
+        &lt;project name="HPCSDeomonDomain_DevProject"&gt;  
+            &lt;domain name="HPCSDemonDomain"/&gt;  
+        &lt;/project&gt;  
+    &lt;/scope&gt;  
+&lt;/auth&gt;  
+</codeph>
+</codeblock>
+<p>Authenticate using access key credential domain scoped</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;auth xmlns="http://docs.openstack.org/identity/api/v3" xmlns:ns2="http://www.w3.org/2005/Atom"&gt;  
+    &lt;identity&gt;  
+         &lt;methods&gt;  
+             &lt;method&gt;accessKey&lt;/method&gt;  
+         &lt;/methods&gt;       
+          &lt;accessKey accessKey="quyNVz7gMtpG9QsLz0DUrqGocYbr5X+KGbkJsqzs" secretKey="VCAVE3Y6RL9K8ADVKMY5"/&gt;  
+    &lt;/identity&gt;    
+    &lt;scope&gt;  
+        &lt;domain name="HPCSDeomonDomain"&gt;  
+        &lt;/domain&gt;  
+    &lt;/scope&gt;  
+&lt;/auth&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>201 - Created</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<p>Unscoped token response</p>
+<codeblock>
+  <codeph>HTTP/1.1 201 Created  
+X-Subject-Token: HPAuth10_727ed1d52a4a5e838aa4bb342b87191b40894afcaff644ebaec2e14da543161f  
+Content-Type: application/json  
+Date: Tue, 12 Feb 2013 01:21:54 GMT  
+Transfer-Encoding: chunked  
+
+
+{  
+   "token":{  
+      "expires_at":"2013-05-23T10:03:32.085Z",  
+      "issued_at":"2013-05-22T17:10:06.817Z",  
+      "user":{  
+         "HP-IDM": {"status": "enabled"},  
+         "domain":{  
+            "links":{  
+               "self":"https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/domains/91787284686850"  
+            },  
+         "HP-IDM":{  
+            "domainStatus": "suspended:2",  
+            "domainStatusCode" : "21"  
+         },            
+            "id":"91787284686850",  
+            "name":"HPCSDemoDomain"  
+         },  
+         "links":{  
+            "self":"https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/35571560187320"  
+         },  
+         "id":"35571560187320",  
+         "name":"HPCSDemoUser"  
+      },  
+      "methods":[  
+         "password"  
+      ],  
+      "roles":[  
+         {  
+            "links":{  
+               "self":"https:region-a.geo-1.identity.hpcloudsvc.com//:35357/v3/roles/00000000004003"  
+            },  
+            "id":"00000000004003",  
+            "name":"domainadmin"  
+         },  
+         {  
+            "links":{  
+               "self":"https:region-a.geo-1.identity.hpcloudsvc.com//:35357/v3/roles/00000000004004"  
+            },  
+            "id":"00000000004004",  
+            "name":"domainuser"  
+         }  
+      ],  
+      "catalog":[  
+         {  
+            "type":"identity",  
+            "id":"100",  
+            "endpoints":[  
+               {  
+                  "links":{  
+                     "self":"https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/130_P"  
+                  },  
+                  "id":"130_P",  
+                  "interface":"public",  
+                  "region":"region-a.geo-1",  
+                  "url":"https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/",  
+                  "service_Id":"100"  
+               },  
+               {  
+                  "links":{  
+                     "self":"https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/131_P"  
+                  },  
+                  "id":"131_P",  
+                  "interface":"public",  
+                  "region":"region-a.geo-1",  
+                  "url":"https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/",  
+                  "service_Id":"100"  
+               },  
+               {  
+                  "links":{  
+                     "self":"https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/10000130_P"  
+                  },  
+                  "id":"10000130_P",  
+                  "interface":"public",  
+                  "region":"region-b.geo-1",  
+                  "url":"https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0/",  
+                  "service_Id":"100"  
+               },  
+               {  
+                  "links":{  
+                     "self":"https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/10000131_P"  
+                  },  
+                  "id":"10000131_P",  
+                  "interface":"public",  
+                  "region":"region-b.geo-1",  
+                  "url":"https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/",  
+                  "service_Id":"100"  
+               }  
+            ]  
+         }  
+      ],  
+      "extras": {}  
+   }  
+}  
+</codeph>
+</codeblock>
+<p>Project scoped tokens response</p>
+<codeblock>
+  <codeph>HTTP/1.1 201 Created  
+X-Subject-Token: HPAuth10_727ed1d52a4a5e838aa4bb342b87191b40894afcaff644ebaec2e14da543161f  
+Content-Type: application/json  
+Date: Tue, 12 Feb 2013 01:21:54 GMT  
+Transfer-Encoding: chunked  
+
+{  
+  "token": {  
+    "expires_at": "2013-05-24T03:39:53.428Z",  
+    "issued_at": "2013-05-23T15:39:53.428Z",  
+    "user": {  
+      "HP-IDM": {"status": "enabled"},  
+      "domain": {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/domains/91787284686850"  
+        },  
+        "HP-IDM":          {  
+            "domainStatus": "enabled"  
+         },        
+        "id": "91787284686850",  
+        "name": "HPCSDemoDomain"  
+      },  
+      "links": {  
+        "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/users/35571560187320"  
+      },  
+      "id": "35571560187320",  
+      "name": "HCSDemoUser"  
+    },  
+    "methods": [  
+      "password"  
+    ],  
+    "project": {  
+      "HP-IDM": {"status": "enabled"},  
+      "domain": {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/domains/91787284686850"  
+        },  
+        "HP-IDM":          {  
+            "domainStatus": "enabled"  
+         },         
+        "id": "91787284686850",  
+        "name": "HPCSDemoDomain"  
+      },  
+      "links": {  
+        "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/projects/61226762742230"  
+      },  
+      "id": "61226762742230",  
+      "name": "HPCSDemoProject"  
+    },  
+    "roles": [  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004014"  
+        },  
+        "id": "00000000004014",  
+        "name": "cdn-admin"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004003"  
+        },  
+        "id": "00000000004003",  
+        "name": "domainadmin"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004013"  
+        },  
+        "id": "00000000004013",  
+        "name": "block-admin"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004024"  
+        },  
+        "id": "00000000004024",  
+        "name": "user"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004004"  
+        },  
+        "id": "00000000004004",  
+        "name": "domainuser"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004025"  
+        },  
+        "id": "00000000004025",  
+        "name": "sysadmin"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004022"  
+        },  
+        "id": "00000000004022",  
+        "name": "Admin"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004016"  
+        },  
+        "id": "00000000004016",  
+        "name": "netadmin"  
+      }  
+    ],  
+    "catalog": [  
+      {  
+        "type": "network",  
+        "id": "170",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1702_P"  
+            },  
+            "id": "1702_P",  
+            "interface": "public",  
+            "region": "az-1.region-a.geo-1",  
+            "url": "",  
+            "service_Id": "170"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1703_P"  
+            },  
+            "id": "1703_P",  
+            "interface": "public",  
+            "region": "az-2.region-a.geo-1",  
+            "url": "",  
+            "service_Id": "170"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1704_P"  
+            },  
+            "id": "1704_P",  
+            "interface": "public",  
+            "region": "az-3.region-a.geo-1",  
+            "url": "",  
+            "service_Id": "170"  
+          }  
+        ]  
+      },  
+      {  
+        "type": "hpext:cdn",  
+        "id": "150",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/150_P"  
+            },  
+            "id": "150_P",  
+            "interface": "public",  
+            "region": "region-a.geo-1",  
+            "url": "https://region-a.geo-1.cdnmgmt.hpcloudsvc.com/v1.0/61226762742230",  
+            "service_Id": "150"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1502_P"  
+            },  
+            "id": "1502_P",  
+            "interface": "public",  
+            "region": "region-b.geo-1",  
+            "url": "https://region-b.geo-1.cdnmgmt.hpcloudsvc.com/v1.0/61226762742230",  
+            "service_Id": "150"  
+          }  
+        ]  
+      },  
+      {  
+        "type": "object-store",  
+        "id": "110",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/120_P"  
+            },  
+            "id": "120_P",  
+            "interface": "public",  
+            "region": "region-a.geo-1",  
+            "url": "https://region-a.geo-1.objects.hpcloudsvc.com/v1/61226762742230",  
+            "service_Id": "110"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1102_P"  
+            },  
+            "id": "1102_P",  
+            "interface": "public",  
+            "region": "region-b.geo-1",  
+            "url": "https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/61226762742230",  
+            "service_Id": "110"  
+          }  
+        ]  
+      },  
+      {  
+        "type": "identity",  
+        "id": "100",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/130_P"  
+            },  
+            "id": "130_P",  
+            "interface": "public",  
+            "region": "region-a.geo-1",  
+            "url": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/",  
+            "service_Id": "100"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/131_P"  
+            },  
+            "id": "131_P",  
+            "interface": "public",  
+            "region": "region-a.geo-1",  
+            "url": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/",  
+            "service_Id": "100"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/10000130_P"  
+            },  
+            "id": "10000130_P",  
+            "interface": "public",  
+            "region": "region-b.geo-1",  
+            "url": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0/",  
+            "service_Id": "100"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/10000131_P"  
+            },  
+            "id": "10000131_P",  
+            "interface": "public",  
+            "region": "region-b.geo-1",  
+            "url": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/",  
+            "service_Id": "100"  
+          }  
+        ]  
+      },  
+      {  
+        "type": "image",  
+        "id": "140",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/160_P"  
+            },  
+            "id": "160_P",  
+            "interface": "public",  
+            "region": "az-1.region-a.geo-1",  
+            "url": "https://glance1.uswest.hpcloud.net:9292/v1.0",  
+            "service_Id": "140"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/170_P"  
+            },  
+            "id": "170_P",  
+            "interface": "public",  
+            "region": "az-2.region-a.geo-1",  
+            "url": "https://glance2.uswest.hpcloud.net:9292/v1.0",  
+            "service_Id": "140"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/180_P"  
+            },  
+            "id": "180_P",  
+            "interface": "public",  
+            "region": "az-3.region-a.geo-1",  
+            "url": "https://glance3.uswest.hpcloud.net:9292/v1.0",  
+            "service_Id": "140"  
+          }  
+        ]  
+      },  
+      {  
+        "type": "volume",  
+        "id": "130",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/140_P"  
+            },  
+            "id": "140_P",  
+            "interface": "public",  
+            "region": "az-1.region-a.geo-1",  
+            "url": "https://az-1.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230",  
+            "service_Id": "130"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/141_P"  
+            },  
+            "id": "141_P",  
+            "interface": "public",  
+            "region": "az-2.region-a.geo-1",  
+            "url": "https://az-2.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230",  
+            "service_Id": "130"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/142_P"  
+            },  
+            "id": "142_P",  
+            "interface": "public",  
+            "region": "az-3.region-a.geo-1",  
+            "url": "https://az-3.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230",  
+            "service_Id": "130"  
+          }  
+        ]  
+      },  
+      {  
+        "type": "compute",  
+        "id": "120",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/100_P"  
+            },  
+            "id": "100_P",  
+            "interface": "public",  
+            "region": "az-1.region-a.geo-1",  
+            "url": "https://az-1.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230",  
+            "service_Id": "120"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/110_P"  
+            },  
+            "id": "110_P",  
+            "interface": "public",  
+            "region": "az-2.region-a.geo-1",  
+            "url": "https://az-2.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230",  
+            "service_Id": "120"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/111_P"  
+            },  
+            "id": "111_P",  
+            "interface": "public",  
+            "region": "az-3.region-a.geo-1",  
+            "url": "https://az-3.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230",  
+            "service_Id": "120"  
+          }  
+        ]  
+      }  
+    ],  
+    "extras": {}  
+  }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<p>XML response unscoped token</p>
+<codeblock>
+  <codeph>HTTP/1.1 201 Created  
+X-Subject-Token: HPAuth10_727ed1d52a4a5e838aa4bb342b87191b40894afcaff644ebaec2e14da543161f  
+Content-Type: application/xml  
+Date: Tue, 12 Feb 2013 01:21:54 GMT  
+Transfer-Encoding: chunked  
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;token xmlns="http://docs.openstack.org/identity/api/v3" xmlns:ns2="http://www.w3.org/2005/Atom"&gt;  
+  &lt;expires_at&gt;  
+    2013-05-23T10:12:44.412Z  
+  &lt;/expires_at&gt;  
+  &lt;issued_at&gt;  
+    2013-05-22T17:10:06.817Z  
+  &lt;/issued_at&gt;  
+  &lt;methods&gt;  
+    &lt;method&gt;  
+      password  
+    &lt;/method&gt;  
+  &lt;/methods&gt;  
+  &lt;catalog&gt;  
+    &lt;service id="100" type="identity"&gt;  
+      &lt;endpoints&gt;  
+        &lt;endpoint id="130_P" interface="public" region="region-a.geo-1" service_id="100" url="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/"&gt;  
+          &lt;links&gt;  
+            &lt;ns2:link href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/130_P" rel="self"/&gt;  
+          &lt;/links&gt;  
+        &lt;/endpoint&gt;  
+        &lt;endpoint id="131_P" interface="public" region="region-a.geo-1" service_id="100" url="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/"&gt;  
+          &lt;links&gt;  
+            &lt;ns2:link href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/131_P" rel="self"/&gt;  
+          &lt;/links&gt;  
+        &lt;/endpoint&gt;  
+        &lt;endpoint id="10000130_P" interface="public" region="region-b.geo-1" service_id="100" url="https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0/"&gt;  
+          &lt;links&gt;  
+            &lt;ns2:link href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/10000130_P" rel="self"/&gt;  
+          &lt;/links&gt;  
+        &lt;/endpoint&gt;  
+        &lt;endpoint id="10000131_P" interface="public" region="region-b.geo-1" service_id="100" url="https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/"&gt;  
+          &lt;links&gt;  
+            &lt;ns2:link href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/10000131_P" rel="self"/&gt;  
+          &lt;/links&gt;  
+        &lt;/endpoint&gt;  
+      &lt;/endpoints&gt;  
+    &lt;/service&gt;  
+  &lt;/catalog&gt;  
+  &lt;roles&gt;  
+    &lt;role id="00000000004003" name="domainadmin"&gt;  
+      &lt;links&gt;  
+        &lt;ns2:link href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004003" rel="self"/&gt;  
+      &lt;/links&gt;  
+    &lt;/role&gt;  
+    &lt;role id="00000000004004" name="domainuser"&gt;  
+      &lt;links&gt;  
+        &lt;ns2:link href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004004" rel="self"/&gt;  
+      &lt;/links&gt;  
+    &lt;/role&gt;  
+  &lt;/roles&gt;  
+  &lt;user id="35571560187320" name="HPCSDemoUser"&gt;  
+    &lt;HP-IDM status="enabled"/&gt;  
+    &lt;domain id="91787284686850" name="HPCSDemoDomain"&gt;  
+      &lt;links&gt;  
+        &lt;ns2:link href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/domains/91787284686850" rel="self"/&gt;  
+      &lt;/links&gt;  
+      &lt;HP-IDM&gt;  
+         &lt;domainStatus&gt;suspended:2&lt;/domainStatus&gt;  
+         &lt;domainStatusCode&gt;21&lt;/domainStatusCode&gt;  
+      &lt;/HP-IDM&gt;  
+    &lt;/domain&gt;  
+    &lt;links&gt;  
+      &lt;ns2:link href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/35571560187320" rel="self"/&gt;  
+    &lt;/links&gt;  
+  &lt;/user&gt;  
+  &lt;extras/&gt;  
+&lt;/token&gt;  
+</codeph>
+</codeblock>
+<p>XML response project scoped token</p>
+<codeblock>
+  <codeph>HTTP/1.1 201 Created  
+X-Subject-Token: HPAuth10_727ed1d52a4a5e838aa4bb342b87191b40894afcaff644ebaec2e14da543161f  
+Content-Type: application/xml  
+Date: Tue, 12 Feb 2013 01:21:54 GMT  
+Transfer-Encoding: chunked  
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;token xmlns="http://docs.openstack.org/identity/api/v3" xmlns:ns2="http://www.w3.org/2005/Atom"&gt;  
+    &lt;expires_at&gt;2013-05-24T04:03:37.115Z&lt;/expires_at&gt;  
+    &lt;issued_at&gt;2013-05-23T15:39:53.428Z&lt;/issued_at&gt;  
+    &lt;methods&gt;  
+        &lt;method&gt;password&lt;/method&gt;  
+    &lt;/methods&gt;  
+    &lt;project id="61226762742230" name="HPCSDemoProject"&gt;  
+        &lt;HP-IDM status="enabled"/&gt;  
+        &lt;domain id="91787284686850" name="HPCSDemoDomain"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/domains/91787284686850" /&gt;  
+            &lt;/links&gt;  
+            &lt;HP-IDM&gt;  
+                &lt;domainStatus&gt;enabled&lt;/domainStatus&gt;                
+            &lt;/HP-IDM&gt;  
+        &lt;/domain&gt;  
+        &lt;links&gt;  
+            &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/61226762742230" /&gt;  
+        &lt;/links&gt;  
+    &lt;/project&gt;  
+    &lt;catalog&gt;  
+        &lt;service type="network" id="170"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="1702_P" interface="public" region="az-1.region-a.geo-1" url="" service_id="170"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1702_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="1703_P" interface="public" region="az-2.region-a.geo-1" url="" service_id="170"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1703_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="1704_P" interface="public" region="az-3.region-a.geo-1" url="" service_id="170"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1704_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+        &lt;service type="hpext:cdn" id="150"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="150_P" interface="public" region="region-a.geo-1" url="https://region-a.geo-1.cdnmgmt.hpcloudsvc.com/v1.0/61226762742230" service_id="150"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/150_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="1502_P" interface="public" region="region-b.geo-1" url="https://region-b.geo-1.cdnmgmt.hpcloudsvc.com/v1.0/61226762742230" service_id="150"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1502_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+        &lt;service type="object-store" id="110"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="120_P" interface="public" region="region-a.geo-1" url="https://region-a.geo-1.objects.hpcloudsvc.com/v1/61226762742230" service_id="110"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/120_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="1102_P" interface="public" region="region-b.geo-1" url="https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/61226762742230" service_id="110"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1102_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+        &lt;service type="identity" id="100"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="130_P" interface="public" region="region-a.geo-1" url="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/" service_id="100"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/130_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="131_P" interface="public" region="region-a.geo-1" url="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/" service_id="100"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/131_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="10000130_P" interface="public" region="region-b.geo-1" url="https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0/" service_id="100"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/10000130_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="10000131_P" interface="public" region="region-b.geo-1" url="https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/" service_id="100"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/10000131_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+        &lt;service type="image" id="140"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="160_P" interface="public" region="az-1.region-a.geo-1" url="https://glance1.uswest.hpcloud.net:9292/v1.0" service_id="140"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/160_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="170_P" interface="public" region="az-2.region-a.geo-1" url="https://glance2.uswest.hpcloud.net:9292/v1.0" service_id="140"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/170_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="180_P" interface="public" region="az-3.region-a.geo-1" url="https://glance3.uswest.hpcloud.net:9292/v1.0" service_id="140"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/180_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+        &lt;service type="volume" id="130"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="140_P" interface="public" region="az-1.region-a.geo-1" url="https://az-1.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230" service_id="130"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/140_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="141_P" interface="public" region="az-2.region-a.geo-1" url="https://az-2.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230" service_id="130"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/141_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="142_P" interface="public" region="az-3.region-a.geo-1" url="https://az-3.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230" service_id="130"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/142_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+        &lt;service type="compute" id="120"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="100_P" interface="public" region="az-1.region-a.geo-1" url="https://az-1.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230" service_id="120"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/100_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="110_P" interface="public" region="az-2.region-a.geo-1" url="https://az-2.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230" service_id="120"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/110_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="111_P" interface="public" region="az-3.region-a.geo-1" url="https://az-3.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230" service_id="120"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/111_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+    &lt;/catalog&gt;  
+    &lt;roles&gt;  
+        &lt;role id="00000000004014" name="cdn-admin"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004014" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004003" name="domainadmin"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004003" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004013" name="block-admin"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004013" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004024" name="user"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004024" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004004" name="domainuser"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004004" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004025" name="sysadmin"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004025" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004022" name="Admin"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004022" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004016" name="netadmin"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004016" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+    &lt;/roles&gt;  
+    &lt;user id="35571560187320" name="HPCSDemoUser"&gt;  
+        &lt;HP-IDM status="enabled"/&gt;  
+        &lt;domain id="91787284686850" name="HPCSDemoDomain"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/domains/91787284686850" /&gt;  
+            &lt;/links&gt;  
+        &lt;/domain&gt;  
+        &lt;links&gt;  
+            &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/35571560187320" /&gt;  
+        &lt;/links&gt;  
+    &lt;/user&gt;  
+    &lt;extras/&gt;  
+&lt;/token&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Error Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Status Code</entry>
+  <entry align="left">Description</entry>
+  <entry align="left">Reasons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">400</entry>
+  <entry align="left">Bad Request</entry>
+  <entry align="left">Malformed request in URI or request body.</entry>
+</row>
+<row>
+<entry align="left">401</entry>
+  <entry align="left">Unauthorized</entry>
+  <entry align="left">This status code is returned when either authentication has not been performed, the provided X-Auth-Token is invalid or authentication credentials are invalid (including the user, project or domain having been disabled).</entry>
+</row>
+<row>
+<entry align="left">403</entry>
+  <entry align="left">Forbidden</entry>
+  <entry align="left">This status code is returned when the request is successfully authenticated but not authorized to perform the requested action.</entry>
+</row>
+<row>
+<entry align="left">500</entry>
+  <entry align="left">Internal Server Error</entry>
+  <entry align="left">The server encountered a problem while processing the request.</entry>
+</row>
+<row>
+<entry align="left">429</entry>
+  <entry align="left">TooManyRequests</entry>
+  <entry align="left">The request was rate limited. Please refer to the Rate Limits section for various limits.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{  
+"details": "Scoped token is not allowed when scoped domain is suspended",  
+"code": 401,  
+"message": "UNAUTHORIZED",  
+"title": "UNAUTHORIZED"  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;error xmlns="http://docs.openstack.org/identity/api/v3" xmlns:ns2="http://www.w3.org/2005/Atom" code="404" message=" Authentication Method is required" title=" Authentication Method is required"&gt;  
+   &lt;details&gt;Supported methods are [password, token, accessKey]&lt;/details&gt;  
+&lt;/error&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<p>
+  <b>
+    <i>Authenticate with Username/Password and Project ID</i>
+  </b>
+</p>
+<codeblock>
+  <codeph>curl {BaseUri}/v3/auth/tokens -s -i -k -X POST -H 'Content-type:application/json' -H 'Accept:application/json' -d '{"auth":{"identity":{"methods": ["password"],"password":{"user":{"name":"{username}","password":"{password}"}}},"scope":{"project":{"id":"{project_id}"}}}}' 
+</codeph>
+</codeblock>
+<p>
+  <b>
+    <i>Authenticate with Access Keys and Project ID</i>
+  </b>
+</p>
+<codeblock>
+  <codeph>curl {BaseURI}/v3/auth/tokens -s -i -k -X POST -H "Content-Type: application/json" -d '{"auth":{"identity":{"methods":["accessKey"],"accessKey":{"accessKey":"{access_key}","secretKey":"{secret_key}"}},"scope":{"project":{"id":"{project_id}"}}}}'
+</codeph>
+</codeblock>
+</section>
+<section id="rescope_token"> <title>3.4.3.2 Rescope Token</title>
+</section>
+<section id="post-v3authtokens2"> <title>POST /v3/auth/tokens</title>
+<p>This API provides the ability to re-scope a valid token with another project. An existing unexpired token, regardless of its currently scoped or not, can be scoped to another project as long as the user has valid association with that project.</p>
+<p>Re-scoping of token can be done from</p>
+<ul>
+<li>Unscoped token to a scoped token for specific project </li>
+<li>Scoped token from one project to another project </li>
+<li>Scoped token to unscoped token (with no projectId and projectName specified in request). Re-scoping of token does not alter the token expiration time. Rescoping the token returns different token.</li>
+</ul>
+</section>
+<section id="service-catalog2"> <title>Service Catalog:</title>
+<p>In case of un-scoped token request, the service catalog is going to include global active endpoint templates as endpoints in its data. In case of scoped token request, the service catalog is going to include project specific endpoints as well as global active endpoint templates as endpoints.</p>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<p>None</p>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>See schema file for more details on the request and response data structure.</p>
+<p>JSON</p>
+<p>Domain Scoping</p>
+<codeblock>
+  <codeph>Accept-Encoding: gzip,deflate  
+Accept: application/json  
+Content-Type: application/json  
+Content-Length: 154  
+
+{  
+    "auth": {  
+        "identity": {  
+            "methods": ["token"],  
+            "token": {  
+                "id": "HPAuth_332fa874565d61c87f50cf37af955cf5e95f1e174c95776855780f584b3386e3"  
+            }  
+        },  
+        "scope": {  
+            "domain": {  
+                "id": "345435435435435"               
+            }  
+        }  
+    }  
+}  
+</codeph>
+</codeblock>
+<p>Project Scoping</p>
+<codeblock>
+  <codeph>Accept-Encoding: gzip,deflate  
+Accept: application/json  
+Content-Type: application/json  
+Content-Length: 154  
+
+{  
+    "auth": {  
+        "identity": {  
+            "methods": ["token"],  
+            "token": {  
+                "id": "--token-id--"  
+            }  
+        },  
+        "scope": {  
+            "project": {          
+                "name": "HPCSDemoDomain_dev_Project",  
+           "domain": {  
+                       "id": "345435435435435"               
+            }  
+            }  
+        }  
+    }  
+}  
+</codeph>
+</codeblock>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>201 - Created</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>HTTP/1.1 201 Created  
+X-Subject-Token: HPAuth10_727ed1d52a4a5e838aa4bb342b87191b40894afcaff644ebaec2e14da543161f  
+Content-Type: application/json  
+Date: Tue, 12 Feb 2013 01:21:54 GMT  
+Transfer-Encoding: chunked  
+
+{  
+  "token": {  
+    "expires_at": "2013-05-24T03:39:53.428Z",  
+    "issued_at": "2013-05-23T15:39:53.428Z",  
+    "user": {  
+      "HP-IDM": {"status": "enabled"},  
+      "domain": {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/domains/91787284686850"  
+        },  
+         "HP-IDM":{  
+            "domainStatus": "enabled"  
+         },         
+        "id": "91787284686850",  
+        "name": "HPCSDemoDomain"  
+      },  
+      "links": {  
+        "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/users/35571560187320"  
+      },  
+      "id": "35571560187320",  
+      "name": "HCSDemoUser"  
+    },  
+    "methods": [  
+      "password"  
+    ],  
+    "project": {  
+      "HP-IDM": {"status": "enabled"},  
+      "domain": {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/domains/91787284686850"  
+        },  
+         "HP-IDM":{  
+            "domainStatus": "enabled"  
+         },          
+        "id": "91787284686850",  
+        "name": "HPCSDemoDomain"  
+      },  
+      "links": {  
+        "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/projects/61226762742230"  
+      },  
+      "id": "61226762742230",  
+      "name": "HPCSDemoProject"  
+    },  
+    "roles": [  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004014"  
+        },  
+        "id": "00000000004014",  
+        "name": "cdn-admin"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004003"  
+        },  
+        "id": "00000000004003",  
+        "name": "domainadmin"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004013"  
+        },  
+        "id": "00000000004013",  
+        "name": "block-admin"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004024"  
+        },  
+        "id": "00000000004024",  
+        "name": "user"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004004"  
+        },  
+        "id": "00000000004004",  
+        "name": "domainuser"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004025"  
+        },  
+        "id": "00000000004025",  
+        "name": "sysadmin"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004022"  
+        },  
+        "id": "00000000004022",  
+        "name": "Admin"  
+      },  
+      {  
+        "links": {  
+          "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004016"  
+        },  
+        "id": "00000000004016",  
+        "name": "netadmin"  
+      }  
+    ],  
+    "catalog": [  
+      {  
+        "type": "network",  
+        "id": "170",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1702_P"  
+            },  
+            "id": "1702_P",  
+            "interface": "public",  
+            "region": "az-1.region-a.geo-1",  
+            "url": "",  
+            "service_Id": "170"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1703_P"  
+            },  
+            "id": "1703_P",  
+            "interface": "public",  
+            "region": "az-2.region-a.geo-1",  
+            "url": "",  
+            "service_Id": "170"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1704_P"  
+            },  
+            "id": "1704_P",  
+            "interface": "public",  
+            "region": "az-3.region-a.geo-1",  
+            "url": "",  
+            "service_Id": "170"  
+          }  
+        ]  
+      },  
+      {  
+        "type": "hpext:cdn",  
+        "id": "150",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/150_P"  
+            },  
+            "id": "150_P",  
+            "interface": "public",  
+            "region": "region-a.geo-1",  
+            "url": "https://region-a.geo-1.cdnmgmt.hpcloudsvc.com/v1.0/61226762742230",  
+            "service_Id": "150"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1502_P"  
+            },  
+            "id": "1502_P",  
+            "interface": "public",  
+            "region": "region-b.geo-1",  
+            "url": "https://region-b.geo-1.cdnmgmt.hpcloudsvc.com/v1.0/61226762742230",  
+            "service_Id": "150"  
+          }  
+        ]  
+      },  
+      {  
+        "type": "object-store",  
+        "id": "110",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/120_P"  
+            },  
+            "id": "120_P",  
+            "interface": "public",  
+            "region": "region-a.geo-1",  
+            "url": "https://region-a.geo-1.objects.hpcloudsvc.com/v1/61226762742230",  
+            "service_Id": "110"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1102_P"  
+            },  
+            "id": "1102_P",  
+            "interface": "public",  
+            "region": "region-b.geo-1",  
+            "url": "https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/61226762742230",  
+            "service_Id": "110"  
+          }  
+        ]  
+      },  
+      {  
+        "type": "identity",  
+        "id": "100",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/130_P"  
+            },  
+            "id": "130_P",  
+            "interface": "public",  
+            "region": "region-a.geo-1",  
+            "url": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/",  
+            "service_Id": "100"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/131_P"  
+            },  
+            "id": "131_P",  
+            "interface": "public",  
+            "region": "region-a.geo-1",  
+            "url": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/",  
+            "service_Id": "100"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/10000130_P"  
+            },  
+            "id": "10000130_P",  
+            "interface": "public",  
+            "region": "region-b.geo-1",  
+            "url": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0/",  
+            "service_Id": "100"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/10000131_P"  
+            },  
+            "id": "10000131_P",  
+            "interface": "public",  
+            "region": "region-b.geo-1",  
+            "url": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/",  
+            "service_Id": "100"  
+          }  
+        ]  
+      },  
+      {  
+        "type": "image",  
+        "id": "140",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/160_P"  
+            },  
+            "id": "160_P",  
+            "interface": "public",  
+            "region": "az-1.region-a.geo-1",  
+            "url": "https://glance1.uswest.hpcloud.net:9292/v1.0",  
+            "service_Id": "140"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/170_P"  
+            },  
+            "id": "170_P",  
+            "interface": "public",  
+            "region": "az-2.region-a.geo-1",  
+            "url": "https://glance2.uswest.hpcloud.net:9292/v1.0",  
+            "service_Id": "140"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/180_P"  
+            },  
+            "id": "180_P",  
+            "interface": "public",  
+            "region": "az-3.region-a.geo-1",  
+            "url": "https://glance3.uswest.hpcloud.net:9292/v1.0",  
+            "service_Id": "140"  
+          }  
+        ]  
+      },  
+      {  
+        "type": "volume",  
+        "id": "130",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/140_P"  
+            },  
+            "id": "140_P",  
+            "interface": "public",  
+            "region": "az-1.region-a.geo-1",  
+            "url": "https://az-1.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230",  
+            "service_Id": "130"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/141_P"  
+            },  
+            "id": "141_P",  
+            "interface": "public",  
+            "region": "az-2.region-a.geo-1",  
+            "url": "https://az-2.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230",  
+            "service_Id": "130"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/142_P"  
+            },  
+            "id": "142_P",  
+            "interface": "public",  
+            "region": "az-3.region-a.geo-1",  
+            "url": "https://az-3.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230",  
+            "service_Id": "130"  
+          }  
+        ]  
+      },  
+      {  
+        "type": "compute",  
+        "id": "120",  
+        "endpoints": [  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/100_P"  
+            },  
+            "id": "100_P",  
+            "interface": "public",  
+            "region": "az-1.region-a.geo-1",  
+            "url": "https://az-1.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230",  
+            "service_Id": "120"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/110_P"  
+            },  
+            "id": "110_P",  
+            "interface": "public",  
+            "region": "az-2.region-a.geo-1",  
+            "url": "https://az-2.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230",  
+            "service_Id": "120"  
+          },  
+          {  
+            "links": {  
+              "self": "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/111_P"  
+            },  
+            "id": "111_P",  
+            "interface": "public",  
+            "region": "az-3.region-a.geo-1",  
+            "url": "https://az-3.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230",  
+            "service_Id": "120"  
+          }  
+        ]  
+      }  
+    ],  
+    "extras": {}  
+  }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>HTTP/1.1 201 Created  
+X-Subject-Token: HPAuth10_727ed1d52a4a5e838aa4bb342b87191b40894afcaff644ebaec2e14da543161f  
+Content-Type: application/xml  
+Date: Tue, 12 Feb 2013 01:21:54 GMT  
+Transfer-Encoding: chunked  
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;token xmlns="http://docs.openstack.org/identity/api/v3" xmlns:ns2="http://www.w3.org/2005/Atom"&gt;  
+    &lt;expires_at&gt;2013-05-24T04:03:37.115Z&lt;/expires_at&gt;  
+    &lt;issued_at&gt;2013-05-23T15:39:53.428Z&lt;/issued_at&gt;  
+    &lt;methods&gt;  
+        &lt;method&gt;password&lt;/method&gt;  
+    &lt;/methods&gt;  
+    &lt;project id="61226762742230" name="HPCSDemoProject"&gt;  
+        &lt;HP-IDM status="enabled"/&gt;  
+        &lt;domain id="91787284686850" name="HPCSDemoDomain"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/domains/91787284686850" /&gt;  
+            &lt;/links&gt;  
+            &lt;HP-IDM&gt;  
+                &lt;domainStatus&gt;enabled&lt;/domainStatus&gt;                
+            &lt;/HP-IDM&gt;  
+        &lt;/domain&gt;  
+        &lt;links&gt;  
+            &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/projects/61226762742230" /&gt;  
+        &lt;/links&gt;  
+    &lt;/project&gt;  
+    &lt;catalog&gt;  
+        &lt;service type="network" id="170"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="1702_P" interface="public" region="az-1.region-a.geo-1" url="" service_id="170"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1702_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="1703_P" interface="public" region="az-2.region-a.geo-1" url="" service_id="170"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1703_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="1704_P" interface="public" region="az-3.region-a.geo-1" url="" service_id="170"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1704_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+        &lt;service type="hpext:cdn" id="150"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="150_P" interface="public" region="region-a.geo-1" url="https://region-a.geo-1.cdnmgmt.hpcloudsvc.com/v1.0/61226762742230" service_id="150"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/150_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="1502_P" interface="public" region="region-b.geo-1" url="https://region-b.geo-1.cdnmgmt.hpcloudsvc.com/v1.0/61226762742230" service_id="150"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1502_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+        &lt;service type="object-store" id="110"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="120_P" interface="public" region="region-a.geo-1" url="https://region-a.geo-1.objects.hpcloudsvc.com/v1/61226762742230" service_id="110"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/120_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="1102_P" interface="public" region="region-b.geo-1" url="https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/61226762742230" service_id="110"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/1102_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+        &lt;service type="identity" id="100"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="130_P" interface="public" region="region-a.geo-1" url="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/" service_id="100"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/130_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="131_P" interface="public" region="region-a.geo-1" url="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/" service_id="100"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/131_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="10000130_P" interface="public" region="region-b.geo-1" url="https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0/" service_id="100"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/10000130_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="10000131_P" interface="public" region="region-b.geo-1" url="https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/" service_id="100"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/10000131_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+        &lt;service type="image" id="140"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="160_P" interface="public" region="az-1.region-a.geo-1" url="https://glance1.uswest.hpcloud.net:9292/v1.0" service_id="140"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/160_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="170_P" interface="public" region="az-2.region-a.geo-1" url="https://glance2.uswest.hpcloud.net:9292/v1.0" service_id="140"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/170_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="180_P" interface="public" region="az-3.region-a.geo-1" url="https://glance3.uswest.hpcloud.net:9292/v1.0" service_id="140"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/180_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+        &lt;service type="volume" id="130"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="140_P" interface="public" region="az-1.region-a.geo-1" url="https://az-1.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230" service_id="130"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/140_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="141_P" interface="public" region="az-2.region-a.geo-1" url="https://az-2.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230" service_id="130"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/141_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="142_P" interface="public" region="az-3.region-a.geo-1" url="https://az-3.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230" service_id="130"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/142_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+        &lt;service type="compute" id="120"&gt;  
+            &lt;endpoints&gt;  
+                &lt;endpoint id="100_P" interface="public" region="az-1.region-a.geo-1" url="https://az-1.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230" service_id="120"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/100_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="110_P" interface="public" region="az-2.region-a.geo-1" url="https://az-2.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230" service_id="120"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/110_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+                &lt;endpoint id="111_P" interface="public" region="az-3.region-a.geo-1" url="https://az-3.region-a.geo-1.compute.hpcloudsvc.com/v1.1/61226762742230" service_id="120"&gt;  
+                    &lt;links&gt;  
+                        &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/111_P" /&gt;  
+                    &lt;/links&gt;  
+                &lt;/endpoint&gt;  
+            &lt;/endpoints&gt;  
+        &lt;/service&gt;  
+    &lt;/catalog&gt;  
+    &lt;roles&gt;  
+        &lt;role id="00000000004014" name="cdn-admin"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004014" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004003" name="domainadmin"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004003" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004013" name="block-admin"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004013" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004024" name="user"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004024" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004004" name="domainuser"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004004" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004025" name="sysadmin"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004025" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004022" name="Admin"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004022" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+        &lt;role id="00000000004016" name="netadmin"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/roles/00000000004016" /&gt;  
+            &lt;/links&gt;  
+        &lt;/role&gt;  
+    &lt;/roles&gt;  
+    &lt;user id="35571560187320" name="HPCSDemoUser"&gt;  
+        &lt;HP-IDM status="enabled"/&gt;  
+        &lt;domain id="91787284686850" name="HPCSDemoDomain"&gt;  
+            &lt;links&gt;  
+                &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/domains/91787284686850" /&gt;  
+            &lt;/links&gt;  
+            &lt;hpext&gt;  
+                &lt;domainStatus&gt;enabled&lt;/domainStatus&gt;                
+            &lt;/hpext&gt;               
+        &lt;/domain&gt;  
+        &lt;links&gt;  
+            &lt;ns2:link rel="self" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/users/35571560187320" /&gt;  
+        &lt;/links&gt;  
+    &lt;/user&gt;  
+    &lt;extras/&gt;  
+&lt;/token&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Error Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Status Code</entry>
+  <entry align="left">Description</entry>
+  <entry align="left">Reasons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">400</entry>
+  <entry align="left">Bad Request</entry>
+  <entry align="left">Malformed request in URI or request body.</entry>
+</row>
+<row>
+<entry align="left">401</entry>
+  <entry align="left">Unauthorized</entry>
+  <entry align="left">This status code is returned when either authentication has not been performed, the provided X-Auth-Token is invalid or authentication credentials are invalid (including the user, project or domain having been disabled). Invalid token returns 401</entry>
+</row>
+<row>
+<entry align="left">403</entry>
+  <entry align="left">Forbidden</entry>
+  <entry align="left">This status code is returned when the request is successfully authenticated but not authorized to perform the requested action.</entry>
+</row>
+<row>
+<entry align="left">500</entry>
+  <entry align="left">Internal Server Error</entry>
+  <entry align="left">The server encountered a problem while processing the request.</entry>
+</row>
+<row>
+<entry align="left">503</entry>
+  <entry align="left">Service Unavailable</entry>
+  <entry align="left">The server is unavailable to process the request.</entry>
+</row>
+<row>
+<entry align="left">429</entry>
+  <entry align="left">TooManyRequests</entry>
+  <entry align="left">The request was rate limited. Please refer to the Rate Limits section for various limits.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{  
+  "error" : {  
+    "details" : "Invalid token",  
+    "code" : 401,  
+    "message" : "Invalid token",  
+    "otherAttributes" : {  
+    },  
+    "title" : "UNAUTHORIZED"  
+  }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;error code="401" message="Invalid Token" title="UNAUTHORIZED" xmlns="http://docs.openstack.org/identity/api/v3" xmlns:ns2="http://www.w3.org/2005/Atom"&gt;  
+  &lt;details&gt;  
+    Invalid token  
+  &lt;/details&gt;  
+&lt;/error&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -k -H "Content-Type: application/json" -d '{"auth": {"identity": {"methods": ["token"],"token": {  "id": "HPAuth_a6f32cefceb798cedd3183c71c07a3d169c8ad613e0c951ae5f426c015dd3210"}}}}' -X POST https://region-a.geo-1.identity.hpcloudsvc.com:35357/v3/auth/tokens  
+</codeph>
+</codeblock>
+</section>
+<section id="revoke_token"> <title>3.4.3.3 Revoke Token</title>
+</section>
+<section id="delete-v3authtokens"> <title>DELETE /v3/auth/tokens</title>
+<p>This API is used to revoke an authentication token. This operation does not require a request body. Once a token has been revoked,  attempts to validate the token  will fail with a 404 (item not found) as the token no longer exists. Trying to revoke a non existing token, including one which has expired will also return a 401 (Unauthorized). Users revoke only their own tokens. Domain Admin can revoke their domain users token</p>
+<p>
+  <b>HTTP Headers</b>
+</p>
+<table>
+<tgroup cols="4">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<colspec colname="col4"/>
+<thead>
+<row>
+<entry align="left">Header Name</entry>
+  <entry align="left">Description</entry>
+  <entry align="left">Required</entry>
+  <entry align="left">Comments</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">X-Auth-Token</entry>
+  <entry align="left">Callers authorization token</entry>
+  <entry align="left">Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left">X-Subject-Token</entry>
+  <entry align="left">Token to be deleted</entry>
+  <entry align="left">Y</entry>
+  <entry align="left"/>
+</row>
+<row>
+<entry align="left">Accept</entry>
+  <entry align="left">Content Type of response</entry>
+  <entry align="left">N</entry>
+  <entry align="left">Defaults to Json</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<p>None</p>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>204 - No Content</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>
+  <b>Error Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Status Code</entry>
+  <entry align="left">Description</entry>
+  <entry align="left">Reasons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">400</entry>
+  <entry align="left">Bad Request</entry>
+  <entry align="left">Malformed request in URI or request body.</entry>
+</row>
+<row>
+<entry align="left">401</entry>
+  <entry align="left">Unauthorized</entry>
+  <entry align="left">This status code is returned when either authentication has not been performed, the provided X-Auth-Token is invalid or authentication credentials are invalid (including the user, project or domain having been disabled).</entry>
+</row>
+<row>
+<entry align="left">403</entry>
+  <entry align="left">Forbidden</entry>
+  <entry align="left">This status code is returned when the request is successfully authenticated but not authorized to perform the requested action.</entry>
+</row>
+<row>
+<entry align="left">429</entry>
+  <entry align="left">TooManyRequests</entry>
+  <entry align="left">The request was rate limited. Please refer to the Rate Limits section for various limits.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <b>Response Data</b>
+</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{"error": {   
+   "details": "Invalid credentials",   
+   "code": 401,   
+   "message": "UNAUTHORIZED",   
+   "otherAttributes": {},   
+   "title": "UNAUTHORIZED"   
+}}   
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;error code="403" message="FORBIDDEN" title="FORBIDDEN" xmlns="http://docs.openstack.org/identity/api/v3" xmlns:ns2="http://www.w3.org/2005/Atom"&gt;  
+   &lt;details&gt;Account is inactive&lt;/details&gt;   
+&lt;/error&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -k -X DELETE -H "X-Auth-Token:HPAuth_23423423424234" -H "X-Subject-Token: HPAuth_45345345345454534"   https://hostname/v3/auth/tokens  
+</codeph>
+</codeblock>
+<p>
+  <b>Additional Notes</b>
+</p>
+<p>Keystone doesn't require X-Auth-Token headers. HP Helion keystone implementation requires X-Auth-Token header for authorization purpose.</p>
+</section>
+<section id="344-versions"> <title>3.4.4 Versions</title>
+<p>This API returns the Identity service version supported by HP Helion Public Cloud. It also reports the status of each version.</p>
+<p>
+  <b>Status Lifecycle</b>
+</p>
+<p>N/A</p>
+<p>
+  <b>Rate Limits</b>
+</p>
+<table>
+<tgroup cols="4">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<colspec colname="col4"/>
+<thead>
+<row>
+<entry align="left">Operation</entry>
+  <entry align="left">Rate Limit per second</entry>
+  <entry align="left">Rate Limited By</entry>
+  <entry align="left">Path</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">Get Versions</entry>
+  <entry align="left">20</entry>
+  <entry align="left">X-Auth-Token in request header or IP</entry>
+  <entry align="left">/</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+<i>Note:</i>
+If a request is invalid (doesn't present the required headers or credentials), the request is rate limited by the source IP Address using same limits in the table above</p>
+<p>If the limit is exceeded, the request will be failed with following message:</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{  
+ "TooManyRequests":  
+  {  
+   "message": "This request was rate-limited",  
+   "code": 429,  
+   "details": "Exceeded the number of requests that can be made to / per SECOND"  
+  }  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;TooManyRequests&gt;  
+&lt;message&gt;This request was rate-limited&lt;/message&gt;  
+&lt;code&gt;429&lt;/code&gt;  
+&lt;details&gt;Exceeded the number of requests that can be made to / per SECOND&lt;/details&gt;  
+&lt;/TooManyRequests&gt;  
+</codeph>
+</codeblock>
+<p>In addition, a response header "RetryAfter" will be returned with value specifying the seconds after which a retry could be attempted</p>
+<p>
+  <b>Quota Limits</b>
+</p>
+<p>N/A</p>
+<p>
+  <b>Business Rules</b>
+</p>
+<p>None.</p>
+</section>
+<section id="list_versions"> <title>3.4.4.1 List Versions</title>
+</section>
+<section id="get-"> <title>GET /</title>
+<p>
+  <b>Request Data</b>
+</p>
+<p>
+  <b>URL Parameters</b>
+</p>
+<p>
+  <b>Data Parameters</b>
+</p>
+<p>This call does not require a request body.</p>
+<p>
+  <b>Success Response</b>
+</p>
+<p>
+  <i>Specify the status code and any content that is returned.</i>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<p>200 - OK</p>
+<p>
+  <b>Response Data</b>
+</p>
+<p>A list of supported versions of identity API and its current status  are returned.</p>
+<p>JSON</p>
+<codeblock>
+  <codeph>{  
+  "versions": [  
+    {  
+      "id": "v1.0",  
+      "otherAttributes": {},  
+      "updated": "2012-06-20T17:14:12.843Z",  
+      "status": "stable"  
+    },  
+    {  
+      "id": "v1.1",  
+      "otherAttributes": {},  
+      "updated": "2012-06-20T17:14:12.843Z",  
+      "status": "stable",  
+      "links": [  
+        {  
+          "type": "text/html",  
+          "href": "https://docs.hpcloud.com/api/identity",  
+          "rel": "describedby"  
+        }  
+      ]  
+    },  
+    {  
+      "id": "v2.0",  
+      "otherAttributes": {},  
+      "updated": "2012-06-20T17:14:12.843Z",  
+      "status": "stable",  
+      "links": [  
+        {  
+          "type": "text/html",  
+          "href": "https://docs.hpcloud.com/api/identity",  
+          "rel": "describedby"  
+        }  
+      ]  
+    },  
+    {  
+      "id": "v3.0",  
+      "otherAttributes": {},  
+      "updated": "2013-04-25T17:14:12.843Z",  
+      "status": "stable",  
+      "links": [  
+        {  
+          "type": "text/html",  
+          "href": "https://docs.hpcloud.com/api/identity",  
+          "rel": "describedby"  
+        }  
+      ]  
+    }  
+  ]  
+}  
+</codeph>
+</codeblock>
+<p>XML</p>
+<codeblock>
+  <codeph>&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;versions xmlns:ns2="http://www.w3.org/2005/Atom" xmlns="http://docs.openstack.org/identity/api/v3"&gt;  
+   &lt;version id="v1.0" status="stable" updated="2012-06-20T17:15:30.511Z" /&gt;  
+   &lt;version id="v1.1" status="stable" updated="2012-06-20T17:15:30.511Z"&gt;  
+      &lt;links&gt;  
+         &lt;ns2:link rel="describedby" type="text/html" href="https://docs.hpcloud.com/api/identity" /&gt;  
+      &lt;/links&gt;  
+   &lt;/version&gt;  
+   &lt;version id="v2.0" status="stable" updated="2012-06-20T17:15:30.511Z"&gt;  
+      &lt;links&gt;  
+         &lt;ns2:link rel="describedby" type="text/html" href="https://docs.hpcloud.com/api/identity" /&gt;  
+      &lt;/links&gt;  
+   &lt;/version&gt;  
+   &lt;version id="v3.0" status="stable" updated="2013-04-25T17:15:30.511Z"&gt;  
+      &lt;links&gt;  
+         &lt;ns2:link rel="describedby" type="text/html" href="https://docs.hpcloud.com/api/identity" /&gt;  
+      &lt;/links&gt;  
+   &lt;/version&gt;  
+&lt;/versions&gt;  
+</codeph>
+</codeblock>
+<p>
+  <b>Error Response</b>
+</p>
+<p>
+  <b>Status Code</b>
+</p>
+<table>
+<tgroup cols="3">
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry align="left">Status Code</entry>
+  <entry align="left">Description</entry>
+  <entry align="left">Reasons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left">429</entry>
+  <entry align="left">TooManyRequests</entry>
+  <entry align="left">The request was rate limited. Please refer to the Rate Limits section for various limits.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<p>
+  <b>Curl Example</b>
+</p>
+<codeblock>
+  <codeph>curl -k https://region-b.geo-1.identity.hpcloudsvc.com:35357  
+</codeph>
+</codeblock>
+<p>
+<b>Additional Notes</b>
+<!--A BR tag was used here in the original source.-->
+This API is not defined in Openstack keystone v3.</p>
+</section>
+</body>
+</topic>
