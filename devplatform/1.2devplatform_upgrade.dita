@@ -24,7 +24,7 @@
 </metadata>
 </prolog>
 <body>
-    <p>If the Helion Development Platform was not previously installed, upgrade Helion  <tm tmtype="reg">OpenStack</tm> from version 1.1 to 1.1.1 and then <xref href="../../devplatform/installation/devplatform_commercial_install.dita">install Helion Development Platform 1.2.</xref>.</p>
+    <p>If the Helion Development Platform was not previously installed, upgrade Helion  <tm tmtype="reg">OpenStack</tm> from version 1.1 to 1.1.1 and then <xref href="installation/devplatform_commercial_install.dita">install Helion Development Platform 1.2.</xref>.</p>
 
     <p>If the Helion Development Platform was previously installed, the Helion Development Platform services must be stopped before beginning the Helion OpenStack update. During the Helion OpenStack update, the Marketplace, Messaging, and Database services will automatically update to version 1.2. Version 1.2 of the Application Lifecycle Service must then be downloaded and installed separately. Once the update and installation is finished, the Helion Development Platform services and the control plane VMs must be restarted.</p>
 
