@@ -1,6 +1,5 @@
 #!/bin/sh
  
- 
 export XEP_HOME=/usr/local/RenderX/XEP
 
 
