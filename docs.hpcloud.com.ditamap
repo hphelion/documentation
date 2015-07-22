@@ -201,7 +201,7 @@
       </topicref>
     </topicref>  -->
   </topicref>
-  <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1  RC0">
+  <topicref href="CarrierGrade/carrier-grade-index.dita">
     <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333830215.xml">
       <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333830815.xml"/>
       <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333831397.xml"/>
@@ -222,8 +222,9 @@
           href="CarrierGrade/RC0/Installation/carrier-grade-install-kvm-network-interface.dita"/>
       </topicref>
     </topicref>
-    <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1 RC0: Administrator Guide">
+    <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1 RC0: Administrator Guide"
+      type="reference" format="pdf">
       <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf"/>
     </topichead>
-  </topichead>  
+  </topicref>  
  </map>
