@@ -34,5 +34,6 @@
         <folder path="unusedgraphics/"/>
         <folder path="UseCases/"/>
         <file name="devplatform/helion/admin/server/1.2configuration.dita"/>
+        <file name="devplatform/helion/admin/server/1.2upgrade.dita"/>
     </projectTree>
 </project>
