@@ -15,7 +15,7 @@
 <othermeta name="role" content="Cloud Administrator"/>
 <othermeta name="role" content="Application Developer"/>
 <othermeta name="role" content="Network Engineer"/>
-<othermeta name="role" content="Paul F"/>
+<othermeta name="role" content="Joel B"/>
 <othermeta name="product-version1" content="HP Helion Openstack"/>
 <othermeta name="product-version2" content="HP Helion Openstack 2.0"/>
 </metadata>
@@ -29,11 +29,11 @@
 <li>Events Engine </li>
 <li>Anomaly and Prediction Engine</li>
 </ul> 
+  <note>Icinga, which was the supported monitor service in previous releases of Helion OpenStack, is not supported in Helion OpenStack 2.0.</note>
 <section id="diagram">
   <title>Diagram of Monasca Service</title>
-<p><image href="MonascaDiagram.png"/></p>
+  <p><image placement="break" href="MonascaDiagram.png"/></p>
 </section>
-<p>Icinga, which was the supported monitor service in previous releases of Helion OpenStack, is not supported in Helion OpenStack 2.0.</p>
 <p>For details on OpenStack Monasca, see <xref href="https://wiki.openstack.org/wiki/Monasca" format="html" scope="external">https://wiki.openstack.org/wiki/Monasca</xref></p>
 <section id="technologies"></section>
 </body>

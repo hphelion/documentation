@@ -57,14 +57,9 @@
     providerName="System.Data.SqlClient" 
   /&gt;</codeblock>
           to:
-          <codeblock>  &lt;add name="SchoolContext" 
-    connectionString=
-      "Server={ContosoUniversity-db#hostname},{ContosoUniversity-db#port};
-      Database={ContosoUniversity-db#name};
-      User Id={ContosoUniversity-db#username};
-      Password={ContosoUniversity-db#password};
-      MultipleActiveResultSets=true;" 
-    providerName="System.Data.SqlClient" /&gt; </codeblock></li>
+          <codeblock>&lt;add name="DefaultConnection" 
+  connectionString="{ContosoUniversity-db#connectionString}" 
+  providerName="System.Data.SqlClient" /&gt;</codeblock></li>
         <li>Save <codeph>web.config</codeph>.</li>
         <li>Build the project locally to verify that it builds correctly, and all NuGet packages
           successfully install. Once the project builds successfully, go to the next step. <image
@@ -129,14 +124,9 @@ One advantage of using the command line is that you can use Mac or Linux as well
     Integrated Security=SSPI;"
   providerName="System.Data.SqlClient" /&gt;</codeblock>
           to:
-          <codeblock>  &lt;add name="SchoolContext" 
-    connectionString=
-      "Server={ContosoUniversity-db#hostname},{ContosoUniversity-db#port};
-      Database={ContosoUniversity-db#name};
-      User Id={ContosoUniversity-db#username};
-      Password={ContosoUniversity-db#password};
-      MultipleActiveResultSets=true;" 
-    providerName="System.Data.SqlClient" /&gt;</codeblock>
+          <codeblock>  &lt;add name="DefaultConnection" 
+  connectionString="{ContosoUniversity-db#connectionString}" 
+  providerName="System.Data.SqlClient" /&gt;</codeblock>
         </li>
 <li> Create a new file called <codeph>manifest.yml</codeph> in the same directory as your solution
           file, with the following contents. This is the application manifest file, which the
@@ -161,5 +151,27 @@ helion push --stack win2012r2 -n</codeblock></li>
 </ol>
     
 </section>
+      <section id="view_apps"><title>Configure Windows DEA to view application files in the management console</title>
+      <p>When the new DEA is created, applications can only be viewed on the command line. Follow these steps to view applications in the management console:</p>
+      <ol>
+        <li>Connect to the DEA through the application console:
+        <ol>
+          <li>In the Horizon interface, select <b>Project</b>, <b>Instances</b>. </li>
+          <li>Select your Windows DEA instance from the Instances list. Select the <b>Console</b> tab to open the instance console.</li>
+          <li>Click <b>Ctrl+Alt+Delete</b>. Select the <b>Administrator account.</b> Assign a new password.</li>
+        </ol></li>
+        <li>From the command line, execute <codeph>taskmgr</codeph>.</li>
+        <li>Select <b>More Details...</b> Select <b>File</b>, <b>Run new task</b>. Enter <b>powershell</b> as the new task and click <b>OK</b>.</li>
+        <li>Run <b>cd c:\windea</b></li>
+        <li>Run <b>notepad dea.config</b></li>
+        <li>Verify that the value for <b>directoryserver v2port</b> is <b>5678</b>. Save and close the file.</li>
+        <li>Run <b>netsh advfirewall firewall add rule name="v2 DirectoryServer" protocol=TCP dir=in localport=5678 action=allow</b></li>
+        <li>Run <b>net stop windea</b></li>
+        <li>Run <b>net start windea</b></li>
+        <li>Sign out of the instance console.</li>
+        <li>Log into the instance's management console (e.g. https://api.15.126.136.34.xip.io/console/).</li>
+        <li>Select Applications.</li>
+        <li>Your deployed application will appear in the list of applications.</li>
+      </ol></section>
 </body>
 </topic>

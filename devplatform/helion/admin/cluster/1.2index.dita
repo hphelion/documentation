@@ -23,8 +23,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/helion/admin/cluster/1.2index.md-->
- <!--permalink: /helion/devplatform/als/admin/cluster/--></p>
+ <!--./devplatform/1.2/helion/admin/cluster/1.2index.md-->
+ <!--permalink: /helion/devplatform/1.2/als/admin/cluster/--></p>
   <p>This process begins with an installed <xref href="../../user/reference/1.2glossary.dita#topic6187/term-micro-cloud" >micro cloud</xref>, which must then be cloned across several <xref href="../../user/reference/1.2glossary.dita#topic6187/term-node" >nodes</xref>. You connect to each node in turn and tell it which <xref href="../../user/reference/1.2glossary.dita#topic6187/term-role" type="section"   >role</xref>s it is to serve, thereby distributing the processing load for maximum performance.</p>
 <p>In HP Helion, the Clusters Panel in the <xref href="../../user/console/1.2index.dita" >ALS management console</xref> makes these tasks much easier to accomplish. If you prefer to use the command line, you can also use the <xref href="../../CLI/1.2ALS_Client_Reference.dita" >Cluster Configuration tool</xref> or <xref href="../reference/1.2kato-ref.dita" >
 <i>kato</i>
@@ -501,16 +501,24 @@ nodes (via SSHFS).</li>
 <li>The optional Harbor port service has a configurable port range
 (default 41000 - 61000) which can be exposed externally if required.</li>
 </ul>
-<p>
-        <note>Harbor (Port Service) Node Configuration</note>
-      </p>
-  <p>The optional <xref href="../cluster/1.2harbor.dita" >Harbor</xref> TCP/UDP port service must be
+<note>The optional <xref href="../cluster/1.2harbor.dita" >Harbor</xref> TCP/UDP port service must be
 set up on a node with a public network interface if you wish to enable
 port forwarding for user applications. The security group or firewall
 settings for this node should make the configured port range accessible
 publicly. See <xref href="1.2harbor.dita#topic4009/requirements-setup" type="section"   >Harbor Setup</xref> for full
-configuration instructions.</p>
+configuration instructions.</note>
 </section>
+  <section id="utm">
+      <title>UTM / Gateway Firewalls</title> Upgrades, patches, and the staging of user applications
+      may require downloading packages from external sources. This is most often done over HTTP
+      (port 80) or HTTPS (port 443). If a UTM (unified threat management) device or other network
+      gateway software is inspecting traffic between the nodes and upstream package repositories,
+      then user application staging, patching, and upgrades can fail because of timeouts or dropped
+      packets. Gateway devices and software should be configured to whitelist the upstream sources
+      listed in the <xref href="../../../1.2devplatform_upgrade.dita#topic13180/proxy-settings">Proxy Settings</xref> as well as any package repositories or download sources required by buildpacks. If packet
+      inspection of all inbound traffic is a requirement in your network, consider setting up <xref
+        href="../../user/deploy/1.2adding-buildpack.dita">offline buildpacks</xref> or creating
+      internal package repository mirrors. </section>
 <section id="multiple-controllers"> <title>Multiple Controllers</title>
 <p>An Application Lifecycle Service cluster can have multiple controller nodes running on separate VMs to improve performance. To do this, all controller nodes must share the following two important data directories on a high-availability filesystem server:</p>
 <codeblock>/home/stackato/stackato/data

@@ -26,7 +26,7 @@
 <section id="prerequisites-before-you-begin"> <title>Prerequisites - Before you begin</title>
 <p>In order to download and deploy these sample applications, you must have the necessary framework installed and configured.</p>
 <ul>
-<li>HP Helion <tm tmtype="reg">OpenStack</tm> <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >cloud deployed</xref>. Note that the Helion Development Platform version 1.2 will only run on Helion OpenStack version 1.1.1.</li>
+<li>HP Helion <tm tmtype="reg">OpenStack</tm> <xref href="../commercial/GA1/1.1.1commercial.helion-update.dita" >cloud deployed</xref>. Note that the Helion Development Platform version 1.2 will only run on Helion OpenStack version 1.1.1.</li>
 <li>Application Lifecycle Service <xref href="1.2devplatform.deploy-ALS.dita" >Cluster</xref> available with MySQL and RabbitMQ enabled.
 
 <ul>

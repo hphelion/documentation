@@ -21,8 +21,8 @@
 <body>
 <p>
 <!--PUBLISHED-->
- <!--./devplatform/helion/admin/best-practices/1.2logging-examples.md-->
- <!--permalink: /helion/devplatform/als/admin/best-practices/logging-examples/--></p>
+ <!--./devplatform/1.2/helion/admin/best-practices/1.2logging-examples.md-->
+ <!--permalink: /helion/devplatform/1.2/als/admin/best-practices/logging-examples/--></p>
 <p>Detailed instructions on how to use drains with third party log analysis
 software or services.</p>
 <ul>
@@ -78,9 +78,9 @@ software or services.</p>
 <ol>
 <li>Set up a  <xref href="http://www.splunk.com/download" scope="external" format="html">Splunk
             Server</xref>.</li>
-<li>In the Welcome screen, click <b>Add data</b>. <image href="../../../../media/splunk1.png"
-            placement="break"/>
-        </li>
+<li>In the Welcome screen, click <b>Add data</b>.
+  <image href="../../../../media/splunk1.png" placement="break"/>
+</li>
 <li> Under <b>Choose a Data Source</b>, click <b>From a TCP port</b> (or UDP)<image
             href="../../../../media/splunk2.png" placement="break" id="image_g11_dbc_ms"/>
         </li>

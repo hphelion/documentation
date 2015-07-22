@@ -24,7 +24,18 @@
  <!--./devplatform/helion/admin/reference/1.2known-issues.md-->
  <!--permalink: /helion/devplatform/als/admin/reference/known-issues/--></p>
 <p>Please keep up to date with the latest Known Issues, FAQs and announcements in our <xref href="https://community.dev.hp.com/t5/Helion-Developer-Network/bd-p/cloud" scope="external" format="html" >Helion Developer Network forums</xref>.</p>
-<section id="11"> <title>1.1</title>
+<section id="13"><title>1.3</title>
+  <dl><dlentry>
+    <dt>UTM Gateways</dt>
+    <dd>UTM gateways may interfere with upgrades, patches, or normal application staging if they are
+            configured to inspect all HTTP(S) traffic between ALS nodes and upstream package
+            repositories. <xref href="../cluster/1.2index.dita#topic18326/utm">See the full
+              documentation</xref> for a detailed explanation and suggested solutions. </dd>
+  </dlentry></dl>
+
+</section>
+  
+  <section id="11"> <title>1.1</title>
 </section>
 <section id="changing-the-mbus-ip-core-node"> <title>Changing the MBUS IP (Core node)</title>
 <p>If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS
