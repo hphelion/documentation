@@ -16,16 +16,22 @@
   </topicmeta>
   <!--permalink: -->
   <!--permalink: /-->
-  <topicref href="publiccloud/index.dita"/>
-  <topichead navtitle="HP Helion OpenStack 2.0">
-    <topichead navtitle="HP Helion OpenStack Services">
-     <topicref href="commercial/GA2/Monasca/2.0commercial.services-monasca.dita"></topicref>
-    </topichead>
-  </topichead>
+  
+<!-- Index -->
+  
+<topicref href="publiccloud/index.dita"/>
+  
+<!-- HoS 2.0 -->
+  
+<topichead navtitle="HP Helion OpenStack 2.0">
+<topichead navtitle="HP Helion OpenStack Services">
+<topicref href="commercial/GA2/Monasca/2.0commercial.services-monasca.dita"></topicref>
+</topichead>
+</topichead>
   
 <!--Dev Plat-->  
   
-  <topicref 
+<topicref 
     format="ditamap"
     href="docs.hpcloud.com.HDP.ditamap"
     navtitle="Helion Development Platform">
@@ -200,7 +206,7 @@
         <topicref href="CarrierGrade/DeploymentScenarios3/jow1404333827838.xml"/>
       </topicref>
     </topicref>  -->
-  </topicref>
+  </topicref>  
   <topicref href="CarrierGrade/carrier-grade-index.dita">
     <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333830215.xml">
       <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333830815.xml"/>
