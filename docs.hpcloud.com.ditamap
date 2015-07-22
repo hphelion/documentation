@@ -16,37 +16,24 @@
   </topicmeta>
   <!--permalink: -->
   <!--permalink: /-->
-  
 <!-- Index -->
-  
 <topicref href="publiccloud/index.dita"/>
-  
 <!-- HoS 2.0 -->
-  
 <topichead navtitle="HP Helion OpenStack 2.0">
 <topichead navtitle="HP Helion OpenStack Services">
 <topicref href="commercial/GA2/Monasca/2.0commercial.services-monasca.dita"></topicref>
 </topichead>
 </topichead>
-  
 <!--Dev Plat-->  
-  
-<topicref 
-    format="ditamap"
-    href="docs.hpcloud.com.HDP.ditamap"
-    navtitle="Helion Development Platform">
-  </topicref>
- 
+<topicref format="ditamap" href="docs.hpcloud.com.HDP.ditamap" navtitle="Helion Development Platform">
+</topicref>
 <!-- Euca -->
-  
   <topicref href="euca/euca-landing-page.dita" navtitle="HP Helion Eucalyptus" locktitle="yes">
     <topicref href="euca/euca.thirdparty.licensing.dita"
       navtitle="Open-Source and Third-Party License Agreements" locktitle="yes"/>
     <topicref href="euca/euca-eula.dita" navtitle="Master Services Agreement" locktitle="yes"/>
   </topicref>
-  
-  <!-- CGH -->
-
+<!-- CGH -->
   <topicref href="automation/csa.index.dita"/>
   <topicref href="codar-landing-page.dita" navtitle="HP Codar"/>
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
