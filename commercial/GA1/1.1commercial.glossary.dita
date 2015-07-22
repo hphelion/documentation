@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic17421">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Glossary</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="role" content="All"/>
+<othermeta name="role" content="Lou G"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./commercial/GA1/1.1commercial.glossary.md-->
+ <!--permalink: /helion/openstack/1.1/glossary/--></p>
+<p>
+
+</p>
+<p>Use this glossary to get definitions of terms used throughout the HP Helion OpenStack-documentation.</p>
+<p>For more terms, see the <xref href="http://docs.openstack.org/glossary/content/glossary.html" scope="external" format="html" >OpenStack glossary</xref> also.</p>
+<p>
+<xref type="section" href="#topic17421/a">A</xref> | <xref type="section" href="#topic17421/b">B</xref> | <xref type="section" href="#topic17421/c">C</xref> | <xref type="section" href="#topic17421/d">D</xref> | <xref type="section" href="#topic17421/e">E</xref> | <xref type="section" href="#topic17421/f">F</xref> | <xref type="section" href="#topic17421/g">G</xref> | <xref type="section" href="#topic17421/h">H</xref> | <xref type="section" href="#topic17421/i">I</xref> | <xref type="section" href="#topic17421/j">J</xref> | <xref type="section" href="#topic17421/k">K</xref> | <xref type="section" href="#topic17421/l">L</xref> | <xref type="section" href="#topic17421/m">M</xref> | 
+<xref type="section" href="#topic17421/n">N</xref> | <xref type="section" href="#topic17421/o">O</xref> | <xref type="section" href="#topic17421/p">P</xref> | <xref type="section" href="#topic17421/q">Q</xref> | <xref type="section" href="#topic17421/r">R</xref> | <xref type="section" href="#topic17421/s">S</xref> | <xref type="section" href="#topic17421/t">T</xref> | <xref type="section" href="#topic17421/u">U</xref> | <xref type="section" href="#topic17421/v">V</xref> | <xref type="section" href="#topic17421/w">W</xref> | <xref type="section" href="#topic17421/x">X</xref> | <xref type="section" href="#topic17421/y">Y</xref> | <xref type="section" href="#topic17421/z">Z</xref>
+</p>
+<section id="a"> <title>A</title>
+</section>
+<section id="AbstractionLayer"> <title>Abstraction layer<!--Removed anchor point AbstractionLayer--><!-- id="AbstractionLayer" --></title>
+<p>A coding layer that provides an intermediary between a programmer and a more complex underlying base code set.  The abstraction layer simplifies the complexities of the underlying <xref type="section" href="#topic17421/REST">REST</xref> API and JSON/XML formatting of the <xref type="section" href="#topic17421/RequestAbstraction">request abstraction</xref> layer code.</p>
+</section>
+<section id="access-control-list-acl"> <title>Access control list (ACL)</title>
+<p>A list of permissions attached to an object.</p>
+</section>
+<section id="admin-network"> <title>Admin Network</title>
+<p>Used for administrative functions such as TFTP booting, DHCP assignments, KVM, system logs, backups, and other monitoring.</p>
+<!-- JS: Not in Core and probably not in Enterprise edition:
+###Administration Dashboard###
+The HP Helion OpenStack Administration Dashboard enables administrators to manage their cloud infrastructure. Tasks include launching instances, 
+uploading images, creating resource pools, and using designer tools to create topologies. Hosted (preferably) on the Controller node. See also [Operational Dashboard](#Operational-Dashboard), which is 
+used for the initial cloud installation, setup, configuration, and creation, before starting the Administration Dashboard. 
+-->
+</section>
+<section id="allocation"> <title>Allocation</title>
+<p>The provisioning of cloud resources such as VM placement in data centers, network virtualization, and network routing.</p>
+</section>
+<section id="API"> <title>API<!--Removed anchor point API--><!-- id="API" --></title>
+<p>An Application Programming Interface (API) is a set of routines, protocols, and tools for building software applications. An API makes it easier to develop a program by providing all the building blocks. A programmer then puts the blocks together. HP Helion OpenStack provides several <xref type="section" href="#topic17421/REST">REST</xref> APIs that enable programmers to write applications consistent with the operating environment.</p>
+</section>
+<section id="api-key"> <title>API key</title>
+<p>An API-based key used for <xref type="section" href="#topic17421/Auth">authentication</xref>, such as a <xref type="section" href="#topic17421/Token">token</xref>.</p>
+</section>
+<section id="Auth"> <title>Authentication<!--Removed anchor point Auth--><!-- id="Auth" --></title>
+<p>A service that confirms the identity of a user. The Identity Service confirms that each incoming request is made by the user who claims to be making the call by validating a set of claims that the user is making. These claims are initially in the form of a set of credentials such as username/password pairs or user access keys. After initial confirmation, the Identity Service issues the user a <xref type="section" href="#topic17421/Token">token</xref> that a user can provide when making subsequent requests.</p>
+</section>
+<section id="AuthToken"> <title>Authentication Token<!--Removed anchor point AuthToken--><!-- id="AuthToken" --></title>
+<p>A string that an authenticated user must present for subsequent requests to other services.</p>
+</section>
+<section id="b"> <title>B</title>
+<!-- JS: replaced by TripleO install framework:
+###Barclamp###
+Also known as an install module, defines the capability of a service or role to apply to individual hosts or a set of hosts. To deploy a barclamp, a proposal is created.
+-->
+</section>
+<section id="block-storage"> <title>Block storage</title>
+<p>Information stored in raw form, with no consideration as to the type of information. See also <xref type="section" href="#topic17421/Volume">Volume Operations</xref>.</p>
+</section>
+<section id="bootable-image"> <title>Bootable Image</title>
+<p>
+<i>See</i> <xref type="section" href="#topic17421/VolumeBootable">Volume (bootable)</xref>.</p>
+</section>
+<section id="broad-network-access"> <title>Broad network access</title>
+<p>A network architecture where cloud capabilities are available over the network and are accessed through standard mechanisms that promote the use by heterogenous thin-client or thick-client platforms.  Examples: mobile phones, tablets, laptops and workstations.</p>
+</section>
+<section id="c"> <title>C</title>
+</section>
+<section id="Ceilometer"> <title>Ceilometer<!--Removed anchor point Ceilometer--><!-- id="Ceilometer" --></title>
+<p>See <xref type="section" href="#topic17421/Reporting">Telemetry and Reporting</xref>
+</p>
+</section>
+<section id="ceph"> <title>Ceph</title>
+<p>A software platform designed to manage block, object, and file storage from a single distributed cluster. The model of a single computer cluster managing multiple storage instances is octopus-like. An octopus is a cephalopod, hence the abbreviation: Ceph.</p>
+</section>
+<section id="Cinder"> <title>Cinder<!--Removed anchor point Cinder--><!-- id="Cinder" --></title>
+<p>See <xref type="section" href="#topic17421/Volume">Volume Operations</xref>
+</p>
+</section>
+<section id="cli"> <title>CLI</title>
+<p>
+<b>C</b>ommand-<b>L</b>ine <b>I</b>nterface.</p>
+</section>
+<section id="cloud-computing"> <title>Cloud computing</title>
+<p>A model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources.  These resources include networks, servers, storage, applications and services.</p>
+<p>One advantage of cloud computing is that the resources can be provisioned or released rapidly, with minimal management effort or service provider interaction.</p>
+</section>
+<section id="Compute"> <title>Compute<!--Removed anchor point Compute--><!-- id="Compute" --></title>
+<p>The HP OpenStack service that manages the hypervisors and virtual machines in your environment. Compute provides a cloud computing fabric controller, the main part of an Infrastructure as a Service (IaaS) platform. Also known as <xref type="section" href="#topic17421/Nova">Nova</xref>.</p>
+</section>
+<section id="compute-node"> <title>Compute Node</title>
+<p>The machine that hosts cloud virtual machine instances using any supported hypervisor with OpenStack In the current release,  HP Helion OpenStack supports KVM (qemu-kvm) and VMware (ESXi) as hypervisors. The compute node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple compute nodes can be created to expand cloud capacity.</p>
+</section>
+<section id="credentials"> <title>Credentials</title>
+<p>Data that belongs to, is owned by, and generally only known by a user. A user can present this information to verify identity. Associated with the <xref type="section" href="#topic17421/Identity">Identity service</xref>.</p>
+</section>
+<section id="d"> <title>D</title>
+</section>
+<section id="deprovisioning"> <title>Deprovisioning</title>
+<p>Deallocating a cloud resource. See also <xref type="section" href="#topic17421/Provisioning">Provisioning</xref>.</p>
+</section>
+<section id="domain-name"> <title>Domain Name</title>
+<p>An identification string that defines a realm of administrative autonomy, authority, or control on the Internet.</p>
+</section>
+<section id="DNS"> <title>Domain Name Systyem (DNS)<!--Removed anchor point DNS--><!-- id="DNS" --></title>
+<p>A service that provides look up of the actual internet address (IP address) of domains when a domain name is entered.</p>
+</section>
+<section id="dns-server"> <title>DNS Server</title>
+<p>A server that stores the <xref type="section" href="#topic17421/DNS">DNS records</xref> for a domain name, such as address (A or AAAA) records, name server (NS) records, and mail exchanger (MX) records.</p>
+</section>
+<section id="e"> <title>E</title>
+</section>
+<section id="endpoint"> <title>Endpoint</title>
+<p>A network-accessible address, usually described by URL, where a service may be accessed. Associated with the <xref type="section" href="#topic17421/Identity">Identity service</xref>.</p>
+<!-- Not in Commercial beta
+###Eve###
+ A HP Helion OpenStack composite provisioning service that uses a topology design and profile to create VMs, volumes, and network segments as described in the topology. Eve uses the Graffiti service to determine the resource pool existence, traits, and user identity mapping. -->
+</section>
+<section id="f"> <title>F</title>
+</section>
+<section id="flat-networking"> <title>Flat networking</title>
+<p>A network that uses Ethernet adapters configured as bridges to allow the network traffic to transit between the various baremetal nodes. All stations can reach one another without going through an intermediary hardware device, such as a router. and does not require a switch that does VLAN tagging.</p>
+<p>A flat network can be set up with a single adapter on the baremetal host.</p>
+</section>
+<section id="Flavor"> <title>Flavor<!--Removed anchor point Flavor--><!-- id="Flavor" --></title>
+<p>The combination of the compute, memory, and storage capacity of a baremetal node defines a flavor.</p>
+</section>
+<section id="floating-ip-address"> <title>Floating IP address</title>
+<p>An on-demand, allocatable public IP address on a network. You can allocate a number of floating IP addresses up to the quota limit, and then assign them to <xref type="section" href="#topic17421/Instance">instances</xref>.</p>
+<!-- Not in Commercial beta
+###Focus###
+ The  HP Helion OpenStack Topology Document Repository Service, which is used to discover, register, version, and retrieve the document types needed to describe TOSCA-based infrastructure topologies while provisioning a cloud. See [TOSCA](#TOSCA). -->
+</section>
+<section id="fully-qualified-domain-name-fqdn"> <title>Fully Qualified Domain Name (FQDN)</title>
+<p>The complete domain name for a specific computer, or host, on the Internet. The FQDN consists of two parts: the hostname and the domain name.</p>
+</section>
+<section id="g"> <title>G</title>
+</section>
+<section id="Glance"> <title>Glance<!--Removed anchor point Glance--><!-- id="Glance" --></title>
+<p>Glance is the Helion OpenStack imaging service and includes discovery, registering, and the retrieval of virtual machine images.</p>
+<!-- Not in Commercial beta
+###Graffiti###
+The HP Helion OpenStack Resource Pool Registry and Capability Tagging Service, providing a dictionary of the "capabilities" of all the resources in a cloud environment; a searchable directory to find cloud resources based on their capabilities; the mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings; and the base concepts of requirements and capabilities within TOSCA. -->
+</section>
+<section id="h"> <title>H</title>
+</section>
+<section id="helion-distribution-network-hdn"> <title>Helion Distribution Network (HDN)</title>
+<p>A catalog-based HP Helion OpenStack service that allows off-the-shelf content (like workloads, images, and patches) to be imported into your deployed cloud. To access HDN, see the Updates &amp; Extensions panel in the  HP Helion OpenStack user interface. You can import content from the HDN portal or from a local folder.</p>
+</section>
+<section id="heat"> <title>Heat</title>
+<p>See <xref type="section" href="#topic17421/Orchestration">Orchestration</xref>.</p>
+</section>
+<section id="horizon"> <title>Horizon</title>
+<p>The Horizon service is the basis of the HP Helion OpenStack dashboards.</p>
+</section>
+<section id="hybrid-cloud"> <title>Hybrid cloud</title>
+<p>A cloud infrastructure that is a composition of two or more distinct cloud infrastructures (private or public) which remain unique entities but are bound together by standardized or proprietary technology that enables data and application portability such as cloud bursting for load balancing between clouds.</p>
+</section>
+<section id="Hyper"> <title>Hypervisor<!--Removed anchor point Hyper--><!-- id="Hyper" --></title>
+<p>A piece of computer software, firmware, or hardware that creates and runs virtual machines. Each virtual machine appears to have the host's processor, memory, and other resources all to itself.</p>
+</section>
+<section id="i"> <title>I</title>
+</section>
+<section id="Identity"> <title>Identity Service<!--Removed anchor point Identity--><!-- id="Identity" --></title>
+<p>The HP OpenStack service that performs identity management (domains, projects and users), generates access tokens, and provides service catalog functionality.</p>
+</section>
+<section id="Image"> <title>Image<!--Removed anchor point Image--><!-- id="Image" --></title>
+<p>1) An installable release package of a program, application, or software.</p>
+<p>2) A copy of a virtual machine including the operating system information, machine state, and application configurations.
+See also <xref type="section" href="#topic17421/ImagePriv">Private image</xref> and <xref type="section" href="#topic17421/ImagePub">Public image</xref>.</p>
+</section>
+<section id="ImageFile"> <title>Image file<!--Removed anchor point ImageFile--><!-- id="ImageFile" --></title>
+<p>A virtual disk <xref type="section" href="#topic17421/Image">image</xref> file that the Compute service can load up to create a virtual machine.</p>
+</section>
+<section id="Image-management"> <title>Image Management<!--Removed anchor point Image--><!-- id="Image" --></title>
+<p>The HP OpenStack service that discovers, registers, and retrieves virtual machine (VM) images. Also known as Glance.</p>
+</section>
+<section id="ImageMeta"> <title>Image metadata<!--Removed anchor point ImageMeta--><!-- id="ImageMeta" --></title>
+<p>Metadata information about <xref type="section" href="#topic17421/Image">images</xref>. For example: metadata includes the image identifier, name, status, size, disk format, container format, owner, and custom properties. Metadata is data that describes other data.</p>
+</section>
+<section id="Installer"> <title>Installer System<!--Removed anchor point Installer--><!-- id="Installer" --></title>
+<p>The machine where HP OpenStack Helion installation is initiated. This is the same machine as the <xref type="section" href="#topic17421/KVMhost">KVM host</xref> and is called the <xref type="section" href="#topic17421/Seed-Cloud">seed VM</xref>.</p>
+</section>
+<section id="Instance"> <title>Instance<!--Removed anchor point Instance--><!-- id="Instance" --></title>
+<p>A virtual machine that runs inside the cloud.</p>
+</section>
+<section id="IPMI"> <title>Intelligent Platform Management Interface (IPMI)<!--Removed anchor point IPMI--><!-- id="IPMI" --></title>
+<p>A standardized computer interface used by administrators for out-of-band management of computers and monitoring of their operation. IPMI manages a computer that is powered off or otherwise unresponsive by using a network connection to the hardware rather than to an operating system or login shell.</p>
+</section>
+<section id="ipmi-network"> <title>IPMI Network</title>
+<p>The network that connects the baremetal host to the Intelligent Platform Management Interface (IPMI).</p>
+</section>
+<section id="ironic"> <title>Ironic</title>
+<p>The HP OpenStack project to provision baremetal nodes by leveraging common
+        technologies such as PXE boot and <xref type="section" href="#topic17421/IPMI">IPMI</xref>
+        to cover a wide range of hardware. This project also supports pluggable drivers to allow
+        adding vendor-specific functionality.</p>
+</section>
+<section id="j"> <title>J</title>
+</section>
+<section id="k"> <title>K</title>
+</section>
+<section id="KVM"> <title>Kernel-based Virtual Machine (KVM)<!--Removed anchor point KVM--><!-- id="KVM" --></title>
+<p>A full virtualization solution for Linux that enables multiple virtual machines. See also <xref type="section" href="#topic17421/KVMhyp">KVM Hypervisor</xref> and <xref type="section" href="#topic17421/KVMhost">KVM Host</xref>.</p>
+</section>
+<section id="key-pair"> <title>Key pair</title>
+<p>A pair of key values used for verification purposes; generally one key value is private, and the other public (i.e. user-owned).</p>
+</section>
+<section id="keystone"> <title>Keystone</title>
+<p>See <xref type="section" href="#topic17421/Identity">Identity Management</xref>
+</p>
+</section>
+<section id="KVMhyp"> <title>KVM Hypervisor<!--Removed anchor point KVMhyp--><!-- id="KVMhyp" --></title>
+<p>The virtualization layer in <xref type="section" href="#topic17421/KVM">Kernel-based Virtual Machine or KVM</xref>. The KVM hypervisor is a default hypervisor supported by the HP OpenStack <xref type="section" href="#topic17421/Compute">Compute service</xref>.</p>
+</section>
+<section id="KVMhost"> <title>KVM Host<!--Removed anchor point KVMhost--><!-- id="KVMhost" --></title>
+<p>The machine which runs the <xref type="section" href="#topic17421/KVM">Kernel-based Virtual Machine or KVM</xref>.  This is the same machine as the <xref type="section" href="#topic17421/Installer">Installer System</xref>.</p>
+</section>
+<section id="l"> <title>L</title>
+</section>
+<section id="m"> <title>M</title>
+</section>
+<section id="mom"> <title>MoM</title>
+<p>Monitoring of Monasca. Monasca can monitor a wide range of Helion services, including itself.</p>
+</section>
+<section id="monasca"> <title>Monasca</title>
+<p>The monitoring as a service solution introduced in Helion 2.0. Monasca (meaning monitoring at scale) is an open source solution that integrates with OpenStack It is fault-tolerant, multi-tenant, scalable, and high performing.</p>
+</section>
+<section id="n"> <title>N</title>
+</section>
+<section id="Networking"> <title>Networking<!--Removed anchor point Networking--><!-- id="Networking" --></title>
+<p>The OpenStack Network Connectivity Service used to create and provision virtual networks. Also known as <xref type="section" href="#topic17421/Neutron">Neutron</xref>
+</p>
+</section>
+<section id="Neutron"> <title>Neutron<!--Removed anchor point Neutron--><!-- id="Neutron" --></title>
+<p>See <xref type="section" href="#topic17421/Networking">Networking</xref>.</p>
+</section>
+<section id="node"> <title>Node</title>
+<p>A computing resource in a network. In other publications, sometimes called a machine.</p>
+</section>
+<section id="Nova"> <title>Nova<!--Removed anchor point Nova--><!-- id="Nova" --></title>
+<p>See <xref type="section" href="#topic17421/Compute">Compute</xref>.</p>
+</section>
+<section id="o"> <title>O</title>
+</section>
+<section id="Object"> <title>Object Operations<!--Removed anchor point Object--><!-- id="Object" --></title>
+<p>The HP OpenStack service used to store and retrieve large amounts of data in virtual containers.</p>
+</section>
+<section id="on-demand-self-service"> <title>On-demand self service</title>
+<p>A service where a consumer can unilaterally provision computing capabilities, such as server time and network storage, as needed, automatically, without requiring human interaction with each service provider.</p>
+</section>
+<section id="openstack"> <title>OpenStack</title>
+<p>An open-source cloud computing operating system.</p>
+<!-- JS: Not in Core, I think. 
+###Operational Dashboard<a name="Operational-Dashboard"></a>
+The HP Helion OpenStack Operational Dashboard is used to install, set up, configure, and stand up a cloud environment See also [Administration Dashboard](#Administration-Dashboard), which is 
+used to manage the cloud that you created. 
+-->
+</section>
+<section id="Overcloud"> <title>Overcloud<!--Removed anchor point Overcloud--><!-- id="Overcloud" --></title>
+<p>An image that is deployed onto physical machines by the <xref type="section" href="#topic17421/Undercloud">Undercloud</xref>. Overcloud images have specialized roles: Management, Object Operations, and Compute. See also <xref type="section" href="#topic17421/Seed-Cloud">Seed VM</xref> and 
+<xref type="section" href="#topic17421/Undercloud">Undercloud</xref>.</p>
+</section>
+<section id="Orchestration"> <title>Orchestration<!--Removed anchor point Orchestration--><!-- id="Orchestration" --></title>
+<p>The HP Helion OpenStack service that provides a template-based method for
+        describing a cloud application. A template is a YAML file that describes the infrastructure
+        for a cloud application. Templates contain vendor-independent specifications for launching a
+        particular service or application. Also known as <xref href="#topic17421/heat" format="dita"
+        />.</p>
+</section>
+<section id="p"> <title>P</title>
+</section>
+<section id="pxe"> <title>Preboot Execution Environment (PXE) Booting<!--Removed anchor point pxe--><!-- id="pxe" --></title>
+<p>One of the components of <xref href="http://www.intel.com/design/archives/wfm/" scope="external" format="html">Intel's Wired for Management</xref> specification. PXE allows a machine to boot from a machine on a network prior to booting the operating system on the local hard drive. For more, start on this <xref href="http://en.wikipedia.org/wiki/Preboot_Execution_Environment" scope="external" format="html">Wikipedia.org page</xref>.</p>
+</section>
+<section id="private-cloud"> <title>Private cloud</title>
+<p>A cloud infrastructure that is provisioned for exclusive use by a single organization comprising multiple consumers, such as business units.  The private cloud may be owned, managed and operated by the organization, a third party. or some combination, and it may exist on or off the owner's premises.</p>
+</section>
+<section id="ImagePriv"> <title>Private image<!--Removed anchor point ImagePriv--><!-- id="ImagePriv" --></title>
+<p>An <xref type="section" href="#topic17421/Image">image</xref> that is limited to all users in a <xref type="section" href="#topic17421/Project">project</xref>.</p>
+</section>
+<section id="Project"> <title>Project<!--Removed anchor point Project--><!-- id="Project" --></title>
+<p>A grouping that allows users within each group to view and use the same set of resources. Associated with the <xref type="section" href="#topic17421/Identity">Identity service</xref>. Also known as Tenant.</p>
+</section>
+<section id="Provisioning"> <title>Provisioning<!--Removed anchor point Provisioning--><!-- id="Provisioning" --></title>
+<p>The allocation, auditing, and monitoring of cloud resources to users of those resources.</p>
+</section>
+<section id="public-cloud"> <title>Public cloud</title>
+<p>A cloud infrastructure that is open use by the general public.  A public cloud may be owned, managed and operated by a business, an academic entity, a government organization, or some combination of enterprises.</p>
+</section>
+<section id="ImagePub"> <title>Public images<!--Removed anchor point ImagePub--><!-- id="ImagePub" --></title>
+<p>An <xref type="section" href="#topic17421/Image">image</xref> that is available to all users across all projects in a domain.</p>
+</section>
+<section id="public-network"> <title>Public network</title>
+<p>Used for connecting devices that are external to the cloud infrastructure.</p>
+</section>
+<section id="pxe-boot"> <title>PXE</title>
+<p>
+<i>See</i> <xref type="section" href="#topic17421/pxe">Preboot Execution Environment</xref>.</p>
+</section>
+<section id="q"> <title>Q</title>
+</section>
+<section id="r"> <title>R</title>
+</section>
+<section id="RapidE"> <title>Rapid elasticity<!--Removed anchor point RapidE--><!-- id="RapidE" --></title>
+<p>The ability to scale cloud resources rapidly outward and inward commensurate with demand. To the consumer, these capabilities available for provisioning often appear to be unlimited and can be appropriated in any quantity at any time.</p>
+</section>
+<section id="reporting"> <title>Reporting</title>
+<p>See <xref type="section" href="#topic17421/Reporting">Telemetry and Reporting</xref>.</p>
+</section>
+<section id="Pooling"> <title>Resource pooling<!--Removed anchor point Pooling--><!-- id="Pooling" --></title>
+<p>An attribute of cloud computing where computing resources are pooled to serve multiple consumers using a multi-tenant model. Different physical and virtual resources are dynamically assigned and reassigned according to consumer demand.</p>
+</section>
+<section id="RequestAbstraction"> <title>Request Abstraction<!--Removed anchor point RequestAbstraction--><!-- id="RequestAbstraction" --></title>
+<p>A coding layer that provides programming-language-specific access to the underlying core code base REST API HTTP calls.</p>
+<p>For example, instead of including a call to the REST API by using HTTP <b>verb</b> (GET), path (/flavors), format (format=json), 
+and the other HTTP attributes, using the request layer you can simplify the call to <codeph>list_flavors()</codeph> (the specific call depends on the 
+details of your specific request layer syntax).  The request layer handles all HTTP request and response parsing and exception handling. Also known as the <b>request layer</b>.</p>
+</section>
+<section id="REST"> <title>REST<!--Removed anchor point REST--><!-- id="REST" --></title>
+<p>A model for providing web services of HTTP. Stands for Representational State Transfer.</p>
+</section>
+<section id="Role"> <title>Role<!--Removed anchor point Role--><!-- id="Role" --></title>
+<p>A personality that a user assumes when performing a specific set of operations. A role includes a set of rights and privileges; a user assuming that role inherits these permissions. Associated with the <xref type="section" href="#topic17421/Identity">Identity service</xref>.</p>
+</section>
+<section id="router-ip"> <title>Router IP</title>
+<p>IP Address of the device that passes network traffic between two different IP addresses as well as subnets.</p>
+</section>
+<section id="s"> <title>S</title>
+</section>
+<section id="seed-cloud-host"> <title>Seed Cloud Host</title>
+<p>Refers to the Seed Host.</p>
+</section>
+<section id="Seed-Host"> <title>Seed Host<!--Removed anchor point Seed-Host--><!-- id="Seed-Host" --></title>
+<p>Also known as the Seed Cloud Host, or Seed Node, refers to the physical server where the Seed VM is running.</p>
+</section>
+<section id="seed-node"> <title>Seed Node</title>
+<p>Refers to the Seed Host (Seed Cloud Host).</p>
+</section>
+<section id="Seed-Cloud"> <title>Seed VM<!--Removed anchor point Seed-Cloud--><!-- id="Seed-Cloud" --></title>
+<p>A bootable image that is deployed into a virtual machine (VM). The seed VM is a <xref type="section" href="#topic17421/KVM">Kernel-based Virtual Machine</xref>. This running hLinux VM contains the minimal Seed Cloud. This is the minimum that OpenStack needs to allow Ironic to install the Undercloud. See also <xref type="section" href="#topic17421/Undercloud">undercloud</xref>.</p>
+<p>Also referred to simply as the Seed. See also <xref type="section" href="#topic17421/Undercloud">undercloud</xref> and <xref type="section" href="#topic17421/Overcloud">overcloud</xref>.</p>
+</section>
+<section id="Server"> <title>Server<!--Removed anchor point Server--><!-- id="Server" --></title>
+<p>A compute instance that is created from a <xref type="section" href="#topic17421/Flavor">flavor</xref> combined with an <xref type="section" href="#topic17421/Image">image</xref>.</p>
+</section>
+<section id="Swift"> <title>Swift<!--Removed anchor point Swift--><!-- id="Swift" --></title>
+<p>See <xref type="section" href="#topic17421/Object">Object Operations</xref>.</p>
+</section>
+<section id="t"> <title>T</title>
+</section>
+<section id="Reporting"> <title>Telemetry and Reporting<!--Removed anchor point Reporting--><!-- id="Reporting" --></title>
+<p>The HP Helion OpenStack service that enables a single infrastructure to collect measurements within your cloud environment. Also known as <xref type="section" href="#topic17421/Ceilometer">Ceilometer</xref>.</p>
+</section>
+<section id="Tenant"> <title>Tenant<!--Removed anchor point Tenant--><!-- id="Tenant" --></title>
+<p>See <xref type="section" href="#topic17421/Project">Project</xref>.</p>
+</section>
+<section id="TenantID"> <title>Tenant ID<!--Removed anchor point TenantID--><!-- id="TenantID" --></title>
+<p>An ID linking one or more accounts to one or more subscribed services. APIs and Bindings often require a Tenant ID in addition to authentication information.</p>
+</section>
+<section id="Token"> <title>Token<!--Removed anchor point Token--><!-- id="Token" --></title>
+<p>An arbitrary bit of text that is used to access resources. Each token has a scope that describes the resources are accessible with the token. Associated with the <xref type="section" href="#topic17421/Identity">Identity service</xref>.</p>
+</section>
+<section id="TripleO"> <title>TripleO<!--Removed anchor point TripleO--><!-- id="TripleO" --></title>
+<p>A program aimed at installing, upgrading and operating OpenStack clouds using its own cloud facilities as the foundations; it builds on Nova, Neutron and Heat to automate fleet management at data center scale or scaled down to as few as two machines.</p>
+</section>
+<section id="u"> <title>U</title>
+</section>
+<section id="Undercloud"> <title>Undercloud<!--Removed anchor point Undercloud--><!-- id="Undercloud" --></title>
+<p>An image that is deployed by the <xref type="section" href="#topic17421/Seed-Cloud">seed VM</xref> onto a single physical machine. See also <xref type="section" href="#topic17421/Overcloud">overcloud</xref>.</p>
+</section>
+<section id="user"> <title>User</title>
+<p>A digital representation of a person who uses the cloud. Users are associated with <xref type="section" href="#topic17421/Projects">projects</xref> based on <xref type="section" href="#topic17421/Role">roles</xref> assigned to them with that tenant. Associated with the <xref type="section" href="#topic17421/Identity">Identity service</xref>.</p>
+</section>
+<section id="v"> <title>V</title>
+</section>
+<section id="virtual-local-area-network-vlan"> <title>Virtual Local Area Network (VLAN)</title>
+<p>An architecture where devices appear to be physically connected.</p>
+</section>
+<section id="virtual-cloud-networking-vcn"> <title>Virtual Cloud Networking (VCN)</title>
+<p>Virtual Cloud Networking (VCN) is an enhanced OpenStack Networking service (Neutron) that delivers network virtualization enabled by software-defined networking (SDN). SDN orchestrates the entire data canter infrastructure.</p>
+</section>
+<section id="virtual-extensible-lan-vxlan"> <title>Virtual Extensible LAN (VxLAN)</title>
+<p>A network virtualization technology that addresses the scalability problems associated with large cloud computing deployments. It uses a VLAN-like encapsulation technique to encapsulate MAC-based OSI layer 2 Ethernet frames within layer 3 UDP packets.</p>
+</section>
+<section id="VSA"> <title>Virtual Storage Appliance (VSA)<!--Removed anchor point VSA--><!-- id="VSA" --></title>
+<p>A virtual storage appliance (VSA) is a storage controller that runs on a virtual machine (VM) to create shared storage without the cost of additional hardware. See also <xref type="section" href="#topic17421/VSAcluster">VSA cluster</xref>.</p>
+</section>
+<section id="vmware-esxi-hypervisor"> <title>VMWare ESXi hypervisor</title>
+<p>A <xref type="section" href="#topic17421/Baremetal">baremetal</xref> <xref type="section" href="#topic17421/Hyper">hypervisor</xref> that installs directly on top of your physical machine and partitions the machine into multiple virtual machines.</p>
+</section>
+<section id="VolumeBootable"> <title>Volume (bootable)<!--Removed anchor point VolumeBootable--><!-- id="VolumeBootable" --></title>
+<p>A bootable machine previously saved by a user.</p>
+</section>
+<section id="Volume"> <title>Volume Operations<!--Removed anchor point Volume--><!-- id="Volume" --></title>
+<p>The HP OpenStack service that provides volume management in cloud environments. Also known as <xref type="section" href="#topic17421/Cinder">Cinder</xref>.</p>
+</section>
+<section id="VSAcluster"> <title>VSA cluster<!--Removed anchor point VSAcluster--><!-- id="VSAcluster" --></title>
+<p>An architecture that includes multiple hosts and provides shared datastores that are connected to all hosts in the datacenter. See also <xref type="section" href="#topic17421/VSA">Virtual Storage Appliance</xref>.</p>
+</section>
+<section id="w"> <title>W</title>
+</section>
+<section id="x"> <title>X</title>
+</section>
+<section id="y"> <title>Y</title>
+</section>
+<section id="z"> <title>Z</title>
+<p>
+  <xref href="#topic17421"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</section>
+</body>
+</topic>

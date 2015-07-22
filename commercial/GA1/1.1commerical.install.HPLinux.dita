@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4455">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Installing HP Linux for HP Helion OpenStack</title>
+<titlealts>
+<searchtitle>HP Helion Openstack 1.1: Installing HP Linux for HP Helion Openstack</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./commercial/GA1/1.1commerical.install.HPLinux.md-->
+ <!--permalink: /helion/openstack/1.1commercial/install/HPLinux/--></p>
+<p>
+  <b>This document describes the process for installing HP Linux for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
+</p>
+<p>Before installing HP Helion OpenStack you may choose to use HP Linux for HP Helion OpenStack as your operating system.</p>
+<p>
+  <b>Prerequisites for installing HP Linux for HP Helion OpenStack</b>
+</p>
+<ul>
+<li>You must have at least 105MB of RAM to use this installer.</li>
+<li>You should have space on your hard disk to create a new disk partition of at least 580MB to install the base system. You'll need more
+disk space to install additional packages, depending on what you wish to do with your new HP Linux for HP Helion system.</li>
+<li>HP Linux for HP Helion is supported on the same hardware as the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >HP Helion Open Stack support matrix</xref>.</li>
+</ul>
+<p>To install HP Linux for HP Helion OpenStack follow the steps below:</p>
+<ol>
+<li>Insert, mount, or otherwise connect the  ISO media to your target device. Boot the device from the media. This may involve using basic input/output system (BIOS) commands or the function keys (&lt;F1&gt;, &lt;F9&gt;, and so on) to override the normal boot process of your device.
+  <!--A BR tag was used here in the original source.--><image href="../../media/start.png" placement="break"/>
+</li>
+<li>
+Type the word <b>install</b> and press the Enter key, which will initiate the installation process. You may safely ignore error messages about the "mount" command failing:
+</li>
+
+<li>On the Select a language screen, select your language and press Enter.  
+Subsequent screens will look similar to this one. Remember to press Enter to execute the settings as you go.
+
+
+
+  <image href="../../media/language.png" placement="break"/>
+<!--A BR tag was used here in the original source.-->
+</li>
+
+<li>On the next screen, select the location that corresponds with your machine.
+</li>
+
+<li>Now,  configure the keyboard. Select the keymap that corresponds with your machine.
+</li>
+
+<li>Next, select an appropriate hostname for your system. </li>
+
+<li>In the next screen, Configure the network, add a domain name if appropriate.
+</li>
+
+<li>On the <varname>Set up users and passwords</varname> screens that follow next:
+<ul>
+<li> Type a root password and press Enter.  
+</li>
+<li>
+Confirm the root password. Press Enter.  
+</li>
+<li>The next screen will request the full name of a new, non-root user. Input the name and press Enter.  
+</li>
+<li>Next, enter the username for the new, non-root user or select the default username.
+</li>  
+<li>Then, assign a password for the new, non-root user.
+</li>  
+<li>The final step in the user setup is to confirm the password for the new, non-root user. Confirm and press Enter. 
+</li>
+</ul>
+</li>
+
+<li>Next, Configure the clock. Select the time zone of the server and press Enter. 
+</li>
+
+<li>On the screen entitled Partition disks, select the desired partitioning method for your setup, Select Guided - use entire disk and set up LVM from the list and press Enter.
+
+
+  <image href="../../media/partition1.png" placement="break"/>
+</li>
+
+<li>Next, select the correct disk and press Enter.
+<!--A BR tag was used here in the original source.--><b>WARNING:</b> Selecting the incorrect disk could permanently damage or remove data from that disk. If there is more than one choice available, ensure you select the correct one.
+  <image href="../../media/partition2.png" placement="break"/>
+</li>
+
+<li>On the next screen, select the proper partitioning scheme for your purposes and press Enter. Select All files in one partition (recommended for new users) from the list.
+  <image href="../../media/partition3.png" placement="break"/>
+</li>
+
+<li>Next, confirm the overview of the new partitions and select Finish partitioning and write changes to disk. Press Enter.
+  <image href="../../media/partition4.png" placement="break"/>
+</li>
+
+<li>On the next screen you will commit your changes. Select Yes, and press Enter to write the changes to disk. The system will begin to install. This process can take some time. 
+  <image href="../../media/partition5.png" placement="break"/>
+</li>
+
+<li>On the Install the GRUB boot loader on a hard disk screen, select the appropriate device. The device name may be different but it is most likely the same device to which you installed the system, namely /dev/sda (&lt;identifier&gt;), and press Enter.
+  <image href="../../media/installGrub.png" placement="break"/>
+</li>
+
+
+<li>On the Finish the installation screen, select Continue and press Enter to reboot to the newly-installed HP Linux for HP Helion system. 
+Note: It may be necessary to remove or unmount the removable media before rebooting.
+  <image href="../../media/finishInstall.png" placement="break"/>
+</li>
+
+<li>You now have a new HP Linux for HP Helion system. Logon with the username and password combination you created during install, or as 'root' with the password set during the install process. 
+  <image href="../../media/done.jpg" placement="break"/>
+</li>
+</ol>
+</body>
+</topic>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic3118">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.0: Updating OVSvApp on ESX hosts</title>
+<titlealts>
+<searchtitle>HP Helion Openstack Installation and Configuration</searchtitle>
+</titlealts>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./commercial/GA1/commercial.update-101-ovsvapp.md-->
+ <!--permalink: /helion/openstack/update/ovsvapp/101/--></p>
+<!--
+
+-->
+<p>To update the OVSvApp from version 1.0 to version 1.01:</p>
+<ol>
+<li>
+<p>Make sure that DRS is enabled on the cluster on which 1.01 version of OVSvApp will be installed:</p>
+
+<p>a. In the vSphere client, select the cluster in the vSphere Client inventory.</p>
+
+<p>b. Right-click and select <b>Edit Settings</b>.</p>
+
+<p>c. In the left panel, select General, and make sure <b>Turn On vSphere DRS</b> is selected.</p>
+
+<p>d. Click <b>OK</b>.</p>
+
+<p>
+<b>Note:</b> DRS safeguards tenant VM traffic from being black-holed.</p>
+</li>
+<li>
+<p>Disable vMotion from vSwitch properties. This won't let DRS to bring back VMs on the host when the host is brought back from maintenance mode as in Step 4.</p>
+
+<p>a. In the vSphere client, select the host in the vSphere Client inventory.</p>
+
+<p>b. On the <b>Configuration</b> tab, select <b>Networking</b>.</p>
+
+<p>c. Click V<b>irtual Switch</b> to display the virtual switches for the host.</p>
+
+<p>d. Locate the virtual switch that has a VMkernel port group configured for vMotion, and click the <b>Properties</b> link.</p>
+
+<p>e. On the <b>Ports</b> tab, select the port group that is configured for vMotion and click <b>Edit</b>.</p>
+
+<p>f. On the <b>General</b> tab, clear the <b>Enabled</b> option for vMotion.</p>
+
+<p>g. Click <b>OK</b> to close the port group <b>Properties</b> dialog, and click <b>Close</b> to close the vSwitch <b>Properties</b> dialog.</p>
+</li>
+<li>
+<p>Place the ESX host on which the 1.01 version of OVSvApp will be installed into maintenance mode :</p>
+
+<p>In the vSphere Client, right click on the ESX host and select <b>Enter Maintenance mode</b>.</p>
+
+<p>All virtual machines on the host are migrated to different hosts when the host enters maintenance mode.</p>
+</li>
+<li>
+<p>Exit maintenance mode.</p>
+
+<p>In the vSphere Client, right click on the ESX host and select <b>Exit Maintenance mode</b>.</p>
+</li>
+<li>
+<p>Delete the OVSvApp appliance:</p>
+
+<p>a. Right-click the <b>OVSvApp VM</b>.</p>
+
+<p>b. Select <b>Delete</b>.</p>
+</li>
+<li>
+<p>On the controller, execute the following command to obtain the <codeph>ovsvapp_agent_id</codeph>.</p>
+
+<codeblock>
+<codeph>neutron agent-list 
+</codeph>
+</codeblock>
+
+<p>Note the ID.</p>
+</li>
+<li>
+<p>On the controller, execute the following command to remove the entry from <codeph>neutron agent-list</codeph>.</p>
+
+<codeblock>
+<codeph>neutron agent-delete &lt;ovsvapp_agent_id&gt;
+</codeph>
+</codeblock>
+
+<p>
+<b>Where:</b>
+</p>
+
+<p>
+<codeph>&lt;ovsvapp_agent_id&gt;</codeph> is the OVSvApp ID obtained.</p>
+</li>
+<li>
+<p>Install 1.01 version of OVSvApp VM on that ESX host using the <codeph>add_new_hosts</codeph> variable under the <codeph>new-host-addition</codeph> section in <codeph>ovs_vapp.ini</codeph> file</p>
+
+<codeblock>
+<codeph>add_new_hosts=True
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Invoke the installer using the following commands:</p>
+
+<codeblock>
+<codeph>sudo su
+cd /hp-ovsvapp/src/installer/
+python invoke_vapp_installer.py
+</codeph>
+</codeblock>
+
+<p>The installation log file will be located at <codeph>/hp-ovsvapp/log/ovs_vapp.log</codeph>.</p>
+</li>
+<li>
+<p>Re-enable vMotion on vSwitch properties of that ESX host.</p>
+
+<p>a. In the vSphere Client, right click on the ESX host.</p>
+
+<p>b. Click the <b>Configuration</b> tab.</p>
+
+<p>c. In the <b>Hardware</b> section, click <b>Networking</b>.</p>
+
+<p>d. Click <b>Properties</b> for the virtual switch where a VMkernel port has been configured.</p>
+
+<p>e. In the dialog box that opens, select <codeph>vmkernel</codeph> in the <b>Ports</b> tab and click <b>Edit</b>.</p>
+
+<p>f. Select <b>Enabled</b> next to vMotion.</p>
+
+<p>g. Click <b>OK</b>.</p>
+</li>
+</ol>
+<p>
+  <xref type="section" href="#topic3118"> Return to Top </xref>
+</p>
+<!-- ===================== horizontal rule ===================== -->
+</body>
+</topic>

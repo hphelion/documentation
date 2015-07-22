@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_qxp_v1q_ns">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Supported IHV Hardware</title>
+  <prolog>
+    <metadata>
+      <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+      <othermeta name="role" content="Storage Administrator"/>
+      <othermeta name="role" content="Storage Architect"/>
+      <othermeta name="role" content="Geraldine K,"/>
+      <othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <p>The following independent hardware vendor (IHV) hardware has been verified to work with HP
+      Helion OpenStack: </p>
+    <section id="ibm-systems">
+        <title>IBM Systems</title>
+        <ul>
+          <li>System x3550 M4</li>
+          <li>System x3650 M5</li>
+        </ul>
+      </section>
+    <section id="dell-systems">
+        <title>Dell Systems</title>
+        <ul>
+          <li>PowerEdge R720xd</li>
+          <li>PowerEdge R620</li>
+        </ul>
+      </section>
+    <section><title>Stand Up Adapters:</title>
+      <title>NIC</title>
+      <ul>
+        <li>Dell: Broadcom Corporation NetXtreme II BCM57810 10 Gigabit Ethernet (rev 10)</li>
+        <li>IBM: Broadcom Corporation NetXtreme BCM5719 Gigabit Ethernet PCIe (rev 01)</li>
+      </ul>
+    </section>
+  </body>
+</topic>
+
