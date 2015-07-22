@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
- <map>
  
+<map xml:lang="en" linking="none" locktitle="no">
+
   <topicref href="devplatform/1.2devplatform.index.dita"
     navtitle="HP Helion Development Platform" locktitle="yes">
-    <!--//OASIS//DTD DITA Topic//EN"-->
-    <!--permalink: /helion/devplatform/3rd-party-license-agreements/-->
     <topicref href="devplatform/1.2devplatform.thirdparty.licensing.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
     <!--permalink: /helion/devplatform/eula/-->

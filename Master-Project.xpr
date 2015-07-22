@@ -23,17 +23,13 @@
         <folder path="CloudGraphics/"/>
         <folder path="cloudos/"/>
         <folder path="commercial/"/>
-        <folder path="community/"/>
         <folder path="devplatform/"/>
         <folder path="euca/"/>
-        <folder path="file/"/>
         <folder path="media/"/>
         <folder path="PDF/"/>
         <folder path="pdf_sources/"/>
         <folder path="publiccloud/"/>
         <folder path="unusedgraphics/"/>
         <folder path="UseCases/"/>
-        <file name="devplatform/helion/admin/server/1.2configuration.dita"/>
-        <file name="devplatform/helion/admin/server/1.2upgrade.dita"/>
     </projectTree>
 </project>
