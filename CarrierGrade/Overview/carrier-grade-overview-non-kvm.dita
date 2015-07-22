@@ -16,14 +16,11 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/Overview/carrier-grade-overview-helion.md-->
- <!--permalink: /helion/openstack/carrier/helion/overview/--></p>
     <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
-      or conceptual <i>regions</i>: Non-KVM and KVM.  The Non-KVM region contains the HP Helion
+      or conceptual <i>regions</i>: Non-KVM and KVM. The Non-KVM region contains the HP Helion
       Lifecycle Management (HLM), to deploy and maintain HP Helion OpenStack Carrier Grade; and HP
       Helion OpenStack, a commercial-grade distribution of OpenStack.</p>
+    <p><b>Note:</b> These regions do not function as OpenStack regions. </p>
 
 <section><title>HP Helion Lifecycle Management</title>
   <p>The Non-KVM environment includes a full installation of HP Helion Lifecycle Management (HLM).
@@ -32,21 +29,21 @@
   <ul id="ul_bhj_clv_ls">
     <li>
       <p>
-        <b>Physical Node Preparation.</b> You can use HLM to configure nodes prior to installation
-        of a base operating system, including node discovery/inventory, BIOS configuration,
-        (specifically setting PXE boot on primary interface), GRUB settings, RAID setup for local
-        disks, iLO/IPMI set up and firmware upgrades.</p>
+            <b>Physical Node Preparation.</b> HLM can configure nodes prior to installation of a
+            base operating system, including node discovery/inventory, BIOS configuration,
+            (specifically setting PXE boot on primary interface), GRUB settings, RAID setup for
+            local disks, iLO/IPMI set up and firmware upgrades.</p>
     </li>
     <li>
       <p>
-        <b>OS Install.</b> You can use HLM take a PXE bootable node and installs a base operating
-        system.</p>
+            <b>OS Install.</b> HLM can take a PXE bootable node and installs a base operating
+            system.</p>
     </li>
     <li>
       <p>
-        <b>Cloud Configuration.</b> You can provide detailed information about the cloud topology,
-        such as the structure of control plane, assignment of services to nodes, and service
-        configuration. You can also specify environment-specific configurations.</p>
+            <b>Cloud Configuration.</b> HLM can provide detailed information about the cloud
+            topology, such as the structure of control plane, assignment of services to nodes, and
+            service configuration. You can also specify environment-specific configurations.</p>
     </li>
     <li>
       <p>
@@ -57,9 +54,8 @@
     </li>
     <li>
       <p>
-        <b>Helion Operation &amp; Maintenance.</b> HLM is responsible for the deploy, upgrade and
-        maintenance lifecycle of the HP Helion OpenStack Carrier Grade
-        system. See <xref href="carrier-grade-overview-hlm.dita#topic1771" type="section" />.</p>
+            <b>Helion Operation &amp; Maintenance.</b> HLM is responsible for the deploy, upgrade
+            and maintenance lifecycle of the HP Helion OpenStack Carrier Grade system.</p>
     </li>
   </ul>
   

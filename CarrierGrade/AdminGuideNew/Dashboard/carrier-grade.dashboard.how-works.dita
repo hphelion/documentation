@@ -26,18 +26,22 @@
  <!--./CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.md-->
  <!--permalink: /helion/openstack/carrier/dashboard/how-works/--></p>
 <p>The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Carrier Grade.</p>
-<p>The interface, based on OpenStack Horizon, is grouped into dashboards, including <xref type="section" href="#topic6108/DashProject">Project</xref>, <xref type="section" href="#topic6108/DashAdmin">Admin</xref> and <xref type="section" href="#topic6108/DashIdent">Identity</xref>. Tabs on the left side of the interface expand and contract to show available commands grouped into <b>panels</b>.</p>
+<p>The interface, based on OpenStack Horizon, is grouped into tabs, including <xref type="section"
+        href="#topic6108/DashProject">Project</xref>, <xref type="section"
+        href="#topic6108/DashAdmin">Admin</xref> and <xref type="section"
+        href="#topic6108/DashIdent">Identity</xref>. The tabs expand and contract to show available
+      commands grouped into <b>panels</b>.</p>
 <p>Across the top are menus to switch between projects and menus where you can access user settings.</p>
 <p>
-  <image href="../../../media/CGH-Helion-Window-RC.png">
-<alt/>
-</image>
-</p>
+      <image href="../../../media/CGH-Helion-Window-RC.png"></image></p>
+  
 <p>How you interact with your network environment depends upon your user type, either an administrative user or a non-administrative user (user). In general, a non-admin user can make changes to projects to which that user is associated. Admin users can make changes throughout the domain.</p>
 <p>To access the dashboard, <xref href="../../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita" >enter the dashboard URL in a supported browser and log in</xref>.</p>
 <p>At the bottom of this page, you can see some of the services you can manage right from the dashboard.</p>
-<section id="DashProject"> <title>Project dashboard</title>
-<p>Use the <b>Project</b> dashboard to implement and build out your cloud. This dashboard contains tools to create virtual server instances, create and configure your network, configure access tools (such as key pairs and security groups) and cloud resource templates (stacks).</p>
+<section id="DashProject"> <title>Project tab</title>
+<p>Use the <b>Project</b> tab to implement and build out your cloud. This dashboard contains tools
+        to create virtual server instances, create and configure your network, configure access
+        tools (such as key pairs and security groups) and cloud resource templates (stacks).</p>
 <table>
 <tgroup cols="2">
           <colspec colname="col1" colsep="1" rowsep="1"/>
@@ -118,9 +122,10 @@
         </tgroup>
 </table>
 </section>
-<section id="DashAdmin"> <title>Admin dashboard</title>
-<p>Use the <b>Admin</b> dashboard to view, allocate, and manage all resources within the cloud.</p>
-<p>The Admin dashboard allows you to manage instances, define flavors, create and configure images, manage networks, view system resources, manage projects, and manage users.</p>
+<section id="DashAdmin"> <title>Admin tab</title>
+<p>Use the <b>Admin</b> tab to view, allocate, and manage all resources within the cloud.</p>
+<p>The Admin tab allows you to manage instances, define flavors, create and configure images, manage
+        networks, view system resources, manage projects, and manage users.</p>
 <table>
 <tgroup cols="2">
           <colspec colname="col1" colsep="1" rowsep="1"/>
@@ -220,8 +225,9 @@
         </tgroup>
 </table>
 </section>
-<section id="DashIdent"> <title>Identity dashboard<!--Removed anchor point DashIdent--><!-- id="DashIdent" --></title>
-<p>Use the <b>Admin</b> panel to create and delete users, change user passwords, assign users to projects, and other tasks.</p>
+<section id="DashIdent"> <title>Identity tab</title>
+<p>Use the <b>Identity</b> tab to create and delete users, change user passwords, assign users to
+        projects, and other tasks.</p>
 <table>
 <tgroup cols="2">
           <colspec colname="col1" colsep="1" rowsep="1"/>
