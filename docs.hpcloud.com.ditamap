@@ -17,7 +17,7 @@
   <!--permalink: -->
   <!--permalink: /-->
 <!-- Index -->
-<topicref href="publiccloud/index.dita"/>
+<topicref href="home.dita"/>
 <!-- HoS 2.0 -->
 <topichead navtitle="HP Helion OpenStack 2.0">
 <topichead navtitle="HP Helion OpenStack Services">
