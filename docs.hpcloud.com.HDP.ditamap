@@ -285,6 +285,8 @@
             navtitle="Using the cloud-init Package"/>
           <topicref href="devplatform/helion/admin/server/1.2upgrade.dita" locktitle="yes"
             navtitle="In-Place Upgrades of ALS Nodes and Clusters"/>
+          <topicref href="devplatform/helion/admin/cluster/zones.dita"
+            navtitle="Availability and Placement Zones" locktitle="yes"/>
         </topicref>
         <!--permalink: /helion/devplatform/als/admin/cluster/cloud-init/-->
         <!--permalink: /helion/devplatform/als/admin/cluster/external-db/-->
