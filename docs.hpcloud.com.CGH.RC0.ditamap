@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en" linking="none" locktitle="no">
+  <title>HP Helion OpenStack Carrier Grade 1.1 RC0</title>
+  <topicmeta>
+    <copyright>
+      <copyryear year="2015"/>
+      <copyrholder>HP Helion</copyrholder>
+    </copyright>
+    <prodinfo>
+      <prodname>HP Helion</prodname>
+      <vrmlist>
+        <vrm version="4.1.0"/>
+      </vrmlist>
+    </prodinfo>
+  </topicmeta>
+  <!--permalink: -->
+  <!--permalink: /-->
+<!-- Index -->
+<!-- HoS 2.0 -->
+<!--Dev Plat-->
+<!-- Euca -->
+<!-- CGH -->  
+  <topicref href="CarrierGrade/RC0/carrier-grade-index.dita">
+    <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333830215.xml">
+      <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333830815.xml"/>
+      <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333831397.xml"/>
+      <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1404333831977.xml"/>
+      <topicref href="CarrierGrade/RC0/CGHRelNotes/jow1430312565268.xml"/>
+    </topicref>
+    <topicref href="CarrierGrade/RC0/Installation/carrier-grade-technical-overview.dita"/>
+    <topicref href="CarrierGrade/RC0/Installation/carrier-grade-technical-specs.dita"/>
+    <topicref href="CarrierGrade/RC0/Installation/carrier-grade-support-matrix2.dita"/>
+    <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-pb-overview.dita">
+      <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-pb-prereqs.dita">
+        <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-pb-network-prepare.dita"/>
+        <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-NTP.dita"/>
+      </topicref>
+      <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-non-kvm.dita"/>
+      <topicref href="CarrierGrade/RC0/Installation/carrier-grade-install-kvm-cloud-rc0.dita">
+        <topicref
+          href="CarrierGrade/RC0/Installation/carrier-grade-install-kvm-network-interface.dita"/>
+      </topicref>
+    </topicref>
+    <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf"
+      navtitle="Administrator Guide"/>
+  </topicref>  
+ </map>
