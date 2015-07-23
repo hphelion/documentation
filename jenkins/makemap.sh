@@ -63,4 +63,4 @@ done
 echo "</map>" >> docs.hpcloud.com.ditamap
 sed -i 's|{.*}|xx|g' docs.hpcloud.com.ditamap
 
-echo " test "
+echo " test   "
