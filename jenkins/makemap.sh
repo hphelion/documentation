@@ -1,4 +1,3 @@
-
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <!DOCTYPE map PUBLIC \"-//OASIS//DTD DITA Map//EN\" \"map.dtd\">
 <map xml:lang=\"en\">
@@ -64,4 +63,4 @@ done
 echo "</map>" >> docs.hpcloud.com.ditamap
 sed -i 's|{.*}|xx|g' docs.hpcloud.com.ditamap
 
-echo " test "
+   echo "test"
