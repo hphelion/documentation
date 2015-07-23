@@ -17,7 +17,7 @@
   <simpletable id="homepageTable" relcolwidth="1.0* 5.06*">
       <strow>
         <stentry>
-          <xref href="../commercial/GA1/1.1commercial.index.dita">HP Helion <tm tmtype="reg">OpenStack</tm></xref>
+          <xref href="commercial/GA1/1.1commercial.index.dita">HP Helion <tm tmtype="reg">OpenStack</tm></xref>
         </stentry>
         <stentry>A commercial grade software solution that enables customers to deploy private,
           managed, hybrid, and public cloud services based on OpenStack HP
@@ -26,14 +26,14 @@
       </strow>
       <strow>
         <stentry>
-          <xref href="../community/community.index.dita#topic2348" type="section">HP Helion OpenStack Community</xref>
+          <xref href="community/community.index.dita#topic2348" type="section">HP Helion OpenStack Community</xref>
         </stentry>
         <stentry>Pure and free-to-license distribution of OpenStack technology
           for small scale open cloud environments. </stentry>
       </strow>
       <strow>
         <stentry>
-          <xref href="../devplatform/1.2/1.2devplatform.index.dita">HP Helion Development
+          <xref href="devplatform/1.2/1.2devplatform.index.dita">HP Helion Development
             Platform</xref>
         </stentry>
         <stentry>Based on <tm tmtype="tm">Cloud Foundry</tm>, this add-on for Helion OpenStack empowers developers and IT professionals with an open
@@ -41,7 +41,7 @@
       </strow>
       <strow>
         <stentry>
-          <xref href="../euca/euca-landing-page.dita">HP Helion Eucalyptus</xref>
+          <xref href="euca/euca-landing-page.dita">HP Helion Eucalyptus</xref>
         </stentry>
         <stentry>Open source software that enables IT leaders to easily build, deploy and manage
           AWS-compatible hybrid clouds. With HP Helion Eucalyptus, users can rapidly migrate
@@ -50,14 +50,14 @@
       </strow>
       <strow>
         <stentry>
-          <xref href="../publiccloud/publiccloud-overview.dita">HP Helion Public Cloud</xref>
+          <xref href="publiccloud/publiccloud-overview.dita">HP Helion Public Cloud</xref>
         </stentry>
         <stentry>Provides a transparent, enterprise-grade public cloud based on OpenStack technology with on-demand, pay-as-you-go cloud services for computing
           and storage infrastructure as well as platform services. </stentry>
       </strow>
       <strow>
         <stentry>
-          <xref href="../automation/csa.index.dita">HP Cloud Service Automation</xref>
+          <xref href="automation/csa.index.dita">HP Cloud Service Automation</xref>
         </stentry>
         <stentry>Provides open, heterogeneous, extensible enterprise-grade cloud service lifecycle
           management to design and orchestrate full stack services. CSA embraces existing automation
@@ -66,14 +66,14 @@
       </strow>
       <strow>
         <stentry>
-          <xref href="../codar-landing-page.dita">HP Codar </xref>
+          <xref href="codar-landing-page.dita">HP Codar </xref>
         </stentry>
         <stentry>A continuous delivery solution that provides automated deployment and release
           management of complex multi-tier applications across the application lifecycle. </stentry>
       </strow>
       <strow>
         <stentry>
-          <xref href="../cloudsystem.landingpage.dita">HP CloudSystem Foundation</xref>
+          <xref href="cloudsystem.landingpage.dita">HP CloudSystem Foundation</xref>
         </stentry>
         <stentry>Integrates hardware and software to deliver core Infrastructure as a Service
           provisioning and lifecycle management of compute, network and storage resources.
@@ -81,14 +81,14 @@
       </strow>
       <strow>
         <stentry>
-          <xref href="../cloudsystem.landingpage.dita">HP CloudSystem Enterprise</xref>
+          <xref href="cloudsystem.landingpage.dita">HP CloudSystem Enterprise</xref>
         </stentry>
         <stentry>Expands on CloudSystem Foundation to integrate servers, storage, networking,
           security, and management to automate the lifecycle for hybrid service delivery. </stentry>
       </strow>
       <strow>
         <stentry>
-          <xref href="../helion.rack.solution.dita">HP Helion Cloud Solutions </xref>
+          <xref href="helion.rack.solution.dita">HP Helion Cloud Solutions </xref>
         </stentry>
         <stentry>Built, tested, and validated by HP cloud experts, our optimized cloud solutions are
           based on HP Helion OpenStack industry-leading HP ProLiant servers
