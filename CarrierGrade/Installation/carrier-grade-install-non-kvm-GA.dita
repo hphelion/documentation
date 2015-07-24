@@ -9,11 +9,9 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--UNDER REVISION-->
- <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
- <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
   <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a virtual machine for the Helion Lifecycle Management (HLM) and then deploying the HP Helion Openstack cloud.</p>
+    <p>The installation uses Ansible playbooks, which are files that contain which contains the
+      steps that should be run.</p>
 
 <section id="prepare"> <title>Prepare the system for deployment</title>
 <p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM host):</p>

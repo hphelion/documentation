@@ -24,13 +24,10 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./devplatform/1.2devplatform_upgrade.md-->
- <!--permalink: /helion/devplatform/upgrade/--></p>
-<p>If Helion Development Platform 1.1 is installed on Helion <tm tmtype="reg">OpenStack</tm> 1.1, and the Helion OpenStack environment is updated to version 1.1.1, the Helion Developer Platform services must be stopped, and the control plane VMs must be restarted to complete the upgrade.</p>
-<p>If Helion OpenStack version 1.1 is upgraded to version 1.1.1 without Helion Development Platform installed, no upgrade is necessary, and Helion Development Platform 1.2 can be installed normally. See <xref href="../../devplatform/installation/devplatform_commercial_install.dita" >HP Helion 1.2 Development Platform: Installation and Configuration</xref> for instructions for a new installation.</p>
-<p>When Helion OpenStack is updated from 1.1. to 1.1.1, the Marketplace, Messaging, and Database services will automatically be updated to version 1.2. To update the Application Lifecycle Service, version 1.2 of the service must be downloaded and installed.</p>
+    <p>If the Helion Development Platform was not previously installed, upgrade Helion  <tm tmtype="reg">OpenStack</tm> from version 1.1 to 1.1.1 and then <xref href="installation/devplatform_commercial_install.dita">install Helion Development Platform 1.2.</xref>.</p>
+
+    <p>If the Helion Development Platform was previously installed, the Helion Development Platform services must be stopped before beginning the Helion OpenStack update. During the Helion OpenStack update, the Marketplace, Messaging, and Database services will automatically update to version 1.2. Version 1.2 of the Application Lifecycle Service must then be downloaded and installed separately. Once the update and installation is finished, the Helion Development Platform services and the control plane VMs must be restarted.</p>
+
 <ul>
 <li>
 <xref type="section" href="#topic3949/HDPstop">Stopping Helion Development Platform services</xref>
@@ -46,20 +43,12 @@
 <li>Set <codeph>dev_plat_service</codeph> to the name of the service (trove/marketplace).</li>
 <li>Set <codeph>skip_ha_checks</codeph> if the service control plane is not running in HA mode. </li>
 <li>Provide path to the SSH private key that can be used to connect to the service control plane VMs.</li>
-<li>
-<p>Back up the ansible folder and move the latest build to its location:</p>
-
-<codeblock>
-<codeph>mv /opt/stack/tripleo-ansible /opt/stack/tripleo-ansible-old
-mv /opt/stack/tripleo-ansible-build-81 /opt/stack/tripleo-ansible
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Source credentials for the Nova account which was used to set up the Helion Developer Platform service by entering:</p>
-
-<codeblock>
-<codeph>cd /opt/stack/tripleo-ansible 
+<li> Back up the ansible folder and move the latest build to its
+                    location:<codeblock>mv /opt/stack/tripleo-ansible /opt/stack/tripleo-ansible-old
+mv /opt/stack/tripleo-ansible-build-81 /opt/stack/tripleo-ansible</codeblock></li>
+<li> Source credentials for the Nova account which was used to set up the Helion Developer Platform
+                    service by
+                    entering:<codeblock>cd /opt/stack/tripleo-ansible 
 source overcloud.stackrc
 source /opt/stack/venvs/openstack/bin/activate
 ansible-playbook \
@@ -68,62 +57,37 @@ ansible-playbook \
     --skip_ha_checks=True \
     -u heat-admin \
     -i plugins/inventory/dev_platform_heat.py \
-    playbooks/dev-platform/dev_platform_pre_check.yml 
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>If service is in healthy state, stop it by entering (if the service is not in a healthy state, contact customer support):</p>
-
-<codeblock>
-<codeph>ansible-playbook \
+    playbooks/dev-platform/dev_platform_pre_check.yml </codeblock></li>
+<li> If the service is in a healthy state, stop it using the following commands. (If the service is
+                    not in a healthy state, contact customer
+                    support.)<codeblock>ansible-playbook \
     --extra-vars dev_plat_service=&lt;service&gt; \
     --private-key &lt;path to SSH private key&gt; \
     -u heat-admin \
     -i plugins/inventory/dev_platform_heat.py \
-    playbooks/dev-platform/dev_platform_stop.yml
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Stop the control plane VMs by entering:</p>
-
-<codeblock>
-<codeph>scripts/dev-platform/stop_dev_platform_instances.bash 
-</codeph>
-</codeblock>
-</li>
+    playbooks/dev-platform/dev_platform_stop.yml</codeblock></li>
+<li> Stop the control plane
+                    VMs.<codeblock>scripts/dev-platform/stop_dev_platform_instances.bash </codeblock></li>
 </ol>
 <p>You can now run the update script.</p>
 </section>
 <section id="HDPstart"> <title>Restarting Helion Development Platform control plane VMs<!--Removed anchor point HDPstart--><!-- id="HDPstart" --></title>
 <p>After running update on the overcloud, the VMs running on the Compute hosts are in a shutdown state, so you need to first start the Helion Development Platform service control plane VMs. To do this:</p>
 <ol>
-<li>
-<p>Source the credentials for the Nova account which was used to set up the Helion Developer Platform service by entering:</p>
-
-<codeblock>
-<codeph>cd /opt/stack/tripleo-ansible 
-scripts/dev-platform/restart_dev_platform_instances.bash 
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Since you have already sourced correct overcloud Nova credentials, you can simply verify the status of Helion Developer Platform service VMs by running the <codeph>nova list</codeph> command and checking the status field.</p>
-</li>
-<li>
-<p>To start the Helion Development Platform service, enter:</p>
-
-<codeblock>
-<codeph>ansible-playbook \
+<li> Source the credentials for the Nova account which was used to set up the Helion Developer
+                    Platform service by
+                    entering:<codeblock>cd /opt/stack/tripleo-ansible 
+scripts/dev-platform/restart_dev_platform_instances.bash </codeblock></li>
+<li> Since you have already sourced correct overcloud Nova credentials, you can simply verify the
+                    status of Helion Developer Platform service VMs by running the <codeph>nova
+                        list</codeph> command and checking the status field.</li>
+<li>To start the Helion Development Platform service,
+                    enter:<codeblock>ansible-playbook \
     --extra-vars dev_plat_service=&lt;service&gt; \
     --private-key &lt;path to SSH private key&gt; \
     -u heat-admin \
     -i plugins/inventory/dev_platform_heat.py \
-    playbooks/dev-platform/dev_platform_start.yml 
-</codeph>
-</codeblock>
-</li>
+    playbooks/dev-platform/dev_platform_start.yml </codeblock></li>
 </ol>
 </section>
 </body>
