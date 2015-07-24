@@ -257,9 +257,7 @@
   <section id="typical">
     <title>Typical Configurations</title>
       <p>The following tables list the hardware required for a complete HP Helion OpenStack Carrier
-        Grade installation using GEN9 servers in a <xref href="#topic1773/rack" format="dita"
-          >rackmount installation</xref> or an <xref href="#topic1773/enclosure" format="dita"
-          >enclosure</xref>.</p> 
+        Grade installation using GEN9 servers in a <xref href="#topic1773/rack" format="dita">rackmount installation</xref> or an <xref href="#topic1773/enclosure" format="dita">enclosure</xref>.</p> 
         <p id="rack"><b>GEN9 Rackmount Base</b></p>
       <table id="table_tgx_5k2_qs">
         <tgroup cols="2">
@@ -392,7 +390,7 @@
       files.</p></section>
 <!-- 
   <section id="support-matrix-for-hp-distributed-cloud-networking-dcn-host"> <title>Support Matrix for HP Distributed Cloud Networking (DCN) host</title>
-<p>For key requirements needed HP Distributed Cloud Networking (DCN), see <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-dcn.dita" >Support Matrix for HP Distributed Cloud Networking</xref>.</p>
+<p>For key requirements needed HP Distributed Cloud Networking (DCN), see <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-dcn.dita">Support Matrix for HP Distributed Cloud Networking</xref>.</p>
 </section>  -->
 
   <section id="next"> <title>Next step</title>

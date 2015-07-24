@@ -39,7 +39,7 @@
 <section id="working-with-ceilometer"> <title>Working with Ceilometer</title>
 <p>All the Ceilometer processes have a unified configuration file that can be found at <i>/etc/ceilometer/ceilometer.conf</i> on the specific overcloud controller you are logged in to.</p>
 <p>Access to Ceilometer is through the command-line interface <xref href="http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html" scope="external" format="html" >(CLI)</xref>, or the low-level <xref href="http://developer.openstack.org/api-ref-telemetry-v2.html" scope="external" format="html" >REST API</xref>. A Ceilometer Horizon dashboard panel is not available at this time.</p>
-<ul>
+<!--<ul>
 <li>
 <xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-components.dita" >Configuration and Architecture Overview</xref>
 </li>
@@ -85,7 +85,7 @@
 </li>
 </ul>
 </li>
-</ul>
+</ul> -->
 </section>
 </body>
 </topic>

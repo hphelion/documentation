@@ -68,13 +68,13 @@
 <p>The following services are foundation technologies used by the HP Helion OpenStack Based on OpenStack technology, HP Helion OpenStack comprises of a set of services and architecture that defines a data-center-level operating system (DCOS).</p>
 <p>
 <b>Compute Operations (Nova)</b>. The Compute service manages the hypervisors and virtual machines in your environment.</p>
-<p>See <xref href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-compute-overview.dita" >Overview of the Compute service</xref>.
+<p>See <xref href="../ServicesOverviews/carrier-grade-services-compute-overview.dita" >Overview of the Compute service</xref>.
 
 <b>Metering (Ceilometer)</b>. The Metering service enables a single infrastructure to collect measurements throughout your cloud environment.</p>
-  <p>See <xref href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-metering-overview.dita" >Overview of the Metering Service</xref>.</p>
+  <p>See <xref href="../ServicesOverviews/carrier-grade-services-metering-overview.dita" >Overview of the Metering Service</xref>.</p>
   <p>
     <b>Orchestration (Heat)</b>. The Orchestration service provides a template-based orchestration for describing a cloud application. A Heat template is a <xref href="http://www.yaml.org/" scope="external" format="html" >YAML</xref> file that describes the infrastructure for a cloud application. Templates contain vendor-independent specifications for launching a particular service or application.</p>
-  <p>See <xref href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-orchestration-overview.dita" >Overview of the Orchestration service</xref>.</p>
+  <p>See <xref href="../ServicesOverviews/carrier-grade-services-orchestration-overview.dita" >Overview of the Orchestration service</xref>.</p>
   
 <p><b>Icinga</b> The Icinga service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s). Icinga is an open-source software project.</p>p>
   
@@ -97,11 +97,11 @@ See [Overview of the Networking service](/helion/openstack/carrier/services/netw
 **Object Operations (Swift)**. The Object Operations service enables you to store and retrieve data. Object Storage is a distributed storage system for static data such as virtual machine images, photo storage, email storage, backups and archives. 
 
 See [Overview of the Object Operations service](/helion/openstack/carrier/services/object/overview/).
--->
 <p>
 <b>Volume Operations (Cinder)</b>. The Volume Operations service enables you to attach storage volumes to the virtual instances in your cloud environment. The service provides persistent block level storage devices for use with your Compute instances.</p>
-<p>See <xref href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-volume-overview.dita" >Overview of the Volume Operations Service</xref>.</p>
+<p>See <xref href="../ServicesOverviews/carrier-grade-services-volume-overview.dita" >Overview of the Volume Operations Service</xref>.</p>
 
+-->
 <!-- Hiding for Alpha
 **Ceph**. Ceph is an Open Source, scalable, software defined storage running on HP Servers which provides block and object storage with unified management. 
 
@@ -133,9 +133,9 @@ See [Overview of Sherpa Service](/helion/openstack/carrier/services/sherpa/overv
 <section id="dash"> <title>Dashboard services</title>
 <p>HP Helion OpenStack uses the following services or software to present user interfaces to aspects of HP Helion OpenStack</p>
 <p>
-<b>Horizon</b> The Horizon service is the basis of the <xref href="../../CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita" >HP Helion OpenStack dashboards</xref> for creating and managing HP Helion OpenStack resources. The Horizon dashboard is developed by HP for use with HP Helion OpenStack</p>
+<b>Horizon</b> The Horizon service is the basis of the <xref href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita" >HP Helion OpenStack dashboards</xref> for creating and managing HP Helion OpenStack resources. The Horizon dashboard is developed by HP for use with HP Helion OpenStack</p>
 <p>You can use the HP Helion OpenStack dashboard to view, allocate, and manage all virtual resources within a cloud. 
-See <xref href="../../commercial/GA1/1.1commerical.services-horizon-overview.dita" >Overview of the Horizon Service</xref>.</p>
+See <xref href="../ServicesOverviews/carrier-grade-services-horizon-overview.dita" >Overview of the Horizon Service</xref>.</p>
 <!-- Hiding for Alpha
 
 **Kibana**. The Kibana service, which runs in the undercloud, is the user interface into the [centralized logging service](/helion/openstack/carrier/services/logging/overview/) that helps view logging data across the HP Helion OpenStack cloud. Kibana is an open-source software project.
