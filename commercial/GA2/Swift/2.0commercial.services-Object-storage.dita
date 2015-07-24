@@ -28,8 +28,8 @@
       (structure of control plane, assignment of services to nodes) and their services'
       configuration (e.g. Neutron plugins, etc) and environment specific configuration (e.g. OS
       kernel settings).</p>
-      <p> </p>
-       <section id="input_model"><b>Input Model</b></section>
+      <p>
+      <b>Input Model</b></p>
       <p><b> Enter the information what input model means in terms of swift. what all configurations
         can be set as an input data???</b>. </p>
       <section id="arch-overview"><b>Architecture Overview</b></section>
@@ -40,7 +40,7 @@
           <p>topology</p>
         </li>
       </ul></p>
-      <section id="storage-plocies"><b>Storage Policies</b><p/><p>Storage policies allow you to
+      <section id="storage-plocies"><b>Storage Policies</b><p>Storage policies allow you to
         differentiate the way objects are stored. There are a number of possible reasons as
         follows:</p><ul id="ul_b5j_2fg_5s">
         <li>You have several different types or classes of disk drive. For example, you could use
