@@ -1,44 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="swift_hos2.0">
-    <title>HP Helion OpenStack Object Storage (Swift)</title>
-      <body>
-          <p> With this release, HP Helion OpenStack introduces a concept of input data model. Input
-            model allows you to provide the input data based (<b>data like .....?)</b> on your
-            choice of configuration.
-            <!--This input models ensures that you are deploying HP Helion OpenStack based on your preferences and configurations. This makes the product more flexible to your usage. --></p>
-        <p>
-            Based on OpenStack® Object Sotrage, the HP Helion OpenStack® Object Storage service
-            provides a highly available, resilient, and scalable storage pool for unstructured data.
-            It is highly durable architecture with no single point of failure. 
-        </p>
-        <p><b>what all information does the user need to input? specific hardware required for
-            swift.. any network configuration</b></p>
-        <section>
-            <b>What is Input model and how it works?</b>
-        </section>
-        <section>provide an example that a user need to provide as an input data.</section>
-        <section><b>Architecture Overview</b><p>A Object Storage (Swift) cluster is Software Defined
-            Storage (SDS) architecture, layered on top of industry standard servers, using
-            native storage devices which are typically disk drives.</p><p>
-                <b>Note</b>: It is not recommended to run Swift on top of other systems (hardware or
-                software) that hide the failure domains or native storage devices like using RAID
-                group on top of drives. (<b>does this hold good at the present
-                    scenario?</b>)</p><p>The services in the Swift cluster are either <i>access</i>
-                        services or <i>storage</i> services.</p><ul id="ul_tn1_pvs_ts">
-                            <li>The <i>access</i> services group is made up of the Swift Proxy Servers, which
-                                run Swift-Proxy, Account and Container Services, HTTP/HTTPS load balancers, and
-                                OpenStack® Keystone authentication service.</li>
-                            <li>The <i>storage</i> services group is composed of Swift Object Servers and
-                                various background services such as replicators. <p>Each of the service group
-                                    can scaled independently to meet workload and redundany requirements. The
-                                    storage service can scaled up as necessary. It can also be horizontally
-                                    scalable to handle an increased number of simultaneous connections as well
-                                    as large number of objects.</p></li>
-                        </ul><p>The following diagram depicts the architectural overview of the swift
-                            deployment.</p><p><b>insert diagram</b>???</p></section>
-        <section><b>Storage Policies</b></section>
-      </body>
-       </topic>
-    
-    
+<topic id="topic_xx1_4bt_ts">
+  <title>HP Helion OpenStack Object Storage (Swift)</title>
+    <body>
+      <p>
+        With this release, HP Helion OpenStack introduces a concept of input data model. Input
+        model allows you to provide the input data based (<b>data like .....?)</b> on your
+        choice of configuration.
+        <!--This input models ensures that you are deploying HP Helion OpenStack based on your preferences and configurations. This makes the product more flexible to your usage. -->
+      </p>
+      <p>
+        Based on OpenStack® Object Sotrage, the HP Helion OpenStack® Object Storage service
+        provides a highly available, resilient, and scalable storage pool for unstructured data.
+        It is highly durable architecture with no single point of failure. 
+      </p>
+       <section id="input_model"><b>Input Model</b></section>
+      <p><b> Enter the information what input model means in terms of swift. what all configurations
+        can be set as an input data???</b>. </p>
+      <section id="arch-overview"><b>Architecture Overview</b></section>
+           <p> A Object Storage (Swift) cluster is Software Defined Storage (SDS) architecture, layered
+      on top of industry standard servers, using native storage devices which are typically disk
+      drives. 
+        <note> It is not recommended to run Swift on top of other systems (hardware or
+        software) that hide the failure domains or native storage devices like using RAID group on
+        top of drives.</note></p>
+      <p> The services in the Swift cluster are either <i>access</i> services or <i>storage</i>
+      services. <ul id="ul_x1l_32z_ts">
+        <li> The <i>access</i> services group is made up of the Swift Proxy Servers, which run
+          Swift-Proxy, Account and Container Services, HTTP/HTTPS load balancers, and OpenStack®
+          Keystone authentication service. </li>
+        <li> The <i>storage</i> services group is composed of Swift Object Servers and various
+          background services such as replicators. <p>Each of the service group can scaled
+            independently to meet workload and redundany requirements. The storage service can
+            scaled up as necessary. It can also be horizontally scalable to handle an increased
+            number of simultaneous connections as well as large number of objects.</p><p>The
+            following diagram depicts the architectural overview of the Swift
+              deployment:</p><p><b>insert diagram</b>?????</p></li>
+      </ul></p>
+      <section id="storage-plocies"><b>Storage Policies</b></section>
+       <p> 
+       
+       </p>
+  </body>
+</topic>
