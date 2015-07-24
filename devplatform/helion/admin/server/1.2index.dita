@@ -30,7 +30,7 @@ virtualization host.</p>
 <p>The Application Lifecycle Service server initially has one user account. The default login information is:</p>
 <ul>
 <li>Username: stackato</li>
-<li>Password: helion</li>
+<li>Password: stackato</li>
 </ul>
 <p>Unless you've already created a primary admin user in the Management Console. If so, the password of the default Helion account is changed to match that of the first user created in the Management Console, and you'll need to use that password instead.</p>
 <p>
