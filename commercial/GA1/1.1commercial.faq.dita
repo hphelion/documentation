@@ -149,9 +149,11 @@
 <section id="community"> <title>Is there an alternative to the full version?</title>
 <p>The <xref href="../../community/community.index.dita" >HP Helion OpenStack Community edition</xref> is a free-to-license distribution that speeds deployment and simplifies management of small-scale open cloud environments and infrastructure services. It supports up to 30 physical nodes and 600 virtual nodes making it ideal for small-scale, evaluation, and proof of concept deployments.</p>
 </section>
-<section id="developer"> <title>What application developer resources are available?</title>
+<!-- 
+  <section id="developer"> <title>What application developer resources are available?</title>
 <p>The <xref href="../../devplatform/1.1devplatform.index.dita" >HP Helion Development Platform</xref> provides developers and IT professionals with an open development platform designed for agility.</p>
 </section>
+ -->
 <section id="reportissues"> <title>Where can I report issues with HP Helion OpenStack</title>
 <p>To report issues with HP Helion OpenStack contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref>.</p>
 </section>

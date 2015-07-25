@@ -16,8 +16,7 @@
       instructions to install the compute proxy. The compute proxy is distributed as open virtual
       appliance (OVA).</p>
     <p>The ESX and vCenter server should be installed within the non-KVM region and attached to the
-      CLM network, as shown in the <xref href="carrier-grade-technical-overview.dita#topic3485"
-        >Technical Overview</xref></p>
+      CLM network, as shown in the <xref href="carrier-grade-technical-overview.dita#topic3485">Technical Overview</xref></p>
     <section>
       <title>Deploy Compute Proxy template on ESX Host</title>
       <p>The HP Helion OpenStack Carrier Grade installation process includes an open virtual

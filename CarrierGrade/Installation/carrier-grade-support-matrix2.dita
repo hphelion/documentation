@@ -214,27 +214,36 @@
     <p>You must have the a server with a 20GB Disk and 4,096 MB RAM for the HLM host.</p>
             
           <p id="non-kvm-config"><b>Non-KVM Region</b></p>
-      <p>You must have the following hardware configuration for the Non-KVM region:</p><ul>
+      <p>You must have the following hardware configuration for the Non-KVM region:</p>
+    <ul>
         <li>
           <p>3 <xref href="#topic1773/controllers" format="dita">baremetal systems</xref> for controllers that meet the following requirements:</p>
           <ul id="ul_s1h_432_qs">
             <li>For systems with multiple NICs, only one NIC may be active or connected. </li>
-            <li>Capable of hosting VMs</li>
-            <!--Remove for RC0 <li>For Compute nodes, Intel or AMD hardware virtualization support required. The CPU
+            <li>Capable of hosting VMs <!--Remove for RC0 <li>For Compute nodes, Intel or AMD hardware virtualization support required. The CPU
               cores and memory requirements must be sized based on the VM instances hosted by the
               Compute node.</li>-->
+              <p>
+                <b>Important:</b> Since the installer currently uses only the first available disk,
+                all servers must have RAID controllers pre-configured to present their storage as a
+                single, logical disk. RAID across multiple physical discs is strongly recommended
+                for both performance and resilience.</p>
+              <p><b>Notes:</b></p>
+              <ul>
+                <li>On the controller nodes, make sure the RAID array is configured to reflect a
+                  total size of less than 4TB.</li>
+                <li>The root volume cannot exceed 2TB</li>
+              </ul>
+            </li></ul></li>      
+          <li>2 baremetal systems for DCN VSC controllers (HA mode) that meet the following requirements:
+            o	………… details</li>
+            <li>2 baremetal systems for DCN VRS-G Software Gateway (HA mode)</li>
+            
+            <li>2 baremetal systems minimum for ESXi hosts required for Clustered configuration.
+              <p>Please refer to VMware documentation for additional requirements for vSphere Cluster configuration.</p></li>
+            
+        
           </ul>
-          <p>
-            <b>Important:</b> Since the installer currently uses only the first available disk, all
-            servers must have RAID controllers pre-configured to present their storage as a single,
-            logical disk. RAID across multiple physical discs is strongly recommended for both
-            performance and resilience.</p>
-          <p>Notes:</p>
-            <ul>
-              <li>On the controller nodes, make sure the RAID array is configured to reflect a total size
-            of less than 4TB.</li>
-              <li>The root volume cannot exceed 2TB</li>
-            </ul></li></ul>
     <p id="kvm-config"><b>KVM Region</b></p>
     <p>You must have the following hardware configuration for the KVM region:</p>
           <ul>
@@ -365,9 +374,16 @@
   <section id="guestOS">
       <title>Guest OS Support Matrix</title> The following guest operating systems are supported for
       the HP Helion OpenStack Carrier Grade servers. <p><b>Non-KVM region</b></p>There are no
-      supported Guest OSs for the servers in the Non-KVM region. <p><b>KVM region</b></p><p>The
-        following Guest OSs are supported for the servers in the KVM region: </p><ul
-        id="ul_sty_hd2_qs">
+      supported Guest OSs for the servers in the Non-KVM region. <p><b>Non-KVM region with
+          ESX-DCN</b></p><p>The following Guest OSs are supported for the servers in the Non-KVM
+        region, when configured with ESX-DCN: </p><p>
+        <ul id="ul_hfp_g5r_5s">
+          <li>Cirros 3.2</li>
+          <li>RHEL6.5</li>
+          <li>Ubuntu 14.04</li>
+        </ul>
+      </p><p><b>KVM region</b></p><p>The following Guest OSs are supported for the servers in the
+        KVM region: </p><ul id="ul_sty_hd2_qs">
         <li>
           <p>WindRiver Linux 6.0</p>
         </li>
@@ -396,8 +412,8 @@
   <section id="next"> <title>Next step</title>
     <p>Review the <xref href="carrier-grade-technical-overview.dita#topic3485">Technical Overview</xref>.</p>
     <p>
-      <xref type="section" href="#topic3485"> Return to Top </xref>
-    </p>
+        <xref type="section" href="#topic3485"> Return to Top </xref>
+      </p>
   </section>
   <!-- ===================== horizontal rule ===================== -->
 
