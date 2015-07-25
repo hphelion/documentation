@@ -13,7 +13,7 @@
  <!--./content/api/c1.1/keystonev2-api.md-->
  <!--permalink: /publiccloud/api/v2identity/--></p>
 <p>
-  <i>If you are using the v3 Identity Services API, click <xref href="../../../publiccloud/apidocs/c1.1/keystone-api.dita" >here for those API references</xref>.</i>
+  <i>If you are using the v3 Identity Services API, click <xref href="../../publiccloud/api/keystone-api.dita" >here for those API references</xref>.</i>
 </p>
 <p>Date: November 2014</p>
 <section id="1-overview"> <title>1. Overview</title>

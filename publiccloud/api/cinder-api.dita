@@ -1862,7 +1862,7 @@ id="9b211c57-7fb5-4811-88ea-15fc30908dba" size="1"&gt;
   <b>Quota Limits</b>
 </p>
 <p>There are no specified quota limits associated with backups. The only limits are 
-  those imposed by <xref href="../../../publiccloud/apidocs/c1.1/swift-api.dita" >HP Object Storage</xref> where backups are 
+  those imposed by <xref href="../../publiccloud/api/swift-api.dita" >HP Object Storage</xref> where backups are 
 actually stored. When restoring a backup, the normal quota limits for volumes
 apply if a new volume is created as part of a restore operation. See 
 <i>Quota Limits</i> in <xref type="section" href="#topic65119/volumes">Block Storage Volumes</xref> for details.</p>

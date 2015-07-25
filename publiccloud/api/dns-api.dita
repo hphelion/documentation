@@ -17,7 +17,6 @@
 <p>
 <b>Document version:</b> 1.1</p>
 <section id="1-overview"> <title>1. Overview</title>
-<p>st checked in by:</p>
 <p>This guide is intended for software developers who wish to create applications using the HP Helion Public Cloud DNS set of APIs. It assumes the reader has a general understanding of cloud APIs, DNS concepts, RESTful web services, HTTP/1.1 conventions and JSON serialization formats. The HP Helion Public Cloud DNS set of APIs utilize and take advantage of a variety of Openstack cloud API patterns which are described in detail.</p>
 <p>We will be referring to HP Helion Public Cloud DNS in this document as simply DNS.</p>
 </section>
