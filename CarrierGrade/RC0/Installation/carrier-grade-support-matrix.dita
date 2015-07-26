@@ -19,7 +19,7 @@
  <!--./CarrierGrade/Installation/carrier-grade-support-matrix.md-->
  <!--permalink: /helion/openstack/carrier/support-matrix/--></p>
 <p>To ensure the performance and stability of HP Helion OpenStack Carrier Grade,  it is important to
-      meet the requirements and conform to the recommendations listed in this document..</p>
+      meet the requirements and recommendations listed in this document.</p>
   <section id="support-matrix-for-hp-helion-openstack-servers"> <title>Support Matrix for the Non-KVM Region Region</title>
   <p>To ensure the performance and stability of the Non-KVM servers running the HP Lifecycle Management environment and HP Helion OpenStack it is important to meet the requirements and conform to the recommendations listed in <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-non-kvm.dita" >Support Matrix for the Non-KVM Region</xref>.</p>
 </section>
