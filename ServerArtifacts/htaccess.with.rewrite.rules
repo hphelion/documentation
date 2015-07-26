@@ -3,7 +3,7 @@
 # by push-to-production-and-failover job in Jenkins
 #
 ErrorDocument 404 /404.html
-Options +FollowSymLinks/
+Options +FollowSymLinks
 RewriteEngine on
 RewriteRule ^publiccloud/whats_new_with_HP_Cloud_Console/?$	/#publiccloud/hz.whatsnewjan.2014.html [NE,R=301,L]
 RewriteRule ^publiccloud/upload-publish-partner-images135/?$	/#publiccloud/upload-publish-partner-images135.html [NE,R=301,L]
