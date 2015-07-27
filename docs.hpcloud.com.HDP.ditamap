@@ -202,6 +202,8 @@
           navtitle="Management Console (Admin View)"/>
         <topicref href="devplatform/helion/user/console/1.2index.dita"
           navtitle="Management Console (User View)" locktitle="yes"/>
+        <topicref href="devplatform/helion/admin/console/console_settings.dita"
+          navtitle="Management Console Settings" locktitle="yes"/>
         <topicref href="devplatform/helion/admin/console/1.2customize.dita" locktitle="yes"
           navtitle="Management Console Customization"/>
         <topicref href="devplatform/helion/admin/console/1.2app-store.dita" locktitle="yes"
@@ -435,5 +437,13 @@
     </topicref>
   </topicref>
   
+  <!-- shim files to be removed when 1.3 ships -->
+  <topicref href="commercial/GA1/1.1.13rd-party-license-agreements.dita" toc="no" />
+  <topicref href="commercial/GA1/1.1.1commercial.helion_update.dita" toc="no" />
+  <topicref href="commercial/GA1/1.1commercial.-vsa-overview.dita" toc="no" />
+  <topicref href="commercial/GA1/1.1commercial.install-3par.dita" toc="no" />
+  <topicref href="commercial/GA1/1.1commercial.index.dita" toc="no" />
+  <topicref href="publiccloud/api.dita" toc="no" />
+  <topicref href="commercial/GA1/1.1commerical.services-identity-overview.dita" toc="no" />
  </map>
 

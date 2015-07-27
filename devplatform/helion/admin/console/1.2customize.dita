@@ -33,8 +33,6 @@
           <li>
             <xref type="section" href="#topic5029/product">Product</xref>
           </li>
-          <li><xref type="section" href="#topic5029/renaming-the-client">Client</xref>
-          </li>
           <li>
             <xref type="section" href="#topic5029/look-and-feel">Look and Feel</xref>
           </li>
@@ -60,7 +58,6 @@
             <xref type="section" href="#topic5029/restoring-values">Restoring values</xref>
           </li>
         </ul></li>
-      <li> </li>
     </ul>
     <section id="console-settings">
       <title>Console Settings</title>

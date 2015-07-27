@@ -45,7 +45,7 @@ filesystem.</p>
 <section id="creating-an-app-store"> <title>Creating Sample Applications</title>
 <p>The Sample Applications interface exposes multiple "stores" which specify the
 available applications. These stores are sourced from definition files
-specified in the main <xref href="1.2index.dita#topic13823/settings" type="section"   >Settings</xref> page of
+specified in the main <xref href="console_settings.dita">Console Settings</xref> page of
   the Management Console or set using <xref href="../reference/1.2kato-ref.dita#topic39432/kato-command-ref-config" type="section"   >kato
 config</xref>.</p>
 </section>

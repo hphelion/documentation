@@ -40,7 +40,7 @@
           <xref type="section" href="#topic_od4_byj_rs/logyard">Logyard</xref>
         </li>
         <li>
-          <xref type="section" href="#topic_od4_byj_rs/console-settings-quota-definitions">Quota
+          <xref type="section" href="#topic_od4_byj_rs/quotaPlans">Quota
             Plans</xref>
         </li>
         <li>
@@ -157,8 +157,7 @@
       <b>Allowed Repos</b>: Debian package repositories allowed in application containers. End users
       can install additional packages (e.g. with apt-get or aptitude) only from these repositories.
       When adding new repositories, GPG keys for each new repo must also be added to the Docker base
-      container See <xref
-        href="../../../../../devplatform/helion/admin/server/1.2configuration.dita#topic31232/allowed-repositories"
+      container See <xref href="../server/1.2configuration.dita#topic31232/allowed-repositories"
         type="section">Allowed Repositories</xref>. </section>
     <section id="console-settings-applications">
       <title>Applications</title>
@@ -276,7 +275,7 @@
           <b>Allow Over-provisioning</b>: Ignore the Capacity setting.</li>
       </ul>
     </section>
-    <section>
+    <section id="quotaPlans">
       <title>Quota Plans</title>
       <p>Lists the Quota Plans available to apply to Organizations on the system. To edit a
         definition, click the edit button on the right. To create a new definition, use the <xref

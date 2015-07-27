@@ -9,7 +9,7 @@
         Installing Helion Development Platform 1.2 on Helion OpenStack versions 1.1 or 1.0 is not
         supported. If you currently have Helion OpenStack version 1.1 with Helion Development
         Platform 1.1 installed, you will need to perform a fresh <xref
-          href="../../commercial/GA1/Landing/1.1commercial.landing.install.dita">install</xref> of
+          href="../../commercial/GA1/1.1commercial.index.dita">install</xref> of
         Helion OpenStack version 1.1.1 and then install Helion Development Platform 1.2.</note>
       <p>Before you begin installation:</p>
       <ul>

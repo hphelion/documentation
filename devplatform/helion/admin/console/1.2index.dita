@@ -80,7 +80,7 @@
               <li>
                 <xref type="section" href="#topic13823/avail-services">Available Services</xref>
               </li>
-              <li><xref type="section" href="#topic13823/console-settings-quota-definitions">Quota
+              <li><xref type="section" href="#topic13823/quotaPlans">Quota
                   Plans</xref>
               </li>
             </ul></li>
@@ -288,7 +288,7 @@ https://helion-xxxx.local</codeblock>
     </section>
     <section id="avail-services">
       <title>Available Services</title>
-      <p>A list of available service types (with their version).</p>
+      <p>A list of available service types (with their version).</p></section><section id="quotaPlans">
       <title>Quota Plans</title>
       <p>Lists the Quota Plans available to apply to Organizations on the system. To edit a
         definition, click the edit button on the right. To create a new definition, use the <xref
@@ -333,12 +333,12 @@ https://helion-xxxx.local</codeblock>
       <title>Memory Summary</title>
       <p>Helion tracks the amount of memory used by applications across all DEA nodes and shows
         various reports. Available memory is calculated based on the system memory of the DEA nodes
-        multiplied by the <xref type="section" href="#topic13823/console-settings-dea">Max Memory
+        multiplied by the <xref type="section" href="console_settings.dita#topic_od4_byj_rs/console-settings-dea">Max Memory
           Percentage</xref>.</p>
       <p>Memory Summary shows how much memory:</p>
       <ul>
         <li>has been assigned to Organizations via <xref type="section"
-            href="#topic13823/console-settings-quota-definitions">Quota Plans</xref>
+          href="console_settings.dita#topic_od4_byj_rs/quotaPlans">Quota Plans</xref>
         </li>
         <li>is available on DEA nodes</li>
         <li>remains unallocated</li>
@@ -353,12 +353,12 @@ https://helion-xxxx.local</codeblock>
     <section id="zone-usage">
       <title>Placement Zone Usage</title>
       <p>Memory usage statistics and a usage bar graph for all configured <xref type="section"
-          href="#topic13823/dea-zones-placement">Placement Zones</xref>.</p>
+        href="console_settings.dita#topic_od4_byj_rs/dea-zones-placement">Placement Zones</xref>.</p>
     </section>
     <section id="avail-zone-usage">
       <title>Availability Zone Usage</title>
       <p>Memory usage statistics and a usage bar graph for all configured <xref
-          href="#topic13823/dea-zones-available" format="dita">Availability Zones</xref>
+        href="console_settings.dita#topic_od4_byj_rs/dea-zones-available" format="dita">Availability Zones</xref>
       </p>
     </section>
     <section id="router-stats">
