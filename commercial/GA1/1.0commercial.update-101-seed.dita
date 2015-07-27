@@ -27,8 +27,7 @@ Updating the seed node involves saving current environment and configuration set
 <li>
 <xref type="section" href="#topic4522/extract">Extract the required scripts and libraries</xref>
 </li>
-<li>
-<xref type="section" href="#topic4522/updateseed">Update the seed</xref>
+      <li><xref href="#topic4522/update-the-seed-updateseed" format="dita">Update the seed</xref>
 </li>
 <li>
 <xref type="section" href="#topic4522/extractpatch">Download and extract the patch update</xref>
@@ -165,7 +164,7 @@ Perform these basic tests to verify that the environment settings have been rest
 <section id="next-steps"> <title>Next Steps</title>
 <p>Update the undercloud. For installation instructions, see <xref href="../../commercial/GA1/1.0commercial.update-101-undercloud.dita" >Updating the Undercloud</xref>.</p>
 <p>
-  <xref type="section" href="#topic4522"> Return to Top </xref>
+  <xref href="#topic4522"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

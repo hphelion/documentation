@@ -71,17 +71,17 @@ password:  admin</codeblock></p><p>Change the password on
         <li>For each compute node in the inventory, do the following<ol id="ul_gss_srg_ms">
             <li>Create Infra interface. See <xref
                 href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-inventory-detail-interfaces.dita#topic6151"
-              /></li>
+              /> or <i>Interfaces</i> in the Administrtor Guide.</li>
             <li>Create a Provider Network. See <xref
                 href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.provider.dita#topic3878"
-              />.</li>
+              /> or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
             <li>Create VLAN Ranges on the provider network using the <b>Create Segmentation
                 Range</b> option. See <xref
                 href="../AdminGuideNew/Networks/carrier-grade.dashboard.network.admin.create.segment.dita#topic2171"
-              />.</li>
+              />  or <i>Setting Up a VXLAN Provider Network</i> in the Administrator Guide.</li>
             <li><xref href="carrier-grade-install-kvm-network-interface.dita#topic1107">Create data
-                interface.</xref>
-            </li>
+                interface.</xref>  See <i>Configuring Endpoint IP Addresses</i> in the Administrator
+              Guide.</li>
           </ol></li>
         <li><xref
             href="../AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita#topic3241"

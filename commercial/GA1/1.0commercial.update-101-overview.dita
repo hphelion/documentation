@@ -55,7 +55,7 @@
 <p>Which additional services and software you have installed, such as the HP Development Platform for Helion.  If you know the recommended update plans for these services, that can help you plan your overall Helion update.</p>
 </li>
 <li>
-<p>Any special layouts such as availability zones may affect your decision on the sequence of nodes you wish to update.  There are additional details of this in the <xref href="../../commercial/GA1/1.0commercial.update-101-overcloud.dita#compute" type="section"  >Compute (n-scale, not ESX)</xref> section of <i>Updating the Overcloud</i>.</p>
+  <p>Any special layouts such as availability zones may affect your decision on the sequence of nodes you wish to update.  There are additional details of this in the <xref href="../../commercial/GA1/1.0commercial.update-101-overcloud.dita#topic14215/compute" type="section">Compute (n-scale, not ESX)</xref> section of <i>Updating the Overcloud</i>.</p>
 </li>
 </ul>
 </li>
@@ -125,7 +125,7 @@
 <p>Download the software package that contains the patch update software, README file, and other information.</p>
 <p>For information, see <xref href="../../commercial/GA1/1.0commercial.update-101-obtaining.dita" >Obtaining the Patch Update Package</xref>.</p>
 <p>
-  <xref type="section" href="#topic7527"> Return to Top </xref>
+  <xref href="#topic7527"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

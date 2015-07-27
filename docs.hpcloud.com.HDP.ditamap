@@ -1,33 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+ 
 <map xml:lang="en" linking="none" locktitle="no">
-  <title>HP Helion</title>
-  <topicmeta>
-    <copyright>
-      <copyryear year="2015"/>
-      <copyrholder>HP Helion</copyrholder>
-    </copyright>
-    <prodinfo>
-      <prodname>HP Helion</prodname>
-      <vrmlist>
-        <vrm version="4.1.0"/>
-      </vrmlist>
-    </prodinfo>
-  </topicmeta>
-  <!--permalink: -->
-  <!--permalink: /-->
- 
-  <!-- Community -->
-  
-  
-  <!--Dev Plat-->  
-  
-    
- 
+<title>HP Helion Development Platform</title>
   <topicref href="devplatform/1.2devplatform.index.dita"
     navtitle="HP Helion Development Platform" locktitle="yes">
-    <!--//OASIS//DTD DITA Topic//EN"-->
-    <!--permalink: /helion/devplatform/3rd-party-license-agreements/-->
     <topicref href="devplatform/1.2devplatform.thirdparty.licensing.dita"
       navtitle="Open Source and Third-Party Software License Agreements" locktitle="yes"/>
     <!--permalink: /helion/devplatform/eula/-->
@@ -38,6 +15,8 @@
       navtitle="What's New"/>
     <topicref href="devplatform/1.2devplatform.release-notes.dita" locktitle="yes"
       navtitle="Release Notes"/>
+    <topicref href="devplatform/1.2devplatform_upgrade.dita"
+      navtitle="Upgrading from the Previous Version" locktitle="yes"/>
     <!--permalink: /helion/devplatform/ALS-developer-trial-quick-start/-->
     <topichead navtitle="Developer Quick Start Trial Guide">
       <topicref href="devplatform/1.2devplatform.ALS-developer-trial-quick-start.dita"
@@ -306,6 +285,8 @@
             navtitle="Using the cloud-init Package"/>
           <topicref href="devplatform/helion/admin/server/1.2upgrade.dita" locktitle="yes"
             navtitle="In-Place Upgrades of ALS Nodes and Clusters"/>
+          <topicref href="devplatform/helion/admin/cluster/zones.dita"
+            navtitle="Availability and Placement Zones" locktitle="yes"/>
         </topicref>
         <!--permalink: /helion/devplatform/als/admin/cluster/cloud-init/-->
         <!--permalink: /helion/devplatform/als/admin/cluster/external-db/-->
@@ -454,9 +435,5 @@
     </topicref>
   </topicref>
   
-  <!-- BEGIN Public cloud -->
-  <!-- END Public cloud -->
+ </map>
 
-  <!-- CGH -->
-  
-</map>

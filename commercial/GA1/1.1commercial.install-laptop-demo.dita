@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic12988">
-<title>Virtual demo installation</title>
+  <title>Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Virtual demo installation</title>
 <titlealts>
 <searchtitle>HP Helion Openstack 1.1: Virtual demo installation</searchtitle>
 </titlealts>
@@ -29,7 +29,7 @@
  <!--./commercial/GA1/1.1commercial.install-laptop-demo.md-->
  <!--permalink: /helion/openstack/1.1/install/laptop/demo/--></p>
 <p>
-  <b>This document describes the installation process for HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and HP Helion OpenStack 1.1.1.</b>
+  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
 </p>
 <p>The purpose of this document is to provide a quick guide on how to setup Helion OpenStack Enterprise Edition 1.1 into a virtual environment running on a laptop suitable to demonstrate the basic usage of product.</p>
 <p>This page covers the following topics:</p>
@@ -77,8 +77,8 @@
 <li>1 Overcloud Controller VM </li>
 <li>1 Overcloud Swift VM</li>
 </ul>
-<p>
-<b>Note</b>: This special configuration is for demonstration purposes and some Helion OpenStack operations may not function correctly.</p>
+      <note>This special configuration is for demonstration purposes and some Helion OpenStack
+        operations may not function correctly.</note>
 <p>The recommended setup for the demo:</p>
 <ol>
 <li>A laptop running the cloud virtual installation</li>
@@ -94,8 +94,8 @@
 <li>
 <b>Diskspace</b>: Each VM has a <i>virtual disk</i> size of 512 GB. However, each VM may occupy from 16 GB to 27 GB, or more of real disk space on the host system. Diskspace usage grows over time. For this reason, you should ensure your system has enough free diskspace for the demo. </li>
 </ul>
-<p>
-<b>Note</b>: the steps outlined for a laptop with less memory have been tested on a laptop with Intel Core i7 processor, 32 GB of memory and a 512 GB disk.</p>
+      <note>The steps outlined for a laptop with less memory have been tested on a laptop with Intel
+        Core i7 processor, 32 GB of memory and a 512 GB disk.</note>
 </section>
 <section id="laptop-install"> <title>Laptop installation</title>
 <p>The following sections describe the basic steps required to install Ubuntu on a laptop computer. Ubuntu must be installed on a physical laptop and not on a virtual machine.</p>
@@ -168,7 +168,7 @@ fudge 127.127.1.0 stratum 10
 </p>
 
 <p>
-<image href="../../media/commercial-install-laptop-successful-ntp-output.png"/>
+<image href="../../media/commercial-install-laptop-successful-ntp-output.png" placement="break"/>
 </p>
 
 <p>f. If you run <codeph>ntpq -p</codeph> and you receive a 'No association ID's returned' message, then you may have to reinstall the <codeph>ntp</codeph> package, To do this, run the following commands:</p>
@@ -205,10 +205,10 @@ ntpq -p
 <p>Download the Helion OpenStack Enterprise Edition from the official site.</p>
 </li>
 <li>
-<p>Extract the bits to <codeph>/root/work</codeph> folder:</p>
+<p>Extract the bits to <codeph>/root/</codeph> folder:</p>
 
 <codeblock>
-<codeph>tar -xzvf ee_installer-VER.tgz -C /root/work
+<codeph>tar -xzvf ee_installer-VER.tgz -C /root
 </codeph>
 </codeblock>
 </li>
@@ -267,13 +267,13 @@ If your system is limited to 32 GB of memory you should create /root/vm_plan.csv
 <p>Run the following script to create the seed VM:</p>
 
 <p>
-<codeph>bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed 2&gt;&amp;1|tee seedvminstall.log</codeph>
+<codeph>bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed 2>&gt;&amp;1|tee seedvminstall.log</codeph>
 </p>
 
 <p>Alternatively, if you have specified your own vm_plan.csv:</p>
 
 <p>
-<codeph>bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed --vm-plan /root/vm_plan.csv 2&gt;&amp;1|tee seedvminstall.log</codeph>
+<codeph>bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed 2>&gt;&amp;1|tee seedvminstall.log</codeph>
 </p>
 
 <p>Successful seed creation will resemble the following example:</p>
@@ -428,7 +428,7 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </p>
 
 <p>
-<image href="../../media/commercial-horizon-password-file.png"/>
+<image href="../../media/commercial-horizon-password-file.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -468,7 +468,7 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </ul>
 <p>When you successfully log in to the Horizon dashboard, you will see a web page that is similar to the following example:</p>
 <p>
-  <image href="../../media/horizon-dashboard.png"/>
+  <image href="../../media/horizon-dashboard.png" placement="break"/>
 </p>
 </section>
 <section id="shutdown-recovery"> <title>Shutdown and recovery</title>
@@ -522,7 +522,7 @@ export UNDERCLOUD_STACK_TIMEOUT=240
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic12988"> Return to Top </xref>
+  <xref href="#topic12988"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

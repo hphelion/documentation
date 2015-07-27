@@ -58,12 +58,8 @@
 <section id="before-you-begin"> <title>Before you begin</title>
 <p>Before you start working with StoreVirtual, ensure that the following prerequisites have been fulfilled:</p>
 <ol>
-<li>
-<p>HP Helion Cloud is deployed</p>
-</li>
-<li>
-<p>HP StoreVirtual VSA cluster is created and is accessible by Cinder</p>
-</li>
+<li>HP Helion Cloud is deployed</li>
+<li>HP StoreVirtual VSA cluster is created and is accessible by Cinder</li>
 </ol>
 </section>
 <section id="register-cluster"> <title>Register a StoreVirtual cluster</title>
@@ -71,26 +67,17 @@
 <!---You can register a cluster by either using the Horizon undercloud dashboard or Sirius client. (Refer [User manual for Sirius client](/helion/openstack/sirius-cli/)).-->
 <p>To register the cluster using the Horizon undercloud dashboard, do the following:</p>
 <ol>
-<li>
-<p>Log in to the Horizon undercloud dashboard.</p>
-</li>
-<li>
-<p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the Overview page.</p>
-</li>
-<li>
-<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual  VSA page is displayed.</p>
-
-<p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-register.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HP StoreVirtual VSA Page (opens in a new window)</xref>
-</p>
-</li>
-<li>
-<p>Click <b>Register Cluster</b> in the top-right corner of the page to display the Register Cluster dialog box.</p>
-
-<p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-register-page.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Register Cluster Dialog Box (opens in a new window)</xref>
-</p>
-</li>
+<li>Log in to the Horizon undercloud dashboard.</li>
+<li>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the
+          Overview page.</li>
+<li>Select the <b>StoreVirtual</b> option to activate
+          it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual VSA page is displayed.<p>
+            <image href="../../media/undercloud-storevirtual-register.png" placement="break"/>
+          </p></li>
+<li>Click <b>Register Cluster</b> in the top-right corner of the page to display the Register
+          Cluster dialog box.<p>
+            <image href="../../media/undercloud-storevirtual-register-page.png" placement="break"/>
+          </p></li>
 <li>
 <p>In the dialog box, do the following:</p>
 
@@ -116,122 +103,91 @@
 <!--- * In the **Port** box, enter the port number for the SSH access or select the default value. The Port by default is *16022*.--></li>
 </ul>
 </li>
-<li>
-<p>Click <b>Done</b> to save the details.</p>
-
-<p>On successful registration, the cluster is added and is listed as <i>Registered</i>.</p>
-
-<p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-registered-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Registered Cluster Displays in the HP StoreVirtual VSA Page (opens in a new window)</xref>
-</p>
-</li>
+<li>Click <b>Done</b> to save the details.<p>On successful registration, the cluster is added and is
+            listed as <i>Registered</i>.</p><p>
+            <image href="../../media/undercloud-storevirtual-registered-cluster.png"
+              placement="break"/>
+          </p></li>
 </ol>
 <p>
-  <xref type="section" href="#topic5728"> Return to Top </xref>
+  <xref href="#topic5728"> Return to Top </xref>
 </p>
 </section>
 <section id="edit-cluster"> <title>Edit a StoreVirtual cluster</title>
-<p>
-<b>Note</b>: Ensure that you edit the StoreVirtual cluster only if there are any updates made through the CMC for the selected cluster. After editing the details, the backend data should also be updated so that the Cinder configuration file has the updated cluster information.</p>
+      <note>Ensure that you edit the StoreVirtual cluster only if there are any updates made through
+        the CMC for the selected cluster. After editing the details, the backend data should also be
+        updated so that the Cinder configuration file has the updated cluster information.</note>
 <p>To edit a cluster, do the following:</p>
 <ol>
-<li>
-<p>Log in to the Horizon undercloud dashboard.</p>
-</li>
-<li>
-<p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the Overview page.</p>
-</li>
-<li>
-<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual  VSA page is displayed.</p>
-</li>
-<li>
-<p>Click <b>Edit Cluster</b> to display the Edit StoreVirtual Cluster dialog box.</p>
-
-<p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-edit-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Edit Cluster Dialog Box (opens in a new window)</xref>
-</p>
-</li>
-<li>
-<p>Make the required changes.</p>
-</li>
-<li>
-<p>Click <b>Done</b> to save the changes.</p>
-</li>
+<li>Log in to the Horizon undercloud dashboard.</li>
+<li>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the
+          Overview page.</li>
+<li>Select the <b>StoreVirtual</b> option to activate
+          it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual VSA page is
+          displayed.</li>
+<li>Click <b>Edit Cluster</b> to display the Edit StoreVirtual Cluster dialog box.<p>
+            <image href="../../media/undercloud-storevirtual-edit-cluster.png" placement="break"/>
+          </p></li>
+<li>Make the required changes.</li>
+<li>Click <b>Done</b> to save the changes.</li>
 </ol>
 </section>
 <section id="unregister-cluster"> <title>Unregister a StoreVirtual cluster</title>
 <p>Unregistering a cluster will remove it from the cloud inventory.</p>
-<p>
-<b>Note</b>: When you unregister a cluster,the volumes from this cluster backend will no longer be available through Cinder. Ensure that you detach all relevant volumes and remove the backend associated with the cluster before unregistering. After unregistering the cluster, the backend data should also be updated so that the Cinder configuration file has the updated cluster information.</p>
+      <note>When you unregister a cluster,the volumes from this cluster backend will no longer be
+        available through Cinder. Ensure that you detach all relevant volumes and remove the backend
+        associated with the cluster before unregistering. After unregistering the cluster, the
+        backend data should also be updated so that the Cinder configuration file has the updated
+        cluster information.</note>
 <p>To unregister a cluster, do the following:</p>
 <ol>
-<li>
-<p>Log in to the Horizon undercloud dashboard.</p>
-</li>
-<li>
-<p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the Overview page.</p>
-</li>
-<li>
-<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual  VSA page is displayed.</p>
-</li>
-<li>
-<p>Click the <b>More</b> drop-down list next to the cluster you want to unregister and select <b>Unregister Cluster</b>.<!--A BR tag was used here in the original source.--> A confirmation box is displayed.</p>
-
-<p>
-<xref format="html" href="javascript:window.open('/media/undercloud-storevirtual-more-options.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >More Option (opens in a new window)</xref>
-</p>
-</li>
-<li>
-<p>Click <b>Unregister cluster</b> to unregister or click <b>Cancel</b> to cancel the process.</p>
-</li>
+<li>Log in to the Horizon undercloud dashboard.</li>
+<li>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the
+          Overview page.</li>
+<li>Select the <b>StoreVirtual</b> option to activate
+          it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual VSA page is
+          displayed.</li>
+<li>Click the <b>More</b> drop-down list next to the cluster you want to unregister and select
+            <b>Unregister Cluster</b>.<!--A BR tag was used here in the original source.--> A
+          confirmation box is displayed.<p>
+            <image href="../../media/undercloud-storevirtual-more-options.png" placement="break"/>
+          </p></li>
+<li>Click <b>Unregister cluster</b> to unregister or click <b>Cancel</b> to cancel the process.</li>
 </ol>
 <p>
-  <xref type="section" href="#topic5728"> Return to Top </xref>
+  <xref href="#topic5728"> Return to Top </xref>
 </p>
 </section>
 <section id="unregister-multiple-clusters"> <title>Unregister multiple clusters</title>
-<p>
-<b>Note</b>: After unregistering the cluster, the backend data should also be updated so that the Cinder configuration file has the updated cluster information.</p>
+      <note>After unregistering the cluster, the backend data should also be updated so that the
+        Cinder configuration file has the updated cluster information.</note>
 <p>Use this option to unregister multiple clusters using a single command.</p>
 <ol>
-<li>
-<p>Log in to the Horizon undercloud dashboard.</p>
-</li>
-<li>
-<p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the Overview page.</p>
-</li>
-<li>
-<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual VSA page is displayed.</p>
-</li>
-<li>
-<p>Click the checkbox next to the <b>Name</b> column to select all the clusters.</p>
-</li>
-<li>
-<p>Click <b>Unregister Clusters</b> to unregister the clusters.<!--A BR tag was used here in the original source.-->A confirmation box is displayed.</p>
-</li>
-<li>
-<p>Click <b>Unregister Cluster</b> to unregister or click <b>Cancel</b> to cancel the process.</p>
-</li>
+<li>Log in to the Horizon undercloud dashboard.</li>
+<li>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the
+          Overview page.</li>
+<li>Select the <b>StoreVirtual</b> option to activate
+          it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual VSA page is
+          displayed.</li>
+<li>Click the checkbox next to the <b>Name</b> column to select all the clusters.</li>
+<li>Click <b>Unregister Clusters</b> to unregister the
+          clusters.<!--A BR tag was used here in the original source.-->A confirmation box is
+          displayed.</li>
+<li>Click <b>Unregister Cluster</b> to unregister or click <b>Cancel</b> to cancel the process.</li>
 </ol>
 </section>
 <section id="view-configuration"> <title>View configuration</title>
 <p>Use this option to view the cluster configuration (as defined in the HP Helion OpenStack Configuration Manual for HP LeftHand/StoreVirtual Block Storage Volume Driver).</p>
 <ol>
-<li>
-<p>Log in to the Horizon undercloud dashboard.</p>
-</li>
-<li>
-<p>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the Overview page.</p>
-</li>
-<li>
-<p>Select the <b>StoreVirtual</b> option to activate it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual VSA page is displayed.</p>
-</li>
-<li>
-<p>Click the <b>More</b> drop-down list for the cluster whose configuration you want to view.</p>
-</li>
-<li>
-<p>Click <b>View Configuration</b>.<!--A BR tag was used here in the original source.--> The StoreVirtual Cluster Cinder configuration is displayed in a dialog box.</p>
-</li>
+<li>Log in to the Horizon undercloud dashboard.</li>
+<li>From the left panel, click the <b>Resources</b> tab and then <b>Storage</b> to display the
+          Overview page.</li>
+<li>Select the <b>StoreVirtual</b> option to activate
+          it.<!--A BR tag was used here in the original source.--> The HP StoreVirtual VSA page is
+          displayed.</li>
+<li>Click the <b>More</b> drop-down list for the cluster whose configuration you want to view.</li>
+<li>Click <b>View Configuration</b>.<!--A BR tag was used here in the original source.--> The
+          StoreVirtual Cluster Cinder configuration is displayed in a dialog box.</li>
 </ol>
 </section>
 <section id="next-steps"> <title>Next Steps</title>
@@ -239,7 +195,7 @@
   <xref href="../../commercial/GA1/1.0commercial.undercloud-oc-config-storevirtual.dita" >Working with StoreVirtual Backends</xref>
 </p>
 <p>
-  <xref type="section" href="#topic5728"> Return to Top </xref>
+  <xref href="#topic5728"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

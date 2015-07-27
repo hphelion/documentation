@@ -515,7 +515,7 @@ configuration instructions.</note>
       gateway software is inspecting traffic between the nodes and upstream package repositories,
       then user application staging, patching, and upgrades can fail because of timeouts or dropped
       packets. Gateway devices and software should be configured to whitelist the upstream sources
-      listed in the <xref href="../../../1.2devplatform_upgrade.dita#topic13180/proxy-settings">Proxy Settings</xref> as well as any package repositories or download sources required by buildpacks. If packet
+      listed in the <xref href="../server/1.2upgrade.dita#topic13180/proxy-settings">Proxy Settings</xref> as well as any package repositories or download sources required by buildpacks. If packet
       inspection of all inbound traffic is a requirement in your network, consider setting up <xref
         href="../../user/deploy/1.2adding-buildpack.dita">offline buildpacks</xref> or creating
       internal package repository mirrors. </section>

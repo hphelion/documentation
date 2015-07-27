@@ -43,8 +43,9 @@
 </ol>
 <section id="prer"> <title>Prerequisite</title>
 <ul>
-<li>HP Helion OpenStack cloud is successfully deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Sotrage (Swift) nodes are functional by default as they are part of cloud deployment)</i>
-</li>
+<li>HP Helion OpenStack cloud is successfully deployed.<p><i>(Starter Object Sotrage (Swift) nodes
+              are functional by default as they are part of cloud deployment)</i>
+          </p></li>
 <li>(Optional) Scale-out object-ring:1 is deployed.</li>
 </ul>
 </section>
@@ -56,8 +57,7 @@
 <ol>
 <li>Log in to the undercloud from
           seed.<codeblock><codeph># ssh heat-admin@&lt;undercloud IP address&gt; 
-# sudo -i
-</codeph></codeblock></li>
+# sudo -i</codeph></codeblock></li>
 <li>Change the directory to ring
           builder.<codeblock><codeph># cd /root/ring-building 
 </codeph></codeblock></li>
@@ -67,8 +67,9 @@
 </codeph></codeblock></li>
 <li>Copy <codeph>object-1.builder</codeph> files to proxy nodes.<codeblock><codeph># ringos copy-ring -s /root/ring-building/object-1.builder -n &lt;proxy node IP address&gt;
 </codeph></codeblock><p>
-            <b>Note</b>: The <codeph>.buldier</codeph> and <codeph>.ring.gz</codeph> files
-              <b>must</b> be present in the Swift nodes.</p></li>
+            <note> The <codeph>.buldier</codeph> and <codeph>.ring.gz</codeph> files <b>must</b> be
+              present in the Swift nodes.</note>
+          </p></li>
 </ol>
 </section>
 <section id="update-load-balncer"> <title>Update load balancer with new proxy nodes</title>
@@ -86,7 +87,8 @@
   bind &lt;Virtual IP (running on the controller nodes)&gt;:8080
   server &lt;proxy node hostname&gt; &lt;proxy nodes IP address&gt;:8080 check inter 2000 rise 2 fall 5 
 </codeph></codeblock><p>
-            <b>Note</b>:</p><ul>
+            <note/>
+          </p><ul>
             <li>The number of "server" lines equals the number of Swift Proxies you have set
               up.</li>
             <li>
@@ -112,9 +114,13 @@
 </ol>
 <p>The Swift Proxies are now successfully enabled with HA Proxy.</p>
 <p>
-<b>Note</b>: You now must add account and container rings to the Swift Proxies. For these instructions, go to <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-add-disk-account-container.dita" >Adding disk account containers</xref>.</p>
+        <note> You now must add account and container rings to the Swift Proxies. For these
+          instructions, go to <xref
+            href="../../commercial/GA1/1.1commerical.services-swift-deployment-add-disk-account-container.dita"
+            >Adding disk account containers</xref>.</note>
+      </p>
 <p>
-  <xref type="section" href="#topic2814"> Return to Top </xref>
+  <xref href="#topic2814"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

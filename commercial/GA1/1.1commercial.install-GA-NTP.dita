@@ -27,9 +27,7 @@
 <p>This page provides detailed information on <xref type="section" href="#topic5226/client">configuring HP Helion OpenStack nodes</xref> for Network Time Protocol (NTP) and <xref type="section" href="#topic5226/server">instlling an NTP server on the seed cloud host</xref>.</p>
 <p>NTP is a networking protocol for clock synchronization between computer systems. The undercloud and overcloud systems are configured as NTP clients during the installation process.</p>
 <p>HP Helion OpenStack requires that all nodes point to the same NTP server. You can use an external NTP server or configure the seed cloud host as a server.</p>
-<p>
-  <b>Notes:</b>
-</p>
+    <note> </note>
 <ul>
 <li>NTP clients should use only stratum 2 and higher servers (meaning stratum 1 or stratum 0).</li>
 <li>All the Helion servers use UTC as a time zone.</li>
@@ -61,9 +59,9 @@
 server 127.127.1.0
 </codeph>
 </codeblock>
-
-<p>
-<b>Note:</b> The NTP stratum must be numerically lower than 10 (meaning stratum 9, stratum 8, etc.) in order to use as a source. If one is not available, you may be able to <xref type="section" href="#topic5226/fudge">fudge one</xref>.</p>
+          <note>The NTP stratum must be numerically lower than 10 (meaning stratum 9, stratum 8,
+            etc.) in order to use as a source. If one is not available, you may be able to <xref
+              type="section" href="#topic5226/fudge">fudge one</xref>.</note>
 </li>
 <li>
 <p>Configure system time zone using the <codeph>tzselect</codeph> command.</p>
@@ -190,9 +188,9 @@ fudge 127.127.1.0 stratum 10
 <section id="troubleshooting"> <title>Troubleshooting</title>
 </section>
 <section id="trouble-synching"> <title>Trouble synching</title>
-<p>If your client (including your NTP server) has trouble syncing time, see <xref href="../../commercial/GA1/1.1commercial.troubleshooting.ntp.dita#synch" type="section"  >Troubleshooting NTP</xref>.</p>
+  <p>If your client (including your NTP server) has trouble syncing time, see <xref href="../../commercial/GA1/1.1commercial.troubleshooting.ntp.dita#topic997/synch" type="section">Troubleshooting NTP</xref>.</p>
 <p>
-  <xref type="section" href="#topic5226"> Return to Top </xref>
+  <xref href="#topic5226"> Return to Top </xref>
 </p>
 </section>
 </body>

@@ -128,10 +128,10 @@ In this example the CIDR (Classless Inter-Domain Routing) address of the IPMI ne
   <xref href="1.0commercial.install-GA-prereqs.dita" >Installation Prerequisites</xref>
 </li>
 <li>
-  <xref href="1.0commercial.technical-overview.ga.dita" >Network Topology Requirements</xref>
+  <xref href="1.0commercial.technical-overview.ga.dita">Network Topology Requirements</xref>
 </li>
 <li>
-  <xref href="1.0commercial.install-GA-supportmatrix.dita"  >Hardware/Software Requirements</xref>
+  <xref href="1.0commercial.install-GA-supportmatrix.dita" >Hardware/Software Requirements</xref>
 </li>
 </ul>
 </section>

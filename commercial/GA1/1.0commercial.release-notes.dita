@@ -26,7 +26,8 @@
 <xref type="section" href="#topic11002/For-Further-Information">For Further Information</xref> </li>
 </ul>
 <section id="features"> <title>Features in HP Helion OpenStack</title>
-<p>The following features have been added to HP Helion OpenStack by release.</p>
+<p>The following features have been added to HP Helion OpenStack by
+        release:</p>
 </section>
 <section id="features-in-hp-helion-openstack-101"> <title>Features in HP Helion OpenStack 1.01</title>
 <p>
@@ -38,73 +39,77 @@
 </section>
 <section id="features-in-hp-helion-openstack-10"> <title>Features in HP Helion OpenStack 1.0</title>
 <p>
-<b>OpenStack Services</b> - The full set of standard <xref href="1.0commerical.services-overview.dita">Openstack services</xref> is in HP Helion OpenStack Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image Operations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
+<b>OpenStack Services</b> - The full set of standard <xref href="1.0commerical.services-overview.dita">Open Stack services"</xref> is in HP Helion OpenStack Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image Operations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.</p>
 <p>
-<b>Note:</b> In Helion 1.0, the Compute service is configured to provide only a subset of measurements listed at http://docs.openstack.org/developer/ceilometer/measurements.html#compute-nova for which the origin is listed as notification. This includes:</p>
+        <b>Note:</b> In Helion 1.0, the Compute service is configured to provide only a subset of
+        measurements listed at
+        http://docs.openstack.org/developer/ceilometer/measurements.html#compute-nova for which the
+        origin is listed as notification. This includes the following:</p>
 <table>
 <tgroup cols="5">
-          <colspec colname="col1" colsep="1" rowsep="1"/>
-          <colspec colname="col2" colsep="1" rowsep="1"/>
-          <colspec colname="col3" colsep="1" rowsep="1"/>
-          <colspec colname="col4" colsep="1" rowsep="1"/>
-          <colspec colname="col5" colsep="1" rowsep="1"/>
-          <thead>
-            <row>
-              <entry>Name</entry>
-              <entry>Type</entry>
-              <entry>Unit</entry>
-              <entry>Resource</entry>
-              <entry>Note</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry>instance</entry>
-              <entry>g</entry>
-              <entry>instance</entry>
-              <entry>inst ID</entry>
-              <entry>Existence of instance</entry>
-            </row>
-            <row>
-              <entry>instance:&lt;type&gt;</entry>
-              <entry>g</entry>
-              <entry>instance</entry>
-              <entry>inst ID</entry>
-              <entry>Existence of instance &lt;type&gt; (openstack types)</entry>
-            </row>
-            <row>
-              <entry>memory</entry>
-              <entry>g</entry>
-              <entry>MB</entry>
-              <entry>inst ID</entry>
-              <entry>Volume of RAM allocated in MB</entry>
-            </row>
-            <row>
-              <entry>vcpus</entry>
-              <entry>g</entry>
-              <entry>vcpu</entry>
-              <entry>inst ID</entry>
-              <entry>Number of VCPUs</entry>
-            </row>
-            <row>
-              <entry>disk.root.size</entry>
-              <entry>g</entry>
-              <entry>GB</entry>
-              <entry>inst ID</entry>
-              <entry>Size of root disk in GB</entry>
-            </row>
-            <row>
-              <entry>disk.ephemeral.size</entry>
-              <entry>g</entry>
-              <entry>GB</entry>
-              <entry>inst ID</entry>
-              <entry>Size of ephemeral disk in GB</entry>
-            </row>
-          </tbody>
-        </tgroup>
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<colspec colname="col4"/>
+<colspec colname="col5"/>
+<thead>
+<row>
+    <entry>Name</entry>
+    <entry>Type</entry>
+    <entry>Unit</entry>
+    <entry>Resource</entry>
+    <entry>Note</entry>
+  </row>
+</thead>
+<tbody>
+<row>
+    <entry>instance</entry>
+    <entry>g</entry>
+    <entry>instance</entry>
+    <entry>inst ID</entry>
+    <entry>Existence of instance</entry>
+  </row>
+<row>
+    <entry>instance:&lt;type&gt;</entry>
+    <entry>g</entry>
+    <entry>instance</entry>
+    <entry>inst ID</entry>
+    <entry>Existence of instance &lt;type&gt; (openstack types)</entry>
+  </row>
+<row>
+    <entry>memory</entry>
+    <entry>g</entry>
+    <entry>MB</entry>
+    <entry>inst ID</entry>
+    <entry>Volume of RAM allocated in MB</entry>
+  </row>
+<row>
+    <entry>vcpus</entry>
+    <entry>g</entry>
+    <entry>vcpu</entry>
+    <entry>inst ID</entry>
+    <entry>Number of VCPUs</entry>
+  </row>
+<row>
+    <entry>disk.root.size</entry>
+    <entry>g</entry>
+    <entry>GB</entry>
+    <entry>inst ID</entry>
+    <entry>Size of root disk in GB</entry>
+  </row>
+<row>
+    <entry>disk.ephemeral.size</entry>
+    <entry>g</entry>
+    <entry>GB</entry>
+    <entry>inst ID</entry>
+    <entry>Size of ephemeral disk in GB</entry>
+  </row>
+</tbody>
+</tgroup>
 </table>
 <p>
-<b>Other Services</b> <xref href="1.0commerical.services-overview.dita#Openstack" type="section"  >Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
+
+  <b>Other Services</b> <xref href="1.0commerical.services-overview.dita#topic6622/Other" type="section">Other services</xref> included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR.</p>
 <p>
 <b>LogStash/ElasticSearch</b> - This service provides enhanced security and supportability of the cloud by offering centralized logging.</p>
 <p>
@@ -199,7 +204,7 @@ $ sudo service neutron-openvswitch-agent restart
 <p>When you resize an instance of Nova, it produces an error <!--(NOV-6664) -->.</p>
 </li>
 <li>
-<p>After updating the undercloud to HP Helion OpenStack 1.01, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can <xref href="1.0commercial.undercloud-storage-storevirtual.dita#register-cluster" type="section"  >manually register a new cluster</xref> with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) --></p>
+  <p>After updating the undercloud to HP Helion OpenStack 1.01, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can <xref href="1.0commercial.undercloud-storage-storevirtual.dita#topic5728/register-cluster" type="section">manually register a new cluster</xref> with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) --></p>
 </li>
 <li>
 <p>A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack <!-- (EE-21) --></p>
@@ -231,8 +236,6 @@ $ sudo service neutron-openvswitch-agent restart
 <p>For additional information about HP Helion OpenStack OpenStack Cloud Software, and the HP Helion Support Center:</p>
 <ul>
 <li>
-  <xref href="http://docs.openstack.org/"  scope="external" format="html">HP Helion OpenStack Documentation web site</xref>: Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion OpenStack product offerings.</li>
-<li>
 <xref href="http://www.openstack.org/" scope="external" format="html" >OpenStack web site</xref>: Provides information on computing, networking, and storage in OpenStack various programs such as TripleO, and the OpenStack community.</li>
 <li>
 <xref href="http://us-support.external.hp.com/portal/site/hpsc/public" scope="external" format="html" >HP Support Center</xref>: Provides a way to report issues with HP Helion OpenStack</li>
@@ -245,7 +248,7 @@ $ sudo service neutron-openvswitch-agent restart
 <b>HP Helion OpenStack Warranty</b>: 
 The programs included with the Debian Host Linux system are free software. The exact license terms for each program are described in the individual files in /usr/share/doc/*/copyright. Debian Host Linux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.</p>
 <p>
-  <xref type="section" href="#topic11002"> Return to Top </xref>
+  <xref href="#topic11002"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

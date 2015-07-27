@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic5065">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm>1.1: Remove Scale-out Object Storage Node</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Remove Scale-out Object Storage Node</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -23,7 +23,9 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.md-->
  <!--permalink: /helion/openstack/1.1/services/swift/deployment/remove-scale-out-object-node/--></p>
+<p>
 
+</p>
 <p>It is recommended that you gradually reduce the weight in the ring when removing disks from the Swift cluster to avoid poor performance.</p>
 <p>Object nodes can only be removed once all disks have been removed from the node.</p>
 <ol>
@@ -42,10 +44,9 @@
 </ol>
 <section id="prer"> <title>Prerequisite</title>
 <ul>
-<li>HP Helion OpenStackcloud is successfully
-            deployed.<!--A BR tag was used here in the original source.--><i>(Starter Object Storage
-            (Swift) nodes are functional by default as they are part of cloud deployment)</i>
-        </li>
+<li>HP Helion OpenStack cloud is successfully deployed.<p><i>(Starter Object Storage (Swift) nodes
+              are functional by default as they are part of cloud deployment)</i>
+          </p></li>
 <li>Scale-out object-ring:1 is deployed.</li>
 <li>All of the rings generated <b>must</b> be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.</li>
 <li>Take a backup of the rings before any operation.</li>
@@ -76,8 +77,9 @@ sudo -i
 </codeph></codeblock></li>
 <li>Re-balance the ring.<codeblock><codeph>ringos rebalance-ring -f /root/ring-building/object-1.builder
 </codeph></codeblock><p>
-            <b>Note</b>: You must wait for the time specified by <codeph>min_part_hours</codeph>
-            before another re-balance succeeds.</p></li>
+            <note> You must wait for the time specified by <codeph>min_part_hours</codeph> before
+              another re-balance succeeds.</note>
+          </p></li>
 <li>List all the Swift
           nodes.<codeblock><codeph>ringos list-swift-nodes -t all
 </codeph></codeblock></li>
@@ -92,8 +94,9 @@ sudo -i
             this step for each disk of the specific node.</p></li>
 <li>Re-balance the ring.<codeblock><codeph>ringos rebalance-ring -f /root/ring-building/object-1.builder
 </codeph></codeblock><p>
-            <b>Note</b>: You must wait for the time specified by <codeph>min_part_hours</codeph>
-            before another re-balance succeeds.</p></li>
+            <note> You must wait for the time specified by <codeph>min_part_hours</codeph> before
+              another re-balance succeeds.</note>
+          </p></li>
 <li>List all the Swift
           nodes.<codeblock><codeph># ringos list-swift-nodes -t all
 </codeph></codeblock></li>
@@ -140,7 +143,8 @@ sudo -i
             delete the node change the role of overcloudsoswiftstorage in the
               <codeph>baremetal.csv</codeph> file as follows:</p><codeblock><codeph>9C:B6:54:AD:55:A8,administrator,gone2far,10.1.192.50,12,73728,70,overcloudsoswiftstorage:deleted,IPMI
 </codeph></codeblock><p>
-            <b>Note:</b> Do not delete the line.</p></li>
+            <note> Do not delete the line.</note>
+          </p></li>
 <li>Run the installer
           script.<codeblock><codeph>bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2&gt;&amp;1 | tee update.log
 </codeph></codeblock></li>
@@ -159,10 +163,13 @@ sudo -i
 </codeph></codeblock></li>
 </ol>
 <p>
-<b>Note:</b> If you receive warnings from Icinga after node removal, see <xref href="../../commercial/GA1/1.1commercial.troubleshooting.overcloud.dita" >Troubleshooting Node Removal</xref>
-</p>
+        <note> If you receive warnings from Icinga after node removal, see <xref
+            href="../../commercial/GA1/1.1commercial.troubleshooting.overcloud.dita">Troubleshooting
+            Node Removal</xref>
+        </note>
+      </p>
 <p>
-  <xref type="section" href="#topic5065"> Return to Top </xref>
+  <xref href="#topic5065"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

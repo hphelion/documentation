@@ -106,7 +106,9 @@ export UNDERCLOUD_CODN_HTTPS_PROXY=http://&lt;proxy.server.ip&gt;
 </ol>
 </section>
 <section id="seed"> <title>Back up and restore the seed VM</title>
-<p>The following sections describe how and when to <xref type="section" href="#topic19267/backseed">back up</xref> and <xref type="section" href="#topic19267/seedrest">restore</xref> the seed VM.</p>
+<p>The following sections describe how and when to <xref href="#topic19267/seedback" format="dita"
+          >back up</xref> and <xref type="section"
+          href="#topic19267/seedrest">restore</xref> the seed VM.</p>
 </section>
 <section id="seedback"> <title>Backing up the seed VM</title>
 <p>You should create a backup from the seed VM when any of the following events happen:</p>
@@ -228,7 +230,7 @@ Restore procedure completed
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic19267"> Return to Top </xref>
+  <xref href="#topic19267"> Return to Top </xref>
 </p>
 </section>
 <section id="under"> <title>Back up and restore the undercloud</title>
@@ -351,7 +353,7 @@ Backup procedure completed.
 </codeph>
 </codeblock>
 
-  <p>For more information on the <codeph>baremetal.csv</codeph> file, see the <xref href="1.1commercial.install-GA-prereqs.dita#csv" type="section" >Installation Prerequisites</xref>.</p>
+  <p>For more information on the <codeph>baremetal.csv</codeph> file, see the <xref href="1.1commercial.install-GA-prereqs.dita">Installation Prerequisites</xref>.</p>
 </li>
 <li>
 <p>Execute the following script from the <codeph>/root/tripleo/tripleo-incubator/</codeph>scripts directory:</p>
@@ -371,14 +373,17 @@ Backup procedure completed.
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic19267"> Return to Top </xref>
+  <xref href="#topic19267"> Return to Top </xref>
 </p>
 </section>
 <section id="over"> <title>Back up and restore the overcloud</title>
 <p>The following sections describe how and when to back up and restore the overcloud.</p>
-<p>You can <xref type="section" href="#topic19267/sherpaback">back up</xref> and <xref type="section" href="#topic19267/sherparest">restore</xref> an overcloud server or <xref type="section" href="#topic19267/databack">back up</xref> and <xref type="section" href="#topic19267/datarest">restore</xref> the overcloud database.</p>
+<p>You can <xref href="#topic19267/sherpaback3" format="dita">back up</xref> and <xref
+          type="section" href="#topic19267/sherparest">restore</xref> an overcloud server or <xref
+          href="#topic19267/sherpaback2" format="dita">back up</xref> and <xref
+          href="#topic19267/sherparest2" format="dita">restore</xref> the overcloud database.</p>
 </section>
-<section id="sherpaback1"> <title>Backing up an overcloud server</title>
+<section id="sherpaback3"> <title>Backing up an overcloud server</title>
 <p>You should create a backup of the overcloud servers when any Update and Extension is download to the system.</p>
 <p>Use the following steps to back up the overcloud:</p>
 <ol>
@@ -489,10 +494,10 @@ Restore procedure completed
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic19267"> Return to Top </xref>
+  <xref href="#topic19267"> Return to Top </xref>
 </p>
 </section>
-<section id="sherpaback"> <title>Backing up the overcloud database</title>
+<section id="sherpaback2"> <title>Backing up the overcloud database</title>
 <p>You should create a backup from the overcloud database on a regular basis as determined by the administrator or your organization's policies.</p>
 <p>Use the following steps to back up the overcloud database:</p>
 <ol>
@@ -615,7 +620,7 @@ Restore Procedure Completed
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic19267"> Return to Top </xref>
+  <xref href="#topic19267"> Return to Top </xref>
 </p>
 <!--
 ### Rebuilding the Overcloud Management Controller ### {#mgmt}
@@ -731,7 +736,7 @@ After the management controller is rebuilt, use the following steps below to dis
 <section id="for-more-information"> <title>For more information</title>
 <p>For information on Disaster Recovery (DR) and Business Continuity Planning (BCP) plans, see <xref href="../../commercial/GA1/1.1commercial.disaster-recovery.dita" >Disaster Recovery</xref>.</p>
 <p>
-  <xref type="section" href="#topic19267"> Return to Top </xref>
+  <xref href="#topic19267"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

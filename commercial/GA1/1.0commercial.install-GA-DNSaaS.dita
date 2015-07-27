@@ -565,13 +565,13 @@ listen designate
 </ol>
 <p>
 <b>Note</b>: Installer VM can also be deleted, if it is not deleted already.</p>
-<p>The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the <xref href="http://docs.openstack.org/developer/keystone/" scope="external" format="html" >Keystone documentation</xref>.</p>
+  <p>The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the <xref href="../../publiccloud/api/dns-api.dita" >Keystone documentation</xref>.</p>
 </section>
 <section id="moreinfo"> <title>More Information</title>
 <p>For more information, see:</p>
 <ul>
 <li>
-  <xref href="../../publiccloud/apidocs/c1.1/dns-api.dita">HP Helion Public Cloud DNS API Specifications</xref>
+  <xref href="../../publiccloud/api/dns-api.dita" >HP Helion Public Cloud DNS API Specifications</xref>
 </li>
 <li>
 <xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for OpenStack</xref>
@@ -580,7 +580,7 @@ listen designate
 <p>
 <b>Note</b>: Public Cloud API and HP Helion Openstack API details are similar.</p>
 <p>
-  <xref type="section" href="#topic15064"> Return to Top </xref>
+  <xref href="#topic15064"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

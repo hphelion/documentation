@@ -44,9 +44,9 @@
 <p>The following diagrams depict simplified deployment scenarios:</p>
 <ul>
 <li>
-<xref format="html" href="javascript:window.open('/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >KVM deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
+<image href="../../media/topology_kvm.png" placement="break"/>KVM deployment of HP Helion OpenStack</li>
 <li>
-<xref format="html" href="javascript:window.open('/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >ESX deployment of HP Helion OpenStack</xref> (opens in a new window)</li>
+<image href="../../media/topology_esx.png" placement="break"/>ESX deployment of HP Helion OpenStack</li>
 </ul>
 </section>
 <section id="supportedhw"> <title>Supported Hardware</title>
@@ -466,7 +466,7 @@ or
 <p>Review the <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita" >HP Helion OpenStack Technical Overview</xref>.</p>
 <p>Prepare your environment for the installation, see <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >HP Helion OpenStack Installation: Prerequisites</xref>.</p>
 <p>
-  <xref type="section" href="#topic7297"> Return to Top </xref>
+  <xref href="#topic7297"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

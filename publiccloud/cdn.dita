@@ -17,7 +17,7 @@
 <p>For a step-by-step guide to enable CDN on the <xref href="https://horizon.hpcloud.com" scope="external" format="html" >HP Helion Public Cloud Console</xref>, take a look at the <xref href="https://community.hpcloud.com/knowledge-base" scope="external" format="html" >Knowledge Base</xref> article <xref href="https://community.hpcloud.com/article/activating-cdn-your-object-storage" scope="external" format="html" >Activating CDN for your Object Storage</xref>.</p>
 <p>If you have any questions, try our <xref href="https://community.hpcloud.com" scope="external" format="html" >Forums</xref> where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.</p>
 <section id="api"> <title>API</title>
-<p>Do you need low level, raw REST API access to HP Helion Public Cloud CDN?  Head on over to the <xref href="../publiccloud/apidocs/c1.1/cdn-api.dita" >CDN API page</xref> for details, including a video showing usage of the API using cURL.</p>
+<p>Do you need low level, raw REST API access to HP Helion Public Cloud CDN?  Head on over to the <xref href="../publiccloud/api/cdn-api.dita" >CDN API page</xref> for details, including a video showing usage of the API using cURL.</p>
 </section>
 <section id="bindings"> <title>Bindings</title>
 <p>Got a favorite programming language?  Ready to create your own CDN-based applications?  Take a look at our <xref href="../publiccloud/bindings.dita" >Bindings section</xref> for details.</p>

@@ -27,9 +27,7 @@
 <li>
 <xref type="section" href="#topic5839/vcenter-commands">vCenter Commands</xref>
 </li>
-<li>
-<xref type="section" href="#topic5839/cluster-commands">Cluster Commands</xref>
-</li>
+      <li><xref href="#topic5839/cluster-command" format="dita"/></li>
 <li>
 <xref type="section" href="#topic5839/proxy-command">Compute Proxy Commands</xref>
 </li>
@@ -37,7 +35,7 @@
 <xref type="section" href="#topic5839/required-arguments">Required Commands</xref>
 </li>
 </ul>
-<section id="help-commands"> <title>Help Commands<!--Removed anchor point help--><!-- id="help" --></title>
+<section id="help-command"> <title>Help Commands<!--Removed anchor point help--><!-- id="help" --></title>
 </section>
 <section id="help"> <title>Help</title>
 <p>You can display help for this program or one of its sub-programs.</p>
@@ -216,7 +214,7 @@
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic5839"> Return to Top </xref>
+  <xref href="#topic5839"> Return to Top </xref>
 </p>
 </section>
 <section id="required-arguments"> <title>Required Commands</title>
@@ -257,7 +255,7 @@
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic5839"> Return to Top </xref>
+  <xref href="#topic5839"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -71,8 +71,7 @@
 </li>
 <li>
 <xref type="section" href="#topic20228/sherpa">Sherpa</xref> </li>
-<li>
-<xref type="section" href="#topic20228/nova-console-auth">nova-consoleauth</xref> </li>
+              <li><xref href="#topic20228/nova-consoleauth" format="dita"/></li>
 </ul>
 </li>
 <li>
@@ -88,14 +87,10 @@
 <xref type="section" href="#topic20228/availability-zones">Availability Zones</xref>
 </li>
 <li>
-<xref type="section" href="#topic20228/compute-with-kvm">Compute with KVM</xref>
-
-<ul>
-<li>
-<xref type="section" href="#topic20228/nova-availability-zones">Nova availability zones</xref>
-</li>
-</ul>
-</li>
+            <xref type="section" href="#topic20228/compute-with-kvm">Compute with KVM</xref>
+          </li>
+          <li><xref href="#topic20228/nova-availability-zone" format="dita"/>
+          </li>
 <li>
 <xref type="section" href="#topic20228/compute-with-esx">Compute with ESX</xref>
 </li>
@@ -127,7 +122,7 @@
 <p>Highly Available Cloud Services ensures that at least a minimum of cloud resources are always available on request, which results in uninterrupted operations for users.</p>
 <p>Cloud users are able to provision and manage the compute, storage, and network infrastructure resources at any given point in time and the Horizon Dashboard and the OpenStack APIs must be reachable and be able to fulfill user requests.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/Ha-resilient-cloud-infrastructure.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Resilient Cloud Infrastructure (opens in a new window)</xref>
+  <image href="../../media/Ha-resilient-cloud-infrastructure.png" placement="break"/>Resilient Cloud Infrastructure 
 </p>
 <p>Once the Compute, Storage, and Network resources are deployed, users expect these resources to be reliable in the following ways:</p>
 <ul>
@@ -185,7 +180,7 @@
 <p>HA of the message queue service and the database service is achieved by running these in a clustered mode across the three nodes of the overcloud control plane: RabbitMQ cluster with Mirrored Queues and Percona MySQL Galera cluster.</p>
 
 <p>
-<xref format="html" href="javascript:window.open('/media/ha-architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA Architecture (opens in a new window)</xref>
+<image href="../../media/ha-architecture.png" placement="break"/>HA Architecture 
 </p>
 </li>
 </ol>
@@ -211,7 +206,7 @@
 <section id="api-msg-flow"> <title>API Request Message Flow</title>
 <p>The diagram below shows the flow for an API request in an overcloud HA deployment. All API requests (internal and external) are sent through the VIP.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/Ha-api-request-flow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA API Message Flow(opens in a new window)</xref>
+  <image href="../../media/Ha-api-request-flow.png" placement="break"/>HA API Message Flow
 </p>
 <p>The flow of a sample API request is explained below:</p>
 <ol>
@@ -233,17 +228,17 @@
 <p>With the above overcloud HA set up, loss of a controller node is handled as follows:</p>
 <p>Assume that the Controller0, which is currently in control of the VIP, is lost, as shown in the diagram below:</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/ha-nodefailure-1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Node Failure- Fig 1(opens in a new window)</xref>
+  <image href="../../media/ha-nodefailure-1.png" placement="break"/>Node Failure- Fig 1
 </p>
 <p>When this occurs, keepalived immediately moves the VIP on to the Controller1 and can now receive API requests, which is load-balanced by HA proxy, as stated earlier.</p>
 <p>
 <b>Note:</b> Although MySQL and RabbitMQ clusters have lost a node, they still continue to be operational:</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/ha-nodefailure-2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Node Failure- Fig 2(opens in a new window)</xref>
+  <image href="../../media/ha-nodefailure-2.png" placement="break"/>Node Failure- Fig 2
 </p>
 <p>Finally, when Controller0 comes back online, keepalived and HA proxy will resume in standby/slave mode and be ready to take over, should there be a failure of Controller1. The Controller0 rejoins the MySQL and RabbitMQ clusters as shown in the figure below:</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/ha-nodefailure-3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Node Failure- Fig 3(opens in a new window)</xref>
+  <image href="../../media/ha-nodefailure-3.png" placement="break"/>Node Failure- Fig 3
 </p>
 </section>
 <section id="handling-network-partition"> <title>Handling Network Partitions</title>
@@ -252,7 +247,7 @@
 <section id="mysql-galera"> <title>MySQL Galera Cluster</title>
 <p>The handling of network partitions is illustrated in the diagram below. Galera has a quorum mechanism so when there is a partition in the cluster, the primary or quorate partition can continue to operate as normal, whereas the non-primary/minority partition cannot commit any requests. In the example below, Controller0 is partitioned from the rest of the control plane. As a result, requests can only be satisfied on Controller1 or Controller2. Controller0 will continue to attempt to rejoin the cluster:</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/mysql-galera-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >MySQL Galera Cluster Diagram(opens in a new window)</xref>
+  <image href="../../media/mysql-galera-cluster.png" placement="break"/>MySQL Galera Cluster Diagram
 </p>
 <p>When HA proxy detects the errors against the mysql instance on Controller0, it removes that node from its pool for future database requests.</p>
 </section>
@@ -267,7 +262,7 @@
 <section id="cinder-volume"> <title>Cinder-Volume</title>
 <p>Due to the single threading required in both cinder-volume and the drivers, the Cinder volume service is run as a singleton in the control plane.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/ha-cinder-volume.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Cinder Volume Diagram(opens in a new window)</xref>
+  <image href="../../media/ha-cinder-volume.png" placement="break"/>Cinder Volume Diagram
 </p>
 <p>Cinder-volume is deployed on all three controller nodes, but kept active on only one node at a time. By default, cinder-volume is kept active on the overcloud controller. If the controller fails, you must enable and start the cinder-volume service on one of the other overcloud controller nodes, until it is restored. Once the  controller is restored, you must shut down the Cinder volume service from all other nodes and start it on the controller to ensure it runs as a singleton.</p>
 <p>Since cinder.conf is kept synchronized across all the 3 nodes, Cinder volume can be run on any of the nodes at any given time. Ensure that it is run on only one node at a time.</p>
@@ -313,9 +308,7 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 <li>
 <xref type="section" href="#topic20228/compute-with-kvm">Compute with KVM</xref>
 </li>
-<li>
-<xref type="section" href="#topic20228/nova-availability-zones">Nova availability zones</xref>
-</li>
+        <li><xref href="#topic20228/nova-availability-zone" format="dita"/></li>
 <li>
 <xref type="section" href="#topic20228/compute-with-esx">Compute with ESX</xref>
 </li>
@@ -328,14 +321,11 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 <li>
 <xref type="section" href="#topic20228/object-storage">Object Storage with Swift</xref>
 </li>
-<li>
-<xref type="section" href="#topic20228/networking">Networking</xref>
-</li>
 </ul>
 </section>
 <section id="availability-zones"> <title>Availability Zones</title>
 <p>
-  <xref format="html" href="javascript:window.open('/media/ha-availability-zone.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Availability Zones (opens in a new window)</xref>
+  <image href="../../media/ha-availability-zone.png" placement="break"/>Availability Zones 
 </p>
 <p>While planning your OpenStack deployment, you should decide on how to zone various types of nodes - such as compute, block storage, and object storage. For example, you may decide to place all servers in the same rack in the same zone. For larger deployments, you may plan more elaborate redundancy schemes for redundant power, network ISP connection, and even physical firewalling between zones (<i>this aspect is outside the scope of this document</i>).</p>
 <p>HP Helion OpenStack offers APIs, CLIs and Horizon UIs for the administrator to define and user to consume, availability zones for each of Nova, Cinder and Swift services. This section outlines the process to deploy specific types of nodes to specific physical servers, and makes a statement of available support for these types of availability zones in the current release.</p>
@@ -359,7 +349,7 @@ Either OvercloudController1 or OvercloudController2 servers can be shut down for
 <p>Furthermore, each of the VSA nodes of the cluster can be strategically deployed in different zones of your data center for maximum redundancy and resiliency.
 For more information on how to deploy VSA nodes on desired target servers, refer to the<xref href="../../commercial/GA1/1.0commercial.install-GA-vsa.dita" > Deploy VSA</xref> document.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/ha-block-storage.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA Block Storage (opens in a new window)</xref>
+  <image href="../../media/ha-block-storage.png" placement="break"/>HA Block Storage 
 </p>
 </section>
 <section id="block-storeserv"> <title>Block Storage with 3PAR StoreServ</title>
@@ -372,7 +362,7 @@ For more information on how to deploy VSA nodes on desired target servers, refer
 <section id="object-storage"> <title>Object Storage with Swift</title>
 <p>You can configure your Swift Rings by specifying a target zone for each drive that is added to the ring. Learn more about configuring zones for various drives using the Ringos tool here. Please refer to the <xref href="../../commercial/GA1/1.0commerical.services-object-pyringos.dita" >Ringos</xref> document.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/ha-swift.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >HA Swift  (opens in a new window)</xref>
+  <image href="../../media/ha-swift.png" placement="break"/>HA Swift  
 </p>
 <!--
 ### Neutron Networking {#networking}
@@ -502,7 +492,7 @@ Neutron Netwoking in HA covers the following:
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic20228"> Return to Top </xref>
+  <xref href="#topic20228"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

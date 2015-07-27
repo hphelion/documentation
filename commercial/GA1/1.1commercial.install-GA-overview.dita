@@ -42,6 +42,12 @@
 <colspec colname="col1"/>
 <colspec colname="col2"/>
 <tbody>
+  <row>
+    <entry><b>Component</b>
+              </entry>
+     <entry>
+                <b>Description</b></entry>
+    </row>
 <row>
 <entry>
 <b>Seed VM</b>
@@ -59,9 +65,8 @@
 </row>
 <row>
 <entry>
-<b>Overcloud<b/>
-</b>
-</entry>
+                <b>Overcloud </b>
+              </entry>
     <entry>The overcloud is the functional cloud available to end users for running guest virtual machines and workloads. The overcloud comprises OpenStack Cloud Services deployed on controller nodes, and a number of compute nodes and storage nodes. 
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->The cloud services in the overcloud, used by end users, include Compute, Networking, Block Storage, Object Operations, Horizon, Image Operations, Identity Operations, and Orchestration
     <!--A BR tag was used here in the original source.--><!--A BR tag was used here in the original source.-->For KVM based Hypervisor environments, the overcloud also comprises Nova Compute nodes running the KVM hypervisor, and Block Storage nodes running the StoreVirtual VSA.
@@ -172,7 +177,7 @@
 <section id="first-step"> <title>First Step</title>
 <p>Before you start, make sure your environment meets the hardware and software requirements. See the <xref href="../../commercial/GA1/1.1commercial.install-GA-supportmatrix.dita" >Support Matrix</xref>.</p>
 <p>
-  <xref type="section" href="#topic9809"> Return to Top </xref>
+  <xref href="#topic9809"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

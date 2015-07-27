@@ -14,7 +14,7 @@
  <!--permalink: /publiccloud/dns/--></p>
 <p>The HP Helion Public Cloud Domain Name service (DNS) provides you with a managed domain name service that features anycast routing hosted by HP Helion Public Cloud.</p>
 <section id="api"> <title>API</title>
-<p>Do you need low level, raw REST API access to HP Helion Public Cloud DNS?  Take a look at the <xref href="../publiccloud/apidocs/c1.1/dns-api.dita" >DNS API page</xref>.</p>
+<p>Do you need low level, raw REST API access to HP Helion Public Cloud DNS?  Take a look at the <xref href="../publiccloud/api/dns-api.dita" >DNS API page</xref>.</p>
 </section>
 </body>
 </topic>

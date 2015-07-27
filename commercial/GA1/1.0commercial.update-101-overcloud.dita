@@ -31,9 +31,6 @@ If the Readme.txt does not list any overcloud nodes, the update is complete. -->
 <xref type="section" href="#topic14215/update">Update the overcloud</xref>
 </li>
 <li>
-<xref type="section" href="#topic14215/validate">Validate the update</xref>
-</li>
-<li>
 <xref type="section" href="#topic14215/devplatstart">Restart the HP Helion Development Platform</xref>
 </li>
 <li>
@@ -49,10 +46,10 @@ If the Readme.txt does not list any overcloud nodes, the update is complete. -->
 </p>
 </li>
 <li>
-<p>Make sure a current backup of the management controller, controller0, and controller1 nodes exists, as described in <xref href="../../commercial/GA1/1.0commercial.backup-restore-GA.dita#overcloud" type="section"  >Back Up and Restore</xref>.</p>
+  <p>Make sure a current backup of the management controller, controller0, and controller1 nodes exists, as described in <xref href="../../commercial/GA1/1.0commercial.backup-restore-GA.dita#topic18277/over" type="section">Back Up and Restore</xref>.</p>
 </li>
 <li>
-<p>Review the <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita" >update prerequisites</xref> and make sure all necessary tasks have been performed, including <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita#extract" type="section"  >extracting the update scripts</xref>.</p>
+<p>Review the <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita" >update prerequisites</xref> and make sure all necessary tasks have been performed, including <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita#extract" type="section" >extracting the update scripts</xref>.</p>
 </li>
 <li>
 <p>Point the install script to the overcloud. The patch update scripts are based on the Ansible platform. When patching the overcloud, because the script is launched from the seed cloud host, you need to point the script to the overcloud node.</p>
@@ -212,9 +209,9 @@ ansible-playbook -vvvv -M library/cloud -i plugins/inventory/heat.py -u heat-adm
 </codeblock>
 </li>
 <li>
-<p>Determine the overcloud nodes that will need to be updated. The <i>Readme.txt</i> that comes with a patch update will tell you what nodes need to be updated as a result of this patch. It will be located in the directory described in the <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita#extract" type="section"  >Extracting the required scripts and libraries</xref>.</p>
+<p>Determine the overcloud nodes that will need to be updated. The <i>Readme.txt</i> that comes with a patch update will tell you what nodes need to be updated as a result of this patch. It will be located in the directory described in the <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita#extract" type="section">Extracting the required scripts and libraries</xref>.</p>
 
-<p>For each node, obtain the image ID and IP address. For each of these, record the ID, to get the ID, see <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita#info" type="section"  >Gathering information needed for update</xref>.</p>
+<p>For each node, obtain the image ID and IP address. For each of these, record the ID, to get the ID, see <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita#info" type="section">Gathering information needed for update</xref>.</p>
 </li>
 </ul>
 <p>To manually update the overcloud nodes:</p>
@@ -478,7 +475,7 @@ To manage the VMs launched using the older Compute proxy, use the same hostname 
 <p>If your cloud uses the optional HP Helion OpenStack DNSaaS (Domain Name Server as a Service), upgrade DNSaaS.</p>
 <p>For installation instructions, see <xref href="../../commercial/GA1/1.0commercial.install-GA-DNSaaS.dita" >DNSaaS Installation and Configuration</xref>.</p>
 <p>
-  <xref type="section" href="#topic14215"> Return to Top </xref>
+  <xref href="#topic14215"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

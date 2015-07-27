@@ -20,11 +20,11 @@
 <!--##Understanding HP Helion OpenStack-->
 <ul>
 <li>
-<xref type="section" href="#topic7037/whatHelion">What is HP Helion OpenStack</xref>
-</li>
+  <xref href="#topic7037/what-is-hp-helion-openstack" format="dita">What is HP Helion
+    OpenStack</xref></li>
 <li>
-<xref type="section" href="#topic7037/distroenable">What does HP Helion OpenStack enable me to do?</xref>
-</li>
+  <xref href="#topic7037/what-does-hp-helion-openstack-enable-me-to-do" format="dita">What does HP <tm tmtype="reg">Helion
+    OpenStack</tm> enable me to do?</xref></li>
 <li>
 <xref type="section" href="#topic7037/TripleO">What is TripleO?</xref>
 </li>
@@ -37,27 +37,29 @@
 <li>
 <xref type="section" href="#topic7037/localized">Is the release localized for non-English speaking markets?</xref> </li>
 <li>
-<xref type="section" href="#topic7037/hybridorpubliccloud">Does the HP Helion OpenStack work with hybrid or public cloud projects?</xref>
-</li>
+  <xref href="#topic7037/does-hp-helion-openstack-work-with-hybrid-or-public-cloud-projects"
+          format="dita">Does the HP <tm tmtype="reg"
+            >Helion OpenStack</tm> work with hybrid or public cloud projects?</xref></li>
 <li>
 <xref type="section" href="#topic7037/nodes">How many nodes and virtual machines does it support?</xref>  </li>
 <li>
 <xref type="section" href="#topic7037/softwareupdate">How can I update the software?</xref>
 </li>
 <li>
-<xref type="section" href="#topic7037/includeOS">Does it include an Operating System (OS)?</xref>
-</li>
-<li>
-<xref type="section" href="#topic7037/icehouse">Does this distribution include the OpenStack Icehouse release?</xref> </li>
-<li>
-<xref type="section" href="#topic7037/nonhphardware">Can HP Helion OpenStack run on non-HP hardware?</xref>
-</li>
+        <xref href="#topic7037/does-hp-helion-openstack-include-an-operating-system-os"
+          format="dita">Does it include an Operating System (OS)?</xref>
+      </li>
+<li><xref href="#topic7037/does-this-distribution-include-the-openstack-icehouse-release"
+          format="dita"/>
+      </li>
+      <li><xref href="#topic7037/can-hp-helion-openstack-run-on-non-hp-hardware" format="dita"
+        /></li>
 </ul>
 <section id="support-and-additional-resources"> <title>Support and additional resources</title>
 <ul>
-<li>
-<xref type="section" href="#topic7037/supportservices">Are HP support services included with HP Helion OpenStack</xref>
-</li>
+<li><xref href="#topic7037/are-hp-support-services-included-with-hp-helion-openstack" format="dita">Are HP support services included
+            with HP Helion OpenStack</xref>
+        </li>
 <li>
 <xref type="section" href="#topic7037/supportoptions">What support options are available?</xref>
 </li>
@@ -65,7 +67,10 @@
 <xref type="section" href="#topic7037/MoreInfo">Where can I find more information?</xref>
 </li>
 <li>
-<xref type="section" href="#topic7037/reportissues">Where can I report issues with HP OpenStack Helion?</xref> </li>
+          <xref href="#topic7037/where-can-i-report-issues-with-hp-helion-openstack" format="dita"
+            >Where can I report issues with HP
+              OpenStack Helion?</xref>
+        </li>
 </ul>
 </section>
 <section id="what-is-hp-helion-openstack"> <title>What is HP Helion OpenStack<!--Removed anchor point whatHelion--><!-- id="whatHelion" --></title>
@@ -134,7 +139,7 @@ It is available with support for baremetal deployments (up to 30 Compute nodes).
 <section id="can-hp-helion-openstack-run-on-non-hp-hardware"> <title>Can HP Helion OpenStack run on non-HP hardware?<!--Removed anchor point nonhphardware--><!-- id="nonhphardware" --></title>
 <p>Yes, provided the hardware meets the minimum specifications. We will continue to work to develop a list of third-party hardware on which the distribution is known to run.</p>
 <p>
-  <xref type="section" href="#topic7037"> Return to Top </xref>
+  <xref href="#topic7037"> Return to Top </xref>
 </p>
 </section>
 <section id="support-and-additional-resources2"> <title>Support and additional resources</title>
@@ -162,7 +167,7 @@ You have access to:
 <xref href="http://www8.hp.com/us/en/cloud/hphelion-openstack.html" scope="external" format="html" >HP Helion OpenStack Portal</xref>
 </li>
 <li>
-  <xref href="1.1commercial.index.dita" >HP Helion OpenStack Documentation</xref> 
+  <xref href="1.1commercial.index.dita">HP Helion OpenStack Documentation</xref> 
 <!--* [HP Helion OpenStack Support Forum](https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion) (Tag your questions with 'HPHelion')--></li>
 </ul>
 </section>
@@ -170,7 +175,7 @@ You have access to:
 <p>To report issues with HP Helion OpenStack please visit the <xref href="http://us-support.external.hp.com/portal/site/hpsc/public" scope="external" format="html" >HP Support Center</xref>.</p>
 <p>
 <!-- removed per JR's comment I We are hosting the support discussion forum for the edition at [https://ask.openstack.org](https://ask.openstack.org).  Developers in the community are very familiar with this forum and already participate in OpenStack-related discussions there. Please tag your questions with 'HPHelion' to get our attention for any questions and issues you raise.--> 
-<xref type="section" href="#topic7037"> Return to Top </xref>
+<xref href="#topic7037"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 <!--

@@ -71,8 +71,7 @@ protecting volumes with network RAID. A logical grouping of clusters is done in 
 <p>With Network RAID, blocks of data are striped and mirrored across multiple StoreVirtual systems, allowing volumes and applications to stay online in the event of disk, storage subsystem or server failure. iSCSI connectivity on HP StoreVirtual VSA, support the use of the storage pools by cloud instances.
 A single management group can contain up to 32 StoreVirtual nodes - grouped into clusters. A single cluster comprises 1 to 16 StoreVirtual nodes. Each management group can optimally manage a maximum of 1500 volumes.</p>
 <p>HP Helion OpenStack supports multiple clusters. For minimal deployment, you can create a management group with one cluster and with a single StoreVirtual node on it.</p>
-<p>
-<b>Note</b>: SSL is automatically enabled in VSA nodes to secure the data transmission.</p>
+      <note>SSL is automatically enabled in VSA nodes to secure the data transmission.</note>
 <p>HP StoreVirtual VSA enables the following features in HP Helion OpenStack</p>
 <ul>
 <li>
@@ -100,7 +99,7 @@ A single management group can contain up to 32 StoreVirtual nodes - grouped into
 <section id="hp-storevirtual-dep-platform"> <title>HP StoreVirtual Deployment Models supported in HP Helion OpenStack</title>
 <p>The following diagram displays the different development platforms supported in HP Helion OpenStack</p>
 <p>
-  <image href="../../media/storevitual-development-platform.png"/>
+  <image href="../../media/storevitual-development-platform.png" placement="break"/>
 </p>
 <p>There are three supported models for deploying StoreVirtual in HP Helion OpenStack</p>
 <ol>
@@ -130,7 +129,7 @@ A single management group can contain up to 32 StoreVirtual nodes - grouped into
 </li>
 </ul>
 <p>
-  <image href="../../media/storevirtual-cinder-api.png"/>
+  <image href="../../media/storevirtual-cinder-api.png" placement="break"/>
 </p>
 </section>
 <section id="cinder-api"> <title>Cinder API</title>
@@ -158,16 +157,19 @@ A single management group can contain up to 32 StoreVirtual nodes - grouped into
 <section id="cinder-volume"> <title>Cinder Volume and LeftHand driver</title>
 <p>Once the Scheduler determines the backend to be used, the Cinder volume performs the actual operations against the backend.</p>
 <p>The Cinder volume service hosts the LeftHand Driver to communicate with the backend representing the StoreVirtual cluster, using the LeftHand REST API.</p>
-<p>
-<b>Note:</b> The HPLeftHandISCSIDriver is based on the Block Storage service (Cinder) plug-in architecture. Volume operations are run by communicating with the HP LeftHand/StoreVirtual system over HTTPS, or SSH connections. 
-For more details on the Lefthand driver, refer to <xref href="http://docs.openstack.org/trunk/config-reference/content/HP-LeftHand-StoreVirtual-driver.html" scope="external" format="html" >HP LeftHand/StoreVirtual driver</xref>.</p>
+      <note>The HPLeftHandISCSIDriver is based on the Block Storage service (Cinder) plug-in
+        architecture. Volume operations are run by communicating with the HP LeftHand/StoreVirtual
+        system over HTTPS, or SSH connections. For more details on the Lefthand driver, refer to
+          <xref
+          href="http://docs.openstack.org/trunk/config-reference/content/HP-LeftHand-StoreVirtual-driver.html"
+          scope="external" format="html">HP LeftHand/StoreVirtual driver</xref>.</note>
 <p>When you configure multiple StoreVirtual backends, one cinder-volume is launched for each back-end storage or back-end storage pool. Each backend instance maps to an instance of a StoreVirtual cluster. Each cluster listens at an assigned VIP that is configured in the Cinder backend entry in <i>cinder.conf</i>.</p>
 </section>
 <section id="differentiated-storage-offerings"> <title>Differentiated Storage Offerings</title>
 <p>HP Helion OpenStack uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that storage controller runs as a virtual appliance and helps realize Software Defined Block Storage.</p>
 <p>Cinder provides the concept of volume types to represent differentiated storage offerings based on various performance outputs, quality of service and backend devices that are used to realize cloud storage. Essentially, a volume type is mapped to one or more backends of similar capabilities as illustrated in figure below:</p>
 <p>
-  <image href="../../media/storevirtual-volume-mapping-new.png"/>
+  <image href="../../media/storevirtual-volume-mapping-new.png" placement="break"/>
 </p>
 <p>As a cloud administrator, you can create volume types to specify the storage offerings of the cloud and  configure Cinder with backends which have the ability to serve storage characteristics represented by the volume types. For example, as a cloud admin, you have the following storage capabilities:</p>
 <p>
@@ -182,7 +184,7 @@ For more details on the Lefthand driver, refer to <xref href="http://docs.openst
 <section id="scale-out-vsa"> <title>Scale Out Cinder Block Storage with StoreVirtual VSA</title>
 <p>The following diagram displays a reference design that is used as a starting point for scale out Cinder Block Storage with HP StoreVirtual VSA.</p>
 <p>
-  <image href="../../media/storevirtual-scale-out-vsa.png"/>
+  <image href="../../media/storevirtual-scale-out-vsa.png" placement="break"/>
 </p>
 <p>The sizing of the StoreVirtual VSA Management Groups, Clusters and Instances is an intricate exercise used in balancing various parameters and preferences and should be done to optimize configurations for your specific deployment.</p>
 </section>
@@ -193,7 +195,7 @@ For more details on the Lefthand driver, refer to <xref href="http://docs.openst
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic9930"> Return to Top </xref>
+  <xref href="#topic9930"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -8,39 +8,40 @@
 </metadata>
 </prolog>
 <body>
-  <section>
-    <p><!--UNDER REVISION--><!--./CarrierGrade/Overview/carrier-grade-overview.md--><!--permalink: /helion/openstack/carrier/overview/--></p>
-    <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
-    <p><b>HP Helion OpenStack Carrier Grade (HCG)</b> is a carrier grade OpenStack plus compute and
-      network virtualization offering for NFV that enable CSPs to deploy network functions
-      virtualization (NFV) applications on open source software platforms. </p>
-    <p>Some key examples include the host operating system (for example, Linux), server
-      virtualization (KVM), network virtualization (vSwitch and SDN controllers), an installer and
-      cloud lifecycle management framework, fault and performance management, and high-availability
-      framework for the OpenStack control plane and the NFVI layer.</p>
-    <p>HP Helion OpenStack Carrier Grade is based on <xref
-        href="../../commercial/GA1/1.1commercial.index.dita">HP Helion Openstack 1.1</xref> but with
-      significantly enhanced and optimized functionality, availability, scale and performance to
-      meet the needs of NFV cloud deployments.</p>
-  
-  <p>Helion OpenStack Carrier Grade includes following  key components:</p>
-  <ul><li>OpenStack—core services including Horizon, Nova, Neutron, Cinder, Glance, Swift, Keystone, Ceilometer, and Heat. Other services will be added as needed in the future.</li>
-  <li>Compute node software package that  includes:
-    <ul>
-      <li>Carrier-grade Linux (host operating system [OS] running on the compute nodes)</li>
-      <li>Carrier-grade KVM (for virtualization of the compute node)</li>
-      <li>Carrier-grade accelerated virtual switch (AVS), data plane development kit (DPDK)-enabled high-performance virtual switch</li></ul></li>
-  <li>Management and middleware—composed of high-availability (HA) management; operations, administration, and
-    maintenance (OAM); software image management; and fault and performance management</li>
-    <li>Guest software development kit (SDK) for inclusion in the guest OS of the VNF for performance acceleration and
-      improving the HA framework above and beyond standard VIMs</li>
-    <li>HP Helion Lifecycle Manager (HLM)—cloud installer and lifecycle manager</li>
-  </ul>
-  </section>
+    <section>
+      <!-- From QuickSpec Asawa, Manjari <manjari.asawa@hp.com> -->
+      <p><b>HP Helion OpenStack Carrier Grade (HCG)</b> is a carrier grade OpenStack plus compute
+        and network virtualization offering for NFV that enable CSPs to deploy network functions
+        virtualization (NFV) applications on open source software platforms. </p>
+      <p>Some key examples include the host operating system (for example, Linux), server
+        virtualization (KVM), network virtualization (vSwitch and SDN controllers), an installer and
+        cloud lifecycle management framework, fault and performance management, and
+        high-availability framework for the OpenStack control plane and the NFVI layer.</p>
+      <p>HP Helion OpenStack Carrier Grade is based on HP Helion Openstack 1.1 but
+        with significantly enhanced and optimized functionality, availability, scale and performance
+        to meet the needs of NFV cloud deployments.</p>
+      <p>Helion OpenStack Carrier Grade includes following key components:</p>
+      <ul>
+        <li>OpenStack—core services including Horizon, Nova, Neutron, Cinder, Glance, Swift,
+          Keystone, Ceilometer, and Heat. Other services will be added as needed in the future.</li>
+        <li>Compute node software package that includes: <ul>
+            <li>Carrier-grade Linux (host operating system [OS] running on the compute nodes)</li>
+            <li>Carrier-grade KVM (for virtualization of the compute node)</li>
+            <li>Carrier-grade accelerated virtual switch (AVS), data plane development kit
+              (DPDK)-enabled high-performance virtual switch</li>
+          </ul></li>
+        <li>Management and middleware—composed of high-availability (HA) management; operations,
+          administration, and maintenance (OAM); software image management; and fault and
+          performance management</li>
+        <li>Guest software development kit (SDK) for inclusion in the guest OS of the VNF for
+          performance acceleration and improving the HA framework above and beyond standard
+          VIMs</li>
+        <li>HP Helion Lifecycle Manager (HLM)—cloud installer and lifecycle manager</li>
+      </ul>
+    </section>
     <section id="focus-areas-for-hp-helion-openstack-carrier-grade">
       <title>Standard Features</title>
-      <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
-      
+      <!-- From QuickSpec Asawa, Manjari <manjari.asawa@hp.com> -->
       <table>
         <tgroup cols="2">
           <colspec colname="col1"/>
@@ -50,44 +51,50 @@
               <entry> Feature </entry>
               <entry> Description </entry>
             </row>
-            
             <row>
               <entry> Availability and reliability </entry>
-              <entry> <ul>
-                <li>Advanced self-healing</li>
-                <li>No single point of failure</li>
-              </ul> </entry>
+              <entry>
+                <ul>
+                  <li>Advanced self-healing</li>
+                  <li>No single point of failure</li>
+                </ul>
+              </entry>
             </row>
             <row>
               <entry> Platform for high performance VNFs </entry>
-              <entry> <ul>
-                <li>Near-line rate networking throughout for VNFs like vEPC, vBRAS, vIMS, vFW, vRouter etc.</li>
-                <li>Bare metal compute performance</li>
-              </ul> </entry>
+              <entry>
+                <ul>
+                  <li>Near-line rate networking throughout for VNFs like vEPC, vBRAS, vIMS, vFW,
+                    vRouter etc.</li>
+                  <li>Bare metal compute performance</li>
+                </ul>
+              </entry>
             </row>
             <row>
               <entry> Manageability </entry>
-              <entry> <ul>
-                <li>In-service upgrade capabilities</li>
+              <entry>
+                <ul>
+                  <li>In-service upgrade capabilities</li>
                   <li>Enhanced security</li>
                   <li>Inventory management</li>
                   <li>Advanced resource scheduling and orchestration capabilities</li>
-              </ul> </entry>              
-            </row>           
+                </ul>
+              </entry>
+            </row>
             <row>
               <entry>High Availability/ Disaster Recovery </entry>
-              <entry> <ul>
-                <li>NIC Bonding at the server level </li>
-                <li>HA for KVM instance</li>
-                <li>Compute Node failure detection and Auto-evacuation in kvm region</li>
-                <li>Live Migration in kvm region</li>
-              </ul> </entry>              
+              <entry>
+                <ul>
+                  <li>NIC Bonding at the server level </li>
+                  <li>HA for KVM instance</li>
+                  <li>Compute Node failure detection and Auto-evacuation in kvm region</li>
+                  <li>Live Migration in kvm region</li>
+                </ul>
+              </entry>
             </row>
-            
           </tbody>
         </tgroup>
       </table>
-      
     </section>
     <section id="major-components-in-hp-helion-openstack-carrier-grade">
       <title>Major Components in HP Helion OpenStack Carrier Grade</title>
@@ -95,25 +102,28 @@
         or conceptual <i>regions</i>: Non-KVM and KVM. See the <xref
           href="../Installation/carrier-grade-technical-overview.dita#topic3485/deploy-arch"
           >Deployment Architecture diagram</xref> in the Technical Overview for an illustration of
-        these two zones.  </p>
-<p><b>Non-KVM</b></p>
+        these two zones. </p>
+      <p><b>Non-KVM</b></p>
       <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and
         maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
         distribution of OpenStack. The Non-KVM region consists of a host system for HLM and three HP
-        Helion OpenStack controllers.</p><p>For more information, see <xref
-          href="carrier-grade-overview-non-kvm.dita">Non-KVM Environment
-      Overview</xref>.</p>
-    <p><b>KVM</b></p>
-      <p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM
-        region consists of a software platform, providing ultra-reliability and exceptional
-        performance efficiencies for telecommunications networks. </p><p>For more information, see
-          <xref href="carrier-grade-overview-kvm.dita">KVM Environment
-      Overview</xref>.</p></section>
-  <section><title>Service Overview</title><p>HP Helion OpenStack Carrier Grade is comprised
-        of a number of services, including several OpenStack and HP Helion OpenStack
-        services.</p><p>For more information, see <xref href="carrier-grade.services-overview.dita"
-          >Services Overview</xref>.</p></section>
-    
+        Helion OpenStack controllers.</p>
+      <p>For more information, see <xref href="carrier-grade-overview-non-kvm.dita">Non-KVM
+          Environment Overview</xref>.</p>
+      <p><b>KVM</b></p>
+      <p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM region consists
+        of a software platform, providing ultra-reliability and exceptional performance efficiencies
+        for telecommunications networks. </p>
+      <p>For more information, see <xref href="carrier-grade-overview-kvm.dita">KVM Environment
+          Overview</xref>.</p>
+    </section>
+    <section>
+      <title>Service Overview</title>
+      <p>HP Helion OpenStack Carrier Grade is comprised of a number of services, including several
+        OpenStack and HP Helion OpenStack services.</p>
+      <p>For more information, see <xref href="carrier-grade.services-overview.dita">Services
+          Overview</xref>.</p>
+    </section>
     <!-- 
   <section id="distributed-cloud-networking-dcn"> <title>Distributed Cloud Networking (DCN)</title>
 <p>Distributed Cloud Networking (DCN) is a Software-Defined Networking (SDN) solution that provides data center (DC) network virtualization and automatically establishes connectivity between compute resources upon their creation.</p>

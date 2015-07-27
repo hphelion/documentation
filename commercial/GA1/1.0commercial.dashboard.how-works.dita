@@ -43,10 +43,10 @@ To access the dashboard, <xref href="../../commercial/GA1/1.0commercial.dashboar
   <!--A BR tag was used here in the original source.-->
 </p>
 <p>
-  <image href="../../media/HelionDashboardDetail.png"/>
+  <image href="../../media/HelionDashboardDetail.png" placement="break"/>
 </p>
 <p>
-  <xref type="section" href="#topic2121"> Return to Top </xref>
+  <xref href="#topic2121"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

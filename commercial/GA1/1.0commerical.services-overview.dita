@@ -22,7 +22,7 @@
 <xref type="section" href="#topic6622/service">Service User Accounts</xref>
 </li>
 <li>
-<xref type="section" href="#topic6622/Openstack">OpenStack Services</xref>
+<xref type="section" href="#topic6622/OpenStack">OpenStack Services</xref>
 </li>
 <li>
 <xref type="section" href="#topic6622/Dashboard">Dashboard Services</xref>
@@ -41,7 +41,7 @@
 </b> add these service user accounts to any project because this could allow project users to access services they should not have permission to access.</p>
 <p>The service user accounts include, but are not limited to, the following:</p>
 <ul>
-<li>Swift</li>
+<li>Object Storage (Swift)</li>
 <li>Nova</li>
 <li>Neutron</li>
 <li>Sherpa</li>
@@ -118,7 +118,7 @@ See [Overview of the Loom Service](/helion/openstack/services/loom/overview/).
 <p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html" >OpenStack Operations Guide</xref>. The <b>Architecture</b> section contains useful information about how an OpenStack Cloud is put together. However, HP Helion OpenStack takes care of these details for you. The <b>Operations</b> section contains information on how to manage the system.</p>
 <p>For more information on installing the command-line interface for interacting with services, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >installing the OpenStack command-line clients</xref>.</p>
 <p>
-  <xref type="section" href="#topic6622"> Return to Top </xref>
+  <xref href="#topic6622"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

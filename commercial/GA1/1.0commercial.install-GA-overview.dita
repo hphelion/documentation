@@ -35,7 +35,7 @@
 <b>Overcloud</b>: The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack deployment, the overcloud comprises several baremetal servers.</p>
 </li>
 </ul>
-<p>For more details on the seed, an undercloud and an overcloud, see the <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita#install-configure" type="section"  >Installation Planning section</xref> in the Technical Overview.</p>
+  <p>For more details on the seed, an undercloud and an overcloud, see the <xref href="../../commercial/GA1/1.0commercial.technical-overview.ga.dita#topic25331/install-configure" type="section">Installation Planning section</xref> in the Technical Overview.</p>
 <section id="the-installation-process"> <title>The Installation Process</title>
 <p>HP Helion OpenStack is designed to deliver an open source OpenStack solution at the modest scale. A baremetal multi-node deployment consists of a minimum of 8 baremetal servers, to which you can add up to 100 Compute nodes:</p>
 <ul>
@@ -104,7 +104,7 @@
 <section id="next-step"> <title>Next Step</title>
 <p>Review the information in <xref href="../../commercial/GA1/1.0commercial.install-GA-prereqs.dita" >Installation Prerequisites</xref>.</p>
 <p>
-  <xref type="section" href="#topic4315"> Return to Top </xref>
+  <xref href="#topic4315"> Return to Top </xref>
 </p>
 </section>
 <section id="moreinfo"> <title>For more information</title>

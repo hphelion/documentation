@@ -117,7 +117,7 @@ trunk_interface={'vmxnet3':'vlan_trunk'}
 </codeblock>
 
 <p>Use the following diagram for reference:
-<image href="../../media/ESXi_hypervisor_networking.png"/>
+<image href="../../media/ESXi_hypervisor_networking.png" placement="break"/>
 </p>
 </li>
 </ul>
@@ -131,7 +131,7 @@ trunk_interface={'vmxnet3':'vlan_trunk'}
 <p>Please make sure that ESX host does not have another iteration of the OVSvApp already deployed.</p>
 </li>
 <li>
-<p>The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see <xref href="1.0commercial.install-GA-prereqs.dita#network_prepare" type="section"  >Preparing the network for an ESX installation</xref> in <i>Prerequisites</i>.</p>
+<p>The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see <xref href="1.0commercial.install-GA-prereqs.dita#network_prepare" type="section">Preparing the network for an ESX installation</xref> in <i>Prerequisites</i>.</p>
 </li>
 <li>
 <p>All ESX hosts must have synchronized time settings. If hosts have different time, the deployment will fail.</p>
@@ -140,7 +140,7 @@ trunk_interface={'vmxnet3':'vlan_trunk'}
 <p>Use the vShpere client to select <b>Disable: Allow VM power on operations that violate availability constraints</b> as a part of cluster settings, as shaown. If not, ESX host might hang at 2% during transition to maintenance mode.</p>
 
 <p>
-<image href="../../media/OVSvApp_all_vm_power.png"/>
+<image href="../../media/OVSvApp_all_vm_power.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -294,6 +294,7 @@ cd vmware-tools-distrib/
 <codeblock>
 <codeph>[vmware]
 #VCenter IP
+
 vcenter_ip=
 #Vcenter FQDN(Provide FQDN, only if your vcenter certificate is generated with FQDN)(*OPTIONAL)
 vcenter_fqdn=
@@ -742,7 +743,7 @@ python invoke_vapp_installer.py
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic23018"> Return to Top </xref>
+  <xref href="#topic23018"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

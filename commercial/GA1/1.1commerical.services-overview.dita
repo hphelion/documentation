@@ -57,7 +57,7 @@
 </b> add these service user accounts to any project because this could allow project users to access services they should not have permission to access.</p>
 <p>The service user accounts include, but are not limited to, the following:</p>
 <ul>
-<li>Swift</li>
+<li>Object Storage (Swift)</li>
 <li>Nova</li>
 <li>Neutron</li>
 <li>Sherpa</li>
@@ -98,8 +98,8 @@
 <p>See <xref href="../../commercial/GA1/1.1commerical.services-reporting-overview.dita">Overview of the Metering Service</xref>.</p>
 <p>
 <b>Ceph</b>. Ceph is an Open Source, scalable, software defined storage running on HP Servers which provides block and object storage with unified management.</p>
-<p>See <xref href="1.1commercial.ceph-overview.dita#topic7563" type="section" >Overview of the Ceph Service</xref>
-      </p>
+<p>See <xref href="../../commercial/GA1/ceph/1.1commercial.ceph-overview.dita">Overview of the Ceph Service</xref>
+</p>
 <!-- Not in Commerical
 **Loom**. The Loom service facilitates the comprehension and manipulation of complex systems using the Unity dashboard.
 
@@ -155,7 +155,7 @@ See <xref href="../../commercial/GA1/1.1commerical.services-horizon-overview.dit
 <p>For information on how to operate your cloud we suggest you read the <xref href="http://docs.openstack.org/ops/" scope="external" format="html">OpenStack Operations Guide</xref>. The <b>Architecture</b> section contains useful information about how an OpenStack Cloud is put together. However, HP Helion OpenStack takes care of these details for you. The <b>Operations</b> section contains information on how to manage the system.</p>
 <p>For more information on installing the command-line interface for interacting with services, see <xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html">installing the OpenStack command-line clients</xref>.</p>
 <p>
-  <xref type="section" href="#topic8293"> Return to Top </xref>
+  <xref href="#topic8293"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

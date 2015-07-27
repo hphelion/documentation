@@ -50,74 +50,75 @@
 <p>Once the <i>openstack.common.rpc</i> notifications are enabled in the configuration file, Nova will send the following data to Ceilometer:</p>
 <table pgwide="1">
 <tgroup cols="5">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<colspec colname="col5"/>
-<tbody>
-<row>
-<entry>
-<b>Name</b>
-</entry>
-<entry>
-<b>Unit</b>
-</entry> 
-<entry>
-<b>Type</b>
-</entry>
-<entry>
-<b>Resource</b>
-</entry>
-<entry>
-<b>Note</b>
-</entry>
-</row>
-<row>
-<entry>instance</entry>
-<entry>g</entry> 
-<entry>instance</entry>
-<entry> inst ID</entry>
-<entry>Existence of instance</entry>
-</row>
-<row>
-<entry>instance: <varname>type</varname>
-</entry>
-<entry>g</entry> 
-<entry>instance</entry>
-<entry> inst ID</entry>
-<entry>Existence of instance of <varname>type</varname> (Where <varname>type</varname> is a valid OpenStack types.) </entry>
-</row>
-<row>
-<entry>memory</entry>
-<entry>g</entry> 
-<entry>MB</entry>
-<entry> inst ID</entry>
-<entry>Volume of allocated RAM. Measured in MB.</entry>
-</row>
-<row>
-<entry>vcpus</entry>
-<entry>g</entry> 
-<entry>vcpu</entry>
-<entry> inst ID</entry>
-<entry>Number of VCPUs</entry>
-</row>
-<row>
-<entry>disk.root.size</entry>
-<entry>g</entry> 
-<entry>GB</entry>
-<entry> inst ID</entry>
-<entry>Size of root disk. Measured in GB.</entry>
-</row>
-<row>
-<entry>disk.ephemeral.size</entry>
-<entry>g</entry> 
-<entry>GB</entry>
-<entry> inst ID</entry>
-<entry>Size of ephemeral disk. Measured in GB.</entry>
-</row>
-</tbody>
-</tgroup>
+                    <colspec colname="col1" colsep="1" rowsep="1"/>
+                    <colspec colname="col2" colsep="1" rowsep="1"/>
+                    <colspec colname="col3" colsep="1" rowsep="1"/>
+                    <colspec colname="col4" colsep="1" rowsep="1"/>
+                    <colspec colname="col5" colsep="1" rowsep="1"/>
+                    <tbody>
+                        <row>
+                            <entry>
+                                <b>Name</b>
+                            </entry>
+                            <entry>
+                                <b>Unit</b>
+                            </entry>
+                            <entry>
+                                <b>Type</b>
+                            </entry>
+                            <entry>
+                                <b>Resource</b>
+                            </entry>
+                            <entry>
+                                <b>Note</b>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>instance</entry>
+                            <entry>g</entry>
+                            <entry>instance</entry>
+                            <entry> inst ID</entry>
+                            <entry>Existence of instance</entry>
+                        </row>
+                        <row>
+                            <entry>instance: <varname>type</varname>
+                            </entry>
+                            <entry>g</entry>
+                            <entry>instance</entry>
+                            <entry> inst ID</entry>
+                            <entry>Existence of instance of <varname>type</varname> (Where
+                                    <varname>type</varname> is a valid OpenStack types.) </entry>
+                        </row>
+                        <row>
+                            <entry>memory</entry>
+                            <entry>g</entry>
+                            <entry>MB</entry>
+                            <entry> inst ID</entry>
+                            <entry>Volume of allocated RAM. Measured in MB.</entry>
+                        </row>
+                        <row>
+                            <entry>vcpus</entry>
+                            <entry>g</entry>
+                            <entry>vcpu</entry>
+                            <entry> inst ID</entry>
+                            <entry>Number of VCPUs</entry>
+                        </row>
+                        <row>
+                            <entry>disk.root.size</entry>
+                            <entry>g</entry>
+                            <entry>GB</entry>
+                            <entry> inst ID</entry>
+                            <entry>Size of root disk. Measured in GB.</entry>
+                        </row>
+                        <row>
+                            <entry>disk.ephemeral.size</entry>
+                            <entry>g</entry>
+                            <entry>GB</entry>
+                            <entry> inst ID</entry>
+                            <entry>Size of ephemeral disk. Measured in GB.</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
 </table>
 </section>
 <section id="novaconfigfile"> <title>Enable Nova Notifications</title>
@@ -252,7 +253,16 @@ Ceilometer data collection is configured by modifying the <i>pipeline.yml</i> fi
 <p>
 <b>Note</b>: The <i>pipeline.yml</i> configuration file needs to be changed on <b>all</b> the controller nodes to actually affect the white-listing and or polling strategy.</p>
 <p>The configuration file is comprised of two major elements: <b>sources</b> and <b>sinks</b>. <b>Sources</b> are data harvested from notifications posted by services or collected through polling. <b>Sinks</b> represent how that data is modified before it is published to the internal queue for collection and storage.</p>
-    <p>In the Sources section there is a list of default meters. These meters are the data that is going to be collected. The list of meters can be easily reduced or increased by editing the <i>pipeline.yml</i> configuration file and then restarting the <xref href="1.1commerical.services-reporting-components.dita#centralagent" type="section">Ceilometer Central Agent</xref> and the <xref href="1.1commerical.services-reporting-components.dita#collector" type="section">Ceilometer Collector</xref>. If more meters are desired, please refer to the <xref href="http://docs.openstack.org/developer/ceilometer/measurements.html#measurements" type="section" scope="external" format="html" >OpenStack Ceilometer documentation</xref>.</p>
+<p>In the Sources section there is a list of default meters. These meters are the data that is going
+                to be collected. The list of meters can be easily reduced or increased by editing
+                the <i>pipeline.yml</i> configuration file and then restarting the <xref
+                    href="1.1commerical.services-reporting-components.dita#topic4362/centralagent"
+                />and the  <xref
+                    href="1.1commerical.services-reporting-components.dita#topic4362/collector"/>.
+                If more meters are desired, please refer to the <xref
+                    href="http://docs.openstack.org/developer/ceilometer/measurements.html#measurements"
+                    type="section" scope="external" format="html">OpenStack
+                    Ceilometer documentation</xref>.</p>
 <codeblock>
   <codeph>---
 sources:

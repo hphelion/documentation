@@ -31,7 +31,7 @@
 <section id="eon-architecture"> <title>EON Architecture</title>
 <p>The following diagram depicts the EON architecture of HP Helion OpenStack</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media//eon-architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >EON Architecture(opens in a new window)</xref>
+  <image href="../../media/eon-architecture.png" placement="break"/>EON Architecture
 </p>
 <!--
 <img src="/media/eon-architecture.png" /> -->
@@ -46,7 +46,7 @@
 <p>You can use the command-line interface software to access HP EON service. See <xref href="../../commercial/GA1/1.0commercial.undercloud-eon-cli.dita" >Command Line Interface-EON</xref>
 </p>
 <p>
-  <xref type="section" href="#topic1920"> Return to Top </xref>
+  <xref href="#topic1920"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -51,7 +51,7 @@
 <p>For information on TripleO, see the official <xref href="https://wiki.openstack.org/wiki/TripleO" scope="external" format="html" >OpenStack TripleO wiki</xref>.</p>
 <p>For more information on the HP Helion OpenStack deployment model, see <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita" >HP Helion OpenStack Technical Overview</xref>.</p>
 <p>
-  <xref type="section" href="#topic2181"> Return to Top </xref>
+  <xref href="#topic2181"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

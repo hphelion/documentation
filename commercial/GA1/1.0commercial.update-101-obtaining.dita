@@ -35,7 +35,7 @@
 <p>Provide the credentials if you have already signed up, if not, sign up by clicking the <b>Sign up now</b> link.</p>
 
 <p>
-<image href="../../media/SherpaConfigure.png"/>
+<image href="../../media/SherpaConfigure.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -110,7 +110,7 @@
 <p>Click <b>Import</b> to deliver the patch update file for further processing.</p>
 
 <p>
-<image href="../../media/SherpaImport.png"/>
+<image href="../../media/SherpaImport.png" placement="break"/>
 </p>
 </li>
 <li>
@@ -124,7 +124,7 @@
 <p>Review the Prerequisites for information or tasks that need to be performed before starting the update.</p>
 <p>For prerequisites, see the <xref href="../../commercial/GA1/1.0commercial.update-101-prereqs.dita" >Update Prerequisites</xref>.</p>
 <p>
-  <xref type="section" href="#topic3603"> Return to Top </xref>
+  <xref href="#topic3603"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

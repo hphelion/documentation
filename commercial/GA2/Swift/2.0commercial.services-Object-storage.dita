@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_xx1_4bt_ts">
+  <title>HP Helion OpenStack Object Storage (Swift)</title>
+    <body>
+      <p> </p>
+    <p> A Object Storage (Swift)  is Software Defined Storage (SDS) architecture, layered on top of
+      industry standard servers, using native storage devices which are typically disk drives. Swift
+      presents an object paradigm using an undelying set of disk drives. The disk drives are managed
+      by a data structure called the  "ring". Also, Swift enable you to store, retrieve, and delete
+      objects in a containers through RESTful HTTP API.</p>
+    <p>The services in the Swift cluster are either <i>access</i> services or <i>storage</i>
+      services. <ul id="ul_x1l_32z_ts">
+        <li> The <i>access</i> services group is made up of the Swift Proxy Servers, which run
+          Swift-Proxy, Account and Container Services, HTTP/HTTPS load balancers, and OpenStack®
+          Keystone authentication service. </li>
+        <li> The <i>storage</i> services group is composed of Swift Object Servers and various
+          background services such as replicators. <p>Each of the service group can scaled
+            independently to meet workload and redundany requirements. The storage service can
+            scaled up as necessary. It can also be horizontally scalable to handle an increased
+            number of simultaneous connections as well as large number of objects.</p></li>
+      </ul></p>
+    <p>Based on OpenStack® Object Sotrage, the HP Helion OpenStack® Object Storage service provides
+      a highly available, resilient, and scalable storage pool for unstructured data. It is highly
+      durable architecture with no single point of failure. </p>
+    <p>HP Helion OpenStack 2.0 allows you to specify your cloud configuration, knows as  input data
+      model. Here, you need to provide the detailed information about the desired cloud topology
+      (structure of control plane, assignment of services to nodes) and their services'
+      configuration (e.g. Neutron plugins, etc) and environment specific configuration (e.g. OS
+      kernel settings).</p>
+      <p>
+      <b>Input Model</b></p>
+      <p><b> Enter the information what input model means in terms of swift. what all configurations
+        can be set as an input data???</b>. </p>
+      <section id="arch-overview"><b>Architecture Overview</b></section>
+      <p> The following diagram depicts the architectural overview of the Swift deployment into your
+        cloud:<ul id="ul_x1l_33z_ts">
+        <li>
+          <p><b>insert diagram</b>?????</p>
+          <p>topology</p>
+        </li>
+      </ul></p>
+      <section id="storage-plocies"><b>Storage Policies</b><p>Storage policies allow you to
+        differentiate the way objects are stored. There are a number of possible reasons as
+        follows:</p><ul id="ul_b5j_2fg_5s">
+        <li>You have several different types or classes of disk drive. For example, you could use
+          7.5K RPM high-capacity drives for one type of data and fast SSD drives for another type of
+          data.</li>
+        <li>You have different redundancy or availability needs. For example, you could use a
+          replica count of 3 for "normal" data and a replica count of 4 for "critical" data.</li>
+        <li>As described in the discussion of partition power above you are growing your capacity
+          beyond the recommended partition power.</li>
+        <li>You use erasure-coded storage for some objects and replicated storage for other
+          objects.</li>
+      </ul><p>Your end users chose which storage policy they use on a per-container basis. In
+        practice most users will not explicitly specify the storage policy. You can specify which
+        storage policy is then used by using the<b>default</b> attribute. You can change which
+        storage policy is the default. However, this does not affect existing containers. Once the
+        storage policy of a container is set, the policy for that container cannot be
+        changed.</p><p>The disk drives used by storage policies can overlap or be distinct. However,
+        if you overlap (i.e., have disks in common between two storage policies) you are recommended
+        to use the same set of disk drives for both policies. If there is not a complete overlap in
+        disk drives, as one storage policy receives many objects, the drives that are common to both
+        policies must store more objects than drives that are only allocated to one storage policy.
+        This may be appropriate for a situation where the "overlapped" disk drives are larger than
+        the non-overlapped drives. However, in general this situation is harder to balance then a
+        simple topology.</p></section>
+       <p> 
+       
+       </p>
+  </body>
+</topic>

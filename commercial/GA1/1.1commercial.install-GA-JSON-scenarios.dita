@@ -36,8 +36,15 @@
 </ul>
 <section id="kvm"> <title>Configuration variables file for a KVM install</title>
 <p>Identify the configuration variables required for the installation based on the deployment scenario.</p>
-<p>If you plan to use custom IP addresses in your HP Helion OpenStack deployment, open the JSON file in the installation package named <codeph>kvm-custom-ips.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic9174/esx">Definition of Environment variables used during install</xref>.</p>
-<p>All VLAN ID's &amp; IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.</p>
+<p>If you plan to use custom IP addresses in your HP Helion OpenStack
+                deployment, open the JSON file in the installation package named
+                    <codeph>kvm-custom-ips.json</codeph> and edit the following environment
+                variables. Save the file on the seed cloud host (installation system). The variables
+                are defined in <xref
+                    href="1.1commercial.install-GA-JSON.dita#topic20151/definition-of-environment-variables"
+                />  used during install</p>
+<p>All VLAN IDs and IP addresses given in the following procedure are examples of customized IP
+                addresses and VLAN identifiers for external network access.</p>
 <ol>
 <li>
 <p>Log into your install system as root.</p>
@@ -126,9 +133,8 @@
 <p>Save the file on the seed cloud host.</p>
 </li>
 <li>
-<p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section"  >Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
-</li>
+                    <xref href="1.1commercial.install-GA-prereqs.dita#topic9786/csv">Return to HP Helion OpenStack Installation
+                            Prerequisites</xref>.</li>
 </ol>
 </section>
 <section id="esx"> <title>Configuration variables file for an ESX cloud type</title>
@@ -143,7 +149,13 @@
 </ul>
 </section>
 <section id="esxone"> <title>Deployment Scenario 1: HP Helion OpenStack Deployment with custom IP addresses</title>
-<p>If you plan to use custom IP addresses in your HP Helion OpenStack deployment, open the JSON file in the installation package named <codeph>esx-custom-ips.json</codeph> and edit the following configuration variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="1.1commercial.install-GA-JSON.dita">Definition of Environment variables used during install</xref>.</p>
+<p>If you plan to use custom IP addresses in your HP Helion OpenStack
+                deployment, open the JSON file in the installation package named
+                    <codeph>esx-custom-ips.json</codeph> and edit the following configuration
+                variables. Save the file on the seed cloud host (installation system). The variables
+                are defined in <xref
+                    href="1.1commercial.install-GA-JSON.dita" 
+                /> Editing the Installation Configuration JSON File used during install.</p>
 <p>All VLAN ID's &amp; IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.</p>
 <ol>
 <li>
@@ -203,13 +215,18 @@
 <p>Save the file on the seed cloud host.</p>
 </li>
 <li>
-<p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section"  >Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
-</li>
+                    <xref href="1.1commercial.install-GA-prereqs.dita#topic9786/csv">Return to HP Helion OpenStack Installation
+                            Prerequisites</xref>.</li>
 </ol>
 </section>
 <section id="esxtwo"> <title>Deployment Scenario 2: HP Helion OpenStack Deployment with custom IP addresses and a VLAN provider Network for external access</title>
-<p>If you intend to use custom IP addresses and a VLAN provider network for external access in your HP Helion OpenStack deployment, open the JSON file in the installation package named <codeph>esx-custom-ips-vlan.json</codeph> and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in <xref type="section" href="#topic9174/esx">Definition of Environment variables used during install</xref>.</p>
+<p>If you intend to use custom IP addresses and a VLAN provider network for external access in your
+                HP Helion OpenStack deployment, open the JSON file in the
+                installation package named <codeph>esx-custom-ips-vlan.json</codeph> and edit the
+                following environment variables. Save the file on the seed cloud host (installation
+                system). The variables are defined in  <xref
+                    href="1.1commercial.install-GA-JSON.dita#topic20151/definition-of-environment-variables"
+                /> used during install.</p>
 <p>All VLAN ID's &amp; IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.</p>
 <ol>
 <li>
@@ -276,9 +293,10 @@
 <p>Save the file on the seed cloud host.</p>
 </li>
 <li>
-<p>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-prereqs.dita#csv" type="section"  >Return to HP Helion OpenStack Installation Prerequisites</xref>.</p>
-</li>
+    <p><xref href="1.1commercial.install-GA-prereqs.dita#topic9786">Return to HP Helion OpenStack Installation
+        Prerequisites</xref>
+                       .</p>
+                </li>
 </ol>
 <p>
 <xref href="../../commercial/GA1/1.1commercial.install-GA-JSON.dita" >Return to HP Helion OpenStack Editing the JSON Environment Variables File for Installation</xref>.</p>

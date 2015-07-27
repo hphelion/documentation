@@ -91,6 +91,7 @@
 <li>
 <xref type="section" href="#topic20922/instances">instances:</xref>
 </li>
+          <li><xref href="#topic20922/placement-zone" format="dita">placement zones</xref></li>
 <li>
 <xref type="section" href="#topic20922/url-or-urls">url (or urls):</xref>
 </li>
@@ -501,6 +502,11 @@ helion push <codeph>--instances 2</codeph>).</p>
 <p>Example:</p>
 <codeblock>  instances: 2</codeblock>
 </section>
+  <section id="placement-zone"><title>Placement Zones</title> The DEA <xref type="section"
+        href="../../admin/cluster/zones.dita#topic_u3c_rtd_5s/dea-zones-placement">placement
+        zone</xref> to run the app in (optional). Use the <xref
+        href="../reference/1.2client-ref-placement.dita">placement-zones</xref> command to see which
+      placement zones are available on the current target. </section>
 <section id="url-or-urls"> <title>url (or urls):</title>
 <p>List of URLs mapped to the application. For example:</p>
 <codeblock>  name: cms-platform

@@ -29,7 +29,10 @@
 
 </p>
 <p>
-<b>Note</b>: The deployment of the Helion OpenStack v1.1 Metering service is considered experimental and targeted at developers investigating integration of external software applications with the Ceilometer API for showback, chargeback, and billing applications only. Only a limited set of metrics are available in the Helion OpenStack v1.1 release. Developers interested in monitoring use cases should refer to the <xref href="https://wiki.openstack.org/wiki/Monasca" scope="external" format="html" >OpenStack Monasca service</xref> which is targeted to be deployed in a future Helion OpenStack release.</p>
+      <b>Note</b>: The deployment of the Helion OpenStack v1.1 Metering service is considered
+      experimental and targeted at developers investigating integration of external software
+      applications with the Ceilometer API for showback, chargeback, and billing applications only.
+      Only a limited set of metrics are available in the Helion OpenStack v1.1 release. </p>
 <p>The HP Helion OpenStack Metering service leverages the OpenStack Ceilometer service. A metering service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. No matter what purpose the data is used for, this service provides a reliable, consistent method for data collection.</p>
 <section id="installation"> <title>Installation</title>
 <p>The metering service is automatically installed as part of the Helion OpenStack installation process. It may be necessary to install the command-line interface (<xref href="http://docs.openstack.org/user-guide/content/install_clients.html" scope="external" format="html" >CLI</xref>) separately to perform various administrative tasks.</p>
@@ -39,7 +42,9 @@
 <section id="working-with-ceilometer"> <title>Working with Ceilometer</title>
 <p>All the Ceilometer processes have a unified configuration file that can be found at <i>/etc/ceilometer/ceilometer.conf</i> on the specific overcloud controller you are logged in to.</p>
 <p>Access to Ceilometer is through the command-line interface <xref href="http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html" scope="external" format="html" >(CLI)</xref>, or the low-level <xref href="http://developer.openstack.org/api-ref-telemetry-v2.html" scope="external" format="html" >REST API</xref>. A Ceilometer Horizon dashboard panel is not available at this time.</p>
-<ul>
+
+  <!--  
+  <ul>
 <li>
 <xref href="../../commercial/GA1/ceilometer/1.1commerical.services-reporting-components.dita" >Configuration and Architecture Overview</xref>
 </li>
@@ -51,7 +56,7 @@
 </li>
 <li>
 <xref href="../../commercial/GA1/ceilometer/1.1commercial.services-reporting-troubleshoot.dita" >Troubleshooting</xref>
-
+ 
 <ul>
 <li>
 <xref href="../../commercial/GA1/ceilometer/1.1commercial.services-reporting-troubleshoot.dita#logging" type="section"  >Logging</xref>
@@ -86,6 +91,16 @@
 </ul>
 </li>
 </ul>
+ -->
 </section>
+
+
+  <section id="info"> <title>For more information</title>
+    <p>For information on how to operate your cloud we suggest you read the <xref
+      href="../../PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf"
+      ><i>Administrator Guide</i></xref>.</p>
+  </section>
+  
+
 </body>
 </topic>
