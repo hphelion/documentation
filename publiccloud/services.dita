@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1628">
+<title>HP Helion Public Cloud Services</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./publiccloud/services.md-->
+ <!--permalink: /publiccloud/services/--></p>
+<p>There are a number of HP Helion Public Cloud services available for you:</p>
+<ul>
+<li>
+<xref href="../publiccloud/block-storage.dita" >Block storage</xref>: Allows you to enable additional volumes to Compute instances.</li>
+<li>
+<xref href="../publiccloud/cdn.dita" >CDN</xref>: Content inside HP Helion Public Cloud Object Storage can easily be cached on servers in metropolitan areas all over the world to speed client access to them by removing much of the network latency.</li>
+<li>
+<xref href="../publiccloud/compute.dita" >Compute</xref>: A method for you to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.</li>
+<li>
+<xref href="../publiccloud/dns.dita" >DNS</xref>: A managed domain name service that features anycast routing hosted by HP.</li>
+<li>
+<xref href="../publiccloud/identity.dita" >Identity service</xref>: One-stop authentication for all HP Helion Public Cloud Service offerings.</li>
+<li>
+  <xref href="../publiccloud/object-storage.dita" >Object storage</xref>: A way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers. </li>
+<li>
+<xref href="../publiccloud/dbaas.dita" >Relational Database</xref>: Provides you with a simplified method for creation and management of MySQL database instances.</li>
+</ul>
+<p>The following HP Helion Public Cloud services are now in private beta; follow the links to sign up and begin trying them out!</p>
+<ul>
+<li>
+<xref href="../publiccloud/lbaas.dita" >Load Balancer</xref> -  A managed service enabling automatic traffic routing to multiple back end servers hosted by HP.<!--A BR tag was used here in the original source.--><b>Note</b>: This service requires activation while in private beta; please <xref href="https://horizon.hpcloud.com/landing/pbr/hpext:lbaas" scope="external" format="html" >request access on our sign-up page</xref>.  Service use is free of charge during the private beta period.</li>
+</ul>
+</body>
+</topic>

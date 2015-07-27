@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic19742">
+<title>HP Helion Public Cloud Networking: VPN setup quick start guide</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./publiccloud/vpn-quickstart.md-->
+ <!--permalink: /publiccloud/compute/vpn-quickstart/--></p>
+<p>With HP Helion Public Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP Helion Public Cloud virtual network. This guide provides the basic instructions for setting this up with your network using strongSwan. For more complex configuration, please refer to the <xref href="http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation" scope="external" format="html" >strongSwan documentation</xref>.</p>
+<p>
+<b>Note:</b> These instructions use an Ubuntu server instance. You may, of course, choose to use another instance type and still use these directions as a general guide for setting up your VPN.</p>
+<p>This guide covers the following:</p>
+<ul>
+<li>
+<xref type="section" href="#topic19742/top">Overview</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/audience">Audience</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/terms">Key terms</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/quickstart">Quick start</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/tips">Tips and best practices</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/troubleshooting">Troubleshooting</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/refs">For further information</xref>
+</li>
+</ul>
+<section id="top"> <title>Overview</title>
+<p>HP Helion Public Cloud Networking, based on <tm tmtype="reg">OpenStack</tm> Networking, gives you a broad new spectrum of functionality to define and configure virtual networks.</p>
+<p>A default network configuration comes with HP Helion Public Cloud Compute Service activation. Your network is ready to deploy HP Helion Public Cloud Compute virtual machines (instances) without further configuration required. The default configuration includes:</p>
+<ul>
+<li>A network   </li>
+<li>A subnet   </li>
+<li>A router connecting the subnet to the Internet   </li>
+<li>A security group with basic server options   </li>
+</ul>
+<p>The guide provides instructions for creating an IPsec VPN (also known as a site-to-site VPN) from your external network directly into your HP Helion Public Cloud virtual network.</p>
+<p>
+<b>Note:</b> This guide uses strongSwan for the IPsec functionality.</p>
+<p>A site-to-site VPN allows multiple fixed locations to establish secure connections with each other over a public network such as the Internet. Site-to-site VPN extends a defined network, making computer resources from one network available to other networks.</p>
+<p>For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports using the OpenStack Networking API.  The customization can be done on either the command line or through the HP Helion Public Cloud Management Console.</p>
+<p>Before starting, ensure that you have adequate permissions to accomplish each of the following steps.</p>
+<p>
+<b>Note:</b> VPN instances are a potential single point of failure. We will soon be posting a high availability VPN setup guide, so please stay tuned.</p>
+</section>
+<section id="audience"> <title>Audience</title>
+<p>This guide is designed for those in the following or similar roles:</p>
+<ul>
+<li>Networking Engineers    </li>
+<li>Networking Administrators</li>
+<li>Cloud Administrators</li>
+</ul>
+<p>To use this solution effectively, you should be familiar with</p>
+<ul>
+<li>Local network configuration in HP Helion Public Cloud     </li>
+<li>HP Helion Public Cloud Compute and Networking services </li>
+<li>OpenStack Nova and Neutron CLI and API   </li>
+<li>Virtual Private Networks (VPN)    </li>
+<li>strongSwan or other IPsec-based software solutions   </li>
+</ul>
+</section>
+<section id="terms"> <title>Key Terms</title>
+<p>
+<b>IKE</b> - Internet Key Exchange</p>
+<p>
+<b>IPsec</b> - Internet Protocol Security (IPsec) is a technology protocol suite for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session. IPsec also includes protocols for establishing mutual authentication between agents at the beginning of the session and negotiation of cryptographic keys to be used during the session.</p>
+<p>
+<b>NAT-T</b> - Network Address Translation - Traversal</p>
+<p>
+<b>strongSwan</b> - strongSwan is an open source IPsec implementation for Linux 2.6 and 3.x kernels. The focus of the project is on strong authentication mechanisms using X.509 public key certificates and optional secure storage of private keys on smartcards through a standardized PKCS#11 interface.</p>
+<p>back to the <xref type="section" href="#topic19742/top">top</xref>
+</p>
+</section>
+<section id="quickstart"> <title>Quick start guide</title>
+<p>This guide provides the information you will need to get started in setting up a VPN that connects your local network to your Virtual Private Cloud (VPC) located in the HP Helion Public Cloud.  In this guide, you create two instances--one as an example to use and the other as a gateway.</p>
+<p>
+  <image href="../media/HPCS-VPC-VPN-SingleSite-Connection-Layer3-new-novendor.jpg">
+<alt>Basic VPN setup</alt>
+</image>
+</p>
+<p>
+<b>NOTE:</b>  This guide assumes a "left" case with the "right" case being the hardware.</p>
+<p>This guide assumes that you are using Ubuntu as the operating system, but the concepts covered work in the OS of your choice. We also use strongSwan for this guide.  There are multiple ways to configure strongSwan and the instructions in this guide may not work for every environment.  Please refer to the <xref href="http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation" scope="external" format="html" >strongSwan user documentation</xref> for advanced configuration information.</p>
+<p>All commands in this guide use command line interfaces.</p>
+<p>The following steps walk you through the process:</p>
+<ul>
+<li>
+<xref type="section" href="#topic19742/compute">Activate the Compute service in HP Helion Public Cloud</xref>  </li>
+<li>
+<xref type="section" href="#topic19742/gtwy">Set up the private network</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/port">Create ports</xref>   </li>
+<li>
+<xref type="section" href="#topic19742/instances">Create Compute service instances</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/floatip">Associate floating IPs</xref>  </li>
+<li>
+<xref type="section" href="#topic19742/enableufw">Enable UFW</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/installss">Install strongSwan</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/ipfrwrd">Enable IP forwarding</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/ipsec">Set up <i>ipsec.conf</i> on the gateway</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/secret">Set up Shared Secret</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/routes">Set up routes on non-gateway instance</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/connect">Establish connections</xref>
+</li>
+<li>
+<xref type="section" href="#topic19742/stopconnect">Stop VPN connection</xref>
+</li>
+</ul>
+<p>In this guide we use these parameters:</p>
+<p>$EXT_NET = Ext-Net<!--A BR tag was used here in the original source.-->
+$CIDR = 10.2.0.0/24 (example range)<!--A BR tag was used here in the original source.-->
+$NETWORK_ID = the id of the created network<!--A BR tag was used here in the original source.-->
+$SUBNET_ID = the id of the created subnet<!--A BR tag was used here in the original source.-->
+$TENANT_ID = the id of the tenant<!--A BR tag was used here in the original source.-->
+$PORT_ID1 = id of port 1 (vm-gateway)<!--A BR tag was used here in the original source.-->
+$PORT_ID2 = id of port 2 (vm-test)<!--A BR tag was used here in the original source.-->
+$VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)</p>
+  <p>For more details on the Nova and Neutron commands please see the <xref href="api/neutron-api.dita" >HP Helion Public Cloud Networking</xref> and <xref href="api/nova-api.dita" >Compute</xref> API specifications.</p>
+</section>
+<section id="compute"> <title>Activate the Compute service in HP Helion Public Cloud</title>
+  <p>If you have not previously created an account and activated the Compute service please sign up at <xref href="http://hpcloud.com" scope="external" format="html" >http://hpcloud.com</xref>.  Once you activate the Compute service, you need to install the <xref href="api/nova-api.dita" >compute</xref> and <xref href="api/neutron-api.dita" >networking</xref> clients or the <xref href="cli.openstack.dita" >CLI</xref>. Make sure you activate a Compute service instance to access the networking and VPN capabilities.</p>
+</section>
+<section id="create-a-new-ubuntu-server-instance"> <title>Create a new Ubuntu server instance</title>
+<p>Set up a new Ubuntu server instance—separate from your other VPC gateway machines and using the command line. Test the setup of this new server.</p>
+<ol>
+<li>Install Nova and Neutron Python client on this server. See the <xref href="https://community.hpcloud.com/article/cloud-135-cli-installation-instructions" scope="external" format="html" >Knowledge Base</xref> for instructions.</li>
+<li>Verify that you can access the Nova and Neutron APIs for your tenant from this Python Client by running nova <codeph>list</codeph> and neutron <codeph>port-list</codeph> commands.</li>
+</ol>
+</section>
+<section id="gtwy"> <title>Set up the private network</title>
+</section>
+<section id="create-the-router-and-attach-it-to-the-external-network"> <title>Create the router and attach it to the external network</title>
+<p>
+<b>Note</b>: Skip this step if you are using the router provided with your service activation.</p>
+<p>Create the router <b>vpn_router</b> and set its gateway to be the external network.</p>
+<codeblock>
+  <codeph>neutron router-create vpn_router
+neutron router-gateway-set vpn_router $EXT_NET
+</codeph>
+</codeblock>
+</section>
+<section id="create-a-network-and-subnet"> <title>Create a network and subnet</title>
+<p>
+<b>Note</b>: Skip this step if you are using the network and subnet provided with your service activation.</p>
+<p>In the example we use <b>vpn_network</b> for the name of the network.</p>
+<codeblock>
+  <codeph>neutron net-create vpn_network
+neutron subnet-create $NETWORK_ID $CIDR 
+</codeph>
+</codeblock>
+</section>
+<section id="attach-the-router-to-the-subnet"> <title>Attach the router to the subnet</title>
+<p>
+<b>Note</b>: Skip this step if you are using the default configuration provided with your service activation.</p>
+<codeblock>
+  <codeph>neutron router-interface-add vpn_router $SUBNET_ID  
+</codeph>
+</codeblock>
+</section>
+<section id="port"> <title>Create ports</title>
+<p>Create two ports and disable the port security on the VPN gateway port. Use this new gateway machine in the SRX-VPC set up for the VPN connection.</p>
+<p>
+<b>NOTE:</b> disabling port security will disable the use of all security groups on the port.</p>
+<codeblock>
+  <codeph>neutron port-create $NETWORK_ID --port_security_enabled False --name $PORT_ID1
+neutron port-create $NETWORK_ID --name $PORT_ID2
+</codeph>
+</codeblock>
+<p>Ports can be viewed with <b>neutron port-list</b> command.</p>
+<codeblock>
+  <codeph>neutron port-list   
++--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
+| id                                   | name | mac_address       | fixed_ips                                                                           |
++--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
+| baf13412-2641-4183-9533-de8f5b91444c |      | fa:16:3e:f6:ec:c7 | {"subnet_id": "15a09f6c-87a5-4d14-b2cf-03d97cd4b456", "ip_address": "10.2.0.21"}  |
+| f7a08fe4-e79e-4b67-bbb8-a5002455a493 |      | fa:16:3e:97:e0:fc | {"subnet_id": "15a09f6c-87a5-4d14-b2cf-03d97cd4b456", "ip_address": "10.2.0.33"} |
++--------------------------------------+------+-------------------+-------------------------------------------------------------------------------------+
+</codeph>
+</codeblock>
+</section>
+<section id="instances"> <title>Create Compute service instances</title>
+<p>You need to create two instances (VMs) to test and run your VPN.</p>
+</section>
+<section id="create-a-keypair-to-allow-ssh-to-the-instance"> <title>Create a keypair to allow ssh to the instance</title>
+<codeblock>
+  <codeph>nova keypair-add ipsec_vpn_gateway &gt; ipsec_vpn_gateway.pem
+chmod 600 ipsec_vpn_gateway.pem
+</codeph>
+</codeblock>
+<p>The above command creates a new keypair called <b>ipsec_vpn_gateway</b>.  View all available keypairs with the <b>nova keypair-list</b> command.</p>
+<codeblock>
+  <codeph>nova keypair-list
++-------+--------------------------------------------------------------+
+|  Name              |                   Fingerprint                   |
++--------------------+-------------------------------------------------+
+| ipsec_vpn_gateway  | b0:18:32:fa:4e:d4:3c:1b:c4:6c:dd:cb:53:29:13:82 |
+| mykey2             | b0:18:32:fa:4e:d4:3c:1b:c4:6c:dd:cb:53:29:13:82 |
++--------------------+-------------------------------------------------+
+</codeph>
+</codeblock>
+</section>
+<section id="select-your-compute-service-image"> <title>Select your Compute service image</title>
+<p>To boot a Compute service instance you will need to know which <xref href="https://docs.hpcloud.com/publiccloud/api/compute/" scope="external" format="html" >operating system and size of image</xref> you would like to use.  For the purpose of this guide, we use a small image using Ubuntu. Select the type of image you want and then assess the amount of bandwidth you need and select the appropriately sized flavor.</p>
+</section>
+<section id="boot-the-gateway-instance-and-test-instance"> <title>Boot the gateway instance and test instance</title>
+<p>Boot two instances—one to use as the VPN gateway (vm-gateway) and the other (vm-test) to test with.</p>
+<ul>
+<li>
+<p>--image:  the name or ID of the image to launch.  View available images by running <b>nova image-list</b>
+</p>
+</li>
+<li>
+<p>--key_name:  the name of the key to inject into the instance at launch</p>
+</li>
+<li>--flavor:  the name or ID of the size of the instance to create.  View the list of available flavors by running <codeph>nova flavor-list</codeph>.</li>
+</ul>
+<p>Example:</p>
+<codeblock>
+  <codeph>nova boot --image &lt;image-name&gt; --flavor=100 --key_name=&lt;keypair-name&gt; --security-groups=&lt;security-group-name&gt; --nic port-id=&lt;portid-1&gt; &lt;name of vm&gt;
+</codeph>
+</codeblock>
+<p>Example:  Create the gateway instance</p>
+<codeblock>
+  <codeph>nova boot --image small --flavor=100 --keyname=ipsec_vpn_gateway --nic port-id=$PORT_ID1 vm-gateway
+</codeph>
+</codeblock>
+<p>Example:  Create the test instance</p>
+<codeblock>
+  <codeph>nova boot --image small --flavor=100 --keyname=ipsec_vpn_gateway --nic port-id=$PORT_ID2 vm-test
+</codeph>
+</codeblock>
+</section>
+<section id="validate-status-of-instances"> <title>Validate status of instances</title>
+<p>Check the status of the launched instance(s):</p>
+<codeblock>
+  <codeph>nova list
++--------------------------------------+------------+--------+-----------------+
+| ID                                   | Name       | Status | Networks        |
++--------------------------------------+------------|--------+-----------------+
+| 558159d5-1257-43db-b261-523207c8a290 | vm-gateway | ACTIVE | mynet=10.2.0.21 |
+| 8c0dbcaa-8ef7-484f-8f89-47760fdcd44a | vm-test    | ACTIVE | mynet=10.2.0.33 |
++--------------------------------------+------------+--------+-----------------+
+</codeph>
+</codeblock>
+<p>After a short period of time the instance changes from BUILD to ACTIVE.  You can then connect to the launched instance using the private key that you created.</p>
+</section>
+<section id="floatip"> <title>Associate floating IPs</title>
+</section>
+<section id="create-the-floating-ips"> <title>Create the floating IPs</title>
+<p>Next, you need to create the floating IPs associated with the external network (Ext_Net).  Each created floating IP has an ID that we will refer to as <codeph>$FLOATING_ID1</codeph> and <codeph>$FLOATING_ID2</codeph>.</p>
+<codeblock>
+  <codeph>neutron floatingip-create $EXT_NET
+neutron floatingip-create $EXT_NET
+</codeph>
+</codeblock>
+</section>
+<section id="associated-each-floating-ip-with-a-port"> <title>Associated each floating IP with  a port</title>
+<codeblock>
+  <codeph>neutron floatingip-associate $FLOATING_ID1 $PORT_ID1
+neutron floatingip-associate $FLOATING_ID2 $PORT_ID2
+</codeph>
+</codeblock>
+<p>To show the floating IP:</p>
+<codeblock>
+  <codeph>neutron floatingip-show $FLOATING_ID1
+neutron floatingip-show $FLOATING_ID2
+</codeph>
+</codeblock>
+<p>
+<b>Note:</b> You can also assign floating IPs via the Nova API and subsequently call the command <codeph>nova list</codeph> to display the instances and their status.</p>
+</section>
+<section id="enableufw"> <title>Enable UFW</title>
+<p>HP strongly recommends that you use the <xref href="https://help.ubuntu.com/community/UFW" scope="external" format="html" >UFW (uncomplicated firewall)</xref> capability included in Ubuntu. Currently you need to disable port security to create a VPN; enabling UFW closes the potential security hole.</p>
+<p>To enable the UFW, connect to the gateway instance and run these commands:</p>
+<codeblock>
+  <codeph>prompt&gt; sudo ufw allow 22/tcp
+sudo ufw allow 500/udp
+sudo ufw allow 1293/tcp
+sudo ufw allow 4500/udp
+sudo ufw enable
+
+# After the last command, a prompt appears stating that this command "may disrupt existing ssh connections. Proceed with operation (y|n)?"
+# Answer "y" and ENTER to complete the procedure.
+</codeph>
+</codeblock>
+<p>
+<b>Note:</b> The UFW capability is found in Ubuntu. If you are using another OS you should approximate this firewall functionality.</p>
+</section>
+<section id="advanced-security-option"> <title>Advanced security option</title>
+<p>If you know the public IP address of the gateway that you will be connecting from, and you want to exclude all others from being able to connect, use the following instructions:</p>
+<codeblock>
+  <codeph>prompt&gt; sudo ufw allow 22/tcp
+sudo ufw allow from 16.17.18.19 to any port 500 proto udp
+sudo ufw allow from 16.17.18.19 to any port 1293 proto tcp
+sudo ufw allow from 16.17.18.19 to any port 4500 proto udp
+# If you need to add more than one IP address, repeat the above three lines for every connection.
+sudo ufw enable
+</codeph>
+</codeblock>
+</section>
+<section id="installss"> <title>Install strongSwan on the gateway instance</title>
+<p>strongSwan is a complete IPsec implementation for the Linux 2.6 and 3.x kernels.  The  Ubuntu distribution includes the strongSwan package.</p>
+<ol>
+<li>Log in to your gateway instance</li>
+<li>
+<codeph>prompt&gt; sudo apt-get install -y strongswan</codeph>
+</li>
+<li>Install all dependencies including the kernel modules</li>
+</ol>
+<p>You can find additional information on installing strongSwan on the strongSwan wiki:  <xref href="http://wiki.strongswan.org/projects/strongswan/wiki/InstallationDocumentation" scope="external" format="html" >strongSwan Installation Documentation</xref>
+</p>
+</section>
+<section id="ipfrwrd"> <title>Enable IP forwarding on the gateway instance</title>
+<p>By default, Linux distributions have IP forwarding disabled. To act as a VPN gateway, you need to enable IP forwarding.</p>
+<p>
+<b>NOTE:</b> The <i>sysctl</i> kernel parameter change should be made permanently.</p>
+<p>In the same instance where you installed strongSwan:<!--A BR tag was used here in the original source.-->
+1.  Edit the <b>/etc/sysctl.conf</b> file<!--A BR tag was used here in the original source.-->
+2.  Uncomment the line <codeph>net.ipv4.ip_forward=1</codeph> or set to <codeph>net.ipv4.ip_forward=1</codeph>
+<!--A BR tag was used here in the original source.-->
+3.  Save the file and exit<!--A BR tag was used here in the original source.-->
+4.  To enable the changes run the command: <b>sysctl -p /etc/sysctl.conf</b>
+</p>
+<p>Once you complete the above steps, verify that IP forwarding is enabled by running the command <b>sysctl net.ipv4.ip_forward</b>.</p>
+<p>Example:</p>
+<codeblock>
+  <codeph>prompt&gt; sysctl net.ipv4.ip_forward
+net.ipv4.ip_forward = 1   
+</codeph>
+</codeblock>
+</section>
+<section id="ipsec"> <title>Set up ipsec.conf on the gateway instance</title>
+<p>strongSwan always considers itself as "LEFT" and the other side of the network (the remote server) with the hardware router as the "RIGHT".  When configuring the gateway instance consider it the "LEFT" node and the remote server as the "RIGHT" node.</p>
+<p>Below is an example strongSwan <i>ipsec.conf</i> file.  Note that the information that is added to this file for detailing the left and right cases must be entered as created into both this file and the <i>ipsec.secrets</i> file.</p>
+<p>For more details on setting up the <i>ipsec.conf</i> file, see the <xref href="http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf" scope="external" format="html" >strongSwan</xref> wiki page.</p>
+<p>
+<b>Note:</b> the location of the <i>ipsec.conf</i> file is <i>/etc/ipsec.conf</i>
+</p>
+<codeblock>
+# ipsec.conf - strongSwan IPsec configuration file
+
+# basic configuration
+
+config setup
+    plutodebug=all
+    plutostderrlog=/home/ubuntu/plutolog.txt
+    # crlcheckinterval=600
+    # strictcrlpolicy=yes
+    # cachecrls=yes
+    nat_traversal=yes
+    charonstart=no
+    plutostart=yes
+
+# Add connections here.
+
+# Sample VPN connections
+
+conn %default 
+      ike=aes128-sha1-modp1024!
+      ikelifetime=28800s
+      keyexchange=ikev1
+      keyingtries=10
+      esp=aes128-sha1-modp1024!
+      keylife=3600s
+      rekeymargin=5m
+      type=tunnel
+      pfs=yes
+      compress=no
+      authby=secret
+conn vpn-test 
+      left=%defaultroute
+      leftid=10.2.0.21
+      leftsubnet=10.2.0.0/24
+      leftfirewall=yes
+      right=192.168.1.50
+      rightid=192.168.1.50
+      rightsubnet=192.168.2.0/24
+      dpdaction=hold
+      dpddelay=60
+      dpdtimeout=500 
+      auto=add
+</codeblock>
+</section>
+<section id="secret"> <title>Set up ipsec.secrets file on the gateway instance</title>
+<p>Modify the <i>ipsec.secrets</i> file for the basic site-to-site VPN setup.</p>
+<p>strongSwan's <i>ipsec.secrets</i> file contains an unlimited number of the following types of secrets:</p>
+<ul>
+<li>RSA defines an RSA private key</li>
+<li>ECDSA defines an ECDSA private key</li>
+<li>PSK defines a pre-shared key</li>
+<li>EAP defines EAP credentials</li>
+<li>XAUTH defines XAUTH credentials</li>
+<li>PIN defines a smartcard PIN</li>
+</ul>
+<p>For more details on modifying the <i>ipsec.secrets</i> file, see the <xref href="http://wiki.strongswan.org/projects/strongswan/wiki/IpsecSecrets" scope="external" format="html" >strongSwan ipsec.secrets</xref> wiki page.</p>
+<p>
+<b>Note</b>: The location of the <i>ipsec.secrets</i> file is <i>/etc/ipsec.secrets</i>.</p>
+<p>Based upon the authentication type and shared secret for the VPN instance customize the <i>ipsec.secrets</i> file with information from the above steps.</p>
+<codeblock>
+# This file holds shared secrets or RSA private keys for inter-Pluto
+# authentication.  See ipsec_pluto(8) manpage, and HTML documentation.
+
+# RSA private key for this host, authenticating it to any other host
+# which knows the public part.  Suitable public keys, for ipsec.conf, DNS,
+# or configuration of other implementations, can be extracted conveniently
+# with "ipsec showhostkey".
+
+# this file is managed with debconf and will contain the automatically created private key
+# include /var/lib/strongswan/ipsec.secrets.inc 
+10.2.0.21 192.168.1.50 192.168.1.50 : PSK "abcd" 
+</codeblock>
+</section>
+<section id="routes"> <title>Set up routes on non-gateway instance</title>
+<p>On the non-VPN instance (vm-test) add the new route for the remote subnet.</p>
+<p>Example: <codeph>route add -net &lt;remote-subnet&gt; gw &lt;host gateway&gt;</codeph>
+</p>
+<codeblock>
+route add -net 192.168.2.0/24 gw 10.2.0.21
+</codeblock>
+<p>Verify that the new route was added by running the command <b>route-n</b> and finding the entry that was added in the table.</p>
+</section>
+<section id="connect"> <title>Establish connections</title>
+<p>Force IPsec to read the updated <i>ipsec.conf</i> and <i>ipsec.secrets</i> files and to establish a connection:</p>
+<codeblock>
+ipsec restart
+</codeblock>
+<p>Start the connection (conn) that is defined in <i>ipsec.conf</i>:</p>
+<codeblock>
+ipsec up vpn-test
+</codeblock>
+<p>Validate that the IPsec processes are available by running the  command <b>ps -welf | grep ipsec</b>
+</p>
+</section>
+<section id="stopconnect"> <title>Stop the VPN connection</title>
+<p>Force IPsec to read the updated <i>ipsec.conf</i> and</p>
+<p>Stop the connection (conn) that is defined in <i>ipsec.conf</i>:</p>
+<codeblock>
+ipsec down vpn-test
+</codeblock>
+<p>
+<b>Note:</b> The above step is required for a safe restart.</p>
+<p>back to the <xref type="section" href="#topic19742/top">top</xref>
+</p>
+</section>
+<section id="tips"> <title>Tips and best practices</title>
+<p>This portion of the document contains a collection of tips and best practices to help you to quickly setup your VPN configuration.</p>
+<ul>
+<li>If you need to allow multiple subnets through the VPN, you need to create another connection in the strongSwan <i>ipsec.conf</i> file.  </li>
+<li>Connect additional VPCs by adding additional IPsec configuration and secret files in <i>/etc/ipsec.d</i>
+</li>
+</ul>
+<p>back to the <xref type="section" href="#topic19742/top">top</xref>
+</p>
+</section>
+<section id="troubleshooting"> <title>Troubleshooting</title>
+<p>These topics can help you address problems that might occur when you are setting up and configuring your VPN solution.</p>
+<ol>
+<li>
+<p>Confirm that strongSwan is running (IPsec process).  Verify that the IPsec processes are executing in the VPN instance.  If the below processes are not running restart the processes by following the steps found in the <b>Establish connections</b> section.</p>
+
+<ul>
+<li>Run the command <b>ps -welf | grep ipsec</b>   </li>
+<li>Verify that the below three processes are running:
+
+<ul>
+<li>IPsec starter process (/usr/lib/ipsec/starter)</li>
+<li>IPsec Pluto process (/usr/lib/ipsec/pluto --nofork --uniqueids)</li>
+<li>IPsec Charon process (usr/lib/ipsec/charon --use-syslog</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>If the <i>/etc/auth.log</i> file exists, check for errors.</p>
+</li>
+<li>
+<p>If able to connect the gateway VMs, but not go any further, validate that <codeph>port_security_enabled</codeph> is set to False (See <xref type="section" href="#topic19742/port">Create ports</xref>).</p>
+</li>
+<li>
+<p>If unable to ping the VMs behind the VPN ensure that you have set up the necessary routes on the non-gateway VM (See <xref type="section" href="#topic19742/routes">Set up routes on non-gateway instance</xref>).</p>
+</li>
+</ol>
+<p>back to the <xref type="section" href="#topic19742/top">top</xref>
+</p>
+</section>
+<section id="refs"> <title>For further information</title>
+<ul>
+<li>
+<xref href="https://docs.hpcloud.com/publiccloud/api/networking/" scope="external" format="html" >HP Helion Public Cloud Networking API Specifications</xref>
+</li>
+<li>
+<xref href="https://docs.hpcloud.com/publiccloud/api/compute/" scope="external" format="html" >HP Helion Public Cloud Compute Service API Reference</xref>
+</li>
+<li>
+<xref href="http://wiki.strongswan.org/projects/strongswan/wiki/FAQ" scope="external" format="html" >strongSwan wiki FAQ</xref>
+</li>
+<li>
+<xref href="http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation" scope="external" format="html" >strongSwan User Documentation</xref>
+</li>
+<li>
+<xref href="http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf" scope="external" format="html" >strongSwan ipsec.conf reference</xref>
+</li>
+<li>
+<xref href="http://wiki.strongswan.org/projects/strongswan/wiki/IpsecSecrets" scope="external" format="html" >strongSwan ipsec.secrets reference</xref>
+</li>
+<li>
+<xref href="http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection" scope="external" format="html" >strongSwan ipsec.conf: conn &lt;name&gt; reference</xref>
+</li>
+<li>
+<xref href="http://www.strongswan.org/uml/testresults/ikev2/net2net-psk/" scope="external" format="html" >strongSwan net2net-psk/ reference</xref>
+</li>
+</ul>
+<p>back to the <xref type="section" href="#topic19742/top">top</xref>
+</p>
+</section>
+</body>
+</topic>

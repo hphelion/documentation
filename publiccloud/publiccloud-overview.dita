@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic2725">
+<title>HP Helion Public Cloud Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./publiccloud/publiccloud-overview.md-->
+ <!--permalink: /publiccloud/overview/--></p>
+<!-- <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+<p>Welcome to HP Helion Public Cloud!  We have a wide variety of services available with documentation to match.  This page provides you a quick overview of our services and the information that we have available for you about those services.</p>
+<p>This page covers the following topics:</p>
+<ul>
+<li>
+<xref type="section" href="#topic2725/Services">Available services</xref>
+</li>
+<li>
+<xref type="section" href="#topic2725/Starting">Starting to work with HP Helion Public Cloud</xref>
+</li>
+<li>
+<xref type="section" href="#topic2725/API">REST API information</xref>
+</li>
+<li>
+<xref type="section" href="#topic2725/Bindings">Language bindings</xref>
+</li>
+<li>
+<xref type="section" href="#topic2725/SeeAlso">For further information</xref>
+</li>
+</ul>
+<section id="Services"> <title>Available Services</title>
+<p>HP Helion Public Cloud consists of many services based on the different <tm tmtype="reg">OpenStack</tm> projects to provide the functionality you need. Visit the <xref href="../publiccloud/services.dita" >Available Services</xref> page for a complete list of services.</p>
+</section>
+<section id="Starting"> <title>Starting to work with HP Helion Public Cloud</title>
+<p>Use the following links and tools to get to work with HP Helion Public Cloud:</p>
+<ul>
+<li>
+<xref href="http://www.hpcloud.com/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_newsl/hpcs_home2/20130905&amp;elq=c335ccb3cf434b9b969905b419a13b18&amp;elqCampaignId=" scope="external" format="html" >Information, pricing, and setting up a free trial of HP Helion Public Cloud</xref>
+</li>
+<li>
+<p>
+<xref href="../publiccloud/hpcloudconsole.dita" >Getting Started with HP Helion Public Cloud Console</xref> walks you through HP Helion Public Cloud setup</p>
+
+<p>We recommend that you visit this Getting Started page before you log on to the console.</p>
+</li>
+<li>
+<xref href="../publiccloud/hz.whatsnewjan.2014.dita" >What's new with HP Helion Public Cloud Console</xref> has the latest updates to the current HP Helion Public Cloud Console release</li>
+<li>
+<xref href="../publiccloud/cli.dita" >Command Line Interfaces</xref> provides a command line tool for easy scripting</li>
+</ul>
+<p>For best results, we recommend that use one of the following supported HTML5 browsers when accessing the management console:</p>
+<ul>
+<li>Chrome</li>
+<li>FireFox </li>
+<li>Internet Explorer (9 or later)</li>
+<li>Safari </li>
+</ul>
+</section>
+<section id="API"> <title>REST API information</title>
+<p>For detailed REST API information, view our <xref href="../publiccloud/api.dita" >HP Helion Public Cloud APIs</xref>.  In order to interact with the services, you'll need your Access Keys. In the upper-right hand corner of the console, click your account menuand select <i>Manage Access Keys</i>.</p>
+</section>
+<section id="Bindings"> <title>Language bindings</title>
+<p>For creating your own applications, take a look at our <xref href="../publiccloud/bindings.dita" >Bindings information</xref>.</p>
+</section>
+<section id="SeeAlso"> <title>For further information</title>
+<p>There's a lot of information out there to help you get going with your services.  We recommend you take a look at the list below:</p>
+<ul>
+<li>
+<p>See <xref href="../publiccloud/hpcloudconsole.dita" >Getting Started with HP Helion Public Cloud Console</xref> to navigate the web interface and activate services.</p>
+</li>
+<li>
+<p>See <xref href="https://community.hpcloud.com/article/hp-helion-public-cloud-quick-start-guide" scope="external" format="html" >HP Helion Public Cloud - Quick Start Guide</xref>.</p>
+</li>
+<li>
+<p>If you're a developer, you'll want to look at the <xref href="https://wiki.openstack.org/wiki/SDKs" scope="external" format="html" >OpenStack software development kit (SDK) information</xref>.</p>
+</li>
+<li>
+<p>See also a <xref href="../publiccloud/site-overview.dita" >site overview</xref> that includes pointers to key pages that you might find helpful.</p>
+</li>
+</ul>
+<p>If you have a question, feel free to <xref href="https://community.hpcloud.com" scope="external" format="html" >post something over on our forums</xref>. We'd love to help.</p>
+</section>
+</body>
+</topic>
