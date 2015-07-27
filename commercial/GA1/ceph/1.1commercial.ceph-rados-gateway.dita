@@ -36,95 +36,41 @@
 <p>Perform the following steps from the Ceph admin node. It is assumed that the hostname for a gateway node is <codeph>gateway</codeph>, and the host name of the second node (for HA) is <codeph>gateway1</codeph>.</p>
 <p>It is recommended to stand up first node successfully before proceeding to second node.</p>
 <ol>
-<li>
-<p>Log in to the admin node as the default hLinux user.</p>
-</li>
-<li>
-<p>Confirm that the Ceph cluster health is OK:</p>
-
-<codeblock>
-<codeph>ceph health
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Change the directory by entering:</p>
-
-<codeblock>
-<codeph>cd  /etc/ceph
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create a keyring for a gateway and associate the required permission by entering:</p>
-
-<codeblock>
-<codeph>ceph-authtool --create-keyring /etc/ceph/ceph.client.radosgw.keyring
+<li>Log in to the admin node as the default hLinux user.</li>
+<li>Confirm that the Ceph cluster health is
+                                        OK:<codeblock><codeph>ceph health
+</codeph></codeblock></li>
+<li>Change the directory by entering:<codeblock><codeph>cd  /etc/ceph
+</codeph></codeblock></li>
+<li>Create a keyring for a gateway and associate the required permission by
+                                        entering:<codeblock><codeph>ceph-authtool --create-keyring /etc/ceph/ceph.client.radosgw.keyring
 chmod +r /etc/ceph/ceph.client.radosgw.keyring
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>To generate a gateway username and key (the default user is <b>gateway</b>), enter:</p>
-
-<codeblock>
-<codeph>ceph-authtool /etc/ceph/ceph.client.radosgw.keyring -n client.radosgw.gateway --gen-key
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>For HA, create additional user - <codeph>gateway1</codeph> by entering:</p>
-
-<codeblock>
-<codeph>ceph-authtool /etc/ceph/ceph.client.radosgw.keyring -n client.radosgw.gateway1 --gen-key
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Add key capabilities by entering:</p>
-
-<codeblock>
-<codeph>ceph-authtool -n client.radosgw.gateway --cap osd 'allow rwx' --cap mon 'allow rwx' /etc/ceph/ceph.client.radosgw.keyring
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>For HA, add key capabilities to the <codeph>gateway1</codeph> user, by entering:</p>
-
-<codeblock>
-<codeph>ceph-authtool -n client.radosgw.gateway1 --cap osd 'allow rwx' --cap mon 'allow rwx' /etc/ceph/ceph.client.radosgw.keyring
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Add a key to the Ceph cluster by entering:</p>
-
-<codeblock>
-<codeph>ceph -k /etc/ceph/ceph.client.admin.keyring auth add client.radosgw.gateway -i /etc/ceph/ceph.client.radosgw.keyring
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>For HA, add a key for the <codeph>gateway1</codeph> user by entering:</p>
-
-<codeblock>
-<codeph>ceph -k /etc/ceph/ceph.client.admin.keyring auth add client.radosgw.gateway1 -i /etc/ceph/ceph.client.radosgw.keyring
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Copy a keyring to the gateway node(s) by entering:</p>
-
-<codeblock>
-<codeph>scp /etc/ceph/ceph.client.radosgw.keyring root@gateway:/etc/ceph
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Add the gateway user configurations by updating the <codeph>ceph.conf</codeph> file as shown below. Make sure that the hostname of the gateway node(s) is considered for both host and RGW DNS  name fields by entering:</p>
-
-<codeblock>
-<codeph>[client.admin]
+</codeph></codeblock></li>
+<li>To generate a gateway username and key (the default user is <b>gateway</b>),
+                                        enter:<codeblock><codeph>ceph-authtool /etc/ceph/ceph.client.radosgw.keyring -n client.radosgw.gateway --gen-key
+</codeph></codeblock></li>
+<li>For HA, create additional user - <codeph>gateway1</codeph> by
+                                        entering:<codeblock><codeph>ceph-authtool /etc/ceph/ceph.client.radosgw.keyring -n client.radosgw.gateway1 --gen-key
+</codeph></codeblock></li>
+<li>Add key capabilities by
+                                        entering:<codeblock><codeph>ceph-authtool -n client.radosgw.gateway --cap osd 'allow rwx' --cap mon 'allow rwx' /etc/ceph/ceph.client.radosgw.keyring
+</codeph></codeblock></li>
+<li>For HA, add key capabilities to the <codeph>gateway1</codeph> user, by
+                                        entering:<codeblock><codeph>ceph-authtool -n client.radosgw.gateway1 --cap osd 'allow rwx' --cap mon 'allow rwx' /etc/ceph/ceph.client.radosgw.keyring
+</codeph></codeblock></li>
+<li>Add a key to the Ceph cluster by
+                                        entering:<codeblock><codeph>ceph -k /etc/ceph/ceph.client.admin.keyring auth add client.radosgw.gateway -i /etc/ceph/ceph.client.radosgw.keyring
+</codeph></codeblock></li>
+<li>For HA, add a key for the <codeph>gateway1</codeph> user by
+                                        entering:<codeblock><codeph>ceph -k /etc/ceph/ceph.client.admin.keyring auth add client.radosgw.gateway1 -i /etc/ceph/ceph.client.radosgw.keyring
+</codeph></codeblock></li>
+<li>Copy a keyring to the gateway node(s) by
+                                        entering:<codeblock><codeph>scp /etc/ceph/ceph.client.radosgw.keyring root@gateway:/etc/ceph
+</codeph></codeblock></li>
+<li>Add the gateway user configurations by updating the <codeph>ceph.conf</codeph> file as shown
+                                        below. Make sure that the hostname of the gateway node(s) is
+                                        considered for both host and RGW DNS name fields by
+                                        entering:<codeblock><codeph>[client.admin]
 keyring = /etc/ceph/ceph.client.admin.keyring
 
 [client.radosgw.gateway]
@@ -144,196 +90,98 @@ log file = /var/log/ceph/client.radosgw.gateway.log
 rgw dns name = gateway1
 rgw print continue = false
 </codeph>
-</codeblock>
-</li>
-<li>
-<p>Re-deploy the Ceph configuration on all cluster nodes and client nodes.</p>
-</li>
+</codeblock></li>
+<li>Re-deploy the Ceph configuration on all cluster nodes and client nodes.</li>
 </ol>
 </section>
 <section id="configuring-the-gateway-node"> <title>Configuring the Gateway Node</title>
 <p>Perform the following steps on the gateway node. For HA implementations, you will repeat similar steps on the failover node as noted.</p>
 <ol>
-<li>
-<p>Log into the gateway node as the default hLinux user.</p>
-</li>
-<li>
-<p>Check if the relevant services are in a good state. Services include <codeph>dnsmasq</codeph>, <codeph>radosgw</codeph>, <codeph>apache2</codeph>, and <codeph>ceph</codeph>. If they are not in good state, fix the issue before proceeding. Check service status by entering:</p>
-
-<codeblock>
-<codeph>/etc/init.d/&lt;service&gt; status
-</codeph>
-</codeblock>
-
-<p>For example, to check the service status for <codeph>dnsmasq</codeph>, enter:</p>
-
-<codeblock>
-<codeph>/etc/init.d/dnsmasq status
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Configure Apache2 and/or FastCGI. <!--A BR tag was used here in the original source.-->
-Edit the <codeph>/etc/apache2/apache2.conf</codeph> file to include the server name of the gateway node(s) as follows:</p>
-
-<codeblock>
-<codeph>ServerName gateway.ex.com
-</codeph>
-</codeblock>
-
-<p>Note that, for HA, the second node is:</p>
-
-<codeblock>
-<codeph>ServerName gateway1.ex.com
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Enable URL rewrite modules for Apache2 and FastCGI by entering:</p>
-
-<codeblock>
-<codeph>a2enmod rewrite
+<li>Log into the gateway node as the default hLinux user.</li>
+<li>Check if the relevant services are in a good state. Services include <codeph>dnsmasq</codeph>,
+                                                <codeph>radosgw</codeph>, <codeph>apache2</codeph>,
+                                        and <codeph>ceph</codeph>. If they are not in good state,
+                                        fix the issue before proceeding. Check service status by
+                                                entering:<codeblock><codeph>/etc/init.d/&lt;service&gt; status
+</codeph></codeblock><p>For
+                                                example, to check the service status for
+                                                  <codeph>dnsmasq</codeph>,
+                                        enter:</p><codeblock><codeph>/etc/init.d/dnsmasq status
+</codeph></codeblock></li>
+<li>Configure Apache2 and/or FastCGI. <!--A BR tag was used here in the original source.--> Edit the
+                                                <codeph>/etc/apache2/apache2.conf</codeph> file to
+                                        include the server name of the gateway node(s) as
+                                                follows:<codeblock><codeph>ServerName gateway.ex.com
+</codeph></codeblock><p>Note
+                                                that, for HA, the second node
+                                        is:</p><codeblock><codeph>ServerName gateway1.ex.com
+</codeph></codeblock></li>
+<li>Enable URL rewrite modules for Apache2 and FastCGI by
+                                        entering:<codeblock><codeph>a2enmod rewrite
 a2enmod fastcgi
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Restart Apache2 for the changes to take effect by entering:</p>
-
-<codeblock>
-<codeph>/etc/init.d/apache2 restart
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Enable SSL by entering:</p>
-
-<codeblock>
-<codeph>a2enmod ssl
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Generate the SSL certificate by entering:</p>
-
-<codeblock>
-<codeph>mkdir /etc/apache2/ssl
+</codeph></codeblock></li>
+<li>Restart Apache2 for the changes to take effect by
+                                        entering:<codeblock><codeph>/etc/init.d/apache2 restart
+</codeph></codeblock></li>
+<li>Enable SSL by entering:<codeblock><codeph>a2enmod ssl
+</codeph></codeblock></li>
+<li>Generate the SSL certificate by
+                                        entering:<codeblock><codeph>mkdir /etc/apache2/ssl
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Restart Apache2 by entering:</p>
-
-<codeblock>
-<codeph>/etc/init.d/apache2 restart
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Edit <codeph>/etc/hosts</codeph> file to include the <codeph>fqdn</codeph> of a gateway node by entering:</p>
-
-<codeblock>
-<codeph>192.x.x.x gateway.ex.com gateway
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>For HA, second node is:</p>
-
-<codeblock>
-<codeph>192.x.x.x gateway1.ex.com gateway1
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Add wildcard support to DNS by following these steps.</p>
-
-<ol>
-<li>
-<p>Edit <codeph>/etc/dnsmasq.conf</codeph> as follows:</p>
-
-<codeblock>
-<codeph>address=/.{fqdn}/{host ip}
+</codeph></codeblock></li>
+<li>Restart Apache2 by
+                                        entering:<codeblock><codeph>/etc/init.d/apache2 restart
+</codeph></codeblock></li>
+<li>Edit <codeph>/etc/hosts</codeph> file to include the <codeph>fqdn</codeph> of a gateway node by
+                                        entering:<codeblock><codeph>192.x.x.x gateway.ex.com gateway
+</codeph></codeblock></li>
+<li>For HA, second node
+                                        is:<codeblock><codeph>192.x.x.x gateway1.ex.com gateway1
+</codeph></codeblock></li>
+<li>Add wildcard support to DNS by following these steps.<ol>
+                                                <li>Edit <codeph>/etc/dnsmasq.conf</codeph> as
+                                                  follows:<codeblock><codeph>address=/.{fqdn}/{host ip}
 listen-address=127.0.0.1
-</codeph>
-</codeblock>
-
-<p>For example -</p>
-
-<codeblock>
-<codeph>address=/.gateway.ex.com/192.x.x.x
+</codeph></codeblock><p>For
+                                                  example
+                                                  -</p><codeblock><codeph>address=/.gateway.ex.com/192.x.x.x
 listen-address=127.0.0.1
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>For HA, the second node is:</p>
-
-<p>address=/.gateway1.ex.com/192.x.x.x
-listen-address=127.0.0.1</p>
-</li>
-<li>
-<p>Restart dsnmasq by entering:</p>
-
-<codeblock>
-<codeph>/etc/init.d/dnsmasq restart
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Ping the server with the subdomain to ensure RADOSGW can process subdomain requests by entering:</p>
-
-<codeblock>
-<codeph>ping mybucket.{fqdn}
+</codeph></codeblock></li>
+                                                <li>For HA, the second node
+                                                  is:<p>address=/.gateway1.ex.com/192.x.x.x
+                                                  listen-address=127.0.0.1</p></li>
+                                                <li>Restart dsnmasq by
+                                                  entering:<codeblock><codeph>/etc/init.d/dnsmasq restart
+</codeph></codeblock></li>
+                                                <li>Ping the server with the subdomain to ensure
+                                                  RADOSGW can process subdomain requests by
+                                                  entering:<codeblock><codeph>ping mybucket.{fqdn}
 ping mybucket.gateway.ex.com
-</codeph>
-</codeblock>
-
-<p>
-<b>NOTE</b>: Make sure that <codeph>mybucket.gateway.ex.com</codeph> is defined in the <codeph>/etc/hosts</codeph> file. Otherwise, the ping will fail.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Add the Ceph Object Gateway script <codeph>s3gw.fcgi in /var/www</codeph> directory with the file contents as shown below:</p>
-
-<codeblock>
-<codeph>#!/bin/sh
+</codeph></codeblock><note>Make
+                                                  sure that <codeph>mybucket.gateway.ex.com</codeph>
+                                                  is defined in the <codeph>/etc/hosts</codeph>
+                                                  file. Otherwise, the ping will fail.</note></li>
+                                        </ol></li>
+<li>Add the Ceph Object Gateway script <codeph>s3gw.fcgi in /var/www</codeph> directory with the
+                                        file contents as shown
+                                        below:<codeblock><codeph>#!/bin/sh
 exec /usr/bin/radosgw -c /etc/ceph/ceph.conf -n client.radosgw.gateway
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Provide proper file permission by entering:</p>
-
-<codeblock>
-<codeph>chmod +x s3gw.fcgi
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>For HA, second node will be:</p>
-
-<codeblock>
-<codeph>#!/bin/sh
+</codeph></codeblock></li>
+<li>Provide proper file permission by
+                                        entering:<codeblock><codeph>chmod +x s3gw.fcgi
+</codeph></codeblock></li>
+<li>For HA, second node will
+                                        be:<codeblock><codeph>#!/bin/sh
 exec /usr/bin/radosgw -c /etc/ceph/ceph.conf -n client.radosgw.gateway1
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Create a data directory by entering:</p>
-
-<codeblock>
-<codeph>mkdir -p /var/lib/ceph/radosgw/ceph-radosgw.gateway
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Add the gateway configuration file <codeph>rgw.conf in /etc/apache2/sites-available</codeph> directory. For increased security, an SSL-enabled virtual host is considered.  If necessary, you can configure a virtual host on port 80.  The file contents are shown below:</p>
-
-<codeblock>
-<codeph>FastCgiExternalServer /var/www/s3gw.fcgi -socket /var/run/ceph/ceph.radosgw.gateway.fastcgi.sock
+</codeph></codeblock></li>
+<li>Create a data directory by
+                                        entering:<codeblock><codeph>mkdir -p /var/lib/ceph/radosgw/ceph-radosgw.gateway
+</codeph></codeblock></li>
+<li>Add the gateway configuration file <codeph>rgw.conf in /etc/apache2/sites-available</codeph>
+                                        directory. For increased security, an SSL-enabled virtual
+                                        host is considered. If necessary, you can configure a
+                                        virtual host on port 80. The file contents are shown
+                                                below:<codeblock><codeph>FastCgiExternalServer /var/www/s3gw.fcgi -socket /var/run/ceph/ceph.radosgw.gateway.fastcgi.sock
 
 &lt;VirtualHost *:443&gt;
 
@@ -367,62 +215,41 @@ exec /usr/bin/radosgw -c /etc/ceph/ceph.conf -n client.radosgw.gateway1
 
 &lt;/VirtualHost&gt;
 </codeph>
-</codeblock>
-
-<p>
-<b>Note</b>: For HA, second node will have changes for <codeph>ServerName</codeph>, <codeph>ServerAlias</codeph> and <codeph>ServerAdmin</codeph> accordingly.</p>
-</li>
-<li>
-<p>Enable the site for <codeph>rgw.conf</codeph> by entering:</p>
-
-<codeblock>
-<codeph>a2ensite rgw.conf
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Disable the default site by entering:</p>
-
-<codeblock>
-<codeph>a2dissite 000-default
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Restart all services and start the gateway by entering:</p>
-
-<ul>
-<li>
-<p>Apache2:</p>
-
-<codeblock>
-<codeph> /etc/init.d/apache2 restart
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>Gateway RADOSGW:</p>
-
-<codeblock>
-<codeph>/etc/init.d/radosgw start
-</codeph>
-</codeblock>
-</li>
-<li>
-<p>RADOSGW in a debug mode for troubleshooting:</p>
-
-<codeblock>
-<codeph>/usr/bin/radosgw -d -c /etc/ceph/ceph.conf --debug-rgw 20 --rgw-socket-path=/var/run/ceph/ceph.radosgw.gateway.fastcgi.sock
-</codeph>
-</codeblock>
-
-<!--
+</codeblock><note>For
+                                                HA, second node will have changes for
+                                                  <codeph>ServerName</codeph>,
+                                                  <codeph>ServerAlias</codeph> and
+                                                  <codeph>ServerAdmin</codeph>
+                                        accordingly.</note></li>
+<li>Enable the site for <codeph>rgw.conf</codeph> by
+                                        entering:<codeblock><codeph>a2ensite rgw.conf
+</codeph></codeblock></li>
+<li>Disable the default site by
+                                        entering:<codeblock><codeph>a2dissite 000-default
+</codeph></codeblock></li>
+<li>Restart all services and start the gateway by entering:<ul>
+                                                <li>
+                                                  <p>Apache2:</p>
+                                                  <codeblock><codeph> /etc/init.d/apache2 restart
+</codeph></codeblock>
+                                                </li>
+                                                <li>
+                                                  <p>Gateway RADOSGW:</p>
+                                                  <codeblock><codeph>/etc/init.d/radosgw start
+</codeph></codeblock>
+                                                </li>
+                                                <li>
+                                                  <p>RADOSGW in a debug mode for
+                                                  troubleshooting:</p>
+                                                  <codeblock><codeph>/usr/bin/radosgw -d -c /etc/ceph/ceph.conf --debug-rgw 20 --rgw-socket-path=/var/run/ceph/ceph.radosgw.gateway.fastcgi.sock
+</codeph></codeblock>
+                                                  <!--
     * Ceph:
 
             /etc/init.d/ceph restart
---></li>
-</ul>
-</li>
+-->
+                                                </li>
+                                        </ul></li>
 </ol>
 <p>
 <!--
@@ -791,7 +618,7 @@ To achieve this integration, perform the following steps.
   <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-rados-gateway-pools.dita" >Ceph RADOS Gateway Pools</xref>
 </p>
 <p>
-  <xref type="section" href="#topic8352"> Return to Top </xref>
+  <xref href="#topic8352"> Return to Top </xref>
 </p>
 </section>
 </body>

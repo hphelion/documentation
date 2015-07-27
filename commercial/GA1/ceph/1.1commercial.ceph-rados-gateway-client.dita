@@ -85,28 +85,18 @@
 </ul>
 <p>To use Duplicity with Swift, set the following four environment variables:</p>
 <ol>
-<li>
-<p>SWIFT_USERNAME: your username, in the form tenant:user</p>
-</li>
-<li>
-<p>SWIFT_PASSWORD: your password</p>
-</li>
-<li>
-<p>SWIFT_AUTHURL: URL to the Keystone service.</p>
-</li>
-<li>
-<p>SWIFT_AUTHVERSION: for keystone authentication, set it to 2.</p>
-</li>
+<li>SWIFT_USERNAME: your username, in the form tenant:user</li>
+<li>SWIFT_PASSWORD: your password</li>
+<li>SWIFT_AUTHURL: URL to the Keystone service.</li>
+<li>SWIFT_AUTHVERSION: for keystone authentication, set it to 2.</li>
 </ol>
 </section>
 <section id="example"> <title>Example:</title>
-<codeblock>
-  <codeph>export SWIFT_USERNAME=admin:admin
+<codeblock><codeph>export SWIFT_USERNAME=admin:admin
 export SWIFT_PASSWORD=c6ad5fa953d9e6b4e0593beea1bc9360c6ce3154
 export SWIFT_AUTHURL=http://192.168.51.31:5000/v2.0
 export SWIFT_AUTHVERSION=2
-</codeph>
-</codeblock>
+</codeph></codeblock>
 <p>Make sure you also have the Swift or Rados Gateway credentials sourced on the Duplicity host system.</p>
 </section>
 <section id="mysql-archive-to-swift-api-use-case"> <title>MySQL Archive to Swift API use case</title>
@@ -128,32 +118,32 @@ export SWIFT_AUTHVERSION=2
 <section id="snapshot-for-a-backed-up-and-restored-mysql-database"> <title>Snapshot for a backed up and restored MySQL database</title>
 <p>The following snapshot shows how a MySQL database is backed up and restored. (This example utilizes the mySQL User Database Instance Glance)</p>
 <p>
-  <image href="../../../media/ceph-mysql-snapshot1.png"/>
+  <image href="../../../media/ceph-mysql-snapshot1.png" placement="break"/>
 </p>
 <p>
-  <image href="../../../media/ceph-mysql-snapshot2.png"/>
+  <image href="../../../media/ceph-mysql-snapshot2.png" placement="break"/>
 </p>
 <p>
-  <image href="../../../media/ceph-mysql-snapshot3.png"/>
+  <image href="../../../media/ceph-mysql-snapshot3.png" placement="break"/>
 </p>
 <p>MySQL database is archived using Duplicity.</p>
 <p>
-  <image href="../../../media/ceph-mysql-snapshot4.png"/>
+  <image href="../../../media/ceph-mysql-snapshot4.png" placement="break"/>
 </p>
 <p>Using restore script, mysql database archive checksum is validated, and then it is restored.</p>
 <p>
-  <image href="../../../media/ceph-mysql-snapshot5.png"/>
+  <image href="../../../media/ceph-mysql-snapshot5.png" placement="break"/>
 </p>
 <p>
-  <image href="../../../media/ceph-mysql-snapshot6.png"/>
+  <image href="../../../media/ceph-mysql-snapshot6.png" placement="break"/>
 </p>
 <p>MySQL Database Instance is created and archive file is restored.</p>
 <p>
-  <image href="../../../media/ceph-mysql-snapshot7.png"/>
+  <image href="../../../media/ceph-mysql-snapshot7.png" placement="break"/>
 </p>
 <p>After restore, the mySQL Database is up.</p>
 <p>
-  <image href="../../../media/ceph-mysql-snapshot8.png"/>
+  <image href="../../../media/ceph-mysql-snapshot8.png" placement="break"/>
 </p>
 </section>
 <section id="next-steps"> <title>Next Steps</title>
@@ -161,7 +151,7 @@ export SWIFT_AUTHVERSION=2
   <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-manual-install.dita" >Manual Validation</xref>
 </p>
 <p>
-  <xref type="section" href="#topic3803"> Return to Top </xref>
+  <xref href="#topic3803"> Return to Top </xref>
 </p>
 </section>
 </body>

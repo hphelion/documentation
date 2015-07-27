@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic6326">
-  <title>HP Helion <tm tmtype="reg">OpenStack</tm>Community Hardware and Software Requirements</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Community Hardware and Software Requirements</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -12,7 +12,7 @@
 <!--PUBLISHED-->
  <!--./community/community.hwsw-requirements.md-->
  <!--permalink: /helion/community/hwsw-requirements/--></p>
-  <p>This page provides an overview of the hardware and software that is supported for HP Helion OpenStackCommunity edition and includes setup and configuration information. For the performance and stability of the HP Helion OpenStack Community edition environment, it is very important to meet the requirements and conform to the minimum recommendations.</p>
+<p>This page provides an overview of the hardware and software that is supported for HP Helion OpenStack Community edition and includes setup and configuration information. For the performance and stability of the HP Helion OpenStack Community edition environment, it is very important to meet the requirements and conform to the minimum recommendations.</p>
 <ul>
 <li>
 <xref type="section" href="#topic6326/supportedhw">Supported hardware</xref>
@@ -37,7 +37,7 @@
 </li>
 </ul>
 <section id="supportedhw"> <title>Supported hardware</title>
-  <p>The following hardware is supported for Helion OpenStackCommunity edition for both virtual and baremetal installations:</p>
+<p>The following hardware is supported for Helion OpenStack Community edition for both virtual and baremetal installations:</p>
 </section>
 <section id="hp-proliant-bladesystem"> <title>HP Proliant BladeSystem</title>
 <ul>
@@ -138,7 +138,7 @@
 </ul>
 </section>
 <section id="baremetal"> <title>Hardware configuration for baremetal installations</title>
-  <p>The <xref href="../community/community.install.baremetal.dita" >multi-node baremetal installation of HP Helion OpenStackommunity</xref> is configured for a minimum of 7 and maximum of 36 baremetal systems, plus a system to run the installation. For this installation, your hardware must meet the following minimum requirements:</p>
+<p>The <xref href="../community/community.install.baremetal.dita" >multi-node baremetal installation of HP Helion OpenStack Community</xref> is configured for a minimum of 7 and maximum of 36 baremetal systems, plus a system to run the installation. For this installation, your hardware must meet the following minimum requirements:</p>
 <ul>
 <li>
 <p>A system to run the installer (called the seed cloud host or installer system) and host the seed VM that meets the following minimum requirements:</p>
@@ -239,44 +239,42 @@
 <p>The following table maps the minimum server configuration into usable capacity of the overcloud for both virtual and baremetal installations.</p>
 <table>
 <tgroup cols="3">
-          <colspec colname="col1" colsep="1" rowsep="1"/>
-          <colspec colname="col2" colsep="1" rowsep="1"/>
-          <colspec colname="col3" colsep="1" rowsep="1"/>
-          <thead>
-            <row rowsep="1">
-              <entry>Service</entry>
-              <entry>Usable capacity</entry>
-              <entry>Notes</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry> VMs </entry>
-              <entry> 6 standard.medium (4 GB memory, 80 GB disk) </entry>
-              <entry> Assumes 8 GB of memory and 200 GB of disk overhead. Capacity increases
-                linearly with compute nodes.</entry>
-            </row>
-            <row>
-              <entry> Volumes </entry>
-              <entry> 1800 GB</entry>
-              <entry> Capacity is fixed</entry>
-            </row>
-            <row>
-              <entry> Object storage</entry>
-              <entry> 400 GB; equivalent to: <ul>
-                  <li>160 images, based on 2.5 GB images or </li>
-                  <li>40 volume backups, based on 10 GB volumes</li>
-                </ul>
-              </entry>
-              <entry> In addition to your objects, object storage is used for images and volume
-                backups. With 640 GB per server (after subtracting 60 GB for the OS) this leaves
-                about 400 usable GB (1280/3.2). This is assuming an average Linux image/snapshot of
-                2.5 GB and a 10 GB cinder volume backup. <p>Note: These are the maximum figures
-                  assuming the storage is used exclusively for that type of object.</p>
-              </entry>
-            </row>
-          </tbody>
-        </tgroup>
+<colspec colname="col1"/>
+<colspec colname="col2"/>
+<colspec colname="col3"/>
+<thead>
+<row>
+<entry>Service</entry>
+<entry>Usable capacity</entry>
+<entry>Notes</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry> VMs </entry>
+<entry> 6 standard.medium (4 GB memory, 80 GB disk) </entry>
+<entry> Assumes 8 GB of memory and 200 GB of disk overhead. Capacity increases linearly with compute nodes.</entry>
+</row>
+<row>
+<entry> Volumes </entry>
+<entry> 1800 GB</entry>
+<entry> Capacity is fixed</entry>
+</row>
+<row>
+<entry> Object storage</entry>
+<entry> 400 GB; equivalent to:
+<ul>
+<li>160 images, based on 2.5 GB images, or</li>
+
+<li>40 volume backups, based on 10 GB volumes</li>
+ </ul>
+</entry>
+<entry> In addition to your objects, object storage is used for images and volume backups. With 640 GB per server (after subtracting 60 GB for the OS) this leaves about 400 usable GB (1280/3.2). This is assuming an average Linux image/snapshot of 2.5 GB and a 10 GB cinder volume backup.
+
+<p>Note: These are the maximum figures assuming the storage is used exclusively for that type of object.</p>  </entry>
+</row>
+</tbody>
+</tgroup>
 </table>
 </section>
 <section id="next"> <title>Next Steps</title>
@@ -285,7 +283,7 @@
 <p>
 <b>For virtual installations</b>, proceed to the installation in <xref href="../community/community.install.virtual.dita" >Community Virtual Installation and Configuration</xref>,</p>
 <p>
-  <xref type="section" href="#topic6326"> Return to Top </xref>
+  <xref href="#topic6326"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

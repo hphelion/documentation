@@ -82,9 +82,9 @@ sudo su -
 </ol>
 <p>For more information, see the <xref href="http://www.elasticsearch.org/guide/en/kibana/current/_introduction.html" scope="external" format="html" >Kibana web site</xref>.</p>
 <p>
-  <xref type="section" href="#topic1660"> Return to Top </xref>
+  <xref href="#topic1660"> Return to Top </xref>
 </p>
-
+<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20806">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 and 1.1.1: Configuring Your Network Securely</title>
-<titlealts>
-<searchtitle>HP Helion Openstack 1.1: Configuring Your Network Securely</searchtitle>
-</titlealts>
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic20483">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Configuring Your Network Securely</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
@@ -18,80 +15,76 @@
 </prolog>
 <body>
 <p>
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.install-GA-security.md-->
  <!--permalink: /helion/openstack/1.1/install/security/--></p>
 <p>
-  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
+
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
 <p>This document provides guidance on configuring your HP Helion OpenStack network securely</p>
 <p>HP Helion OpenStack has many built-in security controls, but the customer must take responsibility for configuring the network devices that integrate Helion services into an existing data center environment.  This includes defining firewall rules at the edge of the HP Helion OpenStack deployment (to protect against external abuse) as well as defining router rules within the HP Helion OpenStack deployment (to protect against insider abuse or administrative errors).</p>
 <ul>
 <li>
-<xref type="section" href="#topic20806/network">Network Topology</xref>
+<xref type="section" href="#topic20483/network">Network Topology</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/perimeter">Securing the Perimeter</xref>
+<xref type="section" href="#topic20483/perimeter">Securing the Perimeter</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/back-end">Securing the Object Operations (Swift) back-end network connections</xref>
+<xref type="section" href="#topic20483/back-end">Securing the Object Operations (Swift) back-end network connections</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/blockstorage">Securing Block Storage network connections</xref>
+<xref type="section" href="#topic20483/blockstorage">Securing Block Storage network connections</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/additional">Additional Block Storage Resources</xref>
+<xref type="section" href="#topic20483/additional">Additional Block Storage Resources</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/esx">Securing ESX network connections in Helion</xref>
+<xref type="section" href="#topic20483/esx">Securing ESX network connections in Helion</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/service">Service network</xref>
+<xref type="section" href="#topic20483/service">Service network</xref>
 </li>
 </ul>
 <section id="network"> <title>Network Topology</title>
-<p>HP Helion OpenStack is deployed on three physical networks: IPMI, Fibre Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in <xref type="section" href="#topic20806/fig1">Figure 1</xref>.</p>
+<p>HP Helion OpenStack is deployed on three physical networks: IPMI, Fibre Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in <xref type="section" href="#topic20483/fig1">Figure 1</xref>.</p>
 </section>
 <section id="fig1"> <title>Figure 1: Typical HP Helion OpenStack network topology</title>
 <p>
-  <image href="../../media/Helion_Security1_50.png"/>
+  <image href="../../media/Helion_Security1_50.png" placement="break"/>
 </p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/Helion_Security1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
+  <image href="../../media/Helion_Security1.png" placement="break"/>
 </p>
-<p>In <xref type="section" href="#topic20806/fig1">Figure 1</xref>, the Border Router and the Aggregation Router are customer devices that perform routing at the perimeter of the environment. The Load Balancer is a recommended customer device to provide TLS termination. The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack includes IPtable rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.</p>
+<p>In <xref type="section" href="#topic20483/fig1">Figure 1</xref>, the Border Router and the Aggregation Router are customer devices that perform routing at the perimeter of the environment. The Load Balancer is a recommended customer device to provide TLS termination. The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack includes IPtable rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.</p>
 </section>
 <section id="perimeter"> <title>Securing the Perimeter</title>
-<p>The perimeter is indicated by the <i>Border Router</i> icon in <xref type="section" href="#topic20806/fig1">Figure 1</xref>.</p>
+<p>The perimeter is indicated by the <i>Border Router</i> icon in <xref type="section" href="#topic20483/fig1">Figure 1</xref>.</p>
 <p>When securing the perimeter, consider the following:</p>
 <ul>
 <li>
-<xref type="section" href="#topic20806/vlan">VLAN configuration recommendations</xref>
+<xref type="section" href="#topic20483/vlan">VLAN configuration recommendations</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/ipaddressing">IP addressing recommendations</xref>
+<xref type="section" href="#topic20483/ipaddressing">IP addressing recommendations</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/vlanrouting">VLAN routing interface recommendations</xref>
+<xref type="section" href="#topic20483/vlanrouting">VLAN routing interface recommendations</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/accesscontrol">Access control recommendations</xref>
+<xref type="section" href="#topic20483/accesscontrol">Access control recommendations</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/serverconnect">Server connectivity recommendations</xref>
+<xref type="section" href="#topic20483/serverconnect">Server connectivity recommendations</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/publicend">Public endpoint recommendations</xref>
+<xref type="section" href="#topic20483/publicend">Public endpoint recommendations</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/loadbalance">Configuring the load balancer</xref>
+<xref type="section" href="#topic20483/loadbalance">Configuring the load balancer</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/ssloffload">About SSL Offloading on Load Balancer</xref>
-</li>
-<li>
-<xref type="section" href="#topic20806/ipmapping">IP mapping concerns</xref>
+<xref type="section" href="#topic20483/ipmapping">IP mapping concerns</xref>
 </li>
 </ul>
 </section>
@@ -145,7 +138,7 @@
 </section>
 <section id="serverconnect"> <title>Server connectivity recommendations</title>
 <p>When configuring server connectivity, consider the following:</p>
-<p>As shown in figure <xref type="section" href="#topic20806/fig1">Typical HP Helion OpenStack network topology</xref>, all of the Cloud Controller servers are members of all three VLANs. However, these servers have IP addresses configured only for the management VLAN.</p>
+<p>As shown in figure <xref type="section" href="#topic20483/fig1">Typical HP Helion OpenStack network topology</xref>, all of the Cloud Controller servers are members of all three VLANs. However, these servers have IP addresses configured only for the management VLAN.</p>
 </section>
 <section id="publicend"> <title>Public endpoint recommendations</title>
 <p>We recommend a load balancer be placed in front of the OpenStack APIs that can fill these functions:</p>
@@ -169,312 +162,322 @@
 <li>Overcloud Horizon Dashboard access</li>
 <li>External url - <codeph>https://horizon.fqdn.com/</codeph>
 </li>
-<li>Internal url (VIP) - <codeph>https://&lt;HelionOpenstack</codeph>
-Note: all access to overcloud services now happens over a TLS connection. Read more about this change in <xref href="../../commercial/GA1/1.1commcerical.install-TLS.dita" >HP Helion OpenStack TLS Support</xref> HP Helion OpenStack TLS Support</li>
+<li>Internal url (VIP) - <codeph>https://&lt;HelionOpenStack</codeph>
+          <note>All access to overcloud services now happens over a TLS connection. Read more about
+            this change in <xref href="../../commercial/GA1/1.1commcerical.install-TLS.dita">HP
+              Helion OpenStack TLS Support</xref> HP Helion OpenStack TLS Support</note></li>
 </ul>
 <table>
 <tgroup cols="3">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<thead>
-<row>
-<entry>API</entry>
-<entry>Public Endpoint</entry>
-<entry>Management Endpoint</entry>
-</row>
-</thead>
-<tbody>
-<row>
-    <entry>Identity (Keystone)</entry>
-    <entry>https://keystone.fqdn.com/v2.0</entry>
-    <entry>
-https://&lt;internalVIP&gt;:5000/v2.0</entry>
-  </row>
-<row>
-    <entry>Image (Glance)</entry>
-    <entry>https://glance.fqdn.com/</entry>
-    <entry>https://&lt;internalVIP&gt;:9292/</entry>
-  </row>
-<row>
-    <entry>Network (Neutron)</entry>
-    <entry>https://neutron.fqdn.com/</entry>
-    <entry>https://&lt;internalVIP&gt;:9696/</entry>
-  </row>
-<row>
-    <entry>Compute (Nova)</entry>
-    <entry>https://nova.fqdn.com/v2/$(tenant_id)s</entry>
-    <entry>https://&lt;internalVIP&gt;:8774/v2/$(tenant_id)s</entry>
-  </row>
-<row>
-    <entry>Volume (Cinder)</entry>
-    <entry>https://cinder.fqdn.com/v1/%(tenant_id)s</entry>
-    <entry>https://&lt;internalVIP&gt;:8776/v1/%(tenant_id)s</entry>
-  </row>
-<row>
-    <entry>Orchestration (Heat)</entry>
-    <entry>https://heat.fqdn.com/v1/%(tenant_id)s</entry>
-    <entry>https://&lt;internalVIP&gt;:8004/v1/%(tenant_id)s</entry>
-  </row>
-<row>
-    <entry>Object Store (Swift)</entry>
-    <entry>https://swift.fqdn.com/v1/AUTH_%(tenant_id)s</entry>
-    <entry>https://&lt;internalVIP&gt;:8080/v1/AUTH_%(tenant_id)s</entry>
-  </row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry>API</entry>
+              <entry>Public Endpoint</entry>
+              <entry>Management Endpoint</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Identity (Keystone)</entry>
+              <entry>https://keystone.fqdn.com/v2.0</entry>
+              <entry> https://&lt;internalVIP&gt;:5000/v2.0</entry>
+            </row>
+            <row>
+              <entry>Image (Glance)</entry>
+              <entry>https://glance.fqdn.com/</entry>
+              <entry>https://&lt;internalVIP&gt;:9292/</entry>
+            </row>
+            <row>
+              <entry>Network (Neutron)</entry>
+              <entry>https://neutron.fqdn.com/</entry>
+              <entry>https://&lt;internalVIP&gt;:9696/</entry>
+            </row>
+            <row>
+              <entry>Compute (Nova)</entry>
+              <entry>https://nova.fqdn.com/v2/$(tenant_id)s</entry>
+              <entry>https://&lt;internalVIP&gt;:8774/v2/$(tenant_id)s</entry>
+            </row>
+            <row>
+              <entry>Volume (Cinder)</entry>
+              <entry>https://cinder.fqdn.com/v1/%(tenant_id)s</entry>
+              <entry>https://&lt;internalVIP&gt;:8776/v1/%(tenant_id)s</entry>
+            </row>
+            <row>
+              <entry>Orchestration (Heat)</entry>
+              <entry>https://heat.fqdn.com/v1/%(tenant_id)s</entry>
+              <entry>https://&lt;internalVIP&gt;:8004/v1/%(tenant_id)s</entry>
+            </row>
+            <row>
+              <entry>Object Store (Swift)</entry>
+              <entry>https://swift.fqdn.com/v1/AUTH_%(tenant_id)s</entry>
+              <entry>https://&lt;internalVIP&gt;:8080/v1/AUTH_%(tenant_id)s</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 <p>
-<b>Note:</b>  These mapping are not an integral part of the Keystone service catalog. When a Keystone catalog is requested, it will always return the management IP. The Cloud administrator needs to publish the equivalent public endpoint for each service that needs to be externalized. Consider other endpoints to consider, such as the VNC console and so forth.</p>
+        <note>These mapping are not an integral part of the Keystone service catalog. When a
+          Keystone catalog is requested, it will always return the management IP. The Cloud
+          administrator needs to publish the equivalent public endpoint for each service that needs
+          to be externalized. Consider other endpoints to consider, such as the VNC console and so
+          forth.</note>
+      </p>
 <p>To protect against external attacks on Helion services, your firewall should be configured with a rule to block any requests originating from outside the network that attempts to reach any of the HP Helion OpenStack nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the HP Helion OpenStack installation, other than those indicated this table:</p>
 <table>
 <tgroup cols="4">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<thead>
-<row>
-<entry>Description</entry>
-<entry>Initiating node (from)</entry>
-<entry>Receiving node (to)</entry>
-<entry>Port</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>User requests to API endpoints and Horizon console</entry>
-<entry>External network</entry>
-<entry>Cloud Controller Nodes</entry>
-<entry>443</entry>
-</row>
-<row>
-<entry>Cloud Administrator access for Administrator/Operations activities</entry>
-<entry>Your enterprise intranet/VPN</entry>
-<entry>All Helion nodes</entry>
-<entry>22, 80, 81,8080, 6080</entry>
-</row>
-<row>
-<entry>Integration with end user portals/application</entry>
-<entry>Your enterprise intranet/VPN</entry>
-<entry>All Helion nodes</entry>
-<entry>5000, 9292, 9696, 8774, 8776, 8004</entry>
-</row>
-<row>
-<entry>Used for shipping logs into LogStash</entry>
-<entry>Within the cloud</entry>
-<entry>Undercloud Controller/VIP</entry>
-<entry>TCP 5672</entry>
-</row>
-<row>
-<entry>Ephermeral CA Service - used to obtain SSL certificates</entry>
-<entry>Within the cloud</entry>
-<entry>Overcloud VIP</entry>
-<entry>TCP 14000</entry>
-</row>
-<row>
-<entry>Keystone Admin API - used to validate end user authentication tokens</entry>
-<entry>Within the cloud</entry>
-<entry>Overcloud VIP</entry>
-<entry>TCP 35357</entry>
-</row>
-<row>
-<entry>Keystone API - used by backup while uploading to Swift</entry>
-<entry>Within the cloud</entry>
-<entry>Overcloud VIP</entry>
-<entry>TCP 5000</entry>
-</row>
-<row>
-<entry>Swift API - used by backup</entry>
-<entry>Within the cloud</entry>
-<entry>Overcloud VIP</entry>
-<entry>TCP 8080</entry>
-</row>
-<row>
-<entry>Heat metadata API service - used by instances to retrieve their configuration</entry>
-<entry>Within the cloud</entry>
-<entry>Overcloud VIP</entry>
-<entry>TCP 8000</entry>
-</row>
-<row>
-<entry>Heat CloudWatch API service - used by instances  to retrieve their configuration and report status back to Heat</entry>
-<entry>Within the cloud</entry>
-<entry>Overcloud VIP</entry>
-<entry>TCP 8003</entry>
-</row>
-<row>
-<entry>DNSaaS API servers - used to designate the API service</entry>
-<entry>Baremetal server</entry>
-<entry>Within the cloud</entry>
-<entry>TCP 9001</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <colspec colname="col4" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry>Description</entry>
+              <entry>Initiating node (from)</entry>
+              <entry>Receiving node (to)</entry>
+              <entry>Port</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>User requests to API endpoints and Horizon console</entry>
+              <entry>External network</entry>
+              <entry>Cloud Controller Nodes</entry>
+              <entry>443</entry>
+            </row>
+            <row>
+              <entry>Cloud Administrator access for Administrator/Operations activities</entry>
+              <entry>Your enterprise intranet/VPN</entry>
+              <entry>All Helion nodes</entry>
+              <entry>22, 80, 81,8080, 6080</entry>
+            </row>
+            <row>
+              <entry>Integration with end user portals/application</entry>
+              <entry>Your enterprise intranet/VPN</entry>
+              <entry>All Helion nodes</entry>
+              <entry>5000, 9292, 9696, 8774, 8776, 8004</entry>
+            </row>
+            <row>
+              <entry>Used for shipping logs into LogStash</entry>
+              <entry>Within the cloud</entry>
+              <entry>Undercloud Controller/VIP</entry>
+              <entry>TCP 5672</entry>
+            </row>
+            <row>
+              <entry>Ephermeral CA Service - used to obtain SSL certificates</entry>
+              <entry>Within the cloud</entry>
+              <entry>Overcloud VIP</entry>
+              <entry>TCP 14000</entry>
+            </row>
+            <row>
+              <entry>Keystone Admin API - used to validate end user authentication tokens</entry>
+              <entry>Within the cloud</entry>
+              <entry>Overcloud VIP</entry>
+              <entry>TCP 35357</entry>
+            </row>
+            <row>
+              <entry>Keystone API - used by backup while uploading to Swift</entry>
+              <entry>Within the cloud</entry>
+              <entry>Overcloud VIP</entry>
+              <entry>TCP 5000</entry>
+            </row>
+            <row>
+              <entry>Swift API - used by backup</entry>
+              <entry>Within the cloud</entry>
+              <entry>Overcloud VIP</entry>
+              <entry>TCP 8080</entry>
+            </row>
+            <row>
+              <entry>Heat metadata API service - used by instances to retrieve their
+                configuration</entry>
+              <entry>Within the cloud</entry>
+              <entry>Overcloud VIP</entry>
+              <entry>TCP 8000</entry>
+            </row>
+            <row>
+              <entry>Heat CloudWatch API service - used by instances to retrieve their configuration
+                and report status back to Heat</entry>
+              <entry>Within the cloud</entry>
+              <entry>Overcloud VIP</entry>
+              <entry>TCP 8003</entry>
+            </row>
+            <row>
+              <entry>DNSaaS API servers - used to designate the API service</entry>
+              <entry>Baremetal server</entry>
+              <entry>Within the cloud</entry>
+              <entry>TCP 9001</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
 </section>
 <section id="back-end"> <title>Securing the Object Operations (Swift) back-end network connections</title>
-<p>Object Operations (Swift) service requests travel from the external network to an HA proxy on an overcloud controller, which then forwards the request to a Object Operations node over the Management network. By default, this traffic travels over a flat network, as shown in <xref type="section" href="#topic20806/fig3">Figure 3</xref>:</p>
+<p>Object Operations (Swift) service requests travel from the external network to an HA proxy on an overcloud controller, which then forwards the request to a Object Operations node over the Management network. By default, this traffic travels over a flat network, as shown in <xref type="section" href="#topic20483/fig3">Figure 3</xref>:</p>
 </section>
 <section id="fig3"> <title>Figure 3: Object Operations in a flat deployment</title>
 <p>
-  <image href="../../media/Helion_Security3.png"/>
+  <image href="../../media/Helion_Security3.png" placement="break"/>
 </p>
 <p>You can choose to configure rules in your network devices to apply additional security controls to protect against attacks, insider abuse or mistakes.  For example, your router could block any requests directly to the Object Operations nodes nodes from Compute nodes.  Valid user requests from the Compute nodes will be passed through the HA proxy on the Controller nodes.</p>
 <p>You can block requests from the external network to the Object Operations nodes, as already mentioned for the firewall configuration. When adding rules to your router, take care not to introduce rules that will prevent authorized network traffic between nodes.</p>
 <p>The following table describes the data flow between Helion nodes for Object Operations (Swift) back-end traffic:</p>
 <table>
 <tgroup cols="5">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<colspec colname="col5"/>
-<thead>
-<row>
-<entry>Interface</entry>
-<entry>Description</entry>
-<entry>Initiating node (from)</entry>
-<entry>Receiving node (to)</entry>
-<entry>Port</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry>1</entry>
-<entry>Admin access via SSH <!--A BR tag was used here in the original source.-->Pyringos copy of ring files via SCP</entry>
-<entry>Undercloud controller</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>22</entry>
-</row>
-<row>
-<entry>2</entry>
-<entry>Admin access via SSH<!--A BR tag was used here in the original source.-->Pyringos copy of ring files via SCP</entry>
-<entry>Undercloud controller</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>22</entry>
-</row>
-<row>
-<entry>3</entry>
-<entry>Admin access via SSH</entry>
-<entry>Undercloud controller</entry>
-<entry>Object Storage</entry>
-<entry>22</entry>
-</row>
-<row>
-<entry>3</entry>
-<entry>Pyringos copy of ring files via SCP</entry>
-<entry>Undercloud controller</entry>
-<entry>Object Storage</entry>
-<entry>22</entry>
-</row>
-<row>
-<entry>4</entry>
-<entry>Swift proxy to object server over HTTP</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>Object Storage</entry>
-<entry>6000</entry>
-</row>
-<row>
-<entry>4</entry>
-<entry>Rsync</entry>
-<entry>Object Storage</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>873</entry>
-</row>
-<row>
-<entry>4</entry>
-<entry>Container update over HTTP</entry>
-<entry>Object Storage</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>6001,6002</entry>
-</row>
-<row>
-<entry>5</entry>
-<entry>Swift proxy to object server over HTTP</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>Object Storage</entry>
-<entry>6000</entry>
-</row>
-<row>
-<entry>5</entry>
-<entry>Rsync</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>Object Storage</entry>
-<entry>873</entry>
-</row>
-<row>
-<entry>5</entry>
-<entry>Rsync</entry>
-<entry>Object Storage</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>873</entry>
-</row>
-<row>
-<entry>5</entry>
-<entry>Container update over HTTP</entry>
-<entry>Object Storage</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>6001,6002
-</entry>
-</row>
-<row>
-<entry>6</entry>
-<entry>Rsync</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>873</entry>
-</row>
-<row>
-<entry>6</entry>
-<entry>Rsync</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>873</entry>
-</row>
-<row>
-<entry>6</entry>
-<entry>Container update over HTTP</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>6001,6002</entry>
-</row>
-<row>
-<entry>6</entry>
-<entry>Container update over HTTP</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>6001,6002
-</entry>
-</row>
-<row>
-<entry>7</entry>
-<entry>HA Proxy forwards API requests via HTTP</entry>
-<entry>Cloud Controller</entry>
-<entry>Proxy-Account-Container (PAC)</entry>
-<entry>8080</entry>
-</row>
-<row>
-<entry>8</entry>
-<entry>HA Proxy forwards API requests via HTTP</entry>
-<entry>Cloud Controller</entry>
-<entry>Swift all in one (PACO)</entry>
-<entry>8080</entry>
-</row>
-<row>
-<entry>8</entry>
-<entry>Rsync</entry>
-<entry>Object Storage</entry>
-<entry>Object Storage   </entry>
-<entry>873</entry>
-</row>
-</tbody>
-</tgroup>
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <colspec colname="col3" colsep="1" rowsep="1"/>
+          <colspec colname="col4" colsep="1" rowsep="1"/>
+          <colspec colname="col5" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry>Interface</entry>
+              <entry>Description</entry>
+              <entry>Initiating node (from)</entry>
+              <entry>Receiving node (to)</entry>
+              <entry>Port</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>1</entry>
+              <entry>Admin access via SSH
+                <!--A BR tag was used here in the original source.-->Pyringos copy of ring files via
+                SCP</entry>
+              <entry>Undercloud controller</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>22</entry>
+            </row>
+            <row>
+              <entry>2</entry>
+              <entry>Admin access via
+                SSH<!--A BR tag was used here in the original source.-->Pyringos copy of ring files
+                via SCP</entry>
+              <entry>Undercloud controller</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>22</entry>
+            </row>
+            <row>
+              <entry>3</entry>
+              <entry>Admin access via SSH</entry>
+              <entry>Undercloud controller</entry>
+              <entry>Object Storage</entry>
+              <entry>22</entry>
+            </row>
+            <row>
+              <entry>3</entry>
+              <entry>Pyringos copy of ring files via SCP</entry>
+              <entry>Undercloud controller</entry>
+              <entry>Object Storage</entry>
+              <entry>22</entry>
+            </row>
+            <row>
+              <entry>4</entry>
+              <entry>Swift proxy to object server over HTTP</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>Object Storage</entry>
+              <entry>6000</entry>
+            </row>
+            <row>
+              <entry>4</entry>
+              <entry>Rsync</entry>
+              <entry>Object Storage</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>873</entry>
+            </row>
+            <row>
+              <entry>4</entry>
+              <entry>Container update over HTTP</entry>
+              <entry>Object Storage</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>6001,6002</entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry>Swift proxy to object server over HTTP</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>Object Storage</entry>
+              <entry>6000</entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry>Rsync</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>Object Storage</entry>
+              <entry>873</entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry>Rsync</entry>
+              <entry>Object Storage</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>873</entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry>Container update over HTTP</entry>
+              <entry>Object Storage</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>6001,6002 </entry>
+            </row>
+            <row>
+              <entry>6</entry>
+              <entry>Rsync</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>873</entry>
+            </row>
+            <row>
+              <entry>6</entry>
+              <entry>Rsync</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>873</entry>
+            </row>
+            <row>
+              <entry>6</entry>
+              <entry>Container update over HTTP</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>6001,6002</entry>
+            </row>
+            <row>
+              <entry>6</entry>
+              <entry>Container update over HTTP</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>6001,6002 </entry>
+            </row>
+            <row>
+              <entry>7</entry>
+              <entry>HA Proxy forwards API requests via HTTP</entry>
+              <entry>Cloud Controller</entry>
+              <entry>Proxy-Account-Container (PAC)</entry>
+              <entry>8080</entry>
+            </row>
+            <row>
+              <entry>8</entry>
+              <entry>HA Proxy forwards API requests via HTTP</entry>
+              <entry>Cloud Controller</entry>
+              <entry>Swift all in one (PACO)</entry>
+              <entry>8080</entry>
+            </row>
+            <row>
+              <entry>8</entry>
+              <entry>Rsync</entry>
+              <entry>Object Storage</entry>
+              <entry>Object Storage </entry>
+              <entry>873</entry>
+            </row>
+          </tbody>
+        </tgroup>
 </table>
-<p>Applying access control lists (ACLs) for flows in the table above produces the logical deployment, displayed in <xref type="section" href="#topic20806/fig4">Figure 4</xref>:</p>
+<p>Applying access control lists (ACLs) for flows in the table above produces the logical deployment, displayed in <xref type="section" href="#topic20483/fig4">Figure 4</xref>:</p>
 </section>
 <section id="fig4"> <title>Figure 4: Object Operations in a logical deployment</title>
 <p>
-  <image href="../../media/Helion_Security4.png"/>
+  <image href="../../media/Helion_Security4.png" placement="break"/>
 </p>
 </section>
 <section id="blockstorage"> <title>Securing Block Storage network connections</title>
@@ -482,10 +485,10 @@ https://&lt;internalVIP&gt;:5000/v2.0</entry>
 <p>HP Helion OpenStack supports StoreVirtual or 3Par StoreServ storage arrays which are described separately.</p>
 <ul>
 <li>
-<xref type="section" href="#topic20806/storevirt">Securing StoreVirtual VSA network connections</xref>
+<xref type="section" href="#topic20483/storevirt">Securing StoreVirtual VSA network connections</xref>
 </li>
 <li>
-<xref type="section" href="#topic20806/storeserv">Securing 3Par StoreServ network connections</xref>
+<xref type="section" href="#topic20483/storeserv">Securing 3Par StoreServ network connections</xref>
 </li>
 </ul>
 </section>
@@ -498,95 +501,99 @@ https://&lt;internalVIP&gt;:5000/v2.0</entry>
 </ul>
 <p>VSA supports only one virtual network interface. As a result, the above three types of traffic must flow on the same network. For Helion, this is the management VLAN. P4000 hardware arrays support multiple network interfaces. For P4000, iSCSI and management traffic must flow through the management VLAN. However, inter-cluster traffic can be configured for a separate VLAN to provide an additional level of network data isolation.</p>
 <p>For StoreVirtual network design best practices, see <xref href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&amp;doctype=white%20paper&amp;doclang=EN_US&amp;searchquery=keywords=(AND)%20storevirtual%20&amp;cc=us&amp;lc=en,en-us" scope="external" format="html" >StoreVirtual 4000 Storage Network design considerations and best practices</xref> in PDF. <!-- note that this hyperlink is deliberately in html due to the nested parentheses which screws up the native MDP formatting and thus breaks the link --></p>
-<p>The following diagram depicts a StoreVirtual network deployed as a flat network, as shown in <xref type="section" href="#topic20806/fig5">Figure 5</xref>:</p>
+<p>The following diagram depicts a StoreVirtual network deployed as a flat network, as shown in <xref type="section" href="#topic20483/fig5">Figure 5</xref>:</p>
 </section>
 <section id="fig5"> <title>Figure 5: StoreVirtual in a flat deployment</title>
 <p>
-  <image href="../../media/Helion_Security5.png"/>
+  <image href="../../media/Helion_Security5.png" placement="break"/>
 </p>
 <p>The following table describes the data flow between Helion nodes and StoreVirtual systems:</p>
 <table>
 <tgroup cols="5">
 <thead>
 <row>
-<entry>Interface</entry>
-<entry>Description</entry>
-<entry>Initiating node (from)</entry>
-<entry>Receiving node (to)</entry>
-<entry>Port</entry>
+<entry colsep="1" rowsep="1">Interface</entry>
+<entry colsep="1" rowsep="1">Description</entry>
+<entry colsep="1" rowsep="1">Initiating node (from)</entry>
+<entry colsep="1" rowsep="1">Receiving node (to)</entry>
+<entry colsep="1" rowsep="1">Port</entry>
 </row>
 </thead>
 <tbody>
 <row>
-<entry>1</entry>
-<entry>Compute node iSCSI</entry>
-<entry>Compute node</entry>
-<entry>VIP for StoreVirtual cluster</entry>
-<entry>3260</entry>
+<entry colsep="1" rowsep="1">1</entry>
+<entry colsep="1" rowsep="1">Compute node iSCSI</entry>
+<entry colsep="1" rowsep="1">Compute node</entry>
+<entry colsep="1" rowsep="1">VIP for StoreVirtual cluster</entry>
+<entry colsep="1" rowsep="1">3260</entry>
 </row>
 <row>
-<entry>2</entry>
-<entry>Cinder Volume Backup iSCSI</entry>
-<entry>Cloud Controller (Cinder host)</entry>
-<entry>VIP for StoreVirtual cluster</entry>
-<entry>3260</entry>
+<entry colsep="1" rowsep="1">2</entry>
+<entry colsep="1" rowsep="1">Cinder Volume Backup iSCSI</entry>
+<entry colsep="1" rowsep="1">Cloud Controller (Cinder host)</entry>
+<entry colsep="1" rowsep="1">VIP for StoreVirtual cluster</entry>
+<entry colsep="1" rowsep="1">3260</entry>
 </row>
 <row>
-<entry>3</entry>
-<entry>StoreVirtual REST API (mgmt. interface)</entry>
-<entry>Cloud Controller (Cinder host)</entry>
-<entry>VIP for StoreVirtual cluster</entry>
-<entry>22</entry>
+<entry colsep="1" rowsep="1">3</entry>
+<entry colsep="1" rowsep="1">StoreVirtual REST API (mgmt. interface)</entry>
+<entry colsep="1" rowsep="1">Cloud Controller (Cinder host)</entry>
+<entry colsep="1" rowsep="1">VIP for StoreVirtual cluster</entry>
+<entry colsep="1" rowsep="1">22</entry>
 </row>
 <row>
-<entry>4</entry>
-<entry>Sirius Service for Cinder backend configuration</entry>
-<entry>UnderCloud Controller</entry>
-<entry>VIP for StoreVirtual Management Group</entry>
-<entry>22</entry>
+<entry colsep="1" rowsep="1">4</entry>
+<entry colsep="1" rowsep="1">Sirius Service for Cinder backend configuration</entry>
+<entry colsep="1" rowsep="1">UnderCloud Controller</entry>
+<entry colsep="1" rowsep="1">VIP for StoreVirtual Management Group</entry>
+<entry colsep="1" rowsep="1">22</entry>
 </row>
 <row>
-<entry>5</entry>
-<entry>StoreVirtual inter-cluster traffic</entry>
-<entry>StoreVirtual</entry>
-<entry>StoreVirtual</entry>
-<entry>See Reference 2 below</entry>
+<entry colsep="1" rowsep="1">5</entry>
+<entry colsep="1" rowsep="1">StoreVirtual inter-cluster traffic</entry>
+<entry colsep="1" rowsep="1">StoreVirtual</entry>
+<entry colsep="1" rowsep="1">StoreVirtual</entry>
+<entry colsep="1" rowsep="1">See Reference 2 below</entry>
 </row>
+  
+  
 <row>
-<entry>6</entry>
-<entry>CMC to StoreVirtual <!--A BR tag was used here in the original source.-->Recommended to install on the seed cloud host</entry>
-<entry>CMC</entry>
-<entry>StoreVirtual</entry>
-<entry>See Reference 2 below</entry>
+<entry colsep="1" rowsep="1">6</entry>
+<entry colsep="1" rowsep="1">CMC to StoreVirtual
+                <!--A BR tag was used here in the original source.-->Recommended to install on the
+                seed cloud host</entry>
+<entry colsep="1" rowsep="1">CMC</entry>
+<entry colsep="1" rowsep="1">StoreVirtual</entry>
+<entry colsep="1" rowsep="1">See Reference 2 below</entry>
 </row>
 </tbody>
 </tgroup>
 </table>
-<p>Jump to <xref type="section" href="#topic20806/ref2">Reference 2: HP4000 SAN - SANiQ TCP and UDP Port Usage</xref>.</p>
+<p>Jump to <xref type="section" href="#topic20483/ref2">Reference 2: HP4000 SAN - SANiQ TCP and UDP Port Usage</xref>.</p>
 <p>
-<xref type="section" href="#topic20806/fig6">Figure 6</xref> depicts a logical deployment after applying ACLs for flows in table:</p>
+<xref type="section" href="#topic20483/fig6">Figure 6</xref> depicts a logical deployment after applying ACLs for flows in table:</p>
 </section>
 <section id="fig6"> <title>Figure 6: StoreVirtual in a logical deployment</title>
 <p>
-  <image href="../../media/Helion_Security6.png"/>
+  <image href="../../media/Helion_Security6.png" placement="break"/>
 </p>
 <p>Note that there are additional traffic flows necessary for StoreVirtual operation in addition to the interaction with Helion nodes described above. This includes CMC management console access, StoreVirtual inter-cluster communication and access to network services such as NTP.</p>
   <p>StoreVirtual port usage is described in <xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03983799-2.pdf" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> in PDF.</p>
 <p>
-  <xref type="section" href="#topic20806"> Return to Top </xref>
+  <xref href="#topic20483"> Return to Top </xref>
 </p>
 </section>
 <section id="storeserv"> <title>Securing 3Par StoreServ network connections</title>
 <p>HP Helion Openstack supports iSCSI or Fibre Channel connectivity with 3PAR StoreServ. If using Fibre Channel, then the Compute nodes and the overcloud controller hosting Block Storage (Cinder) will require Fibre Channel connectivity with the 3PAR array. For iSCSI, connectivity will be through the management VLAN. The StoreServ REST API and SSH command line interfaces must be accessible from the management VLAN as well.</p>
-<p>The following diagram depicts a StoreServ network deployed as a flat network, as shown in <xref type="section" href="#topic20806/fig7">Figure 7</xref>:</p>
+<p>The following diagram depicts a StoreServ network deployed as a flat network, as shown in <xref type="section" href="#topic20483/fig7">Figure 7</xref>:</p>
 </section>
 <section id="fig7"> <title>Figure 7: 3Par StoreServ in a flat deployment</title>
 <p>
-  <image href="../../media/Helion_Security7.png"/>
+  <image href="../../media/Helion_Security7.png" placement="break"/>
 </p>
 <p>The following table describes the data flow between the Helion nodes and StoreServ systems:</p>
-<p>
-<b>Note:</b> In the following table, the Volume Operation host refers to the overcloud controller that hosts the Volume Operations (Cinder) service.</p>
+      <note>In the following table, the Volume Operation host refers to the overcloud controller
+        that hosts the Volume Operations (Cinder) service.</note>
 <table>
 <tgroup cols="5">
 <thead>
@@ -659,19 +666,19 @@ See Reference 6 below </entry>
 </tbody>
 </tgroup>
 </table>
-<p>Jump to <xref type="section" href="#topic20806/ref6">Reference 6: HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65</xref>.</p>
+<p>Jump to <xref type="section" href="#topic20483/ref6">Reference 6: HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65</xref>.</p>
 <p>When deploying StoreServ with Fibre Channel, interfaces 1 and 2 run over Fibre Channel network instead of iSCSI.</p>
 <p>
-<xref type="section" href="#topic20806/fig8">Figure 8</xref> depicts a logical deployment after applying ACLs for flows in table:</p>
+<xref type="section" href="#topic20483/fig8">Figure 8</xref> depicts a logical deployment after applying ACLs for flows in table:</p>
 </section>
 <section id="fig8"> <title>Figure 8: 3Par StoreServ in a logical deployment</title>
 <p>
-  <image href="../../media/Helion_Security8.png"/>
+  <image href="../../media/Helion_Security8.png" placement="break"/>
 </p>
 <p>Note that there are additional traffic flows necessary for StoreServ operation in addition to the interaction with the Helion nodes described in this section. This includes SSMC console access and Service Processor communication.</p>
 <p>StoreServ port usage is described on page 65 of the <xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf" scope="external" format="pdf">HP 3PAR StoreServ 10000 Storage Physical Planning Manual</xref> in PDF.</p>
 <p>
-  <xref type="section" href="#topic20806"> Return to Top </xref>
+  <xref href="#topic20483"> Return to Top </xref>
 </p>
 </section>
 <section id="additional"> <title>Additional Block Storage Resources</title>
@@ -682,7 +689,7 @@ See Reference 6 below </entry>
 <li>
 <!--Removed anchor point ref2-->
 <!-- id="ref2" -->
-<xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03983799-2.pdf" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> (PDF)</li>
+  <xref href="http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03983799-2.pdf" scope="external" format="pdf">HP4000 SAN - SANiQ TCP and UDP Port Usage</xref> (PDF)</li>
 <li>
 <xref href="http://hp.com/go/storevirtual" scope="external" format="html" >StoreVirtual information</xref>
 </li>
@@ -704,7 +711,7 @@ See Reference 6 below </entry>
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic20806"> Return to Top </xref>
+  <xref href="#topic20483"> Return to Top </xref>
 </p>
 </section>
 <section id="esx"> <title>Securing ESX network connections in Helion</title>
@@ -716,14 +723,14 @@ See Reference 6 below </entry>
 <li>The EON service to communicate with the vCenter server</li>
 </ul>
 <p>
-<xref type="section" href="#topic20806/fig9">Figure 9</xref> depicts the following Logical deployment of the ESX Integration in HP Helion OpenStack</p>
+<xref type="section" href="#topic20483/fig9">Figure 9</xref> depicts the following Logical deployment of the ESX Integration in HP Helion OpenStack</p>
 </section>
 <section id="fig9"> <title>Figure 9: ESX Integration in a logical deployment</title>
 <p>
-  <image href="../../media/Helion_Security9_50.png"/>
+  <image href="../../media/Helion_Security9_50.png" placement="break"/>
 </p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/Helion_Security9.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
+  <image href="../../media/Helion_Security9.png" placement="break"/>
 </p>
 <p>The following table describes the data flow between HP Helion OpenStack nodes and ESX nodes:</p>
 <table>
@@ -765,13 +772,14 @@ See Reference 6 below </entry>
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic20806"> Return to Top </xref>
+  <xref href="#topic20483"> Return to Top </xref>
 </p>
 </section>
 <section id="service"> <title>Service network</title>
 <p>The Service Network (SVC) is created by the Network Operation service.  SVC provides a path from the Development Platform services (such as Database as a Service) running in Compute Operations VMs to the Centralized Logging Service running in the undercloud.   A route needs to exist from service subnet in the overcloud to the RabbitMQ on the undercloud controller.</p>
-<p>
-<b>Note:</b> The Service Network is intended for granting privileged access to the baremetal network, to privileged in-cloud services and workloads. As such, this network must remain configured with its default configuration of <b>shared=False, external=False</b>.</p>
+      <note>The Service Network is intended for granting privileged access to the baremetal network,
+        to privileged in-cloud services and workloads. As such, this network must remain configured
+        with its default configuration of <b>shared=False, external=False</b>.</note>
 <p>Do not set either of these values to True; that will result in giving all cloud tenants privileged access to the baremetal network.</p>
 <table>
 <tgroup cols="4">
@@ -794,7 +802,7 @@ See Reference 6 below </entry>
 </tgroup>
 </table>
 <p>
-  <xref type="section" href="#topic20806"> Return to Top </xref>
+  <xref href="#topic20483"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

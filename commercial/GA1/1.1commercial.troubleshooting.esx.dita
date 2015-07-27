@@ -20,7 +20,7 @@
 <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
-<body><section id="top" />
+<body>
 <p>
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.troubleshooting.esx.md-->
@@ -90,10 +90,7 @@
   <b>Resolution</b>
 </p>
 <p>Verify <codeph>tripleo/hp-ovsvapp/log/ovs_vapp.log</codeph> in the installer directory.</p>
-<p>
-  <!--A BR tag was used here in the original source.-->
-  <!--A BR tag was used here in the original source.-->
-</p>
+
 <!-- ===================== horizontal rule ===================== -->
 <p>
   <b>System Behavior/Message</b>
@@ -116,18 +113,17 @@
 <p>To restart HP VCN agent, execute the following command in OVSvAPP vm's</p>
 </li>
 </ul>
+  
 <codeblock>
 <codeph>#service hpvcn-neutron-agent restart 
 </codeph>
 </codeblock>
 
-<p>
-<!--A BR tag was used here in the original source.-->
-</p>
+
 
 <!-- ===================== horizontal rule ===================== -->
 <p>
-  <xref type="section" href="#topic2362/top"> Return to Top </xref>
+  <xref href="#topic2362"> Return to Top </xref>
 </p>
 </section>
 </body>

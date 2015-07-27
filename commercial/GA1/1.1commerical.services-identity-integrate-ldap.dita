@@ -17,7 +17,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commerical.services-identity-integrate-ldap.md-->
  <!--permalink: /helion/openstack/1.1/services/identity/integrate-ldap/--></p>
-<p> <xref href="1.1commercial.install-GA-prereqs.dita#ldap" type="section" >▲ Prerequisites</xref> </p>
+    <p> <xref href="1.1commercial.install-GA-prereqs.dita#topic9786/ldap" type="section">▲ Prerequisites</xref> </p>
 <!-- Based on https://wiki.hpcloud.net/display/csbu/Integrating+Keystone+with+LDAP+in+Helion+1.1 -->
 <p>The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes.     LDAP integration can be performed during the HP Helion OpenStack installation process.</p>
 <p>Multiple authentication backends are supported, using the Keystone Domain-Specific Configuration feature. Separate authentication domains can be created to authenticate users on single LDAP server with different filters, or on different LDAP servers.</p>
@@ -29,9 +29,10 @@
 <li>
 <xref type="section" href="#topic9275/config">Generate configuration files</xref>
 </li>
-<li>
-    <xref type="section" href="#topic9275/per-domain-ldap-backend-configuration-post-installation">Include the configuration files in the installation</xref>
-</li>
+            <li><xref href="#topic9275/connect" format="dita"/></li>
+            <li><xref href="#topic9275/keystone" format="dita"/></li>
+            <li><xref href="#topic9275/per-domain-ldap-backend-configuration-post-installation"
+                    format="dita"/></li>
 </ul>
 <section id="pre"> <title>Prerequisites</title>
 <p>Before starting the integration, make sure your environment meets the following prerequisite:</p>
@@ -57,208 +58,218 @@
 <p>Section names, supported options and possible values are described in <xref href="1.1commerical.services-identity-overview.dita">OpenStack Identity Service documentation</xref>. The following table lists several important values:</p>
 <table>
 <tgroup cols="4">
-<colspec colname="col1"/>
-<colspec colname="col2"/>
-<colspec colname="col3"/>
-<colspec colname="col4"/>
-<tbody>
-<row>
-<entry>
-<b> Username </b>
-</entry>
-<entry>
-<b>Password</b>
-</entry>
-<entry>
-<b> AD/LDAP Default values </b>
-</entry>
-<entry>
-<b>OpenLDAP default values</b>
-</entry>
-    </row>
-<row>
-<entry>[identity]</entry>
-<entry> </entry>
-<entry> </entry>
-<entry> </entry>
-    </row>
-<row>
-    <entry>driver</entry>
-    <entry>(StrOpt) Identity backend driver</entry>
-    <entry>keystone.identity.backends.ldap.Identity</entry>
-    <entry>keystone.identity.backends.ldap.Identity
-    </entry>
-  </row>
-<row>
-<entry>[assignment]</entry>
-<entry> </entry>
-<entry> </entry>
-<entry> </entry>
-    </row>
-<row>
-<entry>driver</entry>
-<entry>(StrOpt) Assignment backend driver</entry>
-<entry>  keystone.assignment.backends.sql.Assignment</entry>
-<entry>keystone.assignment.backends.sql.Assignment</entry>
-    </row>
-<row>
-<entry>[ldap]</entry>
-<entry> </entry>
-<entry> </entry>
-<entry> </entry>
-    </row>
-<row>
-<entry>group_id_attribute</entry>
-<entry>(StrOpt) LDAP attribute mapped to group id.</entry>
-<entry>cn</entry>
-<entry>cn</entry>
-    </row>
-<row>
-<entry>group_name_attribute</entry>
-<entry>(StrOpt) LDAP attribute mapped to group name.</entry>
-<entry>cn</entry>
-<entry>cn</entry>
-    </row>
-<row>
-<entry>group_objectclass</entry>
-<entry>(StrOpt) LDAP objectclass for groups.</entry>
-<entry>group</entry>
-<entry>posixGroup</entry>
-    </row>
-<row>
-<entry>group_tree_dn</entry>
-<entry>(StrOpt) Search base for groups.</entry>
-<entry>CN=Users,DC=example,DC=com</entry>
-<entry>ou=groups,dc=hpswlabs,dc=apps,dc=hp,dc=com</entry>
-    </row>
-<row>
-<entry>group_allow_create</entry>
-<entry>(BoolOpt) Allow group creation in LDAP backend.</entry>
-<entry>False</entry>
-<entry>False</entry>
-    </row>
-<row>
-<entry>group_allow_delete</entry>
-<entry>(BoolOpt) Allow group deletion in LDAP backend.</entry>
-<entry>False</entry>
-<entry>False</entry>
-    </row>
-<row>
-<entry>group_allow_update</entry>
-<entry>(BoolOpt) Allow group update in LDAP backend.</entry>
-<entry>False</entry>
-<entry>False</entry>
-    </row>
-<row>
-<entry>suffix</entry>
-<entry>(StrOpt) LDAP server suffix</entry>
-<entry>DC=example,DC=com</entry>
-<entry>dc=example,dc=com</entry>
-    </row>
-<row>
-<entry>url</entry>
-<entry>(StrOpt) URL for connecting to the LDAP server.</entry>
-<entry>ldap://localhost</entry>
-<entry>ldap://localhost</entry>
-    </row>
-<row>
-<entry>user_allow_create</entry>
-<entry>(BoolOpt) Allow user creation in LDAP backend.</entry>
-<entry>False</entry>
-<entry>False</entry>
-    </row>
-<row>
-<entry>user_allow_delete</entry>
-<entry>(BoolOpt) Allow user deletion in LDAP backend.</entry>
-<entry>False</entry>
-<entry>False</entry>
-    </row>
-<row>
-<entry>user_allow_update</entry>
-<entry>(BoolOpt) Allow user updates in LDAP backend.</entry>
-<entry>False</entry>
-<entry>False</entry>
-    </row>
-<row>
-<entry>user_id_attribute</entry>
-<entry>(StrOpt) LDAP attribute mapped to user id.</entry>
-<entry>cn</entry>
-<entry>cn</entry>
-    </row>
-<row>
-<entry>user_name_attribute</entry>
-<entry>(StrOpt) LDAP attribute mapped to user name.</entry>
-<entry>cn</entry>
-<entry>cn</entry>
-    </row>
-<row>
-<entry>user_objectclass</entry>
-<entry>(StrOpt) LDAP objectclass for users.</entry>
-<entry>user</entry>
-<entry>Person</entry>
-    </row>
-<row>
-<entry>user_tree_dn</entry>
-<entry>(StrOpt) Search base for users.</entry>
-<entry>CN=Users,DC=example,DC=com</entry>
-<entry>ou=people,dc=example,dc=com</entry>
-    </row>
-<row>
-<entry>user</entry>
-<entry>(StrOpt) User BindDN to query the LDAP server.</entry>
-<entry>CN=SomeLDAPUser,CN=Users,DC=example,DC=com</entry>
-<entry>Not Required</entry>
-    </row>
-<row>
-<entry>password</entry>
-<entry>(StrOpt) Password for the BindDN to query the LDAP server.</entry>
-<entry>password</entry>
-<entry>Not Required</entry>
-    </row>
-<row>
-<entry>use_tls</entry>
-<entry>(BoolOpt) Enable TLS for communicating with LDAP servers.</entry>
-<entry>False</entry>
-<entry>False</entry>
-    </row>
-<row>
-<entry>tls_req_cert</entry>
-<entry>(StrOpt) Valid options for tls_req_cert are demand, never, and allow.</entry>
-<entry>never</entry>
-<entry>Never</entry>
-    </row>
-<row>
-<entry>use_pool</entry>
-<entry>(BoolOpt) Enable LDAP connection pooling.</entry>
-<entry>True</entry>
-<entry>True</entry>
-    </row>
-<row>
-<entry>user_enabled_attribute</entry>
-<entry>(StrOpt) LDAP attribute mapped to user enabled flag.</entry>
-<entry>userAccountControl</entry>
-<entry>Not required</entry>
-    </row>
-<row>
-<entry>user_enabled_mask</entry>
-<entry>(IntOpt) Bitmask integer indicating which bit represents the enabled value.  This is used when the LDAP server represents the variable `enabled` as a bit in an integer rather than as a Boolean.  A value of "0" indicates the mask is not used. When not set to "0", the typical value is "2".  This is typically used when `user_enabled_attribute = userAccountControl`.</entry>
-<entry>2</entry>
-<entry>Not required</entry>
-    </row>
-<row>
-<entry>user_enabled_default</entry>
-<entry>(StrOpt) Default value to enable users. This should match an appropriate int value if the LDAP server uses non-boolean (bitmask) values to indicate if a user is enabled or disabled. If this is not set to "True" the typical value is "512". This is typically used when `user_enabled_attribute = userAccountControl`.</entry>
-<entry>512</entry>
-<entry>Not required</entry>
-    </row>
-<row>
-<entry>user_mail_attribute</entry>
-<entry>(StrOpt) LDAP attribute mapped to user email.</entry>
-<entry>userPrincipalName</entry>
-<entry>Not required</entry>
-    </row>
-</tbody>
-</tgroup>
+                    <colspec colname="col1" colsep="1" rowsep="1"/>
+                    <colspec colname="col2" colsep="1" rowsep="1"/>
+                    <colspec colname="col3" colsep="1" rowsep="1"/>
+                    <colspec colname="col4" colsep="1" rowsep="1"/>
+                    <tbody>
+                        <row>
+                            <entry>
+                                <b> Username </b>
+                            </entry>
+                            <entry>
+                                <b>Password</b>
+                            </entry>
+                            <entry>
+                                <b> AD/LDAP Default values </b>
+                            </entry>
+                            <entry>
+                                <b>OpenLDAP default values</b>
+                            </entry>
+                        </row>
+                        <row>
+                            <entry>[identity]</entry>
+                            <entry> </entry>
+                            <entry> </entry>
+                            <entry> </entry>
+                        </row>
+                        <row>
+                            <entry>driver</entry>
+                            <entry>(StrOpt) Identity backend driver</entry>
+                            <entry>keystone.identity.backends.ldap.Identity</entry>
+                            <entry>keystone.identity.backends.ldap.Identity </entry>
+                        </row>
+                        <row>
+                            <entry>[assignment]</entry>
+                            <entry> </entry>
+                            <entry> </entry>
+                            <entry> </entry>
+                        </row>
+                        <row>
+                            <entry>driver</entry>
+                            <entry>(StrOpt) Assignment backend driver</entry>
+                            <entry> keystone.assignment.backends.sql.Assignment</entry>
+                            <entry>keystone.assignment.backends.sql.Assignment</entry>
+                        </row>
+                        <row>
+                            <entry>[ldap]</entry>
+                            <entry> </entry>
+                            <entry> </entry>
+                            <entry> </entry>
+                        </row>
+                        <row>
+                            <entry>group_id_attribute</entry>
+                            <entry>(StrOpt) LDAP attribute mapped to group id.</entry>
+                            <entry>cn</entry>
+                            <entry>cn</entry>
+                        </row>
+                        <row>
+                            <entry>group_name_attribute</entry>
+                            <entry>(StrOpt) LDAP attribute mapped to group name.</entry>
+                            <entry>cn</entry>
+                            <entry>cn</entry>
+                        </row>
+                        <row>
+                            <entry>group_objectclass</entry>
+                            <entry>(StrOpt) LDAP objectclass for groups.</entry>
+                            <entry>group</entry>
+                            <entry>posixGroup</entry>
+                        </row>
+                        <row>
+                            <entry>group_tree_dn</entry>
+                            <entry>(StrOpt) Search base for groups.</entry>
+                            <entry>CN=Users,DC=example,DC=com</entry>
+                            <entry>ou=groups,dc=hpswlabs,dc=apps,dc=hp,dc=com</entry>
+                        </row>
+                        <row>
+                            <entry>group_allow_create</entry>
+                            <entry>(BoolOpt) Allow group creation in LDAP backend.</entry>
+                            <entry>False</entry>
+                            <entry>False</entry>
+                        </row>
+                        <row>
+                            <entry>group_allow_delete</entry>
+                            <entry>(BoolOpt) Allow group deletion in LDAP backend.</entry>
+                            <entry>False</entry>
+                            <entry>False</entry>
+                        </row>
+                        <row>
+                            <entry>group_allow_update</entry>
+                            <entry>(BoolOpt) Allow group update in LDAP backend.</entry>
+                            <entry>False</entry>
+                            <entry>False</entry>
+                        </row>
+                        <row>
+                            <entry>suffix</entry>
+                            <entry>(StrOpt) LDAP server suffix</entry>
+                            <entry>DC=example,DC=com</entry>
+                            <entry>dc=example,dc=com</entry>
+                        </row>
+                        <row>
+                            <entry>url</entry>
+                            <entry>(StrOpt) URL for connecting to the LDAP server.</entry>
+                            <entry>ldap://localhost</entry>
+                            <entry>ldap://localhost</entry>
+                        </row>
+                        <row>
+                            <entry>user_allow_create</entry>
+                            <entry>(BoolOpt) Allow user creation in LDAP backend.</entry>
+                            <entry>False</entry>
+                            <entry>False</entry>
+                        </row>
+                        <row>
+                            <entry>user_allow_delete</entry>
+                            <entry>(BoolOpt) Allow user deletion in LDAP backend.</entry>
+                            <entry>False</entry>
+                            <entry>False</entry>
+                        </row>
+                        <row>
+                            <entry>user_allow_update</entry>
+                            <entry>(BoolOpt) Allow user updates in LDAP backend.</entry>
+                            <entry>False</entry>
+                            <entry>False</entry>
+                        </row>
+                        <row>
+                            <entry>user_id_attribute</entry>
+                            <entry>(StrOpt) LDAP attribute mapped to user id.</entry>
+                            <entry>cn</entry>
+                            <entry>cn</entry>
+                        </row>
+                        <row>
+                            <entry>user_name_attribute</entry>
+                            <entry>(StrOpt) LDAP attribute mapped to user name.</entry>
+                            <entry>cn</entry>
+                            <entry>cn</entry>
+                        </row>
+                        <row>
+                            <entry>user_objectclass</entry>
+                            <entry>(StrOpt) LDAP objectclass for users.</entry>
+                            <entry>user</entry>
+                            <entry>Person</entry>
+                        </row>
+                        <row>
+                            <entry>user_tree_dn</entry>
+                            <entry>(StrOpt) Search base for users.</entry>
+                            <entry>CN=Users,DC=example,DC=com</entry>
+                            <entry>ou=people,dc=example,dc=com</entry>
+                        </row>
+                        <row>
+                            <entry>user</entry>
+                            <entry>(StrOpt) User BindDN to query the LDAP server.</entry>
+                            <entry>CN=SomeLDAPUser,CN=Users,DC=example,DC=com</entry>
+                            <entry>Not Required</entry>
+                        </row>
+                        <row>
+                            <entry>password</entry>
+                            <entry>(StrOpt) Password for the BindDN to query the LDAP
+                                server.</entry>
+                            <entry>password</entry>
+                            <entry>Not Required</entry>
+                        </row>
+                        <row>
+                            <entry>use_tls</entry>
+                            <entry>(BoolOpt) Enable TLS for communicating with LDAP servers.</entry>
+                            <entry>False</entry>
+                            <entry>False</entry>
+                        </row>
+                        <row>
+                            <entry>tls_req_cert</entry>
+                            <entry>(StrOpt) Valid options for tls_req_cert are demand, never, and
+                                allow.</entry>
+                            <entry>never</entry>
+                            <entry>Never</entry>
+                        </row>
+                        <row>
+                            <entry>use_pool</entry>
+                            <entry>(BoolOpt) Enable LDAP connection pooling.</entry>
+                            <entry>True</entry>
+                            <entry>True</entry>
+                        </row>
+                        <row>
+                            <entry>user_enabled_attribute</entry>
+                            <entry>(StrOpt) LDAP attribute mapped to user enabled flag.</entry>
+                            <entry>userAccountControl</entry>
+                            <entry>Not required</entry>
+                        </row>
+                        <row>
+                            <entry>user_enabled_mask</entry>
+                            <entry>(IntOpt) Bitmask integer indicating which bit represents the
+                                enabled value. This is used when the LDAP server represents the
+                                variable `enabled` as a bit in an integer rather than as a Boolean.
+                                A value of "0" indicates the mask is not used. When not set to "0",
+                                the typical value is "2". This is typically used when
+                                `user_enabled_attribute = userAccountControl`.</entry>
+                            <entry>2</entry>
+                            <entry>Not required</entry>
+                        </row>
+                        <row>
+                            <entry>user_enabled_default</entry>
+                            <entry>(StrOpt) Default value to enable users. This should match an
+                                appropriate int value if the LDAP server uses non-boolean (bitmask)
+                                values to indicate if a user is enabled or disabled. If this is not
+                                set to "True" the typical value is "512". This is typically used
+                                when `user_enabled_attribute = userAccountControl`.</entry>
+                            <entry>512</entry>
+                            <entry>Not required</entry>
+                        </row>
+                        <row>
+                            <entry>user_mail_attribute</entry>
+                            <entry>(StrOpt) LDAP attribute mapped to user email.</entry>
+                            <entry>userPrincipalName</entry>
+                            <entry>Not required</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
 </table>
 </section>
 <section id="keystone"> <title>Keystone CA storage and signing key/certificate files</title>
@@ -295,10 +306,10 @@
 </ol>
 <p>Follow the steps described in the installation instructions to deploy the overcloud nodes.</p>
 <p>
-  <xref href="1.1commercial.install-GA-kvm.dita#startseed" type="section" >HP Helion OpenStack Installation and Configuration for KVM Hypervisor</xref>
+    <xref href="1.1commercial.install-GA-kvm.dita#topic5847/startseed" type="section">HP Helion OpenStack Installation and Configuration for KVM Hypervisor</xref>
 </p>
 <p>
-  <xref href="1.1commercial.install-GA-esx.dita#startseed" type="section" >HP Helion OpenStack Installation and Configuration for ESX Hypervisor</xref>
+  <xref href="1.1commercial.install-GA-esx.dita#startseed" type="section">HP Helion OpenStack Installation and Configuration for ESX Hypervisor</xref>
 </p>
 </section>
 <section id="per-domain-ldap-backend-configuration-post-installation"> <title>Per-domain LDAP Backend Configuration Post-installation</title>
@@ -352,7 +363,7 @@ tls_req_cert = demand
 <p>For information on all the attributes you can set for openLDAP/Active Directory, please refer to the LDAP connection settings listed above.</p>
 <p>Once the LDAP domain configuration as described above is complete,  you must restart Apache on all the overcloud controller nodes for the settings to take effect.</p>
 <p>
-  <xref type="section" href="#topic9275"> Return to Top </xref>
+  <xref href="#topic9275"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -37,7 +37,7 @@
 <xref type="section" href="#topic18311/remove">Remove the failed controller from the Heat configuration</xref>
 </li>
 <li>
-<xref type="section" href="#topic18311/remove">Add the new controller to the configuration and deploy it</xref>
+<xref type="section" href="#topic18311/addnew">Add the new controller to the configuration and deploy it</xref>
 </li>
 <li>
 <xref type="section" href="#topic18311/cleanup">Clean up the environment</xref>
@@ -632,6 +632,7 @@ tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud --skip-
 <codeph># show the failed node in ironic (using the failed_node_id variable from above)
 ironic node-show --instance $failed_node_id
 # remove the failed node from ironic, using the uuid
+
 ironic node-delete $ironic_failed_node_id
 </codeph>
 </codeblock>
@@ -688,7 +689,7 @@ check_mk --list-hosts
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic18311"> Return to Top </xref>
+  <xref href="#topic18311"> Return to Top </xref>
 </p>
 </section>
 </body>

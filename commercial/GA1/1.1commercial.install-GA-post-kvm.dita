@@ -20,11 +20,7 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commercial.install-GA-post-kvm.md-->
  <!--permalink: /helion/openstack/1.1/install/post-kvm/--></p>
-<p>
-  <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
-</p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../../commercial/GA1/1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
-<p>After you have completed and verified the HP Helion OpenStack installation, perform the following tasks as appropriate.</p>
+
 <section id="configure-hp-helion-openstack-tenant-networks-to-use-vlan-provider-network"> <title>Configure HP Helion OpenStack tenant networks to use VLAN Provider Network.</title>
 <p>HP Helion OpenStack defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. You can configure VLAN on HP Helion OpenStack to enable communication with tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX.</p>
 <p>For instructions, see <xref href="../../commercial/GA1/1.1commercial.vlan-providernetwork.dita" >Enabling VLAN Provider Network in HP Helion OpenStack</xref>.</p>
@@ -65,7 +61,7 @@
 <section id="add-and-remove-nodes-on-kvm-hypervisors"> <title>Add and Remove  Nodes on KVM Hypervisors</title>
 <p>For more information, see <xref href="../../commercial/GA1/1.1commercial.install-add-nodes.dita" >Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors</xref>.</p>
 <p>
-  <xref type="section" href="#topic3683"> Return to Top </xref>
+  <xref href="#topic3683"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

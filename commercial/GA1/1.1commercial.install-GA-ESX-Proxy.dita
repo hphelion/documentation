@@ -35,12 +35,12 @@
 <li>Deploy the proxy appliance.</li>
 <li>Enable SSL by importing the vCenter certificate into the ESX Compute proxy.</li>
 </ul>
-<p>
-<b>Note:</b> Your VMWare vCenter server should be configured for high availability using the instructions provided by VMWare.</p>
+    <note>Your VMWare vCenter server should be configured for high availability using the
+      instructions provided by VMWare.</note>
 <section id="prerequisites"> <title>Prerequisites</title>
 <ul>
 <li>
-<xref href="../../commercial/GA1/1.1commercial.install-GA-esx.dita#verifying-your-installation" type="section"  >Verify your cloud installation</xref>.</li>
+<xref href="../../commercial/GA1/1.1commercial.install-GA-esx.dita#verifying-your-installation" type="section">Verify your cloud installation</xref>.</li>
 <li>Set up the management port-group in DVS. Make sure  that there is a proper network connection between the overcloud controller and the port-group.</li>
 <li>Verify the network connection between the overcloud controller and the proxy.</li>
 <li>Ping the gateway of the ESX Network or log in to the server where you will deploy the ESX Compute proxy.</li>
@@ -158,10 +158,14 @@ sudo poweroff
 </section>
 <section id="deploy-the-proxy"> <title>Deploy the proxy</title>
 <p>Use the following steps to instantiate and run a copy of the VM template on each server.</p>
-<p>Perform the following steps on the undercloud node using the <xref type="section" href="#topic8887/deploy_cli">EON CLI</xref> or the <xref type="section" href="#topic8887/deploy_ui">Horizon dashboard</xref>.</p>
+<p>Perform the following steps on the undercloud node using the <xref
+          href="#topic8887/deploy-the-proxy-using-the-eon-cli-" format="dita">EON CLI</xref> or the
+          <xref href="#topic8887/deploy-the-proxy-using-the-undercloud-horizon-dashboard-"
+          format="dita">Horizon
+        dashboard</xref>.</p>
 </section>
 <section id="deploy-the-proxy-using-the-undercloud-horizon-dashboard-"> <title>Deploy the proxy using the undercloud Horizon dashboard <!--Removed anchor point deploy_ui--><!-- id="deploy_ui" --></title>
-<p>To deploy the ESX compute proxy using the undercloud Horizon dashboard, see the <xref href="../../commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita#register-vcenter" type="section"  >Register vCenter section</xref> of the Virtual Environments document.</p>
+  <p>To deploy the ESX compute proxy using the undercloud Horizon dashboard, see the <xref href="../../commercial/GA1/1.1commercial.undercloud-resource-esx-manage-vm.dita#topic9543/register-vcenter" type="section">Register vCenter section</xref> of the Virtual Environments document.</p>
 </section>
 <section id="deploy-the-proxy-using-the-eon-cli-"> <title>Deploy the proxy using the EON CLI <!--Removed anchor point deploy_cli--><!-- id="deploy_cli" --></title>
 <p>To deploy the ESX compute proxy using the EON CLI, execute the following steps from the undercloud node:</p>
@@ -172,6 +176,7 @@ sudo poweroff
 <codeblock>
 <codeph>[vmware]
 # Details related to vCenter in which Compute Proxy VM will be created
+
 # 
 # Datacenter name
 datacenter=
@@ -300,7 +305,7 @@ Use the following steps to configure SSL between vCenter and the ESX computer pr
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic8887"> Return to Top </xref>
+  <xref href="#topic8887"> Return to Top </xref>
 </p>
 </section>
 </body>

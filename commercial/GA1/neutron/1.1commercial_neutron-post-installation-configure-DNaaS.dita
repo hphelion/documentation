@@ -17,16 +17,14 @@
 </prolog>
 <body>
 <p>
-<!--PUBLISHED-->
- <!--./commercial/GA1/1.1commercial.install-GA-DNSaaS.md-->
- <!--permalink: /helion/openstack/1.1/install/dnsaas/--></p>
-<p>
-      <xref href="../1.0commercial.install-GA-DNSaaS.dita#topic15064" type="section" >See the Helion OpenStack version 1.0 of this page</xref>
-    </p>
+  <!--PUBLISHED-->
+  <!--./commercial/GA1/1.1commercial.install-GA-DNSaaS.md-->
+  <!--permalink: /helion/openstack/1.1/install/dnsaas/--></p>
+
 <p>
   <b>This document describes the installation process for HP Helion OpenStack 1.1 and HP Helion OpenStack 1.1.1.</b>
 </p>
-<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../1.1.1commercial.helion-update.dita">HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
+<p>(If you already have 1.1 installed, you can update Helion OpenStack from 1.1 to 1.1.1 by following the update procedures described in <xref href="../1.1.1commercial.helion-update.dita" >HP Helion OpenStack 1.1.1 Update Guide</xref>.)</p>
 <p>Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.</p>
 <p>It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack</p>
 <p>
@@ -578,7 +576,7 @@ sudo -i
 <li>
 <p>If you are using MSDNS (Microsoft DNS Server) you must install an agent on each the Microsoft DNS server. These steps must be performed on each Microsoft DNS server to install the agent:</p>
 
-<p>The installer for the agent is in <codeph>/opt/stack/designate-msdnsagent/Openstack</codeph> on the DNSaaS Installer VM; this is the one that you booted to install DNSaaS. <!--A BR tag was used here in the original source.-->Download this file and distribute it to all the target Microsoft DNS Servers.</p>
+<p>The installer for the agent is in <codeph>/opt/stack/designate-msdnsagent/OpenStack</codeph> on the DNSaaS Installer VM; this is the one that you booted to install DNSaaS. <!--A BR tag was used here in the original source.-->Download this file and distribute it to all the target Microsoft DNS Servers.</p>
 
 <p>a. Run the install.</p>
 
@@ -683,7 +681,7 @@ sudo -i
 <p>For more information, see:</p>
 <ul>
 <li>
-  <xref href="../../../publiccloud/apidocs/c1.1/dns-api.dita" >HP Helion Public Cloud DNS API Specifications</xref>
+  <xref href="../../../publiccloud/api/dns-api.dita" >HP Helion Public Cloud DNS API Specifications</xref>
 </li>
 <li>
 <xref href="https://wiki.openstack.org/wiki/Designate" scope="external" format="html" >Designate DNSaaS services for OpenStack</xref>
@@ -692,7 +690,7 @@ sudo -i
 <p>
 <b>Note</b>: Public Cloud API and HP Helion Openstack API details are similar.</p>
 <p>
-  <xref type="section" href="#topic20357"> Return to Top </xref>
+  <xref href="#topic20357"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

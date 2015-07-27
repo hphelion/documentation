@@ -28,7 +28,7 @@
 <p>
 
 </p>
-<!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md); text from docs. hpcloud. com/helion/openstack/1.1/prepare/overview/ -->
+<!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md); text from  /helion/openstack/1.1/prepare/overview/ -->
 <p>The HP Helion OpenStack Focus service serves as the Topology Design Registry and Repository Service. Focus provides for persistent store and management of TOSCA-based templates. Focus allows you to:</p>
 <p>Focus allows you to:</p>
 <ul>
@@ -54,7 +54,7 @@
 * [HP Helion OpenStack Operational Dashboard Help](/helion/openstack/1.1/manage/operational-dashboard/)
 * [HP Helion OpenStack Administration Dashboard Help](/helion/openstack/1.1/manage/administration-dashboard/) -->
 <p>
-  <xref type="section" href="#topic1698"> Return to Top </xref>
+  <xref href="#topic1698"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

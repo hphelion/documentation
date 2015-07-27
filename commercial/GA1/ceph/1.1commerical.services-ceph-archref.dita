@@ -33,28 +33,19 @@
   <!--A BR tag was used here in the original source.-->
 </p>
 <p>
-  <image href="../../../media/helion-openstack50.png"/>
+  <image href="../../../media/helion-openstack50.png" placement="break"/>
 </p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/helion-openstack.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
-</p>
+      <b>Communication Diagram from Helion OpenStack to Ceph Cluster</b>
+      <!--A BR tag was used here in the original source.-->
+    </p>
 <p>
-  <b>Communication Diagram from Helion OpenStack to Ceph Cluster</b>
-  <!--A BR tag was used here in the original source.-->
-</p>
-<p>
-  <image href="../../../media/cephcomm50.png"/>
-</p>
-<p>
-  <xref format="html" href="javascript:window.open('/media/cephcomm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
+  <image href="../../../media/cephcomm50.png" placement="break"/>
 </p>
 <p>
 <b>Logical Reference Architecture Diagram for Ceph Cluster</b> </p>
 <p>
-  <image href="../../../media/cephlogicalarch50.png"/>
-</p>
-<p>
-  <xref format="html" href="javascript:window.open('/media/cephlogicalarch.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
+  <image href="../../../media/cephlogicalarch50.png" placement="break"/>
 </p>
 <p>
   <b>Helion OpenStack with Ceph Cluster Deployment Example</b>
@@ -64,25 +55,21 @@
   <!--A BR tag was used here in the original source.-->
 </p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/cephdeployment.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
-</p>
-<p>
-  <image href="../../../media/ceph-deployment-example.png" placement="break"/>
-  <!--A BR tag was used here in the original source.-->
-</p>
-<p>
-  <xref format="html" href="javascript:window.open('/media/ceph-deployment-example.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >View larger image (opens in a new window)</xref>
-</p>
+      <image href="../../../media/ceph-deployment-example.png" placement="break"
+        id="image_t2w_qx5_ps"/>
+      <!--A BR tag was used here in the original source.-->
+    </p>
 <section id="for-more-information"> <title>For more information</title>
-<p><xref href="../1.1commercial.ceph-overview.dita">Ceph Integration Overview</xref>
-      </p>
+<p>
+  <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-overview.dita" >Ceph Integration Overview</xref>
+</p>
 </section>
 <section id="next-steps"> <title>Next Steps</title>
 <p>
   <xref href="../../../commercial/GA1/ceph/1.1commenrcial.ceph-pre-requisite.dita" >Ceph Prerequisites</xref>
 </p>
 <p>
-  <xref type="section" href="#topic1566"> Return to Top </xref>
+  <xref href="#topic1566"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

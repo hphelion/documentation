@@ -27,7 +27,9 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/ceph/1.1commenrcial.ceph-monitoring.md-->
  <!--permalink: /helion/openstack/1.1/ceph-monitoring/--></p>
-<p>The HP Helion OpenStack built-in monitoring packages allow the administrative monitoring of  Ceph. The Icinga service, which runs on the Undercloud, helps the cloud admin to monitor  Ceph. Icinga is configured as follows:</p>
+<p>The HP Helion OpenStack built-in monitoring packages allow the administrative monitoring of Ceph.
+      The Icinga service, which runs on the undercloud, helps the cloud admin to monitor Ceph.
+      Icinga is configured as follows:</p>
 <ol>
 <li>Icinga: The main alerting server that runs each check periodically on every host.</li>
 <li>Icinga-web: TThe UI tool used to view the monitoring results.</li>
@@ -41,7 +43,8 @@
 <li>Username:icingaadmin</li>
 <li>Password:icingaadmin</li>
 </ul>
-<p>The servers for Helion OpenStack overcloud and the Undercloud are monitored. Also, Icinga monitors a list of the services and applications in the <b>Service Details</b>.</p>
+<p>The servers for Helion OpenStack overcloud and the undercloud are monitored. Also, Icinga
+      monitors a list of the services and applications in the <b>Service Details</b>.</p>
 <p>For Ceph Monitoring, the following scripts are run on Helion OpenStack overcloud controller nodes and reports back the check results to the Icinga service:</p>
 <ol>
 <li>
@@ -69,7 +72,7 @@
   <xref href="../../../commercial/GA1/ceph/1.1commercial.ceph-helion-openstack-ceph-storage-administration.dita" >Ceph Storage Administration</xref>
 </p>
 <p>
-  <xref type="section" href="#topic2280"> Return to Top </xref>
+  <xref href="#topic2280"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

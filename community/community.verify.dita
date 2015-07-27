@@ -30,49 +30,75 @@
 <section id="connectunder"> <title>Connecting to the undercloud Horizon console</title>
 <p>From the seed cloud host, connect to the undercloud Horizon console.</p>
 <ol>
-<li>Obtain the passwords for the <codeph>demo</codeph> and <codeph>admin</codeph> users<p>
-                        <codeph>cat /root/tripleo/tripleo-overcloud-passwords</codeph>
-                    </p></li>
-<li>Point your web browser on the seed cloud host to the undercloud Horizon console using the
-                        <codeph>UNDERCLOUD_IP_ADDRESS</codeph> obtained after the install.<p>If you
-                        did not retrieve the overcloud IP from the end of the install, enter the
-                        following
-                    command:</p><codeblock><codeph>. /root/tripleo/tripleo-undercloud-passwords
+<li>
+<p>Obtain the passwords for the <codeph>demo</codeph> and <codeph>admin</codeph> users</p>
+
+<p>
+<codeph>cat /root/tripleo/tripleo-overcloud-passwords</codeph>
+</p>
+</li>
+<li>
+<p>Point your web browser on the seed cloud host to the undercloud Horizon console using the <codeph>UNDERCLOUD_IP_ADDRESS</codeph> obtained after the install.</p>
+
+<p>If you did not retrieve the overcloud IP from the end of the install, enter the following command:</p>
+
+<codeblock>
+<codeph>. /root/tripleo/tripleo-undercloud-passwords
 TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
 OVERCLOUD_IP=$(heat output-show overcloud KeystoneURL | cut -d: -f2 | sed s,/,,g )
 echo $UNDERCLOUD_IP
-</codeph></codeblock></li>
-<li>Log in as <codeph>demo</codeph> or <codeph>admin</codeph> using the corresponding passwords
-                    obtained in step 1.</li>
-<li>In the Horizon console, you can obtain the IP address of the demo VM:<ol id="ol_ath_2r1_ks">
-                        <li>Click Project &gt; Compute &gt; Instance.</li>
-                        <li>Note the public IP address of the **demo** instance, starting with
-                            `192`</li>
-                    </ol></li>
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Log in as <codeph>demo</codeph> or <codeph>admin</codeph> using the corresponding passwords obtained in step 1.</p>
+</li>
+<li>
+<p>In the Horizon console, you can obtain the IP address of the demo VM:</p>
+
+<codeblock>
+<codeph>a. Click Project &gt; Compute &gt; Instance.
+b. Note the public IP address of the **demo** instance, starting with `192`.
+</codeph>
+</codeblock>
+</li>
 </ol>
 </section>
 <section id="connectover"> <title>Connecting to the overcloud Horizon console</title>
 <p>From the seed cloud host, connect to the overcloud Horizon console.</p>
 <ol>
-<li>Obtain the passwords for the <codeph>demo</codeph> and <codeph>admin</codeph> users<p>
-                        <codeph>cat /root/work/tripleo/tripleo-overcloud-passwords</codeph>
-                    </p></li>
-<li>Point your web browser on the seed cloud host to the overcloud Horizon console using the
-                        <codeph>OVERCLOUD_IP_ADDRESS</codeph> obtained after the instal.<p>If you
-                        did not retrieve the overcloud IP from the end of the install, enter the
-                        following
-                    command:</p><codeblock><codeph>. /root/work/tripleo/tripleo-undercloud-passwords
+<li>
+<p>Obtain the passwords for the <codeph>demo</codeph> and <codeph>admin</codeph> users</p>
+
+<p>
+<codeph>cat /root/work/tripleo/tripleo-overcloud-passwords</codeph>
+</p>
+</li>
+<li>
+<p>Point your web browser on the seed cloud host to the overcloud Horizon console using the <codeph>OVERCLOUD_IP_ADDRESS</codeph> obtained after the instal.</p>
+
+<p>If you did not retrieve the overcloud IP from the end of the install, enter the following command:</p>
+
+<codeblock>
+<codeph>. /root/work/tripleo/tripleo-undercloud-passwords
 TE_DATAFILE=/root/work/tripleo/ce_env.json . /root/work/tripleo/tripleo-incubator/undercloudrc
 OVERCLOUD_IP=$(heat output-show overcloud KeystoneURL | cut -d: -f2 | sed s,/,,g )
 echo $OVERCLOUD_IP
-</codeph></codeblock></li>
-<li>Log in as <codeph>demo</codeph> or <codeph>admin</codeph> using the corresponding passwords
-                    obtained in step 1.</li>
-<li>In the Horizon console, you can obtain the IP address of the demo VM:<ol id="ol_w1r_hr1_ks">
-                        <li>Click Project &gt; Compute &gt; Instance.</li>
-                        <li>Note the public IP address of the **demo** instance, starting with
-                            `192`.</li>
-                    </ol></li>
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Log in as <codeph>demo</codeph> or <codeph>admin</codeph> using the corresponding passwords obtained in step 1.</p>
+</li>
+<li>
+<p>In the Horizon console, you can obtain the IP address of the demo VM:</p>
+
+<codeblock>
+<codeph>a. Click Project &gt; Compute &gt; Instance.
+b. Note the public IP address of the **demo** instance, starting with `192`.
+</codeph>
+</codeblock>
+</li>
 </ol>
 </section>
 <section id="connectvm"> <title>Connecting to the demo VM</title>
@@ -95,54 +121,96 @@ echo $OVERCLOUD_IP
     `DEMO_IP=$(nova list | grep " demo " | awk ' { print $13 } ')`
 -->
 <ol>
-<li>Connect to the demo VM using the IP address you obtained from the Horizon console:<p>
-                        <codeph>ssh debian@${DEMO_IP}</codeph>
-                    </p><p>
-                        <b>Note:</b> It might take a few minutes for the demo vm to become available
-                        using ssh after finishing the installation.</p><p>If the prompt changes to
-                            <codeph>debian@demo</codeph>, you have successfully connected to the
-                        demo VM.</p></li>
-<li>Before proceeding, enter <codeph>exit</codeph> to disconnect from the demo VM.</li>
+<li>
+<p>Connect to the demo VM using the IP address you obtained from the Horizon console:</p>
+
+<p>
+<codeph>ssh debian@${DEMO_IP}</codeph>
+</p>
+
+<p>
+<b>Note:</b> It might take a few minutes for the demo vm to become available using ssh after finishing the installation.</p>
+
+<p>If the prompt changes to <codeph>debian@demo</codeph>, you have successfully connected to the demo VM.</p>
+</li>
+<li>
+<p>Before proceeding, enter <codeph>exit</codeph> to disconnect from the demo VM.</p>
+</li>
 </ol>
 </section>
 <section id="connectmonitor"> <title>Connecting to the monitoring and logging interfaces</title>
 <p>HP Helion OpenStack Community includes monitoring logging. The monitoring service uses <xref href="../community/community.services-icinga.dita" >Icinga</xref> interface and the logging service uses the Kibana interface.</p>
 <p>You can access these services with the following steps:</p>
 <ol>
-<li>To access the undercloud monitoring console, launch a web browser on the seed cloud host to the
-                    following IP address, using the undercloud IP address from the end of the install:<codeblock><codeph>http://&lt;undercloud IP&gt;/icinga/
-</codeph></codeblock><p>
-                        <b>Example:</b>
-                    </p><codeblock><codeph>http://192.0.2.2/icinga
-</codeph></codeblock><p>If you
-                        did not retrieve the undercloud IP from the end of the install, enter the
-                        following
-                    command:</p><codeblock>
+<li>
+<p>To access the undercloud monitoring console, launch a web browser on the seed cloud host to the following IP address, using the undercloud IP address from the end of the install:</p>
+
+<codeblock>
+<codeph>http://&lt;undercloud IP&gt;/icinga/
+</codeph>
+</codeblock>
+
+<p>
+<b>Example:</b>
+</p>
+
+<codeblock>
+<codeph>http://192.0.2.2/icinga
+</codeph>
+</codeblock>
+
+<p>If you did not retrieve the undercloud IP from the end of the install, enter the following command:</p>
+
+<codeblock>
 <codeph>. /root/stackrc
 UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
 echo $UNDERCLOUD_IP
 </codeph>
-</codeblock></li>
-<li>Log in with the user name <codeph>icingaadmin</codeph> and password
-                    <codeph>icingaadmin</codeph>.</li>
-<li>To access the undercloud logging console, first obtain the Kibana password.<p>a. From the seed
-                        cloud host log in to the undercloud as super
-                        user:</p><codeblock><codeph>ssh heat-admin@&lt;undercloud IP&gt; 
+</codeblock>
+</li>
+<li>
+<p>Log in with the user name <codeph>icingaadmin</codeph> and password <codeph>icingaadmin</codeph>.</p>
+</li>
+<li>
+<p>To access the undercloud logging console, first obtain the Kibana password.</p>
+
+<p>a. From the seed cloud host log in to the undercloud as super user:</p>
+
+<codeblock>
+<codeph>ssh heat-admin@&lt;undercloud IP&gt; 
 sudo su - 
-</codeph></codeblock><p>b.
-                        Enter the following command to display the
-                        password:</p><codeblock><codeph>cat  /opt/kibana/htpasswd.cfg 
-</codeph></codeblock><p>Make
-                        note of the password.</p></li>
-<li>Launch a web browser on the seed cloud host to the following IP address, using the undercloud IP
-                    address from the end of the install:<codeblock><codeph>http://&lt;undercloud IP&gt;:81 
-</codeph></codeblock><p>
-                        <b>Example:</b>
-                    </p><codeblock>
+</codeph>
+</codeblock>
+
+<p>b. Enter the following command to display the password:</p>
+
+<codeblock>
+<codeph>cat  /opt/kibana/htpasswd.cfg 
+</codeph>
+</codeblock>
+
+<p>Make note of the password.</p>
+</li>
+<li>
+<p>Launch a web browser on the seed cloud host to the following IP address, using the undercloud IP address from the end of the install:</p>
+
+<codeblock>
+<codeph>http://&lt;undercloud IP&gt;:81 
+</codeph>
+</codeblock>
+
+<p>
+<b>Example:</b>
+</p>
+
+<codeblock>
 <codeph>http://192.0.2.2:81
 </codeph>
-</codeblock></li>
-<li>Log in with the user name <codeph>kibana</codeph> and the password you obtained above.</li>
+</codeblock>
+</li>
+<li>
+<p>Log in with the user name <codeph>kibana</codeph> and the password you obtained above.</p>
+</li>
 </ol>
 </section>
 <section id="next-step"> <title>Next Step</title>
@@ -152,7 +220,7 @@ sudo su -
 <p>See how to <xref href="../community/community.dashboard.how-works.dita" >use the Horizon dashboard</xref>.</p>
 
 <p>
-<xref type="section" href="#topic4609"> Return to Top </xref>
+<xref href="#topic4609"> Return to Top </xref>
 </p>
 </li>
 </ul>
