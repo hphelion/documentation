@@ -60,10 +60,10 @@
 - reconfiguring and updating the cloud.</p>
 <p>The following diagram provides a high level view of the process flow.</p>
 <p>
-  <xref format="html" href="javascript:window.open('/media/sirius-cli-processflow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')" >Process Flow Diagram (opens in a new window)</xref>
+  <image href="../../media/sirius-cli-processflow.png" placement="break"/>Process Flow Diagram 
 </p>
 <p>
-  <xref type="section" href="#topic21033"> Return to Top </xref>
+  <xref href="#topic21033"> Return to Top </xref>
 </p>
 </section>
 <section id="add-configure-storevirtual"> <title>Add and configure HP StoreVirtual to your cloud inventory</title>
@@ -170,7 +170,7 @@ hplefthand_username=shausy
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic21033"> Return to Top </xref>
+  <xref href="#topic21033"> Return to Top </xref>
 </p>
 </section>
 <section id="add-configure-storeserv"> <title>Add HP 3PAR StoreServ to your cloud inventory and configure</title>
@@ -223,8 +223,8 @@ hplefthand_username=shausy
 +--------------+--------------------------------------+
 </codeph>
 </codeblock>
-<p>
-<b>Note</b>: For more than one iSCSI IP addresses, use a comma separated list . The ports can also be specified along with the IP addresses (separated by colon), if required.</p>
+      <note>For more than one iSCSI IP addresses, use a comma separated list . The ports can also be
+        specified along with the IP addresses (separated by colon), if required.</note>
 <p>
   <i>Example:</i>
 </p>
@@ -320,7 +320,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 </codeph>
 </codeblock>
 <p>
-  <xref type="section" href="#topic21033"> Return to Top </xref>
+  <xref href="#topic21033"> Return to Top </xref>
 </p>
 </section>
 <section id="config-brocade"> <title>Configure HP 3PAR Storeserv as a storage backend with Brocade Zone Manager</title>
@@ -330,9 +330,11 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 </section>
 <section id="reconfigure-update"> <title>Reconfigure and update cloud</title>
 <ol>
-<li>
-  <xref type="section" href="#topic21033/generate-storevirtual-backend-configuration-json">Generate StoreVirtual backend configuration JSON</xref>
-</li>
+<li><xref
+            href="#topic21033/generate-storevirtual-backend-configuration-json-generate-storevirtual-config"
+            format="dita">Generate StoreVirtual
+            backend configuration JSON</xref>
+        </li>
 <li>
 <xref type="section" href="#topic21033/generate-storeserv-config">Generate StoreServ backend configuration JSON</xref>
 </li>
@@ -347,7 +349,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 </ol>
 <p>The backends configured in the undercloud Sirius database will not be effective until the overcloud Cinder configuration is updated.</p>
 </section>
-<section id="generate-storevirtual-backend-configuration-json"> <title>Generate StoreVirtual backend configuration JSON</title>
+<section id="generate-storevirtual-backend-configuration-json-generate-storevirtual-config"> <title>Generate StoreVirtual backend configuration JSON {generate-storevirtual-config}</title>
 <p>You can download the Cinder configuration relevant to HP StoreVirtual for your cloud once you create the backend.</p>
 <p>To generate StoreVirtual backend configuration JSON, enter the following command</p>
 <codeblock>
@@ -547,7 +549,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 <section id="more-information"> <title>More Information</title>
 <p>For the complete list of Sirius CLI commands, refer to  the <xref href="../../commercial/GA1/1.1commercial.sirius-cli.dita" >Sirius Manual</xref>.</p>
 <p>
-  <xref type="section" href="#topic21033"> Return to Top </xref>
+  <xref href="#topic21033"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

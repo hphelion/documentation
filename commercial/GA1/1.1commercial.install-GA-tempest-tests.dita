@@ -221,7 +221,10 @@ run-tempest
 </codeblock>
 </li>
 </ol>
-<p>Note: You can exclude tests for <xref type="section" href="#topic8087/exclude">features that are not available and test not compatible</xref>.</p>
+<p>
+        <note>You can exclude tests for <xref type="section" href="#topic8087/exclude">features that
+            are not available and test not compatible</xref>.</note>
+      </p>
 </section>
 <section id="list"> <title>Run tests matching a series of white and blacklists</title>
 <p>You can run tests against specific scenarios by editing the <codeph>tests2skip.py</codeph> file.</p>

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic14660">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Deploying Additional Scale-out Object Storage (Swift)
-    Nodes</title>
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Deploying Additional Scale-out Object Storage (Swift) Nodes</title>
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack® "/>
-<othermeta name="product-version" content="HP Helion OpenStack®  1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack®  1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack®  1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Ranjan J, Keshava HP, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack® "/>
-<othermeta name="product-version2" content="HP Helion OpenStack®  1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack®  1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack®  1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -25,9 +24,8 @@
  <!--./commercial/GA1/1.1commerical.services-swift-deployment.md-->
  <!--permalink: /helion/openstack/1.1/services/swift/deployment-scale-out/--></p>
 <p>
-      <xref href="../../commercial/GA1/1.0commerical.services-swift-deployment.dita">See the Helion
-        OpenStack1.0 version of this page</xref>
-    </p>
+
+</p>
 <p>The scale-out object storage is realized by defining a new storage policy - storage-policy:1. Object-1 ring is associated with storage-policy:1. This ring is used to store end user data. Once the storage-policy:1 is created, it is the default policy and all of the containers would be on this policy unless otherwise specified. We recommend you to use at least <b>two</b> nodes to implement storage-policy:1. Also, you can extend the object storage by adding one or more nodes to object-ring:1 as per your requirement.</p>
 <p>Perform the following steps to deploy scale-out object-ring:1</p>
 <ol>
@@ -44,11 +42,9 @@
 <xref type="section" href="#topic14660/deploying-scale-out-Swift-object-nodes">Deploy the Scale-out Object Nodes</xref>
 </li>
 <li>
-  <xref type="section" href="#topic14660/verifying-deployed-Swift-nodes">Verify the Deployed Nodes</xref>
-</li>
-<li>
-  <xref type="section" href="#topic14660/preparing-disks-on-swift-nodes">Prepare the Disks on the Deployed Nodes</xref>
-</li>
+        <xref href="#topic14660/verifying-deployed-Swift-nodes" format="dita"/></li>
+<li><xref href="#topic14660/preparing-disks-on-swift-nodes" format="dita"/>
+      </li>
 <li>
 <xref type="section" href="#topic14660/creating-scale-out-object-ring">Create a New Scale-out Object Ring</xref>
 </li>
@@ -59,8 +55,7 @@
 <xref type="section" href="#topic14660/update-storage-scaleout-swift">Update the Storage Policy</xref> </li>
 </ol>
 <section id="preq"> <title>Prerequisites</title>
-<p>A HP Helion OpenStackcloud must be deployed. Functional Swift starter nodes are created as an
-        integral part of cloud deployment.</p>
+<p>A HP Helion OpenStack cloud must be deployed. Functional Swift starter nodes are created as an integral part of cloud deployment.</p>
 </section>
 <section id="define-object-ring:1"> <title>Define the Ring Attributes of Object Ring-1</title>
 <p>
@@ -73,36 +68,47 @@
           <colspec colname="col2" colsep="1" rowsep="1"/>
           <colspec colname="col3" colsep="1" rowsep="1"/>
           <thead>
-            <row rowsep="1">
+            <row>
               <entry>Attributes</entry>
-              <entry>Definition</entry>
-              <entry>Recommendation</entry>
+              <entry><ph>Definition</ph>
+              </entry>
+              <entry><ph>Recommendation</ph>
+              </entry>
             </row>
           </thead>
           <tbody>
             <row>
-              <entry> Zone </entry>
+              <entry>
+                <b>Zone</b>
+              </entry>
               <entry>Defines single point of failure within your cluster. </entry>
               <entry>It is recommended to use a single zone with multiple servers. Having multiple
                 servers (at least three) ensures that the replicas are distributed across servers,
                 not all on one.</entry>
             </row>
             <row>
-              <entry> Replica Count </entry>
+              <entry>
+                <b>Replica Count</b>
+              </entry>
               <entry>Defines the number of copies of objects created.</entry>
               <entry>The recommended value is 3.</entry>
             </row>
             <row>
-              <entry> Part Power </entry>
-              <entry>Defines the storage cluster capacity. Set the <i>partition power</i> value
-                based on the total amount of storage you expect your entire ring to use.</entry>
+              <entry>
+                <b>Part Power</b>
+              </entry>
+              <entry>Defines the storage cluster capacity. Set the <varname>partition
+                  power</varname> value based on the total amount of storage you expect your entire
+                ring to use.</entry>
               <entry> The parameter is an exponent: 2^X. Assuming that the average available drive
                 capacity is 1-3 TB. For the partition power values, refer to <xref
-                  href="1.1commerical.services-swift-deployment-part-power.dita#topic1674"/>
-              </entry>
+                  href="1.1commerical.services-swift-deployment-part-power.dita">Ring Power and
+                  Number of Partitions</xref>. </entry>
             </row>
             <row>
-              <entry>Min part hour </entry>
+              <entry>
+                <b>Min part hour</b>
+              </entry>
               <entry>This should be set to however long a full replication/update cycle takes. No
                 partition is moved twice during the specified amount of time.</entry>
               <entry> The recommended value is 24 hours. Note that this restriction is ignored in
@@ -118,9 +124,10 @@
           <colspec colname="col1" colsep="1" rowsep="1"/>
           <colspec colname="col2" colsep="1" rowsep="1"/>
           <thead>
-            <row rowsep="1">
-              <entry colsep="1" rowsep="1">Attributes</entry>
-              <entry colsep="1" rowsep="1">Definition</entry>
+            <row>
+              <entry>Attributes</entry>
+              <entry><ph>Definition</ph>
+              </entry>
             </row>
           </thead>
           <tbody>
@@ -129,8 +136,8 @@
                 <b>Disk Label</b>
               </entry>
               <entry>Defines disk label of the disk. For more information refer to <xref
-                  type="section" href="#topic14660/preparing-disks-on-swift-nodes">Preparing disks
-                  on Swift nodes</xref>.  </entry>
+                  href="#topic14660/preparing-disks-on-swift-nodes" format="dita">Preparing disks on Swift nodes</xref>
+              </entry>
             </row>
             <row>
               <entry>
@@ -163,17 +170,18 @@
 <i>ringos</i>
 </b> utility you can add the <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.dita" >provisioned nodes</xref> to the Swift cluster.</p>
 <ol>
-<li> Enable SSH from the undercloud to the overcloud node by copying the SSH keys from the seed to
+<li>Enable SSH from the undercloud to the overcloud node by copying the SSH keys from the seed to
           the undercloud.</li>
-<li> Log in to the
+<li>Log in to the
           seed.<codeblock><codeph># ssh root@&lt;seed IP address&gt;
 </codeph></codeblock></li>
-<li> Copy the SSH key from the seed cloud to
+<li>Copy the SSH key from the seed cloud to
           undercloud.<codeblock><codeph># scp ~/.ssh/id_rsa heat-admin@&lt;\undercloud IP address&gt;:/home/heat-admin
 </codeph></codeblock></li>
-<li> Log in to the
+<li>Log in to the
           undercloud.<codeblock><codeph># ssh heat-admin@&lt;undercloud IP address&gt;
 # sudo -i
+
 # mv ~heat-admin/id_rsa ~/.ssh/ 
 </codeph></codeblock></li>
 </ol>
@@ -185,10 +193,10 @@
 Before starting the deployment of scale-out object nodes you must configure the `kvm-default.json` file. If `kvm-default.json` has already been created during installation, edit the file instead.-->
 Perform the following steps to deploy scale-out Object nodes:</p>
 <ol>
-<li> Log in to the
+<li>Log in to the
           seed.<codeblock><codeph>ssh root@&lt;seed IP address&gt;
 </codeph></codeblock></li>
-<li> Update the <codeph>so_swift_storage_scale</codeph> parameter in the environment variables file,
+<li>Update the <codeph>so_swift_storage_scale</codeph> parameter in the environment variables file,
           used during the initial installation, according to your storage
             needs.<!--    
 2. Update the `so_swift_storage_scale` parameter in  `/root/configs/kvm-custom-ips.json ` file according to your storage needs.--><p>Refer
@@ -196,12 +204,11 @@ Perform the following steps to deploy scale-out Object nodes:</p>
               href="../../commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.dita"
               >Provisioning Swift node(s)</xref> for details of adding physical server for scale-out
             Swift in <codeph>baremetal.csv</codeph> file.</p></li>
-<li> Enter the following command to source the environment variables file for the new
+<li>Enter the following command to source the environment variables file for the new
             values.<codeblock><codeph># source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/&lt;environment variables file name&gt;
-</codeph></codeblock>
-  <p>For example:</p>
-<codeblock># source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-custom-ips.json</codeblock>
-  <!--
+</codeph></codeblock><p>For
+            example:</p><codeblock><codeph># source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-custom-ips.json
+</codeph></codeblock><!--
 3. Enter the following command to source the `kvm-default.json`  for the new values.
 
         # source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
@@ -222,18 +229,18 @@ Perform the following steps to deploy scale-out Object nodes:</p>
 <section id="verifying-deployed-Swift-nodes"> <title>Verify the Deployed Nodes</title>
 <p>Perform the following steps to verify the deployment of Swift nodes:</p>
 <ol>
-<li> Log in to the undercloud from the
+<li>Log in to the undercloud from the
           seed.<codeblock><codeph># ssh heat-admin@&lt;undercloud IP address&gt; 
 # sudo -i
 </codeph></codeblock></li>
-<li> Source <codeph>stackrc</codeph> using the following
+<li>Source <codeph>stackrc</codeph> using the following
           command:<codeblock><codeph># source stackrc 
 </codeph></codeblock></li>
 <li>List the available scale-out Swift
             nodes.<codeblock><codeph># ringos list-swift-nodes -t object
 </codeph></codeblock><p>The
             following sample displays scale-out Swift
-          nodes:</p><codeblock><codeph>+-------------+
+          nodes:</p><codeblock><codeph>+--------------+
 | object-nodes |
 +--------------+
 | 192.0.2.29   |
@@ -244,7 +251,7 @@ Perform the following steps to deploy scale-out Object nodes:</p>
             node.<codeblock><codeph># ringos list-disks -n &lt;object nodes IP address&gt; 
 </codeph></codeblock><p>The
             following sample displays the disk available on the node
-          <b>192.0.2.29</b>.</p><codeblock><codeph>+----------+-----------+
+          <b>192.0.2.29</b>.</p><codeblock><codeph>+----------+------------+
 | disk     | size       |
 +----------+------------+
 | /dev/sda | 1073741824 |
@@ -261,7 +268,7 @@ Perform the following steps to deploy scale-out Object nodes:</p>
 <codeblock><codeph># ringos format-disks -n &lt;object node IP address&gt; -d all
 </codeph></codeblock>
 <p>The following sample displays the output of formatted disk of <b>192.0.2.29</b>.</p>
-<codeblock><codeph>+----------+-----------+---------+---------------------------------+-------------+-----------+
+<codeblock><codeph>+----------+-----------+---------+---------------------------------+-------------+------------+
 | disk     | formatted | mounted | mount_point                     | label       | size       |
 +----------+-----------+---------+---------------------------------+-------------+------------+
 | /dev/sda | y         | y       | /mnt/state/srv/node/a1410063335 | a1410063335 | 1073741824 |
@@ -272,7 +279,7 @@ Perform the following steps to deploy scale-out Object nodes:</p>
 <codeblock><codeph># ringos format-disks -n &lt;object node IP address&gt; -d /dev/sdb -f
 </codeph></codeblock>
 <p>The following sample displays the output of forceful formatted disk.</p>
-<codeblock><codeph>+----------+-----------+---------+-------------+-------+-----+
+<codeblock><codeph>+----------+-----------+---------+-------------+-------+------+
 | disk     | formatted | mounted | mount_point | label | size |
 +----------+-----------+---------+-------------+-------+------+
 | /dev/sdb | -         | -       | -           | -     | -    |
@@ -280,16 +287,17 @@ Perform the following steps to deploy scale-out Object nodes:</p>
 +----------+-----------+---------+-------------+-------+------+
 </codeph></codeblock>
 <p>
-<b>Note</b>: You can also format disks individually by using <codeph>-d &lt;device-name&gt;</codeph>.
-For more details, see the <xref href="../../commercial/GA1/1.1commerical.services-object-pyringos.dita" >ringos</xref> manual.</p>
+        <note>You can also format disks individually by using <codeph>-d
+            &lt;device-name&gt;</codeph>. For more details, see the <xref
+            href="../../commercial/GA1/1.1commerical.services-object-pyringos.dita">ringos</xref>
+          manual.</note>
+      </p>
 <p>Repeat the above steps for all of the object nodes.</p>
 </section>
 <section id="creating-scale-out-object-ring"> <title>Create a New Scale-out Object Ring</title>
-<p>Once the disk is formatted you can create a scale-out object ring. This ring is created for the
-        scale-out Swift which is an extension of the Starter Swift nodes which are installed by
-        default during HP Helion OpenStackcloud deployment.</p>
+<p>Once the disk is formatted you can create a scale-out object ring. This ring is created for the scale-out Swift which is an extension of the Starter Swift nodes which are installed by default during HP Helion OpenStack cloud deployment.</p>
 <ol>
-<li> Create a directory named
+<li>Create a directory named
           <codeph>ring-building</codeph>.<codeblock><codeph># mkdir -p /root/ring-building
 # cd /root/ring-building
 </codeph></codeblock></li>
@@ -304,13 +312,13 @@ created ring /root/ring-building/object-1.builder
 </codeph></codeblock></li>
 <li>Add the disk to the ring.<codeblock><codeph># ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  &lt;object node IP address&gt; -p  &lt;port&gt; -d &lt;disk label&gt; -w &lt;weight&gt; -r &lt;region&gt; -z &lt;zone&gt;
 </codeph></codeblock><p>
-            <b>Note:</b> You can use the labels and disks which are obtained in the output of the
-            section <xref type="section" href="#topic14660/preparing-disks-on-swift-nodes">Preparing
-              disks on Swift nodes</xref>. For more information on the ring attributes refer to
-              <xref type="section" href="#topic14660/define-object-ring:1">Defining ring attributes
-              of object-ring:1</xref>.</p><p>The following sample displays the addition of disk to
-              <b>192.0.2.29</b> and its
-          output.</p><codeblock><codeph># ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i 192.0.2.29 -p 6000 -d a1410063335 -w 100 -r 1 -z 1
+            <note> You can use the labels and disks which are obtained in the output of the section
+                <xref type="section" href="#topic14660/preparing-disks-on-swift-nodes">Preparing
+                disks on Swift nodes</xref>. For more information on the ring attributes refer to
+                <xref type="section" href="#topic14660/define-object-ring:1">Defining ring
+                attributes of object-ring:1</xref>.</note>
+          </p><p>The following sample displays the addition of disk to <b>192.0.2.29</b> and its
+            output.</p><codeblock><codeph># ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i 192.0.2.29 -p 6000 -d a1410063335 -w 100 -r 1 -z 1
 Added disk 192.0.2.29:a1410063335 to ring
 </codeph></codeblock></li>
 <li>Verify the content of <codeph>object-1.builder</codeph> file to ensure that it meets your
@@ -343,14 +351,15 @@ Devices:id  region  zone  ip address  port  replication ip  replication port  na
             nodes.<codeblock><codeph># ringos list-swift-nodes -t starter
 </codeph></codeblock><p>The
             following sample displays the list of Starter Swift
-          nodes.</p><codeblock><codeph>+--------------+
+          nodes.</p><codeblock><codeph>+---------------+
 | starter-nodes |
 +---------------+
 | 192.0.2.22    |
 | 192.0.2.24    |
 +---------------+
 </codeph></codeblock></li>
-<li>Get all the rings and builder files from either of the starter
+<li>Get all the rings (first three files in the sample below) and builder files (last three files)
+          from either of the starter
             nodes.<codeblock><codeph>rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP address&gt;:/etc/swift/object.ring.gz /root/ring-building/
 rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP address&gt;:/etc/swift/account.ring.gz /root/ring-building/
 rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP address&gt;:/etc/swift/container.ring.gz /root/ring-building/
@@ -358,7 +367,7 @@ rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP addre
 rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP address&gt;:/etc/swift/account.builder /root/ring-building/
 rsync -qzp --rsync-path="sudo rsync" heat-admin@&lt;starter Swift nodes IP address&gt;:/etc/swift/container.builder /root/ring-building/
 </codeph></codeblock><p>The
-            following sample displays all the rings and builder files from <b>19.0.2.22</b>
+            following sample displays all three rings and three builder files from <b>19.0.2.22</b>
           </p><codeblock><codeph>rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/object.ring.gz /root/ring-building/
 rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/account.ring.gz /root/ring-building/
 rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/container.ring.gz /root/ring-building/
@@ -366,8 +375,9 @@ rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/object.buil
 rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/account.builder /root/ring-building/
 rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/container.builder /root/ring-building/
 </codeph></codeblock><p>
-            <b>Note</b>: The ring files are identical on both the starter swift nodes. You can copy
-              <b>.gz</b> files in either of the starter nodes as they are identical.</p></li>
+            <note>The ring files are identical on both the starter Swift nodes. You can copy
+                <b>.gz</b> files in either of the starter nodes as they are identical.</note>
+          </p></li>
 <li>List all the Swift
           nodes.<codeblock><codeph># ringos list-swift-nodes -t  all
 </codeph></codeblock></li>
@@ -388,10 +398,11 @@ Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
 <li>Copy <codeph>object-1.builder</codeph> files to all Swift nodes and press <b>yes</b> when asked
           to authenticate node.<codeblock><codeph># ringos copy-ring -s /root/ring-building/\*.builder -n &lt;Swift node IP address&gt;
 </codeph></codeblock><p>
-            <b>Note</b>: The <codeph>.buldier</codeph> and <codeph>.ring.gz</codeph> files
-              <b>must</b> be present in the Swift nodes.</p></li>
+            <note> The <codeph>.buldier</codeph> and <codeph>.ring.gz</codeph> files <b>must</b> be
+              present in the Swift nodes.</note>
+          </p></li>
 </ol>
-<p>You can also copy the ring or builder files to all the swift nodes:</p>
+<p>You can also copy the ring or builder files to all the Swift nodes:</p>
 <codeblock><codeph># ringos copy-ring -s /root/ring-building/\*.ring.gz -n all
 
 # ringos copy-ring -s /root/ring-building/\*.builder -n all 
@@ -432,7 +443,9 @@ Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
     ]
   }
 }
-</codeph></codeblock><!--3. Source the `kvm-default.json` file.
+</codeph></codeblock><!--
+
+3. Source the `kvm-default.json` file.
 
     # source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
 --></li>
@@ -446,7 +459,7 @@ Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
 </codeph></codeblock></li>
 </ol>
 <p>
-  <xref type="section" href="#topic14660"> Return to Top </xref>
+  <xref href="#topic14660"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -185,16 +185,16 @@ For more information, see [Managing Moonshot Servers](/helion/openstack/1.1/inst
 </p>
 <ul>
 <li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177937" scope="external" format="html" >SL230s Gen8</xref>
+<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177937" scope="external" format="html">SL230s Gen8</xref>
 </li>
 <li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177941" scope="external" format="html" >SL250s Gen8</xref>
+<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177941" scope="external" format="html">SL250s Gen8</xref>
 </li>
 <li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177945" scope="external" format="html" >SL270s Gen8</xref>
+<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177945" scope="external" format="html">SL270s Gen8</xref>
 </li>
 <li>
-<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7611044" scope="external" format="html" >SL4540 Gen8</xref>
+<xref href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7611044" scope="external" format="html">SL4540 Gen8</xref>
 </li>
 </ul>
 <p>
@@ -202,7 +202,7 @@ For more information, see [Managing Moonshot Servers](/helion/openstack/1.1/inst
 </p>
 <ul>
 <li>
-<xref href="http://www-03.ibm.com/systems/x/hardware/rack/x3550m4/" scope="external" format="html" >IBM System x3550 M4 Server</xref>
+<xref href="http://www-03.ibm.com/systems/x/hardware/rack/x3550m4/" scope="external" format="html">IBM System x3550 M4 Server</xref>
 </li>
 </ul>
 <p>
@@ -210,7 +210,7 @@ For more information, see [Managing Moonshot Servers](/helion/openstack/1.1/inst
 </p>
 <ul>
 <li>
-<xref href="http://www.dell.com/us/business/p/poweredge-r620/pd" scope="external" format="html" >Power Edge R620</xref>
+<xref href="http://www.dell.com/us/business/p/poweredge-r620/pd" scope="external" format="html">Power Edge R620</xref>
 </li>
 </ul>
 -->
@@ -258,7 +258,9 @@ HP supports the following configurations for HP Helion OpenStack deployment:
 <p>On the controller and compute nodes, make sure the RAID array is configured to reflect a total size of less than 4TB.</p>
 </li>
 </ul>
-<p>The following table lists the minimum requirements required for installation of each type of node. See the <xref href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita" >Technical Overview</xref> for an architecture diagram.</p>
+<p>The following table lists the minimum requirements required for installation of each type of
+        node. See the <xref href="carrier-grade-technical-overview.dita#topic3485">Technical
+          Overview</xref> for an architecture diagram.</p>
    
   <p>For a GEN9 Rackmount Base</p>
   
@@ -511,8 +513,7 @@ or
     </section>
 <section>  
   Next
-        Step<p>Review the <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita"
-          >Technical Overview</xref>.</p><p>
+        Step<p>Review the <xref href="../../commercial/GA1/1.1commercial.technical-overview.ga.dita">Technical Overview</xref>.</p><p>
         <xref type="section" href="#topic5769"> Return to Top </xref>
       </p><!-- ===================== horizontal rule ===================== --></section>
 </body>

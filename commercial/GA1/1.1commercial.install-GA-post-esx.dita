@@ -33,7 +33,7 @@
 <p>You can create and deploy a Microsoft Windows Server that is Microsoft SVVP (Server Virtualization Validation Program) compliant on HP Helion OpenStack as a Nova compute VM.</p>
 <p>See <xref href="../../commercial/GA1/1.1commercial.create-deploy-certified-microsoft-windows-guest-image.dita" >How to build a Microsoft Windows Server guest image for HP Helion OpenStack</xref>.</p>
 <p>
-  <xref type="section" href="#topic1739"> Return to Top </xref>
+  <xref href="#topic1739"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

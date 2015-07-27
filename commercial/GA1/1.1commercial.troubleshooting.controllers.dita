@@ -69,8 +69,8 @@ ironic port-create --address &lt;MAC&gt; --node_uuid &lt;UUID&gt;
 </codeblock>
 </li>
 </ul>
-<p>
-<b>Note:</b> If you see the following error after runing<codeph>os-refresh-config</codeph>, re-run the command.</p>
+          <note>If you see the following error after runing<codeph>os-refresh-config</codeph>,
+            re-run the command.</note>
 
 <codeblock>
 <codeph>        ERROR: os-refresh-config:Could not lock /var/run/os-refresh-config.lock. [Errno 11] Resource temporarily unavailable.
@@ -212,10 +212,9 @@ If this error occurs, **confirm** that the cause is an ISCSI error.
   <codeph>service keepalived restart
 </codeph>
 </codeblock>
+      <note> API requests will fail until the new keepalived cluster restarts.</note>
 <p>
-<b>Note</b>: API requests will fail until the new keepalived cluster restarts.</p>
-<p>
-  <xref type="section" href="#topic2919"> Return to Top </xref>
+  <xref href="#topic2919"> Return to Top </xref>
 </p>
 </section>
 </body>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1246">
+<title>HP Helion Public Cloud Block Storage Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./publiccloud/block-storage.md-->
+ <!--permalink: /publiccloud/block-storage/--></p>
+<p>The HP Cloud Block Storage service provides additional storage for your HP Cloud Compute instances. HP Block Storage protects your data in the event an instance fails.</p>
+<p>Block Storage allows you to connect storage volumes to running instances, providing additional storage for your applications. You can detach a storage volume from one instance and attach the volume to another instance. You can create multiple copies of a volume to attach to multiple instances.</p>
+<p>If configured as a bootable volume, you can create an instance with that volume and shutdown the instance and boot it up at a later time, while preserving all your data.</p>
+<p>You can take Snapshots to easily copy a volume before making significant changes to it.  Custom volumes ranging in sizes from 1 GB to 2 TB can be created using a variety of file system types.</p>
+<section id="api"> <title>API</title>
+<p>Do you need low level, raw REST API access to HP Helion Public Cloud Block Storage?  Check out Block Storage API page for the HP Helion Public Cloud version you are using:</p>
+<ul>
+<li>
+<xref href="../publiccloud/api/cinder-api.dita" >
+<b>Block Storage API page</b>
+</xref>
+</li>
+</ul>
+</section>
+</body>
+</topic>

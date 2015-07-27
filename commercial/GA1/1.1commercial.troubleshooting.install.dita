@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
-  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd"><topic xml:lang="en-us" id="topic39140">
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic39140">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1: Installation Troubleshooting</title>
 <prolog>
 <metadata>
@@ -28,13 +28,13 @@
 <p>This Helion installation troubleshooting guide is written for Helion OpenStack installers who, during or after building the Helion OpenStack environment, find that the cloud environment does not work as expected. The Helion OpenStack environment is not itself complex but it does include a sufficient number of components that isolating a fault can be challenging.</p>
 <p>The goal of this guide is to help you to identify the problem or problems affecting your cloud installation and efficiently fix them.<!--A BR tag was used here in the original source.-->
 For help with troubleshooting Helion OpenStack 1.1 general issues, refer to:
-  <xref href="1.0commercial.troubleshooting.dita" >Troubleshooting Helion</xref>
+  <xref href="1.0commercial.troubleshooting.dita">Troubleshooting Helion</xref>
 </p>
 <section id="installing-the-cloud-environment"> <title>Installing the cloud environment</title>
 <p>Helion OpenStack installation requirements are fully documented in the support matrix at:
-<xref href="1.1commercial.install-GA-supportmatrix.dita">Support Matrix</xref>
+  <xref href="1.1commercial.install-GA-supportmatrix.dita">Support Matrix</xref>
 The process of building the seed cloud host, creating the seed VM, the overcloud, and the undercloud are described at: 
-<xref href="1.1commercial.install-GA-overview.dita">Helion installation overview</xref>
+  <xref href="1.1commercial.install-GA-overview.dita">Helion installation overview</xref>
 At each step, you should have confirmation that what you have done works. At the conclusion of each major installation process, you will have confirmation that your installation works or does not. If you encounter issues, you should fix them before proceeding. After taking all these steps to resolve an error being reported, you may find that your cloud installation still does not work. This document will help you troubleshoot that experience.</p>
 </section>
 <section id="helion-installation"> <title>Helion installation</title>
@@ -151,7 +151,7 @@ At each step, you should have confirmation that what you have done works. At the
 <li>If the iLO console halts at <codeph>br-ctlplane</codeph> and you cannot reach the undercloud, and you are using Oneview, there is a patch for this. Or, remove Oneview. This problem can also be caused because there is more than one active connection. </li>
 </ul>
 </section>
-<section id="the-installer-terminates-abruptly"> <title>The installer terminates abruptly</title>
+<section id="the-installer-terminates-abruptly2"> <title>The installer terminates abruptly</title>
 <p>This issue can happen:</p>
 <ul>
 <li>If your disk size is less than what you specify in the <codeph>baremetal.csv</codeph> file, reduce the size in your .csv file.</li>
@@ -190,7 +190,7 @@ At each step, you should have confirmation that what you have done works. At the
 <li>If the Undercloud Nova list and Ironic node-list report node states as being <codeph>Active</codeph> and <codeph>Power ON</codeph>, the problem is somewhere in the overcloud Heat stack. To check this, run the <codeph>heat</codeph> <codeph>stack-show</codeph>, <codeph>event-list</codeph>, <codeph>event-show</codeph> commands. Check your logs. Also SSH into the overcloud nodes in your external VLAN and verify that routing is set correctly.</li>
 </ul>
 </section>
-<section id="the-installer-terminates-abruptly2"> <title>The installer terminates abruptly</title>
+<section id="the-installer-terminates-abruptly3"> <title>The installer terminates abruptly</title>
 <p>This issue can happen:</p>
 <ul>
 <li>If your disk size is less than what you specify in the <codeph>baremetal.csv</codeph> file, reduce the size in your .csv file.</li>
@@ -292,8 +292,9 @@ When you experience a crash, always check for corrupted data. Before you restart
 <xref type="section" href="#topic39140/ephemeral-fail-unmount">Ephemeral partition fails to unmount</xref>
 </li>
 <li>
-<xref type="section" href="#topic39140/BIOS-clocks-are-not-set-to-correct-date">BIOS clocks are not set to correct date and time across all nodes</xref>
-</li>
+          <xref href="#topic39140/bios-clocks-are-not-set-to-correct-date" format="dita">BIOS clocks
+            are not set to correct date and time across all nodes</xref>
+        </li>
 <li>
 <xref type="section" href="#topic39140/ilo-console">iLO console shows hLinux daemon.err tgtd while PXE booting</xref>
 </li>
@@ -413,7 +414,7 @@ To check if nodes are in maintenance state, source the undercloud credentials:</
 </ol>
 </section>
 <section id="if-all-else-fails"> <title>If all else fails</title>
-<p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html">HP Customer Support</xref>. Before contacting HP Customer Support, run the <codeph>run-sosreport</codeph> command on the affected nodes. The <codeph>run-sosreport</codeph> command will gather specific reports that will help diagnose your issue. You do not need to be admin (root) to run this command.</p>
+<p>If you need further assistance, contact <xref href="http://www.hpcloud.com/about/contact" scope="external" format="html" >HP Customer Support</xref>. Before contacting HP Customer Support, run the <codeph>run-sosreport</codeph> command on the affected nodes. The <codeph>run-sosreport</codeph> command will gather specific reports that will help diagnose your issue. You do not need to be admin (root) to run this command.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 <section id="fatal-pci"> <title>Fatal PCI Express Device Error</title>
@@ -631,7 +632,7 @@ Once restarted, re-run the overcloud ansible playbook and not the <codeph>update
 </ol>
 <!-- ===================== horizontal rule ===================== -->
 </section>
-  <section id="BIOS-clocks-are-not-set-to-correct-date"> <title>BIOS clocks are not set to correct date and time across all nodes</title>
+<section id="bios-clocks-are-not-set-to-correct-date"> <title>BIOS clocks are not set to correct date and time across all nodes</title>
 <p>
   <b>System Behavior/Message</b>
 </p>
@@ -855,9 +856,7 @@ start: Unknown job: libvirt-bin
 </p>
 <p>This problem can be caused by your use of <codeph>sudo ?E</codeph> when executing the <codeph>hp_ced_host_manager</codeph>. Run  <codeph>hp_ced_host_manager</codeph> without specifying <codeph>sudo ?E</codeph>.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p>
-  <!--A BR tag was used here in the original source.-->
-</p>
+<p/>
 </section>
 <section id="ironic-error"> <title>Node in Error Cannot be Controlled by Ironic or Nova</title>
 <p>
@@ -903,7 +902,7 @@ A a node being controlled by the seed or undercloud cannot be controlled either 
 <p>
 <b>Before you Begin</b>:</p>
 <ul>
-<li>Deploy a <xref href="http://docs.openstack.org/user-guide-admin/content/specify-host-to-boot-instances-on.html" scope="external" format="html">debug host on the same compute host</xref> as the target Windows instance.</li>
+<li>Deploy a <xref href="http://docs.openstack.org/user-guide-admin/content/specify-host-to-boot-instances-on.html" scope="external" format="html" >debug host on the same compute host</xref> as the target Windows instance.</li>
 <li>The user will need to be able to log into the host with <i>superuser</i> privileges. To safely gain superuser privileges, add <codeph>sudo</codeph> as a prefix to each command executed.</li>
 </ul>
 <p>
@@ -1044,7 +1043,7 @@ A a node being controlled by the seed or undercloud cannot be controlled either 
 </ul>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-  <xref type="section" href="#topic39140"> Return to Top </xref>
+  <xref href="#topic39140"> Return to Top </xref>
 </p>
 </section>
 </body>

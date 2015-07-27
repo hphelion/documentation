@@ -82,7 +82,7 @@ Your use is subject to the following restrictions, unless specifically allowed i
 <p>
 <b>15. Australian Consumers.</b> If you acquired the software as a consumer within the meaning of the 'Australian Consumer Law' under the Australian Competition and Consumer Act 2010 (Cth) then despite any other provision of this Agreement, the terms at this URL apply: <xref href="http://www.hp.com/go/SWLicensing" scope="external" format="html" >http://www.hp.com/go/SWLicensing</xref>.</p>
 <p>
-  <xref type="section" href="#topic15959"> Return to Top </xref>
+  <xref href="#topic15959"> Return to Top </xref>
 </p>
 </section>
 <section id="auth"> <title>Part 2: Additional License Authorizations for Software</title>
@@ -143,13 +143,13 @@ Subject to Customer's compliance with the terms and conditions of this Agreement
 <p>
 <b>m.</b> The OpenStack word mark and the Square O Design, together or apart, are trademarks or registered trademarks of OpenStack Foundation in the United States and other countries, and are used with the OpenStack Foundation's permission.</p>
 <p>
-  <xref type="section" href="#topic15959"> Return to Top </xref>
+  <xref href="#topic15959"> Return to Top </xref>
 </p>
 </section>
 <section id="ancilliary"> <title>Part 3: Ancillary and Open Source Software</title>
 <p>Additional license authorizations related to ancillary, third party and open source software components are available at: <xref href="../../commercial/GA1/1.13rd-party-license-agreements.dita" >HP Helion OpenStack Open Source and Third-Party Software License Agreements</xref>.</p>
 <p>
-  <xref type="section" href="#topic15959"> Return to Top </xref>
+  <xref href="#topic15959"> Return to Top </xref>
 </p>
 </section>
 </body>

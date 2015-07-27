@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic856">
+<title>HP Helion Public Cloud CLI Software for Windows PowerShell: Working with Meta-Data</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./publiccloud/cli.windows.2.metadata.md-->
+ <!--permalink: /publiccloud/cli/windows/metadata/--></p>
+<p>When required, you have the ability to store user defined meta-data along with the objects placed within a Container. This is accomplished with the  set-metadata cmdlet. Input values for this parameter are a series of one to many key value pairs. Each Key Value pair must be enclosed in quotes and separated by the Pipe (|) character. Individual Key Values Pairs are delimited by a comma. For example..</p>
+<p>
+  <image href="../media/Metadata.png">
+<alt/>
+</image>
+</p>
+<p>In addition, you can also see how one would view meta-data on an existing object with the Get-MetaData command.</p>
+<p>Recommended Links</p>
+<ul>
+<li>
+<xref href="../publiccloud/cli.windows.2.dita" >Index</xref>
+</li>
+<li>
+<xref href="../publiccloud/cli.windows.2.misc.dita" >Misc Features</xref>
+</li>
+</ul>
+</body>
+</topic>

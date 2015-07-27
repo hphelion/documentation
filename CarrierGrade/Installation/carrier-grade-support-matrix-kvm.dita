@@ -20,7 +20,7 @@
 <!--UNDER REVISION-->
  <!--./CarrierGrade/Installation/carrier-grade-support-matrix-wr.md-->
  <!--permalink: /helion/openstack/carrier/support-matrix/wr/--></p>
-    <p> <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix.dita">▲ HP Helion OpenStack Carrier Grade 1.1: Support Matrix</xref> | <xref href="carrier-grade-support-matrix-non-kvm.dita" > Support Matrix for the Non-KVM Region ▶ </xref>  </p>
+
 <!-- Taken from Titanium Server Software Release Notes, 15.05 -->
 <p>To ensure the performance and stability of the systems running in the KVM region of the HP Helion OpenStack Carrier Grade environment, it is very important to
  meet the requirements and conform to the following recommendations.</p>

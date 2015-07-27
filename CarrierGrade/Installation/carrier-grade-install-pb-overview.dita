@@ -21,10 +21,8 @@
 <p>The HP Helion OpenStack Carrier Grade installation installs HP Helion Lifecycle Management, creates a base HP Helion OpenStack cloud, <!--configures network virtualization through HP Distributed Cloud Networking (DCN),--> and deploys 
   a carrier grade cloud.</p>
 <p>After installation, you can interact with the HP Helion OpenStack cloud using the <xref
-          href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita"
-          >Horizon graphical interface</xref> or using the CLIs of the respective <xref
-          href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita"
-        >services</xref>.</p>
+          href="../../CarrierGrade/ServicesOverviews/carrier-grade-services-horizon-overview.dita">Horizon graphical interface</xref> or using the CLIs of the respective <xref
+          href="../../CarrierGrade/Overview/carrier-grade.services-overview.dita">services</xref>.</p>
 </section>
   <section id="install-option"> <title>Installation options</title>
     <p>HP Helion OpenStack is provided with two baremetal installation options depending on your system configuration.  It allows you to manage the KVM and ESX hypervisors and provision virtual machines.</p>
@@ -44,34 +42,56 @@
   <section id="esx-hypervisor"> <title>ESX Hypervisor</title>
     <p>HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Compute node scheduler sees each cluster as compute and uses the same for scheduling a new instances.</p>
     <p>The ESX integration uses the OVSvApp application to connect the vCenter networking to the Network Operations controller to manage workload networks.</p>
-    <p>The HP Virtual Cloud Networking (VCN) application is an enhanced Networking Operations (Neutron) module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.</p>
+      <p>The HP Distributed Cloud Networking (DCN) is a software-Defined Networking (SDN) solution
+        that enhances data center (DC) network virtualization by automatically establishing
+        connectivity between compute resources upon their creation.</p>
   </section>
   
 <section id="installation-process"> <title>Installation process</title>
 <p>Use the following process to install HP Helion OpenStack Carrier Grade in a baremetal environment.</p>
 <ol>
-<li>Review the <xref href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita"
-            >Technical Overview</xref> for information on the HP Helion OpenStack Carrier Grade
-          environment.</li>
+<li>Review the <xref href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita">Technical Overview</xref> for information on the HP Helion OpenStack Carrier Grade
+          environment.
+  <ul>
+    <li>Review the Cloud Topologies (pls see new section added) to decide appropriate topology for your use case.</li> 
+    <li>Review Deployment architecture for different hypervisors</li>
+    <li>Review Network architecture for networking needs</li>
+  </ul></li>
         <li>Review the <xref href="carrier-grade-support-matrix2.dita#topic1773">Support
             Matrix</xref> to make sure your environment meets the minimum requirements.</li>
 <li> Perform any required or optional <xref
-            href="../../CarrierGrade/Installation/carrier-grade-install-pb-prereqs-GA.dita"
-            >installation prerequisites</xref>. </li>
+            href="../../CarrierGrade/Installation/carrier-grade-install-pb-prereqs-GA.dita">installation prerequisites</xref>. </li>
 <li>
-          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-network-prepare-GA.dita"
-            >Prepare the network for installation</xref>
+          <xref href="../../CarrierGrade/Installation/carrier-grade-install-pb-network-prepare-GA.dita">Prepare the network for installation</xref>
         </li>
-  <li> Install the <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">HLM and the HP Helion OpenStack environments</xref>. These components
-  will be installed into what is called the <i>Non-KVM region</i>.</li>
-  <li>Install the <xref href="carrier-grade-install-kvm-cloud-GA.dita#topic1107">carrier grade cloud</xref>. The carrier grade cloud is deployed into
-    what is called the <i>KVM region</i></li>
+  <li>Install the cloud topologies: 
+    
+          <ul>
+            <li>Denver Topology:
+              <ul>
+            <li> Install the <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">HLM and
+                the HP Helion OpenStack environments</xref>. These components will be installed into
+              what is called the <i>Non-KVM region</i>.</li>
+            <li>Install the carrier grade cloud. The carrier grade cloud is deployed into what is
+              called the KVM region.</li>
+          </ul></li></ul>
+          <ul>
+            <li>Memphis Topology: 
+              <ul>
+                <li>Install the HLM and the HP Helion OpenStack environments. These components will
+                  be installed into what is called the Non-KVM region ESX hypervisor with DCN
+                  networking.</li>
+                <li>Install the <xref href="carrier-grade-install-kvm-cloud-GA.dita#topic1107"
+                    >carrier grade cloud</xref>. The carrier grade cloud is deployed into what is
+                  called the <i>KVM region</i></li>
+              </ul>
+            </li>
+          </ul></li>
 </ol>
 </section>
   
 <section id="first-step"> <title>First Step</title>
-  <p>Before you start, learn about the HP Helion Carrier Grade environment. Review the <xref href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita"
-    >Technical Overview</xref>.</p>
+  <p>Before you start, learn about the HP Helion Carrier Grade environment. Review the <xref href="../../CarrierGrade/Installation/carrier-grade-technical-overview.dita">Technical Overview</xref>.</p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

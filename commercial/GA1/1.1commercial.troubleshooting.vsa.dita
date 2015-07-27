@@ -44,9 +44,6 @@
 <xref type="section" href="#topic8339/unable-update-json">Unable to update the default input json file </xref>
 </li>
 <li>
-<xref type="section" href="#topic8339/fail-virtual-bridge">Virtual bridge creation failed for interface &lt;NIC&gt;</xref>
-</li>
-<li>
 <xref type="section" href="#topic8339/storage-pool-fail">Creation of storage pool failed</xref>
 </li>
 <li>
@@ -443,7 +440,7 @@ When there are less than two drives in the machine, the script will fail to exec
 <p/>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-  <xref type="section" href="#topic8339"> Return to Top </xref>
+  <xref href="#topic8339"> Return to Top </xref>
 </p>
 </section>
 </body>

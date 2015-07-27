@@ -42,15 +42,10 @@
 <li>
 <xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-add-disk-account-container.dita" >Add a Disk to an Account and Container Ring</xref>
 </li>
-<li>
-<p>
-<xref href="../../commercial/GA1/1.1commerical.services-swift-deployment-add-disk-starter-object-ring.dita" >Add a Disk to the Starter Object Ring</xref>
-</p>
-
-<p>
-<xref type="section" href="#topic795"> Return to Top </xref>
-</p>
-</li>
+      <li><xref
+          href="../../commercial/GA1/1.1commerical.services-swift-deployment-add-disk-starter-object-ring.dita"
+          >Add a Disk to the Starter Object Ring</xref>
+      </li>
 </ul>
 <!-- ===================== horizontal rule ===================== -->
 </body>

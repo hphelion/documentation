@@ -19,14 +19,19 @@
  <!--./commercial/GA1/Landing/1.1commercial.landing.services.md-->
  <!--permalink: /helion/openstack/1.1/landing/services/--></p>
 <section id="OpenStack"> <title>OpenStack Services</title>
-<p>The following services are foundation technologies used by the HP Helion OpenStack</p>
+<p>The following services are foundation technologies used by HP Helion OpenStack</p>
 <p>
-<xref href="../../../commercial/GA1/1.1commerical.services-compute-overview.dita" >Compute Operations</xref>
-<!--A BR tag was used here in the original source.-->Learn about the Compute (Nova) service manages the hypervisors and virtual machines in your environment.</p>
+        <xref href="../../../commercial/GA1/1.1commerical.services-compute-overview.dita">Compute
+          Operations</xref>
+        <!--A BR tag was used here in the original source.-->Learn how the Compute (Nova) service
+        manages the hypervisors and virtual machines in your environment.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
-<xref href="../../../commercial/GA1/1.1commerical.services-identity-overview.dita" >Identity</xref>
-<!--A BR tag was used here in the original source.-->Learn about the Identity Management (Keystone) service to create and administer users and security groups, and control access to your cloud environment.</p>
+        <xref href="../../../commercial/GA1/1.1commerical.services-identity-overview.dita"
+          >Identity</xref>
+        <!--A BR tag was used here in the original source.-->Learn about the Identity Management
+        (Keystone) service used to create and administer users and security groups, and to control
+        access to your cloud environment.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commerical.services-imaging-overview.dita" >Image Operations</xref>
@@ -52,8 +57,8 @@
 <xref href="../../../commercial/GA1/1.1commerical.services-reporting-overview.dita" >Metering</xref>.
 <!--A BR tag was used here in the original source.-->Learn about the Metering (Ceilometer) service to collect measurements throughout your cloud environment.</p>
 <!-- ===================== horizontal rule ===================== -->
-<p><xref href="../1.1commercial.ceph-overview.dita#topic7563" type="section" >Ceph</xref>
-        <!--A BR tag was used here in the original source.-->Learn about Ceph, an Open Source,
+<p><xref href="../ceph/1.1commercial.ceph-overview.dita#topic7563">Ceph</xref>
+        <!--A BR tag was used here in the original source.-->Learn about Ceph, an open source,
         scalable, software defined storage running on HP Servers which provides block and object
         storage with unified management.</p>
 <!-- ===================== horizontal rule ===================== -->
@@ -90,8 +95,9 @@
 <section id="install"> <title>Installation services</title>
 <p>The following services are used only during the HP Helion OpenStack installation:</p>
 <p>
-<xref href="../../../commercial/GA1/1.1commerical.services-tripleo-overview.dita" >TripleO</xref>
-Leanr about TripleO to facilitate the installation of an OpenStack cloud.</p>
+        <xref href="../../../commercial/GA1/1.1commerical.services-tripleo-overview.dita"
+          >TripleO</xref> Learn about TripleO to facilitate the installation of an OpenStack
+        cloud.</p>
 <!-- ===================== horizontal rule ===================== -->
 <p>
 <xref href="../../../commercial/GA1/1.1commerical.services-ironic-overview.dita" >Ironic</xref>

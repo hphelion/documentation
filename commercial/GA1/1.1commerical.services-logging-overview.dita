@@ -89,10 +89,10 @@
 <p>These components are configured to work out-of-the-box and the admin should be able to view log data using the default configurations.</p>
 <p>At a high level, the Helion services forward logs to Beaver. Then, Beaver forwards JSON messages to RabbitMQ on the controller0 (management controller) node. Logstash connects to RabbitMQ to read queued messages and process the messages according to the Logstash configuration file. Logstash then forwards the processed log files in Elasticsearch. Users can use the Kibana interface to view and analyze the information, as shown in the following figure:</p>
 <p>
-  <image href="../../media/centrallogging75.png"/>
+  <image href="../../media/centrallogging75.png" placement="break"/>
 </p>
-<p>
-<b>Note:</b> Logging requires 4GB of disk space to make sure that all logging messages are retained.</p>
+      <note>Logging requires 4GB of disk space to make sure that all logging messages are
+        retained.</note>
 </section>
 <section id="types"> <title>Centralized Logging log types</title>
 <p>The following table lists the types of logs collected by Centralized Logging and provides information on how the logs are maintained.</p>
@@ -148,8 +148,8 @@ Availability</entry>
 <section id="kibana"> <title>Kibana configuration</title>
 <p>You can use the Kibana dashboards to view log data. Kibana is a tool developed to create charts, graphs, tables, and histograms based on logs send to Elasticsearch by logstash.</p>
 <p>While creating Kibana dashboards is beyond the scope of this document, it is important to know that you can use the default Kibana dashboards or create custom dashboards. The dashboards are JSON files that you can modify or create new dashboards based on existing dashboards.</p>
-<p>
-<b>Note:</b> Kibana is client-side software. To operate properly, the browser must be able to access port 81 on undercloud.</p>
+      <note>Kibana is client-side software. To operate properly, the browser must be able to access
+        port 81 on undercloud.</note>
 </section>
 <section id="interface"> <title>Logging into Kibana</title>
 <p>Launch a web browser on the seed cloud host to the following IP address, using the undercloud IP address from the end of the install:</p>
@@ -206,7 +206,7 @@ sudo su -
 </p>
 
 <p>
-<xref type="section" href="#topic5937"> Return to Top </xref>
+<xref href="#topic5937"> Return to Top </xref>
 </p>
 </li>
 </ul>

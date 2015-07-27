@@ -8,17 +8,17 @@
 <prolog>
 <metadata>
 <othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion OpenStack®"/>
-<othermeta name="product-version" content="HP Helion OpenStack® 1.0"/>
-<othermeta name="product-version" content="HP Helion OpenStack® 1.0.1"/>
-<othermeta name="product-version" content="HP Helion OpenStack® 1.1"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
 <othermeta name="role" content="Storage Administrator"/>
 <othermeta name="role" content="Storage Architect"/>
 <othermeta name="role" content="Keshava HP, Binamra S"/>
-<othermeta name="product-version1" content="HP Helion OpenStack®"/>
-<othermeta name="product-version2" content="HP Helion OpenStack® 1.0"/>
-<othermeta name="product-version3" content="HP Helion OpenStack® 1.0.1"/>
-<othermeta name="product-version4" content="HP Helion OpenStack® 1.1"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
+<othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
+<othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
 </metadata>
 </prolog>
 <body>
@@ -26,7 +26,9 @@
 <!--PUBLISHED-->
  <!--./commercial/GA1/1.1commerical.services-swift-deployment-provision-swift-node.md-->
  <!--permalink: /helion/openstack/1.1/services/swift/provision-nodes/--></p>
+<p>
 
+</p>
 <p>This page describes the procedure to provision scale-out object and proxy nodes. 
 <!--
 **Caution**: Do not provision proxy and scale-out object nodes together as the requirements for each are different. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out object storage nodes. --></p>
@@ -35,31 +37,26 @@
 <xref type="section" href="#topic5909/Preq">Prerequisites</xref>
 </li>
 <li>
-        <xref type="section" href="#topic5909/adding-physical-server-for-scale-out-Swift">Adding
-          physical server to scale-out Object and Proxy Nodes</xref>
-        <ul>
-          <li>
-            <xref type="section" href="#topic5909/adding-physical-node-object">Adding physical
-              server to scale-out Object Nodes</xref>
-          </li>
-          <li>
-            <xref type="section" href="#topic5909/verify-swift-node-deployment">Verify object node
-              deployment</xref>
-          </li>
-          <li>
-            <xref type="section" href="#topic5909/adding-physical-node-proxy">Adding physical server
-              to scale-out Proxy Nodes</xref>
-          </li>
-          <li>
-            <xref type="section" href="#topic5909/verify-proxy-swift-node-deployment">Verify proxy
-              node deployment</xref>
-          </li>
-        </ul></li>
+<xref type="section" href="#topic5909/adding-physical-server-for-scale-out-Swift">Adding physical server to scale-out Object and Proxy Nodes</xref> 
+
+<ul>
+<li>
+<xref type="section" href="#topic5909/adding-physical-node-object">Adding physical server to scale-out Object Nodes</xref>
+</li>
+<li>
+<xref type="section" href="#topic5909/verify-swift-node-deployment">Verify object node deployment</xref>
+</li>
+<li>
+<xref type="section" href="#topic5909/adding-physical-node-proxy">Adding physical server to scale-out Proxy Nodes</xref>
+</li>
+<li>
+<xref type="section" href="#topic5909/verify-proxy-swift-node-deployment">Verify proxy node deployment</xref>
+</li>
+</ul>
+</li>
 </ul>
 <section id="Preq"> <title>Prerequisites</title>
-<p>A HP Helion OpenStack cloud must be deployed. This ensures that the Starter Swift nodes are
-        installed and functional as they are part of the default HP Helion OpenStack cloud
-        deployment.</p>
+<p>A HP Helion OpenStack cloud must be deployed. This ensures that the Starter Swift nodes are installed and functional as they are part of the default HP Helion OpenStack cloud deployment.</p>
 <p>You can check the health of the starter nodes using the following command. All nodes should be in <b>ACTIVE</b> status and the power state should be <b>Running</b>.</p>
 <codeblock><codeph># nova list
 </codeph></codeblock>
@@ -79,7 +76,7 @@
 <p>You must add a server to the cloud inventory to handle the increased number of nodes.</p>
 <p>Perform the following steps to add a physical server:</p>
 <ol>
-<li> Log in to the seed
+<li>Log in to the seed
           VM:<codeblock><codeph>ssh root@&lt;Seed IP Address&gt;
 </codeph></codeblock></li>
 <li>Make the respective Baremetal entry in <codeph>/root/baremetal.csv</codeph>.</li>
@@ -94,13 +91,14 @@
             <codeph>kvm-custom-ips.json</codeph>) that was used during the initial installation to
           define the appropriate scale number:<codeblock><codeph>"so_swift_storage_scale":&lt;number of object servers&gt;,
 </codeph></codeblock><p>
-            <b>Note</b>: While deploying a scale-out <b>object</b> node ensure that the value of
-              <codeph>so_swift_storage_scale</codeph> is appended. For example: If the initial
-            number of object servers were 2 and later you added 2 more object servers then the total
-            number of object servers must be 4. The initially added object server should always get
-            appended with the newly added object server. Also, while deploying a scale-out
-              <b>object</b> node ensure that the value of <codeph>so_swift_proxy_scale</codeph> is
-            not modified.</p></li>
+            <note>While deploying a scale-out <b>object</b> node ensure that the value of
+                <codeph>so_swift_storage_scale</codeph> is appended. For example: If the initial
+              number of object servers were 2 and later you added 2 more object servers then the
+              total number of object servers must be 4. The initially added object server should
+              always get appended with the newly added object server. Also, while deploying a
+              scale-out <b>object</b> node ensure that the value of
+                <codeph>so_swift_proxy_scale</codeph> is not modified.</note>
+          </p></li>
 <li>Source the environment variables file created during initial
             installation.<codeblock><codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/&lt;environment variables file name&gt;
 </codeph></codeblock><p>For
@@ -178,13 +176,14 @@ For example:
             <codeph>kvm-custom-ips.json</codeph>) that was used during the initial installation to
           define the appropriate scale number:<codeblock><codeph>"so_swift_proxy_scale":&lt;number of proxy servers&gt;,
 </codeph></codeblock><p>
-            <b>Note</b>: While deploying a scale-out <b>proxy</b> node ensure that the value of
-              <codeph>so_swift_proxy_scale</codeph> is appended. For example: If the initial number
-            of proxy servers were 2 and later you added 2 more proxy servers then the total number
-            of proxy servers must be 4. The initially added proxy server should always get appended
-            with the newly added object server. Also, while deploying a scale-out <b>proxy</b> node
-            ensure that the value of <codeph>so_swift_storage_scale</codeph> is not
-          modified.</p></li>
+            <note> While deploying a scale-out <b>proxy</b> node ensure that the value of
+                <codeph>so_swift_proxy_scale</codeph> is appended. For example: If the initial
+              number of proxy servers were 2 and later you added 2 more proxy servers then the total
+              number of proxy servers must be 4. The initially added proxy server should always get
+              appended with the newly added object server. Also, while deploying a scale-out
+                <b>proxy</b> node ensure that the value of <codeph>so_swift_storage_scale</codeph>
+              is not modified.</note>
+          </p></li>
 <li>Source the environment variables file created during initial
             installation.<codeblock><codeph># source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/&lt;environment variables file name&gt;
 </codeph></codeblock><p>For
@@ -196,7 +195,8 @@ For example:
             will register a new ironic node and create a new nova instance and a new heat
           stack.</p></li>
 </ol>
-<!--**Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out Object storage nodes. -->
+<!--
+**Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out Object storage nodes. -->
 </section>
 <section id="verify-proxy-swift-node-deployment"> <title>Verify proxy node deployment</title>
 <p>Verify that the new nodes were created and are functioning properly using the following commands:</p>
@@ -209,7 +209,7 @@ For example:
             displays available Swift nodes including the newly added node(s).</p></li>
 </ol>
 <p>
-  <xref type="section" href="#topic5909"> Return to Top </xref>
+  <xref href="#topic5909"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -37,9 +37,6 @@
 <xref type="section" href="#topic7915/configure-neutron-agents">Configure Neutron agents</xref>
 </li>
 <li>
-HA / NIC bonding features
-</li>
-<li>
 <xref type="section" href="#topic7915/tracking-masked-ip">Tracking masked IP addresses</xref>
 </li>
 <li>
@@ -228,7 +225,7 @@ HA / NIC bonding features
   <xref href="../../../commercial/GA1/neutron/1.1commercial_neutron-post-installation-configure-network.dita" >Configuring Your Network Securely</xref>
 </p>
 <p>
-  <xref type="section" href="#topic7915"> Return to Top </xref>
+  <xref href="#topic7915"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>

@@ -16,8 +16,8 @@
 <p>The dashboards are based on <tm tmtype="reg">OpenStack</tm> Horizon and provide enhanced features.</p>
 <p>Refer to these documentation resources:</p>
 <ul>
-<li>
-<xref href="../../../CarrierGrade/AdminGuideNew/carrier-grade-admin-guide-new.dita" >Administering HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade</xref> - Describes the Operational Dashboard user interface dialogs and options.</li>
+<li><xref href="../../../PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf">Administrator Guide</xref> -
+        Describes the Operational Dashboard user interface dialogs and options.</li>
 </ul>
 <p>
 <!-- Not needed with new admin guide?

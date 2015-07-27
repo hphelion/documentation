@@ -218,8 +218,9 @@ Identify the MAC address of the node to be deleted</p>
 </codeblock>
 </li>
 <li>
-<p>Mark the node as 'deleted' in baremetal.csv. Change the 'role' from 'OvercloudCompute' to 'OvercloudCompute:deleted'. <b>Note: DO NOT DELETE THIS LINE</b>, you must edit it instead.
-For example:</p>
+<p>Mark the node as 'deleted' in baremetal.csv. Change the 'role' from 'OvercloudCompute' to
+            'OvercloudCompute:deleted'. <note>
+              <b>DO NOT DELETE THIS LINE</b>, you must edit it instead. For example:</note></p>
 
 <codeblock>
 <codeph>78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,32768,2048,OvercloudCompute,IPMI

@@ -29,8 +29,11 @@
 </p>
 <section id="hp-helion-openstack-with-microsoft-windows-server-reference-architecture"> <title>HP Helion OpenStack with Microsoft Windows Server Reference Architecture</title>
 <p>HP Helion OpenStack is HPs hardened, tested, enterprise-grade distribution of OpenStack cloud software, designed to deliver the best open source cloud computing technology in a stable, maintainable and manageable package. It offers a number of value-added services that complement and enhance OpenStack technologies. This document describes how to create a Microsoft Windows Server 2012, 2012 R2, 2008, or 2008 R2 image for deployment within HP Helion OpenStack The Microsoft Windows Server images can be created on a 64-bit workstation running Ubuntu 13.10 or higher on physical hardware that supports KVM.</p>
-<p>
-<b>Note:</b> To determine the maximum supported Windows Server VM configuration for a given CPU architecture, please review the HP entries in the <xref href="http://www.windowsservercatalog.com/results.aspx?&amp;chtext=&amp;cstext=&amp;csttext=&amp;chbtext=&amp;bCatID=1521&amp;cpID=897&amp;avc=0&amp;ava=0&amp;avq=0&amp;OR=1&amp;PGS=25&amp;ready=0" scope="external" format="html" >Windows Server Catalog</xref> for Server Virtualization.</p>
+      <note>To determine the maximum supported Windows Server VM configuration for a given CPU
+        architecture, please review the HP entries in the <xref
+          href="http://www.windowsservercatalog.com/results.aspx?&amp;chtext=&amp;cstext=&amp;csttext=&amp;chbtext=&amp;bCatID=1521&amp;cpID=897&amp;avc=0&amp;ava=0&amp;avq=0&amp;OR=1&amp;PGS=25&amp;ready=0"
+          scope="external" format="html">Windows Server Catalog</xref> for Server
+        Virtualization.</note>
 </section>
 <section id="supported"> <title>How to build a supported Microsoft Windows Server guest image for HP Helion OpenStack</title>
 <p>The following section describes the procedure to create and deploy Microsoft Windows Server that is Microsoft SVVP (Server Virtualization Validation Program) compliant on HP Helion OpenStack as a Nova compute VM</p>
@@ -190,14 +193,14 @@ Use Virt-manager to start Installation of Windows Server 2012 and provide the fo
 <xref href="http://www8.hp.com/us/en/cloud/helion-overview.html" scope="external" format="html" >hp.com/helion/</xref>
 </li>
 <li>
-  <xref href="1.1commercial.index.dita" >docs.hpcloud.com/helion/openstack/1.1/</xref>
+  <xref href="1.1commercial.index.dita">docs.hpcloud.com/helion/openstack/1.1/</xref>
 </li>
 <li>
 <xref href="http://docs.openstack.org/" scope="external" format="html" >docs.openstack.org/</xref>
 </li>
 </ul>
 <p>
-  <xref type="section" href="#topic8573"> Return to Top </xref>
+  <xref href="#topic8573"> Return to Top </xref>
 </p>
 <!-- ===================== horizontal rule ===================== -->
 </section>
