@@ -5,6 +5,182 @@
 ErrorDocument 404 /404.html
 Options +FollowSymLinks
 RewriteEngine on
+
+
+RewriteRule ^helion/devplatform/preview/ALS-developer-trial-quick-start/termination/?$	/#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start-termination.html [NE,R=301,L]
+RewriteRule ^/helion/devplatform/preview/ALS-developer-trial-quick-start/troubleshooting/?$	/#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start-troubleshooting.html [NE,R=301,L]
+RewriteRule ^/helion/devplatform/preview/ALS-developer-trial-quick-start/?$	/#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start.html [NE,R=301,L]
+RewriteRule ^/helion/devplatform/preview/ALS-developer-trial-quick-start/2/?$	/#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start2.html [NE,R=301,L]
+RewriteRule ^/helion/devplatform/preview/ALS-developer-trial-quick-start/3/?$	/#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start3.html [NE,R=301,L]
+RewriteRule ^/helion/devplatform/preview/ALS-developer-trial-quick-start/4/?$	/#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start4.html [NE,R=301,L]
+RewriteRule ^/helion/devplatform/preview/ALS-developer-trial-quick-start/5/?$	/#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start5.html [NE,R=301,L]
+RewriteRule ^/helion/devplatform/preview/ALS-developer-trial-quick-start/6/?$	/#devplatform/1.2/1.2devplatform.ALS-developer-trial-quick-start6.html [NE,R=301,L]
+ 
+
+RewriteRule ^/helion/devplatform/1.2/als/admin/server/logging.html
+edirect: /helion/devplatform/1.2/als/admin/server/logging/#drains
+
+RewriteRule ^/helion/devplatform/?$	/#devplatform/1.2/1.2devplatform.index.html [NE,R=301,L] 
+RewriteRule ^/helion/devplatform/1.1/ALS-developer-trial-quick-start/?$	/#devplatform/1.1devplatform.ALS-developer-trial-quick-start.html [NE,R=301,L]
+RewriteRule ^/helion/devplatform/ALS-developer-trial-quick-start/?$	/#devplatform/1.1devplatform.ALS-developer-trial-quick-start.html [NE,R=301,L]
+RewriteRule ^/api/v13/copyright/?$	/#publiccloud/api.copyright.v13.html [NE,R=301,L]
+RewriteRule ^/api/?$	/#publiccloud/api.html [NE,R=301,L]
+ 
+
+RewriteRule ^/api/v13/?$	/#publiccloud/api.html [NE,R=301,L]
+RewriteRule ^/bindings/?$	/#publiccloud/bindings.html [NE,R=301,L]
+ 
+RewriteRule ^/block-storage/
+edirect: /publiccloud/block-storage/
+
+RewriteRule ^/cdn/
+edirect: /publiccloud/cdn/
+
+RewriteRule ^/api/block-storage/boot/
+edirect: /publiccloud/api/block-storage/
+
+RewriteRule ^/api/block-storage/?$	/#publiccloud/block-storage.html [NE,R=301,L]
+RewriteRule ^/api/block-storage/storage/?$	/#publiccloud/api/cinder-api.html [NE,R=301,L]
+RewriteRule ^/api/block-storage/backup/?$	/#publiccloud/api/cinder-api.html [NE,R=301,L]
+RewriteRule ^/cli/?$	/#publiccloud/cli.html [NE,R=301,L]
+RewriteRule ^/cli/nova/?$	/#publiccloud/cli.openstack.html [NE,R=301,L]
+RewriteRule ^/cli/windows/?$	/#publiccloud/cli.html [NE,R=301,L]
+
+
+RewriteRule ^/helion/openstack/1.1/install/overview/test/
+edirect: /helion/openstack/1.1/install/overview/
+
+RewriteRule ^/helion/openstack/1.1/services/
+edirect: /helion/openstack/1.1/services/overview/
+
+RewriteRule ^/api/compute/
+edirect: /publiccloud/api/compute/
+
+RewriteRule ^/compute/
+edirect: /publiccloud/compute/
+
+RewriteRule ^/api/identity/
+edirect: /publiccloud/api/identity/
+
+RewriteRule ^/api/v13/identity/
+edirect: /publiccloud/api/identity/
+
+RewriteRule ^/api/dbaas/
+edirect: /publiccloud/api/dbaas/
+
+RewriteRule ^/dbaas/
+edirect: /publiccloud/dbaas/
+
+RewriteRule ^/dbaas/tutorial/introduction/
+edirect: /publiccloud/dbaas/tutorial/introduction/
+
+RewriteRule ^/dns
+edirect: /publiccloud/dns/
+
+RewriteRule ^/api/dns/
+edirect: /publiccloud/api/dns/
+
+RewriteRule ^/helion/
+edirect: //
+
+RewriteRule ^/downloads/
+edirect: /publiccloud/downloads/
+
+RewriteRule ^/old/
+edirect: /new/
+
+RewriteRule ^/api/image/
+edirect: /publiccloud/api/image/
+
+RewriteRule ^/glossary/
+edirect: /publiccloud/glossary/
+
+RewriteRule ^/helion/openstack/
+edirect: /helion/openstack/1.1/
+
+RewriteRule ^/api/v13/block-storage/?$	/#publiccloud/api/cinder-api.html [NE,R=301,L]
+edirect: /publiccloud/api/block-storage/
+
+RewriteRule ^/api/CDN/
+edirect: /publiccloud/api/CDN/
+
+RewriteRule ^/api/v13/networking/
+edirect: /publiccloud/api/networking/
+
+RewriteRule ^/api/v13/image/
+edirect: /publiccloud/api/image/
+
+RewriteRule ^/api/object-storage/
+edirect: /publiccloud/api/object-storage/
+
+RewriteRule ^api/monitoring/
+edirect: /publiccloud/api/monitoring/
+
+RewriteRule ^/api/v13/dbaas/
+edirect: /publiccloud/api/dbaas/
+
+RewriteRule ^/hpcloudconsole/
+edirect: /publiccloud/hpcloudconsole/
+
+RewriteRule ^/identity/
+edirect: /publiccloud/identity/
+
+RewriteRule ^/api/lbaas/
+edirect: /publiccloud/api/lbaas/
+
+RewriteRule ^/lbaas/
+edirect: /publiccloud/lbaas/
+
+RewriteRule ^/maas/
+edirect: /publiccloud/maas/
+
+RewriteRule ^/object-storage/
+edirect: /publiccloud/object-storage/
+
+RewriteRule ^/api/v13/compute/
+edirect: /publiccloud/api/compute/
+
+RewriteRule ^/pc-overview/
+edirect: /publiccloud/overview/
+
+RewriteRule ^/rdb/
+edirect: /publiccloud/rdb/
+
+RewriteRule ^/services/
+edirect: /publiccloud/services/
+
+RewriteRule ^/site-overview/
+edirect: /publiccloud/site-overview/
+
+RewriteRule ^/sitemap/
+edirect: /publiccloud/sitemap/
+
+RewriteRule ^/upload-publish-partner-images135/
+edirect: /publiccloud/upload-publish-partner-images135/
+
+RewriteRule ^/compute/vpn-multisite/
+edirect: /publiccloud/compute/vpn-multisite/
+
+RewriteRule ^/compute/vpn-quickstart/
+edirect: /publiccloud/compute/vpn-quickstart/
+
+RewriteRule ^/helion/devplatform/preview/adding_services/
+edirect: /helion/devplatform/1.2/windows/adding_services/
+
+RewriteRule ^/helion/devplatform/preview/buildpack/
+edirect: /helion/devplatform/1.2/windows/buildpack/
+
+RewriteRule ^/helion/devplatform/preview/deployingnet/
+edirect: /helion/devplatform/1.2/windows/deployingnet/
+RewriteRule ^/helion/devplatform/preview/
+
+edirect: /helion/devplatform/1.2/windows/?$	/#devplatform/1.2/windows/windows_tools_guide.html [NE,R=301,L]
+RewriteRule ^helion/devplatform/preview/powershell/?$	/#devplatform/1.2/windows/windows_powershell.html [NE,R=301,L]
+
+RewriteRule ^helion/devplatform/preview/tools_guide/?$	/#devplatform/1.2/windows/windows_tools_guide.html [NE,R=301,L]
+ 
+
+
 RewriteRule ^publiccloud/whats_new_with_HP_Cloud_Console/?$	/#publiccloud/hz.whatsnewjan.2014.html [NE,R=301,L]
 RewriteRule ^publiccloud/upload-publish-partner-images135/?$	/#publiccloud/upload-publish-partner-images135.html [NE,R=301,L]
 RewriteRule ^publiccloud/site-overview/?$	/#publiccloud/site-overview.html [NE,R=301,L]
