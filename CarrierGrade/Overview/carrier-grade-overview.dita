@@ -17,8 +17,7 @@
         virtualization (KVM), network virtualization (vSwitch and SDN controllers), an installer and
         cloud lifecycle management framework, fault and performance management, and
         high-availability framework for the OpenStack control plane and the NFVI layer.</p>
-      <p>HP Helion OpenStack Carrier Grade is based on <xref
-          href="../../commercial/GA1/1.1commercial.index.dita">HP Helion Openstack 1.1</xref> but
+      <p>HP Helion OpenStack Carrier Grade is based on HP Helion Openstack 1.1 but
         with significantly enhanced and optimized functionality, availability, scale and performance
         to meet the needs of NFV cloud deployments.</p>
       <p>Helion OpenStack Carrier Grade includes following key components:</p>
