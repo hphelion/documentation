@@ -29,7 +29,7 @@
       developers build great cloud-native applications across private and public clouds. Based on
         <xref href="http://cloudfoundry.org/index.html" scope="external" format="html"><tm
           tmtype="tm">Cloud Foundry</tm></xref> and fully integrated with <xref
-        href="../commercial/GA1/1.1commercial.index.dita#topic2448">HP Helion <tm tmtype="reg">OpenStack</tm></xref>, the HP Helion Development Platform is open and interoperable,
+        href="../commercial/GA1/1.1commercial.index.dita">HP Helion <tm tmtype="reg">OpenStack</tm></xref>, the HP Helion Development Platform is open and interoperable,
       ensuring that developers can focus on building the right app for any environment.</p>
 <section id="platform-overview"> <title>Platform Overview</title>
 <p>The Helion Development Platform is a Cloud Foundry-based, managed runtime environment for applications.</p>
@@ -103,7 +103,7 @@
 <b>Quick Start Developer Trial</b>: The fastest way to set up a functional Helion Development Platform environment is the <xref href="1.2devplatform.ALS-developer-trial-quick-start.dita" >Quick Start Developer Trial</xref> (sandbox) on the public cloud.</li>
 <li>
   <b>Standard Installation</b>: Install an <xref
-    href="../commercial/GA1/1.1commercial.index.dita#topic2448">HP Helion OpenStack</xref> cloud and then <xref href="installation/devplatform_commercial_install.dita" >install</xref> the Helion Development Platform.  </li>
+    href="../commercial/GA1/1.1commercial.index.dita">HP Helion OpenStack</xref> cloud and then <xref href="installation/devplatform_commercial_install.dita" >install</xref> the Helion Development Platform.  </li>
 </ul>
 </section>
 </body>

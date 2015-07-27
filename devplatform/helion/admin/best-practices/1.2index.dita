@@ -242,7 +242,7 @@ specifying the full path and filename during export (see backup example
 below).</p>
       <note>Exporting data can take several minutes. For clusters with constant usage or large
         numbers of users, apps, and databases, put the exporting system in <xref
-          href="../console/1.2index.dita#topic13823/cloud-controller">Maintenance Mode</xref> (e.g.
+          href="../console/console_settings.dita">Maintenance Mode</xref> (e.g.
         during a scheduled maintenance window) before exporting.</note>
 </section>
 <section id="scheduled-backups"> <title>Scheduled backups</title>

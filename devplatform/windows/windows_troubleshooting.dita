@@ -13,7 +13,7 @@
       <othermeta name="role" content="Systems Administrator"/>
       <othermeta name="role" content="System Engineer"/>
       <othermeta name="role" content="Cloud Administrator"/>
-      <othermeta name="role" content="Network Administrator"/ >
+      <othermeta name="role" content="Network Administrator"/>
       <othermeta name="role" content="Application Developer"/>
       <othermeta name="role" content="Application Developer"/>
       <othermeta name="role" content="ISV Developer"/>
@@ -24,14 +24,14 @@
     </metadata>
   </prolog>
   <body>
-    <ph>
+    <section><ph>
       <i>Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.</i>
-    </ph>
+    </ph></section>
     <p>This document describes troubleshooting and additional configuration steps for Windows instances.</p>
     <p>This document contains the following sections:</p>
     <ul>
-      <li><xref href="#topic 1035/kato_upstream_proxies">Upstream proxies are not set in DEAs added after cluster creation</xref></li>
-      <li><xref href="#topic_1035/kato_patch">Kato tries to install patches on Windows nodes</xref></li>
+      <li><xref href="#topic1035/kato_upstream_proxies">Upstream proxies are not set in DEAs added after cluster creation</xref></li>
+      <li><xref href="#topic1035/kato_patch">Kato tries to install patches on Windows nodes</xref></li>
     </ul>
     <section id="kato_upstream_proxies"><title>Upstream proxies are not set in DEAs added after cluster creation</title>
     <p>When DEAs are added to clusters after they have been created, upstream proxies are not automatically configured. To configure upstream proxies for these nodes, do the following:</p>

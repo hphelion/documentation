@@ -129,9 +129,8 @@ set environment variables. This mechanism is fully supported by the Application 
 <p>To modify custom environment variables, re-push the application after changing the values in <i>manifest.yml</i>.</p>
 </section>
 <section id="service-gateway-log-errors-in-maintenance-mode"> <title>Service Gateway Log Errors in Maintenance Mode</title>
-<p>With Application Lifecycle Service set in <xref
-          href="../console/1.2index.dita#topic13823/settings"><i>Maintenance Mode</i></xref> , all
-        "_gateway" processes will report the following error once per minute:</p>
+<p>With Application Lifecycle Service set in <i>Maintenance Mode</i> , all <codeph>_gateway</codeph>
+        processes will report the following error once per minute:</p>
 <codeblock>Failed registering with cloud controller, status=503</codeblock>
 <p>This is normal, and can be safely ignored. The service nodes will
 reconnect once the Controller is taken out of Maintenance Mode.</p>

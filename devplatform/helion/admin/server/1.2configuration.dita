@@ -779,8 +779,9 @@ list</i>
 </xref>
 </li>
 </ul>
-  <p>Existing quota definitions can also be viewed and edited in the Management Console <xref href="../console/1.2index.dita#topic13823/console-settings-quota-definitions" type="section" >Quota Definitions settings</xref>
-</p>
+  <p>Existing quota definitions can also be viewed and edited in the <xref
+          href="../console/console_settings.dita#topic_od4_byj_rs/quotaPlans">Management Console
+          Quota Definitions</xref> settings. </p>
 </section>
 <section id="sudo"> <title>sudo</title>
 <p>Quota Definitions can give all users in an Organization the use of the <b>sudo</b> command within application containers. This option is disabled by default as a security precaution, and should only be enabled for Organizations where all users are trusted.</p>
