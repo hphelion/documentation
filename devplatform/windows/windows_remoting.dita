@@ -67,7 +67,9 @@
     </ol>
   </section>
   <section id="connect"><title>Connect to the instance with Remote Desktop Connection</title></section>
-  To connect to the instance, enter the IP address, user name in the form <b></b>
-  
+  <p>To connect to the instance, open Remote Desktop Connection, and enter the external IP address for the instance. Enter the user name in the form
+        <b>&lt;InstanceName&gt;/Administrator</b>, and password. To retrieve the Administrator
+      password, see <a href="windows_password.dita">Retrieving the Windows Password</a>. 
+  <image placement="break" href="../media/windows_</p>
 </body>
 </topic>
