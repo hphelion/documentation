@@ -58,10 +58,8 @@
     </section>
     <section id="networkarch">
       <title>Network architecture</title>
-      <p>The following information describes the network configuration for the <xref type="section"
-          href="#topic3485/physical">physical networks</xref> and <xref type="section"
-          href="#topic3485/virtual">virtual networks</xref>, which must be configured by the network
-        administrator.</p>
+      <p>The following information describes the network configuration, which must be configured by
+        the network administrator.</p>
       <table>
         <tgroup cols="2">
           <colspec colname="col1"/>

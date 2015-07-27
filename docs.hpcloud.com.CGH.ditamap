@@ -41,6 +41,8 @@
           <topicref href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita"/>
           <topicref
             href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.how-works.dita"/>
+          <topicref
+            href="CarrierGrade/AdminGuideNew/Dashboard/carrier-grade.dashboard.managing.dita"/>
         </topicref>
       </topicref>
     </topicref>
@@ -57,6 +59,7 @@
     <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-overview.dita">
       <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-prereqs-GA.dita">
         <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-prereqs-GA.dita"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-network-prepare-GA.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-NTP.dita"/>
         <topicref href="CarrierGrade/Installation/carrier-grade-install-esx-proxy.dita"/>
       </topicref>

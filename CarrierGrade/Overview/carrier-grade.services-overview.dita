@@ -35,7 +35,7 @@
 <xref type="section" href="#topic4220/service">Service User Accounts</xref>
 </li>
 <li>
-<xref type="section" href="#topic4220/Openstack">OpenStack Services</xref>
+<xref type="section" href="#topic4220/OpenStack">OpenStack Services</xref>
 </li>
 <li>
 <xref type="section" href="#topic4220/dash">Dashboard services</xref>
@@ -170,8 +170,7 @@ See [Overview of Sherpa Service](/helion/openstack/carrier/services/sherpa/overv
         OpenStack</p>
       <p>You can use the Horizon dashboard to view, allocate, and manage all virtual resources
         within a cloud. See <xref
-          href="../../commercial/GA1/1.1commerical.services-horizon-overview.dita">Overview of the
-          Horizon Service</xref>.</p>
+          href="../ServicesOverviews/carrier-grade-services-horizon-overview.dita#topic1518">Horizon Service Overview</xref>.</p>
   <!-- Hiding for Alpha    
   <p><b>Icinga</b> The Icinga service, which runs in the undercloud, helps cloud admins monitor
         the disk usage of Swift storage node(s). Icinga is an open-source software project. </p>

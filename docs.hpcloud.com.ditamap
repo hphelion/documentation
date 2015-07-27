@@ -38,9 +38,7 @@
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
   <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
   <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
-  <mapref href="docs.hpcloud.com.CGH.ditamap" navtitle="HP Helion OpenStack Carrier Grade 1.1 GA"/>
-  <mapref href="docs.hpcloud.com.CGH.RC0.ditamap"
-    navtitle="HP Helion OpenStack Carrier Grade 1.1 RC0"/>  
+  <mapref href="docs.hpcloud.com.CGH.ditamap" navtitle="HP Helion OpenStack Carrier Grade 1.1 GA"/>  
 
 <!-- BEGIN Euca -->
   
