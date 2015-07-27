@@ -28,7 +28,7 @@
     <p>HP Helion OpenStack is provided with two baremetal installation options depending on your system configuration.  It allows you to manage the KVM and ESX hypervisors and provision virtual machines.</p>
     <p>You can find more information on the hypervisor options in the Technical Overview.</p>
   </section>
-  <section id="kvm-Hypervisor"> <title>KVM Hypervisor</title>
+  <section id="kvm-Hypervisor"> <title>KVM Cloud</title>
     <p>Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.</p>
     <p>You can use your KVM cloud with either HP Storevirtual or HP StoreServ (3PAR) storage:</p>
   <ul>
@@ -39,7 +39,7 @@
     <p>HP 3PAR StoreServ is a storage array that supports Fibre Channel (FC) as well as iSCSI protocol. HP 3PAR StoreServ is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver.</p></li>
   </ul>
   </section>
-  <section id="esx-hypervisor"> <title>ESX Hypervisor</title>
+  <section id="esx-hypervisor"> <title>KVM and ESX Cloud</title>
     <p>HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Compute node scheduler sees each cluster as compute and uses the same for scheduling a new instances.</p>
     <p>The ESX integration uses the OVSvApp application to connect the vCenter networking to the Network Operations controller to manage workload networks.</p>
       <p>The HP Distributed Cloud Networking (DCN) is a software-Defined Networking (SDN) solution
@@ -67,17 +67,19 @@
   <li>Install the cloud topologies: 
     
           <ul>
-            <li>Denver Topology:
-              <ul>
-            <li> Install the <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">HLM and
-                the HP Helion OpenStack environments</xref>. These components will be installed into
-              what is called the <i>Non-KVM region</i>.</li>
-            <li>Install the carrier grade cloud. The carrier grade cloud is deployed into what is
-              called the KVM region.</li>
-          </ul></li></ul>
+            <li>KVM Cloud <p>In this cloud topology, the standard services like keystone, glance,
+                cinder, swift are installed in the non-kvm region first. Then the KVM region is
+                installed. </p><ul>
+                <li> Install the <xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">HLM
+                    and the HP Helion OpenStack environments</xref>. These components will be
+                  installed into what is called the <i>Non-KVM region</i>.</li>
+                <li>Install the carrier grade cloud. The carrier grade cloud is deployed into what
+                  is called the KVM region.</li>
+              </ul></li></ul>
           <ul>
-            <li>Memphis Topology: 
-              <ul>
+            <li>KVM and ESX Cloud <p>In this cloud topology, the components required to support ESX
+                hypervisor are installed along with standard services in the non-kvm region first.
+                Then the KVM region is installed.</p><ul>
                 <li>Install the HLM and the HP Helion OpenStack environments. These components will
                   be installed into what is called the Non-KVM region ESX hypervisor with DCN
                   networking.</li>
