@@ -205,19 +205,19 @@
         for ProLiant (SPP) Version 2015.06.0. </p>
 --></section>
   <section id="hardware-config">
-      <title>Required Hardware Configuration </title><p>The following hardware, configured as
-        listed, is required for the <xref href="#topic1773/hlm-config" format="dita">HLM host</xref>, the
-        <xref href="#topic1773/non-kvm-config" format="dita">Non-KVM region</xref>, 
-        and <xref href="#topic1773/kvm-config" format="dita">KVM region</xref>.</p>
-    
-    <p id="hlm-config"><b>HLM Host</b></p>
-    <p>You must have the a server with a 20GB Disk and 4,096 MB RAM for the HLM host.</p>
-            
-          <p id="non-kvm-config"><b>Non-KVM Region</b></p>
-      <p>You must have the following hardware configuration for the Non-KVM region:</p>
-    <ul>
+      <title>Required Hardware Configuration </title>
+      <p>The servers, selected from the <xref
+          href="../RC0/Installation/carrier-grade-install-pb-prereqs.dita#topic7148/hardware"
+          >Supported Hardware</xref> lists, must be configured as follows for HP Helion OpenStack
+        Carrier Grade.</p>
+      <p><b>HLM Host</b>. You must have the a server with a 20GB Disk and 4,096 MB RAM for the HLM
+        host.</p>
+      <p id="non-kvm-hos"><b>HP Helion OpenStack Controllers.</b> You must have three (3) baremetal
+        systems to install the HP Helion OpenStack controllers that meet the following requirements: </p>
+      <ul>
         <li>
-          <p>3 <xref href="#topic1773/controllers" format="dita">baremetal systems</xref> for controllers that meet the following requirements:</p>
+          <p>3 <xref href="#topic1773/controllers" format="dita">baremetal systems</xref> for
+            controllers that meet the following requirements:</p>
           <ul id="ul_s1h_432_qs">
             <li>For systems with multiple NICs, only one NIC may be active or connected. </li>
             <li>Capable of hosting VMs <!--Remove for RC0 <li>For Compute nodes, Intel or AMD hardware virtualization support required. The CPU
@@ -227,32 +227,21 @@
                 <b>Important:</b> Since the installer currently uses only the first available disk,
                 all servers must have RAID controllers pre-configured to present their storage as a
                 single, logical disk. RAID across multiple physical discs is strongly recommended
-                for both performance and resilience.</p>
-              <p><b>Notes:</b></p>
-              <ul>
+                for both performance and resilience.</p><p><b>Notes:</b></p><ul>
                 <li>On the controller nodes, make sure the RAID array is configured to reflect a
                   total size of less than 4TB.</li>
                 <li>The root volume cannot exceed 2TB</li>
-              </ul>
-            </li></ul></li>      
-          <li>2 baremetal systems for DCN VSC controllers (HA mode) that meet the following requirements:
-            o	………… details</li>
-            <li>2 baremetal systems for DCN VRS-G Software Gateway (HA mode)</li>
-            
-            <li>2 baremetal systems minimum for ESXi hosts required for Clustered configuration.
-              <p>Please refer to VMware documentation for additional requirements for vSphere Cluster configuration.</p></li>
-            
-        
+              </ul></li>
           </ul>
-    <p id="kvm-config"><b>KVM Region</b></p>
-    <p>You must have the following hardware configuration for the KVM region:</p>
-          <ul>
-          <li>2 <xref href="#topic1773/controllers" format="dita">baremetal systems</xref>. <p>For
-            systems with multiple NICs, only one NIC may be active or connected. </p></li>
-        <li>2 <xref href="#topic1773/compute" format="dita">compute nodes</xref></li>
-      </ul></section>
-    <section>
-      <p>The following NICs have been verified for PXE booting of KVM region servers:</p>
+        </li>
+      </ul>
+      <p id="kvm-config"><b>KVM controllers</b>. You must have two baremetal systems to install the
+        KVM region controllers. For systems with multiple NICs, only one NIC may be active or
+        connected. </p>
+      <p><b>KVM compute servers</b>. You must have two baremetal systems to install the KVM region
+        compute servers.</p>
+      <p><b>KVM region NICs.</b> The following NICs have been verified for PXE booting of KVM region
+        servers:</p>
       <ul id="ul_sdq_q1f_qs">
         <li>
           <p>Emulex 10G</p>
@@ -261,12 +250,65 @@
           <p>Intel 82599</p>
         </li>
       </ul>
+    <p><b>ESX components</b>. <b><i>For the KVM and ESX cloud</i></b>, two (2) baremetal systems minimum for ESXi hosts required 
+      for Clustered configuration, with 1 – 4 ESXi clusters. 
+      Refer to the ESX documentation for the supported hardware configurations. </p>
+    <p><b>Note:</b> These systems are not required for a KVM-only cloud.</p>
+    <p><b>DCN components</b>. <b><i>For the KVM and ESX cloud</i></b>, You must have:</p>
+      <ul>
+        <li>two (2) baremetal systems for DCN VSC controllers (HA mode) </li>
+        <li>two (2) baremetal systems for DCN VRS-G Software Gateway (HA mode)</li>
+        <li>One (1) server to host the DCN User Installed Component (Sorry, forget the name)</li>
+      </ul>
+      <p>Refer to the DCN documentation for the supported hardware configurations.</p>
+      <p><b>Note:</b> These systems are not required for a KVM-only cloud.</p>
     </section>
+
+  <section id="software"><title>Software Requirements</title>
+  <p> The HLM host requires the Ubuntu Server 14.04.2 LTS operating system. The HP Helion OpenStack Carrier Grade installation 
+    process installs the required software onto the baremetal controller and compute nodes.</p> 
+    <p><b><i>For the KVM and ESX cloud</i></b>,VMware vSphere must be fully installed and operational before installing HP Helion OpenStack Carrier Grade.</p>  
+ </section>
+  <section id="guestOS"><title>Guest OS Support Matrix</title> The following guest operating systems
+      (guest OS) are supported for the HP Helion OpenStack Carrier Grade servers. <p><b>Non-KVM
+          region</b></p>For a KVM-only cloud topology, there are no supported guest OSs for the
+      servers in the Non-KVM region. <p>For a KVM and ESX cloud topology, the following guest OSs
+        are supported for the servers in the Non-KVM region, when configured with ESX-DCN: </p><p>
+        <ul id="ul_hfp_g5r_5s">
+          <li>Cirros 3.2</li>
+          <li>RHEL6.5</li>
+          <li>Ubuntu 14.04</li>
+        </ul>
+      </p><p><b>KVM region</b></p><p>The following Guest OSs are supported for the servers in the
+        KVM region for both cloud topologies: </p><ul id="ul_sty_hd2_qs">
+        <li>
+          <p>WindRiver Linux 6.0</p>
+        </li>
+        <li>
+          <p>WindRiver Linux 5.0</p>
+        </li>
+        <li>
+          <p>CentOS 6.4</p>
+        </li>
+        <li>
+          <p>Fedora 19</p>
+        </li>
+        <li>
+          <p>RHEL 6.5</p>
+        </li>
+        <li>
+          <p>OpenSUSE 12.3 </p>
+        </li>
+      </ul></section>
   
+
+
   <section id="typical">
     <title>Typical Configurations</title>
-      <p>The following tables list the hardware required for a complete HP Helion OpenStack Carrier
-        Grade installation using GEN9 servers in a <xref href="#topic1773/rack" format="dita">rackmount installation</xref> or an <xref href="#topic1773/enclosure" format="dita">enclosure</xref>.</p> 
+      <p>The following tables list the hardware required for a typical KVM-only cloud installation
+        using GEN9 servers in a <xref href="#topic1773/rack" format="dita">rackmount
+          installation</xref> or an <xref href="#topic1773/enclosure" format="dita"
+        >enclosure</xref>.</p> 
         <p id="rack"><b>GEN9 Rackmount Base</b></p>
       <table id="table_tgx_5k2_qs">
         <tgroup cols="2">
@@ -367,43 +409,6 @@
       </table>
   </section>
   
-<section id="software">
-      <title>Software Requirements</title>
-      <p>The HLM host require the Ubuntu Server 14.04.2 LTS operating system.  </p></section>
-  
-  <section id="guestOS">
-      <title>Guest OS Support Matrix</title> The following guest operating systems are supported for
-      the HP Helion OpenStack Carrier Grade servers. <p><b>Non-KVM region</b></p>There are no
-      supported Guest OSs for the servers in the Non-KVM region. <p><b>Non-KVM region with
-          ESX-DCN</b></p><p>The following Guest OSs are supported for the servers in the Non-KVM
-        region, when configured with ESX-DCN: </p><p>
-        <ul id="ul_hfp_g5r_5s">
-          <li>Cirros 3.2</li>
-          <li>RHEL6.5</li>
-          <li>Ubuntu 14.04</li>
-        </ul>
-      </p><p><b>KVM region</b></p><p>The following Guest OSs are supported for the servers in the
-        KVM region: </p><ul id="ul_sty_hd2_qs">
-        <li>
-          <p>WindRiver Linux 6.0</p>
-        </li>
-        <li>
-          <p>WindRiver Linux 5.0</p>
-        </li>
-        <li>
-          <p>CentOS 6.4</p>
-        </li>
-        <li>
-          <p>Fedora 19</p>
-        </li>
-        <li>
-          <p>RHEL 6.5</p>
-        </li>
-        <li>
-          <p>OpenSUSE 12.3 </p>
-        </li>
-      </ul><p>Requirements for specific guest OSs are included in the SDK README
-      files.</p></section>
 <!-- 
   <section id="support-matrix-for-hp-distributed-cloud-networking-dcn-host"> <title>Support Matrix for HP Distributed Cloud Networking (DCN) host</title>
 <p>For key requirements needed HP Distributed Cloud Networking (DCN), see <xref href="../../CarrierGrade/Installation/carrier-grade-support-matrix-dcn.dita">Support Matrix for HP Distributed Cloud Networking</xref>.</p>
