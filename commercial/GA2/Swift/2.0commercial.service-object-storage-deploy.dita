@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_pgx_vcg_5s">
+  <title>Deploying and Configuring Object Storage (Swift)</title>
+  <body>
+    <p>This page provides detailed instructions on the deployment of HP Helion OpenStack Object
+      Storage, and their configuration. </p>
+    <p><b>Preview of the Swift deployment </b></p>
+    <p>Perform the following steps to deploy Object Storage (Swift).</p>
+    <section id="pre-requisite"><b>Prerequisite</b><p>
+        <ol id="ol_vyl_52g_5s">
+          <li> HP Helion OpenStack deployer node must be installed.</li>
+        </ol>
+      </p></section>
+    <?oxy_insert_start author="sharmabi" timestamp="20150727T162306+0530"?>
+    <p>Before starting the initial deployment you must update the input model by providing the
+      following information: </p>
+    <?oxy_insert_end?>
+    <section id="setting-up-cloud-model"><b>Setting up the cloud
+        model</b><p><?oxy_insert_start author="sharmabi" timestamp="20150727T162456+0530"?><!--You must configure the followng information before starting your Swift deployment.--><?oxy_insert_end?><?oxy_delete author="sharmabi" timestamp="20150727T162500+0530" content="You must configure the followng information before starting your Swift deployment."?></p></section>
+    <section>
+      <p>
+        <ul id="ul_ic3_hkg_5s">
+          <li>Allocate servers and disk drives</li>
+          <li>Allocate networks</li>
+          <li>Allocate a Ring -Builder Node</li>
+          <li>Specify the rings (ring specifications)</li>
+          <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+          <li>Making site-specific changes to configuration parameters<?oxy_custom_end?> (not aware
+            about this. need input from dev team)</li>
+        </ul>
+      </p>
+    </section>
+    <section id="allocate-server-disk"><b>Allocate servers and disk drives</b></section>
+    <p>The disk model describes the number of disks on a particular server type and how they are
+      used: some are used by the operating system e.g. for the root, log, crash filesystems. While
+      other disks are used for swift storage. For a swift system you may have two disk models, one
+      that describes the storage on the swift proxy servers (which may hold the account &amp;
+      container data) and one for the swift object servers.</p>
+    <p>The general structure of a disk model is to specify a number of disk drives/devices and then
+      designate that they are "consumed" for a specific purpose. The general syntax is as
+      follows:</p>
+    <p>
+      <codeblock>device-groups:
+ 
+  - name: group_name
+    devices:
+      -  name: sdc
+      -  name: sdd
+      -  name: sde
+    consumer:
+        name: &lt;subsystem>
+        attrs:
+            &lt;attributes-sepecific-to-subsystem></codeblock>
+    </p>
+    <example/>
+    <p> The DISK_SET_SWIFT_OBJECT disk-model describes a typical object server disk
+      layout.<codeblock>disk-models:
+  - name: "DISK_SET_SWIFT_OBJECT"
+    device-groups:
+    # disk node;
+      - name: "swiftobj"
+        devices:
+          - name: "/dev/sdb"
+          - name: "/dev/sdc"
+          - name: "/dev/sdd"
+          - name: "/dev/sde"
+          - name: "/dev/sdf"
+        consumer:
+          name: swift
+          attrs:
+            rings:
+              - object-0</codeblock></p>
+    <example/>
+    <p>Then you have the server-role model, this maps the disk-model to a particular server type.
+      For example take a look at the ROLE-OBJECT type in the following example which specifies a
+      disk-model
+      DISK_SET_SWIFT_OBJECT.<codeblock>  server-roles:
+
+    - name: "ROLE-CCP"
+      interface-model: "INTERFACE_SET_3"
+      disk-model: "DISK_SET_CONTROLLER"
+
+    - name: "ROLE-RCP"
+      interface-model: "INTERFACE_SET_3"
+      disk-model: "DISK_SET_CONTROLLER"
+
+    - name: "ROLE-RCP-SWIFT"
+      interface-model: "INTERFACE_SET_3"
+      disk-model: "DISK_SET_SWIFT_PAC"
+
+    - name: "ROLE-COMPUTE"
+      interface-model: "INTERFACE_SET_3"
+      disk-model: "DISK_SET_COMPUTE"
+
+    - name: "ROLE-OBJECT"
+      interface-model: "INTERFACE_SET_3"
+      disk-model: "DISK_SET_SWIFT_OBJECT"</codeblock></p>
+    <p>For the Object Store, the <b>subsystem</b> is "swift". The <b>attrs</b> must contain an item
+      called <b>rings</b>. The <b>rings</b> item contains a list of ring names. For
+      example:<codeblock>device-groups:
+ 
+  - name: swiftdevices
+    devices:
+      -  name: sdc
+      -  name: sdd
+      -  name: sde
+    consumer:
+        name: swift
+        attrs:
+            rings:
+              -  name: account
+              -  name: container
+              -  name: object-0</codeblock></p>
+    <p>You can interpret these directives as follows:</p>
+    <ul id="ul_cxs_rng_5s">
+      <li>A server using this disk model, has at least three drives: /dev/sdc, /dev/sdd and
+        /dev/sde. It may have other drives. In addition, in this exmaple, other drives may be
+        allocated to other subsystems or used as the boot device. They are not shown here. If a
+        device is not present in the disk mode, but exists on a server, it will not be used.
+        Conversely, if a device is listed in a disk model and is not present in the server, the
+        deployment will fail. You should either add the device or change the disk model so the
+        device is not mentioned.</li>
+      <li>The device-group name is informative and has no effect on how the Object Storage system
+        uses the drives.</li>
+      <li>The sdc, sdd and sde drives are used by and dedicated to the Object Storage system</li>
+      <li>The devices are used by the account, container and object-0 rings.. Rings are described in
+        "Specifying the rings (ring specifications)".</li>
+    </ul>
+    <p>You are given a number of example disk models. You are free to modify or edit the disk models
+      to suite your usage of the system. For example, given the same set of drives, you might
+      allocate devices to rings in a different topology as
+      follows:<codeblock>device-groups:
+ 
+  - name: metadata
+    devices:
+      -  name: sdc
+    consumer:
+        name: swift
+        attrs:
+            rings:
+              -  name: account
+              -  name: container
+ - name: data
+ devices:
+      -  name: sdd
+      -  name: sde
+    consumer:
+        name: swift
+        attrs:
+            rings:
+              -  name: object-0
+              -  name: object-1</codeblock></p>
+    <p>In this model, /dev/sdc is used by account and container rings, whereas /dev/sdd and /dev/sde
+      are devoted to object storage using two different storage policies (object-0 and
+      object-1).</p>
+    <section><b>Allocate networks </b><p>information required</p></section>
+    <section><b>Allocate a Ring -Builder Node</b></section>
+    <section><b>Specify Ring</b><p>The ring maps the llogical names of data to locations on
+        particular disks. There is a separate ring for account database, account database, and
+        individual objects, but each rings works in the similarly. The rings are built and managed
+        manually by a utility called the ring-builder. The ring-builder also keeps its own builder
+        file with the ring information and additional data required to build future rings</p><p>You
+        can specify the ring in the input model using the ring specification key. Also, there is an
+        entry for each distinct Swift System. Therefore, in the input model specify the keystone
+        region name in the specified <b>region-name</b>. </p><p>The example file of the
+        ring-specification is location in <codeph>config/swift/rings.yml</codeph>.</p></section>
+    <example>
+      <codeblock>ring-specifications:
+    - region-name: region1
+      rings:
+        - name: account
+          display-name: Account Ring
+          min-part-time: 24
+          partition-power: 17
+          replication-policy:
+            replica-count: 3
+        - name: container
+          display-name: Container Ring
+          min-part-time: 24
+          partition-power: 17
+          replication-policy:
+            replica-count: 3
+        - name: object-0
+          display-name: General
+          default: yes
+          min-part-time: 24
+          partition-power: 17
+          replication-policy:
+            replica-count: 3</codeblock>
+    </example>
+    <p>In the above example shows that region1 has three rings as follows:</p>
+    <p>
+      <ul id="ul_owf_4mc_vs">
+        <li>An account ring. You must always specify a ring called "account". The
+            <b>display-name</b> is informational and not used. The purpose of the <b>min-part-time,
+            partition-power, replication-policy</b> and <b>replica-count</b> are described later.
+          The account ring is used by Swift to store metadata about the projects in your system. In
+          Swift, a Keystone project maps to a Swift account.</li>
+        <li>A container ring. You must always specify a ring called "container". The
+            <b>display-name</b> is informational and not used.</li>
+        <li>An object ring. You must always specify a ring called "object-0". It is possible to have
+          multiple object rings – these are known are <i>storage policies</i>. The
+            <b>display-name</b> is the name of the storage policy and may be used by users of the
+          Swift system when they create containers. it allows them to specify the storage policy
+          that the container uses.</li>
+      </ul>
+    </p>
+    <section><b>Sequence to specify the ring parameters</b><p>You can follow the below sequence to
+        specify the ring parameters:</p><ol id="ol_ndm_3xc_vs">
+        <li>You must have an account and container ring. The <b>name</b> attribute must be "account"
+          and "container" respectively. The . display-name attribute can be set to any value and is
+          not used by the system.</li>
+        <li>Pick a value for <b>partition-power</b>. The appropriate value is related to the number
+          of disk drives you allocate for the account and container storage. We recommend that you
+          use the same drives for both the account and container rings. Hence, the
+            <b>partition-power</b> value should be the same. More information about picking an
+          appropriate value is below.</li>
+        <li>The<b> replication-policy</b> attribute must be present for account and container rings.
+          The <b>replica-count</b> is normally 3 (i.e, The Object Store will keep three copies of
+          accounts and containers).</li>
+        <li>Determine the number of storage policies you need for object storage. Each storage
+          policy will have a corresponding ring description. You must have at least one storage
+          policy for object storage – hence you will have at least one ring description.</li>
+        <li>The first storage policy must have a <b>name</b> of "object-0". The <b>display-name</b>
+          must be a single word (character such as underscore or dash are allowed). This is the
+          storage policy name and is visible to your end users.</li>
+        <li>Subsequent object rings (if they exist) must have a name of "object-&lt;number&gt;"
+          where number starts at "1" and is incremented by one for each storage policy ( so
+          "object-1", "object-2", and so on). The<b> display-name</b> attribute must be unique.</li>
+        <li>One (only) of the object rings must have the <b>default</b> attribute set to "yes". This
+          means that when a user creates a container and does not specify a storage policy, the
+          storage policy will be set to this object ring.</li>
+        <li>Pick a <b>partition-power</b> value for each storage policy. Each storage policy may
+          have a different partition power. As explained below, the partition power is determined by
+          the number of disk drives allocated to object storage.</li>
+        <li>Select <i>replicated</i> or<i> erasure-coded</i> storage using the
+            <b>replication-policy</b> or <b>erasure-policy</b> attributes. Currently erasure-coded
+          storage is not recommended for production storage. Do not specify both
+            <b>replication-policy</b> and <b>erasure-policy</b> items – only one or other is
+          allowed.</li>
+        <li>For replicated storage, set the <b>replica-count</b> attribute. Unless you have a
+          specific reason, the replica count value should be set to 3. This means that the Object
+          Storage system will store three separate copies of each object. This ensures that even if
+          a disk drive fails or a server is down, you still have other copies of the object,</li>
+        <li>For all rings, set a value for <b>min-part-time</b>. This is the number of hours that
+          the swift-ring-builder tool will enforce between ring rebuilds. On a small system, this
+          can be as low as one hour. See later for more information on selecting a value for
+            <b>min-part-time</b>. The value can be different for each ring.</li>
+        <li>Optionally set the <b>swift-regions</b> and <b>swift-zones</b> attribute. The
+          swift-regions attribute applies to all rings in a given Keystone region. The swift-zones
+          can be applied to all rings in a given region or can be specified for a specific ring. See
+          later for more information.</li>
+      </ol></section>
+    <section><b>Selecting a Partition Power</b></section>
+    <p>When storing an object, the Object Storage system hashes the name. This hash results in a
+      "hit" on a partition (so a number of different object names will result in the same partition
+      number). The partition in turn is mapped to one the available disk drives. In fact, with a
+      replica count of 3, each partition is mapped to three different disk drives. The hashing
+      algorithm used hashes over a fixed number of partitions. The partition-power attribute
+      determines how many such partitions you have. You must select a partition power for a given
+      ring that is appropriate to the number of disk drives you allocate to the ring. This is
+      because:</p>
+    <ul id="ul_dkc_xxc_vs">
+      <li>If you use a high partition power and have few disk drives, each disk drives will have
+        1000s of partitions. With too many partitions, audit and other processes in the Object
+        Storage system cannot "walk" the partitions in a reasonable time and updates will not occur
+        in a timely manner.</li>
+      <li>If you use a low partition power and have many disk drives, you will have 10s (or maybe
+        only one) partition on a drive. The Object Storage system does not use size when hashing to
+        a partition – it hashes the name. If sizes and names are randomly distributed, you would
+        normally expect a random, even, distribution of sizes within a partition. However, this may
+        not happen (i.e., two neighboring partitions may have different sizes). With many partitions
+        on a drive, a large partition is cancelled out by a smaller partition so the overall drive
+        usage is similar. However, with very small numbers of partitions, the uneven distribution of
+        sizes can be reflected in disk drive utilization (so one drive becomes full while a
+        neighboring drive is empty).</li>
+    </ul>
+    <p>An ideal number of partitions per drive is 100. If you know the number of drives, you can
+      select a partition power that is close to 100 partitions per drive. However, this is fine if
+      you never plan to add or remove drives from your system. Usually, you install a system with a
+      specific number of drives and add drives as your storage needs grow. However, you cannot
+      change the value of the partition power. Hence you must select a value that is a compromise
+      between current and planned capacity. This is why the partition power selection table below
+      shows a range of drives.</p>
+    <p>If you are installing a small capacity system, but know you need to grow to very large
+      capacity, you may find that you cannot fit within any of the ranges in the table. if so, you
+      should seek help from Professional Services to plan your system.</p>
+    <p>There are a few additional factors that can help or mitigate the fixed nature of the
+      partition power, as follows:</p>
+    <ul id="ul_fnc_xxc_vs">
+      <li>Account and container storage represents a small fraction (typically 1%) of your object
+        storage needs. Hence, you can select a smaller partition power (relative to object ring
+        partition power) for the account and container rings. </li>
+      <li>
+        <p>For object storage, you can add additional storage policies (i.e., another object ring).
+          When you have reached capacity in an existing storage policy, you can add a new storage
+          policy with a higher partition power (because you now have more disk drives in your
+          system). This means that you can install your system with a small partition power
+          appropriate to a small number of initial disk drives. Later when you have many disk
+          drives, the new storage policy can have a higher value appropriate to the larger number of
+          drives.</p>
+        <p>However, while his technique allows you to continue to add storage capacity you should
+          note that existing containers continue to use their original storage policy. Hence, the
+          additional objects must be added to new containers to take advantage of the new storage
+          policy.</p>
+      </li>
+    </ul>
+    <section><b>Replicated Storage and Erasure-Coded Storage</b><p>Objects can be stored in one of
+        two ways:</p><ul id="ul_typ_2yc_vs">
+        <li> Replicated Storage. With this mechanism, objects are duplicate copies of an object are
+          made and stored on different disk drives. All replicas are identical. If one is lost or
+          corrupted, the system will automatically copy one of the remaining replicas to restore the
+          missing replica. The <b>replication-policy</b> attribute is used to specify that a ring
+          uses replicated storage.</li>
+        <li>
+          <p>Erasure-coded Storage. With this mechanism an object is divided into fragments and
+            parity fragments are also constructed. The fragments and parity fragments are then
+            stored on different disk drives. If some fragments are lost or corrupted, the original
+            object can be reconstructed from the remaining fragments or parity fragments. The<b>
+              erasure-coding-policy </b>attribute is used to specify that a ring uses erasure-coding
+            storage. Currently, this is not supported for production use.</p>
+        </li>
+      </ul><p>You will notice that the account and container rings must use replicated storage. We
+        don't have object files in these rings. Instead an account or container is a database file
+        that contains a listing of the containers or objects. These database files are replicated in
+        a similar way to objects.</p><p>Non-Standard Replica Count</p><p>The recommended value for
+        the <b>replica-count</b> attribute is 3. That is, three copies of data are kept to ensure
+        redundancy and continued access in the even of component failures. There are two situations
+        where a different replica count is appropriate:</p><ul id="ul_acq_2yc_vs">
+        <li>On a system with fewer than three disk drives, a replica count of 2 may be used. We do
+          not recommend using a small replica count to save on storage costs since the probability
+          of object loss is higher with small replica counts.</li>
+        <li> You can increase the replica count to give you higher reliability or availability. For
+          example, if you have a system divided into 4 swift zones, with a replica count of 4 if two
+          zones are failed or unavailable, you still have two copies of all objects in the remaining
+          surviving zones. With a replica count of 3, this system would have an average of 1.5
+          objects in the surviving zones. (Obviously, you won't have 1.5 copies of a given object.
+          Instead, 50% of the objects would have a copy in one or other zone and 50% of objects
+          would have a copy in both surviving zones).</li>
+      </ul><p>It is possible to change the value of the replica count. In fact, fractional values
+        are allowed. This is so you can gradually change to a higher or lower value.</p></section>
+    <section><b>Designing Storage Policies</b><p>Storage policies allow you to differentiate the way
+        objects are stored. There are a number of possible reasons as follows:</p><ul
+        id="ul_hkz_fyc_vs">
+        <li>You have several different types or classes of disk drive. For example, you could use
+          7.5K RPM high-capacity drives for one type of data and fast SSD drives for another type of
+          data.</li>
+        <li>You have different redundancy or availability needs. For example, you could use a
+          replica count of 3 for "normal" data and a replica count of 4 for "critical" data.</li>
+        <li>As described in the discussion of partition power above you are growing your capacity
+          beyond the recommended partition power.</li>
+        <li>You use erasure-coded storage for some objects and replicated storage for other
+          objects.</li>
+      </ul><p>Your end users chose which storage policy they use on a per-container basis. In
+        practice most users will not explicitly specify the storage policy. You can specify which
+        storage policy is then used by using the <b>default</b> attribute. You can change which
+        storage policy is the default. However, this does not affect existing containers. Once the
+        storage policy of a container is set, the policy for that container cannot be
+        changed.</p><p>The disk drives used by storage policies can overlap or be distinct. However,
+        if you overlap (i.e., have disks in common between two storage policies) you are recommended
+        to use the same set of disk drives for both policies. If there is not a complete overlap in
+        disk drives, as one storage policy receives many objects, the drives that are common to both
+        policies must store more objects than drives that are only allocated to one storage policy.
+        This may be appropriate for a situation where the "overlapped" disk drives are larger than
+        the non-overlapped drives. However, in general this situation is harder to balance then a
+        simple topology.</p></section>
+    <section><b>Swift Regions and Swift Zones</b><p>tbd</p></section>
+    <section/>
+  </body>
+</topic>
+<?oxy_options track_changes="on"?>
