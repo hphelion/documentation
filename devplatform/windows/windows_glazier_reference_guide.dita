@@ -90,6 +90,9 @@
 --virtio-iso /path/to/virtio_iso_kit        
     - specifies the path to the Virtio iso image
 
+--hypervisor {kvm|esxi|kvmforesxi}
+    - specifies which hypervisor to use. Valid options are "kvm", "esxi" or "kvmforesxi". The default is kvm
+
 --profile PATH                              
     - (optional) path to a glazier profile. Can be used multiple times. If not supplied, 
     - a subdirectory named profile will be searched by default, and all profiles found will be used. 
@@ -144,7 +147,7 @@
 
 --glazier-vm-https-proxy
     - (optional) Sets the https proxy in the created virtual machine
-    - 
+
 --help                      
     - shows this message</codeblock>
 </section>
