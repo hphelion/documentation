@@ -20,6 +20,7 @@
 <body>
 <p>
 <!--UNDER REVISION-->
+  <!-- this version of the file should be posted on the website as just a one liner topic, per Jayme. Paul -->
  <!--./commercial/GA1/1.1commerical.troubleshooting.compute.md-->
  <!--permalink: /helion/openstack/1.1/services/troubleshooting/compute/--></p>
 <section id="configdrive"> <title>Storing Metadata on a Configuration Drive</title>
@@ -27,10 +28,9 @@
 <!--DOCS-950-->
 The HP Helion OpenStack compute service can be configured to <xref href="../../commercial/GA1/1.1commerical.services-compute-configDrive.dita" >write metadata to a special configuration drive</xref> that contains information normally available through the metadata service.</p>
 </section>
-<section id="cleanup"> <title>Compute Databases Become Less Performant Over Time</title>
+  <!--DOCS-1183 <section id="cleanup"> <title>Compute Databases Become Less Performant Over Time</title>
 <p>
-<!--DOCS-1183-->
-  <!-- this is commented out in the bundle version. The bundle version should be published as a one line topic. Paul -->
+
 When the Compute Service deletes an entity, such as an instance, it <i>marks</i> the relevant database rows as deleted, but does not actually <i>remove</i> those rows from the database. As the number of "soft-deleted" rows builds up, they begin to have a significantly detrimental impact on the database's performance.</p>
 <p>When a row is marked as "deleted", two values are set.</p>
 <ul>
@@ -163,6 +163,6 @@ drop table inst_uuids;
 </codeblock>
 </li>
 </ol>
-</section>
+</section> -->
 </body>
 </topic>

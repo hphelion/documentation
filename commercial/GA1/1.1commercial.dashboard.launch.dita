@@ -37,9 +37,10 @@
 </li>
 <li>
 <p>In the address bar, enter the host name or IP address for the dashboard.</p>
-
-<p>
-<b>Note:</b> If a certificate warning appears when you try to access the URL for the first time, a self-signed certificate is in use. These certificates are not considered trustworthy by default. Verify the certificate or add an exception in the browser to bypass the warning.</p>
+        <note> If a certificate warning appears when you try to access the URL for the first time, a
+          self-signed certificate is in use. These certificates are not considered trustworthy by
+          default. Verify the certificate or add an exception in the browser to bypass the
+          warning.</note>
 </li>
 <li>
 <p>On the <b>Log In</b> page, enter your user name and password and then click <b>Sign In</b>.</p>
@@ -54,7 +55,7 @@
 <p>If you are a non-admin user, you will only be able to select a project from the list at the top of the screen.</p>
 
 <p>
-<xref type="section" href="#topic1206"> Return to Top </xref>
+<xref href="#topic1206"> Return to Top </xref>
 </p>
 </li>
 </ol>

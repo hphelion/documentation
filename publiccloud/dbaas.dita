@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic790">
+<title>HP Helion Public Cloud Relational Database Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./publiccloud/dbaas.md-->
+ <!--permalink: /publiccloud/dbaas/--></p>
+<p>HP Helion Public Cloud Relational Database for MySQL simplifies the creation and management of MySQL database instances. The service automates administration tasks such as deployment, configuration, and patching so you can focus on adding more value to your applications and business.</p>
+<section id="api"> <title>API</title>
+<p>Do you need low level, raw REST API access to HP Helion Public Cloud Relational Database? Take a look at our <xref href="../publiccloud/api/dbaas-api.dita" >Relational Database API for v13.5 page</xref> for details.</p>
+</section>
+<section id="cli"> <title>CLI</title>
+<p>For instructions on installing and using the CLI visit our <xref href="https://community.hpcloud.com/article/command-line-interface-cli-tool-installation-instructions" scope="external" format="html" >Relational Database CLI page</xref> for details.</p>
+</section>
+</body>
+</topic>

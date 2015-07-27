@@ -73,9 +73,9 @@
 cd /hp-ovsvapp/src/update #python updater.py
 </codeph>
 </codeblock>
-
-<p>
-<b>Note:</b> If you see the following error while updating the OVSvApp, it means that the system from where update is launched does not have the passwordless authentication enabled for OVSvApp.</p>
+                    <note>If you see the following error while updating the OVSvApp, it means that
+                        the system from where update is launched does not have the passwordless
+                        authentication enabled for OVSvApp.</note>
 
 <codeblock>
 <codeph>Fatal error: Needed to prompt for a connection or sudo password (host: &lt;ovs-vapp-ip&gt;), but input would be ambiguous in parallel mode
@@ -87,7 +87,7 @@ Aborting.
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic4992"> Return to Top </xref>
+  <xref href="#topic4992"> Return to Top </xref>
 </p>
 </section>
 <section id="update1"> <title>Update OVSvApp from version 1.1 to version 1.1.1</title>
@@ -160,9 +160,9 @@ seed_ip=
 cd /hp-ovsvapp/src/update #python updater.py
 </codeph>
 </codeblock>
-
-<p>
-<b>Note:</b> If you see the following error while updating the OVSvApp, it means that the system from where update is launched does not have the passwordless authentication enabled for OVSvApp.</p>
+                    <note>If you see the following error while updating the OVSvApp, it means that
+                        the system from where update is launched does not have the passwordless
+                        authentication enabled for OVSvApp.</note>
 
 <codeblock>
 <codeph>Fatal error: Needed to prompt for a connection or sudo password (host: &lt;ovs-vapp-ip&gt;), but input would be ambiguous in parallel mode
@@ -190,7 +190,7 @@ Aborting.
 </li>
 </ol>
 <p>
-  <xref type="section" href="#topic4992"> Return to Top </xref>
+  <xref href="#topic4992"> Return to Top </xref>
 </p>
 <!-- Not needed?
 1. Make sure that DRS is enabled on the cluster on which 1.01 version of OVSvApp will be installed:

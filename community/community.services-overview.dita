@@ -18,9 +18,7 @@
 <li>
 <xref type="section" href="#topic5696/service">Service User Accounts</xref>
 </li>
-<li>
-  <xref type="section" href="#topic5696/OpenStac">OpenStack Services</xref>
-</li>
+      <li><xref href="#topic5696/OpenStack" format="dita"/></li>
 <li>
 <xref type="section" href="#topic5696/Dashboard">Dashboard Services</xref>
 </li>
@@ -65,7 +63,8 @@
 <p>See <xref href="community.services-networking-overview.dita" >Overview of the Networking service</xref>.</p>
 <p>
 <b>Object Operations</b>. The Object Operations service enables you to store and retrieve data. Object Storage is a distributed storage system for static data such as virtual machine images, photo storage, email storage, backups and archives. Also known as <b>Swift</b>.</p>
-<p>See <xref href="community.services-object-overview.dita" >Overview of the Object Operations service</xref>.</p>
+<p>See <xref href="community.services-object-overview.dita#topic3600">Overview of the Object
+          Operations service</xref>.</p>
 <p>
 <b>Orchestration</b>. The Orchestration service provides a template-based orchestration for describing a cloud application. A Heat template is a <xref href="http://www.yaml.org/" scope="external" format="html" >YAML</xref> file that describes the infrastructure for a cloud application. Templates contain vendor-independent specifications for launching a particular service or application.  Also known as <b>Heat</b>.</p>
 <p>See <xref href="community.services-orchestration-overview.dita" >Overview of the Orchestration service</xref>.</p>

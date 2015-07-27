@@ -18,15 +18,24 @@
 <section id="enabling-name-resolution"> <title>Enabling name resolution</title>
 <p>To enable name resolution from tenant VMs in the overcloud, it is necessary to configure the DNS servers that will be used by <codeph>dnsmasq</codeph> as forwarders.</p>
 <ol>
-<li> Log in to your install system as root:<codeblock><codeph>sudo su -</codeph> </codeblock></li>
-<li>Locate the <codeph>overcloud_neutron_dhcp_agent.json file</codeph> at
-                        <codeph>ce-installer/tripleo/hp_passthrough/overcloud_neutron_dhcp_agent.json</codeph>
-                </li>
-<li>Add the desired <codeph>dnsmasq_dns_servers</codeph> items by modifying the
-                        <codeph>value</codeph> field with the IP address of your DNS server.
-                    Multiple DNS servers can be specified as a comma separated list.<p>Your JSON
-                        should appear similar to the
-                    following:</p><codeblock><codeph>{"dhcp_agent":
+<li>
+<p>Log in to your install system as root:</p>
+
+<p>
+<codeph>sudo su -</codeph>
+</p>
+</li>
+<li>
+<p>Locate the <codeph>overcloud_neutron_dhcp_agent.json file</codeph> at <codeph>ce-installer/tripleo/hp_passthrough/overcloud_neutron_dhcp_agent.json</codeph>
+</p>
+</li>
+<li>
+<p>Add the desired <codeph>dnsmasq_dns_servers</codeph> items by modifying the <codeph>value</codeph> field with the IP address of your DNS server.  Multiple DNS servers can be specified as a comma separated list.</p>
+
+<p>Your JSON should appear similar to the following:</p>
+
+<codeblock>
+<codeph>{"dhcp_agent":
     {"config":
         [
             {"section":"DEFAULT",
@@ -39,26 +48,28 @@
             ]
         }
     }
-</codeph></codeblock></li>
-<li>Copy the <codeph>overcloud_neutron_dhcp_agent.json</codeph> file to a new file named
-                        <codeph>undercloud_neutron_dhcp_agent.json</codeph> to configure the same
-                    forwarders for the undercloud.</li>
+</codeph>
+</codeblock>
+</li>
+<li>
+<p>Copy the <codeph>overcloud_neutron_dhcp_agent.json</codeph> file to a new file named <codeph>undercloud_neutron_dhcp_agent.json</codeph> to configure the same forwarders for the undercloud.</p>
+</li>
 </ol>
 </section>
 <section id="next-step"> <title>Next Step</title>
 <ul>
 <li>
 <p>
-<xref href="../community/community.install.baremetal.dita#name-resolution" type="section"  >Return to the baremetal install</xref>
+    <xref href="../community/community.install.baremetal.dita#topic16854/name-resolution" type="section">Return to the baremetal install</xref>
 </p>
 </li>
 <li>
 <p>
-<xref href="../community/community.install.virtual.dita#name-resolution" type="section"  >Return to the virtual install</xref>
+    <xref href="../community/community.install.virtual.dita#topic8707/name-resolution" type="section">Return to the virtual install</xref>
 </p>
 
 <p>
-<xref type="section" href="#topic2003"> Return to Top </xref>
+<xref href="#topic2003"> Return to Top </xref>
 </p>
 </li>
 </ul>

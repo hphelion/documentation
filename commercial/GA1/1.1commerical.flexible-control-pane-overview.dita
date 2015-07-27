@@ -166,9 +166,8 @@ The default value is eth2. If this is correct you do not need to set this variab
 </li>
 </ul>
 <p>Refer to <xref href="../../commercial/GA1/1.1commercial.install-GA-JSON.dita" >Editing the Installation Configuration JSON File</xref> for a full list of the environmental variables that control your installation.</p>
-<p>
-<b>Note:</b> For FCP, the following defaults apply to the variables below (tuned
-to the FCP environment):</p>
+                        <note>For FCP, the following defaults apply to the variables below (tuned to
+                                the FCP environment):</note>
 <codeblock>
   <codeph>undercloud.neutron_public_interface eth0
 overcloud.virtual_interface eth0
@@ -210,8 +209,8 @@ eth2,user,,192.168.11.114,2,32768,,OvercloudSwift,
 <p>Field 7 is ignored.</p>
 <p>Field 8 is the role the virtual machine will have.
         (You must specify this value.)</p>
-<p>
-<b>Note:</b> Physical baremetal nodes are added later; do NOT add them to this file.</p>
+                        <note>Physical baremetal nodes are added later; do NOT add them to this
+                                file.</note>
 <!-- ===================== horizontal rule ===================== -->
 <p>Continue to <xref href="../../commercial/GA1/1.1commerical.flexible-control-pane-installation.dita" >step-by-step installation instructions and known issues</xref>.</p>
 </section>

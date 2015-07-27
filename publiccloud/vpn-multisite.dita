@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic13796">
+<title>HP Helion Public Cloud Networking: VPN multi-site configuration guide</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./publiccloud/vpn-multisite.md-->
+ <!--permalink: /publiccloud/compute/vpn-multisite/--></p>
+<p>Once you have set up your initial VPN connection, you can extend your network to your different private sites. This guide provides you the basic steps to configure a VPN Virtual Machine (instance) and establish a secure connection between private sites to your HP Helion Public Cloud VPN.</p>
+  <p>For this procedure, we assume that you have an active HP Helion Public Cloud account with a VPN instance set up (see the <xref href="vpn-quickstart.dita" >VPN Quick Start Guide</xref> to set up the initial VPN instance).</p>
+<p>While you can set up your Compute service instance and VPN using any Linux OS, for the purpose of this guide, we use an Ubuntu instance and strongSwan IPsec. This configuration has been tested, but you can use this guide as a basis for connecting your sites to your HP Helion Public Cloud VPN.</p>
+<p>This guide covers the following:</p>
+<ul>
+<li>
+<xref type="section" href="#topic13796/netsecinfo">Collect network and security information</xref>
+</li>
+<li>
+<xref type="section" href="#topic13796/defineipsecike">Define IPsec and IKE proposals</xref>
+</li>
+<li>
+<xref type="section" href="#topic13796/configvpn">Configure the VPN for the IKE and IPsec proposals</xref>
+</li>
+<li>
+<xref type="section" href="#topic13796/connect">Establish a connection with your HP Helion Public Cloud VPN</xref>
+</li>
+<li>
+<xref type="section" href="#topic13796/trouble">Troubleshoot and verify connections</xref>
+</li>
+<li>
+<xref type="section" href="#topic13796/info">For further information</xref>
+</li>
+</ul>
+<section id="netsecinfo"> <title>Collect network and security information</title>
+<p>Before proceeding, collect network and security information on both sides for the VPN connection you are trying to establish.</p>
+<p>We recommend that you compile the information in a spreadsheet to have handy when you need to input the data.</p>
+<p>Collect the following information for each RIGHT remote network:</p>
+<ul>
+<li>Router Public IP Address</li>
+<li>Router Private Subnet</li>
+<li>Client system behind NAT</li>
+<li>Router IKE Proposal</li>
+<li>Router IPsec Proposal</li>
+<li>Router IPsec Policy</li>
+<li>Router support Perfect Forward Secrecy (PFS)</li>
+<li>Router support Dead Peer Detection (DPD)</li>
+<li>Router Shared Secret/Certificates</li>
+<li>Router ACL</li>
+</ul>
+<p>Collect the following information for the LEFT VPC network:</p>
+<ul>
+<li>VPN instance Floating IP Address</li>
+<li>VPCs Private Subnet</li>
+<li>VPN VM behind NAT</li>
+<li>VPN IKE Proposal</li>
+<li>VPN IPsec Proposal</li>
+<li>VPN IPsec Policy</li>
+<li>VPN support PFS</li>
+<li>VPN support DPD </li>
+</ul>
+</section>
+<section id="defineipsecike"> <title>Define IPsec and IKE proposals</title>
+<p>Define the IPsec and IKE proposals in their routers. A router can support both IKEv1 and IKEv2.</p>
+<p>
+<b>Note:</b> IKEv1 is supported in most router platforms, so this configuration provides only information about how to configure the IKEv1.</p>
+<p>The output below provides information about the IKE proposal and the IPsec proposal, with details about the authentication algorithm, encryption algorithm, perfect forward secrecy, shared secret, and using the main mode or aggressive mode.</p>
+<p>
+<b>Note:</b> Each location can have different IKE and IPsec proposals. Adjust the configuration at the VPC end (Left side) to adopt all the proposals as needed.</p>
+<p>For simplicity, assume that all routers you will connect use the IKE and IPsec proposals defined below.</p>
+<codeblock>
+  <codeph>Virtual Private Cloud
+
+VPN Connection Configuration
+A VPN Connection consists of a pair of Security Associations (SAs).
+===============================================================================
+
+#1: Internet Key Exchange Configuration
+
+Configure the IKE SA as follows
+- Authentication Method    : Pre-Shared Key
+- Pre-Shared Key           : &amp;#8220;abcd&amp;#8221; 
+- Authentication Algorithm : sha1
+- Encryption Algorithm     : aes-128-cbc
+- Lifetime                 : 28800 seconds
+- Phase 1 Negotiation Mode : main
+- Perfect Forward Secrecy  : Diffie-Hellman Group 2
+
+#2: IPsec Configuration
+
+Configure the IPsec SA as follows:
+- Protocol                 : esp
+- Authentication Algorithm : hmac-sha1-96
+- Encryption Algorithm     : aes-128-cbc
+- Lifetime                 : 3600 seconds
+- Mode                     : tunnel
+- Perfect Forward Secrecy  : Diffie-Hellman Group 2
+
+IPsec Dead Peer Detection (DPD) will be enabled on the AWS Endpoint. We recommend configuring DPD on your endpoint as follows:
+- DPD Interval             : 10
+- DPD Retries              : 3
+</codeph>
+</codeblock>
+<p>back to the <xref type="section" href="#topic13796">top</xref>
+</p>
+</section>
+<section id="configvpn"> <title>Configure the VPN for the IKE and IPsec proposals</title>
+<p>This section uses strongSwan to configure the IKE and IPsec proposals from the previous section.</p>
+<p>
+  <b>Note:</b> Make sure you have configured your VPN Gateway instance according to the <xref href="vpn-quickstart.dita" >"VPN Quick Start Guide"</xref>.</p>
+</section>
+<section id="strongswan-configuration-files"> <title>strongSwan configuration files</title>
+<ol>
+<li>SSH into the VPN instance on your VPC using your Public IP Address and ssh keys. 
+  <b>Note:</b> Use either a Windows client with PuTTY or a Linux client with ssh to access your VPN instance shell (see the <xref href="vpn-quickstart.dita" >VPN Quick Start Guide</xref>).</li>
+<li>
+<p>Once logged in, run the following command to see the <i>IPsec.conf</i> file in the strongSwan configuration files.</p>
+
+<p>ls IPsec* strongswan*</p>
+</li>
+</ol>
+<p>strongSwan creates three configuration files during installation:</p>
+<ul>
+<li>IPsec.conf</li>
+<li>IPsec.secrets</li>
+<li>strongswan.conf</li>
+</ul>
+<p>These files are in the /etc/ directory of the installation file as well as a folder called IPsec.d that contains subfolders such as <i>cacerts</i>, <i>certs</i>, <i>private, crl</i>, etc., which can store the certificates and keys used for authentication.</p>
+<p>
+<i>/etc/IPsec.d/cacerts</i> - Holds the CA certificate.
+<i>/etc/IPsec.d/certs</i> - Holds the Host certificates.
+<i>/etc/IPsec.d/private</i> - Holds the private keys.
+<i>/etc/IPsec.d/crl</i> - Holds the certification revocation list.</p>
+</section>
+<section id="ipsecconf-file"> <title>IPsec.conf file</title>
+<p>Before looking into the configuration options of this file, familiarize yourself with some of the key configuration attributes.  When configuring the VPC VPN instance, always consider it as the LEFT node and the remote server as the RIGHT node. The diagram below shows the basic pieces of the network's LEFT and RIGHT sides.</p>
+<p>insert image</p>
+</section>
+<section id="config-setup-file"> <title>Config setup file</title>
+<p>The <i>config setup</i> subsection in the <codeph>IPsec.conf</codeph> file defines the general configuration parameters.</p>
+<ol>
+<li>Indent all parameters belonging to a sub-section by at least one space or tab character. You can have only one <i>config setup</i> section but an unlimited number of <i>conn</i> and <i>ca</i> sections.</li>
+<li>strongSwan provides IKEv1 and IKEv2 support through two different daemons, Pluto and Charon, respectively. Pluto is the keying daemon for the IKEv1 protocol. Setting  plutostart=yes states  starts the Pluto daemon to support the IKEv1 by default.</li>
+<li>Charon is <i>the</i> keying daemon for the IKEv2 protocol. Setting <codeph>charonstart=yes</codeph> starts the Charon daemon to support the IKEv2 by default.</li>
+</ol>
+<p>
+<b>Note:</b> If you plan to use only IKEv1 for testing and deployment, turn the Charon daemon off and run the Pluto daemon.</p>
+<ol>
+<li>
+<p>If the network is behind "NAT" turn the <codeph>nat_traversal</codeph> parameter to <b>yes</b>:</p>
+
+<p>
+<codeph>nat_traversal=yes</codeph>
+</p>
+</li>
+<li>
+<p>Use the plutodebug parameter to enable Pluto debug:</p>
+
+<p>
+<codeph>plutodebug=all|control</codeph>
+</p>
+</li>
+</ol>
+<p>Setting to all logs all Pluto-related messages, but control only enables the control related messages.</p>
+<p>
+<b>Note:</b> Other strongSwan paramaters and configuration options are not covered here. For detailed information, refer to the <xref href="http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation" scope="external" format="html" >strongSwan User Documentation</xref>  or the “VPN Quick Start Guide.”</p>
+</section>
+<section id="customize-the-ipsecconf-file"> <title>Customize the IPsec.conf file</title>
+<p>Modify the configuration file for your connections.</p>
+<p>First, modify the config setup section:</p>
+<codeblock>
+  <codeph>nat_transversal=yes
+plutostart-yes
+</codeph>
+</codeblock>
+<p>The remaining configurations can stay the same.</p>
+<p>Modify the connection information in the <codeph>conn %default</codeph> section:</p>
+<p>
+<b>Note:</b> As mentioned above, all common IKE and IPsec proposal information can be addressed in this section.</p>
+<codeblock>
+  <codeph>  ike=aes128-sha1-modp1024!
+  ikelifetime=28800s
+  keyexchange=ikev1
+  keyingtries=10
+  esp=aes128-sha1-modp1024!
+  keylife=3600s
+  rekeymargin=5m
+  type=tunnel
+  pfs=yes
+  compress=no
+  authby=secret
+</codeph>
+</codeblock>
+<p>For each specific network connection information modify the file. This shows an example of a generic connection setup with conn-default.</p>
+<codeblock>
+  <codeph>  conn Site-name    #the name you designate that site
+  left=%defaultroute
+  leftid=10.2.79.21
+  leftsubnet=10.2.0.0/16
+  leftfirewall=yes
+  right=209.65.244.238
+  rightid=192.168.1.50
+  rightsubnet=192.168.2.0/24
+  dpdaction=hold
+  dpddelay=60
+  dpdtimeout=500 
+  auto=add
+</codeph>
+</codeblock>
+<p>Repeat the above for every site needed in the network.</p>
+<p>
+<b>Note:</b> Once you have made the modifications, restart the IPsec process to use the latest information from the <codeph>IPsec.conf</codeph> file:</p>
+<codeblock>
+  <codeph># sudo IPsec restart
+</codeph>
+</codeblock>
+</section>
+<section id="customize-the-ipsecsecrets-file"> <title>Customize the IPsec.secrets file</title>
+<p>Based on the authentication type and shared secret for the VPC VPN instance, the customized <i>IPsec.secrets</i> file with the "Peer" and "Local" id is shown below.</p>
+<p>
+<b>Note:</b> You can use the same pre-shared key for all the connections or choose different pre-shared keys for different connections. This example demonstrates the same key for all connections.</p>
+<codeblock>
+  <codeph>#include /var/lib/strongswan/IPsec.secrets.inc
+10.2.79.21 209.65.244.238 192.168.1.50 : PSK "abcd" 
+</codeph>
+</codeblock>
+<p>
+<b>Note:</b> Before you enter the ID of the remote router, verify the ID the remote router will send as "PEER_ID" during the IKE negotiation.  The ID can be the IP address, FQDN, etc. When configured as the IP Address the ID can be either the Public IP of the router or the gateway Public IP address. Add the IP in the list above to authenticate against the PSK.</p>
+<p>
+<b>Note:</b> Do not modify the IPsec.conf file for other strongSwan applications.  Only IPsec starter can parse the IPsec.conf file, which is created by default, and IPsec starter automatically loads the necessary modules based on the IPsec.conf file definition.</p>
+</section>
+<section id="ike-and-ipsec-proposals-for-different-sites"> <title>IKE and IPsec proposals for different sites</title>
+<p>This section includes examples for IKE and IPsec proposals.</p>
+</section>
+<section id="examples-for-remote-site-ike-and-ipsec-proposals"> <title>Examples for remote site IKE and IPsec proposals</title>
+<p>These examples have three remote sites named a, b, and c (you can, of course, name your remote sites whatever makes sense to you).</p>
+<p>
+  <b>Setting the IKE and IPsec proposals:</b>
+</p>
+<p>In the configuration files, modify the following for Site-A:</p>
+<codeblock>
+  <codeph>IKE
+#1: Internet Key Exchange Configuration
+
+- Pre-Shared Key           : "abcd"
+
+- Encryption Algorithm     : aes-128-cbc
+
+IPsec
+
+#2: IPsec Configuration
+
+- Encryption Algorithm     : aes-128-cbc
+</codeph>
+</codeblock>
+<p>Modify the following for Site-B:</p>
+<codeblock>
+  <codeph>IKE
+#1: Internet Key Exchange Configuration
+
+- Pre-Shared Key           : "siteb"
+- Encryption Algorithm     : aes-256-cbc
+
+IPsec
+
+#2: IPsec Configuration
+
+- Encryption Algorithm     : aes-256-cbc
+</codeph>
+</codeblock>
+<p>Modify the following for Site-C:</p>
+<codeblock>
+  <codeph>IKE
+#1: Internet Key Exchange Configuration
+
+- Pre-Shared Key           : "sitec"
+
+- Perfect Forward Secrecy  : Diffie-Hellman Group 5
+
+IPsec
+
+#2: IPsec Configuration
+
+- Perfect Forward Secrecy  : Diffie-Hellman Group 5
+</codeph>
+</codeblock>
+<p>
+  <b>Sample IPsec configuration file for all sites (A, B and C) in the VPC</b>
+</p>
+<p>The <i>ipsec.conf</i> file can hold multiple connection sections. Because we have three connections in this example, you have one <codeph>conn %default</codeph> that includes all the common options for all the connections. The specific options are included in the <b>conn Site-A</b>, <b>conn Site-B</b>, and <b>conn Site-C</b>.</p>
+<codeblock>
+  <codeph># ipsec.conf - strongSwan IPsec configuration file
+
+# basic configuration
+
+config setup
+    plutodebug=all
+    plutostderrlog=/home/ubuntu/plutolog.txt
+    nat_traversal=yes
+    charonstart=no
+    plutostart=yes
+
+# Add connections here.
+
+# Sample VPN connections
+# NOTE: As mentioned above all common IKE and IPsec Proposal information can be
+# included in the section below
+
+conn %default 
+  ikelifetime=28800s
+  keyexchange=ikev1
+  keyingtries=10
+  keylife=3600s
+  rekeymargin=5m
+  type=tunnel
+  pfs=yes
+  compress=no
+  authby=secret
+
+# Site specific network connection information
+conn Site-A 
+  left=%defaultroute
+  leftid=10.2.79.21
+  leftsubnet=10.2.0.0/16
+  leftfirewall=yes
+  right=209.65.244.238
+  rightid=192.168.1.50
+  rightsubnet=192.168.2.0/24
+  ike=aes128-sha1-modp1024!
+  esp=aes128-sha1-modp1024!
+  dpdaction=hold
+  dpddelay=60
+  dpdtimeout=500 
+  auto=add
+
+conn Site-B 
+  left=%defaultroute
+  leftid=10.2.79.21
+  leftsubnet=10.2.0.0/16
+  leftfirewall=yes
+  right=209.65.244.239
+  rightid=172.168.2.50
+  rightsubnet=192.168.4.0/24
+  ike=aes256-sha1-modp1024!
+  esp=aes256-sha1-modp1024!
+  dpdaction=hold
+  dpddelay=60
+  dpdtimeout=500 
+  auto=add
+
+conn Site-C 
+  left=%defaultroute
+  leftid=10.2.79.21
+  leftsubnet=10.2.0.0/16
+  leftfirewall=yes
+  right=209.65.244.240
+  rightid=172.168.1.50
+  rightsubnet=192.168.3.0/24
+  ike=aes256-sha1-modp1536!
+  esp=aes256-sha1-modp1536!
+  dpdaction=hold
+  dpddelay=60
+  dpdtimeout=500 
+  auto=add
+</codeph>
+</codeblock>
+<p>
+  <b>Modify the <i>ipsec.secrets</i> file for connections with different keys:</b>
+</p>
+<codeblock>
+  <codeph>#include /var/lib/strongswan/ipsec.secrets.inc
+10.2.79.21 209.65.244.238 192.168.1.50 : PSK "abcd" 
+10.2.79.21 209.65.244.239 172.168.2.50 : PSK &amp;#8220; siteb&amp;#8221;
+10.2.79.21 209.65.244.240 172.168.1.50 : PSK &amp;#8220; sitec&amp;#8221;
+</codeph>
+</codeblock>
+<p>back to the <xref type="section" href="#topic13796">top</xref>
+</p>
+</section>
+<section id="connect"> <title>Establish a connection with your HP Helion Public Cloud VPN</title>
+<p>You can establish a connection with the remote router in two ways:</p>
+<ol>
+<li>The router can start the negotiation</li>
+</ol>
+<p>
+  <i>or</i>
+</p>
+<ol>
+<li>The router can accept a negotiation from the remote node.</li>
+</ol>
+<p>In this example, either automatically start the connection from the VPC VPN (auto=start option in the <i>IPsec.conf</i> file) or configure it in passive mode listening for connections (<codeph>auto=add</codeph> option in the <i>IPsec.conf</i> file).</p>
+<p>In this router configuration, the router will only negotiate a connection when it sees a packet destined for the remote subnet in the Cloud. In this example, the site's are named Site-A, Site-B, and Site-C, but you can name them anything that makes sense to you.</p>
+<ul>
+<li>From Site-A send traffic from subnet 192.168.2.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.</li>
+<li>From Site-B send traffic from subnet 192.168.4.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.</li>
+<li>From Site-C send traffic from subnet 192.168.3.0/24 to subnet 10.2.0.0/16. HP Networking MSR router starts IKE negotiation with VPC VPN in the cloud when it receives the first packet.</li>
+</ul>
+</section>
+<section id="trouble"> <title>Troubleshoot and verify connections</title>
+  <p>See the "<xref href="vpn-quickstart.dita">VPN Quick Start Guide</xref>" for instructions on how to troubleshoot and verify connections.</p>
+</section>
+<section id="info"> <title>For further information</title>
+<ul>
+<li>
+<xref href="http://wiki.strongswan.org" scope="external" format="html" >strongSwan wiki</xref>
+</li>
+<li>HP Networking MSR 20-40 Router Security Configuration Guide: <xref href="http://www.h3c.com/portal/download.do?id=1223846" scope="external" format="html" >http://www.h3c.com/portal/download.do?id=1223846</xref>
+</li>
+</ul>
+<p>back to the <xref type="section" href="#topic13796">top</xref>
+</p>
+</section>
+</body>
+</topic>

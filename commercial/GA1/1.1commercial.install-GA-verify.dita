@@ -148,9 +148,8 @@ echo $OVERCLOUD_IP
 <codeph>ssh debian@${DEMO_IP}
 </codeph>
 </codeblock>
-
-<p>
-<b>Note:</b> It might take a few minutes for the demo vm to become available using ssh after finishing the installation.</p>
+                    <note>It might take a few minutes for the demo vm to become available using ssh
+                        after finishing the installation.</note>
 
 <p>If the prompt changes to <codeph>debian@demo</codeph>, you have successfully connected to the demo VM.</p>
 </li>
@@ -234,7 +233,7 @@ sudo su -
 <p>See how to <xref href="../../community/community.dashboard.how-works.dita" >use the Horizon dashboard</xref>.</p>
 
 <p>
-<xref type="section" href="#topic5033"> Return to Top </xref>
+<xref href="#topic5033"> Return to Top </xref>
 </p>
 </li>
 </ul>

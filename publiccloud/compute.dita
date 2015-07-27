@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic1690">
+<title>HP Helion Public Cloud Compute Overview</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--PUBLISHED-->
+ <!--./publiccloud/compute.md-->
+ <!--permalink: /publiccloud/compute/--></p>
+<!-- <iframe src="http://player.vimeo.com/video/33922384?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+<p>Leveraging <xref href="http://openstack.org/projects/compute/" scope="external" format="html" ><tm tmtype="reg">OpenStack</tm> Compute</xref>, HP Helion Public Cloud compute provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.  Key terms include:</p>
+<ul>
+<li>
+<b>Flavor</b> - A unique combination of disk space, memory capacity, and CPU</li>
+<li>
+<b>Image</b> - A collection of files used as a base installation, typically an operating system such as Ubuntu 10.10 or something similar.</li>
+<li>
+<b>Server</b> - An instance created out of a <b>Flavor</b> + an <b>Image</b>
+</li>
+</ul>
+<p>A variety of flavors and images are provided by HP Helion Public Cloud compute that can be used to create a wide mix of servers.  The best way to learn more is to start using it yourself over at the <xref href="https://horizon.hpcloud.com/" scope="external" format="html" >HP Helion Public Cloud Console</xref>.  If you have any questions, try our <xref href="https://community.hpcloud.com" scope="external" format="html" >Forums</xref> where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.</p>
+<section id="api"> <title>API</title>
+<p>Do you need low level, raw REST API access to HP Helion Public Cloud compute?  Take a look at the Compute API page for the version of HP Helion Public Cloud you are using:</p>
+<ul>
+<li>
+<xref href="../publiccloud/api/nova-api.dita" >
+<b>Compute API page</b>
+</xref>
+</li>
+</ul>
+</section>
+<section id="bindings"> <title>Bindings</title>
+<p>If you are looking for an easier to use, language-specific way of using HP Helion Public Cloud compute, check out our <xref href="../publiccloud/bindings.dita" >Bindings section</xref>.</p>
+</section>
+<section id="cli"> <title>CLI</title>
+<p>Want scriptable access you can put in a cron job or something similar?  Go on over to our <xref href="../publiccloud/cli.dita" >CLI documentation</xref>.</p>
+</section>
+<section id="for-further-information"> <title>For further information</title>
+<p>Check out the following pages for more information on using HP Helion Public Cloud compute services:</p>
+<ul>
+<li>
+<xref href="../publiccloud/cli.windows.2.compute.dita" >Windows PowerShell CLI compute examples</xref>
+</li>
+</ul>
+</section>
+</body>
+</topic>
