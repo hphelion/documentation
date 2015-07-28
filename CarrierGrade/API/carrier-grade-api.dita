@@ -17,14 +17,17 @@
 
 <p>HP Helion OpenStack Carrier Grade is built on OpenStack technologies.</p>
     <p>The OpenStack REST API Documentation is open-source; both the published formats (PDF and HTML
-      pages) as well as the docbook/wadl source documents. The published formats can be found at
-        <xref href="http://developer.openstack.org/api-ref.html" format="html" scope="external"/>. </p>
+      pages) as well as the docbook/wadl source documents. </p>
     <p>The open-source OpenStack REST API Documentation is currently NOT versioned. There is only a
       master/current version of the OpenStack REST API Documentation containing updates from 'all'
       versions of OpenStack.</p>
 
     <p><b>Non-KVM Region API</b></p>
-    <p>For the API refernece for the non-KVM region, see</p> 
+    <p>For the API refernece for the non-KVM region, see the <xref
+        href="http://developer.openstack.org/api-ref.html" format="html" scope="external">OpenStack
+        API Complete Reference</xref>.</p>
+    <p>For the specific OpenStack services supported by HP Helion OpenStack Carrier Grade, see <xref
+        href="../Overview/carrier-grade.services-overview.dita#topic4220">Services Overview</xref>.</p> 
       
     <p><b>KVM Region API</b></p>
     <p>For the API refernece for the KVM region, see <xref
