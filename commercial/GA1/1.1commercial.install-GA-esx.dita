@@ -173,7 +173,9 @@ Output messages will indicate when the undercloud and overcloud controllers beco
     </section>
     <p><b>Verify your installation</b></p>
     <p>To verify that the installation is successful, connect to the HP Helion OpenStack dashboard
-      and the undercloud dashboard as shown in Verifying your installation.</p>
+      and the undercloud dashboard as shown in<xref
+        href="1.1commercial.install-GA-verify.dita#topic5033"> Verifying your
+      installation</xref>.</p>
   </body>
 
 </topic>
