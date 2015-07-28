@@ -171,7 +171,7 @@ Output messages will indicate when the undercloud and overcloud controllers beco
       <p>If possible, leave this console display open as you will need the passwords to verify the
         installation. </p>
     </section>
-    <p><b>Verify your installation {#verifying-your-installation}</b></p>
+    <p><b>Verify your installation</b></p>
     <p>To verify that the installation is successful, connect to the HP Helion OpenStack dashboard
       and the undercloud dashboard as shown in Verifying your installation.</p>
   </body>
