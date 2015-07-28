@@ -79,6 +79,7 @@
       navtitle="Using the Software Development Kit (PDF)"/>
     <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1: License Files">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"/>
+      <topicref href="CarrierGrade/carrier-grade-eula.dita"/>
     </topichead>
     <topichead navtitle="Files in map not TOC" toc="no">
       <topicref

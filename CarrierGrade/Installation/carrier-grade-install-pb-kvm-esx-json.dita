@@ -16,130 +16,235 @@
     <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
                 KVM + ESX deployment</xref> requires several JSON files that will be used when
             deploying the HLM VM.</p>
+        <p>The <codeph>esx.json</codeph> file contains the following fields:</p>
+   <p> <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
+        <tgroup cols="2">
+            <colspec colnum="1" colname="col1" colwidth="1*"/>
+            <colspec colnum="2" colname="col2" colwidth="2*"/>
+            <thead>
+                <row>
+                    <entry>Attributes</entry>
+                    <entry>Description</entry>
+                </row>
+            </thead>
+            <tbody>
+                <row>
+                    <entry namest="col1" nameend="col2"><b>vcenter</b></entry>
+                    
+                </row>
+                <row>
+                    <entry>ipaddress</entry>
+                    <entry>IP address to connect to vCenter</entry>
+                </row>
+                <row>
+                    <entry>username</entry>
+                    <entry>UserName to log into vCenter</entry>
+                </row>
+                <row>
+                    <entry>password</entry>
+                    <entry>Password to log into vCenter</entry>
+                </row>
+                <row>
+                    <entry>port</entry>
+                    <entry>Port to connect to vcenter (default 443)</entry>
+                </row>
+                <row>
+                    <entry>domain</entry>
+                    <entry>vCenter domain (default localhost.localdom)</entry>
+                </row>
+                <row>
+                    <entry>username</entry>
+                    <entry>Compute Proxy Template (OVA) Username (this has been set to root)</entry>
+                </row>
+                <row>
+                    <entry namest="col1" nameend="col2"><b>template</b></entry>
+                    
+                </row>
+                <row>
+                    <entry>password</entry>
+                    <entry>Compute Proxy Template (OVA) password ((this has been set to cghelion)</entry>
+                </row>
+                <row>
+                    <entry>name</entry>
+                    <entry>Name of OVA template which will be used to clone Compute Proxies</entry>
+                </row>
+                <row>
+                    <entry>name</entry>
+                    <entry>Name of Cloud Lab Management network (CLM) network</entry>
+                </row>
+                <row>
+                    <entry>ipaddress</entry>
+                    <entry>CLM Network IP</entry>
+                </row>
+                <row>
+                    <entry>netmask</entry>
+                    <entry>CLM network netmask</entry>
+                </row>
+                <row>
+                    <entry>gateway</entry>
+                    <entry>CLM network gateway</entry>
+                </row>
+                <row>
+                    <entry>tagid</entry>
+                    <entry>When specified sub interface will be created else when left blank tagged
+                        interface will be created on eth1</entry>
+                </row>
+                <row>
+                    <entry namest="col1" nameend="col2"><b>compute_proxy</b></entry>
+                    
+                </row>
+                <row>
+                    <entry>datacenter</entry>
+                    <entry>Datacenter where the proxy node will be hosted</entry>
+                </row>
+                <row>
+                    <entry>cluster</entry>
+                    <entry>Cluster which the proxy node should belong to</entry>
+                </row>
+                <row>
+                    <entry>datastore</entry>
+                    <entry>Datastore where the proxy node will be stored</entry>
+                </row>
+                <row>
+                    <entry>name</entry>
+                    <entry>Name of your compute proxy</entry>
+                </row>
+                <row>
+                    <entry>failure-zone</entry>
+                    <entry>Failure zone for you compute proxy (This should match with failure zones
+                        defined in definition.json)</entry>
+                </row>
+                <row>
+                    <entry>bridge_name</entry>
+                    <entry/>
+                </row>
+            </tbody>
+        </tgroup>
+   </table>
+   </p>
 <section id="sample-node-provisionjson-file">
             <p>The following represents a sample <codeph>esx.json</codeph> file. Use values
                 appropriate for your environment.</p>
+    <p><b>NOTE:</b> CLM network specified here will be configured on eth1 as tagged network by hprovision script and later used by 
+        hnetinit script to configure sub-interface eth0.x generated by config processor (hcfgproc script).</p>
+        <p>This interface, eth1, is created temporarily to hprovsion and hnetinit to work. This will be deleted ones the compute 
+            proxy is configured by hdeploy process.</p>
             <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
                     the KVM + ESX Deployment</xref>.</p>
 <codeblock>
-</codeblock>
-            <p>{</p>
-            <p>    "product": {</p>
-            <p>        "version": 1</p>
-            <p>    }, </p>
-            <p>    "property-groups": [</p>
-            <p>        {</p>
-            <p>            "name": "esx", </p>
-            <p>            "properties": {</p>
-            <p>                "vcenter": {</p>
-            <p>                    "username": "root", </p>
-            <p>                    "domain": "localhost.localdom", </p>
-            <p>                    "password": "vmware", </p>
-            <p>                    "ipaddress": "10.20.3.11", </p>
-            <p>                    "port": "443"</p>
-            <p>                }, </p>
-            <p>                "network": {</p>
-            <p>                    "name": "TRUNK-PORT"</p>
-            <p>                }, </p>
-            <p>                "template": {</p>
-            <p>                    "username": "cghelion", </p>
-            <p>                    "password": "cghelion", </p>
-            <p>                    "name": "TEMPL-CPV6"</p>
-            <p>                }, </p>
-            <p>                "compute_proxy": [</p>
-            <p>                    {</p>
-            <p>                        "datacenter": "       TestBed2 Datacenter", </p>
-            <p>                        "name":         "ESX-Compute-Proxy-B51", </p>
-            <p>                        "cluster": "Cluster1", </p>
-            <p>                        "bridge_name": "       1-TestBed2-Cluster-PG1", </p>
-            <p>                        "failure-zone": "fz1", </p>
-            <p>                        "datastore": "datastore1"</p>
-            <p>                    }</p>
-            <p>                ]</p>
-            <p>            }</p>
-            <p>        }</p>
-            <p>    ]</p>
-            <p>}</p>
-            <p>~</p>
-            <p>Update         /vars/ldap.json</p>
-            <p>{</p>
-            <p>    "product": {</p>
-            <p>        "version":           1</p>
-            <p>    },</p>
-            <p> </p>
-            <p>    "property-groups":           [</p>
-            <p>        {</p>
-            <p>                    "name": "ldap-vars",</p>
-            <p>                    "properties": {</p>
-            <p>                        "ldap_domain_name": "americas",</p>
-            <p>                        "ldap_url": "10.1.2.44",</p>
-            <p>                        "ldap_username": "admin",</p>
-            <p>                        "ldap_password": "admin",</p>
-            <p>                        "ldap_domain": "dc=helioncg,dc=local",</p>
-            <p>                        "ldap_ou": "CGTestUsers",</p>
-            <p>                        "ldap_nova_password": "nova",</p>
-            <p>                        "ldap_nova_user": "nova",</p>
-            <p>                        "ldap_neutron_password": "neutron",</p>
-            <p>                        "ldap_neutron_user": "neutron",</p>
-            <p>                        "ldap_cinder_password": "cinder",</p>
-            <p>                        "ldap_cinder_user": "cinder",</p>
-            <p>                "ldap_glance_password":           "glance",</p>
-            <p>                        "ldap_glance_user": "glance",</p>
-            <p>                        "ldap_enabled": 1</p>
-            <p>            }</p>
-            <p>        }</p>
-            <p>    ]</p>
-            <p>}</p>
-            <p>Update         /vars/wr.json</p>
-            <p>{</p>
-            <p>    "product": {</p>
-            <p>        "version":           1</p>
-            <p>    },</p>
-            <p> </p>
-            <p>    "property-groups":           [</p>
-            <p>        {</p>
-            <p>                    "name": "wr-vars",</p>
-            <p>                    "properties": {</p>
-            <p>                        "database_storage": 70,</p>
-            <p>                        "backup_storage": 300,</p>
-            <p>                        "image_storage": 250,</p>
-            <p>                        "region_name": "RegionOne",</p>
-            <p>                        "logical_interface": [</p>
-            <p>                    {</p>
-            <p>                        "lag_interface": "N",</p>
-            <p>                        "interface_mtu": 1500,</p>
-            <p>                        "interface_ports": [</p>
-            <p>                            "eth0"</p>
-            <p>                        ],</p>
-            <p>                        "network": [</p>
-            <p>                            {</p>
-            <p>                                        "ip_start_address": "10.20.3.50",</p>
-            <p>                                "ip_end_address":           "10.20.3.99",</p>
-            <p>                                "name":           "management"</p>
-            <p>                                      },</p>
-            <p>                            {</p>
-            <p>                                        "ip_start_address": "172.16.73.50",</p>
-            <p>                                "ip_end_address":           "172.16.73.99",</p>
-            <p>                                "name":           "blockstore"</p>
-            <p>                            },</p>
-            <p>                            {</p>
-            <p>                                        "ip_start_address": "10.20.4.50",</p>
-            <p>                                "ip_end_address":           "10.20.4.99",</p>
-            <p>                                "name":           "api"</p>
-            <p>                            }</p>
-            <p>                        ]</p>
-            <p>                    }</p>
-            <p>                          ],</p>
-            <p>                        "pxeboot_cidr": "10.20.2.0/24",</p>
-            <p>                        "license_file_name": "license.lic"</p>
-            <p>            }</p>
-            <p>        }</p>
-            <p>    ]</p>
-            <p>}</p>
-            <codeblock>    
-    
-    
-    
+            
+                "product": {
+                    "version": 1
+                }, 
+                "property-groups": [
+                    {
+                        "name": "esx", 
+                        "properties": {
+                            "vcenter": {
+                                "username": "root", 
+                                "domain": "localhost.localdom", 
+                                "password": "vmware", 
+                                "ipaddress": "10.20.3.11", 
+                                "port": "443"
+                            }, 
+                            "network": {
+                                "name": "TRUNK-PORT"
+                            }, 
+                            "template": {
+                                "username": "cghelion", 
+                                "password": "cghelion", 
+                                "name": "TEMPL-CPV6"
+                            }, 
+                            "compute_proxy": [
+                                {
+                                    "datacenter": "       TestBed2 Datacenter", 
+                                    "name":         "ESX-Compute-Proxy-B51", 
+                                    "cluster": "Cluster1", 
+                                    "bridge_name": "       1-TestBed2-Cluster-PG1", 
+                                    "failure-zone": "fz1", 
+                                    "datastore": "datastore1"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+            ~
+            Update         /vars/ldap.json
+            {
+                "product": {
+                    "version":           1
+                },
+             
+                "property-groups":           [
+                    {
+                                "name": "ldap-vars",
+                                "properties": {
+                                    "ldap_domain_name": "americas",
+                                    "ldap_url": "10.1.2.44",
+                                    "ldap_username": "admin",
+                                    "ldap_password": "admin",
+                                    "ldap_domain": "dc=helioncg,dc=local",
+                                    "ldap_ou": "CGTestUsers",
+                                    "ldap_nova_password": "nova",
+                                    "ldap_nova_user": "nova",
+                                    "ldap_neutron_password": "neutron",
+                                    "ldap_neutron_user": "neutron",
+                                    "ldap_cinder_password": "cinder",
+                                    "ldap_cinder_user": "cinder",
+                            "ldap_glance_password":           "glance",
+                                    "ldap_glance_user": "glance",
+                                    "ldap_enabled": 1
+                        }
+                    }
+                ]
+            }
+            Update         /vars/wr.json
+            {
+                "product": {
+                    "version":           1
+                },
+             
+                "property-groups":           [
+                    {
+                                "name": "wr-vars",
+                                "properties": {
+                                    "database_storage": 70,
+                                    "backup_storage": 300,
+                                    "image_storage": 250,
+                                    "region_name": "RegionOne",
+                                    "logical_interface": [
+                                {
+                                    "lag_interface": "N",
+                                    "interface_mtu": 1500,
+                                    "interface_ports": [
+                                        "eth0"
+                                    ],
+                                    "network": [
+                                        {
+                                                    "ip_start_address": "10.20.3.50",
+                                            "ip_end_address":           "10.20.3.99",
+                                            "name":           "management"
+                                                  },
+                                        {
+                                                    "ip_start_address": "172.16.73.50",
+                                            "ip_end_address":           "172.16.73.99",
+                                            "name":           "blockstore"
+                                        },
+                                        {
+                                                    "ip_start_address": "10.20.4.50",
+                                            "ip_end_address":           "10.20.4.99",
+                                            "name":           "api"
+                                        }
+                                    ]
+                                }
+                                      ],
+                                    "pxeboot_cidr": "10.20.2.0/24",
+                                    "license_file_name": "license.lic"
+                        }
+                    }
+                ]
+            }
 </codeblock>        
 
 </section>

@@ -290,20 +290,7 @@ Password: cghelion</codeblock></p></li>
   <codeblock>python ilopxebootonce.py node-provision.json</codeblock></li>
 </ol>
 <p>After the script is run, the <codeph>Current One-Time Boot Option</codeph> is set to <codeph>Network Device 1</codeph> on all the servers listed in <codeph>node-provision.json</codeph> file.</p>
-
-  <section id="configure-def-json">
-    <title>Configure the JSON Definition file</title>
-    <p>Edit the <codeph>definition.json</codeph> file on the HLM VM.</p>
-    <p>To see a sample <codeph>definition.json</codeph> file, see <xref
-      href="carrier-grade-install-pb-kvm-def-json.dita">Sample definition.json File for Installing the KVM + ESX Topology</xref>..</p>
-  </section>
-  
-  <section id="configure-env-json">
-    <title>Configure the JSON Environment file</title>
-    <p>Edit the <codeph>environment-provision.json</codeph> file on the HLM VM.</p>
-    <p>To see a sample <codeph>environment-provision.json</codeph> file, see see <xref
-      href="carrier-grade-install-pb-kvm-env-json.dita">Sample environment.json File for Installing the KVM + ESX Topology</xref>..</p>
-  </section>
+    <!--<section id="configure-def-json"><title>Configure the JSON Definition file</title><p>Edit the <codeph>definition.json</codeph> file on the HLM VM.</p><p>To see a sample <codeph>definition.json</codeph> file, see <xref href="carrier-grade-install-pb-kvm-def-json.dita">Sample definition.json File for Installing the KVM + ESX Topology</xref>..</p></section><section id="configure-env-json"><title>Configure the JSON Environment file</title><p>Edit the <codeph>environment-provision.json</codeph> file on the HLM VM.</p><p>To see a sample <codeph>environment-provision.json</codeph> file, see see <xref href="carrier-grade-install-pb-kvm-env-json.dita">Sample environment.json File for Installing the KVM + ESX Topology</xref>..</p></section>-->
   
   <section id="configure-ansible-json">
     <title>Configure the JSON Ansible file</title>
@@ -323,17 +310,24 @@ Password: cghelion</codeblock></p></li>
     <title>Configure the JSON LDAP file</title>
     <p>Edit the <codeph>ldap.json</codeph> file on the HLM VM.</p>
     <p>To see a sample <codeph>ldap.json</codeph> file, see see <xref
-      href="carrier-grade-install-pb-kvm-ldap-json.dita#topic4797">Sample ldap.json File for Installing the KVM + ESX Topology</xref>..</p>
+      href="carrier-grade-install-pb-kvm-ldap-json.dita">Sample ldap.json File for Installing the KVM + ESX Topology</xref>..</p>
   </section>
   
   <section id="configure-wr-json">
     <title>Configure the JSON KVM file</title>
     <p>Edit the <codeph>wr.json</codeph> file on the HLM VM.</p>
     <p>To see a sample <codeph>wr.json</codeph> file, see see <xref
-      href="carrier-grade-install-pb-kvm-wr-json.dita#topic4797">Sample wr.json File for Installing the KVM + ESX Topology</xref>..</p>
+      href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the KVM + ESX Topology</xref>..</p>
   </section>
   
-  
+  <section><title>Configure the ESX Compute Proxy</title>
+    <p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
+      that enables the Compute service to communicate with a VMware vCenter server managing one or
+      more ESX hosts. The HP Helion OpenStack Compute Service (Nova) requires this driver to
+      interface with VMware ESX hypervisor APIs.</p>
+    <p>For instructions to configure the ESX compute proxy, see <xref
+          href="carrier-grade-install-esx-proxy.dita#topic10581">Deploy the ESX COmpute Proxy</xref></p>
+  </section>
   
 <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up"> <title>Create new cloud template and bring the cloud nodes up</title>
 <ol>
@@ -344,15 +338,21 @@ Password: cghelion</codeblock></p></li>
           </ul><p>This script will PXE boot the nodes specified in
               <codeph>node-provision.json</codeph> file. The script also tracks the PXE boot
             completion process and will create the <codeph>nodes.json</codeph> file in the
-            directory. </p></li>
-        <li>Make sure the nodes are booted up.</li>
+            directory. </p><p>You can log in to the iLO of each of  the nodes to monitor the boot
+            process.</p></li>
+        <li>Make sure the nodes are booted up using iLO.</li>
   <li>Update the <codeph>node-provision.json</codeph> file used in the <xref type="section"
             href="#topic10581/pxe-boot">previous step</xref>.<p>a. Change to the
               <codeph>&lt;cloudname&gt;</codeph>
             directory:</p><codeblock>cd ~/&lt;cloudname&gt;</codeblock><p>b. Once the baremetal
-            nodes are provisioned, make sure the <codeph>nodes.json</codeph>  file is generated and
-            that you can establish a password-less SSH connection to these nodes from HLM
-          VM.</p></li>
+            nodes are provisioned, make sure the <codeph>nodes.json</codeph> file is generated. The
+              <codeph>nodes.json</codeph> file will have entries of 3 controllers, 2 DCN Hosts, 2
+            VRS-G and the compute proxy nodes.</p></li>
+        <li>Verify that the ESX Compute Provy VM is installed and active.
+         <ol>
+           <li>Ping proxy node from HLM VM with the static CLM IP in the <codeph>esx.json</codeph> file'</li>
+           <li>SSH to compute proxy node from the HLM VM using the static CLM IP.</li>
+         </ol></li>
 <li>Modify the <codeph>environment.json</codeph> file to configure the VLANs and network addresses
           as appropriate for your environment. Set the following for the CLM, CAN, and BLS
           network:<codeblock>"cidr": 
@@ -360,120 +360,20 @@ Password: cghelion</codeblock></p></li>
           should have CLM, CAN, EXT, BLS on eth0 and TUL on eth1. <!--Hiding for RC0 
               <p>The two compute nodes should have CLM, EXT, BLS on eth0 and TUL on eth1.</p>
            -->
-  <p> 
-            <b>Example:</b>
-          </p>
-
-  <pre>{</pre><pre>    "product": {</pre><pre>        "version": 1</pre><pre>    },</pre><pre> </pre><pre>    "node-type": [</pre><pre>        {</pre><pre>            "name": "CCN",</pre><pre>            "interface-map": [</pre><pre>                {</pre><pre>                    "name": "INTF0",</pre><pre>                    "ethernet-port-map": {</pre><pre>                        "interface-ports": [ "eth0" ]</pre><pre>                    },</pre><pre>                    "logical-network-map": [</pre><pre>                        {</pre><pre>                            "name": "CLM",</pre><pre>                            "type": "vlan",</pre><pre>                            "segment-id": "502",</pre><pre>                            "network-address": {</pre><pre>                                "cidr": "10.50.2.0/24",</pre><pre>                                "start-address": "10.50.2.10",</pre><pre>                                "gateway": "10.50.2.1"</pre><pre>                            }</pre><pre>                        },</pre><pre>                        {</pre><pre>                            "name": "CAN",</pre><pre>                            "type": "vlan",</pre><pre>                            "segment-id": "504",</pre><pre>                            "network-address": {</pre><pre>                                "cidr": "10.50.4.0/24",</pre><pre>                                "start-address": "10.50.4.10"</pre><pre>                            }</pre><pre>                        },</pre><pre>                        {</pre><pre>                            "name": "BLS",</pre><pre>                            "type": "vlan",</pre><pre>                            "segment-id": "76",</pre><pre>                            "network-address": {</pre><pre>                                "cidr": "172.16.76.0/19",</pre><pre>                                "start-address": "172.16.76.10"</pre><pre>                            }</pre><pre>                        }</pre><pre>                    ]</pre><pre>                }</pre><pre>            ]</pre><pre>        }</pre><pre>    ]</pre><pre>}</pre><p>
-
-            <b>NOTE:</b> The Helion Configuration Processor assigns the first address of the CLM
-            address range to itself for serving python and debian repositories. Make sure that you
-            set the first IP address of the CLM range for the eth2 (CLM) address of the HLM
-            node.</p></li>
+          <p>To see a sample <codeph>environment-provision.json</codeph> file, see see <xref
+              href="carrier-grade-install-pb-kvm-env-json.dita">Sample environment.json File for
+              Installing the KVM + ESX Topology</xref>..</p></li>
 <li>Modify the <codeph>definition.json</codeph> file: <ol>
             <li>Set the number of compute systems to 2.
               <codeblock>"count": 2, //number of computes in the resource pool</codeblock></li>
-  <li>Update the <codeph>ansible-vars</codeph> section with all the information based on your
-              setup.</li>
-  <li>Make sure you have two NTP entries in the <codeph>upstream_ntp_servers</codeph> fields in the
-                <codeph>definition.json</codeph> file as seen in the following example. If you have
-              only one NTP server in your environment, specify the same NTP server twice. Example:
-              <codeblock>{
-    "product": {
-      "version": 1
-      },
-    
-    "cloud": {
-      "name": "b44tb4",
-      "nickname": "b44tb4",
-      "server-config": "nodes.json",
-      "environment": "environment.json",
-      "network-config": ".hos/lnet-control-data.json"
-    },
-    
-    "failure-zones": [
-      {
-        "name": "fz1"
-      },
-      {
-        "name": "fz2"
-      },
-      {
-        "name": "fz3"
-      }
-    ],
-    
-    "control-planes": [
-      {
-        "file": ".hos/ccp-1x3-ss.json",
-        "resource-nodes": []
-      }
-    ],
-    
-    "ansible-vars": {
-      "dns_address": "10.1.2.44",
-      "dns_domain_name": "helion.cg",
-      "ldap_url": "10.1.2.44",
-      "ldap_username": "admin",
-      "ldap_password": "admin",
-      "ldap_domain": "dc=helioncg,dc=local",
-      "ldap_ou": "CGTestUsers",
-      "ldap_nova_password": "nova",
-      "ldap_nova_user": "nova",
-      "ldap_neutron_password": "neutron",
-      "ldap_neutron_user": "neutron",
-      "ldap_cinder_password": "cinder",
-      "ldap_cinder_user": "cinder",
-      "ldap_glance_password": "glance",
-      "ldap_glance_user": "glance",
-      "ldap_enabled": 1,
-      "upstream_ntp_servers": [
-        "10.1.2.44",
-        "16.110.135.123",
-        "2.debian.pool.ntp.org"
-      ],
-      "ssl_cert_file": "ca.crt",
-      "ssl_key_file": "cakey.pem",
-      "ssl_passphrase": "cghelion"
-     },
-    
-    "wr-vars": {
-      "database_storage": 50,
-      "backup_storage": 300,
-      "image_storage": 250,
-      "region_name": "RegionOne",
-      "logical_interface": [
-        {
-          "lag_interface": "N",
-          "interface_mtu": 1500,
-          "interface_ports": [
-              "eth0"
-          ],
-           "network": [
-              {
-                  "ip_start_address": "10.50.2.51",
-                  "ip_end_address": "10.50.2.99",
-                  "name": "CLM"
-              },
-              {
-                  "ip_start_address": "172.16.76.150",
-                  "ip_end_address": "172.16.76.199",
-                  "name": "BLS"
-               },
-               {
-                  "ip_start_address": "10.50.4.51",
-                  "ip_end_address": "10.50.4.99",
-                  "gateway": "10.50.4.1",
-                  "name": "CAN"
-                }
-            ]
-        }
-    ],
-    "pxeboot_cidr": "10.50.1.0/24",
-    "license_file_name": "license.lic"
-    }
- }
-</codeblock></li>
+            <li>Update the <codeph>ansible-vars</codeph> section with all the information based on
+              your setup.</li>
+            <li>Make sure you have two NTP entries in the <codeph>upstream_ntp_servers</codeph>
+              fields in the <codeph>definition.json</codeph> file as seen in the following example.
+              If you have only one NTP server in your environment, specify the same NTP server
+                twice.<p>To see a sample <codeph>definition.json</codeph> file, see <xref
+                  href="carrier-grade-install-pb-kvm-def-json.dita">Sample definition.json File for
+                  Installing the KVM + ESX Topology</xref>..</p></li>
           </ol></li>
   
   <li>Use the following steps to modify to the <codeph>cinder/blocks</codeph> directory for your cloud: 
