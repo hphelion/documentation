@@ -34,8 +34,9 @@
       </ul>
       <p>Note that for ESX cloud deployments, the ESX administrator is responsible for providing the
         network connectivity between the ESX Network and the Helion Cloud Management Network as
-        documented in prerequisite section of the ESX Proxy page. Also read the information on the
-        deployment of vCenter ESX Compute proxy</p>
+        documented in prerequisite section of the <xref
+          href="1.1commercial.install-GA-post-esx.dita#topic1739">ESX Proxy page</xref>. Also read
+        the information on the deployment of vCenter ESX Compute proxy on the same page.</p>
       <p>Since ESX/vCenter integration is not fully automatic, vCenter administrators are advised of
         the following responsibilities to ensure secure operation:</p>
       <ul id="ul_jsc_y3n_vs">
@@ -174,4 +175,5 @@ Output messages will indicate when the undercloud and overcloud controllers beco
     <p>To verify that the installation is successful, connect to the HP Helion OpenStack dashboard
       and the undercloud dashboard as shown in Verifying your installation.</p>
   </body>
+
 </topic>
