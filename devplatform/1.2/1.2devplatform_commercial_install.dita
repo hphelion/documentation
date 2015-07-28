@@ -400,7 +400,7 @@ nova aggregate-create aggregate-AZ-3 AZ-3</codeblock></li>
             </row>
             <row>
               <entry>Volume Storage (GB)</entry>
-              <entry align="right">160</entry>
+              <entry align="right">600</entry>
             </row>
           </tbody>
         </tgroup>
