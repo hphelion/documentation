@@ -104,7 +104,7 @@ TRANSTYPE=webhelp
 
 # The path of the directory of the input DITA map file
 # DITA_MAP_BASE_DIR=/home/test/oxygen-webhelp/OxygenXMLEditor/samples/dita/flowers
-#DITA_MAP_BASE_DIR="/var/lib/jenkins/workspace/helion-dita-build"
+#DITA_MAP_BASE_DIR="./"
 DITA_MAP_BASE_DIR=`pwd`
 
 echo DITA_MAP_BASE_DIR
