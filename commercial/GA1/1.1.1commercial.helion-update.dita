@@ -171,8 +171,8 @@ openssl x509 -noout -in /root/eca.crt
           displays:</p><codeblock><codeph>unable to load certificate
 140170817259168:error:0906D06C:PEM routines:PEM_read_bio:no start line:pem_lib.c:703:Expecting: TRUSTED CERTIFICATE".
 </codeph></codeblock></li>
-<li><note>Log out of the seed VM. The remaining commands in this section are all executed from the seed
-  host.</note> From <codeph>/root</codeph> on the seed, create the
+<li><note>Log out of the seed VM. The remaining commands in this section are all executed from the
+            seed host.</note> From <codeph>/root</codeph> on the seed host, create the
             <codeph>helion-update-1.1-to-1.1.1</codeph> directory then change to this directory by
           entering:<codeblock><codeph>cd /root
 mkdir helion-update-1.1-to-1.1.1
@@ -353,7 +353,7 @@ EOF
 </codeph></codeblock></li>
         <li>Update the <codeph>step_run_occ</codeph> playbook by
           entering:<codeblock>cp -p ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml ~/helion-update-1.1-to-/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml.orig
-cat &gt; ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml&lt;&lt; EOF
+cat &gt; ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml &lt;&lt; EOF
     # Copyright (C) 2014 Hewlett-Packard Development Company, L.P.
     #
     # Licensed under the Apache License, Version 2.0 (the "License");
