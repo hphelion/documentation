@@ -88,7 +88,7 @@ Creating new service broker [echo-broker] ... OK</codeblock>
 | FP | postgresql  | PostgreSQL database service   | core     | 9.1     | free      | free                       |      |
 +----+-------------+-------------------------------+----------+---------+-----------+----------------------------+------+</codeblock>
 <p>By default, service plans are created as private (the "P" in the leftmost column above). To make the plan available to your Organization, run the following command:</p>
-<codeblock>helion update-service-plan --public echoservice</codeblock>
+<codeblock>helion update-service-plan --vendor echoservice --public default</codeblock>
 </section>
 </body>
 </topic>

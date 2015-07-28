@@ -78,7 +78,10 @@ Agents (DEAs, or worker nodes), or specific database services.</p>
 <section id="architecture-primary"> <title>Primary</title>
 <p>The Primary role is a mandatory part of a Core node (or micro cloud) and runs a number of critical system processes, including the Cloud Controller, Health Manager, and Router.</p>
 <p>The Health Manager keeps track of the apps on each DEA and provides feedback on the number currently running. It works in conjunction with the Cloud Controller and must be run on the same VM.</p>
-<p>In a cluster setup, all nodes performing other roles are attached to the MBUS IP of the Core node. Every cluster must include exactly one Primary role. Note that the Router role must be run along with the Primary even if there are other Routers in the cluster and even if the node is not exposed to the internet.</p>
+<p>In a cluster setup, all nodes performing other roles are attached to the MBUS IP of the Core
+        node. Every cluster must include exactly one Primary role. <note>The Router role must be run
+          along with the Primary even if there are other Routers in the cluster and even if the node
+          is not exposed to the internet.</note></p>
 </section>
 <section id="architecture-cloud-controller"> <title>Cloud Controller</title>
 <p>The Controller manages most of the operations of an Application Lifecycle Service system. It hosts the Management Console, provides the API endpoint for client access, manages the cloud_controller_ng process, provisions services, dispatches applications for staging and deployment, and (with the Health Manager) tracks the availability of DEA nodes. The Cloud Controller allocates instances of an application across available DEA nodes, prioritizing eligible nodes that are running the fewest instances of that app already. This maintains an even distribution of instances of an app across the pool.</p>
@@ -99,13 +102,26 @@ containers. In an Application Lifecycle Service cluster, there will typically be
 nodes running the DEA role, which in turn each host multiple user
 application instances.</p>
 <p>The DEA role is comprised of a number of processes:</p>
-<ul>
-<li>dea_ng: Master process for staging and starting application instances and then reporting their state via NATS to the Health Manager.</li>
-<li>dir_server: Handles requests for directories/files and responds with an HTTP URL.</li>
-<li>fence: Responsible for the management of application containers using Docker.</li>
-<li>apptail: Streams application logs via Logyard to various log drains.</li>
-</ul>
-<p>The Docker image used for the containers can be customized by admins.</p>
+  
+  <dl>
+    <dlentry>
+      <dt>dea_ng</dt>
+      <dd>Master process for staging and starting application instances and then reporting their state via NATS to the Health Manager.</dd>
+    </dlentry>
+    <dlentry>
+      <dt>dir_server</dt>
+      <dd>Handles requests for directories/files and responds with an HTTP URL.</dd>
+    </dlentry>
+    <dlentry>
+      <dt>fence</dt>
+      <dd>Responsible for the management of application containers using Docker.</dd>
+    </dlentry>
+    <dlentry>
+      <dt>apptail</dt>
+      <dd>Streams application logs via Logyard to various log drains.</dd>
+    </dlentry>
+  </dl>
+<p>The Docker image used for the containers can be <xref href="docker.dita">customized</xref> by admins.</p>
 </section>
 <section id="architecture-service-roles"> <title>Service Roles</title>
 <p>Application Lifecycle Service nodes can also be assigned roles for data services. The data services can be run separately on their own nodes or grouped together.</p>
