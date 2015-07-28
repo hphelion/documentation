@@ -1,5 +1,9 @@
 #!/bin/sh
  
+
+rm -r temp
+rm -r out
+
 export XEP_HOME=/usr/local/RenderX/XEP
 
 
