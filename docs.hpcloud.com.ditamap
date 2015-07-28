@@ -24,22 +24,4 @@
 <topicref href="commercial/GA2/Monasca/2.0commercial.services-monasca.dita"/>
 </topichead>
 </topichead>
-<!--Dev Plat-->  
-<topicref format="ditamap" href="docs.hpcloud.com.HDP.ditamap" navtitle="Helion Development Platform"/>
-<!-- Euca -->
-  <topicref href="euca/euca-landing-page.dita" navtitle="HP Helion Eucalyptus" locktitle="yes">
-    <topicref href="euca/euca.thirdparty.licensing.dita"
-      navtitle="Open-Source and Third-Party License Agreements" locktitle="yes"/>
-    <topicref href="euca/euca-eula.dita" navtitle="Master Services Agreement" locktitle="yes"/>
-  </topicref>
-<!-- CGH -->
-  <topicref href="automation/csa.index.dita"/>
-  <topicref href="codar-landing-page.dita" navtitle="HP Codar"/>
-  <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Foundation" locktitle="yes"/>
-  <topicref href="cloudsystem.landingpage.dita" navtitle="HP CloudSystem Enterprise" locktitle="yes"/>
-  <topicref href="helion.rack.solution.dita" navtitle="HP Helion Cloud Solutions" locktitle="yes"/>
-  <mapref href="docs.hpcloud.com.CGH.ditamap" navtitle="HP Helion OpenStack Carrier Grade 1.1 GA"/>
-  <mapref href="docs.hpcloud.com.CGH.RC0.ditamap"
-    navtitle="HP Helion OpenStack Carrier Grade 1.1 RC0"/>  
  </map>
-
