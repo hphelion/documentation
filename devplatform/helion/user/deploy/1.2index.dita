@@ -85,10 +85,9 @@ web server, application dependencies, databases, and other services.</p>
 <li>
           <xref href="1.2app-debug.dita#topic1398" type="section"  >Remote Debugging</xref>
 </li></ul></section>
-<section id="language-specific-deployment"><title>Frameworks &amp; Languages</title>
+<section id="frameworks"><title>Frameworks</title>
 
           <ul>
-            <li>Frameworks <ul>
                 <li>
                   <xref href="1.2orgs-spaces.dita#topic2729" type="section" scope="local" >Organizations &amp; Spaces</xref>
                 </li>
@@ -98,8 +97,11 @@ web server, application dependencies, databases, and other services.</p>
                 <li>
                   <xref href="1.2other-frameworks.dita#topic2413" type="section" scope="local" format="dita" >Generic &amp; Standalone Frameworks</xref>
                 </li>
-              </ul></li>
-            <li>Languages <ul>
+                </ul></section>
+  <section id="languages"><title>Languages</title>
+         <ul>
+            <li><xref href="languages/1.2clojure.dita">Clojure</xref></li>
+            <li><xref href="languages/1.2go.dita">Go</xref></li>
             <li>
               <xref href="languages/1.2java.dita#topic2811" type="section" scope="local">Java</xref>
             </li>
@@ -107,10 +109,12 @@ web server, application dependencies, databases, and other services.</p>
               <xref href="languages/1.2node.dita#topic3629/node-npm" type="section" scope="local"
                 >Node.js</xref>
             </li>
+            <li><xref href="languages/perl/1.2index.dita">Perl</xref></li>
             <li>
               <xref href="languages/1.2php.dita#topic5845" type="section" scope="local">PHP</xref>
             </li>
-          </ul></li>
+            <li><xref href="languages/python/1.2index.dita">Python</xref></li>
+            <li><xref href="languages/1.2ruby.dita">Ruby</xref></li>
           </ul>
 </section>
 <section id="services"> <title>Services</title>
@@ -167,8 +171,10 @@ web server, application dependencies, databases, and other services.</p>
             View</xref>
         </li>
 <li>
-          <xref href="../../admin/console/1.2app-store.dita#topic5271" type="section" scope="local" >Sample Applications</xref>
+          <xref href="../../admin/console/1.2app-store.dita#topic5271" type="section" scope="local"
+            >Sample Applications</xref>
         </li>
+        <li><xref href="../../admin/console/console_settings.dita"/></li>
 </ul>
 </section>
 <section id="reference"> <title>Reference</title>

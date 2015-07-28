@@ -21,7 +21,7 @@
         <topicref href="carrier-grade-technical-overview.dita"/>
         <topicref href="carrier-grade-technical-specs.dita"/>
         <topicref href="carrier-grade-support-matrix2.dita"/>
-        <topicref href="carrier-grade-install-pb-prereqs.dita">
+        <topicref href="carrier-grade-install-pb-prereqs-GA.dita">
             <topicref href="carrier-grade-install-pb-network-prepare.dita"/>
             <topicref href="carrier-grade-install-NTP.dita"/>
         </topicref>

@@ -223,8 +223,8 @@ Password: cghelion</codeblock></p></li>
             completion process and will create the <codeph>nodes.json</codeph> file in the
             directory. </p></li>
         <li>Make sure the nodes are booted up.</li>
-  <li>Update the <codeph>node-provision.json</codeph> file used in the <xref
-            href="../RC0/Installation/carrier-grade-install-non-kvm.dita#topic10581/pxe-boot">previous step</xref>.<p>a. Change to the <codeph>&lt;cloudname&gt;</codeph>
+  <li>Update the <codeph>node-provision.json</codeph> file.<p>a. Change to the
+              <codeph>&lt;cloudname&gt;</codeph>
             directory:</p><codeblock>cd ~/&lt;cloudname&gt;</codeblock><p>b. Once the baremetal
             nodes are provisioned, make sure the <codeph>nodes.json</codeph> file is generated and
             that you can establish a password-less SSH connection to these nodes from HLM
@@ -395,10 +395,9 @@ hp3par_iscsi_chap_enabled=false</codeblock></li></ul></li>
 
 </section>
 <section id="next-step"> <title>Next Step</title>
-  <p><xref href="../RC0/Installation/carrier-grade-install-kvm-cloud-rc0.dita#topic1107">Deploy the KVM Region</xref></p>
-<p>
-  <xref type="section" href="#topic10581"> Return to Top </xref>
-</p>
+  <p><xref href="carrier-grade-install-kvm-cloud-GA.dita#topic1107">Deploy the
+          KVM Region</xref></p>
+
 <!-- ===================== horizontal rule ===================== -->
 </section>
 </body>

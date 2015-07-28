@@ -27,9 +27,7 @@
         <li><xref href="#topic1773/guestOS" format="dita">Guest OS Support Matrix</xref></li>
       </ul></p>
     <section id="hardware"><title>Supported Hardware</title><p>The following servers are supported
-        for the <xref href="#topic1773/hlm" format="dita">HLM host</xref>, and for the <xref
-          href="#topic1773/controllers" format="dita">controllers</xref> and <xref
-          href="#topic1773/compute" format="dita">compute servers</xref>.</p>
+        for the HLM host, and for the controllers and compute servers.</p>
       <p><b>Note:</b>
         <i><b>For the KVM and ESX cloud</b></i>, consult the DCN and ESX documentation for the
         supported hardware.</p>
@@ -208,9 +206,7 @@
 --></section>
   <section id="hardware-config">
       <title>Required Hardware Configuration </title>
-      <p>The servers, selected from the <xref
-          href="../RC0/Installation/carrier-grade-install-pb-prereqs.dita#topic7148/hardware"
-          >Supported Hardware</xref> lists, must be configured as follows for HP Helion OpenStack
+      <p>The servers, selected from the <xref href="#topic1773/hardware" format="dita">Supported Hardware</xref> lists, must be configured as follows for HP Helion OpenStack
         Carrier Grade.</p>
       <p><b>HLM Host</b>. You must have a server with a 20GB Disk and 4,096 MB RAM for the HLM
         host.</p>
@@ -421,10 +417,8 @@
 </section>  -->
 
   <section id="next"> <title>Next step</title>
-    <p>Review the <xref href="carrier-grade-technical-overview.dita#topic3485">Technical Overview</xref>.</p>
-    <p>
-        <xref type="section" href="#topic3485"> Return to Top </xref>
-      </p>
+    <p>Review the <xref href="carrier-grade-technical-overview.dita">Technical Overview</xref>.</p>
+    
   </section>
   <!-- ===================== horizontal rule ===================== -->
 

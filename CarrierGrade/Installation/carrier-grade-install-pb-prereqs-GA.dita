@@ -20,27 +20,29 @@
 <section id="hardware"> <title>Hardware and software requirements</title>
 <p>Before you start, if you have not done so already, make sure your environment meets the hardware
                                 and software requirements. See the <xref
-                                        href="carrier-grade-support-matrix.dita">HP Helion OpenStack
+                                        href="carrier-grade-support-matrix2.dita#topic1773">HP Helion OpenStack
                                         Support Matrix</xref>.</p>
 </section>
 <section id="kvm">
                         <title>Preparing the HLM host</title>
                         <p>Perform the following tasks on the HLM host:</p>
                         <ul>
-                                <li><xref href="#topic7148/proxy" format="dita">Configure proxy
-                                                information </xref></li>
-                                <li><xref href="#topic7148/ubuntu" format="dita">Install Ubuntu
-                                                Server 14.04.2 LTS</xref></li>
-                                <li><xref href="#topic7148/ssh" format="dita">Configure
-                                        SSH</xref></li>
+                                <li><?oxy_delete author="burkmich" timestamp="20150727T182909-0400" content="&lt;xref href=&quot;#topic7148/proxy&quot; format=&quot;dita&quot;&gt;Configure proxy information &lt;/xref&gt;"?><?oxy_insert_start author="burkmich" timestamp="20150727T182851-0400"?><xref
+                                                href="#topic7148/proxy" format="dita"
+                                        /><?oxy_insert_end?></li>
+                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T183005-0400"?><xref
+                                                href="#topic7148/ssh" format="dita"
+                                        /><?oxy_insert_end?></li>
                                 <li>Obtain a public key</li>
-                                <li><xref href="#topic7148/packages" format="dita">Install Ubuntu
-                                                packages</xref></li>
-                                <li><xref
+                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T183030-0400"?><xref
+                                                href="#topic7148/packages" format="dita"
+                                        /><?oxy_insert_end?></li>
+                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T183112-0400"?><xref
                                                 href="#topic7148/configure-the-xrdp-remote-desktop-display"
-                                                format="dita">Configure the xrdp display</xref></li>
-                                <li><xref href="#topic7148/ntp" format="dita">Install and configure
-                                                NTP</xref></li>
+                                                format="dita"/><?oxy_insert_end?></li>
+                                <li><?oxy_insert_start author="burkmich" timestamp="20150727T183118-0400"?><xref
+                                                href="#topic7148/ntp" format="dita"
+                                        /><?oxy_insert_end?></li>
                         </ul>
                         <title>Install Ubuntu Server 14.04.2 LTS</title>
                         <p>The HLM host must have Ubuntu Server 14.04.2 LTS installed before
@@ -151,7 +153,7 @@ fi
 <p>You can install NTP on the HLM host and configure it as an NTP server. Or, you can use a
                                 pre-existing NTP server that is reachable from the management
                                 network. </p>
-                        <p>For information on configuring the KLM host as an NTP client, see <xref
+                        <p>For information on configuring the KLM host as an NTP client, see  <xref
                                         href="carrier-grade-install-NTP.dita#topic4740/client"
                                 />.</p>
 <p>For information on installing NTP on the HLM host, see <xref
@@ -303,9 +305,10 @@ StrictHostKeyChecking no </codeblock></li>
         
 <section id="next-step"> <title>Next Step</title>
 <p>
-<xref href="carrier-grade-install-non-kvm-GA.dita#topic10581">Deploying the Non-KVM Region</xref></p>
-<!-- ===================== horizontal rule ===================== -->
+                                <xref
+                                        href="carrier-grade-install-non-kvm-GA.dita#topic10581"
+                                        >Deploying the Non-KVM Region</xref></p>
+
 </section>
 </body>
 </topic>
-<?oxy_options track_changes="on"?>
