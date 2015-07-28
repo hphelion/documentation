@@ -35,8 +35,8 @@
       <p>Note that for ESX cloud deployments, the ESX administrator is responsible for providing the
         network connectivity between the ESX Network and the Helion Cloud Management Network as
         documented in prerequisite section of the <xref
-          href="1.1commercial.install-GA-post-esx.dita#topic1739">ESX Proxy page</xref>. Also read
-        the information on the deployment of vCenter ESX Compute proxy on the same page.</p>
+          href="1.1commercial.install-GA-ESX-Proxy.dita">ESX Proxy page</xref>. Also read the
+        information on the deployment of vCenter ESX Compute proxy on the same page.</p>
       <p>Since ESX/vCenter integration is not fully automatic, vCenter administrators are advised of
         the following responsibilities to ensure secure operation:</p>
       <ul id="ul_jsc_y3n_vs">
@@ -69,8 +69,10 @@
         <li>Make sure you are logged into the seed cloud host as root. If not:
           <codeblock><codeph>sudo -i</codeph>
           </codeblock></li>
-        <li>Execute the esx-custom-ips.json  file using the source command. The  source command
-          executes the content of the file passed as argument, in the current
+        <li>Execute the esx-custom-ips.json (<xref
+            href="1.1commercial.install-GA-JSON.dita#topic20151">explained here</xref>) file using
+          the source command. The source command executes the content of the file passed as
+          argument, in the current
           shell.<codeblock>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/esx-custom-ips.json
 </codeblock></li>
         <li>Start the seed VM installation by entering the following
@@ -90,7 +92,8 @@
       <p>To install the undercloud and overcloud, execute the following steps, starting on the seed
         cloud host: </p>
       <ol>
-        <li>Upload the baremetal.csv configuration file to /root on the seed
+        <li>Upload the <xref href="1.1commercial.install-GA-CSV.dita#topic5926">baremetal.csv
+            configuration file</xref> to /root on the seed
           VM.<codeblock>scp baremetal.csv root@&lt;ip_address&gt;:/baremetal.csv
 </codeblock></li>
         <li>If you are integrating LDAP into your environment, copy the configuration files, as
