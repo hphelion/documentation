@@ -718,6 +718,8 @@
       <!--permalink: /helion/devplatform/1.2/als/user/services/user-provided/-->
       <topicref href="devplatform/1.2/helion/user/services/1.2user-provided.dita" locktitle="yes"
         navtitle="User-Provided Services"/>
+      <topicref href="devplatform/1.2/windows/windows_troubleshooting.dita"
+        navtitle="Troubleshooting Windows" locktitle="yes"/>
     </topicref>
     <topicref href="devplatform/1.2/helion/1.2index.dita" locktitle="yes"
       navtitle="Application Lifecycle Service Documentation">
