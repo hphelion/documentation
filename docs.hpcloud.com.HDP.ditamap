@@ -163,6 +163,8 @@
     <topicref href="devplatform/1.2devplatform.sysadmin.dita" locktitle="yes"
       navtitle="Resources for IT Ops">
       <!--permalink: /helion/devplatform/connectdatabase/-->
+      <topicref href="devplatform/helion/admin/reference/docker.dita" navtitle="Docker and Fence"
+        locktitle="yes"/>
       <topicref href="devplatform/windows/windows_password.dita"
         navtitle="Retrieving the Admin Password for Windows Instances" locktitle="yes"/>
       <topicref href="devplatform/1.2devplatform.database-ALS.dita" locktitle="yes"

@@ -2497,6 +2497,8 @@ op custom_ssl_cert list</codeblock>
 </p>
 <codeblock>op regenerate all [--no-restart] [--no-prompt]
 
+op regenerate authorized_keys [--frontend] [--dea]
+
 op regenerate cloud-controller-bulk-api-auth [--no-prompt]
 
 op regenerate cloud-controller-client-auth [--no-prompt]
