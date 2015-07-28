@@ -32,10 +32,10 @@
         <li>Installing the undercloud and
             overcloud</li>
       </ul>
-      <p>Note that the for ESX cloud deployments, the ESX administrator is responsible for providing
-        the network connectivity between the ESX Network and the Helion Cloud Management Network as
-        documented in prerequisite section of the ESX Proxy page. Also read the
-        information on the deployment of vCenter ESX Compute proxy</p>
+      <p>Note that for ESX cloud deployments, the ESX administrator is responsible for providing the
+        network connectivity between the ESX Network and the Helion Cloud Management Network as
+        documented in prerequisite section of the ESX Proxy page. Also read the information on the
+        deployment of vCenter ESX Compute proxy</p>
       <p>Since ESX/vCenter integration is not fully automatic, vCenter administrators are advised of
         the following responsibilities to ensure secure operation:</p>
       <ul id="ul_jsc_y3n_vs">
@@ -111,17 +111,17 @@ BM_NETWORK_SEED_IP=192.0.2.1
           connection to proceed.<p>The prompt will change to
           <codeblock>root@hLinux</codeblock></p></li>
         <li><b>[Optional]</b> Use IPMItool to verify that network connectivity from the seed VM to
-          the baremetal servers in your <codeblock>baremetal.csv</codeblock> is
+          the baremetal servers in your baremetal.csv file is
               working.<codeblock>/usr/bin/ipmitool -U &lt;ipmi_user&gt; -P &lt;ipmi_password&gt; -H &lt;ipmi_address&gt; -I lanplus power status
-</codeblock><p><b>Example:</b></p><codeblock>root@hLinux:# /usr/bin/ipmitool -U admin -P password -H 10.20.50.25 -I lanplus power status
+</codeblock><p><b>Example
+              output:</b></p><codeblock>root@hLinux:# /usr/bin/ipmitool -U admin -P password -H 10.20.50.25 -I lanplus power status
 
 Chassis Power is on.
 </codeblock></li>
         <li>Use the IPMItool to manually power off each baremetal system specified in your
-          <codeblock>baremetal.csv</codeblock> before proceeding with the installation.
-              <p><b>IMPORTANT:</b> Make sure that each system is configured in the BIOS to stay
-            powered off in the event of being shut down rather than automatically
-          restarting.</p></li>
+          baremetal.csv file before proceeding with the installation. <p><b>IMPORTANT:</b> Make sure
+            that each system is configured in the BIOS to stay powered off in the event of being
+            shut down rather than automatically restarting.</p></li>
         <li>Set the environment variables for the undercloud and overcloud nodes listed in the
           esx-custom-ips.json file by executing the source command. The source command parses the
           json file and sets the environment variables listed there within the current
@@ -130,35 +130,35 @@ Chassis Power is on.
         <li>Install and configure the undercloud and overcloud by running the following command from
           /root.
             <codeblock>bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh |&amp; tee cloud_install.log 
-</codeblock><p>During
-            this step, several important activities automatically
-          occur:</p><codeblock>a. The input data is processed and validated. 
+</codeblock><p>During this step, several important activities automatically occur:</p>
+          <ol><li> The input data is processed and validated. 
 For example:
+<ul>
+<li> Hardware details in baremetal.csv are validated, where possible</li>
 
-* Hardware details in baremetal.csv are validated, where possible
+  <li> Node assignments are checked</li>
 
-* Node assignments are checked
+  <li>IP address ranges are checked for validity</li>
 
-* IP address ranges are checked for validity
+  <li> NTP servers are validated</li>
+</ul>
+          </li>
+            <li> The seed is customized and its OpenStack services are configured and started. The undercloud node is registered with the seed's ironic service</li>
 
-* NTP servers are validated
-
-b. The seed is customized and its OpenStack services are configured and started. The undercloud node is registered with the seed's ironic service
-
-c. The undercloud is deployed, booted, and its heat stack is configured.
+<li> The undercloud is deployed, booted, and its heat stack is configured.
 The undercloud OpenStack services are then configured and started.
-The overcloud nodes are registered with the undercloud's ironic service.
+The overcloud nodes are registered with the undercloud's ironic service.</li>
 
-d. The overcloud controller heat stack is configured, booting and deploying images to the Overcloud Controller nodes and the SwiftStorage nodes.
+            <li> The overcloud controller heat stack is configured, booting and deploying images to the Overcloud Controller nodes and the SwiftStorage nodes.</li>
 
-e. Booting and images are deployed to the individual stacks for the Overcloud compute and other nodes.
+            <li> Booting and images are deployed to the individual stacks for the Overcloud compute and other nodes.</li>
 
-f. Once all the overcloud heat stacks are configured, the overcloud is configured.
+            <li> Once all the overcloud heat stacks are configured, the overcloud is configured.</li>
 
-g. Finally a demo VM is launched in the overcloud as a verification step.
+            <li> Finally a demo VM is launched in the overcloud as a verification step.</li></ol>
 
 Output messages will indicate when the undercloud and overcloud controllers become active, services are created and configured, and other aspects of the installation are executed. 
-</codeblock></li>
+</li>
         <li>When the deployment completes, a message displays asking you to submit information on
           the install to HP. Enter Y to submit or any other key to not submit.<p>If your
             installation is successful, a message similar to the following is
