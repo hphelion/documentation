@@ -21,33 +21,33 @@
     <p>The open-source OpenStack REST API Documentation is currently NOT versioned. There is only a
       master/current version of the OpenStack REST API Documentation containing updates from 'all'
       versions of OpenStack.</p>
-
-    <p><b>Non-KVM Region API</b></p>
-    <p>For the API refernece for the non-KVM region, see the <xref
+<section><title>APIs</title>
+    <p><b>Non-KVM Region API</b>. For the API refernece for the non-KVM region, see the <xref
         href="http://developer.openstack.org/api-ref.html" format="html" scope="external">OpenStack
         API Complete Reference</xref>.</p>
     <p>For the specific OpenStack services supported by HP Helion OpenStack Carrier Grade, see <xref
         href="../Overview/carrier-grade.services-overview.dita#topic4220">Services Overview</xref>.</p> 
       
-    <p><b>KVM Region API</b></p>
-    <p>For the API refernece for the KVM region, see <xref
+    <p><b>KVM Region API</b>. For the API refernece for the KVM region, see <xref
         href="../../PDF/HP-Helion-OpenStack-Carrier-Grade-REST-API.pdf" format="pdf">Hp Helion
         OpenStack Carrier Grade: REST API Guide</xref>. This document contains HP Helion OpenStack
       Carrier Grade extensions to the OpenStack Compute API for use with the servers in the KVM
       region.</p>
-    <p><b>ESX API</b></p>
-    <p><b><i>For the KVM and ESX deployments</i></b>, you can use aspects of the VMware vSphere API, 
+    <p><b><i>For the KVM and ESX deployments:</i></b></p>
+    <p><b>ESX API</b>. You can use aspects of the VMware vSphere API, 
       as applicable for your license agreement. Refer to the vSphere documentation for more information.</p>
     
-    <p><b>DCN API</b></p>
-    <p><b><i>For the KVM and ESX deployments</i></b>, you can use aspects of the HP Distributed Cloud Networking (DCN) API, 
+    <p><b>DCN API</b>. You can use aspects of the HP Distributed Cloud Networking (DCN) API, 
       as applicable for your license agreement. Refer to the DCN documentation for more information.</p>
-    
+      </section>
+<section><title>Software Development Kit</title>
     <p><b>HP Helion OpenStack CArrier Grade Software Development Kit (SDK)</b></p>
     <p>The HP Helion OpenStack Carrier Grade SDK can be used by guest applications to interact
       programmatically with HP Helion OpenStack Carrier Grade. See the Software <xref
         href="../../PDF/HP-Helion-OpenStack-Carrier-Grade-SDK-1.1.pdf" format="pdf">Development Kit
         guide</xref>.</p>
-    
+</section>
+
+
   </body>
 </topic>
