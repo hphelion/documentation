@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM + ESX
     Deployment</title>
 <prolog>
 <metadata>
@@ -236,8 +236,7 @@ Password: cghelion</codeblock></p></li>
                 </row>
                 <row>
                   <entry>Pxe-interface</entry>
-                  <entry>The name of the interface on which PXE boot should occur. For example:
-                      <codeph>eth0</codeph></entry>
+                  <entry>The name of the interface on which PXE boot should occur. For example: <codeph>eth0</codeph></entry>
                 </row>
                 <row>
                   <entry>pm_type</entry>
@@ -257,18 +256,18 @@ Password: cghelion</codeblock></p></li>
                 </row>
                 <row>
                   <entry>node_group</entry>
-                  <entry>Enter the same value as <codeph>node-type</codeph> in the
-                      <codeph>nodes.json</codeph> file used during cloud deployment. For example:
-                    `CCN-001-001`.</entry>
+                  <entry>Enter the same value as <codeph>node-type</codeph> in the <codeph>nodes.json</codeph>
+                    file used during cloud deployment. For example: `CCN-001-001`.</entry>
                 </row>
                 <row>
                   <entry>failure_zone, vendor, model, os_partition_size, data_partition_size</entry>
-                  <entry>Enter the same value as for these fields an in the
-                      <codeph>nodes.json</codeph> file used during cloud deployment</entry>
+                  <entry>Enter the same value as for these fields an in the <codeph>nodes.json</codeph> file used
+                    during cloud deployment</entry>
                 </row>
               </tbody>
             </tgroup>
-          </table><p>To see a sample <codeph>node-provision.json</codeph> file, see  </p></li>
+          </table><p>To see a sample <codeph>node-provision.json</codeph> file, see <xref
+              href="../../CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.dita">Create the HLM Virtual Machine</xref>.</p></li>
 </ol>
 </section>
 <section id="pxe-boot"> <title>Configure PXE boot</title>

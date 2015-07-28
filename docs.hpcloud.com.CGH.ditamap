@@ -64,7 +64,8 @@
         <topicref href="CarrierGrade/Installation/carrier-grade-install-esx-proxy.dita"/>
       </topicref>
       <topicref href="CarrierGrade/Installation/carrier-grade-install-non-kvm-GA.dita">
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.dita" toc="no"/>
+        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-kvm-node-json.dita"
+          toc="no"/>
       </topicref>
       <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-GA.dita">
         <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-network-interface.dita"
