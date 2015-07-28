@@ -353,7 +353,7 @@ EOF
 </codeph></codeblock></li>
         <li>Update the <codeph>step_run_occ</codeph> playbook by
           entering:<codeblock>cp -p ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml ~/helion-update-1.1-to-/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml.orig
-cat &gt; ~/helion-update-1.1-to-/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml &lt;&lt; EOF
+cat &gt; ~/helion-update-1.1-to-1.1.1/tripleo/helion-update/tripleo-ansible/playbooks/step_run_occ.yml&lt;&lt; EOF
     # Copyright (C) 2014 Hewlett-Packard Development Company, L.P.
     #
     # Licensed under the Apache License, Version 2.0 (the "License");
