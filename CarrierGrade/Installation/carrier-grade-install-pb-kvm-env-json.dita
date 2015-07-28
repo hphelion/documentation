@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample enviroment.json File for
+        Installing the KVM + ESX Topology</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
+ <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
+    <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
+                KVM + ESX deployment</xref> requires several JSON files that will be used when
+            deploying the HLM VM.</p>
+<section id="sample-node-provisionjson-file">
+            <p>The following represents a sample <codeph>environment.json</codeph> file. Use values
+                appropriate for your environment.</p>
+            <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
+                    the KVM + ESX Deployment</xref>.</p>
+            <p>{</p>
+            <p>    "product": {</p>
+            <p>        "version": 1</p>
+            <p>    },</p>
+            <p> </p>
+            <p>    "node-type": [</p>
+            <p>        {</p>
+            <p>            "name": "CCN",</p>
+            <p>            "interface-map": [</p>
+            <p>                {</p>
+            <p>                    "name": "INTF0",</p>
+            <p>                    "ethernet-port-map": {</p>
+            <p>                        "interface-ports": [ "eth0"           ]</p>
+            <p>                    },</p>
+            <p>                    "logical-network-map": [</p>
+            <p>                        {</p>
+            <p>                            "name":           "management",</p>
+            <p>                            "type": "vlan",</p>
+            <p>                            "segment-id":           "203",</p>
+            <p>                            "network-address": {</p>
+            <p>                                "cidr":           "10.20.3.0/24",</p>
+            <p>                                "start-address":           "10.20.3.100",</p>
+            <p>                                "gateway":           "10.20.3.1"</p>
+            <p>                            }</p>
+            <p>                        },</p>
+            <p>                        {</p>
+            <p>                            "name": "api",</p>
+            <p>                            "type": "vlan",</p>
+            <p>                            "segment-id":           "204",</p>
+            <p>                            "network-address": {</p>
+            <p>                                "cidr":           "10.20.4.0/24",</p>
+            <p>                                "start-address": "10.20.4.100",</p>
+            <p>                                "gateway":           "10.20.4.1"</p>
+            <p>                            }</p>
+            <p>                        },</p>
+            <p>                        {</p>
+            <p>                            "name":           "blockstore",</p>
+            <p>                            "type": "vlan",</p>
+            <p>                            "segment-id": "73",</p>
+            <p>                            "network-address": {</p>
+            <p>                                "cidr":           "172.16.73.0/24",</p>
+            <p>                                "start-address":           "172.16.73.100",</p>
+            <p>                                "gateway": "172.16.73.1"</p>
+            <p>                            }</p>
+            <p>                       }</p>
+            <p>                    ]</p>
+            <p>                }</p>
+            <p>            ]</p>
+            <p>        },</p>
+            <p> </p>
+            <p>        {</p>
+            <p>            "name": "CPN",</p>
+            <p>            "interface-map": [</p>
+            <p>                {</p>
+            <p>                    "name": "INTF0",</p>
+            <p>                    "ethernet-port-map": {</p>
+            <p>                        "interface-ports": [ "eth0"           ]</p>
+            <p>                    },</p>
+            <p>                    "logical-network-map": [</p>
+            <p>                        {</p>
+            <p>                            "name":           "management",</p>
+            <p>                            "ref":           "ccn-INTF0-management"</p>
+            <p>                        }</p>
+            <p>                    ]</p>
+            <p>                }</p>
+            <p>            ]</p>
+            <p>        },</p>
+            <p> </p>
+            <p>        {</p>
+            <p>            "name": "DCN",</p>
+            <p>            "interface-map": [</p>
+            <p>                {</p>
+            <p>                    "name": "INTF0",</p>
+            <p>                    "ethernet-port-map": {</p>
+            <p>                        "interface-ports": [ "eth0"           ]</p>
+            <p>                    },</p>
+            <p>                    "logical-network-map": [</p>
+            <p>                        {</p>
+            <p>                            "name":           "management",</p>
+            <p>                            "ref":           "ccn-INTF0-management"</p>
+            <p>                        },</p>
+            <p>                        {</p>
+            <p>                            "name":           "datacenter",</p>
+            <p>                            "type": "vlan",</p>
+            <p>                            "segment-id": "205",</p>
+            <p>                            "network-address": {</p>
+            <p>                                "cidr":           "10.20.5.0/24",</p>
+            <p>                                "start-address":           "10.20.5.100",</p>
+            <p>                             "gateway":           "10.20.5.1"</p>
+            <p>                            }</p>
+            <p>                        }</p>
+            <p>                    ]</p>
+            <p>                },</p>
+            <p>                {</p>
+            <p>                    "name": "INTF1",</p>
+            <p>                    "ethernet-port-map": {</p>
+            <p>                        "interface-ports": [ "eth1"           ]</p>
+            <p>                    },</p>
+            <p>                    "logical-network-map": [</p>
+            <p>                        {</p>
+            <p>                            "name": "tenant",</p>
+            <p>                            "type": "vlan",</p>
+            <p>                            "segment-id": "",</p>
+            <p>                            "network-address": {</p>
+            <p>                                "cidr":           "10.20.6.0/24",</p>
+            <p>                                "start-address":           "10.20.6.100",</p>
+            <p>                                "gateway":           "10.20.6.1"</p>
+            <p>                            }</p>
+            <p> </p>
+            <p>                                  }</p>
+            <p>                    ]</p>
+            <p>                }</p>
+            <p>            ]</p>
+            <p>        },</p>
+            <p>        {</p>
+            <p>            "name": "VRG",</p>
+            <p>            "interface-map": [</p>
+            <p>                {</p>
+            <p>                    "name": "INTF0",</p>
+            <p>                    "ethernet-port-map": {</p>
+            <p>                        "interface-ports": [ "eth0"           ]</p>
+            <p>                    },</p>
+            <p>                    "logical-network-map": [</p>
+            <p>                        {</p>
+            <p>                            "name":           "management",</p>
+            <p>                            "ref":           "ccn-INTF0-management"</p>
+            <p>                        }</p>
+            <p>                    ]</p>
+            <p>                },</p>
+            <p>                {</p>
+            <p>                    "name": "INTF1",</p>
+            <p>                    "ethernet-port-map": {</p>
+            <p>                      "interface-ports": [ "eth1" ]</p>
+            <p>                    },</p>
+            <p>                    "logical-network-map": [</p>
+            <p>                        {</p>
+            <p>                            "name": "tenant",</p>
+            <p>                            "ref":           "dcn-INTF1-tenant"</p>
+            <p>                        }</p>
+            <p>                    ]</p>
+            <p>                }</p>
+            <p>            ]</p>
+            <p>        }</p>
+            <p>    ]</p>
+            <p>}</p>
+<codeblock>                
+</codeblock>
+        </section>
+</body>
+</topic>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic10581">
-<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Installing the KVM + ESX
     Deployment</title>
 <prolog>
 <metadata>
@@ -193,9 +193,8 @@ VSD Server : auto
   <section><title>Install the DVswitch</title></section>
   
   <section><title>Install the VRSVapp</title></section>
-  <section id="configure-a-json-file-for-installation"> <title>Configure a JSON file for installation</title>
-<p>The HP Helion OpenStack deployment requires a JSON file. Use the following steps to install and
-        edit the file.</p>
+  <section id="configure-a-json-file-for-installation"> <title>Deploy the HLM VM</title>
+<p>Use the following steps to deploy the HLM VM on the HLM host:</p>
 <ol>
 <li>Login to HLM VM.
             <codeblock>ssh &lt;HLM_VM_IP>
@@ -206,72 +205,77 @@ Password: cghelion</codeblock></p></li>
     
 <li>On the HLM VM, change to the home directory.<codeblock>cd ~</codeblock></li>
 <li>Provision and configure your HP Helion OpenStack
-            VM.<codeblock>hnewcloud  &lt;cloudname&gt; &lt;denver&gt;</codeblock><p>Where:</p><ul>
+            VM.<codeblock>hnewcloud  &lt;cloudname&gt; &lt;memphis&gt;</codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
-              <li><codeph>&lt;denver&gt;</codeph> is the name of the template to use. The
-              installation kit includes the fully-tested <codeph>denver</codeph> template.</li>
+            <li><codeph>&lt;memphis&gt;</codeph> is the name of the template to use. The
+              installation kit includes the fully-tested <codeph>memphis</codeph> template.</li>
           </ul><p>The command creates the <codeph>&lt;cloudname&gt;</codeph> directory, which will
-            contain a JSON template file <codeph>node-provision.json</codeph>. This template
-            supplies input values to the <codeph>hprovision</codeph> script, later in the
-            installation.</p></li>
-<li>Edit <codeph>node-provision.json</codeph> file based on following guidelines:<table>
-            <tgroup cols="2">
-              <colspec colname="col1" colsep="1" rowsep="1"/>
-              <colspec colname="col2" colsep="1" rowsep="1"/>
-              <thead>
-                <row>
-                  <entry colsep="1" rowsep="1">Field</entry>
-                  <entry colsep="1" rowsep="1">Baremetal</entry>
-                </row>
-              </thead>
-              <tbody>
-                <row>
-                  <entry>name</entry>
-                  <entry>Name of the system you want to add</entry>
-                </row>
-                <row>
-                  <entry>Pxe-mac-address</entry>
-                  <entry>MAC address of the interface you want to PXE boot onto. This is not same as
-                    iLO MAC address,</entry>
-                </row>
-                <row>
-                  <entry>Pxe-interface</entry>
-                  <entry>The name of the interface on which PXE boot should occur. For example:
-                      <codeph>eth0</codeph></entry>
-                </row>
-                <row>
-                  <entry>pm_type</entry>
-                  <entry>ipmilan </entry>
-                </row>
-                <row>
-                  <entry>pm_ip</entry>
-                  <entry>Power management IP (iLO ip)</entry>
-                </row>
-                <row>
-                  <entry>pm_user</entry>
-                  <entry>Power management user (iLO username)</entry>
-                </row>
-                <row>
-                  <entry>pm_pass</entry>
-                  <entry>Power management password (iLO password)</entry>
-                </row>
-                <row>
-                  <entry>node_group</entry>
-                  <entry>Enter the same value as <codeph>node-type</codeph> in the
-                      <codeph>nodes.json</codeph> file used during cloud deployment. For example:
-                    `CCN-001-001`.</entry>
-                </row>
-                <row>
-                  <entry>failure_zone, vendor, model, os_partition_size, data_partition_size</entry>
-                  <entry>Enter the same value as for these fields an in the
-                      <codeph>nodes.json</codeph> file used during cloud deployment</entry>
-                </row>
-              </tbody>
-            </tgroup>
-          </table><p>To see a sample <codeph>node-provision.json</codeph> file, see  </p></li>
-</ol>
-</section>
-<section id="pxe-boot"> <title>Configure PXE boot</title>
+            contain several JSON template files. </p></li></ol>
+  </section>
+  <section id="configure-node-provision-json">
+      <title>Configure the JSON Node Provision file</title>
+      <p>Edit the <codeph>node-provision.json</codeph> file. This template supplies input values to
+        the <codeph>hprovision</codeph> script, later in the installation. </p>
+        
+      <p> Edit <codeph>node-provision.json</codeph> file based on following guidelines:</p> 
+        <table>
+        <tgroup cols="2">
+          <colspec colname="col1" colsep="1" rowsep="1"/>
+          <colspec colname="col2" colsep="1" rowsep="1"/>
+          <thead>
+            <row>
+              <entry colsep="1" rowsep="1">Field</entry>
+              <entry colsep="1" rowsep="1">Baremetal</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>name</entry>
+              <entry>Name of the system you want to add</entry>
+            </row>
+            <row>
+              <entry>Pxe-mac-address</entry>
+              <entry>MAC address of the interface you want to PXE boot onto. This is not same as iLO
+                MAC address,</entry>
+            </row>
+            <row>
+              <entry>Pxe-interface</entry>
+              <entry>The name of the interface on which PXE boot should occur. For example:
+                  <codeph>eth0</codeph></entry>
+            </row>
+            <row>
+              <entry>pm_type</entry>
+              <entry>ipmilan </entry>
+            </row>
+            <row>
+              <entry>pm_ip</entry>
+              <entry>Power management IP (iLO ip)</entry>
+            </row>
+            <row>
+              <entry>pm_user</entry>
+              <entry>Power management user (iLO username)</entry>
+            </row>
+            <row>
+              <entry>pm_pass</entry>
+              <entry>Power management password (iLO password)</entry>
+            </row>
+            <row>
+              <entry>node_group</entry>
+              <entry>Enter the same value as <codeph>node-type</codeph> in the
+                  <codeph>nodes.json</codeph> file used during cloud deployment. For example:
+                `CCN-001-001`.</entry>
+            </row>
+            <row>
+              <entry>failure_zone, vendor, model, os_partition_size, data_partition_size</entry>
+              <entry>Enter the same value as for these fields an in the <codeph>nodes.json</codeph>
+                file used during cloud deployment</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table><p>To see a sample <codeph>node-provision.json</codeph> file, see <xref
+        href="carrier-grade-install-pb-kvm-node-json.dita">Sample node-provision.json File for Installing the KVM + ESX Topology</xref>.</p>
+    </section>
+ <p> <b>Configure PXE boot</b> </p>
 <p>After you edit the <codeph>node-provision.json</codeph> file, you must enable one-time PXE boot
         on the servers set the correct boot order. Execute the following on the HLM VM:</p>
 <ol>
@@ -286,7 +290,51 @@ Password: cghelion</codeblock></p></li>
   <codeblock>python ilopxebootonce.py node-provision.json</codeblock></li>
 </ol>
 <p>After the script is run, the <codeph>Current One-Time Boot Option</codeph> is set to <codeph>Network Device 1</codeph> on all the servers listed in <codeph>node-provision.json</codeph> file.</p>
-</section>
+
+  <section id="configure-def-json">
+    <title>Configure the JSON Definition file</title>
+    <p>Edit the <codeph>definition.json</codeph> file on the HLM VM.</p>
+    <p>To see a sample <codeph>definition.json</codeph> file, see <xref
+      href="carrier-grade-install-pb-kvm-def-json.dita">Sample definition.json File for Installing the KVM + ESX Topology</xref>..</p>
+  </section>
+  
+  <section id="configure-env-json">
+    <title>Configure the JSON Environment file</title>
+    <p>Edit the <codeph>environment-provision.json</codeph> file on the HLM VM.</p>
+    <p>To see a sample <codeph>environment-provision.json</codeph> file, see see <xref
+      href="carrier-grade-install-pb-kvm-env-json.dita">Sample environment.json File for Installing the KVM + ESX Topology</xref>..</p>
+  </section>
+  
+  <section id="configure-ansible-json">
+    <title>Configure the JSON Ansible file</title>
+    <p>Edit the <codeph>ansible.json</codeph> file on the HLM VM.</p>
+    <p>To see a sample <codeph>ansible.json</codeph> file, see see <xref
+      href="carrier-grade-install-pb-kvm-ansible-json.dita">Sample ansible.json File for Installing the KVM + ESX Topology</xref>..</p>
+  </section>
+  
+  <section id="configure-esx-json">
+    <title>Configure the JSON ESX file</title>
+    <p>Edit the <codeph>esx.json</codeph> file on the HLM VM.</p>
+    <p>To see a sample <codeph>esx.json</codeph> file, see see <xref
+      href="carrier-grade-install-pb-kvm-esx-json.dita">Sample esx.json File for Installing the KVM + ESX Topology</xref>..</p>
+  </section>
+  
+  <section id="configure-ldap-json">
+    <title>Configure the JSON LDAP file</title>
+    <p>Edit the <codeph>ldap.json</codeph> file on the HLM VM.</p>
+    <p>To see a sample <codeph>ldap.json</codeph> file, see see <xref
+      href="carrier-grade-install-pb-kvm-ldap-json.dita#topic4797">Sample ldap.json File for Installing the KVM + ESX Topology</xref>..</p>
+  </section>
+  
+  <section id="configure-wr-json">
+    <title>Configure the JSON KVM file</title>
+    <p>Edit the <codeph>wr.json</codeph> file on the HLM VM.</p>
+    <p>To see a sample <codeph>wr.json</codeph> file, see see <xref
+      href="carrier-grade-install-pb-kvm-wr-json.dita#topic4797">Sample wr.json File for Installing the KVM + ESX Topology</xref>..</p>
+  </section>
+  
+  
+  
 <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up"> <title>Create new cloud template and bring the cloud nodes up</title>
 <ol>
 <li>Use the following script to start the provisioning of the HP Helion OpenStack

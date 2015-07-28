@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4797">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Sample ansible.json File for
+        Installing the KVM + ESX Topology</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+</metadata>
+</prolog>
+<body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm-json.md-->
+ <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/json-sample/--></p>
+    <p>The <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">process for installing the
+                KVM + ESX deployment</xref> requires several JSON files that will be used when
+            deploying the HLM VM.</p>
+<section id="sample-node-provisionjson-file">
+            <p>The following represents a sample <codeph>ansible.json</codeph> file. Use values
+                appropriate for your environment.</p>
+            <p>Return to <xref href="carrier-grade-install-kvm-esx-GA.dita#topic10581">Installing
+                    the KVM + ESX Deployment</xref>.</p>
+<codeblock/>
+            <p>{</p>
+            <p>            "product": {</p>
+            <p>        "version": 1</p>
+            <p>              },</p>
+            <p> </p>
+            <p>            "property-groups": [</p>
+            <p>        {</p>
+            <p>            "name": "ansible-vars",</p>
+            <p>            "properties": {</p>
+            <p>                "nuagenetlib_tar_name":
+                "nuage-openstack-nuagenetlib-juno.tar.gz",</p>
+            <p>                "nuageneutron_tar_name":
+                "nuage-openstack-neutron-juno-plugin.tar.gz",</p>
+            <p>                "dns_domain_name": "dcn-one.helion.cg",</p>
+            <p>                "ext_dns_ip": "10.1.2.44",</p>
+            <p>                "dns_address": "10.1.2.44",</p>
+            <p>                "vsc_dcm_ip": "10.20.5.31",</p>
+            <p>                "vsc_dcm_ip_ha": "10.20.5.32",</p>
+            <p>                "vsc_dcm_ip_subnet": "24",</p>
+            <p>                "vsc_tul_cidr": "10.20.6.31/24",</p>
+            <p>                "vsc_tul_cidr_ha": "10.20.6.32/24",</p>
+            <p>                "vsc_tul_ip": "10.20.6.31",</p>
+            <p>                "vsc_tul_ip_ha": "10.20.6.32",</p>
+            <p>                "vsc_user_name": "admin",</p>
+            <p>                "vsc_user_pass": "admin",</p>
+            <p>                "vsc_xmpp_name":
+                "vscha1.password@vsd1.dcn-two.helion.cg",</p>
+            <p>                "vsc_xmpp_name_ha":
+                "vscha2.password@vsd1.dcn-two.helion.cg",</p>
+            <p>                "vsc_route_mgmt_cidr": [</p>
+            <p>                    "10.1.2.0/24",</p>
+            <p>                    "10.20.3.0/24"</p>
+            <p>                ],</p>
+            <p>                "vsc_route_mgmt_gw": "10.20.5.1",</p>
+            <p>                "vsd_address": "10.20.5.21",</p>
+            <p>                "vsd_name": "vsd1",</p>
+            <p>                "vsc_image_name": "vsc_singledisk",</p>
+            <p>                "vsc_host_name": "vscha1",</p>
+            <p>                "vsc_host_name_ha": "vscha2",</p>
+            <p>                "vsc_ha_enabled": 1,</p>
+            <p>                "vsc_bgp_required": 1,</p>
+            <p>                "vsd_image_name": "VSD-3.0.0_HP_r3.0_36",</p>
+            <p>                "vsd_gateway": "10.20.5.1",</p>
+            <p>                "vsd_netmask": "255.255.255.0",</p>
+            <p>                "upstream_ntp_servers": [</p>
+            <p>                    "10.1.2.44",</p>
+            <p>                    "16.110.135.123"</p>
+            <p>                ],</p>
+            <p>               "compute_virt_type": "kvm",</p>
+            <p>                "ssl_cert_file": "ca.crt",</p>
+            <p>                "ssl_key_file": "cakey.pem",</p>
+            <p>                "ssl_passphrase": "cghelion"</p>
+            <p>            }</p>
+            <p>        }</p>
+            <p>              ]</p>
+            <p>}</p>
+            <codeblock>               
+</codeblock>
+        </section>
+</body>
+</topic>

@@ -118,20 +118,23 @@ export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address&gt;,&lt;provider_net
                                         configuration.</li>
                         </ol>
                 </section>
-<section id="configure-the-xrdp-remote-desktop-display"> <title>Configure the XRDP remote desktop display</title>
-<p>Configure XRDP on the KVM host for the remote desktop connection to access the server remotely as
-                                follows.</p>
-<ol>
-<li>Edit the <codeph>sesman.ini</codeph> file: vi /etc/xrdp/sesman.ini
-        <ol><li>Update the<codeph>MaxSessions=1</codeph> to <codeph>MaxSessions=50</codeph>.</li>
-                <li>Save and close the file.</li></ol></li>
-                <li>Configure the system to use XRDP:<codeblock><codeph>echo "xfce4-session" &gt; ~/.xinitrc
+<section id="configure-the-xrdp-remote-desktop-display"><title>Configure the XRDP remote desktop
+                                display</title><p>Configure XRDP on the KVM host for the remote
+                                desktop connection to access the server remotely as follows.</p><ol>
+                                <li>Edit the <codeph>sesman.ini</codeph> file: vi
+                                        /etc/xrdp/sesman.ini <ol>
+                                                <li>Update the<codeph>MaxSessions=1</codeph> to
+                                                  <codeph>MaxSessions=50</codeph>.</li>
+                                                <li>Save and close the file.</li>
+                                        </ol></li>
+                                <li>Configure the system to use
+                                        XRDP:<codeblock><codeph>echo "xfce4-session" &gt; ~/.xinitrc
 </codeph></codeblock></li>
-<li>Restart the XDRP service:
-        <codeblock>sudo /etc/init.d/xrdp restart</codeblock></li>
-</ol>
-<p>If the XDRP display does not work as expected, (you see a gray screen), update the <codeph>startwm.sh</codeph> file:</p>
-<codeblock><codeph>vi /etc/xrdp/startwm.sh
+                                <li>Restart the XDRP service:
+                                        <codeblock>sudo /etc/init.d/xrdp restart</codeblock></li>
+                        </ol><p>If the XDRP display does not work as expected, (you see a gray
+                                screen), update the <codeph>startwm.sh</codeph>
+                                file:</p><codeblock><codeph>vi /etc/xrdp/startwm.sh
 
 #!/bin/sh
 
@@ -143,11 +146,15 @@ fi
 #. /etc/X11/Xsession
 . /usr/bin/startxfce4
 </codeph>
-</codeblock>
-<p>Make sure you add a space after "." then restart XDRP:</p>
-<codeblock><codeph>sudo /etc/init.d/xrdp restart
-</codeph></codeblock>
-</section>
+</codeblock><p>Make
+                                sure you add a space after "." then restart
+                                XDRP:</p><codeblock><codeph>sudo /etc/init.d/xrdp restart
+</codeph></codeblock><p>When
+                                you XRDP to the KVM host, the screen appears similar to the
+                                following image:</p><image href="../../media/CGH-install-xrdp.png"
+                                id="image_pln_cdm_vs">
+                                <alt>XRDP display</alt>
+                        </image></section>
 <section id="ntp"> <title>Install and configure NTP</title>
 <p>You must configure the HLM Host as an NTP client.</p>
 <p>You can install NTP on the HLM host and configure it as an NTP server. Or, you can use a
@@ -217,6 +224,32 @@ StrictHostKeyChecking no </codeblock></li>
 <li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> to the <codeph>/root/cg/</codeph> directory.</li>
 </ol>
 </section>
+        <section><title>Download packages for KXM+ESX</title><p>If you are deploying the KVM+ESX
+                                topology, download the following additional packages.</p><ol>
+                                <li>Download the compute proxy OVA template.</li>
+                                <li>Download and unzip the DCN packages: <ul>
+                                                <li>DCN-VRS-GW-3.0R7</li>
+                                                <li>DCN-VRS-VMware-3.0R7</li>
+                                                <li>DCN-VSC-3.0R7</li>
+                                                <li>DCN-VSD-QCOW-3.0R7</li>
+                                        </ul></li>
+                                <li>Create the <codeph>~/cg/dcn</codeph> on HLM KVM directory on the
+                                        KVM host.</li>
+                                <li>Copy the following files from DCN downloaded packages to
+                                                <codeph>~/cg/dcn</codeph>: <ul>
+                                                <li>vsc_singledisk.qcow2</li>
+                                                <li>nuage-openvswitch-datapath-dkms_3.0.7-125_all.deb</li>
+                                                <li>nuage-openvswitch-common_3.0.7-125_amd64.deb</li>
+                                                <li>nuage-python-openvswitch_3.0.7-125_all.deb</li>
+                                                <li>nuage-openvswitch-switch_3.0.7-125_amd64.deb</li>
+                                                <li>nuage-openstack-nuagenetlib-juno.tar.gz</li>
+                                                <li>nuage-openstack-neutron-juno-plugin.tar.gz</li>
+                                        </ul></li>
+                        </ol><p>If you execute a list on that directory, the output appears similar
+                                to the following image:</p><image
+                                href="../../media/CGH-install-DCN-pkgs.png" id="image_ofk_dhm_vs">
+                                <alt>DCN Package List</alt>
+                        </image></section>
                 <section id="prepbare">
                         <title>Preparing the baremetal systems</title>
                         <p>Perform the following tasks on each server you will use as  a compute
