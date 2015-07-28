@@ -86,6 +86,8 @@
       <topicref
         href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-lock.dita"
         toc="no"/>
+      <topicref
+        href="CarrierGrade/AdminGuideNew/HostManagement/carrier-grade-admin-wr-host-management-host-hardware.dita" toc="no"/>
     </topichead>
     <!-- hiding for RC0
     <topicref href="CarrierGrade/AdminGuideNew/Swift/carrier-grade-services-scale-out-swift.dita">
