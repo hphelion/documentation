@@ -20,7 +20,7 @@
 <section id="hardware"> <title>Hardware and software requirements</title>
 <p>Before you start, if you have not done so already, make sure your environment meets the hardware
                                 and software requirements. See the <xref
-                                        href="carrier-grade-support-matrix.dita">HP Helion OpenStack
+                                        href="carrier-grade-support-matrix2.dita#topic1773">HP Helion OpenStack
                                         Support Matrix</xref>.</p>
 </section>
 <section id="kvm">

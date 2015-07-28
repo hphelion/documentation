@@ -328,8 +328,8 @@
       network, and the controller uses the OAM network to connect to them.</p></section>
     <section id="next">
       <title>Next step</title>
-      <p><xref href="carrier-grade-install-pb-prereqs.dita#topic7148">Installation
-          Prerequisites</xref></p>
+      <p><xref href="carrier-grade-install-pb-prereqs-GA.dita#topic7148">Installation
+        Prerequisites</xref></p>
       <p>
         <xref type="section" href="#topic3485"> Return to Top </xref>
       </p>
