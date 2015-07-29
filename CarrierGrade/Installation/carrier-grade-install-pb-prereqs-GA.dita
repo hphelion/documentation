@@ -214,8 +214,13 @@ StrictHostKeyChecking no </codeblock></li>
                         <p><b>Note:</b> When downloading installation files, always download and
                                 verify the signature file before installing.  </p>
 <ol>
-<li> Download and extract the <codeph>cg-hlm.qcow2</codeph> file to the images folder:
-                                                <codeph>/var/lib/libvirt/images</codeph>.</li>
+        <li>Register and then log in to download the required installation package(s) from <xref
+                                                href="https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show"
+                                                format="html" scope="external">HP Helion
+                OpenStack product installation</xref>.</li>
+                                <li>Download and extract the <codeph>cg-hlm.qcow2</codeph> file to
+                                        the images folder:
+                                        <codeph>/var/lib/libvirt/images</codeph>.</li>
 <li> Download and extract the <codeph>cg-infra-playbooks.tar.gz.gpg</codeph> file to the
                                                 <codeph>/root</codeph> directory.</li>
         <li> Decrypt and untar the PGP file using password <codeph>cghelion</codeph> when prompted.
@@ -224,32 +229,93 @@ StrictHostKeyChecking no </codeblock></li>
 <li>Copy the <codeph>cg-hos.tar.gz.gpg</codeph> to the <codeph>/root/cg/</codeph> directory.</li>
 </ol>
 </section>
-        <section><title>Download packages for KXM+ESX</title><p>If you are deploying the KVM+ESX
-                                topology, download the following additional packages.</p><ol>
-                                <li>Download the compute proxy OVA template.</li>
-                                <li>Download and unzip the DCN packages: <ul>
-                                                <li>DCN-VRS-GW-3.0R7</li>
-                                                <li>DCN-VRS-VMware-3.0R7</li>
-                                                <li>DCN-VSC-3.0R7</li>
-                                                <li>DCN-VSD-QCOW-3.0R7</li>
+        <section><title>Download packages for KXM+ESX</title>
+        <p>If you are deploying the KVM+ESX topology, download the following additional packages.</p>
+                <ol>
+                                <li>Register and then log in to download the required installation
+                                        package(s) from <xref
+                                                href="https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show"
+                                                format="html" scope="external">HP Helion OpenStack
+                                                product installation</xref>.</li><li>Download the compute proxy OVA template.</li>
+                        <li>Download and unzip the DCN packages:
+                        <ul>
+                         <li>DCN-VRS-GW-3.0R7</li>
+                         <li>DCN-VRS-VMware-3.0R7</li>
+                         <li>DCN-VSC-3.0R7</li>
+                         <li>DCN-VSD-QCOW-3.0R7</li></ul></li>
+                        <li>Create the <codeph>~/cg/dcn</codeph> on HLM KVM directory on the KVM host.</li> 
+                        <li>Copy the following files from DCN downloaded packages to <codeph>~/cg/dcn</codeph>:
+                          <ul><li>vsc_singledisk.qcow2</li>
+                              <li>nuage-openvswitch-datapath-dkms_3.0.7-125_all.deb</li>
+                              <li>nuage-openvswitch-common_3.0.7-125_amd64.deb</li>
+                              <li>nuage-python-openvswitch_3.0.7-125_all.deb</li>
+                              <li>nuage-openvswitch-switch_3.0.7-125_amd64.deb</li>
+                              <li>nuage-openstack-nuagenetlib-juno.tar.gz</li>
+                              <li>nuage-openstack-neutron-juno-plugin.tar.gz</li>
+                          </ul></li>  
+                        </ol>  
+                <p>If you execute a list on that directory, the output appears similar to the following image:</p>
+        </section>
+        <section><title>Verify download signature</title>
+                <p>After downloading the installation packages, you should verify the signature of
+                                the download. You can use the GPG utility, which is already
+                                installed on the HLM node.</p>
+         <p>A set of GPG public keys are included in the installation package you downloaded.</p> 
+          <ol>
+                  <li>Copy the public keys to the HLM host server, extract the keys from the
+                                        compressed files. <p>The following keys are included in the
+                                                download:</p><ul>
+                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-1.pub</li>
+                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-2.pub</li>
+                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-3.pub</li>
+                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-4.pub</li>
+                                                <li>Hewlett-PackardCompanyRSA(HPCodesigningService)-5.pub</li>
+                                                <li>hpPublicKey.pub</li>
+                                                <li>hpPublicKey2048.pub</li>
                                         </ul></li>
-                                <li>Create the <codeph>~/cg/dcn</codeph> on HLM KVM directory on the
-                                        KVM host.</li>
-                                <li>Copy the following files from DCN downloaded packages to
-                                                <codeph>~/cg/dcn</codeph>: <ul>
-                                                <li>vsc_singledisk.qcow2</li>
-                                                <li>nuage-openvswitch-datapath-dkms_3.0.7-125_all.deb</li>
-                                                <li>nuage-openvswitch-common_3.0.7-125_amd64.deb</li>
-                                                <li>nuage-python-openvswitch_3.0.7-125_all.deb</li>
-                                                <li>nuage-openvswitch-switch_3.0.7-125_amd64.deb</li>
-                                                <li>nuage-openstack-nuagenetlib-juno.tar.gz</li>
-                                                <li>nuage-openstack-neutron-juno-plugin.tar.gz</li>
-                                        </ul></li>
-                        </ol><p>If you execute a list on that directory, the output appears similar
-                                to the following image:</p><image
-                                href="../../media/CGH-install-DCN-pkgs.png" id="image_ofk_dhm_vs">
-                                <alt>DCN Package List</alt>
-                        </image></section>
+                <li>Execute the following command to import the keys:
+                                                <codeblock>gpg --import "&lt;filename>"</codeblock><p>Where
+                                                &lt;filename> is the name of the extracted
+                                                file.</p><p>The keys are then imported into the gpgp
+                                                key share:
+                                                <codeblock>gpg --import hpPublicKey.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-1.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-2.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-3.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-4.pub 
+gpg --import Hewlett-PackardCompanyRSA\(HPCodesigningService\)-5.pub 
+gpg --import hpPublicKey2048.pub </codeblock></p></li>
+                  <li>Use the following command to view the keys in the key store:
+                                                <codeblock>gpg --list-keys</codeblock><p>The key
+                                                store appears similar to the
+                                        following:</p><codeblock>/home/sad/.gnupg/pubring.gpg
+----------------------------
+pub   2048R/F7191CB9 2014-12-19
+pub   1024D/2689B887 2005-03-11 [expired: 2015-03-09]
+uid                  Hewlett-Packard Company (HP Codesigning Service)
+pub   2048R/B1275EA3 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 1
+pub   2048R/B564A643 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 2
+pub   2048R/FF94BC78 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 3
+pub   2048R/BA849975 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 4
+pub   2048R/C6978F0C 2014-11-19 [expires: 2024-11-16]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service) - 5
+pub   2048R/5CE2D476 2012-12-04 [expires: 2022-12-02]
+uid                  Hewlett-Packard Company RSA (HP Codesigning Service)        </codeblock></li>
+                  <li>Use the following command to verify the signature:
+                                                <codeblock>gpg --verify ./cg-hos.tar.gz.gpg.sig ./cg-hos.tar.gz.gpg</codeblock><p>The
+                                                output for the command appears similar to the
+                                                following:</p><codeblock>gpg: Signature made Wed 22 Jul 2015 01:23:24 PM EDT using RSA key ID C6978F0C
+gpg: Good signature from "Hewlett-Packard Company RSA (HP Codesigning Service) - 5"
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 2545 62E5 28F9 FE92 B85D  8200 FDF9 4EBB C697 8F0C</codeblock>
+                                </li>
+          </ol>
+        </section>
                 <section id="prepbare">
                         <title>Preparing the baremetal systems</title>
                         <p>Perform the following tasks on each server you will use as  a compute

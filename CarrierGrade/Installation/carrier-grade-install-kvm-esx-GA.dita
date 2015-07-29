@@ -309,18 +309,22 @@ Password: cghelion</codeblock></p></li>
   <section id="configure-ldap-json">
     <title>Configure the JSON LDAP file</title>
     <p>Edit the <codeph>ldap.json</codeph> file on the HLM VM.</p>
-    <p>To see a sample <codeph>ldap.json</codeph> file, see see <xref
-      href="carrier-grade-install-pb-kvm-ldap-json.dita">Sample ldap.json File for Installing the KVM + ESX Topology</xref>..</p>
+    <p>To see a sample <codeph>ldap.json</codeph> file, see see 
+      <!--  <xref
+      href="carrier-grade-install-pb-kvm-ldap-json.dita">Sample ldap.json File for Installing the KVM + ESX Topology</xref>..
+      --> </p>
   </section>
   
   <section id="configure-wr-json">
     <title>Configure the JSON KVM file</title>
     <p>Edit the <codeph>wr.json</codeph> file on the HLM VM.</p>
-    <p>To see a sample <codeph>wr.json</codeph> file, see see <xref
-      href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the KVM + ESX Topology</xref>..</p>
-  </section>
+    <p>To see a sample <codeph>wr.json</codeph> file, see see 
+      <!-- <xref
+      href="carrier-grade-install-pb-kvm-wr-json.dita">Sample wr.json File for Installing the KVM + ESX Topology</xref>..
+  --> </p>
   
-  <section><title>Configure the ESX Compute Proxy</title>
+  </section>
+      <section><title>Configure the ESX Compute Proxy</title>
     <p>The HP Helion OpenStack Carrier Grade vCenter ESX compute proxy (compute proxy) is a driver
       that enables the Compute service to communicate with a VMware vCenter server managing one or
       more ESX hosts. The HP Helion OpenStack Compute Service (Nova) requires this driver to
@@ -424,12 +428,134 @@ hp3par_iscsi_chap_enabled=false</codeblock></li></ul></li>
     <li>open the /root/stackrc file on any controller node</li>
   </ul>
 
-
-
-
-
 </section>
-<section id="next-step"> <title>Next Step</title>
+<section><title>Verify the VSC VMs</title>
+  <p>Use the following steps to verify that the VSC VMs were installed and are operational</p>
+  <ol>
+    <li>SSH to your vsc VM from DCM KVM Host using DCM IP</li>
+    <li>Login/password: admin/admin</li>
+  <li>Execute the following command:
+    <codeblock>admin display-config</codeblock></li>
+    <li>Execute the followng commands to verify the status is active:
+          <codeblock>show vswitch-controller vsd
+show vswitch-controller xmpp-server
+ping router "management" &lt;vsd IP or domain name> </codeblock>
+        </li>
+  </ol>
+</section>
+  <section><title>Verify the VRS-G Node</title> The installation creates a VRS-G node as part of
+      the cloud deployment. If VRS-G node is not listed here, execute the following command from the
+      VSC Node:  <p>
+        <codeblock>show vswitch-controller vswitches </codeblock>
+      </p><p>The output for the command should appear similar to the following image:</p>
+      <image href="../../media/CGH-install-verify-vrsg.png" id="image_x3t_jvp_vs"/>
+      <p>Verify that the domain name and DMS server are listed in the
+          <codeph>/etc/resolv.conf</codeph> file on all the cloud nodes  </p><codeblock>cat etc/resolv.conf          </codeblock>
+      <image href="../../media/CGH-install-resolv-conf.jpg" id="image_idc_5wp_vs">
+        <alt>Verify VRS-G</alt>
+      </image>
+  </section>
+  <section><title>Create external network and subnet</title>
+    <ol>
+      <li>Obtain the static IP route for the external network/FIP EXT Uplink Subnet"
+      <codeblock>
+        #
+        interface Vlan-interface 1553
+        description NFV TestBed - EXT UPLINK SUBNET
+        ip address 10.200.53.1 255.255.255.192
+        #
+        .
+        .
+        .
+        IP Packet Frame Type: PKTFMT_ETHNT_2,  Hardware Address: b8af-67bd-f516
+        .
+        .
+        .
+        Destination/Mask    Proto  Pre  Cost         NextHop         Interface
+        
+        10.200.53.0/26      Direct 0    0            10.200.53.1     Vlan1553
+        10.200.53.1/32      Direct 0    0            127.0.0.1       InLoop0
+        10.200.53.64/26     Static 60   0            10.200.53.2     Vlan1553
+        10.200.53.128/26    Static 60   0            10.200.53.2     Vlan1553
+        10.200.53.192/26    Static 60   0            10.200.53.2     Vlan1553
+      </codeblock></li>  
+      <li>Execute the following command to create the external netwoork:
+      <codeblock>neutron net-create ext-net --router:external</codeblock></li>
+      <li>Execute the following command to create a subnet for the external netwoork:
+        <codeblock>neutron subnet-create ext-net &lt;subnet-ip> --name &lt;name></codeblock>
+        <p>where: &lt;subnet-ip> is the IP address range to assign and &lt;name> is a descriptive name.</p>
+        
+        <p>For example: neutron subnet-create ext-net 10.200.53.64/26 --name extsub1</p></li>
+      <li>Use the following command to create a router:
+        <codeblock>neutron router-create &lt;name></codeblock>
+        <p>where: &lt;name> is a descriptive name.</p></li></ol>
+  </section>
+  <section><title>Onboard the Gateway</title>
+    
+    <ol><li>Launch the VSD.</li>
+      <li>Click the <b>Gateways</b> tab</li>
+      <li>Click the arrow next to the new gateway to onboard that gateway</li>
+      <li>Click <b>Organizations</b> to add permissions to the Gateway.</li>
+    </ol>
+  <p>Note: To create a redundant grouping of the VRS-G, refer to the DCN documentation.</p>
+</section>
+  <section><title>Retrieving the FIP Name from VSD for external Network</title>
+    <ol><li>Launch the VSD.</li>
+      <li>Go to VSD Dashboard->Open Data Center Configuration->Shared network tab 
+        ->Select the Floating IP subnet Pools -> click edit button and get the FIP name.
+        <p>This is the same ID when you created subnet from controller node.</p></li>
+      <li> Substitute this value in the FIP_NAME="3d2b2090-2044-4580-92ce-ab5a6e4a9184" 
+        [example]  in the curl scrip that will be run on HLM KVM Host.</li>
+      </ol>
+  </section>
+    <section><title>Add VLAN to VRSG network device </title>
+      <ol><li>Based on your VLAN ID, run the below command on VRS-G node1
+        
+        <p> For example: <codeph>nuage-vlan-config mod eth0 Access 1500-2000</codeph></p></li>
+        
+        <li>Add the VLAN ID [EXT Net] on the VSD dashboard for eth0</li>
+      </ol>
+  </section>
+    <section><title>Run the curl script</title></section>
+    <ol>
+      <li>Install jq on the server from where you are running the curl script</li>
+      <li>Modify the curl script for your environment:
+        <codeblock>cat vrsg_script_cloud2.sh</codeblock>
+        <p>Under Parameters, edit:</p>
+      <ul>
+        <li>VLAN</li>
+        <li>VSD_IP. Add DCM VSD IP</li>
+        <li>FIP_NAME. Enter a unique name show in VSD created for external network floating ip pool</li>
+        <li>GW_NAME. Enter the TUL ip of the VRSG node created on VSD / VSC</li>
+        <li>PORT_NAME. Enter the physical NIC; use don VRSG node for trunk/ tagged external trafic</li>
+        <li>UPLINK_SUBNET</li>
+        <li>UPLINK_MASK</li>
+        <li>VRSG_IP </li>
+        <li>UPLINK_GW</li>
+        <li>UPLINK_GW_MAC</li>
+      </ul></li>
+      <li>Execute the curl script
+        <codeblock>bash +x vrsg_script_cloud2.sh</codeblock></li>
+      <li>Use the VSD dashboard to confirm that uplink port appears in from monitoring tab under VRS-G node.</li>
+    </ol>
+  <section><title>Upload a Glance VMDK Image</title>
+    <ol>
+      <li>Launch the Horizon dashboard.</li> 
+      <li>Go to <b>Admin -> Images</b> tab and upload the VMDK image.</li> 
+      <li>Select vmdk format from drop down menu.</li>
+      <li>Click <b>Create Image</b>.</li>
+      <li>For the new image, click <b>Actions -> Edit</b> to update the metadata for the image.</li> 
+      <li> Add <codeph>vmware_adaptertype</codeph> and <codeph>vmware_disktype</codeph> properties .</li>
+    </ol>
+    <p>Once the images are uploaded, you are ready to launch the instance with different flavors.</p>
+    <p>Once the VM is launched, the progress can be seen from recent tasks in ESX cluster.</p>
+      
+      
+    </section>
+
+
+
+  <section id="next-step"> <title>Next Step</title>
 <p>
         <xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref>
       </p>

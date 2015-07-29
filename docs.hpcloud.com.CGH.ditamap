@@ -72,9 +72,8 @@
         />
       </topicref>
     </topicref>
-    <topicref
-      href="ftp://16.78.71.141/uploads/hp-hcg-RC0/documentation/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf"
-      format="pdf" navtitle="Administrator Guide (PDF)" scope="external"/>
+    <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf"
+      navtitle="Administrator Guide (PDF)"/>
     <topicref href="CarrierGrade/API/carrier-grade-api.dita"/>
     <topichead navtitle="HP Helion OpenStack Carrier Grade 1.1: License Files">
       <topicref href="CarrierGrade/carrier-grade-license-osrb.dita"/>

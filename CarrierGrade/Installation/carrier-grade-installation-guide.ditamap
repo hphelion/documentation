@@ -34,6 +34,7 @@
             <topicref href="carrier-grade-install-pb-kvm-ansible-json.dita"/>
             <topicref href="carrier-grade-install-pb-kvm-env-json.dita"/>
             <topicref href="carrier-grade-install-pb-kvm-esx-json.dita"/>
+            <topicref href="carrier-grade-install-esx-proxy.dita"/>
         </topicref>
         <topicref href="carrier-grade-install-kvm-cloud-GA.dita">
             <topicref href="carrier-grade-install-kvm-network-interface.dita"/>
