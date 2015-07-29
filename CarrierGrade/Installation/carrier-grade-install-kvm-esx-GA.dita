@@ -353,6 +353,7 @@ Password: cghelion</codeblock></p></li>
            <li>Ping proxy node from HLM VM with the static CLM IP in the <codeph>esx.json</codeph> file'</li>
            <li>SSH to compute proxy node from the HLM VM using the static CLM IP.</li>
          </ol></li>
+        <li>If you need cinder vmdk support, ????????</li>
 <li>Modify the <codeph>environment.json</codeph> file to configure the VLANs and network addresses
           as appropriate for your environment. Set the following for the CLM, CAN, and BLS
           network:<codeblock>"cidr": 
@@ -410,10 +411,20 @@ hp3par_iscsi_chap_enabled=false</codeblock></li></ul></li>
 
 <li>Use the following command to deploy the cloud:
             <codeblock><codeph>hdeploy &lt;cloudname&gt;</codeph></codeblock><p>Once cloud
-            deployment is successfully complete, there will be 3 controller nodes in the non-KVM
-            region.</p></li>
-
+            deployment is successfully complete, there are 3 controller nodes, 2 DCN Nodes, 2 VRS-G
+            nodes and 1 compute proxy.</p></li>
 </ol>
+<p>You can verify that the non-KVM region cloud was
+            installed properly by <xref
+              href="../AdminGuideNew/Dashboard/carrier-grade.dashboard.launch.dita#topic1160"
+              >launching the Helion dashboard</xref> in a standard browser. </p>
+  <p>Use the CAN VIP available in either location:</p>
+  <ul>	
+    <li>open the <codeph>~clouds/&lt;cloud name>/001/stage/net/hosts.hf</codeph> and search for “VIP”</li>
+    <li>open the /root/stackrc file on any controller node</li>
+  </ul>
+
+
 
 
 
@@ -422,10 +433,6 @@ hp3par_iscsi_chap_enabled=false</codeblock></li></ul></li>
 <p>
         <xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref>
       </p>
-<p>
-  <xref type="section" href="#topic10581"> Return to Top </xref>
-</p>
-<!-- ===================== horizontal rule ===================== -->
 </section>
 </body>
 </topic>
