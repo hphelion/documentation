@@ -103,12 +103,12 @@ export no_proxy=localhost,127.0.0.1,&lt;HLM_host_IP_address&gt;,&lt;provider_net
                 <li>python-virtualenv </li>
                 <li>python-dev virt-manager</li>
                 <li>sshpass</li>
+                                <li>gnugpg</li>
         </ul>
         <p>To install the packages on the KVM host:</p>
         <ol>
-                <li>On the KLM host, run the following all in one command to install
-                        packages:
-                        <codeblock><codeph>sudo su -l -c "apt-get install -y ansible sshpass ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager"</codeph></codeblock></li>
+                <li>On the KLM host, run the following all in one command to install packages:
+                                        <codeblock><codeph>sudo su -l -c "apt-get install -y ansible sshpass ntp firefox gedit xrdp xfce4 qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev virt-manager gnugpg"</codeph></codeblock></li>
                 <li>Add the 802.1q module to the kernel on boot. The 802.1q standard
                                         supports VLAN tagging on an ethernet
                                         network.<codeblock><codeph>sudo su -c 'echo "8021q" &gt;&gt; /etc/modules'
@@ -215,7 +215,7 @@ StrictHostKeyChecking no </codeblock></li>
                                 verify the signature file before installing.  </p>
 <ol>
         <li>Register and then log in to download the required installation package(s) from <xref
-                                                href="https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show"
+                href="https://helion.hpwsportal.com/catalog.html#/Category/{%22categoryId%22%3A10152}/Show"
                                                 format="html" scope="external">HP Helion
                 OpenStack product installation</xref>.</li>
                                 <li>Download and extract the <codeph>cg-hlm.qcow2</codeph> file to
@@ -234,7 +234,7 @@ StrictHostKeyChecking no </codeblock></li>
                 <ol>
                                 <li>Register and then log in to download the required installation
                                         package(s) from <xref
-                                                href="https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show"
+                                                href="https://helion.hpwsportal.com/catalog.html#/Category/{%22categoryId%22%3A10152}/Show"
                                                 format="html" scope="external">HP Helion OpenStack
                                                 product installation</xref>.</li><li>Download the compute proxy OVA template.</li>
                         <li>Download and unzip the DCN packages:

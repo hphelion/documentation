@@ -13,6 +13,7 @@
         <section>
             <title>Enhancements</title>
             <ul>
+                <li>Support for ESX </li>
                 <li>
                     <p>Virtual machine instantiation is enhanced to support:</p>
                     <ul>
