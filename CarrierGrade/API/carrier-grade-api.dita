@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic15959">
+  <title>HP Helion <tm tmtype="reg">OpenStack</tm> 1.1 Carrier Grade: API and SDK Reference</title>
+  <prolog>
+    <metadata>
+      <othermeta name="layout" content="default"/>
+      <othermeta name="product-version" content="HP Helion Openstack"/>
+      <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+      <othermeta name="role" content="All"/>
+      <othermeta name="role" content="Amanda F"/>
+      <othermeta name="product-version1" content="HP Helion Openstack"/>
+      <othermeta name="product-version2" content="HP Helion Openstack 1.1"/>
+    </metadata>
+  </prolog>
+  <body>
+    <section>
+      <p>This document describes <xref href="#topic15959/api" format="dita">the APIs</xref> and
+          <xref href="#topic15959/sdk" format="dita">the Software Development Kit (SDK)</xref>
+        available for HP Helion OpenStack Carrier Grade.</p>
+    </section>
+<section id="api"><title>APIs</title>
+      <p>HP Helion OpenStack Carrier Grade is built on OpenStack technologies.</p>
+      <p>The OpenStack REST API Documentation is open-source; both the published formats (PDF and
+        HTML pages) as well as the docbook/wadl source documents. </p>
+      <p>The open-source OpenStack REST API Documentation is currently NOT versioned. There is only
+        a master/current version of the OpenStack REST API Documentation containing updates from
+        'all' versions of OpenStack.</p>
+    <p><b>Non-KVM Region API</b>. For the API refernece for the non-KVM region, see the <xref
+        href="http://developer.openstack.org/api-ref.html" format="html" scope="external">OpenStack
+        API Complete Reference</xref>.</p>
+    <p>For the specific OpenStack services supported by HP Helion OpenStack Carrier Grade, see <xref
+        href="../Overview/carrier-grade.services-overview.dita#topic4220">Services Overview</xref>.</p> 
+      
+    <p><b>KVM Region API</b>. For the API refernece for the KVM region, see <xref
+        href="../../PDF/HP-Helion-OpenStack-Carrier-Grade-REST-API.pdf" format="pdf">Hp Helion
+        OpenStack Carrier Grade: REST API Guide</xref>. This document contains HP Helion OpenStack
+      Carrier Grade extensions to the OpenStack Compute API for use with the servers in the KVM
+      region.</p>
+    <p><b><i>For the KVM and ESX deployments:</i></b></p>
+    <p><b>ESX API</b>. You can use aspects of the VMware vSphere API, 
+      as applicable for your license agreement. Refer to the vSphere documentation for more information.</p>
+    
+    <p><b>DCN API</b>. You can use aspects of the HP Distributed Cloud Networking (DCN) API, 
+      as applicable for your license agreement. Refer to the DCN documentation for more information.</p>
+      </section>
+    <section id="sdk"><title>Software Development Kit</title>
+    <p><b>HP Helion OpenStack CArrier Grade Software Development Kit (SDK)</b></p>
+    <p>The HP Helion OpenStack Carrier Grade SDK can be used by guest applications to interact
+      programmatically with HP Helion OpenStack Carrier Grade. See the Software <xref
+        href="../../PDF/HP-Helion-OpenStack-Carrier-Grade-SDK-1.1.pdf" format="pdf">Development Kit
+        guide</xref>.</p>
+</section>
+
+
+  </body>
+</topic>

@@ -30,198 +30,48 @@
     </section>
     <section>
       <title>Integration with existing Cloud Framework</title>
-      <p>hprovision script has been extended to execute hlm_provsionproxy script to provision the
-        compute proxy node/s. This script also appends the provisioned proxy nodes to
-        nodes.json.</p>
-      <p>Since the proxy nodes are available in nodes.json, they are recognized by the hcfgproc and
-        required metadata is generated for these nodes. Further hnetinit sets the appropriate
-        networking and updates hosts file on these nodes to be configured by hdeploy process.</p>
+      <p>The <codeph>hprovision</codeph> script has been extended to execute <codeph>hlm_provsionproxy</codeph> script to provision
+        the compute proxy node(s). This script also appends the provisioned proxy nodes to
+        <codeph>nodes.json</codeph>.</p>
+      <p>Since the proxy nodes are available in <codeph>nodes.json</codeph>, they are recognized by the <codeph>hcfgproc</codeph> and
+        required metadata is generated for these nodes. Further <codeph>hnetinit</codeph> sets the appropriate
+        networking and updates hosts file on these nodes to be configured by the <codeph>hdeploy</codeph> process.</p>
     </section>
     <section>
       <title>Modify esx.json</title>
-      <p>After hnewcloud and before hprovision script is run modify the
-        &lt;cloud-name>/vars/esx.json as per the requirement:</p>
-      <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
-        <tgroup cols="2">
-          <colspec colnum="1" colname="col1" colwidth="1*"/>
-          <colspec colnum="2" colname="col2" colwidth="2*"/>
-          <thead>
-            <row>
-              <entry>Attributes</entry>
-              <entry>Description</entry>
-            </row>
-          </thead>
-          <tbody>
-            <row>
-              <entry namest="col1" nameend="col2"><b>vcenter</b></entry>
-              <entry/>
-            </row>
-            <row>
-              <entry>ipaddress</entry>
-              <entry>IP address to connect to vCenter</entry>
-            </row>
-            <row>
-              <entry>username</entry>
-              <entry>UserName to log into vCenter</entry>
-            </row>
-            <row>
-              <entry>password</entry>
-              <entry>Password to log into vCenter</entry>
-            </row>
-            <row>
-              <entry>port</entry>
-              <entry>Port to connect to vcenter (default 443)</entry>
-            </row>
-            <row>
-              <entry>domain</entry>
-              <entry>vCenter domain (default localhost.localdom)</entry>
-            </row>
-            <row>
-              <entry>username</entry>
-              <entry>Compute Proxy Template (OVA) Username (this has been set to root)</entry>
-            </row>
-            <row>
-              <entry namest="col1" nameend="col2"><b>template</b></entry>
-              <entry/>
-            </row>
-            <row>
-              <entry>password</entry>
-              <entry>Compute Proxy Template (OVA) password ((this has been set to cghelion)</entry>
-            </row>
-            <row>
-              <entry>name</entry>
-              <entry>Name of OVA template which will be used to clone Compute Proxies</entry>
-            </row>
-            <row>
-              <entry>name</entry>
-              <entry>Name of Cloud Lab Management network (CLM) network</entry>
-            </row>
-            <row>
-              <entry>ipaddress</entry>
-              <entry>CLM Network IP</entry>
-            </row>
-            <row>
-              <entry>netmask</entry>
-              <entry>CLM network netmask</entry>
-            </row>
-            <row>
-              <entry>gateway</entry>
-              <entry>CLM network gateway</entry>
-            </row>
-            <row>
-              <entry>tagid</entry>
-              <entry>When specified sub interface will be created else when left blank tagged
-                interface will be created on eth1</entry>
-            </row>
-            <row>
-              <entry namest="col1" nameend="col2"><b>compute_proxy</b></entry>
-              <entry/>
-            </row>
-            <row>
-              <entry>datacenter</entry>
-              <entry>Datacenter where the proxy node will be hosted</entry>
-            </row>
-            <row>
-              <entry>cluster</entry>
-              <entry>Cluster which the proxy node should belong to</entry>
-            </row>
-            <row>
-              <entry>datastore</entry>
-              <entry>Datastore where the proxy node will be stored</entry>
-            </row>
-            <row>
-              <entry>name</entry>
-              <entry>Name of your compute proxy</entry>
-            </row>
-            <row>
-              <entry>failure-zone</entry>
-              <entry>Failure zone for you compute proxy (This should match with failure zones
-                defined in definition.json)</entry>
-            </row>
-            <row>
-              <entry>bridge_name</entry>
-              <entry/>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
-      <p>NOTE: CLM network specified here will be configured on eth1 as tagged network by hprovision
-        script and later used by hnetinit script to configure sub-interface eth0.x generated by
-        config processor (hcfgproc script).</p>
-      <p>This interface, eth1, is created temporarily to hprovsion and hnetinit to work. This will
-        be deleted ones the compute proxy is configured by hdeploy process.</p>
-      <p><b>Sample esx.json</b></p>
-      <codeblock>
-      {
-          "product": {
-            "version": 1
-          },
-          "property-groups": [
-              {
-                  "name": "esx",
-                  "properties": {
-                      "vcenter": 
-                       {
-                          "ipaddress": "10.200.216.211",
-                          "username": "root",
-                          "password": "vmware",
-                          "port": "443",
-                          "domain": "localhost.localdom"
-                       },
-                       "template": 
-                       {
-                          "username": "root",
-                          "password": "cghelion",
-                          "name": "TEMPL-CPV5"
-                        },
-                        "network":
-                        {
-                           "name": "CLM-ALL",
-                           "netmask": "255.255.255.0",
-                           "gateway": "10.200.216.1",
-                           "tagid": "1716"
-                         },
-                         "compute_proxy": [
-                         {   
-                            "datacenter": "Datacenter-1",
-                            "cluster": "Cluster1",
-                            "datastore": "datastore1",
-                            "name": "ESX-Compute-Proxy-7",
-                            "failure-zone": "fz1",
-                            "ipaddress": "10.200.216.191",
-                            "bridge_name": "BR-1"
-                          }]
-                  }
-             }
-        ]
-    }
-    </codeblock>
+      <p>The ESX Proxy configuration requires a JSON file. </p>
+      <p>See <xref href="carrier-grade-install-pb-kvm-esx-json.dita#topic4797">Sample esx.json file</xref> for details on modifying 
+      the esx.json file.</p>
     </section>
     <section>
       <title>Clone Compute Proxy</title>
-      <p>hprovision script, using hlm_provisionproxy.py, provisions compute proxy based on the
-        details specified in esx.json</p>
-      <p>Essentially it clones the Compute Proxy Template hosted in step 1.</p>
-      <p>hlm_provisionproxy script uses pyvmomi library for cloning and doing the initial
-        configuration on ESX Compute proxy</p>
+      <p>The <codeph>hprovision</codeph> script, using <codeph>hlm_provisionproxy.py</codeph>, provisions compute proxy based on the
+        details specified in the <codeph>esx.json</codeph> file.</p>
+      <p>The <codeph>hlm_provisionproxy</codeph> script uses <codeph>pyvmomi</codeph> library for cloning the Compute Proxy Template
+        and doing the initial configuration on ESX Compute proxy.</p>
     </section>
     <image href="../../media/CGH-esx-proxy.png" id="image_uwm_zgd_5s" width="300"/>
   
-  <p>hlm_provisionproxy script provisions compute proxy nodes on ESX host based on the configuration in esx.json</p>
+  <p>The <codeph>hlm_provisionproxy</codeph> script provisions compute proxy nodes on ESX host based on the
+    configuration in <codeph>esx.json</codeph>.</p>
   
   <p>It creates two interfaces on each proxy node.</p>
   
-  <p>INTF0 is created as placeholder interface later to be configured by hnetint process</p>
+  <p><b>INTF0</b> is created as placeholder interface later to be configured by <codeph>hnetint</codeph> process and
+    used by <codeph>hdeploy</codeph> process</p>
   
+  <p><b>INTF1</b> serves as temporary interface which is assigned the static IP defined in <codeph>esx.json</codeph>
+    (<codeph>compute_proxy.ipaddress</codeph>).</p>
   
+  <p>This IP is stick in <codeph>nodes.json</codeph> along side CPN node ones the <codeph>hprovision</codeph> process concludes. 
+    This IP is further used by the <codeph>hnetinit</codeph> process to configure <codeph>INTF0</codeph> based on the definition 
+    in <codeph>environment.json</codeph>.</p>
   
-  <p>INTF1 serves as temporary interface which is assigned the static IP defined in esx.json (compute_proxy.ipaddress).</p>
+  <p>During <codeph>hdeploy</codeph> process, when CPX-CFG role gets executed, this interface will be deleted 
+    releasing the assigned static IP.</p>
   
-  <p>This IP is stick in nodes.json along side CPN node ones the hprovision process concludes. This IP is further used by hnetinit process to configure INTF0 based on the definition in environment.json.</p>
-  
-  <p>During hdeploy process, when CPX-CFG role gets executed, this interface will be deleted releasing the assigned static IP.</p>
-  
-  <p>Ones the hprovision script completes, compute-proxy nodes will be added to nodes.json along controllers and other cloud nodes:</p>
+  <p>Ones the <codeph>hprovision</codeph> script completes, compute-proxy nodes will be added to <codeph>nodes.json</codeph> 
+    along controllers and other cloud nodes:</p>
   
 <codeblock>
   {
@@ -249,11 +99,46 @@
           },
       }
 </codeblock>
-
+  <p>The <codeph>esx.json</codeph> will be populated with CLM network details from <codeph>environment.json</codeph>. Compute Proxy
+      nodes will be assigned static ip based on the cidr calculation.</p>
+    <codeblock>
+{
+        "product": {
+            "version":       1
+        },
+        "property-groups": [
+                  {
+                "name": "esx",
+                "properties":       {
+                    "vcenter":       {
+                        "ipaddress":       "10.200.216.211",
+                        "username":       "root",
+                        "password":       "vmware",
+                        "port":       "443",
+                        "domain":       "localhost.localdom"
+                           },
+                    "template":       {
+                        "username":       "cghelion",
+                        "password":       "cghelion",
+                        "name":       "TEMPL-CPV6"
+                    },
+                          "network":
+                    {
+                              "name": "CLM-ALL"
+    
+         "tagid" : "1716"
+                        "netmask" :           "255.255.255.0" 
+    ...
+    ]
+                }
+            }
+              ]
+    }
+    </codeblock>
 <section>
   
 Modify environment.json
-
+<codeblock>
   {
       "name": "CPN",
       "interface-map": [
@@ -273,26 +158,30 @@ Modify environment.json
         }
       ]
     }
+    
+</codeblock>
 </section>
 
   <section><title>Configure  CLM network on Compute Proxy</title>
     
-    <p>hnetinit script configures compute proxy with the CLM IP generated by config processor (hnetinit).</p>
+    <p><codeph>hnetinit</codeph> script configures compute proxy with the CLM IP generated by config processor (<codeph>hnetinit</codeph>).</p>
     
     <p>At this point we see following interfaces on compute proxy nodes:</p>
     
-    <p>/etc/network/interface.d</p>
+    <p><codeph>/etc/network/interface.d</codeph></p>
     
-    <p>eth1.x.cfg – This interface holds the temporary CLM IP used for provisioning and configuration</p>
+    <p><b>eth1.x.cfg</b> – This interface holds the temporary CLM IP used for provisioning and configuration</p>
     
-    <p>eth0.x.cfg – This sub interface holds the CLM IP allotted by config processor used during cloud deployment</p>
+    <p><b>eth0.x.cfg</b> – This sub interface holds the CLM IP allotted by config processor used during cloud deployment</p>
     
   </section>
   <section><title>Configure nova-compute as proxy</title>
     
-    <p>During the hdeploy process CPX-CFG role is responsible for making necessary changes to nova.conf file to make the nova-compute node behave as proxy.</p>
+    <p>During the <codeph>hdeploy</codeph> process CPX-CFG role is responsible for making necessary changes to <codeph>nova.conf</codeph> 
+      file to make the nova-compute node behave as proxy.</p>
     
-    <p>This role also deletes the temporary eth1.x interface on the proxy</p>  
+    <p>This role also deletes the temporary <codeph>eth1.x</codeph> interface on the proxy created during <codeph>hprovision</codeph>
+        process.</p>  
 </section>
 
 </body>

@@ -22,38 +22,54 @@
         <li><xref href="#topic1773/hardware" format="dita">Supported Hardware</xref></li>
         <li><xref href="#topic1773/hardware-config" format="dita">Required Hardware
             Configuration</xref></li>
-        <li><xref href="#topic1773/typical" format="dita">Typical Configurations</xref></li>
         <li><xref href="#topic1773/software" format="dita">Software Requirements</xref></li>
-        <li><xref href="#topic1773/guestOS" format="dita">Guest OS Support Matrix</xref></li>
+        <li><xref href="#topic1773/guestOS" format="dita">Supported Guest Operating Systems</xref></li>
+        <li><xref href="#topic1773/typical" format="dita">Typical Configurations</xref></li>
       </ul></p>
-    <section id="hardware"><title>Supported Hardware</title><p>The following servers are supported
-        for the HLM host, and for the controllers and compute servers.</p>
+    <p>The hardware requirements and configurations are different, depending upon the topology: KVM
+      or KVM + ESX. See the <xref href="carrier-grade-technical-overview.dita#topic3485">Technical
+        Overview</xref> for more information on these topologies.</p>
+    <section id="hardware">
+      <title>Supported Hardware</title>
+      <p>The following servers are supported for the HLM host, and for the controllers and compute
+        servers.</p>
       <p><b>Note:</b>
-        <i><b>For the KVM and ESX cloud</b></i>, consult the DCN and ESX documentation for the
+        <i><b>For the KVM + ESX cloud</b></i>, consult the DCN and ESX documentation for the
         supported hardware.</p>
-      <p><b id="hlm">HLM Host</b></p>
-      <p>The HLM host is a single server with at least a 20 GB disk size and 4,096 MB RAM.</p><p
-        id="controllers"><b>Comtrollers and compute servers</b></p><p>The following servers are
-        supported for the controllers and compute servers in both the <xref
+      <p><b id="hlm">HLM Host</b> The HLM host is a single server with at least a 20 GB disk size
+        and 4,096 MB RAM.</p>
+      <p id="controllers"><b>Comtrollers and compute servers</b> The following servers are supported
+        for the controllers and compute servers in both the <xref
           href="../Overview/carrier-grade-overview-non-kvm.dita#topic1495">Non-KVM region</xref> and
           <xref href="../Overview/carrier-grade-overview-kvm.dita#topic1743">KVM region</xref>. The
         servers must meet the specifications in <xref href="#topic1773/specs" format="dita">the
-          Required Specifications table below</xref>:</p><p><b>Controller:</b></p><ul>
+          Required Specifications table below</xref>:</p>
+      <p><b>Controller:</b></p>
+      <ul>
         <li>DL360 (Gen 9 or Gen 8)</li>
         <li>DL380 (Gen 9 or Gen 8)</li>
-      </ul><p><b>Compute:</b></p><ul>
+      </ul>
+      <p><b>Compute:</b></p>
+      <ul>
         <li>DL360 (Gen 9 or Gen 8)</li>
         <li>DL380 (Gen 9 or Gen 8)</li>
         <li>BL460 (Gen 9 or Gen 8)</li>
-      </ul><p><b>Notes:</b>
+      </ul>
+      <p><b>Notes:</b>
         <ul id="ul_mxb_gzd_ss">
           <li>If you are using Gen9 systens, you must update the firmware to HP Service Pack for
             ProLiant (SPP) Version 2015.06.0.</li>
           <li>If you are using Gen8 systems, you will experience reduced performance.</li>
         </ul></p>
-      <p id="specs"><b>Required Specifications</b>
-      </p>
-      <p>The following table lists the specifications for each type of server. </p><p>
+    </section>
+  <section>
+      <title id="specs"><b>Required Specifications</b></title>
+      <p>The following table lists the specifications for the servers that will host HLM, HP Helion
+        OpenStack, and the KVM region. </p>
+      <p><b>Note:</b>
+        <i><b>For the KVM and ESX cloud</b></i>, consult the DCN and ESX documentation for the
+        required hardware specifications. </p>
+      <p>
         <table frame="all" rowsep="1" colsep="1" id="table_c54_dxd_ss">
           <tgroup cols="3">
             <colspec colname="c1" colnum="1" colwidth="1*"/>
@@ -203,9 +219,10 @@
       </ul>
       <p><b>Note:</b> If you are using Gen9 systems, you must update the firmware to HP Service Pack
         for ProLiant (SPP) Version 2015.06.0. </p>
---></section>
+-->
+    </section>
   <section id="hardware-config">
-      <title>Required Hardware Configuration </title>
+      <title>Required Hardware Configurations </title>
       <p>The servers, selected from the <xref href="#topic1773/hardware" format="dita">Supported Hardware</xref> lists, must be configured as follows for HP Helion OpenStack
         Carrier Grade.</p>
       <p><b>HLM Host</b>. You must have a server with a 20GB Disk and 4,096 MB RAM for the HLM
@@ -242,11 +259,12 @@
           <p>Intel 82599</p>
         </li>
       </ul>
-    <p><b>ESX components</b>. <b><i>For the KVM + ESX cloud</i></b>, you must have a minimum of two
-        (2) baremetal systems for ESXi hosts. 1 – 4 ESXi clusters are supported. Refer to the ESX
-        documentation for the supported hardware configurations. </p>
+    <p><b>For the KVM + ESX cloud:</b></p>
+    <p><b>ESX components</b>. You must have a minimum of two (2) baremetal systems for ESXi hosts. 1
+        – 4 ESXi clusters are supported. Refer to the ESX documentation for the supported hardware
+        configurations. </p>
     <p><b>Note:</b> These systems are not required for a KVM-only cloud.</p>
-    <p><b>DCN components</b>. <b><i>For the KVM and ESX cloud</i></b>, You must have:</p>
+    <p><b>DCN components</b>. You must have:</p>
       <ul>
         <li>two (2) baremetal systems for DCN VSC controllers (HA mode) </li>
         <li>two (2) baremetal systems for DCN VRS-G Software Gateway (HA mode)</li>
@@ -258,24 +276,22 @@
 
   <section id="software"><title>Software Requirements</title><p><b>HLM Host</b>. The HLM host
         requires the Ubuntu Server 14.04.2 LTS operating system. </p>
-    <p><b>HP Helion OpenStack Controllers</b>. The servers should be baremetal.  The HP Helion OpenStack Carrier Grade
-        installation process installs the required software onto the baremetal controller and
-        compute nodes.</p>
+    <p><b>HP Helion OpenStack Controllers</b>. The servers should be baremetal. The HP Helion
+        OpenStack Carrier Grade installation process installs the required software.</p>
     <p><b>KVM controllers</b>. The servers should be baremetal. The HP Helion OpenStack Carrier
         Grade installation process installs the required software.</p>
       <p><b>KVM compute</b>. The servers should be baremetal. The HP Helion OpenStack Carrier Grade
         installation process installs the required software.</p>
-    <p><b><i>For the KVM and ESX cloud</i></b>,VMware vSphere must be
-        fully installed and operational before installing HP Helion OpenStack Carrier
-      Grade.</p></section>
+    <p><b><i>For the KVM and ESX cloud</i></b>, VMware vSphere must be fully installed and
+        operational before installing HP Helion OpenStack Carrier Grade.</p></section>
   
-  <section id="guestOS"><title>Guest OS Support Matrix</title> The following guest operating systems
-      (guest OS) are supported for the HP Helion OpenStack Carrier Grade servers. <p><b>HLM
-        Host</b>. There are no supported guest OSs for the HLM host server. </p><p><b>HP Helion
-          OpenStack Controllers</b>. There are no supported guest OSs for the servers that host the
-        HP Helion OpenStack Controllers.</p><p><b>KVM compute and controllers</b>. The following
-        Guest OSs are supported for the servers in the KVM region for both cloud topologies: </p><ul
-        id="ul_sty_hd2_qs">
+  <section id="guestOS"><title>Supported Guest Operating Systems</title> The following guest
+      operating systems (guest OSs) are supported for the HP Helion OpenStack Carrier Grade servers.
+          <p><b>HLM Host</b>. There are no supported guest OSs for the HLM host server. </p><p><b>HP
+          Helion OpenStack Controllers</b>. There are no supported guest OSs for the servers that
+        host the HP Helion OpenStack Controllers.</p><p><b>KVM compute and controllers</b>. The
+        following Guest OSs are supported for the servers in the KVM region for both cloud
+        topologies: </p><ul id="ul_sty_hd2_qs">
         <li>
           <p>WindRiver Linux 6.0</p>
         </li>
