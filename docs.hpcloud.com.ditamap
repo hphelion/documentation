@@ -20,7 +20,8 @@
 <topicref href="home.dita"/>
 <!-- HoS 2.0 -->
 <topichead navtitle="HP Helion OpenStack 2.0">
+  <topicref href="commercial/GA2/2.0whatsinthebuild.dita"/>
 <topichead navtitle="HP Helion OpenStack Services">
 </topichead>
 </topichead>
- </map>
+</map>

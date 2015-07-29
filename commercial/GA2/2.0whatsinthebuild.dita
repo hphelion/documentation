@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic12031">
+<title>HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: What's In The Build</title>
+<prolog>
+<metadata>
+<othermeta name="layout" content="default"/>
+<othermeta name="product-version" content="HP Helion Openstack"/>
+<othermeta name="product-version" content="HP Helion Openstack 2.0"/>
+<othermeta name="role" content="Systems Administrator"/>
+<othermeta name="role" content="Cloud Architect"/>
+<othermeta name="role" content="Storage Administrator"/>
+<othermeta name="role" content="Network Administrator"/>
+<othermeta name="role" content="Service Developer"/>
+<othermeta name="role" content="Cloud Administrator"/>
+<othermeta name="role" content="Application Developer"/>
+<othermeta name="role" content="Network Engineer"/>
+<othermeta name="role" content="Joel B"/>
+<othermeta name="product-version1" content="HP Helion Openstack"/>
+<othermeta name="product-version2" content="HP Helion Openstack 2.0"/>
+</metadata>
+</prolog>
+<body>
+  <p>HP Helion OpenStack is a commercial-grade distribution of OpenStack the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
+<p>In the Helion OpenStack 2.0 release, these are the features you can expect:</p>
+<ul>
+   <li>Baremetal install that includes:
+      <ul>
+       <li>updating the configuration</li>
+       <li>adding nodes</li>
+       <li>adding VSA, etc</li>
+      </ul>
+   </li> 
+  <li>NIC bonding</li>
+  <li>Multiple Provider VLANs as external networks</li>
+  <li>Full set of Kilo-based OpenStack services</li>
+  <li>VSA as a Cinder block storage provider</li>
+  <li>Basic NTP and DNS integration</li>
+  <li>Monitoring</li>
+  <li>Logging</li>
+</ul> 
+</body>
+</topic>
