@@ -49,9 +49,9 @@
   </li>  
   <li>Operational Management
     <ul>
-      <li>Control plan backup and restore</li>
-      <li>Monitoring</li>
-      <li>OpsConsole</li>
+      <li><xref type="section" href="#topic12031/ControlPlane">Control Plane Backup and Restore</xref></li>
+      <li><xref type="section" href="#topic12031/Monitoring">Monitoring</xref></li>
+      <li><xref type="section" href="#topic12031/OpsConsole">OpsConsole</xref></li>
     </ul>
   </li>
   <li>VSA as a Cinder block storage provider</li>
@@ -60,7 +60,7 @@
 </ul>
 <section id="Baremetal-install"> <title>Baremetal Install Kit</title>
 </section>
-<section id="Services"> <title>Full set of Kilo-based OpenStack services</title>
+<section id="Services"> <title>HP Helion OpenStack Services</title>
       <table>
         <tgroup cols="2">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -113,6 +113,13 @@
               <entry/>
             </row>
             <row>
+              <entry>Ceilometer</entry>
+              <entry>HP Helion OpenStack Metering, based on Ceilometer, takes specified measurements
+                of both physical and virtual resources, including physical servers and network
+                devices such as switches and firewalls. The service can be configured to record
+                data, trigger specific action when a pre-defined condition is met, or both.</entry>
+            </row>
+            <row>
               <entry>LBaaS (Load-Balancing-as-a-Service)</entry>
               <entry>
                 <p>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load
@@ -154,11 +161,19 @@
         </tgroup>
       </table>
 </section>
-  <section id="NicBonding"> <title>NIC Bonding</title>
+<section id="NicBonding"> <title>NIC Bonding</title>
+</section>
+<section id="Multi-NIC"> <title>Multiple-NIC Support</title>
+</section>
+<section id="Network-Separation"> <title>Network Separation</title>
+</section>
+<section id="ControlPlane"> <title>Control Plane Backup and Restore</title>
+<p>Allows you to backup and recover your Helion OpenStack environment with RPO=0.</p>
+</section>
+  <section id="Monitoring"> <title>Monitoring</title>
   </section>
-  <section id="Multi-NIC"> <title>Multiple-NIC Support</title>
-  </section>
-  <section id="Network-Separation"> <title>Network Separation</title>
+  <section id="OpsConsole"> <title>OpsConsole</title>
+    <p>The HP Helion OpenStack OpsConsole provides a graphical user interface (GUI) that allows you to interact and manage your Monitoring setup.</p>
   </section>
 </body>
 </topic>
