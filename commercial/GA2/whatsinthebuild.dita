@@ -24,15 +24,15 @@
 <p>HP Helion OpenStack is a commercial-grade distribution of OpenStack the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.</p>
 <p>In the Helion OpenStack 2.0 release, these are the features you can expect:</p>
 <ul>
-   <li>HP Helion OpenStack Services
+  <li><xref type="section" href="#topic12031/Services">HP Helion OpenStack Services</xref>
      <ul>
-       <li><xref type="section" href="#topic12031/Services">Full set of Kilo-based OpenStack services</xref></li>
-       <li><xref type="section" href="#topic12031/LBaaS">LBaaS</xref></li>
-       <li><xref type="section" href="#topic12031/FWaaS">FWaaS</xref></li>
-       <li><xref type="section" href="#topic12031/VPNaaS">VPNaaS</xref></li>
+       <li>Full set of Kilo-based OpenStack services</li>
+       <li>LBaaS</li>
+       <li>FWaaS</li>
+       <li>VPNaaS</li>
      </ul>
    </li>
-  <li><xref type="section" href="#topic12031/LBaaS">Baremetal Install Kit</xref> that includes:
+  <li><xref type="section" href="#topic12031/BaremetalInstall">Baremetal Install Kit</xref> that includes:
       <ul>
         <li>Uses Config Process v2.0</li>
         <li>updating the configuration</li>
@@ -40,26 +40,24 @@
         <li>adding VSA, etc</li>
       </ul>
    </li> 
-  <li>Network Planning
+  <li><xref type="section" href="#topic12031/Networking">Network Planning</xref>
     <ul>
-      <li><xref type="section" href="#topic12031/NicBonding">NIC bonding</xref></li>
-      <li><xref type="section" href="#topic12031/Multi-NIC">Multi-NIC support</xref></li>
-      <li><xref type="section" href="#topic12031/Network-Separation">Network separation (including VLAN)</xref></li>
+      <li>NIC bonding</li>
+      <li>Multi-NIC support</li>
+      <li>Network separation (including VLAN)</li>
     </ul>
   </li>  
-  <li>Operational Management
+  <li><xref type="section" href="#topic12031/Operations">Operational Management</xref>
     <ul>
-      <li><xref type="section" href="#topic12031/ControlPlane">Control Plane Backup and Restore</xref></li>
-      <li><xref type="section" href="#topic12031/Monitoring">Monitoring</xref></li>
-      <li><xref type="section" href="#topic12031/OpsConsole">OpsConsole</xref></li>
+      <li>Control Plane Backup and Restore</li>
+      <li>Monitoring</li>
+      <li>OpsConsole</li>
     </ul>
   </li>
   <li>VSA as a Cinder block storage provider</li>
   <li>Basic NTP and DNS integration</li>
   <li>TLS only on external API</li>
 </ul>
-<section id="Baremetal-install"> <title>Baremetal Install Kit</title>
-</section>
 <section id="Services"> <title>HP Helion OpenStack Services</title>
       <table>
         <tgroup cols="2">
@@ -161,12 +159,64 @@
         </tgroup>
       </table>
 </section>
-<section id="NicBonding"> <title>NIC Bonding</title>
+<section id="BaremetalInstall"> <title>Baremetal Install Kit</title>
 </section>
-<section id="Multi-NIC"> <title>Multiple-NIC Support</title>
-</section>
-<section id="Network-Separation"> <title>Network Separation</title>
-</section>
+<section id="Networking">
+      <title>Network Planning</title>
+      <table frame="all" rowsep="1" colsep="1" id="table_fc2_r5b_ws">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry/>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>table </section>
 <section id="ControlPlane"> <title>Control Plane Backup and Restore</title>
 <p>Allows you to backup and recover your Helion OpenStack environment with RPO=0.</p>
 </section>
