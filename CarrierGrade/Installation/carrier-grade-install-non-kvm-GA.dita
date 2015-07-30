@@ -9,9 +9,11 @@
 </metadata>
 </prolog>
 <body>
+<p>
+<!--UNDER REVISION-->
+ <!--./CarrierGrade/Installation/carrier-grade-install-pb-hlm-vm.md-->
+ <!--permalink: /helion/openstack/carrier/install/pb/hlm-vm/--></p>
   <p>The first phase of the HP Helion Openstack Carrier Grade installation involves creating a virtual machine for the Helion Lifecycle Management (HLM) and then deploying the HP Helion Openstack cloud.</p>
-    <p>The installation uses Ansible playbooks, which are files that contain which contains the
-      steps that should be run.</p>
 
 <section id="prepare"> <title>Prepare the system for deployment</title>
 <p>Use the following steps to prepare the server on which the HLM VM will be deployed (the HLM host):</p>
@@ -19,66 +21,7 @@
 
   <li>Edit the <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file for your
           environment. For information on each variable, refer to the comments in the file with each
-          variable. Make sure the <codeph>hlm_kvm_host</codeph> value is configured properly.
-    <p>The <codeph>group_vars/all</codeph> file should appear similar to the following for a KVM + ESX deployment:</p>
-  <codeblock>
-    ############################################# Variables for HLM  #################################################################
-    #These variables are relevant in both All Virtual and BareMetal scenarios.
-    
-    #Set this to 1 if you will not deploy a dcn cloud via this HLM node and will deploy only ovs cloud
-    ovs_cloud_only:  0
-    
-    #Set this to 'bm' if cloud is being deployed over baremetal.
-    #Set this to 'av' if the cloud is all virtual
-    cloud_type: 'bm'
-    
-    #These are hlm related variables that must be changed according to your Baremetal Env
-    hlm_login_id:       root
-    hlm_password:       cghelion
-    
-    #The following variables are for CLM network IP details for HLM
-    hlm_clmstaticip:    10.20.3.100
-    hlm_clmnetmask:     255.255.255.0
-    hlm_clmgateway:     10.20.3.1
-    
-    #The variables starting with cobbler_ are inputs that are usually given to initcobbler.sh. Set accordingly.
-    cobbler_pxestartip: 10.20.1.100
-    cobbler_pxeendip:   10.20.1.200
-    cobbler_pxestaticip: 10.20.1.51
-    cobbler_pxenetmask: 255.255.255.0
-    
-    #Set the location of your images that will be used by libvirt
-    imagelocation: /var/lib/libvirt/images
-    
-    #Set the location of your infra-ansible-playbooks
-    ansible_dir: ~/infra-ansible-playbooks
-    
-    ##################################################################################################################################
-    
-    ############################################# Variables for DCN ##################################################################
-    #Set the location of dcn bits on KVM
-    #There must be 4 debs, 2 tar.gz files, 1 vsc qcow2
-    #You must copy your VSD qcow2 to the imagelocation on the KVM if you want to provision it on the same KVM as the HLM
-    dcn_dir: ~/cg/dcn
-    ##################################################################################################################################
-    
-    ############################################# Variables for VSD ##################################################################
-    #Ignore these variables if creating an OVS cloud. This section is relevant only for DCN cloud - in both BM and All Virtual cases
-    #These variables are used for VSD Configuration
-    #If you have already configured a VSD and ignore the following variables
-    
-    dns_domain_name: dcn-one.helion.cg
-    dns_address: 10.1.2.44
-    vsd_address: 10.20.5.21
-    vsd_gateway: 10.20.5.1
-    vsd_netmask: 255.255.255.0
-    vsd_name: vsd1
-    vsdimagename: VSD-3.0.0_HP_r3.0_36
-    upstream_ntp_servers:
-    - 10.1.2.44
-    - 16.110.135.123
-    ###################################################################################################################################
-  </codeblock></li>
+          variable. Make sure the <codeph>hlm_kvm_host</codeph> value is configured properly.</li>
   <li id="hosts">Check the hosts file <codeph>/root/infra-ansible-playbooks/hosts</codeph> file to
     enter the IP address of the vibr0 interface in the <codeph>hlm_kvm_host</codeph> field, as shown in the following example. Make sure the DCM network
           details are correct. Also, verify the CLM IP address in this file.</li>
@@ -102,22 +45,15 @@
             <li>Execute the <codeph>Importiso</codeph> command.<p>You will see similar message when
                 the playbook is run successful:</p></li>
           </ul>
-          <image href="../../media/CGH-ansible-playbook-run.png" id="image_bfp_pjm_vs">
-            <alt>Sample Ansible Playbook run output</alt>
-          </image></li>
+          <image href="../../media/CGH-Install-Ansible.png" id="image_jmr_dds_rs"/></li>
         <li>Locate the IP address for the HLM VM in the
             <codeph>/root/infra-ansible-playbooks/group_vars/all</codeph> file of the HLM host under
           <codeph>hlm_clmstaticip</codeph> field.</li> 
-      </ol>
-      <p>For KVM + ESX deployments, proceed with <xref href="#topic10581/vsd" format="dita"/>.</p>    
-<p>For KVM deployments, skip the following sections and proceed to <xref
-          href="#topic10581/configure-a-json-file-for-installation" format="dita"/>.</p>
-
+      </ol>    
 </section>
   
-<section id="vsd"> <title>Configuring the VSD node, creating user and applying License</title>
-  <p>During the <xref href="#topic10581/deploy-the-hlm-and-vsd-vm" format="dita"/> process, the
-        Ansible playbook run creates a virtual machine is created to host the VSD node of DCN.</p>
+<!--<section> <title>Configuring the VSD node, creating user and applying License</title>
+  <p>During the <i>Deploy the HLM Cloud and VSD VM</i> section, a vritual machine is created to host VSD. </p>
 <p>You need to log into the VSD node (using SSH), then create a default user and apply the required license.</p>
   
 <p>After logging into the VDS node, execute the following command to launch a console window:</p>
@@ -127,8 +63,7 @@
   <image href="../../media/CGH-install-virsh-vsd.png"/>
 </p>
 </section>
-
-  <!--<section id="vsd-performance-workaround"> <title>VSD Performance workaround</title>
+<section id="vsd-performance-workaround"> <title>VSD Performance workaround</title>
 <p>By default VSD has only 8G memory. For better performance behavior, you can update the VSD memory to 16G.</p>
 <ol>
 <li>From HLM host, execute the following command to power down the VSD node:
@@ -143,7 +78,7 @@ Current value
 Change to 
     &lt;memory unit='KiB'&gt;16777216&lt;/memory&gt;
     &lt;currentMemory unit='KiB'&gt;16777216&lt;/currentMemory&gt;
-</codeph></li>
+</codeph></codeblock></li>
 <li>Save the value<codeph>virsh save vsd
 </codeph></li>
 <li>Use the following command to start the
@@ -151,7 +86,7 @@ Change to
 </codeph><p>It can take 15 minutes or
             more to sync with NTP and to get all the other VSD services up.</p></li>
 </ol>
-</section>-->
+</section>
 <section id="launch-vsd-dashboard"> <title>Launch VSD Dashboard</title>
 <p>On the HLM host:</p>
 <ol>
@@ -163,13 +98,6 @@ Org: csp
 VSD Server : auto 
 </codeblock></li>
 </ol>
-      <p/>
-      <p>Follow the instructions in the pdf to get the license - <b>Get confirmation from
-        Nayana</b></p>
-      <p><xref
-          href="https://wiki.hpcloud.net/display/HCG/HP+Helion+OpenStack+Carrier+Grade+%28NFVi%29+Home#HPHelionOpenStackCarrierGrade%28NFVi%29Home-HPHelionOpenStackCarrierGradeDCN/Nuage"
-          format="html" scope="external"
-          >https://wiki.hpcloud.net/display/HCG/HP+Helion+OpenStack+Carrier+Grade+%28NFVi%29+Home#HPHelionOpenStackCarrierGrade%28NFVi%29Home-HPHelionOpenStackCarrierGradeDCN/Nuage</xref></p>
 </section>
 <section id="applying-the-license"> <title>Applying the License</title>
 <p>To install the required DCN license:</p>
@@ -190,9 +118,7 @@ VSD Server : auto
 <li>Add the user to the <codeph>CMS Group</codeph>.</li>
 </ol>
 </section>
-  <section><title>Install the DVswitch</title></section>
-  
-  <section><title>Install the VRSVapp</title></section>
+-->
   <section id="configure-a-json-file-for-installation"> <title>Configure a JSON file for installation</title>
 <p>The HP Helion OpenStack deployment requires a JSON file. Use the following steps to install and
         edit the file.</p>
@@ -268,7 +194,8 @@ Password: cghelion</codeblock></p></li>
                 </row>
               </tbody>
             </tgroup>
-          </table><p>To see a sample <codeph>node-provision.json</codeph> file, see  </p></li>
+          </table><p>To see a sample <codeph>node-provision.json</codeph> file, see<xref
+            href="carrier-grade-install-pb-hlm-vm-json.dita#topic4797">Sample JSON File for the HLM Virtual Machine Installation</xref>.</p></li>
 </ol>
 </section>
 <section id="pxe-boot"> <title>Configure PXE boot</title>
@@ -289,9 +216,8 @@ Password: cghelion</codeblock></p></li>
 </section>
 <section id="create-a-new-cloud-template-and-bring-the-cloud-nodes-up"> <title>Create new cloud template and bring the cloud nodes up</title>
 <ol>
-<li>Use the following script to start the provisioning of the HP Helion OpenStack
-            cloud:<p>hprovision <codeph>&lt;cloudname&gt;</codeph>
-          </p><p>Where:</p><ul>
+<li>Use the following script to start the provisioning of the HP Helion OpenStack cloud:
+            <codeblock>hprovision &lt;cloudname&gt; </codeblock><p>Where:</p><ul>
             <li><codeph>&lt;cloudname&gt;</codeph> is the name of the cloud to create</li>
           </ul><p>This script will PXE boot the nodes specified in
               <codeph>node-provision.json</codeph> file. The script also tracks the PXE boot
@@ -472,7 +398,7 @@ hp3par_iscsi_chap_enabled=false</codeblock></li></ul></li>
 </section>
 <section id="next-step"> <title>Next Step</title>
 <p>
-        <xref href="carrier-grade-install-kvm-cloud-GA.dita">Deploying the KVM Region</xref>
+        <xref href="carrier-grade-install-kvm-cloud-rc0.dita">Deploying the KVM Region</xref>
       </p>
 <p>
   <xref type="section" href="#topic10581"> Return to Top </xref>
