@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_i5v_bjb_ws">
+  <title><b>Beta 0 Known Issues and Limitations</b></title>
+  <body>
+    <?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>
+    <p>note: this document is under development<?oxy_custom_end?></p>
+    <p><b>Limitations</b></p>
+    <p><b>Installing Swift</b></p>
+    <p>Swift installs with the following limitations: </p>
+    <ul id="ul_g5x_cjb_ws">
+      <li>Only a 3-node Swift configuration in which Swift runs on the 3 controller servers is
+        supported</li>
+      <li>No LVM (logical volumes) support. Therefore, dedicated disks are needed for Swift on the 3
+        controller nodes</li>
+      <li>In Beta0 you cannot add or remove Swift servers </li>
+      <li>Only one Swift zone is supported</li>
+      <li>Support only 1 storage policy, object-0</li>
+    </ul>
+    <p> </p>
+    <p>
+      <b>Deployment of VSA cloud on a separate Node as per HLM life-cycle</b></p>
+    <p>Completed activity:</p>
+    <p> vsa-deploy play to deploy VSA on standalone node</p>
+    <p> cmc-deploy play do deploy CMC on controller node [0] </p>
+    <p> one-region-poc-with-vsa file with dev environment </p>
+    <p>Impediment:</p>
+    <p>The one-region-poc-with-vsa will be provided by the HLM team which impacts not only VSA but
+      other services as well. This will be beyond be Beta0 timeframe.</p>
+    <p> </p>
+    <p><b>Health and performance monitoring</b></p>
+    <p>Monitoring is enabled for several, but not all services </p>
+    <p>Monitoring is integrated for the following services:</p>
+    <p>Logging, Neutron, Swift, Ceilometer, Heat, Rabbit, MySQL, HA Proxy, Glance, Cinder,
+      Monitoring of Monasca, Nova, hLinux</p>
+    <p>The following are yet to be completed: </p>
+    <ul id="ul_zxx_cjb_ws">
+      <li>OpsConsole, </li>
+      <li>Keystone, </li>
+      <li>Horizon</li>
+    </ul>
+    <p>This list to be updated real time as teams progress</p>
+    <p> </p>
+    <p><b>Helion Cloud Monitoring (Monasca) via HLM</b></p>
+    <p>Basic Monitoring is complete for Beta0 with the following limitations:</p>
+    <ul id="ul_oby_cjb_ws">
+      <li>Vertica is not available in the install. Must choose InfluxDB option instead.</li>
+      <li>InfluxDB not configured behind a VIP. Must directly access one node in the cluster.</li>
+      <li>Backup/restore of Monasca configuration and metrics data is not available.</li>
+    </ul>
+    <p><b>Ops console</b></p>
+    <p>Currently testing and working through bugs in a HOS2.0 environment. </p>
+    <p>~70% chance most of the top level functionality is available for internal beta 0 (alarm
+      definitions, notifications, explorer, dashboard, and compute nodes). </p>
+    <p>Some content pages will lag to Beta 1.</p>
+    <p><b>Cinder</b></p>
+    <p>Core cinder services are all being installed and configured via HLM. </p>
+    <p>HPM-1254 and HPM-1255 are both green, and all cinder core tasks required for this integration
+      will be completed in sprint 6. </p>
+    <p>Cinder installation with VSA as a backend is being worked through at the moment, manual steps
+      to be defined later may be required to complete installation.</p>
+    <p><b>Networks</b></p>
+    <p>This requirement is primarily network configuration that will be done through the installer.
+      There is no upstream neutron work required.</p>
+    <p> </p>
+    <p>** This is not NIC Bonding **</p>
+    <p>Multiple NICs on a compute node and each NIC is connected to a different external network.
+      Today we don't support multiple external networks at L2 (ML2 OVS mech driver) nor L3 (DVR Or
+      Centralized)</p>
+    <p> </p>
+    <p>Need use cases/stories [~vikas.deolaliker@hp.com]</p>
+    <p>* ability to span L3</p>
+    <p>* multiple provider networks/separation of traffic</p>
+    <p>* two pools for fip to span networks/different fip pools</p>
+    <p>* talk to multiple networks</p>
+    <p> </p>
+    <p> </p>
+    <p>Need done done criteria [~vikas.deolaliker@hp.com]</p>
+    <p> </p>
+    <p>[06/02/15]</p>
+    <p>We discussed today that all of the use cases should be fulfilled by HOS2.0.</p>
+    <p> </p>
+    <p><b>TLS</b></p>
+    <p>The server certificate is currently hard coded. If an operator wishes to provide their own,
+      they need to edit the defaults in the TLS playbook. <i>The intent is to provide an interface
+        via a soft link in the ansible system to do this.</i>status unkown</p>
+    <p> </p>
+    <p><b>Known Issues</b></p>
+    <p/>
+    <p><b>Install:</b></p>
+    <p><b>Operations:</b></p>
+  </body>
+</topic>
