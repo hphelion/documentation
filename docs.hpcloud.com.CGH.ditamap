@@ -57,22 +57,6 @@
     <topicref href="CarrierGrade/Installation/carrier-grade-technical-specs.dita"/>
     <topicref href="CarrierGrade/Installation/carrier-grade-support-matrix2.dita"/>
     <mapref href="CarrierGrade/Installation/carrier-grade-installation-guide.ditamap"/>
-    <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-overview.dita">
-      <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-prereqs-GA.dita">
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-prereqs-GA.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-network-prepare-GA.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-NTP.dita"/>
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-esx-proxy.dita"/>
-      </topicref>
-      <topicref href="CarrierGrade/Installation/carrier-grade-install-non-kvm-GA.dita">
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-pb-kvm-node-json.dita"
-          toc="no"/>
-      </topicref>
-      <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-cloud-GA.dita">
-        <topicref href="CarrierGrade/Installation/carrier-grade-install-kvm-network-interface.dita"
-        />
-      </topicref>
-    </topicref>
     <topicref href="PDF/HP-Helion-OpenStack-Carrier-Grade-Admin-Guide.pdf" format="pdf"
       navtitle="Administrator Guide (PDF)"/>
     <topicref href="CarrierGrade/API/carrier-grade-api.dita"/>
