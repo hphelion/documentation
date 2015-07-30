@@ -26,7 +26,7 @@
 <ul>
    <li>HP Helion OpenStack Services
      <ul>
-       <li>Full set of Kilo-based OpenStack services</li>
+       <li><xref type="section" href="#topic12031/Services">Full set of Kilo-based OpenStack services</xref></li>
        <li><xref type="section" href="#topic12031/LBaaS">LBaaS</xref></li>
        <li><xref type="section" href="#topic12031/FWaaS">FWaaS</xref></li>
        <li><xref type="section" href="#topic12031/VPNaaS">VPNaaS</xref></li>
@@ -60,7 +60,7 @@
 </ul>
 <section id="Baremetal-install"> <title>Baremetal Install Kit</title>
 </section>
-<section id="Kiloset"> <title>Full set of Kilo-based OpenStack services</title>
+<section id="Services"> <title>Full set of Kilo-based OpenStack services</title>
       <table>
         <tgroup cols="2">
           <colspec colname="c1" colnum="1" colwidth="1.0*"/>
@@ -75,12 +75,6 @@
             <row>
               <entry>Compute Operations (Nova)</entry>
               <entry>
-                <p>The HP Helion OpenStack Compute supports an API to instantiate and manage virtual
-                  servers on KVM and VMware ESX hypervisors. Users can create and manage the life
-                  cycle of virtual machines (suspend, resume, snapshot, and so forth), attach block
-                  storage volumes, work with security groups and key pairs, and associate floating
-                  IP addresses. Users can also boot a VM using a Cinder volume as the root
-                  partition.</p>
                 <p>For more information, see: <xref
                   href="https://wiki.openstack.org/wiki/Neutron/LBaaS" scope="external"
                   format="html">https://wiki.openstack.org/wiki/Nova</xref></p>
@@ -88,10 +82,7 @@
             </row>
             <row>
               <entry>Block Storage (Cinder)</entry>
-              <entry>The HP Helion OpenStack Block Storage supports an API to instantiate and manage
-                block storage volumes on HP StoreServ 3PAR devices and StoreVirtual Software Defined
-                Storage. User can create volumes, attach them to VMs, and take snapshots and
-                backups. Users can create a bootable volume and use that to boot a VM.</entry>
+              <entry/>
             </row>
             <row>
               <entry>Object Storage (Swift)</entry>
@@ -102,36 +93,24 @@
               <entry/>
             </row>
             <row>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry/>
+              <entry>Identity Operations (Keystone)</entry>
               <entry/>
             </row>
             <row>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry/>
+              <entry>Image Operations (Glance)</entry>
               <entry/>
             </row>
             <row>
-              <entry/>
+              <entry>Orchestration (Heat)</entry>
               <entry/>
             </row>
             <row>
-              <entry/>
+              <entry>Bare-Metal Provisioning (Ironic)</entry>
               <entry/>
             </row>
             <row>
               <entry>Sherpa</entry>
-              <entry>The HP Helion Sherpa service is a content distribution catalog service provides
-                a mechanism to download the content such as Image Operation images, Orchestration
-                templates, and so forth, from the HP Helion [HDN](https://helion.hpwsportal.com) and
-                install the content in the appropriate service such as the Identity service
-                etc.</entry>
+              <entry/>
             </row>
             <row>
               <entry>LBaaS (Load-Balancing-as-a-Service)</entry>
@@ -170,34 +149,6 @@
                     href="https://wiki.openstack.org/wiki/Neutron/VPNaaS" scope="external"
                     format="html">https://wiki.openstack.org/wiki/Neutron/VPNaaS</xref></p>
               </entry>
-            </row>
-            <row>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry/>
-              <entry/>
-            </row>
-            <row>
-              <entry/>
-              <entry/>
             </row>
           </tbody>
         </tgroup>
