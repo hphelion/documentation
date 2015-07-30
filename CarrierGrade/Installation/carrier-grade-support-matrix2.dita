@@ -268,7 +268,6 @@
       <ul>
         <li>two (2) baremetal systems for DCN VSC controllers (HA mode) </li>
         <li>two (2) baremetal systems for DCN VRS-G Software Gateway (HA mode)</li>
-        <li>one (1) server to host the DCN User Installed Component (Sorry, forget the name)</li>
       </ul>
       <p>Refer to the DCN documentation for the supported hardware configurations.</p>
       <p><b>Note:</b> These systems are not required for a KVM-only cloud.</p>

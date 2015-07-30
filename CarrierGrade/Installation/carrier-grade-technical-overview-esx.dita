@@ -7,17 +7,11 @@
   <prolog>
     <metadata>
       <othermeta name="layout" content="default"/>
-      <othermeta name="product-version" content="HP Helion Openstack"/>
-      <othermeta name="product-version" content="HP Helion Openstack 1.0"/>
-      <othermeta name="product-version" content="HP Helion Openstack 1.0.1"/>
-      <othermeta name="product-version" content="HP Helion Openstack 1.1"/>
+      <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
       <othermeta name="role" content="Storage Administrator"/>
       <othermeta name="role" content="Storage Architect"/>
       <othermeta name="role" content="Sameer V, Pranoy R, Michael B"/>
-      <othermeta name="product-version1" content="HP Helion Openstack"/>
-      <othermeta name="product-version2" content="HP Helion Openstack 1.0"/>
-      <othermeta name="product-version3" content="HP Helion Openstack 1.0.1"/>
-      <othermeta name="product-version4" content="HP Helion Openstack 1.1"/>
+      <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
     </metadata>
   </prolog>
   <body>
@@ -178,5 +172,22 @@
       <p>DCM, CAN/WR-OAM, EXT, WR-EXT should use routable IPs. DCM is restricted to the corporate
         network</p>
     </section>
-  </body>
+      <section>
+        <title>Regions</title>
+        <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two
+          logical or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in
+          the installation process. The <xref
+            href="carrier-grade-technical-overview.dita#topic3485/deploy-arch">Deployment
+            Architecture diagram</xref> shows an illustration of these two zones. </p>
+        <p><b>Non-KVM</b></p>
+        <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and
+          maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
+          distribution of OpenStack. The ESX and DCN components and servers also reside in the
+          non-KVM zone.  </p>
+        <p><b>KVM</b></p>
+        <p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM region consists
+          of a software platform, providing ultra-reliability and exceptional performance
+          efficiencies for telecommunications networks. </p>
+      </section>
+    </body>
 </topic>

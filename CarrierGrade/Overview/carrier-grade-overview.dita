@@ -96,27 +96,7 @@
         </tgroup>
       </table>
     </section>
-    <section id="major-components-in-hp-helion-openstack-carrier-grade">
-      <title>Major Components in HP Helion OpenStack Carrier Grade</title>
-      <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
-        or conceptual <i>regions</i>: Non-KVM and KVM. See the <xref
-          href="../Installation/carrier-grade-technical-overview.dita#topic3485/deploy-arch"
-          >Deployment Architecture diagram</xref> in the Technical Overview for an illustration of
-        these two zones. </p>
-      <p><b>Non-KVM</b></p>
-      <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and
-        maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
-        distribution of OpenStack. The Non-KVM region consists of a host system for HLM and three HP
-        Helion OpenStack controllers.</p>
-      <p>For more information, see <xref href="carrier-grade-overview-non-kvm.dita">Non-KVM
-          Environment Overview</xref>.</p>
-      <p><b>KVM</b></p>
-      <p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM region consists
-        of a software platform, providing ultra-reliability and exceptional performance efficiencies
-        for telecommunications networks. </p>
-      <p>For more information, see <xref href="carrier-grade-overview-kvm.dita">KVM Environment
-          Overview</xref>.</p>
-    </section>
+ 
     <section>
       <title>Service Overview</title>
       <p>HP Helion OpenStack Carrier Grade is comprised of a number of services, including several

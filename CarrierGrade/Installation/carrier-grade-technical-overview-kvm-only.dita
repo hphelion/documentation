@@ -139,5 +139,22 @@
       <p>CLM/OBS, PXE-1, PXE-2, BLS/INFRA, TUL/SR-IOV should use RFC 1918 non-routable IPs to
         prevent access to the CLM network from DCM, CTL, or EXT.</p>
     </section>
+    <section><title>Regions</title>
+      <p>For installation and maintenance, HP Helion OpenStack Carrier Grade consists of two logical
+        or conceptual <i>regions</i>: Non-KVM and KVM. You will see these terms used in the
+        installation process. The <xref
+          href="carrier-grade-technical-overview.dita#topic3485/deploy-arch">Deployment Architecture
+          diagram</xref> shows an illustration of these two zones. </p>
+        <p><b>Non-KVM</b></p>
+        <p>The Non-KVM region contains the HP Helion Lifecycle Management (HLM), to deploy and
+        maintain HP Helion OpenStack Carrier Grade; and HP Helion OpenStack, a commercial-grade
+        distribution of OpenStack.   </p>
+        <p><b>KVM</b></p>
+        <p>The KVM region is the heart of HP Helion OpenStack Carrier Grade. The KVM region consists
+          of a software platform, providing ultra-reliability and exceptional performance efficiencies
+          for telecommunications networks. </p>
+      
+      
+    </section>
   </body>
 </topic>
