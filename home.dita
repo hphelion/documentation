@@ -8,16 +8,11 @@
 </metadata>
 </prolog>
 <body>
-<p>
-<!--PUBLISHED-->
- <!--./publiccloud/index.md-->
- <!--permalink: /--></p>
-<!-- <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 <p>HP Helion provides public, private, and managed cloud solutions to get you moving on your cloud journey. Whichever HP Helion product you are using, we have all the documentation resources and references for you.</p>
   <simpletable id="homepageTable" relcolwidth="1.0* 5.06*">
       <strow>
         <stentry>
-          <xref href="commercial/GA2/index.dita">HP Helion <tm tmtype="reg">OpenStack</tm> 2.0: Documentation Home</xref>
+          <xref href="commercial/GA2/index.dita">HP Helion <tm tmtype="reg">OpenStack</tm></xref>
         </stentry>
         <stentry>...</stentry>
       </strow>
