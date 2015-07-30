@@ -3,14 +3,14 @@
   PUBLIC "-//OASIS//DTD DITA Topic//EN" "http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" ><topic xml:lang="en-us" id="topic4740">
 <title>HP Helion <tm tmtype="reg">OpenStack</tm> Carrier Grade 1.1: Configuring NTP</title>
 <prolog>
-<metadata>
-<othermeta name="layout" content="default"/>
-<othermeta name="product-version" content="HP Helion Openstack 1.1"/>
-<othermeta name="role" content="Storage Administrator"/>
-<othermeta name="role" content="Storage Architect"/>
-<othermeta name="role" content="Michael B,"/>
-<othermeta name="product-version1" content="HP Helion Openstack 1.1"/>
-</metadata>
+  <metadata>
+    <othermeta name="layout" content="default"/>
+    <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+    <othermeta name="role" content="Storage Administrator"/>
+    <othermeta name="role" content="Storage Architect"/>
+    <othermeta name="role" content="Michael B"/>
+    <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+  </metadata>
 </prolog>
 <body>
 <p>

@@ -7,8 +7,14 @@
         (COTS) hardware to manage Virtualized Network Functions (VNF) within a carrier grade Network
         Function Virtualization (NFV) architecture.</shortdesc>
     <prolog>
-        <author>Jim Owens</author>
-        <author>Pedro Sanchez</author>
+        <metadata>
+            <othermeta name="layout" content="default"/>
+            <othermeta name="product-version" content="HP Helion Openstack Carreir Grade 1.1"/>
+            <othermeta name="role" content="Storage Administrator"/>
+            <othermeta name="role" content="Storage Architect"/>
+            <othermeta name="role" content="Michael B"/>
+            <othermeta name="product-version1" content="HP Helion Openstack Carreir Grade 1.1"/>
+        </metadata>
     </prolog>
     <body>
         <p>HP Helion OpenStack Carrier Grade brings together the flexibility and scalability of the
