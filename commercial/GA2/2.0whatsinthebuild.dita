@@ -32,49 +32,53 @@
        <li><xref type="section" href="#topic12031/VPNaaS">VPNaaS</xref></li>
      </ul>
    </li>
-   <li>Baremetal install that includes:
+  <li><xref type="section" href="#topic12031/LBaaS">Baremetal Install Kit</xref> that includes:
       <ul>
-       <li>updating the configuration</li>
-       <li>adding nodes</li>
-       <li>adding VSA, etc</li>
+        <li>Uses Config Process v2.0</li>
+        <li>updating the configuration</li>
+        <li>adding nodes</li>
+        <li>adding VSA, etc</li>
       </ul>
    </li> 
-  <li>Full set of Kilo-based OpenStack services</li>
-  <li>Uses Config Process v2.0</li>
   <li>Networking Planning
     <ul>
       <li><xref type="section" href="#topic12031/NicBonding">NIC bonding</xref></li>
-      <li>Multi-NIC support</li>
-      <li>Network separation (including VLAN)</li>
+      <li><xref type="section" href="#topic12031/Multi-NIC">Multi-NIC support</xref></li>
+      <li><xref type="section" href="#topic12031/Network-Separation">Network separation (including VLAN)</xref></li>
     </ul>
   </li>  
+  <li>Operational Management
+    <ul>
+      <li>Control plan backup and restore</li>
+      <li>Monitoring</li>
+      <li>OpsConsole</li>
+    </ul>
+  </li>
   <li>VSA as a Cinder block storage provider</li>
-  <li>Multiple Provider VLANs as external networks</li>
-  <li>OpsConsole</li>
-  <li>Monitoring</li>
   <li>Basic NTP and DNS integration</li>
-  <li>Control plan backup and restore</li>
-  <li>LBaaS, FWaaS, and VPNaaS</li>
   <li>TLS only on external API</li>
-  <li>Logging</li>
 </ul>
 <section id="Baremetal-install"> <title>Baremetal Install Kit</title>
 </section>
-<section id="Kiloset"><title>Full set of Kilo-based OpenStack services</title>
+<section id="Kiloset"> <title>Full set of Kilo-based OpenStack services</title>
 </section>
-<section id="NicBonding"><title>NIC Bonding</title>
-</section>
-<section id="LBaaS"><title>LBaaS</title>
+<section id="LBaaS"> <title>LBaaS</title>
 <p>LBaaS (Load-Balancing-as-a-Service) is a Neutron extension that introduces a load balancing feature set. Helion OpenStack 2.0 includes the V2 version which allows flexible load balancing of multiple ports on one VIP. The included reference implementation uses haproxy but 3rd party Load Balancers can be integrated as well. In case that a 3rd party driver doesn’t exist for LBaaS V2 installing LBaaS V1 instead of V2 is supported.</p>
 <p>For more information, see: <xref href="https://wiki.openstack.org/wiki/Neutron/LBaaS" scope="external" format="html">https://wiki.openstack.org/wiki/Neutron/LBaaS</xref></p>
 </section>
-<section id="FWaaS"><title>FWaaS</title>
+<section id="FWaaS"> <title>FWaaS</title>
 <p>FWaaS (FireWall-as-a-Service) is a Neutron extension that introduces a firewall feature set. The included reference implementation is using iptables to block traffic but 3rd party Firewalls can be integrated with this extension into Helion OpenStack as well.</p>
 <p>For more information, see: <xref href="https://wiki.openstack.org/wiki/Neutron/FWaaS" scope="external" format="html">https://wiki.openstack.org/wiki/Neutron/FWaaS</xref></p>
 </section>
-<section id="VPNaaS"><title>VPNaaS</title>
+<section id="VPNaaS"> <title>VPNaaS</title>
 <p>VPNaaS (Virtual-Private-Network-as-a-Service) is a Neutron extension that introduces a vpn feature set. It allows for encrypted traffic between two routers in (potentially) different datacenters hence supporting secure multi az architectures for customers.</p>
 <p>For more information, see: <xref href="https://wiki.openstack.org/wiki/Neutron/VPNaaS" scope="external" format="html">https://wiki.openstack.org/wiki/Neutron/VPNaaS</xref></p>
 </section>
+  <section id="NicBonding"> <title>NIC Bonding</title>
+  </section>
+  <section id="Multi-NIC"> <title>Multiple-NIC Support</title>
+  </section>
+  <section id="Network-Separation"> <title>Network Separation</title>
+  </section>
 </body>
 </topic>
