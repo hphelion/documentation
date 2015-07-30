@@ -21,6 +21,7 @@
 <!-- HoS 2.0 -->
 <topicref href="commercial/GA2/2.0commercial.index.dita">
 <topicref href="commercial/GA2/2.0whatsinthebuild.dita"/>
+  <topicref href="commercial/GA2/2.0issuesandlimitations.dita"/>
 <topichead navtitle="HP Helion OpenStack Services">
 </topichead>
 </topicref>
