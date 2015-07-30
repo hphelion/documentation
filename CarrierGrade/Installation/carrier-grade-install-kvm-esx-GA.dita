@@ -163,7 +163,9 @@ Change to
       <title>Apply the license</title>
       <p>On the HLM host:</p>
       <ol>
-        <li>Using an browser such as Chrome or FireFox, navigate to the DCM IP of VSD.</li>
+        <li>Using a browser, browse to the link in the confirmation email you received when you
+          purchased DCN and obtain the license.</li>
+        <li>After you have obtained the license, navigate to the DCM IP of VSD.</li>
         <li>In the log in page, enter the default
           credentials:<codeblock>User Name: Csproot 
 Password: csproot 
@@ -390,23 +392,23 @@ Password: cghelion</codeblock></p></li>
           </ol></li>
         <li>If you need cinder vmdk support, execute the following steps:
           <ol>
-            <li>Go to /root/&lt;cloud name>/services/cinder/blocks folder, copy <codeph>cinder_conf.vmdksample</codeph> to 
-              <codeph>cinder_conf</codeph> 
-            in the same folder and update the entries based on your infrastructure.
-            <codeblock>
-            [DEFAULT]
-            enabled_backends=vmdk
+            <li>Go to /root/&lt;cloud name>/services/cinder/blocks folder, copy
+                <codeph>cinder_conf.vmdksample</codeph> to <codeph>cinder_conf</codeph> in the same
+              folder and update the entries based on your infrastructure.
+              <codeblock>
+[DEFAULT]
+enabled_backends=vmdk
             
-            [vmdk]
-            volume_backend_name = &lt;mybackendname3>
-            vmware_host_ip = &lt;hostip>
-            vmware_host_username = &lt;username>
-            vmware_host_password = &lt;password>
-            vmware_volume_folder = &lt;volumes_folder>
-                      vmware_image_transfer_timeout_secs = 7200
-                      vmware_task_poll_interval = 0.5
-                      vmware_max_objects_retrieval = 100
-                      volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver
+[vmdk]
+volume_backend_name = &lt;mybackendname3>
+vmware_host_ip = &lt;hostip>
+vmware_host_username = &lt;username>
+vmware_host_password = &lt;password>
+vmware_volume_folder = &lt;volumes_folder>
+vmware_image_transfer_timeout_secs = 7200
+vmware_task_poll_interval = 0.5
+vmware_max_objects_retrieval = 100
+volume_driver = cinder.volume.drivers.vmware.vmdk.VMwareVcVmdkDriver
             </codeblock></li>
           </ol>        
         </li>

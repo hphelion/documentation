@@ -252,23 +252,29 @@ StrictHostKeyChecking no </codeblock></li>
                                         package(s) from <xref
                                                 href="https://helion.hpwsportal.com/catalog.html#/Category/{%22categoryId%22%3A10152}/Show"
                                                 format="html" scope="external">HP Helion OpenStack
-                                                product installation</xref>.</li><li>Download the compute proxy OVA template.</li>
-                        <li>Download and unzip the DCN packages:
-                        <ul>
-                         <li>DCN-VRS-GW-3.0R7</li>
-                         <li>DCN-VRS-VMware-3.0R7</li>
-                         <li>DCN-VSC-3.0R7</li>
-                         <li>DCN-VSD-QCOW-3.0R7</li></ul></li>
-                        <li>Create the <codeph>~/cg/dcn</codeph> on HLM KVM directory on the KVM host.</li> 
-                        <li>Copy the following files from DCN downloaded packages to <codeph>~/cg/dcn</codeph>:
-                          <ul><li>vsc_singledisk.qcow2</li>
-                              <li>nuage-openvswitch-datapath-dkms_3.0.7-125_all.deb</li>
-                              <li>nuage-openvswitch-common_3.0.7-125_amd64.deb</li>
-                              <li>nuage-python-openvswitch_3.0.7-125_all.deb</li>
-                              <li>nuage-openvswitch-switch_3.0.7-125_amd64.deb</li>
-                              <li>nuage-openstack-nuagenetlib-juno.tar.gz</li>
-                              <li>nuage-openstack-neutron-juno-plugin.tar.gz</li>
-                          </ul></li>  
+                                                product installation</xref>.</li>
+                                <li>Download the compute proxy OVA template.</li>
+                                <li>If you have not downloaded the DCN installation packages, browse
+                                        to the link in your confirmation email and download the
+                                        appropriate packages.. .</li>
+                                <li>Unzip the DCN packages: <ul id="ul_cqm_tzc_ws">
+                                                <li>DCN-VRS-GW-3.0R7</li>
+                                                <li>DCN-VRS-VMware-3.0R7</li>
+                                                <li>DCN-VSC-3.0R7</li>
+                                                <li>DCN-VSD-QCOW-3.0R7</li>
+                                        </ul></li>
+                                <li>Create the <codeph>~/cg/dcn</codeph> on HLM KVM directory on the
+                                        KVM host.</li>
+                                <li>Copy the following files from DCN downloaded packages to
+                                                <codeph>~/cg/dcn</codeph>: <ul>
+                                                <li>vsc_singledisk.qcow2</li>
+                                                <li>nuage-openvswitch-datapath-dkms_3.0.7-125_all.deb</li>
+                                                <li>nuage-openvswitch-common_3.0.7-125_amd64.deb</li>
+                                                <li>nuage-python-openvswitch_3.0.7-125_all.deb</li>
+                                                <li>nuage-openvswitch-switch_3.0.7-125_amd64.deb</li>
+                                                <li>nuage-openstack-nuagenetlib-juno.tar.gz</li>
+                                                <li>nuage-openstack-neutron-juno-plugin.tar.gz</li>
+                                        </ul></li>
                         </ol>  
                 <p>If you execute a list on that directory, the output appears similar to the following image:</p>
         </section>
